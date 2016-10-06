@@ -129,9 +129,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-		alert('Document is loaded');
         $('.random-button').on('click touchstart', (function() {
-			alert('random buttom is clicked');
             var chartListClass = 'chart-list-' + $('.chart-list').length,
                 numChartsToRandom = $('.chart-count').val(),
                 lowerBound = parseInt($('.lower-bound').val(), 10),
