@@ -129,7 +129,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.random-button').click(function() {
+        $('.random-button').on('click touchstart', (function() {
             var chartListClass = 'chart-list-' + $('.chart-list').length,
                 numChartsToRandom = $('.chart-count').val(),
                 lowerBound = parseInt($('.lower-bound').val(), 10),
@@ -196,7 +196,13 @@
                     $target.addClass('vetoed');
                 }
             });
-        });
+			
+			$(".chart:contains('beginner,')").css('color', 'dodgerblue');
+			$(".chart:contains('basic,')").css('color', 'gold');
+			$(".chart:contains('difficult,')").css('color', 'red');
+			$(".chart:contains('expert,')").css('color', 'green');
+			$(".chart:contains('challenge,')").css('color', 'purple');
+        }));
     });
 
     window.onbeforeunload = function confirmExit() {
