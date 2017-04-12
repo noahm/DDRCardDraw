@@ -165,6 +165,7 @@
                             validCharts.push({
                                 'name': currentSong.name,
                                 'artist': currentSong.artist,
+								'bpm': currentSong.bpm,
                                 'difficulty': key,
                                 'rating': chart.difficulty
                             });
@@ -180,7 +181,7 @@
                 if (randomChart) {
                     validCharts.splice(randomIndex, 1);
 
-                    html += '<div class="chart">name: ' + randomChart.name + ', artist: ' + randomChart.artist + ', difficulty: ' + randomChart.difficulty + ', rating: ' + randomChart.rating +'</div>';
+                    html += '<div class="chart">Name: ' + randomChart.name + ', Artist: ' + randomChart.artist + ', BPM: ' + randomChart.bpm + ', Difficulty: ' + randomChart.difficulty.charAt(0).toUpperCase() + randomChart.difficulty.slice(1) + ', Rating: ' + randomChart.rating +'</div>';
                 }
             }
 
@@ -197,11 +198,11 @@
                 }
             });
 			
-			$(".chart:contains('beginner,')").css('color', 'dodgerblue');
-			$(".chart:contains('basic,')").css('color', 'gold');
-			$(".chart:contains('difficult,')").css('color', 'red');
-			$(".chart:contains('expert,')").css('color', 'green');
-			$(".chart:contains('challenge,')").css('color', 'purple');
+			$(".chart:contains('Beginner,')").css('color', 'dodgerblue');
+			$(".chart:contains('Basic,')").css('color', 'gold');
+			$(".chart:contains('Difficult,')").css('color', 'red');
+			$(".chart:contains('Expert,')").css('color', 'green');
+			$(".chart:contains('Challenge,')").css('color', 'purple');
         }));
     });
 
