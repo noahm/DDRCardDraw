@@ -1,5 +1,1352 @@
 var songs = [
 	{
+		"removed": true,
+	  "name": "Thank You Merry Christmas",
+	  "artist": "VENUS",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "9",
+	      "step": "274",
+	      "shock": "0",
+	      "freeze": "16"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "417",
+	      "shock": "0",
+	      "freeze": "20"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "199",
+	      "shock": "0",
+	      "freeze": "17"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "220",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "9",
+	      "step": "286",
+	      "shock": "0",
+	      "freeze": "32"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "429",
+	      "shock": "0",
+	      "freeze": "41"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "120",
+	      "shock": "0",
+	      "freeze": "5"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "193",
+	      "shock": "0",
+	      "freeze": "16"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "name": "ロンロンへ ライライライ！",
+	  "artist": "ここなつ",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "292",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "372",
+	      "shock": "0",
+	      "freeze": "15"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "202",
+	      "shock": "0",
+	      "freeze": "12"
+	    }
+	  },
+	  "artist_translation": "Kokonatsu",
+	  "bpm": "156",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "311",
+	      "shock": "0",
+	      "freeze": "24"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "390",
+	      "shock": "0",
+	      "freeze": "16"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "144",
+	      "shock": "0",
+	      "freeze": "7"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "205",
+	      "shock": "0",
+	      "freeze": "12"
+	    }
+	  },
+	  "name_translation": "Ronron e rairairai!"
+	}, {
+	  "name": "エキサイティング！！も・ちゃ・ちゃ☆",
+	  "artist": "日向美ビタースイーツ♪",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "345",
+	      "shock": "0",
+	      "freeze": "18"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "427",
+	      "shock": "0",
+	      "freeze": "13"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "249",
+	      "shock": "0",
+	      "freeze": "18"
+	    }
+	  },
+	  "artist_translation": "Hinatabi Bitter Sweets",
+	  "bpm": "187",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "325",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "425",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "152",
+	      "shock": "0",
+	      "freeze": "19"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "245",
+	      "shock": "0",
+	      "freeze": "18"
+	    }
+	  },
+	  "name_translation": "Exciting!! Mo・Cha・Cha☆"
+	}, {
+	  "extra_exclusive": true,
+	  "name": "Neutrino",
+	  "artist": "HuΣeR",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "325",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "expert": {
+	      "difficulty": "16",
+	      "step": "497",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "basic": {
+	      "difficulty": "9",
+	      "step": "196",
+	      "shock": "0",
+	      "freeze": "12"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "75-300",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "325",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "expert": {
+	      "difficulty": "16",
+	      "step": "499",
+	      "shock": "0",
+	      "freeze": "24"
+	    },
+	    "beginner": {
+	      "difficulty": "6",
+	      "step": "122",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "9",
+	      "step": "200",
+	      "shock": "0",
+	      "freeze": "11"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "extra_exclusive": true,
+	  "name": "out of focus",
+	  "artist": "Qrispy Joybox",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "270",
+	      "shock": "0",
+	      "freeze": "19"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "379",
+	      "shock": "0",
+	      "freeze": "36"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "134",
+	      "shock": "0",
+	      "freeze": "21"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "83-167",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "272",
+	      "shock": "0",
+	      "freeze": "19"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "389",
+	      "shock": "0",
+	      "freeze": "34"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "71",
+	      "shock": "0",
+	      "freeze": "0"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "137",
+	      "shock": "0",
+	      "freeze": "21"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "name": "Fly far bounce",
+	  "artist": "猫叉Master",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "235",
+	      "shock": "0",
+	      "freeze": "3"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "387",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "162",
+	      "shock": "0",
+	      "freeze": "7"
+	    }
+	  },
+	  "artist_translation": "Nekomata Master",
+	  "bpm": "163",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "236",
+	      "shock": "0",
+	      "freeze": "3"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "385",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "96",
+	      "shock": "0",
+	      "freeze": "2"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "162",
+	      "shock": "0",
+	      "freeze": "3"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "extra_exclusive": true,
+	  "name": "Ishtar",
+	  "artist": "劇団レコード",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "305",
+	      "shock": "0",
+	      "freeze": "25"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "390",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "159",
+	      "shock": "0",
+	      "freeze": "14"
+	    }
+	  },
+	  "artist_translation": "Gekidan Record",
+	  "bpm": "156",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "306",
+	      "shock": "0",
+	      "freeze": "25"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "399",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "82",
+	      "shock": "0",
+	      "freeze": "5"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "153",
+	      "shock": "0",
+	      "freeze": "14"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "恋愛観測",
+	  "artist": "NU-KO",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "339",
+	      "shock": "0",
+	      "freeze": "17"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "431",
+	      "shock": "0",
+	      "freeze": "21"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "245",
+	      "shock": "0",
+	      "freeze": "3"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "188",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "337",
+	      "shock": "0",
+	      "freeze": "17"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "434",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "133",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "264",
+	      "shock": "0",
+	      "freeze": "4"
+	    }
+	  },
+	  "name_translation": "Measurement of Love"
+	}, {
+	  "unlock": true,
+	  "name": "恋する☆宇宙戦争っ！！",
+	  "artist": "Prim",
+	  "genre": "Hi-BLEEP",
+	  "double": {
+	    "challenge": {
+				"difficulty": "17",
+				"step": "720",
+				"shock": "0",
+				"freeze": "26"
+			},
+	    "difficult": {
+	      "difficulty": "13",
+	      "step": "491",
+	      "shock": "0",
+	      "freeze": "27"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "632",
+	      "shock": "0",
+	      "freeze": "41"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "310",
+	      "shock": "0",
+	      "freeze": "21"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "200",
+	  "single": {
+	    "challenge": {
+	      "difficulty": "17",
+	      "step": "739",
+	      "shock": "0",
+	      "freeze": "25"
+	    },
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "493",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "652",
+	      "shock": "0",
+	      "freeze": "26"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "163",
+	      "shock": "0",
+	      "freeze": "16"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "315",
+	      "shock": "0",
+	      "freeze": "22"
+	    }
+	  },
+	  "name_translation": "LOVE IS LIKE THE SPACEWAR!"
+	}, {
+	  "extra_exclusive": true,
+	  "name": "Start a New Day",
+	  "artist": "Sota F.",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "347",
+	      "shock": "0",
+	      "freeze": "38"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "517",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "221",
+	      "shock": "0",
+	      "freeze": "11"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "168",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "347",
+	      "shock": "0",
+	      "freeze": "38"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "521",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "109",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "219",
+	      "shock": "0",
+	      "freeze": "11"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "name": "Hopeful",
+	  "artist": "柊木りお featured by SOTAG",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "274",
+	      "shock": "0",
+	      "freeze": "16"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "417",
+	      "shock": "0",
+	      "freeze": "20"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "199",
+	      "shock": "0",
+	      "freeze": "17"
+	    }
+	  },
+	  "artist_translation": "Hiiragi Rio featured by SOTAG",
+	  "bpm": "146",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "248",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "354",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "beginner": {
+	      "difficulty": "2",
+	      "step": "89",
+	      "shock": "0",
+	      "freeze": "5"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "177",
+	      "shock": "0",
+	      "freeze": "9"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "name": "Determination",
+	  "artist": "柊木りお",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "9",
+	      "step": "222",
+	      "shock": "0",
+	      "freeze": "32"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "393",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "177",
+	      "shock": "0",
+	      "freeze": "14"
+	    }
+	  },
+	  "artist_translation": "Hiiragi Rio",
+	  "bpm": "230",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "8",
+	      "step": "221",
+	      "shock": "0",
+	      "freeze": "38"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "370",
+	      "shock": "0",
+	      "freeze": "28"
+	    },
+	    "beginner": {
+	      "difficulty": "2",
+	      "step": "90",
+	      "shock": "0",
+	      "freeze": "0"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "156",
+	      "shock": "0",
+	      "freeze": "18"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "extra_exclusive": true,
+	  "name": "Emera",
+	  "artist": "PON",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "303",
+	      "shock": "0",
+	      "freeze": "17"
+	    },
+	    "expert": {
+	      "difficulty": "16",
+	      "step": "512",
+	      "shock": "0",
+	      "freeze": "15"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "190",
+	      "shock": "0",
+	      "freeze": "13"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "161",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "305",
+	      "shock": "0",
+	      "freeze": "17"
+	    },
+	    "expert": {
+	      "difficulty": "16",
+	      "step": "515",
+	      "shock": "0",
+	      "freeze": "15"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "87",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "161",
+	      "shock": "0",
+	      "freeze": "13"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "ZEPHYRANTHES",
+	  "artist": "TAG",
+	  "genre": "BLOOM CORE",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "426",
+	      "shock": "0",
+	      "freeze": "25"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "565",
+	      "shock": "0",
+	      "freeze": "26"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "252",
+	      "shock": "0",
+	      "freeze": "23"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "180",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "422",
+	      "shock": "0",
+	      "freeze": "22"
+	    },
+	    "expert": {
+	      "difficulty": "15",
+	      "step": "592",
+	      "shock": "0",
+	      "freeze": "22"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "139",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "255",
+	      "shock": "0",
+	      "freeze": "23"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "Triple Counter",
+	  "artist": "DJ YOSHITAKA meets dj TAKA",
+	  "genre": "RISK + VACUUM",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "14",
+	      "step": "531",
+	      "shock": "0",
+	      "freeze": "24"
+	    },
+	    "expert": {
+	      "difficulty": "17",
+	      "step": "695",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "basic": {
+	      "difficulty": "9",
+	      "step": "297",
+	      "shock": "0",
+	      "freeze": "12"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "216",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "14",
+	      "step": "533",
+	      "shock": "0",
+	      "freeze": "32"
+	    },
+	    "expert": {
+	      "difficulty": "17",
+	      "step": "718",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "beginner": {
+	      "difficulty": "7",
+	      "step": "281",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "basic": {
+	      "difficulty": "11",
+	      "step": "375",
+	      "shock": "0",
+	      "freeze": "11"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "StrayedCatz",
+	  "artist": "削除",
+	  "genre": "FANTASY",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "12",
+	      "step": "322",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "431",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "181",
+	      "shock": "0",
+	      "freeze": "17"
+	    }
+	  },
+	  "artist_translation": "sakuzyo",
+	  "bpm": "114-152",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "336",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "451",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "131",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "182",
+	      "shock": "0",
+	      "freeze": "14"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "Sephirot",
+	  "artist": "SHIKI",
+	  "genre": "TRANCE",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "9",
+	      "step": "326",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "442",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "basic": {
+	      "difficulty": "5",
+	      "step": "178",
+	      "shock": "0",
+	      "freeze": "13"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "154",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "346",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "466",
+	      "shock": "0",
+	      "freeze": "3"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "112",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "195",
+	      "shock": "0",
+	      "freeze": "17"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "Grand Chariot",
+	  "artist": "xi",
+	  "genre": "HARD ART CORE",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "373",
+	      "shock": "0",
+	      "freeze": "18"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "518",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "213",
+	      "shock": "0",
+	      "freeze": "25"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "191",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "383",
+	      "shock": "0",
+	      "freeze": "17"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "518",
+	      "shock": "0",
+	      "freeze": "13"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "94",
+	      "shock": "0",
+	      "freeze": "18"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "216",
+	      "shock": "0",
+	      "freeze": "18"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "Angelic Jelly",
+	  "artist": "t+pazolite",
+	  "genre": "HAPPY で HARDCORE",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "349",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "523",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "235",
+	      "shock": "0",
+	      "freeze": "14"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "100-200",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "402",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "531",
+	      "shock": "0",
+	      "freeze": "2"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "123",
+	      "shock": "0",
+	      "freeze": "7"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "219",
+	      "shock": "0",
+	      "freeze": "20"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "Far east nightbird kors k Remix -DDR edit ver-",
+	  "artist": "猫叉Master",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "309",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "396",
+	      "shock": "0",
+	      "freeze": "18"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "220",
+	      "shock": "0",
+	      "freeze": "13"
+	    }
+	  },
+	  "artist_translation": "Nekomata Master",
+	  "bpm": "175",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "312",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "393",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "77",
+	      "shock": "0",
+	      "freeze": "1"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "213",
+	      "shock": "0",
+	      "freeze": "17"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "Far east nightbird",
+	  "artist": "猫叉Master",
+	  "genre": "DRUM'N'BASS",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "329",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "452",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "206",
+	      "shock": "0",
+	      "freeze": "4"
+	    }
+	  },
+	  "artist_translation": "Nekomata Master",
+	  "bpm": "180",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "327",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "453",
+	      "shock": "0",
+	      "freeze": "7"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "95",
+	      "shock": "0",
+	      "freeze": "0"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "225",
+	      "shock": "0",
+	      "freeze": "5"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "STERLING SILVER (U1 overground mix)",
+	  "artist": "TAG",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "352",
+	      "shock": "0",
+	      "freeze": "8"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "508",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "225",
+	      "shock": "0",
+	      "freeze": "9"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "185",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "348",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "508",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "102",
+	      "shock": "0",
+	      "freeze": "1"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "236",
+	      "shock": "0",
+	      "freeze": "6"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "unlock": true,
+	  "name": "STERLING SILVER",
+	  "artist": "TAG",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "344",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "476",
+	      "shock": "0",
+	      "freeze": "17"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "224",
+	      "shock": "0",
+	      "freeze": "3"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "175",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "338",
+	      "shock": "0",
+	      "freeze": "20"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "486",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "beginner": {
+	      "difficulty": "4",
+	      "step": "144",
+	      "shock": "0",
+	      "freeze": "2"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "236",
+	      "shock": "0",
+	      "freeze": "3"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+		"extra_exclusive": true,
+		"name": "Come to Life",
+		"artist": "ARM (IOSYS) feat. Nicole Curry",
+		"double": {
+			"challenge": null,
+			"difficult": {
+				"difficulty": "13",
+				"step": "409",
+				"shock": "0",
+				"freeze": "9"
+			},
+			"expert": {
+				"difficulty": "16",
+				"step": "611",
+				"shock": "0",
+				"freeze": "11"
+			},
+			"basic": {
+				"difficulty": "8",
+				"step": "260",
+				"shock": "0",
+				"freeze": "8"
+			}
+		},
+		"artist_translation": "",
+		"bpm": "90-180",
+		"single": {
+			"challenge": null,
+			"difficult": {
+				"difficulty": "12",
+				"step": "415",
+				"shock": "0",
+				"freeze": "30"
+			},
+			"expert": {
+				"difficulty": "16",
+				"step": "611",
+				"shock": "0",
+				"freeze": "31"
+			},
+			"beginner": {
+				"difficulty": "4",
+				"step": "144",
+				"shock": "0",
+				"freeze": "8"
+			},
+			"basic": {
+				"difficulty": "8",
+				"step": "263",
+				"shock": "0",
+				"freeze": "8"
+			}
+		},
+		"name_translation": ""
+	}, {
 		"unlock": "",
 		"name": ".59",
 		"artist": "dj TAKA",
@@ -2240,12 +3587,17 @@ var songs = [
 		},
 		"name_translation": "Asairo no kamihikouki"
 	}, {
-		"extra_exclusive": true,
+		"unlock": true,
 		"name": "Astrogazer",
 		"artist": "DJ TOTTO",
 		"genre": "",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "18",
+				"step": "699",
+				"shock": "0",
+				"freeze": "39"
+			},
 			"difficult": {
 				"difficulty": "12",
 				"step": "346",
@@ -2268,7 +3620,12 @@ var songs = [
 		"artist_translation": "",
 		"bpm": "154",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "18",
+				"step": "712",
+				"shock": "0",
+				"freeze": "38"
+			},
 			"difficult": {
 				"difficulty": "12",
 				"step": "?",
@@ -3640,7 +4997,6 @@ var songs = [
 		},
 		"name_translation": "BeBeatstream"
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Believe",
 		"artist": "Chaos Featuring CeCe Peniston",
 		"genre": "",
@@ -4220,7 +5576,6 @@ var songs = [
 		},
 		"name_translation": "BREAK DOWN!"
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Break Free",
 		"artist": "Ariana Grande feat. Zedd",
 		"genre": "",
@@ -9010,7 +10365,7 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"floor_infection": true,
+		"unlock": true,
 		"name": "ドキドキ☆流星トラップガール!!",
 		"artist": "流星トラップボーイズ",
 		"genre": "",
@@ -12771,7 +14126,7 @@ var songs = [
 		},
 		"name_translation": "Furisodeshon"
 	}, {
-		"us_locked": true,
+		"removed": true,
 		"name": "future gazer",
 		"artist": "fripSide",
 		"genre": "",
@@ -13586,62 +14941,6 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "GOLDEN SKY",
-		"artist": "SMiLE.dk",
-		"genre": "",
-		"double": {
-			"challenge": null,
-			"difficult": {
-				"difficulty": "5",
-				"step": "175",
-				"shock": "0",
-				"freeze": "4"
-			},
-			"expert": {
-				"difficulty": "9",
-				"step": "253",
-				"shock": "0",
-				"freeze": "1"
-			},
-			"basic": {
-				"difficulty": "4",
-				"step": "121",
-				"shock": "0",
-				"freeze": "4"
-			}
-		},
-		"artist_translation": "",
-		"bpm": "135",
-		"single": {
-			"challenge": null,
-			"difficult": {
-				"difficulty": "6",
-				"step": "189",
-				"shock": "0",
-				"freeze": "1"
-			},
-			"expert": {
-				"difficulty": "8",
-				"step": "248",
-				"shock": "0",
-				"freeze": "3"
-			},
-			"beginner": {
-				"difficulty": "3",
-				"step": "93",
-				"shock": "0",
-				"freeze": "0"
-			},
-			"basic": {
-				"difficulty": "4",
-				"step": "130",
-				"shock": "0",
-				"freeze": "2"
-			}
-		},
-		"name_translation": ""
-	}, {
-		"unlock": "",
 		"name": "GORGEOUS 2012",
 		"artist": "THE SURRENDERS",
 		"genre": "",
@@ -14201,7 +15500,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Happy",
 		"artist": "Pharrell Williams",
 		"genre": "",
@@ -14425,7 +15723,6 @@ var songs = [
 		},
 		"name_translation": "HAPPY LUCKY YEAPPY"
 	}, {
-		"unlock": "Added on 2016-04-25",
 		"name": "ハッピーシンセサイザ",
 		"artist": "EasyPop",
 		"genre": "",
@@ -15301,7 +16598,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Hillbilly Shoes",
 		"artist": "Montgomery Gentry",
 		"genre": "",
@@ -15703,7 +16999,6 @@ var songs = [
 		},
 		"name_translation": "Hoshikuzu no kiroku"
 	}, {
-		"unlock": "Added on 2016-04-25",
 		"name": "放課後ストライド",
 		"artist": "Last Note.",
 		"genre": "",
@@ -16126,7 +17421,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "I Want You To Know",
 		"artist": "Zedd feat. Selena Gomez",
 		"genre": "",
@@ -17240,7 +18534,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-04-25",
 		"name": "色は匂へど散りぬるを",
 		"artist": "幽閉サテライト feat. Senya",
 		"genre": "",
@@ -18731,7 +20024,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-08-05",
 		"name": "倉野川音頭",
 		"artist": "日向美ビタースイーツ♪＆ひなちくん",
 		"genre": "",
@@ -18787,7 +20079,6 @@ var songs = [
 		},
 		"name_translation": "Kuranogawa ondo"
 	}, {
-		"unlock": "Added on 2016-04-18",
 		"name": "黒髪乱れし修羅となりて～凛 edition～",
 		"artist": "日向美ビタースイーツ♪",
 		"genre": "",
@@ -19489,7 +20780,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-07-21",
 		"name": "Lesson by DJ",
 		"artist": "U.T.D & Friends",
 		"genre": "",
@@ -22013,7 +23303,7 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"us_locked": true,
+		"removed": true,
 		"name": "女々しくて",
 		"artist": "ゴールデンボンバー",
 		"genre": "",
@@ -23636,12 +24926,17 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"extra_exclusive": true,
+		"unlock": true,
 		"name": "New Century",
 		"artist": "Sota F.",
 		"genre": "",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "18",
+				"step": "611",
+				"shock": "45",
+				"freeze": "93"
+			},
 			"difficult": {
 				"difficulty": "14",
 				"step": "439",
@@ -23664,7 +24959,12 @@ var songs = [
 		"artist_translation": "",
 		"bpm": "98-195",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "18",
+				"step": "669",
+				"shock": "19",
+				"freeze": "80"
+			},
 			"difficult": {
 				"difficulty": "14",
 				"step": "442",
@@ -29239,12 +30539,17 @@ var songs = [
 		},
 		"name_translation": "Rinto shite saku hana no gotoku ~Hinabita edition~"
 	}, {
-		"extra_exclusive": true,
+		"unlock": true,
 		"name": "RISING FIRE HAWK",
 		"artist": "L.E.D.-G",
 		"genre": "",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "17",
+				"step": "660",
+				"shock": "0",
+				"freeze": "5"
+			},
 			"difficult": {
 				"difficulty": "11",
 				"step": "400",
@@ -29265,9 +30570,14 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "150",
+		"bpm": "157",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "17",
+				"step": "664",
+				"shock": "0",
+				"freeze": "11"
+			},
 			"difficult": {
 				"difficulty": "11",
 				"step": "402",
@@ -30877,7 +32187,7 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"floor_infection": true,
+		"unlock": true,
 		"name": "second spring storm",
 		"artist": "Spacelectro",
 		"genre": "",
@@ -31926,7 +33236,6 @@ var songs = [
 		},
 		"name_translation": "Shizuku"
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Shut Up and Dance",
 		"artist": "Walk The Moon",
 		"genre": "",
@@ -34339,7 +35648,7 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"us_locked": true,
+		"removed": true,
 		"name": "STRAIGHT JET",
 		"artist": "栗林みな実",
 		"genre": "",
@@ -34461,7 +35770,7 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"floor_infection": true,
+		"unlock": true,
 		"name": "Strobe♡Girl",
 		"artist": "colate",
 		"genre": "",
@@ -37031,7 +38340,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Time Of Our Lives",
 		"artist": "Pitbull",
 		"genre": "",
@@ -40222,7 +41530,6 @@ var songs = [
 		},
 		"name_translation": ""
 	}, {
-		"unlock": "Added on 2016-07-07",
 		"name": "Wake Me Up",
 		"artist": "Avicii",
 		"genre": "",
