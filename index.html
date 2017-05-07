@@ -45,6 +45,26 @@
                 color: grey;
             }
 
+            .chart.beginner {
+                color: blue;
+            }
+
+            .chart.basic {
+                color: #d2d60c;
+            }
+
+            .chart.difficult {
+                color: red;
+            }
+
+            .chart.expert {
+                color: green;
+            }
+
+            .chart.challenge {
+                color: purple;
+            }
+
             .vetoed {
                 text-decoration: line-through;
             }
@@ -181,7 +201,7 @@
                 if (randomChart) {
                     validCharts.splice(randomIndex, 1);
 
-                    html += '<div class="chart">Name: ' + randomChart.name + ', Artist: ' + randomChart.artist + ', BPM: ' + randomChart.bpm + ', Difficulty: ' + randomChart.difficulty.charAt(0).toUpperCase() + randomChart.difficulty.slice(1) + ', Rating: ' + randomChart.rating +'</div>';
+                    html += '<div class="chart ' + randomChart.difficulty + '">Name: ' + randomChart.name + ', Artist: ' + randomChart.artist + ', BPM: ' + randomChart.bpm + ', Difficulty: ' + randomChart.difficulty.charAt(0).toUpperCase() + randomChart.difficulty.slice(1) + ', Rating: ' + randomChart.rating +'</div>';
                 }
             }
 
@@ -197,12 +217,6 @@
                     $target.addClass('vetoed');
                 }
             });
-
-			$(".chart:contains('Beginner,')").css('color', 'dodgerblue');
-			$(".chart:contains('Basic,')").css('color', 'gold');
-			$(".chart:contains('Difficult,')").css('color', 'red');
-			$(".chart:contains('Expert,')").css('color', 'green');
-			$(".chart:contains('Challenge,')").css('color', 'purple');
         }));
     });
 
