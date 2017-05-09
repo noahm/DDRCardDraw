@@ -42,31 +42,52 @@
 
             .chart-list:not(:first-child) {
                 padding-top: 20px;
-                color: grey;
+                opacity: 0.5;
+            }
+
+            .chart-list {
+                display: flex;
+            }
+
+            .chart {
+                flex: 1 0 0;
+                text-align: center;
+                border: 1px solid black;
+                border-radius: 5px;
+                margin-left: 10px;
+                padding: 5px;
+            }
+
+            .name, .name-translation {
+                font-weight: bold;
+            }
+
+            .artist, .artist-translation {
+                font-style: italic;
             }
 
             .chart.beginner {
-                color: blue;
+                background-color: #6eccc4;
             }
 
             .chart.basic {
-                color: #d2d60c;
+                background-color: #e0de5c;
             }
 
             .chart.difficult {
-                color: red;
+                background-color: #e8715f;
             }
 
             .chart.expert {
-                color: green;
+                background-color: #72cc6e;
             }
 
             .chart.challenge {
-                color: purple;
+                background-color: #cc71e8;
             }
 
-            .vetoed {
-                text-decoration: line-through;
+            .chart.vetoed {
+                opacity: 0.3;
             }
 
             .footer {
@@ -167,7 +188,8 @@
                 charts,
                 chart,
                 randomIndex,
-                randomSong;
+                randomSong,
+                diff;
 
             for (var i = 0; i < songs.length; i++) {
                 currentSong = songs[i];
@@ -184,7 +206,9 @@
                                 (chart.difficulty >= lowerBound && chart.difficulty <= upperBound)) {
                             validCharts.push({
                                 'name': currentSong.name,
+                                'nameTranslation': currentSong.name_translation,
                                 'artist': currentSong.artist,
+                                'artistTranslation': currentSong.artist_translation,
                                 'bpm': currentSong.bpm,
                                 'difficulty': key,
                                 'rating': chart.difficulty
@@ -200,8 +224,21 @@
 
                 if (randomChart) {
                     validCharts.splice(randomIndex, 1);
+                    diff = randomChart.difficulty;
 
-                    html += '<div class="chart ' + randomChart.difficulty + '">Name: ' + randomChart.name + ', Artist: ' + randomChart.artist + ', BPM: ' + randomChart.bpm + ', Difficulty: ' + randomChart.difficulty.charAt(0).toUpperCase() + randomChart.difficulty.slice(1) + ', Rating: ' + randomChart.rating +'</div>';
+                    html += '<div class="chart ' + randomChart.difficulty + '">';
+
+                    html += '<div class="name">' + randomChart.name + '</div>';
+                    if (randomChart.nameTranslation) {
+                        html += '<div class="name-translation">[' + randomChart.nameTranslation + ']</div>';
+                    }
+                    html += '<div class="artist">' + randomChart.artist + '</div>';
+                    if (randomChart.artistTranslation) {
+                        html += '<div class="artist-translation">[' + randomChart.artistTranslation + ']</div>';
+                    }
+                    html += '<div class="bpm">' + randomChart.bpm + ' BPM</div>';
+                    html += '<div class="difficulty ' + diff + '">' + diff.toUpperCase() + ' ' + randomChart.rating + '</div>';
+                    html += '</div>';
                 }
             }
 

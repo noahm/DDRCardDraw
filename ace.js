@@ -1,6 +1,6 @@
 var songs = [
 	{
-		"removed": true,
+	  "removed": true,
 	  "name": "Thank You Merry Christmas",
 	  "artist": "VENUS",
 	  "genre": "",
@@ -2403,7 +2403,7 @@ var songs = [
 				"freeze": "26"
 			}
 		},
-		"name_translation": "AETHER"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "AFRONOVA",
@@ -5172,7 +5172,7 @@ var songs = [
 				"freeze": "16"
 			}
 		},
-		"name_translation": "Blind Justice -Torn souls, Hurt Faiths-"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Bloody Tears(IIDX EDITION)",
@@ -5574,7 +5574,7 @@ var songs = [
 				"freeze": "7"
 			}
 		},
-		"name_translation": "BREAK DOWN!"
+		"name_translation": ""
 	}, {
 		"name": "Break Free",
 		"artist": "Ariana Grande feat. Zedd",
@@ -7646,7 +7646,7 @@ var songs = [
 				"freeze": "1"
 			}
 		},
-		"name_translation": "Cirno no perfect sansuu kyoushitsu (EDM REMIX)"
+		"name_translation": "Cirno's Perfect Math Class (EDM REMIX)"
 	}, {
 		"unlock": true,
 		"name": "Cleopatrysm",
@@ -8210,7 +8210,7 @@ var songs = [
 				"freeze": "31"
 			}
 		},
-		"name_translation": "CRAZY LOVE"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "クリムゾンゲイト",
@@ -9697,7 +9697,7 @@ var songs = [
 				"freeze": "0"
 			}
 		},
-		"name_translation": "deltaMAX"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Desert Journey",
@@ -14763,7 +14763,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Go↓Go↑Girls&Boys;!",
+		"name": "Go↓Go↑Girls&Boys!",
 		"artist": "松下feat.Sota & wac",
 		"genre": "",
 		"double": {
@@ -14816,7 +14816,7 @@ var songs = [
 				"freeze": "7"
 			}
 		},
-		"name_translation": "Go Go Girls & Boys!"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "going up",
@@ -15274,7 +15274,7 @@ var songs = [
 				"freeze": "?"
 			}
 		},
-		"name_translation": "Ha-lle-lu-jah"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Habibe (Antuh muhleke)",
@@ -15609,7 +15609,7 @@ var songs = [
 				"freeze": "4"
 			}
 		},
-		"name_translation": "HAPPY ANGEL"
+		"name_translation": ""
 	}, {
 		"unlock": true,
 		"name": "ハピ恋☆らぶりぃタイム!!",
@@ -15721,7 +15721,7 @@ var songs = [
 				"freeze": "12"
 			}
 		},
-		"name_translation": "HAPPY LUCKY YEAPPY"
+		"name_translation": ""
 	}, {
 		"name": "ハッピーシンセサイザ",
 		"artist": "EasyPop",
@@ -19554,7 +19554,7 @@ var songs = [
 				"freeze": "27"
 			}
 		},
-		"name_translation": "KIMONO PRINCESS"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "KISS KISS KISS",
@@ -19834,7 +19834,7 @@ var songs = [
 				"freeze": "11"
 			}
 		},
-		"name_translation": "Kono aoi sora no shita de"
+		"name_translation": "Kono aozora no shita de"
 	}, {
 		"unlock": "",
 		"name": "この子の七つのお祝いに",
@@ -21505,7 +21505,7 @@ var songs = [
 				"freeze": "0"
 			}
 		},
-		"name_translation": "LOVE AGAIN TONIGHT (For Melissa MIX)"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "LOVE IS ORANGE",
@@ -21683,7 +21683,7 @@ var songs = [
 				"freeze": "8"
 			}
 		},
-		"name_translation": "LOVE LOVE SHINE"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "♥Love²シュガ→♥",
@@ -25478,7 +25478,7 @@ var songs = [
 				"freeze": "?"
 			}
 		},
-		"name_translation": "Night of Nights"
+		"name_translation": "Night of Knights"
 	}, {
 		"unlock": "",
 		"name": "nightbird lost wing",
@@ -26882,7 +26882,7 @@ var songs = [
 				"freeze": "1"
 			}
 		},
-		"name_translation": "PARANOiA (HADES)"
+		"name_translation": ""
 	}, {
 		"us_locked": true,
 		"name": "PARANOiA (kskst mix)",
@@ -27290,7 +27290,7 @@ var songs = [
 				"freeze": "0"
 			}
 		},
-		"name_translation": "PARANOiA MAX (DIRTY MIX)"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "PARANOiA MAX~DIRTY MIX~ (X-Special)",
@@ -29311,7 +29311,7 @@ var songs = [
 				"freeze": "7"
 			}
 		},
-		"name_translation": "Qipchaq"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Quick Master",
@@ -30237,7 +30237,7 @@ var songs = [
 				"freeze": "49"
 			}
 		},
-		"name_translation": "REVOLUTION"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "REVOLUTIONARY ADDICT",
@@ -31371,7 +31371,7 @@ var songs = [
 				"freeze": "12"
 			}
 		},
-		"name_translation": "SAGA"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "桜",
@@ -33066,7 +33066,7 @@ var songs = [
 				"freeze": "24"
 			}
 		},
-		"name_translation": "shining"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Shiny World",
@@ -33554,7 +33554,7 @@ var songs = [
 				"freeze": "17"
 			}
 		},
-		"name_translation": "SILVER DREAM"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Silver Platform - I wanna get your heart -",
@@ -33900,7 +33900,7 @@ var songs = [
 				"freeze": "4"
 			}
 		},
-		"name_translation": "smooooch"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "snow prism",
@@ -35824,7 +35824,7 @@ var songs = [
 				"freeze": "7"
 			}
 		},
-		"name_translation": "Strobe Girl"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Struggle",
@@ -36567,7 +36567,7 @@ var songs = [
 				"freeze": "2"
 			}
 		},
-		"name_translation": "Sweet Sweet Love Magic"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "switch",
@@ -40093,7 +40093,7 @@ var songs = [
 				"freeze": "4"
 			}
 		},
-		"name_translation": "TRUE LOVE"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Trust -DanceDanceRevolution mix-",
@@ -40470,7 +40470,7 @@ var songs = [
 				"freeze": "10"
 			}
 		},
-		"name_translation": "TWINKLE HEART"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "Übertreffen",
@@ -40526,7 +40526,7 @@ var songs = [
 				"freeze": "14"
 			}
 		},
-		"name_translation": "Ubertreffen"
+		"name_translation": ""
 	}, {
 		"unlock": "",
 		"name": "un deux trois",
