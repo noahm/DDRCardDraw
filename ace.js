@@ -1,5 +1,61 @@
 var songs = [
 	{
+		"extra_exclusive": true,
+	  "name": "Cosy Catastrophe",
+	  "artist": "SYUNN",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "13",
+	      "step": "406",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "expert": {
+	      "difficulty": "16",
+	      "step": "537",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "basic": {
+	      "difficulty": "9",
+	      "step": "298",
+	      "shock": "0",
+	      "freeze": "9"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "90-360",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "13",
+	      "step": "422",
+	      "shock": "0",
+	      "freeze": "13"
+	    },
+	    "expert": {
+	      "difficulty": "16",
+	      "step": "550",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "beginner": {
+	      "difficulty": "6",
+	      "step": "188",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "9",
+	      "step": "300",
+	      "shock": "0",
+	      "freeze": "9"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
 	  "removed": true,
 	  "name": "Thank You Merry Christmas",
 	  "artist": "VENUS",
