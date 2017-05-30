@@ -2918,9 +2918,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "173",
+				"shock": "0",
+				"freeze": "1"
 			}
 		},
 		"name_translation": "ALL MY HEART -kono koi ni, watashi no subete o kakeru-"
@@ -3252,9 +3252,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "10",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "299",
+				"shock": "0",
+				"freeze": "7"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -3264,15 +3264,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "110",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "194",
+				"shock": "0",
+				"freeze": "4"
 			}
 		},
 		"name_translation": "Ama no jyaku"
@@ -3628,9 +3628,9 @@ var songs = [
 			},
 			"difficult": {
 				"difficulty": "12",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "362",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"expert": {
 				"difficulty": "16",
@@ -4682,9 +4682,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "10",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "317",
+				"shock": "0",
+				"freeze": "4"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -4694,15 +4694,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "136",
+				"shock": "0",
+				"freeze": "7"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "204",
+				"shock": "0",
+				"freeze": "22"
 			}
 		},
 		"name_translation": "Bassdrop Freaks"
@@ -5027,9 +5027,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "233",
+				"shock": "0",
+				"freeze": "5"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -5039,15 +5039,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "92",
+				"shock": "0",
+				"freeze": "6"
 			},
 			"basic": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "141",
+				"shock": "0",
+				"freeze": "8"
 			}
 		},
 		"name_translation": ""
@@ -5606,9 +5606,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "264",
+				"shock": "0",
+				"freeze": "36"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -5618,15 +5618,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "122",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "178",
+				"shock": "0",
+				"freeze": "14"
 			}
 		},
 		"name_translation": ""
@@ -8467,9 +8467,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "12",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "305",
+				"shock": "0",
+				"freeze": "8"
 			},
 			"expert": {
 				"difficulty": "14",
@@ -8479,15 +8479,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "109",
+				"shock": "0",
+				"freeze": "12"
 			},
 			"basic": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "180",
+				"shock": "0",
+				"freeze": "15"
 			}
 		},
 		"name_translation": ""
@@ -8622,15 +8622,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "86",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "169",
+				"shock": "0",
+				"freeze": "9"
 			}
 		},
 		"name_translation": "Dadadadadadadadadada"
@@ -9185,9 +9185,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "11",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "239",
+				"shock": "0",
+				"freeze": "5"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -9197,15 +9197,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "86",
+				"shock": "0",
+				"freeze": "1"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "146",
+				"shock": "0",
+				"freeze": "7"
 			}
 		},
 		"name_translation": ""
@@ -15207,15 +15207,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "141",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "205",
+				"shock": "0",
+				"freeze": "2"
 			}
 		},
 		"name_translation": ""
@@ -15269,9 +15269,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "167",
+				"shock": "0",
+				"freeze": "3"
 			}
 		},
 		"name_translation": ""
@@ -15530,9 +15530,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "10",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "225",
+				"shock": "0",
+				"freeze": "67"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -15542,15 +15542,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "76",
+				"shock": "0",
+				"freeze": "17"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "129",
+				"shock": "0",
+				"freeze": "15"
 			}
 		},
 		"name_translation": ""
@@ -15642,9 +15642,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "259",
+				"shock": "0",
+				"freeze": "9"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -15654,15 +15654,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "109",
+				"shock": "0",
+				"freeze": "1"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "164",
+				"shock": "0",
+				"freeze": "12"
 			}
 		},
 		"name_translation": "Happy koi lovely time!!"
@@ -15765,15 +15765,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "91",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "126",
+				"shock": "0",
+				"freeze": "3"
 			}
 		},
 		"name_translation": "Happy Synthesizer"
@@ -16432,15 +16432,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "107",
+				"shock": "0",
+				"freeze": "8"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "177",
+				"shock": "0",
+				"freeze": "6"
 			}
 		},
 		"name_translation": ""
@@ -16628,9 +16628,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "10",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "214",
+				"shock": "0",
+				"freeze": "3"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -16640,15 +16640,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "87",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "118",
+				"shock": "0",
+				"freeze": "1"
 			}
 		},
 		"name_translation": ""
@@ -17041,15 +17041,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "89",
+				"shock": "0",
+				"freeze": "15"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "180",
+				"shock": "0",
+				"freeze": "5"
 			}
 		},
 		"name_translation": "Houkago stride"
@@ -17451,9 +17451,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "217",
+				"shock": "0",
+				"freeze": "12"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -17463,15 +17463,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "1",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "99",
+				"shock": "0",
+				"freeze": "11"
 			},
 			"basic": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "147",
+				"shock": "0",
+				"freeze": "18"
 			}
 		},
 		"name_translation": ""
@@ -17957,9 +17957,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "10",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "361",
+				"shock": "0",
+				"freeze": "3"
 			}
 		},
 		"name_translation": ""
@@ -18576,15 +18576,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "116",
+				"shock": "0",
+				"freeze": "13"
 			},
 			"basic": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "202",
+				"shock": "0",
+				"freeze": "4"
 			}
 		},
 		"name_translation": "Iro wa nioi e do chirinuruwo"
@@ -19060,9 +19060,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "202",
+				"shock": "0",
+				"freeze": "18"
 			}
 		},
 		"name_translation": "Juniseiza no seiiki"
@@ -20054,9 +20054,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "217",
+				"shock": "0",
+				"freeze": "6"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -20066,15 +20066,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "122",
+				"shock": "0",
+				"freeze": "5"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "169",
+				"shock": "0",
+				"freeze": "15"
 			}
 		},
 		"name_translation": "Kuranogawa ondo"
@@ -20121,9 +20121,9 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "111",
+				"shock": "0",
+				"freeze": "4"
 			},
 			"basic": {
 				"difficulty": "6",
@@ -20165,9 +20165,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "362",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -20183,9 +20183,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "187",
+				"shock": "0",
+				"freeze": "1"
 			}
 		},
 		"name_translation": "Kyun x kyun bakkyun LOVE"
@@ -21258,9 +21258,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "10",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "372",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -21270,15 +21270,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "147",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "262",
+				"shock": "0",
+				"freeze": "0"
 			}
 		},
 		"name_translation": "Lost one no goukoku"
@@ -22184,9 +22184,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "223",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -22202,9 +22202,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "113",
+				"shock": "0",
+				"freeze": "0"
 			}
 		},
 		"name_translation": "Mahou no tamago ~Cocona ELECTRO POP edition~"
@@ -25467,15 +25467,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "1",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "78",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "210",
+				"shock": "0",
+				"freeze": "0"
 			}
 		},
 		"name_translation": "Night of Knights"
@@ -25857,9 +25857,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "280",
+				"shock": "0",
+				"freeze": "39"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -25875,9 +25875,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "198",
+				"shock": "0",
+				"freeze": "25"
 			}
 		},
 		"name_translation": "Oboro"
@@ -30636,9 +30636,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "303",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -30648,15 +30648,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "75",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "161",
+				"shock": "0",
+				"freeze": "9"
 			}
 		},
 		"name_translation": "Rokuchounen to ichiya monogatari"
@@ -31005,21 +31005,21 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "13",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "352",
+				"shock": "0",
+				"freeze": "31"
 			},
 			"expert": {
 				"difficulty": "16",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "618",
+				"shock": "0",
+				"freeze": "66"
 			},
 			"basic": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "220",
+				"shock": "0",
+				"freeze": "37"
 			}
 		},
 		"artist_translation": "",
@@ -31028,9 +31028,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "13",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "372",
+				"shock": "0",
+				"freeze": "33"
 			},
 			"expert": {
 				"difficulty": "16",
@@ -31040,15 +31040,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "138",
+				"shock": "0",
+				"freeze": "5"
 			},
 			"basic": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "231",
+				"shock": "0",
+				"freeze": "38"
 			}
 		},
 		"name_translation": ""
@@ -31928,9 +31928,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "231",
+				"shock": "0",
+				"freeze": "31"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -31946,9 +31946,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "124",
+				"shock": "0",
+				"freeze": "25"
 			}
 		},
 		"name_translation": "Sayonara Trip ~Cocona EDM edition~"
@@ -33155,9 +33155,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "384",
+				"shock": "0",
+				"freeze": "3"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -33167,15 +33167,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "4",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "152",
+				"shock": "0",
+				"freeze": "1"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "262",
+				"shock": "0",
+				"freeze": "2"
 			}
 		},
 		"name_translation": ""
@@ -33266,9 +33266,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "201",
+				"shock": "0",
+				"freeze": "7"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -33278,15 +33278,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "94",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "144",
+				"shock": "0",
+				"freeze": "9"
 			}
 		},
 		"name_translation": ""
@@ -33340,9 +33340,9 @@ var songs = [
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "182",
+				"shock": "0",
+				"freeze": "3"
 			}
 		},
 		"name_translation": ""
@@ -34301,9 +34301,9 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "81",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"basic": {
 				"difficulty": "8",
@@ -34620,9 +34620,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "8",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "176",
+				"shock": "0",
+				"freeze": "6"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -34632,15 +34632,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "77",
+				"shock": "0",
+				"freeze": "1"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "131",
+				"shock": "0",
+				"freeze": "8"
 			}
 		},
 		"name_translation": ""
@@ -34912,15 +34912,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "67",
+				"shock": "0",
+				"freeze": "9"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "158",
+				"shock": "0",
+				"freeze": "19"
 			}
 		},
 		"name_translation": ""
@@ -37114,9 +37114,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "277",
+				"shock": "0",
+				"freeze": "12"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -37126,9 +37126,9 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "91",
+				"shock": "0",
+				"freeze": "0"
 			},
 			"basic": {
 				"difficulty": "5",
@@ -38370,9 +38370,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "207",
+				"shock": "0",
+				"freeze": "7"
 			},
 			"expert": {
 				"difficulty": "11",
@@ -38382,15 +38382,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "63",
+				"shock": "0",
+				"freeze": "6"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "127",
+				"shock": "0",
+				"freeze": "11"
 			}
 		},
 		"name_translation": ""
@@ -39062,9 +39062,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "246",
+				"shock": "0",
+				"freeze": "6"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -39074,15 +39074,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "107",
+				"shock": "0",
+				"freeze": "5"
 			},
 			"basic": {
 				"difficulty": "6",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "173",
+				"shock": "0",
+				"freeze": "7"
 			}
 		},
 		"name_translation": ""
@@ -41560,9 +41560,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "285",
+				"shock": "0",
+				"freeze": "2"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -41572,15 +41572,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "104",
+				"shock": "0",
+				"freeze": "7"
 			},
 			"basic": {
 				"difficulty": "5",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "152",
+				"shock": "0",
+				"freeze": "4"
 			}
 		},
 		"name_translation": ""
@@ -42517,9 +42517,9 @@ var songs = [
 			"challenge": null,
 			"difficult": {
 				"difficulty": "9",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "218",
+				"shock": "0",
+				"freeze": "12"
 			},
 			"expert": {
 				"difficulty": "12",
@@ -42529,15 +42529,15 @@ var songs = [
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "114",
+				"shock": "0",
+				"freeze": "1"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "?",
-				"shock": "?",
-				"freeze": "?"
+				"step": "169",
+				"shock": "0",
+				"freeze": "11"
 			}
 		},
 		"name_translation": ""
