@@ -446,7 +446,7 @@ var songs = [
 	  "name_translation": "Measurement of Love"
 	}, {
 	  "unlock": true,
-	  "name": "恋する☆宇宙戦争っ！！",
+	  "name": "恋する☆宇宙戦争っ!!",
 	  "artist": "Prim",
 	  "genre": "Hi-BLEEP",
 	  "double": {
@@ -2462,7 +2462,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "AFRONOVA (FROM NONSTOP MEGAMIX)",
+		"name": "AFRONOVA(FROM NONSTOP MEGAMIX)",
 		"artist": "RE-VENGE",
 		"genre": "",
 		"double": {
@@ -2493,7 +2493,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "AFRONOVA (X-Special)",
+		"name": "AFRONOVA(X-Special)",
 		"artist": "RE-VENGE",
 		"genre": "",
 		"double": {
@@ -2525,7 +2525,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "AFRONOVA PRIMEVAL",
-		"artist": "8-bit",
+		"artist": "8 bit",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -2871,7 +2871,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "ALL MY HEART -この恋に、わたしの全てを賭ける-",
-		"artist": "SUPER HEROINE 彩香 -AYAKA-",
+		"artist": "SUPER HEROINE 彩香-AYAKA-",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -3104,8 +3104,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "AM-3P (303 BASS MIX)",
-		"artist": "KTz remixed by U1",
+		"name": "AM-3P -303 BASS MIX-",
+		"artist": "KTz(remixed by U1)",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -3160,7 +3160,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "AM-3P (AM EAST mix)",
+		"name": "AM-3P(AM EAST mix)",
 		"artist": "KTz",
 		"genre": "",
 		"double": {
@@ -3191,7 +3191,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "AM-3P(\"CHAOS\" Special)",
+		"name": "AM-3P (\"CHAOS\" Special)",
 		"artist": "KTz",
 		"genre": "",
 		"double": {
@@ -3223,7 +3223,7 @@ var songs = [
 	}, {
 		"us_locked": true,
 		"name": "天ノ弱",
-		"artist": "164 feat. GUMI",
+		"artist": "164",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -3888,7 +3888,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "B4U (B4 ZA BEAT MIX)",
+		"name": "B4U(B4 ZA BEAT MIX)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -3919,7 +3919,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "B4U(\"VOLTAGE\" Special)",
+		"name": "B4U (\"VOLTAGE\" Special)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -4007,7 +4007,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Back In Your Arms",
-		"artist": "jun feat.DJ Silver vs Milo ft. Becca Hossany",
+		"artist": "jun feat. DJ Silver vs Milo ft. Becca Hossany",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -4063,7 +4063,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Bad Apple!! feat. nomico",
-		"artist": "Masayoshi Minoshima",
+		"artist": "Alstroemeria Records",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -4184,7 +4184,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "BAD ROUTINE",
+		"name": "Bad Routine",
 		"artist": "D.J. Spugna",
 		"genre": "FILTER HOUSE",
 		"double": {
@@ -4419,7 +4419,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "BALLAD FOR YOU～想いの雨～",
-		"artist": "NM feat. THOMAS HOWARD",
+		"artist": "NM feat. Thomas Howard",
 		"genre": "BALLAD",
 		"double": {
 			"challenge": null,
@@ -4475,7 +4475,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "BALLAD THE FEATHERS",
-		"artist": "S.S.D.FANTASICA feat.Naomi Koizumi",
+		"artist": "SHIN SOUND DESIGN feat.Naomi Koizumi",
 		"genre": "CELTIC REEL",
 		"double": {
 			"challenge": {
@@ -4653,7 +4653,7 @@ var songs = [
 	}, {
 		"unlock": true,
 		"name": "ベィスドロップ・フリークス",
-		"artist": "かめりあ feat.ななひら",
+		"artist": "かめりあ feat. ななひら",
 		"genre": "A-STYLE DRUMSTEP",
 		"double": {
 			"challenge": null,
@@ -4886,7 +4886,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "ビューティフルレシート",
+		"name": "ビューティフル レシート",
 		"artist": "Lucky Vacuum",
 		"genre": "HAPPY HARDCORE",
 		"double": {
@@ -5054,7 +5054,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Blew My Mind",
-		"artist": "Sota F",
+		"artist": "Sota F.",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -5119,7 +5119,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Blind Justice ～Torn souls. Hurt Faiths ～",
+		"name": "Blind Justice ～Torn souls, Hurt Faiths ～",
 		"artist": "Zektbach",
 		"genre": "EPIC POETRY",
 		"double": {
@@ -5231,8 +5231,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "蒼い衝動 (for EXTREME)",
-		"artist": "NAOKI feat. YUKI",
+		"name": "蒼い衝動 ～for EXTREME～",
+		"artist": "NAOKI feat.YUKI",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -5288,7 +5288,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Blue Rain",
-		"artist": "dj TAKA vs Ryu☆",
+		"artist": "dj TAKA VS Ryu☆",
 		"genre": "TRANCE",
 		"double": {
 			"challenge": null,
@@ -5521,7 +5521,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "BRE∀K DOWN!",
+		"name": "BRE∀K DOWN！",
 		"artist": "BeForU",
 		"genre": "",
 		"double": {
@@ -5633,7 +5633,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "BRILLIANT 2U",
-		"artist": "NAOKI",
+		"artist": "NAOKI ",
 		"genre": "EURO GROOVE",
 		"double": {
 			"challenge": {
@@ -5754,7 +5754,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "BRILLIANT 2U (K.O.G. G3 MIX)",
+		"name": "BRILLIANT 2U(K.O.G G3 MIX)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -5785,7 +5785,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "BRILLIANT 2U (Orchestra Groove)",
+		"name": "BRILLIANT 2U(Orchestra Groove)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -5851,7 +5851,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "BRILLIANT 2U(\"STREAM\" Special)",
+		"name": "BRILLIANT 2U (\"STREAM\" Special)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -5994,7 +5994,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "BURNIN' THE FLOOR (BLUE FIRE mix)",
+		"name": "BURNIN' THE FLOOR(BLUE FIRE mix)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -6025,8 +6025,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Burning Heat! (3 Option Mix)",
-		"artist": "Mr. T. feat. Motoaki F.",
+		"name": "BURNING HEAT！（3 Option MIX）",
+		"artist": "Mr.T with Motoaki. F",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -6305,8 +6305,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CAN'T STOP FALLIN' IN LOVE (SPEED MIX)",
-		"artist": "NAOKI",
+		"name": "CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～",
+		"artist": "NAOKI ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -6361,7 +6361,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CAN'T STOP FALLIN' IN LOVE (super euro version)",
+		"name": "CAN'T STOP FALLIN' IN LOVE -super euro version-",
 		"artist": "NAOKI with Y&Co.",
 		"genre": "",
 		"double": {
@@ -6417,7 +6417,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CAN'T STOP FALLIN'IN LOVE",
+		"name": "CAN'T STOP FALLIN' IN LOVE",
 		"artist": "NAOKI",
 		"genre": "HYPER EUROBEAT",
 		"double": {
@@ -6473,8 +6473,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CANDY★",
-		"artist": "Luv unlimited",
+		"name": "CANDY☆",
+		"artist": "Luv UNLIMITED",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -6529,7 +6529,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CANDY★ (X-Special)",
+		"name": "CANDY☆(X-Special)",
 		"artist": "Luv UNLIMITED",
 		"genre": "",
 		"double": {
@@ -6560,7 +6560,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CANDY♥",
+		"name": "CANDY♡",
 		"artist": "小坂りゆ",
 		"genre": "CANDY POP",
 		"double": {
@@ -6728,8 +6728,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CELEBRATE NITE (EURO TRANCE STYLE)",
-		"artist": "N.M.R.",
+		"name": "CELEBRATE NITE(EURO TRANCE STYLE)",
+		"artist": "N.M.R",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -7416,7 +7416,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "チョコレートスマイル",
-		"artist": "日向美ビタースイーツ♪&ここなつ",
+		"artist": "日向美ビタースイーツ♪ & ここなつ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -7594,7 +7594,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "チルノのパーフェクトさんすう教室 (EDM REMIX)",
-		"artist": "uno (IOSYS)",
+		"artist": "uno(IOSYS)",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -7761,7 +7761,7 @@ var songs = [
 		"name_translation": "Colorful Pastel"
 	}, {
 		"unlock": "",
-		"name": "Colors (for EXTREME)",
+		"name": "Colors ～for EXTREME～",
 		"artist": "dj TAKA",
 		"genre": "",
 		"double": {
@@ -8214,7 +8214,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "クリムゾンゲイト",
-		"artist": "工藤吉三(ベイシスケイプ)",
+		"artist": "工藤吉三（ベイシスケイプ）",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -8381,7 +8381,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "CUTIE CHASER (MORNING MIX)",
+		"name": "CUTIE CHASER(MORNING MIX)",
 		"artist": "CLUB SPICE",
 		"genre": "",
 		"double": {
@@ -8549,7 +8549,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "D2R(\"FREEZE\" Special)",
+		"name": "D2R (\"FREEZE\" Special)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -9002,7 +9002,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Dance Dance Revolution (X-Special)",
+		"name": "Dance Dance Revolution(X-Special)",
 		"artist": "DDR ALL STARS",
 		"genre": "",
 		"double": {
@@ -9212,7 +9212,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "男々道",
-		"artist": "Des-ROW·組",
+		"artist": "Des-ROW・組",
 		"genre": "HIP ROCK 2",
 		"double": {
 			"challenge": null,
@@ -9436,7 +9436,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "DEAD END",
-		"artist": "N&S",
+		"artist": "N & S",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -9491,8 +9491,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "DEAD END(\"GROOVE RADAR\" Special)",
-		"artist": "N&S",
+		"name": "DEAD END (\"GROOVE RADAR\" Special)",
+		"artist": "N & S",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -9523,7 +9523,7 @@ var songs = [
 	}, {
 		"unlock": true,
 		"name": "デッドボヲルdeホームラン",
-		"artist": "猫叉Master β2",
+		"artist": "猫叉Masterβ2",
 		"genre": "ELECTRIC MANOUSH SWING",
 		"double": {
 			"challenge": null,
@@ -9823,7 +9823,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "DESTINY",
-		"artist": "NAOKI feat.PAULA TERRY",
+		"artist": "NAOKI feat. PAULA TERRY",
 		"genre": "HYPER EUROBEAT",
 		"double": {
 			"challenge": null,
@@ -9879,7 +9879,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Destiny lovers",
-		"artist": "くにたけみゆき",
+		"artist": "くにたけ みゆき ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -10423,7 +10423,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "DoLL",
-		"artist": "TЁЯRA",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "HYPER J-POP FOUR",
 		"double": {
 			"challenge": {
@@ -10488,8 +10488,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Don't Stop! (AMD 2nd MIX)",
-		"artist": "Dr. VIBE feat. JP miles",
+		"name": "Don't Stop!～AMD 2nd MIX～",
+		"artist": "Dr.VIBE feat. JP Miles",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -10768,7 +10768,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Dreamin'",
+		"name": "Dreamin’",
 		"artist": "TOMOSUKE feat. Adreana",
 		"genre": "",
 		"double": {
@@ -11002,7 +11002,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "DROP OUT (FROM NONSTOP MEGAMIX)",
+		"name": "DROP OUT(FROM NONSTOP MEGAMIX)",
 		"artist": "NW260",
 		"genre": "",
 		"double": {
@@ -11089,7 +11089,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "DROP THE BOMB (SySF. Mix)",
+		"name": "DROP THE BOMB(SyS.F. Mix)",
 		"artist": "Scotty D.",
 		"genre": "",
 		"double": {
@@ -11323,7 +11323,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "DYNAMITE RAVE(\"AIR\" Special)",
+		"name": "DYNAMITE RAVE (\"AIR\" Special)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -11355,7 +11355,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "e-motion",
-		"artist": "e.o.s.",
+		"artist": "e.o.s",
 		"genre": "RAVE",
 		"double": {
 			"challenge": null,
@@ -11731,7 +11731,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Electro Tuned(the SubS mix)",
+		"name": "Electro Tuned ( the SubS Mix )",
 		"artist": "TaQ",
 		"genre": "BIG BEAT",
 		"double": {
@@ -12266,7 +12266,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "esrev:eR",
-		"artist": "TAG meets \"eimy\"",
+		"artist": "TAG meets “eimy”",
 		"genre": "EMOTIONAL SENTENCE",
 		"double": {
 			"challenge": null,
@@ -12322,7 +12322,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "ever snow",
-		"artist": "TЁЯRA",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -12611,7 +12611,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Fascination ~eternal love mix~",
+		"name": "Fascination ～eternal love mix～",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -12677,7 +12677,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Feelings Won't Fade (Extend Trance Mix)",
+		"name": "Feelings Won't Fade(Extend Trance Mix)",
 		"artist": "SySF.",
 		"genre": "",
 		"double": {
@@ -12790,7 +12790,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Find The Way",
-		"artist": "nc ft. SAK.",
+		"artist": "nc ft SAK.",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -13257,7 +13257,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Flow(Jammin' Ragga Mix)",
+		"name": "Flow (Jammin' Ragga Mix)",
 		"artist": "Scotty D. revisits U1",
 		"genre": "",
 		"double": {
@@ -13548,7 +13548,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Forever Sunshine",
-		"artist": "Chel.Y",
+		"artist": "Chel Y.",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -13791,7 +13791,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Frozen Ray (for EXTREME)",
+		"name": "Frozen Ray ～for EXTREME～",
 		"artist": "dj TAKA",
 		"genre": "",
 		"double": {
@@ -15053,7 +15053,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "GRADIUSIC CYBER (AMD G5 MIX)",
+		"name": "GRADIUSIC CYBER ～AMD G5 MIX～",
 		"artist": "BIG-O feat. TAKA",
 		"genre": "",
 		"double": {
@@ -15221,7 +15221,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Ha・lle・lu・jah",
+		"name": "Ha･lle･lu･jah",
 		"artist": "SOUND HOLIC feat. Nana Takahashi",
 		"genre": "",
 		"double": {
@@ -15334,7 +15334,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "華爛漫 -Flowers-",
-		"artist": "TЁЯRA",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "HYPER JAPANESQUE 2",
 		"double": {
 			"challenge": null,
@@ -15947,7 +15947,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Healing Vision (Angelic mix)",
+		"name": "Healing Vision ～Angelic mix～",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -16003,7 +16003,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Healing Vision (X-Special)",
+		"name": "Healing Vision(X-Special)",
 		"artist": "DE-SIRE",
 		"genre": "",
 		"double": {
@@ -16213,7 +16213,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "HEARTBREAK (Sound Selektaz remix)",
-		"artist": "NAOKI ft. Becca Hossany",
+		"artist": "NAOKI feat. Becca Hossany",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -16334,7 +16334,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Heaven is a '57 metallic gray (gimmix)",
+		"name": "Heaven is a '57 metallic gray ～gimmix～",
 		"artist": "Hiro feat. Sweet little 30's",
 		"genre": "",
 		"double": {
@@ -16391,7 +16391,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Help me, ERINNNNNN!!",
-		"artist": "ビートまりお(COOL&CREATE)",
+		"artist": "ビートまりお（COOL&CREATE）",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -16568,7 +16568,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "HIGHER (next morning mix)",
+		"name": "HIGHER(next morning mix)",
 		"artist": "NM feat. SUNNY",
 		"genre": "",
 		"double": {
@@ -16655,7 +16655,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "ヒマワリ",
-		"artist": "小坂りゆ",
+		"artist": "RIYU from BeForU",
 		"genre": "J-HAPPY HARDCORE",
 		"double": {
 			"challenge": null,
@@ -17056,7 +17056,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "お米の美味しい炊き方、そしてお米を食べることによるその効果。",
-		"artist": "大日本鉄倶楽部【あさき＆96】",
+		"artist": "大日本鉄倶楽部【あさき＆９６】",
 		"genre": "お米タル",
 		"double": {
 			"challenge": null,
@@ -17310,8 +17310,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "i feel...",
-		"artist": "AKIRA YAMAOKA",
+		"name": "i feel ...",
+		"artist": "AKIRA YAMAOKA ",
 		"genre": "TRANCE",
 		"double": {
 			"challenge": null,
@@ -17478,7 +17478,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "I'm gonna get you!",
-		"artist": "Kelly Cosmo",
+		"artist": "Kelly Cosmo ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -18256,7 +18256,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "INNOCENCE OF SILENCE",
-		"artist": "nc ft. NRG Factory",
+		"artist": "nc ft NRG Factory",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -18312,7 +18312,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "INSERTiON",
-		"artist": "NAOKI underground",
+		"artist": "NAOKI underground ",
 		"genre": "EURO TRANCE",
 		"double": {
 			"challenge": null,
@@ -18535,7 +18535,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"name": "色は匂へど散りぬるを",
-		"artist": "幽閉サテライト feat. Senya",
+		"artist": "幽閉サテライト feat. senya",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -18656,7 +18656,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Jam&Marmalade",
+		"name": "Jam & Marmalade",
 		"artist": "FinalOffset",
 		"genre": "WARP HOUSE",
 		"double": {
@@ -18712,8 +18712,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "JANEJANA",
-		"artist": "T.E.M.P.O. feat. Mohammed & Emi",
+		"name": "jane jana",
+		"artist": "T.E.M.P.O. feat.Mohammed & Emi",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -18769,7 +18769,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "JET WORLD",
-		"artist": "Mutsuhiko Izumi",
+		"artist": "Mutsuhiko Izumi ",
 		"genre": "HARD COUNTRY",
 		"double": {
 			"challenge": null,
@@ -19069,7 +19069,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "カゲロウ",
-		"artist": "Des-ROW·組スペシアルr",
+		"artist": "Des-ROW・組スペシアルr",
 		"genre": "輪生",
 		"double": {
 			"challenge": null,
@@ -19190,7 +19190,7 @@ var songs = [
 		"name_translation": "KAKUMEI"
 	}, {
 		"unlock": "",
-		"name": "革命 (X-Special)",
+		"name": "革命(X-Special)",
 		"artist": "dj TAKA with NAOKI",
 		"genre": "",
 		"double": {
@@ -19222,7 +19222,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "KEEP ON MOVIN'",
-		"artist": "N.M.R.",
+		"artist": "N.M.R",
 		"genre": "DANCE POP",
 		"double": {
 			"challenge": null,
@@ -19278,7 +19278,7 @@ var songs = [
 	}, {
 		"us_locked": true,
 		"name": "KEEP ON MOVIN' (Y&Co. DJ BOSS remix)",
-		"artist": "N.M.R.",
+		"artist": "N.M.R",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -19333,8 +19333,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "KEEP ON MOVIN'(DMX Mix)",
-		"artist": "N.M.R-type G",
+		"name": "KEEP ON MOVIN' ～DMX MIX～",
+		"artist": "N.M.R-typeG",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -19669,8 +19669,8 @@ var songs = [
 		"name_translation": "KISS KISS KISS AKBK MIX"
 	}, {
 		"unlock": "",
-		"name": "KISS ME ALL NIGHT LONG",
-		"artist": "NAOKI J-STYLE feat. MIU",
+		"name": "Kiss me all night long",
+		"artist": "NAOKI J-STYLE feat.MIU",
 		"genre": "J-EURO POP",
 		"double": {
 			"challenge": null,
@@ -19782,7 +19782,7 @@ var songs = [
 	}, {
 		"unlock": true,
 		"name": "この青空の下で",
-		"artist": "TAG meets \"eimy\"",
+		"artist": "TAG meets “eimy”",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -20135,7 +20135,7 @@ var songs = [
 		"name_translation": "Kurokami midareshi shura to narite -Rin edition-"
 	}, {
 		"unlock": "",
-		"name": "きゅん×きゅん ばっきゅん☆LOVE",
+		"name": "きゅん×きゅんばっきゅん☆LOVE",
 		"artist": "松下feat.Sota & wac",
 		"genre": "",
 		"double": {
@@ -20191,7 +20191,7 @@ var songs = [
 		"name_translation": "Kyun x kyun bakkyun LOVE"
 	}, {
 		"unlock": "",
-		"name": "L'amour et la liberté (Darwin & DJ Silver remix)",
+		"name": "L'amour et la liberté(Darwin & DJ Silver remix)",
 		"artist": "NAOKI in the MERCURE",
 		"genre": "",
 		"double": {
@@ -20247,7 +20247,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "L'amour et la liberté (DDR Ver.)",
+		"name": "L'amour et la liberté(DDR Ver.)",
 		"artist": "NAOKI underground",
 		"genre": "",
 		"double": {
@@ -20547,8 +20547,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "La Senorita",
-		"artist": "CAPTAIN. T",
+		"name": "La Señorita",
+		"artist": "CAPTAIN.T",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -20603,7 +20603,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "La Senorita Virtual",
+		"name": "La Señorita Virtual",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -20715,8 +20715,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Leaving...",
-		"artist": "SEIYA MURAI meets",
+		"name": "Leaving…",
+		"artist": "seiya-murai meets “eimy”",
 		"genre": "SYMPHONIC EURO",
 		"double": {
 			"challenge": {
@@ -20781,7 +20781,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"name": "Lesson by DJ",
-		"artist": "U.T.D & Friends",
+		"artist": "U.T.D. & Friends",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -20806,8 +20806,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Let the beat hit em! (CLASSIC R&B STYLE)",
-		"artist": "STONE BROS.",
+		"name": "Let the beat hit em!(CLASSIC R&B STYLE)",
+		"artist": "Stone Bros.",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -20975,7 +20975,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "LOGICAL DASH",
-		"artist": "dj TAKA",
+		"artist": "DJ TAKA",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -21030,7 +21030,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "London EVOLVED Ver.A",
+		"name": "London EVOLVED ver.A",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -21096,7 +21096,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "London EVOLVED Ver.B",
+		"name": "London EVOLVED ver.B",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -21162,7 +21162,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "London EVOLVED Ver.C",
+		"name": "London EVOLVED ver.C",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -21452,7 +21452,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "LOVE AGAIN TONIGHT～for Mellisa mix～",
+		"name": "LOVE AGAIN TONIGHT～For Melissa MIX～",
 		"artist": "NAOKI feat. PAULA TERRY",
 		"genre": "HYPER EUROBEAT",
 		"double": {
@@ -21687,7 +21687,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "♥Love²シュガ→♥",
-		"artist": "dj TAKA feat. のりあ",
+		"artist": "dj TAKA feat.のりあ",
 		"genre": "EURO BEAT",
 		"double": {
 			"challenge": null,
@@ -21743,7 +21743,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "LOVE THIS FEELIN'",
-		"artist": "Chang Ma",
+		"artist": "Chang ma",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -21911,7 +21911,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "ラクガキスト",
-		"artist": "cosMo@暴走P feat.GUMI",
+		"artist": "cosMo＠暴走P feat.GUMI",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -22154,8 +22154,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "魔法のたまご～心菜 ELECTRO POP edition～",
-		"artist": "東雲心菜",
+		"name": "魔法のたまご ～心菜 ELECTRO POP edition～",
+		"artist": "東雲心菜(from ここなつ)",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -22323,7 +22323,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "MAKE IT BETTER",
-		"artist": "MITSU-O!",
+		"artist": "mitsu-O!",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -22379,7 +22379,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "MAKE IT BETTER (So-REAL Mix)",
-		"artist": "mitsu-O! SUMMER",
+		"artist": "mitsu-O!SUMMER",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -22510,7 +22510,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "MARIA (I believe... )",
+		"name": "MARIA(I believe...)",
 		"artist": "NAOKI feat. PAULA TERRY",
 		"genre": "EUROBEAT",
 		"double": {
@@ -22800,7 +22800,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "MAX 300 (X-Special)",
+		"name": "MAX 300(X-Special)",
 		"artist": "Ω",
 		"genre": "",
 		"double": {
@@ -22831,7 +22831,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "MAX 300(Super-Max-Me Mix)",
+		"name": "MAX 300 (Super-Max-Me Mix)",
 		"artist": "Jondi & Spesh",
 		"genre": "",
 		"double": {
@@ -22898,7 +22898,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "MAX LOVE",
-		"artist": "DJ YOSHITAKA feat.星野奏子",
+		"artist": "DJ YOSHITAKA feat. 星野奏子",
 		"genre": "LOVELY BUCHIAGE POP",
 		"double": {
 			"challenge": {
@@ -22963,7 +22963,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "MAX. (period)",
+		"name": "MAX.(period)",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -23141,7 +23141,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "MAXX UNLIMITED (X-Special)",
+		"name": "MAXX UNLIMITED(X-Special)",
 		"artist": "Z",
 		"genre": "",
 		"double": {
@@ -23492,7 +23492,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "滅亡天使†にこきゅっぴん",
+		"name": "滅亡天使 † にこきゅっぴん",
 		"artist": "日向美ビタースイーツ♪",
 		"genre": "",
 		"double": {
@@ -23670,8 +23670,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Midnight Special",
-		"artist": "Love Machineguns",
+		"name": "MIDNIGHT SPECIAL",
+		"artist": "Love machineguns",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -23838,7 +23838,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Miracle Moon -L.E.D. LIGHT STYLE MIX-",
+		"name": "Miracle Moon ～L.E.D.LIGHT STYLE MIX～",
 		"artist": "Togo Project feat. Sana",
 		"genre": "J-GARAGE POP REMIX",
 		"double": {
@@ -24129,7 +24129,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "MOON",
-		"artist": "dj TAKA feat.Erika Mochizuki",
+		"artist": "dj TAKA feat.Erika",
 		"genre": "哀愁ユーロ",
 		"double": {
 			"challenge": null,
@@ -24241,7 +24241,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "夢幻ノ光",
-		"artist": "TЁЯRA",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "HYPER JAPANESQUE",
 		"double": {
 			"challenge": null,
@@ -24409,7 +24409,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "My Only Shining Star",
-		"artist": "NAOKI feat.Becky Lucinda",
+		"artist": "NAOKI feat. Becky Lucinda",
 		"genre": "HYPER EUROBEAT",
 		"double": {
 			"challenge": null,
@@ -24520,7 +24520,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "MY SUMMER LOVE (TOMMY'S SMILE MIX)",
+		"name": "MY SUMMER LOVE(TOMMY'S SMILE MIX)",
 		"artist": "MITSU-O! with GEILA",
 		"genre": "",
 		"double": {
@@ -24617,7 +24617,7 @@ var songs = [
 		"name_translation": "Nageki no Ki"
 	}, {
 		"unlock": "",
-		"name": "†渚の小悪魔ラヴリィ～レイディオ†(IIDX EDIT)",
+		"name": "†渚の小悪魔ラヴリィ～レイディオ†",
 		"artist": "夏色ビキニのPrim",
 		"genre": "Hi-CORE",
 		"double": {
@@ -24739,7 +24739,7 @@ var songs = [
 		"name_translation": "Natsuiro DIARY -DDR mix-"
 	}, {
 		"unlock": "",
-		"name": "neko*neko",
+		"name": "neko＊neko",
 		"artist": "日向美ビタースイーツ♪",
 		"genre": "",
 		"double": {
@@ -25060,7 +25060,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "New Generation",
-		"artist": "鍋島 圭一",
+		"artist": "鍋嶋圭一",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -25191,7 +25191,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "New York EVOLVED Ver.A",
+		"name": "New York EVOLVED (Type A)",
 		"artist": "NC underground",
 		"genre": "",
 		"double": {
@@ -25247,7 +25247,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "New York EVOLVED Ver.B",
+		"name": "New York EVOLVED (Type B)",
 		"artist": "NC underground",
 		"genre": "",
 		"double": {
@@ -25303,7 +25303,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "New York EVOLVED Ver.C",
+		"name": "New York EVOLVED (Type C)",
 		"artist": "NC underground",
 		"genre": "",
 		"double": {
@@ -25360,7 +25360,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "NGO",
-		"artist": "鍋島圭一",
+		"artist": "鍋嶋圭一",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -25426,7 +25426,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "ナイト・オブ・ナイツ",
-		"artist": "ビートまりお(COOL&CREATE)",
+		"artist": "ビートまりお（COOL&CREATE）",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -25538,7 +25538,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "虹色",
-		"artist": "DJ YOSHITAKA feat. G.S.C. license",
+		"artist": "DJ YOSHITAKA feat G.S.C license",
 		"genre": "LOVELY TRANS POP",
 		"double": {
 			"challenge": {
@@ -26249,7 +26249,7 @@ var songs = [
 		"name_translation": "Orenai Heart"
 	}, {
 		"unlock": "",
-		"name": "ORION.78 (AMeuro-MIX)",
+		"name": "ORION.78(AMeuro-MIX)",
 		"artist": "RE-VENGE",
 		"genre": "",
 		"double": {
@@ -26305,7 +26305,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "ORION.78 (civilization mix)",
+		"name": "ORION.78～civilization mix～",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -26641,7 +26641,7 @@ var songs = [
 		"name_translation": "Otome ryouran mai sakihokore"
 	}, {
 		"unlock": "",
-		"name": "Over The \"Period\"",
+		"name": "Over The “Period”",
 		"artist": "TAG underground overlay",
 		"genre": "",
 		"double": {
@@ -26708,7 +26708,7 @@ var songs = [
 	}, {
 		"unlock": true,
 		"name": "パ→ピ→プ→Yeah!",
-		"artist": "ヒゲドライバー join Shully & Nimo",
+		"artist": "ヒゲドライバー join. shully & Nimo",
 		"genre": "電波ソング",
 		"double": {
 			"challenge": null,
@@ -26941,7 +26941,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA -Respect-",
+		"name": "PARANOiA-Respect-",
 		"artist": ".3k",
 		"genre": "",
 		"double": {
@@ -27053,7 +27053,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA ETERNAL (X-Special)",
+		"name": "PARANOiA ETERNAL(X-Special)",
 		"artist": "STM 200",
 		"genre": "",
 		"double": {
@@ -27084,7 +27084,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA EVOLUTION",
+		"name": "PARANOIA EVOLUTION",
 		"artist": "200",
 		"genre": "",
 		"double": {
@@ -27140,7 +27140,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA EVOLUTION (X-Special)",
+		"name": "PARANOIA EVOLUTION(X-Special)",
 		"artist": "200",
 		"genre": "",
 		"double": {
@@ -27171,7 +27171,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA KCET (clean mix)",
+		"name": "PARANOiA KCET ～clean mix～",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -27237,7 +27237,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOIA MAX～DIRTY MIX～",
+		"name": "PARANOiA MAX～DIRTY MIX～",
 		"artist": "190",
 		"genre": "JUNGLE",
 		"double": {
@@ -27293,7 +27293,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA MAX~DIRTY MIX~ (X-Special)",
+		"name": "PARANOiA MAX～DIRTY MIX～(X-Special)",
 		"artist": "190",
 		"genre": "",
 		"double": {
@@ -27380,7 +27380,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA Rebirth (X-Special)",
+		"name": "PARANOiA Rebirth(X-Special)",
 		"artist": "190'",
 		"genre": "",
 		"double": {
@@ -27477,7 +27477,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PARANOiA survivor",
+		"name": "PARANOIA survivor",
 		"artist": "270",
 		"genre": "",
 		"double": {
@@ -27686,7 +27686,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Party Lights (Tommie Sunshine’s Brooklyn Fire Remix)",
+		"name": "Party Lights (Tommie Sunshine's Brooklyn Fire Remix)",
 		"artist": "Tommie Sunshine",
 		"genre": "",
 		"double": {
@@ -28444,7 +28444,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Poseidon (kors k mix)",
+		"name": "Poseidon(kors k mix)",
 		"artist": "NAOKI underground",
 		"genre": "",
 		"double": {
@@ -28566,7 +28566,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": true,
-		"name": "POSSESSION (EDP Live Mix)",
+		"name": "POSSESSION(EDP Live Mix)",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -28688,7 +28688,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PRANA+REVOLUTIONARY ADDICT (U1 DJ Mix)",
+		"name": "PRANA＋REVOLUTIONARY ADDICT (U1 DJ Mix)",
 		"artist": "underground & overground",
 		"genre": "",
 		"double": {
@@ -29146,7 +29146,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "PUT YOUR FAITH IN ME(SATURDAY NIGHT MIX)",
+		"name": "PUT YOUR FAITH IN ME ～SATURDAY NIGHT MIX～",
 		"artist": "UZI-LAY",
 		"genre": "",
 		"double": {
@@ -29650,7 +29650,7 @@ var songs = [
 		"name_translation": "RAKIRAKI"
 	}, {
 		"unlock": "",
-		"name": "Raspberry♥Heart(English version)",
+		"name": "Raspberry♡Heart(English version)",
 		"artist": "jun feat. PAULA TERRY",
 		"genre": "COLORFUL HARDCORE",
 		"double": {
@@ -29773,7 +29773,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "REBORN MAGIC",
-		"artist": "seiya-murai meets \"eimy\"",
+		"artist": "seiya-murai meets “eimy”",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -29829,7 +29829,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "RED ZONE",
-		"artist": "Tatsh&NAOKI",
+		"artist": "Tatsh＆NAOKI",
 		"genre": "SPEED RAVE",
 		"double": {
 			"challenge": null,
@@ -30174,8 +30174,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "RËVOLUTIФN",
-		"artist": "TËЯRA",
+		"name": "RЁVOLUTIФN",
+		"artist": "TЁЯRA",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -30484,7 +30484,7 @@ var songs = [
 		"name_translation": "Rin To Shite Saku Hana No Gotoku "
 	}, {
 		"unlock": "",
-		"name": "凛として咲く花の如く～ひなビタ♪edition～",
+		"name": "凛として咲く花の如く ～ひなビタ♪ edition～",
 		"artist": "日向美ビタースイーツ♪",
 		"genre": "",
 		"double": {
@@ -30718,7 +30718,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "roppongi EVOLVED ver. A",
+		"name": "roppongi EVOLVED ver.A",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -30774,7 +30774,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "roppongi EVOLVED ver. B",
+		"name": "roppongi EVOLVED ver.B",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -30830,7 +30830,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "roppongi EVOLVED ver. C",
+		"name": "roppongi EVOLVED ver.C",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -30886,7 +30886,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "roppongi EVOLVED ver. D",
+		"name": "roppongi EVOLVED ver.D",
 		"artist": "TAG underground",
 		"genre": "",
 		"double": {
@@ -31120,7 +31120,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "SABER WING (AKIRA ISHIHARA Headshot mix)",
+		"name": "SABER WING (Akira Ishihara Headshot mix)",
 		"artist": "TAG",
 		"genre": "",
 		"double": {
@@ -31253,7 +31253,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Sacred Oath",
-		"artist": "TЁЯRA",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -31318,7 +31318,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "S･A･G･A",
+		"name": "S・A・G・A",
 		"artist": "Veeton",
 		"genre": "",
 		"double": {
@@ -31375,7 +31375,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "桜",
-		"artist": "RevenG",
+		"artist": "Reven-G",
 		"genre": "SPIRITUAL",
 		"double": {
 			"challenge": {
@@ -31898,8 +31898,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "さよならトリップ～夏陽 EDM edition～",
-		"artist": "東雲夏陽",
+		"name": "さよならトリップ ～夏陽 EDM edition～",
+		"artist": "東雲夏陽(from ここなつ)",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -32581,7 +32581,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "SEXY PLANET",
-		"artist": "CRYSTAL ALIENS",
+		"artist": "Crystal Aliens",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -32636,8 +32636,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "SEXY PLANET (FROM NONSTOP MEGAMIX)",
-		"artist": "CRYSTAL ALIENS",
+		"name": "SEXY PLANET(FROM NONSTOP MEGAMIX)",
+		"artist": "Crystal Aliens",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -33558,7 +33558,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Silver Platform - I wanna get your heart -",
-		"artist": "U1 Reincarnates w/Leah",
+		"artist": "U1 Reincarnates w/ Leah",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -33670,7 +33670,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Sky Is The Limit",
-		"artist": "Sota F feat. ANNA",
+		"artist": "Sota F. feat.Anna",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -33837,7 +33837,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "smooooch・∀・",
+		"name": "smooooch･∀･",
 		"artist": "kors k",
 		"genre": "CANDY RAVE",
 		"double": {
@@ -33970,7 +33970,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "SO IN LOVE",
-		"artist": "Caramel S.",
+		"artist": "Caramel.S",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -34437,7 +34437,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "SP-TRIP MACHINE (JUNGLE MIX)",
+		"name": "SP-TRIP MACHINE～JUNGLE MIX～",
 		"artist": "DE-SIRE",
 		"genre": "",
 		"double": {
@@ -34493,7 +34493,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "SP-TRIP MACHINE~JUNGLE MIX~ (X-Special)",
+		"name": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special)",
 		"artist": "DE-SIRE",
 		"genre": "",
 		"double": {
@@ -34703,7 +34703,7 @@ var songs = [
 	}, {
 		"unlock": true,
 		"name": "Squeeze",
-		"artist": "VENUS feat.Mutsuhiko Izumi",
+		"artist": "VENUS feat. Mutsuhiko Izumi",
 		"genre": "WITHOUT YOU TONIGHT -VI-",
 		"double": {
 			"challenge": null,
@@ -34983,7 +34983,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Starlight Fantasia (Endorphins Mix)",
-		"artist": "U1 overground feat. TAG",
+		"artist": "U1 overground feat.TAG",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -35160,8 +35160,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "STARS★★★ (Re-tuned by HΛL) -DDR EDITION-",
-		"artist": "TЁЯRA",
+		"name": "STARS☆☆☆（Re-tuned by HΛL） - DDR EDITION -",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -35216,8 +35216,8 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "STARS✩✩✩(2nd NAOKI's style)",
-		"artist": "TЁЯRA",
+		"name": "STARS☆☆☆(2nd NAOKI's style)",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -35496,7 +35496,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "STILL IN MY HEART (MOMO MIX)",
+		"name": "STILL IN MY HEART(MOMO MIX)",
 		"artist": "NAOKI",
 		"genre": "",
 		"double": {
@@ -35706,7 +35706,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Straight Oath",
-		"artist": "矢鴇つかさ feat.三澤秋",
+		"artist": "矢鴇つかさ feat. 三澤秋",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -36427,7 +36427,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "SUPER STAR (FROM NONSTOP MEGAMIX)",
+		"name": "SUPER STAR(FROM NONSTOP MEGAMIX)",
 		"artist": "D.J.RICH feat. TAILBROS.",
 		"genre": "",
 		"double": {
@@ -36459,7 +36459,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Sweet Rain",
-		"artist": "Y&Co. feat. karin",
+		"artist": "Y&Co. feat. Karin",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -36514,7 +36514,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Sweet Sweet♥Magic",
+		"name": "Sweet Sweet ♥ Magic",
 		"artist": "jun",
 		"genre": "HAPPY HARDCORE",
 		"double": {
@@ -36693,7 +36693,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Synergy For Angels",
-		"artist": "TAG × U1-ASAMi",
+		"artist": "TAG×U1-ASAMi",
 		"genre": "ORBITALIC REVOLUTION",
 		"double": {
 			"challenge": null,
@@ -36973,7 +36973,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Taking It To The Sky",
-		"artist": "U1 feat. Tammy S Hansen",
+		"artist": "U1 feat. Tammy S. Hansen",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -37029,7 +37029,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "TEARS",
-		"artist": "NAOKI underground feat. EK",
+		"artist": "NAOKI underground feat.EK",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -37140,7 +37140,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Tell Me What To Do",
+		"name": "Tell me what to do",
 		"artist": "atomsoak ft. cerol",
 		"genre": "",
 		"double": {
@@ -37206,7 +37206,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "天上の星 ～黎明記～",
+		"name": "天上の星～黎明記～",
 		"artist": "TЁЯRA",
 		"genre": "HYPER JAPANESQUE 3",
 		"double": {
@@ -37497,7 +37497,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "The Least 100sec",
-		"artist": "Sasaki Hirofumi",
+		"artist": "Hirofumi Sasaki",
 		"genre": "PROGRESSIVE",
 		"double": {
 			"challenge": null,
@@ -37608,7 +37608,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "The legend of MAX (X-Special)",
+		"name": "The legend of MAX(X-Special)",
 		"artist": "ZZ",
 		"genre": "",
 		"double": {
@@ -37640,7 +37640,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "The Lonely Streets",
-		"artist": "DJ Yoshitaka feat.Robert'RAab'Stevenson",
+		"artist": "DJ Yoshitaka feat.Robert \"RAab\" Stevenson",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -38117,7 +38117,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Ticket To Bombay",
+		"name": "Ticket to Bombay",
 		"artist": "Jena Rose",
 		"genre": "",
 		"double": {
@@ -38976,7 +38976,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": true,
-		"name": "突撃!ガラスのニーソ姫!",
+		"name": "突撃！ガラスのニーソ姫！",
 		"artist": "山本椛 (monotone)",
 		"genre": "電波",
 		"double": {
@@ -39089,7 +39089,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Tracers (4Beat Remix)",
-		"artist": "Ruffage & Size",
+		"artist": "Ruffage & Size ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -39444,7 +39444,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "TRIP MACHINE (luv mix)",
+		"name": "TRIP MACHINE～luv mix～",
 		"artist": "2MB",
 		"genre": "",
 		"double": {
@@ -39612,7 +39612,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "TRIP MACHINE CLIMAX (X-Special)",
+		"name": "TRIP MACHINE CLIMAX(X-Special)",
 		"artist": "DE-SIRE",
 		"genre": "",
 		"double": {
@@ -39775,7 +39775,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "TRIP MACHINE Survivor",
+		"name": "TRIP MACHINE survivor",
 		"artist": "DE-SIRE",
 		"genre": "",
 		"double": {
@@ -40041,7 +40041,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "TRUE♥LOVE",
-		"artist": "jun feat.Schanita",
+		"artist": "jun feat. Schanita",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -40097,7 +40097,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Trust -DanceDanceRevolution mix-",
-		"artist": "Tatsh feat.ヨーコ",
+		"artist": "Tatsh feat. ヨーコ",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -40265,7 +40265,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "TSUGARU",
-		"artist": "RevenG VS. DE-SIRE",
+		"artist": "RevenG vs DE-SIRE",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -40321,7 +40321,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "TSUGARU (APPLE MIX)",
-		"artist": "RevenG vs. DE-SIRE",
+		"artist": "RevenG vs DE-SIRE",
 		"genre": "",
 		"double": {
 			"challenge": {
@@ -40351,7 +40351,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "Twin Bee(Generation X)",
+		"name": "Twin Bee -Generation X-",
 		"artist": "FinalOffset",
 		"genre": "EURO BEAT",
 		"double": {
@@ -40642,7 +40642,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Under the Sky",
-		"artist": "南さやか(BeForU) with platoniX",
+		"artist": "南さやか（BeForU）with platoniX",
 		"genre": "J-EUROTRANCE",
 		"double": {
 			"challenge": null,
@@ -40875,7 +40875,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "V (for EXTREME)",
+		"name": "V ～for EXTREME～",
 		"artist": "TAKA",
 		"genre": "",
 		"double": {
@@ -41176,7 +41176,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Vem brincar",
-		"artist": "Caldeira feat. Téka Penteriche",
+		"artist": "Caldeira feat.Téka Penteriche",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -41811,7 +41811,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Wicked Plastik",
-		"artist": "nc ft. 触電",
+		"artist": "nc ft. Electric Touch",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -41922,7 +41922,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "WILD RUSH (FROM NONSTOP MEGAMIX)",
+		"name": "WILD RUSH(FROM NONSTOP MEGAMIX)",
 		"artist": "FACTOR-X",
 		"genre": "",
 		"double": {
@@ -42132,7 +42132,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "Wings of an Angel (Fly With Me)",
-		"artist": "J-Mi and Midi-D",
+		"artist": "J-Mi & Midi-D",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -42544,7 +42544,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "You",
-		"artist": "NM feat.Anjanette Mickelsen",
+		"artist": "NM feat. Anjanette Mickelsen",
 		"genre": "",
 		"double": {
 			"challenge": null,
@@ -42599,7 +42599,7 @@ var songs = [
 		"name_translation": ""
 	}, {
 		"unlock": "",
-		"name": "You are a star",
+		"name": "You are a Star",
 		"artist": "NAOKI feat. Anna Kaelin",
 		"genre": "",
 		"double": {
@@ -42778,7 +42778,7 @@ var songs = [
 	}, {
 		"unlock": "",
 		"name": "零 - ZERO -",
-		"artist": "TЁЯRA",
+		"artist": "ＴЁЯＲＡ",
 		"genre": "HYPER J-POP ZERO",
 		"double": {
 			"challenge": null,
@@ -42889,7 +42889,7 @@ var songs = [
 		"name_translation": "ZETA～The World of Prime Numbers and the Transcendental Being～"
 	}, {
 		"us_locked": true,
-		"name": "ずっとみつめていて(Ryu☆Remix)",
+		"name": "ずっとみつめていて (Ryu☆Remix)",
 		"artist": "DJ UTO vs. Starving Trancer feat. Mayumi Morinaga",
 		"genre": "",
 		"double": {
