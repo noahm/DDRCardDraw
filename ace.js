@@ -304,7 +304,7 @@ var songs = [
 	    }
 	  },
 	  "artist_translation": "",
-	  "bpm": "83-167",
+	  "bpm": "84-167",
 	  "single": {
 	    "challenge": null,
 	    "difficult": {
@@ -1429,7 +1429,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "123-135",
+		"bpm": "135",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -1653,7 +1653,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "200",
+		"bpm": "100-200",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -2431,7 +2431,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "192",
+		"bpm": "192-384",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -3303,7 +3303,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "200-205",
+		"bpm": "200",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -5546,7 +5546,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "140",
+		"bpm": "130",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -5718,7 +5718,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "149",
+		"bpm": "150",
 		"single": {
 			"challenge": {
 				"difficulty": "10",
@@ -7674,7 +7674,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "130-175",
+		"bpm": "130",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -10625,7 +10625,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "200",
+		"bpm": "100-200",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -11343,7 +11343,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "149",
+		"bpm": "150",
 		"single": {
 			"challenge": {
 				"difficulty": "12",
@@ -11394,7 +11394,7 @@ var songs = [
 			"basic": null
 		},
 		"artist_translation": "",
-		"bpm": "155",
+		"bpm": "150",
 		"single": {
 			"challenge": {
 				"difficulty": "8",
@@ -11435,7 +11435,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "140-145",
+		"bpm": "145",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -11639,7 +11639,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "55-880",
+		"bpm": "55-440",
 		"single": {
 			"challenge": {
 				"difficulty": "19",
@@ -11868,7 +11868,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "190",
+		"bpm": "143-190",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -13928,7 +13928,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "188",
+		"bpm": "94-188",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -14096,7 +14096,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "175",
+		"bpm": "88-175",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -14274,7 +14274,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "Nekomata L.E.D.Master+",
-		"bpm": "180",
+		"bpm": "90-180",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -15190,7 +15190,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "120",
+		"bpm": "125",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -16028,7 +16028,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "49-196",
+		"bpm": "46-196",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -16791,7 +16791,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "154",
+		"bpm": "155",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -17192,7 +17192,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "178",
+		"bpm": "89-178",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -17990,7 +17990,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "260",
+		"bpm": "130-260",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -18676,7 +18676,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "dj TAKA VS DJ TOTTO feat.Ai",
-		"bpm": "198",
+		"bpm": "99-396",
 		"single": {
 			"challenge": {
 				"difficulty": "18",
@@ -19032,7 +19032,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "90-195",
+		"bpm": "90-600",
 		"single": {
 			"challenge": {
 				"difficulty": "17",
@@ -19470,7 +19470,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "Kufuo",
-		"bpm": "180",
+		"bpm": "90-180",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -19806,7 +19806,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "ave;new project feat. Sakura Saori produced by ave;new",
-		"bpm": "128",
+		"bpm": "128-256",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -21116,7 +21116,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "80-320",
+		"bpm": "170-340",
 		"single": {
 			"challenge": {
 				"difficulty": "17",
@@ -21182,7 +21182,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "80-320",
+		"bpm": "170-340",
 		"single": {
 			"challenge": {
 				"difficulty": "17",
@@ -21248,7 +21248,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "80-320",
+		"bpm": "170-340",
 		"single": {
 			"challenge": {
 				"difficulty": "17",
@@ -22174,7 +22174,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "160",
+		"bpm": "40-160",
 		"single": {
 			"challenge": {
 				"difficulty": "17",
@@ -22825,7 +22825,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "12-300",
+		"bpm": "300",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -22871,7 +22871,7 @@ var songs = [
 			"basic": null
 		},
 		"artist_translation": "",
-		"bpm": "12-300",
+		"bpm": "300",
 		"single": {
 			"challenge": {
 				"difficulty": "17",
@@ -23049,7 +23049,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "180-600",
+		"bpm": "150-600",
 		"single": {
 			"challenge": {
 				"difficulty": "18",
@@ -24591,7 +24591,7 @@ var songs = [
 			"basic": null
 		},
 		"artist_translation": "",
-		"bpm": "125",
+		"bpm": "100",
 		"single": {
 			"challenge": {
 				"difficulty": "12",
@@ -25796,7 +25796,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "173",
+		"bpm": "172",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -27619,7 +27619,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "73-290",
+		"bpm": "145-290",
 		"single": {
 			"challenge": {
 				"difficulty": "16",
@@ -27935,7 +27935,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "116-146",
+		"bpm": "146",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -29965,7 +29965,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "150",
+		"bpm": "75-300",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -30855,7 +30855,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "85-170",
+		"bpm": "170",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -30911,7 +30911,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "43-170",
+		"bpm": "170",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -30967,7 +30967,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "85-340",
+		"bpm": "170",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -31079,7 +31079,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "177",
+		"bpm": "88-177",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -31272,7 +31272,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "150",
+		"bpm": "138",
 		"single": {
 			"challenge": {
 				"difficulty": "15",
@@ -33150,7 +33150,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "25-100",
+		"bpm": "100",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -33262,7 +33262,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "Asaki",
-		"bpm": "95-210",
+		"bpm": "210",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -34223,7 +34223,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "175",
+		"bpm": "180",
 		"single": {
 			"challenge": {
 				"difficulty": "16",
@@ -34783,7 +34783,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "80-173",
+		"bpm": "87-173",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -34951,7 +34951,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "148",
+		"bpm": "74-148",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -35465,7 +35465,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "120-180",
+		"bpm": "110-180",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -36712,7 +36712,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "150",
+		"bpm": "167",
 		"single": {
 			"challenge": {
 				"difficulty": "12",
@@ -37287,7 +37287,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "170",
+		"bpm": "85-170",
 		"single": {
 			"challenge": null,
 			"difficult": {
@@ -39729,7 +39729,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "95-380",
+		"bpm": "190",
 		"single": {
 			"challenge": {
 				"difficulty": "18",
@@ -39795,7 +39795,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "DE-SIRE alterative",
-		"bpm": "80-160",
+		"bpm": "160",
 		"single": {
 			"challenge": {
 				"difficulty": "15",
@@ -42858,7 +42858,7 @@ var songs = [
 			}
 		},
 		"artist_translation": "",
-		"bpm": "180",
+		"bpm": "90-180",
 		"single": {
 			"challenge": null,
 			"difficult": {
