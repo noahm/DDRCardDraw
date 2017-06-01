@@ -567,12 +567,17 @@ var songs = [
 	  },
 	  "name_translation": "LOVE IS LIKE THE SPACEWAR!"
 	}, {
-	  "extra_exclusive": true,
+	  "unlock": true,
 	  "name": "Start a New Day",
 	  "artist": "Sota F.",
 	  "genre": "",
 	  "double": {
-	    "challenge": null,
+	    "challenge": {
+				"difficulty": "16",
+				"step": "582",
+				"shock": "0",
+				"freeze": "6"
+			},
 	    "difficult": {
 	      "difficulty": "11",
 	      "step": "347",
@@ -595,7 +600,12 @@ var songs = [
 	  "artist_translation": "",
 	  "bpm": "168",
 	  "single": {
-	    "challenge": null,
+	    "challenge": {
+				"difficulty": "16",
+				"step": "578",
+				"shock": "0",
+				"freeze": "6"
+			},
 	    "difficult": {
 	      "difficulty": "11",
 	      "step": "347",
@@ -733,12 +743,17 @@ var songs = [
 	  },
 	  "name_translation": ""
 	}, {
-	  "extra_exclusive": true,
+	  "unlock": true,
 	  "name": "Emera",
 	  "artist": "PON",
 	  "genre": "",
 	  "double": {
-	    "challenge": null,
+	    "challenge": {
+				"difficulty": "17",
+				"step": "554",
+				"shock": "0",
+				"freeze": "52"
+			},
 	    "difficult": {
 	      "difficulty": "11",
 	      "step": "303",
@@ -761,7 +776,12 @@ var songs = [
 	  "artist_translation": "",
 	  "bpm": "161",
 	  "single": {
-	    "challenge": null,
+	    "challenge": {
+				"difficulty": "17",
+				"step": "563",
+				"shock": "0",
+				"freeze": "54"
+			},
 	    "difficult": {
 	      "difficulty": "11",
 	      "step": "305",
@@ -1348,11 +1368,16 @@ var songs = [
 	  },
 	  "name_translation": ""
 	}, {
-		"extra_exclusive": true,
+		"unlock": true,
 		"name": "Come to Life",
 		"artist": "ARM (IOSYS) feat. Nicole Curry",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "18",
+				"step": "686",
+				"shock": "0",
+				"freeze": "54"
+			},
 			"difficult": {
 				"difficulty": "13",
 				"step": "409",
@@ -1375,7 +1400,12 @@ var songs = [
 		"artist_translation": "",
 		"bpm": "90-180",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "18",
+				"step": "730",
+				"shock": "0",
+				"freeze": "70"
+			},
 			"difficult": {
 				"difficulty": "12",
 				"step": "415",
