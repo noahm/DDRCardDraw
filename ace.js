@@ -1,11 +1,529 @@
 var songs = [
 	{
-		"extra_exclusive": true,
+	  "extra_exclusive": true,
+	  "name": "ACE FOR ACES",
+	  "artist": "TAG×U1",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "13",
+	      "step": "425",
+	      "shock": "0",
+	      "freeze": "25"
+	    },
+	    "expert": null,
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "313",
+	      "shock": "0",
+	      "freeze": "21"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "100-200",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "13",
+	      "step": "467",
+	      "shock": "0",
+	      "freeze": "19"
+	    },
+	    "expert": null,
+	    "beginner": null,
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "311",
+	      "shock": "0",
+	      "freeze": "19"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "extra_exclusive": true,
+	  "name": "ENDYMION",
+	  "artist": "fallen shepherd ft. RabbiTon Strings",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "15",
+	      "step": "581",
+	      "shock": "0",
+	      "freeze": "18"
+	    },
+	    "expert": {
+	      "difficulty": "18",
+	      "step": "741",
+	      "shock": "0",
+	      "freeze": "26"
+	    },
+	    "basic": {
+	      "difficulty": "13",
+	      "step": "468",
+	      "shock": "0",
+	      "freeze": "14"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "110-880",
+	  "single": {
+	    "challenge": {
+	      "difficulty": "19",
+	      "step": "925",
+	      "shock": "0",
+	      "freeze": "28"
+	    },
+	    "difficult": {
+	      "difficulty": "15",
+	      "step": "591",
+	      "shock": "0",
+	      "freeze": "21"
+	    },
+	    "expert": {
+	      "difficulty": "18",
+	      "step": "783",
+	      "shock": "0",
+	      "freeze": "22"
+	    },
+	    "beginner": {
+	      "difficulty": "9",
+	      "step": "276",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "basic": {
+	      "difficulty": "13",
+	      "step": "473",
+	      "shock": "0",
+	      "freeze": "15"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+	  "us_locked": true,
+	  "name": "初音ミクの消失",
+	  "artist": "cosMo@暴走P feat. 初音ミク",
+	  "genre": "",
+	  "double": {
+	    "challenge": {
+	      "difficulty": "16",
+	      "step": "721",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "528",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "expert": {
+	      "difficulty": "14",
+	      "step": "604",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "382",
+	      "shock": "0",
+	      "freeze": "12"
+	    }
+	  },
+	  "artist_translation": "cosMo＠BousouP feat.Hatsune Miku",
+	  "bpm": "240",
+	  "single": {
+	    "challenge": {
+	      "difficulty": "16",
+	      "step": "729",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "394",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "533",
+	      "shock": "0",
+	      "freeze": "10"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "97",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "294",
+	      "shock": "0",
+	      "freeze": "10"
+	    }
+	  },
+	  "name_translation": "The Disappearance of Hatsune Miku"
+	}, {
+	  "us_locked": true,
+	  "name": "脳漿炸裂ガール",
+	  "artist": "れるりり",
+	  "genre": "",
+	  "double": {
+	    "challenge": {
+	      "difficulty": "14",
+	      "step": "627",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "400",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "501",
+	      "shock": "0",
+	      "freeze": "32"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "291",
+	      "shock": "0",
+	      "freeze": "22"
+	    }
+	  },
+	  "artist_translation": "rerulili",
+	  "bpm": "155",
+	  "single": {
+	    "challenge": {
+	      "difficulty": "14",
+	      "step": "645",
+	      "shock": "0",
+	      "freeze": "13"
+	    },
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "398",
+	      "shock": "0",
+	      "freeze": "34"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "507",
+	      "shock": "0",
+	      "freeze": "31"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "170",
+	      "shock": "0",
+	      "freeze": "20"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "270",
+	      "shock": "0",
+	      "freeze": "26"
+	    }
+	  },
+	  "name_translation": "Brain Fluid Explosion Girl"
+	}, {
+	  "us_locked": true,
+	  "name": "幸せになれる隠しコマンドがあるらしい",
+	  "artist": "うたたP feat. 結月ゆかり",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "339",
+	      "shock": "0",
+	      "freeze": "23"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "492",
+	      "shock": "0",
+	      "freeze": "12"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "238",
+	      "shock": "0",
+	      "freeze": "12"
+	    }
+	  },
+	  "artist_translation": "UtataP feat. Yukari Yuzuki",
+	  "bpm": "142",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "319",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "491",
+	      "shock": "0",
+	      "freeze": "5"
+	    },
+	    "beginner": {
+	      "difficulty": "2",
+	      "step": "131",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "248",
+	      "shock": "0",
+	      "freeze": "5"
+	    }
+	  },
+	  "name_translation": "Apparently There's a Cheat Code to Happiness"
+	}, {
+	  "us_locked": true,
+	  "name": "チルノのパーフェクトさんすう教室",
+	  "artist": "ARM(IOSYS)",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "309",
+	      "shock": "0",
+	      "freeze": "60"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "409",
+	      "shock": "0",
+	      "freeze": "30"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "209",
+	      "shock": "0",
+	      "freeze": "29"
+	    }
+	  },
+	  "artist_translation": "",
+	  "bpm": "175",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "309",
+	      "shock": "0",
+	      "freeze": "60"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "409",
+	      "shock": "0",
+	      "freeze": "30"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "109",
+	      "shock": "0",
+	      "freeze": "35"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "209",
+	      "shock": "0",
+	      "freeze": "29"
+	    }
+	  },
+	  "name_translation": "Cirno's Perfect Math Class"
+	}, {
+	  "us_locked": true,
+	  "name": "向日葵サンセット",
+	  "artist": "ARM・まろん (IOSYS) × ランコ・パプリカ (豚乙女)",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "11",
+	      "step": "239",
+	      "shock": "0",
+	      "freeze": "24"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "339",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "129",
+	      "shock": "0",
+	      "freeze": "28"
+	    }
+	  },
+	  "artist_translation": "ARM, Maron (IOSYS) x ranko, paprika (Butaotome)",
+	  "bpm": "135",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "239",
+	      "shock": "0",
+	      "freeze": "24"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "339",
+	      "shock": "0",
+	      "freeze": "18"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "99",
+	      "shock": "0",
+	      "freeze": "16"
+	    },
+	    "basic": {
+	      "difficulty": "7",
+	      "step": "129",
+	      "shock": "0",
+	      "freeze": "28"
+	    }
+	  },
+	  "name_translation": "Sunflower Sunset"
+	}, {
+	  "us_locked": true,
+	  "name": "君氏危うくも近うよれ",
+	  "artist": "A応P",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "270",
+	      "shock": "0",
+	      "freeze": "5"
+	    },
+	    "expert": {
+	      "difficulty": "13",
+	      "step": "353",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "167",
+	      "shock": "0",
+	      "freeze": "2"
+	    }
+	  },
+	  "artist_translation": "AOP",
+	  "bpm": "162",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "269",
+	      "shock": "0",
+	      "freeze": "9"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "360",
+	      "shock": "0",
+	      "freeze": "7"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "104",
+	      "shock": "0",
+	      "freeze": "1"
+	    },
+	    "basic": {
+	      "difficulty": "6",
+	      "step": "157",
+	      "shock": "0",
+	      "freeze": "1"
+	    }
+	  },
+	  "name_translation": "Kunshi ayauku mo chikou yore"
+	}, {
+	  "name": "DREAMING-ING!!",
+	  "artist": "ときめきアイドル project",
+	  "genre": "",
+	  "double": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "308",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "386",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "202",
+	      "shock": "0",
+	      "freeze": "2"
+	    }
+	  },
+	  "artist_translation": "Tokimeki Idol project",
+	  "bpm": "180",
+	  "single": {
+	    "challenge": null,
+	    "difficult": {
+	      "difficulty": "10",
+	      "step": "305",
+	      "shock": "0",
+	      "freeze": "5"
+	    },
+	    "expert": {
+	      "difficulty": "12",
+	      "step": "392",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
+	    "beginner": {
+	      "difficulty": "3",
+	      "step": "89",
+	      "shock": "0",
+	      "freeze": "6"
+	    },
+	    "basic": {
+	      "difficulty": "8",
+	      "step": "205",
+	      "shock": "0",
+	      "freeze": "8"
+	    }
+	  },
+	  "name_translation": ""
+	}, {
+		"unlock": true,
 	  "name": "Cosy Catastrophe",
 	  "artist": "SYUNN",
 	  "genre": "",
 	  "double": {
-	    "challenge": null,
+	    "challenge": {
+	      "difficulty": "18",
+	      "step": "638",
+	      "shock": "0",
+	      "freeze": "11"
+	    },
 	    "difficult": {
 	      "difficulty": "13",
 	      "step": "406",
@@ -28,7 +546,12 @@ var songs = [
 	  "artist_translation": "",
 	  "bpm": "90-360",
 	  "single": {
-	    "challenge": null,
+	    "challenge": {
+	      "difficulty": "18",
+	      "step": "686",
+	      "shock": "0",
+	      "freeze": "14"
+	    },
 	    "difficult": {
 	      "difficulty": "13",
 	      "step": "422",
@@ -222,12 +745,17 @@ var songs = [
 	  },
 	  "name_translation": "Exciting!! Mo・Cha・Cha☆"
 	}, {
-	  "extra_exclusive": true,
+	  "unlock": true,
 	  "name": "Neutrino",
 	  "artist": "HuΣeR",
 	  "genre": "",
 	  "double": {
-	    "challenge": null,
+	    "challenge": {
+	      "difficulty": "18",
+	      "step": "565",
+	      "shock": "0",
+	      "freeze": "21"
+	    },
 	    "difficult": {
 	      "difficulty": "12",
 	      "step": "325",
@@ -250,7 +778,12 @@ var songs = [
 	  "artist_translation": "",
 	  "bpm": "75-300",
 	  "single": {
-	    "challenge": null,
+	    "challenge": {
+	      "difficulty": "18",
+	      "step": "570",
+	      "shock": "0",
+	      "freeze": "21"
+	    },
 	    "difficult": {
 	      "difficulty": "12",
 	      "step": "325",
@@ -278,12 +811,17 @@ var songs = [
 	  },
 	  "name_translation": ""
 	}, {
-	  "extra_exclusive": true,
+	  "unlock": true,
 	  "name": "out of focus",
 	  "artist": "Qrispy Joybox",
 	  "genre": "",
 	  "double": {
-	    "challenge": null,
+	    "challenge": {
+	      "difficulty": "16",
+	      "step": "562",
+	      "shock": "0",
+	      "freeze": "2"
+	    },
 	    "difficult": {
 	      "difficulty": "12",
 	      "step": "270",
@@ -306,7 +844,12 @@ var songs = [
 	  "artist_translation": "",
 	  "bpm": "84-167",
 	  "single": {
-	    "challenge": null,
+	    "challenge": {
+	      "difficulty": "16",
+	      "step": "572",
+	      "shock": "0",
+	      "freeze": "4"
+	    },
 	    "difficult": {
 	      "difficulty": "12",
 	      "step": "272",
@@ -389,12 +932,17 @@ var songs = [
 	  },
 	  "name_translation": ""
 	}, {
-	  "extra_exclusive": true,
+	  "unlock": true,
 	  "name": "Ishtar",
 	  "artist": "劇団レコード",
 	  "genre": "",
 	  "double": {
-	    "challenge": null,
+	    "challenge": {
+	    	"difficulty": "16",
+	    	"step": "489",
+	    	"shock": "71",
+	    	"freeze": "63"
+	    },
 	    "difficult": {
 	      "difficulty": "11",
 	      "step": "305",
@@ -417,7 +965,12 @@ var songs = [
 	  "artist_translation": "Gekidan Record",
 	  "bpm": "156",
 	  "single": {
-	    "challenge": null,
+	    "challenge": {
+	    	"difficulty": "16",
+	    	"step": "481",
+	    	"shock": "56",
+	    	"freeze": "58"
+	    },
 	    "difficult": {
 	      "difficulty": "11",
 	      "step": "306",
@@ -8670,7 +9223,12 @@ var songs = [
 		"artist": "ヒゲドライバー join. SELEN",
 		"genre": "JAPANESE TRADITIONAL",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "15",
+				"step": "589",
+				"shock": "0",
+				"freeze": "15"
+			},
 			"difficult": {
 				"difficulty": "11",
 				"step": "347",
@@ -8693,7 +9251,12 @@ var songs = [
 		"artist_translation": "Higedoraiba join. SELEN",
 		"bpm": "156",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "16",
+				"step": "618",
+				"shock": "0",
+				"freeze": "16"
+			},
 			"difficult": {
 				"difficulty": "11",
 				"step": "342",
@@ -25917,7 +26480,12 @@ var songs = [
 		"artist": "HHH×MM×ST",
 		"genre": "FASCINATION",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "14",
+				"step": "474",
+				"shock": "0",
+				"freeze": "16"
+			},
 			"difficult": {
 				"difficulty": "10",
 				"step": "289",
@@ -25940,7 +26508,12 @@ var songs = [
 		"artist_translation": "",
 		"bpm": "149",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "13",
+				"step": "450",
+				"shock": "0",
+				"freeze": "12"
+			},
 			"difficult": {
 				"difficulty": "8",
 				"step": "280",
