@@ -4,11 +4,32 @@
   "version": "1.0.0",
   "description": "A card draw app for running DDR tournaments",
   "scripts": {
+    "start": "webpack-dev-server --env.dev=true",
+    "build": "webpack",
     "validate": "node scripts/validate.js"
   },
   "author": "Jeff Lloyd",
   "license": "UNLICENSED",
   "devDependencies": {
-    "jsonschema": "^1.2.2"
+    "autoprefixer": "^7.2.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-jsx-pragmatic": "^1.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.28.9",
+    "eslint": "^4.17.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "jsonschema": "^1.2.2",
+    "postcss-loader": "^2.1.0",
+    "preact": "^8.2.7",
+    "style-loader": "^0.20.1",
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }

@@ -1,0 +1,13 @@
+.drawings {
+  flex: 1 0 0;
+  overflow: auto;
+}
+
+.chartList {
+  display: flex;
+  padding: 10px;
+}
+
+.chartList:not(:first-child) {
+  opacity: 0.5;
+}

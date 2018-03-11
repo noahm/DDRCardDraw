@@ -1,6 +1,6 @@
 const validateJSONSchema = require('jsonschema').validate;
 
-const aceSongs = require('../ace.json');
+const aceSongs = require('../src/songs/ace.json');
 const songsSchema = require('../songs.schema.json');
 const result = validateJSONSchema(aceSongs, songsSchema, {
     nestedErrors: true,

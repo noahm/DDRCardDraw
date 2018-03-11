@@ -1,0 +1,12 @@
+.form {
+  flex: 0 0 auto;
+  border-bottom: 1px solid #ccc;
+}
+
+label {
+  user-select: none;
+}
+
+input[type="number"] {
+  width: 3em;
+}

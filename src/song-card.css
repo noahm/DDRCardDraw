@@ -1,0 +1,47 @@
+.chart {
+  flex: 1 0 0;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.chart:not(:first-child) {
+  margin-left: 10px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.artist {
+  font-style: italic;
+}
+
+.beginner {
+  background-color: #6eccc4;
+}
+
+.basic {
+  background-color: #e0de5c;
+}
+
+.difficult {
+  background-color: #e8715f;
+}
+
+.expert {
+  background-color: #72cc6e;
+}
+
+.challenge {
+  background-color: #cc71e8;
+}
+
+.vetoed {
+  opacity: 0.3;
+}
+
+.difficulty {
+  text-transform: uppercase;
+}
