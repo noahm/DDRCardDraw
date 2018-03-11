@@ -1,5 +1,902 @@
 var songs = [
 	{
+		"us_locked": true,
+		"name": "ようこそジャパリパークへ",
+		"artist": "どうぶつビスケッツ×PPP",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "165",
+				"shock": "0",
+				"freeze": "2",
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "280",
+				"shock": "0",
+				"freeze": "22",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "402",
+				"shock": "0",
+				"freeze": "16",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Doubutsu biscuits × PPP",
+		"bpm": "170",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "109",
+				"shock": "0",
+				"freeze": "9",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "162",
+				"shock": "0",
+				"freeze": "6",
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "282",
+				"shock": "0",
+				"freeze": "20",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "424",
+				"shock": "0",
+				"freeze": "12",
+			},
+			"challenge": null
+		},
+		"name_translation": "Youkoso Japari Park e",
+	}, {
+		"us_locked": true,
+		"name": "輪廻転生",
+		"artist": "まふまふ",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "7",
+				"step": "278",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"difficult": {
+				"difficulty": "11",
+				"step": "433",
+				"shock": "0",
+				"freeze": "10",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "601",
+				"shock": "0",
+				"freeze": "15",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Mafumafu",
+		"bpm": "196",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "128",
+				"shock": "0",
+				"freeze": "6",
+			},
+			"basic": {
+				"difficulty": "7",
+				"step": "265",
+				"shock": "0",
+				"freeze": "17",
+			},
+			"difficult": {
+				"difficulty": "11",
+				"step": "453",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "612",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"challenge": null
+		},
+		"name_translation": "Rinnetensei",
+	}, {
+		"us_locked": true,
+		"name": "More One Night",
+		"artist": "チト(CV：水瀬いのり)、ユーリ(CV：久保ユリカ)",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "138",
+				"shock": "0",
+				"freeze": "17",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "194",
+				"shock": "0",
+				"freeze": "26",
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "284",
+				"shock": "0",
+				"freeze": "17",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Chito (CV: Inori Minase); Yuuri (CV: Yurika Kubo)",
+		"bpm": "123",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "94",
+				"shock": "0",
+				"freeze": "4",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "137",
+				"shock": "0",
+				"freeze": "20",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "193",
+				"shock": "0",
+				"freeze": "21",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "275",
+				"shock": "0",
+				"freeze": "24",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"name": "Twin memories W",
+		"artist": "ときめきアイドル project",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "181",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "273",
+				"shock": "0",
+				"freeze": "21",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "367",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol project",
+		"bpm": "160",
+		"single": {
+			"beginner": {
+				"difficulty": "2",
+				"step": "108",
+				"shock": "0",
+				"freeze": "10",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "181",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "273",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "379",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"name": "Jewelry days",
+		"artist": "ときめきアイドル project",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "202",
+				"shock": "0",
+				"freeze": "15",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "270",
+				"shock": "0",
+				"freeze": "9",
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "336",
+				"shock": "0",
+				"freeze": "19",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol project",
+		"bpm": "179",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "109",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "204",
+				"shock": "0",
+				"freeze": "11",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "273",
+				"shock": "0",
+				"freeze": "10",
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "341",
+				"shock": "0",
+				"freeze": "21",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"name": "invisible rain",
+		"artist": "ときめきアイドル project 月島美奈都",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "4",
+				"step": "106",
+				"shock": "0",
+				"freeze": "7",
+			},
+			"difficult": {
+				"difficulty": "7",
+				"step": "172",
+				"shock": "0",
+				"freeze": "9",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "265",
+				"shock": "0",
+				"freeze": "10",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol project Minato Tsukishima",
+		"bpm": "58-97",
+		"single": {
+			"beginner": {
+				"difficulty": "2",
+				"step": "67",
+				"shock": "0",
+				"freeze": "8",
+			},
+			"basic": {
+				"difficulty": "4",
+				"step": "107",
+				"shock": "0",
+				"freeze": "8",
+			},
+			"difficult": {
+				"difficulty": "7",
+				"step": "180",
+				"shock": "0",
+				"freeze": "9",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "264",
+				"shock": "0",
+				"freeze": "10",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"name": "闘え！ダダンダーンV",
+		"artist": "ときめきアイドル project",
+		"genre": "Tokimeki Idol project",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "209",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "317",
+				"shock": "0",
+				"freeze": "31",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "436",
+				"shock": "0",
+				"freeze": "20",
+			},
+			"challenge": null
+		},
+		"artist_translation": "",
+		"bpm": "176",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "111",
+				"shock": "0",
+				"freeze": "0",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "210",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "317",
+				"shock": "0",
+				"freeze": "40",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "436",
+				"shock": "0",
+				"freeze": "19",
+			},
+			"challenge": null
+		},
+		"name_translation": "Tatakae! Dadandarn V",
+	}, {
+		"name": "しゃかりきリレーション",
+		"artist": "ときめきアイドル project 結城秋葉",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "181",
+				"shock": "0",
+				"freeze": "11",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "325",
+				"shock": "0",
+				"freeze": "16",
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "400",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol project Akiha Yuki",
+		"bpm": "167",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "110",
+				"shock": "0",
+				"freeze": "0",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "185",
+				"shock": "0",
+				"freeze": "9",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "325",
+				"shock": "0",
+				"freeze": "19",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "400",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"challenge": null
+		},
+		"name_translation": "Shakariki relation",
+	}, {
+		"name": "ハルイチバン",
+		"artist": "ときめきアイドル project",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "173",
+				"shock": "0",
+				"freeze": "19",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "223",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "350",
+				"shock": "0",
+				"freeze": "44",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol Project",
+		"bpm": "180",
+		"single": {
+			"beginner": {
+				"difficulty": "4",
+				"step": "109",
+				"shock": "0",
+				"freeze": "20",
+			},
+			"basic": {
+				"difficulty": "7",
+				"step": "165",
+				"shock": "0",
+				"freeze": "23",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "224",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "356",
+				"shock": "0",
+				"freeze": "44",
+			},
+			"challenge": null
+		},
+		"name_translation": "Haru ichiban",
+	}, {
+		"name": "恋のパズルマジック",
+		"artist": "ときめきアイドル project Rhythmixxx",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "7",
+				"step": "151",
+				"shock": "0",
+				"freeze": "12",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "239",
+				"shock": "0",
+				"freeze": "3",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "290",
+				"shock": "0",
+				"freeze": "9",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol Project \"Rhythmixxx\"",
+		"bpm": "140",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "115",
+				"shock": "0",
+				"freeze": "4",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "150",
+				"shock": "0",
+				"freeze": "12",
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "231",
+				"shock": "0",
+				"freeze": "3",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "302",
+				"shock": "0",
+				"freeze": "2",
+			},
+			"challenge": null
+		},
+		"name_translation": "Koi no puzzle magic",
+	}, {
+		"name": "Strawberry Chu♡Chu♡",
+		"artist": "ときめきアイドル project クッキーパラダイス",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "7",
+				"step": "200",
+				"shock": "0",
+				"freeze": "43",
+			},
+			"difficult": {
+				"difficulty": "11",
+				"step": "312",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "394",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Tokimeki Idol Project \"Cookie paradise\"",
+		"bpm": "137",
+		"single": {
+			"beginner": {
+				"difficulty": "2",
+				"step": "121",
+				"shock": "0",
+				"freeze": "17",
+			},
+			"basic": {
+				"difficulty": "7",
+				"step": "200",
+				"shock": "0",
+				"freeze": "47",
+			},
+			"difficult": {
+				"difficulty": "11",
+				"step": "316",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "405",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"extra_exclusive": true,
+		"name": "High School Love",
+		"artist": "DJ YOSHITAKA feat.DWP",
+		"genre": "HIGH SPEED LOVE SONG",
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "182",
+				"shock": "0",
+				"freeze": "23",
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "330",
+				"shock": "0",
+				"freeze": "24",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "467",
+				"shock": "0",
+				"freeze": "13",
+			},
+			"challenge": null
+		},
+		"artist_translation": "",
+		"bpm": "180",
+		"single": {
+			"beginner": {
+				"difficulty": "3",
+				"step": "121",
+				"shock": "0",
+				"freeze": "15",
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "187",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "330",
+				"shock": "0",
+				"freeze": "26",
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "470",
+				"shock": "0",
+				"freeze": "21",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"extra_exclusive": true,
+		"name": "CHOCOLATE PHILOSOPHY",
+		"artist": "常盤ゆう",
+		"genre": "SWING WALTZ",
+		"double": {
+			"basic": {
+				"difficulty": "4",
+				"step": "116",
+				"shock": "0",
+				"freeze": "23",
+			},
+			"difficult": {
+				"difficulty": "8",
+				"step": "184",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"expert": {
+				"difficulty": "10",
+				"step": "283",
+				"shock": "0",
+				"freeze": "16",
+			},
+			"challenge": {
+				"difficulty": "13",
+				"step": "401",
+				"shock": "0",
+				"freeze": "8",
+			}
+		},
+		"artist_translation": "Yu Tokiwa",
+		"bpm": "110",
+		"single": {
+			"beginner": {
+				"difficulty": "2",
+				"step": "71",
+				"shock": "0",
+				"freeze": "10",
+			},
+			"basic": {
+				"difficulty": "4",
+				"step": "114",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"difficult": {
+				"difficulty": "8",
+				"step": "184",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"expert": {
+				"difficulty": "10",
+				"step": "283",
+				"shock": "0",
+				"freeze": "17",
+			},
+			"challenge": {
+				"difficulty": "12",
+				"step": "400",
+				"shock": "0",
+				"freeze": "20",
+			}
+		},
+		"name_translation": "",
+	}, {
+		"name": "ルミナスデイズ",
+		"artist": "ここなつ",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "5",
+				"step": "167",
+				"shock": "0",
+				"freeze": "19",
+			},
+			"difficult": {
+				"difficulty": "8",
+				"step": "306",
+				"shock": "0",
+				"freeze": "25",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "387",
+				"shock": "0",
+				"freeze": "24",
+			},
+			"challenge": null
+		},
+		"artist_translation": "Coconatsu",
+		"bpm": "145",
+		"single": {
+			"beginner": {
+				"difficulty": "2",
+				"step": "123",
+				"shock": "0",
+				"freeze": "0",
+			},
+			"basic": {
+				"difficulty": "5",
+				"step": "171",
+				"shock": "0",
+				"freeze": "21",
+			},
+			"difficult": {
+				"difficulty": "8",
+				"step": "306",
+				"shock": "0",
+				"freeze": "30",
+			},
+			"expert": {
+				"difficulty": "11",
+				"step": "398",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"challenge": null
+		},
+		"name_translation": "Luminous days",
+	}, {
+		"unlock": true,
+		"name": "Reach The Sky, Without you",
+		"artist": "nc ft.NRGFactory",
+		"genre": "",
+		"double": {
+			"basic": {
+				"difficulty": "10",
+				"step": "315",
+				"shock": "0",
+				"freeze": "14",
+			},
+			"difficult": {
+				"difficulty": "14",
+				"step": "442",
+				"shock": "0",
+				"freeze": "28",
+			},
+			"expert": {
+				"difficulty": "17",
+				"step": "587",
+				"shock": "0",
+				"freeze": "27",
+			},
+			"challenge": null
+		},
+		"artist_translation": "",
+		"bpm": "95-190",
+		"single": {
+			"beginner": {
+				"difficulty": "7",
+				"step": "207",
+				"shock": "0",
+				"freeze": "14",
+			},
+			"basic": {
+				"difficulty": "10",
+				"step": "323",
+				"shock": "0",
+				"freeze": "18",
+			},
+			"difficult": {
+				"difficulty": "14",
+				"step": "461",
+				"shock": "0",
+				"freeze": "21",
+			},
+			"expert": {
+				"difficulty": "17",
+				"step": "607",
+				"shock": "0",
+				"freeze": "28",
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
+		"unlock": "true",
+		"name": "Be a Hero",
+		"artist": "中島由貴",
+		"genre": "DIGITAL THRASH PUNK",
+		"double": {
+			"basic": {
+				"difficulty": "9",
+				"step": "369",
+				"shock": "0",
+				"freeze": "21"
+			},
+			"difficult": {
+				"difficulty": "14",
+				"step": "565",
+				"shock": "0",
+				"freeze": "16",
+			},
+			"expert": {
+				"difficulty": "17",
+				"step": "742",
+				"shock": "0",
+				"freeze": "52"
+			},
+			"challenge": null
+		},
+		"artist_translation": "Yuki Nakashima",
+		"bpm": "190",
+		"single": {
+			"beginner": {
+				"difficulty": "7",
+				"step": "261",
+				"shock": "0",
+				"freeze": "35"
+			},
+			"basic": {
+				"difficulty": "9",
+				"step": "375",
+				"shock": "0",
+				"freeze": "22"
+			},
+			"difficult": {
+				"difficulty": "13",
+				"step": "562",
+				"shock": "0",
+				"freeze": "18"
+			},
+			"expert": {
+				"difficulty": "17",
+				"step": "754",
+				"shock": "0",
+				"freeze": "52"
+			},
+			"challenge": null
+		},
+		"name_translation": "",
+	}, {
 	  "extra_exclusive": true,
 	  "name": "ACE FOR ACES",
 	  "artist": "TAG×U1",
@@ -12,7 +909,12 @@ var songs = [
 	      "shock": "0",
 	      "freeze": "25"
 	    },
-	    "expert": null,
+	    "expert": {
+			"difficulty": "15",
+			"step": "634",
+			"shock": "0",
+			"freeze": "34"
+		},
 	    "basic": {
 	      "difficulty": "7",
 	      "step": "313",
@@ -30,8 +932,18 @@ var songs = [
 	      "shock": "0",
 	      "freeze": "19"
 	    },
-	    "expert": null,
-	    "beginner": null,
+	    "expert": {
+			"difficulty": "15",
+			"step": "658",
+			"shock": "0",
+			"freeze": "14"
+		},
+	    "beginner": {
+			"difficulty": "4",
+			"step": "116",
+			"shock": "0",
+			"freeze": "7"
+		},
 	    "basic": {
 	      "difficulty": "7",
 	      "step": "311",
@@ -579,7 +1491,6 @@ var songs = [
 	  },
 	  "name_translation": ""
 	}, {
-	  "removed": true,
 	  "name": "Thank You Merry Christmas",
 	  "artist": "VENUS",
 	  "genre": "",
