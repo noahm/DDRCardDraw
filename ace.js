@@ -608,7 +608,7 @@ var songs = [
 		},
 		"name_translation": "",
 	}, {
-		"extra_exclusive": true,
+		"unlock": true,
 		"name": "High School Love",
 		"artist": "DJ YOSHITAKA feat.DWP",
 		"genre": "HIGH SPEED LOVE SONG",
@@ -664,7 +664,7 @@ var songs = [
 		},
 		"name_translation": "",
 	}, {
-		"extra_exclusive": true,
+		"unlock": true,
 		"name": "CHOCOLATE PHILOSOPHY",
 		"artist": "常盤ゆう",
 		"genre": "SWING WALTZ",
