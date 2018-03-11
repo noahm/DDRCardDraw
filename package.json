@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "ddr-card-draw",
+  "version": "1.0.0",
+  "description": "A card draw app for running DDR tournaments",
+  "scripts": {
+    "validate": "node scripts/validate.js"
+  },
+  "author": "Jeff Lloyd",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jsonschema": "^1.2.2"
+  }
+}

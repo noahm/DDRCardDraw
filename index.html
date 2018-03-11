@@ -95,7 +95,6 @@
       flex: 0 0 20px;
     }
   </style>
-  <script src="ace.js"></script>
 </head>
 <body>
   <div class='container'>
@@ -169,11 +168,15 @@
 
 <script type="text/javascript">
   var ready = function(fn) {
-    if (document.readyState === 'complete') {
-      return fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn, false);
-    }
+    fetch('ace.json').then(resp => resp.json()).then(songs => {
+      window.songs = songs;
+
+      if (document.readyState === 'complete') {
+        return fn();
+      } else {
+        document.addEventListener('DOMContentLoaded', fn, false);
+      }
+    });
   };
 
   var createElementHelper = function(tagName, className, innerHTML) {

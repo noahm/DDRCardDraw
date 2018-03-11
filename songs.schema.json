@@ -1,0 +1,140 @@
+{
+    "type": "array",
+    "title": "song list",
+    "items": {
+        "type": "object",
+        "title": "song",
+        "properties": {
+            "unlock": {
+                "oneOf": [
+                    { "type": "string" },
+                    { "type": "boolean" }
+                ]
+            },
+            "extra_exclusive": {
+                "type": "boolean"
+            },
+            "removed": {
+                "type": "boolean"
+            },
+            "us_locked": {
+                "type": "boolean"
+            },
+            "name": {
+                "type": "string"
+            },
+            "artist": {
+                "type": "string"
+            },
+            "genre": {
+                "type": "string"
+            },
+            "artist_translation": {
+                "type": "string"
+            },
+            "bpm": {
+                "type": "string"
+            },
+            "name_translation": {
+                "type": "string"
+            },
+            "double": {
+                "type": "object",
+                "title": "doubles charts",
+                "additionalProperties": false,
+                "properties": {
+                    "basic": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "difficult": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "expert": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "challenge": {
+                        "$ref": "#/definitions/chart"
+                    }
+                },
+                "required": [
+                    "basic",
+                    "difficult",
+                    "expert",
+                    "challenge"
+                ]
+            },
+            "single": {
+                "type": "object",
+                "title": "singles charts",
+                "additionalProperties": false,
+                "properties": {
+                    "beginner": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "basic": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "difficult": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "expert": {
+                        "$ref": "#/definitions/chart"
+                    },
+                    "challenge": {
+                        "$ref": "#/definitions/chart"
+                    }
+                },
+                "required": [
+                    "beginner",
+                    "basic",
+                    "difficult",
+                    "expert",
+                    "challenge"
+                ]
+            }
+        },
+        "required": [
+            "name",
+            "artist",
+            "genre",
+            "double",
+            "artist_translation",
+            "bpm",
+            "single",
+            "name_translation"
+        ],
+        "additionalProperties": false
+    },
+    "definitions": {
+        "chart": {
+            "oneOf": [
+                { "type": "null" },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "difficulty": {
+                            "type": "string"
+                        },
+                        "step": {
+                            "type": "string"
+                        },
+                        "shock": {
+                            "type": "string"
+                        },
+                        "freeze": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "difficulty",
+                        "step",
+                        "shock",
+                        "freeze"
+                    ]
+                }
+            ]
+        }
+    },
+    "additionalItems": false
+}
