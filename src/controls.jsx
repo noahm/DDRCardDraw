@@ -11,22 +11,22 @@ export class Controls extends Component {
         <div className={globalStyles.padded}>
           Number of charts to randomize:
           {' '}
-          <input type='number' name='chartCount' value='5' min='1' />
+          <input type='number' name='chartCount' defaultValue='5' min='1' />
         </div>
         <div className={globalStyles.padded}>
           Lower bound (inclusive):
           {' '}
-          <input type='number' name='lowerBound' value='1' min='1' max='19' />
+          <input type='number' name='lowerBound' defaultValue='1' min='1' max='19' />
           {' '}
           Upper bound (inclusive):
           {' '}
-          <input type='number' name='upperBound' value='19' min='1' max='19'/>
+          <input type='number' name='upperBound' defaultValue='19' min='1' max='19'/>
         </div>
         <div className={globalStyles.padded}>
           Style:
           {' '}
           <label>
-            <input type='radio' name='style' value='single' checked />
+            <input type='radio' name='style' value='single' defaultChecked />
             Single
           </label>
           {' '}
@@ -46,7 +46,7 @@ export class Controls extends Component {
             ['Challenge', true],
           ].map(([difficulty, checked]) => (
             <label>
-              <input type='checkbox' name='difficulties' value={difficulty.toLowerCase()} checked={checked} />
+              <input type='checkbox' name='difficulties' value={difficulty.toLowerCase()} defaultChecked={checked} />
               {difficulty + ' '}
             </label>
           ))}
