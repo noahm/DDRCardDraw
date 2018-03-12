@@ -34,7 +34,7 @@ export function draw(configData) {
             'bpm': currentSong.bpm,
             'difficulty': key,
             'rating': chart.difficulty,
-            // 'hasShock': parseInt(chart.shock, 10) > 0,
+            'hasShock': parseInt(chart.shock, 10) > 0,
           });
         }
       }
