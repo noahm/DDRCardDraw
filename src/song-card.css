@@ -4,10 +4,21 @@
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
 }
 
 .chart:not(:first-child) {
   margin-left: 10px;
+}
+
+.cardCenter {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .name {
@@ -16,6 +27,24 @@
 
 .artist {
   font-style: italic;
+  font-size: 90%;
+}
+
+.cardFooter {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 80%;
+  padding-top: 10px;
+  align-items: flex-end;
+}
+
+.shockBadge {
+  background-color: white;
+  padding: 3px;
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1em;
 }
 
 .beginner {

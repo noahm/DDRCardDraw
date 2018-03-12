@@ -16,6 +16,7 @@ export class SongCard extends Component {
       bpm,
       difficulty,
       rating,
+      hasShock,
     } = this.props;
 
     const rootClassname = classNames(
@@ -28,20 +29,25 @@ export class SongCard extends Component {
 
     return (
       <div className={rootClassname} onClick={this.toggleVeto}>
-        <div className={styles.name}>
-          {name}
-          {!!nameTranslation && (
-            <div>[{nameTranslation}]</div>
-          )}
+        <div className={styles.cardCenter}>
+          <div className={styles.name}>
+            {name}
+            {!!nameTranslation && (
+              <div>[{nameTranslation}]</div>
+            )}
+          </div>
+          <div className={styles.artist}>
+            {artist}
+            {!!artistTranslation && (
+              <div>[{artistTranslation}]</div>
+            )}
+          </div>
         </div>
-        <div className={styles.artist}>
-          {artist}
-          {!!artistTranslation && (
-            <div>[{artistTranslation}]</div>
-          )}
+        <div className={styles.cardFooter}>
+          <div className={styles.bpm}>{bpm} BPM</div>
+          {hasShock && <div className={styles.shockBadge} title="Shock Arrows">&#9889;</div>}
+          <div className={styles.difficulty}>{difficulty.substr(0, 2)} {rating}</div>
         </div>
-        <div className={styles.bpm}>{bpm} BPM</div>
-        <div className={styles.difficulty}>{difficulty} {rating}</div>
       </div>
     );
   }

@@ -33,7 +33,8 @@ export function draw(configData) {
             'artistTranslation': currentSong.artist_translation,
             'bpm': currentSong.bpm,
             'difficulty': key,
-            'rating': chart.difficulty
+            'rating': chart.difficulty,
+            // 'hasShock': parseInt(chart.shock, 10) > 0,
           });
         }
       }
