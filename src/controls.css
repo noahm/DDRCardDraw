@@ -1,10 +1,12 @@
 .form {
   flex: 0 0 auto;
   border-bottom: 1px solid #ccc;
+  columns: 3;
 }
 
 label {
   user-select: none;
+  display: block;
 }
 
 input[type="number"] {

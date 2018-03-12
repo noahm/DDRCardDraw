@@ -9,35 +9,32 @@ export class Controls extends Component {
     return (
       <form ref={this.saveFormRef} className={styles.form} onSubmit={this.handleSubmit}>
         <div className={globalStyles.padded}>
-          Number of charts to randomize:
+          Number to draw:
           {' '}
           <input type='number' name='chartCount' defaultValue='5' min='1' />
         </div>
         <div className={globalStyles.padded}>
-          Lower bound (inclusive):
-          {' '}
-          <input type='number' name='lowerBound' defaultValue='1' min='1' max='19' />
-          {' '}
-          Upper bound (inclusive):
-          {' '}
-          <input type='number' name='upperBound' defaultValue='19' min='1' max='19'/>
+          Difficulty level:
+          <label>
+            Lower bound (inclusive):
+            <input type='number' name='lowerBound' defaultValue='1' min='1' max='19' />
+          </label>
+          <label>
+            Upper bound (inclusive):
+            <input type='number' name='upperBound' defaultValue='19' min='1' max='19'/>
+          </label>
         </div>
         <div className={globalStyles.padded}>
-          Style:
-          {' '}
           <label>
-            <input type='radio' name='style' value='single' defaultChecked />
-            Single
-          </label>
-          {' '}
-          <label>
-            <input type='radio' name='style' value='double' />
-            Double
+            Style:
+            <select name="style">
+              <option value="single" defaultSelected>Single</option>
+              <option value="double">Double</option>
+            </select>
           </label>
         </div>
         <div className={globalStyles.padded}>
           Difficulties:
-          {' '}
           {[
             ['Beginner', false],
             ['Basic', false],
@@ -47,25 +44,21 @@ export class Controls extends Component {
           ].map(([difficulty, checked]) => (
             <label>
               <input type='checkbox' name='difficulties' value={difficulty.toLowerCase()} defaultChecked={checked} />
-              {difficulty + ' '}
+              {difficulty}
             </label>
           ))}
         </div>
         <div className={globalStyles.padded}>
           Include:
-          {' '}
           <label>
             <input type='checkbox' name='inclusions' value='extraExclusive' />Extra Exclusive songs
           </label>
-          {' '}
           <label>
             <input type='checkbox' name='inclusions' value='unlock' />Unlockable songs
           </label>
-          {' '}
           <label>
-            <input type='checkbox' name='inclusions' value='usLocked' />Songs unavailable in the US
+            <input type='checkbox' name='inclusions' value='usLocked' />Japan-only songs
           </label>
-          {' '}
           <label>
             <input type='checkbox' name='inclusions' value='removed' />Removed songs
           </label>

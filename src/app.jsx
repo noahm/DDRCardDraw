@@ -21,7 +21,6 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <h1>DDR A Card Draw / Randomizer App</h1>
         <Controls onDraw={this.doDrawing} />
         <DrawingList drawings={this.state.drawings} />
         <Footer />
