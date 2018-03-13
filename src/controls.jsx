@@ -1,3 +1,4 @@
+import 'formdata-polyfill';
 import { Component } from 'preact';
 import styles from './controls.css';
 import globalStyles from './app.css';
@@ -9,9 +10,11 @@ export class Controls extends Component {
     return (
       <form ref={this.saveFormRef} className={styles.form} onSubmit={this.handleSubmit}>
         <div className={globalStyles.padded}>
-          Number to draw:
-          {' '}
-          <input type='number' name='chartCount' defaultValue='5' min='1' />
+          <label>
+            Number to draw:
+            {' '}
+            <input type='number' name='chartCount' defaultValue='5' min='1' />
+          </label>
         </div>
         <div className={globalStyles.padded}>
           Difficulty level:
