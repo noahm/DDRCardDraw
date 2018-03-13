@@ -17,7 +17,7 @@ module.exports = function (env = {}, argv = {}) {
         },
         entry: './src/app.jsx',
         output: {
-            filename: '[name].bundle.js',
+            filename: '[name].[hash].js',
             path: resolve(__dirname, './dist'),
         },
         resolve: {
@@ -83,7 +83,7 @@ module.exports = function (env = {}, argv = {}) {
                 'process.env.NODE_ENV': isProd ? 'production' : 'development',
             }),
             new ExtractTextPlugin({
-                filename: '[name]-styles.css',
+                filename: '[name].[hash].css',
             }),
             new HtmlWebpackPlugin({
                 title: 'DDR A Card Draw',
