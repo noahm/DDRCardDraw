@@ -1,3 +1,4 @@
+import * as classNames from 'classnames';
 import 'formdata-polyfill';
 import { Component } from 'preact';
 import styles from './controls.css';
@@ -24,8 +25,19 @@ export class Controls extends Component {
               <input type='number' name='chartCount' defaultValue='5' min='1' />
             </label>
           </div>
-          <div className={globalStyles.padded}>
+          <div className={styles.group}>
             Difficulty level:
+            <label>
+              Upper bound (inclusive):
+              <input
+                type='number'
+                name='upperBound'
+                onChange={this.handleUpperBoundChange}
+                value={this.state.upperBound}
+                min={this.state.lowerBound}
+                max='19'
+              />
+            </label>
             <label>
               Lower bound (inclusive):
               <input
@@ -34,18 +46,7 @@ export class Controls extends Component {
                 onChange={this.handleLowerBoundChange}
                 value={this.state.lowerBound}
                 min='1'
-                max='19'
-              />
-            </label>
-            <label>
-              Upper bound (inclusive):
-              <input
-                type='number'
-                name='upperBound'
-                onChange={this.handleUpperBoundChange}
-                value={this.state.upperBound}
-                min='1'
-                max='19'
+                max={this.state.upperBound}
               />
             </label>
           </div>
@@ -64,7 +65,7 @@ export class Controls extends Component {
               </select>
             </label>
           </div>
-          <div className={globalStyles.padded}>
+          <div className={styles.group}>
             Difficulties:
             {[
               ['Beginner', false],
@@ -79,7 +80,7 @@ export class Controls extends Component {
               </label>
             ))}
           </div>
-          <div className={globalStyles.padded}>
+          <div className={styles.group}>
             Include:
             <label>
               <input type='checkbox' name='inclusions' value='extraExclusive' />Extra Exclusive songs

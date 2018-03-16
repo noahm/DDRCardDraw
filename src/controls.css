@@ -6,7 +6,6 @@
 
 label {
   user-select: none;
-  display: block;
 }
 
 input[type="number"] {
@@ -15,6 +14,13 @@ input[type="number"] {
 
 .columns {
   columns: 3;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 10px;
 }
 
 .hidden {
