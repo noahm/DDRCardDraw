@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --env.dev=true",
     "build": "webpack",
+    "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
     "validate": "node scripts/validate.js"
   },
   "author": "Jeff Lloyd",
@@ -29,6 +30,7 @@
     "postcss-loader": "^2.1.0",
     "preact": "^8.2.7",
     "style-loader": "^0.20.1",
+    "surge": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
