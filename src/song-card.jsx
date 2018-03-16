@@ -2,6 +2,14 @@ import classNames from 'classnames';
 import { Component } from 'preact';
 import styles from './song-card.css';
 
+const difficultyNames = {
+  beginner: "Beg",
+  basic: "Bas",
+  difficult: "Dif",
+  expert: "Ex",
+  challenge: "Ch",
+};
+
 export class SongCard extends Component {
   state = {
     vetoed: false,
@@ -46,7 +54,7 @@ export class SongCard extends Component {
         <div className={styles.cardFooter}>
           <div className={styles.bpm}>{bpm} BPM</div>
           {hasShock && <div className={styles.shockBadge} title="Shock Arrows">&#9889;</div>}
-          <div className={styles.difficulty}>{difficulty.substr(0, 2)} {rating}</div>
+          <div className={styles.difficulty}>{difficultyNames[difficulty]} {rating}</div>
         </div>
       </div>
     );

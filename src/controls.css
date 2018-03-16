@@ -1,7 +1,7 @@
 .form {
   flex: 0 0 auto;
   border-bottom: 1px solid #ccc;
-  columns: 3;
+  padding-bottom: 10px;
 }
 
 label {
@@ -11,4 +11,26 @@ label {
 
 input[type="number"] {
   width: 3em;
+}
+
+.columns {
+  columns: 3;
+}
+
+.hidden {
+  display: none;
+}
+
+.weights {
+  margin-left: 2em;
+}
+
+.weights label {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.weights input {
+  display: block;
 }

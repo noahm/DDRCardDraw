@@ -8,6 +8,7 @@ import styles from './app.css';
 class App extends Component {
   state = {
     drawings: [],
+    lastDrawFailed: false,
   };
 
   componentDidMount() {
@@ -21,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <Controls onDraw={this.doDrawing} />
+        <Controls onDraw={this.doDrawing} lastDrawFailed={this.state.lastDrawFailed} />
         <DrawingList drawings={this.state.drawings} />
         <Footer />
       </div>
@@ -30,8 +31,16 @@ class App extends Component {
 
   doDrawing = (configData) => {
     const drawing = draw(configData);
+    if (!drawing.charts.length) {
+      this.setState({
+        lastDrawFailed: true,
+      });
+      return;
+    }
+
     this.setState(prevState => ({
       drawings: [drawing].concat(prevState.drawings),
+      lastDrawFailed: false,
     }));
   }
 
