@@ -8,8 +8,8 @@ import { times } from './utils';
 export class Controls extends Component {
   state = {
     weighted: false,
-    lowerBound: 1,
-    upperBound: 19,
+    lowerBound: 13,
+    upperBound: 16,
   };
 
   form = null;
