@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Component } from 'preact';
-import { SongCard } from './song-card';
+import { DrawnSet } from './drawn-set';
 import styles from './drawing-list.css';
 import globalStyles from './app.css';
 
@@ -11,37 +11,33 @@ export class DrawingList extends Component {
 
     return (
       <div className={styles.drawings}>
-        {!!nextSet && !!currentSet && (
-          <div>
-            Up Next:
-            {this.renderDrawing(nextSet)}
-          </div>
-        )}
-        {(!!nextSet && (
-          <div>
-            Current Set:
+        {((nextSet || currentSet) && (
+          <section>
+            <div className={styles.sectionLabel}>Current Set:</div>
             {this.renderDrawing(currentSet || nextSet)}
-          </div>
+          </section>
         ))}
+        {!!nextSet && !!currentSet && (
+          <section>
+            <div className={styles.sectionLabel}>Up Next:</div>
+            {this.renderDrawing(nextSet)}
+          </section>
+        )}
         {!!pastSets.length && (
-          <div className={styles.drawings}>
-            Past sets:
+          <section className={styles.drawings}>
+            <div className={styles.sectionLabel}>Past sets:</div>
             <div className={styles.scrollable}>
               {pastSets.map(this.renderDrawing)}
             </div>
-          </div>
+          </section>
         )}
       </div>
     );
   }
 
-  renderDrawing(drawing, key) {
+  renderDrawing(drawing) {
     return (
-      <div key={drawing.id} className={styles.chartList}>
-        {drawing.charts.map((chart, j) => (
-          <SongCard key={j} {...chart} />
-        ))}
-      </div>
+      <DrawnSet key={drawing.id} drawing={drawing} />
     );
   }
 }

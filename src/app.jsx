@@ -22,7 +22,12 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <Controls onDraw={this.doDrawing} lastDrawFailed={this.state.lastDrawFailed} />
+        <Controls
+          onDraw={this.doDrawing}
+          // onClear={this.handleClear}
+          onPromote={this.handlePromote}
+          lastDrawFailed={this.state.lastDrawFailed}
+        />
         <DrawingList drawings={this.state.drawings} />
         <Footer />
       </div>
@@ -39,7 +44,18 @@ class App extends Component {
     }
 
     this.setState(prevState => ({
-      drawings: [drawing].concat(prevState.drawings),
+      drawings: [drawing].concat(prevState.drawings).filter(Boolean),
+      lastDrawFailed: false,
+    }));
+  }
+
+  handlePromote = () => {
+    if (!this.state.drawings.length || !this.state.drawings[0]) {
+      return;
+    }
+
+    this.setState(prevState => ({
+      drawings: [null].concat(prevState.drawings),
       lastDrawFailed: false,
     }));
   }

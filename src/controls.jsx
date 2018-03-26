@@ -97,6 +97,8 @@ export class Controls extends Component {
           </div>
           <div className={globalStyles.padded}>
             <button onClick={this.handleRandomize}>Randomize!</button>
+            {' '}
+            <button onClick={this.handlePromote}>Next match</button>
           </div>
           {!!this.props.lastDrawFailed && <div>Couldn't draw anything with current settings!</div>}
         </section>
@@ -156,5 +158,15 @@ export class Controls extends Component {
     e.preventDefault();
     const data = new FormData(this.form);
     this.props.onDraw(data);
+  }
+
+  handleClear = (e) => {
+    e.preventDefault();
+    this.props.onClear();
+  }
+
+  handlePromote = (e) => {
+    e.preventDefault();
+    this.props.onPromote();
   }
 }

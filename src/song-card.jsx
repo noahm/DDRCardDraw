@@ -11,10 +11,6 @@ const difficultyNames = {
 };
 
 export class SongCard extends Component {
-  state = {
-    vetoed: false,
-  };
-
   render() {
     const {
       name,
@@ -25,30 +21,25 @@ export class SongCard extends Component {
       difficulty,
       rating,
       hasShock,
+      vetoed,
     } = this.props;
 
     const rootClassname = classNames(
       styles.chart,
       styles[difficulty],
       {
-        [styles.vetoed]: this.state.vetoed,
+        [styles.vetoed]: vetoed,
       },
     );
 
     return (
-      <div className={rootClassname} onClick={this.toggleVeto}>
+      <div className={rootClassname} onClick={this.props.onVeto}>
         <div className={styles.cardCenter}>
-          <div className={styles.name}>
+          <div className={styles.name} title={nameTranslation}>
             {name}
-            {!!nameTranslation && (
-              <div>[{nameTranslation}]</div>
-            )}
           </div>
-          <div className={styles.artist}>
+          <div className={styles.artist} title={artistTranslation}>
             {artist}
-            {!!artistTranslation && (
-              <div>[{artistTranslation}]</div>
-            )}
           </div>
         </div>
         <div className={styles.cardFooter}>

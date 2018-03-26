@@ -2,6 +2,8 @@
   flex: 1 0 0;
   display: flex;
   flex-direction: column;
+  padding-left: 0 10px;
+  font-family: Evogria;
 }
 
 .scrollable {
@@ -9,11 +11,6 @@
   overflow: auto;
 }
 
-.chartList {
-  display: flex;
-  padding: 10px;
-}
-
-.scrollable .chartList {
-  opacity: 0.5;
+.sectionLabel {
+  text-indent: 10px;
 }

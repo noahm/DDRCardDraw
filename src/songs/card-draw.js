@@ -94,5 +94,6 @@ export function draw(configData) {
   return {
     id: drawingID,
     charts: drawnCharts,
+    vetos: new Set(),
   };
 }
