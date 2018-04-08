@@ -3,6 +3,7 @@ const { resolve } = require('path');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DelWebpackPlugin = require('del-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyPlugin = require('uglifyjs-webpack-plugin');
 
@@ -14,6 +15,8 @@ module.exports = function (env = {}, argv = {}) {
         devtool: isProd ? false : 'cheap-module-eval-source-map',
         devServer: !serve ? undefined : {
             contentBase: './dist',
+            host: '0.0.0.0',
+            noInfo: true,
         },
         entry: './src/app.jsx',
         output: {
@@ -78,6 +81,9 @@ module.exports = function (env = {}, argv = {}) {
             ],
         },
         plugins: [
+            new DelWebpackPlugin({
+                info: false,
+            }),
             new webpack.NoEmitOnErrorsPlugin(),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': isProd ? 'production' : 'development',
@@ -88,6 +94,9 @@ module.exports = function (env = {}, argv = {}) {
             new HtmlWebpackPlugin({
                 title: 'DDR A Card Draw',
                 filename: 'index.html',
+                meta: {
+                    viewport: 'width=device-width, initial-scale=1'
+                },
             }),
         ].concat(!isProd ? [] : [
             new UglifyPlugin(),
