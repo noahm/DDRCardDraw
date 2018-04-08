@@ -13,7 +13,18 @@ input[type="number"] {
 }
 
 .columns {
-  columns: 3;
+  display: flex;
+  justify-content: stretch;
+}
+
+@media (max-width: 500px) {
+  .columns {
+    flex-wrap: wrap;
+  }
+}
+
+.column {
+  flex: 1 0 auto;
 }
 
 .group {
@@ -28,7 +39,7 @@ input[type="number"] {
 }
 
 .weights {
-  margin-left: 2em;
+  margin: 0 1em;
 }
 
 .weights label {

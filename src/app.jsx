@@ -4,6 +4,7 @@ import { DrawingList } from './drawing-list';
 import { Footer } from './footer';
 import { draw } from './songs/card-draw';
 import styles from './app.css';
+import { TOURNAMENT_MODE } from './utils';
 
 class App extends Component {
   state = {
@@ -24,6 +25,7 @@ class App extends Component {
       <div className={styles.container}>
         <Controls
           onDraw={this.doDrawing}
+          canPromote={TOURNAMENT_MODE && this.state.drawings.length > 1 && !!this.state.drawings[0]}
           // onClear={this.handleClear}
           onPromote={this.handlePromote}
           lastDrawFailed={this.state.lastDrawFailed}

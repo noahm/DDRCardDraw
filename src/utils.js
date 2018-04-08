@@ -1,3 +1,5 @@
+export const TOURNAMENT_MODE = false;
+
 /**
  * Terse looping helper
  * @param {number} n number of times to loop

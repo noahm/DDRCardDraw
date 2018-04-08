@@ -1,14 +1,18 @@
 .drawings {
-  flex: 1 0 0;
   display: flex;
   flex-direction: column;
-  padding-left: 0 10px;
-  font-family: Evogria;
+  flex: 1 0 auto;
 }
 
 .scrollable {
   flex: 1 0 0;
-  overflow: auto;
+}
+
+@media (min-width: 1025px) {
+  .drawings .scrollable {
+    overflow: auto;
+    min-height: 12em;
+  }
 }
 
 .sectionLabel {

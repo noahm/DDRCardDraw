@@ -15,95 +15,105 @@ export class Controls extends Component {
   form = null;
 
   render() {
+    const { canPromote } = this.props
     return (
       <form ref={this.saveFormRef} className={styles.form} onSubmit={this.handleSubmit}>
         <section className={styles.columns}>
-          <div className={globalStyles.padded}>
-            <label>
-              Number to draw:
-              {' '}
-              <input type='number' name='chartCount' defaultValue='5' min='1' />
-            </label>
-          </div>
-          <div className={styles.group}>
-            Difficulty level:
-            <label>
-              Upper bound (inclusive):
-              <input
-                type='number'
-                name='upperBound'
-                onChange={this.handleUpperBoundChange}
-                value={this.state.upperBound}
-                min={this.state.lowerBound}
-                max='19'
-              />
-            </label>
-            <label>
-              Lower bound (inclusive):
-              <input
-                type='number'
-                name='lowerBound'
-                onChange={this.handleLowerBoundChange}
-                value={this.state.lowerBound}
-                min='1'
-                max={this.state.upperBound}
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" name="weighted" checked={this.state.weighted} onChange={this.handleWeightedChange} />
-              Use Weighted Distributions
-            </label>
-          </div>
-          <div className={globalStyles.padded}>
-            <label>
-              Style:
-              <select name="style">
-                <option value="single" defaultSelected>Single</option>
-                <option value="double">Double</option>
-              </select>
-            </label>
-          </div>
-          <div className={styles.group}>
-            Difficulties:
-            {[
-              ['Beginner', false],
-              ['Basic', false],
-              ['Difficult', false],
-              ['Expert', true],
-              ['Challenge', true],
-            ].map(([difficulty, checked]) => (
+          <div className={styles.column}>
+            <div className={styles.group}>
               <label>
-                <input type='checkbox' name='difficulties' value={difficulty.toLowerCase()} defaultChecked={checked} />
-                {difficulty}
+                Number to draw:
+                {' '}
+                <input type='number' name='chartCount' defaultValue='5' min='1' />
               </label>
-            ))}
+            </div>
+            <div className={styles.group}>
+              Difficulty level:
+              <label>
+                Upper bound (inclusive):
+                <input
+                  type='number'
+                  name='upperBound'
+                  onChange={this.handleUpperBoundChange}
+                  value={this.state.upperBound}
+                  min={this.state.lowerBound}
+                  max='19'
+                />
+              </label>
+              <label>
+                Lower bound (inclusive):
+                <input
+                  type='number'
+                  name='lowerBound'
+                  onChange={this.handleLowerBoundChange}
+                  value={this.state.lowerBound}
+                  min='1'
+                  max={this.state.upperBound}
+                />
+              </label>
+            </div>
+            <div className={styles.group}>
+              <label>
+                <input type="checkbox" name="weighted" checked={this.state.weighted} onChange={this.handleWeightedChange} />
+                Use Weighted Distributions
+              </label>
+            </div>
           </div>
-          <div className={styles.group}>
-            Include:
-            <label>
-              <input type='checkbox' name='inclusions' value='extraExclusive' />Extra Exclusive songs
-            </label>
-            <label>
-              <input type='checkbox' name='inclusions' value='unlock' />Unlockable songs
-            </label>
-            <label>
-              <input type='checkbox' name='inclusions' value='usLocked' />Japan-only songs
-            </label>
-            <label>
-              <input type='checkbox' name='inclusions' value='removed' />Removed songs
-            </label>
+          <div className={styles.column}>
+            <div className={styles.group}>
+              <label>
+                Style:
+                <select name="style">
+                  <option value="single" defaultSelected>Single</option>
+                  <option value="double">Double</option>
+                </select>
+              </label>
+            </div>
+            <div className={styles.group}>
+              Difficulties:
+              {[
+                ['Beginner', false],
+                ['Basic', false],
+                ['Difficult', false],
+                ['Expert', true],
+                ['Challenge', true],
+              ].map(([difficulty, checked]) => (
+                <label>
+                  <input type='checkbox' name='difficulties' value={difficulty.toLowerCase()} defaultChecked={checked} />
+                  {difficulty}
+                </label>
+              ))}
+            </div>
           </div>
-          <div className={globalStyles.padded}>
-            <button onClick={this.handleRandomize}>Randomize!</button>
-            {' '}
-            <button onClick={this.handlePromote}>Next match</button>
+          <div className={styles.column}>
+            <div className={styles.group}>
+              Include:
+              <label>
+                <input type='checkbox' name='inclusions' value='extraExclusive' />Extra Exclusive songs
+              </label>
+              <label>
+                <input type='checkbox' name='inclusions' value='unlock' />Unlockable songs
+              </label>
+              <label>
+                <input type='checkbox' name='inclusions' value='usLocked' />Japan-only songs
+              </label>
+              <label>
+                <input type='checkbox' name='inclusions' value='removed' />Removed songs
+              </label>
+            </div>
+            <div className={globalStyles.padded}>
+              <button onClick={this.handleRandomize}>Draw!</button>
+              {' '}
+              {canPromote && <button onClick={this.handlePromote}>Next match</button>}
+            </div>
+            {!!this.props.lastDrawFailed && <div>Couldn't draw anything with current settings!</div>}
           </div>
-          {!!this.props.lastDrawFailed && <div>Couldn't draw anything with current settings!</div>}
         </section>
 
         <section className={this.state.weighted ? styles.weights : styles.hidden}>
+          <p>
+            Integers only. Applies a multiplier to the chances that any song of a given difficulty level will be drawn.
+          </p>
           {times(this.state.upperBound - this.state.lowerBound + 1, (n) => {
             n += this.state.lowerBound - 1;
             return (
