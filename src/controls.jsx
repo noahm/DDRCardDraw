@@ -22,6 +22,16 @@ export class Controls extends Component {
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
+                Song List:
+                {' '}
+                <select name="dataSource" onChange={this.handleSongListChange}>
+                  <option value="ace" defaultSelected>Ace</option>
+                  <option value="extreme">Extreme</option>
+                </select>
+              </label>
+            </div>
+            <div className={styles.group}>
+              <label>
                 Number to draw:
                 {' '}
                 <input type='number' name='chartCount' defaultValue='5' min='1' />
@@ -164,15 +174,14 @@ export class Controls extends Component {
     e.preventDefault();
   }
 
+  handleSongListChange = (e) => {
+    this.props.onSongListChange(e.currentTarget.value);
+  }
+
   handleRandomize = (e) => {
     e.preventDefault();
     const data = new FormData(this.form);
     this.props.onDraw(data);
-  }
-
-  handleClear = (e) => {
-    e.preventDefault();
-    this.props.onClear();
   }
 
   handlePromote = (e) => {

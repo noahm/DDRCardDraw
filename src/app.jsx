@@ -2,9 +2,18 @@ import { Component, render } from 'preact';
 import { Controls } from './controls';
 import { DrawingList } from './drawing-list';
 import { Footer } from './footer';
-import { draw } from './songs/card-draw';
+import { draw } from './card-draw';
 import styles from './app.css';
 import { TOURNAMENT_MODE } from './utils';
+
+let songs;
+let songDataLoading = null;
+function loadSongData(dataName) {
+  songDataLoading = import(/* webpackChunkName: "songData" */`./songs/${dataName}.json`).then(data => {
+    songs = data;
+    songDataLoading = null;
+  });
+}
 
 class App extends Component {
   state = {
@@ -14,6 +23,7 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('beforeunload', this.handleUnload);
+    loadSongData('ace');
   }
 
   componentWillUnmount() {
@@ -25,8 +35,8 @@ class App extends Component {
       <div className={styles.container}>
         <Controls
           onDraw={this.doDrawing}
+          onSongListChange={loadSongData}
           canPromote={TOURNAMENT_MODE && this.state.drawings.length > 1 && !!this.state.drawings[0]}
-          // onClear={this.handleClear}
           onPromote={this.handlePromote}
           lastDrawFailed={this.state.lastDrawFailed}
         />
@@ -37,7 +47,13 @@ class App extends Component {
   }
 
   doDrawing = (configData) => {
-    const drawing = draw(configData);
+    // wait for async load of song data, if necessary
+    if (songDataLoading) {
+      songDataLoading.then(() => doDrawing(configData));
+      return;
+    }
+
+    const drawing = draw(songs, configData);
     if (!drawing.charts.length) {
       this.setState({
         lastDrawFailed: true,

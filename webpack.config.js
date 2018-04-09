@@ -20,7 +20,8 @@ module.exports = function (env = {}, argv = {}) {
         },
         entry: './src/app.jsx',
         output: {
-            filename: '[name].[hash].js',
+            filename: '[name].[hash:5].js',
+            chunkFilename: '[name].[chunkhash:5].js',
             path: resolve(__dirname, './dist'),
         },
         resolve: {
@@ -40,6 +41,7 @@ module.exports = function (env = {}, argv = {}) {
                             ],
                             plugins: [
                                 require('babel-plugin-transform-class-properties'),
+                                require('babel-plugin-syntax-dynamic-import'),
                                 [require('babel-plugin-transform-react-jsx'), { pragma: 'h' }],
                                 [require('babel-plugin-jsx-pragmatic'), {
                                     module: 'preact',
@@ -89,7 +91,7 @@ module.exports = function (env = {}, argv = {}) {
                 'process.env.NODE_ENV': isProd ? 'production' : 'development',
             }),
             new ExtractTextPlugin({
-                filename: '[name].[hash].css',
+                filename: '[name].[contenthash:5].css',
             }),
             new HtmlWebpackPlugin({
                 title: 'DDR A Card Draw',

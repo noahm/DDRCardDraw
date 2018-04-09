@@ -1,9 +1,8 @@
-import songs from './ace.json';
-import { times } from '../utils';
+import { times } from './utils';
 
 let drawingID = 0;
 
-export function draw(configData) {
+export function draw(songs, configData) {
   const numChartsToRandom = parseInt(configData.get('chartCount'), 10);
   const upperBound = parseInt(configData.get('upperBound'), 10);
   const lowerBound = parseInt(configData.get('lowerBound'), 10);
