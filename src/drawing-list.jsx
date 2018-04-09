@@ -1,47 +1,54 @@
 import classNames from 'classnames';
 import { Component } from 'preact';
-import { SongCard } from './song-card';
+import { DrawnSet } from './drawn-set';
 import styles from './drawing-list.css';
 import globalStyles from './app.css';
+import { TOURNAMENT_MODE } from './utils';
 
 export class DrawingList extends Component {
   render() {
     const { drawings } = this.props;
+    if (!TOURNAMENT_MODE) {
+      return this.renderScrollableDrawings(drawings);
+    }
+
     const [nextSet, currentSet, ...pastSets] = drawings;
 
     return (
       <div className={styles.drawings}>
-        {!!nextSet && !!currentSet && (
-          <div>
-            Up Next:
-            {this.renderDrawing(nextSet)}
-          </div>
-        )}
-        {(!!nextSet && (
-          <div>
-            Current Set:
+        {((nextSet || currentSet) && (
+          <section>
+            <div className={styles.sectionLabel}>Current Set:</div>
             {this.renderDrawing(currentSet || nextSet)}
-          </div>
+          </section>
         ))}
+        {!!nextSet && !!currentSet && (
+          <section>
+            <div className={styles.sectionLabel}>Up Next:</div>
+            {this.renderDrawing(nextSet)}
+          </section>
+        )}
         {!!pastSets.length && (
-          <div className={styles.drawings}>
-            Past sets:
-            <div className={styles.scrollable}>
-              {pastSets.map(this.renderDrawing)}
-            </div>
-          </div>
+          <section className={styles.drawings}>
+            <div className={styles.sectionLabel}>Past sets:</div>
+            {this.renderScrollableDrawings(pastSets)}
+          </section>
         )}
       </div>
     );
   }
 
-  renderDrawing(drawing, key) {
+  renderScrollableDrawings(drawings) {
     return (
-      <div key={drawing.id} className={styles.chartList}>
-        {drawing.charts.map((chart, j) => (
-          <SongCard key={j} {...chart} />
-        ))}
+      <div className={styles.scrollable}>
+        {drawings.map(this.renderDrawing)}
       </div>
+    );
+  }
+
+  renderDrawing(drawing) {
+    return (
+      <DrawnSet key={drawing.id} drawing={drawing} />
     );
   }
 }

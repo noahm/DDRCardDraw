@@ -4,10 +4,12 @@ import { DrawingList } from './drawing-list';
 import { Footer } from './footer';
 import { draw } from './songs/card-draw';
 import styles from './app.css';
+import { TOURNAMENT_MODE } from './utils';
 
 class App extends Component {
   state = {
     drawings: [],
+    lastDrawFailed: false,
   };
 
   componentDidMount() {
@@ -21,7 +23,13 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <Controls onDraw={this.doDrawing} />
+        <Controls
+          onDraw={this.doDrawing}
+          canPromote={TOURNAMENT_MODE && this.state.drawings.length > 1 && !!this.state.drawings[0]}
+          // onClear={this.handleClear}
+          onPromote={this.handlePromote}
+          lastDrawFailed={this.state.lastDrawFailed}
+        />
         <DrawingList drawings={this.state.drawings} />
         <Footer />
       </div>
@@ -30,8 +38,27 @@ class App extends Component {
 
   doDrawing = (configData) => {
     const drawing = draw(configData);
+    if (!drawing.charts.length) {
+      this.setState({
+        lastDrawFailed: true,
+      });
+      return;
+    }
+
     this.setState(prevState => ({
-      drawings: [drawing].concat(prevState.drawings),
+      drawings: [drawing].concat(prevState.drawings).filter(Boolean),
+      lastDrawFailed: false,
+    }));
+  }
+
+  handlePromote = () => {
+    if (!this.state.drawings.length || !this.state.drawings[0]) {
+      return;
+    }
+
+    this.setState(prevState => ({
+      drawings: [null].concat(prevState.drawings),
+      lastDrawFailed: false,
     }));
   }
 

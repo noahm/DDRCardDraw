@@ -2,11 +2,15 @@ import classNames from 'classnames';
 import { Component } from 'preact';
 import styles from './song-card.css';
 
-export class SongCard extends Component {
-  state = {
-    vetoed: false,
-  };
+const difficultyNames = {
+  beginner: "Beg",
+  basic: "Bas",
+  difficult: "Dif",
+  expert: "Ex",
+  challenge: "Ch",
+};
 
+export class SongCard extends Component {
   render() {
     const {
       name,
@@ -17,36 +21,31 @@ export class SongCard extends Component {
       difficulty,
       rating,
       hasShock,
+      vetoed,
     } = this.props;
 
     const rootClassname = classNames(
       styles.chart,
       styles[difficulty],
       {
-        [styles.vetoed]: this.state.vetoed,
+        [styles.vetoed]: vetoed,
       },
     );
 
     return (
-      <div className={rootClassname} onClick={this.toggleVeto}>
+      <div className={rootClassname} onClick={this.props.onVeto}>
         <div className={styles.cardCenter}>
-          <div className={styles.name}>
+          <div className={styles.name} title={nameTranslation}>
             {name}
-            {!!nameTranslation && (
-              <div>[{nameTranslation}]</div>
-            )}
           </div>
-          <div className={styles.artist}>
+          <div className={styles.artist} title={artistTranslation}>
             {artist}
-            {!!artistTranslation && (
-              <div>[{artistTranslation}]</div>
-            )}
           </div>
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.bpm}>{bpm} BPM</div>
           {hasShock && <div className={styles.shockBadge} title="Shock Arrows">&#9889;</div>}
-          <div className={styles.difficulty}>{difficulty.substr(0, 2)} {rating}</div>
+          <div className={styles.difficulty}>{difficultyNames[difficulty]} {rating}</div>
         </div>
       </div>
     );

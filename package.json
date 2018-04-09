@@ -5,10 +5,15 @@
   "description": "A card draw app for running DDR tournaments",
   "scripts": {
     "start": "webpack-dev-server --env.dev=true",
-    "build": "webpack",
+    "build": "npm run validate && webpack",
+    "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
     "validate": "node scripts/validate.js"
   },
-  "author": "Jeff Lloyd",
+  "author": "Noah Manneschmidt",
+  "contributors": [
+    "Jeff Lloyd",
+    "Chris Chike"
+  ],
   "license": "UNLICENSED",
   "devDependencies": {
     "autoprefixer": "^7.2.6",
@@ -20,15 +25,18 @@
     "babel-preset-env": "^1.6.1",
     "classnames": "^2.2.5",
     "css-loader": "^0.28.9",
+    "del-webpack-plugin": "^1.0.4",
     "eslint": "^4.17.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
-    "html-webpack-plugin": "^2.30.1",
     "jsdom": "^11.6.2",
+    "formdata-polyfill": "^3.0.9",
+    "html-webpack-plugin": "^3.2.0",
     "jsonschema": "^1.2.2",
     "postcss-loader": "^2.1.0",
     "preact": "^8.2.7",
     "style-loader": "^0.20.1",
+    "surge": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"

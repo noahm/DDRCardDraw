@@ -1,14 +1,53 @@
 .form {
   flex: 0 0 auto;
   border-bottom: 1px solid #ccc;
-  columns: 3;
+  padding-bottom: 10px;
 }
 
 label {
   user-select: none;
-  display: block;
 }
 
 input[type="number"] {
   width: 3em;
+}
+
+.columns {
+  display: flex;
+  justify-content: stretch;
+}
+
+@media (max-width: 500px) {
+  .columns {
+    flex-wrap: wrap;
+  }
+}
+
+.column {
+  flex: 1 0 auto;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.weights {
+  margin: 0 1em;
+}
+
+.weights label {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.weights input {
+  display: block;
 }
