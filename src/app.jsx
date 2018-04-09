@@ -1,3 +1,4 @@
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 import { Component, render } from 'preact';
 import { Controls } from './controls';
 import { DrawingList } from './drawing-list';
@@ -86,3 +87,4 @@ class App extends Component {
 }
 
 render(<App />, document.body);
+OfflinePluginRuntime.install();
