@@ -1,17 +1,30 @@
 const validateJSONSchema = require('jsonschema').validate;
 
-const aceSongs = require('../src/songs/ace.json');
 const songsSchema = require('../songs.schema.json');
-const result = validateJSONSchema(aceSongs, songsSchema, {
-    nestedErrors: true,
-});
 
-if (result.valid) {
-    console.log('ace.json looks good!');
-} else {
+const dataFiles = [
+  'ace.json',
+  'extreme.json',
+];
+
+const hasError = false;
+for (const dataFile of dataFiles) {
+  const songData = require(`../src/songs/${dataFile}`);
+  const result = validateJSONSchema(songData, songsSchema, {
+    nestedErrors: true,
+  });
+
+  if (result.valid) {
+    console.log(`${dataFile} looks good!`);
+  } else {
     result.errors.forEach(error => {
-        console.error(error.toString());
+      console.error(error.toString());
     });
-    console.log('ace.json has issues!');
-    require('process').exit(1);
+    console.log(`${dataFile} has issues!`);
+    hasError = true;
+  }
+}
+
+if (hasError) {
+  require('process').exit(1);
 }
