@@ -1,16 +1,26 @@
-import * as classNames from 'classnames';
 import 'formdata-polyfill';
 import { Component } from 'preact';
 import styles from './controls.css';
 import globalStyles from './app.css';
 import { times } from './utils';
 
-export class Controls extends Component {
-  state = {
-    weighted: false,
+const defaultStateByGame = {
+  ace: {
     lowerBound: 13,
     upperBound: 16,
-  };
+    upperMaximum: 19,
+  },
+  extreme: {
+    lowerBound: 6,
+    upperBound: 10,
+    upperMaximum: 10,
+  },
+};
+
+export class Controls extends Component {
+  state = Object.assign({
+    weighted: false,
+  }, defaultStateByGame.ace);
 
   form = null;
 
@@ -47,7 +57,7 @@ export class Controls extends Component {
                   onChange={this.handleUpperBoundChange}
                   value={this.state.upperBound}
                   min={this.state.lowerBound}
-                  max='19'
+                  max={this.state.upperMaximum}
                 />
               </label>
               <label>
@@ -96,6 +106,7 @@ export class Controls extends Component {
             </div>
           </div>
           <div className={styles.column}>
+            {this.state.upperMaximum === 19 && (
             <div className={styles.group}>
               Include:
               <label>
@@ -111,6 +122,7 @@ export class Controls extends Component {
                 <input type='checkbox' name='inclusions' value='removed' />Removed songs
               </label>
             </div>
+            )}
             <div className={globalStyles.padded}>
               <button onClick={this.handleRandomize}>Draw!</button>
               {' '}
@@ -129,7 +141,7 @@ export class Controls extends Component {
             return (
               <label key={n}>
                 <input type="number" name={`weight-${n}`} defaultValue="1" min="0" />
-                {('00'+n.toString()).slice(-2) /* zero pad to two digits */}
+                {n}
               </label>
             );
           })}
@@ -175,7 +187,9 @@ export class Controls extends Component {
   }
 
   handleSongListChange = (e) => {
-    this.props.onSongListChange(e.currentTarget.value);
+    const game = e.currentTarget.value;
+    this.props.onSongListChange(game);
+    this.setState(defaultStateByGame[game]);
   }
 
   handleRandomize = (e) => {

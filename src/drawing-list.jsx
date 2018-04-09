@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { Component } from 'preact';
 import { DrawnSet } from './drawn-set';
 import styles from './drawing-list.css';
