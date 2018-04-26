@@ -1,5 +1,300 @@
 [
 	{
+		"us_locked": true,
+		"name": "いーあるふぁんくらぶ",
+		"name_translation": "Yi-er fanclub",
+		"artist": "みきとP",
+		"artist_translation": "MikitoP",
+		"genre": "",
+		"bpm": "145",
+		"double": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "12",
+				"step": "320",
+				"shock": "0",
+				"freeze": "47"
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "234",
+				"shock": "0",
+				"freeze": "10"
+			},
+			"basic": {
+				"difficulty": "5",
+				"step": "158",
+				"shock": "0",
+				"freeze": "11"
+			}
+		},
+		"single": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "12",
+				"step": "350",
+				"shock": "0",
+				"freeze": "29"
+			},
+			"difficult": {
+				"difficulty": "8",
+				"step": "237",
+				"shock": "0",
+				"freeze": "22"
+			},
+			"basic": {
+				"difficulty": "4",
+				"step": "140",
+				"shock": "0",
+				"freeze": "5"
+			},
+			"beginner": {
+				"difficulty": "1",
+				"step": "???",
+				"shock": "0",
+				"freeze": "???"
+			}
+		}
+	},
+	{
+		"us_locked": true,
+		"name": "ようこそジャパリパークへ",
+		"name_translation": "Youkoso Japari Park e",
+		"artist": "どうぶつビスケッツ×PPP",
+		"artist_translation": "Doubutsu biscuits × PPP",
+		"genre": "",
+		"bpm": "170",
+		"double": {
+			"challenge": {
+				"difficulty": "13",
+				"step": "217",
+				"shock": "0",
+				"freeze": "6"
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "402",
+				"shock": "0",
+				"freeze": "16"
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "280",
+				"shock": "0",
+				"freeze": "22"
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "165",
+				"shock": "0",
+				"freeze": "2"
+			}
+		},
+		"single": {
+			"challenge": {
+				"difficulty": "12",
+				"step": "333",
+				"shock": "0",
+				"freeze": "6"
+			},
+			"expert": {
+				"difficulty": "13",
+				"step": "424",
+				"shock": "0",
+				"freeze": "12"
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "282",
+				"shock": "0",
+				"freeze": "20"
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "162",
+				"shock": "0",
+				"freeze": "6"
+			},
+			"beginner": {
+				"difficulty": "3",
+				"step": "109",
+				"shock": "0",
+				"freeze": "9"
+			}
+		}
+	},
+	{
+		"unlock": true,
+		"name": "春風ブローインウィンド",
+		"artist": "TAG",
+		"name_translation": "Shunpuu blowing wind",
+		"artist_translation": "",
+		"genre": "",
+		"bpm": "80-160",
+		"double": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "14",
+				"step": "532",
+				"shock": "0",
+				"freeze": "35"
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "332",
+				"shock": "0",
+				"freeze": "24"
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "228",
+				"shock": "0",
+				"freeze": "16"
+			}
+		},
+		"single": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "14",
+				"step": "573",
+				"shock": "0",
+				"freeze": "33"
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "338",
+				"shock": "0",
+				"freeze": "32"
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "228",
+				"shock": "0",
+				"freeze": "21"
+			},
+			"beginner": {
+				"difficulty": "2",
+				"step": "???",
+				"shock": "0",
+				"freeze": "???"
+			}
+		}
+	},
+	{
+		"unlock": true,
+		"name": "Boss Rush",
+		"artist": "USAO",
+		"name_translation": "",
+		"artist_translation": "",
+		"genre": "",
+		"bpm": "95-190",
+		"double": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "16",
+				"step": "671",
+				"shock": "0",
+				"freeze": "11"
+			},
+			"difficult": {
+				"difficulty": "14",
+				"step": "535",
+				"shock": "0",
+				"freeze": "14"
+			},
+			"basic": {
+				"difficulty": "11",
+				"step": "341",
+				"shock": "0",
+				"freeze": "7"
+			}
+		},
+		"single": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "16",
+				"step": "721",
+				"shock": "0",
+				"freeze": "15"
+			},
+			"difficult": {
+				"difficulty": "14",
+				"step": "545",
+				"shock": "0",
+				"freeze": "23"
+			},
+			"basic": {
+				"difficulty": "11",
+				"step": "352",
+				"shock": "0",
+				"freeze": "7"
+			},
+			"beginner": {
+				"difficulty": "4",
+				"step": "???",
+				"shock": "0",
+				"freeze": "???"
+			}
+		}
+	},
+	{
+		"unlock": true,
+		"name": "Sakura Reflection",
+		"artist": "Ryu☆",
+		"name_translation": "",
+		"artist_translation": "",
+		"genre": "HAPPY HARDCORE",
+		"bpm": "181",
+		"double": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "15",
+				"step": "454",
+				"shock": "0",
+				"freeze": "4"
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "275",
+				"shock": "0",
+				"freeze": "4"
+			},
+			"basic": {
+				"difficulty": "7",
+				"step": "217",
+				"shock": "0",
+				"freeze": "0"
+			}
+		},
+		"single": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "15",
+				"step": "479",
+				"shock": "0",
+				"freeze": "3"
+			},
+			"difficult": {
+				"difficulty": "10",
+				"step": "307",
+				"shock": "0",
+				"freeze": "8"
+			},
+			"basic": {
+				"difficulty": "8",
+				"step": "272",
+				"shock": "0",
+				"freeze": "4"
+			},
+			"beginner": {
+				"difficulty": "4",
+				"step": "106",
+				"shock": "0",
+				"freeze": "0"
+			}
+		}
+	},
+	{
 		"name": "恋時雨",
 		"artist": "ときめきアイドル project",
 		"genre": "",
@@ -8,48 +303,48 @@
 			"challenge": null,
 			"expert": {
 				"difficulty": "13",
-				"step": "???",
+				"step": "391",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "13"
 			},
 			"difficult": {
 				"difficulty": "9",
-				"step": "???",
+				"step": "286",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "19"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "???",
+				"step": "182",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "16"
 			}
 		},
 		"single": {
 			"challenge": null,
 			"expert": {
 				"difficulty": "12",
-				"step": "???",
+				"step": "407",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "11"
 			},
 			"difficult": {
 				"difficulty": "9",
-				"step": "???",
+				"step": "287",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "17"
 			},
 			"basic": {
 				"difficulty": "7",
-				"step": "???",
+				"step": "183",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "16"
 			},
 			"beginner": {
 				"difficulty": "3",
-				"step": "???",
+				"step": "89",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "16"
 			}
 		},
 		"name_translation": "Koishigure",
