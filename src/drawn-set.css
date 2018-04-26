@@ -1,11 +1,10 @@
 .chartList {
   display: flex;
   padding: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 500px) {
-  .chartList {
-    flex-wrap: wrap;
-    border-bottom: 1px solid darkgrey;
-  }
+.chartList:not(:first-child) {
+  border-top: 1px solid darkgrey;
 }

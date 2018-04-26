@@ -9,7 +9,7 @@
 }
 
 @media (min-width: 1025px) {
-  .drawings .scrollable {
+  .scrollable {
     overflow: auto;
     min-height: 12em;
   }

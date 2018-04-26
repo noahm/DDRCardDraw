@@ -1,6 +1,6 @@
 .form {
   flex: 0 0 auto;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid darkgray;
   padding-bottom: 10px;
 }
 
@@ -15,6 +15,7 @@ input[type="number"] {
 .columns {
   display: flex;
   justify-content: stretch;
+  overflow: hidden;
 }
 
 @media (max-width: 500px) {
