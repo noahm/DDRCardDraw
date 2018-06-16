@@ -124,6 +124,9 @@
                         },
                         "freeze": {
                             "type": "string"
+                        },
+                        "us_locked": {
+                            "type": "boolean"
                         }
                     },
                     "required": [

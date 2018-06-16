@@ -19,6 +19,7 @@ export function draw(songs, configData) {
 
   for (const currentSong of songs) {
     const charts = currentSong[style];
+    // song-level filters
     if (
       (!inclusions.has('usLocked') && currentSong['us_locked']) ||
       (!inclusions.has('extraExclusive') && currentSong['extra_exclusive']) ||
@@ -31,21 +32,28 @@ export function draw(songs, configData) {
     for (const key in charts) {
       const chart = charts[key];
 
+      // chart-level filters
       if (
-        (difficulties.has(key) && chart !== null) &&
-        (chart.difficulty >= lowerBound && chart.difficulty <= upperBound)
+        !chart || // no chart for difficulty
+        !difficulties.has(key) || // don't want this difficulty
+        (!inclusions.has('usLocked') && chart['us_locked']) || // chart is locked for us
+        +chart.difficulty < lowerBound || // too easy
+        +chart.difficulty > upperBound // too hard
       ) {
-        validCharts[chart.difficulty].push({
-          'name': currentSong.name,
-          'nameTranslation': currentSong.name_translation,
-          'artist': currentSong.artist,
-          'artistTranslation': currentSong.artist_translation,
-          'bpm': currentSong.bpm,
-          'difficulty': key,
-          'rating': chart.difficulty,
-          'hasShock': parseInt(chart.shock, 10) > 0,
-        });
+        continue;
       }
+
+      // add chart to deck
+      validCharts[chart.difficulty].push({
+        'name': currentSong.name,
+        'nameTranslation': currentSong.name_translation,
+        'artist': currentSong.artist,
+        'artistTranslation': currentSong.artist_translation,
+        'bpm': currentSong.bpm,
+        'difficulty': key,
+        'rating': chart.difficulty,
+        'hasShock': parseInt(chart.shock, 10) > 0,
+      });
     }
   }
 

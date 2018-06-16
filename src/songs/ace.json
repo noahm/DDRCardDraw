@@ -1,5 +1,119 @@
 [
 	{
+		"extra_exclusive": true,
+		"name": "IN BETWEEN",
+		"artist": "BEMANI Sound Team \"L.E.D.-G\" feat. Mayumi Morinaga",
+		"genre": "",
+		"bpm": "160",
+		"double": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "15",
+				"step": "456",
+				"shock": "0",
+				"freeze": "10"
+			},
+			"difficult": {
+				"difficulty": "12",
+				"step": "315",
+				"shock": "0",
+				"freeze": "35"
+			},
+			"basic": {
+				"difficulty": "7",
+				"step": "196",
+				"shock": "0",
+				"freeze": "20"
+			}
+		},
+		"single": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "15",
+				"step": "459",
+				"shock": "0",
+				"freeze": "12"
+			},
+			"difficult": {
+				"difficulty": "12",
+				"step": "314",
+				"shock": "0",
+				"freeze": "36"
+			},
+			"basic": {
+				"difficulty": "7",
+				"step": "192",
+				"shock": "0",
+				"freeze": "20"
+			},
+			"beginner": {
+				"difficulty": "4",
+				"step": "129",
+				"shock": "0",
+				"freeze": "10"
+			}
+		},
+		"name_translation": "",
+		"artist_translation": ""
+	},
+	{
+		"us_locked": true,
+		"name": "エイリアンエイリアン",
+		"artist": "ナユタン星人",
+		"genre": "",
+		"bpm": "152",
+		"double": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "12",
+				"step": "480",
+				"shock": "0",
+				"freeze": "33"
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "352",
+				"shock": "0",
+				"freeze": "28"
+			},
+			"basic": {
+				"difficulty": "5",
+				"step": "209",
+				"shock": "0",
+				"freeze": "2"
+			}
+		},
+		"single": {
+			"challenge": null,
+			"expert": {
+				"difficulty": "12",
+				"step": "484",
+				"shock": "0",
+				"freeze": "35"
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "354",
+				"shock": "0",
+				"freeze": "30"
+			},
+			"basic": {
+				"difficulty": "5",
+				"step": "209",
+				"shock": "0",
+				"freeze": "14"
+			},
+			"beginner": {
+				"difficulty": "2",
+				"step": "139",
+				"shock": "0",
+				"freeze": "7"
+			}
+		},
+		"name_translation": "Alien alien",
+		"artist_translation": "NayutalieN"
+	},
+	{
 		"us_locked": true,
 		"name": "いーあるふぁんくらぶ",
 		"name_translation": "Yi-er fanclub",
@@ -50,9 +164,9 @@
 			},
 			"beginner": {
 				"difficulty": "1",
-				"step": "???",
+				"step": "73",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "5"
 			}
 		}
 	},
@@ -174,9 +288,9 @@
 			},
 			"beginner": {
 				"difficulty": "2",
-				"step": "???",
+				"step": "135",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "0"
 			}
 		}
 	},
@@ -231,9 +345,9 @@
 			},
 			"beginner": {
 				"difficulty": "4",
-				"step": "???",
+				"step": "143",
 				"shock": "0",
-				"freeze": "???"
+				"freeze": "0"
 			}
 		}
 	},
@@ -1579,7 +1693,12 @@
 		"artist": "ARM(IOSYS)",
 		"genre": "",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "15",
+				"step": "609",
+				"shock": "0",
+				"freeze": "20"
+			},
 			"difficult": {
 				"difficulty": "10",
 				"step": "309",
@@ -1602,12 +1721,11 @@
 		"artist_translation": "",
 		"bpm": "175",
 		"single": {
-			"challenge": null,
-			"difficult": {
-				"difficulty": "10",
-				"step": "309",
+			"challenge": {
+				"difficulty": "15",
+				"step": "609",
 				"shock": "0",
-				"freeze": "60"
+				"freeze": "20"
 			},
 			"expert": {
 				"difficulty": "13",
@@ -1615,17 +1733,23 @@
 				"shock": "0",
 				"freeze": "30"
 			},
-			"beginner": {
-				"difficulty": "3",
-				"step": "109",
+			"difficult": {
+				"difficulty": "10",
+				"step": "309",
 				"shock": "0",
-				"freeze": "35"
+				"freeze": "60"
 			},
 			"basic": {
 				"difficulty": "6",
 				"step": "209",
 				"shock": "0",
 				"freeze": "29"
+			},
+			"beginner": {
+				"difficulty": "3",
+				"step": "109",
+				"shock": "0",
+				"freeze": "35"
 			}
 		},
 		"name_translation": "Cirno's Perfect Math Class"
@@ -27815,7 +27939,13 @@
 		"artist": "ビートまりお（COOL&CREATE）",
 		"genre": "",
 		"double": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "17",
+				"step": "712",
+				"shock": "0",
+				"freeze": "7",
+				"us_locked": true
+			},
 			"difficult": {
 				"difficulty": "11",
 				"step": "331",
@@ -27838,7 +27968,13 @@
 		"artist_translation": "Beat Mario (COOL&CREATE)",
 		"bpm": "180",
 		"single": {
-			"challenge": null,
+			"challenge": {
+				"difficulty": "16",
+				"step": "712",
+				"shock": "0",
+				"freeze": "12",
+				"us_locked": true
+			},
 			"difficult": {
 				"difficulty": "11",
 				"step": "400",
