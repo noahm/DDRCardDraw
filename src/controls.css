@@ -38,17 +38,3 @@ input[type="number"] {
 .hidden {
   display: none;
 }
-
-.weights {
-  margin: 0 1em;
-}
-
-.weights label {
-  display: inline-block;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.weights input {
-  display: block;
-}

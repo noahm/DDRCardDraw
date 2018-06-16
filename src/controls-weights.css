@@ -1,0 +1,21 @@
+.hidden {
+  display: none;
+}
+
+.weights {
+  margin: 0 1em;
+}
+
+.weights sub {
+  font-size: 70%;
+}
+
+.weights label {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.weights input {
+  display: block;
+}

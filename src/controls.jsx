@@ -2,7 +2,7 @@ import 'formdata-polyfill';
 import { Component } from 'preact';
 import styles from './controls.css';
 import globalStyles from './app.css';
-import { times } from './utils';
+import { WeightsControls } from './controls-weights';
 
 const defaultStateByGame = {
   ace: {
@@ -145,20 +145,11 @@ export class Controls extends Component {
           </div>
         </section>
 
-        <section className={this.state.weighted ? styles.weights : styles.hidden}>
-          <p>
-            Integers only. Applies a multiplier to the chances that any song of a given difficulty level will be drawn.
-          </p>
-          {times(this.state.upperBound - this.state.lowerBound + 1, (n) => {
-            n += this.state.lowerBound - 1;
-            return (
-              <label key={n}>
-                <input type="number" name={`weight-${n}`} defaultValue="1" min="0" />
-                {n}
-              </label>
-            );
-          })}
-        </section>
+        <WeightsControls
+          hidden={!this.state.weighted}
+          high={this.state.upperBound}
+          low={this.state.lowerBound}
+        />
       </form>
     );
   }
