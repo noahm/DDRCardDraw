@@ -28,11 +28,19 @@ input[type="number"] {
   flex: 1 0 auto;
 }
 
+.collapsed .column:not(:last-child) {
+  display: none;
+}
+
 .group {
   display: flex;
   flex-direction: column;
   align-items: left;
   padding: 10px;
+}
+
+.collapsed .group {
+  display: none;
 }
 
 .hidden {

@@ -36,6 +36,9 @@ export class WeightsControls extends Component {
       hidden,
     } = this.props;
     const totalWeight = this.state.weights.reduce((total, weight) => total + weight.value, 0);
+    const percentages = this.state.weights.map(weight => {
+      return weight.value ? (100 * weight.value / totalWeight).toFixed(0) : 0;
+    });
 
     return (
       <section className={hidden ? styles.hidden : styles.weights}>
@@ -60,7 +63,7 @@ export class WeightsControls extends Component {
                 min="0"
                 onChange={(e) => this.setWeight(i, +e.currentTarget.value)}
               />
-              {weight.label} <sub>{weight.value ? (100 * weight.value / totalWeight).toFixed(0) : 0}%</sub>
+              {weight.label} <sub>{percentages[i]}%</sub>
             </label>
           );
         })}
