@@ -9,11 +9,24 @@ const defaultStateByGame = {
     lowerBound: 13,
     upperBound: 16,
     upperMaximum: 19,
+    difficulties: [
+      { label: 'Beginner', value: 'beginner', defaultChecked: false, abbreviation: 'Beg' },
+      { label: 'Basic', value: 'basic', defaultChecked: false, abbreviation: 'Bas' },
+      { label: 'Difficult', value: 'difficult', defaultChecked: false, abbreviation: 'Dif' },
+      { label: 'Expert', value: 'expert', defaultChecked: true, abbreviation: 'Ex' },
+      { label: 'Challenge', value: 'challenge', defaultChecked: true, abbreviation: 'Ch' },
+    ],
   },
   extreme: {
     lowerBound: 6,
     upperBound: 10,
     upperMaximum: 10,
+    difficulties: [
+      { label: 'Light', value: 'basic', defaultChecked: false, abbreviation: 'Lht' },
+      { label: 'Standard', value: 'difficult', defaultChecked: false, abbreviation: 'Std' },
+      { label: 'Heavy', value: 'expert', defaultChecked: true, abbreviation: 'Hvy' },
+      { label: 'Challenge', value: 'challenge', defaultChecked: true, abbreviation: 'Ch' },
+    ],
   },
 };
 
@@ -25,9 +38,15 @@ export class Controls extends Component {
   form = null;
 
   render() {
-    const { canPromote } = this.props
+    const { canPromote } = this.props;
+    const abbreviations = {};
+    for (const d of this.state.difficulties) {
+      abbreviations[d.value] = d.abbreviation;
+    }
+
     return (
       <form ref={this.saveFormRef} className={styles.form} onSubmit={this.handleSubmit}>
+        <input type="hidden" name="abbreviations" value={JSON.stringify(abbreviations)} />
         <section className={styles.columns}>
           <div className={styles.column}>
             <div className={styles.group}>
@@ -82,7 +101,7 @@ export class Controls extends Component {
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
-                Style:
+                {'Style: '}
                 <select name="style">
                   <option value="single" defaultSelected>Single</option>
                   <option value="double">Double</option>
@@ -91,16 +110,10 @@ export class Controls extends Component {
             </div>
             <div className={styles.group}>
               Difficulties:
-              {[
-                ['Beginner', false],
-                ['Basic', false],
-                ['Difficult', false],
-                ['Expert', true],
-                ['Challenge', true],
-              ].map(([difficulty, checked]) => (
-                <label>
-                  <input type='checkbox' name='difficulties' value={difficulty.toLowerCase()} defaultChecked={checked} />
-                  {difficulty}
+              {this.state.difficulties.map(({ label, value, defaultChecked }) => (
+                <label key={value}>
+                  <input type='checkbox' name='difficulties' value={value} defaultChecked={defaultChecked} />
+                  {label}
                 </label>
               ))}
             </div>

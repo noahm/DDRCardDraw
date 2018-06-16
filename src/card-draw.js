@@ -6,6 +6,7 @@ export function draw(songs, configData) {
   const numChartsToRandom = parseInt(configData.get('chartCount'), 10);
   const upperBound = parseInt(configData.get('upperBound'), 10);
   const lowerBound = parseInt(configData.get('lowerBound'), 10);
+  const abbreviations = JSON.parse(configData.get('abbreviations'));
   const style = configData.get('style');
   // requested difficulties
   const difficulties = new Set(configData.getAll('difficulties'));
@@ -51,8 +52,9 @@ export function draw(songs, configData) {
         'artistTranslation': currentSong.artist_translation,
         'bpm': currentSong.bpm,
         'difficulty': key,
-        'rating': chart.difficulty,
+        'level': chart.difficulty,
         'hasShock': parseInt(chart.shock, 10) > 0,
+        'abbreviation': abbreviations[key],
       });
     }
   }
