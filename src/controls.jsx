@@ -191,6 +191,10 @@ export class Controls extends Component {
     const chartCount = formState.get('chartCount');
     const high = +formState.get('upperBound');
     const low = +formState.get('lowerBound');
+    let levelRange = `${low}-${high}`;
+    if (low === high) {
+      levelRange = low.toString();
+    }
 
     // natural language list of difficulties
     const difficulties = formState.getAll('difficulties').map(d => this.state.difficulties.find(dd => dd.value === d).label);
@@ -229,7 +233,7 @@ export class Controls extends Component {
 
     return <div className={globalStyles.padded}>
       Drawing {chartCount} {difficultyList} charts {weighted && 'with draw chance by'} lvl
-      {weighted ? (': (' + weights.map(w => `${w.level}: ${w.percentage}%`).join(', ') + ')') : (` ${low}-${high}`)}
+      {weighted ? (': (' + weights.map(w => `${w.level}: ${w.percentage}%`).join(', ') + ')') : (` ${levelRange}`)}
       {!!inclusions.length && (
         ' including ' + inclusionList
       )}
