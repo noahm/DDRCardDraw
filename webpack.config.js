@@ -103,6 +103,7 @@ module.exports = function (env = {}, argv = {}) {
         },
       }),
       new ZipPlugin({
+        path: __dirname,
         filename: 'DDRCardDraw-x.x.x.zip',
         exclude: '__offline_serviceworker',
       }),
