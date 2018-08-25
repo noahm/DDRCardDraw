@@ -17,7 +17,7 @@ const dataSetConfigs = {
       { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Ch' },
     ],
     includables: {
-      unlock: false,
+      unlock: true,
       extraExclusive: false,
       usLocked: false,
       removed: false,
@@ -40,7 +40,7 @@ const DEFAULT_DATA_SET = 'ace';
 
 const INCLUDABLE_OPTIONS = {
   unlock: 'Unlockable songs',
-  extraExclusive: 'Extra Exclusive songs',
+  extraExclusive: 'Final/Extra Exclusive',
   usLocked: 'Japan-only songs',
   removed: 'Removed songs',
 };
