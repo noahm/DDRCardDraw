@@ -7,6 +7,7 @@ const DelWebpackPlugin = require('del-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const UglifyPlugin = require('uglifyjs-webpack-plugin');
+const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
@@ -100,6 +101,10 @@ module.exports = function (env = {}, argv = {}) {
         meta: {
           viewport: 'width=device-width, initial-scale=1'
         },
+      }),
+      new ZipPlugin({
+        filename: 'DDRCardDraw-x.x.x.zip',
+        exclude: '__offline_serviceworker',
       }),
     ].concat(!isProd ? [] : [
       new UglifyPlugin(),
