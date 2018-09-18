@@ -38,6 +38,7 @@ export function draw(songs, configData) {
         !chart || // no chart for difficulty
         !difficulties.has(key) || // don't want this difficulty
         (!inclusions.has('usLocked') && chart['us_locked']) || // chart is locked for us
+        (!inclusions.has('extraExclusive') && chart['extra_exclusive']) || // chart is extra/final exclusive
         +chart.difficulty < lowerBound || // too easy
         +chart.difficulty > upperBound // too hard
       ) {

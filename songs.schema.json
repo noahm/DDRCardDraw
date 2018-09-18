@@ -127,6 +127,9 @@
                         },
                         "us_locked": {
                             "type": "boolean"
+                        },
+                        "extra_exclusive": {
+                            "type": "boolean"
                         }
                     },
                     "required": [
