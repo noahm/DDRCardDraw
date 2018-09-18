@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DelWebpackPlugin = require('del-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
-const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = function (env = {}, argv = {}) {
@@ -108,8 +107,13 @@ module.exports = function (env = {}, argv = {}) {
         exclude: '__offline_serviceworker',
       }),
     ].concat(!isProd ? [] : [
-      new UglifyPlugin(),
-      new OfflinePlugin(),
+      new OfflinePlugin({
+        ServiceWorker: {
+          events: true,
+        },
+        excludes: ['../*.zip'],
+      }),
+      new webpack.optimize.UglifyJsPlugin(),
     ]),
   };
 };

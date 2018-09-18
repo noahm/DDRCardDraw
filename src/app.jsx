@@ -87,4 +87,11 @@ class App extends Component {
 }
 
 render(<App />, document.body);
-OfflinePluginRuntime.install();
+OfflinePluginRuntime.install({
+  onUpdateReady() {
+    OfflinePluginRuntime.applyUpdate();
+  },
+  onUpdated() {
+    console.log('Update ready; refresh for the latest!');
+  }
+});
