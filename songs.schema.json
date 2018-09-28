@@ -11,6 +11,9 @@
                     { "type": "boolean" }
                 ]
             },
+            "temp_unlock": {
+                "type": "boolean"
+            },
             "extra_exclusive": {
                 "type": "boolean"
             },

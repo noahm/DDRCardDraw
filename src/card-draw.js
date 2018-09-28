@@ -25,6 +25,7 @@ export function draw(songs, configData) {
       (!inclusions.has('usLocked') && currentSong['us_locked']) ||
       (!inclusions.has('extraExclusive') && currentSong['extra_exclusive']) ||
       (!inclusions.has('removed') && currentSong['removed']) ||
+      (!inclusions.has('tempUnlock') && currentSong['temp_unlock']) ||
       (!inclusions.has('unlock') && currentSong['unlock'])
     ) {
       continue;

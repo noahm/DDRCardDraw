@@ -18,6 +18,7 @@ const dataSetConfigs = {
     ],
     includables: {
       unlock: true,
+      tempUnlock: false,
       extraExclusive: false,
       usLocked: false,
       removed: false,
@@ -40,6 +41,7 @@ const DEFAULT_DATA_SET = 'ace';
 
 const INCLUDABLE_OPTIONS = {
   unlock: 'Unlockable songs',
+  tempUnlock: 'Formerly unlockable (SDVX)',
   extraExclusive: 'Final/Extra Exclusive',
   usLocked: 'Japan-only songs',
   removed: 'Removed songs',
