@@ -1,14 +1,71 @@
 [
-	{
-		"unlock": true,
-		"name": "MAX 360",
-		"artist": "BEMANI Sound Team \"[𝑥]\"",
-		"bpm": "180-720",
-		"name_translation": "",
-		"artist_translation": "",
-		"genre": "",
-		"single": {
-			"beginner": {
+  {
+    "unlock": true,
+    "name": "#OurMemories",
+    "artist": "DDR ALL FANS",
+    "bpm": "140",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
+				"difficulty": "3",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"basic": {
+				"difficulty": "6",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"challenge": null
+    },
+		"double": {
+			"basic": {
+				"difficulty": "6",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"difficult": {
+				"difficulty": "9",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"expert": {
+				"difficulty": "12",
+				"step": "-",
+				"shock": "0",
+				"freeze": "-"
+			},
+			"challenge": null
+		}
+  },
+  {
+    "unlock": true,
+    "name": "MAX 360",
+    "artist": "BEMANI Sound Team \"X\"",
+    "bpm": "180-720",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
 				"difficulty": "9",
 				"step": "-",
 				"shock": "0",
@@ -33,7 +90,7 @@
 				"freeze": "-"
 			},
 			"challenge": null
-		},
+    },
 		"double": {
 			"basic": {
 				"difficulty": "12",
@@ -55,17 +112,17 @@
 			},
 			"challenge": null
 		}
-	},
-	{
-		"unlock": true,
-		"name": "CHAOS Terror-Tech Mix",
-		"artist": "ARM (IOSYS)",
-		"bpm": "165",
-		"name_translation": "",
-		"artist_translation": "",
-		"genre": "",
-		"single": {
-			"beginner": {
+  },
+  {
+    "unlock": true,
+    "name": "CHAOS Terror-Tech Mix",
+    "artist": "ARM (IOSYS)",
+    "bpm": "165",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
 				"difficulty": "5",
 				"step": "-",
 				"shock": "0",
@@ -90,7 +147,7 @@
 				"freeze": "-"
 			},
 			"challenge": null
-		},
+    },
 		"double": {
 			"basic": {
 				"difficulty": "8",
@@ -112,17 +169,17 @@
 			},
 			"challenge": null
 		}
-	},
-	{
-		"unlock": true,
-		"name": "POSSESSION (20th Anniversary Mix)",
-		"artist": "BEMANI SOUND TEAM \"Sota Fujimori 2nd Season\"",
-		"bpm": "190-380",
-		"name_translation": "",
-		"artist_translation": "",
-		"genre": "",
-		"single": {
-			"beginner": {
+  },
+  {
+    "unlock": true,
+    "name": "POSSESSION (20th Anniversary Mix)",
+    "artist": "BEMANI SOUND TEAM \"Sota Fujimori 2nd Season\"",
+    "bpm": "190-380",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
 				"difficulty": "8",
 				"step": "-",
 				"shock": "0",
@@ -147,7 +204,7 @@
 				"freeze": "-"
 			},
 			"challenge": null
-		},
+    },
 		"double": {
 			"basic": {
 				"difficulty": "11",
@@ -169,7 +226,7 @@
 			},
 			"challenge": null
 		}
-	},
+  },
 	{
 		"unlock": true,
 		"name": "Show me your moves",
