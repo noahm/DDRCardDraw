@@ -13,6 +13,12 @@ h1 {
   padding-left: 10px;
 }
 
+img{
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 .container {
   display: flex;
   flex-direction: column;

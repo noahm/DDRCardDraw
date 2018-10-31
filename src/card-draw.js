@@ -49,6 +49,7 @@ export function draw(songs, configData) {
       // add chart to deck
       validCharts[chart.difficulty].push({
         'name': currentSong.name,
+        'jacket': currentSong.jacket,
         'nameTranslation': currentSong.name_translation,
         'artist': currentSong.artist,
         'artistTranslation': currentSong.artist_translation,
