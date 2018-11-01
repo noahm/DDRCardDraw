@@ -36,7 +36,7 @@ export class SongCard extends Component {
           {nameTranslation}
         </div>
         <div className={styles.jacket}>
-          <img src={jacket} />
+          <img src={'Jackets/'+jacket} />
         </div>
           <div className={styles.artist} title={artistTranslation}>
             {artist}
