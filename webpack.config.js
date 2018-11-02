@@ -2,9 +2,10 @@ const { resolve } = require('path');
 
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DelWebpackPlugin = require('del-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
 
@@ -87,6 +88,9 @@ module.exports = function (env = {}, argv = {}) {
       new DelWebpackPlugin({
         info: false,
       }),
+      new CopyWebpackPlugin([
+        'src/assets',
+      ]),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': isProd ? 'production' : 'development',
@@ -111,7 +115,7 @@ module.exports = function (env = {}, argv = {}) {
         ServiceWorker: {
           events: true,
         },
-        excludes: ['../*.zip'],
+        excludes: ['../*.zip', 'jackets/*'],
       }),
       new webpack.optimize.UglifyJsPlugin(),
     ]),

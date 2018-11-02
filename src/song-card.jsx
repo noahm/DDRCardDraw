@@ -35,9 +35,9 @@ export class SongCard extends Component {
         <div className={styles.nameTranslation} title={nameTranslation}>
           {nameTranslation}
         </div>
-        <div className={styles.jacket}>
-          <img src={'Jackets/'+jacket} />
-        </div>
+        {jacket && <div className={styles.jacket}>
+          <img src={'/jackets/'+jacket} />
+        </div>}
           <div className={styles.artist} title={artistTranslation}>
             {artist}
           </div>
