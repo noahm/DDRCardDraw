@@ -3,7 +3,7 @@
 .chart {
   flex: 1 0 0;
   text-align: center;
-  border: 1px solid black;
+  border: 6px solid black;
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
@@ -11,11 +11,14 @@
   flex-direction: column;
   min-height: 100px;
   color: white;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 0px 0px 10px black, 1px 1px 1px black;
   font-family: Evogria, 'Russo One', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   -webkit-tap-highlight-color: transparent;
   margin: 5px;
   word-wrap: break-word;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 500px) {
@@ -32,16 +35,10 @@
 }
 
 .name {
-  /* font-weight: bold; */
   font-size: 120%;
 }
 .nameTranslation {
-  /* font-weight: bold; */
   font-size: 75%;
-}
-.jacket {
-  /* font-weight: bold; */
-  
 }
 
 .cardFooter {
@@ -63,22 +60,27 @@
 
 .beginner {
   background-color: #6eccc4;
+  border-color: #6eccc4;
 }
 
 .basic {
   background-color: #e0de5c;
+  border-color: #e0de5c;
 }
 
 .difficult {
   background-color: #e8715f;
+  border-color: #e8715f;
 }
 
 .expert {
   background-color: #72cc6e;
+  border-color: #72cc6e;
 }
 
 .challenge {
   background-color: #cc71e8;
+  border-color: #cc71e8;
 }
 
 .vetoed {

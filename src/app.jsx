@@ -20,9 +20,20 @@ class App extends Component {
   state = {
     drawings: [],
     lastDrawFailed: false,
+    hasUpdate: false,
   };
 
   componentDidMount() {
+    OfflinePluginRuntime.install({
+      onUpdateReady() {
+        OfflinePluginRuntime.applyUpdate();
+      },
+      onUpdated: () => {
+        this.setState({
+          hasUpdate: true,
+        });
+      }
+    });
     window.addEventListener('beforeunload', this.handleUnload);
     loadSongData('ace');
   }
@@ -34,6 +45,9 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
+        {this.state.hasUpdate && <p className={styles.updateBanner}>
+          Update available, refresh for the freshest code around!
+        </p>}
         <Controls
           onDraw={this.doDrawing}
           onSongListChange={loadSongData}
@@ -87,11 +101,3 @@ class App extends Component {
 }
 
 render(<App />, document.body);
-OfflinePluginRuntime.install({
-  onUpdateReady() {
-    OfflinePluginRuntime.applyUpdate();
-  },
-  onUpdated() {
-    console.log('Update ready; refresh for the latest!');
-  }
-});

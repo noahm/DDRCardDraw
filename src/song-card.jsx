@@ -15,7 +15,7 @@ export class SongCard extends Component {
       hasShock,
       vetoed,
       abbreviation,
-      jacket
+      jacket,
     } = this.props;
 
     const rootClassname = classNames(
@@ -26,18 +26,22 @@ export class SongCard extends Component {
       },
     );
 
+    let jacketBg = {};
+    if (jacket) {
+      jacketBg = {
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("jackets/${jacket}")`,
+      };
+    }
+
     return (
-      <div className={rootClassname} onClick={this.props.onVeto}>
+      <div className={rootClassname} style={jacketBg} onClick={this.props.onVeto}>
         <div className={styles.cardCenter}>
-        <div className={styles.name} title={nameTranslation}>
-          {name}
-        </div>
-        <div className={styles.nameTranslation} title={nameTranslation}>
-          {nameTranslation}
-        </div>
-        <div className={styles.jacket}>
-          <img src={'Jackets/'+jacket} />
-        </div>
+          <div className={styles.name} title={nameTranslation}>
+            {name}
+          </div>
+          <div className={styles.nameTranslation}>
+            {nameTranslation}
+          </div>
           <div className={styles.artist} title={artistTranslation}>
             {artist}
           </div>

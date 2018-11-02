@@ -94,6 +94,12 @@
                     "expert",
                     "challenge"
                 ]
+            },
+            "jacket": {
+                "type": "string"
+            },
+            "folder": {
+                "type": "string"
             }
         },
         "required": [
@@ -106,7 +112,7 @@
             "single",
             "name_translation"
         ],
-        "additionalProperties": true
+        "additionalProperties": false
     },
     "definitions": {
         "chart": {

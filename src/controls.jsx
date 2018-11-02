@@ -13,8 +13,8 @@ const dataSetConfigs = {
       { label: 'Beginner', value: 'beginner',checked: false, abbreviation: 'Beg' },
       { label: 'Basic', value: 'basic', checked: false, abbreviation: 'Bas' },
       { label: 'Difficult', value: 'difficult', checked: false, abbreviation: 'Dif' },
-      { label: 'Expert', value: 'expert', checked: true, abbreviation: 'Ex' },
-      { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Ch' },
+      { label: 'Expert', value: 'expert', checked: true, abbreviation: 'Exp' },
+      { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Cha' },
     ],
     includables: {
       unlock: true,
