@@ -93,7 +93,7 @@ module.exports = function (env = {}, argv = {}) {
       ]),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': isProd ? 'production' : 'development',
+        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
       }),
       new ExtractTextPlugin({
         filename: '[name].[contenthash:5].css',
@@ -105,12 +105,12 @@ module.exports = function (env = {}, argv = {}) {
           viewport: 'width=device-width, initial-scale=1'
         },
       }),
+    ].concat(!isProd ? [] : [
       new ZipPlugin({
         path: __dirname,
         filename: 'DDRCardDraw-x.x.x.zip',
         exclude: '__offline_serviceworker',
       }),
-    ].concat(!isProd ? [] : [
       new OfflinePlugin({
         ServiceWorker: {
           events: true,
