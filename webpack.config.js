@@ -87,6 +87,7 @@ module.exports = function (env = {}, argv = {}) {
     plugins: [
       new DelWebpackPlugin({
         info: false,
+        exclude: ['jackets'],
       }),
       new CopyWebpackPlugin([
         'src/assets',
