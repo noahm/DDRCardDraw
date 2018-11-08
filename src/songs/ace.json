@@ -18,7 +18,7 @@
         "freeze": "-"
       },
       "basic": {
-        "difficulty": "6",
+        "difficulty": "5",
         "step": "-",
         "shock": "0",
         "freeze": "-"
@@ -2174,7 +2174,12 @@
         "shock": "0",
         "freeze": "15"
       },
-      "challenge": null
+      "challenge": {
+        "difficulty": "16",
+        "step": "788",
+        "shock": "0",
+        "freeze": "21"
+      }
     },
     "artist_translation": "Mafumafu",
     "bpm": "196",
@@ -2203,7 +2208,12 @@
         "shock": "0",
         "freeze": "18"
       },
-      "challenge": null
+      "challenge": {
+        "difficulty": "16",
+        "step": "794",
+        "shock": "0",
+        "freeze": "38"
+      }
     },
     "name_translation": "Rinnetensei",
     "jacket": "Rinnetensei.png",
@@ -2233,7 +2243,12 @@
         "shock": "0",
         "freeze": "17"
       },
-      "challenge": null
+      "challenge": {
+        "difficulty": "13",
+        "step": "326",
+        "shock": "0",
+        "freeze": "11"
+      }
     },
     "artist_translation": "Chito (CV: Inori Minase); Yuuri (CV: Yurika Kubo)",
     "bpm": "123",
@@ -2262,7 +2277,12 @@
         "shock": "0",
         "freeze": "24"
       },
-      "challenge": null
+      "challenge": {
+        "difficulty": "13",
+        "step": "310",
+        "shock": "0",
+        "freeze": "16"
+      }
     },
     "name_translation": "",
     "jacket": "More One Night.png",
@@ -4697,7 +4717,7 @@
         "freeze": "9"
       },
       "expert": {
-        "difficulty": "12",
+        "difficulty": "13",
         "step": "442",
         "shock": "0",
         "freeze": "8"
@@ -5238,13 +5258,13 @@
         "freeze": "2"
       },
       "expert": {
-        "difficulty": "10",
+        "difficulty": "9",
         "step": "313",
         "shock": "0",
         "freeze": "6"
       },
       "basic": {
-        "difficulty": "4",
+        "difficulty": "5",
         "step": "180",
         "shock": "0",
         "freeze": "1"
@@ -5261,13 +5281,13 @@
         "freeze": "1"
       },
       "expert": {
-        "difficulty": "10",
+        "difficulty": "9",
         "step": "311",
         "shock": "0",
         "freeze": "6"
       },
       "beginner": {
-        "difficulty": "4",
+        "difficulty": "3",
         "step": "119",
         "shock": "0",
         "freeze": "0"
@@ -5291,19 +5311,19 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "7",
+        "difficulty": "6",
         "step": "197",
         "shock": "0",
         "freeze": "20"
       },
       "expert": {
-        "difficulty": "12",
+        "difficulty": "8",
         "step": "241",
         "shock": "0",
         "freeze": "3"
       },
       "basic": {
-        "difficulty": "5",
+        "difficulty": "3",
         "step": "111",
         "shock": "0",
         "freeze": "4"
@@ -5350,7 +5370,7 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "7",
+        "difficulty": "8",
         "step": "241",
         "shock": "0",
         "freeze": "7"
@@ -5362,7 +5382,7 @@
         "freeze": "7"
       },
       "basic": {
-        "difficulty": "4",
+        "difficulty": "5",
         "step": "147",
         "shock": "0",
         "freeze": "5"
@@ -5548,13 +5568,13 @@
         "freeze": "2"
       },
       "expert": {
-        "difficulty": "12",
+        "difficulty": "11",
         "step": "318",
         "shock": "0",
         "freeze": "3"
       },
       "basic": {
-        "difficulty": "4",
+        "difficulty": "5",
         "step": "146",
         "shock": "0",
         "freeze": "2"
@@ -7219,7 +7239,7 @@
         "freeze": "13"
       },
       "expert": {
-        "difficulty": "14",
+        "difficulty": "13",
         "step": "435",
         "shock": "0",
         "freeze": "9"
@@ -10632,7 +10652,7 @@
     "genre": "",
     "double": {
       "challenge": {
-        "difficulty": "12",
+        "difficulty": "13",
         "step": "341",
         "shock": "0",
         "freeze": "40"
@@ -12522,19 +12542,19 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "5",
+        "difficulty": "7",
         "step": "186",
         "shock": "0",
         "freeze": "0"
       },
       "expert": {
-        "difficulty": "12",
+        "difficulty": "10",
         "step": "254",
         "shock": "0",
         "freeze": "0"
       },
       "basic": {
-        "difficulty": "4",
+        "difficulty": "5",
         "step": "148",
         "shock": "0",
         "freeze": "0"
@@ -13129,7 +13149,7 @@
         "freeze": "14"
       },
       "basic": {
-        "difficulty": "6",
+        "difficulty": "7",
         "step": "143",
         "shock": "0",
         "freeze": "27"
@@ -13152,7 +13172,7 @@
         "freeze": "31"
       },
       "beginner": {
-        "difficulty": "2",
+        "difficulty": "3",
         "step": "86",
         "shock": "0",
         "freeze": "3"
@@ -14308,7 +14328,7 @@
         "freeze": "8"
       },
       "expert": {
-        "difficulty": "12",
+        "difficulty": "11",
         "step": "300",
         "shock": "0",
         "freeze": "13"
@@ -14342,7 +14362,7 @@
         "freeze": "15"
       },
       "beginner": {
-        "difficulty": "2",
+        "difficulty": "3",
         "step": "80",
         "shock": "0",
         "freeze": "11"
@@ -16803,13 +16823,13 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "6",
+        "difficulty": "7",
         "step": "145",
         "shock": "0",
         "freeze": "5"
       },
       "expert": {
-        "difficulty": "11",
+        "difficulty": "10",
         "step": "261",
         "shock": "0",
         "freeze": "4"
@@ -16832,13 +16852,13 @@
         "freeze": "5"
       },
       "expert": {
-        "difficulty": "10",
+        "difficulty": "9",
         "step": "238",
         "shock": "0",
         "freeze": "3"
       },
       "beginner": {
-        "difficulty": "2",
+        "difficulty": "3",
         "step": "76",
         "shock": "0",
         "freeze": "1"
@@ -17942,7 +17962,7 @@
         "freeze": "4"
       },
       "expert": {
-        "difficulty": "11",
+        "difficulty": "13",
         "step": "372",
         "shock": "0",
         "freeze": "15"
@@ -19674,7 +19694,7 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "5",
+        "difficulty": "7",
         "step": "181",
         "shock": "0",
         "freeze": "10"
@@ -19721,7 +19741,7 @@
         "freeze": "0"
       }
     },
-    "name_translation": "GRADUATION",
+    "name_translation": "GRADUATION ~Each Tomorrow~",
     "jacket": "GRADUATION.png",
     "folder": "DanceDanceRevolution EXTREME"
   },
@@ -21584,7 +21604,7 @@
         "freeze": "12"
       },
       "beginner": {
-        "difficulty": "2",
+        "difficulty": "3",
         "step": "75",
         "shock": "0",
         "freeze": "1"
@@ -23265,7 +23285,7 @@
         "freeze": "0"
       },
       "basic": {
-        "difficulty": "5",
+        "difficulty": "4",
         "step": "97",
         "shock": "0",
         "freeze": "1"
@@ -26605,7 +26625,7 @@
         "freeze": "3"
       },
       "expert": {
-        "difficulty": "8",
+        "difficulty": "9",
         "step": "232",
         "shock": "0",
         "freeze": "1"
@@ -26640,7 +26660,7 @@
         "freeze": "0"
       },
       "basic": {
-        "difficulty": "4",
+        "difficulty": "5",
         "step": "131",
         "shock": "0",
         "freeze": "0"
@@ -31115,7 +31135,7 @@
         "freeze": "5"
       },
       "basic": {
-        "difficulty": "8",
+        "difficulty": "7",
         "step": "218",
         "shock": "0",
         "freeze": "5"
@@ -31138,7 +31158,7 @@
         "freeze": "18"
       },
       "beginner": {
-        "difficulty": "4",
+        "difficulty": "3",
         "step": "88",
         "shock": "0",
         "freeze": "0"
@@ -32715,7 +32735,7 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "10",
+        "difficulty": "11",
         "step": "338",
         "shock": "0",
         "freeze": "3"
@@ -35352,7 +35372,7 @@
         "freeze": "7"
       },
       "beginner": {
-        "difficulty": "3",
+        "difficulty": "2",
         "step": "80",
         "shock": "0",
         "freeze": "0"
@@ -36477,7 +36497,7 @@
     "genre": "SHOOTING WALTZ",
     "double": {
       "challenge": {
-        "difficulty": "12",
+        "difficulty": "13",
         "step": "389",
         "shock": "48",
         "freeze": "61"
@@ -36489,7 +36509,7 @@
         "freeze": "17"
       },
       "expert": {
-        "difficulty": "12",
+        "difficulty": "13",
         "step": "433",
         "shock": "0",
         "freeze": "13"
@@ -36523,7 +36543,7 @@
         "freeze": "24"
       },
       "beginner": {
-        "difficulty": "4",
+        "difficulty": "5",
         "step": "162",
         "shock": "0",
         "freeze": "0"
@@ -42017,7 +42037,7 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "11",
+        "difficulty": "12",
         "step": "369",
         "shock": "0",
         "freeze": "9"
@@ -45169,7 +45189,7 @@
         "freeze": "28"
       },
       "beginner": {
-        "difficulty": "3",
+        "difficulty": "5",
         "step": "105",
         "shock": "0",
         "freeze": "0"
@@ -46234,7 +46254,7 @@
     "genre": "",
     "double": {
       "challenge": {
-        "difficulty": "11",
+        "difficulty": "10",
         "step": "286",
         "shock": "0",
         "freeze": "6"
@@ -46333,7 +46353,7 @@
         "freeze": "88"
       },
       "difficult": {
-        "difficulty": "7",
+        "difficulty": "8",
         "step": "286",
         "shock": "0",
         "freeze": "13"
@@ -46361,7 +46381,7 @@
         "freeze": "85"
       },
       "difficult": {
-        "difficulty": "7",
+        "difficulty": "8",
         "step": "288",
         "shock": "0",
         "freeze": "16"
@@ -46958,7 +46978,7 @@
     "double": {
       "challenge": null,
       "difficult": {
-        "difficulty": "11",
+        "difficulty": "12",
         "step": "338",
         "shock": "0",
         "freeze": "13"
