@@ -1,5 +1,128 @@
 [
   {
+    "unlock": true,
+    "name": "ANNIVERSARY ∴∵∴ ←↓↑→",
+    "artist": "BEMANI Sound Team \"U1 overground\"",
+    "jacket": "ANNIVERSARY ∴∵∴ ←↓↑→.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "180",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
+        "difficulty": "4",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "7",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "16",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "7",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "16",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
+    "unlock": true,
+    "name": "シュレーディンガーの猫",
+    "artist": "Cait Sith",
+    "jacket": "Schrodinger's Cat.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "187",
+    "name_translation": "Schrodinger's cat",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
+        "difficulty": "6",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "15",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge":{
+        "difficulty": "18",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      }
+    },
+    "double": {
+      "basic": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "15",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
     "unlock": false,
     "us_locked": true,
     "name": "ロールプレイングゲーム",
