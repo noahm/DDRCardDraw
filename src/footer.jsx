@@ -5,7 +5,7 @@ import globalStyles from './app.css';
 export function Footer() {
   return (
     <div className={classNames(styles.footer, globalStyles.padded)}>
-      Songs up to date as of 11/29/2018. Report bugs via <a href="https://twitter.com/Cathadan" target="_blank">Twitter</a> or <a href="https://github.com/noahm/DDRCardDraw">GitHub</a>. <a href="#" onClick={showCredits}>Credits.</a>
+      Songs up to date as of 1/08/2019. Report bugs via <a href="https://twitter.com/Cathadan" target="_blank">Twitter</a> or <a href="https://github.com/noahm/DDRCardDraw">GitHub</a>. <a href="#" onClick={showCredits}>Credits.</a>
     </div>
   );
 }
