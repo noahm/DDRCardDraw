@@ -34,8 +34,8 @@ export class SongCard extends Component {
     }
 
     return (
-      <div className={rootClassname} style={jacketBg} onClick={this.props.onVeto}>
-        <div className={styles.cardCenter}>
+      <div className={rootClassname} onClick={this.props.onVeto}>
+        <div className={styles.cardCenter} style={jacketBg}>
           <div className={styles.name} title={nameTranslation}>
             {name}
           </div>
@@ -48,7 +48,13 @@ export class SongCard extends Component {
         </div>
         <div className={styles.cardFooter}>
           <div className={styles.bpm}>{bpm} BPM</div>
-          {hasShock && <div className={styles.shockBadge} title="Shock Arrows">&#9889;</div>}
+          {hasShock && (
+            <div className={styles.shockBadge} title="Shock Arrows">
+              <svg height="100%" className="octicon octicon-zap" viewBox="0 0 10 16" version="1.1" ariaHidden="true">
+                <path fillRule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z" />
+              </svg>
+            </div>
+          )}
           <div className={styles.difficulty}>{abbreviation} {level}</div>
         </div>
       </div>

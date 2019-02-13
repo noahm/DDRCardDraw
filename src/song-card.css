@@ -3,9 +3,8 @@
 .chart {
   flex: 1 0 0;
   text-align: center;
-  border: 6px solid black;
+  border: 1px solid black;
   border-radius: 5px;
-  padding: 5px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -16,9 +15,8 @@
   -webkit-tap-highlight-color: transparent;
   margin: 5px;
   word-wrap: break-word;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
+  transition: transform ease 0.3s;
 }
 
 @media (max-width: 500px) {
@@ -32,6 +30,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .name {
@@ -46,47 +47,47 @@
   display: flex;
   justify-content: space-between;
   font-size: 80%;
-  padding-top: 10px;
+  padding: 5px;
   align-items: flex-end;
+  border-top: 1px solid black;
 }
 
 .shockBadge {
   background-color: white;
-  padding: 3px;
+  border: 1px solid black;
+  padding: 1px;
   border-radius: 50%;
-  height: 1.5em;
+  height: 1em;
   min-width: 1em;
 }
 
-.beginner {
+.beginner .cardFooter {
   background-color: #6eccc4;
-  border-color: #6eccc4;
 }
 
-.basic {
+.basic .cardFooter {
   background-color: #e0de5c;
-  border-color: #e0de5c;
 }
 
-.difficult {
+.difficult .cardFooter {
   background-color: #e8715f;
-  border-color: #e8715f;
 }
 
-.expert {
+.expert .cardFooter {
   background-color: #72cc6e;
-  border-color: #72cc6e;
 }
 
-.challenge {
+.challenge .cardFooter {
   background-color: #cc71e8;
-  border-color: #cc71e8;
-}
-
-.vetoed {
-  opacity: 0.3;
 }
 
 .difficulty {
   text-transform: uppercase;
+}
+
+.vetoed {
+  opacity: 0.8;
+  transform: scale(0.9);
+  transform-origin: center;
+  filter: grayscale(75%);
 }
