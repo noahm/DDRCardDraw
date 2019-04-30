@@ -73,8 +73,8 @@ export function draw(songs, configData) {
     let weightAmount = 0;
     if (weighted) {
       weightAmount = parseInt(configData.get(`weight-${level}`), 10);
-	  weightCaps[level] = weightAmount;
-	  totalWeights += weightAmount;
+	weightCaps[level] = weightAmount;
+	totalWeights += weightAmount;
     } else {
       weightAmount = validCharts[level.toString()].length;
     }
