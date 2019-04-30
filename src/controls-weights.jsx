@@ -49,6 +49,10 @@ export class WeightsControls extends Component {
             'Adds extra copies of charts of each difficulty to the deck from which charts are drawn. (Probability is based on total number of charts of selected difficulties.)'
           }
         </p>
+		<label>
+			<input type="checkbox" name="limit" checked={this.state.occurrenceLimit}/>
+			Limit Outliers
+		  </label>
         {/* <select value={this.state.weightType}>
           <option value="percentage">Percentage</option>
           <option value="multiplier">Multiplier</option>
