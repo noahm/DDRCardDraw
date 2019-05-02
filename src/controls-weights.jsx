@@ -4,7 +4,6 @@ import { times } from './utils';
 
 export class WeightsControls extends Component {
   state = {
-    weightType: 'percentage',
     weights: this.getWeightsFor(this.props),
   };
 
@@ -42,21 +41,7 @@ export class WeightsControls extends Component {
 
     return (
       <section className={hidden ? styles.hidden : styles.weights}>
-        <p>
-          Integers only. {
-            this.state.weightType === 'percentage' ?
-            'Set a fixed probability that charts of each difficulty level will be drawn.' :
-            'Adds extra copies of charts of each difficulty to the deck from which charts are drawn. (Probability is based on total number of charts of selected difficulties.)'
-          }
-        </p>
-		<label>
-			<input type="checkbox" name="limit" checked={this.state.occurrenceLimit}/>
-			Limit Outliers
-		  </label>
-        {/* <select value={this.state.weightType}>
-          <option value="percentage">Percentage</option>
-          <option value="multiplier">Multiplier</option>
-        </select> */}
+        <p>Integers only. Set a fixed probability that charts of each difficulty level will be drawn.</p>
         {this.state.weights.map((weight, i) => {
           return (
             <label key={weight.label}>
@@ -71,6 +56,14 @@ export class WeightsControls extends Component {
             </label>
           );
         })}
+        <label title="Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)">
+          <input
+            type="checkbox"
+            name="limitOutliers"
+            defaultChecked={true}
+          />
+          Force Expected Distribution
+        </label>
       </section>
     );
   }
