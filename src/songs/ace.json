@@ -1,5 +1,365 @@
 [
   {
+    "us_locked": true,
+    "unlock": false,
+    "name": "タイガーランペイジ",
+    "artist": "sasakure.UK",
+    "jacket": "Tiger rampage.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "150",
+    "name_translation": "Tiger rampage",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
+        "difficulty": "2",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "5",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "5",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "10",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
+    "us_locked": true,
+    "unlock": false,
+    "name": "腐れ外道とチョコレゐト",
+    "artist": "ピノキオP",
+    "jacket": "Kusare gedou to chocolate.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "260",
+    "name_translation": "Kusare gedou to chocolate",
+    "artist_translation": "PinocchioP",
+    "genre": "",
+    "single": {
+      "beginner": {
+        "difficulty": "3",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "8",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "15",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "8",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "16",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
+    "us_locked": true,
+    "unlock": false,
+    "name": "ライアーダンス",
+    "artist": "DECO*27",
+    "jacket": "Liar Dance.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "200",
+    "name_translation": "Liar dance",
+    "artist_translation": "",
+    "genre": "",
+    "single": {
+      "beginner": {
+        "difficulty": "4",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "6",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "7",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
+    "us_locked": false,
+    "unlock": false,
+    "name": "50th Memorial Songs -The BEMANI History-",
+    "artist": "BEMANI Sound Team",
+    "jacket": "50th_Memorial_Songs_-The_BEMANI_History-.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "136",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "ANNIVERSARY",
+    "single": {
+      "beginner": {
+        "difficulty": "2",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "5",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "5",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
+    "us_locked":false,
+    "unlock": false,
+    "name": "50th Memorial Songs -Flagship medley-",
+    "artist": "BEMANI Sound Team",
+    "jacket": "50th_Memorial_Songs_-Flagship_medley-.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "135-175",
+    "name_translation": "",
+    "artist_translation": "",
+    "genre": "ANNIVERSARY",
+    "single": {
+      "beginner": {
+        "difficulty": "3",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "7",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "8",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "10",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "13",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
+    "us_locked": false,
+    "unlock": false,
+    "name": "50th Memorial Songs -二人の時 ～under the cherry blossoms～-",
+    "artist": "BEMANI Sound Team",
+    "jacket": "50th_Memorial_Songs_-futari_no_toki__under_the_cherry_blossoms_-.png",
+    "folder": "DanceDanceRevolution A",
+    "bpm": "160",
+    "name_translation": "50th Memorial Songs -futari no toki ~under the cherry blossoms~-",
+    "artist_translation": "",
+    "genre": "ANNIVERSARY",
+    "single": {
+      "beginner": {
+        "difficulty": "3",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "basic": {
+        "difficulty": "7",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    },
+    "double": {
+      "basic": {
+        "difficulty": "7",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "difficult": {
+        "difficulty": "9",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "expert": {
+        "difficulty": "12",
+        "step": "-",
+        "shock": "0",
+        "freeze": "-"
+      },
+      "challenge": null
+    }
+  },
+  {
     "us_locked": false,
     "unlock": false,
     "name": "ヒカリユリイカ",
