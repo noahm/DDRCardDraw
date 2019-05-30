@@ -15,7 +15,7 @@ function Icon({ src, title }) {
 export function Footer() {
   return (
     <footer className={classNames(styles.footer, globalStyles.padded)}>
-      <div>Songs up to date as of 4/29/2019. <a href="#" onClick={showCredits}>Credits</a></div>
+      <div>Songs up to date as of 5/30/2019. <a href="#" onClick={showCredits}>Credits</a></div>
       <div>
         <a href="https://m.me/noah.manneschmidt" target="_blank"><Icon src={fbLogo} title="Contact me on Facebook Messenger" /></a>
         &nbsp;

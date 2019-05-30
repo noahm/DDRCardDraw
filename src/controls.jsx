@@ -24,6 +24,25 @@ const dataSetConfigs = {
       removed: false,
     },
   },
+  a20: {
+    lowerBound: 13,
+    upperBound: 16,
+    upperMaximum: 19,
+    difficulties: [
+      { label: 'Beginner', value: 'beginner',checked: false, abbreviation: 'Beg' },
+      { label: 'Basic', value: 'basic', checked: false, abbreviation: 'Bas' },
+      { label: 'Difficult', value: 'difficult', checked: false, abbreviation: 'Dif' },
+      { label: 'Expert', value: 'expert', checked: true, abbreviation: 'Exp' },
+      { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Cha' },
+    ],
+    includables: {
+      unlock: true,
+      tempUnlock: false,
+      extraExclusive: false,
+      usLocked: false,
+      removed: false,
+    },
+  },
   extreme: {
     lowerBound: 6,
     upperBound: 10,
@@ -74,6 +93,7 @@ export class Controls extends Component {
                 {' '}
                 <select name="dataSource" onChange={this.handleSongListChange}>
                   <option value="ace" defaultSelected>Ace</option>
+                  <option value="a20">A 20</option>
                   <option value="extreme">Extreme</option>
                 </select>
               </label>
