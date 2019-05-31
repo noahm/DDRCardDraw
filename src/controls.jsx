@@ -18,8 +18,8 @@ const dataSetConfigs = {
     ],
     includables: {
       unlock: true,
-      tempUnlock: false,
       extraExclusive: false,
+      tempUnlock: false,
       usLocked: false,
       removed: false,
     },
@@ -36,11 +36,9 @@ const dataSetConfigs = {
       { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Cha' },
     ],
     includables: {
-      unlock: true,
-      tempUnlock: false,
+      unlock: false,
       extraExclusive: false,
-      usLocked: false,
-      removed: false,
+      tempUnlock: false,
     },
   },
   extreme: {
