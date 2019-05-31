@@ -87,11 +87,11 @@ export class Controls extends Component {
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
-                Song List:
+                DDR Version:
                 {' '}
                 <select name="dataSource" onChange={this.handleSongListChange}>
+                  <option value="a20">A20</option>
                   <option value="ace" defaultSelected>Ace</option>
-                  <option value="a20">A 20</option>
                   <option value="extreme">Extreme</option>
                 </select>
               </label>
