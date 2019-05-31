@@ -1,6 +1,6 @@
 # DDR Card Draw
 
-This is web-app that allows random draw of songs from Dance Dance Revolution (both Ace and Extreme)
+This is web-app that allows random draw of songs from Dance Dance Revolution (A20, Ace, and Extreme)
 with a variety of optional conditions, primarially around difficulty level. The primary use case is
 for competitive tournaments, but it may also be useful as a training tool.
 
