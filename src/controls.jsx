@@ -13,15 +13,32 @@ const dataSetConfigs = {
       { label: 'Beginner', value: 'beginner',checked: false, abbreviation: 'Beg' },
       { label: 'Basic', value: 'basic', checked: false, abbreviation: 'Bas' },
       { label: 'Difficult', value: 'difficult', checked: false, abbreviation: 'Dif' },
-      { label: 'Expert', value: 'expert', checked: true, abbreviation: 'Ex' },
-      { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Ch' },
+      { label: 'Expert', value: 'expert', checked: true, abbreviation: 'Exp' },
+      { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Cha' },
     ],
     includables: {
       unlock: true,
-      tempUnlock: false,
       extraExclusive: false,
+      tempUnlock: false,
       usLocked: false,
       removed: false,
+    },
+  },
+  a20: {
+    lowerBound: 13,
+    upperBound: 16,
+    upperMaximum: 19,
+    difficulties: [
+      { label: 'Beginner', value: 'beginner',checked: false, abbreviation: 'Beg' },
+      { label: 'Basic', value: 'basic', checked: false, abbreviation: 'Bas' },
+      { label: 'Difficult', value: 'difficult', checked: false, abbreviation: 'Dif' },
+      { label: 'Expert', value: 'expert', checked: true, abbreviation: 'Exp' },
+      { label: 'Challenge', value: 'challenge', checked: true, abbreviation: 'Cha' },
+    ],
+    includables: {
+      unlock: false,
+      extraExclusive: false,
+      tempUnlock: false,
     },
   },
   extreme: {
@@ -70,9 +87,10 @@ export class Controls extends Component {
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
-                Song List:
+                DDR Version:
                 {' '}
                 <select name="dataSource" onChange={this.handleSongListChange}>
+                  <option value="a20">A20</option>
                   <option value="ace" defaultSelected>Ace</option>
                   <option value="extreme">Extreme</option>
                 </select>

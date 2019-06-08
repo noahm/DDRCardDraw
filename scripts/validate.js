@@ -5,6 +5,7 @@ const songsSchema = require('../songs.schema.json');
 const dataFiles = [
   'ace.json',
   'extreme.json',
+  'a20.json'
 ];
 
 const hasError = false;

@@ -13,6 +13,12 @@ h1 {
   padding-left: 10px;
 }
 
+img{
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -22,4 +28,10 @@ h1 {
 
 .padded {
   padding: 10px;
+}
+
+.updateBanner {
+  background-color: #ff6666;
+  padding: 1em;
+  text-align: center;
 }

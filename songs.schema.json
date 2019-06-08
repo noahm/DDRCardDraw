@@ -94,6 +94,12 @@
                     "expert",
                     "challenge"
                 ]
+            },
+            "jacket": {
+                "type": "string"
+            },
+            "folder": {
+                "type": "string"
             }
         },
         "required": [

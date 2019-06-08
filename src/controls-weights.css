@@ -12,10 +12,11 @@
 
 .weights label {
   display: inline-block;
+  vertical-align: top;
   margin-right: 10px;
   text-align: center;
 }
 
-.weights input {
+.weights input[type="number"] {
   display: block;
 }

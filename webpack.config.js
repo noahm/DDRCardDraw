@@ -2,9 +2,10 @@ const { resolve } = require('path');
 
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DelWebpackPlugin = require('del-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
 
@@ -78,7 +79,11 @@ module.exports = function (env = {}, argv = {}) {
           }),
         },
         {
-          test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif|mp4|mov|ogg|webm)(\?.*)?$/i,
+          test: /\.svg$/,
+          loader: 'svg-inline-loader',
+        },
+        {
+          test: /\.(woff2?|ttf|eot|jpe?g|png|gif|mp4|mov|ogg|webm)(\?.*)?$/i,
           loader: 'file-loader',
         },
       ],
@@ -86,10 +91,14 @@ module.exports = function (env = {}, argv = {}) {
     plugins: [
       new DelWebpackPlugin({
         info: false,
+        exclude: ['jackets'],
       }),
+      new CopyWebpackPlugin([
+        'src/assets',
+      ]),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': isProd ? 'production' : 'development',
+        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
       }),
       new ExtractTextPlugin({
         filename: '[name].[contenthash:5].css',
@@ -101,17 +110,17 @@ module.exports = function (env = {}, argv = {}) {
           viewport: 'width=device-width, initial-scale=1'
         },
       }),
+    ].concat(!isProd ? [] : [
       new ZipPlugin({
         path: __dirname,
         filename: 'DDRCardDraw-x.x.x.zip',
         exclude: '__offline_serviceworker',
       }),
-    ].concat(!isProd ? [] : [
       new OfflinePlugin({
         ServiceWorker: {
           events: true,
         },
-        excludes: ['../*.zip'],
+        excludes: ['../*.zip', 'jackets/*'],
       }),
       new webpack.optimize.UglifyJsPlugin(),
     ]),
