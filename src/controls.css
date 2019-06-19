@@ -14,22 +14,18 @@ input[type="number"] {
 
 .columns {
   display: flex;
-  justify-content: stretch;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 500px) {
-  .columns {
-    flex-wrap: wrap;
-  }
+.columns > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50ch;
+  margin: 5rem;
 }
 
 .column {
   flex: 1 0 auto;
-}
-
-.collapsed .column:not(:last-child) {
-  display: none;
 }
 
 .group {

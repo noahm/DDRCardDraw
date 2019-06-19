@@ -45,6 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
+        <main className={styles.inner}>
         {this.state.hasUpdate && <p className={styles.updateBanner}>
           Update available, refresh for the freshest code around!
         </p>}
@@ -57,6 +58,7 @@ class App extends Component {
         />
         <DrawingList drawings={this.state.drawings} />
         <Footer />
+        </main>
       </div>
     );
   }

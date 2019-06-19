@@ -1,8 +1,9 @@
 .chartList {
-  display: flex;
-  padding: 10px;
-  overflow: hidden;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 10em);
+  grid-template-rows: repeat(auto-fill, 10em);
+  grid-gap: 1vw;
+  min-height: 11em;
 }
 
 .chartList:not(:first-child) {
