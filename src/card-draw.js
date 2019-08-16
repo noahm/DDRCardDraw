@@ -1,4 +1,4 @@
-import { times } from './utils';
+import { times } from "./utils";
 
 /**
  * Used to give each drawing an auto-incrementing id
@@ -12,18 +12,18 @@ let drawingID = 0;
  * @param {FormData} configData the data gathered by all form elements on the page, indexed by `name` attribute
  */
 export function draw(songs, configData) {
-  const numChartsToRandom = parseInt(configData.get('chartCount'), 10);
-  const upperBound = parseInt(configData.get('upperBound'), 10);
-  const lowerBound = parseInt(configData.get('lowerBound'), 10);
-  const abbreviations = JSON.parse(configData.get('abbreviations'));
-  const style = configData.get('style');
+  const numChartsToRandom = parseInt(configData.get("chartCount"), 10);
+  const upperBound = parseInt(configData.get("upperBound"), 10);
+  const lowerBound = parseInt(configData.get("lowerBound"), 10);
+  const abbreviations = JSON.parse(configData.get("abbreviations"));
+  const style = configData.get("style");
   // requested difficulties
-  const difficulties = new Set(configData.getAll('difficulties'));
+  const difficulties = new Set(configData.getAll("difficulties"));
   // other options: usLocked, extraExclusive, removed, unlock
-  const inclusions = new Set(configData.getAll('inclusions'));
+  const inclusions = new Set(configData.getAll("inclusions"));
 
   const validCharts = {};
-  times(19, (n) => {
+  times(19, n => {
     validCharts[n.toString()] = [];
   });
 
@@ -31,11 +31,12 @@ export function draw(songs, configData) {
     const charts = currentSong[style];
     // song-level filters
     if (
-      (!inclusions.has('usLocked') && currentSong['us_locked']) ||
-      (!inclusions.has('extraExclusive') && currentSong['extra_exclusive']) ||
-      (!inclusions.has('removed') && currentSong['removed']) ||
-      (!inclusions.has('tempUnlock') && currentSong['temp_unlock']) ||
-      (!inclusions.has('unlock') && currentSong['unlock'])
+      (!inclusions.has("usLocked") && currentSong["us_locked"]) ||
+      (!inclusions.has("extraExclusive") && currentSong["extra_exclusive"]) ||
+      (!inclusions.has("removed") && currentSong["removed"]) ||
+      (!inclusions.has("tempUnlock") && currentSong["temp_unlock"]) ||
+      (!inclusions.has("unlock") && currentSong["unlock"]) ||
+      (!inclusions.has("goldExclusive") && currentSong["gold_exclusive"])
     ) {
       continue;
     }
@@ -47,8 +48,8 @@ export function draw(songs, configData) {
       if (
         !chart || // no chart for difficulty
         !difficulties.has(key) || // don't want this difficulty
-        (!inclusions.has('usLocked') && chart['us_locked']) || // chart is locked for us
-        (!inclusions.has('extraExclusive') && chart['extra_exclusive']) || // chart is extra/final exclusive
+        (!inclusions.has("usLocked") && chart["us_locked"]) || // chart is locked for us
+        (!inclusions.has("extraExclusive") && chart["extra_exclusive"]) || // chart is extra/final exclusive
         +chart.difficulty < lowerBound || // too easy
         +chart.difficulty > upperBound // too hard
       ) {
@@ -57,22 +58,22 @@ export function draw(songs, configData) {
 
       // add chart to deck
       validCharts[chart.difficulty].push({
-        'name': currentSong.name,
-        'jacket': currentSong.jacket,
-        'nameTranslation': currentSong.name_translation,
-        'artist': currentSong.artist,
-        'artistTranslation': currentSong.artist_translation,
-        'bpm': currentSong.bpm,
-        'difficulty': key,
-        'level': chart.difficulty,
-        'hasShock': parseInt(chart.shock, 10) > 0,
-        'abbreviation': abbreviations[key],
+        name: currentSong.name,
+        jacket: currentSong.jacket,
+        nameTranslation: currentSong.name_translation,
+        artist: currentSong.artist,
+        artistTranslation: currentSong.artist_translation,
+        bpm: currentSong.bpm,
+        difficulty: key,
+        level: chart.difficulty,
+        hasShock: parseInt(chart.shock, 10) > 0,
+        abbreviation: abbreviations[key]
       });
     }
   }
 
-  const weighted = !!configData.get('weighted');
-  const limitOutliers = !!configData.get('limitOutliers');
+  const weighted = !!configData.get("weighted");
+  const limitOutliers = !!configData.get("limitOutliers");
   /**
    * the "deck" of difficulty levels to pick from
    * @type {Array<number>}
@@ -108,8 +109,11 @@ export function draw(songs, configData) {
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (weighted && limitOutliers) {
     for (let level = lowerBound; level <= upperBound; level++) {
-      let normalizedWeight = expectedDrawPerLevel[level.toString()] / totalWeights;
-      expectedDrawPerLevel[level] = Math.ceil(normalizedWeight * numChartsToRandom);
+      let normalizedWeight =
+        expectedDrawPerLevel[level.toString()] / totalWeights;
+      expectedDrawPerLevel[level] = Math.ceil(
+        normalizedWeight * numChartsToRandom
+      );
     }
   }
 
@@ -128,7 +132,8 @@ export function draw(songs, configData) {
     }
 
     // first pick a difficulty
-    const chosenDifficulty = distribution[Math.floor(Math.random() * distribution.length)];
+    const chosenDifficulty =
+      distribution[Math.floor(Math.random() * distribution.length)];
     const selectableCharts = validCharts[chosenDifficulty.toString()];
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];
@@ -139,15 +144,14 @@ export function draw(songs, configData) {
       selectableCharts.splice(randomIndex, 1);
       if (!difficultyCounts[chosenDifficulty]) {
         difficultyCounts[chosenDifficulty] = 1;
-      }
-      else {
+      } else {
         difficultyCounts[chosenDifficulty]++;
       }
     }
 
-
     // check if maximum number of expected occurrences of this level of chart has been reached
-    const reachedExpected = limitOutliers &&
+    const reachedExpected =
+      limitOutliers &&
       difficultyCounts[chosenDifficulty.toString()] ===
         expectedDrawPerLevel[chosenDifficulty.toString()];
 
@@ -161,6 +165,6 @@ export function draw(songs, configData) {
   return {
     id: drawingID,
     charts: drawnCharts,
-    vetos: new Set(),
+    vetos: new Set()
   };
 }
