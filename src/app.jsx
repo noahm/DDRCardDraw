@@ -1,18 +1,20 @@
-import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-import { Component, render } from 'preact';
-import { Controls } from './controls';
-import { DrawingList } from './drawing-list';
-import { Footer } from './footer';
-import { draw } from './card-draw';
-import styles from './app.css';
-import { TOURNAMENT_MODE } from './utils';
-import { IntlProvider } from 'preact-i18n';
-import i18n from './assets/i18n.json';
+import * as OfflinePluginRuntime from "offline-plugin/runtime";
+import { Component, render } from "preact";
+import { Controls } from "./controls";
+import { DrawingList } from "./drawing-list";
+import { Footer } from "./footer";
+import { draw } from "./card-draw";
+import styles from "./app.css";
+import { TOURNAMENT_MODE } from "./utils";
+import { IntlProvider } from "preact-i18n";
+import i18n from "./assets/i18n.json";
 
 let songs;
 let songDataLoading = null;
 function loadSongData(dataName) {
-  songDataLoading = import(/* webpackChunkName: "songData" */`./songs/${dataName}.json`).then(data => {
+  songDataLoading = import(
+    /* webpackChunkName: "songData" */ `./songs/${dataName}.json`
+  ).then(data => {
     songs = data;
     songDataLoading = null;
   });
@@ -26,12 +28,13 @@ class App extends Component {
     languageSet: null
   };
 
-  componentWillMount(){
-    const language = (window.navigator.languages && window.navigator.languages[0]) ||
-    window.navigator.language ||
-    window.navigator.userLanguage ||
-    window.navigator.browserLanguage;
-    this.languageSet(language);
+  componentWillMount() {
+    const language =
+      (window.navigator.languages && window.navigator.languages[0]) ||
+      window.navigator.language ||
+      window.navigator.userLanguage ||
+      window.navigator.browserLanguage;
+    this.state.languageSet = i18n[language] ? i18n[language] : i18n["en"];
   }
 
   componentDidMount() {
@@ -41,29 +44,35 @@ class App extends Component {
       },
       onUpdated: () => {
         this.setState({
-          hasUpdate: true,
+          hasUpdate: true
         });
       }
     });
-    window.addEventListener('beforeunload', this.handleUnload);
-    loadSongData('ace');
+    window.addEventListener("beforeunload", this.handleUnload);
+    loadSongData("ace");
   }
 
   componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.handleUnload);
+    window.removeEventListener("beforeunload", this.handleUnload);
   }
 
   render() {
     return (
       <IntlProvider definition={this.state.languageSet}>
         <div className={styles.container}>
-          {this.state.hasUpdate && <p className={styles.updateBanner}>
-            Update available, refresh for the freshest code around!
-          </p>}
+          {this.state.hasUpdate && (
+            <p className={styles.updateBanner}>
+              Update available, refresh for the freshest code around!
+            </p>
+          )}
           <Controls
             onDraw={this.doDrawing}
             onSongListChange={loadSongData}
-            canPromote={TOURNAMENT_MODE && this.state.drawings.length > 1 && !!this.state.drawings[0]}
+            canPromote={
+              TOURNAMENT_MODE &&
+              this.state.drawings.length > 1 &&
+              !!this.state.drawings[0]
+            }
             onPromote={this.handlePromote}
             lastDrawFailed={this.state.lastDrawFailed}
           />
@@ -74,7 +83,7 @@ class App extends Component {
     );
   }
 
-  doDrawing = (configData) => {
+  doDrawing = configData => {
     // wait for async load of song data, if necessary
     if (songDataLoading) {
       songDataLoading.then(() => doDrawing(configData));
@@ -84,22 +93,16 @@ class App extends Component {
     const drawing = draw(songs, configData);
     if (!drawing.charts.length) {
       this.setState({
-        lastDrawFailed: true,
+        lastDrawFailed: true
       });
       return;
     }
 
     this.setState(prevState => ({
       drawings: [drawing].concat(prevState.drawings).filter(Boolean),
-      lastDrawFailed: false,
+      lastDrawFailed: false
     }));
-  }
-
-  languageSet(language){
-    // Language set
-    console.log(`language: ${language}`);
-    this.state.languageSet = i18n[language] ? i18n[language] : i18n['en'];
-  }
+  };
 
   handlePromote = () => {
     if (!this.state.drawings.length || !this.state.drawings[0]) {
@@ -108,15 +111,15 @@ class App extends Component {
 
     this.setState(prevState => ({
       drawings: [null].concat(prevState.drawings),
-      lastDrawFailed: false,
+      lastDrawFailed: false
     }));
-  }
+  };
 
-  handleUnload = (e) => {
+  handleUnload = e => {
     if (this.state.drawings.length) {
-      e.returnValue = 'Are you sure you want to leave?';
+      e.returnValue = "Are you sure you want to leave?";
     }
-  }
+  };
 }
 
 render(<App />, document.body);
