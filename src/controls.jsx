@@ -3,6 +3,7 @@ import { Component } from "preact";
 import styles from "./controls.css";
 import globalStyles from "./app.css";
 import { WeightsControls } from "./controls-weights";
+import { Text } from 'preact-i18n';
 
 const dataSetConfigs = {
   ace: {
@@ -140,7 +141,7 @@ export class Controls extends Component {
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
-                DDR Version:{" "}
+                <Text id="dataSource">DDR Version</Text>:{" "}
                 <select name="dataSource" onChange={this.handleSongListChange}>
                   <option value="a20">A20</option>
                   <option value="ace" defaultSelected>
@@ -152,7 +153,7 @@ export class Controls extends Component {
             </div>
             <div className={styles.group}>
               <label>
-                Number to draw:{" "}
+              <Text id="chartCount">Number to draw</Text>:{" "}
                 <input
                   type="number"
                   name="chartCount"
@@ -162,9 +163,9 @@ export class Controls extends Component {
               </label>
             </div>
             <div className={styles.group}>
-              Difficulty level:
+            <Text id="difficultyLevel">Difficulty level</Text>:
               <label>
-                Upper bound (inclusive):
+              <Text id="upperBound">Upper bound (inclusive)</Text>:
                 <input
                   type="number"
                   name="upperBound"
@@ -175,7 +176,7 @@ export class Controls extends Component {
                 />
               </label>
               <label>
-                Lower bound (inclusive):
+                <Text id="lowerBound">Lower bound (inclusive)</Text>:
                 <input
                   type="number"
                   name="lowerBound"
@@ -194,24 +195,26 @@ export class Controls extends Component {
                   checked={this.state.weighted}
                   onChange={this.handleWeightedChange}
                 />
-                Use Weighted Distributions
+                <Text id="useWeightedDistributions">Use Weighted Distributions</Text>
               </label>
             </div>
           </div>
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
-                {"Style: "}
+              <Text id="style">Style</Text>{" "}
                 <select name="style">
                   <option value="single" defaultSelected>
-                    Single
+                    <Text id="single">Single</Text>
                   </option>
-                  <option value="double">Double</option>
+                  <option value="double">
+                    <Text id="double">Double</Text>
+                  </option>
                 </select>
               </label>
             </div>
             <div className={styles.group}>
-              Difficulties:
+              <Text id="difficulties">Difficulties</Text>:
               {difficulties.map(dif => (
                 <label key={dif.value}>
                   <input
@@ -233,7 +236,7 @@ export class Controls extends Component {
           <div className={styles.column}>
             {this.state.includables && (
               <div className={styles.group}>
-                Include:
+                <Text id="include">Include</Text>:
                 {Object.keys(this.state.includables).map(key => (
                   <label key={key}>
                     <input
@@ -246,13 +249,13 @@ export class Controls extends Component {
                         this.forceUpdate();
                       }}
                     />
-                    {INCLUDABLE_OPTIONS[key]}
+                    <Text id={key}>{INCLUDABLE_OPTIONS[key]}</Text>
                   </label>
                 ))}
               </div>
             )}
             <div className={globalStyles.padded}>
-              <button onClick={this.handleRandomize}>Draw!</button>{" "}
+              <button onClick={this.handleRandomize}><Text id="draw">Draw!</Text></button>{" "}
               {canPromote && (
                 <button onClick={this.handlePromote}>Next match</button>
               )}{" "}
@@ -261,11 +264,11 @@ export class Controls extends Component {
                   this.setState(state => ({ collapsed: !state.collapsed }))
                 }
               >
-                {collapsed ? "Show" : "Hide"} controls
+                <Text id={"controls."+(collapsed ? "Show" : "Hide")}>{collapsed ? "Show" : "Hide"} controls</Text>
               </button>
             </div>
             {!!this.props.lastDrawFailed && (
-              <div>Couldn't draw anything with current settings!</div>
+              <div><Text id="lastDrawFailed">Couldn't draw anything with current settings!</Text></div>
             )}
           </div>
         </section>

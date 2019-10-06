@@ -1,0 +1,66 @@
+{ 
+  "en": {
+    "dataSource": "DDR Version",
+    "chartCount": "Number to draw",
+    "difficultyLevel": "Difficulty level",
+    "upperBound": "Upper bound (inclusive)",
+    "lowerBound": "Lower bound (inclusive)",
+    "useWeightedDistributions": "Use Weighted Distributions",
+    "style": "Style",
+    "single": "Single",
+    "double": "Double",
+    "difficulties": "Difficulties",
+    "weights": {
+      "explanation": "Integers only. Set a fixed probability that charts of each difficulty level will be drawn.",
+      "check": {
+        "title": "Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)",
+        "label": "Force Expected Distribution"
+      }
+    },
+    "include": "Include",
+    "unlock": "unlock",
+    "extraExclusive": "extraExclusive",
+    "tempUnlock": "tempUnlock",
+    "usLocked": "usLocked",
+    "removed": "removed",
+    "goldExclusive": "goldExclusive",
+    "draw": "Draw!",
+    "controls": {
+      "Show": "Show controls",
+      "Hide": "Hide controls"
+    },
+    "lastDrawFailed": "Couldn't draw anything with current settings!"
+  },
+  "ja": {
+    "dataSource": "DDRのバージョン",
+    "chartCount": "ドロー数",
+    "difficultyLevel": "レベル",
+    "upperBound": "上限",
+    "lowerBound": "下限",
+    "useWeightedDistributions": "レベル別に確率を設定する",
+    "style": "スタイル",
+    "single": "Single",
+    "double": "Double",
+    "difficulties": "難易度",
+    "weights": {
+      "explanation": "各レベルごとに数字で出やすさの重みを付ける",
+      "check": {
+        "title": "「17に10%が設定されている状態で17が2つ以上ドローされる」というような非常にまれな結果を除外",
+        "label": "厳密に設定を反映する"
+      }
+    },
+    "include": "特殊な譜面",
+    "unlock": "未解禁曲を含める",
+    "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
+    "tempUnlock": "現在解禁できない曲を含める",
+    "usLocked": "日本限定曲を含める",
+    "removed": "削除曲を含める",
+    "goldExclusive": "A20筐体限定曲を含める",
+    "draw": "ドロー！",
+    "controls": {
+      "Show": "元に戻す",
+      "Hide": "最小化する"
+    },
+    "lastDrawFailed": "対象譜面がありません！"
+  }
+}

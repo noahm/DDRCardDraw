@@ -6,6 +6,8 @@ import { Footer } from './footer';
 import { draw } from './card-draw';
 import styles from './app.css';
 import { TOURNAMENT_MODE } from './utils';
+import { IntlProvider } from 'preact-i18n';
+import i18n from './assets/i18n.json';
 
 let songs;
 let songDataLoading = null;
@@ -21,7 +23,16 @@ class App extends Component {
     drawings: [],
     lastDrawFailed: false,
     hasUpdate: false,
+    languageSet: null
   };
+
+  componentWillMount(){
+    const language = (window.navigator.languages && window.navigator.languages[0]) ||
+    window.navigator.language ||
+    window.navigator.userLanguage ||
+    window.navigator.browserLanguage;
+    this.languageSet(language);
+  }
 
   componentDidMount() {
     OfflinePluginRuntime.install({
@@ -44,20 +55,22 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        {this.state.hasUpdate && <p className={styles.updateBanner}>
-          Update available, refresh for the freshest code around!
-        </p>}
-        <Controls
-          onDraw={this.doDrawing}
-          onSongListChange={loadSongData}
-          canPromote={TOURNAMENT_MODE && this.state.drawings.length > 1 && !!this.state.drawings[0]}
-          onPromote={this.handlePromote}
-          lastDrawFailed={this.state.lastDrawFailed}
-        />
-        <DrawingList drawings={this.state.drawings} />
-        <Footer />
-      </div>
+      <IntlProvider definition={this.state.languageSet}>
+        <div className={styles.container}>
+          {this.state.hasUpdate && <p className={styles.updateBanner}>
+            Update available, refresh for the freshest code around!
+          </p>}
+          <Controls
+            onDraw={this.doDrawing}
+            onSongListChange={loadSongData}
+            canPromote={TOURNAMENT_MODE && this.state.drawings.length > 1 && !!this.state.drawings[0]}
+            onPromote={this.handlePromote}
+            lastDrawFailed={this.state.lastDrawFailed}
+          />
+          <DrawingList drawings={this.state.drawings} />
+          <Footer />
+        </div>
+      </IntlProvider>
     );
   }
 
@@ -80,6 +93,12 @@ class App extends Component {
       drawings: [drawing].concat(prevState.drawings).filter(Boolean),
       lastDrawFailed: false,
     }));
+  }
+
+  languageSet(language){
+    // Language set
+    console.log(`language: ${language}`);
+    this.state.languageSet = i18n[language] ? i18n[language] : i18n['en'];
   }
 
   handlePromote = () => {
