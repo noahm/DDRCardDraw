@@ -3,7 +3,7 @@ import { Component } from "preact";
 import styles from "./controls.css";
 import globalStyles from "./app.css";
 import { WeightsControls } from "./controls-weights";
-import { Text } from 'preact-i18n';
+import { Text } from "preact-i18n";
 
 const dataSetConfigs = {
   ace: {
@@ -12,24 +12,25 @@ const dataSetConfigs = {
     upperMaximum: 19,
     difficulties: [
       {
-        label: "Beginner",
+        key: "difficulty.ace.beg",
         value: "beginner",
-        checked: false,
-        abbreviation: "Beg"
+        checked: false
       },
-      { label: "Basic", value: "basic", checked: false, abbreviation: "Bas" },
       {
-        label: "Difficult",
+        key: "difficulty.ace.bas",
+        value: "basic",
+        checked: false
+      },
+      {
+        key: "difficulty.ace.dif",
         value: "difficult",
-        checked: false,
-        abbreviation: "Dif"
+        checked: false
       },
-      { label: "Expert", value: "expert", checked: true, abbreviation: "Exp" },
+      { key: "difficulty.ace.exp", value: "expert", checked: true },
       {
-        label: "Challenge",
+        key: "difficulty.ace.cha",
         value: "challenge",
-        checked: true,
-        abbreviation: "Cha"
+        checked: true
       }
     ],
     includables: {
@@ -46,24 +47,25 @@ const dataSetConfigs = {
     upperMaximum: 19,
     difficulties: [
       {
-        label: "Beginner",
+        key: "difficulty.ace.beg",
         value: "beginner",
-        checked: false,
-        abbreviation: "Beg"
+        checked: false
       },
-      { label: "Basic", value: "basic", checked: false, abbreviation: "Bas" },
       {
-        label: "Difficult",
+        key: "difficulty.ace.bas",
+        value: "basic",
+        checked: false
+      },
+      {
+        key: "difficulty.ace.dif",
         value: "difficult",
-        checked: false,
-        abbreviation: "Dif"
+        checked: false
       },
-      { label: "Expert", value: "expert", checked: true, abbreviation: "Exp" },
+      { key: "difficulty.ace.exp", value: "expert", checked: true },
       {
-        label: "Challenge",
+        key: "difficulty.ace.cha",
         value: "challenge",
-        checked: true,
-        abbreviation: "Cha"
+        checked: true
       }
     ],
     includables: {
@@ -78,34 +80,31 @@ const dataSetConfigs = {
     upperBound: 10,
     upperMaximum: 10,
     difficulties: [
-      { label: "Light", value: "basic", checked: false, abbreviation: "Lt" },
       {
-        label: "Standard",
-        value: "difficult",
-        checked: false,
-        abbreviation: "Std"
+        key: "difficulty.extreme.bas",
+        value: "basic",
+        checked: false
       },
-      { label: "Heavy", value: "expert", checked: true, abbreviation: "Hvy" },
       {
-        label: "Challenge",
+        key: "difficulty.extreme.dif",
+        value: "difficult",
+        checked: false
+      },
+      {
+        key: "difficulty.extreme.exp",
+        value: "expert",
+        checked: true
+      },
+      {
+        key: "difficulty.ace.cha",
         value: "challenge",
-        checked: true,
-        abbreviation: "Ch"
+        checked: true
       }
     ],
     includables: null
   }
 };
-const DEFAULT_DATA_SET = "ace";
-
-const INCLUDABLE_OPTIONS = {
-  unlock: "Unlockable songs",
-  tempUnlock: "Formerly unlockable (SDVX)",
-  goldExclusive: "20th Gold Cab Exclusive",
-  extraExclusive: "Final/Extra Exclusive",
-  usLocked: "Japan-only songs",
-  removed: "Removed songs"
-};
+const DEFAULT_DATA_SET = dataSetConfigs.ace;
 
 export class Controls extends Component {
   state = Object.assign(
@@ -113,7 +112,7 @@ export class Controls extends Component {
       weighted: false,
       collapsed: false
     },
-    dataSetConfigs[DEFAULT_DATA_SET]
+    DEFAULT_DATA_SET
   );
 
   form = null;
@@ -121,9 +120,9 @@ export class Controls extends Component {
   render() {
     const { canPromote } = this.props;
     const { collapsed, difficulties } = this.state;
-    const abbreviations = {};
+    const abbrKeys = {};
     for (const d of difficulties) {
-      abbreviations[d.value] = d.abbreviation;
+      abbrKeys[d.value] = d.key + ".abbreviation";
     }
 
     return (
@@ -135,7 +134,7 @@ export class Controls extends Component {
         <input
           type="hidden"
           name="abbreviations"
-          value={JSON.stringify(abbreviations)}
+          value={JSON.stringify(abbrKeys)}
         />
         <section className={styles.columns}>
           <div className={styles.column}>
@@ -153,7 +152,7 @@ export class Controls extends Component {
             </div>
             <div className={styles.group}>
               <label>
-              <Text id="chartCount">Number to draw</Text>:{" "}
+                <Text id="chartCount">Number to draw</Text>:{" "}
                 <input
                   type="number"
                   name="chartCount"
@@ -163,9 +162,9 @@ export class Controls extends Component {
               </label>
             </div>
             <div className={styles.group}>
-            <Text id="difficultyLevel">Difficulty level</Text>:
+              <Text id="difficultyLevel">Difficulty level</Text>:
               <label>
-              <Text id="upperBound">Upper bound (inclusive)</Text>:
+                <Text id="upperBound">Upper bound (inclusive)</Text>:
                 <input
                   type="number"
                   name="upperBound"
@@ -195,14 +194,16 @@ export class Controls extends Component {
                   checked={this.state.weighted}
                   onChange={this.handleWeightedChange}
                 />
-                <Text id="useWeightedDistributions">Use Weighted Distributions</Text>
+                <Text id="useWeightedDistributions">
+                  Use Weighted Distributions
+                </Text>
               </label>
             </div>
           </div>
           <div className={styles.column}>
             <div className={styles.group}>
               <label>
-              <Text id="style">Style</Text>{" "}
+                <Text id="style">Style</Text>{" "}
                 <select name="style">
                   <option value="single" defaultSelected>
                     <Text id="single">Single</Text>
@@ -227,12 +228,11 @@ export class Controls extends Component {
                       this.forceUpdate();
                     }}
                   />
-                  {dif.label}
+                  <Text id={dif.key + ".name"} />
                 </label>
               ))}
             </div>
           </div>
-          {collapsed && this.renderSettingsSummary()}
           <div className={styles.column}>
             {this.state.includables && (
               <div className={styles.group}>
@@ -249,13 +249,15 @@ export class Controls extends Component {
                         this.forceUpdate();
                       }}
                     />
-                    <Text id={key}>{INCLUDABLE_OPTIONS[key]}</Text>
+                    <Text id={"controls." + key} />
                   </label>
                 ))}
               </div>
             )}
             <div className={globalStyles.padded}>
-              <button onClick={this.handleRandomize}><Text id="draw">Draw!</Text></button>{" "}
+              <button onClick={this.handleRandomize}>
+                <Text id="draw">Draw!</Text>
+              </button>{" "}
               {canPromote && (
                 <button onClick={this.handlePromote}>Next match</button>
               )}{" "}
@@ -264,11 +266,15 @@ export class Controls extends Component {
                   this.setState(state => ({ collapsed: !state.collapsed }))
                 }
               >
-                <Text id={"controls."+(collapsed ? "Show" : "Hide")}>{collapsed ? "Show" : "Hide"} controls</Text>
+                <Text id={collapsed ? "controls.show" : "controls.hide"} />
               </button>
             </div>
             {!!this.props.lastDrawFailed && (
-              <div><Text id="lastDrawFailed">Couldn't draw anything with current settings!</Text></div>
+              <div>
+                <Text id="controls.invalid">
+                  Couldn't draw anything with current settings!
+                </Text>
+              </div>
             )}
           </div>
         </section>
@@ -279,77 +285,6 @@ export class Controls extends Component {
           low={this.state.lowerBound}
         />
       </form>
-    );
-  }
-
-  renderSettingsSummary() {
-    const formState = new FormData(this.form);
-    const chartCount = formState.get("chartCount");
-    const high = +formState.get("upperBound");
-    const low = +formState.get("lowerBound");
-    let levelRange = `${low}-${high}`;
-    if (low === high) {
-      levelRange = low.toString();
-    }
-
-    // natural language list of difficulties
-    const difficulties = formState
-      .getAll("difficulties")
-      .map(d => this.state.difficulties.find(dd => dd.value === d).label);
-    if (difficulties.length > 2) {
-      difficulties[difficulties.length - 1] =
-        "or " + difficulties[difficulties.length - 1];
-    }
-    const difficultyList = difficulties.join(
-      difficulties.length < 3 ? " or " : ", "
-    );
-
-    // natural language list of inclusions
-    const inclusions = formState
-      .getAll("inclusions")
-      .map(k => INCLUDABLE_OPTIONS[k].toLowerCase());
-    if (inclusions.length > 2) {
-      inclusions[inclusions.length - 1] =
-        "and " + inclusions[inclusions.length - 1];
-    }
-    const inclusionList = inclusions.join(
-      inclusions.length < 3 ? " and " : ", "
-    );
-
-    // build list of configured weights
-    const weighted = !!formState.get("weighted");
-    let totalWeight = 0;
-    let weights = [];
-    if (weighted) {
-      // build an array of possible levels to pick from
-      for (let level = low; level <= high; level++) {
-        const weight = +formState.get(`weight-${level}`);
-        if (weight) {
-          totalWeight += weight;
-          weights.push({
-            level,
-            value: weight
-          });
-        }
-      }
-      for (const weight of weights) {
-        weight.percentage = weight.value
-          ? ((100 * weight.value) / totalWeight).toFixed(0)
-          : 0;
-      }
-    }
-
-    return (
-      <div className={globalStyles.padded}>
-        Drawing {chartCount} {difficultyList} charts{" "}
-        {weighted && "with draw chance by"} lvl
-        {weighted
-          ? ": (" +
-            weights.map(w => `${w.level}: ${w.percentage}%`).join(", ") +
-            ")"
-          : ` ${levelRange}`}
-        {!!inclusions.length && " including " + inclusionList}.
-      </div>
     );
   }
 

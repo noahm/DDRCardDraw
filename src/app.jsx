@@ -5,8 +5,8 @@ import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
 import { draw } from "./card-draw";
 import styles from "./app.css";
-import { TOURNAMENT_MODE } from "./utils";
-import { IntlProvider } from "preact-i18n";
+import { TOURNAMENT_MODE, detectedLanguage } from "./utils";
+import { IntlProvider, Text, withText } from "preact-i18n";
 import i18n from "./assets/i18n.json";
 
 let songs;
@@ -24,18 +24,8 @@ class App extends Component {
   state = {
     drawings: [],
     lastDrawFailed: false,
-    hasUpdate: false,
-    languageSet: null
+    hasUpdate: false
   };
-
-  componentWillMount() {
-    const language =
-      (window.navigator.languages && window.navigator.languages[0]) ||
-      window.navigator.language ||
-      window.navigator.userLanguage ||
-      window.navigator.browserLanguage;
-    this.state.languageSet = i18n[language] ? i18n[language] : i18n["en"];
-  }
 
   componentDidMount() {
     OfflinePluginRuntime.install({
@@ -58,28 +48,28 @@ class App extends Component {
 
   render() {
     return (
-      <IntlProvider definition={this.state.languageSet}>
-        <div className={styles.container}>
-          {this.state.hasUpdate && (
-            <p className={styles.updateBanner}>
+      <div className={styles.container}>
+        {this.state.hasUpdate && (
+          <p className={styles.updateBanner}>
+            <Text id="updateReady">
               Update available, refresh for the freshest code around!
-            </p>
-          )}
-          <Controls
-            onDraw={this.doDrawing}
-            onSongListChange={loadSongData}
-            canPromote={
-              TOURNAMENT_MODE &&
-              this.state.drawings.length > 1 &&
-              !!this.state.drawings[0]
-            }
-            onPromote={this.handlePromote}
-            lastDrawFailed={this.state.lastDrawFailed}
-          />
-          <DrawingList drawings={this.state.drawings} />
-          <Footer />
-        </div>
-      </IntlProvider>
+            </Text>
+          </p>
+        )}
+        <Controls
+          onDraw={this.doDrawing}
+          onSongListChange={loadSongData}
+          canPromote={
+            TOURNAMENT_MODE &&
+            this.state.drawings.length > 1 &&
+            !!this.state.drawings[0]
+          }
+          onPromote={this.handlePromote}
+          lastDrawFailed={this.state.lastDrawFailed}
+        />
+        <DrawingList drawings={this.state.drawings} />
+        <Footer />
+      </div>
     );
   }
 
@@ -117,9 +107,17 @@ class App extends Component {
 
   handleUnload = e => {
     if (this.state.drawings.length) {
-      e.returnValue = "Are you sure you want to leave?";
+      e.returnValue = this.props.confirmText;
     }
   };
 }
 
-render(<App />, document.body);
+const AppWithText = withText({ confirmText: "confirmClose" })(App);
+
+const languageSet = i18n[detectedLanguage] || i18n["en"];
+render(
+  <IntlProvider definition={languageSet}>
+    <AppWithText />
+  </IntlProvider>,
+  document.body
+);
