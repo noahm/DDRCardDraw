@@ -96,7 +96,7 @@ const dataSetConfigs = {
         checked: true
       },
       {
-        key: "difficulty.ace.cha",
+        key: "difficulty.extreme.cha",
         value: "challenge",
         checked: true
       }

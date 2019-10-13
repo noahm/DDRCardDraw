@@ -65,6 +65,10 @@
         "exp": {
           "name": "Heavy",
           "abbreviation": "Hvy"
+        },
+        "cha": {
+          "name": "Challenge",
+          "abbreviation": "Cha"
         }
       }
     },
@@ -130,7 +134,7 @@
         },
         "cha": {
           "name": "Challenge",
-          "abbreviation": "鬼"
+          "abbreviation": "Cha"
         }
       },
       "extreme": {
@@ -145,18 +149,22 @@
         "exp": {
           "name": "Heavy",
           "abbreviation": "激"
+        },
+        "cha": {
+          "name": "Challenge",
+          "abbreviation": "鬼"
         }
       }
     },
     "draw": "ドロー！",
-    "confirmClose": "Are you sure you want to leave?",
-    "updateReady": "Update available, refresh for the freshest code around!",
+    "confirmClose": "本当にこのページを離れますか？",
+    "updateReady": "更新の準備ができました、このページをリロードしてください！",
     "credits": "Credits",
-    "lastUpdate": "{{date}}現在の最新曲。",
+    "lastUpdate": "楽曲の更新日：{{date}}",
     "contact": {
-      "facebook": "Facebook Messengerで私に連絡してください",
-      "twitter": "Twitterで私に連絡してください",
-      "github": "Githubに貢献する"
+      "facebook": "Facebook Messengerで作者に連絡する",
+      "twitter": "Twitterで作者に連絡する",
+      "github": "Githubで貢献する"
     }
   }
 }
