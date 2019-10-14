@@ -1,5 +1,11 @@
 export const TOURNAMENT_MODE = false;
 
+export const detectedLanguage =
+  (window.navigator.languages && window.navigator.languages[0]) ||
+  window.navigator.language ||
+  window.navigator.userLanguage ||
+  window.navigator.browserLanguage;
+
 /**
  * Terse looping helper
  * @param {number} n number of times to loop

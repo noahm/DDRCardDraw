@@ -17,6 +17,7 @@
   ],
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/preact-i18n": "^1.2.0",
     "autoprefixer": "^7.2.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -40,6 +41,7 @@
     "offline-plugin": "^5.0.5",
     "postcss-loader": "^2.1.0",
     "preact": "^8.4.2",
+    "preact-i18n": "^1.4.1",
     "style-loader": "^0.20.1",
     "surge": "^0.20.1",
     "svg-inline-loader": "^0.8.0",

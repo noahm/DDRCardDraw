@@ -1,4 +1,7 @@
 import classNames from "classnames";
+import { Localizer, Text } from "preact-i18n";
+
+import { detectedLanguage } from "./utils";
 import styles from "./footer.css";
 import globalStyles from "./app.css";
 
@@ -17,26 +20,38 @@ function Icon({ src, title }) {
   );
 }
 
+const lastUpdate = new Intl.DateTimeFormat(detectedLanguage).format(
+  new Date(2019, 8, 15)
+);
+
 export function Footer() {
   return (
     <footer className={classNames(styles.footer, globalStyles.padded)}>
       <div>
-        Songs up to date as of 8/15/2019.{" "}
+        <Text id="lastUpdate" fields={{ date: lastUpdate }}>
+          {`Songs up to date as of ${lastUpdate}.`}
+        </Text>{" "}
         <a href="#" onClick={showCredits}>
-          Credits
+          <Text id="credits">Credits</Text>
         </a>
       </div>
       <div>
         <a href="https://m.me/noah.manneschmidt" target="_blank">
-          <Icon src={fbLogo} title="Contact me on Facebook Messenger" />
+          <Localizer>
+            <Icon src={fbLogo} title={<Text id="contact.facebook" />} />
+          </Localizer>
         </a>
         &nbsp;
         <a href="https://twitter.com/Cathadan" target="_blank">
-          <Icon src={twitterLogo} title="Contact me on Twitter" />
+          <Localizer>
+            <Icon src={twitterLogo} title={<Text id="contact.twitter" />} />
+          </Localizer>
         </a>
         &nbsp;
         <a href="https://github.com/noahm/DDRCardDraw">
-          <Icon src={githubLogo} title="Contribute on Github" />
+          <Localizer>
+            <Icon src={githubLogo} title={<Text id="contact.github" />} />
+          </Localizer>
         </a>
       </div>
     </footer>
@@ -46,9 +61,10 @@ export function Footer() {
 function showCredits(e) {
   e.preventDefault();
   alert(
-    "App originally by Jeff Lloyd.\
-Weighted distribution code by Chris Chike.\
-Jacket images prepared by FuriousDCSL.\
+    "App originally by Jeff Lloyd. \
+Weighted distribution code by Chris Chike. \
+Jacket images prepared by FuriousDCSL. \
+Japanese localization by nalpan. \
 Maintained by Noah Manneschmidt."
   );
 }

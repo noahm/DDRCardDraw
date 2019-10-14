@@ -1,6 +1,7 @@
 import { Component } from 'preact';
 import styles from './controls-weights.css';
 import { times } from './utils';
+import { Text, Localizer } from 'preact-i18n';
 
 export class WeightsControls extends Component {
   state = {
@@ -41,7 +42,7 @@ export class WeightsControls extends Component {
 
     return (
       <section className={hidden ? styles.hidden : styles.weights}>
-        <p>Integers only. Set a fixed probability that charts of each difficulty level will be drawn.</p>
+        <p><Text id="weights.explanation">Integers only. Set a fixed probability that charts of each difficulty level will be drawn.</Text></p>
         {this.state.weights.map((weight, i) => {
           return (
             <label key={weight.label}>
@@ -56,14 +57,18 @@ export class WeightsControls extends Component {
             </label>
           );
         })}
-        <label title="Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)">
-          <input
-            type="checkbox"
-            name="limitOutliers"
-            defaultChecked={true}
-          />
-          Force Expected Distribution
-        </label>
+        <Localizer>
+          <label title={<Text id="weights.check.title">"Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)"</Text>}>
+            <input
+              type="checkbox"
+              name="limitOutliers"
+              defaultChecked={true}
+            />
+            <Text id="weights.check.label">
+              Force Expected Distribution
+            </Text>
+          </label>
+        </Localizer>
       </section>
     );
   }
