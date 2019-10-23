@@ -95,7 +95,9 @@ module.exports = function (env = {}, argv = {}) {
       }),
       new CopyWebpackPlugin([
         'src/assets',
-      ]),
+      ], {
+        ignore: [".DS_Store"]
+      }),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
