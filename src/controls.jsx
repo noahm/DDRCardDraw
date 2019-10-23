@@ -104,7 +104,7 @@ const dataSetConfigs = {
     includables: null
   }
 };
-const DEFAULT_DATA_SET = dataSetConfigs.ace;
+const DEFAULT_DATA_SET = dataSetConfigs.a20;
 
 export class Controls extends Component {
   state = Object.assign(
@@ -142,8 +142,8 @@ export class Controls extends Component {
               <label>
                 <Text id="dataSource">DDR Version</Text>:{" "}
                 <select name="dataSource" onChange={this.handleSongListChange}>
-                  <option value="a20">A20</option>
-                  <option value="ace" defaultSelected>
+                  <option value="a20" defaultSelected>A20</option>
+                  <option value="ace">
                     Ace
                   </option>
                   <option value="extreme">Extreme</option>
