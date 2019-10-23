@@ -94,7 +94,6 @@
     "required": [
       "name",
       "artist",
-      "genre",
       "double",
       "artist_translation",
       "bpm",
@@ -127,6 +126,9 @@
               "type": "boolean"
             },
             "extra_exclusive": {
+              "type": "boolean"
+            },
+            "unlock": {
               "type": "boolean"
             }
           },

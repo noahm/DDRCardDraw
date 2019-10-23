@@ -21,7 +21,8 @@ function Icon({ src, title }) {
 }
 
 const lastUpdate = new Intl.DateTimeFormat(detectedLanguage).format(
-  new Date(2019, 8, 15)
+  // note that month is zero-indexed for date constructor :)
+  new Date(2019, 9, 22)
 );
 
 export function Footer() {

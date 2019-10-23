@@ -8,7 +8,7 @@ const dataFiles = [
   'a20.json'
 ];
 
-const hasError = false;
+let hasError = false;
 for (const dataFile of dataFiles) {
   const songData = require(`../src/songs/${dataFile}`);
   const result = validateJSONSchema(songData, songsSchema, {
