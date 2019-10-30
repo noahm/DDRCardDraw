@@ -340,8 +340,8 @@ export class ControlsImpl extends Component {
 
   handleSongListChange = e => {
     const game = e.currentTarget.value;
-    this.props.onSongListChange(game);
-    this.setState(dataSetConfigs[game]);
+    this.props.loadSongSet(game);
+    this.setState(dataSetConfigs[game].defaultState);
   };
 
   handleRandomize = e => {
@@ -352,6 +352,12 @@ export class ControlsImpl extends Component {
 }
 
 export function Controls() {
-  const { drawSongs, dataSet } = useContext(DrawStateContext);
-  return <ControlsImpl onDraw={drawSongs} dataSet={dataSet} />;
+  const { drawSongs, dataSet, loadSongSet } = useContext(DrawStateContext);
+  return (
+    <ControlsImpl
+      onDraw={drawSongs}
+      dataSet={dataSet}
+      loadSongSet={loadSongSet}
+    />
+  );
 }

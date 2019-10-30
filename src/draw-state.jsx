@@ -31,6 +31,11 @@ export class DrawStateManager extends Component {
   }
 
   loadSongSet = dataSet => {
+    this.setState({
+      songs: null,
+      dataSet
+    });
+
     import(/* webpackChunkName: "songData" */ `./songs/${dataSet}.json`).then(
       data => {
         this.setState({ songs: data });
