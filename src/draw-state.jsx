@@ -4,7 +4,7 @@ import { draw } from "./card-draw";
 
 export const DrawStateContext = createContext();
 
-export class DrawStateProvider extends Component {
+export class DrawStateManager extends Component {
   constructor(props) {
     super(props);
     this.state = {

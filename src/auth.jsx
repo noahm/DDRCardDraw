@@ -3,7 +3,7 @@ import { createContext, Component } from "preact";
 
 export const AuthContext = createContext({ status: "missing" });
 
-export class AuthProvider extends Component {
+export class AuthManager extends Component {
   state = {
     status: "unresolved",
     uid: undefined
@@ -18,7 +18,8 @@ export class AuthProvider extends Component {
         });
       } else {
         this.setState({
-          status: "resolved"
+          status: "resolved",
+          uid: undefined
         });
       }
     });
