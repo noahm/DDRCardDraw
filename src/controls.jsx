@@ -1,15 +1,19 @@
 import "formdata-polyfill";
 import { Component } from "preact";
+import { useContext } from "preact/hooks";
 import styles from "./controls.css";
 import globalStyles from "./app.css";
 import { WeightsControls } from "./controls-weights";
 import { Text } from "preact-i18n";
+import { DrawStateContext } from "./draw-state";
 
 const dataSetConfigs = {
   ace: {
-    lowerBound: 13,
-    upperBound: 16,
-    upperMaximum: 19,
+    defaultState: {
+      lowerBound: 13,
+      upperBound: 16,
+      upperMaximum: 19
+    },
     difficulties: [
       {
         key: "difficulty.ace.beg",
@@ -42,9 +46,11 @@ const dataSetConfigs = {
     }
   },
   a20: {
-    lowerBound: 13,
-    upperBound: 16,
-    upperMaximum: 19,
+    defaultState: {
+      lowerBound: 13,
+      upperBound: 16,
+      upperMaximum: 19
+    },
     difficulties: [
       {
         key: "difficulty.ace.beg",
@@ -76,9 +82,11 @@ const dataSetConfigs = {
     }
   },
   extreme: {
-    lowerBound: 6,
-    upperBound: 10,
-    upperMaximum: 10,
+    defaultState: {
+      lowerBound: 6,
+      upperBound: 10,
+      upperMaximum: 10
+    },
     difficulties: [
       {
         key: "difficulty.extreme.bas",
@@ -104,22 +112,31 @@ const dataSetConfigs = {
     includables: null
   }
 };
-const DEFAULT_DATA_SET = dataSetConfigs.a20;
 
-export class Controls extends Component {
-  state = Object.assign(
-    {
-      weighted: false,
-      collapsed: false
-    },
-    DEFAULT_DATA_SET
-  );
-
+export class ControlsImpl extends Component {
   form = null;
 
+  constructor(props) {
+    super(props);
+    this.state = Object.assign(
+      {
+        weighted: false,
+        collapsed: false
+      },
+      dataSetConfigs[props.dataSet].defaultState
+    );
+  }
+
   render() {
-    const { canPromote } = this.props;
-    const { collapsed, difficulties } = this.state;
+    const { dataSet } = this.props;
+    const {
+      collapsed,
+      upperBound,
+      lowerBound,
+      upperMaximum,
+      weighted
+    } = this.state;
+    const { difficulties, includables } = dataSetConfigs[dataSet];
     const abbrKeys = {};
     for (const d of difficulties) {
       abbrKeys[d.value] = d.key + ".abbreviation";
@@ -142,10 +159,10 @@ export class Controls extends Component {
               <label>
                 <Text id="dataSource">DDR Version</Text>:{" "}
                 <select name="dataSource" onChange={this.handleSongListChange}>
-                  <option value="a20" defaultSelected>A20</option>
-                  <option value="ace">
-                    Ace
+                  <option value="a20" defaultSelected>
+                    A20
                   </option>
+                  <option value="ace">Ace</option>
                   <option value="extreme">Extreme</option>
                 </select>
               </label>
@@ -169,9 +186,9 @@ export class Controls extends Component {
                   type="number"
                   name="upperBound"
                   onChange={this.handleUpperBoundChange}
-                  value={this.state.upperBound}
-                  min={this.state.lowerBound}
-                  max={this.state.upperMaximum}
+                  value={upperBound}
+                  min={lowerBound}
+                  max={upperMaximum}
                 />
               </label>
               <label>
@@ -180,9 +197,9 @@ export class Controls extends Component {
                   type="number"
                   name="lowerBound"
                   onChange={this.handleLowerBoundChange}
-                  value={this.state.lowerBound}
+                  value={lowerBound}
                   min="1"
-                  max={this.state.upperBound}
+                  max={upperBound}
                 />
               </label>
             </div>
@@ -191,7 +208,7 @@ export class Controls extends Component {
                 <input
                   type="checkbox"
                   name="weighted"
-                  checked={this.state.weighted}
+                  checked={weighted}
                   onChange={this.handleWeightedChange}
                 />
                 <Text id="useWeightedDistributions">
@@ -234,18 +251,18 @@ export class Controls extends Component {
             </div>
           </div>
           <div className={styles.column}>
-            {this.state.includables && (
+            {includables && (
               <div className={styles.group}>
                 <Text id="include">Include</Text>:
-                {Object.keys(this.state.includables).map(key => (
+                {Object.keys(includables).map(key => (
                   <label key={key}>
                     <input
                       type="checkbox"
                       name="inclusions"
                       value={key}
-                      checked={this.state.includables[key]}
+                      checked={includables[key]}
                       onChange={e => {
-                        this.state.includables[key] = !!e.currentTarget.checked;
+                        includables[key] = !!e.currentTarget.checked;
                         this.forceUpdate();
                       }}
                     />
@@ -258,9 +275,6 @@ export class Controls extends Component {
               <button onClick={this.handleRandomize}>
                 <Text id="draw">Draw!</Text>
               </button>{" "}
-              {canPromote && (
-                <button onClick={this.handlePromote}>Next match</button>
-              )}{" "}
               <button
                 onClick={() =>
                   this.setState(state => ({ collapsed: !state.collapsed }))
@@ -280,9 +294,9 @@ export class Controls extends Component {
         </section>
 
         <WeightsControls
-          hidden={!this.state.weighted || collapsed}
-          high={this.state.upperBound}
-          low={this.state.lowerBound}
+          hidden={!weighted || collapsed}
+          high={upperBound}
+          low={lowerBound}
         />
       </form>
     );
@@ -335,9 +349,9 @@ export class Controls extends Component {
     const data = new FormData(this.form);
     this.props.onDraw(data);
   };
+}
 
-  handlePromote = e => {
-    e.preventDefault();
-    this.props.onPromote();
-  };
+export function Controls() {
+  const { drawSongs, dataSet } = useContext(DrawStateContext);
+  return <ControlsImpl onDraw={drawSongs} dataSet={dataSet} />;
 }
