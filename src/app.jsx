@@ -1,13 +1,15 @@
+import "./firebase";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
 import { Component, render } from "preact";
+import { IntlProvider, Text, withText } from "preact-i18n";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
 import { draw } from "./card-draw";
 import styles from "./app.css";
-import { TOURNAMENT_MODE, detectedLanguage } from "./utils";
-import { IntlProvider, Text, withText } from "preact-i18n";
 import i18n from "./assets/i18n.json";
+import { AuthProvider } from "./auth";
+import { TOURNAMENT_MODE, detectedLanguage } from "./utils";
 
 let songs;
 let songDataLoading = null;
@@ -117,7 +119,9 @@ const AppWithText = withText({ confirmText: "confirmClose" })(App);
 const languageSet = i18n[detectedLanguage] || i18n["en"];
 render(
   <IntlProvider definition={languageSet}>
-    <AppWithText />
+    <AuthProvider>
+      <AppWithText />
+    </AuthProvider>
   </IntlProvider>,
   document.body
 );

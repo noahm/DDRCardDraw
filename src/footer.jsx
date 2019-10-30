@@ -8,6 +8,7 @@ import globalStyles from "./app.css";
 import fbLogo from "ionicons/dist/ionicons/svg/logo-facebook.svg";
 import twitterLogo from "ionicons/dist/ionicons/svg/logo-twitter.svg";
 import githubLogo from "ionicons/dist/ionicons/svg/logo-github.svg";
+import { AuthButton } from "./auth-button";
 
 function Icon({ src, title }) {
   return (
@@ -37,6 +38,8 @@ export function Footer() {
         </a>
       </div>
       <div>
+        <AuthButton />
+        &nbsp;
         <a href="https://m.me/noah.manneschmidt" target="_blank">
           <Localizer>
             <Icon src={fbLogo} title={<Text id="contact.facebook" />} />
