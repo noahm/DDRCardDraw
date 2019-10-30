@@ -8,6 +8,7 @@
     "build": "npm run validate && webpack",
     "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
     "deploy:staging": "npm run build && surge ./dist https://ddrdraw-staging.surge.sh",
+    "deploy:firebase": "npm run build && firebase deploy",
     "validate": "node scripts/validate.js"
   },
   "author": "Noah Manneschmidt",
@@ -33,6 +34,8 @@
     "eslint": "^4.17.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
+    "firebase": "^7.2.2",
+    "firebase-tools": "^7.6.2",
     "formdata-polyfill": "^3.0.9",
     "html-webpack-plugin": "^3.2.0",
     "ionicons": "^4.5.5",
