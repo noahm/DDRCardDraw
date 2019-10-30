@@ -1,10 +1,11 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   position: absolute;
   margin: 0;
 }
@@ -13,7 +14,7 @@ h1 {
   padding-left: 10px;
 }
 
-img{
+img {
   width: 90%;
   height: auto;
   margin-left: auto;
@@ -30,13 +31,7 @@ img{
   padding: 10px;
 }
 
-.padded button{
+.padded button {
   height: 25px;
-  line-height:0px;
-}
-
-.updateBanner {
-  background-color: #ff6666;
-  padding: 1em;
-  text-align: center;
+  line-height: 0px;
 }

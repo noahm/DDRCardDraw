@@ -1,7 +1,6 @@
 import "./firebase";
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
 import { Component, render } from "preact";
-import { IntlProvider, Text, withText } from "preact-i18n";
+import { IntlProvider, withText } from "preact-i18n";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
@@ -10,6 +9,7 @@ import styles from "./app.css";
 import i18n from "./assets/i18n.json";
 import { AuthProvider } from "./auth";
 import { TOURNAMENT_MODE, detectedLanguage } from "./utils";
+import { UpdateManager } from "./update-manager";
 
 let songs;
 let songDataLoading = null;
@@ -25,21 +25,10 @@ function loadSongData(dataName) {
 class App extends Component {
   state = {
     drawings: [],
-    lastDrawFailed: false,
-    hasUpdate: false
+    lastDrawFailed: false
   };
 
   componentDidMount() {
-    OfflinePluginRuntime.install({
-      onUpdateReady() {
-        OfflinePluginRuntime.applyUpdate();
-      },
-      onUpdated: () => {
-        this.setState({
-          hasUpdate: true
-        });
-      }
-    });
     window.addEventListener("beforeunload", this.handleUnload);
     loadSongData("a20");
   }
@@ -51,13 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.container}>
-        {this.state.hasUpdate && (
-          <p className={styles.updateBanner}>
-            <Text id="updateReady">
-              Update available, refresh for the freshest code around!
-            </Text>
-          </p>
-        )}
+        <UpdateManager />
         <Controls
           onDraw={this.doDrawing}
           onSongListChange={loadSongData}
