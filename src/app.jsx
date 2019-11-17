@@ -22,7 +22,6 @@ function App() {
           <div className={styles.container}>
             <UpdateManager />
             <Controls />
-            <SongSearch onSongSelect={song => console.log(song.name)} />
             <DrawingList />
             <Footer />
           </div>
