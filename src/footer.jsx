@@ -28,7 +28,7 @@ export function Footer() {
         </a>
       </div>
       <div>
-        <AuthButton />
+        {/* <AuthButton /> */}
         &nbsp;
         <a href="https://m.me/noah.manneschmidt" target="_blank">
           <Localizer>
