@@ -9,17 +9,7 @@ import fbLogo from "ionicons/dist/ionicons/svg/logo-facebook.svg";
 import twitterLogo from "ionicons/dist/ionicons/svg/logo-twitter.svg";
 import githubLogo from "ionicons/dist/ionicons/svg/logo-github.svg";
 import { AuthButton } from "./auth-button";
-
-function Icon({ src, title }) {
-  return (
-    <figure
-      title={title}
-      alt={title}
-      dangerouslySetInnerHTML={{ __html: src }}
-      className={styles.icon}
-    />
-  );
-}
+import { Icon } from "./icon";
 
 const lastUpdate = new Intl.DateTimeFormat(detectedLanguage).format(
   // note that month is zero-indexed for date constructor :)

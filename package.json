@@ -51,5 +51,8 @@
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",
     "zip-webpack-plugin": "^2.0.0"
+  },
+  "dependencies": {
+    "fuzzy-search": "^3.0.2"
   }
 }

@@ -1,5 +1,20 @@
 import { times } from "./utils";
 
+export function getDrawnChart(currentSong, chart, difficultyKey, abbreviation) {
+  return {
+    name: currentSong.name,
+    jacket: currentSong.jacket,
+    nameTranslation: currentSong.name_translation,
+    artist: currentSong.artist,
+    artistTranslation: currentSong.artist_translation,
+    bpm: currentSong.bpm,
+    difficulty: difficultyKey,
+    level: chart.difficulty,
+    hasShock: parseInt(chart.shock, 10) > 0,
+    abbreviation
+  };
+}
+
 /**
  * Used to give each drawing an auto-incrementing id
  */
@@ -58,18 +73,9 @@ export function draw(songs, configData) {
       }
 
       // add chart to deck
-      validCharts[chart.difficulty].push({
-        name: currentSong.name,
-        jacket: currentSong.jacket,
-        nameTranslation: currentSong.name_translation,
-        artist: currentSong.artist,
-        artistTranslation: currentSong.artist_translation,
-        bpm: currentSong.bpm,
-        difficulty: key,
-        level: chart.difficulty,
-        hasShock: parseInt(chart.shock, 10) > 0,
-        abbreviation: abbreviations[key]
-      });
+      validCharts[chart.difficulty].push(
+        getDrawnChart(currentSong, chart, key, abbreviations[key])
+      );
     }
   }
 

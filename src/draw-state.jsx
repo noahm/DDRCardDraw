@@ -1,6 +1,7 @@
 import { createContext, Component } from "preact";
 import { UnloadHandler } from "./unload-handler";
 import { draw } from "./card-draw";
+import FuzzySearch from "fuzzy-search";
 
 export const DrawStateContext = createContext();
 
@@ -9,6 +10,7 @@ export class DrawStateManager extends Component {
     super(props);
     this.state = {
       songs: null,
+      fuzzySearch: null,
       drawings: [],
       dataSet: props.defaultDataSet,
       lastDrawFailed: false,
@@ -38,7 +40,16 @@ export class DrawStateManager extends Component {
 
     import(/* webpackChunkName: "songData" */ `./songs/${dataSet}.json`).then(
       data => {
-        this.setState({ songs: data });
+        this.setState({
+          songs: data,
+          fuzzySearch: new FuzzySearch(
+            data,
+            ["name", "name_translation", "artist", "artist_translation"],
+            {
+              sort: true
+            }
+          )
+        });
       }
     );
   };

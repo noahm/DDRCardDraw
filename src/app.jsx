@@ -10,6 +10,7 @@ import { AuthManager } from "./auth";
 import { detectedLanguage } from "./utils";
 import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
+import { SongSearch } from "./song-search";
 
 const languageSet = i18n[detectedLanguage] || i18n["en"];
 
@@ -21,6 +22,7 @@ function App() {
           <div className={styles.container}>
             <UpdateManager />
             <Controls />
+            <SongSearch onSongSelect={song => console.log(song.name)} />
             <DrawingList />
             <Footer />
           </div>
