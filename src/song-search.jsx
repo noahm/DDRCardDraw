@@ -21,7 +21,12 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
               className={classNames(styles.chart, styles.dif)}
               onClick={() =>
                 onSelect(
-                  getDrawnChart(song, song.single.difficult, "difficult", "Dif")
+                  getDrawnChart(
+                    song,
+                    song.single.difficult,
+                    "difficult",
+                    "difficulty.ace.dif.abbreviation"
+                  )
                 )
               }
             >
@@ -35,7 +40,12 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
               className={classNames(styles.chart, styles.exp)}
               onClick={() =>
                 onSelect(
-                  getDrawnChart(song, song.single.expert, "expert", "Exp")
+                  getDrawnChart(
+                    song,
+                    song.single.expert,
+                    "expert",
+                    "difficulty.ace.exp.abbreviation"
+                  )
                 )
               }
             >
@@ -49,7 +59,12 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
               className={classNames(styles.chart, styles.cha)}
               onClick={() =>
                 onSelect(
-                  getDrawnChart(song, song.single.challenge, "challenge", "Cha")
+                  getDrawnChart(
+                    song,
+                    song.single.challenge,
+                    "challenge",
+                    "difficulty.ace.cha.abbreviation"
+                  )
                 )
               }
             >
