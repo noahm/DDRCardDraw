@@ -12,26 +12,28 @@ being loaded once in any modern web browser.
 Original app by Jeff Lloyd; ongoing maintenance provided by [noahm](https://github.com/noahm)
 and [FuriousDCSL](https://github.com/FuriousDCSL). Contributions are welcome!
 
-## Customizing
-This app can be easily customized for any special needs a tournament might have, including adding song
+## Customizing / Contributing
+
+This app can be easily customized for any format a tournament might use, including adding song
 data for other games. If you have requests or ideas, [please reach out](https://m.me/noah.manneschmidt)!
 
-If you want to take a stab at it yourself, you will want to have node.js >= 8.0.0 installed and some
-familarity with [Preact](https://github.com/developit/preact) (or react) apps.
+If you want to take a stab at it yourself, you will want to have node.js >= 10.0.0 installed along with
+[yarn](https://yarnpkg.com/) and some familarity with [Preact](https://github.com/developit/preact)
+(or react) apps.
 
 Clone this repo, and then the following commands will be useful:
 
 ```sh
 # one time install of dependencies
-npm install
+yarn install
 
 # local development will start, with app running at http://localhost:8080/
 # edits to the files in src will be reflected in real time
-npm start
+yarn start
 
 # double check any changes made to song lists in ./src/songs/
-npm run validate
+yarn validate
 
 # build a zipped, standalone copy of the app
-npm run build
+yarn build
 ```
