@@ -6,7 +6,14 @@
     "title": "song",
     "properties": {
       "unlock": {
-        "oneOf": [{ "type": "string" }, { "type": "boolean" }]
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
       },
       "temp_unlock": {
         "type": "boolean"
@@ -41,6 +48,9 @@
       "name_translation": {
         "type": "string"
       },
+      "search_hint": {
+        "type": "string"
+      },
       "double": {
         "type": "object",
         "title": "doubles charts",
@@ -59,7 +69,12 @@
             "$ref": "#/definitions/chart"
           }
         },
-        "required": ["basic", "difficult", "expert", "challenge"]
+        "required": [
+          "basic",
+          "difficult",
+          "expert",
+          "challenge"
+        ]
       },
       "single": {
         "type": "object",
@@ -82,7 +97,13 @@
             "$ref": "#/definitions/chart"
           }
         },
-        "required": ["beginner", "basic", "difficult", "expert", "challenge"]
+        "required": [
+          "beginner",
+          "basic",
+          "difficult",
+          "expert",
+          "challenge"
+        ]
       },
       "jacket": {
         "type": "string"
@@ -105,7 +126,9 @@
   "definitions": {
     "chart": {
       "oneOf": [
-        { "type": "null" },
+        {
+          "type": "null"
+        },
         {
           "type": "object",
           "additionalProperties": false,
@@ -132,7 +155,12 @@
               "type": "boolean"
             }
           },
-          "required": ["difficulty", "step", "shock", "freeze"]
+          "required": [
+            "difficulty",
+            "step",
+            "shock",
+            "freeze"
+          ]
         }
       ]
     }
