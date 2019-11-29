@@ -3,34 +3,57 @@ import { detectedLanguage } from "./utils";
 import styles from "./song-card.css";
 import { Localizer, Text } from "preact-i18n";
 import { Icon } from "./icon";
-
-import walletIcon from "ionicons/dist/ionicons/svg/md-wallet.svg";
 import { useState } from "preact/hooks";
 import { SongSearch } from "./song-search";
+import { Modal } from "./modal";
+
+import walletIcon from "ionicons/dist/ionicons/svg/md-wallet.svg";
+import lockIcon from "ionicons/dist/ionicons/svg/md-lock.svg";
+import banIcon from "ionicons/dist/ionicons/svg/md-close-circle.svg";
 
 const isJapanese = detectedLanguage === "ja";
 
-function getPocketPickUI(pickingPocket, setPickingPocket, updatePocket) {
+function IconMenu(props) {
+  const { onPocketPicked, onVeto, onProtect } = props;
+
+  const [pickingPocket, setPickingPocket] = useState(false);
+  const propsForChildren = {
+    onVeto,
+    onProtect,
+    onPickPocket: () => setPickingPocket(true)
+  };
+
   if (pickingPocket) {
     return (
-      <div className={styles.searchPocket}>
-        <SongSearch
-          autofocus
-          onSongSelect={chart => updatePocket(chart)}
-          onCancel={() => setPickingPocket(false)}
-        />
-      </div>
+      <SongSearch
+        autofocus
+        onSongSelect={chart => onPocketPicked(chart)}
+        onCancel={() => setPickingPocket(false)}
+      />
     );
   }
+
   return (
-    <div
-      className={styles.pocketIcon}
-      onClick={e => {
-        e.stopPropagation();
-        setPickingPocket(true);
-      }}
-    >
-      <Icon src={walletIcon} />
+    <div className={styles.iconMenu} onClick={e => e.stopPropagation()}>
+      <IconColumn header="P1" {...propsForChildren} />
+      <IconColumn header="P2" {...propsForChildren} />
+    </div>
+  );
+}
+
+function IconColumn(props) {
+  const { header, onPickPocket, onVeto, onProtect } = props;
+
+  return (
+    <div className={styles.iconColumn}>
+      <p>{header}</p>
+      <Icon src={lockIcon} title="Protect" onClick={onProtect} />
+      <Icon
+        src={walletIcon}
+        title="Replace with Pocket Pick"
+        onClick={onPickPocket}
+      />
+      <Icon src={banIcon} title="Ban" onClick={onVeto} />
     </div>
   );
 }
@@ -52,8 +75,14 @@ export function SongCard(props) {
     isPocket
   } = props;
 
-  const [pickingPocket, setPickingPocket] = useState(false);
   const [pocket, updatePocket] = useState(null);
+  const [showingIconMenu, setShowIconMenu] = useState(false);
+  const showIcons = () => setShowIconMenu(true);
+  const hideIcons = () => {
+    setShowIconMenu(false);
+    return true;
+  };
+
   if (!isPocket && pocket) {
     return <SongCard {...pocket} isPocket />;
   }
@@ -70,9 +99,17 @@ export function SongCard(props) {
   }
 
   return (
-    <div className={rootClassname} onClick={pickingPocket ? undefined : onVeto}>
-      {!isPocket &&
-        getPocketPickUI(pickingPocket, setPickingPocket, updatePocket)}
+    <div
+      className={rootClassname}
+      onClick={showingIconMenu ? undefined : showIcons}
+    >
+      {showingIconMenu && (
+        <IconMenu
+          onProtect={hideIcons}
+          onPocketPicked={chart => hideIcons() && updatePocket(chart)}
+          onVeto={() => hideIcons() && onVeto()}
+        />
+      )}
       <div className={styles.cardCenter} style={jacketBg}>
         <div className={styles.name} title={nameTranslation}>
           {name}

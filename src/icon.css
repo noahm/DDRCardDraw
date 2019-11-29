@@ -5,3 +5,11 @@
   display: inline-block;
   margin: 0;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.icon svg {
+  fill: currentColor;
+}

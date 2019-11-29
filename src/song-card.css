@@ -18,20 +18,13 @@
   word-wrap: break-word;
   overflow: hidden;
   transition: transform ease 0.3s;
+  position: relative;
 }
 
 @media (max-width: 500px) {
   .chart {
     min-width: 100px;
   }
-}
-
-.pocketIcon {
-  display: absolute;
-}
-
-.searchPocket {
-  display: absolute;
 }
 
 .cardCenter {
@@ -99,4 +92,25 @@
   transform: scale(0.9);
   transform-origin: center;
   filter: grayscale(75%);
+}
+
+.iconMenu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.iconColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconColumn p {
+  margin-top: 0;
 }

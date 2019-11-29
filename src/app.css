@@ -10,21 +10,15 @@ body {
   margin: 0;
 }
 
-h1 {
-  padding-left: 10px;
-}
-
-img {
-  width: 90%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   width: 100%;
+}
+
+h1 {
+  padding-left: 10px;
 }
 
 .padded {
@@ -35,3 +29,27 @@ img {
   height: 25px;
   line-height: 0px;
 }
+
+a:any-link {
+  color: blue;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea,
+button {
+  font-size: 16px;
+} /* avoid iOS auto-zoom */

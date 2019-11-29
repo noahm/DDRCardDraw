@@ -3,6 +3,9 @@ import { useContext, useState, useRef, useLayoutEffect } from "preact/hooks";
 import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
 import { getDrawnChart } from "./card-draw";
+import { Modal } from "./modal";
+import { Icon } from "./icon";
+import closeIcon from "ionicons/dist/ionicons/svg/md-close-circle.svg";
 
 function getSuggestions(fuzzySearch, searchTerm, onSelect) {
   if (fuzzySearch && searchTerm) {
@@ -93,23 +96,27 @@ export function SongSearch(props) {
   }, []);
 
   return (
-    <div>
-      <input
-        ref={input}
-        type="search"
-        onKeyUp={e => {
-          if (e.keyCode === 27) {
-            updateSearchTerm("");
-            onCancel && onCancel();
-          } else if (e.currentTarget.value !== searchTerm) {
-            updateSearchTerm(e.currentTarget.value);
-          }
-        }}
-        value={searchTerm}
-      />
+    <Modal>
+      <div className={styles.input}>
+        <input
+          placeholder="Search for a song"
+          ref={input}
+          type="search"
+          onKeyUp={e => {
+            if (e.keyCode === 27) {
+              updateSearchTerm("");
+              onCancel && onCancel();
+            } else if (e.currentTarget.value !== searchTerm) {
+              updateSearchTerm(e.currentTarget.value);
+            }
+          }}
+          value={searchTerm}
+        />
+        <Icon src={closeIcon} title="Close" onClick={onCancel} />
+      </div>
       <div className={styles.suggestionSet}>
         {getSuggestions(fuzzySearch, searchTerm, onSongSelect)}
       </div>
-    </div>
+    </Modal>
   );
 }

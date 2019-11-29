@@ -121,7 +121,7 @@ export class ControlsImpl extends Component {
     this.state = Object.assign(
       {
         weighted: false,
-        collapsed: false
+        collapsed: true
       },
       dataSetConfigs[props.dataSet].defaultState
     );

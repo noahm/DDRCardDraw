@@ -27,7 +27,7 @@ export function Footer() {
           <Text id="credits">Credits</Text>
         </a>
       </div>
-      <div>
+      <div className={styles.icons}>
         {/* <AuthButton /> */}
         &nbsp;
         <a href="https://m.me/noah.manneschmidt" target="_blank">
