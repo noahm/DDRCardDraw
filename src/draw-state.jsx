@@ -44,7 +44,7 @@ export class DrawStateManager extends Component {
           songs: data,
           fuzzySearch: new FuzzySearch(
             data,
-            ["name", "name_translation", "artist", "artist_translation"],
+            ["name", "name_translation", "artist", "artist_translation", "search_hint"],
             {
               sort: true
             }
