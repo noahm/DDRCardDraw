@@ -172,6 +172,7 @@ export function draw(songs, configData) {
   return {
     id: drawingID,
     charts: drawnCharts,
-    vetos: new Set()
+    vetos: new Set(),
+    protects: new Set()
   };
 }

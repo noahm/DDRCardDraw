@@ -1,0 +1,21 @@
+.cardLabel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6em;
+}
+
+.cardLabel span {
+  position: absolute;
+  left: 0em;
+  top: 0.2em;
+  width: 10em;
+  display: block;
+  transform: rotate(45deg);
+  background-color: tomato;
+  border-width: 2px 0;
+  border-color: black;
+  border-style: solid;
+  padding-top: 5px;
+  text-align: center;
+}

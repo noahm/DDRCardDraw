@@ -3,7 +3,7 @@
 .chart {
   flex: 1 0 0;
   text-align: center;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -89,23 +89,18 @@
   filter: grayscale(75%);
 }
 
-.iconMenu {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.8);
+.protected {
+  animation: protectBlink .2s step-end infinite alternate;
 }
 
-.iconColumn {
-  display: flex;
-  flex-direction: column;
-}
 
-.iconColumn p {
-  margin-top: 0;
+@keyframes protectBlink {
+  0% {
+    border-color: lime;
+    box-shadow: 0px 0px 5px lime;
+  }
+  50% {
+    border-color: white;
+    box-shadow: 0px 0px 5px white;
+  }
 }
