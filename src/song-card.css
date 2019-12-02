@@ -19,12 +19,7 @@
   overflow: hidden;
   transition: transform ease 0.3s;
   position: relative;
-}
-
-@media (max-width: 500px) {
-  .chart {
-    min-width: 100px;
-  }
+  min-width: 150px;
 }
 
 .cardCenter {

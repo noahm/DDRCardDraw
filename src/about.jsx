@@ -4,9 +4,7 @@ import { TranslateContext } from "@denysvuika/preact-translate";
 import { Icon } from "./icon";
 import styles from "./about.css";
 
-import fbLogo from "ionicons/dist/ionicons/svg/logo-facebook.svg";
-import twitterLogo from "ionicons/dist/ionicons/svg/logo-twitter.svg";
-import githubLogo from "ionicons/dist/ionicons/svg/logo-github.svg";
+import { Github, Facebook, Twitter } from "preact-feather";
 
 export function About({ onClose }) {
   const { t } = useContext(TranslateContext);
@@ -28,17 +26,23 @@ export function About({ onClose }) {
           <ul className={styles.icons}>
             <li>
               <a href="https://m.me/noah.manneschmidt" target="_blank">
-                <Icon src={fbLogo} title={t("contact.facebook")} />
+                <Icon
+                  svg={<Facebook size={48} />}
+                  title={t("contact.facebook")}
+                />
               </a>
             </li>
             <li>
               <a href="https://twitter.com/Cathadan" target="_blank">
-                <Icon src={twitterLogo} title={t("contact.twitter")} />
+                <Icon
+                  svg={<Twitter size={48} />}
+                  title={t("contact.twitter")}
+                />
               </a>
             </li>
             <li>
               <a href="https://github.com/noahm/DDRCardDraw">
-                <Icon src={githubLogo} title={t("contact.github")} />
+                <Icon svg={<Github size={48} />} title={t("contact.github")} />
               </a>
             </li>
           </ul>

@@ -1,3 +1,4 @@
+import * as classNames from "classnames";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import "formdata-polyfill";
 import { useContext, useRef, useState } from "preact/hooks";
@@ -298,7 +299,7 @@ export function Controls(props) {
               ))}
             </div>
           )}
-          <div className={globalStyles.padded}>
+          <div className={classNames(globalStyles.padded, styles.buttons)}>
             <button onClick={handleRandomize}>{t("draw")}</button>{" "}
             <button onClick={() => setCollapsed(!collapsed)}>
               {t(collapsed ? "controls.show" : "controls.hide")}

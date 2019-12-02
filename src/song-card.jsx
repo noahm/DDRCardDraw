@@ -4,10 +4,7 @@ import styles from "./song-card.css";
 import { Icon } from "./icon";
 import { useState, useContext } from "preact/hooks";
 import { SongSearch } from "./song-search";
-
-import walletIcon from "ionicons/dist/ionicons/svg/md-wallet.svg";
-import lockIcon from "ionicons/dist/ionicons/svg/md-lock.svg";
-import banIcon from "ionicons/dist/ionicons/svg/md-close-circle.svg";
+import { Edit, Lock, Trash, Zap } from "preact-feather";
 import { TranslateContext } from "@denysvuika/preact-translate";
 
 const isJapanese = detectedLanguage === "ja";
@@ -46,13 +43,13 @@ function IconColumn(props) {
   return (
     <div className={styles.iconColumn}>
       <p>{header}</p>
-      <Icon src={lockIcon} title="Protect" onClick={onProtect} />
+      <Icon svg={<Lock />} title="Protect" onClick={onProtect} />
       <Icon
-        src={walletIcon}
+        svg={<Edit />}
         title="Replace with Pocket Pick"
         onClick={onPickPocket}
       />
-      <Icon src={banIcon} title="Ban" onClick={onVeto} />
+      <Icon svg={<Trash />} title="Ban" onClick={onVeto} />
     </div>
   );
 }
@@ -125,15 +122,13 @@ export function SongCard(props) {
         <div className={styles.bpm}>{bpm} BPM</div>
         {hasShock && (
           <div className={styles.shockBadge} title={t("shockArrows")}>
-            <svg
-              height="100%"
-              className="octicon octicon-zap"
-              viewBox="0 0 10 16"
-              version="1.1"
-              ariaHidden="true"
-            >
-              <path fillRule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z" />
-            </svg>
+            <Zap
+              size={12}
+              ariaHidden
+              color="black"
+              fill="yellow"
+              stroke-width="1"
+            />
           </div>
         )}
         <div className={styles.difficulty}>

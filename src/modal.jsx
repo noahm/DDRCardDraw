@@ -1,10 +1,10 @@
 import { createPortal } from "preact/compat";
 import { Icon } from "./icon";
-import closeIcon from "ionicons/dist/ionicons/svg/md-close-circle.svg";
+import { X } from "preact-feather";
 import styles from "./modal.css";
 
 const modalRoot = document.createElement("div");
-modalRoot.className = styles.modalRoot;
+// modalRoot.className = styles.modalRoot;
 document.body.appendChild(modalRoot);
 
 /**
@@ -16,7 +16,7 @@ export function Modal({ children, onClose }) {
       <div className={styles.modalContents}>
         {onClose && (
           <Icon
-            src={closeIcon}
+            svg={<X />}
             title="Close"
             className={styles.close}
             onClick={onClose}
