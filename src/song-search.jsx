@@ -4,8 +4,6 @@ import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
 import { getDrawnChart } from "./card-draw";
 import { Modal } from "./modal";
-import { Icon } from "./icon";
-import closeIcon from "ionicons/dist/ionicons/svg/md-close-circle.svg";
 
 function getSuggestions(fuzzySearch, searchTerm, onSelect) {
   if (fuzzySearch && searchTerm) {
@@ -96,7 +94,7 @@ export function SongSearch(props) {
   }, []);
 
   return (
-    <Modal>
+    <Modal onClose={onCancel}>
       <div className={styles.input}>
         <input
           placeholder="Search for a song"
@@ -112,7 +110,6 @@ export function SongSearch(props) {
           }}
           value={searchTerm}
         />
-        <Icon src={closeIcon} title="Close" onClick={onCancel} />
       </div>
       <div className={styles.suggestionSet}>
         {getSuggestions(fuzzySearch, searchTerm, onSongSelect)}

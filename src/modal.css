@@ -16,4 +16,12 @@
   height: 80vh;
   width: 90vw;
   margin: 0 auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  font-size: 18px;
+  top: 0.5em;
+  right: 0.5em;
 }

@@ -1,15 +1,14 @@
 import classNames from "classnames";
 import { detectedLanguage } from "./utils";
 import styles from "./song-card.css";
-import { Localizer, Text } from "preact-i18n";
 import { Icon } from "./icon";
-import { useState } from "preact/hooks";
+import { useState, useContext } from "preact/hooks";
 import { SongSearch } from "./song-search";
-import { Modal } from "./modal";
 
 import walletIcon from "ionicons/dist/ionicons/svg/md-wallet.svg";
 import lockIcon from "ionicons/dist/ionicons/svg/md-lock.svg";
 import banIcon from "ionicons/dist/ionicons/svg/md-close-circle.svg";
+import { TranslateContext } from "@denysvuika/preact-translate";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -75,6 +74,7 @@ export function SongCard(props) {
     isPocket
   } = props;
 
+  const { t } = useContext(TranslateContext);
   const [pocket, updatePocket] = useState(null);
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
@@ -124,25 +124,20 @@ export function SongCard(props) {
       <div className={styles.cardFooter}>
         <div className={styles.bpm}>{bpm} BPM</div>
         {hasShock && (
-          <Localizer>
-            <div
-              className={styles.shockBadge}
-              title={<Text id="shockArrows">Shock Arrows</Text>}
+          <div className={styles.shockBadge} title={t("shockArrows")}>
+            <svg
+              height="100%"
+              className="octicon octicon-zap"
+              viewBox="0 0 10 16"
+              version="1.1"
+              ariaHidden="true"
             >
-              <svg
-                height="100%"
-                className="octicon octicon-zap"
-                viewBox="0 0 10 16"
-                version="1.1"
-                ariaHidden="true"
-              >
-                <path fillRule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z" />
-              </svg>
-            </div>
-          </Localizer>
+              <path fillRule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z" />
+            </svg>
+          </div>
         )}
         <div className={styles.difficulty}>
-          <Text id={abbreviation} /> {level}
+          {t(abbreviation)} {level}
         </div>
       </div>
     </div>

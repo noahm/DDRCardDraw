@@ -1,0 +1,21 @@
+.about {
+  padding: 2em;
+}
+
+.icons {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.icons li {
+  flex: 0 0 auto;
+  display: inline-block;
+  font-size: 48px;
+}
+
+.icons a:any-link {
+  color: black;
+}

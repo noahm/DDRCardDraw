@@ -1,7 +1,7 @@
 import * as firebase from "firebase/app";
 import { useContext } from "preact/hooks";
 import { AuthContext } from "./auth";
-import { Text } from "preact-i18n";
+import { TranslateContext } from "@denysvuika/preact-translate";
 
 function login() {
   firebase
@@ -23,6 +23,8 @@ function logout() {
 
 export function AuthButton() {
   const auth = useContext(AuthContext);
+  const { t } = useContext(TranslateContext);
+
   if (auth.status !== "resolved") {
     return null;
   }
@@ -30,14 +32,10 @@ export function AuthButton() {
   if (auth.uid) {
     return (
       <button onClick={logout}>
-        <Text id="logout">Logout</Text> {auth.uid}
+        {t("logout")} {auth.uid}
       </button>
     );
   } else {
-    return (
-      <button onClick={login}>
-        <Text id="login">Login</Text>
-      </button>
-    );
+    return <button onClick={login}>{t("login")}</button>;
   }
 }

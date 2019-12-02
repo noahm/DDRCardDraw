@@ -5,11 +5,3 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
-.footer .icons {
-  white-space: nowrap;
-}
-
-.footer .icons a:any-link {
-  color: black;
-}

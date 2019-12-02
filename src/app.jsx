@@ -1,10 +1,16 @@
+if (process.env.NODE_ENV === "development") {
+  // Must use require here as import statements are only allowed
+  // to exist at the top of a file.
+  require("preact/debug");
+}
+
 import "./firebase";
 import { render } from "preact";
-import { IntlProvider } from "preact-i18n";
+import { TranslateProvider } from "@denysvuika/preact-translate";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
-import i18n from "./assets/i18n.json";
+import i18nData from "./assets/i18n.json";
 import { AuthManager } from "./auth";
 import { detectedLanguage } from "./utils";
 import { UpdateManager } from "./update-manager";
@@ -13,11 +19,9 @@ import { SongSearch } from "./song-search";
 import { SuspectSongs } from "./SuspectSongs";
 import styles from "./app.css";
 
-const languageSet = i18n[detectedLanguage] || i18n["en"];
-
 function App() {
   return (
-    <IntlProvider definition={languageSet}>
+    <TranslateProvider translations={i18nData} lang={detectedLanguage}>
       <AuthManager>
         <DrawStateManager defaultDataSet="a20">
           <UpdateManager />
@@ -28,7 +32,7 @@ function App() {
           <Footer />
         </DrawStateManager>
       </AuthManager>
-    </IntlProvider>
+    </TranslateProvider>
   );
 }
 

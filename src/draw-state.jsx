@@ -12,7 +12,7 @@ export class DrawStateManager extends Component {
       songs: null,
       fuzzySearch: null,
       drawings: [],
-      dataSet: props.defaultDataSet,
+      dataSetName: props.defaultDataSet,
       lastDrawFailed: false,
       loadSongSet: this.loadSongSet,
       drawSongs: this.doDrawing
@@ -20,7 +20,7 @@ export class DrawStateManager extends Component {
   }
 
   componentDidMount() {
-    this.loadSongSet(this.state.dataSet);
+    this.loadSongSet(this.state.dataSetName);
   }
 
   render() {
@@ -32,26 +32,32 @@ export class DrawStateManager extends Component {
     );
   }
 
-  loadSongSet = dataSet => {
+  loadSongSet = dataSetName => {
     this.setState({
       songs: null,
-      dataSet
+      dataSetName
     });
 
-    import(/* webpackChunkName: "songData" */ `./songs/${dataSet}.json`).then(
-      data => {
-        this.setState({
-          songs: data,
-          fuzzySearch: new FuzzySearch(
-            data,
-            ["name", "name_translation", "artist", "artist_translation", "search_hint"],
-            {
-              sort: true
-            }
-          )
-        });
-      }
-    );
+    import(
+      /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
+    ).then(data => {
+      this.setState({
+        songs: data,
+        fuzzySearch: new FuzzySearch(
+          data,
+          [
+            "name",
+            "name_translation",
+            "artist",
+            "artist_translation",
+            "search_hint"
+          ],
+          {
+            sort: true
+          }
+        )
+      });
+    });
   };
 
   doDrawing = configData => {

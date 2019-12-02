@@ -41,7 +41,7 @@ module.exports = function(env = {}, argv = {}) {
           use: {
             loader: "babel-loader?cacheDirectory",
             options: {
-              presets: [require("babel-preset-env")],
+              presets: [require("@babel/preset-env")],
               plugins: [
                 require("babel-plugin-transform-class-properties"),
                 require("babel-plugin-syntax-dynamic-import"),

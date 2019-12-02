@@ -1,22 +1,20 @@
-import { Component } from "preact";
-import { withText } from "preact-i18n";
+import { useContext, useEffect } from "preact/hooks";
+import { TranslateContext } from "@denysvuika/preact-translate";
 
-class UnloadHandlerImpl extends Component {
-  componentDidMount() {
-    window.addEventListener("beforeunload", this.handleUnload);
-  }
+export function UnloadHandler(props) {
+  const { t } = useContext(TranslateContext);
+  const confirmText = t("confirmClose");
 
-  componentWillUnmount() {
-    window.removeEventListener("beforeunload", this.handleUnload);
-  }
-
-  handleUnload = e => {
-    if (this.props.confirmUnload) {
-      e.returnValue = this.props.confirmText;
+  function handleUnload(e) {
+    if (props.confirmUnload) {
+      e.returnValue = confirmText;
     }
-  };
-}
+  }
 
-export const UnloadHandler = withText({ confirmText: "confirmClose" })(
-  UnloadHandlerImpl
-);
+  useEffect(() => {
+    window.addEventListener("beforeunload", handleUnload);
+    return () => window.removeEventListener("beforeunload", handleUnload);
+  }, [props.confirmUnload, confirmText]);
+
+  return null;
+}
