@@ -26,9 +26,8 @@ function App() {
         <DrawStateManager defaultDataSet="a20">
           <UpdateManager />
           <Controls />
-          {/* <SongSearch /> */}
-          <DrawingList />
           {/* <SuspectSongs /> */}
+          <DrawingList />
           <Footer />
         </DrawStateManager>
       </AuthManager>
