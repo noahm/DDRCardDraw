@@ -1,5 +1,23 @@
 import { times } from "./utils";
 
+/**
+ * @typedef {Object} DrawnChart
+ * @property {string} name
+ * @property {string} jacket
+ * @property {string} nameTranslation
+ * @property {string} artist
+ * @property {string} artistTranslation
+ * @property {string} bpm
+ * @property {number} difficulty
+ * @property {string} level
+ * @property {boolean} hasShock
+ * @property {string} abbreviation
+ */
+
+
+/**
+ * @return {DrawnChart}
+ */
 export function getDrawnChart(currentSong, chart, difficultyKey, abbreviation) {
   return {
     name: currentSong.name,
@@ -21,10 +39,20 @@ export function getDrawnChart(currentSong, chart, difficultyKey, abbreviation) {
 let drawingID = 0;
 
 /**
+ * @typedef {Object} Drawing
+ * @property {number} id
+ * @property {DrawnChart[]} charts
+ * @property {Array<{ player: 1 | 2, chartIndex: number }>} bans
+ * @property {Array<{ player: 1 | 2, chartIndex: number }>} protects
+ * @property {Array<{ player: 1 | 2, chartIndex: number, pick: DrawnChart }>} pocketPicks
+ */
+
+/**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
  * @param {Array<{}>} songs The song data (see `src/songs/`)
  * @param {FormData} configData the data gathered by all form elements on the page, indexed by `name` attribute
+ * @return {Drawing}
  */
 export function draw(songs, configData) {
   const numChartsToRandom = parseInt(configData.get("chartCount"), 10);
@@ -37,6 +65,9 @@ export function draw(songs, configData) {
   // other options: usLocked, extraExclusive, removed, unlock
   const inclusions = new Set(configData.getAll("inclusions"));
 
+  /**
+   * @type {Record<string, Array<DrawnChart>>}
+   */
   const validCharts = {};
   times(19, n => {
     validCharts[n.toString()] = [];
@@ -160,7 +191,7 @@ export function draw(songs, configData) {
     const reachedExpected =
       limitOutliers &&
       difficultyCounts[chosenDifficulty.toString()] ===
-        expectedDrawPerLevel[chosenDifficulty.toString()];
+      expectedDrawPerLevel[chosenDifficulty.toString()];
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty
@@ -172,7 +203,8 @@ export function draw(songs, configData) {
   return {
     id: drawingID,
     charts: drawnCharts,
-    vetos: new Set(),
-    protects: new Set()
+    bans: [],
+    protects: [],
+    pocketPicks: []
   };
 }

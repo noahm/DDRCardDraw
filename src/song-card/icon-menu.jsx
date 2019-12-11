@@ -9,15 +9,14 @@ export function IconMenu(props) {
   const { onPocketPicked, onVeto, onProtect, onClose } = props;
 
   const { t } = useContext(TranslateContext);
-  const [pickingPocket, setPickingPocket] = useState(false);
-  const onPickPocket = () => setPickingPocket(true);
+  const [playerPickingPocket, setPickingPocket] = useState(0);
 
-  if (pickingPocket) {
+  if (playerPickingPocket) {
     return (
       <SongSearch
         autofocus
-        onSongSelect={chart => onPocketPicked(chart)}
-        onCancel={() => setPickingPocket(false)}
+        onSongSelect={chart => onPocketPicked(playerPickingPocket, chart)}
+        onCancel={() => setPickingPocket(0)}
       />
     );
   }
@@ -37,7 +36,7 @@ export function IconMenu(props) {
       <IconRow
         icon={<Edit />}
         label={t("songAction.pocketPick")}
-        onClick={onPickPocket}
+        onClick={setPickingPocket}
       />
       <IconRow icon={<Trash />} label={t("songAction.ban")} onClick={onVeto} />
     </div>
@@ -49,9 +48,9 @@ function IconRow(props) {
 
   return (
     <div className={styles.iconRow}>
-      <Icon svg={icon} title={label} onClick={onClick} />
+      <Icon svg={icon} title={label} onClick={() => onClick(1)} />
       <div>{label}</div>
-      <Icon svg={icon} title={label} onClick={onClick} />
+      <Icon svg={icon} title={label} onClick={() => onClick(2)} />
     </div>
   );
 }

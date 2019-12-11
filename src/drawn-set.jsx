@@ -27,34 +27,46 @@ export class DrawnSet extends Component {
   }
 
   renderChart = (chart, index) => {
+    const veto = this.props.drawing.bans.find(b => b.chartIndex === index);
+    const protect = this.props.drawing.protects.find(
+      b => b.chartIndex === index
+    );
+    const pocketPick = this.props.drawing.pocketPicks.find(
+      b => b.chartIndex === index
+    );
     return (
       <SongCard
         key={index}
-        onVeto={this.handleVeto.bind(this, index)}
-        onProtect={this.handleProtect.bind(this, index)}
-        vetoed={this.props.drawing.vetos.has(index)}
-        isProtected={this.props.drawing.protects.has(index)}
-        {...chart}
+        onVeto={this.handleBanProtectReplace.bind(
+          this,
+          this.props.drawing.bans,
+          index
+        )}
+        onProtect={this.handleBanProtectReplace.bind(
+          this,
+          this.props.drawing.protects,
+          index
+        )}
+        onReplace={this.handleBanProtectReplace.bind(
+          this,
+          this.props.drawing.pocketPicks,
+          index
+        )}
+        vetoedBy={veto && veto.player}
+        protectedBy={protect && protect.player}
+        replacedBy={pocketPick && pocketPick.player}
+        replacedWith={pocketPick && pocketPick.chart}
+        chart={chart}
       />
     );
   };
 
-  handleVeto(j) {
-    const drawing = this.props.drawing;
-    if (drawing.vetos.has(j)) {
-      drawing.vetos.delete(j);
+  handleBanProtectReplace(arr, chartIndex, player, chart) {
+    const existingBanIndex = arr.findIndex(b => b.chartIndex === chartIndex);
+    if (existingBanIndex >= 0) {
+      arr.splice(existingBanIndex, 1);
     } else {
-      drawing.vetos.add(j);
-    }
-    this.forceUpdate();
-  }
-
-  handleProtect(j) {
-    const drawing = this.props.drawing;
-    if (drawing.protects.has(j)) {
-      drawing.protects.delete(j);
-    } else {
-      drawing.protects.add(j);
+      arr.push({ chartIndex, player, chart });
     }
     this.forceUpdate();
   }

@@ -11,6 +11,25 @@ const isJapanese = detectedLanguage === "ja";
 
 export function SongCard(props) {
   const {
+    chart,
+    vetoedBy,
+    protectedBy,
+    replacedBy,
+    replacedWith,
+    onVeto,
+    onProtect,
+    onReplace
+  } = props;
+
+  const { t } = useContext(TranslateContext);
+  const [showingIconMenu, setShowIconMenu] = useState(false);
+  const showIcons = () => setShowIconMenu(true);
+  const hideIcons = () => {
+    setShowIconMenu(false);
+    return true;
+  };
+
+  const {
     name,
     nameTranslation,
     artist,
@@ -19,31 +38,13 @@ export function SongCard(props) {
     difficulty,
     level,
     hasShock,
-    vetoed,
-    isProtected,
     abbreviation,
-    jacket,
-    onVeto,
-    onProtect,
-    isPocket
-  } = props;
-
-  const { t } = useContext(TranslateContext);
-  const [pocket, updatePocket] = useState(null);
-  const [showingIconMenu, setShowIconMenu] = useState(false);
-  const showIcons = () => setShowIconMenu(true);
-  const hideIcons = () => {
-    setShowIconMenu(false);
-    return true;
-  };
-
-  if (!isPocket && pocket) {
-    return <SongCard {...pocket} isPocket />;
-  }
+    jacket
+  } = replacedWith || chart;
 
   const rootClassname = classNames(styles.chart, styles[difficulty], {
-    [styles.vetoed]: vetoed,
-    [styles.protected]: isProtected || isPocket
+    [styles.vetoed]: vetoedBy,
+    [styles.protected]: protectedBy || replacedBy
   });
 
   let jacketBg = {};
@@ -58,29 +59,31 @@ export function SongCard(props) {
       className={rootClassname}
       onClick={showingIconMenu ? undefined : showIcons}
     >
-      {vetoed && (
-        <CardLabel>
-          P1
+      {vetoedBy && (
+        <CardLabel left={vetoedBy === 1}>
+          P{vetoedBy}
           <Trash size={16} />
         </CardLabel>
       )}
-      {isProtected && (
-        <CardLabel>
-          P1
+      {protectedBy && (
+        <CardLabel left={protectedBy === 1}>
+          P{protectedBy}
           <Lock size={16} />
         </CardLabel>
       )}
-      {isPocket && (
-        <CardLabel>
-          P1
+      {replacedBy && (
+        <CardLabel left={replacedBy === 1}>
+          P{replacedBy}
           <Edit size={16} />
         </CardLabel>
       )}
       {showingIconMenu && (
         <IconMenu
-          onProtect={() => hideIcons() && onProtect()}
-          onPocketPicked={chart => hideIcons() && updatePocket(chart)}
-          onVeto={() => hideIcons() && onVeto()}
+          onProtect={player => hideIcons() && onProtect(player)}
+          onPocketPicked={(player, chart) =>
+            hideIcons() && onReplace(player, chart)
+          }
+          onVeto={player => hideIcons() && onVeto(player)}
           onClose={hideIcons}
         />
       )}
