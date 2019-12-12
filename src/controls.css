@@ -46,3 +46,7 @@ input[type="number"] {
 .hidden {
   display: none;
 }
+
+.buttons {
+  text-align: right;
+}

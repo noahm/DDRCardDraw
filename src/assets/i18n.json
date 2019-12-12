@@ -19,8 +19,8 @@
     },
     "include": "Include",
     "controls": {
-      "show": "Show Controls",
-      "hide": "Hide Controls",
+      "show": "Show Options",
+      "hide": "Hide Options",
       "invalid": "Couldn't draw anything with current settings!",
       "unlock": "Unlockable songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
@@ -76,11 +76,20 @@
     "confirmClose": "Are you sure you want to leave?",
     "updateReady": "Update available, refresh for the freshest code around!",
     "credits": "Credits",
-    "lastUpdate": "Songs up to date as of {{date}}.",
+    "lastUpdate": "Songs up to date as of {date}.",
+    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * Maintained by Noah Manneschmidt.",
     "contact": {
+      "prompt": "Please reach out with feedback, ideas, or code contributions:",
       "facebook": "Contact me on Facebook Messenger",
       "twitter": "Contact me on Twitter",
       "github": "Contribute on Github"
+    },
+    "songAction": {
+      "lock": "Protect",
+      "ban": "Veto",
+      "pocketPick": "Pocket Pick",
+      "reset": "Reset",
+      "cancel": "Cancel"
     }
   },
   "ja": {
@@ -160,11 +169,20 @@
     "confirmClose": "本当にこのページを離れますか？",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
     "credits": "Credits",
-    "lastUpdate": "楽曲の更新日：{{date}}",
+    "lastUpdate": "楽曲の更新日：{date}",
+    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * Maintained by Noah Manneschmidt.",
     "contact": {
+      "prompt": "Please reach out with feedback, ideas, or code contributions:",
       "facebook": "Facebook Messengerで作者に連絡する",
       "twitter": "Twitterで作者に連絡する",
       "github": "Githubで貢献する"
+    },
+    "songAction": {
+      "lock": "Protect",
+      "ban": "Veto",
+      "pocketPick": "Pocket Pick",
+      "reset": "Reset",
+      "cancel": "Cancel"
     }
   }
 }

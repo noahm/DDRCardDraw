@@ -1,0 +1,56 @@
+.suggestionSet {
+  position: absolute;
+  background-color: white;
+  cursor: default;
+  border: 1px solid lightgray;
+}
+
+.input {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.suggestion {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+}
+.suggestion:hover {
+  background-color: lightgray;
+}
+.suggestion:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
+.img {
+  height: 50px;
+  margin-left: 0;
+  margin-right: 0.25em;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.chart {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid darkslategray;
+  padding: 0.25em;
+  border-radius: 3px;
+  margin: 0 0.25em;
+}
+.chart:hover {
+  box-shadow: 0 0 5px black;
+}
+.dif {
+  background-color: #e8715f;
+}
+.exp {
+  background-color: #72cc6e;
+}
+.cha {
+  background-color: #cc71e8;
+}

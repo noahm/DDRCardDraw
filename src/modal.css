@@ -1,0 +1,23 @@
+.modalBackdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modalContents {
+  background-color: white;
+  height: 80vh;
+  width: 90vw;
+  margin: 0 auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  font-size: 18px;
+  top: 0.5em;
+  right: 0.5em;
+}

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
 
 .chart {
   flex: 1 0 0;
   text-align: center;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -11,18 +11,15 @@
   min-height: 130px;
   color: white;
   text-shadow: 0px 0px 10px black, 1px 1px 1px black;
-  font-family: Evogria, 'Russo One', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Evogria, "Russo One", Arial, "Helvetica Neue", Helvetica,
+    sans-serif;
   -webkit-tap-highlight-color: transparent;
   margin: 5px;
   word-wrap: break-word;
   overflow: hidden;
   transition: transform ease 0.3s;
-}
-
-@media (max-width: 500px) {
-  .chart {
-    min-width: 100px;
-  }
+  position: relative;
+  min-width: 150px;
 }
 
 .cardCenter {
@@ -90,4 +87,20 @@
   transform: scale(0.9);
   transform-origin: center;
   filter: grayscale(75%);
+}
+
+.protected {
+  animation: protectBlink .14s step-end infinite alternate;
+}
+
+
+@keyframes protectBlink {
+  0% {
+    border-color: lime;
+    box-shadow: 0px 0px 5px lime;
+  }
+  50% {
+    border-color: white;
+    box-shadow: 0px 0px 5px white;
+  }
 }

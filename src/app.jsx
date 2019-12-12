@@ -1,123 +1,41 @@
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
-import { Component, render } from "preact";
+if (process.env.NODE_ENV === "development") {
+  // Must use require here as import statements are only allowed
+  // to exist at the top of a file.
+  require("preact/debug");
+}
+
+import "./firebase";
+import { render } from "preact";
+import { TranslateProvider } from "@denysvuika/preact-translate";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
-import { draw } from "./card-draw";
+import i18nData from "./assets/i18n.json";
+import { AuthManager } from "./auth";
+import { detectedLanguage } from "./utils";
+import { UpdateManager } from "./update-manager";
+import { DrawStateManager } from "./draw-state";
+import { SongSearch } from "./song-search";
+import { SuspectSongs } from "./SuspectSongs";
 import styles from "./app.css";
-import { TOURNAMENT_MODE, detectedLanguage } from "./utils";
-import { IntlProvider, Text, withText } from "preact-i18n";
-import i18n from "./assets/i18n.json";
 
-let songs;
-let songDataLoading = null;
-function loadSongData(dataName) {
-  songDataLoading = import(
-    /* webpackChunkName: "songData" */ `./songs/${dataName}.json`
-  ).then(data => {
-    songs = data;
-    songDataLoading = null;
-  });
+function App() {
+  return (
+    <TranslateProvider translations={i18nData} lang={detectedLanguage}>
+      <AuthManager>
+        <DrawStateManager defaultDataSet="a20">
+          <UpdateManager />
+          <Controls />
+          {/* <SuspectSongs /> */}
+          <DrawingList />
+          <Footer />
+        </DrawStateManager>
+      </AuthManager>
+    </TranslateProvider>
+  );
 }
 
-class App extends Component {
-  state = {
-    drawings: [],
-    lastDrawFailed: false,
-    hasUpdate: false
-  };
-
-  componentDidMount() {
-    OfflinePluginRuntime.install({
-      onUpdateReady() {
-        OfflinePluginRuntime.applyUpdate();
-      },
-      onUpdated: () => {
-        this.setState({
-          hasUpdate: true
-        });
-      }
-    });
-    window.addEventListener("beforeunload", this.handleUnload);
-    loadSongData("a20");
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("beforeunload", this.handleUnload);
-  }
-
-  render() {
-    return (
-      <div className={styles.container}>
-        {this.state.hasUpdate && (
-          <p className={styles.updateBanner}>
-            <Text id="updateReady">
-              Update available, refresh for the freshest code around!
-            </Text>
-          </p>
-        )}
-        <Controls
-          onDraw={this.doDrawing}
-          onSongListChange={loadSongData}
-          canPromote={
-            TOURNAMENT_MODE &&
-            this.state.drawings.length > 1 &&
-            !!this.state.drawings[0]
-          }
-          onPromote={this.handlePromote}
-          lastDrawFailed={this.state.lastDrawFailed}
-        />
-        <DrawingList drawings={this.state.drawings} />
-        <Footer />
-      </div>
-    );
-  }
-
-  doDrawing = configData => {
-    // wait for async load of song data, if necessary
-    if (songDataLoading) {
-      songDataLoading.then(() => doDrawing(configData));
-      return;
-    }
-
-    const drawing = draw(songs, configData);
-    if (!drawing.charts.length) {
-      this.setState({
-        lastDrawFailed: true
-      });
-      return;
-    }
-
-    this.setState(prevState => ({
-      drawings: [drawing].concat(prevState.drawings).filter(Boolean),
-      lastDrawFailed: false
-    }));
-  };
-
-  handlePromote = () => {
-    if (!this.state.drawings.length || !this.state.drawings[0]) {
-      return;
-    }
-
-    this.setState(prevState => ({
-      drawings: [null].concat(prevState.drawings),
-      lastDrawFailed: false
-    }));
-  };
-
-  handleUnload = e => {
-    if (this.state.drawings.length) {
-      e.returnValue = this.props.confirmText;
-    }
-  };
-}
-
-const AppWithText = withText({ confirmText: "confirmClose" })(App);
-
-const languageSet = i18n[detectedLanguage] || i18n["en"];
-render(
-  <IntlProvider definition={languageSet}>
-    <AppWithText />
-  </IntlProvider>,
-  document.body
-);
+const appRoot = document.createElement("main");
+document.body.prepend(appRoot);
+appRoot.className = styles.container;
+render(<App />, appRoot);
