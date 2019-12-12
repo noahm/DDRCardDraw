@@ -18,6 +18,12 @@
   flex-direction: row;
 }
 
+.centerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .iconColumn p {
   margin-top: 0;
 }

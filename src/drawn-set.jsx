@@ -52,6 +52,7 @@ export class DrawnSet extends Component {
           this.props.drawing.pocketPicks,
           index
         )}
+        onReset={this.handleReset.bind(this, index)}
         vetoedBy={veto && veto.player}
         protectedBy={protect && protect.player}
         replacedBy={pocketPick && pocketPick.player}
@@ -68,6 +69,18 @@ export class DrawnSet extends Component {
     } else {
       arr.push({ chartIndex, player, chart });
     }
+    this.forceUpdate();
+  }
+
+  handleReset(chartIndex) {
+    const drawing = this.props.drawing;
+    drawing.bans = drawing.bans.filter(p => p.chartIndex !== chartIndex);
+    drawing.protects = drawing.protects.filter(
+      p => p.chartIndex !== chartIndex
+    );
+    drawing.pocketPicks = drawing.pocketPicks.filter(
+      p => p.chartIndex !== chartIndex
+    );
     this.forceUpdate();
   }
 }

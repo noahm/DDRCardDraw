@@ -1,12 +1,19 @@
 import { TranslateContext } from "@denysvuika/preact-translate";
-import { Edit, Lock, Trash, X } from "preact-feather";
+import { Edit, Lock, RotateCcw, Slash, X } from "preact-feather";
 import { useContext, useState } from "preact/hooks";
 import { Icon } from "../icon";
 import { SongSearch } from "../song-search";
 import styles from "./icon-menu.css";
 
 export function IconMenu(props) {
-  const { onPocketPicked, onVeto, onProtect, onClose } = props;
+  const {
+    onPocketPicked,
+    onVeto,
+    onProtect,
+    onClose,
+    onlyReset,
+    onReset
+  } = props;
 
   const { t } = useContext(TranslateContext);
   const [playerPickingPocket, setPickingPocket] = useState(0);
@@ -21,11 +28,30 @@ export function IconMenu(props) {
     );
   }
 
+  if (onlyReset) {
+    return (
+      <div className={styles.iconMenu} onClick={e => e.stopPropagation()}>
+        <header className={styles.centerRow}>
+          <span>{t("songAction.reset")}</span>
+          <span>{t("songAction.cancel")}</span>
+        </header>
+        <div className={styles.centerRow}>
+          <Icon
+            svg={<RotateCcw />}
+            title={t("songAction.reset")}
+            onClick={onReset}
+          />
+          <Icon svg={<X />} onClick={onClose} title={t("songAction.cancel")} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.iconMenu} onClick={e => e.stopPropagation()}>
       <header className={styles.iconRow}>
         <div>P1</div>
-        <Icon svg={<X />} onClick={onClose} />
+        <Icon svg={<X />} onClick={onClose} title={t("songAction.cancel")} />
         <div>P2</div>
       </header>
       <IconRow
@@ -38,7 +64,7 @@ export function IconMenu(props) {
         label={t("songAction.pocketPick")}
         onClick={setPickingPocket}
       />
-      <IconRow icon={<Trash />} label={t("songAction.ban")} onClick={onVeto} />
+      <IconRow icon={<Slash />} label={t("songAction.ban")} onClick={onVeto} />
     </div>
   );
 }

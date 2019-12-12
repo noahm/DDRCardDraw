@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { detectedLanguage } from "../utils";
 import styles from "./song-card.css";
 import { useState, useContext } from "preact/hooks";
-import { Zap, Trash, Lock, Edit } from "preact-feather";
+import { Zap, Lock, Edit, Slash } from "preact-feather";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
@@ -18,7 +18,8 @@ export function SongCard(props) {
     replacedWith,
     onVeto,
     onProtect,
-    onReplace
+    onReplace,
+    onReset
   } = props;
 
   const { t } = useContext(TranslateContext);
@@ -62,7 +63,7 @@ export function SongCard(props) {
       {vetoedBy && (
         <CardLabel left={vetoedBy === 1}>
           P{vetoedBy}
-          <Trash size={16} />
+          <Slash size={16} />
         </CardLabel>
       )}
       {protectedBy && (
@@ -84,6 +85,8 @@ export function SongCard(props) {
             hideIcons() && onReplace(player, chart)
           }
           onVeto={player => hideIcons() && onVeto(player)}
+          onlyReset={vetoedBy || protectedBy || replacedBy}
+          onReset={() => hideIcons() && onReset()}
           onClose={hideIcons}
         />
       )}
