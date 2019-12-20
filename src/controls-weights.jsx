@@ -18,26 +18,33 @@ function getWeightsFor(props, state = []) {
 
 export class WeightsControls extends Component {
   render(props) {
-    const [savedWeights, updateWeights] = useState([]);
+    const { hidden, high, low } = props;
+
+    const { t } = useContext(TranslateContext);
+    const levels = useMemo(() => times(high - low + 1, n => n + low - 1), [
+      high,
+      low
+    ]);
+
+    const [savedWeights, updateWeights] = useState(() => {
+      const newWeights = [];
+      for (const level of levels) {
+        newWeights[level] = 1;
+      }
+      return newWeights;
+    });
     function setWeight(difficulty, value) {
       const newWeights = savedWeights.slice();
-      newWeights[difficulty] = value;
+      newWeights[difficulty] = Number.isInteger(value) ? value : "";
       updateWeights(newWeights);
     }
-    const levels = useMemo(
-      () => times(props.high - props.low + 1, n => n + props.low - 1),
-      [props.high, props.low]
-    );
-    const { t } = useContext(TranslateContext);
-
-    const { hidden } = props;
 
     const totalWeight = levels.reduce(
-      (total, level) => total + (savedWeights[level] || 1),
+      (total, level) => total + (savedWeights[level] || 0),
       0
     );
     const percentages = levels.map(level => {
-      const value = savedWeights[level] || 1;
+      const value = savedWeights[level] || 0;
       return value ? ((100 * value) / totalWeight).toFixed(0) : 0;
     });
 
@@ -49,7 +56,7 @@ export class WeightsControls extends Component {
             <input
               type="number"
               name={`weight-${level}`}
-              value={savedWeights[level] || 1}
+              value={savedWeights[level]}
               min="0"
               onChange={e => setWeight(level, +e.currentTarget.value)}
             />
@@ -57,7 +64,7 @@ export class WeightsControls extends Component {
           </label>
         ))}
         <label title={t("weights.check.title")}>
-          <input type="checkbox" name="limitOutliers" defaultChecked={true} />
+          <input type="checkbox" name="limitOutliers" defaultChecked />
           {t("weights.check.label")}
         </label>
       </section>
