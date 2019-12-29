@@ -6,6 +6,7 @@ import globalStyles from "./app.css";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { DrawStateContext } from "./draw-state";
+import { UncontrolledCheckbox, UncontrolledInput } from "./uncontrolled";
 
 const dataSetConfigs = {
   ace: {
@@ -117,24 +118,6 @@ function preventDefault(e) {
   e.preventDefault();
 }
 
-function UncontrolledCheckbox(props) {
-  const { defaultChecked, onChange, ...otherProps } = props;
-  const [checked, updateChecked] = useState(defaultChecked);
-  return (
-    <input
-      {...otherProps}
-      type="checkbox"
-      checked={checked}
-      onChange={e => {
-        updateChecked(!!e.currentTarget.checked);
-        if (onChange) {
-          onChange(e);
-        }
-      }}
-    />
-  );
-}
-
 export function Controls(props) {
   const { t } = useContext(TranslateContext);
   const { drawSongs, dataSetName, loadSongSet } = useContext(DrawStateContext);
@@ -217,7 +200,12 @@ export function Controls(props) {
           <div className={styles.group}>
             <label>
               {t("chartCount")}:{" "}
-              <input type="number" name="chartCount" defaultValue="5" min="1" />
+              <UncontrolledInput
+                type="number"
+                name="chartCount"
+                defaultValue="5"
+                min="1"
+              />
             </label>
           </div>
           <div className={styles.group}>
