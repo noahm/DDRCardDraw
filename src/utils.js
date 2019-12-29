@@ -1,5 +1,3 @@
-export const TOURNAMENT_MODE = false;
-
 /**
  * @type {string}
  */
