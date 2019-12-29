@@ -1,3 +1,5 @@
+import { useState } from "preact/hooks";
+
 /**
  * This file exists because Preact doesn't handle uncontrolled inputs
  * with default values correctly. These components can be used as a
