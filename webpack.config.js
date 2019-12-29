@@ -4,7 +4,7 @@ const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const DelWebpackPlugin = require("del-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
@@ -15,19 +15,32 @@ module.exports = function(env = {}, argv = {}) {
   const version = env.version || "custom";
 
   return {
+    mode: isProd ? "production" : "development",
     devtool: isProd ? false : "cheap-module-eval-source-map",
     devServer: !serve
       ? undefined
       : {
-          contentBase: "./dist",
-          host: "0.0.0.0",
-          noInfo: true
+          contentBase: "./dist"
+          // host: "0.0.0.0"
         },
     entry: "./src/app.jsx",
     output: {
       filename: "[name].[hash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist")
+    },
+    optimization: {
+      minimize: isProd
+    },
+    performance: {
+      hints: false
+    },
+    stats: {
+      colors: true,
+      logging: "warn",
+      children: false,
+      assets: false,
+      modules: false
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".json"]
@@ -43,9 +56,9 @@ module.exports = function(env = {}, argv = {}) {
             options: {
               presets: [require("@babel/preset-env")],
               plugins: [
-                require("babel-plugin-transform-class-properties"),
-                require("babel-plugin-syntax-dynamic-import"),
-                [require("babel-plugin-transform-react-jsx"), { pragma: "h" }],
+                require("@babel/plugin-proposal-class-properties"),
+                require("@babel/plugin-syntax-dynamic-import"),
+                [require("@babel/plugin-transform-react-jsx"), { pragma: "h" }],
                 [
                   require("babel-plugin-jsx-pragmatic"),
                   {
@@ -61,26 +74,25 @@ module.exports = function(env = {}, argv = {}) {
         {
           test: /\.css$/,
           exclude: /node_modules/,
-          loader: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: [
-              {
-                loader: "css-loader",
-                options: {
-                  modules: true,
-                  localIdentName: "[local]__[hash:base64:5]",
-                  importLoaders: 1
-                }
-              },
-              {
-                loader: "postcss-loader",
-                options: {
-                  ident: "postcss",
-                  plugins: [autoprefixer()]
-                }
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: {
+                modules: {
+                  localIdentName: "[local]__[hash:base64:5]"
+                },
+                importLoaders: 1
               }
-            ]
-          })
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                ident: "postcss",
+                plugins: [autoprefixer()]
+              }
+            }
+          ]
         },
         {
           test: /\.svg$/,
@@ -106,8 +118,9 @@ module.exports = function(env = {}, argv = {}) {
           isProd ? "production" : "development"
         )
       }),
-      new ExtractTextPlugin({
-        filename: "[name].[contenthash:5].css"
+      new MiniCssExtractPlugin({
+        filename: "[name].[contenthash:5].css",
+        chunkFilename: "[id].[chunkhash:5].js"
       }),
       new HtmlWebpackPlugin({
         title: "DDR Card Draw",
@@ -130,8 +143,7 @@ module.exports = function(env = {}, argv = {}) {
                 events: true
               },
               excludes: ["../*.zip", "jackets/*"]
-            }),
-            new webpack.optimize.UglifyJsPlugin()
+            })
           ]
     )
   };

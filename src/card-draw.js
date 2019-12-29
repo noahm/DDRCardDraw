@@ -14,7 +14,6 @@ import { times } from "./utils";
  * @property {string} abbreviation
  */
 
-
 /**
  * @return {DrawnChart}
  */
@@ -191,7 +190,7 @@ export function draw(songs, configData) {
     const reachedExpected =
       limitOutliers &&
       difficultyCounts[chosenDifficulty.toString()] ===
-      expectedDrawPerLevel[chosenDifficulty.toString()];
+        expectedDrawPerLevel[chosenDifficulty.toString()];
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty

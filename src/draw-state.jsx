@@ -40,7 +40,7 @@ export class DrawStateManager extends Component {
 
     import(
       /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
-    ).then(data => {
+    ).then(({ default: data }) => {
       this.setState({
         songs: data,
         fuzzySearch: new FuzzySearch(
