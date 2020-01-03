@@ -93,7 +93,12 @@ for (const dataFile of dataFileNames) {
     songData = {
       meta: {
         styles: ["define game styles here"],
-        difficulties: ["define difficulties here"],
+        difficulties: [
+          {
+            key: "define difficulties here",
+            color: "give each a distinctive css color"
+          }
+        ],
         flags: ["define filtering flags here"],
         lvlMax: 300
       },

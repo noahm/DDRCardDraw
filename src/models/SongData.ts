@@ -17,7 +17,16 @@ export interface GameData {
     /**
      * List of all difficultiy classes available
      */
-    difficulties: string[];
+    difficulties: {
+      /**
+       * A unique string key to identify this difficulty class
+       */
+      key: string;
+      /**
+       * A css color to use to visually define this difficulty class
+       */
+      color: string;
+    }[];
     /**
      * List of all special flags one might filter songs by
      */

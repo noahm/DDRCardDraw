@@ -15,8 +15,24 @@
           "description": "List of all play styles available"
         },
         "difficulties": {
-          "$ref": "#/$defs/uniqueStringArr",
-          "description": "List of all difficultiy classes available"
+          "type": "array",
+          "description": "List of all difficultiy classes available",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "A unique string key to identify this difficulty class"
+              },
+              "color": {
+                "type": "string",
+                "description": "A css color to use to visually define this difficulty class"
+              }
+            },
+            "required": ["key", "color"],
+            "additionalProperties": false
+          },
+          "additionalItems": false
         },
         "flags": {
           "$ref": "#/$defs/uniqueStringArr",

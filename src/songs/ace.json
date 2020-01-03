@@ -1,7 +1,13 @@
 {
   "meta": {
     "styles": ["single", "double"],
-    "difficulties": ["beg", "bas", "dif", "exp", "cha"],
+    "difficulties": [
+      { "key": "beg", "color": "#6eccc4" },
+      { "key": "bas", "color": "#e0de5c" },
+      { "key": "dif", "color": "#e8715f" },
+      { "key": "exp", "color": "#72cc6e" },
+      { "key": "cha", "color": "#cc71e8" }
+    ],
     "flags": ["unlock", "extraExclusive", "tempUnlock", "usLocked", "removed"],
     "lvlMax": 19
   },

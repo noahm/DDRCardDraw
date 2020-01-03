@@ -1,7 +1,12 @@
 {
   "meta": {
     "styles": ["single", "double"],
-    "difficulties": ["lgt", "std", "hvy", "cha"],
+    "difficulties": [
+      { "key": "lgt", "color": "#e0de5c" },
+      { "key": "std", "color": "#e8715f" },
+      { "key": "hvy", "color": "#72cc6e" },
+      { "key": "cha", "color": "#cc71e8" }
+    ],
     "flags": [],
     "lvlMax": 10
   },
