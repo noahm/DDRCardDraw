@@ -9,6 +9,7 @@
     "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
     "deploy:staging": "npm run build && surge ./dist https://ddrdraw-staging.surge.sh",
     "deploy:firebase": "npm run build && firebase deploy",
+    "migrate": "node scripts/migrate.js",
     "validate": "npm run validate:json && npm run validate:ts",
     "validate:json": "node scripts/validate.js",
     "validate:ts": "tsc --noemit"
@@ -51,6 +52,7 @@
     "postcss-loader": "^3.0.0",
     "preact": "^10.1.1",
     "preact-feather": "^4.0.0",
+    "prettier": "^1.19.1",
     "style-loader": "^1.1.0",
     "surge": "^0.21.3",
     "svg-inline-loader": "^0.8.0",

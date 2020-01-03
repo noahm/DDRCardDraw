@@ -5,15 +5,55 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export type SongList = Song[];
-
+export interface GameData {
+  /**
+   * Describes unique configuration options for this game
+   */
+  meta: {
+    /**
+     * List of all play styles available
+     */
+    styles: string[];
+    /**
+     * List of all difficultiy classes available
+     */
+    difficulties: string[];
+    /**
+     * List of all special flags one might filter songs by
+     */
+    flags: string[];
+    lvlMax: number;
+  };
+  /**
+   * Defines the default configuration for this game
+   */
+  defaults: {
+    style: string;
+    difficulties: string[];
+    flags: string[];
+    lowerLvlBound: number;
+    upperLvlBound: number;
+  };
+  /**
+   * Set of localized values for display of any styles, difficulties, or flags
+   */
+  i18n: {
+    [k: string]: I18NDict;
+  };
+  songs: Song[];
+}
+/**
+ * Dictionary of localized strings
+ */
+export interface I18NDict {
+  [k: string]:
+    | string
+    | {
+        [k: string]: string;
+      };
+}
 export interface Song {
-  unlock?: string | boolean;
-  temp_unlock?: boolean;
-  extra_exclusive?: boolean;
-  removed?: boolean;
-  us_locked?: boolean;
-  gold_exclusive?: boolean;
+  flags?: string[];
   name: string;
   artist: string;
   genre?: string;
@@ -21,30 +61,22 @@ export interface Song {
   bpm: string;
   name_translation: string;
   search_hint?: string;
-  double: DoublesCharts;
-  single: SinglesCharts;
+  charts: Chart[];
   jacket: string;
   folder?: string;
 }
-export interface DoublesCharts {
-  basic: null | Chart;
-  difficult: null | Chart;
-  expert: null | Chart;
-  challenge: null | Chart;
-}
 export interface Chart {
-  difficulty: string;
-  step: string;
-  shock: string;
-  freeze: string;
-  us_locked?: boolean;
-  extra_exclusive?: boolean;
-  unlock?: boolean;
-}
-export interface SinglesCharts {
-  beginner: null | Chart;
-  basic: null | Chart;
-  difficult: null | Chart;
-  expert: null | Chart;
-  challenge: null | Chart;
+  flags?: string[];
+  /**
+   * e.g. single/double
+   */
+  style: string;
+  /**
+   * e.g. expert/challenge
+   */
+  diffClass: string;
+  lvl: number;
+  step?: number;
+  shock?: number;
+  freeze?: number;
 }
