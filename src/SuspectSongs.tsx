@@ -6,11 +6,11 @@ const allAscii = /^[a-zA-Z .'?&!-_0-9]+$/;
 const anyAscii = /[a-zA-Z]/;
 
 export function SuspectSongs() {
-  const { songs } = useContext(DrawStateContext);
-  if (!songs) {
+  const { gameData } = useContext(DrawStateContext);
+  if (!gameData) {
     return null;
   }
-  const suspectSongs = songs.filter(song => {
+  const suspectSongs = gameData.songs.filter(song => {
     if (
       !song.name.match(anyAscii) &&
       // !song.artist.match(allAscii) &&

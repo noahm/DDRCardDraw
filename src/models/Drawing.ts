@@ -5,10 +5,9 @@ export interface DrawnChart {
   artist: string;
   artistTranslation: string;
   bpm: string;
-  difficulty: string;
-  level: string;
+  difficultyClass: string;
+  level: number;
   hasShock: boolean;
-  abbreviation: string;
 }
 
 export interface PlayerActionOnChart {

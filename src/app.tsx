@@ -6,14 +6,10 @@ if (process.env.NODE_ENV === "development") {
 
 import "./firebase";
 import { render } from "preact";
-import { TranslateProvider } from "@denysvuika/preact-translate";
-import { LanguageData } from "@denysvuika/preact-translate/src/languageData";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
-import i18nData from "./assets/i18n.json";
 import { AuthManager } from "./auth";
-import { detectedLanguage } from "./utils";
 import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
 import { SongSearch } from "./song-search";
@@ -22,20 +18,15 @@ import styles from "./app.css";
 
 function App() {
   return (
-    <TranslateProvider
-      translations={i18nData as LanguageData}
-      lang={detectedLanguage}
-    >
-      <AuthManager>
-        <DrawStateManager defaultDataSet="a20">
-          <UpdateManager />
-          <Controls />
-          {/* <SuspectSongs /> */}
-          <DrawingList />
-          <Footer />
-        </DrawStateManager>
-      </AuthManager>
-    </TranslateProvider>
+    <AuthManager>
+      <DrawStateManager defaultDataSet="a20">
+        <UpdateManager />
+        <Controls />
+        {/* <SuspectSongs /> */}
+        <DrawingList />
+        <Footer />
+      </DrawStateManager>
+    </AuthManager>
   );
 }
 

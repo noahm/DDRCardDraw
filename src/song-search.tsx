@@ -6,7 +6,29 @@ import { getDrawnChart } from "./card-draw";
 import { DrawnChart } from "./models/Drawing";
 import { Modal } from "./modal";
 import FuzzySearch from "fuzzy-search";
-import { Song } from "./models/SongData";
+import { Song, GameData, Chart } from "./models/SongData";
+import { AbbrDifficulty } from "./AbbrDifficulty";
+import { useDifficultyColor } from "./hooks/useDifficultyColor";
+
+interface ChartOptionProps {
+  chart: Chart;
+  onClick: () => void;
+}
+
+function ChartOption({ chart, onClick }: ChartOptionProps) {
+  const bg = useDifficultyColor(chart.diffClass);
+  return (
+    <div
+      className={classNames(styles.chart, styles.dif)}
+      style={{ backgroundColor: bg }}
+      onClick={onClick}
+    >
+      <AbbrDifficulty difficultyClass={chart.diffClass} />
+      <br />
+      {chart.lvl}
+    </div>
+  );
+}
 
 function getSuggestions(
   fuzzySearch: FuzzySearch<Song>,
@@ -24,63 +46,19 @@ function getSuggestions(
             <br />
             {song.artist_translation || song.artist}
           </div>
-          {song.single.difficult && (
-            <div
-              className={classNames(styles.chart, styles.dif)}
-              onClick={() =>
-                onSelect(
-                  getDrawnChart(
-                    song,
-                    song.single.difficult!,
-                    "difficult",
-                    "difficulty.ace.dif.abbreviation"
-                  )
-                )
-              }
-            >
-              DSP
-              <br />
-              {song.single.difficult.difficulty}
-            </div>
-          )}
-          {song.single.expert && (
-            <div
-              className={classNames(styles.chart, styles.exp)}
-              onClick={() =>
-                onSelect(
-                  getDrawnChart(
-                    song,
-                    song.single.expert!,
-                    "expert",
-                    "difficulty.ace.exp.abbreviation"
-                  )
-                )
-              }
-            >
-              ESP
-              <br />
-              {song.single.expert.difficulty}
-            </div>
-          )}
-          {song.single.challenge && (
-            <div
-              className={classNames(styles.chart, styles.cha)}
-              onClick={() =>
-                onSelect(
-                  getDrawnChart(
-                    song,
-                    song.single.challenge!,
-                    "challenge",
-                    "difficulty.ace.cha.abbreviation"
-                  )
-                )
-              }
-            >
-              CSP
-              <br />
-              {song.single.challenge.difficulty}
-            </div>
-          )}
+          {/*
+          TODO: display all charts that match style, level range, and difficulty classes currently selected
+          TBD: how to integrate style + diff class abbreviations like CSP into the new dynamic data format
+          */}
+          {song.charts
+            .filter(c => c.style === "single" && c.lvl >= 12)
+            .map(chart => (
+              <ChartOption
+                key={`${chart.style}:${chart.diffClass}:${chart.lvl}`}
+                chart={chart}
+                onClick={() => onSelect(getDrawnChart(song, chart))}
+              />
+            ))}
         </div>
       ));
     }

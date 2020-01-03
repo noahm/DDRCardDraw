@@ -1,13 +1,8 @@
-import { SongList, Song, Chart } from "./models/SongData";
+import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
 import { DrawnChart, Drawing } from "./models/Drawing";
 
-export function getDrawnChart(
-  currentSong: Song,
-  chart: Chart,
-  difficultyKey: string,
-  abbreviation: string
-): DrawnChart {
+export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
   return {
     name: currentSong.name,
     jacket: currentSong.jacket,
@@ -15,10 +10,9 @@ export function getDrawnChart(
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
-    difficulty: difficultyKey,
-    level: chart.difficulty,
-    hasShock: parseInt(chart.shock, 10) > 0,
-    abbreviation
+    difficultyClass: chart.diffClass,
+    level: chart.lvl,
+    hasShock: !!chart.shock
   };
 }
 
@@ -33,14 +27,13 @@ let drawingID = 0;
  * @param songs The song data (see `src/songs/`)
  * @param configData the data gathered by all form elements on the page, indexed by `name` attribute
  */
-export function draw(songs: SongList, configData: FormData): Drawing {
+export function draw(gameData: GameData, configData: FormData): Drawing {
   const numChartsToRandom = parseInt(
     configData.get("chartCount") as string,
     10
   );
   const upperBound = parseInt(configData.get("upperBound") as string, 10);
   const lowerBound = parseInt(configData.get("lowerBound") as string, 10);
-  const abbreviations = JSON.parse(configData.get("abbreviations") as string);
   const style = configData.get("style") as "single" | "double";
   // requested difficulties
   const difficulties = new Set(configData.getAll("difficulties"));
@@ -52,40 +45,29 @@ export function draw(songs: SongList, configData: FormData): Drawing {
     validCharts[n.toString()] = [];
   });
 
-  for (const currentSong of songs) {
-    const charts = currentSong[style];
+  for (const currentSong of gameData.songs) {
+    const charts = currentSong.charts.filter(c => c.style === style);
     // song-level filters
     if (
-      (!inclusions.has("usLocked") && currentSong["us_locked"]) ||
-      (!inclusions.has("extraExclusive") && currentSong["extra_exclusive"]) ||
-      (!inclusions.has("removed") && currentSong["removed"]) ||
-      (!inclusions.has("tempUnlock") && currentSong["temp_unlock"]) ||
-      (!inclusions.has("unlock") && currentSong["unlock"]) ||
-      (!inclusions.has("goldExclusive") && currentSong["gold_exclusive"])
+      currentSong.flags &&
+      !currentSong.flags.every(flag => inclusions.has(flag))
     ) {
       continue;
     }
 
-    for (const key in charts) {
-      const chart = charts[key as keyof typeof charts];
-
+    for (const chart of charts) {
       // chart-level filters
       if (
-        !chart || // no chart for difficulty
-        !difficulties.has(key) || // don't want this difficulty
-        (!inclusions.has("unlock") && chart["unlock"]) || // chart must be individually unlocked
-        (!inclusions.has("usLocked") && chart["us_locked"]) || // chart is locked for us
-        (!inclusions.has("extraExclusive") && chart["extra_exclusive"]) || // chart is extra/final exclusive
-        +chart.difficulty < lowerBound || // too easy
-        +chart.difficulty > upperBound // too hard
+        !difficulties.has(chart.diffClass) || // don't want this difficulty
+        (chart.flags && !chart.flags.every(flag => inclusions.has(flag))) || // doesn't exactly match our flags
+        chart.lvl < lowerBound || // too easy
+        chart.lvl > upperBound // too hard
       ) {
         continue;
       }
 
       // add chart to deck
-      validCharts[chart.difficulty].push(
-        getDrawnChart(currentSong, chart, key, abbreviations[key])
-      );
+      validCharts[chart.lvl].push(getDrawnChart(currentSong, chart));
     }
   }
 

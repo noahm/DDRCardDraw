@@ -121,7 +121,7 @@ function preventDefault(e: Event) {
 
 export function Controls() {
   const { t } = useContext(TranslateContext);
-  const { drawSongs, dataSetName, loadSongSet, lastDrawFailed } = useContext(
+  const { drawSongs, dataSetName, loadGameData, lastDrawFailed } = useContext(
     DrawStateContext
   );
   const {
@@ -168,7 +168,7 @@ export function Controls() {
     const newDefaults = dataSetConfigs[game].defaultState;
     setLowerBound(newDefaults.lowerBound);
     setUpperBound(newDefaults.upperBound);
-    loadSongSet(game);
+    loadGameData(game);
   };
 
   const handleRandomize = (e: JSXInternal.TargetedEvent<HTMLButtonElement>) => {

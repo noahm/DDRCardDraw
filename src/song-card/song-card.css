@@ -58,26 +58,6 @@
   min-width: 1em;
 }
 
-.beginner .cardFooter {
-  background-color: #6eccc4;
-}
-
-.basic .cardFooter {
-  background-color: #e0de5c;
-}
-
-.difficult .cardFooter {
-  background-color: #e8715f;
-}
-
-.expert .cardFooter {
-  background-color: #72cc6e;
-}
-
-.challenge .cardFooter {
-  background-color: #cc71e8;
-}
-
 .difficulty {
   text-transform: uppercase;
 }
@@ -90,9 +70,8 @@
 }
 
 .protected {
-  animation: protectBlink .14s step-end infinite alternate;
+  animation: protectBlink 0.14s step-end infinite alternate;
 }
-
 
 @keyframes protectBlink {
   0% {

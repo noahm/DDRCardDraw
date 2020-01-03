@@ -3,25 +3,29 @@ import { UnloadHandler } from "./unload-handler";
 import { draw } from "./card-draw";
 import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
-import { SongList, Song } from "./models/SongData";
+import { GameData, Song } from "./models/SongData";
+import { TranslateProvider } from "@denysvuika/preact-translate";
+import { LanguageData } from "@denysvuika/preact-translate/src/languageData";
+import i18nData from "./assets/i18n.json";
+import { detectedLanguage } from "./utils";
 
 interface DrawState {
-  songs: SongList | null;
+  gameData: GameData | null;
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
-  loadSongSet: (dataSetName: string) => void;
+  loadGameData: (dataSetName: string) => void;
   drawSongs: (config: FormData) => void;
 }
 
 export const DrawStateContext = createContext<DrawState>({
-  songs: null,
+  gameData: null,
   fuzzySearch: null,
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
-  loadSongSet() {},
+  loadGameData() {},
   drawSongs() {}
 });
 
@@ -33,12 +37,12 @@ export class DrawStateManager extends Component<Props, DrawState> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      songs: null,
+      gameData: null,
       fuzzySearch: null,
       drawings: [],
       dataSetName: props.defaultDataSet,
       lastDrawFailed: false,
-      loadSongSet: this.loadSongSet,
+      loadGameData: this.loadSongSet,
       drawSongs: this.doDrawing
     };
   }
@@ -48,17 +52,27 @@ export class DrawStateManager extends Component<Props, DrawState> {
   }
 
   render() {
+    const translations: LanguageData = {};
+    for (const lang in i18nData as LanguageData) {
+      // @ts-ignore
+      translations[lang] = i18nData[lang];
+      if (this.state.gameData) {
+        translations[lang].meta = this.state.gameData.i18n[lang];
+      }
+    }
     return (
       <DrawStateContext.Provider value={this.state}>
-        <UnloadHandler confirmUnload={!!this.state.drawings.length} />
-        {this.props.children}
+        <TranslateProvider translations={translations} lang={detectedLanguage}>
+          <UnloadHandler confirmUnload={!!this.state.drawings.length} />
+          {this.props.children}
+        </TranslateProvider>
       </DrawStateContext.Provider>
     );
   }
 
   loadSongSet = (dataSetName: string) => {
     this.setState({
-      songs: null,
+      gameData: null,
       dataSetName
     });
 
@@ -66,7 +80,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
       /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
     ).then(({ default: data }) => {
       this.setState({
-        songs: data,
+        gameData: data,
         fuzzySearch: new FuzzySearch(
           data,
           [
@@ -85,11 +99,11 @@ export class DrawStateManager extends Component<Props, DrawState> {
   };
 
   doDrawing = (configData: FormData) => {
-    if (!this.state.songs) {
+    if (!this.state.gameData) {
       return;
     }
 
-    const drawing = draw(this.state.songs, configData);
+    const drawing = draw(this.state.gameData, configData);
     if (!drawing.charts.length) {
       this.setState({
         lastDrawFailed: true

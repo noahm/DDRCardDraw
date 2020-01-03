@@ -7,6 +7,9 @@ import { TranslateContext } from "@denysvuika/preact-translate";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
+import { DrawStateContext } from "../draw-state";
+import { AbbrDifficulty } from "../AbbrDifficulty";
+import { useDifficultyColor } from "../hooks/useDifficultyColor";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -51,14 +54,14 @@ export function SongCard(props: Props) {
     artist,
     artistTranslation,
     bpm,
-    difficulty,
+    difficultyClass,
     level,
     hasShock,
-    abbreviation,
     jacket
   } = replacedWith || chart;
+  const diffAccentColor = useDifficultyColor(difficultyClass);
 
-  const rootClassname = classNames(styles.chart, styles[difficulty], {
+  const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
     [styles.protected]: protectedBy || replacedBy
   });
@@ -116,7 +119,10 @@ export function SongCard(props: Props) {
           {artist}
         </div>
       </div>
-      <div className={styles.cardFooter}>
+      <div
+        className={styles.cardFooter}
+        style={{ backgroundColor: diffAccentColor }}
+      >
         <div className={styles.bpm}>{bpm} BPM</div>
         {hasShock && (
           <div className={styles.shockBadge} title={t("shockArrows")}>
@@ -130,7 +136,7 @@ export function SongCard(props: Props) {
           </div>
         )}
         <div className={styles.difficulty}>
-          {t(abbreviation)} {level}
+          <AbbrDifficulty difficultyClass={difficultyClass} /> {level}
         </div>
       </div>
     </div>
