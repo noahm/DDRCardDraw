@@ -7,6 +7,7 @@ if (process.env.NODE_ENV === "development") {
 import "./firebase";
 import { render } from "preact";
 import { TranslateProvider } from "@denysvuika/preact-translate";
+import { LanguageData } from "@denysvuika/preact-translate/src/languageData";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
@@ -21,7 +22,10 @@ import styles from "./app.css";
 
 function App() {
   return (
-    <TranslateProvider translations={i18nData} lang={detectedLanguage}>
+    <TranslateProvider
+      translations={i18nData as LanguageData}
+      lang={detectedLanguage}
+    >
       <AuthManager>
         <DrawStateManager defaultDataSet="a20">
           <UpdateManager />

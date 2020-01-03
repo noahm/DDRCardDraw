@@ -9,7 +9,9 @@
     "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
     "deploy:staging": "npm run build && surge ./dist https://ddrdraw-staging.surge.sh",
     "deploy:firebase": "npm run build && firebase deploy",
-    "validate": "node scripts/validate.js"
+    "validate": "npm run validate:json && npm run validate:ts",
+    "validate:json": "node scripts/validate.js",
+    "validate:ts": "tsc --noemit"
   },
   "author": "Noah Manneschmidt",
   "contributors": [
@@ -19,11 +21,13 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@denysvuika/preact-translate": "^0.1.2",
-    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.7",
+    "@denysvuika/preact-translate": "^0.1.2",
+    "@types/fuzzy-search": "^2.1.0",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-jsx-pragmatic": "^1.0.2",
@@ -35,10 +39,12 @@
     "file-loader": "^5.0.2",
     "firebase": "^7.6.0",
     "firebase-tools": "^7.11.0",
+    "fork-ts-checker-webpack-plugin": "^3.1.1",
     "formdata-polyfill": "^3.0.19",
     "fuzzy-search": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "jsdom": "^15.2.1",
+    "json-schema-to-typescript": "^8.0.0",
     "jsonschema": "^1.2.2",
     "mini-css-extract-plugin": "^0.9.0",
     "offline-plugin": "^5.0.7",
@@ -48,9 +54,13 @@
     "style-loader": "^1.1.0",
     "surge": "^0.21.3",
     "svg-inline-loader": "^0.8.0",
+    "typescript": "^3.7.4",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.0",
     "zip-webpack-plugin": "^3.0.0"
+  },
+  "dependencies": {
+    "@types/classnames": "^2.2.9"
   }
 }

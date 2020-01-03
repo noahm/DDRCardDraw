@@ -3,9 +3,16 @@ import { useContext, useState, useRef, useLayoutEffect } from "preact/hooks";
 import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
 import { getDrawnChart } from "./card-draw";
+import { DrawnChart } from "./models/Drawing";
 import { Modal } from "./modal";
+import FuzzySearch from "fuzzy-search";
+import { Song } from "./models/SongData";
 
-function getSuggestions(fuzzySearch, searchTerm, onSelect) {
+function getSuggestions(
+  fuzzySearch: FuzzySearch<Song>,
+  searchTerm: string,
+  onSelect: (chart: DrawnChart) => void
+) {
   if (fuzzySearch && searchTerm) {
     const suggestions = fuzzySearch.search(searchTerm).slice(0, 5);
     if (suggestions.length) {
@@ -24,7 +31,7 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
                 onSelect(
                   getDrawnChart(
                     song,
-                    song.single.difficult,
+                    song.single.difficult!,
                     "difficult",
                     "difficulty.ace.dif.abbreviation"
                   )
@@ -43,7 +50,7 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
                 onSelect(
                   getDrawnChart(
                     song,
-                    song.single.expert,
+                    song.single.expert!,
                     "expert",
                     "difficulty.ace.exp.abbreviation"
                   )
@@ -62,7 +69,7 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
                 onSelect(
                   getDrawnChart(
                     song,
-                    song.single.challenge,
+                    song.single.challenge!,
                     "challenge",
                     "difficulty.ace.cha.abbreviation"
                   )
@@ -81,15 +88,21 @@ function getSuggestions(fuzzySearch, searchTerm, onSelect) {
   return null;
 }
 
-export function SongSearch(props) {
+interface Props {
+  autofocus?: boolean;
+  onSongSelect: (song: DrawnChart) => void;
+  onCancel: () => void;
+}
+
+export function SongSearch(props: Props) {
   const { autofocus, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
 
   const { fuzzySearch } = useContext(DrawStateContext);
-  const input = useRef();
+  const input = useRef<HTMLInputElement>();
   useLayoutEffect(() => {
     if (autofocus && input.current) {
-      input.current.focus();
+      input.current!.focus();
     }
   }, []);
 
@@ -112,7 +125,9 @@ export function SongSearch(props) {
         />
       </div>
       <div className={styles.suggestionSet}>
-        {getSuggestions(fuzzySearch, searchTerm, onSongSelect)}
+        {fuzzySearch
+          ? getSuggestions(fuzzySearch, searchTerm, onSongSelect)
+          : "Search is not loaded right now."}
       </div>
     </Modal>
   );

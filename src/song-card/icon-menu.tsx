@@ -4,8 +4,19 @@ import { useContext, useState } from "preact/hooks";
 import { Icon } from "../icon";
 import { SongSearch } from "../song-search";
 import styles from "./icon-menu.css";
+import { JSX } from "preact";
+import { DrawnChart } from "../models/Drawing";
 
-export function IconMenu(props) {
+interface Props {
+  onPocketPicked: (p: 1 | 2, chart: DrawnChart) => void;
+  onVeto: (p: 1 | 2) => void;
+  onProtect: (p: 1 | 2) => void;
+  onClose: () => void;
+  onReset: () => void;
+  onlyReset: boolean;
+}
+
+export function IconMenu(props: Props) {
   const {
     onPocketPicked,
     onVeto,
@@ -16,7 +27,7 @@ export function IconMenu(props) {
   } = props;
 
   const { t } = useContext(TranslateContext);
-  const [playerPickingPocket, setPickingPocket] = useState(0);
+  const [playerPickingPocket, setPickingPocket] = useState<0 | 1 | 2>(0);
 
   if (playerPickingPocket) {
     return (
@@ -69,9 +80,13 @@ export function IconMenu(props) {
   );
 }
 
-function IconRow(props) {
-  const { icon, label, onClick } = props;
+interface IconRowProps {
+  icon: JSX.Element;
+  label: string;
+  onClick: (p: 1 | 2) => void;
+}
 
+function IconRow({ icon, label, onClick }: IconRowProps) {
   return (
     <div className={styles.iconRow}>
       <Icon svg={icon} title={label} onClick={() => onClick(1)} />

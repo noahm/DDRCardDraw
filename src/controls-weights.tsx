@@ -3,22 +3,17 @@ import styles from "./controls-weights.css";
 import { times } from "./utils";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import { useState, useMemo, useContext } from "preact/hooks";
+import { UncontrolledCheckbox } from "./uncontrolled";
 
-/**
- *
- * @param {{ high: number, low: number }} props
- * @param {Array<{ label: string, value: number }> | undefined} weightState
- */
-function getWeightsFor(props, state = []) {
-  return times(props.high - props.low + 1, n => ({
-    label: n + props.low - 1,
-    value: state[n - 1] ? state[n - 1].value : 1
-  }));
+interface Props {
+  hidden: boolean;
+  high: number;
+  low: number;
 }
 
-export class WeightsControls extends Component {
-  render(props) {
-    const { hidden, high, low } = props;
+export class WeightsControls extends Component<Props> {
+  render() {
+    const { hidden, high, low } = this.props;
 
     const { t } = useContext(TranslateContext);
     const levels = useMemo(() => times(high - low + 1, n => n + low - 1), [
@@ -27,13 +22,13 @@ export class WeightsControls extends Component {
     ]);
 
     const [savedWeights, updateWeights] = useState(() => {
-      const newWeights = [];
+      const newWeights: Array<number | ""> = [];
       for (const level of levels) {
         newWeights[level] = 1;
       }
       return newWeights;
     });
-    function setWeight(difficulty, value) {
+    function setWeight(difficulty: number, value: number) {
       const newWeights = savedWeights.slice();
       newWeights[difficulty] = Number.isInteger(value) ? value : "";
       updateWeights(newWeights);
@@ -64,7 +59,11 @@ export class WeightsControls extends Component {
           </label>
         ))}
         <label title={t("weights.check.title")}>
-          <input type="checkbox" name="limitOutliers" defaultChecked />
+          <UncontrolledCheckbox
+            type="checkbox"
+            name="limitOutliers"
+            defaultChecked
+          />
           {t("weights.check.label")}
         </label>
       </section>

@@ -1,18 +1,16 @@
-const validateJSONSchema = require('jsonschema').validate;
+const { readdirSync, writeFileSync } = require("fs");
+const { resolve, join } = require("path");
+const { validate: validateJSONSchema } = require("jsonschema");
 
-const songsSchema = require('../songs.schema.json');
-
-const dataFiles = [
-  'ace.json',
-  'extreme.json',
-  'a20.json'
-];
+const dataFileNames = readdirSync(resolve(join(__dirname, "../src/songs")));
+const songsSchema = require("../songs.schema.json");
+const schemaLocation = "src/models/SongData.ts";
 
 let hasError = false;
-for (const dataFile of dataFiles) {
+for (const dataFile of dataFileNames) {
   const songData = require(`../src/songs/${dataFile}`);
   const result = validateJSONSchema(songData, songsSchema, {
-    nestedErrors: true,
+    nestedErrors: true
   });
 
   if (result.valid) {
@@ -27,5 +25,12 @@ for (const dataFile of dataFiles) {
 }
 
 if (hasError) {
-  require('process').exit(1);
+  process.exit(1);
 }
+
+console.log(`Building schema file`);
+const { compile } = require("json-schema-to-typescript");
+compile(songsSchema, "SongData").then(ts => {
+  writeFileSync(resolve(join(__dirname, "..", schemaLocation)), ts);
+  console.log("Schema written to ", schemaLocation);
+});

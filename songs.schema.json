@@ -57,24 +57,19 @@
         "additionalProperties": false,
         "properties": {
           "basic": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "difficult": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "expert": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "challenge": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           }
         },
-        "required": [
-          "basic",
-          "difficult",
-          "expert",
-          "challenge"
-        ]
+        "required": ["basic", "difficult", "expert", "challenge"]
       },
       "single": {
         "type": "object",
@@ -82,28 +77,22 @@
         "additionalProperties": false,
         "properties": {
           "beginner": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "basic": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "difficult": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "expert": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           },
           "challenge": {
-            "$ref": "#/definitions/chart"
+            "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/chart" }]
           }
         },
-        "required": [
-          "beginner",
-          "basic",
-          "difficult",
-          "expert",
-          "challenge"
-        ]
+        "required": ["beginner", "basic", "difficult", "expert", "challenge"]
       },
       "jacket": {
         "type": "string"
@@ -119,50 +108,39 @@
       "artist_translation",
       "bpm",
       "single",
-      "name_translation"
+      "name_translation",
+      "jacket"
     ],
     "additionalProperties": false
   },
   "definitions": {
     "chart": {
-      "oneOf": [
-        {
-          "type": "null"
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "difficulty": {
+          "type": "string"
         },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "difficulty": {
-              "type": "string"
-            },
-            "step": {
-              "type": "string"
-            },
-            "shock": {
-              "type": "string"
-            },
-            "freeze": {
-              "type": "string"
-            },
-            "us_locked": {
-              "type": "boolean"
-            },
-            "extra_exclusive": {
-              "type": "boolean"
-            },
-            "unlock": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "difficulty",
-            "step",
-            "shock",
-            "freeze"
-          ]
+        "step": {
+          "type": "string"
+        },
+        "shock": {
+          "type": "string"
+        },
+        "freeze": {
+          "type": "string"
+        },
+        "us_locked": {
+          "type": "boolean"
+        },
+        "extra_exclusive": {
+          "type": "boolean"
+        },
+        "unlock": {
+          "type": "boolean"
         }
-      ]
+      },
+      "required": ["difficulty", "step", "shock", "freeze"]
     }
   },
   "additionalItems": false

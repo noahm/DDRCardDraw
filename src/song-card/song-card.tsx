@@ -6,10 +6,25 @@ import { Zap, Lock, Edit, Slash } from "preact-feather";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
+import { DrawnChart } from "../models/Drawing";
 
 const isJapanese = detectedLanguage === "ja";
 
-export function SongCard(props) {
+type Player = 1 | 2;
+
+interface Props {
+  chart: DrawnChart;
+  vetoedBy: Player | undefined;
+  protectedBy: Player | undefined;
+  replacedBy: Player | undefined;
+  replacedWith: DrawnChart | undefined;
+  onVeto: (p: Player) => void;
+  onProtect: (p: Player) => void;
+  onReplace: (p: Player, chart: DrawnChart) => void;
+  onReset: () => void;
+}
+
+export function SongCard(props: Props) {
   const {
     chart,
     vetoedBy,
@@ -80,12 +95,12 @@ export function SongCard(props) {
       )}
       {showingIconMenu && (
         <IconMenu
-          onProtect={player => hideIcons() && onProtect(player)}
-          onPocketPicked={(player, chart) =>
-            hideIcons() && onReplace(player, chart)
+          onProtect={(p: Player) => hideIcons() && onProtect(p)}
+          onPocketPicked={(p: Player, c: DrawnChart) =>
+            hideIcons() && onReplace(p, c)
           }
-          onVeto={player => hideIcons() && onVeto(player)}
-          onlyReset={vetoedBy || protectedBy || replacedBy}
+          onVeto={(p: Player) => hideIcons() && onVeto(p)}
+          onlyReset={!!(vetoedBy || protectedBy || replacedBy)}
           onReset={() => hideIcons() && onReset()}
           onClose={hideIcons}
         />
@@ -107,7 +122,7 @@ export function SongCard(props) {
           <div className={styles.shockBadge} title={t("shockArrows")}>
             <Zap
               size={12}
-              ariaHidden
+              aria-hidden
               color="black"
               fill="yellow"
               stroke-width="1"

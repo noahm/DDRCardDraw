@@ -1,4 +1,5 @@
 import { Modal } from "./modal";
+import { FunctionComponent } from "preact";
 import { useContext } from "preact/hooks";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import { Icon } from "./icon";
@@ -6,19 +7,22 @@ import styles from "./about.css";
 
 import { Github, Facebook, Twitter } from "preact-feather";
 
-export function About({ onClose }) {
+interface Props {
+  onClose: () => void;
+}
+
+export const About: FunctionComponent<Props> = ({ onClose }) => {
   const { t } = useContext(TranslateContext);
+  const about = t("about") as string;
 
   return (
     <Modal onClose={onClose}>
       <div className={styles.about}>
         <p>
           <ul>
-            {t("about")
-              .split(" * ")
-              .map((line, i) => (
-                <li key={i}>{line}</li>
-              ))}
+            {about.split(" * ").map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
           </ul>
         </p>
         <p>
@@ -50,4 +54,4 @@ export function About({ onClose }) {
       </div>
     </Modal>
   );
-}
+};

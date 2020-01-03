@@ -1,4 +1,4 @@
-import * as classNames from "classnames";
+import classNames from "classnames";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import "formdata-polyfill";
 import { useContext, useRef, useState } from "preact/hooks";
@@ -7,6 +7,7 @@ import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { DrawStateContext } from "./draw-state";
 import { UncontrolledCheckbox, UncontrolledInput } from "./uncontrolled";
+import { JSXInternal } from "preact/src/jsx";
 
 const dataSetConfigs = {
   ace: {
@@ -114,35 +115,35 @@ const dataSetConfigs = {
   }
 };
 
-function preventDefault(e) {
+function preventDefault(e: Event) {
   e.preventDefault();
 }
 
-export function Controls(props) {
+export function Controls() {
   const { t } = useContext(TranslateContext);
-  const { drawSongs, dataSetName, loadSongSet } = useContext(DrawStateContext);
+  const { drawSongs, dataSetName, loadSongSet, lastDrawFailed } = useContext(
+    DrawStateContext
+  );
   const {
     difficulties,
     includables,
     defaultState,
     upperMaximum
-  } = dataSetConfigs[dataSetName];
-  const form = useRef();
+  } = dataSetConfigs[dataSetName as keyof typeof dataSetConfigs];
+  const form = useRef<HTMLFormElement>();
   const [collapsed, setCollapsed] = useState(true);
   const [weighted, setWeighted] = useState(false);
   const [lowerBound, setLowerBound] = useState(defaultState.lowerBound);
   const [upperBound, setUpperBound] = useState(defaultState.upperBound);
 
-  const abbrKeys = {};
+  const abbrKeys: Record<string, string> = {};
   for (const d of difficulties) {
     abbrKeys[d.value] = d.key + ".abbreviation";
   }
 
-  const handleWeightedChange = e => {
-    setWeighted(!!e.currentTarget.checked);
-  };
-
-  const handleLowerBoundChange = e => {
+  const handleLowerBoundChange = (
+    e: JSXInternal.TargetedEvent<HTMLInputElement>
+  ) => {
     const newValue = parseInt(e.currentTarget.value, 10);
     if (newValue > upperBound) {
       return;
@@ -150,7 +151,9 @@ export function Controls(props) {
     setLowerBound(newValue);
   };
 
-  const handleUpperBoundChange = e => {
+  const handleUpperBoundChange = (
+    e: JSXInternal.TargetedEvent<HTMLInputElement>
+  ) => {
     const newValue = parseInt(e.currentTarget.value, 10);
     if (newValue < lowerBound) {
       return;
@@ -158,15 +161,17 @@ export function Controls(props) {
     setUpperBound(newValue);
   };
 
-  const handleSongListChange = e => {
-    const game = e.currentTarget.value;
+  const handleSongListChange = (
+    e: JSXInternal.TargetedEvent<HTMLSelectElement>
+  ) => {
+    const game = e.currentTarget.value as keyof typeof dataSetConfigs;
     const newDefaults = dataSetConfigs[game].defaultState;
     setLowerBound(newDefaults.lowerBound);
     setUpperBound(newDefaults.upperBound);
     loadSongSet(game);
   };
 
-  const handleRandomize = e => {
+  const handleRandomize = (e: JSXInternal.TargetedEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const data = new FormData(form.current);
     drawSongs(data);
@@ -189,9 +194,7 @@ export function Controls(props) {
             <label>
               {t("dataSource")}:{" "}
               <select name="dataSource" onChange={handleSongListChange}>
-                <option value="a20" defaultSelected>
-                  A20
-                </option>
+                <option value="a20">A20</option>
                 <option value="ace">Ace</option>
                 <option value="extreme">Extreme</option>
               </select>
@@ -239,7 +242,7 @@ export function Controls(props) {
                 type="checkbox"
                 name="weighted"
                 checked={weighted}
-                onChange={handleWeightedChange}
+                onChange={e => setWeighted(!!e.currentTarget.checked)}
               />
               {t("useWeightedDistributions")}
             </label>
@@ -250,9 +253,7 @@ export function Controls(props) {
             <label>
               {t("style")}{" "}
               <select name="style">
-                <option value="single" defaultSelected>
-                  {t("single")}
-                </option>
+                <option value="single">{t("single")}</option>
                 <option value="double">{t("double")}</option>
               </select>
             </label>
@@ -280,7 +281,9 @@ export function Controls(props) {
                   <UncontrolledCheckbox
                     name="inclusions"
                     value={key}
-                    defaultChecked={includables[key]}
+                    defaultChecked={
+                      includables[key as keyof typeof includables]
+                    }
                   />
                   {t("controls." + key)}
                 </label>
@@ -293,7 +296,7 @@ export function Controls(props) {
               {t(collapsed ? "controls.show" : "controls.hide")}
             </button>
           </div>
-          {!!props.lastDrawFailed && <div>{t("controls.invalid")}</div>}
+          {!!lastDrawFailed && <div>{t("controls.invalid")}</div>}
         </div>
       </section>
 

@@ -1,12 +1,36 @@
 import { createContext, Component } from "preact";
 import { UnloadHandler } from "./unload-handler";
 import { draw } from "./card-draw";
+import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
+import { SongList, Song } from "./models/SongData";
 
-export const DrawStateContext = createContext();
+interface DrawState {
+  songs: SongList | null;
+  fuzzySearch: FuzzySearch<Song> | null;
+  drawings: Drawing[];
+  dataSetName: string;
+  lastDrawFailed: boolean;
+  loadSongSet: (dataSetName: string) => void;
+  drawSongs: (config: FormData) => void;
+}
 
-export class DrawStateManager extends Component {
-  constructor(props) {
+export const DrawStateContext = createContext<DrawState>({
+  songs: null,
+  fuzzySearch: null,
+  drawings: [],
+  dataSetName: "",
+  lastDrawFailed: false,
+  loadSongSet() {},
+  drawSongs() {}
+});
+
+interface Props {
+  defaultDataSet: string;
+}
+
+export class DrawStateManager extends Component<Props, DrawState> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       songs: null,
@@ -32,7 +56,7 @@ export class DrawStateManager extends Component {
     );
   }
 
-  loadSongSet = dataSetName => {
+  loadSongSet = (dataSetName: string) => {
     this.setState({
       songs: null,
       dataSetName
@@ -60,7 +84,7 @@ export class DrawStateManager extends Component {
     });
   };
 
-  doDrawing = configData => {
+  doDrawing = (configData: FormData) => {
     if (!this.state.songs) {
       return;
     }
@@ -74,7 +98,7 @@ export class DrawStateManager extends Component {
     }
 
     this.setState(prevState => ({
-      drawings: [drawing].concat(prevState.drawings).filter(Boolean),
+      drawings: [drawing, ...prevState.drawings].filter(Boolean),
       lastDrawFailed: false
     }));
   };

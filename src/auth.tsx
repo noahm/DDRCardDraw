@@ -1,10 +1,17 @@
 import * as firebase from "firebase/app";
 import { createContext, Component } from "preact";
 
-export const AuthContext = createContext({ status: "missing" });
+interface AuthContextValue {
+  status: "missing" | "unresolved" | "resolved";
+  uid?: string;
+}
 
-export class AuthManager extends Component {
-  state = {
+export const AuthContext = createContext<AuthContextValue>({
+  status: "missing"
+});
+
+export class AuthManager extends Component<{}, AuthContextValue> {
+  state: AuthContextValue = {
     status: "unresolved",
     uid: undefined
   };
