@@ -2,18 +2,18 @@
   "meta": {
     "styles": ["single", "double"],
     "difficulties": [
-      { "key": "beg", "color": "#6eccc4" },
-      { "key": "bas", "color": "#e0de5c" },
-      { "key": "dif", "color": "#e8715f" },
-      { "key": "exp", "color": "#72cc6e" },
-      { "key": "cha", "color": "#cc71e8" }
+      { "key": "beginner", "color": "#6eccc4" },
+      { "key": "basic", "color": "#e0de5c" },
+      { "key": "difficult", "color": "#e8715f" },
+      { "key": "expert", "color": "#72cc6e" },
+      { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": ["unlock", "extraExclusive", "tempUnlock", "usLocked", "removed"],
     "lvlMax": 19
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["exp", "cha"],
+    "difficulties": ["expert", "challenge"],
     "flags": ["unlock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
@@ -23,44 +23,44 @@
       "name": "Ace",
       "single": "Single",
       "double": "Double",
-      "beg": "Beginner",
-      "bas": "Basic",
-      "dif": "Difficult",
-      "exp": "Expert",
-      "cha": "Challenge",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
       "unlock": "Unlockable songs",
       "extraExclusive": "Final/Extra Exclusive",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "usLocked": "Japan-only songs",
       "removed": "Removed songs",
       "$abbr": {
-        "beg": "Beg",
-        "bas": "Bas",
-        "dif": "Dif",
-        "exp": "Exp",
-        "cha": "Cha"
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
       }
     },
     "ja": {
       "name": "Ace",
       "single": "Single",
       "double": "Double",
-      "beg": "Beginner",
-      "bas": "Basic",
-      "dif": "Difficult",
-      "exp": "Expert",
-      "cha": "Challenge",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
       "unlock": "未解禁曲を含める",
       "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
       "tempUnlock": "現在解禁できない曲を含める",
       "usLocked": "日本限定曲を含める",
       "removed": "削除曲を含める",
       "$abbr": {
-        "beg": "Beg",
-        "bas": "Bas",
-        "dif": "Dif",
-        "exp": "Exp",
-        "cha": "Cha"
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
       }
     }
   },

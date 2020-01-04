@@ -2,17 +2,17 @@
   "meta": {
     "styles": ["single", "double"],
     "difficulties": [
-      { "key": "lgt", "color": "#e0de5c" },
-      { "key": "std", "color": "#e8715f" },
-      { "key": "hvy", "color": "#72cc6e" },
-      { "key": "cha", "color": "#cc71e8" }
+      { "key": "basic", "color": "#e0de5c" },
+      { "key": "difficult", "color": "#e8715f" },
+      { "key": "expert", "color": "#72cc6e" },
+      { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": [],
     "lvlMax": 10
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["hvy", "cha"],
+    "difficulties": ["expert", "challenge"],
     "flags": [],
     "lowerLvlBound": 6,
     "upperLvlBound": 10
@@ -22,21 +22,26 @@
       "name": "Extreme",
       "single": "Single",
       "double": "Double",
-      "lgt": "Light",
-      "std": "Standard",
-      "hvy": "Heavy",
-      "cha": "Challenge",
-      "$abbr": { "lgt": "Lgt", "std": "Std", "hvy": "Hvy", "cha": "Cha" }
+      "basic": "Light",
+      "difficult": "Standard",
+      "expert": "Heavy",
+      "challenge": "Challenge",
+      "$abbr": {
+        "basic": "Lgt",
+        "difficult": "Std",
+        "expert": "Hvy",
+        "challenge": "Cha"
+      }
     },
     "ja": {
       "name": "Extreme",
       "single": "Single",
       "double": "Double",
-      "lgt": "Light",
-      "std": "Standard",
-      "hvy": "Heavy",
-      "cha": "Challenge",
-      "$abbr": { "lgt": "楽", "std": "踊", "hvy": "激", "cha": "鬼" }
+      "basic": "Light",
+      "difficult": "Standard",
+      "expert": "Heavy",
+      "challenge": "Challenge",
+      "$abbr": { "basic": "楽", "std": "踊", "expert": "激", "challenge": "鬼" }
     }
   },
   "songs": [
