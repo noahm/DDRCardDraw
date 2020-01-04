@@ -8,6 +8,8 @@ import { TranslateProvider } from "@denysvuika/preact-translate";
 import { LanguageData } from "@denysvuika/preact-translate/src/languageData";
 import i18nData from "./assets/i18n.json";
 import { detectedLanguage } from "./utils";
+import { ApplyDefaultConfig } from "./apply-default-config";
+import { ConfigState } from "./config-state";
 
 interface DrawState {
   gameData: GameData | null;
@@ -15,8 +17,8 @@ interface DrawState {
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
-  loadGameData: (dataSetName: string) => void;
-  drawSongs: (config: FormData) => void;
+  loadGameData: (dataSetName: string) => Promise<GameData>;
+  drawSongs: (config: ConfigState) => void;
 }
 
 export const DrawStateContext = createContext<DrawState>({
@@ -25,7 +27,9 @@ export const DrawStateContext = createContext<DrawState>({
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
-  loadGameData() {},
+  loadGameData() {
+    return Promise.reject();
+  },
   drawSongs() {}
 });
 
@@ -63,6 +67,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
     return (
       <DrawStateContext.Provider value={this.state}>
         <TranslateProvider translations={translations} lang={detectedLanguage}>
+          <ApplyDefaultConfig defaults={this.state.gameData?.defaults} />
           <UnloadHandler confirmUnload={!!this.state.drawings.length} />
           {this.props.children}
         </TranslateProvider>
@@ -76,7 +81,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
       dataSetName
     });
 
-    import(
+    return import(
       /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
     ).then(({ default: data }) => {
       this.setState({
@@ -95,15 +100,16 @@ export class DrawStateManager extends Component<Props, DrawState> {
           }
         )
       });
+      return data;
     });
   };
 
-  doDrawing = (configData: FormData) => {
+  doDrawing = (config: ConfigState) => {
     if (!this.state.gameData) {
       return;
     }
 
-    const drawing = draw(this.state.gameData, configData);
+    const drawing = draw(this.state.gameData, config);
     if (!drawing.charts.length) {
       this.setState({
         lastDrawFailed: true

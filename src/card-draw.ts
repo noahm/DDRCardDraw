@@ -1,6 +1,7 @@
 import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
 import { DrawnChart, Drawing } from "./models/Drawing";
+import { ConfigState } from "./config-state";
 
 export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
   return {
@@ -27,18 +28,20 @@ let drawingID = 0;
  * @param songs The song data (see `src/songs/`)
  * @param configData the data gathered by all form elements on the page, indexed by `name` attribute
  */
-export function draw(gameData: GameData, configData: FormData): Drawing {
-  const numChartsToRandom = parseInt(
-    configData.get("chartCount") as string,
-    10
-  );
-  const upperBound = parseInt(configData.get("upperBound") as string, 10);
-  const lowerBound = parseInt(configData.get("lowerBound") as string, 10);
-  const style = configData.get("style") as "single" | "double";
-  // requested difficulties
-  const difficulties = new Set(configData.getAll("difficulties"));
-  // other options: usLocked, extraExclusive, removed, unlock
-  const inclusions = new Set(configData.getAll("inclusions"));
+export function draw(gameData: GameData, configData: ConfigState): Drawing {
+  const {
+    chartCount: numChartsToRandom,
+    upperBound,
+    lowerBound,
+    style,
+    // requested difficulties
+    difficulties,
+    // other options: usLocked, extraExclusive, removed, unlock
+    flags: inclusions,
+    useWeights,
+    forceDistribution,
+    weights
+  } = configData;
 
   const validCharts: Record<string, Array<DrawnChart>> = {};
   times(19, n => {
@@ -71,8 +74,6 @@ export function draw(gameData: GameData, configData: FormData): Drawing {
     }
   }
 
-  const weighted = !!configData.get("weighted");
-  const limitOutliers = !!configData.get("limitOutliers");
   /**
    * the "deck" of difficulty levels to pick from
    */
@@ -89,8 +90,8 @@ export function draw(gameData: GameData, configData: FormData): Drawing {
   // build an array of possible levels to pick from
   for (let level = lowerBound; level <= upperBound; level++) {
     let weightAmount = 0;
-    if (weighted) {
-      weightAmount = parseInt(configData.get(`weight-${level}`) as string, 10);
+    if (useWeights) {
+      weightAmount = weights[level];
       expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {
@@ -104,7 +105,7 @@ export function draw(gameData: GameData, configData: FormData): Drawing {
   // e.g. For a 5-card draw, we increase the cap by 1 at every 100%/5 = 20% threshold,
   // so a level with a weight of 15% can only show up on at most 1 card, a level with
   // a weight of 30% can only show up on at most 2 cards, etc.
-  if (weighted && limitOutliers) {
+  if (useWeights && forceDistribution) {
     for (let level = lowerBound; level <= upperBound; level++) {
       let normalizedWeight =
         expectedDrawPerLevel[level.toString()] / totalWeights;
@@ -147,7 +148,7 @@ export function draw(gameData: GameData, configData: FormData): Drawing {
 
     // check if maximum number of expected occurrences of this level of chart has been reached
     const reachedExpected =
-      limitOutliers &&
+      forceDistribution &&
       difficultyCounts[chosenDifficulty.toString()] ===
         expectedDrawPerLevel[chosenDifficulty.toString()];
 

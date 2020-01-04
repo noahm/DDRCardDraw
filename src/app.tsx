@@ -15,17 +15,20 @@ import { DrawStateManager } from "./draw-state";
 import { SongSearch } from "./song-search";
 import { SuspectSongs } from "./SuspectSongs";
 import styles from "./app.css";
+import { ConfigStateManager } from "./config-state";
 
 function App() {
   return (
     <AuthManager>
-      <DrawStateManager defaultDataSet="a20">
-        <UpdateManager />
-        <Controls />
-        {/* <SuspectSongs /> */}
-        <DrawingList />
-        <Footer />
-      </DrawStateManager>
+      <ConfigStateManager>
+        <DrawStateManager defaultDataSet="a20">
+          <UpdateManager />
+          <Controls />
+          {/* <SuspectSongs /> */}
+          <DrawingList />
+          <Footer />
+        </DrawStateManager>
+      </ConfigStateManager>
     </AuthManager>
   );
 }

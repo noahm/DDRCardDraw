@@ -7,7 +7,7 @@ import { DrawnChart } from "./models/Drawing";
 import { Modal } from "./modal";
 import FuzzySearch from "fuzzy-search";
 import { Song, GameData, Chart } from "./models/SongData";
-import { AbbrDifficulty } from "./AbbrDifficulty";
+import { AbbrDifficulty } from "./game-data-utils";
 import { useDifficultyColor } from "./hooks/useDifficultyColor";
 
 interface ChartOptionProps {
@@ -23,7 +23,7 @@ function ChartOption({ chart, onClick }: ChartOptionProps) {
       style={{ backgroundColor: bg }}
       onClick={onClick}
     >
-      <AbbrDifficulty difficultyClass={chart.diffClass} />
+      <AbbrDifficulty diffClass={chart.diffClass} />
       <br />
       {chart.lvl}
     </div>

@@ -8,7 +8,7 @@ import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { DrawStateContext } from "../draw-state";
-import { AbbrDifficulty } from "../AbbrDifficulty";
+import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
 
 const isJapanese = detectedLanguage === "ja";
@@ -136,7 +136,7 @@ export function SongCard(props: Props) {
           </div>
         )}
         <div className={styles.difficulty}>
-          <AbbrDifficulty difficultyClass={difficultyClass} /> {level}
+          <AbbrDifficulty diffClass={difficultyClass} /> {level}
         </div>
       </div>
     </div>
