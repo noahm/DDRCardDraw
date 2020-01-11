@@ -41,7 +41,12 @@
       "difficult": "Standard",
       "expert": "Heavy",
       "challenge": "Challenge",
-      "$abbr": { "basic": "楽", "std": "踊", "expert": "激", "challenge": "鬼" }
+      "$abbr": {
+        "basic": "楽",
+        "difficult": "踊",
+        "expert": "激",
+        "challenge": "鬼"
+      }
     }
   },
   "songs": [
@@ -55,7 +60,6 @@
       "jacket": "ex_BURNIN' THE FLOOR (MOMO MIX).png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 113, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 176,
           "freeze": 6,
@@ -110,7 +114,6 @@
       "jacket": "ex_CARTOON HEROES (Speedy Mix).png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 131, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 203,
           "freeze": 2,
@@ -165,7 +168,6 @@
       "jacket": "ex_I DO I DO I DO.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 73, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 89,
           "freeze": 5,
@@ -220,7 +222,6 @@
       "jacket": "ex_IRRESISTIBLEMENT.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 88, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 135,
           "freeze": 10,
@@ -275,7 +276,6 @@
       "jacket": "ex_LA COPA DE LA VIDA.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 119,
           "freeze": 1,
@@ -330,7 +330,6 @@
       "jacket": "ex_SENORITA(Speedy Mix).png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 81, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 135,
           "freeze": 4,
@@ -385,7 +384,6 @@
       "jacket": "ex_SPEED OVER BEETHOVEN.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 134, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 153, "lvl": 3, "style": "single", "diffClass": "basic" },
         {
           "step": 234,
@@ -428,7 +426,6 @@
       "jacket": "ex_WE ARE THE CHAMPIONS (Factory Team Remix).png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 77, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 110,
           "freeze": 2,
@@ -483,7 +480,6 @@
       "jacket": "ex_WE WILL ROCK YOU.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 58, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 98,
           "freeze": 1,
@@ -538,7 +534,6 @@
       "jacket": "ex_1998.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 119, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 177,
           "freeze": 1,
@@ -593,7 +588,6 @@
       "jacket": "ex_bag.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 45, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 149, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 208, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 382, "lvl": 10, "style": "single", "diffClass": "expert" },
@@ -612,7 +606,6 @@
       "jacket": "ex_CRASH!.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 110, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 211, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 241, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 422, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -631,7 +624,6 @@
       "jacket": "ex_Dance Dance Revolution.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 127, "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "step": 170, "lvl": 4, "style": "single", "diffClass": "basic" },
         {
           "step": 245,
@@ -664,7 +656,6 @@
       "jacket": "ex_GRADUATION~SOREZORE NO ASHITA~.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 90, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 110, "lvl": 2, "style": "single", "diffClass": "basic" },
         {
           "step": 192,
@@ -707,7 +698,6 @@
       "jacket": "ex_HYPER EUROBEAT.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 95, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 174,
           "freeze": 10,
@@ -762,7 +752,6 @@
       "jacket": "ex_LOVE LOVE SHINE.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 130, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 195,
           "freeze": 8,
@@ -817,7 +806,6 @@
       "jacket": "ex_MEMORIES.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 93, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 126, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 232, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 308, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -836,7 +824,6 @@
       "jacket": "ex_PARANOiA survivor.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 103, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 233,
           "freeze": 2,
@@ -891,7 +878,6 @@
       "jacket": "ex_PARANOiA survivor MAX.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 121, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 258,
           "freeze": 2,
@@ -960,7 +946,6 @@
       "jacket": "ex_TEARS.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 129, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 177,
           "freeze": 9,
@@ -1015,7 +1000,6 @@
       "jacket": "ex_The legend of MAX.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 174, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 255,
           "freeze": 3,
@@ -1070,7 +1054,6 @@
       "jacket": "ex_TRIP MACHINE survivor.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 121, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 184,
           "freeze": 2,
@@ -1125,7 +1108,6 @@
       "jacket": "ex_VANITY ANGEL.png",
       "folder": "DDR EXTREME",
       "charts": [
-        { "step": 79, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 144, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 236, "lvl": 6, "style": "single", "diffClass": "difficult" },
         {
@@ -1150,7 +1132,6 @@
       "jacket": "ex_321 STARS.png",
       "folder": "beatmania",
       "charts": [
-        { "step": 95, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 146,
           "freeze": 5,
@@ -1205,7 +1186,6 @@
       "jacket": "ex_A.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 104, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 147,
           "freeze": 7,
@@ -1274,7 +1254,6 @@
       "jacket": "ex_Across the nightmare.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
-        { "step": 171, "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "step": 205, "lvl": 5, "style": "single", "diffClass": "basic" },
         {
           "step": 274,
@@ -1319,7 +1298,6 @@
       "jacket": "ex_AFRONOVA PRIMEVAL.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 158, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 272, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 322, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 423, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -1338,7 +1316,6 @@
       "jacket": "ex_air.png",
       "folder": "beatmania",
       "charts": [
-        { "step": 88, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 152, "lvl": 3, "style": "single", "diffClass": "basic" },
         {
           "step": 177,
@@ -1381,7 +1358,6 @@
       "jacket": "ex_BE LOVIN.png",
       "folder": "beatmania",
       "charts": [
-        { "step": 133, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 152,
           "freeze": 3,
@@ -1436,7 +1412,6 @@
       "jacket": "ex_BLUE IMPULSE(for EXTREME).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 101, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 133,
           "freeze": 6,
@@ -1491,7 +1466,6 @@
       "jacket": "ex_BROKEN MY HEART.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 123, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 215, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 267, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 360, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -1510,7 +1484,6 @@
       "jacket": "ex_CALICO CAT ROCK.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
-        { "step": 111, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 128,
           "freeze": 20,
@@ -1565,7 +1538,6 @@
       "jacket": "ex_Colors(for EXTREME).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 118, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 181,
           "freeze": 12,
@@ -1634,7 +1606,6 @@
       "jacket": "ex_DAIKENKAI.png",
       "folder": "pop'n music",
       "charts": [
-        { "step": 164, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 176,
           "freeze": 2,
@@ -1703,7 +1674,6 @@
       "jacket": "ex_Destiny lovers.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
-        { "step": 104, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 118,
           "freeze": 6,
@@ -1758,7 +1728,6 @@
       "jacket": "ex_feeling of love.png",
       "folder": "beatmania III",
       "charts": [
-        { "step": 100, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 169,
           "freeze": 9,
@@ -1813,7 +1782,6 @@
       "jacket": "ex_Frozen Ray (for EXTREME).png",
       "folder": "KEYBOARD MANIA",
       "charts": [
-        { "step": 124, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 171,
           "freeze": 8,
@@ -1868,7 +1836,6 @@
       "jacket": "ex_Gamelan de Couple.png",
       "folder": "MAMBO A GO GO",
       "charts": [
-        { "step": 114, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 149, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 175, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 298, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -1887,7 +1854,6 @@
       "jacket": "ex_Happy Wedding.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 86, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 131,
           "freeze": 1,
@@ -1942,7 +1908,6 @@
       "jacket": "ex_Heaven is a '57 metallic gray (gimmix).png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 108, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 144,
           "freeze": 3,
@@ -1997,7 +1962,6 @@
       "jacket": "ex_HOLD ON ME.png",
       "folder": "ParaPara Paradise",
       "charts": [
-        { "step": 107, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 124,
           "freeze": 4,
@@ -2052,7 +2016,6 @@
       "jacket": "ex_I'm gonna get you!.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 137,
           "freeze": 3,
@@ -2107,7 +2070,6 @@
       "jacket": "ex_JANEJANA.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 77, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 157, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 178, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 303, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -2126,7 +2088,6 @@
       "jacket": "ex_JET WORLD.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
-        { "step": 119, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 164,
           "freeze": 10,
@@ -2181,7 +2142,6 @@
       "jacket": "ex_KISS KISS KISS.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 107, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 199,
           "freeze": 1,
@@ -2236,7 +2196,6 @@
       "jacket": "ex_KISS ME ALL NIGHT LONG.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 106, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 116,
           "freeze": 4,
@@ -2291,7 +2250,6 @@
       "jacket": "ex_L'amour et la liberte (DDR ver.).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 168,
           "freeze": 15,
@@ -2346,7 +2304,6 @@
       "jacket": "ex_LA BAMBA.png",
       "folder": "MAMBO A GO GO",
       "charts": [
-        { "step": 99, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 119,
           "freeze": 8,
@@ -2401,7 +2358,6 @@
       "jacket": "ex_Last Message.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 116, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 150, "lvl": 3, "style": "single", "diffClass": "basic" },
         {
           "step": 221,
@@ -2444,7 +2400,6 @@
       "jacket": "ex_LOVE LOVE SUGAR.png",
       "folder": "pop'n music",
       "charts": [
-        { "step": 100, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 131, "lvl": 4, "style": "single", "diffClass": "basic" },
         {
           "step": 184,
@@ -2487,7 +2442,6 @@
       "jacket": "ex_MAGIC DOOR(Theme of SPACE MACO).png",
       "folder": "pop'n music",
       "charts": [
-        { "step": 120, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 189, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 249, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 296, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -2506,7 +2460,6 @@
       "jacket": "ex_MATSURI JAPAN.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 116, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 216, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 277, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 447, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -2525,7 +2478,6 @@
       "jacket": "ex_Miracle Moon ~L.E.D.LIGHT STYLE MIX~.png",
       "folder": "beatmania",
       "charts": [
-        { "step": 101, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 142,
           "freeze": 2,
@@ -2580,7 +2532,6 @@
       "jacket": "ex_MOBO★MOGA.png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 75, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 107,
           "freeze": 3,
@@ -2635,7 +2586,6 @@
       "jacket": "ex_Pink Rose.png",
       "folder": "KEYBOARD MANIA",
       "charts": [
-        { "step": 84, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 123,
           "freeze": 5,
@@ -2690,7 +2640,6 @@
       "jacket": "ex_SAKURA.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 160, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 228,
           "freeze": 7,
@@ -2759,7 +2708,6 @@
       "jacket": "ex_STAY (Organic house Version).png",
       "folder": "Dance Maniax",
       "charts": [
-        { "step": 65, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 111,
           "freeze": 2,
@@ -2814,7 +2762,6 @@
       "jacket": "ex_stoic (EXTREME version).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 102, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 134, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 270, "lvl": 7, "style": "single", "diffClass": "difficult" },
         {
@@ -2839,7 +2786,6 @@
       "jacket": "ex_sync (EXTREME version).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 94, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 180,
           "freeze": 10,
@@ -2908,7 +2854,6 @@
       "jacket": "ex_The Least 100sec.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
-        { "step": 101, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 169,
           "freeze": 5,
@@ -2963,7 +2908,6 @@
       "jacket": "ex_TwinBee ~Generation X~.png",
       "folder": "beatmania III",
       "charts": [
-        { "step": 75, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 112,
           "freeze": 3,
@@ -3018,7 +2962,6 @@
       "jacket": "ex_V (for EXTREME).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 123, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 153,
           "freeze": 12,
@@ -3087,7 +3030,6 @@
       "jacket": "ex_White Lovers.png",
       "folder": "pop'n music",
       "charts": [
-        { "step": 74, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 94,
           "freeze": 3,
@@ -3142,7 +3084,6 @@
       "jacket": "ex_xenon.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 121, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 160,
           "freeze": 12,
@@ -3197,7 +3138,6 @@
       "jacket": "ex_59.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 90, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 157, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 234, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 275, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3216,7 +3156,6 @@
       "jacket": "ex_20,november.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 62, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 122, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 133, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 195, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3241,7 +3180,6 @@
       "jacket": "ex_5.1.1.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 32, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 48, "lvl": 1, "style": "single", "diffClass": "basic" },
         { "step": 84, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 103, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3266,7 +3204,6 @@
       "jacket": "ex_ABSOLUTE.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 123, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 142, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 252, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 311, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -3285,7 +3222,6 @@
       "jacket": "ex_Abyss.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 117, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 168, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 234, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 309, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3304,7 +3240,6 @@
       "jacket": "ex_AFRONOVA.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 108, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 214, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 244, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 370, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -3349,7 +3284,6 @@
       "jacket": "ex_AFTER THE GAME OF LOVE.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 41, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 72, "lvl": 1, "style": "single", "diffClass": "basic" },
         { "step": 168, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 207, "lvl": 5, "style": "single", "diffClass": "expert" },
@@ -3368,7 +3302,6 @@
       "jacket": "ex_AM-3P.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 74, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 164, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 195, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 244, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -3387,7 +3320,6 @@
       "jacket": "ex_AM-3P (303 BASS MIX).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 101, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 128, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 217, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 242, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3432,7 +3364,6 @@
       "jacket": "ex_B4U.png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 104, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 188, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 238, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 325, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -3477,7 +3408,6 @@
       "jacket": "ex_BABY BABY GIMME YOUR LOVE.png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 52, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 62, "lvl": 1, "style": "single", "diffClass": "basic" },
         { "step": 110, "lvl": 3, "style": "single", "diffClass": "difficult" },
         { "step": 163, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -3496,7 +3426,6 @@
       "jacket": "ex_Be in my paradise.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 37, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 53, "lvl": 1, "style": "single", "diffClass": "basic" },
         { "step": 85, "lvl": 3, "style": "single", "diffClass": "difficult" },
         { "step": 137, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -3515,7 +3444,6 @@
       "jacket": "ex_BREAK DOWN!.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 103, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 144,
           "freeze": 7,
@@ -3570,7 +3498,6 @@
       "jacket": "ex_BRILLIANT 2U.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 95, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 162, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 176, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 225, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -3623,7 +3550,6 @@
       "jacket": "ex_BRILLIANT 2U (Orchestra Groove).png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 100, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 166, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 187, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 226, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3644,7 +3570,6 @@
       "jacket": "ex_BURNIN' THE FLOOR.png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 114, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 177, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 244, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 309, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -3689,7 +3614,6 @@
       "jacket": "ex_Burning Heat! (3 Option Mix).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 96, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 116,
           "freeze": 12,
@@ -3744,7 +3668,6 @@
       "jacket": "ex_BUTTERFLY.png",
       "folder": "DDR 1st",
       "charts": [
-        { "step": 88, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 160, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 160, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 213, "lvl": 5, "style": "single", "diffClass": "expert" },
@@ -3777,7 +3700,6 @@
       "jacket": "ex_CAN'T STOP FALLIN' IN LOVE (SPEED MIX).png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 133, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 238, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 321, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 443, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -3796,7 +3718,6 @@
       "jacket": "ex_CAN'T STOP FALLIN' IN LOVE.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 93, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 160, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 235, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 328, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -3815,7 +3736,6 @@
       "jacket": "ex_CANDY★.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 89, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 170, "lvl": 4, "style": "single", "diffClass": "basic" },
         {
           "step": 236,
@@ -3858,7 +3778,6 @@
       "jacket": "ex_CANDY♥.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 139, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 126,
           "freeze": 4,
@@ -3913,7 +3832,6 @@
       "jacket": "ex_CAPTAIN JACK (GRANDALE REMIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 108, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 217, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 299, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 360, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -3932,7 +3850,6 @@
       "jacket": "ex_celebrate.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 72, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 166, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 188, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 260, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -3957,7 +3874,6 @@
       "jacket": "ex_CELEBRATE NITE.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 171, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 198, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 277, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4002,7 +3918,6 @@
       "jacket": "ex_COW GIRL.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 82, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 118,
           "freeze": 4,
@@ -4057,7 +3972,6 @@
       "jacket": "ex_CUTIE CHASER.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 82, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 148, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 185, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 256, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4076,7 +3990,6 @@
       "jacket": "ex_CUTIE CHASER (MORNING MIX).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 73, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 91, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 140, "lvl": 3, "style": "single", "diffClass": "difficult" },
         {
@@ -4107,7 +4020,6 @@
       "jacket": "ex_D2R.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 124, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 147,
           "freeze": 5,
@@ -4156,7 +4068,6 @@
       "jacket": "ex_DAM DARIRAM.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 78, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 133, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 219, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 298, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -4175,7 +4086,6 @@
       "jacket": "ex_DEAD END.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 115, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 216, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 337, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 410, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -4194,7 +4104,6 @@
       "jacket": "ex_DESTINY.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 115, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 116, "lvl": 2, "style": "single", "diffClass": "basic" },
         {
           "step": 239,
@@ -4243,7 +4152,6 @@
       "jacket": "ex_DIVE (more deep & deeper style).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 154, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 230, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 322, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4262,7 +4170,6 @@
       "jacket": "ex_DIVE TO THE NIGHT.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 114, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 144,
           "freeze": 4,
@@ -4317,7 +4224,6 @@
       "jacket": "ex_Do It Right.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 154, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 200, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 285, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4336,7 +4242,6 @@
       "jacket": "ex_Do It Right (Harmonized 2Step Mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 89, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 158,
           "freeze": 14,
@@ -4391,7 +4296,6 @@
       "jacket": "ex_DO YOU REMEMBER ME.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 57, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 88,
           "freeze": 6,
@@ -4446,7 +4350,6 @@
       "jacket": "ex_Don't Stop! (AMD 2nd MIX).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 156, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 189, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 214, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4465,7 +4368,6 @@
       "jacket": "ex_Dr.LOVE.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 87, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 151, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 189, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 238, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4490,7 +4392,6 @@
       "jacket": "ex_DROP OUT.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 110, "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "step": 200, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 296, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 397, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -4535,7 +4436,6 @@
       "jacket": "ex_DROP THE BOMB.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 122, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 199, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 238, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 304, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -4554,7 +4454,6 @@
       "jacket": "ex_DROP THE BOMB (System S.F. Mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 83, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 140,
           "freeze": 20,
@@ -4609,7 +4508,6 @@
       "jacket": "ex_DXY!.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 108, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 157, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 269, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 355, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -4628,7 +4526,6 @@
       "jacket": "ex_DYNAMITE RAVE.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 110, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 188, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 269, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 398, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -4681,7 +4578,6 @@
       "jacket": "ex_DYNAMITE RAVE (Down Bird SOTA Mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 117, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 168,
           "freeze": 28,
@@ -4736,7 +4632,6 @@
       "jacket": "ex_e-motion.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 54, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 99, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 122, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 133, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -4761,7 +4656,6 @@
       "jacket": "ex_ECSTASY.png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 119, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 169, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 235, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 276, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4806,7 +4700,6 @@
       "jacket": "ex_EL RITMO TROPICAL.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 75, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 124, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 198, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 247, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -4825,7 +4718,6 @@
       "jacket": "ex_Electro Tuned (the SubS mix).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 101, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 179, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 268, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 349, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -4844,7 +4736,6 @@
       "jacket": "ex_END OF THE CENTURY.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 111, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 231, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 307, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 349, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -4863,7 +4754,6 @@
       "jacket": "ex_era (nostalmix).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 89, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 125, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 235, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 356, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -4882,7 +4772,6 @@
       "jacket": "ex_ever snow.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 72, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 100,
           "freeze": 7,
@@ -4937,7 +4826,6 @@
       "jacket": "ex_exotic ethnic.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 122, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 169,
           "freeze": 13,
@@ -4992,7 +4880,6 @@
       "jacket": "ex_FANTASY (LOCKOUT).png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 68, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 77,
           "freeze": 29,
@@ -5047,7 +4934,6 @@
       "jacket": "ex_FANTASY (MELISSA).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 88, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 124,
           "freeze": 9,
@@ -5102,7 +4988,6 @@
       "jacket": "ex_Firefly.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 102, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 98,
           "freeze": 9,
@@ -5157,7 +5042,6 @@
       "jacket": "ex_FRECKLES (KCP Re-Edit).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 79, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 147,
           "freeze": 7,
@@ -5212,7 +5096,6 @@
       "jacket": "ex_GENOM SCREAMS.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 84, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 169, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 205, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 238, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5237,7 +5120,6 @@
       "jacket": "ex_gentle stress (AMD SEXUAL MIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 171, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 234, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 293, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5256,7 +5138,6 @@
       "jacket": "ex_GET UP'N MOVE.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 68, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 175, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 183, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 256, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5275,7 +5156,6 @@
       "jacket": "ex_GRADIUSIC CYBER (AMD G5 MIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 98, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 265, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 310, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 370, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -5294,7 +5174,6 @@
       "jacket": "ex_Groove.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 81, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 139, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 195, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 264, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5313,7 +5192,6 @@
       "jacket": "ex_Groove 2001.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 89, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 165, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 214, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 256, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -5332,7 +5210,6 @@
       "jacket": "ex_Healing Vision.png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 107, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 128, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 272, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 353, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5351,7 +5228,6 @@
       "jacket": "ex_Healing Vision (Angelic mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 153, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 273, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 377, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 479, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -5370,7 +5246,6 @@
       "jacket": "ex_HIGHER.png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 106, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 140, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 214, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 246, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -5415,7 +5290,6 @@
       "jacket": "ex_HIGHS OFF U (Scorccio XY Mix).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 49, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 74,
           "freeze": 2,
@@ -5464,7 +5338,6 @@
       "jacket": "ex_Holic.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 189, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 228, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 313, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5483,7 +5356,6 @@
       "jacket": "ex_HYSTERIA.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 119, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 224, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 251, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 303, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5528,7 +5400,6 @@
       "jacket": "ex_I believe in miracles.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 84, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 174, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 188, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 246, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5547,7 +5418,6 @@
       "jacket": "ex_i feel.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 132,
           "freeze": 4,
@@ -5602,7 +5472,6 @@
       "jacket": "ex_I Was The One.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 91, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 145, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 217, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 291, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -5621,7 +5490,6 @@
       "jacket": "ex_I'M IN THE MOOD FOR DANCING.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 100, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 139,
           "freeze": 4,
@@ -5676,7 +5544,6 @@
       "jacket": "ex_IF YOU WERE HERE.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 73, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 150, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 170, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 210, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -5695,7 +5562,6 @@
       "jacket": "ex_INSERTiON.png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 104, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 187, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 263, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 374, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -5714,7 +5580,6 @@
       "jacket": "ex_IT'S RAINING MEN (Almighty Mix).png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 61, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 77,
           "freeze": 8,
@@ -5769,7 +5634,6 @@
       "jacket": "ex_Jam Jam Reggae.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 47, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 76, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 105, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 180, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5794,7 +5658,6 @@
       "jacket": "ex_Jam Jam Reggae ~AMD SWING MIX~.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 50, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 123, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 189, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 252, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5813,7 +5676,6 @@
       "jacket": "ex_KAKUMEI.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 128,
           "freeze": 32,
@@ -5882,7 +5744,6 @@
       "jacket": "ex_KEEP ON MOVIN'.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 51, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 110, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 140, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 183, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -5901,7 +5762,6 @@
       "jacket": "ex_Kind Lady.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 79, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 152,
           "freeze": 21,
@@ -5956,7 +5816,6 @@
       "jacket": "ex_La Senorita.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 125, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 241, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 255, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 294, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -5975,7 +5834,6 @@
       "jacket": "ex_La Senorita Virtual.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 121, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 270, "lvl": 7, "style": "single", "diffClass": "basic" },
         { "step": 334, "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "step": 359, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -5994,7 +5852,6 @@
       "jacket": "ex_LEADING CYBER.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 94, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 193, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 258, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 359, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -6013,7 +5870,6 @@
       "jacket": "ex_Let the beat hit em! (CLASSIC R&B STYLE).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 65, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 133, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 172, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 192, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -6032,7 +5888,6 @@
       "jacket": "ex_LET'S GET DOWN.png",
       "folder": "DDR 1st",
       "charts": [
-        { "step": 79, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 117, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 151, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 182, "lvl": 5, "style": "single", "diffClass": "expert" },
@@ -6053,7 +5908,6 @@
       "jacket": "ex_LET'S GROOVE.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 65, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 93,
           "freeze": 11,
@@ -6108,7 +5962,6 @@
       "jacket": "ex_LITTLE BITCH.png",
       "folder": "DDR 1st",
       "charts": [
-        { "step": 89, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 170, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 187, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 206, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -6135,7 +5988,6 @@
       "jacket": "ex_LITTLE BOY (BOY ON BOY MIX).png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 87, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 114,
           "freeze": 17,
@@ -6190,7 +6042,6 @@
       "jacket": "ex_LIVING IN AMERICA.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 112, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 138,
           "freeze": 1,
@@ -6245,7 +6096,6 @@
       "jacket": "ex_LONG TRAIN RUNNIN'.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 64, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 88,
           "freeze": 2,
@@ -6300,7 +6150,6 @@
       "jacket": "ex_Look To The Sky.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 100, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 153, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 195, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 287, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -6319,7 +6168,6 @@
       "jacket": "ex_Look To The Sky (True Color Mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 96, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 154,
           "freeze": 23,
@@ -6374,7 +6222,6 @@
       "jacket": "ex_LOVE AGAIN TONIGHT (For Melissa MIX).png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 122, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 191, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 234, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 306, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -6393,7 +6240,6 @@
       "jacket": "ex_LOVE THIS FEELIN'.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 76, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 210, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 225, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 242, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -6412,7 +6258,6 @@
       "jacket": "ex_LOVIN' YOU (ROB SEARLE CLUB MIX).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 77, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 77,
           "freeze": 1,
@@ -6467,7 +6312,6 @@
       "jacket": "ex_LUV TO ME (AMD MIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 103, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 203, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 270, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 353, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -6486,7 +6330,6 @@
       "jacket": "ex_LUV TO ME (disco mix).png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 110, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 160, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 275, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 358, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -6505,7 +6348,6 @@
       "jacket": "ex_MAKE IT BETTER.png",
       "folder": "DDR 1st",
       "charts": [
-        { "step": 67, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 143, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 188, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 212, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -6550,7 +6392,6 @@
       "jacket": "ex_MAX 300.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 85, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 264,
           "freeze": 2,
@@ -6605,7 +6446,6 @@
       "jacket": "ex_MAXIMUM OVERDRIVE (KC Club Mix).png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 64, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 63,
           "freeze": 3,
@@ -6660,7 +6500,6 @@
       "jacket": "ex_MAXX UNLIMITED.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 94, "lvl": 3, "style": "single", "diffClass": "beginner" },
         {
           "step": 222,
           "freeze": 49,
@@ -6715,7 +6554,6 @@
       "jacket": "ex_Midnite Blaze.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 101, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 176, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 196, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 333, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -6734,7 +6572,6 @@
       "jacket": "ex_MIRACLE.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 62, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 74,
           "freeze": 2,
@@ -6789,7 +6626,6 @@
       "jacket": "ex_Mr.T. (take me higher).png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 90, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 120, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 209, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 310, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -6808,7 +6644,6 @@
       "jacket": "ex_MY SUMMER LOVE.png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 65, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 117, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 189, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 260, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -6853,7 +6688,6 @@
       "jacket": "ex_MY SWEET DARLIN'.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 88, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 120,
           "freeze": 5,
@@ -6908,7 +6742,6 @@
       "jacket": "ex_NORI NORI NORI.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 123,
           "freeze": 6,
@@ -6963,7 +6796,6 @@
       "jacket": "ex_ON THE JAZZ.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 57, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 108, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 220, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 331, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -6982,7 +6814,6 @@
       "jacket": "ex_ORDINARY WORLD.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 40, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 69, "lvl": 1, "style": "single", "diffClass": "basic" },
         {
           "step": 141,
@@ -7025,7 +6856,6 @@
       "jacket": "ex_ORION.78 (AMeuro-MIX).png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 60, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 101, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 170, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 320, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7044,7 +6874,6 @@
       "jacket": "ex_ORION.78 (civilization mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 69, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 232, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 313, "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "step": 398, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7063,7 +6892,6 @@
       "jacket": "ex_PARANOiA.png",
       "folder": "DDR 1st",
       "charts": [
-        { "step": 138, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 264, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 275, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 319, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7082,7 +6910,6 @@
       "jacket": "ex_PARANOiA ETERNAL.png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 115, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 237, "lvl": 5, "style": "single", "diffClass": "basic" },
         {
           "step": 300,
@@ -7125,7 +6952,6 @@
       "jacket": "ex_PARANOiA EVOLUTION.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 144, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 278, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 287, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 375, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7144,7 +6970,6 @@
       "jacket": "ex_PARANOiA KCET (clean mix).png",
       "folder": "DDR home",
       "charts": [
-        { "step": 124, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 262, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 278, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 351, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7163,7 +6988,6 @@
       "jacket": "ex_PARANOIA MAX～DIRTY MIX～.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 142, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 268, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 288, "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "step": 340, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7182,7 +7006,6 @@
       "jacket": "ex_PARANOiA Rebirth.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 117, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 280, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 322, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 433, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7201,7 +7024,6 @@
       "jacket": "ex_PUT YOUR FAITH IN ME.png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 70, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 128, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 145, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 203, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -7220,7 +7042,6 @@
       "jacket": "ex_R3.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 99, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 161, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 180, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 269, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -7245,7 +7066,6 @@
       "jacket": "ex_rain of sorrow.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 72, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 77,
           "freeze": 14,
@@ -7300,7 +7120,6 @@
       "jacket": "ex_Remember You.png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 41, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 41, "lvl": 1, "style": "single", "diffClass": "basic" },
         { "step": 130, "lvl": 3, "style": "single", "diffClass": "difficult" },
         { "step": 197, "lvl": 5, "style": "single", "diffClass": "expert" },
@@ -7319,7 +7138,6 @@
       "jacket": "ex_RHYTHM AND POLICE (K.O.G G3 Mix).png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 110, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 225, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 258, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 420, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7338,7 +7156,6 @@
       "jacket": "ex_SAINT GOES MARCHING (REMIX).png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 84, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 151, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 202, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 315, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7357,7 +7174,6 @@
       "jacket": "ex_SANA MOLLETE NE ENTE.png",
       "folder": "beatmania",
       "charts": [
-        { "step": 73, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 128, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 190, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 294, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7376,7 +7192,6 @@
       "jacket": "ex_Secret Rendez-vous.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 71, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 94,
           "freeze": 1,
@@ -7431,7 +7246,6 @@
       "jacket": "ex_SEXY PLANET.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 75, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 201, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 221, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 262, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -7476,7 +7290,6 @@
       "jacket": "ex_Share My Love.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 71, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 124, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 169, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 228, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -7495,7 +7308,6 @@
       "jacket": "ex_Silent Hill.png",
       "folder": "DDR 3rdMIX",
       "charts": [
-        { "step": 85, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 117, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 202, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 265, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -7540,7 +7352,6 @@
       "jacket": "ex_ska a go go.png",
       "folder": "DDR club version",
       "charts": [
-        { "step": 98, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 175, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 281, "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "step": 327, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -7559,7 +7370,6 @@
       "jacket": "ex_SKY HIGH.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 57, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 113, "lvl": 2, "style": "single", "diffClass": "basic" },
         { "step": 128, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 244, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -7596,7 +7406,6 @@
       "jacket": "ex_SO DEEP (PERFECT SPHERE REMIX).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 93, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 107,
           "freeze": 21,
@@ -7651,7 +7460,6 @@
       "jacket": "ex_SO IN LOVE.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 66, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 102,
           "freeze": 27,
@@ -7706,7 +7514,6 @@
       "jacket": "ex_SOMEWHERE OVER THE RAINBOW.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 75, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 123, "lvl": 3, "style": "single", "diffClass": "basic" },
         {
           "step": 162,
@@ -7749,7 +7556,6 @@
       "jacket": "ex_SP-TRIP MACHINE (JUNGLE MIX).png",
       "folder": "DDR 2ndMIX",
       "charts": [
-        { "step": 79, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 194, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 217, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 245, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7768,7 +7574,6 @@
       "jacket": "ex_Spin the disc.png",
       "folder": "beatmania IIDX",
       "charts": [
-        { "step": 69, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 70,
           "freeze": 11,
@@ -7823,7 +7628,6 @@
       "jacket": "ex_STILL IN MY HEART.png",
       "folder": "DDR 5thMIX",
       "charts": [
-        { "step": 117, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 180, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 255, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 290, "lvl": 7, "style": "single", "diffClass": "expert" },
@@ -7868,7 +7672,6 @@
       "jacket": "ex_SUPER STAR.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 84, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 195, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 229, "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "step": 289, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7913,7 +7716,6 @@
       "jacket": "ex_Sweet Sweet Love Magic.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 128, "lvl": 2, "style": "single", "diffClass": "beginner" },
         {
           "step": 139,
           "freeze": 2,
@@ -7968,7 +7770,6 @@
       "jacket": "ex_SYNCHRONIZED LOVE (Red Monster Hyper Mix).png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 121, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 196, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 245, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 397, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -7987,7 +7788,6 @@
       "jacket": "ex_TELEPHONE OPERATOR (Club MIX).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 118, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 109,
           "freeze": 8,
@@ -8042,7 +7842,6 @@
       "jacket": "ex_The Centre Of The Heart (STONEBRIDGE CLUB MIX).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 85, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 99,
           "freeze": 6,
@@ -8097,7 +7896,6 @@
       "jacket": "ex_THE REFLEX.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 56, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 92,
           "freeze": 9,
@@ -8152,7 +7950,6 @@
       "jacket": "ex_THERE YOU'LL BE.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 93, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 146,
           "freeze": 10,
@@ -8201,7 +7998,6 @@
       "jacket": "ex_think ya better D.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 84, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 148, "lvl": 3, "style": "single", "diffClass": "basic" },
         { "step": 177, "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "step": 237, "lvl": 5, "style": "single", "diffClass": "expert" },
@@ -8220,7 +8016,6 @@
       "jacket": "ex_TRIP MACHINE.png",
       "folder": "DDR 1st",
       "charts": [
-        { "step": 106, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 191, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 211, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 230, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -8239,7 +8034,6 @@
       "jacket": "ex_TRIP MACHINE ～luv mix～.png",
       "folder": "DDR home",
       "charts": [
-        { "step": 97, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 209, "lvl": 6, "style": "single", "diffClass": "basic" },
         { "step": 251, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 293, "lvl": 8, "style": "single", "diffClass": "expert" },
@@ -8258,7 +8052,6 @@
       "jacket": "ex_TRIP MACHINE CLIMAX.png",
       "folder": "DDR 4thMIX",
       "charts": [
-        { "step": 114, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 195, "lvl": 5, "style": "single", "diffClass": "basic" },
         { "step": 275, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 342, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -8277,7 +8070,6 @@
       "jacket": "ex_true... (radio edit).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 62, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 84,
           "freeze": 1,
@@ -8332,7 +8124,6 @@
       "jacket": "ex_true... (Trance Sunrise Mix).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 60, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 112,
           "freeze": 5,
@@ -8387,7 +8178,6 @@
       "jacket": "ex_TSUGARU.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 107,
           "freeze": 18,
@@ -8468,7 +8258,6 @@
       "jacket": "ex_TWILIGHT ZONE (R-C Extended Club MIX).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 92, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 108,
           "freeze": 6,
@@ -8523,7 +8312,6 @@
       "jacket": "ex_WAKA LAKA.png",
       "folder": "DDRMAX2",
       "charts": [
-        { "step": 123, "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "step": 154, "lvl": 3, "style": "single", "diffClass": "basic" },
         {
           "step": 243,
@@ -8560,7 +8348,6 @@
       "jacket": "ex_WILD RUSH.png",
       "folder": "DDR solo",
       "charts": [
-        { "step": 112, "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "step": 153, "lvl": 4, "style": "single", "diffClass": "basic" },
         { "step": 192, "lvl": 5, "style": "single", "diffClass": "difficult" },
         { "step": 247, "lvl": 6, "style": "single", "diffClass": "expert" },
@@ -8605,7 +8392,6 @@
       "jacket": "ex_WITCH DOCTOR (GIANTS TOONS VERSION).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 100, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 129,
           "freeze": 1,
@@ -8660,7 +8446,6 @@
       "jacket": "ex_WWW.BLONDE GIRL (MOMO MIX).png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 87, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 89,
           "freeze": 1,
@@ -8715,7 +8500,6 @@
       "jacket": "ex_YOZORA NO MUKO.png",
       "folder": "DDRMAX",
       "charts": [
-        { "step": 52, "lvl": 1, "style": "single", "diffClass": "beginner" },
         {
           "step": 72,
           "freeze": 3,
