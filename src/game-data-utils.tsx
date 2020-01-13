@@ -3,7 +3,7 @@ import { TranslateContext } from "@denysvuika/preact-translate";
 
 export function MetaString({ key }: { key: string }) {
   const { t } = useContext(TranslateContext);
-  return <>{t("meta." + key)}</>;
+  return t("meta." + key);
 }
 
 interface AbbrProps {
@@ -12,5 +12,5 @@ interface AbbrProps {
 
 export function AbbrDifficulty({ diffClass }: AbbrProps) {
   const { t } = useContext(TranslateContext);
-  return <>{t("meta.$abbr." + diffClass)}</>;
+  return t("meta.$abbr." + diffClass);
 }

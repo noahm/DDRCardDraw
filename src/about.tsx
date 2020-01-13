@@ -13,17 +13,16 @@ interface Props {
 
 export const About: FunctionComponent<Props> = ({ onClose }) => {
   const { t } = useContext(TranslateContext);
+  const about = t("about") as string;
 
   return (
     <Modal onClose={onClose}>
       <div className={styles.about}>
         <p>
           <ul>
-            {t("about")
-              .split(" * ")
-              .map((line, i) => (
-                <li key={i}>{line}</li>
-              ))}
+            {about.split(" * ").map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
           </ul>
         </p>
         <p>
