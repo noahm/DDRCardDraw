@@ -7,7 +7,6 @@ import { TranslateContext } from "@denysvuika/preact-translate";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
-import { DrawStateContext } from "../draw-state";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
 
