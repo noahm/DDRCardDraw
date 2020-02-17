@@ -21,18 +21,20 @@
   ],
   "license": "UNLICENSED",
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-    "@babel/plugin-transform-react-jsx": "^7.7.7",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.7",
+    "@babel/core": "^7.8",
+    "@babel/plugin-proposal-class-properties": "^7.8",
+    "@babel/plugin-proposal-optional-chaining": "^7.8",
+    "@babel/plugin-syntax-dynamic-import": "^7.8",
+    "@babel/plugin-transform-react-jsx": "^7.8",
+    "@babel/plugin-transform-react-jsx-source": "^7.8",
+    "@babel/preset-env": "^7.8",
+    "@babel/preset-typescript": "^7.8",
     "@denysvuika/preact-translate": "^0.2.0",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@types/classnames": "^2.2.9",
     "@types/fuzzy-search": "^2.1.0",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
-    "babel-plugin-jsx-pragmatic": "^1.0.2",
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^5.1.0",
     "css-loader": "^3.4.0",
@@ -62,8 +64,5 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.0",
     "zip-webpack-plugin": "^3.0.0"
-  },
-  "dependencies": {
-    "@types/classnames": "^2.2.9"
   }
 }

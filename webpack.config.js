@@ -63,13 +63,14 @@ module.exports = function(env = {}, argv = {}) {
                 require("@babel/plugin-proposal-optional-chaining"),
                 require("@babel/plugin-proposal-class-properties"),
                 require("@babel/plugin-syntax-dynamic-import"),
-                [require("@babel/plugin-transform-react-jsx"), { pragma: "h" }],
+                [require("@babel/plugin-transform-react-jsx"), { pragma: "h", pragmaFrag: "Fragment" }],
+                require("@babel/plugin-transform-react-jsx-source"),
                 [
-                  require("babel-plugin-jsx-pragmatic"),
+                  require("@emotion/babel-plugin-jsx-pragmatic"),
                   {
                     module: "preact",
-                    export: "h",
-                    import: "h"
+                    import: "h, Fragment",
+                    export: "h"
                   }
                 ]
               ]
