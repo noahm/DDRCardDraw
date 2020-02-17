@@ -1,12 +1,10 @@
 import classNames from "classnames";
 import { TranslateContext } from "@denysvuika/preact-translate";
-import "formdata-polyfill";
 import { useContext, useRef, useState } from "preact/hooks";
 import globalStyles from "../app.css";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { DrawStateContext } from "../draw-state";
-import { UncontrolledCheckbox, UncontrolledInput } from "../uncontrolled";
 import { JSXInternal } from "preact/src/jsx";
 import { ConfigStateContext } from "../config-state";
 
@@ -112,6 +110,11 @@ export function Controls() {
                 name="chartCount"
                 value={chartCount}
                 min="1"
+                onInput={e => {
+                  updateState(s => {
+                    return { ...s, chartCount: +e.currentTarget.value };
+                  });
+                }}
               />
             </label>
           </div>
@@ -161,7 +164,15 @@ export function Controls() {
           <div className={styles.group}>
             <label>
               {t("style")}{" "}
-              <select name="style" value={selectedStyle}>
+              <select
+                name="style"
+                value={selectedStyle}
+                onInput={e => {
+                  updateState(s => {
+                    return { ...s, style: e.currentTarget.value };
+                  });
+                }}
+              >
                 {gameStyles.map(style => (
                   <option key={style} value={style}>
                     {t("meta." + style)}
@@ -179,6 +190,17 @@ export function Controls() {
                   name="difficulties"
                   value={dif.key}
                   checked={selectedDifficulties.has(dif.key)}
+                  onInput={e => {
+                    updateState(s => {
+                      const difficulties = new Set(s.difficulties);
+                      if (e.currentTarget.checked) {
+                        difficulties.add(e.currentTarget.value);
+                      } else {
+                        difficulties.delete(e.currentTarget.value);
+                      }
+                      return { ...s, difficulties };
+                    });
+                  }}
                 />
                 {t("meta." + dif.key)}
               </label>
