@@ -1,23 +1,9 @@
+import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
+import { DrawnChart, Drawing } from "./models/Drawing";
+import { ConfigState } from "./config-state";
 
-/**
- * @typedef {Object} DrawnChart
- * @property {string} name
- * @property {string} jacket
- * @property {string} nameTranslation
- * @property {string} artist
- * @property {string} artistTranslation
- * @property {string} bpm
- * @property {number} difficulty
- * @property {string} level
- * @property {boolean} hasShock
- * @property {string} abbreviation
- */
-
-/**
- * @return {DrawnChart}
- */
-export function getDrawnChart(currentSong, chart, difficultyKey, abbreviation) {
+export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
   return {
     name: currentSong.name,
     jacket: currentSong.jacket,
@@ -25,10 +11,9 @@ export function getDrawnChart(currentSong, chart, difficultyKey, abbreviation) {
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
-    difficulty: difficultyKey,
-    level: chart.difficulty,
-    hasShock: parseInt(chart.shock, 10) > 0,
-    abbreviation
+    difficultyClass: chart.diffClass,
+    level: chart.lvl,
+    hasShock: !!chart.shock
   };
 }
 
@@ -38,99 +23,75 @@ export function getDrawnChart(currentSong, chart, difficultyKey, abbreviation) {
 let drawingID = 0;
 
 /**
- * @typedef {Object} Drawing
- * @property {number} id
- * @property {DrawnChart[]} charts
- * @property {Array<{ player: 1 | 2, chartIndex: number }>} bans
- * @property {Array<{ player: 1 | 2, chartIndex: number }>} protects
- * @property {Array<{ player: 1 | 2, chartIndex: number, pick: DrawnChart }>} pocketPicks
- */
-
-/**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
- * @param {Array<{}>} songs The song data (see `src/songs/`)
- * @param {FormData} configData the data gathered by all form elements on the page, indexed by `name` attribute
- * @return {Drawing}
+ * @param songs The song data (see `src/songs/`)
+ * @param configData the data gathered by all form elements on the page, indexed by `name` attribute
  */
-export function draw(songs, configData) {
-  const numChartsToRandom = parseInt(configData.get("chartCount"), 10);
-  const upperBound = parseInt(configData.get("upperBound"), 10);
-  const lowerBound = parseInt(configData.get("lowerBound"), 10);
-  const abbreviations = JSON.parse(configData.get("abbreviations"));
-  const style = configData.get("style");
-  // requested difficulties
-  const difficulties = new Set(configData.getAll("difficulties"));
-  // other options: usLocked, extraExclusive, removed, unlock
-  const inclusions = new Set(configData.getAll("inclusions"));
+export function draw(gameData: GameData, configData: ConfigState): Drawing {
+  const {
+    chartCount: numChartsToRandom,
+    upperBound,
+    lowerBound,
+    style,
+    // requested difficulties
+    difficulties,
+    // other options: usLocked, extraExclusive, removed, unlock
+    flags: inclusions,
+    useWeights,
+    forceDistribution,
+    weights
+  } = configData;
 
-  /**
-   * @type {Record<string, Array<DrawnChart>>}
-   */
-  const validCharts = {};
+  const validCharts: Record<string, Array<DrawnChart>> = {};
   times(19, n => {
     validCharts[n.toString()] = [];
   });
 
-  for (const currentSong of songs) {
-    const charts = currentSong[style];
+  for (const currentSong of gameData.songs) {
+    const charts = currentSong.charts.filter(c => c.style === style);
     // song-level filters
     if (
-      (!inclusions.has("usLocked") && currentSong["us_locked"]) ||
-      (!inclusions.has("extraExclusive") && currentSong["extra_exclusive"]) ||
-      (!inclusions.has("removed") && currentSong["removed"]) ||
-      (!inclusions.has("tempUnlock") && currentSong["temp_unlock"]) ||
-      (!inclusions.has("unlock") && currentSong["unlock"]) ||
-      (!inclusions.has("goldExclusive") && currentSong["gold_exclusive"])
+      currentSong.flags &&
+      !currentSong.flags.every(flag => inclusions.has(flag))
     ) {
       continue;
     }
 
-    for (const key in charts) {
-      const chart = charts[key];
-
+    for (const chart of charts) {
       // chart-level filters
       if (
-        !chart || // no chart for difficulty
-        !difficulties.has(key) || // don't want this difficulty
-        (!inclusions.has("unlock") && chart["unlock"]) || // chart must be individually unlocked
-        (!inclusions.has("usLocked") && chart["us_locked"]) || // chart is locked for us
-        (!inclusions.has("extraExclusive") && chart["extra_exclusive"]) || // chart is extra/final exclusive
-        +chart.difficulty < lowerBound || // too easy
-        +chart.difficulty > upperBound // too hard
+        !difficulties.has(chart.diffClass) || // don't want this difficulty
+        (chart.flags && !chart.flags.every(flag => inclusions.has(flag))) || // doesn't exactly match our flags
+        chart.lvl < lowerBound || // too easy
+        chart.lvl > upperBound // too hard
       ) {
         continue;
       }
 
       // add chart to deck
-      validCharts[chart.difficulty].push(
-        getDrawnChart(currentSong, chart, key, abbreviations[key])
-      );
+      validCharts[chart.lvl].push(getDrawnChart(currentSong, chart));
     }
   }
 
-  const weighted = !!configData.get("weighted");
-  const limitOutliers = !!configData.get("limitOutliers");
   /**
    * the "deck" of difficulty levels to pick from
-   * @type {Array<number>}
    */
-  let distribution = [];
+  let distribution: Array<number> = [];
   /**
    * Total amount of weight used, so we can determine expected outcome below
    */
   let totalWeights = 0;
   /**
    * The number of charts we can expect to draw of each level
-   * @type {Record<string, number>}
    */
-  const expectedDrawPerLevel = {};
+  const expectedDrawPerLevel: Record<string, number> = {};
 
   // build an array of possible levels to pick from
   for (let level = lowerBound; level <= upperBound; level++) {
     let weightAmount = 0;
-    if (weighted) {
-      weightAmount = parseInt(configData.get(`weight-${level}`), 10);
+    if (useWeights) {
+      weightAmount = weights[level];
       expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {
@@ -144,7 +105,7 @@ export function draw(songs, configData) {
   // e.g. For a 5-card draw, we increase the cap by 1 at every 100%/5 = 20% threshold,
   // so a level with a weight of 15% can only show up on at most 1 card, a level with
   // a weight of 30% can only show up on at most 2 cards, etc.
-  if (weighted && limitOutliers) {
+  if (useWeights && forceDistribution) {
     for (let level = lowerBound; level <= upperBound; level++) {
       let normalizedWeight =
         expectedDrawPerLevel[level.toString()] / totalWeights;
@@ -157,9 +118,8 @@ export function draw(songs, configData) {
   const drawnCharts = [];
   /**
    * Record of how many songs of each difficulty have been drawn so far
-   * @type {Record<string, number>}
    */
-  const difficultyCounts = {};
+  const difficultyCounts: Record<string, number> = {};
 
   while (drawnCharts.length < numChartsToRandom) {
     if (distribution.length === 0) {
@@ -188,7 +148,7 @@ export function draw(songs, configData) {
 
     // check if maximum number of expected occurrences of this level of chart has been reached
     const reachedExpected =
-      limitOutliers &&
+      forceDistribution &&
       difficultyCounts[chosenDifficulty.toString()] ===
         expectedDrawPerLevel[chosenDifficulty.toString()];
 

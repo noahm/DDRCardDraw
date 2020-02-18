@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const DelWebpackPlugin = require("del-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
@@ -23,7 +24,7 @@ module.exports = function(env = {}, argv = {}) {
           contentBase: "./dist"
           // host: "0.0.0.0"
         },
-    entry: "./src/app.jsx",
+    entry: "./src/app.tsx",
     output: {
       filename: "[name].[hash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
@@ -49,22 +50,27 @@ module.exports = function(env = {}, argv = {}) {
       rules: [
         {
           enforce: "pre",
-          test: /\.jsx?$/,
+          test: /\.tsx?$/,
           exclude: /node_modules/,
           use: {
             loader: "babel-loader?cacheDirectory",
             options: {
-              presets: [require("@babel/preset-env")],
+              presets: [
+                require("@babel/preset-env"),
+                require("@babel/preset-typescript")
+              ],
               plugins: [
+                require("@babel/plugin-proposal-optional-chaining"),
                 require("@babel/plugin-proposal-class-properties"),
                 require("@babel/plugin-syntax-dynamic-import"),
-                [require("@babel/plugin-transform-react-jsx"), { pragma: "h" }],
+                [require("@babel/plugin-transform-react-jsx"), { pragma: "h", pragmaFrag: "Fragment" }],
+                require("@babel/plugin-transform-react-jsx-source"),
                 [
-                  require("babel-plugin-jsx-pragmatic"),
+                  require("@emotion/babel-plugin-jsx-pragmatic"),
                   {
                     module: "preact",
-                    export: "h",
-                    import: "h"
+                    import: "h, Fragment",
+                    export: "h"
                   }
                 ]
               ]
@@ -109,6 +115,7 @@ module.exports = function(env = {}, argv = {}) {
         info: false,
         exclude: ["jackets"]
       }),
+      new ForkTsCheckerPlugin(),
       new CopyWebpackPlugin(["src/assets"], {
         ignore: [".DS_Store"]
       }),

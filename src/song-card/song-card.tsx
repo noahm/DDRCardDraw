@@ -6,10 +6,27 @@ import { Zap, Lock, Edit, Slash } from "preact-feather";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
+import { DrawnChart } from "../models/Drawing";
+import { AbbrDifficulty } from "../game-data-utils";
+import { useDifficultyColor } from "../hooks/useDifficultyColor";
 
 const isJapanese = detectedLanguage === "ja";
 
-export function SongCard(props) {
+type Player = 1 | 2;
+
+interface Props {
+  chart: DrawnChart;
+  vetoedBy: Player | undefined;
+  protectedBy: Player | undefined;
+  replacedBy: Player | undefined;
+  replacedWith: DrawnChart | undefined;
+  onVeto: (p: Player) => void;
+  onProtect: (p: Player) => void;
+  onReplace: (p: Player, chart: DrawnChart) => void;
+  onReset: () => void;
+}
+
+export function SongCard(props: Props) {
   const {
     chart,
     vetoedBy,
@@ -36,14 +53,14 @@ export function SongCard(props) {
     artist,
     artistTranslation,
     bpm,
-    difficulty,
+    difficultyClass,
     level,
     hasShock,
-    abbreviation,
     jacket
   } = replacedWith || chart;
+  const diffAccentColor = useDifficultyColor(difficultyClass);
 
-  const rootClassname = classNames(styles.chart, styles[difficulty], {
+  const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
     [styles.protected]: protectedBy || replacedBy
   });
@@ -80,12 +97,12 @@ export function SongCard(props) {
       )}
       {showingIconMenu && (
         <IconMenu
-          onProtect={player => hideIcons() && onProtect(player)}
-          onPocketPicked={(player, chart) =>
-            hideIcons() && onReplace(player, chart)
+          onProtect={(p: Player) => hideIcons() && onProtect(p)}
+          onPocketPicked={(p: Player, c: DrawnChart) =>
+            hideIcons() && onReplace(p, c)
           }
-          onVeto={player => hideIcons() && onVeto(player)}
-          onlyReset={vetoedBy || protectedBy || replacedBy}
+          onVeto={(p: Player) => hideIcons() && onVeto(p)}
+          onlyReset={!!(vetoedBy || protectedBy || replacedBy)}
           onReset={() => hideIcons() && onReset()}
           onClose={hideIcons}
         />
@@ -101,13 +118,16 @@ export function SongCard(props) {
           {artist}
         </div>
       </div>
-      <div className={styles.cardFooter}>
+      <div
+        className={styles.cardFooter}
+        style={{ backgroundColor: diffAccentColor }}
+      >
         <div className={styles.bpm}>{bpm} BPM</div>
         {hasShock && (
           <div className={styles.shockBadge} title={t("shockArrows")}>
             <Zap
               size={12}
-              ariaHidden
+              aria-hidden
               color="black"
               fill="yellow"
               stroke-width="1"
@@ -115,7 +135,7 @@ export function SongCard(props) {
           </div>
         )}
         <div className={styles.difficulty}>
-          {t(abbreviation)} {level}
+          <AbbrDifficulty diffClass={difficultyClass} /> {level}
         </div>
       </div>
     </div>

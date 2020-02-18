@@ -1,7 +1,7 @@
 # DDR Card Draw
 
 This is web-app that allows random draw of songs from Dance Dance Revolution (A20, Ace, and Extreme)
-with a variety of optional conditions, primarially around difficulty level. The primary use case is
+with a variety of optional conditions, primarially around difficulty level. The intended use case is
 for competitive tournaments, but it may also be useful as a training tool.
 
 The app is officially available at [https://ddrdraw.surge.sh/](https://ddrdraw.surge.sh/)
@@ -21,19 +21,23 @@ If you want to take a stab at it yourself, you will want to have node.js >= 10.0
 [yarn](https://yarnpkg.com/) and some familarity with [Preact](https://github.com/developit/preact)
 (or react) apps.
 
-Clone this repo, and then the following commands will be useful:
+Clone this repo to your computer. Then the following commands will be useful:
 
 ```sh
 # one time install of dependencies
 yarn install
 
 # local development will start, with app running at http://localhost:8080/
-# edits to the files in src will be reflected in real time
+# edits to the files in ./src/ will automatically reload the browser
 yarn start
 
-# double check any changes made to song lists in ./src/songs/
+# if you make changes to any game/song data in ./src/songs/ this will give
+# a basic sanity check on the format and contents of it
 yarn validate
 
-# build a zipped, standalone copy of the app
+# build a zipped, standalone copy of the app that runs entirely offline
 yarn build
 ```
+
+Ideas for future develoment are now being tracked as issues on this repo. Feel free to jump in if you
+want to help build out something new!

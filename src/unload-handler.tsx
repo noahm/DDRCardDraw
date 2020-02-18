@@ -1,11 +1,15 @@
 import { useContext, useEffect } from "preact/hooks";
 import { TranslateContext } from "@denysvuika/preact-translate";
 
-export function UnloadHandler(props) {
+interface Props {
+  confirmUnload: boolean;
+}
+
+export function UnloadHandler(props: Props) {
   const { t } = useContext(TranslateContext);
   const confirmText = t("confirmClose");
 
-  function handleUnload(e) {
+  function handleUnload(e: BeforeUnloadEvent) {
     if (props.confirmUnload) {
       e.returnValue = confirmText;
     }

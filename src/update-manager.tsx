@@ -5,7 +5,7 @@ import { TranslateContext } from "@denysvuika/preact-translate";
 
 export function UpdateManager() {
   const { t } = useContext(TranslateContext);
-  const [updateStatus, setStatus] = useState(null);
+  const [updateStatus, setStatus] = useState<null | "loading" | "ready">(null);
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       OfflinePluginRuntime.install({

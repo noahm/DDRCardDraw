@@ -1,169 +1,177 @@
 {
-  "type": "array",
-  "title": "song list",
-  "items": {
-    "type": "object",
-    "title": "song",
-    "properties": {
-      "unlock": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
-      "temp_unlock": {
-        "type": "boolean"
-      },
-      "extra_exclusive": {
-        "type": "boolean"
-      },
-      "removed": {
-        "type": "boolean"
-      },
-      "us_locked": {
-        "type": "boolean"
-      },
-      "gold_exclusive": {
-        "type": "boolean"
-      },
-      "name": {
-        "type": "string"
-      },
-      "artist": {
-        "type": "string"
-      },
-      "genre": {
-        "type": "string"
-      },
-      "artist_translation": {
-        "type": "string"
-      },
-      "bpm": {
-        "type": "string"
-      },
-      "name_translation": {
-        "type": "string"
-      },
-      "search_hint": {
-        "type": "string"
-      },
-      "double": {
-        "type": "object",
-        "title": "doubles charts",
-        "additionalProperties": false,
-        "properties": {
-          "basic": {
-            "$ref": "#/definitions/chart"
-          },
-          "difficult": {
-            "$ref": "#/definitions/chart"
-          },
-          "expert": {
-            "$ref": "#/definitions/chart"
-          },
-          "challenge": {
-            "$ref": "#/definitions/chart"
-          }
+  "type": "object",
+  "title": "Game Data",
+  "additionalProperties": false,
+  "required": ["songs", "meta", "defaults", "i18n"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "Describes unique configuration options for this game",
+      "required": ["styles", "difficulties", "lvlMax", "flags"],
+      "additionalProperties": false,
+      "properties": {
+        "styles": {
+          "$ref": "#/$defs/uniqueStringArr",
+          "description": "List of all play styles available"
         },
-        "required": [
-          "basic",
-          "difficult",
-          "expert",
-          "challenge"
-        ]
-      },
-      "single": {
-        "type": "object",
-        "title": "singles charts",
-        "additionalProperties": false,
-        "properties": {
-          "beginner": {
-            "$ref": "#/definitions/chart"
+        "difficulties": {
+          "type": "array",
+          "description": "List of all difficultiy classes available",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "A unique string key to identify this difficulty class"
+              },
+              "color": {
+                "type": "string",
+                "description": "A css color to use to visually define this difficulty class"
+              }
+            },
+            "required": ["key", "color"],
+            "additionalProperties": false
           },
-          "basic": {
-            "$ref": "#/definitions/chart"
-          },
-          "difficult": {
-            "$ref": "#/definitions/chart"
-          },
-          "expert": {
-            "$ref": "#/definitions/chart"
-          },
-          "challenge": {
-            "$ref": "#/definitions/chart"
-          }
+          "additionalItems": false
         },
-        "required": [
-          "beginner",
-          "basic",
-          "difficult",
-          "expert",
-          "challenge"
-        ]
-      },
-      "jacket": {
-        "type": "string"
-      },
-      "folder": {
-        "type": "string"
+        "flags": {
+          "$ref": "#/$defs/uniqueStringArr",
+          "description": "List of all special flags one might filter songs by"
+        },
+        "lvlMax": {
+          "type": "integer"
+        }
       }
     },
-    "required": [
-      "name",
-      "artist",
-      "double",
-      "artist_translation",
-      "bpm",
-      "single",
-      "name_translation"
-    ],
-    "additionalProperties": false
-  },
-  "definitions": {
-    "chart": {
-      "oneOf": [
-        {
-          "type": "null"
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "difficulty": {
-              "type": "string"
-            },
-            "step": {
-              "type": "string"
-            },
-            "shock": {
-              "type": "string"
-            },
-            "freeze": {
-              "type": "string"
-            },
-            "us_locked": {
-              "type": "boolean"
-            },
-            "extra_exclusive": {
-              "type": "boolean"
-            },
-            "unlock": {
-              "type": "boolean"
-            }
+    "defaults": {
+      "type": "object",
+      "description": "Defines the default configuration for this game",
+      "required": [
+        "style",
+        "difficulties",
+        "lowerLvlBound",
+        "upperLvlBound",
+        "flags"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "style": { "type": "string" },
+        "difficulties": { "$ref": "#/$defs/uniqueStringArr" },
+        "flags": { "$ref": "#/$defs/uniqueStringArr" },
+        "lowerLvlBound": { "type": "integer" },
+        "upperLvlBound": { "type": "integer" }
+      }
+    },
+    "i18n": {
+      "type": "object",
+      "description": "Set of localized values for display of any styles, difficulties, or flags",
+      "required": ["en", "ja"],
+      "additionalProperties": {
+        "$ref": "#/$defs/i18nDictRoot"
+      }
+    },
+    "songs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Song",
+        "properties": {
+          "flags": { "$ref": "#/$defs/uniqueStringArr" },
+          "name": {
+            "type": "string"
           },
-          "required": [
-            "difficulty",
-            "step",
-            "shock",
-            "freeze"
-          ]
-        }
-      ]
+          "artist": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string"
+          },
+          "artist_translation": {
+            "type": "string"
+          },
+          "bpm": {
+            "type": "string"
+          },
+          "name_translation": {
+            "type": "string"
+          },
+          "search_hint": {
+            "type": "string"
+          },
+          "charts": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/chart" },
+            "additionalItems": false
+          },
+          "jacket": {
+            "type": "string"
+          },
+          "folder": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "artist",
+          "artist_translation",
+          "bpm",
+          "name_translation",
+          "jacket",
+          "charts"
+        ],
+        "additionalProperties": false
+      },
+      "additionalItems": false
     }
   },
-  "additionalItems": false
+  "$defs": {
+    "chart": {
+      "type": "object",
+      "title": "Chart",
+      "additionalProperties": false,
+      "properties": {
+        "flags": { "$ref": "#/$defs/uniqueStringArr" },
+        "style": { "type": "string", "description": "e.g. single/double" },
+        "diffClass": {
+          "type": "string",
+          "description": "e.g. expert/challenge"
+        },
+        "lvl": {
+          "type": "integer"
+        },
+        "step": {
+          "type": "number"
+        },
+        "shock": {
+          "type": "number"
+        },
+        "freeze": {
+          "type": "number"
+        }
+      },
+      "required": ["lvl", "diffClass", "style"]
+    },
+    "uniqueStringArr": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "i18nDictRoot": {
+      "type": "object",
+      "title": "I18nDict",
+      "description": "Dictionary of localized strings",
+      "required": ["name", "$abbr"],
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "additionalProperties": { "type": "string" }
+          }
+        ]
+      }
+    }
+  }
 }
