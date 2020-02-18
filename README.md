@@ -24,7 +24,8 @@ If you want to take a stab at it yourself, you will want to have node.js >= 10.0
 Clone this repo to your computer. Then the following commands will be useful:
 
 ```sh
-# one time install of dependencies
+# Before running anything else, do this!
+# It's a one-time local install of dependencies needed to build the app.
 yarn install
 
 # local development will start, with app running at http://localhost:8080/
@@ -33,7 +34,7 @@ yarn start
 
 # if you make changes to any game/song data in ./src/songs/ this will give
 # a basic sanity check on the format and contents of it
-yarn validate
+yarn validate:json
 
 # build a zipped, standalone copy of the app that runs entirely offline
 yarn build
