@@ -76,6 +76,13 @@ export class DrawStateManager extends Component<Props, DrawState> {
   }
 
   loadSongSet = (dataSetName: string) => {
+    if (
+      this.state.drawings.length &&
+      !confirm("This will clear all drawn songs so far. Confirm?")
+    ) {
+      return Promise.resolve(this.state.gameData);
+    }
+
     this.setState({
       gameData: null,
       dataSetName
@@ -86,6 +93,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
     ).then(({ default: data }) => {
       this.setState({
         gameData: data,
+        drawings: [],
         fuzzySearch: new FuzzySearch(
           data,
           [
