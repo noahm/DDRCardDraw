@@ -99,6 +99,7 @@ export function Controls() {
                 <option value="a20">A20</option>
                 <option value="ace">Ace</option>
                 <option value="extreme">Extreme</option>
+                <option value="drs">DANCERUSH</option>
               </select>
             </label>
           </div>
