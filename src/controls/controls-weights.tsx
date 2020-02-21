@@ -65,6 +65,7 @@ export class WeightsControls extends Component<Props> {
               value={weights[level] || ""}
               min="0"
               onChange={e => setWeight(level, +e.currentTarget.value)}
+              placeholder="0"
             />
             {level} <sub>{percentages[i]}%</sub>
           </label>
