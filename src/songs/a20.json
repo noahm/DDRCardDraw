@@ -64,6 +64,133 @@
   },
   "songs": [
     {
+      "name": "Mythomane",
+      "name_translation": "",
+      "artist": "Hylen",
+      "artist_translation": "",
+      "jacket": "Mythomane.png",
+      "bpm": "140-180",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "DIGITAL LUV",
+      "name_translation": "",
+      "artist": "ハレトキドキ",
+      "artist_translation": "Yu Fujishima",
+      "jacket": "DIGITAL LUV.png",
+      "bpm": "154",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 12, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "ENDLESS",
+      "name_translation": "",
+      "artist": "FN2(Eurobeat Union)",
+      "artist_translation": "",
+      "jacket": "ENDLESS.png",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "Stay 4 Ever",
+      "name_translation": "",
+      "artist": "CHEAP CREAM",
+      "artist_translation": "",
+      "jacket": "Stay 4 Ever.png",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "Bounce Trippy",
+      "name_translation": "",
+      "artist": "Dustvoxx",
+      "artist_translation": "",
+      "jacket": "Bounce Trippy.png",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "IRON HEART",
+      "name_translation": "",
+      "artist": "BUNNY",
+      "artist_translation": "",
+      "jacket": "IRON HEART.png",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "ALPACORE",
+      "name_translation": "",
+      "artist": "Cranky",
+      "artist_translation": "",
+      "jacket": "ALPACORE.png",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution A20",
+      "flags": ["goldExclusive"],
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 9, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
       "name": "未完成ノ蒸氣驅動乙女",
       "name_translation": "Unfinished steampunk maiden",
       "jacket": "Mikansei_no_jouki_kudou_otome.png",
@@ -130,9 +257,11 @@
         { "lvl": 7, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 17, "style": "single", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" }
+        { "lvl": 14, "style": "double", "diffClass": "expert" },
+        { "lvl": 17, "style": "double", "diffClass": "expert" }
       ]
     },
     {
@@ -206,9 +335,11 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 10, "style": "single", "diffClass": "challenge", "shock": 5 },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
+        { "lvl": 13, "style": "double", "diffClass": "expert" },
+        { "lvl": 10, "style": "double", "diffClass": "challenge", "shock": 58 }
       ]
     },
     {
@@ -1182,9 +1313,11 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 15, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
-        { "lvl": 11, "style": "double", "diffClass": "expert" }
+        { "lvl": 11, "style": "double", "diffClass": "expert" },
+        { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ]
     },
     {
@@ -1435,25 +1568,6 @@
       ]
     },
     {
-      "name": "Drop The Bounce",
-      "artist": "Hommarju",
-      "jacket": "Drop The Bounce.png",
-      "folder": "DanceDanceRevolution A20",
-      "bpm": "75-150",
-      "name_translation": "",
-      "artist_translation": "",
-      "genre": "",
-      "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "beginner" },
-        { "lvl": 7, "style": "single", "diffClass": "basic" },
-        { "lvl": 10, "style": "single", "diffClass": "difficult" },
-        { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 8, "style": "double", "diffClass": "basic" },
-        { "lvl": 11, "style": "double", "diffClass": "difficult" },
-        { "lvl": 15, "style": "double", "diffClass": "expert" }
-      ]
-    },
-    {
       "name": "District of the Shadows",
       "artist": "DJ Noriken",
       "jacket": "District of the Shadows.png",
@@ -1505,9 +1619,11 @@
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 17, "style": "single", "diffClass": "challenge" },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
+        { "lvl": 13, "style": "double", "diffClass": "expert" },
+        { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ]
     },
     {
@@ -1524,9 +1640,11 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 12, "style": "single", "diffClass": "difficult" },
         { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 17, "style": "single", "diffClass": "challenge" },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
-        { "lvl": 16, "style": "double", "diffClass": "expert" }
+        { "lvl": 16, "style": "double", "diffClass": "expert" },
+        { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ]
     },
     {
@@ -2236,9 +2354,11 @@
         { "lvl": 11, "style": "single", "diffClass": "basic" },
         { "lvl": 15, "style": "single", "diffClass": "difficult" },
         { "lvl": 18, "style": "single", "diffClass": "expert" },
+        { "lvl": 18, "style": "single", "diffClass": "challenge" },
         { "lvl": 11, "style": "double", "diffClass": "basic" },
         { "lvl": 15, "style": "double", "diffClass": "difficult" },
-        { "lvl": 18, "style": "double", "diffClass": "expert" }
+        { "lvl": 18, "style": "double", "diffClass": "expert" },
+        { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ]
     },
     {
@@ -2597,6 +2717,11 @@
       "bpm": "150",
       "charts": [
         {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
           "step": 475,
           "freeze": 17,
           "lvl": 13,
@@ -2624,6 +2749,11 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "expert"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge"
         },
         {
           "step": 293,
