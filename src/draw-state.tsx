@@ -95,7 +95,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
         gameData: data,
         drawings: [],
         fuzzySearch: new FuzzySearch(
-          data,
+          data.songs,
           [
             "name",
             "name_translation",
