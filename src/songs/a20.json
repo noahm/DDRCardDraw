@@ -257,11 +257,21 @@
         { "lvl": 7, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "expert" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "expert",
+          "flags": ["tempUnlock"]
+        }
       ]
     },
     {
@@ -335,11 +345,23 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
-        { "lvl": 10, "style": "single", "diffClass": "challenge", "shock": 5 },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "shock": 5,
+          "flags": ["tempUnlock"]
+        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" },
-        { "lvl": 10, "style": "double", "diffClass": "challenge", "shock": 58 }
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "shock": 58,
+          "flags": ["tempUnlock"]
+        }
       ]
     },
     {
@@ -1313,11 +1335,21 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
-        { "lvl": 15, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" },
-        { "lvl": 15, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        }
       ]
     },
     {
@@ -1619,11 +1651,21 @@
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        }
       ]
     },
     {
@@ -1640,11 +1682,21 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 12, "style": "single", "diffClass": "difficult" },
         { "lvl": 15, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        }
       ]
     },
     {
@@ -2348,17 +2400,26 @@
       "jacket": "Prey.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "210",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
         { "lvl": 11, "style": "single", "diffClass": "basic" },
         { "lvl": 15, "style": "single", "diffClass": "difficult" },
         { "lvl": 18, "style": "single", "diffClass": "expert" },
-        { "lvl": 18, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        },
         { "lvl": 11, "style": "double", "diffClass": "basic" },
         { "lvl": 15, "style": "double", "diffClass": "difficult" },
         { "lvl": 18, "style": "double", "diffClass": "expert" },
-        { "lvl": 18, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
+        }
       ]
     },
     {
@@ -2719,7 +2780,8 @@
         {
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
         },
         {
           "step": 475,
@@ -2753,7 +2815,8 @@
         {
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["tempUnlock"]
         },
         {
           "step": 293,
