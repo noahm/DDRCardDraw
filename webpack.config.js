@@ -21,7 +21,8 @@ module.exports = function(env = {}, argv = {}) {
     devServer: !serve
       ? undefined
       : {
-          contentBase: "./dist"
+          contentBase: "./dist",
+          historyApiFallback: true
           // host: "0.0.0.0"
         },
     entry: "./src/app.tsx",
@@ -63,7 +64,10 @@ module.exports = function(env = {}, argv = {}) {
                 require("@babel/plugin-proposal-optional-chaining"),
                 require("@babel/plugin-proposal-class-properties"),
                 require("@babel/plugin-syntax-dynamic-import"),
-                [require("@babel/plugin-transform-react-jsx"), { pragma: "h", pragmaFrag: "Fragment" }],
+                [
+                  require("@babel/plugin-transform-react-jsx"),
+                  { pragma: "h", pragmaFrag: "Fragment" }
+                ],
                 require("@babel/plugin-transform-react-jsx-source"),
                 [
                   require("@emotion/babel-plugin-jsx-pragmatic"),

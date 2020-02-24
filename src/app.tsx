@@ -6,6 +6,8 @@ if (process.env.NODE_ENV === "development") {
 
 import "./firebase";
 import { render } from "preact";
+import { useEffect } from "preact/hooks";
+import { Route, Switch, useLocation } from "wouter-preact";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
@@ -17,17 +19,37 @@ import { SuspectSongs } from "./SuspectSongs";
 import styles from "./app.css";
 import { ConfigStateManager } from "./config-state";
 
+interface RedirectProps {
+  replace?: boolean;
+  to: string;
+}
+
+function Redirect({ to, replace }: RedirectProps) {
+  const [_, setLocation] = useLocation();
+  useEffect(() => setLocation(to, replace), [to, replace]);
+  return null;
+}
+
 function App() {
   return (
     <AuthManager>
       <ConfigStateManager>
-        <DrawStateManager defaultDataSet="a20">
-          <UpdateManager />
-          <Controls />
-          {/* <SuspectSongs /> */}
-          <DrawingList />
-          <Footer />
-        </DrawStateManager>
+        <Switch>
+          <Route path="/:dataSet">
+            {params => (
+              <DrawStateManager dataSet={params.dataSet}>
+                <UpdateManager />
+                <Controls />
+                {/* <SuspectSongs /> */}
+                <DrawingList />
+                <Footer />
+              </DrawStateManager>
+            )}
+          </Route>
+          <Route path="/">
+            <Redirect to="/a20" replace />
+          </Route>
+        </Switch>
       </ConfigStateManager>
     </AuthManager>
   );
