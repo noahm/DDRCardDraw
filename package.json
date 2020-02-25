@@ -6,9 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --env.dev=true",
     "build": "npm run validate && webpack",
-    "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
-    "deploy:staging": "npm run build && surge ./dist https://ddrdraw-staging.surge.sh",
-    "deploy:firebase": "npm run build && firebase deploy",
+    "deploy": "npm run build --env.target=surge && surge ./dist https://ddrdraw.surge.sh",
+    "deploy:staging": "npm run build --env.target=surge && surge ./dist https://ddrdraw-staging.surge.sh",
+    "deploy:firebase": "npm run build --env.target=firebase && firebase deploy",
     "migrate": "node scripts/migrate.js",
     "validate": "npm run validate:json && npm run validate:ts",
     "validate:json": "node scripts/validate.js",
