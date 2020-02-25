@@ -14,7 +14,7 @@ module.exports = function(env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
   const version = env.version || "custom";
-  const target = env.target || "zip";
+  const target = env.target || "unknown";
 
   const htmlFile = target === "surge" ? "200.html" : "index.html";
 

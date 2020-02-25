@@ -37,7 +37,7 @@ yarn start
 yarn validate:json
 
 # build a zipped, standalone copy of the app that runs entirely offline
-yarn build
+yarn build:zip
 ```
 
 Ideas for future develoment are now being tracked as issues on this repo. Feel free to jump in if you
