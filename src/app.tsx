@@ -14,8 +14,6 @@ import { Footer } from "./footer";
 import { AuthManager } from "./auth";
 import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
-import { SongSearch } from "./song-search";
-import { SuspectSongs } from "./SuspectSongs";
 import styles from "./app.css";
 import { ConfigStateManager } from "./config-state";
 import { SongsPage } from "./songs-page";

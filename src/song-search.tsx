@@ -1,10 +1,9 @@
 import { useContext, useState, useRef, useLayoutEffect } from "preact/hooks";
 import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
-import { Modal } from "./modal";
 import FuzzySearch from "fuzzy-search";
 import { Song, Chart } from "./models/SongData";
-import { ChartList } from "./chart-list";
+import { SongList } from "./song-list";
 
 function getSuggestions(
   fuzzySearch: FuzzySearch<Song>,
@@ -13,23 +12,11 @@ function getSuggestions(
   filter: boolean
 ) {
   if (fuzzySearch && searchTerm) {
-    const suggestions = fuzzySearch.search(searchTerm).slice(0, 5);
+    const suggestions = fuzzySearch.search(searchTerm).slice(0, 10);
     if (suggestions.length) {
-      return suggestions.map(song => (
-        <div className={styles.suggestion}>
-          <img src={`/jackets/${song.jacket}`} className={styles.img} />
-          <div className={styles.title}>
-            {song.name_translation || song.name}
-            <br />
-            {song.artist_translation || song.artist}
-          </div>
-          <ChartList
-            song={song}
-            filter={filter}
-            onClickChart={onSelect.bind(undefined, song)}
-          />
-        </div>
-      ));
+      return (
+        <SongList songs={suggestions} filter={filter} onSelect={onSelect} />
+      );
     }
   }
   return null;

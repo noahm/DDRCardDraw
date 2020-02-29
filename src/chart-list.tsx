@@ -62,6 +62,7 @@ interface ChartOptionProps {
 
 function ChartOption({ chart, onClick, withStyle }: ChartOptionProps) {
   const bg = useDifficultyColor(chart.diffClass);
+
   return (
     <div
       className={classNames(styles.chart, styles.dif)}
@@ -77,6 +78,7 @@ function ChartOption({ chart, onClick, withStyle }: ChartOptionProps) {
       <AbbrDifficulty diffClass={chart.diffClass} />
       <br />
       {chart.lvl}
+      {!!chart.flags?.length && "*"}
       {chart.shock && <ShockBadge />}
     </div>
   );
