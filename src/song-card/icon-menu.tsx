@@ -6,6 +6,7 @@ import { SongSearch } from "../song-search";
 import styles from "./icon-menu.css";
 import { JSX } from "preact";
 import { DrawnChart } from "../models/Drawing";
+import { getDrawnChart } from "../card-draw";
 
 interface Props {
   onPocketPicked: (p: 1 | 2, chart: DrawnChart) => void;
@@ -33,7 +34,9 @@ export function IconMenu(props: Props) {
     return (
       <SongSearch
         autofocus
-        onSongSelect={chart => onPocketPicked(playerPickingPocket, chart)}
+        onSongSelect={(song, chart) =>
+          onPocketPicked(playerPickingPocket, getDrawnChart(song, chart))
+        }
         onCancel={() => setPickingPocket(0)}
       />
     );

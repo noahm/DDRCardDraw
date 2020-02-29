@@ -33,7 +33,8 @@ module.exports = function(env = {}, argv = {}) {
     output: {
       filename: "[name].[hash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
-      path: resolve(__dirname, "./dist")
+      path: resolve(__dirname, "./dist"),
+      publicPath: "/"
     },
     optimization: {
       minimize: isProd

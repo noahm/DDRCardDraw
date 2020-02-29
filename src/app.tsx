@@ -18,6 +18,7 @@ import { SongSearch } from "./song-search";
 import { SuspectSongs } from "./SuspectSongs";
 import styles from "./app.css";
 import { ConfigStateManager } from "./config-state";
+import { SongsPage } from "./songs-page";
 
 interface RedirectProps {
   replace?: boolean;
@@ -35,19 +36,25 @@ function App() {
     <AuthManager>
       <ConfigStateManager>
         <Switch>
-          <Route path="/:dataSet">
+          <Route path="/:dataSet/:anything*">
             {params => (
               <DrawStateManager dataSet={params.dataSet}>
                 <UpdateManager />
                 <Controls />
                 {/* <SuspectSongs /> */}
                 <DrawingList />
+                <Route path="/:dataSet/songs">
+                  <SongsPage />
+                </Route>
                 <Footer />
               </DrawStateManager>
             )}
           </Route>
           <Route path="/">
             <Redirect to="/a20" replace />
+          </Route>
+          <Route path="/:anything*">
+            <p>404 Not Found</p>
           </Route>
         </Switch>
       </ConfigStateManager>
