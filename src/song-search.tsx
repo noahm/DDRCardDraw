@@ -9,7 +9,8 @@ import { ChartList } from "./chart-list";
 function getSuggestions(
   fuzzySearch: FuzzySearch<Song>,
   searchTerm: string,
-  onSelect: (song: Song, chart: Chart) => void
+  onSelect: (song: Song, chart: Chart) => void,
+  filter: boolean
 ) {
   if (fuzzySearch && searchTerm) {
     const suggestions = fuzzySearch.search(searchTerm).slice(0, 5);
@@ -24,7 +25,7 @@ function getSuggestions(
           </div>
           <ChartList
             song={song}
-            filter
+            filter={filter}
             onClickChart={onSelect.bind(undefined, song)}
           />
         </div>
@@ -37,11 +38,11 @@ function getSuggestions(
 interface Props {
   autofocus?: boolean;
   onSongSelect: (song: Song, chart: Chart) => void;
-  onCancel: () => void;
+  filter?: boolean;
 }
 
 export function SongSearch(props: Props) {
-  const { autofocus, onSongSelect, onCancel } = props;
+  const { autofocus, onSongSelect, filter } = props;
   const [searchTerm, updateSearchTerm] = useState("");
 
   const { fuzzySearch } = useContext(DrawStateContext);
@@ -53,7 +54,7 @@ export function SongSearch(props: Props) {
   }, []);
 
   return (
-    <Modal onClose={onCancel}>
+    <>
       <div className={styles.input}>
         <input
           placeholder="Search for a song"
@@ -61,8 +62,8 @@ export function SongSearch(props: Props) {
           type="search"
           onKeyUp={e => {
             if (e.keyCode === 27) {
+              e.preventDefault();
               updateSearchTerm("");
-              onCancel && onCancel();
             } else if (e.currentTarget.value !== searchTerm) {
               updateSearchTerm(e.currentTarget.value);
             }
@@ -72,9 +73,9 @@ export function SongSearch(props: Props) {
       </div>
       <div className={styles.suggestionSet}>
         {fuzzySearch
-          ? getSuggestions(fuzzySearch, searchTerm, onSongSelect)
+          ? getSuggestions(fuzzySearch, searchTerm, onSongSelect, !!filter)
           : "Search is not loaded right now."}
       </div>
-    </Modal>
+    </>
   );
 }

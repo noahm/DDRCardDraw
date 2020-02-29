@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import { detectedLanguage } from "../utils";
 import styles from "./song-card.css";
-import { useState, useContext } from "preact/hooks";
-import { Zap, Lock, Edit, Slash } from "preact-feather";
-import { TranslateContext } from "@denysvuika/preact-translate";
+import { useState } from "preact/hooks";
+import { Lock, Edit, Slash } from "preact-feather";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
+import { ShockBadge } from "./shock-badge";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -39,7 +39,6 @@ export function SongCard(props: Props) {
     onReset
   } = props;
 
-  const { t } = useContext(TranslateContext);
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
   const hideIcons = () => {
@@ -123,17 +122,7 @@ export function SongCard(props: Props) {
         style={{ backgroundColor: diffAccentColor }}
       >
         <div className={styles.bpm}>{bpm} BPM</div>
-        {hasShock && (
-          <div className={styles.shockBadge} title={t("shockArrows")}>
-            <Zap
-              size={12}
-              aria-hidden
-              color="black"
-              fill="yellow"
-              stroke-width="1"
-            />
-          </div>
-        )}
+        {hasShock && <ShockBadge />}
         <div className={styles.difficulty}>
           <AbbrDifficulty diffClass={difficultyClass} /> {level}
         </div>

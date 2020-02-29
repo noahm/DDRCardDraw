@@ -7,6 +7,7 @@ import styles from "./icon-menu.css";
 import { JSX } from "preact";
 import { DrawnChart } from "../models/Drawing";
 import { getDrawnChart } from "../card-draw";
+import { Modal } from "../modal";
 
 interface Props {
   onPocketPicked: (p: 1 | 2, chart: DrawnChart) => void;
@@ -32,13 +33,15 @@ export function IconMenu(props: Props) {
 
   if (playerPickingPocket) {
     return (
-      <SongSearch
-        autofocus
-        onSongSelect={(song, chart) =>
-          onPocketPicked(playerPickingPocket, getDrawnChart(song, chart))
-        }
-        onCancel={() => setPickingPocket(0)}
-      />
+      <Modal onClose={() => setPickingPocket(0)}>
+        <SongSearch
+          autofocus
+          filter
+          onSongSelect={(song, chart) =>
+            onPocketPicked(playerPickingPocket, getDrawnChart(song, chart))
+          }
+        />
+      </Modal>
     );
   }
 

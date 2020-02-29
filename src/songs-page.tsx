@@ -4,6 +4,34 @@ import { Song } from "./models/SongData";
 import { ChartList } from "./chart-list";
 import { SongSearch } from "./song-search";
 import { useLocation } from "wouter-preact";
+import { Modal } from "./modal";
+import { MetaString } from "./game-data-utils";
+
+function SongDetail({ song }: { song: Song }) {
+  return (
+    <div>
+      <img
+        src={`/jackets/${song.jacket}`}
+        style={{ float: "left", width: "25em", marginRight: "1em" }}
+      />
+      <h1>{song.name}</h1>
+      {song.name_translation && <h4>{song.name_translation}</h4>}
+      <h2>{song.artist}</h2>
+      {song.artist_translation && <h4>{song.artist_translation}</h4>}
+      <p>BPM: {song.bpm}</p>
+      <h3>Charts</h3>
+      <ChartList song={song} />
+      <h3>Flags</h3>
+      <ul>
+        {song.flags?.map(f => (
+          <li key={f}>
+            <MetaString field={f} />
+          </li>
+        )) || <li>None</li>}
+      </ul>
+    </div>
+  );
+}
 
 export function SongsPage() {
   const [_, setLocation] = useLocation();
@@ -15,19 +43,15 @@ export function SongsPage() {
 
   if (song) {
     return (
-      <div>
-        <h1>{song.name}</h1>
-        <h2>{song.artist}</h2>
-        <h3>Charts</h3>
-        <ChartList song={song} />
-      </div>
+      <Modal onClose={() => setSelectedSong(undefined)}>
+        <SongDetail song={song} />
+      </Modal>
     );
   }
 
   return (
-    <SongSearch
-      onSongSelect={setSelectedSong}
-      onCancel={() => setLocation(`/${dataSetName}`)}
-    />
+    <Modal onClose={() => setLocation(`/${dataSetName}`)}>
+      <SongSearch onSongSelect={setSelectedSong} />
+    </Modal>
   );
 }
