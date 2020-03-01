@@ -6,7 +6,6 @@ import { AuthButton } from "./auth-button";
 import { useContext, useState } from "preact/hooks";
 import { TranslateContext } from "@denysvuika/preact-translate";
 import { About } from "./about";
-import { Link } from "wouter-preact";
 
 // note that month is zero-indexed for date constructor :)
 const lastUpdate = new Date(2020, 1, 20);
@@ -25,7 +24,6 @@ export function Footer() {
       </div>
       <div className={styles.icons}>
         {/* <AuthButton />{" "} */}
-        <Link href="/a20/songs">Songs</Link>{" "}
         <a href="#" onClick={e => (e.preventDefault(), updateShowAbout(true))}>
           {t("credits")}
         </a>

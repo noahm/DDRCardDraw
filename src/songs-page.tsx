@@ -7,6 +7,7 @@ import { useLocation } from "wouter-preact";
 import { Modal } from "./modal";
 import { MetaString } from "./game-data-utils";
 import { SongList } from "./song-list";
+import styles from "./songs-page.css";
 
 function FlagsList({ flags }: { flags: string[] | undefined }) {
   return (
@@ -84,21 +85,22 @@ export function SongsPage() {
   }
 
   return (
-    <Modal onClose={() => setLocation(`/${dataSetName}`)}>
-      <select
-        value={flag}
-        onInput={e => {
-          setSelectedFlag(e.currentTarget.value);
-        }}
-      >
-        <option>Show by flag</option>
-        {gameData.meta.flags.map(f => (
-          <option value={f}>
-            <MetaString field={f} />
-          </option>
-        ))}
-      </select>
-      <SongSearch onSongSelect={setSelectedSong} />
-    </Modal>
+    <div className={styles.container}>
+      <SongSearch onSongSelect={setSelectedSong} autofocus>
+        <select
+          value={flag}
+          onInput={e => {
+            setSelectedFlag(e.currentTarget.value);
+          }}
+        >
+          <option>Show by flag</option>
+          {gameData.meta.flags.map(f => (
+            <option value={f}>
+              <MetaString field={f} />
+            </option>
+          ))}
+        </select>
+      </SongSearch>
+    </div>
   );
 }

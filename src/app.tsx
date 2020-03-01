@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "development") {
 import "./firebase";
 import { render } from "preact";
 import { useEffect } from "preact/hooks";
-import { Route, Switch, useLocation } from "wouter-preact";
+import { Route, Switch, useLocation, useRoute } from "wouter-preact";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
@@ -17,6 +17,7 @@ import { DrawStateManager } from "./draw-state";
 import styles from "./app.css";
 import { ConfigStateManager } from "./config-state";
 import { SongsPage } from "./songs-page";
+import { Header } from "./header";
 
 interface RedirectProps {
   replace?: boolean;
@@ -30,31 +31,40 @@ function Redirect({ to, replace }: RedirectProps) {
 }
 
 function App() {
+  const [_, params] = useRoute<{ dataSet: string }>("/:dataSet/:anything*");
+  if (!params) {
+    return null;
+  }
+
+  return (
+    <DrawStateManager dataSet={params.dataSet}>
+      <UpdateManager />
+      <Header />
+      <Switch>
+        <Route path="/:dataSet">
+          <SongsPage />
+        </Route>
+        <Route path="/:dataSet/draw">
+          <Controls />
+          <DrawingList />
+        </Route>
+        <Route path="/:anything*">
+          <p>404 Not Found</p>
+        </Route>
+      </Switch>
+      <Footer />
+    </DrawStateManager>
+  );
+}
+
+function AppShell() {
   return (
     <AuthManager>
       <ConfigStateManager>
-        <Switch>
-          <Route path="/:dataSet/:anything*">
-            {params => (
-              <DrawStateManager dataSet={params.dataSet}>
-                <UpdateManager />
-                <Controls />
-                {/* <SuspectSongs /> */}
-                <DrawingList />
-                <Route path="/:dataSet/songs">
-                  <SongsPage />
-                </Route>
-                <Footer />
-              </DrawStateManager>
-            )}
-          </Route>
-          <Route path="/">
-            <Redirect to="/a20" replace />
-          </Route>
-          <Route path="/:anything*">
-            <p>404 Not Found</p>
-          </Route>
-        </Switch>
+        <App />
+        <Route path="/">
+          <Redirect to="/a20" replace />
+        </Route>
       </ConfigStateManager>
     </AuthManager>
   );
@@ -63,4 +73,4 @@ function App() {
 const appRoot = document.createElement("main");
 document.body.prepend(appRoot);
 appRoot.className = styles.container;
-render(<App />, appRoot);
+render(<AppShell />, appRoot);

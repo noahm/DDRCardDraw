@@ -1,0 +1,8 @@
+.header ul {
+  list-style: none;
+}
+
+.header li {
+  display: inline-block;
+  margin-left: 1em;
+}

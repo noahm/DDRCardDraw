@@ -36,8 +36,9 @@ export function IconMenu(props: Props) {
       <Modal onClose={() => setPickingPocket(0)}>
         <SongSearch
           autofocus
-          filter
-          onSongSelect={(song, chart) =>
+          showCharts
+          filterCharts
+          onChartSelect={(song, chart) =>
             onPocketPicked(playerPickingPocket, getDrawnChart(song, chart))
           }
         />

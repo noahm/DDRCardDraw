@@ -65,7 +65,9 @@ function ChartOption({ chart, onClick, withStyle }: ChartOptionProps) {
 
   return (
     <div
-      className={classNames(styles.chart, styles.dif)}
+      className={classNames(styles.chart, styles.dif, {
+        [styles.clickable]: !!onClick
+      })}
       style={{ backgroundColor: bg }}
       onClick={onClick}
     >

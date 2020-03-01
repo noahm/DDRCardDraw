@@ -9,6 +9,9 @@
 .suggestion:not(:last-child) {
   border-bottom: 1px solid lightgray;
 }
+.suggestion.clickable {
+  cursor: pointer;
+}
 
 .img {
   height: 50px;

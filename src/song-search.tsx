@@ -1,35 +1,26 @@
 import { useContext, useState, useRef, useLayoutEffect } from "preact/hooks";
 import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
-import FuzzySearch from "fuzzy-search";
 import { Song, Chart } from "./models/SongData";
 import { SongList } from "./song-list";
-
-function getSuggestions(
-  fuzzySearch: FuzzySearch<Song>,
-  searchTerm: string,
-  onSelect: (song: Song, chart: Chart) => void,
-  filter: boolean
-) {
-  if (fuzzySearch && searchTerm) {
-    const suggestions = fuzzySearch.search(searchTerm).slice(0, 10);
-    if (suggestions.length) {
-      return (
-        <SongList songs={suggestions} filter={filter} onSelect={onSelect} />
-      );
-    }
-  }
-  return null;
-}
+import { RenderableProps } from "preact";
 
 interface Props {
   autofocus?: boolean;
-  onSongSelect: (song: Song, chart: Chart) => void;
-  filter?: boolean;
+  onChartSelect?: (song: Song, chart: Chart) => void;
+  onSongSelect?: (song: Song) => void;
+  filterCharts?: boolean;
+  showCharts?: boolean;
 }
 
-export function SongSearch(props: Props) {
-  const { autofocus, onSongSelect, filter } = props;
+export function SongSearch(props: RenderableProps<Props>) {
+  const {
+    autofocus,
+    onChartSelect,
+    onSongSelect,
+    filterCharts,
+    showCharts
+  } = props;
   const [searchTerm, updateSearchTerm] = useState("");
 
   const { fuzzySearch } = useContext(DrawStateContext);
@@ -39,6 +30,11 @@ export function SongSearch(props: Props) {
       input.current!.focus();
     }
   }, []);
+
+  let results: Song[] = [];
+  if (fuzzySearch && searchTerm) {
+    results = fuzzySearch.search(searchTerm).slice(0, 10);
+  }
 
   return (
     <>
@@ -57,11 +53,20 @@ export function SongSearch(props: Props) {
           }}
           value={searchTerm}
         />
+        {props.children}
       </div>
       <div className={styles.suggestionSet}>
-        {fuzzySearch
-          ? getSuggestions(fuzzySearch, searchTerm, onSongSelect, !!filter)
-          : "Search is not loaded right now."}
+        {fuzzySearch ? (
+          <SongList
+            songs={results}
+            showCharts={showCharts}
+            filterCharts={filterCharts}
+            onSelectChart={onChartSelect}
+            onSelect={onSongSelect}
+          />
+        ) : (
+          "Search is not loaded right now."
+        )}
       </div>
     </>
   );

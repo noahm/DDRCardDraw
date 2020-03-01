@@ -1,11 +1,13 @@
 .chart {
   display: inline-block;
-  cursor: pointer;
   border: 1px solid darkslategray;
   padding: 0.25em;
   border-radius: 3px;
   margin: 0 0.25em;
 }
-.chart:hover {
+.chart.clickable {
+  cursor: pointer;
+}
+.chart.clickable:hover {
   box-shadow: 0 0 5px black;
 }
