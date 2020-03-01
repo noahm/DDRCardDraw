@@ -2630,7 +2630,6 @@
       "jacket": "Pursuer.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "75-300",
-      "flags": ["extraExclusive"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -2650,7 +2649,6 @@
       "jacket": "Love You More.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "175",
-      "flags": ["extraExclusive"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 9, "style": "single", "diffClass": "basic" },
@@ -2884,7 +2882,6 @@
       "bpm": "160",
       "name_translation": "",
       "artist_translation": "",
-      "flags": ["extraExclusive"],
       "charts": [
         {
           "step": 459,
@@ -4306,7 +4303,6 @@
         {
           "step": 786,
           "freeze": 16,
-          "flags": ["extraExclusive"],
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge"
@@ -4342,7 +4338,6 @@
         {
           "step": 765,
           "freeze": 16,
-          "flags": ["extraExclusive"],
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge"
