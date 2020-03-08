@@ -7,6 +7,7 @@ import styles from "./controls.css";
 import { DrawStateContext } from "../draw-state";
 import { JSXInternal } from "preact/src/jsx";
 import { ConfigStateContext } from "../config-state";
+import { useLocation } from "wouter-preact";
 
 function preventDefault(e: Event) {
   e.preventDefault();
@@ -16,13 +17,10 @@ export function Controls() {
   const form = useRef<HTMLFormElement>();
   const [collapsed, setCollapsed] = useState(true);
   const { t } = useContext(TranslateContext);
-  const {
-    drawSongs,
-    dataSetName,
-    loadGameData,
-    lastDrawFailed,
-    gameData
-  } = useContext(DrawStateContext);
+  const [location, setLocation] = useLocation();
+  const { drawSongs, dataSetName, lastDrawFailed, gameData } = useContext(
+    DrawStateContext
+  );
   const configState = useContext(ConfigStateContext);
   const {
     useWeights,
@@ -72,7 +70,7 @@ export function Controls() {
   const handleSongListChange = (
     e: JSXInternal.TargetedEvent<HTMLSelectElement>
   ) => {
-    loadGameData(e.currentTarget.value);
+    setLocation(`/${e.currentTarget.value}`);
   };
 
   const handleRandomize = (e: JSXInternal.TargetedEvent<HTMLButtonElement>) => {

@@ -14,6 +14,9 @@ module.exports = function(env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
   const version = env.version || "custom";
+  const target = env.target || "unknown";
+
+  const htmlFile = target === "surge" ? "200.html" : "index.html";
 
   return {
     mode: isProd ? "production" : "development",
@@ -21,14 +24,17 @@ module.exports = function(env = {}, argv = {}) {
     devServer: !serve
       ? undefined
       : {
-          contentBase: "./dist"
-          // host: "0.0.0.0"
+          contentBase: "./dist",
+          historyApiFallback: true,
+          index: htmlFile
+          // host: "0.0.0.0" // uncomment to access via IP over local network
         },
     entry: "./src/app.tsx",
     output: {
       filename: "[name].[hash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
-      path: resolve(__dirname, "./dist")
+      path: resolve(__dirname, "./dist"),
+      publicPath: "/"
     },
     optimization: {
       minimize: isProd
@@ -63,7 +69,10 @@ module.exports = function(env = {}, argv = {}) {
                 require("@babel/plugin-proposal-optional-chaining"),
                 require("@babel/plugin-proposal-class-properties"),
                 require("@babel/plugin-syntax-dynamic-import"),
-                [require("@babel/plugin-transform-react-jsx"), { pragma: "h", pragmaFrag: "Fragment" }],
+                [
+                  require("@babel/plugin-transform-react-jsx"),
+                  { pragma: "h", pragmaFrag: "Fragment" }
+                ],
                 require("@babel/plugin-transform-react-jsx-source"),
                 [
                   require("@emotion/babel-plugin-jsx-pragmatic"),
@@ -115,7 +124,7 @@ module.exports = function(env = {}, argv = {}) {
         info: false,
         exclude: ["jackets"]
       }),
-      new ForkTsCheckerPlugin(),
+      !isProd && new ForkTsCheckerPlugin(),
       new CopyWebpackPlugin(["src/assets"], {
         ignore: [".DS_Store"]
       }),
@@ -131,27 +140,25 @@ module.exports = function(env = {}, argv = {}) {
       }),
       new HtmlWebpackPlugin({
         title: "DDR Card Draw",
-        filename: "index.html",
+        filename: htmlFile,
         meta: {
           viewport: "width=device-width, initial-scale=1"
         }
-      })
-    ].concat(
-      !isProd
-        ? []
-        : [
-            new ZipPlugin({
-              path: __dirname,
-              filename: `DDRCardDraw-${version}.zip`,
-              exclude: "__offline_serviceworker"
-            }),
-            new OfflinePlugin({
-              ServiceWorker: {
-                events: true
-              },
-              excludes: ["../*.zip", "jackets/*"]
-            })
-          ]
-    )
+      }),
+      isProd &&
+        target === "zip" &&
+        new ZipPlugin({
+          path: __dirname,
+          filename: `DDRCardDraw-${version}.zip`,
+          exclude: "__offline_serviceworker"
+        }),
+      isProd &&
+        new OfflinePlugin({
+          ServiceWorker: {
+            events: true
+          },
+          excludes: ["../*.zip", "jackets/*"]
+        })
+    ].filter(Boolean)
   };
 };

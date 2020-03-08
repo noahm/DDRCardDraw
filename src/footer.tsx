@@ -1,5 +1,4 @@
 import classNames from "classnames";
-
 import { detectedLanguage } from "./utils";
 import styles from "./footer.css";
 import globalStyles from "./app.css";

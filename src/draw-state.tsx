@@ -17,7 +17,6 @@ interface DrawState {
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
-  loadGameData: (dataSetName: string) => Promise<GameData>;
   drawSongs: (config: ConfigState) => void;
 }
 
@@ -27,14 +26,11 @@ export const DrawStateContext = createContext<DrawState>({
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
-  loadGameData() {
-    return Promise.reject();
-  },
   drawSongs() {}
 });
 
 interface Props {
-  defaultDataSet: string;
+  dataSet: string;
 }
 
 export class DrawStateManager extends Component<Props, DrawState> {
@@ -44,15 +40,20 @@ export class DrawStateManager extends Component<Props, DrawState> {
       gameData: null,
       fuzzySearch: null,
       drawings: [],
-      dataSetName: props.defaultDataSet,
+      dataSetName: props.dataSet,
       lastDrawFailed: false,
-      loadGameData: this.loadSongSet,
       drawSongs: this.doDrawing
     };
   }
 
   componentDidMount() {
     this.loadSongSet(this.state.dataSetName);
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.dataSet !== this.props.dataSet) {
+      this.loadSongSet(this.props.dataSet);
+    }
   }
 
   render() {
@@ -76,13 +77,6 @@ export class DrawStateManager extends Component<Props, DrawState> {
   }
 
   loadSongSet = (dataSetName: string) => {
-    if (
-      this.state.drawings.length &&
-      !confirm("This will clear all drawn songs so far. Confirm?")
-    ) {
-      return Promise.resolve(this.state.gameData);
-    }
-
     this.setState({
       gameData: null,
       dataSetName

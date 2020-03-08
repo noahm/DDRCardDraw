@@ -1,9 +1,9 @@
 import { useContext } from "preact/hooks";
 import { TranslateContext } from "@denysvuika/preact-translate";
 
-export function MetaString({ key }: { key: string }) {
+export function MetaString({ field }: { field: string }) {
   const { t } = useContext(TranslateContext);
-  return <>{t("meta." + key)}</>;
+  return <>{t("meta." + field)}</>;
 }
 
 interface AbbrProps {
