@@ -147,7 +147,7 @@
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
-        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
@@ -1127,7 +1127,7 @@
     {
       "name": "CROSS",
       "artist": "TeddyLoid",
-      "jacket": "BLSTR.png",
+      "jacket": "CROSS.png",
       "folder": "DanceDanceRevolution A20",
       "bpm": "150",
       "name_translation": "",
@@ -2074,7 +2074,6 @@
       "name_translation": "",
       "artist_translation": "",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -2094,7 +2093,6 @@
       "name_translation": "Schrodinger's cat",
       "artist_translation": "",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "beginner" },
         { "lvl": 9, "style": "single", "diffClass": "basic" },
@@ -2135,7 +2133,6 @@
       "name_translation": "Roshin yuukai",
       "artist_translation": "",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -2155,7 +2152,6 @@
       "name_translation": "",
       "genre": "",
       "bpm": "140",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -2187,7 +2183,6 @@
       "name_translation": "",
       "artist_translation": "",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 9, "style": "single", "diffClass": "beginner" },
         { "lvl": 12, "style": "single", "diffClass": "basic" },
@@ -2219,7 +2214,6 @@
       "name_translation": "",
       "artist_translation": "",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
         { "lvl": 8, "style": "single", "diffClass": "basic" },
@@ -2251,7 +2245,6 @@
       "name_translation": "",
       "artist_translation": "",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 8, "style": "single", "diffClass": "beginner" },
         { "lvl": 11, "style": "single", "diffClass": "basic" },
@@ -2285,7 +2278,6 @@
       "name_translation": "",
       "artist_translation": "BEMANI Sound Team \"TAG\" feat. Rio Hiiragi",
       "genre": "",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -2360,7 +2352,6 @@
       "search_hint": "Fuurin hanabi",
       "folder": "DanceDanceRevolution A",
       "bpm": "150",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -2381,7 +2372,6 @@
       "search_hint": "Seiza ga koishita shunkan wo",
       "folder": "DanceDanceRevolution A",
       "bpm": "186",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -2432,7 +2422,6 @@
       "jacket": "SUPER SUMMER SALE.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "155",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 8, "style": "single", "diffClass": "basic" },
@@ -2452,7 +2441,6 @@
       "jacket": "Rejoin.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "135",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -2472,7 +2460,6 @@
       "jacket": "Puberty Dysthmia.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "70-210",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
         { "lvl": 8, "style": "single", "diffClass": "basic" },
@@ -2492,7 +2479,6 @@
       "jacket": "Life is beautiful.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "155",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
         { "lvl": 8, "style": "single", "diffClass": "basic" },
@@ -2512,7 +2498,6 @@
       "jacket": "Eternal Summer.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "145",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -2532,7 +2517,6 @@
       "jacket": "ALGORITHM.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "130",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -2552,7 +2536,6 @@
       "jacket": "Oboro (dj TAKA Remix).png",
       "folder": "DanceDanceRevolution A",
       "bpm": "149",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -2572,7 +2555,6 @@
       "jacket": "Chronos (walk with you remix).png",
       "folder": "DanceDanceRevolution A",
       "bpm": "74-148",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -2592,7 +2574,6 @@
       "jacket": "Sennen no kotowari.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "153",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -2612,7 +2593,6 @@
       "jacket": "Plain Asia -PHQ remix-.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "182",
-      "flags": ["unlock"],
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -2651,7 +2631,6 @@
       "jacket": "Pursuer.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "75-300",
-      "flags": ["extraExclusive"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -2671,7 +2650,6 @@
       "jacket": "Love You More.png",
       "folder": "DanceDanceRevolution A",
       "bpm": "175",
-      "flags": ["extraExclusive"],
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 9, "style": "single", "diffClass": "basic" },
@@ -2905,7 +2883,6 @@
       "bpm": "160",
       "name_translation": "",
       "artist_translation": "",
-      "flags": ["extraExclusive"],
       "charts": [
         {
           "step": 459,
@@ -3164,7 +3141,6 @@
       "bpm": "80-160",
       "jacket": "Shunpuu blowing wind.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 573,
@@ -3220,7 +3196,6 @@
       "bpm": "95-190",
       "jacket": "Boss Rush.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 721,
@@ -3276,7 +3251,6 @@
       "bpm": "181",
       "jacket": "Sakura Reflection.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 479,
@@ -4013,7 +3987,6 @@
       "name_translation": "",
       "jacket": "High School Love.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 121,
@@ -4075,7 +4048,6 @@
       "name_translation": "",
       "jacket": "CHOCOLATE PHILOSOPHY.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 71,
@@ -4328,12 +4300,10 @@
       "name_translation": "",
       "jacket": "ACE FOR ACES.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 786,
           "freeze": 16,
-          "flags": ["extraExclusive"],
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge"
@@ -4369,7 +4339,6 @@
         {
           "step": 765,
           "freeze": 16,
-          "flags": ["extraExclusive"],
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge"
@@ -4406,7 +4375,6 @@
       "bpm": "110-880",
       "name_translation": "",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 925,
@@ -4954,7 +4922,6 @@
       "name_translation": "",
       "jacket": "Cosy Catastrophe.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 686,
@@ -5213,7 +5180,6 @@
       "name_translation": "",
       "jacket": "Neutrino.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 570,
@@ -5289,7 +5255,6 @@
       "name_translation": "",
       "jacket": "out of focus.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 572,
@@ -5420,7 +5385,6 @@
       "name_translation": "",
       "jacket": "Ishtar.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 481,
@@ -5498,7 +5462,6 @@
       "name_translation": "Measurement of Love",
       "jacket": "Measurement of Love.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 337,
@@ -5560,7 +5523,6 @@
       "name_translation": "LOVE IS LIKE THE SPACEWAR!",
       "jacket": "LOVE IS LIKE THE SPACEWAR!.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 739,
@@ -5636,7 +5598,6 @@
       "name_translation": "",
       "jacket": "Start a New Day.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 578,
@@ -5828,7 +5789,6 @@
       "name_translation": "",
       "jacket": "Emera.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 563,
@@ -5904,7 +5864,6 @@
       "name_translation": "",
       "jacket": "ZEPHYRANTHES.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 422,
@@ -5966,7 +5925,6 @@
       "name_translation": "",
       "jacket": "Triple Counter.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 533,
@@ -6028,7 +5986,6 @@
       "name_translation": "",
       "jacket": "StrayedCatz.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 336,
@@ -6090,7 +6047,6 @@
       "name_translation": "",
       "jacket": "Sephirot.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 346,
@@ -6152,7 +6108,6 @@
       "name_translation": "",
       "jacket": "Grand Chariot.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 383,
@@ -6214,7 +6169,6 @@
       "name_translation": "",
       "jacket": "Angelic Jelly.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 402,
@@ -6276,7 +6230,6 @@
       "name_translation": "",
       "jacket": "Far east nightbird kors k Remix -DDR edit ver-.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 312,
@@ -6338,7 +6291,6 @@
       "name_translation": "",
       "jacket": "Far east nightbird.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 327,
@@ -6394,7 +6346,6 @@
       "name_translation": "",
       "jacket": "STERLING SILVER (U1 overground mix).png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 348,
@@ -6456,7 +6407,6 @@
       "name_translation": "",
       "jacket": "STERLING SILVER.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 338,
@@ -6518,7 +6468,6 @@
       "name_translation": "",
       "jacket": "Come to Life.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 730,
@@ -6778,7 +6727,6 @@
       "name_translation": "",
       "jacket": "8000000.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 353,
@@ -7419,7 +7367,6 @@
       "name_translation": "",
       "jacket": "Adularia.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 290,
@@ -8550,7 +8497,6 @@
       "name_translation": "",
       "jacket": "Astrogazer.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 712,
@@ -9117,7 +9063,6 @@
       "search_hint": "Bakunana testroyer",
       "jacket": "Bakunana testroyer.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 391,
@@ -9367,7 +9312,6 @@
       "name_translation": "Bassdrop Freaks",
       "jacket": "Bassdrop Freaks.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 317,
@@ -9663,7 +9607,6 @@
       "name_translation": "BeBeatstream",
       "jacket": "BeBeatstream.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 348,
@@ -11935,7 +11878,6 @@
       "name_translation": "",
       "jacket": "Cleopatrysm.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 345,
@@ -12648,7 +12590,6 @@
       "name_translation": "",
       "jacket": "Cytokinesis.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 305,
@@ -12923,7 +12864,6 @@
       "name_translation": "",
       "jacket": "Daily Lunch Special.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 362,
@@ -13355,7 +13295,6 @@
       "name_translation": "",
       "jacket": "Dancer in the flare.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 239,
@@ -13652,7 +13591,6 @@
       "name_translation": "Deadball de Homerun",
       "jacket": "Deadball de Homerun.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 274,
@@ -14524,7 +14462,6 @@
       "name_translation": "Doki doki ryusei trap girl!!",
       "jacket": "Doki doki ryusei trap girl!!.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock", "tempUnlock"],
       "charts": [
         {
           "step": 324,
@@ -14674,7 +14611,6 @@
       "name_translation": "Dopamine",
       "jacket": "Dopamine.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 454,
@@ -15526,7 +15462,6 @@
       "name_translation": "",
       "jacket": "Electric Dance System Music.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 295,
@@ -15989,7 +15924,6 @@
       "name_translation": "",
       "jacket": "Engraved Mark.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 425,
@@ -17393,7 +17327,6 @@
       "name_translation": "",
       "jacket": "Follow Tomorrow.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 276,
@@ -17827,7 +17760,6 @@
       "name_translation": "FUJIMORI -MATSURI- FESTIVAL",
       "jacket": "FUJIMORI -MATSURI- FESTIVAL.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 283,
@@ -19402,7 +19334,6 @@
       "name_translation": "Happy koi lovely time!!",
       "jacket": "Happy koi lovely time!!.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 259,
@@ -20826,7 +20757,6 @@
       "name_translation": "",
       "jacket": "HYENA.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 338,
@@ -21616,7 +21546,6 @@
       "name_translation": "",
       "jacket": "Illegal Function Call.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 477,
@@ -21863,7 +21792,6 @@
       "name_translation": "",
       "jacket": "In The Breeze.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 226,
@@ -22280,7 +22208,6 @@
       "name_translation": "",
       "jacket": "IX.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 753,
@@ -22610,7 +22537,6 @@
       "name_translation": "",
       "jacket": "JOMANDA.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 644,
@@ -22972,7 +22898,6 @@
       "name_translation": "",
       "jacket": "KHAMEN BREAK.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 423,
@@ -23321,7 +23246,6 @@
       "name_translation": "Koihadou? Moro@Hadou OK☆Theory!!",
       "jacket": "Koihadou Moro Hadou OK Theory.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 363,
@@ -23377,7 +23301,6 @@
       "name_translation": "Under this blue sky",
       "jacket": "Kono aozora no shita de.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 317,
@@ -25626,7 +25549,6 @@
       "name_translation": "",
       "jacket": "MAKE A JAM!.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         { "step": 193, "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "step": 240, "lvl": 9, "style": "single", "diffClass": "expert" },
@@ -27038,7 +26960,6 @@
       "name_translation": "Mind Game",
       "jacket": "Mind Game.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 338,
@@ -27795,7 +27716,6 @@
       "name_translation": "Nageki no Ki",
       "jacket": "Nageki no Ki.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 763,
@@ -27942,7 +27862,6 @@
       "name_translation": "Natsuiro DIARY -DDR mix-",
       "jacket": "Natsuiro DIARY -DDR mix-.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 389,
@@ -28218,7 +28137,6 @@
       "name_translation": "",
       "jacket": "New Century.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 669,
@@ -29040,7 +28958,6 @@
       "name_translation": "",
       "jacket": "Nostalgia Is Lost.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 386,
@@ -29825,7 +29742,6 @@
       "name_translation": "Osenju Meditation",
       "jacket": "Osenju Meditation.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 385,
@@ -30024,7 +29940,6 @@
       "name_translation": "Pa Pi Pu Yeah!",
       "jacket": "Pa Pi Pu Yeah!.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 294,
@@ -31328,7 +31243,6 @@
       "name_translation": "",
       "jacket": "Poochie.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 412,
@@ -31631,7 +31545,6 @@
       "name_translation": "",
       "jacket": "POSSESSION(EDP Live Mix).png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 445,
@@ -31994,7 +31907,6 @@
       "name_translation": "",
       "jacket": "PUNISHER.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 382,
@@ -33501,7 +33413,6 @@
       "name_translation": "",
       "jacket": "RISING FIRE HAWK.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 664,
@@ -33992,7 +33903,6 @@
       "name_translation": "",
       "jacket": "S!ck.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 372,
@@ -34469,7 +34379,6 @@
       "name_translation": "",
       "jacket": "Sakura Mirage.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 337,
@@ -35213,7 +35122,6 @@
       "name_translation": "",
       "jacket": "second spring storm.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock", "tempUnlock"],
       "charts": [
         {
           "step": 299,
@@ -37225,7 +37133,6 @@
       "name_translation": "Sora he no katamichi kippu",
       "jacket": "Sora he no katamichi kippu.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 232,
@@ -37527,7 +37434,6 @@
       "name_translation": "",
       "jacket": "Special One.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 176,
@@ -37644,7 +37550,6 @@
       "name_translation": "",
       "jacket": "Squeeze.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 272,
@@ -38339,7 +38244,6 @@
       "name_translation": "",
       "jacket": "Stella Sinistra.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 344,
@@ -39915,7 +39819,6 @@
       "name_translation": "",
       "jacket": "TECH-NOID.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 277,
@@ -40095,7 +39998,6 @@
       "name_translation": "Tenkuu no hana",
       "jacket": "Tenkuu no hana.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 344,
@@ -41311,7 +41213,6 @@
       "name_translation": "Todoroke! Koi no beanball!!",
       "jacket": "Todoroke! Koi no beanball!!.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 357,
@@ -41818,7 +41719,6 @@
       "name_translation": "Totsugeki! Glass no Nisohime!",
       "jacket": "Totsugeki! Glass no Nisohime!.png",
       "folder": "DanceDanceRevolution (2015)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 348,
@@ -41880,7 +41780,6 @@
       "name_translation": "",
       "jacket": "Towards the TOWER.png",
       "folder": "DanceDanceRevolution A",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 246,
@@ -42672,7 +42571,6 @@
       "name_translation": "",
       "jacket": "True Blue.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 380,
@@ -43738,7 +43636,6 @@
       "name_translation": "",
       "jacket": "VEGA.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 459,
@@ -44967,7 +44864,6 @@
       "name_translation": "How to play baseball and its history (final version)",
       "jacket": "Yakyu no asobikata soshite sono rekishi ~ketteihan~.png",
       "folder": "DanceDanceRevolution (2014)",
-      "flags": ["unlock"],
       "charts": [
         {
           "step": 276,
