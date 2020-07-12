@@ -55,8 +55,8 @@ async function main() {
         "vivid"
       ],
       flags: [],
-      lowerLvlBound: 10,
-      upperLvlBound: 20,
+      lowerLvlBound: 16,
+      upperLvlBound: 19,
     },
     i18n: {
       en: {
