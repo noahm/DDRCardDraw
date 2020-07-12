@@ -31,10 +31,10 @@ async function main() {
     meta: {
       styles: ["single"],
       difficulties: [
-        { key: "novice", color: "#aaaaff" },
+        { key: "novice", color: "#800080" },
         { key: "advanced", color: "#ffffaa" },
-        { key: "exhaust", color: "#ffaaaa" },
-        { key: "maximum", color: "#ffffff" },
+        { key: "exhaust", color: "#ff0000" },
+        { key: "maximum", color: "#808080" },
         { key: "infinite", color: "#ffbae7" },
         { key: "gravity", color: "#ff8c00" },
         { key: "heavenly", color: "#00ffff" },
