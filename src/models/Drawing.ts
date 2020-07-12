@@ -1,9 +1,9 @@
 export interface DrawnChart {
   name: string;
   jacket: string;
-  nameTranslation: string;
+  nameTranslation?: string;
   artist: string;
-  artistTranslation: string;
+  artistTranslation?: string;
   bpm: string;
   difficultyClass: string;
   level: number;
