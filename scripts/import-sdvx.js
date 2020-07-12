@@ -10,6 +10,7 @@ const iconv = require("iconv-lite");
 const prettier = require("prettier");
 
 const OUTFILE = "src/songs/sdvx.json";
+const JACKETS_PATH = 'src/assets/jackets/sdvx';
 
 async function main() {
   const sdvxFile = process.argv[2];
@@ -26,6 +27,9 @@ async function main() {
   const fileData = await parseStringPromise(fileContents);
 
   console.log(`successfully parsed ${sdvxFile}, importing data...`);
+
+  console.log(`getting list of song jackets from ${JACKETS_PATH}`);
+  const availableJackets = await fs.readdir(JACKETS_PATH);
 
   const data = {
     meta: {
@@ -103,7 +107,7 @@ async function main() {
         },
       },
     },
-    songs: fileData.mdb.music.filter(filterUnplayableSongs).map(buildSong),
+    songs: fileData.mdb.music.filter(filterUnplayableSongs).map(song => buildSong(song, availableJackets)),
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
@@ -140,7 +144,24 @@ function filterUnplayableSongs(song) {
   return !songsIdsToSkip.some(songIdToSkip => parseInt(song.$.id) === songIdToSkip);
 }
 
-function buildSong(song) {
+function determineChartJacket(chartType, song, availableJackets) {
+  const songId = ('000' + parseInt(song.$.id)).slice(-4);
+  const diffClassToNumber = {
+    "novice": 1,
+    "advanced": 2,
+    "exhaust": 3,
+    "infinite": 4,
+    "maximimum": 5
+  }
+  // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
+  let jacketName = `jk_${songId}_${diffClassToNumber[chartType]}_s.png`;
+  if (!availableJackets.some(j => j === jacketName)) {
+    jacketName = `jk_${songId}_${diffClassToNumber["novice"]}_s.png`;
+  }
+  return `sdvx/${jacketName}`;
+}
+
+function buildSong(song, availableJackets) {
   const info = song.info[0];
 
   const bpmMax = info.bpm_max[0]._.slice(0, -2);
@@ -163,6 +184,7 @@ function buildSong(song) {
       lvl,
       style: "single",
       diffClass: determineDiffClass(song, chartType),
+      jacket: determineChartJacket(chartType, song, availableJackets),
     });
   }
 

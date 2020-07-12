@@ -91,4 +91,5 @@ export interface Chart {
   step?: number;
   shock?: number;
   freeze?: number;
+  jacket?: string;
 }
