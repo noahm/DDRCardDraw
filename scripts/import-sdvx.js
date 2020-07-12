@@ -47,7 +47,6 @@ async function main() {
       style: "single",
       difficulties: [
         "exhaust", 
-        "infinite",
         "maximum",
         "infinite",
         "gravity",
