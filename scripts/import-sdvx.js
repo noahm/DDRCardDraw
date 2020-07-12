@@ -36,13 +36,24 @@ async function main() {
         { key: "exhaust", color: "#ffaaaa" },
         { key: "maximum", color: "#ffffff" },
         { key: "infinite", color: "#ffbae7" },
+        { key: "gravity", color: "#ff8c00" },
+        { key: "heavenly", color: "#00ffff" },
+        { key: "vivid", color: "#f52a6e" },
       ],
       flags: [],
       lvlMax: 20,
     },
     defaults: {
       style: "single",
-      difficulties: ["exhaust", "infinite", "maximum"],
+      difficulties: [
+        "exhaust", 
+        "infinite",
+        "maximum",
+        "infinite",
+        "gravity",
+        "heavenly",
+        "vivid"
+      ],
       flags: [],
       lowerLvlBound: 10,
       upperLvlBound: 20,
@@ -55,13 +66,19 @@ async function main() {
         advanced: "Advanced",
         exhaust: "Exhaust",
         maximum: "Maximum",
-        infinite: "Vivid",
+        infinite: "Infinite",
+        gravity: "Gravity",
+        heavenly: "Heavenly",
+        vivid: "Vivid",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
           exhaust: "EXH",
           maximum: "MXM",
-          infinite: "VIV",
+          infinite: "INF",
+          gravity: "GRV",
+          heavenly: "HVN",
+          vivid: "VVD"
         },
       },
       ja: {
@@ -71,13 +88,19 @@ async function main() {
         advanced: "Advanced",
         exhaust: "Exhaust",
         maximum: "Maximum",
-        infinite: "Vivid",
+        infinite: "Infinite",
+        gravity: "Gravity",
+        heavenly: "Heavenly",
+        vivid: "Vivid",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
           exhaust: "EXH",
           maximum: "MXM",
-          infinite: "VIV",
+          infinite: "INF",
+          gravity: "GRV",
+          heavenly: "HVN",
+          vivid: "VVD"
         },
       },
     },
@@ -89,6 +112,23 @@ async function main() {
     resolve(join(__dirname, "../src/songs/sdvx.json")),
     prettier.format(JSON.stringify(data), { filepath: "sdvx.json" })
   );
+}
+
+function determineDiffClass(song, chartType) {
+  if (chartType !== "infinite") {
+    return chartType;
+  }
+  const infVersion = parseInt(song.info[0].inf_ver[0]._);
+  switch (infVersion) {
+    case 2:
+      return "infinite";
+    case 3:
+      return "gravity";
+    case 4:
+      return "heavenly";
+    case 5:
+      return "vivid";
+  }
 }
 
 function buildSong(song) {
@@ -113,7 +153,7 @@ function buildSong(song) {
     charts.push({
       lvl,
       style: "single",
-      diffClass: chartType,
+      diffClass: determineDiffClass(song, chartType),
     });
   }
 

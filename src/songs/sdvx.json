@@ -6,49 +6,72 @@
       { "key": "advanced", "color": "#ffffaa" },
       { "key": "exhaust", "color": "#ffaaaa" },
       { "key": "maximum", "color": "#ffffff" },
-      { "key": "infinite", "color": "#ffbae7" }
+      { "key": "infinite", "color": "#ffbae7" },
+      { "key": "gravity", "color": "#ff8c00" },
+      { "key": "heavenly", "color": "#00ffff" },
+      { "key": "vivid", "color": "#f52a6e" }
     ],
     "flags": [],
     "lvlMax": 20
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["exhaust", "infinite", "maximum"],
+    "difficulties": [
+      "exhaust",
+      "infinite",
+      "maximum",
+      "infinite",
+      "gravity",
+      "heavenly",
+      "vivid"
+    ],
     "flags": [],
     "lowerLvlBound": 10,
     "upperLvlBound": 20
   },
   "i18n": {
     "en": {
-      "name": "SDVX",
+      "name": "SDVX: VW",
       "single": "Single",
       "novice": "Novice",
       "advanced": "Advanced",
       "exhaust": "Exhaust",
       "maximum": "Maximum",
-      "infinite": "Vivid",
+      "infinite": "Infinite",
+      "gravity": "Gravity",
+      "heavenly": "Heavenly",
+      "vivid": "Vivid",
       "$abbr": {
         "novice": "NOV",
         "advanced": "ADV",
         "exhaust": "EXH",
         "maximum": "MXM",
-        "infinite": "VIV"
+        "infinite": "INF",
+        "gravity": "GRV",
+        "heavenly": "HVN",
+        "vivid": "VVD"
       }
     },
     "ja": {
-      "name": "SDVX",
+      "name": "SDVX: VW",
       "single": "Single",
       "novice": "Novice",
       "advanced": "Advanced",
       "exhaust": "Exhaust",
       "maximum": "Maximum",
-      "infinite": "Vivid",
+      "infinite": "Infinite",
+      "gravity": "Gravity",
+      "heavenly": "Heavenly",
+      "vivid": "Vivid",
       "$abbr": {
         "novice": "NOV",
         "advanced": "ADV",
         "exhaust": "EXH",
         "maximum": "MXM",
-        "infinite": "VIV"
+        "infinite": "INF",
+        "gravity": "GRV",
+        "heavenly": "HVN",
+        "vivid": "VVD"
       }
     }
   },
@@ -76,7 +99,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -225,7 +248,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -413,7 +436,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -599,7 +622,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 12, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -748,7 +771,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -773,7 +796,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -786,7 +809,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -811,7 +834,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 7, "style": "single", "diffClass": "advanced" },
         { "lvl": 12, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -824,7 +847,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -849,7 +872,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -862,7 +885,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -888,7 +911,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -976,7 +999,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -989,7 +1012,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1138,7 +1161,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1284,7 +1307,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 12, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1297,7 +1320,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1310,7 +1333,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -1335,7 +1358,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -1348,7 +1371,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1361,7 +1384,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1434,7 +1457,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1447,7 +1470,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1460,7 +1483,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1473,7 +1496,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1486,7 +1509,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1499,7 +1522,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1512,7 +1535,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1589,7 +1612,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -1614,7 +1637,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1724,7 +1747,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1833,7 +1856,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -1907,7 +1930,7 @@
         { "lvl": 2, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -2004,7 +2027,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -2089,7 +2112,7 @@
         { "lvl": 2, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -2150,7 +2173,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -2199,7 +2222,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -2488,7 +2511,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -2525,7 +2548,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -2550,7 +2573,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -2611,7 +2634,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -2636,7 +2659,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -2697,7 +2720,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -2710,7 +2733,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -2891,7 +2914,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -2916,7 +2939,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -2929,7 +2952,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -2942,7 +2965,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -2979,7 +3002,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -3016,7 +3039,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -3029,7 +3052,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -3126,7 +3149,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -3187,7 +3210,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -3212,7 +3235,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -3249,7 +3272,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 7, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -3490,7 +3513,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -3551,7 +3574,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -3756,7 +3779,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -3961,7 +3984,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -3986,7 +4009,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4155,7 +4178,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4168,7 +4191,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4181,7 +4204,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4194,7 +4217,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4207,7 +4230,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4220,7 +4243,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4233,7 +4256,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4246,7 +4269,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4259,7 +4282,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4272,7 +4295,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4285,7 +4308,7 @@
         { "lvl": 7, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4298,7 +4321,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4311,7 +4334,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4324,7 +4347,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4337,7 +4360,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4350,7 +4373,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4363,7 +4386,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4376,7 +4399,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -4389,7 +4412,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4402,7 +4425,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -4979,7 +5002,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -5174,7 +5197,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -5187,7 +5210,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -5200,7 +5223,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -5369,7 +5392,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -5807,7 +5830,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -6120,7 +6143,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -6169,7 +6192,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -6350,7 +6373,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -6375,7 +6398,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -6448,7 +6471,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -6799,7 +6822,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -7328,7 +7351,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -7341,7 +7364,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -7474,7 +7497,7 @@
         { "lvl": 7, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -7763,7 +7786,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -7776,7 +7799,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8053,7 +8076,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8138,7 +8161,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8151,7 +8174,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8164,7 +8187,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8177,7 +8200,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8190,7 +8213,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8299,7 +8322,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -8312,7 +8335,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -8325,7 +8348,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -8338,7 +8361,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -8363,7 +8386,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -8436,7 +8459,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9342,7 +9365,7 @@
         { "lvl": 8, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 20, "style": "single", "diffClass": "infinite" }
+        { "lvl": 20, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9716,7 +9739,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9741,7 +9764,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9754,7 +9777,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9779,7 +9802,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9792,7 +9815,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9805,7 +9828,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9818,7 +9841,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9831,7 +9854,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -9937,7 +9960,7 @@
       "artist": "∞∞(σ∀σ*)∞∞",
       "jacket": "sdvx5.png",
       "bpm": "135",
-      "charts": [{ "lvl": 1, "style": "single", "diffClass": "infinite" }]
+      "charts": [{ "lvl": 1, "style": "single", "diffClass": "gravity" }]
     },
     {
       "name": "GO BACK 2 YOUR RAVE",
@@ -10678,7 +10701,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10703,7 +10726,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10776,7 +10799,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10789,7 +10812,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10802,7 +10825,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10815,7 +10838,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10828,7 +10851,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10841,7 +10864,7 @@
         { "lvl": 7, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10854,7 +10877,7 @@
         { "lvl": 7, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10867,7 +10890,7 @@
         { "lvl": 7, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10892,7 +10915,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10905,7 +10928,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10918,7 +10941,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10931,7 +10954,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10944,7 +10967,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10957,7 +10980,7 @@
         { "lvl": 7, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -10970,7 +10993,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 8, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -11019,7 +11042,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "infinite" }
+        { "lvl": 19, "style": "single", "diffClass": "heavenly" }
       ]
     },
     {
@@ -11045,7 +11068,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -11328,7 +11351,7 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 7, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -11638,7 +11661,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -11651,7 +11674,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -11664,7 +11687,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -11690,7 +11713,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -14793,7 +14816,7 @@
       "artist": "体で覚えるSOUND VOLTEX",
       "jacket": "sdvx5.png",
       "bpm": "130",
-      "charts": [{ "lvl": 1, "style": "single", "diffClass": "infinite" }]
+      "charts": [{ "lvl": 1, "style": "single", "diffClass": "heavenly" }]
     },
     {
       "name": "Reb∞t",
@@ -14805,7 +14828,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -15598,7 +15621,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -15832,7 +15855,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -15845,7 +15868,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -15858,7 +15881,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -15949,7 +15972,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -16417,7 +16440,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -16430,7 +16453,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -16443,7 +16466,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -16456,7 +16479,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -17509,7 +17532,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -17522,7 +17545,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -17535,7 +17558,7 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
+        { "lvl": 16, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -17548,7 +17571,7 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "infinite" }
+        { "lvl": 17, "style": "single", "diffClass": "vivid" }
       ]
     },
     {
@@ -17561,7 +17584,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -17574,7 +17597,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -17587,7 +17610,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
@@ -17600,7 +17623,7 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "infinite" }
+        { "lvl": 18, "style": "single", "diffClass": "gravity" }
       ]
     },
     {
