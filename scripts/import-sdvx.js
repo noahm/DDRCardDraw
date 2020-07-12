@@ -103,7 +103,7 @@ async function main() {
         },
       },
     },
-    songs: fileData.mdb.music.map(buildSong),
+    songs: fileData.mdb.music.filter(filterUnplayableSongs).map(buildSong),
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
@@ -128,6 +128,16 @@ function determineDiffClass(song, chartType) {
     case 5:
       return "vivid";
   }
+}
+
+function filterUnplayableSongs(song) {
+  const songsIdsToSkip = [
+    840,  // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
+    1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
+    1259, // AUTOMATION PARADISE
+    1438, // AUTOMATION PARADISE, April Fools
+  ];
+  return !songsIdsToSkip.some(songIdToSkip => parseInt(song.$.id) === songIdToSkip);
 }
 
 function buildSong(song) {
