@@ -169,7 +169,7 @@ module.exports = function(env = {}, argv = {}) {
               ServiceWorker: {
                 events: true,
               },
-              excludes: ["../*.zip", "jackets/*"],
+              excludes: ["../*.zip", "jackets/**/*"],
             }),
           ]
     ),
