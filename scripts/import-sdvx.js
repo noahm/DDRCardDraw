@@ -134,14 +134,14 @@ function determineDiffClass(song, chartType) {
   }
 }
 
+const songIdsToSkip = new Set([
+  840,  // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
+  1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
+  1259, // AUTOMATION PARADISE
+  1438, // AUTOMATION PARADISE, April Fools
+]);
 function filterUnplayableSongs(song) {
-  const songsIdsToSkip = [
-    840,  // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
-    1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
-    1259, // AUTOMATION PARADISE
-    1438, // AUTOMATION PARADISE, April Fools
-  ];
-  return !songsIdsToSkip.some(songIdToSkip => parseInt(song.$.id) === songIdToSkip);
+  return !songIdsToSkip.has(parseInt(song.$.id));
 }
 
 function determineChartJacket(chartType, song, availableJackets) {
