@@ -29,7 +29,7 @@ async function main() {
   console.log(`successfully parsed ${sdvxFile}, importing data...`);
 
   console.log(`getting list of song jackets from ${JACKETS_PATH}`);
-  const availableJackets = await fs.readdir(JACKETS_PATH);
+  const availableJackets = new Set(await fs.readdir(JACKETS_PATH));
 
   const data = {
     meta: {
@@ -155,7 +155,7 @@ function determineChartJacket(chartType, song, availableJackets) {
   }
   // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
   let jacketName = `jk_${songId}_${diffClassToNumber[chartType]}_s.png`;
-  if (!availableJackets.some(j => j === jacketName)) {
+  if (!availableJackets.has(jacketName)) {
     jacketName = `jk_${songId}_${diffClassToNumber["novice"]}_s.png`;
   }
   return `sdvx/${jacketName}`;
