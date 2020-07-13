@@ -156,7 +156,7 @@ function determineChartJacket(chartType, song, availableJackets) {
   // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
   let jacketName = `jk_${songId}_${diffClassToNumber[chartType]}_s.png`;
   if (!availableJackets.has(jacketName)) {
-    jacketName = `jk_${songId}_${diffClassToNumber["novice"]}_s.png`;
+    return undefined;
   }
   return `sdvx/${jacketName}`;
 }
@@ -172,6 +172,7 @@ function buildSong(song, availableJackets) {
   }
 
   const charts = [];
+  let usesSharedJacket = false;
   for (const chartType of Object.keys(song.difficulty[0])) {
     const chartInfo = song.difficulty[0][chartType][0];
 
@@ -180,19 +181,30 @@ function buildSong(song, availableJackets) {
       continue;
     }
 
+    const chartJacket = determineChartJacket(chartType, song, availableJackets);
+    if (!chartJacket) {
+      usesSharedJacket = true;
+    }
+
     charts.push({
       lvl,
       style: "single",
       diffClass: determineDiffClass(song, chartType),
-      jacket: determineChartJacket(chartType, song, availableJackets),
+      jacket: chartJacket,
     });
   }
-
+  
+  if (usesSharedJacket) {
+    charts.find(c => c.diffClass === "novice").jacket = undefined;
+  }
+  
   return {
     name: info.title_name[0],
     search_hint: info.ascii[0],
     artist: info.artist_name[0],
-    jacket: "sdvx5.png",
+    jacket: usesSharedJacket
+              ? `sdvx/jk_${('000' + parseInt(song.$.id)).slice(-4)}_1_s.png`
+              : "sdvx5.png",
     bpm,
     charts,
   };
