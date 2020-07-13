@@ -139,6 +139,9 @@
         },
         "freeze": {
           "type": "number"
+        },
+        "jacket": {
+          "type": "string"
         }
       },
       "required": ["lvl", "diffClass", "style"]
