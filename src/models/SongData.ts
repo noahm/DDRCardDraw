@@ -69,9 +69,9 @@ export interface Song {
   name: string;
   artist: string;
   genre?: string;
-  artist_translation: string;
+  artist_translation?: string;
   bpm: string;
-  name_translation: string;
+  name_translation?: string;
   search_hint?: string;
   charts: Chart[];
   jacket: string;
@@ -91,4 +91,5 @@ export interface Chart {
   step?: number;
   shock?: number;
   freeze?: number;
+  jacket?: string;
 }

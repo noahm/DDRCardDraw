@@ -12,6 +12,11 @@ function preventDefault(e: Event) {
   e.preventDefault();
 }
 
+const DATA_FILES = (process.env.DATA_FILES as unknown) as Array<{
+  name: string;
+  display: string;
+}>;
+
 export function Controls() {
   const form = useRef<HTMLFormElement>();
   const [collapsed, setCollapsed] = useState(true);
@@ -21,7 +26,7 @@ export function Controls() {
     dataSetName,
     loadGameData,
     lastDrawFailed,
-    gameData
+    gameData,
   } = useContext(DrawStateContext);
   const configState = useContext(ConfigStateContext);
   const {
@@ -32,7 +37,7 @@ export function Controls() {
     difficulties: selectedDifficulties,
     flags: selectedFlags,
     style: selectedStyle,
-    chartCount
+    chartCount,
   } = configState;
   if (!gameData) {
     return null;
@@ -46,10 +51,10 @@ export function Controls() {
     if (newValue > upperBound) {
       return;
     }
-    updateState(state => {
+    updateState((state) => {
       return {
         ...state,
-        lowerBound: newValue
+        lowerBound: newValue,
       };
     });
   };
@@ -61,10 +66,10 @@ export function Controls() {
     if (newValue < lowerBound) {
       return;
     }
-    updateState(state => {
+    updateState((state) => {
       return {
         ...state,
-        upperBound: newValue
+        upperBound: newValue,
       };
     });
   };
@@ -96,10 +101,11 @@ export function Controls() {
                 onChange={handleSongListChange}
                 value={dataSetName}
               >
-                <option value="a20">A20</option>
-                <option value="ace">Ace</option>
-                <option value="extreme">Extreme</option>
-                <option value="drs">DANCERUSH</option>
+                {DATA_FILES.map(({ name, display }) => (
+                  <option value={name} key={name}>
+                    {display}
+                  </option>
+                ))}
               </select>
             </label>
           </div>
@@ -111,8 +117,8 @@ export function Controls() {
                 name="chartCount"
                 value={chartCount}
                 min="1"
-                onInput={e => {
-                  updateState(s => {
+                onInput={(e) => {
+                  updateState((s) => {
                     return { ...s, chartCount: +e.currentTarget.value };
                   });
                 }}
@@ -150,10 +156,10 @@ export function Controls() {
                 type="checkbox"
                 name="weighted"
                 checked={useWeights}
-                onChange={e =>
-                  updateState(state => ({
+                onChange={(e) =>
+                  updateState((state) => ({
                     ...state,
-                    useWeights: !!e.currentTarget.checked
+                    useWeights: !!e.currentTarget.checked,
                   }))
                 }
               />
@@ -162,37 +168,39 @@ export function Controls() {
           </div>
         </div>
         <div className={styles.column}>
-          <div className={styles.group}>
-            <label>
-              {t("style")}{" "}
-              <select
-                name="style"
-                value={selectedStyle}
-                onInput={e => {
-                  updateState(s => {
-                    return { ...s, style: e.currentTarget.value };
-                  });
-                }}
-              >
-                {gameStyles.map(style => (
-                  <option key={style} value={style}>
-                    {t("meta." + style)}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
+          {gameStyles.length > 1 && (
+            <div className={styles.group}>
+              <label>
+                {t("style")}{" "}
+                <select
+                  name="style"
+                  value={selectedStyle}
+                  onInput={(e) => {
+                    updateState((s) => {
+                      return { ...s, style: e.currentTarget.value };
+                    });
+                  }}
+                >
+                  {gameStyles.map((style) => (
+                    <option key={style} value={style}>
+                      {t("meta." + style)}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          )}
           <div className={styles.group}>
             {t("difficulties")}:
-            {difficulties.map(dif => (
+            {difficulties.map((dif) => (
               <label key={`${dataSetName}:${dif.key}`}>
                 <input
                   type="checkbox"
                   name="difficulties"
                   value={dif.key}
                   checked={selectedDifficulties.has(dif.key)}
-                  onInput={e => {
-                    updateState(s => {
+                  onInput={(e) => {
+                    updateState((s) => {
                       const difficulties = new Set(s.difficulties);
                       if (e.currentTarget.checked) {
                         difficulties.add(e.currentTarget.value);
@@ -212,15 +220,15 @@ export function Controls() {
           {!!flags.length && (
             <div className={styles.group}>
               {t("include")}:
-              {flags.map(key => (
+              {flags.map((key) => (
                 <label key={`${dataSetName}:${key}`}>
                   <input
                     type="checkbox"
                     name="inclusions"
                     value={key}
                     checked={selectedFlags.has(key)}
-                    onInput={e =>
-                      updateState(s => {
+                    onInput={(e) =>
+                      updateState((s) => {
                         const newFlags = new Set(s.flags);
                         if (newFlags.has(key)) {
                           newFlags.delete(key);

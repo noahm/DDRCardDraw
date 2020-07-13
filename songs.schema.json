@@ -110,15 +110,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "name",
-          "artist",
-          "artist_translation",
-          "bpm",
-          "name_translation",
-          "jacket",
-          "charts"
-        ],
+        "required": ["name", "artist", "bpm", "jacket", "charts"],
         "additionalProperties": false
       },
       "additionalItems": false
@@ -147,6 +139,9 @@
         },
         "freeze": {
           "type": "number"
+        },
+        "jacket": {
+          "type": "string"
         }
       },
       "required": ["lvl", "diffClass", "style"]

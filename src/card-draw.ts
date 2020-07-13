@@ -6,14 +6,14 @@ import { ConfigState } from "./config-state";
 export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
   return {
     name: currentSong.name,
-    jacket: currentSong.jacket,
+    jacket: chart.jacket || currentSong.jacket,
     nameTranslation: currentSong.name_translation,
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
     difficultyClass: chart.diffClass,
     level: chart.lvl,
-    hasShock: !!chart.shock
+    hasShock: !!chart.shock,
   };
 }
 
@@ -40,20 +40,20 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     flags: inclusions,
     useWeights,
     forceDistribution,
-    weights
+    weights,
   } = configData;
 
   const validCharts: Record<string, Array<DrawnChart>> = {};
-  times(19, n => {
+  times(gameData.meta.lvlMax, (n) => {
     validCharts[n.toString()] = [];
   });
 
   for (const currentSong of gameData.songs) {
-    const charts = currentSong.charts.filter(c => c.style === style);
+    const charts = currentSong.charts.filter((c) => c.style === style);
     // song-level filters
     if (
       currentSong.flags &&
-      !currentSong.flags.every(flag => inclusions.has(flag))
+      !currentSong.flags.every((flag) => inclusions.has(flag))
     ) {
       continue;
     }
@@ -62,7 +62,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       // chart-level filters
       if (
         !difficulties.has(chart.diffClass) || // don't want this difficulty
-        (chart.flags && !chart.flags.every(flag => inclusions.has(flag))) || // doesn't exactly match our flags
+        (chart.flags && !chart.flags.every((flag) => inclusions.has(flag))) || // doesn't exactly match our flags
         chart.lvl < lowerBound || // too easy
         chart.lvl > upperBound // too hard
       ) {
@@ -154,7 +154,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty
-      distribution = distribution.filter(n => n !== chosenDifficulty);
+      distribution = distribution.filter((n) => n !== chosenDifficulty);
     }
   }
 
@@ -164,6 +164,6 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     charts: drawnCharts,
     bans: [],
     protects: [],
-    pocketPicks: []
+    pocketPicks: [],
   };
 }
