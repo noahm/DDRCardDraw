@@ -117,11 +117,19 @@ module.exports = function(env = {}, argv = {}) {
     plugins: [
       new DelWebpackPlugin({
         info: false,
-        exclude: ["jackets"],
+        include: ["*.js"],
       }),
       new ForkTsCheckerPlugin(),
-      new CopyWebpackPlugin(["src/assets"], {
-        ignore: [".DS_Store"],
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: "jackets/**/*",
+            context: "src/assets",
+            globOptions: {
+              ignore: ["**/.DS_Store"],
+            },
+          },
+        ],
       }),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
