@@ -65,7 +65,7 @@
     "i18n": {
       "type": "object",
       "description": "Set of localized values for display of any styles, difficulties, or flags",
-      "required": ["en", "ja"],
+      "required": ["en"],
       "additionalProperties": {
         "$ref": "#/$defs/i18nDictRoot"
       }

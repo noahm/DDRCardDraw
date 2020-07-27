@@ -30,7 +30,7 @@ export const DrawStateContext = createContext<DrawState>({
   loadGameData() {
     return Promise.reject();
   },
-  drawSongs() {}
+  drawSongs() {},
 });
 
 interface Props {
@@ -47,7 +47,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
       dataSetName: props.defaultDataSet,
       lastDrawFailed: false,
       loadGameData: this.loadSongSet,
-      drawSongs: this.doDrawing
+      drawSongs: this.doDrawing,
     };
   }
 
@@ -61,7 +61,8 @@ export class DrawStateManager extends Component<Props, DrawState> {
       // @ts-ignore
       translations[lang] = i18nData[lang];
       if (this.state.gameData) {
-        translations[lang].meta = this.state.gameData.i18n[lang];
+        translations[lang].meta =
+          this.state.gameData.i18n[lang] || this.state.gameData.i18n.en;
       }
     }
     return (
@@ -85,7 +86,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
 
     this.setState({
       gameData: null,
-      dataSetName
+      dataSetName,
     });
 
     return import(
@@ -101,12 +102,12 @@ export class DrawStateManager extends Component<Props, DrawState> {
             "name_translation",
             "artist",
             "artist_translation",
-            "search_hint"
+            "search_hint",
           ],
           {
-            sort: true
+            sort: true,
           }
-        )
+        ),
       });
       return data;
     });
@@ -120,14 +121,14 @@ export class DrawStateManager extends Component<Props, DrawState> {
     const drawing = draw(this.state.gameData, config);
     if (!drawing.charts.length) {
       this.setState({
-        lastDrawFailed: true
+        lastDrawFailed: true,
       });
       return;
     }
 
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       drawings: [drawing, ...prevState.drawings].filter(Boolean),
-      lastDrawFailed: false
+      lastDrawFailed: false,
     }));
   };
 }

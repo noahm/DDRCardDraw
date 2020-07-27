@@ -12,11 +12,11 @@ function validateContents(dataFile) {
 
   const allKeys = [
     ...dataFile.meta.styles,
-    ...dataFile.meta.difficulties.map(d => d.key),
-    ...dataFile.meta.flags
+    ...dataFile.meta.difficulties.map((d) => d.key),
+    ...dataFile.meta.flags,
   ];
   const styles = new Set(dataFile.meta.styles);
-  const difficulties = new Set(dataFile.meta.difficulties.map(d => d.key));
+  const difficulties = new Set(dataFile.meta.difficulties.map((d) => d.key));
   const flags = new Set(dataFile.meta.flags);
 
   if (dataFile.meta.lvlMax < 1) {
@@ -27,11 +27,11 @@ function validateContents(dataFile) {
     errors.push("default style is not listed in meta");
   }
 
-  if (dataFile.defaults.difficulties.some(d => !difficulties.has(d))) {
+  if (dataFile.defaults.difficulties.some((d) => !difficulties.has(d))) {
     errors.push("some default difficulties are missing from meta");
   }
 
-  if (dataFile.defaults.flags.some(d => !flags.has(d))) {
+  if (dataFile.defaults.flags.some((d) => !flags.has(d))) {
     errors.push("some default flags are missing from meta");
   }
 
@@ -46,15 +46,17 @@ function validateContents(dataFile) {
     errors.push("default level bounds are beyond max level");
   }
 
-  for (const key of allKeys) {
-    if (!(dataFile.i18n.en[key] && dataFile.i18n.ja[key])) {
-      errors.push("missing translation for " + key);
-    }
-    if (
-      difficulties.has(key) &&
-      !(dataFile.i18n.en["$abbr"][key] && dataFile.i18n.ja["$abbr"][key])
-    ) {
-      errors.push("missing abbreviated translation for " + key);
+  if (dataFile.i18n.ja) {
+    for (const key of allKeys) {
+      if (!(dataFile.i18n.en[key] && dataFile.i18n.ja[key])) {
+        errors.push("missing translation for " + key);
+      }
+      if (
+        difficulties.has(key) &&
+        !(dataFile.i18n.en["$abbr"][key] && dataFile.i18n.ja["$abbr"][key])
+      ) {
+        errors.push("missing abbreviated translation for " + key);
+      }
     }
   }
 
@@ -88,20 +90,20 @@ let hasError = false;
 for (const dataFile of dataFileNames) {
   const songData = require(`../src/songs/${dataFile}`);
   const result = validateJSONSchema(songData, songsSchema, {
-    nestedErrors: true
+    nestedErrors: true,
   });
 
   if (result.valid) {
     const consistencyErrors = validateContents(songData);
     if (consistencyErrors.length) {
-      consistencyErrors.forEach(err => console.error(err));
+      consistencyErrors.forEach((err) => console.error(err));
       console.log(`${dataFile} has inconsistent data!`);
       hasError = true;
     } else {
       console.log(`${dataFile} looks good!`);
     }
   } else {
-    result.errors.forEach(error => {
+    result.errors.forEach((error) => {
       console.error(error.toString());
     });
     console.log(`${dataFile} has issues!`);
@@ -126,7 +128,7 @@ const bannerComment = `
  * Describes the shape of data that any individual json file under \`src/songs\` will conform to
  */`;
 
-compile(songsSchema, "SongData", { bannerComment }).then(ts => {
+compile(songsSchema, "SongData", { bannerComment }).then((ts) => {
   writeFileSync(resolve(join(__dirname, "..", schemaLocation)), ts);
   console.log("Schema written to ", schemaLocation);
 });
