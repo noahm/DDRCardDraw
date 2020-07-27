@@ -106,7 +106,7 @@ async function main() {
     },
     defaults: {
       style: "fun",
-      difficulties: ["wild", "full"],
+      difficulties: ["wild", "hard"],
       flags: [],
       lowerLvlBound: 16,
       upperLvlBound: 22,
