@@ -113,7 +113,7 @@ async function main() {
     },
     i18n: {
       en: {
-        name: "StepManiax",
+        name: "StepManiaX",
         fun: "Fun!",
         basic: "Basic",
         easy: "Easy",
