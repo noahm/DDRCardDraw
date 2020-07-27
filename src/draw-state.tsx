@@ -10,6 +10,7 @@ import i18nData from "./assets/i18n.json";
 import { detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
+import * as qs from "query-string";
 
 interface DrawState {
   gameData: GameData | null;
@@ -37,14 +38,28 @@ interface Props {
   defaultDataSet: string;
 }
 
+function setGameInUrl(game: string) {
+  const next = qs.stringifyUrl({
+    url: location.href,
+    query: {
+      game,
+    },
+  });
+  if (next !== location.href) {
+    window.history.replaceState(undefined, "", next);
+  }
+}
+
 export class DrawStateManager extends Component<Props, DrawState> {
   constructor(props: Props) {
     super(props);
+
+    const query = qs.parse(location.search);
     this.state = {
       gameData: null,
       fuzzySearch: null,
       drawings: [],
-      dataSetName: props.defaultDataSet,
+      dataSetName: (query.game as string) || props.defaultDataSet,
       lastDrawFailed: false,
       loadGameData: this.loadSongSet,
       drawSongs: this.doDrawing,
@@ -88,6 +103,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
       gameData: null,
       dataSetName,
     });
+    setGameInUrl(dataSetName);
 
     return import(
       /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
