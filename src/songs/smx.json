@@ -1,0 +1,2819 @@
+{
+  "meta": {
+    "styles": ["fun"],
+    "difficulties": [
+      { "key": "basic", "color": "#03da00" },
+      { "key": "easy", "color": "#d3b211" },
+      { "key": "hard", "color": "#a90a12" },
+      { "key": "wild", "color": "#3406bc" },
+      { "key": "dual", "color": "#1d72af" },
+      { "key": "full", "color": "#00d0b8" }
+    ],
+    "flags": [],
+    "lvlMax": 27
+  },
+  "defaults": {
+    "style": "fun",
+    "difficulties": ["wild", "full"],
+    "flags": [],
+    "lowerLvlBound": 16,
+    "upperLvlBound": 22
+  },
+  "i18n": {
+    "en": {
+      "name": "StepManiax",
+      "fun": "Fun!",
+      "basic": "Basic",
+      "easy": "Easy",
+      "hard": "Hard",
+      "wild": "Wild",
+      "dual": "Dual",
+      "full": "Full",
+      "$abbr": {
+        "basic": "Basic",
+        "easy": "Easy",
+        "hard": "Hard",
+        "wild": "Wild",
+        "dual": "Dual",
+        "full": "Full"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "Crazy Baby",
+      "artist": "Fantasy Project",
+      "genre": "Hard Dance",
+      "bpm": "140",
+      "jacket": "smx/CrazyBaby.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dance Vibrations",
+      "artist": "Elpis",
+      "genre": "Dance",
+      "bpm": "130",
+      "jacket": "smx/DanceVibrations.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dynamo",
+      "artist": "Oscillator X",
+      "genre": "Dance",
+      "bpm": "132",
+      "jacket": "smx/Dynamo.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Emotion",
+      "artist": "Smiley",
+      "genre": "Techno",
+      "bpm": "165",
+      "jacket": "smx/Emotion.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Flight Of The Bumble Bee",
+      "artist": "MonstDeath",
+      "genre": "Classical Techno",
+      "bpm": "185",
+      "jacket": "smx/FlightOfTheBumbleBee.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 25, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 27, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Frozen Fire",
+      "artist": "Kbit",
+      "genre": "Techno",
+      "bpm": "31-160",
+      "jacket": "smx/FrozenFire.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Hurry Up!",
+      "artist": "MonstDeath",
+      "genre": "Classical Techno",
+      "bpm": "175",
+      "jacket": "smx/HurryUp!.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Hyper Hyper",
+      "artist": "Smiley",
+      "genre": "Techno",
+      "bpm": "157",
+      "jacket": "smx/HyperHyper.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 25, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "In The Hall Of The Mountain King",
+      "artist": "KaW",
+      "genre": "Techno",
+      "bpm": "78-196",
+      "jacket": "smx/InTheHallOfTheMountainKing.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Land Of The Lost",
+      "artist": "Banzai",
+      "genre": "Ethnic House",
+      "bpm": "125",
+      "jacket": "smx/LandOfTheLost.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 15, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Party All Night",
+      "artist": "KaW feat. Sam-I-Am",
+      "genre": "Electronic",
+      "bpm": "125",
+      "jacket": "smx/PartyAllNight.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Party People",
+      "artist": "Oscillator X",
+      "genre": "Dance",
+      "bpm": "125",
+      "jacket": "smx/PartyPeople.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 7, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Remember December",
+      "artist": "Smiley",
+      "genre": "Happy Hardcore",
+      "bpm": "190",
+      "jacket": "smx/RememberDecember.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Revenge",
+      "artist": "MonstDeath",
+      "genre": "Classical Techno",
+      "bpm": "90-180",
+      "jacket": "smx/Revenge.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Sinxorder",
+      "artist": "MonstDeath & Glúteos",
+      "genre": "Classical Techno",
+      "bpm": "83-180",
+      "jacket": "smx/Sinxorder.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Start & Paws",
+      "artist": "Oscillator X",
+      "genre": "Techno",
+      "bpm": "146",
+      "jacket": "smx/StartPaws.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Time is Ticking",
+      "artist": "Elpis feat. Black Elway",
+      "genre": "Dance",
+      "bpm": "130",
+      "jacket": "smx/TimeisTicking.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "All Of Me",
+      "artist": "Klubbmover",
+      "genre": "Hands Up",
+      "bpm": "144",
+      "jacket": "smx/AllOfMe.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 15, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Can't Get Enough",
+      "artist": "Miradey",
+      "genre": "Progressive House",
+      "bpm": "128",
+      "jacket": "smx/Can'tGetEnough.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 6, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Day After Day",
+      "artist": "Rikah",
+      "genre": "Hands Up",
+      "bpm": "71-142",
+      "jacket": "smx/DayAfterDay.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 9, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Everything Is Changing",
+      "artist": "Rikah",
+      "genre": "Hands Up",
+      "bpm": "140",
+      "jacket": "smx/EverythingIsChanging.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 11, "diffClass": "dual" },
+        { "style": "fun", "lvl": 7, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Firewalker",
+      "artist": "Xenon",
+      "genre": "Eurodance",
+      "bpm": "136",
+      "jacket": "smx/Firewalker.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Look Into My Eyes",
+      "artist": "Rabih",
+      "genre": "Deep House",
+      "bpm": "128",
+      "jacket": "smx/LookIntoMyEyes.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Lucky Star",
+      "artist": "Miradey",
+      "genre": "Progressive House",
+      "bpm": "128",
+      "jacket": "smx/LuckyStar.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Origin",
+      "artist": "Eagle | Stallian",
+      "genre": "Trance",
+      "bpm": "130",
+      "jacket": "smx/Origin.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 9, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Party People",
+      "artist": "Andy Stroke",
+      "genre": "Minimal Tech House",
+      "bpm": "64-128",
+      "jacket": "smx/PartyPeople(TurnItUp).jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 8, "diffClass": "dual" },
+        { "style": "fun", "lvl": 10, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Reminds Me Of Home",
+      "artist": "Eagle | Stallian",
+      "genre": "Progressive House",
+      "bpm": "129",
+      "jacket": "smx/RemindsMeOfHome.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Shoulda",
+      "artist": "SUNN",
+      "genre": "Electro Pop",
+      "bpm": "128",
+      "jacket": "smx/Shoulda.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "The Rainmaker",
+      "artist": "Doug Laurent",
+      "genre": "Trance",
+      "bpm": "142",
+      "jacket": "smx/TheRainmaker.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 9, "diffClass": "dual" },
+        { "style": "fun", "lvl": 15, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Twins",
+      "artist": "Martin Eriksson feat. Ellee",
+      "genre": "Progressive House",
+      "bpm": "128",
+      "jacket": "smx/Twins.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "All It Takes",
+      "artist": "Zariis",
+      "genre": "Dance Pop",
+      "bpm": "128",
+      "jacket": "smx/AllItTakes.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 9, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bagpipe",
+      "artist": "A-Moe",
+      "genre": "Dance",
+      "bpm": "140",
+      "jacket": "smx/Bagpipe.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Be My Hero",
+      "artist": "Freezer",
+      "genre": "Electro",
+      "bpm": "128",
+      "jacket": "smx/BeMyHero.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 7, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Birdie",
+      "artist": "Doolittle",
+      "genre": "Bubblegum Pop",
+      "bpm": "68-136",
+      "jacket": "smx/Birdie.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Burning Tonight",
+      "artist": "Krystal",
+      "genre": "Eurobeat",
+      "bpm": "156",
+      "jacket": "smx/BurningTonight.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Can't Let Go",
+      "artist": "Jenna Drey",
+      "genre": "Pop",
+      "bpm": "130",
+      "jacket": "smx/Can'tLetGo.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 12, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Change The World",
+      "artist": "Nathalie & Kim Lukas",
+      "genre": "Italo Disco",
+      "bpm": "125",
+      "jacket": "smx/ChangeTheWorld.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Cowbell Rock",
+      "artist": "Pyramyth",
+      "genre": "Glitch Hop",
+      "bpm": "112",
+      "jacket": "smx/CowbellRock.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 6, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dabbi Doo",
+      "artist": "Ni-Ni",
+      "genre": "Bubblegum Pop",
+      "bpm": "138",
+      "jacket": "smx/DabbiDoo.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dancing Circus",
+      "artist": "Brisby & Jingles",
+      "genre": "House",
+      "bpm": "130",
+      "jacket": "smx/DancingCircus.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Don't Stop My Music Tonight",
+      "artist": "David Dima",
+      "genre": "Eurobeat",
+      "bpm": "153",
+      "jacket": "smx/Don'tStopMyMusicTonight.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dream A Dream",
+      "artist": "Captain Jack",
+      "genre": "Hard House",
+      "bpm": "148",
+      "jacket": "smx/DreamADream.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dreaming",
+      "artist": "Rameses B feat. Holly Drummond",
+      "genre": "Drum & Bass",
+      "bpm": "88-175",
+      "jacket": "smx/Dreaming.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Get Down",
+      "artist": "Kairo Kingdom",
+      "genre": "Glitch Hop",
+      "bpm": "110",
+      "jacket": "smx/GetDown.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Got The Rhythm",
+      "artist": "Fracus & Darwin feat. Becca Hossany",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/GotTheRhythm.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Hard Fast Disco",
+      "artist": "Darwin",
+      "genre": "Hardcore",
+      "bpm": "88-175",
+      "jacket": "smx/HardFastDisco.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Indignation",
+      "artist": "Auvic feat. Pipo Fernandez",
+      "genre": "Glitch Hop",
+      "bpm": "105",
+      "jacket": "smx/Indignation.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "It Gets Better",
+      "artist": "Eskimo feat. Maria Merete",
+      "genre": "Pop",
+      "bpm": "130",
+      "jacket": "smx/ItGetsBetter.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Joanna",
+      "artist": "Crazy Loop",
+      "genre": "Pop",
+      "bpm": "134",
+      "jacket": "smx/Joanna.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Licky Licky",
+      "artist": "Crispy",
+      "genre": "Bubblegum Pop",
+      "bpm": "133",
+      "jacket": "smx/LickyLicky.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Lights Go Down",
+      "artist": "Less Affair",
+      "genre": "Pop",
+      "bpm": "128",
+      "jacket": "smx/LightsGoDown.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Link Line",
+      "artist": "Asterisk",
+      "genre": "Drum & Bass",
+      "bpm": "88-175",
+      "jacket": "smx/LinkLine.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 25, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Million Feelings",
+      "artist": "Chriss Floren",
+      "genre": "Dance",
+      "bpm": "127",
+      "jacket": "smx/MillionFeelings.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Moonstone",
+      "artist": "Virgill",
+      "genre": "Electronic",
+      "bpm": "106",
+      "jacket": "smx/Moonstone.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 15, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Personal Reality",
+      "artist": "Auvic",
+      "genre": "Glitch Hop",
+      "bpm": "102",
+      "jacket": "smx/PersonalReality.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 25, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ready To Fly",
+      "artist": "Aleky",
+      "genre": "Eurobeat",
+      "bpm": "152",
+      "jacket": "smx/ReadyToFly.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "RockSlaves",
+      "artist": "Leo Pigot & Rinat Crone",
+      "genre": "Glitch Hop",
+      "bpm": "110",
+      "jacket": "smx/RockSlaves.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Save My World",
+      "artist": "Stephy",
+      "genre": "Eurobeat",
+      "bpm": "154",
+      "jacket": "smx/SaveMyWorld.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Secret 2K12",
+      "artist": "Rene Ablaze feat. Jacinta",
+      "genre": "Trance",
+      "bpm": "132",
+      "jacket": "smx/Secret2K12.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Show Me Your Moves",
+      "artist": "Auvic",
+      "genre": "Electronic",
+      "bpm": "110",
+      "jacket": "smx/ShowMeYourMoves.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 5, "diffClass": "dual" },
+        { "style": "fun", "lvl": 15, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "That Night",
+      "artist": "Eskimo & Icebird",
+      "genre": "Hard Dance",
+      "bpm": "145",
+      "jacket": "smx/ThatNight.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "The 7th Element",
+      "artist": "Vitas",
+      "genre": "Pop",
+      "bpm": "130",
+      "jacket": "smx/The7thElement.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "The Last Time",
+      "artist": "Zariis",
+      "genre": "Big Room EDM",
+      "bpm": "128",
+      "jacket": "smx/TheLastTime.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 15, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Think Thousand Thoughts",
+      "artist": "Auvic",
+      "genre": "Glitch Hop",
+      "bpm": "100",
+      "jacket": "smx/ThinkThousandThoughts.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "What Happened To Love",
+      "artist": "Denine",
+      "genre": "Dance",
+      "bpm": "128",
+      "jacket": "smx/WhatHappenedToLove.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Y Don't U",
+      "artist": "Deeper Territory",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/YDontU.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 5, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ba Be Loo Be La",
+      "artist": "Kristeen",
+      "genre": "Pop",
+      "bpm": "126",
+      "jacket": "smx/BaBeLooBeLa.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Blow My Mind",
+      "artist": "Alphadelta",
+      "genre": "Dance",
+      "bpm": "131",
+      "jacket": "smx/BlowMyMind.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 8, "diffClass": "dual" },
+        { "style": "fun", "lvl": 13, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bounce",
+      "artist": "Crew 7",
+      "genre": "Melbourne House",
+      "bpm": "128",
+      "jacket": "smx/Bounce.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Endless Day",
+      "artist": "Verona",
+      "genre": "Pop",
+      "bpm": "120",
+      "jacket": "smx/EndlessDay.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 8, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Girlz Night Out",
+      "artist": "Jenna Drey",
+      "genre": "Pop",
+      "bpm": "128",
+      "jacket": "smx/GirlzNightOut.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "I Love You Baby",
+      "artist": "Pandera",
+      "genre": "Pop",
+      "bpm": "100",
+      "jacket": "smx/ILoveYouBaby.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Medicine 2013",
+      "artist": "Kim Leoni",
+      "genre": "Progressive House",
+      "bpm": "128",
+      "jacket": "smx/Medicine2013.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Mexi Mexi",
+      "artist": "Mozquito",
+      "genre": "Pop",
+      "bpm": "138",
+      "jacket": "smx/MexiMexi.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "My Freedom",
+      "artist": "Rayman Rave & Nika Lenina",
+      "genre": "Electro House",
+      "bpm": "128",
+      "jacket": "smx/MyFreedom.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Run Away",
+      "artist": "Avejio",
+      "genre": "Deep House",
+      "bpm": "128",
+      "jacket": "smx/RunAway.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Sun Goes Down",
+      "artist": "Landomania",
+      "genre": "Deep House",
+      "bpm": "128",
+      "jacket": "smx/SunGoesDown.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "We Are The Sun",
+      "artist": "Maui & Crizz feat. Gerald G.",
+      "genre": "Deep House",
+      "bpm": "124",
+      "jacket": "smx/WeAreTheSun.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Who",
+      "artist": "KaW",
+      "genre": "Trance",
+      "bpm": "140",
+      "jacket": "smx/Who.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Zodiac",
+      "artist": "Banzai",
+      "genre": "Ethnic House",
+      "bpm": "107",
+      "jacket": "smx/Zodiac.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Big Blue Bouncy Ball",
+      "artist": "Mr. Blue",
+      "genre": "Techno",
+      "bpm": "130",
+      "jacket": "smx/BigBlueBouncyBall.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Funny Love",
+      "artist": "Dan Balan",
+      "genre": "Pop",
+      "bpm": "120",
+      "jacket": "smx/FunnyLove.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ignition Starts",
+      "artist": "KaW",
+      "genre": "Trance",
+      "bpm": "138",
+      "jacket": "smx/IgnitionStarts.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Made In China",
+      "artist": "Vitas & Sergey Pudovkin",
+      "genre": "Pop",
+      "bpm": "88",
+      "jacket": "smx/MadeInChina.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Monody",
+      "artist": "TheFatRat feat. Laura Brehm",
+      "genre": "Glitch Hop",
+      "bpm": "67-107",
+      "jacket": "smx/Monody.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 6, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "One Step Further",
+      "artist": "Jenna Drey",
+      "genre": "Pop",
+      "bpm": "128",
+      "jacket": "smx/OneStepFurther.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Surf",
+      "artist": "Hyper Potions",
+      "genre": "Future Bass",
+      "bpm": "155",
+      "jacket": "smx/Surf.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Time To Fly",
+      "artist": "Cindy Cooper",
+      "genre": "Eurobeat",
+      "bpm": "154",
+      "jacket": "smx/TimeToFly.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 4, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Unity",
+      "artist": "TheFatRat",
+      "genre": "Glitch Hop",
+      "bpm": "53-105",
+      "jacket": "smx/Unity.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Agent Blatant",
+      "artist": "Ernest + Julio",
+      "genre": "Electronic",
+      "bpm": "81-162",
+      "jacket": "smx/AgentBlatant.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bloodrush",
+      "artist": "TechnoDred",
+      "genre": "Techno",
+      "bpm": "79-158",
+      "jacket": "smx/Bloodrush.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 19, "diffClass": "hard" },
+        { "style": "fun", "lvl": 26, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 25, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "ChicaBomb",
+      "artist": "Dan Balan",
+      "genre": "Pop",
+      "bpm": "64-128",
+      "jacket": "smx/ChicaBomb.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Crazyloop",
+      "artist": "Crazy Loop",
+      "genre": "Pop",
+      "bpm": "133",
+      "jacket": "smx/CrazyLoop.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Da Roots",
+      "artist": "Mind Reflection",
+      "genre": "Folk",
+      "bpm": "69-133",
+      "jacket": "smx/DaRoots.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 2, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Determinator",
+      "artist": "Dust Devil",
+      "genre": "Orchestral Electronica",
+      "bpm": "147",
+      "jacket": "smx/Determinator.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 26, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Disconnected Disco",
+      "artist": "Kid Whatever",
+      "genre": "House",
+      "bpm": "139",
+      "jacket": "smx/DisconnectedDisco.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 26, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Drifting Away",
+      "artist": "Filo Bedo",
+      "genre": "Pop",
+      "bpm": "143",
+      "jacket": "smx/DriftingAway.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Fleadh Uncut",
+      "artist": "Ian Parker",
+      "genre": "Celtic Electronica",
+      "bpm": "132",
+      "jacket": "smx/FleadhUncut.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Flying High",
+      "artist": "Filo Bedo",
+      "genre": "Pop",
+      "bpm": "146",
+      "jacket": "smx/FlyingHigh.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Gallecode",
+      "artist": "NoVus",
+      "genre": "Classical Electronica",
+      "bpm": "100",
+      "jacket": "smx/Gallecode.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Go 60 Go",
+      "artist": "Takoyaki",
+      "genre": "Techno",
+      "bpm": "160",
+      "jacket": "smx/Go60Go.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Hispanic Panic",
+      "artist": "Chucho Merchan",
+      "genre": "Techno",
+      "bpm": "140",
+      "jacket": "smx/HispanicPanic.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 11, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Holy Guacamole",
+      "artist": "Chucho Merchan",
+      "genre": "Techno",
+      "bpm": "139",
+      "jacket": "smx/HolyGuacamole.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "I Feel Sun",
+      "artist": "Gyrlie",
+      "genre": "Pop",
+      "bpm": "130",
+      "jacket": "smx/IFeelSun.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 7, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "I Think I Like That Sound",
+      "artist": "Kid Whatever",
+      "genre": "House",
+      "bpm": "132",
+      "jacket": "smx/IThinkILikeThatSound.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ize Pie",
+      "artist": "Headtwist & Pump",
+      "genre": "Garage House",
+      "bpm": "68-136",
+      "jacket": "smx/IzePie.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Land Of The Rising Sun",
+      "artist": "Spacekatz",
+      "genre": "Pop",
+      "bpm": "136",
+      "jacket": "smx/LandOfTheRisingSun.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "My Life Is So Crazy",
+      "artist": "Initial P",
+      "genre": "Techno",
+      "bpm": "85-170",
+      "jacket": "smx/MyLifeIsSoCrazy.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Paradise",
+      "artist": "Smiley",
+      "genre": "Happy Hardcore",
+      "bpm": "80-160",
+      "jacket": "smx/Paradise.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Pop4",
+      "artist": "Vibes & Wishdokta",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/Pop4.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Psalm Pilot",
+      "artist": "Jason Creasey",
+      "genre": "Orchestral Electronica",
+      "bpm": "130",
+      "jacket": "smx/PsalmPilot.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ra",
+      "artist": "Banzai",
+      "genre": "Ethnic House",
+      "bpm": "125",
+      "jacket": "smx/Ra.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Reactor",
+      "artist": "Jason Creasey",
+      "genre": "Dance",
+      "bpm": "125",
+      "jacket": "smx/Reactor.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "ROM-eo & Juli8",
+      "artist": "Nina",
+      "genre": "Pop",
+      "bpm": "138",
+      "jacket": "smx/Rome0andJuli8.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 1, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Soapy Bubble",
+      "artist": "Fragmentz",
+      "genre": "Techno",
+      "bpm": "141",
+      "jacket": "smx/SoapyBubble.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Spin Chicken",
+      "artist": "Freebie & The Bean",
+      "genre": "Disco",
+      "bpm": "130",
+      "jacket": "smx/SpinChicken.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Temple Of Boom",
+      "artist": "Yannis Kamarinos",
+      "genre": "Trance",
+      "bpm": "146",
+      "jacket": "smx/TempleOfBoom.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 25, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "This Is Rock And Roll",
+      "artist": "DJ Zombie",
+      "genre": "House",
+      "bpm": "140",
+      "jacket": "smx/ThisIsRock&Roll.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "While Tha Rekkid Spinz",
+      "artist": "DJ Zombie",
+      "genre": "Tech Hip-Hop",
+      "bpm": "140",
+      "jacket": "smx/WhileThaRekkidSpinz.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 10, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bad 4 My Health",
+      "artist": "Bassmonkeys & Soulshaker feat. J.D. ROX",
+      "genre": "Pop",
+      "bpm": "127",
+      "jacket": "smx/Bad4MyHealth.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Get Busy",
+      "artist": "Bassmonkeys & Bianca Lindgren",
+      "genre": "Techno",
+      "bpm": "128",
+      "jacket": "smx/GetBusy.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "I'll Show You Loving",
+      "artist": "Bassmonkeys feat. Natasha Anderson",
+      "genre": "Pop",
+      "bpm": "128",
+      "jacket": "smx/I'llShowYouLoving.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dies Irae",
+      "artist": "Jason Creasey",
+      "genre": "Orchestral Electronica",
+      "bpm": "151",
+      "jacket": "smx/DiesIrae.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 13, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ladybug",
+      "artist": "Coconut",
+      "genre": "Bubblegum Pop",
+      "bpm": "133",
+      "jacket": "smx/Ladybug.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Paranormal",
+      "artist": "Inspector K",
+      "genre": "Techno",
+      "bpm": "44-175",
+      "jacket": "smx/Paranormal.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Sweet World",
+      "artist": "Omega Men",
+      "genre": "Techno",
+      "bpm": "132",
+      "jacket": "smx/SweetWorld.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 12, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Click Bait",
+      "artist": "S3RL feat. GL!TCH",
+      "genre": "Dance Pop",
+      "bpm": "175",
+      "jacket": "smx/ClickBait.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 11, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Sunshine",
+      "artist": "Triple J",
+      "genre": "Happy Hardcore",
+      "bpm": "170",
+      "jacket": "smx/Sunshine.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Darkness",
+      "artist": "Sanxion7",
+      "genre": "Classical Techno",
+      "bpm": "21-170",
+      "jacket": "smx/Darkness.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "EternuS",
+      "artist": "Sanxion7",
+      "genre": "Trance",
+      "bpm": "140",
+      "jacket": "smx/Eternus.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 14, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Feel The Melody",
+      "artist": "S3RL feat. Sara",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/FeelTheMelody.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Gargoyle",
+      "artist": "Sanxion7",
+      "genre": "Trance",
+      "bpm": "150",
+      "jacket": "smx/Gargoyle.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Mellow",
+      "artist": "Rikki & Daz",
+      "genre": "Pop",
+      "bpm": "160",
+      "jacket": "smx/Mellow.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Pink Fuzzy Bunnies",
+      "artist": "Wonderboy",
+      "genre": "Happy Hardcore",
+      "bpm": "120-211",
+      "jacket": "smx/PinkFuzzyBunnies.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 13, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 25, "diffClass": "wild" },
+        { "style": "fun", "lvl": 23, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Rainspark",
+      "artist": "Sanxion7",
+      "genre": "Trance",
+      "bpm": "125",
+      "jacket": "smx/Rainspark.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Zenith",
+      "artist": "Sanxion7",
+      "genre": "Classical Techno",
+      "bpm": "75-150",
+      "jacket": "smx/Zenith.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "July",
+      "artist": "Smiley",
+      "genre": "Techno",
+      "bpm": "145",
+      "jacket": "smx/July(EuroMix).jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Utopia",
+      "artist": "Smiley",
+      "genre": "Happy Hardcore",
+      "bpm": "87-166",
+      "jacket": "smx/Utopia.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Xuxa",
+      "artist": "Smiley",
+      "genre": "Happy Hardcore",
+      "bpm": "160",
+      "jacket": "smx/Xuxa.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Boom Boom Dollars",
+      "artist": "King Kong & D'Jungle Girls",
+      "genre": "Eurotrance",
+      "bpm": "155",
+      "jacket": "smx/BoomBoomDollars.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Hanky Panky",
+      "artist": "Jenny Rom",
+      "genre": "Eurobeat",
+      "bpm": "173",
+      "jacket": "smx/HankyPanky.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Be Alive",
+      "artist": "Stian K",
+      "genre": "Hard House",
+      "bpm": "142",
+      "jacket": "smx/BeAlive.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Do U Love Me",
+      "artist": "DJ Doo",
+      "genre": "Pop",
+      "bpm": "137",
+      "jacket": "smx/DoULoveMe.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Feels Just Like That Night",
+      "artist": "Eskimo & Icebird feat. Maria Merete",
+      "genre": "Pop",
+      "bpm": "135",
+      "jacket": "smx/FeelsJustLikeThatNight.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 25, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "The Beginning",
+      "artist": "DJ Doo",
+      "genre": "Trance",
+      "bpm": "136",
+      "jacket": "smx/TheBeginning.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 13, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 26, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "dual" },
+        { "style": "fun", "lvl": 25, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ari Oh",
+      "artist": "Jenny Kee",
+      "genre": "Eurobeat",
+      "bpm": "160",
+      "jacket": "smx/AriOh.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Beautiful Man",
+      "artist": "Radiorama",
+      "genre": "Eurobeat",
+      "bpm": "168",
+      "jacket": "smx/BeautifulMan.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Become Astral",
+      "artist": "Ash Astral",
+      "genre": "Drum & Bass",
+      "bpm": "90-180",
+      "jacket": "smx/BecomeAstral.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bumble Bee",
+      "artist": "Bambee",
+      "genre": "Bubblegum Pop",
+      "bpm": "138",
+      "jacket": "smx/BumbleBee.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Coming Out",
+      "artist": "Playmaker feat. Robina",
+      "genre": "Pop",
+      "bpm": "130",
+      "jacket": "smx/ComingOut.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dizzy",
+      "artist": "Balduin & Wolfgang Lohr feat. Alanna",
+      "genre": "Electro Swing",
+      "bpm": "125",
+      "jacket": "smx/Dizzy.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Never Gonna Make",
+      "artist": "Morgana",
+      "genre": "Eurodance",
+      "bpm": "138",
+      "jacket": "smx/NeverGonnaMake.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Waka Laka",
+      "artist": "Jenny Rom vs. The Zippers",
+      "genre": "Speed Dance",
+      "bpm": "170",
+      "jacket": "smx/WakaLaka.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 16, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bang Bang Bang",
+      "artist": "DCX",
+      "genre": "Hardstyle",
+      "bpm": "148",
+      "jacket": "smx/BangBangBang.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dance Boom Boom",
+      "artist": "Tipsy & Tipsy",
+      "genre": "Eurobeat",
+      "bpm": "150",
+      "jacket": "smx/DanceBoomBoom.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Flash In The Night",
+      "artist": "Flashman",
+      "genre": "Eurobeat",
+      "bpm": "158",
+      "jacket": "smx/FlashInTheNight.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Hero",
+      "artist": "Miss Papaya",
+      "genre": "Bubblegum Pop",
+      "bpm": "138",
+      "jacket": "smx/Hero.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Monolith",
+      "artist": "Affinity",
+      "genre": "Techno",
+      "bpm": "98-196",
+      "jacket": "smx/Monolith.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 19, "diffClass": "hard" },
+        { "style": "fun", "lvl": 25, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 26, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "NightMoves",
+      "artist": "Playmaker",
+      "genre": "House",
+      "bpm": "130",
+      "jacket": "smx/NightMoves.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Senorita",
+      "artist": "Jenny Rom",
+      "genre": "Speed Dance",
+      "bpm": "174",
+      "jacket": "smx/Senorita.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Typical Tropical",
+      "artist": "Bambee",
+      "genre": "Bubblegum Pop",
+      "bpm": "140",
+      "jacket": "smx/TypicalTropical.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Who R You",
+      "artist": "Leo Pigot",
+      "genre": "Electro",
+      "bpm": "128",
+      "jacket": "smx/WhoRYou.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Whoopsy Daisy",
+      "artist": "Wolfgang Lohr & Balduin feat. Sebastian Daws",
+      "genre": "Electro Swing",
+      "bpm": "123",
+      "jacket": "smx/WhoopsyDaisy.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Young Forever",
+      "artist": "Rebecca",
+      "genre": "Eurodance",
+      "bpm": "140",
+      "jacket": "smx/YoungForever.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Ghosts",
+      "artist": "Tenth Planet",
+      "genre": "Trance",
+      "bpm": "139",
+      "jacket": "smx/Ghosts.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Justify My Love",
+      "artist": "Tess",
+      "genre": "Eurodance",
+      "bpm": "140",
+      "jacket": "smx/JustifyMyLove.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Movin On",
+      "artist": "Ellen Gee",
+      "genre": "Eurodance",
+      "bpm": "142",
+      "jacket": "smx/MovinOn.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "The Saint Goes Marching",
+      "artist": "The Saint",
+      "genre": "Hardcore",
+      "bpm": "110-175",
+      "jacket": "smx/TheSaintGoesMarching.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Esperanza",
+      "artist": "KaW",
+      "genre": "Techno",
+      "bpm": "147",
+      "jacket": "smx/Esperanza.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Move It Groove It",
+      "artist": "KaW feat. Sam-I-Am",
+      "genre": "Pop",
+      "bpm": "112",
+      "jacket": "smx/MoveItGrooveIt.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Pink Dinosaur",
+      "artist": "Miss Papaya",
+      "genre": "Bubblegum Pop",
+      "bpm": "136",
+      "jacket": "smx/PinkDinosaur.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "A Sign",
+      "artist": "Tipsy & Tipsy",
+      "genre": "Eurobeat",
+      "bpm": "156",
+      "jacket": "smx/ASign.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Anubis",
+      "artist": "Banzai",
+      "genre": "Ethnic House",
+      "bpm": "110",
+      "jacket": "smx/Anubis.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 11, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bandito",
+      "artist": "Remorse Code",
+      "genre": "Electronic Rock",
+      "bpm": "150",
+      "jacket": "smx/Bandito.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Bye Bye Baby Balloon",
+      "artist": "Joga",
+      "genre": "Eurodance",
+      "bpm": "145",
+      "jacket": "smx/ByeByeBabyBalloon.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Dam Dariram",
+      "artist": "Joga",
+      "genre": "Eurodance",
+      "bpm": "142",
+      "jacket": "smx/DamDariram.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 15, "diffClass": "dual" },
+        { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Electric",
+      "artist": "The DNC feat. Miss Amani",
+      "genre": "Pop",
+      "bpm": "120",
+      "jacket": "smx/Electric.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 8, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Exotica",
+      "artist": "Banzai",
+      "genre": "Ethnic House",
+      "bpm": "118",
+      "jacket": "smx/Exotica.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Music & Police",
+      "artist": "CJ Crew & KaW feat. Christian D.",
+      "genre": "Techno",
+      "bpm": "170",
+      "jacket": "smx/Music&Police.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "No Princess",
+      "artist": "Lynn",
+      "genre": "Bubblegum Pop",
+      "bpm": "140",
+      "jacket": "smx/NoPrincess.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "So Deep",
+      "artist": "Silvertear",
+      "genre": "Trance",
+      "bpm": "140",
+      "jacket": "smx/SoDeep.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 5, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Stay",
+      "artist": "Tess",
+      "genre": "Eurodance",
+      "bpm": "140",
+      "jacket": "smx/Stay.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Summer Night In Seattle",
+      "artist": "Jenna Drey",
+      "genre": "Pop",
+      "bpm": "130",
+      "jacket": "smx/SummerNightInSeattle.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "We're Getting Faster",
+      "artist": "Darwin feat. Fraz",
+      "genre": "Hardcore",
+      "bpm": "85-170",
+      "jacket": "smx/We'reGettingFaster.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Your Own Destiny",
+      "artist": "Entity & Darwin",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/YourOwnDestiny.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 12, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 24, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    }
+  ]
+}
