@@ -35,7 +35,8 @@ const GET_IMAGES = true;
 function queueJacketDownload(coverPath) {
   const coverStub = coverPath.split("/")[2];
   const filename = `${coverStub}.jpg`;
-  if (GET_IMAGES) {
+  const outputDest = join(JACKETS_PATH, filename);
+  if (GET_IMAGES && !fs.existsSync(outputDest)) {
     queue
       .add(async () =>
         jimp.read(`https://data.stepmaniax.com/${coverPath}/cover.png`)
@@ -44,7 +45,7 @@ function queueJacketDownload(coverPath) {
         img
           .resize(128, 128)
           .quality(80)
-          .writeAsync(join(JACKETS_PATH, filename))
+          .writeAsync(outputDest)
       );
   }
 
