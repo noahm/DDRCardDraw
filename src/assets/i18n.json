@@ -107,11 +107,11 @@
     },
     "include": "特殊な譜面",
     "controls": {
-      "show": "元に戻す",
-      "hide": "最小化する",
+      "show": "メニューを表示",
+      "hide": "メニューを隠す",
       "invalid": "対象譜面がありません！"
     },
-    "shockArrows": "Shock Arrows",
+    "shockArrows": "ショックアロー",
     "difficulty": {
       "ace": {
         "beg": {
@@ -156,7 +156,7 @@
     },
     "draw": "ドロー！",
     "confirmClose": "本当にこのページを離れますか？",
-    "updateLoading": "Installing an update...",
+    "updateLoading": "更新中...",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
     "credits": "Credits",
     "lastUpdate": "楽曲の更新日：{date}",
