@@ -2975,7 +2975,7 @@
         { "style": "fun", "lvl": 2, "diffClass": "basic" },
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
-        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
         { "style": "fun", "lvl": 17, "diffClass": "dual" },
         { "style": "fun", "lvl": 21, "diffClass": "full" }
       ]
@@ -3035,9 +3035,9 @@
         { "style": "fun", "lvl": 4, "diffClass": "basic" },
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
-        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 15, "diffClass": "dual" },
-        { "style": "fun", "lvl": 21, "diffClass": "full" }
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
     },
     {
@@ -3128,6 +3128,156 @@
         { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 18, "diffClass": "dual" },
         { "style": "fun", "lvl": 19, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Black Magic",
+      "artist": "Matduke",
+      "genre": "Dubstep",
+      "bpm": "140",
+      "jacket": "smx/BlackMagic.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 10, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Crime Time",
+      "artist": "CJ Crew & KaW feat. Sedge",
+      "genre": "Techno",
+      "bpm": "170",
+      "jacket": "smx/CrimeTime.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Magic Mystery Tour",
+      "artist": "KaW feat. Paula Terry",
+      "genre": "Pop",
+      "bpm": "136",
+      "jacket": "smx/MagicMysteryTour.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 14, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "MAX428",
+      "artist": "Omega",
+      "genre": "Techno",
+      "bpm": "110-428",
+      "jacket": "smx/Max428.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 6, "diffClass": "basic" },
+        { "style": "fun", "lvl": 11, "diffClass": "easy" },
+        { "style": "fun", "lvl": 20, "diffClass": "hard" },
+        { "style": "fun", "lvl": 27, "diffClass": "wild" },
+        { "style": "fun", "lvl": 23, "diffClass": "dual" },
+        { "style": "fun", "lvl": 27, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Nightmare",
+      "artist": "FSJ feat. Tara Louise",
+      "genre": "Drum & Bass",
+      "bpm": "87-174",
+      "jacket": "smx/Nightmare.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Night Of Fright",
+      "artist": "Justin Corza & 420",
+      "genre": "House",
+      "bpm": "144",
+      "jacket": "smx/NightOfFright.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Pretty Ugly",
+      "artist": "Yenn",
+      "genre": "Electro House",
+      "bpm": "125",
+      "jacket": "smx/PrettyUgly.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 13, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Riddimino",
+      "artist": "Philstep",
+      "genre": "Dubstep",
+      "bpm": "150",
+      "jacket": "smx/Riddimino.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 2, "diffClass": "basic" },
+        { "style": "fun", "lvl": 7, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Sky High",
+      "artist": "Lucyfer",
+      "genre": "Eurobeat",
+      "bpm": "160",
+      "jacket": "smx/SkyHigh.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 3, "diffClass": "basic" },
+        { "style": "fun", "lvl": 9, "diffClass": "easy" },
+        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
+      ]
+    },
+    {
+      "name": "Warrior",
+      "artist": "Kirill Gramada",
+      "genre": "Drum & Bass",
+      "bpm": "87-174",
+      "jacket": "smx/Warrior.jpg",
+      "charts": [
+        { "style": "fun", "lvl": 4, "diffClass": "basic" },
+        { "style": "fun", "lvl": 8, "diffClass": "easy" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 16, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
       ]
     }
   ]
