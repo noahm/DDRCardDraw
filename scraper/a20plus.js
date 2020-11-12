@@ -72,7 +72,7 @@ function getCharts(chartNodes) {
     if(current.firstChild.textContent === '-') return acc
 
     acc.push({
-      lvl: current.firstChild.textContent,
+      lvl: +current.firstChild.textContent,
       style: index > stylePartation ? 'single' : 'double',
       diffClass: difficultyMap[current.classList[1]]
     })
