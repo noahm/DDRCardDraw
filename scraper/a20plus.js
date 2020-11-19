@@ -76,7 +76,7 @@ function getCharts(chartNodes) {
 
     acc.push({
       lvl: +current.firstChild.textContent,
-      style: index > stylePartation ? "single" : "double",
+      style: index > stylePartation ? "double" : "single",
       diffClass: difficultyMap[current.classList[1]],
     });
     return acc;
