@@ -21,7 +21,7 @@ function App() {
   return (
     <AuthManager>
       <ConfigStateManager>
-        <DrawStateManager defaultDataSet="a20">
+        <DrawStateManager defaultDataSet="a20plus">
           <UpdateManager />
           <Controls />
           {/* <SuspectSongs /> */}
