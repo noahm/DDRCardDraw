@@ -6,7 +6,7 @@ on:
 
 jobs:
   validate:
-    name: Valid Song Data
+    name: Validate & Build
     runs-on: ubuntu-latest
 
     steps:
@@ -15,4 +15,9 @@ jobs:
       with:
         node-version: 12
     - run: yarn --frozen-lockfile
-    - run: yarn validate
+    - run: yarn validate:json
+      name: Validate Song Data
+    - run: yarn validate:ts
+      name: Validate Types
+    - run: yarn build
+      name: Build App
