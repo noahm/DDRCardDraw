@@ -1,0 +1,23 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  validate:
+    name: Validate & Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - run: yarn --frozen-lockfile
+    - run: yarn validate:json
+      name: Validate Song Data
+    - run: yarn validate:ts
+      name: Validate Types
+    - run: yarn webpack
+      name: Build App
