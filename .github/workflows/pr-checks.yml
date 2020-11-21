@@ -19,5 +19,5 @@ jobs:
       name: Validate Song Data
     - run: yarn validate:ts
       name: Validate Types
-    - run: yarn build
+    - run: yarn webpack
       name: Build App
