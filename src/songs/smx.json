@@ -10,7 +10,7 @@
       { "key": "full", "color": "#00d0b8" }
     ],
     "flags": [],
-    "lvlMax": 27
+    "lvlMax": 28
   },
   "defaults": {
     "style": "fun",
@@ -109,9 +109,9 @@
       "charts": [
         { "style": "fun", "lvl": 5, "diffClass": "basic" },
         { "style": "fun", "lvl": 12, "diffClass": "easy" },
-        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 19, "diffClass": "hard" },
         { "style": "fun", "lvl": 25, "diffClass": "wild" },
-        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "dual" },
         { "style": "fun", "lvl": 27, "diffClass": "full" }
       ]
     },
@@ -172,7 +172,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 12, "diffClass": "dual" },
-        { "style": "fun", "lvl": 19, "diffClass": "full" }
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
       ]
     },
     {
@@ -232,7 +232,7 @@
         { "style": "fun", "lvl": 18, "diffClass": "hard" },
         { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 10, "diffClass": "dual" },
-        { "style": "fun", "lvl": 22, "diffClass": "full" }
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
       ]
     },
     {
@@ -709,7 +709,7 @@
       "charts": [
         { "style": "fun", "lvl": 5, "diffClass": "basic" },
         { "style": "fun", "lvl": 11, "diffClass": "easy" },
-        { "style": "fun", "lvl": 17, "diffClass": "hard" },
+        { "style": "fun", "lvl": 18, "diffClass": "hard" },
         { "style": "fun", "lvl": 24, "diffClass": "wild" },
         { "style": "fun", "lvl": 16, "diffClass": "dual" },
         { "style": "fun", "lvl": 21, "diffClass": "full" }
@@ -742,7 +742,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 24, "diffClass": "wild" },
         { "style": "fun", "lvl": 15, "diffClass": "dual" },
-        { "style": "fun", "lvl": 22, "diffClass": "full" }
+        { "style": "fun", "lvl": 23, "diffClass": "full" }
       ]
     },
     {
@@ -787,7 +787,7 @@
         { "style": "fun", "lvl": 13, "diffClass": "hard" },
         { "style": "fun", "lvl": 20, "diffClass": "wild" },
         { "style": "fun", "lvl": 14, "diffClass": "dual" },
-        { "style": "fun", "lvl": 23, "diffClass": "full" }
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
     },
     {
@@ -981,7 +981,7 @@
         { "style": "fun", "lvl": 8, "diffClass": "easy" },
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
         { "style": "fun", "lvl": 23, "diffClass": "wild" },
-        { "style": "fun", "lvl": 19, "diffClass": "dual" },
+        { "style": "fun", "lvl": 20, "diffClass": "dual" },
         { "style": "fun", "lvl": 15, "diffClass": "full" }
       ]
     },
@@ -1174,7 +1174,7 @@
       "charts": [
         { "style": "fun", "lvl": 5, "diffClass": "basic" },
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
-        { "style": "fun", "lvl": 16, "diffClass": "hard" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 19, "diffClass": "dual" },
         { "style": "fun", "lvl": 21, "diffClass": "full" }
@@ -1252,7 +1252,7 @@
         { "style": "fun", "lvl": 15, "diffClass": "hard" },
         { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 15, "diffClass": "dual" },
-        { "style": "fun", "lvl": 23, "diffClass": "full" }
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
     },
     {
@@ -1310,7 +1310,7 @@
         { "style": "fun", "lvl": 3, "diffClass": "basic" },
         { "style": "fun", "lvl": 8, "diffClass": "easy" },
         { "style": "fun", "lvl": 13, "diffClass": "hard" },
-        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 6, "diffClass": "dual" },
         { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
@@ -1415,7 +1415,7 @@
         { "style": "fun", "lvl": 3, "diffClass": "basic" },
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
         { "style": "fun", "lvl": 14, "diffClass": "hard" },
-        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
         { "style": "fun", "lvl": 13, "diffClass": "dual" },
         { "style": "fun", "lvl": 17, "diffClass": "full" }
       ]
@@ -1462,7 +1462,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 26, "diffClass": "wild" },
         { "style": "fun", "lvl": 17, "diffClass": "dual" },
-        { "style": "fun", "lvl": 23, "diffClass": "full" }
+        { "style": "fun", "lvl": 24, "diffClass": "full" }
       ]
     },
     {
@@ -1506,7 +1506,7 @@
         { "style": "fun", "lvl": 12, "diffClass": "easy" },
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
-        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
         { "style": "fun", "lvl": 23, "diffClass": "full" }
       ]
     },
@@ -1522,7 +1522,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 17, "diffClass": "dual" },
-        { "style": "fun", "lvl": 19, "diffClass": "full" }
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
       ]
     },
     {
@@ -1557,7 +1557,7 @@
     },
     {
       "name": "Hispanic Panic",
-      "artist": "Chucho Merchan",
+      "artist": "Chucho Merchán",
       "genre": "Techno",
       "bpm": "140",
       "jacket": "smx/HispanicPanic.jpg",
@@ -1572,7 +1572,7 @@
     },
     {
       "name": "Holy Guacamole",
-      "artist": "Chucho Merchan",
+      "artist": "Chucho Merchán",
       "genre": "Techno",
       "bpm": "139",
       "jacket": "smx/HolyGuacamole.jpg",
@@ -1610,7 +1610,7 @@
         { "style": "fun", "lvl": 6, "diffClass": "basic" },
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
-        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
         { "style": "fun", "lvl": 15, "diffClass": "dual" },
         { "style": "fun", "lvl": 20, "diffClass": "full" }
       ]
@@ -1684,7 +1684,7 @@
       "charts": [
         { "style": "fun", "lvl": 4, "diffClass": "basic" },
         { "style": "fun", "lvl": 12, "diffClass": "easy" },
-        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 22, "diffClass": "dual" },
         { "style": "fun", "lvl": 22, "diffClass": "full" }
@@ -1774,7 +1774,7 @@
       "charts": [
         { "style": "fun", "lvl": 2, "diffClass": "basic" },
         { "style": "fun", "lvl": 7, "diffClass": "easy" },
-        { "style": "fun", "lvl": 14, "diffClass": "hard" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 13, "diffClass": "dual" },
         { "style": "fun", "lvl": 24, "diffClass": "full" }
@@ -1790,7 +1790,7 @@
         { "style": "fun", "lvl": 3, "diffClass": "basic" },
         { "style": "fun", "lvl": 12, "diffClass": "easy" },
         { "style": "fun", "lvl": 18, "diffClass": "hard" },
-        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 23, "diffClass": "wild" },
         { "style": "fun", "lvl": 21, "diffClass": "dual" },
         { "style": "fun", "lvl": 25, "diffClass": "full" }
       ]
@@ -1985,7 +1985,7 @@
         { "style": "fun", "lvl": 3, "diffClass": "basic" },
         { "style": "fun", "lvl": 9, "diffClass": "easy" },
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
-        { "style": "fun", "lvl": 19, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
         { "style": "fun", "lvl": 14, "diffClass": "dual" },
         { "style": "fun", "lvl": 14, "diffClass": "full" }
       ]
@@ -2016,7 +2016,7 @@
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 24, "diffClass": "wild" },
-        { "style": "fun", "lvl": 18, "diffClass": "dual" },
+        { "style": "fun", "lvl": 17, "diffClass": "dual" },
         { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
     },
@@ -2046,7 +2046,7 @@
         { "style": "fun", "lvl": 13, "diffClass": "easy" },
         { "style": "fun", "lvl": 18, "diffClass": "hard" },
         { "style": "fun", "lvl": 25, "diffClass": "wild" },
-        { "style": "fun", "lvl": 23, "diffClass": "dual" },
+        { "style": "fun", "lvl": 21, "diffClass": "dual" },
         { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
     },
@@ -2128,7 +2128,7 @@
     {
       "name": "Boom Boom Dollars",
       "artist": "King Kong & D'Jungle Girls",
-      "genre": "Eurotrance",
+      "genre": "EuroTrance",
       "bpm": "155",
       "jacket": "smx/BoomBoomDollars.jpg",
       "charts": [
@@ -2152,7 +2152,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 23, "diffClass": "wild" },
         { "style": "fun", "lvl": 20, "diffClass": "dual" },
-        { "style": "fun", "lvl": 24, "diffClass": "full" }
+        { "style": "fun", "lvl": 22, "diffClass": "full" }
       ]
     },
     {
@@ -2406,7 +2406,7 @@
         { "style": "fun", "lvl": 12, "diffClass": "easy" },
         { "style": "fun", "lvl": 19, "diffClass": "hard" },
         { "style": "fun", "lvl": 25, "diffClass": "wild" },
-        { "style": "fun", "lvl": 21, "diffClass": "dual" },
+        { "style": "fun", "lvl": 22, "diffClass": "dual" },
         { "style": "fun", "lvl": 26, "diffClass": "full" }
       ]
     },
@@ -2542,7 +2542,7 @@
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
         { "style": "fun", "lvl": 20, "diffClass": "wild" },
         { "style": "fun", "lvl": 16, "diffClass": "dual" },
-        { "style": "fun", "lvl": 19, "diffClass": "full" }
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
       ]
     },
     {
@@ -2645,9 +2645,9 @@
         { "style": "fun", "lvl": 4, "diffClass": "basic" },
         { "style": "fun", "lvl": 7, "diffClass": "easy" },
         { "style": "fun", "lvl": 15, "diffClass": "hard" },
-        { "style": "fun", "lvl": 20, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 15, "diffClass": "dual" },
-        { "style": "fun", "lvl": 17, "diffClass": "full" }
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
       ]
     },
     {
@@ -2750,7 +2750,7 @@
         { "style": "fun", "lvl": 5, "diffClass": "basic" },
         { "style": "fun", "lvl": 9, "diffClass": "easy" },
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
-        { "style": "fun", "lvl": 22, "diffClass": "wild" },
+        { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 16, "diffClass": "dual" },
         { "style": "fun", "lvl": 21, "diffClass": "full" }
       ]
@@ -2887,7 +2887,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 19, "diffClass": "dual" },
-        { "style": "fun", "lvl": 19, "diffClass": "full" }
+        { "style": "fun", "lvl": 21, "diffClass": "full" }
       ]
     },
     {
@@ -2959,7 +2959,7 @@
       "charts": [
         { "style": "fun", "lvl": 5, "diffClass": "basic" },
         { "style": "fun", "lvl": 8, "diffClass": "easy" },
-        { "style": "fun", "lvl": 18, "diffClass": "hard" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 19, "diffClass": "dual" },
         { "style": "fun", "lvl": 20, "diffClass": "full" }
@@ -3169,7 +3169,7 @@
       "charts": [
         { "style": "fun", "lvl": 2, "diffClass": "basic" },
         { "style": "fun", "lvl": 7, "diffClass": "easy" },
-        { "style": "fun", "lvl": 15, "diffClass": "hard" },
+        { "style": "fun", "lvl": 16, "diffClass": "hard" },
         { "style": "fun", "lvl": 19, "diffClass": "wild" },
         { "style": "fun", "lvl": 14, "diffClass": "dual" },
         { "style": "fun", "lvl": 20, "diffClass": "full" }
@@ -3187,7 +3187,7 @@
         { "style": "fun", "lvl": 20, "diffClass": "hard" },
         { "style": "fun", "lvl": 27, "diffClass": "wild" },
         { "style": "fun", "lvl": 23, "diffClass": "dual" },
-        { "style": "fun", "lvl": 27, "diffClass": "full" }
+        { "style": "fun", "lvl": 28, "diffClass": "full" }
       ]
     },
     {
@@ -3305,7 +3305,7 @@
         { "style": "fun", "lvl": 3, "diffClass": "basic" },
         { "style": "fun", "lvl": 8, "diffClass": "easy" },
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
-        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 20, "diffClass": "wild" },
         { "style": "fun", "lvl": 16, "diffClass": "dual" },
         { "style": "fun", "lvl": 13, "diffClass": "full" }
       ]
@@ -3352,7 +3352,7 @@
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 16, "diffClass": "dual" },
-        { "style": "fun", "lvl": 19, "diffClass": "full" }
+        { "style": "fun", "lvl": 18, "diffClass": "full" }
       ]
     },
     {
@@ -3472,7 +3472,7 @@
         { "style": "fun", "lvl": 15, "diffClass": "hard" },
         { "style": "fun", "lvl": 21, "diffClass": "wild" },
         { "style": "fun", "lvl": 15, "diffClass": "dual" },
-        { "style": "fun", "lvl": 19, "diffClass": "full" }
+        { "style": "fun", "lvl": 20, "diffClass": "full" }
       ]
     },
     {
@@ -3522,7 +3522,7 @@
     },
     {
       "name": "Csikos Post",
-      "artist": "BanYa",
+      "artist": "BanYa feat. PJ",
       "genre": "Classical Crossover",
       "bpm": "163",
       "jacket": "smx/CsikosPost.jpg",
@@ -3530,7 +3530,7 @@
         { "style": "fun", "lvl": 5, "diffClass": "basic" },
         { "style": "fun", "lvl": 10, "diffClass": "easy" },
         { "style": "fun", "lvl": 17, "diffClass": "hard" },
-        { "style": "fun", "lvl": 21, "diffClass": "wild" },
+        { "style": "fun", "lvl": 22, "diffClass": "wild" },
         { "style": "fun", "lvl": 19, "diffClass": "dual" },
         { "style": "fun", "lvl": 23, "diffClass": "full" }
       ]
@@ -3621,7 +3621,7 @@
         { "style": "fun", "lvl": 9, "diffClass": "easy" },
         { "style": "fun", "lvl": 16, "diffClass": "hard" },
         { "style": "fun", "lvl": 20, "diffClass": "wild" },
-        { "style": "fun", "lvl": 17, "diffClass": "dual" },
+        { "style": "fun", "lvl": 18, "diffClass": "dual" },
         { "style": "fun", "lvl": 21, "diffClass": "full" }
       ]
     }
