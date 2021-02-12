@@ -476,7 +476,7 @@
       "name": "Sparkle Smilin'",
       "name_translation": "",
       "artist": "BEMANI Sound Team \"Qrispy Joybox\" feat.いちか",
-      "artist_translation": "BEMANI Sound Tea",
+      "artist_translation": "BEMANI Sound Team \"Qrispy Joybox\" feat.ichika",
       "bpm": "180",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -728,7 +728,7 @@
       "name": "狂水一華",
       "name_translation": "Kyousui ichika",
       "artist": "BEMANI Sound Team \"HuΣeR Vs. SYUNN\" feat.いちか",
-      "artist_translation": "BEMANI Sound Tea",
+      "artist_translation": "BEMANI Sound Team \"HuΣeR Vs. SYUNN\" feat.ichika",
       "bpm": "160",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -764,7 +764,7 @@
       "name": "GHOST KINGDOM",
       "name_translation": "",
       "artist": "BEMANI Sound Team \"劇団レコード\"",
-      "artist_translation": "BEMANI Sound Tea",
+      "artist_translation": "BEMANI Sound Team \"Gekidan Record\"",
       "bpm": "118",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -782,7 +782,7 @@
       "name": "Jetcoaster Windy",
       "name_translation": "",
       "artist": "BEMANI Sound Team \"dj TAKA\" feat.のの",
-      "artist_translation": "BEMANI Sound Tea",
+      "artist_translation": "BEMANI Sound Team \"dj TAKA\" feat.nono",
       "bpm": "268",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -793,6 +793,445 @@
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "MUTEKI BUFFALO",
+      "name_translation": "",
+      "artist": "C-Show",
+      "artist_translation": "",
+      "bpm": "88-176",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["goldExclusive"]
+    },
+    {
+      "name": "Inner Spirit -GIGA HiTECH MIX-",
+      "name_translation": "",
+      "artist": "lapix (Remixed by Blacklolita)",
+      "artist_translation": "",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "Going Hypersonic",
+      "name_translation": "",
+      "artist": "Mameyudoufu",
+      "artist_translation": "",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["goldExclusive"]
+    },
+    {
+      "name": "Rave Accelerator",
+      "name_translation": "",
+      "artist": "M-Project",
+      "artist_translation": "",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "X-ray binary",
+      "name_translation": "",
+      "artist": "BEMANI Sound Team \"Trance Liquid\"",
+      "artist_translation": "",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "イノセントバイブル",
+      "name_translation": "innocent bible",
+      "artist": "Vanitas Lacrimosa",
+      "artist_translation": "",
+      "bpm": "105",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 7, "style": "single", "diffClass": "difficult" },
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "ウソツキ横丁は雨模様",
+      "name_translation": "Usotsuki Yokocho ha Ame Moyou",
+      "artist": "夜叉姫神楽",
+      "artist_translation": "Yasha-hime Kagura",
+      "bpm": "110",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "ハラショー！おにぎりサーカス団☆",
+      "name_translation": "khorosho! Riceball Circus☆",
+      "artist": "Blanc Bunny Bandit",
+      "artist_translation": "",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "Red Cape Theorem",
+      "name_translation": "",
+      "artist": "メリー・バッド・メルヘン",
+      "artist_translation": "Merry bad meruhen",
+      "bpm": "95",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "Lightspeed",
+      "name_translation": "",
+      "artist": "Tanukichi",
+      "artist_translation": "",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["goldExclusive"]
+    },
+    {
+      "name": "なだめスかし Negotiation",
+      "name_translation": "Nadamesukashi Negotiation",
+      "artist": "鹿乃と宇崎ちゃん",
+      "artist_translation": "kano to uzaki-chan",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["usLocked"]
+    },
+    {
+      "name": "春を告げる",
+      "name_translation": "Haru wo Tsugeru",
+      "artist": "yama",
+      "artist_translation": "",
+      "bpm": "120",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 8, "style": "double", "diffClass": "difficult" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["usLocked"]
+    },
+    {
+      "name": "SHINY DAYS",
+      "name_translation": "",
+      "artist": "亜咲花",
+      "artist_translation": "Asaka",
+      "bpm": "110",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 8, "style": "double", "diffClass": "difficult" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["usLocked"]
+    },
+    {
+      "name": "Twinkle Wonderland",
+      "name_translation": "",
+      "artist": "Qrispy Joybox feat.Sana",
+      "artist_translation": "",
+      "bpm": "188",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "CONNECT-",
+      "name_translation": "",
+      "artist": "BEMANI Sound Team \"Sota Fujimori\"",
+      "artist_translation": "",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "BRIDAL FESTIVAL !!!",
+      "name_translation": "",
+      "artist": "S.S.D. with ななっち",
+      "artist_translation": "S.S.D. with nanacchi",
+      "bpm": "138",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "Never See You Again",
+      "name_translation": "",
+      "artist": "BEMANI Sound Team \"U1 overground\"",
+      "artist_translation": "",
+      "bpm": "80-160",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 9, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "世界の果てに約束の凱歌を -DDR Extended Megamix-",
+      "name_translation": "sekai no hate ni yakusoku no gaika wo -DDR Extended Megamix-",
+      "artist": "BEMANI Sound Team \"TAG\"",
+      "artist_translation": "",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "beginner" },
+        { "lvl": 10, "style": "single", "diffClass": "basic" },
+        { "lvl": 14, "style": "single", "diffClass": "difficult" },
+        { "lvl": 17, "style": "single", "diffClass": "expert" },
+        { "lvl": 10, "style": "double", "diffClass": "basic" },
+        { "lvl": 14, "style": "double", "diffClass": "difficult" },
+        { "lvl": 17, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "ここからよろしく大作戦143",
+      "name_translation": "Kokokara Yoroshiku Daisakusen143",
+      "artist": "BEMANI Sound Team \"あさき隊\"",
+      "artist_translation": "BEMANI Sound Team \"Asakitai\"",
+      "bpm": "184",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "Run The Show",
+      "name_translation": "",
+      "artist": "fazerock",
+      "artist_translation": "",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "",
+      "flags": ["goldExclusive"]
+    },
+    {
+      "name": "Vertigo",
+      "name_translation": "",
+      "artist": "Hylen feat. VGYO",
+      "artist_translation": "",
+      "bpm": "150-174",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "BITTER CHOCOLATE STRIKER",
+      "name_translation": "",
+      "artist": "L.E.D.-G",
+      "artist_translation": "",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "We're so Happy",
+      "name_translation": "",
+      "artist": "Ryu☆",
+      "artist_translation": "",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "beginner" },
+        { "lvl": 9, "style": "single", "diffClass": "basic" },
+        { "lvl": 13, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": ""
+    },
+    {
+      "name": "梅雪夜",
+      "name_translation": "Umeyukiyo",
+      "artist": "Qrispy Joybox feat. mao",
+      "artist_translation": "",
+      "bpm": "167",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": ""
     },
@@ -1004,8 +1443,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "ORCA.png",
-      "genre": "",
-      "flags": ["extraExclusive"]
+      "genre": ""
     },
     {
       "name": "50th Memorial Songs -Beginning Story-",
