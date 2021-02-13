@@ -1,4 +1,4 @@
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import { useContext } from "preact/hooks";
 import { AuthContext } from "./auth";
 import { TranslateContext } from "@denysvuika/preact-translate";
