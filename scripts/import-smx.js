@@ -22,7 +22,7 @@ const difficulties = [
   "wild",
   "dual",
   "full",
-  // "team", // ignore, don't see a use case
+  "team", // ignore, don't see a use case
 ];
 
 const JACKETS_PATH = resolve(__dirname, "../src/assets/jackets/smx");
@@ -81,7 +81,7 @@ async function main() {
         console.log(`added ${score.song.title} (${songs.length} songs total)`);
       }
       songs[score.song_id].charts.push({
-        style: "fun",
+        style: diff === "team" ? "team" : "solo",
         lvl: score.difficulty,
         diffClass: diff,
       });
@@ -93,7 +93,7 @@ async function main() {
 
   const smxData = {
     meta: {
-      styles: ["fun"],
+      styles: ["solo", "team"],
       difficulties: [
         { key: "basic", color: "#03da00" },
         { key: "easy", color: "#d3b211" },
@@ -101,27 +101,29 @@ async function main() {
         { key: "wild", color: "#3406bc" },
         { key: "dual", color: "#1d72af" },
         { key: "full", color: "#00d0b8" },
+        { key: "team", color: "#c216ce" },
       ],
       flags: [],
       lvlMax,
     },
     defaults: {
-      style: "fun",
+      style: "solo",
       difficulties: ["wild", "hard"],
       flags: [],
-      lowerLvlBound: 16,
+      lowerLvlBound: 18,
       upperLvlBound: 22,
     },
     i18n: {
       en: {
         name: "StepManiaX",
-        fun: "Fun!",
+        solo: "Solo",
         basic: "Basic",
         easy: "Easy",
         hard: "Hard",
         wild: "Wild",
         dual: "Dual",
         full: "Full",
+        team: "Team",
         $abbr: {
           basic: "Basic",
           easy: "Easy",
@@ -129,6 +131,7 @@ async function main() {
           wild: "Wild",
           dual: "Dual",
           full: "Full",
+          team: "Team",
         },
       },
     },

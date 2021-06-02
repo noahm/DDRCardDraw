@@ -1,12 +1,13 @@
 import classNames from "classnames";
 import { TranslateContext } from "@denysvuika/preact-translate";
-import { useContext, useRef, useState } from "preact/hooks";
+import { useContext, useMemo, useRef, useState } from "preact/hooks";
 import globalStyles from "../app.css";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { DrawStateContext } from "../draw-state";
 import { JSXInternal } from "preact/src/jsx";
 import { ConfigStateContext } from "../config-state";
+import { GameData } from "../models/SongData";
 
 function preventDefault(e: Event) {
   e.preventDefault();
@@ -16,6 +17,18 @@ const DATA_FILES = (process.env.DATA_FILES as unknown) as Array<{
   name: string;
   display: string;
 }>;
+
+function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
+  let s = new Set<string>();
+  for (const f of gameData.songs) {
+    for (const c of f.charts) {
+      if (c.style === selectedStyle) {
+        s.add(c.diffClass);
+      }
+    }
+  }
+  return gameData.meta.difficulties.filter((d) => s.has(d.key));
+}
 
 export function Controls() {
   const form = useRef<HTMLFormElement>();
@@ -39,10 +52,16 @@ export function Controls() {
     style: selectedStyle,
     chartCount,
   } = configState;
+  const availableDifficulties = useMemo(() => {
+    if (!gameData) {
+      return [];
+    }
+    return getAvailableDifficulties(gameData, selectedStyle);
+  }, [gameData, selectedStyle]);
   if (!gameData) {
     return null;
   }
-  const { difficulties, flags, lvlMax, styles: gameStyles } = gameData.meta;
+  const { flags, lvlMax, styles: gameStyles } = gameData.meta;
 
   const handleLowerBoundChange = (
     e: JSXInternal.TargetedEvent<HTMLInputElement>
@@ -177,7 +196,36 @@ export function Controls() {
                   value={selectedStyle}
                   onInput={(e) => {
                     updateState((s) => {
-                      return { ...s, style: e.currentTarget.value };
+                      const nextStyle = e.currentTarget.value;
+                      const availableDifficulties = getAvailableDifficulties(
+                        gameData,
+                        nextStyle
+                      );
+                      let chosenDifficulties = s.difficulties;
+                      if (
+                        !availableDifficulties.some((d) =>
+                          chosenDifficulties.has(d.key)
+                        )
+                      ) {
+                        chosenDifficulties = new Set(
+                          gameData.defaults.difficulties
+                        );
+                      }
+
+                      if (
+                        !availableDifficulties.some((d) =>
+                          chosenDifficulties.has(d.key)
+                        )
+                      ) {
+                        chosenDifficulties = new Set(
+                          availableDifficulties.map((d) => d.key)
+                        );
+                      }
+                      return {
+                        ...s,
+                        style: nextStyle,
+                        difficulties: chosenDifficulties,
+                      };
                     });
                   }}
                 >
@@ -192,7 +240,7 @@ export function Controls() {
           )}
           <div className={styles.group}>
             {t("difficulties")}:
-            {difficulties.map((dif) => (
+            {availableDifficulties.map((dif) => (
               <label key={`${dataSetName}:${dif.key}`}>
                 <input
                   type="checkbox"
