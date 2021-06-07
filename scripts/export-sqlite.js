@@ -60,7 +60,7 @@ function parseBpm(bpmAsString) {
       gameID,
       song.name,
       song.artist,
-      "https://ddrdraw.surge.sh/jackets/" + song.jacket,
+      song.jacket ? "https://ddrdraw.surge.sh/jackets/" + song.jacket : null,
       min,
       max,
       song.name_translation ?? null,
