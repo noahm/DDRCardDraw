@@ -14,6 +14,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
+      - name: Install Deps
+        run: yarn
       - name: Build and Publish
         run: yarn deploy
         env:
