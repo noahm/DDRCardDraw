@@ -18,14 +18,13 @@
   flex-direction: row;
 }
 .suggestion:hover {
-  background-color: lightgray;
+  background-color: rgb(230, 230, 230);
 }
 .suggestion:not(:last-child) {
   border-bottom: 1px solid lightgray;
 }
 
 .img {
-  height: 50px;
   margin-left: 0;
   margin-right: 0.25em;
 }
@@ -44,4 +43,13 @@
 }
 .chart:hover {
   box-shadow: 0 0 5px black;
+}
+
+.noChart {
+  display: inline-block;
+  padding: 0.25em;
+  border-radius: 3px;
+  margin: 0 0.25em;
+  background-color: lightgray;
+  max-width: 3em;
 }

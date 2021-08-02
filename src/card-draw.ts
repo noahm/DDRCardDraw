@@ -22,6 +22,22 @@ export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
  */
 let drawingID = 0;
 
+/** returns true if song matches configured flags */
+export function songIsValid(config: ConfigState, song: Song): boolean {
+  return !song.flags || song.flags.every((f) => config.flags.has(f));
+}
+
+/** returns true if chart matches configured difficulty/style/lvl/flags */
+export function chartIsValid(config: ConfigState, chart: Chart): boolean {
+  return (
+    chart.style === config.style &&
+    config.difficulties.has(chart.diffClass) &&
+    chart.lvl >= config.lowerBound &&
+    chart.lvl <= config.upperBound &&
+    (!chart.flags || chart.flags.every((f) => config.flags.has(f)))
+  );
+}
+
 /**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
@@ -49,23 +65,13 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   });
 
   for (const currentSong of gameData.songs) {
-    const charts = currentSong.charts.filter((c) => c.style === style);
-    // song-level filters
-    if (
-      currentSong.flags &&
-      !currentSong.flags.every((flag) => inclusions.has(flag))
-    ) {
+    if (!songIsValid(configData, currentSong)) {
       continue;
     }
+    const charts = currentSong.charts.filter((c) => c.style === style);
 
-    for (const chart of charts) {
-      // chart-level filters
-      if (
-        !difficulties.has(chart.diffClass) || // don't want this difficulty
-        (chart.flags && !chart.flags.every((flag) => inclusions.has(flag))) || // doesn't exactly match our flags
-        chart.lvl < lowerBound || // too easy
-        chart.lvl > upperBound // too hard
-      ) {
+    for (const chart of currentSong.charts) {
+      if (!chartIsValid(configData, chart)) {
         continue;
       }
 

@@ -2,13 +2,16 @@ import classNames from "classnames";
 import { useContext, useState, useRef, useLayoutEffect } from "preact/hooks";
 import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
-import { getDrawnChart } from "./card-draw";
+import { getDrawnChart, songIsValid, chartIsValid } from "./card-draw";
 import { DrawnChart } from "./models/Drawing";
 import { Modal } from "./modal";
-import FuzzySearch from "fuzzy-search";
-import { Song, GameData, Chart } from "./models/SongData";
+import { Song, Chart } from "./models/SongData";
 import { AbbrDifficulty } from "./game-data-utils";
 import { useDifficultyColor } from "./hooks/useDifficultyColor";
+import { JSX } from "preact";
+import { ConfigStateContext, ConfigState } from "./config-state";
+import { SongJacket } from "./song-jacket";
+import { TranslateContext } from "@denysvuika/preact-translate";
 
 interface ChartOptionProps {
   chart: Chart;
@@ -19,7 +22,7 @@ function ChartOption({ chart, onClick }: ChartOptionProps) {
   const bg = useDifficultyColor(chart.diffClass);
   return (
     <div
-      className={classNames(styles.chart, styles.dif)}
+      className={styles.chart}
       style={{ backgroundColor: bg }}
       onClick={onClick}
     >
@@ -30,40 +33,36 @@ function ChartOption({ chart, onClick }: ChartOptionProps) {
   );
 }
 
-function getSuggestions(
-  fuzzySearch: FuzzySearch<Song>,
-  searchTerm: string,
-  onSelect: (chart: DrawnChart) => void
-) {
-  if (fuzzySearch && searchTerm) {
-    const suggestions = fuzzySearch.search(searchTerm).slice(0, 5);
-    if (suggestions.length) {
-      return suggestions.map(song => (
-        <div className={styles.suggestion}>
-          <img src={`jackets/${song.jacket}`} className={styles.img} />
-          <div className={styles.title}>
-            {song.name_translation || song.name}
-            <br />
-            {song.artist_translation || song.artist}
-          </div>
-          {/*
-          TODO: display all charts that match style, level range, and difficulty classes currently selected
-          TBD: how to integrate style + diff class abbreviations like CSP into the new dynamic data format
-          */}
-          {song.charts
-            .filter(c => c.style === "single" && c.lvl >= 12)
-            .map(chart => (
-              <ChartOption
-                key={`${chart.style}:${chart.diffClass}:${chart.lvl}`}
-                chart={chart}
-                onClick={() => onSelect(getDrawnChart(song, chart))}
-              />
-            ))}
-        </div>
-      ));
-    }
-  }
-  return null;
+interface ResultsProps {
+  song: Song;
+  config: ConfigState;
+  onSelect: (chart: DrawnChart) => void;
+}
+
+function SearchResult({ config, song, onSelect }: ResultsProps) {
+  const validCharts = song.charts.filter(chartIsValid.bind(undefined, config));
+  const { t } = useContext(TranslateContext);
+
+  return (
+    <div className={styles.suggestion}>
+      <SongJacket song={song} height={50} className={styles.img} />
+      <div className={styles.title}>
+        {song.name_translation || song.name}
+        <br />
+        {song.artist_translation || song.artist}
+      </div>
+      {validCharts.map((chart) => (
+        <ChartOption
+          key={`${chart.style}:${chart.diffClass}:${chart.lvl}`}
+          chart={chart}
+          onClick={() => onSelect(getDrawnChart(song, chart))}
+        />
+      ))}
+      {validCharts.length === 0 && (
+        <div className={styles.noChart}>{t("noValidCharts")}</div>
+      )}
+    </div>
+  );
 }
 
 interface Props {
@@ -75,6 +74,7 @@ interface Props {
 export function SongSearch(props: Props) {
   const { autofocus, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
+  const config = useContext(ConfigStateContext);
 
   const { fuzzySearch } = useContext(DrawStateContext);
   const input = useRef<HTMLInputElement>();
@@ -84,6 +84,24 @@ export function SongSearch(props: Props) {
     }
   }, []);
 
+  let contents: JSX.Element[] | string | null = null;
+  if (!fuzzySearch) {
+    contents = "Search is not loaded right now.";
+  } else if (searchTerm) {
+    contents = fuzzySearch
+      .search(searchTerm)
+      .filter(songIsValid.bind(undefined, config))
+      .slice(0, 5)
+      .map((song, idx) => (
+        <SearchResult
+          key={idx}
+          config={config}
+          song={song}
+          onSelect={onSongSelect}
+        />
+      ));
+  }
+
   return (
     <Modal onClose={onCancel}>
       <div className={styles.input}>
@@ -91,7 +109,7 @@ export function SongSearch(props: Props) {
           placeholder="Search for a song"
           ref={input}
           type="search"
-          onKeyUp={e => {
+          onKeyUp={(e) => {
             if (e.keyCode === 27) {
               updateSearchTerm("");
               onCancel && onCancel();
@@ -102,11 +120,7 @@ export function SongSearch(props: Props) {
           value={searchTerm}
         />
       </div>
-      <div className={styles.suggestionSet}>
-        {fuzzySearch
-          ? getSuggestions(fuzzySearch, searchTerm, onSongSelect)
-          : "Search is not loaded right now."}
-      </div>
+      <div className={styles.suggestionSet}>{contents}</div>
     </Modal>
   );
 }

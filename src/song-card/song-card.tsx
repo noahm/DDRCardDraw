@@ -36,7 +36,7 @@ export function SongCard(props: Props) {
     onVeto,
     onProtect,
     onReplace,
-    onReset
+    onReset,
   } = props;
 
   const { t } = useContext(TranslateContext);
@@ -56,19 +56,19 @@ export function SongCard(props: Props) {
     difficultyClass,
     level,
     hasShock,
-    jacket
+    jacket,
   } = replacedWith || chart;
   const diffAccentColor = useDifficultyColor(difficultyClass);
 
   const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
-    [styles.protected]: protectedBy || replacedBy
+    [styles.protected]: protectedBy || replacedBy,
   });
 
   let jacketBg = {};
   if (jacket) {
     jacketBg = {
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("jackets/${jacket}")`
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("jackets/${jacket}")`,
     };
   }
 
