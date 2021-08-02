@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn
+          yarn --frozen-lockfile
           yarn build
 
       - name: Publish to surge.sh
