@@ -1,42 +1,31 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy Main
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: [main]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   deploy:
     name: Deploy to Surge
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - name: Use Node.js 14.x
+      - name: Use Node.js 14
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
-
+          node-version: 14
       - name: Build
         run: |
           yarn --frozen-lockfile
           yarn build
-
       - name: Publish to surge.sh
         uses: dswistowski/surge-sh-action@v1.0.1
         with:
-          domain: 'ddrdraw.surge.sh'
-          project: '.'
+          domain: "ddrdraw.surge.sh"
+          project: "."
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
