@@ -1,0 +1,21 @@
+name: Deploy to Surge (main)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Surge
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Build and Publish
+        run: yarn publish
+        env:
+          SURGE_LOGIN: ${{ secrets.surge_login }}
+          SURGE_TOKEN: ${{ secrets.surge_token }}
