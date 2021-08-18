@@ -2,12 +2,19 @@
 const { JSDOM } = require("jsdom");
 const a20DataList = require("../src/songs/a20.json").songs;
 
-const ZIV_EXTREME =
-  "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc";
+module.exports = {
+  getSongsFromZiv,
+};
 
-JSDOM.fromURL(ZIV_EXTREME)
-  .then(scrapeSongData)
-  .then(writeDataFile);
+/**
+ * @return {Promise<Array<{}>>}
+ */
+function getSongsFromZiv() {
+  const ZIV_EXTREME =
+    "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc";
+
+  return JSDOM.fromURL(ZIV_EXTREME).then(scrapeSongData);
+}
 
 const translationNodeQuery = "span[onmouseover]";
 
@@ -69,8 +76,10 @@ const titleList = [
   { name: "DanceDanceRevolution 1st Mix" },
 ];
 
+/**
+ * @param {any[]} chartNodes
+ */
 function getCharts(chartNodes) {
-  const charts = {};
   return chartNodes.reduce((acc, current, index) => {
     if (current.firstChild.textContent === "-") return acc;
 
@@ -96,7 +105,7 @@ function scrapeSongData(dom) {
       number,
     };
   });
-  console.log(titleMap);
+  console.log("Songs scraped:", titleMap);
 
   const songs = [];
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
@@ -133,22 +142,4 @@ function createSongData(songLink, title) {
     ...a20Data,
   };
   return songData;
-}
-
-function writeDataFile(songs) {
-  const fs = require("fs");
-  const path = require("path");
-  const prettier = require("prettier");
-
-  const targetFile = path.join(__dirname, "../src/songs/a20plus.json");
-  const existingData = JSON.parse(
-    fs.readFileSync(targetFile, { encoding: "utf8" })
-  );
-  existingData.songs = songs;
-  fs.writeFileSync(
-    targetFile,
-    prettier.format(JSON.stringify(existingData), { filepath: targetFile })
-  );
-
-  console.log(`Wrote ${songs.length} songs to a20plus.json`);
 }

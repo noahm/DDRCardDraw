@@ -9,6 +9,7 @@
     "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
     "deploy:staging": "npm run build && surge ./dist https://ddrdraw-staging.surge.sh",
     "deploy:firebase": "npm run build && firebase deploy",
+    "import:a20plus": "node scripts/import-a20plus.js",
     "import:sdvx": "node scripts/import-sdvx.js",
     "import:smx": "node scripts/import-smx.js",
     "migrate": "node scripts/migrate.js",
