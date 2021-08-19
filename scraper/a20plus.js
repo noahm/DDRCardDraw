@@ -1,10 +1,61 @@
 // @ts-check
 const { JSDOM } = require("jsdom");
+const { default: fetch } = require("node-fetch");
+const readline = require("readline");
+const iconv = require("iconv-lite");
+const he = require("he");
 const a20DataList = require("../src/songs/a20.json").songs;
+
+// map from bad ziv title to our better title
+const ZIV_TITLE_CORRECTIONS = {
+  "CAN'T STOP FALLIN'IN LOVE": "CAN'T STOP FALLIN' IN LOVE",
+  "MARIA (I believe... )": "MARIA (I believe...)",
+  "魔法のたまご～心菜 ELECTRO POP edition～":
+    "魔法のたまご ～心菜 ELECTRO POP edition～",
+  "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
+};
 
 module.exports = {
   getSongsFromZiv,
+  getSongsFromSkillAttack,
 };
+
+async function getSongsFromSkillAttack() {
+  const resp = await fetch("http://skillattack.com/sa4/data/master_music.txt");
+
+  return new Promise((resolve) => {
+    const decoder = iconv.decodeStream("Shift_JIS");
+    resp.body.pipe(decoder);
+    const rl = readline.createInterface(decoder);
+    const data = [];
+    rl.on("line", (rawLine) => {
+      const [index, hash, ...fields] = rawLine.split("\t");
+      const charts = [];
+      let i = 0;
+      for (const field of fields) {
+        i++;
+        if (i > 9) break;
+        const lvl = parseInt(field, 10);
+        if (lvl < 0) continue;
+        charts.push({
+          lvl,
+          style: i > singlesColumnCount ? "double" : "single",
+          diffClass: difficultyByIndex[i - 1],
+        });
+      }
+      data.push({
+        saHash: hash,
+        saIndex: index,
+        name: he.decode(fields[9]),
+        artist: he.decode(fields[10]),
+        charts,
+      });
+    });
+    rl.on("close", () => {
+      resolve(data);
+    });
+  });
+}
 
 /**
  * @return {Promise<Array<{}>>}
@@ -31,19 +82,17 @@ function getTranslationText(node) {
   return translationNode.attributes.onmouseover.value.slice(16, -2);
 }
 
-function getChart(chartNode) {
-  const difficulty = chartNode.firstChild.textContent;
-  if (difficulty === "-") {
-    return null;
-  }
-  const [step, freeze] = chartNode.lastElementChild.textContent.split(" / ");
-  return {
-    difficulty,
-    step,
-    shock: "0",
-    freeze,
-  };
-}
+const difficultyByIndex = [
+  "beginner",
+  "basic",
+  "difficult",
+  "expert",
+  "challenge",
+  "basic",
+  "difficult",
+  "expert",
+  "challenge",
+];
 
 const difficultyMap = {
   lightblue: "beginner",
@@ -52,8 +101,6 @@ const difficultyMap = {
   green: "expert",
   purple: "challenge",
 };
-
-const stylePartation = 4;
 
 const titleList = [
   { name: "DanceDanceRevolution A20 PLUS" },
@@ -76,20 +123,24 @@ const titleList = [
   { name: "DanceDanceRevolution 1st Mix" },
 ];
 
+const singlesColumnCount = 5;
 /**
  * @param {any[]} chartNodes
  */
 function getCharts(chartNodes) {
-  return chartNodes.reduce((acc, current, index) => {
-    if (current.firstChild.textContent === "-") return acc;
+  const charts = [];
+  let index = 0;
+  for (const current of chartNodes) {
+    index++;
+    if (current.firstChild.textContent === "-") continue;
 
-    acc.push({
+    charts.push({
       lvl: +current.firstChild.textContent,
-      style: index > stylePartation ? "double" : "single",
+      style: index > singlesColumnCount ? "double" : "single",
       diffClass: difficultyMap[current.classList[1]],
     });
-    return acc;
-  }, []);
+  }
+  return charts;
 }
 
 function scrapeSongData(dom) {
@@ -120,7 +171,7 @@ function scrapeSongData(dom) {
   return songs;
 }
 
-function createSongData(songLink, title) {
+function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
     ? songRow.firstChild.lastChild
@@ -130,16 +181,19 @@ function createSongData(songLink, title) {
   const a20Data = a20DataList.find(
     (target) => target.name.toLowerCase() === songLink.text.trim().toLowerCase()
   );
+  let songName = songLink.text.trim();
+  if (ZIV_TITLE_CORRECTIONS[songName]) {
+    songName = ZIV_TITLE_CORRECTIONS[songName];
+  }
   const songData = {
-    name: songLink.text.trim(),
+    name: songName,
     name_translation: getTranslationText(songLink),
     artist: artistNode.textContent.trim(),
     artist_translation: getTranslationText(artistNode),
     bpm: songRow.children[1].textContent.trim(),
-    folder: title,
+    folder,
     charts: getCharts(chartNodes),
     jacket: "",
-    ...a20Data,
   };
   return songData;
 }
