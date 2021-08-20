@@ -4,21 +4,23 @@ const { default: fetch } = require("node-fetch");
 const readline = require("readline");
 const iconv = require("iconv-lite");
 const he = require("he");
-const a20DataList = require("../src/songs/a20.json").songs;
-
-// map from bad ziv title to our better title
-const ZIV_TITLE_CORRECTIONS = {
-  "CAN'T STOP FALLIN'IN LOVE": "CAN'T STOP FALLIN' IN LOVE",
-  "MARIA (I believe... )": "MARIA (I believe...)",
-  "魔法のたまご～心菜 ELECTRO POP edition～":
-    "魔法のたまご ～心菜 ELECTRO POP edition～",
-  "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
-};
 
 module.exports = {
   getSongsFromZiv,
   getSongsFromSkillAttack,
 };
+
+const difficultyByIndex = [
+  "beginner",
+  "basic",
+  "difficult",
+  "expert",
+  "challenge",
+  "basic",
+  "difficult",
+  "expert",
+  "challenge",
+];
 
 async function getSongsFromSkillAttack() {
   const resp = await fetch("http://skillattack.com/sa4/data/master_music.txt");
@@ -67,6 +69,8 @@ function getSongsFromZiv() {
   return JSDOM.fromURL(ZIV_EXTREME).then(scrapeSongData);
 }
 
+getSongsFromZiv();
+
 const translationNodeQuery = "span[onmouseover]";
 
 function getTranslationText(node) {
@@ -81,18 +85,6 @@ function getTranslationText(node) {
   }
   return translationNode.attributes.onmouseover.value.slice(16, -2);
 }
-
-const difficultyByIndex = [
-  "beginner",
-  "basic",
-  "difficult",
-  "expert",
-  "challenge",
-  "basic",
-  "difficult",
-  "expert",
-  "challenge",
-];
 
 const difficultyMap = {
   lightblue: "beginner",
@@ -133,12 +125,15 @@ function getCharts(chartNodes) {
   for (const current of chartNodes) {
     index++;
     if (current.firstChild.textContent === "-") continue;
-
-    charts.push({
+    const chart = {
       lvl: +current.firstChild.textContent,
       style: index > singlesColumnCount ? "double" : "single",
       diffClass: difficultyMap[current.classList[1]],
-    });
+    };
+    if (current.firstChild.style.color === "red") {
+      chart.flags = ["unlock"];
+    }
+    charts.push(chart);
   }
   return charts;
 }
@@ -171,6 +166,15 @@ function scrapeSongData(dom) {
   return songs;
 }
 
+// map from bad ziv title to our better title
+const ZIV_TITLE_CORRECTIONS = {
+  "CAN'T STOP FALLIN'IN LOVE": "CAN'T STOP FALLIN' IN LOVE",
+  "MARIA (I believe... )": "MARIA (I believe...)",
+  "魔法のたまご～心菜 ELECTRO POP edition～":
+    "魔法のたまご ～心菜 ELECTRO POP edition～",
+  "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
+};
+
 function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
@@ -178,9 +182,6 @@ function createSongData(songLink, folder) {
     : songRow.firstChild.lastElementChild;
   const chartNodes = Array.from(songRow.children).slice(2);
 
-  const a20Data = a20DataList.find(
-    (target) => target.name.toLowerCase() === songLink.text.trim().toLowerCase()
-  );
   let songName = songLink.text.trim();
   if (ZIV_TITLE_CORRECTIONS[songName]) {
     songName = ZIV_TITLE_CORRECTIONS[songName];

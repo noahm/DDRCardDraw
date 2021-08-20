@@ -45,20 +45,43 @@ function mergeSongs(oldData, zivData, saData) {
   if (oldData.bpm.length > data.bpm) {
     data.bpm = oldData.bpm;
   }
+  if (!saData) {
+    console.error("missing SA data for:", zivData.name);
+  }
   // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
   data.charts = (saData || data).charts.map((chart) => {
-    const oldChart = oldData.charts.find(
-      (oc) => oc.style === chart.style && oc.diffClass === chart.diffClass
-    );
+    const oldChart = findMatchingChart(oldData.charts, chart);
+    let zivChart = findMatchingChart(zivData.charts, chart);
     if (oldChart) {
       return {
         ...oldChart,
         lvl: chart.lvl,
+        flags: mergeFlags(oldChart.flags, zivChart.flags),
       };
     }
     return chart;
   });
   return data;
+}
+
+function findMatchingChart(charts, target) {
+  return charts.find(
+    (oc) => oc.style === target.style && oc.diffClass === target.diffClass
+  );
+}
+
+function mergeFlags(flagsA, flagsB) {
+  const flags = [];
+  if (flagsA) {
+    flags.push(...flagsA);
+  }
+  if (flagsB) {
+    flags.push(...flagsB);
+  }
+  if (!flags.length) {
+    return;
+  }
+  return Array.from(new Set(flags));
 }
 
 function findSongFromSa(indexedSongs, saIndex, song) {
