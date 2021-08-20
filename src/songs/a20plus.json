@@ -8,7 +8,13 @@
       { "key": "expert", "color": "#72cc6e" },
       { "key": "challenge", "color": "#cc71e8" }
     ],
-    "flags": [],
+    "flags": [
+      "unlock",
+      "goldenLeague",
+      "extraExclusive",
+      "goldExclusive",
+      "tempUnlock"
+    ],
     "lvlMax": 19
   },
   "defaults": {
@@ -28,6 +34,11 @@
       "difficult": "Difficult",
       "expert": "Expert",
       "challenge": "Challenge",
+      "unlock": "Unlockable songs",
+      "goldExclusive": "20th Gold Cab Exclusive",
+      "goldenLeague": "Golden League",
+      "extraExclusive": "Final/Extra Exclusive",
+      "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -45,6 +56,11 @@
       "difficult": "Difficult",
       "expert": "Expert",
       "challenge": "Challenge",
+      "unlock": "未解禁曲を含める",
+      "goldExclusive": "A20筐体限定曲を含める",
+      "goldenLeague": "Golden League",
+      "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
+      "tempUnlock": "現在解禁できない曲を含める",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -1010,7 +1026,6 @@
       ],
       "jacket": "Ace out.png",
       "genre": "",
-      "flags": ["unlock", "goldExclusive"],
       "saHash": "l61ldlPo1DQ081860O86D0Qo0qdOd0qP",
       "saIndex": "879"
     },
@@ -1724,7 +1739,6 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "ALPACORE.png",
-      "flags": ["goldExclusive"],
       "saHash": "6d8DiDl0i1oldbbo0o60PQ0q96d608Dq",
       "saIndex": "901"
     },
@@ -2232,7 +2246,6 @@
       ],
       "jacket": "Avenger.png",
       "genre": "",
-      "flags": ["unlock", "goldExclusive"],
       "saHash": "9DoD10OPQ999IlP0doo69olbOQ680q09",
       "saIndex": "857"
     },
@@ -2735,6 +2748,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "oloPOQPQ8Q8IQQoiO9bqdDOo8o6OQ6qI",
       "saIndex": "963"
     },
@@ -3091,6 +3105,7 @@
       ],
       "jacket": "Believe.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "00q86iQQIIiOlqi6Doqi6b9PiOodo10O",
       "saIndex": "709"
     },
@@ -3111,6 +3126,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "o9P816l0QQ1b9l1l6i1o6OD9bl9dP00l",
       "saIndex": "990"
     },
@@ -3566,6 +3582,7 @@
       ],
       "jacket": "Break Free.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "6DP8POdO1PiP0D8il08Po6iD8oI9Pidl",
       "saIndex": "710"
     },
@@ -3605,6 +3622,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "91ioD99OdDD9db8qilod818OPqb88idQ",
       "saIndex": "984"
     },
@@ -4963,6 +4981,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "6OiD0q6O8qi6oDbQ18Ilo8do8biDD1ll",
       "saIndex": "946"
     },
@@ -5796,6 +5815,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["goldenLeague"],
       "saHash": "1qPIiqqQo0P9dD90I11q90b0ooIidbPO",
       "saIndex": "921"
     },
@@ -6442,6 +6462,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "9PoQqIP0D6lPIq9obl1db9IqD0D09i80",
       "saIndex": "942"
     },
@@ -6713,6 +6734,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "i6bl89d6OOi1O00qlQOIl8b8Qld6IiQP",
       "saIndex": "966"
     },
@@ -7281,6 +7303,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["goldenLeague"],
       "saHash": "dqQbQ9oPlIi6bDdi18d9qPlDb0PiDddi",
       "saIndex": "954"
     },
@@ -7828,6 +7851,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["goldenLeague"],
       "saHash": "D6ll81qoDDPIq0d89O69dIQIldQdQoId",
       "saIndex": "962"
     },
@@ -9363,6 +9387,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "P06O6iQbiPPqiIqOd0IQdqolbPbDId6Q",
       "saIndex": "994"
     },
@@ -10169,6 +10194,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
+          "shock": 1,
           "flags": ["unlock"]
         },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
@@ -10178,10 +10204,12 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
+          "shock": 1,
           "flags": ["unlock"]
         }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "qqDOddP66Ol1q1IIOb1OPO68DP1ood1i",
       "saIndex": "919"
     },
@@ -11476,6 +11504,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "dQbolPiDiiObioli96DlOo9OlP9DoDIi",
       "saIndex": "967"
     },
@@ -11554,7 +11583,6 @@
       ],
       "jacket": "Give Me.png",
       "genre": "",
-      "flags": ["unlock", "goldExclusive"],
       "saHash": "d9llb88lDI1q0QI10P01lqIqlI6QO0Dl",
       "saIndex": "868"
     },
@@ -11672,7 +11700,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
-      "flags": ["goldExclusive"],
+      "flags": ["goldenLeague"],
       "saHash": "6Obi001oi9Qd1966dOd6d6Qo66dbbill",
       "saIndex": "971"
     },
@@ -11799,6 +11827,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["goldenLeague"],
       "saHash": "dIdDQD1Q8oPQ90Q1DPbiQI661qD9oi6I",
       "saIndex": "916"
     },
@@ -11819,6 +11848,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["goldenLeague"],
       "saHash": "i9PQoDbQI0qqd6I00d19bQo6q9PoOIbO",
       "saIndex": "1010"
     },
@@ -12342,6 +12372,7 @@
       ],
       "jacket": "Happy.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO",
       "saIndex": "711"
     },
@@ -12540,6 +12571,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "Qb8P9PODDo68lPqQ0o6d80bIqDOiPD9Q",
       "saIndex": "964"
     },
@@ -13090,6 +13122,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "i8iPdIlP1IIDib96Qq080ibq6bblQqQD",
       "saIndex": "995"
     },
@@ -13251,7 +13284,8 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "High School Love",
@@ -13406,6 +13440,7 @@
       ],
       "jacket": "Hillbilly Shoes.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "dll6Dq0blbl1iPbIIiQ61QIoo00doqiI",
       "saIndex": "712"
     },
@@ -14118,6 +14153,7 @@
       ],
       "jacket": "I Want You To Know.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "00Qbd9qoI681Q0biQOIiI08bI91i080l",
       "saIndex": "713"
     },
@@ -14427,6 +14463,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "6ID160b99ibbd9OoblD0DPOl98lPbq6D",
       "saIndex": "1005"
     },
@@ -14975,6 +15012,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "9o6bIq98Qo8dOd11DI0d8boblOqO0I1i",
       "saIndex": "970"
     },
@@ -15580,6 +15618,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "qD1I6qqll88q9dq9PoloD68lqddIDo6O",
       "saIndex": "968"
     },
@@ -15810,7 +15849,8 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "KEEP ON MOVIN'",
@@ -16575,6 +16615,7 @@
         }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "bIlqP91O9ld1lqlq6qoq9OiPdqIDPP0l",
       "saIndex": "920"
     },
@@ -16616,6 +16657,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "PllDll9di16l8ild6b688l6OP6olQid8",
       "saIndex": "955"
     },
@@ -16892,7 +16934,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
-      "flags": ["goldExclusive"],
+      "flags": ["goldenLeague"],
       "saHash": "bqi9QiQ0lbi8id6lOi88iIi9lo6Pdd90",
       "saIndex": "978"
     },
@@ -16912,7 +16954,8 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "LOGICAL DASH",
@@ -18771,6 +18814,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "ll0O8PlqQd0iOO8ib61lO6iDiliQdiPP",
       "saIndex": "944"
     },
@@ -19319,7 +19363,8 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "murmur twins",
@@ -19440,7 +19485,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
-      "flags": ["goldExclusive"],
+      "flags": ["goldenLeague"],
       "saHash": "d10d86DQqqd6QDlQlOI1bQi9do66l8Od",
       "saIndex": "969"
     },
@@ -19710,6 +19755,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "Q9QlQI6Dd09P6i1bP9d8q0IQlPoqiQ81",
       "saIndex": "985"
     },
@@ -19981,7 +20027,6 @@
       ],
       "jacket": "New Era.png",
       "genre": "",
-      "flags": ["unlock", "goldExclusive"],
       "saHash": "DdIo9DQ0ddDld99DQdiiqbPP06OI91I0",
       "saIndex": "862"
     },
@@ -20360,6 +20405,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "b80oDO98iPDO1100IbOo8160bPdd898I",
       "saIndex": "1004"
     },
@@ -20974,6 +21020,7 @@
       ],
       "jacket": "only my railgun.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "blDbDqdo1D0odlQd9biIoio8ioQPb80i",
       "saIndex": "371"
     },
@@ -20994,6 +21041,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "Dl91ldlb8PODoO96OI801DP0PPl8Plqi",
       "saIndex": "1006"
     },
@@ -21262,6 +21310,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "PoP6o0Db8odIO9oOqddodd8IlPl1iDli",
       "saIndex": "951"
     },
@@ -21408,6 +21457,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "9IlP00lPi6oOQQqOl1DoI0o10bi1iid1",
       "saIndex": "956"
     },
@@ -21427,7 +21477,8 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "PARANOiA",
@@ -22068,6 +22119,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "bIio1d6QOPlqlDOqoIQoPIbIbb0iQIil",
       "saIndex": "993"
     },
@@ -22839,6 +22891,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "Q0dQDqillPqIId0Q81q01ooObQIlO1QI",
       "saIndex": "1007"
     },
@@ -24019,7 +24072,6 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "Rampage_Hero.png",
-      "flags": ["unlock", "goldExclusive"],
       "saHash": "Ol8PPooqO8iOqQ6900o0q0QI9dPo0O0b",
       "saIndex": "896"
     },
@@ -24062,6 +24114,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "DodQ1I1DiPIqDQP0PqO6PIQ1iPQd6O8d",
       "saIndex": "972"
     },
@@ -24299,6 +24352,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "Qi1Q6I80b09Oq91OPldbO19080q0dd0b",
       "saIndex": "977"
     },
@@ -24829,7 +24883,7 @@
       "name_translation": "",
       "artist": "TAG",
       "artist_translation": "",
-      "bpm": "150",
+      "bpm": "75-150",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
@@ -24841,6 +24895,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "I9Oood9l9li0D08Q6d6DQPiIQiloidO6",
       "saIndex": "947"
     },
@@ -25095,7 +25150,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
-      "flags": ["goldExclusive"],
+      "flags": ["goldenLeague"],
       "saHash": "I189iqQI6iPDdIDbo81b1iD6lIQiI0Po",
       "saIndex": "988"
     },
@@ -27155,6 +27210,7 @@
       ],
       "jacket": "Shut Up and Dance.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "qPi8qIqO1lQd08b01PiPlql9O1dOPDPq",
       "saIndex": "714"
     },
@@ -28506,6 +28562,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "8i61Oi09bOIP0lOldI668b8IPbIq8l0Q",
       "saIndex": "952"
     },
@@ -30716,6 +30773,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "ddqO1b1ldlQd6OOoQ1boPdoboDQqd9D8",
       "saIndex": "1008"
     },
@@ -31124,6 +31182,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "0088dOQPiD0Qb0Dl8ol09D98IOllI1id",
       "saIndex": "943"
     },
@@ -31201,6 +31260,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "8IODdDQI6P8o0QobDPOldbQ06169b01o",
       "saIndex": "1011"
     },
@@ -32144,7 +32204,6 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "The_World_Ends_Now.png",
-      "flags": ["unlock", "goldExclusive"],
       "saHash": "b80qOO6l8060990qQPod1bOd8Q9d69qo",
       "saIndex": "886"
     },
@@ -32602,6 +32661,7 @@
       ],
       "jacket": "Time Of Our Lives.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "1i8d1DodloQiQ8doOlloDIOO9PI6OIoO",
       "saIndex": "715"
     },
@@ -34519,6 +34579,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "91Qdq6DbPDlQOiOq08di0IQo8IP8PPqQ",
       "saIndex": "982"
     },
@@ -34618,6 +34679,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "dI1Ii100bQ6006l89diod0d116diOl8D",
       "saIndex": "1013"
     },
@@ -35355,6 +35417,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "PibQ18qDb06Doq99boODIDQODqiDQIbP",
       "saIndex": "989"
     },
@@ -35629,6 +35692,7 @@
       ],
       "jacket": "Wake Me Up.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "io9b89PD18ibIO8PIqb1QODliqDdqiIO",
       "saIndex": "716"
     },
@@ -35649,6 +35713,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "I6DdI9O1Oo8O9lo1D08ldOllo0o166I8",
       "saIndex": "991"
     },
@@ -36721,6 +36786,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["goldenLeague"],
       "saHash": "OIOdod8llPlO0lOlb6P8iIQ90qQqoDiP",
       "saIndex": "1000"
     },
@@ -37061,6 +37127,7 @@
         }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "P1boP1O60bdI16i6lqqd1Q8ioiPbolqd",
       "saIndex": "918"
     },
@@ -38262,6 +38329,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "D6IIDqlO8idioiPo8l61Ob11D6Di0DiQ",
       "saIndex": "957"
     },
@@ -38361,6 +38429,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "DQ1dqP1IoiD11QOPiI0Q8PqO0Qddo6q6",
       "saIndex": "974"
     },
@@ -38444,6 +38513,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "q8iPi1DP6Do6D110OQiQDdPq06q80Qb0",
       "saIndex": "975"
     },
@@ -38938,7 +39008,8 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "セツナトリップ",
@@ -39551,6 +39622,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "8Qd118IPdqld06Qd1q10iQd06bDdbdQI",
       "saIndex": "953"
     },
@@ -39697,6 +39769,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "16b91IPI881lPIo8Qq9Pl1IPiD8Ddodl",
       "saIndex": "976"
     },
@@ -41039,6 +41112,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "l9QibD8IoooD9DIl1O8Q0lo89I9qdido",
       "saIndex": "986"
     },
@@ -41245,6 +41319,7 @@
       ],
       "jacket": "Rokuchounen to ichiya monogatari.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "Ol01P9IIoDIOldo8IQI0l6bd9lb9q0oo",
       "saIndex": "726"
     },
@@ -41559,7 +41634,8 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": ""
+      "jacket": "",
+      "flags": ["unlock"]
     },
     {
       "name": "十二星座の聖域",
@@ -41663,6 +41739,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "QiboqIool99ol9Q0d08b68OIIiD89qqO",
       "saIndex": "960"
     },
@@ -42741,6 +42818,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "ilbQ0lq89DId9oDl89lbb8lQIPl6i0QO",
       "saIndex": "999"
     },
@@ -43378,6 +43456,7 @@
       ],
       "jacket": "Houkago stride.png",
       "genre": "",
+      "flags": ["removed"],
       "saHash": "PqOilI0ql6QDID6oo0Qb9iDo1doqQqPQ",
       "saIndex": "703"
     },
@@ -43944,7 +44023,7 @@
       "name_translation": "Tokyo shinwa",
       "artist": "DJ TECHNORCH feat.宇宙★海月 vs BEMANI Sound Team \"U1-ASAMi\"",
       "artist_translation": "DJ TECHNORCH feat.Uchuu kurage vs BEMANI Sound Team \"U1-ASAMi\"",
-      "bpm": "196",
+      "bpm": "98-196",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
@@ -43956,6 +44035,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "oQ868oOio6O90i9qO1o8I96P1do11ID0",
       "saIndex": "945"
     },
@@ -44047,6 +44127,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "bi9OolI1P9oI8dDPlbQiq01Dl080PQ61",
       "saIndex": "992"
     },
@@ -44575,6 +44656,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "Dooii0960OioP6Q1l0qi68Q8Dbd9OO91",
       "saIndex": "965"
     },
@@ -44976,6 +45058,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "8DO0DbDioIid8qDQiQdOdOPOo0PO0906",
       "saIndex": "959"
     },
@@ -45073,6 +45156,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["tempUnlock"],
       "saHash": "6d10P0Pd1PiD1l6DPQdoPD1Q8DP0QlqQ",
       "saIndex": "961"
     },
@@ -45344,6 +45428,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "Od08diDbdbl1Pi90QdO0ibqq8D111q9b",
       "saIndex": "958"
     },
@@ -45448,6 +45533,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["unlock"],
       "saHash": "Odb0b0ld6P80b8b6QD0IIO866iq8OQ0b",
       "saIndex": "1014"
     },
