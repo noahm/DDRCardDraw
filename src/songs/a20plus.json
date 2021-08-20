@@ -83,7 +83,6 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         {
-          "flags": ["unlock"],
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge"
@@ -92,7 +91,6 @@
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         {
-          "flags": ["unlock"],
           "lvl": 11,
           "style": "double",
           "diffClass": "challenge"
@@ -4635,7 +4633,6 @@
         { "lvl": 12, "style": "single", "diffClass": "difficult" },
         { "lvl": 15, "style": "single", "diffClass": "expert" },
         {
-          "flags": ["unlock"],
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge"
@@ -4644,7 +4641,6 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" },
         {
-          "flags": ["unlock"],
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge"
@@ -10195,7 +10191,7 @@
           "style": "single",
           "diffClass": "challenge",
           "shock": 1,
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
@@ -10205,7 +10201,7 @@
           "style": "double",
           "diffClass": "challenge",
           "shock": 1,
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "",
@@ -13854,7 +13850,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -13863,7 +13859,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "",
@@ -16602,7 +16598,7 @@
           "lvl": 19,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
@@ -16611,7 +16607,7 @@
           "lvl": 19,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "",
@@ -18340,7 +18336,6 @@
         { "lvl": 15, "style": "single", "diffClass": "difficult" },
         { "lvl": 18, "style": "single", "diffClass": "expert" },
         {
-          "flags": ["unlock"],
           "lvl": 19,
           "style": "single",
           "diffClass": "challenge"
@@ -18349,7 +18344,6 @@
         { "lvl": 15, "style": "double", "diffClass": "difficult" },
         { "lvl": 18, "style": "double", "diffClass": "expert" },
         {
-          "flags": ["unlock"],
           "lvl": 19,
           "style": "double",
           "diffClass": "challenge"
@@ -22333,7 +22327,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "Pierce The Sky.png",
@@ -23063,7 +23057,6 @@
         { "lvl": 16, "style": "single", "diffClass": "expert" },
         {
           "shock": 55,
-          "flags": ["unlock"],
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge"
@@ -23073,7 +23066,6 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" },
         {
           "shock": 132,
-          "flags": ["unlock"],
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge"
@@ -23214,8 +23206,7 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         },
         { "lvl": 11, "style": "double", "diffClass": "basic" },
         { "lvl": 15, "style": "double", "diffClass": "difficult" },
@@ -23223,8 +23214,7 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         }
       ],
       "jacket": "Prey.png",
@@ -27130,7 +27120,6 @@
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
         {
-          "flags": ["unlock"],
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge"
@@ -27139,7 +27128,6 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" },
         {
-          "flags": ["unlock"],
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge"
@@ -37114,7 +37102,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -37123,7 +37111,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "",
@@ -38141,7 +38129,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -38150,7 +38138,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "",
@@ -39870,7 +39858,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         },
         {
           "step": 270,
@@ -39897,7 +39885,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "Bamboo Sword Girl.png",
@@ -44517,8 +44505,7 @@
         {
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         },
         {
           "step": 167,
@@ -44544,8 +44531,7 @@
         {
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         }
       ],
       "jacket": "Buraikku jikorizer.png",
