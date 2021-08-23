@@ -1,10 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const prettier = require("prettier");
 const {
   getSongsFromZiv,
   getSongsFromSkillAttack,
 } = require("../scraper/a20plus");
+const { writeJsonData } = require("./utils");
 
 /** @param songs {Array<{}>} */
 function sortSongs(songs) {
@@ -168,10 +168,7 @@ async function main() {
   await importSongsFromExternal(indexedSongs, songsBySaIndex);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
-  fs.writeFileSync(
-    targetFile,
-    prettier.format(JSON.stringify(existingData), { filepath: targetFile })
-  );
+  writeJsonData(existingData, targetFile);
 
   console.log(
     `Wrote ${existingData.songs.length} (${existingData.songs.length -
