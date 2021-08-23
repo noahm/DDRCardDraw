@@ -114,6 +114,9 @@
           },
           "saIndex": {
             "type": "string"
+          },
+          "remyLink": {
+            "type": "string"
           }
         },
         "required": ["name", "artist", "bpm", "jacket", "charts"],

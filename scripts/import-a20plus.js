@@ -155,6 +155,8 @@ async function importSongsFromExternal(indexedSongs, saIndex) {
       );
       if (remyJacket) {
         song.jacket = remyJacket;
+      } else {
+        song.jacket = "";
       }
     }
     indexedSongs[zivSong.name] = song;

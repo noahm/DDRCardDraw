@@ -78,6 +78,7 @@ export interface Song {
   folder?: string;
   saHash?: string;
   saIndex?: string;
+  remyLink?: string;
 }
 export interface Chart {
   flags?: string[];
