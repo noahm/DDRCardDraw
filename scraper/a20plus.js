@@ -5,6 +5,8 @@ const readline = require("readline");
 const iconv = require("iconv-lite");
 const he = require("he");
 
+const { requestQueue } = require("../scripts/utils");
+
 module.exports = {
   getSongsFromZiv,
   getSongsFromSkillAttack,
@@ -68,8 +70,6 @@ function getSongsFromZiv() {
 
   return JSDOM.fromURL(ZIV_EXTREME).then(scrapeSongData);
 }
-
-getSongsFromZiv();
 
 const translationNodeQuery = "span[onmouseover]";
 
@@ -138,7 +138,7 @@ function getCharts(chartNodes) {
   return charts;
 }
 
-function scrapeSongData(dom) {
+async function scrapeSongData(dom) {
   const numbers = [];
   dom.window.document
     .querySelectorAll('th[colspan="11"] span')
@@ -163,7 +163,7 @@ function scrapeSongData(dom) {
       loop++;
     }
   }
-  return songs;
+  return Promise.all(songs);
 }
 
 // map from bad ziv title to our better title
@@ -175,7 +175,7 @@ const ZIV_TITLE_CORRECTIONS = {
   "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
 };
 
-function createSongData(songLink, folder) {
+async function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
     ? songRow.firstChild.lastChild
@@ -194,7 +194,14 @@ function createSongData(songLink, folder) {
     bpm: songRow.children[1].textContent.trim(),
     folder,
     charts: getCharts(chartNodes),
-    jacket: "",
+    remyLink: await getRemyLinkForSong(songLink),
   };
   return songData;
+}
+
+async function getRemyLinkForSong(songLink) {
+  const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
+  const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
+  // @ts-ignore
+  if (remyLink) return remyLink.href;
 }

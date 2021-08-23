@@ -4,7 +4,12 @@ const {
   getSongsFromZiv,
   getSongsFromSkillAttack,
 } = require("../scraper/a20plus");
-const { writeJsonData } = require("./utils");
+const { getJacketFromRemySong } = require("./remy");
+const {
+  writeJsonData,
+  reportQueueStatusLive,
+  requestQueue,
+} = require("./utils");
 
 /** @param songs {Array<{}>} */
 function sortSongs(songs) {
@@ -142,15 +147,23 @@ async function importSongsFromExternal(indexedSongs, saIndex) {
       if (song.name === zivSong.name) return true;
       return false;
     });
-    indexedSongs[zivSong.name] = mergeSongs(existingSong, zivSong, saSong);
+    const song = mergeSongs(existingSong, zivSong, saSong);
+    if (!song.jacket && song.remyLink) {
+      const remyJacket = await getJacketFromRemySong(
+        song.remyLink,
+        song.name_translation
+      );
+      if (remyJacket) {
+        song.jacket = remyJacket;
+      }
+    }
+    indexedSongs[zivSong.name] = song;
   }
 }
 
 async function main() {
   const targetFile = path.join(__dirname, "../src/songs/a20plus.json");
-  const existingData = JSON.parse(
-    fs.readFileSync(targetFile, { encoding: "utf8" })
-  );
+  const existingData = require(targetFile);
   const prevCount = existingData.songs.length;
   /** index of songs by title */
   const indexedSongs = {};
@@ -165,6 +178,7 @@ async function main() {
     }
   }
 
+  reportQueueStatusLive();
   await importSongsFromExternal(indexedSongs, songsBySaIndex);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
@@ -174,5 +188,10 @@ async function main() {
     `Wrote ${existingData.songs.length} (${existingData.songs.length -
       prevCount} new) sorted songs to a20plus.json`
   );
+
+  if (requestQueue.size) {
+    console.log("waiting on remaining images to finish downloading...");
+    await requestQueue.onIdle();
+  }
 }
 main();

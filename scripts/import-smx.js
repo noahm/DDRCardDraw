@@ -6,14 +6,7 @@ const fs = require("fs");
 const { resolve, join } = require("path");
 const prettier = require("prettier");
 const fetch = require("node-fetch");
-const pqueue = require("p-queue").default;
-const jimp = require("jimp");
-
-const queue = new pqueue({
-  concurrency: 6, // 6 concurrent max
-  interval: 1000,
-  intervalCap: 10, // 10 per second max
-});
+const { downloadJacket, requestQueue } = require("./utils");
 
 const difficulties = [
   "basic",
@@ -25,7 +18,6 @@ const difficulties = [
   "team", // ignore, don't see a use case
 ];
 
-const JACKETS_PATH = resolve(__dirname, "../src/assets/jackets/smx");
 const GET_IMAGES = true;
 
 /**
@@ -34,19 +26,11 @@ const GET_IMAGES = true;
  */
 function queueJacketDownload(coverPath) {
   const coverStub = coverPath.split("/")[2];
-  const filename = `${coverStub}.jpg`;
-  const outputDest = join(JACKETS_PATH, filename);
-  if (GET_IMAGES && !fs.existsSync(outputDest)) {
-    queue
-      .add(async () =>
-        jimp.read(`https://data.stepmaniax.com/${coverPath}/cover.png`)
-      )
-      .then((img) =>
-        img
-          .resize(128, 128)
-          .quality(80)
-          .writeAsync(outputDest)
-      );
+  if (GET_IMAGES) {
+    downloadJacket(
+      `https://data.stepmaniax.com/${coverPath}/cover.png`,
+      `smx/${coverStub}.jpg`
+    );
   }
 
   return `smx/${filename}`;
@@ -146,9 +130,9 @@ async function main() {
     })
   );
 
-  if (queue.size) {
+  if (requestQueue.size) {
     console.log("waiting on images to finish downloading...");
-    await queue.onIdle();
+    await requestQueue.onIdle();
   }
   console.log("done!");
 }
