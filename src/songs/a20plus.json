@@ -13,6 +13,7 @@
       "goldenLeague",
       "extraExclusive",
       "goldExclusive",
+      "usLocked",
       "tempUnlock"
     ],
     "lvlMax": 19
@@ -38,6 +39,7 @@
       "goldExclusive": "20th Gold Cab Exclusive",
       "goldenLeague": "Golden League",
       "extraExclusive": "Final/Extra Exclusive",
+      "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "$abbr": {
         "beginner": "Beg",
@@ -60,6 +62,7 @@
       "goldExclusive": "A20筐体限定曲を含める",
       "goldenLeague": "Golden League",
       "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
+      "usLocked": "日本限定曲を含める",
       "tempUnlock": "現在解禁できない曲を含める",
       "$abbr": {
         "beginner": "Beg",
@@ -3705,7 +3708,6 @@
       ],
       "jacket": "BRILLIANT 2U (AKBK MIX).png",
       "genre": "",
-      "flags": ["usLocked"],
       "saHash": "6l0iQ18D0I00P89lIqI8bl9biIOi018O",
       "saIndex": "486"
     },
@@ -12199,6 +12201,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "",
+      "flags": ["usLocked"],
       "saHash": "QbdQold98oq9lODoIloIbPiIqld6i0Qb",
       "saIndex": "930"
     },
@@ -15907,7 +15910,6 @@
       ],
       "jacket": "KEEP ON MOVIN' (Y&Co. DJ BOSS remix).png",
       "genre": "",
-      "flags": ["usLocked"],
       "saHash": "88o0qb8Ii1ldPlDQQdoq90dOd0PoO99d",
       "saIndex": "482"
     },
@@ -21531,7 +21533,6 @@
       ],
       "jacket": "PARANOiA (kskst mix).png",
       "genre": "",
-      "flags": ["usLocked"],
       "saHash": "dQPPd10QO9d8IiOiIi8iDD1Qdq8lQli0",
       "saIndex": "487"
     },
@@ -23557,7 +23558,6 @@
       ],
       "jacket": "PUT YOUR FAITH IN ME (DA's Twinkly Disco Remix).png",
       "genre": "",
-      "flags": ["usLocked"],
       "saHash": "bllQi9boq8qobOQDOD6QDio9lii8109i",
       "saIndex": "483"
     },
@@ -40830,7 +40830,6 @@
       ],
       "jacket": "Lost one no goukoku.png",
       "genre": "",
-      "flags": ["usLocked"],
       "saHash": "Q6b1odD8q99D190oP6ol01DolQPD0OdD",
       "saIndex": "727"
     },
@@ -41489,7 +41488,6 @@
       ],
       "jacket": "The Disappearance of Hatsune Miku.png",
       "genre": "",
-      "flags": ["usLocked"],
       "saHash": "QlQ9Qb00bI0ob9oDIiPqO1QdQ0o6O0O6",
       "saIndex": "760"
     },
@@ -42677,7 +42675,7 @@
       ],
       "jacket": "Apparently There's a Cheat Code to Happiness.png",
       "genre": "",
-      "flags": ["usLocked"],
+      "search_hint": "Apparently There's a Cheat Code to Happiness",
       "saHash": "D11ldIqD8dQIi9oQQIIo86QOI8D9olP8",
       "saIndex": "758"
     },
@@ -44831,7 +44829,7 @@
       ],
       "jacket": "Brain Fluid Explosion Girl.png",
       "genre": "",
-      "flags": ["usLocked"],
+      "search_hint": "Brain Fluid Explosion Girl",
       "saHash": "oOOI98q81oQQQP88d6Q6qlbl8QI9d0dI",
       "saIndex": "759"
     },
