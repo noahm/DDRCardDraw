@@ -7906,8 +7906,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "shock": 5,
-          "flags": ["tempUnlock"]
+          "shock": 58
         },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
@@ -7916,14 +7915,12 @@
           "lvl": 10,
           "style": "double",
           "diffClass": "challenge",
-          "shock": 58,
-          "flags": ["tempUnlock"]
+          "shock": 58
         },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/DOWNER%20%26%20UPPER",
       "jacket": "DOWNER_&_UPPER.png",
-      "flags": ["tempUnlock"],
       "saHash": "lldPQPDP0qq8iqQ910l8b8PoQ6O668Q0",
       "saIndex": "884"
     },
