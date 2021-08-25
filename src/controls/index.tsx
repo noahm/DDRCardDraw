@@ -31,7 +31,7 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 }
 
 export function Controls() {
-  const form = useRef<HTMLFormElement>();
+  const form = useRef<HTMLFormElement>(null);
   const [collapsed, setCollapsed] = useState(true);
   const { t } = useContext(TranslateContext);
   const {

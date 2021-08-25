@@ -77,7 +77,7 @@ export function SongSearch(props: Props) {
   const config = useContext(ConfigStateContext);
 
   const { fuzzySearch } = useContext(DrawStateContext);
-  const input = useRef<HTMLInputElement>();
+  const input = useRef<HTMLInputElement>(null);
   useLayoutEffect(() => {
     if (autofocus && input.current) {
       input.current!.focus();

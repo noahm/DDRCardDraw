@@ -25,7 +25,7 @@ module.exports = function(env = {}, argv = {}) {
           contentBase: "./dist",
           // host: "0.0.0.0"
         },
-    entry: "./src/app.tsx",
+    entry: ["preact/debug", "./src/app.tsx"],
     output: {
       filename: "[name].[hash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
@@ -57,7 +57,10 @@ module.exports = function(env = {}, argv = {}) {
             loader: "babel-loader?cacheDirectory",
             options: {
               presets: [
-                require("@babel/preset-env"),
+                [
+                  require("@babel/preset-env"),
+                  { targets: { browsers: [">2%"] } },
+                ],
                 require("@babel/preset-typescript"),
               ],
               plugins: [
