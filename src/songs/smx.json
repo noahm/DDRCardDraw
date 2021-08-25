@@ -139,21 +139,6 @@
       ]
     },
     {
-      "name": "Hurry Up!",
-      "artist": "MonstDeath",
-      "genre": "Classical Techno",
-      "bpm": "175",
-      "jacket": "smx/HurryUp!.jpg",
-      "charts": [
-        { "style": "solo", "lvl": 4, "diffClass": "basic" },
-        { "style": "solo", "lvl": 10, "diffClass": "easy" },
-        { "style": "solo", "lvl": 18, "diffClass": "hard" },
-        { "style": "solo", "lvl": 21, "diffClass": "wild" },
-        { "style": "solo", "lvl": 22, "diffClass": "dual" },
-        { "style": "solo", "lvl": 24, "diffClass": "full" }
-      ]
-    },
-    {
       "name": "Hyper Hyper",
       "artist": "Smiley",
       "genre": "Techno",
@@ -212,7 +197,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "hard" },
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
-        { "style": "solo", "lvl": 21, "diffClass": "full" }
+        { "style": "solo", "lvl": 21, "diffClass": "full" },
+        { "style": "team", "lvl": 9, "diffClass": "team" }
       ]
     },
     {
@@ -259,22 +245,6 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" }
-      ]
-    },
-    {
-      "name": "Sinxorder",
-      "artist": "MonstDeath & Glúteos",
-      "genre": "Classical Techno",
-      "bpm": "83-180",
-      "jacket": "smx/Sinxorder.jpg",
-      "charts": [
-        { "style": "solo", "lvl": 4, "diffClass": "basic" },
-        { "style": "solo", "lvl": 11, "diffClass": "easy" },
-        { "style": "solo", "lvl": 18, "diffClass": "hard" },
-        { "style": "solo", "lvl": 23, "diffClass": "wild" },
-        { "style": "solo", "lvl": 20, "diffClass": "dual" },
-        { "style": "solo", "lvl": 23, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
       ]
     },
     {
@@ -512,22 +482,6 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
         { "style": "team", "lvl": 16, "diffClass": "team" }
-      ]
-    },
-    {
-      "name": "All It Takes",
-      "artist": "Zariis",
-      "genre": "Dance Pop",
-      "bpm": "128",
-      "jacket": "smx/AllItTakes.jpg",
-      "charts": [
-        { "style": "solo", "lvl": 2, "diffClass": "basic" },
-        { "style": "solo", "lvl": 10, "diffClass": "easy" },
-        { "style": "solo", "lvl": 17, "diffClass": "hard" },
-        { "style": "solo", "lvl": 19, "diffClass": "wild" },
-        { "style": "solo", "lvl": 9, "diffClass": "dual" },
-        { "style": "solo", "lvl": 17, "diffClass": "full" },
-        { "style": "team", "lvl": 17, "diffClass": "team" }
       ]
     },
     {
@@ -1477,22 +1431,6 @@
         { "style": "solo", "lvl": 21, "diffClass": "dual" },
         { "style": "solo", "lvl": 25, "diffClass": "full" },
         { "style": "team", "lvl": 24, "diffClass": "team" }
-      ]
-    },
-    {
-      "name": "ChicaBomb",
-      "artist": "Dan Balan",
-      "genre": "Pop",
-      "bpm": "64-128",
-      "jacket": "smx/ChicaBomb.jpg",
-      "charts": [
-        { "style": "solo", "lvl": 3, "diffClass": "basic" },
-        { "style": "solo", "lvl": 10, "diffClass": "easy" },
-        { "style": "solo", "lvl": 14, "diffClass": "hard" },
-        { "style": "solo", "lvl": 20, "diffClass": "wild" },
-        { "style": "solo", "lvl": 13, "diffClass": "dual" },
-        { "style": "solo", "lvl": 17, "diffClass": "full" },
-        { "style": "team", "lvl": 17, "diffClass": "team" }
       ]
     },
     {
@@ -4420,6 +4358,86 @@
         { "style": "solo", "lvl": 20, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
         { "style": "team", "lvl": 18, "diffClass": "team" }
+      ]
+    },
+    {
+      "name": "Contrast",
+      "artist": "Donk Terrorist vs. Daniel Seven",
+      "genre": "Scouse House",
+      "bpm": "175",
+      "jacket": "smx/Contrast.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "basic" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 20, "diffClass": "dual" },
+        { "style": "solo", "lvl": 21, "diffClass": "full" },
+        { "style": "team", "lvl": 20, "diffClass": "team" }
+      ]
+    },
+    {
+      "name": "Jukebox",
+      "artist": "Swingrowers",
+      "genre": "Electro Swing",
+      "bpm": "214",
+      "jacket": "smx/Jukebox.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "basic" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 19, "diffClass": "dual" },
+        { "style": "solo", "lvl": 21, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" }
+      ]
+    },
+    {
+      "name": "Kinky Boots",
+      "artist": "Daz Sampson & Nona",
+      "genre": "Pop",
+      "bpm": "135",
+      "jacket": "smx/KinkyBoots.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "basic" },
+        { "style": "solo", "lvl": 8, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild" },
+        { "style": "solo", "lvl": 16, "diffClass": "dual" },
+        { "style": "solo", "lvl": 19, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" }
+      ]
+    },
+    {
+      "name": "op13",
+      "artist": "riddle",
+      "genre": "Downtempo",
+      "bpm": "150",
+      "jacket": "smx/op13.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "basic" },
+        { "style": "solo", "lvl": 8, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 9, "diffClass": "dual" },
+        { "style": "solo", "lvl": 20, "diffClass": "full" },
+        { "style": "team", "lvl": 19, "diffClass": "team" }
+      ]
+    },
+    {
+      "name": "Turn Me On",
+      "artist": "E-Rotic",
+      "genre": "Eurodance",
+      "bpm": "144",
+      "jacket": "smx/TurnMeOn.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "basic" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 19, "diffClass": "dual" },
+        { "style": "solo", "lvl": 19, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" }
       ]
     }
   ]

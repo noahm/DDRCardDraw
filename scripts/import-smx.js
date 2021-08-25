@@ -26,14 +26,15 @@ const GET_IMAGES = true;
  */
 function queueJacketDownload(coverPath) {
   const coverStub = coverPath.split("/")[2];
+  const outPath = `smx/${coverStub}.jpg`;
   if (GET_IMAGES) {
     downloadJacket(
       `https://data.stepmaniax.com/${coverPath}/cover.png`,
-      `smx/${coverStub}.jpg`
+      outPath
     );
   }
 
-  return `smx/${filename}`;
+  return outPath;
 }
 
 async function main() {
@@ -42,7 +43,7 @@ async function main() {
 
   for (const diff of difficulties) {
     console.log(`pulling ${diff} chart details`);
-    const data = await queue.add(
+    const data = await requestQueue.add(
       () =>
         fetch(`https://data.stepmaniax.com/highscores/region/all/${diff}`, {
           method: "POST",
