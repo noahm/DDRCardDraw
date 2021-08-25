@@ -23,14 +23,20 @@ export function DrawingList() {
   const configState = useContext(ConfigStateContext);
   if (configState.showPool && gameData) {
     const charts = Array.from(filterChartsToSongs(configState, gameData.songs));
+    const songs = new Set<string>();
+    const cards = charts.map((chart, index) => {
+      songs.add(chart.name);
+      return <SongCard chart={chart} key={index} />;
+    });
     return (
-      <div className={styles.scrollable}>
-        <div className={styles.chartList}>
-          {charts.map((chart, index) => (
-            <SongCard chart={chart} key={index} />
-          ))}
+      <>
+        <div style={{ padding: "1em" }}>
+          Eligible songs: {charts.length} total charts from {songs.size} songs
         </div>
-      </div>
+        <div className={styles.scrollable}>
+          <div className={styles.chartList}>{cards}</div>
+        </div>
+      </>
     );
   }
   return <ScrollableDrawings drawings={drawings} />;
