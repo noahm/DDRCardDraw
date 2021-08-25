@@ -5,7 +5,7 @@ const readline = require("readline");
 const iconv = require("iconv-lite");
 const he = require("he");
 
-const { requestQueue } = require("../scripts/utils");
+const { requestQueue } = require("../utils");
 
 module.exports = {
   getSongsFromZiv,

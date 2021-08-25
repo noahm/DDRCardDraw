@@ -1,10 +1,15 @@
-const fs = require("fs");
+/**
+ * This script pulls song data from ZiV, SkillAttack, and jackets from RemyWiki
+ * all while merging with the existing data on disk to get the most up to date
+ * song data with the least amount of manual work on my part.
+ */
+
 const path = require("path");
 const {
   getSongsFromZiv,
   getSongsFromSkillAttack,
-} = require("../scraper/a20plus");
-const { getJacketFromRemySong } = require("./remy");
+} = require("./scraping/a20plus");
+const { getJacketFromRemySong } = require("./scraping/remy");
 const {
   writeJsonData,
   reportQueueStatusLive,

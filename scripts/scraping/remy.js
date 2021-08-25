@@ -1,6 +1,6 @@
 const path = require("path");
 const { JSDOM } = require("jsdom");
-const { downloadJacket } = require("./utils");
+const { downloadJacket } = require("../utils");
 
 module.exports = {
   getJacketFromRemySong,

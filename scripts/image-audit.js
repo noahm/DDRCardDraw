@@ -1,3 +1,4 @@
+/** Run this to help audit which songs need jackets, and which already have jackets but are not linked up */
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
@@ -54,11 +55,11 @@ async function main() {
         counts.missingOnDisc.push(song.name);
       }
     } else {
-      counts.missingJacket.push(song.name);
+      counts.missingJacket.push(song.name_translation || song.name);
       if (jacketOnDisc(song)) {
         counts.unusedJacketOnDisc.push(song.name);
       } else {
-        // song.jacket = await promptForJacket(song);
+        song.jacket = await promptForJacket(song);
       }
     }
   }
