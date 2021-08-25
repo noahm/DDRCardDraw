@@ -14,16 +14,20 @@ const isJapanese = detectedLanguage === "ja";
 
 type Player = 1 | 2;
 
-interface Props {
-  chart: DrawnChart;
-  vetoedBy: Player | undefined;
-  protectedBy: Player | undefined;
-  replacedBy: Player | undefined;
-  replacedWith: DrawnChart | undefined;
+interface IconCallbacks {
   onVeto: (p: Player) => void;
   onProtect: (p: Player) => void;
   onReplace: (p: Player, chart: DrawnChart) => void;
   onReset: () => void;
+}
+
+interface Props {
+  chart: DrawnChart;
+  vetoedBy?: Player;
+  protectedBy?: Player;
+  replacedBy?: Player;
+  replacedWith?: DrawnChart;
+  iconCallbacks?: IconCallbacks;
 }
 
 export function SongCard(props: Props) {
@@ -33,10 +37,7 @@ export function SongCard(props: Props) {
     protectedBy,
     replacedBy,
     replacedWith,
-    onVeto,
-    onProtect,
-    onReplace,
-    onReset,
+    iconCallbacks,
   } = props;
 
   const { t } = useContext(TranslateContext);
@@ -63,6 +64,7 @@ export function SongCard(props: Props) {
   const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
     [styles.protected]: protectedBy || replacedBy,
+    [styles.clickable]: !!iconCallbacks,
   });
 
   let jacketBg = {};
@@ -75,7 +77,7 @@ export function SongCard(props: Props) {
   return (
     <div
       className={rootClassname}
-      onClick={showingIconMenu ? undefined : showIcons}
+      onClick={showingIconMenu && iconCallbacks ? undefined : showIcons}
     >
       {vetoedBy && (
         <CardLabel left={vetoedBy === 1}>
@@ -95,15 +97,15 @@ export function SongCard(props: Props) {
           <Edit size={16} />
         </CardLabel>
       )}
-      {showingIconMenu && (
+      {showingIconMenu && !!iconCallbacks && (
         <IconMenu
-          onProtect={(p: Player) => hideIcons() && onProtect(p)}
+          onProtect={(p: Player) => hideIcons() && iconCallbacks.onProtect(p)}
           onPocketPicked={(p: Player, c: DrawnChart) =>
-            hideIcons() && onReplace(p, c)
+            hideIcons() && iconCallbacks.onReplace(p, c)
           }
-          onVeto={(p: Player) => hideIcons() && onVeto(p)}
+          onVeto={(p: Player) => hideIcons() && iconCallbacks.onVeto(p)}
           onlyReset={!!(vetoedBy || protectedBy || replacedBy)}
-          onReset={() => hideIcons() && onReset()}
+          onReset={() => hideIcons() && iconCallbacks.onReset()}
           onClose={hideIcons}
         />
       )}

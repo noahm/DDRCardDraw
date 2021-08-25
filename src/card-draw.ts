@@ -38,6 +38,24 @@ export function chartIsValid(config: ConfigState, chart: Chart): boolean {
   );
 }
 
+export function* filterChartsToSongs(config: ConfigState, songs: Song[]) {
+  for (const currentSong of songs) {
+    if (!songIsValid(config, currentSong)) {
+      continue;
+    }
+    const charts = currentSong.charts.filter((c) => c.style === config.style);
+
+    for (const chart of currentSong.charts) {
+      if (!chartIsValid(config, chart)) {
+        continue;
+      }
+
+      // add chart to deck
+      yield getDrawnChart(currentSong, chart);
+    }
+  }
+}
+
 /**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
@@ -50,10 +68,6 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     upperBound,
     lowerBound,
     style,
-    // requested difficulties
-    difficulties,
-    // other options: usLocked, extraExclusive, removed, unlock
-    flags: inclusions,
     useWeights,
     forceDistribution,
     weights,
@@ -64,20 +78,8 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     validCharts[n.toString()] = [];
   });
 
-  for (const currentSong of gameData.songs) {
-    if (!songIsValid(configData, currentSong)) {
-      continue;
-    }
-    const charts = currentSong.charts.filter((c) => c.style === style);
-
-    for (const chart of currentSong.charts) {
-      if (!chartIsValid(configData, chart)) {
-        continue;
-      }
-
-      // add chart to deck
-      validCharts[chart.lvl].push(getDrawnChart(currentSong, chart));
-    }
+  for (const chart of filterChartsToSongs(configData, gameData.songs)) {
+    validCharts[chart.level].push(chart);
   }
 
   /**

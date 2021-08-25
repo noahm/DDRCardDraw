@@ -10,6 +10,7 @@ export interface ConfigState {
   style: string;
   difficulties: ReadonlySet<string>;
   flags: ReadonlySet<string>;
+  showPool: boolean;
   update(mutator: (state: ConfigState) => ConfigState): void;
 }
 
@@ -32,7 +33,8 @@ export class ConfigStateManager extends Component<Props, ConfigState> {
       style: "",
       difficulties: new Set(),
       flags: new Set(),
-      update: this.update
+      showPool: false,
+      update: this.update,
     };
   }
 
