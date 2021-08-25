@@ -1,6 +1,5 @@
 /**
  * Script to import SDVX data from a `music_db.xml` file
- * Requires
  */
 
 const fs = require("fs").promises;
@@ -10,7 +9,7 @@ const iconv = require("iconv-lite");
 const prettier = require("prettier");
 
 const OUTFILE = "src/songs/sdvx.json";
-const JACKETS_PATH = 'src/assets/jackets/sdvx';
+const JACKETS_PATH = "src/assets/jackets/sdvx";
 
 async function main() {
   const sdvxFile = process.argv[2];
@@ -50,12 +49,12 @@ async function main() {
     defaults: {
       style: "single",
       difficulties: [
-        "exhaust", 
+        "exhaust",
         "maximum",
         "infinite",
         "gravity",
         "heavenly",
-        "vivid"
+        "vivid",
       ],
       flags: [],
       lowerLvlBound: 16,
@@ -81,7 +80,7 @@ async function main() {
           infinite: "INF",
           gravity: "GRV",
           heavenly: "HVN",
-          vivid: "VVD"
+          vivid: "VVD",
         },
       },
       ja: {
@@ -103,11 +102,13 @@ async function main() {
           infinite: "INF",
           gravity: "GRV",
           heavenly: "HVN",
-          vivid: "VVD"
+          vivid: "VVD",
         },
       },
     },
-    songs: fileData.mdb.music.filter(filterUnplayableSongs).map(song => buildSong(song, availableJackets)),
+    songs: fileData.mdb.music
+      .filter(filterUnplayableSongs)
+      .map((song) => buildSong(song, availableJackets)),
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
@@ -135,7 +136,7 @@ function determineDiffClass(song, chartType) {
 }
 
 const songIdsToSkip = new Set([
-  840,  // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
+  840, // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
   1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
   1259, // AUTOMATION PARADISE
   1438, // AUTOMATION PARADISE, April Fools
@@ -145,14 +146,14 @@ function filterUnplayableSongs(song) {
 }
 
 function determineChartJacket(chartType, song, availableJackets) {
-  const songId = ('000' + parseInt(song.$.id)).slice(-4);
+  const songId = ("000" + parseInt(song.$.id)).slice(-4);
   const diffClassToNumber = {
-    "novice": 1,
-    "advanced": 2,
-    "exhaust": 3,
-    "infinite": 4,
-    "maximimum": 5
-  }
+    novice: 1,
+    advanced: 2,
+    exhaust: 3,
+    infinite: 4,
+    maximimum: 5,
+  };
   // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
   let jacketName = `jk_${songId}_${diffClassToNumber[chartType]}_s.png`;
   if (!availableJackets.has(jacketName)) {
@@ -193,18 +194,18 @@ function buildSong(song, availableJackets) {
       jacket: chartJacket,
     });
   }
-  
+
   if (usesSharedJacket) {
-    charts.find(c => c.diffClass === "novice").jacket = undefined;
+    charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
-  
+
   return {
     name: info.title_name[0],
     search_hint: info.ascii[0],
     artist: info.artist_name[0],
     jacket: usesSharedJacket
-              ? `sdvx/jk_${('000' + parseInt(song.$.id)).slice(-4)}_1_s.png`
-              : "sdvx5.png",
+      ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
+      : "sdvx5.png",
     bpm,
     charts,
   };
