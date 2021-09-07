@@ -5,7 +5,6 @@
   text-align: center;
   border: 2px solid black;
   border-radius: 5px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   min-height: 200px;
@@ -19,7 +18,11 @@
   overflow: hidden;
   transition: transform ease 0.3s;
   position: relative;
-  min-width: 150px;
+  min-width: 165px;
+}
+
+.chart.clickable {
+  cursor: pointer;
 }
 
 .cardCenter {

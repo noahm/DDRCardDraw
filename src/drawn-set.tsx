@@ -5,7 +5,7 @@ import {
   Drawing,
   DrawnChart,
   PlayerActionOnChart,
-  PocketPick
+  PocketPick,
 } from "./models/Drawing";
 
 const HUE_STEP = (255 / 8) * 3;
@@ -37,32 +37,34 @@ export class DrawnSet extends Component<Props> {
   }
 
   renderChart = (chart: DrawnChart, index: number) => {
-    const veto = this.props.drawing.bans.find(b => b.chartIndex === index);
+    const veto = this.props.drawing.bans.find((b) => b.chartIndex === index);
     const protect = this.props.drawing.protects.find(
-      b => b.chartIndex === index
+      (b) => b.chartIndex === index
     );
     const pocketPick = this.props.drawing.pocketPicks.find(
-      b => b.chartIndex === index
+      (b) => b.chartIndex === index
     );
     return (
       <SongCard
         key={index}
-        onVeto={this.handleBanProtectReplace.bind(
-          this,
-          this.props.drawing.bans,
-          index
-        )}
-        onProtect={this.handleBanProtectReplace.bind(
-          this,
-          this.props.drawing.protects,
-          index
-        )}
-        onReplace={this.handleBanProtectReplace.bind(
-          this,
-          this.props.drawing.pocketPicks,
-          index
-        )}
-        onReset={this.handleReset.bind(this, index)}
+        iconCallbacks={{
+          onVeto: this.handleBanProtectReplace.bind(
+            this,
+            this.props.drawing.bans,
+            index
+          ),
+          onProtect: this.handleBanProtectReplace.bind(
+            this,
+            this.props.drawing.protects,
+            index
+          ),
+          onReplace: this.handleBanProtectReplace.bind(
+            this,
+            this.props.drawing.pocketPicks,
+            index
+          ),
+          onReset: this.handleReset.bind(this, index),
+        }}
         vetoedBy={veto && veto.player}
         protectedBy={protect && protect.player}
         replacedBy={pocketPick && pocketPick.player}
@@ -78,7 +80,7 @@ export class DrawnSet extends Component<Props> {
     player: 1 | 2,
     chart?: DrawnChart
   ) {
-    const existingBanIndex = arr.findIndex(b => b.chartIndex === chartIndex);
+    const existingBanIndex = arr.findIndex((b) => b.chartIndex === chartIndex);
     if (existingBanIndex >= 0) {
       arr.splice(existingBanIndex, 1);
     } else {
@@ -89,12 +91,12 @@ export class DrawnSet extends Component<Props> {
 
   handleReset(chartIndex: number) {
     const drawing = this.props.drawing;
-    drawing.bans = drawing.bans.filter(p => p.chartIndex !== chartIndex);
+    drawing.bans = drawing.bans.filter((p) => p.chartIndex !== chartIndex);
     drawing.protects = drawing.protects.filter(
-      p => p.chartIndex !== chartIndex
+      (p) => p.chartIndex !== chartIndex
     );
     drawing.pocketPicks = drawing.pocketPicks.filter(
-      p => p.chartIndex !== chartIndex
+      (p) => p.chartIndex !== chartIndex
     );
     this.forceUpdate();
   }

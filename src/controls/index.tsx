@@ -31,7 +31,7 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 }
 
 export function Controls() {
-  const form = useRef<HTMLFormElement>();
+  const form = useRef<HTMLFormElement>(null);
   const [collapsed, setCollapsed] = useState(true);
   const { t } = useContext(TranslateContext);
   const {
@@ -51,6 +51,7 @@ export function Controls() {
     flags: selectedFlags,
     style: selectedStyle,
     chartCount,
+    showPool,
   } = configState;
   const availableDifficulties = useMemo(() => {
     if (!gameData) {
@@ -101,6 +102,12 @@ export function Controls() {
 
   const handleRandomize = (e: JSXInternal.TargetedEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (showPool) {
+      updateState((state) => ({
+        ...state,
+        showPool: false,
+      }));
+    }
     drawSongs(configState);
   };
 
@@ -292,6 +299,22 @@ export function Controls() {
               ))}
             </div>
           )}
+          <div className={styles.group}>
+            <label>
+              <input
+                type="checkbox"
+                name="showPool"
+                checked={showPool}
+                onChange={(e) =>
+                  updateState((state) => ({
+                    ...state,
+                    showPool: !!e.currentTarget.checked,
+                  }))
+                }
+              />
+              {t("showSongPool")}
+            </label>
+          </div>
           <div className={classNames(globalStyles.padded, styles.buttons)}>
             <button onClick={handleRandomize}>{t("draw")}</button>{" "}
             <button onClick={() => setCollapsed(!collapsed)}>

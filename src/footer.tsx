@@ -9,7 +9,7 @@ import { TranslateContext } from "@denysvuika/preact-translate";
 import { About } from "./about";
 
 // note that month is zero-indexed for date constructor :)
-const lastUpdate = new Date(2021, 1, 13);
+const lastUpdate = new Date(2021, 7, 25);
 
 export function Footer() {
   const { t } = useContext(TranslateContext);
@@ -20,12 +20,15 @@ export function Footer() {
       {showAbout && <About onClose={() => updateShowAbout(false)} />}
       <div>
         {t("lastUpdate", {
-          date: new Intl.DateTimeFormat(detectedLanguage).format(lastUpdate)
+          date: new Intl.DateTimeFormat(detectedLanguage).format(lastUpdate),
         })}
       </div>
       <div className={styles.icons}>
         {/* <AuthButton />{" "} */}
-        <a href="#" onClick={e => (e.preventDefault(), updateShowAbout(true))}>
+        <a
+          href="#"
+          onClick={(e) => (e.preventDefault(), updateShowAbout(true))}
+        >
           {t("credits")}
         </a>
       </div>

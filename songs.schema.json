@@ -151,6 +151,9 @@
         },
         "jacket": {
           "type": "string"
+        },
+        "author": {
+          "type": "string"
         }
       },
       "required": ["lvl", "diffClass", "style"]

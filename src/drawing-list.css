@@ -15,6 +15,13 @@
   }
 }
 
+.chartList {
+  display: flex;
+  padding: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
 .sectionLabel {
   text-indent: 10px;
 }
