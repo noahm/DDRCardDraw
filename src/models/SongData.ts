@@ -95,4 +95,5 @@ export interface Chart {
   shock?: number;
   freeze?: number;
   jacket?: string;
+  author?: string;
 }

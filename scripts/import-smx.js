@@ -69,6 +69,7 @@ async function main() {
         style: diff === "team" ? "team" : "solo",
         lvl: score.difficulty,
         diffClass: diff,
+        author: score.steps_author,
       });
       if (score.difficulty > lvlMax) {
         lvlMax = score.difficulty;
