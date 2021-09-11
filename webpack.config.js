@@ -18,16 +18,16 @@ module.exports = function(env = {}, argv = {}) {
 
   return {
     mode: isProd ? "production" : "development",
-    devtool: isProd ? false : "cheap-module-eval-source-map",
+    devtool: isProd ? false : "eval-cheap-module-source-map",
     devServer: !serve
       ? undefined
       : {
-          contentBase: "./dist",
+          static: "./dist",
           // host: "0.0.0.0"
         },
     entry: ["preact/debug", "./src/app.tsx"],
     output: {
-      filename: "[name].[hash:5].js",
+      filename: "[name].[chunkhash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist"),
     },
