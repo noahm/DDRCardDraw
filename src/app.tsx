@@ -1,9 +1,7 @@
-import "./firebase";
 import { render } from "preact";
 import { Controls } from "./controls";
 import { DrawingList } from "./drawing-list";
 import { Footer } from "./footer";
-import { AuthManager } from "./auth";
 import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
 import { SongSearch } from "./song-search";
@@ -13,17 +11,15 @@ import { ConfigStateManager } from "./config-state";
 
 function App() {
   return (
-    <AuthManager>
-      <ConfigStateManager>
-        <DrawStateManager defaultDataSet="a20plus">
-          <UpdateManager />
-          <Controls />
-          {/* <SuspectSongs /> */}
-          <DrawingList />
-          <Footer />
-        </DrawStateManager>
-      </ConfigStateManager>
-    </AuthManager>
+    <ConfigStateManager>
+      <DrawStateManager defaultDataSet="a20plus">
+        <UpdateManager />
+        <Controls />
+        {/* <SuspectSongs /> */}
+        <DrawingList />
+        <Footer />
+      </DrawStateManager>
+    </ConfigStateManager>
   );
 }
 
