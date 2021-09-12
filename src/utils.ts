@@ -1,8 +1,3 @@
-interface Navigator {
-  userLanguage: string;
-  browserLanguage: string;
-}
-
 const browserLanguage: string =
   (window.navigator.languages && window.navigator.languages[0]) ||
   window.navigator.language ||

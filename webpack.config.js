@@ -11,7 +11,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 
-module.exports = function(env = {}, argv = {}) {
+module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
   const version = env.version || "custom";
@@ -101,8 +101,9 @@ module.exports = function(env = {}, argv = {}) {
             {
               loader: "postcss-loader",
               options: {
-                ident: "postcss",
-                plugins: [autoprefixer()],
+                postcssOptions: {
+                  plugins: [autoprefixer],
+                },
               },
             },
           ],
