@@ -20,7 +20,7 @@ export function UncontrolledCheckbox(props: CheckboxProps) {
       {...otherProps}
       type="checkbox"
       checked={checked}
-      onChange={e => {
+      onChange={(e) => {
         updateChecked(!!e.currentTarget.checked);
         if (onChange) {
           onChange(e);
@@ -42,7 +42,7 @@ export function UncontrolledInput(props: InputProps) {
     <input
       {...otherProps}
       value={value}
-      onChange={e => {
+      onChange={(e) => {
         updateValue(e.currentTarget.value);
         if (onChange) {
           onChange(e);

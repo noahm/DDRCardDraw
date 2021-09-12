@@ -4,9 +4,7 @@ const { JSDOM } = require("jsdom");
 const ZIV_EXTREME =
   "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=81&show_notecounts=1&sort=&sort_order=asc";
 
-JSDOM.fromURL(ZIV_EXTREME)
-  .then(scrapeSongData)
-  .then(writeDataFile);
+JSDOM.fromURL(ZIV_EXTREME).then(scrapeSongData).then(writeDataFile);
 
 const translationNodeQuery = "span[onmouseover]";
 

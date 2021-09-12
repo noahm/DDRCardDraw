@@ -15,7 +15,7 @@ export function Icon({ svg, title, onClick, className }: Props) {
       title={title}
       alt={title}
       className={classNames(styles.icon, className, {
-        [styles.clickable]: !!onClick
+        [styles.clickable]: !!onClick,
       })}
       onClick={onClick}
     >

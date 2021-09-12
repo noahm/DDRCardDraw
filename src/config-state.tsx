@@ -14,9 +14,9 @@ export interface ConfigState {
   update(mutator: (state: ConfigState) => ConfigState): void;
 }
 
-export const ConfigStateContext = (createContext(null) as unknown) as Context<
-  ConfigState
->;
+export const ConfigStateContext = createContext(
+  null
+) as unknown as Context<ConfigState>;
 
 interface Props {}
 

@@ -8,7 +8,7 @@ interface Props {
 
 export const CardLabel: FunctionalComponent<Props> = ({ children, left }) => {
   const c = classNames(styles.cardLabel, {
-    [styles.left]: left
+    [styles.left]: left,
   });
   return (
     <div className={c}>

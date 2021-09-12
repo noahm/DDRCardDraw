@@ -16,25 +16,24 @@ export class WeightsControls extends Component<Props> {
     const { high, low } = this.props;
 
     const { t } = useContext(TranslateContext);
-    const { weights, update, forceDistribution } = useContext(
-      ConfigStateContext
+    const { weights, update, forceDistribution } =
+      useContext(ConfigStateContext);
+    const levels = useMemo(
+      () => times(high - low + 1, (n) => n + low - 1),
+      [high, low]
     );
-    const levels = useMemo(() => times(high - low + 1, n => n + low - 1), [
-      high,
-      low
-    ]);
 
     function toggleForceDistribution() {
-      update(state => {
+      update((state) => {
         return {
           ...state,
-          forceDistribution: !state.forceDistribution
+          forceDistribution: !state.forceDistribution,
         };
       });
     }
 
     function setWeight(difficulty: number, value: number) {
-      update(state => {
+      update((state) => {
         const newWeights = state.weights.slice();
         if (Number.isInteger(value)) {
           newWeights[difficulty] = value;
@@ -49,7 +48,7 @@ export class WeightsControls extends Component<Props> {
       (total, level) => total + (weights[level] || 0),
       0
     );
-    const percentages = levels.map(level => {
+    const percentages = levels.map((level) => {
       const value = weights[level] || 0;
       return value ? ((100 * value) / totalWeight).toFixed(0) : 0;
     });
@@ -64,7 +63,7 @@ export class WeightsControls extends Component<Props> {
               name={`weight-${level}`}
               value={weights[level] || ""}
               min="0"
-              onChange={e => setWeight(level, +e.currentTarget.value)}
+              onChange={(e) => setWeight(level, +e.currentTarget.value)}
               placeholder="0"
             />
             {level} <sub>{percentages[i]}%</sub>

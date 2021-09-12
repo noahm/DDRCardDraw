@@ -13,21 +13,16 @@ export function ApplyDefaultConfig({ defaults }: Props) {
       return;
     }
 
-    update(config => {
-      const {
-        lowerLvlBound,
-        upperLvlBound,
-        flags,
-        difficulties,
-        style
-      } = defaults;
+    update((config) => {
+      const { lowerLvlBound, upperLvlBound, flags, difficulties, style } =
+        defaults;
       return {
         ...config,
         lowerBound: lowerLvlBound,
         upperBound: upperLvlBound,
         flags: new Set(flags),
         difficulties: new Set(difficulties),
-        style
+        style,
       };
     });
   }, [defaults, update]);

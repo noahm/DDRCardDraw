@@ -20,7 +20,7 @@ const flags = {
   extra_exclusive: "extraExclusive",
   removed: "removed",
   us_locked: "usLocked",
-  gold_exclusive: "goldExclusive"
+  gold_exclusive: "goldExclusive",
 };
 function setFlags(song) {
   if (song.flags) {
@@ -96,35 +96,34 @@ for (const dataFile of dataFileNames) {
         difficulties: [
           {
             key: "define difficulties here",
-            color: "give each a distinctive css color"
-          }
+            color: "give each a distinctive css color",
+          },
         ],
         flags: ["define filtering flags here"],
-        lvlMax: 300
+        lvlMax: 300,
       },
       defaults: {
         style: "",
         difficulties: [],
         flags: [],
         lowerLvlBound: 5,
-        upperLvlBound: 300
+        upperLvlBound: 300,
       },
       i18n: {
         en: {
           name: dataFile.split(".")[0],
           hey: "put translations here and below",
-          note:
-            "each style, difficulty, and flag must have a matching key here",
+          note: "each style, difficulty, and flag must have a matching key here",
           $abbr: {
-            "abbreviations!": "put abbreviations for your difficulties here"
-          }
+            "abbreviations!": "put abbreviations for your difficulties here",
+          },
         },
         ja: {
           name: dataFile.split(".")[0],
-          $abbr: {}
-        }
+          $abbr: {},
+        },
       },
-      songs: songData
+      songs: songData,
     };
   }
 
@@ -132,7 +131,7 @@ for (const dataFile of dataFileNames) {
     setFlags(song);
     const migratedCharts = [
       ...extractCharts(song.single, "single"),
-      ...extractCharts(song.double, "double")
+      ...extractCharts(song.double, "double"),
     ];
     delete song.single;
     delete song.double;

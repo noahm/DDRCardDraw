@@ -10,7 +10,7 @@ export function SuspectSongs() {
   if (!gameData) {
     return null;
   }
-  const suspectSongs = gameData.songs.filter(song => {
+  const suspectSongs = gameData.songs.filter((song) => {
     if (
       !song.name.match(anyAscii) &&
       // !song.artist.match(allAscii) &&
@@ -24,7 +24,7 @@ export function SuspectSongs() {
   });
   return (
     <div className={styles.suspectSongs}>
-      {suspectSongs.map(song => (
+      {suspectSongs.map((song) => (
         <div className={styles.song}>
           <img src={`jackets/${song.jacket}`} className={styles.img} />
           <p>{song.name}</p>

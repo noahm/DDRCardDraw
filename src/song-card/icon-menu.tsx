@@ -17,14 +17,8 @@ interface Props {
 }
 
 export function IconMenu(props: Props) {
-  const {
-    onPocketPicked,
-    onVeto,
-    onProtect,
-    onClose,
-    onlyReset,
-    onReset
-  } = props;
+  const { onPocketPicked, onVeto, onProtect, onClose, onlyReset, onReset } =
+    props;
 
   const { t } = useContext(TranslateContext);
   const [playerPickingPocket, setPickingPocket] = useState<0 | 1 | 2>(0);
@@ -33,7 +27,7 @@ export function IconMenu(props: Props) {
     return (
       <SongSearch
         autofocus
-        onSongSelect={chart => onPocketPicked(playerPickingPocket, chart)}
+        onSongSelect={(chart) => onPocketPicked(playerPickingPocket, chart)}
         onCancel={() => setPickingPocket(0)}
       />
     );
@@ -41,7 +35,7 @@ export function IconMenu(props: Props) {
 
   if (onlyReset) {
     return (
-      <div className={styles.iconMenu} onClick={e => e.stopPropagation()}>
+      <div className={styles.iconMenu} onClick={(e) => e.stopPropagation()}>
         <header className={styles.centerRow}>
           <span>{t("songAction.reset")}</span>
           <span>{t("songAction.cancel")}</span>
@@ -59,7 +53,7 @@ export function IconMenu(props: Props) {
   }
 
   return (
-    <div className={styles.iconMenu} onClick={e => e.stopPropagation()}>
+    <div className={styles.iconMenu} onClick={(e) => e.stopPropagation()}>
       <header className={styles.iconRow}>
         <div>P1</div>
         <Icon svg={<X />} onClick={onClose} title={t("songAction.cancel")} />

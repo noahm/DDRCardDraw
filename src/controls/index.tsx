@@ -13,7 +13,7 @@ function preventDefault(e: Event) {
   e.preventDefault();
 }
 
-const DATA_FILES = (process.env.DATA_FILES as unknown) as Array<{
+const DATA_FILES = process.env.DATA_FILES as unknown as Array<{
   name: string;
   display: string;
 }>;
@@ -34,13 +34,8 @@ export function Controls() {
   const form = useRef<HTMLFormElement>(null);
   const [collapsed, setCollapsed] = useState(true);
   const { t } = useContext(TranslateContext);
-  const {
-    drawSongs,
-    dataSetName,
-    loadGameData,
-    lastDrawFailed,
-    gameData,
-  } = useContext(DrawStateContext);
+  const { drawSongs, dataSetName, loadGameData, lastDrawFailed, gameData } =
+    useContext(DrawStateContext);
   const configState = useContext(ConfigStateContext);
   const {
     useWeights,

@@ -37,10 +37,7 @@ function downloadJacket(coverUrl, outputPath) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
-        img
-          .resize(128, 128)
-          .quality(80)
-          .writeAsync(absoluteOutput)
+        img.resize(128, 128).quality(80).writeAsync(absoluteOutput)
       )
       .catch((e) => {
         console.error("image download failure");

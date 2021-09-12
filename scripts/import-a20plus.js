@@ -192,8 +192,9 @@ async function main() {
   writeJsonData(existingData, targetFile);
 
   console.log(
-    `Wrote ${existingData.songs.length} (${existingData.songs.length -
-      prevCount} new) sorted songs to a20plus.json`
+    `Wrote ${existingData.songs.length} (${
+      existingData.songs.length - prevCount
+    } new) sorted songs to a20plus.json`
   );
 
   if (requestQueue.size) {
