@@ -4,7 +4,7 @@ const { resolve, basename } = require("path");
 const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const DelWebpackPlugin = require("del-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -119,10 +119,7 @@ module.exports = function (env = {}, argv = {}) {
       ],
     },
     plugins: [
-      new DelWebpackPlugin({
-        info: false,
-        include: ["*.js"],
-      }),
+      new CleanWebpackPlugin(),
       new ForkTsCheckerPlugin(),
       new CopyWebpackPlugin({
         patterns: [
@@ -135,6 +132,7 @@ module.exports = function (env = {}, argv = {}) {
           },
         ],
       }),
+      new webpack.ProgressPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         "process.env.NODE_ENV": JSON.stringify(
