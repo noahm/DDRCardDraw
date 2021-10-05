@@ -5,9 +5,13 @@
  */
 
 /**
+ * An array of strings without any duplicate values
+ */
+export type UniqueStringArr = string[];
+
+/**
  * Describes the shape of data that any individual json file under `src/songs` will conform to
  */
-
 export interface GameData {
   /**
    * Describes unique configuration options for this game
@@ -41,8 +45,8 @@ export interface GameData {
    */
   defaults: {
     style: string;
-    difficulties: string[];
-    flags: string[];
+    difficulties: UniqueStringArr;
+    flags: UniqueStringArr;
     lowerLvlBound: number;
     upperLvlBound: number;
   };
@@ -65,7 +69,7 @@ export interface I18NDict {
       };
 }
 export interface Song {
-  flags?: string[];
+  flags?: UniqueStringArr;
   name: string;
   artist: string;
   genre?: string;
@@ -81,7 +85,7 @@ export interface Song {
   remyLink?: string;
 }
 export interface Chart {
-  flags?: string[];
+  flags?: UniqueStringArr;
   /**
    * e.g. single/double
    */
