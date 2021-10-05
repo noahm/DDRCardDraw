@@ -1,6 +1,7 @@
 {
   "type": "object",
   "title": "Game Data",
+  "description": "Describes the shape of data that any individual json file under `src/songs` will conform to",
   "additionalProperties": false,
   "required": ["songs", "meta", "defaults", "i18n"],
   "properties": {
@@ -159,6 +160,7 @@
       "required": ["lvl", "diffClass", "style"]
     },
     "uniqueStringArr": {
+      "description": "An array of strings without any duplicate values",
       "type": "array",
       "items": {
         "type": "string"
