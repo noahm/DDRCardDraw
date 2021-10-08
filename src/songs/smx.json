@@ -10,7 +10,12 @@
       { "key": "full", "color": "#00d0b8" },
       { "key": "team", "color": "#c216ce" }
     ],
-    "flags": [],
+    "flags": [
+      "andorfineMedia",
+      "bassmonkeys",
+      "cappRecords",
+      "dimaMusic"
+    ],
     "lvlMax": 28
   },
   "defaults": {
@@ -31,6 +36,10 @@
       "dual": "Dual",
       "full": "Full",
       "team": "Team",
+      "andorfineMedia": "Andorfine Media",
+      "bassmonkeys": "The Bassmonkeys Pack",
+      "cappRecords": "CAPP Records",
+      "dimaMusic": "Dima Music",
       "$abbr": {
         "basic": "Basic",
         "easy": "Easy",
@@ -712,6 +721,7 @@
     {
       "name": "All Of Me",
       "artist": "Klubbmover",
+      "flags": ["cappRecords"],
       "genre": "Hands Up",
       "bpm": "144",
       "jacket": "smx/AllOfMe.jpg",
@@ -759,6 +769,7 @@
       "name": "Can't Get Enough",
       "artist": "Miradey",
       "genre": "Progressive House",
+      "flags": ["cappRecords"],
       "bpm": "128",
       "jacket": "smx/Can'tGetEnough.jpg",
       "charts": [
@@ -810,6 +821,7 @@
       "name": "Day After Day",
       "artist": "Rikah",
       "genre": "Hands Up",
+      "flags": ["cappRecords"],
       "bpm": "71-142",
       "jacket": "smx/DayAfterDay.jpg",
       "charts": [
@@ -856,6 +868,7 @@
       "name": "Everything Is Changing",
       "artist": "Rikah",
       "genre": "Hands Up",
+      "flags": ["cappRecords"],
       "bpm": "140",
       "jacket": "smx/EverythingIsChanging.jpg",
       "charts": [
@@ -902,6 +915,7 @@
       "name": "Firewalker",
       "artist": "Xenon",
       "genre": "Eurodance",
+      "flags": ["cappRecords"],
       "bpm": "136",
       "jacket": "smx/Firewalker.jpg",
       "charts": [
@@ -938,6 +952,7 @@
       "name": "Look Into My Eyes",
       "artist": "Rabih",
       "genre": "Deep House",
+      "flags": ["cappRecords"],
       "bpm": "128",
       "jacket": "smx/LookIntoMyEyes.jpg",
       "charts": [
@@ -978,6 +993,7 @@
       "name": "Lucky Star",
       "artist": "Miradey",
       "genre": "Progressive House",
+      "flags": ["cappRecords"],
       "bpm": "128",
       "jacket": "smx/LuckyStar.jpg",
       "charts": [
@@ -1019,6 +1035,7 @@
       "name": "Origin",
       "artist": "Eagle | Stallian",
       "genre": "Trance",
+      "flags": ["cappRecords"],
       "bpm": "130",
       "jacket": "smx/Origin.jpg",
       "charts": [
@@ -1065,6 +1082,7 @@
       "name": "Party People",
       "artist": "Andy Stroke",
       "genre": "Minimal Tech House",
+      "flags": ["cappRecords"],
       "bpm": "64-128",
       "jacket": "smx/PartyPeople(TurnItUp).jpg",
       "charts": [
@@ -1106,6 +1124,7 @@
       "name": "Reminds Me Of Home",
       "artist": "Eagle | Stallian",
       "genre": "Progressive House",
+      "flags": ["cappRecords"],
       "bpm": "129",
       "jacket": "smx/RemindsMeOfHome.jpg",
       "charts": [
@@ -1141,6 +1160,7 @@
       "name": "Shoulda",
       "artist": "SUNN",
       "genre": "Electro Pop",
+      "flags": ["cappRecords"],
       "bpm": "128",
       "jacket": "smx/Shoulda.jpg",
       "charts": [
@@ -1182,6 +1202,7 @@
       "name": "The Rainmaker",
       "artist": "Doug Laurent",
       "genre": "Trance",
+      "flags": ["cappRecords"],
       "bpm": "142",
       "jacket": "smx/TheRainmaker.jpg",
       "charts": [
@@ -1222,6 +1243,7 @@
       "name": "Twins",
       "artist": "Martin Eriksson feat. Ellee",
       "genre": "Progressive House",
+      "flags": ["cappRecords"],
       "bpm": "128",
       "jacket": "smx/Twins.jpg",
       "charts": [
@@ -1406,6 +1428,7 @@
       "name": "Burning Tonight",
       "artist": "Krystal",
       "genre": "Eurobeat",
+      "flags": ["dimaMusic"],
       "bpm": "156",
       "jacket": "smx/BurningTonight.jpg",
       "charts": [
@@ -1641,6 +1664,7 @@
       "name": "Dancing Circus",
       "artist": "Brisby & Jingles",
       "genre": "House",
+      "flags": ["andorfineMedia"],
       "bpm": "130",
       "jacket": "smx/DancingCircus.jpg",
       "charts": [
@@ -1687,6 +1711,7 @@
       "name": "Don't Stop My Music Tonight",
       "artist": "David Dima",
       "genre": "Eurobeat",
+      "flags": ["dimaMusic"],
       "bpm": "153",
       "jacket": "smx/Don'tStopMyMusicTonight.jpg",
       "charts": [
@@ -2093,6 +2118,7 @@
       "name": "Lights Go Down",
       "artist": "Less Affair",
       "genre": "Pop",
+      "flags": ["andorfineMedia"],
       "bpm": "128",
       "jacket": "smx/LightsGoDown.jpg",
       "charts": [
@@ -2266,6 +2292,7 @@
       "name": "Ready To Fly",
       "artist": "Aleky",
       "genre": "Eurobeat",
+      "flags": ["dimaMusic"],
       "bpm": "152",
       "jacket": "smx/ReadyToFly.jpg",
       "charts": [
@@ -2347,6 +2374,7 @@
       "name": "Save My World",
       "artist": "Stephy",
       "genre": "Eurobeat",
+      "flags": ["dimaMusic"],
       "bpm": "154",
       "jacket": "smx/SaveMyWorld.jpg",
       "charts": [
@@ -2387,6 +2415,7 @@
       "name": "Secret 2K12",
       "artist": "Rene Ablaze feat. Jacinta",
       "genre": "Trance",
+      "flags": ["andorfineMedia"],
       "bpm": "132",
       "jacket": "smx/Secret2K12.jpg",
       "charts": [
@@ -2829,6 +2858,7 @@
       "name": "Bounce",
       "artist": "Crew 7",
       "genre": "Melbourne House",
+      "flags": ["andorfineMedia"],
       "bpm": "128",
       "jacket": "smx/Bounce.jpg",
       "charts": [
@@ -2880,6 +2910,7 @@
       "name": "Endless Day",
       "artist": "Verona",
       "genre": "Pop",
+      "flags": ["andorfineMedia"],
       "bpm": "120",
       "jacket": "smx/EndlessDay.jpg",
       "charts": [
@@ -3008,6 +3039,7 @@
       "name": "Medicine 2013",
       "artist": "Kim Leoni",
       "genre": "Progressive House",
+      "flags": ["andorfineMedia"],
       "bpm": "128",
       "jacket": "smx/Medicine2013.jpg",
       "charts": [
@@ -3085,6 +3117,7 @@
       "name": "My Freedom",
       "artist": "Rayman Rave & Nika Lenina",
       "genre": "Electro House",
+      "flags": ["andorfineMedia"],
       "bpm": "128",
       "jacket": "smx/MyFreedom.jpg",
       "charts": [
@@ -3121,6 +3154,7 @@
       "name": "Run Away",
       "artist": "Avejio",
       "genre": "Deep House",
+      "flags": ["andorfineMedia"],
       "bpm": "128",
       "jacket": "smx/RunAway.jpg",
       "charts": [
@@ -3172,6 +3206,7 @@
       "name": "Sun Goes Down",
       "artist": "Landomania",
       "genre": "Deep House",
+      "flags": ["andorfineMedia"],
       "bpm": "128",
       "jacket": "smx/SunGoesDown.jpg",
       "charts": [
@@ -3223,6 +3258,7 @@
       "name": "We Are The Sun",
       "artist": "Maui & Crizz feat. Gerald G.",
       "genre": "Deep House",
+      "flags": ["andorfineMedia"],
       "bpm": "124",
       "jacket": "smx/WeAreTheSun.jpg",
       "charts": [
@@ -3688,6 +3724,7 @@
       "name": "Time To Fly",
       "artist": "Cindy Cooper",
       "genre": "Eurobeat",
+      "flags": ["dimaMusic"],
       "bpm": "154",
       "jacket": "smx/TimeToFly.jpg",
       "charts": [
@@ -4767,6 +4804,7 @@
       "name": "Bad 4 My Health",
       "artist": "Bassmonkeys & Soulshaker feat. J.D. ROX",
       "genre": "Pop",
+      "flags": ["bassmonkeys"],
       "bpm": "127",
       "jacket": "smx/Bad4MyHealth.jpg",
       "charts": [
@@ -4802,6 +4840,7 @@
       "name": "Get Busy",
       "artist": "Bassmonkeys & Bianca Lindgren",
       "genre": "Techno",
+      "flags": ["bassmonkeys"],
       "bpm": "128",
       "jacket": "smx/GetBusy.jpg",
       "charts": [
@@ -4828,6 +4867,7 @@
       "name": "I'll Show You Loving",
       "artist": "Bassmonkeys feat. Natasha Anderson",
       "genre": "Pop",
+      "flags": ["bassmonkeys"],
       "bpm": "128",
       "jacket": "smx/I'llShowYouLoving.jpg",
       "charts": [
