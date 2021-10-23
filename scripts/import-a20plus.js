@@ -201,5 +201,7 @@ async function main() {
     console.log("waiting on remaining images to finish downloading...");
     await requestQueue.onIdle();
   }
+  console.log("Done");
+  process.exit();
 }
 main();
