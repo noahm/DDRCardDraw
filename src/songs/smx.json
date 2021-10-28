@@ -10,12 +10,7 @@
       { "key": "full", "color": "#00d0b8" },
       { "key": "team", "color": "#c216ce" }
     ],
-    "flags": [
-      "andorfineMedia",
-      "bassmonkeys",
-      "cappRecords",
-      "dimaMusic"
-    ],
+    "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28
   },
   "defaults": {
@@ -86,7 +81,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "199"
     },
     {
       "name": "Dance Vibrations",
@@ -132,7 +128,8 @@
           "diffClass": "team",
           "author": "J. Kuret & J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "200"
     },
     {
       "name": "Dynamo",
@@ -173,7 +170,8 @@
         },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "K. Ward" }
-      ]
+      ],
+      "saIndex": "201"
     },
     {
       "name": "Emotion",
@@ -224,7 +222,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "202"
     },
     {
       "name": "Flight Of The Bumble Bee",
@@ -275,7 +274,8 @@
           "diffClass": "team",
           "author": "J. Kuret & J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "203"
     },
     {
       "name": "Frozen Fire",
@@ -320,7 +320,8 @@
           "diffClass": "full",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "204"
     },
     {
       "name": "Hyper Hyper",
@@ -371,7 +372,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "206"
     },
     {
       "name": "In The Hall Of The Mountain King",
@@ -422,7 +424,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "207"
     },
     {
       "name": "Land Of The Lost",
@@ -457,7 +460,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 15, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "208"
     },
     {
       "name": "Party All Night",
@@ -503,12 +507,14 @@
           "diffClass": "team",
           "author": "K.TURN & V.TURNER"
         }
-      ]
+      ],
+      "saIndex": "209"
     },
     {
       "name": "Party People",
       "artist": "Oscillator X",
       "genre": "Dance",
+      "flags": ["cappRecords"],
       "bpm": "125",
       "jacket": "smx/PartyPeople.jpg",
       "charts": [
@@ -554,7 +560,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "210"
     },
     {
       "name": "Remember December",
@@ -599,7 +606,8 @@
           "diffClass": "full",
           "author": "Telperion"
         }
-      ]
+      ],
+      "saIndex": "211"
     },
     {
       "name": "Revenge",
@@ -629,7 +637,8 @@
         },
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "212"
     },
     {
       "name": "Start & Paws",
@@ -680,7 +689,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "214"
     },
     {
       "name": "Time is Ticking",
@@ -716,7 +726,8 @@
         },
         { "style": "solo", "lvl": 14, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "215"
     },
     {
       "name": "All Of Me",
@@ -763,7 +774,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "216"
     },
     {
       "name": "Can't Get Enough",
@@ -815,7 +827,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "217"
     },
     {
       "name": "Day After Day",
@@ -862,7 +875,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "218"
     },
     {
       "name": "Everything Is Changing",
@@ -909,7 +923,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "219"
     },
     {
       "name": "Firewalker",
@@ -946,7 +961,8 @@
         { "style": "solo", "lvl": 10, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "220"
     },
     {
       "name": "Look Into My Eyes",
@@ -987,7 +1003,8 @@
           "diffClass": "full",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "221"
     },
     {
       "name": "Lucky Star",
@@ -1029,7 +1046,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "222"
     },
     {
       "name": "Origin",
@@ -1076,7 +1094,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "223"
     },
     {
       "name": "Party People",
@@ -1118,7 +1137,8 @@
         },
         { "style": "solo", "lvl": 10, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 14, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "224"
     },
     {
       "name": "Reminds Me Of Home",
@@ -1154,7 +1174,8 @@
         },
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "225"
     },
     {
       "name": "Shoulda",
@@ -1196,7 +1217,8 @@
         },
         { "style": "solo", "lvl": 14, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 13, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "226"
     },
     {
       "name": "The Rainmaker",
@@ -1237,7 +1259,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 15, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "227"
     },
     {
       "name": "Twins",
@@ -1289,7 +1312,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "228"
     },
     {
       "name": "Bagpipe",
@@ -1325,7 +1349,8 @@
         },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "230"
     },
     {
       "name": "Be My Hero",
@@ -1371,7 +1396,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "231"
     },
     {
       "name": "Birdie",
@@ -1422,7 +1448,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "232"
     },
     {
       "name": "Burning Tonight",
@@ -1474,7 +1501,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "233"
     },
     {
       "name": "Can't Let Go",
@@ -1515,7 +1543,8 @@
         },
         { "style": "solo", "lvl": 12, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "234"
     },
     {
       "name": "Change The World",
@@ -1566,7 +1595,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "235"
     },
     {
       "name": "Cowbell Rock",
@@ -1612,7 +1642,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "236"
     },
     {
       "name": "Dabbi Doo",
@@ -1658,7 +1689,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "237"
     },
     {
       "name": "Dancing Circus",
@@ -1705,7 +1737,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "238"
     },
     {
       "name": "Don't Stop My Music Tonight",
@@ -1741,7 +1774,8 @@
         },
         { "style": "solo", "lvl": 12, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "239"
     },
     {
       "name": "Dream A Dream",
@@ -1792,7 +1826,8 @@
           "diffClass": "team",
           "author": "J. Kuret & J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "240"
     },
     {
       "name": "Dreaming",
@@ -1843,7 +1878,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "241"
     },
     {
       "name": "Get Down",
@@ -1889,7 +1925,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "242"
     },
     {
       "name": "Got The Rhythm",
@@ -1929,7 +1966,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "243"
     },
     {
       "name": "Hard Fast Disco",
@@ -1964,7 +2002,8 @@
         },
         { "style": "solo", "lvl": 21, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "244"
     },
     {
       "name": "Indignation",
@@ -1989,7 +2028,8 @@
           "diffClass": "full",
           "author": "Telperion"
         }
-      ]
+      ],
+      "saIndex": "245"
     },
     {
       "name": "It Gets Better",
@@ -2030,7 +2070,8 @@
         },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "246"
     },
     {
       "name": "Joanna",
@@ -2071,7 +2112,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "247"
     },
     {
       "name": "Licky Licky",
@@ -2112,7 +2154,8 @@
           "author": "J. Kuret"
         },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "248"
     },
     {
       "name": "Lights Go Down",
@@ -2149,7 +2192,8 @@
         },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 13, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "249"
     },
     {
       "name": "Link Line",
@@ -2174,7 +2218,8 @@
         { "style": "solo", "lvl": 25, "diffClass": "wild", "author": "M. Lee" },
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "250"
     },
     {
       "name": "Million Feelings",
@@ -2225,7 +2270,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "251"
     },
     {
       "name": "Moonstone",
@@ -2261,7 +2307,8 @@
         },
         { "style": "solo", "lvl": 15, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "252"
     },
     {
       "name": "Personal Reality",
@@ -2286,7 +2333,8 @@
         { "style": "solo", "lvl": 25, "diffClass": "wild", "author": "M. Lee" },
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "253"
     },
     {
       "name": "Ready To Fly",
@@ -2338,7 +2386,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "254"
     },
     {
       "name": "RockSlaves",
@@ -2368,7 +2417,8 @@
         },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "255"
     },
     {
       "name": "Save My World",
@@ -2409,7 +2459,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "256"
     },
     {
       "name": "Secret 2K12",
@@ -2461,7 +2512,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "257"
     },
     {
       "name": "Show Me Your Moves",
@@ -2512,7 +2564,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "258"
     },
     {
       "name": "That Night",
@@ -2557,7 +2610,8 @@
           "diffClass": "full",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "259"
     },
     {
       "name": "The 7th Element",
@@ -2598,7 +2652,8 @@
           "author": "J. Kuret"
         },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "260"
     },
     {
       "name": "The Last Time",
@@ -2644,7 +2699,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "261"
     },
     {
       "name": "Think Thousand Thoughts",
@@ -2684,7 +2740,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "262"
     },
     {
       "name": "What Happened To Love",
@@ -2730,7 +2787,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "263"
     },
     {
       "name": "Y Don't U",
@@ -2765,7 +2823,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "264"
     },
     {
       "name": "Ba Be Loo Be La",
@@ -2801,7 +2860,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "265"
     },
     {
       "name": "Blow My Mind",
@@ -2852,7 +2912,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "266"
     },
     {
       "name": "Bounce",
@@ -2904,7 +2965,8 @@
           "diffClass": "team",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "267"
     },
     {
       "name": "Endless Day",
@@ -2956,7 +3018,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "268"
     },
     {
       "name": "Girlz Night Out",
@@ -2997,7 +3060,8 @@
         },
         { "style": "solo", "lvl": 14, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "269"
     },
     {
       "name": "I Love You Baby",
@@ -3033,7 +3097,8 @@
         },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 13, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "270"
     },
     {
       "name": "Medicine 2013",
@@ -3075,7 +3140,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "271"
     },
     {
       "name": "Mexi Mexi",
@@ -3111,7 +3177,8 @@
         },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "272"
     },
     {
       "name": "My Freedom",
@@ -3148,7 +3215,8 @@
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "273"
     },
     {
       "name": "Run Away",
@@ -3200,7 +3268,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "274"
     },
     {
       "name": "Sun Goes Down",
@@ -3252,7 +3321,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "275"
     },
     {
       "name": "We Are The Sun",
@@ -3299,7 +3369,8 @@
           "diffClass": "team",
           "author": "J.Kuret and J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "276"
     },
     {
       "name": "Who",
@@ -3350,7 +3421,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "277"
     },
     {
       "name": "Zodiac",
@@ -3401,7 +3473,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "278"
     },
     {
       "name": "Big Blue Bouncy Ball",
@@ -3447,7 +3520,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "279"
     },
     {
       "name": "Funny Love",
@@ -3488,7 +3562,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "280"
     },
     {
       "name": "Ignition Starts",
@@ -3534,7 +3609,8 @@
           "diffClass": "team",
           "author": "J. Kuret & JBEAN"
         }
-      ]
+      ],
+      "saIndex": "281"
     },
     {
       "name": "Made In China",
@@ -3580,7 +3656,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "282"
     },
     {
       "name": "Monody",
@@ -3626,7 +3703,8 @@
           "diffClass": "team",
           "author": "C. Wiggers"
         }
-      ]
+      ],
+      "saIndex": "283"
     },
     {
       "name": "One Step Further",
@@ -3672,7 +3750,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "284"
     },
     {
       "name": "Surf",
@@ -3718,7 +3797,8 @@
           "diffClass": "team",
           "author": "J. Kuret & J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "285"
     },
     {
       "name": "Time To Fly",
@@ -3755,7 +3835,8 @@
         },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 23, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "286"
     },
     {
       "name": "Unity",
@@ -3801,7 +3882,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "287"
     },
     {
       "name": "Agent Blatant",
@@ -3832,7 +3914,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "288"
     },
     {
       "name": "Bloodrush",
@@ -3873,7 +3956,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "289"
     },
     {
       "name": "Crazyloop",
@@ -3924,7 +4008,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "291"
     },
     {
       "name": "Da Roots",
@@ -3965,7 +4050,8 @@
         },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 9, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "292"
     },
     {
       "name": "Determinator",
@@ -3990,7 +4076,8 @@
         { "style": "solo", "lvl": 26, "diffClass": "wild", "author": "dimo" },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "293"
     },
     {
       "name": "Disconnected Disco",
@@ -4020,7 +4107,8 @@
         },
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 26, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "294"
     },
     {
       "name": "Drifting Away",
@@ -4071,7 +4159,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "295"
     },
     {
       "name": "Fleadh Uncut",
@@ -4092,7 +4181,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 23, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "296"
     },
     {
       "name": "Flying High",
@@ -4143,7 +4233,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "297"
     },
     {
       "name": "Gallecode",
@@ -4173,7 +4264,8 @@
           "author": "R. Pinto"
         },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "298"
     },
     {
       "name": "Go 60 Go",
@@ -4198,7 +4290,8 @@
         { "style": "solo", "lvl": 24, "diffClass": "wild", "author": "dimo" },
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "299"
     },
     {
       "name": "Hispanic Panic",
@@ -4218,7 +4311,8 @@
         },
         { "style": "solo", "lvl": 11, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "300"
     },
     {
       "name": "Holy Guacamole",
@@ -4243,7 +4337,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "301"
     },
     {
       "name": "I Feel Sun",
@@ -4279,7 +4374,8 @@
         },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "302"
     },
     {
       "name": "I Think I Like That Sound",
@@ -4315,7 +4411,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "303"
     },
     {
       "name": "Ize Pie",
@@ -4346,7 +4443,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "304"
     },
     {
       "name": "Land Of The Rising Sun",
@@ -4376,7 +4474,8 @@
           "author": "L. Striker"
         },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "305"
     },
     {
       "name": "My Life Is So Crazy",
@@ -4406,7 +4505,8 @@
         { "style": "solo", "lvl": 24, "diffClass": "wild", "author": "dimo" },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "306"
     },
     {
       "name": "Paradise",
@@ -4457,7 +4557,8 @@
           "diffClass": "team",
           "author": "J. Kuret"
         }
-      ]
+      ],
+      "saIndex": "307"
     },
     {
       "name": "Pop4",
@@ -4492,7 +4593,8 @@
         },
         { "style": "solo", "lvl": 22, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "308"
     },
     {
       "name": "Psalm Pilot",
@@ -4527,7 +4629,8 @@
         },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "309"
     },
     {
       "name": "Ra",
@@ -4568,7 +4671,8 @@
         },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "310"
     },
     {
       "name": "Reactor",
@@ -4609,7 +4713,8 @@
           "diffClass": "team",
           "author": "Telperion"
         }
-      ]
+      ],
+      "saIndex": "311"
     },
     {
       "name": "ROM-eo & Juli8",
@@ -4640,7 +4745,8 @@
         },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 12, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "312"
     },
     {
       "name": "Soapy Bubble",
@@ -4675,7 +4781,8 @@
           "author": "R. Pinto"
         },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "313"
     },
     {
       "name": "Spin Chicken",
@@ -4701,7 +4808,8 @@
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 11, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "314"
     },
     {
       "name": "Temple Of Boom",
@@ -4737,7 +4845,8 @@
           "author": "Telperion"
         },
         { "style": "team", "lvl": 23, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "315"
     },
     {
       "name": "This Is Rock And Roll",
@@ -4772,7 +4881,8 @@
         },
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "316"
     },
     {
       "name": "While Tha Rekkid Spinz",
@@ -4798,7 +4908,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "317"
     },
     {
       "name": "Bad 4 My Health",
@@ -4834,7 +4945,8 @@
           "diffClass": "full",
           "author": "Telperion"
         }
-      ]
+      ],
+      "saIndex": "318"
     },
     {
       "name": "Get Busy",
@@ -4861,7 +4973,8 @@
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "319"
     },
     {
       "name": "I'll Show You Loving",
@@ -4883,7 +4996,8 @@
         { "style": "solo", "lvl": 12, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 12, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "320"
     },
     {
       "name": "Dies Irae",
@@ -4918,7 +5032,8 @@
         },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "322"
     },
     {
       "name": "Ladybug",
@@ -4949,7 +5064,8 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 14, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "323"
     },
     {
       "name": "Paranormal",
@@ -4984,7 +5100,8 @@
         },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "324"
     },
     {
       "name": "Sweet World",
@@ -5020,7 +5137,8 @@
           "author": "Telperion"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "325"
     },
     {
       "name": "Click Bait",
@@ -5051,7 +5169,8 @@
         { "style": "solo", "lvl": 11, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "326"
     },
     {
       "name": "Sunshine",
@@ -5086,7 +5205,8 @@
         },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "327"
     },
     {
       "name": "Darkness",
@@ -5107,7 +5227,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "328"
     },
     {
       "name": "EternuS",
@@ -5128,7 +5249,8 @@
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 14, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "329"
     },
     {
       "name": "Feel The Melody",
@@ -5154,7 +5276,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "330"
     },
     {
       "name": "Gargoyle",
@@ -5190,7 +5313,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 24, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "331"
     },
     {
       "name": "Mellow",
@@ -5211,7 +5335,8 @@
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 13, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "332"
     },
     {
       "name": "Pink Fuzzy Bunnies",
@@ -5251,7 +5376,8 @@
           "diffClass": "full",
           "author": "J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "333"
     },
     {
       "name": "Rainspark",
@@ -5272,7 +5398,8 @@
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 12, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "334"
     },
     {
       "name": "Zenith",
@@ -5298,7 +5425,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "335"
     },
     {
       "name": "July",
@@ -5319,7 +5447,8 @@
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "336"
     },
     {
       "name": "Utopia",
@@ -5355,7 +5484,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "337"
     },
     {
       "name": "Xuxa",
@@ -5391,7 +5521,8 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "338"
     },
     {
       "name": "Boom Boom Dollars",
@@ -5427,7 +5558,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "339"
     },
     {
       "name": "Hanky Panky",
@@ -5453,7 +5585,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "340"
     },
     {
       "name": "Be Alive",
@@ -5484,7 +5617,8 @@
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "341"
     },
     {
       "name": "Do U Love Me",
@@ -5520,7 +5654,8 @@
           "author": "Telperion"
         },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "342"
     },
     {
       "name": "Feels Just Like That Night",
@@ -5556,7 +5691,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 25, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "343"
     },
     {
       "name": "The Beginning",
@@ -5592,7 +5728,8 @@
         { "style": "solo", "lvl": 22, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 25, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "344"
     },
     {
       "name": "Ari Oh",
@@ -5638,7 +5775,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "345"
     },
     {
       "name": "Beautiful Man",
@@ -5689,7 +5827,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "346"
     },
     {
       "name": "Become Astral",
@@ -5730,7 +5869,8 @@
           "diffClass": "team",
           "author": "Telperion"
         }
-      ]
+      ],
+      "saIndex": "347"
     },
     {
       "name": "Bumble Bee",
@@ -5761,7 +5901,8 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "348"
     },
     {
       "name": "Coming Out",
@@ -5807,7 +5948,8 @@
           "diffClass": "team",
           "author": "R. Frazee & The Bean"
         }
-      ]
+      ],
+      "saIndex": "349"
     },
     {
       "name": "Dizzy",
@@ -5853,7 +5995,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "350"
     },
     {
       "name": "Never Gonna Make",
@@ -5884,7 +6027,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "351"
     },
     {
       "name": "Waka Laka",
@@ -5935,7 +6079,8 @@
           "diffClass": "team",
           "author": "Monster Cookie"
         }
-      ]
+      ],
+      "saIndex": "352"
     },
     {
       "name": "Bang Bang Bang",
@@ -5986,7 +6131,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "353"
     },
     {
       "name": "Dance Boom Boom",
@@ -6037,7 +6183,8 @@
           "diffClass": "team",
           "author": "J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "354"
     },
     {
       "name": "Flash In The Night",
@@ -6083,7 +6230,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "355"
     },
     {
       "name": "Hero",
@@ -6129,7 +6277,8 @@
           "diffClass": "team",
           "author": "K. Ward & J.Casarino"
         }
-      ]
+      ],
+      "saIndex": "356"
     },
     {
       "name": "Monolith",
@@ -6170,7 +6319,8 @@
           "author": "J. Kuret"
         },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "357"
     },
     {
       "name": "NightMoves",
@@ -6201,7 +6351,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "358"
     },
     {
       "name": "Senorita",
@@ -6232,7 +6383,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "359"
     },
     {
       "name": "Typical Tropical",
@@ -6268,7 +6420,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "360"
     },
     {
       "name": "Who R You",
@@ -6294,7 +6447,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "361"
     },
     {
       "name": "Whoopsy Daisy",
@@ -6340,7 +6494,8 @@
           "author": "Telperion"
         },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "362"
     },
     {
       "name": "Young Forever",
@@ -6361,7 +6516,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "363"
     },
     {
       "name": "Ghosts",
@@ -6412,7 +6568,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "364"
     },
     {
       "name": "Justify My Love",
@@ -6443,7 +6600,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "S. Fry" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "365"
     },
     {
       "name": "Movin On",
@@ -6479,7 +6637,8 @@
         },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "D. Man" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "D. Man" }
-      ]
+      ],
+      "saIndex": "366"
     },
     {
       "name": "The Saint Goes Marching",
@@ -6525,7 +6684,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "367"
     },
     {
       "name": "Esperanza",
@@ -6576,7 +6736,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "368"
     },
     {
       "name": "Move It Groove It",
@@ -6602,7 +6763,8 @@
         { "style": "solo", "lvl": 21, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "369"
     },
     {
       "name": "Pink Dinosaur",
@@ -6623,7 +6785,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 13, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "370"
     },
     {
       "name": "A Sign",
@@ -6664,7 +6827,8 @@
           "diffClass": "team",
           "author": "J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "371"
     },
     {
       "name": "Anubis",
@@ -6715,7 +6879,8 @@
           "diffClass": "team",
           "author": "B. Arthur"
         }
-      ]
+      ],
+      "saIndex": "372"
     },
     {
       "name": "Bandito",
@@ -6741,7 +6906,8 @@
           "author": "C. Writer"
         },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "373"
     },
     {
       "name": "Bye Bye Baby Balloon",
@@ -6787,7 +6953,8 @@
           "diffClass": "team",
           "author": "J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "374"
     },
     {
       "name": "Dam Dariram",
@@ -6823,7 +6990,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "Miria" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "375"
     },
     {
       "name": "Electric",
@@ -6874,7 +7042,8 @@
           "diffClass": "team",
           "author": "J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "376"
     },
     {
       "name": "Exotica",
@@ -6920,7 +7089,8 @@
           "diffClass": "team",
           "author": "B. Arthur"
         }
-      ]
+      ],
+      "saIndex": "377"
     },
     {
       "name": "Music & Police",
@@ -6971,7 +7141,8 @@
           "diffClass": "team",
           "author": "Jungle J. & B. Robbins"
         }
-      ]
+      ],
+      "saIndex": "378"
     },
     {
       "name": "No Princess",
@@ -6992,7 +7163,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "379"
     },
     {
       "name": "So Deep",
@@ -7023,7 +7195,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "IC. U" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "Miria" },
         { "style": "team", "lvl": 24, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "380"
     },
     {
       "name": "Stay",
@@ -7074,7 +7247,8 @@
           "diffClass": "team",
           "author": "Jungle J."
         }
-      ]
+      ],
+      "saIndex": "381"
     },
     {
       "name": "Summer Night In Seattle",
@@ -7115,7 +7289,8 @@
           "diffClass": "team",
           "author": "B. Arthur"
         }
-      ]
+      ],
+      "saIndex": "382"
     },
     {
       "name": "We're Getting Faster",
@@ -7141,7 +7316,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "383"
     },
     {
       "name": "Your Own Destiny",
@@ -7187,7 +7363,8 @@
           "diffClass": "team",
           "author": "Telperion"
         }
-      ]
+      ],
+      "saIndex": "384"
     },
     {
       "name": "Fantasy",
@@ -7208,7 +7385,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "385"
     },
     {
       "name": "Get Lifted",
@@ -7249,7 +7427,8 @@
           "diffClass": "team",
           "author": "B. Arthur"
         }
-      ]
+      ],
+      "saIndex": "386"
     },
     {
       "name": "In My Dreams",
@@ -7265,7 +7444,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "S. Fry" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "387"
     },
     {
       "name": "Living In America",
@@ -7291,7 +7471,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Unagi" },
         { "style": "solo", "lvl": 17, "diffClass": "full", "author": "Unagi" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "Unagi" }
-      ]
+      ],
+      "saIndex": "388"
     },
     {
       "name": "Speed Over Beethoven",
@@ -7322,7 +7503,8 @@
           "author": "C. Writer"
         },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "389"
     },
     {
       "name": "Come On Now",
@@ -7373,7 +7555,8 @@
           "diffClass": "team",
           "author": "Bubble B."
         }
-      ]
+      ],
+      "saIndex": "390"
     },
     {
       "name": "Dam Dadi Doo",
@@ -7424,7 +7607,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "391"
     },
     {
       "name": "Devil Inside",
@@ -7470,7 +7654,8 @@
           "diffClass": "team",
           "author": "Bubble B."
         }
-      ]
+      ],
+      "saIndex": "392"
     },
     {
       "name": "Dolphin Talk",
@@ -7516,7 +7701,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "393"
     },
     {
       "name": "Classic Madness",
@@ -7547,7 +7733,8 @@
           "author": "B. Arthur"
         },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "394"
     },
     {
       "name": "Dopamine",
@@ -7583,7 +7770,8 @@
         },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 14, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "395"
     },
     {
       "name": "Equinox",
@@ -7614,7 +7802,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "396"
     },
     {
       "name": "Give Into",
@@ -7640,7 +7829,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "UNAGI" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "UNAGI" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "UNAGI" }
-      ]
+      ],
+      "saIndex": "397"
     },
     {
       "name": "India's Glitch",
@@ -7686,7 +7876,8 @@
           "diffClass": "team",
           "author": "Jungle J."
         }
-      ]
+      ],
+      "saIndex": "398"
     },
     {
       "name": "I Want Your Balalaika",
@@ -7722,7 +7913,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "T.H.X" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "Axel" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "Noodles" }
-      ]
+      ],
+      "saIndex": "399"
     },
     {
       "name": "July ReduX",
@@ -7743,7 +7935,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "400"
     },
     {
       "name": "Life Ride",
@@ -7784,7 +7977,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "401"
     },
     {
       "name": "Mozart Is Back",
@@ -7825,7 +8019,8 @@
           "author": "Jungle J."
         },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "Axel" }
-      ]
+      ],
+      "saIndex": "402"
     },
     {
       "name": "My Baby Mama",
@@ -7861,7 +8056,8 @@
           "author": "J. consulted by J."
         },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "403"
     },
     {
       "name": "Nothing Gonna Stop",
@@ -7877,7 +8073,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "404"
     },
     {
       "name": "Silence",
@@ -7893,7 +8090,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "Br0ski" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "UNAGI" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "UNAGI" }
-      ]
+      ],
+      "saIndex": "405"
     },
     {
       "name": "Black Magic",
@@ -7944,7 +8142,8 @@
           "diffClass": "team",
           "author": "Bubble B."
         }
-      ]
+      ],
+      "saIndex": "406"
     },
     {
       "name": "Crime Time",
@@ -7970,7 +8169,8 @@
         { "style": "solo", "lvl": 21, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "407"
     },
     {
       "name": "Magic Mystery Tour",
@@ -8006,7 +8206,8 @@
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "Miria" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "Miria" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "408"
     },
     {
       "name": "MAX428",
@@ -8057,7 +8258,8 @@
           "diffClass": "team",
           "author": "Los Diablos"
         }
-      ]
+      ],
+      "saIndex": "409"
     },
     {
       "name": "Nightmare",
@@ -8078,7 +8280,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "S. Fry" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "410"
     },
     {
       "name": "Night Of Fright",
@@ -8099,7 +8302,8 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "Jackal" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "Jackal" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "Jackal" }
-      ]
+      ],
+      "saIndex": "411"
     },
     {
       "name": "Pretty Ugly",
@@ -8125,7 +8329,8 @@
           "diffClass": "team",
           "author": "C. Writer"
         }
-      ]
+      ],
+      "saIndex": "412"
     },
     {
       "name": "Riddimino",
@@ -8166,7 +8371,8 @@
           "author": "J. Kuret"
         },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "D. Step" }
-      ]
+      ],
+      "saIndex": "413"
     },
     {
       "name": "Sky High",
@@ -8182,7 +8388,8 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "S. Fry" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "414"
     },
     {
       "name": "Warrior",
@@ -8228,7 +8435,8 @@
           "diffClass": "team",
           "author": "Twinkle Toes"
         }
-      ]
+      ],
+      "saIndex": "415"
     },
     {
       "name": "Arcade Run",
@@ -8269,7 +8477,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "416"
     },
     {
       "name": "Bring Your Lovin Back",
@@ -8310,7 +8519,8 @@
           "diffClass": "team",
           "author": "B. UrBest"
         }
-      ]
+      ],
+      "saIndex": "417"
     },
     {
       "name": "Confusion",
@@ -8326,7 +8536,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "418"
     },
     {
       "name": "Doh!",
@@ -8362,7 +8573,8 @@
           "author": "D. Ipolosaurus"
         },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "S. Tego" }
-      ]
+      ],
+      "saIndex": "419"
     },
     {
       "name": "Hypnosis",
@@ -8393,7 +8605,8 @@
           "author": "M. Irrow"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "P. Pro" }
-      ]
+      ],
+      "saIndex": "420"
     },
     {
       "name": "I'm Crazy For Your Love",
@@ -8439,7 +8652,8 @@
           "diffClass": "team",
           "author": "Bubble B."
         }
-      ]
+      ],
+      "saIndex": "421"
     },
     {
       "name": "Into My Dream",
@@ -8485,7 +8699,8 @@
           "diffClass": "team",
           "author": "J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "422"
     },
     {
       "name": "No Nobody's Love",
@@ -8511,7 +8726,8 @@
           "diffClass": "team",
           "author": "Jungle J."
         }
-      ]
+      ],
+      "saIndex": "423"
     },
     {
       "name": "Bazookistan",
@@ -8557,7 +8773,8 @@
           "author": "Mr. Honk"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "Mr. Baa" }
-      ]
+      ],
+      "saIndex": "424"
     },
     {
       "name": "Electro Asia",
@@ -8593,7 +8810,8 @@
           "diffClass": "team",
           "author": "Jungle J."
         }
-      ]
+      ],
+      "saIndex": "425"
     },
     {
       "name": "Megalovania",
@@ -8614,7 +8832,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "JBEAN" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "426"
     },
     {
       "name": "My Generation",
@@ -8650,7 +8869,8 @@
           "author": "CJ Boogie"
         },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "S. Fry" }
-      ]
+      ],
+      "saIndex": "427"
     },
     {
       "name": "Nori Nori Nori",
@@ -8676,7 +8896,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "Miria" },
         { "style": "solo", "lvl": 20, "diffClass": "full", "author": "Miria" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "428"
     },
     {
       "name": "Russian Roulette",
@@ -8697,7 +8918,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "UNAGI" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "UNAGI" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "UNAGI" }
-      ]
+      ],
+      "saIndex": "429"
     },
     {
       "name": "Spaceman",
@@ -8733,7 +8955,8 @@
           "diffClass": "team",
           "author": "A. Stronaut"
         }
-      ]
+      ],
+      "saIndex": "430"
     },
     {
       "name": "What Love Feels Like",
@@ -8769,7 +8992,8 @@
           "author": "P. Epper"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "F. Lour" }
-      ]
+      ],
+      "saIndex": "431"
     },
     {
       "name": "Csikos Post",
@@ -8815,7 +9039,8 @@
           "diffClass": "team",
           "author": "J.Casarino Vs C.Oops"
         }
-      ]
+      ],
+      "saIndex": "432"
     },
     {
       "name": "Delirium",
@@ -8841,7 +9066,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 23, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "433"
     },
     {
       "name": "Ma Huggies",
@@ -8887,7 +9113,8 @@
           "diffClass": "team",
           "author": "GinToxic"
         }
-      ]
+      ],
+      "saIndex": "434"
     },
     {
       "name": "On My Own",
@@ -8908,7 +9135,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "K.TURN" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "K.TURN" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "K.TURN" }
-      ]
+      ],
+      "saIndex": "435"
     },
     {
       "name": "Show U Love",
@@ -8939,7 +9167,8 @@
           "author": "B. Shakalaka"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "S. Time" }
-      ]
+      ],
+      "saIndex": "436"
     },
     {
       "name": "Take Me Away",
@@ -8980,7 +9209,8 @@
           "diffClass": "team",
           "author": "GinToxic"
         }
-      ]
+      ],
+      "saIndex": "437"
     },
     {
       "name": "Twelve",
@@ -8996,7 +9226,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "438"
     },
     {
       "name": "Beethoven Virus",
@@ -9042,7 +9273,8 @@
           "diffClass": "team",
           "author": "J. Casarino Vs Co-Op"
         }
-      ]
+      ],
+      "saIndex": "439"
     },
     {
       "name": "BU-44",
@@ -9073,7 +9305,8 @@
         },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "AAA" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "JBEAN" }
-      ]
+      ],
+      "saIndex": "440"
     },
     {
       "name": "Charlene",
@@ -9104,7 +9337,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Miria" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "Miria" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "441"
     },
     {
       "name": "Do It All Night",
@@ -9145,7 +9379,8 @@
           "author": "R. Frazee"
         },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "442"
     },
     {
       "name": "Fall Silently",
@@ -9176,7 +9411,8 @@
           "diffClass": "team",
           "author": "H. Burgler"
         }
-      ]
+      ],
+      "saIndex": "443"
     },
     {
       "name": "Hip Hop Jam",
@@ -9197,7 +9433,8 @@
         },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "Taco" },
         { "style": "team", "lvl": 14, "diffClass": "team", "author": "Burrito" }
-      ]
+      ],
+      "saIndex": "444"
     },
     {
       "name": "Kagami",
@@ -9218,7 +9455,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "445"
     },
     {
       "name": "SubZero",
@@ -9244,7 +9482,8 @@
           "author": "GinToxic"
         },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Axel" }
-      ]
+      ],
+      "saIndex": "446"
     },
     {
       "name": "Baby Love Me",
@@ -9270,7 +9509,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 21, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "447"
     },
     {
       "name": "Critical Hit",
@@ -9296,7 +9536,8 @@
           "author": "J. Fred x J. Bratt"
         },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "K.O." }
-      ]
+      ],
+      "saIndex": "448"
     },
     {
       "name": "Forever",
@@ -9322,7 +9563,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "ZOM" },
         { "style": "solo", "lvl": 16, "diffClass": "full", "author": "ZOM" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "ZOM" }
-      ]
+      ],
+      "saIndex": "449"
     },
     {
       "name": "Summer",
@@ -9363,7 +9605,8 @@
           "diffClass": "team",
           "author": "J. Kuret & J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "450"
     },
     {
       "name": "Temple Of Love",
@@ -9404,7 +9647,8 @@
         },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "Miria" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "Miria" }
-      ]
+      ],
+      "saIndex": "451"
     },
     {
       "name": "The Judgement Day",
@@ -9420,7 +9664,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "dual", "author": "Peppy" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "Dippy" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "Trippy" }
-      ]
+      ],
+      "saIndex": "452"
     },
     {
       "name": "Winter",
@@ -9466,7 +9711,8 @@
           "diffClass": "team",
           "author": "J. Casarino Vs V.Winters"
         }
-      ]
+      ],
+      "saIndex": "453"
     },
     {
       "name": "Cryosleep",
@@ -9512,7 +9758,8 @@
           "diffClass": "team",
           "author": "H. Jackson"
         }
-      ]
+      ],
+      "saIndex": "454"
     },
     {
       "name": "Destiny",
@@ -9553,7 +9800,8 @@
           "author": "Mystic Goddess"
         },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "Retsy" }
-      ]
+      ],
+      "saIndex": "455"
     },
     {
       "name": "Dr. M",
@@ -9604,7 +9852,8 @@
           "diffClass": "team",
           "author": "J. Casarino VS Dr.M"
         }
-      ]
+      ],
+      "saIndex": "456"
     },
     {
       "name": "Glowing In The Night",
@@ -9650,7 +9899,8 @@
           "diffClass": "team",
           "author": "Beat-Beat!!!"
         }
-      ]
+      ],
+      "saIndex": "457"
     },
     {
       "name": "In The Heat Of The Night",
@@ -9686,7 +9936,8 @@
           "diffClass": "team",
           "author": "Ben Dover"
         }
-      ]
+      ],
+      "saIndex": "458"
     },
     {
       "name": "Katana Fighter",
@@ -9717,7 +9968,8 @@
           "diffClass": "team",
           "author": "Samurai Man"
         }
-      ]
+      ],
+      "saIndex": "459"
     },
     {
       "name": "Sky High",
@@ -9738,7 +9990,8 @@
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "UNAGI" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "UNAGI" },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "Axel" }
-      ]
+      ],
+      "saIndex": "460"
     },
     {
       "name": "Brutalisphere",
@@ -9764,7 +10017,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "Riki" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "Retsy" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "Brutus" }
-      ]
+      ],
+      "saIndex": "461"
     },
     {
       "name": "Butterfly",
@@ -9805,7 +10059,8 @@
         },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "B. Fly" },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "S. Mile" }
-      ]
+      ],
+      "saIndex": "462"
     },
     {
       "name": "Cartoon Heroes",
@@ -9851,7 +10106,8 @@
           "diffClass": "team",
           "author": "SMX Heroes"
         }
-      ]
+      ],
+      "saIndex": "463"
     },
     {
       "name": "Melancholy Vision",
@@ -9887,7 +10143,8 @@
           "author": "Eye Scream"
         },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Sad Boi" }
-      ]
+      ],
+      "saIndex": "464"
     },
     {
       "name": "Operator",
@@ -9938,7 +10195,8 @@
           "diffClass": "team",
           "author": "Sue Flay"
         }
-      ]
+      ],
+      "saIndex": "465"
     },
     {
       "name": "Show U",
@@ -9954,7 +10212,8 @@
         { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "466"
     },
     {
       "name": "Step Up Amadeus",
@@ -10000,7 +10259,8 @@
           "diffClass": "team",
           "author": "X.Makina & A.Meeroh"
         }
-      ]
+      ],
+      "saIndex": "467"
     },
     {
       "name": "Test My Best",
@@ -10041,7 +10301,8 @@
           "author": "J. Kuret"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "A+" }
-      ]
+      ],
+      "saIndex": "468"
     },
     {
       "name": "Kick It Man",
@@ -10082,7 +10343,8 @@
           "author": "O. Fius"
         },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "N. Fers" }
-      ]
+      ],
+      "saIndex": "469"
     },
     {
       "name": "If You Can Say Goodbye",
@@ -10123,7 +10385,8 @@
           "author": "Howie Doin"
         },
         { "style": "team", "lvl": 16, "diffClass": "team", "author": "K. Ward" }
-      ]
+      ],
+      "saIndex": "470"
     },
     {
       "name": "Liquify",
@@ -10174,7 +10437,8 @@
           "diffClass": "team",
           "author": "R. Frazee"
         }
-      ]
+      ],
+      "saIndex": "471"
     },
     {
       "name": "Paradox",
@@ -10215,7 +10479,8 @@
           "diffClass": "team",
           "author": "Yin Yang"
         }
-      ]
+      ],
+      "saIndex": "472"
     },
     {
       "name": "Queen Of Light",
@@ -10231,7 +10496,8 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 24, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "473"
     },
     {
       "name": "Ring The Alarm",
@@ -10262,7 +10528,8 @@
           "author": "Mr. Mister"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "Mr. Us" }
-      ]
+      ],
+      "saIndex": "474"
     },
     {
       "name": "Say What",
@@ -10303,7 +10570,8 @@
           "diffClass": "team",
           "author": "Tuba Boy"
         }
-      ]
+      ],
+      "saIndex": "475"
     },
     {
       "name": "Contrast",
@@ -10329,7 +10597,8 @@
           "author": "Mystic Goddess"
         },
         { "style": "team", "lvl": 20, "diffClass": "team", "author": "Axel" }
-      ]
+      ],
+      "saIndex": "476"
     },
     {
       "name": "Jukebox",
@@ -10355,7 +10624,8 @@
           "diffClass": "team",
           "author": "TURN The BEAN Around"
         }
-      ]
+      ],
+      "saIndex": "477"
     },
     {
       "name": "Kinky Boots",
@@ -10396,7 +10666,8 @@
           "diffClass": "team",
           "author": "Twinkle Toes"
         }
-      ]
+      ],
+      "saIndex": "478"
     },
     {
       "name": "op13",
@@ -10432,7 +10703,8 @@
           "author": "Ursa Minor"
         },
         { "style": "team", "lvl": 19, "diffClass": "team", "author": "K.TURN" }
-      ]
+      ],
+      "saIndex": "479"
     },
     {
       "name": "Turn Me On",
@@ -10478,7 +10750,8 @@
           "diffClass": "team",
           "author": "Spartacus"
         }
-      ]
+      ],
+      "saIndex": "480"
     },
     {
       "name": "Boomerang",
@@ -10524,7 +10797,8 @@
           "author": "Wanda Full"
         },
         { "style": "team", "lvl": 12, "diffClass": "team", "author": "S. Trax" }
-      ]
+      ],
+      "saIndex": "481"
     },
     {
       "name": "Canon D.2",
@@ -10575,7 +10849,8 @@
           "diffClass": "team",
           "author": "J. Casarino"
         }
-      ]
+      ],
+      "saIndex": "482"
     },
     {
       "name": "Closer To Heaven",
@@ -10596,7 +10871,8 @@
         { "style": "solo", "lvl": 22, "diffClass": "dual", "author": "Sigma" },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "Sigma" },
         { "style": "team", "lvl": 22, "diffClass": "team", "author": "Sigma" }
-      ]
+      ],
+      "saIndex": "483"
     },
     {
       "name": "Give You Love",
@@ -10632,7 +10908,8 @@
           "author": "C. Writer"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "B. Arus" }
-      ]
+      ],
+      "saIndex": "484"
     },
     {
       "name": "Grab It While We Can",
@@ -10683,7 +10960,8 @@
           "diffClass": "team",
           "author": "Jelly J."
         }
-      ]
+      ],
+      "saIndex": "485"
     },
     {
       "name": "Never Ending Story",
@@ -10714,7 +10992,8 @@
           "author": "Empress"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "Atreyu" }
-      ]
+      ],
+      "saIndex": "486"
     },
     {
       "name": "William Tell",
@@ -10760,6 +11039,316 @@
           "author": "Forrest Jump"
         },
         { "style": "team", "lvl": 17, "diffClass": "team", "author": "S. Trax" }
+      ],
+      "saIndex": "487"
+    },
+    {
+      "saIndex": "488",
+      "name": "403",
+      "artist": "NAOKI Underground",
+      "genre": "Orchestral Drumstep",
+      "bpm": "160",
+      "jacket": "smx/403.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "basic",
+          "author": "Tic Tac"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "author": "Sigma & The Bean"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "Sigma & The Bean"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild",
+          "author": "Sigma & The Bean"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "dual",
+          "author": "Sigma & The Bean"
+        },
+        {
+          "style": "solo",
+          "lvl": 25,
+          "diffClass": "full",
+          "author": "Sigma & The Bean"
+        },
+        {
+          "style": "team",
+          "lvl": 21,
+          "diffClass": "team",
+          "author": "Sigma & The Bean"
+        }
+      ]
+    },
+    {
+      "saIndex": "489",
+      "name": "Disco High",
+      "artist": "Ultimate Heights",
+      "genre": "House",
+      "bpm": "130",
+      "jacket": "smx/DiscoHigh.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Pete Sake"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "author": "Word Up!"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "Inferno"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "D.I.S.C.O. Man"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "Inferno"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "author": "D.I.S.C.O. Man"
+        },
+        {
+          "style": "team",
+          "lvl": 15,
+          "diffClass": "team",
+          "author": "Word Up!"
+        }
+      ]
+    },
+    {
+      "saIndex": "490",
+      "name": "Follow My Pamp",
+      "artist": "Andrea Damante feat. Adam Clay",
+      "genre": "Future House",
+      "bpm": "126",
+      "jacket": "smx/FollowMyPamp.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Gazelle"
+        },
+        { "style": "solo", "lvl": 7, "diffClass": "easy", "author": "Gibbon" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "author": "Zebra" },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild",
+          "author": "Giraffe"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "dual",
+          "author": "Cheetah"
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "full",
+          "author": "J. Casarino"
+        },
+        { "style": "team", "lvl": 14, "diffClass": "team", "author": "S. Fari" }
+      ]
+    },
+    {
+      "saIndex": "491",
+      "name": "Robot World",
+      "artist": "Oscillator X",
+      "genre": "Dance",
+      "bpm": "130",
+      "jacket": "smx/RobotWorld.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "basic", "author": "Hal" },
+        { "style": "solo", "lvl": 8, "diffClass": "easy", "author": "Johny5" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard", "author": "Aibo" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild", "author": "Bender" },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual",
+          "author": "Jortana"
+        },
+        { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JJ-8" },
+        { "style": "team", "lvl": 10, "diffClass": "team", "author": "J-800" }
+      ]
+    },
+    {
+      "saIndex": "492",
+      "name": "SaberDance",
+      "artist": "Quiqman",
+      "genre": "Hyper Techno",
+      "bpm": "175",
+      "jacket": "smx/SaberDance.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 4, "diffClass": "basic", "author": "Nimcha" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "author": "Blade" },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "Starlight"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "wild",
+          "author": "Pitter Patter"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "author": "Gin Toxic"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "author": "Mr. Chops"
+        },
+        {
+          "style": "team",
+          "lvl": 22,
+          "diffClass": "team",
+          "author": "X. Caliber"
+        }
+      ]
+    },
+    {
+      "saIndex": "493",
+      "name": "Say Na Na Na",
+      "artist": "Serhat",
+      "genre": "Pop",
+      "bpm": "118",
+      "jacket": "smx/SayNaNaNa.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Otto Doit"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "Jacob Sladder"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard",
+          "author": "Sandie Beaches"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "wild",
+          "author": "Porter House"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual",
+          "author": "Morris Merrier"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "full",
+          "author": "G. Whiz"
+        },
+        {
+          "style": "team",
+          "lvl": 15,
+          "diffClass": "team",
+          "author": "Jerry Rigg"
+        }
+      ]
+    },
+    {
+      "saIndex": "494",
+      "name": "Watch Out",
+      "artist": "Victoria",
+      "genre": "Pop",
+      "bpm": "106",
+      "jacket": "smx/WatchOut.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Ann Chovie"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "author": "Luke Out"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "author": "Polly Ester"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "Crystal Ball"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "Bubble B."
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "Hazel Nutt"
+        },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team",
+          "author": "Smart E. Pants"
+        }
       ]
     }
   ]

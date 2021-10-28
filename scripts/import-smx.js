@@ -3,10 +3,15 @@
  */
 
 const fs = require("fs");
+const path = require("path");
 const { resolve, join } = require("path");
 const prettier = require("prettier");
 const fetch = require("node-fetch");
-const { downloadJacket, requestQueue } = require("./utils");
+const {
+  downloadJacket,
+  requestQueue,
+  reportQueueStatusLive,
+} = require("./utils");
 
 const difficulties = [
   "basic",
@@ -40,6 +45,16 @@ function queueJacketDownload(coverPath) {
 async function main() {
   const songs = [];
   let lvlMax = 0;
+  reportQueueStatusLive();
+  const targetFile = path.join(__dirname, "../src/songs/smx.json");
+  const existingData = require(targetFile);
+  const indexedSongs = {};
+  for (const song of existingData.songs) {
+    if (indexedSongs[song.name]) {
+      console.warn(`Duplicate song title: ${song.name}`);
+    }
+    indexedSongs[song.name] = song;
+  }
 
   for (const diff of difficulties) {
     console.log(`pulling ${diff} chart details`);
@@ -56,6 +71,8 @@ async function main() {
     for (const score of highscores) {
       if (!songs[score.song_id]) {
         songs[score.song_id] = {
+          ...indexedSongs[score.song.title],
+          saIndex: score.song_id.toString(),
           name: score.song.title,
           artist: score.song.artist,
           genre: score.song.genre,
@@ -63,7 +80,9 @@ async function main() {
           jacket: queueJacketDownload(score.song.cover_path),
           charts: [],
         };
-        console.log(`added ${score.song.title} (${songs.length} songs total)`);
+        if (!indexedSongs[score.song.title]) {
+          console.log(`added new song: ${score.song.title}`);
+        }
       }
       songs[score.song_id].charts.push({
         style: diff === "team" ? "team" : "solo",
@@ -78,49 +97,7 @@ async function main() {
   }
 
   const smxData = {
-    meta: {
-      styles: ["solo", "team"],
-      difficulties: [
-        { key: "basic", color: "#03da00" },
-        { key: "easy", color: "#d3b211" },
-        { key: "hard", color: "#a90a12" },
-        { key: "wild", color: "#3406bc" },
-        { key: "dual", color: "#1d72af" },
-        { key: "full", color: "#00d0b8" },
-        { key: "team", color: "#c216ce" },
-      ],
-      flags: [],
-      lvlMax,
-    },
-    defaults: {
-      style: "solo",
-      difficulties: ["wild", "hard"],
-      flags: [],
-      lowerLvlBound: 18,
-      upperLvlBound: 22,
-    },
-    i18n: {
-      en: {
-        name: "StepManiaX",
-        solo: "Solo",
-        basic: "Basic",
-        easy: "Easy",
-        hard: "Hard",
-        wild: "Wild",
-        dual: "Dual",
-        full: "Full",
-        team: "Team",
-        $abbr: {
-          basic: "Basic",
-          easy: "Easy",
-          hard: "Hard",
-          wild: "Wild",
-          dual: "Dual",
-          full: "Full",
-          team: "Team",
-        },
-      },
-    },
+    ...existingData,
     songs: songs.filter((s) => !!s),
   };
 
