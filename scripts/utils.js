@@ -67,6 +67,8 @@ function reportQueueStatusLive() {
     .on("idle", () => {
       ui.clean();
     });
+
+  return ui;
 }
 
 function queueStatus() {

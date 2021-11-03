@@ -45,19 +45,19 @@ function queueJacketDownload(coverPath) {
 async function main() {
   const songs = [];
   let lvlMax = 0;
-  reportQueueStatusLive();
+  const ui = reportQueueStatusLive();
   const targetFile = path.join(__dirname, "../src/songs/smx.json");
   const existingData = require(targetFile);
   const indexedSongs = {};
   for (const song of existingData.songs) {
     if (indexedSongs[song.name]) {
-      console.warn(`Duplicate song title: ${song.name}`);
+      ui.log.write(`Duplicate song title: ${song.name}`);
     }
     indexedSongs[song.name] = song;
   }
 
   for (const diff of difficulties) {
-    console.log(`pulling ${diff} chart details`);
+    ui.log.write(`pulling ${diff} chart details`);
     const data = await requestQueue.add(
       () =>
         fetch(`https://data.stepmaniax.com/highscores/region/all/${diff}`, {
@@ -81,7 +81,7 @@ async function main() {
           charts: [],
         };
         if (!indexedSongs[score.song.title]) {
-          console.log(`added new song: ${score.song.title}`);
+          ui.log.write(`added new song: ${score.song.title}`);
         }
       }
       songs[score.song_id].charts.push({
@@ -101,7 +101,7 @@ async function main() {
     songs: songs.filter((s) => !!s),
   };
 
-  console.log("finished downloading data, writing final JSON output");
+  ui.log.write("finished downloading data, writing final JSON output");
   await fs.promises.writeFile(
     resolve(join(__dirname, "../src/songs/smx.json")),
     prettier.format(JSON.stringify(smxData), {
@@ -110,10 +110,11 @@ async function main() {
   );
 
   if (requestQueue.size) {
-    console.log("waiting on images to finish downloading...");
+    ui.log.write("waiting on images to finish downloading...");
     await requestQueue.onIdle();
   }
-  console.log("done!");
+  ui.log.write("done!");
+  ui.close();
 }
 
 main();

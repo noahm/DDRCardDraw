@@ -28,9 +28,19 @@ function sortSongs(songs) {
       return chartA.lvl - chartB.lvl;
     });
   }
-  return songs.sort((songA, songB) =>
-    songA.name.toLowerCase() > songB.name.toLowerCase() ? 1 : -1
-  );
+  return songs.sort((songA, songB) => {
+    const nameA = songA.name.toLowerCase();
+    const nameB = songB.name.toLowerCase();
+
+    if (nameA === nameB) {
+      return songA.name > songB.name ? 1 : -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
 }
 
 /** returns data to use for given songs */
@@ -122,28 +132,28 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 }
 
 /** best attempt at reconsiling data from ziv and sa */
-async function importSongsFromExternal(indexedSongs, saIndex) {
+async function importSongsFromExternal(indexedSongs, saIndex, log) {
   const [zivSongs, saSongs] = await Promise.all([
-    getSongsFromZiv(),
+    getSongsFromZiv(log),
     getSongsFromSkillAttack(),
   ]);
-  console.log(`Found ${zivSongs.length} songs on ZiV`);
-  console.log(`Found ${saSongs.length} songs on SA`);
+  log(`Found ${zivSongs.length} songs on ZiV`);
+  log(`Found ${saSongs.length} songs on SA`);
   let unmatchedSa = 0;
   for (const saSong of saSongs) {
     const existingSong = findSongFromSa(indexedSongs, saIndex, saSong);
     if (!existingSong) {
       unmatchedSa++;
-      console.log(
+      log(
         `  Unmatched song from SA: ${saSong.name}\n    index ${saSong.saIndex}\n    hash ${saSong.saHash}`
       );
     }
   }
-  console.log(`Total of ${unmatchedSa} unmatched SA songs`);
+  log(`Total of ${unmatchedSa} unmatched SA songs`);
   for (const zivSong of zivSongs) {
     const existingSong = indexedSongs[zivSong.name];
     if (!existingSong) {
-      console.log(`  New song from ziv: ${zivSong.name}`);
+      log(`  New song from ziv: ${zivSong.name}`);
     }
     const saSong = saSongs.find((song) => {
       if (existingSong && existingSong.saIndex === song.saIndex) {
@@ -185,23 +195,26 @@ async function main() {
     }
   }
 
-  reportQueueStatusLive();
-  await importSongsFromExternal(indexedSongs, songsBySaIndex);
+  const ui = reportQueueStatusLive();
+  const log = (...msgs) =>
+    ui.log.write(msgs.map((item) => item.toString()).join(" "));
+
+  await importSongsFromExternal(indexedSongs, songsBySaIndex, log);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
   writeJsonData(existingData, targetFile);
 
-  console.log(
+  ui.log.write(
     `Wrote ${existingData.songs.length} (${
       existingData.songs.length - prevCount
     } new) sorted songs to a20plus.json`
   );
 
   if (requestQueue.size) {
-    console.log("waiting on remaining images to finish downloading...");
+    ui.log.write("waiting on remaining images to finish downloading...");
     await requestQueue.onIdle();
   }
-  console.log("Done");
-  process.exit();
+  ui.log.write("Done");
+  ui.close();
 }
 main();

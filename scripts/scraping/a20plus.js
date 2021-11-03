@@ -64,11 +64,11 @@ async function getSongsFromSkillAttack() {
 /**
  * @return {Promise<Array<{}>>}
  */
-function getSongsFromZiv() {
+function getSongsFromZiv(log) {
   const ZIV_EXTREME =
     "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc";
 
-  return JSDOM.fromURL(ZIV_EXTREME).then(scrapeSongData);
+  return JSDOM.fromURL(ZIV_EXTREME).then((data) => scrapeSongData(data, log));
 }
 
 const translationNodeQuery = "span[onmouseover]";
@@ -138,7 +138,7 @@ function getCharts(chartNodes) {
   return charts;
 }
 
-async function scrapeSongData(dom) {
+async function scrapeSongData(dom, log) {
   const numbers = [];
   dom.window.document
     .querySelectorAll('th[colspan="11"] span')
@@ -151,7 +151,7 @@ async function scrapeSongData(dom) {
       number,
     };
   });
-  console.log("Songs scraped:", titleMap);
+  log("Songs scraped:", titleMap);
 
   const songs = [];
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
