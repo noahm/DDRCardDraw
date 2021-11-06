@@ -1,5 +1,5 @@
 import { Song } from "./models/SongData";
-import { Music } from "preact-feather";
+import { Music } from "react-feather";
 
 interface Props {
   song: Song;

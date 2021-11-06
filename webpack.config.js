@@ -10,6 +10,7 @@ const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
+const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
@@ -23,9 +24,10 @@ module.exports = function (env = {}, argv = {}) {
       ? undefined
       : {
           static: "./dist",
+          hot: true,
           // host: "0.0.0.0"
         },
-    entry: ["preact/debug", "./src/app.tsx"],
+    entry: "./src/index.tsx",
     output: {
       filename: "[name].[chunkhash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
@@ -69,18 +71,11 @@ module.exports = function (env = {}, argv = {}) {
                 require("@babel/plugin-syntax-dynamic-import"),
                 [
                   require("@babel/plugin-transform-react-jsx"),
-                  { pragma: "h", pragmaFrag: "Fragment" },
+                  { runtime: "automatic" },
                 ],
                 require("@babel/plugin-transform-react-jsx-source"),
-                [
-                  require("@emotion/babel-plugin-jsx-pragmatic"),
-                  {
-                    module: "preact",
-                    import: "h, Fragment",
-                    export: "h",
-                  },
-                ],
-              ],
+                !isProd ? require("react-refresh/babel") : null,
+              ].filter(Boolean),
             },
           },
         },
@@ -160,7 +155,7 @@ module.exports = function (env = {}, argv = {}) {
       }),
     ].concat(
       !isProd
-        ? []
+        ? [new ReactRefreshPlugin()]
         : [
             new ZipPlugin({
               path: __dirname,

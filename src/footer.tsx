@@ -3,15 +3,15 @@ import classNames from "classnames";
 import { detectedLanguage } from "./utils";
 import styles from "./footer.css";
 import globalStyles from "./app.css";
-import { useContext, useState } from "preact/hooks";
-import { TranslateContext } from "@denysvuika/preact-translate";
+import { useState } from "react";
 import { About } from "./about";
+import { useIntl } from "./hooks/useIntl";
 
 // note that month is zero-indexed for date constructor :)
 const lastUpdate = new Date(2021, 9, 23);
 
 export function Footer() {
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   const [showAbout, updateShowAbout] = useState(false);
 
   return (

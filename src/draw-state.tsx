@@ -1,15 +1,14 @@
-import { createContext, Component } from "preact";
+import { createContext, Component } from "react";
 import { UnloadHandler } from "./unload-handler";
 import { draw } from "./card-draw";
 import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
 import { GameData, Song } from "./models/SongData";
-import { TranslateProvider } from "@denysvuika/preact-translate";
-import { LanguageData } from "@denysvuika/preact-translate/src/languageData";
 import i18nData from "./assets/i18n.json";
 import { detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
+import { IntlProvider } from "./intl-provider";
 import * as qs from "query-string";
 
 interface DrawState {
@@ -71,22 +70,20 @@ export class DrawStateManager extends Component<Props, DrawState> {
   }
 
   render() {
-    const translations: LanguageData = {};
-    for (const lang in i18nData as LanguageData) {
-      // @ts-ignore
-      translations[lang] = i18nData[lang];
-      if (this.state.gameData) {
-        translations[lang].meta =
-          this.state.gameData.i18n[lang] || this.state.gameData.i18n.en;
-      }
-    }
+    const allStrings = i18nData as Record<string, Record<string, string>>;
+    const useTranslations = allStrings[detectedLanguage] || allStrings["en"];
+    const additionalStrings = this.state.gameData?.i18n[detectedLanguage];
     return (
       <DrawStateContext.Provider value={this.state}>
-        <TranslateProvider translations={translations} lang={detectedLanguage}>
+        <IntlProvider
+          locale={detectedLanguage}
+          translations={useTranslations}
+          mergeTranslations={additionalStrings}
+        >
           <ApplyDefaultConfig defaults={this.state.gameData?.defaults} />
           <UnloadHandler confirmUnload={!!this.state.drawings.length} />
           {this.props.children}
-        </TranslateProvider>
+        </IntlProvider>
       </DrawStateContext.Provider>
     );
   }
@@ -102,6 +99,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
     this.setState({
       gameData: null,
       dataSetName,
+      drawings: [],
     });
     setGameInUrl(dataSetName);
 

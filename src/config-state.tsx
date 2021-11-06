@@ -1,4 +1,4 @@
-import { createContext, Component, Context } from "preact";
+import { createContext, Component, Context } from "react";
 
 export interface ConfigState {
   chartCount: number;

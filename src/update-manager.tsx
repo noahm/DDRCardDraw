@@ -1,10 +1,10 @@
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
-import { useState, useEffect, useContext } from "preact/hooks";
+import { useState, useEffect } from "react";
+import { useIntl } from "./hooks/useIntl";
 import styles from "./update-manager.css";
-import { TranslateContext } from "@denysvuika/preact-translate";
 
 export function UpdateManager() {
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   const [updateStatus, setStatus] = useState<null | "loading" | "ready">(null);
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {

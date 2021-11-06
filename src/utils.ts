@@ -22,3 +22,18 @@ export function times<T>(n: number, cb: (n: number) => T): Array<T> {
   }
   return results;
 }
+
+export function* flattenedKeys(
+  input: Record<string, string | Record<string, string>>
+): Generator<[string, string], void> {
+  for (const key in input) {
+    const value = input[key];
+    if (typeof value === "string") {
+      yield [key, value];
+    } else {
+      for (const flattenedValue of flattenedKeys(value)) {
+        yield [`${key}.${flattenedValue[0]}`, flattenedValue[1]];
+      }
+    }
+  }
+}

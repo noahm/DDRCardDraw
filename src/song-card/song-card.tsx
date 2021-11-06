@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import { detectedLanguage } from "../utils";
 import styles from "./song-card.css";
-import { useState, useContext } from "preact/hooks";
-import { Zap, Lock, Edit, Slash } from "preact-feather";
-import { TranslateContext } from "@denysvuika/preact-translate";
+import { useState } from "react";
+import { Zap, Lock, Edit, Slash } from "react-feather";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
+import { useIntl } from "../hooks/useIntl";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -40,7 +40,7 @@ export function SongCard(props: Props) {
     iconCallbacks,
   } = props;
 
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
   const hideIcons = () => {
@@ -132,7 +132,7 @@ export function SongCard(props: Props) {
               aria-hidden
               color="black"
               fill="yellow"
-              stroke-width="1"
+              strokeWidth="1"
             />
           </div>
         )}

@@ -1,6 +1,7 @@
-import { createPortal, FunctionComponent } from "preact/compat";
+import { FunctionComponent } from "react";
+import { createPortal } from "react-dom";
 import { Icon } from "./icon";
-import { X } from "preact-feather";
+import { X } from "react-feather";
 import styles from "./modal.css";
 
 const modalRoot = document.createElement("div");

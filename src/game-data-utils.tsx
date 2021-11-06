@@ -1,8 +1,7 @@
-import { useContext } from "preact/hooks";
-import { TranslateContext } from "@denysvuika/preact-translate";
+import { useIntl } from "./hooks/useIntl";
 
 export function MetaString({ key }: { key: string }) {
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   return <>{t("meta." + key)}</>;
 }
 
@@ -11,6 +10,6 @@ interface AbbrProps {
 }
 
 export function AbbrDifficulty({ diffClass }: AbbrProps) {
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   return <>{t("meta.$abbr." + diffClass)}</>;
 }

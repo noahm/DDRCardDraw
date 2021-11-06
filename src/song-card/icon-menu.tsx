@@ -1,11 +1,10 @@
-import { TranslateContext } from "@denysvuika/preact-translate";
-import { Edit, Lock, RotateCcw, Slash, X } from "preact-feather";
-import { useContext, useState } from "preact/hooks";
+import { Edit, Lock, RotateCcw, Slash, X } from "react-feather";
+import { useState } from "react";
 import { Icon } from "../icon";
 import { SongSearch } from "../song-search";
 import styles from "./icon-menu.css";
-import { JSX } from "preact";
 import { DrawnChart } from "../models/Drawing";
+import { useIntl } from "../hooks/useIntl";
 
 interface Props {
   onPocketPicked: (p: 1 | 2, chart: DrawnChart) => void;
@@ -20,7 +19,7 @@ export function IconMenu(props: Props) {
   const { onPocketPicked, onVeto, onProtect, onClose, onlyReset, onReset } =
     props;
 
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   const [playerPickingPocket, setPickingPocket] = useState<0 | 1 | 2>(0);
 
   if (playerPickingPocket) {

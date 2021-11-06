@@ -1,9 +1,8 @@
-import { useContext } from "preact/hooks";
+import { useContext, memo } from "react";
 import { DrawnSet } from "./drawn-set";
 import styles from "./drawing-list.css";
 import { DrawStateContext } from "./draw-state";
 import { Drawing } from "./models/Drawing";
-import { memo } from "preact/compat/src";
 import { ConfigStateContext } from "./config-state";
 import { filterChartsToSongs } from "./card-draw";
 import { SongCard } from "./song-card";

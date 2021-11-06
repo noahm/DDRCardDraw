@@ -1,17 +1,19 @@
 import classNames from "classnames";
-import { TranslateContext } from "@denysvuika/preact-translate";
-import { useContext, useMemo, useRef, useState } from "preact/hooks";
+import {
+  ChangeEvent,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+  BaseSyntheticEvent,
+} from "react";
 import globalStyles from "../app.css";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { DrawStateContext } from "../draw-state";
-import { JSXInternal } from "preact/src/jsx";
 import { ConfigStateContext } from "../config-state";
 import { GameData } from "../models/SongData";
-
-function preventDefault(e: Event) {
-  e.preventDefault();
-}
+import { useIntl } from "../hooks/useIntl";
 
 const DATA_FILES = process.env.DATA_FILES as unknown as Array<{
   name: string;
@@ -33,7 +35,7 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 export function Controls() {
   const form = useRef<HTMLFormElement>(null);
   const [collapsed, setCollapsed] = useState(true);
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
   const { drawSongs, dataSetName, loadGameData, lastDrawFailed, gameData } =
     useContext(DrawStateContext);
   const configState = useContext(ConfigStateContext);
@@ -59,9 +61,7 @@ export function Controls() {
   }
   const { flags, lvlMax, styles: gameStyles } = gameData.meta;
 
-  const handleLowerBoundChange = (
-    e: JSXInternal.TargetedEvent<HTMLInputElement>
-  ) => {
+  const handleLowerBoundChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(e.currentTarget.value, 10);
     if (newValue > upperBound) {
       return;
@@ -74,9 +74,7 @@ export function Controls() {
     });
   };
 
-  const handleUpperBoundChange = (
-    e: JSXInternal.TargetedEvent<HTMLInputElement>
-  ) => {
+  const handleUpperBoundChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(e.currentTarget.value, 10);
     if (newValue < lowerBound) {
       return;
@@ -89,13 +87,11 @@ export function Controls() {
     });
   };
 
-  const handleSongListChange = (
-    e: JSXInternal.TargetedEvent<HTMLSelectElement>
-  ) => {
+  const handleSongListChange = (e: ChangeEvent<HTMLSelectElement>) => {
     loadGameData(e.currentTarget.value);
   };
 
-  const handleRandomize = (e: JSXInternal.TargetedEvent<HTMLButtonElement>) => {
+  const handleRandomize = (e: BaseSyntheticEvent) => {
     e.preventDefault();
     if (showPool) {
       updateState((state) => ({
@@ -110,7 +106,7 @@ export function Controls() {
     <form
       ref={form}
       className={styles.form + (collapsed ? " " + styles.collapsed : "")}
-      onSubmit={preventDefault}
+      onSubmit={(e) => e.preventDefault()}
     >
       <section className={styles.columns}>
         <div className={styles.column}>
@@ -138,9 +134,10 @@ export function Controls() {
                 name="chartCount"
                 value={chartCount}
                 min="1"
-                onInput={(e) => {
+                onChange={(e) => {
+                  const chartCount = +e.currentTarget.value;
                   updateState((s) => {
-                    return { ...s, chartCount: +e.currentTarget.value };
+                    return { ...s, chartCount };
                   });
                 }}
               />
@@ -177,12 +174,13 @@ export function Controls() {
                 type="checkbox"
                 name="weighted"
                 checked={useWeights}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const useWeights = !!e.currentTarget.checked;
                   updateState((state) => ({
                     ...state,
-                    useWeights: !!e.currentTarget.checked,
-                  }))
-                }
+                    useWeights,
+                  }));
+                }}
               />
               {t("useWeightedDistributions")}
             </label>
@@ -196,9 +194,9 @@ export function Controls() {
                 <select
                   name="style"
                   value={selectedStyle}
-                  onInput={(e) => {
+                  onChange={(e) => {
+                    const nextStyle = e.currentTarget.value;
                     updateState((s) => {
-                      const nextStyle = e.currentTarget.value;
                       const availableDifficulties = getAvailableDifficulties(
                         gameData,
                         nextStyle
@@ -249,13 +247,15 @@ export function Controls() {
                   name="difficulties"
                   value={dif.key}
                   checked={selectedDifficulties.has(dif.key)}
-                  onInput={(e) => {
+                  onChange={(e) => {
+                    const checked = e.currentTarget.checked;
+                    const value = e.currentTarget.value;
                     updateState((s) => {
                       const difficulties = new Set(s.difficulties);
-                      if (e.currentTarget.checked) {
-                        difficulties.add(e.currentTarget.value);
+                      if (checked) {
+                        difficulties.add(value);
                       } else {
-                        difficulties.delete(e.currentTarget.value);
+                        difficulties.delete(value);
                       }
                       return { ...s, difficulties };
                     });
@@ -277,7 +277,7 @@ export function Controls() {
                     name="inclusions"
                     value={key}
                     checked={selectedFlags.has(key)}
-                    onInput={(e) =>
+                    onChange={() =>
                       updateState((s) => {
                         const newFlags = new Set(s.flags);
                         if (newFlags.has(key)) {
@@ -300,12 +300,13 @@ export function Controls() {
                 type="checkbox"
                 name="showPool"
                 checked={showPool}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const showPool = !!e.currentTarget.checked;
                   updateState((state) => ({
                     ...state,
-                    showPool: !!e.currentTarget.checked,
-                  }))
-                }
+                    showPool,
+                  }));
+                }}
               />
               {t("showSongPool")}
             </label>

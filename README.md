@@ -19,8 +19,7 @@ data for other games. If you have requests or ideas, you're welcome reach out on
 [Twitter](https://twitter.com/Cathadan), Discord (Cathadan#2431), or wherever else you can find me.
 
 If you want to take a stab at it yourself, you will want to have node.js >= 14.0.0 installed along with
-[yarn](https://yarnpkg.com/) and some familarity with [Preact](https://github.com/developit/preact)
-(or react) apps.
+[yarn](https://yarnpkg.com/) and some familarity with React app development.
 
 Clone this repo to your computer. Then the following commands will be useful:
 

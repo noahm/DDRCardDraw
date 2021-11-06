@@ -1,5 +1,5 @@
 import { DrawStateContext } from "./draw-state";
-import { useContext } from "preact/hooks";
+import { useContext } from "react";
 import styles from "./SuspectSongs.css";
 
 const allAscii = /^[a-zA-Z .'?&!-_0-9]+$/;

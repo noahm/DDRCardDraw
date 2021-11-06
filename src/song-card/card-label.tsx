@@ -1,12 +1,12 @@
 import classNames from "classnames";
 import styles from "./card-label.css";
-import { FunctionalComponent } from "preact";
+import { FC } from "react";
 
 interface Props {
   left?: boolean;
 }
 
-export const CardLabel: FunctionalComponent<Props> = ({ children, left }) => {
+export const CardLabel: FC<Props> = ({ children, left }) => {
   const c = classNames(styles.cardLabel, {
     [styles.left]: left,
   });

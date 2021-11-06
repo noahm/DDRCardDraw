@@ -1,4 +1,4 @@
-import { Component } from "preact";
+import { Component } from "react";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import {

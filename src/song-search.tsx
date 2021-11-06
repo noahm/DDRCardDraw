@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import { useContext, useState, useRef, useLayoutEffect } from "preact/hooks";
+import { useContext, useState, useRef, useLayoutEffect } from "react";
 import { DrawStateContext } from "./draw-state";
 import styles from "./song-search.css";
 import { getDrawnChart, songIsValid, chartIsValid } from "./card-draw";
@@ -8,10 +7,9 @@ import { Modal } from "./modal";
 import { Song, Chart } from "./models/SongData";
 import { AbbrDifficulty } from "./game-data-utils";
 import { useDifficultyColor } from "./hooks/useDifficultyColor";
-import { JSX } from "preact";
 import { ConfigStateContext, ConfigState } from "./config-state";
 import { SongJacket } from "./song-jacket";
-import { TranslateContext } from "@denysvuika/preact-translate";
+import { useIntl } from "./hooks/useIntl";
 
 interface ChartOptionProps {
   chart: Chart;
@@ -41,7 +39,7 @@ interface ResultsProps {
 
 function SearchResult({ config, song, onSelect }: ResultsProps) {
   const validCharts = song.charts.filter(chartIsValid.bind(undefined, config));
-  const { t } = useContext(TranslateContext);
+  const { t } = useIntl();
 
   return (
     <div className={styles.suggestion}>
