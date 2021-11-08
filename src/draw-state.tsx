@@ -18,7 +18,8 @@ interface DrawState {
   dataSetName: string;
   lastDrawFailed: boolean;
   loadGameData: (dataSetName: string) => Promise<GameData>;
-  drawSongs: (config: ConfigState) => void;
+  /** returns false if no songs could be drawn */
+  drawSongs: (config: ConfigState) => boolean;
 }
 
 export const DrawStateContext = createContext<DrawState>({
@@ -30,7 +31,9 @@ export const DrawStateContext = createContext<DrawState>({
   loadGameData() {
     return Promise.reject();
   },
-  drawSongs() {},
+  drawSongs() {
+    return false;
+  },
 });
 
 interface Props {
@@ -129,7 +132,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
 
   doDrawing = (config: ConfigState) => {
     if (!this.state.gameData) {
-      return;
+      return false;
     }
 
     const drawing = draw(this.state.gameData, config);
@@ -137,12 +140,13 @@ export class DrawStateManager extends Component<Props, DrawState> {
       this.setState({
         lastDrawFailed: true,
       });
-      return;
+      return false;
     }
 
     this.setState((prevState) => ({
       drawings: [drawing, ...prevState.drawings].filter(Boolean),
       lastDrawFailed: false,
     }));
+    return true;
   };
 }

@@ -3,6 +3,7 @@ import { times } from "../utils";
 import { useMemo, useContext } from "react";
 import { ConfigStateContext } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
+import { NumericInput, Switch, Checkbox } from "@blueprintjs/core";
 
 interface Props {
   high: number;
@@ -51,27 +52,26 @@ export function WeightsControls({ high, low }: Props) {
     <section className={styles.weights}>
       <p>{t("weights.explanation")}</p>
       {levels.map((level, i) => (
-        <label key={level}>
-          <input
-            type="number"
+        <div className={styles.level} key={level}>
+          <NumericInput
+            width={2}
             name={`weight-${level}`}
             value={weights[level] || ""}
-            min="0"
-            onChange={(e) => setWeight(level, +e.currentTarget.value)}
+            min={0}
+            onValueChange={(v) => setWeight(level, v)}
             placeholder="0"
+            fill
           />
           {level} <sub>{percentages[i]}%</sub>
-        </label>
+        </div>
       ))}
-      <label title={t("weights.check.title")}>
-        <input
-          type="checkbox"
-          name="limitOutliers"
-          checked={forceDistribution}
-          onChange={toggleForceDistribution}
-        />
-        {t("weights.check.label")}
-      </label>
+      <Checkbox
+        label={t("weights.check.label")}
+        title={t("weights.check.title")}
+        name="limitOutliers"
+        checked={forceDistribution}
+        onChange={toggleForceDistribution}
+      />
     </section>
   );
 }

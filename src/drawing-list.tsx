@@ -4,8 +4,7 @@ import styles from "./drawing-list.css";
 import { DrawStateContext } from "./draw-state";
 import { Drawing } from "./models/Drawing";
 import { ConfigStateContext } from "./config-state";
-import { filterChartsToSongs } from "./card-draw";
-import { SongCard } from "./song-card";
+import { EligibleChartsList } from "./eligible-charts-list";
 
 const renderDrawing = (drawing: Drawing) => (
   <DrawnSet key={drawing.id} drawing={drawing} />
@@ -18,25 +17,10 @@ const ScrollableDrawings = memo((props: { drawings: Drawing[] }) => {
 });
 
 export function DrawingList() {
-  const { drawings, gameData } = useContext(DrawStateContext);
+  const { drawings } = useContext(DrawStateContext);
   const configState = useContext(ConfigStateContext);
-  if (configState.showPool && gameData) {
-    const charts = Array.from(filterChartsToSongs(configState, gameData.songs));
-    const songs = new Set<string>();
-    const cards = charts.map((chart, index) => {
-      songs.add(chart.name);
-      return <SongCard chart={chart} key={index} />;
-    });
-    return (
-      <>
-        <div style={{ padding: "1em" }}>
-          Eligible songs: {charts.length} total charts from {songs.size} songs
-        </div>
-        <div className={styles.scrollable}>
-          <div className={styles.chartList}>{cards}</div>
-        </div>
-      </>
-    );
+  if (configState.showPool) {
+    return <EligibleChartsList />;
   }
   return <ScrollableDrawings drawings={drawings} />;
 }

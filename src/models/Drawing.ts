@@ -1,3 +1,5 @@
+import { Song } from "./SongData";
+
 export interface DrawnChart {
   name: string;
   jacket: string;
@@ -8,6 +10,8 @@ export interface DrawnChart {
   difficultyClass: string;
   level: number;
   hasShock: boolean;
+  flags: string[];
+  song: Song;
 }
 
 export interface PlayerActionOnChart {

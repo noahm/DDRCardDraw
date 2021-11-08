@@ -104,6 +104,11 @@ module.exports = function (env = {}, argv = {}) {
           ],
         },
         {
+          test: /node_modules\/.+\.css$/,
+          // include: /node_modules/,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+        {
           test: /\.svg$/,
           loader: "svg-inline-loader",
         },

@@ -6,13 +6,10 @@
   font-size: 70%;
 }
 
-.weights label {
+.weights .level {
+  width: 5em;
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
   text-align: center;
-}
-
-.weights input[type="number"] {
-  display: block;
 }

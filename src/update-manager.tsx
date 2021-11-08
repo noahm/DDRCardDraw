@@ -1,31 +1,41 @@
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
-import { useState, useEffect } from "react";
-import { useIntl } from "./hooks/useIntl";
-import styles from "./update-manager.css";
+import { useEffect } from "react";
+import { toaster } from "./toaster";
+import { Intent } from "@blueprintjs/core";
+import { FormattedMessage } from "react-intl";
 
 export function UpdateManager() {
-  const { t } = useIntl();
-  const [updateStatus, setStatus] = useState<null | "loading" | "ready">(null);
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       OfflinePluginRuntime.install({
         onUpdateReady() {
           OfflinePluginRuntime.applyUpdate();
-          setStatus("loading");
+          toaster.show(
+            {
+              message: <FormattedMessage id="updateLoading" />,
+              intent: Intent.WARNING,
+            },
+            "UpdateManager"
+          );
         },
         onUpdated: () => {
-          setStatus("ready");
+          toaster.show(
+            {
+              message: <FormattedMessage id="updateReady" />,
+              intent: Intent.SUCCESS,
+              action: {
+                text: (
+                  <FormattedMessage id="applyUpdate" defaultMessage="Apply" />
+                ),
+                onClick: () => window.location.reload(),
+              },
+            },
+            "UpdateManger"
+          );
         },
       });
     }
   }, []);
 
-  switch (updateStatus) {
-    case "loading":
-      return <p className={styles.updateBanner}>{t("updateLoading")}</p>;
-    case "ready":
-      return <p className={styles.updateBanner}>{t("updateReady")}</p>;
-    default:
-      return null;
-  }
+  return null;
 }

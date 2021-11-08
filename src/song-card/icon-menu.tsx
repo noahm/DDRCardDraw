@@ -1,10 +1,10 @@
-import { Edit, Lock, RotateCcw, Slash, X } from "react-feather";
 import { useState } from "react";
-import { Icon } from "../icon";
 import { SongSearch } from "../song-search";
 import styles from "./icon-menu.css";
 import { DrawnChart } from "../models/Drawing";
 import { useIntl } from "../hooks/useIntl";
+import { IconNames, IconName } from "@blueprintjs/icons";
+import { Button, Dialog } from "@blueprintjs/core";
 
 interface Props {
   onPocketPicked: (p: 1 | 2, chart: DrawnChart) => void;
@@ -22,16 +22,6 @@ export function IconMenu(props: Props) {
   const { t } = useIntl();
   const [playerPickingPocket, setPickingPocket] = useState<0 | 1 | 2>(0);
 
-  if (playerPickingPocket) {
-    return (
-      <SongSearch
-        autofocus
-        onSongSelect={(chart) => onPocketPicked(playerPickingPocket, chart)}
-        onCancel={() => setPickingPocket(0)}
-      />
-    );
-  }
-
   if (onlyReset) {
     return (
       <div className={styles.iconMenu} onClick={(e) => e.stopPropagation()}>
@@ -40,12 +30,16 @@ export function IconMenu(props: Props) {
           <span>{t("songAction.cancel")}</span>
         </header>
         <div className={styles.centerRow}>
-          <Icon
-            svg={<RotateCcw />}
+          <Button
+            icon={IconNames.RESET}
             title={t("songAction.reset")}
             onClick={onReset}
           />
-          <Icon svg={<X />} onClick={onClose} title={t("songAction.cancel")} />
+          <Button
+            icon={IconNames.CROSS}
+            onClick={onClose}
+            title={t("songAction.cancel")}
+          />
         </div>
       </div>
     );
@@ -53,28 +47,48 @@ export function IconMenu(props: Props) {
 
   return (
     <div className={styles.iconMenu} onClick={(e) => e.stopPropagation()}>
+      <Dialog
+        onClose={() => setPickingPocket(0)}
+        isOpen={!!playerPickingPocket}
+      >
+        <SongSearch
+          autofocus
+          onSongSelect={(song, chart) =>
+            onPocketPicked(playerPickingPocket as 1 | 2, chart)
+          }
+          onCancel={() => setPickingPocket(0)}
+        />
+      </Dialog>
       <header className={styles.iconRow}>
         <div>P1</div>
-        <Icon svg={<X />} onClick={onClose} title={t("songAction.cancel")} />
+        <Button
+          icon={IconNames.CROSS}
+          onClick={onClose}
+          title={t("songAction.cancel")}
+        />
         <div>P2</div>
       </header>
       <IconRow
-        icon={<Lock />}
+        icon={IconNames.LOCK}
         label={t("songAction.lock")}
         onClick={onProtect}
       />
       <IconRow
-        icon={<Edit />}
+        icon={IconNames.INHERITANCE}
         label={t("songAction.pocketPick")}
         onClick={setPickingPocket}
       />
-      <IconRow icon={<Slash />} label={t("songAction.ban")} onClick={onVeto} />
+      <IconRow
+        icon={IconNames.BAN_CIRCLE}
+        label={t("songAction.ban")}
+        onClick={onVeto}
+      />
     </div>
   );
 }
 
 interface IconRowProps {
-  icon: JSX.Element;
+  icon: IconName;
   label: string;
   onClick: (p: 1 | 2) => void;
 }
@@ -82,9 +96,9 @@ interface IconRowProps {
 function IconRow({ icon, label, onClick }: IconRowProps) {
   return (
     <div className={styles.iconRow}>
-      <Icon svg={icon} title={label} onClick={() => onClick(1)} />
+      <Button icon={icon} title={label} onClick={() => onClick(1)} />
       <div>{label}</div>
-      <Icon svg={icon} title={label} onClick={() => onClick(2)} />
+      <Button icon={icon} title={label} onClick={() => onClick(2)} />
     </div>
   );
 }

@@ -1,52 +1,12 @@
 .form {
   flex: 0 0 auto;
-  border-bottom: 1px solid darkgray;
-  padding-bottom: 10px;
-}
-
-label {
-  user-select: none;
-}
-
-input[type="number"] {
-  width: 3em;
-}
-
-.columns {
-  display: flex;
-  justify-content: stretch;
-  overflow: hidden;
-}
-
-@media (max-width: 500px) {
-  .columns {
-    flex-wrap: wrap;
-  }
-}
-
-.column {
-  flex: 1 0 auto;
-}
-
-.collapsed .column:not(:last-child) {
-  display: none;
-}
-
-.group {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
   padding: 10px;
 }
 
-.collapsed .group {
-  display: none;
+label {
+  /* user-select: none; */
 }
 
-.hidden {
-  display: none;
-}
-
-.buttons {
-  text-align: right;
+.showAllToggle {
+  margin-bottom: 0;
 }

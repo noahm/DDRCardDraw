@@ -2,13 +2,15 @@ import classNames from "classnames";
 import { detectedLanguage } from "../utils";
 import styles from "./song-card.css";
 import { useState } from "react";
-import { Zap, Lock, Edit, Slash } from "react-feather";
 import { IconMenu } from "./icon-menu";
 import { CardLabel } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
 import { useIntl } from "../hooks/useIntl";
+import { IconNames } from "@blueprintjs/icons";
+import { Icon } from "@blueprintjs/core";
+import { ShockBadge } from "./shock-badge";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -82,19 +84,19 @@ export function SongCard(props: Props) {
       {vetoedBy && (
         <CardLabel left={vetoedBy === 1}>
           P{vetoedBy}
-          <Slash size={16} />
+          <Icon icon={IconNames.BAN_CIRCLE} />
         </CardLabel>
       )}
       {protectedBy && (
         <CardLabel left={protectedBy === 1}>
           P{protectedBy}
-          <Lock size={16} />
+          <Icon icon={IconNames.LOCK} />
         </CardLabel>
       )}
       {replacedBy && (
         <CardLabel left={replacedBy === 1}>
           P{replacedBy}
-          <Edit size={16} />
+          <Icon icon={IconNames.INHERITANCE} />
         </CardLabel>
       )}
       {showingIconMenu && !!iconCallbacks && (
@@ -125,17 +127,7 @@ export function SongCard(props: Props) {
         style={{ backgroundColor: diffAccentColor }}
       >
         <div className={styles.bpm}>{bpm} BPM</div>
-        {hasShock && (
-          <div className={styles.shockBadge} title={t("shockArrows")}>
-            <Zap
-              size={12}
-              aria-hidden
-              color="black"
-              fill="yellow"
-              strokeWidth="1"
-            />
-          </div>
-        )}
+        {hasShock && <ShockBadge />}
         <div className={styles.difficulty}>
           <AbbrDifficulty diffClass={difficultyClass} /> {level}
         </div>

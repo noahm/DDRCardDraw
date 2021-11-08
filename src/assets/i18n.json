@@ -11,7 +11,7 @@
     "double": "Double",
     "difficulties": "Difficulties",
     "weights": {
-      "explanation": "Integers only. Set a fixed probability that charts of each difficulty level will be drawn.",
+      "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
       "check": {
         "title": "Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)",
         "label": "Force Expected Distribution"
@@ -87,7 +87,7 @@
       "cancel": "Cancel"
     },
     "noValidCharts": "No valid charts",
-    "showSongPool": "Show valid charts"
+    "showSongPool": "Show eligible charts"
   },
   "ja": {
     "dataSource": "ゲーム",
@@ -177,6 +177,6 @@
       "cancel": "Cancel"
     },
     "noValidCharts": "No valid charts",
-    "showSongPool": "Show valid charts"
+    "showSongPool": "Show eligible charts"
   }
 }

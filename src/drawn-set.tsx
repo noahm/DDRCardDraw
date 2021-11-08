@@ -13,7 +13,7 @@ let hue = Math.floor(Math.random() * 255);
 
 function getRandomGradiant() {
   hue += HUE_STEP;
-  return `linear-gradient(hsl(${hue}, 50%, 80%), white, white)`;
+  return `linear-gradient(hsl(${hue}, 40%, 80%), transparent, transparent)`;
 }
 
 interface Props {

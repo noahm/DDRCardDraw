@@ -6,6 +6,7 @@
 
 .scrollable {
   flex: 1 0 0;
+  overflow-y: auto;
 }
 
 @media (min-width: 1025px) {

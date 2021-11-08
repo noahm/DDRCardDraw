@@ -14,6 +14,8 @@ export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
     difficultyClass: chart.diffClass,
     level: chart.lvl,
     hasShock: !!chart.shock,
+    flags: (chart.flags || []).concat(currentSong.flags || []),
+    song: currentSong,
   };
 }
 
@@ -38,14 +40,14 @@ export function chartIsValid(config: ConfigState, chart: Chart): boolean {
   );
 }
 
-export function* filterChartsToSongs(config: ConfigState, songs: Song[]) {
+export function* eligibleCharts(config: ConfigState, songs: Song[]) {
   for (const currentSong of songs) {
     if (!songIsValid(config, currentSong)) {
       continue;
     }
     const charts = currentSong.charts.filter((c) => c.style === config.style);
 
-    for (const chart of currentSong.charts) {
+    for (const chart of charts) {
       if (!chartIsValid(config, chart)) {
         continue;
       }
@@ -78,7 +80,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     validCharts[n.toString()] = [];
   });
 
-  for (const chart of filterChartsToSongs(configData, gameData.songs)) {
+  for (const chart of eligibleCharts(configData, gameData.songs)) {
     validCharts[chart.level].push(chart);
   }
 
