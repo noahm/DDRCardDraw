@@ -44,6 +44,10 @@ export function HeaderControls() {
   const configState = useContext(ConfigStateContext);
 
   function handleDraw() {
+    configState.update((s) => ({
+      ...s,
+      showPool: false,
+    }));
     const couldDraw = drawSongs(configState);
     if (couldDraw !== !lastDrawFailed) {
       setLastDrawFailed(!couldDraw);

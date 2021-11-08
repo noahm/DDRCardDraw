@@ -1,43 +1,48 @@
-import { prefersDarkQuery } from "./hooks/useDarkThemePref";
+import { useDarkThemePref } from "./hooks/useDarkThemePref";
 import { useEffect, useState } from "react";
-import { Classes, MenuItem } from "@blueprintjs/core";
+import { Button, Classes } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { FormattedMessage } from "react-intl";
+import { Tooltip2 } from "@blueprintjs/popover2";
 
 enum Theme {
   Light = "light",
   Dark = "dark",
 }
 
-function getTheme() {
-  return document.body.classList.contains(Classes.DARK)
-    ? Theme.Dark
-    : Theme.Light;
-}
-
 function applyTheme(dark: boolean) {
   document.body.classList.toggle(Classes.DARK, dark);
 }
 
-export function applySystemTheme() {
-  applyTheme(prefersDarkQuery.matches);
-}
+export function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme | undefined>();
+  const prefersDarkTheme = useDarkThemePref();
+  const resolvedTheme = theme
+    ? theme
+    : prefersDarkTheme
+    ? Theme.Dark
+    : Theme.Light;
 
-export function ThemeToggle({}) {
-  const [theme, setTheme] = useState<Theme>(getTheme());
   useEffect(() => {
-    applyTheme(theme === Theme.Dark);
-  }, [theme]);
+    applyTheme(resolvedTheme === Theme.Dark);
+  }, [resolvedTheme]);
 
-  const icon = theme === Theme.Dark ? IconNames.FLASH : IconNames.MOON;
+  const icon = resolvedTheme === Theme.Dark ? IconNames.FLASH : IconNames.MOON;
 
   return (
-    <MenuItem
-      icon={icon}
-      text={
+    <Tooltip2
+      content={
         <FormattedMessage id="toggle-theme" defaultMessage="Toggle Theme" />
       }
-      onClick={() => setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark)}
-    />
+      placement="bottom"
+    >
+      <Button
+        minimal
+        icon={icon}
+        onClick={() =>
+          setTheme(resolvedTheme === Theme.Dark ? Theme.Light : Theme.Dark)
+        }
+      />
+    </Tooltip2>
   );
 }

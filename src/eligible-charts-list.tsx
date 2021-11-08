@@ -5,7 +5,7 @@ import { DrawStateContext } from "./draw-state";
 import { SongCard } from "./song-card";
 import styles from "./drawing-list.css";
 import { DrawnChart } from "./models/Drawing";
-import { Text, Tabs, Tab } from "@blueprintjs/core";
+import { Text, HTMLSelect } from "@blueprintjs/core";
 import { useIntl } from "./hooks/useIntl";
 
 function songKeyFromChart(chart: DrawnChart) {
@@ -41,19 +41,14 @@ export function EligibleChartsList() {
       </Text>
       {allFlags.size > 1 && (
         <div style={{ paddingLeft: "1em" }}>
-          <Tabs
-            id="eligible-flags"
-            selectedTabId={t(currentTab)}
-            onChange={(nextTab) => setCurrentTab(nextTab as string)}
-          >
-            {Array.from(allFlags).map((flag) => (
-              <Tab
-                key={flag}
-                title={flag === "all" ? "All charts" : t(`meta.${flag}`)}
-                id={flag}
-              />
-            ))}
-          </Tabs>
+          <HTMLSelect
+            value={currentTab}
+            onChange={(e) => setCurrentTab(e.currentTarget.value)}
+            options={Array.from(allFlags).map((flag) => ({
+              value: flag,
+              label: flag === "all" ? "All charts" : t(`meta.${flag}`),
+            }))}
+          />
         </div>
       )}
       <div className={styles.scrollable}>
