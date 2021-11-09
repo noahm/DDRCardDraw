@@ -1,11 +1,4 @@
-import {
-  Button,
-  Dialog,
-  Menu,
-  Navbar,
-  Position,
-  Text,
-} from "@blueprintjs/core";
+import { Button, Dialog, Menu, MenuItem, Navbar } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
 import { useState } from "react";
@@ -13,7 +6,7 @@ import { FormattedMessage } from "react-intl";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
 import styles from "./header.css";
-import { useDataSets } from "./hooks/useDataSets";
+import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { VersionSelect } from "./version-select";
@@ -31,7 +24,7 @@ function hasAnchorAncestor(e: HTMLElement): boolean {
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const { current } = useDataSets();
+  const { t } = useIntl();
 
   function maybeCloseMenu(e: React.MouseEvent<HTMLUListElement>) {
     hasAnchorAncestor(e.target as HTMLElement) && setMenuOpen(false);
@@ -40,7 +33,12 @@ export function Header() {
   const menu = (
     <div className={styles.menuContainer}>
       <Menu onClickCapture={maybeCloseMenu}>
-        <VersionSelect />
+        <MenuItem
+          icon={IconNames.INFO_SIGN}
+          onClick={() => setAboutOpen(true)}
+          text={t("credits")}
+        />
+        <ThemeToggle />
         <LastUpdate />
       </Menu>
     </div>
@@ -61,30 +59,17 @@ export function Header() {
         <About />
       </Dialog>
       <Navbar.Group>
-        <Tooltip2
-          content={<FormattedMessage id="credits" />}
-          placement="bottom"
-        >
-          <Button
-            minimal
-            onClick={() => setAboutOpen(true)}
-            icon={IconNames.INFO_SIGN}
-          />
-        </Tooltip2>
-        <ThemeToggle />
-        <Navbar.Divider />
         <Popover2
           content={menu}
           isOpen={menuOpen}
           onClose={() => setMenuOpen(false)}
-          placement="bottom"
-          shouldReturnFocusOnClose={false}
         >
-          <Tooltip2 content="Change Song Data" placement="bottom">
-            <Button icon={IconNames.MUSIC} onClick={() => setMenuOpen(true)} />
-          </Tooltip2>
-        </Popover2>{" "}
-        <Text style={{ marginLeft: "0.5em" }}>{current.display}</Text>
+          <Button onClick={() => setMenuOpen(true)} icon={IconNames.MENU} />
+        </Popover2>
+        <Navbar.Divider />
+        <Tooltip2 content="Change Song Data" placement="bottom">
+          <VersionSelect />
+        </Tooltip2>
       </Navbar.Group>
       <Navbar.Group>
         <HeaderControls />

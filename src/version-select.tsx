@@ -1,23 +1,20 @@
-import { MenuDivider, MenuItem } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
-import { FormattedMessage } from "react-intl";
+import { HTMLSelect } from "@blueprintjs/core";
 import { useDataSets } from "./hooks/useDataSets";
+import { useIntl } from "./hooks/useIntl";
 
 export function VersionSelect() {
-  const { available, current, loadData } = useDataSets();
-
+  const { t } = useIntl();
+  const { current, available, loadData } = useDataSets();
   return (
-    <>
-      <MenuDivider title={<FormattedMessage id="dataSource" />} />
-      {available.map(({ name, display }) => (
-        <MenuItem
-          key={name}
-          text={display}
-          active={name === current.name}
-          onClick={() => loadData(name)}
-          icon={name === current.name ? IconNames.SELECTION : IconNames.CIRCLE}
-        />
+    <HTMLSelect
+      value={current.name}
+      onChange={(e) => loadData(e.currentTarget.value)}
+    >
+      {available.map((d) => (
+        <option value={d.name} key={d.name}>
+          {d.display}
+        </option>
       ))}
-    </>
+    </HTMLSelect>
   );
 }
