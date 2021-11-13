@@ -14,11 +14,12 @@ export function UpdateManager() {
             {
               message: <FormattedMessage id="updateLoading" />,
               intent: Intent.WARNING,
+              timeout: 0,
             },
             "UpdateManager"
           );
         },
-        onUpdated: () => {
+        onUpdated() {
           toaster.show(
             {
               message: <FormattedMessage id="updateReady" />,
