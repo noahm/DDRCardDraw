@@ -7,9 +7,6 @@ import { CardLabel, LabelType } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
-import { useIntl } from "../hooks/useIntl";
-import { IconNames } from "@blueprintjs/icons";
-import { Icon, Tag, Intent } from "@blueprintjs/core";
 import { ShockBadge } from "./shock-badge";
 import { Popover2 } from "@blueprintjs/popover2";
 
@@ -43,7 +40,6 @@ export function SongCard(props: Props) {
     iconCallbacks,
   } = props;
 
-  const { t } = useIntl();
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
   const hideIcons = () => {

@@ -5,3 +5,8 @@
   right: 0.5em;
   text-shadow: none;
 }
+
+.cardLabel > span {
+  border: 2px solid white;
+  border-radius: 0.5em;
+}

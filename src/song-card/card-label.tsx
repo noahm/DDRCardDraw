@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React from "react";
 import { Intent, Tag } from "@blueprintjs/core";
 import styles from "./card-label.css";
