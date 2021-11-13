@@ -3,14 +3,15 @@ import { detectedLanguage } from "../utils";
 import styles from "./song-card.css";
 import { useState } from "react";
 import { IconMenu } from "./icon-menu";
-import { CardLabel } from "./card-label";
+import { CardLabel, LabelType } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
 import { useIntl } from "../hooks/useIntl";
 import { IconNames } from "@blueprintjs/icons";
-import { Icon } from "@blueprintjs/core";
+import { Icon, Tag, Intent } from "@blueprintjs/core";
 import { ShockBadge } from "./shock-badge";
+import { Popover2 } from "@blueprintjs/popover2";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -63,10 +64,12 @@ export function SongCard(props: Props) {
   } = replacedWith || chart;
   const diffAccentColor = useDifficultyColor(difficultyClass);
 
+  const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
+
   const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
     [styles.protected]: protectedBy || replacedBy,
-    [styles.clickable]: !!iconCallbacks,
+    [styles.clickable]: !!iconCallbacks && !hasLabel,
   });
 
   let jacketBg = {};
@@ -76,39 +79,43 @@ export function SongCard(props: Props) {
     };
   }
 
+  let menuContent: undefined | JSX.Element;
+  if (iconCallbacks) {
+    menuContent = (
+      <IconMenu
+        onProtect={(p: Player) => hideIcons() && iconCallbacks.onProtect(p)}
+        onPocketPicked={(p: Player, c: DrawnChart) =>
+          hideIcons() && iconCallbacks.onReplace(p, c)
+        }
+        onVeto={(p: Player) => hideIcons() && iconCallbacks.onVeto(p)}
+      />
+    );
+  }
+
   return (
     <div
       className={rootClassname}
-      onClick={showingIconMenu && iconCallbacks ? undefined : showIcons}
+      onClick={showingIconMenu || hasLabel ? undefined : showIcons}
     >
       {vetoedBy && (
-        <CardLabel left={vetoedBy === 1}>
-          P{vetoedBy}
-          <Icon icon={IconNames.BAN_CIRCLE} />
-        </CardLabel>
+        <CardLabel
+          player={vetoedBy}
+          type={LabelType.Ban}
+          onRemove={iconCallbacks?.onReset}
+        />
       )}
       {protectedBy && (
-        <CardLabel left={protectedBy === 1}>
-          P{protectedBy}
-          <Icon icon={IconNames.LOCK} />
-        </CardLabel>
+        <CardLabel
+          player={protectedBy}
+          type={LabelType.Protect}
+          onRemove={iconCallbacks?.onReset}
+        />
       )}
       {replacedBy && (
-        <CardLabel left={replacedBy === 1}>
-          P{replacedBy}
-          <Icon icon={IconNames.INHERITANCE} />
-        </CardLabel>
-      )}
-      {showingIconMenu && !!iconCallbacks && (
-        <IconMenu
-          onProtect={(p: Player) => hideIcons() && iconCallbacks.onProtect(p)}
-          onPocketPicked={(p: Player, c: DrawnChart) =>
-            hideIcons() && iconCallbacks.onReplace(p, c)
-          }
-          onVeto={(p: Player) => hideIcons() && iconCallbacks.onVeto(p)}
-          onlyReset={!!(vetoedBy || protectedBy || replacedBy)}
-          onReset={() => hideIcons() && iconCallbacks.onReset()}
-          onClose={hideIcons}
+        <CardLabel
+          player={replacedBy}
+          type={LabelType.Pocket}
+          onRemove={iconCallbacks?.onReset}
         />
       )}
       <div className={styles.cardCenter} style={jacketBg}>
@@ -122,16 +129,28 @@ export function SongCard(props: Props) {
           {artist}
         </div>
       </div>
-      <div
-        className={styles.cardFooter}
-        style={{ backgroundColor: diffAccentColor }}
+
+      <Popover2
+        content={menuContent}
+        isOpen={showingIconMenu}
+        onClose={hideIcons}
+        placement="top"
+        modifiers={{
+          offset: { options: { offset: [0, 35] } },
+          arrow: { options: { element: "[not-an-element]" } },
+        }}
       >
-        <div className={styles.bpm}>{bpm} BPM</div>
-        {hasShock && <ShockBadge />}
-        <div className={styles.difficulty}>
-          <AbbrDifficulty diffClass={difficultyClass} /> {level}
+        <div
+          className={styles.cardFooter}
+          style={{ backgroundColor: diffAccentColor }}
+        >
+          <div className={styles.bpm}>{bpm} BPM</div>
+          {hasShock && <ShockBadge />}
+          <div className={styles.difficulty}>
+            <AbbrDifficulty diffClass={difficultyClass} /> {level}
+          </div>
         </div>
-      </div>
+      </Popover2>
     </div>
   );
 }

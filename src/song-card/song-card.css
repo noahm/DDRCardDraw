@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
 
 .chart {
+  display: flex !important;
   flex: 1 0 0;
   text-align: center;
   border: 2px solid black;
   border-radius: 5px;
-  display: flex;
   flex-direction: column;
   min-height: 200px;
   color: white;
@@ -23,6 +23,12 @@
 
 .chart.clickable {
   cursor: pointer;
+}
+
+.clickTarget {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardCenter {
