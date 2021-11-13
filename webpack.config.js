@@ -83,7 +83,7 @@ module.exports = function (env = {}, argv = {}) {
           test: /\.css$/,
           exclude: /node_modules/,
           use: [
-            MiniCssExtractPlugin.loader,
+            isProd ? MiniCssExtractPlugin.loader : "style-loader",
             {
               loader: "css-loader",
               options: {
