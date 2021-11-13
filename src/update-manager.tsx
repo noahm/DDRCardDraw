@@ -2,9 +2,10 @@ import * as OfflinePluginRuntime from "offline-plugin/runtime";
 import { useEffect } from "react";
 import { toaster } from "./toaster";
 import { Intent } from "@blueprintjs/core";
-import { FormattedMessage } from "react-intl";
+import { useIntl } from "./hooks/useIntl";
 
 export function UpdateManager() {
+  const { t } = useIntl();
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       OfflinePluginRuntime.install({
@@ -12,7 +13,7 @@ export function UpdateManager() {
           OfflinePluginRuntime.applyUpdate();
           toaster.show(
             {
-              message: <FormattedMessage id="updateLoading" />,
+              message: t("updateLoading"),
               intent: Intent.WARNING,
               timeout: 0,
             },
@@ -22,12 +23,10 @@ export function UpdateManager() {
         onUpdated() {
           toaster.show(
             {
-              message: <FormattedMessage id="updateReady" />,
+              message: t("updateReady"),
               intent: Intent.SUCCESS,
               action: {
-                text: (
-                  <FormattedMessage id="applyUpdate" defaultMessage="Apply" />
-                ),
+                text: t("applyUpdate"),
                 onClick: () => window.location.reload(),
               },
             },
