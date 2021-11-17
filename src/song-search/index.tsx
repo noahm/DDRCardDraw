@@ -26,7 +26,8 @@ export function SongSearch(props: Props) {
   if (fuzzySearch) {
     items = fuzzySearch
       .search(searchTerm)
-      .filter(songIsValid.bind(undefined, config));
+      .filter(songIsValid.bind(undefined, config))
+      .slice(0, 15);
   }
 
   return (
@@ -37,7 +38,10 @@ export function SongSearch(props: Props) {
       onQueryChange={updateSearchTerm}
       onItemSelect={() => null}
       items={items}
-      inputProps={{ placeholder: "Find a song..." }}
+      inputProps={{
+        placeholder: "Find a song...",
+        style: { maxWidth: "calc(100vw - 2em)" },
+      }}
       itemRenderer={(song, itemProps) => (
         <SearchResult
           config={config}
