@@ -15,16 +15,17 @@ export function UpdateManager() {
             {
               message: t("updateLoading"),
               intent: Intent.WARNING,
-              timeout: 0,
             },
             "UpdateManager"
           );
         },
         onUpdated() {
+          toaster.clear();
           toaster.show(
             {
               message: t("updateReady"),
               intent: Intent.SUCCESS,
+              timeout: 0,
               action: {
                 text: t("applyUpdate"),
                 onClick: () => window.location.reload(),
