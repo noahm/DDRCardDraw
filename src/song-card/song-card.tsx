@@ -9,6 +9,7 @@ import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
 import { ShockBadge } from "./shock-badge";
 import { Popover2 } from "@blueprintjs/popover2";
+import { SongSearch } from "../song-search";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -42,10 +43,9 @@ export function SongCard(props: Props) {
 
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
-  const hideIcons = () => {
-    setShowIconMenu(false);
-    return true;
-  };
+  const hideIcons = () => setShowIconMenu(false);
+
+  const [pocketPickForPlayer, setPocketPickForPlayer] = useState<0 | 1 | 2>(0);
 
   const {
     name,
@@ -64,7 +64,8 @@ export function SongCard(props: Props) {
 
   const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
-    [styles.protected]: protectedBy || replacedBy,
+    [styles.protected]: protectedBy,
+    [styles.replaced]: replacedBy,
     [styles.clickable]: !!iconCallbacks && !hasLabel,
   });
 
@@ -79,11 +80,9 @@ export function SongCard(props: Props) {
   if (iconCallbacks) {
     menuContent = (
       <IconMenu
-        onProtect={(p: Player) => hideIcons() && iconCallbacks.onProtect(p)}
-        onPocketPicked={(p: Player, c: DrawnChart) =>
-          hideIcons() && iconCallbacks.onReplace(p, c)
-        }
-        onVeto={(p: Player) => hideIcons() && iconCallbacks.onVeto(p)}
+        onProtect={iconCallbacks.onProtect}
+        onStartPocketPick={setPocketPickForPlayer}
+        onVeto={iconCallbacks.onVeto}
       />
     );
   }
@@ -91,8 +90,21 @@ export function SongCard(props: Props) {
   return (
     <div
       className={rootClassname}
-      onClick={showingIconMenu || hasLabel ? undefined : showIcons}
+      onClick={
+        showingIconMenu || hasLabel || pocketPickForPlayer
+          ? undefined
+          : showIcons
+      }
     >
+      <SongSearch
+        isOpen={!!pocketPickForPlayer}
+        onSongSelect={(song, chart) => {
+          iconCallbacks &&
+            iconCallbacks.onReplace(pocketPickForPlayer as 1 | 2, chart);
+          setPocketPickForPlayer(0);
+        }}
+        onCancel={() => setPocketPickForPlayer(0)}
+      />
       {vetoedBy && (
         <CardLabel
           player={vetoedBy}
@@ -133,7 +145,6 @@ export function SongCard(props: Props) {
         placement="top"
         modifiers={{
           offset: { options: { offset: [0, 35] } },
-          arrow: { options: { element: "[not-an-element]" } },
         }}
       >
         <div

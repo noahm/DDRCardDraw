@@ -5,67 +5,49 @@ import { DrawStateContext } from "../draw-state";
 import { DrawnChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult } from "./search-result";
-import styles from "./song-search.css";
-import { Dialog, InputGroup } from "@blueprintjs/core";
+import { InputGroup } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
+import { Omnibar } from "@blueprintjs/select";
 
 interface Props {
-  autofocus?: boolean;
-  onSongSelect: (song: Song, chart: DrawnChart) => void;
-  onCancel: () => void;
+  isOpen: boolean;
+  onSongSelect(song: Song, chart: DrawnChart): void;
+  onCancel(): void;
 }
 
 export function SongSearch(props: Props) {
-  const { autofocus, onSongSelect, onCancel } = props;
+  const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useContext(ConfigStateContext);
 
   const { fuzzySearch } = useContext(DrawStateContext);
-  const input = useRef<HTMLInputElement>(null);
-  useLayoutEffect(() => {
-    if (autofocus && input.current) {
-      input.current!.focus();
-    }
-  }, []);
 
-  let contents: JSX.Element[] | string | null = null;
-  if (!fuzzySearch) {
-    contents = "Search is not loaded right now.";
-  } else if (searchTerm) {
-    contents = fuzzySearch
+  let items: Song[] = [];
+  if (fuzzySearch) {
+    items = fuzzySearch
       .search(searchTerm)
-      .filter(songIsValid.bind(undefined, config))
-      .slice(0, 5)
-      .map((song, idx) => (
-        <SearchResult
-          key={idx}
-          config={config}
-          song={song}
-          onSelect={(chart) => onSongSelect(song, chart)}
-        />
-      ));
+      .filter(songIsValid.bind(undefined, config));
   }
 
   return (
-    <Dialog onClose={onCancel} isOpen>
-      <div className={styles.input}>
-        <InputGroup
-          placeholder="Search for a song"
-          inputRef={input}
-          leftIcon={IconNames.SEARCH}
-          type="search"
-          onKeyUp={(e) => {
-            if (e.keyCode === 27) {
-              updateSearchTerm("");
-              onCancel && onCancel();
-            } else if (e.currentTarget.value !== searchTerm) {
-              updateSearchTerm(e.currentTarget.value);
-            }
-          }}
-          value={searchTerm}
+    <Omnibar
+      isOpen={isOpen}
+      onClose={onCancel}
+      query={searchTerm}
+      onQueryChange={updateSearchTerm}
+      onItemSelect={() => null}
+      items={items}
+      inputProps={{ placeholder: "Find a song..." }}
+      itemRenderer={(song, itemProps) => (
+        <SearchResult
+          config={config}
+          song={song}
+          selected={itemProps.modifiers.active}
+          onSelect={(chart) => (
+            onSongSelect(song, chart), updateSearchTerm("")
+          )}
         />
-      </div>
-      <div className={styles.suggestionSet}>{contents}</div>
-    </Dialog>
+      )}
+    />
   );
 }

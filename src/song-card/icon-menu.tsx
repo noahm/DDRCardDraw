@@ -1,36 +1,20 @@
-import { useState } from "react";
-import { SongSearch } from "../song-search";
-import { DrawnChart } from "../models/Drawing";
 import { useIntl } from "../hooks/useIntl";
 import { IconNames, IconName } from "@blueprintjs/icons";
-import { Dialog, Menu, MenuItem } from "@blueprintjs/core";
+import { Menu, MenuItem } from "@blueprintjs/core";
 
 interface Props {
-  onPocketPicked: (p: 1 | 2, chart: DrawnChart) => void;
+  onStartPocketPick: (p: 1 | 2) => void;
   onVeto: (p: 1 | 2) => void;
   onProtect: (p: 1 | 2) => void;
 }
 
 export function IconMenu(props: Props) {
-  const { onPocketPicked, onVeto, onProtect } = props;
+  const { onStartPocketPick, onVeto, onProtect } = props;
 
   const { t } = useIntl();
-  const [playerPickingPocket, setPickingPocket] = useState<0 | 1 | 2>(0);
 
   return (
     <Menu>
-      <Dialog
-        onClose={() => setPickingPocket(0)}
-        isOpen={!!playerPickingPocket}
-      >
-        <SongSearch
-          autofocus
-          onSongSelect={(_song, chart) =>
-            onPocketPicked(playerPickingPocket as 1 | 2, chart)
-          }
-          onCancel={() => setPickingPocket(0)}
-        />
-      </Dialog>
       <MenuPair
         icon={IconNames.LOCK}
         text={t("songAction.lock")}
@@ -39,7 +23,7 @@ export function IconMenu(props: Props) {
       <MenuPair
         icon={IconNames.INHERITANCE}
         text={t("songAction.pocketPick")}
-        onClick={setPickingPocket}
+        onClick={onStartPocketPick}
       />
       <MenuPair
         icon={IconNames.BAN_CIRCLE}
