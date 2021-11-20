@@ -1,12 +1,10 @@
-import { useContext, useLayoutEffect, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { ConfigStateContext } from "../config-state";
 import { DrawStateContext } from "../draw-state";
 import { DrawnChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
-import { InputGroup } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
 import { Omnibar } from "@blueprintjs/select";
 import styles from "./song-search.css";
 
