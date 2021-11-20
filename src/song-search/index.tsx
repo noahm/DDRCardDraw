@@ -8,6 +8,7 @@ import { SearchResult, SearchResultData } from "./search-result";
 import { InputGroup } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { Omnibar } from "@blueprintjs/select";
+import styles from "./song-search.css";
 
 interface Props {
   isOpen: boolean;
@@ -59,8 +60,8 @@ export function SongSearch(props: Props) {
       items={items}
       inputProps={{
         placeholder: "Find a song...",
-        style: { maxWidth: "calc(100vw - 2em)" },
       }}
+      className={styles.songSearch}
       itemRenderer={(data, itemProps) => (
         <SearchResult
           config={config}
