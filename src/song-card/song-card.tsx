@@ -100,6 +100,7 @@ export function SongCard(props: Props) {
         isOpen={!!pocketPickForPlayer}
         onSongSelect={(song, chart) => {
           iconCallbacks &&
+            chart &&
             iconCallbacks.onReplace(pocketPickForPlayer as 1 | 2, chart);
           setPocketPickForPlayer(0);
         }}
