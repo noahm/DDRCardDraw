@@ -2,7 +2,7 @@
   "private": true,
   "name": "ddr-card-draw",
   "version": "1.0.0",
-  "description": "A card draw app for running DDR tournaments",
+  "description": "Tools for music game tournaments and training",
   "scripts": {
     "start": "webpack serve --env dev=true",
     "build": "npm run validate && webpack",

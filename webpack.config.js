@@ -12,6 +12,8 @@ const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
+const packageJson = require("./package.json");
+
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
@@ -152,9 +154,10 @@ module.exports = function (env = {}, argv = {}) {
         chunkFilename: "[id].[chunkhash:5].js",
       }),
       new HtmlWebpackPlugin({
-        title: "DDR Card Draw",
+        title: "DDR Tools - card draw and more!",
         filename: "index.html",
         meta: {
+          description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
         },
       }),

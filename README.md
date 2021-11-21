@@ -1,12 +1,12 @@
-# DDR Card Draw
+# DDR Tools
 
-This is web-app that allows random draw of songs from Dance Dance Revolution (A20, Ace, and Extreme)
-with a variety of optional conditions, primarially around difficulty level. The intended use case is
-for competitive tournaments, but it may also be useful as a training tool.
+This is web-app that allows random draw of songs from Dance Dance Revolution and other music games
+with a variety of options for filtering which songs and charts are included. The intended use case
+is in competitive tournaments or personal training.
 
-The app is officially available at [https://ddrdraw.surge.sh/](https://ddrdraw.surge.sh/)
+The app is officially available at [https://ddr.tools/](https://ddr.tools/)
 or as a downloadable zip file from the [releases page](https://github.com/noahm/DDRCardDraw/releases).
-The app is designed such that even the online version will work without any internet connection after
+The app supports running fully offline, and can load and operate without an internet connection after
 being loaded once in any modern web browser.
 
 Original app by Jeff Lloyd; ongoing maintenance provided by [noahm](https://github.com/noahm)
