@@ -7,6 +7,7 @@ import { ConfigStateContext } from "./config-state";
 import { EligibleChartsList } from "./eligible-charts-list";
 import { Callout, NonIdealState } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
+import logo from "./assets/ddr-tools-256.png";
 
 const renderDrawing = (drawing: Drawing) => (
   <DrawnSet key={drawing.id} drawing={drawing} />
@@ -28,7 +29,7 @@ export function DrawingList() {
     return (
       <div className={styles.scrollable}>
         <NonIdealState
-          icon={IconNames.LAYERS}
+          icon={<img src={logo} height={128} />}
           title="DDR Tools"
           description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
           action={

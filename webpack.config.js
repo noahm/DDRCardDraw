@@ -156,6 +156,7 @@ module.exports = function (env = {}, argv = {}) {
       new HtmlWebpackPlugin({
         title: "DDR Tools - card draw and more!",
         filename: "index.html",
+        favicon: "./src/assets/ddr-tools-128.png",
         meta: {
           description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
