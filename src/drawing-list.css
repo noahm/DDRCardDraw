@@ -4,6 +4,13 @@
   flex: 1 0 auto;
 }
 
+.empty {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .scrollable {
   flex: 1 0 0;
   overflow-y: auto;

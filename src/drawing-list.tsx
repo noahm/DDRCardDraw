@@ -27,7 +27,7 @@ export function DrawingList() {
   }
   if (!drawings.length) {
     return (
-      <div className={styles.scrollable}>
+      <div className={styles.empty}>
         <NonIdealState
           icon={<img src={logo} height={128} />}
           title="DDR Tools"
