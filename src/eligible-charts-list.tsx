@@ -5,7 +5,15 @@ import { DrawStateContext } from "./draw-state";
 import { SongCard } from "./song-card";
 import styles from "./drawing-list.css";
 import { DrawnChart } from "./models/Drawing";
-import { Text, HTMLSelect } from "@blueprintjs/core";
+import {
+  Text,
+  HTMLSelect,
+  Navbar,
+  NavbarGroup,
+  NavbarDivider,
+  NonIdealState,
+  Spinner,
+} from "@blueprintjs/core";
 import { useIntl } from "./hooks/useIntl";
 
 function songKeyFromChart(chart: DrawnChart) {
@@ -18,7 +26,7 @@ export function EligibleChartsList() {
   const { gameData } = useContext(DrawStateContext);
   const configState = useContext(ConfigStateContext);
   if (!gameData) {
-    return null;
+    return <Spinner />;
   }
   let charts = Array.from(eligibleCharts(configState, gameData.songs));
   const songs = new Set<string>();
@@ -35,25 +43,31 @@ export function EligibleChartsList() {
   });
   return (
     <>
-      <Text tagName="p" style={{ padding: "1em 0 0 1em" }}>
-        Eligible songs: {songs.size} of {gameData.songs.length} total (
-        {charts.length} eligible charts)
-      </Text>
-      {allFlags.size > 1 && (
-        <div style={{ paddingLeft: "1em" }}>
-          <HTMLSelect
-            value={currentTab}
-            onChange={(e) => setCurrentTab(e.currentTarget.value)}
-            options={Array.from(allFlags).map((flag) => ({
-              value: flag,
-              label: flag === "all" ? "All charts" : t(`meta.${flag}`),
-            }))}
-          />
-        </div>
-      )}
-      <div className={styles.scrollable}>
-        <div className={styles.chartList}>{cards}</div>
-      </div>
+      <Navbar
+        style={{
+          position: "sticky",
+          top: "50px",
+        }}
+      >
+        <NavbarGroup>
+          {charts.length} eligible charts from {songs.size} songs (of{" "}
+          {gameData.songs.length} total)
+        </NavbarGroup>
+        {allFlags.size > 1 && (
+          <NavbarGroup>
+            <NavbarDivider />
+            <HTMLSelect
+              value={currentTab}
+              onChange={(e) => setCurrentTab(e.currentTarget.value)}
+              options={Array.from(allFlags).map((flag) => ({
+                value: flag,
+                label: flag === "all" ? "All charts" : t(`meta.${flag}`),
+              }))}
+            />
+          </NavbarGroup>
+        )}
+      </Navbar>
+      <div className={styles.chartList}>{cards}</div>
     </>
   );
 }

@@ -1,4 +1,11 @@
-import { Button, Dialog, Menu, MenuItem, Navbar } from "@blueprintjs/core";
+import {
+  Alignment,
+  Button,
+  Dialog,
+  Menu,
+  MenuItem,
+  Navbar,
+} from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
 import { useState } from "react";
@@ -27,19 +34,15 @@ export function Header() {
 
   return (
     <Navbar
-      id="HeaderNav"
       style={{
         position: "sticky",
         top: 0,
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
       }}
     >
       <Dialog isOpen={aboutOpen} onClose={() => setAboutOpen(false)}>
         <About />
       </Dialog>
-      <Navbar.Group>
+      <Navbar.Group align={Alignment.LEFT}>
         <Popover2 content={menu} placement="bottom-start">
           <Button icon={IconNames.MENU} />
         </Popover2>
@@ -48,7 +51,7 @@ export function Header() {
           <VersionSelect />
         </Tooltip2>
       </Navbar.Group>
-      <Navbar.Group>
+      <Navbar.Group align={Alignment.RIGHT}>
         <HeaderControls />
       </Navbar.Group>
     </Navbar>

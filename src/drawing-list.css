@@ -11,18 +11,6 @@
   justify-content: center;
 }
 
-.scrollable {
-  flex: 1 0 0;
-  overflow-y: auto;
-}
-
-@media (min-width: 1025px) {
-  .scrollable {
-    overflow: auto;
-    min-height: 12em;
-  }
-}
-
 .chartList {
   display: flex;
   padding: 10px;
