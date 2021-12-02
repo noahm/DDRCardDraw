@@ -25,6 +25,7 @@ import {
 import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
 import { useIsNarrow } from "../hooks/useMediaQuery";
+import { EligibleChartsListFilter } from "../eligible-charts-list";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -168,9 +169,15 @@ function Controls() {
   return (
     <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
       {isNarrow && (
-        <FormGroup>
-          <ShowChartsToggle inDrawer />
-        </FormGroup>
+        <>
+          <FormGroup>
+            <ShowChartsToggle inDrawer />
+          </FormGroup>
+          <FormGroup label="Show only">
+            <EligibleChartsListFilter />
+          </FormGroup>
+          <hr />
+        </>
       )}
       <FormGroup labelFor="chartCount" label={t("chartCount")}>
         <NumericInput
