@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --env dev=true",
     "build": "npm run validate && webpack",
-    "deploy": "npm run build && surge ./dist https://ddrdraw.surge.sh",
+    "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "npm run build && surge ./dist https://ddrdraw-staging.surge.sh",
     "deploy:firebase": "npm run build && firebase deploy",
     "import:ddr": "node scripts/import-a20plus.js",
