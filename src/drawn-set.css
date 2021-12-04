@@ -4,7 +4,3 @@
   overflow: hidden;
   flex-wrap: wrap;
 }
-
-.chartList:not(:first-child) {
-  border-top: 5px solid darkgrey;
-}

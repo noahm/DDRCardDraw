@@ -1,15 +1,14 @@
-import { createContext, Component } from "preact";
+import { createContext, Component } from "react";
 import { UnloadHandler } from "./unload-handler";
 import { draw } from "./card-draw";
 import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
 import { GameData, Song } from "./models/SongData";
-import { TranslateProvider } from "@denysvuika/preact-translate";
-import { LanguageData } from "@denysvuika/preact-translate/src/languageData";
 import i18nData from "./assets/i18n.json";
 import { detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
+import { IntlProvider } from "./intl-provider";
 import * as qs from "query-string";
 
 interface DrawState {
@@ -19,7 +18,8 @@ interface DrawState {
   dataSetName: string;
   lastDrawFailed: boolean;
   loadGameData: (dataSetName: string) => Promise<GameData>;
-  drawSongs: (config: ConfigState) => void;
+  /** returns false if no songs could be drawn */
+  drawSongs: (config: ConfigState) => boolean;
 }
 
 export const DrawStateContext = createContext<DrawState>({
@@ -31,22 +31,32 @@ export const DrawStateContext = createContext<DrawState>({
   loadGameData() {
     return Promise.reject();
   },
-  drawSongs() {},
+  drawSongs() {
+    return false;
+  },
 });
 
 interface Props {
   defaultDataSet: string;
 }
 
-function setGameInUrl(game: string) {
-  const next = qs.stringifyUrl({
-    url: location.href,
-    query: {
-      game,
-    },
-  });
-  if (next !== location.href) {
-    window.history.replaceState(undefined, "", next);
+function readDataSetFromUrl() {
+  const [key, dataSet] = window.location.hash.slice(1).split("-");
+  if (key === "game") {
+    return dataSet;
+  }
+  console.log(key);
+  return "";
+}
+
+function writeDataSetToUrl(game: string) {
+  const next = `#game-${game}`;
+  if (next !== window.location.hash) {
+    window.history.replaceState(
+      undefined,
+      "",
+      qs.stringifyUrl({ url: window.location.href, fragmentIdentifier: next })
+    );
   }
 }
 
@@ -54,12 +64,11 @@ export class DrawStateManager extends Component<Props, DrawState> {
   constructor(props: Props) {
     super(props);
 
-    const query = qs.parse(location.search);
     this.state = {
       gameData: null,
       fuzzySearch: null,
       drawings: [],
-      dataSetName: (query.game as string) || props.defaultDataSet,
+      dataSetName: readDataSetFromUrl() || props.defaultDataSet,
       lastDrawFailed: false,
       loadGameData: this.loadSongSet,
       drawSongs: this.doDrawing,
@@ -71,22 +80,20 @@ export class DrawStateManager extends Component<Props, DrawState> {
   }
 
   render() {
-    const translations: LanguageData = {};
-    for (const lang in i18nData as LanguageData) {
-      // @ts-ignore
-      translations[lang] = i18nData[lang];
-      if (this.state.gameData) {
-        translations[lang].meta =
-          this.state.gameData.i18n[lang] || this.state.gameData.i18n.en;
-      }
-    }
+    const allStrings = i18nData as Record<string, Record<string, string>>;
+    const useTranslations = allStrings[detectedLanguage] || allStrings["en"];
+    const additionalStrings = this.state.gameData?.i18n[detectedLanguage];
     return (
       <DrawStateContext.Provider value={this.state}>
-        <TranslateProvider translations={translations} lang={detectedLanguage}>
+        <IntlProvider
+          locale={detectedLanguage}
+          translations={useTranslations}
+          mergeTranslations={additionalStrings}
+        >
           <ApplyDefaultConfig defaults={this.state.gameData?.defaults} />
           <UnloadHandler confirmUnload={!!this.state.drawings.length} />
           {this.props.children}
-        </TranslateProvider>
+        </IntlProvider>
       </DrawStateContext.Provider>
     );
   }
@@ -102,8 +109,9 @@ export class DrawStateManager extends Component<Props, DrawState> {
     this.setState({
       gameData: null,
       dataSetName,
+      drawings: [],
     });
-    setGameInUrl(dataSetName);
+    writeDataSetToUrl(dataSetName);
 
     return import(
       /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
@@ -131,7 +139,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
 
   doDrawing = (config: ConfigState) => {
     if (!this.state.gameData) {
-      return;
+      return false;
     }
 
     const drawing = draw(this.state.gameData, config);
@@ -139,12 +147,13 @@ export class DrawStateManager extends Component<Props, DrawState> {
       this.setState({
         lastDrawFailed: true,
       });
-      return;
+      return false;
     }
 
     this.setState((prevState) => ({
       drawings: [drawing, ...prevState.drawings].filter(Boolean),
       lastDrawFailed: false,
     }));
+    return true;
   };
 }

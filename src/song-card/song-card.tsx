@@ -1,14 +1,15 @@
 import classNames from "classnames";
 import { detectedLanguage } from "../utils";
 import styles from "./song-card.css";
-import { useState, useContext } from "preact/hooks";
-import { Zap, Lock, Edit, Slash } from "preact-feather";
-import { TranslateContext } from "@denysvuika/preact-translate";
+import { useState } from "react";
 import { IconMenu } from "./icon-menu";
-import { CardLabel } from "./card-label";
+import { CardLabel, LabelType } from "./card-label";
 import { DrawnChart } from "../models/Drawing";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
+import { ShockBadge } from "./shock-badge";
+import { Popover2 } from "@blueprintjs/popover2";
+import { SongSearch } from "../song-search";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -40,13 +41,11 @@ export function SongCard(props: Props) {
     iconCallbacks,
   } = props;
 
-  const { t } = useContext(TranslateContext);
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
-  const hideIcons = () => {
-    setShowIconMenu(false);
-    return true;
-  };
+  const hideIcons = () => setShowIconMenu(false);
+
+  const [pocketPickForPlayer, setPocketPickForPlayer] = useState<0 | 1 | 2>(0);
 
   const {
     name,
@@ -61,10 +60,13 @@ export function SongCard(props: Props) {
   } = replacedWith || chart;
   const diffAccentColor = useDifficultyColor(difficultyClass);
 
+  const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
+
   const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
-    [styles.protected]: protectedBy || replacedBy,
-    [styles.clickable]: !!iconCallbacks,
+    [styles.protected]: protectedBy,
+    [styles.replaced]: replacedBy,
+    [styles.clickable]: !!iconCallbacks && !hasLabel,
   });
 
   let jacketBg = {};
@@ -74,39 +76,55 @@ export function SongCard(props: Props) {
     };
   }
 
+  let menuContent: undefined | JSX.Element;
+  if (iconCallbacks) {
+    menuContent = (
+      <IconMenu
+        onProtect={iconCallbacks.onProtect}
+        onStartPocketPick={setPocketPickForPlayer}
+        onVeto={iconCallbacks.onVeto}
+      />
+    );
+  }
+
   return (
     <div
       className={rootClassname}
-      onClick={showingIconMenu && iconCallbacks ? undefined : showIcons}
+      onClick={
+        showingIconMenu || hasLabel || pocketPickForPlayer
+          ? undefined
+          : showIcons
+      }
     >
+      <SongSearch
+        isOpen={!!pocketPickForPlayer}
+        onSongSelect={(song, chart) => {
+          iconCallbacks &&
+            chart &&
+            iconCallbacks.onReplace(pocketPickForPlayer as 1 | 2, chart);
+          setPocketPickForPlayer(0);
+        }}
+        onCancel={() => setPocketPickForPlayer(0)}
+      />
       {vetoedBy && (
-        <CardLabel left={vetoedBy === 1}>
-          P{vetoedBy}
-          <Slash size={16} />
-        </CardLabel>
+        <CardLabel
+          player={vetoedBy}
+          type={LabelType.Ban}
+          onRemove={iconCallbacks?.onReset}
+        />
       )}
       {protectedBy && (
-        <CardLabel left={protectedBy === 1}>
-          P{protectedBy}
-          <Lock size={16} />
-        </CardLabel>
+        <CardLabel
+          player={protectedBy}
+          type={LabelType.Protect}
+          onRemove={iconCallbacks?.onReset}
+        />
       )}
       {replacedBy && (
-        <CardLabel left={replacedBy === 1}>
-          P{replacedBy}
-          <Edit size={16} />
-        </CardLabel>
-      )}
-      {showingIconMenu && !!iconCallbacks && (
-        <IconMenu
-          onProtect={(p: Player) => hideIcons() && iconCallbacks.onProtect(p)}
-          onPocketPicked={(p: Player, c: DrawnChart) =>
-            hideIcons() && iconCallbacks.onReplace(p, c)
-          }
-          onVeto={(p: Player) => hideIcons() && iconCallbacks.onVeto(p)}
-          onlyReset={!!(vetoedBy || protectedBy || replacedBy)}
-          onReset={() => hideIcons() && iconCallbacks.onReset()}
-          onClose={hideIcons}
+        <CardLabel
+          player={replacedBy}
+          type={LabelType.Pocket}
+          onRemove={iconCallbacks?.onReset}
         />
       )}
       <div className={styles.cardCenter} style={jacketBg}>
@@ -120,26 +138,27 @@ export function SongCard(props: Props) {
           {artist}
         </div>
       </div>
-      <div
-        className={styles.cardFooter}
-        style={{ backgroundColor: diffAccentColor }}
+
+      <Popover2
+        content={menuContent}
+        isOpen={showingIconMenu}
+        onClose={hideIcons}
+        placement="top"
+        modifiers={{
+          offset: { options: { offset: [0, 35] } },
+        }}
       >
-        <div className={styles.bpm}>{bpm} BPM</div>
-        {hasShock && (
-          <div className={styles.shockBadge} title={t("shockArrows")}>
-            <Zap
-              size={12}
-              aria-hidden
-              color="black"
-              fill="yellow"
-              stroke-width="1"
-            />
+        <div
+          className={styles.cardFooter}
+          style={{ backgroundColor: diffAccentColor }}
+        >
+          <div className={styles.bpm}>{bpm} BPM</div>
+          {hasShock && <ShockBadge />}
+          <div className={styles.difficulty}>
+            <AbbrDifficulty diffClass={difficultyClass} /> {level}
           </div>
-        )}
-        <div className={styles.difficulty}>
-          <AbbrDifficulty diffClass={difficultyClass} /> {level}
         </div>
-      </div>
+      </Popover2>
     </div>
   );
 }

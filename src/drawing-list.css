@@ -4,15 +4,11 @@
   flex: 1 0 auto;
 }
 
-.scrollable {
+.empty {
+  display: flex;
   flex: 1 0 0;
-}
-
-@media (min-width: 1025px) {
-  .scrollable {
-    overflow: auto;
-    min-height: 12em;
-  }
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chartList {

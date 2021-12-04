@@ -1,0 +1,10 @@
+.shockBadge {
+  display: flex;
+  padding: 1px;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  border-radius: 50%;
+  color: black;
+  margin-top: -10px;
+}

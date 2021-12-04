@@ -10,6 +10,9 @@ const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
+const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
+const packageJson = require("./package.json");
 
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
@@ -23,9 +26,10 @@ module.exports = function (env = {}, argv = {}) {
       ? undefined
       : {
           static: "./dist",
+          hot: true,
           // host: "0.0.0.0"
         },
-    entry: ["preact/debug", "./src/app.tsx"],
+    entry: "./src/index.tsx",
     output: {
       filename: "[name].[chunkhash:5].js",
       chunkFilename: "[name].[chunkhash:5].js",
@@ -69,18 +73,11 @@ module.exports = function (env = {}, argv = {}) {
                 require("@babel/plugin-syntax-dynamic-import"),
                 [
                   require("@babel/plugin-transform-react-jsx"),
-                  { pragma: "h", pragmaFrag: "Fragment" },
+                  { runtime: "automatic" },
                 ],
                 require("@babel/plugin-transform-react-jsx-source"),
-                [
-                  require("@emotion/babel-plugin-jsx-pragmatic"),
-                  {
-                    module: "preact",
-                    import: "h, Fragment",
-                    export: "h",
-                  },
-                ],
-              ],
+                !isProd ? require("react-refresh/babel") : null,
+              ].filter(Boolean),
             },
           },
         },
@@ -88,7 +85,7 @@ module.exports = function (env = {}, argv = {}) {
           test: /\.css$/,
           exclude: /node_modules/,
           use: [
-            MiniCssExtractPlugin.loader,
+            isProd ? MiniCssExtractPlugin.loader : "style-loader",
             {
               loader: "css-loader",
               options: {
@@ -107,6 +104,11 @@ module.exports = function (env = {}, argv = {}) {
               },
             },
           ],
+        },
+        {
+          test: /node_modules\/.+\.css$/,
+          // include: /node_modules/,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
           test: /\.svg$/,
@@ -152,15 +154,18 @@ module.exports = function (env = {}, argv = {}) {
         chunkFilename: "[id].[chunkhash:5].js",
       }),
       new HtmlWebpackPlugin({
-        title: "DDR Card Draw",
+        title: "DDR Tools - card draw and more!",
         filename: "index.html",
+        favicon: "./src/assets/ddr-tools-128.png",
         meta: {
+          description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
         },
+        template: "src/index.ejs",
       }),
     ].concat(
       !isProd
-        ? []
+        ? [new ReactRefreshPlugin()]
         : [
             new ZipPlugin({
               path: __dirname,

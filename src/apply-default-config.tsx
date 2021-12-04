@@ -1,5 +1,5 @@
 import { GameData } from "./models/SongData";
-import { useEffect, useContext } from "preact/hooks";
+import { useEffect, useContext } from "react";
 import { ConfigStateContext } from "./config-state";
 
 interface Props {

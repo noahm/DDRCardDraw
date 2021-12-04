@@ -1,31 +1,12 @@
 .cardLabel {
   position: absolute;
-  top: 0;
-  width: 6em;
-}
-.cardLabel.left {
-  left: 0;
-}
-.cardLabel:not(.left) {
-  right: 0;
+  top: 0.5em;
+  left: 0.5em;
+  right: 0.5em;
+  text-shadow: none;
 }
 
-.cardLabel span {
-  position: absolute;
-  left: 0em;
-  top: 0.2em;
-  width: 10em;
-  display: block;
-  transform: rotate(45deg);
-  background-color: tomato;
-  border-width: 2px 0;
-  border-color: black;
-  border-style: solid;
-  padding-top: 5px;
-  text-align: center;
-}
-.cardLabel.left span {
-  left: auto;
-  right: 0;
-  transform: rotate(-45deg);
+.cardLabel > span {
+  border: 2px solid white;
+  border-radius: 0.5em;
 }

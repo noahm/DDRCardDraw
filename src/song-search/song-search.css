@@ -1,0 +1,6 @@
+@media (max-width: 540px) {
+  .songSearch {
+    max-width: calc(100vw - 3em);
+    left: 1.5em !important;
+  }
+}

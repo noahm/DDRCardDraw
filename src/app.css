@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+body:global(.bp4-dark) {
+  background-color: #222;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -17,21 +21,11 @@ body {
   width: 100%;
 }
 
-h1 {
-  padding-left: 10px;
-}
-
-.padded {
-  padding: 10px;
-}
-
-.padded button {
-  height: 25px;
-  line-height: 0px;
-}
-
-a:any-link {
-  color: blue;
+@media (min-width: 1025px) {
+  .scrollable {
+    overflow: auto;
+    min-height: 12em;
+  }
 }
 
 input[type="color"],
@@ -51,5 +45,5 @@ input[type="week"],
 select,
 textarea,
 button {
-  font-size: 16px;
+  font-size: 16px !important;
 } /* avoid iOS auto-zoom */

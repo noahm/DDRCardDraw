@@ -1,29 +1,29 @@
-import { render } from "preact";
-import { Controls } from "./controls";
+import "normalize.css";
+import "@blueprintjs/core/lib/css/blueprint.css";
+import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
+import "@blueprintjs/select/lib/css/blueprint-select.css";
+
+import { FocusStyleManager } from "@blueprintjs/core";
+
+FocusStyleManager.onlyShowFocusOnTabs();
+
 import { DrawingList } from "./drawing-list";
-import { Footer } from "./footer";
 import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
-import { SongSearch } from "./song-search";
-import { SuspectSongs } from "./SuspectSongs";
-import styles from "./app.css";
 import { ConfigStateManager } from "./config-state";
+import { Header } from "./header";
+import { ThemeSyncWidget } from "./theme-toggle";
 
-function App() {
+export function App() {
   return (
     <ConfigStateManager>
       <DrawStateManager defaultDataSet="a20plus">
+        <ThemeSyncWidget />
         <UpdateManager />
-        <Controls />
-        {/* <SuspectSongs /> */}
+        <Header />
         <DrawingList />
-        <Footer />
       </DrawStateManager>
     </ConfigStateManager>
   );
 }
-
-const appRoot = document.createElement("main");
-document.body.prepend(appRoot);
-appRoot.className = styles.container;
-render(<App />, appRoot);
