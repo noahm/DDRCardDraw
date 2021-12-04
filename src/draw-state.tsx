@@ -40,15 +40,23 @@ interface Props {
   defaultDataSet: string;
 }
 
-function setGameInUrl(game: string) {
-  const next = qs.stringifyUrl({
-    url: location.href,
-    query: {
-      game,
-    },
-  });
-  if (next !== location.href) {
-    window.history.replaceState(undefined, "", next);
+function readDataSetFromUrl() {
+  const [key, dataSet] = window.location.hash.slice(1).split("-");
+  if (key === "game") {
+    return dataSet;
+  }
+  console.log(key);
+  return "";
+}
+
+function writeDataSetToUrl(game: string) {
+  const next = `#game-${game}`;
+  if (next !== window.location.hash) {
+    window.history.replaceState(
+      undefined,
+      "",
+      qs.stringifyUrl({ url: window.location.href, fragmentIdentifier: next })
+    );
   }
 }
 
@@ -56,12 +64,11 @@ export class DrawStateManager extends Component<Props, DrawState> {
   constructor(props: Props) {
     super(props);
 
-    const query = qs.parse(location.search);
     this.state = {
       gameData: null,
       fuzzySearch: null,
       drawings: [],
-      dataSetName: (query.game as string) || props.defaultDataSet,
+      dataSetName: readDataSetFromUrl() || props.defaultDataSet,
       lastDrawFailed: false,
       loadGameData: this.loadSongSet,
       drawSongs: this.doDrawing,
@@ -104,7 +111,7 @@ export class DrawStateManager extends Component<Props, DrawState> {
       dataSetName,
       drawings: [],
     });
-    setGameInUrl(dataSetName);
+    writeDataSetToUrl(dataSetName);
 
     return import(
       /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
