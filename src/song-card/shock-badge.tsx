@@ -7,7 +7,7 @@ export function ShockBadge() {
   const { t } = useIntl();
   return (
     <div className={styles.shockBadge}>
-      <Icon icon={IconNames.OFFLINE} title={t("shockArrows")} iconSize={12} />
+      <Icon icon={IconNames.OFFLINE} title={t("shockArrows")} iconSize={14} />
     </div>
   );
 }
