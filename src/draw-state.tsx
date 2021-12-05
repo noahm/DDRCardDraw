@@ -50,8 +50,8 @@ function readDataSetFromUrl() {
 }
 
 function writeDataSetToUrl(game: string) {
-  const next = `#game-${game}`;
-  if (next !== window.location.hash) {
+  const next = `game-${game}`;
+  if ("#" + next !== window.location.hash) {
     window.history.replaceState(
       undefined,
       "",
