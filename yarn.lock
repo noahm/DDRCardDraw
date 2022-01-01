@@ -943,17 +943,17 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@blueprintjs/colors@^4.0.0-beta.2":
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-4.0.0-beta.2.tgz#581c8b77c8c7d98a0da3fcecc818105f51bf2e5b"
-  integrity sha512-yNSdk+lU0esQUDsCLc4T79+6rmEa4gH0RENpebXImq1si/txJfdSyEhUj4Hd//0YXy3P+CTXWhIBVThucfDDNQ==
+"@blueprintjs/colors@^4.0.0-beta.3":
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-4.0.0-beta.3.tgz#19359e31cb37497e2cd2ca16c10f71c5e24e9c9f"
+  integrity sha512-42i7qeyFZT/qJFj8iagVECB91HmqxiCY7rw+EaOHSKCwbasbJF0BmAMViZCrOhvw++ZQ2WXmu+CxH6jkvSeDtg==
 
 "@blueprintjs/core@^4.0.0-beta.10", "@blueprintjs/core@next":
-  version "4.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-4.0.0-beta.10.tgz#22b4f13080ea6b000b60ff7084cae73e00dc1aa0"
-  integrity sha512-hp+IMF1jZ1X7rU/evPOmgJrr/YzlY0R0IB0dlq4uYVRxvesC9eNq/08SuVKv8X2B0ZI/siUuEvun4dj5bpwEQQ==
+  version "4.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-4.0.0-beta.12.tgz#b8fbbd357094b2e8f369955bfbad4eb43483d84b"
+  integrity sha512-d2Cy2V58IBGcy3V3/4EbNoXGIoJ7zbbPHYsflEZBum7t1vjbFfjTNFJw9BDRJM5mKlcBYOn8/DRtqld4aB6JHg==
   dependencies:
-    "@blueprintjs/colors" "^4.0.0-beta.2"
+    "@blueprintjs/colors" "^4.0.0-beta.3"
     "@blueprintjs/icons" "^4.0.0-beta.6"
     "@types/dom4" "^2.0.1"
     classnames "^2.2"
