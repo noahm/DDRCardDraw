@@ -111,12 +111,8 @@ module.exports = function (env = {}, argv = {}) {
           use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
-          test: /\.svg$/,
-          loader: "svg-inline-loader",
-        },
-        {
-          test: /\.(woff2?|ttf|eot|jpe?g|png|gif|mp4|mov|ogg|webm)(\?.*)?$/i,
-          loader: "file-loader",
+          test: /\.(woff2?|ttf|svg|eot|jpe?g|png|gif|mp4|mov|ogg|webm)(\?.*)?$/i,
+          type: "asset/resource",
         },
       ],
     },
