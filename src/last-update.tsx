@@ -1,10 +1,10 @@
 import cn from "classnames";
 import { detectedLanguage } from "./utils";
-import { Classes, MenuItem, Text } from "@blueprintjs/core";
+import { Classes, Text } from "@blueprintjs/core";
 import { FormattedMessage } from "react-intl";
 
 // note that month is zero-indexed for date constructor :)
-const lastUpdate = new Date(2021, 9, 23);
+const lastUpdate = new Date(2022, 0, 4);
 
 export function LastUpdate() {
   return (
