@@ -1,12 +1,16 @@
-import cn from "classnames";
-import { detectedLanguage } from "./utils";
 import { Classes, Text } from "@blueprintjs/core";
+import cn from "classnames";
+import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
-
-// note that month is zero-indexed for date constructor :)
-const lastUpdate = new Date(2022, 0, 4);
+import { DrawStateContext } from "./draw-state";
+import { detectedLanguage } from "./utils";
 
 export function LastUpdate() {
+  const { dataSetName, gameData } = useContext(DrawStateContext);
+  if (!gameData) {
+    return null;
+  }
+  const lastUpdate = new Date(gameData.meta.lastUpdated);
   return (
     <Text
       className={cn(Classes.TEXT_MUTED, Classes.TEXT_SMALL)}
@@ -15,6 +19,7 @@ export function LastUpdate() {
       <FormattedMessage
         id="lastUpdate"
         values={{
+          gameName: dataSetName,
           date: new Intl.DateTimeFormat(detectedLanguage).format(lastUpdate),
         }}
       />

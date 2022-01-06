@@ -6,7 +6,8 @@
       { "key": "normal", "color": "#e0de5c" }
     ],
     "flags": ["unlock", "extraExclusive", "tempUnlock"],
-    "lvlMax": 10
+    "lvlMax": 10,
+    "lastUpdated": 1595833183000
   },
   "defaults": {
     "style": "single",
@@ -24,10 +25,7 @@
       "unlock": "Stars Unlock",
       "extraExclusive": "Extra Stage/Standard Mode",
       "tempUnlock": "Event Unlock (Spark Festival, GYM, Dance Camp, KAC, etc)",
-      "$abbr": {
-        "easy": "E",
-        "normal": "N"
-      }
+      "$abbr": { "easy": "E", "normal": "N" }
     },
     "ja": {
       "name": "DanceRush",
@@ -37,10 +35,7 @@
       "unlock": "スターロック解除",
       "extraExclusive": "追加ステージ/標準モード",
       "tempUnlock": "イベントのロック解除（スパークフェスティバル、ジム、ダンスキャンプ、KACなど）",
-      "$abbr": {
-        "easy": "E",
-        "normal": "N"
-      }
+      "$abbr": { "easy": "E", "normal": "N" }
     }
   },
   "songs": [

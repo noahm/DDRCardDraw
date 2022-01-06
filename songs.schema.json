@@ -8,9 +8,13 @@
     "meta": {
       "type": "object",
       "description": "Describes unique configuration options for this game",
-      "required": ["styles", "difficulties", "lvlMax", "flags"],
+      "required": ["lastUpdated", "styles", "difficulties", "lvlMax", "flags"],
       "additionalProperties": false,
       "properties": {
+        "lastUpdated": {
+          "type": "integer",
+          "description": "Unix timestamp of last update to this data file"
+        },
         "styles": {
           "$ref": "#/$defs/uniqueStringArr",
           "description": "List of all play styles available"

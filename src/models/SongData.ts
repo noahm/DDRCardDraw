@@ -18,6 +18,10 @@ export interface GameData {
    */
   meta: {
     /**
+     * Unix timestamp of last update to this data file
+     */
+    lastUpdated: number;
+    /**
      * List of all play styles available
      */
     styles: string[];
