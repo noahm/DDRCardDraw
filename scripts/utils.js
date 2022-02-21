@@ -6,7 +6,8 @@ const jimp = require("jimp");
 const inquirer = require("inquirer");
 
 function writeJsonData(data, filePath) {
-  fs.writeFileSync(
+  data.meta.lastUpdated = Date.now();
+  return fs.promises.writeFile(
     filePath,
     prettier.format(JSON.stringify(data), { filepath: filePath })
   );

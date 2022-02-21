@@ -11,6 +11,7 @@ const {
   downloadJacket,
   requestQueue,
   reportQueueStatusLive,
+  writeJsonData,
 } = require("./utils");
 
 const difficulties = [
@@ -50,10 +51,7 @@ async function main() {
   const existingData = require(targetFile);
   const indexedSongs = {};
   for (const song of existingData.songs) {
-    if (indexedSongs[song.name]) {
-      ui.log.write(`Duplicate song title: ${song.name}`);
-    }
-    indexedSongs[song.name] = song;
+    indexedSongs[song.saIndex] = song;
   }
 
   for (const diff of difficulties) {
@@ -71,7 +69,7 @@ async function main() {
     for (const score of highscores) {
       if (!songs[score.song_id]) {
         songs[score.song_id] = {
-          ...indexedSongs[score.song.title],
+          ...indexedSongs[score.song_id],
           saIndex: score.song_id.toString(),
           name: score.song.title,
           artist: score.song.artist,
@@ -80,7 +78,7 @@ async function main() {
           jacket: queueJacketDownload(score.song.cover_path),
           charts: [],
         };
-        if (!indexedSongs[score.song.title]) {
+        if (!indexedSongs[score.song_id]) {
           ui.log.write(`added new song: ${score.song.title}`);
         }
       }
@@ -102,11 +100,9 @@ async function main() {
   };
 
   ui.log.write("finished downloading data, writing final JSON output");
-  await fs.promises.writeFile(
-    resolve(join(__dirname, "../src/songs/smx.json")),
-    prettier.format(JSON.stringify(smxData), {
-      filepath: "smx.json",
-    })
+  await writeJsonData(
+    smxData,
+    resolve(join(__dirname, "../src/songs/smx.json"))
   );
 
   if (requestQueue.size) {
@@ -117,4 +113,6 @@ async function main() {
   ui.close();
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+});

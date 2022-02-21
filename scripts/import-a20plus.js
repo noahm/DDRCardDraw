@@ -202,7 +202,7 @@ async function main() {
   await importSongsFromExternal(indexedSongs, songsBySaIndex, log);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
-  writeJsonData(existingData, targetFile);
+  await writeJsonData(existingData, targetFile);
 
   ui.log.write(
     `Wrote ${existingData.songs.length} (${
@@ -217,4 +217,6 @@ async function main() {
   ui.log.write("Done");
   ui.close();
 }
-main();
+main().catch((e) => {
+  console.error(e);
+});
