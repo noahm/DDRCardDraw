@@ -2,10 +2,8 @@
  * Script to import SMX data from direct from their API
  */
 
-const fs = require("fs");
 const path = require("path");
 const { resolve, join } = require("path");
-const prettier = require("prettier");
 const fetch = require("node-fetch");
 const {
   downloadJacket,
