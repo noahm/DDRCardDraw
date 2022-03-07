@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "flags": [],
+    "lvlMax": 13,
+    "lastUpdated": 1646613219796,
+    "styles": ["single", "double"],
+    "difficulties": [
+      { "key": "beginner", "color": "#98aafd" },
+      { "key": "basic", "color": "#2BC856" },
+      { "key": "difficult", "color": "#F2F52C" },
+      { "key": "expert", "color": "#F64D8B" },
+      { "key": "challenge", "color": "#0191F2" }
+    ]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 1,
+    "difficulties": ["beginner", "basic", "difficult", "expert", "challenge"],
+    "upperLvlBound": 13,
+    "style": "single"
+  },
+  "i18n": {
+    "en": {
+      "name": "Club Fantastic Season 2",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    },
+    "ja": {
+      "name": "Club Fantastic Season 2",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "Adore",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Adore.jpg",
+      "bpm": "180",
+      "artist": "Rhythmics",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 13, "style": "single", "diffClass": "challenge" }
+      ]
+    },
+    {
+      "name": "Artifacts",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Artifacts.jpg",
+      "bpm": "138",
+      "artist": "Adrian Alexander",
+      "charts": [
+        { "lvl": 9, "style": "single", "diffClass": "beginner" },
+        { "lvl": 10, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 12, "style": "single", "diffClass": "expert" },
+        { "lvl": 13, "style": "single", "diffClass": "challenge" },
+        { "lvl": 13, "style": "double", "diffClass": "challenge" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" }
+      ]
+    },
+    {
+      "name": "BOSSY",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/BOSSY (Jorts Speedy Mix).jpg",
+      "bpm": "131",
+      "artist": "BABYPOWDER",
+      "charts": [
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "single", "diffClass": "difficult" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 12, "style": "double", "diffClass": "challenge" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" }
+      ]
+    },
+    {
+      "name": "Beachside Photoshoot",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Beachside Photoshoot.jpg",
+      "bpm": "140",
+      "artist": "Snooze",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "difficult" },
+        { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 3, "style": "double", "diffClass": "basic" },
+        { "lvl": 5, "style": "double", "diffClass": "difficult" },
+        { "lvl": 9, "style": "double", "diffClass": "expert" },
+        { "lvl": 12, "style": "double", "diffClass": "challenge" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" }
+      ]
+    },
+    {
+      "name": "DNA",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/DNA.jpg",
+      "bpm": "126",
+      "artist": "Voia feat. Slyleaf",
+      "charts": [
+        { "lvl": 10, "style": "single", "diffClass": "challenge" },
+        { "lvl": 7, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "single", "diffClass": "difficult" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 1, "style": "single", "diffClass": "beginner" }
+      ]
+    },
+    {
+      "name": "Oceania 909",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Oceania 909 (T2KAZUYA Remix).jpg",
+      "bpm": "170",
+      "artist": "xaimus",
+      "charts": [
+        { "lvl": 11, "style": "single", "diffClass": "challenge" },
+        { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "single", "diffClass": "difficult" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 1, "style": "single", "diffClass": "beginner" }
+      ]
+    },
+    {
+      "name": "POT",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/POT.jpg",
+      "bpm": "126",
+      "artist": "Tee Lopes & Dylan James",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 3, "style": "double", "diffClass": "basic" },
+        { "lvl": 5, "style": "double", "diffClass": "difficult" },
+        { "lvl": 7, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "SSS",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/SSS.jpg",
+      "bpm": "180",
+      "artist": "Maxo",
+      "charts": [
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "single", "diffClass": "difficult" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 3, "style": "single", "diffClass": "beginner" }
+      ]
+    },
+    {
+      "name": "SWEETHEART",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/SWEETHEART.jpg",
+      "bpm": "180",
+      "artist": "Synthion",
+      "charts": [
+        { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "single", "diffClass": "difficult" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 11, "style": "single", "diffClass": "challenge" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" }
+      ]
+    },
+    {
+      "name": "Save New Jersey",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Save New Jersey.jpg",
+      "bpm": "160",
+      "artist": "Save New Jersey",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 13, "style": "single", "diffClass": "challenge" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 8, "style": "double", "diffClass": "difficult" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "Singularity",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Singularity.jpg",
+      "bpm": "147",
+      "artist": "Jorts",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 7, "style": "single", "diffClass": "difficult" },
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 13, "style": "single", "diffClass": "challenge" }
+      ]
+    },
+    {
+      "name": "Step It",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Step It.jpg",
+      "bpm": "NaN-NaN",
+      "artist": "Shirobon",
+      "charts": [
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 12, "style": "double", "diffClass": "challenge" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" }
+      ]
+    },
+    {
+      "name": "TerpZone",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/TerpZone.jpg",
+      "bpm": "138",
+      "artist": "Lindsay Lowend",
+      "charts": [
+        { "lvl": 10, "style": "double", "diffClass": "challenge" },
+        { "lvl": 10, "style": "single", "diffClass": "challenge" },
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" }
+      ]
+    },
+    {
+      "name": "WRVTH",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/WRVTH.jpg",
+      "bpm": "220",
+      "artist": "MegaSphere",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 13, "style": "single", "diffClass": "challenge" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" }
+      ]
+    },
+    {
+      "name": "We Can Bounce!!",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/We Can Bounce.jpg",
+      "bpm": "195",
+      "artist": "team BOUNCE",
+      "charts": [
+        { "lvl": 13, "style": "single", "diffClass": "challenge" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "challenge" },
+        { "lvl": 9, "style": "double", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" }
+      ]
+    },
+    {
+      "name": "Wipeout",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/Wipeout.jpg",
+      "bpm": "150",
+      "artist": "Verve",
+      "charts": [
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "challenge" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" }
+      ]
+    },
+    {
+      "name": "demonstration protocol",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/demonstration protocol.jpg",
+      "bpm": "130",
+      "artist": "MachineAge",
+      "charts": [
+        { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        { "lvl": 12, "style": "double", "diffClass": "challenge" },
+        { "lvl": 10, "style": "double", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 6, "style": "single", "diffClass": "difficult" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" }
+      ]
+    },
+    {
+      "name": "Succulynt",
+      "name_translation": "",
+      "jacket": "itg/Club Fantastic Season 2/succulynt.jpg",
+      "bpm": "105",
+      "artist": "coda",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 7, "style": "single", "diffClass": "difficult" },
+        { "lvl": 9, "style": "single", "diffClass": "expert" }
+      ]
+    }
+  ]
+}
