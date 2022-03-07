@@ -1,8 +1,15 @@
 const { parsePack } = require("simfile-parser");
 const { writeJsonData, downloadJacket } = require("./utils");
-const { resolve, join, extname } = require("path");
+const { resolve, join, basename } = require("path");
 
-const packPath = resolve(process.argv[2]);
+const [, , inputPath, stub] = process.argv;
+
+if (!inputPath || !stub) {
+  console.log("Usage: yarn import:itg path/to/pack stubname");
+  process.exit(1);
+}
+
+const packPath = resolve(inputPath);
 
 const pack = parsePack(packPath);
 
@@ -69,21 +76,13 @@ const data = {
   songs: [],
 };
 
-function dropExt(name) {
-  const ext = extname(name);
-  if (ext) {
-    return name.slice(0, -ext.length);
-  }
-  return ext;
-}
-
 for (const parsedSong of pack.simfiles) {
   const { bg, banner, jacket } = parsedSong.title;
   let finalJacket = jacket || bg || banner;
   if (finalJacket) {
     finalJacket = downloadJacket(
       join(parsedSong.title.titleDir, finalJacket),
-      join("itg", pack.name, dropExt(finalJacket) + ".jpg")
+      join("itg", pack.name, basename(parsedSong.title.titleDir) + ".jpg")
     );
   }
 
@@ -117,4 +116,4 @@ data.meta.difficulties = data.defaults.difficulties.map((key) => ({
 data.defaults.upperLvlBound = data.meta.lvlMax;
 data.defaults.style = data.meta.styles[0];
 
-writeJsonData(data, resolve(join(__dirname, `../src/songs/${pack.name}.json`)));
+writeJsonData(data, resolve(join(__dirname, `../src/songs/${stub}.json`)));
