@@ -1,10 +1,18 @@
-const { getPack } = require("simfile-parser");
+const { parsePack } = require("simfile-parser");
 const { writeJsonData, downloadJacket } = require("./utils");
 const { resolve, join, extname } = require("path");
 
 const packPath = resolve(process.argv[2]);
 
-const pack = getPack(packPath);
+const pack = parsePack(packPath);
+
+const someColors = {
+  beginner: "#98aafd",
+  basic: "#2BC856",
+  difficult: "#F2F52C",
+  expert: "#F64D8B",
+  challenge: "#0191F2",
+};
 
 const difficulties = new Set();
 const styles = new Set();
@@ -104,7 +112,7 @@ data.meta.styles = Array.from(styles);
 data.defaults.difficulties = Array.from(difficulties);
 data.meta.difficulties = data.defaults.difficulties.map((key) => ({
   key,
-  color: "grey", // TODO?
+  color: someColors[key] || "grey", // TODO?
 }));
 data.defaults.upperLvlBound = data.meta.lvlMax;
 data.defaults.style = data.meta.styles[0];
