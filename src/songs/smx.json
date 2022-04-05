@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1646362027328
+    "lastUpdated": 1649127767685
   },
   "defaults": {
     "style": "solo",
@@ -12274,6 +12274,149 @@
         { "style": "solo", "lvl": 12, "diffClass": "dual", "author": "I. Ka" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "I. Ka" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "I. Ka" }
+      ]
+    },
+    {
+      "saIndex": "517",
+      "name": "7th Trip",
+      "artist": "NM underground artifact",
+      "genre": "Electronic",
+      "bpm": "135",
+      "jacket": "smx/7thTrip.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 1,
+          "diffClass": "basic",
+          "author": "Otto Mattick"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "author": "J. Casarino"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "author": "J. Casarino"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "wild",
+          "author": "J. Casarino"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "J. Casarino"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "author": "J. Casarino"
+        },
+        {
+          "style": "team",
+          "lvl": 21,
+          "diffClass": "team",
+          "author": "J. Casarino"
+        }
+      ]
+    },
+    {
+      "saIndex": "518",
+      "name": "Fade Out",
+      "artist": "Bensley",
+      "genre": "Drum & Bass",
+      "bpm": "87-174",
+      "jacket": "smx/FadeOut.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 4,
+          "diffClass": "basic",
+          "author": "Vera Funny"
+        },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "author": "Riki" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "author": "Riki" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild", "author": "Riki" },
+        { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "Riki" },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "author": "Riki" },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team",
+          "author": "Pitter Patter"
+        }
+      ]
+    },
+    {
+      "saIndex": "519",
+      "name": "Here For You",
+      "artist": "PIXL feat. Q'AILA",
+      "genre": "Electro",
+      "bpm": "125",
+      "jacket": "smx/HereForYou.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 4,
+          "diffClass": "basic",
+          "author": "Juan Ton"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "T. Callaway"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard",
+          "author": "T. Callaway"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "wild",
+          "author": "T. Callaway"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "dual",
+          "author": "T. Callaway"
+        },
+        { "style": "solo", "lvl": 19, "diffClass": "full", "author": "Miria" },
+        { "style": "team", "lvl": 17, "diffClass": "team", "author": "Miria" }
+      ]
+    },
+    {
+      "saIndex": "520",
+      "name": "Recovery",
+      "artist": "JMCX",
+      "genre": "Italo Disco",
+      "bpm": "130",
+      "jacket": "smx/Recovery.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Gene Yuss"
+        },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "author": "ReCover" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "author": "S. Fry" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild", "author": "Beansy" },
+        { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "S. Fry" },
+        { "style": "solo", "lvl": 18, "diffClass": "full", "author": "Beansy" },
+        { "style": "team", "lvl": 13, "diffClass": "team", "author": "S. Fry" }
       ]
     }
   ]
