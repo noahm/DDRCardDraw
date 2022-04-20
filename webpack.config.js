@@ -11,6 +11,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const packageJson = require("./package.json");
 
@@ -149,10 +150,30 @@ module.exports = function (env = {}, argv = {}) {
         filename: "[name].[contenthash:5].css",
         chunkFilename: "[id].[chunkhash:5].js",
       }),
+      new FaviconsWebpackPlugin({
+        logo: "./src/assets/ddr-tools-256.png",
+        inject: true,
+        prefix: "favicons/",
+        favicons: {
+          appName: "DDR Tools - card draw and more!",
+          appShortName: "DDR Tools",
+          theme_color: "#28b6ea",
+          display: "standalone",
+          scope: "/",
+          start_url: "/",
+          manifestMaskable: true,
+          icons: {
+            windows: false,
+            yandex: false,
+            firefox: false,
+            coast: false,
+            appleStartup: false,
+          },
+        },
+      }),
       new HtmlWebpackPlugin({
         title: "DDR Tools - card draw and more!",
         filename: "index.html",
-        favicon: "./src/assets/ddr-tools-128.png",
         meta: {
           description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
@@ -172,7 +193,7 @@ module.exports = function (env = {}, argv = {}) {
               ServiceWorker: {
                 events: true,
               },
-              excludes: ["../*.zip", "jackets/**/*"],
+              excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
             }),
           ]
     ),
