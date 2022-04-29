@@ -9,6 +9,7 @@
       { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": [
+      "shock",
       "unlock",
       "goldenLeague",
       "extraExclusive",
@@ -22,7 +23,7 @@
   "defaults": {
     "style": "single",
     "difficulties": ["expert", "challenge"],
-    "flags": [],
+    "flags": ["shock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
@@ -42,6 +43,7 @@
       "extraExclusive": "Final/Extra Exclusive",
       "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
+      "shock": "Shock arrow charts",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -65,6 +67,7 @@
       "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
       "usLocked": "日本限定曲を含める",
       "tempUnlock": "現在解禁できない曲を含める",
+      "shock": "Shock arrow charts",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -2117,7 +2120,8 @@
           "freeze": 47,
           "lvl": 16,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 265,
@@ -2146,7 +2150,8 @@
           "freeze": 38,
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Another%20Phase",
@@ -2846,7 +2851,8 @@
           "freeze": 22,
           "lvl": 8,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         { "step": 279, "lvl": 10, "style": "single", "diffClass": "expert" },
         { "step": 123, "lvl": 4, "style": "double", "diffClass": "basic" },
@@ -2857,7 +2863,8 @@
           "freeze": 24,
           "lvl": 8,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         { "step": 276, "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
@@ -3358,7 +3365,8 @@
           "freeze": 48,
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 292,
@@ -3387,7 +3395,8 @@
           "freeze": 48,
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Blew%20My%20Mind",
@@ -5333,7 +5342,8 @@
           "freeze": 45,
           "lvl": 6,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 193,
@@ -5362,7 +5372,8 @@
           "freeze": 45,
           "lvl": 6,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 180,
@@ -6344,7 +6355,8 @@
           "freeze": 36,
           "lvl": 12,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 148,
@@ -6373,7 +6385,8 @@
           "freeze": 32,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Dance%20Celebration",
@@ -7085,7 +7098,8 @@
           "freeze": 51,
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 150,
@@ -7114,7 +7128,8 @@
           "freeze": 50,
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Desert%20Journey",
@@ -7412,7 +7427,8 @@
           "freeze": 57,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 138,
@@ -7441,7 +7457,8 @@
           "freeze": 57,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Diamond%20Dust",
@@ -8025,11 +8042,23 @@
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
-        { "lvl": 10, "style": "single", "diffClass": "challenge", "shock": 58 },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "shock": 58,
+          "flags": ["shock"]
+        },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 10, "style": "double", "diffClass": "challenge", "shock": 58 },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "shock": 58,
+          "flags": ["shock"]
+        },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/DOWNER%20%26%20UPPER",
@@ -9541,7 +9570,8 @@
           "freeze": 45,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 153,
@@ -9570,7 +9600,8 @@
           "freeze": 43,
           "lvl": 14,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Escape",
@@ -10507,7 +10538,7 @@
           "style": "single",
           "diffClass": "challenge",
           "shock": 1,
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock", "unlock", "shock"]
         },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
@@ -10517,7 +10548,7 @@
           "style": "double",
           "diffClass": "challenge",
           "shock": 1,
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock", "unlock", "shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Firestorm",
@@ -10579,7 +10610,8 @@
           "freeze": 42,
           "lvl": 7,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 212,
@@ -10608,7 +10640,8 @@
           "freeze": 33,
           "lvl": 7,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 209,
@@ -11395,7 +11428,8 @@
           "freeze": 77,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 112,
@@ -11424,7 +11458,8 @@
           "freeze": 64,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Freeze",
@@ -12089,7 +12124,8 @@
           "freeze": 46,
           "lvl": 11,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         { "step": 491, "lvl": 12, "style": "single", "diffClass": "expert" },
         {
@@ -12106,7 +12142,8 @@
           "freeze": 43,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         { "step": 489, "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
@@ -13409,7 +13446,8 @@
           "freeze": 57,
           "lvl": 8,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 305,
@@ -13438,7 +13476,8 @@
           "freeze": 48,
           "lvl": 8,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 300,
@@ -13625,7 +13664,8 @@
           "freeze": 49,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 157,
@@ -13654,7 +13694,8 @@
           "freeze": 51,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Heron",
@@ -14032,7 +14073,8 @@
           "freeze": 49,
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 124,
@@ -14061,7 +14103,8 @@
           "freeze": 46,
           "lvl": 14,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Horatio",
@@ -15833,7 +15876,8 @@
           "freeze": 58,
           "lvl": 16,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 159,
@@ -15862,7 +15906,8 @@
           "freeze": 63,
           "lvl": 16,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Ishtar",
@@ -18521,7 +18566,8 @@
           "freeze": 39,
           "lvl": 12,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         { "step": 135, "lvl": 7, "style": "double", "diffClass": "basic" },
         { "step": 183, "lvl": 9, "style": "double", "diffClass": "difficult" },
@@ -18532,7 +18578,8 @@
           "freeze": 51,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/MAKE%20IT%20BETTER%20%28So-REAL%20Mix%29",
@@ -19129,7 +19176,8 @@
           "freeze": 52,
           "lvl": 11,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 196,
@@ -19158,7 +19206,8 @@
           "freeze": 44,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Melody%20Life",
@@ -19203,7 +19252,8 @@
           "freeze": 37,
           "lvl": 12,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 207,
@@ -19232,7 +19282,8 @@
           "freeze": 30,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Mermaid%20girl",
@@ -20347,7 +20398,8 @@
           "freeze": 62,
           "lvl": 12,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 188,
@@ -20376,7 +20428,8 @@
           "freeze": 55,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/New%20Beginning",
@@ -20427,7 +20480,8 @@
           "freeze": 80,
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 251,
@@ -20456,7 +20510,8 @@
           "freeze": 93,
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/New%20Century",
@@ -21448,7 +21503,8 @@
           "freeze": 95,
           "lvl": 12,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 149,
@@ -21477,7 +21533,8 @@
           "freeze": 91,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/One%20Sided%20Love",
@@ -21521,7 +21578,8 @@
           "freeze": 61,
           "lvl": 7,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 242,
@@ -21550,7 +21608,8 @@
           "freeze": 77,
           "lvl": 8,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 330,
@@ -23293,7 +23352,8 @@
           "freeze": 59,
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 211,
@@ -23322,7 +23382,8 @@
           "freeze": 53,
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Pluto%20The%20First",
@@ -23644,11 +23705,23 @@
         { "lvl": 11, "style": "single", "diffClass": "basic" },
         { "lvl": 14, "style": "single", "diffClass": "difficult" },
         { "lvl": 16, "style": "single", "diffClass": "expert" },
-        { "shock": 55, "lvl": 18, "style": "single", "diffClass": "challenge" },
+        {
+          "shock": 55,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 11, "style": "double", "diffClass": "basic" },
         { "lvl": 15, "style": "double", "diffClass": "difficult" },
         { "lvl": 17, "style": "double", "diffClass": "expert" },
-        { "shock": 132, "lvl": 18, "style": "double", "diffClass": "challenge" }
+        {
+          "shock": 132,
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        }
       ],
       "remyLink": "http://remywiki.com/POSSESSION%20%2820th%20Anniversary%20Mix%29",
       "jacket": "POSSESSION (20th Anniversary Mix).png",
@@ -25410,7 +25483,8 @@
           "freeze": 69,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 387,
@@ -25439,7 +25513,8 @@
           "freeze": 68,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 381,
@@ -25880,7 +25955,8 @@
           "freeze": 77,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 271,
@@ -25909,7 +25985,8 @@
           "freeze": 61,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/SABER%20WING",
@@ -27957,7 +28034,8 @@
           "freeze": 63,
           "lvl": 10,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 416,
@@ -27986,7 +28064,8 @@
           "freeze": 46,
           "lvl": 10,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 422,
@@ -29076,7 +29155,8 @@
           "freeze": 66,
           "lvl": 10,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 147,
@@ -29105,7 +29185,8 @@
           "freeze": 77,
           "lvl": 11,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/South",
@@ -31022,7 +31103,8 @@
           "freeze": 99,
           "lvl": 11,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 348,
@@ -31058,7 +31140,8 @@
           "freeze": 113,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Summer%20fantasy%20%28Darwin%20remix%29",
@@ -33027,7 +33110,8 @@
           "freeze": 58,
           "lvl": 10,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 419,
@@ -33056,7 +33140,8 @@
           "freeze": 59,
           "lvl": 11,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 416,
@@ -33968,7 +34053,8 @@
           "freeze": 41,
           "lvl": 14,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 134,
@@ -33997,7 +34083,8 @@
           "freeze": 43,
           "lvl": 14,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Top%20The%20Charts",
@@ -35469,7 +35556,8 @@
           "freeze": 85,
           "lvl": 10,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 359,
@@ -35505,7 +35593,8 @@
           "freeze": 88,
           "lvl": 11,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/TWINKLE%E2%99%A1HEART",
@@ -36488,7 +36577,8 @@
           "freeze": 46,
           "lvl": 11,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 209,
@@ -36517,7 +36607,8 @@
           "freeze": 27,
           "lvl": 12,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Waiting%204%20u",
@@ -38920,7 +39011,8 @@
           "freeze": 71,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 136,
@@ -38949,7 +39041,8 @@
           "freeze": 69,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/%E3%81%A1%E3%82%85%EF%BD%9E%E3%81%84%E3%82%93%E2%98%86%E3%83%90%E3%83%8B%E3%83%BC",
@@ -39339,7 +39432,8 @@
           "freeze": 54,
           "lvl": 13,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "step": 206,
@@ -39368,7 +39462,8 @@
           "freeze": 41,
           "lvl": 13,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/%E3%82%A2%E3%83%AB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%A1%E3%83%AA%E3%82%A2%20%28walk%20with%20you%20remix%29",
