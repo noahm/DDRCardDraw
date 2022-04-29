@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1649127767685
+    "lastUpdated": 1651274878024
   },
   "defaults": {
     "style": "solo",
@@ -12417,6 +12417,189 @@
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "S. Fry" },
         { "style": "solo", "lvl": 18, "diffClass": "full", "author": "Beansy" },
         { "style": "team", "lvl": 13, "diffClass": "team", "author": "S. Fry" }
+      ]
+    },
+    {
+      "saIndex": "521",
+      "name": "Dystopia 2077",
+      "artist": "F.O.O.L & The Forgotten",
+      "genre": "Electro House",
+      "bpm": "64-128",
+      "jacket": "smx/Dystopia2077.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 4,
+          "diffClass": "basic",
+          "author": "Anne Droid"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "J. Norris"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "author": "T. Callaway"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild",
+          "author": "J. Bratt"
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "T. Callaway"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "author": "J. Bratt x J. Fred"
+        },
+        {
+          "style": "team",
+          "lvl": 22,
+          "diffClass": "team",
+          "author": "V. Silverhand"
+        }
+      ]
+    },
+    {
+      "saIndex": "522",
+      "name": "Moonlight",
+      "artist": "PIXY",
+      "genre": "K-Pop",
+      "bpm": "130",
+      "jacket": "smx/Moonlight.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Gene Yuss"
+        },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "author": "UNAGI" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "author": "UNAGI" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild", "author": "UNAGI" },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "Lazer Kat"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "full",
+          "author": "Lazer Kat"
+        },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team",
+          "author": "J. Casarino"
+        }
+      ]
+    },
+    {
+      "saIndex": "523",
+      "name": "Press Start",
+      "artist": "MDK",
+      "genre": "New Electro",
+      "bpm": "123",
+      "jacket": "smx/PressStart.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Gene Yuss"
+        },
+        { "style": "solo", "lvl": 8, "diffClass": "easy", "author": "TSK" },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "Joe Kur"
+        },
+        {
+          "style": "solo",
+          "lvl": 24,
+          "diffClass": "wild",
+          "author": "J. Bratt"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual",
+          "author": "T. Callaway"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "author": "J. Bratt x J. Fred"
+        },
+        {
+          "style": "team",
+          "lvl": 25,
+          "diffClass": "team",
+          "author": "K. Hectic"
+        }
+      ]
+    },
+    {
+      "saIndex": "524",
+      "name": "The Call of Wilderness",
+      "artist": "Electron",
+      "genre": "Synthwave",
+      "bpm": "228",
+      "jacket": "smx/TheCallOfWilderness.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 4,
+          "diffClass": "basic",
+          "author": "Vic Tree"
+        },
+        {
+          "style": "solo",
+          "lvl": 7,
+          "diffClass": "easy",
+          "author": "Areku al-Khemi"
+        },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "author": "S. Fry" },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "S. Fry x Beansy"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual",
+          "author": "C. Writer"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "S. Fry x Beansy"
+        },
+        {
+          "style": "team",
+          "lvl": 21,
+          "diffClass": "team",
+          "author": "Chip & Chipper"
+        }
       ]
     }
   ]
