@@ -2,10 +2,8 @@
  * Script to import SMX data from direct from their API
  */
 
-const fs = require("fs");
 const path = require("path");
 const { resolve, join } = require("path");
-const prettier = require("prettier");
 const fetch = require("node-fetch");
 const {
   downloadJacket,
@@ -54,7 +52,7 @@ async function main() {
     indexedSongs[song.saIndex] = song;
   }
 
-  for (const diff of difficulties) {
+  async function getData(diff) {
     ui.log.write(`pulling ${diff} chart details`);
     const data = await requestQueue.add(
       () =>
@@ -66,6 +64,12 @@ async function main() {
       }
     );
     const { highscores } = await data.json();
+    return { highscores, diff };
+  }
+
+  for (const { highscores, diff } of await Promise.all(
+    difficulties.map(getData)
+  )) {
     for (const score of highscores) {
       if (!songs[score.song_id]) {
         songs[score.song_id] = {
