@@ -12,10 +12,17 @@ export function ApplyDefaultConfig({ defaults }: Props) {
       return;
     }
 
-    useConfigState.setState(() => {
-      const { lowerLvlBound, upperLvlBound, flags, difficulties, style } =
-        defaults;
+    useConfigState.setState((config) => {
+      const {
+        lowerLvlBound,
+        upperLvlBound,
+        flags,
+        difficulties,
+        style,
+        chartCount,
+      } = defaults;
       return {
+        chartCount: chartCount || config.chartCount,
         lowerBound: lowerLvlBound,
         upperBound: upperLvlBound,
         flags: new Set(flags),

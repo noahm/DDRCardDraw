@@ -16,14 +16,15 @@
   },
   "defaults": {
     "style": "solo",
-    "difficulties": ["hard", "wild"],
+    "difficulties": ["full"],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lowerLvlBound": 18,
-    "upperLvlBound": 25
+    "upperLvlBound": 25,
+    "chartCount": 7
   },
   "i18n": {
     "en": {
-      "name": "Hard/Wild Tournament",
+      "name": "Full Elim (7)",
       "solo": "Solo",
       "basic": "Basic",
       "easy": "Easy",

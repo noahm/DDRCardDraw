@@ -53,6 +53,7 @@ export interface GameData {
     flags: UniqueStringArr;
     lowerLvlBound: number;
     upperLvlBound: number;
+    chartCount?: number;
   };
   /**
    * Set of localized values for display of any styles, difficulties, or flags

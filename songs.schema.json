@@ -64,7 +64,8 @@
         "difficulties": { "$ref": "#/$defs/uniqueStringArr" },
         "flags": { "$ref": "#/$defs/uniqueStringArr" },
         "lowerLvlBound": { "type": "integer" },
-        "upperLvlBound": { "type": "integer" }
+        "upperLvlBound": { "type": "integer" },
+        "chartCount": { "type": "integer" }
       }
     },
     "i18n": {
