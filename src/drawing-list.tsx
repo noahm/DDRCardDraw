@@ -7,7 +7,7 @@ import { useConfigState } from "./config-state";
 import { EligibleChartsList } from "./eligible-charts-list";
 import { Callout, NonIdealState } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
-import logo from "./assets/ddr-tools-256.png";
+import logo from "./assets/rednote.png";
 
 const renderDrawing = (drawing: Drawing) => (
   <DrawnSet key={drawing.id} drawing={drawing} />
@@ -28,12 +28,10 @@ export function DrawingList() {
       <div className={styles.empty}>
         <NonIdealState
           icon={<img src={logo} height={128} />}
-          title="DDR Tools"
-          description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
+          title="Red Note SMX Card Draw"
           action={
-            <Callout intent="primary" icon={IconNames.WRENCH}>
-              DDR Card Draw now has a new name and and URL. Look for more new
-              features coming soon!
+            <Callout intent="danger" icon={IconNames.ArrowTopLeft}>
+              Choose a tournament round, then click 'Draw'
             </Callout>
           }
         />
