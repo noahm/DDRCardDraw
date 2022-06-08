@@ -46,7 +46,7 @@ function sortSongs(songs) {
 /** returns data to use for given songs */
 function mergeSongs(oldData, zivData, saData) {
   if (!oldData) {
-    return zivData;
+    oldData = zivData;
   }
   const data = {
     ...zivData,
@@ -163,11 +163,10 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       return false;
     });
     const song = mergeSongs(existingSong, zivSong, saSong);
-    if (!song.jacket && song.remyLink) {
-      const remyJacket = await getJacketFromRemySong(
-        song.remyLink,
-        song.name_translation
-      );
+    if (!song.jacket) {
+      const remyJacket =
+        !!song.remyLink &&
+        (await getJacketFromRemySong(song.remyLink, song.name_translation));
       if (remyJacket) {
         song.jacket = remyJacket;
       } else {

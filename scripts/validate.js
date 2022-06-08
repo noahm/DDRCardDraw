@@ -96,8 +96,8 @@ for (const dataFile of dataFileNames) {
   if (result.valid) {
     const consistencyErrors = validateContents(songData);
     if (consistencyErrors.length) {
-      consistencyErrors.forEach((err) => console.error(err));
-      console.log(`${dataFile} has inconsistent data!`);
+      consistencyErrors.forEach((err) => console.error(" * " + err));
+      console.log(`\n${dataFile} has inconsistent data!`);
       hasError = true;
     } else {
       console.log(`${dataFile} looks good!`);

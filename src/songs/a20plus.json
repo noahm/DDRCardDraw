@@ -14,11 +14,12 @@
       "goldenLeague",
       "extraExclusive",
       "goldExclusive",
+      "grandPrixPack",
       "usLocked",
       "tempUnlock"
     ],
     "lvlMax": 19,
-    "lastUpdated": 1641352956000
+    "lastUpdated": 1654555081181
   },
   "defaults": {
     "style": "single",
@@ -41,6 +42,7 @@
       "goldExclusive": "20th Gold Cab Exclusive",
       "goldenLeague": "Golden League",
       "extraExclusive": "Final/Extra Exclusive",
+      "grandPrixPack": "DDR GRAND PRIX music packs",
       "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "shock": "Shock arrow charts",
@@ -65,6 +67,7 @@
       "goldExclusive": "A20筐体限定曲を含める",
       "goldenLeague": "Golden League",
       "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
+      "grandPrixPack": "DDR GRAND PRIX music packs",
       "usLocked": "日本限定曲を含める",
       "tempUnlock": "現在解禁できない曲を含める",
       "shock": "Shock arrow charts",
@@ -203,6 +206,28 @@
       "genre": "",
       "saHash": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9",
       "saIndex": "97"
+    },
+    {
+      "name": "1998 (Sparky 2006)",
+      "name_translation": "",
+      "artist": "J-RAVERS",
+      "artist_translation": "",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/1998%20%28Sparky%202006%29",
+      "jacket": "1998 (Sparky 2006).jpg",
+      "flags": ["grandPrixPack"],
+      "saHash": "dPb99qdqOQ1ioQ9Dqb1I9Q1bI0l0POII",
+      "saIndex": "1050"
     },
     {
       "name": "30 Lives (Up-Up-Down-Dance Mix)",
@@ -1187,7 +1212,9 @@
       ],
       "remyLink": "http://remywiki.com/Actualization%20of%20self%20%28weaponized%29",
       "jacket": "Actualization of self (weaponized).jpg",
-      "flags": ["goldenLeague"]
+      "flags": ["goldenLeague"],
+      "saHash": "i6P0dI11PdoIIQ19D6PQPidqd0bI6lqi",
+      "saIndex": "1033"
     },
     {
       "name": "Adularia",
@@ -1390,7 +1417,9 @@
       ],
       "remyLink": "http://remywiki.com/Aftermath",
       "jacket": "Aftermath.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "9IQoPbOidod8I0qQ989Ql60D09I99q1Q",
+      "saIndex": "1037"
     },
     {
       "name": "aftershock!!",
@@ -2176,9 +2205,11 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "remyLink": "http://remywiki.com/ANTI_ANTHEM",
+      "remyLink": "http://remywiki.com/ANTI%20ANTHEM",
       "jacket": "ANTI ANTHEM.jpg",
-      "flags": ["extraExclusive"]
+      "flags": ["extraExclusive"],
+      "saHash": "1q6Qoi0lldP6qoQI9PI199d6P0Q96ld0",
+      "saIndex": "1029"
     },
     {
       "name": "Anti-Matter",
@@ -2495,6 +2526,28 @@
       "jacket": "B4U(B4 ZA BEAT MIX).png",
       "saHash": "POIDil00didIo98D10loIObibPOob88O",
       "saIndex": "69"
+    },
+    {
+      "name": "B4U (The Acolyte mix)",
+      "name_translation": "",
+      "artist": "J-RAVERS",
+      "artist_translation": "",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 9, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/B4U%20%28The%20Acolyte%20mix%29",
+      "jacket": "B4U (The Acolyte mix).jpg",
+      "flags": ["grandPrixPack"],
+      "saHash": "dll9D90dq1O09oObO66Pl8l9I9l0PbPP",
+      "saIndex": "1047"
     },
     {
       "name": "B4U(\"VOLTAGE\" Special)",
@@ -3260,6 +3313,28 @@
       "saIndex": "709"
     },
     {
+      "name": "Better Than Me",
+      "name_translation": "",
+      "artist": "BEMANI Sound Team \"Sota F.\"",
+      "artist_translation": "",
+      "bpm": "162",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/Better%20Than%20Me",
+      "jacket": "Better Than Me.jpg",
+      "flags": ["goldenLeague"],
+      "saHash": "8dqQDblP6dPI10qq10qiPbqi1llQ06iP",
+      "saIndex": "1042"
+    },
+    {
       "name": "BITTER CHOCOLATE STRIKER",
       "name_translation": "",
       "artist": "L.E.D.-G",
@@ -3321,7 +3396,9 @@
       ],
       "remyLink": "http://remywiki.com/BLAKE",
       "jacket": "BLAKE.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "b0dIdlPD6IDQ000l6lIoO9oD1IQiqQ6I",
+      "saIndex": "1039"
     },
     {
       "name": "Blew My Mind",
@@ -5318,7 +5395,9 @@
       ],
       "remyLink": "http://remywiki.com/Come%20Back%20To%20Me",
       "jacket": "Come Back To Me.jpg",
-      "flags": ["goldenLeague"]
+      "flags": ["goldenLeague"],
+      "saHash": "O8oPP6D8OQq1Q6Q860dqlOi6609bO1lD",
+      "saIndex": "1030"
     },
     {
       "name": "COME BACK TO MY HEART",
@@ -6922,6 +7001,28 @@
       "genre": "",
       "saHash": "8dbiodDo1i6IolDQdqdOoqDDD90q6liQ",
       "saIndex": "810"
+    },
+    {
+      "name": "DDR TAGMIX -LAST DanceR-",
+      "name_translation": "",
+      "artist": "BEMANI Sound Team \"TAG underground overlay UNLEASHED\"",
+      "artist_translation": "",
+      "bpm": "50-800",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "beginner" },
+        { "lvl": 11, "style": "single", "diffClass": "basic" },
+        { "lvl": 14, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 11, "style": "double", "diffClass": "basic" },
+        { "lvl": 14, "style": "double", "diffClass": "difficult" },
+        { "lvl": 17, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/DDR%20TAGMIX%20-LAST%20DanceR-",
+      "jacket": "DDR TAGMIX -LAST DanceR-.jpg",
+      "flags": ["goldenLeague"],
+      "saHash": "dQODIo01o98oPll086Qdol8bq9QP8d61",
+      "saIndex": "1046"
     },
     {
       "name": "DEAD END",
@@ -14643,6 +14744,28 @@
       "saIndex": "872"
     },
     {
+      "name": "I'm Flying Away",
+      "name_translation": "",
+      "artist": "Stepper",
+      "artist_translation": "",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 12, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 8, "style": "double", "diffClass": "difficult" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/I%27m%20Flying%20Away",
+      "jacket": "I'm Flying Away.jpg",
+      "flags": ["grandPrixPack"],
+      "saHash": "OiDP81OQD0I810I89qdqIiDDP6i9qO0q",
+      "saIndex": "1048"
+    },
+    {
       "name": "I'm gonna get you!",
       "name_translation": "",
       "artist": "Kelly Cosmo",
@@ -16035,6 +16158,28 @@
       "jacket": "jane jana.png",
       "saHash": "8qd9d01dPOq1lOOoPiOIoPobdd1QODPq",
       "saIndex": "118"
+    },
+    {
+      "name": "jet coaster☆girl",
+      "name_translation": "jet coaster girl",
+      "artist": "TOMOSUKE feat. Three Berry Icecream",
+      "artist_translation": "",
+      "bpm": "177",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 10, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/Jet%20coaster%E2%98%86girl",
+      "jacket": "jet coaster girl.jpg",
+      "flags": ["unlock"],
+      "saHash": "66b1Pibq019dqbdPOdlqDbdbbDdi9Q08",
+      "saIndex": "1044"
     },
     {
       "name": "JET WORLD",
@@ -22721,6 +22866,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "http://remywiki.com/PARANOiA-Respect-",
       "jacket": "PARANOiA-Respect-.png",
       "genre": "",
       "saHash": "IP00ID9bdlOoP9o9lo1qlO0D1Pdo9I8l",
@@ -26796,6 +26942,28 @@
       "saIndex": "653"
     },
     {
+      "name": "SCHWARZSCHILD FIELD",
+      "name_translation": "",
+      "artist": "L.E.D.",
+      "artist_translation": "",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "beginner" },
+        { "lvl": 10, "style": "single", "diffClass": "basic" },
+        { "lvl": 13, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 10, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/SCHWARZSCHILD%20FIELD",
+      "jacket": "SCHWARZSCHILD FIELD.jpg",
+      "flags": ["unlock"],
+      "saHash": "iq9qPoPlIlbIDqlD81DqO1110QI1qoOl",
+      "saIndex": "1045"
+    },
+    {
       "name": "Scorching Moon",
       "name_translation": "",
       "artist": "Shawn the Horny Master",
@@ -27850,7 +28018,9 @@
       ],
       "remyLink": "http://remywiki.com/Shout%20It%20Out",
       "jacket": "Shout It Out.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "9ldQqb9oqi60Q80iob61OiQbbDO6PID9",
+      "saIndex": "1040"
     },
     {
       "name": "Show me your moves",
@@ -28211,6 +28381,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "http://remywiki.com/Silver%20Platform%20-%20I%20wanna%20get%20your%20heart%20-",
       "jacket": "Silver Platform - I wanna get your heart -.png",
       "genre": "",
       "saHash": "bi1Obd9i99P0O9PqQ1l1P6P6o1IOi11P",
@@ -33202,6 +33373,26 @@
       "saIndex": "834"
     },
     {
+      "name": "THIS IS MY LAST RESORT",
+      "name_translation": "",
+      "artist": "Numb'n'dub",
+      "artist_translation": "",
+      "bpm": "110-220",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "beginner" },
+        { "lvl": 9, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/THIS%20IS%20MY%20LAST%20RESORT",
+      "jacket": "THIS IS MY LAST RESORT.jpg",
+      "flags": ["goldenLeague"]
+    },
+    {
       "name": "THIS NIGHT",
       "name_translation": "",
       "artist": "jun feat. Sonnet",
@@ -34881,7 +35072,9 @@
       ],
       "remyLink": "http://remywiki.com/Triple%20Cross",
       "jacket": "Triple Cross.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "IQqi9Q9qD0DDQIqQOb868QIOioqDqI01",
+      "saIndex": "1032"
     },
     {
       "name": "Triple Journey -TAG EDITION-",
@@ -35621,7 +35814,9 @@
       ],
       "remyLink": "http://remywiki.com/TYPH%C3%98N",
       "jacket": "TYPHON.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "i0Q0o98q0DqbbiDd6966QIIoddlob6lI",
+      "saIndex": "1041"
     },
     {
       "name": "Uh-Oh",
@@ -36681,6 +36876,28 @@
       "flags": ["removed"],
       "saHash": "io9b89PD18ibIO8PIqb1QODliqDdqiIO",
       "saIndex": "716"
+    },
+    {
+      "name": "We Can Win The Fight",
+      "name_translation": "",
+      "artist": "D-crew feat.Matt Tucker",
+      "artist_translation": "",
+      "bpm": "119",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/We%20Can%20Win%20The%20Fight",
+      "jacket": "We Can Win The Fight.jpg",
+      "flags": ["grandPrixPack"],
+      "saHash": "O86D9iqi81QllOqP19dQqqId1qdIolqI",
+      "saIndex": "1049"
     },
     {
       "name": "We're so Happy",
@@ -39209,7 +39426,9 @@
       ],
       "remyLink": "http://remywiki.com/%E3%81%BB%E3%81%97%E3%81%AE%E3%81%A4%E3%81%8F%E3%82%8A%E3%81%8B%E3%81%9F",
       "jacket": "Hoshi no tsukurikata.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "IdlqO9DoOq0qPQdDbOb80dOPDlb98l0l",
+      "saIndex": "1031"
     },
     {
       "name": "めうめうぺったんたん！！",
@@ -39976,7 +40195,9 @@
       ],
       "remyLink": "http://remywiki.com/%E3%82%B5%E3%82%A4%E3%82%AB",
       "jacket": "Saika.jpg",
-      "flags": ["usLocked"]
+      "flags": ["usLocked"],
+      "saHash": "o8IDq8P8lP9o8IIO6lPPqqQP91bo0ddl",
+      "saIndex": "1035"
     },
     {
       "name": "サナ・モレッテ・ネ・エンテ",
@@ -40460,7 +40681,9 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%86%E3%83%AC%E3%82%AD%E3%83%A3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%93%E3%83%BC%E3%83%9C%E3%83%BC%E3%82%A4",
       "jacket": "Telecaster B-boy.jpg",
-      "flags": ["usLocked"]
+      "flags": ["usLocked"],
+      "saHash": "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9",
+      "saIndex": "1036"
     },
     {
       "name": "デッドボヲルdeホームラン",
@@ -40775,7 +40998,9 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%8E%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3%E3%83%BB%E3%83%87%E3%82%A4%E3%82%BA",
       "jacket": "No plan days.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "Oq8ID68oq16I9QP9bio0ibD6PQiDbqqI",
+      "saIndex": "1038"
     },
     {
       "name": "ハッピーシンセサイザ",
@@ -41118,6 +41343,28 @@
       "genre": "電波ソング",
       "saHash": "668Q8qQdqoIQQiIQOilDqd8lDOOQ8bDQ",
       "saIndex": "667"
+    },
+    {
+      "name": "パピポペピプペパ",
+      "name_translation": "Papipopepipupepa",
+      "artist": "P*Light",
+      "artist_translation": "",
+      "bpm": "187",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/%E3%83%91%E3%83%94%E3%83%9D%E3%83%9A%E3%83%94%E3%83%97%E3%83%9A%E3%83%91",
+      "jacket": "Papipopepipupepa.jpg",
+      "flags": ["unlock"],
+      "saHash": "19Q9lQId91d9l8o09oI81OQqPd00dQ69",
+      "saIndex": "1043"
     },
     {
       "name": "ヒカリユリイカ",
@@ -41703,7 +41950,9 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%A2%E3%83%8E%E3%82%AF%E3%83%AD%E3%83%A2%E3%83%BC%E3%83%A1%E3%83%B3%E3%83%88",
       "jacket": "Monochrome moment.jpg",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "saHash": "10IOllioqPoOQ668PQqolDPiib0iIQql",
+      "saIndex": "1034"
     },
     {
       "name": "ヤマトなでなで♡かぐや姫",
@@ -42549,6 +42798,25 @@
       "flags": ["removed"],
       "saHash": "Ol01P9IIoDIOldo8IQI0l6bd9lb9q0oo",
       "saIndex": "726"
+    },
+    {
+      "name": "共犯ヘヴンズコード",
+      "name_translation": "Kyohan Heaven's Code",
+      "artist": "D-Evoke(与那嶺雅人/小日向翔)",
+      "artist_translation": "D-Evoke(Masato Yonamine/Sho Kohinata)",
+      "bpm": "219",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "http://remywiki.com/%E5%85%B1%E7%8A%AF%E3%83%98%E3%83%B4%E3%83%B3%E3%82%BA%E3%82%B3%E3%83%BC%E3%83%89",
+      "jacket": "Kyohan Heaven's Code.jpg"
     },
     {
       "name": "冥",
@@ -43949,7 +44217,7 @@
         {
           "step": 248,
           "freeze": 5,
-          "lvl": 7,
+          "lvl": 6,
           "style": "single",
           "diffClass": "basic"
         },
@@ -43970,7 +44238,7 @@
         {
           "step": 238,
           "freeze": 12,
-          "lvl": 6,
+          "lvl": 7,
           "style": "double",
           "diffClass": "basic"
         },
@@ -45977,6 +46245,26 @@
       "genre": "HIP ROCK 2",
       "saHash": "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl",
       "saIndex": "222"
+    },
+    {
+      "name": "私をディスコに連れてって TOKYO",
+      "name_translation": "Watashi wo disco ni tsuretette TOKYO",
+      "artist": "U1 vs U1 overground",
+      "artist_translation": "",
+      "bpm": "142",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 9, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "https://remywiki.com/Watashi_wo_disco_ni_tsuretette_TOKYO",
+      "jacket": "Watashi wo disco ni tsuretette TOKYO.jpg",
+      "flags": ["unlock"]
     },
     {
       "name": "突撃!ガラスのニーソ姫!",
