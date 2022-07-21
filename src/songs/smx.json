@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1654381120204
+    "lastUpdated": 1658375611303
   },
   "defaults": {
     "style": "solo",
@@ -12820,6 +12820,201 @@
           "author": "Lazer Kat"
         },
         { "style": "team", "lvl": 18, "diffClass": "team", "author": "S. Kimo" }
+      ]
+    },
+    {
+      "saIndex": "530",
+      "name": "Art City",
+      "artist": "Virgill",
+      "genre": "Funk",
+      "bpm": "122",
+      "jacket": "smx/ArtCity.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Picasso"
+        },
+        { "style": "solo", "lvl": 7, "diffClass": "easy", "author": "M. Lisa" },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard",
+          "author": "S. Dali"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild",
+          "author": "Beanangelo"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "dual",
+          "author": "M. Lisa"
+        },
+        { "style": "solo", "lvl": 18, "diffClass": "full", "author": "S. Fry" },
+        { "style": "team", "lvl": 10, "diffClass": "team", "author": "S. Dali" }
+      ]
+    },
+    {
+      "saIndex": "531",
+      "name": "Bewitched",
+      "artist": "PIXY",
+      "genre": "K-Pop",
+      "bpm": "110",
+      "jacket": "smx/Bewitched.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Mr. Mirage"
+        },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "author": "Salem" },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard",
+          "author": "S. Spellman"
+        },
+        { "style": "solo", "lvl": 22, "diffClass": "wild", "author": "JBEAN" },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "Salem" },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team",
+          "author": "S. Spellman"
+        }
+      ]
+    },
+    {
+      "saIndex": "532",
+      "name": "Cosmic Drive",
+      "artist": "Quiqman",
+      "genre": "Eurobeat",
+      "bpm": "154",
+      "jacket": "smx/CosmicDrive.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Relay Racer"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "author": "Initial Me"
+        },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "author": "Sigma" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild", "author": "Sigma" },
+        { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Sigma" },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "author": "Sigma" },
+        { "style": "team", "lvl": 21, "diffClass": "team", "author": "Sigma" }
+      ]
+    },
+    {
+      "saIndex": "533",
+      "name": "Have Fun",
+      "artist": "Rameses B",
+      "genre": "Drum & Bass",
+      "bpm": "87-174",
+      "jacket": "smx/HaveFun.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Coast Busters"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "author": "Goin Light"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "K. Ward"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "K. Ward"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "R. Frazee"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "R. Frazee"
+        },
+        { "style": "team", "lvl": 21, "diffClass": "team", "author": "JBEAN" }
+      ]
+    },
+    {
+      "saIndex": "534",
+      "name": "Pump It",
+      "artist": "Electric Callboy",
+      "genre": "Electronic Metal",
+      "bpm": "174",
+      "jacket": "smx/PumpIt.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Gym Rat"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "author": "Scrambled Legs"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard",
+          "author": "Flex Appeal"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "Lazer Puppers"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "Bulky Beast"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "Lazer Puppers"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team",
+          "author": "T. Little"
+        }
       ]
     }
   ]
