@@ -45497,25 +45497,13 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 12, "style": "single", "diffClass": "difficult" },
         { "lvl": 15, "style": "single", "diffClass": "expert" },
-        {
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
-        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
-        { "lvl": 15, "style": "double", "diffClass": "expert" },
-        {
-          "lvl": 17,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
-        }
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/%CE%A9VERSOUL",
       "jacket": "OVERSOUL.jpg",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "saHash": "P1boP1O60bdI16i6lqqd1Q8ioiPbolqd",
       "saIndex": "918"
     },
@@ -45552,27 +45540,13 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 13, "style": "single", "diffClass": "difficult" },
         { "lvl": 16, "style": "single", "diffClass": "expert" },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "challenge",
-          "shock": 1,
-          "flags": ["tempUnlock", "unlock", "shock"]
-        },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
-        { "lvl": 16, "style": "double", "diffClass": "expert" },
-        {
-          "lvl": 16,
-          "style": "double",
-          "diffClass": "challenge",
-          "shock": 1,
-          "flags": ["tempUnlock", "unlock", "shock"]
-        }
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/Firestorm",
       "jacket": "Firestorm.jpg",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "saHash": "qqDOddP66Ol1q1IIOb1OPO68DP1ood1i",
       "saIndex": "919"
     },
@@ -45588,25 +45562,13 @@
         { "lvl": 9, "style": "single", "diffClass": "basic" },
         { "lvl": 14, "style": "single", "diffClass": "difficult" },
         { "lvl": 18, "style": "single", "diffClass": "expert" },
-        {
-          "lvl": 19,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
-        },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
-        { "lvl": 18, "style": "double", "diffClass": "expert" },
-        {
-          "lvl": 19,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
-        }
+        { "lvl": 18, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/Lachryma%28Re%3AQueen%27M%29",
       "jacket": "Lachryma.jpg",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "saHash": "bIlqP91O9ld1lqlq6qoq9OiPdqIDPP0l",
       "saIndex": "920"
     }
