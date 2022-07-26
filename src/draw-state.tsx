@@ -10,6 +10,7 @@ import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
 import * as qs from "query-string";
+import { available } from "./hooks/useDataSets";
 
 interface DrawState {
   gameData: GameData | null;
@@ -37,7 +38,7 @@ export const DrawStateContext = createContext<DrawState>({
 });
 
 interface Props {
-  defaultDataSet: string;
+  defaultDataSet?: string;
 }
 
 function readDataSetFromUrl() {
@@ -68,7 +69,8 @@ export class DrawStateManager extends Component<Props, DrawState> {
       gameData: null,
       fuzzySearch: null,
       drawings: [],
-      dataSetName: readDataSetFromUrl() || props.defaultDataSet,
+      dataSetName:
+        readDataSetFromUrl() || props.defaultDataSet || available[0].name,
       lastDrawFailed: false,
       loadGameData: this.loadSongSet,
       drawSongs: this.doDrawing,
