@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1658375611303
+    "lastUpdated": 1658871017239
   },
   "defaults": {
     "style": "solo",
@@ -13015,6 +13015,293 @@
           "diffClass": "team",
           "author": "T. Little"
         }
+      ]
+    },
+    {
+      "saIndex": "535",
+      "name": "All For One",
+      "artist": "IVD x Dee Dee x Kenny Hayes",
+      "genre": "Progressive Trance",
+      "bpm": "150",
+      "jacket": "smx/AllForOne.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Class Clown"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "Over Achiever"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard",
+          "author": "Dreamsicle"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild",
+          "author": "J. Bratt"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "dual",
+          "author": "Flower Power"
+        },
+        { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team",
+          "author": "J. Rider"
+        }
+      ]
+    },
+    {
+      "saIndex": "536",
+      "name": "How We Win",
+      "artist": "FWLR",
+      "genre": "Electro",
+      "bpm": "126",
+      "jacket": "smx/HowWeWin.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Cheeky Chimp"
+        },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "author": "Sue She" },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "Couch Tomato"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "BaBaBooie"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "Chunkamunk"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "Poochie Woochie"
+        },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team",
+          "author": "Mystic Goddess"
+        }
+      ]
+    },
+    {
+      "saIndex": "537",
+      "name": "Ooh La La La",
+      "artist": "E-Rotic",
+      "genre": "Eurodance",
+      "bpm": "147",
+      "jacket": "smx/OohLaLaLa.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Mamma Llama"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "author": "Cream of Passion"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard",
+          "author": "Doctor Deck"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "Sensual Cactus"
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "Big Palm Tree"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "Mystic Goddess"
+        },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team",
+          "author": "Lee Nover"
+        }
+      ]
+    },
+    {
+      "saIndex": "538",
+      "name": "Stop Me",
+      "artist": "Natsume Oki",
+      "genre": "Eurobeat",
+      "bpm": "154",
+      "jacket": "smx/StopMe.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Zipity Doo"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "author": "M.C. Hampster"
+        },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "author": "S. Fry" },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild",
+          "author": "J. Rider"
+        },
+        { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "S. Fry" },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "full",
+          "author": "J. Rider"
+        },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team",
+          "author": "J. Rider"
+        }
+      ]
+    },
+    {
+      "saIndex": "539",
+      "name": "Villain",
+      "artist": "PIXY",
+      "genre": "K-Pop",
+      "bpm": "101",
+      "jacket": "smx/Villain.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Sam Sun"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "Babydoodles"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard",
+          "author": "Butterball"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild",
+          "author": "Bubble B."
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "author": "Queen Bae"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "author": "H. J. Peabody"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team",
+          "author": "H. J. Peabody"
+        }
+      ]
+    },
+    {
+      "saIndex": "540",
+      "name": "VTubers Never Die!",
+      "artist": "NAOKI & Eternal JK Yoripi-chan feat. Riyu Kos",
+      "genre": "J-Pop",
+      "bpm": "170",
+      "jacket": "smx/VtubersNeverDie.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Diva Dave"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "author": "Y. Tube"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "author": "Y. Tube"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild",
+          "author": "JBEANTUBER"
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "V. Girl"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "full",
+          "author": "JBEANTUBER"
+        },
+        { "style": "team", "lvl": 22, "diffClass": "team", "author": "V. Girl" }
       ]
     }
   ]
