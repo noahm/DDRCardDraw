@@ -10,7 +10,7 @@
       { "key": "full", "color": "#00d0b8" },
       { "key": "team", "color": "#c216ce" }
     ],
-    "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
+    "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic", "orderByPocketPick"],
     "lvlMax": 28,
     "lastUpdated": 1651354852324
   },
@@ -36,6 +36,7 @@
       "bassmonkeys": "The Bassmonkeys Pack",
       "cappRecords": "CAPP Records",
       "dimaMusic": "Dima Music",
+      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "$abbr": {
         "basic": "Basic",
         "easy": "Easy",

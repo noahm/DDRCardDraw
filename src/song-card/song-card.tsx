@@ -16,9 +16,9 @@ const isJapanese = detectedLanguage === "ja";
 type Player = 1 | 2;
 
 interface IconCallbacks {
-  onVeto: (p: Player) => void;
-  onProtect: (p: Player) => void;
-  onReplace: (p: Player, chart: DrawnChart) => void;
+  onVeto: (p: Player, chart: DrawnChart, chartId: number) => void;
+  onProtect: (p: Player, chart: DrawnChart, chartId: number) => void;
+  onReplace: (p: Player, chart: DrawnChart, chartId: number) => void;
   onReset: () => void;
 }
 
@@ -56,7 +56,7 @@ export function SongCard(props: Props) {
     difficultyClass,
     level,
     hasShock,
-    jacket,
+    jacket
   } = replacedWith || chart;
   const diffAccentColor = useDifficultyColor(difficultyClass);
 
@@ -101,7 +101,7 @@ export function SongCard(props: Props) {
         onSongSelect={(song, chart) => {
           iconCallbacks &&
             chart &&
-            iconCallbacks.onReplace(pocketPickForPlayer as 1 | 2, chart);
+            iconCallbacks.onReplace(pocketPickForPlayer as 1 | 2, chart, chart.id as number);
           setPocketPickForPlayer(0);
         }}
         onCancel={() => setPocketPickForPlayer(0)}
