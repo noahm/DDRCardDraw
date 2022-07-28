@@ -5,14 +5,14 @@
       { "key": "easy", "color": "#72cc6e" },
       { "key": "normal", "color": "#e0de5c" }
     ],
-    "flags": ["unlock", "extraExclusive", "tempUnlock"],
+    "flags": ["unlock", "extraExclusive", "tempUnlock", "orderByPocketPick"],
     "lvlMax": 10,
     "lastUpdated": 1595833183000
   },
   "defaults": {
     "style": "single",
     "difficulties": ["easy", "normal"],
-    "flags": ["unlock"],
+    "flags": ["unlock", "orderByPocketPick"],
     "lowerLvlBound": 7,
     "upperLvlBound": 10
   },
@@ -23,6 +23,7 @@
       "easy": "Easy",
       "normal": "Normal",
       "unlock": "Stars Unlock",
+      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "extraExclusive": "Extra Stage/Standard Mode",
       "tempUnlock": "Event Unlock (Spark Festival, GYM, Dance Camp, KAC, etc)",
       "$abbr": { "easy": "E", "normal": "N" }
@@ -33,6 +34,7 @@
       "easy": "Easy",
       "normal": "Normal",
       "unlock": "スターロック解除",
+      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "extraExclusive": "追加ステージ/標準モード",
       "tempUnlock": "イベントのロック解除（スパークフェスティバル、ジム、ダンスキャンプ、KACなど）",
       "$abbr": { "easy": "E", "normal": "N" }

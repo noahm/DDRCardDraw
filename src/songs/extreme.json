@@ -7,14 +7,14 @@
       { "key": "expert", "color": "#72cc6e" },
       { "key": "challenge", "color": "#cc71e8" }
     ],
-    "flags": [],
+    "flags": ["orderByPocketPick"],
     "lvlMax": 10,
     "lastUpdated": 1595833183000
   },
   "defaults": {
     "style": "single",
     "difficulties": ["expert", "challenge"],
-    "flags": [],
+    "flags": ["orderByPocketPick"],
     "lowerLvlBound": 6,
     "upperLvlBound": 10
   },
@@ -27,6 +27,7 @@
       "difficult": "Standard",
       "expert": "Heavy",
       "challenge": "Challenge",
+      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "$abbr": {
         "basic": "Lgt",
         "difficult": "Std",
@@ -42,6 +43,7 @@
       "difficult": "Standard",
       "expert": "Heavy",
       "challenge": "Challenge",
+      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "$abbr": {
         "basic": "楽",
         "difficult": "踊",
