@@ -87,11 +87,14 @@ export class DrawnSet extends Component<Props> {
     }
 
     if(arr !== this.props.drawing.bans && this.props.drawing.orderByPocketPick){
+
+    const swapCount = this.props.drawing.swapCount as number;
     const shiftedChart = this.props.drawing.charts.find(chart => chart.id === chartId) as DrawnChart;
     const indexToCut = this.props.drawing.charts.indexOf(shiftedChart);
-    
+
     this.props.drawing.charts.splice(indexToCut, 1);
-    this.props.drawing.charts.unshift(shiftedChart);
+    this.props.drawing.charts.splice(swapCount, 0, shiftedChart);
+    this.props.drawing.swapCount ? this.props.drawing.swapCount++ : this.props.drawing.swapCount = 1; 
     }
     this.forceUpdate();
   }
