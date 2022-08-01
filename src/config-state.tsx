@@ -5,6 +5,7 @@ export interface ConfigState {
   upperBound: number;
   lowerBound: number;
   useWeights: boolean;
+  orderByAction: boolean;
   weights: number[];
   forceDistribution: boolean;
   style: string;
@@ -28,6 +29,7 @@ export class ConfigStateManager extends Component<Props, ConfigState> {
       upperBound: 0,
       lowerBound: 0,
       useWeights: false,
+      orderByAction: true,
       weights: [],
       forceDistribution: true,
       style: "",

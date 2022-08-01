@@ -30,6 +30,4 @@ export interface Drawing {
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
-  orderByPocketPick?: boolean;
-  swapCount?:number;
 }

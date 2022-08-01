@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { memo, useContext, useState } from "react";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import {
@@ -7,6 +7,8 @@ import {
   PlayerActionOnChart,
   PocketPick,
 } from "./models/Drawing";
+import { ConfigStateContext } from "./config-state";
+import { useForceUpdate } from "./hooks/useForceUpdate";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -20,50 +22,35 @@ interface Props {
   drawing: Drawing;
 }
 
-export class DrawnSet extends Component<Props> {
-  _background = getRandomGradiant();
+function DrawnSetImpl({ drawing }: Props) {
+  const forceUpdate = useForceUpdate();
+  const { orderByAction } = useContext(ConfigStateContext);
+  const [backgroundImage] = useState(getRandomGradiant());
 
-  render() {
-    const { drawing } = this.props;
-    return (
-      <div
-        key={drawing.id}
-        className={styles.chartList}
-        style={{ backgroundImage: this._background }}
-      >
-        {drawing.charts.map(this.renderChart)}
-      </div>
-    );
-  }
-
-  renderChart = (chart: DrawnChart, index: number) => {
-    const veto = this.props.drawing.bans.find((b) => b.chartId === chart.id);
-    const protect = this.props.drawing.protects.find(
-      (b) => b.chartId === chart.id
-    );
-    const pocketPick = this.props.drawing.pocketPicks.find(
-      (b) => b.chartId === chart.id
-    );
+  function renderChart(chart: DrawnChart) {
+    const veto = drawing.bans.find((b) => b.chartId === chart.id);
+    const protect = drawing.protects.find((b) => b.chartId === chart.id);
+    const pocketPick = drawing.pocketPicks.find((b) => b.chartId === chart.id);
     return (
       <SongCard
-        key={index}
+        key={chart.id}
         iconCallbacks={{
-          onVeto: this.handleBanProtectReplace.bind(
-            this,
-            this.props.drawing.bans,
-            chart.id as number,
-          ),
-          onProtect: this.handleBanProtectReplace.bind(
-            this,
-            this.props.drawing.protects,
+          onVeto: handleBanProtectReplace.bind(
+            undefined,
+            drawing.bans,
             chart.id as number
           ),
-          onReplace: this.handleBanProtectReplace.bind(
-            this,
-            this.props.drawing.pocketPicks,
+          onProtect: handleBanProtectReplace.bind(
+            undefined,
+            drawing.protects,
             chart.id as number
           ),
-          onReset: this.handleReset.bind(this, chart.id as number),
+          onReplace: handleBanProtectReplace.bind(
+            undefined,
+            drawing.pocketPicks,
+            chart.id as number
+          ),
+          onReset: handleReset.bind(undefined, chart.id as number),
         }}
         vetoedBy={veto && veto.player}
         protectedBy={protect && protect.player}
@@ -72,42 +59,65 @@ export class DrawnSet extends Component<Props> {
         chart={chart}
       />
     );
-  };
-  handleBanProtectReplace(
+  }
+
+  /**
+   * handles any of the protect/pocket-pick/ban actions a user may take on a drawn chart
+   * @param arr array containing any previous actions of this type, to be mutated
+   * @param chartId id of the chart being acted upon
+   * @param player the player acting on the chart, 1 or 2
+   * @param chart new chart being pocket picked, if this is a pocket pick action
+   */
+  function handleBanProtectReplace(
     arr: Array<PlayerActionOnChart> | Array<PocketPick>,
     chartId: number,
     player: 1 | 2,
-    chart: DrawnChart,
+    chart?: DrawnChart
   ) {
+    if (orderByAction) {
+      const indexToCut = drawing.charts.findIndex(
+        (chart) => chart.id === chartId
+      );
+      const [shiftedChart] = drawing.charts.splice(indexToCut, 1);
+      if (arr === drawing.bans) {
+        // insert at tail of list
+        const insertPoint = drawing.charts.length;
+        drawing.charts.splice(insertPoint, 0, shiftedChart);
+      } else {
+        // insert at head of list, behind other picks
+        const insertPoint =
+          drawing.protects.length + drawing.pocketPicks.length;
+        drawing.charts.splice(insertPoint, 0, shiftedChart);
+      }
+    }
+
     const existingBanIndex = arr.findIndex((b) => b.chartId === chart?.id);
     if (existingBanIndex >= 0) {
       arr.splice(existingBanIndex, 1);
     } else {
       arr.push({ player, pick: chart!, chartId });
     }
-
-    if(arr !== this.props.drawing.bans && this.props.drawing.orderByPocketPick){
-
-    const swapCount = this.props.drawing.swapCount as number;
-    const shiftedChart = this.props.drawing.charts.find(chart => chart.id === chartId) as DrawnChart;
-    const indexToCut = this.props.drawing.charts.indexOf(shiftedChart);
-
-    this.props.drawing.charts.splice(indexToCut, 1);
-    this.props.drawing.charts.splice(swapCount, 0, shiftedChart);
-    this.props.drawing.swapCount ? this.props.drawing.swapCount++ : this.props.drawing.swapCount = 1; 
-    }
-    this.forceUpdate();
+    forceUpdate();
   }
-  
-  handleReset(chartId: number) {
-    const drawing = this.props.drawing;
+
+  function handleReset(chartId: number) {
     drawing.bans = drawing.bans.filter((p) => p.chartId !== chartId);
-    drawing.protects = drawing.protects.filter(
-      (p) => p.chartId !== chartId
-    );
+    drawing.protects = drawing.protects.filter((p) => p.chartId !== chartId);
     drawing.pocketPicks = drawing.pocketPicks.filter(
       (p) => p.chartId !== chartId
     );
-    this.forceUpdate();
+    forceUpdate();
   }
+
+  return (
+    <div
+      key={drawing.id}
+      className={styles.chartList}
+      style={{ backgroundImage }}
+    >
+      {drawing.charts.map(renderChart)}
+    </div>
+  );
 }
+
+export const DrawnSet = memo(DrawnSetImpl);

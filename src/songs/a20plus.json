@@ -15,8 +15,7 @@
       "extraExclusive",
       "goldExclusive",
       "usLocked",
-      "tempUnlock",
-      "orderByPocketPick"
+      "tempUnlock"
     ],
     "lvlMax": 19,
     "lastUpdated": 1641352956000
@@ -24,7 +23,7 @@
   "defaults": {
     "style": "single",
     "difficulties": ["expert", "challenge"],
-    "flags": ["shock", "orderByPocketPick"],
+    "flags": ["shock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
@@ -45,7 +44,6 @@
       "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "shock": "Shock arrow charts",
-      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -67,7 +65,6 @@
       "goldExclusive": "A20筐体限定曲を含める",
       "goldenLeague": "Golden League",
       "extraExclusive": "EXTRA EXCLUSIVE曲を含める",
-      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "usLocked": "日本限定曲を含める",
       "tempUnlock": "現在解禁できない曲を含める",
       "shock": "Shock arrow charts",

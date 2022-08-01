@@ -133,6 +133,7 @@ function Controls() {
   const configState = useContext(ConfigStateContext);
   const {
     useWeights,
+    orderByAction,
     lowerBound,
     upperBound,
     update: updateState,
@@ -267,6 +268,18 @@ function Controls() {
         </FormGroup>
       )}
       <FormGroup>
+        <Checkbox
+          id="orderByAction"
+          checked={orderByAction}
+          onChange={(e) => {
+            const reorder = !!e.currentTarget.checked;
+            updateState((state) => ({
+              ...state,
+              orderByAction: reorder,
+            }));
+          }}
+          label={t("orderByAction")}
+        />
         <Checkbox
           id="weighted"
           checked={useWeights}

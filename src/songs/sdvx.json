@@ -11,7 +11,7 @@
       { "key": "heavenly", "color": "#00ffff" },
       { "key": "vivid", "color": "#f52a6e" }
     ],
-    "flags": ["orderByPocketPick"],
+    "flags": [],
     "lvlMax": 20,
     "lastUpdated": 1595832765000
   },
@@ -25,7 +25,7 @@
       "heavenly",
       "vivid"
     ],
-    "flags": ["orderByPocketPick"],
+    "flags": [],
     "lowerLvlBound": 16,
     "upperLvlBound": 19
   },
@@ -41,7 +41,6 @@
       "gravity": "Gravity",
       "heavenly": "Heavenly",
       "vivid": "Vivid",
-      "orderByPocketPick": "Enable Order by Protect/Pocket Pick",
       "$abbr": {
         "novice": "NOV",
         "advanced": "ADV",
