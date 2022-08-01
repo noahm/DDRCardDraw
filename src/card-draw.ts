@@ -125,7 +125,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   }
 
-  const drawnCharts = [];
+  const drawnCharts: DrawnChart[] = [];
   /**
    * Record of how many songs of each difficulty have been drawn so far
    */
@@ -146,8 +146,11 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const randomChart = selectableCharts[randomIndex];
 
     if (randomChart) {
+      // Give this random chart a unique id within this drawing
+      randomChart.id = drawnCharts.length;
+      // Save it in our list of drawn charts
       drawnCharts.push(randomChart);
-      // remove drawn chart so it cannot be re-drawn
+      // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
       if (!difficultyCounts[chosenDifficulty]) {
         difficultyCounts[chosenDifficulty] = 1;
