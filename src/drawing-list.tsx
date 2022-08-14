@@ -3,7 +3,7 @@ import { DrawnSet } from "./drawn-set";
 import styles from "./drawing-list.css";
 import { DrawStateContext } from "./draw-state";
 import { Drawing } from "./models/Drawing";
-import { ConfigStateContext } from "./config-state";
+import { useConfigState } from "./config-state";
 import { EligibleChartsList } from "./eligible-charts-list";
 import { Callout, NonIdealState } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
@@ -19,8 +19,8 @@ const ScrollableDrawings = memo((props: { drawings: Drawing[] }) => {
 
 export function DrawingList() {
   const { drawings } = useContext(DrawStateContext);
-  const configState = useContext(ConfigStateContext);
-  if (configState.showPool) {
+  const showPool = useConfigState((cfg) => cfg.showPool);
+  if (showPool) {
     return <EligibleChartsList />;
   }
   if (!drawings.length) {

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
-import { ConfigStateContext } from "../config-state";
+import { useConfigState } from "../config-state";
 import { DrawStateContext } from "../draw-state";
 import { DrawnChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
@@ -17,7 +17,7 @@ interface Props {
 export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
-  const config = useContext(ConfigStateContext);
+  const config = useConfigState();
 
   const { fuzzySearch } = useContext(DrawStateContext);
 

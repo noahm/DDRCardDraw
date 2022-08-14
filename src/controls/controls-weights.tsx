@@ -1,9 +1,10 @@
+import shallow from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { times } from "../utils";
-import { useMemo, useContext } from "react";
-import { ConfigStateContext } from "../config-state";
+import { useMemo } from "react";
+import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
-import { NumericInput, Switch, Checkbox } from "@blueprintjs/core";
+import { NumericInput, Checkbox } from "@blueprintjs/core";
 
 interface Props {
   high: number;
@@ -12,30 +13,34 @@ interface Props {
 
 export function WeightsControls({ high, low }: Props) {
   const { t } = useIntl();
-  const { weights, update, forceDistribution } = useContext(ConfigStateContext);
+  const { weights, forceDistribution, updateConfig } = useConfigState(
+    (cfg) => ({
+      weights: cfg.weights,
+      forceDistribution: cfg.forceDistribution,
+      updateConfig: cfg.update,
+    }),
+    shallow
+  );
   const levels = useMemo(
     () => times(high - low + 1, (n) => n + low - 1),
     [high, low]
   );
 
   function toggleForceDistribution() {
-    update((state) => {
-      return {
-        ...state,
-        forceDistribution: !state.forceDistribution,
-      };
-    });
+    updateConfig((state) => ({
+      forceDistribution: !state.forceDistribution,
+    }));
   }
 
   function setWeight(difficulty: number, value: number) {
-    update((state) => {
+    updateConfig((state) => {
       const newWeights = state.weights.slice();
       if (Number.isInteger(value)) {
         newWeights[difficulty] = value;
       } else {
         delete newWeights[difficulty];
       }
-      return { ...state, weights: newWeights };
+      return { weights: newWeights };
     });
   }
 

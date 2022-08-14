@@ -3,7 +3,7 @@ import { useContext, useMemo, useState } from "react";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { DrawStateContext } from "../draw-state";
-import { ConfigStateContext } from "../config-state";
+import { useConfigState } from "../config-state";
 import { GameData } from "../models/SongData";
 import { useIntl } from "../hooks/useIntl";
 import {
@@ -26,6 +26,7 @@ import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { EligibleChartsListFilter } from "../eligible-charts-list";
+import shallow from "zustand/shallow";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -41,20 +42,25 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 
 function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
   const { t } = useIntl();
-  const configState = useContext(ConfigStateContext);
+  const { showPool, update } = useConfigState(
+    (state) => ({
+      showPool: state.showPool,
+      update: state.update,
+    }),
+    shallow
+  );
   return (
     <Switch
       alignIndicator={inDrawer ? "left" : "right"}
       large
       className={styles.showAllToggle}
       label={t("showSongPool")}
-      checked={configState.showPool}
+      checked={showPool}
       onChange={(e) => {
         const showPool = !!e.currentTarget.checked;
-        configState.update((state) => ({
-          ...state,
+        update({
           showPool,
-        }));
+        });
       }}
     />
   );
@@ -64,15 +70,11 @@ export function HeaderControls() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
   const { drawSongs } = useContext(DrawStateContext);
-  const configState = useContext(ConfigStateContext);
   const isNarrow = useIsNarrow();
 
   function handleDraw() {
-    configState.update((s) => ({
-      ...s,
-      showPool: false,
-    }));
-    const couldDraw = drawSongs(configState);
+    useConfigState.setState({ showPool: false });
+    const couldDraw = drawSongs(useConfigState.getState());
     if (couldDraw !== !lastDrawFailed) {
       setLastDrawFailed(!couldDraw);
     }
@@ -130,7 +132,7 @@ export function HeaderControls() {
 function Controls() {
   const { t } = useIntl();
   const { dataSetName, gameData } = useContext(DrawStateContext);
-  const configState = useContext(ConfigStateContext);
+  const configState = useConfigState();
   const {
     useWeights,
     orderByAction,
@@ -157,12 +159,9 @@ function Controls() {
 
   const handleBoundsChange = ([low, high]: NumberRange) => {
     if (low !== lowerBound || high !== upperBound) {
-      updateState((state) => {
-        return {
-          ...state,
-          lowerBound: low,
-          upperBound: high,
-        };
+      updateState({
+        lowerBound: low,
+        upperBound: high,
       });
     }
   };
@@ -186,9 +185,7 @@ function Controls() {
           value={chartCount}
           min={1}
           onValueChange={(chartCount) => {
-            updateState((s) => {
-              return { ...s, chartCount };
-            });
+            updateState({ chartCount });
           }}
         />
       </FormGroup>
@@ -208,9 +205,7 @@ function Controls() {
             value={selectedStyle}
             onChange={(e) => {
               const style = e.currentTarget.value;
-              updateState((s) => {
-                return { ...s, style };
-              });
+              updateState({ style });
             }}
           >
             {gameStyles.map((style) => (
@@ -237,7 +232,7 @@ function Controls() {
                 } else {
                   difficulties.delete(value);
                 }
-                return { ...s, difficulties };
+                return { difficulties };
               });
             }}
             label={t("meta." + dif.key)}
@@ -260,7 +255,7 @@ function Controls() {
                   } else {
                     newFlags.add(key);
                   }
-                  return { ...s, flags: newFlags };
+                  return { flags: newFlags };
                 })
               }
             />
@@ -273,10 +268,7 @@ function Controls() {
           checked={orderByAction}
           onChange={(e) => {
             const reorder = !!e.currentTarget.checked;
-            updateState((state) => ({
-              ...state,
-              orderByAction: reorder,
-            }));
+            updateState({ orderByAction: reorder });
           }}
           label={t("orderByAction")}
         />
@@ -285,10 +277,7 @@ function Controls() {
           checked={useWeights}
           onChange={(e) => {
             const useWeights = !!e.currentTarget.checked;
-            updateState((state) => ({
-              ...state,
-              useWeights,
-            }));
+            updateState({ useWeights });
           }}
           label={t("useWeightedDistributions")}
         />
