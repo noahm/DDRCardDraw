@@ -189,16 +189,14 @@ function Controls() {
           <hr />
         </>
       )}
-      <FormGroup contentClassName={styles.inlineControls}>
+      <div className={isNarrow ? undefined : styles.inlineControls}>
         <FormGroup
-          labelFor="chartCount"
           label={t("chartCount")}
           contentClassName={styles.narrowInput}
         >
           <NumericInput
             large
             fill
-            id="chartCount"
             value={chartCount}
             min={1}
             onValueChange={(chartCount) => {
@@ -208,37 +206,29 @@ function Controls() {
             }}
           />
         </FormGroup>
-        <FormGroup
-          label="Lvl Min"
-          labelFor="lvlMin"
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            fill
-            id="lvlMin"
-            value={lowerBound}
-            min={1}
-            max={upperBound}
-            large
-            onValueChange={handleLowerBoundChange}
-          />
-        </FormGroup>
-        <FormGroup
-          label="Lvl Max"
-          labelFor="lvlMax"
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            fill
-            id="lvlMax"
-            value={upperBound}
-            min={lowerBound}
-            max={lvlMax}
-            large
-            onValueChange={handleUpperBoundChange}
-          />
-        </FormGroup>
-      </FormGroup>
+        <div className={styles.inlineControls}>
+          <FormGroup label="Lvl Min" contentClassName={styles.narrowInput}>
+            <NumericInput
+              fill
+              value={lowerBound}
+              min={1}
+              max={upperBound}
+              large
+              onValueChange={handleLowerBoundChange}
+            />
+          </FormGroup>
+          <FormGroup label="Lvl Max" contentClassName={styles.narrowInput}>
+            <NumericInput
+              fill
+              value={upperBound}
+              min={lowerBound}
+              max={lvlMax}
+              large
+              onValueChange={handleUpperBoundChange}
+            />
+          </FormGroup>
+        </div>
+      </div>
       {gameStyles.length > 1 && (
         <FormGroup labelFor="style" label={t("style")}>
           <HTMLSelect
