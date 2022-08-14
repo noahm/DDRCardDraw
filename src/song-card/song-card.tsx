@@ -19,6 +19,7 @@ interface IconCallbacks {
   onVeto: (p: Player) => void;
   onProtect: (p: Player) => void;
   onReplace: (p: Player, chart: DrawnChart) => void;
+  onRedraw: () => void;
   onReset: () => void;
 }
 
@@ -83,6 +84,7 @@ export function SongCard(props: Props) {
         onProtect={iconCallbacks.onProtect}
         onStartPocketPick={setPocketPickForPlayer}
         onVeto={iconCallbacks.onVeto}
+        onRedraw={iconCallbacks.onRedraw}
       />
     );
   }
