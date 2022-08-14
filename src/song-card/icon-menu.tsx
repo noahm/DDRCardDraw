@@ -1,15 +1,16 @@
 import { useIntl } from "../hooks/useIntl";
 import { IconNames, IconName } from "@blueprintjs/icons";
-import { Menu, MenuItem } from "@blueprintjs/core";
+import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 
 interface Props {
   onStartPocketPick: (p: 1 | 2) => void;
   onVeto: (p: 1 | 2) => void;
   onProtect: (p: 1 | 2) => void;
+  onRedraw: () => void;
 }
 
 export function IconMenu(props: Props) {
-  const { onStartPocketPick, onVeto, onProtect } = props;
+  const { onStartPocketPick, onVeto, onProtect, onRedraw } = props;
 
   const { t } = useIntl();
 
@@ -30,6 +31,8 @@ export function IconMenu(props: Props) {
         text={t("songAction.ban")}
         onClick={onVeto}
       />
+      <MenuDivider />
+      <MenuItem text="Redraw" icon={IconNames.REFRESH} onClick={onRedraw} />
     </Menu>
   );
 }
