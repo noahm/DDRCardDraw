@@ -10,3 +10,17 @@
 .showAllToggle {
   margin-bottom: 0;
 }
+
+.inlineControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.inlineControls > * {
+  margin-right: 25px;
+}
+
+.narrowInput {
+  width: 100px;
+}
