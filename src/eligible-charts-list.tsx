@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import { eligibleCharts } from "./card-draw";
 import { useConfigState } from "./config-state";
-import { DrawStateContext } from "./draw-state";
+import { useDrawState } from "./draw-state";
 import { SongCard } from "./song-card";
 import styles from "./drawing-list.css";
 import { DrawnChart } from "./models/Drawing";
@@ -48,7 +47,7 @@ export function EligibleChartsListFilter() {
 
 export function EligibleChartsList() {
   const [currentTab] = useAtom(currentTabAtom);
-  const { gameData } = useContext(DrawStateContext);
+  const gameData = useDrawState((s) => s.gameData);
   const configState = useConfigState();
   const isNarrow = useIsNarrow();
   const isDisplayFiltered = currentTab !== "all";

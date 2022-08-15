@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState } from "../config-state";
-import { DrawStateContext } from "../draw-state";
+import { useDrawState } from "../draw-state";
 import { DrawnChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
@@ -18,8 +18,7 @@ export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
-
-  const { fuzzySearch } = useContext(DrawStateContext);
+  const fuzzySearch = useDrawState((s) => s.fuzzySearch);
 
   let items: SearchResultData[] = [];
   if (fuzzySearch) {

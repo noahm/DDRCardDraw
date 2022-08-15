@@ -1,8 +1,8 @@
 import { FormattedMessage } from "react-intl";
-import { useContext, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
-import { DrawStateContext } from "../draw-state";
+import { useDrawState } from "../draw-state";
 import { useConfigState } from "../config-state";
 import { GameData } from "../models/SongData";
 import { useIntl } from "../hooks/useIntl";
@@ -69,7 +69,10 @@ function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
 export function HeaderControls() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
-  const { drawSongs } = useContext(DrawStateContext);
+  const [drawSongs, hasGameData] = useDrawState((s) => [
+    s.drawSongs,
+    !!s.gameData,
+  ]);
   const isNarrow = useIsNarrow();
 
   function handleDraw() {
@@ -108,13 +111,16 @@ export function HeaderControls() {
         </>
       )}
       <ButtonGroup>
-        <Button
-          onClick={handleDraw}
-          icon={IconNames.NEW_LAYERS}
-          intent={Intent.PRIMARY}
-        >
-          <FormattedMessage id="draw" defaultMessage="Draw!" />
-        </Button>
+        <Tooltip2 disabled={hasGameData} content="Loading game data">
+          <Button
+            onClick={handleDraw}
+            icon={IconNames.NEW_LAYERS}
+            intent={Intent.PRIMARY}
+            disabled={!hasGameData}
+          >
+            <FormattedMessage id="draw" defaultMessage="Draw!" />
+          </Button>
+        </Tooltip2>
         <Tooltip2
           isOpen={lastDrawFailed}
           content={<FormattedMessage id="controls.invalid" />}
@@ -131,7 +137,10 @@ export function HeaderControls() {
 
 function Controls() {
   const { t } = useIntl();
-  const { dataSetName, gameData } = useContext(DrawStateContext);
+  const [dataSetName, gameData] = useDrawState(
+    (s) => [s.dataSetName, s.gameData],
+    shallow
+  );
   const configState = useConfigState();
   const {
     useWeights,

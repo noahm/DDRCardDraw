@@ -1,7 +1,7 @@
-import { useContext, memo } from "react";
+import { memo } from "react";
 import { DrawnSet } from "./drawn-set";
 import styles from "./drawing-list.css";
-import { DrawStateContext } from "./draw-state";
+import { useDrawState } from "./draw-state";
 import { Drawing } from "./models/Drawing";
 import { useConfigState } from "./config-state";
 import { EligibleChartsList } from "./eligible-charts-list";
@@ -18,7 +18,7 @@ const ScrollableDrawings = memo((props: { drawings: Drawing[] }) => {
 });
 
 export function DrawingList() {
-  const { drawings } = useContext(DrawStateContext);
+  const drawings = useDrawState((s) => s.drawings);
   const showPool = useConfigState((cfg) => cfg.showPool);
   if (showPool) {
     return <EligibleChartsList />;

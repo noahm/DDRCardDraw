@@ -1,4 +1,4 @@
-import { memo, useContext, useState } from "react";
+import { memo, useState } from "react";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import {
@@ -10,7 +10,7 @@ import {
 import { useConfigState } from "./config-state";
 import { useForceUpdate } from "./hooks/useForceUpdate";
 import { draw } from "./card-draw";
-import { DrawStateContext } from "./draw-state";
+import { useDrawState } from "./draw-state";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -26,7 +26,7 @@ interface Props {
 
 function DrawnSetImpl({ drawing }: Props) {
   const forceUpdate = useForceUpdate();
-  const { gameData } = useContext(DrawStateContext);
+  const gameData = useDrawState((s) => s.gameData);
   const [backgroundImage] = useState(getRandomGradiant());
 
   function renderChart(chart: DrawnChart) {
