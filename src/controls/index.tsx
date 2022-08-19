@@ -182,9 +182,11 @@ function Controls() {
           <FormGroup>
             <ShowChartsToggle inDrawer />
           </FormGroup>
-          <FormGroup label="Show only">
-            <EligibleChartsListFilter />
-          </FormGroup>
+          {!!configState.flags.size && (
+            <FormGroup label="Show only">
+              <EligibleChartsListFilter />
+            </FormGroup>
+          )}
           <hr />
         </>
       )}
