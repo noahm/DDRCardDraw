@@ -155,13 +155,22 @@ function Controls() {
   }
   const { flags, lvlMax, styles: gameStyles } = gameData.meta;
 
-  const handleBoundsChange = ([low, high]: NumberRange) => {
-    if (low !== lowerBound || high !== upperBound) {
+  const handleLowerBoundChange = (newLow: number) => {
+    if (newLow !== lowerBound) {
       updateState((state) => {
         return {
           ...state,
-          lowerBound: low,
-          upperBound: high,
+          lowerBound: newLow,
+        };
+      });
+    }
+  };
+  const handleUpperBoundChange = (newHigh: number) => {
+    if (newHigh !== upperBound) {
+      updateState((state) => {
+        return {
+          ...state,
+          upperBound: newHigh,
         };
       });
     }
@@ -174,37 +183,59 @@ function Controls() {
           <FormGroup>
             <ShowChartsToggle inDrawer />
           </FormGroup>
-          <FormGroup label="Show only">
-            <EligibleChartsListFilter />
-          </FormGroup>
+          {!!configState.flags.size && (
+            <FormGroup label="Show only">
+              <EligibleChartsListFilter />
+            </FormGroup>
+          )}
           <hr />
         </>
       )}
-      <FormGroup labelFor="chartCount" label={t("chartCount")}>
-        <NumericInput
-          name="chartCount"
-          value={chartCount}
-          min={1}
-          onValueChange={(chartCount) => {
-            updateState((s) => {
-              return { ...s, chartCount };
-            });
-          }}
-        />
-      </FormGroup>
-      <FormGroup label={t("difficultyLevel")}>
-        <RangeSlider
-          value={[lowerBound, upperBound]}
-          min={1}
-          max={lvlMax}
-          onChange={handleBoundsChange}
-          labelStepSize={4}
-        />
-      </FormGroup>
+      <div className={isNarrow ? undefined : styles.inlineControls}>
+        <FormGroup
+          label={t("chartCount")}
+          contentClassName={styles.narrowInput}
+        >
+          <NumericInput
+            large
+            fill
+            value={chartCount}
+            min={1}
+            onValueChange={(chartCount) => {
+              updateState((s) => {
+                return { ...s, chartCount };
+              });
+            }}
+          />
+        </FormGroup>
+        <div className={styles.inlineControls}>
+          <FormGroup label="Lvl Min" contentClassName={styles.narrowInput}>
+            <NumericInput
+              fill
+              value={lowerBound}
+              min={1}
+              max={upperBound}
+              large
+              onValueChange={handleLowerBoundChange}
+            />
+          </FormGroup>
+          <FormGroup label="Lvl Max" contentClassName={styles.narrowInput}>
+            <NumericInput
+              fill
+              value={upperBound}
+              min={lowerBound}
+              max={lvlMax}
+              large
+              onValueChange={handleUpperBoundChange}
+            />
+          </FormGroup>
+        </div>
+      </div>
       {gameStyles.length > 1 && (
         <FormGroup labelFor="style" label={t("style")}>
           <HTMLSelect
             id="style"
+            large
             value={selectedStyle}
             onChange={(e) => {
               const style = e.currentTarget.value;

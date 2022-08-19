@@ -36,8 +36,9 @@ yarn start
 # a basic sanity check on the format and contents of it
 yarn validate:json
 
-# build a zipped, standalone copy of the app that runs entirely offline
-yarn build
+# build a zipped, standalone copy of the app that runs entirely offline,
+# jacket images and all! simply unzip somewhere and open index.html
+yarn build:zip
 ```
 
 There are some other useful scripts in `scripts/` that help in maintaining data integrity and pulling

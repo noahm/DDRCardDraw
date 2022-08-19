@@ -1,11 +1,9 @@
 import { useEffect } from "react";
-import { Button, Classes, MenuItem } from "@blueprintjs/core";
+import { Classes, MenuItem } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { FormattedMessage } from "react-intl";
-import { Tooltip2 } from "@blueprintjs/popover2";
 import createStore from "zustand";
 import { useMediaQuery } from "./hooks/useMediaQuery";
-import { useIntl } from "./hooks/useIntl";
 
 export const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 

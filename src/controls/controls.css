@@ -3,10 +3,34 @@
   overflow-y: auto;
 }
 
+.form hr {
+  border-color: rgba(17, 20, 24, 0.8);
+  border-style: solid;
+  border-bottom-width: 0;
+}
+
 .form label {
   user-select: none;
 }
 
 .showAllToggle {
   margin-bottom: 0;
+}
+
+.inlineControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.inlineControls .inlineControls {
+  margin-bottom: 0;
+}
+
+.inlineControls > * {
+  margin-right: 25px;
+}
+
+.narrowInput {
+  width: 100px;
 }
