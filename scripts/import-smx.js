@@ -103,11 +103,10 @@ async function main() {
     songs: songs.filter((s) => !!s),
   };
 
+  smxData.meta.lvlMax = lvlMax;
+
   ui.log.write("finished downloading data, writing final JSON output");
-  await writeJsonData(
-    smxData,
-    resolve(join(__dirname, "../src/songs/smx.json"))
-  );
+  await writeJsonData(smxData, resolve(targetFile));
 
   if (requestQueue.size) {
     ui.log.write("waiting on images to finish downloading...");
