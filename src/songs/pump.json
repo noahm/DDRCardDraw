@@ -10,9 +10,9 @@
       { "key": "C", "color": "#f2c219" },
       { "key": "R", "color": "#23a98d" }
     ],
-    "flags": [],
+    "flags": ["cut:1", "cut:3", "cut:4"],
     "lvlMax": 28,
-    "lastUpdated": 1661207744183
+    "lastUpdated": 1661210211893
   },
   "defaults": {
     "style": "solo",
@@ -33,6 +33,9 @@
       "DP": "Double Performance",
       "C": "Co-Op",
       "R": "Routine",
+      "cut:1": "Short Cut",
+      "cut:3": "Remix",
+      "cut:4": "Full Song",
       "$abbr": {
         "S": "S",
         "HDB": "HDB",
@@ -262,6 +265,7 @@
       "jacket": "pump/9.jpg",
       "artist": "BanYa",
       "bpm": "150",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 7, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -649,6 +653,7 @@
       "jacket": "pump/337.jpg",
       "artist": "BanYa",
       "bpm": "200",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -764,6 +769,7 @@
       "jacket": "pump/264.jpg",
       "artist": "BanYa",
       "bpm": "140-169",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -858,6 +864,7 @@
       "jacket": "pump/B28.jpg",
       "artist": "BanYa",
       "bpm": "184-202",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 13, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -871,6 +878,7 @@
       "jacket": "pump/253.jpg",
       "artist": "BanYa",
       "bpm": "162-170",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 14, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
@@ -884,6 +892,7 @@
       "jacket": "pump/255.jpg",
       "artist": "BanYa",
       "bpm": "99",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 6, "diffClass": "S", "style": "solo" },
         { "lvl": 7, "diffClass": "S", "style": "solo" },
@@ -897,6 +906,7 @@
       "jacket": "pump/256.jpg",
       "artist": "BanYa",
       "bpm": "160",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" },
@@ -1023,6 +1033,7 @@
       "jacket": "pump/B51-xx.jpg",
       "artist": "Crash",
       "bpm": "195",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -1204,6 +1215,7 @@
       "jacket": "pump/351.jpg",
       "artist": "BanYa Production",
       "bpm": "134",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 7, "diffClass": "S", "style": "solo" },
         { "lvl": 4, "diffClass": "D", "style": "solo" },
@@ -1216,6 +1228,7 @@
       "jacket": "pump/352.jpg",
       "artist": "BanYa Production",
       "bpm": "180",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 25, "diffClass": "D", "style": "solo" },
@@ -1229,6 +1242,7 @@
       "jacket": "pump/353.jpg",
       "artist": "BanYa Production",
       "bpm": "156",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 10, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -1241,6 +1255,7 @@
       "jacket": "pump/356.jpg",
       "artist": "Yahpp",
       "bpm": "128",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" }
@@ -1385,6 +1400,7 @@
       "jacket": "pump/336.jpg",
       "artist": "BanYa Production",
       "bpm": "120",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 22, "diffClass": "S", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" }
@@ -1551,6 +1567,7 @@
       "jacket": "pump/275.jpg",
       "artist": "Yahpp",
       "bpm": "195",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" },
@@ -1564,6 +1581,7 @@
       "jacket": "pump/276.jpg",
       "artist": "Yahpp",
       "bpm": "210",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 24, "diffClass": "S", "style": "solo" },
@@ -1577,6 +1595,7 @@
       "jacket": "pump/277.jpg",
       "artist": "Yahpp",
       "bpm": "100-162",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 21, "diffClass": "D", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" }
@@ -1588,6 +1607,7 @@
       "jacket": "pump/278.jpg",
       "artist": "Yahpp",
       "bpm": "120-190",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" }
@@ -1804,6 +1824,7 @@
       "jacket": "pump/57.jpg",
       "artist": "BanYa Production",
       "bpm": "164",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 12, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -1817,6 +1838,7 @@
       "jacket": "pump/58.jpg",
       "artist": "BanYa Production",
       "bpm": "145-158",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 8, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" }
@@ -1828,6 +1850,7 @@
       "jacket": "pump/59.jpg",
       "artist": "BanYa Production",
       "bpm": "180",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" }
@@ -1839,6 +1862,7 @@
       "jacket": "pump/61.jpg",
       "artist": "BanYa Production",
       "bpm": "122",
+      "flags": ["cut:3"],
       "charts": [{ "lvl": 17, "diffClass": "S", "style": "solo" }]
     },
     {
@@ -1847,6 +1871,7 @@
       "jacket": "pump/62.jpg",
       "artist": "msgoon",
       "bpm": "150",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 21, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" }
@@ -1858,6 +1883,7 @@
       "jacket": "pump/66.jpg",
       "artist": "BanYa",
       "bpm": "130",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" }
@@ -1869,6 +1895,7 @@
       "jacket": "pump/67.jpg",
       "artist": "BanYa",
       "bpm": "130.5",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" }
@@ -1880,6 +1907,7 @@
       "jacket": "pump/68.jpg",
       "artist": "Yahpp",
       "bpm": "170",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" }
@@ -1891,6 +1919,7 @@
       "jacket": "pump/69.jpg",
       "artist": "BanYa",
       "bpm": "140",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 13, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
@@ -1903,6 +1932,7 @@
       "jacket": "pump/70.jpg",
       "artist": "BanYa",
       "bpm": "162",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
@@ -1915,6 +1945,7 @@
       "jacket": "pump/71.jpg",
       "artist": "BanYa",
       "bpm": "195",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "D", "style": "solo" },
@@ -1928,6 +1959,7 @@
       "jacket": "pump/72.jpg",
       "artist": "BanYa",
       "bpm": "200",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "D", "style": "solo" }
@@ -1939,6 +1971,7 @@
       "jacket": "pump/73.jpg",
       "artist": "BanYa",
       "bpm": "168",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 10, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" },
@@ -1953,6 +1986,7 @@
       "jacket": "pump/74.jpg",
       "artist": "BanYa",
       "bpm": "136",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -1964,6 +1998,7 @@
       "jacket": "pump/75.jpg",
       "artist": "BanYa",
       "bpm": "180",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" },
@@ -1976,6 +2011,7 @@
       "jacket": "pump/76.jpg",
       "artist": "BanYa",
       "bpm": "195",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
@@ -1988,6 +2024,7 @@
       "jacket": "pump/77.jpg",
       "artist": "BanYa",
       "bpm": "178",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" }
@@ -1999,6 +2036,7 @@
       "jacket": "pump/78.jpg",
       "artist": "Yahpp",
       "bpm": "133",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -2010,6 +2048,7 @@
       "jacket": "pump/79.jpg",
       "artist": "BanYa Production",
       "bpm": "156",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
@@ -2022,6 +2061,7 @@
       "jacket": "pump/80.jpg",
       "artist": "Yahpp",
       "bpm": "210",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -2035,6 +2075,7 @@
       "jacket": "pump/81.jpg",
       "artist": "Yahpp",
       "bpm": "162",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
@@ -2047,6 +2088,7 @@
       "jacket": "pump/82.jpg",
       "artist": "SHK",
       "bpm": "150",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 9, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" },
@@ -2272,6 +2314,7 @@
       "jacket": "pump/107.jpg",
       "artist": "Doin",
       "bpm": "222.22",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
@@ -2286,6 +2329,7 @@
       "jacket": "pump/108.jpg",
       "artist": "MAX",
       "bpm": "128",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" }
@@ -2297,6 +2341,7 @@
       "jacket": "pump/109.jpg",
       "artist": "Doin",
       "bpm": "180.4",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "D", "style": "solo" },
@@ -2309,6 +2354,7 @@
       "jacket": "pump/113.jpg",
       "artist": "Doin",
       "bpm": "156.118",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 14, "diffClass": "D", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" }
@@ -2320,6 +2366,7 @@
       "jacket": "pump/114.jpg",
       "artist": "Doin",
       "bpm": "203",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 21, "diffClass": "S", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" }
@@ -2331,6 +2378,7 @@
       "jacket": "pump/115.jpg",
       "artist": "SHK",
       "bpm": "170",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" }
@@ -2342,6 +2390,7 @@
       "jacket": "pump/116.jpg",
       "artist": "MAX",
       "bpm": "155",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -2518,6 +2567,7 @@
       "jacket": "pump/117.jpg",
       "artist": "DM Ashura",
       "bpm": "147",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 16, "diffClass": "S", "style": "solo" }
@@ -2863,6 +2913,7 @@
       "jacket": "pump/216.jpg",
       "artist": "SynthWulf & MAX",
       "bpm": "175",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" }
@@ -2874,6 +2925,7 @@
       "jacket": "pump/217.jpg",
       "artist": "Doin & MAX",
       "bpm": "200",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 23, "diffClass": "D", "style": "solo" }
@@ -2885,6 +2937,7 @@
       "jacket": "pump/224.jpg",
       "artist": "J-Mi & Midi-D Ft. Hanna Stockzell",
       "bpm": "160",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" }
@@ -2896,6 +2949,7 @@
       "jacket": "pump/225.jpg",
       "artist": "SynthWulf",
       "bpm": "175",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" }
@@ -2907,6 +2961,7 @@
       "jacket": "pump/226.jpg",
       "artist": "DM Ashura",
       "bpm": "220",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 21, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" }
@@ -2918,6 +2973,7 @@
       "jacket": "pump/227.jpg",
       "artist": "Doin",
       "bpm": "200",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" }
@@ -2929,6 +2985,7 @@
       "jacket": "pump/228.jpg",
       "artist": "SHK",
       "bpm": "145",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" }
@@ -2940,6 +2997,7 @@
       "jacket": "pump/229.jpg",
       "artist": "MAX",
       "bpm": "128",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -3353,6 +3411,7 @@
       "jacket": "pump/230.jpg",
       "artist": "BanYa & Warak",
       "bpm": "170",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -3365,6 +3424,7 @@
       "jacket": "pump/233.jpg",
       "artist": "Nato",
       "bpm": "200",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 13, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -3379,6 +3439,7 @@
       "jacket": "pump/234.jpg",
       "artist": "Matduke",
       "bpm": "175",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" },
@@ -3410,6 +3471,7 @@
       "jacket": "pump/368.jpg",
       "artist": "MAX",
       "bpm": "128",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "D", "style": "solo" },
@@ -3454,6 +3516,7 @@
       "jacket": "pump/381.jpg",
       "artist": "SID-Sound",
       "bpm": "160",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" }
@@ -3486,6 +3549,7 @@
       "jacket": "pump/376.jpg",
       "artist": "MAX & Memme",
       "bpm": "175",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 23, "diffClass": "S", "style": "solo" },
         { "lvl": 25, "diffClass": "D", "style": "solo" },
@@ -3555,6 +3619,7 @@
       "jacket": "pump/385.jpg",
       "artist": "DM Ashura",
       "bpm": "145",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" }
@@ -3783,6 +3848,7 @@
       "jacket": "pump/392.jpg",
       "artist": "Nato",
       "bpm": "167",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -3935,6 +4001,7 @@
       "jacket": "pump/E52.jpg",
       "artist": "BanYa Production",
       "bpm": "170",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
@@ -3948,6 +4015,7 @@
       "jacket": "pump/F43.jpg",
       "artist": "BanYa Production",
       "bpm": "150-162",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
@@ -4298,6 +4366,7 @@
       "jacket": "pump/460.jpg",
       "artist": "TatshMusicCircle feat. sariyajin",
       "bpm": "178",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -4311,6 +4380,7 @@
       "jacket": "pump/461.jpg",
       "artist": "Masayoshi Minoshima feat. Nomico",
       "bpm": "136",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" },
@@ -4327,6 +4397,7 @@
       "jacket": "pump/395.jpg",
       "artist": "typeMARS",
       "bpm": "175",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -4452,6 +4523,7 @@
       "jacket": "pump/397.jpg",
       "artist": "SHK",
       "bpm": "145",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 19, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" }
@@ -4518,6 +4590,7 @@
       "jacket": "pump/471.jpg",
       "artist": "DM Ashura feat. Skizzo & Hanna Stockzell",
       "bpm": "145",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" },
@@ -4651,6 +4724,7 @@
       "jacket": "pump/462.jpg",
       "artist": "TatshMusicCircle",
       "bpm": "163",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 22, "diffClass": "S", "style": "solo" },
@@ -4857,6 +4931,7 @@
       "jacket": "pump/389.jpg",
       "artist": "SLAM & Nato",
       "bpm": "220",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 21, "diffClass": "S", "style": "solo" },
         { "lvl": 23, "diffClass": "S", "style": "solo" },
@@ -5178,6 +5253,7 @@
       "jacket": "pump/15D0.jpg",
       "artist": "Memme",
       "bpm": "175",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 22, "diffClass": "S", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" },
@@ -5190,6 +5266,7 @@
       "jacket": "pump/15F0.jpg",
       "artist": "MAX",
       "bpm": "157",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 9, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" },
@@ -5203,6 +5280,7 @@
       "jacket": "pump/15F1.jpg",
       "artist": "SHK",
       "bpm": "160",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 9, "diffClass": "S", "style": "solo" },
         { "lvl": 16, "diffClass": "S", "style": "solo" },
@@ -5234,6 +5312,7 @@
       "jacket": "pump/15E5.jpg",
       "artist": "Sanxion7",
       "bpm": "150",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 23, "diffClass": "S", "style": "solo" },
@@ -5391,6 +5470,7 @@
       "jacket": "pump/15E6.jpg",
       "artist": "Yassi Pressman & Nadine Lustre",
       "bpm": "82",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" }
@@ -5477,6 +5557,7 @@
       "jacket": "pump/15F3.jpg",
       "artist": "MAX",
       "bpm": "145",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 7, "diffClass": "S", "style": "solo" },
         { "lvl": 12, "diffClass": "S", "style": "solo" },
@@ -5631,6 +5712,7 @@
       "jacket": "pump/15D3.jpg",
       "artist": "Doin",
       "bpm": "200",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -5645,6 +5727,7 @@
       "jacket": "pump/15F4.jpg",
       "artist": "Nato",
       "bpm": "220",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -5689,6 +5772,7 @@
       "jacket": "pump/15E7.jpg",
       "artist": "Dreamcatcher",
       "bpm": "200",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 19, "diffClass": "S", "style": "solo" },
         { "lvl": 25, "diffClass": "D", "style": "solo" }
@@ -5938,6 +6022,7 @@
       "jacket": "pump/15F5.jpg",
       "artist": "M2U",
       "bpm": "145",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
@@ -5950,6 +6035,7 @@
       "jacket": "pump/15F6.jpg",
       "artist": "MAX",
       "bpm": "170",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" }
@@ -6310,6 +6396,7 @@
       "jacket": "pump/15D2.jpg",
       "artist": "Nato & EXC",
       "bpm": "220",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 25, "diffClass": "S", "style": "solo" },
         { "lvl": 27, "diffClass": "D", "style": "solo" }
@@ -6595,6 +6682,7 @@
       "jacket": "pump/xx-desaparecer.jpg",
       "artist": "Applesoda vs  MAX",
       "bpm": "174",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 22, "diffClass": "S", "style": "solo" },
@@ -6610,6 +6698,7 @@
       "jacket": "pump/xx-nyarlathotep-short-cut.jpg",
       "artist": "Nato",
       "bpm": "200",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 22, "diffClass": "S", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" }
@@ -6621,6 +6710,7 @@
       "jacket": "pump/xx-wedding-crashers-short-cut.jpg",
       "artist": "SHK",
       "bpm": "165",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
@@ -6880,6 +6970,7 @@
       "jacket": "pump/xx-bboom-bboom-full.jpg",
       "artist": "MOMOLAND",
       "bpm": "126",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" }
@@ -6944,6 +7035,7 @@
       "jacket": "pump/F32-revive.jpg",
       "artist": "BanYa Production",
       "bpm": "104",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" }
@@ -6955,6 +7047,7 @@
       "jacket": "pump/D36-revive.jpg",
       "artist": "BanYa Production",
       "bpm": "92-180",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -7081,6 +7174,7 @@
       "jacket": "pump/xx-86-full-song.jpg",
       "artist": "Dasu",
       "bpm": "167",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -7093,6 +7187,7 @@
       "jacket": "pump/xx-xx-opening.jpg",
       "artist": "MAX",
       "bpm": "175",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 3, "diffClass": "S", "style": "solo" },
         { "lvl": 6, "diffClass": "S", "style": "solo" },
@@ -7184,6 +7279,7 @@
       "jacket": "pump/xx-allegro-con-fuoco-full.jpg",
       "artist": "DM Ashura",
       "bpm": "156",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 23, "diffClass": "S", "style": "solo" },
         { "lvl": 25, "diffClass": "D", "style": "solo" },
@@ -7197,6 +7293,7 @@
       "jacket": "pump/xx-meteo-science.jpg",
       "artist": "Paul Bazooka remixed by MAX",
       "bpm": "140",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -7369,6 +7466,7 @@
       "jacket": "pump/16E3.jpg",
       "artist": "SUNMI",
       "bpm": "94",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
@@ -7381,6 +7479,7 @@
       "jacket": "pump/16F5.jpg",
       "artist": "Quree",
       "bpm": "160",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" },
@@ -7435,6 +7534,7 @@
       "jacket": "pump/16E4.jpg",
       "artist": "MAMAMOO",
       "bpm": "124",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 12, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" },
@@ -7599,6 +7699,7 @@
       "jacket": "pump/16F2.jpg",
       "artist": "Sr. Lan Belmont",
       "bpm": "195",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 25, "diffClass": "D", "style": "solo" },
@@ -7651,6 +7752,7 @@
       "jacket": "pump/16D4.jpg",
       "artist": "Cashew",
       "bpm": "190",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 24, "diffClass": "DP", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" },
@@ -7684,6 +7786,7 @@
       "jacket": "pump/16D8.jpg",
       "artist": "(G)I-DLE",
       "bpm": "105",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -7924,6 +8027,7 @@
       "jacket": "pump/16F6.jpg",
       "artist": "SHK",
       "bpm": "120",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 3, "diffClass": "S", "style": "solo" },
         { "lvl": 6, "diffClass": "S", "style": "solo" },
@@ -7981,6 +8085,7 @@
       "jacket": "pump/16E7.jpg",
       "artist": "SEVENTEEN",
       "bpm": "122",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -8030,6 +8135,7 @@
       "jacket": "pump/16E1.jpg",
       "artist": "Apink",
       "bpm": "124",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -8135,6 +8241,7 @@
       "jacket": "pump/16D5.jpg",
       "artist": "Memme",
       "bpm": "185",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
@@ -8149,6 +8256,7 @@
       "jacket": "pump/16E6.jpg",
       "artist": "GFriend",
       "bpm": "170",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
@@ -8257,6 +8365,7 @@
       "jacket": "pump/16E8.jpg",
       "artist": "HONG JINYOUNG",
       "bpm": "139",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -8270,6 +8379,7 @@
       "jacket": "pump/16D9.jpg",
       "artist": "PRODUCE 48",
       "bpm": "128",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 12, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -8282,6 +8392,7 @@
       "jacket": "pump/16F4.jpg",
       "artist": "MAX",
       "bpm": "156",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 4, "diffClass": "S", "style": "solo" },
         { "lvl": 7, "diffClass": "S", "style": "solo" },
@@ -8422,6 +8533,7 @@
       "jacket": "pump/16F9.jpg",
       "artist": "Zircon",
       "bpm": "135",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -8436,6 +8548,7 @@
       "jacket": "pump/16D1.jpg",
       "artist": "Doin remixed by SUNNY",
       "bpm": "200.1",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 19, "diffClass": "S", "style": "solo" },
         { "lvl": 23, "diffClass": "S", "style": "solo" },
@@ -8471,6 +8584,7 @@
       "jacket": "pump/16D7.jpg",
       "artist": "Dreamcatcher",
       "bpm": "190",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 22, "diffClass": "S", "style": "solo" },
@@ -8683,6 +8797,7 @@
       "jacket": "pump/16C9.jpg",
       "artist": "Yakikaze & Cashew feat. KuTiNA",
       "bpm": "128",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 12, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
@@ -8842,6 +8957,7 @@
       "jacket": "pump/16B6.jpg",
       "artist": "SLAM & Nato",
       "bpm": "220",
+      "flags": ["cut:1"],
       "charts": [
         { "lvl": 21, "diffClass": "S", "style": "solo" },
         { "lvl": 24, "diffClass": "S", "style": "solo" },
@@ -8854,6 +8970,7 @@
       "jacket": "pump/16B7.jpg",
       "artist": "Doin",
       "bpm": "200",
+      "flags": ["cut:3"],
       "charts": [
         { "lvl": 19, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },
@@ -8869,6 +8986,7 @@
       "jacket": "pump/16B8.jpg",
       "artist": "Dreamcatcher",
       "bpm": "196",
+      "flags": ["cut:4"],
       "charts": [
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo" },

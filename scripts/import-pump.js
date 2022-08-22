@@ -32,11 +32,15 @@ async function main() {
   let lvlMax = 0;
   const ui = reportQueueStatusLive();
 
+  const cuts = db
+    .prepare("select * from cut where cutId <> 2 order by sortOrder")
+    .all();
   const songs = db
     .prepare(
       `SELECT
 song.songId saIndex,
-song.internalTitle name
+song.internalTitle name,
+song.cutId
 FROM
 song
 WHERE
@@ -239,6 +243,10 @@ order by version.sortOrder desc`);
     song.artist = getArtistForSong(song.saIndex);
     song.bpm = getBpmForSong(song.saIndex);
     song.saIndex = song.saIndex.toString();
+    if (song.cutId !== 2) {
+      song.flags = ["cut:" + song.cutId];
+    }
+    delete song.cutId;
   }
 
   for (const chart of charts) {
@@ -264,7 +272,7 @@ order by version.sortOrder desc`);
     meta: {
       styles: ["solo", "coop"],
       difficulties,
-      flags: [],
+      flags: cuts.map((cut) => "cut:" + cut.cutId),
       lvlMax,
       lastUpdated: Date.now(),
     },
@@ -281,6 +289,10 @@ order by version.sortOrder desc`);
         solo: "Solo",
         coop: "Co-Op",
         ...diffTranslit,
+        ...cuts.reduce((acc, cut) => {
+          acc["cut:" + cut.cutId] = cut.internalTitle;
+          return acc;
+        }, {}),
         $abbr: {
           S: "S",
           HDB: "HDB",
