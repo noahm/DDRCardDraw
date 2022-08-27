@@ -12,6 +12,7 @@ const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const packageJson = require("./package.json");
 
@@ -39,6 +40,7 @@ module.exports = function (env = {}, argv = {}) {
     },
     optimization: {
       minimize: isProd,
+      minimizer: ["...", new CssMinimizerPlugin()],
     },
     performance: {
       hints: false,
