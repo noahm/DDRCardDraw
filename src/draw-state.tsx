@@ -31,18 +31,9 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
   dataSetName: readDataSetFromUrl(),
   lastDrawFailed: false,
   async loadGameData(dataSetName: string) {
-    const state = get();
-    if (
-      state.drawings.length &&
-      !confirm("This will clear all drawn songs so far. Confirm?")
-    ) {
-      return state.gameData;
-    }
-
     set({
       gameData: null,
       dataSetName,
-      drawings: [],
     });
     writeDataSetToUrl(dataSetName);
 
@@ -96,9 +87,9 @@ interface Props {
 }
 
 function readDataSetFromUrl() {
-  const [key, dataSet] = window.location.hash.slice(1).split("-");
-  if (key === "game") {
-    return dataSet;
+  const hash = window.location.hash.slice(1);
+  if (hash.startsWith("game-")) {
+    return hash.slice(5);
   }
   return "";
 }
