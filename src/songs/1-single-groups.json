@@ -12,11 +12,11 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1664598578877
+    "lastUpdated": 1661626976777
   },
   "defaults": {
     "style": "solo",
-    "difficulties": ["full"],
+    "difficulties": ["hard", "wild"],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lowerLvlBound": 18,
     "upperLvlBound": 25,
@@ -24,7 +24,7 @@
   },
   "i18n": {
     "en": {
-      "name": "Full Swiss (5)",
+      "name": "Singles Groups",
       "solo": "Solo",
       "basic": "Basic",
       "easy": "Easy",
@@ -13633,169 +13633,6 @@
           "lvl": 20,
           "diffClass": "team",
           "author": "Black Cat"
-        }
-      ]
-    },
-    {
-      "saIndex": "549",
-      "name": "Dance",
-      "artist": "Sophon",
-      "genre": "Drum & Bass",
-      "bpm": "87-174",
-      "jacket": "smx/Dance.jpg",
-      "charts": [
-        {
-          "style": "solo",
-          "lvl": 4,
-          "diffClass": "basic",
-          "author": "Hyman Dorcas"
-        },
-        {
-          "style": "solo",
-          "lvl": 11,
-          "diffClass": "easy",
-          "author": "C. Writer"
-        },
-        {
-          "style": "solo",
-          "lvl": 18,
-          "diffClass": "hard",
-          "author": "C. Writer"
-        },
-        {
-          "style": "solo",
-          "lvl": 23,
-          "diffClass": "wild",
-          "author": "J. Bratt"
-        },
-        {
-          "style": "solo",
-          "lvl": 21,
-          "diffClass": "dual",
-          "author": "C. Writer"
-        },
-        {
-          "style": "solo",
-          "lvl": 25,
-          "diffClass": "full",
-          "author": "J. Fred"
-        },
-        { "style": "team", "lvl": 18, "diffClass": "team", "author": "S. Fry" }
-      ]
-    },
-    {
-      "saIndex": "550",
-      "name": "Only You",
-      "artist": "DEXTER KING feat. Alexis Donn",
-      "genre": "House",
-      "bpm": "126",
-      "jacket": "smx/OnlyYou.jpg",
-      "charts": [
-        {
-          "style": "solo",
-          "lvl": 4,
-          "diffClass": "basic",
-          "author": "Tata Ugo"
-        },
-        { "style": "solo", "lvl": 9, "diffClass": "easy", "author": "S. Fry" },
-        { "style": "solo", "lvl": 15, "diffClass": "hard", "author": "S. Fry" },
-        {
-          "style": "solo",
-          "lvl": 19,
-          "diffClass": "wild",
-          "author": "J. Fred"
-        },
-        { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "Dr. J" },
-        { "style": "solo", "lvl": 17, "diffClass": "full", "author": "S. Fry" },
-        { "style": "team", "lvl": 14, "diffClass": "team", "author": "S. Fry" }
-      ]
-    },
-    {
-      "saIndex": "551",
-      "name": "STOP! & Go",
-      "artist": "Onyx",
-      "genre": "Electronic",
-      "bpm": "137",
-      "jacket": "smx/STOP!GO.jpg",
-      "charts": [
-        { "style": "solo", "lvl": 5, "diffClass": "basic", "author": "Pylon" },
-        {
-          "style": "solo",
-          "lvl": 10,
-          "diffClass": "easy",
-          "author": "Large Cone"
-        },
-        {
-          "style": "solo",
-          "lvl": 16,
-          "diffClass": "hard",
-          "author": "Traffic Guy"
-        },
-        { "style": "solo", "lvl": 21, "diffClass": "wild", "author": "Signal" },
-        {
-          "style": "solo",
-          "lvl": 18,
-          "diffClass": "dual",
-          "author": "Yellow Light"
-        },
-        { "style": "solo", "lvl": 24, "diffClass": "full", "author": "JBEAN" },
-        {
-          "style": "team",
-          "lvl": 22,
-          "diffClass": "team",
-          "author": "K. Turn & The Bean"
-        }
-      ]
-    },
-    {
-      "saIndex": "552",
-      "name": "Vodka",
-      "artist": "The Royal Eurobeat Orchestra of Bazookistan",
-      "genre": "Eurobeat",
-      "bpm": "160",
-      "jacket": "smx/Vodka.jpg",
-      "charts": [
-        {
-          "style": "solo",
-          "lvl": 3,
-          "diffClass": "basic",
-          "author": "Vitamin V"
-        },
-        {
-          "style": "solo",
-          "lvl": 8,
-          "diffClass": "easy",
-          "author": "GinTastic"
-        },
-        {
-          "style": "solo",
-          "lvl": 16,
-          "diffClass": "hard",
-          "author": "Empress Indigo"
-        },
-        {
-          "style": "solo",
-          "lvl": 21,
-          "diffClass": "wild",
-          "author": "Gin Toxic"
-        },
-        {
-          "style": "solo",
-          "lvl": 19,
-          "diffClass": "dual",
-          "author": "Gin Toxic"
-        },
-        {
-          "style": "solo",
-          "lvl": 20,
-          "diffClass": "full",
-          "author": "Gin Toxic"
-        },
-        {
-          "style": "team",
-          "lvl": 21,
-          "diffClass": "team",
-          "author": "Gin & Vodka"
         }
       ]
     }
