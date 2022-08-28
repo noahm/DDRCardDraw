@@ -14,6 +14,7 @@ import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
+import { TournamentModeToggle } from "./tournament-mode/tournament-mode-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
 
 export function Header() {
@@ -28,6 +29,7 @@ export function Header() {
         text={t("credits")}
       />
       <ThemeToggle />
+      <TournamentModeToggle />
       <LastUpdate />
     </Menu>
   );

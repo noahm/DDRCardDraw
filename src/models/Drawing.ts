@@ -26,6 +26,9 @@ export interface PocketPick extends PlayerActionOnChart {
 
 export interface Drawing {
   id: number;
+  title?: string;
+  player1?: string;
+  player2?: string;
   charts: DrawnChart[];
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;

@@ -14,6 +14,7 @@ import createStore from "zustand";
 import shallow from "zustand/shallow";
 
 interface DrawState {
+  tournamentMode: boolean;
   gameData: GameData | null;
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
@@ -22,14 +23,19 @@ interface DrawState {
   loadGameData(dataSetName: string): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
+  toggleTournamentMode(): void;
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
+  tournamentMode: true,
   gameData: null,
   fuzzySearch: null,
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
+  toggleTournamentMode() {
+    set((prev) => ({ tournamentMode: !prev.tournamentMode }));
+  },
   async loadGameData(dataSetName: string) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
