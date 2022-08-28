@@ -1,6 +1,6 @@
 import { Song } from "./SongData";
 
-export interface DrawnChart {
+export interface EligibleChart {
   name: string;
   jacket: string;
   nameTranslation?: string;
@@ -12,7 +12,10 @@ export interface DrawnChart {
   hasShock: boolean;
   flags: string[];
   song: Song;
-  id?: number;
+}
+
+export interface DrawnChart extends EligibleChart {
+  id: number;
 }
 
 export interface PlayerActionOnChart {
@@ -21,7 +24,7 @@ export interface PlayerActionOnChart {
 }
 
 export interface PocketPick extends PlayerActionOnChart {
-  pick: DrawnChart;
+  pick: EligibleChart;
 }
 
 export interface Drawing {

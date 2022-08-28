@@ -3,7 +3,7 @@ import { useConfigState } from "./config-state";
 import { useDrawState } from "./draw-state";
 import { SongCard } from "./song-card";
 import styles from "./drawing-list.css";
-import { DrawnChart } from "./models/Drawing";
+import { EligibleChart } from "./models/Drawing";
 import {
   HTMLSelect,
   Navbar,
@@ -14,9 +14,8 @@ import {
 import { useIntl } from "./hooks/useIntl";
 import { useIsNarrow } from "./hooks/useMediaQuery";
 import { atom, useAtom } from "jotai";
-import { Tooltip2 } from "@blueprintjs/popover2";
 
-function songKeyFromChart(chart: DrawnChart) {
+function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
 }
 

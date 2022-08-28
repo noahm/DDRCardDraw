@@ -1,9 +1,9 @@
 import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
-import { DrawnChart, Drawing } from "./models/Drawing";
+import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 
-export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
+export function getDrawnChart(currentSong: Song, chart: Chart): EligibleChart {
   return {
     name: currentSong.name,
     jacket: chart.jacket || currentSong.jacket,
@@ -75,7 +75,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     weights,
   } = configData;
 
-  const validCharts: Record<string, Array<DrawnChart>> = {};
+  const validCharts: Record<string, Array<EligibleChart>> = {};
   times(gameData.meta.lvlMax, (n) => {
     validCharts[n.toString()] = [];
   });
@@ -146,10 +146,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const randomChart = selectableCharts[randomIndex];
 
     if (randomChart) {
-      // Give this random chart a unique id within this drawing
-      randomChart.id = drawnCharts.length;
       // Save it in our list of drawn charts
-      drawnCharts.push(randomChart);
+      drawnCharts.push({
+        ...randomChart,
+        // Give this random chart a unique id within this drawing
+        id: drawnCharts.length,
+      });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
       if (!difficultyCounts[chosenDifficulty]) {
