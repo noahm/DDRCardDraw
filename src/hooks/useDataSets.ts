@@ -1,12 +1,6 @@
 import shallow from "zustand/shallow";
 import { useDrawState } from "../draw-state";
-
-export const available = process.env.DATA_FILES as unknown as Array<{
-  name: string;
-  display: string;
-}>;
-
-available.sort((a, b) => (a.display < b.display ? -1 : 1));
+import { availableGameData as available } from "../utils";
 
 export function useDataSets() {
   const [dataSetName, loadGameData, dataIsLoaded] = useDrawState(

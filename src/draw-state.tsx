@@ -5,7 +5,7 @@ import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
 import { GameData, Song } from "./models/SongData";
 import i18nData from "./assets/i18n.json";
-import { detectedLanguage } from "./utils";
+import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
@@ -28,12 +28,23 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
   gameData: null,
   fuzzySearch: null,
   drawings: [],
-  dataSetName: readDataSetFromUrl(),
+  dataSetName: "",
   lastDrawFailed: false,
   async loadGameData(dataSetName: string) {
+    const state = get();
+    if (state.dataSetName === dataSetName && state.gameData) {
+      return state.gameData;
+    }
+    if (
+      state.drawings.length &&
+      !confirm("This will clear all songs drawn so far. Confirm?")
+    ) {
+      return state.gameData;
+    }
     set({
       gameData: null,
       dataSetName,
+      drawings: [],
     });
     writeDataSetToUrl(dataSetName);
 
@@ -86,12 +97,21 @@ interface Props {
   children: ReactNode;
 }
 
-function readDataSetFromUrl() {
+function getInitialDataSet(defaultDataName: string) {
   const hash = window.location.hash.slice(1);
   if (hash.startsWith("game-")) {
-    return hash.slice(5);
+    const targetData = hash.slice(5);
+    if (availableGameData.some((d) => d.name === targetData)) {
+      return targetData;
+    }
   }
-  return "";
+  if (
+    defaultDataName &&
+    availableGameData.some((d) => d.name === defaultDataName)
+  ) {
+    return defaultDataName;
+  }
+  return availableGameData[0].name;
 }
 
 function writeDataSetToUrl(game: string) {
@@ -106,18 +126,12 @@ function writeDataSetToUrl(game: string) {
 }
 
 export function DrawStateManager(props: Props) {
-  const [dataSetName, gameData, hasDrawings, loadGameData] = useDrawState(
-    (state) => [
-      state.dataSetName,
-      state.gameData,
-      !!state.drawings.length,
-      state.loadGameData,
-    ],
+  const [gameData, hasDrawings, loadGameData] = useDrawState(
+    (state) => [state.gameData, !!state.drawings.length, state.loadGameData],
     shallow
   );
   useEffect(() => {
-    const dataToLoad = dataSetName || props.defaultDataSet;
-    loadGameData(dataToLoad);
+    loadGameData(getInitialDataSet(props.defaultDataSet));
   }, []);
 
   const allStrings = i18nData as Record<string, Record<string, string>>;
