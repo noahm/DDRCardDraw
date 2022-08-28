@@ -12,6 +12,7 @@ const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const packageJson = require("./package.json");
 
@@ -19,6 +20,7 @@ module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
   const version = env.version || "custom";
+  const zip = !!env.zip;
 
   return {
     mode: isProd ? "production" : "development",
@@ -38,6 +40,7 @@ module.exports = function (env = {}, argv = {}) {
     },
     optimization: {
       minimize: isProd,
+      minimizer: ["...", new CssMinimizerPlugin()],
     },
     performance: {
       hints: false,
@@ -183,12 +186,15 @@ module.exports = function (env = {}, argv = {}) {
     ].concat(
       !isProd
         ? [new ReactRefreshPlugin()]
-        : [
+        : zip
+        ? [
             new ZipPlugin({
               path: __dirname,
               filename: `DDRCardDraw-${version}.zip`,
               exclude: "__offline_serviceworker",
             }),
+          ]
+        : [
             new OfflinePlugin({
               ServiceWorker: {
                 events: true,
