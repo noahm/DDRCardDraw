@@ -5,6 +5,13 @@
   align-items: center;
   font-size: 200%;
   padding-top: 8px;
+  position: relative;
+}
+
+.sendButton {
+  position: absolute;
+  top: 0;
+  right: 5px;
 }
 
 .title {

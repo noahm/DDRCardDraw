@@ -1,4 +1,6 @@
-import { EditableText } from "@blueprintjs/core";
+import { Button, EditableText, Icon } from "@blueprintjs/core";
+import { IconNames } from "@blueprintjs/icons";
+import { Tooltip2 } from "@blueprintjs/popover2";
 import { useCallback } from "react";
 import { useForceUpdate } from "../hooks/useForceUpdate";
 import { Drawing } from "../models/Drawing";
@@ -7,6 +9,11 @@ import styles from "./drawing-labels.css";
 export function SetLabels({ drawing }: { drawing: Drawing }) {
   return (
     <div className={styles.headers}>
+      <Tooltip2 content="Send to stream" className={styles.sendButton}>
+        <Button minimal>
+          <Icon icon={IconNames.SendTo} />
+        </Button>
+      </Tooltip2>
       <div className={styles.title}>
         <BoundEditable
           placeholder="Tournament Round"
