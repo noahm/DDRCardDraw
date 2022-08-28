@@ -53,7 +53,6 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     );
     set({
       gameData: data,
-      drawings: [],
       fuzzySearch: new FuzzySearch(
         data.songs,
         [
