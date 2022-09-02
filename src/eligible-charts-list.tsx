@@ -14,7 +14,7 @@ import {
 import { useIntl } from "./hooks/useIntl";
 import { useIsNarrow } from "./hooks/useMediaQuery";
 import { atom, useAtom } from "jotai";
-import { Tooltip2 } from "@blueprintjs/popover2";
+import { DiffHistogram } from "./histogram";
 
 function songKeyFromChart(chart: DrawnChart) {
   return `${chart.name}:${chart.artist}`;
@@ -57,15 +57,13 @@ export function EligibleChartsList() {
   }
   let charts = Array.from(eligibleCharts(configState, gameData.songs));
   const songs = new Set<string>();
-  const cards = charts
-    .map((chart, index) => {
-      songs.add(songKeyFromChart(chart));
-      if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
-        return null;
-      }
-      return <SongCard chart={chart} key={index} />;
-    })
-    .filter(Boolean);
+  const filteredCharts = charts.filter((chart) => {
+    songs.add(songKeyFromChart(chart));
+    if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
+      return false;
+    }
+    return true;
+  });
 
   return (
     <>
@@ -86,7 +84,12 @@ export function EligibleChartsList() {
           </NavbarGroup>
         )}
       </Navbar>
-      <div className={styles.chartList}>{cards}</div>
+      <DiffHistogram charts={filteredCharts} />
+      <div className={styles.chartList}>
+        {filteredCharts.map((chart, idx) => (
+          <SongCard chart={chart} key={idx} />
+        ))}
+      </div>
     </>
   );
 }
