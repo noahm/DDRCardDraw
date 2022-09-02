@@ -66,6 +66,7 @@ export class CountingSet<T> implements ReadonlyCountingSet<T> {
     return this.items.size;
   }
 
+  /** returns new count */
   public add(item: T, amt = 1) {
     const next = this.get(item) + amt;
     this.items.set(item, next);
@@ -80,7 +81,11 @@ export class CountingSet<T> implements ReadonlyCountingSet<T> {
     return this.items.has(item);
   }
 
-  public entries() {
+  public values() {
+    return this.items.keys();
+  }
+
+  public valuesWithCount() {
     return this.items.entries();
   }
 
@@ -93,5 +98,6 @@ export interface ReadonlyCountingSet<T> {
   size: number;
   get(item: T): number;
   has(item: T): boolean;
-  entries(): IterableIterator<[T, number]>;
+  values(): IterableIterator<T>;
+  valuesWithCount(): IterableIterator<[T, number]>;
 }
