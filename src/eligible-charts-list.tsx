@@ -14,7 +14,7 @@ import {
 import { useIntl } from "./hooks/useIntl";
 import { useIsNarrow } from "./hooks/useMediaQuery";
 import { atom, useAtom } from "jotai";
-import { Tooltip2 } from "@blueprintjs/popover2";
+import { useDeferredValue, useMemo } from "react";
 
 function songKeyFromChart(chart: DrawnChart) {
   return `${chart.name}:${chart.artist}`;
@@ -46,26 +46,30 @@ export function EligibleChartsListFilter() {
 }
 
 export function EligibleChartsList() {
-  const [currentTab] = useAtom(currentTabAtom);
   const gameData = useDrawState((s) => s.gameData);
-  const configState = useConfigState();
+  const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
+  const configState = useDeferredValue(useConfigState());
   const isNarrow = useIsNarrow();
   const isDisplayFiltered = currentTab !== "all";
 
   if (!gameData) {
     return <Spinner />;
   }
-  let charts = Array.from(eligibleCharts(configState, gameData.songs));
+  const charts = Array.from(eligibleCharts(configState, gameData.songs));
   const songs = new Set<string>();
-  const cards = charts
-    .map((chart, index) => {
-      songs.add(songKeyFromChart(chart));
-      if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
-        return null;
-      }
-      return <SongCard chart={chart} key={index} />;
-    })
-    .filter(Boolean);
+  const cards = useMemo(
+    () =>
+      charts
+        .map((chart, index) => {
+          songs.add(songKeyFromChart(chart));
+          if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
+            return null;
+          }
+          return <SongCard chart={chart} key={index} />;
+        })
+        .filter(Boolean),
+    [currentTab, charts]
+  );
 
   return (
     <>
