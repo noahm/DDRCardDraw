@@ -1,4 +1,4 @@
-import { DrawStateContext } from "./draw-state";
+import { useDrawState } from "./draw-state";
 import { useContext } from "react";
 import styles from "./SuspectSongs.css";
 
@@ -6,7 +6,7 @@ const allAscii = /^[a-zA-Z .'?&!-_0-9]+$/;
 const anyAscii = /[a-zA-Z]/;
 
 export function SuspectSongs() {
-  const { gameData } = useContext(DrawStateContext);
+  const gameData = useDrawState((s) => s.gameData);
   if (!gameData) {
     return null;
   }

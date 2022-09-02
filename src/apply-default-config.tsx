@@ -1,23 +1,21 @@
 import { GameData } from "./models/SongData";
-import { useEffect, useContext } from "react";
-import { ConfigStateContext } from "./config-state";
+import { useEffect } from "react";
+import { useConfigState } from "./config-state";
 
 interface Props {
   defaults?: GameData["defaults"];
 }
 
 export function ApplyDefaultConfig({ defaults }: Props) {
-  const { update } = useContext(ConfigStateContext);
   useEffect(() => {
     if (!defaults) {
       return;
     }
 
-    update((config) => {
+    useConfigState.setState(() => {
       const { lowerLvlBound, upperLvlBound, flags, difficulties, style } =
         defaults;
       return {
-        ...config,
         lowerBound: lowerLvlBound,
         upperBound: upperLvlBound,
         flags: new Set(flags),
@@ -25,6 +23,6 @@ export function ApplyDefaultConfig({ defaults }: Props) {
         style,
       };
     });
-  }, [defaults, update]);
+  }, [defaults]);
   return null;
 }

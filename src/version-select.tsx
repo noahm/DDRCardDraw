@@ -1,9 +1,9 @@
-import { HTMLSelect } from "@blueprintjs/core";
+import { HTMLSelect, Spinner, SpinnerSize } from "@blueprintjs/core";
+import { ReactNode, useEffect, useState } from "react";
+import { useDrawState } from "./draw-state";
 import { useDataSets } from "./hooks/useDataSets";
-import { useIntl } from "./hooks/useIntl";
 
 export function VersionSelect() {
-  const { t } = useIntl();
   const { current, available, loadData } = useDataSets();
   return (
     <HTMLSelect
@@ -17,4 +17,33 @@ export function VersionSelect() {
       ))}
     </HTMLSelect>
   );
+}
+
+export function DataLoadingSpinner() {
+  const dataIsLoading = useDrawState((s) => !s.gameData);
+  if (!dataIsLoading) {
+    return null;
+  }
+  return (
+    <DelayRender>
+      <Spinner size={SpinnerSize.SMALL} /> Loading game...
+    </DelayRender>
+  );
+}
+
+interface DelayProps {
+  children: ReactNode;
+}
+
+function DelayRender(props: DelayProps) {
+  const [display, setDisplay] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplay(true);
+    }, 200);
+  }, []);
+  if (display) {
+    return <>{props.children}</>;
+  }
+  return null;
 }
