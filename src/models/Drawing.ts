@@ -7,7 +7,8 @@ export interface EligibleChart {
   artist: string;
   artistTranslation?: string;
   bpm: string;
-  difficultyClass: string;
+  diffAbbr: string;
+  diffColor: string;
   level: number;
   hasShock: boolean;
   flags: string[];

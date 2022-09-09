@@ -51,7 +51,11 @@ export function SongSearch(props: Props) {
           item.song,
           item.chart === "none" || !item.chart
             ? undefined
-            : getDrawnChart(item.song, item.chart)
+            : getDrawnChart(
+                useDrawState.getState().gameData!,
+                item.song,
+                item.chart
+              )
         )
       }
       items={items}
@@ -61,7 +65,6 @@ export function SongSearch(props: Props) {
       className={styles.songSearch}
       itemRenderer={(data, itemProps) => (
         <SearchResult
-          config={config}
           data={data}
           selected={itemProps.modifiers.active}
           handleClick={itemProps.handleClick}

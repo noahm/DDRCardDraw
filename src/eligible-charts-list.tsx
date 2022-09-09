@@ -55,7 +55,7 @@ export function EligibleChartsList() {
   if (!gameData) {
     return <Spinner />;
   }
-  const charts = Array.from(eligibleCharts(configState, gameData.songs));
+  const charts = Array.from(eligibleCharts(configState, gameData));
   const songs = new Set<string>();
   const cards = useMemo(
     () =>

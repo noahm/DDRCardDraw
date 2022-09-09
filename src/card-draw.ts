@@ -2,8 +2,14 @@ import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
+import { getDifficultyColor } from "./hooks/useDifficultyColor";
+import { getDiffAbbr } from "./game-data-utils";
 
-export function getDrawnChart(currentSong: Song, chart: Chart): EligibleChart {
+export function getDrawnChart(
+  gameData: GameData,
+  currentSong: Song,
+  chart: Chart
+): EligibleChart {
   return {
     name: currentSong.name,
     jacket: chart.jacket || currentSong.jacket,
@@ -11,11 +17,13 @@ export function getDrawnChart(currentSong: Song, chart: Chart): EligibleChart {
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
-    difficultyClass: chart.diffClass,
     level: chart.lvl,
     hasShock: !!chart.shock,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
+    // Fill in variant data per game
+    diffAbbr: getDiffAbbr(gameData, chart.diffClass),
+    diffColor: getDifficultyColor(gameData, chart.diffClass),
   };
 }
 
@@ -40,8 +48,8 @@ export function chartIsValid(config: ConfigState, chart: Chart): boolean {
   );
 }
 
-export function* eligibleCharts(config: ConfigState, songs: Song[]) {
-  for (const currentSong of songs) {
+export function* eligibleCharts(config: ConfigState, gameData: GameData) {
+  for (const currentSong of gameData.songs) {
     if (!songIsValid(config, currentSong)) {
       continue;
     }
@@ -53,7 +61,7 @@ export function* eligibleCharts(config: ConfigState, songs: Song[]) {
       }
 
       // add chart to deck
-      yield getDrawnChart(currentSong, chart);
+      yield getDrawnChart(gameData, currentSong, chart);
     }
   }
 }
@@ -80,7 +88,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     validCharts[n.toString()] = [];
   });
 
-  for (const chart of eligibleCharts(configData, gameData.songs)) {
+  for (const chart of eligibleCharts(configData, gameData)) {
     validCharts[chart.level].push(chart);
   }
 

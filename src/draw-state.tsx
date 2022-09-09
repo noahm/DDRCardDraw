@@ -91,17 +91,22 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
       return false;
     }
 
-    set((prevState) => ({
-      drawings: [drawing, ...prevState.drawings].filter(Boolean),
-      lastDrawFailed: false,
-    }));
+    set((prevState) => {
+      drawing.id = prevState.drawings.length;
+      return {
+        drawings: [drawing, ...prevState.drawings].filter(Boolean),
+        lastDrawFailed: false,
+      };
+    });
     return true;
   },
   injectRemoteDrawing(drawing) {
-    drawing.id = get().drawings.length;
-    set((prevState) => ({
-      drawings: [drawing, ...prevState.drawings].filter(Boolean),
-    }));
+    set((prevState) => {
+      drawing.id = prevState.drawings.length;
+      return {
+        drawings: [drawing, ...prevState.drawings].filter(Boolean),
+      };
+    });
   },
 }));
 
