@@ -14,7 +14,7 @@ import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
-import { RemotePeerMenu } from "./tournament-mode/remote-peer-menu";
+import { RemotePeerMainMenu } from "./tournament-mode/remote-peer-menu";
 import { TournamentModeToggle } from "./tournament-mode/tournament-mode-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
 
@@ -31,7 +31,7 @@ export function Header() {
       />
       <ThemeToggle />
       <TournamentModeToggle />
-      <RemotePeerMenu />
+      <RemotePeerMainMenu />
       <LastUpdate />
     </Menu>
   );

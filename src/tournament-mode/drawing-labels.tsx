@@ -1,27 +1,33 @@
-import { Button, EditableText, Icon } from "@blueprintjs/core";
+import { Button, EditableText, Icon, Menu, MenuItem } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
-import { Tooltip2 } from "@blueprintjs/popover2";
+import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
 import { useCallback } from "react";
 import { useDrawing } from "../drawing-context";
-import { useForceUpdate } from "../hooks/useForceUpdate";
-import { Drawing } from "../models/Drawing";
 import styles from "./drawing-labels.css";
+import { CurrentPeersMenu } from "./remote-peer-menu";
 import { useRemotePeers } from "./remote-peers";
 
 export function SetLabels() {
-  const drawing = useDrawing();
-  const remotePeers = useRemotePeers((s) => s.remotePeers);
+  const getDrawing = useDrawing((s) => s.getAsSerializable);
+  const hasRemotePeers = useRemotePeers((s) => !!s.remotePeers.length);
   const sendDrawing = useRemotePeers((s) => s.sendDrawing);
+
+  const remotesMenu = (
+    <Menu>
+      <MenuItem disabled text="Choose a peer" />
+      <CurrentPeersMenu
+        onClickPeer={(peerId) => sendDrawing(peerId, getDrawing())}
+      />
+    </Menu>
+  );
   return (
     <div className={styles.headers}>
       <Tooltip2 content="Send to stream" className={styles.sendButton}>
-        <Button
-          disabled={!remotePeers.length}
-          minimal
-          onClick={() => sendDrawing(drawing.getAsSerializable())}
-        >
-          <Icon icon={IconNames.SendTo} />
-        </Button>
+        <Popover2 content={remotesMenu}>
+          <Button disabled={!hasRemotePeers} minimal>
+            <Icon icon={IconNames.SendTo} />
+          </Button>
+        </Popover2>
       </Tooltip2>
       <div className={styles.title}>
         <EditableDrawingField placeholder="Tournament Round" field="title" />

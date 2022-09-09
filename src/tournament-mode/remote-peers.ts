@@ -5,7 +5,6 @@ import { Drawing } from "../models/Drawing";
 import { useDrawState } from "../draw-state";
 import { toaster } from "../toaster";
 import { Intent } from "@blueprintjs/core";
-import p from "@blueprintjs/icons/lib/esm/generated/16px/paths/blank";
 
 interface SharedDrawingMessage {
   type: "drawing";
@@ -23,12 +22,12 @@ interface RemotePeerStore {
   remotePeers: Array<DataConnection>;
   connect(peerId: string | null): Promise<void>;
   setName(newName: string): Promise<void>;
-  sendDrawing(drawing: Drawing): void;
+  sendDrawing(peerId: string, drawing: Drawing): void;
 }
 
 function genPin() {
-  let pin = Math.floor(Math.random() * 1000).toString(10);
-  while (pin.length < 3) {
+  let pin = Math.floor(Math.random() * 10000).toString(10);
+  while (pin.length < 4) {
     pin = "0" + pin;
   }
   return pin;
@@ -183,9 +182,9 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
       });
     });
   },
-  sendDrawing(drawing) {
+  sendDrawing(peerId, drawing) {
     const state = get();
-    const targetPeer = state.remotePeers[0];
+    const targetPeer = state.remotePeers.find((p) => p.peer === peerId);
     if (targetPeer) {
       targetPeer.send(<SharedDrawingMessage>{
         type: "drawing",
