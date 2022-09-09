@@ -40,6 +40,7 @@ interface DrawingContext extends Drawing {
     player: 1 | 2,
     chart?: EligibleChart
   ): void;
+  getAsSerializable(): Drawing;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {
@@ -116,6 +117,14 @@ const {
       set({
         [key]: arr,
       });
+    },
+    getAsSerializable() {
+      return Object.entries(get()).reduce((ret: Partial<Drawing>, [k, v]) => {
+        if (typeof v !== "function") {
+          ret[k as keyof Drawing] = v;
+        }
+        return ret;
+      }, {}) as Drawing;
     },
   }),
   { drawing: stubDrawing }

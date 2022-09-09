@@ -24,6 +24,7 @@ interface DrawState {
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
   toggleTournamentMode(): void;
+  injectRemoteDrawing(d: Drawing): void;
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
@@ -95,6 +96,12 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
       lastDrawFailed: false,
     }));
     return true;
+  },
+  injectRemoteDrawing(drawing) {
+    drawing.id = get().drawings.length;
+    set((prevState) => ({
+      drawings: [drawing, ...prevState.drawings].filter(Boolean),
+    }));
   },
 }));
 

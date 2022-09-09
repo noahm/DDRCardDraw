@@ -29,7 +29,7 @@ function DrawnSetImpl({ drawing }: Props) {
         style={{ backgroundImage }}
         className={styles.drawing}
       >
-        {tournamentMode && <SetLabels drawing={drawing} />}
+        {tournamentMode && <SetLabels />}
         <ChartList />
       </div>
     </DrawingProvider>

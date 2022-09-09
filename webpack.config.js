@@ -30,7 +30,7 @@ module.exports = function (env = {}, argv = {}) {
       : {
           static: "./dist",
           hot: true,
-          // host: "0.0.0.0"
+          host: "0.0.0.0",
         },
     entry: "./src/index.tsx",
     output: {
