@@ -1,6 +1,5 @@
 import createStore from "zustand";
-import { Peer as PeerClass, DataConnection } from "peerjs";
-import "peerjs";
+import { Peer, DataConnection } from "peerjs";
 import { Drawing } from "../models/Drawing";
 import { useDrawState } from "../draw-state";
 import { toaster } from "../toaster";
@@ -13,12 +12,10 @@ interface SharedDrawingMessage {
 
 type PeerMessages = SharedDrawingMessage;
 
-declare var Peer: typeof PeerClass;
-
 interface RemotePeerStore {
   instanceName: string;
   instancePin: string;
-  thisPeer: PeerClass | null;
+  thisPeer: Peer | null;
   remotePeers: Array<DataConnection>;
   connect(peerId: string | null): Promise<void>;
   setName(newName: string): Promise<void>;
@@ -45,7 +42,7 @@ function peerId(name: string, pin: string) {
   return `ddr-tools ${name}_${pin}`;
 }
 
-function bindPeer(peer: PeerClass, resolve: Function, reject: Function) {
+function bindPeer(peer: Peer, resolve: Function, reject: Function) {
   let errored = false;
   peer.on("open", (id) => {
     console.log("connected to peer signaling server with id", id);

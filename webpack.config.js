@@ -23,8 +23,9 @@ module.exports = function (env = {}, argv = {}) {
   const zip = !!env.zip;
 
   return {
+    target: "browserslist: >1%",
     mode: isProd ? "production" : "development",
-    devtool: isProd ? false : "eval-cheap-module-source-map",
+    devtool: isProd ? false : "inline-cheap-module-source-map",
     devServer: !serve
       ? undefined
       : {
@@ -54,6 +55,9 @@ module.exports = function (env = {}, argv = {}) {
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".json"],
+      alias: {
+        peerjs$: resolve(__dirname, "node_modules/peerjs/dist/peerjs.esm.js"),
+      },
     },
     module: {
       rules: [
@@ -62,12 +66,12 @@ module.exports = function (env = {}, argv = {}) {
           test: /\.tsx?$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader?cacheDirectory",
+            loader: "babel-loader",
             options: {
               presets: [
                 [
                   require("@babel/preset-env"),
-                  { targets: { browsers: [">2%"] } },
+                  { targets: { browsers: [">1%"] } },
                 ],
                 require("@babel/preset-typescript"),
               ],
@@ -82,6 +86,7 @@ module.exports = function (env = {}, argv = {}) {
                 require("@babel/plugin-transform-react-jsx-source"),
                 !isProd ? require("react-refresh/babel") : null,
               ].filter(Boolean),
+              cacheDirectory: true,
             },
           },
         },
