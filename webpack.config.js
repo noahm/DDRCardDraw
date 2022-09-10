@@ -36,7 +36,6 @@ module.exports = function (env = {}, argv = {}) {
     entry: "./src/index.tsx",
     output: {
       filename: "[name].[chunkhash:5].js",
-      chunkFilename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist"),
     },
     optimization: {
@@ -155,8 +154,7 @@ module.exports = function (env = {}, argv = {}) {
         ),
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash:5].css",
-        chunkFilename: "[id].[chunkhash:5].js",
+        filename: "[name].[chunkhash:5].css",
       }),
       new FaviconsWebpackPlugin({
         logo: "./src/assets/ddr-tools-256.png",
