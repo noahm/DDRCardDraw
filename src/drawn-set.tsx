@@ -71,4 +71,6 @@ function ChartFromContext({ chartId }: { chartId: number }) {
   );
 }
 
-export const DrawnSet = memo(DrawnSetImpl);
+const DrawnSet = memo(DrawnSetImpl);
+
+export default DrawnSet;

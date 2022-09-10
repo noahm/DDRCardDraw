@@ -44,13 +44,13 @@ export function RemotePeerMainMenu() {
         }}
       />
       {!!peers.remotePeers.length && <MenuDivider />}
-      <MenuItem text="Current connections" disabled />
-      <CurrentPeersMenu disabled />
+      <CurrentPeersMenu disabled header="Current connections" />
     </MenuItem>
   );
 }
 
 interface PeerMenuProps {
+  header?: string;
   disabled?: boolean;
   onClickPeer?(peerId: string): void;
   emptyState?: JSX.Element;
@@ -60,6 +60,7 @@ export function CurrentPeersMenu({
   disabled,
   onClickPeer,
   emptyState,
+  header,
 }: PeerMenuProps) {
   const peers = useRemotePeers((s) => s.remotePeers);
 
@@ -69,6 +70,7 @@ export function CurrentPeersMenu({
 
   return (
     <>
+      {!!header && <MenuItem text={header} disabled />}
       {peers.map((dc) => (
         <MenuItem
           key={dc.peer}

@@ -14,8 +14,8 @@ export function SetLabels() {
 
   const remotesMenu = (
     <Menu>
-      <MenuItem disabled text="Choose a peer" />
       <CurrentPeersMenu
+        header="Choose a peer"
         onClickPeer={(peerId) => sendDrawing(peerId, getDrawing())}
       />
     </Menu>

@@ -1,5 +1,5 @@
 import createStore from "zustand";
-import { Peer, DataConnection } from "peerjs";
+import type { Peer, DataConnection } from "peerjs";
 import { Drawing } from "../models/Drawing";
 import { useDrawState } from "../draw-state";
 import { toaster } from "../toaster";
@@ -164,20 +164,29 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
       });
     });
   },
-  setName(newName) {
+  async setName(newName) {
     if (!newName) {
-      set({});
-    }
-    return new Promise((res, rej) => {
-      const newPin = genPin();
-      const peer = new Peer(peerId(newName, newPin));
-      bindPeer(peer, res, rej);
+      const state = get();
+      if (state.thisPeer) {
+        state.thisPeer.destroy();
+      }
       set({
-        instanceName: newName,
-        instancePin: newPin,
-        thisPeer: peer,
+        thisPeer: null,
+        instanceName: "",
       });
-    });
+    } else {
+      const peerLib = await import("peerjs");
+      return new Promise((res, rej) => {
+        const newPin = genPin();
+        const peer = new peerLib.Peer(peerId(newName, newPin));
+        bindPeer(peer, res, rej);
+        set({
+          instanceName: newName,
+          instancePin: newPin,
+          thisPeer: peer,
+        });
+      });
+    }
   },
   sendDrawing(peerId, drawing) {
     const state = get();

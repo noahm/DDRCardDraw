@@ -1,5 +1,5 @@
 import { FormattedMessage } from "react-intl";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useTransition } from "react";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { useDrawState } from "../draw-state";
@@ -23,7 +23,7 @@ import {
 import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { EligibleChartsListFilter } from "../eligible-charts-list";
+import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import shallow from "zustand/shallow";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
@@ -75,10 +75,7 @@ export function HeaderControls() {
 
   function handleDraw() {
     useConfigState.setState({ showPool: false });
-    const couldDraw = drawSongs(useConfigState.getState());
-    if (couldDraw !== !lastDrawFailed) {
-      setLastDrawFailed(!couldDraw);
-    }
+    drawSongs(useConfigState.getState());
   }
 
   function openSettings() {
