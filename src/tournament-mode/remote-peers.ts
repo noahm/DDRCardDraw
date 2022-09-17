@@ -16,7 +16,7 @@ interface RemotePeerStore {
   instanceName: string;
   instancePin: string;
   thisPeer: Peer | null;
-  remotePeers: Array<DataConnection>;
+  remotePeers: Map<string, DataConnection>;
   connect(peerId: string | null): Promise<void>;
   setName(newName: string): Promise<void>;
   sendDrawing(peerId: string, drawing: Drawing): void;
@@ -43,7 +43,6 @@ function peerId(name: string, pin: string) {
 }
 
 function bindPeer(peer: Peer, resolve: Function, reject: Function) {
-  let errored = false;
   peer.on("open", (id) => {
     console.log("connected to peer signaling server with id", id);
     toaster.show({
@@ -57,19 +56,14 @@ function bindPeer(peer: Peer, resolve: Function, reject: Function) {
     cleanup();
   });
   peer.on("disconnected", () => {
-    if (!errored) {
-      console.log("disconnected from signaling server, reconnecting in 1s");
-      setTimeout(() => {
+    console.log("disconnected from signaling server, reconnecting in 1s");
+    setTimeout(() => {
+      if (peer.disconnected && !peer.destroyed) {
         peer.reconnect();
-      }, 1000);
-    } else {
-      console.log(
-        "disconnected from signaling server due to error, not reconnecting"
-      );
-    }
+      }
+    }, 1000);
   });
   peer.on("error", (err) => {
-    errored = true;
     console.log("likely fatal error from peerjs", err);
     cleanup();
     reject();
@@ -90,7 +84,7 @@ function bindPeer(peer: Peer, resolve: Function, reject: Function) {
   function cleanup() {
     useRemotePeers.setState({
       thisPeer: null,
-      remotePeers: [],
+      remotePeers: new Map(),
     });
   }
 }
@@ -116,25 +110,24 @@ function bindPeerConn(conn: DataConnection) {
     }
   });
 
-  useRemotePeers.setState((prev) => ({
-    remotePeers: [...prev.remotePeers, conn],
-  }));
+  useRemotePeers.setState((prev) => {
+    const rp = new Map(prev.remotePeers);
+    rp.set(conn.peer, conn);
+    return {
+      remotePeers: rp,
+    };
+  });
 
   function removePeer() {
-    let found = false;
-    const newRemotes = useRemotePeers
-      .getState()
-      .remotePeers.filter((remote) => {
-        if (remote !== conn) {
-          return false;
-        }
-        found = true;
-        return true;
+    toaster.show({
+      message: `Remote peer ${displayFromPeerId(conn.peer)} disconnected`,
+      intent: Intent.WARNING,
+    });
+    const rp = new Map(useRemotePeers.getState().remotePeers);
+    if (rp.delete(conn.peer)) {
+      useRemotePeers.setState({
+        remotePeers: rp,
       });
-    if (found) {
-      useRemotePeers.setState((prev) => ({
-        remotePeers: newRemotes,
-      }));
     }
   }
 }
@@ -143,7 +136,7 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
   instanceName: "",
   instancePin: "",
   thisPeer: null,
-  remotePeers: [],
+  remotePeers: new Map(),
   connect(peerId) {
     const { thisPeer } = get();
     if (!thisPeer) {
@@ -190,7 +183,7 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
   },
   sendDrawing(peerId, drawing) {
     const state = get();
-    const targetPeer = state.remotePeers.find((p) => p.peer === peerId);
+    const targetPeer = state.remotePeers.get(peerId);
     if (targetPeer) {
       targetPeer.send(<SharedDrawingMessage>{
         type: "drawing",

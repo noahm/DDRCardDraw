@@ -1,8 +1,16 @@
-import { MenuDivider, MenuItem } from "@blueprintjs/core";
+import {
+  Tag,
+  FormGroup,
+  MenuItem,
+  Icon,
+  Collapse,
+  H3,
+} from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
+import { InputButtonPair } from "../controls/input-button-pair";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
 
-export function RemotePeerMainMenu() {
+export function RemotePeerControls() {
   const peers = useRemotePeers();
 
   let displayName = "(set a name)";
@@ -10,42 +18,62 @@ export function RemotePeerMainMenu() {
     displayName = displayFromPeerId(peers.thisPeer.id);
   }
 
-  const setRemoteName = () => {
-    const newName = prompt("set remote name", peers.instanceName);
-    if (newName !== null) peers.setName(newName);
-  };
-
-  if (!peers.thisPeer) {
-    return (
-      <MenuItem
-        icon={IconNames.GLOBE_NETWORK}
-        text="Pick Remote Name"
-        onClick={setRemoteName}
+  let coreControl: JSX.Element;
+  if (peers.thisPeer) {
+    coreControl = (
+      <InputButtonPair
+        key="connectedName"
+        disableInput
+        value={displayFromPeerId(peers.thisPeer.id)}
+        buttonLabel="Disconnect"
+        onClick={() => peers.setName("")}
+      />
+    );
+  } else {
+    coreControl = (
+      <InputButtonPair
+        placeholder="pick host name"
+        onClick={peers.setName}
+        buttonLabel="Listen"
+        enterKeyHint="go"
       />
     );
   }
 
   return (
-    <MenuItem
-      icon={IconNames.GLOBE_NETWORK}
-      onClick={setRemoteName}
-      text={`Available as ${displayName}`}
-    >
-      <MenuItem
-        disabled={!peers.thisPeer}
-        text="Connect to..."
-        onClick={() => {
-          const peerId = prompt(
-            'Enter remote name to connect to, in the form of "name#123"'
-          );
-          if (peerId) {
-            peers.connect(peerId);
-          }
-        }}
-      />
-      {!!peers.remotePeers.length && <MenuDivider />}
-      <CurrentPeersMenu disabled header="Current connections" />
-    </MenuItem>
+    <>
+      <H3>Networking</H3>
+      <FormGroup label="Hostname" subLabel="">
+        {coreControl}
+      </FormGroup>
+      <Collapse isOpen={!!peers.thisPeer}>
+        <FormGroup label="Connect to peer">
+          <InputButtonPair
+            placeholder="enter host name"
+            buttonLabel="Connect"
+            enterKeyHint="go"
+            onClick={(v, input) => {
+              peers.connect(v);
+              input.value = "";
+              input.blur();
+            }}
+          />
+        </FormGroup>
+        <FormGroup label="Current Peers">
+          {peers.remotePeers.size > 0 ? (
+            Array.from(peers.remotePeers).map(([_, p]) => (
+              <Tag minimal large key={p.peer} onRemove={() => p.close()}>
+                {displayFromPeerId(p.peer)}
+              </Tag>
+            ))
+          ) : (
+            <span>
+              <Icon icon={IconNames.HeartBroken} /> No connections
+            </span>
+          )}
+        </FormGroup>
+      </Collapse>
+    </>
   );
 }
 
@@ -64,14 +92,14 @@ export function CurrentPeersMenu({
 }: PeerMenuProps) {
   const peers = useRemotePeers((s) => s.remotePeers);
 
-  if (!peers.length) {
+  if (!peers.size) {
     return emptyState || null;
   }
 
   return (
     <>
       {!!header && <MenuItem text={header} disabled />}
-      {peers.map((dc) => (
+      {Array.from(peers).map(([_, dc]) => (
         <MenuItem
           key={dc.peer}
           text={displayFromPeerId(dc.peer)}

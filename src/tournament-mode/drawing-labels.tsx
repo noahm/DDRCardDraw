@@ -9,7 +9,7 @@ import { useRemotePeers } from "./remote-peers";
 
 export function SetLabels() {
   const getDrawing = useDrawing((s) => s.getAsSerializable);
-  const hasRemotePeers = useRemotePeers((s) => !!s.remotePeers.length);
+  const hasRemotePeers = useRemotePeers((s) => !!s.remotePeers.size);
   const sendDrawing = useRemotePeers((s) => s.sendDrawing);
 
   const remotesMenu = (

@@ -1,21 +1,17 @@
-import { MenuItem } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
-import { FormattedMessage } from "react-intl";
+import { Checkbox } from "@blueprintjs/core";
 import { useDrawState } from "../draw-state";
+import { useIntl } from "../hooks/useIntl";
 
 export function TournamentModeToggle() {
   const toggle = useDrawState((s) => s.toggleTournamentMode);
+  const enabled = useDrawState((s) => s.tournamentMode);
+  const { t } = useIntl();
 
   return (
-    <MenuItem
-      icon={IconNames.CROWN}
-      text={
-        <FormattedMessage
-          id="toggle-tournament-mode"
-          defaultMessage="Toggle Tournament Mode"
-        />
-      }
-      onClick={toggle}
+    <Checkbox
+      checked={enabled}
+      onChange={toggle}
+      label={t("toggleTournamentMode", undefined, "Show tournament labels")}
     />
   );
 }

@@ -1,5 +1,5 @@
 import { FormattedMessage } from "react-intl";
-import { useMemo, useState, useTransition } from "react";
+import { useMemo, useState } from "react";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { useDrawState } from "../draw-state";
@@ -19,12 +19,15 @@ import {
   Switch,
   NavbarDivider,
   DrawerSize,
+  Divider,
 } from "@blueprintjs/core";
 import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import shallow from "zustand/shallow";
+import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
+import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -188,7 +191,7 @@ function Controls() {
               <EligibleChartsListFilter />
             </FormGroup>
           )}
-          <hr />
+          <Divider />
         </>
       )}
       <div className={isNarrow ? undefined : styles.inlineControls}>
@@ -306,6 +309,7 @@ function Controls() {
           }}
           label={t("orderByAction")}
         />
+        <TournamentModeToggle />
         <Checkbox
           id="weighted"
           checked={useWeights}
@@ -317,6 +321,7 @@ function Controls() {
         />
         {useWeights && <WeightsControls high={upperBound} low={lowerBound} />}
       </FormGroup>
+      <RemotePeerControls />
     </form>
   );
 }
