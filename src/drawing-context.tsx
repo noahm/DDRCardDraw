@@ -11,7 +11,7 @@ import {
 } from "./models/Drawing";
 
 const stubDrawing: Drawing = {
-  id: -1,
+  id: "stub",
   charts: [],
   bans: [],
   pocketPicks: [],

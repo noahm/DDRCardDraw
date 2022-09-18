@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
@@ -26,11 +27,6 @@ export function getDrawnChart(
     diffColor: getDifficultyColor(gameData, chart.diffClass),
   };
 }
-
-/**
- * Used to give each drawing an auto-incrementing id
- */
-let drawingID = 0;
 
 /** returns true if song matches configured flags */
 export function songIsValid(config: ConfigState, song: Song): boolean {
@@ -181,9 +177,8 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   }
 
-  drawingID += 1;
   return {
-    id: drawingID,
+    id: nanoid(10),
     charts: drawnCharts,
     bans: [],
     protects: [],

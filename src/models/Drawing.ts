@@ -29,7 +29,7 @@ export interface PocketPick extends PlayerActionOnChart {
 }
 
 export interface Drawing {
-  id: number;
+  id: string;
   title?: string;
   player1?: string;
   player2?: string;

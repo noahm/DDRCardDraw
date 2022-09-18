@@ -92,7 +92,6 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     }
 
     set((prevState) => {
-      drawing.id = prevState.drawings.length;
       return {
         drawings: [drawing, ...prevState.drawings].filter(Boolean),
         lastDrawFailed: false,
@@ -102,7 +101,6 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
   },
   injectRemoteDrawing(drawing) {
     set((prevState) => {
-      drawing.id = prevState.drawings.length;
       return {
         drawings: [drawing, ...prevState.drawings].filter(Boolean),
       };
