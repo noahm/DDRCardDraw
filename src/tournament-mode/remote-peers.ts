@@ -19,7 +19,8 @@ interface RemotePeerStore {
   remotePeers: Map<string, DataConnection>;
   connect(peerId: string | null): Promise<void>;
   setName(newName: string): Promise<void>;
-  sendDrawing(peerId: string, drawing: Drawing): void;
+  /** sends to the first peer if not specified */
+  sendDrawing(drawing: Drawing, peerId?: string): void;
 }
 
 function genPin() {
@@ -184,14 +185,28 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
       });
     }
   },
-  sendDrawing(peerId, drawing) {
+  sendDrawing(drawing, peerId) {
     const state = get();
-    const targetPeer = state.remotePeers.get(peerId);
-    if (targetPeer) {
-      targetPeer.send(<SharedDrawingMessage>{
-        type: "drawing",
-        body: drawing,
-      });
+    let targetPeer: DataConnection;
+    if (!peerId) {
+      const result = state.remotePeers.values().next();
+      if (!result.done) {
+        targetPeer = result.value;
+      } else {
+        console.error("tried to send drawing when no peers are connected");
+        return;
+      }
+    } else {
+      const foundPeer = state.remotePeers.get(peerId);
+      if (!foundPeer) {
+        console.error("tried to send to non-existent peer");
+        return;
+      }
+      targetPeer = foundPeer;
     }
+    targetPeer.send(<SharedDrawingMessage>{
+      type: "drawing",
+      body: drawing,
+    });
   },
 }));

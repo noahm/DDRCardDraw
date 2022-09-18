@@ -23,12 +23,10 @@ export function NetworkingActions() {
     <Menu>
       <MenuItem
         icon={IconNames.SendMessage}
-        text={hasMultiplePeers ? "Send to..." : "Send to peer"}
+        text="Send to peer"
+        onClick={() => sendDrawing(getDrawing())}
       />
-      <MenuItem
-        icon={IconNames.Changes}
-        text={hasMultiplePeers ? "Start sync with..." : "Start sync with peer"}
-      />
+      <MenuItem icon={IconNames.Changes} text="Start sync with peer" />
     </Menu>
   );
 
@@ -37,7 +35,7 @@ export function NetworkingActions() {
       <Menu>
         <MenuItem icon={IconNames.SendMessage} text="Send to...">
           <CurrentPeersMenu
-            onClickPeer={(peerId) => sendDrawing(peerId, getDrawing())}
+            onClickPeer={(peerId) => sendDrawing(getDrawing(), peerId)}
           />
         </MenuItem>
         <MenuItem icon={IconNames.Changes} text="Start sync with...">
