@@ -20,6 +20,9 @@ import {
   NavbarDivider,
   DrawerSize,
   Divider,
+  Tabs,
+  Tab,
+  Icon,
 } from "@blueprintjs/core";
 import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
@@ -28,6 +31,7 @@ import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import shallow from "zustand/shallow";
 import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
 import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
+import { useRemotePeers } from "../tournament-mode/remote-peers";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -94,13 +98,10 @@ export function HeaderControls() {
         size={isNarrow ? DrawerSize.LARGE : "500px"}
         onClose={() => setSettingsOpen(false)}
         title={
-          <FormattedMessage
-            id="settings.title"
-            defaultMessage="Card Draw Options"
-          />
+          <FormattedMessage id="settings.title" defaultMessage="Settings" />
         }
       >
-        <Controls />
+        <ControlsDrawer />
       </Drawer>
       {!isNarrow && (
         <>
@@ -133,7 +134,27 @@ export function HeaderControls() {
   );
 }
 
-function Controls() {
+function ControlsDrawer() {
+  const isConnected = useRemotePeers((r) => !!r.thisPeer);
+  return (
+    <div className={styles.drawer}>
+      <Tabs id="settings" large>
+        <Tab id="general" panel={<GeneralSettings />}>
+          <Icon icon={IconNames.Settings} /> General
+        </Tab>
+        <Tab id="network" panel={<RemotePeerControls />}>
+          <Icon
+            icon={IconNames.GlobeNetwork}
+            intent={isConnected ? "success" : "none"}
+          />{" "}
+          Networking
+        </Tab>
+      </Tabs>
+    </div>
+  );
+}
+
+function GeneralSettings() {
   const { t } = useIntl();
   const [dataSetName, gameData] = useDrawState(
     (s) => [s.dataSetName, s.gameData],
@@ -180,7 +201,7 @@ function Controls() {
   };
 
   return (
-    <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+    <>
       {isNarrow && (
         <>
           <FormGroup>
@@ -321,7 +342,6 @@ function Controls() {
         />
         {useWeights && <WeightsControls high={upperBound} low={lowerBound} />}
       </FormGroup>
-      <RemotePeerControls />
-    </form>
+    </>
   );
 }

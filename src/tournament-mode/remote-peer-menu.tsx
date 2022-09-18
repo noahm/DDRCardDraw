@@ -42,8 +42,10 @@ export function RemotePeerControls() {
 
   return (
     <>
-      <H3>Networking</H3>
-      <FormGroup label="Hostname" subLabel="">
+      <FormGroup
+        label="Hostname"
+        subLabel="Connect from other devices using this name"
+      >
         {coreControl}
       </FormGroup>
       <Collapse isOpen={!!peers.thisPeer}>

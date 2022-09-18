@@ -8,12 +8,6 @@
   position: relative;
 }
 
-.sendButton {
-  position: absolute;
-  top: 0;
-  right: 5px;
-}
-
 .title {
   display: flex;
   flex-direction: row;

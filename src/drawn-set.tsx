@@ -5,6 +5,7 @@ import { Drawing } from "./models/Drawing";
 import { useDrawState } from "./draw-state";
 import { SetLabels } from "./tournament-mode/drawing-labels";
 import { DrawingProvider, useDrawing } from "./drawing-context";
+import { NetworkingActions } from "./tournament-mode/networking-actions";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -30,6 +31,7 @@ function DrawnSetImpl({ drawing }: Props) {
         className={styles.drawing}
       >
         {tournamentMode && <SetLabels />}
+        <NetworkingActions />
         <ChartList />
       </div>
     </DrawingProvider>

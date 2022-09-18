@@ -14,3 +14,7 @@ body:global(.bp4-dark) {
   overflow: hidden;
   flex-wrap: wrap;
 }
+
+.drawing {
+  position: relative;
+}

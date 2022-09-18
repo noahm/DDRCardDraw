@@ -19,7 +19,7 @@ export function InputButtonPair(props: Props) {
   return (
     <ControlGroup>
       <InputGroup
-        disabled={props.disableInput}
+        readOnly={props.disableInput}
         inputRef={inputRef}
         placeholder={props.placeholder}
         value={props.value}

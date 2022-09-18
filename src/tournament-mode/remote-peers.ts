@@ -119,10 +119,13 @@ function bindPeerConn(conn: DataConnection) {
   });
 
   function removePeer() {
-    toaster.show({
-      message: `Remote peer ${displayFromPeerId(conn.peer)} disconnected`,
-      intent: Intent.WARNING,
-    });
+    toaster.show(
+      {
+        message: `Remote peer ${displayFromPeerId(conn.peer)} disconnected`,
+        intent: Intent.WARNING,
+      },
+      "removePeer"
+    );
     const rp = new Map(useRemotePeers.getState().remotePeers);
     if (rp.delete(conn.peer)) {
       useRemotePeers.setState({
