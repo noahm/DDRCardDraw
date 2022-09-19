@@ -247,7 +247,7 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
     }
     initShareWithPeer(REMOTE_STORE_TYPE, drawingStore, targetPeer);
     drawingStore.setState({
-      __syncPeers: [targetPeer],
+      __syncPeer: targetPeer,
     });
   },
 }));

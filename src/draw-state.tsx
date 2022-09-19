@@ -109,14 +109,10 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
       const newDrawings = prevState.drawings.filter((d) => d.id !== drawing.id);
       newDrawings.unshift(drawing);
       if (currentDrawing) {
-        drawing.__syncPeers = currentDrawing.__syncPeers;
+        drawing.__syncPeer = currentDrawing.__syncPeer;
       }
       if (syncWithPeer) {
-        if (!drawing.__syncPeers) {
-          drawing.__syncPeers = [syncWithPeer];
-        } else {
-          drawing.__syncPeers.push(syncWithPeer);
-        }
+        drawing.__syncPeer = syncWithPeer;
       }
       return {
         drawings: newDrawings,

@@ -136,6 +136,7 @@ export function HeaderControls() {
 
 function ControlsDrawer() {
   const isConnected = useRemotePeers((r) => !!r.thisPeer);
+  const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
   return (
     <div className={styles.drawer}>
       <Tabs id="settings" large>
@@ -144,7 +145,7 @@ function ControlsDrawer() {
         </Tab>
         <Tab id="network" panel={<RemotePeerControls />}>
           <Icon
-            icon={IconNames.GlobeNetwork}
+            icon={hasPeers ? IconNames.ThirdParty : IconNames.GlobeNetwork}
             intent={isConnected ? "success" : "none"}
           />{" "}
           Networking

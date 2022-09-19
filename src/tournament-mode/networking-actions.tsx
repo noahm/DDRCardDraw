@@ -9,7 +9,7 @@ import { useRemotePeers } from "./remote-peers";
 
 export function NetworkingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
-  const hasSyncPeers = useDrawing((s) => !!s.__syncPeers?.length);
+  const hasSyncPeer = useDrawing((s) => !!s.__syncPeer);
   const isConnected = useRemotePeers((s) => !!s.thisPeer);
   const hasRemotePeers = useRemotePeers((s) => s.remotePeers.size > 0);
   const hasMultiplePeers = useRemotePeers((s) => s.remotePeers.size > 1);
@@ -65,7 +65,7 @@ export function NetworkingActions() {
   return (
     <>
       <div className={styles.sendButton}>
-        {hasSyncPeers && <Icon icon={IconNames.Changes} intent="success" />}
+        {hasSyncPeer && <Icon icon={IconNames.Changes} intent="success" />}
         {hasRemotePeers ? (
           <Popover2 content={remoteActions}>{button}</Popover2>
         ) : (

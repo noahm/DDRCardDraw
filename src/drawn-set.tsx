@@ -1,35 +1,11 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import { Drawing } from "./models/Drawing";
-import { useDrawState } from "./draw-state";
 import { SetLabels } from "./tournament-mode/drawing-labels";
-import {
-  DrawingProvider,
-  useDrawing,
-  useDrawingStore,
-} from "./drawing-context";
+import { DrawingProvider, useDrawing } from "./drawing-context";
 import { NetworkingActions } from "./tournament-mode/networking-actions";
-import { syncStoreWithPeer } from "./zustand/shared-zustand";
-
-function SyncWithPeers() {
-  const drawing = useDrawing();
-  const store = useDrawingStore();
-  useEffect(() => {
-    if (drawing.__syncPeers) {
-      const cleanups = drawing.__syncPeers.map((peer) =>
-        syncStoreWithPeer(store, peer)
-      );
-      return () => {
-        for (const cleanup of cleanups) {
-          cleanup();
-        }
-      };
-    }
-  }, [drawing.__syncPeers]);
-
-  return null;
-}
+import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);

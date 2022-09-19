@@ -38,6 +38,6 @@ export interface Drawing {
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
-  /** __ prefix sign to avoid serializing this field */
-  __syncPeers?: Array<DataConnection>;
+  /** __ prefix avoids serializing this field during sync */
+  __syncPeer?: DataConnection;
 }

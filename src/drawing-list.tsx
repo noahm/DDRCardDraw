@@ -36,9 +36,9 @@ export function DrawingList() {
           title="DDR Tools"
           description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
           action={
-            <Callout intent="primary" icon={IconNames.WRENCH}>
-              DDR Card Draw now has a new name and and URL. Look for more new
-              features coming soon!
+            <Callout intent="primary" icon={IconNames.ThirdParty}>
+              Networking features now available! Start with the new tab in
+              settings.
             </Callout>
           }
         />
