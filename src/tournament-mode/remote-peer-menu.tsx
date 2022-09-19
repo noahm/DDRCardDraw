@@ -81,7 +81,7 @@ export function RemotePeerControls() {
 
 interface PeerMenuProps {
   header?: string;
-  disabled?: boolean;
+  disabled?: boolean | Array<string>;
   onClickPeer?(peerId: string): void;
   emptyState?: JSX.Element;
 }
@@ -98,6 +98,16 @@ export function CurrentPeersMenu({
     return emptyState || null;
   }
 
+  let allDisabled = false;
+  if (disabled === true) {
+    allDisabled = true;
+  }
+
+  let disableById: string[] = [];
+  if (Array.isArray(disabled)) {
+    disableById = disabled;
+  }
+
   return (
     <>
       {!!header && <MenuItem text={header} disabled />}
@@ -105,7 +115,7 @@ export function CurrentPeersMenu({
         <MenuItem
           key={dc.peer}
           text={displayFromPeerId(dc.peer)}
-          disabled={disabled}
+          disabled={allDisabled || disableById.includes(dc.peer)}
           onClick={onClickPeer && (() => onClickPeer(dc.peer))}
         />
       ))}

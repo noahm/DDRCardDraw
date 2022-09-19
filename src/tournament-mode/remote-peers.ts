@@ -9,6 +9,7 @@ import {
   initShareWithPeer,
 } from "../zustand/shared-zustand";
 import type { DrawingContext } from "../drawing-context";
+import { firstOf } from "../utils";
 
 interface SharedDrawingMessage {
   type: "drawing";
@@ -206,13 +207,12 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
     const state = get();
     let targetPeer: DataConnection;
     if (!peerId) {
-      const result = state.remotePeers.values().next();
-      if (!result.done) {
-        targetPeer = result.value;
-      } else {
+      const result = firstOf(state.remotePeers.values());
+      if (!result) {
         console.error("tried to send drawing when no peers are connected");
         return;
       }
+      targetPeer = result;
     } else {
       const foundPeer = state.remotePeers.get(peerId);
       if (!foundPeer) {
@@ -230,13 +230,12 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
     const state = get();
     let targetPeer: DataConnection;
     if (!peerId) {
-      const result = state.remotePeers.values().next();
-      if (!result.done) {
-        targetPeer = result.value;
-      } else {
+      const result = firstOf(state.remotePeers.values());
+      if (!result) {
         console.error("tried to send drawing when no peers are connected");
         return;
       }
+      targetPeer = result;
     } else {
       const foundPeer = state.remotePeers.get(peerId);
       if (!foundPeer) {
