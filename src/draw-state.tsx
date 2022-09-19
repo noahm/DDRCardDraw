@@ -12,6 +12,8 @@ import { IntlProvider } from "./intl-provider";
 import * as qs from "query-string";
 import createStore from "zustand";
 import shallow from "zustand/shallow";
+import { DataConnection } from "peerjs";
+import { initShareWithPeer } from "./zustand/shared-zustand";
 
 interface DrawState {
   tournamentMode: boolean;
@@ -24,7 +26,7 @@ interface DrawState {
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
   toggleTournamentMode(): void;
-  injectRemoteDrawing(d: Drawing): void;
+  injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
@@ -99,10 +101,25 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     });
     return true;
   },
-  injectRemoteDrawing(drawing) {
+  injectRemoteDrawing(drawing, syncWithPeer) {
     set((prevState) => {
+      const currentDrawing = prevState.drawings.find(
+        (d) => d.id === drawing.id
+      );
+      const newDrawings = prevState.drawings.filter((d) => d.id !== drawing.id);
+      newDrawings.unshift(drawing);
+      if (currentDrawing) {
+        drawing.__syncPeers = currentDrawing.__syncPeers;
+      }
+      if (syncWithPeer) {
+        if (!drawing.__syncPeers) {
+          drawing.__syncPeers = [syncWithPeer];
+        } else {
+          drawing.__syncPeers.push(syncWithPeer);
+        }
+      }
       return {
-        drawings: [drawing, ...prevState.drawings].filter(Boolean),
+        drawings: newDrawings,
       };
     });
   },

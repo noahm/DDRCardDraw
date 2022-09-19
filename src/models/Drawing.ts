@@ -1,3 +1,4 @@
+import { DataConnection } from "peerjs";
 import { Song } from "./SongData";
 
 export interface EligibleChart {
@@ -37,4 +38,6 @@ export interface Drawing {
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
+  /** __ prefix sign to avoid serializing this field */
+  __syncPeers?: Array<DataConnection>;
 }

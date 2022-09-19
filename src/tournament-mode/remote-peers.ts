@@ -1,9 +1,14 @@
-import createStore from "zustand";
+import createStore, { StoreApi } from "zustand";
 import type { Peer, DataConnection } from "peerjs";
 import { Drawing } from "../models/Drawing";
 import { useDrawState } from "../draw-state";
 import { toaster } from "../toaster";
 import { Intent } from "@blueprintjs/core";
+import {
+  acceptIncomingSyncedStores,
+  initShareWithPeer,
+} from "../zustand/shared-zustand";
+import type { DrawingContext } from "../drawing-context";
 
 interface SharedDrawingMessage {
   type: "drawing";
@@ -11,6 +16,8 @@ interface SharedDrawingMessage {
 }
 
 type PeerMessages = SharedDrawingMessage;
+
+const REMOTE_STORE_TYPE = "DRAWING";
 
 interface RemotePeerStore {
   instanceName: string;
@@ -21,6 +28,8 @@ interface RemotePeerStore {
   setName(newName: string): Promise<void>;
   /** sends to the first peer if not specified */
   sendDrawing(drawing: Drawing, peerId?: string): void;
+  /** syncs with first peer if not specified */
+  beginSyncWithPeer(drawing: StoreApi<DrawingContext>, peerId?: string): void;
 }
 
 function genPin() {
@@ -110,6 +119,14 @@ function bindPeerConn(conn: DataConnection) {
         console.log("received unknown data from remote peer", data, conn.peer);
     }
   });
+
+  acceptIncomingSyncedStores<Drawing>(
+    REMOTE_STORE_TYPE,
+    conn,
+    (initialState) => {
+      useDrawState.getState().injectRemoteDrawing(initialState, conn);
+    }
+  );
 
   useRemotePeers.setState((prev) => {
     const rp = new Map(prev.remotePeers);
@@ -207,6 +224,30 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
     targetPeer.send(<SharedDrawingMessage>{
       type: "drawing",
       body: drawing,
+    });
+  },
+  beginSyncWithPeer(drawingStore, peerId) {
+    const state = get();
+    let targetPeer: DataConnection;
+    if (!peerId) {
+      const result = state.remotePeers.values().next();
+      if (!result.done) {
+        targetPeer = result.value;
+      } else {
+        console.error("tried to send drawing when no peers are connected");
+        return;
+      }
+    } else {
+      const foundPeer = state.remotePeers.get(peerId);
+      if (!foundPeer) {
+        console.error("tried to send to non-existent peer");
+        return;
+      }
+      targetPeer = foundPeer;
+    }
+    initShareWithPeer(REMOTE_STORE_TYPE, drawingStore, targetPeer);
+    drawingStore.setState({
+      __syncPeers: [targetPeer],
     });
   },
 }));

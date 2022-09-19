@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { draw } from "./card-draw";
 import { useConfigState } from "./config-state";
-import { createContextualStore } from "./contextual-zustand";
+import { createContextualStore } from "./zustand/contextual-zustand";
 import { useDrawState } from "./draw-state";
 import {
   Drawing,
@@ -9,6 +9,7 @@ import {
   PlayerActionOnChart,
   PocketPick,
 } from "./models/Drawing";
+import { SerializibleStore } from "./zustand/shared-zustand";
 
 const stubDrawing: Drawing = {
   id: "stub",
@@ -19,12 +20,12 @@ const stubDrawing: Drawing = {
 };
 
 interface DrawingProviderProps {
-  drawing: Drawing;
+  initialDrawing: Drawing;
   children?: ReactNode;
 }
 
-interface DrawingContext extends Drawing {
-  updateDrawing: Function;
+export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
+  updateDrawing: (d: Partial<Drawing>) => void;
   redrawChart(chartId: number): void;
   resetChart(chartId: number): void;
   /**
@@ -40,7 +41,6 @@ interface DrawingContext extends Drawing {
     player: 1 | 2,
     chart?: EligibleChart
   ): void;
-  getAsSerializable(): Drawing;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {
@@ -57,10 +57,11 @@ function keyFromAction(action: "ban" | "protect" | "pocket") {
 const {
   Provider: DrawingProvider,
   useContextValue: useDrawing,
+  StoreIndex: allDrawingStores,
   useStore: useDrawingStore,
 } = createContextualStore<DrawingContext, DrawingProviderProps>(
   (props, set, get) => ({
-    ...props.drawing,
+    ...props.initialDrawing,
     updateDrawing: set,
     resetChart(chartId) {
       set((d) => ({
@@ -118,16 +119,21 @@ const {
         [key]: arr,
       });
     },
-    getAsSerializable() {
+    serializeSyncFields() {
       return Object.entries(get()).reduce((ret: Partial<Drawing>, [k, v]) => {
-        if (typeof v !== "function") {
-          ret[k as keyof Drawing] = v;
+        if (typeof v === "function") {
+          return ret;
         }
+        if (k.startsWith("__")) {
+          return ret;
+        }
+        ret[k as keyof Drawing] = v;
         return ret;
       }, {}) as Drawing;
     },
   }),
-  { drawing: stubDrawing }
+  (p) => p.initialDrawing.id,
+  { initialDrawing: stubDrawing }
 );
 
-export { useDrawing, useDrawingStore, DrawingProvider };
+export { useDrawing, DrawingProvider, allDrawingStores, useDrawingStore };

@@ -1,9 +1,15 @@
 import { EditableText } from "@blueprintjs/core";
 import { useCallback } from "react";
+import { useDrawState } from "../draw-state";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 
 export function SetLabels() {
+  const tournamentMode = useDrawState((s) => s.tournamentMode);
+  if (!tournamentMode) {
+    return null;
+  }
+
   return (
     <div className={styles.headers}>
       <div className={styles.title}>
