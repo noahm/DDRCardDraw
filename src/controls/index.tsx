@@ -142,6 +142,7 @@ function Controls() {
   const configState = useConfigState();
   const {
     useWeights,
+    constrainPocketPicks,
     orderByAction,
     lowerBound,
     upperBound,
@@ -308,6 +309,15 @@ function Controls() {
             updateState({ orderByAction: reorder });
           }}
           label={t("orderByAction")}
+        />
+        <Checkbox
+          id="constrainPocketPicks"
+          checked={constrainPocketPicks}
+          onChange={(e) => {
+            const constrainPocketPicks = !!e.currentTarget.checked;
+            updateState({ constrainPocketPicks });
+          }}
+          label={t("constrainPocketPicks")}
         />
         <Checkbox
           id="weighted"

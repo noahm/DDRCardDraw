@@ -59,9 +59,9 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
         [
           "name",
           "name_translation",
+          "search_hint",
           "artist",
           "artist_translation",
-          "search_hint",
         ],
         {
           sort: true,
