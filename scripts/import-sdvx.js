@@ -42,6 +42,7 @@ async function main() {
         { key: "gravity", color: "#ff8c00" },
         { key: "heavenly", color: "#00ffff" },
         { key: "vivid", color: "#f52a6e" },
+        { key: "exceed", color: "#0047AB" }
       ],
       flags: [],
       lvlMax: 20,
@@ -55,6 +56,7 @@ async function main() {
         "gravity",
         "heavenly",
         "vivid",
+        "exceed"
       ],
       flags: [],
       lowerLvlBound: 16,
@@ -62,7 +64,7 @@ async function main() {
     },
     i18n: {
       en: {
-        name: "SDVX: VW",
+        name: "SDVX: EG",
         single: "Single",
         novice: "Novice",
         advanced: "Advanced",
@@ -72,6 +74,7 @@ async function main() {
         gravity: "Gravity",
         heavenly: "Heavenly",
         vivid: "Vivid",
+        exceed: "Exceed",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -81,10 +84,11 @@ async function main() {
           gravity: "GRV",
           heavenly: "HVN",
           vivid: "VVD",
+          exceed: "XCD",
         },
       },
       ja: {
-        name: "SDVX: VW",
+        name: "SDVX: EG",
         single: "Single",
         novice: "Novice",
         advanced: "Advanced",
@@ -94,6 +98,7 @@ async function main() {
         gravity: "Gravity",
         heavenly: "Heavenly",
         vivid: "Vivid",
+        exceed: 'Exceed',
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -103,6 +108,7 @@ async function main() {
           gravity: "GRV",
           heavenly: "HVN",
           vivid: "VVD",
+          exceed: "XCD",
         },
       },
     },
@@ -132,6 +138,8 @@ function determineDiffClass(song, chartType) {
       return "heavenly";
     case 5:
       return "vivid";
+    case 6:
+      return "exceed";
   }
 }
 
@@ -140,6 +148,7 @@ const songIdsToSkip = new Set([
   1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
   1259, // AUTOMATION PARADISE
   1438, // AUTOMATION PARADISE, April Fools
+  1751, // EXCEEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
 ]);
 function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
@@ -147,7 +156,7 @@ function filterUnplayableSongs(song) {
 
 function determineChartJacket(chartType, song, availableJackets) {
   const songId = ("000" + parseInt(song.$.id)).slice(-4);
-  const diffClassToNumber = {
+  const chartTypeToNumber = {
     novice: 1,
     advanced: 2,
     exhaust: 3,
@@ -155,7 +164,7 @@ function determineChartJacket(chartType, song, availableJackets) {
     maximimum: 5,
   };
   // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
-  let jacketName = `jk_${songId}_${diffClassToNumber[chartType]}_s.png`;
+  let jacketName = `jk_${songId}_${chartTypeToNumber[chartType]}_s.png`;
   if (!availableJackets.has(jacketName)) {
     return undefined;
   }
@@ -205,7 +214,7 @@ function buildSong(song, availableJackets) {
     artist: info.artist_name[0],
     jacket: usesSharedJacket
       ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
-      : "sdvx5.png",
+      : "sdvx6.png",
     bpm,
     charts,
   };
