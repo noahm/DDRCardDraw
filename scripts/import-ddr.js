@@ -8,7 +8,7 @@ const path = require("path");
 const {
   getSongsFromZiv,
   getSongsFromSkillAttack,
-} = require("./scraping/a20plus");
+} = require("./scraping/ddr-a3");
 const { getJacketFromRemySong } = require("./scraping/remy");
 const {
   writeJsonData,
@@ -48,13 +48,12 @@ function mergeSongs(oldData, zivData, saData) {
   if (!oldData) {
     oldData = zivData;
   }
-  const data = {
-    ...zivData,
-    jacket: oldData.jacket,
-    genre: oldData.genre,
-    flags: oldData.flags,
-    search_hint: oldData.search_hint,
-  };
+  const data = zivData;
+  data.jacket = oldData.jacket;
+  data.genre = oldData.genre;
+  data.flags = oldData.flags;
+  data.search_hint = oldData.search_hint;
+
   if (saData) {
     data.saHash = saData.saHash;
     data.saIndex = saData.saIndex;
@@ -150,35 +149,40 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
     }
   }
   log(`Total of ${unmatchedSa} unmatched SA songs`);
-  for (const zivSong of zivSongs) {
-    const existingSong = indexedSongs[zivSong.name];
-    if (!existingSong) {
-      log(`  New song from ziv: ${zivSong.name}`);
-    }
-    const saSong = saSongs.find((song) => {
-      if (existingSong && existingSong.saIndex === song.saIndex) {
-        return true;
+  return Promise.all(
+    zivSongs.map(async (promiseOfSong) => {
+      const zivSong = await promiseOfSong;
+      const existingSong = indexedSongs[zivSong.name];
+      if (!existingSong) {
+        log(`  New song from ziv: ${zivSong.name}`);
       }
-      if (song.name === zivSong.name) return true;
-      return false;
-    });
-    const song = mergeSongs(existingSong, zivSong, saSong);
-    if (!song.jacket) {
-      const remyJacket =
-        !!song.remyLink &&
-        (await getJacketFromRemySong(song.remyLink, song.name_translation));
-      if (remyJacket) {
-        song.jacket = remyJacket;
-      } else {
+      const saSong = saSongs.find((song) => {
+        if (existingSong && existingSong.saIndex === song.saIndex) {
+          return true;
+        }
+        if (song.name === zivSong.name) return true;
+        return false;
+      });
+      const song = mergeSongs(existingSong, zivSong, saSong);
+      if (!song.jacket) {
         song.jacket = "";
+        if (song.remyLink) {
+          getJacketFromRemySong(song.remyLink, song.name_translation).then(
+            (jacketLink) => {
+              if (jacketLink) {
+                song.jacket = jacketLink;
+              }
+            }
+          );
+        }
       }
-    }
-    indexedSongs[zivSong.name] = song;
-  }
+      indexedSongs[zivSong.name] = song;
+    })
+  );
 }
 
 async function main() {
-  const targetFile = path.join(__dirname, "../src/songs/a20plus.json");
+  const targetFile = path.join(__dirname, "../src/songs/a3.json");
   const existingData = require(targetFile);
   const prevCount = existingData.songs.length;
   /** index of songs by title */
@@ -206,7 +210,7 @@ async function main() {
   ui.log.write(
     `Wrote ${existingData.songs.length} (${
       existingData.songs.length - prevCount
-    } new) sorted songs to a20plus.json`
+    } new) sorted songs to ${path.basename(targetFile)}`
   );
 
   if (requestQueue.size) {

@@ -4,6 +4,7 @@ const prettier = require("prettier");
 const { default: pqueue } = require("p-queue");
 const jimp = require("jimp");
 const inquirer = require("inquirer");
+const sanitize = require("sanitize-filename");
 
 function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
@@ -22,19 +23,20 @@ const JACKETS_PATH = path.resolve(__dirname, "../src/assets/jackets");
 
 /**
  * @param coverUrl {string} url of image to fetch
- * @param outputPath {string|undefined} [optional] save to disk, relative to existing jackets
- *
+ * @param outputTo {string | undefined} [optional] save to disk, relative to existing jackets
  * queues a cover path for download into the imageQueue
  * Always skips if file already exists, assumes square aspect ratio
  * Immediately returns the relative path to the jacket where it is saved
  */
-function downloadJacket(coverUrl, outputPath) {
-  if (!outputPath) {
-    outputPath = path.basename(coverUrl);
+function downloadJacket(coverUrl, outputTo) {
+  if (!outputTo) {
+    outputTo = path.basename(coverUrl);
   }
-  if (!outputPath.endsWith(".jpg")) {
-    outputPath += ".jpg";
+  if (!outputTo.endsWith(".jpg")) {
+    outputTo += ".jpg";
   }
+  const sanitizedFilename = sanitize(path.basename(outputTo));
+  const outputPath = path.join(path.dirname(outputTo), sanitizedFilename);
   const absoluteOutput = path.join(JACKETS_PATH, outputPath);
   if (!fs.existsSync(absoluteOutput)) {
     requestQueue

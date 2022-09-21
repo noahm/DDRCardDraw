@@ -62,13 +62,13 @@ async function getSongsFromSkillAttack() {
 }
 
 /**
- * @return {Promise<Array<{}>>}
+ * @return {Promise<Array<Promise<{}>>>}
  */
 function getSongsFromZiv(log) {
-  const ZIV_EXTREME =
-    "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc";
+  const ZIV_A3 =
+    "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5518&show_notecounts=1&sort=&sort_order=asc";
 
-  return JSDOM.fromURL(ZIV_EXTREME).then((data) => scrapeSongData(data, log));
+  return JSDOM.fromURL(ZIV_A3).then((data) => scrapeSongData(data, log));
 }
 
 const translationNodeQuery = "span[onmouseover]";
@@ -95,6 +95,7 @@ const difficultyMap = {
 };
 
 const titleList = [
+  { name: "DanceDanceRevolution A3" },
   { name: "DanceDanceRevolution A20 PLUS" },
   { name: "DanceDanceRevolution A20" },
   { name: "DanceDanceRevolution A" },
@@ -151,7 +152,7 @@ async function scrapeSongData(dom, log) {
       number,
     };
   });
-  log("Songs scraped:", titleMap);
+  log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
 
   const songs = [];
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
@@ -163,7 +164,7 @@ async function scrapeSongData(dom, log) {
       loop++;
     }
   }
-  return Promise.all(songs);
+  return songs;
 }
 
 // map from bad ziv title to our better title
