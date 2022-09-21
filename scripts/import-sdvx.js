@@ -7,6 +7,7 @@ const { resolve, join } = require("path");
 const { parseStringPromise } = require("xml2js");
 const iconv = require("iconv-lite");
 const prettier = require("prettier");
+const { writeJsonData } = require('./utils')
 
 const OUTFILE = "src/songs/sdvx.json";
 const JACKETS_PATH = "src/assets/jackets/sdvx";
@@ -118,10 +119,8 @@ async function main() {
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
-  await fs.writeFile(
-    resolve(join(__dirname, "../src/songs/sdvx.json")),
-    prettier.format(JSON.stringify(data), { filepath: "sdvx.json" })
-  );
+  const outfilePath = resolve(join(__dirname, "../src/songs/sdvx.json"));
+  writeJsonData(data, outfilePath)
 }
 
 function determineDiffClass(song, chartType) {
