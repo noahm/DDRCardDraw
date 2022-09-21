@@ -44,15 +44,24 @@ function sortSongs(songs) {
 }
 
 /** returns data to use for given songs */
-function mergeSongs(oldData, zivData, saData, log) {
+async function mergeSongs(oldData, zivData, saData, log) {
   if (!oldData) {
     oldData = zivData;
   }
-  const data = zivData;
-  data.jacket = oldData.jacket;
-  data.genre = oldData.genre;
-  data.flags = oldData.flags;
-  data.search_hint = oldData.search_hint;
+
+  const data = {
+    ...zivData,
+    remyLink: oldData.remyLink,
+    jacket: oldData.jacket,
+    genre: oldData.genre,
+    flags: oldData.flags,
+    search_hint: oldData.search_hint,
+  };
+
+  delete data.getRemyLink;
+  if (!data.remyLink) {
+    data.remyLink = await zivData.getRemyLink();
+  }
 
   if (saData) {
     data.saHash = saData.saHash;
@@ -64,6 +73,7 @@ function mergeSongs(oldData, zivData, saData, log) {
   if (oldData.bpm.length > data.bpm) {
     data.bpm = oldData.bpm;
   }
+
   if (!saData) {
     log("[WARN] missing SA data for:", zivData.name);
   }
@@ -135,11 +145,15 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
   const [zivSongs, saSongs] = await Promise.all([
-    getSongsFromZiv(log),
-    getSongsFromSkillAttack(),
+    getSongsFromZiv(log).then((songs) => {
+      log(`Found ${songs.length} songs on ZiV`);
+      return songs;
+    }),
+    getSongsFromSkillAttack(log).then((songs) => {
+      log(`Found ${songs.length} songs on SA`);
+      return songs;
+    }),
   ]);
-  log(`Found ${zivSongs.length} songs on ZiV`);
-  log(`Found ${saSongs.length} songs on SA`);
   let unmatchedSa = 0;
   for (const saSong of saSongs) {
     const existingSong = findSongFromSa(indexedSongs, saIndex, saSong);
@@ -165,17 +179,17 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         if (song.name === zivSong.name) return true;
         return false;
       });
-      const song = mergeSongs(existingSong, zivSong, saSong, log);
+      const song = await mergeSongs(existingSong, zivSong, saSong, log);
       if (!song.jacket) {
         song.jacket = "";
         if (song.remyLink) {
-          getJacketFromRemySong(song.remyLink, song.name_translation).then(
-            (jacketLink) => {
-              if (jacketLink) {
-                song.jacket = jacketLink;
-              }
-            }
+          const remyJacket = await getJacketFromRemySong(
+            song.remyLink,
+            song.name_translation
           );
+          if (remyJacket) {
+            song.jacket = remyJacket;
+          }
         }
       }
       indexedSongs[zivSong.name] = song;

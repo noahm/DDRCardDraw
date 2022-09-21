@@ -24,7 +24,8 @@ const difficultyByIndex = [
   "challenge",
 ];
 
-async function getSongsFromSkillAttack() {
+async function getSongsFromSkillAttack(log) {
+  log("fetching data from skillattack.com");
   const resp = await fetch("http://skillattack.com/sa4/data/master_music.txt");
 
   return new Promise((resolve) => {
@@ -61,13 +62,10 @@ async function getSongsFromSkillAttack() {
   });
 }
 
-/**
- * @return {Promise<Array<Promise<{}>>>}
- */
 function getSongsFromZiv(log) {
   const ZIV_A3 =
     "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5518&show_notecounts=1&sort=&sort_order=asc";
-
+  log("fetching data from zenius-i-vanisher.com");
   return JSDOM.fromURL(ZIV_A3).then((data) => scrapeSongData(data, log));
 }
 
@@ -139,6 +137,11 @@ function getCharts(chartNodes) {
   return charts;
 }
 
+/**
+ * @param {JSDOM} dom
+ * @param {Function} log
+ * @returns
+ */
 async function scrapeSongData(dom, log) {
   const numbers = [];
   dom.window.document
@@ -176,6 +179,11 @@ const ZIV_TITLE_CORRECTIONS = {
   "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
 };
 
+/**
+ * @param {Element} songLink
+ * @param {string} folder
+ * @returns
+ */
 async function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
@@ -195,7 +203,7 @@ async function createSongData(songLink, folder) {
     bpm: songRow.children[1].textContent.trim(),
     folder,
     charts: getCharts(chartNodes),
-    remyLink: await getRemyLinkForSong(songLink),
+    getRemyLink: () => getRemyLinkForSong(songLink),
   };
   return songData;
 }
