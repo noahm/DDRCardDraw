@@ -44,7 +44,7 @@ function sortSongs(songs) {
 }
 
 /** returns data to use for given songs */
-function mergeSongs(oldData, zivData, saData) {
+function mergeSongs(oldData, zivData, saData, log) {
   if (!oldData) {
     oldData = zivData;
   }
@@ -65,7 +65,7 @@ function mergeSongs(oldData, zivData, saData) {
     data.bpm = oldData.bpm;
   }
   if (!saData) {
-    console.error("missing SA data for:", zivData.name);
+    log("[WARN] missing SA data for:", zivData.name);
   }
   // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
   data.charts = (saData || data).charts.map((chart) => {
@@ -75,7 +75,9 @@ function mergeSongs(oldData, zivData, saData) {
       return {
         ...oldChart,
         lvl: chart.lvl,
-        flags: mergeFlags(oldChart.flags, zivChart.flags),
+        flags: zivChart
+          ? mergeFlags(oldChart.flags, zivChart.flags)
+          : oldChart.flags,
       };
     }
     return chart;
@@ -163,7 +165,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         if (song.name === zivSong.name) return true;
         return false;
       });
-      const song = mergeSongs(existingSong, zivSong, saSong);
+      const song = mergeSongs(existingSong, zivSong, saSong, log);
       if (!song.jacket) {
         song.jacket = "";
         if (song.remyLink) {
