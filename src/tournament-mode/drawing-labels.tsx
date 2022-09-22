@@ -1,4 +1,4 @@
-import { EditableText, HTMLSelect } from "@blueprintjs/core";
+import { EditableText } from "@blueprintjs/core";
 import { useCallback } from "react";
 import { useDrawState } from "../draw-state";
 import { useDrawing } from "../drawing-context";
