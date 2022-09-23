@@ -2,62 +2,53 @@ import { MenuItem } from "@blueprintjs/core";
 import { ItemPredicate, ItemRenderer } from "@blueprintjs/select";
 import React from "react";
 
-export interface IRoundLabel {
-  title: string;
-  rank: number;
-}
+export const roundLabels = [
+  "Winner's Bracket",
+  "Winner's Round",
+  "Winner's Round 1",
+  "Winner's Round 2",
+  "Winner's Round 3",
+  "Winner's Round 4",
+  "Winner's Round 5",
+  "Winner's Quarterfinals",
+  "Winner's Semifinals",
+  "Winner's Finals",
+  "Loser's Bracket",
+  "Loser's Round",
+  "Loser's Round 1",
+  "Loser's Round 2",
+  "Loser's Round 3",
+  "Loser's Round 4",
+  "Loser's Round 5",
+  "Loser's Quarterfinals",
+  "Loser's Semifinals",
+  "Loser's Finals",
+  "Casuals",
+  "Warmup",
+  "Freeplay",
+];
 
-export const roundLabels: IRoundLabel[] = [
-  { title: "Winner's Bracket"},
-  { title: "Winner's Round"},
-  { title: "Winner's Round 1"},
-  { title: "Winner's Round 2"},
-  { title: "Winner's Round 3"},
-  { title: "Winner's Round 4"},
-  { title: "Winner's Round 5"},
-  { title: "Winner's Quarterfinals"},
-  { title: "Winner's Semifinals"},
-  { title: "Winner's Finals"},
-  { title: "Loser's Bracket"},
-  { title: "Loser's Round"},
-  { title: "Loser's Round 1"},
-  { title: "Loser's Round 2"},
-  { title: "Loser's Round 3"},
-  { title: "Loser's Round 4"},
-  { title: "Loser's Round 5"},
-  { title: "Loser's Quarterfinals"},
-  { title: "Loser's Semifinals"},
-  { title: "Loser's Finals"},
-  { title: "Casuals"},
-  { title: "Warmup"},
-  { title: "Freeplay"},
-].map((m, index) => ({ ...m, rank: index + 1 }));
-
-export const renderRoundLabel: ItemRenderer<IRoundLabel> = (
+export const renderRoundLabel: ItemRenderer<string> = (
   roundLabel,
   { handleClick, modifiers, query }
 ) => {
   if (!modifiers.matchesPredicate) {
     return null;
   }
-  const text = `${roundLabel.title}`;
   return (
     <MenuItem
       active={modifiers.active}
       disabled={modifiers.disabled}
-      key={roundLabel.rank}
+      key={roundLabel}
       onClick={handleClick}
-      text={highlightText(text, query)}
+      text={highlightText(roundLabel, query)}
+      roleStructure="listoption"
     />
   );
 };
 
-export const filterRoundLabel: ItemPredicate<IRoundLabel> = (query, roundLabel) => {
-  return (
-    `${roundLabel.title.toLowerCase()}`.indexOf(
-      query.toLowerCase()
-    ) >= 0
-  );
+export const filterRoundLabel: ItemPredicate<string> = (query, roundLabel) => {
+  return `${roundLabel.toLowerCase()}`.indexOf(query.toLowerCase()) >= 0;
 };
 
 function highlightText(text: string, query: string) {
@@ -98,5 +89,5 @@ function escapeRegExpChars(text: string) {
 export const roundLabelProps = {
   itemPredicate: filterRoundLabel,
   itemRenderer: renderRoundLabel,
-  items: roundLabels
+  items: roundLabels,
 };

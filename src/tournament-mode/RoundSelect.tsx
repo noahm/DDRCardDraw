@@ -1,27 +1,55 @@
-import React, { useState } from "react";
-import { Button, MenuItem } from "@blueprintjs/core";
-import { Select2 } from "@blueprintjs/select";
+import { MenuItem } from "@blueprintjs/core";
+import { Suggest2 } from "@blueprintjs/select";
 
-import { filterRoundLabel, renderRoundLabel, IRoundLabel, roundLabels } from "./round-label";
+import { filterRoundLabel, renderRoundLabel, roundLabels } from "./round-label";
+import { useDrawing } from "../drawing-context";
 
-const RoundLabel = Select2.ofType<IRoundLabel>();
+const RoundLabel = Suggest2.ofType<string>();
 
-export const RoundSelect: React.FC = () => {
-  const [roundLabel, setRoundLabel] = useState<IRoundLabel>(roundLabels[0]);
-  const roundLabelStyle = {
-    backgroundColor: "transparent",
-    padding: "10px",
-  };
+function identity<T>(input: T): T {
+  return input;
+}
+
+export function RoundSelect() {
+  const updateDrawing = useDrawing((d) => d.updateDrawing);
+  const tournamentTitle = useDrawing((d) => d.title);
+
   return (
-      <RoundLabel
-        items={roundLabels}
-        itemPredicate={filterRoundLabel}
-        itemRenderer={renderRoundLabel}
-        noResults={<MenuItem disabled={true} text="No results." />}
-        onItemSelect={setRoundLabel}
-        className="round-select"
-      >
-        <Button text={roundLabel.title} style={roundLabelStyle} rightIcon="caret-down" />
-      </RoundLabel>
+    <RoundLabel
+      inputProps={{
+        large: true,
+        style: {
+          boxShadow: "none",
+          textAlign: "center",
+          width: "300px",
+        },
+        placeholder: "Round Title",
+      }}
+      items={roundLabels}
+      createNewItemPosition="first"
+      createNewItemFromQuery={identity}
+      inputValueRenderer={identity}
+      createNewItemRenderer={(query, active, handleClick) => (
+        <MenuItem
+          active={active}
+          key={query}
+          onClick={handleClick}
+          text={query}
+          icon="new-text-box"
+          roleStructure="listoption"
+        />
+      )}
+      itemPredicate={filterRoundLabel}
+      itemRenderer={renderRoundLabel}
+      noResults={
+        <MenuItem
+          disabled={true}
+          text="No results."
+          roleStructure="listoption"
+        />
+      }
+      onItemSelect={(title) => updateDrawing({ title })}
+      selectedItem={tournamentTitle || null}
+    />
   );
-};
+}
