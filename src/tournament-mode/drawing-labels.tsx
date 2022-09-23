@@ -4,6 +4,8 @@ import { useDrawState } from "../draw-state";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 
+import { RoundSelect } from "./RoundSelect";
+
 export function SetLabels() {
   const tournamentMode = useDrawState((s) => s.tournamentMode);
   if (!tournamentMode) {
@@ -13,7 +15,7 @@ export function SetLabels() {
   return (
     <div className={styles.headers}>
       <div className={styles.title}>
-        <EditableDrawingField placeholder="Tournament Round" field="title" />
+        <RoundSelect />
       </div>
       <div className={styles.versus}>vs</div>
       <div className={styles.players}>

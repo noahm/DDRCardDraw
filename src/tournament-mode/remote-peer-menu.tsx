@@ -4,11 +4,19 @@ import {
   MenuItem,
   Icon,
   Collapse,
+  Button,
+  Position,
+  Toaster,
+  Intent,
   H3,
 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { InputButtonPair } from "../controls/input-button-pair";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
+
+const AppToaster = Toaster.create({
+  position: Position.BOTTOM
+});
 
 export function RemotePeerControls() {
   const peers = useRemotePeers();
@@ -19,12 +27,26 @@ export function RemotePeerControls() {
   }
 
   let coreControl: JSX.Element;
+  // Remove outline from link icon
+  let removeOutline = {backgroundColor: 'transparent', boxShadow: 'none', outline: 'none'};
+  // Copied to keyboard success toaster 
+  function copyToaster() {
+    AppToaster.show({
+      message: "Hostname copied to clipboard",
+      timeout: 5000,
+      intent: Intent.SUCCESS
+    });
+  }
+  // Copy to keyboard button
+  let copyButton = <Button style={removeOutline} icon={IconNames.LINK} onClick={() => {navigator.clipboard.writeText(displayName); copyToaster()}} />;
+
   if (peers.thisPeer) {
     coreControl = (
       <InputButtonPair
         key="connectedName"
         disableInput
         value={displayFromPeerId(peers.thisPeer.id)}
+        rightElement={copyButton}
         buttonLabel="Disconnect"
         onClick={() => peers.setName("")}
       />
