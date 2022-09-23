@@ -4,6 +4,7 @@ import { InputHTMLAttributes, ReactNode, useRef } from "react";
 interface Props {
   placeholder?: string;
   value?: string;
+  rightElement?: JSX.Element;
   disableInput?: boolean;
   disableButton?: boolean;
   /** called when the user clicks the button or presses the enter key */
@@ -23,6 +24,7 @@ export function InputButtonPair(props: Props) {
         inputRef={inputRef}
         placeholder={props.placeholder}
         value={props.value}
+        rightElement={props.rightElement}
         onKeyDown={(e) => {
           if (e.code === "Enter") {
             handleClick();
