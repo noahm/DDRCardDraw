@@ -29,12 +29,26 @@ export function getDrawnChart(
 }
 
 /** returns true if song matches configured flags */
-export function songIsValid(config: ConfigState, song: Song): boolean {
+export function songIsValid(
+  config: ConfigState,
+  song: Song,
+  forPocketPick = false
+): boolean {
+  if (forPocketPick && !config.constrainPocketPicks) {
+    return true;
+  }
   return !song.flags || song.flags.every((f) => config.flags.has(f));
 }
 
 /** returns true if chart matches configured difficulty/style/lvl/flags */
-export function chartIsValid(config: ConfigState, chart: Chart): boolean {
+export function chartIsValid(
+  config: ConfigState,
+  chart: Chart,
+  forPocketPick = false
+): boolean {
+  if (forPocketPick && !config.constrainPocketPicks) {
+    return chart.style === config.style;
+  }
   return (
     chart.style === config.style &&
     config.difficulties.has(chart.diffClass) &&

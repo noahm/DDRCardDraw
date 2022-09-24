@@ -164,6 +164,7 @@ function GeneralSettings() {
   const configState = useConfigState();
   const {
     useWeights,
+    constrainPocketPicks,
     orderByAction,
     showVeto,
     lowerBound,
@@ -340,6 +341,15 @@ function GeneralSettings() {
             updateState({ showVeto: next });
           }}
           label={t("showVeto", undefined, "Show vetoed charts")}
+        />
+        <Checkbox
+          id="constrainPocketPicks"
+          checked={constrainPocketPicks}
+          onChange={(e) => {
+            const constrainPocketPicks = !!e.currentTarget.checked;
+            updateState({ constrainPocketPicks });
+          }}
+          label={t("constrainPocketPicks")}
         />
         <TournamentModeToggle />
         <Checkbox

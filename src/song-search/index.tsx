@@ -24,11 +24,11 @@ export function SongSearch(props: Props) {
   if (fuzzySearch) {
     const songs = fuzzySearch
       .search(searchTerm)
-      .filter(songIsValid.bind(undefined, config))
-      .slice(0, 15);
+      .filter((song) => songIsValid(config, song, true))
+      .slice(0, 30);
     for (const song of songs) {
-      const validCharts = song.charts.filter(
-        chartIsValid.bind(undefined, config)
+      const validCharts = song.charts.filter((chart) =>
+        chartIsValid(config, chart, true)
       );
       for (const chart of validCharts) {
         items.push({ song, chart });
@@ -37,7 +37,7 @@ export function SongSearch(props: Props) {
         items.push({ song, chart: "none" });
       }
     }
-    items = items.slice(0, 15);
+    items = items.slice(0, config.constrainPocketPicks ? 30 : 15);
   }
 
   return (
