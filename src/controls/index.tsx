@@ -165,6 +165,7 @@ function GeneralSettings() {
   const {
     useWeights,
     orderByAction,
+    showVeto,
     lowerBound,
     upperBound,
     update: updateState,
@@ -330,6 +331,15 @@ function GeneralSettings() {
             updateState({ orderByAction: reorder });
           }}
           label={t("orderByAction")}
+        />
+        <Checkbox
+          id="showVeto"
+          checked={showVeto}
+          onChange={(e) => {
+            const next = !!e.currentTarget.checked;
+            updateState({ showVeto: next });
+          }}
+          label={t("showVeto", undefined, "Show vetoed charts")}
         />
         <TournamentModeToggle />
         <Checkbox

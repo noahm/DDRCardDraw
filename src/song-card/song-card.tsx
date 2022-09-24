@@ -10,6 +10,7 @@ import { Popover2 } from "@blueprintjs/popover2";
 import { SongSearch } from "../song-search";
 import shallow from "zustand/shallow";
 import { useDrawing } from "../drawing-context";
+import { useConfigState } from "../config-state";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -59,6 +60,7 @@ export function SongCard(props: Props) {
     replacedWith,
     actionsEnabled,
   } = props;
+  const showVeto = useConfigState((s) => s.showVeto);
 
   const [showingIconMenu, setShowIconMenu] = useState(false);
   const showIcons = () => setShowIconMenu(true);
@@ -88,6 +90,7 @@ export function SongCard(props: Props) {
     [styles.protected]: protectedBy,
     [styles.replaced]: replacedBy,
     [styles.clickable]: actionsEnabled && !hasLabel,
+    [styles.hideVeto]: !showVeto,
   });
 
   let jacketBg = {};
