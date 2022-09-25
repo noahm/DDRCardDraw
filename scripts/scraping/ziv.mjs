@@ -1,74 +1,23 @@
 // @ts-check
-const { JSDOM } = require("jsdom");
-const { default: fetch } = require("node-fetch");
-const readline = require("readline");
-const iconv = require("iconv-lite");
-const he = require("he");
+import { JSDOM } from "jsdom";
 
-const { requestQueue } = require("../utils");
+import { requestQueue } from "../utils.js";
 
-module.exports = {
-  getSongsFromZiv,
-  getSongsFromSkillAttack,
-};
-
-const difficultyByIndex = [
-  "beginner",
-  "basic",
-  "difficult",
-  "expert",
-  "challenge",
-  "basic",
-  "difficult",
-  "expert",
-  "challenge",
-];
-
-async function getSongsFromSkillAttack(log) {
-  log("fetching data from skillattack.com");
-  const resp = await fetch("http://skillattack.com/sa4/data/master_music.txt");
-
-  return new Promise((resolve) => {
-    const decoder = iconv.decodeStream("Shift_JIS");
-    resp.body.pipe(decoder);
-    const rl = readline.createInterface(decoder);
-    const data = [];
-    rl.on("line", (rawLine) => {
-      const [index, hash, ...fields] = rawLine.split("\t");
-      const charts = [];
-      let i = 0;
-      for (const field of fields) {
-        i++;
-        if (i > 9) break;
-        const lvl = parseInt(field, 10);
-        if (lvl < 0) continue;
-        charts.push({
-          lvl,
-          style: i > singlesColumnCount ? "double" : "single",
-          diffClass: difficultyByIndex[i - 1],
-        });
-      }
-      data.push({
-        saHash: hash,
-        saIndex: index,
-        name: he.decode(fields[9]),
-        artist: he.decode(fields[10]),
-        charts,
-      });
-    });
-    rl.on("close", () => {
-      resolve(data);
-    });
-  });
-}
-
-function getSongsFromZiv(log, url) {
+/**
+ * @param {Function} log
+ * @param {string} url
+ */
+export async function getSongsFromZiv(log, url) {
   log("fetching data from zenius-i-vanisher.com");
-  return JSDOM.fromURL(url).then((data) => scrapeSongData(data, log));
+  const dom = await JSDOM.fromURL(url);
+  return await scrapeSongData(dom, log);
 }
 
 const translationNodeQuery = "span[onmouseover]";
 
+/**
+ * @param {Element} node
+ */
 function getTranslationText(node) {
   if (node.nodeName === "#text") {
     return "";
@@ -142,11 +91,11 @@ function getCharts(chartNodes) {
  */
 async function scrapeSongData(dom, log) {
   const numbers = [];
-  dom.window.document
-    .querySelectorAll('th[colspan="11"] span')
-    .forEach((node) =>
-      numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
-    );
+  /** @type {HTMLSpanElement[]} */
+  const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
+  spans.forEach((node) =>
+    numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
+  );
   const titleMap = numbers.map((number, index) => {
     return {
       name: titleList[index].name,
@@ -156,6 +105,7 @@ async function scrapeSongData(dom, log) {
   log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
 
   const songs = [];
+  /** @type {HTMLAnchorElement[]} */
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
   let loop = 0;
   for (const title of titleMap) {
@@ -178,7 +128,7 @@ const ZIV_TITLE_CORRECTIONS = {
 };
 
 /**
- * @param {Element} songLink
+ * @param {HTMLAnchorElement} songLink
  * @param {string} folder
  * @returns
  */
@@ -206,6 +156,9 @@ async function createSongData(songLink, folder) {
   return songData;
 }
 
+/**
+ * @param {HTMLAnchorElement} songLink
+ */
 async function getRemyLinkForSong(songLink) {
   const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
   const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');

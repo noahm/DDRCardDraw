@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * This script pulls song data from ZiV, SkillAttack, and jackets from RemyWiki
  * all while merging with the existing data on disk to get the most up to date
@@ -7,12 +8,13 @@
 import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 import * as path from "path";
-import { getSongsFromZiv, getSongsFromSkillAttack } from "./scraping/ddr-a3.js";
+import { getSongsFromZiv } from "./scraping/ziv.mjs";
+import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { writeJsonData, reportQueueStatusLive, requestQueue } from "./utils.js";
 import { DDR_A3 } from "./scraping/ddr-sources.mjs";
 
-/** @param songs {Array<{}>} */
+/** @param songs {Array<{ name: string, charts: { style: string, lvl: number }[]}>} */
 function sortSongs(songs) {
   for (const song of songs) {
     song.charts.sort((chartA, chartB) => {
@@ -150,9 +152,10 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       return songs;
     }),
     getRemovedSongUrls(DDR_A3.remy)
-      .then((songs) => {
-        log(`Found ${songs.size} removed songs from RemyWiki`);
-        return songs;
+      .then((delSongs) => {
+        log(`Found ${delSongs.size} removed songs from RemyWiki`);
+        console.log(delSongs);
+        return delSongs;
       })
       .catch(() => {
         log("Failed to find removed songs on remy");
@@ -174,9 +177,6 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
     zivSongs.map(async (promiseOfSong) => {
       const zivSong = await promiseOfSong;
       const existingSong = indexedSongs[zivSong.name];
-      if (!existingSong) {
-        log(`  New song from ziv: ${zivSong.name}`);
-      }
       const saSong = saSongs.find((song) => {
         if (existingSong && existingSong.saIndex === song.saIndex) {
           return true;
@@ -188,6 +188,8 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       if (removedRemyLinks.has(song.remyLink)) {
         log("Skipping removed song");
         return;
+      } else if (!existingSong) {
+        log(`  New song from ziv: ${song.name} (${song.remyLink})`);
       }
       if (!song.jacket) {
         song.jacket = "";
@@ -211,7 +213,9 @@ async function main() {
     path.dirname(fileURLToPath(import.meta.url)),
     "../src/songs/a3.json"
   );
-  const existingData = JSON.parse(await readFile(targetFile));
+  const existingData = JSON.parse(
+    await readFile(targetFile, { encoding: "utf-8" })
+  );
   const prevCount = existingData.songs.length;
   /** index of songs by title */
   const indexedSongs = {};
