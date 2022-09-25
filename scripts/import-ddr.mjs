@@ -4,17 +4,13 @@
  * song data with the least amount of manual work on my part.
  */
 
-const path = require("path");
-const {
-  getSongsFromZiv,
-  getSongsFromSkillAttack,
-} = require("./scraping/ddr-a3");
-const { getJacketFromRemySong } = require("./scraping/remy");
-const {
-  writeJsonData,
-  reportQueueStatusLive,
-  requestQueue,
-} = require("./utils");
+import { readFile } from "fs/promises";
+import { fileURLToPath } from "url";
+import * as path from "path";
+import { getSongsFromZiv, getSongsFromSkillAttack } from "./scraping/ddr-a3.js";
+import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
+import { writeJsonData, reportQueueStatusLive, requestQueue } from "./utils.js";
+import { DDR_A3 } from "./scraping/ddr-sources.mjs";
 
 /** @param songs {Array<{}>} */
 function sortSongs(songs) {
@@ -144,8 +140,8 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
-  const [zivSongs, saSongs] = await Promise.all([
-    getSongsFromZiv(log).then((songs) => {
+  const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
+    getSongsFromZiv(log, DDR_A3.ziv).then((songs) => {
       log(`Found ${songs.length} songs on ZiV`);
       return songs;
     }),
@@ -153,6 +149,15 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       log(`Found ${songs.length} songs on SA`);
       return songs;
     }),
+    getRemovedSongUrls(DDR_A3.remy)
+      .then((songs) => {
+        log(`Found ${songs.size} removed songs from RemyWiki`);
+        return songs;
+      })
+      .catch(() => {
+        log("Failed to find removed songs on remy");
+        return new Set();
+      }),
   ]);
   let unmatchedSa = 0;
   for (const saSong of saSongs) {
@@ -180,6 +185,10 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         return false;
       });
       const song = await mergeSongs(existingSong, zivSong, saSong, log);
+      if (removedRemyLinks.has(song.remyLink)) {
+        log("Skipping removed song");
+        return;
+      }
       if (!song.jacket) {
         song.jacket = "";
         if (song.remyLink) {
@@ -198,8 +207,11 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
 }
 
 async function main() {
-  const targetFile = path.join(__dirname, "../src/songs/a3.json");
-  const existingData = require(targetFile);
+  const targetFile = path.join(
+    path.dirname(fileURLToPath(import.meta.url)),
+    "../src/songs/a3.json"
+  );
+  const existingData = JSON.parse(await readFile(targetFile));
   const prevCount = existingData.songs.length;
   /** index of songs by title */
   const indexedSongs = {};

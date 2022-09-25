@@ -62,11 +62,9 @@ async function getSongsFromSkillAttack(log) {
   });
 }
 
-function getSongsFromZiv(log) {
-  const ZIV_A3 =
-    "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5518&show_notecounts=1&sort=&sort_order=asc";
+function getSongsFromZiv(log, url) {
   log("fetching data from zenius-i-vanisher.com");
-  return JSDOM.fromURL(ZIV_A3).then((data) => scrapeSongData(data, log));
+  return JSDOM.fromURL(url).then((data) => scrapeSongData(data, log));
 }
 
 const translationNodeQuery = "span[onmouseover]";
