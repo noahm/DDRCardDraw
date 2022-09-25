@@ -37,3 +37,10 @@ export function* flattenedKeys(
     }
   }
 }
+
+export const availableGameData = (
+  process.env.DATA_FILES as unknown as Array<{
+    name: string;
+    display: string;
+  }>
+).sort((a, b) => (a.display < b.display ? -1 : 1));

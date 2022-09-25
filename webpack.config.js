@@ -11,6 +11,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const packageJson = require("./package.json");
 
@@ -18,6 +20,7 @@ module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
   const version = env.version || "custom";
+  const zip = !!env.zip;
 
   return {
     mode: isProd ? "production" : "development",
@@ -37,6 +40,7 @@ module.exports = function (env = {}, argv = {}) {
     },
     optimization: {
       minimize: isProd,
+      minimizer: ["...", new CssMinimizerPlugin()],
     },
     performance: {
       hints: false,
@@ -82,6 +86,7 @@ module.exports = function (env = {}, argv = {}) {
           },
         },
         {
+          // pass 1st party css files through css-loader with modules enabled and postcss+autoprefixer
           test: /\.css$/,
           exclude: /node_modules/,
           use: [
@@ -106,8 +111,9 @@ module.exports = function (env = {}, argv = {}) {
           ],
         },
         {
-          test: /node_modules\/.+\.css$/,
-          // include: /node_modules/,
+          // pass 3rd party css through css-loader without transforms
+          test: /\.css$/,
+          include: resolve(__dirname, "node_modules"),
           use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
@@ -149,10 +155,30 @@ module.exports = function (env = {}, argv = {}) {
         filename: "[name].[contenthash:5].css",
         chunkFilename: "[id].[chunkhash:5].js",
       }),
+      new FaviconsWebpackPlugin({
+        logo: "./src/assets/ddr-tools-256.png",
+        inject: true,
+        prefix: "favicons/",
+        favicons: {
+          appName: "DDR Tools - card draw and more!",
+          appShortName: "DDR Tools",
+          theme_color: "#28b6ea",
+          display: "standalone",
+          scope: "/",
+          start_url: "/",
+          manifestMaskable: true,
+          icons: {
+            windows: false,
+            yandex: false,
+            firefox: false,
+            coast: false,
+            appleStartup: false,
+          },
+        },
+      }),
       new HtmlWebpackPlugin({
         title: "DDR Tools - card draw and more!",
         filename: "index.html",
-        favicon: "./src/assets/ddr-tools-128.png",
         meta: {
           description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
@@ -162,17 +188,20 @@ module.exports = function (env = {}, argv = {}) {
     ].concat(
       !isProd
         ? [new ReactRefreshPlugin()]
-        : [
+        : zip
+        ? [
             new ZipPlugin({
               path: __dirname,
               filename: `DDRCardDraw-${version}.zip`,
               exclude: "__offline_serviceworker",
             }),
+          ]
+        : [
             new OfflinePlugin({
               ServiceWorker: {
                 events: true,
               },
-              excludes: ["../*.zip", "jackets/**/*"],
+              excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
             }),
           ]
     ),

@@ -25,12 +25,26 @@ export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
 let drawingID = 0;
 
 /** returns true if song matches configured flags */
-export function songIsValid(config: ConfigState, song: Song): boolean {
+export function songIsValid(
+  config: ConfigState,
+  song: Song,
+  forPocketPick = false
+): boolean {
+  if (forPocketPick && !config.constrainPocketPicks) {
+    return true;
+  }
   return !song.flags || song.flags.every((f) => config.flags.has(f));
 }
 
 /** returns true if chart matches configured difficulty/style/lvl/flags */
-export function chartIsValid(config: ConfigState, chart: Chart): boolean {
+export function chartIsValid(
+  config: ConfigState,
+  chart: Chart,
+  forPocketPick = false
+): boolean {
+  if (forPocketPick && !config.constrainPocketPicks) {
+    return chart.style === config.style;
+  }
   return (
     chart.style === config.style &&
     config.difficulties.has(chart.diffClass) &&
@@ -125,7 +139,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   }
 
-  const drawnCharts = [];
+  const drawnCharts: DrawnChart[] = [];
   /**
    * Record of how many songs of each difficulty have been drawn so far
    */
@@ -146,8 +160,11 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const randomChart = selectableCharts[randomIndex];
 
     if (randomChart) {
+      // Give this random chart a unique id within this drawing
+      randomChart.id = drawnCharts.length;
+      // Save it in our list of drawn charts
       drawnCharts.push(randomChart);
-      // remove drawn chart so it cannot be re-drawn
+      // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
       if (!difficultyCounts[chosenDifficulty]) {
         difficultyCounts[chosenDifficulty] = 1;

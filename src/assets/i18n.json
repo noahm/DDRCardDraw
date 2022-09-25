@@ -5,7 +5,9 @@
     "difficultyLevel": "Difficulty level",
     "upperBound": "Upper bound (inclusive)",
     "lowerBound": "Lower bound (inclusive)",
+    "constrainPocketPicks": "Pocket picks must match draw options",
     "useWeightedDistributions": "Use Weighted Distributions",
+    "orderByAction": "Re-order by pick/ban",
     "style": "Style",
     "single": "Single",
     "double": "Double",
@@ -72,11 +74,12 @@
     "updateReady": "Update ready, refresh for the freshest code around!",
     "credits": "Credits",
     "lastUpdate": "{gameName} data last updated {date}",
-    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Maintained by Noah Manneschmidt.",
+    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Maintained by Noah Manneschmidt.",
     "contact": {
       "prompt": "Please reach out with feedback, ideas, or code contributions:",
       "facebook": "Contact me on Facebook Messenger",
       "twitter": "Contact me on Twitter",
+      "discord": "Contact me on Discord",
       "github": "Contribute on Github"
     },
     "songAction": {
@@ -97,6 +100,8 @@
     "upperBound": "上限",
     "lowerBound": "下限",
     "useWeightedDistributions": "レベル別に確率を設定する",
+    "orderByAction": "Re-order by pick/ban",
+    "constrainPocketPicks": "Pocket picks must match draw options",
     "style": "スタイル",
     "single": "Single",
     "double": "Double",
@@ -163,11 +168,12 @@
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
     "credits": "Credits",
     "lastUpdate": "楽曲の更新日：{date}",
-    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Maintained by Noah Manneschmidt.",
+    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Maintained by Noah Manneschmidt.",
     "contact": {
       "prompt": "Please reach out with feedback, ideas, or code contributions:",
       "facebook": "Facebook Messengerで作者に連絡する",
       "twitter": "Twitterで作者に連絡する",
+      "discord": "Discordで作者に連絡する",
       "github": "Githubで貢献する"
     },
     "songAction": {

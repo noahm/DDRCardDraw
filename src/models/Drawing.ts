@@ -12,11 +12,12 @@ export interface DrawnChart {
   hasShock: boolean;
   flags: string[];
   song: Song;
+  id?: number;
 }
 
 export interface PlayerActionOnChart {
   player: 1 | 2;
-  chartIndex: number;
+  chartId: number;
 }
 
 export interface PocketPick extends PlayerActionOnChart {
