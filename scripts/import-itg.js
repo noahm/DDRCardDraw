@@ -77,12 +77,12 @@ const data = {
 };
 
 for (const parsedSong of pack.simfiles) {
-  const { bg, banner, jacket } = parsedSong.title;
+  const { bg, banner, jacket, titleDir } = parsedSong.title;
   let finalJacket = jacket || bg || banner;
   if (finalJacket) {
     finalJacket = downloadJacket(
-      join(parsedSong.title.titleDir, finalJacket),
-      join("itg", pack.name, basename(parsedSong.title.titleDir) + ".jpg")
+      join(titleDir, finalJacket),
+      join("itg", stub, basename(titleDir) + ".jpg")
     );
   }
 
