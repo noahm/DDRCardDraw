@@ -32,19 +32,36 @@ function queueJacketDownload(coverPath) {
   const coverStub = coverPath.split("/")[2];
   const outPath = `smx/${coverStub}.jpg`;
   if (GET_IMAGES) {
-    downloadJacket(
-      `https://data.stepmaniax.com/${coverPath}/cover.png`,
-      outPath
-    );
+    downloadJacket(`https://data.stepmaniax.com/${coverPath}`, outPath);
   }
 
   return outPath;
+}
+
+async function getData(log, diff) {
+  log(`pulling ${diff} chart details`);
+  const req = await requestQueue.add(
+    () =>
+      fetch(`https://data.stepmaniax.com/highscores/region/all/${diff}`, {
+        method: "POST",
+      }),
+    {
+      priority: 1,
+    }
+  );
+  const data = await req.json();
+  return {
+    charts: data.charts,
+    songs: data.songs,
+    diff,
+  };
 }
 
 async function main() {
   const songs = [];
   let lvlMax = 0;
   const ui = reportQueueStatusLive();
+  const log = (whatever) => ui.log.write(whatever);
   const targetFile = path.join(__dirname, "../src/songs/smx.json");
   const existingData = require(targetFile);
   const indexedSongs = {};
@@ -52,48 +69,36 @@ async function main() {
     indexedSongs[song.saIndex] = song;
   }
 
-  async function getData(diff) {
-    ui.log.write(`pulling ${diff} chart details`);
-    const data = await requestQueue.add(
-      () =>
-        fetch(`https://data.stepmaniax.com/highscores/region/all/${diff}`, {
-          method: "POST",
-        }),
-      {
-        priority: 1,
-      }
-    );
-    const { highscores } = await data.json();
-    return { highscores, diff };
-  }
+  const remoteData = await Promise.all(
+    difficulties.map(getData.bind(undefined, log))
+  );
 
-  for (const { highscores, diff } of await Promise.all(
-    difficulties.map(getData)
-  )) {
-    for (const score of highscores) {
-      if (!songs[score.song_id]) {
-        songs[score.song_id] = {
-          ...indexedSongs[score.song_id],
-          saIndex: score.song_id.toString(),
-          name: score.song.title,
-          artist: score.song.artist,
-          genre: score.song.genre,
-          bpm: score.song.bpm,
-          jacket: queueJacketDownload(score.song.cover_path),
+  for (const { charts, songs: remoteSongs, diff } of remoteData) {
+    for (const chart of Object.values(charts)) {
+      if (!songs[chart.song_id]) {
+        const songSource = remoteSongs[chart.song_id];
+        songs[chart.song_id] = {
+          ...indexedSongs[chart.song_id],
+          saIndex: chart.song_id.toString(),
+          name: songSource.title,
+          artist: songSource.artist,
+          genre: songSource.genre,
+          bpm: songSource.bpm,
+          jacket: queueJacketDownload(songSource.cover),
           charts: [],
         };
-        if (!indexedSongs[score.song_id]) {
-          ui.log.write(`added new song: ${score.song.title}`);
+        if (!indexedSongs[chart.song_id]) {
+          ui.log.write(`added new song: ${songSource.title}`);
         }
       }
-      songs[score.song_id].charts.push({
+      songs[chart.song_id].charts.push({
         style: diff === "team" ? "team" : "solo",
-        lvl: score.difficulty,
+        lvl: chart.difficulty,
         diffClass: diff,
-        author: score.steps_author,
+        author: chart.steps_author,
       });
-      if (score.difficulty > lvlMax) {
-        lvlMax = score.difficulty;
+      if (chart.difficulty > lvlMax) {
+        lvlMax = chart.difficulty;
       }
     }
   }
