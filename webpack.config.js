@@ -12,6 +12,7 @@ const OfflinePlugin = require("offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const packageJson = require("./package.json");
 
@@ -39,6 +40,7 @@ module.exports = function (env = {}, argv = {}) {
     },
     optimization: {
       minimize: isProd,
+      minimizer: ["...", new CssMinimizerPlugin()],
     },
     performance: {
       hints: false,
@@ -84,6 +86,7 @@ module.exports = function (env = {}, argv = {}) {
           },
         },
         {
+          // pass 1st party css files through css-loader with modules enabled and postcss+autoprefixer
           test: /\.css$/,
           exclude: /node_modules/,
           use: [
@@ -108,8 +111,9 @@ module.exports = function (env = {}, argv = {}) {
           ],
         },
         {
-          test: /node_modules\/.+\.css$/,
-          // include: /node_modules/,
+          // pass 3rd party css through css-loader without transforms
+          test: /\.css$/,
+          include: resolve(__dirname, "node_modules"),
           use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {

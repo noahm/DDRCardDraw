@@ -1,12 +1,15 @@
 import { Classes, Text } from "@blueprintjs/core";
 import cn from "classnames";
-import { useContext } from "react";
 import { FormattedMessage } from "react-intl";
-import { DrawStateContext } from "./draw-state";
+import shallow from "zustand/shallow";
+import { useDrawState } from "./draw-state";
 import { detectedLanguage } from "./utils";
 
 export function LastUpdate() {
-  const { dataSetName, gameData } = useContext(DrawStateContext);
+  const [dataSetName, gameData] = useDrawState(
+    (s) => [s.dataSetName, s.gameData],
+    shallow
+  );
   if (!gameData) {
     return null;
   }

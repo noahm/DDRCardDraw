@@ -48,6 +48,12 @@ export function About() {
           text={t({ id: "contact.github" })}
           rightIcon={IconNames.SHARE}
         />
+        <AnchorButton
+          href="https://discord.gg/QPyEATsbP7"
+          target="_blank"
+          text={t({ id: "contact.discord" })}
+          rightIcon={IconNames.SHARE}
+        />
       </ButtonGroup>
     </div>
   );

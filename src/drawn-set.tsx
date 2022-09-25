@@ -1,4 +1,4 @@
-import { memo, useContext, useState } from "react";
+import { memo, useState } from "react";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import {
@@ -7,10 +7,10 @@ import {
   PlayerActionOnChart,
   PocketPick,
 } from "./models/Drawing";
-import { ConfigStateContext } from "./config-state";
+import { useConfigState } from "./config-state";
 import { useForceUpdate } from "./hooks/useForceUpdate";
 import { draw } from "./card-draw";
-import { DrawStateContext } from "./draw-state";
+import { useDrawState } from "./draw-state";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -26,8 +26,7 @@ interface Props {
 
 function DrawnSetImpl({ drawing }: Props) {
   const forceUpdate = useForceUpdate();
-  const { gameData } = useContext(DrawStateContext);
-  const configState = useContext(ConfigStateContext);
+  const gameData = useDrawState((s) => s.gameData);
   const [backgroundImage] = useState(getRandomGradiant());
 
   function renderChart(chart: DrawnChart) {
@@ -78,7 +77,7 @@ function DrawnSetImpl({ drawing }: Props) {
     player: 1 | 2,
     chart?: DrawnChart
   ) {
-    if (configState.orderByAction) {
+    if (useConfigState.getState().orderByAction) {
       const indexToCut = drawing.charts.findIndex(
         (chart) => chart.id === chartId
       );
@@ -105,7 +104,10 @@ function DrawnSetImpl({ drawing }: Props) {
   }
 
   function handleRedraw(chartId: number) {
-    const newDrawing = draw(gameData!, { ...configState, chartCount: 1 });
+    const newDrawing = draw(gameData!, {
+      ...useConfigState.getState(),
+      chartCount: 1,
+    });
     newDrawing.charts[0].id = chartId;
     drawing.charts = drawing.charts.map((chart) => {
       if (chart.id === chartId) {

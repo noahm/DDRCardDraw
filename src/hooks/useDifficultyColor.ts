@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { DrawStateContext } from "../draw-state";
+import { useDrawState } from "../draw-state";
 
 /**
  * Returns the CSS color specified in the game file metadata for a given difficulty
  */
 export function useDifficultyColor(difficultyClass: string): string {
-  const { gameData } = useContext(DrawStateContext);
+  const gameData = useDrawState((s) => s.gameData);
   const diffAccentColor =
     gameData?.meta.difficulties.find((d) => d.key === difficultyClass)?.color ||
     "";

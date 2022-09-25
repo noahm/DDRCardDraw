@@ -14,7 +14,7 @@ import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
-import { VersionSelect } from "./version-select";
+import { DataLoadingSpinner, VersionSelect } from "./version-select";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -50,6 +50,7 @@ export function Header() {
         <Tooltip2 content="Change Song Data" placement="bottom">
           <VersionSelect />
         </Tooltip2>
+        <DataLoadingSpinner />
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>
         <HeaderControls />
