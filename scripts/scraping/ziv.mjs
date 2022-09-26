@@ -2,6 +2,7 @@
 import { JSDOM } from "jsdom";
 
 import { requestQueue } from "../utils.js";
+import { getCanonicalRemyURL } from "./remy.mjs";
 
 /**
  * @param {Function} log
@@ -163,5 +164,5 @@ async function getRemyLinkForSong(songLink) {
   const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
   const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
   // @ts-ignore
-  if (remyLink) return remyLink.href;
+  if (remyLink) return getCanonicalRemyURL(remyLink.href);
 }

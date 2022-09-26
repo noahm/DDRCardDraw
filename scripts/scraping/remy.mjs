@@ -32,7 +32,7 @@ export async function getJacketFromRemySong(pageUrl, overrideSongName) {
     // finally, fall back to first appearance
     () => true,
   ]) {
-    let candidate = images.find(finder);
+    const candidate = images.find(finder);
     if (candidate) {
       return getJacketFromThumb(candidate, songName);
     }
@@ -55,6 +55,11 @@ export async function getRemovedSongUrls(pageUrl) {
     songLinks.add(anchor.href);
   }
   return songLinks;
+}
+
+export async function getCanonicalRemyURL(pageUrl) {
+  const dom = await JSDOM.fromURL(pageUrl);
+  return dom.window.document.querySelector("link[rel=canonical]").href;
 }
 
 function getJacketFromThumb(node, songName) {
