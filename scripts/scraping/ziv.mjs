@@ -62,29 +62,6 @@ const titleList = [
   { name: "DanceDanceRevolution 1st Mix" },
 ];
 
-const singlesColumnCount = 5;
-/**
- * @param {any[]} chartNodes
- */
-function getCharts(chartNodes) {
-  const charts = [];
-  let index = 0;
-  for (const current of chartNodes) {
-    index++;
-    if (current.firstChild.textContent === "-") continue;
-    const chart = {
-      lvl: +current.firstChild.textContent,
-      style: index > singlesColumnCount ? "double" : "single",
-      diffClass: difficultyMap[current.classList[1]],
-    };
-    if (current.firstChild.style.color === "red") {
-      chart.flags = ["unlock"];
-    }
-    charts.push(chart);
-  }
-  return charts;
-}
-
 /**
  * @param {JSDOM} dom
  * @param {Function} log
@@ -154,7 +131,70 @@ async function createSongData(songLink, folder) {
     charts: getCharts(chartNodes),
     getRemyLink: () => getRemyLinkForSong(songLink),
   };
+  const flags = getFlagsForSong(songLink);
+  if (flags) {
+    songData.flags = flags;
+  }
   return songData;
+}
+
+const flagIndex = {
+  "DDR GP Early Access": "grandPrixPack",
+  "EXTRA SAVIOR A3": "unlock",
+  "GOLDEN LEAGUER'S PRIVILEGE": "goldenLeague",
+  "EXTRA EXCLUSIVE": "extraExclusive",
+  "COURSE TRIAL A3": "unlock",
+};
+
+/**
+ *
+ * @param {HTMLAnchorElement} songLink
+ */
+function getFlagsForSong(songLink) {
+  /** @type {HTMLImageElement | null} */
+  const previous = songLink.previousElementSibling;
+  if (previous && previous.src && previous.src.endsWith("lock.png")) {
+    const titleBits = previous.title.split(" / ");
+    if (titleBits[1]) {
+      const flag = flagIndex[titleBits[1].trim()] || titleBits[1].trim();
+      return [flag];
+    }
+    return ["unlock"];
+  }
+  return undefined;
+}
+
+const singlesColumnCount = 5;
+/**
+ * @param {any[]} chartNodes
+ */
+function getCharts(chartNodes) {
+  const charts = [];
+  let index = 0;
+  for (const current of chartNodes) {
+    index++;
+    if (current.firstChild.textContent === "-") continue;
+    const chart = {
+      lvl: +current.firstChild.textContent,
+      style: index > singlesColumnCount ? "double" : "single",
+      diffClass: difficultyMap[current.classList[1]],
+    };
+    const flags = [];
+    if (current.firstChild.style.color === "red") {
+      flags.push("unlock");
+    }
+    const [step, freeze, shock] = current.lastChild.textContent
+      .split(" / ")
+      .map(Number);
+    if (!Number.isNaN(shock) && shock > 0) {
+      flags.push("shock");
+    }
+    if (flags.length) {
+      chart.flags = flags;
+    }
+    charts.push(chart);
+  }
+  return charts;
 }
 
 /**

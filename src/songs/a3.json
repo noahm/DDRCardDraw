@@ -19,7 +19,7 @@
       "tempUnlock"
     ],
     "lvlMax": 19,
-    "lastUpdated": 1664164078261
+    "lastUpdated": 1664167319078
   },
   "defaults": {
     "style": "single",
@@ -1698,6 +1698,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/ALBIDA",
       "jacket": "ALBIDA.jpg",
       "saHash": "Io196q006I86IllQPOb098qd1DQd60Oq",
@@ -2341,6 +2342,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Are%20U%20Ready",
       "jacket": "Are U Ready.jpg"
     },
@@ -3401,6 +3403,7 @@
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Beluga",
       "jacket": "Beluga.jpg",
       "saHash": "DqoQD9iDodq9Iq108l119OQ1olOPi6D1",
@@ -3468,6 +3471,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" },
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Black%20Emperor",
       "jacket": "Black Emperor.jpg",
       "saHash": "9dI8ilPi9bd9blI6Q8D6IPb1lblqDl1Q",
@@ -5488,6 +5492,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Closer%20to%20my%20Heart%20%28jun%20remix%29",
       "jacket": "Closer to my Heart (jun remix).jpg",
       "saHash": "0ill9Po6Db090biqIlD1I9lo6PO8lQQ9",
@@ -5707,6 +5712,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Concertino%20in%20Blue",
       "jacket": "Concertino in Blue.jpg"
     },
@@ -5726,6 +5732,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Concon",
       "jacket": "Concon.jpg"
     },
@@ -7387,6 +7394,7 @@
           "flags": ["unlock"]
         }
       ],
+      "flags": ["extraExclusive"],
       "remyLink": "http://remywiki.com/Deep%20tenDon%20Reflex",
       "jacket": "Deep tenDon Reflex.jpg",
       "saHash": "1IQ16dPQPQ0Q1qdidld6lO1o86q98o69",
@@ -8376,6 +8384,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/DOUBLE%20TORNARD",
       "jacket": "DOUBLE TORNARD.jpg",
       "saHash": "Iiq6Qoll0oQi801QdPdlOO06DOdIDdD9",
@@ -9877,6 +9886,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["goldenLeague"],
       "remyLink": "https://remywiki.com/Environ_(De-SYNC)_(feat._Iythe)",
       "jacket": "Environ_(De-SYNC)_(feat._Iythe).jpg",
       "saHash": "1PQiP6D6IqP016dqb8qPq86Q1o8bQq6q",
@@ -12183,6 +12193,7 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/GERBERA",
       "jacket": "GERBERA.jpg",
       "saHash": "bd8OODli0POo9bOq6i0oIPdIlbDlI910",
@@ -12284,6 +12295,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Get%20Your%20Wish",
       "jacket": "Get Your Wish.jpg"
     },
@@ -12407,6 +12419,7 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Glacia",
       "jacket": "Glacia.jpg",
       "saHash": "1IIiOQiliQ8b1dbo9D6D9PlODqIPOOb8",
@@ -12449,6 +12462,7 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Glitter%20Flatter%20Scatter",
       "jacket": "Glitter Flatter Scatter.jpg",
       "saHash": "06lOillb6id0Dib9o1b06iPblqPl61PI",
@@ -12743,6 +12757,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Good%20Sound%20United",
       "jacket": "Good Sound United.jpg",
       "saHash": "0iII09bDqIbOQDDoo8lO8DOOQdiP1Iob",
@@ -12932,6 +12947,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/GRADIUS_REMIX(UUDDLRLRBA_Ver.)",
       "jacket": "GRADIUS REMIX (UUDDLRLRBA Ver.).jpg",
       "saHash": "ob0P66Q8dqbI81qi6OQDPP6086iPoO1P",
@@ -15153,6 +15169,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/I%20WANT%20YOUR%20LOVE%20%28Darwin%20remix%29",
       "jacket": "I WANT YOUR LOVE (Darwin remix).jpg",
       "saHash": "IoiD0b6IqiDi6qP1qb0P1dbQlIODbiid",
@@ -17216,6 +17233,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/KING_(Kanaria)",
       "jacket": "KING_(Kanaria).jpg",
       "saHash": "O8lq1l6qIi6I9l69IOPdoI6lbiodQOP6",
@@ -17773,6 +17791,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Last%20Summer",
       "jacket": "Last Summer.jpg"
     },
@@ -17912,6 +17931,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Let%27s%20DANCE%20aROUND%21%21",
       "jacket": "Let's DANCE aROUND!!.jpg",
       "saHash": "ddqQ801q1lIdIooDiq66qPil1oD0611I",
@@ -19339,6 +19359,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/MANA",
       "jacket": "MANA.jpg",
       "saHash": "ibOId89QQPI6dli9I6PO09Qo86686O6i",
@@ -19836,6 +19857,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" },
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Megalara%20Garuda",
       "jacket": "Megalara Garuda.jpg",
       "saHash": "O9Odqd8qiQiOqQdOOq01D8OQlOiO1iPD",
@@ -19859,6 +19881,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" },
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/MEGALOVANIA",
       "jacket": "MEGALOVANIA.jpg",
       "saHash": "PddldblI909IqI8PPiQIo9lIIiQdDo1l",
@@ -20038,6 +20061,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Mess%20With%20My%20Emotions",
       "jacket": "Mess With My Emotions.jpg",
       "saHash": "8D9D6ld0bP9bP119OIlQI9ol919IDD86",
@@ -22263,6 +22287,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/ON-DO",
       "jacket": "ON-DO.jpg",
       "saHash": "l6oP66ODld89Q99o0lDPP90qdbo11PPQ",
@@ -23700,6 +23725,7 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Perditus%E2%80%A0paradisus",
       "jacket": "Perditus†paradisus.jpg"
     },
@@ -23719,6 +23745,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/PERSIAN%20LAND",
       "jacket": "PERSIAN LAND.jpg",
       "saHash": "8o08l8DPiO01dlo1OI8DqQDq9lQ1bPq1",
@@ -25408,6 +25435,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Qwerty",
       "jacket": "Qwerty.jpg",
       "saHash": "6ibO1P1I1ooDdd9l1oDOqDDdOlO9o6io",
@@ -28246,6 +28274,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Settin%27%20the%20Scene",
       "jacket": "Settin' the Scene.jpg"
     },
@@ -31215,6 +31244,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["goldenLeague"],
       "remyLink": "http://remywiki.com/STAY%20GOLD",
       "jacket": "STAY GOLD.jpg",
       "saHash": "989od088q99DPIIq6IQidI1IQ1qQOlb6",
@@ -31358,6 +31388,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Stellar%20rain",
       "jacket": "Stellar rain.jpg",
       "saHash": "boO8d11P8o6l89i81i1i1IdPlP109QoQ",
@@ -33259,6 +33290,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["goldenLeague"],
       "remyLink": "http://remywiki.com/Teleportation",
       "jacket": "Teleportation.jpg",
       "saHash": "0DDIQOo6Pl9961I8OiOb1i0OODDPlldl",
@@ -35056,6 +35088,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Too%20Late%20Snow",
       "jacket": "Too Late Snow.jpg",
       "saHash": "IDqoidbllIb0bQQb8dQ1QqP91Q8li9P0",
@@ -36210,6 +36243,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/TRUE%E2%99%A5LOVE%20%28Clubstar%27s%20True%20Club%20Mix%29",
       "jacket": "TRUE♥LOVE (Clubstar's True Club Mix).jpg",
       "saHash": "1P00OOoibd668i90Oqb0dl9i8D10b1iD",
@@ -36925,6 +36959,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Unity",
       "jacket": "Unity.jpg"
     },
@@ -36966,6 +37001,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Unreality",
       "jacket": "Unreality.jpg",
       "saHash": "boDqoIDqDlP1io6bQ0O10diDbbqOD96I",
@@ -37194,6 +37230,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/VALLIS-NERIA",
       "jacket": "VALLIS-NERIA.jpg"
     },
@@ -37826,6 +37863,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
       "jacket": "WARNINGxWARNINGxWARNING.jpg",
       "saHash": "I0091lboOD1Dii10dQ0qbDqil69PQ0io",
@@ -38446,6 +38484,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Worst%20Plan",
       "jacket": "Worst Plan.jpg",
       "saHash": "1lqii0IibdbPD19P6DiIl0Id9do6qqd1",
@@ -38525,6 +38564,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Wowie%20Zowie%21",
       "jacket": "Wowie Zowie!.jpg",
       "saHash": "6b6QIoDPoQ010o8Di1q6Q8DdiQll0Di1",
@@ -38546,6 +38586,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/Wuv%20U",
       "jacket": "Wuv U.jpg"
     },
@@ -39435,6 +39476,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E2%86%91%E2%86%91%E2%86%93%E2%86%93%E2%86%90%E2%86%92%E2%86%90%E2%86%92BA",
       "jacket": "Ue ue shita shita hidari migi hidari migi BA.jpg",
       "saHash": "8ooI09QP161IqI00IdPOD1QdDd8oDod9",
@@ -40671,6 +40713,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E3%82%A2%E3%83%A6%E3%83%9F%E2%98%86%E3%83%9E%E3%82%B8%E3%82%AB%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%BC%E3%82%BF%E3%82%A4%E3%83%A0",
       "jacket": "Ayumi magical showtime.jpg",
       "saHash": "PDoiQoi9q08PQ96Pl6oD9IIi6iq0Q6D6",
@@ -40884,6 +40927,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" },
         { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E3%82%A6%E3%82%B5%E3%83%86%E3%82%A4",
       "jacket": "Usatei.jpg",
       "saHash": "9oIO98IPOiq1idiIIbOOqdDQIOdQPPd6",
@@ -41349,6 +41393,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/%E3%82%B5%E3%83%A8%E3%83%8A%E3%83%A9%E3%83%BB%E3%83%98%E3%83%B4%E3%83%B3",
       "jacket": "Sayonara Heaven.jpg"
     },
@@ -42083,6 +42128,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/%E3%83%8A%E3%83%8A%E3%83%9B%E3%82%B7",
       "jacket": "Nanahoshi.jpg",
       "saHash": "Do06Q18olQo0bloll9919olDQ8lDoqbd",
@@ -43100,6 +43146,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/%E3%83%A4%E3%82%B5%E3%82%A4%E3%83%9E%E3%82%B7%E2%98%86%E3%83%8B%E3%83%B3%E3%83%8B%E3%82%AF%E3%82%A2%E3%83%96%E3%83%A9%E3%82%AA%E3%82%AA%E3%83%A1",
       "jacket": "Yasaimashi ninniku abura oome.jpg"
     },
@@ -43398,6 +43445,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%BC%E3%81%A8%E7%82%8E%E9%BE%8D%E3%83%AC%E3%83%BC%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A4%E3%83%B3",
       "jacket": "Ririze to honou ryuu revatein.jpg",
       "saHash": "IidO8qlodqdoioodqqb9Dqiq991Ilo10",
@@ -45995,6 +46043,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" },
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E6%82%A3%E9%83%A8%E3%81%A7%E6%AD%A2%E3%81%BE%E3%81%A3%E3%81%A6%E3%81%99%E3%81%90%E6%BA%B6%E3%81%91%E3%82%8B%EF%BD%9E%E7%8B%82%E6%B0%97%E3%81%AE%E5%84%AA%E6%9B%87%E8%8F%AF%E9%99%A2",
       "jacket": "Kanbu de tomatte sugu tokeru ~ kyouki no udongein.jpg",
       "saHash": "6OIoOPDb9iI8i1Do9qQ96Q0ddOdd6q9i",
@@ -48102,6 +48151,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E9%85%94%E3%81%84%E3%81%A9%E3%82%8C%E7%9F%A5%E3%82%89%E3%81%9A",
       "jacket": "Yoidore shirazu.jpg",
       "saHash": "IqibilD8QI9idP60P8o9ob0lqblQD89P",
@@ -48190,6 +48240,7 @@
         { "lvl": 17, "style": "double", "diffClass": "expert" },
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/%E9%87%8F%E5%AD%90%E3%81%AE%E6%B5%B7%E3%81%AE%E3%83%AA%E3%83%B3%E3%83%88%E3%83%B4%E3%83%AB%E3%83%A0",
       "jacket": "Ryoushi no umi no Lindwurm.jpg",
       "saHash": "dPI9loII89Q6P6iD6Ioo1iiI880DI1Dd",
@@ -48233,6 +48284,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "http://remywiki.com/%E9%8F%A1%E8%8A%B1%E6%B0%B4%E6%9C%88%E6%A5%BC%20%28DDR%20EDITION%29",
       "jacket": "Kyoka suigetsurou (DDR EDITION).jpg",
       "saHash": "q1DPdd1ooiPi9P0b0Obqq1QqbD86Qb18",
