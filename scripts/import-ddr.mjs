@@ -52,7 +52,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
     remyLink: oldData.remyLink,
     jacket: oldData.jacket,
     genre: oldData.genre,
-    flags: oldData.flags,
+    flags: mergeFlags(oldData.flags, zivData.flags),
     search_hint: oldData.search_hint,
   };
 
