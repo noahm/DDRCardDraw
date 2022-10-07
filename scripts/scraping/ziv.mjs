@@ -1,78 +1,24 @@
 // @ts-check
-const { JSDOM } = require("jsdom");
-const { default: fetch } = require("node-fetch");
-const readline = require("readline");
-const iconv = require("iconv-lite");
-const he = require("he");
+import { JSDOM } from "jsdom";
 
-const { requestQueue } = require("../utils");
-
-module.exports = {
-  getSongsFromZiv,
-  getSongsFromSkillAttack,
-};
-
-const difficultyByIndex = [
-  "beginner",
-  "basic",
-  "difficult",
-  "expert",
-  "challenge",
-  "basic",
-  "difficult",
-  "expert",
-  "challenge",
-];
-
-async function getSongsFromSkillAttack() {
-  const resp = await fetch("http://skillattack.com/sa4/data/master_music.txt");
-
-  return new Promise((resolve) => {
-    const decoder = iconv.decodeStream("Shift_JIS");
-    resp.body.pipe(decoder);
-    const rl = readline.createInterface(decoder);
-    const data = [];
-    rl.on("line", (rawLine) => {
-      const [index, hash, ...fields] = rawLine.split("\t");
-      const charts = [];
-      let i = 0;
-      for (const field of fields) {
-        i++;
-        if (i > 9) break;
-        const lvl = parseInt(field, 10);
-        if (lvl < 0) continue;
-        charts.push({
-          lvl,
-          style: i > singlesColumnCount ? "double" : "single",
-          diffClass: difficultyByIndex[i - 1],
-        });
-      }
-      data.push({
-        saHash: hash,
-        saIndex: index,
-        name: he.decode(fields[9]),
-        artist: he.decode(fields[10]),
-        charts,
-      });
-    });
-    rl.on("close", () => {
-      resolve(data);
-    });
-  });
-}
+import { requestQueue } from "../utils.js";
+import { getCanonicalRemyURL } from "./remy.mjs";
 
 /**
- * @return {Promise<Array<{}>>}
+ * @param {Function} log
+ * @param {string} url
  */
-function getSongsFromZiv(log) {
-  const ZIV_EXTREME =
-    "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc";
-
-  return JSDOM.fromURL(ZIV_EXTREME).then((data) => scrapeSongData(data, log));
+export async function getSongsFromZiv(log, url) {
+  log("fetching data from zenius-i-vanisher.com");
+  const dom = await JSDOM.fromURL(url);
+  return await scrapeSongData(dom, log);
 }
 
 const translationNodeQuery = "span[onmouseover]";
 
+/**
+ * @param {Element} node
+ */
 function getTranslationText(node) {
   if (node.nodeName === "#text") {
     return "";
@@ -95,6 +41,7 @@ const difficultyMap = {
 };
 
 const titleList = [
+  { name: "DanceDanceRevolution A3" },
   { name: "DanceDanceRevolution A20 PLUS" },
   { name: "DanceDanceRevolution A20" },
   { name: "DanceDanceRevolution A" },
@@ -115,45 +62,28 @@ const titleList = [
   { name: "DanceDanceRevolution 1st Mix" },
 ];
 
-const singlesColumnCount = 5;
 /**
- * @param {any[]} chartNodes
+ * @param {JSDOM} dom
+ * @param {Function} log
+ * @returns
  */
-function getCharts(chartNodes) {
-  const charts = [];
-  let index = 0;
-  for (const current of chartNodes) {
-    index++;
-    if (current.firstChild.textContent === "-") continue;
-    const chart = {
-      lvl: +current.firstChild.textContent,
-      style: index > singlesColumnCount ? "double" : "single",
-      diffClass: difficultyMap[current.classList[1]],
-    };
-    if (current.firstChild.style.color === "red") {
-      chart.flags = ["unlock"];
-    }
-    charts.push(chart);
-  }
-  return charts;
-}
-
 async function scrapeSongData(dom, log) {
   const numbers = [];
-  dom.window.document
-    .querySelectorAll('th[colspan="11"] span')
-    .forEach((node) =>
-      numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
-    );
+  /** @type {HTMLSpanElement[]} */
+  const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
+  spans.forEach((node) =>
+    numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
+  );
   const titleMap = numbers.map((number, index) => {
     return {
       name: titleList[index].name,
       number,
     };
   });
-  log("Songs scraped:", titleMap);
+  log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
 
   const songs = [];
+  /** @type {HTMLAnchorElement[]} */
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
   let loop = 0;
   for (const title of titleMap) {
@@ -163,7 +93,7 @@ async function scrapeSongData(dom, log) {
       loop++;
     }
   }
-  return Promise.all(songs);
+  return songs;
 }
 
 // map from bad ziv title to our better title
@@ -175,6 +105,11 @@ const ZIV_TITLE_CORRECTIONS = {
   "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
 };
 
+/**
+ * @param {HTMLAnchorElement} songLink
+ * @param {string} folder
+ * @returns
+ */
 async function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
@@ -194,14 +129,80 @@ async function createSongData(songLink, folder) {
     bpm: songRow.children[1].textContent.trim(),
     folder,
     charts: getCharts(chartNodes),
-    remyLink: await getRemyLinkForSong(songLink),
+    getRemyLink: () => getRemyLinkForSong(songLink),
   };
+  const flags = getFlagsForSong(songLink);
+  if (flags) {
+    songData.flags = flags;
+  }
   return songData;
 }
 
+const flagIndex = {
+  "DDR GP Early Access": "grandPrixPack",
+  "EXTRA SAVIOR A3": "unlock",
+  "GOLDEN LEAGUER'S PRIVILEGE": "goldenLeague",
+  "EXTRA EXCLUSIVE": "extraExclusive",
+  "COURSE TRIAL A3": "unlock",
+};
+
+/**
+ *
+ * @param {HTMLAnchorElement} songLink
+ */
+function getFlagsForSong(songLink) {
+  /** @type {HTMLImageElement | null} */
+  const previous = songLink.previousElementSibling;
+  if (previous && previous.src && previous.src.endsWith("lock.png")) {
+    const titleBits = previous.title.split(" / ");
+    if (titleBits[1]) {
+      const flag = flagIndex[titleBits[1].trim()] || titleBits[1].trim();
+      return [flag];
+    }
+    return ["unlock"];
+  }
+  return undefined;
+}
+
+const singlesColumnCount = 5;
+/**
+ * @param {any[]} chartNodes
+ */
+function getCharts(chartNodes) {
+  const charts = [];
+  let index = 0;
+  for (const current of chartNodes) {
+    index++;
+    if (current.firstChild.textContent === "-") continue;
+    const chart = {
+      lvl: +current.firstChild.textContent,
+      style: index > singlesColumnCount ? "double" : "single",
+      diffClass: difficultyMap[current.classList[1]],
+    };
+    const flags = [];
+    if (current.firstChild.style.color === "red") {
+      flags.push("unlock");
+    }
+    const [step, freeze, shock] = current.lastChild.textContent
+      .split(" / ")
+      .map(Number);
+    if (!Number.isNaN(shock) && shock > 0) {
+      flags.push("shock");
+    }
+    if (flags.length) {
+      chart.flags = flags;
+    }
+    charts.push(chart);
+  }
+  return charts;
+}
+
+/**
+ * @param {HTMLAnchorElement} songLink
+ */
 async function getRemyLinkForSong(songLink) {
   const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
   const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
   // @ts-ignore
-  if (remyLink) return remyLink.href;
+  if (remyLink) return getCanonicalRemyURL(remyLink.href);
 }
