@@ -167,6 +167,9 @@ function Controls() {
 
   const handleLowerBoundChange = (newLow: number) => {
     if (newLow !== lowerBound) {
+      if (newLow > upperBound) {
+        newLow = upperBound;
+      }
       updateState({
         lowerBound: newLow,
       });
@@ -218,7 +221,8 @@ function Controls() {
               fill
               value={lowerBound}
               min={1}
-              max={upperBound}
+              max={Math.max(upperBound, lowerBound, 1)}
+              clampValueOnBlur
               large
               onValueChange={handleLowerBoundChange}
             />
@@ -229,6 +233,7 @@ function Controls() {
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
+              clampValueOnBlur
               large
               onValueChange={handleUpperBoundChange}
             />
