@@ -12,8 +12,11 @@ import { IntlProvider } from "./intl-provider";
 import * as qs from "query-string";
 import createStore from "zustand";
 import shallow from "zustand/shallow";
+import { DataConnection } from "peerjs";
+import { initShareWithPeer } from "./zustand/shared-zustand";
 
 interface DrawState {
+  tournamentMode: boolean;
   gameData: GameData | null;
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
@@ -22,14 +25,20 @@ interface DrawState {
   loadGameData(dataSetName: string): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
+  toggleTournamentMode(): void;
+  injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
+  tournamentMode: true,
   gameData: null,
   fuzzySearch: null,
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
+  toggleTournamentMode() {
+    set((prev) => ({ tournamentMode: !prev.tournamentMode }));
+  },
   async loadGameData(dataSetName: string) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
@@ -83,11 +92,31 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
       return false;
     }
 
-    set((prevState) => ({
-      drawings: [drawing, ...prevState.drawings].filter(Boolean),
-      lastDrawFailed: false,
-    }));
+    set((prevState) => {
+      return {
+        drawings: [drawing, ...prevState.drawings].filter(Boolean),
+        lastDrawFailed: false,
+      };
+    });
     return true;
+  },
+  injectRemoteDrawing(drawing, syncWithPeer) {
+    set((prevState) => {
+      const currentDrawing = prevState.drawings.find(
+        (d) => d.id === drawing.id
+      );
+      const newDrawings = prevState.drawings.filter((d) => d.id !== drawing.id);
+      newDrawings.unshift(drawing);
+      if (currentDrawing) {
+        drawing.__syncPeer = currentDrawing.__syncPeer;
+      }
+      if (syncWithPeer) {
+        drawing.__syncPeer = syncWithPeer;
+      }
+      return {
+        drawings: newDrawings,
+      };
+    });
   },
 }));
 

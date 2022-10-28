@@ -23,19 +23,19 @@ module.exports = function (env = {}, argv = {}) {
   const zip = !!env.zip;
 
   return {
+    target: "browserslist: >1%",
     mode: isProd ? "production" : "development",
-    devtool: isProd ? false : "eval-cheap-module-source-map",
+    devtool: isProd ? false : "inline-cheap-module-source-map",
     devServer: !serve
       ? undefined
       : {
           static: "./dist",
           hot: true,
-          // host: "0.0.0.0"
+          host: "0.0.0.0",
         },
     entry: "./src/index.tsx",
     output: {
       filename: "[name].[chunkhash:5].js",
-      chunkFilename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist"),
     },
     optimization: {
@@ -54,6 +54,9 @@ module.exports = function (env = {}, argv = {}) {
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".json"],
+      alias: {
+        peerjs$: resolve(__dirname, "node_modules/peerjs/dist/peerjs.esm.js"),
+      },
     },
     module: {
       rules: [
@@ -62,12 +65,12 @@ module.exports = function (env = {}, argv = {}) {
           test: /\.tsx?$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader?cacheDirectory",
+            loader: "babel-loader",
             options: {
               presets: [
                 [
                   require("@babel/preset-env"),
-                  { targets: { browsers: [">2%"] } },
+                  { targets: { browsers: [">1%"] } },
                 ],
                 require("@babel/preset-typescript"),
               ],
@@ -82,6 +85,7 @@ module.exports = function (env = {}, argv = {}) {
                 require("@babel/plugin-transform-react-jsx-source"),
                 !isProd ? require("react-refresh/babel") : null,
               ].filter(Boolean),
+              cacheDirectory: true,
             },
           },
         },
@@ -152,8 +156,7 @@ module.exports = function (env = {}, argv = {}) {
         ),
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash:5].css",
-        chunkFilename: "[id].[chunkhash:5].js",
+        filename: "[name].[chunkhash:5].css",
       }),
       new FaviconsWebpackPlugin({
         logo: "./src/assets/ddr-tools-256.png",
@@ -173,6 +176,9 @@ module.exports = function (env = {}, argv = {}) {
             firefox: false,
             coast: false,
             appleStartup: false,
+            appleIcon: {
+              offset: 5,
+            },
           },
         },
       }),

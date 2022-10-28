@@ -14,6 +14,10 @@ body:global(.bp4-dark) {
   background-color: #222;
 }
 
+:global(.bp4-dark) :global(.bp4-navbar) {
+  box-shadow: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -38,7 +42,7 @@ input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="text"],
+input[type="text"]:not(:global(.bp4-editable-text-input)),
 input[type="time"],
 input[type="url"],
 input[type="week"],

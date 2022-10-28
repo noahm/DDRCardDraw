@@ -1,6 +1,7 @@
 import { useIntl } from "../hooks/useIntl";
 import { IconNames, IconName } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
+import { usePlayerLabel } from "./use-player-label";
 
 interface Props {
   onStartPocketPick: (p: 1 | 2) => void;
@@ -46,8 +47,16 @@ interface IconRowProps {
 function MenuPair({ icon, text, onClick }: IconRowProps) {
   return (
     <MenuItem icon={icon} text={text}>
-      <MenuItem text="P1" onClick={() => onClick(1)} icon={IconNames.PERSON} />
-      <MenuItem text="P2" onClick={() => onClick(2)} icon={IconNames.PERSON} />
+      <MenuItem
+        text={usePlayerLabel(1)}
+        onClick={() => onClick(1)}
+        icon={IconNames.PERSON}
+      />
+      <MenuItem
+        text={usePlayerLabel(2)}
+        onClick={() => onClick(2)}
+        icon={IconNames.PERSON}
+      />
     </MenuItem>
   );
 }

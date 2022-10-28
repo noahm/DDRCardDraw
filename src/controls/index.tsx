@@ -19,12 +19,19 @@ import {
   Switch,
   NavbarDivider,
   DrawerSize,
+  Divider,
+  Tabs,
+  Tab,
+  Icon,
 } from "@blueprintjs/core";
 import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { EligibleChartsListFilter } from "../eligible-charts-list";
+import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import shallow from "zustand/shallow";
+import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
+import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
+import { useRemotePeers } from "../tournament-mode/remote-peers";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -75,10 +82,7 @@ export function HeaderControls() {
 
   function handleDraw() {
     useConfigState.setState({ showPool: false });
-    const couldDraw = drawSongs(useConfigState.getState());
-    if (couldDraw !== !lastDrawFailed) {
-      setLastDrawFailed(!couldDraw);
-    }
+    drawSongs(useConfigState.getState());
   }
 
   function openSettings() {
@@ -94,13 +98,10 @@ export function HeaderControls() {
         size={isNarrow ? DrawerSize.LARGE : "500px"}
         onClose={() => setSettingsOpen(false)}
         title={
-          <FormattedMessage
-            id="settings.title"
-            defaultMessage="Card Draw Options"
-          />
+          <FormattedMessage id="settings.title" defaultMessage="Settings" />
         }
       >
-        <Controls />
+        <ControlsDrawer />
       </Drawer>
       {!isNarrow && (
         <>
@@ -133,7 +134,28 @@ export function HeaderControls() {
   );
 }
 
-function Controls() {
+function ControlsDrawer() {
+  const isConnected = useRemotePeers((r) => !!r.thisPeer);
+  const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
+  return (
+    <div className={styles.drawer}>
+      <Tabs id="settings" large>
+        <Tab id="general" panel={<GeneralSettings />}>
+          <Icon icon={IconNames.Settings} /> General
+        </Tab>
+        <Tab id="network" panel={<RemotePeerControls />}>
+          <Icon
+            icon={hasPeers ? IconNames.ThirdParty : IconNames.GlobeNetwork}
+            intent={isConnected ? "success" : "none"}
+          />{" "}
+          Networking
+        </Tab>
+      </Tabs>
+    </div>
+  );
+}
+
+function GeneralSettings() {
   const { t } = useIntl();
   const [dataSetName, gameData] = useDrawState(
     (s) => [s.dataSetName, s.gameData],
@@ -144,6 +166,7 @@ function Controls() {
     useWeights,
     constrainPocketPicks,
     orderByAction,
+    showVeto,
     lowerBound,
     upperBound,
     update: updateState,
@@ -184,7 +207,7 @@ function Controls() {
   };
 
   return (
-    <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+    <>
       {isNarrow && (
         <>
           <FormGroup>
@@ -195,7 +218,7 @@ function Controls() {
               <EligibleChartsListFilter />
             </FormGroup>
           )}
-          <hr />
+          <Divider />
         </>
       )}
       <div className={isNarrow ? undefined : styles.inlineControls}>
@@ -316,6 +339,15 @@ function Controls() {
           label={t("orderByAction")}
         />
         <Checkbox
+          id="showVeto"
+          checked={showVeto}
+          onChange={(e) => {
+            const next = !!e.currentTarget.checked;
+            updateState({ showVeto: next });
+          }}
+          label={t("showVeto", undefined, "Show vetoed charts")}
+        />
+        <Checkbox
           id="constrainPocketPicks"
           checked={constrainPocketPicks}
           onChange={(e) => {
@@ -324,6 +356,7 @@ function Controls() {
           }}
           label={t("constrainPocketPicks")}
         />
+        <TournamentModeToggle />
         <Checkbox
           id="weighted"
           checked={useWeights}
@@ -335,6 +368,6 @@ function Controls() {
         />
         {useWeights && <WeightsControls high={upperBound} low={lowerBound} />}
       </FormGroup>
-    </form>
+    </>
   );
 }

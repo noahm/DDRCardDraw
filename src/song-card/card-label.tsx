@@ -2,6 +2,8 @@ import React from "react";
 import { Intent, Tag } from "@blueprintjs/core";
 import styles from "./card-label.css";
 import { IconNames } from "@blueprintjs/icons";
+import { useDrawing } from "../drawing-context";
+import { usePlayerLabel } from "./use-player-label";
 
 export enum LabelType {
   Protect = 1,
@@ -38,6 +40,8 @@ function getIcon(type: LabelType) {
 }
 
 export function CardLabel({ player, type, onRemove }: Props) {
+  const label = usePlayerLabel(player);
+
   return (
     <div className={styles.cardLabel}>
       <Tag
@@ -46,7 +50,7 @@ export function CardLabel({ player, type, onRemove }: Props) {
         large
         onRemove={onRemove}
       >
-        P{player}
+        {label}
       </Tag>
     </div>
   );

@@ -1,9 +1,16 @@
+import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
 import { times } from "./utils";
-import { DrawnChart, Drawing } from "./models/Drawing";
+import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
+import { getDifficultyColor } from "./hooks/useDifficultyColor";
+import { getDiffAbbr } from "./game-data-utils";
 
-export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
+export function getDrawnChart(
+  gameData: GameData,
+  currentSong: Song,
+  chart: Chart
+): EligibleChart {
   return {
     name: currentSong.name,
     jacket: chart.jacket || currentSong.jacket,
@@ -11,18 +18,15 @@ export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
-    difficultyClass: chart.diffClass,
     level: chart.lvl,
     hasShock: !!chart.shock,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
+    // Fill in variant data per game
+    diffAbbr: getDiffAbbr(gameData, chart.diffClass),
+    diffColor: getDifficultyColor(gameData, chart.diffClass),
   };
 }
-
-/**
- * Used to give each drawing an auto-incrementing id
- */
-let drawingID = 0;
 
 /** returns true if song matches configured flags */
 export function songIsValid(
@@ -54,8 +58,8 @@ export function chartIsValid(
   );
 }
 
-export function* eligibleCharts(config: ConfigState, songs: Song[]) {
-  for (const currentSong of songs) {
+export function* eligibleCharts(config: ConfigState, gameData: GameData) {
+  for (const currentSong of gameData.songs) {
     if (!songIsValid(config, currentSong)) {
       continue;
     }
@@ -67,7 +71,7 @@ export function* eligibleCharts(config: ConfigState, songs: Song[]) {
       }
 
       // add chart to deck
-      yield getDrawnChart(currentSong, chart);
+      yield getDrawnChart(gameData, currentSong, chart);
     }
   }
 }
@@ -89,12 +93,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     weights,
   } = configData;
 
-  const validCharts: Record<string, Array<DrawnChart>> = {};
+  const validCharts: Record<string, Array<EligibleChart>> = {};
   times(gameData.meta.lvlMax, (n) => {
     validCharts[n.toString()] = [];
   });
 
-  for (const chart of eligibleCharts(configData, gameData.songs)) {
+  for (const chart of eligibleCharts(configData, gameData)) {
     validCharts[chart.level].push(chart);
   }
 
@@ -160,10 +164,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const randomChart = selectableCharts[randomIndex];
 
     if (randomChart) {
-      // Give this random chart a unique id within this drawing
-      randomChart.id = drawnCharts.length;
       // Save it in our list of drawn charts
-      drawnCharts.push(randomChart);
+      drawnCharts.push({
+        ...randomChart,
+        // Give this random chart a unique id within this drawing
+        id: drawnCharts.length,
+      });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
       if (!difficultyCounts[chosenDifficulty]) {
@@ -185,9 +191,8 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   }
 
-  drawingID += 1;
   return {
-    id: drawingID,
+    id: nanoid(10),
     charts: drawnCharts,
     bans: [],
     protects: [],
