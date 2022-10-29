@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1651354852324
+    "lastUpdated": 1667067059612
   },
   "defaults": {
     "style": "solo",
@@ -10015,7 +10015,7 @@
           "diffClass": "hard",
           "author": "Tommy Balboa"
         },
-        { "style": "solo", "lvl": 23, "diffClass": "wild", "author": "Resty" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild", "author": "Retsy" },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "author": "Riki" },
         { "style": "solo", "lvl": 19, "diffClass": "full", "author": "Retsy" },
         { "style": "team", "lvl": 21, "diffClass": "team", "author": "Brutus" }
@@ -10289,12 +10289,7 @@
           "diffClass": "hard",
           "author": "Mona Lott"
         },
-        {
-          "style": "solo",
-          "lvl": 22,
-          "diffClass": "wild",
-          "author": "J. Kuret"
-        },
+        { "style": "solo", "lvl": 21, "diffClass": "wild", "author": "T.M.B." },
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "A+" },
         {
           "style": "solo",
@@ -13797,6 +13792,196 @@
           "diffClass": "team",
           "author": "Gin & Vodka"
         }
+      ]
+    },
+    {
+      "saIndex": "553",
+      "name": "Good Feeling",
+      "artist": "More Plastic & imallryt",
+      "genre": "Electro House",
+      "bpm": "135",
+      "jacket": "smx/GoodFeeling.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "basic", "author": "EZPZ" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy", "author": "N.D.GO" },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "author": "C. Krett"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild",
+          "author": "J. Bratt"
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "C. Krett"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "author": "C. Krett"
+        },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team",
+          "author": "C. Krett"
+        }
+      ]
+    },
+    {
+      "saIndex": "554",
+      "name": "INEEDU",
+      "artist": "Teddy Killerz",
+      "genre": "Drum & Bass",
+      "bpm": "175",
+      "jacket": "smx/INeedU.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "basic",
+          "author": "Scaredy Cat"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "Scaredy Cat"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard",
+          "author": "U. Next"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "wild",
+          "author": "Spookzilla"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "author": "N. Disguise"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "author": "Boos and Brews"
+        },
+        { "style": "team", "lvl": 18, "diffClass": "team", "author": "S. Fry" }
+      ]
+    },
+    {
+      "saIndex": "555",
+      "name": "Midnight Train",
+      "artist": "More Plastic & Tylah Winyard",
+      "genre": "Future Bass",
+      "bpm": "150",
+      "jacket": "smx/MidnightTrain.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "basic",
+          "author": "Pump. Kin"
+        },
+        {
+          "style": "solo",
+          "lvl": 8,
+          "diffClass": "easy",
+          "author": "C. Writer"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "C. Writer"
+        },
+        { "style": "solo", "lvl": 22, "diffClass": "wild", "author": "JBEAN" },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "C. Writer"
+        },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team",
+          "author": "C. Writer"
+        }
+      ]
+    },
+    {
+      "saIndex": "556",
+      "name": "Right Into You",
+      "artist": "The Tech Team",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/RightIntoYou.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "basic", "author": "Ace" },
+        { "style": "solo", "lvl": 8, "diffClass": "easy", "author": "EZ PZ" },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "author": "J. Weber"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild",
+          "author": "B. Dwyer "
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "B. Hammond"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "author": "T. Cohen"
+        },
+        { "style": "team", "lvl": 20, "diffClass": "team", "author": "Miria" }
+      ]
+    },
+    {
+      "saIndex": "557",
+      "name": "WYGD",
+      "artist": "Bishu",
+      "genre": "Pop",
+      "bpm": "150",
+      "jacket": "smx/WYGD.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "basic", "author": "GG" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy", "author": "HYD" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "author": "TTYL" },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "wild",
+          "author": "IDKMBFFJ"
+        },
+        { "style": "solo", "lvl": 16, "diffClass": "dual", "author": "LMK" },
+        { "style": "solo", "lvl": 18, "diffClass": "full", "author": "FTW" },
+        { "style": "team", "lvl": 16, "diffClass": "team", "author": "BRB" }
       ]
     }
   ]
