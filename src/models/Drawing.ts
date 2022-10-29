@@ -37,6 +37,7 @@ export interface Drawing {
   charts: DrawnChart[];
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;
+  winners: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
   /** __ prefix avoids serializing this field during sync */
   __syncPeer?: DataConnection;

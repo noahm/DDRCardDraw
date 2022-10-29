@@ -58,15 +58,19 @@ function ChartFromContext({ chartId }: { chartId: number }) {
   const pocketPick = useDrawing((d) =>
     d.pocketPicks.find((b) => b.chartId === chartId)
   );
+  const winner = useDrawing((d) =>
+    d.winners.find((b) => b.chartId === chartId)
+  );
   if (!chart) {
     return null;
   }
   return (
     <SongCard
-      vetoedBy={veto && veto.player}
-      protectedBy={protect && protect.player}
-      replacedBy={pocketPick && pocketPick.player}
-      replacedWith={pocketPick && pocketPick.pick}
+      vetoedBy={veto?.player}
+      protectedBy={protect?.player}
+      replacedBy={pocketPick?.player}
+      replacedWith={pocketPick?.pick}
+      winner={winner?.player}
       chart={chart}
       actionsEnabled
     />

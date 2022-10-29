@@ -17,6 +17,7 @@ const stubDrawing: Drawing = {
   bans: [],
   pocketPicks: [],
   protects: [],
+  winners: [],
 };
 
 interface DrawingProviderProps {
@@ -41,6 +42,7 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
     player: 1 | 2,
     chart?: EligibleChart
   ): void;
+  setWinner(chartId: number, p: 1 | 2 | null): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {
@@ -68,6 +70,7 @@ const {
         bans: d.bans.filter((p) => p.chartId !== chartId),
         protects: d.protects.filter((p) => p.chartId !== chartId),
         pocketPicks: d.pocketPicks.filter((p) => p.chartId !== chartId),
+        winners: d.pocketPicks.filter((p) => p.chartId !== chartId),
       }));
     },
     redrawChart(chartId) {
@@ -109,9 +112,9 @@ const {
         });
       }
 
-      const existingBanIndex = arr.findIndex((b) => b.chartId === chartId);
-      if (existingBanIndex >= 0) {
-        arr.splice(existingBanIndex, 1);
+      const existingIndex = arr.findIndex((b) => b.chartId === chartId);
+      if (existingIndex >= 0) {
+        arr.splice(existingIndex, 1);
       } else {
         arr.push({ player, pick: newChart!, chartId });
       }
@@ -130,6 +133,19 @@ const {
         ret[k as keyof Drawing] = v;
         return ret;
       }, {}) as Drawing;
+    },
+    setWinner(chartId, player) {
+      const arr = get().winners.slice();
+      const existingIndex = arr.findIndex((b) => b.chartId === chartId);
+      if (existingIndex >= 0) {
+        arr.splice(existingIndex, 1);
+      }
+      if (player) {
+        arr.push({ player, chartId });
+      }
+      set({
+        winners: arr,
+      });
     },
   }),
   (p) => p.initialDrawing.id,
