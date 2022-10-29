@@ -39,12 +39,10 @@ export function* flattenedKeys(
 }
 
 /** ordered list of all available game data files */
-export const availableGameData = (
-  process.env.DATA_FILES as unknown as Array<{
-    name: string;
-    display: string;
-  }>
-).sort((a, b) => (a.display < b.display ? -1 : 1));
+export const availableGameData = process.env.DATA_FILES as unknown as Array<{
+  name: string;
+  display: string;
+}>;
 
 export function firstOf<T>(iter: IterableIterator<T>): T | undefined {
   const next = iter.next();

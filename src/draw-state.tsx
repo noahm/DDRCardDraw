@@ -13,7 +13,6 @@ import * as qs from "query-string";
 import createStore from "zustand";
 import shallow from "zustand/shallow";
 import { DataConnection } from "peerjs";
-import { initShareWithPeer } from "./zustand/shared-zustand";
 
 interface DrawState {
   tournamentMode: boolean;
@@ -44,16 +43,9 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     if (state.dataSetName === dataSetName && state.gameData) {
       return state.gameData;
     }
-    if (
-      state.drawings.length &&
-      !confirm("This will clear all songs drawn so far. Confirm?")
-    ) {
-      return state.gameData;
-    }
     set({
       gameData: null,
       dataSetName,
-      drawings: [],
     });
     writeDataSetToUrl(dataSetName);
 
