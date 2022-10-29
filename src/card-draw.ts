@@ -197,5 +197,6 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     bans: [],
     protects: [],
     pocketPicks: [],
+    winners: [],
   };
 }
