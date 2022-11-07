@@ -1,13 +1,9 @@
-const path = require("path");
-const { JSDOM } = require("jsdom");
-const { downloadJacket } = require("../utils");
-
-module.exports = {
-  getJacketFromRemySong,
-};
+import * as path from "path";
+import { JSDOM } from "jsdom";
+import { downloadJacket } from "../utils.js";
 
 /** Will try to return a jacket URL from the wiki page, if found */
-async function getJacketFromRemySong(pageUrl, overrideSongName) {
+export async function getJacketFromRemySong(pageUrl, overrideSongName) {
   const dom = await JSDOM.fromURL(pageUrl);
   const songName =
     overrideSongName || decodeURIComponent(path.basename(pageUrl));
@@ -36,11 +32,34 @@ async function getJacketFromRemySong(pageUrl, overrideSongName) {
     // finally, fall back to first appearance
     () => true,
   ]) {
-    let candidate = images.find(finder);
+    const candidate = images.find(finder);
     if (candidate) {
       return getJacketFromThumb(candidate, songName);
     }
   }
+}
+
+/**
+ *
+ * @param {Function} logger
+ * @param {*} pageUrl url of game page on remy
+ * @returns {Promise<Set<string>>}
+ */
+export async function getRemovedSongUrls(pageUrl) {
+  const dom = await JSDOM.fromURL(pageUrl);
+  const songsTable =
+    dom.window.document.getElementById("Removed_Songs").parentElement
+      .nextElementSibling.nextElementSibling;
+  const songLinks = new Set();
+  for (const anchor of songsTable.querySelectorAll("tr td:first-child a")) {
+    songLinks.add(anchor.href);
+  }
+  return songLinks;
+}
+
+export async function getCanonicalRemyURL(pageUrl) {
+  const dom = await JSDOM.fromURL(pageUrl);
+  return dom.window.document.querySelector("link[rel=canonical]").href;
 }
 
 function getJacketFromThumb(node, songName) {
