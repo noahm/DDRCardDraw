@@ -3797,11 +3797,6 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
-fraction.js@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
-  integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
-
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -6548,6 +6543,13 @@ signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
+simfile-parser@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/simfile-parser/-/simfile-parser-0.3.0.tgz#c42f35fbdee81f16a0e77bd2390837c5689e4c40"
+  integrity sha512-Tcjf0xAfOrdVGfBUf0xm1wPTHawvyFehaxC+c3Vn5PS8Mr/UiulJXQTL2NaPeAdQOTJuj64dWaw9PecoET0pwg==
+  dependencies:
+    fraction.js "^4.2.0"
+
 simple-concat@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/simple-concat/-/simple-concat-1.0.1.tgz#f46976082ba35c2263f1c8ab5edfe26c41c9552f"
@@ -6568,13 +6570,6 @@ simple-swizzle@^0.2.2:
   integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
   dependencies:
     is-arrayish "^0.3.1"
-
-simfile-parser@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/simfile-parser/-/simfile-parser-0.2.1.tgz#f42f7a3900c7bd4792f08e554a3dd72ad88e788c"
-  integrity sha512-aKiEtkpGAfcyWxPGbH1TFcpBTcDmFu8fs3O+p+KTByFvr+420kqM9jLwz+8asV2nbH1um4ePFsj8Ti0qv6w15g==
-  dependencies:
-    fraction.js "^4.2.0"
 
 slash@^1.0.0:
   version "1.0.0"
