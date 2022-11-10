@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1667067059612
+    "lastUpdated": 1668052454680
   },
   "defaults": {
     "style": "solo",
@@ -2028,6 +2028,12 @@
           "lvl": 23,
           "diffClass": "full",
           "author": "Telperion"
+        },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team",
+          "author": "D. Nation"
         }
       ],
       "saIndex": "245"
@@ -2218,7 +2224,8 @@
         { "style": "solo", "lvl": 18, "diffClass": "hard", "author": "M. Lee" },
         { "style": "solo", "lvl": 25, "diffClass": "wild", "author": "M. Lee" },
         { "style": "solo", "lvl": 19, "diffClass": "dual", "author": "JBEAN" },
-        { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" }
+        { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
+        { "style": "team", "lvl": 21, "diffClass": "team", "author": "Lincle" }
       ],
       "saIndex": "250"
     },
@@ -2333,7 +2340,13 @@
         { "style": "solo", "lvl": 17, "diffClass": "hard", "author": "M. Lee" },
         { "style": "solo", "lvl": 25, "diffClass": "wild", "author": "M. Lee" },
         { "style": "solo", "lvl": 13, "diffClass": "dual", "author": "JBEAN" },
-        { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" }
+        { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team",
+          "author": "Alternate Reality"
+        }
       ],
       "saIndex": "253"
     },
@@ -2417,7 +2430,8 @@
           "author": "J. Casarino"
         },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
-        { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" }
+        { "style": "solo", "lvl": 20, "diffClass": "full", "author": "JBEAN" },
+        { "style": "team", "lvl": 23, "diffClass": "team", "author": "K.TURN" }
       ],
       "saIndex": "255"
     },
@@ -2537,7 +2551,7 @@
         },
         {
           "style": "solo",
-          "lvl": 16,
+          "lvl": 15,
           "diffClass": "hard",
           "author": "J. Casarino"
         },
@@ -2549,7 +2563,7 @@
         },
         {
           "style": "solo",
-          "lvl": 5,
+          "lvl": 7,
           "diffClass": "dual",
           "author": "J.Casarino"
         },
@@ -2561,7 +2575,7 @@
         },
         {
           "style": "team",
-          "lvl": 14,
+          "lvl": 15,
           "diffClass": "team",
           "author": "J.Casarino"
         }
@@ -2610,6 +2624,12 @@
           "lvl": 22,
           "diffClass": "full",
           "author": "J. Kuret"
+        },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team",
+          "author": "Una Noche"
         }
       ],
       "saIndex": "259"
@@ -2740,7 +2760,13 @@
           "diffClass": "dual",
           "author": "L. Striker"
         },
-        { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" }
+        { "style": "solo", "lvl": 16, "diffClass": "full", "author": "JBEAN" },
+        {
+          "style": "team",
+          "lvl": 14,
+          "diffClass": "team",
+          "author": "T. Island"
+        }
       ],
       "saIndex": "262"
     },
@@ -3481,7 +3507,7 @@
       "name": "Big Blue Bouncy Ball",
       "artist": "Mr. Blue",
       "genre": "Techno",
-      "bpm": "130",
+      "bpm": "65-130",
       "jacket": "smx/BigBlueBouncyBall.jpg",
       "charts": [
         {
@@ -3491,6 +3517,12 @@
           "author": "E. Sterling"
         },
         { "style": "solo", "lvl": 8, "diffClass": "easy", "author": "J. Time" },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "author": "Imperfect Sphere"
+        },
         {
           "style": "solo",
           "lvl": 15,
@@ -3794,7 +3826,7 @@
         },
         {
           "style": "team",
-          "lvl": 17,
+          "lvl": 19,
           "diffClass": "team",
           "author": "J. Kuret & J. Casarino"
         }
@@ -5032,7 +5064,13 @@
           "author": "K. Ward"
         },
         { "style": "solo", "lvl": 17, "diffClass": "dual", "author": "JBEAN" },
-        { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" }
+        { "style": "solo", "lvl": 18, "diffClass": "full", "author": "JBEAN" },
+        {
+          "style": "team",
+          "lvl": 14,
+          "diffClass": "team",
+          "author": "Dr. Irae"
+        }
       ],
       "saIndex": "322"
     },
@@ -5050,6 +5088,7 @@
           "author": "J. Time"
         },
         { "style": "solo", "lvl": 7, "diffClass": "easy", "author": "J. Time" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "author": "Beatle" },
         {
           "style": "solo",
           "lvl": 15,
@@ -5376,7 +5415,8 @@
           "lvl": 22,
           "diffClass": "full",
           "author": "J.Casarino"
-        }
+        },
+        { "style": "team", "lvl": 22, "diffClass": "team", "author": "K.TURN" }
       ],
       "saIndex": "333"
     },
@@ -5616,6 +5656,12 @@
           "author": "K. Ward"
         },
         { "style": "solo", "lvl": 14, "diffClass": "dual", "author": "JBEAN" },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "author": "The Undead"
+        },
         { "style": "solo", "lvl": 22, "diffClass": "full", "author": "JBEAN" },
         { "style": "team", "lvl": 15, "diffClass": "team", "author": "JBEAN" }
       ],
@@ -5893,6 +5939,7 @@
           "diffClass": "hard",
           "author": "E. Nuff"
         },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "author": "Wasp" },
         {
           "style": "solo",
           "lvl": 20,
@@ -13915,7 +13962,7 @@
           "diffClass": "dual",
           "author": "C. Writer"
         },
-        { "style": "solo", "lvl": 21, "diffClass": "full", "author": "JBEAN" },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "author": "JBEAN" },
         {
           "style": "team",
           "lvl": 18,
