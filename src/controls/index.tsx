@@ -142,6 +142,7 @@ function Controls() {
   const configState = useConfigState();
   const {
     useWeights,
+    constrainPocketPicks,
     orderByAction,
     lowerBound,
     upperBound,
@@ -165,14 +166,17 @@ function Controls() {
   const { flags, lvlMax, styles: gameStyles } = gameData.meta;
 
   const handleLowerBoundChange = (newLow: number) => {
-    if (newLow !== lowerBound) {
+    if (newLow !== lowerBound && !isNaN(newLow)) {
+      if (newLow > upperBound) {
+        newLow = upperBound;
+      }
       updateState({
         lowerBound: newLow,
       });
     }
   };
   const handleUpperBoundChange = (newHigh: number) => {
-    if (newHigh !== upperBound) {
+    if (newHigh !== upperBound && !isNaN(newHigh)) {
       updateState({
         upperBound: newHigh,
       });
@@ -204,10 +208,13 @@ function Controls() {
             fill
             value={chartCount}
             min={1}
+            clampValueOnBlur
             onValueChange={(chartCount) => {
-              updateState((s) => {
-                return { ...s, chartCount };
-              });
+              if (!isNaN(chartCount)) {
+                updateState((s) => {
+                  return { ...s, chartCount };
+                });
+              }
             }}
           />
         </FormGroup>
@@ -217,7 +224,8 @@ function Controls() {
               fill
               value={lowerBound}
               min={1}
-              max={upperBound}
+              max={Math.max(upperBound, lowerBound, 1)}
+              clampValueOnBlur
               large
               onValueChange={handleLowerBoundChange}
             />
@@ -228,6 +236,7 @@ function Controls() {
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
+              clampValueOnBlur
               large
               onValueChange={handleUpperBoundChange}
             />
@@ -308,6 +317,15 @@ function Controls() {
             updateState({ orderByAction: reorder });
           }}
           label={t("orderByAction")}
+        />
+        <Checkbox
+          id="constrainPocketPicks"
+          checked={constrainPocketPicks}
+          onChange={(e) => {
+            const constrainPocketPicks = !!e.currentTarget.checked;
+            updateState({ constrainPocketPicks });
+          }}
+          label={t("constrainPocketPicks")}
         />
         <Checkbox
           id="weighted"
