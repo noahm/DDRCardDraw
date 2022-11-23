@@ -60,8 +60,7 @@ export function DiffHistogram({ charts }: Props) {
 
   return (
     <VictoryChart
-      domainPadding={20}
-      animate={{ duration: 500 }}
+      domainPadding={{ x: totals.length === 2 ? 250 : 50 }}
       style={{ parent: { height: isNarrow ? "200px" : "300px" } }}
       width={isNarrow ? 600 : 800}
     >
@@ -89,14 +88,6 @@ export function DiffHistogram({ charts }: Props) {
       <VictoryAxis
         tickValues={xAxisLabels}
         label="Chart Level"
-        style={{
-          axis: { stroke: fgColor },
-          tickLabels: { fill: fgColor },
-          axisLabel: { fill: fgColor },
-        }}
-      />
-      <VictoryAxis
-        dependentAxis
         style={{
           axis: { stroke: fgColor },
           tickLabels: { fill: fgColor },
