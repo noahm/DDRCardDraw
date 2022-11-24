@@ -189,7 +189,7 @@ function GeneralSettings() {
   const { flags, lvlMax, styles: gameStyles } = gameData.meta;
 
   const handleLowerBoundChange = (newLow: number) => {
-    if (newLow !== lowerBound) {
+    if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
         newLow = upperBound;
       }
@@ -199,7 +199,7 @@ function GeneralSettings() {
     }
   };
   const handleUpperBoundChange = (newHigh: number) => {
-    if (newHigh !== upperBound) {
+    if (newHigh !== upperBound && !isNaN(newHigh)) {
       updateState({
         upperBound: newHigh,
       });
@@ -231,10 +231,13 @@ function GeneralSettings() {
             fill
             value={chartCount}
             min={1}
+            clampValueOnBlur
             onValueChange={(chartCount) => {
-              updateState((s) => {
-                return { ...s, chartCount };
-              });
+              if (!isNaN(chartCount)) {
+                updateState((s) => {
+                  return { ...s, chartCount };
+                });
+              }
             }}
           />
         </FormGroup>

@@ -7,7 +7,7 @@ import { useMediaQuery } from "./hooks/useMediaQuery";
 
 export const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-enum Theme {
+export enum Theme {
   Light = "light",
   Dark = "dark",
 }
@@ -32,7 +32,7 @@ interface ThemeContext {
   setTheme(t: Theme): void;
 }
 
-const useTheme = createStore<ThemeContext>((set, get) => ({
+const useThemeStore = createStore<ThemeContext>((set, get) => ({
   userPref: undefined,
   resolved: darkQuery.matches ? Theme.Dark : Theme.Light,
   updateBrowserPref(t) {
@@ -47,8 +47,11 @@ const useTheme = createStore<ThemeContext>((set, get) => ({
   set,
 }));
 
+/** hook to get current app theme */
+export const useTheme = () => useThemeStore((s) => s.resolved);
+
 export function ThemeSyncWidget() {
-  const themeState = useTheme();
+  const themeState = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
     applyThemeBodyClass(themeState.resolved);
@@ -60,8 +63,8 @@ export function ThemeSyncWidget() {
 }
 
 export function ThemeToggle() {
-  const resolvedTheme = useTheme((t) => t.resolved);
-  const setTheme = useTheme((t) => t.setTheme);
+  const resolvedTheme = useThemeStore((t) => t.resolved);
+  const setTheme = useThemeStore((t) => t.setTheme);
 
   const icon = resolvedTheme === Theme.Dark ? IconNames.FLASH : IconNames.MOON;
 

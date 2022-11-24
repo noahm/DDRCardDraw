@@ -9,6 +9,7 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useAtom } from "jotai";
 import { useDeferredValue, useMemo } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
+import { DiffHistogram } from "./histogram";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
@@ -26,17 +27,15 @@ export default function EligibleChartsList() {
   }
   const charts = Array.from(eligibleCharts(configState, gameData));
   const songs = new Set<string>();
-  const cards = useMemo(
+  const filteredCharts = useMemo(
     () =>
-      charts
-        .map((chart, index) => {
-          songs.add(songKeyFromChart(chart));
-          if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
-            return null;
-          }
-          return <SongCard chart={chart} key={index} />;
-        })
-        .filter(Boolean),
+      charts.filter((chart) => {
+        songs.add(songKeyFromChart(chart));
+        if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
+          return false;
+        }
+        return true;
+      }),
     [currentTab, charts]
   );
 
@@ -59,7 +58,12 @@ export default function EligibleChartsList() {
           </NavbarGroup>
         )}
       </Navbar>
-      <div className={styles.chartList}>{cards}</div>
+      <DiffHistogram charts={filteredCharts} />
+      <div className={styles.chartList}>
+        {filteredCharts.map((chart, idx) => (
+          <SongCard chart={chart} key={idx} />
+        ))}
+      </div>
     </>
   );
 }
