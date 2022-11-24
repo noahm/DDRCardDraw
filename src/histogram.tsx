@@ -61,7 +61,9 @@ export function DiffHistogram({ charts }: Props) {
   return (
     <VictoryChart
       domainPadding={{ x: totals.length === 2 ? 250 : 50 }}
-      style={{ parent: { height: isNarrow ? "200px" : "300px" } }}
+      style={{
+        parent: { height: isNarrow ? "200px" : "300px", touchAction: "auto" },
+      }}
       width={isNarrow ? 600 : 800}
     >
       <VictoryStack
