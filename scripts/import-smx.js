@@ -45,7 +45,7 @@ async function main() {
   const req = await fetch(`https://statmaniax.com/api/get_song_data`);
   const songsById = await req.json();
 
-  for (const [songId, song] of Object.values(songsById)) {
+  for (const [songId, song] of Object.entries(songsById)) {
     if (!songs[songId]) {
       songs[songId] = {
         ...indexedSongs[songId],
@@ -58,17 +58,17 @@ async function main() {
         charts: [],
       };
       if (!indexedSongs[songId]) {
-        ui.log.write(`added new song: ${songSource.title}`);
+        ui.log.write(`added new song: ${song.title}`);
       }
     }
     for (const diff of Object.values(song.difficulties)) {
       const isPlus = diff.name.endsWith("+");
       if (isPlus) {
-        diff.name = diff.name.slice(-1);
+        diff.name = diff.name.slice(0, -1);
       }
       const chart = {
         style: diff.name === "team" ? "team" : "solo",
-        lvl: diff.difficulty,
+        lvl: +diff.difficulty,
         diffClass: diff.name,
       };
       if (isPlus) {
@@ -101,5 +101,6 @@ async function main() {
 }
 
 main().catch((e) => {
+  ui.close();
   console.error(e);
 });
