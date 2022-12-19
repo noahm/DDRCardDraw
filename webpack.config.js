@@ -173,6 +173,12 @@ module.exports = function (env = {}, argv = {}) {
             firefox: false,
             coast: false,
             appleStartup: false,
+            android: {
+              offset: 15,
+            },
+            appleIcon: {
+              offset: 10,
+            },
           },
         },
       }),

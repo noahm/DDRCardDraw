@@ -31,9 +31,10 @@ function validateContents(dataFile) {
     errors.push("some default difficulties are missing from meta");
   }
 
-  if (dataFile.defaults.flags.some((d) => !flags.has(d))) {
-    errors.push("some default flags are missing from meta");
-  }
+  // removed to allow for hidden flags like "plus" charts in SMX
+  // if (dataFile.defaults.flags.some((d) => !flags.has(d))) {
+  //   errors.push("some default flags are missing from meta");
+  // }
 
   if (dataFile.defaults.lowerLvlBound > dataFile.defaults.upperLvlBound) {
     errors.push("default level bounds are reversed");

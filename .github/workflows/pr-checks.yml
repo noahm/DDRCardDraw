@@ -2,7 +2,7 @@ name: PR Checks
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   validate:
@@ -10,14 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 14
-    - run: yarn --frozen-lockfile
-    - run: yarn validate:json
-      name: Validate Song Data
-    - run: yarn validate:ts
-      name: Validate Types
-    - run: yarn webpack
-      name: Build App
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "yarn"
+      - run: yarn --frozen-lockfile
+      - run: yarn validate:json
+        name: Validate Song Data
+      - run: yarn validate:ts
+        name: Validate Types
+      - run: yarn webpack
+        name: Build App
