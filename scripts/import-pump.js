@@ -7,6 +7,48 @@ const {
   writeJsonData,
 } = require("./utils");
 
+const flaggableLabels = {
+  "UNLOCK REQUIRED": {
+    stub: "unlock",
+    en: "Unlock required",
+  },
+  "AM.PASS EXCLUSIVE": {
+    stub: "ampass",
+    en: "AM Pass Exclusive",
+  },
+  UCS: {
+    stub: "ucs",
+    en: "UCS",
+  },
+  "LATIN AMERICA EXCLUSIVE": {
+    stub: "latam_exc",
+    en: "Latin America Exclusive",
+  },
+  "JAPAN EXCLUSIVE": {
+    stub: "jpn_exc",
+    en: "Japan Exclusive",
+  },
+  "PHILIPPINES EXCLUSIVE": {
+    stub: "phl_exc",
+    en: "Philippines Exclusive",
+  },
+};
+
+const otherFlags = [];
+const flagI18n = {};
+
+for (const { stub, en } of Object.values(flaggableLabels)) {
+  otherFlags.push(stub);
+  flagI18n[stub] = en;
+}
+
+function labelToFlag(label) {
+  if (flaggableLabels[label]) {
+    return flaggableLabels[label].stub;
+  }
+  return false;
+}
+
 if (!fs.existsSync("pump.db")) {
   console.error(
     "No local data found, download a copy from the url below and save it as pump.db",
@@ -226,6 +268,31 @@ order by version.sortOrder desc`);
     return `${bpm.min}-${bpm.max}`;
   }
 
+  const flagsQuery = db.prepare(`
+SELECT
+	internalTitle
+FROM
+	label,
+	chartLabel using (labelId)
+WHERE
+	chartId = ?
+ORDER BY
+	label.sortOrder DESC
+`);
+  function getFlagsForChart(chartId) {
+    const rows = flagsQuery.all(chartId);
+    const ret = [];
+    for (const row of rows) {
+      const flag = labelToFlag(row.internalTitle);
+      if (flag) {
+        ret.push(flag);
+      }
+    }
+    if (ret.length) {
+      return ret;
+    }
+  }
+
   const jacketPathsById = new Map();
   for (const jacket of jackets) {
     jacketPathsById.set(jacket.songId, jacket.path);
@@ -257,11 +324,17 @@ order by version.sortOrder desc`);
     if (!song.charts) {
       song.charts = [];
     }
-    song.charts.push({
+    const chartData = {
       lvl: chart.diffLvl,
       diffClass: difficultyById.get(chart.modeId).key,
       style: chart.coOp ? "coop" : "solo",
-    });
+    };
+
+    const flags = getFlagsForChart(chart.chartId);
+    if (flags) {
+      chartData.flags = flags;
+    }
+    song.charts.push(chartData);
 
     if (chart.diffLvl > lvlMax) {
       lvlMax = chart.diffLvl;
@@ -272,7 +345,7 @@ order by version.sortOrder desc`);
     meta: {
       styles: ["solo", "coop"],
       difficulties,
-      flags: cuts.map((cut) => "cut:" + cut.cutId),
+      flags: [...otherFlags, ...cuts.map((cut) => "cut:" + cut.cutId)],
       lvlMax,
       lastUpdated: Date.now(),
     },
@@ -289,6 +362,7 @@ order by version.sortOrder desc`);
         solo: "Solo",
         coop: "Co-Op",
         ...diffTranslit,
+        ...flagI18n,
         ...cuts.reduce((acc, cut) => {
           acc["cut:" + cut.cutId] = cut.internalTitle;
           return acc;
