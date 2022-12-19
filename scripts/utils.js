@@ -22,6 +22,7 @@ const requestQueue = new pqueue({
 const JACKETS_PATH = path.resolve(__dirname, "../src/assets/jackets");
 
 /**
+ * @param coverUrl {string} url of image to fetch
  * @param outputTo {string | undefined} [optional] save to disk, relative to existing jackets
  * queues a cover path for download into the imageQueue
  * Always skips if file already exists, assumes square aspect ratio
@@ -41,7 +42,7 @@ function downloadJacket(coverUrl, outputTo) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
-        img.resize(128, 128).quality(80).writeAsync(absoluteOutput)
+        img.resize(128, jimp.AUTO).quality(80).writeAsync(absoluteOutput)
       )
       .catch((e) => {
         console.error("image download failure");
