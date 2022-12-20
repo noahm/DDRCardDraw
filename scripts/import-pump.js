@@ -16,22 +16,6 @@ const flaggableLabels = {
     stub: "ampass",
     en: "AM Pass Exclusive",
   },
-  UCS: {
-    stub: "ucs",
-    en: "UCS",
-  },
-  "LATIN AMERICA EXCLUSIVE": {
-    stub: "latam_exc",
-    en: "Latin America Exclusive",
-  },
-  "JAPAN EXCLUSIVE": {
-    stub: "jpn_exc",
-    en: "Japan Exclusive",
-  },
-  "PHILIPPINES EXCLUSIVE": {
-    stub: "phl_exc",
-    en: "Philippines Exclusive",
-  },
 };
 
 const otherFlags = [];
@@ -375,7 +359,7 @@ ORDER BY
     defaults: {
       style: "solo",
       difficulties: ["S", "D"],
-      flags: [],
+      flags: otherFlags,
       lowerLvlBound: 14,
       upperLvlBound: 20,
     },

@@ -13,24 +13,14 @@
       { "key": "C5", "color": "#f2c219" },
       { "key": "R", "color": "#23a98d" }
     ],
-    "flags": [
-      "unlock",
-      "ampass",
-      "ucs",
-      "latam_exc",
-      "jpn_exc",
-      "phl_exc",
-      "cut:1",
-      "cut:3",
-      "cut:4"
-    ],
+    "flags": ["unlock", "ampass", "cut:1", "cut:3", "cut:4"],
     "lvlMax": 28,
-    "lastUpdated": 1671553448074
+    "lastUpdated": 1671555699879
   },
   "defaults": {
     "style": "solo",
     "difficulties": ["S", "D"],
-    "flags": [],
+    "flags": ["unlock", "ampass"],
     "lowerLvlBound": 14,
     "upperLvlBound": 20
   },
@@ -51,10 +41,6 @@
       "R": "Routine",
       "unlock": "Unlock required",
       "ampass": "AM Pass Exclusive",
-      "ucs": "UCS",
-      "latam_exc": "Latin America Exclusive",
-      "jpn_exc": "Japan Exclusive",
-      "phl_exc": "Philippines Exclusive",
       "cut:1": "Short Cut",
       "cut:3": "Remix",
       "cut:4": "Full Song",
@@ -100,7 +86,7 @@
         { "lvl": 5, "diffClass": "D", "style": "solo" },
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" },
-        { "lvl": 16, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
         { "lvl": 17, "diffClass": "S", "style": "solo" }
       ]
@@ -230,9 +216,9 @@
         { "lvl": 16, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
         { "lvl": 9, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 17, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 1, "diffClass": "C2", "style": "coop", "flags": ["ucs"] }
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -453,7 +439,7 @@
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo", "flags": ["unlock"] }
       ]
     },
@@ -539,11 +525,11 @@
         { "lvl": 4, "diffClass": "S", "style": "solo" },
         { "lvl": 9, "diffClass": "S", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" },
-        { "lvl": 13, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 17, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 8, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 13, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 16, "diffClass": "D", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "D", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -630,7 +616,7 @@
         { "lvl": 8, "diffClass": "S", "style": "solo" },
         { "lvl": 11, "diffClass": "S", "style": "solo" },
         { "lvl": 13, "diffClass": "S", "style": "solo" },
-        { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 7, "diffClass": "S", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
@@ -650,8 +636,8 @@
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" },
-        { "lvl": 21, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -878,8 +864,8 @@
         { "lvl": 10, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 21, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
-        { "lvl": 17, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 17, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
@@ -2845,7 +2831,7 @@
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 23, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" },
-        { "lvl": 16, "diffClass": "S", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 16, "diffClass": "S", "style": "solo" }
       ]
     },
     {
@@ -3172,7 +3158,7 @@
         { "lvl": 12, "diffClass": "D", "style": "solo" },
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" },
-        { "lvl": 3, "diffClass": "DP", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 3, "diffClass": "DP", "style": "solo" }
       ]
     },
     {
@@ -3209,7 +3195,7 @@
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" },
-        { "lvl": 16, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C3", "style": "coop" }
       ]
     },
@@ -3261,8 +3247,8 @@
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 12, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
-        { "lvl": 21, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" }
       ]
     },
@@ -3281,7 +3267,7 @@
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" },
-        { "lvl": 14, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 2, "diffClass": "DP", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo", "flags": ["unlock"] }
@@ -3302,8 +3288,8 @@
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" },
-        { "lvl": 20, "diffClass": "DP", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 4, "diffClass": "DP", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 20, "diffClass": "DP", "style": "solo" },
+        { "lvl": 4, "diffClass": "DP", "style": "solo" }
       ]
     },
     {
@@ -3336,7 +3322,7 @@
         { "lvl": 11, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" },
-        { "lvl": 13, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" }
       ]
     },
@@ -3353,8 +3339,8 @@
         { "lvl": 13, "diffClass": "S", "style": "solo" },
         { "lvl": 22, "diffClass": "S", "style": "solo" },
         { "lvl": 5, "diffClass": "DP", "style": "solo" },
-        { "lvl": 18, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 19, "diffClass": "D", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -3370,7 +3356,7 @@
         { "lvl": 6, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 2, "diffClass": "DP", "style": "solo" }
       ]
     },
@@ -3387,9 +3373,9 @@
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 7, "diffClass": "D", "style": "solo" },
         { "lvl": 19, "diffClass": "D", "style": "solo" },
-        { "lvl": 21, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 16, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" }
       ]
     },
@@ -3425,7 +3411,7 @@
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 7, "diffClass": "D", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" },
-        { "lvl": 15, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
         { "lvl": 4, "diffClass": "DP", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["unlock"] }
       ]
@@ -3811,8 +3797,8 @@
         { "lvl": 27, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "S", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" },
-        { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 16, "diffClass": "S", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" }
       ]
     },
     {
@@ -4362,7 +4348,7 @@
         { "lvl": 19, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 12, "diffClass": "D", "style": "solo" },
-        { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["ucs"] },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 3, "diffClass": "DP", "style": "solo" }
       ]
     },
@@ -4617,9 +4603,9 @@
       "bpm": "145",
       "flags": ["cut:4"],
       "charts": [
-        { "lvl": 18, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 17, "diffClass": "S", "style": "solo", "flags": ["ucs"] },
-        { "lvl": 19, "diffClass": "D", "style": "solo", "flags": ["ucs"] }
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -5480,12 +5466,12 @@
       "artist": "Yassi Pressman & Nadine Lustre",
       "bpm": "82",
       "charts": [
-        { "lvl": 3, "diffClass": "S", "style": "solo", "flags": ["phl_exc"] },
-        { "lvl": 5, "diffClass": "S", "style": "solo", "flags": ["phl_exc"] },
-        { "lvl": 8, "diffClass": "S", "style": "solo", "flags": ["phl_exc"] },
-        { "lvl": 14, "diffClass": "S", "style": "solo", "flags": ["phl_exc"] },
-        { "lvl": 6, "diffClass": "D", "style": "solo", "flags": ["phl_exc"] },
-        { "lvl": 15, "diffClass": "D", "style": "solo", "flags": ["phl_exc"] },
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "D", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
         { "lvl": 4, "diffClass": "DP", "style": "solo" }
       ]
     },
@@ -5497,8 +5483,8 @@
       "bpm": "82",
       "flags": ["cut:4"],
       "charts": [
-        { "lvl": 15, "diffClass": "S", "style": "solo", "flags": ["phl_exc"] },
-        { "lvl": 16, "diffClass": "D", "style": "solo", "flags": ["phl_exc"] }
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" }
       ]
     },
     {
