@@ -209,7 +209,7 @@ WHERE
     )
     .all();
 
-  const difficulties = db
+  const rawDiffs = db
     .prepare(
       `select
       internalAbbreviation key,
@@ -221,11 +221,28 @@ WHERE
     .all();
   const difficultyById = new Map();
   const diffTranslit = {};
-  for (const d of difficulties) {
+  const difficulties = [];
+  for (const d of rawDiffs) {
     difficultyById.set(d.modeId, { ...d });
     diffTranslit[d.key] = d.title;
     delete d.modeId;
     delete d.title;
+
+    if (d.key === "C") {
+      // create copies for COOPx2 - COOPx5
+      difficulties.push({ key: "C2", color: d.color });
+      difficulties.push({ key: "C3", color: d.color });
+      difficulties.push({ key: "C4", color: d.color });
+      difficulties.push({ key: "C5", color: d.color });
+
+      diffTranslit["C2"] = "Co-Op 2P";
+      diffTranslit["C3"] = "Co-Op 3P";
+      diffTranslit["C4"] = "Co-Op 4P";
+      diffTranslit["C5"] = "Co-Op 5P";
+      delete diffTranslit["C"];
+    } else {
+      difficulties.push({ key: d.key, color: d.color });
+    }
   }
 
   const artistQuery = db.prepare(`
@@ -330,6 +347,12 @@ ORDER BY
       style: chart.coOp ? "coop" : "solo",
     };
 
+    if (chartData.diffClass === "C") {
+      // massage co-op chart nonsense
+      chartData.diffClass = "C" + chartData.lvl;
+      chartData.lvl = 1;
+    }
+
     const flags = getFlagsForChart(chart.chartId);
     if (flags) {
       chartData.flags = flags;
@@ -373,7 +396,10 @@ ORDER BY
           D: "D",
           SP: "SP",
           DP: "DP",
-          C: "C",
+          C2: "COOPx2",
+          C3: "COOPx3",
+          C4: "COOPx4",
+          C5: "COOPx5",
           R: "R",
         },
       },
