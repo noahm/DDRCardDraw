@@ -86,7 +86,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     style,
     useWeights,
     forceDistribution,
-    weights,
+    weightsPerLevel: weights,
   } = configData;
 
   const validCharts: Record<string, Array<DrawnChart>> = {};

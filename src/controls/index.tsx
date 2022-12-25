@@ -1,30 +1,31 @@
-import { FormattedMessage } from "react-intl";
-import { useMemo, useState } from "react";
-import { WeightsControls } from "./controls-weights";
-import styles from "./controls.css";
-import { useDrawState } from "../draw-state";
-import { useConfigState } from "../config-state";
-import { GameData } from "../models/SongData";
-import { useIntl } from "../hooks/useIntl";
 import {
-  NumericInput,
-  Checkbox,
-  FormGroup,
-  HTMLSelect,
-  Drawer,
-  Position,
   Button,
   ButtonGroup,
-  Intent,
-  Switch,
-  NavbarDivider,
+  Checkbox,
+  Drawer,
   DrawerSize,
+  FormGroup,
+  HTMLSelect,
+  Intent,
+  NavbarDivider,
+  NumericInput,
+  Position,
+  Switch,
 } from "@blueprintjs/core";
-import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
-import { useIsNarrow } from "../hooks/useMediaQuery";
-import { EligibleChartsListFilter } from "../eligible-charts-list";
+import { Tooltip2 } from "@blueprintjs/popover2";
+import { useMemo, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import shallow from "zustand/shallow";
+import { useConfigState } from "../config-state";
+import { useDrawState } from "../draw-state";
+import { EligibleChartsListFilter } from "../eligible-charts-list";
+import { useIntl } from "../hooks/useIntl";
+import { useIsNarrow } from "../hooks/useMediaQuery";
+import { GameData } from "../models/SongData";
+import styles from "./index.css";
+import { DiffLimits } from "./diff-limits";
+import { WeightsControls } from "./weights";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -302,29 +303,31 @@ function Controls() {
           </HTMLSelect>
         </FormGroup>
       )}
-      <FormGroup label={t("difficulties")}>
-        {availableDifficulties.map((dif) => (
-          <Checkbox
-            key={`${dif.key}`}
-            name="difficulties"
-            value={dif.key}
-            checked={selectedDifficulties.has(dif.key)}
-            onChange={(e) => {
-              const { checked, value } = e.currentTarget;
-              updateState((s) => {
-                const difficulties = new Set(s.difficulties);
-                if (checked) {
-                  difficulties.add(value);
-                } else {
-                  difficulties.delete(value);
-                }
-                return { difficulties };
-              });
-            }}
-            label={t("meta." + dif.key)}
-          />
-        ))}
-      </FormGroup>
+      {availableDifficulties.length > 1 && (
+        <FormGroup label={t("difficulties")}>
+          {availableDifficulties.map((dif) => (
+            <Checkbox
+              key={`${dif.key}`}
+              name="difficulties"
+              value={dif.key}
+              checked={selectedDifficulties.has(dif.key)}
+              onChange={(e) => {
+                const { checked, value } = e.currentTarget;
+                updateState((s) => {
+                  const difficulties = new Set(s.difficulties);
+                  if (checked) {
+                    difficulties.add(value);
+                  } else {
+                    difficulties.delete(value);
+                  }
+                  return { difficulties };
+                });
+              }}
+              label={t("meta." + dif.key)}
+            />
+          ))}
+        </FormGroup>
+      )}
       {!!flags.length && (
         <FormGroup label={t("include")}>
           {flags.map((key) => (
@@ -367,6 +370,7 @@ function Controls() {
           }}
           label={t("constrainPocketPicks")}
         />
+        <DiffLimits />
         <Checkbox
           id="weighted"
           checked={useWeights}

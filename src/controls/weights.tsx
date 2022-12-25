@@ -1,5 +1,5 @@
 import shallow from "zustand/shallow";
-import styles from "./controls-weights.css";
+import styles from "./weights.css";
 import { times } from "../utils";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";
@@ -15,7 +15,7 @@ export function WeightsControls({ high, low }: Props) {
   const { t } = useIntl();
   const { weights, forceDistribution, updateConfig } = useConfigState(
     (cfg) => ({
-      weights: cfg.weights,
+      weights: cfg.weightsPerLevel,
       forceDistribution: cfg.forceDistribution,
       updateConfig: cfg.update,
     }),
@@ -34,13 +34,13 @@ export function WeightsControls({ high, low }: Props) {
 
   function setWeight(difficulty: number, value: number) {
     updateConfig((state) => {
-      const newWeights = state.weights.slice();
+      const newWeights = state.weightsPerLevel.slice();
       if (Number.isInteger(value)) {
         newWeights[difficulty] = value;
       } else {
         delete newWeights[difficulty];
       }
-      return { weights: newWeights };
+      return { weightsPerLevel: newWeights };
     });
   }
 
