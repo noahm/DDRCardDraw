@@ -3,7 +3,7 @@
  */
 
 const path = require("path");
-const { resolve, join } = require("path");
+const { resolve } = require("path");
 const fetch = require("node-fetch");
 const {
   downloadJacket,
@@ -75,9 +75,7 @@ async function main() {
         chart.flags = ["plus"];
       }
       songs[songId].charts.push(chart);
-      if (diff.difficulty > lvlMax) {
-        lvlMax = diff.difficulty;
-      }
+      lvlMax = Math.max(lvlMax, chart.lvl);
     }
   }
 
