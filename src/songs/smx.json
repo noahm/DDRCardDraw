@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1672528761399
+    "lastUpdated": 1673029147901
   },
   "defaults": {
     "style": "solo",
@@ -159,7 +159,7 @@
         { "style": "solo", "lvl": 5, "diffClass": "beginner" },
         { "style": "solo", "lvl": 12, "diffClass": "easy" },
         { "style": "solo", "lvl": 18, "diffClass": "hard" },
-        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 23, "diffClass": "full" },
         { "style": "team", "lvl": 20, "diffClass": "team" },
@@ -196,9 +196,9 @@
       "bpm": "78-196",
       "jacket": "smx/InTheHallOfTheMountainKing.jpg",
       "charts": [
-        { "style": "solo", "lvl": 5, "diffClass": "beginner" },
-        { "style": "solo", "lvl": 12, "diffClass": "easy" },
-        { "style": "solo", "lvl": 17, "diffClass": "hard" },
+        { "style": "solo", "lvl": 6, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 13, "diffClass": "easy" },
+        { "style": "solo", "lvl": 18, "diffClass": "hard" },
         { "style": "solo", "lvl": 22, "diffClass": "wild" },
         { "style": "solo", "lvl": 12, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
@@ -221,7 +221,7 @@
         { "style": "solo", "lvl": 15, "diffClass": "hard" },
         { "style": "solo", "lvl": 19, "diffClass": "wild" },
         { "style": "solo", "lvl": 13, "diffClass": "dual" },
-        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
         { "style": "team", "lvl": 11, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
@@ -2412,7 +2412,8 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 17, "diffClass": "dual" },
         { "style": "solo", "lvl": 23, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 17, "diffClass": "full", "flags": ["plus"] }
       ],
       "saIndex": "339"
     },
@@ -2515,7 +2516,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 19, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 14, "diffClass": "full", "flags": ["plus"] }
       ],
       "saIndex": "345"
     },
@@ -2532,7 +2534,8 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 19, "diffClass": "dual" },
         { "style": "solo", "lvl": 22, "diffClass": "full" },
-        { "style": "team", "lvl": 23, "diffClass": "team" }
+        { "style": "team", "lvl": 23, "diffClass": "team" },
+        { "style": "solo", "lvl": 14, "diffClass": "full", "flags": ["plus"] }
       ],
       "saIndex": "346"
     },
@@ -2601,7 +2604,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 20, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "350"
     },
@@ -2669,7 +2673,9 @@
         { "style": "solo", "lvl": 23, "diffClass": "wild" },
         { "style": "solo", "lvl": 13, "diffClass": "dual" },
         { "style": "solo", "lvl": 24, "diffClass": "full" },
-        { "style": "team", "lvl": 18, "diffClass": "team" }
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] }
       ],
       "saIndex": "354"
     },
@@ -2754,7 +2760,8 @@
         { "style": "solo", "lvl": 23, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 18, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "359"
     },
@@ -2839,7 +2846,8 @@
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 19, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "364"
     },
@@ -2873,7 +2881,9 @@
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 16, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
-        { "style": "team", "lvl": 18, "diffClass": "team" }
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "366"
     },
@@ -2890,7 +2900,9 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 17, "diffClass": "dual" },
         { "style": "solo", "lvl": 19, "diffClass": "full" },
-        { "style": "team", "lvl": 20, "diffClass": "team" }
+        { "style": "team", "lvl": 20, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "367"
     },
@@ -2975,7 +2987,7 @@
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 11, "diffClass": "dual" },
         { "style": "solo", "lvl": 19, "diffClass": "full" },
-        { "style": "team", "lvl": 24, "diffClass": "team" }
+        { "style": "team", "lvl": 23, "diffClass": "team" }
       ],
       "saIndex": "372"
     },
@@ -3005,11 +3017,13 @@
       "charts": [
         { "style": "solo", "lvl": 3, "diffClass": "beginner" },
         { "style": "solo", "lvl": 8, "diffClass": "easy" },
-        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 13, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "374"
     },
@@ -3026,7 +3040,9 @@
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 15, "diffClass": "dual" },
         { "style": "solo", "lvl": 19, "diffClass": "full" },
-        { "style": "team", "lvl": 20, "diffClass": "team" }
+        { "style": "team", "lvl": 20, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "375"
     },
@@ -3040,10 +3056,11 @@
         { "style": "solo", "lvl": 2, "diffClass": "beginner" },
         { "style": "solo", "lvl": 8, "diffClass": "easy" },
         { "style": "solo", "lvl": 16, "diffClass": "hard" },
-        { "style": "solo", "lvl": 23, "diffClass": "wild" },
-        { "style": "solo", "lvl": 8, "diffClass": "dual" },
-        { "style": "solo", "lvl": 24, "diffClass": "full" },
-        { "style": "team", "lvl": 23, "diffClass": "team" }
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 7, "diffClass": "dual" },
+        { "style": "solo", "lvl": 23, "diffClass": "full" },
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "376"
     },
@@ -6236,6 +6253,104 @@
         { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "564",
+      "name": "Born to Run",
+      "artist": "Red Parker",
+      "genre": "Rock",
+      "bpm": "173",
+      "jacket": "smx/BornToRun.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild" },
+        { "style": "solo", "lvl": 16, "diffClass": "dual" },
+        { "style": "solo", "lvl": 19, "diffClass": "full" },
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "565",
+      "name": "EMEA",
+      "artist": "Re-venG",
+      "genre": "Ethnic Electronica",
+      "bpm": "120-240",
+      "jacket": "smx/EMEA.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 4, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 24, "diffClass": "wild" },
+        { "style": "solo", "lvl": 17, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 25, "diffClass": "team" },
+        { "style": "solo", "lvl": 13, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 24, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "566",
+      "name": "Forever and a Day",
+      "artist": "Dy5on feat. Silver Angelina",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/ForeverAndADay.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy" },
+        { "style": "solo", "lvl": 17, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 19, "diffClass": "dual" },
+        { "style": "solo", "lvl": 21, "diffClass": "full" },
+        { "style": "team", "lvl": 20, "diffClass": "team" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "567",
+      "name": "Hava Nagila",
+      "artist": "Quiqman",
+      "genre": "Hyper Techno",
+      "bpm": "120-200",
+      "jacket": "smx/HavaNagila.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 21, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "568",
+      "name": "Therapy",
+      "artist": "Conro",
+      "genre": "Indie Dance",
+      "bpm": "100",
+      "jacket": "smx/Therapy.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] }
       ]
     }
   ]
