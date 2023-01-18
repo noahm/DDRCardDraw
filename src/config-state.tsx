@@ -28,6 +28,6 @@ export const useConfigState = createStore<ConfigState>((set, get) => ({
   style: "",
   difficulties: new Set(),
   flags: new Set(),
-  showPool: false,
+  showPool: true,
   update: set,
 }));

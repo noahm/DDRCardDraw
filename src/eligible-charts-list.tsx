@@ -1,4 +1,4 @@
-import { eligibleCharts } from "./card-draw";
+import { eligibleCharts, getDrawnChart } from "./card-draw";
 import { useConfigState } from "./config-state";
 import { useDrawState } from "./draw-state";
 import { SongCard } from "./song-card";
@@ -15,6 +15,7 @@ import { useIntl } from "./hooks/useIntl";
 import { useIsNarrow } from "./hooks/useMediaQuery";
 import { atom, useAtom } from "jotai";
 import { DiffHistogram } from "./histogram";
+import { useMemo } from "react";
 
 function songKeyFromChart(chart: DrawnChart) {
   return `${chart.name}:${chart.artist}`;
@@ -25,21 +26,30 @@ const currentTabAtom = atom("all");
 export function EligibleChartsListFilter() {
   const { t } = useIntl();
   const [currentTab, setCurrentTab] = useAtom(currentTabAtom);
-  const selectedFlags = Array.from(useConfigState((cfg) => cfg.flags));
+  const songs = useDrawState((s) => s.gameData?.songs);
+  const years = useMemo(() => {
+    const years = new Set(songs?.map((s) => s.year));
+    years.delete(undefined);
+    if (years.size) {
+      const ret = Array.from(years as Set<string>).sort((a, b) =>
+        a < b ? 1 : -1
+      );
+      ret.unshift("all");
+      return ret;
+    }
+  }, [songs]);
 
-  if (!selectedFlags.length) {
+  if (!years) {
     return null;
   }
-
-  selectedFlags.unshift("all");
 
   return (
     <HTMLSelect
       value={currentTab}
       onChange={(e) => setCurrentTab(e.currentTarget.value)}
-      options={Array.from(selectedFlags).map((flag) => ({
-        value: flag,
-        label: flag === "all" ? "All charts" : t(`meta.${flag}`),
+      options={years.map((year) => ({
+        value: year,
+        label: year === "all" ? "All charts" : year,
       }))}
     />
   );
@@ -55,11 +65,9 @@ export function EligibleChartsList() {
   if (!gameData) {
     return <Spinner />;
   }
-  let charts = Array.from(eligibleCharts(configState, gameData.songs));
-  const songs = new Set<string>();
-  const filteredCharts = charts.filter((chart) => {
-    songs.add(songKeyFromChart(chart));
-    if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
+  let songs = gameData.songs;
+  const filteredSongs = songs.filter((chart) => {
+    if (isDisplayFiltered && chart.year !== currentTab) {
       return false;
     }
     return true;
@@ -74,8 +82,9 @@ export function EligibleChartsList() {
         }}
       >
         <NavbarGroup>
-          {charts.length} eligible charts from {songs.size} songs (of{" "}
-          {gameData.songs.length} total)
+          {currentTab === "all"
+            ? `${songs.length} songs available in the game`
+            : `${songs.length} songs available from ${currentTab}`}
         </NavbarGroup>
         {configState.flags.size > 0 && !isNarrow && (
           <NavbarGroup>
@@ -84,10 +93,10 @@ export function EligibleChartsList() {
           </NavbarGroup>
         )}
       </Navbar>
-      <DiffHistogram charts={filteredCharts} />
+      <DiffHistogram songs={gameData.songs} />
       <div className={styles.chartList}>
-        {filteredCharts.map((chart, idx) => (
-          <SongCard chart={chart} key={idx} />
+        {filteredSongs.map((song, idx) => (
+          <SongCard chart={getDrawnChart(song, song.charts[3])} key={idx} />
         ))}
       </div>
     </>

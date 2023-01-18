@@ -54,6 +54,7 @@ async function main() {
         artist: song.artist,
         genre: song.genre,
         bpm: song.bpm,
+        year: song.created_at.slice(0, 4),
         jacket: queueJacketDownload(song.cover_path),
         charts: [],
       };

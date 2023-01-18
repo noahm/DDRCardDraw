@@ -103,6 +103,9 @@
           "search_hint": {
             "type": "string"
           },
+          "year": {
+            "type": "string"
+          },
           "charts": {
             "type": "array",
             "items": { "$ref": "#/$defs/chart" },
