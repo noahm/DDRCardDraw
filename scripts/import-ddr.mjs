@@ -237,6 +237,18 @@ async function main() {
   await importSongsFromExternal(indexedSongs, songsBySaIndex, log);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
+
+  for (const song of existingData.songs) {
+    if (!song.jacket && song.remyLink) {
+      const remyJacket = await getJacketFromRemySong(
+        song.remyLink,
+        song.name_translation
+      );
+      if (remyJacket) {
+        song.jacket = remyJacket;
+      }
+    }
+  }
   await writeJsonData(existingData, targetFile);
 
   ui.log.write(

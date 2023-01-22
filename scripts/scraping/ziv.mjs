@@ -2,7 +2,7 @@
 import { JSDOM } from "jsdom";
 
 import { requestQueue } from "../utils.js";
-import { getCanonicalRemyURL } from "./remy.mjs";
+import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
 
 /**
  * @param {Function} log
@@ -129,7 +129,7 @@ async function createSongData(songLink, folder) {
     bpm: songRow.children[1].textContent.trim(),
     folder,
     charts: getCharts(chartNodes),
-    getRemyLink: () => getRemyLinkForSong(songLink),
+    getRemyLink: () => getRemyLinkForSong(songLink, songName),
   };
   const flags = getFlagsForSong(songLink);
   if (flags) {
@@ -144,6 +144,9 @@ const flagIndex = {
   "GOLDEN LEAGUER'S PRIVILEGE": "goldenLeague",
   "EXTRA EXCLUSIVE": "extraExclusive",
   "COURSE TRIAL A3": "unlock",
+  "DANCE aROUND × DanceDanceRevolution 2022夏のMUSIC CHOICE": "unlock",
+  "いちかのごちゃまぜMix UP！": "tempUnlock",
+  "BEMANI 2021真夏の歌合戦5番勝負": "unlock",
 };
 
 /**
@@ -199,10 +202,14 @@ function getCharts(chartNodes) {
 
 /**
  * @param {HTMLAnchorElement} songLink
+ * @param {string} name song name (native) for guessing if no wiki link provided
  */
-async function getRemyLinkForSong(songLink) {
+async function getRemyLinkForSong(songLink, name) {
   const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
   const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
   // @ts-ignore
   if (remyLink) return getCanonicalRemyURL(remyLink.href);
+
+  // try to guess wiki link
+  return guessUrlFromName(name);
 }

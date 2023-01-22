@@ -57,12 +57,48 @@ export async function getRemovedSongUrls(pageUrl) {
   return songLinks;
 }
 
+/**
+ *
+ * @param {JSDOM} dom
+ */
+function isSongPage(dom) {
+  return !!dom.window.document.querySelector('a[href="/Category:DDR_Songs"]');
+}
+
+/**
+ *
+ * @param {JSDOM} dom
+ */
+function canonicalUrlForPage(dom) {
+  const link = dom.window.document.querySelector("link[rel=canonical]");
+  if (link) return link.href;
+  const ogUrl = dom.window.document.querySelector('meta[property="og:url"]');
+  if (ogUrl) return ogUrl.content;
+}
+
 export async function getCanonicalRemyURL(pageUrl) {
   const dom = await JSDOM.fromURL(pageUrl);
-  return dom.window.document.querySelector("link[rel=canonical]").href;
+  if (!isSongPage(dom)) return;
+  return canonicalUrlForPage(dom);
 }
 
 function getJacketFromThumb(node, songName) {
   const url = node.querySelector("img").src;
   return downloadJacket(url, songName);
+}
+
+/**
+ * @param {string} songName
+ */
+export async function guessUrlFromName(songName) {
+  try {
+    const urlGuess = new URL(
+      songName.replaceAll(" ", "_"),
+      "https://remywiki.com/"
+    );
+    const dom = await JSDOM.fromURL(urlGuess.toString());
+    if (isSongPage(dom)) {
+      return canonicalUrlForPage(dom);
+    }
+  } catch {}
 }
