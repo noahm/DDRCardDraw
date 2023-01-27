@@ -19,7 +19,7 @@ const requestQueue = new pqueue({
   interval: 1000,
   intervalCap: 10, // 10 per second max
 });
-const JACKETS_PATH = path.resolve(__dirname, "../src/assets/jackets");
+const JACKETS_PATH = path.resolve(__dirname, "../public/jackets");
 
 /**
  * @param coverUrl {string} url of image to fetch

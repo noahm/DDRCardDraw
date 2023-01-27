@@ -7,10 +7,10 @@ const { resolve, join } = require("path");
 const { parseStringPromise } = require("xml2js");
 const iconv = require("iconv-lite");
 const prettier = require("prettier");
-const { writeJsonData } = require('./utils')
+const { writeJsonData } = require("./utils");
 
 const OUTFILE = "src/songs/sdvx.json";
-const JACKETS_PATH = "src/assets/jackets/sdvx";
+const JACKETS_PATH = "public/jackets/sdvx";
 
 async function main() {
   const sdvxFile = process.argv[2];
@@ -43,7 +43,7 @@ async function main() {
         { key: "gravity", color: "#ff8c00" },
         { key: "heavenly", color: "#00ffff" },
         { key: "vivid", color: "#f52a6e" },
-        { key: "exceed", color: "#0047AB" }
+        { key: "exceed", color: "#0047AB" },
       ],
       flags: [],
       lvlMax: 20,
@@ -57,7 +57,7 @@ async function main() {
         "gravity",
         "heavenly",
         "vivid",
-        "exceed"
+        "exceed",
       ],
       flags: [],
       lowerLvlBound: 16,
@@ -99,7 +99,7 @@ async function main() {
         gravity: "Gravity",
         heavenly: "Heavenly",
         vivid: "Vivid",
-        exceed: 'Exceed',
+        exceed: "Exceed",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -120,7 +120,7 @@ async function main() {
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
   const outfilePath = resolve(join(__dirname, "../src/songs/sdvx.json"));
-  writeJsonData(data, outfilePath)
+  writeJsonData(data, outfilePath);
 }
 
 function determineDiffClass(song, chartType) {

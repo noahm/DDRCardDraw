@@ -3,7 +3,7 @@ const { resolve, join } = require("path");
 const { validate: validateJSONSchema } = require("jsonschema");
 
 const dataFileNames = readdirSync(resolve(join(__dirname, "../src/songs")));
-const jacketsDir = resolve(join(__dirname, "../src/assets/jackets"));
+const jacketsDir = resolve(join(__dirname, "../public/jackets"));
 const songsSchema = require("../songs.schema.json");
 const schemaLocation = "src/models/SongData.ts";
 

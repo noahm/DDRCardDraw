@@ -4,7 +4,7 @@ import { draw } from "./card-draw";
 import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
 import { GameData, Song } from "./models/SongData";
-import i18nData from "./assets/i18n.json";
+import i18nData from "./i18n.json";
 import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";

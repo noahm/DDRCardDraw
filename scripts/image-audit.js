@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const fuzzysearch = require("fuzzy-search");
 const { writeJsonData } = require("./utils");
 
-const jacketDir = path.resolve(__dirname, "..", "src/assets/jackets");
+const jacketDir = path.resolve(__dirname, "..", "public/jackets");
 const targetFile = path.resolve(__dirname, "../src/songs/a20plus.json");
 
 const images = fs
