@@ -38,12 +38,9 @@ export function* flattenedKeys(
   }
 }
 
-export const availableGameData = (
-  process.env.DATA_FILES as unknown as Array<{
-    name: string;
-    display: string;
-  }>
-).sort((a, b) => (a.display < b.display ? -1 : 1));
+export const availableGameData = __DATA_FILES__.sort((a, b) =>
+  a.display < b.display ? -1 : 1
+);
 
 /**
  * Data structure to count the number of times a given item is added
