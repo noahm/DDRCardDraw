@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { DrawnSet } from "./drawn-set";
-import styles from "./drawing-list.css";
+import styles from "./drawing-list.module.css";
 import { useDrawState } from "./draw-state";
 import { Drawing } from "./models/Drawing";
 import { useConfigState } from "./config-state";

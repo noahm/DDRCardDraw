@@ -6,7 +6,7 @@ import { DrawnChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
-import styles from "./song-search.css";
+import styles from "./song-search.module.css";
 
 interface Props {
   isOpen: boolean;

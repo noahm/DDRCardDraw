@@ -1,5 +1,5 @@
 import shallow from "zustand/shallow";
-import styles from "./controls-weights.css";
+import styles from "./controls-weights.module.css";
 import { times } from "../utils";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";

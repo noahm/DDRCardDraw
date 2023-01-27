@@ -2,7 +2,7 @@ import { eligibleCharts } from "./card-draw";
 import { useConfigState } from "./config-state";
 import { useDrawState } from "./draw-state";
 import { SongCard } from "./song-card";
-import styles from "./drawing-list.css";
+import styles from "./drawing-list.module.css";
 import { DrawnChart } from "./models/Drawing";
 import {
   HTMLSelect,

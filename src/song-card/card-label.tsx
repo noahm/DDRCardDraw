@@ -1,6 +1,6 @@
 import React from "react";
 import { Intent, Tag } from "@blueprintjs/core";
-import styles from "./card-label.css";
+import styles from "./card-label.module.css";
 import { IconNames } from "@blueprintjs/icons";
 
 export enum LabelType {

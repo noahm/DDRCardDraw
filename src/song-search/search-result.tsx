@@ -4,7 +4,7 @@ import { useIntl } from "../hooks/useIntl";
 import { ConfigState } from "../config-state";
 import { Song, Chart } from "../models/SongData";
 import { SongJacket } from "../song-jacket";
-import styles from "./song-search.css";
+import styles from "./song-search.module.css";
 import { MenuItem } from "@blueprintjs/core";
 
 export interface SearchResultData {

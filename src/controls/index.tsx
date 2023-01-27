@@ -1,7 +1,7 @@
 import { FormattedMessage } from "react-intl";
 import { useMemo, useState } from "react";
 import { WeightsControls } from "./controls-weights";
-import styles from "./controls.css";
+import styles from "./controls.module.css";
 import { useDrawState } from "../draw-state";
 import { useConfigState } from "../config-state";
 import { GameData } from "../models/SongData";

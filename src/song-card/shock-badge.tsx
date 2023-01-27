@@ -1,4 +1,4 @@
-import styles from "./shock-badge.css";
+import styles from "./shock-badge.module.css";
 import { useIntl } from "../hooks/useIntl";
 import { Icon } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";

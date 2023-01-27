@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { detectedLanguage } from "../utils";
-import styles from "./song-card.css";
+import styles from "./song-card.module.css";
 import { useState } from "react";
 import { IconMenu } from "./icon-menu";
 import { CardLabel, LabelType } from "./card-label";

@@ -1,6 +1,6 @@
 import { useDrawState } from "./draw-state";
 import { useContext } from "react";
-import styles from "./SuspectSongs.css";
+import styles from "./SuspectSongs.module.css";
 
 const allAscii = /^[a-zA-Z .'?&!-_0-9]+$/;
 const anyAscii = /[a-zA-Z]/;

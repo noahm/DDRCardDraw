@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { SongCard } from "./song-card";
-import styles from "./drawn-set.css";
+import styles from "./drawn-set.module.css";
 import {
   Drawing,
   DrawnChart,
