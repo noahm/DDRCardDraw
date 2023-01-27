@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "description": "Tools for music game tournaments and training",
   "scripts": {
-    "start": "webpack serve --env dev=true",
-    "build": "npm run validate && webpack",
-    "build:zip": "npm run validate && webpack --env zip",
+    "start": "vite",
+    "build": "npm run validate && vite build",
+    "build:zip": "npm run validate && vite build --env zip",
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "deploy:firebase": "npm run build && firebase deploy",
