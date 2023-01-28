@@ -51,6 +51,7 @@ export default defineConfig({
       },
     }),
     VitePWA({
+      includeAssets: ["ddr-tools-256.png"],
       manifest: false,
     }),
   ],
