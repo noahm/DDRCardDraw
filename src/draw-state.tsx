@@ -134,8 +134,11 @@ export function DrawStateManager(props: Props) {
     loadGameData(getInitialDataSet(props.defaultDataSet));
   }, []);
 
-  const allStrings = i18nData as Record<string, Record<string, string>>;
-  const useTranslations = allStrings[detectedLanguage] || allStrings["en"];
+  const allStrings = i18nData;
+  const useTranslations =
+    detectedLanguage in allStrings
+      ? allStrings[detectedLanguage as keyof typeof allStrings]
+      : allStrings["en"];
   const additionalStrings = gameData?.i18n[detectedLanguage];
   return (
     <IntlProvider

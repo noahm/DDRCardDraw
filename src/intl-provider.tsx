@@ -1,10 +1,10 @@
 import { IntlProvider as UpstreamProvider } from "react-intl";
 import { PropsWithChildren, useMemo } from "react";
-import { flattenedKeys } from "./utils";
+import { flattenedKeys, ValueOrObj } from "./utils";
 
 interface Props {
   locale: string;
-  translations: Record<string, string | Record<string, string>>;
+  translations: Record<string, ValueOrObj<string>>;
   mergeTranslations?: Record<string, string | Record<string, string>>;
 }
 

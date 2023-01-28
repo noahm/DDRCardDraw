@@ -23,8 +23,10 @@ export function times<T>(n: number, cb: (n: number) => T): Array<T> {
   return results;
 }
 
+export type ValueOrObj<T> = T | { [k: string]: ValueOrObj<T> };
+
 export function* flattenedKeys(
-  input: Record<string, string | Record<string, string>>
+  input: Record<string, ValueOrObj<string>>
 ): Generator<[string, string], void> {
   for (const key in input) {
     const value = input[key];
