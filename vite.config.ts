@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, splitVendorChunkPlugin } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import fs from "fs";
@@ -9,6 +9,20 @@ const iconSource = "./public/ddr-tools-256.png";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("@blueprintjs/")) {
+            return "blueprint";
+          }
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     faviconsPlugin({
