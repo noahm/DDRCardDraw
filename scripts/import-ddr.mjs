@@ -89,7 +89,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
     data.bpm = oldData.bpm;
   }
 
-  if (!saData) {
+  if (!saData && MIX_META.mergeSkillAttack) {
     log("[WARN] missing SA data for:", zivData.name);
   }
   // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
