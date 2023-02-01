@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "styles": ["single", "double"],
+    "difficulties": [
+      { "key": "beginner", "color": "#6eccc4" },
+      { "key": "basic", "color": "#e0de5c" },
+      { "key": "difficult", "color": "#e8715f" },
+      { "key": "expert", "color": "#72cc6e" },
+      { "key": "challenge", "color": "#cc71e8" }
+    ],
+    "flags": [],
+    "lvlMax": 10,
+    "lastUpdated": 1660856896894
+  },
+  "defaults": {
+    "style": "single",
+    "difficulties": ["expert", "challenge"],
+    "flags": ["shock"],
+    "lowerLvlBound": 7,
+    "upperLvlBound": 10
+  },
+  "i18n": {
+    "en": {
+      "name": "DDR SuperNOVA",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
+      }
+    },
+    "ja": {
+      "name": "DDR SuperNOVA",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
+      }
+    }
+  },
+  "songs": []
+}
