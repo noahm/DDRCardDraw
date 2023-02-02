@@ -8,7 +8,7 @@
       { "key": "expert", "color": "#72cc6e" },
       { "key": "challenge", "color": "#cc71e8" }
     ],
-    "flags": [],
+    "flags": ["jp_only"],
     "lvlMax": 10,
     "lastUpdated": 1675216121107
   },
@@ -29,6 +29,7 @@
       "difficult": "Difficult",
       "expert": "Expert",
       "challenge": "Challenge",
+      "jp_only": "Japan-only Songs",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -46,6 +47,7 @@
       "difficult": "Difficult",
       "expert": "Expert",
       "challenge": "Challenge",
+      "jp_only": "日本限定曲を含める",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -668,7 +670,8 @@
         { "lvl": 3, "style": "double", "diffClass": "difficult" },
         { "lvl": 7, "style": "double", "diffClass": "expert" }
       ],
-      "jacket": "ddr_sn/Beautiful Life.jpg"
+      "jacket": "ddr_sn/Beautiful Life.jpg",
+      "flags": ["jp_only"]
     },
     {
       "name": "Brazilian Anthem",
