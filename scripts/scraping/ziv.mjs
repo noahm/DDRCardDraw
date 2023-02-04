@@ -1,7 +1,7 @@
 // @ts-check
 import { JSDOM } from "jsdom";
 
-import { requestQueue } from "../utils.js";
+import { requestQueue, getDom, downloadJacket } from "../utils.js";
 import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
 
 /**
@@ -10,7 +10,7 @@ import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
  */
 export async function getSongsFromZiv(log, url) {
   log("fetching data from zenius-i-vanisher.com");
-  const dom = await JSDOM.fromURL(url);
+  const dom = await requestQueue.add(() => JSDOM.fromURL(url));
   return await scrapeSongData(dom, log);
 }
 
@@ -65,11 +65,10 @@ const titleList = [
 /**
  * @param {JSDOM} dom
  * @param {Function} log
- * @returns
  */
 async function scrapeSongData(dom, log) {
   const numbers = [];
-  /** @type {HTMLSpanElement[]} */
+  /** @type {NodeListOf<HTMLSpanElement>} */
   const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
   spans.forEach((node) =>
     numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
@@ -83,7 +82,7 @@ async function scrapeSongData(dom, log) {
   log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
 
   const songs = [];
-  /** @type {HTMLAnchorElement[]} */
+  /** @type {NodeListOf<HTMLAnchorElement>} */
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
   let loop = 0;
   for (const title of titleMap) {
@@ -130,6 +129,7 @@ async function createSongData(songLink, folder) {
     folder,
     charts: getCharts(chartNodes),
     getRemyLink: () => getRemyLinkForSong(songLink, songName),
+    getZivJacket: () => getZivJacketForSong(songLink, songName),
   };
   const flags = getFlagsForSong(songLink);
   if (flags) {
@@ -150,7 +150,6 @@ const flagIndex = {
 };
 
 /**
- *
  * @param {HTMLAnchorElement} songLink
  */
 function getFlagsForSong(songLink) {
@@ -205,11 +204,26 @@ function getCharts(chartNodes) {
  * @param {string} name song name (native) for guessing if no wiki link provided
  */
 async function getRemyLinkForSong(songLink, name) {
-  const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
+  const dom = await getDom(songLink.href);
+  if (!dom) return;
+  /** @type {HTMLAnchorElement | null} */
   const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
-  // @ts-ignore
   if (remyLink) return getCanonicalRemyURL(remyLink.href);
 
   // try to guess wiki link
   return guessUrlFromName(name);
+}
+
+/**
+ * @param {HTMLAnchorElement} songLink
+ * @param {string} songName for the filename
+ */
+async function getZivJacketForSong(songLink, songName) {
+  const dom = await getDom(songLink.href);
+  if (!dom) return;
+  const images = dom.window.document.querySelectorAll("img");
+  for (const img of images) {
+    if (!img.alt || img.alt === "Logo") continue;
+    if (img.src) return downloadJacket(img.src, songName);
+  }
 }
