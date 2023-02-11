@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1673029147901
+    "lastUpdated": 1676074033696
   },
   "defaults": {
     "style": "solo",
@@ -6351,6 +6351,108 @@
         { "style": "team", "lvl": 17, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
         { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "569",
+      "name": "Bambole (Ole)",
+      "artist": "Papa Gonzalez",
+      "genre": "Latin House",
+      "bpm": "128",
+      "jacket": "smx/Bambole(Ole).jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 18, "diffClass": "dual" },
+        { "style": "solo", "lvl": 10, "diffClass": "full" },
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "570",
+      "name": "Bassline Shatter",
+      "artist": "M-Project & S2i8",
+      "genre": "Hardcore",
+      "bpm": "170",
+      "jacket": "smx/BasslineShatter.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
+        { "style": "solo", "lvl": 19, "diffClass": "dual" },
+        { "style": "solo", "lvl": 19, "diffClass": "full" },
+        { "style": "team", "lvl": 23, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "571",
+      "name": "Just Dance",
+      "artist": "Bad Computer",
+      "genre": "Electro House",
+      "bpm": "124",
+      "jacket": "smx/JustDance.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "572",
+      "name": "Make It Tonight",
+      "artist": "Fracus & Darwin feat. Jake",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/MakeItTonight.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "573",
+      "name": "Northern Lights",
+      "artist": "Saxsquatch",
+      "genre": "Electronic",
+      "bpm": "128",
+      "jacket": "smx/NorthernLights.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 12, "diffClass": "dual" },
+        { "style": "solo", "lvl": 13, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ]
     }
   ]
