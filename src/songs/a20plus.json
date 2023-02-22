@@ -1561,6 +1561,7 @@
       ],
       "remyLink": "http://remywiki.com/AI",
       "jacket": "AI.jpg",
+      "flags": ["unlock"],
       "saHash": "OO1O10bDI6OP0O1OlOlI6qQDiPIdidbO",
       "saIndex": "1028"
     },
@@ -12194,6 +12195,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/Going%20Hypersonic",
+      "flags": ["goldenLeague"],
       "jacket": "Going Hypersonic.jpg",
       "saHash": "6Obi001oi9Qd1966dOd6d6Qo66dbbill",
       "saIndex": "971"
@@ -14405,7 +14407,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -14414,7 +14416,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "remyLink": "http://remywiki.com/HyperTwist",
@@ -39386,7 +39388,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -39395,7 +39397,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "remyLink": "http://remywiki.com/%E3%81%B3",
@@ -40916,6 +40918,7 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%8A%E3%82%A4%E3%83%88%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%8A%E3%82%A4%E3%83%84%20%28Ryu%E2%98%86Remix%29",
       "jacket": "Night of knights (Ryu☆Remix).jpg",
+      "flags": ["usLocked"],
       "saHash": "IlbI1QQOPI0o0IdoPI6QPldqQob16DOq",
       "saIndex": "923"
     },
@@ -45248,6 +45251,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "Saishuu kichiku imouto Flandre-S.jpg",
+      "flags": ["usLocked"],
       "saHash": "i0P1O6lbP1oDd6q6b08iPPoq6iPdI818",
       "saIndex": "922"
     },
