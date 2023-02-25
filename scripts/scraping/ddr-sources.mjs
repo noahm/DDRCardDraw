@@ -24,3 +24,12 @@ export const DDR_SN = {
   jacketPrefix: "ddr_sn/",
   preferredJacketSource: "ziv",
 };
+
+export const DDR_X = {
+  remy: "",
+  ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=148&show_notecounts=1&sort=&sort_order=asc",
+  mergeSkillAttack: false,
+  filename: "ddr_x.json",
+  jacketPrefix: "ddr_x/",
+  preferredJacketSource: "ziv",
+};
