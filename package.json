@@ -14,7 +14,7 @@
     "import:pump": "node scripts/import-pump.js",
     "import:sdvx": "node scripts/import-sdvx.js",
     "import:smx": "node scripts/import-smx.js",
-    "import:itg": "node scripts/import-itg.js",
+    "import:itg": "node scripts/import-itg.mjs",
     "migrate": "node scripts/migrate.js",
     "validate": "npm run validate:json && npm run validate:ts",
     "validate:json": "node scripts/validate.js",

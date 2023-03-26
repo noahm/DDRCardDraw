@@ -1,6 +1,10 @@
-const { parsePack } = require("simfile-parser");
-const { writeJsonData, downloadJacket } = require("./utils");
-const { resolve, join, basename } = require("path");
+import { parsePack } from "simfile-parser";
+import { writeJsonData, downloadJacket } from "./utils.js";
+import { resolve, join, basename, extname, dirname } from "path";
+import { existsSync, readdirSync } from "fs";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const [, , inputPath, stub] = process.argv;
 
@@ -76,12 +80,36 @@ const data = {
   songs: [],
 };
 
+const supportedFormats = new Set([".png", ".jpg", ".gif"]);
+
+function getBestJacket(candidates, songDir) {
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+    const target = join(songDir, candidate);
+    if (supportedFormats.has(extname(candidate)) && existsSync(target)) {
+      return target;
+    }
+  }
+  // no provided tags are usable, search for any image in the song dir
+  for (const candidate of readdirSync(songDir)) {
+    if (supportedFormats.has(extname(candidate))) {
+      return join(songDir, candidate);
+    }
+  }
+  // no image files in song dir, look for a generic pack image in parent folder
+  for (const candidate of readdirSync(dirname(songDir))) {
+    if (supportedFormats.has(extname(candidate))) {
+      return join(dirname(songDir), candidate);
+    }
+  }
+}
+
 for (const parsedSong of pack.simfiles) {
   const { bg, banner, jacket, titleDir } = parsedSong.title;
-  let finalJacket = jacket || bg || banner;
+  let finalJacket = getBestJacket([jacket, bg, banner], titleDir);
   if (finalJacket) {
     finalJacket = downloadJacket(
-      join(titleDir, finalJacket),
+      finalJacket,
       join("itg", stub, basename(titleDir) + ".jpg")
     );
   }
