@@ -6,6 +6,23 @@ const jimp = require("jimp");
 const inquirer = require("inquirer");
 const sanitize = require("sanitize-filename");
 
+const { JSDOM } = require("jsdom");
+
+/**
+ * @param {string} url
+ */
+async function getDomInternal(url) {
+  try {
+    return JSDOM.fromURL(url);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+function getDom(url) {
+  return requestQueue.add(() => getDomInternal(url));
+}
+
 function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
   return fs.promises.writeFile(
@@ -21,27 +38,36 @@ const requestQueue = new pqueue({
 });
 const JACKETS_PATH = path.resolve(__dirname, "../src/assets/jackets");
 
+let JACKET_PREFIX = "";
+function setJacketPrefix(prefix) {
+  JACKET_PREFIX = prefix;
+}
+
 /**
- * @param outputTo {string | undefined} [optional] save to disk, relative to existing jackets
- * queues a cover path for download into the imageQueue
- * Always skips if file already exists, assumes square aspect ratio
- * Immediately returns the relative path to the jacket where it is saved
+ * @param coverUrl {string} url of image to fetch
+ * @param localFilename {string | undefined} override filename found in url
+ *
+ * queues a cover path for download into the imageQueue.
+ * Always skips if file already exists.
+ * Immediately returns the relative path to the jacket where it will be saved
  */
-function downloadJacket(coverUrl, outputTo) {
-  if (!outputTo) {
-    outputTo = path.basename(coverUrl);
+function downloadJacket(coverUrl, localFilename = undefined) {
+  if (!localFilename) {
+    localFilename = JACKET_PREFIX + path.basename(coverUrl);
+  } else {
+    localFilename = JACKET_PREFIX + localFilename;
   }
-  if (!outputTo.endsWith(".jpg")) {
-    outputTo += ".jpg";
+  if (!localFilename.endsWith(".jpg")) {
+    localFilename += ".jpg";
   }
-  const sanitizedFilename = sanitize(path.basename(outputTo));
-  const outputPath = path.join(path.dirname(outputTo), sanitizedFilename);
+  const sanitizedFilename = sanitize(path.basename(localFilename));
+  const outputPath = path.join(path.dirname(localFilename), sanitizedFilename);
   const absoluteOutput = path.join(JACKETS_PATH, outputPath);
   if (!fs.existsSync(absoluteOutput)) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
-        img.resize(128, 128).quality(80).writeAsync(absoluteOutput)
+        img.resize(128, jimp.AUTO).quality(80).writeAsync(absoluteOutput)
       )
       .catch((e) => {
         console.error("image download failure");
@@ -84,4 +110,6 @@ module.exports = {
   downloadJacket,
   requestQueue,
   reportQueueStatusLive,
+  getDom,
+  setJacketPrefix,
 };

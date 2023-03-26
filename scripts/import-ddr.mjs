@@ -5,14 +5,31 @@
  * song data with the least amount of manual work on my part.
  */
 
+import CacheableLookup from "cacheable-lookup";
 import { readFile } from "fs/promises";
-import { fileURLToPath } from "url";
+import { globalAgent as httpAgent } from "http";
+import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
-import { getSongsFromZiv } from "./scraping/ziv.mjs";
-import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
+import { fileURLToPath } from "url";
+import { DDR_X as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
-import { writeJsonData, reportQueueStatusLive, requestQueue } from "./utils.js";
-import { DDR_A3 } from "./scraping/ddr-sources.mjs";
+import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
+import { getSongsFromZiv } from "./scraping/ziv.mjs";
+import {
+  reportQueueStatusLive,
+  requestQueue,
+  writeJsonData,
+  setJacketPrefix,
+} from "./utils.js";
+
+{
+  /* globally install dns caching to avoid mass lookups of remywiki over and over */
+  const dnsCache = new CacheableLookup();
+  dnsCache.install(httpAgent);
+  dnsCache.install(httpsAgent);
+}
+
+setJacketPrefix(MIX_META.jacketPrefix);
 
 /** @param songs {Array<{ name: string, charts: { style: string, lvl: number }[]}>} */
 function sortSongs(songs) {
@@ -72,7 +89,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
     data.bpm = oldData.bpm;
   }
 
-  if (!saData) {
+  if (!saData && MIX_META.mergeSkillAttack) {
     log("[WARN] missing SA data for:", zivData.name);
   }
   // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
@@ -143,15 +160,17 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
   const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
-    getSongsFromZiv(log, DDR_A3.ziv).then((songs) => {
+    getSongsFromZiv(log, MIX_META.ziv).then((songs) => {
       log(`Found ${songs.length} songs on ZiV`);
       return songs;
     }),
-    getSongsFromSkillAttack(log).then((songs) => {
-      log(`Found ${songs.length} songs on SA`);
-      return songs;
-    }),
-    getRemovedSongUrls(DDR_A3.remy)
+    MIX_META.mergeSkillAttack
+      ? getSongsFromSkillAttack(log).then((songs) => {
+          log(`Found ${songs.length} songs on SA`);
+          return songs;
+        })
+      : [],
+    getRemovedSongUrls(MIX_META.remy)
       .then((delSongs) => {
         log(`Found ${delSongs.size} removed songs from RemyWiki`);
         console.log(delSongs);
@@ -192,14 +211,24 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         log(`  New song from ziv: ${song.name} (${song.remyLink})`);
       }
       if (!song.jacket) {
-        song.jacket = "";
-        if (song.remyLink) {
-          const remyJacket = await getJacketFromRemySong(
-            song.remyLink,
-            song.name_translation
-          );
-          if (remyJacket) {
-            song.jacket = remyJacket;
+        delete song.jacket;
+        switch (MIX_META.preferredJacketSource) {
+          case "remy":
+            if (song.remyLink) {
+              const remyJacket = await getJacketFromRemySong(
+                song.remyLink,
+                song.name_translation
+              );
+              if (remyJacket) {
+                song.jacket = remyJacket;
+              }
+            }
+            break;
+          case "ziv": {
+            const zivJacket = await zivSong.getZivJacket();
+            if (zivJacket) {
+              song.jacket = zivJacket;
+            }
           }
         }
       }
@@ -211,7 +240,8 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
 async function main() {
   const targetFile = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
-    "../src/songs/a3.json"
+    "../src/songs",
+    MIX_META.filename
   );
   const existingData = JSON.parse(
     await readFile(targetFile, { encoding: "utf-8" })
@@ -237,6 +267,18 @@ async function main() {
   await importSongsFromExternal(indexedSongs, songsBySaIndex, log);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
+
+  for (const song of existingData.songs) {
+    if (!song.jacket && song.remyLink) {
+      const remyJacket = await getJacketFromRemySong(
+        song.remyLink,
+        song.name_translation
+      );
+      if (remyJacket) {
+        song.jacket = remyJacket;
+      }
+    }
+  }
   await writeJsonData(existingData, targetFile);
 
   ui.log.write(

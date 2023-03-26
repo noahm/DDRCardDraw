@@ -324,6 +324,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/39",
       "jacket": "39.png",
       "genre": "",
@@ -1561,6 +1562,7 @@
       ],
       "remyLink": "http://remywiki.com/AI",
       "jacket": "AI.jpg",
+      "flags": ["unlock"],
       "saHash": "OO1O10bDI6OP0O1OlOlI6qQDiPIdidbO",
       "saIndex": "1028"
     },
@@ -5926,6 +5928,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["usLocked"],
       "remyLink": "http://remywiki.com/Crazy%20Hot",
       "jacket": "Crazy Hot.jpg",
       "saHash": "dq6b0b6OD9DbDPQOO608oDo8Q80ODIqO",
@@ -12194,6 +12197,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/Going%20Hypersonic",
+      "flags": ["goldenLeague"],
       "jacket": "Going Hypersonic.jpg",
       "saHash": "6Obi001oi9Qd1966dOd6d6Qo66dbbill",
       "saIndex": "971"
@@ -14405,7 +14409,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -14414,7 +14418,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "remyLink": "http://remywiki.com/HyperTwist",
@@ -14489,6 +14493,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["usLocked"],
       "remyLink": "http://remywiki.com/I%20believe%20what%20you%20said",
       "jacket": "I believe what you said.jpg",
       "saHash": "oI0P1oq89blIobOd0QqilPqd9Didd0OD",
@@ -25074,6 +25079,8 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+
+      "flags": ["usLocked"],
       "remyLink": "http://remywiki.com/Realize",
       "jacket": "Realize.jpg",
       "saHash": "00ibl6biOOOdDd96OP0P0i8iObo8i09d",
@@ -27394,6 +27401,7 @@
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["usLocked"],
       "remyLink": "http://remywiki.com/Seize%20The%20Day",
       "jacket": "Seize The Day.jpg",
       "saHash": "id099qDODdQ9Ooi9dq1I981Diq101QDO",
@@ -28313,6 +28321,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Silly%20Love",
       "jacket": "Silly Love.jpg",
       "saHash": "Q8bIddo10ilqbd6I8QOq1bod1OO8dqlO",
@@ -33809,6 +33818,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["usLocked"],
       "remyLink": "http://remywiki.com/Together%20Going%20My%20Way",
       "jacket": "Together Going My Way.jpg",
       "saHash": "POdll6oPi1dd68q19q8ID6iQ6d08bl99",
@@ -39064,6 +39074,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/%E3%81%99%E3%81%8D%E3%81%AA%E3%81%93%E3%81%A8%E3%81%A0%E3%81%91%E3%81%A7%E3%81%84%E3%81%84%E3%81%A7%E3%81%99",
       "jacket": "Sukina koto dakede ii desu.png",
       "genre": "",
@@ -39386,7 +39397,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -39395,11 +39406,12 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["tempUnlock", "unlock"]
+          "flags": ["tempUnlock"]
         }
       ],
       "remyLink": "http://remywiki.com/%E3%81%B3",
       "jacket": "Bi.jpg",
+      "flags": ["unlock"],
       "saHash": "QD9Ib18D9lIO10O19d16PbPb68q1190d",
       "saIndex": "926"
     },
@@ -40299,6 +40311,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["usLocked"],
       "remyLink": "http://remywiki.com/%E3%82%B9%E3%82%AB%E3%82%A4%E3%82%AF%E3%83%A9%E3%83%83%E3%83%89%E3%81%AE%E8%A6%B3%E6%B8%AC%E8%80%85",
       "jacket": "Skyclad no kansokusha.jpg",
       "saHash": "QiOl969Iq1Pl6o60QOQ9PooDbbiOPioo",
@@ -40916,6 +40929,7 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%8A%E3%82%A4%E3%83%88%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%83%8A%E3%82%A4%E3%83%84%20%28Ryu%E2%98%86Remix%29",
       "jacket": "Night of knights (Ryu☆Remix).jpg",
+      "flags": ["usLocked"],
       "saHash": "IlbI1QQOPI0o0IdoPI6QPldqQob16DOq",
       "saIndex": "923"
     },
@@ -42630,6 +42644,7 @@
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/%E4%BB%A4%E5%92%8C",
       "jacket": "Reiwa.jpg",
       "saHash": "illQ66d0QlbDl18OOb8P0ODD0oDP19PQ",
@@ -44008,6 +44023,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/%E5%A6%84%E6%83%B3%E6%84%9F%E5%82%B7%E4%BB%A3%E5%84%9F%E9%80%A3%E7%9B%9F",
       "jacket": "Mousou kanshou daishou renmei.png",
       "genre": "",
@@ -45016,6 +45032,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/%E6%98%9F%E5%B1%91%E3%81%AE%E3%82%AD%E3%83%AD%E3%82%AF",
       "jacket": "Hoshikuzu no kiroku.png",
       "genre": "",
@@ -45248,6 +45265,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "jacket": "Saishuu kichiku imouto Flandre-S.jpg",
+      "flags": ["usLocked"],
       "saHash": "i0P1O6lbP1oDd6q6b08iPPoq6iPdI818",
       "saIndex": "922"
     },
@@ -45643,6 +45661,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/%E6%AF%92%E5%8D%A0%E6%AC%B2",
       "jacket": "Dokusenyoku.png",
       "genre": "",
@@ -46461,6 +46480,7 @@
           "diffClass": "challenge"
         }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/%E8%84%B3%E6%BC%BF%E7%82%B8%E8%A3%82%E3%82%AC%E3%83%BC%E3%83%AB",
       "jacket": "Brain Fluid Explosion Girl.png",
       "genre": "",

@@ -1,9 +1,9 @@
 /**
- * Script to import SMX data from direct from their API
+ * Script to import SMX data from direct from statmaniax (thanks cube!)
  */
 
 const path = require("path");
-const { resolve, join } = require("path");
+const { resolve } = require("path");
 const fetch = require("node-fetch");
 const {
   downloadJacket,
@@ -12,16 +12,6 @@ const {
   writeJsonData,
 } = require("./utils");
 
-const difficulties = [
-  "basic",
-  "easy",
-  "hard",
-  "wild",
-  "dual",
-  "full",
-  "team", // ignore, don't see a use case
-];
-
 const GET_IMAGES = true;
 
 /**
@@ -29,6 +19,7 @@ const GET_IMAGES = true;
  * returns the filename that will eventually be used
  */
 function queueJacketDownload(coverPath) {
+  coverPath = path.join(coverPath, "cover.png");
   const coverStub = coverPath.split("/")[2];
   const outPath = `smx/${coverStub}.jpg`;
   if (GET_IMAGES) {
@@ -36,25 +27,6 @@ function queueJacketDownload(coverPath) {
   }
 
   return outPath;
-}
-
-async function getData(log, diff) {
-  log(`pulling ${diff} chart details`);
-  const req = await requestQueue.add(
-    () =>
-      fetch(`https://data.stepmaniax.com/highscores/region/all/${diff}`, {
-        method: "POST",
-      }),
-    {
-      priority: 1,
-    }
-  );
-  const data = await req.json();
-  return {
-    charts: data.charts,
-    songs: data.songs,
-    diff,
-  };
 }
 
 async function main() {
@@ -69,37 +41,41 @@ async function main() {
     indexedSongs[song.saIndex] = song;
   }
 
-  const remoteData = await Promise.all(
-    difficulties.map(getData.bind(undefined, log))
-  );
+  log(`pulling chart details`);
+  const req = await fetch(`https://statmaniax.com/api/get_song_data`);
+  const songsById = await req.json();
 
-  for (const { charts, songs: remoteSongs, diff } of remoteData) {
-    for (const chart of Object.values(charts)) {
-      if (!songs[chart.song_id]) {
-        const songSource = remoteSongs[chart.song_id];
-        songs[chart.song_id] = {
-          ...indexedSongs[chart.song_id],
-          saIndex: chart.song_id.toString(),
-          name: songSource.title,
-          artist: songSource.artist,
-          genre: songSource.genre,
-          bpm: songSource.bpm,
-          jacket: queueJacketDownload(songSource.cover),
-          charts: [],
-        };
-        if (!indexedSongs[chart.song_id]) {
-          ui.log.write(`added new song: ${songSource.title}`);
-        }
+  for (const [songId, song] of Object.entries(songsById)) {
+    if (!songs[songId]) {
+      songs[songId] = {
+        ...indexedSongs[songId],
+        saIndex: songId,
+        name: song.title,
+        artist: song.artist,
+        genre: song.genre,
+        bpm: song.bpm,
+        jacket: queueJacketDownload(song.cover_path),
+        charts: [],
+      };
+      if (!indexedSongs[songId]) {
+        ui.log.write(`added new song: ${song.title}`);
       }
-      songs[chart.song_id].charts.push({
-        style: diff === "team" ? "team" : "solo",
-        lvl: chart.difficulty,
-        diffClass: diff,
-        author: chart.steps_author,
-      });
-      if (chart.difficulty > lvlMax) {
-        lvlMax = chart.difficulty;
+    }
+    for (const diff of Object.values(song.difficulties)) {
+      const isPlus = diff.name.endsWith("+");
+      if (isPlus) {
+        diff.name = diff.name.slice(0, -1);
       }
+      const chart = {
+        style: diff.name === "team" ? "team" : "solo",
+        lvl: +diff.difficulty,
+        diffClass: diff.name,
+      };
+      if (isPlus) {
+        chart.flags = ["plus"];
+      }
+      songs[songId].charts.push(chart);
+      lvlMax = Math.max(lvlMax, chart.lvl);
     }
   }
 
@@ -108,11 +84,10 @@ async function main() {
     songs: songs.filter((s) => !!s),
   };
 
+  smxData.meta.lvlMax = lvlMax;
+
   ui.log.write("finished downloading data, writing final JSON output");
-  await writeJsonData(
-    smxData,
-    resolve(join(__dirname, "../src/songs/smx.json"))
-  );
+  await writeJsonData(smxData, resolve(targetFile));
 
   if (requestQueue.size) {
     ui.log.write("waiting on images to finish downloading...");
@@ -123,5 +98,6 @@ async function main() {
 }
 
 main().catch((e) => {
+  ui.close();
   console.error(e);
 });
