@@ -1,5 +1,7 @@
 # DDR Tools
 
+[![Discord](https://img.shields.io/discord/1013159796024823898?label=discord&style=flat-square)](https://discord.gg/QPyEATsbP7) ![GitHub contributors](https://img.shields.io/github/contributors/noahm/ddrcarddraw?style=flat-square) ![GitHub branch checks state](https://img.shields.io/github/checks-status/noahm/ddrcarddraw/main?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/noahm/ddrcarddraw?style=flat-square) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/noahm/DDRCardDraw?style=flat-square)
+
 This web-app allows randomized selection of songs from Dance Dance Revolution and other music games
 with a variety of options for filtering which songs and charts are included. After songs are picked,
 they can be marked as protected or banned, or replaced with entirely separate songs. The primary use case
@@ -12,7 +14,7 @@ an internet connection in any modern web browser.
 ## Customizing / Contributing
 
 This app can be easily customized for any format a tournament might use, including adding song
-data for other games. If you have requests or ideas, you're welcome reach out on the [DDRCardDraw Discord](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
+data for other games. If you have requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
 
 If you want to take a stab at developing features yourself, you will need have node.js >= 14.0.0 installed along with
 [yarn](https://yarnpkg.com/) and some familarity with React probably helps.
