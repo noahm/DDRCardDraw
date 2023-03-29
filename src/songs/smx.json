@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1679959970493
+    "lastUpdated": 1680060319445
   },
   "defaults": {
     "style": "solo",
@@ -2812,7 +2812,9 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
-        { "style": "team", "lvl": 18, "diffClass": "team" }
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "full", "flags": ["plus"] }
       ],
       "saIndex": "362"
     },
@@ -2847,7 +2849,7 @@
         { "style": "solo", "lvl": 19, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
         { "style": "team", "lvl": 22, "diffClass": "team" },
-        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] }
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "364"
     },
@@ -2864,7 +2866,8 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 17, "diffClass": "dual" },
         { "style": "solo", "lvl": 19, "diffClass": "full" },
-        { "style": "team", "lvl": 18, "diffClass": "team" }
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 19, "diffClass": "hard", "flags": ["plus"] }
       ],
       "saIndex": "365"
     },
@@ -6555,7 +6558,7 @@
         { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
         { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
-        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+        { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
       ]
     }
   ]
