@@ -13,7 +13,7 @@
     "import:ddr": "node scripts/import-ddr.mjs",
     "import:pump": "node scripts/import-pump.js",
     "import:sdvx": "node scripts/import-sdvx.js",
-    "import:smx": "node scripts/import-smx.js",
+    "import:smx": "node scripts/import-smx.mjs",
     "import:itg": "node scripts/import-itg.mjs",
     "migrate": "node scripts/migrate.js",
     "validate": "npm run validate:json && npm run validate:ts",
