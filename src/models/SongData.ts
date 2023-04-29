@@ -5,9 +5,17 @@
  */
 
 /**
- * An array of strings without any duplicate values
+ * List of all play styles available
  */
 export type UniqueStringArr = string[];
+/**
+ * List of all special flags one might filter songs by
+ */
+export type UniqueStringArr1 = string[];
+/**
+ * An array of strings without any duplicate values
+ */
+export type UniqueStringArr2 = string[];
 
 /**
  * Describes the shape of data that any individual json file under `src/songs` will conform to
@@ -21,10 +29,7 @@ export interface GameData {
      * Unix timestamp of last update to this data file
      */
     lastUpdated: number;
-    /**
-     * List of all play styles available
-     */
-    styles: string[];
+    styles: UniqueStringArr;
     /**
      * List of all difficultiy classes available
      */
@@ -38,10 +43,7 @@ export interface GameData {
        */
       color: string;
     }[];
-    /**
-     * List of all special flags one might filter songs by
-     */
-    flags: string[];
+    flags: UniqueStringArr1;
     lvlMax: number;
   };
   /**
@@ -49,8 +51,8 @@ export interface GameData {
    */
   defaults: {
     style: string;
-    difficulties: UniqueStringArr;
-    flags: UniqueStringArr;
+    difficulties: UniqueStringArr2;
+    flags: UniqueStringArr2;
     lowerLvlBound: number;
     upperLvlBound: number;
   };
@@ -73,7 +75,7 @@ export interface I18NDict {
       };
 }
 export interface Song {
-  flags?: UniqueStringArr;
+  flags?: UniqueStringArr2;
   name: string;
   artist: string;
   genre?: string;
@@ -89,7 +91,7 @@ export interface Song {
   remyLink?: string;
 }
 export interface Chart {
-  flags?: UniqueStringArr;
+  flags?: UniqueStringArr2;
   /**
    * e.g. single/double
    */
