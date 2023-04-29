@@ -1,25 +1,30 @@
+// @ts-check
+
 /**
  * Script to import SMX data from direct from statmaniax (thanks cube!)
  */
 
-const path = require("path");
-const { resolve } = require("path");
-const fetch = require("node-fetch");
-const {
+import { join, resolve, dirname } from "path";
+import { readFile } from "fs/promises";
+import fetch from "node-fetch";
+import {
   downloadJacket,
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
-} = require("./utils");
+} from "./utils.js";
 
 const GET_IMAGES = true;
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * queues a cover path for download,
  * returns the filename that will eventually be used
  */
 function queueJacketDownload(coverPath) {
-  coverPath = path.join(coverPath, "cover.png");
+  coverPath = join(coverPath, "cover.png");
   const coverStub = coverPath.split("/")[2];
   const outPath = `smx/${coverStub}.jpg`;
   if (GET_IMAGES) {
@@ -28,14 +33,16 @@ function queueJacketDownload(coverPath) {
 
   return outPath;
 }
-
-async function main() {
+let ui;
+try {
   const songs = [];
   let lvlMax = 0;
-  const ui = reportQueueStatusLive();
+  ui = reportQueueStatusLive();
   const log = (whatever) => ui.log.write(whatever);
-  const targetFile = path.join(__dirname, "../src/songs/smx.json");
-  const existingData = require(targetFile);
+  const targetFile = join(__dirname, "../src/songs/smx.json");
+  const existingData = JSON.parse(
+    await readFile(targetFile, { encoding: "utf-8" })
+  );
   const indexedSongs = {};
   for (const song of existingData.songs) {
     indexedSongs[song.saIndex] = song;
@@ -62,6 +69,10 @@ async function main() {
       }
     }
     for (const diff of Object.values(song.difficulties)) {
+      if (!diff.name) {
+        ui.log.write(`skipping bunk chart for ${song.title}`);
+        continue;
+      }
       const isPlus = diff.name.endsWith("+");
       if (isPlus) {
         diff.name = diff.name.slice(0, -1);
@@ -94,10 +105,8 @@ async function main() {
     await requestQueue.onIdle();
   }
   ui.log.write("done!");
+} catch (e) {
+  ui.log.write(e);
+} finally {
   ui.close();
 }
-
-main().catch((e) => {
-  ui.close();
-  console.error(e);
-});
