@@ -3,7 +3,7 @@ import { UnloadHandler } from "./unload-handler";
 import { draw } from "./card-draw";
 import { Drawing } from "./models/Drawing";
 import FuzzySearch from "fuzzy-search";
-import { GameData, Song } from "./models/SongData";
+import { GameData, I18NDict, Song } from "./models/SongData";
 import i18nData from "./assets/i18n.json";
 import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
@@ -134,9 +134,9 @@ export function DrawStateManager(props: Props) {
     loadGameData(getInitialDataSet(props.defaultDataSet));
   }, []);
 
-  const allStrings = i18nData as Record<string, Record<string, string>>;
-  const useTranslations = allStrings[detectedLanguage] || allStrings["en"];
-  const additionalStrings = gameData?.i18n[detectedLanguage];
+  const allStrings = i18nData as Record<string, I18NDict>;
+  const useTranslations = allStrings;
+  const additionalStrings = gameData?.i18n;
   return (
     <IntlProvider
       locale={detectedLanguage}
