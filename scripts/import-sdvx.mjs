@@ -2,12 +2,13 @@
  * Script to import SDVX data from a `music_db.xml` file
  */
 
-const fs = require("fs").promises;
-const { resolve, join } = require("path");
-const { parseStringPromise } = require("xml2js");
-const iconv = require("iconv-lite");
-const prettier = require("prettier");
-const { writeJsonData } = require('./utils')
+import { promises as fs } from "fs";
+import { resolve, join, dirname } from "path";
+import { parseStringPromise } from "xml2js";
+import { decode } from "iconv-lite";
+import { writeJsonData } from "./utils.mjs";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const OUTFILE = "src/songs/sdvx.json";
 const JACKETS_PATH = "src/assets/jackets/sdvx";
@@ -23,7 +24,7 @@ async function main() {
 
   console.log(`opening ${sdvxFile} for import...`);
 
-  const fileContents = iconv.decode(await fs.readFile(sdvxFile), "shift_jis");
+  const fileContents = decode(await fs.readFile(sdvxFile), "shift_jis");
   const fileData = await parseStringPromise(fileContents);
 
   console.log(`successfully parsed ${sdvxFile}, importing data...`);
@@ -43,7 +44,7 @@ async function main() {
         { key: "gravity", color: "#ff8c00" },
         { key: "heavenly", color: "#00ffff" },
         { key: "vivid", color: "#f52a6e" },
-        { key: "exceed", color: "#0047AB" }
+        { key: "exceed", color: "#0047AB" },
       ],
       flags: [],
       lvlMax: 20,
@@ -57,7 +58,7 @@ async function main() {
         "gravity",
         "heavenly",
         "vivid",
-        "exceed"
+        "exceed",
       ],
       flags: [],
       lowerLvlBound: 16,
@@ -99,7 +100,7 @@ async function main() {
         gravity: "Gravity",
         heavenly: "Heavenly",
         vivid: "Vivid",
-        exceed: 'Exceed',
+        exceed: "Exceed",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -120,7 +121,7 @@ async function main() {
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
   const outfilePath = resolve(join(__dirname, "../src/songs/sdvx.json"));
-  writeJsonData(data, outfilePath)
+  writeJsonData(data, outfilePath);
 }
 
 function determineDiffClass(song, chartType) {

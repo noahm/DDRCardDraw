@@ -1,11 +1,16 @@
-const fs = require("fs");
-const path = require("path");
-const {
+// @ts-check
+import * as fs from "fs";
+import * as path from "path";
+import {
   downloadJacket,
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
-} = require("./utils");
+} from "./utils.mjs";
+import bettersqlite from "better-sqlite3";
+
+import { fileURLToPath } from "url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const flaggableLabels = {
   "UNLOCK REQUIRED": {
@@ -53,8 +58,9 @@ function queueJacketDownload(jacketPath) {
   return outPath;
 }
 
-async function main() {
-  const db = require("better-sqlite3")("pump.db");
+// main procedure
+try {
+  const db = bettersqlite("pump.db");
   let lvlMax = 0;
   const ui = reportQueueStatusLive();
 
@@ -403,8 +409,6 @@ ORDER BY
   }
   ui.log.write("done!");
   ui.close();
-}
-
-main().catch((e) => {
+} catch (e) {
   console.error(e);
-});
+}

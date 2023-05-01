@@ -1,12 +1,14 @@
-const fs = require("fs");
-const path = require("path");
-const prettier = require("prettier");
-const { default: pqueue } = require("p-queue");
-const jimp = require("jimp");
-const inquirer = require("inquirer");
-const sanitize = require("sanitize-filename");
+import { promises, existsSync } from "fs";
+import { resolve, basename, join, dirname } from "path";
+import { format } from "prettier";
+import pqueue from "p-queue";
+import jimp from "jimp";
+import inquirer from "inquirer";
+import sanitize from "sanitize-filename";
 
-const { JSDOM } = require("jsdom");
+import { JSDOM } from "jsdom";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * @param {string} url
@@ -19,27 +21,28 @@ async function getDomInternal(url) {
   }
 }
 
-function getDom(url) {
+export function getDom(url) {
   return requestQueue.add(() => getDomInternal(url));
 }
 
-function writeJsonData(data, filePath) {
+export function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
-  return fs.promises.writeFile(
+  return promises.writeFile(
     filePath,
-    prettier.format(JSON.stringify(data), { filepath: filePath })
+    format(JSON.stringify(data), { filepath: filePath })
   );
 }
 
-const requestQueue = new pqueue({
+/** @type {pqueue} */
+export const requestQueue = new pqueue.default({
   concurrency: 6, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
 });
-const JACKETS_PATH = path.resolve(__dirname, "../src/assets/jackets");
+const JACKETS_PATH = resolve(__dirname, "../src/assets/jackets");
 
 let JACKET_PREFIX = "";
-function setJacketPrefix(prefix) {
+export function setJacketPrefix(prefix) {
   JACKET_PREFIX = prefix;
 }
 
@@ -51,19 +54,19 @@ function setJacketPrefix(prefix) {
  * Always skips if file already exists.
  * Immediately returns the relative path to the jacket where it will be saved
  */
-function downloadJacket(coverUrl, localFilename = undefined) {
+export function downloadJacket(coverUrl, localFilename = undefined) {
   if (!localFilename) {
-    localFilename = JACKET_PREFIX + path.basename(coverUrl);
+    localFilename = JACKET_PREFIX + basename(coverUrl);
   } else {
     localFilename = JACKET_PREFIX + localFilename;
   }
   if (!localFilename.endsWith(".jpg")) {
     localFilename += ".jpg";
   }
-  const sanitizedFilename = sanitize(path.basename(localFilename));
-  const outputPath = path.join(path.dirname(localFilename), sanitizedFilename);
-  const absoluteOutput = path.join(JACKETS_PATH, outputPath);
-  if (!fs.existsSync(absoluteOutput)) {
+  const sanitizedFilename = sanitize(basename(localFilename));
+  const outputPath = join(dirname(localFilename), sanitizedFilename);
+  const absoluteOutput = join(JACKETS_PATH, outputPath);
+  if (!existsSync(absoluteOutput)) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
@@ -80,7 +83,7 @@ function downloadJacket(coverUrl, localFilename = undefined) {
 
 let jobCount = 0;
 
-function reportQueueStatusLive() {
+export function reportQueueStatusLive() {
   const ui = new inquirer.ui.BottomBar();
 
   requestQueue
@@ -104,12 +107,3 @@ function reportQueueStatusLive() {
 function queueStatus() {
   return `Requests in flight: ${requestQueue.pending} Requests Waiting: ${requestQueue.size} Jobs done: ${jobCount}`;
 }
-
-module.exports = {
-  writeJsonData,
-  downloadJacket,
-  requestQueue,
-  reportQueueStatusLive,
-  getDom,
-  setJacketPrefix,
-};

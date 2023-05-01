@@ -20,7 +20,7 @@ import {
   requestQueue,
   writeJsonData,
   setJacketPrefix,
-} from "./utils.js";
+} from "./utils.mjs";
 
 {
   /* globally install dns caching to avoid mass lookups of remywiki over and over */

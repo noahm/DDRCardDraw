@@ -1,7 +1,7 @@
 // @ts-check
 import { JSDOM } from "jsdom";
 
-import { requestQueue, getDom, downloadJacket } from "../utils.js";
+import { requestQueue, getDom, downloadJacket } from "../utils.mjs";
 import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
 
 /**

@@ -1,5 +1,5 @@
 import { parsePack } from "simfile-parser";
-import { writeJsonData, downloadJacket } from "./utils.js";
+import { writeJsonData, downloadJacket } from "./utils.mjs";
 import { resolve, join, basename, extname, dirname } from "path";
 import { existsSync, readdirSync } from "fs";
 import { fileURLToPath } from "url";

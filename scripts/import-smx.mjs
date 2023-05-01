@@ -12,7 +12,7 @@ import {
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
-} from "./utils.js";
+} from "./utils.mjs";
 
 const GET_IMAGES = true;
 import { fileURLToPath } from "url";
@@ -33,11 +33,10 @@ function queueJacketDownload(coverPath) {
 
   return outPath;
 }
-let ui;
+const ui = reportQueueStatusLive();
 try {
   const songs = [];
   let lvlMax = 0;
-  ui = reportQueueStatusLive();
   const log = (whatever) => ui.log.write(whatever);
   const targetFile = join(__dirname, "../src/songs/smx.json");
   const existingData = JSON.parse(
