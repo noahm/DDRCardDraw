@@ -64,9 +64,7 @@ try {
   let lvlMax = 0;
   const ui = reportQueueStatusLive();
 
-  const cuts = db
-    .prepare("select * from cut where cutId <> 2 order by sortOrder")
-    .all();
+  const cuts = db.prepare("select * from cut order by sortOrder").all();
   const songs = db
     .prepare(
       `SELECT
@@ -317,9 +315,7 @@ ORDER BY
     song.artist = getArtistForSong(song.saIndex);
     song.bpm = getBpmForSong(song.saIndex);
     song.saIndex = song.saIndex.toString();
-    if (song.cutId !== 2) {
-      song.flags = ["cut:" + song.cutId];
-    }
+    song.flags = ["cut:" + song.cutId];
     delete song.cutId;
   }
 
@@ -365,7 +361,7 @@ ORDER BY
     defaults: {
       style: "solo",
       difficulties: ["S", "D"],
-      flags: otherFlags,
+      flags: [...otherFlags, "cut:2"],
       lowerLvlBound: 14,
       upperLvlBound: 20,
     },
@@ -377,7 +373,11 @@ ORDER BY
         ...diffTranslit,
         ...flagI18n,
         ...cuts.reduce((acc, cut) => {
-          acc["cut:" + cut.cutId] = cut.internalTitle;
+          let cutTranslation = cut.internalTitle;
+          if (cut.cutId === 2) {
+            cutTranslation = "Arcade Cut";
+          }
+          acc["cut:" + cut.cutId] = cutTranslation;
           return acc;
         }, {}),
         $abbr: {
