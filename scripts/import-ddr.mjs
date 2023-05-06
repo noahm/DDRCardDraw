@@ -11,7 +11,7 @@ import { globalAgent as httpAgent } from "http";
 import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { DDR_X as MIX_META } from "./scraping/ddr-sources.mjs";
+import { DDR_X3 as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";
@@ -160,10 +160,12 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
   const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
-    getSongsFromZiv(log, MIX_META.ziv).then((songs) => {
-      log(`Found ${songs.length} songs on ZiV`);
-      return songs;
-    }),
+    getSongsFromZiv(log, MIX_META.ziv, MIX_META.includeFolders).then(
+      (songs) => {
+        log(`Found ${songs.length} songs on ZiV`);
+        return songs;
+      }
+    ),
     MIX_META.mergeSkillAttack
       ? getSongsFromSkillAttack(log).then((songs) => {
           log(`Found ${songs.length} songs on SA`);
@@ -173,7 +175,9 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
     getRemovedSongUrls(MIX_META.remy)
       .then((delSongs) => {
         log(`Found ${delSongs.size} removed songs from RemyWiki`);
-        console.log(delSongs);
+        if (delSongs.size) {
+          console.log(delSongs);
+        }
         return delSongs;
       })
       .catch(() => {
@@ -195,6 +199,12 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
   return Promise.all(
     zivSongs.map(async (promiseOfSong) => {
       const zivSong = await promiseOfSong;
+      if (
+        MIX_META.excludeTitles &&
+        MIX_META.excludeTitles.some((pattern) => zivSong.name.match(pattern))
+      ) {
+        return;
+      }
       const existingSong = indexedSongs[zivSong.name];
       const saSong = saSongs.find((song) => {
         if (existingSong && existingSong.saIndex === song.saIndex) {
@@ -221,9 +231,9 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
               );
               if (remyJacket) {
                 song.jacket = remyJacket;
+                break;
               }
             }
-            break;
           case "ziv": {
             const zivJacket = await zivSong.getZivJacket();
             if (zivJacket) {

@@ -14,6 +14,7 @@ export const DDR_A3 = {
   filename: "a3.json",
   jacketPrefix: "",
   preferredJacketSource: "remy",
+  includeFolders: true,
 };
 
 export const DDR_SN = {
@@ -32,4 +33,15 @@ export const DDR_X = {
   filename: "ddr_x.json",
   jacketPrefix: "ddr_x/",
   preferredJacketSource: "ziv",
+};
+
+export const DDR_X3 = {
+  remy: "",
+  ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=347&show_notecounts=1&sort=&sort_order=asc",
+  mergeSkillAttack: false,
+  filename: "ddr_x3.json",
+  jacketPrefix: "ddr_x3/",
+  preferredJacketSource: "remy",
+  includeFolders: false,
+  excludeTitles: [/in roulette/],
 };

@@ -7,11 +7,12 @@ import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
 /**
  * @param {Function} log
  * @param {string} url
+ * @param {boolean} withFolders
  */
-export async function getSongsFromZiv(log, url) {
+export async function getSongsFromZiv(log, url, withFolders = false) {
   log("fetching data from zenius-i-vanisher.com");
   const dom = await requestQueue.add(() => JSDOM.fromURL(url));
-  return await scrapeSongData(dom, log);
+  return await scrapeSongData(dom, log, withFolders);
 }
 
 const translationNodeQuery = "span[onmouseover]";
@@ -65,28 +66,29 @@ const titleList = [
 /**
  * @param {JSDOM} dom
  * @param {Function} log
+ * @param {boolean} withFolders
  */
-async function scrapeSongData(dom, log) {
-  const numbers = [];
+async function scrapeSongData(dom, log, withFolders) {
+  /** @type {NodeListOf<HTMLAnchorElement>} */
+  const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
+  if (!withFolders) {
+    return Array.from(links).map((link) => createSongData(link));
+  }
+
   /** @type {NodeListOf<HTMLSpanElement>} */
   const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
-  spans.forEach((node) =>
-    numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
-  );
-  const titleMap = numbers.map((number, index) => {
+  const titleMap = Array.from(spans).map((span, index) => {
     return {
       name: titleList[index].name,
-      number,
+      count: +span.textContent.match(/^[0-9]*/)[0],
     };
   });
   log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
 
   const songs = [];
-  /** @type {NodeListOf<HTMLAnchorElement>} */
-  const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
   let loop = 0;
   for (const title of titleMap) {
-    for (let current = 0; current < title.number; ) {
+    for (let current = 0; current < title.count; ) {
       songs.push(createSongData(links[loop], title.name));
       current++;
       loop++;
@@ -106,7 +108,7 @@ const ZIV_TITLE_CORRECTIONS = {
 
 /**
  * @param {HTMLAnchorElement} songLink
- * @param {string} folder
+ * @param {string=} folder
  * @returns
  */
 async function createSongData(songLink, folder) {
@@ -188,7 +190,7 @@ function getCharts(chartNodes) {
     const [step, freeze, shock] = current.lastChild.textContent
       .split(" / ")
       .map(Number);
-    if (!Number.isNaN(shock) && shock > 0) {
+    if (!isNaN(shock) && shock > 0) {
       flags.push("shock");
     }
     if (flags.length) {
