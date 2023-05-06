@@ -56,8 +56,8 @@ export function SongCard(props: Props) {
     bpm,
     difficultyClass,
     level,
-    hasShock,
     jacket,
+    flags,
   } = replacedWith || chart;
   const diffAccentColor = useDifficultyColor(difficultyClass);
 
@@ -155,7 +155,7 @@ export function SongCard(props: Props) {
           style={{ backgroundColor: diffAccentColor }}
         >
           <div className={styles.bpm}>{bpm} BPM</div>
-          {hasShock && <ShockBadge />}
+          {flags.includes("shock") && <ShockBadge />}
           <div className={styles.difficulty}>
             <AbbrDifficulty diffClass={difficultyClass} /> {level}
           </div>

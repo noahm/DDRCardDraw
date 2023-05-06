@@ -13,7 +13,6 @@ export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
     bpm: currentSong.bpm,
     difficultyClass: chart.diffClass,
     level: chart.lvl,
-    hasShock: !!chart.shock,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
   };
