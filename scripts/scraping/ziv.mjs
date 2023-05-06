@@ -187,7 +187,7 @@ function getCharts(chartNodes) {
     if (current.firstChild.style.color === "red") {
       flags.push("unlock");
     }
-    const [step, freeze, shock] = current.lastChild.textContent
+    const [step, freeze, shock] = current.lastElementChild.textContent
       .split(" / ")
       .map(Number);
     if (!isNaN(shock) && shock > 0) {
