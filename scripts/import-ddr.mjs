@@ -11,7 +11,7 @@ import { globalAgent as httpAgent } from "http";
 import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { DDR_X3 as MIX_META } from "./scraping/ddr-sources.mjs";
+import { DDR_A3 as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";

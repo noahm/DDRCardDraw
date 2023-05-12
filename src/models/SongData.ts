@@ -21,6 +21,7 @@ export type UniqueStringArr2 = string[];
  * Describes the shape of data that any individual json file under `src/songs` will conform to
  */
 export interface GameData {
+  $schema?: string;
   /**
    * Describes unique configuration options for this game
    */

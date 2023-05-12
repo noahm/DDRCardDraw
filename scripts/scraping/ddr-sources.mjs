@@ -17,6 +17,16 @@ export const DDR_A3 = {
   includeFolders: true,
 };
 
+export const DDR_A20_PLUS = {
+  remy: "https://remywiki.com/AC_DDR_A20_PLUS",
+  ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc",
+  mergeSkillAttack: true,
+  filename: "a20plus.json",
+  jacketPrefix: "",
+  preferredJacketSource: "remy",
+  includeFolders: true,
+};
+
 export const DDR_SN = {
   remy: "", // no removed songs to care about
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=238&show_notecounts=1&sort=&sort_order=asc",

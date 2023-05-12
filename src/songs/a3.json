@@ -1,4 +1,5 @@
 {
+  "$schema": "../../songs.schema.json",
   "meta": {
     "styles": ["single", "double"],
     "difficulties": [
@@ -19,7 +20,7 @@
       "tempUnlock"
     ],
     "lvlMax": 19,
-    "lastUpdated": 1674430944556
+    "lastUpdated": 1683490154568
   },
   "defaults": {
     "style": "single",
@@ -1067,7 +1068,8 @@
         {
           "lvl": 14,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock", "shock"]
         },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
@@ -1075,7 +1077,8 @@
         {
           "lvl": 14,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock", "shock"]
         }
       ],
       "remyLink": "http://remywiki.com/Ace%20out",
@@ -1749,9 +1752,11 @@
         { "lvl": 7, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 15, "style": "single", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
+        { "lvl": 13, "style": "double", "diffClass": "expert" },
+        { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/ALGORITHM",
       "jacket": "ALGORITHM.png",
@@ -1996,6 +2001,7 @@
         { "lvl": 14, "style": "single", "diffClass": "challenge" },
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "AM-3P (CHAOS Special).png",
       "saHash": "Oo91QPdQDd1Od1oQI6IIldbQ1lQ88bO0",
       "saIndex": "227"
@@ -2504,7 +2510,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         },
         { "lvl": 10, "style": "double", "diffClass": "basic" },
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
@@ -2512,7 +2519,8 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/Avenger",
@@ -2892,6 +2900,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Bad Routine.png",
       "genre": "FILTER HOUSE",
       "saHash": "d0q8IDbqDI686q9Dl09ll0Id6bIio9Pd",
@@ -3250,6 +3259,26 @@
       "saIndex": "105"
     },
     {
+      "name": "Be With You (Still Miss You)",
+      "name_translation": "",
+      "artist": "nc ft.Eddie Kay",
+      "artist_translation": "",
+      "bpm": "110",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 12, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "basic" },
+        { "lvl": 9, "style": "double", "diffClass": "difficult" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["GRAND PRIX music pack vol.14"],
+      "remyLink": "https://remywiki.com/Main_Page",
+      "jacket": "Be With You (Still Miss You).jpg"
+    },
+    {
       "name": "Beautiful Dream",
       "name_translation": "",
       "artist": "REDALiCE feat. anporin",
@@ -3499,9 +3528,11 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 10, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 17, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" }
+        { "lvl": 14, "style": "double", "diffClass": "expert" },
+        { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/BITTER%20CHOCOLATE%20STRIKER",
       "jacket": "BITTER CHOCOLATE STRIKER.jpg",
@@ -3766,6 +3797,7 @@
           "style": "single",
           "diffClass": "expert"
         },
+        { "lvl": 14, "style": "single", "diffClass": "challenge" },
         {
           "step": 139,
           "freeze": 11,
@@ -3786,7 +3818,8 @@
           "lvl": 11,
           "style": "double",
           "diffClass": "expert"
-        }
+        },
+        { "lvl": 14, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/Blue%20Rain",
       "jacket": "Blue Rain.png",
@@ -4232,6 +4265,7 @@
         { "lvl": 13, "style": "single", "diffClass": "challenge" },
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "BRILLIANT 2U (STREAM Special).png",
       "saHash": "d11l6160iiP1bDbQPQl0Pi8lddlld80i",
       "saIndex": "232"
@@ -4640,6 +4674,7 @@
         { "lvl": 12, "style": "single", "diffClass": "challenge" },
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "CANDY☆(X-Special).png",
       "saHash": "0qP01Q60boPPlQ8qO6O6q89iI91Pl0PP",
       "saIndex": "280"
@@ -5638,6 +5673,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" },
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Colors_~for_EXTREME~",
       "jacket": "Colors ～for EXTREME～.png",
       "saHash": "odOQ1d1i6oil81b1QIDP6dOqqdooD918",
       "saIndex": "106"
@@ -6320,6 +6356,12 @@
           "diffClass": "expert"
         },
         {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
+        {
           "step": 217,
           "freeze": 46,
           "lvl": 7,
@@ -6339,6 +6381,12 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/CRAZY%E2%99%A5LOVE",
@@ -6386,8 +6434,11 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["unlock"],
       "remyLink": "http://remywiki.com/Crystarium",
-      "jacket": "Crystarium.jpg"
+      "jacket": "Crystarium.jpg",
+      "saHash": "oP8iIdilQ0QiDllqDbDIOl0iQPd9PQ9I",
+      "saIndex": "1157"
     },
     {
       "name": "Curry Up",
@@ -6938,6 +6989,7 @@
         { "step": 344, "lvl": 11, "style": "double", "diffClass": "challenge" },
         { "step": 345, "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Dance_Dance_Revolution_(song)",
       "jacket": "Dance Dance Revolution.png",
       "genre": "",
       "saHash": "6lQ9iQdq8P0Q11q9O8dbl9Q9Pi8bIb98",
@@ -9285,6 +9337,7 @@
         { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "DYNAMITE RAVE (AIR Special).png",
       "saHash": "dd8loQPD0I86DiIql8b8o9qbO8l0d9Q9",
       "saIndex": "237"
@@ -10145,6 +10198,30 @@
       "jacket": "Environ_(De-SYNC)_(feat._Iythe).jpg",
       "saHash": "1PQiP6D6IqP016dqb8qPq86Q1o8bQq6q",
       "saIndex": "1097"
+    },
+    {
+      "name": "Eon Break",
+      "name_translation": "",
+      "artist": "Virtual Self",
+      "artist_translation": "",
+      "bpm": "179-358",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 13, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 18, "style": "single", "diffClass": "challenge" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" },
+        { "lvl": 18, "style": "double", "diffClass": "challenge" }
+      ],
+      "flags": ["extraExclusive"],
+      "remyLink": "https://remywiki.com/Eon_Break",
+      "saHash": "QD8l9QQd89PO9ql1iOD0dO69OQ1DldbP",
+      "saIndex": "1166",
+      "jacket": "Eon_Break.jpg"
     },
     {
       "name": "era (nostalmix)",
@@ -11515,6 +11592,7 @@
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Flow (Jammin' Ragga Mix).png",
       "saHash": "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI",
       "saIndex": "242"
@@ -11819,6 +11897,7 @@
           "style": "single",
           "diffClass": "expert"
         },
+        { "lvl": 14, "style": "single", "diffClass": "challenge" },
         {
           "step": 166,
           "freeze": 17,
@@ -11839,7 +11918,8 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "expert"
-        }
+        },
+        { "lvl": 14, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/Follow%20Tomorrow",
       "jacket": "Follow Tomorrow.png",
@@ -12139,6 +12219,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Frozen Ray ～for EXTREME～.png",
       "saHash": "IQ9bDo1dPbIo0ODQiObbQ99iP1bOi8iI",
       "saIndex": "111"
@@ -12672,7 +12753,8 @@
         {
           "lvl": 16,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -12680,7 +12762,8 @@
         {
           "lvl": 16,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/Give%20Me",
@@ -12723,9 +12806,11 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 13, "style": "single", "diffClass": "difficult" },
         { "lvl": 17, "style": "single", "diffClass": "expert" },
+        { "lvl": 18, "style": "single", "diffClass": "challenge" },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
-        { "lvl": 17, "style": "double", "diffClass": "expert" }
+        { "lvl": 17, "style": "double", "diffClass": "expert" },
+        { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/Glitch%20Angel",
       "jacket": "Glitch Angel.jpg",
@@ -16563,6 +16648,28 @@
       "saIndex": "173"
     },
     {
+      "name": "insist",
+      "name_translation": "",
+      "artist": "Tomoyuki Uchida feat.秋成",
+      "artist_translation": "Tomoyuki Uchida feat.Akinari",
+      "bpm": "136",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["unlock"],
+      "remyLink": "https://remywiki.com/Insist",
+      "saHash": "6oIO00P8bdqqbP9qlqIqDP1Q1d9PD0qi",
+      "saIndex": "1164",
+      "jacket": "Insist.jpg"
+    },
+    {
       "name": "Inspiration",
       "name_translation": "",
       "artist": "DKC Crew",
@@ -18600,6 +18707,28 @@
       "saIndex": "1020"
     },
     {
+      "name": "little steps",
+      "name_translation": "",
+      "artist": "Freeman",
+      "artist_translation": "",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["GRAND PRIX music pack vol.14"],
+      "remyLink": "https://remywiki.com/Little_steps",
+      "jacket": "Little_steps.jpg",
+      "saHash": "Q8iOiOPbl1lI6D6bbib8Il8lPqlIl1b9",
+      "saIndex": "1160"
+    },
+    {
       "name": "LOGICAL DASH",
       "name_translation": "",
       "artist": "dj TAKA",
@@ -18932,6 +19061,28 @@
       "jacket": "Look_at_the_Sky.jpg"
     },
     {
+      "name": "Lose Your Sense",
+      "name_translation": "",
+      "artist": "ZxNX",
+      "artist_translation": "",
+      "bpm": "44-175",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "beginner" },
+        { "lvl": 9, "style": "single", "diffClass": "basic" },
+        { "lvl": 13, "style": "single", "diffClass": "difficult" },
+        { "lvl": 17, "style": "single", "diffClass": "expert" },
+        { "lvl": 9, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 17, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["goldenLeague"],
+      "remyLink": "https://remywiki.com/Lose_Your_Sense",
+      "saHash": "b1QllqO8oQdqo086QdIlIblDDbPodDoP",
+      "saIndex": "1158",
+      "jacket": "Lose_Your_Sense.jpg"
+    },
+    {
       "name": "Love Again",
       "name_translation": "",
       "artist": "NM feat. Mr. E.",
@@ -19005,6 +19156,7 @@
         { "step": 235, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 281, "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "LOVE AGAIN TONIGHT～For Melissa MIX～.png",
       "genre": "HYPER EUROBEAT",
       "saHash": "boOdPIqbDd8li0O0IqliPo1Doq99Ob09",
@@ -19324,6 +19476,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "LOVE♥SHINE.png",
       "genre": "J-HAPPY HARDCORE",
       "saHash": "qIP6DPdbD9iO86i1DO9qDd8l6dPdbl0P",
@@ -20287,6 +20440,7 @@
         { "lvl": 18, "style": "single", "diffClass": "challenge" },
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "MAXX UNLIMITED(X-Special).png",
       "saHash": "1980q80l1Q96O881IidPd16qDbOol9Qd",
       "saIndex": "298"
@@ -20347,13 +20501,43 @@
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
         { "lvl": 9, "style": "single", "diffClass": "basic" },
-        { "lvl": 12, "style": "single", "diffClass": "difficult" },
-        { "lvl": 16, "style": "single", "diffClass": "expert" },
-        { "lvl": 18, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
-        { "lvl": 12, "style": "double", "diffClass": "difficult" },
-        { "lvl": 16, "style": "double", "diffClass": "expert" },
-        { "lvl": 18, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult",
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert",
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        }
       ],
       "flags": ["unlock"],
       "remyLink": "http://remywiki.com/MEGALOVANIA",
@@ -21284,6 +21468,28 @@
       "saIndex": "249"
     },
     {
+      "name": "Musician",
+      "name_translation": "",
+      "artist": "Porter Robinson",
+      "artist_translation": "",
+      "bpm": "120",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 12, "style": "single", "diffClass": "expert" },
+        { "lvl": 3, "style": "double", "diffClass": "basic" },
+        { "lvl": 8, "style": "double", "diffClass": "difficult" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["unlock"],
+      "remyLink": "https://remywiki.com/Musician",
+      "saHash": "q8q0D8QoP89IqooiiD0q66QPI1b8lDi0",
+      "saIndex": "1165",
+      "jacket": "Musician.jpg"
+    },
+    {
       "name": "MUTEKI BUFFALO",
       "name_translation": "",
       "artist": "C-Show",
@@ -21855,7 +22061,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         },
         { "lvl": 11, "style": "double", "diffClass": "basic" },
         { "lvl": 15, "style": "double", "diffClass": "difficult" },
@@ -21863,7 +22070,8 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/New%20Era",
@@ -22102,6 +22310,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "New York EVOLVED (Type A).png",
       "genre": "",
       "saHash": "II68b0dooOIOlOiq0iQO18blDd6b9O9D",
@@ -22228,6 +22437,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "New York EVOLVED (Type C).png",
       "genre": "",
       "saHash": "Od8ld9bQQPDddIqDQ1PloOOdQ0IQo0O9",
@@ -22744,6 +22954,28 @@
       "saIndex": "300"
     },
     {
+      "name": "On the Night of a Still Wind",
+      "name_translation": "",
+      "artist": "Jena Rose",
+      "artist_translation": "",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["GRAND PRIX music pack vol.14"],
+      "remyLink": "https://remywiki.com/On_the_Night_of_a_Still_Wind",
+      "jacket": "On_the_Night_of_a_Still_Wind.jpg",
+      "saHash": "Q9bo8o9600D869o10ioPb8bPO10bIOiq",
+      "saIndex": "1161"
+    },
+    {
       "name": "ON-DO",
       "name_translation": "",
       "artist": "PON×U1",
@@ -23111,6 +23343,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "osaka EVOLVED -MAIDO,OHKINI- (TYPE2).png",
       "genre": "",
       "saHash": "8006PP188Qldob68ld6OPqlbl1biod6D",
@@ -23539,6 +23772,7 @@
         { "lvl": 13, "style": "single", "diffClass": "challenge" },
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "PARANOiA ETERNAL(X-Special).png",
       "saHash": "ioQP0b6I11Do1OQPIQ6OIDiPODD0l0dd",
       "saIndex": "301"
@@ -23574,6 +23808,7 @@
         { "lvl": 14, "style": "single", "diffClass": "challenge" },
         { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "PARANOIA EVOLUTION(X-Special).png",
       "saHash": "o6oqqiOOb9Pob66loQoQddlDP6PP69lo",
       "saIndex": "302"
@@ -23802,6 +24037,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "PARANOIA survivor.png",
       "genre": ""
     },
@@ -24119,6 +24355,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Party Lights (Tommie Sunshine's Brooklyn Fire Remix).png",
       "saHash": "oQQqlb666o69DDOQoboOI1b1q09lQ9P6",
       "saIndex": "603"
@@ -24246,6 +24483,28 @@
       "jacket": "PERSIAN LAND.jpg",
       "saHash": "8o08l8DPiO01dlo1OI8DqQDq9lQ1bPq1",
       "saIndex": "1096"
+    },
+    {
+      "name": "Phlox",
+      "name_translation": "",
+      "artist": "Sota Fujimori 2nd Season",
+      "artist_translation": "",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 15, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["unlock"],
+      "remyLink": "https://remywiki.com/Phlox",
+      "jacket": "Phlox.jpg",
+      "saHash": "1088IDQiIDl6I888OQi60l66DP6D0qOl",
+      "saIndex": "1168"
     },
     {
       "name": "Pierce The Sky",
@@ -25817,6 +26076,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Qipchāq.png",
       "saHash": "diDO6qoqo9li6qDdidDiqO9bi8lOP8ib",
       "saIndex": "492"
@@ -26136,7 +26396,8 @@
         {
           "lvl": 17,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
@@ -26144,7 +26405,8 @@
         {
           "lvl": 17,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/Rampage%20Hero",
@@ -28564,6 +28826,28 @@
       "saIndex": "87"
     },
     {
+      "name": "Sector",
+      "name_translation": "",
+      "artist": "RYOQUCHA",
+      "artist_translation": "",
+      "bpm": "80-160",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "beginner" },
+        { "lvl": 8, "style": "single", "diffClass": "basic" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "basic" },
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 16, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["goldenLeague"],
+      "remyLink": "https://remywiki.com/Sector",
+      "saHash": "O6q9qPQ1q69ddPl6DPO0bQO6989QO1ii",
+      "saIndex": "1167",
+      "jacket": "Sector.jpg"
+    },
+    {
       "name": "SEDUCTION",
       "name_translation": "",
       "artist": "nc ft. FINALFORCE",
@@ -30130,11 +30414,21 @@
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 4, "style": "single", "diffClass": "basic" },
         { "lvl": 7, "style": "single", "diffClass": "difficult" },
-        { "lvl": 10, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
-        { "lvl": 11, "style": "double", "diffClass": "challenge" },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "http://remywiki.com/Smooooch%E3%83%BB%E2%88%80%E3%83%BB",
@@ -30160,7 +30454,9 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Snow_Garland_Fairy",
-      "jacket": "Snow_Garland_Fairy.jpg"
+      "jacket": "Snow_Garland_Fairy.jpg",
+      "saHash": "8ql0DIiI0D9D1OP0qb8olo9bIQdP0ddq",
+      "saIndex": "1155"
     },
     {
       "name": "snow prism",
@@ -30749,6 +31045,7 @@
         { "lvl": 11, "style": "single", "diffClass": "challenge" },
         { "lvl": 12, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special).png",
       "saHash": "dDO8ili1081QQIb86POQ8qd0P111011o",
       "saIndex": "314"
@@ -31403,9 +31700,11 @@
         { "lvl": 7, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 16, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" }
+        { "lvl": 14, "style": "double", "diffClass": "expert" },
+        { "lvl": 16, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/Starlight%20in%20the%20Snow",
       "jacket": "Starlight in the Snow.jpg",
@@ -32547,6 +32846,28 @@
       "saIndex": "529"
     },
     {
+      "name": "Such A Feeling",
+      "name_translation": "",
+      "artist": "U1",
+      "artist_translation": "",
+      "bpm": "120",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["GRAND PRIX music pack vol.14"],
+      "remyLink": "https://remywiki.com/Such_A_Feeling",
+      "jacket": "Such_A_Feeling.jpg",
+      "saHash": "6o6OObQo9oQl6Q1oq6OPqibQI61IlPq8",
+      "saIndex": "1162"
+    },
+    {
       "name": "Sucka Luva",
       "name_translation": "",
       "artist": "Harmony Machine",
@@ -33171,6 +33492,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Sweet Sweet ♥ Magic.png",
       "saHash": "8809ol0qbbd6919bbl0b8id1669PqQ08",
       "saIndex": "92"
@@ -33621,6 +33943,7 @@
           "style": "single",
           "diffClass": "expert"
         },
+        { "lvl": 15, "style": "single", "diffClass": "challenge" },
         {
           "step": 183,
           "freeze": 40,
@@ -33641,7 +33964,8 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "expert"
-        }
+        },
+        { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/Take%20A%20Step%20Forward",
       "jacket": "Take A Step Forward.png",
@@ -33689,7 +34013,9 @@
       ],
       "flags": ["goldenLeague"],
       "remyLink": "https://remywiki.com/TAKE_ME_HIGHER",
-      "jacket": "TAKE_ME_HIGHER.jpg"
+      "jacket": "TAKE_ME_HIGHER.jpg",
+      "saHash": "PoiPd1OP1q9I9IP00PDlI1Q09QQ9b16o",
+      "saIndex": "1156"
     },
     {
       "name": "take me higher",
@@ -34430,6 +34756,7 @@
         { "lvl": 17, "style": "single", "diffClass": "challenge" },
         { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "The legend of MAX(X-Special).png",
       "saHash": "1o6dQqq9P8IQ6PbQO88OI1b91P9DoqQ8",
       "saIndex": "320"
@@ -34767,7 +35094,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         },
         { "lvl": 9, "style": "double", "diffClass": "basic" },
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
@@ -34775,7 +35103,8 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/The%20World%20Ends%20Now",
@@ -35549,6 +35878,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "tokyoEVOLVED (TYPE2).png",
       "genre": "",
       "saHash": "i0b0118q8D1QlQbIbli0P0IQ0QP08QdO",
@@ -36510,6 +36840,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "TRIP MACHINE survivor.png",
       "genre": "",
       "saHash": "POO9PlPq66OqIQO6Oq1i90D6Ill100il",
@@ -36538,6 +36869,7 @@
           "diffClass": "challenge"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "TRIP MACHINE(X-Special).png",
       "genre": "",
       "saHash": "bql00PQ1PiboIqDQoD909Il8o1PIDiD1",
@@ -39236,6 +39568,12 @@
           "diffClass": "expert"
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
+        {
           "step": 171,
           "freeze": 8,
           "lvl": 5,
@@ -39255,6 +39593,12 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "expert"
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/Wow%20Wow%20VENUS",
@@ -40187,11 +40531,21 @@
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
-        { "lvl": 9, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 16, "style": "single", "diffClass": "expert" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
-        { "lvl": 9, "style": "double", "diffClass": "challenge" },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
@@ -40340,6 +40694,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "LOVE LOVE SUGAR.png",
       "genre": "EURO BEAT",
       "saHash": "iI8qbP0IIb16Oi9bIbb8O9dbDDi1ql86",
@@ -41278,6 +41633,28 @@
       "flags": ["unlock"],
       "saHash": "IdlqO9DoOq0qPQdDbOb80dOPDlb98l0l",
       "saIndex": "1031"
+    },
+    {
+      "name": "みゅ、みゅ、Müllる",
+      "name_translation": "Myu, myu, Mullru",
+      "artist": "月乃 ＆ BEMANI Sound Team \"劇団レコード\"",
+      "artist_translation": "Tsukino & BEMANI Sound Tea",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 7, "style": "single", "diffClass": "basic" },
+        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic" },
+        { "lvl": 11, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "flags": ["unlock"],
+      "remyLink": "https://remywiki.com/Myu,_myu,_Mullru",
+      "saHash": "0q90DbbI1O90D91I8ddDdDlP9IdoQ0oo",
+      "saIndex": "1163",
+      "jacket": "Myu, myu, Mullru.jpg"
     },
     {
       "name": "めうめうぺったんたん！！",
@@ -48495,6 +48872,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Totsugeki! Glass no Nisohime!.png",
       "saHash": "q1qI0QibDDP6oPdl8DlIlPo80DqDd66P",
       "saIndex": "659"
@@ -48822,6 +49200,7 @@
         { "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "BLUE IMPULSE(for EXTREME).png",
       "saHash": "OboID1PloIIoOOObQdQOP110I61Ddl9I",
       "saIndex": "143"
@@ -49353,6 +49732,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Main_Page",
       "jacket": "Tatakae! Dadandarn V.png",
       "genre": "Tokimeki Idol project",
       "saHash": "P8DoiO0QO6Qb8iiP9D1IQ080lQQPD6ll",

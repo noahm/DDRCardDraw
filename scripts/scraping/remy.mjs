@@ -84,7 +84,13 @@ function canonicalUrlForPage(dom) {
   if (ogUrl) return ogUrl.content;
 }
 
+/**
+ * @param {string} pageUrl
+ */
 export async function getCanonicalRemyURL(pageUrl) {
+  const url = new URL(pageUrl);
+  if (url.pathname === "/") return; // filter out non-links
+
   const dom = await getDom(pageUrl);
   if (!dom || !isSongPage(dom)) return;
   return canonicalUrlForPage(dom);
