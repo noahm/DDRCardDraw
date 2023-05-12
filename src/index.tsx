@@ -5,3 +5,5 @@ const appRoot = document.createElement("main");
 document.body.prepend(appRoot);
 appRoot.className = styles.container;
 render(<App />, appRoot);
+
+import("./vitals").then((v) => v.webVitals());
