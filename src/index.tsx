@@ -6,4 +6,6 @@ document.body.prepend(appRoot);
 appRoot.className = styles.container;
 render(<App />, appRoot);
 
-import("./vitals").then((v) => v.webVitals());
+import("./vitals")
+  .then((v) => v.webVitals())
+  .catch((e) => console.error("Failed to submit web viatls.", e));

@@ -150,6 +150,9 @@ module.exports = function (env = {}, argv = {}) {
             ).i18n.en.name,
           }))
         ),
+        "process.env.REACT_APP_VERCEL_ANALYTICS_ID": JSON.stringify(
+          process.env.REACT_APP_VERCEL_ANALYTICS_ID
+        ),
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[contenthash:5].css",
