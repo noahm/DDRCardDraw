@@ -47,14 +47,11 @@ export function setJacketPrefix(prefix) {
 }
 
 /**
- * @param coverUrl {string} url of image to fetch
- * @param localFilename {string | undefined} override filename found in url
- *
- * queues a cover path for download into the imageQueue.
- * Always skips if file already exists.
- * Immediately returns the relative path to the jacket where it will be saved
+ * @param {string} coverUrl url of file to be fetched
+ * @param {string} localFilename known local filename, or song name
+ * @returns absolute and relative paths
  */
-export function downloadJacket(coverUrl, localFilename = undefined) {
+function getOutputPath(coverUrl, localFilename) {
   if (!localFilename) {
     localFilename = JACKET_PREFIX + basename(coverUrl);
   } else {
@@ -63,14 +60,32 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
   if (!localFilename.endsWith(".jpg")) {
     localFilename += ".jpg";
   }
-  const sanitizedFilename = sanitize(basename(localFilename));
+  const sanitizedFilename = sanitize(basename(localFilename)).replaceAll(
+    /#/,
+    ""
+  );
   const outputPath = join(dirname(localFilename), sanitizedFilename);
-  const absoluteOutput = join(JACKETS_PATH, outputPath);
-  if (!existsSync(absoluteOutput)) {
+  return {
+    absolute: join(JACKETS_PATH, outputPath),
+    relative: outputPath,
+  };
+}
+
+/**
+ * @param coverUrl {string} url of image to fetch
+ * @param localFilename {string | undefined} override filename found in url
+ *
+ * queues a cover path for download into the imageQueue.
+ * Always skips if file already exists.
+ * Immediately returns the relative path to the jacket where it will be saved
+ */
+export function downloadJacket(coverUrl, localFilename = undefined) {
+  const { absolute, relative } = getOutputPath(coverUrl, localFilename);
+  if (!existsSync(absolute)) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
-        img.resize(128, jimp.AUTO).quality(80).writeAsync(absoluteOutput)
+        img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute)
       )
       .catch((e) => {
         console.error("image download failure");
@@ -78,7 +93,21 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
       });
   }
 
-  return outputPath;
+  return relative;
+}
+
+/**
+ *
+ * @param {string} songName
+ * @returns relative output path if jacket exists
+ */
+export function checkJacketExists(songName) {
+  const paths = getOutputPath("", songName);
+  if (existsSync(paths.absolute)) {
+    return paths.relative;
+  } else {
+    console.log(paths.absolute, "does not exist");
+  }
 }
 
 let jobCount = 0;
