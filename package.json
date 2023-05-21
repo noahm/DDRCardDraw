@@ -15,7 +15,7 @@
     "deploy:firebase": "npm run build && firebase deploy",
     "import:ddr": "node scripts/import-ddr.mjs",
     "import:pump": "node scripts/import-pump.mjs",
-    "import:sdvx": "node scripts/import-sdvx.js",
+    "import:sdvx": "node scripts/import-sdvx.mjs",
     "import:smx": "node scripts/import-smx.mjs",
     "import:itg": "node scripts/import-itg.mjs",
     "validate": "npm run validate:json && npm run validate:ts",
