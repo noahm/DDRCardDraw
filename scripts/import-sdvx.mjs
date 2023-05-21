@@ -5,7 +5,7 @@
 import { promises as fs } from "fs";
 import { resolve, join, dirname } from "path";
 import { parseStringPromise } from "xml2js";
-import { decode } from "iconv-lite";
+import iconv from 'iconv-lite';
 import { writeJsonData } from "./utils.mjs";
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -24,7 +24,7 @@ async function main() {
 
   console.log(`opening ${sdvxFile} for import...`);
 
-  const fileContents = decode(await fs.readFile(sdvxFile), "shift_jis");
+  const fileContents = iconv.decode(await fs.readFile(sdvxFile), "shift_jis");
   const fileData = await parseStringPromise(fileContents);
 
   console.log(`successfully parsed ${sdvxFile}, importing data...`);
