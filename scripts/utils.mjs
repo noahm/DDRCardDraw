@@ -61,7 +61,7 @@ function getOutputPath(coverUrl, localFilename) {
     localFilename += ".jpg";
   }
   const sanitizedFilename = sanitize(basename(localFilename)).replaceAll(
-    /#/,
+    /#/g,
     ""
   );
   const outputPath = join(dirname(localFilename), sanitizedFilename);

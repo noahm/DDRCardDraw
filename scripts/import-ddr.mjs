@@ -11,7 +11,7 @@ import { globalAgent as httpAgent } from "http";
 import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { DDR_A3 as MIX_META } from "./scraping/ddr-sources.mjs";
+import { DDR_A20_PLUS as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";
@@ -20,6 +20,7 @@ import {
   requestQueue,
   writeJsonData,
   setJacketPrefix,
+  checkJacketExists,
 } from "./utils.mjs";
 
 {
@@ -74,7 +75,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
   };
 
   delete data.getRemyLink;
-  if (!data.remyLink) {
+  if (!data.remyLink && MIX_META.fetchJackets) {
     data.remyLink = await zivData.getRemyLink();
   }
 
@@ -116,18 +117,21 @@ function findMatchingChart(charts, target) {
   );
 }
 
-function mergeFlags(flagsA, flagsB) {
-  const flags = [];
-  if (flagsA) {
-    flags.push(...flagsA);
-  }
-  if (flagsB) {
-    flags.push(...flagsB);
-  }
-  if (!flags.length) {
+/**
+ *
+ * @param {string[]} flagsA
+ * @param {string[]} flagsB
+ * @returns
+ */
+function mergeFlags(flagsA = [], flagsB = []) {
+  const flags = new Set([...flagsA, ...flagsB]);
+  if (!flags.size) {
     return;
   }
-  return Array.from(new Set(flags));
+  if (flags.has("tempUnlock")) {
+    flags.delete("unlock");
+  }
+  return Array.from(flags);
 }
 
 function findSongFromSa(indexedSongs, saIndex, song) {
@@ -160,12 +164,15 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
   const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
-    getSongsFromZiv(log, MIX_META.ziv, MIX_META.includeFolders).then(
-      (songs) => {
-        log(`Found ${songs.length} songs on ZiV`);
-        return songs;
-      }
-    ),
+    getSongsFromZiv(
+      log,
+      MIX_META.ziv,
+      MIX_META.includeFolders,
+      MIX_META.titleOffset
+    ).then((songs) => {
+      log(`Found ${songs.length} songs on ZiV`);
+      return songs;
+    }),
     MIX_META.mergeSkillAttack
       ? getSongsFromSkillAttack(log).then((songs) => {
           log(`Found ${songs.length} songs on SA`);
@@ -222,25 +229,44 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       }
       if (!song.jacket) {
         delete song.jacket;
-        switch (MIX_META.preferredJacketSource) {
-          case "remy":
-            if (song.remyLink) {
-              const remyJacket = await getJacketFromRemySong(
-                song.remyLink,
-                song.name_translation
-              );
-              if (remyJacket) {
-                song.jacket = remyJacket;
-                break;
+        if (MIX_META.fetchJackets) {
+          switch (MIX_META.preferredJacketSource) {
+            case "remy":
+              if (song.remyLink) {
+                const remyJacket = await getJacketFromRemySong(
+                  song.remyLink,
+                  song.name_translation
+                );
+                if (remyJacket) {
+                  song.jacket = remyJacket;
+                  break;
+                }
+              }
+            case "ziv": {
+              const zivJacket = await zivSong.getZivJacket();
+              if (zivJacket) {
+                song.jacket = zivJacket;
               }
             }
-          case "ziv": {
-            const zivJacket = await zivSong.getZivJacket();
-            if (zivJacket) {
-              song.jacket = zivJacket;
-            }
+          }
+        } else {
+          const maybeJacket = checkJacketExists(
+            song.name_translation || song.name
+          );
+          if (maybeJacket) {
+            song.jacket = maybeJacket;
           }
         }
+      }
+      // re-order flags field to be after jacket
+      const flags = song.flags;
+      if (flags) {
+        delete song.flags;
+        song.flags = flags;
+      }
+      if (existingSong) {
+        if (!song.saHash) song.saHash = existingSong.saHash;
+        if (!song.saIndex) song.saIndex = existingSong.saIndex;
       }
       indexedSongs[zivSong.name] = song;
     })

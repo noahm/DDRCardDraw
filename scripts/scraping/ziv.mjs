@@ -8,11 +8,17 @@ import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
  * @param {Function} log
  * @param {string} url
  * @param {boolean} withFolders
+ * @param {number} titleOffset
  */
-export async function getSongsFromZiv(log, url, withFolders = false) {
+export async function getSongsFromZiv(
+  log,
+  url,
+  withFolders = false,
+  titleOffset
+) {
   log("fetching data from zenius-i-vanisher.com");
   const dom = await requestQueue.add(() => JSDOM.fromURL(url));
-  return await scrapeSongData(dom, log, withFolders);
+  return scrapeSongData(dom, log, withFolders, titleOffset);
 }
 
 const translationNodeQuery = "span[onmouseover]";
@@ -67,8 +73,9 @@ const titleList = [
  * @param {JSDOM} dom
  * @param {Function} log
  * @param {boolean} withFolders
+ * @param {number} titleOffset
  */
-async function scrapeSongData(dom, log, withFolders) {
+function scrapeSongData(dom, log, withFolders, titleOffset = 0) {
   /** @type {NodeListOf<HTMLAnchorElement>} */
   const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
   if (!withFolders) {
@@ -79,7 +86,7 @@ async function scrapeSongData(dom, log, withFolders) {
   const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
   const titleMap = Array.from(spans).map((span, index) => {
     return {
-      name: titleList[index].name,
+      name: titleList[index + titleOffset].name,
       count: +span.textContent.match(/^[0-9]*/)[0],
     };
   });
@@ -111,7 +118,7 @@ const ZIV_TITLE_CORRECTIONS = {
  * @param {string=} folder
  * @returns
  */
-async function createSongData(songLink, folder) {
+function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
     ? songRow.firstChild.lastChild
@@ -142,13 +149,23 @@ async function createSongData(songLink, folder) {
 
 const flagIndex = {
   "DDR GP Early Access": "grandPrixPack",
+  "GRAND PRIX music pack vol.2": "unlocked_by_default",
   "EXTRA SAVIOR A3": "unlock",
+  "EXTRA SAVIOR PLUS": "unlock",
   "GOLDEN LEAGUER'S PRIVILEGE": "goldenLeague",
+  "GOLDEN LEAGUER PLUS' PRIVILEGE": "goldenLeague",
   "EXTRA EXCLUSIVE": "extraExclusive",
   "COURSE TRIAL A3": "unlock",
+  "COURSE TRIAL": "unlock",
   "DANCE aROUND × DanceDanceRevolution 2022夏のMUSIC CHOICE": "unlock",
   "いちかのごちゃまぜMix UP！": "tempUnlock",
+  "毎週！いちかの超BEMANIラッシュ2020": "tempUnlock",
   "BEMANI 2021真夏の歌合戦5番勝負": "unlock",
+  "BPL応援 楽曲解禁スタンプラリー": "unlock",
+  "武装神姫BC×BEMANI 稼働記念キャンペーン": "unlocked_by_default",
+  "BEMANI MusiQ FES": "unlocked_by_default",
+  "SUMMER DANCE CAMP 2020": "unlock",
+  "The 10th KAC": "tempUnlock",
 };
 
 /**
@@ -161,11 +178,12 @@ function getFlagsForSong(songLink) {
     const titleBits = previous.title.split(" / ");
     if (titleBits[1]) {
       const flag = flagIndex[titleBits[1].trim()] || titleBits[1].trim();
-      return [flag];
+      if (flag !== "unlocked_by_default") {
+        return [flag];
+      }
     }
     return ["unlock"];
   }
-  return undefined;
 }
 
 const singlesColumnCount = 5;

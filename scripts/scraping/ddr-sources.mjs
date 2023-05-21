@@ -20,11 +20,12 @@ export const DDR_A3 = {
 export const DDR_A20_PLUS = {
   remy: "https://remywiki.com/AC_DDR_A20_PLUS",
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc",
-  mergeSkillAttack: true,
+  mergeSkillAttack: false,
   filename: "a20plus.json",
   jacketPrefix: "",
   preferredJacketSource: "remy",
   includeFolders: true,
+  titleOffset: 1,
 };
 
 export const DDR_SN = {
@@ -50,7 +51,8 @@ export const DDR_X3 = {
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=347&show_notecounts=1&sort=&sort_order=asc",
   mergeSkillAttack: false,
   filename: "ddr_x3.json",
-  jacketPrefix: "ddr_x3/",
+  jacketPrefix: "ddr_x/",
+  fetchJackets: false,
   preferredJacketSource: "remy",
   includeFolders: false,
   excludeTitles: [/in roulette/],
