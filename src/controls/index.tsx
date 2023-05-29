@@ -45,6 +45,31 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   return gameData.meta.difficulties.filter((d) => s.has(d.key));
 }
 
+function getDiffsAndRangeForNewStyle(
+  gameData: GameData,
+  selectedStyle: string
+) {
+  let s = new Set<string>();
+  const range = { high: 0, low: 100 };
+  for (const f of gameData.songs) {
+    for (const c of f.charts) {
+      if (c.style === selectedStyle) {
+        s.add(c.diffClass);
+        if (c.lvl > range.high) {
+          range.high = c.lvl;
+        }
+        if (c.lvl < range.low) {
+          range.low = c.lvl;
+        }
+      }
+    }
+  }
+  return {
+    diffs: gameData.meta.difficulties.filter((d) => s.has(d.key)),
+    lvlRange: range,
+  };
+}
+
 function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
   const { t } = useIntl();
   const { showPool, update } = useConfigState(
@@ -273,8 +298,23 @@ function GeneralSettings() {
             large
             value={selectedStyle}
             onChange={(e) => {
-              const style = e.currentTarget.value;
-              updateState({ style });
+              updateState((prev) => {
+                const next = { ...prev, style: e.currentTarget.value };
+                const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
+                  gameData,
+                  next.style
+                );
+                if (diffs.length === 1) {
+                  next.difficulties = new Set(diffs.map((d) => d.key));
+                }
+                if (lvlRange.low > next.upperBound) {
+                  next.upperBound = lvlRange.low;
+                }
+                if (lvlRange.high < next.lowerBound) {
+                  next.lowerBound = lvlRange.high;
+                }
+                return next;
+              });
             }}
           >
             {gameStyles.map((style) => (

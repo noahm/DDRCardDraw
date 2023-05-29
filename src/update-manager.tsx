@@ -1,4 +1,4 @@
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
+import * as OfflinePluginRuntime from "@lcdp/offline-plugin/runtime";
 import { useEffect } from "react";
 import { toaster } from "./toaster";
 import { Intent } from "@blueprintjs/core";

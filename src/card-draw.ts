@@ -19,7 +19,6 @@ export function getDrawnChart(
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
     level: chart.lvl,
-    hasShock: !!chart.shock,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
     // Fill in variant data per game

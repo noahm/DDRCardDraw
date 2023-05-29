@@ -1,17 +1,24 @@
 // @ts-check
 import { JSDOM } from "jsdom";
 
-import { requestQueue } from "../utils.js";
-import { getCanonicalRemyURL } from "./remy.mjs";
+import { requestQueue, getDom, downloadJacket } from "../utils.mjs";
+import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
 
 /**
  * @param {Function} log
  * @param {string} url
+ * @param {boolean} withFolders
+ * @param {number} titleOffset
  */
-export async function getSongsFromZiv(log, url) {
+export async function getSongsFromZiv(
+  log,
+  url,
+  withFolders = false,
+  titleOffset
+) {
   log("fetching data from zenius-i-vanisher.com");
-  const dom = await JSDOM.fromURL(url);
-  return await scrapeSongData(dom, log);
+  const dom = await requestQueue.add(() => JSDOM.fromURL(url));
+  return scrapeSongData(dom, log, withFolders, titleOffset);
 }
 
 const translationNodeQuery = "span[onmouseover]";
@@ -65,29 +72,30 @@ const titleList = [
 /**
  * @param {JSDOM} dom
  * @param {Function} log
- * @returns
+ * @param {boolean} withFolders
+ * @param {number} titleOffset
  */
-async function scrapeSongData(dom, log) {
-  const numbers = [];
-  /** @type {HTMLSpanElement[]} */
+function scrapeSongData(dom, log, withFolders, titleOffset = 0) {
+  /** @type {NodeListOf<HTMLAnchorElement>} */
+  const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
+  if (!withFolders) {
+    return Array.from(links).map((link) => createSongData(link));
+  }
+
+  /** @type {NodeListOf<HTMLSpanElement>} */
   const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
-  spans.forEach((node) =>
-    numbers.push(Number(node.textContent.match(/^[0-9]*/)[0]))
-  );
-  const titleMap = numbers.map((number, index) => {
+  const titleMap = Array.from(spans).map((span, index) => {
     return {
-      name: titleList[index].name,
-      number,
+      name: titleList[index + titleOffset].name,
+      count: +span.textContent.match(/^[0-9]*/)[0],
     };
   });
   log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
 
   const songs = [];
-  /** @type {HTMLAnchorElement[]} */
-  const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
   let loop = 0;
   for (const title of titleMap) {
-    for (let current = 0; current < title.number; ) {
+    for (let current = 0; current < title.count; ) {
       songs.push(createSongData(links[loop], title.name));
       current++;
       loop++;
@@ -107,10 +115,10 @@ const ZIV_TITLE_CORRECTIONS = {
 
 /**
  * @param {HTMLAnchorElement} songLink
- * @param {string} folder
+ * @param {string=} folder
  * @returns
  */
-async function createSongData(songLink, folder) {
+function createSongData(songLink, folder) {
   const songRow = songLink.parentElement.parentElement;
   const artistNode = songRow.firstChild.lastChild.textContent.trim()
     ? songRow.firstChild.lastChild
@@ -129,7 +137,8 @@ async function createSongData(songLink, folder) {
     bpm: songRow.children[1].textContent.trim(),
     folder,
     charts: getCharts(chartNodes),
-    getRemyLink: () => getRemyLinkForSong(songLink),
+    getRemyLink: () => getRemyLinkForSong(songLink, songName),
+    getZivJacket: () => getZivJacketForSong(songLink, songName),
   };
   const flags = getFlagsForSong(songLink);
   if (flags) {
@@ -140,14 +149,26 @@ async function createSongData(songLink, folder) {
 
 const flagIndex = {
   "DDR GP Early Access": "grandPrixPack",
+  "GRAND PRIX music pack vol.2": "unlocked_by_default",
   "EXTRA SAVIOR A3": "unlock",
+  "EXTRA SAVIOR PLUS": "unlock",
   "GOLDEN LEAGUER'S PRIVILEGE": "goldenLeague",
+  "GOLDEN LEAGUER PLUS' PRIVILEGE": "goldenLeague",
   "EXTRA EXCLUSIVE": "extraExclusive",
   "COURSE TRIAL A3": "unlock",
+  "COURSE TRIAL": "unlock",
+  "DANCE aROUND × DanceDanceRevolution 2022夏のMUSIC CHOICE": "unlock",
+  "いちかのごちゃまぜMix UP！": "tempUnlock",
+  "毎週！いちかの超BEMANIラッシュ2020": "tempUnlock",
+  "BEMANI 2021真夏の歌合戦5番勝負": "unlock",
+  "BPL応援 楽曲解禁スタンプラリー": "unlock",
+  "武装神姫BC×BEMANI 稼働記念キャンペーン": "unlocked_by_default",
+  "BEMANI MusiQ FES": "unlocked_by_default",
+  "SUMMER DANCE CAMP 2020": "unlock",
+  "The 10th KAC": "tempUnlock",
 };
 
 /**
- *
  * @param {HTMLAnchorElement} songLink
  */
 function getFlagsForSong(songLink) {
@@ -157,11 +178,12 @@ function getFlagsForSong(songLink) {
     const titleBits = previous.title.split(" / ");
     if (titleBits[1]) {
       const flag = flagIndex[titleBits[1].trim()] || titleBits[1].trim();
-      return [flag];
+      if (flag !== "unlocked_by_default") {
+        return [flag];
+      }
     }
     return ["unlock"];
   }
-  return undefined;
 }
 
 const singlesColumnCount = 5;
@@ -183,10 +205,10 @@ function getCharts(chartNodes) {
     if (current.firstChild.style.color === "red") {
       flags.push("unlock");
     }
-    const [step, freeze, shock] = current.lastChild.textContent
+    const [step, freeze, shock] = current.lastElementChild.textContent
       .split(" / ")
       .map(Number);
-    if (!Number.isNaN(shock) && shock > 0) {
+    if (!isNaN(shock) && shock > 0) {
       flags.push("shock");
     }
     if (flags.length) {
@@ -199,10 +221,29 @@ function getCharts(chartNodes) {
 
 /**
  * @param {HTMLAnchorElement} songLink
+ * @param {string} name song name (native) for guessing if no wiki link provided
  */
-async function getRemyLinkForSong(songLink) {
-  const dom = await requestQueue.add(() => JSDOM.fromURL(songLink.href));
+async function getRemyLinkForSong(songLink, name) {
+  const dom = await getDom(songLink.href);
+  if (!dom) return;
+  /** @type {HTMLAnchorElement | null} */
   const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
-  // @ts-ignore
   if (remyLink) return getCanonicalRemyURL(remyLink.href);
+
+  // try to guess wiki link
+  return guessUrlFromName(name);
+}
+
+/**
+ * @param {HTMLAnchorElement} songLink
+ * @param {string} songName for the filename
+ */
+async function getZivJacketForSong(songLink, songName) {
+  const dom = await getDom(songLink.href);
+  if (!dom) return;
+  const images = dom.window.document.querySelectorAll("img");
+  for (const img of images) {
+    if (!img.alt || img.alt === "Logo") continue;
+    if (img.src) return downloadJacket(img.src, songName);
+  }
 }

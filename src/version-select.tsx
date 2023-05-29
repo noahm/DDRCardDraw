@@ -38,9 +38,10 @@ interface DelayProps {
 function DelayRender(props: DelayProps) {
   const [display, setDisplay] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
+    const handle = setTimeout(() => {
       setDisplay(true);
     }, 200);
+    return () => clearTimeout(handle);
   }, []);
   if (display) {
     return <>{props.children}</>;

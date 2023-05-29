@@ -1,3 +1,5 @@
+import { I18NDict } from "./models/SongData";
+
 const browserLanguage: string =
   (window.navigator.languages && window.navigator.languages[0]) ||
   window.navigator.language ||
@@ -24,7 +26,7 @@ export function times<T>(n: number, cb: (n: number) => T): Array<T> {
 }
 
 export function* flattenedKeys(
-  input: Record<string, string | Record<string, string>>
+  input: I18NDict
 ): Generator<[string, string], void> {
   for (const key in input) {
     const value = input[key];

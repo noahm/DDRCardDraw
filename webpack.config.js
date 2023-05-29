@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const OfflinePlugin = require("offline-plugin");
+const OfflinePlugin = require("@lcdp/offline-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
@@ -154,6 +154,9 @@ module.exports = function (env = {}, argv = {}) {
             ).i18n.en.name,
           }))
         ),
+        "process.env.VERCEL_ANALYTICS_ID": JSON.stringify(
+          process.env.VERCEL_ANALYTICS_ID
+        ),
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[chunkhash:5].css",
@@ -176,8 +179,11 @@ module.exports = function (env = {}, argv = {}) {
             firefox: false,
             coast: false,
             appleStartup: false,
+            android: {
+              offset: 15,
+            },
             appleIcon: {
-              offset: 5,
+              offset: 10,
             },
           },
         },

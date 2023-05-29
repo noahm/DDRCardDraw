@@ -1,25 +1,23 @@
 # DDR Tools
 
-This is web-app that allows random draw of songs from Dance Dance Revolution and other music games
-with a variety of options for filtering which songs and charts are included. The intended use case
-is in competitive tournaments or personal training.
+[![Discord](https://img.shields.io/discord/1013159796024823898?label=discord&style=flat-square)](https://discord.gg/QPyEATsbP7) ![GitHub contributors](https://img.shields.io/github/contributors/noahm/ddrcarddraw?style=flat-square) ![GitHub branch checks state](https://img.shields.io/github/checks-status/noahm/ddrcarddraw/main?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/noahm/ddrcarddraw?style=flat-square) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/noahm/DDRCardDraw?style=flat-square)
 
-The app is officially available at [https://ddr.tools/](https://ddr.tools/)
-or as a downloadable zip file from the [releases page](https://github.com/noahm/DDRCardDraw/releases).
-The app supports running fully offline, and can load and operate without an internet connection after
-being loaded once in any modern web browser.
+This web-app allows randomized selection of songs from Dance Dance Revolution and other music games
+with a variety of options for filtering which songs and charts are included. After songs are picked,
+they can be marked as protected or banned, or replaced with entirely separate songs. The primary use case
+is in competitive tournaments, but it also works well for personal training.
 
-Original app by Jeff Lloyd; ongoing maintenance provided by [noahm](https://github.com/noahm)
-and [FuriousDCSL](https://github.com/FuriousDCSL). Contributions are welcome!
+The official build is available at [https://ddr.tools/](https://ddr.tools/).
+After being loaded once, it supports running offline with full operation without
+an internet connection in any modern web browser.
 
 ## Customizing / Contributing
 
 This app can be easily customized for any format a tournament might use, including adding song
-data for other games. If you have requests or ideas, you're welcome reach out on [Facebook](https://m.me/noah.manneschmidt),
-[Twitter](https://twitter.com/Cathadan), Discord (Cathadan#2431), or wherever else you can find me.
+data for other games. If you have requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
 
-If you want to take a stab at it yourself, you will want to have node.js >= 14.0.0 installed along with
-[yarn](https://yarnpkg.com/) and some familarity with React app development.
+If you want to take a stab at developing features yourself, you will need have node.js >= 14.0.0 installed along with
+[yarn](https://yarnpkg.com/) and some familarity with React probably helps.
 
 Clone this repo to your computer. Then the following commands will be useful:
 
@@ -41,15 +39,24 @@ yarn validate:json
 yarn build:zip
 ```
 
+## Data imports
+
 There are some other useful scripts in `scripts/` that help in maintaining data integrity and pulling
-in new song data. Several have top-level aliases so you can conveniently update song data:
+in new song data. Several have top-level aliases so you can conveniently update song data: (must have node and yarn installed, and run `yarn install` once, as above)
 
 ```sh
 # download latest StepManiaX song data and jackets
 yarn import:smx
 
-# download latest DDR A20 Plus song data and jackets (when available on RemyWiki)
+# download latest DDR A3 song data and jackets (blends data from ZIv, RemyWiki, skillattack)
 yarn import:ddr
+
+# import an ITG/StepMania song pack into card draw
+yarn import:itg path/to/pack/folder some-stub-name
+
+# import the latest Pump it Up data using a data dump found here:
+# https://github.com/AnyhowStep/pump-out-sqlite3-dump/
+yarn import:pump path/to/pumpout/db
 ```
 
 Ideas for future develoment are now being tracked as issues on this repo. Feel free to jump in if you

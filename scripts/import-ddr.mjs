@@ -5,14 +5,32 @@
  * song data with the least amount of manual work on my part.
  */
 
+import CacheableLookup from "cacheable-lookup";
 import { readFile } from "fs/promises";
-import { fileURLToPath } from "url";
+import { globalAgent as httpAgent } from "http";
+import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
-import { getSongsFromZiv } from "./scraping/ziv.mjs";
-import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
+import { fileURLToPath } from "url";
+import { DDR_A20_PLUS as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
-import { writeJsonData, reportQueueStatusLive, requestQueue } from "./utils.js";
-import { DDR_A3 } from "./scraping/ddr-sources.mjs";
+import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
+import { getSongsFromZiv } from "./scraping/ziv.mjs";
+import {
+  reportQueueStatusLive,
+  requestQueue,
+  writeJsonData,
+  setJacketPrefix,
+  checkJacketExists,
+} from "./utils.mjs";
+
+{
+  /* globally install dns caching to avoid mass lookups of remywiki over and over */
+  const dnsCache = new CacheableLookup();
+  dnsCache.install(httpAgent);
+  dnsCache.install(httpsAgent);
+}
+
+setJacketPrefix(MIX_META.jacketPrefix);
 
 /** @param songs {Array<{ name: string, charts: { style: string, lvl: number }[]}>} */
 function sortSongs(songs) {
@@ -57,7 +75,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
   };
 
   delete data.getRemyLink;
-  if (!data.remyLink) {
+  if (!data.remyLink && MIX_META.fetchJackets) {
     data.remyLink = await zivData.getRemyLink();
   }
 
@@ -72,7 +90,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
     data.bpm = oldData.bpm;
   }
 
-  if (!saData) {
+  if (!saData && MIX_META.mergeSkillAttack) {
     log("[WARN] missing SA data for:", zivData.name);
   }
   // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
@@ -99,18 +117,21 @@ function findMatchingChart(charts, target) {
   );
 }
 
-function mergeFlags(flagsA, flagsB) {
-  const flags = [];
-  if (flagsA) {
-    flags.push(...flagsA);
-  }
-  if (flagsB) {
-    flags.push(...flagsB);
-  }
-  if (!flags.length) {
+/**
+ *
+ * @param {string[]} flagsA
+ * @param {string[]} flagsB
+ * @returns
+ */
+function mergeFlags(flagsA = [], flagsB = []) {
+  const flags = new Set([...flagsA, ...flagsB]);
+  if (!flags.size) {
     return;
   }
-  return Array.from(new Set(flags));
+  if (flags.has("tempUnlock")) {
+    flags.delete("unlock");
+  }
+  return Array.from(flags);
 }
 
 function findSongFromSa(indexedSongs, saIndex, song) {
@@ -143,18 +164,27 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
   const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
-    getSongsFromZiv(log, DDR_A3.ziv).then((songs) => {
+    getSongsFromZiv(
+      log,
+      MIX_META.ziv,
+      MIX_META.includeFolders,
+      MIX_META.titleOffset
+    ).then((songs) => {
       log(`Found ${songs.length} songs on ZiV`);
       return songs;
     }),
-    getSongsFromSkillAttack(log).then((songs) => {
-      log(`Found ${songs.length} songs on SA`);
-      return songs;
-    }),
-    getRemovedSongUrls(DDR_A3.remy)
+    MIX_META.mergeSkillAttack
+      ? getSongsFromSkillAttack(log).then((songs) => {
+          log(`Found ${songs.length} songs on SA`);
+          return songs;
+        })
+      : [],
+    getRemovedSongUrls(MIX_META.remy)
       .then((delSongs) => {
         log(`Found ${delSongs.size} removed songs from RemyWiki`);
-        console.log(delSongs);
+        if (delSongs.size) {
+          console.log(delSongs);
+        }
         return delSongs;
       })
       .catch(() => {
@@ -176,6 +206,12 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
   return Promise.all(
     zivSongs.map(async (promiseOfSong) => {
       const zivSong = await promiseOfSong;
+      if (
+        MIX_META.excludeTitles &&
+        MIX_META.excludeTitles.some((pattern) => zivSong.name.match(pattern))
+      ) {
+        return;
+      }
       const existingSong = indexedSongs[zivSong.name];
       const saSong = saSongs.find((song) => {
         if (existingSong && existingSong.saIndex === song.saIndex) {
@@ -192,16 +228,45 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         log(`  New song from ziv: ${song.name} (${song.remyLink})`);
       }
       if (!song.jacket) {
-        song.jacket = "";
-        if (song.remyLink) {
-          const remyJacket = await getJacketFromRemySong(
-            song.remyLink,
-            song.name_translation
+        delete song.jacket;
+        if (MIX_META.fetchJackets) {
+          switch (MIX_META.preferredJacketSource) {
+            case "remy":
+              if (song.remyLink) {
+                const remyJacket = await getJacketFromRemySong(
+                  song.remyLink,
+                  song.name_translation
+                );
+                if (remyJacket) {
+                  song.jacket = remyJacket;
+                  break;
+                }
+              }
+            case "ziv": {
+              const zivJacket = await zivSong.getZivJacket();
+              if (zivJacket) {
+                song.jacket = zivJacket;
+              }
+            }
+          }
+        } else {
+          const maybeJacket = checkJacketExists(
+            song.name_translation || song.name
           );
-          if (remyJacket) {
-            song.jacket = remyJacket;
+          if (maybeJacket) {
+            song.jacket = maybeJacket;
           }
         }
+      }
+      // re-order flags field to be after jacket
+      const flags = song.flags;
+      if (flags) {
+        delete song.flags;
+        song.flags = flags;
+      }
+      if (existingSong) {
+        if (!song.saHash) song.saHash = existingSong.saHash;
+        if (!song.saIndex) song.saIndex = existingSong.saIndex;
       }
       indexedSongs[zivSong.name] = song;
     })
@@ -211,7 +276,8 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
 async function main() {
   const targetFile = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
-    "../src/songs/a3.json"
+    "../src/songs",
+    MIX_META.filename
   );
   const existingData = JSON.parse(
     await readFile(targetFile, { encoding: "utf-8" })
@@ -237,6 +303,18 @@ async function main() {
   await importSongsFromExternal(indexedSongs, songsBySaIndex, log);
 
   existingData.songs = sortSongs(Object.values(indexedSongs));
+
+  for (const song of existingData.songs) {
+    if (!song.jacket && song.remyLink) {
+      const remyJacket = await getJacketFromRemySong(
+        song.remyLink,
+        song.name_translation
+      );
+      if (remyJacket) {
+        song.jacket = remyJacket;
+      }
+    }
+  }
   await writeJsonData(existingData, targetFile);
 
   ui.log.write(

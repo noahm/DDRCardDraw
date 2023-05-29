@@ -5,6 +5,9 @@
   "additionalProperties": false,
   "required": ["songs", "meta", "defaults", "i18n"],
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "meta": {
       "type": "object",
       "description": "Describes unique configuration options for this game",

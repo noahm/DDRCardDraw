@@ -88,8 +88,8 @@ export function SongCard(props: Props) {
     diffAbbr,
     diffColor,
     level,
-    hasShock,
     jacket,
+    flags,
   } = replacedWith || chart;
 
   const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
@@ -201,7 +201,7 @@ export function SongCard(props: Props) {
           style={{ backgroundColor: diffColor }}
         >
           <div className={styles.bpm}>{bpm} BPM</div>
-          {hasShock && <ShockBadge />}
+          {flags.includes("shock") && <ShockBadge />}
           <div className={styles.difficulty}>
             {diffAbbr} {level}
           </div>
