@@ -16,7 +16,7 @@ an internet connection in any modern web browser.
 This app can be easily customized for any format a tournament might use, including adding song
 data for other games. If you have requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
 
-If you want to take a stab at developing features yourself, you will need have node.js >= 14.0.0 installed along with
+If you want to take a stab at developing features yourself, you will need have node.js >= 18.0.0 installed along with
 [yarn](https://yarnpkg.com/) and some familarity with React probably helps.
 
 Clone this repo to your computer. Then the following commands will be useful:
