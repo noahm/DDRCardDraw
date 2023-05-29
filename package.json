@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Tools for music game tournaments and training",
   "engines": {
-    "node": ">=16.17.0"
+    "node": "^18.16.0"
   },
   "scripts": {
     "start": "webpack serve --env dev=true",
