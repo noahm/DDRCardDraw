@@ -21,7 +21,7 @@ export function useThemePref() {
     : Theme.Light;
 }
 
-function applyTheme(theme: Theme) {
+function applyThemeBodyClass(theme: Theme) {
   document.body.classList.toggle(Classes.DARK, theme === Theme.Dark);
 }
 
@@ -54,7 +54,7 @@ export function ThemeSyncWidget() {
   const themeState = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
-    applyTheme(themeState.resolved);
+    applyThemeBodyClass(themeState.resolved);
   }, [themeState.resolved]);
   useEffect(() => {
     themeState.updateBrowserPref(browserPref);

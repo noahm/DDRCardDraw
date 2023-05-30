@@ -1,15 +1,9 @@
-.form {
+.drawer {
   padding: 1em 1.5em;
   overflow-y: auto;
 }
 
-.form hr {
-  border-color: rgba(17, 20, 24, 0.8);
-  border-style: solid;
-  border-bottom-width: 0;
-}
-
-.form label {
+.drawer label {
   user-select: none;
 }
 

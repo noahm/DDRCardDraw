@@ -1,5 +1,6 @@
 import { Song } from "./models/SongData";
-import { Music } from "react-feather";
+import { Icon } from "@blueprintjs/core";
+import { IconNames } from "@blueprintjs/icons";
 
 interface Props {
   song: Song;
@@ -19,7 +20,7 @@ export function SongJacket(props: Props) {
   }
   return (
     <div className={props.className}>
-      <Music size={props.height} />
+      <Icon icon={IconNames.MUSIC} size={props.height} />
     </div>
   );
 }

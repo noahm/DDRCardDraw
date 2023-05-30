@@ -1,4 +1,4 @@
-import createStore, { SetState } from "zustand";
+import createStore, { StoreApi } from "zustand";
 
 export interface ConfigState {
   chartCount: number;
@@ -6,6 +6,7 @@ export interface ConfigState {
   lowerBound: number;
   useWeights: boolean;
   orderByAction: boolean;
+  showVeto: boolean;
   weights: number[];
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
@@ -13,7 +14,7 @@ export interface ConfigState {
   difficulties: ReadonlySet<string>;
   flags: ReadonlySet<string>;
   showPool: boolean;
-  update: SetState<ConfigState>;
+  update: StoreApi<ConfigState>["setState"];
 }
 
 export const useConfigState = createStore<ConfigState>((set, get) => ({
@@ -21,6 +22,7 @@ export const useConfigState = createStore<ConfigState>((set, get) => ({
   upperBound: 0,
   lowerBound: 0,
   useWeights: false,
+  showVeto: true,
   orderByAction: true,
   weights: [],
   forceDistribution: true,

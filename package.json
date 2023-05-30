@@ -45,10 +45,10 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.8",
     "@types/better-sqlite3": "^7.6.0",
     "@types/fuzzy-search": "^2.1.0",
-    "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.11",
-    "autoprefixer": "^10.4.14",
-    "babel-loader": "^9.1.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^9.0.0",
     "better-sqlite3": "^8.0.0",
     "cacheable-lookup": "^7.0.0",
     "classnames": "^2.3.1",
@@ -72,17 +72,19 @@
     "json-schema-to-typescript": "^12.0.0",
     "jsonschema": "^1.4.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "nanoid": "^4.0.0",
     "node-fetch": "^2.6.7",
     "normalize.css": "^8.0.1",
     "p-queue": "^6.0.0",
+    "peerjs": "^2.0.0-beta.3",
     "postcss": "^8.4.4",
     "postcss-loader": "^6.2.1",
     "prettier": "^2.8.0",
     "query-string": "^6.13.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^6.3.0",
+    "react-intl": "^6.0.0",
     "react-refresh": "^0.14.0",
     "sanitize-filename": "^1.6.3",
     "simfile-parser": "^0.4.0",
@@ -95,14 +97,16 @@
     "webpack-sources": "^3.2.1",
     "xml2js": "^0.5.0",
     "zip-webpack-plugin": "^4.0.0",
-    "zustand": "^3.6.4"
+    "zustand": "^4.1.0"
   },
   "resolutions": {
     "loader-utils": "^2.0.0",
     "xml2js": "^0.5.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@vercel/analytics": "^1.0.1",
+    "react-redux": "^8.0.5",
     "web-vitals": "^3.3.1"
   }
 }
