@@ -30,12 +30,7 @@ export function DrawingList() {
           icon={<img src={logo} height={128} />}
           title="DDR Tools"
           description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
-          action={
-            <Callout intent="primary" icon={IconNames.WRENCH}>
-              DDR Card Draw now has a new name and URL. Look for more new
-              features coming soon!
-            </Callout>
-          }
+          action={<Callout icon={IconNames.HEART}>Dance with pride!</Callout>}
         />
       </div>
     );
