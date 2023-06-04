@@ -7,6 +7,8 @@ export interface ConfigState {
   useWeights: boolean;
   orderByAction: boolean;
   weights: number[];
+  /** charts of this level or higher will be grouped into the same "bucket" */
+  groupSongsAt: number | null;
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
   style: string;
@@ -23,6 +25,7 @@ export const useConfigState = createStore<ConfigState>((set, get) => ({
   useWeights: false,
   orderByAction: true,
   weights: [],
+  groupSongsAt: null,
   forceDistribution: true,
   constrainPocketPicks: true,
   style: "",
