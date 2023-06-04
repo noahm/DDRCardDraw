@@ -3,7 +3,6 @@ import styles from "./controls-weights.css";
 import { times } from "../utils";
 import { useMemo, useState } from "react";
 import { useConfigState } from "../config-state";
-import {} from "../draw-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox } from "@blueprintjs/core";
 
@@ -14,6 +13,7 @@ interface Props {
 
 export function WeightsControls({ high, low }: Props) {
   const { t } = useIntl();
+  const [groupCutoff, setGroupCutoff] = useState(high - 1);
   const { weights, forceDistribution, groupSongsAt, updateConfig } =
     useConfigState(
       (cfg) => ({
@@ -28,7 +28,6 @@ export function WeightsControls({ high, low }: Props) {
     () => times(high - low + 1, (n) => n + low - 1),
     [high, low]
   );
-  const [groupCutoff, setGroupCutoff] = useState(high - 1);
 
   function toggleForceDistribution() {
     updateConfig((state) => ({
