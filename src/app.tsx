@@ -16,17 +16,20 @@ import { DrawStateManager } from "./draw-state";
 import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { RecoilRoot } from "recoil";
+import { RecoilWebsocketSync } from "./recoil";
 
 export function App() {
   return (
     <RecoilRoot>
-      <DrawStateManager defaultDataSet="a20plus">
-        <ThemeSyncWidget />
-        <UpdateManager />
-        <Header />
-        <DrawingList />
-        <Analytics />
-      </DrawStateManager>
+      <RecoilWebsocketSync>
+        <DrawStateManager defaultDataSet="a20plus">
+          <ThemeSyncWidget />
+          <UpdateManager />
+          <Header />
+          <DrawingList />
+          <Analytics />
+        </DrawStateManager>
+      </RecoilWebsocketSync>
     </RecoilRoot>
   );
 }

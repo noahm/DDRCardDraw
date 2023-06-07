@@ -1,8 +1,15 @@
 import { RecoilValue, atom, selector } from "recoil";
+import { syncEffect } from "recoil-sync";
+import { number } from "@recoiljs/refine";
 
 export const chartCount = atom({
   key: "config/chartCount",
   default: 5,
+  effects: [
+    syncEffect({
+      refine: number(),
+    }),
+  ],
 });
 
 export const levelBounds = atom<[number, number]>({
