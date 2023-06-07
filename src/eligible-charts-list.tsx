@@ -1,5 +1,5 @@
 import { eligibleCharts } from "./card-draw";
-import { useConfigState } from "./config-state";
+import { configState, flags } from "./config-state";
 import { useDrawState } from "./draw-state";
 import { SongCard } from "./song-card";
 import styles from "./drawing-list.css";
@@ -15,6 +15,7 @@ import { useIntl } from "./hooks/useIntl";
 import { useIsNarrow } from "./hooks/useMediaQuery";
 import { atom, useAtom } from "jotai";
 import { DiffHistogram } from "./histogram";
+import { useRecoilValue } from "recoil";
 
 function songKeyFromChart(chart: DrawnChart) {
   return `${chart.name}:${chart.artist}`;
@@ -25,7 +26,7 @@ const currentTabAtom = atom("all");
 export function EligibleChartsListFilter() {
   const { t } = useIntl();
   const [currentTab, setCurrentTab] = useAtom(currentTabAtom);
-  const selectedFlags = Array.from(useConfigState((cfg) => cfg.flags));
+  const selectedFlags = Array.from(useRecoilValue(flags));
 
   if (!selectedFlags.length) {
     return null;
@@ -48,14 +49,14 @@ export function EligibleChartsListFilter() {
 export function EligibleChartsList() {
   const [currentTab] = useAtom(currentTabAtom);
   const gameData = useDrawState((s) => s.gameData);
-  const configState = useConfigState();
+  const config = useRecoilValue(configState);
   const isNarrow = useIsNarrow();
   const isDisplayFiltered = currentTab !== "all";
 
   if (!gameData) {
     return <Spinner />;
   }
-  let charts = Array.from(eligibleCharts(configState, gameData.songs));
+  let charts = Array.from(eligibleCharts(config, gameData.songs));
   const songs = new Set<string>();
   const filteredCharts = charts.filter((chart) => {
     songs.add(songKeyFromChart(chart));
@@ -77,7 +78,7 @@ export function EligibleChartsList() {
           {charts.length} eligible charts from {songs.size} songs (of{" "}
           {gameData.songs.length} total)
         </NavbarGroup>
-        {configState.flags.size > 0 && !isNarrow && (
+        {config.flags.size > 0 && !isNarrow && (
           <NavbarGroup>
             <NavbarDivider />
             <EligibleChartsListFilter />

@@ -7,10 +7,11 @@ import {
   PlayerActionOnChart,
   PocketPick,
 } from "./models/Drawing";
-import { useConfigState } from "./config-state";
+import { configState, orderByAction } from "./config-state";
 import { useForceUpdate } from "./hooks/useForceUpdate";
 import { draw } from "./card-draw";
 import { useDrawState } from "./draw-state";
+import { useRecoilCallback, useRecoilSnapshot } from "recoil";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -71,52 +72,58 @@ function DrawnSetImpl({ drawing }: Props) {
    * @param player the player acting on the chart, 1 or 2
    * @param chart new chart being pocket picked, if this is a pocket pick action
    */
-  function handleBanProtectReplace(
-    arr: Array<PlayerActionOnChart> | Array<PocketPick>,
-    chartId: number,
-    player: 1 | 2,
-    chart?: DrawnChart
-  ) {
-    if (useConfigState.getState().orderByAction) {
-      const indexToCut = drawing.charts.findIndex(
-        (chart) => chart.id === chartId
-      );
-      const [shiftedChart] = drawing.charts.splice(indexToCut, 1);
-      if (arr === drawing.bans) {
-        // insert at tail of list
-        const insertPoint = drawing.charts.length;
-        drawing.charts.splice(insertPoint, 0, shiftedChart);
-      } else {
-        // insert at head of list, behind other picks
-        const insertPoint =
-          drawing.protects.length + drawing.pocketPicks.length;
-        drawing.charts.splice(insertPoint, 0, shiftedChart);
-      }
-    }
+  const handleBanProtectReplace = useRecoilCallback(
+    ({ snapshot }) =>
+      async function (
+        arr: Array<PlayerActionOnChart> | Array<PocketPick>,
+        chartId: number,
+        player: 1 | 2,
+        chart?: DrawnChart
+      ) {
+        if (await snapshot.getPromise(orderByAction)) {
+          const indexToCut = drawing.charts.findIndex(
+            (chart) => chart.id === chartId
+          );
+          const [shiftedChart] = drawing.charts.splice(indexToCut, 1);
+          if (arr === drawing.bans) {
+            // insert at tail of list
+            const insertPoint = drawing.charts.length;
+            drawing.charts.splice(insertPoint, 0, shiftedChart);
+          } else {
+            // insert at head of list, behind other picks
+            const insertPoint =
+              drawing.protects.length + drawing.pocketPicks.length;
+            drawing.charts.splice(insertPoint, 0, shiftedChart);
+          }
+        }
 
-    const existingBanIndex = arr.findIndex((b) => b.chartId === chart?.id);
-    if (existingBanIndex >= 0) {
-      arr.splice(existingBanIndex, 1);
-    } else {
-      arr.push({ player, pick: chart!, chartId });
-    }
-    forceUpdate();
-  }
-
-  function handleRedraw(chartId: number) {
-    const newDrawing = draw(gameData!, {
-      ...useConfigState.getState(),
-      chartCount: 1,
-    });
-    newDrawing.charts[0].id = chartId;
-    drawing.charts = drawing.charts.map((chart) => {
-      if (chart.id === chartId) {
-        return newDrawing.charts[0];
+        const existingBanIndex = arr.findIndex((b) => b.chartId === chart?.id);
+        if (existingBanIndex >= 0) {
+          arr.splice(existingBanIndex, 1);
+        } else {
+          arr.push({ player, pick: chart!, chartId });
+        }
+        forceUpdate();
       }
-      return chart;
-    });
-    forceUpdate();
-  }
+  );
+
+  const handleRedraw = useRecoilCallback(
+    ({ snapshot }) =>
+      async (chartId: number) => {
+        const newDrawing = draw(gameData!, {
+          ...(await snapshot.getPromise(configState)),
+          chartCount: 1,
+        });
+        newDrawing.charts[0].id = chartId;
+        drawing.charts = drawing.charts.map((chart) => {
+          if (chart.id === chartId) {
+            return newDrawing.charts[0];
+          }
+          return chart;
+        });
+        forceUpdate();
+      }
+  );
 
   function handleReset(chartId: number) {
     drawing.bans = drawing.bans.filter((p) => p.chartId !== chartId);

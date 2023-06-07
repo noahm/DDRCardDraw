@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
-import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
 import { DrawnChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import styles from "./song-search.css";
+import { useRecoilValue } from "recoil";
+import { configState } from "../config-state";
 
 interface Props {
   isOpen: boolean;
@@ -17,8 +18,8 @@ interface Props {
 export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
-  const config = useConfigState();
   const fuzzySearch = useDrawState((s) => s.fuzzySearch);
+  const config = useRecoilValue(configState);
 
   let items: SearchResultData[] = [];
   if (fuzzySearch) {
@@ -61,7 +62,6 @@ export function SongSearch(props: Props) {
       className={styles.songSearch}
       itemRenderer={(data, itemProps) => (
         <SearchResult
-          config={config}
           data={data}
           selected={itemProps.modifiers.active}
           handleClick={itemProps.handleClick}

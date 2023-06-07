@@ -1,33 +1,76 @@
-import createStore, { SetState } from "zustand";
+import { RecoilValue, atom, selector } from "recoil";
 
-export interface ConfigState {
-  chartCount: number;
-  upperBound: number;
-  lowerBound: number;
-  useWeights: boolean;
-  orderByAction: boolean;
-  weights: number[];
-  forceDistribution: boolean;
-  constrainPocketPicks: boolean;
-  style: string;
-  difficulties: ReadonlySet<string>;
-  flags: ReadonlySet<string>;
-  showPool: boolean;
-  update: SetState<ConfigState>;
-}
+export const chartCount = atom({
+  key: "config/chartCount",
+  default: 5,
+});
 
-export const useConfigState = createStore<ConfigState>((set, get) => ({
-  chartCount: 5,
-  upperBound: 0,
-  lowerBound: 0,
-  useWeights: false,
-  orderByAction: true,
-  weights: [],
-  forceDistribution: true,
-  constrainPocketPicks: true,
-  style: "",
-  difficulties: new Set(),
-  flags: new Set(),
-  showPool: false,
-  update: set,
-}));
+export const levelBounds = atom<[number, number]>({
+  key: "config/levelBounds",
+  default: [0, 0],
+});
+
+export const useWeights = atom({
+  key: "config/useWeights",
+  default: false,
+});
+
+export const weights = atom<number[]>({
+  key: "config/weights",
+  default: [],
+});
+
+export const orderByAction = atom({
+  key: "config/orderByAction",
+  default: true,
+});
+
+export const forceDistribution = atom({
+  key: "config/forceDistribution",
+  default: true,
+});
+
+export const constrainPocketPicks = atom({
+  key: "config/constrainPocketPicks",
+  default: true,
+});
+
+export const style = atom({
+  key: "config/style",
+  default: "",
+});
+
+export const difficulties = atom<ReadonlySet<string>>({
+  key: "config/difficulties",
+  default: new Set(),
+});
+
+export const flags = atom<ReadonlySet<string>>({
+  key: "config/flags",
+  default: new Set(),
+});
+
+export const showPool = atom({
+  key: "config/showPool",
+  default: false,
+});
+
+export const configState = selector({
+  key: "config/selector",
+  get: ({ get }) => ({
+    chartCount: get(chartCount),
+    levelBounds: get(levelBounds),
+    style: get(style),
+    difficulties: get(difficulties),
+    flags: get(flags),
+    useWeights: get(useWeights),
+    weights: get(weights),
+    orderByAction: get(orderByAction),
+    forceDistribution: get(forceDistribution),
+    constrainPocketPicks: get(constrainPocketPicks),
+  }),
+});
+
+type InnerRecoilValue<T> = T extends RecoilValue<infer U> ? U : never;
+
+export type ConfigState = InnerRecoilValue<typeof configState>;

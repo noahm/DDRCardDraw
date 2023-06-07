@@ -3,11 +3,12 @@ import { DrawnSet } from "./drawn-set";
 import styles from "./drawing-list.css";
 import { useDrawState } from "./draw-state";
 import { Drawing } from "./models/Drawing";
-import { useConfigState } from "./config-state";
+import { showPool as showPoolAtom } from "./config-state";
 import { EligibleChartsList } from "./eligible-charts-list";
 import { Callout, NonIdealState } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import logo from "./assets/ddr-tools-256.png";
+import { useRecoilValue } from "recoil";
 
 const renderDrawing = (drawing: Drawing) => (
   <DrawnSet key={drawing.id} drawing={drawing} />
@@ -19,7 +20,7 @@ const ScrollableDrawings = memo((props: { drawings: Drawing[] }) => {
 
 export function DrawingList() {
   const drawings = useDrawState((s) => s.drawings);
-  const showPool = useConfigState((cfg) => cfg.showPool);
+  const showPool = useRecoilValue(showPoolAtom);
   if (showPool) {
     return <EligibleChartsList />;
   }

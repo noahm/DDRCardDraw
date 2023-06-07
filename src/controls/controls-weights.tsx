@@ -1,46 +1,57 @@
-import shallow from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { times } from "../utils";
 import { useMemo } from "react";
-import { useConfigState } from "../config-state";
+import {
+  weights as weightsAtom,
+  forceDistribution as forceDistAtom,
+  levelBounds,
+  useWeights as useWeightsAtom,
+} from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox } from "@blueprintjs/core";
+import { useRecoilState, useRecoilValue } from "recoil";
 
-interface Props {
-  high: number;
-  low: number;
+export function WeightsControls() {
+  const { t } = useIntl();
+  const [useWeights, setUseWeights] = useRecoilState(useWeightsAtom);
+  return (
+    <>
+      <Checkbox
+        id="weighted"
+        checked={useWeights}
+        onChange={(e) => {
+          setUseWeights(!!e.currentTarget.checked);
+        }}
+        label={t("useWeightedDistributions")}
+      />
+      {useWeights && <WeightsDetails />}
+    </>
+  );
 }
 
-export function WeightsControls({ high, low }: Props) {
+function WeightsDetails() {
   const { t } = useIntl();
-  const { weights, forceDistribution, updateConfig } = useConfigState(
-    (cfg) => ({
-      weights: cfg.weights,
-      forceDistribution: cfg.forceDistribution,
-      updateConfig: cfg.update,
-    }),
-    shallow
-  );
+  const [weights, setWeights] = useRecoilState(weightsAtom);
+  const [forceDistribution, setForceDist] = useRecoilState(forceDistAtom);
+  const [low, high] = useRecoilValue(levelBounds);
   const levels = useMemo(
     () => times(high - low + 1, (n) => n + low - 1),
     [high, low]
   );
 
   function toggleForceDistribution() {
-    updateConfig((state) => ({
-      forceDistribution: !state.forceDistribution,
-    }));
+    setForceDist((prev) => !prev);
   }
 
   function setWeight(difficulty: number, value: number) {
-    updateConfig((state) => {
-      const newWeights = state.weights.slice();
+    setWeights((prev) => {
+      const newWeights = prev.slice();
       if (Number.isInteger(value)) {
         newWeights[difficulty] = value;
       } else {
         delete newWeights[difficulty];
       }
-      return { weights: newWeights };
+      return newWeights;
     });
   }
 

@@ -47,8 +47,8 @@ export function chartIsValid(
   return (
     chart.style === config.style &&
     config.difficulties.has(chart.diffClass) &&
-    chart.lvl >= config.lowerBound &&
-    chart.lvl <= config.upperBound &&
+    chart.lvl >= config.levelBounds[0] &&
+    chart.lvl <= config.levelBounds[1] &&
     (!chart.flags || chart.flags.every((f) => config.flags.has(f)))
   );
 }
@@ -80,9 +80,7 @@ export function* eligibleCharts(config: ConfigState, songs: Song[]) {
 export function draw(gameData: GameData, configData: ConfigState): Drawing {
   const {
     chartCount: numChartsToRandom,
-    upperBound,
-    lowerBound,
-    style,
+    levelBounds: [lowerBound, upperBound],
     useWeights,
     forceDistribution,
     weights,

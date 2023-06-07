@@ -1,7 +1,6 @@
 import { AbbrDifficulty } from "../game-data-utils";
 import { useDifficultyColor } from "../hooks/useDifficultyColor";
 import { useIntl } from "../hooks/useIntl";
-import { ConfigState } from "../config-state";
 import { Song, Chart } from "../models/SongData";
 import { SongJacket } from "../song-jacket";
 import styles from "./song-search.css";
@@ -36,15 +35,9 @@ interface ResultsProps {
   data: SearchResultData;
   selected: boolean;
   handleClick: React.MouseEventHandler<HTMLElement>;
-  config: ConfigState;
 }
 
-export function SearchResult({
-  data,
-  selected,
-  handleClick,
-  config,
-}: ResultsProps) {
+export function SearchResult({ data, selected, handleClick }: ResultsProps) {
   const song = data.song;
   const { t } = useIntl();
   let label: string | JSX.Element;

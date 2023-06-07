@@ -1,28 +1,31 @@
 import { GameData } from "./models/SongData";
 import { useEffect } from "react";
-import { useConfigState } from "./config-state";
+import { difficulties, flags, levelBounds, style } from "./config-state";
+import { useRecoilTransaction_UNSTABLE } from "recoil";
 
 interface Props {
   defaults?: GameData["defaults"];
 }
 
 export function ApplyDefaultConfig({ defaults }: Props) {
+  const applyDefaults = useRecoilTransaction_UNSTABLE(
+    ({ set }) =>
+      (defaults: GameData["defaults"]) => {
+        set(levelBounds, [defaults.lowerLvlBound, defaults.upperLvlBound] as [
+          number,
+          number
+        ]);
+        set(flags, new Set(defaults.flags));
+        set(difficulties, new Set(defaults.difficulties));
+        set(style, defaults.style);
+      },
+    []
+  );
   useEffect(() => {
     if (!defaults) {
       return;
     }
-
-    useConfigState.setState(() => {
-      const { lowerLvlBound, upperLvlBound, flags, difficulties, style } =
-        defaults;
-      return {
-        lowerBound: lowerLvlBound,
-        upperBound: upperLvlBound,
-        flags: new Set(flags),
-        difficulties: new Set(difficulties),
-        style,
-      };
-    });
+    applyDefaults(defaults);
   }, [defaults]);
   return null;
 }
