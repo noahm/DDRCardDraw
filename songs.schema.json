@@ -24,7 +24,7 @@
         },
         "difficulties": {
           "type": "array",
-          "description": "List of all difficultiy classes available",
+          "description": "List of all difficulty classes available",
           "items": {
             "type": "object",
             "properties": {
@@ -48,6 +48,10 @@
         },
         "lvlMax": {
           "type": "integer"
+        },
+        "drawGroups": {
+          "$ref": "#/$defs/uniqueStringArr",
+          "description": "List of tournament-specific groupings of charts (e.g. tiers)"
         }
       }
     },
@@ -67,7 +71,8 @@
         "difficulties": { "$ref": "#/$defs/uniqueStringArr" },
         "flags": { "$ref": "#/$defs/uniqueStringArr" },
         "lowerLvlBound": { "type": "integer" },
-        "upperLvlBound": { "type": "integer" }
+        "upperLvlBound": { "type": "integer" },
+        "drawGroups": { "$ref": "#/$defs/uniqueStringArr" }
       }
     },
     "i18n": {
@@ -146,7 +151,12 @@
           "description": "e.g. expert/challenge"
         },
         "lvl": {
-          "type": "integer"
+          "type": "integer",
+          "description": "in-game numeric rating"
+        },
+        "drawGroup": {
+          "type": "string",
+          "description": "tournament-specific grouping of charts (e.g. tier)"
         },
         "step": {
           "type": "number"

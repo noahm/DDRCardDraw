@@ -1,5 +1,5 @@
 import { GameData, Song, Chart } from "./models/SongData";
-import { times } from "./utils";
+import { getDefault, times } from "./utils";
 import { DrawnChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 
@@ -13,6 +13,7 @@ export function getDrawnChart(currentSong: Song, chart: Chart): DrawnChart {
     bpm: currentSong.bpm,
     difficultyClass: chart.diffClass,
     level: chart.lvl,
+    drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
   };
@@ -44,11 +45,19 @@ export function chartIsValid(
   if (forPocketPick && !config.constrainPocketPicks) {
     return chart.style === config.style;
   }
+  let groupConstraintSatisfied = false;
+  if (config.drawGroups.length == 0) {
+    groupConstraintSatisfied = 
+      chart.lvl >= config.lowerBound &&
+      chart.lvl <= config.upperBound;
+  }
+  else if (chart.drawGroup) {
+    groupConstraintSatisfied = config.drawGroups.includes(chart.drawGroup);
+  }
   return (
     chart.style === config.style &&
     config.difficulties.has(chart.diffClass) &&
-    chart.lvl >= config.lowerBound &&
-    chart.lvl <= config.upperBound &&
+    groupConstraintSatisfied && 
     (!chart.flags || chart.flags.every((f) => config.flags.has(f)))
   );
 }
@@ -82,25 +91,43 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     chartCount: numChartsToRandom,
     upperBound,
     lowerBound,
+    drawGroups,
     style,
     useWeights,
+    useDrawGroups,
     forceDistribution,
     weights,
   } = configData;
 
   const validCharts: Record<string, Array<DrawnChart>> = {};
-  times(gameData.meta.lvlMax, (n) => {
-    validCharts[n.toString()] = [];
-  });
-
-  for (const chart of eligibleCharts(configData, gameData.songs)) {
-    validCharts[chart.level].push(chart);
+  console.log(drawGroups)
+  
+  if (useDrawGroups && drawGroups.length > 0)
+  {
+    gameData.meta.drawGroups?.map((g) => validCharts[g] = []);
+    for (const chart of eligibleCharts(configData, gameData.songs)) {
+      if (chart.drawGroup)
+      {
+        validCharts[chart.drawGroup].push(chart);
+      }
+    }
   }
+  else
+  {
+    times(gameData.meta.lvlMax, (n) => {
+      validCharts[n.toString()] = [];
+    });
+    for (const chart of eligibleCharts(configData, gameData.songs)) {
+      validCharts[chart.level].push(chart);
+    }
+  }
+  console.log(validCharts)
+
 
   /**
    * the "deck" of difficulty levels to pick from
    */
-  let distribution: Array<number> = [];
+  let distribution: Array<string> = [];
   /**
    * Total amount of weight used, so we can determine expected outcome below
    */
@@ -110,18 +137,28 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   const expectedDrawPerLevel: Record<string, number> = {};
 
-  // build an array of possible levels to pick from
-  for (let level = lowerBound; level <= upperBound; level++) {
+  // build an array of possible levels/groups to pick from
+  let groups: string[] = [];
+  if (useDrawGroups && drawGroups.length > 0) {
+    groups = Array.from(drawGroups);
+  }
+  else {
+    groups = [...Array(upperBound+1).keys()].slice(lowerBound).map((v) => v.toString());
+  }
+
+  for (let groupIndex in groups) {
     let weightAmount = 0;
+    let group = groups[groupIndex];
     if (useWeights) {
-      weightAmount = weights[level];
-      expectedDrawPerLevel[level.toString()] = weightAmount;
+      weightAmount = weights[groupIndex];
+      expectedDrawPerLevel[group] = weightAmount;
       totalWeights += weightAmount;
     } else {
-      weightAmount = validCharts[level.toString()].length;
+      weightAmount = validCharts[group].length;
     }
-    times(weightAmount, () => distribution.push(level));
+    times(weightAmount, () => distribution.push(group));
   }
+  console.log(weights)
 
   // If custom weights are used, expectedDrawsPerLevel[level] will be the maximum number
   // of cards of that level allowed in the card draw.
@@ -129,10 +166,10 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // so a level with a weight of 15% can only show up on at most 1 card, a level with
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
-    for (let level = lowerBound; level <= upperBound; level++) {
+    for (let group in groups) {
       let normalizedWeight =
-        expectedDrawPerLevel[level.toString()] / totalWeights;
-      expectedDrawPerLevel[level] = Math.ceil(
+        expectedDrawPerLevel[group] / totalWeights;
+      expectedDrawPerLevel[group] = Math.ceil(
         normalizedWeight * numChartsToRandom
       );
     }
@@ -154,7 +191,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     // first pick a difficulty
     const chosenDifficulty =
       distribution[Math.floor(Math.random() * distribution.length)];
-    const selectableCharts = validCharts[chosenDifficulty.toString()];
+    const selectableCharts = validCharts[chosenDifficulty];
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];
 

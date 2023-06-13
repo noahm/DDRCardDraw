@@ -25,6 +25,10 @@ export function times<T>(n: number, cb: (n: number) => T): Array<T> {
   return results;
 }
 
+export function getDefault(a: number[], i: any, d: number): number {
+  return (i in a) && a[i] || d;
+}
+
 export function* flattenedKeys(
   input: I18NDict
 ): Generator<[string, string], void> {

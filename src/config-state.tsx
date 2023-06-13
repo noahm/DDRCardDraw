@@ -4,7 +4,9 @@ export interface ConfigState {
   chartCount: number;
   upperBound: number;
   lowerBound: number;
+  drawGroups: string[];
   useWeights: boolean;
+  useDrawGroups: boolean;
   orderByAction: boolean;
   weights: number[];
   forceDistribution: boolean;
@@ -20,7 +22,9 @@ export const useConfigState = createStore<ConfigState>((set, get) => ({
   chartCount: 5,
   upperBound: 0,
   lowerBound: 0,
+  drawGroups: [],
   useWeights: false,
+  useDrawGroups: false,
   orderByAction: true,
   weights: [],
   forceDistribution: true,

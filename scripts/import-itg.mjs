@@ -6,12 +6,13 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const [, , inputPath, stub] = process.argv;
+const [, , inputPath, stub, tiered] = process.argv;
 
 if (!inputPath || !stub) {
-  console.log("Usage: yarn import:itg path/to/pack stubname");
+  console.log("Usage: yarn import:itg path/to/pack stubname [tiered?]");
   process.exit(1);
 }
+let useTag = !!tiered;
 
 const packPath = resolve(inputPath);
 
@@ -31,11 +32,13 @@ const data = {
   meta: {
     flags: [],
     lvlMax: 0,
+    drawGroups: [],
     lastUpdated: Date.now(),
   },
   defaults: {
     flags: [],
-    lowerLvlBound: 1,
+    drawGroups: [],
+    lowerLvlBound: 1
   },
   i18n: {
     en: {
@@ -111,7 +114,7 @@ for (const parsedSong of pack.simfiles) {
     finalJacket = downloadJacket(
       finalJacket,
       join("itg", stub, basename(titleDir) + ".jpg")
-    );
+    ).replace(/\\/g, '/')
   }
 
   const song = {
@@ -123,12 +126,26 @@ for (const parsedSong of pack.simfiles) {
     charts: [],
   };
   for (const chart of parsedSong.availableTypes) {
-    song.charts.push({
+    let chartData = {
       lvl: chart.feet,
       style: chart.mode,
       diffClass: chart.difficulty,
-    });
-    data.meta.lvlMax = Math.max(data.meta.lvlMax, chart.feet);
+    };
+    if (useTag) {
+      let tierMatch = parsedSong.title.titleName.match(/^\[(\S+)\]/i);
+      if (tierMatch.length > 0) {
+        chartData.drawGroup = tierMatch[1];
+      }
+      else
+      {
+        chartData.drawGroup = 'N/A';
+      }
+    }
+    song.charts.push(chartData);
+    data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
+    if (!data.meta.drawGroups.includes(chartData.drawGroup)) {
+      data.meta.drawGroups.push(chartData.drawGroup);
+    }
     difficulties.add(chart.difficulty);
     styles.add(chart.mode);
   }
@@ -142,6 +159,14 @@ data.meta.difficulties = data.defaults.difficulties.map((key) => ({
   color: someColors[key] || "grey", // TODO?
 }));
 data.defaults.upperLvlBound = data.meta.lvlMax;
+data.defaults.drawGroups = Array.from(data.meta.drawGroups);
 data.defaults.style = data.meta.styles[0];
+
+if (useTag && [0, 1].includes(data.defaults.drawGroups.length))
+{
+  console.log("Import expected charts to be grouped/tiered with [chart name prefixes] (e.g. [T06] Multi-Thread), but no distinct groups were discovered");
+  delete data.meta.drawGroups;
+  delete data.defaults.drawGroups;
+}
 
 writeJsonData(data, resolve(join(__dirname, `../src/songs/${stub}.json`)));

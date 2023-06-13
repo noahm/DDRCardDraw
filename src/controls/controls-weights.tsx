@@ -1,17 +1,18 @@
 import shallow from "zustand/shallow";
 import styles from "./controls-weights.css";
-import { times } from "../utils";
+import { getDefault, times } from "../utils";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox } from "@blueprintjs/core";
 
 interface Props {
-  high: number;
-  low: number;
+  drawGroups?: string[];
+  high?: number;
+  low?: number;
 }
 
-export function WeightsControls({ high, low }: Props) {
+export function WeightsControls({ drawGroups, high, low }: Props) {
   const { t } = useIntl();
   const { weights, forceDistribution, updateConfig } = useConfigState(
     (cfg) => ({
@@ -21,9 +22,20 @@ export function WeightsControls({ high, low }: Props) {
     }),
     shallow
   );
-  const levels = useMemo(
-    () => times(high - low + 1, (n) => n + low - 1),
-    [high, low]
+  const groups = useMemo(
+    function() {
+      if (drawGroups && drawGroups.length > 0) {
+        return drawGroups;
+      }
+      else if (high && low) {
+        return times(high - low + 1, (n) => n + low - 1).map((v) => v.toString());
+      }
+      else {
+        // TODO: not sure what behavior is "typescriptiest" for an incomplete high/low pair
+        return [];
+      }
+    },
+    [drawGroups, high, low]
   );
 
   function toggleForceDistribution() {
@@ -32,42 +44,42 @@ export function WeightsControls({ high, low }: Props) {
     }));
   }
 
-  function setWeight(difficulty: number, value: number) {
+  function setWeight(groupIndex: number, value: number) {
     updateConfig((state) => {
       const newWeights = state.weights.slice();
       if (Number.isInteger(value)) {
-        newWeights[difficulty] = value;
+        newWeights[groupIndex] = value;
       } else {
-        delete newWeights[difficulty];
+        delete newWeights[groupIndex];
       }
       return { weights: newWeights };
     });
   }
 
-  const totalWeight = levels.reduce(
-    (total, level) => total + (weights[level] || 0),
+  const totalWeight = groups.reduce(
+    (total, group, index) => total + (weights[index] || 0),
     0
   );
-  const percentages = levels.map((level) => {
-    const value = weights[level] || 0;
+  const percentages = groups.map((group, index) => {
+    const value = (weights[index] || 0);
     return value ? ((100 * value) / totalWeight).toFixed(0) : 0;
   });
 
   return (
     <section className={styles.weights}>
       <p>{t("weights.explanation")}</p>
-      {levels.map((level, i) => (
-        <div className={styles.level} key={level}>
+      {groups.map((group, i) => (
+        <div className={styles.group} key={group}>
           <NumericInput
             width={2}
-            name={`weight-${level}`}
-            value={weights[level] || ""}
+            name={`weight-${group}`}
+            value={weights[i] || ""}
             min={0}
-            onValueChange={(v) => setWeight(level, v)}
+            onValueChange={(v) => setWeight(i, v)}
             placeholder="0"
             fill
           />
-          {level} <sub>{percentages[i]}%</sub>
+          {group} <sub>{percentages[i]}%</sub>
         </div>
       ))}
       <Checkbox
