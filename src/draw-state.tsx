@@ -57,9 +57,11 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     });
     writeDataSetToUrl(dataSetName);
 
-    const { default: data } = await import(
-      /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
-    );
+    const data = (
+      await import(
+        /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
+      )
+    ).default;
     set({
       gameData: data,
       drawings: [],

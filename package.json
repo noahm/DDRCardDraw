@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Tools for music game tournaments and training",
   "engines": {
-    "node": "^18.16.0"
+    "node": "^18.15.0"
   },
   "scripts": {
     "start": "webpack serve --env dev=true",
@@ -83,9 +83,9 @@
     "query-string": "^6.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-intl": "^6.0.0",
-    "react-refresh": "^0.14.0",
+    "react-intl": "^6.4.2",
     "react-feather": "^2.0.9",
+    "react-refresh": "^0.14.0",
     "sanitize-filename": "^1.6.3",
     "simfile-parser": "^0.4.0",
     "style-loader": "^3.3.1",
