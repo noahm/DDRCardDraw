@@ -97,7 +97,7 @@ export function SongCard(props: Props) {
   let jacketBg = {};
   if (jacket) {
     jacketBg = {
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("jackets/${jacket}")`,
+      backgroundImage: `url("jackets/${jacket}")`,
     };
   }
 
@@ -136,6 +136,7 @@ export function SongCard(props: Props) {
           ? undefined
           : showMenu
       }
+      style={jacketBg}
     >
       <SongSearch
         isOpen={!!pocketPickPendingForPlayer}
@@ -175,7 +176,7 @@ export function SongCard(props: Props) {
           onRemove={() => iconCallbacks?.onSetWinner(null)}
         />
       )}
-      <div className={styles.cardCenter} style={jacketBg}>
+      <div className={styles.cardCenter}>
         <div className={styles.name} title={nameTranslation}>
           {name}
         </div>
