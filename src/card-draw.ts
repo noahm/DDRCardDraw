@@ -1,5 +1,5 @@
 import { GameData, Song, Chart } from "./models/SongData";
-import { getDefault, times } from "./utils";
+import { times } from "./utils";
 import { DrawnChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 

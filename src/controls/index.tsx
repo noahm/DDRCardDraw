@@ -185,12 +185,24 @@ function Controls() {
     }
     return getAvailableDifficulties(gameData, selectedStyle);
   }, [gameData, selectedStyle]);
+  const availableDrawGroups = useMemo(() => {
+    if (gameData?.meta?.drawGroups) {
+      if (gameData.meta.drawGroups.length >= 1) {
+          return gameData.meta.drawGroups;
+      }
+    }
+    return [];
+  }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
 
   if (!gameData) {
     return null;
   }
-  const { flags, lvlMax, drawGroups: drawGroupsAvailable, styles: gameStyles } = gameData.meta;
+  const { flags, lvlMax, styles: gameStyles } = gameData.meta;
+
+  const hasDrawGroups = () => {
+    return (availableDrawGroups.length >= 1);
+  }
 
 
   const handleLowerBoundChange = (newLow: number) => {
@@ -250,7 +262,7 @@ function Controls() {
           <FormGroup label="Lvl Min" contentClassName={styles.narrowInput}>
             <NumericInput
               fill
-              disabled={useDrawGroups}
+              disabled={useDrawGroups && hasDrawGroups()}
               value={lowerBound}
               min={1}
               max={Math.max(upperBound, lowerBound, 1)}
@@ -262,7 +274,7 @@ function Controls() {
           <FormGroup label="Lvl Max" contentClassName={styles.narrowInput}>
             <NumericInput
               fill
-              disabled={useDrawGroups}
+              disabled={useDrawGroups && hasDrawGroups()}
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
@@ -273,20 +285,20 @@ function Controls() {
           </FormGroup>
         </div>
       </div>
-      {drawGroupsAvailable && drawGroupsAvailable.length > 1 && (
+      {
         <FormGroup labelFor="Tiers" label={t("tiers")}>
           <Checkbox
             id="useDrawGroups"
-            disabled={gameData.meta.drawGroups && gameData.meta.drawGroups.length <= 1}
-            checked={useDrawGroups}
+            disabled={!hasDrawGroups()}
+            checked={useDrawGroups && hasDrawGroups()}
             onChange={(e) => {
-              const useDrawGroups = !!e.currentTarget.checked;
-              updateState({ useDrawGroups, useWeights: useWeights || useDrawGroups, drawGroups: drawGroupsAvailable || [] });
+              const useDrawGroups = !!e.currentTarget.checked && hasDrawGroups();
+              updateState({ useDrawGroups: useDrawGroups, useWeights: useWeights || useDrawGroups, drawGroups: useDrawGroups && availableDrawGroups || [] });
             }}
             label={t("useDrawGroups")}
           />
         </FormGroup>
-      )}
+      }
       {gameStyles.length > 1 && (
         <FormGroup labelFor="style" label={t("style")}>
           <HTMLSelect
@@ -388,15 +400,15 @@ function Controls() {
         />
         <Checkbox
           id="weighted"
-          disabled={useDrawGroups}
-          checked={useWeights || useDrawGroups}
+          disabled={(useDrawGroups && hasDrawGroups())}
+          checked={useWeights || (useDrawGroups && hasDrawGroups())}
           onChange={(e) => {
             const useWeights = !!e.currentTarget.checked;
             updateState({ useWeights });
           }}
           label={t("useWeightedDistributions")}
         />
-        {(useWeights || useDrawGroups) && <WeightsControls drawGroups={useDrawGroups && drawGroups || []} high={upperBound} low={lowerBound} />}
+        {(useWeights || (useDrawGroups && hasDrawGroups())) && <WeightsControls drawGroups={drawGroups} high={upperBound} low={lowerBound} />}
       </FormGroup>
     </form>
   );
