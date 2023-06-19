@@ -84,14 +84,11 @@ export function NetworkingActions() {
                 "#drawing-" + drawingId
               );
               if (drawingElement) {
-                const dataUrl = await domToPng(drawingElement, {
-                  scale: 2,
-                });
-                try {
-                  await shareImage(dataUrl);
-                } catch {
-                  downloadDataUrl(dataUrl);
-                }
+                shareImage(
+                  await domToPng(drawingElement, {
+                    scale: 2,
+                  })
+                );
               }
             }}
           />
@@ -123,10 +120,10 @@ export function shareImage(dataUrl: string) {
       files: [dataUrlToFile(dataUrl)],
     };
     if (navigator.canShare(shareData)) {
-      return navigator.share(shareData);
+      return navigator.share(shareData).catch();
     }
   }
-  return Promise.reject();
+  downloadDataUrl(dataUrl);
 }
 
 export function dataUrlToFile(dataUrl: string) {
