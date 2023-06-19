@@ -1,27 +1,22 @@
 import { Button, Icon, Menu, MenuItem } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
-import { ReactNode } from "react";
 import { useDrawState } from "../draw-state";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import { firstOf } from "../utils";
 import styles from "./networking-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
+import { domToPng } from "modern-screenshot";
 
 export function NetworkingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const syncPeer = useDrawing((s) => s.__syncPeer);
-  const isConnected = useRemotePeers((s) => !!s.thisPeer);
   const remotePeers = useRemotePeers((s) => s.remotePeers);
   const sendDrawing = useRemotePeers((s) => s.sendDrawing);
   const syncDrawing = useRemotePeers((s) => s.beginSyncWithPeer);
   const drawingStore = useDrawingStore();
   const tournamentMode = useDrawState((s) => s.tournamentMode);
-
-  if (!isConnected) {
-    return null;
-  }
 
   let remoteActions: JSX.Element | undefined = undefined;
 
@@ -58,8 +53,6 @@ export function NetworkingActions() {
         </MenuItem>
       </Menu>
     );
-  } else if (syncPeer) {
-    remoteActions = undefined;
   }
 
   const button = (
@@ -79,6 +72,23 @@ export function NetworkingActions() {
         ) : (
           <Tooltip2 content="Connect to a peer to share">{button}</Tooltip2>
         )}
+        <Tooltip2 content="Save Image">
+          <Button
+            minimal
+            icon={IconNames.FloppyDisk}
+            onClick={async () => {
+              const drawingId = getDrawing().id;
+              const drawingElement = document.querySelector("#" + drawingId);
+              if (drawingElement) {
+                const dataUrl = await domToPng(drawingElement);
+                const link = document.createElement("a");
+                link.download = "card-draw.png";
+                link.href = dataUrl;
+                link.click();
+              }
+            }}
+          />
+        </Tooltip2>
       </div>
       {!tournamentMode && <div style={{ height: "15px" }} />}
     </>
