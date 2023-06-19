@@ -30,7 +30,7 @@ interface DrawState {
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
-  tournamentMode: true,
+  tournamentMode: false,
   gameData: null,
   fuzzySearch: null,
   drawings: [],
