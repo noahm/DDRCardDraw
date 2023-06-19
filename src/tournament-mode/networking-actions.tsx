@@ -7,7 +7,7 @@ import { firstOf } from "../utils";
 import styles from "./networking-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
-import { domToPng } from "modern-screenshot";
+import { domToPng, domToBlob } from "modern-screenshot";
 
 export function NetworkingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
@@ -78,13 +78,16 @@ export function NetworkingActions() {
             icon={IconNames.FloppyDisk}
             onClick={async () => {
               const drawingId = getDrawing().id;
-              const drawingElement = document.querySelector("#" + drawingId);
+              const drawingElement = document.querySelector(
+                "#drawing-" + drawingId
+              );
               if (drawingElement) {
                 const dataUrl = await domToPng(drawingElement);
-                const link = document.createElement("a");
-                link.download = "card-draw.png";
-                link.href = dataUrl;
-                link.click();
+                try {
+                  await shareImage(dataUrl);
+                } catch {
+                  downloadDataUrl(dataUrl);
+                }
               }
             }}
           />
@@ -93,4 +96,41 @@ export function NetworkingActions() {
       {!tournamentMode && <div style={{ height: "15px" }} />}
     </>
   );
+}
+
+const DEFAULT_FILENAME = "card-draw.png";
+
+function downloadDataUrl(dataUrl: string) {
+  const link = document.createElement("a");
+  link.download = DEFAULT_FILENAME;
+  link.href = dataUrl;
+  link.click();
+}
+
+export function shareImage(dataUrl: string) {
+  const shareData: ShareData = {
+    title: "DDR.tools card draw",
+    files: [dataUrlToFile(dataUrl)],
+  };
+  if (
+    typeof navigator.share !== "undefined" &&
+    typeof navigator.canShare === "function" &&
+    navigator.canShare(shareData)
+  ) {
+    return navigator.share(shareData);
+  }
+  return Promise.reject();
+}
+
+export function dataUrlToFile(dataUrl: string) {
+  const [header, base64] = dataUrl.split(",");
+  const type = header.match(/data:(.+);/)?.[1] ?? undefined;
+  const decoded = window.atob(base64);
+  const length = decoded.length;
+  const buffer = new Uint8Array(length);
+  for (let i = 0; i < length; i += 1) {
+    buffer[i] = decoded.charCodeAt(i);
+  }
+  const b = new Blob([buffer], { type });
+  return new File([b], DEFAULT_FILENAME);
 }

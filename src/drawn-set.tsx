@@ -27,7 +27,7 @@ function DrawnSetImpl({ drawing }: Props) {
       <SyncWithPeers />
       <div
         key={drawing.id}
-        id={drawing.id}
+        id={`drawing-${drawing.id}`}
         style={{ backgroundImage }}
         className={styles.drawing}
       >
