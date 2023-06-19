@@ -76,7 +76,7 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
     });
   }
 
-  if (groupSongsAt) {
+  if (!(drawGroups!.length > 0) && groupSongsAt) {
     groups = groups.filter((l) => parseInt(l) <= groupSongsAt);
   }
   const totalWeight = groups.reduce(
@@ -102,7 +102,7 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
             placeholder="0"
             fill
           />
-          {(drawGroups!.length == 0 && groupSongsAt?.toString() == group) && ">="}
+          {!(drawGroups!.length > 0) && (groupSongsAt?.toString() == group) && ">="}
           {group} <sub>{percentages[i]}%</sub>
         </div>
       ))}
@@ -116,7 +116,7 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
         label={t("weights.group.label")}
         title={t("weights.group.title")}
         disabled={drawGroups!.length > 0}
-        checked={groupSongsAt !== null}
+        checked={!(drawGroups!.length > 0) && (groupSongsAt !== null)}
         onChange={toggleGroupCheck}
       />
       <NumericInput
