@@ -97,28 +97,35 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     useDrawGroups,
     forceDistribution,
     weights,
+    groupSongsAt,
   } = configData;
 
-  const validCharts: Record<string, Array<DrawnChart>> = {};
+  /** all charts we will consider to be valid for this draw */
+  const validCharts = new Map<string, Array<DrawnChart>>();
   console.log(drawGroups)
   
   if (useDrawGroups && drawGroups.length > 0)
   {
-    gameData.meta.drawGroups?.map((g) => validCharts[g] = []);
+    gameData.meta.drawGroups?.map((g) => validCharts.set(g, []));
     for (const chart of eligibleCharts(configData, gameData.songs)) {
       if (chart.drawGroup)
       {
-        validCharts[chart.drawGroup].push(chart);
+        validCharts.get(chart.drawGroup)!.push(chart);
       }
     }
   }
   else
   {
     times(gameData.meta.lvlMax, (n) => {
-      validCharts[n.toString()] = [];
+      validCharts.set(n.toString(), []);
     });
     for (const chart of eligibleCharts(configData, gameData.songs)) {
-      validCharts[chart.level].push(chart);
+      let chartLevel = chart.level;
+      // merge in higher difficulty charts into a single group, if configured to do so
+      if (useWeights && groupSongsAt && groupSongsAt < chartLevel) {
+        chartLevel = groupSongsAt;
+      }
+      validCharts.get(chartLevel.toString())!.push(chart);
     }
   }
   console.log(validCharts)
@@ -154,7 +161,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       expectedDrawPerLevel[group] = weightAmount;
       totalWeights += weightAmount;
     } else {
-      weightAmount = validCharts[group].length;
+      weightAmount = validCharts.get(group)!.length;
     }
     times(weightAmount, () => distribution.push(group));
   }
@@ -189,9 +196,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
 
     // first pick a difficulty
-    const chosenDifficulty =
+    let chosenDifficulty =
       distribution[Math.floor(Math.random() * distribution.length)];
-    const selectableCharts = validCharts[chosenDifficulty];
+    if (useWeights && !useDrawGroups && groupSongsAt && groupSongsAt < parseInt(chosenDifficulty)) {
+      chosenDifficulty = groupSongsAt.toString();
+    }
+    const selectableCharts = validCharts.get(chosenDifficulty)!;
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];
 

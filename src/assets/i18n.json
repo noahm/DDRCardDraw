@@ -19,6 +19,10 @@
       "check": {
         "title": "Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)",
         "label": "Force Expected Distribution"
+      },
+      "group": {
+        "title": "All charts at a this level or above will be weighted as part of a shared \"bucket\".",
+        "label": "Group top end charts starting at"
       }
     },
     "include": "Include",
