@@ -1,7 +1,7 @@
 import shallow from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { times } from "../utils";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox } from "@blueprintjs/core";
@@ -13,15 +13,18 @@ interface Props {
 
 export function WeightsControls({ high, low }: Props) {
   const { t } = useIntl();
-  const { weights, forceDistribution, updateConfig } = useConfigState(
-    (cfg) => ({
-      weights: cfg.weights,
-      forceDistribution: cfg.forceDistribution,
-      updateConfig: cfg.update,
-    }),
-    shallow
-  );
-  const levels = useMemo(
+  const [groupCutoff, setGroupCutoff] = useState(high - 1);
+  const { weights, forceDistribution, groupSongsAt, updateConfig } =
+    useConfigState(
+      (cfg) => ({
+        weights: cfg.weights,
+        forceDistribution: cfg.forceDistribution,
+        groupSongsAt: cfg.groupSongsAt,
+        updateConfig: cfg.update,
+      }),
+      shallow
+    );
+  let levels = useMemo(
     () => times(high - low + 1, (n) => n + low - 1),
     [high, low]
   );
@@ -30,6 +33,27 @@ export function WeightsControls({ high, low }: Props) {
     updateConfig((state) => ({
       forceDistribution: !state.forceDistribution,
     }));
+  }
+
+  function toggleGroupCheck() {
+    updateConfig((state) => {
+      if (state.groupSongsAt) {
+        return { groupSongsAt: null };
+      }
+
+      return { groupSongsAt: groupCutoff };
+    });
+  }
+
+  function handleGroupCutoffChange(next: number) {
+    if (isNaN(next)) {
+      return;
+    }
+    if (next < low) {
+      return;
+    }
+    setGroupCutoff(next);
+    updateConfig({ groupSongsAt: next });
   }
 
   function setWeight(difficulty: number, value: number) {
@@ -44,6 +68,9 @@ export function WeightsControls({ high, low }: Props) {
     });
   }
 
+  if (groupSongsAt) {
+    levels = levels.filter((l) => l <= groupSongsAt);
+  }
   const totalWeight = levels.reduce(
     (total, level) => total + (weights[level] || 0),
     0
@@ -67,15 +94,29 @@ export function WeightsControls({ high, low }: Props) {
             placeholder="0"
             fill
           />
+          {groupSongsAt === level && ">="}
           {level} <sub>{percentages[i]}%</sub>
         </div>
       ))}
       <Checkbox
         label={t("weights.check.label")}
         title={t("weights.check.title")}
-        name="limitOutliers"
         checked={forceDistribution}
         onChange={toggleForceDistribution}
+      />
+      <Checkbox
+        label={t("weights.group.label")}
+        title={t("weights.group.title")}
+        checked={groupSongsAt !== null}
+        onChange={toggleGroupCheck}
+      />
+      <NumericInput
+        width={2}
+        disabled={!groupSongsAt}
+        value={groupCutoff}
+        min={levels[0]}
+        onValueChange={handleGroupCutoffChange}
+        placeholder="0"
       />
     </section>
   );

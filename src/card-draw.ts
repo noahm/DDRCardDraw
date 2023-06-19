@@ -86,19 +86,25 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     chartCount: numChartsToRandom,
     upperBound,
     lowerBound,
-    style,
     useWeights,
     forceDistribution,
     weights,
+    groupSongsAt,
   } = configData;
 
-  const validCharts: Record<string, Array<EligibleChart>> = {};
+  /** all charts we will consider to be valid for this draw */
+  const validCharts = new Map<number, Array<EligibleChart>>();
   times(gameData.meta.lvlMax, (n) => {
-    validCharts[n.toString()] = [];
+    validCharts.set(n, []);
   });
 
   for (const chart of eligibleCharts(configData, gameData)) {
-    validCharts[chart.level].push(chart);
+    let chartLevel = chart.level;
+    // merge in higher difficulty charts into a single group, if configured to do so
+    if (useWeights && groupSongsAt && groupSongsAt < chartLevel) {
+      chartLevel = groupSongsAt;
+    }
+    validCharts.get(chartLevel)!.push(chart);
   }
 
   /**
@@ -122,7 +128,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {
-      weightAmount = validCharts[level.toString()].length;
+      weightAmount = validCharts.get(level)!.length;
     }
     times(weightAmount, () => distribution.push(level));
   }
@@ -156,9 +162,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
 
     // first pick a difficulty
-    const chosenDifficulty =
+    let chosenDifficulty =
       distribution[Math.floor(Math.random() * distribution.length)];
-    const selectableCharts = validCharts[chosenDifficulty.toString()];
+    if (useWeights && groupSongsAt && groupSongsAt < chosenDifficulty) {
+      chosenDifficulty = groupSongsAt;
+    }
+    const selectableCharts = validCharts.get(chosenDifficulty)!;
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];
 
