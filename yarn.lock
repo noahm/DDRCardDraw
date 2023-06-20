@@ -6607,10 +6607,10 @@ signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-simfile-parser@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/simfile-parser/-/simfile-parser-0.4.1.tgz#2c0993bb8e15c249983bedffdeb00a08e214da9a"
-  integrity sha512-Mo8VqI3RKo+D+SecyA403LvRn+k+PdqgEmOd89/q+VDqz4j0whYGdutRjncdyFMPPYnl9cERXGEwsqYjwfBntQ==
+simfile-parser@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/simfile-parser/-/simfile-parser-0.5.0.tgz#ea035d7f5356901a17c134c6cda0fc1673fda4d6"
+  integrity sha512-jBZiC6R0o2NVCvDMHU8l3mOPBV5rHXkhJeeboZ9GaTDUhY5T0cXx4Lh8nKeEVQ2Mc1i4sc8+0hp0c+NhnuQy4g==
   dependencies:
     fraction.js "^4.2.0"
 
