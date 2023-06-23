@@ -14,6 +14,10 @@ body:global(.bp4-dark) {
   background-color: #222;
 }
 
+body:global(.obs-layer) {
+  background-color: transparent !important;
+}
+
 :global(.bp4-dark) :global(.bp4-navbar) {
   box-shadow: none;
 }

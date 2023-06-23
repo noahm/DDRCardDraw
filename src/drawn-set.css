@@ -18,3 +18,7 @@ body:global(.bp4-dark) {
 .drawing {
   position: relative;
 }
+
+body:global(.obs-layer) .drawing {
+  background-image: none !important;
+}

@@ -21,18 +21,36 @@ export function useThemePref() {
     : Theme.Light;
 }
 
-function applyThemeBodyClass(theme: Theme) {
+function applyThemeBodyClass(theme: Theme, isObsLayer: boolean) {
   document.body.classList.toggle(Classes.DARK, theme === Theme.Dark);
+  document.body.classList.toggle("obs-layer", isObsLayer);
 }
 
 interface ThemeContext {
+  /** is this instance operating as a layer inside OBS */
+  obsLayer: boolean;
+  setObsLayer(next: boolean): void;
   userPref: Theme | undefined;
   resolved: Theme;
   updateBrowserPref(t: Theme): void;
   setTheme(t: Theme): void;
 }
 
+// we may be loaded into a browser source of OBS studio,
+// which we can detect by looking for the API they inject
+// into the page. see more:
+// https://github.com/obsproject/obs-browser/blob/master/README.md
+declare global {
+  namespace obsstudio {
+    const pluginVersion: string;
+  }
+}
+
 const useThemeStore = createStore<ThemeContext>((set, get) => ({
+  obsLayer: typeof window.obsstudio !== "undefined",
+  setObsLayer(next) {
+    set({ obsLayer: next });
+  },
   userPref: undefined,
   resolved: darkQuery.matches ? Theme.Dark : Theme.Light,
   updateBrowserPref(t) {
@@ -44,7 +62,6 @@ const useThemeStore = createStore<ThemeContext>((set, get) => ({
   setTheme(t) {
     set({ userPref: t, resolved: t });
   },
-  set,
 }));
 
 /** hook to get current app theme */
@@ -54,8 +71,8 @@ export function ThemeSyncWidget() {
   const themeState = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
-    applyThemeBodyClass(themeState.resolved);
-  }, [themeState.resolved]);
+    applyThemeBodyClass(themeState.resolved, themeState.obsLayer);
+  }, [themeState.resolved, themeState.obsLayer]);
   useEffect(() => {
     themeState.updateBrowserPref(browserPref);
   }, [themeState.updateBrowserPref, browserPref]);
@@ -77,6 +94,18 @@ export function ThemeToggle() {
       onClick={() =>
         setTheme(resolvedTheme === Theme.Dark ? Theme.Light : Theme.Dark)
       }
+    />
+  );
+}
+
+export function ObsToggle() {
+  const set = useThemeStore((t) => t.setObsLayer);
+
+  return (
+    <MenuItem
+      icon={IconNames.EyeOff}
+      text={<FormattedMessage id="toggle-obs-layer" defaultMessage="Hide UI" />}
+      onClick={() => set(true)}
     />
   );
 }

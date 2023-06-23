@@ -65,7 +65,7 @@ export function NetworkingActions() {
 
   return (
     <>
-      <div className={styles.sendButton}>
+      <div className={styles.networkButtons}>
         {syncPeer && <Icon icon={IconNames.Changes} intent="success" />}
         {isConnected ? (
           remotePeers.size ? (
