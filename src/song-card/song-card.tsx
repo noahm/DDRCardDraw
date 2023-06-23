@@ -148,35 +148,35 @@ export function SongCard(props: Props) {
         }}
         onCancel={() => setPocketPickPendingForPlayer(0)}
       />
-      {vetoedBy && (
-        <CardLabel
-          player={vetoedBy}
-          type={LabelType.Ban}
-          onRemove={iconCallbacks?.onReset}
-        />
-      )}
-      {protectedBy && (
-        <CardLabel
-          player={protectedBy}
-          type={LabelType.Protect}
-          onRemove={iconCallbacks?.onReset}
-        />
-      )}
-      {replacedBy && (
-        <CardLabel
-          player={replacedBy}
-          type={LabelType.Pocket}
-          onRemove={iconCallbacks?.onReset}
-        />
-      )}
-      {winner && (
-        <CardLabel
-          player={winner}
-          type={LabelType.Winner}
-          onRemove={() => iconCallbacks?.onSetWinner(null)}
-        />
-      )}
       <div className={styles.cardCenter}>
+        {vetoedBy && (
+          <CardLabel
+            player={vetoedBy}
+            type={LabelType.Ban}
+            onRemove={iconCallbacks?.onReset}
+          />
+        )}
+        {protectedBy && (
+          <CardLabel
+            player={protectedBy}
+            type={LabelType.Protect}
+            onRemove={iconCallbacks?.onReset}
+          />
+        )}
+        {replacedBy && (
+          <CardLabel
+            player={replacedBy}
+            type={LabelType.Pocket}
+            onRemove={iconCallbacks?.onReset}
+          />
+        )}
+        {winner && (
+          <CardLabel
+            player={winner}
+            type={LabelType.Winner}
+            onRemove={() => iconCallbacks?.onSetWinner(null)}
+          />
+        )}
         <div className={styles.name} title={nameTranslation}>
           {name}
         </div>
