@@ -1,13 +1,13 @@
 import { Button, Icon, Menu, MenuItem } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
-import { useDrawState } from "../draw-state";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import { firstOf } from "../utils";
 import styles from "./networking-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
 import { domToPng } from "modern-screenshot";
+import { toaster } from "../toaster";
 
 export function NetworkingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
@@ -107,9 +107,18 @@ function downloadDataUrl(dataUrl: string) {
   link.click();
 }
 
-export function shareImage(dataUrl: string) {
+function copyToClipboard(blob: Blob) {
+  return navigator.clipboard.write([
+    new ClipboardItem({
+      [blob.type]: blob,
+    }),
+  ]);
+}
+
+export async function shareImage(dataUrl: string) {
   const agent: string =
     navigator.userAgent || navigator.vendor || (window as any).opera;
+  const blob = dataUrlToBlob(dataUrl);
   if (
     typeof navigator.share !== "undefined" &&
     typeof navigator.canShare === "function" &&
@@ -117,16 +126,28 @@ export function shareImage(dataUrl: string) {
   ) {
     const shareData: ShareData = {
       title: "DDR.tools card draw",
-      files: [dataUrlToFile(dataUrl)],
+      files: [new File([blob], DEFAULT_FILENAME, { type: blob.type })],
     };
     if (navigator.canShare(shareData)) {
       return navigator.share(shareData).catch();
     }
   }
-  downloadDataUrl(dataUrl);
+  try {
+    await copyToClipboard(blob);
+    toaster.show(
+      {
+        message: "Image copied to clipboard",
+        icon: IconNames.PAPERCLIP,
+      },
+      "copy-drawing-image"
+    );
+    return;
+  } catch {
+    downloadDataUrl(dataUrl);
+  }
 }
 
-export function dataUrlToFile(dataUrl: string) {
+export function dataUrlToBlob(dataUrl: string) {
   const [header, base64] = dataUrl.split(",");
   const type = header.match(/data:(.+);/)?.[1] ?? undefined;
   const decoded = window.atob(base64);
@@ -135,8 +156,7 @@ export function dataUrlToFile(dataUrl: string) {
   for (let i = 0; i < length; i += 1) {
     buffer[i] = decoded.charCodeAt(i);
   }
-  const b = new Blob([buffer], { type });
-  return new File([b], DEFAULT_FILENAME, { type });
+  return new Blob([buffer], { type });
 }
 
 // seemingly originally from this weird site
