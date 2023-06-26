@@ -3902,10 +3902,10 @@ favicons-webpack-plugin@^6.0.0:
   optionalDependencies:
     html-webpack-plugin "^5.5.0"
 
-favicons@^7.1.0:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/favicons/-/favicons-7.1.2.tgz#8cea77961a383c6dce42563ac3c5d8b03b597d13"
-  integrity sha512-kTgVOJ+xPKSGw7otDwVDdxw5n47FEiUuvPnrr3MoE03HLP6Wc9oA146eKVXVi0zkH1tf96SCcnFxKEafmKnovw==
+favicons@^7.1.3:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/favicons/-/favicons-7.1.3.tgz#e70800df0922415a544ab52c625012789f4e8035"
+  integrity sha512-G3lfvEroOij3k8JR+FH53EKQaloVz0PtxkDUmMcWRfeMFV1Mclh/6Wz7jHc4vodWOAwm6ISEpCgJHDU19Vm9pw==
   dependencies:
     escape-html "^1.0.3"
     sharp "^0.32.0"
