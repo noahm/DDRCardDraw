@@ -1,5 +1,12 @@
 import { useIntl } from "react-intl";
-import { ButtonGroup, AnchorButton, UL, Classes } from "@blueprintjs/core";
+import {
+  ButtonGroup,
+  AnchorButton,
+  UL,
+  Classes,
+  H1,
+  H2,
+} from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 
 function injectPumpoutLink(str: string) {
@@ -21,6 +28,7 @@ export function About() {
 
   return (
     <div className={Classes.DIALOG_BODY}>
+      <H2>Credits</H2>
       <UL>
         {t({ id: "about" })
           .split(" * ")
@@ -28,27 +36,33 @@ export function About() {
             <li key={i}>{injectPumpoutLink(line)}</li>
           ))}
       </UL>
+      <H2>Contribute</H2>
       <p>{t({ id: "contact.prompt" })}</p>
-      <ButtonGroup vertical>
-        <AnchorButton
-          href="https://github.com/noahm/DDRCardDraw"
-          target="_blank"
-          text={t({ id: "contact.github" })}
-          rightIcon={IconNames.SHARE}
-        />
-        <AnchorButton
-          href="https://discord.gg/QPyEATsbP7"
-          target="_blank"
-          text={t({ id: "contact.discord" })}
-          rightIcon={IconNames.SHARE}
-        />
-        <AnchorButton
-          href="https://m.me/noah.manneschmidt"
-          target="_blank"
-          text={t({ id: "contact.facebook" })}
-          rightIcon={IconNames.SHARE}
-        />
-      </ButtonGroup>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <ButtonGroup>
+          <AnchorButton
+            large
+            href="https://discord.gg/QPyEATsbP7"
+            target="_blank"
+            text={t({ id: "contact.discord" })}
+            icon={IconNames.Comment}
+          />
+          <AnchorButton
+            large
+            href="https://github.com/noahm/DDRCardDraw"
+            target="_blank"
+            text={t({ id: "contact.github" })}
+            icon={IconNames.GitBranch}
+          />
+          <AnchorButton
+            large
+            href="https://m.me/noah.manneschmidt"
+            target="_blank"
+            text={t({ id: "contact.facebook" })}
+            icon={IconNames.Chat}
+          />
+        </ButtonGroup>
+      </div>
     </div>
   );
 }
