@@ -1,16 +1,16 @@
+import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { detectedLanguage } from "../utils";
-import styles from "./song-card.css";
 import { useMemo, useState } from "react";
-import { IconMenu } from "./icon-menu";
-import { CardLabel, LabelType } from "./card-label";
-import { DrawnChart, EligibleChart } from "../models/Drawing";
-import { ShockBadge } from "./shock-badge";
-import { Popover2 } from "@blueprintjs/popover2";
-import { SongSearch } from "../song-search";
 import shallow from "zustand/shallow";
-import { useDrawing } from "../drawing-context";
 import { useConfigState } from "../config-state";
+import { useDrawing } from "../drawing-context";
+import { DrawnChart, EligibleChart } from "../models/Drawing";
+import { SongSearch } from "../song-search";
+import { detectedLanguage } from "../utils";
+import { CardLabel, LabelType } from "./card-label";
+import { IconMenu } from "./icon-menu";
+import { ShockBadge } from "./shock-badge";
+import styles from "./song-card.css";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -97,7 +97,7 @@ export function SongCard(props: Props) {
   let jacketBg = {};
   if (jacket) {
     jacketBg = {
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("jackets/${jacket}")`,
+      backgroundImage: `url("jackets/${jacket}")`,
     };
   }
 
@@ -136,6 +136,7 @@ export function SongCard(props: Props) {
           ? undefined
           : showMenu
       }
+      style={jacketBg}
     >
       <SongSearch
         isOpen={!!pocketPickPendingForPlayer}
@@ -147,35 +148,35 @@ export function SongCard(props: Props) {
         }}
         onCancel={() => setPocketPickPendingForPlayer(0)}
       />
-      {vetoedBy && (
-        <CardLabel
-          player={vetoedBy}
-          type={LabelType.Ban}
-          onRemove={iconCallbacks?.onReset}
-        />
-      )}
-      {protectedBy && (
-        <CardLabel
-          player={protectedBy}
-          type={LabelType.Protect}
-          onRemove={iconCallbacks?.onReset}
-        />
-      )}
-      {replacedBy && (
-        <CardLabel
-          player={replacedBy}
-          type={LabelType.Pocket}
-          onRemove={iconCallbacks?.onReset}
-        />
-      )}
-      {winner && (
-        <CardLabel
-          player={winner}
-          type={LabelType.Winner}
-          onRemove={() => iconCallbacks?.onSetWinner(null)}
-        />
-      )}
-      <div className={styles.cardCenter} style={jacketBg}>
+      <div className={styles.cardCenter}>
+        {vetoedBy && (
+          <CardLabel
+            player={vetoedBy}
+            type={LabelType.Ban}
+            onRemove={iconCallbacks?.onReset}
+          />
+        )}
+        {protectedBy && (
+          <CardLabel
+            player={protectedBy}
+            type={LabelType.Protect}
+            onRemove={iconCallbacks?.onReset}
+          />
+        )}
+        {replacedBy && (
+          <CardLabel
+            player={replacedBy}
+            type={LabelType.Pocket}
+            onRemove={iconCallbacks?.onReset}
+          />
+        )}
+        {winner && (
+          <CardLabel
+            player={winner}
+            type={LabelType.Winner}
+            onRemove={() => iconCallbacks?.onSetWinner(null)}
+          />
+        )}
         <div className={styles.name} title={nameTranslation}>
           {name}
         </div>
@@ -187,7 +188,7 @@ export function SongCard(props: Props) {
         </div>
       </div>
 
-      <Popover2
+      <Popover
         content={menuContent}
         isOpen={showingContextMenu}
         onClose={hideMenu}
@@ -206,7 +207,7 @@ export function SongCard(props: Props) {
             {diffAbbr} {level}
           </div>
         </div>
-      </Popover2>
+      </Popover>
     </div>
   );
 }

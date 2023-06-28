@@ -199,7 +199,7 @@ module.exports = function (env = {}, argv = {}) {
       }),
     ].concat(
       !isProd
-        ? [new ReactRefreshPlugin()]
+        ? [new ReactRefreshPlugin({ overlay: false })]
         : zip
         ? [
             new ZipPlugin({

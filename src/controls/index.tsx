@@ -1,37 +1,37 @@
-import { FormattedMessage } from "react-intl";
-import { useMemo, useState } from "react";
-import { WeightsControls } from "./controls-weights";
-import styles from "./controls.css";
-import { useDrawState } from "../draw-state";
-import { useConfigState } from "../config-state";
-import { GameData } from "../models/SongData";
-import { useIntl } from "../hooks/useIntl";
 import {
-  NumericInput,
-  Checkbox,
-  FormGroup,
-  HTMLSelect,
-  Drawer,
-  Position,
   Button,
   ButtonGroup,
-  Intent,
-  Switch,
-  NavbarDivider,
-  DrawerSize,
+  Checkbox,
   Divider,
-  Tabs,
-  Tab,
+  Drawer,
+  DrawerSize,
+  FormGroup,
+  HTMLSelect,
   Icon,
+  Intent,
+  NavbarDivider,
+  NumericInput,
+  Position,
+  Switch,
+  Tab,
+  Tabs,
+  Tooltip,
 } from "@blueprintjs/core";
-import { Tooltip2 } from "@blueprintjs/popover2";
 import { IconNames } from "@blueprintjs/icons";
-import { useIsNarrow } from "../hooks/useMediaQuery";
-import { EligibleChartsListFilter } from "../eligible-charts/filter";
+import { useMemo, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import shallow from "zustand/shallow";
-import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
+import { useConfigState } from "../config-state";
+import { useDrawState } from "../draw-state";
+import { EligibleChartsListFilter } from "../eligible-charts/filter";
+import { useIntl } from "../hooks/useIntl";
+import { useIsNarrow } from "../hooks/useMediaQuery";
+import { GameData } from "../models/SongData";
 import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
 import { useRemotePeers } from "../tournament-mode/remote-peers";
+import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
+import { WeightsControls } from "./controls-weights";
+import styles from "./controls.css";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   let s = new Set<string>();
@@ -135,7 +135,7 @@ export function HeaderControls() {
         </>
       )}
       <ButtonGroup>
-        <Tooltip2 disabled={hasGameData} content="Loading game data">
+        <Tooltip disabled={hasGameData} content="Loading game data">
           <Button
             onClick={handleDraw}
             icon={IconNames.NEW_LAYERS}
@@ -144,8 +144,8 @@ export function HeaderControls() {
           >
             <FormattedMessage id="draw" defaultMessage="Draw!" />
           </Button>
-        </Tooltip2>
-        <Tooltip2
+        </Tooltip>
+        <Tooltip
           isOpen={lastDrawFailed}
           content={<FormattedMessage id="controls.invalid" />}
           intent={Intent.DANGER}
@@ -153,7 +153,7 @@ export function HeaderControls() {
           position={Position.BOTTOM_RIGHT}
         >
           <Button icon={IconNames.COG} onClick={openSettings} />
-        </Tooltip2>
+        </Tooltip>
       </ButtonGroup>
     </>
   );

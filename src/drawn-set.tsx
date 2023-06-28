@@ -6,6 +6,7 @@ import { SetLabels } from "./tournament-mode/drawing-labels";
 import { DrawingProvider, useDrawing } from "./drawing-context";
 import { NetworkingActions } from "./tournament-mode/networking-actions";
 import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
+import { useDrawState } from "./draw-state";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -17,25 +18,6 @@ function getRandomGradiant() {
 
 interface Props {
   drawing: Drawing;
-}
-
-function DrawnSetImpl({ drawing }: Props) {
-  const [backgroundImage] = useState(getRandomGradiant());
-
-  return (
-    <DrawingProvider initialDrawing={drawing}>
-      <SyncWithPeers />
-      <div
-        key={drawing.id}
-        style={{ backgroundImage }}
-        className={styles.drawing}
-      >
-        <SetLabels />
-        <NetworkingActions />
-        <ChartList />
-      </div>
-    </DrawingProvider>
-  );
 }
 
 function ChartList() {
@@ -77,6 +59,34 @@ function ChartFromContext({ chartId }: { chartId: number }) {
   );
 }
 
-const DrawnSet = memo(DrawnSetImpl);
+function TournamentModeSpacer() {
+  const tournamentMode = useDrawState((s) => s.tournamentMode);
+  if (tournamentMode) {
+    return null;
+  }
+  return <div style={{ height: "15px" }} />;
+}
+
+const DrawnSet = memo<Props>(function DrawnSet({ drawing }) {
+  const [backgroundImage] = useState(getRandomGradiant());
+
+  return (
+    <DrawingProvider initialDrawing={drawing}>
+      <SyncWithPeers />
+      <div
+        key={drawing.id}
+        style={{ backgroundImage }}
+        className={styles.drawing}
+      >
+        <TournamentModeSpacer />
+        <div id={`drawing-${drawing.id}`}>
+          <SetLabels />
+          <ChartList />
+        </div>
+        <NetworkingActions />
+      </div>
+    </DrawingProvider>
+  );
+});
 
 export default DrawnSet;

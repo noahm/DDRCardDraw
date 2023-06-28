@@ -10,11 +10,15 @@ body {
   margin: 0;
 }
 
-body:global(.bp4-dark) {
+body:global(.bp5-dark) {
   background-color: #222;
 }
 
-:global(.bp4-dark) :global(.bp4-navbar) {
+body:global(.obs-layer) {
+  background-color: transparent !important;
+}
+
+:global(.bp5-dark) :global(.bp5-navbar) {
   box-shadow: none;
 }
 
@@ -42,7 +46,7 @@ input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="text"]:not(:global(.bp4-editable-text-input)),
+input[type="text"]:not(:global(.bp5-editable-text-input)),
 input[type="time"],
 input[type="url"],
 input[type="week"],

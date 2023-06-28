@@ -7,7 +7,7 @@ import { MenuItem } from "@blueprintjs/core";
 
 export interface SearchResultData {
   song: Song;
-  chart?: Chart | "none";
+  chart: Chart | "none";
 }
 
 interface ResultsProps {

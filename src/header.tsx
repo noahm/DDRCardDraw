@@ -5,9 +5,10 @@ import {
   Menu,
   MenuItem,
   Navbar,
+  Popover,
+  Tooltip,
 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
-import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
 import { useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
@@ -15,6 +16,7 @@ import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
+import styles from "./header.css";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -34,6 +36,7 @@ export function Header() {
 
   return (
     <Navbar
+      className={styles.header}
       style={{
         position: "sticky",
         top: 0,
@@ -43,13 +46,13 @@ export function Header() {
         <About />
       </Dialog>
       <Navbar.Group align={Alignment.LEFT}>
-        <Popover2 content={menu} placement="bottom-start">
+        <Popover content={menu} placement="bottom-start">
           <Button icon={IconNames.MENU} />
-        </Popover2>
+        </Popover>
         <Navbar.Divider />
-        <Tooltip2 content="Change Song Data" placement="bottom">
+        <Tooltip content="Change Song Data" placement="bottom">
           <VersionSelect />
-        </Tooltip2>
+        </Tooltip>
         <DataLoadingSpinner />
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>
