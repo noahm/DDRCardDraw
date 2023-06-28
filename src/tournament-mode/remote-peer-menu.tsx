@@ -92,7 +92,7 @@ export function RemotePeerControls() {
               </Tag>
             ))
           ) : (
-            <span className="bp4-text-disabled">
+            <span className="bp5-text-disabled">
               <Icon icon={IconNames.HeartBroken} /> No connections
             </span>
           )}

@@ -65,6 +65,9 @@ export function SongSearch(props: Props) {
       className={styles.songSearch}
       itemRenderer={(data, itemProps) => (
         <SearchResult
+          key={`${data.song.saHash || data.song.name}-${
+            typeof data.chart === "string" ? data.chart : data.chart.diffClass
+          }`}
           data={data}
           selected={itemProps.modifiers.active}
           handleClick={itemProps.handleClick}

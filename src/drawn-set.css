@@ -3,7 +3,7 @@
   --drawing-grad-lightness: 85%;
 }
 
-body:global(.bp4-dark) {
+body:global(.bp5-dark) {
   --drawing-grad-saturation: 25%;
   --drawing-grad-lightness: 15%;
 }

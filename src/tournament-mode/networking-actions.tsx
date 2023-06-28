@@ -1,6 +1,12 @@
-import { Button, Icon, Menu, MenuItem } from "@blueprintjs/core";
+import {
+  Button,
+  Icon,
+  Menu,
+  MenuItem,
+  Popover,
+  Tooltip,
+} from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
-import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import { firstOf } from "../utils";
 import styles from "./networking-actions.css";
@@ -69,12 +75,12 @@ export function NetworkingActions() {
         {syncPeer && <Icon icon={IconNames.Changes} intent="success" />}
         {isConnected ? (
           remotePeers.size ? (
-            <Popover2 content={remoteActions}>{button}</Popover2>
+            <Popover content={remoteActions}>{button}</Popover>
           ) : (
-            <Tooltip2 content="Connect to a peer to share">{button}</Tooltip2>
+            <Tooltip content="Connect to a peer to share">{button}</Tooltip>
           )
         ) : null}
-        <Tooltip2 content="Save Image">
+        <Tooltip content="Save Image">
           <Button
             minimal
             icon={IconNames.Camera}
@@ -92,7 +98,7 @@ export function NetworkingActions() {
               }
             }}
           />
-        </Tooltip2>
+        </Tooltip>
       </div>
     </>
   );

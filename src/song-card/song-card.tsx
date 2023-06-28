@@ -1,16 +1,16 @@
+import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { detectedLanguage } from "../utils";
-import styles from "./song-card.css";
 import { useMemo, useState } from "react";
-import { IconMenu } from "./icon-menu";
-import { CardLabel, LabelType } from "./card-label";
-import { DrawnChart, EligibleChart } from "../models/Drawing";
-import { ShockBadge } from "./shock-badge";
-import { Popover2 } from "@blueprintjs/popover2";
-import { SongSearch } from "../song-search";
 import shallow from "zustand/shallow";
-import { useDrawing } from "../drawing-context";
 import { useConfigState } from "../config-state";
+import { useDrawing } from "../drawing-context";
+import { DrawnChart, EligibleChart } from "../models/Drawing";
+import { SongSearch } from "../song-search";
+import { detectedLanguage } from "../utils";
+import { CardLabel, LabelType } from "./card-label";
+import { IconMenu } from "./icon-menu";
+import { ShockBadge } from "./shock-badge";
+import styles from "./song-card.css";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -188,7 +188,7 @@ export function SongCard(props: Props) {
         </div>
       </div>
 
-      <Popover2
+      <Popover
         content={menuContent}
         isOpen={showingContextMenu}
         onClose={hideMenu}
@@ -207,7 +207,7 @@ export function SongCard(props: Props) {
             {diffAbbr} {level}
           </div>
         </div>
-      </Popover2>
+      </Popover>
     </div>
   );
 }
