@@ -12,7 +12,6 @@
     "build:zip": "npm run validate && webpack --env zip",
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
-    "deploy:firebase": "npm run build && firebase deploy",
     "import:ddr": "node scripts/import-ddr.mjs",
     "import:pump": "node scripts/import-pump.mjs",
     "import:sdvx": "node scripts/import-sdvx.mjs",
