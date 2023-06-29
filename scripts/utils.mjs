@@ -1,7 +1,7 @@
 import { promises, existsSync } from "fs";
 import { resolve, basename, join, dirname } from "path";
 import { format } from "prettier";
-import pqueue from "p-queue";
+import PQueue from "p-queue";
 import jimp from "jimp";
 import inquirer from "inquirer";
 import sanitize from "sanitize-filename";
@@ -33,8 +33,8 @@ export function writeJsonData(data, filePath) {
   );
 }
 
-/** @type {pqueue} */
-export const requestQueue = new pqueue.default({
+/** @type {PQueue} */
+export const requestQueue = new PQueue({
   concurrency: 6, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
@@ -112,8 +112,15 @@ export function checkJacketExists(songName) {
 
 let jobCount = 0;
 
+class ClosableBottomBar extends inquirer.ui.BottomBar {
+  /** exposes the otherwise protected method to cleanup */
+  close() {
+    super.close();
+  }
+}
+
 export function reportQueueStatusLive() {
-  const ui = new inquirer.ui.BottomBar();
+  const ui = new ClosableBottomBar();
 
   requestQueue
     .on("add", () => {
