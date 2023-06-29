@@ -9,7 +9,6 @@ import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
-import * as qs from "query-string";
 import createStore from "zustand";
 import shallow from "zustand/shallow";
 
@@ -117,13 +116,11 @@ function getInitialDataSet(defaultDataName: string) {
 }
 
 function writeDataSetToUrl(game: string) {
-  const next = `game-${game}`;
-  if ("#" + next !== window.location.hash) {
-    window.history.replaceState(
-      undefined,
-      "",
-      qs.stringifyUrl({ url: window.location.href, fragmentIdentifier: next })
-    );
+  const nextHash = `game-${game}`;
+  if ("#" + nextHash !== window.location.hash) {
+    const nextUrl = new URL(window.location.href);
+    nextUrl.hash = encodeURIComponent(nextHash);
+    window.history.replaceState(undefined, "", nextUrl);
   }
 }
 
