@@ -67,7 +67,7 @@ function getOutputPath(coverUrl, localFilename) {
   const outputPath = join(dirname(localFilename), sanitizedFilename);
   return {
     absolute: join(JACKETS_PATH, outputPath),
-    relative: outputPath,
+    relative: outputPath.replace(/\\/g, "/"),
   };
 }
 

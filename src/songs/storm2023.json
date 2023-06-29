@@ -1,21 +1,9 @@
 {
   "meta": {
+    "usesDrawGroups": true,
     "flags": [],
-    "lvlMax": 15,
-    "drawGroups": [
-      "T01",
-      "T02",
-      "T03",
-      "T04",
-      "T05",
-      "T06",
-      "T07",
-      "T08",
-      "T09",
-      "T10",
-      "T11"
-    ],
-    "lastUpdated": 1686614781729,
+    "lvlMax": 11,
+    "lastUpdated": 1688012662741,
     "styles": ["single", "double"],
     "difficulties": [
       { "key": "challenge", "color": "#0191F2" },
@@ -28,19 +16,6 @@
   },
   "defaults": {
     "flags": [],
-    "drawGroups": [
-      "T01",
-      "T02",
-      "T03",
-      "T04",
-      "T05",
-      "T06",
-      "T07",
-      "T08",
-      "T09",
-      "T10",
-      "T11"
-    ],
     "lowerLvlBound": 1,
     "difficulties": [
       "challenge",
@@ -50,7 +25,7 @@
       "expert",
       "edit"
     ],
-    "upperLvlBound": 15,
+    "upperLvlBound": 11,
     "style": "single"
   },
   "i18n": {
@@ -105,7 +80,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -120,7 +95,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -135,7 +110,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -150,7 +125,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -165,7 +140,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -180,7 +155,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -195,7 +170,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -210,7 +185,13 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
         }
       ]
     },
@@ -225,7 +206,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -240,7 +221,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -255,7 +236,27 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
+        },
+        {
+          "lvl": 1,
+          "style": "double",
+          "diffClass": "beginner",
+          "drawGroup": 1
+        },
+        { "lvl": 3, "style": "double", "diffClass": "basic", "drawGroup": 1 },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "difficult",
+          "drawGroup": 1
+        },
+        { "lvl": 8, "style": "double", "diffClass": "expert", "drawGroup": 1 },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
         }
       ]
     },
@@ -270,7 +271,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T01"
+          "drawGroup": 1
         }
       ]
     },
@@ -285,7 +286,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -300,7 +301,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "difficult",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -315,7 +316,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -330,7 +331,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -341,12 +342,17 @@
       "bpm": "188",
       "artist": "Sobrem",
       "charts": [
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "expert",
-          "drawGroup": "T02"
-        }
+        { "lvl": 8, "style": "single", "diffClass": "expert", "drawGroup": 2 }
+      ]
+    },
+    {
+      "name": "[T02] I/O",
+      "name_translation": "",
+      "jacket": "itg/storm2023/[T02] IO.jpg",
+      "bpm": "151",
+      "artist": "Ryu☆",
+      "charts": [
+        { "lvl": 9, "style": "single", "diffClass": "expert", "drawGroup": 2 }
       ]
     },
     {
@@ -360,22 +366,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
-        }
-      ]
-    },
-    {
-      "name": "[T02] I/O",
-      "name_translation": "",
-      "jacket": "itg/storm2023/[T02] IO.jpg",
-      "bpm": "151",
-      "artist": "Ryu☆",
-      "charts": [
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "expert",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -390,7 +381,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -405,7 +396,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -416,12 +407,7 @@
       "bpm": "130",
       "artist": "TESSERACTS, Enkie",
       "charts": [
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "expert",
-          "drawGroup": "T02"
-        }
+        { "lvl": 8, "style": "single", "diffClass": "expert", "drawGroup": 2 }
       ]
     },
     {
@@ -435,7 +421,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T02"
+          "drawGroup": 2
         }
       ]
     },
@@ -446,12 +432,7 @@
       "bpm": "130",
       "artist": "PSY feat. SUGA",
       "charts": [
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "expert",
-          "drawGroup": "T02"
-        }
+        { "lvl": 9, "style": "single", "diffClass": "expert", "drawGroup": 2 }
       ]
     },
     {
@@ -465,7 +446,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
         }
       ]
     },
@@ -480,7 +461,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
         }
       ]
     },
@@ -495,22 +476,7 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
-        }
-      ]
-    },
-    {
-      "name": "[T03] burbank house",
-      "name_translation": "",
-      "jacket": "itg/storm2023/[T03] burbank house.jpg",
-      "bpm": "170",
-      "artist": "tsubi club",
-      "charts": [
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
         }
       ]
     },
@@ -525,7 +491,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
         }
       ]
     },
@@ -540,7 +506,21 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
+        },
+        { "lvl": 4, "style": "double", "diffClass": "basic", "drawGroup": 3 },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "difficult",
+          "drawGroup": 3
+        },
+        { "lvl": 8, "style": "double", "diffClass": "expert", "drawGroup": 3 },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
         }
       ]
     },
@@ -555,7 +535,13 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
         }
       ]
     },
@@ -566,12 +552,7 @@
       "bpm": "136",
       "artist": "DJ Excuses",
       "charts": [
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "expert",
-          "drawGroup": "T03"
-        }
+        { "lvl": 9, "style": "single", "diffClass": "expert", "drawGroup": 3 }
       ]
     },
     {
@@ -585,22 +566,13 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
-        }
-      ]
-    },
-    {
-      "name": "[T03] 心臓",
-      "name_translation": "[T03] Shinzo",
-      "jacket": "itg/storm2023/[T03] shinzo.jpg",
-      "bpm": "180",
-      "artist": "TOOBOE",
-      "charts": [
+          "drawGroup": 3
+        },
         {
-          "lvl": 9,
-          "style": "single",
+          "lvl": 10,
+          "style": "double",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
         }
       ]
     },
@@ -615,7 +587,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
         }
       ]
     },
@@ -630,7 +602,37 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T03"
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] burbank house",
+      "name_translation": "",
+      "jacket": "itg/storm2023/[T03] burbank house.jpg",
+      "bpm": "170",
+      "artist": "tsubi club",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] 心臓",
+      "name_translation": "[T03] Shinzo",
+      "jacket": "itg/storm2023/[T03] shinzo.jpg",
+      "bpm": "180",
+      "artist": "TOOBOE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
         }
       ]
     },
@@ -645,7 +647,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -660,7 +662,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -675,7 +677,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -690,7 +692,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -705,7 +707,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -720,7 +722,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -735,7 +737,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -750,7 +752,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -765,22 +767,14 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
-        }
-      ]
-    },
-    {
-      "name": "[T04] spooky (No CMOD)",
-      "name_translation": "",
-      "jacket": "itg/storm2023/[T04] spooky (No CMOD).jpg",
-      "bpm": "175",
-      "artist": "Tsubusare BOZZ",
-      "charts": [
+          "drawGroup": 4
+        },
+        { "lvl": 9, "style": "double", "diffClass": "expert", "drawGroup": 4 },
         {
-          "lvl": 9,
-          "style": "single",
+          "lvl": 11,
+          "style": "double",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -795,7 +789,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
         }
       ]
     },
@@ -810,7 +804,22 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T04"
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] spooky (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/storm2023/[T04] spooky (No CMOD).jpg",
+      "bpm": "175",
+      "artist": "Tsubusare BOZZ",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
         }
       ]
     },
@@ -825,7 +834,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -840,7 +849,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -855,7 +864,7 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -870,7 +879,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -885,7 +894,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -900,7 +909,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -915,7 +924,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -930,7 +939,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -945,7 +954,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -960,7 +969,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -975,7 +984,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -990,7 +999,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T05"
+          "drawGroup": 5
         }
       ]
     },
@@ -1005,7 +1014,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1020,7 +1029,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1035,7 +1044,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1050,7 +1059,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1065,7 +1074,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1080,7 +1089,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1095,7 +1104,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1110,7 +1119,14 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
+        },
+        { "lvl": 9, "style": "double", "diffClass": "expert", "drawGroup": 6 },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 6
         }
       ]
     },
@@ -1125,7 +1141,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1140,7 +1156,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1155,7 +1171,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1170,7 +1186,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T06"
+          "drawGroup": 6
         }
       ]
     },
@@ -1185,7 +1201,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1200,7 +1216,21 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
+        },
+        { "lvl": 4, "style": "double", "diffClass": "basic", "drawGroup": 7 },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "difficult",
+          "drawGroup": 7
+        },
+        { "lvl": 10, "style": "double", "diffClass": "expert", "drawGroup": 7 },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 7
         }
       ]
     },
@@ -1215,7 +1245,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1230,7 +1260,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1245,7 +1275,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1260,7 +1290,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1275,7 +1305,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1290,7 +1320,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1305,7 +1335,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1320,7 +1350,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1335,7 +1365,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1350,7 +1380,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T07"
+          "drawGroup": 7
         }
       ]
     },
@@ -1365,7 +1395,14 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
+        },
+        { "lvl": 14, "style": "single", "diffClass": "edit", "drawGroup": 8 },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 8
         }
       ]
     },
@@ -1380,22 +1417,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
-        }
-      ]
-    },
-    {
-      "name": "[T08] clairvoyance",
-      "name_translation": "",
-      "jacket": "itg/storm2023/[T08] clairvoyance.jpg",
-      "bpm": "175",
-      "artist": "ikaruga_nex & 影虎。",
-      "charts": [
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1410,7 +1432,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1425,7 +1447,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1440,7 +1462,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1455,7 +1477,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1470,7 +1492,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1485,7 +1507,7 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1500,7 +1522,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1515,7 +1537,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
         }
       ]
     },
@@ -1530,7 +1552,22 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T08"
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] clairvoyance",
+      "name_translation": "",
+      "jacket": "itg/storm2023/[T08] clairvoyance.jpg",
+      "bpm": "175",
+      "artist": "ikaruga_nex & 影虎。",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
         }
       ]
     },
@@ -1543,9 +1580,15 @@
       "charts": [
         {
           "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        },
+        {
+          "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1560,7 +1603,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1575,7 +1618,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1590,7 +1633,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1605,7 +1648,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1620,7 +1663,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1635,7 +1678,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1650,7 +1693,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1665,7 +1708,14 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
+        },
+        { "lvl": 10, "style": "double", "diffClass": "expert", "drawGroup": 9 },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 9
         }
       ]
     },
@@ -1680,7 +1730,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1695,7 +1745,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1710,7 +1760,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T09"
+          "drawGroup": 9
         }
       ]
     },
@@ -1725,7 +1775,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1740,22 +1790,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
-        }
-      ]
-    },
-    {
-      "name": "[T10] Deller",
-      "name_translation": "",
-      "jacket": "itg/storm2023/[T10] Deller.jpg",
-      "bpm": "126",
-      "artist": "Fellsius",
-      "charts": [
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1770,7 +1805,22 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Deller",
+      "name_translation": "",
+      "jacket": "itg/storm2023/[T10] Deller.jpg",
+      "bpm": "126",
+      "artist": "Fellsius",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
         }
       ]
     },
@@ -1785,7 +1835,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1800,22 +1850,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
-        }
-      ]
-    },
-    {
-      "name": "[T10] hysteria",
-      "name_translation": "",
-      "jacket": "itg/storm2023/[T10] hysteria.jpg",
-      "bpm": "150",
-      "artist": "virtual riot",
-      "charts": [
-        {
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1830,7 +1865,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1845,7 +1880,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1860,7 +1895,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1875,7 +1910,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
         }
       ]
     },
@@ -1890,7 +1925,22 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T10"
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] hysteria",
+      "name_translation": "",
+      "jacket": "itg/storm2023/[T10] hysteria.jpg",
+      "bpm": "150",
+      "artist": "virtual riot",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
         }
       ]
     },
@@ -1905,7 +1955,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -1920,7 +1970,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -1935,7 +1985,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -1950,7 +2000,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -1965,7 +2015,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -1980,7 +2030,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -1995,7 +2045,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -2010,7 +2060,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -2025,7 +2075,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -2040,7 +2090,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -2055,7 +2105,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     },
@@ -2070,7 +2120,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": "T11"
+          "drawGroup": 11
         }
       ]
     }

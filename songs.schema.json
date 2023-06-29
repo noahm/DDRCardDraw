@@ -49,9 +49,8 @@
         "lvlMax": {
           "type": "integer"
         },
-        "drawGroups": {
-          "$ref": "#/$defs/uniqueStringArr",
-          "description": "List of tournament-specific groupings of charts (e.g. tiers)"
+        "usesDrawGroups": {
+          "type": "boolean"
         }
       }
     },
@@ -71,8 +70,7 @@
         "difficulties": { "$ref": "#/$defs/uniqueStringArr" },
         "flags": { "$ref": "#/$defs/uniqueStringArr" },
         "lowerLvlBound": { "type": "integer" },
-        "upperLvlBound": { "type": "integer" },
-        "drawGroups": { "$ref": "#/$defs/uniqueStringArr" }
+        "upperLvlBound": { "type": "integer" }
       }
     },
     "i18n": {
@@ -155,7 +153,7 @@
           "description": "in-game numeric rating"
         },
         "drawGroup": {
-          "type": "string",
+          "type": "number",
           "description": "tournament-specific grouping of charts (e.g. tier)"
         },
         "step": {

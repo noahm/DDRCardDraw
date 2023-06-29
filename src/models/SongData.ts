@@ -13,13 +13,9 @@ export type UniqueStringArr = string[];
  */
 export type UniqueStringArr1 = string[];
 /**
- * List of tournament-specific groupings of charts (e.g. tiers)
- */
-export type UniqueStringArr2 = string[];
-/**
  * An array of strings without any duplicate values
  */
-export type UniqueStringArr3 = string[];
+export type UniqueStringArr2 = string[];
 
 /**
  * Describes the shape of data that any individual json file under `src/songs` will conform to
@@ -50,18 +46,17 @@ export interface GameData {
     }[];
     flags: UniqueStringArr1;
     lvlMax: number;
-    drawGroups?: UniqueStringArr2;
+    usesDrawGroups?: boolean;
   };
   /**
    * Defines the default configuration for this game
    */
   defaults: {
     style: string;
-    difficulties: UniqueStringArr3;
-    flags: UniqueStringArr3;
+    difficulties: UniqueStringArr2;
+    flags: UniqueStringArr2;
     lowerLvlBound: number;
     upperLvlBound: number;
-    drawGroups?: UniqueStringArr3;
   };
   /**
    * Set of localized values for display of any styles, difficulties, or flags
@@ -82,7 +77,7 @@ export interface I18NDict {
       };
 }
 export interface Song {
-  flags?: UniqueStringArr3;
+  flags?: UniqueStringArr2;
   name: string;
   artist: string;
   genre?: string;
@@ -98,7 +93,7 @@ export interface Song {
   remyLink?: string;
 }
 export interface Chart {
-  flags?: UniqueStringArr3;
+  flags?: UniqueStringArr2;
   /**
    * e.g. single/double
    */
@@ -114,7 +109,7 @@ export interface Chart {
   /**
    * tournament-specific grouping of charts (e.g. tier)
    */
-  drawGroup?: string;
+  drawGroup?: number;
   step?: number;
   shock?: number;
   freeze?: number;

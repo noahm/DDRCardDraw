@@ -12,7 +12,7 @@ if (!inputPath || !stub) {
   console.log("Usage: yarn import:itg path/to/pack stubname [tiered?]");
   process.exit(1);
 }
-let useTag = !!tiered;
+const useTiers = !!tiered;
 
 const packPath = resolve(inputPath);
 
@@ -32,13 +32,12 @@ const data = {
   meta: {
     flags: [],
     lvlMax: 0,
-    drawGroups: [],
     lastUpdated: Date.now(),
+    usesDrawGroups: useTiers,
   },
   defaults: {
     flags: [],
-    drawGroups: [],
-    lowerLvlBound: 1
+    lowerLvlBound: 1,
   },
   i18n: {
     en: {
@@ -114,7 +113,7 @@ for (const parsedSong of pack.simfiles) {
     finalJacket = downloadJacket(
       finalJacket,
       join("itg", stub, basename(titleDir) + ".jpg")
-    ).replace(/\\/g, '/')
+    );
   }
 
   const song = {
@@ -131,21 +130,24 @@ for (const parsedSong of pack.simfiles) {
       style: chart.mode,
       diffClass: chart.difficulty,
     };
-    if (useTag) {
-      let tierMatch = parsedSong.title.titleName.match(/^\[(\S+)\]/i);
+    if (useTiers) {
+      let tierMatch = parsedSong.title.titleName.match(/^\[T(\d+)\]/i);
       if (tierMatch.length > 0) {
-        chartData.drawGroup = tierMatch[1];
+        const parsedTier = parseInt(tierMatch[1]);
+        chartData.drawGroup = parsedTier;
+        data.meta.lvlMax = Math.max(data.meta.lvlMax, parsedTier);
+      } else {
+        console.error(
+          'Expected song titles to include tiers in the form "[T01] ..." but found:\n' +
+            parsedSong.title.titleName
+        );
       }
-      else
-      {
-        chartData.drawGroup = 'N/A';
-      }
+    } else {
+      // lvl max is calculated on level for non-tiered packs
+      data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
     }
     song.charts.push(chartData);
-    data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
-    if (!data.meta.drawGroups.includes(chartData.drawGroup)) {
-      data.meta.drawGroups.push(chartData.drawGroup);
-    }
+
     difficulties.add(chart.difficulty);
     styles.add(chart.mode);
   }
@@ -159,14 +161,6 @@ data.meta.difficulties = data.defaults.difficulties.map((key) => ({
   color: someColors[key] || "grey", // TODO?
 }));
 data.defaults.upperLvlBound = data.meta.lvlMax;
-data.defaults.drawGroups = Array.from(data.meta.drawGroups);
 data.defaults.style = data.meta.styles[0];
-
-if (useTag && [0, 1].includes(data.defaults.drawGroups.length))
-{
-  console.log("Import expected charts to be grouped/tiered with [chart name prefixes] (e.g. [T06] Multi-Thread), but no distinct groups were discovered");
-  delete data.meta.drawGroups;
-  delete data.defaults.drawGroups;
-}
 
 writeJsonData(data, resolve(join(__dirname, `../src/songs/${stub}.json`)));
