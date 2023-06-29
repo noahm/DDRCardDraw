@@ -9,7 +9,6 @@ export interface DrawnChart {
   bpm: string;
   difficultyClass: string;
   level: number;
-  drawGroup?: string;
   flags: string[];
   song: Song;
   id?: number;

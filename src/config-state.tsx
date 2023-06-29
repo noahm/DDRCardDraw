@@ -4,9 +4,7 @@ export interface ConfigState {
   chartCount: number;
   upperBound: number;
   lowerBound: number;
-  drawGroups: string[];
   useWeights: boolean;
-  useDrawGroups: boolean;
   orderByAction: boolean;
   weights: number[];
   /** charts of this level or higher will be grouped into the same "bucket" */
@@ -20,13 +18,11 @@ export interface ConfigState {
   update: SetState<ConfigState>;
 }
 
-export const useConfigState = createStore<ConfigState>((set, get) => ({
+export const useConfigState = createStore<ConfigState>((set) => ({
   chartCount: 5,
   upperBound: 0,
   lowerBound: 0,
-  drawGroups: [],
   useWeights: false,
-  useDrawGroups: false,
   orderByAction: true,
   weights: [],
   groupSongsAt: null,

@@ -1,4 +1,4 @@
-import { I18NDict } from "./models/SongData";
+import type { I18NDict } from "./models/SongData";
 
 const browserLanguage: string =
   (window.navigator.languages && window.navigator.languages[0]) ||
@@ -10,6 +10,14 @@ const browserLanguage: string =
   "en";
 
 export const detectedLanguage = browserLanguage.slice(0, 2);
+
+export function zeroPad(n: number, digits: number) {
+  let ret = n.toString();
+  while (ret.length < digits) {
+    ret = "0" + ret;
+  }
+  return ret;
+}
 
 /**
  * Terse looping helper, one indexed
@@ -26,7 +34,7 @@ export function times<T>(n: number, cb: (n: number) => T): Array<T> {
 }
 
 export function getDefault(a: number[], i: any, d: number): number {
-  return (i in a) && a[i] || d;
+  return (i in a && a[i]) || d;
 }
 
 export function* flattenedKeys(

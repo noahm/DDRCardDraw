@@ -167,12 +167,10 @@ function Controls() {
   const configState = useConfigState();
   const {
     useWeights,
-    useDrawGroups,
     constrainPocketPicks,
     orderByAction,
     lowerBound,
     upperBound,
-    drawGroups,
     update: updateState,
     difficulties: selectedDifficulties,
     flags: selectedFlags,
@@ -185,25 +183,12 @@ function Controls() {
     }
     return getAvailableDifficulties(gameData, selectedStyle);
   }, [gameData, selectedStyle]);
-  const availableDrawGroups = useMemo(() => {
-    if (gameData?.meta?.drawGroups) {
-      if (gameData.meta.drawGroups.length >= 1) {
-          return gameData.meta.drawGroups;
-      }
-    }
-    return [];
-  }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
 
   if (!gameData) {
     return null;
   }
   const { flags, lvlMax, styles: gameStyles } = gameData.meta;
-
-  const hasDrawGroups = () => {
-    return (availableDrawGroups.length >= 1);
-  }
-
 
   const handleLowerBoundChange = (newLow: number) => {
     if (newLow !== lowerBound && !isNaN(newLow)) {
@@ -222,6 +207,7 @@ function Controls() {
       });
     }
   };
+  const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   return (
     <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
@@ -259,10 +245,12 @@ function Controls() {
           />
         </FormGroup>
         <div className={styles.inlineControls}>
-          <FormGroup label="Lvl Min" contentClassName={styles.narrowInput}>
+          <FormGroup
+            label={usesDrawGroups ? "Tier Min" : "Lvl Min"}
+            contentClassName={styles.narrowInput}
+          >
             <NumericInput
               fill
-              disabled={useDrawGroups && hasDrawGroups()}
               value={lowerBound}
               min={1}
               max={Math.max(upperBound, lowerBound, 1)}
@@ -271,10 +259,12 @@ function Controls() {
               onValueChange={handleLowerBoundChange}
             />
           </FormGroup>
-          <FormGroup label="Lvl Max" contentClassName={styles.narrowInput}>
+          <FormGroup
+            label={usesDrawGroups ? "Tier Max" : "Lvl Max"}
+            contentClassName={styles.narrowInput}
+          >
             <NumericInput
               fill
-              disabled={useDrawGroups && hasDrawGroups()}
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
@@ -285,20 +275,6 @@ function Controls() {
           </FormGroup>
         </div>
       </div>
-      {
-        <FormGroup labelFor="Tiers" label={t("tiers")}>
-          <Checkbox
-            id="useDrawGroups"
-            disabled={!hasDrawGroups()}
-            checked={useDrawGroups && hasDrawGroups()}
-            onChange={(e) => {
-              const useDrawGroups = !!e.currentTarget.checked && hasDrawGroups();
-              updateState({ useDrawGroups: useDrawGroups, useWeights: useWeights || useDrawGroups, drawGroups: useDrawGroups && availableDrawGroups || [] });
-            }}
-            label={t("useDrawGroups")}
-          />
-        </FormGroup>
-      }
       {gameStyles.length > 1 && (
         <FormGroup labelFor="style" label={t("style")}>
           <HTMLSelect
@@ -400,15 +376,20 @@ function Controls() {
         />
         <Checkbox
           id="weighted"
-          disabled={(useDrawGroups && hasDrawGroups())}
-          checked={useWeights || (useDrawGroups && hasDrawGroups())}
+          checked={useWeights}
           onChange={(e) => {
             const useWeights = !!e.currentTarget.checked;
             updateState({ useWeights });
           }}
           label={t("useWeightedDistributions")}
         />
-        {(useWeights || (useDrawGroups && hasDrawGroups())) && <WeightsControls drawGroups={drawGroups} high={upperBound} low={lowerBound} />}
+        {useWeights && (
+          <WeightsControls
+            usesTiers={usesDrawGroups}
+            high={upperBound}
+            low={lowerBound}
+          />
+        )}
       </FormGroup>
     </form>
   );

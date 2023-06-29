@@ -1,18 +1,18 @@
 import shallow from "zustand/shallow";
 import styles from "./controls-weights.css";
-import { getDefault, times } from "../utils";
+import { zeroPad, times } from "../utils";
 import { useMemo, useState } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox } from "@blueprintjs/core";
 
 interface Props {
-  drawGroups: string[];
+  usesTiers: boolean;
   high: number;
   low: number;
 }
 
-export function WeightsControls({ drawGroups, high, low }: Props) {
+export function WeightsControls({ usesTiers, high, low }: Props) {
   const { t } = useIntl();
   const { weights, forceDistribution, groupSongsAt, updateConfig } =
     useConfigState(
@@ -25,15 +25,10 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
       shallow
     );
   let groups = useMemo(
-    function() {
-      if (drawGroups!.length > 0) {
-        return drawGroups;
-      }
-      else {
-        return times(high - low + 1, (n) => n + low - 1).map((v) => v.toString());
-      }
+    function () {
+      return times(high - low + 1, (n) => n + low - 1);
     },
-    [drawGroups, high, low]
+    [high, low]
   );
   const [groupCutoff, setGroupCutoff] = useState(high - 1);
 
@@ -76,15 +71,15 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
     });
   }
 
-  if (!(drawGroups!.length > 0) && groupSongsAt) {
-    groups = groups.filter((l) => parseInt(l) <= groupSongsAt);
+  if (groupSongsAt) {
+    groups = groups.filter((l) => l <= groupSongsAt);
   }
   const totalWeight = groups.reduce(
     (total, group, index) => total + (weights[index] || 0),
     0
   );
   const percentages = groups.map((group, index) => {
-    const value = (weights[index] || 0);
+    const value = weights[index] || 0;
     return value ? ((100 * value) / totalWeight).toFixed(0) : 0;
   });
 
@@ -92,7 +87,7 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
     <section className={styles.weights}>
       <p>{t("weights.explanation")}</p>
       {groups.map((group, i) => (
-        <div className={styles.group} key={group}>
+        <div className={styles.level} key={group}>
           <NumericInput
             width={2}
             name={`weight-${group}`}
@@ -102,8 +97,9 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
             placeholder="0"
             fill
           />
-          {!(drawGroups!.length > 0) && (groupSongsAt?.toString() == group) && ">="}
-          {group} <sub>{percentages[i]}%</sub>
+          {groupSongsAt === group && ">="}
+          {usesTiers ? `T${zeroPad(group, 2)}` : group}{" "}
+          <sub>{percentages[i]}%</sub>
         </div>
       ))}
       <Checkbox
@@ -115,13 +111,12 @@ export function WeightsControls({ drawGroups, high, low }: Props) {
       <Checkbox
         label={t("weights.group.label")}
         title={t("weights.group.title")}
-        disabled={drawGroups!.length > 0}
-        checked={!(drawGroups!.length > 0) && (groupSongsAt !== null)}
+        checked={groupSongsAt !== null}
         onChange={toggleGroupCheck}
       />
       <NumericInput
         width={2}
-        disabled={drawGroups!.length > 0 || !groupSongsAt}
+        disabled={!groupSongsAt}
         value={groupCutoff}
         min={low}
         onValueChange={handleGroupCutoffChange}
