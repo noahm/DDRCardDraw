@@ -6,7 +6,7 @@ export interface ConfigState {
   lowerBound: number;
   useWeights: boolean;
   orderByAction: boolean;
-  showVeto: boolean;
+  hideVetos: boolean;
   weights: number[];
   /** charts of this level or higher will be grouped into the same "bucket" */
   groupSongsAt: number | null;
@@ -25,7 +25,7 @@ export const useConfigState = createStore<ConfigState>((set) => ({
   upperBound: 0,
   lowerBound: 0,
   useWeights: false,
-  showVeto: true,
+  hideVetos: false,
   orderByAction: true,
   weights: [],
   groupSongsAt: null,

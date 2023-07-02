@@ -69,7 +69,7 @@ export function SongCard(props: Props) {
     winner,
     actionsEnabled,
   } = props;
-  const showVeto = useConfigState((s) => s.showVeto);
+  const hideVetos = useConfigState((s) => s.hideVetos);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
   const showMenu = () => setContextMenuOpen(true);
@@ -125,7 +125,7 @@ export function SongCard(props: Props) {
     [styles.protected]: protectedBy,
     [styles.replaced]: replacedBy,
     [styles.clickable]: !!menuContent,
-    [styles.hideVeto]: !showVeto,
+    [styles.hideVeto]: hideVetos,
   });
 
   return (

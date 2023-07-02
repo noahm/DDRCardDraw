@@ -3,6 +3,7 @@ import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { InputButtonPair } from "./input-button-pair";
 import { IconNames } from "@blueprintjs/icons";
+import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
 
 export function PlayerNamesControls() {
   const { t } = useIntl();
@@ -28,6 +29,7 @@ export function PlayerNamesControls() {
 
   return (
     <>
+      <TournamentModeToggle />
       <FormGroup label={t("controls.addPlayerLabel")}>
         <InputButtonPair
           placeholder={t("controls.newPlayerPlaceholder")}

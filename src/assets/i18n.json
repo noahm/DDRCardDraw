@@ -6,18 +6,6 @@
         "more": "More Games"
       }
     },
-    "dataSource": "Game",
-    "chartCount": "Number to draw",
-    "difficultyLevel": "Difficulty level",
-    "upperBound": "Upper bound (inclusive)",
-    "lowerBound": "Lower bound (inclusive)",
-    "constrainPocketPicks": "Pocket picks must match draw options",
-    "useWeightedDistributions": "Use Weighted Distributions",
-    "orderByAction": "Re-order by pick/ban",
-    "style": "Style",
-    "single": "Single",
-    "double": "Double",
-    "difficulties": "Difficulties",
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
       "check": {
@@ -29,68 +17,36 @@
         "label": "Group top end charts starting at"
       }
     },
-    "include": "Include",
     "add": "Add",
     "controls": {
+      "chartCount": "Number to draw",
+      "upperBound": "Lvl Max",
+      "lowerBound": "Lvl Min",
+      "constrainPocketPicks": "Pocket picks must match draw options",
+      "useWeightedDistributions": "Use Weighted Distributions",
+      "orderByAction": "Re-order by pick/ban",
+      "style": "Style",
+      "difficulties": "Difficulties",
+      "include": "Include",
       "tabs": {
         "general": "General",
+        "flags": "Flags",
         "networking": "Networking",
         "players": "Players"
       },
+      "hideVetos": "Hide vetoed charts",
       "addPlayerLabel": "Add Players",
       "newPlayerPlaceholder": "Player name",
       "currentPlayersLabel": "Current Players",
       "noPlayers": "No Players",
-      "playerLabels": "Show player & round labels",
+      "playerLabels": "Player labels on sets",
+      "shockArrows": "Shock Arrows",
       "invalid": "Couldn't draw anything with current settings!"
     },
     "tournamentRoundPlaceholder": "Tournament Round",
     "tournamentRoundAdd": "Add \"{round}\"",
     "noResults": "No results",
     "noMatchingCharts": "No chart matching filters",
-    "shockArrows": "Shock Arrows",
-    "difficulty": {
-      "ace": {
-        "beg": {
-          "name": "Beginner",
-          "abbreviation": "Beg"
-        },
-        "bas": {
-          "name": "Basic",
-          "abbreviation": "Bas"
-        },
-        "dif": {
-          "name": "Difficult",
-          "abbreviation": "Dif"
-        },
-        "exp": {
-          "name": "Expert",
-          "abbreviation": "Exp"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "Cha"
-        }
-      },
-      "extreme": {
-        "bas": {
-          "name": "Light",
-          "abbreviation": "Lgt"
-        },
-        "dif": {
-          "name": "Standard",
-          "abbreviation": "Std"
-        },
-        "exp": {
-          "name": "Heavy",
-          "abbreviation": "Hvy"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "Cha"
-        }
-      }
-    },
     "draw": "Draw!",
     "confirmClose": "Are you sure you want to leave?",
     "updateLoading": "Installing an update...",
@@ -117,18 +73,6 @@
     "applyUpdate": "Apply"
   },
   "ja": {
-    "dataSource": "ゲーム",
-    "chartCount": "ドロー数",
-    "difficultyLevel": "レベル",
-    "upperBound": "上限",
-    "lowerBound": "下限",
-    "useWeightedDistributions": "レベル別に確率を設定する",
-    "orderByAction": "Re-order by pick/ban",
-    "constrainPocketPicks": "Pocket picks must match draw options",
-    "style": "スタイル",
-    "single": "Single",
-    "double": "Double",
-    "difficulties": "難易度",
     "weights": {
       "explanation": "各レベルごとに数字で出やすさの重みを付ける",
       "check": {
@@ -136,71 +80,23 @@
         "label": "厳密に設定を反映する"
       }
     },
-    "include": "特殊な譜面",
     "controls": {
+      "chartCount": "ドロー数",
+      "upperBound": "上限",
+      "lowerBound": "下限",
+      "useWeightedDistributions": "レベル別に確率を設定する",
+      "style": "スタイル",
+      "difficulties": "難易度",
+      "include": "特殊な譜面",
       "show": "メニューを表示",
       "hide": "メニューを隠す",
+      "shockArrows": "ショックアロー",
       "invalid": "対象譜面がありません！"
-    },
-    "shockArrows": "ショックアロー",
-    "difficulty": {
-      "ace": {
-        "beg": {
-          "name": "Beginner",
-          "abbreviation": "Beg"
-        },
-        "bas": {
-          "name": "Basic",
-          "abbreviation": "Bas"
-        },
-        "dif": {
-          "name": "Difficult",
-          "abbreviation": "Dif"
-        },
-        "exp": {
-          "name": "Expert",
-          "abbreviation": "Exp"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "Cha"
-        }
-      },
-      "extreme": {
-        "bas": {
-          "name": "Light",
-          "abbreviation": "楽"
-        },
-        "dif": {
-          "name": "Standard",
-          "abbreviation": "踊"
-        },
-        "exp": {
-          "name": "Heavy",
-          "abbreviation": "激"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "鬼"
-        }
-      }
     },
     "draw": "ドロー！",
     "confirmClose": "本当にこのページを離れますか？",
     "updateLoading": "更新中...",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
-    "credits": "Credits",
-    "lastUpdate": "楽曲の更新日：{date}",
-    "songAction": {
-      "lock": "Protect",
-      "ban": "Veto",
-      "pocketPick": "Pocket Pick",
-      "reset": "Reset",
-      "cancel": "Cancel",
-      "winner": "Pick Winner"
-    },
-    "noValidCharts": "No valid charts",
-    "showSongPool": "Show eligible charts",
-    "applyUpdate": "Apply"
+    "lastUpdate": "楽曲の更新日：{date}"
   }
 }
