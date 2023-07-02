@@ -22,22 +22,25 @@ export default function EligibleChartsList() {
   const isNarrow = useIsNarrow();
   const isDisplayFiltered = currentTab !== "all";
 
+  const charts = useMemo(
+    () => (gameData ? Array.from(eligibleCharts(configState, gameData)) : []),
+    [gameData, configState]
+  );
+  const [songs, filteredCharts] = useMemo(() => {
+    const songs = new Set<string>();
+    const filtered = charts.filter((chart) => {
+      songs.add(songKeyFromChart(chart));
+      if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
+        return false;
+      }
+      return true;
+    });
+    return [songs, filtered];
+  }, [charts, isDisplayFiltered, currentTab]);
+
   if (!gameData) {
     return <Spinner />;
   }
-  const charts = Array.from(eligibleCharts(configState, gameData));
-  const songs = new Set<string>();
-  const filteredCharts = useMemo(
-    () =>
-      charts.filter((chart) => {
-        songs.add(songKeyFromChart(chart));
-        if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
-          return false;
-        }
-        return true;
-      }),
-    [currentTab, charts]
-  );
 
   return (
     <>

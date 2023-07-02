@@ -1,12 +1,16 @@
 import { I18NDict } from "./models/SongData";
 
+// add some old odd browser properties
+declare const navigator: Navigator & {
+  userLanguage?: string;
+  browserLanguage?: string;
+};
+
 const browserLanguage: string =
-  (window.navigator.languages && window.navigator.languages[0]) ||
-  window.navigator.language ||
-  // @ts-ignore
-  window.navigator.userLanguage ||
-  // @ts-ignore
-  window.navigator.browserLanguage ||
+  (navigator.languages && navigator.languages[0]) ||
+  navigator.language ||
+  navigator.userLanguage ||
+  navigator.browserLanguage ||
   "en";
 
 export const detectedLanguage = browserLanguage.slice(0, 2);

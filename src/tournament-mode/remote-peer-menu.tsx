@@ -31,7 +31,7 @@ export function RemotePeerControls() {
     });
   }
   // Copy to keyboard button
-  let copyButton = (
+  const copyButton = (
     <Button
       minimal
       icon={IconNames.Duplicate}
@@ -86,7 +86,7 @@ export function RemotePeerControls() {
         </FormGroup>
         <FormGroup label="Current Peers">
           {peers.remotePeers.size > 0 ? (
-            Array.from(peers.remotePeers).map(([_, p]) => (
+            Array.from(peers.remotePeers).map(([, p]) => (
               <Tag minimal large key={p.peer} onRemove={() => p.close()}>
                 {displayFromPeerId(p.peer)}
               </Tag>
@@ -134,7 +134,7 @@ export function CurrentPeersMenu({
   return (
     <>
       {!!header && <MenuItem text={header} disabled />}
-      {Array.from(peers).map(([_, dc]) => (
+      {Array.from(peers).map(([, dc]) => (
         <MenuItem
           key={dc.peer}
           text={displayFromPeerId(dc.peer)}

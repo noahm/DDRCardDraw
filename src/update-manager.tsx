@@ -38,6 +38,7 @@ export function UpdateManager() {
         },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;

@@ -55,7 +55,7 @@ function useIconCallbacksForChart(chartId: number): IconCallbacks {
       onReset: resetChart.bind(undefined, chartId),
       onSetWinner: setWinner.bind(undefined, chartId),
     }),
-    [handleBanPickPocket, redrawChart, resetChart, chartId]
+    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner]
   );
 }
 
@@ -101,7 +101,7 @@ export function SongCard(props: Props) {
     };
   }
 
-  let iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
+  const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !winner) {

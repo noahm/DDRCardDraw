@@ -35,7 +35,7 @@ import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
-  let s = new Set<string>();
+  const s = new Set<string>();
   for (const f of gameData.songs) {
     for (const c of f.charts) {
       if (c.style === selectedStyle) {
@@ -50,7 +50,7 @@ function getDiffsAndRangeForNewStyle(
   gameData: GameData,
   selectedStyle: string
 ) {
-  let s = new Set<string>();
+  const s = new Set<string>();
   const range = { high: 0, low: 100 };
   for (const f of gameData.songs) {
     for (const c of f.charts) {

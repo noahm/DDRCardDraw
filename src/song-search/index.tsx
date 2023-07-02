@@ -52,6 +52,7 @@ export function SongSearch(props: Props) {
           item.chart === "none" || !item.chart
             ? undefined
             : getDrawnChart(
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 useDrawState.getState().gameData!,
                 item.song,
                 item.chart

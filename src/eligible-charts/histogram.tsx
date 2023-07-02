@@ -23,7 +23,7 @@ export function DiffHistogram({ charts }: Props) {
   const { t } = useIntl();
   const fgColor = useTheme() === Theme.Dark ? "white" : undefined;
   const isNarrow = useIsNarrow();
-  const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties) || [];
+  const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
   const [dataPerDiff, colors, xAxisLabels, totals] = useMemo(() => {
     const countByClassAndLvl: Record<string, CountingSet<number>> = {};
     let maxBar = 0;
@@ -36,7 +36,7 @@ export function DiffHistogram({ charts }: Props) {
       maxBar = Math.max(maxBar, allLevels.add(chart.level));
     }
     const orderedLevels = Array.from(allLevels.values()).sort((a, b) => a - b);
-    const difficulties = allDiffs
+    const difficulties = (allDiffs || [])
       .filter((d) => !!countByClassAndLvl[getDiffClass(t, d.key)])
       .reverse();
     const dataPerDiff = difficulties.map((diff) => ({
@@ -54,9 +54,9 @@ export function DiffHistogram({ charts }: Props) {
       Array.from(allLevels.values()).sort((a, b) => a - b),
       Array.from(allLevels.valuesWithCount())
         .sort((a, b) => a[0] - b[0])
-        .map(([_, count]) => count),
+        .map(([, count]) => count),
     ];
-  }, [charts]);
+  }, [allDiffs, charts, t]);
 
   return (
     <VictoryChart

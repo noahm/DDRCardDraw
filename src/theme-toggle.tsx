@@ -41,6 +41,7 @@ interface ThemeContext {
 // into the page. see more:
 // https://github.com/obsproject/obs-browser/blob/master/README.md
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace obsstudio {
     const pluginVersion: string;
   }
@@ -68,14 +69,18 @@ const useThemeStore = createStore<ThemeContext>((set, get) => ({
 export const useTheme = () => useThemeStore((s) => s.resolved);
 
 export function ThemeSyncWidget() {
-  const themeState = useThemeStore();
+  const {
+    resolved: resolvedTheme,
+    obsLayer: isOBS,
+    updateBrowserPref,
+  } = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
-    applyThemeBodyClass(themeState.resolved, themeState.obsLayer);
-  }, [themeState.resolved, themeState.obsLayer]);
+    applyThemeBodyClass(resolvedTheme, isOBS);
+  }, [resolvedTheme, isOBS]);
   useEffect(() => {
-    themeState.updateBrowserPref(browserPref);
-  }, [themeState.updateBrowserPref, browserPref]);
+    updateBrowserPref(browserPref);
+  }, [updateBrowserPref, browserPref]);
   return null;
 }
 

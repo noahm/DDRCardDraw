@@ -53,7 +53,7 @@ function peerId(name: string, pin: string) {
   return `ddr-tools ${name}_${pin}`;
 }
 
-function bindPeer(peer: Peer, resolve: Function, reject: Function) {
+function bindPeer(peer: Peer, resolve: () => void, reject: () => void) {
   peer.on("open", (id) => {
     console.log("connected to peer signaling server with id", id);
     toaster.show({

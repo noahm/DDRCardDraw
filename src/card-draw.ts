@@ -104,7 +104,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     if (useWeights && groupSongsAt && groupSongsAt < chartLevel) {
       chartLevel = groupSongsAt;
     }
-    validCharts.get(chartLevel)!.push(chart);
+    validCharts.get(chartLevel)?.push(chart);
   }
 
   /**
@@ -128,6 +128,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       weightAmount = validCharts.get(level)!.length;
     }
     times(weightAmount, () => distribution.push(level));
@@ -140,7 +141,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
     for (let level = lowerBound; level <= upperBound; level++) {
-      let normalizedWeight =
+      const normalizedWeight =
         expectedDrawPerLevel[level.toString()] / totalWeights;
       expectedDrawPerLevel[level] = Math.ceil(
         normalizedWeight * numChartsToRandom
@@ -167,6 +168,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     if (useWeights && groupSongsAt && groupSongsAt < chosenDifficulty) {
       chosenDifficulty = groupSongsAt;
     }
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const selectableCharts = validCharts.get(chosenDifficulty)!;
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];

@@ -1,5 +1,5 @@
 import { ControlGroup, InputGroup, Button } from "@blueprintjs/core";
-import { InputHTMLAttributes, ReactNode, useRef } from "react";
+import { InputHTMLAttributes, ReactNode, useCallback, useRef } from "react";
 
 interface Props {
   placeholder?: string;
@@ -13,10 +13,13 @@ interface Props {
   enterKeyHint?: InputHTMLAttributes<unknown>["enterKeyHint"];
 }
 
-export function InputButtonPair(props: Props) {
+export function InputButtonPair({ onClick, ...props }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const handleClick = () =>
-    props.onClick(inputRef.current!.value, inputRef.current!);
+  const handleClick = useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const el = inputRef.current!;
+    return onClick(el.value, el);
+  }, [onClick]);
   return (
     <ControlGroup>
       <InputGroup

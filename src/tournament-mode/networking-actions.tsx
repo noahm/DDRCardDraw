@@ -26,8 +26,9 @@ export function NetworkingActions() {
 
   let remoteActions: JSX.Element | undefined = undefined;
 
-  if (remotePeers.size === 1) {
-    const peerId = displayFromPeerId(firstOf(remotePeers.values())!.peer);
+  const onlyRemote = firstOf(remotePeers.values());
+  if (remotePeers.size === 1 && onlyRemote) {
+    const peerId = displayFromPeerId(onlyRemote.peer);
     remoteActions = (
       <Menu>
         <MenuItem

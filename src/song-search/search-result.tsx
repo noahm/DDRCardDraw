@@ -28,7 +28,7 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
       </>
     );
   } else if (typeof data.chart === "string") {
-    label = "No chart matching filters";
+    label = t("noMatchingCharts");
     disabled = true;
   } else {
     label = song.artist_translation || song.artist;

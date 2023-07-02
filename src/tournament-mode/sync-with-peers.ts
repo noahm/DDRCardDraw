@@ -14,13 +14,13 @@ export function SyncWithPeers() {
     if (!remotePeer && drawing.__syncPeer) {
       drawing.updateDrawing({ __syncPeer: undefined });
     }
-  }, [remotePeer]);
+  }, [drawing, remotePeer]);
 
   useEffect(() => {
     if (drawing.__syncPeer) {
       return syncStoreWithPeer(store, drawing.__syncPeer);
     }
-  }, [drawing.__syncPeer]);
+  }, [drawing.__syncPeer, store]);
 
   return null;
 }

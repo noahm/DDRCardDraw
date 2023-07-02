@@ -1,12 +1,5 @@
 import { useIntl } from "react-intl";
-import {
-  ButtonGroup,
-  AnchorButton,
-  UL,
-  Classes,
-  H1,
-  H2,
-} from "@blueprintjs/core";
+import { ButtonGroup, AnchorButton, UL, Classes, H2 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 
 function injectPumpoutLink(str: string) {

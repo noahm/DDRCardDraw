@@ -74,6 +74,7 @@ const {
       }));
     },
     redrawChart(chartId) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const newChart = draw(useDrawState.getState().gameData!, {
         ...useConfigState.getState(),
         chartCount: 1,
@@ -116,6 +117,7 @@ const {
       if (existingIndex >= 0) {
         arr.splice(existingIndex, 1);
       } else {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         arr.push({ player, pick: newChart!, chartId });
       }
       set({
