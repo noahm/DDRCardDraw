@@ -3,7 +3,7 @@ import { useDrawState } from "../draw-state";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 
-import { RoundSelect, AutoCompleteSelect } from "./RoundSelect";
+import { RoundSelect, AutoCompleteSelect } from "./round-select";
 
 export function SetLabels() {
   const tournamentMode = useDrawState((s) => s.tournamentMode);
