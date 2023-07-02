@@ -6,7 +6,6 @@ import {
   MenuItem,
   Navbar,
   Popover,
-  Tooltip,
 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { useState } from "react";
@@ -50,9 +49,7 @@ export function Header() {
           <Button icon={IconNames.MENU} />
         </Popover>
         <Navbar.Divider />
-        <Tooltip content="Change Song Data" placement="bottom">
-          <VersionSelect />
-        </Tooltip>
+        <VersionSelect />
         <DataLoadingSpinner />
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>

@@ -40,13 +40,60 @@ export function* flattenedKeys(
   }
 }
 
+interface AvailableGameData {
+  type: "game";
+  index: number;
+  name: string;
+  display: string;
+  parent: string;
+}
+
+interface GameDataParent {
+  type: "parent";
+  name: string;
+  games: Array<AvailableGameData>;
+}
+
 /** ordered list of all available game data files */
 export const availableGameData = (
-  process.env.DATA_FILES as unknown as Array<{
-    name: string;
-    display: string;
-  }>
-).sort((a, b) => (a.display < b.display ? -1 : 1));
+  process.env.DATA_FILES as unknown as Array<
+    Omit<AvailableGameData, "type" | "index">
+  >
+).sort((a, b) => {
+  const parentDiff = a.parent.localeCompare(b.parent);
+  if (parentDiff) {
+    return parentDiff;
+  }
+  return a.display.localeCompare(b.display);
+});
+
+export function groupGameData(gd: typeof availableGameData) {
+  return gd.reduce<Array<AvailableGameData | GameDataParent>>(
+    (acc, curr, index) => {
+      const asGame: AvailableGameData = {
+        type: "game",
+        index,
+        ...curr,
+      };
+      if (!curr.parent) {
+        acc.push(asGame);
+        return acc;
+      }
+      const latest = acc.at(-1);
+      if (latest && latest.type === "parent" && latest.name === curr.parent) {
+        latest.games.push(asGame);
+      } else {
+        acc.push({
+          type: "parent",
+          name: curr.parent,
+          games: [asGame],
+        });
+      }
+      return acc;
+    },
+    []
+  );
+}
 
 export function firstOf<T>(iter: IterableIterator<T>): T | undefined {
   const next = iter.next();

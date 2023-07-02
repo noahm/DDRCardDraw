@@ -147,12 +147,16 @@ module.exports = function (env = {}, argv = {}) {
           isProd ? "production" : "development"
         ),
         "process.env.DATA_FILES": JSON.stringify(
-          fs.readdirSync(resolve(__dirname, "src/songs")).map((file) => ({
-            name: basename(file, ".json"),
-            display: JSON.parse(
+          fs.readdirSync(resolve(__dirname, "src/songs")).map((file) => {
+            const fileContents = JSON.parse(
               fs.readFileSync(resolve(__dirname, "src/songs", file))
-            ).i18n.en.name,
-          }))
+            );
+            return {
+              name: basename(file, ".json"),
+              display: fileContents.i18n.en.name,
+              parent: fileContents.meta.menuParent || "",
+            };
+          })
         ),
         "process.env.VERCEL_ANALYTICS_ID": JSON.stringify(
           process.env.VERCEL_ANALYTICS_ID
