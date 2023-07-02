@@ -1,31 +1,55 @@
-import { MenuItem } from "@blueprintjs/core";
-import { Suggest2 } from "@blueprintjs/select";
+import { Classes, MenuItem } from "@blueprintjs/core";
+import { Suggest } from "@blueprintjs/select";
 
 import { filterRoundLabel, renderRoundLabel, roundLabels } from "./round-label";
 import { useDrawing } from "../drawing-context";
+import { useIntl } from "../hooks/useIntl";
 
-const RoundLabel = Suggest2.ofType<string>();
-
-function identity<T>(input: T): T {
-  return input;
+function identity<T>(i: T) {
+  return i;
 }
 
 export function RoundSelect() {
+  const { t } = useIntl();
   const updateDrawing = useDrawing((d) => d.updateDrawing);
   const tournamentTitle = useDrawing((d) => d.title);
+  return (
+    <AutoCompleteSelect
+      size="medium"
+      placeholder={t("tournamentRoundPlaceholder")}
+      itemList={roundLabels}
+      value={tournamentTitle || null}
+      onSelect={(title) => updateDrawing({ title })}
+    />
+  );
+}
+
+interface Props {
+  size: "medium" | "large";
+  itemList: Array<string>;
+  placeholder: string;
+  value: string | null;
+  onSelect(item: string): void;
+}
+
+export function AutoCompleteSelect(props: Props) {
+  const { t } = useIntl();
 
   return (
-    <RoundLabel
+    <Suggest<string>
       inputProps={{
-        large: true,
         style: {
           boxShadow: "none",
           textAlign: "center",
-          width: "300px",
+          background: "transparent",
+          height: "36px",
+          lineHeight: "36px",
+          fontSize: props.size === "medium" ? "26px" : "34px",
         },
-        placeholder: "Round Title",
+        placeholder: props.placeholder,
+        className: Classes.EDITABLE_TEXT,
       }}
-      items={roundLabels}
+      items={props.itemList}
       createNewItemPosition="first"
       createNewItemFromQuery={identity}
       inputValueRenderer={identity}
@@ -34,8 +58,8 @@ export function RoundSelect() {
           active={active}
           key={query}
           onClick={handleClick}
-          text={query}
-          icon="new-text-box"
+          text={t("tournamentRoundAdd", { round: query })}
+          icon="add"
           roleStructure="listoption"
         />
       )}
@@ -44,12 +68,17 @@ export function RoundSelect() {
       noResults={
         <MenuItem
           disabled={true}
-          text="No results."
+          text={t("noResults")}
           roleStructure="listoption"
         />
       }
-      onItemSelect={(title) => updateDrawing({ title })}
-      selectedItem={tournamentTitle || null}
+      onItemSelect={(item) => {
+        if (!props.itemList.includes(item)) {
+          props.itemList.push(item);
+        }
+        props.onSelect(item);
+      }}
+      selectedItem={props.value || null}
     />
   );
 }

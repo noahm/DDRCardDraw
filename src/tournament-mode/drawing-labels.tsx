@@ -1,10 +1,9 @@
-import { EditableText } from "@blueprintjs/core";
 import { useCallback } from "react";
 import { useDrawState } from "../draw-state";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 
-import { RoundSelect } from "./RoundSelect";
+import { RoundSelect, AutoCompleteSelect } from "./RoundSelect";
 
 export function SetLabels() {
   const tournamentMode = useDrawState((s) => s.tournamentMode);
@@ -26,6 +25,8 @@ export function SetLabels() {
   );
 }
 
+const playerNames = [""];
+
 function EditableDrawingField({
   field,
   placeholder,
@@ -34,7 +35,7 @@ function EditableDrawingField({
   placeholder: string;
 }) {
   const updateDrawing = useDrawing((s) => s.updateDrawing);
-  const value = useDrawing((s) => s[field]);
+  const value = useDrawing((s) => s[field] || null);
   const handleChange = useCallback(
     (value: string) => {
       updateDrawing({ [field]: value });
@@ -42,10 +43,12 @@ function EditableDrawingField({
     [updateDrawing, field]
   );
   return (
-    <EditableText
-      placeholder={placeholder}
+    <AutoCompleteSelect
       value={value}
-      onChange={handleChange}
+      itemList={playerNames}
+      placeholder={placeholder}
+      onSelect={handleChange}
+      size="large"
     />
   );
 }

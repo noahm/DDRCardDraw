@@ -1,54 +1,55 @@
 import { MenuItem } from "@blueprintjs/core";
 import { ItemPredicate, ItemRenderer } from "@blueprintjs/select";
-import React from "react";
+import { ReactNode } from "react";
+import FuzzySearch from "fuzzy-search";
+import { BlueprintIcons_16Id } from "@blueprintjs/icons/lib/esm/generated/16px/blueprint-icons-16";
+
+export const players = [""];
 
 export const roundLabels = [
+  "",
+  "Pools",
   "Winner's Bracket",
-  "Winner's Round",
-  "Winner's Round 1",
-  "Winner's Round 2",
-  "Winner's Round 3",
-  "Winner's Round 4",
-  "Winner's Round 5",
-  "Winner's Quarterfinals",
-  "Winner's Semifinals",
   "Winner's Finals",
   "Loser's Bracket",
-  "Loser's Round",
-  "Loser's Round 1",
-  "Loser's Round 2",
-  "Loser's Round 3",
-  "Loser's Round 4",
-  "Loser's Round 5",
-  "Loser's Quarterfinals",
-  "Loser's Semifinals",
   "Loser's Finals",
-  "Casuals",
-  "Warmup",
-  "Freeplay",
+  "Grand Finals",
+  "Tiebreaker",
 ];
 
 export const renderRoundLabel: ItemRenderer<string> = (
   roundLabel,
-  { handleClick, modifiers, query }
+  { handleClick, modifiers, query, handleFocus }
 ) => {
   if (!modifiers.matchesPredicate) {
     return null;
   }
+  let icon: BlueprintIcons_16Id | null = null;
+  let text = roundLabel;
+  if (roundLabel === "") {
+    icon = "delete";
+    text = "No label";
+  }
   return (
     <MenuItem
+      icon={icon}
       active={modifiers.active}
       disabled={modifiers.disabled}
+      style={{ opacity: roundLabel ? undefined : 0.5 }}
       key={roundLabel}
       onClick={handleClick}
-      text={highlightText(roundLabel, query)}
+      onFocus={handleFocus}
+      text={highlightText(text, query)}
       roleStructure="listoption"
     />
   );
 };
 
 export const filterRoundLabel: ItemPredicate<string> = (query, roundLabel) => {
-  return `${roundLabel.toLowerCase()}`.indexOf(query.toLowerCase()) >= 0;
+  if (!query) {
+    return true;
+  }
+  return !!FuzzySearch.isMatch(roundLabel, query, false);
 };
 
 function highlightText(text: string, query: string) {
@@ -61,7 +62,7 @@ function highlightText(text: string, query: string) {
     return [text];
   }
   const regexp = new RegExp(words.join("|"), "gi");
-  const tokens: React.ReactNode[] = [];
+  const tokens: ReactNode[] = [];
   while (true) {
     const match = regexp.exec(text);
     if (!match) {

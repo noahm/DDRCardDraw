@@ -11,7 +11,7 @@ export function TournamentModeToggle() {
     <Checkbox
       checked={enabled}
       onChange={toggle}
-      label={t("toggleTournamentMode", undefined, "Show tournament labels")}
+      label={t("controls.playerLabels")}
     />
   );
 }
