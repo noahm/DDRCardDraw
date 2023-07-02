@@ -12,7 +12,6 @@ import { IntlProvider } from "./intl-provider";
 import createStore from "zustand";
 import shallow from "zustand/shallow";
 import { DataConnection } from "peerjs";
-import { initShareWithPeer } from "./zustand/shared-zustand";
 
 interface DrawState {
   tournamentMode: boolean;
@@ -29,7 +28,7 @@ interface DrawState {
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
-  tournamentMode: false,
+  tournamentMode: true,
   gameData: null,
   fuzzySearch: null,
   drawings: [],
@@ -45,6 +44,7 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     }
     if (
       state.drawings.length &&
+      // eslint-disable-next-line no-restricted-globals
       !confirm("This will clear all songs drawn so far. Confirm?")
     ) {
       return state.gameData;
@@ -160,7 +160,7 @@ export function DrawStateManager(props: Props) {
   );
   useEffect(() => {
     loadGameData(getInitialDataSet(props.defaultDataSet));
-  }, []);
+  }, [loadGameData, props.defaultDataSet]);
 
   const allStrings = i18nData as Record<string, I18NDict>;
   const useTranslations = allStrings;

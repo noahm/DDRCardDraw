@@ -4,6 +4,7 @@ import { Suggest } from "@blueprintjs/select";
 import { filterRoundLabel, renderRoundLabel, roundLabels } from "./round-label";
 import { useDrawing } from "../drawing-context";
 import { useIntl } from "../hooks/useIntl";
+import { useMemo } from "react";
 
 function identity<T>(i: T) {
   return i;
@@ -25,6 +26,8 @@ export function RoundSelect() {
 }
 
 interface Props {
+  /** remove empty autocomplete item */
+  noEmpty?: boolean;
   size: "medium" | "large";
   itemList: Array<string>;
   placeholder: string;
@@ -34,6 +37,15 @@ interface Props {
 
 export function AutoCompleteSelect(props: Props) {
   const { t } = useIntl();
+
+  const items = useMemo(() => {
+    const list = props.itemList.slice();
+    if (!props.noEmpty) {
+      list.unshift("");
+    }
+
+    return list;
+  }, [props.itemList, props.noEmpty]);
 
   return (
     <Suggest<string>
@@ -47,9 +59,11 @@ export function AutoCompleteSelect(props: Props) {
           fontSize: props.size === "medium" ? "26px" : "34px",
         },
         placeholder: props.placeholder,
-        className: Classes.EDITABLE_TEXT,
       }}
-      items={props.itemList}
+      className={Classes.EDITABLE_TEXT}
+      items={items}
+      resetOnSelect
+      resetOnClose
       createNewItemPosition="first"
       createNewItemFromQuery={identity}
       inputValueRenderer={identity}
@@ -72,12 +86,7 @@ export function AutoCompleteSelect(props: Props) {
           roleStructure="listoption"
         />
       }
-      onItemSelect={(item) => {
-        if (!props.itemList.includes(item)) {
-          props.itemList.push(item);
-        }
-        props.onSelect(item);
-      }}
+      onItemSelect={props.onSelect}
       selectedItem={props.value || null}
     />
   );

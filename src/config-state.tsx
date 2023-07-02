@@ -16,6 +16,7 @@ export interface ConfigState {
   difficulties: ReadonlySet<string>;
   flags: ReadonlySet<string>;
   showPool: boolean;
+  playerNames: string[];
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -34,5 +35,6 @@ export const useConfigState = createStore<ConfigState>((set, get) => ({
   difficulties: new Set(),
   flags: new Set(),
   showPool: false,
+  playerNames: [],
   update: set,
 }));

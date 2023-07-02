@@ -7,7 +7,6 @@ import { BlueprintIcons_16Id } from "@blueprintjs/icons/lib/esm/generated/16px/b
 export const players = [""];
 
 export const roundLabels = [
-  "",
   "Pools",
   "Winner's Bracket",
   "Winner's Finals",
@@ -84,5 +83,5 @@ function highlightText(text: string, query: string) {
 }
 
 function escapeRegExpChars(text: string) {
-  return text.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+  return text.replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1");
 }
