@@ -30,11 +30,17 @@
       }
     },
     "include": "Include",
+    "add": "Add",
     "controls": {
       "tabs": {
         "general": "General",
-        "networking": "Networking"
+        "networking": "Networking",
+        "players": "Players"
       },
+      "addPlayerLabel": "Add Players",
+      "newPlayerPlaceholder": "Player name",
+      "currentPlayersLabel": "Current Players",
+      "noPlayers": "No Players",
       "playerLabels": "Show player & round labels",
       "invalid": "Couldn't draw anything with current settings!"
     },

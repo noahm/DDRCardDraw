@@ -33,6 +33,7 @@ import { useRemotePeers } from "../tournament-mode/remote-peers";
 import { TournamentModeToggle } from "../tournament-mode/tournament-mode-toggle";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
+import { PlayerNamesControls } from "./player-names";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -182,6 +183,9 @@ function ControlsDrawer() {
           panel={<RemotePeerControls />}
         >
           {t("controls.tabs.networking")}
+        </Tab>
+        <Tab id="players" icon="people" panel={<PlayerNamesControls />}>
+          {t("controls.tabs.players")}
         </Tab>
       </Tabs>
     </div>
