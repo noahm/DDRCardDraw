@@ -56,7 +56,7 @@ export function AutoCompleteSelect(props: Props) {
           background: "transparent",
           height: "36px",
           lineHeight: "36px",
-          fontSize: props.size === "medium" ? "26px" : "34px",
+          fontSize: props.size === "medium" ? "26px" : "32px",
         },
         placeholder: props.placeholder,
       }}
