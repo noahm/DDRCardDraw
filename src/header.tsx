@@ -7,7 +7,7 @@ import {
   Navbar,
 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
-import { Popover2, Tooltip2 } from "@blueprintjs/popover2";
+import { Popover2 } from "@blueprintjs/popover2";
 import { useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
@@ -47,9 +47,7 @@ export function Header() {
           <Button icon={IconNames.MENU} />
         </Popover2>
         <Navbar.Divider />
-        <Tooltip2 content="Change Song Data" placement="bottom">
-          <VersionSelect />
-        </Tooltip2>
+        <VersionSelect />
         <DataLoadingSpinner />
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>

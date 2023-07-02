@@ -14,6 +14,10 @@
       "required": ["lastUpdated", "styles", "difficulties", "lvlMax", "flags"],
       "additionalProperties": false,
       "properties": {
+        "menuParent": {
+          "type": "string",
+          "description": "If supplied, the parent folder name in the game select menu"
+        },
         "lastUpdated": {
           "type": "integer",
           "description": "Unix timestamp of last update to this data file"
