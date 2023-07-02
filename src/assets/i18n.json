@@ -31,8 +31,10 @@
     },
     "include": "Include",
     "controls": {
-      "show": "Show Options",
-      "hide": "Hide Options",
+      "tabs": {
+        "general": "General",
+        "networking": "Networking"
+      },
       "invalid": "Couldn't draw anything with current settings!"
     },
     "shockArrows": "Shock Arrows",

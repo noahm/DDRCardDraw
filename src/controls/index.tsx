@@ -2,6 +2,7 @@ import {
   Button,
   ButtonGroup,
   Checkbox,
+  Classes,
   Divider,
   Drawer,
   DrawerSize,
@@ -160,20 +161,27 @@ export function HeaderControls() {
 }
 
 function ControlsDrawer() {
+  const { t } = useIntl();
   const isConnected = useRemotePeers((r) => !!r.thisPeer);
   const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
   return (
     <div className={styles.drawer}>
       <Tabs id="settings" large>
-        <Tab id="general" panel={<GeneralSettings />}>
-          <Icon icon={IconNames.Settings} /> General
+        <Tab id="general" icon="settings" panel={<GeneralSettings />}>
+          {t("controls.tabs.general")}
         </Tab>
-        <Tab id="network" panel={<RemotePeerControls />}>
-          <Icon
-            icon={hasPeers ? IconNames.ThirdParty : IconNames.GlobeNetwork}
-            intent={isConnected ? "success" : "none"}
-          />{" "}
-          Networking
+        <Tab
+          id="network"
+          icon={
+            <Icon
+              className={Classes.TAB_ICON}
+              icon={hasPeers ? IconNames.ThirdParty : IconNames.GlobeNetwork}
+              intent={isConnected ? "success" : "none"}
+            />
+          }
+          panel={<RemotePeerControls />}
+        >
+          {t("controls.tabs.networking")}
         </Tab>
       </Tabs>
     </div>
