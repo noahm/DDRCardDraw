@@ -4,18 +4,6 @@ import { ReactNode } from "react";
 import FuzzySearch from "fuzzy-search";
 import { BlueprintIcons_16Id } from "@blueprintjs/icons/lib/esm/generated/16px/blueprint-icons-16";
 
-export const players = [""];
-
-export const roundLabels = [
-  "Pools",
-  "Winner's Bracket",
-  "Winner's Finals",
-  "Loser's Bracket",
-  "Loser's Finals",
-  "Grand Finals",
-  "Tiebreaker",
-];
-
 export const renderRoundLabel: ItemRenderer<string> = (
   roundLabel,
   { handleClick, modifiers, query, handleFocus }

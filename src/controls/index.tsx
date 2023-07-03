@@ -3,6 +3,7 @@ import {
   ButtonGroup,
   Checkbox,
   Classes,
+  Collapse,
   Divider,
   Drawer,
   DrawerSize,
@@ -123,9 +124,7 @@ export function HeaderControls() {
         position={Position.RIGHT}
         size={isNarrow ? DrawerSize.LARGE : "500px"}
         onClose={() => setSettingsOpen(false)}
-        title={
-          <FormattedMessage id="settings.title" defaultMessage="Settings" />
-        }
+        title={<FormattedMessage id="controls.drawerTitle" />}
       >
         <ControlsDrawer />
       </Drawer>
@@ -143,7 +142,7 @@ export function HeaderControls() {
             intent={Intent.PRIMARY}
             disabled={!hasGameData}
           >
-            <FormattedMessage id="draw" defaultMessage="Draw!" />
+            <FormattedMessage id="draw" />
           </Button>
         </Tooltip>
         <Tooltip
@@ -164,18 +163,12 @@ function ControlsDrawer() {
   const { t } = useIntl();
   const isConnected = useRemotePeers((r) => !!r.thisPeer);
   const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
-  const hasFlags = useDrawState((s) => !!s.gameData?.meta.flags.length);
   return (
     <div className={styles.drawer}>
       <Tabs id="settings" large>
         <Tab id="general" icon="settings" panel={<GeneralSettings />}>
           {t("controls.tabs.general")}
         </Tab>
-        {hasFlags && (
-          <Tab id="flags" icon="flag" panel={<FlagSettings />}>
-            {t("controls.tabs.flags")}
-          </Tab>
-        )}
         <Tab
           id="network"
           icon={
@@ -209,7 +202,7 @@ function FlagSettings() {
   );
 
   return (
-    <FormGroup label={t("include")}>
+    <FormGroup label={t("controls.include")}>
       {gameData?.meta.flags.map((key) => (
         <Checkbox
           key={`${dataSetName}:${key}`}
@@ -236,6 +229,7 @@ function FlagSettings() {
 function GeneralSettings() {
   const { t } = useIntl();
   const gameData = useDrawState((s) => s.gameData);
+  const hasFlags = useDrawState((s) => !!s.gameData?.meta.flags.length);
   const configState = useConfigState();
   const {
     useWeights,
@@ -403,6 +397,7 @@ function GeneralSettings() {
           />
         ))}
       </FormGroup>
+      {hasFlags && <FlagSettings />}
       <FormGroup>
         <Checkbox
           id="orderByAction"
@@ -440,7 +435,9 @@ function GeneralSettings() {
           }}
           label={t("controls.useWeightedDistributions")}
         />
-        {useWeights && <WeightsControls high={upperBound} low={lowerBound} />}
+        <Collapse isOpen={useWeights}>
+          <WeightsControls high={upperBound} low={lowerBound} />
+        </Collapse>
       </FormGroup>
     </>
   );

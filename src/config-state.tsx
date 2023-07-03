@@ -17,6 +17,7 @@ export interface ConfigState {
   flags: ReadonlySet<string>;
   showPool: boolean;
   playerNames: string[];
+  tournamentRounds: string[];
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -36,5 +37,14 @@ export const useConfigState = createStore<ConfigState>((set) => ({
   flags: new Set(),
   showPool: false,
   playerNames: [],
+  tournamentRounds: [
+    "Pools",
+    "Winner's Bracket",
+    "Winner's Finals",
+    "Loser's Bracket",
+    "Loser's Finals",
+    "Grand Finals",
+    "Tiebreaker",
+  ],
   update: set,
 }));

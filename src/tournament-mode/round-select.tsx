@@ -1,10 +1,11 @@
 import { Classes, MenuItem } from "@blueprintjs/core";
 import { Suggest } from "@blueprintjs/select";
 
-import { filterRoundLabel, renderRoundLabel, roundLabels } from "./round-label";
+import { filterRoundLabel, renderRoundLabel } from "./round-label";
 import { useDrawing } from "../drawing-context";
 import { useIntl } from "../hooks/useIntl";
 import { useMemo } from "react";
+import { useConfigState } from "../config-state";
 
 function identity<T>(i: T) {
   return i;
@@ -14,6 +15,7 @@ export function RoundSelect() {
   const { t } = useIntl();
   const updateDrawing = useDrawing((d) => d.updateDrawing);
   const tournamentTitle = useDrawing((d) => d.title);
+  const roundLabels = useConfigState((c) => c.tournamentRounds);
   return (
     <AutoCompleteSelect
       size="medium"

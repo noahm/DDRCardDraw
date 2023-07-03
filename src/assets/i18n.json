@@ -19,6 +19,7 @@
     },
     "add": "Add",
     "controls": {
+      "drawerTitle": "Settings",
       "chartCount": "Number to draw",
       "upperBound": "Lvl Max",
       "lowerBound": "Lvl Min",
@@ -35,11 +36,9 @@
         "players": "Players"
       },
       "hideVetos": "Hide vetoed charts",
-      "addPlayerLabel": "Add Players",
-      "newPlayerPlaceholder": "Player name",
-      "currentPlayersLabel": "Current Players",
-      "noPlayers": "No Players",
-      "playerLabels": "Player labels on sets",
+      "playerLabels": "Show player & round labels on draws",
+      "addPlayerLabel": "Manage Player Names",
+      "tournamentLabelEdit": "Tournament round labels",
       "shockArrows": "Shock Arrows",
       "invalid": "Couldn't draw anything with current settings!"
     },
