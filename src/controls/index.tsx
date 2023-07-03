@@ -283,11 +283,11 @@ function GeneralSettings() {
           <FormGroup>
             <ShowChartsToggle inDrawer />
           </FormGroup>
-          {!!configState.flags.size && (
+          <Collapse isOpen={!!configState.flags.size && configState.showPool}>
             <FormGroup label="Show only">
               <EligibleChartsListFilter />
             </FormGroup>
-          )}
+          </Collapse>
           <Divider />
         </>
       )}
