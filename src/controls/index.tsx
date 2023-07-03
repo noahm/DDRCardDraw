@@ -1,6 +1,7 @@
 import {
   Button,
   ButtonGroup,
+  Card,
   Checkbox,
   Classes,
   Collapse,
@@ -250,6 +251,7 @@ function GeneralSettings() {
     return getAvailableDifficulties(gameData, selectedStyle);
   }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
+  const [expandFilters, setExpandFilters] = useState(false);
 
   if (!gameData) {
     return null;
@@ -340,64 +342,75 @@ function GeneralSettings() {
           </FormGroup>
         </div>
       </div>
-      {gameStyles.length > 1 && (
-        <FormGroup labelFor="style" label={t("controls.style")}>
-          <HTMLSelect
-            id="style"
-            large
-            value={selectedStyle}
-            onChange={(e) => {
-              updateState((prev) => {
-                const next = { ...prev, style: e.currentTarget.value };
-                const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
-                  gameData,
-                  next.style
-                );
-                if (diffs.length === 1) {
-                  next.difficulties = new Set(diffs.map((d) => d.key));
-                }
-                if (lvlRange.low > next.upperBound) {
-                  next.upperBound = lvlRange.low;
-                }
-                if (lvlRange.high < next.lowerBound) {
-                  next.lowerBound = lvlRange.high;
-                }
-                return next;
-              });
-            }}
-          >
-            {gameStyles.map((style) => (
-              <option key={style} value={style}>
-                {t("meta." + style)}
-              </option>
+      <Button
+        alignText="left"
+        rightIcon={expandFilters ? "caret-down" : "caret-right"}
+        onClick={() => setExpandFilters((p) => !p)}
+      >
+        {t("controls.hideShowFilters")}
+      </Button>
+      <Collapse isOpen={expandFilters}>
+        <Card style={{ paddingBottom: "1px" }}>
+          {gameStyles.length > 1 && (
+            <FormGroup labelFor="style" label={t("controls.style")}>
+              <HTMLSelect
+                id="style"
+                large
+                value={selectedStyle}
+                onChange={(e) => {
+                  updateState((prev) => {
+                    const next = { ...prev, style: e.currentTarget.value };
+                    const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
+                      gameData,
+                      next.style
+                    );
+                    if (diffs.length === 1) {
+                      next.difficulties = new Set(diffs.map((d) => d.key));
+                    }
+                    if (lvlRange.low > next.upperBound) {
+                      next.upperBound = lvlRange.low;
+                    }
+                    if (lvlRange.high < next.lowerBound) {
+                      next.lowerBound = lvlRange.high;
+                    }
+                    return next;
+                  });
+                }}
+              >
+                {gameStyles.map((style) => (
+                  <option key={style} value={style}>
+                    {t("meta." + style)}
+                  </option>
+                ))}
+              </HTMLSelect>
+            </FormGroup>
+          )}
+          <FormGroup label={t("controls.difficulties")}>
+            {availableDifficulties.map((dif) => (
+              <Checkbox
+                key={`${dif.key}`}
+                name="difficulties"
+                value={dif.key}
+                checked={selectedDifficulties.has(dif.key)}
+                onChange={(e) => {
+                  const { checked, value } = e.currentTarget;
+                  updateState((s) => {
+                    const difficulties = new Set(s.difficulties);
+                    if (checked) {
+                      difficulties.add(value);
+                    } else {
+                      difficulties.delete(value);
+                    }
+                    return { difficulties };
+                  });
+                }}
+                label={t("meta." + dif.key)}
+              />
             ))}
-          </HTMLSelect>
-        </FormGroup>
-      )}
-      <FormGroup label={t("controls.difficulties")}>
-        {availableDifficulties.map((dif) => (
-          <Checkbox
-            key={`${dif.key}`}
-            name="difficulties"
-            value={dif.key}
-            checked={selectedDifficulties.has(dif.key)}
-            onChange={(e) => {
-              const { checked, value } = e.currentTarget;
-              updateState((s) => {
-                const difficulties = new Set(s.difficulties);
-                if (checked) {
-                  difficulties.add(value);
-                } else {
-                  difficulties.delete(value);
-                }
-                return { difficulties };
-              });
-            }}
-            label={t("meta." + dif.key)}
-          />
-        ))}
-      </FormGroup>
-      {hasFlags && <FlagSettings />}
+          </FormGroup>
+          {hasFlags && <FlagSettings />}
+        </Card>
+      </Collapse>
       <FormGroup>
         <Checkbox
           id="orderByAction"
