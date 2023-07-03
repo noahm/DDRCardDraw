@@ -27,6 +27,10 @@ export interface GameData {
    */
   meta: {
     /**
+     * If supplied, the parent folder name in the game select menu
+     */
+    menuParent?: string;
+    /**
      * Unix timestamp of last update to this data file
      */
     lastUpdated: number;

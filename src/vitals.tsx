@@ -2,7 +2,7 @@ import { onCLS, onFCP, onFID, onLCP, onTTFB, Metric } from "web-vitals";
 
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
-declare var navigator: Navigator & {
+declare const navigator: Navigator & {
   connection: {
     effectiveType: string;
   };

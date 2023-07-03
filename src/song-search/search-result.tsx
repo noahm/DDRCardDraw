@@ -1,7 +1,5 @@
 import { AbbrDifficulty } from "../game-data-utils";
-import { useDifficultyColor } from "../hooks/useDifficultyColor";
 import { useIntl } from "../hooks/useIntl";
-import { ConfigState } from "../config-state";
 import { Song, Chart } from "../models/SongData";
 import { SongJacket } from "../song-jacket";
 import styles from "./song-search.css";
@@ -9,42 +7,16 @@ import { MenuItem } from "@blueprintjs/core";
 
 export interface SearchResultData {
   song: Song;
-  chart?: Chart | "none";
-}
-
-interface ChartOptionProps {
-  chart: Chart;
-  onClick: () => void;
-}
-
-function ChartOption({ chart, onClick }: ChartOptionProps) {
-  const bg = useDifficultyColor(chart.diffClass);
-  return (
-    <div
-      className={styles.chart}
-      style={{ backgroundColor: bg }}
-      onClick={onClick}
-    >
-      <AbbrDifficulty diffClass={chart.diffClass} />
-      <br />
-      {chart.lvl}
-    </div>
-  );
+  chart: Chart | "none";
 }
 
 interface ResultsProps {
   data: SearchResultData;
   selected: boolean;
   handleClick: React.MouseEventHandler<HTMLElement>;
-  config: ConfigState;
 }
 
-export function SearchResult({
-  data,
-  selected,
-  handleClick,
-  config,
-}: ResultsProps) {
+export function SearchResult({ data, selected, handleClick }: ResultsProps) {
   const song = data.song;
   const { t } = useIntl();
   let label: string | JSX.Element;
@@ -56,7 +28,7 @@ export function SearchResult({
       </>
     );
   } else if (typeof data.chart === "string") {
-    label = "No chart matching filters";
+    label = t("noMatchingCharts");
     disabled = true;
   } else {
     label = song.artist_translation || song.artist;

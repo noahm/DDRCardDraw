@@ -4,7 +4,7 @@ import { zeroPad, times } from "../utils";
 import { useMemo, useState } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
-import { NumericInput, Checkbox } from "@blueprintjs/core";
+import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 
 interface Props {
   usesTiers: boolean;
@@ -85,7 +85,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
 
   return (
     <section className={styles.weights}>
-      <p>{t("weights.explanation")}</p>
+      <p className={Classes.TEXT_MUTED}>{t("weights.explanation")}</p>
       {groups.map((group, i) => (
         <div className={styles.level} key={group}>
           <NumericInput

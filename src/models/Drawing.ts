@@ -1,17 +1,22 @@
+import { DataConnection } from "peerjs";
 import { Song } from "./SongData";
 
-export interface DrawnChart {
+export interface EligibleChart {
   name: string;
   jacket: string;
   nameTranslation?: string;
   artist: string;
   artistTranslation?: string;
   bpm: string;
-  difficultyClass: string;
+  diffAbbr: string;
+  diffColor: string;
   level: number;
   flags: string[];
   song: Song;
-  id?: number;
+}
+
+export interface DrawnChart extends EligibleChart {
+  id: number;
 }
 
 export interface PlayerActionOnChart {
@@ -20,13 +25,19 @@ export interface PlayerActionOnChart {
 }
 
 export interface PocketPick extends PlayerActionOnChart {
-  pick: DrawnChart;
+  pick: EligibleChart;
 }
 
 export interface Drawing {
-  id: number;
+  id: string;
+  title?: string;
+  player1?: string;
+  player2?: string;
   charts: DrawnChart[];
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;
+  winners: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
+  /** __ prefix avoids serializing this field during sync */
+  __syncPeer?: DataConnection;
 }

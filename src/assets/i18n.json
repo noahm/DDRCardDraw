@@ -1,17 +1,11 @@
 {
   "en": {
-    "dataSource": "Game",
-    "chartCount": "Number to draw",
-    "difficultyLevel": "Difficulty level",
-    "upperBound": "Upper bound (inclusive)",
-    "lowerBound": "Lower bound (inclusive)",
-    "constrainPocketPicks": "Pocket picks must match draw options",
-    "useWeightedDistributions": "Use Weighted Distributions",
-    "orderByAction": "Re-order by pick/ban",
-    "style": "Style",
-    "single": "Single",
-    "double": "Double",
-    "difficulties": "Difficulties",
+    "gameMenu": {
+      "title": "Select game data",
+      "parent": {
+        "more": "More Games"
+      }
+    },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
       "check": {
@@ -23,92 +17,62 @@
         "label": "Group top end charts starting at"
       }
     },
-    "include": "Include",
+    "add": "Add",
     "controls": {
-      "show": "Show Options",
-      "hide": "Hide Options",
+      "drawerTitle": "Settings",
+      "hideShowFilters": "Chart Filters",
+      "chartCount": "Number to draw",
+      "upperBound": "Lvl Max",
+      "lowerBound": "Lvl Min",
+      "constrainPocketPicks": "Pocket picks must match draw options",
+      "useWeightedDistributions": "Use Weighted Distributions",
+      "orderByAction": "Re-order by pick/ban",
+      "style": "Style",
+      "difficulties": "Difficulties",
+      "include": "Include",
+      "tabs": {
+        "general": "General",
+        "flags": "Flags",
+        "networking": "Networking",
+        "players": "Players"
+      },
+      "hideVetos": "Hide vetoed charts",
+      "playerLabels": "Show player & round labels on draws",
+      "addPlayerLabel": "Manage Player Names",
+      "tournamentLabelEdit": "Tournament round labels",
+      "shockArrows": "Shock Arrows",
       "invalid": "Couldn't draw anything with current settings!"
     },
-    "shockArrows": "Shock Arrows",
-    "difficulty": {
-      "ace": {
-        "beg": {
-          "name": "Beginner",
-          "abbreviation": "Beg"
-        },
-        "bas": {
-          "name": "Basic",
-          "abbreviation": "Bas"
-        },
-        "dif": {
-          "name": "Difficult",
-          "abbreviation": "Dif"
-        },
-        "exp": {
-          "name": "Expert",
-          "abbreviation": "Exp"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "Cha"
-        }
-      },
-      "extreme": {
-        "bas": {
-          "name": "Light",
-          "abbreviation": "Lgt"
-        },
-        "dif": {
-          "name": "Standard",
-          "abbreviation": "Std"
-        },
-        "exp": {
-          "name": "Heavy",
-          "abbreviation": "Hvy"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "Cha"
-        }
-      }
-    },
+    "tournamentRoundPlaceholder": "Tournament Round",
+    "tournamentRoundAdd": "Add \"{round}\"",
+    "noResults": "No results",
+    "noMatchingCharts": "No chart matching filters",
     "draw": "Draw!",
     "confirmClose": "Are you sure you want to leave?",
     "updateLoading": "Installing an update...",
     "updateReady": "Update ready, refresh for the freshest code around!",
     "credits": "Credits",
     "lastUpdate": "{gameName} data last updated {date}",
-    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Pump it Up data sourced from PUMPOUT, maintained by AnyhowStep and Haru-kaze. * Maintained by Noah Manneschmidt.",
+    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Pump it Up data sourced from PUMPOUT, maintained by AnyhowStep and Haru-kaze. * Maintained by Noah Manneschmidt, aka Cathadan.",
     "contact": {
       "prompt": "Please reach out with feedback, ideas, or code contributions:",
-      "facebook": "Contact me on Facebook Messenger",
-      "discord": "Contact me on Discord",
-      "github": "Contribute on Github"
+      "facebook": "Facebook",
+      "discord": "Discord",
+      "github": "Github"
     },
     "songAction": {
       "lock": "Protect",
       "ban": "Veto",
       "pocketPick": "Pocket Pick",
       "reset": "Reset",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "winner": "Pick Winner"
     },
     "noValidCharts": "No valid charts",
     "showSongPool": "Show eligible charts",
     "applyUpdate": "Apply"
   },
   "ja": {
-    "dataSource": "ゲーム",
-    "chartCount": "ドロー数",
-    "difficultyLevel": "レベル",
-    "upperBound": "上限",
-    "lowerBound": "下限",
-    "useWeightedDistributions": "レベル別に確率を設定する",
-    "orderByAction": "Re-order by pick/ban",
-    "constrainPocketPicks": "Pocket picks must match draw options",
-    "style": "スタイル",
-    "single": "Single",
-    "double": "Double",
-    "difficulties": "難易度",
     "weights": {
       "explanation": "各レベルごとに数字で出やすさの重みを付ける",
       "check": {
@@ -116,77 +80,23 @@
         "label": "厳密に設定を反映する"
       }
     },
-    "include": "特殊な譜面",
     "controls": {
+      "chartCount": "ドロー数",
+      "upperBound": "上限",
+      "lowerBound": "下限",
+      "useWeightedDistributions": "レベル別に確率を設定する",
+      "style": "スタイル",
+      "difficulties": "難易度",
+      "include": "特殊な譜面",
       "show": "メニューを表示",
       "hide": "メニューを隠す",
+      "shockArrows": "ショックアロー",
       "invalid": "対象譜面がありません！"
-    },
-    "shockArrows": "ショックアロー",
-    "difficulty": {
-      "ace": {
-        "beg": {
-          "name": "Beginner",
-          "abbreviation": "Beg"
-        },
-        "bas": {
-          "name": "Basic",
-          "abbreviation": "Bas"
-        },
-        "dif": {
-          "name": "Difficult",
-          "abbreviation": "Dif"
-        },
-        "exp": {
-          "name": "Expert",
-          "abbreviation": "Exp"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "Cha"
-        }
-      },
-      "extreme": {
-        "bas": {
-          "name": "Light",
-          "abbreviation": "楽"
-        },
-        "dif": {
-          "name": "Standard",
-          "abbreviation": "踊"
-        },
-        "exp": {
-          "name": "Heavy",
-          "abbreviation": "激"
-        },
-        "cha": {
-          "name": "Challenge",
-          "abbreviation": "鬼"
-        }
-      }
     },
     "draw": "ドロー！",
     "confirmClose": "本当にこのページを離れますか？",
     "updateLoading": "更新中...",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
-    "credits": "Credits",
-    "lastUpdate": "楽曲の更新日：{date}",
-    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Pump it Up data sourced from PUMPOUT, maintained by AnyhowStep and Haru-kaze. * Maintained by Noah Manneschmidt.",
-    "contact": {
-      "prompt": "Please reach out with feedback, ideas, or code contributions:",
-      "facebook": "Facebook Messengerで作者に連絡する",
-      "discord": "Discordで作者に連絡する",
-      "github": "Githubで貢献する"
-    },
-    "songAction": {
-      "lock": "Protect",
-      "ban": "Veto",
-      "pocketPick": "Pocket Pick",
-      "reset": "Reset",
-      "cancel": "Cancel"
-    },
-    "noValidCharts": "No valid charts",
-    "showSongPool": "Show eligible charts",
-    "applyUpdate": "Apply"
+    "lastUpdate": "楽曲の更新日：{date}"
   }
 }

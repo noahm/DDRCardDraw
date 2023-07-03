@@ -1,6 +1,24 @@
+:root {
+  --drawing-grad-saturation: 40%;
+  --drawing-grad-lightness: 85%;
+}
+
+body:global(.bp5-dark) {
+  --drawing-grad-saturation: 25%;
+  --drawing-grad-lightness: 15%;
+}
+
 .chartList {
   display: flex;
   padding: 10px;
   overflow: hidden;
   flex-wrap: wrap;
+}
+
+.drawing {
+  position: relative;
+}
+
+body:global(.obs-layer) .drawing {
+  background-image: none !important;
 }
