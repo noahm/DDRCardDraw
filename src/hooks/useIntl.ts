@@ -7,8 +7,11 @@ export function useIntl() {
   const { formatMessage } = useReactIntl();
   return useMemo(
     () => ({
-      t: (id: string, values?: Record<string, Primitive>) =>
-        formatMessage({ id }, values),
+      t: (
+        id: string,
+        values?: Record<string, Primitive>,
+        defaultMessage?: string
+      ) => formatMessage({ id, defaultMessage }, values),
     }),
     [formatMessage]
   );

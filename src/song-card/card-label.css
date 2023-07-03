@@ -6,6 +6,11 @@
   text-shadow: none;
 }
 
+.cardLabel.winner {
+  top: unset;
+  bottom: 0.5em;
+}
+
 .cardLabel > span {
   border: 2px solid white;
   border-radius: 0.5em;

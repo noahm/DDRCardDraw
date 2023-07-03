@@ -1,4 +1,4 @@
-import { DrawnChart } from "./models/Drawing";
+import { EligibleChart } from "../models/Drawing";
 import {
   VictoryChart,
   VictoryBar,
@@ -8,36 +8,36 @@ import {
   VictoryLabel,
 } from "victory";
 import { useMemo } from "react";
-import { CountingSet } from "./utils";
-import { useDrawState } from "./draw-state";
-import { useIntl } from "./hooks/useIntl";
-import { getMetaString } from "./game-data-utils";
-import { Theme, useTheme } from "./theme-toggle";
-import { useIsNarrow } from "./hooks/useMediaQuery";
+import { CountingSet } from "../utils";
+import { useDrawState } from "../draw-state";
+import { useIntl } from "../hooks/useIntl";
+import { getDiffClass, getMetaString } from "../game-data-utils";
+import { Theme, useTheme } from "../theme-toggle";
+import { useIsNarrow } from "../hooks/useMediaQuery";
 
 interface Props {
-  charts: DrawnChart[];
+  charts: EligibleChart[];
 }
 
 export function DiffHistogram({ charts }: Props) {
   const { t } = useIntl();
   const fgColor = useTheme() === Theme.Dark ? "white" : undefined;
   const isNarrow = useIsNarrow();
-  const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties) || [];
+  const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
   const [dataPerDiff, colors, xAxisLabels, totals] = useMemo(() => {
     const countByClassAndLvl: Record<string, CountingSet<number>> = {};
     let maxBar = 0;
     const allLevels = new CountingSet<number>();
     for (const chart of charts) {
-      if (!countByClassAndLvl[chart.difficultyClass]) {
-        countByClassAndLvl[chart.difficultyClass] = new CountingSet();
+      if (!countByClassAndLvl[chart.diffAbbr]) {
+        countByClassAndLvl[chart.diffAbbr] = new CountingSet();
       }
-      countByClassAndLvl[chart.difficultyClass].add(chart.level);
+      countByClassAndLvl[chart.diffAbbr].add(chart.level);
       maxBar = Math.max(maxBar, allLevels.add(chart.level));
     }
     const orderedLevels = Array.from(allLevels.values()).sort((a, b) => a - b);
-    const difficulties = allDiffs
-      .filter((d) => !!countByClassAndLvl[d.key])
+    const difficulties = (allDiffs || [])
+      .filter((d) => !!countByClassAndLvl[getDiffClass(t, d.key)])
       .reverse();
     const dataPerDiff = difficulties.map((diff) => ({
       color: diff.color,
@@ -45,7 +45,7 @@ export function DiffHistogram({ charts }: Props) {
       label: getMetaString(t, diff.key),
       data: orderedLevels.map((lvl) => ({
         level: lvl,
-        count: countByClassAndLvl[diff.key].get(lvl) || 0,
+        count: countByClassAndLvl[getDiffClass(t, diff.key)].get(lvl) || 0,
       })),
     }));
     return [
@@ -54,9 +54,9 @@ export function DiffHistogram({ charts }: Props) {
       Array.from(allLevels.values()).sort((a, b) => a - b),
       Array.from(allLevels.valuesWithCount())
         .sort((a, b) => a[0] - b[0])
-        .map(([_, count]) => count),
+        .map(([, count]) => count),
     ];
-  }, [charts]);
+  }, [allDiffs, charts, t]);
 
   return (
     <VictoryChart

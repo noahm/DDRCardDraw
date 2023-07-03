@@ -11,8 +11,10 @@ import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
 import createStore from "zustand";
 import shallow from "zustand/shallow";
+import { DataConnection } from "peerjs";
 
 interface DrawState {
+  tournamentMode: boolean;
   gameData: GameData | null;
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
@@ -21,14 +23,20 @@ interface DrawState {
   loadGameData(dataSetName: string): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
+  toggleTournamentMode(): void;
+  injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
 export const useDrawState = createStore<DrawState>((set, get) => ({
+  tournamentMode: false,
   gameData: null,
   fuzzySearch: null,
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
+  toggleTournamentMode() {
+    set((prev) => ({ tournamentMode: !prev.tournamentMode }));
+  },
   async loadGameData(dataSetName: string) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
@@ -36,6 +44,7 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     }
     if (
       state.drawings.length &&
+      // eslint-disable-next-line no-restricted-globals
       !confirm("This will clear all songs drawn so far. Confirm?")
     ) {
       return state.gameData;
@@ -85,11 +94,31 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
       return false;
     }
 
-    set((prevState) => ({
-      drawings: [drawing, ...prevState.drawings].filter(Boolean),
-      lastDrawFailed: false,
-    }));
+    set((prevState) => {
+      return {
+        drawings: [drawing, ...prevState.drawings].filter(Boolean),
+        lastDrawFailed: false,
+      };
+    });
     return true;
+  },
+  injectRemoteDrawing(drawing, syncWithPeer) {
+    set((prevState) => {
+      const currentDrawing = prevState.drawings.find(
+        (d) => d.id === drawing.id
+      );
+      const newDrawings = prevState.drawings.filter((d) => d.id !== drawing.id);
+      newDrawings.unshift(drawing);
+      if (currentDrawing) {
+        drawing.__syncPeer = currentDrawing.__syncPeer;
+      }
+      if (syncWithPeer) {
+        drawing.__syncPeer = syncWithPeer;
+      }
+      return {
+        drawings: newDrawings,
+      };
+    });
   },
 }));
 
@@ -131,7 +160,7 @@ export function DrawStateManager(props: Props) {
   );
   useEffect(() => {
     loadGameData(getInitialDataSet(props.defaultDataSet));
-  }, []);
+  }, [loadGameData, props.defaultDataSet]);
 
   const allStrings = i18nData as Record<string, I18NDict>;
   const useTranslations = allStrings;

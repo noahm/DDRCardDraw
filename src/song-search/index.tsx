@@ -2,7 +2,7 @@ import { useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
-import { DrawnChart } from "../models/Drawing";
+import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
@@ -10,7 +10,7 @@ import styles from "./song-search.css";
 
 interface Props {
   isOpen: boolean;
-  onSongSelect(song: Song, chart?: DrawnChart): void;
+  onSongSelect(song: Song, chart?: EligibleChart): void;
   onCancel(): void;
 }
 
@@ -51,7 +51,12 @@ export function SongSearch(props: Props) {
           item.song,
           item.chart === "none" || !item.chart
             ? undefined
-            : getDrawnChart(item.song, item.chart)
+            : getDrawnChart(
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                useDrawState.getState().gameData!,
+                item.song,
+                item.chart
+              )
         )
       }
       items={items}
@@ -61,7 +66,9 @@ export function SongSearch(props: Props) {
       className={styles.songSearch}
       itemRenderer={(data, itemProps) => (
         <SearchResult
-          config={config}
+          key={`${data.song.saHash || data.song.name}-${
+            typeof data.chart === "string" ? data.chart : data.chart.diffClass
+          }`}
           data={data}
           selected={itemProps.modifiers.active}
           handleClick={itemProps.handleClick}

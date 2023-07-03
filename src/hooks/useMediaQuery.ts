@@ -25,7 +25,7 @@ export function useMediaQuery(query: string) {
     return () => {
       mq.removeEventListener("change", handleChange);
     };
-  }, [mq]);
+  }, [matching, mq]);
 
   return matching;
 }
