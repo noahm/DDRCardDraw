@@ -26,6 +26,7 @@ interface IconCallbacks {
 }
 
 interface Props {
+  onClick?: () => void;
   chart: DrawnChart | EligibleChart;
   vetoedBy?: Player;
   protectedBy?: Player;
@@ -34,6 +35,8 @@ interface Props {
   replacedWith?: EligibleChart;
   actionsEnabled?: boolean;
 }
+
+export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: number): IconCallbacks {
   const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
@@ -124,7 +127,7 @@ export function SongCard(props: Props) {
     [styles.vetoed]: vetoedBy,
     [styles.protected]: protectedBy,
     [styles.replaced]: replacedBy,
-    [styles.clickable]: !!menuContent,
+    [styles.clickable]: !!menuContent || !!props.onClick,
     [styles.hideVeto]: hideVetos,
   });
 
@@ -133,7 +136,7 @@ export function SongCard(props: Props) {
       className={rootClassname}
       onClick={
         !menuContent || showingContextMenu || pocketPickPendingForPlayer
-          ? undefined
+          ? props.onClick
           : showMenu
       }
       style={jacketBg}
