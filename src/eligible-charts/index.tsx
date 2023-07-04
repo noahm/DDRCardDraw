@@ -10,6 +10,7 @@ import { useAtom } from "jotai";
 import { useDeferredValue, useMemo } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
+import { isDegrs, TesterCard } from "../controls/degrs-tester";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
@@ -63,9 +64,13 @@ export default function EligibleChartsList() {
       </Navbar>
       <DiffHistogram charts={filteredCharts} />
       <div className={styles.chartList}>
-        {filteredCharts.map((chart, idx) => (
-          <SongCard chart={chart} key={idx} />
-        ))}
+        {filteredCharts.map((chart, idx) =>
+          isDegrs(chart) ? (
+            <TesterCard chart={chart} key={idx} />
+          ) : (
+            <SongCard chart={chart} key={idx} />
+          )
+        )}
       </div>
     </>
   );

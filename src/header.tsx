@@ -28,6 +28,11 @@ export function Header() {
         onClick={() => setAboutOpen(true)}
         text={t("credits")}
       />
+      <MenuItem
+        icon="help"
+        href="https://github.com/noahm/DDRCardDraw/blob/main/docs/index.md"
+        text={t("help")}
+      />
       <ThemeToggle />
       <LastUpdate />
     </Menu>
