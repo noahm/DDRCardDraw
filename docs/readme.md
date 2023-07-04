@@ -27,15 +27,15 @@ Draws are not saved anywhere and cannot be recovered after the page is closed or
 
 The app has many detailed settings giving you fine-grained control over exactly which songs and charts are picked from the selected game. Access the settings drawer with the gear button in the top right.
 
-Many Settings are self-explanatory, but a few may not be and are described here.
+Some of the less self-explanatory settings are described below.
 
 ![Screenshot of the settings drawer](images/settings-drawer.png)
 
 <dl>
-<dt><b>Reorder by pick/ban</b>
+<dt>Reorder by pick/ban
 <dd>Moves charts to the beginning or end of the set when charts are protected or vetoed.
 
-<dt><b>Pocket picks must match draw options</b>
+<dt>Pocket picks must match draw options
 <dd>Limits charts selected in a pocket pick action to those that match current draw settings
 </dl>
 
@@ -65,10 +65,10 @@ Without this setting enabled, each individual chart matching the level range and
 The weighted distribution options allows you to replace the natrual chances of specific levels with artificial ones. The calculated chance of _any single drawn card_ being drawn at a specific difficulty level is displayed next to the corresponding input.
 
 <dl>
-<dt><b>Force Expected Distribution</b>
+<dt>Force Expected Distribution
 <dd>Reduces randomness by preventing any outlier draws that contain more than the expected number of charts of each difficulty level. (e.g. For the above example, this would limit a 3 card draw to either zero or one level 22 chart.)
 
-<dt><b>Group Top End Charts</b>
+<dt>Group Top End Charts
 <dd>Allows grouping charts of multiple levels into a single "bucket". This helps when you want a higher probability of hard stuff, but your game of choice has a very limited number of charts at the highest levels.
 </dl>
 
@@ -79,16 +79,16 @@ Clicking any drawn card will open a menu of actions that can update the state of
 ![Screenshot of a menu full of actions](images/card-actions.png)
 
 <dl>
-<dt><b>Protect and Veto (Pick/Ban)</b>
+<dt>Protect and Veto (Pick/Ban)
 <dd>
 Tournaments often provide players some choice in which songs are played using protect and veto actions. By default, a protect will move the chart to the beginning of the set, and a veto will move it to the end. A tag will be left on the card indicating which player took the action.
-<dt><b>Redraw</b>
+<dt>Redraw
 <dd>Replaces the selected card with a new one, randomly selected according to the current settings. When used with weighted distributions, the "Force expected distribution" option is not applied to the redraw. (It does not take into account the other songs already in the set, instead treating it as a standalone single-card draw.)
 
-<dt><b>Pick Winner</b>
+<dt>Pick Winner
 <dd>Leaves a tag on the card to indicate which player was victorious. This is the only action that can be taken on cards that already have been protected or replaced by a pocket pick.
 
-<dt><b>Pocket Pick</b>
+<dt>Pocket Pick
 <dd>
 Some tournaments may also a "pocket pick" where a players freely picks a chart of their choice to replace one of the drawn cards. Upon selecting this action, a search overlay opens to quickly find the intended song. This also leaves a tag on the card indicating the acting player.
 
