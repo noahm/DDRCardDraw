@@ -15,7 +15,6 @@ import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
-import styles from "./header.css";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -40,7 +39,6 @@ export function Header() {
 
   return (
     <Navbar
-      className={styles.header}
       style={{
         position: "sticky",
         top: 0,
