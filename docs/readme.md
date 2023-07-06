@@ -1,4 +1,6 @@
-# What is this?
+# DDR Tools User Manual
+
+## What is this?
 
 [DDR Tools](https://ddr.tools/) is a versatile web app designed for the needs of the dance game community. That is, fans of _Dance Dance Revolution_ and other similar games.
 
@@ -37,9 +39,7 @@ Some of the less self-explanatory settings are described below.
 
 <dt>Pocket picks must match draw options
 <dd>Limits charts selected in a pocket pick action to those that match current draw settings
-</dl>
-
-### Weights
+</dl>to
 
 The weighted distribution options allows manual control over the probabilities for charts of any specific difficulty level to be drawn.
 
@@ -98,19 +98,37 @@ Some tournaments may also a "pocket pick" where a players freely picks a chart o
 
 # Networking
 
-See [Networking](networking.md)
+Multiple copies of the app can connect over the internet to share drawn sets of cards between devices. This can be especially useful for larger events, sharing drawn cards with an audience of spectators, etc.
 
-# Extra Features
+See: [Networking](networking.md)
+
+# Other Features
 
 ## Player Labels
 
-_TODO: add detail_
+The settings drawer also contains a tab for player and tournament round labels, along with the option to pre-populate player and round names ahead of time in settings. The inputs there accept comma or line break separated name imports from external data sources.
 
-Accepts comma or line break separated name imports.
+![Screenshot of settings tab for player names](images/player-settings.png)
+
+Once enabled, labels appear above each drawn set of cards. Players and round names can be freely entered or you can select from any names previously enetered (in settings and from previous draws).
+
+![Screenshot of player labels on a drawn set](images/player-labels.png)
 
 ## Preview Eligible Charts
 
-_TODO: add detail_
+A toggle to "Show eligible charts" is included at the top (in the settings drawer for mobile devices) and can be useful for multiple reasons. First and foremost, it allows easy review of the current song data and helps catch issues. Any special song categories like "Unlockable songs" can be shown separately to confirm the appropriate categorization.
+
+Second, a color-coded histogram is displayed at the top to provide a quick summary of the over-all difficulty pool included by the current settings. This can also be handy to summarize an entire game's song library by using the settings to include all charts.
+
+![Screenshot of eligible charts toggle enabled](images/eligible-charts.png)
+
+## Save as Image
+
+Each drawn set has a camera icon in the top right. This saves an image of the current set with a transparent background suitable for use in stream layouts and other such designs. Resize your browser window to adjust the aspect ratio of the generated image.
+
+## Use as OBS Layer
+
+The app is aware of when it is loaded into an OBS Browser Source and will automatically remove its own background elements to better blend into a stream layout. (I recommend cropping out the top toolbar.) DDR Tools is fully usable within the browser source "Interact" window, but real pros use the [networking features](networking.md) to remotly control their browser sources.
 
 ## SM5/ITG imports
 
