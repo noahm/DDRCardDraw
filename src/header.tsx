@@ -30,7 +30,7 @@ export function Header() {
       />
       <MenuItem
         icon="help"
-        href="https://github.com/noahm/DDRCardDraw/blob/main/docs/index.md"
+        href="https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md"
         text={t("help")}
       />
       <ThemeToggle />
