@@ -18,6 +18,7 @@ export interface ConfigState {
   showPool: boolean;
   playerNames: string[];
   tournamentRounds: string[];
+  showLabels: boolean;
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -46,5 +47,6 @@ export const useConfigState = createStore<ConfigState>((set) => ({
     "Grand Finals",
     "Tiebreaker",
   ],
+  showLabels: false,
   update: set,
 }));

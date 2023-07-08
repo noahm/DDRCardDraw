@@ -6,7 +6,7 @@ import { SetLabels } from "./tournament-mode/drawing-labels";
 import { DrawingProvider, useDrawing } from "./drawing-context";
 import { NetworkingActions } from "./tournament-mode/networking-actions";
 import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
-import { useDrawState } from "./draw-state";
+import { useConfigState } from "./config-state";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -60,8 +60,8 @@ function ChartFromContext({ chartId }: { chartId: number }) {
 }
 
 function TournamentModeSpacer() {
-  const tournamentMode = useDrawState((s) => s.tournamentMode);
-  if (tournamentMode) {
+  const showLabels = useConfigState((s) => s.showLabels);
+  if (showLabels) {
     return null;
   }
   return <div style={{ height: "15px" }} />;

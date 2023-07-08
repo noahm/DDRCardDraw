@@ -1,14 +1,12 @@
 import { useCallback } from "react";
-import { useDrawState } from "../draw-state";
+import { useConfigState } from "../config-state";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
-
-import { RoundSelect, AutoCompleteSelect } from "./round-select";
-import { useConfigState } from "../config-state";
+import { AutoCompleteSelect, RoundSelect } from "./round-select";
 
 export function SetLabels() {
-  const tournamentMode = useDrawState((s) => s.tournamentMode);
-  if (!tournamentMode) {
+  const showLabels = useConfigState((s) => s.showLabels);
+  if (!showLabels) {
     return null;
   }
 
