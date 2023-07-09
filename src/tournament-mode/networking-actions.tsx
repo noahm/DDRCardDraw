@@ -110,6 +110,10 @@ const DEFAULT_FILENAME = "card-draw.png";
 export async function shareImage(dataUrl: string) {
   shareData(dataUrl, {
     filename: DEFAULT_FILENAME,
-    onCopyToastMessage: "Image copied to clipboard",
+    methods: [
+      { type: "nativeShare" },
+      { type: "clipboard", toastMessage: "Image copied to clipboard" },
+      { type: "download" },
+    ],
   });
 }

@@ -34,8 +34,10 @@ export function saveConfig() {
   )}`;
   return shareData(dataUri, {
     filename: `card-draw-config-${persistedObj.dataSetName}.json`,
-    onCopyToastMessage: "copied config to clipboard",
-    mobileShareTitle: "DDR Tools Config",
+    methods: [
+      { type: "nativeShare", allowDesktop: true },
+      { type: "download" },
+    ],
   });
 }
 

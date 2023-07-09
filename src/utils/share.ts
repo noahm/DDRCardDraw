@@ -1,34 +1,70 @@
 import { toaster } from "../toaster";
 
+interface NativeShare {
+  type: "nativeShare";
+  allowDesktop?: boolean;
+  title?: string;
+}
+
+interface Clipboard {
+  type: "clipboard";
+  toastMessage?: string;
+}
+
+interface Download {
+  type: "download";
+}
+
+type ShareMethod = NativeShare | Clipboard | Download;
+
 export async function shareData(
   dataUri: string,
   opts: {
     filename: string;
-    onCopyToastMessage: string;
-    mobileShareTitle?: string;
+    /** share options to try, in order of preference. attempts stop at first successful share event. */
+    methods: Array<ShareMethod>;
   }
 ) {
-  const blob = dataUriToBlob(dataUri);
-  if (
-    mobileShare({
-      title: opts.mobileShareTitle || "DDR.tools card draw",
-      files: [new File([blob], opts.filename, { type: blob.type })],
-    })
-  ) {
-    return;
-  }
-  try {
-    await copyToClipboard(blob);
-    toaster.show(
-      {
-        message: opts.onCopyToastMessage,
-        icon: "paperclip",
-      },
-      "copied-data"
-    );
-    return;
-  } catch {
-    downloadDataUrl(dataUri, opts.filename);
+  let blob: Blob | undefined;
+  for (const method of opts.methods) {
+    switch (method.type) {
+      case "nativeShare":
+        if (!blob) {
+          blob = dataUriToBlob(dataUri);
+        }
+        const maybePromise = mobileShare(
+          {
+            title: method.title,
+            files: [new File([blob], opts.filename, { type: blob.type })],
+          },
+          method.allowDesktop
+        );
+        if (maybePromise) {
+          return maybePromise;
+        }
+        break;
+
+      case "clipboard":
+        if (!blob) {
+          blob = dataUriToBlob(dataUri);
+        }
+        try {
+          await copyToClipboard(blob);
+          toaster.show(
+            {
+              message: method.toastMessage,
+              icon: "paperclip",
+            },
+            "copied-data"
+          );
+          return;
+        } catch {
+          break;
+        }
+      case "download":
+        downloadDataUrl(dataUri, opts.filename);
+        break;
+    }
   }
 }
 
@@ -37,13 +73,13 @@ export async function shareData(
  * will intentionally abort for non-mobile looking useragent strings
  * @returns promise of share event if initiated, or false if not attempted
  */
-export function mobileShare(shareData: ShareData) {
+export function mobileShare(shareData: ShareData, allowDesktop = false) {
   const agent: string =
     navigator.userAgent || navigator.vendor || (window as any).opera;
   if (
     typeof navigator.share !== "undefined" &&
     typeof navigator.canShare === "function" &&
-    isMobile(agent)
+    (allowDesktop || isMobile(agent))
   ) {
     if (navigator.canShare(shareData)) {
       return navigator.share(shareData).catch();
@@ -80,13 +116,13 @@ export function copyToClipboard(blob: Blob) {
 function dataUriToBlob(dataUri: string) {
   const headerIndex = dataUri.indexOf(",");
   const header = dataUri.slice(0, headerIndex);
-  const body = dataUri.slice(headerIndex);
+  const body = dataUri.slice(headerIndex + 1);
   const match = header.match(/data:(.+)(;base64)?$/);
   if (!match) {
     throw new Error("data uri is not well-formed");
   }
   const type = match[1] ?? undefined;
   const isBase64 = !!match[2];
-  const decoded = isBase64 ? atob(body) : body;
+  const decoded = isBase64 ? atob(body) : decodeURI(body);
   return new Blob([decoded], { type });
 }
