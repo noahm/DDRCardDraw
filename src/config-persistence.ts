@@ -28,11 +28,12 @@ type Serialized<T extends object> = {
 };
 
 export function saveConfig() {
+  const persistedObj = buildPersistedConfig();
   const dataUri = `data:application/json,${encodeURI(
-    JSON.stringify(buildPersistedConfig(), undefined, 2)
+    JSON.stringify(persistedObj, undefined, 2)
   )}`;
   return shareData(dataUri, {
-    filename: "ddr-tools-config.json",
+    filename: `card-draw-config-${persistedObj.dataSetName}.json`,
     onCopyToastMessage: "copied config to clipboard",
     mobileShareTitle: "DDR Tools Config",
   });
