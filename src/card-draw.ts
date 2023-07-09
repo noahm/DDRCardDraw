@@ -19,6 +19,7 @@ export function getDrawnChart(
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
     level: chart.lvl,
+    drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
     // Fill in variant data per game
@@ -100,12 +101,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   });
 
   for (const chart of eligibleCharts(configData, gameData)) {
-    let chartLevel = chart.level;
+    let levelMetric = chart.drawGroup || chart.level;
     // merge in higher difficulty charts into a single group, if configured to do so
-    if (useWeights && groupSongsAt && groupSongsAt < chartLevel) {
-      chartLevel = groupSongsAt;
+    if (useWeights && groupSongsAt && groupSongsAt < levelMetric) {
+      levelMetric = groupSongsAt;
     }
-    validCharts.get(chartLevel)?.push(chart);
+    validCharts.get(levelMetric)?.push(chart);
   }
 
   /**
@@ -125,7 +126,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   for (let level = lowerBound; level <= upperBound; level++) {
     let weightAmount = 0;
     if (useWeights) {
-      weightAmount = weights[level];
+      weightAmount = weights[level - lowerBound];
       expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {
