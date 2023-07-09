@@ -1,7 +1,7 @@
-import shallow from "zustand/shallow";
+import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { times } from "../utils";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
@@ -13,7 +13,6 @@ interface Props {
 
 export function WeightsControls({ high, low }: Props) {
   const { t } = useIntl();
-  const [groupCutoff, setGroupCutoff] = useState(high - 1);
   const { weights, forceDistribution, groupSongsAt, updateConfig } =
     useConfigState(
       (cfg) => ({
@@ -41,7 +40,7 @@ export function WeightsControls({ high, low }: Props) {
         return { groupSongsAt: null };
       }
 
-      return { groupSongsAt: groupCutoff };
+      return { groupSongsAt: state.upperBound - 1 };
     });
   }
 
@@ -52,7 +51,6 @@ export function WeightsControls({ high, low }: Props) {
     if (next < low) {
       return;
     }
-    setGroupCutoff(next);
     updateConfig({ groupSongsAt: next });
   }
 
@@ -113,7 +111,7 @@ export function WeightsControls({ high, low }: Props) {
       <NumericInput
         width={2}
         disabled={!groupSongsAt}
-        value={groupCutoff}
+        value={groupSongsAt || high - 1}
         min={levels[0]}
         onValueChange={handleGroupCutoffChange}
         placeholder="0"
