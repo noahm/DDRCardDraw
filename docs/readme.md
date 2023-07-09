@@ -126,6 +126,12 @@ Second, a color-coded histogram is displayed at the top to provide a quick summa
 
 Each drawn set has a camera icon in the top right. This saves an image of the current set with a transparent background suitable for use in stream layouts and other such designs. Resize your browser window to adjust the aspect ratio of the generated image.
 
+## Save/Load Settings
+
+Buttons at the top of the settings drawer will allow you to save and load settings for the card draw in a JSON file format. These can be hand-edited as needed, and shared between devices.
+
+![Screenshot of save/load buttons above settings drawer](images/save-load.png)
+
 ## Use as OBS Layer
 
 The app is aware of when it is loaded into an OBS Browser Source and will automatically remove its own background elements to better blend into a stream layout. (I recommend cropping out the top toolbar.) DDR Tools is fully usable within the browser source "Interact" window, but real pros use the [networking features](networking.md) to remotly control their browser sources.
