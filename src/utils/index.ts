@@ -1,4 +1,4 @@
-import { I18NDict } from "./models/SongData";
+import { I18NDict } from "../models/SongData";
 
 // add some old odd browser properties
 declare const navigator: Navigator & {

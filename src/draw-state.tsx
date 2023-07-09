@@ -9,8 +9,8 @@ import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
-import createStore from "zustand";
-import shallow from "zustand/shallow";
+import { create } from "zustand";
+import { shallow } from "zustand/shallow";
 import { DataConnection } from "peerjs";
 
 interface DrawState {
@@ -25,7 +25,7 @@ interface DrawState {
   injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
-export const useDrawState = createStore<DrawState>((set, get) => ({
+export const useDrawState = create<DrawState>((set, get) => ({
   gameData: null,
   fuzzySearch: null,
   drawings: [],
@@ -156,14 +156,11 @@ export function DrawStateManager(props: Props) {
     loadGameData(getInitialDataSet(props.defaultDataSet));
   }, [loadGameData, props.defaultDataSet]);
 
-  const allStrings = i18nData as Record<string, I18NDict>;
-  const useTranslations = allStrings;
-  const additionalStrings = gameData?.i18n;
   return (
     <IntlProvider
       locale={detectedLanguage}
-      translations={useTranslations}
-      mergeTranslations={additionalStrings}
+      translations={i18nData as Record<string, I18NDict>}
+      mergeTranslations={gameData?.i18n}
     >
       <ApplyDefaultConfig defaults={gameData?.defaults} />
       <UnloadHandler confirmUnload={hasDrawings} />

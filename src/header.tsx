@@ -29,6 +29,7 @@ export function Header() {
       />
       <MenuItem
         icon="help"
+        target="_blank"
         href="https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md"
         text={t("help")}
       />
