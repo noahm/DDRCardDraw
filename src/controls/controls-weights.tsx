@@ -1,4 +1,4 @@
-import { shallow } from "zustand/shallow";
+import shallow from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { times } from "../utils";
 import { useMemo } from "react";

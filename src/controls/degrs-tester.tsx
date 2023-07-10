@@ -24,6 +24,7 @@ export function isDegrs(thing: { name: string; artist: string }) {
 }
 
 function* oneMillionDraws() {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const gameData = useDrawState.getState().gameData!;
   const configState = useConfigState.getState();
 
