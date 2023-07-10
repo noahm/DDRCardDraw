@@ -83,7 +83,7 @@ export function groupGameData(gd: typeof availableGameData) {
         acc.push(asGame);
         return acc;
       }
-      const latest = acc.at(-1);
+      const latest = acc.length ? acc[acc.length - 1] : undefined;
       if (latest && latest.type === "parent" && latest.name === curr.parent) {
         latest.games.push(asGame);
       } else {
