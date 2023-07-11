@@ -30,6 +30,7 @@ const difficulties = new Set();
 const styles = new Set();
 const data = {
   meta: {
+    menuParent: "itg",
     flags: [],
     lvlMax: 0,
     lastUpdated: Date.now(),
