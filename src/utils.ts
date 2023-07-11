@@ -1,4 +1,4 @@
-import { I18NDict } from "./models/SongData";
+import type { I18NDict } from "./models/SongData";
 
 // add some old odd browser properties
 declare const navigator: Navigator & {
@@ -15,6 +15,14 @@ const browserLanguage: string =
 
 export const detectedLanguage = browserLanguage.slice(0, 2);
 
+export function zeroPad(n: number, digits: number) {
+  let ret = n.toString();
+  while (ret.length < digits) {
+    ret = "0" + ret;
+  }
+  return ret;
+}
+
 /**
  * Terse looping helper, one indexed
  * @param {number} n number of times to loop
@@ -27,6 +35,10 @@ export function times<T>(n: number, cb: (n: number) => T): Array<T> {
     results.push(cb(i));
   }
   return results;
+}
+
+export function getDefault(a: number[], i: any, d: number): number {
+  return (i in a && a[i]) || d;
 }
 
 export function* flattenedKeys(

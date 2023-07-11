@@ -3,7 +3,8 @@
     "gameMenu": {
       "title": "Select game data",
       "parent": {
-        "more": "More Games"
+        "more": "More Games",
+        "itg": "ITG Packs"
       }
     },
     "weights": {
@@ -22,8 +23,10 @@
       "drawerTitle": "Settings",
       "hideShowFilters": "Chart Filters",
       "chartCount": "Number to draw",
-      "upperBound": "Lvl Max",
-      "lowerBound": "Lvl Min",
+      "upperBoundLvl": "Lvl Max",
+      "lowerBoundLvl": "Lvl Min",
+      "upperBoundTier": "Tier Max",
+      "lowerBoundTier": "Tier Min",
       "constrainPocketPicks": "Pocket picks must match draw options",
       "useWeightedDistributions": "Use Weighted Distributions",
       "orderByAction": "Re-order by pick/ban",
@@ -83,8 +86,8 @@
     },
     "controls": {
       "chartCount": "ドロー数",
-      "upperBound": "上限",
-      "lowerBound": "下限",
+      "upperBoundLvl": "上限",
+      "lowerBoundLvl": "下限",
       "useWeightedDistributions": "レベル別に確率を設定する",
       "style": "スタイル",
       "difficulties": "難易度",

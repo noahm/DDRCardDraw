@@ -158,6 +158,8 @@ yarn start
 yarn build
 ```
 
+The app also has special support for "tiered" packs used in tournaments where songs of different groups are organized by tier using prefixes of the form `[T01] Song Name`. When importing packs of this style, add `tiered` as an additional import arg after your stub name.
+
 # Contact
 
 DDR Tools is primarily developed by me, Noah Manneschmidt, aka Cathadan. I'm open to contact on a variety of platforms:

@@ -36,7 +36,7 @@ export interface GameData {
     lastUpdated: number;
     styles: UniqueStringArr;
     /**
-     * List of all difficultiy classes available
+     * List of all difficulty classes available
      */
     difficulties: {
       /**
@@ -50,6 +50,7 @@ export interface GameData {
     }[];
     flags: UniqueStringArr1;
     lvlMax: number;
+    usesDrawGroups?: boolean;
   };
   /**
    * Defines the default configuration for this game
@@ -105,7 +106,14 @@ export interface Chart {
    * e.g. expert/challenge
    */
   diffClass: string;
+  /**
+   * in-game numeric rating
+   */
   lvl: number;
+  /**
+   * tournament-specific grouping of charts (e.g. tier)
+   */
+  drawGroup?: number;
   step?: number;
   shock?: number;
   freeze?: number;

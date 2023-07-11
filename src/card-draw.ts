@@ -19,6 +19,7 @@ export function getDrawnChart(
     artistTranslation: currentSong.artist_translation,
     bpm: currentSong.bpm,
     level: chart.lvl,
+    drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
     // Fill in variant data per game
@@ -48,11 +49,12 @@ export function chartIsValid(
   if (forPocketPick && !config.constrainPocketPicks) {
     return chart.style === config.style;
   }
+  const levelMetric = chart.drawGroup || chart.lvl;
   return (
     chart.style === config.style &&
     config.difficulties.has(chart.diffClass) &&
-    chart.lvl >= config.lowerBound &&
-    chart.lvl <= config.upperBound &&
+    levelMetric >= config.lowerBound &&
+    levelMetric <= config.upperBound &&
     (!chart.flags || chart.flags.every((f) => config.flags.has(f)))
   );
 }
@@ -99,12 +101,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   });
 
   for (const chart of eligibleCharts(configData, gameData)) {
-    let chartLevel = chart.level;
+    let levelMetric = chart.drawGroup || chart.level;
     // merge in higher difficulty charts into a single group, if configured to do so
-    if (useWeights && groupSongsAt && groupSongsAt < chartLevel) {
-      chartLevel = groupSongsAt;
+    if (useWeights && groupSongsAt && groupSongsAt < levelMetric) {
+      levelMetric = groupSongsAt;
     }
-    validCharts.get(chartLevel)?.push(chart);
+    validCharts.get(levelMetric)?.push(chart);
   }
 
   /**
