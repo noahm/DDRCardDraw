@@ -2,22 +2,13 @@
 
 [![Discord](https://img.shields.io/discord/1013159796024823898?label=discord&style=flat-square)](https://discord.gg/QPyEATsbP7) ![GitHub contributors](https://img.shields.io/github/contributors/noahm/ddrcarddraw?style=flat-square) ![GitHub branch checks state](https://img.shields.io/github/checks-status/noahm/ddrcarddraw/main?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/noahm/ddrcarddraw?style=flat-square) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/noahm/DDRCardDraw?style=flat-square)
 
-This web-app allows randomized selection of songs from Dance Dance Revolution and other music games
-with a variety of options for filtering which songs and charts are included. After songs are picked,
-they can be marked as protected or banned, or replaced with entirely separate songs. The primary use case
-is in competitive tournaments, but it also works well for personal training.
-
-The official build is available at [https://ddr.tools/](https://ddr.tools/).
-After being loaded once, it supports running offline with full operation without
-an internet connection in any modern web browser.
+The official build is available at [https://ddr.tools/](https://ddr.tools/). [Read all about what the app can do in the user manual.](https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md)
 
 ## Customizing / Contributing
 
-This app can be easily customized for any format a tournament might use, including adding song
-data for other games. If you have requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
+This app can be easily customized for any format a tournament might use, including adding song data for other games. If you have requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
 
-If you want to take a stab at developing features yourself, you will need have node.js >= 18.0.0 installed along with
-[yarn](https://yarnpkg.com/) and some familarity with React probably helps.
+If you want to take a stab at developing features yourself, you will need have node.js >= 18.0.0 installed along with [yarn](https://yarnpkg.com/) and some familarity with React probably helps.
 
 Clone this repo to your computer. Then the following commands will be useful:
 
@@ -41,8 +32,7 @@ yarn build:zip
 
 ## Data imports
 
-There are some other useful scripts in `scripts/` that help in maintaining data integrity and pulling
-in new song data. Several have top-level aliases so you can conveniently update song data: (must have node and yarn installed, and run `yarn install` once, as above)
+There are some other useful scripts in `scripts/` that help in maintaining data integrity and pulling in new song data. Several have top-level aliases so you can conveniently update song data: (must have node and yarn installed, and run `yarn install` once, as above)
 
 ```sh
 # download latest StepManiaX song data and jackets
@@ -59,5 +49,4 @@ yarn import:itg path/to/pack/folder some-stub-name
 yarn import:pump path/to/pumpout/db
 ```
 
-Ideas for future develoment are now being tracked as issues on this repo. Feel free to jump in if you
-want to help build out something new!
+Ideas for future develoment are now being tracked as issues on this repo. Feel free to jump in if you want to help build out something new!

@@ -288,6 +288,7 @@ function GeneralSettings() {
       });
     }
   };
+  const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   return (
     <>
@@ -326,7 +327,11 @@ function GeneralSettings() {
         </FormGroup>
         <div className={styles.inlineControls}>
           <FormGroup
-            label={t("controls.lowerBound")}
+            label={
+              usesDrawGroups
+                ? t("controls.lowerBoundTier")
+                : t("controls.lowerBoundLvl")
+            }
             contentClassName={styles.narrowInput}
           >
             <NumericInput
@@ -340,7 +345,11 @@ function GeneralSettings() {
             />
           </FormGroup>
           <FormGroup
-            label={t("controls.lowerBound")}
+            label={
+              usesDrawGroups
+                ? t("controls.upperBoundTier")
+                : t("controls.upperBoundLvl")
+            }
             contentClassName={styles.narrowInput}
           >
             <NumericInput
@@ -462,7 +471,11 @@ function GeneralSettings() {
           label={t("controls.useWeightedDistributions")}
         />
         <Collapse isOpen={useWeights}>
-          <WeightsControls high={upperBound} low={lowerBound} />
+          <WeightsControls
+            usesTiers={usesDrawGroups}
+            high={upperBound}
+            low={lowerBound}
+          />
         </Collapse>
       </FormGroup>
     </>

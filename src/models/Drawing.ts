@@ -11,6 +11,7 @@ export interface EligibleChart {
   diffAbbr: string;
   diffColor: string;
   level: number;
+  drawGroup?: number;
   flags: string[];
   song: Song;
 }
