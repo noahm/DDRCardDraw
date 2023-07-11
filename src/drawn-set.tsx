@@ -24,25 +24,37 @@ function ChartList() {
   const charts = useDrawing((d) => d.charts);
   return (
     <div className={styles.chartList}>
-      {charts.map((c) => (
-        <ChartFromContext key={c.id} chartId={c.id} />
+      {charts.map((c, idx) => (
+        <ChartFromContext
+          key={c.id}
+          chartIdx={c.id}
+          isLast={idx + 1 === charts.length}
+        />
       ))}
     </div>
   );
 }
 
-function ChartFromContext({ chartId }: { chartId: number }) {
-  const chart = useDrawing((d) => d.charts.find((c) => c.id === chartId));
-  const veto = useDrawing((d) => d.bans.find((b) => b.chartId === chartId));
+function ChartFromContext({
+  chartIdx,
+  isLast,
+}: {
+  chartIdx: number;
+  isLast: boolean;
+}) {
+  const chart = useDrawing((d) => d.charts.find((c) => c.id === chartIdx));
+  const revealed = useDrawing((d) => d.revealed);
+  const veto = useDrawing((d) => d.bans.find((b) => b.chartId === chartIdx));
   const protect = useDrawing((d) =>
-    d.protects.find((b) => b.chartId === chartId)
+    d.protects.find((b) => b.chartId === chartIdx)
   );
   const pocketPick = useDrawing((d) =>
-    d.pocketPicks.find((b) => b.chartId === chartId)
+    d.pocketPicks.find((b) => b.chartId === chartIdx)
   );
   const winner = useDrawing((d) =>
-    d.winners.find((b) => b.chartId === chartId)
+    d.winners.find((b) => b.chartId === chartIdx)
   );
+  const markRevealed = useDrawing((d) => d.markRevealed);
   if (!chart) {
     return null;
   }
@@ -55,6 +67,8 @@ function ChartFromContext({ chartId }: { chartId: number }) {
       winner={winner?.player}
       chart={chart}
       actionsEnabled
+      revealWithDelayMs={revealed ? undefined : 500 * (chartIdx + 1)}
+      onReveal={isLast ? markRevealed : undefined}
     />
   );
 }

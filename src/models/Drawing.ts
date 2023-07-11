@@ -39,6 +39,7 @@ export interface Drawing {
   protects: Array<PlayerActionOnChart>;
   winners: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
+  revealed: boolean;
   /** __ prefix avoids serializing this field during sync */
   __syncPeer?: DataConnection;
 }

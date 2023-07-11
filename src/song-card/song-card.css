@@ -30,32 +30,76 @@
     U+FEFF, U+FFFD;
 }
 
-.chart {
-  display: flex !important;
+.cardContainer {
   flex: 1 0 0;
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  flex-direction: column;
-  min-height: 200px;
+  display: flex;
+  align-items: stretch;
   color: white;
   text-shadow: 0px 0px 10px black, 1px 1px 1px black;
   font-family: Evogria, "Russo One", Arial, "Helvetica Neue", Helvetica,
     sans-serif;
   -webkit-tap-highlight-color: transparent;
-  margin: 5px;
-  word-wrap: break-word;
-  overflow: hidden;
   transition: transform ease 0.3s;
-  position: relative;
   min-width: 165px;
+  min-height: 400px;
+  margin: 5px;
+
+  perspective: 1000px;
+}
+
+.cardContents {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  align-items: stretch;
+  transition: transform 0.3s ease-in-out;
+
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.faceDown .cardContents {
+  transform: rotateY(180deg);
+}
+
+.frontFace {
+  display: flex !important;
+  flex: 1 1 0;
+  flex-direction: column;
+  text-align: center;
+  word-wrap: break-word;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.chart.clickable {
+.backFace {
+  transform: rotateY(180deg);
+  position: absolute;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  background-image: url("./last-card-backface.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.frontFace,
+.frontFace *,
+.backFace {
+  backface-visibility: hidden;
+}
+
+.clickable {
   cursor: pointer;
 }
 

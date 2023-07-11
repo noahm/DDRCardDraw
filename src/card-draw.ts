@@ -205,6 +205,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   return {
     id: nanoid(10),
+    revealed: false,
     charts: drawnCharts,
     bans: [],
     protects: [],
