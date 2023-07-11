@@ -82,7 +82,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
   return (
     <section className={styles.weights}>
       <p className={Classes.TEXT_MUTED}>{t("weights.explanation")}</p>
-      {groups.map((group) => (
+      {groups.map((group, i) => (
         <div className={styles.level} key={group}>
           <NumericInput
             width={2}
@@ -95,7 +95,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
           />
           {groupSongsAt === group && ">="}
           {usesTiers ? `T${zeroPad(group, 2)}` : group}{" "}
-          <sub>{percentages[group]}%</sub>
+          <sub>{percentages[i]}%</sub>
         </div>
       ))}
       <Checkbox
