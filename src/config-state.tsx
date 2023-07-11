@@ -1,4 +1,4 @@
-import createStore, { StoreApi } from "zustand";
+import { StoreApi, create } from "zustand";
 
 export interface ConfigState {
   chartCount: number;
@@ -18,10 +18,11 @@ export interface ConfigState {
   showPool: boolean;
   playerNames: string[];
   tournamentRounds: string[];
+  showLabels: boolean;
   update: StoreApi<ConfigState>["setState"];
 }
 
-export const useConfigState = createStore<ConfigState>((set) => ({
+export const useConfigState = create<ConfigState>((set) => ({
   chartCount: 5,
   upperBound: 0,
   lowerBound: 0,
@@ -46,5 +47,6 @@ export const useConfigState = createStore<ConfigState>((set) => ({
     "Grand Finals",
     "Tiebreaker",
   ],
+  showLabels: false,
   update: set,
 }));

@@ -9,12 +9,11 @@ import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
-import createStore from "zustand";
-import shallow from "zustand/shallow";
+import { create } from "zustand";
+import { shallow } from "zustand/shallow";
 import { DataConnection } from "peerjs";
 
 interface DrawState {
-  tournamentMode: boolean;
   gameData: GameData | null;
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
@@ -23,20 +22,15 @@ interface DrawState {
   loadGameData(dataSetName: string): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
-  toggleTournamentMode(): void;
   injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
-export const useDrawState = createStore<DrawState>((set, get) => ({
-  tournamentMode: false,
+export const useDrawState = create<DrawState>((set, get) => ({
   gameData: null,
   fuzzySearch: null,
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
-  toggleTournamentMode() {
-    set((prev) => ({ tournamentMode: !prev.tournamentMode }));
-  },
   async loadGameData(dataSetName: string) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
@@ -162,14 +156,11 @@ export function DrawStateManager(props: Props) {
     loadGameData(getInitialDataSet(props.defaultDataSet));
   }, [loadGameData, props.defaultDataSet]);
 
-  const allStrings = i18nData as Record<string, I18NDict>;
-  const useTranslations = allStrings;
-  const additionalStrings = gameData?.i18n;
   return (
     <IntlProvider
       locale={detectedLanguage}
-      translations={useTranslations}
-      mergeTranslations={additionalStrings}
+      translations={i18nData as Record<string, I18NDict>}
+      mergeTranslations={gameData?.i18n}
     >
       <ApplyDefaultConfig defaults={gameData?.defaults} />
       <UnloadHandler confirmUnload={hasDrawings} />

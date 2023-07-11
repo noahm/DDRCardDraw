@@ -35,6 +35,7 @@ import { useRemotePeers } from "../tournament-mode/remote-peers";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
+import { loadConfig, saveConfig } from "../config-persistence";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -125,7 +126,19 @@ export function HeaderControls() {
         position={Position.RIGHT}
         size={isNarrow ? DrawerSize.LARGE : "500px"}
         onClose={() => setSettingsOpen(false)}
-        title={<FormattedMessage id="controls.drawerTitle" />}
+        title={
+          <>
+            <FormattedMessage id="controls.drawerTitle" />
+            <ButtonGroup style={{ marginLeft: "10px" }}>
+              <Button icon="floppy-disk" onClick={saveConfig}>
+                Save
+              </Button>
+              <Button icon="import" onClick={loadConfig}>
+                Load
+              </Button>
+            </ButtonGroup>
+          </>
+        }
       >
         <ControlsDrawer />
       </Drawer>
