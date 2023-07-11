@@ -126,7 +126,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   for (let level = lowerBound; level <= upperBound; level++) {
     let weightAmount = 0;
     if (useWeights) {
-      weightAmount = weights[level - lowerBound];
+      weightAmount = weights[level];
       expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {

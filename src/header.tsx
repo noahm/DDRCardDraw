@@ -15,7 +15,6 @@ import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
-import styles from "./header.css";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -28,6 +27,11 @@ export function Header() {
         onClick={() => setAboutOpen(true)}
         text={t("credits")}
       />
+      <MenuItem
+        icon="help"
+        href="https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md"
+        text={t("help")}
+      />
       <ThemeToggle />
       <LastUpdate />
     </Menu>
@@ -35,7 +39,6 @@ export function Header() {
 
   return (
     <Navbar
-      className={styles.header}
       style={{
         position: "sticky",
         top: 0,
