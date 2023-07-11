@@ -41,7 +41,8 @@
   -webkit-tap-highlight-color: transparent;
   transition: transform ease 0.3s;
   min-width: 165px;
-  min-height: 350px;
+  min-height: 240px;
+  max-width: 250px;
   margin: 5px;
   perspective: 1000px;
 }

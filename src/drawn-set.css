@@ -13,6 +13,7 @@ body:global(.bp5-dark) {
   padding: 10px;
   overflow: hidden;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .drawing {
