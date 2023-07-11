@@ -41,9 +41,8 @@
   -webkit-tap-highlight-color: transparent;
   transition: transform ease 0.3s;
   min-width: 165px;
-  min-height: 400px;
+  min-height: 350px;
   margin: 5px;
-
   perspective: 1000px;
 }
 
@@ -88,7 +87,7 @@
   right: 0;
   bottom: 0;
   background-color: black;
-  background-image: url("./last-card-backface.png");
+  background-image: url("./last-card-backface2.png");
   background-position: center;
   background-size: cover;
 }
@@ -114,7 +113,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  backdrop-filter: blur(5px) brightness(80%);
+  backdrop-filter: brightness(80%);
   /* subtle darkening gradient overlay over the bottom half of jacket background */
   background-image: linear-gradient(
     transparent,
