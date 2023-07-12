@@ -81,22 +81,28 @@ export function SongCard(props: Props) {
   const [showingContextMenu, setContextMenuOpen] = useState(false);
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
-  const [isFaceDown, setIsFaceDown] = useState(
-    typeof revealWithDelayMs === "number"
-  );
+  const [revealState, setRevealState] = useState<
+    "offScreen" | "faceDown" | false
+  >(typeof revealWithDelayMs === "number" && "offScreen");
   const animDelay = revealWithDelayMs || 0;
 
   useLayoutEffect(() => {
-    if (isFaceDown) {
-      const timeout = setTimeout(() => {
-        setIsFaceDown(false);
-        if (onReveal) {
-          onReveal();
-        }
-      }, animDelay);
-      return () => clearTimeout(timeout);
+    let nextState: typeof revealState;
+    if (revealState === "offScreen") {
+      nextState = "faceDown";
+    } else if (revealState === "faceDown") {
+      nextState = false;
+    } else {
+      return;
     }
-  }, [animDelay, isFaceDown, onReveal]);
+    const timeout = setTimeout(() => {
+      setRevealState(nextState);
+      if (!nextState && onReveal) {
+        onReveal();
+      }
+    }, animDelay / (nextState === "faceDown" ? 6 : 1));
+    return () => clearTimeout(timeout);
+  }, [animDelay, revealState, onReveal]);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] = useState<
     0 | 1 | 2
@@ -149,15 +155,17 @@ export function SongCard(props: Props) {
     [styles.replaced]: replacedBy,
     [styles.clickable]: !!menuContent || !!props.onClick,
     [styles.hideVeto]: hideVetos,
-    [styles.faceDown]: isFaceDown,
+    [styles.faceDown]: !!revealState,
+    [styles.offScreen]: revealState === "offScreen",
   });
 
   return (
     <div
       className={containerClass}
+      // style={{ transitionDelay: `${animDelay}ms` }}
       onClick={
-        isFaceDown
-          ? () => setIsFaceDown(false)
+        revealState
+          ? () => setRevealState(false)
           : !menuContent || showingContextMenu || pocketPickPendingForPlayer
           ? props.onClick
           : showMenu

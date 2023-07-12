@@ -47,6 +47,10 @@
   perspective: 1000px;
 }
 
+.offScreen.cardContainer {
+  transform: translate(2000px, -2000px);
+}
+
 .cardContents {
   position: relative;
   display: flex;
