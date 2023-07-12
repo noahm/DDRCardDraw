@@ -1,6 +1,7 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useLayoutEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawing } from "../drawing-context";
@@ -34,6 +35,7 @@ interface Props {
   winner?: Player;
   replacedWith?: EligibleChart;
   actionsEnabled?: boolean;
+  /** if undefined, card starts revealed */
   revealWithDelayMs?: number;
   onReveal?(): void;
 }
@@ -81,28 +83,8 @@ export function SongCard(props: Props) {
   const [showingContextMenu, setContextMenuOpen] = useState(false);
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
-  const [revealState, setRevealState] = useState<
-    "offScreen" | "faceDown" | false
-  >(typeof revealWithDelayMs === "number" && "offScreen");
-  const animDelay = revealWithDelayMs || 0;
-
-  useLayoutEffect(() => {
-    let nextState: typeof revealState;
-    if (revealState === "offScreen") {
-      nextState = "faceDown";
-    } else if (revealState === "faceDown") {
-      nextState = false;
-    } else {
-      return;
-    }
-    const timeout = setTimeout(() => {
-      setRevealState(nextState);
-      if (!nextState && onReveal) {
-        onReveal();
-      }
-    }, animDelay / (nextState === "faceDown" ? 6 : 1));
-    return () => clearTimeout(timeout);
-  }, [animDelay, revealState, onReveal]);
+  const shouldAnimate = typeof revealWithDelayMs === "number";
+  const animDelay = (revealWithDelayMs || 0) / 1000;
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] = useState<
     0 | 1 | 2
@@ -155,23 +137,39 @@ export function SongCard(props: Props) {
     [styles.replaced]: replacedBy,
     [styles.clickable]: !!menuContent || !!props.onClick,
     [styles.hideVeto]: hideVetos,
-    [styles.faceDown]: !!revealState,
-    [styles.offScreen]: revealState === "offScreen",
   });
 
   return (
-    <div
+    <motion.div
+      variants={{
+        concealed: {
+          translate: "2000px -2000px",
+        },
+        revealed: {
+          translate: "0px 0px",
+          transition: {
+            when: "beforeChildren",
+            delay: animDelay / 3,
+          },
+        },
+      }}
+      initial={shouldAnimate ? "concealed" : "revealed"}
+      animate="revealed"
+      onAnimationComplete={onReveal}
       className={containerClass}
-      // style={{ transitionDelay: `${animDelay}ms` }}
       onClick={
-        revealState
-          ? () => setRevealState(false)
-          : !menuContent || showingContextMenu || pocketPickPendingForPlayer
+        !menuContent || showingContextMenu || pocketPickPendingForPlayer
           ? props.onClick
           : showMenu
       }
     >
-      <div className={styles.cardContents}>
+      <motion.div
+        variants={{
+          concealed: { rotateY: "180deg" },
+          revealed: { rotateY: "0deg", transition: { delay: animDelay } },
+        }}
+        className={styles.cardContents}
+      >
         <div className={styles.frontFace} style={jacketBg}>
           <SongSearch
             isOpen={!!pocketPickPendingForPlayer}
@@ -248,7 +246,7 @@ export function SongCard(props: Props) {
           </Popover>
         </div>
         <div className={styles.backFace} />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
