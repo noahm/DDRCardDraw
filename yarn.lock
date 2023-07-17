@@ -1028,20 +1028,20 @@
     call-me-maybe "^1.0.1"
     js-yaml "^4.1.0"
 
-"@blueprintjs/colors@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.0.0.tgz#ad58b2e0de73922e3359b82ec3822b2d59fbc5e2"
-  integrity sha512-ktffKeaRGaimSVsRT2xQ4qhQsGX4f7CuhHT3oGvc2B/VINzTFZ1NzM6L3srfKuGBYVQWxgTZRr/jqyDcPJm1NQ==
+"@blueprintjs/colors@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.0.1.tgz#d8dae32b6335a7b3c0521e1f28422f4c8c380da1"
+  integrity sha512-Lz3TSHJBL7+Ar/pQS15ewbNMMZc9p0CyBTPvICx4sWVH2STIJrvh05f+rdOBsKyx+FdTGTBoISyw67ZOSXvWVA==
   dependencies:
     tslib "~2.5.0"
 
-"@blueprintjs/core@^5.0.0", "@blueprintjs/core@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-5.0.1.tgz#8d33e907ee16e507d96c416be91840082c3cf3d4"
-  integrity sha512-0UFPcn2o1H+UUMo7QgUf3bN/9RlYBQ7s3MkS3KjSNW2t/+UmSLt9FWp9cPQ+l7+LFJNZ49oxuItHNTgbxMTBDw==
+"@blueprintjs/core@^5.0.0", "@blueprintjs/core@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-5.1.2.tgz#a846e4a1fc23b1535bd79352057b333a5597690b"
+  integrity sha512-dBRwtx2QpO7i8WEYn2GkVX4sb7+11c7f3rQhS1nEce1Sw59kdqjehLp/RsMvFiu+Dm/4Skm0PPS+zkeaeeHu4w==
   dependencies:
-    "@blueprintjs/colors" "^5.0.0"
-    "@blueprintjs/icons" "^5.0.0"
+    "@blueprintjs/colors" "^5.0.1"
+    "@blueprintjs/icons" "^5.1.1"
     "@popperjs/core" "^2.11.7"
     classnames "^2.3.1"
     normalize.css "^8.0.1"
@@ -1049,22 +1049,22 @@
     react-transition-group "^4.4.5"
     tslib "~2.5.0"
 
-"@blueprintjs/icons@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-5.0.0.tgz#dc4f26b3043ebfdb2514a0134299f67d436d5166"
-  integrity sha512-RVfiIdKfPBzj3gTYdPH3k/7PVI8pxcGhRsGYGnoypR9P9u3Eyx9zpv03El8ZoQZD3zG2kgk5V8DHmlOXwrgtdg==
+"@blueprintjs/icons@^5.0.0", "@blueprintjs/icons@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-5.1.1.tgz#eb93f1df06f6cf4d53a231e718070fdb1db9da3d"
+  integrity sha512-NaYocDlcCquIo+MIyOY8Aqc3LI+8DyqxJEF/ENxMXVXzNfX4cv3+GsywCp2aExS2QO95umrbjKhr/3B3+OxnLw==
   dependencies:
     change-case "^4.1.2"
     classnames "^2.3.1"
     tslib "~2.5.0"
 
 "@blueprintjs/select@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/select/-/select-5.0.1.tgz#e0a0636a6bcbcd85ea8e11f9640029c3a07e14cc"
-  integrity sha512-ff9aoWB3qoFR4F/ehjivS7JFk6uwETEQaHqqIDUw0/XrkV2LSUMHzH4ODZcHjjmJY3J/GSzdOhdwQEvoFZ/6TA==
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/select/-/select-5.0.4.tgz#fde2e04972c853a68edb5e063503ccab864bc1c8"
+  integrity sha512-zeeL+BR3C8nCpgWeAuY88K9YTsMR32DfYZogYYneFKRcX2zTXZ42ytU0OrwFoV7OhbXjfHDWPGaZpm9eLBUczg==
   dependencies:
-    "@blueprintjs/core" "^5.0.1"
-    "@blueprintjs/icons" "^5.0.0"
+    "@blueprintjs/core" "^5.1.2"
+    "@blueprintjs/icons" "^5.1.1"
     classnames "^2.3.1"
     tslib "~2.5.0"
 
@@ -4693,10 +4693,10 @@ jiti@^1.18.2:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.18.2.tgz#80c3ef3d486ebf2450d9335122b32d121f2a83cd"
   integrity sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==
 
-jotai@^1.4.6:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-1.6.4.tgz#4d9904362c53c4293d32e21fb358d3de34b82912"
-  integrity sha512-XC0ExLhdE6FEBdIjKTe6kMlHaAUV/QiwN7vZond76gNr/WdcdonJOEW79+5t8u38sR41bJXi26B1dRi7cCRz9A==
+jotai@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.2.2.tgz#1e181789dcc01ced8240b18b95d9fa10169f9366"
+  integrity sha512-Cn8hnBg1sc5ppFwEgVGTfMR5WSM0hbAasd/bdAwIwTaum0j3OUPqBSC4tyk3jtB95vicML+RRWgKFOn6gtfN0A==
 
 jpeg-js@^0.4.4:
   version "0.4.4"
@@ -6043,9 +6043,9 @@ react-dom@^18.0.0:
     scheduler "^0.23.0"
 
 react-fast-compare@^3.0.1, react-fast-compare@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
-  integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
+  integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
 
 react-intl@^6.4.4:
   version "6.4.4"
@@ -6365,9 +6365,9 @@ selfsigned@^2.1.1:
     node-forge "^1"
 
 semver@^6.3.1, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.0, semver@^7.5.2:
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.3.tgz#161ce8c2c6b4b3bdca6caadc9fa3317a4c4fe88e"
-  integrity sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
   dependencies:
     lru-cache "^6.0.0"
 
