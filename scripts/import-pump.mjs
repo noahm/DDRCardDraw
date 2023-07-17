@@ -41,7 +41,7 @@ function labelToFlag(label) {
 if (!fs.existsSync("pump.db")) {
   console.error(
     "No local data found, download a copy from the url below and save it as pump.db",
-    "  https://github.com/AnyhowStep/pump-out-sqlite3-dump/tree/master/dump"
+    "  https://github.com/AnyhowStep/pump-out-sqlite3-dump/tree/master/dump",
   );
   process.exit(0);
 }
@@ -103,7 +103,7 @@ EXISTS(
           _derived_versionAncestor.versionId = 176
       )
     )
-);`
+);`,
     )
     .all();
 
@@ -160,7 +160,7 @@ WHERE
 						  _derived_versionAncestor.versionId = 176
 				  )
 		  	)
-	);`
+	);`,
     )
     .all();
 
@@ -193,7 +193,7 @@ WHERE
 			  WHERE
 				  songCardVersion.songCardId = songCard.songCardId
 		  	)
-	);`
+	);`,
     )
     .all();
 
@@ -204,7 +204,7 @@ WHERE
       internalHexColor color,
       internalTitle title,
       modeId
-    from mode order by sortOrder`
+    from mode order by sortOrder`,
     )
     .all();
   const difficultyById = new Map();
@@ -401,7 +401,7 @@ ORDER BY
 
   await writeJsonData(
     pumpData,
-    path.resolve(path.join(__dirname, "../src/songs/pump.json"))
+    path.resolve(path.join(__dirname, "../src/songs/pump.json")),
   );
   if (requestQueue.size) {
     ui.log.write("waiting on images to finish downloading...");

@@ -42,7 +42,7 @@ export function getDefault(a: number[], i: any, d: number): number {
 }
 
 export function* flattenedKeys(
-  input: I18NDict
+  input: I18NDict,
 ): Generator<[string, string], void> {
   for (const key in input) {
     const value = input[key];
@@ -107,7 +107,7 @@ export function groupGameData(gd: typeof availableGameData) {
       }
       return acc;
     },
-    []
+    [],
   );
 }
 

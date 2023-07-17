@@ -48,7 +48,7 @@ export function VersionSelect() {
           handleClick: onClick,
           handleFocus: onFocus,
           modifiers: { active, disabled, matchesPredicate },
-        }
+        },
       ) =>
         matchesPredicate ? null : (
           <MenuItem

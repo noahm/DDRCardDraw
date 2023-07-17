@@ -113,7 +113,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
 
 function findMatchingChart(charts, target) {
   return charts.find(
-    (oc) => oc.style === target.style && oc.diffClass === target.diffClass
+    (oc) => oc.style === target.style && oc.diffClass === target.diffClass,
   );
 }
 
@@ -168,7 +168,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       log,
       MIX_META.ziv,
       MIX_META.includeFolders,
-      MIX_META.titleOffset
+      MIX_META.titleOffset,
     ).then((songs) => {
       log(`Found ${songs.length} songs on ZiV`);
       return songs;
@@ -198,7 +198,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
     if (!existingSong) {
       unmatchedSa++;
       log(
-        `  Unmatched song from SA: ${saSong.name}\n    index ${saSong.saIndex}\n    hash ${saSong.saHash}`
+        `  Unmatched song from SA: ${saSong.name}\n    index ${saSong.saIndex}\n    hash ${saSong.saHash}`,
       );
     }
   }
@@ -235,7 +235,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
               if (song.remyLink) {
                 const remyJacket = await getJacketFromRemySong(
                   song.remyLink,
-                  song.name_translation
+                  song.name_translation,
                 );
                 if (remyJacket) {
                   song.jacket = remyJacket;
@@ -251,7 +251,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
           }
         } else {
           const maybeJacket = checkJacketExists(
-            song.name_translation || song.name
+            song.name_translation || song.name,
           );
           if (maybeJacket) {
             song.jacket = maybeJacket;
@@ -269,7 +269,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         if (!song.saIndex) song.saIndex = existingSong.saIndex;
       }
       indexedSongs[zivSong.name] = song;
-    })
+    }),
   );
 }
 
@@ -277,10 +277,10 @@ async function main() {
   const targetFile = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     "../src/songs",
-    MIX_META.filename
+    MIX_META.filename,
   );
   const existingData = JSON.parse(
-    await readFile(targetFile, { encoding: "utf-8" })
+    await readFile(targetFile, { encoding: "utf-8" }),
   );
   const prevCount = existingData.songs.length;
   /** index of songs by title */
@@ -308,7 +308,7 @@ async function main() {
     if (!song.jacket && song.remyLink) {
       const remyJacket = await getJacketFromRemySong(
         song.remyLink,
-        song.name_translation
+        song.name_translation,
       );
       if (remyJacket) {
         song.jacket = remyJacket;
@@ -320,7 +320,7 @@ async function main() {
   ui.log.write(
     `Wrote ${existingData.songs.length} (${
       existingData.songs.length - prevCount
-    } new) sorted songs to ${path.basename(targetFile)}`
+    } new) sorted songs to ${path.basename(targetFile)}`,
   );
 
   if (requestQueue.size) {

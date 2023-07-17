@@ -5,7 +5,7 @@ import { GameData } from "../models/SongData";
  */
 export function getDifficultyColor(
   gameData: GameData,
-  difficultyClass: string
+  difficultyClass: string,
 ): string {
   return (
     gameData.meta.difficulties.find((d) => d.key === difficultyClass)?.color ||

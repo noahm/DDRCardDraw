@@ -126,7 +126,7 @@ function bindPeerConn(conn: DataConnection) {
     conn,
     (initialState) => {
       useDrawState.getState().injectRemoteDrawing(initialState, conn);
-    }
+    },
   );
 
   useRemotePeers.setState((prev) => {
@@ -143,7 +143,7 @@ function bindPeerConn(conn: DataConnection) {
         message: `Remote peer ${displayFromPeerId(conn.peer)} disconnected`,
         intent: Intent.WARNING,
       },
-      "removePeer"
+      "removePeer",
     );
     const rp = new Map(useRemotePeers.getState().remotePeers);
     if (rp.delete(conn.peer)) {

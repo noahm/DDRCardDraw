@@ -40,7 +40,7 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
     action: "ban" | "protect" | "pocket",
     chartId: number,
     player: 1 | 2,
-    chart?: EligibleChart
+    chart?: EligibleChart,
   ): void;
   setWinner(chartId: number, p: 1 | 2 | null): void;
 }
@@ -151,7 +151,7 @@ const {
     },
   }),
   (p) => p.initialDrawing.id,
-  { initialDrawing: stubDrawing }
+  { initialDrawing: stubDrawing },
 );
 
 export { useDrawing, DrawingProvider, allDrawingStores, useDrawingStore };

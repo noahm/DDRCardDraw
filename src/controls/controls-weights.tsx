@@ -22,11 +22,11 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
         groupSongsAt: cfg.groupSongsAt,
         updateConfig: cfg.update,
       }),
-      shallow
+      shallow,
     );
   let groups = useMemo(
     () => times(high - low + 1, (n) => n + low - 1),
-    [high, low]
+    [high, low],
   );
 
   function toggleForceDistribution() {
@@ -72,7 +72,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
   }
   const totalWeight = groups.reduce(
     (total, group) => total + (weights[group] || 0),
-    0
+    0,
   );
   const percentages = groups.map((group) => {
     const value = weights[group] || 0;

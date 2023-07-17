@@ -77,7 +77,7 @@ function validateContents(dataFile) {
       }
       if (!difficulties.has(chart.diffClass)) {
         errors.push(
-          `unrecognized diffClass "${chart.diffClass}" used by ${song.name}`
+          `unrecognized diffClass "${chart.diffClass}" used by ${song.name}`,
         );
       }
       if (dataFile.meta.usesDrawGroups) {

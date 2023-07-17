@@ -17,7 +17,7 @@ export function UpdateManager() {
               message: t("updateLoading"),
               intent: Intent.WARNING,
             },
-            "UpdateManager"
+            "UpdateManager",
           );
         },
         onUpdated() {
@@ -33,7 +33,7 @@ export function UpdateManager() {
                 onClick: () => window.location.reload(),
               },
             },
-            "UpdateManger"
+            "UpdateManger",
           );
         },
       });

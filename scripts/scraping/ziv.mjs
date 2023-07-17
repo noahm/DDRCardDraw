@@ -14,7 +14,7 @@ export async function getSongsFromZiv(
   log,
   url,
   withFolders = false,
-  titleOffset
+  titleOffset,
 ) {
   log("fetching data from zenius-i-vanisher.com");
   const dom = await requestQueue.add(() => JSDOM.fromURL(url));

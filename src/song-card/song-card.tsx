@@ -46,7 +46,7 @@ function useIconCallbacksForChart(chartId: number): IconCallbacks {
       d.resetChart,
       d.setWinner,
     ],
-    shallow
+    shallow,
   );
 
   return useMemo(
@@ -58,7 +58,7 @@ function useIconCallbacksForChart(chartId: number): IconCallbacks {
       onReset: resetChart.bind(undefined, chartId),
       onSetWinner: setWinner.bind(undefined, chartId),
     }),
-    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner]
+    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner],
   );
 }
 

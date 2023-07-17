@@ -12,5 +12,5 @@ createRoot(toasterRoot).render(
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       toaster = instance!;
     }}
-  />
+  />,
 );

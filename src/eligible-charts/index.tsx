@@ -25,7 +25,7 @@ export default function EligibleChartsList() {
 
   const charts = useMemo(
     () => (gameData ? Array.from(eligibleCharts(configState, gameData)) : []),
-    [gameData, configState]
+    [gameData, configState],
   );
   const [songs, filteredCharts] = useMemo(() => {
     const songs = new Set<string>();
@@ -69,7 +69,7 @@ export default function EligibleChartsList() {
             <TesterCard chart={chart} key={idx} />
           ) : (
             <SongCard chart={chart} key={idx} />
-          )
+          ),
         )}
       </div>
     </>

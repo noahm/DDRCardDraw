@@ -6,7 +6,7 @@ import { BlueprintIcons_16Id } from "@blueprintjs/icons/lib/esm/generated/16px/b
 
 export const renderRoundLabel: ItemRenderer<string> = (
   roundLabel,
-  { handleClick, modifiers, query, handleFocus }
+  { handleClick, modifiers, query, handleFocus },
 ) => {
   if (!modifiers.matchesPredicate) {
     return null;

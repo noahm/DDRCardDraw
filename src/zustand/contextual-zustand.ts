@@ -10,17 +10,17 @@ import { StoreApi, useStore, createStore } from "zustand";
 
 export function createContextualStore<
   StoreValue,
-  ProviderProps extends { children?: ReactNode }
+  ProviderProps extends { children?: ReactNode },
 >(
   /** returns initial store state for given props */
   creator: (
     p: ProviderProps,
     set: StoreApi<StoreValue>["setState"],
-    get: StoreApi<StoreValue>["getState"]
+    get: StoreApi<StoreValue>["getState"],
   ) => StoreValue,
   /** returns a unique id for a given set of props */
   getUniqueId: (p: ProviderProps) => string,
-  globalProps: ProviderProps
+  globalProps: ProviderProps,
 ) {
   const globalStore = createStore(creator.bind(undefined, globalProps));
   const context = createContext(globalStore);
@@ -28,7 +28,7 @@ export function createContextualStore<
 
   const Provider = (props: ProviderProps) => {
     const [localStore] = useState(() =>
-      createStore(creator.bind(undefined, props))
+      createStore(creator.bind(undefined, props)),
     );
     useEffect(() => {
       const thisId = getUniqueId(props);
@@ -42,7 +42,7 @@ export function createContextualStore<
     return createElement(
       context.Provider,
       { value: localStore },
-      props.children
+      props.children,
     );
   };
 
@@ -51,11 +51,11 @@ export function createContextualStore<
   function useContextValue(): StoreValue;
   function useContextValue<Slice>(
     selector: (state: StoreValue) => Slice,
-    equalityFn?: (a: Slice, b: Slice) => boolean
+    equalityFn?: (a: Slice, b: Slice) => boolean,
   ): Slice;
   function useContextValue<Slice>(
     selector?: (state: StoreValue) => Slice,
-    equalityFn?: (a: Slice, b: Slice) => boolean
+    equalityFn?: (a: Slice, b: Slice) => boolean,
   ) {
     const store = useThisStore();
     // eslint-disable-next-line react-hooks/rules-of-hooks

@@ -76,7 +76,7 @@ export function DiffHistogram({ charts }: Props) {
             key={dataSet.key}
             data={dataSet.data}
             labels={dataSet.data.map(
-              (d) => `${d.count} ${dataSet.label} charts`
+              (d) => `${d.count} ${dataSet.label} charts`,
             )}
             style={{
               labels: { fill: fgColor },

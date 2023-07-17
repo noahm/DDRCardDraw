@@ -22,7 +22,7 @@ const ScrollableDrawings = memo(() => {
 
 export function DrawingList() {
   const hasDrawings = useDeferredValue(
-    useDrawState((s) => !!s.drawings.length)
+    useDrawState((s) => !!s.drawings.length),
   );
   const showPool = useDeferredValue(useConfigState((cfg) => cfg.showPool));
   if (showPool) {

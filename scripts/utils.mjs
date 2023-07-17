@@ -29,7 +29,7 @@ export function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
   return promises.writeFile(
     filePath,
-    format(JSON.stringify(data), { filepath: filePath })
+    format(JSON.stringify(data), { filepath: filePath }),
   );
 }
 
@@ -62,7 +62,7 @@ function getOutputPath(coverUrl, localFilename) {
   }
   const sanitizedFilename = sanitize(basename(localFilename)).replaceAll(
     /#/g,
-    ""
+    "",
   );
   const outputPath = join(dirname(localFilename), sanitizedFilename);
   return {
@@ -85,7 +85,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
-        img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute)
+        img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute),
       )
       .catch((e) => {
         console.error("image download failure");
