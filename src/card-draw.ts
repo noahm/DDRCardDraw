@@ -9,7 +9,7 @@ import { getDiffAbbr } from "./game-data-utils";
 export function getDrawnChart(
   gameData: GameData,
   currentSong: Song,
-  chart: Chart
+  chart: Chart,
 ): EligibleChart {
   return {
     name: currentSong.name,
@@ -32,7 +32,7 @@ export function getDrawnChart(
 export function songIsValid(
   config: ConfigState,
   song: Song,
-  forPocketPick = false
+  forPocketPick = false,
 ): boolean {
   if (forPocketPick && !config.constrainPocketPicks) {
     return true;
@@ -44,7 +44,7 @@ export function songIsValid(
 export function chartIsValid(
   config: ConfigState,
   chart: Chart,
-  forPocketPick = false
+  forPocketPick = false,
 ): boolean {
   if (forPocketPick && !config.constrainPocketPicks) {
     return chart.style === config.style;
@@ -146,7 +146,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       const normalizedWeight =
         expectedDrawPerLevel[level.toString()] / totalWeights;
       expectedDrawPerLevel[level] = Math.ceil(
-        normalizedWeight * numChartsToRandom
+        normalizedWeight * numChartsToRandom,
       );
     }
   }

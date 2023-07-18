@@ -10,9 +10,9 @@ export function useIntl() {
       t: (
         id: string,
         values?: Record<string, Primitive>,
-        defaultMessage?: string
+        defaultMessage?: string,
       ) => formatMessage({ id, defaultMessage }, values),
     }),
-    [formatMessage]
+    [formatMessage],
   );
 }

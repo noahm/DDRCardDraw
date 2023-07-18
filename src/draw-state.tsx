@@ -69,7 +69,7 @@ export const useDrawState = create<DrawState>((set, get) => ({
         ],
         {
           sort: true,
-        }
+        },
       ),
     });
     return data;
@@ -99,7 +99,7 @@ export const useDrawState = create<DrawState>((set, get) => ({
   injectRemoteDrawing(drawing, syncWithPeer) {
     set((prevState) => {
       const currentDrawing = prevState.drawings.find(
-        (d) => d.id === drawing.id
+        (d) => d.id === drawing.id,
       );
       const newDrawings = prevState.drawings.filter((d) => d.id !== drawing.id);
       newDrawings.unshift(drawing);
@@ -150,7 +150,7 @@ function writeDataSetToUrl(game: string) {
 export function DrawStateManager(props: Props) {
   const [gameData, hasDrawings, loadGameData] = useDrawState(
     (state) => [state.gameData, !!state.drawings.length, state.loadGameData],
-    shallow
+    shallow,
   );
   useEffect(() => {
     loadGameData(getInitialDataSet(props.defaultDataSet));

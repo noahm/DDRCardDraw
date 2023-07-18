@@ -23,7 +23,7 @@ export async function shareData(
     filename: string;
     /** share options to try, in order of preference. attempts stop at first successful share event. */
     methods: Array<ShareMethod>;
-  }
+  },
 ) {
   let blob: Blob | undefined;
   for (const method of opts.methods) {
@@ -37,7 +37,7 @@ export async function shareData(
             title: method.title,
             files: [new File([blob], opts.filename, { type: blob.type })],
           },
-          method.allowDesktop
+          method.allowDesktop,
         );
         if (maybePromise) {
           return maybePromise;
@@ -55,7 +55,7 @@ export async function shareData(
               message: method.toastMessage,
               icon: "paperclip",
             },
-            "copied-data"
+            "copied-data",
           );
           return;
         } catch {

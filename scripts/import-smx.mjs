@@ -40,7 +40,7 @@ try {
   const log = (whatever) => ui.log.write(whatever);
   const targetFile = join(__dirname, "../src/songs/smx.json");
   const existingData = JSON.parse(
-    await readFile(targetFile, { encoding: "utf-8" })
+    await readFile(targetFile, { encoding: "utf-8" }),
   );
   const indexedSongs = {};
   for (const song of existingData.songs) {

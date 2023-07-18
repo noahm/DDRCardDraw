@@ -17,7 +17,7 @@ async function processImg(input, output) {
     await img.resize(200, 200).quality(80).writeAsync(output);
 
     console.log(
-      `Wrote ${output} (${(fs.statSync(output).size / 1024).toFixed(0)}kb)`
+      `Wrote ${output} (${(fs.statSync(output).size / 1024).toFixed(0)}kb)`,
     );
   } catch (e) {
     console.error(`Failed to process ${input}`);

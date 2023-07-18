@@ -35,13 +35,13 @@ function ChartFromContext({ chartId }: { chartId: number }) {
   const chart = useDrawing((d) => d.charts.find((c) => c.id === chartId));
   const veto = useDrawing((d) => d.bans.find((b) => b.chartId === chartId));
   const protect = useDrawing((d) =>
-    d.protects.find((b) => b.chartId === chartId)
+    d.protects.find((b) => b.chartId === chartId),
   );
   const pocketPick = useDrawing((d) =>
-    d.pocketPicks.find((b) => b.chartId === chartId)
+    d.pocketPicks.find((b) => b.chartId === chartId),
   );
   const winner = useDrawing((d) =>
-    d.winners.find((b) => b.chartId === chartId)
+    d.winners.find((b) => b.chartId === chartId),
   );
   if (!chart) {
     return null;

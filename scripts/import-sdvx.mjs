@@ -5,7 +5,7 @@
 import { promises as fs } from "fs";
 import { resolve, join, dirname } from "path";
 import { parseStringPromise } from "xml2js";
-import iconv from 'iconv-lite';
+import iconv from "iconv-lite";
 import { writeJsonData } from "./utils.mjs";
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -17,7 +17,7 @@ async function main() {
   const sdvxFile = process.argv[2];
   if (!sdvxFile) {
     console.log(
-      `No data file provided. Invoke like 'yarn import:sdvx path/to/music_db.xml'`
+      `No data file provided. Invoke like 'yarn import:sdvx path/to/music_db.xml'`,
     );
     return;
   }

@@ -26,7 +26,7 @@ interface StateUpdate<State> {
 export function acceptIncomingSyncedStores<SharedState>(
   storeType: string,
   peer: DataConnection,
-  handleNewStore: (initialState: SharedState) => void
+  handleNewStore: (initialState: SharedState) => void,
 ) {
   const handlePeerMessage = (evt: SyncMessages<SharedState>) => {
     if (evt.type !== "syncedStore.init") {
@@ -48,7 +48,7 @@ export function acceptIncomingSyncedStores<SharedState>(
 export function initShareWithPeer(
   storeType: string,
   store: StoreApi<SerializibleStore<unknown>>,
-  peer: DataConnection
+  peer: DataConnection,
 ) {
   const state = store.getState();
   sendMessage(peer, {
@@ -70,7 +70,7 @@ function sendMessage(peer: DataConnection, msg: SyncMessages<unknown>) {
  */
 export function syncStoreWithPeer<State extends SerializibleStore<unknown>>(
   store: StoreApi<State>,
-  peer: DataConnection
+  peer: DataConnection,
 ) {
   const storeId = store.getState().id;
   let externalUpdate = false;

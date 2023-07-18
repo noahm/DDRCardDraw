@@ -51,7 +51,7 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 
 function getDiffsAndRangeForNewStyle(
   gameData: GameData,
-  selectedStyle: string
+  selectedStyle: string,
 ) {
   const s = new Set<string>();
   const range = { high: 0, low: 100 };
@@ -81,7 +81,7 @@ function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
       showPool: state.showPool,
       update: state.update,
     }),
-    shallow
+    shallow,
   );
   return (
     <Switch
@@ -208,11 +208,11 @@ function FlagSettings() {
   const { t } = useIntl();
   const [dataSetName, gameData] = useDrawState(
     (s) => [s.dataSetName, s.gameData],
-    shallow
+    shallow,
   );
   const [updateState, selectedFlags] = useConfigState(
     (s) => [s.update, s.flags],
-    shallow
+    shallow,
   );
 
   return (
@@ -384,7 +384,7 @@ function GeneralSettings() {
                     const next = { ...prev, style: e.currentTarget.value };
                     const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
                       gameData,
-                      next.style
+                      next.style,
                     );
                     if (diffs.length === 1) {
                       next.difficulties = new Set(diffs.map((d) => d.key));

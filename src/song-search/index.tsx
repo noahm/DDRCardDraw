@@ -28,7 +28,7 @@ export function SongSearch(props: Props) {
       .slice(0, 30);
     for (const song of songs) {
       const validCharts = song.charts.filter((chart) =>
-        chartIsValid(config, chart, true)
+        chartIsValid(config, chart, true),
       );
       for (const chart of validCharts) {
         items.push({ song, chart });
@@ -55,8 +55,8 @@ export function SongSearch(props: Props) {
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 useDrawState.getState().gameData!,
                 item.song,
-                item.chart
-              )
+                item.chart,
+              ),
         )
       }
       items={items}

@@ -113,7 +113,7 @@ for (const parsedSong of pack.simfiles) {
   if (finalJacket) {
     finalJacket = downloadJacket(
       finalJacket,
-      join("itg", stub, basename(titleDir) + ".jpg")
+      join("itg", stub, basename(titleDir) + ".jpg"),
     );
   }
 
@@ -140,7 +140,7 @@ for (const parsedSong of pack.simfiles) {
       } else {
         console.error(
           'Expected song titles to include tiers in the form "[T01] ..." but found:\n' +
-            parsedSong.title.titleName
+            parsedSong.title.titleName,
         );
       }
     } else {

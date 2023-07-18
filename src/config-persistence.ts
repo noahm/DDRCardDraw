@@ -30,7 +30,7 @@ type Serialized<T extends object> = {
 export function saveConfig() {
   const persistedObj = buildPersistedConfig();
   const dataUri = `data:application/json,${encodeURI(
-    JSON.stringify(persistedObj, undefined, 2)
+    JSON.stringify(persistedObj, undefined, 2),
   )}`;
   return shareData(dataUri, {
     filename: `card-draw-config-${persistedObj.dataSetName}.json`,

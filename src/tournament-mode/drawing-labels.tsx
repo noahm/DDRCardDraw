@@ -46,7 +46,7 @@ function PlayerLabel({
         });
       }
     },
-    [updateDrawing, field, playerNames, updateConfig]
+    [updateDrawing, field, playerNames, updateConfig],
   );
   return (
     <AutoCompleteSelect

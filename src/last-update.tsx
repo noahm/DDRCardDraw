@@ -8,7 +8,7 @@ import { detectedLanguage } from "./utils";
 export function LastUpdate() {
   const [dataSetName, gameData] = useDrawState(
     (s) => [s.dataSetName, s.gameData],
-    shallow
+    shallow,
   );
   if (!gameData) {
     return null;

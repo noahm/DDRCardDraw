@@ -88,13 +88,13 @@ export function NetworkingActions() {
             onClick={async () => {
               const drawingId = getDrawing().id;
               const drawingElement = document.querySelector(
-                "#drawing-" + drawingId
+                "#drawing-" + drawingId,
               );
               if (drawingElement) {
                 shareImage(
                   await domToPng(drawingElement, {
                     scale: 2,
-                  })
+                  }),
                 );
               }
             }}
