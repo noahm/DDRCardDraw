@@ -25,11 +25,17 @@ export function getDom(url) {
   return requestQueue.add(() => getDomInternal(url));
 }
 
-export function writeJsonData(data, filePath) {
+export async function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
+  let formatted;
+  try {
+    formatted = await format(JSON.stringify(data), { filepath: filePath });
+  } catch (e) {
+    throw new Error('Formatting failed', { cause: e });
+  }
   return promises.writeFile(
     filePath,
-    format(JSON.stringify(data), { filepath: filePath }),
+    formatted,
   );
 }
 
