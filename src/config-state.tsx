@@ -23,7 +23,7 @@ export interface ConfigState {
 }
 
 export const useConfigState = create<ConfigState>((set) => ({
-  chartCount: 5,
+  chartCount: 7,
   upperBound: 0,
   lowerBound: 0,
   useWeights: false,
