@@ -22,8 +22,8 @@
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["expert", "challenge"],
-    "flags": ["shock"],
+    "difficulties": ["difficult", "expert", "challenge"],
+    "flags": ["shock", "unlock", "extraExclusive", "tempUnlock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
