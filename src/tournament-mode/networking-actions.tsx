@@ -15,6 +15,8 @@ import { domToPng } from "modern-screenshot";
 import { shareData } from "../utils/share";
 import { firstOf } from "../utils";
 
+import cardStyles from "../song-card/song-card.css";
+
 export function NetworkingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const syncPeer = useDrawing((s) => s.__syncPeer);
@@ -94,6 +96,15 @@ export function NetworkingActions() {
                 shareImage(
                   await domToPng(drawingElement, {
                     scale: 2,
+                    filter: (node) => {
+                      if (
+                        node instanceof Element &&
+                        node.classList.contains(cardStyles.backFace)
+                      ) {
+                        return false;
+                      }
+                      return true;
+                    },
                   })
                 );
               }
