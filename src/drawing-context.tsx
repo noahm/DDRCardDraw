@@ -13,7 +13,6 @@ import { SerializibleStore } from "./zustand/shared-zustand";
 
 const stubDrawing: Drawing = {
   id: "stub",
-  revealed: true,
   charts: [],
   bans: [],
   pocketPicks: [],
@@ -44,7 +43,7 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
     chart?: EligibleChart
   ): void;
   setWinner(chartId: number, p: 1 | 2 | null): void;
-  markRevealed(): void;
+  markRevealed(chartId: number): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {
@@ -151,15 +150,19 @@ const {
         winners: arr,
       });
     },
-    markRevealed() {
-      const { revealed, id } = get();
-      if (revealed) {
+    markRevealed(cardId: number) {
+      const { charts, id } = get();
+      const chart = charts.find((c) => c.id === cardId);
+      if (!chart || !chart.conceal) {
         return;
       }
-      set({ revealed: true });
+      const nextCharts = charts.slice();
+      nextCharts[cardId] = { ...chart, conceal: false };
+      set({ charts: nextCharts });
       useDrawState.setState(({ drawings }) => {
         const drawingIdx = drawings.findIndex((d) => d.id === id);
-        const newDrawing = { ...drawings[drawingIdx], revealed: true };
+        const newDrawing = { ...drawings[drawingIdx] };
+        newDrawing.charts = nextCharts;
         const nextDrawings = drawings.slice();
         nextDrawings[drawingIdx] = newDrawing;
         return { drawings: nextDrawings };

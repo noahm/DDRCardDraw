@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import { Drawing } from "./models/Drawing";
@@ -7,6 +7,7 @@ import { DrawingProvider, useDrawing } from "./drawing-context";
 import { NetworkingActions } from "./tournament-mode/networking-actions";
 import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
 import { useConfigState } from "./config-state";
+import { useDrawState } from "./draw-state";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -24,26 +25,15 @@ function ChartList() {
   const charts = useDrawing((d) => d.charts);
   return (
     <div className={styles.chartList}>
-      {charts.map((c, idx) => (
-        <ChartFromContext
-          key={c.id}
-          chartIdx={c.id}
-          isLast={idx + 1 === charts.length}
-        />
+      {charts.map((c) => (
+        <ChartFromContext key={c.id} chartIdx={c.id} />
       ))}
     </div>
   );
 }
 
-function ChartFromContext({
-  chartIdx,
-  isLast,
-}: {
-  chartIdx: number;
-  isLast: boolean;
-}) {
+function ChartFromContext({ chartIdx }: { chartIdx: number }) {
   const chart = useDrawing((d) => d.charts.find((c) => c.id === chartIdx));
-  const revealed = useDrawing((d) => d.revealed);
   const veto = useDrawing((d) => d.bans.find((b) => b.chartId === chartIdx));
   const protect = useDrawing((d) =>
     d.protects.find((b) => b.chartId === chartIdx)
@@ -55,6 +45,7 @@ function ChartFromContext({
     d.winners.find((b) => b.chartId === chartIdx)
   );
   const markRevealed = useDrawing((d) => d.markRevealed);
+  const autoReveal = useDrawing((d) => d.autoReveal);
   if (!chart) {
     return null;
   }
@@ -67,8 +58,10 @@ function ChartFromContext({
       winner={winner?.player}
       chart={chart}
       actionsEnabled
-      revealWithDelayMs={revealed ? undefined : 500 * (chartIdx + 1)}
-      onReveal={isLast ? markRevealed : undefined}
+      animateDelay={500 * (chartIdx + 1)}
+      autoReveal={autoReveal}
+      conceal={chart.conceal}
+      onReveal={() => markRevealed(chartIdx)}
     />
   );
 }
@@ -87,6 +80,7 @@ const DrawnSet = memo<Props>(function DrawnSet({ drawing }) {
   return (
     <DrawingProvider initialDrawing={drawing}>
       <SyncWithPeers />
+      <SyncUpWhenUnmounted />
       <div
         key={drawing.id}
         style={{ backgroundImage }}
@@ -102,5 +96,26 @@ const DrawnSet = memo<Props>(function DrawnSet({ drawing }) {
     </DrawingProvider>
   );
 });
+
+function SyncUpWhenUnmounted() {
+  const d = useDrawing();
+  const drawingRef = useRef(d);
+  drawingRef.current = d;
+
+  useEffect(() => {
+    return () => {
+      useDrawState.setState((state) => {
+        const currentIdx = state.drawings.findIndex(
+          (d) => d.id === drawingRef.current.id
+        );
+        const nextDrawings = state.drawings.slice();
+        nextDrawings[currentIdx] = drawingRef.current;
+        return { drawings: nextDrawings };
+      });
+    };
+  }, []);
+
+  return null;
+}
 
 export default DrawnSet;

@@ -36,7 +36,9 @@ interface Props {
   replacedWith?: EligibleChart;
   actionsEnabled?: boolean;
   /** if undefined, card starts revealed */
-  revealWithDelayMs?: number;
+  animateDelay?: number;
+  autoReveal?: boolean;
+  conceal?: boolean;
   onReveal?(): void;
 }
 
@@ -75,16 +77,17 @@ export function SongCard(props: Props) {
     replacedWith,
     winner,
     actionsEnabled,
-    revealWithDelayMs,
+    animateDelay,
+    autoReveal,
     onReveal,
+    conceal,
   } = props;
   const hideVetos = useConfigState((s) => s.hideVetos);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
-  const shouldAnimate = typeof revealWithDelayMs === "number";
-  const animDelay = (revealWithDelayMs || 0) / 1000;
+  const resolvedDelay = (animateDelay || 0) / 1000;
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] = useState<
     0 | 1 | 2
@@ -139,34 +142,52 @@ export function SongCard(props: Props) {
     [styles.hideVeto]: hideVetos,
   });
 
+  let handleClick =
+    !menuContent || showingContextMenu || pocketPickPendingForPlayer
+      ? props.onClick
+      : showMenu;
+  if (conceal) {
+    handleClick = onReveal;
+  }
+
   return (
     <motion.div
       variants={{
         concealed: {
           translate: "2000px -2000px",
         },
+        dealt: {
+          translate: "0px 0px",
+          transition: {
+            when: "beforeChildren",
+            delay: resolvedDelay / 3,
+          },
+        },
         revealed: {
           translate: "0px 0px",
           transition: {
             when: "beforeChildren",
-            delay: animDelay / 3,
+            delay: resolvedDelay / 3,
           },
         },
       }}
-      initial={shouldAnimate ? "concealed" : "revealed"}
-      animate="revealed"
-      onAnimationComplete={onReveal}
+      initial={conceal ? "concealed" : "revealed"}
+      animate={conceal && !autoReveal ? "dealt" : "revealed"}
+      onAnimationComplete={(e) => {
+        if (e === "revealed") onReveal?.();
+      }}
       className={containerClass}
-      onClick={
-        !menuContent || showingContextMenu || pocketPickPendingForPlayer
-          ? props.onClick
-          : showMenu
-      }
+      onClick={handleClick}
     >
       <motion.div
         variants={{
           concealed: { rotateY: "180deg" },
-          revealed: { rotateY: "0deg", transition: { delay: animDelay } },
+          revealed: {
+            rotateY: "0deg",
+            transition: {
+              delay: autoReveal ? resolvedDelay : undefined,
+            },
+          },
         }}
         className={styles.cardContents}
       >

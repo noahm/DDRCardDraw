@@ -18,6 +18,7 @@ export interface EligibleChart {
 
 export interface DrawnChart extends EligibleChart {
   id: number;
+  conceal: boolean;
 }
 
 export interface PlayerActionOnChart {
@@ -39,7 +40,7 @@ export interface Drawing {
   protects: Array<PlayerActionOnChart>;
   winners: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
-  revealed: boolean;
+  autoReveal?: boolean;
   /** __ prefix avoids serializing this field during sync */
   __syncPeer?: DataConnection;
 }

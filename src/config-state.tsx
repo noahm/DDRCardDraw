@@ -1,4 +1,5 @@
 import { StoreApi, create } from "zustand";
+import { prefersReducedMotionQuery } from "./hooks/useMediaQuery";
 
 export interface ConfigState {
   chartCount: number;
@@ -19,6 +20,7 @@ export interface ConfigState {
   playerNames: string[];
   tournamentRounds: string[];
   showLabels: boolean;
+  revealStyle: "immediate" | "auto" | "manual";
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -48,5 +50,6 @@ export const useConfigState = create<ConfigState>((set) => ({
     "Tiebreaker",
   ],
   showLabels: false,
+  revealStyle: prefersReducedMotionQuery.matches ? "immediate" : "auto",
   update: set,
 }));

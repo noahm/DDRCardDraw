@@ -23,8 +23,8 @@ import {
 import { IconNames } from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import shallow from "zustand/shallow";
-import { useConfigState } from "../config-state";
+import { shallow } from "zustand/shallow";
+import { useConfigState, ConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
@@ -433,6 +433,20 @@ function GeneralSettings() {
           {hasFlags && <FlagSettings />}
         </Card>
       </Collapse>
+      <FormGroup label={t("controls.revealStyleLabel")}>
+        <HTMLSelect
+          value={configState.revealStyle}
+          options={[
+            { value: "auto", label: t("controls.revealAuto") },
+            { value: "immediate", label: t("controls.revealImmediate") },
+            { value: "manual", label: t("controls.revealManual") },
+          ]}
+          onChange={(e) => {
+            const next = e.currentTarget.value as ConfigState["revealStyle"];
+            updateState({ revealStyle: next });
+          }}
+        />
+      </FormGroup>
       <FormGroup>
         <Checkbox
           id="orderByAction"

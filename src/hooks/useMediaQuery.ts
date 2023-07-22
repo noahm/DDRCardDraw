@@ -4,13 +4,15 @@ export const prefersDarkQuery = window.matchMedia(
   "(prefers-color-scheme: dark)"
 );
 
+export const prefersReducedMotionQuery = window.matchMedia(
+  "(prefers-reduced-motion)"
+);
+
 /**
  * Returns true if matches a given query
  */
 export function useMediaQuery(query: string) {
-  const mq = useMemo(() => {
-    return window.matchMedia(query);
-  }, [query]);
+  const mq = useMemo(() => window.matchMedia(query), [query]);
 
   const [matching, setMatching] = useState(mq.matches);
 

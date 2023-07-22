@@ -181,6 +181,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
         ...randomChart,
         // Give this random chart a unique id within this drawing
         id: drawnCharts.length,
+        conceal: configData.revealStyle !== "immediate",
       });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
@@ -205,7 +206,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   return {
     id: nanoid(10),
-    revealed: false,
+    autoReveal: configData.revealStyle === "auto",
     charts: drawnCharts,
     bans: [],
     protects: [],
