@@ -193,7 +193,19 @@ export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
       const peerLib = await import("peerjs");
       return new Promise((res, rej) => {
         const newPin = genPin();
-        const peer = new peerLib.Peer(peerId(newName, newPin));
+        const peer = new peerLib.Peer(peerId(newName, newPin), {
+          host: "peering.ddr.tools",
+          config: {
+            iceServers: [
+              { urls: "stun:stun.l.google.com:19302" },
+              { urls: "stun:stun1.l.google.com:19302" },
+              { urls: "stun:stun2.l.google.com:19302" },
+              { urls: "stun:stun3.l.google.com:19302" },
+              { urls: "stun:stun4.l.google.com:19302" },
+              // { urls: "stun:stunserver.stunprotocol.org" },
+            ],
+          },
+        });
         bindPeer(peer, res, rej);
         set({
           instanceName: newName,
