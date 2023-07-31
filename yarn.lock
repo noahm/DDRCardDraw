@@ -1452,7 +1452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blueprintjs/core@npm:^5.0.0, @blueprintjs/core@npm:^5.1.2":
+"@blueprintjs/core@npm:^5.1.2":
   version: 5.1.2
   resolution: "@blueprintjs/core@npm:5.1.2"
   dependencies:
@@ -1478,6 +1478,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@blueprintjs/core@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@blueprintjs/core@npm:5.2.0"
+  dependencies:
+    "@blueprintjs/colors": ^5.0.1
+    "@blueprintjs/icons": ^5.1.5
+    "@popperjs/core": ^2.11.7
+    classnames: ^2.3.1
+    normalize.css: ^8.0.1
+    react-popper: ^2.3.0
+    react-transition-group: ^4.4.5
+    tslib: ~2.5.0
+  peerDependencies:
+    "@types/react": ^16.14.32 || 17 || 18
+    react: ^16.8 || 17 || 18
+    react-dom: ^16.8 || 17 || 18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  bin:
+    upgrade-blueprint-2.0.0-rename: scripts/upgrade-blueprint-2.0.0-rename.sh
+    upgrade-blueprint-3.0.0-rename: scripts/upgrade-blueprint-3.0.0-rename.sh
+  checksum: 65e2a1d237889d090c86d6265383d535762670697049771af1eea6183f56befe64c1b243fe605ffb3e06e51ba8e8306a5a6cfe5436eca9cc92cd4d1aea924c6d
+  languageName: node
+  linkType: hard
+
 "@blueprintjs/icons@npm:^5.0.0, @blueprintjs/icons@npm:^5.1.1":
   version: 5.1.1
   resolution: "@blueprintjs/icons@npm:5.1.1"
@@ -1493,6 +1519,24 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 2ad5da0d29ca54a00281593d107d4e5f3a53ca27fc3e2fd4ff6963375f3441c28fd048784197cf38f7f26f1b7891cfb2beb33c25a551c714261031e78371132f
+  languageName: node
+  linkType: hard
+
+"@blueprintjs/icons@npm:^5.1.5":
+  version: 5.1.5
+  resolution: "@blueprintjs/icons@npm:5.1.5"
+  dependencies:
+    change-case: ^4.1.2
+    classnames: ^2.3.1
+    tslib: ~2.5.0
+  peerDependencies:
+    "@types/react": ^16.14.32 || 17 || 18
+    react: ^16.8 || 17 || 18
+    react-dom: ^16.8 || 17 || 18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 74e9ee22f0d093b59664972825ae7de8a23493cfa7d4a679f76df0d6989e39746887a597532225ff6422910dd63fcfc61ed5ad2f2fab69cfe78c897e695f6464
   languageName: node
   linkType: hard
 
@@ -4589,7 +4633,7 @@ __metadata:
     "@babel/plugin-transform-react-jsx-source": ^7.22.5
     "@babel/preset-env": ^7.22.7
     "@babel/preset-typescript": ^7.22
-    "@blueprintjs/core": ^5.0.0
+    "@blueprintjs/core": ^5.2.0
     "@blueprintjs/icons": ^5.0.0
     "@blueprintjs/select": ^5.0.0
     "@lcdp/offline-plugin": ^5.0.7
