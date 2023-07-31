@@ -17,7 +17,7 @@ function getConnectionSpeed() {
 }
 
 function sendToAnalytics(metric: Metric) {
-  const analyticsId = process.env.VERCEL_ANALYTICS_ID;
+  const analyticsId = process.env.VERCEL_ANALYTICS_ID as string;
   if (!analyticsId) {
     return;
   }
