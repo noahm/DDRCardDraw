@@ -1,4 +1,4 @@
-import shallow from "zustand/shallow";
+import { shallow } from "zustand/shallow";
 import { useDrawState } from "../draw-state";
 import { availableGameData as available } from "../utils";
 

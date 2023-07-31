@@ -1,7 +1,7 @@
 import { Classes, Text } from "@blueprintjs/core";
 import cn from "classnames";
 import { FormattedMessage } from "react-intl";
-import shallow from "zustand/shallow";
+import { shallow } from "zustand/shallow";
 import { useDrawState } from "./draw-state";
 import { detectedLanguage } from "./utils";
 

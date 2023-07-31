@@ -23,7 +23,7 @@ import {
 import { IconNames } from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import shallow from "zustand/shallow";
+import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";

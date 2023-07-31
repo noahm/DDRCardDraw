@@ -1,8 +1,15 @@
-import { lazy, memo, useDeferredValue } from "react";
+import {
+  Suspense,
+  lazy,
+  memo,
+  useDeferredValue,
+  useEffect,
+  useState,
+} from "react";
 import styles from "./drawing-list.css";
 import { useDrawState } from "./draw-state";
 import { useConfigState } from "./config-state";
-import { Callout, NonIdealState } from "@blueprintjs/core";
+import { Callout, NonIdealState, Spinner } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import logo from "./assets/ddr-tools-256.png";
 
@@ -26,7 +33,11 @@ export function DrawingList() {
   );
   const showPool = useDeferredValue(useConfigState((cfg) => cfg.showPool));
   if (showPool) {
-    return <EligibleChartsList />;
+    return (
+      <Suspense fallback={<DelayedSpinner />}>
+        <EligibleChartsList />
+      </Suspense>
+    );
   }
   if (!hasDrawings) {
     return (
@@ -45,5 +56,25 @@ export function DrawingList() {
       </div>
     );
   }
-  return <ScrollableDrawings />;
+  return (
+    <Suspense fallback={<DelayedSpinner />}>
+      <ScrollableDrawings />
+    </Suspense>
+  );
+}
+
+function DelayedSpinner(props: { timeout?: number }) {
+  const [show, updateShow] = useState(false);
+  useEffect(() => {
+    if (show) return;
+
+    const timeout = setTimeout(() => {
+      updateShow(true);
+    }, props.timeout || 250);
+    return () => clearTimeout(timeout);
+  }, [props.timeout, show]);
+  if (show) {
+    return <Spinner style={{ marginTop: "15px" }} />;
+  }
+  return null;
 }

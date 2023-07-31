@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Classes, MenuItem } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { FormattedMessage } from "react-intl";
-import createStore from "zustand";
+import { create } from "zustand";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
 export const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -47,7 +47,7 @@ declare global {
   }
 }
 
-const useThemeStore = createStore<ThemeContext>((set, get) => ({
+const useThemeStore = create<ThemeContext>((set, get) => ({
   obsLayer: typeof window.obsstudio !== "undefined",
   setObsLayer(next) {
     set({ obsLayer: next });

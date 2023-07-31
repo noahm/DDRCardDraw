@@ -35,7 +35,6 @@ export function createContextualStore<
       StoreIndex.set(thisId, localStore);
       return () => {
         StoreIndex.delete(thisId);
-        localStore.destroy();
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

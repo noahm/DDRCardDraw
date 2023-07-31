@@ -1,4 +1,4 @@
-import createStore, { StoreApi } from "zustand";
+import { create, StoreApi } from "zustand";
 import type { Peer, DataConnection } from "peerjs";
 import { Drawing } from "../models/Drawing";
 import { useDrawState } from "../draw-state";
@@ -154,7 +154,7 @@ function bindPeerConn(conn: DataConnection) {
   }
 }
 
-export const useRemotePeers = createStore<RemotePeerStore>((set, get) => ({
+export const useRemotePeers = create<RemotePeerStore>((set, get) => ({
   instanceName: "",
   instancePin: "",
   thisPeer: null,
