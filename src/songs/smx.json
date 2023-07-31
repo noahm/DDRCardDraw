@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1688009861191
+    "lastUpdated": 1690761592734
   },
   "defaults": {
     "style": "solo",
@@ -7027,6 +7027,111 @@
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
         { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "594",
+      "name": "Asian Night in 20XX",
+      "artist": "NM Japan",
+      "genre": "Electronica",
+      "bpm": "140",
+      "jacket": "smx/AsianNightIn20XX.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 8, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 10, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 14, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "595",
+      "name": "Dream of You",
+      "artist": "Bishu",
+      "genre": "House",
+      "bpm": "125",
+      "jacket": "smx/DreamOfYou.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 13, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "596",
+      "name": "Fiesta Night",
+      "artist": "Carlito",
+      "genre": "Latin",
+      "bpm": "180",
+      "jacket": "smx/FiestaNight.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "597",
+      "name": "Swipe",
+      "artist": "Felix Schorn",
+      "genre": "Pop",
+      "bpm": "140",
+      "jacket": "smx/Swipe.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "598",
+      "name": "UFO",
+      "artist": "Little Sis Nora & S3RL",
+      "genre": "Pop",
+      "bpm": "140",
+      "jacket": "smx/UFO.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 12, "diffClass": "dual" },
+        { "style": "solo", "lvl": 14, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ]
     }
