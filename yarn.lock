@@ -2864,13 +2864,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "@vercel/analytics@npm:1.0.2"
-  checksum: 5f596db6ed3c959057927985ffc6394ab12f9a5e9e9c65d00a33f1ffb3a7ced95d63f33b31e746939e50c0284d7999b90e9ed5d3d1e8b0d37a135219fd93a6e4
-  languageName: node
-  linkType: hard
-
 "@webassemblyjs/ast@npm:1.11.6, @webassemblyjs/ast@npm:^1.11.5":
   version: 1.11.6
   resolution: "@webassemblyjs/ast@npm:1.11.6"
@@ -4582,7 +4575,6 @@ __metadata:
     "@types/react-dom": ^18.0.0
     "@typescript-eslint/eslint-plugin": ^6.2.0
     "@typescript-eslint/parser": ^6.2.0
-    "@vercel/analytics": ^1.0.1
     autoprefixer: ^10.4.0
     babel-loader: ^9.1.3
     better-sqlite3: ^8.5.0
@@ -4613,7 +4605,6 @@ __metadata:
     mini-css-extract-plugin: ^2.7.6
     modern-screenshot: ^4.4.28
     nanoid: ^4.0.0
-    node-fetch: ^2.6.7
     normalize.css: ^8.0.1
     p-queue: ^7.3.0
     peerjs: ^2.0.0-beta.3
@@ -7777,7 +7768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.6.1":
   version: 2.6.12
   resolution: "node-fetch@npm:2.6.12"
   dependencies:

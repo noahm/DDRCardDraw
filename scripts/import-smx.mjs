@@ -6,7 +6,6 @@
 
 import { join, resolve, dirname } from "path";
 import { readFile } from "fs/promises";
-import fetch from "node-fetch";
 import {
   downloadJacket,
   requestQueue,

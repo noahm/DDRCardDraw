@@ -7,8 +7,6 @@ import { FocusStyleManager } from "@blueprintjs/core";
 
 FocusStyleManager.onlyShowFocusOnTabs();
 
-import { Analytics } from "@vercel/analytics/react";
-
 import { DrawingList } from "./drawing-list";
 import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
@@ -22,7 +20,6 @@ export function App() {
       <UpdateManager />
       <Header />
       <DrawingList />
-      <Analytics />
     </DrawStateManager>
   );
 }

@@ -144,22 +144,19 @@ module.exports = function (env = {}, argv = {}) {
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         "process.env.NODE_ENV": JSON.stringify(
-          isProd ? "production" : "development"
+          isProd ? "production" : "development",
         ),
         "process.env.DATA_FILES": JSON.stringify(
           fs.readdirSync(resolve(__dirname, "src/songs")).map((file) => {
             const fileContents = JSON.parse(
-              fs.readFileSync(resolve(__dirname, "src/songs", file))
+              fs.readFileSync(resolve(__dirname, "src/songs", file)),
             );
             return {
               name: basename(file, ".json"),
               display: fileContents.i18n.en.name,
               parent: fileContents.meta.menuParent || "",
             };
-          })
-        ),
-        "process.env.VERCEL_ANALYTICS_ID": JSON.stringify(
-          process.env.VERCEL_ANALYTICS_ID
+          }),
         ),
       }),
       new MiniCssExtractPlugin({
@@ -219,7 +216,7 @@ module.exports = function (env = {}, argv = {}) {
               },
               excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
             }),
-          ]
+          ],
     ),
   };
 };
