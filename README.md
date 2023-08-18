@@ -2,7 +2,9 @@
 
 [![Discord](https://img.shields.io/discord/1013159796024823898?label=discord&style=flat-square)](https://discord.gg/QPyEATsbP7) ![GitHub contributors](https://img.shields.io/github/contributors/noahm/ddrcarddraw?style=flat-square) ![GitHub branch checks state](https://img.shields.io/github/checks-status/noahm/ddrcarddraw/main?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/noahm/ddrcarddraw?style=flat-square) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/noahm/DDRCardDraw?style=flat-square)
 
-The official build is available at [https://ddr.tools/](https://ddr.tools/). [Read all about what the app can do in the user manual.](https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md)
+The official build is available at [https://ddr.tools/](https://ddr.tools/).
+
+Read all about what the app can do [in the user manual.](https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md)
 
 ## Customizing / Contributing
 

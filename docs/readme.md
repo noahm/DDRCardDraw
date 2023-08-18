@@ -39,7 +39,9 @@ Some of the less self-explanatory settings are described below.
 
 <dt>Pocket picks must match draw options
 <dd>Limits charts selected in a pocket pick action to those that match current draw settings
-</dl>to
+</dl>
+
+### Weighted Distributions
 
 The weighted distribution options allows manual control over the probabilities for charts of any specific difficulty level to be drawn.
 
