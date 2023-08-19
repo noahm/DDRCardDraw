@@ -4616,7 +4616,7 @@ __metadata:
     react-intl: ^6.4.4
     react-refresh: ^0.14.0
     sanitize-filename: ^1.6.3
-    simfile-parser: ^0.5.0
+    simfile-parser: ^0.6.1
     style-loader: ^3.3.1
     typescript: ^5.1.3
     victory: ^36.6.11
@@ -9690,14 +9690,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simfile-parser@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "simfile-parser@npm:0.5.0"
-  dependencies:
-    fraction.js: ^4.2.0
+"simfile-parser@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "simfile-parser@npm:0.6.1"
   bin:
     simfile-parser: dist/cli.js
-  checksum: 68cdf8130ca8518713af516e15b3ee03085679f5451d7978d59825c5a722877c784a81ac137021662093b046625839c8d9bc6a71544c8faf8f427c817babb654
+  checksum: be7c2b02766ab2d627628a6b8512c7b2d49d6af5d79b860d58ebbba42729967c2038dd7981365068bcf9c3b40ced194ee7f56acbda8c383b28fca3505185d0ee
   languageName: node
   linkType: hard
 
