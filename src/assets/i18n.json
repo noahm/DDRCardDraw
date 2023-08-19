@@ -9,6 +9,7 @@
     },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
+      "forcedExplanation": "Sets a fixed limit on exactly how many charts of each difficulty level will be drawn.",
       "check": {
         "title": "Prevents very unlikely outcomes (e.g. multiple 17s drawn when at 10% chance)",
         "label": "Force Expected Distribution"

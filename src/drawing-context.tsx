@@ -27,8 +27,8 @@ interface DrawingProviderProps {
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   updateDrawing: (d: Partial<Drawing>) => void;
-  redrawChart(chartId: number): void;
-  resetChart(chartId: number): void;
+  redrawChart(chartId: string): void;
+  resetChart(chartId: string): void;
   /**
    * handles any of the protect/pocket-pick/ban actions a user may take on a drawn chart
    * @param action type of action being performed
@@ -38,11 +38,11 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
    */
   handleBanProtectReplace(
     action: "ban" | "protect" | "pocket",
-    chartId: number,
+    chartId: string,
     player: 1 | 2,
     chart?: EligibleChart,
   ): void;
-  setWinner(chartId: number, p: 1 | 2 | null): void;
+  setWinner(chartId: string, p: 1 | 2 | null): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {

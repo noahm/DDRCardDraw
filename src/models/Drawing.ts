@@ -17,12 +17,12 @@ export interface EligibleChart {
 }
 
 export interface DrawnChart extends EligibleChart {
-  id: number;
+  id: string;
 }
 
 export interface PlayerActionOnChart {
   player: 1 | 2;
-  chartId: number;
+  chartId: string;
 }
 
 export interface PocketPick extends PlayerActionOnChart {

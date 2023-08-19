@@ -31,7 +31,7 @@ function ChartList() {
   );
 }
 
-function ChartFromContext({ chartId }: { chartId: number }) {
+function ChartFromContext({ chartId }: { chartId: string }) {
   const chart = useDrawing((d) => d.charts.find((c) => c.id === chartId));
   const veto = useDrawing((d) => d.bans.find((b) => b.chartId === chartId));
   const protect = useDrawing((d) =>

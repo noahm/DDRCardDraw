@@ -1,4 +1,5 @@
-import { StoreApi, create } from "zustand";
+import type { StoreApi } from "zustand";
+import { createWithEqualityFn } from "zustand/traditional";
 
 export interface ConfigState {
   chartCount: number;
@@ -22,31 +23,34 @@ export interface ConfigState {
   update: StoreApi<ConfigState>["setState"];
 }
 
-export const useConfigState = create<ConfigState>((set) => ({
-  chartCount: 5,
-  upperBound: 0,
-  lowerBound: 0,
-  useWeights: false,
-  hideVetos: false,
-  orderByAction: true,
-  weights: [],
-  groupSongsAt: null,
-  forceDistribution: true,
-  constrainPocketPicks: true,
-  style: "",
-  difficulties: new Set(),
-  flags: new Set(),
-  showPool: false,
-  playerNames: [],
-  tournamentRounds: [
-    "Pools",
-    "Winner's Bracket",
-    "Winner's Finals",
-    "Loser's Bracket",
-    "Loser's Finals",
-    "Grand Finals",
-    "Tiebreaker",
-  ],
-  showLabels: false,
-  update: set,
-}));
+export const useConfigState = createWithEqualityFn<ConfigState>(
+  (set) => ({
+    chartCount: 5,
+    upperBound: 0,
+    lowerBound: 0,
+    useWeights: false,
+    hideVetos: false,
+    orderByAction: true,
+    weights: [],
+    groupSongsAt: null,
+    forceDistribution: true,
+    constrainPocketPicks: true,
+    style: "",
+    difficulties: new Set(),
+    flags: new Set(),
+    showPool: false,
+    playerNames: [],
+    tournamentRounds: [
+      "Pools",
+      "Winner's Bracket",
+      "Winner's Finals",
+      "Loser's Bracket",
+      "Loser's Finals",
+      "Grand Finals",
+      "Tiebreaker",
+    ],
+    showLabels: false,
+    update: set,
+  }),
+  Object.is,
+);

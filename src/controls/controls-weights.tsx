@@ -11,19 +11,26 @@ interface Props {
   high: number;
   low: number;
 }
+const pctFmt = new Intl.NumberFormat(undefined, { style: "percent" });
 
 export function WeightsControls({ usesTiers, high, low }: Props) {
   const { t } = useIntl();
-  const { weights, forceDistribution, groupSongsAt, updateConfig } =
-    useConfigState(
-      (cfg) => ({
-        weights: cfg.weights,
-        forceDistribution: cfg.forceDistribution,
-        groupSongsAt: cfg.groupSongsAt,
-        updateConfig: cfg.update,
-      }),
-      shallow,
-    );
+  const {
+    weights,
+    forceDistribution,
+    groupSongsAt,
+    updateConfig,
+    totalToDraw,
+  } = useConfigState(
+    (cfg) => ({
+      weights: cfg.weights,
+      forceDistribution: cfg.forceDistribution,
+      groupSongsAt: cfg.groupSongsAt,
+      updateConfig: cfg.update,
+      totalToDraw: cfg.chartCount,
+    }),
+    shallow,
+  );
   let groups = useMemo(
     () => times(high - low + 1, (n) => n + low - 1),
     [high, low],
@@ -76,12 +83,28 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
   );
   const percentages = groups.map((group) => {
     const value = weights[group] || 0;
-    return value ? ((100 * value) / totalWeight).toFixed(0) : 0;
+    const pct = value / totalWeight;
+    if (forceDistribution) {
+      if (pct === 1) {
+        return totalToDraw;
+      }
+      const max = Math.ceil(totalToDraw * pct);
+      if (!max) {
+        return 0;
+      }
+      return `${max - 1}-${max}`;
+    } else {
+      return pctFmt.format(isNaN(pct) ? 0 : pct);
+    }
   });
 
   return (
     <section className={styles.weights}>
-      <p className={Classes.TEXT_MUTED}>{t("weights.explanation")}</p>
+      <p className={Classes.TEXT_MUTED}>
+        {forceDistribution
+          ? t("weights.forcedExplanation")
+          : t("weights.explanation")}
+      </p>
       {groups.map((group, i) => (
         <div className={styles.level} key={group}>
           <NumericInput
@@ -95,7 +118,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
           />
           {groupSongsAt === group && ">="}
           {usesTiers ? `T${zeroPad(group, 2)}` : group}{" "}
-          <sub>{percentages[i]}%</sub>
+          <sub>{percentages[i]}</sub>
         </div>
       ))}
       <Checkbox

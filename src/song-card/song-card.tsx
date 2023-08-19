@@ -38,7 +38,7 @@ interface Props {
 
 export { Props as SongCardProps };
 
-function useIconCallbacksForChart(chartId: number): IconCallbacks {
+function useIconCallbacksForChart(chartId: string): IconCallbacks {
   const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
     (d) => [
       d.handleBanProtectReplace,

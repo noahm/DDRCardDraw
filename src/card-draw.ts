@@ -118,16 +118,19 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   let totalWeights = 0;
   /**
-   * The number of charts we can expect to draw of each level
+   * Maximum number of charts we can expect to draw of each level. Only used with `forceDistribution`
    */
-  const expectedDrawPerLevel: Record<string, number> = {};
+  const maxDrawPerLevel: Record<string, number> = {};
+  /**
+   * List of difficulty levels that must be picked first, to meet minimums. Only used with `forceDistribution`
+   */
+  const requiredDrawDifficulties: number[] = [];
 
   // build an array of possible levels to pick from
   for (let level = lowerBound; level <= upperBound; level++) {
     let weightAmount = 0;
     if (useWeights) {
       weightAmount = weights[level];
-      expectedDrawPerLevel[level.toString()] = weightAmount;
       totalWeights += weightAmount;
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -143,11 +146,15 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
     for (let level = lowerBound; level <= upperBound; level++) {
-      const normalizedWeight =
-        expectedDrawPerLevel[level.toString()] / totalWeights;
-      expectedDrawPerLevel[level] = Math.ceil(
+      const levelAsStr = level.toString();
+      const normalizedWeight = weights[level] / totalWeights;
+      maxDrawPerLevel[levelAsStr] = Math.ceil(
         normalizedWeight * numChartsToRandom,
       );
+      // setup minimum draws
+      for (let i = 1; i < maxDrawPerLevel[levelAsStr]; i++) {
+        requiredDrawDifficulties.push(level);
+      }
     }
   }
 
@@ -164,9 +171,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       break;
     }
 
-    // first pick a difficulty
-    let chosenDifficulty =
-      distribution[Math.floor(Math.random() * distribution.length)];
+    // first pick a difficulty (with priority to minimum draws)
+    let chosenDifficulty = requiredDrawDifficulties.shift();
+    if (!chosenDifficulty) {
+      chosenDifficulty =
+        distribution[Math.floor(Math.random() * distribution.length)];
+    }
     if (useWeights && groupSongsAt && groupSongsAt < chosenDifficulty) {
       chosenDifficulty = groupSongsAt;
     }
@@ -180,7 +190,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       drawnCharts.push({
         ...randomChart,
         // Give this random chart a unique id within this drawing
-        id: drawnCharts.length,
+        id: `drawn_chart:${nanoid(5)}`,
       });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
@@ -195,7 +205,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const reachedExpected =
       forceDistribution &&
       difficultyCounts[chosenDifficulty.toString()] ===
-        expectedDrawPerLevel[chosenDifficulty.toString()];
+        maxDrawPerLevel[chosenDifficulty.toString()];
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty
@@ -204,11 +214,26 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   }
 
   return {
-    id: nanoid(10),
-    charts: drawnCharts,
+    id: `drawing:${nanoid(10)}`,
+    charts: shuffle(drawnCharts),
     bans: [],
     protects: [],
     pocketPicks: [],
     winners: [],
   };
+}
+
+/**
+ * is this an accurate F-Y shuffle? who knows!?!
+ */
+export function shuffle<Item>(arr: Array<Item>): Array<Item> {
+  const ret = arr.slice();
+  for (let i = 0; i < ret.length; i++) {
+    const randomUpcomingIndex =
+      i + Math.floor(Math.random() * (ret.length - i));
+    const currentItem = ret[i];
+    ret[i] = ret[randomUpcomingIndex];
+    ret[randomUpcomingIndex] = currentItem;
+  }
+  return ret;
 }
