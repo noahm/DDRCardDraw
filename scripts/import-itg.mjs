@@ -117,11 +117,20 @@ for (const parsedSong of pack.simfiles) {
     );
   }
 
+  let bpm = parsedSong.displayBpm;
+  if (bpm === "NaN") {
+    if (parsedSong.minBpm === parsedSong.maxBpm) {
+      bpm = parsedSong.minBpm.toString();
+    } else {
+      bpm = `${parsedSong.minBpm}-${parsedSong.maxBpm}`;
+    }
+  }
+
   const song = {
     name: parsedSong.title.titleName,
     name_translation: parsedSong.title.translitTitleName || "",
     jacket: finalJacket,
-    bpm: parsedSong.displayBpm,
+    bpm,
     artist: parsedSong.artist,
     charts: [],
   };
