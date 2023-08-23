@@ -14,7 +14,7 @@ import styles from "./song-card.css";
 
 const isJapanese = detectedLanguage === "ja";
 
-type Player = 1 | 2;
+type Player = number;
 
 interface IconCallbacks {
   onVeto: (p: Player) => void;

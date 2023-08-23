@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { StoreApi } from "zustand";
 import { draw } from "./card-draw";
 import { useConfigState } from "./config-state";
 import { createContextualStore } from "./zustand/contextual-zustand";
@@ -13,6 +14,7 @@ import { SerializibleStore } from "./zustand/shared-zustand";
 
 const stubDrawing: Drawing = {
   id: "stub",
+  players: [],
   charts: [],
   bans: [],
   pocketPicks: [],
@@ -26,7 +28,7 @@ interface DrawingProviderProps {
 }
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
-  updateDrawing: (d: Partial<Drawing>) => void;
+  updateDrawing: StoreApi<Drawing>["setState"];
   redrawChart(chartId: string): void;
   resetChart(chartId: string): void;
   /**
@@ -39,10 +41,10 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   handleBanProtectReplace(
     action: "ban" | "protect" | "pocket",
     chartId: string,
-    player: 1 | 2,
+    player: number,
     chart?: EligibleChart,
   ): void;
-  setWinner(chartId: string, p: 1 | 2 | null): void;
+  setWinner(chartId: string, p: number | null): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {

@@ -216,6 +216,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   return {
     id: `drawing:${nanoid(10)}`,
     charts: shuffle(drawnCharts),
+    players: [],
     bans: [],
     protects: [],
     pocketPicks: [],

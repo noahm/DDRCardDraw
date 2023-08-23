@@ -21,7 +21,7 @@ export interface DrawnChart extends EligibleChart {
 }
 
 export interface PlayerActionOnChart {
-  player: 1 | 2;
+  player: number;
   chartId: string;
 }
 
@@ -32,8 +32,7 @@ export interface PocketPick extends PlayerActionOnChart {
 export interface Drawing {
   id: string;
   title?: string;
-  player1?: string;
-  player2?: string;
+  players: string[];
   charts: DrawnChart[];
   bans: Array<PlayerActionOnChart>;
   protects: Array<PlayerActionOnChart>;
