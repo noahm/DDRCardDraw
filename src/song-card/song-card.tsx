@@ -78,9 +78,8 @@ export function SongCard(props: Props) {
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
 
-  const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] = useState<
-    0 | 1 | 2
-  >(0);
+  const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
+    useState<number>(0);
 
   const {
     name,

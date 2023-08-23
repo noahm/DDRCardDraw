@@ -17,6 +17,7 @@ import { firstOf } from "../utils";
 
 export function NetworkingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
+  const updateDrawing = useDrawing((s) => s.updateDrawing);
   const syncPeer = useDrawing((s) => s.__syncPeer);
   const isConnected = useRemotePeers((s) => !!s.thisPeer);
   const remotePeers = useRemotePeers((s) => s.remotePeers);
@@ -97,6 +98,19 @@ export function NetworkingActions() {
                   }),
                 );
               }
+            }}
+          />
+        </Tooltip>
+        <Tooltip content="Add Player">
+          <Button
+            minimal
+            icon={IconNames.NewPerson}
+            onClick={() => {
+              updateDrawing((drawing) => {
+                const next = drawing.players.slice();
+                next.push("");
+                return { players: next };
+              });
             }}
           />
         </Tooltip>
