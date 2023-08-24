@@ -6,6 +6,7 @@ import { AutoCompleteSelect, RoundSelect } from "./round-select";
 
 export function SetLabels() {
   const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const players = useDrawing((s) => s.players);
   if (!showLabels) {
     return null;
   }
@@ -15,29 +16,38 @@ export function SetLabels() {
       <div className={styles.title}>
         <RoundSelect />
       </div>
-      <div className={styles.versus}>vs</div>
+      {players.length === 2 && <div className={styles.versus}>vs</div>}
       <div className={styles.players}>
-        <PlayerLabel placeholder="Player 1" field="player1" />
-        <PlayerLabel placeholder="Player 2" field="player2" />
+        {players.map((p, idx) => (
+          <PlayerLabel
+            key={idx}
+            placeholder={`Player ${idx + 1}`}
+            playerIndex={idx + 1}
+          />
+        ))}
       </div>
     </div>
   );
 }
 
 function PlayerLabel({
-  field,
+  playerIndex,
   placeholder,
 }: {
-  field: "title" | "player1" | "player2";
+  playerIndex: number;
   placeholder: string;
 }) {
   const updateDrawing = useDrawing((s) => s.updateDrawing);
-  const value = useDrawing((s) => s[field] || null);
+  const value = useDrawing((s) => s.players[playerIndex - 1] || null);
   const playerNames = useConfigState((s) => s.playerNames);
   const updateConfig = useConfigState((s) => s.update);
   const handleChange = useCallback(
     (value: string) => {
-      updateDrawing({ [field]: value });
+      updateDrawing((drawing) => {
+        const prev = drawing.players.slice();
+        prev[playerIndex - 1] = value;
+        return { players: prev };
+      });
       if (!playerNames.includes(value)) {
         updateConfig((prev) => {
           const nextNames = prev.playerNames.slice();
@@ -46,7 +56,7 @@ function PlayerLabel({
         });
       }
     },
-    [updateDrawing, field, playerNames, updateConfig],
+    [updateDrawing, playerIndex, playerNames, updateConfig],
   );
   return (
     <AutoCompleteSelect

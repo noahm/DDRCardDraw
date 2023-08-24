@@ -17,6 +17,17 @@ interface Download {
 
 type ShareMethod = NativeShare | Clipboard | Download;
 
+export async function shareImage(dataUrl: string, filename: string) {
+  shareData(dataUrl, {
+    filename,
+    methods: [
+      { type: "nativeShare" },
+      { type: "clipboard", toastMessage: "Image copied to clipboard" },
+      { type: "download" },
+    ],
+  });
+}
+
 export async function shareData(
   dataUri: string,
   opts: {

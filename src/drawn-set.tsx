@@ -4,7 +4,7 @@ import styles from "./drawn-set.css";
 import { Drawing } from "./models/Drawing";
 import { SetLabels } from "./tournament-mode/drawing-labels";
 import { DrawingProvider, useDrawing } from "./drawing-context";
-import { NetworkingActions } from "./tournament-mode/networking-actions";
+import { DrawingActions } from "./tournament-mode/drawing-actions";
 import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
 import { useConfigState } from "./config-state";
 
@@ -83,7 +83,7 @@ const DrawnSet = memo<Props>(function DrawnSet({ drawing }) {
           <SetLabels />
           <ChartList />
         </div>
-        <NetworkingActions />
+        <DrawingActions />
       </div>
     </DrawingProvider>
   );

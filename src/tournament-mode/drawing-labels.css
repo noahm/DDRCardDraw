@@ -23,6 +23,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 1000px;
   width: 100%;
+  flex-wrap: wrap;
+}
+
+.players > * {
+  flex: 1 1 250px;
+}
+
+.versus + .players {
+  flex-wrap: nowrap;
+  max-width: 600px;
 }

@@ -1,4 +1,4 @@
-import { Checkbox, FormGroup, TagInput } from "@blueprintjs/core";
+import { Checkbox, FormGroup, NumericInput, TagInput } from "@blueprintjs/core";
 import { ReactNode } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
@@ -33,6 +33,7 @@ export function PlayerNamesControls() {
   return (
     <>
       <ShowLabelsToggle />
+      <PlayersPerDraw />
       <FormGroup label={t("controls.addPlayerLabel")}>
         <TagInput
           values={playerNames}
@@ -61,6 +62,24 @@ function ShowLabelsToggle() {
       }
       label={t("controls.playerLabels")}
     />
+  );
+}
+
+function PlayersPerDraw() {
+  const update = useConfigState((s) => s.update);
+  const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
+  const { t } = useIntl();
+
+  return (
+    <FormGroup label={t("controls.playersPerDraw")}>
+      <NumericInput
+        value={ppd}
+        large
+        min={0}
+        style={{ width: "58px" }}
+        onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
+      />
+    </FormGroup>
   );
 }
 

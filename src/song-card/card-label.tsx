@@ -13,7 +13,7 @@ export enum LabelType {
 }
 
 interface Props {
-  player: 1 | 2;
+  player: number;
   type: LabelType;
   onRemove?: () => void;
 }
