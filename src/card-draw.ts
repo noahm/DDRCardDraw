@@ -191,7 +191,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       drawnCharts.push({
         ...randomChart,
         // Give this random chart a unique id within this drawing
-        id: `drawn_chart:${nanoid(5)}`,
+        id: `drawn_chart-${nanoid(5)}`,
       });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
@@ -215,7 +215,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   }
 
   return {
-    id: `drawing:${nanoid(10)}`,
+    id: `draw-${nanoid(10)}`,
     charts: shuffle(drawnCharts),
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],
