@@ -65,7 +65,7 @@ export function loadConfig() {
           throw new Error("file type is " + f.type);
         }
         const contents: PersistedConfigV1 = JSON.parse(await f.text());
-        loadPersistedConfig(contents);
+        await loadPersistedConfig(contents);
         resolve();
         toaster.show({
           message: "Successfully loaded draw settings",

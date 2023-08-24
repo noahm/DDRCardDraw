@@ -59,6 +59,9 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     if (next < low) {
       return;
     }
+    if (!groupSongsAt) {
+      return;
+    }
     updateConfig({ groupSongsAt: next });
   }
 
@@ -130,7 +133,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       <Checkbox
         label={t("weights.group.label")}
         title={t("weights.group.title")}
-        checked={groupSongsAt !== null}
+        checked={!!groupSongsAt}
         onChange={toggleGroupCheck}
       />
       <NumericInput
