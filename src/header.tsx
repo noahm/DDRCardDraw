@@ -15,13 +15,22 @@ import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
+import { useDrawState } from "./draw-state";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
+  const clearDrawings = useDrawState((d) => d.clearDrawings);
+  const haveDrawings = useDrawState((d) => !!d.drawings.length);
   const { t } = useIntl();
 
   const menu = (
     <Menu>
+      <MenuItem
+        icon={IconNames.Trash}
+        onClick={clearDrawings}
+        text={t("clearDrawings")}
+        disabled={!haveDrawings}
+      />
       <MenuItem
         icon={IconNames.INFO_SIGN}
         onClick={() => setAboutOpen(true)}

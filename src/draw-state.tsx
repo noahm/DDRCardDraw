@@ -22,6 +22,7 @@ interface DrawState {
   loadGameData(dataSetName: string): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
+  clearDrawings(): void;
   injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
@@ -31,6 +32,15 @@ export const useDrawState = create<DrawState>((set, get) => ({
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
+  clearDrawings() {
+    if (
+      get().drawings.length &&
+      !window.confirm("This will clear all songs drawn so far. Confirm?")
+    ) {
+      return;
+    }
+    set({ drawings: [] });
+  },
   async loadGameData(dataSetName: string) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
@@ -38,8 +48,7 @@ export const useDrawState = create<DrawState>((set, get) => ({
     }
     if (
       state.drawings.length &&
-      // eslint-disable-next-line no-restricted-globals
-      !confirm("This will clear all songs drawn so far. Confirm?")
+      !window.confirm("This will clear all songs drawn so far. Confirm?")
     ) {
       return state.gameData;
     }
