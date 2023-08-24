@@ -8,22 +8,27 @@ import {
 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import { useDrawing, useDrawingStore } from "../drawing-context";
-import styles from "./networking-actions.css";
+import styles from "./drawing-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
 import { domToPng } from "modern-screenshot";
-import { shareData } from "../utils/share";
+import { shareImage } from "../utils/share";
 import { firstOf } from "../utils";
+import { useConfigState } from "../config-state";
 
-export function NetworkingActions() {
+const DEFAULT_FILENAME = "card-draw.png";
+
+export function DrawingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const updateDrawing = useDrawing((s) => s.updateDrawing);
+  const hasPlayers = useDrawing((s) => !!s.players.length);
   const syncPeer = useDrawing((s) => s.__syncPeer);
   const isConnected = useRemotePeers((s) => !!s.thisPeer);
   const remotePeers = useRemotePeers((s) => s.remotePeers);
   const sendDrawing = useRemotePeers((s) => s.sendDrawing);
   const syncDrawing = useRemotePeers((s) => s.beginSyncWithPeer);
   const drawingStore = useDrawingStore();
+  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
 
   let remoteActions: JSX.Element | undefined = undefined;
 
@@ -96,38 +101,44 @@ export function NetworkingActions() {
                   await domToPng(drawingElement, {
                     scale: 2,
                   }),
+                  DEFAULT_FILENAME,
                 );
               }
             }}
           />
         </Tooltip>
-        <Tooltip content="Add Player">
-          <Button
-            minimal
-            icon={IconNames.NewPerson}
-            onClick={() => {
-              updateDrawing((drawing) => {
-                const next = drawing.players.slice();
-                next.push("");
-                return { players: next };
-              });
-            }}
-          />
-        </Tooltip>
+        {showLabels && (
+          <>
+            <Tooltip content="Add Player">
+              <Button
+                minimal
+                icon={IconNames.NewPerson}
+                onClick={() => {
+                  updateDrawing((drawing) => {
+                    const next = drawing.players.slice();
+                    next.push("");
+                    return { players: next };
+                  });
+                }}
+              />
+            </Tooltip>
+            <Tooltip content="Remove Player" disabled={!hasPlayers}>
+              <Button
+                minimal
+                icon={IconNames.BlockedPerson}
+                disabled={!hasPlayers}
+                onClick={() => {
+                  updateDrawing((drawing) => {
+                    const next = drawing.players.slice();
+                    next.pop();
+                    return { players: next };
+                  });
+                }}
+              />
+            </Tooltip>
+          </>
+        )}
       </div>
     </>
   );
-}
-
-const DEFAULT_FILENAME = "card-draw.png";
-
-export async function shareImage(dataUrl: string) {
-  shareData(dataUrl, {
-    filename: DEFAULT_FILENAME,
-    methods: [
-      { type: "nativeShare" },
-      { type: "clipboard", toastMessage: "Image copied to clipboard" },
-      { type: "download" },
-    ],
-  });
 }
