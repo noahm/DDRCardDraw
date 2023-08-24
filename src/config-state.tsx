@@ -16,10 +16,10 @@ export interface ConfigState {
   style: string;
   difficulties: ReadonlySet<string>;
   flags: ReadonlySet<string>;
-  showPool: boolean;
+  showEligibleCharts: boolean;
   playerNames: string[];
   tournamentRounds: string[];
-  showLabels: boolean;
+  showPlayerAndRoundLabels: boolean;
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -38,7 +38,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     style: "",
     difficulties: new Set(),
     flags: new Set(),
-    showPool: false,
+    showEligibleCharts: false,
     playerNames: [],
     tournamentRounds: [
       "Pools",
@@ -49,7 +49,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
       "Grand Finals",
       "Tiebreaker",
     ],
-    showLabels: false,
+    showPlayerAndRoundLabels: false,
     update: set,
   }),
   Object.is,

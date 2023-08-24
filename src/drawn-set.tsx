@@ -60,7 +60,7 @@ function ChartFromContext({ chartId }: { chartId: string }) {
 }
 
 function TournamentModeSpacer() {
-  const showLabels = useConfigState((s) => s.showLabels);
+  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
   if (showLabels) {
     return null;
   }

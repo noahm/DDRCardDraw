@@ -76,9 +76,9 @@ function getDiffsAndRangeForNewStyle(
 
 function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
   const { t } = useIntl();
-  const { showPool, update } = useConfigState(
+  const { showEligible, update } = useConfigState(
     (state) => ({
-      showPool: state.showPool,
+      showEligible: state.showEligibleCharts,
       update: state.update,
     }),
     shallow,
@@ -89,11 +89,10 @@ function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
       large
       className={styles.showAllToggle}
       label={t("showSongPool")}
-      checked={showPool}
+      checked={showEligible}
       onChange={(e) => {
-        const showPool = !!e.currentTarget.checked;
         update({
-          showPool,
+          showEligibleCharts: !!e.currentTarget.checked,
         });
       }}
     />
@@ -110,7 +109,7 @@ export function HeaderControls() {
   const isNarrow = useIsNarrow();
 
   function handleDraw() {
-    useConfigState.setState({ showPool: false });
+    useConfigState.setState({ showEligibleCharts: false });
     drawSongs(useConfigState.getState());
   }
 
@@ -297,7 +296,9 @@ function GeneralSettings() {
           <FormGroup>
             <ShowChartsToggle inDrawer />
           </FormGroup>
-          <Collapse isOpen={!!configState.flags.size && configState.showPool}>
+          <Collapse
+            isOpen={!!configState.flags.size && configState.showEligibleCharts}
+          >
             <FormGroup label="Show only">
               <EligibleChartsListFilter />
             </FormGroup>

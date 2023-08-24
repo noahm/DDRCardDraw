@@ -5,7 +5,7 @@ import styles from "./drawing-labels.css";
 import { AutoCompleteSelect, RoundSelect } from "./round-select";
 
 export function SetLabels() {
-  const showLabels = useConfigState((s) => s.showLabels);
+  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
   if (!showLabels) {
     return null;
   }

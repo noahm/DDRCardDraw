@@ -6,7 +6,7 @@ import { shareData } from "./utils/share";
 interface PersistedConfigV1 {
   version: 1;
   dataSetName: string;
-  configState: Serialized<ConfigState>;
+  configState: Serialized<ConfigState> & OldSettings;
 }
 
 /**
@@ -125,8 +125,31 @@ async function loadPersistedConfig(saved: PersistedConfigV1) {
   }
 
   useConfigState.setState({
-    ...saved.configState,
+    ...migrateOldNames(saved.configState),
     difficulties: new Set(saved.configState.difficulties),
     flags: new Set(saved.configState.flags),
   });
+}
+
+interface OldSettings {
+  /** renamed to `showEligibleCharts` */
+  showPool?: boolean;
+  /** renamed to `showPlayerAndRoundLabels` */
+  showLabels?: boolean;
+}
+
+function migrateOldNames(
+  config: PersistedConfigV1["configState"],
+): Serialized<ConfigState> {
+  const { showPool, showLabels, ...modernConfig } = config;
+
+  if (showPool) {
+    modernConfig.showEligibleCharts = showPool;
+  }
+
+  if (showLabels) {
+    modernConfig.showPlayerAndRoundLabels = showLabels;
+  }
+
+  return modernConfig;
 }

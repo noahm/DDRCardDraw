@@ -31,8 +31,10 @@ export function DrawingList() {
   const hasDrawings = useDeferredValue(
     useDrawState((s) => !!s.drawings.length),
   );
-  const showPool = useDeferredValue(useConfigState((cfg) => cfg.showPool));
-  if (showPool) {
+  const showEligible = useDeferredValue(
+    useConfigState((cfg) => cfg.showEligibleCharts),
+  );
+  if (showEligible) {
     return (
       <Suspense fallback={<DelayedSpinner />}>
         <EligibleChartsList />
