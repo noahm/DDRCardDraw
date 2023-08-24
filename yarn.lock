@@ -4620,7 +4620,6 @@ __metadata:
     style-loader: ^3.3.1
     typescript: ^5.1.3
     victory: ^36.6.11
-    web-vitals: ^3.3.1
     webpack: ^5.88.2
     webpack-cli: ^5.1.4
     webpack-dev-server: ^4.13.0
@@ -11096,13 +11095,6 @@ __metadata:
   dependencies:
     defaults: ^1.0.3
   checksum: 814e9d1ddcc9798f7377ffa448a5a3892232b9275ebb30a41b529607691c0491de47cba426e917a4d08ded3ee7e9ba2f3fe32e62ee3cd9c7d3bafb7754bd553c
-  languageName: node
-  linkType: hard
-
-"web-vitals@npm:^3.3.1":
-  version: 3.4.0
-  resolution: "web-vitals@npm:3.4.0"
-  checksum: 6baac515035a82f05623aa6592654af3b5fd8ca0359e368388e147c1376ca00e5f1b2256130f8e96249ee793a437b55615db21ae699d6d400bf2800f676e0114
   languageName: node
   linkType: hard
 
