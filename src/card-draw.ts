@@ -92,6 +92,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     forceDistribution,
     weights,
     groupSongsAt,
+    defaultPlayersPerDraw,
   } = configData;
 
   /** all charts we will consider to be valid for this draw */
@@ -216,7 +217,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   return {
     id: `drawing:${nanoid(10)}`,
     charts: shuffle(drawnCharts),
-    players: ["", ""],
+    players: times(defaultPlayersPerDraw, () => ""),
     bans: [],
     protects: [],
     pocketPicks: [],
