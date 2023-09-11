@@ -1,16 +1,19 @@
+import classNames from "classnames";
 import React from "react";
 import { Intent, Tag } from "@blueprintjs/core";
 import styles from "./card-label.css";
 import { IconNames } from "@blueprintjs/icons";
+import { usePlayerLabel } from "./use-player-label";
 
 export enum LabelType {
   Protect = 1,
   Ban,
   Pocket,
+  Winner,
 }
 
 interface Props {
-  player: 1 | 2;
+  player: number;
   type: LabelType;
   onRemove?: () => void;
 }
@@ -23,6 +26,8 @@ function getIntent(type: LabelType) {
       return Intent.DANGER;
     case LabelType.Protect:
       return Intent.SUCCESS;
+    case LabelType.Winner:
+      return Intent.WARNING;
   }
 }
 
@@ -34,19 +39,26 @@ function getIcon(type: LabelType) {
       return IconNames.BAN_CIRCLE;
     case LabelType.Protect:
       return IconNames.LOCK;
+    case LabelType.Winner:
+      return IconNames.Crown;
   }
 }
 
 export function CardLabel({ player, type, onRemove }: Props) {
+  const label = usePlayerLabel(player);
+
+  const rootClassname = classNames(styles.cardLabel, {
+    [styles.winner]: type === LabelType.Winner,
+  });
   return (
-    <div className={styles.cardLabel}>
+    <div className={rootClassname}>
       <Tag
         intent={getIntent(type)}
         icon={getIcon(type)}
         large
         onRemove={onRemove}
       >
-        P{player}
+        {label}
       </Tag>
     </div>
   );

@@ -118,6 +118,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["removed"],
       "remyLink": "http://remywiki.com/%2A%E3%83%8F%E3%83%AD%E3%83%BC%E3%80%81%E3%83%97%E3%83%A9%E3%83%8D%E3%83%83%E3%83%88%E3%80%82",
       "jacket": "Hello, planet.png",
       "genre": "",
@@ -21282,6 +21283,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["usLocked"],
       "jacket": "No Life Queen [DJ Command Remix].jpg",
       "saHash": "I9P1dbOqD1qIP8bd9O80Ooo869bldobD",
       "saIndex": "931"
@@ -30935,7 +30937,7 @@
       "name_translation": "",
       "artist": "削除",
       "artist_translation": "sakuzyo",
-      "bpm": "303",
+      "bpm": "114-152",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {

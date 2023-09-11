@@ -77,11 +77,19 @@ function validateContents(dataFile) {
       }
       if (!difficulties.has(chart.diffClass)) {
         errors.push(
-          `unrecognized diffClass "${chart.diffClass}" used by ${song.name}`
+          `unrecognized diffClass "${chart.diffClass}" used by ${song.name}`,
         );
       }
-      if (chart.lvl > dataFile.meta.lvlMax) {
-        errors.push(`${song.name} has chart above level max`);
+      if (dataFile.meta.usesDrawGroups) {
+        if (!chart.drawGroup) {
+          errors.push(`${song.name} is missing a draw group`);
+        } else if (chart.drawGroup > dataFile.meta.lvlMax) {
+          errors.push(`${song.name} has draw group above max`);
+        }
+      } else {
+        if (chart.lvl > dataFile.meta.lvlMax) {
+          errors.push(`${song.name} has chart above level max`);
+        }
       }
     }
   }

@@ -6,12 +6,13 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const [, , inputPath, stub] = process.argv;
+const [, , inputPath, stub, tiered] = process.argv;
 
 if (!inputPath || !stub) {
-  console.log("Usage: yarn import:itg path/to/pack stubname");
+  console.log("Usage: yarn import:itg path/to/pack stubname [tiered?]");
   process.exit(1);
 }
+const useTiers = !!tiered;
 
 const packPath = resolve(inputPath);
 
@@ -29,9 +30,11 @@ const difficulties = new Set();
 const styles = new Set();
 const data = {
   meta: {
+    menuParent: "itg",
     flags: [],
     lvlMax: 0,
     lastUpdated: Date.now(),
+    usesDrawGroups: useTiers,
   },
   defaults: {
     flags: [],
@@ -110,25 +113,51 @@ for (const parsedSong of pack.simfiles) {
   if (finalJacket) {
     finalJacket = downloadJacket(
       finalJacket,
-      join("itg", stub, basename(titleDir) + ".jpg")
+      join("itg", stub, basename(titleDir) + ".jpg"),
     );
+  }
+
+  let bpm = parsedSong.displayBpm;
+  if (bpm === "NaN") {
+    if (parsedSong.minBpm === parsedSong.maxBpm) {
+      bpm = parsedSong.minBpm.toString();
+    } else {
+      bpm = `${parsedSong.minBpm}-${parsedSong.maxBpm}`;
+    }
   }
 
   const song = {
     name: parsedSong.title.titleName,
     name_translation: parsedSong.title.translitTitleName || "",
     jacket: finalJacket,
-    bpm: parsedSong.displayBpm,
+    bpm,
     artist: parsedSong.artist,
     charts: [],
   };
   for (const chart of parsedSong.availableTypes) {
-    song.charts.push({
+    let chartData = {
       lvl: chart.feet,
       style: chart.mode,
       diffClass: chart.difficulty,
-    });
-    data.meta.lvlMax = Math.max(data.meta.lvlMax, chart.feet);
+    };
+    if (useTiers) {
+      let tierMatch = parsedSong.title.titleName.match(/^\[T(\d+)\]/i);
+      if (tierMatch.length > 0) {
+        const parsedTier = parseInt(tierMatch[1]);
+        chartData.drawGroup = parsedTier;
+        data.meta.lvlMax = Math.max(data.meta.lvlMax, parsedTier);
+      } else {
+        console.error(
+          'Expected song titles to include tiers in the form "[T01] ..." but found:\n' +
+            parsedSong.title.titleName,
+        );
+      }
+    } else {
+      // lvl max is calculated on level for non-tiered packs
+      data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
+    }
+    song.charts.push(chartData);
+
     difficulties.add(chart.difficulty);
     styles.add(chart.mode);
   }

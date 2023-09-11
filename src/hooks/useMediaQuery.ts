@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 
 export const prefersDarkQuery = window.matchMedia(
-  "(prefers-color-scheme: dark)"
+  "(prefers-color-scheme: dark)",
 );
 
 /**
@@ -25,7 +25,7 @@ export function useMediaQuery(query: string) {
     return () => {
       mq.removeEventListener("change", handleChange);
     };
-  }, [mq]);
+  }, [matching, mq]);
 
   return matching;
 }

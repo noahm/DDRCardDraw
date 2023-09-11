@@ -14,6 +14,10 @@
       "required": ["lastUpdated", "styles", "difficulties", "lvlMax", "flags"],
       "additionalProperties": false,
       "properties": {
+        "menuParent": {
+          "type": "string",
+          "description": "If supplied, the parent folder name in the game select menu"
+        },
         "lastUpdated": {
           "type": "integer",
           "description": "Unix timestamp of last update to this data file"
@@ -24,7 +28,7 @@
         },
         "difficulties": {
           "type": "array",
-          "description": "List of all difficultiy classes available",
+          "description": "List of all difficulty classes available",
           "items": {
             "type": "object",
             "properties": {
@@ -48,6 +52,9 @@
         },
         "lvlMax": {
           "type": "integer"
+        },
+        "usesDrawGroups": {
+          "type": "boolean"
         }
       }
     },
@@ -146,7 +153,12 @@
           "description": "e.g. expert/challenge"
         },
         "lvl": {
-          "type": "integer"
+          "type": "integer",
+          "description": "in-game numeric rating"
+        },
+        "drawGroup": {
+          "type": "number",
+          "description": "tournament-specific grouping of charts (e.g. tier)"
         },
         "step": {
           "type": "number"

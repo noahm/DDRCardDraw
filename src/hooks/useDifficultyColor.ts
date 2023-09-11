@@ -1,12 +1,14 @@
-import { useDrawState } from "../draw-state";
+import { GameData } from "../models/SongData";
 
 /**
  * Returns the CSS color specified in the game file metadata for a given difficulty
  */
-export function useDifficultyColor(difficultyClass: string): string {
-  const gameData = useDrawState((s) => s.gameData);
-  const diffAccentColor =
-    gameData?.meta.difficulties.find((d) => d.key === difficultyClass)?.color ||
-    "";
-  return diffAccentColor;
+export function getDifficultyColor(
+  gameData: GameData,
+  difficultyClass: string,
+): string {
+  return (
+    gameData.meta.difficulties.find((d) => d.key === difficultyClass)?.color ||
+    ""
+  );
 }

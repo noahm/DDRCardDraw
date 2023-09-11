@@ -12,7 +12,7 @@ export async function getJacketFromRemySong(pageUrl, overrideSongName) {
     overrideSongName || decodeURIComponent(path.basename(pageUrl));
   // find images
   const images = Array.from(
-    dom.window.document.querySelectorAll(".thumb.tright")
+    dom.window.document.querySelectorAll(".thumb.tright"),
   );
   if (!images.length) {
     return;
@@ -114,7 +114,7 @@ export async function guessUrlFromName(songName) {
   try {
     const urlGuess = new URL(
       songName.replaceAll(" ", "_"),
-      "https://remywiki.com/"
+      "https://remywiki.com/",
     );
     const dom = await getDom(urlGuess.toString());
     if (dom && isSongPage(dom)) {

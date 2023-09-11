@@ -1,5 +1,4 @@
 // @ts-check
-import fetch from "node-fetch";
 import readline from "readline";
 import iconv from "iconv-lite";
 import he from "he";

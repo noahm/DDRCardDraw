@@ -9,9 +9,9 @@ import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
-import * as qs from "query-string";
-import createStore from "zustand";
-import shallow from "zustand/shallow";
+import { create } from "zustand";
+import { shallow } from "zustand/shallow";
+import { DataConnection } from "peerjs";
 
 interface DrawState {
   gameData: GameData | null;
@@ -22,14 +22,25 @@ interface DrawState {
   loadGameData(dataSetName: string): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
+  clearDrawings(): void;
+  injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
-export const useDrawState = createStore<DrawState>((set, get) => ({
+export const useDrawState = create<DrawState>((set, get) => ({
   gameData: null,
   fuzzySearch: null,
   drawings: [],
   dataSetName: "",
   lastDrawFailed: false,
+  clearDrawings() {
+    if (
+      get().drawings.length &&
+      !window.confirm("This will clear all songs drawn so far. Confirm?")
+    ) {
+      return;
+    }
+    set({ drawings: [] });
+  },
   async loadGameData(dataSetName: string) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
@@ -37,7 +48,7 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
     }
     if (
       state.drawings.length &&
-      !confirm("This will clear all songs drawn so far. Confirm?")
+      !window.confirm("This will clear all songs drawn so far. Confirm?")
     ) {
       return state.gameData;
     }
@@ -67,7 +78,7 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
         ],
         {
           sort: true,
-        }
+        },
       ),
     });
     return data;
@@ -86,11 +97,31 @@ export const useDrawState = createStore<DrawState>((set, get) => ({
       return false;
     }
 
-    set((prevState) => ({
-      drawings: [drawing, ...prevState.drawings].filter(Boolean),
-      lastDrawFailed: false,
-    }));
+    set((prevState) => {
+      return {
+        drawings: [drawing, ...prevState.drawings].filter(Boolean),
+        lastDrawFailed: false,
+      };
+    });
     return true;
+  },
+  injectRemoteDrawing(drawing, syncWithPeer) {
+    set((prevState) => {
+      const currentDrawing = prevState.drawings.find(
+        (d) => d.id === drawing.id,
+      );
+      const newDrawings = prevState.drawings.filter((d) => d.id !== drawing.id);
+      newDrawings.unshift(drawing);
+      if (currentDrawing) {
+        drawing.__syncPeer = currentDrawing.__syncPeer;
+      }
+      if (syncWithPeer) {
+        drawing.__syncPeer = syncWithPeer;
+      }
+      return {
+        drawings: newDrawings,
+      };
+    });
   },
 }));
 
@@ -117,33 +148,28 @@ function getInitialDataSet(defaultDataName: string) {
 }
 
 function writeDataSetToUrl(game: string) {
-  const next = `game-${game}`;
-  if ("#" + next !== window.location.hash) {
-    window.history.replaceState(
-      undefined,
-      "",
-      qs.stringifyUrl({ url: window.location.href, fragmentIdentifier: next })
-    );
+  const nextHash = `game-${game}`;
+  if ("#" + nextHash !== window.location.hash) {
+    const nextUrl = new URL(window.location.href);
+    nextUrl.hash = encodeURIComponent(nextHash);
+    window.history.replaceState(undefined, "", nextUrl);
   }
 }
 
 export function DrawStateManager(props: Props) {
   const [gameData, hasDrawings, loadGameData] = useDrawState(
     (state) => [state.gameData, !!state.drawings.length, state.loadGameData],
-    shallow
+    shallow,
   );
   useEffect(() => {
     loadGameData(getInitialDataSet(props.defaultDataSet));
-  }, []);
+  }, [loadGameData, props.defaultDataSet]);
 
-  const allStrings = i18nData as Record<string, I18NDict>;
-  const useTranslations = allStrings;
-  const additionalStrings = gameData?.i18n;
   return (
     <IntlProvider
       locale={detectedLanguage}
-      translations={useTranslations}
-      mergeTranslations={additionalStrings}
+      translations={i18nData as Record<string, I18NDict>}
+      mergeTranslations={gameData?.i18n}
     >
       <ApplyDefaultConfig defaults={gameData?.defaults} />
       <UnloadHandler confirmUnload={hasDrawings} />

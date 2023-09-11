@@ -1,6 +1,7 @@
 {
   "$schema": "../../songs.schema.json",
   "meta": {
+    "menuParent": "more",
     "styles": ["single", "double"],
     "difficulties": [
       { "key": "beginner", "color": "#6eccc4" },

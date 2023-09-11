@@ -1,7 +1,7 @@
 import { promises, existsSync } from "fs";
 import { resolve, basename, join, dirname } from "path";
 import { format } from "prettier";
-import pqueue from "p-queue";
+import PQueue from "p-queue";
 import jimp from "jimp";
 import inquirer from "inquirer";
 import sanitize from "sanitize-filename";
@@ -25,16 +25,22 @@ export function getDom(url) {
   return requestQueue.add(() => getDomInternal(url));
 }
 
-export function writeJsonData(data, filePath) {
+export async function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
+  let formatted;
+  try {
+    formatted = await format(JSON.stringify(data), { filepath: filePath });
+  } catch (e) {
+    throw new Error('Formatting failed', { cause: e });
+  }
   return promises.writeFile(
     filePath,
-    format(JSON.stringify(data), { filepath: filePath })
+    formatted,
   );
 }
 
-/** @type {pqueue} */
-export const requestQueue = new pqueue.default({
+/** @type {PQueue} */
+export const requestQueue = new PQueue({
   concurrency: 6, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
@@ -62,12 +68,12 @@ function getOutputPath(coverUrl, localFilename) {
   }
   const sanitizedFilename = sanitize(basename(localFilename)).replaceAll(
     /#/g,
-    ""
+    "",
   );
   const outputPath = join(dirname(localFilename), sanitizedFilename);
   return {
     absolute: join(JACKETS_PATH, outputPath),
-    relative: outputPath,
+    relative: outputPath.replace(/\\/g, "/"),
   };
 }
 
@@ -85,7 +91,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
     requestQueue
       .add(() => jimp.read(coverUrl))
       .then((img) =>
-        img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute)
+        img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute),
       )
       .catch((e) => {
         console.error("image download failure");
@@ -112,8 +118,15 @@ export function checkJacketExists(songName) {
 
 let jobCount = 0;
 
+class ClosableBottomBar extends inquirer.ui.BottomBar {
+  /** exposes the otherwise protected method to cleanup */
+  close() {
+    super.close();
+  }
+}
+
 export function reportQueueStatusLive() {
-  const ui = new inquirer.ui.BottomBar();
+  const ui = new ClosableBottomBar();
 
   requestQueue
     .on("add", () => {

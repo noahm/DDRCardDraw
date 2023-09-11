@@ -38,10 +38,16 @@ function labelToFlag(label) {
   return false;
 }
 
-if (!fs.existsSync("pump.db")) {
+// specify a mix ancestor
+const DATABASE_FILE = "pumpout.db";
+const VERSION_ANCESTOR = 178;
+const DATA_STUB = "pump-phoenix";
+const JACKET_DIR = "pump";
+
+if (!fs.existsSync(DATABASE_FILE)) {
   console.error(
     "No local data found, download a copy from the url below and save it as pump.db",
-    "  https://github.com/AnyhowStep/pump-out-sqlite3-dump/tree/master/dump"
+    "  https://github.com/AnyhowStep/pump-out-sqlite3-dump/tree/master/dump",
   );
   process.exit(0);
 }
@@ -50,9 +56,13 @@ const GET_IMAGES = true;
 
 function queueJacketDownload(jacketPath) {
   const filename = path.basename(jacketPath, ".png");
-  const outPath = `pump/${filename}.jpg`;
+  const outPath = `${JACKET_DIR}/${filename}.jpg`;
   if (GET_IMAGES) {
-    downloadJacket(`https://pumpout2020.anyhowstep.com${jacketPath}`, outPath);
+    let imgLocation = `./pumpout_cards/${filename}.png`;
+    if (!fs.existsSync(imgLocation)) {
+      imgLocation = `https://pumpout2020.anyhowstep.com${jacketPath}`;
+    }
+    downloadJacket(imgLocation, outPath);
   }
 
   return outPath;
@@ -60,7 +70,7 @@ function queueJacketDownload(jacketPath) {
 
 // main procedure
 try {
-  const db = bettersqlite("pump.db");
+  const db = bettersqlite(DATABASE_FILE);
   let lvlMax = 0;
   const ui = reportQueueStatusLive();
 
@@ -100,10 +110,10 @@ EXISTS(
           _derived_versionAncestor
         WHERE
           songVersion.versionId = _derived_versionAncestor.ancestorId AND
-          _derived_versionAncestor.versionId = 176
+          _derived_versionAncestor.versionId = ${VERSION_ANCESTOR}
       )
     )
-);`
+);`,
     )
     .all();
 
@@ -157,10 +167,10 @@ WHERE
 						  _derived_versionAncestor
 					  WHERE
 						  chartVersion.versionId = _derived_versionAncestor.ancestorId AND
-						  _derived_versionAncestor.versionId = 176
+						  _derived_versionAncestor.versionId = ${VERSION_ANCESTOR}
 				  )
 		  	)
-	);`
+	);`,
     )
     .all();
 
@@ -193,7 +203,7 @@ WHERE
 			  WHERE
 				  songCardVersion.songCardId = songCard.songCardId
 		  	)
-	);`
+	);`,
     )
     .all();
 
@@ -204,7 +214,7 @@ WHERE
       internalHexColor color,
       internalTitle title,
       modeId
-    from mode order by sortOrder`
+    from mode order by sortOrder`,
     )
     .all();
   const difficultyById = new Map();
@@ -304,6 +314,7 @@ ORDER BY
   }
 
   const songsById = new Map();
+  ui.log.write(`Iterating across ${songs.length} songs`);
   for (const song of songs) {
     songsById.set(song.saIndex, song);
     const jacketPath = jacketPathsById.get(song.saIndex);
@@ -401,7 +412,7 @@ ORDER BY
 
   await writeJsonData(
     pumpData,
-    path.resolve(path.join(__dirname, "../src/songs/pump.json"))
+    path.resolve(path.join(__dirname, `../src/songs/${DATA_STUB}.json`)),
   );
   if (requestQueue.size) {
     ui.log.write("waiting on images to finish downloading...");

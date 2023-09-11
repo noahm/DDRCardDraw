@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { toaster } from "./toaster";
 import { Intent } from "@blueprintjs/core";
 import { useIntl } from "./hooks/useIntl";
+import { IconNames } from "@blueprintjs/icons";
 
 export function UpdateManager() {
   const { t } = useIntl();
@@ -16,7 +17,7 @@ export function UpdateManager() {
               message: t("updateLoading"),
               intent: Intent.WARNING,
             },
-            "UpdateManager"
+            "UpdateManager",
           );
         },
         onUpdated() {
@@ -24,6 +25,7 @@ export function UpdateManager() {
           toaster.show(
             {
               message: t("updateReady"),
+              icon: IconNames.OUTDATED,
               intent: Intent.SUCCESS,
               timeout: 0,
               action: {
@@ -31,11 +33,12 @@ export function UpdateManager() {
                 onClick: () => window.location.reload(),
               },
             },
-            "UpdateManger"
+            "UpdateManger",
           );
         },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;

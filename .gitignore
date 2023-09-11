@@ -1,18 +1,11 @@
-.firebase
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 dist
 node_modules
 /*.zip
-
-scraper/Extreme Banners/
-
-scraper/Songs/
-
-scraper/extreme_out\.json
-
-scraper/acedb\.xml
-
-scraper/error\.txt
-
-scraper/masterlist\.csv
-
-cocoadraw/*

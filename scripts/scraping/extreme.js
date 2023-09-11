@@ -55,7 +55,7 @@ function getCharts(chartNodes) {
 function scrapeSongData(dom) {
   const songs = [];
   for (const songLink of dom.window.document.querySelectorAll(
-    'a[href^="songdb.php"]'
+    'a[href^="songdb.php"]',
   )) {
     const songRow = songLink.parentElement.parentElement;
     const genreNode = songRow.firstChild.querySelector("span.rightfloat");
