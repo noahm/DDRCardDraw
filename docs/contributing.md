@@ -40,3 +40,11 @@ For more information how to use the various form controls available in Blueprint
 ### Add new info to the data file
 
 Update the JSON data file for your game in question inside of [src/songs](../src/songs/) to include new data that conforms to your changes made in the schema file in step one. Be sure to re-run `yarn validate:json` to double check your changes.
+
+### Optional: Update card UI to display new data
+
+If the info you're adding is also something that should display _on the cards_, you have a bit more work in store.
+
+First, update the `EligibleChart` interface in [Drawing.ts](../src/models/Drawing.ts) to include the info needed to display. That will create type errors in [card-draw.ts](../src/card-draw.ts) for you to fix where each chart's data is copied from the data file into new `EligibleChart` objects as part of the draw business logic.
+
+Finally, you'll be able to make changes in [song-card.tsx](../src/song-card/song-card.tsx) (or one of its sibling files) where the `EligibleChart` and `DrawnChart` objects are passed in as a prop to be rendered as a card.
