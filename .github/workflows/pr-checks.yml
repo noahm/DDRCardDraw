@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 18
           cache: "yarn"
-      - run: yarn --frozen-lockfile
+      - run: yarn --immutable
       - run: yarn validate:json
         name: Validate Song Data
       - run: yarn validate:ts
