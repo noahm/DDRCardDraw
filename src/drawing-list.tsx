@@ -46,7 +46,7 @@ export function DrawingList() {
       <div className={styles.empty}>
         <NonIdealState
           icon={<img src={logo} height={128} />}
-          title="DDR Tools"
+          title="DDR Tools (Champions League 2023)"
           description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
           action={
             <Callout intent="primary" icon={IconNames.ThirdParty}>
