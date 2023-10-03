@@ -166,6 +166,7 @@ const flagIndex = {
   "BEMANI MusiQ FES": "unlocked_by_default",
   "SUMMER DANCE CAMP 2020": "unlock",
   "The 10th KAC": "tempUnlock",
+  "GRAND PRIX music pack vol.14": "grandPrixPack",
 };
 
 /**

@@ -109,7 +109,7 @@ export function checkJacketExists(songName) {
   if (existsSync(paths.absolute)) {
     return paths.relative;
   } else {
-    console.log(paths.absolute, "does not exist");
+    // console.log(paths.absolute, "does not exist");
   }
 }
 
