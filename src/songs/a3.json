@@ -17,7 +17,8 @@
       "goldExclusive",
       "grandPrixPack",
       "usLocked",
-      "tempUnlock"
+      "tempUnlock",
+      "doublesUnlock"
     ],
     "lvlMax": 19,
     "lastUpdated": 1696400074776
@@ -46,6 +47,7 @@
       "grandPrixPack": "DDR GRAND PRIX music packs",
       "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
+      "doublesUnlock": "Double play unlockable",
       "shock": "Shock arrow charts",
       "$abbr": {
         "beginner": "Beg",
@@ -71,6 +73,7 @@
       "grandPrixPack": "DDR GRAND PRIX music packs",
       "usLocked": "日本限定曲を含める",
       "tempUnlock": "現在解禁できない曲を含める",
+      "doublesUnlock": "Double play限定曲を含める",
       "shock": "Shock arrow charts",
       "$abbr": {
         "beginner": "Beg",
@@ -9490,7 +9493,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 17, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
+      "flags": ["doublesUnlock"],
       "remyLink": "https://remywiki.com/DUAL_STRIKER",
       "jacket": "DUAL_STRIKER.jpg",
       "saHash": "9b60DI1OQddDI6D9D1qPoDPODD19Db8d",
@@ -20951,7 +20954,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
+      "flags": ["doublesUnlock"],
       "remyLink": "https://remywiki.com/MA-TSU-RI",
       "jacket": "MA-TSU-RI.jpg",
       "saHash": "qIIDP8iPlII9qlOQIIol0i81b0d68qo8",
@@ -43752,7 +43755,7 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
+      "flags": ["doublesUnlock"],
       "remyLink": "https://remywiki.com/Chucchu_Machu_Picchu",
       "jacket": "Chucchu Machu Picchu.jpg",
       "saHash": "OoQiq8OiPbIPI80OqOlliP661bOIDd9o",
@@ -48199,7 +48202,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
+      "flags": ["doublesUnlock"],
       "remyLink": "https://remywiki.com/Renaikansoku_-2021_manatsu_no_ending_ver.-",
       "jacket": "Renaikansoku -2021 manatsu no ending ver.-.jpg",
       "saHash": "bqoboI0o8lIObPPdqq8lDDdI8b1QPDb1",
@@ -48562,7 +48565,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
+      "flags": ["doublesUnlock"],
       "remyLink": "https://remywiki.com/Murasakibana",
       "jacket": "Murasakibana.jpg",
       "saHash": "I86OI9lQ1qQ66dPDlddo8PoPo01PO66i",
