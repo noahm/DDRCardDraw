@@ -29,6 +29,7 @@ interface DrawingProviderProps {
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   updateDrawing: StoreApi<Drawing>["setState"];
+  redrawAllCharts(): void;
   redrawChart(chartId: string): void;
   resetChart(chartId: string): void;
   /**
@@ -89,6 +90,22 @@ const {
           }
           return chart;
         }),
+      }));
+    },
+    redrawAllCharts() {
+      const self = get();
+      const keepChartIds = new Set([
+        ...self.pocketPicks.map((pick) => pick.chartId),
+        ...self.protects.map((pick) => pick.chartId),
+      ]);
+      const keepCharts = self.charts.filter((c) => keepChartIds.has(c.id));
+      const newCharts = draw(useDrawState.getState().gameData!, {
+        ...useConfigState.getState(),
+        chartCount: get().charts.length - keepCharts.length,
+      });
+      set(() => ({
+        charts: [...keepCharts, ...newCharts.charts],
+        bans: [],
       }));
     },
     handleBanProtectReplace(action, chartId, player, newChart) {

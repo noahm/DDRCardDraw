@@ -21,6 +21,7 @@ const DEFAULT_FILENAME = "card-draw.png";
 export function DrawingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const updateDrawing = useDrawing((s) => s.updateDrawing);
+  const redrawAllCharts = useDrawing((s) => s.redrawAllCharts);
   const hasPlayers = useDrawing((s) => !!s.players.length);
   const syncPeer = useDrawing((s) => s.__syncPeer);
   const isConnected = useRemotePeers((s) => !!s.thisPeer);
@@ -105,6 +106,17 @@ export function DrawingActions() {
                 );
               }
             }}
+          />
+        </Tooltip>
+        <Tooltip content="Redraw all charts">
+          <Button
+            minimal
+            icon={IconNames.Refresh}
+            onClick={() =>
+              confirm(
+                "This will replace everything besides protects and pocket picks!",
+              ) && redrawAllCharts()
+            }
           />
         </Tooltip>
         {showLabels && (
