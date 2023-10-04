@@ -15,6 +15,7 @@ export const DDR_A3 = {
   jacketPrefix: "",
   preferredJacketSource: "remy",
   includeFolders: true,
+  fetchJackets: true,
 };
 
 export const DDR_A20_PLUS = {
