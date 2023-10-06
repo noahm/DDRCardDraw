@@ -9,8 +9,6 @@ import { IconNames } from "@blueprintjs/icons";
 export function SetLabels() {
   const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
   const players = useDrawing((s) => s.players);
-  const ipp = useDrawing((s) => s.incrementPriorityPlayer);
-  const priorityPlayer = useDrawing((s) => s.priorityPlayer);
   if (!showLabels) {
     return null;
   }
