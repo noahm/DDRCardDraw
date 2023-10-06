@@ -29,6 +29,7 @@ interface DrawingProviderProps {
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   updateDrawing: StoreApi<Drawing>["setState"];
+  incrementPriorityPlayer(): void;
   redrawAllCharts(): void;
   redrawChart(chartId: string): void;
   resetChart(chartId: string): void;
@@ -68,6 +69,22 @@ const {
   (props, set, get) => ({
     ...props.initialDrawing,
     updateDrawing: set,
+    incrementPriorityPlayer() {
+      set((d) => {
+        let priorityPlayer = d.priorityPlayer;
+        if (!priorityPlayer) {
+          priorityPlayer = 1;
+        } else {
+          priorityPlayer += 1;
+          if (priorityPlayer >= d.players.length + 1) {
+            priorityPlayer = undefined;
+          }
+        }
+        return {
+          priorityPlayer,
+        };
+      });
+    },
     resetChart(chartId) {
       set((d) => ({
         bans: d.bans.filter((p) => p.chartId !== chartId),
