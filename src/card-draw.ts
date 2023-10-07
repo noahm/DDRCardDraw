@@ -127,7 +127,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   const requiredDrawDifficulties: number[] = [];
 
-  let loopEnd = (useWeights && groupSongsAt) || upperBound;
+  const loopEnd = (useWeights && groupSongsAt) || upperBound;
 
   // build an array of possible levels to pick from
   for (let level = lowerBound; level <= loopEnd; level++) {
