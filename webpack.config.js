@@ -39,7 +39,7 @@ module.exports = function (env = {}, argv = {}) {
       path: resolve(__dirname, "./dist"),
     },
     optimization: {
-      minimize: isProd,
+      minimize: false,
       minimizer: ["...", new CssMinimizerPlugin()],
     },
     performance: {
