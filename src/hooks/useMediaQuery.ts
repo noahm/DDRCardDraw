@@ -21,9 +21,19 @@ export function useMediaQuery(query: string) {
     if (matching !== mq.matches) {
       setMatching(mq.matches);
     }
-    mq.addEventListener("change", handleChange);
+    if (mq.addEventListener) {
+      mq.addEventListener("change", handleChange);
+    } else {
+      // for old safari e.g. iOS 12
+      mq.addListener(handleChange);
+    }
     return () => {
-      mq.removeEventListener("change", handleChange);
+      if (mq.removeEventListener) {
+        mq.removeEventListener("change", handleChange);
+      } else {
+        // for old safari e.g. iOS 12
+        mq.removeListener(handleChange);
+      }
     };
   }, [matching, mq]);
 
