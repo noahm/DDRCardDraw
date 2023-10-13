@@ -121,9 +121,11 @@ export function DrawingActions() {
             }
           />
         </Tooltip>
-        <Tooltip content="Cause Error">
-          <Button minimal icon={IconNames.Error} onClick={showBoundary} />
-        </Tooltip>
+        {process.env.NODE_ENV === "production" ? null : (
+          <Tooltip content="Cause Error">
+            <Button minimal icon={IconNames.Error} onClick={showBoundary} />
+          </Tooltip>
+        )}
         {showLabels && (
           <>
             <Tooltip content="Add Player">
