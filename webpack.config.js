@@ -25,7 +25,7 @@ module.exports = function (env = {}, argv = {}) {
   return {
     target: "web",
     mode: isProd ? "production" : "development",
-    devtool: isProd ? false : "inline-cheap-module-source-map",
+    devtool: isProd ? "source-map" : "inline-cheap-module-source-map",
     devServer: !serve
       ? undefined
       : {
