@@ -46,6 +46,9 @@ function peerIdFromDisplay(display: string) {
 }
 
 export function displayFromPeerId(id: string) {
+  if (!id) {
+    return "ERROR?!";
+  }
   return id.replace("ddr-tools ", "").replace("_", "#");
 }
 
@@ -191,7 +194,7 @@ export const useRemotePeers = create<RemotePeerStore>((set, get) => ({
       });
     } else {
       const peerLib = await import("peerjs");
-      return new Promise((res, rej) => {
+      const ret = new Promise<void>((res, rej) => {
         const newPin = genPin();
         const peer = new peerLib.Peer(peerId(newName, newPin), {
           host: "peering.ddr.tools",
@@ -230,6 +233,10 @@ export const useRemotePeers = create<RemotePeerStore>((set, get) => ({
           thisPeer: peer,
         });
       });
+      ret.catch((reason) => {
+        console.error("setName promise rejected", reason);
+      });
+      return ret;
     }
   },
   sendDrawing(drawing, peerId) {

@@ -15,6 +15,7 @@ import { domToPng } from "modern-screenshot";
 import { shareImage } from "../utils/share";
 import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
+import { useErrorBoundary } from "react-error-boundary";
 
 const DEFAULT_FILENAME = "card-draw.png";
 
@@ -30,6 +31,7 @@ export function DrawingActions() {
   const syncDrawing = useRemotePeers((s) => s.beginSyncWithPeer);
   const drawingStore = useDrawingStore();
   const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const { showBoundary } = useErrorBoundary();
 
   let remoteActions: JSX.Element | undefined = undefined;
 
@@ -118,6 +120,9 @@ export function DrawingActions() {
               ) && redrawAllCharts()
             }
           />
+        </Tooltip>
+        <Tooltip content="Cause Error">
+          <Button minimal icon={IconNames.Error} onClick={showBoundary} />
         </Tooltip>
         {showLabels && (
           <>
