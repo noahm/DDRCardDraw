@@ -74,11 +74,10 @@ export interface GameData {
  * Dictionary of localized strings
  */
 export interface I18NDict {
-  [k: string]:
-    | string
-    | {
-        [k: string]: string;
-      };
+  [k: string]: string | I18NDictBranch;
+}
+export interface I18NDictBranch {
+  [k: string]: string | I18NDictBranch;
 }
 export interface Song {
   flags?: UniqueStringArr2;
