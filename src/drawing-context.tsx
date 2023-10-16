@@ -29,6 +29,8 @@ interface DrawingProviderProps {
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   updateDrawing: StoreApi<Drawing>["setState"];
+  incrementPriorityPlayer(): void;
+  redrawAllCharts(): void;
   redrawChart(chartId: string): void;
   resetChart(chartId: string): void;
   /**
@@ -67,6 +69,22 @@ const {
   (props, set, get) => ({
     ...props.initialDrawing,
     updateDrawing: set,
+    incrementPriorityPlayer() {
+      set((d) => {
+        let priorityPlayer = d.priorityPlayer;
+        if (!priorityPlayer) {
+          priorityPlayer = 1;
+        } else {
+          priorityPlayer += 1;
+          if (priorityPlayer >= d.players.length + 1) {
+            priorityPlayer = undefined;
+          }
+        }
+        return {
+          priorityPlayer,
+        };
+      });
+    },
     resetChart(chartId) {
       set((d) => ({
         bans: d.bans.filter((p) => p.chartId !== chartId),
@@ -89,6 +107,22 @@ const {
           }
           return chart;
         }),
+      }));
+    },
+    redrawAllCharts() {
+      const self = get();
+      const keepChartIds = new Set([
+        ...self.pocketPicks.map((pick) => pick.chartId),
+        ...self.protects.map((pick) => pick.chartId),
+      ]);
+      const keepCharts = self.charts.filter((c) => keepChartIds.has(c.id));
+      const newCharts = draw(useDrawState.getState().gameData!, {
+        ...useConfigState.getState(),
+        chartCount: get().charts.length - keepCharts.length,
+      });
+      set(() => ({
+        charts: [...keepCharts, ...newCharts.charts],
+        bans: [],
       }));
     },
     handleBanProtectReplace(action, chartId, player, newChart) {

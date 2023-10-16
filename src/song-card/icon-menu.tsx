@@ -49,7 +49,11 @@ export function IconMenu(props: Props) {
       {onRedraw && (
         <>
           <MenuDivider />
-          <MenuItem text="Redraw" icon={IconNames.REFRESH} onClick={onRedraw} />
+          <MenuItem
+            text={t("songAction.redraw")}
+            icon={IconNames.REFRESH}
+            onClick={onRedraw}
+          />
         </>
       )}
     </Menu>

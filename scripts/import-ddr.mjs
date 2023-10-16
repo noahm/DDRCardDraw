@@ -11,7 +11,7 @@ import { globalAgent as httpAgent } from "http";
 import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { DDR_A20_PLUS as MIX_META } from "./scraping/ddr-sources.mjs";
+import { DDR_A3 as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";
@@ -182,9 +182,9 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
     getRemovedSongUrls(MIX_META.remy)
       .then((delSongs) => {
         log(`Found ${delSongs.size} removed songs from RemyWiki`);
-        if (delSongs.size) {
-          console.log(delSongs);
-        }
+        // if (delSongs.size) {
+        //   console.log(delSongs);
+        // }
         return delSongs;
       })
       .catch(() => {
@@ -259,11 +259,11 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         }
       }
       // re-order flags field to be after jacket
-      const flags = song.flags;
-      if (flags) {
-        delete song.flags;
-        song.flags = flags;
-      }
+      // const flags = song.flags;
+      // if (flags) {
+      //   delete song.flags;
+      //   song.flags = flags;
+      // }
       if (existingSong) {
         if (!song.saHash) song.saHash = existingSong.saHash;
         if (!song.saIndex) song.saIndex = existingSong.saIndex;

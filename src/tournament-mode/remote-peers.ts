@@ -46,6 +46,9 @@ function peerIdFromDisplay(display: string) {
 }
 
 export function displayFromPeerId(id: string) {
+  if (!id) {
+    return "ERROR?!";
+  }
   return id.replace("ddr-tools ", "").replace("_", "#");
 }
 
@@ -191,9 +194,38 @@ export const useRemotePeers = create<RemotePeerStore>((set, get) => ({
       });
     } else {
       const peerLib = await import("peerjs");
-      return new Promise((res, rej) => {
+      const ret = new Promise<void>((res, rej) => {
         const newPin = genPin();
-        const peer = new peerLib.Peer(peerId(newName, newPin));
+        const peer = new peerLib.Peer(peerId(newName, newPin), {
+          host: "peering.ddr.tools",
+          config: {
+            iceServers: [
+              {
+                urls: "stun:stun.relay.metered.ca:80",
+              },
+              {
+                urls: "turn:a.relay.metered.ca:80",
+                username: "715941586bb093eb00e8c157",
+                credential: "vjDASx0W340EwkUY",
+              },
+              {
+                urls: "turn:a.relay.metered.ca:80?transport=tcp",
+                username: "715941586bb093eb00e8c157",
+                credential: "vjDASx0W340EwkUY",
+              },
+              {
+                urls: "turn:a.relay.metered.ca:443",
+                username: "715941586bb093eb00e8c157",
+                credential: "vjDASx0W340EwkUY",
+              },
+              {
+                urls: "turn:a.relay.metered.ca:443?transport=tcp",
+                username: "715941586bb093eb00e8c157",
+                credential: "vjDASx0W340EwkUY",
+              },
+            ],
+          },
+        });
         bindPeer(peer, res, rej);
         set({
           instanceName: newName,
@@ -201,6 +233,10 @@ export const useRemotePeers = create<RemotePeerStore>((set, get) => ({
           thisPeer: peer,
         });
       });
+      ret.catch((reason) => {
+        console.error("setName promise rejected", reason);
+      });
+      return ret;
     }
   },
   sendDrawing(drawing, peerId) {

@@ -127,8 +127,10 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   const requiredDrawDifficulties: number[] = [];
 
+  const loopEnd = (useWeights && groupSongsAt) || upperBound;
+
   // build an array of possible levels to pick from
-  for (let level = lowerBound; level <= upperBound; level++) {
+  for (let level = lowerBound; level <= loopEnd; level++) {
     let weightAmount = 0;
     if (useWeights) {
       weightAmount = weights[level];
@@ -146,7 +148,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // so a level with a weight of 15% can only show up on at most 1 card, a level with
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
-    for (let level = lowerBound; level <= upperBound; level++) {
+    for (let level = lowerBound; level <= loopEnd; level++) {
       const levelAsStr = level.toString();
       const normalizedWeight = weights[level] / totalWeights;
       maxDrawPerLevel[levelAsStr] = Math.ceil(

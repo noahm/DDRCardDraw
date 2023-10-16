@@ -3,7 +3,7 @@ import { resolve, basename, join, dirname } from "path";
 import { format } from "prettier";
 import PQueue from "p-queue";
 import jimp from "jimp";
-import inquirer from "inquirer";
+import BottomBar from "inquirer/lib/ui/bottom-bar.js";
 import sanitize from "sanitize-filename";
 
 import { JSDOM } from "jsdom";
@@ -31,12 +31,9 @@ export async function writeJsonData(data, filePath) {
   try {
     formatted = await format(JSON.stringify(data), { filepath: filePath });
   } catch (e) {
-    throw new Error('Formatting failed', { cause: e });
+    throw new Error("Formatting failed", { cause: e });
   }
-  return promises.writeFile(
-    filePath,
-    formatted,
-  );
+  return promises.writeFile(filePath, formatted);
 }
 
 /** @type {PQueue} */
@@ -89,7 +86,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
   const { absolute, relative } = getOutputPath(coverUrl, localFilename);
   if (!existsSync(absolute)) {
     requestQueue
-      .add(() => jimp.read(coverUrl))
+      .add(() => jimp.read(coverUrl), { throwOnTimeout: true })
       .then((img) =>
         img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute),
       )
@@ -112,16 +109,21 @@ export function checkJacketExists(songName) {
   if (existsSync(paths.absolute)) {
     return paths.relative;
   } else {
-    console.log(paths.absolute, "does not exist");
+    // console.log(paths.absolute, "does not exist");
   }
 }
 
 let jobCount = 0;
 
-class ClosableBottomBar extends inquirer.ui.BottomBar {
-  /** exposes the otherwise protected method to cleanup */
+class ClosableBottomBar extends BottomBar {
+  /** exposes protected method */
   close() {
     super.close();
+  }
+
+  /** exposes protected method */
+  clean() {
+    return super.clean();
   }
 }
 

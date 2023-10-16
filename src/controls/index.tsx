@@ -36,6 +36,8 @@ import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
 import { loadConfig, saveConfig } from "../config-persistence";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "../utils/error-fallback";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -139,7 +141,9 @@ export function HeaderControls() {
           </>
         }
       >
-        <ControlsDrawer />
+        <ErrorBoundary fallback={<ErrorFallback />}>
+          <ControlsDrawer />
+        </ErrorBoundary>
       </Drawer>
       {!isNarrow && (
         <>

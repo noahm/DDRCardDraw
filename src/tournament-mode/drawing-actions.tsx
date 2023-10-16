@@ -15,12 +15,14 @@ import { domToPng } from "modern-screenshot";
 import { shareImage } from "../utils/share";
 import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
+import { useErrorBoundary } from "react-error-boundary";
 
 const DEFAULT_FILENAME = "card-draw.png";
 
 export function DrawingActions() {
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const updateDrawing = useDrawing((s) => s.updateDrawing);
+  const redrawAllCharts = useDrawing((s) => s.redrawAllCharts);
   const hasPlayers = useDrawing((s) => !!s.players.length);
   const syncPeer = useDrawing((s) => s.__syncPeer);
   const isConnected = useRemotePeers((s) => !!s.thisPeer);
@@ -29,6 +31,7 @@ export function DrawingActions() {
   const syncDrawing = useRemotePeers((s) => s.beginSyncWithPeer);
   const drawingStore = useDrawingStore();
   const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const { showBoundary } = useErrorBoundary();
 
   let remoteActions: JSX.Element | undefined = undefined;
 
@@ -107,6 +110,22 @@ export function DrawingActions() {
             }}
           />
         </Tooltip>
+        <Tooltip content="Redraw all charts">
+          <Button
+            minimal
+            icon={IconNames.Refresh}
+            onClick={() =>
+              confirm(
+                "This will replace everything besides protects and pocket picks!",
+              ) && redrawAllCharts()
+            }
+          />
+        </Tooltip>
+        {process.env.NODE_ENV === "production" ? null : (
+          <Tooltip content="Cause Error">
+            <Button minimal icon={IconNames.Error} onClick={showBoundary} />
+          </Tooltip>
+        )}
         {showLabels && (
           <>
             <Tooltip content="Add Player">

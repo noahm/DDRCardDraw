@@ -23,9 +23,9 @@ module.exports = function (env = {}, argv = {}) {
   const zip = !!env.zip;
 
   return {
-    target: "browserslist: >1%",
+    target: "web",
     mode: isProd ? "production" : "development",
-    devtool: isProd ? false : "inline-cheap-module-source-map",
+    devtool: isProd ? "source-map" : "inline-cheap-module-source-map",
     devServer: !serve
       ? undefined
       : {
@@ -70,7 +70,7 @@ module.exports = function (env = {}, argv = {}) {
               presets: [
                 [
                   require("@babel/preset-env"),
-                  { targets: { browsers: [">1%"] } },
+                  { targets: { browsers: [">1%"], ios: "12.5" } },
                 ],
                 require("@babel/preset-typescript"),
               ],

@@ -2,6 +2,8 @@
 import readline from "readline";
 import iconv from "iconv-lite";
 import he from "he";
+import fs from "fs";
+import { TextDecoderStream, ReadableStream } from "node:stream/web";
 
 const difficultyByIndex = [
   "beginner",
@@ -28,38 +30,57 @@ export async function getSongsFromSkillAttack(log) {
   log("fetching data from skillattack.com");
   const resp = await fetch("http://skillattack.com/sa4/data/master_music.txt");
 
-  return new Promise((resolve) => {
-    const decoder = iconv.decodeStream("Shift_JIS");
-    resp.body.pipe(decoder);
-    const rl = readline.createInterface(decoder);
-    /** @type {Array<SaData>} */
-    const data = [];
-    rl.on("line", (rawLine) => {
-      const [index, hash, ...fields] = rawLine.split("\t");
-      /** @type {Array<SaChart>} */
-      const charts = [];
-      let i = 0;
-      for (const field of fields) {
-        i++;
-        if (i > 9) break;
-        const lvl = parseInt(field, 10);
-        if (lvl < 0) continue;
-        charts.push({
-          lvl,
-          style: i > singlesColumnCount ? "double" : "single",
-          diffClass: difficultyByIndex[i - 1],
-        });
-      }
-      data.push({
-        saHash: hash,
-        saIndex: index,
-        name: he.decode(fields[9]),
-        artist: he.decode(fields[10]),
-        charts,
+  const decoder = new TextDecoderStream("Shift_JIS");
+  resp.body.pipeTo(decoder.writable);
+  /** @type {Array<SaData>} */
+  const data = [];
+  for await (const rawLine of lineByLine(decoder.readable)) {
+    const [index, hash, ...fields] = rawLine.split("\t");
+    if (!index || !hash || fields.length < 11) {
+      log("skipping unusable SA line");
+      continue;
+    }
+    /** @type {Array<SaChart>} */
+    const charts = [];
+    let i = 0;
+    for (const field of fields) {
+      i++;
+      if (i > 9) break;
+      const lvl = parseInt(field, 10);
+      if (lvl < 0) continue;
+      charts.push({
+        lvl,
+        style: i > singlesColumnCount ? "double" : "single",
+        diffClass: difficultyByIndex[i - 1],
       });
+    }
+    data.push({
+      saHash: hash,
+      saIndex: index,
+      name: he.decode(fields[9]),
+      artist: he.decode(fields[10]),
+      charts,
     });
-    rl.on("close", () => {
-      resolve(data);
-    });
-  });
+  }
+
+  return data;
+}
+
+/**
+ * @param {ReadableStream<string>} input
+ */
+async function* lineByLine(input) {
+  const reader = input.getReader();
+  let partialLine = "";
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) {
+      if (partialLine) yield partialLine;
+      return;
+    }
+
+    const lines = (partialLine + value).split("\n");
+    partialLine = lines.pop();
+    yield* lines;
+  }
 }
