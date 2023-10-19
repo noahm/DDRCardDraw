@@ -19,7 +19,7 @@ interface DrawState {
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
-  loadGameData(dataSetName: string): Promise<GameData>;
+  loadGameData(dataSetName: string, gameData?: GameData): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
   clearDrawings(): void;
@@ -41,7 +41,7 @@ export const useDrawState = create<DrawState>((set, get) => ({
     }
     set({ drawings: [] });
   },
-  async loadGameData(dataSetName: string) {
+  async loadGameData(dataSetName: string, gameData?: GameData) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
       return state.gameData;
@@ -59,11 +59,13 @@ export const useDrawState = create<DrawState>((set, get) => ({
     });
     writeDataSetToUrl(dataSetName);
 
-    const data = (
-      await import(
-        /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
-      )
-    ).default;
+    const data =
+      gameData ||
+      (
+        await import(
+          /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
+        )
+      ).default;
     set({
       gameData: data,
       drawings: [],
