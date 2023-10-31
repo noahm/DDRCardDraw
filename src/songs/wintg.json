@@ -1,0 +1,1635 @@
+{
+  "meta": {
+    "menuParent": "itg",
+    "flags": [],
+    "lvlMax": 10,
+    "lastUpdated": 1698779132258,
+    "usesDrawGroups": true,
+    "styles": ["double", "single"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 1,
+    "difficulties": ["challenge"],
+    "upperLvlBound": 10,
+    "style": "double"
+  },
+  "i18n": {
+    "en": {
+      "name": "Winter Groove",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    },
+    "ja": {
+      "name": "Winter Groove",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[T01] A Turtle's Heart",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] A Turtle's Heart.jpg",
+      "bpm": "148",
+      "artist": "Mili",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Celebrate",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Celebrate.jpg",
+      "bpm": "112",
+      "artist": "TWICE",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Continuous Moment (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Continuous Moment (No CMOD).jpg",
+      "bpm": "154",
+      "artist": "影虎。",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] GIMMICK",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] GIMMICK.jpg",
+      "bpm": "143",
+      "artist": "Metamon as Ms.Sill",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Honky Tonk Badonkadonk",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Honky Tonk Badonkadonk.jpg",
+      "bpm": "115",
+      "artist": "Trace Adkins",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Infinity of Our Love",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Infinity of Our Love.jpg",
+      "bpm": "114",
+      "artist": "Nekomata Master feat. Joelle Strother",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] La Senorita",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] La Senorita.jpg",
+      "bpm": "182.000",
+      "artist": "CAPTAIN.T",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Only You",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Only You.jpg",
+      "bpm": "186.000",
+      "artist": "CAPTAIN JACK",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Ookina koe de",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Ookina koe de.jpg",
+      "bpm": "100",
+      "artist": "猫叉Master feat. Sana",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Reason8",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Reason8.jpg",
+      "bpm": "105",
+      "artist": "Gosha",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Show Me Love",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] Show Me Love.jpg",
+      "bpm": "126",
+      "artist": "MOTi",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] TECHNO-LOGIC",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] TECHNO-LOGIC.jpg",
+      "bpm": "152",
+      "artist": "TaW",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] This Feeling",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T01] This Feeling (Afrojack & Disto Remix Mix).jpg",
+      "bpm": "150",
+      "artist": "The Chainsmokers",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T02] 100% Pure Love",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] 100 Pure Love.jpg",
+      "bpm": "120",
+      "artist": "Crystal Waters",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Ain't Nobody Else",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Ain't Nobody Else.jpg",
+      "bpm": "126",
+      "artist": "Holl & Rush, Dwight Steven",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Gruntilda's Lair",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Banjo-Kazooie - Gruntilda's Lair.jpg",
+      "bpm": "120",
+      "artist": "Oodora",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Can I Get A... (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Can I Get A... (No CMOD).jpg",
+      "bpm": "89-177",
+      "artist": "Jay Z",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] China Town",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] CHINA TOWN.jpg",
+      "bpm": "130",
+      "artist": "Kigga",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Dysangel",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Dysangel.jpg",
+      "bpm": "170",
+      "artist": "T2KAZUYA",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Era (Nostalmix)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Era (Nostalmix).jpg",
+      "bpm": "90.000-180.000",
+      "artist": "TaQ",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Fresh Outta Japan",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Fresh Outta Japan.jpg",
+      "bpm": "91",
+      "artist": "Yasko",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Glide",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Glide.jpg",
+      "bpm": "134",
+      "artist": "Stephen Walking",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] I Lose Control",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] I Lose Control.jpg",
+      "bpm": "135",
+      "artist": "U-hey Seta",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] MURASAME",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] MURASAME.jpg",
+      "bpm": "150",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Policeman",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Policeman.jpg",
+      "bpm": "105",
+      "artist": "Eva Simons ft Konshens",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Shamshir (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T02] Shamshir (No CMOD).jpg",
+      "bpm": "135",
+      "artist": "Blacklolita",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T03] Antithese",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Antithese.jpg",
+      "bpm": "172",
+      "artist": "Blacklolita",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Camel",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Camel.jpg",
+      "bpm": "100",
+      "artist": "S.in",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Closer",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Closer.jpg",
+      "bpm": "92",
+      "artist": "Lemaitre",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Konoyo Loading...",
+      "name_translation": "Konoyo Loading...",
+      "jacket": "itg/wintg/[T03] Konoyo Loading.jpg",
+      "bpm": "128",
+      "artist": "REOL",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Nori Nori Nori",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Nori Nori Nori.jpg",
+      "bpm": "160.000",
+      "artist": "JUDY CRYSTAL",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Padam Padam",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Padam Padam.jpg",
+      "bpm": "128",
+      "artist": "Kylie Minogue",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Pyramids",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Pyramids.jpg",
+      "bpm": "128",
+      "artist": "DVBBS, Dropgun, Sanjin",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Roadman",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Roadman.jpg",
+      "bpm": "150",
+      "artist": "MegaSphere",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Robot Language",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Robot Language.jpg",
+      "bpm": "132",
+      "artist": "meganeko",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Seventh Summer of Love",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Seventh Summer of Love.jpg",
+      "bpm": "90",
+      "artist": "void (Mournfinale)",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Take It To The Morning Light",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Take It To The Morning Light.jpg",
+      "bpm": "129",
+      "artist": "Golden Gate",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] The Ghost (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] The Ghost (No CMOD).jpg",
+      "bpm": "64-128",
+      "artist": "NIVIRO",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Unknown Civilization",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T03] Unknown Civilization.jpg",
+      "bpm": "128",
+      "artist": "Laur",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T04] ANTIFRAGILE",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] ANTIFRAGILE.jpg",
+      "bpm": "105",
+      "artist": "LE SSERAFIM",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Cthugha (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Cthugha (No CMOD).jpg",
+      "bpm": "107-213",
+      "artist": "USAO",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Fergalicious",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Fergalicious.jpg",
+      "bpm": "129.000",
+      "artist": "Fergie ft. will.i.am",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Go Go Sing",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Go Go Sing.jpg",
+      "bpm": "166",
+      "artist": "Outsider feat. Whale",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Hypercube",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Hypercube.jpg",
+      "bpm": "145.000",
+      "artist": "MAX",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] INSOMNIA",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] INSOMNIA.jpg",
+      "bpm": "195",
+      "artist": "Jakarta Funk Brothers",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Little Drop",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Little Drop.jpg",
+      "bpm": "138",
+      "artist": "Dropgun",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] MEJIRUSHI",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] MEJIRUSHI.jpg",
+      "bpm": "195",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Other Side",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Other Side.jpg",
+      "bpm": "124",
+      "artist": "OVSKY",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Singularity",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Singularity.jpg",
+      "bpm": "175",
+      "artist": "Etia.",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Sun Sala",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Sun Sala.jpg",
+      "bpm": "122",
+      "artist": "Memba",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] The 90's Decision",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] The 90s Decision.jpg",
+      "bpm": "128",
+      "artist": "MYUKKE.",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Trombone",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T04] Trombone.jpg",
+      "bpm": "85-126",
+      "artist": "AronChupa & Little Sis Nora",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T05] DANGEROOOOUS JUNGLE",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] DANGEROOOOUS JUNGLE.jpg",
+      "bpm": "160",
+      "artist": "Laur",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] dashstar* VIP",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Dashstar VIP.jpg",
+      "bpm": "112-126",
+      "artist": "Knock2",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Electric Injury",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Electric Injury.jpg",
+      "bpm": "190",
+      "artist": "siqlo",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] FLATLINE (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] FLATLINE (Eliminate Remix) (No CMOD).jpg",
+      "bpm": "128",
+      "artist": "Frost Children",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] In Da Getto",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] In Da Getto.jpg",
+      "bpm": "127",
+      "artist": "J Balvin & Skrillex",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Keep Down Flyday",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Keep Down Flyday.jpg",
+      "bpm": "135",
+      "artist": "Q-Rabbit",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Marble",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Marble.jpg",
+      "bpm": "175",
+      "artist": "t+pazolite",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Spider's Blood",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Spider's Blood.jpg",
+      "bpm": "164",
+      "artist": "DJ Command feat. Takahito \"Rute\" Koshida",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Supersymmetry",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Supersymmetry.jpg",
+      "bpm": "140",
+      "artist": "Quartzone",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Two Weeks",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Two Weeks.jpg",
+      "bpm": "224",
+      "artist": "All That Remains",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Universe",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Universe.jpg",
+      "bpm": "128",
+      "artist": "Yunosuke",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Untrodden Morn",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Untrodden Morn.jpg",
+      "bpm": "138",
+      "artist": "Silentroom",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Waterfall",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T05] Waterfall.jpg",
+      "bpm": "174",
+      "artist": "awfuless meets Zekk",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T06] Accelerate",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Accelerate.jpg",
+      "bpm": "150",
+      "artist": "Teminite & Skybreak",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Hypnodancer",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Hypnodancer.jpg",
+      "bpm": "142",
+      "artist": "Little Big",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] SAKURA (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Sakura (No CMOD).jpg",
+      "bpm": "48.000-160.000",
+      "artist": "RevenG",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Sold",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Sold.jpg",
+      "bpm": "116",
+      "artist": "John Michael Montgomery",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Speedrun",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Speedrun.jpg",
+      "bpm": "150",
+      "artist": "Ace Aura x Skybreak",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Spin Out (aran Remix)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Spin Out (aran Remix).jpg",
+      "bpm": "128",
+      "artist": "Shandy Kubota",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] TWIST STR3AM",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] TWIST STR3AM.jpg",
+      "bpm": "175",
+      "artist": "Getty & Srav3R",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Yo!! Say!! Fairy!!",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T06] Yo! Say!! Fairy!!!.jpg",
+      "bpm": "150",
+      "artist": "MYUKKE.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T07] Baboon",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Baboon.jpg",
+      "bpm": "140",
+      "artist": "BeutNoise",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Demetrius",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Demetrius.jpg",
+      "bpm": "128",
+      "artist": "James Landino",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Iridescent",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Iridescent.jpg",
+      "bpm": "150",
+      "artist": "ZEOL",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Make It Bun Dem",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Make It Bun Dem.jpg",
+      "bpm": "140",
+      "artist": "Skrillex & Damian \"Jr. Gong\" Marley",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] On And On!!",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] On And On!!.jpg",
+      "bpm": "170",
+      "artist": "ETIA.",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Optronic",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Optronic.jpg",
+      "bpm": "150",
+      "artist": "Voltra",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Rebellion",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Rebellion.jpg",
+      "bpm": "170",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Storm Eagle",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T07] Storm Eagle (Sega Genesis Remix).jpg",
+      "bpm": "175",
+      "artist": "MyNewSoundtrack",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T08] Arise",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Arise.jpg",
+      "bpm": "140",
+      "artist": "Au5",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Blows Up Everything",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Blows Up Everything.jpg",
+      "bpm": "215.000",
+      "artist": "USAO",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Boss Challenge",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Boss Challenge (from -Diddy Kong Racing-).jpg",
+      "bpm": "132",
+      "artist": "Player2",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Caffeine High",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Caffeine High.jpg",
+      "bpm": "150",
+      "artist": "yusi.",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Feel It",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Feel It.jpg",
+      "bpm": "155-163",
+      "artist": "IAHN",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Inner Spirit",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Inner Spirit -GIGA HiTECH Mix-.jpg",
+      "bpm": "150",
+      "artist": "lapix (Remixed by Blacklolita)",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] space dust something something",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] space dust something something.jpg",
+      "bpm": "152",
+      "artist": "Shirobon",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Sweet Devil",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T08] Sweet Devil.jpg",
+      "bpm": "132",
+      "artist": "Hachioji P, Giga",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T09] Dance With Me",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Dance With Me.jpg",
+      "bpm": "126",
+      "artist": "Ship Wrek",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Honey Trap",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Honey Trap.jpg",
+      "bpm": "160",
+      "artist": "Expander",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Lose Your Sense",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Lose Your Sense.jpg",
+      "bpm": "175",
+      "artist": "ZxNX",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Make Over (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Make Over (No CMOD).jpg",
+      "bpm": "165",
+      "artist": "awfuless",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Metallic Madness Zone",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Metallic Madness Zone (from -Sonic Mania-).jpg",
+      "bpm": "150",
+      "artist": "A_RIVAL",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] One Night in Tokyo",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] One Night in Tokyo.jpg",
+      "bpm": "128",
+      "artist": "Beast in Black",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Pika Pika",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Pika Pika.jpg",
+      "bpm": "128",
+      "artist": "Steve Aoki, Loopers ft. Vinnie Jones",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Shake That Bagpipe",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T09] Shake That Bagpipe.jpg",
+      "bpm": "108-138",
+      "artist": "The SIDH",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T10] $100 Bills",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] $100 Bills ($215 Dollar Remix).jpg",
+      "bpm": "215",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Alamut Conflict",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] Alamut Conflict.jpg",
+      "bpm": "126",
+      "artist": "Sultan",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] logicx-1.wav",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] logicx-1 wav.jpg",
+      "bpm": "160",
+      "artist": "HYØUKA & TBN (Kou!)",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Newspapers For Magicians (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] Newspapers For Magicians (No CMOD).jpg",
+      "bpm": "150",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Secret",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] Secret.jpg",
+      "bpm": "170",
+      "artist": "awfuless",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Sparky Spark",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] Sparky Spark.jpg",
+      "bpm": "155",
+      "artist": "kamome sano",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] THE EMINEM SECTION",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] THE EMINEM SECTION.jpg",
+      "bpm": "125-166",
+      "artist": "six impala",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] You're Gonna Love Me",
+      "name_translation": "",
+      "jacket": "itg/wintg/[T10] You're Gonna Love Me.jpg",
+      "bpm": "78-145",
+      "artist": "Eliminate feat. Leah Culver",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    }
+  ]
+}
