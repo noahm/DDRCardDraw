@@ -12,7 +12,7 @@
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
     "lvlMax": 28,
-    "lastUpdated": 1696606685010
+    "lastUpdated": 1699063031699
   },
   "defaults": {
     "style": "solo",
@@ -7341,6 +7341,90 @@
         { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "609",
+      "name": "Boogeyman",
+      "artist": "Wizardz of Oz",
+      "genre": "Pop",
+      "bpm": "128",
+      "jacket": "smx/Boogeyman.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy" },
+        { "style": "solo", "lvl": 12, "diffClass": "hard" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild" },
+        { "style": "solo", "lvl": 18, "diffClass": "dual" },
+        { "style": "solo", "lvl": 21, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 11, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "610",
+      "name": "Halloween Scream",
+      "artist": "Bigshot Bo And The Swing Crusaders",
+      "genre": "Electro Swing",
+      "bpm": "120",
+      "jacket": "smx/HalloweenScream.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "611",
+      "name": "The Bass & the Melody",
+      "artist": "S3RL",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/TheBass&theMelody.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 14, "diffClass": "full" },
+        { "style": "team", "lvl": 21, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "612",
+      "name": "Under The Bed",
+      "artist": "Macks Wolf X Tatsunoshin",
+      "genre": "Hardcore",
+      "bpm": "165",
+      "jacket": "smx/UnderTheBed.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 17, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ]
     }
   ]
