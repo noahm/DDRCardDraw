@@ -28,3 +28,13 @@
 .narrowInput {
   width: 100px;
 }
+
+/* remove native styling on number type inputs */
+input[type="number"] {
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}

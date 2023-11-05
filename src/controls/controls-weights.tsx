@@ -111,6 +111,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       {groups.map((group, i) => (
         <div className={styles.level} key={group}>
           <NumericInput
+            type="number"
             width={2}
             name={`weight-${group}`}
             value={weights[group] || ""}
@@ -137,6 +138,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
         onChange={toggleGroupCheck}
       />
       <NumericInput
+        type="number"
         width={2}
         disabled={!groupSongsAt}
         value={groupSongsAt || high - 1}

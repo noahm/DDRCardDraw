@@ -318,6 +318,7 @@ function GeneralSettings() {
           <NumericInput
             large
             fill
+            type="number"
             value={chartCount}
             min={1}
             clampValueOnBlur
@@ -340,12 +341,13 @@ function GeneralSettings() {
             contentClassName={styles.narrowInput}
           >
             <NumericInput
+              large
               fill
+              type="number"
               value={lowerBound}
               min={1}
               max={Math.max(upperBound, lowerBound, 1)}
               clampValueOnBlur
-              large
               onValueChange={handleLowerBoundChange}
             />
           </FormGroup>
@@ -358,12 +360,13 @@ function GeneralSettings() {
             contentClassName={styles.narrowInput}
           >
             <NumericInput
+              large
               fill
+              type="number"
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
               clampValueOnBlur
-              large
               onValueChange={handleUpperBoundChange}
             />
           </FormGroup>

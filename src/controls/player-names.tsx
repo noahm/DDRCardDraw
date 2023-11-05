@@ -73,6 +73,7 @@ function PlayersPerDraw() {
   return (
     <FormGroup label={t("controls.playersPerDraw")}>
       <NumericInput
+        type="number"
         value={ppd}
         large
         min={0}
