@@ -112,6 +112,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
         <div className={styles.level} key={group}>
           <NumericInput
             type="number"
+            inputMode="numeric"
             width={2}
             name={`weight-${group}`}
             value={weights[group] || ""}
@@ -139,6 +140,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       />
       <NumericInput
         type="number"
+        inputMode="numeric"
         width={2}
         disabled={!groupSongsAt}
         value={groupSongsAt || high - 1}

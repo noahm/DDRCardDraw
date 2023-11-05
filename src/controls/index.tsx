@@ -319,6 +319,7 @@ function GeneralSettings() {
             large
             fill
             type="number"
+            inputMode="numeric"
             value={chartCount}
             min={1}
             clampValueOnBlur
@@ -344,6 +345,7 @@ function GeneralSettings() {
               large
               fill
               type="number"
+              inputMode="numeric"
               value={lowerBound}
               min={1}
               max={Math.max(upperBound, lowerBound, 1)}
@@ -363,6 +365,7 @@ function GeneralSettings() {
               large
               fill
               type="number"
+              inputMode="numeric"
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
