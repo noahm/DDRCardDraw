@@ -148,7 +148,9 @@ const songIdsToSkip = new Set([
   1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
   1259, // AUTOMATION PARADISE
   1438, // AUTOMATION PARADISE, April Fools
-  1751, // EXCEEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
+  1490, // MAX BURNING!! (FOR INFINITE EXTENDED VERSION), Automation Paradise/Megamix Exclusive
+  1491, // Zusammenbruch of Gott, Automation Paradise/Megamix Exclusive
+  1751, // EXCEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
 ]);
 function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
@@ -211,6 +213,7 @@ function buildSong(song, availableJackets) {
   return {
     name: info.title_name[0],
     search_hint: info.ascii[0],
+    distribution_date: info.distribution_date[0],
     artist: info.artist_name[0],
     jacket: usesSharedJacket
       ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
