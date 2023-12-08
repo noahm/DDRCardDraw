@@ -114,6 +114,9 @@
           "search_hint": {
             "type": "string"
           },
+          "date_added": {
+            "type": "string"
+          },
           "charts": {
             "type": "array",
             "items": { "$ref": "#/definitions/chart" },
