@@ -10,6 +10,16 @@ import { JSDOM } from "jsdom";
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+import CacheableLookup from "cacheable-lookup";
+import { globalAgent as httpAgent } from "http";
+import { globalAgent as httpsAgent } from "https";
+{
+  /* globally install dns caching to avoid mass lookups of remywiki over and over */
+  const dnsCache = new CacheableLookup();
+  dnsCache.install(httpAgent);
+  dnsCache.install(httpsAgent);
+}
+
 /**
  * @param {string} url
  */
