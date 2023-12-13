@@ -213,7 +213,7 @@ function buildSong(song, availableJackets) {
   return {
     name: info.title_name[0],
     search_hint: info.ascii[0],
-    distribution_date: info.distribution_date[0],
+    date_added: info.distribution_date[0],
     artist: info.artist_name[0],
     jacket: usesSharedJacket
       ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
