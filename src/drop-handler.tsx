@@ -1,33 +1,36 @@
-import { useCallback, useEffect } from "react";
-import { parsePack } from "simfile-parser/browser";
+import { Button, Classes, Dialog, DialogFooter } from "@blueprintjs/core";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { PackWithSongs, parsePack } from "simfile-parser/browser";
 import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
+import { pause } from "./utils/pause";
 
 export function DropHandler() {
-  const loadGameData = useDrawState((s) => s.loadGameData);
-  const handleDrop = useCallback(
-    async (evt: DragEvent) => {
-      console.log("handle drop");
-      evt.preventDefault();
-      if (!evt.dataTransfer) {
-        return;
-      }
-
-      if (evt.dataTransfer.items.length !== 1) {
-        console.error("too many items dropped");
-        return;
-      }
-      try {
-        const pack = await parsePack(evt.dataTransfer.items[0]);
-        console.log(`parsed pack "${pack.name}" with ${pack.songCount} songs`);
-        const data = getDataFileFromPack(pack);
-        loadGameData(pack.name, data);
-      } catch (e) {
-        console.log(e);
-      }
-    },
-    [loadGameData],
+  const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
+    null,
   );
+
+  const handleClose = useCallback(() => {
+    setDroppedFolder(null);
+  }, []);
+
+  const handleDrop = useCallback(async (evt: DragEvent) => {
+    console.log("handle drop");
+    evt.preventDefault();
+    if (!evt.dataTransfer) {
+      return;
+    }
+
+    if (evt.dataTransfer.items.length !== 1) {
+      console.error("too many items dropped");
+      return;
+    }
+    try {
+      setDroppedFolder(evt.dataTransfer.items[0]);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   const handleDragOver = useCallback((e: Event) => {
     e.preventDefault();
@@ -42,5 +45,96 @@ export function DropHandler() {
     };
   });
 
-  return null;
+  return (
+    <Dialog
+      isOpen={!!droppedFolder}
+      title="ITG Pack Import"
+      onClose={handleClose}
+    >
+      <ConfirmPackDialog
+        droppedFolder={droppedFolder}
+        onClose={handleClose}
+        onSave={handleClose}
+      />
+    </Dialog>
+  );
+}
+
+interface DialogProps {
+  droppedFolder: DataTransferItem | null;
+  onSave(): void;
+  onClose(): void;
+}
+
+function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
+  const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
+  useEffect(() => {
+    if (!droppedFolder) {
+      setParsedPack(null);
+      return;
+    }
+    parsePack(droppedFolder).then((pack) => {
+      setParsedPack(pack);
+    });
+  }, [droppedFolder]);
+
+  const derivedData = useMemo(() => {
+    if (!parsedPack) {
+      return;
+    }
+    return getDataFileFromPack(parsedPack);
+  }, [parsedPack]);
+
+  const loadGameData = useDrawState((s) => s.loadGameData);
+  const [saving, setSaving] = useState(false);
+  const handleConfirm = useCallback(() => {
+    if (!parsedPack) {
+      return;
+    }
+    loadGameData(parsedPack.name, derivedData)
+      .then(() => pause(500))
+      .then(() => {
+        setSaving(false);
+        onSave();
+      });
+    setSaving(true);
+  }, [parsedPack, derivedData, loadGameData, onSave]);
+
+  const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
+
+  return (
+    <>
+      <p className={maybeSkeleton}>
+        Pack name: {parsedPack ? parsedPack.name : "to be determined"}
+      </p>
+      <dl className={maybeSkeleton}>
+        <dt>Total Songs</dt>
+        <dd>{parsedPack ? parsedPack.songCount : 50}</dd>
+        <dt>Total Charts</dt>
+        <dd>
+          {derivedData
+            ? derivedData.songs.reduce(
+                (total, item) => total + item.charts.length,
+                0,
+              )
+            : 50}
+        </dd>
+      </dl>
+      <DialogFooter
+        actions={
+          <>
+            <Button
+              className={maybeSkeleton}
+              intent="primary"
+              onClick={handleConfirm}
+              loading={saving}
+            >
+              Import
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </>
+        }
+      />
+    </>
+  );
 }
