@@ -4626,7 +4626,7 @@ __metadata:
     react-intl: "npm:^6.5.5"
     react-refresh: "npm:^0.14.0"
     sanitize-filename: "npm:^1.6.3"
-    simfile-parser: "npm:^0.7.0"
+    simfile-parser: "npm:^0.7.1"
     style-loader: "npm:^3.3.1"
     typescript: "npm:^5.3.3"
     victory: "npm:^36.7.0"
@@ -9756,12 +9756,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simfile-parser@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "simfile-parser@npm:0.7.0"
+"simfile-parser@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "simfile-parser@npm:0.7.1"
   bin:
     simfile-parser: dist/cli.js
-  checksum: 4878d9abee211a8ff3239c346ebf3713ca8480dab8d68b30789984d7f96c236ed4d75a4248c2a75f76507913bc35c257f778eaf09be1d4fb488e8040664a9db1
+  checksum: 945f2ff69fd1dbb7ec54313c1acde3b897fecb84384e655e51fec37541a21e22f3ac7036c09b060baf8b28436f9bb8bcb6aaadab75114be23cdf0b3bcc5154da
   languageName: node
   linkType: hard
 
