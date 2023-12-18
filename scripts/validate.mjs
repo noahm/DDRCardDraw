@@ -139,6 +139,7 @@ const bannerComment = `
  * here as well as checking that the data files match.
  */`;
 
+// @ts-expect-error songsSchema doesn't import with const type values
 const ts = await compile(songsSchema, "SongData", { bannerComment });
 writeFileSync(resolve(join(__dirname, "..", schemaLocation)), ts);
 console.log("Schema written to ", schemaLocation);

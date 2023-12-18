@@ -1,0 +1,1442 @@
+{
+  "meta": {
+    "menuParent": "itg",
+    "flags": [],
+    "lvlMax": 10,
+    "lastUpdated": 1702672943833,
+    "usesDrawGroups": true,
+    "styles": ["single", "double"],
+    "difficulties": [
+      { "key": "challenge", "color": "#0191F2" },
+      { "key": "expert", "color": "#F64D8B" },
+      { "key": "basic", "color": "#2BC856" },
+      { "key": "difficult", "color": "#F2F52C" },
+      { "key": "edit", "color": "grey" }
+    ]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 1,
+    "difficulties": ["challenge", "expert", "basic", "difficult", "edit"],
+    "upperLvlBound": 10,
+    "style": "single"
+  },
+  "i18n": {
+    "en": {
+      "name": "The BHOP Ball",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    },
+    "ja": {
+      "name": "The BHOP Ball",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[T01] Bad Apple!! feat. nomico",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Bad Apple!! feat. nomico Nhato Remix [SM].jpg",
+      "bpm": "138",
+      "artist": "Masayoshi Minoshima",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Boom Boom Pow",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Boom Boom Pow.jpg",
+      "bpm": "102",
+      "artist": "Zafrir feat. Afrojack",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Disco Pop",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Disco Pop (SH).jpg",
+      "bpm": "124",
+      "artist": "Max Styler",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "expert", "drawGroup": 1 }
+      ]
+    },
+    {
+      "name": "[T01] Dreaming Days",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Dreaming Days [SM].jpg",
+      "bpm": "168",
+      "artist": "Arte Refact feat. hololive IDOL PROJECT",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Dynamite",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Dynamite [SH].jpg",
+      "bpm": "200",
+      "artist": "USAO",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Llego El Pavo",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Llego El Pavo.jpg",
+      "bpm": "78-155",
+      "artist": "Silvio Mora",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Rather Be",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Rather Be [SH].jpg",
+      "bpm": "121",
+      "artist": "Clean Bandit feat. Jess Glynne",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Tacos",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Tacos.jpg",
+      "bpm": "115",
+      "artist": "Little Big",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        },
+        { "lvl": 10, "style": "double", "diffClass": "expert", "drawGroup": 1 },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Waiting for Tonight",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T01] Waiting for Tonight (P.A.F.F. Trap Remix) [SM].jpg",
+      "bpm": "140",
+      "artist": "Jennifer Lopez",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T02] 9mm",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] 9mm [SH].jpg",
+      "bpm": "130",
+      "artist": "Foxsky",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] A CYBER'S WORLD?",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] A Cybers World.jpg",
+      "bpm": "117",
+      "artist": "Toby Fox",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Bubblegum K.K.",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] Bubblegum K.K.jpg",
+      "bpm": "170",
+      "artist": "Animal Crossing",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Coconut Mall",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] Coconut Mall.jpg",
+      "bpm": "126",
+      "artist": "Vector U",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Desert",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] Desert.jpg",
+      "bpm": "90",
+      "artist": "Inova",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] I Hold Still (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] I Hold Still (No CMOD).jpg",
+      "bpm": "64-127",
+      "artist": "Jauz x Crankdat",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] I/O",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] IO [SH].jpg",
+      "bpm": "151",
+      "artist": "Ryu☆",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] ON FIRE",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] ON FIRE.jpg",
+      "bpm": "125",
+      "artist": "JOYRYDE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Simple and Clean",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T02] Simple and Clean.jpg",
+      "bpm": "136",
+      "artist": "Imprinter",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T03] Bad Boy Birdwatch",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Bad Boy Birdwatch.jpg",
+      "bpm": "128",
+      "artist": "HyperJuice",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Bounce",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Bounce.jpg",
+      "bpm": "150",
+      "artist": "VESK GREEN & Pegboard Nerds",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Let me be with you",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Let me be with you.jpg",
+      "bpm": "130",
+      "artist": "Round Table feat. Nino",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Levitating",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Levitating [SX].jpg",
+      "bpm": "103",
+      "artist": "Dua Lipa",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] So Am I",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] So Am I [SX].jpg",
+      "bpm": "65-130",
+      "artist": "Ava Max",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Sweet Clapper",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Sweet Clapper [SX].jpg",
+      "bpm": "162",
+      "artist": "livetune+",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Sweet* Witch* Girl*",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Sweet Witch Girl.jpg",
+      "bpm": "180",
+      "artist": "モリモリあつし vs. uma",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Vindication (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] Vindication (No CMOD).jpg",
+      "bpm": "87-174",
+      "artist": "Laur",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] burbank house",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T03] burbank house.jpg",
+      "bpm": "170",
+      "artist": "tsubi club",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T04] $100 Bills",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] $100 Bills.jpg",
+      "bpm": "105",
+      "artist": "Jaroslav Beck",
+      "charts": [
+        { "lvl": 9, "style": "single", "diffClass": "expert", "drawGroup": 4 }
+      ]
+    },
+    {
+      "name": "[T04] Awake",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] Awake.jpg",
+      "bpm": "95",
+      "artist": "WRLD (ft. Colordrive)",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Dazzlin' Darlin",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] Dazzlin Darlin.jpg",
+      "bpm": "149",
+      "artist": "HHH",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] File Select",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] File Select.jpg",
+      "bpm": "180",
+      "artist": "Hyper Potions",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] 時計の国のジェミニ (No CMOD)",
+      "name_translation": "[T04] Gemini in Clockland (No CMOD)",
+      "jacket": "itg/bhop-ball-23/[T04] Gemini in Clockland (No CMOD).jpg",
+      "bpm": "180",
+      "artist": "黒魔",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Let's Groove",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] Let_s Groove.jpg",
+      "bpm": "135",
+      "artist": "Maurice White, Wayne Vaughn",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Mr. Toot",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] Mr. Toot.jpg",
+      "bpm": "105.000",
+      "artist": "Ylvis",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Poems Are Forever",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T04] Poems Are Forever [SX].jpg",
+      "bpm": "145",
+      "artist": "Shoji",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] 夜に駆ける",
+      "name_translation": "[T04] Yoru ni Kakeru",
+      "jacket": "itg/bhop-ball-23/[T04] Yoru ni Kakeru.jpg",
+      "bpm": "130",
+      "artist": "YOASOBI",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T05] 3n3rgizer",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] 3n3ergizer.jpg",
+      "bpm": "150",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Cherry Blossom",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Cherry Blossom.jpg",
+      "bpm": "170.000",
+      "artist": "Memme",
+      "charts": [
+        { "lvl": 10, "style": "single", "diffClass": "expert", "drawGroup": 5 }
+      ]
+    },
+    {
+      "name": "[T05] Cracks (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Cracks (No CMOD) [SX].jpg",
+      "bpm": "70-140",
+      "artist": "Freestylers",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Freezing Hot",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Freezing Hot.jpg",
+      "bpm": "128",
+      "artist": "M2U feat.ろめろん",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Light Switch (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Light Switch (No CMOD).jpg",
+      "bpm": "79-184",
+      "artist": "Charlie Puth",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Make Eggs, Eat Eggs",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Make Eggs, Eat Eggs [SX].jpg",
+      "bpm": "128",
+      "artist": "Ben Briggs",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Midnight Hour",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Midnight Hour.jpg",
+      "bpm": "126",
+      "artist": "Skrillex, Boys Noize, Ty Dolla $ign",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Sex",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Sex.jpg",
+      "bpm": "115",
+      "artist": "Shirobon",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Smokin Out The Window",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T05] Smokin Out The Window.jpg",
+      "bpm": "82",
+      "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T06] ABC",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] ABC - [Zaia].jpg",
+      "bpm": "140",
+      "artist": "Polyphia ft. Sophia Black",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Banger Machine",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] Banger Machine.jpg",
+      "bpm": "124.000",
+      "artist": "Castion",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Blue Love (Speed Garage Mix)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] Blue Love (Speed Garage Mix) [SX].jpg",
+      "bpm": "150",
+      "artist": "lapix feat. YUC'e",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Krotona Days",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] Krotona Days.jpg",
+      "bpm": "134",
+      "artist": "Rodrigo y Gabriella",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] PROTECT ME",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] PROTECT ME.jpg",
+      "bpm": "150",
+      "artist": "k?d x yadosan",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Riddle (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] Riddle (No CMOD).jpg",
+      "bpm": "128",
+      "artist": "Bad Computer",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] S-Bahn",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] S-Bahn.jpg",
+      "bpm": "142",
+      "artist": "BEMANI Sound Team 'DARK TRAIN'",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] TURBO",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] TURBO.jpg",
+      "bpm": "128",
+      "artist": "Tokyo Machine",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Zora",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T06] Zora.jpg",
+      "bpm": "177",
+      "artist": "Sushi Killer",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T07] 6FINGERDEATHPUNCH",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] 6FINGERDEATHPUNCH.jpg",
+      "bpm": "130",
+      "artist": "six impala",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Ants (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Ants (No CMOD).jpg",
+      "bpm": "140.000",
+      "artist": "edIT",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] BOSSY",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] BOSSY.jpg",
+      "bpm": "131",
+      "artist": "BABYPOWDER",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        },
+        { "lvl": 4, "style": "double", "diffClass": "basic", "drawGroup": 7 },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "difficult",
+          "drawGroup": 7
+        },
+        { "lvl": 10, "style": "double", "diffClass": "expert", "drawGroup": 7 },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Dawgs in Da House",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Dawgs in Da House.jpg",
+      "bpm": "158",
+      "artist": "CanBlaster (Miami Style)",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Funny Funky Freaky",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Funny Funky Freaky.jpg",
+      "bpm": "138",
+      "artist": "mommy",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Hold On",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Hold On.jpg",
+      "bpm": "102.000",
+      "artist": "Summer Was Fun feat. Q'AILA",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Le Club",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Le Club.jpg",
+      "bpm": "130",
+      "artist": "Dirtyphonics, Ecraze, Graphyt, IVORY, SampliFire",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Metro Night",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Metro Night.jpg",
+      "bpm": "135.000",
+      "artist": "ginkiha",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Wiggle Wop",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T07] Wiggle Wop.jpg",
+      "bpm": "104",
+      "artist": "Party Favor",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T08] Arabian Nights",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] Arabian Nights.jpg",
+      "bpm": "128",
+      "artist": "RudeLies & Facading",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] B L A C K - R A Y",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] B L A C K - R A Y.jpg",
+      "bpm": "174",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        },
+        { "lvl": 14, "style": "single", "diffClass": "edit", "drawGroup": 8 },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Fuego",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] Fuego.jpg",
+      "bpm": "132",
+      "artist": "Bond",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Moony eyes",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] Moony eyes.jpg",
+      "bpm": "160",
+      "artist": "rejection",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] POT (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] POT (No CMOD) [SX].jpg",
+      "bpm": "126",
+      "artist": "Tee Lopes & Dylan James",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] PUMPIN' JUMPIN'",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] PUMPIN_ JUMPIN_ Warp Drive [SX].jpg",
+      "bpm": "136",
+      "artist": "長沼 英樹",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Pinwheel",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] Pinwheel.jpg",
+      "bpm": "92",
+      "artist": "Skybreak, Atura & THREESIXTY",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] clairvoyance",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] clairvoyance.jpg",
+      "bpm": "175",
+      "artist": "ikaruga_nex & 影虎。",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] smooooch",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T08] smooooch [SX].jpg",
+      "bpm": "177",
+      "artist": "kors k",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T09] Chicane",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Chicane [SX].jpg",
+      "bpm": "145",
+      "artist": "QUIX & Juelz",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Cloud 9",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Cloud 9 [SX].jpg",
+      "bpm": "153",
+      "artist": "Yunosuke",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Coconut",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Coconut.jpg",
+      "bpm": "145",
+      "artist": "BeutNoise & SEED",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Ego Death",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Ego Death.jpg",
+      "bpm": "128",
+      "artist": "Polyphia ft. Steve Vai",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] GIMMICK",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] GIMMICK.jpg",
+      "bpm": "143",
+      "artist": "Metamon as Ms.Sill",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Get Down",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Get Down [SH].jpg",
+      "bpm": "150",
+      "artist": "Aire",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] JITTER FANTA",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] JITTER FANTA.jpg",
+      "bpm": "155",
+      "artist": "METAROOM",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        },
+        { "lvl": 10, "style": "double", "diffClass": "expert", "drawGroup": 9 },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Sound Chimera (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Sound Chimera (No CMOD).jpg",
+      "bpm": "138-190",
+      "artist": "Laur",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Weeble Wobble VIP",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T09] Weeble Wobble VIP [Matt Magdon].jpg",
+      "bpm": "150",
+      "artist": "Eliminate",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T10] Arcology On Permafrost",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Arcology on Permafrost.jpg",
+      "bpm": "136",
+      "artist": "かめりあ",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Central Utopia",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Central Utopia.jpg",
+      "bpm": "162",
+      "artist": "Jerico",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Elevator",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Elevator.jpg",
+      "bpm": "150",
+      "artist": "Eliminate",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Feral (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Feral (No CMOD) [SX].jpg",
+      "bpm": "80-160",
+      "artist": "Meganeko",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Field of View",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Field of View.jpg",
+      "bpm": "140",
+      "artist": "Sharks",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Rainbow Rave Parade",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Rainbow Rave Parade.jpg",
+      "bpm": "150",
+      "artist": "Chime",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] REVOLVER",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Revolver (SX 14).jpg",
+      "bpm": "160",
+      "artist": "sky_delta",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Wormhole",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] Wormhole.jpg",
+      "bpm": "155",
+      "artist": "KAMI",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] bipolar",
+      "name_translation": "",
+      "jacket": "itg/bhop-ball-23/[T10] bipolar.jpg",
+      "bpm": "160",
+      "artist": "awfuless",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,19 @@
 # DDR Tools
 
-[![Discord](https://img.shields.io/discord/1013159796024823898?label=discord&style=flat-square)](https://discord.gg/QPyEATsbP7) ![GitHub contributors](https://img.shields.io/github/contributors/noahm/ddrcarddraw?style=flat-square) ![GitHub branch checks state](https://img.shields.io/github/checks-status/noahm/ddrcarddraw/main?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/noahm/ddrcarddraw?style=flat-square) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/noahm/DDRCardDraw?style=flat-square)
+[![Discord](https://img.shields.io/discord/1013159796024823898?label=discord&style=flat-square)](https://discord.gg/QPyEATsbP7)
+[![GitHub contributors](https://img.shields.io/github/contributors/noahm/ddrcarddraw?style=flat-square)](https://github.com/noahm/DDRCardDraw/graphs/contributors)
+[![GitHub branch checks state](https://img.shields.io/github/checks-status/noahm/ddrcarddraw/main?style=flat-square)](https://github.com/noahm/DDRCardDraw/actions/workflows/pr-checks.yml)
+[![GitHub last commit](https://img.shields.io/github/last-commit/noahm/ddrcarddraw?style=flat-square)](https://github.com/noahm/DDRCardDraw/commits/main/)
 
-The official build is available at [https://ddr.tools/](https://ddr.tools/).
+The official build is available at [https://ddr.tools/](https://ddr.tools/)
 
-Read all about what the app can do [in the user manual.](https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md)
+Read all about what the app can do [in the user manual](https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md)
 
 ## Customizing / Contributing
 
-This app can be easily customized for any format a tournament might use, including adding song data for other games. If you have requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
+This app can be easily customized for novel formats a tournament might use. If you have feature requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
 
-If you want to take a stab at developing features yourself, you will need have node.js >= 18.0.0 installed along with [yarn](https://yarnpkg.com/) and some familarity with React probably helps.
+If you want to take a stab at developing on the app yourself, you will need have node.js >= 18.0.0 installed along with [yarn](https://yarnpkg.com/). Some familarity with React will also help.
 
 Clone this repo to your computer. Then the following commands will be useful:
 
@@ -50,5 +53,3 @@ yarn import:itg path/to/pack/folder some-stub-name
 # https://github.com/AnyhowStep/pump-out-sqlite3-dump/
 yarn import:pump path/to/pumpout/db
 ```
-
-Ideas for future develoment are now being tracked as issues on this repo. Feel free to jump in if you want to help build out something new!
