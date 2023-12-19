@@ -1,4 +1,11 @@
-import { Button, Classes, Dialog, DialogFooter } from "@blueprintjs/core";
+import {
+  Button,
+  Classes,
+  Dialog,
+  DialogFooter,
+  FormGroup,
+  Switch,
+} from "@blueprintjs/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PackWithSongs, parsePack } from "simfile-parser/browser";
 import { useDrawState } from "./draw-state";
@@ -62,6 +69,7 @@ interface DialogProps {
 
 function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
+  const [tiered, setTiered] = useState(false);
   useEffect(() => {
     if (!droppedFolder) {
       setParsedPack(null);
@@ -69,6 +77,13 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     }
     parsePack(droppedFolder).then((pack) => {
       setParsedPack(pack);
+      if (
+        pack.simfiles.every((song) => song.title.titleName.match(/^\[T\d\d\] /))
+      ) {
+        setTiered(true);
+      } else {
+        setTiered(false);
+      }
     });
   }, [droppedFolder]);
 
@@ -76,8 +91,8 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     if (!parsedPack) {
       return;
     }
-    return getDataFileFromPack(parsedPack);
-  }, [parsedPack]);
+    return getDataFileFromPack(parsedPack, tiered);
+  }, [parsedPack, tiered]);
 
   const loadGameData = useDrawState((s) => s.addImportedData);
   const [saving, setSaving] = useState(false);
@@ -101,22 +116,31 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
       title="Local Data Import"
       onClose={onClose}
     >
-      <p className={maybeSkeleton}>
-        Pack name: {parsedPack ? parsedPack.name : "to be determined"}
-      </p>
-      <dl className={maybeSkeleton}>
-        <dt>Total Songs</dt>
-        <dd>{parsedPack ? parsedPack.songCount : 50}</dd>
-        <dt>Total Charts</dt>
-        <dd>
-          {derivedData
-            ? derivedData.songs.reduce(
-                (total, item) => total + item.charts.length,
-                0,
-              )
-            : 50}
-        </dd>
-      </dl>
+      <div style={{ padding: "10px" }}>
+        <p className={maybeSkeleton}>
+          Pack name: {parsedPack ? parsedPack.name : "to be determined"}
+        </p>
+        <FormGroup>
+          <Switch
+            label="Tiered"
+            checked={tiered}
+            onChange={() => setTiered((prev) => !prev)}
+          />
+        </FormGroup>
+        <dl className={maybeSkeleton}>
+          <dt>Total Songs</dt>
+          <dd>{parsedPack ? parsedPack.songCount : 50}</dd>
+          <dt>Total Charts</dt>
+          <dd>
+            {derivedData
+              ? derivedData.songs.reduce(
+                  (total, item) => total + item.charts.length,
+                  0,
+                )
+              : 50}
+          </dd>
+        </dl>
+      </div>
       <DialogFooter
         actions={
           <>
@@ -125,6 +149,7 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
               intent="primary"
               onClick={handleConfirm}
               loading={saving}
+              icon="import"
             >
               Import
             </Button>
