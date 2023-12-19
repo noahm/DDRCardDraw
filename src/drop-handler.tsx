@@ -46,17 +46,11 @@ export function DropHandler() {
   });
 
   return (
-    <Dialog
-      isOpen={!!droppedFolder}
-      title="ITG Pack Import"
+    <ConfirmPackDialog
+      droppedFolder={droppedFolder}
       onClose={handleClose}
-    >
-      <ConfirmPackDialog
-        droppedFolder={droppedFolder}
-        onClose={handleClose}
-        onSave={handleClose}
-      />
-    </Dialog>
+      onSave={handleClose}
+    />
   );
 }
 
@@ -85,25 +79,28 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     return getDataFileFromPack(parsedPack);
   }, [parsedPack]);
 
-  const loadGameData = useDrawState((s) => s.loadGameData);
+  const loadGameData = useDrawState((s) => s.addImportedData);
   const [saving, setSaving] = useState(false);
   const handleConfirm = useCallback(() => {
-    if (!parsedPack) {
+    if (!parsedPack || !derivedData) {
       return;
     }
-    loadGameData(parsedPack.name, derivedData)
-      .then(() => pause(500))
-      .then(() => {
-        setSaving(false);
-        onSave();
-      });
     setSaving(true);
+    loadGameData(parsedPack.name, derivedData);
+    pause(500).then(() => {
+      setSaving(false);
+      onSave();
+    });
   }, [parsedPack, derivedData, loadGameData, onSave]);
 
   const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
 
   return (
-    <>
+    <Dialog
+      isOpen={!!droppedFolder}
+      title="Local Data Import"
+      onClose={onClose}
+    >
       <p className={maybeSkeleton}>
         Pack name: {parsedPack ? parsedPack.name : "to be determined"}
       </p>
@@ -135,6 +132,6 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
           </>
         }
       />
-    </>
+    </Dialog>
   );
 }

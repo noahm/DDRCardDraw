@@ -17,7 +17,7 @@ export function getDataFileFromPack(
   const styles = new Set<string>();
   const data: GameData = {
     meta: {
-      menuParent: "itg",
+      menuParent: "imported",
       flags: [],
       lvlMax: 0,
       lastUpdated: Date.now(),
