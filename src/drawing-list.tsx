@@ -53,9 +53,9 @@ export function DrawingList() {
           title="DDR Tools"
           description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
           action={
-            <Callout intent="primary" icon={IconNames.ThirdParty}>
-              Networking features now available! Start with the new tab in
-              settings.
+            <Callout intent="primary" icon={IconNames.Import}>
+              Instant local pack imports are now available! Drag and drop a pack
+              folder onto this page to get started.
             </Callout>
           }
         />
