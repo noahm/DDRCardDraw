@@ -11,6 +11,7 @@ import { PackWithSongs, parsePack } from "simfile-parser/browser";
 import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
 import { pause } from "./utils/pause";
+import { convertErrorToString } from "./utils/error-to-string";
 
 export function DropHandler() {
   const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
@@ -67,26 +68,49 @@ interface DialogProps {
   onClose(): void;
 }
 
-function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
+function useDataParsing(
+  droppedFolder: DataTransferItem | null,
+  setTiered: (next: boolean) => void,
+) {
   const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
-  const [tiered, setTiered] = useState(false);
+  const [parseError, setParseError] = useState<string | null>(null);
   useEffect(() => {
+    setParseError(null);
     if (!droppedFolder) {
       setParsedPack(null);
       return;
     }
-    parsePack(droppedFolder).then((pack) => {
-      setParsedPack(pack);
-      if (
-        pack.simfiles.every((song) => song.title.titleName.match(/^\[T\d\d\] /))
-      ) {
-        setTiered(true);
-      } else {
-        setTiered(false);
-      }
-    });
-  }, [droppedFolder]);
+    parsePack(droppedFolder)
+      .then((pack) => {
+        setParsedPack(pack);
+        if (
+          pack.simfiles.every((song) =>
+            song.title.titleName.match(/^\[T\d\d\] /),
+          )
+        ) {
+          setTiered(true);
+        } else {
+          setTiered(false);
+        }
+      })
+      .catch((rejection) => {
+        setParsedPack(null);
+        console.error(rejection);
+        setParseError(convertErrorToString(rejection));
+      });
+  }, [droppedFolder, setTiered]);
+  return {
+    parsedPack,
+    parseError,
+  };
+}
 
+function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
+  const [tiered, setTiered] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const loadGameData = useDrawState((s) => s.addImportedData);
+
+  const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
   const derivedData = useMemo(() => {
     if (!parsedPack) {
       return;
@@ -94,8 +118,6 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     return getDataFileFromPack(parsedPack, tiered);
   }, [parsedPack, tiered]);
 
-  const loadGameData = useDrawState((s) => s.addImportedData);
-  const [saving, setSaving] = useState(false);
   const handleConfirm = useCallback(() => {
     if (!parsedPack || !derivedData) {
       return;
@@ -110,42 +132,56 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
 
   const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
 
+  let body = (
+    <>
+      <p className={maybeSkeleton}>
+        Pack name: {parsedPack ? parsedPack.name : "to be determined"}
+      </p>
+      <FormGroup>
+        <Switch
+          className={maybeSkeleton}
+          label="Pack uses tiers"
+          checked={tiered}
+          onChange={() => setTiered((prev) => !prev)}
+        />
+      </FormGroup>
+      <dl className={maybeSkeleton}>
+        <dt>Total Songs</dt>
+        <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
+        <dt>Total Charts</dt>
+        <dd>
+          {derivedData
+            ? derivedData.songs.reduce(
+                (total, item) => total + item.charts.length,
+                0,
+              )
+            : "??"}
+        </dd>
+      </dl>
+    </>
+  );
+
+  if (parseError) {
+    body = (
+      <>
+        <h1>Error importing pack</h1>
+        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
+      </>
+    );
+  }
+
   return (
     <Dialog
       isOpen={!!droppedFolder}
       title="Local Data Import"
       onClose={onClose}
     >
-      <div style={{ padding: "10px" }}>
-        <p className={maybeSkeleton}>
-          Pack name: {parsedPack ? parsedPack.name : "to be determined"}
-        </p>
-        <FormGroup>
-          <Switch
-            label="Tiered"
-            checked={tiered}
-            onChange={() => setTiered((prev) => !prev)}
-          />
-        </FormGroup>
-        <dl className={maybeSkeleton}>
-          <dt>Total Songs</dt>
-          <dd>{parsedPack ? parsedPack.songCount : 50}</dd>
-          <dt>Total Charts</dt>
-          <dd>
-            {derivedData
-              ? derivedData.songs.reduce(
-                  (total, item) => total + item.charts.length,
-                  0,
-                )
-              : 50}
-          </dd>
-        </dl>
-      </div>
+      <div style={{ padding: "10px" }}>{body}</div>
       <DialogFooter
         actions={
           <>
             <Button
-              className={maybeSkeleton}
+              disabled={!!maybeSkeleton}
               intent="primary"
               onClick={handleConfirm}
               loading={saving}
