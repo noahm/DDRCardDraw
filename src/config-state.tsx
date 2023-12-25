@@ -21,6 +21,7 @@ export interface ConfigState {
   tournamentRounds: string[];
   showPlayerAndRoundLabels: boolean;
   defaultPlayersPerDraw: number;
+  sortByLevel: boolean;
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -51,6 +52,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
       "Tiebreaker",
     ],
     showPlayerAndRoundLabels: false,
+    sortByLevel: false,
     defaultPlayersPerDraw: 2,
     update: set,
   }),

@@ -24,6 +24,10 @@ interface Props {
 
 function ChartList() {
   const charts = useDrawing((d) => d.charts);
+  const sortByLevel = useConfigState((s) => s.sortByLevel);
+  if (sortByLevel) {
+    charts.sort((a, b) => a.level - b.level);
+  }
   return (
     <div className={styles.chartList}>
       {charts.map((c) => (

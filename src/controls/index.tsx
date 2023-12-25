@@ -259,6 +259,7 @@ function GeneralSettings() {
     difficulties: selectedDifficulties,
     style: selectedStyle,
     chartCount,
+    sortByLevel,
   } = configState;
   const availableDifficulties = useMemo(() => {
     if (!gameData) {
@@ -462,6 +463,15 @@ function GeneralSettings() {
             updateState({ constrainPocketPicks });
           }}
           label={t("controls.constrainPocketPicks")}
+        />
+        <Checkbox
+          id="sortByLevel"
+          checked={sortByLevel}
+          onChange={(e) => {
+            const sortByLevel = !!e.currentTarget.checked;
+            updateState({ sortByLevel });
+          }}
+          label={t("controls.sortByLevel")}
         />
         <Checkbox
           id="showVeto"
