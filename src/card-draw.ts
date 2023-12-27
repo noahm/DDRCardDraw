@@ -218,7 +218,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   return {
     id: `draw-${nanoid(10)}`,
-    charts: shuffle(drawnCharts),
+    charts: configData.sortByLevel ? drawnCharts.sort((a, b) => a.level - b.level) : shuffle(drawnCharts),
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],
     protects: [],
