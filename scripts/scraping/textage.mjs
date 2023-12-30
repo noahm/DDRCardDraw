@@ -1,6 +1,6 @@
 // @ts-check
 import { JSDOM } from "jsdom";
-import iconv from "iconv-lite"
+import iconv from "iconv-lite";
 import { Axios } from "axios";
 import * as path from "path";
 import * as fs from "fs";
@@ -93,9 +93,6 @@ export async function textageDL(force = false) {
 export async function fakeTextage(force = false) {
   // https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
 
-  // actbl from titletbl.js contains the full map of song tags to their genre, artist, and title for each.
-  // e_list[2] from titletbl.js contains a list of active unlock events and the associated song tags.
-  // get_level(tag, type, num) from scrlist.js has the logic to look up charts by slot.
   const chartSlot = ["inclusion", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
    
   var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"></head>', {runScripts: "dangerously", resources: "usable"});
@@ -107,8 +104,8 @@ export async function fakeTextage(force = false) {
     let fnLoader = function(doc) {return new Promise(function(resolve) {
       let script = doc.createElement("script");
       script.type = "text/javascript";
-      //script.charset = "UTF-8";
-      script.src = `https://textage.cc/score/${fn}.js`;
+      script.charset = "UTF-8";
+      script.src = "file:///" + path.join(textageDir, `${fn}.js`);
       script.async = false;
       script.onload = function() {resolve(doc);};
 

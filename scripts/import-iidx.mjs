@@ -6,6 +6,8 @@
  import * as path from "path";
  import { writeJsonData } from "./utils.mjs";
  import { fileURLToPath } from "url";
+ import { parseStringPromise } from "xml2js";
+ import iconv from "iconv-lite";
  import { JSDOM } from "jsdom";
  import { fakeTextage } from "./scraping/textage.mjs";
  const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -37,6 +39,16 @@ async function exists(f) {
     return false;
   }
 }
+
+function listProps(x) {
+  var p = []
+  for (let k in x) {
+    if (x.hasOwnProperty(k)) {
+      p.push(k)
+    }
+  }
+  return p
+}
  
 async function main() {
   const rescrape = process.argv[2] || false;
@@ -46,7 +58,7 @@ async function main() {
     "../src/songs",
     "iidx-ac.json",
   );
-  var existingData = [];
+  var existingData = null;
   await fs.readFile(targetFile, { encoding: "utf-8" }).then(
     (v) => {existingData = JSON.parse(v)},
     (reason) => (console.error("Couldn't find existing data, need to rescrape\n" + reason))
@@ -54,38 +66,30 @@ async function main() {
 
   console.log(`Building chart info database for import using textage JS...`);
 
-  if (rescrape || !existingData) {
-    let textageDOM = await fakeTextage(rescrape);
-    const chartSlot = ["inclusion", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
-    existingData = {
-      
-    }
-  }
 
-  console.log(`Successfully built chart info database using textage JS, importing data...`);
-
-  const data = {
+  var data = {
     meta: {
-      styles: ["single"],
+      styles: ["single", "double"],
       difficulties: [
-        { key: "beginner", color: "#800080" },
-        { key: "normal", color: "#ffffaa" },
-        { key: "hyper", color: "#ff0000" },
-        { key: "another", color: "#808080" },
-        { key: "leggendaria", color: "#ffbae7" },
+        { key: "beginner", color: "#17ff8b" },
+        { key: "normal", color: "#3c9dff" },
+        { key: "hyper", color: "#ffa244" },
+        { key: "another", color: "#ff3737" },
+        { key: "leggendaria", color: "#980053" },
       ],
-      flags: [],
-      lvlMax: 20,
+      flags: ["mypolis",
+        "ultimateMobile",
+        "worldTourism",
+        "residentParty",
+        "tripleTribe",
+        "xRecord",
+        "ichikaGochamaze"],
+      lvlMax: 12,
+      lastUpdated: 0
     },
     defaults: {
       style: "single",
-      difficulties: [
-        "beginner",
-        "normal",
-        "hyper",
-        "another",
-        "leggendaria",
-      ],
+      difficulties: ["another"],
       flags: [],
       lowerLvlBound: 1,
       upperLvlBound: 12,
@@ -100,12 +104,19 @@ async function main() {
         hyper: "HYPER",
         another: "ANOTHER",
         leggendaria: "LEGGENDARIA",
+        mypolis: "MYPOLIS DESIGNER",
+        ultimateMobile: "ULTIMATE MOBILE ARCADE CONNECT",
+        worldTourism: "WORLD TOURISM",
+        residentParty: "RESIDENT PARTY",
+        tripleTribe: "Triple Tribe",
+        xRecord: "X-record",
+        ichikaGochamaze: "Ichika's Gochamaze Mix UP!",
         $abbr: {
-        beginner: "[B]",
-        normal: "[N]",
-        hyper: "[H]",
-        another: "[A]",
-        leggendaria: "[L]",
+            beginner: "[B]",
+            normal: "[N]",
+            hyper: "[H]",
+            another: "[A]",
+            leggendaria: "[L]"
         },
       },
       ja: {
@@ -117,19 +128,100 @@ async function main() {
         hyper: "HYPER",
         another: "ANOTHER",
         leggendaria: "LEGGENDARIA",
+        mypolis: "マイポリスデザイナー",
+        ultimateMobile: "ULTIMATE MOBILE アーケード連動",
+        worldTourism: "WORLD TOURISM",
+        residentParty: "RESIDENT PARTY",
+        tripleTribe: "Triple Tribe",
+        xRecord: "X-record",
+        ichikaGochamaze: "いちかのごちゃまぜMix UP!",
         $abbr: {
-          beginner: "[B]",
-          normal: "[N]",
-          hyper: "[H]",
-          another: "[A]",
-          leggendaria: "[L]",
+            beginner: "[B]",
+            normal: "[N]",
+            hyper: "[H]",
+            another: "[A]",
+            leggendaria: "[L]"
         },
       },
     },
-    songs: fileData.mdb.music
+    songs: [],
+  }
+  var eventNames = listProps(data.i18n.ja).map((k) => data.i18n.ja[k])
+  console.log(eventNames)
+
+
+  if (rescrape || !existingData) {
+    let textageDOM = await fakeTextage(rescrape);
+    const chartSlot = ["ZZZ", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
+    existingData = {
+      songs: []
+    }
+
+    // titletbl from titletbl.js contains the full map of song tags to their genre, artist, and title for each.
+    // e_list[2] from titletbl.js contains a list of active unlock events and the associated song tags.
+    // get_level(tag, type, num) from scrlist.js has the logic to look up charts by slot.
+    const titletbl = textageDOM.window.eval("titletbl")
+    const datatbl = textageDOM.window.eval("datatbl")
+    const eventMap = textageDOM.window.eval("e_list[2]")
+    const eventTagsFull = await Promise.all(Array.from(eventMap.values()).map((v) => (parseStringPromise(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><root>` + v[0] + `</root>`))))
+    const eventTags = eventTagsFull.map((et) => {
+      const etBase = et.root._ || et.root
+      console.log(etBase)
+      console.log(eventNames.indexOf(etBase))
+      return etBase
+    })
+
+    var nSongs = 0
+    for (let songTag in titletbl) {
+      try {
+        const chartLevels = textageDOM.window.eval(`Array.from(Array(11).entries()).map((v) => get_level("${songTag}", v[0], 1))`)
+        // TODO: per-chart BPMs should be handled
+
+        var chartData = []
+        for (let v of chartSlot.entries()) {
+          // DP -> double, SP -> single
+          const chartStyle = ["", "double", "single"]["ZDS".indexOf(v[1][0])];
+          // Map the slot to the full enumeration element
+          const diffClass = (chartStyle != "") ? ["beginner", "normal", "hyper", "another", "leggendaria"]["BNHAL".indexOf(v[1][2])] : "";
+          if (diffClass != "") {
+            chartData.push({
+              style: chartStyle,
+              lvl: chartLevels[v[0]],
+              diffClass: diffClass
+            })
+          }
+        }
+        var nameExt = titletbl[songTag][5]
+        if (titletbl[songTag][6]) {
+          nameExt += "\n" + titletbl[songTag][6]
+        }
+
+        songData = {
+          name: nameExt,
+          artist: titletbl[songTag][4] || "[artist N/A]",
+          genre: titletbl[songTag][3] || "[genre N/A]",
+          flags: [],
+          bpm: datatbl[songTag][11] || "[BPM N/A]",
+          jacket: "",
+          charts: chartData,
+          saIndex: nSongs
+        }
+
+        existingData.songs.push(songData)
+        nSongs++
+      }
+      catch {
+        //console.warn(`Something's up with song tag ${songTag}`)
+      }
+    }
+  }
+
+  data.songs = existingData.songs
       .filter(filterUnplayableSongs)
-      .map((song) => buildSong(song, availableJackets)),
-  };
+      .map((song) => buildSong(song, availableJackets))
+
+  console.log(`Successfully built chart info database using textage JS, importing data...`);
+
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
   const outfilePath = resolve(join(__dirname, "../src/songs/sdvx.json"));
