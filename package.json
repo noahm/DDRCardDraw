@@ -15,6 +15,7 @@
     "import:ddr": "node scripts/import-ddr.mjs",
     "import:pump": "node scripts/import-pump.mjs",
     "import:sdvx": "node scripts/import-sdvx.mjs",
+    "import:iidx": "node scripts/import-iidx.mjs",
     "import:smx": "node scripts/import-smx.mjs",
     "import:itg": "node scripts/import-itg.mjs",
     "validate": "npm run validate:json && npm run validate:ts && eslint src",
@@ -108,5 +109,8 @@
     "semver": "^7.5.2",
     "xml2js": "^0.5.0"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "axios": "^1.6.3"
+  }
 }

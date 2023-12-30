@@ -1,24 +1,29 @@
 // @ts-check
 import { JSDOM } from "jsdom";
-import { promises as fs } from "fs";
-import { doc } from "prettier";
+import iconv from "iconv-lite"
+import { Axios } from "axios";
+import * as path from "path";
+import * as fs from "fs";
+import { fileURLToPath } from "url";
 
 const textageFiles = [
   "titletbl",
   "actbl",
-  "cstbl",
-  "cstbl1",
-  "cstbl2",
-  "cltbl",
-  "stepup",
+//"cstbl",
+//"cstbl1",
+//"cstbl2",
+//"cltbl",
+//"stepup",
   "datatbl",
   "scrlist"
 ];
-const textageDir = "scripts/scraping/textage"
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const textageDir = path.join(__dirname, "textage")
+console.log(textageDir)
 
 async function exists(f) {
   try {
-    await fs.stat(f);
+    await fs.promises.stat(f);
     return true;
   } catch {
     return false;
@@ -26,32 +31,49 @@ async function exists(f) {
 }
 
 export async function textageDL(force = false) {
-  const textageScrapeReady = textageFiles.every((fn) => exists(`${textageDir}/${fn}.js`));
+  const textageScrapeReady = await Promise.all(textageFiles.map((fn) => exists(`${textageDir}/${fn}.js`))).then((a) => a.every((v) => (v)));
   if (force || !textageScrapeReady) {
     console.log("Redownloading source JS from textage...")
     // Clear out the existing textage JS, if it exists.
     if (exists(textageDir)) {
-      await fs.rm(textageDir, {"recursive": true, "force": true})
+      //await fs.promises.rm(textageDir, {"recursive": true, "force": true})
     }
     // Redownload all the necessary textage JS.
-    await fs.mkdir(textageDir)
-
-    let dom = new JSDOM('<!DOCTYPE html>');
-    let document = dom.window.document;
+    await fs.promises.mkdir(textageDir)
+    
     for (let fn of textageFiles) {
-      await fetch(`https://textage.cc/score/${fn}.js`)
-        .then(response => response.blob())
-        .then(blob => {
-          console.log(`Downloading ${fn}...`)
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = `${textageDir}/${fn}.js`;
-          link.click();
-          // TODO: This doesn't work because JSDOM doesn't do navigation,
-          // which includes resolving this link as a download.
+      if (await exists(`${textageDir}/${fn}.js`)) {
+        console.log(`Don't need to redownload ${fn}`)
+        continue;
+      }
+      console.log(`Downloading ${fn}...`)
+      
+      let req = new Axios({
+        method: 'get',
+        url: `https://textage.cc/score/${fn}.js`,
+        responseType: 'stream'
+      })
+      await req.get(`https://textage.cc/score/${fn}.js`).then(function (response) {
+        const writer = fs.createWriteStream(path.join(textageDir, `${fn}.js`))
+        response.data.pipe(iconv.decodeStream("shift-jis"))
+                     .pipe(iconv.encodeStream("utf-8"))
+                     .pipe(writer)
+        return new Promise((resolve, reject) => {
+          writer.on('error', reject);
+          response.data.on('end', resolve)
         })
-        .catch(error => console.error('Failed to download textage JS source:', error))
+      });
+      //.catch(error => console.error('Failed to download textage JS source:', error))
     }
+
+    // Force all-AC listing.
+    /*
+    await fs.promises.readFile(path.join(textageDir, `scrlist.js`), {encoding: "utf-8"}).then((data) => {
+      var updatedJS = data.replaceAll(`location.search`, `"?a001B000"`);
+      var updatedJS = data.replaceAll(`"?vV11B000"`, `"?a001B000"`);
+      return fs.promises.writeFile(path.join(textageDir, `scrlist.js`), updatedJS, {encoding: "utf-8"})
+    })
+    */
 
     // Double-check that we got all of the textage JS.
     const textageScrapeSuccess = textageFiles.every((fn) => exists(`scraping/textage/${fn}.js`));
@@ -76,9 +98,10 @@ export async function fakeTextage() {
   // get_level(tag, type, num) from scrlist.js has the logic to look up charts by slot.
   const chartSlot = ["inclusion", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
    
-  var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"><script type="text/javascript">var location = {"search": "?a001B000"};</script></head>', {runScripts: "dangerously", resources: "usable"});
-  dom.window.location.search = "?a001B000"
+  var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"></head>', {runScripts: "dangerously", resources: "usable"});
   var document = dom.window.document;
+
+  await textageDL();
 
   for (let fn of textageFiles) {
     let fnLoader = function(doc) {return new Promise(function(resolve) {
