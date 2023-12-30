@@ -105,26 +105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.18.6, @babel/helper-create-class-features-plugin@npm:^7.22.15":
-  version: 7.22.15
-  resolution: "@babel/helper-create-class-features-plugin@npm:7.22.15"
-  dependencies:
-    "@babel/helper-annotate-as-pure": "npm:^7.22.5"
-    "@babel/helper-environment-visitor": "npm:^7.22.5"
-    "@babel/helper-function-name": "npm:^7.22.5"
-    "@babel/helper-member-expression-to-functions": "npm:^7.22.15"
-    "@babel/helper-optimise-call-expression": "npm:^7.22.5"
-    "@babel/helper-replace-supers": "npm:^7.22.9"
-    "@babel/helper-skip-transparent-expression-wrappers": "npm:^7.22.5"
-    "@babel/helper-split-export-declaration": "npm:^7.22.6"
-    semver: "npm:^6.3.1"
-  peerDependencies:
-    "@babel/core": ^7.0.0
-  checksum: 000d29f1df397b7fdcb97ad0e9a442781787e5cb0456a9b8da690d13e03549a716bf74348029d3bd3fa4837b35d143a535cad1006f9d552063799ecdd96df672
-  languageName: node
-  linkType: hard
-
-"@babel/helper-create-class-features-plugin@npm:^7.23.6":
+"@babel/helper-create-class-features-plugin@npm:^7.18.6, @babel/helper-create-class-features-plugin@npm:^7.22.15, @babel/helper-create-class-features-plugin@npm:^7.23.6":
   version: 7.23.6
   resolution: "@babel/helper-create-class-features-plugin@npm:7.23.6"
   dependencies:
@@ -171,7 +152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-environment-visitor@npm:^7.22.20, @babel/helper-environment-visitor@npm:^7.22.5":
+"@babel/helper-environment-visitor@npm:^7.22.20":
   version: 7.22.20
   resolution: "@babel/helper-environment-visitor@npm:7.22.20"
   checksum: d80ee98ff66f41e233f36ca1921774c37e88a803b2f7dca3db7c057a5fea0473804db9fb6729e5dbfd07f4bed722d60f7852035c2c739382e84c335661590b69
@@ -197,16 +178,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-member-expression-to-functions@npm:^7.22.15":
-  version: 7.22.15
-  resolution: "@babel/helper-member-expression-to-functions@npm:7.22.15"
-  dependencies:
-    "@babel/types": "npm:^7.22.15"
-  checksum: 2f10bd39605539d5a30580d8da7e24d90788960cd22c93e640dfd95f8edf5c9d9d2f664e4dfc08a3cf2f14c4976178b638db7433321a20e8f90c33968e4465c6
-  languageName: node
-  linkType: hard
-
-"@babel/helper-member-expression-to-functions@npm:^7.23.0":
+"@babel/helper-member-expression-to-functions@npm:^7.22.15, @babel/helper-member-expression-to-functions@npm:^7.23.0":
   version: 7.23.0
   resolution: "@babel/helper-member-expression-to-functions@npm:7.23.0"
   dependencies:
@@ -268,7 +240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-replace-supers@npm:^7.22.20, @babel/helper-replace-supers@npm:^7.22.9":
+"@babel/helper-replace-supers@npm:^7.22.20":
   version: 7.22.20
   resolution: "@babel/helper-replace-supers@npm:7.22.20"
   dependencies:
@@ -4090,14 +4062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.3.1":
-  version: 2.3.2
-  resolution: "classnames@npm:2.3.2"
-  checksum: ba3151c12e8b6a84c64b340ab4259ad0408947652009314462d828e94631505989c6a7d7e796bec1d309be9295d3111b498ad18a9d533fe3e6f859e51e574cbb
-  languageName: node
-  linkType: hard
-
-"classnames@npm:^2.3.3":
+"classnames@npm:^2.3.1, classnames@npm:^2.3.3":
   version: 2.3.3
   resolution: "classnames@npm:2.3.3"
   checksum: 3b9732dde0acdb9f8a6680eab54b34e567e9049769046aeeca270220fee806e0320e8c32bc2223b1a6f3fef7982ce98055719ff2a3d0183775ccc5646de39451
@@ -6504,22 +6469,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:^5.5.0":
-  version: 5.5.4
-  resolution: "html-webpack-plugin@npm:5.5.4"
-  dependencies:
-    "@types/html-minifier-terser": "npm:^6.0.0"
-    html-minifier-terser: "npm:^6.0.2"
-    lodash: "npm:^4.17.21"
-    pretty-error: "npm:^4.0.0"
-    tapable: "npm:^2.0.0"
-  peerDependencies:
-    webpack: ^5.20.0
-  checksum: ef3ceb84a1cd4304a3b4d2391e767ed8a32ec99454dff90daca6654bed689a54b0bc43de5a498564718e02df71e13ffb492b61234c09f59f6ab058e2c2a25be6
-  languageName: node
-  linkType: hard
-
-"html-webpack-plugin@npm:^5.6.0":
+"html-webpack-plugin@npm:^5.5.0, html-webpack-plugin@npm:^5.6.0":
   version: 5.6.0
   resolution: "html-webpack-plugin@npm:5.6.0"
   dependencies:
