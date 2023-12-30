@@ -52,29 +52,15 @@ async function main() {
     (reason) => (console.error("Couldn't find existing data, need to rescrape\n" + reason))
   )
 
-  if (rescrape || !existingData) {
-    // actbl from titletbl.js contains the full map of song tags to their genre, artist, and title for each.
-    // e_list[2] from titletbl.js contains a list of active unlock events and the associated song tags.
-    // get_level(tag, type, num) from scrlist.js has the logic to look up charts by slot.
-    /*
-    var dom = [];
-    await JSDOM.fromURL("https://textage.cc/score/index.html?a001B000", {resources: "usable"})
-      .then((d) => (dom = d), (reason) => (console.error(reason)))
-    
-    console.log(dom.window.eval("actbl"))
-    //console.log(dom.window.eval(`get_level("abyss_r", ${chartSlot.indexOf("SPA")}, 1)`))
-    */
-
-    let textageDOM = await fakeTextage();
-    console.log(textageDOM.window.eval("lc = ['?', 'a', 0, 0, 1, 11, 0, 0, 0];"))
-    console.log(textageDOM.window.eval("disp_all();"))
-    console.log(textageDOM.window.eval(`Array.from(Array(11).entries()).map((v) => get_level("abyss_r", v[0], 1))`))
-    console.log(textageDOM.window.eval(`Array.from(Array(11).entries()).map((v) => get_level("airraid", v[0], 1))`))
-    const chartSlot = ["inclusion", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
-  }
-
   console.log(`Building chart info database for import using textage JS...`);
 
+  if (rescrape || !existingData) {
+    let textageDOM = await fakeTextage(rescrape);
+    const chartSlot = ["inclusion", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
+    existingData = {
+      
+    }
+  }
 
   console.log(`Successfully built chart info database using textage JS, importing data...`);
 

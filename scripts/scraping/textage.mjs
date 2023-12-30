@@ -36,10 +36,10 @@ export async function textageDL(force = false) {
     console.log("Redownloading source JS from textage...")
     // Clear out the existing textage JS, if it exists.
     if (exists(textageDir)) {
-      //await fs.promises.rm(textageDir, {"recursive": true, "force": true})
+      await fs.promises.rm(textageDir, {"recursive": true, "force": true})
     }
     // Redownload all the necessary textage JS.
-    await fs.promises.mkdir(textageDir)
+    await fs.promises.mkdir(textageDir).catch(()=>{})
     
     for (let fn of textageFiles) {
       if (await exists(`${textageDir}/${fn}.js`)) {
@@ -90,7 +90,7 @@ export async function textageDL(force = false) {
   }
 }
 
-export async function fakeTextage() {
+export async function fakeTextage(force = false) {
   // https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
 
   // actbl from titletbl.js contains the full map of song tags to their genre, artist, and title for each.
@@ -101,7 +101,7 @@ export async function fakeTextage() {
   var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"></head>', {runScripts: "dangerously", resources: "usable"});
   var document = dom.window.document;
 
-  await textageDL();
+  await textageDL(force);
 
   for (let fn of textageFiles) {
     let fnLoader = function(doc) {return new Promise(function(resolve) {
@@ -117,6 +117,14 @@ export async function fakeTextage() {
     await fnLoader(document).then((doc) => {document = doc});
     console.log(`${fn} loaded`)
   }
+
+  // Make sure the reconstructed textage is preloaded with the AC listing.
+  dom.window.eval("lc = ['?', 'a', 0, 0, 1, 11, 0, 0, 0];")
+  dom.window.eval("disp_all();")
+
+  // Test cases (Abyss -The Heavens Remix-, AIR RAID FROM THA UNDAGROUND)
+  // console.log(textageDOM.window.eval(`Array.from(Array(11).entries()).map((v) => get_level("abyss_r", v[0], 1))`))
+  // console.log(textageDOM.window.eval(`Array.from(Array(11).entries()).map((v) => get_level("airraid", v[0], 1))`))
 
   return dom;
 }
