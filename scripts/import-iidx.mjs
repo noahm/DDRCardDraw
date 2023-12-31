@@ -146,8 +146,7 @@ async function main() {
     },
     songs: [],
   }
-  var eventNames = listProps(data.i18n.ja).map((k) => data.i18n.ja[k])
-  console.log(eventNames)
+  var eventFlags = new Map(listProps(data.i18n.ja).map((v) => [data.i18n.ja[v], v]))
 
 
   if (rescrape || !existingData) {
@@ -164,12 +163,8 @@ async function main() {
     const datatbl = textageDOM.window.eval("datatbl")
     const eventMap = textageDOM.window.eval("e_list[2]")
     const eventTagsFull = await Promise.all(Array.from(eventMap.values()).map((v) => (parseStringPromise(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><root>` + v[0] + `</root>`))))
-    const eventTags = eventTagsFull.map((et) => {
-      const etBase = et.root._ || et.root
-      console.log(etBase)
-      console.log(eventNames.indexOf(etBase))
-      return etBase
-    })
+    const eventTags = eventTagsFull
+      .map((et) => {return et.root._ || et.root})
 
     var nSongs = 0
     for (let songTag in titletbl) {
@@ -196,11 +191,18 @@ async function main() {
           nameExt += "\n" + titletbl[songTag][6]
         }
 
+        var songFlags = []
+        for (let em of eventMap.entries()) {
+          if (em[1][1].includes(songTag)) {
+            songFlags.push(eventFlags.get(eventTags[em[0]]))
+          }
+        }
+
         songData = {
           name: nameExt,
           artist: titletbl[songTag][4] || "[artist N/A]",
           genre: titletbl[songTag][3] || "[genre N/A]",
-          flags: [],
+          flags: songFlags,
           bpm: datatbl[songTag][11] || "[BPM N/A]",
           jacket: "",
           charts: chartData,
