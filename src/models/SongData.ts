@@ -118,4 +118,8 @@ export interface Chart {
   freeze?: number;
   jacket?: string;
   author?: string;
+  /**
+   * per-chart BPM range, if one applies
+   */
+  bpm?: string;
 }

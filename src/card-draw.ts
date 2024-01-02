@@ -17,7 +17,7 @@ export function getDrawnChart(
     nameTranslation: currentSong.name_translation,
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
-    bpm: currentSong.bpm,
+    bpm: chart.bpm || currentSong.bpm,
     level: chart.lvl,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),

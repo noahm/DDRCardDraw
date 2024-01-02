@@ -4611,6 +4611,7 @@ __metadata:
     fork-ts-checker-webpack-plugin: ^9.0.0
     fuzzy-search: ^3.0.2
     he: ^1.2.0
+    html-entities: ^2.4.0
     html-webpack-plugin: ^5.5.3
     iconv-lite: ^0.6.3
     inquirer: ^9.2.11
@@ -6261,7 +6262,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-entities@npm:^2.1.0, html-entities@npm:^2.3.2":
+"html-entities@npm:^2.1.0, html-entities@npm:^2.3.2, html-entities@npm:^2.4.0":
   version: 2.4.0
   resolution: "html-entities@npm:2.4.0"
   checksum: 25bea32642ce9ebd0eedc4d24381883ecb0335ccb8ac26379a0958b9b16652fdbaa725d70207ce54a51db24103436a698a8e454397d3ba8ad81460224751f1dc
