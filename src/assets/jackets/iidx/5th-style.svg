@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="320">
+    <defs>
+        <radialGradient id="sheen" cx="0.5" cy="0.5" r="0.5" fx="0.75" fy="0.5">
+        <stop offset="0%" stop-color="rgb(85,85,85)" />
+        <stop offset="100%" stop-color="rgb(255,255,255)" />
+        </radialGradient>
+        <linearGradient id="hide" x1="0.3" x2="0.7" y1="0.6" y2="1.0">
+        <stop offset="0%" stop-color="black" />
+        <stop offset="100%" stop-color="white" />
+        </linearGradient>
+        <mask id="gradientMask">
+            <rect width="480" height="320" style="fill:url(#hide)" />
+        </mask>
+        <mask id="stripeMask">
+            <rect width="480" height="320" style="fill:url(#strote)" />
+        </mask>
+    </defs>
+    <pattern id="stripes" width="12" height="12" patternUnits="userSpaceOnUse">
+        <rect width="12" height="12" x="0" style="fill:rgb(255,255,255)" />
+        <rect width=" 6" height="12" x="6" style="fill:rgb(0,0,0)" />
+    </pattern>
+    <pattern id="strote" width="480" height="480" patternUnits="userSpaceOnUse">
+        <g transform="translate(240 240)"><g transform="rotate(30)">
+            <rect width="960" height="960" x="-480" y="-480" style="fill:url(#stripes)" />
+        </g></g>
+    </pattern>
+    <rect width="480" height="320" style="fill:#000000" />
+    <g mask="url(#gradientMask)">
+        <rect width="480" height="320" style="fill:#073190" mask="url(#stripeMask)" />
+    </g>
+    <g transform="translate(480, 320)">
+        <g transform="rotate(180)" mask="url(#gradientMask)">
+            <rect width="480" height="320" style="fill:#f5a100" mask="url(#stripeMask)" />
+        </g>
+    </g>
+    <ellipse cx="0" cy="160" rx="80" ry="160" style="fill:url(#sheen);fill-opacity:0.2;mix-blend-mode:screen;" />
+    <ellipse cx="480" cy="160" rx="80" ry="160" style="fill:url(#sheen);fill-opacity:0.2;mix-blend-mode:screen;" />
+</svg>
