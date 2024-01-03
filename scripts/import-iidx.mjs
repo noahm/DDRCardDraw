@@ -144,7 +144,11 @@ const eventReleases = [
   // X-record 1st 
   "apolioth",
   "blkwhite",
-  "_dscrdia"
+  "_dscrdia",
+  // ULTIMATE MOBILE time release
+  "firebeat",
+  "otokozak",
+  "sparknit",
 ]
 
 
