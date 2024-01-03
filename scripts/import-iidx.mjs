@@ -14,32 +14,8 @@
  const __dirname = path.dirname(fileURLToPath(import.meta.url));
  
  const OUTFILE = "src/songs/iidx.json";
- // IIDX doesn't have official jacket art.
+ // IIDX doesn't have official jacket art, but we're gonna make version folder backdrops.
  // const JACKETS_PATH = "src/assets/jackets/sdvx";
-
- const textageFiles = [
-   "titletbl",
-   "actbl",
-   "cstbl",
-   "cstbl1",
-   "cstbl2",
-   "cltbl",
-   "stepup",
-   "datatbl",
-   "scrlist"
- ];
- const textageDir = "scripts/scraping/textage" 
- const textageTotal = "./scraping/textage.js"
-
-
-async function exists(f) {
-  try {
-    await fs.promises.stat(f);
-    return true;
-  } catch {
-    return false;
-  }
-}
 
 function listProps(x) {
   var p = []
@@ -262,16 +238,16 @@ async function main() {
     let textageDOM = await fakeTextage(rescrape);
     const chartSlot = ["ZZZ", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
 
-    // titletbl from titletbl.js contains the full map of song tags to their genre, artist, and title for each.
+    // titletbl from titletbl.js contains the full map of song tags to the version of origin, genre, artist, and title for each.
+    // actbl from actbl.js knows whether each song is present in AC.
+    // datatbl from datatbl.js knows which songs have per-chart BPMs and what they are.
     // e_list[2] from titletbl.js contains a list of active unlock events and the associated song tags.
     // get_level(tag, type, num) from scrlist.js has the logic to look up charts by slot.
     const titletbl = textageDOM.window.eval("titletbl")
     const actbl = textageDOM.window.eval("actbl")
     const datatbl = textageDOM.window.eval("datatbl")
     const eventMap = textageDOM.window.eval("e_list[2]")
-    const eventTagsFull = await Promise.all(Array.from(eventMap.values()).map((v) => (parseStringPromise(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><root>` + v[0] + `</root>`))))
-    const eventTags = eventTagsFull
-      .map((et) => {return et.root._ || et.root})
+    const eventTags = await Promise.all(Array.from(eventMap.values()).map((v) => (unwrapHTML(v[0]))))
 
     for (let songTag in titletbl) {
       try {
@@ -290,22 +266,27 @@ async function main() {
           const diffClass = (chartStyle != "") ? ["beginner", "normal", "hyper", "another", "leggendaria"]["BNHAL".indexOf(v[1][2])] : "";
           const chartLevel = chartLevels[v[0]]
           if (diffClass != "" && chartLevel != 0) {
+            // Chart slot exists for this song?
             var chartInfo = {
               style: chartStyle,
               lvl: chartLevel,
               diffClass: diffClass
             }
             if (chartBPMs[v[0]] != songBPM) {
+              // Per-chart BPM?
               chartInfo.bpm = chartBPMs[v[0]]
             }
             chartData.push(chartInfo)
           }
         }
+
+        // Title and subtitle
         var nameExt = decodeHTML(await unwrapHTML(titletbl[songTag][5]), {scope: "strict"})
         if (titletbl[songTag][6]) {
           nameExt += "\n" + decodeHTML(await unwrapHTML(titletbl[songTag][6]), {scope: "strict"})
         }
 
+        // Unlock category, if applicable
         var songFlags = []
         for (let em of eventMap.entries()) {
           if (em[1][1].includes(songTag)) {
@@ -313,6 +294,7 @@ async function main() {
           }
         }
 
+        // Version of origin (or first AC inclusion)
         const folderNumber = titletbl[songTag][0] || 0
         const folderName = folderNames[folderNumber]
         const folderFile = folderName.replaceAll(" ", "-")

@@ -6,6 +6,8 @@ import * as path from "path";
 import * as fs from "fs";
 import { fileURLToPath } from "url";
 
+// textage JS files (c) textage.cc - don't distribute them after downloading!
+
 const textageFiles = [
   "titletbl",
   "actbl",
@@ -63,17 +65,7 @@ export async function textageDL(force = false) {
           response.data.on('end', resolve)
         })
       });
-      //.catch(error => console.error('Failed to download textage JS source:', error))
     }
-
-    // Force all-AC listing.
-    /*
-    await fs.promises.readFile(path.join(textageDir, `scrlist.js`), {encoding: "utf-8"}).then((data) => {
-      var updatedJS = data.replaceAll(`location.search`, `"?a001B000"`);
-      var updatedJS = data.replaceAll(`"?vV11B000"`, `"?a001B000"`);
-      return fs.promises.writeFile(path.join(textageDir, `scrlist.js`), updatedJS, {encoding: "utf-8"})
-    })
-    */
 
     // Double-check that we got all of the textage JS.
     const textageScrapeSuccess = textageFiles.every((fn) => exists(`scraping/textage/${fn}.js`));
