@@ -178,6 +178,10 @@
         },
         "author": {
           "type": "string"
+        },
+        "bpm": {
+          "type": "string",
+          "description": "per-chart BPM range, if one applies"
         }
       },
       "required": ["lvl", "diffClass", "style"]
