@@ -142,14 +142,15 @@ for (const parsedSong of pack.simfiles) {
     };
     if (useTiers) {
       let tierMatch = parsedSong.title.titleName.match(/^\[T(?:ier\s*)?(\d+)\]/i);
-      if (tierMatch.length > 0) {
+      if (tierMatch && tierMatch.length > 0) {
         const parsedTier = parseInt(tierMatch[1]);
         chartData.drawGroup = parsedTier;
         data.meta.lvlMax = Math.max(data.meta.lvlMax, parsedTier);
       } else {
         console.error(
-          'Expected song titles to include tiers in the form "[T01] ..." but found:\n' +
+          'Expected song titles to include tiers in the form "[T01] ..." but found:\n  ' +
             parsedSong.title.titleName,
+          "From folder: " + parsedSong.title.titleDir,
         );
       }
     } else {

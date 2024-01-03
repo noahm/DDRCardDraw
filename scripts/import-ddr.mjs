@@ -5,10 +5,7 @@
  * song data with the least amount of manual work on my part.
  */
 
-import CacheableLookup from "cacheable-lookup";
 import { readFile } from "fs/promises";
-import { globalAgent as httpAgent } from "http";
-import { globalAgent as httpsAgent } from "https";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { DDR_A3 as MIX_META } from "./scraping/ddr-sources.mjs";
@@ -22,13 +19,6 @@ import {
   setJacketPrefix,
   checkJacketExists,
 } from "./utils.mjs";
-
-{
-  /* globally install dns caching to avoid mass lookups of remywiki over and over */
-  const dnsCache = new CacheableLookup();
-  dnsCache.install(httpAgent);
-  dnsCache.install(httpsAgent);
-}
 
 setJacketPrefix(MIX_META.jacketPrefix);
 

@@ -140,7 +140,13 @@ The app is aware of when it is loaded into an OBS Browser Source and will automa
 
 ## SM5/ITG imports
 
-Custom builds with data files based on ITG song packs are trivial to prepare. The only requirements are a working installation of `node.js` and `yarn`, and a copy of this project.
+Running card draw based on local ITG song packs are trivial to prepare. Simply drag and drop the pack folder into the browser window to begin. Local data imports only last until your browser tab is closed or reloaded.
+
+![Screenshot of a dialog confirming a local data import](images/local-import-dialog.png)
+
+The app has special support for tiered packs as used in some tournaments where each song title includes a tier tag `[T01] Song Name`. When importing in tiered mode, the draw settings will allow you to draw charts based on the given tier rather than the chart difficulty levels.
+
+You can also make a persistent import of local data using a local development copy of the project.
 
 In a terminal:
 
@@ -155,6 +161,9 @@ yarn
 # providing a stub name without spaces
 yarn import:itg path/to/pack/folder some-stub-name
 
+# OR, if importing a tiered pack
+yarn import:itg path/to/pack/folder some-stub-name tiered
+
 # then you have a choice of either of the following:
 
 # start a local development server.
@@ -165,8 +174,6 @@ yarn start
 # static HTML/CSS/JS output in dist/* can be hosted anywhere
 yarn build
 ```
-
-The app also has special support for "tiered" packs used in tournaments where songs of different groups are organized by tier using prefixes of the form `[T01] Song Name`. When importing packs of this style, add `tiered` as an additional import arg after your stub name.
 
 # Contact
 

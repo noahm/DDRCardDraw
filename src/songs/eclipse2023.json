@@ -3,7 +3,7 @@
     "menuParent": "itg",
     "flags": [],
     "lvlMax": 11,
-    "lastUpdated": 1698780712571,
+    "lastUpdated": 1701299239066,
     "usesDrawGroups": true,
     "styles": ["single"],
     "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
@@ -192,21 +192,6 @@
       ]
     },
     {
-      "name": "[T02] burbank house",
-      "name_translation": "",
-      "jacket": "itg/eclipse2023/[T02] burbank house.jpg",
-      "bpm": "170",
-      "artist": "tsubi club",
-      "charts": [
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "challenge",
-          "drawGroup": 2
-        }
-      ]
-    },
-    {
       "name": "[T02] チキチキバンバン",
       "name_translation": "[T02] Chitty Chitty Bang Bang",
       "jacket": "itg/eclipse2023/[T02] Chitty Chitty Bang Bang.jpg",
@@ -290,6 +275,21 @@
       "charts": [
         {
           "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] burbank house",
+      "name_translation": "",
+      "jacket": "itg/eclipse2023/[T02] burbank house.jpg",
+      "bpm": "170",
+      "artist": "tsubi club",
+      "charts": [
+        {
+          "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
           "drawGroup": 2
@@ -1167,21 +1167,6 @@
       ]
     },
     {
-      "name": "[T10] clairvoyance",
-      "name_translation": "",
-      "jacket": "itg/eclipse2023/[T10] clairvoyance.jpg",
-      "bpm": "175",
-      "artist": "ikaruga_nex & 影虎。",
-      "charts": [
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "challenge",
-          "drawGroup": 10
-        }
-      ]
-    },
-    {
       "name": "[T10] Mazy Metroplex",
       "name_translation": "",
       "jacket": "itg/eclipse2023/[T10] Mazy Metroplex.jpg",
@@ -1250,6 +1235,21 @@
       "charts": [
         {
           "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] clairvoyance",
+      "name_translation": "",
+      "jacket": "itg/eclipse2023/[T10] clairvoyance.jpg",
+      "bpm": "175",
+      "artist": "ikaruga_nex & 影虎。",
+      "charts": [
+        {
+          "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
           "drawGroup": 10

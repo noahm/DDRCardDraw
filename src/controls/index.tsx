@@ -259,6 +259,7 @@ function GeneralSettings() {
     difficulties: selectedDifficulties,
     style: selectedStyle,
     chartCount,
+    sortByLevel,
   } = configState;
   const availableDifficulties = useMemo(() => {
     if (!gameData) {
@@ -318,6 +319,8 @@ function GeneralSettings() {
           <NumericInput
             large
             fill
+            type="number"
+            inputMode="numeric"
             value={chartCount}
             min={1}
             clampValueOnBlur
@@ -340,12 +343,14 @@ function GeneralSettings() {
             contentClassName={styles.narrowInput}
           >
             <NumericInput
+              large
               fill
+              type="number"
+              inputMode="numeric"
               value={lowerBound}
               min={1}
               max={Math.max(upperBound, lowerBound, 1)}
               clampValueOnBlur
-              large
               onValueChange={handleLowerBoundChange}
             />
           </FormGroup>
@@ -358,12 +363,14 @@ function GeneralSettings() {
             contentClassName={styles.narrowInput}
           >
             <NumericInput
+              large
               fill
+              type="number"
+              inputMode="numeric"
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
               clampValueOnBlur
-              large
               onValueChange={handleUpperBoundChange}
             />
           </FormGroup>
@@ -456,6 +463,15 @@ function GeneralSettings() {
             updateState({ constrainPocketPicks });
           }}
           label={t("controls.constrainPocketPicks")}
+        />
+        <Checkbox
+          id="sortByLevel"
+          checked={sortByLevel}
+          onChange={(e) => {
+            const sortByLevel = !!e.currentTarget.checked;
+            updateState({ sortByLevel });
+          }}
+          label={t("controls.sortByLevel")}
         />
         <Checkbox
           id="showVeto"

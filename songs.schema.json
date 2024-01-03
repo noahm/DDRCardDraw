@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Game Data",
   "description": "Describes the shape of data that any individual json file under `src/songs` will conform to",
@@ -23,7 +24,7 @@
           "description": "Unix timestamp of last update to this data file"
         },
         "styles": {
-          "$ref": "#/$defs/uniqueStringArr",
+          "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all play styles available"
         },
         "difficulties": {
@@ -47,7 +48,7 @@
           "additionalItems": false
         },
         "flags": {
-          "$ref": "#/$defs/uniqueStringArr",
+          "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all special flags one might filter songs by"
         },
         "lvlMax": {
@@ -71,8 +72,8 @@
       "additionalProperties": false,
       "properties": {
         "style": { "type": "string" },
-        "difficulties": { "$ref": "#/$defs/uniqueStringArr" },
-        "flags": { "$ref": "#/$defs/uniqueStringArr" },
+        "difficulties": { "$ref": "#/definitions/uniqueStringArr" },
+        "flags": { "$ref": "#/definitions/uniqueStringArr" },
         "lowerLvlBound": { "type": "integer" },
         "upperLvlBound": { "type": "integer" }
       }
@@ -82,7 +83,7 @@
       "description": "Set of localized values for display of any styles, difficulties, or flags",
       "required": ["en"],
       "additionalProperties": {
-        "$ref": "#/$defs/i18nDictRoot"
+        "$ref": "#/definitions/i18nDictRoot"
       }
     },
     "songs": {
@@ -91,7 +92,7 @@
         "type": "object",
         "title": "Song",
         "properties": {
-          "flags": { "$ref": "#/$defs/uniqueStringArr" },
+          "flags": { "$ref": "#/definitions/uniqueStringArr" },
           "name": {
             "type": "string"
           },
@@ -113,9 +114,12 @@
           "search_hint": {
             "type": "string"
           },
+          "date_added": {
+            "type": "string"
+          },
           "charts": {
             "type": "array",
-            "items": { "$ref": "#/$defs/chart" },
+            "items": { "$ref": "#/definitions/chart" },
             "additionalItems": false
           },
           "jacket": {
@@ -140,13 +144,13 @@
       "additionalItems": false
     }
   },
-  "$defs": {
+  "definitions": {
     "chart": {
       "type": "object",
       "title": "Chart",
       "additionalProperties": false,
       "properties": {
-        "flags": { "$ref": "#/$defs/uniqueStringArr" },
+        "flags": { "$ref": "#/definitions/uniqueStringArr" },
         "style": { "type": "string", "description": "e.g. single/double" },
         "diffClass": {
           "type": "string",
@@ -198,7 +202,7 @@
       "additionalProperties": {
         "oneOf": [
           { "type": "string" },
-          { "$ref": "#/$defs/i18nDictBranch" }
+          { "$ref": "#/definitions/i18nDictBranch" }
         ]
       }
     },
@@ -207,7 +211,7 @@
       "additionalProperties": {
         "oneOf": [
           { "type": "string" },
-          { "$ref": "#/$defs/i18nDictBranch" }
+          { "$ref": "#/definitions/i18nDictBranch" }
         ]
       }
     }

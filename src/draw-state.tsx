@@ -9,24 +9,47 @@ import { availableGameData, detectedLanguage } from "./utils";
 import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
-import { create } from "zustand";
+import { create, StoreApi } from "zustand";
 import { shallow } from "zustand/shallow";
 import { DataConnection } from "peerjs";
 
 interface DrawState {
+  importedData: Map<string, GameData>;
   gameData: GameData | null;
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
-  loadGameData(dataSetName: string): Promise<GameData>;
+  addImportedData(dataSetName: string, gameData: GameData): void;
+  loadGameData(dataSetName: string, gameData?: GameData): Promise<GameData>;
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
   clearDrawings(): void;
   injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
+function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
+  set({
+    gameData: data,
+    drawings: [],
+    fuzzySearch: new FuzzySearch(
+      data.songs,
+      [
+        "name",
+        "name_translation",
+        "search_hint",
+        "artist",
+        "artist_translation",
+      ],
+      {
+        sort: true,
+      },
+    ),
+  });
+}
+
 export const useDrawState = create<DrawState>((set, get) => ({
+  importedData: new Map(),
   gameData: null,
   fuzzySearch: null,
   drawings: [],
@@ -41,7 +64,18 @@ export const useDrawState = create<DrawState>((set, get) => ({
     }
     set({ drawings: [] });
   },
-  async loadGameData(dataSetName: string) {
+  addImportedData(dataSetName, gameData) {
+    const { importedData } = get();
+    const nextData = new Map(importedData);
+    nextData.set(dataSetName, gameData);
+    set({
+      importedData: nextData,
+      dataSetName,
+    });
+    writeDataSetToUrl(dataSetName);
+    applyNewData(gameData, set);
+  },
+  async loadGameData(dataSetName: string, gameData?: GameData) {
     const state = get();
     if (state.dataSetName === dataSetName && state.gameData) {
       return state.gameData;
@@ -59,28 +93,17 @@ export const useDrawState = create<DrawState>((set, get) => ({
     });
     writeDataSetToUrl(dataSetName);
 
-    const data = (
-      await import(
-        /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
-      )
-    ).default;
-    set({
-      gameData: data,
-      drawings: [],
-      fuzzySearch: new FuzzySearch(
-        data.songs,
-        [
-          "name",
-          "name_translation",
-          "search_hint",
-          "artist",
-          "artist_translation",
-        ],
-        {
-          sort: true,
-        },
-      ),
-    });
+    // Attempt to look up a local data file first
+    gameData = state.importedData.get(dataSetName);
+
+    const data =
+      gameData ||
+      (
+        await import(
+          /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
+        )
+      ).default;
+    applyNewData(data, set);
     return data;
   },
   drawSongs(config: ConfigState) {

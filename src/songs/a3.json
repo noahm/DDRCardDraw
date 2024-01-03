@@ -1478,7 +1478,6 @@
       ],
       "remyLink": "http://remywiki.com/Afterimage%20d%27automne",
       "jacket": "Afterimage_d'automne.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "blld8o09oQo80PIIoIdbP9688DIqlbdb",
       "saIndex": "894"
     },
@@ -3675,7 +3674,6 @@
       ],
       "remyLink": "http://remywiki.com/BLACK%20JACKAL",
       "jacket": "BLACK_JACKAL.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "OO1oqdIPP80QdoP11QP61OdDb0lI1qIq",
       "saIndex": "889"
     },
@@ -4546,11 +4544,21 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
-        { "lvl": 16, "style": "single", "diffClass": "challenge", "flags": ["unlock"] },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" },
-        { "lvl": 16, "style": "double", "diffClass": "challenge", "flags": ["unlock"] }
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        }
       ],
       "remyLink": "http://remywiki.com/BUTTERFLY%20%2820th%20Anniversary%20Mix%29",
       "jacket": "BUTTERFLY (20th Anniversary Mix).jpg",
@@ -4985,11 +4993,21 @@
         { "lvl": 9, "style": "single", "diffClass": "basic" },
         { "lvl": 14, "style": "single", "diffClass": "difficult" },
         { "lvl": 16, "style": "single", "diffClass": "expert" },
-        { "lvl": 18, "style": "single", "diffClass": "challenge", "flags": ["shock", "unlock"] },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock", "unlock"]
+        },
         { "lvl": 10, "style": "double", "diffClass": "basic" },
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" },
-        { "lvl": 18, "style": "double", "diffClass": "challenge", "flags": ["shock", "unlock"] }
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["shock", "unlock"]
+        }
       ],
       "remyLink": "http://remywiki.com/CARTOON%20HEROES%20%2820th%20Anniversary%20Mix%29",
       "jacket": "CARTOON HEROES (20th Anniversary Mix).png",
@@ -6559,7 +6577,6 @@
       ],
       "remyLink": "http://remywiki.com/Crazy%20Shuffle",
       "jacket": "Crazy_Shuffle.png",
-      "flags": ["tempUnlock"],
       "saHash": "OdQqDiIDbD6ioi60ob6lDOlD8oio9l0b",
       "saIndex": "885"
     },
@@ -6603,7 +6620,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["grandPrixPack"]
         },
         {
           "step": 217,
@@ -6630,7 +6647,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/CRAZY%E2%99%A5LOVE",
@@ -9675,7 +9692,6 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Easy_Peasy",
       "jacket": "Easy_Peasy.jpg",
       "saHash": "iiIblq9IDiOill8qdI68OOIPq6OPdiDo",
@@ -13245,7 +13261,6 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Go_Down",
       "jacket": "Go_Down.jpg",
       "saHash": "iIDOlq6QoQPiqoii0iiDOiI9ODiQOIDb",
@@ -14306,7 +14321,6 @@
       ],
       "remyLink": "http://remywiki.com/HARD%20BRAIN",
       "jacket": "HARD BRAIN.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "Qb8P9PODDo68lPqQ0o6d80bIqDOiPD9Q",
       "saIndex": "964"
     },
@@ -14380,11 +14394,21 @@
         { "lvl": 4, "style": "single", "diffClass": "basic" },
         { "lvl": 7, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge", "flags": ["unlock"] },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
         { "lvl": 4, "style": "double", "diffClass": "basic" },
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 10, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge", "flags": ["unlock"] }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        }
       ],
       "remyLink": "http://remywiki.com/HAVE%20YOU%20NEVER%20BEEN%20MELLOW%20%2820th%20Anniversary%20Mix%29",
       "jacket": "HAVE YOU NEVER BEEN MELLOW (20th Anniversary Mix).png",
@@ -17580,7 +17604,6 @@
       ],
       "remyLink": "http://remywiki.com/Jetcoaster%20Windy",
       "jacket": "Jetcoaster Windy.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "qD1I6qqll88q9dq9PoloD68lqddIDo6O",
       "saIndex": "968"
     },
@@ -18682,7 +18705,6 @@
       ],
       "remyLink": "http://remywiki.com/Lachryma%28Re%3AQueen%27M%29",
       "jacket": "Lachryma.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "bIlqP91O9ld1lqlq6qoq9OiPdqIDPP0l",
       "saIndex": "920"
     },
@@ -18747,7 +18769,6 @@
       ],
       "remyLink": "http://remywiki.com/Last%20Twilight",
       "jacket": "Last Twilight.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "PllDll9di16l8ild6b688l6OP6olQid8",
       "saIndex": "955"
     },
@@ -19479,11 +19500,21 @@
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
-        { "lvl": 15, "style": "single", "diffClass": "challenge", "flags": ["unlock"] },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" },
-        { "lvl": 15, "style": "double", "diffClass": "challenge", "flags": ["unlock"] }
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        }
       ],
       "remyLink": "http://remywiki.com/LONG%20TRAIN%20RUNNIN%27%20%2820th%20Anniversary%20Mix%29",
       "jacket": "LONG TRAIN RUNNIN' (20th Anniversary Mix).png",
@@ -23944,7 +23975,6 @@
       ],
       "remyLink": "http://remywiki.com/Our%20Love",
       "jacket": "Our Love.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "PoP6o0Db8odIO9oOqddodd8IlPl1iDli",
       "saIndex": "951"
     },
@@ -23963,8 +23993,7 @@
         {
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
@@ -23972,8 +24001,7 @@
         {
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         }
       ],
       "remyLink": "http://remywiki.com/Our%20Soul",
@@ -24095,7 +24123,6 @@
       ],
       "remyLink": "http://remywiki.com/PANIC%20HOLIC",
       "jacket": "PANIC HOLIC.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "9IlP00lPi6oOQQqOl1DoI0o10bi1iid1",
       "saIndex": "956"
     },
@@ -26001,7 +26028,6 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Prettiful!",
       "jacket": "Prettiful!.jpg",
       "saHash": "88Qq96qbdd69bqI089600l9bDDdiQI0l",
@@ -26199,7 +26225,12 @@
           "style": "single",
           "diffClass": "expert"
         },
-        { "lvl": 16, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
         {
           "step": 147,
           "freeze": 5,
@@ -26221,7 +26252,12 @@
           "style": "double",
           "diffClass": "expert"
         },
-        { "lvl": 16, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        }
       ],
       "remyLink": "http://remywiki.com/Programmed%20Universe",
       "jacket": "Programmed Universe.png",
@@ -30743,7 +30779,6 @@
       ],
       "remyLink": "http://remywiki.com/Six%20String%20Proof",
       "jacket": "Six_String_Proof.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "D6o8lIiDQ80oi6iIbiP9DlOPIl0Q8d69",
       "saIndex": "890"
     },
@@ -30787,11 +30822,21 @@
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge", "flags": ["unlock"] },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge", "flags": ["unlock"] }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["unlock"]
+        }
       ],
       "remyLink": "http://remywiki.com/SKY%20HIGH%20%2820th%20Anniversary%20Mix%29",
       "jacket": "SKY HIGH (20th Anniversary Mix).png",
@@ -31013,7 +31058,6 @@
       ],
       "remyLink": "http://remywiki.com/Small%20Steps",
       "jacket": "Small_Steps.png",
-      "flags": ["tempUnlock"],
       "saHash": "OdldObODIdilOP0QqI0b1oO1diqdq61b",
       "saIndex": "883"
     },
@@ -31886,7 +31930,6 @@
       ],
       "remyLink": "http://remywiki.com/Sparkle%20Smilin%27",
       "jacket": "Sparkle Smilin'.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "8i61Oi09bOIP0lOldI668b8IPbIq8l0Q",
       "saIndex": "952"
     },
@@ -32497,7 +32540,12 @@
           "style": "single",
           "diffClass": "expert"
         },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
         {
           "step": 222,
           "freeze": 19,
@@ -32519,7 +32567,12 @@
           "style": "double",
           "diffClass": "expert"
         },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        }
       ],
       "remyLink": "http://remywiki.com/Starmine",
       "jacket": "starmine.png",
@@ -37141,7 +37194,6 @@
       ],
       "remyLink": "http://remywiki.com/Toy%20boxer",
       "jacket": "Toy_boxer.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "d9QO9odlI18i96I6DQPld1iiol8ODl0o",
       "saIndex": "891"
     },
@@ -37371,7 +37423,6 @@
       ],
       "remyLink": "http://remywiki.com/Trill%20auf%20G",
       "jacket": "Trill_auf_G.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "0lIIil06b8q819P9lDil09o6qlqo9I1i",
       "saIndex": "888"
     },
@@ -38711,7 +38762,12 @@
           "style": "single",
           "diffClass": "expert"
         },
-        { "lvl": 18, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
         {
           "step": 223,
           "freeze": 36,
@@ -38733,7 +38789,12 @@
           "style": "double",
           "diffClass": "expert"
         },
-        { "lvl": 18, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        }
       ],
       "remyLink": "http://remywiki.com/UNBELIEVABLE%20%28Sparky%20remix%29",
       "jacket": "UNBELIEVABLE (Sparky remix).png",
@@ -39565,7 +39626,6 @@
       ],
       "remyLink": "http://remywiki.com/Voltississimo",
       "jacket": "Voltississimo.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "6DQ9D9oi66I8ODi8o0dPdOD1ibbIqIdI",
       "saIndex": "893"
     },
@@ -40464,7 +40524,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["grandPrixPack"]
         },
         {
           "step": 171,
@@ -40491,7 +40551,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["unlock"]
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/Wow%20Wow%20VENUS",
@@ -40972,7 +41032,6 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/You_You_You",
       "jacket": "You_You_You.jpg",
       "saHash": "oilPP86l0PPq6Db0qqibQlqDiIOD0l1O",
@@ -41406,7 +41465,6 @@
       ],
       "remyLink": "http://remywiki.com/%CE%A9VERSOUL",
       "jacket": "OVERSOUL.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "P1boP1O60bdI16i6lqqd1Q8ioiPbolqd",
       "saIndex": "918"
     },
@@ -41757,7 +41815,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%81%8A%E3%83%BC%E3%81%BE%E3%81%84%EF%BC%81%E3%82%89%E3%81%B6%E3%82%8A%E3%83%BC%EF%BC%81%E3%81%99%E3%81%86%E3%81%83%E3%83%BC%E3%81%A6%E3%81%83%EF%BC%81%E3%81%A0%E3%83%BC%E3%82%8A%E3%82%93%EF%BC%81",
       "jacket": "Oh_my!_Lovely!_Sweety!_Darling!.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "lqI8DD9Plq6IO8P8P6Pl8Di98DlI9oP8",
       "saIndex": "892"
     },
@@ -44289,7 +44346,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%8E%E3%83%AB%E3%82%A8%E3%83%94%E3%83%8D%E3%83%95%E3%83%AA%E3%83%B3",
       "jacket": "Norepinephrine.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "8Qd118IPdqld06Qd1q10iQd06bDdbdQI",
       "saIndex": "953"
     },
@@ -45106,8 +45162,7 @@
         {
           "lvl": 17,
           "style": "single",
-          "diffClass": "challenge",
-          "flags": ["tempUnlock"]
+          "diffClass": "challenge"
         },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
@@ -45257,7 +45312,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%9F%E3%83%83%E3%83%89%E3%83%8A%E3%82%A4%E3%83%88%E2%98%86WAR",
       "jacket": "Midnight_WAR.png",
-      "flags": ["tempUnlock"],
       "saHash": "06DO8bb0O891IQ9QP01diqOOl0D80QbO",
       "saIndex": "895"
     },
@@ -46064,7 +46118,6 @@
       ],
       "remyLink": "http://remywiki.com/%E4%B8%96%E7%95%8C%E3%81%AE%E6%9E%9C%E3%81%A6%E3%81%AB%E7%B4%84%E6%9D%9F%E3%81%AE%E5%87%B1%E6%AD%8C%E3%82%92%20-DDR%20Extended%20Megamix-",
       "jacket": "Sekai no hate ni yakusoku no gaika wo -DDR Extended Megamix-.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "l9QibD8IoooD9DIl1O8Q0lo89I9qdido",
       "saIndex": "986"
     },
@@ -49117,11 +49170,21 @@
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
-        { "lvl": 16, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" },
-        { "lvl": 16, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        }
       ],
       "remyLink": "http://remywiki.com/%E6%9C%A7%20%28dj%20TAKA%20Remix%29",
       "jacket": "Oboro (dj TAKA Remix).png",
@@ -49825,7 +49888,6 @@
       ],
       "remyLink": "http://remywiki.com/%E7%8B%82%E6%B0%B4%E4%B8%80%E8%8F%AF",
       "jacket": "Kyousui ichika.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "Dooii0960OioP6Q1l0qi68Q8Dbd9OO91",
       "saIndex": "965"
     },
@@ -50268,7 +50330,6 @@
       ],
       "remyLink": "http://remywiki.com/%E8%92%BC%E3%81%8C%E6%B6%88%E3%81%88%E3%82%8B%E3%81%A8%E3%81%8D",
       "jacket": "Ao ga kieru toki.jpg",
-      "flags": ["tempUnlock"],
       "saHash": "6d10P0Pd1PiD1l6DPQdoPD1Q8DP0QlqQ",
       "saIndex": "961"
     },
