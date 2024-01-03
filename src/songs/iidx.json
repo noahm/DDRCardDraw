@@ -1,6 +1,5 @@
 {
   "meta": {
-    "menuParent": "more",
     "styles": ["single", "double"],
     "difficulties": [
       { "key": "beginner", "color": "#17ff8b" },
@@ -16,10 +15,11 @@
       "residentParty",
       "tripleTribe",
       "xRecord",
-      "ichikaGochamaze"
+      "ichikaGochamaze",
+      "timelock"
     ],
     "lvlMax": 12,
-    "lastUpdated": 1704254438313
+    "lastUpdated": 1704310046464
   },
   "defaults": {
     "style": "single",
@@ -30,7 +30,7 @@
   },
   "i18n": {
     "en": {
-      "name": "IIDX: AC (EPOLIS)",
+      "name": "IIDX AC (EPOLIS)",
       "single": "SP",
       "double": "DP",
       "beginner": "BEGINNER",
@@ -45,6 +45,7 @@
       "tripleTribe": "Triple Tribe",
       "xRecord": "X-record",
       "ichikaGochamaze": "Ichika's Gochamaze Mix UP!",
+      "timelock": "Time-locked or shop-bought",
       "$abbr": {
         "beginner": "[B]",
         "normal": "[N]",
@@ -54,7 +55,7 @@
       }
     },
     "ja": {
-      "name": "IIDX: AC (EPOLIS)",
+      "name": "IIDX AC (EPOLIS)",
       "single": "SP",
       "double": "DP",
       "beginner": "BEGINNER",
@@ -69,6 +70,7 @@
       "tripleTribe": "Triple Tribe",
       "xRecord": "X-record",
       "ichikaGochamaze": "いちかのごちゃまぜMix UP!",
+      "timelock": "現在解禁不可・公式サイトに購入必須",
       "$abbr": {
         "beginner": "[B]",
         "normal": "[N]",
@@ -80,7 +82,7 @@
   },
   "songs": [
     {
-      "name": "Battle Train\n-IIDX Edition-",
+      "name": "Battle Train -IIDX Edition-",
       "artist": "Sota Fujimori",
       "genre": "HARD DANCE",
       "flags": [],
@@ -242,7 +244,7 @@
       "saIndex": "8"
     },
     {
-      "name": "HELL SCAPER\n-Last Escape Remix-",
+      "name": "HELL SCAPER -Last Escape Remix-",
       "artist": "Remixed by DJ TECHNORCH fw.GUHROOVY",
       "genre": "GABBAH",
       "flags": [],
@@ -332,7 +334,7 @@
       "saIndex": "13"
     },
     {
-      "name": "quick master\n(reform version)",
+      "name": "quick master (reform version)",
       "artist": "youhei shimizu",
       "genre": "J-TEKNO",
       "flags": [],
@@ -371,7 +373,7 @@
       "name": "Reflection Into the EDEN",
       "artist": "猫叉Master",
       "genre": "BOSSA ELECTRONICA",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "110",
       "jacket": "iidx/tricoro.svg",
       "folder": "tricoro",
@@ -530,7 +532,7 @@
       "saIndex": "24"
     },
     {
-      "name": "ToyCube Pf.\n(RX-Ver.S.P.L.)",
+      "name": "ToyCube Pf. (RX-Ver.S.P.L.)",
       "artist": "高田雅史",
       "genre": "NEW AGE",
       "flags": [],
@@ -566,7 +568,7 @@
       "saIndex": "26"
     },
     {
-      "name": "Usual Days\n-remix",
+      "name": "Usual Days -remix",
       "artist": "ota2",
       "genre": "DANCE POP",
       "flags": [],
@@ -951,7 +953,7 @@
       "saIndex": "47"
     },
     {
-      "name": "PARANOIA MAX\n～DIRTY MIX～",
+      "name": "PARANOIA MAX ～DIRTY MIX～",
       "artist": "190",
       "genre": "JUNGLE",
       "flags": [],
@@ -1043,7 +1045,7 @@
       "saIndex": "52"
     },
     {
-      "name": "Digital MinD\n(A/T Libra mix)",
+      "name": "Digital MinD (A/T Libra mix)",
       "artist": "TaQ",
       "genre": "MINIMAL",
       "flags": [],
@@ -1060,7 +1062,7 @@
       "saIndex": "53"
     },
     {
-      "name": "Electro Tuned\n(the SubS mix)",
+      "name": "Electro Tuned (the SubS mix)",
       "artist": "TaQ",
       "genre": "BIG BEAT",
       "flags": [],
@@ -1094,7 +1096,7 @@
       "saIndex": "55"
     },
     {
-      "name": "Indigo Vision\n(full flavour hide around mix)",
+      "name": "Indigo Vision (full flavour hide around mix)",
       "artist": "TaQ",
       "genre": "GOA TRANCE",
       "flags": [],
@@ -1111,7 +1113,7 @@
       "saIndex": "56"
     },
     {
-      "name": "PUT YOUR FAITH IN ME\n(for beatmania II)",
+      "name": "PUT YOUR FAITH IN ME (for beatmania II)",
       "artist": "dj TAKA feat. UZI-LAY",
       "genre": "JAZZ FUNK",
       "flags": [],
@@ -1127,7 +1129,7 @@
       "saIndex": "57"
     },
     {
-      "name": "SP-TRIP MACHINE\n(for beatmania II)",
+      "name": "SP-TRIP MACHINE (for beatmania II)",
       "artist": "dj TAKA feat. DE-SIRE",
       "genre": "JUNGLE",
       "flags": [],
@@ -1177,7 +1179,7 @@
       "saIndex": "60"
     },
     {
-      "name": "era\n(nostalmix)",
+      "name": "era (nostalmix)",
       "artist": "TaQ",
       "genre": "DRUM'N'BASS",
       "flags": [],
@@ -1521,7 +1523,7 @@
       "saIndex": "79"
     },
     {
-      "name": "era\n(step mix)",
+      "name": "era (step mix)",
       "artist": "TaQ",
       "genre": "DRUM'N'BASS",
       "flags": [],
@@ -1644,7 +1646,7 @@
       "saIndex": "86"
     },
     {
-      "name": "Mr.T.\n(take me higher)",
+      "name": "Mr.T. (take me higher)",
       "artist": "Risky Men feat. Asuka.M",
       "genre": "DANCE POP",
       "flags": [],
@@ -1681,7 +1683,7 @@
       "saIndex": "88"
     },
     {
-      "name": "Voltage\n(feat. Hidemaru)",
+      "name": "Voltage (feat. Hidemaru)",
       "artist": "TaQ",
       "genre": "BIG BEAT",
       "flags": [],
@@ -1772,7 +1774,7 @@
       "saIndex": "93"
     },
     {
-      "name": "LOVE AGAIN TONIGHT\n～for Mellisa mix～",
+      "name": "LOVE AGAIN TONIGHT ～for Mellisa mix～",
       "artist": "NAOKI feat. PAULA TERRY",
       "genre": "HYPER EUROBEAT",
       "flags": [],
@@ -1878,7 +1880,7 @@
       "saIndex": "99"
     },
     {
-      "name": "RIDE ON THE LIGHT\n(HI GREAT MIX)",
+      "name": "RIDE ON THE LIGHT (HI GREAT MIX)",
       "artist": "Mr.T",
       "genre": "POWER FUSION",
       "flags": [],
@@ -2073,7 +2075,7 @@
       "saIndex": "110"
     },
     {
-      "name": "BALLAD FOR YOU\n～想いの雨～",
+      "name": "BALLAD FOR YOU ～想いの雨～",
       "artist": "NM feat.Thomas Howard",
       "genre": "BALLAD",
       "flags": [],
@@ -2128,7 +2130,7 @@
       "saIndex": "113"
     },
     {
-      "name": "Colors\n(radio edit)",
+      "name": "Colors (radio edit)",
       "artist": "dj TAKA",
       "genre": "TRANCE",
       "flags": [],
@@ -2146,7 +2148,7 @@
       "saIndex": "114"
     },
     {
-      "name": "DIVE\n～INTO YOUR HEART～",
+      "name": "DIVE ～INTO YOUR HEART～",
       "artist": "NAOKI feat.PAULA TERRY",
       "genre": "HYPER TRANCE EURO BEAT",
       "flags": [],
@@ -2199,7 +2201,7 @@
       "saIndex": "117"
     },
     {
-      "name": "Frozen Ray\n(original mix)",
+      "name": "Frozen Ray (original mix)",
       "artist": "dj TAKA",
       "genre": "TRANCE",
       "flags": [],
@@ -2306,7 +2308,7 @@
       "saIndex": "123"
     },
     {
-      "name": "Summer Vacation\n(CU mix)",
+      "name": "Summer Vacation (CU mix)",
       "artist": "OutPhase",
       "genre": "TRIP HOP",
       "flags": [],
@@ -2446,7 +2448,7 @@
       "saIndex": "131"
     },
     {
-      "name": "Burning Heat!\n(Full Option Mix)",
+      "name": "Burning Heat! (Full Option Mix)",
       "artist": "Mr.T with Motoaki.F",
       "genre": "12 BEAT",
       "flags": [],
@@ -2889,7 +2891,7 @@
       "saIndex": "156"
     },
     {
-      "name": "Colors\n-Y&Co.Eurobeat Remix-",
+      "name": "Colors -Y&Co.Eurobeat Remix-",
       "artist": "dj TAKA(remixed by 横田商会)",
       "genre": "EUROBEAT",
       "flags": [],
@@ -3267,7 +3269,7 @@
       "saIndex": "177"
     },
     {
-      "name": "Abyss\n-The Heavens Remix-",
+      "name": "Abyss -The Heavens Remix-",
       "artist": "dj TAKA Remixed by Ryu☆",
       "genre": "TRANCECORE",
       "flags": [],
@@ -3304,7 +3306,7 @@
       "saIndex": "179"
     },
     {
-      "name": "BAD BOY BASS!!\n(dj Remo-con MIX)",
+      "name": "BAD BOY BASS!! (dj Remo-con MIX)",
       "artist": "Y&Co.",
       "genre": "NRG",
       "flags": [],
@@ -3390,7 +3392,7 @@
       "saIndex": "184"
     },
     {
-      "name": "e-motion 2003\n-romantic extra-",
+      "name": "e-motion 2003 -romantic extra-",
       "artist": "e.o.s. Remixed by dj TAKA",
       "genre": "TRANCE",
       "flags": [],
@@ -3425,7 +3427,7 @@
       "saIndex": "186"
     },
     {
-      "name": "HYPER EUROBEAT\n(2DX style)",
+      "name": "HYPER EUROBEAT (2DX style)",
       "artist": "NAOKI feat.PAULA TERRY",
       "genre": "EUROBEAT",
       "flags": [],
@@ -3442,7 +3444,7 @@
       "saIndex": "187"
     },
     {
-      "name": "I Was The One\n(80's EUROBEAT STYLE)",
+      "name": "I Was The One (80's EUROBEAT STYLE)",
       "artist": "good-cool Remixed by NAOKI",
       "genre": "EUROBEAT",
       "flags": [],
@@ -3499,7 +3501,7 @@
       "name": "Logic Board",
       "artist": "dj nagureo",
       "genre": "TECHNO",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "130",
       "jacket": "iidx/9th-style.svg",
       "folder": "9th style",
@@ -3569,7 +3571,7 @@
       "saIndex": "194"
     },
     {
-      "name": "MARIA\n(I believe...)",
+      "name": "MARIA (I believe...)",
       "artist": "NAOKI feat.PAULA TERRY",
       "genre": "EUROBEAT",
       "flags": [],
@@ -3677,7 +3679,7 @@
       "saIndex": "200"
     },
     {
-      "name": "RISLIM\n-Remix-",
+      "name": "RISLIM -Remix-",
       "artist": "ric Remixed by Hisashi Nawata",
       "genre": "ELECTRO 2 STEP",
       "flags": [],
@@ -3858,7 +3860,7 @@
       "name": "fun",
       "artist": "Mr.T",
       "genre": "FUNK SHUFFLE",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "100～200",
       "jacket": "iidx/9th-style.svg",
       "folder": "9th style",
@@ -3981,7 +3983,7 @@
       "saIndex": "217"
     },
     {
-      "name": "CARRY ON NIGHT\n(English version)",
+      "name": "CARRY ON NIGHT (English version)",
       "artist": "platoniX (EURO style)",
       "genre": "EUROBEAT",
       "flags": [],
@@ -4161,7 +4163,7 @@
       "saIndex": "227"
     },
     {
-      "name": "GRADIUS\n-FULL SPEED-",
+      "name": "GRADIUS -FULL SPEED-",
       "artist": "Mr.T",
       "genre": "GAME MUSIC",
       "flags": [],
@@ -4775,7 +4777,7 @@
       "saIndex": "261"
     },
     {
-      "name": "Raspberry♥Heart\n(English version)",
+      "name": "Raspberry♥Heart (English version)",
       "artist": "jun feat. PAULA TERRY",
       "genre": "COLORFUL HARDCORE",
       "flags": [],
@@ -4975,7 +4977,7 @@
       "saIndex": "272"
     },
     {
-      "name": "太陽\n～T・A・I・Y・O～",
+      "name": "太陽 ～T・A・I・Y・O～",
       "artist": "NAOKI feat.星野奏子",
       "genre": "CYBER J-EURO",
       "flags": [],
@@ -5163,11 +5165,21 @@
         { "style": "single", "lvl": 6, "diffClass": "normal" },
         { "style": "single", "lvl": 9, "diffClass": "hyper" },
         { "style": "single", "lvl": 10, "diffClass": "another" },
-        { "style": "single", "lvl": 11, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 7, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
         { "style": "double", "lvl": 10, "diffClass": "another" },
-        { "style": "double", "lvl": 11, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "283"
     },
@@ -5515,7 +5527,7 @@
       "saIndex": "302"
     },
     {
-      "name": "Scripted Connection⇒\nA mix",
+      "name": "Scripted Connection⇒ A mix",
       "artist": "DJ MURASAME",
       "genre": "TECHNO",
       "flags": [],
@@ -5535,7 +5547,7 @@
       "saIndex": "303"
     },
     {
-      "name": "Scripted Connection⇒\nH mix",
+      "name": "Scripted Connection⇒ H mix",
       "artist": "DJ MURASAME",
       "genre": "TECHNO",
       "flags": [],
@@ -5553,7 +5565,7 @@
       "saIndex": "304"
     },
     {
-      "name": "Scripted Connection⇒\nN mix",
+      "name": "Scripted Connection⇒ N mix",
       "artist": "DJ MURASAME",
       "genre": "TECHNO",
       "flags": [],
@@ -5789,7 +5801,7 @@
       "saIndex": "317"
     },
     {
-      "name": "合体せよ!ストロングイェーガー!!\n(Ryu☆ remix)",
+      "name": "合体せよ!ストロングイェーガー!! (Ryu☆ remix)",
       "artist": "L.E.D. / Remixed by Ryu☆",
       "genre": "HARD DANCE",
       "flags": [],
@@ -5862,7 +5874,7 @@
       "saIndex": "321"
     },
     {
-      "name": "ALFARSHEAR\n双神威に廻る夢",
+      "name": "ALFARSHEAR 双神威に廻る夢",
       "artist": "TЁЯRA",
       "genre": "HYPER J-POP SEVEN",
       "flags": [],
@@ -5881,7 +5893,7 @@
       "saIndex": "322"
     },
     {
-      "name": "Apocalypse\n～dirge of swans～",
+      "name": "Apocalypse ～dirge of swans～",
       "artist": "Zektbach",
       "genre": "ORATORIO",
       "flags": [],
@@ -5917,7 +5929,7 @@
       "saIndex": "324"
     },
     {
-      "name": "Bloody Tears\n(IIDX EDITION)",
+      "name": "Bloody Tears (IIDX EDITION)",
       "artist": "DJ YOSHITAKA",
       "genre": "HARD RENAISSANCE",
       "flags": [],
@@ -6120,7 +6132,7 @@
       "saIndex": "335"
     },
     {
-      "name": "Heavenly Sun\n(IIDX VERSION)",
+      "name": "Heavenly Sun (IIDX VERSION)",
       "artist": "AKIRA YAMAOKA",
       "genre": "TRANCE",
       "flags": [],
@@ -6280,7 +6292,7 @@
       "saIndex": "344"
     },
     {
-      "name": "tripping contact\n(teranoid&MC Natsack Remix)",
+      "name": "tripping contact (teranoid&MC Natsack Remix)",
       "artist": "kors k vs teranoid",
       "genre": "GABBA",
       "flags": [],
@@ -6298,7 +6310,7 @@
       "saIndex": "345"
     },
     {
-      "name": "TYPE MARS\n(G-Style Mix)",
+      "name": "TYPE MARS (G-Style Mix)",
       "artist": "L.E.D.",
       "genre": "PSYCHEDELIC TRANCE",
       "flags": [],
@@ -6354,7 +6366,7 @@
       "saIndex": "348"
     },
     {
-      "name": "WISH\n(EUROBEAT MIX)",
+      "name": "WISH (EUROBEAT MIX)",
       "artist": "DJ YOSHITAKA feat.杉村ことみ",
       "genre": "EUROBEAT",
       "flags": [],
@@ -6408,7 +6420,7 @@
       "saIndex": "351"
     },
     {
-      "name": "カゴノトリ\n～弐式～",
+      "name": "カゴノトリ ～弐式～",
       "artist": "橙色特別室",
       "genre": "和式電子音楽",
       "flags": [],
@@ -6604,7 +6616,7 @@
       "saIndex": "362"
     },
     {
-      "name": "Blind Justice\n～Torn souls,Hurt Faiths～",
+      "name": "Blind Justice ～Torn souls,Hurt Faiths～",
       "artist": "Zektbach",
       "genre": "EPIC POETRY",
       "flags": [],
@@ -7189,7 +7201,7 @@
       "saIndex": "394"
     },
     {
-      "name": "クルクル☆ラブ\n～Opioid Peptide MIX～",
+      "name": "クルクル☆ラブ ～Opioid Peptide MIX～",
       "artist": "イオンチャンネル",
       "genre": "FUTURE POP",
       "flags": [],
@@ -7243,7 +7255,7 @@
       "saIndex": "397"
     },
     {
-      "name": "花吹雪\n～ IIDX LIMITED ～",
+      "name": "花吹雪 ～ IIDX LIMITED ～",
       "artist": "S.S.D.FANTASICA feat.ユッコ",
       "genre": "JAPANESE ALTERATION",
       "flags": [],
@@ -7298,7 +7310,7 @@
       "saIndex": "400"
     },
     {
-      "name": "零\n-ZERO-",
+      "name": "零 -ZERO-",
       "artist": "TЁЯRA",
       "genre": "HYPER J-POP ZERO",
       "flags": [],
@@ -7357,7 +7369,7 @@
       "saIndex": "403"
     },
     {
-      "name": "Anisakis\n-somatic mutation type \"Forza\"-",
+      "name": "Anisakis -somatic mutation type \"Forza\"-",
       "artist": "朱雀",
       "genre": "HARD RENAISSANCE",
       "flags": [],
@@ -7572,11 +7584,21 @@
         { "style": "single", "lvl": 5, "diffClass": "normal" },
         { "style": "single", "lvl": 10, "diffClass": "hyper" },
         { "style": "single", "lvl": 11, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 6, "diffClass": "normal" },
         { "style": "double", "lvl": 10, "diffClass": "hyper" },
         { "style": "double", "lvl": 12, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "415"
     },
@@ -7710,7 +7732,7 @@
       "saIndex": "422"
     },
     {
-      "name": "NEW GENERATION\n-もう、お前しか見えない-",
+      "name": "NEW GENERATION -もう、お前しか見えない-",
       "artist": "SUPER STAR 満-MITSURU-",
       "genre": "ONLY ONE EURO BEAT",
       "flags": [],
@@ -7821,7 +7843,7 @@
       "saIndex": "428"
     },
     {
-      "name": "satellite020712\nfrom \"CODED ARMS\"",
+      "name": "satellite020712 from \"CODED ARMS\"",
       "artist": "猫叉Master",
       "genre": "HARD HOUSE",
       "flags": [],
@@ -8087,7 +8109,7 @@
       "saIndex": "442"
     },
     {
-      "name": "華爛漫\n-Flowers-",
+      "name": "華爛漫 -Flowers-",
       "artist": "TЁЯRA",
       "genre": "HYPER JAPANESQUE 2",
       "flags": [],
@@ -8144,7 +8166,7 @@
       "saIndex": "445"
     },
     {
-      "name": "走馬灯\n-The Last Song-",
+      "name": "走馬灯 -The Last Song-",
       "artist": "TAKA",
       "genre": "SOLDIER'S BALLAD",
       "flags": [],
@@ -8251,7 +8273,7 @@
       "saIndex": "451"
     },
     {
-      "name": "Rising in the Sun\n(original mix)",
+      "name": "Rising in the Sun (original mix)",
       "artist": "kors k feat. Rie",
       "genre": "UK HARDCORE",
       "flags": [],
@@ -8306,7 +8328,7 @@
       "saIndex": "454"
     },
     {
-      "name": "ALL MY TURN\n-このターンに、オレの全てを賭ける-",
+      "name": "ALL MY TURN -このターンに、オレの全てを賭ける-",
       "artist": "SUPER STAR 満-MITSURU-",
       "genre": "ONLY ONE EURO BEAT",
       "flags": [],
@@ -8344,7 +8366,7 @@
       "saIndex": "456"
     },
     {
-      "name": "B4U\n(BEMANI FOR YOU MIX)",
+      "name": "B4U (BEMANI FOR YOU MIX)",
       "artist": "Remixed by DJ YOSHITAKA with Michael a la mode",
       "genre": "RECKLESS RAVE",
       "flags": [],
@@ -8364,7 +8386,7 @@
       "saIndex": "457"
     },
     {
-      "name": "Bahram Attack\n-猫叉Master Remix-",
+      "name": "Bahram Attack -猫叉Master Remix-",
       "artist": "猫叉Master feat.JUNE",
       "genre": "HOUSE",
       "flags": [],
@@ -8458,7 +8480,7 @@
       "saIndex": "462"
     },
     {
-      "name": "Cyber Force\n-DJ Yoshitaka Remix-",
+      "name": "Cyber Force -DJ Yoshitaka Remix-",
       "artist": "Remixed by DJ YOSHITAKA",
       "genre": "BUCHIAGE TRANCE",
       "flags": [],
@@ -8733,11 +8755,21 @@
         { "style": "single", "lvl": 4, "diffClass": "normal" },
         { "style": "single", "lvl": 6, "diffClass": "hyper" },
         { "style": "single", "lvl": 9, "diffClass": "another" },
-        { "style": "single", "lvl": 11, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 5, "diffClass": "normal" },
         { "style": "double", "lvl": 7, "diffClass": "hyper" },
         { "style": "double", "lvl": 9, "diffClass": "another" },
-        { "style": "double", "lvl": 11, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "477"
     },
@@ -8876,7 +8908,7 @@
       "saIndex": "484"
     },
     {
-      "name": "Turii\n～Panta rhei～",
+      "name": "Turii ～Panta rhei～",
       "artist": "Zektbach",
       "genre": "ELEMENTAL CHANT",
       "flags": [],
@@ -8986,7 +9018,7 @@
       "saIndex": "490"
     },
     {
-      "name": "鉄甲乙女\n-under the steel-",
+      "name": "鉄甲乙女 -under the steel-",
       "artist": "Seiya Murai",
       "genre": "IRON CONCERTO",
       "flags": [],
@@ -9136,7 +9168,7 @@
       "saIndex": "498"
     },
     {
-      "name": "thunder\nHOUSE NATION Remix",
+      "name": "thunder HOUSE NATION Remix",
       "artist": "Remix by Sunset In Ibiza(SII)",
       "genre": "HOUSE",
       "flags": [],
@@ -9156,10 +9188,10 @@
       "saIndex": "499"
     },
     {
-      "name": "THE SHINING POLARIS\n(kors k mix)",
+      "name": "THE SHINING POLARIS (kors k mix)",
       "artist": "Remixed by kors k",
       "genre": "UK HARD CORE",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "172",
       "jacket": "iidx/EMPRESS.svg",
       "folder": "EMPRESS",
@@ -9250,7 +9282,7 @@
       "saIndex": "504"
     },
     {
-      "name": "beatchic☆仮面\n～好き、でいさせて～",
+      "name": "beatchic☆仮面 ～好き、でいさせて～",
       "artist": "上野圭市（transforming into Masao♥Lovely)feat.星野奏子",
       "genre": "E-DANCE POP",
       "flags": [],
@@ -9323,7 +9355,7 @@
       "saIndex": "508"
     },
     {
-      "name": "CaptivAte～裁き～\n(SUBLIME TECHNO MIX)",
+      "name": "CaptivAte～裁き～ (SUBLIME TECHNO MIX)",
       "artist": "Remixed by DJ YOSHITAKA",
       "genre": "SUBLIME TECHNO",
       "flags": [],
@@ -9359,7 +9391,7 @@
       "saIndex": "510"
     },
     {
-      "name": "DAWN\n-THE NEXT ENDEAVOUR-",
+      "name": "DAWN -THE NEXT ENDEAVOUR-",
       "artist": "L.E.D. fw.堀澤麻衣子",
       "genre": "DRUM & BASS",
       "flags": [],
@@ -9377,7 +9409,7 @@
       "saIndex": "511"
     },
     {
-      "name": "Dazzlin' Darlin\n-秋葉工房mix-",
+      "name": "Dazzlin' Darlin -秋葉工房mix-",
       "artist": "Remixed by DJ Command",
       "genre": "EUROBEAT",
       "flags": [],
@@ -9606,11 +9638,21 @@
         { "style": "single", "lvl": 5, "diffClass": "normal" },
         { "style": "single", "lvl": 8, "diffClass": "hyper" },
         { "style": "single", "lvl": 10, "diffClass": "another" },
-        { "style": "single", "lvl": 11, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 5, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
         { "style": "double", "lvl": 10, "diffClass": "another" },
-        { "style": "double", "lvl": 11, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "524"
     },
@@ -9634,7 +9676,7 @@
       "saIndex": "525"
     },
     {
-      "name": "Keep it\n-秋葉工房mix-",
+      "name": "Keep it -秋葉工房mix-",
       "artist": "DJ Command feat. NAGISA",
       "genre": "EUROBEAT",
       "flags": [],
@@ -9724,7 +9766,7 @@
       "saIndex": "530"
     },
     {
-      "name": "NEW SENSATION\n-もう、あなたしか見えない-",
+      "name": "NEW SENSATION -もう、あなたしか見えない-",
       "artist": "SUPER HEROINE 彩香-AYAKA-",
       "genre": "ONLY ONE IDOL SONG",
       "flags": [],
@@ -9778,7 +9820,7 @@
       "saIndex": "533"
     },
     {
-      "name": "quell\n～the seventh slave～",
+      "name": "quell ～the seventh slave～",
       "artist": "dj TAKA Vs. DJ YOSHITAKA",
       "genre": "TRANCE",
       "flags": [],
@@ -9796,7 +9838,7 @@
       "saIndex": "534"
     },
     {
-      "name": "Raison d'être\n～交差する宿命～",
+      "name": "Raison d'être ～交差する宿命～",
       "artist": "Zektbach",
       "genre": "ASTRAL CHOIR",
       "flags": [],
@@ -9850,7 +9892,7 @@
       "saIndex": "537"
     },
     {
-      "name": "Session 1\n-Genesis-",
+      "name": "Session 1 -Genesis-",
       "artist": "PRASTIK DANCEFLOOR",
       "genre": "ELECTRIC FUSION",
       "flags": [],
@@ -10108,7 +10150,7 @@
       "saIndex": "550"
     },
     {
-      "name": "水上の提督\n(Short mix from \"幻想水滸伝V\")",
+      "name": "水上の提督 (Short mix from \"幻想水滸伝V\")",
       "artist": "猫叉Master",
       "genre": "WORLD/ELECTRONICA",
       "flags": [],
@@ -10264,11 +10306,21 @@
         { "style": "single", "lvl": 5, "diffClass": "normal" },
         { "style": "single", "lvl": 8, "diffClass": "hyper" },
         { "style": "single", "lvl": 10, "diffClass": "another" },
-        { "style": "single", "lvl": 11, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 5, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
         { "style": "double", "lvl": 10, "diffClass": "another" },
-        { "style": "double", "lvl": 11, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "559"
     },
@@ -10338,11 +10390,21 @@
         { "style": "single", "lvl": 7, "diffClass": "normal" },
         { "style": "single", "lvl": 10, "diffClass": "hyper" },
         { "style": "single", "lvl": 12, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 7, "diffClass": "normal" },
         { "style": "double", "lvl": 10, "diffClass": "hyper" },
         { "style": "double", "lvl": 12, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "563"
     },
@@ -10383,7 +10445,7 @@
       "saIndex": "565"
     },
     {
-      "name": "DM STAR\n～関西 energy style～",
+      "name": "DM STAR ～関西 energy style～",
       "artist": "NAOKI",
       "genre": "SPEED RAVE",
       "flags": [],
@@ -10748,7 +10810,7 @@
       "saIndex": "585"
     },
     {
-      "name": "Session 9\n-Chronicles-",
+      "name": "Session 9 -Chronicles-",
       "artist": "PRASTIK DANCEFLOOR",
       "genre": "ROCKIN' DRUM'N'BASS",
       "flags": [],
@@ -10950,7 +11012,7 @@
       "saIndex": "596"
     },
     {
-      "name": "ZETA\n～素数の世界と超越者～",
+      "name": "ZETA ～素数の世界と超越者～",
       "artist": "Zektbach",
       "genre": "IDM",
       "flags": [],
@@ -10989,7 +11051,7 @@
       "saIndex": "598"
     },
     {
-      "name": "かげぬい\n～ Ver.BENIBOTAN ～",
+      "name": "かげぬい ～ Ver.BENIBOTAN ～",
       "artist": "CULTVOICE by S.S.D.PRODUCTS",
       "genre": "NATSU MATSURI",
       "flags": [],
@@ -11045,7 +11107,7 @@
       "saIndex": "601"
     },
     {
-      "name": "夕焼け\n～Fading Day～",
+      "name": "夕焼け ～Fading Day～",
       "artist": "JAKAZiD",
       "genre": "AURAL ADRENALINE",
       "flags": [],
@@ -11499,7 +11561,7 @@
       "saIndex": "626"
     },
     {
-      "name": "Mermaid girl\n-秋葉工房 MIX-",
+      "name": "Mermaid girl -秋葉工房 MIX-",
       "artist": "Remixed by DJ Command",
       "genre": "EUROBEAT",
       "flags": [],
@@ -11822,11 +11884,21 @@
         { "style": "single", "lvl": 5, "diffClass": "normal" },
         { "style": "single", "lvl": 8, "diffClass": "hyper" },
         { "style": "single", "lvl": 12, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 4, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
         { "style": "double", "lvl": 12, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "644"
     },
@@ -12042,7 +12114,12 @@
         { "style": "single", "lvl": 4, "diffClass": "normal" },
         { "style": "single", "lvl": 8, "diffClass": "hyper" },
         { "style": "single", "lvl": 10, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 4, "diffClass": "normal" },
         { "style": "double", "lvl": 9, "diffClass": "hyper" },
         { "style": "double", "lvl": 12, "diffClass": "another" }
@@ -12086,7 +12163,7 @@
       "saIndex": "658"
     },
     {
-      "name": "LETHEBOLG\n～双神威に斬り咲けり～",
+      "name": "LETHEBOLG ～双神威に斬り咲けり～",
       "artist": "TЁЯRA",
       "genre": "PLATINUM J-POP ONE",
       "flags": [],
@@ -12833,7 +12910,7 @@
       "saIndex": "698"
     },
     {
-      "name": "405nm\n(Ryu☆mix)",
+      "name": "405nm (Ryu☆mix)",
       "artist": "Another Infinity",
       "genre": "HARDCORE",
       "flags": [],
@@ -13033,7 +13110,7 @@
       "saIndex": "709"
     },
     {
-      "name": "New Decade\nIIDX Edition",
+      "name": "New Decade IIDX Edition",
       "artist": "Sota F.",
       "genre": "SPEED DANCE CORE",
       "flags": [],
@@ -13274,7 +13351,7 @@
       "saIndex": "722"
     },
     {
-      "name": "Timepiece phase II\n(CN Ver.)",
+      "name": "Timepiece phase II (CN Ver.)",
       "artist": "佐々木博史",
       "genre": "PROGRESSIVE ROCK",
       "flags": [],
@@ -13346,7 +13423,7 @@
       "saIndex": "726"
     },
     {
-      "name": "†渚の小悪魔ラヴリィ～レイディオ†\n(IIDX EDIT)",
+      "name": "†渚の小悪魔ラヴリィ～レイディオ† (IIDX EDIT)",
       "artist": "夏色ビキニのPrim",
       "genre": "Hi-CORE",
       "flags": [],
@@ -13823,7 +13900,7 @@
       "saIndex": "752"
     },
     {
-      "name": "ALBA\n-黎明-",
+      "name": "ALBA -黎明-",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
       "genre": "HYPER GOTHIC BEAT",
       "flags": [],
@@ -13878,7 +13955,7 @@
       "saIndex": "755"
     },
     {
-      "name": "Devilz Sacrifice\n-贖罪の羊-",
+      "name": "Devilz Sacrifice -贖罪の羊-",
       "artist": "OSTER project",
       "genre": "SYMPHONIC BREAK BEATS",
       "flags": [],
@@ -13925,11 +14002,21 @@
         { "style": "single", "lvl": 6, "diffClass": "normal" },
         { "style": "single", "lvl": 9, "diffClass": "hyper" },
         { "style": "single", "lvl": 11, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 5, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
         { "style": "double", "lvl": 12, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "758"
     },
@@ -13945,11 +14032,21 @@
         { "style": "single", "lvl": 3, "diffClass": "normal" },
         { "style": "single", "lvl": 7, "diffClass": "hyper" },
         { "style": "single", "lvl": 9, "diffClass": "another" },
-        { "style": "single", "lvl": 11, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 3, "diffClass": "normal" },
         { "style": "double", "lvl": 6, "diffClass": "hyper" },
         { "style": "double", "lvl": 9, "diffClass": "another" },
-        { "style": "double", "lvl": 11, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 11,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "759"
     },
@@ -14260,7 +14357,7 @@
       "saIndex": "776"
     },
     {
-      "name": "旋律のドグマ\n～Misérables～",
+      "name": "旋律のドグマ ～Misérables～",
       "artist": "楓璃夢＝ジークフリード＝ファイエルローゼン",
       "genre": "JUVENILE DRUM & BASS",
       "flags": [],
@@ -14556,7 +14653,7 @@
       "saIndex": "792"
     },
     {
-      "name": "BLUE DRAGON\n(雷龍RemixIIDX)",
+      "name": "BLUE DRAGON (雷龍RemixIIDX)",
       "artist": "青龍",
       "genre": "RAVERS DANCE SPEED",
       "flags": [],
@@ -14570,7 +14667,12 @@
         { "style": "double", "lvl": 7, "diffClass": "normal" },
         { "style": "double", "lvl": 10, "diffClass": "hyper" },
         { "style": "double", "lvl": 11, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "793"
     },
@@ -14701,7 +14803,8 @@
           "style": "single",
           "lvl": 12,
           "diffClass": "leggendaria",
-          "bpm": "24～192"
+          "bpm": "24～192",
+          "flags": ["timelock"]
         },
         { "style": "double", "lvl": 5, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
@@ -14710,13 +14813,14 @@
           "style": "double",
           "lvl": 12,
           "diffClass": "leggendaria",
-          "bpm": "24～192"
+          "bpm": "24～192",
+          "flags": ["timelock"]
         }
       ],
       "saIndex": "800"
     },
     {
-      "name": "I will be back\n-オレは帰ってきた-",
+      "name": "I will be back -オレは帰ってきた-",
       "artist": "SUPER STAR 満-MITSURU-",
       "genre": "ONLY ONE MOMENT",
       "flags": [],
@@ -15195,7 +15299,7 @@
       "saIndex": "826"
     },
     {
-      "name": "On My Wings\n(Hardstyle IIDX)",
+      "name": "On My Wings (Hardstyle IIDX)",
       "artist": "kors k",
       "genre": "HARDSTYLE",
       "flags": [],
@@ -15409,11 +15513,21 @@
         { "style": "single", "lvl": 6, "diffClass": "normal" },
         { "style": "single", "lvl": 10, "diffClass": "hyper" },
         { "style": "single", "lvl": 12, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 6, "diffClass": "normal" },
         { "style": "double", "lvl": 10, "diffClass": "hyper" },
         { "style": "double", "lvl": 12, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "838"
     },
@@ -15569,7 +15683,7 @@
       "saIndex": "846"
     },
     {
-      "name": "We're so Happy\n(P*Light Remix) IIDX ver.",
+      "name": "We're so Happy (P*Light Remix) IIDX ver.",
       "artist": "Remixed by P*Light",
       "genre": "HAPPY HARDCORE",
       "flags": [],
@@ -15767,7 +15881,7 @@
       "saIndex": "857"
     },
     {
-      "name": "fallen leaves\n-IIDX edition-",
+      "name": "fallen leaves -IIDX edition-",
       "artist": "猫叉Master",
       "genre": "WORLD/ELECTRONICA",
       "flags": [],
@@ -16077,7 +16191,7 @@
       "saIndex": "874"
     },
     {
-      "name": "取り残された美術\n(Arranged:HiZuMi)",
+      "name": "取り残された美術 (Arranged:HiZuMi)",
       "artist": "幽閉サテライト feat. senya",
       "genre": "HYPER J-POP",
       "flags": [],
@@ -16384,7 +16498,7 @@
       "saIndex": "890"
     },
     {
-      "name": "夏色DIARY\n- L.E.D.-G STYLE MIX -",
+      "name": "夏色DIARY - L.E.D.-G STYLE MIX -",
       "artist": "猫叉王子 feat. L.E.D.-G",
       "genre": "HAPPY SUMMER CORE",
       "flags": [],
@@ -17145,7 +17259,7 @@
       "saIndex": "932"
     },
     {
-      "name": "chaos eater\n-IIDX edition-",
+      "name": "chaos eater -IIDX edition-",
       "artist": "猫叉Master+",
       "genre": "HARD STEP",
       "flags": [],
@@ -17247,11 +17361,21 @@
         { "style": "single", "lvl": 2, "diffClass": "normal" },
         { "style": "single", "lvl": 8, "diffClass": "hyper" },
         { "style": "single", "lvl": 10, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 2, "diffClass": "normal" },
         { "style": "double", "lvl": 8, "diffClass": "hyper" },
         { "style": "double", "lvl": 10, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "938"
     },
@@ -17274,7 +17398,7 @@
       "saIndex": "939"
     },
     {
-      "name": "NINJA IS DEAD\nIIDX ver.",
+      "name": "NINJA IS DEAD IIDX ver.",
       "artist": "P*Light",
       "genre": "SHINOBI SPEED",
       "flags": [],
@@ -17366,7 +17490,7 @@
       "saIndex": "944"
     },
     {
-      "name": "CODE:1\n[revision1.0.1]",
+      "name": "CODE:1 [revision1.0.1]",
       "artist": "HEXA",
       "genre": "TECHNO",
       "flags": [],
@@ -17420,7 +17544,7 @@
       "saIndex": "947"
     },
     {
-      "name": "NO LIMIT\n-オレ達に限界は無い-",
+      "name": "NO LIMIT -オレ達に限界は無い-",
       "artist": "SUPER STAR 満-MITSURU- vs. 伝説のダンサー マイク",
       "genre": "ONLY ONE DANCE MUSIC",
       "flags": [],
@@ -18353,7 +18477,7 @@
       "saIndex": "998"
     },
     {
-      "name": "次葉\n-turn the page-",
+      "name": "次葉 -turn the page-",
       "artist": "小寺可南子",
       "genre": "POP ROCK",
       "flags": [],
@@ -18588,7 +18712,7 @@
       "saIndex": "1011"
     },
     {
-      "name": "Yellow Sketch\n(RX-Ver.S.P.L.)",
+      "name": "Yellow Sketch (RX-Ver.S.P.L.)",
       "artist": "高田雅史",
       "genre": "ALTERNATIVE ELECTRO",
       "flags": [],
@@ -18680,7 +18804,7 @@
       "saIndex": "1016"
     },
     {
-      "name": "yamabiko\n(SINOBUZ Edition)",
+      "name": "yamabiko (SINOBUZ Edition)",
       "artist": "かめりあ",
       "genre": "夏の夕暮れと、DUBSTEP。",
       "flags": [],
@@ -19100,7 +19224,7 @@
       "saIndex": "1039"
     },
     {
-      "name": "Summerlights\n(IIDX Edition)",
+      "name": "Summerlights (IIDX Edition)",
       "artist": "DJ Noriken",
       "genre": "HARDCORE RAVE",
       "flags": [],
@@ -20122,7 +20246,7 @@
       "saIndex": "1095"
     },
     {
-      "name": "草原の王女\n-軌跡を辿って-",
+      "name": "草原の王女 -軌跡を辿って-",
       "artist": "劇団レコード",
       "genre": "JOURNEY SCENE",
       "flags": [],
@@ -20176,7 +20300,7 @@
       "saIndex": "1098"
     },
     {
-      "name": "神謳\n-RESONANCE-",
+      "name": "神謳 -RESONANCE-",
       "artist": "SOUND HOLIC feat. Nana Takahashi Vs.GOD PHOENIX Prim",
       "genre": "Hi-MYTH",
       "flags": [],
@@ -20212,7 +20336,7 @@
       "saIndex": "1100"
     },
     {
-      "name": "DEATH†ZIGOQ\n～怒りの高速爆走野郎～",
+      "name": "DEATH†ZIGOQ ～怒りの高速爆走野郎～",
       "artist": "L.E.D.ALiCE(DJ NAGAI Vs. BEMANI Sound Team \"L.E.D.-G\")",
       "genre": "世紀末コア",
       "flags": [],
@@ -20376,7 +20500,7 @@
       "saIndex": "1109"
     },
     {
-      "name": "パラドキシカル・タイムリープトライアル\n(Short Ver.)",
+      "name": "パラドキシカル・タイムリープトライアル (Short Ver.)",
       "artist": "MOSAIC.WAV",
       "genre": "AKIBA-POP",
       "flags": [],
@@ -20430,7 +20554,7 @@
       "saIndex": "1112"
     },
     {
-      "name": "City Never Sleeps\n(IIDX EDITION)",
+      "name": "City Never Sleeps (IIDX EDITION)",
       "artist": "Dirty Androids",
       "genre": "DRUM&BASS",
       "flags": [],
@@ -20703,7 +20827,7 @@
       "saIndex": "1127"
     },
     {
-      "name": "Eine Haube\n～聖地の果てにあるもの～",
+      "name": "Eine Haube ～聖地の果てにあるもの～",
       "artist": "AIKO OI",
       "genre": "VELLUM",
       "flags": [],
@@ -20994,7 +21118,7 @@
       "saIndex": "1143"
     },
     {
-      "name": "IDC feat.REVERBEE\n(Mo'Cuts Ver)",
+      "name": "IDC feat.REVERBEE (Mo'Cuts Ver)",
       "artist": "DJ Mass MAD Izm*",
       "genre": "TECH-BREAKS",
       "flags": [],
@@ -21486,7 +21610,7 @@
       "saIndex": "1170"
     },
     {
-      "name": "龍王の霊廟\n(Mausoleum Of The Primal Dragon)",
+      "name": "龍王の霊廟 (Mausoleum Of The Primal Dragon)",
       "artist": "BEMANI Sound Team \"黒猫ダンジョン\"",
       "genre": "RETROSPECTIVE EPIC MUSIC",
       "flags": [],
@@ -21497,11 +21621,21 @@
         { "style": "single", "lvl": 6, "diffClass": "normal" },
         { "style": "single", "lvl": 10, "diffClass": "hyper" },
         { "style": "single", "lvl": 11, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 5, "diffClass": "normal" },
         { "style": "double", "lvl": 10, "diffClass": "hyper" },
         { "style": "double", "lvl": 11, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "1171"
     },
@@ -21542,7 +21676,7 @@
       "saIndex": "1173"
     },
     {
-      "name": "XENON II\n～TOMOYUKIの野望～",
+      "name": "XENON II ～TOMOYUKIの野望～",
       "artist": "Mr.T",
       "genre": "ELECTRO SHOCK",
       "flags": [],
@@ -21921,7 +22055,7 @@
       "saIndex": "1194"
     },
     {
-      "name": "50th Memorial Songs\n-Beginning Story-",
+      "name": "50th Memorial Songs -Beginning Story-",
       "artist": "BEMANI Sound Team",
       "genre": "ANNIVERSARY",
       "flags": [],
@@ -21976,7 +22110,7 @@
       "saIndex": "1197"
     },
     {
-      "name": "50th Memorial Songs\n-二人の時 ～under the cherry blossoms～-",
+      "name": "50th Memorial Songs -二人の時 ～under the cherry blossoms～-",
       "artist": "BEMANI Sound Team",
       "genre": "ANNIVERSARY",
       "flags": [],
@@ -21994,7 +22128,7 @@
       "saIndex": "1198"
     },
     {
-      "name": "50th Memorial Songs\n-Flagship medley-",
+      "name": "50th Memorial Songs -Flagship medley-",
       "artist": "BEMANI Sound Team",
       "genre": "ANNIVERSARY",
       "flags": [],
@@ -22012,7 +22146,7 @@
       "saIndex": "1199"
     },
     {
-      "name": "50th Memorial Songs\n-The BEMANI History-",
+      "name": "50th Memorial Songs -The BEMANI History-",
       "artist": "BEMANI Sound Team",
       "genre": "ANNIVERSARY",
       "flags": [],
@@ -22066,7 +22200,7 @@
       "saIndex": "1202"
     },
     {
-      "name": "Next Tales 2 Oath\n(IIDX 20th Anniv \"Ring\" Theme)",
+      "name": "Next Tales 2 Oath (IIDX 20th Anniv \"Ring\" Theme)",
       "artist": "Hommarju",
       "genre": "THEME SONG",
       "flags": [],
@@ -22185,11 +22319,21 @@
         { "style": "single", "lvl": 5, "diffClass": "normal" },
         { "style": "single", "lvl": 9, "diffClass": "hyper" },
         { "style": "single", "lvl": 11, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 6, "diffClass": "normal" },
         { "style": "double", "lvl": 10, "diffClass": "hyper" },
         { "style": "double", "lvl": 11, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "1209"
     },
@@ -22302,7 +22446,7 @@
       "saIndex": "1215"
     },
     {
-      "name": "The Sealer\n～ア・ミリアとミリアの民～",
+      "name": "The Sealer ～ア・ミリアとミリアの民～",
       "artist": "Zektbach",
       "genre": "ELEMENTAL JIG",
       "flags": [],
@@ -22374,7 +22518,7 @@
       "saIndex": "1219"
     },
     {
-      "name": "GO OVER WITH GLARE\n-ROOTAGE 26-",
+      "name": "GO OVER WITH GLARE -ROOTAGE 26-",
       "artist": "BEMANI Sound Team \"L.E.D.-G\"",
       "genre": "HARDSTYLE",
       "flags": [],
@@ -22572,7 +22716,7 @@
       "saIndex": "1230"
     },
     {
-      "name": "Beautiful Harmony\n(IIDX Mix)",
+      "name": "Beautiful Harmony (IIDX Mix)",
       "artist": "Ryu☆",
       "genre": "PROGRESSIVE TRANCE",
       "flags": [],
@@ -22934,7 +23078,7 @@
       "saIndex": "1250"
     },
     {
-      "name": "T-REX vs Velociraptor\n(In the Far east euphoria)",
+      "name": "T-REX vs Velociraptor (In the Far east euphoria)",
       "artist": "RoughSketch & TARACHINE",
       "genre": "RAVECORE",
       "flags": [],
@@ -23024,7 +23168,7 @@
       "saIndex": "1255"
     },
     {
-      "name": "VALKYRIAS\n-英雄誕生-",
+      "name": "VALKYRIAS -英雄誕生-",
       "artist": "BEMANI Sound Team \"HuΣeR\" feat.Fernweh",
       "genre": "HEROIC VALHALLA ROCK",
       "flags": [],
@@ -23625,7 +23769,7 @@
       "saIndex": "1288"
     },
     {
-      "name": "Fly Above\n(Vicissitude Remix)",
+      "name": "Fly Above (Vicissitude Remix)",
       "artist": "Remixed by BEMANI Sound Team \"PHQUASE\"",
       "genre": "DREAM DRUM'N'BASS",
       "flags": [],
@@ -23643,7 +23787,7 @@
       "saIndex": "1289"
     },
     {
-      "name": "LASER CRUSTER\n(IGNITE REMIX)",
+      "name": "LASER CRUSTER (IGNITE REMIX)",
       "artist": "Remixed by BEMANI Sound Team \"HuΣeR\"",
       "genre": "DRUM & BASS / HYBRID TRAP",
       "flags": [],
@@ -23913,7 +24057,7 @@
       "saIndex": "1304"
     },
     {
-      "name": "灼熱Beach Side Bunny\n(Masayoshi Iimori Remix)",
+      "name": "灼熱Beach Side Bunny (Masayoshi Iimori Remix)",
       "artist": "Remixed by Masayoshi Iimori",
       "genre": "NRG",
       "flags": [],
@@ -23931,7 +24075,7 @@
       "saIndex": "1305"
     },
     {
-      "name": "S!ck\n(Nhato Remix)",
+      "name": "S!ck (Nhato Remix)",
       "artist": "Remixed by Nhato",
       "genre": "HARDCORE",
       "flags": [],
@@ -23949,7 +24093,7 @@
       "saIndex": "1306"
     },
     {
-      "name": "ピアノ協奏曲第１番\"蠍火\"\n(BlackY Remix)",
+      "name": "ピアノ協奏曲第１番\"蠍火\" (BlackY Remix)",
       "artist": "Remixed by BlackY",
       "genre": "PDM",
       "flags": [],
@@ -24402,7 +24546,7 @@
       "saIndex": "1331"
     },
     {
-      "name": "IIDX RED Ending\n(Ryu☆Remix)",
+      "name": "IIDX RED Ending (Ryu☆Remix)",
       "artist": "Remixed by Ryu☆",
       "genre": "CAPTIVATE",
       "flags": [],
@@ -24822,7 +24966,7 @@
       "saIndex": "1354"
     },
     {
-      "name": "AMRITA\n-不滅ノ花-",
+      "name": "AMRITA -不滅ノ花-",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
       "genre": "ORIENTAL TRANCE",
       "flags": [],
@@ -25092,7 +25236,7 @@
       "saIndex": "1369"
     },
     {
-      "name": "The Wind of China Express\n(The 4th Mashup)",
+      "name": "The Wind of China Express (The 4th Mashup)",
       "artist": "The 4th",
       "genre": "THE 4TH",
       "flags": [],
@@ -25110,7 +25254,7 @@
       "saIndex": "1370"
     },
     {
-      "name": "世界の果てに約束の凱歌を\n-ReUnion-",
+      "name": "世界の果てに約束の凱歌を -ReUnion-",
       "artist": "OSTER project feat. かなたん",
       "genre": "BRAVE ANTHEM",
       "flags": [],
@@ -25237,7 +25381,7 @@
       "saIndex": "1377"
     },
     {
-      "name": "ASIAN VIRTUAL REALITIES\n(MELTING TOGETHER IN DAZZLING DARKNESS)",
+      "name": "ASIAN VIRTUAL REALITIES (MELTING TOGETHER IN DAZZLING DARKNESS)",
       "artist": "かめりあ",
       "genre": "BIG BEAT",
       "flags": [],
@@ -25255,7 +25399,7 @@
       "saIndex": "1378"
     },
     {
-      "name": "SOLID STATE SQUAD\n-RISEN RELIC REMIX-",
+      "name": "SOLID STATE SQUAD -RISEN RELIC REMIX-",
       "artist": "Remixed by xi",
       "genre": "LIFE STREAM",
       "flags": [],
@@ -25302,11 +25446,21 @@
         { "style": "single", "lvl": 6, "diffClass": "normal" },
         { "style": "single", "lvl": 9, "diffClass": "hyper" },
         { "style": "single", "lvl": 11, "diffClass": "another" },
-        { "style": "single", "lvl": 12, "diffClass": "leggendaria" },
+        {
+          "style": "single",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        },
         { "style": "double", "lvl": 6, "diffClass": "normal" },
         { "style": "double", "lvl": 9, "diffClass": "hyper" },
         { "style": "double", "lvl": 11, "diffClass": "another" },
-        { "style": "double", "lvl": 12, "diffClass": "leggendaria" }
+        {
+          "style": "double",
+          "lvl": 12,
+          "diffClass": "leggendaria",
+          "flags": ["timelock"]
+        }
       ],
       "saIndex": "1381"
     },
@@ -25347,7 +25501,7 @@
       "saIndex": "1383"
     },
     {
-      "name": "ABSOLUTE\n(kors k Remix)",
+      "name": "ABSOLUTE (kors k Remix)",
       "artist": "Remixed by kors k",
       "genre": "IIDX ANTHEM REVIVAL",
       "flags": [],
@@ -25365,7 +25519,7 @@
       "saIndex": "1384"
     },
     {
-      "name": "smooooch・∀・\n(Snail's House Remix)",
+      "name": "smooooch・∀・ (Snail's House Remix)",
       "artist": "Remixed by Snail's House",
       "genre": "CANDY RAVE BASS",
       "flags": [],
@@ -25548,7 +25702,7 @@
       "name": "apo:llioth",
       "artist": "Juggernaut.",
       "genre": "HARDCORE",
-      "flags": ["xRecord"],
+      "flags": [],
       "bpm": "200",
       "jacket": "iidx/BISTROVER.svg",
       "folder": "BISTROVER",
@@ -25566,7 +25720,7 @@
       "name": "BLACK or WHITE?",
       "artist": "BlackYooh vs. siromaru",
       "genre": "SYMPHONIC SPEED SCHRANZ",
-      "flags": ["xRecord"],
+      "flags": [],
       "bpm": "185",
       "jacket": "iidx/BISTROVER.svg",
       "folder": "BISTROVER",
@@ -25584,7 +25738,7 @@
       "name": "ディスコルディア",
       "artist": "ぺのれり vs. BEMANI Sound Team \"HuΣeR\"",
       "genre": "CROSSOVER",
-      "flags": ["xRecord"],
+      "flags": [],
       "bpm": "180～280",
       "jacket": "iidx/BISTROVER.svg",
       "folder": "BISTROVER",
@@ -25689,7 +25843,7 @@
       "saIndex": "1402"
     },
     {
-      "name": "伐折羅\n-vajra-",
+      "name": "伐折羅 -vajra-",
       "artist": "DJ TOTTO VS 兎々",
       "genre": "KUDOS CORE",
       "flags": [],
@@ -25960,7 +26114,7 @@
       "saIndex": "1417"
     },
     {
-      "name": "MOVE!\n(We Keep It Movin')",
+      "name": "MOVE! (We Keep It Movin')",
       "artist": "Jonny Dynamite!,Lisa - paint with stars -,Rio Hiiragi by BEMANI Sound Team \"U1-ASAMi\"",
       "genre": "ORBITALIC ELECTRIC MUSIC",
       "flags": [],
@@ -27400,7 +27554,7 @@
       "saIndex": "1496"
     },
     {
-      "name": "PLASMA SOUL NIGHT\nfeat. Nana Takahashi / 709sec.",
+      "name": "PLASMA SOUL NIGHT feat. Nana Takahashi / 709sec.",
       "artist": "BEMANI Sound Team \"L.E.D.\"",
       "genre": "LIGHTNING EUROBEAT",
       "flags": [],
@@ -27419,7 +27573,7 @@
       "saIndex": "1497"
     },
     {
-      "name": "Push on Beats!\n～音ゲの国のeX-ストリーマー～",
+      "name": "Push on Beats! ～音ゲの国のeX-ストリーマー～",
       "artist": "MOSAIC.WAV",
       "genre": "AKIBA-POP",
       "flags": [],
@@ -27628,7 +27782,7 @@
       "saIndex": "1508"
     },
     {
-      "name": "VR - Virtual Reality\n(prod.by Snail's House)",
+      "name": "VR - Virtual Reality (prod.by Snail's House)",
       "artist": "KMNZ",
       "genre": "DANCE MUSIC",
       "flags": [],
@@ -29101,7 +29255,7 @@
       "saIndex": "1589"
     },
     {
-      "name": "サヨナラ・ヘヴン\n-Celtic Chip Dance Mix-",
+      "name": "サヨナラ・ヘヴン -Celtic Chip Dance Mix-",
       "artist": "しのりゅー",
       "genre": "BEMANI 8BIT COLLECTION",
       "flags": ["ultimateMobile"],
@@ -29410,7 +29564,7 @@
       "name": "パーフェクトイーター",
       "artist": "BEMANI Sound Team \"PON\" feat.かなたん",
       "genre": "ROCK",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "175",
       "jacket": "iidx/RESIDENT.svg",
       "folder": "RESIDENT",
@@ -29443,10 +29597,10 @@
       "saIndex": "1608"
     },
     {
-      "name": "チェイスチェイスジョーカーズのうた\n(オニスタイルリミックス)",
+      "name": "チェイスチェイスジョーカーズのうた (オニスタイルリミックス)",
       "artist": "ちよこ & 一ノ瀬 月琉 Prod. by RoughSketch & NUE",
       "genre": "ウラシュダイカ",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "200",
       "jacket": "iidx/RESIDENT.svg",
       "folder": "RESIDENT",
@@ -29608,7 +29762,7 @@
       "name": "異心前進♪ぴょんぴょんぴょん",
       "artist": "天土",
       "genre": "EUROBEAT",
-      "flags": [],
+      "flags": ["timelock"],
       "bpm": "170",
       "jacket": "iidx/RESIDENT.svg",
       "folder": "RESIDENT",
@@ -29965,7 +30119,7 @@
       "saIndex": "1637"
     },
     {
-      "name": "JUSTICE/GUILTY\nfeat. Nana Takahashi & 709sec.",
+      "name": "JUSTICE/GUILTY feat. Nana Takahashi & 709sec.",
       "artist": "BEMANI Sound Team \"L.E.D.\"",
       "genre": "ROCKIN' DRUM&BASS",
       "flags": [],
@@ -30109,7 +30263,7 @@
       "saIndex": "1645"
     },
     {
-      "name": "Time Distortion pt.2\n(IIDX Edit)",
+      "name": "Time Distortion pt.2 (IIDX Edit)",
       "artist": "kors k vs BEMANI Sound Team \"setup\"",
       "genre": "PSYCHEDELIC TECHNO",
       "flags": [],
@@ -30581,7 +30735,7 @@
       "saIndex": "1671"
     },
     {
-      "name": "灼熱Beach Side Bunny\n(かめりあ's \"Summertime D'n'B\" Remix)",
+      "name": "灼熱Beach Side Bunny (かめりあ's \"Summertime D'n'B\" Remix)",
       "artist": "Remixed by かめりあ",
       "genre": "BROKEN SAMBA DRUM'N'BASS",
       "flags": ["worldTourism"],
@@ -30782,7 +30936,7 @@
       "saIndex": "1682"
     },
     {
-      "name": "めうめうぺったんたん！！\n(ZAQUVA Remix)",
+      "name": "めうめうぺったんたん！！ (ZAQUVA Remix)",
       "artist": "Remixed by BEMANI Sound Team \"ZAQUVA\"",
       "genre": "HYPERACTIVE HELLCORE",
       "flags": ["worldTourism"],

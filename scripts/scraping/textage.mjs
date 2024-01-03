@@ -85,8 +85,6 @@ export async function textageDL(force = false) {
 export async function fakeTextage(force = false) {
   // https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
 
-  const chartSlot = ["inclusion", "SPB", "SPN", "SPH", "SPA", "SPL", "DPB", "DPN", "DPH", "DPA", "DPL"];
-   
   var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"></head>', {runScripts: "dangerously", resources: "usable"});
   var document = dom.window.document;
 
