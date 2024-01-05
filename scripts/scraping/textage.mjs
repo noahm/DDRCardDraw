@@ -11,17 +11,17 @@ import { fileURLToPath } from "url";
 const textageFiles = [
   "titletbl",
   "actbl",
-//"cstbl",
-//"cstbl1",
-//"cstbl2",
-//"cltbl",
-//"stepup",
+  //"cstbl",
+  //"cstbl1",
+  //"cstbl2",
+  //"cltbl",
+  //"stepup",
   "datatbl",
-  "scrlist"
+  "scrlist",
 ];
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const textageDir = path.join(__dirname, "textage")
-console.log(textageDir)
+const textageDir = path.join(__dirname, "textage");
+console.log(textageDir);
 
 async function exists(f) {
   try {
@@ -33,51 +33,59 @@ async function exists(f) {
 }
 
 export async function textageDL(force = false) {
-  const textageScrapeReady = await Promise.all(textageFiles.map((fn) => exists(`${textageDir}/${fn}.js`))).then((a) => a.every((v) => (v)));
+  const textageScrapeReady = await Promise.all(
+    textageFiles.map((fn) => exists(`${textageDir}/${fn}.js`)),
+  ).then((a) => a.every((v) => v));
   if (force || !textageScrapeReady) {
-    console.log("Redownloading source JS from textage...")
+    console.log("Redownloading source JS from textage...");
     // Clear out the existing textage JS, if it exists.
     if (exists(textageDir)) {
-      await fs.promises.rm(textageDir, {"recursive": true, "force": true})
+      await fs.promises.rm(textageDir, { recursive: true, force: true });
     }
     // Redownload all the necessary textage JS.
-    await fs.promises.mkdir(textageDir).catch(()=>{})
-    
+    await fs.promises.mkdir(textageDir).catch(() => {});
+
     for (let fn of textageFiles) {
       if (await exists(`${textageDir}/${fn}.js`)) {
-        console.log(`Don't need to redownload ${fn}`)
+        console.log(`Don't need to redownload ${fn}`);
         continue;
       }
-      console.log(`Downloading ${fn}...`)
-      
+      console.log(`Downloading ${fn}...`);
+
       let req = new Axios({
-        method: 'get',
+        method: "get",
         url: `https://textage.cc/score/${fn}.js`,
-        responseType: 'stream'
-      })
-      await req.get(`https://textage.cc/score/${fn}.js`).then(function (response) {
-        const writer = fs.createWriteStream(path.join(textageDir, `${fn}.js`))
-        response.data.pipe(iconv.decodeStream("shift-jis"))
-                     .pipe(iconv.encodeStream("utf-8"))
-                     .pipe(writer)
-        return new Promise((resolve, reject) => {
-          writer.on('error', reject);
-          response.data.on('end', resolve)
-        })
+        responseType: "stream",
       });
+      await req
+        .get(`https://textage.cc/score/${fn}.js`)
+        .then(function (response) {
+          const writer = fs.createWriteStream(
+            path.join(textageDir, `${fn}.js`),
+          );
+          response.data
+            .pipe(iconv.decodeStream("shift-jis"))
+            .pipe(iconv.encodeStream("utf-8"))
+            .pipe(writer);
+          return new Promise((resolve, reject) => {
+            writer.on("error", reject);
+            response.data.on("end", resolve);
+          });
+        });
     }
 
     // Double-check that we got all of the textage JS.
-    const textageScrapeSuccess = textageFiles.every((fn) => exists(`scraping/textage/${fn}.js`));
+    const textageScrapeSuccess = textageFiles.every((fn) =>
+      exists(`scraping/textage/${fn}.js`),
+    );
     if (!textageScrapeSuccess) {
       console.log(
         `Failed to download textage JS sources. Invoke like 'yarn import:iidx [rescrape]'`,
       );
     }
     return textageScrapeSuccess;
-  }
-  else {
-    console.log("Not redownloading source JS from textage")
+  } else {
+    console.log("Not redownloading source JS from textage");
     return textageScrapeReady;
   }
 }
@@ -85,29 +93,38 @@ export async function textageDL(force = false) {
 export async function fakeTextage(force = false) {
   // https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
 
-  var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"></head>', {runScripts: "dangerously", resources: "usable"});
+  var dom = new JSDOM('<!DOCTYPE html><head><meta charset="UTF-8"></head>', {
+    runScripts: "dangerously",
+    resources: "usable",
+  });
   var document = dom.window.document;
 
   await textageDL(force);
 
   for (let fn of textageFiles) {
-    let fnLoader = function(doc) {return new Promise(function(resolve) {
-      let script = doc.createElement("script");
-      script.type = "text/javascript";
-      script.charset = "UTF-8";
-      script.src = "file:///" + path.join(textageDir, `${fn}.js`);
-      script.async = false;
-      script.onload = function() {resolve(doc);};
+    let fnLoader = function (doc) {
+      return new Promise(function (resolve) {
+        let script = doc.createElement("script");
+        script.type = "text/javascript";
+        script.charset = "UTF-8";
+        script.src = "file:///" + path.join(textageDir, `${fn}.js`);
+        script.async = false;
+        script.onload = function () {
+          resolve(doc);
+        };
 
-      doc.head.appendChild(script);
-    }) };
-    await fnLoader(document).then((doc) => {document = doc});
-    console.log(`${fn} loaded`)
+        doc.head.appendChild(script);
+      });
+    };
+    await fnLoader(document).then((doc) => {
+      document = doc;
+    });
+    console.log(`${fn} loaded`);
   }
 
   // Make sure the reconstructed textage is preloaded with the AC listing.
-  dom.window.eval("lc = ['?', 'a', 0, 0, 1, 11, 0, 0, 0];")
-  dom.window.eval("disp_all();")
+  dom.window.eval("lc = ['?', 'a', 0, 0, 1, 11, 0, 0, 0];");
+  dom.window.eval("disp_all();");
 
   // Test cases (Abyss -The Heavens Remix-, AIR RAID FROM THA UNDAGROUND)
   // console.log(textageDOM.window.eval(`Array.from(Array(11).entries()).map((v) => get_level("abyss_r", v[0], 1))`))
