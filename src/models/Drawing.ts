@@ -13,7 +13,7 @@ export interface EligibleChart {
   level: number;
   drawGroup?: number;
   flags: string[];
-  song: Song;
+  song?: Song;
 }
 
 export interface DrawnChart extends EligibleChart {

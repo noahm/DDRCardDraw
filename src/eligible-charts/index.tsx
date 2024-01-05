@@ -4,44 +4,53 @@ import { useDrawState } from "../draw-state";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
-import { Navbar, NavbarGroup, NavbarDivider, Spinner } from "@blueprintjs/core";
+import {
+  Navbar,
+  NavbarGroup,
+  NavbarDivider,
+  Spinner,
+  InputGroup,
+} from "@blueprintjs/core";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { useAtom } from "jotai";
+import { useAtom, atom, useAtomValue } from "jotai";
 import { useDeferredValue, useMemo } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
+import { usePackData } from "../pack-data";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
 }
 
+const searchQueryInPack = atom<string>("");
+
 export default function EligibleChartsList() {
-  const gameData = useDrawState((s) => s.gameData);
+  const packContents = usePackData((s) => {
+    if (s.selectedPack && s.data) {
+      return s.data[s.selectedPack];
+    }
+  });
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());
   const isNarrow = useIsNarrow();
+  const query = useAtomValue(searchQueryInPack);
   const isDisplayFiltered = currentTab !== "all";
 
-  const charts = useMemo(
-    () => (gameData ? Array.from(eligibleCharts(configState, gameData)) : []),
-    [gameData, configState],
-  );
-  const [songs, filteredCharts] = useMemo(() => {
-    const songs = new Set<string>();
-    const filtered = charts.filter((chart) => {
-      songs.add(songKeyFromChart(chart));
-      if (isDisplayFiltered && chart.flags.every((f) => f !== currentTab)) {
-        return false;
-      }
-      return true;
-    });
-    return [songs, filtered];
-  }, [charts, isDisplayFiltered, currentTab]);
+  // const charts = useMemo(
+  //   () => (gameData ? Array.from(eligibleCharts(configState, gameData)) : []),
+  //   [gameData, configState],
+  // );
 
-  if (!gameData) {
+  if (!packContents) {
     return <Spinner />;
   }
+
+  const filteredContents = useMemo(() => {
+    return packContents.filter((chart) => {
+      return chart.toLowerCase().includes(query.toLowerCase());
+    });
+  }, [packContents, query]);
 
   return (
     <>
@@ -52,26 +61,45 @@ export default function EligibleChartsList() {
         }}
       >
         <NavbarGroup>
-          {charts.length} eligible charts from {songs.size} songs (of{" "}
-          {gameData.songs.length} total)
+          {packContents.length} songs total{" "}
+          {query ? `(${filteredContents.length} matching query)` : null}
         </NavbarGroup>
-        {configState.flags.size > 0 && !isNarrow && (
-          <NavbarGroup>
-            <NavbarDivider />
-            <EligibleChartsListFilter />
-          </NavbarGroup>
-        )}
+        <NavbarGroup>
+          <NavbarDivider />
+          <SearchInPack />
+        </NavbarGroup>
       </Navbar>
-      <DiffHistogram charts={filteredCharts} />
+      {/* <DiffHistogram charts={filteredCharts} /> */}
       <div className={styles.chartList}>
-        {filteredCharts.map((chart, idx) =>
-          isDegrs(chart) ? (
-            <TesterCard chart={chart} key={idx} />
-          ) : (
-            <SongCard chart={chart} key={idx} />
-          ),
-        )}
+        {filteredContents.map((title, idx) => (
+          <SongCard
+            chart={{
+              artist: "",
+              name: title,
+              bpm: "???",
+              diffAbbr: "",
+              diffColor: "",
+              flags: [],
+              jacket: "",
+              id: idx.toString(),
+              level: NaN,
+            }}
+            key={idx}
+          />
+        ))}
       </div>
     </>
+  );
+}
+
+function SearchInPack() {
+  const [query, setQuery] = useAtom(searchQueryInPack);
+  return (
+    <InputGroup
+      type="search"
+      leftIcon="search"
+      value={query}
+      onChange={(e) => setQuery(e.currentTarget.value)}
+    />
   );
 }

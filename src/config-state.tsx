@@ -40,7 +40,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     style: "",
     difficulties: new Set(),
     flags: new Set(),
-    showEligibleCharts: false,
+    showEligibleCharts: true,
     playerNames: [],
     tournamentRounds: [
       "Pools",

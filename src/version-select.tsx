@@ -6,41 +6,28 @@ import {
   SpinnerSize,
 } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import { useDrawState } from "./draw-state";
-import { useDataSets } from "./hooks/useDataSets";
-import { groupGameData } from "./utils";
-import { useIntl } from "./hooks/useIntl";
+
+import { usePackData } from "./pack-data";
 
 export function VersionSelect() {
-  const { t } = useIntl();
-  const { current, available, loadData } = useDataSets();
+  const availablePacks = usePackData((d) => d.data);
+  const packnames = useMemo(() => {
+    const ret = availablePacks ? Object.keys(availablePacks) : [];
+    ret.sort((a, b) => a.localeCompare(b));
+    return ret;
+  }, [availablePacks]);
+  const currentPack = usePackData((d) => d.selectedPack);
   return (
     <Select
-      items={available}
-      filterable={false}
-      itemListRenderer={(listProps) => {
-        const groupedItems = groupGameData(listProps.filteredItems);
-        return (
-          <Menu role="listbox" ulRef={listProps.itemsParentRef}>
-            <MenuItem disabled text={t("gameMenu.title")} />
-            {groupedItems.map((item) => {
-              if (item.type === "game") {
-                return listProps.renderItem(item, item.index);
-              } else {
-                return (
-                  <MenuItem
-                    key={item.name}
-                    icon="folder-open"
-                    text={t("gameMenu.parent." + item.name)}
-                  >
-                    {item.games.map((g) => listProps.renderItem(g, g.index))}
-                  </MenuItem>
-                );
-              }
-            })}
-          </Menu>
-        );
+      items={packnames}
+      filterable
+      itemPredicate={(query, item) => {
+        if (item.toLowerCase().includes(query.toLowerCase())) {
+          return true;
+        }
+        return false;
       }}
       itemRenderer={(
         item,
@@ -50,20 +37,23 @@ export function VersionSelect() {
           modifiers: { active, disabled, matchesPredicate },
         },
       ) =>
-        matchesPredicate ? null : (
+        !matchesPredicate ? null : (
           <MenuItem
             role="listitem"
             // icon="document"
-            key={item.name}
-            text={item.display}
+            key={item}
+            text={item}
             {...{ onClick, onFocus, active, disabled }}
-            selected={current.name === item.name}
+            selected={currentPack === item}
           />
         )
       }
-      onItemSelect={(item) => loadData(item.name)}
+      onItemSelect={(item) => usePackData.setState({ selectedPack: item })}
     >
-      <Button text={current.display} rightIcon="double-caret-vertical" />
+      <Button
+        text={currentPack || "Select a pack..."}
+        rightIcon="double-caret-vertical"
+      />
     </Select>
   );
 }

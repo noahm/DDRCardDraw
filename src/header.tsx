@@ -65,9 +65,6 @@ export function Header() {
         <VersionSelect />
         <DataLoadingSpinner />
       </Navbar.Group>
-      <Navbar.Group align={Alignment.RIGHT}>
-        <HeaderControls />
-      </Navbar.Group>
     </Navbar>
   );
 }
