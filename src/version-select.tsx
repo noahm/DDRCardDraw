@@ -1,10 +1,4 @@
-import {
-  Button,
-  Menu,
-  MenuItem,
-  Spinner,
-  SpinnerSize,
-} from "@blueprintjs/core";
+import { Button, MenuItem, Spinner, SpinnerSize } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { useDrawState } from "./draw-state";

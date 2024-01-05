@@ -10,7 +10,6 @@ import {
 import { IconNames } from "@blueprintjs/icons";
 import { useState } from "react";
 import { About } from "./about";
-import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
