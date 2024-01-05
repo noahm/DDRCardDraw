@@ -141,7 +141,9 @@ for (const parsedSong of pack.simfiles) {
       diffClass: chart.difficulty,
     };
     if (useTiers) {
-      let tierMatch = parsedSong.title.titleName.match(/^\[T(?:ier\s*)?(\d+)\]/i);
+      let tierMatch = parsedSong.title.titleName.match(
+        /^\[T(?:ier\s*)?(\d+)\]/i,
+      );
       if (tierMatch && tierMatch.length > 0) {
         const parsedTier = parseInt(tierMatch[1]);
         chartData.drawGroup = parsedTier;
