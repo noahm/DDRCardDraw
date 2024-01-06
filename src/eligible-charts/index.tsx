@@ -14,6 +14,7 @@ import { usePackData } from "../pack-data";
 const searchQueryInPack = atom<string>("");
 
 export default function EligibleChartsList() {
+  const packName = usePackData((s) => s.selectedPack);
   const packContents = usePackData((s) => {
     if (s.selectedPack && s.data) {
       return s.data[s.selectedPack];
@@ -67,12 +68,14 @@ export default function EligibleChartsList() {
               artist: "",
               name: title,
               bpm: "???",
-              diffAbbr: "",
-              diffColor: "",
+              diffAbbr: "Lvl",
+              diffColor: "darkgrey",
               flags: [],
-              jacket: "",
+              jacket: `https://card.lvarcade.net/songlist/jacket/${encodeURIComponent(
+                packName!,
+              )}/${encodeURIComponent(title)}`,
               id: idx.toString(),
-              level: NaN,
+              level: 0,
             }}
             key={idx}
           />
