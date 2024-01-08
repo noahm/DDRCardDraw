@@ -11,6 +11,42 @@ import { useAtom, atom, useAtomValue } from "jotai";
 import { useMemo } from "react";
 import { usePackData } from "../pack-data";
 
+function PackList() {
+  const availablePacks = usePackData((d) => d.data);
+  const packnames = useMemo(() => {
+    const ret = availablePacks ? Object.keys(availablePacks) : [];
+    ret.sort((a, b) => a.localeCompare(b));
+    return ret;
+  }, [availablePacks]);
+  if (!availablePacks) {
+    return <Spinner />;
+  }
+
+  return (
+    <div className={styles.chartList}>
+      {packnames.map((title, idx) => (
+        <SongCard
+          chart={{
+            artist: "",
+            name: title,
+            bpm: "",
+            diffAbbr: "Songs",
+            diffColor: "",
+            flags: [],
+            jacket: `https://card.lvarcade.net/songlist/jacket/${encodeURIComponent(
+              title,
+            )}`,
+            id: idx.toString(),
+            level: availablePacks[title].length,
+          }}
+          key={idx}
+          onClick={() => usePackData.setState({ selectedPack: title })}
+        />
+      ))}
+    </div>
+  );
+}
+
 const searchQueryInPack = atom<string>("");
 
 export default function EligibleChartsList() {
@@ -41,7 +77,7 @@ export default function EligibleChartsList() {
   }, [packContents, query]);
 
   if (!packContents) {
-    return <Spinner />;
+    return <PackList />;
   }
   return (
     <>

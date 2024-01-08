@@ -204,7 +204,7 @@ export function SongCard(props: Props) {
           className={styles.cardFooter}
           style={{ backgroundColor: diffColor }}
         >
-          <div className={styles.bpm}>{bpm} BPM</div>
+          {!!bpm ? <div className={styles.bpm}>{bpm} BPM</div> : <div />}
           {flags.includes("shock") && <ShockBadge />}
           <div className={styles.difficulty}>
             {diffAbbr} {level}
