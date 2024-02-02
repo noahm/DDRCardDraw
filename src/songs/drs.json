@@ -1870,6 +1870,25 @@
       ]
     },
     {
+      "name": "Debug Dance",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "lapix",
+      "folder": "DANCERUSH STARDOM",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    },
+    {
       "name": "December in Strasbourg",
       "jacket": "drs.png",
       "bpm": "",
@@ -8621,6 +8640,27 @@
         },
         {
           "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    },
+    {
+      "name": "轟け！恋のビーンボール！！ (STARDOM Remix)",
+      "name_translation": "Todoroke! Koi no beanball!! (STARDOM Remix)",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "RoughSketch Vs. BEMANI Sound Team 'L.E.D.-G'",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 10,
           "style": "single",
           "diffClass": "normal"
         }
