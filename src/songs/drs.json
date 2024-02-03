@@ -844,7 +844,7 @@
       "bpm": "",
       "artist": "nagomu tamaki",
       "folder": "DANCERUSH STARDOM",
-      "flags": ["unlock"],
+      "flags": ["unlock", "stream"],
       "charts": [
         {
           "lvl": 4,
@@ -1460,6 +1460,7 @@
       "bpm": "",
       "artist": "Merk & Kremont",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["stream"],
       "charts": [
         {
           "lvl": 5,
@@ -1858,6 +1859,26 @@
       "charts": [
         {
           "lvl": 4,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    },
+    {
+      "name": "Debug Dance",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "lapix",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
           "style": "single",
           "diffClass": "easy"
         },
@@ -8620,6 +8641,27 @@
         },
         {
           "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    },
+    {
+      "name": "轟け！恋のビーンボール！！ (STARDOM Remix)",
+      "name_translation": "Todoroke! Koi no beanball!! (STARDOM Remix)",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "RoughSketch Vs. BEMANI Sound Team 'L.E.D.-G'",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 10,
           "style": "single",
           "diffClass": "normal"
         }
