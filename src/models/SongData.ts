@@ -88,6 +88,7 @@ export interface Song {
   bpm: string;
   name_translation?: string;
   search_hint?: string;
+  date_added?: string;
   charts: Chart[];
   jacket: string;
   folder?: string;
