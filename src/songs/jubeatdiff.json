@@ -1,0 +1,77 @@
+{
+      "meta": {
+      "menuParent": "more",
+      "styles": ["single"],
+      "difficulties": [
+        { "key": "basic", "color": "#7fc344" },
+        { "key": "advanced", "color": "#e28831" },
+        { "key": "extreme", "color": "#e12a5a" }
+      ],
+      "flags": [],
+      "lvlMax": 10.9,
+      "lastUpdated": 1684704074470
+    },
+    "defaults": {
+      "style": "single",
+      "difficulties": [
+        "basic",
+        "advanced",
+        "extreme"
+      ],
+      "flags": [],
+      "lowerLvlBound": 1,
+      "upperLvlBound": 10.9
+    },
+    "i18n": {
+      "en": {
+        "name": "Jubeat: something lol",
+        "single": "Single",
+        "basic": "Basic",
+        "advanced": "Advanced",
+        "extreme": "Extreme",
+        "$abbr": {
+          "basic": "BSC",
+          "advanced": "ADV",
+          "extreme": "EXT"
+        }
+      },
+      "ja": {
+        "name": "Jubeat: something lol",
+        "single": "Single",
+        "basic": "Basic",
+        "advanced": "Advanced",
+        "extreme": "Extreme",
+        "$abbr": {
+          "basic": "BSC",
+          "advanced": "ADV",
+          "extreme": "EXT"
+        }
+      }
+    },
+    "songs": [
+        {
+            "name": "test",
+            "artist": "ikay",
+            "jacket": "sdvx6.png",
+            "bpm": "100",
+            "charts": [
+                {
+                    "lvl": 10,
+                    "style": "single",
+                    "diffClass": "extreme"
+                },
+                {
+                  "lvl": 9,
+                  "style": "single",
+                  "diffClass": "advanced"
+                },
+                {
+                  "lvl": 3,
+                  "style": "single",
+                  "diffClass": "basic"
+                }
+            ]
+        }
+    ]
+}
+  
