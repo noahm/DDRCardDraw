@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "menuParent": "more",
+    "styles": ["single"],
+    "difficulties": [
+      { "key": "basic", "color": "#7fc344" },
+      { "key": "advanced", "color": "#e28831" },
+      { "key": "extreme", "color": "#e12a5a" }
+    ],
+    "flags": [],
+    "lvlMax": 10.9,
+    "lastUpdated": 1684704074470
+  },
+  "defaults": {
+    "style": "single",
+    "difficulties": ["basic", "advanced", "extreme"],
+    "flags": [],
+    "lowerLvlBound": 1.1,
+    "upperLvlBound": 10.9
+  },
+  "i18n": {
+    "en": {
+      "name": "Jubeat: something lol",
+      "single": "Single",
+      "basic": "Basic",
+      "advanced": "Advanced",
+      "extreme": "Extreme",
+      "$abbr": {
+        "basic": "BSC",
+        "advanced": "ADV",
+        "extreme": "EXT"
+      }
+    },
+    "ja": {
+      "name": "Jubeat TEST",
+      "single": "Single",
+      "basic": "Basic",
+      "advanced": "Advanced",
+      "extreme": "Extreme",
+      "$abbr": {
+        "basic": "BSC",
+        "advanced": "ADV",
+        "extreme": "EXT"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "test",
+      "artist": "test",
+      "jacket": "",
+      "bpm": "100",
+      "charts": [
+        { "style": "single", "lvl": 3, "diffClass": "basic" },
+        { "style": "single", "lvl": 9.9, "diffClass": "advanced" },
+        { "style": "single", "lvl": 10.9, "diffClass": "extreme" }
+      ]
+    }
+  ]
+}
