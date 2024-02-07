@@ -5,11 +5,12 @@ import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
 import { getDiffAbbr } from "./game-data-utils";
+import { getAvailableLevels } from "./game-data-utils";
 
 export function getDrawnChart(
   gameData: GameData,
   currentSong: Song,
-  chart: Chart,
+  chart: Chart
 ): EligibleChart {
   return {
     name: currentSong.name,
@@ -32,7 +33,7 @@ export function getDrawnChart(
 export function songIsValid(
   config: ConfigState,
   song: Song,
-  forPocketPick = false,
+  forPocketPick = false
 ): boolean {
   if (forPocketPick && !config.constrainPocketPicks) {
     return true;
@@ -44,7 +45,7 @@ export function songIsValid(
 export function chartIsValid(
   config: ConfigState,
   chart: Chart,
-  forPocketPick = false,
+  forPocketPick = false
 ): boolean {
   if (forPocketPick && !config.constrainPocketPicks) {
     return chart.style === config.style;
@@ -97,8 +98,16 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   /** all charts we will consider to be valid for this draw */
   const validCharts = new Map<number, Array<EligibleChart>>();
-  times(gameData.meta.lvlMax, (n) => {
-    validCharts.set(n, []);
+  console.log(validCharts);
+  /*
+
+  code created by Albert Shin (albshin)
+  from albshin/PerformaiCardDraw
+
+  */
+  const availableLevels = getAvailableLevels(gameData);
+  availableLevels.forEach((level) => {
+    validCharts.set(level, []);
   });
 
   for (const chart of eligibleCharts(configData, gameData)) {
@@ -130,7 +139,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   const loopEnd = (useWeights && groupSongsAt) || upperBound;
 
   // build an array of possible levels to pick from
-  for (let level = lowerBound; level <= loopEnd; level++) {
+  for (const level of availableLevels) {
     let weightAmount = 0;
     if (useWeights) {
       weightAmount = weights[level];
@@ -152,7 +161,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       const levelAsStr = level.toString();
       const normalizedWeight = weights[level] / totalWeights;
       maxDrawPerLevel[levelAsStr] = Math.ceil(
-        normalizedWeight * numChartsToRandom,
+        normalizedWeight * numChartsToRandom
       );
       // setup minimum draws
       for (let i = 1; i < maxDrawPerLevel[levelAsStr]; i++) {
