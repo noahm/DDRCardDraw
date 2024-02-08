@@ -289,7 +289,7 @@ function GeneralSettings() {
     const currentIndex = availableLevels.indexOf(currentValue);
     const direction = newValue > currentValue ? 1 : -1;
     const newIndex = currentIndex + direction;
-    if (newIndex < 0 || newIndex >= availableDifficulties.length) {
+    if (newIndex < 0 || newIndex >= availableLevels.length) {
       console.error("cannot go outside of available levels");
       return;
     }
