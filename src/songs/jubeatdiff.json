@@ -15,7 +15,7 @@
     "style": "single",
     "difficulties": ["basic", "advanced", "extreme"],
     "flags": [],
-    "lowerLvlBound": 1.1,
+    "lowerLvlBound": 1,
     "upperLvlBound": 10.9
   },
   "i18n": {
@@ -56,6 +56,20 @@
         { "style": "single", "lvl": 9.2, "diffClass": "advanced" },
         { "style": "single", "lvl": 9.3, "diffClass": "advanced" },
         { "style": "single", "lvl": 9.4, "diffClass": "advanced" },
+        { "style": "single", "lvl": 9.5, "diffClass": "advanced" },
+        { "style": "single", "lvl": 9.6, "diffClass": "advanced" },
+        { "style": "single", "lvl": 9.7, "diffClass": "advanced" },
+        { "style": "single", "lvl": 9.8, "diffClass": "advanced" },
+        { "style": "single", "lvl": 9.9, "diffClass": "advanced" },
+        { "style": "single", "lvl": 10, "diffClass": "advanced" },
+        { "style": "single", "lvl": 10.1, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.2, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.3, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.4, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.5, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.6, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.7, "diffClass": "extreme" },
+        { "style": "single", "lvl": 10.8, "diffClass": "extreme" },
         { "style": "single", "lvl": 10.9, "diffClass": "extreme" }
       ]
     }

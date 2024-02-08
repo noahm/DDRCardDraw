@@ -20,7 +20,7 @@ import {
   Tabs,
   Tooltip,
 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import { IconNames, NewDrawing } from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { shallow } from "zustand/shallow";
@@ -303,15 +303,22 @@ function GeneralSettings() {
         });
       } else {
         console.log("INVALID LEVEL: LEVEL NOT FOUND");
-        newHigh = Math.ceil(newHigh);
+        if (newHigh !== upperBound) {
+          if (newHigh < upperBound) {
+            newHigh = Math.floor(newHigh);
+          } else {
+            newHigh = Math.ceil(newHigh);
+          }
+        }
         updateState({
           upperBound: newHigh,
         });
         /*
-        Current idea: round down (8.5 -> 8)
-        Move it up to the next availableLevel (8 -> 9)
-        You really can't input invalid levels for lvls below 9 since above 9 are floats
-        And you can't do lvl 11 because thats beyond Max and it just won't let you
+        This code is very temporary. It assumes that there is a chart for each lvl, if that makes sense.
+        For example, if the lvl goes from 10.6 -> 10.7, but there is no chart that has the lvl 10.7,
+        it will jump straight to 11. 
+        Now, Jubeat should have a chart for each float lvl, so you shouldn't run into this issue? I haven't
+        confirmed yet but I'll add a comment when I do. 
         */
       }
     }
@@ -400,6 +407,7 @@ function GeneralSettings() {
               fill
               type="number"
               inputMode="numeric"
+              stepSize={0.1}
               value={upperBound}
               min={lowerBound}
               max={lvlMax}
