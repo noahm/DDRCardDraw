@@ -23,21 +23,17 @@ export function AbbrDifficulty({ diffClass }: AbbrProps) {
   return <>{getDiffClass(t, diffClass)}</>;
 }
 
-/*
-
-function created by Albert Shin (albshin)
-from albshin/PerformaiCardDraw
-
-*/
+/**
+ * get a sorted list of unique difficutly levels from a game data file
+ * @credit Albert Shin, from albshin/PerformaiCardDraw
+ */
 export function getAvailableLevels(gameData: GameData | null): number[] {
   if (gameData === null) {
     return [];
   }
   const levelSet = new Set<number>();
-  const levelArr = new Array<number>();
   gameData.songs.forEach((song) => {
     song.charts.forEach((chart) => levelSet.add(chart.lvl));
-    song.charts.forEach((chart) => levelArr.push(chart.lvl));
   });
   return [...levelSet].sort((a, b) => a - b);
 }
