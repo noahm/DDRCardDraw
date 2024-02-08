@@ -15,11 +15,11 @@ export function getDataFileFromPack(
 
   const difficulties = new Set<string>();
   const styles = new Set<string>();
+  let lvlMax = 0;
   const data: GameData = {
     meta: {
       menuParent: "imported",
       flags: [],
-      lvlMax: 0,
       lastUpdated: Date.now(),
       usesDrawGroups: useTiers,
       difficulties: [],
@@ -88,7 +88,7 @@ export function getDataFileFromPack(
         if (tierMatch && tierMatch.length > 0) {
           const parsedTier = parseInt(tierMatch[1]);
           chartData.drawGroup = parsedTier;
-          data.meta.lvlMax = Math.max(data.meta.lvlMax, parsedTier);
+          lvlMax = Math.max(lvlMax, parsedTier);
         } else {
           throw new Error(
             'Expected song titles to include tiers in the form "[T01] ..." but found:\n' +
@@ -97,7 +97,7 @@ export function getDataFileFromPack(
         }
       } else {
         // lvl max is calculated on level for non-tiered packs
-        data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
+        lvlMax = Math.max(lvlMax, chartData.lvl);
       }
       song.charts.push(chartData);
 
@@ -113,7 +113,7 @@ export function getDataFileFromPack(
     key,
     color: someColors[key] || "grey", // TODO?
   }));
-  data.defaults.upperLvlBound = data.meta.lvlMax;
+  data.defaults.upperLvlBound = lvlMax;
   data.defaults.style = data.meta.styles[0];
 
   return data;

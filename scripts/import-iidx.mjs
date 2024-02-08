@@ -220,7 +220,6 @@ async function main() {
         "ichikaGochamaze",
         "timelock",
       ],
-      lvlMax: 12,
       lastUpdated: 0,
     },
     defaults: {

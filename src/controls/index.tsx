@@ -278,7 +278,7 @@ function GeneralSettings() {
   if (!gameData) {
     return null;
   }
-  const { lvlMax, styles: gameStyles } = gameData.meta;
+  const { styles: gameStyles } = gameData.meta;
 
   /**
    * attempts to step to the next value of available levels for either bounds field
@@ -390,7 +390,7 @@ function GeneralSettings() {
               stepSize={0.1}
               value={upperBound}
               min={lowerBound}
-              max={lvlMax}
+              max={availableLevels[availableLevels.length - 1]}
               clampValueOnBlur
               onValueChange={handleUpperBoundChange}
             />

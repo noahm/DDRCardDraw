@@ -12,7 +12,7 @@
     "meta": {
       "type": "object",
       "description": "Describes unique configuration options for this game",
-      "required": ["lastUpdated", "styles", "difficulties", "lvlMax", "flags"],
+      "required": ["lastUpdated", "styles", "difficulties", "flags"],
       "additionalProperties": false,
       "properties": {
         "menuParent": {
@@ -50,9 +50,6 @@
         "flags": {
           "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all special flags one might filter songs by"
-        },
-        "lvlMax": {
-          "type": "number"
         },
         "usesDrawGroups": {
           "type": "boolean"

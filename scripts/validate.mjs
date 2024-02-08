@@ -21,10 +21,6 @@ function validateContents(dataFile) {
   const difficulties = new Set(dataFile.meta.difficulties.map((d) => d.key));
   const flags = new Set(dataFile.meta.flags);
 
-  if (dataFile.meta.lvlMax < 1) {
-    errors.push("max level is below 1");
-  }
-
   if (dataFile.defaults.style && !styles.has(dataFile.defaults.style)) {
     errors.push("default style is not listed in meta");
   }
@@ -40,13 +36,6 @@ function validateContents(dataFile) {
 
   if (dataFile.defaults.lowerLvlBound > dataFile.defaults.upperLvlBound) {
     errors.push("default level bounds are reversed");
-  }
-
-  if (
-    dataFile.defaults.lowerLvlBound > dataFile.meta.lvlMax ||
-    dataFile.defaults.upperLvlBound > dataFile.meta.lvlMax
-  ) {
-    errors.push("default level bounds are beyond max level");
   }
 
   if (dataFile.i18n.ja) {
@@ -83,12 +72,6 @@ function validateContents(dataFile) {
       if (dataFile.meta.usesDrawGroups) {
         if (!chart.drawGroup) {
           errors.push(`${song.name} is missing a draw group`);
-        } else if (chart.drawGroup > dataFile.meta.lvlMax) {
-          errors.push(`${song.name} has draw group above max`);
-        }
-      } else {
-        if (chart.lvl > dataFile.meta.lvlMax) {
-          errors.push(`${song.name} has chart above level max`);
         }
       }
     }

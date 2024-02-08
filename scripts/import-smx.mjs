@@ -35,7 +35,6 @@ function queueJacketDownload(coverPath) {
 const ui = reportQueueStatusLive();
 try {
   const songs = [];
-  let lvlMax = 0;
   const log = (whatever) => ui.log.write(whatever);
   const targetFile = join(__dirname, "../src/songs/smx.json");
   const existingData = JSON.parse(
@@ -84,7 +83,6 @@ try {
         chart.flags = ["plus"];
       }
       songs[songId].charts.push(chart);
-      lvlMax = Math.max(lvlMax, chart.lvl);
     }
   }
 
@@ -92,8 +90,6 @@ try {
     ...existingData,
     songs: songs.filter((s) => !!s),
   };
-
-  smxData.meta.lvlMax = lvlMax;
 
   ui.log.write("finished downloading data, writing final JSON output");
   await writeJsonData(smxData, resolve(targetFile));
