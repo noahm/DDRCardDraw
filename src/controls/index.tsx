@@ -277,7 +277,7 @@ function GeneralSettings() {
   }
   const { lvlMax, styles: gameStyles } = gameData.meta;
 
-  const availableLevels = new Array(getAvailableLevels(gameData));
+  const availableLevels = getAvailableLevels(gameData);
 
   const handleLowerBoundChange = (newLow: number) => {
     if (newLow !== lowerBound && !isNaN(newLow)) {
@@ -293,12 +293,26 @@ function GeneralSettings() {
 
   const handleUpperBoundChange = (newHigh: number) => {
     if (!isNaN(newHigh)) {
-      if (availableLevels.includes([newHigh]) && newHigh !== upperBound) {
+      console.log(newHigh);
+      console.log(availableLevels);
+      const lvlValid = availableLevels.includes(newHigh);
+      console.log(lvlValid);
+      if (lvlValid && newHigh !== upperBound) {
         updateState({
           upperBound: newHigh,
         });
       } else {
-        // do stuff lol
+        console.log("INVALID LEVEL: LEVEL NOT FOUND");
+        newHigh = Math.ceil(newHigh);
+        updateState({
+          upperBound: newHigh,
+        });
+        /*
+        Current idea: round down (8.5 -> 8)
+        Move it up to the next availableLevel (8 -> 9)
+        You really can't input invalid levels for lvls below 9 since above 9 are floats
+        And you can't do lvl 11 because thats beyond Max and it just won't let you
+        */
       }
     }
   };
