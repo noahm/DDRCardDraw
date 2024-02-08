@@ -1,10 +1,12 @@
 import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
-import { times, zeroPad } from "../utils";
+import { zeroPad } from "../utils";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
+import { useDrawState } from "../draw-state";
+import { getAvailableLevels } from "../game-data-utils";
 
 interface Props {
   usesTiers: boolean;
@@ -31,10 +33,13 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     }),
     shallow,
   );
-  let groups = useMemo(
-    () => times(high - low + 1, (n) => n + low - 1),
-    [high, low],
-  );
+  const gameData = useDrawState((s) => s.gameData);
+  let groups = useMemo(() => {
+    const availableLevels = getAvailableLevels(gameData);
+    const lowIndex = availableLevels.indexOf(low);
+    const highIndex = availableLevels.indexOf(high);
+    return availableLevels.slice(lowIndex, highIndex + 1);
+  }, [high, low, gameData]);
 
   function toggleForceDistribution() {
     updateConfig((state) => ({

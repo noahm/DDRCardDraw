@@ -270,13 +270,15 @@ function GeneralSettings() {
   }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
+  const availableLevels = useMemo(
+    () => getAvailableLevels(gameData),
+    [gameData],
+  );
 
   if (!gameData) {
     return null;
   }
   const { lvlMax, styles: gameStyles } = gameData.meta;
-
-  const availableLevels = getAvailableLevels(gameData);
 
   /**
    * attempts to step to the next value of available levels for either bounds field
@@ -366,7 +368,7 @@ function GeneralSettings() {
               type="number"
               inputMode="numeric"
               value={lowerBound}
-              min={1}
+              min={availableLevels[0]}
               max={Math.max(upperBound, lowerBound, 1)}
               clampValueOnBlur
               onValueChange={handleLowerBoundChange}
