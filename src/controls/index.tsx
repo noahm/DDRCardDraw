@@ -38,6 +38,8 @@ import { PlayerNamesControls } from "./player-names";
 import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
+import { getAvailableLevels } from "../game-data-utils";
+import { update } from "@lcdp/offline-plugin/runtime";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -53,7 +55,7 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 
 function getDiffsAndRangeForNewStyle(
   gameData: GameData,
-  selectedStyle: string,
+  selectedStyle: string
 ) {
   const s = new Set<string>();
   const range = { high: 0, low: 100 };
@@ -83,7 +85,7 @@ function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
       showEligible: state.showEligibleCharts,
       update: state.update,
     }),
-    shallow,
+    shallow
   );
   return (
     <Switch
@@ -211,11 +213,11 @@ function FlagSettings() {
   const { t } = useIntl();
   const [dataSetName, gameData] = useDrawState(
     (s) => [s.dataSetName, s.gameData],
-    shallow,
+    shallow
   );
   const [updateState, selectedFlags] = useConfigState(
     (s) => [s.update, s.flags],
-    shallow,
+    shallow
   );
 
   return (
@@ -275,6 +277,8 @@ function GeneralSettings() {
   }
   const { lvlMax, styles: gameStyles } = gameData.meta;
 
+  const availableLevels = new Array(getAvailableLevels(gameData));
+
   const handleLowerBoundChange = (newLow: number) => {
     if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
@@ -283,15 +287,30 @@ function GeneralSettings() {
       updateState({
         lowerBound: newLow,
       });
+      console.log(newLow);
     }
   };
+
   const handleUpperBoundChange = (newHigh: number) => {
-    if (newHigh !== upperBound && !isNaN(newHigh)) {
-      updateState({
-        upperBound: newHigh,
-      });
+    if (!isNaN(newHigh)) {
+      if (availableLevels.includes([newHigh]) && newHigh !== upperBound) {
+        updateState({
+          upperBound: newHigh,
+        });
+      } else {
+        // do stuff lol
+      }
     }
   };
+
+  //  const handleUpperBoundChange = (newHigh: number) => {
+  //    if (newHigh !== upperBound && !isNaN(newHigh)) {
+  //     updateState({
+  //        upperBound: newHigh,
+  //      });
+  //      console.log(newHigh);
+  //    }
+  //  };
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   return (
@@ -396,7 +415,7 @@ function GeneralSettings() {
                     const next = { ...prev, style: e.currentTarget.value };
                     const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
                       gameData,
-                      next.style,
+                      next.style
                     );
                     if (diffs.length === 1) {
                       next.difficulties = new Set(diffs.map((d) => d.key));

@@ -34,8 +34,10 @@ export function getAvailableLevels(gameData: GameData | null): number[] {
     return [];
   }
   const levelSet = new Set<number>();
+  const levelArr = new Array<number>();
   gameData.songs.forEach((song) => {
     song.charts.forEach((chart) => levelSet.add(chart.lvl));
+    song.charts.forEach((chart) => levelArr.push(chart.lvl));
   });
   return [...levelSet].sort((a, b) => a - b);
 }
