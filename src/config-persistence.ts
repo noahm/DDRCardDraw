@@ -22,9 +22,11 @@ type NonFunctionKeys<T extends object> = keyof {
  * Strips mutations from an object, and converts sets to arrays
  */
 type Serialized<T extends object> = {
-  [K in NonFunctionKeys<T>]: T[K] extends ReadonlySet<infer Item>
-    ? Array<Item>
-    : T[K];
+  [K in NonFunctionKeys<T>]: T[K] extends ReadonlyMap<infer K, infer V>
+    ? Array<[K, V]>
+    : T[K] extends ReadonlySet<infer Item>
+      ? Array<Item>
+      : T[K];
 };
 
 export function saveConfig() {
@@ -96,6 +98,7 @@ function buildPersistedConfig(): PersistedConfigV1 {
     ...configState,
     difficulties: Array.from(configState.difficulties),
     flags: Array.from(configState.flags),
+    weights: Array.from(configState.weights),
   };
   const ret: PersistedConfigV1 = {
     version: 1,
@@ -128,6 +131,7 @@ async function loadPersistedConfig(saved: PersistedConfigV1) {
     ...migrateOldNames(saved.configState),
     difficulties: new Set(saved.configState.difficulties),
     flags: new Set(saved.configState.flags),
+    weights: new Map(saved.configState.weights),
   });
 }
 

@@ -146,7 +146,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const level = availableLevels[levelIdx];
     let weightAmount = 0;
     if (useWeights) {
-      weightAmount = weights[level];
+      weightAmount = weights.get(level) || 0;
       totalWeights += weightAmount;
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -163,7 +163,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   if (useWeights && forceDistribution) {
     for (let level = lowerBound; level <= loopEnd; level++) {
       const levelAsStr = level.toString();
-      const normalizedWeight = weights[level] / totalWeights;
+      const normalizedWeight = (weights.get(level) || 0) / totalWeights;
       maxDrawPerLevel[levelAsStr] = Math.ceil(
         normalizedWeight * numChartsToRandom,
       );
