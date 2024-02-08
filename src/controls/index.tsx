@@ -20,7 +20,7 @@ import {
   Tabs,
   Tooltip,
 } from "@blueprintjs/core";
-import { IconNames, NewDrawing } from "@blueprintjs/icons";
+import { IconNames } from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { shallow } from "zustand/shallow";
@@ -39,7 +39,6 @@ import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { getAvailableLevels } from "../game-data-utils";
-import { update } from "@lcdp/offline-plugin/runtime";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -55,7 +54,7 @@ function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
 
 function getDiffsAndRangeForNewStyle(
   gameData: GameData,
-  selectedStyle: string
+  selectedStyle: string,
 ) {
   const s = new Set<string>();
   const range = { high: 0, low: 100 };
@@ -85,7 +84,7 @@ function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
       showEligible: state.showEligibleCharts,
       update: state.update,
     }),
-    shallow
+    shallow,
   );
   return (
     <Switch
@@ -213,11 +212,11 @@ function FlagSettings() {
   const { t } = useIntl();
   const [dataSetName, gameData] = useDrawState(
     (s) => [s.dataSetName, s.gameData],
-    shallow
+    shallow,
   );
   const [updateState, selectedFlags] = useConfigState(
     (s) => [s.update, s.flags],
-    shallow
+    shallow,
   );
 
   return (
@@ -279,59 +278,38 @@ function GeneralSettings() {
 
   const availableLevels = getAvailableLevels(gameData);
 
+  /**
+   * attempts to step to the next value of available levels for either bounds field
+   */
+  function setNextStateStep(
+    stateKey: "upperBound" | "lowerBound",
+    newValue: number,
+  ) {
+    const currentValue = configState[stateKey];
+    const currentIndex = availableLevels.indexOf(currentValue);
+    const direction = newValue > currentValue ? 1 : -1;
+    const newIndex = currentIndex + direction;
+    if (newIndex < 0 || newIndex >= availableDifficulties.length) {
+      console.error("cannot go outside of available levels");
+      return;
+    }
+    updateState({ [stateKey]: availableLevels[newIndex] });
+  }
+
   const handleLowerBoundChange = (newLow: number) => {
     if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
         newLow = upperBound;
       }
-      updateState({
-        lowerBound: newLow,
-      });
-      console.log(newLow);
+      setNextStateStep("lowerBound", newLow);
     }
   };
 
   const handleUpperBoundChange = (newHigh: number) => {
-    if (!isNaN(newHigh)) {
-      console.log(newHigh);
-      console.log(availableLevels);
-      const lvlValid = availableLevels.includes(newHigh);
-      console.log(lvlValid);
-      if (lvlValid && newHigh !== upperBound) {
-        updateState({
-          upperBound: newHigh,
-        });
-      } else {
-        console.log("INVALID LEVEL: LEVEL NOT FOUND");
-        if (newHigh !== upperBound) {
-          if (newHigh < upperBound) {
-            newHigh = Math.floor(newHigh);
-          } else {
-            newHigh = Math.ceil(newHigh);
-          }
-        }
-        updateState({
-          upperBound: newHigh,
-        });
-        /*
-        This code is very temporary. It assumes that there is a chart for each lvl, if that makes sense.
-        For example, if the lvl goes from 10.6 -> 10.7, but there is no chart that has the lvl 10.7,
-        it will jump straight to 11. 
-        Now, Jubeat should have a chart for each float lvl, so you shouldn't run into this issue? I haven't
-        confirmed yet but I'll add a comment when I do. 
-        */
-      }
+    if (newHigh !== upperBound && !isNaN(newHigh)) {
+      setNextStateStep("upperBound", newHigh);
     }
   };
-
-  //  const handleUpperBoundChange = (newHigh: number) => {
-  //    if (newHigh !== upperBound && !isNaN(newHigh)) {
-  //     updateState({
-  //        upperBound: newHigh,
-  //      });
-  //      console.log(newHigh);
-  //    }
-  //  };
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   return (
@@ -437,7 +415,7 @@ function GeneralSettings() {
                     const next = { ...prev, style: e.currentTarget.value };
                     const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
                       gameData,
-                      next.style
+                      next.style,
                     );
                     if (diffs.length === 1) {
                       next.difficulties = new Set(diffs.map((d) => d.key));
