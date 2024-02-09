@@ -18,13 +18,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // db file expected to be the output from https://github.com/zetaraku/arcade-songs-fetch
 const DATABASE_FILE = "db.sqlite3";
-const DATA_STUB = "jubeat-beyondave";
+const DATA_STUB = "jubeat-ave";
 const JACKET_DIR = "jubeat";
 
 if (!fs.existsSync(DATABASE_FILE)) {
   console.error(
     "No local data found, download a copy from the url below and save it as pump.db",
-    "  https://github.com/AnyhowStep/pump-out-sqlite3-dump/tree/master/dump",
+    "  https://github.com/AnyhowStep/pump-out-sqlite3-dump/tree/master/dump"
   );
   process.exit(0);
 }
@@ -62,7 +62,7 @@ title,
 artist,
 imageUrl
 FROM
-Songs;`,
+Songs;`
     )
     .all();
 
@@ -76,7 +76,7 @@ SELECT
   difficulty,
   level
 FROM
-	Sheets;`,
+	Sheets;`
     )
     .all();
 
@@ -135,7 +135,7 @@ FROM
     },
     i18n: {
       en: {
-        name: "Jubeat Beyond The Avenue",
+        name: "Jubeat Avenue",
         solo: "Single",
         basic: "Basic",
         advanced: "Advanced",
@@ -154,7 +154,7 @@ FROM
 
   await writeJsonData(
     data,
-    path.resolve(path.join(__dirname, `../src/songs/${DATA_STUB}.json`)),
+    path.resolve(path.join(__dirname, `../src/songs/${DATA_STUB}.json`))
   );
   if (requestQueue.size) {
     ui.log.write("waiting on images to finish downloading...");
