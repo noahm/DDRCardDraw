@@ -1,10 +1,12 @@
 import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
-import { times, zeroPad } from "../utils";
+import { zeroPad } from "../utils";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
+import { useDrawState } from "../draw-state";
+import { getAvailableLevels } from "../game-data-utils";
 
 interface Props {
   usesTiers: boolean;
@@ -31,10 +33,13 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     }),
     shallow,
   );
-  let groups = useMemo(
-    () => times(high - low + 1, (n) => n + low - 1),
-    [high, low],
-  );
+  const gameData = useDrawState((s) => s.gameData);
+  let groups = useMemo(() => {
+    const availableLevels = getAvailableLevels(gameData);
+    const lowIndex = availableLevels.indexOf(low);
+    const highIndex = availableLevels.indexOf(high);
+    return availableLevels.slice(lowIndex, highIndex + 1);
+  }, [high, low, gameData]);
 
   function toggleForceDistribution() {
     updateConfig((state) => ({
@@ -67,11 +72,11 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
 
   function setWeight(groupIndex: number, value: number) {
     updateConfig((state) => {
-      const newWeights = state.weights.slice();
+      const newWeights = new Map(state.weights);
       if (Number.isInteger(value)) {
-        newWeights[groupIndex] = value;
+        newWeights.set(groupIndex, value);
       } else {
-        delete newWeights[groupIndex];
+        newWeights.delete(groupIndex);
       }
       return { weights: newWeights };
     });
@@ -81,11 +86,11 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     groups = groups.filter((l) => l <= groupSongsAt);
   }
   const totalWeight = groups.reduce(
-    (total, group) => total + (weights[group] || 0),
+    (total, group) => total + (weights.get(group) || 0),
     0,
   );
   const percentages = groups.map((group) => {
-    const value = weights[group] || 0;
+    const value = weights.get(group) || 0;
     const pct = value / totalWeight;
     if (forceDistribution) {
       if (pct === 1) {
@@ -115,7 +120,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
             inputMode="numeric"
             width={2}
             name={`weight-${group}`}
-            value={weights[group] || ""}
+            value={weights.get(group) || ""}
             min={0}
             onValueChange={(v) => setWeight(group, v)}
             placeholder="0"

@@ -8,7 +8,7 @@ export interface ConfigState {
   useWeights: boolean;
   orderByAction: boolean;
   hideVetos: boolean;
-  weights: number[];
+  weights: Map<number, number>;
   /** charts of this level or higher will be grouped into the same "bucket" */
   groupSongsAt: number | null;
   forceDistribution: boolean;
@@ -33,7 +33,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     useWeights: false,
     hideVetos: false,
     orderByAction: true,
-    weights: [],
+    weights: new Map(),
     groupSongsAt: null,
     forceDistribution: true,
     constrainPocketPicks: true,

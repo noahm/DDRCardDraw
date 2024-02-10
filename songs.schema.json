@@ -12,7 +12,7 @@
     "meta": {
       "type": "object",
       "description": "Describes unique configuration options for this game",
-      "required": ["lastUpdated", "styles", "difficulties", "lvlMax", "flags"],
+      "required": ["lastUpdated", "styles", "difficulties", "flags"],
       "additionalProperties": false,
       "properties": {
         "menuParent": {
@@ -51,9 +51,6 @@
           "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all special flags one might filter songs by"
         },
-        "lvlMax": {
-          "type": "integer"
-        },
         "usesDrawGroups": {
           "type": "boolean"
         }
@@ -74,8 +71,8 @@
         "style": { "type": "string" },
         "difficulties": { "$ref": "#/definitions/uniqueStringArr" },
         "flags": { "$ref": "#/definitions/uniqueStringArr" },
-        "lowerLvlBound": { "type": "integer" },
-        "upperLvlBound": { "type": "integer" }
+        "lowerLvlBound": { "type": "number" },
+        "upperLvlBound": { "type": "number" }
       }
     },
     "i18n": {
@@ -157,7 +154,7 @@
           "description": "e.g. expert/challenge"
         },
         "lvl": {
-          "type": "integer",
+          "type": "number",
           "description": "in-game numeric rating"
         },
         "drawGroup": {

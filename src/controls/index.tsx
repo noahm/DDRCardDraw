@@ -38,6 +38,7 @@ import { PlayerNamesControls } from "./player-names";
 import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
+import { getAvailableLevels } from "../game-data-utils";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -269,27 +270,46 @@ function GeneralSettings() {
   }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
+  const availableLevels = useMemo(
+    () => getAvailableLevels(gameData),
+    [gameData],
+  );
 
   if (!gameData) {
     return null;
   }
-  const { lvlMax, styles: gameStyles } = gameData.meta;
+  const { styles: gameStyles } = gameData.meta;
+
+  /**
+   * attempts to step to the next value of available levels for either bounds field
+   */
+  function setNextStateStep(
+    stateKey: "upperBound" | "lowerBound",
+    newValue: number,
+  ) {
+    const currentValue = configState[stateKey];
+    const currentIndex = availableLevels.indexOf(currentValue);
+    const direction = newValue > currentValue ? 1 : -1;
+    const newIndex = currentIndex + direction;
+    if (newIndex < 0 || newIndex >= availableLevels.length) {
+      console.error("cannot go outside of available levels");
+      return;
+    }
+    updateState({ [stateKey]: availableLevels[newIndex] });
+  }
 
   const handleLowerBoundChange = (newLow: number) => {
     if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
         newLow = upperBound;
       }
-      updateState({
-        lowerBound: newLow,
-      });
+      setNextStateStep("lowerBound", newLow);
     }
   };
+
   const handleUpperBoundChange = (newHigh: number) => {
     if (newHigh !== upperBound && !isNaN(newHigh)) {
-      updateState({
-        upperBound: newHigh,
-      });
+      setNextStateStep("upperBound", newHigh);
     }
   };
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
@@ -348,7 +368,7 @@ function GeneralSettings() {
               type="number"
               inputMode="numeric"
               value={lowerBound}
-              min={1}
+              min={availableLevels[0]}
               max={Math.max(upperBound, lowerBound, 1)}
               clampValueOnBlur
               onValueChange={handleLowerBoundChange}
@@ -367,9 +387,10 @@ function GeneralSettings() {
               fill
               type="number"
               inputMode="numeric"
+              stepSize={0.1}
               value={upperBound}
               min={lowerBound}
-              max={lvlMax}
+              max={availableLevels[availableLevels.length - 1]}
               clampValueOnBlur
               onValueChange={handleUpperBoundChange}
             />

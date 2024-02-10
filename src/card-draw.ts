@@ -5,6 +5,7 @@ import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
 import { getDiffAbbr } from "./game-data-utils";
+import { getAvailableLevels } from "./game-data-utils";
 
 export function getDrawnChart(
   gameData: GameData,
@@ -97,8 +98,9 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   /** all charts we will consider to be valid for this draw */
   const validCharts = new Map<number, Array<EligibleChart>>();
-  times(gameData.meta.lvlMax, (n) => {
-    validCharts.set(n, []);
+  const availableLevels = getAvailableLevels(gameData);
+  availableLevels.forEach((level) => {
+    validCharts.set(level, []);
   });
 
   for (const chart of eligibleCharts(configData, gameData)) {
@@ -130,10 +132,21 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   const loopEnd = (useWeights && groupSongsAt) || upperBound;
 
   // build an array of possible levels to pick from
-  for (let level = lowerBound; level <= loopEnd; level++) {
+  const startIndex = availableLevels.indexOf(lowerBound);
+  const endIndex = availableLevels.indexOf(loopEnd);
+  if (startIndex < 0 || endIndex < 0) {
+    console.error({
+      startIndex,
+      endIndex,
+      availableLevels,
+    });
+    throw new Error(`couldn't find start or end index in available levels`);
+  }
+  for (let levelIdx = startIndex; levelIdx <= endIndex; levelIdx++) {
+    const level = availableLevels[levelIdx];
     let weightAmount = 0;
     if (useWeights) {
-      weightAmount = weights[level];
+      weightAmount = weights.get(level) || 0;
       totalWeights += weightAmount;
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -150,7 +163,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   if (useWeights && forceDistribution) {
     for (let level = lowerBound; level <= loopEnd; level++) {
       const levelAsStr = level.toString();
-      const normalizedWeight = weights[level] / totalWeights;
+      const normalizedWeight = (weights.get(level) || 0) / totalWeights;
       maxDrawPerLevel[levelAsStr] = Math.ceil(
         normalizedWeight * numChartsToRandom,
       );

@@ -47,7 +47,6 @@ async function main() {
         { key: "exceed", color: "#0047AB" },
       ],
       flags: [],
-      lvlMax: 20,
     },
     defaults: {
       style: "single",

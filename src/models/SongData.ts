@@ -49,7 +49,6 @@ export interface GameData {
       color: string;
     }[];
     flags: UniqueStringArr1;
-    lvlMax: number;
     usesDrawGroups?: boolean;
   };
   /**
