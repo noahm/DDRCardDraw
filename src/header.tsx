@@ -7,7 +7,7 @@ import {
   Navbar,
   Popover,
 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import { Trash, InfoSign, Menu as MenuIcon, Help } from "@blueprintjs/icons";
 import { useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
@@ -26,18 +26,18 @@ export function Header() {
   const menu = (
     <Menu>
       <MenuItem
-        icon={IconNames.Trash}
+        icon={<Trash />}
         onClick={clearDrawings}
         text={t("clearDrawings")}
         disabled={!haveDrawings}
       />
       <MenuItem
-        icon={IconNames.INFO_SIGN}
+        icon={<InfoSign />}
         onClick={() => setAboutOpen(true)}
         text={t("credits")}
       />
       <MenuItem
-        icon="help"
+        icon={<Help />}
         target="_blank"
         href="https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md"
         text={t("help")}
@@ -59,7 +59,7 @@ export function Header() {
       </Dialog>
       <Navbar.Group align={Alignment.LEFT}>
         <Popover content={menu} placement="bottom-start">
-          <Button icon={IconNames.MENU} />
+          <Button icon={<MenuIcon />} />
         </Popover>
         <Navbar.Divider />
         <VersionSelect />

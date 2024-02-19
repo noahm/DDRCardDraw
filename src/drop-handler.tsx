@@ -12,6 +12,7 @@ import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
 import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
+import { Import } from "@blueprintjs/icons";
 
 export function DropHandler() {
   const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
@@ -185,7 +186,7 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
               intent="primary"
               onClick={handleConfirm}
               loading={saving}
-              icon="import"
+              icon={<Import />}
             >
               Import
             </Button>

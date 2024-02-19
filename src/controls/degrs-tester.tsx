@@ -18,6 +18,7 @@ import {
 } from "./degrs-state";
 import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
+import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 
 export function isDegrs(thing: { name: string; artist: string }) {
   return thing.name.startsWith('DEAD END("GROOVE');
@@ -87,7 +88,7 @@ export function DegrsTestButton() {
         <Button
           onClick={startTest}
           intent="danger"
-          icon={hasResults ? "repeat" : "warning-sign"}
+          icon={hasResults ? <Repeat /> : <WarningSign />}
         >
           {hasResults ? "Recompute" : "Compute"} DEGRS Forecast
         </Button>
@@ -99,7 +100,7 @@ export function DegrsTestButton() {
         </p>
       )}
       {hasResults && (
-        <Callout icon="rain">
+        <Callout icon={<Rain />}>
           Today's risk of DEGRS is {(results * 100).toFixed(1)}%
         </Callout>
       )}
@@ -115,7 +116,7 @@ export function TesterCard(props: SongCardProps) {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         title="DEGRS Emergency Response System"
-        icon="warning-sign"
+        icon={<WarningSign />}
       >
         <DialogBody>
           <DegrsTestButton />

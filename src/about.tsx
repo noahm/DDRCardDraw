@@ -1,6 +1,6 @@
 import { useIntl } from "react-intl";
 import { ButtonGroup, AnchorButton, UL, Classes, H2 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import { Comment, GitBranch, Chat } from "@blueprintjs/icons";
 
 function injectPumpoutLink(str: string) {
   const pieces = str.split("PUMPOUT");
@@ -38,21 +38,21 @@ export function About() {
             href="https://discord.gg/QPyEATsbP7"
             target="_blank"
             text={t({ id: "contact.discord" })}
-            icon={IconNames.Comment}
+            icon={<Comment size={20} />}
           />
           <AnchorButton
             large
             href="https://github.com/noahm/DDRCardDraw"
             target="_blank"
             text={t({ id: "contact.github" })}
-            icon={IconNames.GitBranch}
+            icon={<GitBranch size={20} />}
           />
           <AnchorButton
             large
             href="https://m.me/noah.manneschmidt"
             target="_blank"
             text={t({ id: "contact.facebook" })}
-            icon={IconNames.Chat}
+            icon={<Chat size={20} />}
           />
         </ButtonGroup>
       </div>

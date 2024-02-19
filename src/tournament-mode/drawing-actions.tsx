@@ -6,7 +6,16 @@ import {
   Popover,
   Tooltip,
 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import {
+  SendMessage,
+  Changes,
+  Share,
+  Camera,
+  Refresh,
+  NewPerson,
+  BlockedPerson,
+  Error,
+} from "@blueprintjs/icons";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import styles from "./drawing-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
@@ -41,12 +50,12 @@ export function DrawingActions() {
     remoteActions = (
       <Menu>
         <MenuItem
-          icon={IconNames.SendMessage}
+          icon={<SendMessage />}
           text={`Send to ${peerId}`}
           onClick={() => sendDrawing(getDrawing())}
         />
         <MenuItem
-          icon={IconNames.Changes}
+          icon={<Changes />}
           text={`Start sync with ${peerId}`}
           onClick={() => syncDrawing(drawingStore)}
         />
@@ -55,13 +64,13 @@ export function DrawingActions() {
   } else if (remotePeers.size > 1) {
     remoteActions = (
       <Menu>
-        <MenuItem icon={IconNames.SendMessage} text="Send to...">
+        <MenuItem icon={<SendMessage />} text="Send to...">
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => sendDrawing(getDrawing(), peerId)}
           />
         </MenuItem>
-        <MenuItem icon={IconNames.Changes} text="Start sync with...">
+        <MenuItem icon={<Changes />} text="Start sync with...">
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => syncDrawing(drawingStore, peerId)}
@@ -72,17 +81,13 @@ export function DrawingActions() {
   }
 
   const button = (
-    <Button
-      minimal
-      text={<Icon icon={IconNames.Share} />}
-      disabled={!remotePeers.size}
-    />
+    <Button minimal text={<Share />} disabled={!remotePeers.size} />
   );
 
   return (
     <>
       <div className={styles.networkButtons}>
-        {syncPeer && <Icon icon={IconNames.Changes} intent="success" />}
+        {syncPeer && <Icon icon={<Changes />} intent="success" />}
         {isConnected ? (
           remotePeers.size ? (
             <Popover content={remoteActions}>{button}</Popover>
@@ -93,7 +98,7 @@ export function DrawingActions() {
         <Tooltip content="Save Image">
           <Button
             minimal
-            icon={IconNames.Camera}
+            icon={<Camera />}
             onClick={async () => {
               const drawingId = getDrawing().id;
               const drawingElement = document.querySelector(
@@ -113,7 +118,7 @@ export function DrawingActions() {
         <Tooltip content="Redraw all charts">
           <Button
             minimal
-            icon={IconNames.Refresh}
+            icon={<Refresh />}
             onClick={() =>
               confirm(
                 "This will replace everything besides protects and pocket picks!",
@@ -123,7 +128,7 @@ export function DrawingActions() {
         </Tooltip>
         {process.env.NODE_ENV === "production" ? null : (
           <Tooltip content="Cause Error">
-            <Button minimal icon={IconNames.Error} onClick={showBoundary} />
+            <Button minimal icon={<Error />} onClick={showBoundary} />
           </Tooltip>
         )}
         {showLabels && (
@@ -131,7 +136,7 @@ export function DrawingActions() {
             <Tooltip content="Add Player">
               <Button
                 minimal
-                icon={IconNames.NewPerson}
+                icon={<NewPerson />}
                 onClick={() => {
                   updateDrawing((drawing) => {
                     const next = drawing.players.slice();
@@ -144,7 +149,7 @@ export function DrawingActions() {
             <Tooltip content="Remove Player" disabled={!hasPlayers}>
               <Button
                 minimal
-                icon={IconNames.BlockedPerson}
+                icon={<BlockedPerson />}
                 disabled={!hasPlayers}
                 onClick={() => {
                   updateDrawing((drawing) => {

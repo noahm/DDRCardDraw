@@ -20,7 +20,18 @@ import {
   Tabs,
   Tooltip,
 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import {
+  NewLayers,
+  Cog,
+  ThirdParty,
+  GlobeNetwork,
+  FloppyDisk,
+  Import,
+  Settings,
+  People,
+  CaretDown,
+  CaretRight,
+} from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { shallow } from "zustand/shallow";
@@ -132,10 +143,10 @@ export function HeaderControls() {
           <>
             <FormattedMessage id="controls.drawerTitle" />
             <ButtonGroup style={{ marginLeft: "10px" }}>
-              <Button icon="floppy-disk" onClick={saveConfig}>
+              <Button icon={<FloppyDisk />} onClick={saveConfig}>
                 Save
               </Button>
-              <Button icon="import" onClick={loadConfig}>
+              <Button icon={<Import />} onClick={loadConfig}>
                 Load
               </Button>
             </ButtonGroup>
@@ -156,7 +167,7 @@ export function HeaderControls() {
         <Tooltip disabled={hasGameData} content="Loading game data">
           <Button
             onClick={handleDraw}
-            icon={IconNames.NEW_LAYERS}
+            icon={<NewLayers />}
             intent={Intent.PRIMARY}
             disabled={!hasGameData}
           >
@@ -170,7 +181,7 @@ export function HeaderControls() {
           usePortal={false}
           position={Position.BOTTOM_RIGHT}
         >
-          <Button icon={IconNames.COG} onClick={openSettings} />
+          <Button icon={<Cog />} onClick={openSettings} />
         </Tooltip>
       </ButtonGroup>
     </>
@@ -184,15 +195,24 @@ function ControlsDrawer() {
   return (
     <div className={styles.drawer}>
       <Tabs id="settings" large>
-        <Tab id="general" icon="settings" panel={<GeneralSettings />}>
+        <Tab
+          id="general"
+          icon={<Settings className={Classes.TAB_ICON} />}
+          panel={<GeneralSettings />}
+        >
           {t("controls.tabs.general")}
         </Tab>
         <Tab
           id="network"
           icon={
             <Icon
-              className={Classes.TAB_ICON}
-              icon={hasPeers ? IconNames.ThirdParty : IconNames.GlobeNetwork}
+              icon={
+                hasPeers ? (
+                  <ThirdParty className={Classes.TAB_ICON} />
+                ) : (
+                  <GlobeNetwork className={Classes.TAB_ICON} />
+                )
+              }
               intent={isConnected ? "success" : "none"}
             />
           }
@@ -200,7 +220,11 @@ function ControlsDrawer() {
         >
           {t("controls.tabs.networking")}
         </Tab>
-        <Tab id="players" icon="people" panel={<PlayerNamesControls />}>
+        <Tab
+          id="players"
+          icon={<People className={Classes.TAB_ICON} />}
+          panel={<PlayerNamesControls />}
+        >
           {t("controls.tabs.players")}
         </Tab>
       </Tabs>
@@ -399,7 +423,7 @@ function GeneralSettings() {
       </div>
       <Button
         alignText="left"
-        rightIcon={expandFilters ? "caret-down" : "caret-right"}
+        rightIcon={expandFilters ? <CaretDown /> : <CaretRight />}
         onClick={() => setExpandFilters((p) => !p)}
       >
         {t("controls.hideShowFilters")}
