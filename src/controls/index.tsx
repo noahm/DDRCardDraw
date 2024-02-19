@@ -181,7 +181,11 @@ export function HeaderControls() {
           usePortal={false}
           position={Position.BOTTOM_RIGHT}
         >
-          <Button icon={<Cog />} onClick={openSettings} />
+          <Button
+            icon={<Cog />}
+            onClick={openSettings}
+            data-umami-event="settings-open"
+          />
         </Tooltip>
       </ButtonGroup>
     </>

@@ -35,6 +35,7 @@ export function Header() {
         icon={<InfoSign />}
         onClick={() => setAboutOpen(true)}
         text={t("credits")}
+        data-umami-event="about-open"
       />
       <MenuItem
         icon={<Help />}
@@ -59,7 +60,7 @@ export function Header() {
       </Dialog>
       <Navbar.Group align={Alignment.LEFT}>
         <Popover content={menu} placement="bottom-start">
-          <Button icon={<MenuIcon />} />
+          <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
         </Popover>
         <Navbar.Divider />
         <VersionSelect />

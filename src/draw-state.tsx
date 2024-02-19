@@ -48,6 +48,22 @@ function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
   });
 }
 
+declare const umami: {
+  track(
+    eventName?: string,
+    eventProperties?: Record<string, string | number | undefined>,
+  ): void;
+};
+
+function trackDraw(count: number | null, game?: string) {
+  if (typeof umami === "undefined") {
+    return;
+  }
+  const results =
+    count === null ? { result: "failed" } : { result: "success", count, game };
+  umami.track("cards-drawn", results);
+}
+
 export const useDrawState = create<DrawState>((set, get) => ({
   importedData: new Map(),
   gameData: null,
@@ -109,10 +125,12 @@ export const useDrawState = create<DrawState>((set, get) => ({
   drawSongs(config: ConfigState) {
     const state = get();
     if (!state.gameData) {
+      trackDraw(null);
       return false;
     }
 
     const drawing = draw(state.gameData, config);
+    trackDraw(drawing.charts.length, state.dataSetName);
     if (!drawing.charts.length) {
       set({
         lastDrawFailed: true,
