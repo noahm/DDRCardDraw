@@ -157,6 +157,10 @@
           "type": "number",
           "description": "in-game numeric rating"
         },
+        "sanbaiTier": {
+          "type": "number",
+          "description": "a more granular rating sourced from 3icecream, calculated based on community performance"
+        },
         "drawGroup": {
           "type": "number",
           "description": "tournament-specific grouping of charts (e.g. tier)"

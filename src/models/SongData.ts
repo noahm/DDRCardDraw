@@ -110,6 +110,10 @@ export interface Chart {
    */
   lvl: number;
   /**
+   * a more granular rating sourced from 3icecream, calculated based on community performance
+   */
+  sanbaiTier?: number;
+  /**
    * tournament-specific grouping of charts (e.g. tier)
    */
   drawGroup?: number;
