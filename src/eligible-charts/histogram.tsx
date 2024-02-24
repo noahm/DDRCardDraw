@@ -29,7 +29,7 @@ export function DiffHistogram({ charts }: Props) {
   const isNarrow = useIsNarrow();
   const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
   const gameData = useDrawState((s) => s.gameData);
-  const availableLevels = getAvailableLevels(gameData);
+  const availableLevels = getAvailableLevels(gameData, true);
   function formatLabel(idx: number) {
     const n = availableLevels[idx];
     if (!n) return "";
