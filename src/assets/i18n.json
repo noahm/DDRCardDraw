@@ -16,8 +16,8 @@
         "label": "Force Expected Distribution"
       },
       "group": {
-        "title": "All charts at a this level or above will be weighted as part of a shared \"bucket\".",
-        "label": "Group top end charts starting at"
+        "title": "All charts will be grouped into this many individual \"decks\" of cards and drawn from each with separate probabilities.",
+        "label": "Group cards into this many buckets"
       }
     },
     "add": "Add",

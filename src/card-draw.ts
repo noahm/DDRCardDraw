@@ -4,7 +4,7 @@ import { times } from "./utils";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
-import { getDiffAbbr } from "./game-data-utils";
+import { getAvailableLevels, getDiffAbbr } from "./game-data-utils";
 
 export function getDrawnChart(
   gameData: GameData,
@@ -77,12 +77,56 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
   }
 }
 
-function difficultyBucketForLvl(lvl: number, cfg: ConfigState) {
-  // merge in higher difficulty charts into a single group, if configured to do so
-  if (cfg.useWeights && cfg.groupSongsAt && cfg.groupSongsAt < lvl) {
-    return cfg.groupSongsAt;
+export type LevelRangeBucket = [low: number, high: number];
+export type BucketLvlRanges = Array<LevelRangeBucket>;
+export type LvlRanges = Array<number> | BucketLvlRanges;
+
+/**
+ *
+ * @param cfg
+ * @param availableLvls prefer granular
+ * @returns
+ */
+export function getBuckets(
+  cfg: Pick<
+    ConfigState,
+    "useWeights" | "probabilityBucketCount" | "upperBound" | "lowerBound"
+  >,
+  availableLvls: Array<number>,
+): LvlRanges {
+  const { useWeights, probabilityBucketCount, upperBound, lowerBound } = cfg;
+  const absoluteRangeSize = upperBound - lowerBound + 1;
+  if (!useWeights || !probabilityBucketCount) {
+    return times(absoluteRangeSize, (n) => n - 1 + lowerBound);
   }
-  return lvl;
+  const bucketRangeSize = absoluteRangeSize / probabilityBucketCount;
+  let lvlIndex = availableLvls.indexOf(lowerBound);
+  return times<LevelRangeBucket>(probabilityBucketCount, () => {
+    const low = availableLvls[lvlIndex];
+
+    while (
+      lvlIndex < availableLvls.length &&
+      availableLvls[lvlIndex] < low + bucketRangeSize
+    ) {
+      lvlIndex++;
+    }
+
+    return [low, availableLvls[lvlIndex - 1]];
+  });
+}
+
+function bucketIndexForLvl(lvl: number, buckets: LvlRanges) {
+  for (let idx = 0; idx < buckets.length; idx++) {
+    const bucket = buckets[idx];
+    if (typeof bucket === "number") {
+      if (bucket === lvl) return idx;
+    } else {
+      if (lvl >= bucket[0] && lvl <= bucket[1]) {
+        return idx;
+      }
+    }
+  }
+  return null;
 }
 
 /**
@@ -97,23 +141,26 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     useWeights,
     forceDistribution,
     weights,
-    groupSongsAt,
     defaultPlayersPerDraw,
   } = configData;
 
-  /** all charts we will consider to be valid for this draw */
+  /** all charts we will consider to be valid for this draw, mapped by bucket index */
   const validCharts = new Map<number, Array<EligibleChart>>();
 
+  const availableLvls = getAvailableLevels(gameData, true);
+  const buckets = getBuckets(configData, availableLvls);
+
   for (const chart of eligibleCharts(configData, gameData)) {
-    const bucketLvl = difficultyBucketForLvl(
+    const bucketIdx = bucketIndexForLvl(
       chart.drawGroup || chart.level,
-      configData,
+      buckets,
     );
-    const chartsInBucket = validCharts.get(bucketLvl);
+    if (!bucketIdx) continue;
+    const chartsInBucket = validCharts.get(bucketIdx);
     if (chartsInBucket) {
       chartsInBucket.push(chart);
     } else {
-      validCharts.set(bucketLvl, [chart]);
+      validCharts.set(bucketIdx, [chart]);
     }
   }
 
@@ -134,15 +181,16 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   const requiredDrawDifficulties: number[] = [];
 
-  for (const [bucketLvl, charts] of validCharts.entries()) {
+  for (const bucketIndex of weights.keys()) {
     let weightAmount = 0;
     if (useWeights) {
-      weightAmount = weights.get(bucketLvl) || 0;
+      weightAmount = weights[bucketIndex] || 0;
       totalWeights += weightAmount;
     } else {
-      weightAmount = charts.length;
+      const chartsInBucket = validCharts.get(bucketIndex);
+      weightAmount = chartsInBucket?.length || 0;
     }
-    times(weightAmount, () => distribution.push(bucketLvl));
+    times(weightAmount, () => distribution.push(bucketIndex));
   }
 
   // If custom weights are used, expectedDrawsPerLevel[level] will be the maximum number
@@ -152,7 +200,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
     for (const bucketLvl of validCharts.keys()) {
-      const normalizedWeight = (weights.get(bucketLvl) || 0) / totalWeights;
+      const normalizedWeight = (weights[bucketLvl] || 0) / totalWeights;
       const maxForThisLevel = Math.ceil(normalizedWeight * numChartsToRandom);
       maxDrawPerLevel.set(bucketLvl, maxForThisLevel);
       // setup minimum draws
@@ -181,11 +229,11 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       chosenBucketLvl =
         distribution[Math.floor(Math.random() * distribution.length)];
     }
-    if (useWeights && groupSongsAt && groupSongsAt < chosenBucketLvl) {
-      chosenBucketLvl = groupSongsAt;
+    const selectableCharts = validCharts.get(chosenBucketLvl);
+    if (!selectableCharts) {
+      // something bad happened?!
+      break;
     }
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const selectableCharts = validCharts.get(chosenBucketLvl)!;
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];
 

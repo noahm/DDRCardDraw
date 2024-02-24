@@ -98,7 +98,7 @@ function buildPersistedConfig(): PersistedConfigV1 {
     ...configState,
     difficulties: Array.from(configState.difficulties),
     flags: Array.from(configState.flags),
-    weights: Array.from(configState.weights),
+    // weights: Array.from(configState.weights),
   };
   const ret: PersistedConfigV1 = {
     version: 1,
@@ -131,7 +131,7 @@ async function loadPersistedConfig(saved: PersistedConfigV1) {
     ...migrateOldNames(saved.configState),
     difficulties: new Set(saved.configState.difficulties),
     flags: new Set(saved.configState.flags),
-    weights: new Map(saved.configState.weights),
+    // weights: new Map(saved.configState.weights),
   });
 }
 
