@@ -207,7 +207,7 @@ export function SongCard(props: Props) {
           <div className={styles.bpm}>{bpm} BPM</div>
           {flags.includes("shock") && <ShockBadge />}
           <div className={styles.difficulty}>
-            {diffAbbr} {level}
+            {diffAbbr} {level.toFixed(2)}
           </div>
         </div>
       </Popover>
