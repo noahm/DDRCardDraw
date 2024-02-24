@@ -106,7 +106,8 @@ export function getBuckets(
 
     while (
       lvlIndex < availableLvls.length &&
-      availableLvls[lvlIndex] < low + bucketRangeSize
+      availableLvls[lvlIndex] < low + bucketRangeSize &&
+      availableLvls[lvlIndex] < upperBound + 1
     ) {
       lvlIndex++;
     }
