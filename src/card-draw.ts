@@ -5,7 +5,6 @@ import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
 import { getDiffAbbr } from "./game-data-utils";
-import { getAvailableLevels } from "./game-data-utils";
 
 export function getDrawnChart(
   gameData: GameData,
@@ -78,6 +77,14 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
   }
 }
 
+function difficultyBucketForLvl(lvl: number, cfg: ConfigState) {
+  // merge in higher difficulty charts into a single group, if configured to do so
+  if (cfg.useWeights && cfg.groupSongsAt && cfg.groupSongsAt < lvl) {
+    return cfg.groupSongsAt;
+  }
+  return lvl;
+}
+
 /**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
@@ -87,8 +94,6 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
 export function draw(gameData: GameData, configData: ConfigState): Drawing {
   const {
     chartCount: numChartsToRandom,
-    upperBound,
-    lowerBound,
     useWeights,
     forceDistribution,
     weights,
@@ -98,18 +103,18 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   /** all charts we will consider to be valid for this draw */
   const validCharts = new Map<number, Array<EligibleChart>>();
-  const availableLevels = getAvailableLevels(gameData);
-  availableLevels.forEach((level) => {
-    validCharts.set(level, []);
-  });
 
   for (const chart of eligibleCharts(configData, gameData)) {
-    let levelMetric = chart.drawGroup || chart.level;
-    // merge in higher difficulty charts into a single group, if configured to do so
-    if (useWeights && groupSongsAt && groupSongsAt < levelMetric) {
-      levelMetric = groupSongsAt;
+    const bucketLvl = difficultyBucketForLvl(
+      chart.drawGroup || chart.level,
+      configData,
+    );
+    const chartsInBucket = validCharts.get(bucketLvl);
+    if (chartsInBucket) {
+      chartsInBucket.push(chart);
+    } else {
+      validCharts.set(bucketLvl, [chart]);
     }
-    validCharts.get(levelMetric)?.push(chart);
   }
 
   /**
@@ -123,36 +128,21 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   /**
    * Maximum number of charts we can expect to draw of each level. Only used with `forceDistribution`
    */
-  const maxDrawPerLevel: Record<string, number> = {};
+  const maxDrawPerLevel = new Map<number, number>();
   /**
    * List of difficulty levels that must be picked first, to meet minimums. Only used with `forceDistribution`
    */
   const requiredDrawDifficulties: number[] = [];
 
-  const loopEnd = (useWeights && groupSongsAt) || upperBound;
-
-  // build an array of possible levels to pick from
-  const startIndex = availableLevels.indexOf(lowerBound);
-  const endIndex = availableLevels.indexOf(loopEnd);
-  if (startIndex < 0 || endIndex < 0) {
-    console.error({
-      startIndex,
-      endIndex,
-      availableLevels,
-    });
-    throw new Error(`couldn't find start or end index in available levels`);
-  }
-  for (let levelIdx = startIndex; levelIdx <= endIndex; levelIdx++) {
-    const level = availableLevels[levelIdx];
+  for (const [bucketLvl, charts] of validCharts.entries()) {
     let weightAmount = 0;
     if (useWeights) {
-      weightAmount = weights.get(level) || 0;
+      weightAmount = weights.get(bucketLvl) || 0;
       totalWeights += weightAmount;
     } else {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      weightAmount = validCharts.get(level)!.length;
+      weightAmount = charts.length;
     }
-    times(weightAmount, () => distribution.push(level));
+    times(weightAmount, () => distribution.push(bucketLvl));
   }
 
   // If custom weights are used, expectedDrawsPerLevel[level] will be the maximum number
@@ -161,24 +151,22 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // so a level with a weight of 15% can only show up on at most 1 card, a level with
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
-    for (let level = lowerBound; level <= loopEnd; level++) {
-      const levelAsStr = level.toString();
-      const normalizedWeight = (weights.get(level) || 0) / totalWeights;
-      maxDrawPerLevel[levelAsStr] = Math.ceil(
-        normalizedWeight * numChartsToRandom,
-      );
+    for (const bucketLvl of validCharts.keys()) {
+      const normalizedWeight = (weights.get(bucketLvl) || 0) / totalWeights;
+      const maxForThisLevel = Math.ceil(normalizedWeight * numChartsToRandom);
+      maxDrawPerLevel.set(bucketLvl, maxForThisLevel);
       // setup minimum draws
-      for (let i = 1; i < maxDrawPerLevel[levelAsStr]; i++) {
-        requiredDrawDifficulties.push(level);
+      for (let i = 1; i < maxForThisLevel; i++) {
+        requiredDrawDifficulties.push(bucketLvl);
       }
     }
   }
 
   const drawnCharts: DrawnChart[] = [];
   /**
-   * Record of how many songs of each difficulty have been drawn so far
+   * Record of how many songs of each bucket lvl have been drawn so far
    */
-  const difficultyCounts: Record<string, number> = {};
+  const difficultyCounts = new Map<number, number>();
 
   while (drawnCharts.length < numChartsToRandom) {
     if (distribution.length === 0) {
@@ -188,16 +176,16 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
 
     // first pick a difficulty (with priority to minimum draws)
-    let chosenDifficulty = requiredDrawDifficulties.shift();
-    if (!chosenDifficulty) {
-      chosenDifficulty =
+    let chosenBucketLvl = requiredDrawDifficulties.shift();
+    if (!chosenBucketLvl) {
+      chosenBucketLvl =
         distribution[Math.floor(Math.random() * distribution.length)];
     }
-    if (useWeights && groupSongsAt && groupSongsAt < chosenDifficulty) {
-      chosenDifficulty = groupSongsAt;
+    if (useWeights && groupSongsAt && groupSongsAt < chosenBucketLvl) {
+      chosenBucketLvl = groupSongsAt;
     }
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const selectableCharts = validCharts.get(chosenDifficulty)!;
+    const selectableCharts = validCharts.get(chosenBucketLvl)!;
     const randomIndex = Math.floor(Math.random() * selectableCharts.length);
     const randomChart = selectableCharts[randomIndex];
 
@@ -210,22 +198,21 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
-      if (!difficultyCounts[chosenDifficulty]) {
-        difficultyCounts[chosenDifficulty] = 1;
-      } else {
-        difficultyCounts[chosenDifficulty]++;
-      }
+      difficultyCounts.set(
+        chosenBucketLvl,
+        (difficultyCounts.get(chosenBucketLvl) || 0) + 1,
+      );
     }
 
     // check if maximum number of expected occurrences of this level of chart has been reached
     const reachedExpected =
       forceDistribution &&
-      difficultyCounts[chosenDifficulty.toString()] ===
-        maxDrawPerLevel[chosenDifficulty.toString()];
+      difficultyCounts.get(chosenBucketLvl) ===
+        maxDrawPerLevel.get(chosenBucketLvl);
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty
-      distribution = distribution.filter((n) => n !== chosenDifficulty);
+      distribution = distribution.filter((n) => n !== chosenBucketLvl);
     }
   }
 
@@ -245,7 +232,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 /**
  * is this an accurate F-Y shuffle? who knows!?!
  */
-export function shuffle<Item>(arr: Array<Item>): Array<Item> {
+function shuffle<Item>(arr: Array<Item>): Array<Item> {
   const ret = arr.slice();
   for (let i = 0; i < ret.length; i++) {
     const randomUpcomingIndex =

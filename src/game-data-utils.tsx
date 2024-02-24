@@ -27,13 +27,18 @@ export function AbbrDifficulty({ diffClass }: AbbrProps) {
  * get a sorted list of unique difficutly levels from a game data file
  * @credit Albert Shin, from albshin/PerformaiCardDraw
  */
-export function getAvailableLevels(gameData: GameData | null): number[] {
+export function getAvailableLevels(
+  gameData: GameData | null,
+  useGranular = false,
+): number[] {
   if (gameData === null) {
     return [];
   }
   const levelSet = new Set<number>();
   gameData.songs.forEach((song) => {
-    song.charts.forEach((chart) => levelSet.add(chart.lvl));
+    song.charts.forEach((chart) =>
+      levelSet.add(useGranular ? chart.sanbaiTier || chart.lvl : chart.lvl),
+    );
   });
   return [...levelSet].sort((a, b) => a - b);
 }
