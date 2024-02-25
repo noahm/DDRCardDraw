@@ -172,3 +172,39 @@ export interface ReadonlyCountingSet<T> {
   values(): IterableIterator<T>;
   valuesWithCount(): IterableIterator<[T, number]>;
 }
+
+/**
+ * Split an array up into chunks of a regular size
+ * @param chunkSize
+ * @param arr
+ */
+export function* chunkBy<T>(chunkSize: number, arr: Array<T>) {
+  let index = 0;
+  while (index < arr.length) {
+    yield arr.slice(index, index + chunkSize);
+    index += chunkSize;
+  }
+}
+
+export function* chunkInPieces<T>(pieces: number, arr: Array<T>) {
+  let index = 0;
+  let chunksYielded = 0;
+  let chunkSize = Math.floor(arr.length / pieces);
+  if (chunkSize === 0) {
+    console.warn("Too many pieces to chunk this small an array", {
+      pieces,
+      arr,
+    });
+    chunkSize = 1;
+  }
+  while (index < arr.length) {
+    if (chunksYielded + 1 === pieces) {
+      // this is our last chunk, so just return the rest of the array
+      yield arr.slice(index);
+      return;
+    }
+    yield arr.slice(index, index + chunkSize);
+    chunksYielded++;
+    index += chunkSize;
+  }
+}

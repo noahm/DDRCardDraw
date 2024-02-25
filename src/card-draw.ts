@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { times } from "./utils";
+import { chunkInPieces, times } from "./utils";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
@@ -76,7 +76,13 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
           chart.sanbaiTier || chart.lvl,
           buckets,
         );
-        if (bucketIdx === null || !config.weights[bucketIdx]) {
+        if (bucketIdx === null) {
+          // this chart is completely outside the difficulty range
+          // (shouldn't hit, because `chartIsValid` above filters based on the raw range)
+          continue;
+        }
+        if (!config.weights[bucketIdx]) {
+          // this chart belongs to a bucket with 0 or null weight applied
           continue;
         }
       }
@@ -109,24 +115,25 @@ export function getBuckets(
   if (!useWeights || !probabilityBucketCount) {
     return times(absoluteRangeSize, (n) => n - 1 + lowerBound);
   }
-  const bucketRangeSize = absoluteRangeSize / probabilityBucketCount;
-  let lvlIndex = availableLvls.indexOf(lowerBound);
-  return times<LevelRangeBucket>(probabilityBucketCount, () => {
-    const low = availableLvls[lvlIndex];
-
-    while (
-      lvlIndex < availableLvls.length &&
-      availableLvls[lvlIndex] < low + bucketRangeSize &&
-      availableLvls[lvlIndex] < upperBound + 1
-    ) {
-      lvlIndex++;
-    }
-
-    return [low, availableLvls[lvlIndex - 1]];
-  });
+  const lowerIndex = availableLvls.indexOf(lowerBound);
+  const upperIndex = availableLvls.indexOf(upperBound);
+  const levelsInRange = availableLvls.slice(lowerIndex, upperIndex + 1);
+  return Array.from(chunkInPieces(probabilityBucketCount, levelsInRange)).map(
+    (levels): LevelRangeBucket => {
+      return [levels[0], levels[levels.length - 1]];
+    },
+  );
 }
 
-function bucketIndexForLvl(lvl: number, buckets: LvlRanges) {
+/**
+ * Given a chart's difficulty level (or tier number), returns the appropriate index for
+ * its appropriate bucket within the given buckets array, or null if it doesn't fit into
+ * the given buckets
+ * @param lvl the difficulty level of a chart, or a tier number
+ * @param buckets computed set of difficulty buckets
+ * @returns index of a bucket within `buckets` or null
+ */
+function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
   for (let idx = 0; idx < buckets.length; idx++) {
     const bucket = buckets[idx];
     if (typeof bucket === "number") {
