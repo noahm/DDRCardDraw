@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { chunkInPieces, times } from "./utils";
+import { chunkInPieces, pickRandomItem, shuffle, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
@@ -118,8 +118,11 @@ export function getBuckets(
     return times(absoluteRangeSize, (n) => n - 1 + lowerBound);
   }
   const lowerIndex = availableLvls.indexOf(lowerBound);
-  const upperIndex = availableLvls.indexOf(upperBound);
-  const levelsInRange = availableLvls.slice(lowerIndex, upperIndex + 1);
+  let upperIndex: number | undefined = availableLvls.indexOf(upperBound + 1);
+  if (upperIndex === -1) {
+    upperIndex = undefined;
+  }
+  const levelsInRange = availableLvls.slice(lowerIndex, upperIndex);
   return Array.from(chunkInPieces(probabilityBucketCount, levelsInRange)).map(
     (levels): LevelRangeBucket => {
       return [levels[0], levels[levels.length - 1]];
@@ -139,7 +142,7 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
   for (let idx = 0; idx < buckets.length; idx++) {
     const bucket = buckets[idx];
     if (typeof bucket === "number") {
-      if (bucket === lvl) return idx;
+      if (bucket === Math.floor(lvl)) return idx;
     } else {
       if (lvl >= bucket[0] && lvl <= bucket[1]) {
         return idx;
@@ -179,46 +182,53 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   }
 
   /**
-   * the "deck" of probability bucket indexes to pick from
+   * a "deck" of a probability bucket indexes. as each bucket has weight added to it,
+   * we add more copies of its index to this deck, making it more likely to be drawn
+   * during the actual card draw process later on. by default this is just a deck referencing
+   * a single bucket, which is the only bucket used outside of `useWeights` mode.
    */
-  let distribution: Array<number> = [];
+  let bucketDistribution: Array<number> = [0];
   /**
-   * Total amount of weight used, so we can determine expected outcome below
+   * Maximum number of charts we can expect to draw for each bucket index. Only used with `forceDistribution`
    */
-  let totalWeights = 0;
-  /**
-   * Maximum number of charts we can expect to draw of each level. Only used with `forceDistribution`
-   */
-  const maxDrawPerLevel = new Map<number, number>();
+  const maxDrawPerBucket = new Map<number, number>();
   /**
    * List of bucket indexes that must be picked first, to meet minimums. Only used with `forceDistribution`
    */
   const requiredDrawIndexes: number[] = [];
 
-  for (const [bucketIndex, chartsInBucket] of validCharts.entries()) {
-    let weightAmount = 0;
-    if (useWeights) {
-      weightAmount = weights[bucketIndex] || 0;
-      totalWeights += weightAmount;
-    } else {
-      weightAmount = chartsInBucket.length || 0;
+  if (useWeights) {
+    // build a distribution based on the weights used for each bucket
+    bucketDistribution = [];
+    for (const bucketIndex of validCharts.keys()) {
+      const weightAmount = weights[bucketIndex] || 0;
+      // add the appropriate amount of "cards" representing this bucket to the overall distro
+      times(weightAmount, () => bucketDistribution.push(bucketIndex));
     }
-    times(weightAmount, () => distribution.push(bucketIndex));
-  }
 
-  // If custom weights are used, expectedDrawsPerLevel[level] will be the maximum number
-  // of cards of that level allowed in the card draw.
-  // e.g. For a 5-card draw, we increase the cap by 1 at every 100%/5 = 20% threshold,
-  // so a level with a weight of 15% can only show up on at most 1 card, a level with
-  // a weight of 30% can only show up on at most 2 cards, etc.
-  if (useWeights && forceDistribution) {
-    for (const bucketIdx of validCharts.keys()) {
-      const normalizedWeight = (weights[bucketIdx] || 0) / totalWeights;
-      const maxForThisLevel = Math.ceil(normalizedWeight * numChartsToRandom);
-      maxDrawPerLevel.set(bucketIdx, maxForThisLevel);
-      // setup minimum draws
-      for (let i = 1; i < maxForThisLevel; i++) {
-        requiredDrawIndexes.push(bucketIdx);
+    // If we are focing distribution, maxDrawPerBucket[level] will be the maximum number
+    // of cards of that level allowed in the card draw.
+    // e.g. For a 5-card draw, we increase the cap by 1 at every 100%/5 = 20% threshold,
+    // so a level with a weight of 15% can only show up on at most 1 card, a level with
+    // a weight of 30% can only show up on at most 2 cards, etc.
+    if (forceDistribution) {
+      /**
+       * Total amount of weight used, so we can determine expected outcomes
+       */
+      const totalWeightUsed = weights.reduce<number>(
+        (sum, current) => sum + (current || 0),
+        0,
+      );
+      for (const bucketIdx of validCharts.keys()) {
+        const normalizedWeight = (weights[bucketIdx] || 0) / totalWeightUsed;
+        const maxForThisBucket = Math.ceil(
+          normalizedWeight * numChartsToRandom,
+        );
+        maxDrawPerBucket.set(bucketIdx, maxForThisBucket);
+        // setup minimum draws
+        for (let i = 1; i < maxForThisBucket; i++) {
+          requiredDrawIndexes.push(bucketIdx);
+        }
       }
     }
   }
@@ -229,8 +239,9 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   const difficultyCounts = new CountingSet<number>();
 
+  // OK, setup work is done, here's whre we actually draw the cards!
   while (drawnCharts.length < numChartsToRandom) {
-    if (distribution.length === 0) {
+    if (bucketDistribution.length === 0) {
       // no more songs available to pick in the requested range
       // will be returning fewer than requested number of charts
       break;
@@ -239,7 +250,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     // first pick a difficulty (with priority to minimum draws)
     let chosenBucketIdx = requiredDrawIndexes.shift();
     if (chosenBucketIdx === undefined) {
-      [, chosenBucketIdx] = pickRandomItem(distribution);
+      [, chosenBucketIdx] = pickRandomItem(bucketDistribution);
     }
     if (chosenBucketIdx === undefined) {
       // nothing left to draw
@@ -268,11 +279,13 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     const reachedExpected =
       forceDistribution &&
       difficultyCounts.get(chosenBucketIdx) ===
-        maxDrawPerLevel.get(chosenBucketIdx);
+        maxDrawPerBucket.get(chosenBucketIdx);
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty
-      distribution = distribution.filter((n) => n !== chosenBucketIdx);
+      bucketDistribution = bucketDistribution.filter(
+        (n) => n !== chosenBucketIdx,
+      );
     }
   }
 
@@ -287,30 +300,4 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     pocketPicks: [],
     winners: [],
   };
-}
-
-/**
- * is this an accurate F-Y shuffle? who knows!?!
- */
-function shuffle<Item>(arr: Array<Item>): Array<Item> {
-  const ret = arr.slice();
-  for (let i = 0; i < ret.length; i++) {
-    const randomUpcomingIndex =
-      i + Math.floor(Math.random() * (ret.length - i));
-    const currentItem = ret[i];
-    ret[i] = ret[randomUpcomingIndex];
-    ret[randomUpcomingIndex] = currentItem;
-  }
-  return ret;
-}
-
-function pickRandomItem<T>(
-  list: Array<T>,
-): [idx: number, item: T] | [undefined, undefined] {
-  if (!list.length) {
-    return [undefined, undefined];
-  }
-  const idx = Math.floor(Math.random() * list.length);
-  const item = list[idx];
-  return [idx, item];
 }
