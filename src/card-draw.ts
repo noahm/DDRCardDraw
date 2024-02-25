@@ -1,6 +1,8 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
 import { chunkInPieces, times } from "./utils";
+import { CountingSet } from "./utils/counting-set";
+import { DefaultingMap } from "./utils/defaulting-set";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
@@ -163,23 +165,17 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   } = configData;
 
   /** all charts we will consider to be valid for this draw, mapped by bucket index */
-  const validCharts = new Map<number, Array<EligibleChart>>();
+  const validCharts = new DefaultingMap<number, Array<EligibleChart>>(() => []);
 
   const availableLvls = getAvailableLevels(gameData, true);
   const buckets = getBuckets(configData, availableLvls);
 
   for (const chart of eligibleCharts(configData, gameData)) {
-    const bucketIdx = bucketIndexForLvl(
-      chart.drawGroup || chart.level,
-      buckets,
-    );
+    const bucketIdx = useWeights
+      ? bucketIndexForLvl(chart.drawGroup || chart.level, buckets)
+      : 0; // outside of weights mode we just put all songs into one shared bucket
     if (bucketIdx === null) continue;
-    const chartsInBucket = validCharts.get(bucketIdx);
-    if (chartsInBucket) {
-      chartsInBucket.push(chart);
-    } else {
-      validCharts.set(bucketIdx, [chart]);
-    }
+    validCharts.get(bucketIdx).push(chart);
   }
 
   /**
@@ -229,9 +225,9 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   const drawnCharts: DrawnChart[] = [];
   /**
-   * Record of how many songs of each bucket lvl have been drawn so far
+   * Record of how many songs of each bucket index have been drawn so far
    */
-  const difficultyCounts = new Map<number, number>();
+  const difficultyCounts = new CountingSet<number>();
 
   while (drawnCharts.length < numChartsToRandom) {
     if (distribution.length === 0) {
@@ -265,10 +261,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
-      difficultyCounts.set(
-        chosenBucketIdx,
-        (difficultyCounts.get(chosenBucketIdx) || 0) + 1,
-      );
+      difficultyCounts.add(chosenBucketIdx);
     }
 
     // check if maximum number of expected occurrences of this level of chart has been reached

@@ -8,7 +8,7 @@ import {
   VictoryLabel,
 } from "victory";
 import { useMemo } from "react";
-import { CountingSet } from "../utils";
+import { CountingSet } from "../utils/counting-set";
 import { useDrawState } from "../draw-state";
 import { useIntl } from "../hooks/useIntl";
 import {
