@@ -60,6 +60,7 @@ export function chartIsValid(
 }
 
 export function* eligibleCharts(config: ConfigState, gameData: GameData) {
+  const buckets = getBuckets(config, getAvailableLevels(gameData, true));
   for (const currentSong of gameData.songs) {
     if (!songIsValid(config, currentSong)) {
       continue;
@@ -69,6 +70,15 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
     for (const chart of charts) {
       if (!chartIsValid(config, chart)) {
         continue;
+      }
+      if (config.useWeights) {
+        const bucketIdx = bucketIndexForLvl(
+          chart.sanbaiTier || chart.lvl,
+          buckets,
+        );
+        if (bucketIdx === null || !config.weights[bucketIdx]) {
+          continue;
+        }
       }
 
       // add chart to deck
