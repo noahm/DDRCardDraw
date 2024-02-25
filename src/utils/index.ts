@@ -132,7 +132,7 @@ export function* chunkBy<T>(chunkSize: number, arr: Array<T>) {
 export function* chunkInPieces<T>(pieces: number, arr: Array<T>) {
   let index = 0;
   let chunksYielded = 0;
-  let chunkSize = Math.floor(arr.length / pieces);
+  let chunkSize = Math.round(arr.length / pieces);
   if (chunkSize === 0) {
     console.warn("Too many pieces to chunk this small an array", {
       pieces,

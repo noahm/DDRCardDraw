@@ -75,7 +75,7 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
       }
       if (config.useWeights) {
         const bucketIdx = bucketIndexForLvl(
-          chart.sanbaiTier || chart.lvl,
+          chart.drawGroup || chart.sanbaiTier || chart.lvl,
           buckets,
         );
         if (bucketIdx === null) {
