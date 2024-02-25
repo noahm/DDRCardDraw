@@ -20,6 +20,9 @@ function printGroup(group: LevelRangeBucket | number) {
   if (typeof group === "number") {
     return group.toString();
   } else {
+    if (group[0] === group[1]) {
+      return group[0].toString();
+    }
     return `${group[0]}-${group[1]}`;
   }
 }
