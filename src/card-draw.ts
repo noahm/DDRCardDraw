@@ -166,7 +166,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       chart.drawGroup || chart.level,
       buckets,
     );
-    if (!bucketIdx) continue;
+    if (bucketIdx === null) continue;
     const chartsInBucket = validCharts.get(bucketIdx);
     if (chartsInBucket) {
       chartsInBucket.push(chart);
@@ -176,7 +176,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   }
 
   /**
-   * the "deck" of difficulty levels to pick from
+   * the "deck" of probability bucket indexes to pick from
    */
   let distribution: Array<number> = [];
   /**
@@ -188,18 +188,17 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    */
   const maxDrawPerLevel = new Map<number, number>();
   /**
-   * List of difficulty levels that must be picked first, to meet minimums. Only used with `forceDistribution`
+   * List of bucket indexes that must be picked first, to meet minimums. Only used with `forceDistribution`
    */
-  const requiredDrawDifficulties: number[] = [];
+  const requiredDrawIndexes: number[] = [];
 
-  for (const bucketIndex of weights.keys()) {
+  for (const [bucketIndex, chartsInBucket] of validCharts.entries()) {
     let weightAmount = 0;
     if (useWeights) {
       weightAmount = weights[bucketIndex] || 0;
       totalWeights += weightAmount;
     } else {
-      const chartsInBucket = validCharts.get(bucketIndex);
-      weightAmount = chartsInBucket?.length || 0;
+      weightAmount = chartsInBucket.length || 0;
     }
     times(weightAmount, () => distribution.push(bucketIndex));
   }
@@ -210,13 +209,13 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   // so a level with a weight of 15% can only show up on at most 1 card, a level with
   // a weight of 30% can only show up on at most 2 cards, etc.
   if (useWeights && forceDistribution) {
-    for (const bucketLvl of validCharts.keys()) {
-      const normalizedWeight = (weights[bucketLvl] || 0) / totalWeights;
+    for (const bucketIdx of validCharts.keys()) {
+      const normalizedWeight = (weights[bucketIdx] || 0) / totalWeights;
       const maxForThisLevel = Math.ceil(normalizedWeight * numChartsToRandom);
-      maxDrawPerLevel.set(bucketLvl, maxForThisLevel);
+      maxDrawPerLevel.set(bucketIdx, maxForThisLevel);
       // setup minimum draws
       for (let i = 1; i < maxForThisLevel; i++) {
-        requiredDrawDifficulties.push(bucketLvl);
+        requiredDrawIndexes.push(bucketIdx);
       }
     }
   }
@@ -235,18 +234,20 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
 
     // first pick a difficulty (with priority to minimum draws)
-    let chosenBucketLvl = requiredDrawDifficulties.shift();
-    if (!chosenBucketLvl) {
-      chosenBucketLvl =
-        distribution[Math.floor(Math.random() * distribution.length)];
+    let chosenBucketIdx = requiredDrawIndexes.shift();
+    if (chosenBucketIdx === undefined) {
+      [, chosenBucketIdx] = pickRandomItem(distribution);
     }
-    const selectableCharts = validCharts.get(chosenBucketLvl);
+    if (chosenBucketIdx === undefined) {
+      // nothing left to draw
+      break;
+    }
+    const selectableCharts = validCharts.get(chosenBucketIdx);
     if (!selectableCharts) {
       // something bad happened?!
       break;
     }
-    const randomIndex = Math.floor(Math.random() * selectableCharts.length);
-    const randomChart = selectableCharts[randomIndex];
+    const [randomIndex, randomChart] = pickRandomItem(selectableCharts);
 
     if (randomChart) {
       // Save it in our list of drawn charts
@@ -258,20 +259,20 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
       difficultyCounts.set(
-        chosenBucketLvl,
-        (difficultyCounts.get(chosenBucketLvl) || 0) + 1,
+        chosenBucketIdx,
+        (difficultyCounts.get(chosenBucketIdx) || 0) + 1,
       );
     }
 
     // check if maximum number of expected occurrences of this level of chart has been reached
     const reachedExpected =
       forceDistribution &&
-      difficultyCounts.get(chosenBucketLvl) ===
-        maxDrawPerLevel.get(chosenBucketLvl);
+      difficultyCounts.get(chosenBucketIdx) ===
+        maxDrawPerLevel.get(chosenBucketIdx);
 
     if (selectableCharts.length === 0 || reachedExpected) {
       // can't pick any more songs of this difficulty
-      distribution = distribution.filter((n) => n !== chosenBucketLvl);
+      distribution = distribution.filter((n) => n !== chosenBucketIdx);
     }
   }
 
@@ -301,4 +302,15 @@ function shuffle<Item>(arr: Array<Item>): Array<Item> {
     ret[randomUpcomingIndex] = currentItem;
   }
   return ret;
+}
+
+function pickRandomItem<T>(
+  list: Array<T>,
+): [idx: number, item: T] | [undefined, undefined] {
+  if (!list.length) {
+    return [undefined, undefined];
+  }
+  const idx = Math.floor(Math.random() * list.length);
+  const item = list[idx];
+  return [idx, item];
 }
