@@ -7,7 +7,7 @@ import {
   Switch,
 } from "@blueprintjs/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { PackWithSongs, parsePack } from "simfile-parser/browser";
+import type { PackWithSongs } from "simfile-parser/browser";
 import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
 import { pause } from "./utils/pause";
@@ -81,7 +81,8 @@ function useDataParsing(
       setParsedPack(null);
       return;
     }
-    parsePack(droppedFolder)
+    import("simfile-parser/browser")
+      .then(({ parsePack }) => parsePack(droppedFolder))
       .then((pack) => {
         setParsedPack(pack);
         if (
