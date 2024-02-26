@@ -41,19 +41,25 @@ function Versus() {
   return (
     <div className={styles.versus} onClick={ipp}>
       <Icon
-        icon={<CaretLeft />}
-        style={{
-          visibility: priorityPlayer === 1 ? "visible" : "hidden",
-          verticalAlign: "middle",
-        }}
+        icon={
+          <CaretLeft
+            style={{
+              visibility: priorityPlayer === 1 ? "visible" : "hidden",
+              verticalAlign: "middle",
+            }}
+          />
+        }
       />
       {" vs "}
       <Icon
-        icon={<CaretRight />}
-        style={{
-          visibility: priorityPlayer === 2 ? "visible" : "hidden",
-          verticalAlign: "middle",
-        }}
+        icon={
+          <CaretRight
+            style={{
+              visibility: priorityPlayer === 2 ? "visible" : "hidden",
+              verticalAlign: "middle",
+            }}
+          />
+        }
       />
     </div>
   );
