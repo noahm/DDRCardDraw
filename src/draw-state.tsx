@@ -209,7 +209,10 @@ export function DrawStateManager(props: Props) {
     shallow,
   );
   useEffect(() => {
-    loadGameData(getInitialDataSet(props.defaultDataSet));
+    const idleHandle = requestIdleCallback(() =>
+      loadGameData(getInitialDataSet(props.defaultDataSet)),
+    );
+    return () => cancelIdleCallback(idleHandle);
   }, [loadGameData, props.defaultDataSet]);
 
   return (
