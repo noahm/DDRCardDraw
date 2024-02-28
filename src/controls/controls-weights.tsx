@@ -36,6 +36,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     bucketCount,
     updateConfig,
     totalToDraw,
+    useGranularLevels,
   } = useConfigState(
     (cfg) => ({
       useWeights: cfg.useWeights,
@@ -44,12 +45,13 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       bucketCount: cfg.probabilityBucketCount,
       updateConfig: cfg.update,
       totalToDraw: cfg.chartCount,
+      useGranularLevels: cfg.useGranularLevels,
     }),
     shallow,
   );
   const gameData = useDrawState((s) => s.gameData);
   const groups = useMemo(() => {
-    const availableLevels = getAvailableLevels(gameData, true);
+    const availableLevels = getAvailableLevels(gameData, useGranularLevels);
     return getBuckets(
       {
         lowerBound: low,
@@ -59,7 +61,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       },
       availableLevels,
     );
-  }, [useWeights, high, low, bucketCount, gameData]);
+  }, [gameData, useGranularLevels, low, high, useWeights, bucketCount]);
 
   function toggleForceDistribution() {
     updateConfig((state) => ({

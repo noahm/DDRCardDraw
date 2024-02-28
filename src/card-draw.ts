@@ -6,7 +6,11 @@ import { DefaultingMap } from "./utils/defaulting-set";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
-import { getAvailableLevels, getDiffAbbr } from "./game-data-utils";
+import {
+  chartLevelOrTier,
+  getAvailableLevels,
+  getDiffAbbr,
+} from "./game-data-utils";
 
 export function getDrawnChart(
   gameData: GameData,
@@ -20,7 +24,8 @@ export function getDrawnChart(
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: chart.bpm || currentSong.bpm,
-    level: chart.sanbaiTier || chart.lvl,
+    level: chart.lvl,
+    granularLevel: chart.sanbaiTier,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
@@ -62,7 +67,10 @@ export function chartIsValid(
 }
 
 export function* eligibleCharts(config: ConfigState, gameData: GameData) {
-  const buckets = getBuckets(config, getAvailableLevels(gameData, true));
+  const buckets = getBuckets(
+    config,
+    getAvailableLevels(gameData, config.useGranularLevels),
+  );
   for (const currentSong of gameData.songs) {
     if (!songIsValid(config, currentSong)) {
       continue;
@@ -75,7 +83,7 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
       }
       if (config.useWeights) {
         const bucketIdx = bucketIndexForLvl(
-          chart.drawGroup || chart.sanbaiTier || chart.lvl,
+          chartLevelOrTier(chart, config.useGranularLevels),
           buckets,
         );
         if (bucketIdx === null) {
@@ -165,17 +173,18 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     forceDistribution,
     weights,
     defaultPlayersPerDraw,
+    useGranularLevels,
   } = configData;
 
   /** all charts we will consider to be valid for this draw, mapped by bucket index */
   const validCharts = new DefaultingMap<number, Array<EligibleChart>>(() => []);
 
-  const availableLvls = getAvailableLevels(gameData, true);
+  const availableLvls = getAvailableLevels(gameData, useGranularLevels);
   const buckets = getBuckets(configData, availableLvls);
 
   for (const chart of eligibleCharts(configData, gameData)) {
     const bucketIdx = useWeights
-      ? bucketIndexForLvl(chart.drawGroup || chart.level, buckets)
+      ? bucketIndexForLvl(chartLevelOrTier(chart, useGranularLevels), buckets)
       : 0; // outside of weights mode we just put all songs into one shared bucket
     if (bucketIdx === null) continue;
     validCharts.get(bucketIdx).push(chart);

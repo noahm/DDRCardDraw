@@ -1,4 +1,5 @@
 import { useIntl } from "./hooks/useIntl";
+import { EligibleChart } from "./models/Drawing";
 import { Chart, GameData, I18NDict } from "./models/SongData";
 
 export function getMetaString(t: (key: string) => string, key: string) {
@@ -51,4 +52,29 @@ export function getDiffAbbr(gameData: GameData, diffClass: string) {
   return ((gameData.i18n.en as I18NDict)["$abbr"] as I18NDict)[
     diffClass
   ] as string;
+}
+
+export function chartLevelOrTier(
+  chart: Pick<Chart, "lvl" | "sanbaiTier" | "drawGroup"> | EligibleChart,
+  useGranularLevels: boolean,
+  includeTier = true,
+): number {
+  if (includeTier && typeof chart.drawGroup === "number") {
+    return chart.drawGroup;
+  }
+  const coreLevel = "lvl" in chart ? chart.lvl : chart.level;
+  const granularLevel = "lvl" in chart ? chart.sanbaiTier : chart.granularLevel;
+  if (useGranularLevels) {
+    return granularLevel || coreLevel;
+  } else {
+    return coreLevel;
+  }
+}
+
+export function formatLevel(chart: EligibleChart, useGranular: boolean) {
+  if (useGranular) {
+    return (chart.granularLevel || chart.level).toFixed(2);
+  } else {
+    return chart.level;
+  }
 }

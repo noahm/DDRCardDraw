@@ -21,6 +21,7 @@ export interface ConfigState {
   showPlayerAndRoundLabels: boolean;
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
+  useGranularLevels: boolean;
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -53,6 +54,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     showPlayerAndRoundLabels: false,
     sortByLevel: false,
     defaultPlayersPerDraw: 2,
+    useGranularLevels: false,
     update: set,
   }),
   Object.is,

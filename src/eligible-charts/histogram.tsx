@@ -12,12 +12,14 @@ import { CountingSet } from "../utils/counting-set";
 import { useDrawState } from "../draw-state";
 import { useIntl } from "../hooks/useIntl";
 import {
+  chartLevelOrTier,
   getAvailableLevels,
   getDiffClass,
   getMetaString,
 } from "../game-data-utils";
 import { Theme, useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
+import { useConfigState } from "../config-state";
 
 interface Props {
   charts: EligibleChart[];
@@ -29,7 +31,8 @@ export function DiffHistogram({ charts }: Props) {
   const isNarrow = useIsNarrow();
   const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
   const gameData = useDrawState((s) => s.gameData);
-  const availableLevels = getAvailableLevels(gameData, true);
+  const useGranularLevels = useConfigState((s) => s.useGranularLevels);
+  const availableLevels = getAvailableLevels(gameData, useGranularLevels);
   function formatLabel(idx: number) {
     const n = availableLevels[idx];
     if (!n) return "";
@@ -47,8 +50,9 @@ export function DiffHistogram({ charts }: Props) {
       if (!countByClassAndLvl[chart.diffAbbr]) {
         countByClassAndLvl[chart.diffAbbr] = new CountingSet();
       }
-      countByClassAndLvl[chart.diffAbbr].add(chart.level);
-      maxBar = Math.max(maxBar, allLevels.add(chart.level));
+      const level = chartLevelOrTier(chart, useGranularLevels, false);
+      countByClassAndLvl[chart.diffAbbr].add(level);
+      maxBar = Math.max(maxBar, allLevels.add(level));
     }
     const orderedLevels = Array.from(allLevels.values()).sort((a, b) => a - b);
     const difficulties = (allDiffs || [])

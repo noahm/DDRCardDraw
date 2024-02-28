@@ -170,6 +170,7 @@ function GeneralSettings() {
     style: selectedStyle,
     chartCount,
     sortByLevel,
+    useGranularLevels,
   } = configState;
   const availableDifficulties = useMemo(() => {
     if (!gameData) {
@@ -180,8 +181,8 @@ function GeneralSettings() {
   const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
   const availableLevels = useMemo(
-    () => getAvailableLevels(gameData),
-    [gameData],
+    () => getAvailableLevels(gameData, useGranularLevels),
+    [gameData, useGranularLevels],
   );
 
   if (!gameData) {
@@ -402,6 +403,15 @@ function GeneralSettings() {
             updateState({ sortByLevel });
           }}
           label={t("controls.sortByLevel")}
+        />
+        <Checkbox
+          id="useGranularLevels"
+          checked={useGranularLevels}
+          onChange={(e) => {
+            const useGranularLevels = !!e.currentTarget.checked;
+            updateState({ useGranularLevels });
+          }}
+          label={t("controls.useGranularLevels")}
         />
         <Checkbox
           id="showVeto"
