@@ -1572,6 +1572,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/busboy@npm:^2.0.0":
+  version: 2.1.1
+  resolution: "@fastify/busboy@npm:2.1.1"
+  checksum: 10/2bb8a7eca8289ed14c9eb15239bc1019797454624e769b39a0b90ed204d032403adc0f8ed0d2aef8a18c772205fa7808cf5a1b91f21c7bfc7b6032150b1062c5
+  languageName: node
+  linkType: hard
+
 "@formatjs/ecma402-abstract@npm:1.18.2":
   version: 1.18.2
   resolution: "@formatjs/ecma402-abstract@npm:1.18.2"
@@ -4805,6 +4812,7 @@ __metadata:
     simfile-parser: "npm:^0.7.1"
     style-loader: "npm:^3.3.4"
     typescript: "npm:^5.3.3"
+    undici: "npm:^6.6.2"
     victory: "npm:^36.9.1"
     webpack: "npm:^5.90.3"
     webpack-cli: "npm:^5.1.4"
@@ -10567,6 +10575,15 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.6.2":
+  version: 6.6.2
+  resolution: "undici@npm:6.6.2"
+  dependencies:
+    "@fastify/busboy": "npm:^2.0.0"
+  checksum: 10/e08ac9c279d4e4ee1249d30e6e0671f008e156d8ef224bbe3329ef5c5e10197a9e9dbf87c14e44deaffe2802c10bee66c8687d60ff07179b2e18cd5ef454b5c6
   languageName: node
   linkType: hard
 
