@@ -277,10 +277,9 @@ function GeneralSettings() {
               fill
               type="number"
               inputMode="numeric"
-              value={lowerBound}
+              value={useGranularLevels ? lowerBound.toFixed(2) : lowerBound}
               min={availableLevels[0]}
               max={Math.max(upperBound, lowerBound, 1)}
-              clampValueOnBlur
               onValueChange={handleLowerBoundChange}
             />
           </FormGroup>
@@ -297,11 +296,9 @@ function GeneralSettings() {
               fill
               type="number"
               inputMode="numeric"
-              stepSize={0.1}
-              value={upperBound}
+              value={useGranularLevels ? upperBound.toFixed(2) : upperBound}
               min={lowerBound}
               max={availableLevels[availableLevels.length - 1]}
-              clampValueOnBlur
               onValueChange={handleUpperBoundChange}
             />
           </FormGroup>
