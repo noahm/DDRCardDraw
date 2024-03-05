@@ -52,14 +52,16 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
   const gameData = useDrawState((s) => s.gameData);
   const groups = useMemo(() => {
     const availableLevels = getAvailableLevels(gameData, useGranularLevels);
-    return getBuckets(
-      {
-        lowerBound: low,
-        upperBound: high,
-        useWeights,
-        probabilityBucketCount: bucketCount,
-      },
-      availableLevels,
+    return Array.from(
+      getBuckets(
+        {
+          lowerBound: low,
+          upperBound: high,
+          useWeights,
+          probabilityBucketCount: bucketCount,
+        },
+        availableLevels,
+      ),
     );
   }, [gameData, useGranularLevels, low, high, useWeights, bucketCount]);
 

@@ -1,8 +1,9 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { chunkInPieces, pickRandomItem, shuffle, times } from "./utils";
+import { pickRandomItem, shuffle, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
+import { Fraction } from "./utils/fraction";
 import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
@@ -11,6 +12,15 @@ import {
   getAvailableLevels,
   getDiffAbbr,
 } from "./game-data-utils";
+
+function clampToNearest(incr: number, n: number, clamp: (n: number) => number) {
+  const multor = Math.round(1 / incr);
+  let ret = clamp(n * multor) / multor;
+  if (Number.isInteger(n) && clamp === Math.floor) {
+    ret -= incr;
+  }
+  return ret;
+}
 
 export function getDrawnChart(
   gameData: GameData,
@@ -67,9 +77,8 @@ export function chartIsValid(
 }
 
 export function* eligibleCharts(config: ConfigState, gameData: GameData) {
-  const buckets = getBuckets(
-    config,
-    getAvailableLevels(gameData, config.useGranularLevels),
+  const buckets = Array.from(
+    getBuckets(config, getAvailableLevels(gameData, config.useGranularLevels)),
   );
   for (const currentSong of gameData.songs) {
     if (!songIsValid(config, currentSong)) {
@@ -105,7 +114,7 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
 
 export type LevelRangeBucket = [low: number, high: number];
 export type BucketLvlRanges = Array<LevelRangeBucket>;
-export type LvlRanges = Array<number> | BucketLvlRanges;
+export type LvlRanges = Array<number | LevelRangeBucket>;
 
 /**
  *
@@ -113,29 +122,42 @@ export type LvlRanges = Array<number> | BucketLvlRanges;
  * @param availableLvls prefer granular
  * @returns
  */
-export function getBuckets(
+export function* getBuckets(
   cfg: Pick<
     ConfigState,
     "useWeights" | "probabilityBucketCount" | "upperBound" | "lowerBound"
   >,
   availableLvls: Array<number>,
-): LvlRanges {
+): Generator<LevelRangeBucket | number> {
   const { useWeights, probabilityBucketCount, upperBound, lowerBound } = cfg;
   const absoluteRangeSize = upperBound - lowerBound + 1;
   if (!useWeights || !probabilityBucketCount) {
-    return times(absoluteRangeSize, (n) => n - 1 + lowerBound);
+    for (let n = lowerBound; n <= upperBound; n++) {
+      yield n;
+    }
+    return;
   }
-  const lowerIndex = availableLvls.indexOf(lowerBound);
+  const bucketWidth = new Fraction(absoluteRangeSize, probabilityBucketCount);
   let upperIndex: number | undefined = availableLvls.indexOf(upperBound + 1);
   if (upperIndex === -1) {
     upperIndex = undefined;
   }
-  const levelsInRange = availableLvls.slice(lowerIndex, upperIndex);
-  return Array.from(chunkInPieces(probabilityBucketCount, levelsInRange)).map(
-    (levels): LevelRangeBucket => {
-      return [levels[0], levels[levels.length - 1]];
-    },
-  );
+  // TODO add this to the data file spec
+  const incrementGuess = availableLvls[1] - availableLvls[0];
+  const lowerBoundF = new Fraction(lowerBound);
+  const nudge = new Fraction(1, 1000);
+  for (let i = 0; i < probabilityBucketCount; i++) {
+    const bucketBottom = bucketWidth.mult(new Fraction(i)).add(lowerBoundF);
+    const bucketTop = bucketBottom.add(bucketWidth);
+    yield [
+      clampToNearest(incrementGuess, bucketBottom.valueOf(), Math.ceil),
+      clampToNearest(
+        incrementGuess,
+        bucketTop.sub(nudge).valueOf(),
+        Math.floor,
+      ),
+    ];
+  }
 }
 
 /**
@@ -180,7 +202,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   const validCharts = new DefaultingMap<number, Array<EligibleChart>>(() => []);
 
   const availableLvls = getAvailableLevels(gameData, useGranularLevels);
-  const buckets = getBuckets(configData, availableLvls);
+  const buckets = Array.from(getBuckets(configData, availableLvls));
 
   for (const chart of eligibleCharts(configData, gameData)) {
     const bucketIdx = useWeights
