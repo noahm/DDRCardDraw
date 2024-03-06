@@ -335,7 +335,11 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   return {
     id: `draw-${nanoid(10)}`,
     charts: configData.sortByLevel
-      ? drawnCharts.sort((a, b) => a.level - b.level)
+      ? drawnCharts.sort(
+          (a, b) =>
+            chartLevelOrTier(a, useGranularLevels, false) -
+            chartLevelOrTier(b, useGranularLevels, false),
+        )
       : shuffle(drawnCharts),
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],

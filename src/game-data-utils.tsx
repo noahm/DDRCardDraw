@@ -54,6 +54,13 @@ export function getDiffAbbr(gameData: GameData, diffClass: string) {
   ] as string;
 }
 
+/**
+ *
+ * @param chart
+ * @param useGranularLevels
+ * @param includeTier default: `true`
+ * @returns the effective level or tier
+ */
 export function chartLevelOrTier(
   chart: Pick<Chart, "lvl" | "sanbaiTier" | "drawGroup"> | EligibleChart,
   useGranularLevels: boolean,
