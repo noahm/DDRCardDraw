@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { pickRandomItem, shuffle, times } from "./utils";
+import { chunkInPieces, pickRandomItem, rangeI, shuffle, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { Fraction } from "./utils/fraction";
@@ -125,10 +125,14 @@ export type LvlRanges = Array<number | LevelRangeBucket>;
 export function* getBuckets(
   cfg: Pick<
     ConfigState,
-    "useWeights" | "probabilityBucketCount" | "upperBound" | "lowerBound"
+    | "useWeights"
+    | "probabilityBucketCount"
+    | "upperBound"
+    | "lowerBound"
+    | "useGranularLevels"
   >,
   availableLvls: Array<number>,
-): Generator<LevelRangeBucket | number> {
+): Generator<LevelRangeBucket | number, void> {
   const { useWeights, probabilityBucketCount, upperBound, lowerBound } = cfg;
   const absoluteRangeSize = upperBound - lowerBound + 1;
   if (!useWeights || !probabilityBucketCount) {
@@ -137,6 +141,14 @@ export function* getBuckets(
     }
     return;
   }
+  if (!cfg.useGranularLevels) {
+    const levels = Array.from(rangeI(lowerBound, upperBound));
+    for (const chunk of chunkInPieces(probabilityBucketCount, levels)) {
+      yield [chunk[0], chunk[chunk.length - 1]];
+    }
+    return;
+  }
+
   const bucketWidth = new Fraction(absoluteRangeSize, probabilityBucketCount);
   let upperIndex: number | undefined = availableLvls.indexOf(upperBound + 1);
   if (upperIndex === -1) {

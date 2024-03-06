@@ -59,6 +59,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
           upperBound: high,
           useWeights,
           probabilityBucketCount: bucketCount,
+          useGranularLevels,
         },
         availableLevels,
       ),

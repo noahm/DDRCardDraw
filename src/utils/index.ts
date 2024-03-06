@@ -117,6 +117,15 @@ export function firstOf<T>(iter: IterableIterator<T>): T | undefined {
 }
 
 /**
+ * Range, inclusive
+ */
+export function* rangeI(start: number, end: number) {
+  for (let i = start; i <= end; i++) {
+    yield i;
+  }
+}
+
+/**
  * Split an array up into chunks of a regular size
  * @param chunkSize
  * @param arr
