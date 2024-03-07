@@ -2835,12 +2835,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/papaparse@npm:^5":
+"@types/papaparse@npm:5.3.14":
   version: 5.3.14
   resolution: "@types/papaparse@npm:5.3.14"
   dependencies:
     "@types/node": "npm:*"
   checksum: 10/9bd5cc0e6a2c02def6c8903dc4604e499907cb465186ed3532390468082a06f023adbac0216428d0d8e8fe017206780a03d20007041e9fed47c8d391cd69a536
+  languageName: node
+  linkType: hard
+
+"@types/papaparse@patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch":
+  version: 5.3.14
+  resolution: "@types/papaparse@patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch::version=5.3.14&hash=c4cab5"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10/d3aa194593e7df45fbf65ac6f394a95178a0a45d4150ee631bdd9bd862bcf834c857a22986bd6fd2ddb08ec2bb436babf8ac3be4a35f90470a99c46bb6c18c9e
   languageName: node
   linkType: hard
 
@@ -4770,7 +4779,7 @@ __metadata:
     "@types/fuzzy-search": "npm:^2.1.5"
     "@types/inquirer": "npm:^9.0.7"
     "@types/node": "npm:^20.8.9"
-    "@types/papaparse": "npm:^5"
+    "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch"
     "@types/react": "npm:^18.2.33"
     "@types/react-dom": "npm:^18.2.19"
     "@typescript-eslint/eslint-plugin": "npm:^7.0.2"
