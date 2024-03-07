@@ -38,7 +38,16 @@ Some of the less self-explanatory settings are described below.
 <dd>Moves charts to the beginning or end of the set when charts are protected or vetoed.
 
 <dt>Pocket picks must match draw options
-<dd>Limits charts selected in a pocket pick action to those that match current draw settings
+<dd>Limits charts selected in a pocket pick action to those that match current draw settings.
+
+<dt>Sort by chart level
+<dd>Sorts the drawn charts by difficulty level, from lowest on the left, to highest on the right. When not enabled the chart order is randomized.
+
+<dt>Use granular levels
+<dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Weighted Distribution settings.
+
+<dt>Hide vetoed charts
+<dd>When players take a veto action on a chart, hide from view it completely, rather than simply marking it as vetoed.
 </dl>
 
 ### Weighted Distributions
@@ -70,8 +79,8 @@ The weighted distribution options allows you to replace the natrual chances of s
 <dt>Force Expected Distribution
 <dd>Reduces randomness by preventing any outlier draws that contain more than the expected number of charts of each difficulty level. (e.g. For the above example, this would limit a 3 card draw to either zero or one level 22 chart.)
 
-<dt>Group Top End Charts
-<dd>Allows grouping charts of multiple levels into a single "bucket". This helps when you want a higher probability of hard stuff, but your game of choice has a very limited number of charts at the highest levels.
+<dt>Group cards into this many buckets
+<dd>A very versatile setting. At lower numbers it will combinine charts across multiple levels into fewer "difficulty buckets" that span several levels, or at higher numbers (when combined with "Use granular levels") can divide individual levels down into sub-level ranges that can be weighted differently.
 </dl>
 
 ## Actions
@@ -118,9 +127,9 @@ Once enabled, labels appear above each drawn set of cards. Players and round nam
 
 ## Preview Eligible Charts
 
-A toggle to "Show eligible charts" is included at the top (in the settings drawer for mobile devices) and can be useful for multiple reasons. First and foremost, it allows easy review of the current song data and helps catch issues. Any special song categories like "Unlockable songs" can be shown separately to confirm the appropriate categorization.
+A toggle to "Show eligible charts" is included at the top (in the settings drawer for mobile devices) which lists all charts that _could be drawn_ by current settings along with a histogram chart to provide a quick summary of the overall difficulty pool. First and foremost, it allows easy review of the current song data and helps catch issues. Any special song categories like "Unlockable songs" can be shown separately to confirm the appropriate categorization.
 
-Second, a color-coded histogram is displayed at the top to provide a quick summary of the over-all difficulty pool included by the current settings. This can also be handy to summarize an entire game's song library by using the settings to include all charts.
+Second, it can also be handy to summarize an entire game's song library by using the settings to include all charts, or to view the subset of a game's charts that are used according to specific tournament settings.
 
 ![Screenshot of eligible charts toggle enabled](images/eligible-charts.png)
 
