@@ -133,6 +133,10 @@ Second, it can also be handy to summarize an entire game's song library by using
 
 ![Screenshot of eligible charts toggle enabled](images/eligible-charts.png)
 
+### Export Chart Data
+
+While viewing the list of eligible charts, the "Export Chart Data" button (icon only for mobile devices) will save the current list of charts as a CSV file for future reference or data processing.
+
 ## Save as Image
 
 Each drawn set has a camera icon in the top right. This saves an image of the current set with a transparent background suitable for use in stream layouts and other such designs. Resize your browser window to adjust the aspect ratio of the generated image.

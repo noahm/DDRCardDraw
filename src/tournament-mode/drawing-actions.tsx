@@ -85,84 +85,82 @@ export function DrawingActions() {
   );
 
   return (
-    <>
-      <div className={styles.networkButtons}>
-        {syncPeer && <Icon icon={<Changes />} intent="success" />}
-        {isConnected ? (
-          remotePeers.size ? (
-            <Popover content={remoteActions}>{button}</Popover>
-          ) : (
-            <Tooltip content="Connect to a peer to share">{button}</Tooltip>
-          )
-        ) : null}
-        <Tooltip content="Save Image">
-          <Button
-            minimal
-            icon={<Camera />}
-            onClick={async () => {
-              const drawingId = getDrawing().id;
-              const drawingElement = document.querySelector(
-                "#drawing-" + drawingId,
+    <div className={styles.networkButtons}>
+      {syncPeer && <Icon icon={<Changes />} intent="success" />}
+      {isConnected ? (
+        remotePeers.size ? (
+          <Popover content={remoteActions}>{button}</Popover>
+        ) : (
+          <Tooltip content="Connect to a peer to share">{button}</Tooltip>
+        )
+      ) : null}
+      <Tooltip content="Save Image">
+        <Button
+          minimal
+          icon={<Camera />}
+          onClick={async () => {
+            const drawingId = getDrawing().id;
+            const drawingElement = document.querySelector(
+              "#drawing-" + drawingId,
+            );
+            if (drawingElement) {
+              shareImage(
+                await domToPng(drawingElement, {
+                  scale: 2,
+                }),
+                DEFAULT_FILENAME,
               );
-              if (drawingElement) {
-                shareImage(
-                  await domToPng(drawingElement, {
-                    scale: 2,
-                  }),
-                  DEFAULT_FILENAME,
-                );
-              }
-            }}
-          />
-        </Tooltip>
-        <Tooltip content="Redraw all charts">
-          <Button
-            minimal
-            icon={<Refresh />}
-            onClick={() =>
-              confirm(
-                "This will replace everything besides protects and pocket picks!",
-              ) && redrawAllCharts()
             }
-          />
+          }}
+        />
+      </Tooltip>
+      <Tooltip content="Redraw all charts">
+        <Button
+          minimal
+          icon={<Refresh />}
+          onClick={() =>
+            confirm(
+              "This will replace everything besides protects and pocket picks!",
+            ) && redrawAllCharts()
+          }
+        />
+      </Tooltip>
+      {process.env.NODE_ENV === "production" ? null : (
+        <Tooltip content="Cause Error">
+          <Button minimal icon={<Error />} onClick={showBoundary} />
         </Tooltip>
-        {process.env.NODE_ENV === "production" ? null : (
-          <Tooltip content="Cause Error">
-            <Button minimal icon={<Error />} onClick={showBoundary} />
+      )}
+      {showLabels && (
+        <>
+          <Tooltip content="Add Player">
+            <Button
+              minimal
+              icon={<NewPerson />}
+              onClick={() => {
+                updateDrawing((drawing) => {
+                  const next = drawing.players.slice();
+                  next.push("");
+                  return { players: next };
+                });
+              }}
+            />
           </Tooltip>
-        )}
-        {showLabels && (
-          <>
-            <Tooltip content="Add Player">
-              <Button
-                minimal
-                icon={<NewPerson />}
-                onClick={() => {
-                  updateDrawing((drawing) => {
-                    const next = drawing.players.slice();
-                    next.push("");
-                    return { players: next };
-                  });
-                }}
-              />
-            </Tooltip>
-            <Tooltip content="Remove Player" disabled={!hasPlayers}>
-              <Button
-                minimal
-                icon={<BlockedPerson />}
-                disabled={!hasPlayers}
-                onClick={() => {
-                  updateDrawing((drawing) => {
-                    const next = drawing.players.slice();
-                    next.pop();
-                    return { players: next };
-                  });
-                }}
-              />
-            </Tooltip>
-          </>
-        )}
-      </div>
-    </>
+          <Tooltip content="Remove Player" disabled={!hasPlayers}>
+            <Button
+              minimal
+              icon={<BlockedPerson />}
+              disabled={!hasPlayers}
+              onClick={() => {
+                updateDrawing((drawing) => {
+                  const next = drawing.players.slice();
+                  next.pop();
+                  return { players: next };
+                });
+              }}
+            />
+          </Tooltip>
+        </>
+      )}
+    </div>
   );
 }

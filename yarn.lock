@@ -2835,6 +2835,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/papaparse@npm:^5":
+  version: 5.3.14
+  resolution: "@types/papaparse@npm:5.3.14"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10/9bd5cc0e6a2c02def6c8903dc4604e499907cb465186ed3532390468082a06f023adbac0216428d0d8e8fe017206780a03d20007041e9fed47c8d391cd69a536
+  languageName: node
+  linkType: hard
+
 "@types/prettier@npm:^2.6.1":
   version: 2.7.3
   resolution: "@types/prettier@npm:2.7.3"
@@ -4761,6 +4770,7 @@ __metadata:
     "@types/fuzzy-search": "npm:^2.1.5"
     "@types/inquirer": "npm:^9.0.7"
     "@types/node": "npm:^20.8.9"
+    "@types/papaparse": "npm:^5"
     "@types/react": "npm:^18.2.33"
     "@types/react-dom": "npm:^18.2.19"
     "@typescript-eslint/eslint-plugin": "npm:^7.0.2"
@@ -4800,6 +4810,7 @@ __metadata:
     nanoid: "npm:^5.0.6"
     normalize.css: "npm:^8.0.1"
     p-queue: "npm:^8.0.1"
+    papaparse: "npm:^5.4.1"
     peerjs: "npm:^2.0.0-beta.3"
     postcss: "npm:^8.4.35"
     postcss-loader: "npm:^8.1.0"
@@ -8259,6 +8270,13 @@ __metadata:
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
   checksum: 10/1ad07210e894472685564c4d39a08717e84c2a68a70d3c1d9e657d32394ef1670e22972a433cbfe48976cb98b154ba06855dcd3fcfba77f60f1777634bec48c0
+  languageName: node
+  linkType: hard
+
+"papaparse@npm:^5.4.1":
+  version: 5.4.1
+  resolution: "papaparse@npm:5.4.1"
+  checksum: 10/5e6dc978187182ad2efa1d264ffe73d2042cd23b8fb1dcb0b0f5c8c7c772c11e3eb4e166fb0893880ed24529a96abe9065d704cc5b4cb96abf037413cfe43788
   languageName: node
   linkType: hard
 

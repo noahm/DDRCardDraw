@@ -1,7 +1,7 @@
 import { ConfigState, useConfigState } from "./config-state";
 import { useDrawState } from "./draw-state";
 import { toaster } from "./toaster";
-import { shareData } from "./utils/share";
+import { buildDataUri, dateForFilename, shareData } from "./utils/share";
 
 interface PersistedConfigV1 {
   version: 1;
@@ -31,11 +31,14 @@ type Serialized<T extends object> = {
 
 export function saveConfig() {
   const persistedObj = buildPersistedConfig();
-  const dataUri = `data:application/json,${encodeURI(
+  const dataUri = buildDataUri(
     JSON.stringify(persistedObj, undefined, 2),
-  )}`;
+    "application/json",
+    "url",
+  );
+
   return shareData(dataUri, {
-    filename: `card-draw-config-${persistedObj.dataSetName}.json`,
+    filename: `ddr-tools-config-${persistedObj.dataSetName}-${dateForFilename()}.json`,
     methods: [
       { type: "nativeShare", allowDesktop: true },
       { type: "download" },

@@ -1,3 +1,5 @@
+import { zeroPad } from ".";
+import { EligibleChart } from "../models/Drawing";
 import { toaster } from "../toaster";
 
 interface NativeShare {
@@ -13,6 +15,57 @@ interface Clipboard {
 
 interface Download {
   type: "download";
+}
+
+export function dateForFilename() {
+  const d = new Date();
+  return `${d.getFullYear()}${zeroPad(d.getMonth() + 1, 2)}${zeroPad(d.getDay(), 2)}-${zeroPad(d.getHours(), 2)}${zeroPad(d.getMinutes(), 2)}${zeroPad(d.getSeconds(), 2)}`;
+}
+
+export async function shareCharts(charts: EligibleChart[]) {
+  const csvData = [
+    ["name", "diff", "lvl", "sanbaiLvl", "bpm", "artist"],
+    ...charts.map((chart) => {
+      return [
+        chart.name,
+        chart.diffAbbr,
+        chart.level,
+        chart.granularLevel,
+        chart.bpm,
+        chart.artist,
+      ];
+    }),
+  ];
+
+  const pp = await import("papaparse");
+
+  shareData(buildDataUri(pp.unparse(csvData), "text/csv", "url"), {
+    filename: `ddr-tools-eligible-charts-${dateForFilename()}.csv`,
+    methods: [
+      { type: "nativeShare", allowDesktop: false },
+      { type: "download" },
+    ],
+  });
+}
+
+export function buildDataUri(
+  utf8Payload: string,
+  mimetype: string,
+  encoding: "base64" | "url",
+) {
+  let encodedData: string;
+  let encodingMarker = "";
+  if (encoding === "base64") {
+    encodingMarker = ";base64";
+    const data = new TextEncoder().encode(utf8Payload);
+    const binString = Array.from(data, (byte) =>
+      String.fromCodePoint(byte),
+    ).join("");
+    encodedData = btoa(binString);
+  } else {
+    encodedData = encodeURI(utf8Payload);
+  }
+  return `data:${mimetype}${encodingMarker},${encodedData}`;
 }
 
 type ShareMethod = NativeShare | Clipboard | Download;
@@ -51,7 +104,12 @@ export async function shareData(
           method.allowDesktop,
         );
         if (maybePromise) {
-          return maybePromise;
+          try {
+            await maybePromise;
+            return;
+          } catch (e) {
+            console.warn("nativeShare failed", e);
+          }
         }
         break;
 
@@ -69,12 +127,13 @@ export async function shareData(
             "copied-data",
           );
           return;
-        } catch {
+        } catch (e) {
+          console.warn("clipboard share failed", e);
           break;
         }
       case "download":
         downloadDataUrl(dataUri, opts.filename);
-        break;
+        return;
     }
   }
 }
