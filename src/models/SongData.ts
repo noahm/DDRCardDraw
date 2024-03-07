@@ -50,6 +50,10 @@ export interface GameData {
     }[];
     flags: UniqueStringArr1;
     usesDrawGroups?: boolean;
+    /**
+     * Number of steps from one level to the next when using the `sanbaiTier` granular levels
+     */
+    granularTierResolution?: number;
   };
   /**
    * Defines the default configuration for this game

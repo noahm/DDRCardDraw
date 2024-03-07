@@ -53,6 +53,10 @@
         },
         "usesDrawGroups": {
           "type": "boolean"
+        },
+        "granularTierResolution": {
+          "type": "integer",
+          "description": "Number of steps from one level to the next when using the `sanbaiTier` granular levels"
         }
       }
     },

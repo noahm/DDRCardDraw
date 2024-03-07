@@ -221,7 +221,10 @@ export function DrawStateManager(props: Props) {
       translations={i18nData as Record<string, I18NDict>}
       mergeTranslations={gameData?.i18n}
     >
-      <ApplyDefaultConfig defaults={gameData?.defaults} />
+      <ApplyDefaultConfig
+        defaults={gameData?.defaults}
+        granularResolution={gameData?.meta.granularTierResolution}
+      />
       <UnloadHandler confirmUnload={hasDrawings} />
       {props.children}
     </IntlProvider>

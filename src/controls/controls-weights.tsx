@@ -62,6 +62,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
           useGranularLevels,
         },
         availableLevels,
+        gameData?.meta.granularTierResolution,
       ),
     );
   }, [gameData, useGranularLevels, low, high, useWeights, bucketCount]);

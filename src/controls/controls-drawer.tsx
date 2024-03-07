@@ -403,6 +403,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="useGranularLevels"
+          disabled={!gameData.meta.granularTierResolution}
           checked={useGranularLevels}
           onChange={(e) => {
             const useGranularLevels = !!e.currentTarget.checked;

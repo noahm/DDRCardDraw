@@ -78,7 +78,11 @@ export function chartIsValid(
 
 export function* eligibleCharts(config: ConfigState, gameData: GameData) {
   const buckets = Array.from(
-    getBuckets(config, getAvailableLevels(gameData, config.useGranularLevels)),
+    getBuckets(
+      config,
+      getAvailableLevels(gameData, config.useGranularLevels),
+      gameData.meta.granularTierResolution,
+    ),
   );
   for (const currentSong of gameData.songs) {
     if (!songIsValid(config, currentSong)) {
@@ -132,6 +136,7 @@ export function* getBuckets(
     | "useGranularLevels"
   >,
   availableLvls: Array<number>,
+  granularResolution: number | undefined,
 ): Generator<LevelRangeBucket | number, void> {
   const { useWeights, probabilityBucketCount, upperBound, lowerBound } = cfg;
   const absoluteRangeSize = upperBound - lowerBound + 1;
@@ -141,7 +146,10 @@ export function* getBuckets(
     }
     return;
   }
-  if (!cfg.useGranularLevels) {
+  // TODO: create an array of available levels within range here (slice of availableLvls)
+
+  if (!granularResolution || !cfg.useGranularLevels) {
+    // TODO: reuse that here
     const levels = Array.from(rangeI(lowerBound, upperBound));
     for (const chunk of chunkInPieces(probabilityBucketCount, levels)) {
       yield [chunk[0], chunk[chunk.length - 1]];
@@ -154,13 +162,13 @@ export function* getBuckets(
   if (upperIndex === -1) {
     upperIndex = undefined;
   }
-  // TODO add this to the data file spec
-  const incrementGuess = availableLvls[1] - availableLvls[0];
+  const incrementGuess = 1 / granularResolution;
   const lowerBoundF = new Fraction(lowerBound);
   const nudge = new Fraction(1, 1000);
   for (let i = 0; i < probabilityBucketCount; i++) {
     const bucketBottom = bucketWidth.mult(new Fraction(i)).add(lowerBoundF);
     const bucketTop = bucketBottom.add(bucketWidth);
+    // TODO: slice off that array of available levels here to avoid overlap/reuse due to rounding errors
     yield [
       clampToNearest(incrementGuess, bucketBottom.valueOf(), Math.ceil),
       clampToNearest(
@@ -214,7 +222,9 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   const validCharts = new DefaultingMap<number, Array<EligibleChart>>(() => []);
 
   const availableLvls = getAvailableLevels(gameData, useGranularLevels);
-  const buckets = Array.from(getBuckets(configData, availableLvls));
+  const buckets = Array.from(
+    getBuckets(configData, availableLvls, gameData.meta.granularTierResolution),
+  );
 
   for (const chart of eligibleCharts(configData, gameData)) {
     const bucketIdx = useWeights
