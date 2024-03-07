@@ -1,4 +1,4 @@
-import { PackWithSongs } from "simfile-parser/browser";
+import type { PackWithSongs } from "simfile-parser/browser";
 import { GameData, Chart, Song } from "../models/SongData";
 
 export function getDataFileFromPack(

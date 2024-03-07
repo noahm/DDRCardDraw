@@ -7,10 +7,6 @@
   user-select: none;
 }
 
-.showAllToggle {
-  margin-bottom: 0;
-}
-
 .inlineControls {
   display: flex;
   flex-direction: row;
@@ -26,7 +22,7 @@
 }
 
 .narrowInput {
-  width: 100px;
+  width: 110px;
 }
 
 /* remove native styling on number type inputs */

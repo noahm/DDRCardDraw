@@ -7,6 +7,7 @@ import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { useDrawState } from "../draw-state";
 import { getAvailableLevels } from "../game-data-utils";
+import { LevelRangeBucket, getBuckets } from "../card-draw";
 
 interface Props {
   usesTiers: boolean;
@@ -15,31 +16,60 @@ interface Props {
 }
 const pctFmt = new Intl.NumberFormat(undefined, { style: "percent" });
 
+function printGroup(
+  group: LevelRangeBucket | number,
+  precisionRange: number | undefined,
+) {
+  if (typeof group === "number") {
+    return group.toString();
+  } else {
+    const digits = precisionRange && (1 / precisionRange).toString().length - 2;
+    if (group[0] === group[1]) {
+      return group[0].toFixed(digits);
+    }
+    return `${group[0].toFixed(digits)}-${group[1].toFixed(digits)}`;
+  }
+}
+
 export function WeightsControls({ usesTiers, high, low }: Props) {
   const { t } = useIntl();
   const {
     weights,
+    useWeights,
     forceDistribution,
-    groupSongsAt,
+    bucketCount,
     updateConfig,
     totalToDraw,
+    useGranularLevels,
   } = useConfigState(
     (cfg) => ({
+      useWeights: cfg.useWeights,
       weights: cfg.weights,
       forceDistribution: cfg.forceDistribution,
-      groupSongsAt: cfg.groupSongsAt,
+      bucketCount: cfg.probabilityBucketCount,
       updateConfig: cfg.update,
       totalToDraw: cfg.chartCount,
+      useGranularLevels: cfg.useGranularLevels,
     }),
     shallow,
   );
   const gameData = useDrawState((s) => s.gameData);
-  let groups = useMemo(() => {
-    const availableLevels = getAvailableLevels(gameData);
-    const lowIndex = availableLevels.indexOf(low);
-    const highIndex = availableLevels.indexOf(high);
-    return availableLevels.slice(lowIndex, highIndex + 1);
-  }, [high, low, gameData]);
+  const groups = useMemo(() => {
+    const availableLevels = getAvailableLevels(gameData, useGranularLevels);
+    return Array.from(
+      getBuckets(
+        {
+          lowerBound: low,
+          upperBound: high,
+          useWeights,
+          probabilityBucketCount: bucketCount,
+          useGranularLevels,
+        },
+        availableLevels,
+        gameData?.meta.granularTierResolution,
+      ),
+    );
+  }, [gameData, useGranularLevels, low, high, useWeights, bucketCount]);
 
   function toggleForceDistribution() {
     updateConfig((state) => ({
@@ -47,50 +77,46 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     }));
   }
 
-  function toggleGroupCheck() {
+  function toggleBucketCount() {
     updateConfig((state) => {
-      if (state.groupSongsAt) {
-        return { groupSongsAt: null };
+      if (state.probabilityBucketCount) {
+        return { probabilityBucketCount: null };
       }
 
-      return { groupSongsAt: state.upperBound - 1 };
+      return {
+        probabilityBucketCount: state.upperBound - state.lowerBound + 1,
+      };
     });
   }
 
-  function handleGroupCutoffChange(next: number) {
+  function handleBucketCountChange(next: number) {
     if (isNaN(next)) {
       return;
     }
-    if (next < low) {
+    if (!bucketCount) {
       return;
     }
-    if (!groupSongsAt) {
-      return;
-    }
-    updateConfig({ groupSongsAt: next });
+    updateConfig({ probabilityBucketCount: next });
   }
 
   function setWeight(groupIndex: number, value: number) {
     updateConfig((state) => {
-      const newWeights = new Map(state.weights);
+      const newWeights = state.weights.slice();
       if (Number.isInteger(value)) {
-        newWeights.set(groupIndex, value);
+        newWeights[groupIndex] = value;
       } else {
-        newWeights.delete(groupIndex);
+        newWeights[groupIndex] = undefined;
       }
       return { weights: newWeights };
     });
   }
 
-  if (groupSongsAt) {
-    groups = groups.filter((l) => l <= groupSongsAt);
-  }
-  const totalWeight = groups.reduce(
-    (total, group) => total + (weights.get(group) || 0),
+  const totalWeight = groups.reduce<number>(
+    (total, group, idx) => total + (weights[idx] || 0),
     0,
   );
-  const percentages = groups.map((group) => {
-    const value = weights.get(group) || 0;
+  const percentages = groups.map((group, idx) => {
+    const value = weights[idx] || 0;
     const pct = value / totalWeight;
     if (forceDistribution) {
       if (pct === 1) {
@@ -113,24 +139,6 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
           ? t("weights.forcedExplanation")
           : t("weights.explanation")}
       </p>
-      {groups.map((group, i) => (
-        <div className={styles.level} key={group}>
-          <NumericInput
-            type="number"
-            inputMode="numeric"
-            width={2}
-            name={`weight-${group}`}
-            value={weights.get(group) || ""}
-            min={0}
-            onValueChange={(v) => setWeight(group, v)}
-            placeholder="0"
-            fill
-          />
-          {groupSongsAt === group && ">="}
-          {usesTiers ? `T${zeroPad(group, 2)}` : group}{" "}
-          <sub>{percentages[i]}</sub>
-        </div>
-      ))}
       <Checkbox
         label={t("weights.check.label")}
         title={t("weights.check.title")}
@@ -140,19 +148,52 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       <Checkbox
         label={t("weights.group.label")}
         title={t("weights.group.title")}
-        checked={!!groupSongsAt}
-        onChange={toggleGroupCheck}
+        checked={!!bucketCount}
+        onChange={toggleBucketCount}
       />
       <NumericInput
+        className={styles.narrow}
         type="number"
         inputMode="numeric"
         width={2}
-        disabled={!groupSongsAt}
-        value={groupSongsAt || high - 1}
-        min={low}
-        onValueChange={handleGroupCutoffChange}
-        placeholder="0"
+        disabled={!bucketCount}
+        value={bucketCount || high - low + 1}
+        min={2}
+        onValueChange={handleBucketCountChange}
       />
+      {groups.map((group, idx) => (
+        <div
+          className={styles.level}
+          key={printGroup(
+            group,
+            useGranularLevels
+              ? gameData?.meta.granularTierResolution
+              : undefined,
+          )}
+        >
+          <NumericInput
+            type="number"
+            inputMode="numeric"
+            width={2}
+            name={`weight-${group}`}
+            value={weights[idx] || ""}
+            min={0}
+            onValueChange={(v) => setWeight(idx, v)}
+            placeholder="0"
+            fill
+          />
+          {/* {groupSongsAt === group && ">="} */}
+          {usesTiers && typeof group === "number"
+            ? `T${zeroPad(group, 2)}`
+            : printGroup(
+                group,
+                useGranularLevels
+                  ? gameData?.meta.granularTierResolution
+                  : undefined,
+              )}{" "}
+          <sub>{percentages[idx]}</sub>
+        </div>
+      ))}
     </section>
   );
 }

@@ -20,11 +20,12 @@
       "tempUnlock",
       "doublesUnlock"
     ],
+    "granularTierResolution": 20,
     "lastUpdated": 1708582207003
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["expert", "challenge"],
+    "difficulties": ["difficult", "expert", "challenge"],
     "flags": ["shock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
@@ -152,28 +153,6 @@
       "genre": "",
       "saHash": "QD8D6IQ1QoOPIPIIbI10QDOdd96OPIQi",
       "saIndex": "816"
-    },
-    {
-      "name": "*ハロー、プラネット。",
-      "name_translation": "*Hello, Planet.",
-      "artist": "sasakure.UK",
-      "artist_translation": "",
-      "bpm": "150",
-      "folder": "DanceDanceRevolution A",
-      "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "beginner" },
-        { "lvl": 7, "style": "single", "diffClass": "basic" },
-        { "lvl": 9, "style": "single", "diffClass": "difficult" },
-        { "lvl": 13, "style": "single", "diffClass": "expert" },
-        { "lvl": 7, "style": "double", "diffClass": "basic" },
-        { "lvl": 9, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
-      ],
-      "remyLink": "http://remywiki.com/%2A%E3%83%8F%E3%83%AD%E3%83%BC%E3%80%81%E3%83%97%E3%83%A9%E3%83%8D%E3%83%83%E3%83%88%E3%80%82",
-      "jacket": "Hello, planet.png",
-      "genre": "",
-      "saHash": "D16P668Q8loqIoDo1IdoIlIloiIoIDll",
-      "saIndex": "824"
     },
     {
       "name": ".59",
@@ -7493,77 +7472,6 @@
       "saIndex": "73"
     },
     {
-      "name": "BUTTERFLY (20th Anniversary Mix)",
-      "name_translation": "",
-      "artist": "BEMANI Sound Team \"Sota F.\"",
-      "artist_translation": "",
-      "bpm": "140",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.45
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 6.35
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.35
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.4
-        },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 16.4
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.4
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 10.2
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.45
-        },
-        {
-          "lvl": 16,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 16.2
-        }
-      ],
-      "remyLink": "http://remywiki.com/BUTTERFLY%20%2820th%20Anniversary%20Mix%29",
-      "jacket": "BUTTERFLY (20th Anniversary Mix).jpg",
-      "genre": "",
-      "saHash": "6dQQd1d1OQlqQdQ98i01DQ1i9P6QDQdQ",
-      "saIndex": "869"
-    },
-    {
       "name": "C-C-C-N-N-N",
       "name_translation": "",
       "artist": "RoughSkreamZ feat. Aikapin",
@@ -8225,77 +8133,6 @@
       "genre": "NOSTALISH REQUIEM",
       "saHash": "Iqo9PQiPbq8Q0I6io6lPIDi608lQqbbq",
       "saIndex": "233"
-    },
-    {
-      "name": "CARTOON HEROES (20th Anniversary Mix)",
-      "name_translation": "",
-      "artist": "nc ft.Jasmine And DARIO TODA",
-      "artist_translation": "",
-      "bpm": "170",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 4.1
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 9.2
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 14.4
-        },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 16.55
-        },
-        {
-          "lvl": 18,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["shock", "unlock"],
-          "sanbaiTier": 18.6
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 10.4
-        },
-        {
-          "lvl": 13,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 13.5
-        },
-        {
-          "lvl": 16,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 16.5
-        },
-        {
-          "lvl": 18,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["shock", "unlock"],
-          "sanbaiTier": 18.5
-        }
-      ],
-      "remyLink": "http://remywiki.com/CARTOON%20HEROES%20%2820th%20Anniversary%20Mix%29",
-      "jacket": "CARTOON HEROES (20th Anniversary Mix).png",
-      "genre": "",
-      "saHash": "8Io6oi89Q8DblI8IPdPPI0q98Ql9o98Q",
-      "saIndex": "853"
     },
     {
       "name": "Catch Our Fire!",
@@ -22591,77 +22428,6 @@
       "saIndex": "414"
     },
     {
-      "name": "HAVE YOU NEVER BEEN MELLOW (20th Anniversary Mix)",
-      "name_translation": "",
-      "artist": "nc ft. Kanae Jasmine Asaba",
-      "artist_translation": "",
-      "bpm": "130",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.6
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 4.5
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.55
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.4
-        },
-        {
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 17
-        },
-        {
-          "lvl": 4,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 4.6
-        },
-        {
-          "lvl": 7,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.55
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.4
-        },
-        {
-          "lvl": 17,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 17.45
-        }
-      ],
-      "remyLink": "http://remywiki.com/HAVE%20YOU%20NEVER%20BEEN%20MELLOW%20%2820th%20Anniversary%20Mix%29",
-      "jacket": "HAVE YOU NEVER BEEN MELLOW (20th Anniversary Mix).png",
-      "genre": "",
-      "saHash": "lIlQ8DbPP6Iil1DOlQ6d8IPQblDQ8IiI",
-      "saIndex": "839"
-    },
-    {
       "name": "Ha・lle・lu・jah",
       "name_translation": "Ha-lle-lu-jah",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
@@ -24699,62 +24465,6 @@
       "genre": "",
       "saHash": "lPloI86odlIbIo96P169b9I0Ob8lD189",
       "saIndex": "82"
-    },
-    {
-      "name": "I believe what you said",
-      "name_translation": "",
-      "artist": "亜咲花",
-      "artist_translation": "Asaka",
-      "bpm": "138",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.45
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 4.4
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.45
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.3
-        },
-        {
-          "lvl": 4,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 4.25
-        },
-        {
-          "lvl": 8,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.35
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.25
-        }
-      ],
-      "remyLink": "http://remywiki.com/I%20believe%20what%20you%20said",
-      "jacket": "I believe what you said.jpg",
-      "saHash": "oI0P1oq89blIobOd0QqilPqd9Didd0OD",
-      "saIndex": "997"
     },
     {
       "name": "i feel ...",
@@ -30411,77 +30121,6 @@
       "genre": "",
       "saHash": "09looidO89Q9DiDdqQiDPlIQDoiobobQ",
       "saIndex": "470"
-    },
-    {
-      "name": "LONG TRAIN RUNNIN' (20th Anniversary Mix)",
-      "name_translation": "",
-      "artist": "Haruki Yamada (ATTIC INC.) with Bodhi Kenyon",
-      "artist_translation": "",
-      "bpm": "130",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.3
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 6.35
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.4
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.65
-        },
-        {
-          "lvl": 15,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 15.65
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.45
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.4
-        },
-        {
-          "lvl": 13,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 13.6
-        },
-        {
-          "lvl": 15,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 15.55
-        }
-      ],
-      "remyLink": "http://remywiki.com/LONG%20TRAIN%20RUNNIN%27%20%2820th%20Anniversary%20Mix%29",
-      "jacket": "LONG TRAIN RUNNIN' (20th Anniversary Mix).png",
-      "genre": "",
-      "saHash": "D9IO16idQq6iiI88loI1i986lIID0O9O",
-      "saIndex": "858"
     },
     {
       "name": "Look At The Sky",
@@ -42304,62 +41943,6 @@
       "saIndex": "376"
     },
     {
-      "name": "Realize",
-      "name_translation": "",
-      "artist": "鈴木このみ",
-      "artist_translation": "Suzuki Konomi",
-      "bpm": "206",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.45
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 6.45
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 11.35
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 14.65
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.45
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 11.2
-        },
-        {
-          "lvl": 14,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 14.4
-        }
-      ],
-      "remyLink": "http://remywiki.com/Realize",
-      "jacket": "Realize.jpg",
-      "saHash": "00ibl6biOOOdDd96OP0P0i8iObo8i09d",
-      "saIndex": "998"
-    },
-    {
       "name": "REBORN MAGIC",
       "name_translation": "",
       "artist": "seiya-murai meets \"eimy\"",
@@ -45738,62 +45321,6 @@
       "saIndex": "202"
     },
     {
-      "name": "Seize The Day",
-      "name_translation": "",
-      "artist": "亜咲花",
-      "artist_translation": "Asaka",
-      "bpm": "129",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 1.6
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 4.45
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.5
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 10.5
-        },
-        {
-          "lvl": 4,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 4.55
-        },
-        {
-          "lvl": 7,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.4
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.55
-        }
-      ],
-      "remyLink": "http://remywiki.com/Seize%20The%20Day",
-      "jacket": "Seize The Day.jpg",
-      "saHash": "id099qDODdQ9Ooi9dq1I981Diq101QDO",
-      "saIndex": "1003"
-    },
-    {
       "name": "Sephirot",
       "name_translation": "",
       "artist": "SHIKI",
@@ -46434,77 +45961,6 @@
       "genre": "",
       "saHash": "q1o901oPqbbI1Q61qo688bDd0Pqlb08l",
       "saIndex": "387"
-    },
-    {
-      "name": "SHINY DAYS",
-      "name_translation": "",
-      "artist": "亜咲花",
-      "artist_translation": "Asaka",
-      "bpm": "110",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 1.55
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 4.5
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.4
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 10.5
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 14.4
-        },
-        {
-          "lvl": 4,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 4.5
-        },
-        {
-          "lvl": 8,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.35
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.5
-        },
-        {
-          "lvl": 14,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 14.35
-        }
-      ],
-      "remyLink": "http://remywiki.com/SHINY%20DAYS",
-      "jacket": "SHINY DAYS.jpg",
-      "flags": ["usLocked"],
-      "saHash": "QIDqidPlPQll9q6Il0dblIo609lii1di",
-      "saIndex": "981"
     },
     {
       "name": "Shiny World",
@@ -47420,77 +46876,6 @@
       "genre": "SKA",
       "saHash": "idI1dd69l1il16P0d9DoldDP1QDP0911",
       "saIndex": "203"
-    },
-    {
-      "name": "SKY HIGH (20th Anniversary Mix)",
-      "name_translation": "",
-      "artist": "Haruki Yamada (ATTIC INC.) with Martin Leroux",
-      "artist_translation": "",
-      "bpm": "145",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.35
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.3
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.35
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.35
-        },
-        {
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 17.1
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.15
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.3
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.35
-        },
-        {
-          "lvl": 17,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 17.4
-        }
-      ],
-      "remyLink": "http://remywiki.com/SKY%20HIGH%20%2820th%20Anniversary%20Mix%29",
-      "jacket": "SKY HIGH (20th Anniversary Mix).png",
-      "genre": "",
-      "saHash": "IbI90PiioDlqPP19D1odPPbP1PP0009O",
-      "saIndex": "863"
     },
     {
       "name": "Sky Is The Limit",
@@ -64371,77 +63756,6 @@
       "saIndex": "910"
     },
     {
-      "name": "なだめスかし Negotiation",
-      "name_translation": "Nadame sukashi Negotiation",
-      "artist": "鹿乃と宇崎ちゃん",
-      "artist_translation": "Kano to Uzaki-chan",
-      "bpm": "150",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.3
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.25
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.35
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.4
-        },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 16.3
-        },
-        {
-          "lvl": 5,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 5.2
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.3
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.35
-        },
-        {
-          "lvl": 16,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["unlock"],
-          "sanbaiTier": 16.2
-        }
-      ],
-      "remyLink": "http://remywiki.com/%E3%81%AA%E3%81%A0%E3%82%81%E3%82%B9%E3%81%8B%E3%81%97%20Negotiation",
-      "jacket": "Nadame sukashi Negotiation.jpg",
-      "flags": ["usLocked"],
-      "saHash": "PIP1OIoObQ11Q0Po6idiloqOl9OQqqdd",
-      "saIndex": "979"
-    },
-    {
       "name": "はなまるぴっぴはよいこだけ",
       "name_translation": "Hanamaru pippi hayo iko dake",
       "artist": "A応P",
@@ -66277,62 +65591,6 @@
       "genre": "",
       "saHash": "qoidddb08iIoDOo9DQoO0loPl8lPQ81o",
       "saIndex": "846"
-    },
-    {
-      "name": "スカイクラッドの観測者",
-      "name_translation": "Skyclad no kansokusha",
-      "artist": "いとうかなこ",
-      "artist_translation": "Itou Kanako",
-      "bpm": "167",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.3
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 6.25
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.3
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.1
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.3
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.25
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.1
-        }
-      ],
-      "remyLink": "http://remywiki.com/%E3%82%B9%E3%82%AB%E3%82%A4%E3%82%AF%E3%83%A9%E3%83%83%E3%83%89%E3%81%AE%E8%A6%B3%E6%B8%AC%E8%80%85",
-      "jacket": "Skyclad no kansokusha.jpg",
-      "saHash": "QiOl969Iq1Pl6o60QOQ9PooDbbiOPioo",
-      "saIndex": "1002"
     },
     {
       "name": "スカーレット警察のゲットーパトロール24時",
@@ -72664,62 +71922,6 @@
       "saIndex": "223"
     },
     {
-      "name": "思想犯",
-      "name_translation": "Shisouhan",
-      "artist": "ヨルシカ",
-      "artist_translation": "Yorushika",
-      "bpm": "200",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.4
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.45
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 10.3
-        },
-        {
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.2
-        },
-        {
-          "lvl": 5,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 5.5
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 10.4
-        },
-        {
-          "lvl": 13,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 13.15
-        }
-      ],
-      "remyLink": "http://remywiki.com/%E6%80%9D%E6%83%B3%E7%8A%AF",
-      "jacket": "Shisouhan.jpg",
-      "saHash": "oIid19qq6dQ00O16IDiQ991D9OqdQil0",
-      "saIndex": "996"
-    },
-    {
       "name": "恋",
       "name_translation": "Koi",
       "artist": "星野 源",
@@ -77355,52 +76557,6 @@
       "genre": "",
       "saHash": "ibI69PPO1iP0D1IlI0bb11QOq6081POo",
       "saIndex": "428"
-    },
-    {
-      "name": "雑草魂なめんなよ！",
-      "name_translation": "Zassou tamashii namen na yo!",
-      "artist": "Taiki",
-      "artist_translation": "",
-      "bpm": "145",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.1
-        },
-        { "lvl": 5, "style": "single", "diffClass": "basic", "sanbaiTier": 5 },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.05
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.2
-        },
-        { "lvl": 5, "style": "double", "diffClass": "basic", "sanbaiTier": 5 },
-        {
-          "lvl": 8,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 8
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.1
-        }
-      ],
-      "remyLink": "http://remywiki.com/%E9%9B%91%E8%8D%89%E9%AD%82%E3%81%AA%E3%82%81%E3%82%93%E3%81%AA%E3%82%88%EF%BC%81",
-      "jacket": "Zassou tamashii namen na yo!.jpg",
-      "saHash": "D6b8boIiOqQOq1QP9D1qd08I6Q0IIqq9",
-      "saIndex": "1001"
     },
     {
       "name": "雫",

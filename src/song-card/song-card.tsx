@@ -11,6 +11,7 @@ import { CardLabel, LabelType } from "./card-label";
 import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
+import { ChartLevel } from "./chart-level";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -89,7 +90,6 @@ export function SongCard(props: Props) {
     bpm,
     diffAbbr,
     diffColor,
-    level,
     jacket,
     flags,
   } = replacedWith || chart;
@@ -207,7 +207,7 @@ export function SongCard(props: Props) {
           <div className={styles.bpm}>{bpm} BPM</div>
           {flags.includes("shock") && <ShockBadge />}
           <div className={styles.difficulty}>
-            {diffAbbr} {level}
+            {diffAbbr} <ChartLevel chart={replacedWith || chart} />
           </div>
         </div>
       </Popover>
