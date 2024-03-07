@@ -16,14 +16,18 @@ interface Props {
 }
 const pctFmt = new Intl.NumberFormat(undefined, { style: "percent" });
 
-function printGroup(group: LevelRangeBucket | number) {
+function printGroup(
+  group: LevelRangeBucket | number,
+  precisionRange: number | undefined,
+) {
   if (typeof group === "number") {
     return group.toString();
   } else {
+    const digits = precisionRange && (1 / precisionRange).toString().length - 2;
     if (group[0] === group[1]) {
-      return group[0].toString();
+      return group[0].toFixed(digits);
     }
-    return `${group[0]}-${group[1]}`;
+    return `${group[0].toFixed(digits)}-${group[1].toFixed(digits)}`;
   }
 }
 
@@ -135,26 +139,6 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
           ? t("weights.forcedExplanation")
           : t("weights.explanation")}
       </p>
-      {groups.map((group, idx) => (
-        <div className={styles.level} key={printGroup(group)}>
-          <NumericInput
-            type="number"
-            inputMode="numeric"
-            width={2}
-            name={`weight-${group}`}
-            value={weights[idx] || ""}
-            min={0}
-            onValueChange={(v) => setWeight(idx, v)}
-            placeholder="0"
-            fill
-          />
-          {/* {groupSongsAt === group && ">="} */}
-          {usesTiers && typeof group === "number"
-            ? `T${zeroPad(group, 2)}`
-            : printGroup(group)}{" "}
-          <sub>{percentages[idx]}</sub>
-        </div>
-      ))}
       <Checkbox
         label={t("weights.check.label")}
         title={t("weights.check.title")}
@@ -177,6 +161,39 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
         min={2}
         onValueChange={handleBucketCountChange}
       />
+      {groups.map((group, idx) => (
+        <div
+          className={styles.level}
+          key={printGroup(
+            group,
+            useGranularLevels
+              ? gameData?.meta.granularTierResolution
+              : undefined,
+          )}
+        >
+          <NumericInput
+            type="number"
+            inputMode="numeric"
+            width={2}
+            name={`weight-${group}`}
+            value={weights[idx] || ""}
+            min={0}
+            onValueChange={(v) => setWeight(idx, v)}
+            placeholder="0"
+            fill
+          />
+          {/* {groupSongsAt === group && ">="} */}
+          {usesTiers && typeof group === "number"
+            ? `T${zeroPad(group, 2)}`
+            : printGroup(
+                group,
+                useGranularLevels
+                  ? gameData?.meta.granularTierResolution
+                  : undefined,
+              )}{" "}
+          <sub>{percentages[idx]}</sub>
+        </div>
+      ))}
     </section>
   );
 }
