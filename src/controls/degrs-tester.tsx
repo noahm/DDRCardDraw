@@ -9,6 +9,7 @@ import { draw } from "../card-draw";
 import { useDrawState } from "../draw-state";
 import { useAtom } from "jotai";
 import { useConfigState } from "../config-state";
+import { requestIdleCallback } from "../utils/idle-callback";
 import {
   TEST_SIZE,
   REPORT_FREQUENCY,
@@ -53,7 +54,7 @@ export function* degrsTester() {
 }
 
 function nextIdleCycle() {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     requestIdleCallback(resolve);
   });
 }
