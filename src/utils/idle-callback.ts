@@ -5,7 +5,7 @@ const hasIdleCallback = typeof window.requestIdleCallback === "function";
 
 export function requestIdleCallback(cb: () => void) {
   if (hasIdleCallback) {
-    return requestIdleCallback(cb);
+    return window.requestIdleCallback(cb);
   } else {
     return requestAnimationFrame(cb);
   }
@@ -13,7 +13,7 @@ export function requestIdleCallback(cb: () => void) {
 
 export function cancelIdleCallback(handle: number) {
   if (hasIdleCallback) {
-    cancelIdleCallback(handle);
+    window.cancelIdleCallback(handle);
   } else {
     cancelAnimationFrame(handle);
   }
