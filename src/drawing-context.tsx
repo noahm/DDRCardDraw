@@ -5,6 +5,7 @@ import { useConfigState } from "./config-state";
 import { createContextualStore } from "./zustand/contextual-zustand";
 import { useDrawState } from "./draw-state";
 import {
+  CHART_PLACEHOLDER,
   Drawing,
   EligibleChart,
   PlayerActionOnChart,
@@ -130,19 +131,35 @@ const {
       const charts = drawing.charts.slice();
       const key = keyFromAction(action);
       const arr = drawing[key].slice() as PlayerActionOnChart[] | PocketPick[];
+      const targetChartIdx = charts.findIndex((chart) => chart.id === chartId);
+      const targetChart = charts[targetChartIdx];
 
-      if (useConfigState.getState().orderByAction) {
-        const indexToCut = charts.findIndex((chart) => chart.id === chartId);
-        const [shiftedChart] = charts.splice(indexToCut, 1);
+      if (
+        useConfigState.getState().orderByAction &&
+        targetChart?.type !== CHART_PLACEHOLDER
+      ) {
+        charts.splice(targetChartIdx, 1);
         if (action === "ban") {
           // insert at tail of list
           const insertPoint = charts.length;
-          charts.splice(insertPoint, 0, shiftedChart);
+          charts.splice(insertPoint, 0, targetChart);
         } else {
-          // insert at head of list, behind other picks
-          const insertPoint =
-            drawing.protects.length + drawing.pocketPicks.length;
-          charts.splice(insertPoint, 0, shiftedChart);
+          const frontLockedCardCount =
+            // number of placeholder cards total (picked and unpicked)
+            charts.reduce<number>(
+              (total, curr) =>
+                total + (curr.type === CHART_PLACEHOLDER ? 1 : 0),
+              0,
+            ) +
+            // number of protects
+            drawing.protects.length +
+            // number of picks NOT targeting placeholder cards
+            drawing.pocketPicks.filter(
+              (p) => p.targetType !== CHART_PLACEHOLDER,
+            ).length;
+
+          // insert at head of list, behind other picks/placeholders
+          charts.splice(frontLockedCardCount, 0, targetChart);
         }
         set({
           charts,
@@ -154,7 +171,12 @@ const {
         arr.splice(existingIndex, 1);
       } else {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        arr.push({ player, pick: newChart!, chartId });
+        arr.push({
+          player,
+          pick: newChart!,
+          chartId,
+          targetType: targetChart.type,
+        });
       }
       set({
         [key]: arr,

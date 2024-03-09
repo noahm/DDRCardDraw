@@ -19,6 +19,7 @@ import {
   People,
   CaretDown,
   CaretRight,
+  Plus,
 } from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
@@ -171,6 +172,7 @@ function GeneralSettings() {
     chartCount,
     sortByLevel,
     useGranularLevels,
+    playerPicks,
   } = configState;
   const availableDifficulties = useMemo(() => {
     if (!gameData) {
@@ -241,7 +243,7 @@ function GeneralSettings() {
           <Divider />
         </>
       )}
-      <div className={isNarrow ? undefined : styles.inlineControls}>
+      <div className={styles.inlineControls}>
         <FormGroup
           label={t("controls.chartCount")}
           contentClassName={styles.narrowInput}
@@ -263,46 +265,68 @@ function GeneralSettings() {
             }}
           />
         </FormGroup>
-        <div className={styles.inlineControls}>
-          <FormGroup
-            label={
-              usesDrawGroups
-                ? t("controls.lowerBoundTier")
-                : t("controls.lowerBoundLvl")
-            }
-            contentClassName={styles.narrowInput}
-          >
-            <NumericInput
-              large
-              fill
-              type="number"
-              inputMode="numeric"
-              value={useGranularLevels ? lowerBound.toFixed(2) : lowerBound}
-              min={availableLevels[0]}
-              max={Math.max(upperBound, lowerBound, 1)}
-              onValueChange={handleLowerBoundChange}
-            />
-          </FormGroup>
-          <FormGroup
-            label={
-              usesDrawGroups
-                ? t("controls.upperBoundTier")
-                : t("controls.upperBoundLvl")
-            }
-            contentClassName={styles.narrowInput}
-          >
-            <NumericInput
-              large
-              fill
-              type="number"
-              inputMode="numeric"
-              value={useGranularLevels ? upperBound.toFixed(2) : upperBound}
-              min={lowerBound}
-              max={availableLevels[availableLevels.length - 1]}
-              onValueChange={handleUpperBoundChange}
-            />
-          </FormGroup>
-        </div>
+        <Plus className={styles.plus} size={20} />
+        <FormGroup
+          label={t("controls.playerPicks")}
+          contentClassName={styles.narrowInput}
+        >
+          <NumericInput
+            large
+            fill
+            type="number"
+            inputMode="numeric"
+            value={playerPicks}
+            min={0}
+            clampValueOnBlur
+            onValueChange={(playerPicks) => {
+              if (!isNaN(playerPicks)) {
+                updateState(() => {
+                  return { playerPicks };
+                });
+              }
+            }}
+          />
+        </FormGroup>
+      </div>
+      <div className={styles.inlineControls}>
+        <FormGroup
+          label={
+            usesDrawGroups
+              ? t("controls.lowerBoundTier")
+              : t("controls.lowerBoundLvl")
+          }
+          contentClassName={styles.narrowInput}
+        >
+          <NumericInput
+            large
+            fill
+            type="number"
+            inputMode="numeric"
+            value={useGranularLevels ? lowerBound.toFixed(2) : lowerBound}
+            min={availableLevels[0]}
+            max={Math.max(upperBound, lowerBound, 1)}
+            onValueChange={handleLowerBoundChange}
+          />
+        </FormGroup>
+        <FormGroup
+          label={
+            usesDrawGroups
+              ? t("controls.upperBoundTier")
+              : t("controls.upperBoundLvl")
+          }
+          contentClassName={styles.narrowInput}
+        >
+          <NumericInput
+            large
+            fill
+            type="number"
+            inputMode="numeric"
+            value={useGranularLevels ? upperBound.toFixed(2) : upperBound}
+            min={lowerBound}
+            max={availableLevels[availableLevels.length - 1]}
+            onValueChange={handleUpperBoundChange}
+          />
+        </FormGroup>
       </div>
       <Button
         alignText="left"

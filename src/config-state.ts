@@ -3,6 +3,7 @@ import { createWithEqualityFn } from "zustand/traditional";
 
 export interface ConfigState {
   chartCount: number;
+  playerPicks: number;
   upperBound: number;
   lowerBound: number;
   useWeights: boolean;
@@ -28,6 +29,7 @@ export interface ConfigState {
 export const useConfigState = createWithEqualityFn<ConfigState>(
   (set) => ({
     chartCount: 5,
+    playerPicks: 0,
     upperBound: 0,
     lowerBound: 0,
     useWeights: false,
