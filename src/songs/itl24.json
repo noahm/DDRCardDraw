@@ -1,0 +1,1859 @@
+{
+  "meta": {
+    "menuParent": "itg",
+    "flags": [],
+    "lastUpdated": 1709947119117,
+    "usesDrawGroups": false,
+    "styles": ["single", "double"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 1,
+    "difficulties": ["challenge"],
+    "upperLvlBound": 14,
+    "style": "single"
+  },
+  "i18n": {
+    "en": {
+      "name": "ITL Online 2024",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    },
+    "ja": {
+      "name": "ITL Online 2024",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[1295] [07] 91's Result (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] 91's Result (SM) [Lumi].jpg",
+      "bpm": "128",
+      "artist": "MYUKKE. (Mixed By Lumi)",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1131] [07] Awayuki (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Awayuki (SH) [Lisek].jpg",
+      "bpm": "65-130",
+      "artist": "ave,new feat. Saori Sakura",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1252] [07] Baqeela (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Baqeela (SM) [Sudzi781].jpg",
+      "bpm": "146",
+      "artist": "owl*tree Remixed by SamplingMastersMEGA",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1372] [07] Beat Radiance (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Beat Radiance (SM) [forcednature].jpg",
+      "bpm": "192",
+      "artist": "iNO",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1501] [07] Berry Go!! (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Berry Go!! (SM) [forcednature].jpg",
+      "bpm": "175",
+      "artist": "Freezer feat.妃苺",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1866] [07] Dance with Liquor (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Dance with Liquor (DH) [Spooty].jpg",
+      "bpm": "128",
+      "artist": "Kikuo",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1134] [07] Deep Down (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Deep Down (SH) [Shpadoinkle].jpg",
+      "bpm": "126",
+      "artist": "Alok, Ella Eyre, Kenny Dope, Never Dull",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1699] [07] Denpasar (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Denpasar (DM) [Brother Mojo].jpg",
+      "bpm": "135",
+      "artist": "good-cool",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1699] [07] Don't Stop The Music (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Don't Stop The Music (DM) [Lama].jpg",
+      "bpm": "132",
+      "artist": "Nhato feat. Kanae Asaba",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1033] [07] ETA",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] ETA (SX) [VincentITG].jpg",
+      "bpm": "135",
+      "artist": "NewJeans",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1524] [07] フラワービレッジ (Hard)",
+      "name_translation": "[1524] [07] Flower Village (Hard)",
+      "jacket": "itg/itl24/[07] Flower Village (DH) [Spooty].jpg",
+      "bpm": "116",
+      "artist": "Floating Cloud",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1096] [07] Fly far bounce (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Fly far bounce (SH) [Chief Skittles].jpg",
+      "bpm": "163",
+      "artist": "猫叉Master",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1250] [07] Forgotten Vampire (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Forgotten Vampire (DM) [Lama].jpg",
+      "bpm": "91-137",
+      "artist": "WyvernP",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1211] [07] Fox4-Raize- (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Fox4-Raize- (SH) [Chief Skittles].jpg",
+      "bpm": "200",
+      "artist": "Getty vs. DJ DiA",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2000] [07] GET OVER IT ! (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] GET OVER IT ! (DM) [Telperion].jpg",
+      "bpm": "136-145",
+      "artist": "chilldive",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1242] [07] Hastur (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Hastur (SH) [Chief Skittles].jpg",
+      "bpm": "118",
+      "artist": "USAO",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1061] [07] Highwind (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Highwind (SH) [StarrySergal, M. Ruggiero].jpg",
+      "bpm": "132",
+      "artist": "PrototypeRaptor",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1141] [07] How Could You Say (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] How Could You Say (SH) [Telperion].jpg",
+      "bpm": "150",
+      "artist": "anubasu-anubasu",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1000] [07] アイドル (Medium)",
+      "name_translation": "[1000] [07] Idol (Medium)",
+      "jacket": "itg/itl24/[07] Idol (SM) [Loak].jpg",
+      "bpm": "166",
+      "artist": "YOASOBI",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1161] [07] リリカルMonster (Medium)",
+      "name_translation": "[1161] [07] Lyrical Monster (Medium)",
+      "jacket": "itg/itl24/[07] Lyrical Monster (SM) [wrsw].jpg",
+      "bpm": "152",
+      "artist": "白銀ノエル (prod. HANO)",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1537] [07] Mer av dig (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Mer av dig (SH) [OrangeRight].jpg",
+      "bpm": "120",
+      "artist": "THEOZ",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1621] [07] New Game (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] New Game (DM) [Brother Mojo].jpg",
+      "bpm": "128",
+      "artist": "Nitro Fun",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1275] [07] On My Mind (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] On My Mind (SM) [Maxx].jpg",
+      "bpm": "124",
+      "artist": "Max Styler",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1510] [07] Outernoid (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Outernoid (DM) [Telperion].jpg",
+      "bpm": "172",
+      "artist": "Aoi feat.Airi",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1323] [07] Padam Padam (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Padam Padam (SH) [Maxx].jpg",
+      "bpm": "128",
+      "artist": "Kylie Minogue",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1139] [07] ぷ・れ・あ・で・す！ (Medium)",
+      "name_translation": "[1139] [07] Pleiades! (Medium)",
+      "jacket": "itg/itl24/[07] Pleiades! (SM) [wrsw].jpg",
+      "bpm": "148",
+      "artist": "大空スバル (prod. TRYTONELABO)",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1107] [07] Polar Bears (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Polar Bears (SH) [Shpadoinkle].jpg",
+      "bpm": "120",
+      "artist": "JUNG",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1220] [07] REFLECT (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] REFLECT (SM) [FuriousDan].jpg",
+      "bpm": "160",
+      "artist": "Gawr Gura (remixed by Turbo)",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1178] [07] Realize Maze (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Realize Maze (SM) [forcednature].jpg",
+      "bpm": "149",
+      "artist": "movies (moimoi×Xceon×Dai.)",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1000] [07] Shadow World (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Shadow World (SM) [Lama].jpg",
+      "bpm": "180",
+      "artist": "HuΣeR × 猫叉Master feat. Emi Evans",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2290] [07] 天空脳番長危機十六連打 (Medium)",
+      "name_translation": "[2290] [07] Techno banchou kiki juuroku renda (Medium)",
+      "jacket": "itg/itl24/[07] Techno banchou kiki juuroku renda (DM) [WinDEU].jpg",
+      "bpm": "150",
+      "artist": "D.J.SETUP",
+      "charts": [{ "lvl": 7, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1148] [07] Teleportation (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] Teleportation (SM) [StoryTime].jpg",
+      "bpm": "175",
+      "artist": "Capsule",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1260] [07] That's So Us",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] That's So Us (SX) [Xynn].jpg",
+      "bpm": "100",
+      "artist": "Allie X",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1105] [07] What's Going On? (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] What's Going On (SH) [Gpop].jpg",
+      "bpm": "130",
+      "artist": "Turtles",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[1588] [07] hot milk",
+      "name_translation": "",
+      "jacket": "itg/itl24/[07] hot milk (SX) [Tidek & H1Pur].jpg",
+      "bpm": "150",
+      "artist": "UjicoSnail's house",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2874] [08] Amaterasky (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Amaterasky (DH) [Spooty].jpg",
+      "bpm": "128",
+      "artist": "Halozy",
+      "charts": [{ "lvl": 8, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2395] [08] Aquatic Ambience (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Aquatic Ambience (SH) [HellKiteChaos].jpg",
+      "bpm": "155",
+      "artist": "GameChops",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2588] [08] Beautiful Sky (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Beautiful Sky (SM) [mdx].jpg",
+      "bpm": "125",
+      "artist": "Au5 feat. Daniel Hanson",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2324] [08] Beyond (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Beyond (SH) [sangyule].jpg",
+      "bpm": "138",
+      "artist": "Lime",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2331] [08] Boombayah (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Boombayah (SH) [Valex].jpg",
+      "bpm": "125",
+      "artist": "BLACKPINK",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2039] [08] Brain Para-dicing! (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Brain Para-dicing! (SH) [CondorTalon].jpg",
+      "bpm": "180",
+      "artist": "Xe",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2267] [08] BrainBurst (o_o) (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] BrainBurst (o_o) (SM) [Fanatik].jpg",
+      "bpm": "160",
+      "artist": "Blacklolita",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2267] [08] Candy-go-round (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Candy-go-round (SH) [wrsw].jpg",
+      "bpm": "134",
+      "artist": "Roboco-san, Mel, AkiRose, Aqua, Flare (prod. キノシタ)",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2573] [08] Cauliflower",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Cauliflower (SX) [Gameoson].jpg",
+      "bpm": "138",
+      "artist": "HiTECH NINJA",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2217] [08] Crescent Island (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Crescent Island (SH) [Braeden].jpg",
+      "bpm": "138",
+      "artist": "David Wise",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2430] [08] Dark Prism (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Dark Prism (SH) [Gpop].jpg",
+      "bpm": "75-149",
+      "artist": "Tsukasa",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2586] [08] アカツキノソラ (Hard)",
+      "name_translation": "[2586] [08] Dawning Sky (Hard)",
+      "jacket": "itg/itl24/[08] Dawning Sky (SH) [Gpop].jpg",
+      "bpm": "181",
+      "artist": "REDALiCE feat. DELUTAYA",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2261] [08] Deep (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Deep (DH) [Brother Mojo].jpg",
+      "bpm": "128",
+      "artist": "Haddaway",
+      "charts": [{ "lvl": 8, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2342] [08] Dolphika (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Dolphika (SH) [Chief Skittles].jpg",
+      "bpm": "155",
+      "artist": "HiTECH NINJA",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2406] [08] EBENEEZER GOODE (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] EBENEEZER GOODE (SH) [Ben Eats Spiers].jpg",
+      "bpm": "126",
+      "artist": "SHAMEN",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2272] [08] FALL",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] FALL (SX) [Hubert].jpg",
+      "bpm": "140",
+      "artist": "Copter4016882",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2048] [08] GREAT GREAT (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] GREAT GREAT (SM) [CondorTalon].jpg",
+      "bpm": "161",
+      "artist": "Zris",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2024] [08] I Can't Stop Me",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] I Can't Stop Me (SX) [Freyja].jpg",
+      "bpm": "150",
+      "artist": "TWICE",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2723] [08] Larger Than Life",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Larger Than Life (SX) [G. Rosewood].jpg",
+      "bpm": "111",
+      "artist": "Backstreet Boys",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2192] [08] Mad For You (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Mad For You (SM) [Maxx].jpg",
+      "bpm": "140",
+      "artist": "Snareskin, TROVES",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2843] [08] Nerdy (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Nerdy (SH) [t7r].jpg",
+      "bpm": "136",
+      "artist": "PURPLE KISS",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2120] [08] OMG (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] OMG (SH) [Highflyer].jpg",
+      "bpm": "127",
+      "artist": "New Jeans",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2206] [08] オオカミハート",
+      "name_translation": "[2206] [08] Ookami Heart",
+      "jacket": "itg/itl24/[08] Ookami Heart (SX) [Loak].jpg",
+      "bpm": "128",
+      "artist": "ORESAMA",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2360] [08] Plasma Sphere (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Plasma Sphere (DM) [Lama].jpg",
+      "bpm": "107",
+      "artist": "VoidRover",
+      "charts": [{ "lvl": 8, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2313] [08] SPACE POLICE (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] SPACE POLICE (SH) [Chief Skittles].jpg",
+      "bpm": "152",
+      "artist": "Ka7ag5th",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2524] [08] Save New Jersey (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Save New Jersey (DM) [warpdrive].jpg",
+      "bpm": "160",
+      "artist": "Save New Jersey",
+      "charts": [{ "lvl": 8, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2293] [08] 自分勝手Dazzling (Hard)",
+      "name_translation": "[2293] [08] Selfish Dazzling (Hard)",
+      "jacket": "itg/itl24/[08] Selfish Dazzling (SH) [Exschwasion].jpg",
+      "bpm": "130",
+      "artist": "星街すいせい",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2171] [08] Shine",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Shine (DX) [LemmingOnTheRun].jpg",
+      "bpm": "150",
+      "artist": "Pentagon",
+      "charts": [{ "lvl": 8, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2263] [08] Stellar Stellar (Easy)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Stellar Stellar (SE) [wrsw].jpg",
+      "bpm": "178",
+      "artist": "星街すいせい (prod. TAKU INOUE)",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2079] [08] Supersonics (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Supersonics (SH) [M. Ruggiero].jpg",
+      "bpm": "123",
+      "artist": "Caravan Palace",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2910] [08] Tonight (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Tonight (DH) [forcednature].jpg",
+      "bpm": "146",
+      "artist": "DJ Vibes & Hattrixx",
+      "charts": [{ "lvl": 8, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2434] [08] Unbelievable (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] Unbelievable (SH) [Tony S.].jpg",
+      "bpm": "158",
+      "artist": "Diamond Rio",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2166] [08] 我期待的不是雪",
+      "name_translation": "[2166] [08] What I'm wishing for, is not snow",
+      "jacket": "itg/itl24/[08] What I'm wishing for, is not snow (SX) [teejusb].jpg",
+      "bpm": "113",
+      "artist": "张妙格",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2166] [08] edamame (Easy)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] edamame (SE) [Zaia].jpg",
+      "bpm": "130",
+      "artist": "bbno$ & Rich Brian",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[2251] [08] greater than one (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[08] greater than one (SH) [sorae].jpg",
+      "bpm": "90",
+      "artist": "ericdoa",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3464] [09] 405nm (Ryu☆mix) (Medium)",
+      "name_translation": "[3464] [09] 405nm (Ryu mix) (Medium)",
+      "jacket": "itg/itl24/[09] 405nm (Ryu mix) (SM) [forcednature].jpg",
+      "bpm": "177",
+      "artist": "Another Infinity",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3629] [09] A-Cha",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] A-Cha (SX) [mudkyp].jpg",
+      "bpm": "125",
+      "artist": "Super Junior",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3312] [09] A-ra (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] A-ra (SH) [Exschwasion].jpg",
+      "bpm": "105",
+      "artist": "PODA",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3371] [09] Apparitions Stalk the Night (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Apparitions Stalk the Night (SH) [Sudzi781].jpg",
+      "bpm": "146-152",
+      "artist": "Magnum Opus",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3113] [09] Broken Angel",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Broken Angel (SX) [mute].jpg",
+      "bpm": "128",
+      "artist": "Arash feat. Helena",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3356] [09] Bullet Waiting for Me (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Bullet Waiting for Me (SH) [Sangyule].jpg",
+      "bpm": "107",
+      "artist": "Nikki Simmons",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3497] [09] Bury It",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Bury It (SX) [Valex].jpg",
+      "bpm": "100",
+      "artist": "CHVRCHES feat. Hayley Williams",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3749] [09] Chatterbox",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Chatterbox (SX) [Benpai].jpg",
+      "bpm": "110",
+      "artist": "Complexive",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3183] [09] Circus",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Circus (SX) [mute].jpg",
+      "bpm": "58-115",
+      "artist": "Britney Spears",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3611] [09] Despair of ELFERIA (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Despair of ELFERIA (SM) [forcednature].jpg",
+      "bpm": "205",
+      "artist": "猫叉Master",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3387] [09] Diamond City Lights",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Diamond City Lights (SX) [DDDAAA].jpg",
+      "bpm": "182",
+      "artist": "LazuLight",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3166] [09] Electric Shock",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Electric Shock (DX) [LemmingOnTheRun].jpg",
+      "bpm": "125",
+      "artist": "f(x)",
+      "charts": [{ "lvl": 9, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3546] [09] Element of SPADA (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Element of SPADA (DH) [forcednature].jpg",
+      "bpm": "170",
+      "artist": "猫叉Master feat.霜月はるか",
+      "charts": [{ "lvl": 9, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3478] [09] Finesse",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Finesse (SX) [VincentITG].jpg",
+      "bpm": "105",
+      "artist": "Bruno Mars",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3088] [09] Flower Of The Wind",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Flower Of The Wind (SX) [cmmf].jpg",
+      "bpm": "88-176",
+      "artist": "TOFiE (ft. Wisteria Iroha)",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3583] [09] Fly Away To India",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Fly Away To India (DX) [King of Light].jpg",
+      "bpm": "133",
+      "artist": "Baby Weapon feat. KAJIL",
+      "charts": [{ "lvl": 9, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3302] [09] Groove District (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Groove District (SH) [mute].jpg",
+      "bpm": "125",
+      "artist": "スタージャンク95",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3233] [09] Happy Life Generator",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Happy Life Generator (SX) [StoryTime].jpg",
+      "bpm": "170",
+      "artist": "CAPSULE",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3460] [09] Harmonia (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Harmonia (SH) [forcednature].jpg",
+      "bpm": "177",
+      "artist": "ATSUMI UEDA",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3781] [09] Hugs and Hexagons (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Hugs and Hexagons (DH) [Brother Mojo remixes Exschwasion].jpg",
+      "bpm": "140",
+      "artist": "Isqa",
+      "charts": [{ "lvl": 9, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3869] [09] Light Switch (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Light Switch (SH) [Highflyer].jpg",
+      "bpm": "79-184",
+      "artist": "Charlie Puth",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3393] [09] Love Ya (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Love Ya (SH) [Highflyer].jpg",
+      "bpm": "143-145",
+      "artist": "Pure 100%",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3121] [09] キミの記憶",
+      "name_translation": "[3121] [09] Memories of You",
+      "jacket": "itg/itl24/[09] Memories of You (SX) [Hubert].jpg",
+      "bpm": "112",
+      "artist": "川村ゆみ",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3234] [09] Out of the Woods",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Out of the Woods (SX) [J. Berkowitz, M. Ruggiero].jpg",
+      "bpm": "92",
+      "artist": "Taylor Swift",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3667] [09] RAGE feat.H14 of LEONAIR (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] RAGE feat.H14 of LEONAIR (SM) [forcednature].jpg",
+      "bpm": "166",
+      "artist": "DJ Mass MAD Izm*",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3359] [09] Roly Poly",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Roly Poly (SX) [mudkyp].jpg",
+      "bpm": "130",
+      "artist": "T-ara",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3439] [09] SEVENTH HAVEN",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] SEVENTH HAVEN (SX) [Gpop].jpg",
+      "bpm": "66-132",
+      "artist": "7th Sisters",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3381] [09] 心臓",
+      "name_translation": "[3381] [09] Shinzo",
+      "jacket": "itg/itl24/[09] Shinzo (SX) [teri].jpg",
+      "bpm": "180",
+      "artist": "TOOBOE",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3357] [09] Snailchan Adventure (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Snailchan Adventure (SH) [Benpai].jpg",
+      "bpm": "174",
+      "artist": "Snail’s House",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3959] [09] Spectrum Sequence (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Spectrum Sequence (SH) [DRILLBOT vs. valgrind].jpg",
+      "bpm": "110",
+      "artist": "Machinedrum",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3010] [09] Sugar Rush (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Sugar Rush (SH) [M. Ruggiero].jpg",
+      "bpm": "127",
+      "artist": "Virtual Riot",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3260] [09] Timekeeper's Song",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Timekeeper's Song (SX) [Sudzi781].jpg",
+      "bpm": "60-120",
+      "artist": "felys feat. Aki Misawa",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3340] [09] Twinkle (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] Twinkle (SM) [DDDAAA].jpg",
+      "bpm": "129-130",
+      "artist": "Aiobahn",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3692] [09] UMMU (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] UMMU (SM) [forcednature].jpg",
+      "bpm": "180",
+      "artist": "t+pazolite",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3081] [09] burbank house",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] burbank house (SX) [Blizzrdball].jpg",
+      "bpm": "170",
+      "artist": "tsubi club",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[3502] [09] liquated (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[09] liquated (SH) [mdx].jpg",
+      "bpm": "140",
+      "artist": "かめりあ",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4334] [10] Addicted",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Addicted (SX) [tev].jpg",
+      "bpm": "132",
+      "artist": "Redsign",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4289] [10] Berry Berry Strawberry",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Berry Berry Strawberry (SX) [Gpop].jpg",
+      "bpm": "140",
+      "artist": "P*Light",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4411] [10] Burst the Gravity",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Burst the Gravity (SX) [Valex].jpg",
+      "bpm": "148",
+      "artist": "ALTIMA",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4143] [10] Candy Cutie",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Candy Cutie (SX) [StoryTime].jpg",
+      "bpm": "155",
+      "artist": "CAPSULE feat. Sonic Coaster Pop",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4305] [10] Clearest Blue",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Clearest Blue (SX) [mute].jpg",
+      "bpm": "123",
+      "artist": "CHVRCHES",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5231] [10] Error 2.0",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Error 2.0 (SX) [CERiNG].jpg",
+      "bpm": "128",
+      "artist": "Erio",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4473] [10] Forever",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Forever (SX) [Valex].jpg",
+      "bpm": "128",
+      "artist": "J Sutta",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4657] [10] Goosebumps",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Goosebumps (SX) [Feraligatr].jpg",
+      "bpm": "124",
+      "artist": "Travis Scott",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4669] [10] Guillaume Tell (Medium)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Guillaume Tell (SM) [Braeden].jpg",
+      "bpm": "180",
+      "artist": "MC F 40 (Rossini)",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4490] [10] 今宵Dance～花火やねん",
+      "name_translation": "[4490] [10] Koyoi Dance ~ Hanabiyanen",
+      "jacket": "itg/itl24/[10] Koyoi Dance ~ Hanabiyanen (SX) [Hubert].jpg",
+      "bpm": "146",
+      "artist": "鹿乃",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4235] [10] 黒髪乱れし修羅となりて (Hard)",
+      "name_translation": "[4235] [10] Kurokami midareshi shura to narite (Hard)",
+      "jacket": "itg/itl24/[10] Kurokami midareshi shura to narite (SH) [forcednature].jpg",
+      "bpm": "150",
+      "artist": "村正クオリア",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4393] [10] Lucky Love",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Lucky Love (SX) [StoryTime].jpg",
+      "bpm": "126",
+      "artist": "CAPSULE",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4585] [10] Melt",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Melt (SX) [mdx].jpg",
+      "bpm": "145",
+      "artist": "Au5, Jeto, Cristina Soto",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4682] [10] Meridian",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Meridian (SX) [Talkion].jpg",
+      "bpm": "175",
+      "artist": "Ayiko",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4405] [10] Mr. Electron",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Mr. Electron (SX) [CopperPuppy].jpg",
+      "bpm": "128",
+      "artist": "The Brig x Michael White",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4774] [10] Pumpkin Party in Sea Hitler's Water Apocalypse",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Pumpkin Party in Sea Hitler's Water Apocalypse (SX) [Valex].jpg",
+      "bpm": "125",
+      "artist": "Malcolm Brown",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4303] [10] Punks",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Punks (SX) [tev].jpg",
+      "bpm": "110",
+      "artist": "Korva",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4180] [10] Reality Distortion (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Reality Distortion (SH) [Chief Skittles].jpg",
+      "bpm": "200",
+      "artist": "かめりあ vs Akira Complex",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4341] [10] Seishun Archive (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Seishun Archive (SH) [wrsw].jpg",
+      "bpm": "181",
+      "artist": "hololive IDOL PROJECT (prod. HoneyWorks)",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4680] [10] Set Me Free",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Set Me Free (SX) [sorae].jpg",
+      "bpm": "78",
+      "artist": "BilliumMoto",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4098] [10] Shades of Blue",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Shades of Blue (SX) [mute].jpg",
+      "bpm": "136",
+      "artist": "Chris Child feat. Melissa Kaplan",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4710] [10] 少年リップルズ (Hard)",
+      "name_translation": "[4710] [10] Shounen ripples (Hard)",
+      "jacket": "itg/itl24/[10] Shounen ripples (SH) [forcednature].jpg",
+      "bpm": "210",
+      "artist": "常盤ゆう",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4461] [10] Singularity (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Singularity (SH) [Chief Skittles].jpg",
+      "bpm": "175",
+      "artist": "Etia.",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4193] [10] So Good (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] So Good (DH) [Brother Mojo].jpg",
+      "bpm": "192",
+      "artist": "Bit Reactors",
+      "charts": [{ "lvl": 10, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4377] [10] Temptation",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Temptation (SX) [zb].jpg",
+      "bpm": "125",
+      "artist": "DJ Kuba",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4567] [10] Time Traveler",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Time Traveler (SX) [Valex].jpg",
+      "bpm": "160",
+      "artist": "Knower",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4293] [10] Told You So",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Told You So (SX) [Shpadoinkle].jpg",
+      "bpm": "124",
+      "artist": "Paramore",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4485] [10] Too Complicated (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Too Complicated (SH) [CERiNG].jpg",
+      "bpm": "137",
+      "artist": "Mr. Bill, eliderp & Sophro",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4254] [10] Visitor",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Visitor (SX) [omgukk & LuckJury].jpg",
+      "bpm": "110",
+      "artist": "Synergy Sound",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4276] [10] Where Have You Been",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Where Have You Been (SX) [cmmf].jpg",
+      "bpm": "128",
+      "artist": "Rihanna",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4591] [10] Whine Up",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Whine Up (SX) [Feraligatr].jpg",
+      "bpm": "125",
+      "artist": "Kat Deluna",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4234] [10] Yuusha",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] Yuusha (SX) [tev].jpg",
+      "bpm": "104",
+      "artist": "YOASOBI",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4850] [10] mind",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] mind (SX) [mdx].jpg",
+      "bpm": "175",
+      "artist": "android52",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4428] [10] ringtone",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] ringtone (SX) [valgrind].jpg",
+      "bpm": "108",
+      "artist": "100 gecs",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[4449] [10] we've never met but, can we have some coffee or something?",
+      "name_translation": "",
+      "jacket": "itg/itl24/[10] we've never met but, can we have some coffee or something (SX) [Mirin].jpg",
+      "bpm": "101",
+      "artist": "in love with a ghost",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5564] [11] AM to PM",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] AM to PM (DX) [Highflyer].jpg",
+      "bpm": "102-106",
+      "artist": "Christina Milian",
+      "charts": [{ "lvl": 11, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5564] [11] Accelerate",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Accelerate (SX) [Talkion].jpg",
+      "bpm": "150",
+      "artist": "Teminite & Skybreak",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5662] [11] Alchemist",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Alchemist (SX) [mute].jpg",
+      "bpm": "188",
+      "artist": "Savant feat. Gino Sydal",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5186] [11] 刃図羅 (Hard)",
+      "name_translation": "[5186] [11] BUZRA (Hard)",
+      "jacket": "itg/itl24/[11] BUZRA (SH) [RakkiiCB].jpg",
+      "bpm": "165",
+      "artist": "猫叉Master vs HuΣeR",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5332] [11] Beat U Down",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Beat U Down (SX) [mute].jpg",
+      "bpm": "155",
+      "artist": "Makou",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5421] [11] Chloé",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Chloe (SX) [Lou].jpg",
+      "bpm": "176",
+      "artist": "DJ Totoriott",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5799] [11] Chpinklez",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Chpinklez (SX) [TYLR].jpg",
+      "bpm": "110",
+      "artist": "Mr. Bill & Au5",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5357] [11] Crystallized",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Crystallized (SX) [tev].jpg",
+      "bpm": "174",
+      "artist": "かめりあ",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5688] [11] Dance Music Technology",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Dance Music Technology (SX) [G. Rosewood].jpg",
+      "bpm": "123",
+      "artist": "EasyPop",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5125] [11] Disorder (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Disorder (SH) [ZSL].jpg",
+      "bpm": "193",
+      "artist": "HyuN feat. YURI",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5179] [11] 有頂天ビバーチェ",
+      "name_translation": "[5179] [11] Ecstatic Vivace",
+      "jacket": "itg/itl24/[11] Ecstatic Vivace (SX) [Chief Skittles].jpg",
+      "bpm": "133",
+      "artist": "Last Note.",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5749] [11] Festivo",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Festivo (SX) [Sudzi781].jpg",
+      "bpm": "127",
+      "artist": "Keiichi Suzuki",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5106] [11] Fly Like A Butterfly",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Fly Like A Butterfly (SX) [mute].jpg",
+      "bpm": "140",
+      "artist": "長沼英樹",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5251] [11] Frozen Leaves",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Frozen Leaves (SX) [snekk].jpg",
+      "bpm": "100",
+      "artist": "Wisp X",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5894] [11] Girls Like To Swing",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Girls Like To Swing (SX) [Telperion].jpg",
+      "bpm": "63-125",
+      "artist": "Sunidhi Chauhan",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5213] [11] Heart of Fire",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Heart of Fire (DX) [Kingly].jpg",
+      "bpm": "131",
+      "artist": "Yasushi Asada",
+      "charts": [{ "lvl": 11, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5292] [11] Ideology",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Ideology (SX) [Maxx].jpg",
+      "bpm": "126",
+      "artist": "aran",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5931] [11] Just Accept",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Just Accept (SX) [Exschwasion].jpg",
+      "bpm": "160",
+      "artist": "pengaton",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5612] [11] Keep Down Flyday",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Keep Down Flyday (SX) [Tony S.].jpg",
+      "bpm": "135",
+      "artist": "Q-Rabbit",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5389] [11] Lady",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Lady (SX) [mute].jpg",
+      "bpm": "129",
+      "artist": "Al Azif vs. Crossfire",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5089] [11] Lights (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Lights (SH) [Exschwasion].jpg",
+      "bpm": "160",
+      "artist": "Aiyru",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5756] [11] NO REWARD",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] NO REWARD (SX) [Ky_Dash].jpg",
+      "bpm": "174",
+      "artist": "CERiNG",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5478] [11] Nervous",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Nervous (SX) [mudkyp].jpg",
+      "bpm": "174",
+      "artist": "Vospi",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5705] [11] Odo",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Odo (SX) [Valex].jpg",
+      "bpm": "128",
+      "artist": "Ado",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5364] [11] Phone Away (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Phone Away (SH) [CERiNG].jpg",
+      "bpm": "124",
+      "artist": "U.S. Consumer Product Safety Commission",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5687] [11] Pleasure Seeker VIP",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Pleasure Seeker VIP (SX) [sorae].jpg",
+      "bpm": "136",
+      "artist": "Mr. Bill",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5195] [11] Roppongi Carillon",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Roppongi Carillon (SX) [mute].jpg",
+      "bpm": "159",
+      "artist": "Blue Roses",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5806] [11] So Damn Tough",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] So Damn Tough (SX) [Chief Skittles].jpg",
+      "bpm": "175",
+      "artist": "Crazy Astronaut feat. VG",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5653] [11] Speedrun",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Speedrun (SX) [Chief Skittles].jpg",
+      "bpm": "150",
+      "artist": "Ace Aura x Skybreak",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5532] [11] UFO-mie",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] UFO-mie (SX) [Exschwasion].jpg",
+      "bpm": "130",
+      "artist": "パソコン音楽クラブ feat. The Hair Kid",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5845] [11] Viva La Noche",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Viva La Noche (SX) [Scrypts].jpg",
+      "bpm": "150",
+      "artist": "Christine feat. Elvis El Latino",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5852] [11] Watch Yo Step",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Watch Yo Step (SX) [ruunix2].jpg",
+      "bpm": "105",
+      "artist": "Joey Valence & Brae",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5087] [11] Woofer",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] Woofer (SX) [tev].jpg",
+      "bpm": "140",
+      "artist": "Foks",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5371] [11] fairy blossom",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] fairy blossom (SX) [CondorTalon].jpg",
+      "bpm": "88-175",
+      "artist": "Arch",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5453] [11] keep hopping (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[11] keep hopping (SH) [Brother Mojo].jpg",
+      "bpm": "155",
+      "artist": "kamome sano",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5880] [12] ABSOLUTE",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] ABSOLUTE (SX) [Chief Skittles].jpg",
+      "bpm": "90-162",
+      "artist": "Tracy vs. Yu_Asahina",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7030] [12] Afterimage",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Afterimage (SX) [cmmf & Tony S.].jpg",
+      "bpm": "130",
+      "artist": "Dyatic",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6803] [12] Antipattern",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Antipattern (SX) [mang].jpg",
+      "bpm": "140",
+      "artist": "Strayframe & BilliumMoto",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6670] [12] Ascent",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Ascent (SX) [Talkion].jpg",
+      "bpm": "145",
+      "artist": "TANUKI",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6553] [12] Climax",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Climax (SX) [Valex].jpg",
+      "bpm": "190",
+      "artist": "USAO",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6440] [12] Creepy Crawlers",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Creepy Crawlers (DX) [Brother Mojo].jpg",
+      "bpm": "133",
+      "artist": "GOLEMM & BUGCORE",
+      "charts": [{ "lvl": 12, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6440] [12] Deadman's Dance",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Deadman's Dance (SX) [tev].jpg",
+      "bpm": "174",
+      "artist": "DJ Myosuke",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6629] [12] EMBRYOGLYPH",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] EMBRYOGLYPH (SX) [Talkion].jpg",
+      "bpm": "176",
+      "artist": "METAROOM",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6373] [12] Funny Funky Freaky",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Funny Funky Freaky (SX) [Sudzi781].jpg",
+      "bpm": "138",
+      "artist": "mommy",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6935] [12] Kamah (Scythe)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Kamah (Scythe) (SX) [Talkion].jpg",
+      "bpm": "128-164",
+      "artist": "かめりあ",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6277] [12] PROTECT ME",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] PROTECT ME (SX) [Maxx].jpg",
+      "bpm": "150",
+      "artist": "k?d x yadosan",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6193] [12] PUMPIN' JUMPIN'",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] PUMPIN' JUMPIN' (DX) [Brother Mojo remixes Highflyer].jpg",
+      "bpm": "136-137",
+      "artist": "長沼 英樹",
+      "charts": [{ "lvl": 12, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6323] [12] Plus Ultra Cloud 9 (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Plus Ultra Cloud 9 (SH) [cmmf].jpg",
+      "bpm": "175",
+      "artist": "polysha",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6196] [12] Rapid Stream (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Rapid Stream (SH) [CondorTalon].jpg",
+      "bpm": "186",
+      "artist": "Yooh",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6146] [12] ShatterBox",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] ShatterBox (SX) [Benpai].jpg",
+      "bpm": "172",
+      "artist": "Tipper",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5946] [12] Spacedrift",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Spacedrift (SX) [tev].jpg",
+      "bpm": "158",
+      "artist": "Vulta",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5699] [12] Speed Me Up",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Speed Me Up (SX) [HellKiteChaos].jpg",
+      "bpm": "150",
+      "artist": "Cg5 feat. NerdOut & FabvL",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6548] [12] TAK it",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] TAK it (SX) [Highflyer].jpg",
+      "bpm": "142",
+      "artist": "TAK",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6256] [12] THE ELDERSTONE",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] THE ELDERSTONE (SX) [Sudzi781].jpg",
+      "bpm": "140",
+      "artist": "taqumi",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[5873] [12] Through The Silence",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Through The Silence (SX) [bkirz].jpg",
+      "bpm": "170",
+      "artist": "RiraN",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6391] [12] Thunder",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Thunder (SX) [Frondal].jpg",
+      "bpm": "165",
+      "artist": "Technikore x Weaver",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6216] [12] Waste My Time",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] Waste My Time (SX) [Highflyer].jpg",
+      "bpm": "150",
+      "artist": "Eliminate",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6490] [12] encounter",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] encounter (SX) [forcednature].jpg",
+      "bpm": "95-190",
+      "artist": "猫叉Master+",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6324] [12] memento mori -intro- (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] memento mori -intro- (SH) [forcednature].jpg",
+      "bpm": "170",
+      "artist": "あさき",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6420] [12] orbital revolution",
+      "name_translation": "",
+      "jacket": "itg/itl24/[12] orbital revolution (SX) [ITGAlex].jpg",
+      "bpm": "150",
+      "artist": "Xacla",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6652] [13] A Princess On My Horse",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] A Princess On My Horse (SX) [Ash Astral].jpg",
+      "bpm": "188",
+      "artist": "Le Jad",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7474] [13] AI",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] AI (SX) [Zaia].jpg",
+      "bpm": "190",
+      "artist": "BEMANI Sound Team \"Sota F.\"",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7522] [13] Blast+",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Blast+ (SX) [Hubert].jpg",
+      "bpm": "160",
+      "artist": "Zenpaku",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[8209] [13] Coconut",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Coconut (SX) [A. Astral].jpg",
+      "bpm": "145",
+      "artist": "BeutNoise & SEED",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7399] [13] DIABLOSIS∷Nāga",
+      "name_translation": "[7399] [13] DIABLOSIS--Naga",
+      "jacket": "itg/itl24/[13] DIABLOSIS--Naga (SX) [Zaia].jpg",
+      "bpm": "100-200",
+      "artist": "sky_delta",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7638] [13] Elbow Grease",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Elbow Grease (SX) [Scrypts].jpg",
+      "bpm": "150",
+      "artist": "Ray Volpe & Soltan",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7240] [13] Exit This Earth's Atomosphere (Hard)",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Exit This Earth's Atomosphere (SH) [wrsw].jpg",
+      "bpm": "200",
+      "artist": "かめりあ",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7140] [13] Fergalicious",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Fergalicious (DX) [J. Nero].jpg",
+      "bpm": "129",
+      "artist": "Fergie ft. will.i.am",
+      "charts": [{ "lvl": 13, "style": "double", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7493] [13] Gravisphere Crisis",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Gravisphere Crisis (SX) [Valex].jpg",
+      "bpm": "210",
+      "artist": "Tanchiky & Siromaru",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6337] [13] KILL EACH OTHER",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] KILL EACH OTHER (SX) [CERiNG].jpg",
+      "bpm": "162",
+      "artist": "BEMANI Sound Team \"L.E.D. VS. L.E.D.-G\"",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7939] [13] Laserbeam",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Laserbeam (SX) [sorae].jpg",
+      "bpm": "150",
+      "artist": "Ray Volpe",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7745] [13] Like This",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Like This (SX) [Ritz].jpg",
+      "bpm": "150",
+      "artist": "Nonsens & KANDY",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7963] [13] ナナイロパンダ",
+      "name_translation": "[7963] [13] Nanairo Panda",
+      "jacket": "itg/itl24/[13] Nanairo Panda (SX) [mdx].jpg",
+      "bpm": "155",
+      "artist": "OSTER project",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7786] [13] Shocked",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Shocked (SX) [Tony S.].jpg",
+      "bpm": "145",
+      "artist": "Franky Nuts",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7485] [13] Tenohira De Odoru",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Tenohira De Odoru (SX) [StoryTime].jpg",
+      "bpm": "215",
+      "artist": "Sokoninaru",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7799] [13] Testify",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Testify (SX) [Hubert].jpg",
+      "bpm": "178",
+      "artist": "void (Mournfinale) feat. 星熊南巫",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6720] [13] The Sonic Song",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] The Sonic Song (SX) [zimlord].jpg",
+      "bpm": "166",
+      "artist": "iamerror",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6749] [13] There For Me",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] There For Me (SX) [Ritz].jpg",
+      "bpm": "175",
+      "artist": "Synthion",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[6944] [13] Umbral Ultimatum",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Umbral Ultimatum (SX) [Implode].jpg",
+      "bpm": "169-194",
+      "artist": "Toby \"Radiation\" Fox",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7262] [13] Violent Shadows",
+      "name_translation": "",
+      "jacket": "itg/itl24/[13] Violent Shadows (SX) [Sudzi781].jpg",
+      "bpm": "210",
+      "artist": "Blind Guardian",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[8918] [14] $100 Bills",
+      "name_translation": "[8918] [14] 100 Bills",
+      "jacket": "itg/itl24/[14] 100 Bills (SX) [cmmf].jpg",
+      "bpm": "215",
+      "artist": "Camellia",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[8411] [14] Friction[!]Function",
+      "name_translation": "",
+      "jacket": "itg/itl24/[14] Friction[!]Function (SX) [Mirin].jpg",
+      "bpm": "150",
+      "artist": "Feryquitous",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[8833] [14] ZegalltA",
+      "name_translation": "",
+      "jacket": "itg/itl24/[14] ZegalltA (SX) [cmmf].jpg",
+      "bpm": "234-238",
+      "artist": "Se-U-Ra",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[7456] [14] picking",
+      "name_translation": "",
+      "jacket": "itg/itl24/[14] picking (SX) [sorae].jpg",
+      "bpm": "170",
+      "artist": "ルゼ",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    }
+  ]
+}
