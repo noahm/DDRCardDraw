@@ -4,7 +4,14 @@ import { chunkInPieces, pickRandomItem, rangeI, shuffle, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { Fraction } from "./utils/fraction";
-import { DrawnChart, EligibleChart, Drawing } from "./models/Drawing";
+import {
+  DrawnChart,
+  EligibleChart,
+  Drawing,
+  PlayerPickPlaceholder,
+  CHART_PLACEHOLDER,
+  CHART_DRAWN,
+} from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
 import {
@@ -322,6 +329,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
         ...randomChart,
         // Give this random chart a unique id within this drawing
         id: `drawn_chart-${nanoid(5)}`,
+        type: CHART_DRAWN,
       });
       // remove drawn chart from deck so it cannot be re-drawn
       selectableCharts.splice(randomIndex, 1);
@@ -342,15 +350,29 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   }
 
+  const charts: Drawing["charts"] = configData.sortByLevel
+    ? drawnCharts.sort(
+        (a, b) =>
+          chartLevelOrTier(a, useGranularLevels, false) -
+          chartLevelOrTier(b, useGranularLevels, false),
+      )
+    : shuffle(drawnCharts);
+
+  if (configData.playerPicks) {
+    charts.unshift(
+      ...times(
+        configData.playerPicks,
+        (): PlayerPickPlaceholder => ({
+          id: `pick_placeholder-` + nanoid(5),
+          type: CHART_PLACEHOLDER,
+        }),
+      ),
+    );
+  }
+
   return {
     id: `draw-${nanoid(10)}`,
-    charts: configData.sortByLevel
-      ? drawnCharts.sort(
-          (a, b) =>
-            chartLevelOrTier(a, useGranularLevels, false) -
-            chartLevelOrTier(b, useGranularLevels, false),
-        )
-      : shuffle(drawnCharts),
+    charts,
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],
     protects: [],

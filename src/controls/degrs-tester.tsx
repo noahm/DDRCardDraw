@@ -20,9 +20,10 @@ import {
 import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
+import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
 
-export function isDegrs(thing: { name: string; artist: string }) {
-  return thing.name.startsWith('DEAD END("GROOVE');
+export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
+  return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
 }
 
 function* oneMillionDraws() {

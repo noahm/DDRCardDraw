@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { Intent, Tag } from "@blueprintjs/core";
 import styles from "./card-label.css";
-import { Inheritance, BanCircle, Lock, Crown } from "@blueprintjs/icons";
+import { Inheritance, BanCircle, Lock, Crown, Draw } from "@blueprintjs/icons";
 import { usePlayerLabel } from "./use-player-label";
 
 export enum LabelType {
@@ -10,6 +10,7 @@ export enum LabelType {
   Ban,
   Pocket,
   Winner,
+  FreePick,
 }
 
 interface Props {
@@ -28,6 +29,8 @@ function getIntent(type: LabelType) {
       return Intent.SUCCESS;
     case LabelType.Winner:
       return Intent.WARNING;
+    case LabelType.FreePick:
+      return Intent.NONE;
   }
 }
 
@@ -41,6 +44,8 @@ function getIcon(type: LabelType) {
       return Lock;
     case LabelType.Winner:
       return Crown;
+    case LabelType.FreePick:
+      return Draw;
   }
 }
 

@@ -17,8 +17,14 @@
   margin-bottom: 0;
 }
 
-.inlineControls > * {
+.inlineControls > div {
   margin-right: 25px;
+}
+
+.plus {
+  margin-top: 30px;
+  margin-left: -23px;
+  margin-right: 1px;
 }
 
 .narrowInput {

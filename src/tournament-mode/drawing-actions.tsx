@@ -120,7 +120,7 @@ export function DrawingActions() {
           icon={<Refresh />}
           onClick={() =>
             confirm(
-              "This will replace everything besides protects and pocket picks!",
+              "This will replace everything besides protects and picks!",
             ) && redrawAllCharts()
           }
         />
