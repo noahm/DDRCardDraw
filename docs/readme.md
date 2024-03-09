@@ -34,11 +34,14 @@ Some of the less self-explanatory settings are described below.
 ![Screenshot of the settings drawer](images/settings-drawer.png)
 
 <dl>
+<dt>Free picks
+<dd>Adds extra empty placeholder cards to the beginning of each draw which can be replaced with player picks.
+
 <dt>Reorder by pick/ban
 <dd>Moves charts to the beginning or end of the set when charts are protected or vetoed.
 
-<dt>Pocket picks must match draw options
-<dd>Limits charts selected in a pocket pick action to those that match current draw settings.
+<dt>Picks must match draw options
+<dd>Limits charts selected in a free/pocket pick action to those that match current draw settings.
 
 <dt>Sort by chart level
 <dd>Sorts the drawn charts by difficulty level, from lowest on the left, to highest on the right. When not enabled the chart order is randomized.
