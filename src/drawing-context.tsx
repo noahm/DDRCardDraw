@@ -116,7 +116,9 @@ const {
         ...self.pocketPicks.map((pick) => pick.chartId),
         ...self.protects.map((pick) => pick.chartId),
       ]);
-      const keepCharts = self.charts.filter((c) => keepChartIds.has(c.id));
+      const keepCharts = self.charts.filter(
+        (c) => keepChartIds.has(c.id) || c.type === CHART_PLACEHOLDER,
+      );
       const newCharts = draw(useDrawState.getState().gameData!, {
         ...useConfigState.getState(),
         chartCount: get().charts.length - keepCharts.length,
