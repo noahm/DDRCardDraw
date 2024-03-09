@@ -17,14 +17,14 @@ export interface EligibleChart {
   song: Song;
 }
 
-export const CHART_PLACEHOLDER = Symbol("Player Pick Placeholder");
+export const CHART_PLACEHOLDER = "PLACEHOLDER";
 
 export interface PlayerPickPlaceholder {
   id: string;
   type: typeof CHART_PLACEHOLDER;
 }
 
-export const CHART_DRAWN = Symbol("Drawn Chart");
+export const CHART_DRAWN = "DRAWN";
 export interface DrawnChart extends EligibleChart {
   id: string;
   type: typeof CHART_DRAWN;
