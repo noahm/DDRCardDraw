@@ -66,7 +66,7 @@ export function chartIsValid(
   if (forPocketPick && !config.constrainPocketPicks) {
     return chart.style === config.style;
   }
-  const levelMetric = chart.drawGroup || chart.lvl;
+  const levelMetric = chartLevelOrTier(chart, config.useGranularLevels);
   return (
     chart.style === config.style &&
     config.difficulties.has(chart.diffClass) &&
