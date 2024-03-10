@@ -14,13 +14,20 @@ export function ApplyDefaultConfig({ defaults, granularResolution }: Props) {
     }
 
     useConfigState.setState(() => {
-      const { lowerLvlBound, upperLvlBound, flags, difficulties, style } =
-        defaults;
+      const {
+        lowerLvlBound,
+        upperLvlBound,
+        flags,
+        difficulties,
+        folders,
+        style,
+      } = defaults;
       const ret: Partial<ConfigState> = {
         lowerBound: lowerLvlBound,
         upperBound: upperLvlBound,
         flags: new Set(flags),
         difficulties: new Set(difficulties),
+        folders: new Set(folders),
         style,
       };
       if (!granularResolution) {

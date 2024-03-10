@@ -9,6 +9,27 @@
       { "key": "expert", "color": "#72cc6e" },
       { "key": "challenge", "color": "#cc71e8" }
     ],
+    "folders": [
+      "DanceDanceRevolution A3",
+      "DanceDanceRevolution A20 PLUS",
+      "DanceDanceRevolution A20",
+      "DanceDanceRevolution A",
+      "DanceDanceRevolution (2014)",
+      "DanceDanceRevolution (2013)",
+      "DanceDanceRevolution X3 vs 2nd MIX",
+      "DanceDanceRevolution X2",
+      "DanceDanceRevolution X",
+      "DanceDanceRevolution SuperNOVA2",
+      "DanceDanceRevolution SuperNOVA",
+      "DanceDanceRevolution EXTREME",
+      "DDRMAX2 -DanceDanceRevolution 7thMIX-",
+      "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "DanceDanceRevolution 5th Mix",
+      "DanceDanceRevolution 4th Mix",
+      "DanceDanceRevolution 3rd Mix",
+      "DanceDanceRevolution 2nd Mix",
+      "DanceDanceRevolution 1st Mix"
+    ],
     "flags": [
       "shock",
       "unlock",
@@ -26,7 +47,7 @@
   "defaults": {
     "style": "single",
     "difficulties": ["difficult", "expert", "challenge"],
-    "flags": ["shock"],
+    "flags": ["shock", "unlock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },

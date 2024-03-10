@@ -14,6 +14,7 @@ export interface ConfigState {
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
   style: string;
+  folders: ReadonlySet<string>;
   difficulties: ReadonlySet<string>;
   flags: ReadonlySet<string>;
   showEligibleCharts: boolean;
@@ -40,6 +41,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     forceDistribution: true,
     constrainPocketPicks: true,
     style: "",
+    folders: new Set(),
     difficulties: new Set(),
     flags: new Set(),
     showEligibleCharts: false,

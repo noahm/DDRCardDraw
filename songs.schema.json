@@ -51,6 +51,10 @@
           "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all special flags one might filter songs by"
         },
+        "folders": {
+          "$ref": "#/definitions/uniqueStringArr",
+          "description": "List of all possible folders, in order"
+        },
         "usesDrawGroups": {
           "type": "boolean"
         },
@@ -75,6 +79,7 @@
         "style": { "type": "string" },
         "difficulties": { "$ref": "#/definitions/uniqueStringArr" },
         "flags": { "$ref": "#/definitions/uniqueStringArr" },
+        "folders": { "$ref": "#/definitions/uniqueStringArr" },
         "lowerLvlBound": { "type": "number" },
         "upperLvlBound": { "type": "number" }
       }

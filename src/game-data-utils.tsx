@@ -36,17 +36,30 @@ export function getAvailableLevels(
     return [];
   }
 
-  let getLevelForChart = (chart: Chart) =>
-    useGranular ? chart.sanbaiTier || chart.lvl : chart.lvl;
-  if (gameData.meta.usesDrawGroups) {
-    getLevelForChart = (chart) => chart.drawGroup || chart.lvl;
-  }
   const levelSet = new Set<number>();
-  gameData.songs.forEach((song) => {
-    song.charts.forEach((chart) => levelSet.add(getLevelForChart(chart)));
-  });
+  for (const song of gameData.songs) {
+    for (const chart of song.charts) {
+      levelSet.add(
+        chartLevelOrTier(chart, useGranular, gameData.meta.usesDrawGroups),
+      );
+    }
+  }
   return [...levelSet].sort((a, b) => a - b);
 }
+
+// export function getAvailableFolders(gameData: GameData | null): string[] {
+//   if (gameData === null) {
+//     return [];
+//   }
+
+//   const folderSet = new Set<string>();
+//   for (const song of gameData.songs) {
+//     if (song.folder) {
+//       folderSet.add(song.folder);
+//     }
+//   }
+//   return [...folderSet].sort((a, b) => (a < b ? -1 : 1));
+// }
 
 export function getDiffAbbr(gameData: GameData, diffClass: string) {
   return ((gameData.i18n.en as I18NDict)["$abbr"] as I18NDict)[
