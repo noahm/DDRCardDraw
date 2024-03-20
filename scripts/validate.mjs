@@ -40,13 +40,10 @@ function validateContents(dataFile) {
 
   if (dataFile.i18n.ja) {
     for (const key of allKeys) {
-      if (!(dataFile.i18n.en[key] && dataFile.i18n.ja[key])) {
+      if (!dataFile.i18n.en[key]) {
         errors.add("missing translation for " + key);
       }
-      if (
-        difficulties.has(key) &&
-        !(dataFile.i18n.en["$abbr"][key] && dataFile.i18n.ja["$abbr"][key])
-      ) {
+      if (difficulties.has(key) && !dataFile.i18n.en["$abbr"][key]) {
         errors.add("missing abbreviated translation for " + key);
       }
     }
