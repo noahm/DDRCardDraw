@@ -101,6 +101,7 @@ function buildPersistedConfig(): PersistedConfigV1 {
     ...configState,
     difficulties: Array.from(configState.difficulties),
     flags: Array.from(configState.flags),
+    folders: Array.from(configState.folders),
   };
   const ret: PersistedConfigV1 = {
     version: 1,
@@ -133,6 +134,7 @@ async function loadPersistedConfig(saved: PersistedConfigV1) {
     ...migrateOldNames(saved.configState),
     difficulties: new Set(saved.configState.difficulties),
     flags: new Set(saved.configState.flags),
+    folders: new Set(saved.configState.folders),
   });
 }
 

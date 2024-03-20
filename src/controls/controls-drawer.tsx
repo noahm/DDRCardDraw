@@ -1,5 +1,6 @@
 import {
   Button,
+  ButtonGroup,
   Card,
   Checkbox,
   Classes,
@@ -20,6 +21,8 @@ import {
   CaretDown,
   CaretRight,
   Plus,
+  SmallTick,
+  SmallCross,
 } from "@blueprintjs/icons";
 import { useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
@@ -120,14 +123,18 @@ export default function ControlsDrawer() {
 
 function FlagSettings() {
   const { t } = useIntl();
-  const [dataSetName, gameData] = useDrawState(
-    (s) => [s.dataSetName, s.gameData],
+  const [dataSetName, gameData, hasFlags] = useDrawState(
+    (s) => [s.dataSetName, s.gameData, !!s.gameData?.meta.flags.length],
     shallow,
   );
   const [updateState, selectedFlags] = useConfigState(
     (s) => [s.update, s.flags],
     shallow,
   );
+
+  if (!hasFlags) {
+    return false;
+  }
 
   return (
     <FormGroup label={t("controls.include")}>
@@ -154,10 +161,66 @@ function FlagSettings() {
   );
 }
 
+function FolderSettings() {
+  const { t } = useIntl();
+  const availableFolders = useDrawState((s) => s.gameData?.meta.folders);
+  const dataSetName = useDrawState((s) => s.dataSetName);
+  const [updateState, selectedFolders] = useConfigState(
+    (s) => [s.update, s.folders],
+    shallow,
+  );
+
+  if (!availableFolders?.length) {
+    return null;
+  }
+
+  return (
+    <FormGroup
+      label={t("controls.folders")}
+      style={{ opacity: selectedFolders.size ? undefined : 0.8 }}
+    >
+      <ButtonGroup className={styles.smallText}>
+        <Button
+          small
+          icon={<SmallTick />}
+          onClick={() => updateState({ folders: new Set(availableFolders) })}
+        >
+          All
+        </Button>
+        <Button
+          small
+          icon={<SmallCross />}
+          onClick={() => updateState({ folders: new Set() })}
+        >
+          Ignore Folders
+        </Button>
+      </ButtonGroup>
+      {availableFolders.map((folder, idx) => (
+        <Checkbox
+          key={`${dataSetName}:${idx}`}
+          label={folder}
+          value={folder}
+          checked={selectedFolders.has(folder)}
+          onChange={() =>
+            updateState((s) => {
+              const newFolders = new Set(s.folders);
+              if (newFolders.has(folder)) {
+                newFolders.delete(folder);
+              } else {
+                newFolders.add(folder);
+              }
+              return { folders: newFolders };
+            })
+          }
+        />
+      ))}
+    </FormGroup>
+  );
+}
+
 function GeneralSettings() {
   const { t } = useIntl();
   const gameData = useDrawState((s) => s.gameData);
-  const hasFlags = useDrawState((s) => !!s.gameData?.meta.flags.length);
   const configState = useConfigState();
   const {
     useWeights,
@@ -394,7 +457,8 @@ function GeneralSettings() {
               />
             ))}
           </FormGroup>
-          {hasFlags && <FlagSettings />}
+          <FlagSettings />
+          <FolderSettings />
         </Card>
       </Collapse>
       <FormGroup>

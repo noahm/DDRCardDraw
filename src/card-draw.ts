@@ -61,7 +61,10 @@ export function songIsValid(
   if (forPocketPick && !config.constrainPocketPicks) {
     return true;
   }
-  return !song.flags || song.flags.every((f) => config.flags.has(f));
+  return (
+    (!song.folder || !config.folders.size || config.folders.has(song.folder)) &&
+    (!song.flags || song.flags.every((f) => config.flags.has(f)))
+  );
 }
 
 /** returns true if chart matches configured difficulty/style/lvl/flags */
