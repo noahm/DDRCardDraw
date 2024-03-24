@@ -84,7 +84,9 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       }
 
       return {
-        probabilityBucketCount: state.upperBound - state.lowerBound + 1,
+        probabilityBucketCount: Math.floor(
+          state.upperBound - state.lowerBound + 1,
+        ),
       };
     });
   }
@@ -157,7 +159,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
         inputMode="numeric"
         width={2}
         disabled={!bucketCount}
-        value={bucketCount || high - low + 1}
+        value={bucketCount || Math.floor(high - low + 1)}
         min={2}
         onValueChange={handleBucketCountChange}
       />
