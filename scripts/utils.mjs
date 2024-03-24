@@ -112,7 +112,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
 /**
  *
  * @param {string} songName
- * @returns relative output path if jacket exists
+ * @returns {string|undefined} relative output path if jacket exists
  */
 export function checkJacketExists(songName) {
   const paths = getOutputPath("", songName);

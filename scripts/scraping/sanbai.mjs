@@ -16,3 +16,7 @@ export async function getDifficultyList(difficulty, style) {
     return JSON.parse(difficultyListMatch[1]);
   }
 }
+
+export async function getSanbaiData() {
+  return require("./songdata.mjs");
+}
