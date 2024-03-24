@@ -32,7 +32,10 @@ export class Fraction {
   }
 
   sub(f: Fraction) {
-    return this.add(f.mult(negativeOne));
+    if (f.d === this.d) {
+      return new Fraction(this.n - f.n, this.d);
+    }
+    return new Fraction(this.n * f.d - this.d * f.n, this.d * f.d).simplify();
   }
 
   mult(f: Fraction) {
@@ -60,5 +63,3 @@ export class Fraction {
     return this.valueOf().toString();
   }
 }
-
-const negativeOne = new Fraction(-1);

@@ -149,7 +149,6 @@ export function* getBuckets(
   granularResolution: number | undefined,
 ): Generator<LevelRangeBucket | number, void> {
   const { useWeights, probabilityBucketCount, upperBound, lowerBound } = cfg;
-  const absoluteRangeSize = upperBound - lowerBound + 1;
   if (!useWeights || !probabilityBucketCount) {
     for (let n = lowerBound; n <= upperBound; n++) {
       yield n;
@@ -167,12 +166,13 @@ export function* getBuckets(
     return;
   }
 
+  const granularIncrementSize = 1 / granularResolution;
+  const absoluteRangeSize = upperBound - lowerBound + granularIncrementSize;
   const bucketWidth = new Fraction(absoluteRangeSize, probabilityBucketCount);
-  let upperIndex: number | undefined = availableLvls.indexOf(upperBound + 1);
+  let upperIndex: number | undefined = availableLvls.indexOf(upperBound);
   if (upperIndex === -1) {
     upperIndex = undefined;
   }
-  const incrementGuess = 1 / granularResolution;
   const lowerBoundF = new Fraction(lowerBound);
   const nudge = new Fraction(1, 1000);
   for (let i = 0; i < probabilityBucketCount; i++) {
@@ -180,9 +180,9 @@ export function* getBuckets(
     const bucketTop = bucketBottom.add(bucketWidth);
     // TODO: slice off that array of available levels here to avoid overlap/reuse due to rounding errors
     yield [
-      clampToNearest(incrementGuess, bucketBottom.valueOf(), Math.ceil),
+      clampToNearest(granularIncrementSize, bucketBottom.valueOf(), Math.ceil),
       clampToNearest(
-        incrementGuess,
+        granularIncrementSize,
         bucketTop.sub(nudge).valueOf(),
         Math.floor,
       ),

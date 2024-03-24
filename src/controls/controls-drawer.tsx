@@ -39,6 +39,7 @@ import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
 import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
+import { Fraction } from "../utils/fraction";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -262,6 +263,10 @@ function GeneralSettings() {
     stateKey: "upperBound" | "lowerBound",
     newValue: number,
   ) {
+    if (availableLevels.includes(newValue)) {
+      updateState({ [stateKey]: newValue });
+      return;
+    }
     const currentValue = configState[stateKey];
     const currentIndex = availableLevels.indexOf(currentValue);
     const direction = newValue > currentValue ? 1 : -1;
@@ -495,7 +500,25 @@ function GeneralSettings() {
           checked={useGranularLevels}
           onChange={(e) => {
             const useGranularLevels = !!e.currentTarget.checked;
-            updateState({ useGranularLevels });
+            updateState((prev) => {
+              const granularIncrement = new Fraction(
+                1,
+                gameData?.meta.granularTierResolution || 1,
+              );
+              1 / (gameData?.meta.granularTierResolution || 0);
+              let nextUpperBound = !useGranularLevels
+                ? Math.floor(prev.upperBound)
+                : new Fraction(prev.upperBound + 1)
+                    .sub(granularIncrement)
+                    .valueOf();
+              if (nextUpperBound < prev.lowerBound) {
+                nextUpperBound = prev.lowerBound + 1;
+              }
+              return {
+                useGranularLevels,
+                upperBound: nextUpperBound,
+              };
+            });
           }}
           label={t("controls.useGranularLevels")}
         />
