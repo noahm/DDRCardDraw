@@ -254,6 +254,10 @@ function GeneralSettings() {
   if (!gameData) {
     return null;
   }
+  const granularIncrement = new Fraction(
+    1,
+    gameData.meta.granularTierResolution || 1,
+  );
   const { styles: gameStyles } = gameData.meta;
 
   /**
@@ -263,19 +267,25 @@ function GeneralSettings() {
     stateKey: "upperBound" | "lowerBound",
     newValue: number,
   ) {
-    if (availableLevels.includes(newValue)) {
-      updateState({ [stateKey]: newValue });
-      return;
-    }
-    const currentValue = configState[stateKey];
-    const currentIndex = availableLevels.indexOf(currentValue);
-    const direction = newValue > currentValue ? 1 : -1;
-    const newIndex = currentIndex + direction;
-    if (newIndex < 0 || newIndex >= availableLevels.length) {
-      console.error("cannot go outside of available levels");
-      return;
-    }
-    updateState({ [stateKey]: availableLevels[newIndex] });
+    updateState((prev) => {
+      // re-calc with current state of granular levels. the one in scope above may be stale
+      const availableLevels = getAvailableLevels(
+        gameData,
+        prev.useGranularLevels,
+      );
+      if (availableLevels.includes(newValue)) {
+        return { [stateKey]: newValue };
+      }
+      const currentValue = configState[stateKey];
+      const currentIndex = availableLevels.indexOf(currentValue);
+      const direction = newValue > currentValue ? 1 : -1;
+      const newIndex = currentIndex + direction;
+      if (newIndex < 0 || newIndex >= availableLevels.length) {
+        console.error("cannot go outside of available levels");
+        return {};
+      }
+      return { [stateKey]: availableLevels[newIndex] };
+    });
   }
 
   const handleLowerBoundChange = (newLow: number) => {
@@ -373,6 +383,9 @@ function GeneralSettings() {
             value={useGranularLevels ? lowerBound.toFixed(2) : lowerBound}
             min={availableLevels[0]}
             max={Math.max(upperBound, lowerBound, 1)}
+            stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
+            minorStepSize={null}
+            majorStepSize={useGranularLevels ? 1 : null}
             onValueChange={handleLowerBoundChange}
           />
         </FormGroup>
@@ -392,6 +405,9 @@ function GeneralSettings() {
             value={useGranularLevels ? upperBound.toFixed(2) : upperBound}
             min={lowerBound}
             max={availableLevels[availableLevels.length - 1]}
+            stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
+            minorStepSize={null}
+            majorStepSize={useGranularLevels ? 1 : null}
             onValueChange={handleUpperBoundChange}
           />
         </FormGroup>
@@ -501,10 +517,6 @@ function GeneralSettings() {
           onChange={(e) => {
             const useGranularLevels = !!e.currentTarget.checked;
             updateState((prev) => {
-              const granularIncrement = new Fraction(
-                1,
-                gameData?.meta.granularTierResolution || 1,
-              );
               1 / (gameData?.meta.granularTierResolution || 0);
               let nextUpperBound = !useGranularLevels
                 ? Math.floor(prev.upperBound)
