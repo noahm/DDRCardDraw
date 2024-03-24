@@ -13,6 +13,7 @@ import {
   requestQueue,
   reportQueueStatusLive,
   checkJacketExists,
+  sortSongs,
 } from "./utils.mjs";
 
 const idxMap = [
@@ -43,7 +44,8 @@ function diffIdxFor(diffClass, style) {
  * @returns {[style: string, diffClass: string]}
  */
 function styleAndDiffFor(idx) {
-  return idxMap[idx].split(":");
+  const ret = idxMap[idx].split(":");
+  return [ret[0], ret[1]];
 }
 
 /**
@@ -180,52 +182,58 @@ for (const song of ALL_SONG_DATA) {
 
   if (existingSong) {
     // update charts/flags
-    for (const freshChartData of charts) {
-      const existingChart = existingSong.charts.find(
-        (existingChart) =>
-          existingChart.diffClass === freshChartData.diffClass &&
-          existingChart.style === freshChartData.style,
+    // for (const freshChartData of charts) {
+    //   const existingChart = existingSong.charts.find(
+    //     (existingChart) =>
+    //       existingChart.diffClass === freshChartData.diffClass &&
+    //       existingChart.style === freshChartData.style,
+    //   );
+    //   if (!existingChart) {
+    //     if (
+    //       song.version_num !== 19 &&
+    //       freshChartData.diffClass === "challenge"
+    //     ) {
+    //       freshChartData.flags ||= [];
+    //       freshChartData.flags.push("newInA3");
+    //     }
+    //     ui.log.write(
+    //       `Adding missing ${freshChartData.diffClass} chart of ${song.song_name}`,
+    //     );
+    //     existingSong.charts.push(freshChartData);
+    //     continue;
+    //   }
+    //   // if (existingChart.lvl !== freshChartData.lvl) {
+    //   //   ui.log.write(
+    //   //     `Updating lvl of ${song.song_name} ${freshChartData.diffClass}`,
+    //   //   );
+    //   //   existingChart.lvl = freshChartData.lvl;
+    //   // }
+    //   const meaningfulFlags = (existingChart.flags || []).filter(
+    //     (f) => f !== "shock" && f !== "newInA3",
+    //   );
+    //   if (meaningfulFlags.length && !freshChartData.flags) {
+    //     ui.log.write(
+    //       `Removing flags [${meaningfulFlags.join(",")}] of ${song.song_name} ${freshChartData.diffClass}`,
+    //     );
+    //     existingChart.flags = existingChart.flags.filter(
+    //       (f) => f === "shock" || f === "newInA3",
+    //     );
+    //     if (!existingChart.flags.length) {
+    //       delete existingChart.flags;
+    //     }
+    //   }
+    // }
+    // if (existingSong.flags && !songLock) {
+    //   ui.log.write(
+    //     `Removing flags [${existingSong.flags.join(",")}] from ${existingSong.name}`,
+    //   );
+    //   delete existingSong.flags;
+    // }
+    if (!existingSong.jacket && existingSong.remyLink) {
+      existingSong.jacket = await getJacketFromRemySong(
+        existingSong.remyLink,
+        existingSong.name,
       );
-      if (!existingChart) {
-        if (
-          song.version_num !== 19 &&
-          freshChartData.diffClass === "challenge"
-        ) {
-          freshChartData.flags ||= [];
-          freshChartData.flags.push("newInA3");
-        }
-        ui.log.write(
-          `Adding missing ${freshChartData.diffClass} chart of ${song.song_name}`,
-        );
-        existingSong.charts.push(freshChartData);
-        continue;
-      }
-      // if (existingChart.lvl !== freshChartData.lvl) {
-      //   ui.log.write(
-      //     `Updating lvl of ${song.song_name} ${freshChartData.diffClass}`,
-      //   );
-      //   existingChart.lvl = freshChartData.lvl;
-      // }
-      const meaningfulFlags = (existingChart.flags || []).filter(
-        (f) => f !== "shock" && f !== "newInA3",
-      );
-      if (meaningfulFlags.length && !freshChartData.flags) {
-        ui.log.write(
-          `Removing flags [${meaningfulFlags.join(",")}] of ${song.song_name} ${freshChartData.diffClass}`,
-        );
-        existingChart.flags = existingChart.flags.filter(
-          (f) => f === "shock" || f === "newInA3",
-        );
-        if (!existingChart.flags.length) {
-          delete existingChart.flags;
-        }
-      }
-    }
-    if (existingSong.flags && !songLock) {
-      ui.log.write(
-        `Removing flags [${existingSong.flags.join(",")}] from ${existingSong.name}`,
-      );
-      delete existingSong.flags;
     }
   } else {
     // insert new song (need to find jacket, bpm, folder, etc)
@@ -261,6 +269,9 @@ await requestQueue.onIdle();
 await new Promise((resolve) => {
   setTimeout(resolve, 500);
 });
+
+existingData.songs = sortSongs(existingData.songs);
+
 await writeJsonData(existingData, targetFile);
 if (warnings) {
   ui.log.write(`Done, with ${warnings} warnings`);
