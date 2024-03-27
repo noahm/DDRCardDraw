@@ -24,7 +24,7 @@ export function dateForFilename() {
 
 export async function shareCharts(charts: EligibleChart[]) {
   const csvData = [
-    ["name", "diff", "lvl", "sanbaiLvl", "bpm", "artist"],
+    ["name", "diff", "lvl", "sanbaiLvl", "bpm", "artist", "sanbai_url"],
     ...charts.map((chart) => {
       return [
         chart.name,
@@ -33,6 +33,9 @@ export async function shareCharts(charts: EligibleChart[]) {
         chart.granularLevel,
         chart.bpm,
         chart.artist,
+        chart.song.saHash?.length === 32
+          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.song.saHash)}`
+          : undefined,
       ];
     }),
   ];
