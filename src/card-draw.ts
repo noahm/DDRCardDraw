@@ -76,6 +76,9 @@ export function chartIsValid(
   if (forPocketPick && !config.constrainPocketPicks) {
     return chart.style === config.style;
   }
+  if (config.useGranularLevels && !chart.sanbaiTier) {
+    return false;
+  }
   const levelMetric = chartLevelOrTier(chart, config.useGranularLevels);
   return (
     chart.style === config.style &&
