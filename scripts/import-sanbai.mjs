@@ -182,47 +182,65 @@ for (const song of ALL_SONG_DATA) {
 
   if (existingSong) {
     // update charts/flags
-    // for (const freshChartData of charts) {
-    //   const existingChart = existingSong.charts.find(
-    //     (existingChart) =>
-    //       existingChart.diffClass === freshChartData.diffClass &&
-    //       existingChart.style === freshChartData.style,
-    //   );
-    //   if (!existingChart) {
-    //     if (
-    //       song.version_num !== 19 &&
-    //       freshChartData.diffClass === "challenge"
-    //     ) {
-    //       freshChartData.flags ||= [];
-    //       freshChartData.flags.push("newInA3");
-    //     }
-    //     ui.log.write(
-    //       `Adding missing ${freshChartData.diffClass} chart of ${song.song_name}`,
-    //     );
-    //     existingSong.charts.push(freshChartData);
-    //     continue;
-    //   }
-    //   // if (existingChart.lvl !== freshChartData.lvl) {
-    //   //   ui.log.write(
-    //   //     `Updating lvl of ${song.song_name} ${freshChartData.diffClass}`,
-    //   //   );
-    //   //   existingChart.lvl = freshChartData.lvl;
-    //   // }
-    //   const meaningfulFlags = (existingChart.flags || []).filter(
-    //     (f) => f !== "shock" && f !== "newInA3",
-    //   );
-    //   if (meaningfulFlags.length && !freshChartData.flags) {
-    //     ui.log.write(
-    //       `Removing flags [${meaningfulFlags.join(",")}] of ${song.song_name} ${freshChartData.diffClass}`,
-    //     );
-    //     existingChart.flags = existingChart.flags.filter(
-    //       (f) => f === "shock" || f === "newInA3",
-    //     );
-    //     if (!existingChart.flags.length) {
-    //       delete existingChart.flags;
-    //     }
-    //   }
-    // }
+    for (const freshChartData of charts) {
+      const existingChart = existingSong.charts.find(
+        (existingChart) =>
+          existingChart.diffClass === freshChartData.diffClass &&
+          existingChart.style === freshChartData.style,
+      );
+      if (!existingChart) {
+        if (
+          song.version_num !== 19 &&
+          freshChartData.diffClass === "challenge"
+        ) {
+          freshChartData.flags ||= [];
+          freshChartData.flags.push("newInA3");
+        }
+        ui.log.write(
+          `Adding missing ${freshChartData.diffClass} chart of ${song.song_name}`,
+        );
+        existingSong.charts.push(freshChartData);
+        continue;
+      }
+      if (!existingChart.sanbaiTier) {
+        const diffList = await getCachedDifficultyList(
+          existingChart.lvl,
+          existingChart.style,
+        );
+        const chartKey = chartKeyFor(
+          existingSong.saHash,
+          existingChart.diffClass,
+          existingChart.style,
+        );
+        const maybeRating = diffList[chartKey];
+        if (!maybeRating) {
+          ui.log.write(`No tier for ${existingSong.name} - ${chartKey}`);
+          warnings++;
+        } else {
+          existingChart.sanbaiTier = existingChart.lvl + maybeRating.tier;
+        }
+      }
+      // if (existingChart.lvl !== freshChartData.lvl) {
+      //   ui.log.write(
+      //     `Updating lvl of ${song.song_name} ${freshChartData.diffClass}`,
+      //   );
+      //   existingChart.lvl = freshChartData.lvl;
+      // }
+      // const meaningfulFlags = (existingChart.flags || []).filter(
+      //   (f) => f !== "shock" && f !== "newInA3",
+      // );
+      // if (meaningfulFlags.length && !freshChartData.flags) {
+      //   ui.log.write(
+      //     `Removing flags [${meaningfulFlags.join(",")}] of ${song.song_name} ${freshChartData.diffClass}`,
+      //   );
+      //   existingChart.flags = existingChart.flags.filter(
+      //     (f) => f === "shock" || f === "newInA3",
+      //   );
+      //   if (!existingChart.flags.length) {
+      //     delete existingChart.flags;
+      //   }
+      // }
+    }
     // if (existingSong.flags && !songLock) {
     //   ui.log.write(
     //     `Removing flags [${existingSong.flags.join(",")}] from ${existingSong.name}`,

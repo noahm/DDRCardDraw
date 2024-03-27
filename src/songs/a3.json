@@ -43,7 +43,7 @@
       "doublesUnlock"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1711241865843
+    "lastUpdated": 1711515489636
   },
   "defaults": {
     "style": "single",
@@ -4500,13 +4500,48 @@
       "bpm": "155",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
-        { "lvl": 2, "style": "single", "diffClass": "beginner" },
-        { "lvl": 4, "style": "single", "diffClass": "basic" },
-        { "lvl": 9, "style": "single", "diffClass": "difficult" },
-        { "lvl": 13, "style": "single", "diffClass": "expert" },
-        { "lvl": 4, "style": "double", "diffClass": "basic" },
-        { "lvl": 9, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 2.15
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 4.15
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 9.35
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        },
+        {
+          "lvl": 4,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 4.15
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 9.4
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        }
       ],
       "remyLink": "http://remywiki.com/B4U%20%28The%20Acolyte%20mix%29",
       "jacket": "B4U (The Acolyte mix).jpg",
@@ -5244,24 +5279,61 @@
       "folder": "DanceDanceRevolution A3",
       "bpm": "75-150",
       "charts": [
-        { "lvl": 2, "style": "single", "diffClass": "beginner" },
-        { "lvl": 7, "style": "single", "diffClass": "basic" },
-        { "lvl": 12, "style": "single", "diffClass": "difficult" },
-        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 2.7
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 7.6
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.9
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.85
+        },
         {
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack"],
+          "sanbaiTier": 18.6
         },
-        { "lvl": 7, "style": "double", "diffClass": "basic" },
-        { "lvl": 12, "style": "double", "diffClass": "difficult" },
-        { "lvl": 15, "style": "double", "diffClass": "expert" },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 7.6
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.9
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.75
+        },
         {
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack"],
+          "sanbaiTier": 18.7
         }
       ],
       "jacket": "Battle Against a True Hero.jpg",
@@ -12587,24 +12659,56 @@
       "folder": "DanceDanceRevolution A3",
       "bpm": "148",
       "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "beginner" },
-        { "lvl": 7, "style": "single", "diffClass": "basic" },
-        { "lvl": 11, "style": "single", "diffClass": "difficult" },
-        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3.25
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 7.15
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.7
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.7
+        },
         {
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack"],
+          "sanbaiTier": 17.95
         },
-        { "lvl": 7, "style": "double", "diffClass": "basic" },
-        { "lvl": 11, "style": "double", "diffClass": "difficult" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "basic", "sanbaiTier": 7 },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.55
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 14.7
+        },
         {
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack"],
+          "sanbaiTier": 17.65
         }
       ],
       "search_hint": "かれいなるしとう/華麗なる死闘",
@@ -16339,13 +16443,48 @@
       "folder": "DanceDanceRevolution A3",
       "bpm": "170",
       "charts": [
-        { "lvl": 1, "style": "single", "diffClass": "beginner" },
-        { "lvl": 5, "style": "single", "diffClass": "basic" },
-        { "lvl": 10, "style": "single", "diffClass": "difficult" },
-        { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 5, "style": "double", "diffClass": "basic" },
-        { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" }
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 1.2
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 5.05
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.3
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.5
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 5.1
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.3
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 14.45
+        }
       ],
       "flags": ["unlock"],
       "jacket": "EMOTiON TRiPPER.jpg",
@@ -17938,24 +18077,61 @@
       "folder": "DanceDanceRevolution A3",
       "bpm": "48-190",
       "charts": [
-        { "lvl": 2, "style": "single", "diffClass": "beginner" },
-        { "lvl": 5, "style": "single", "diffClass": "basic" },
-        { "lvl": 8, "style": "single", "diffClass": "difficult" },
-        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 2.6
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 5.45
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 8.4
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack"],
+          "sanbaiTier": 15.6
         },
-        { "lvl": 5, "style": "double", "diffClass": "basic" },
-        { "lvl": 8, "style": "double", "diffClass": "difficult" },
-        { "lvl": 12, "style": "double", "diffClass": "expert" },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 5.45
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 8.4
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 12.45
+        },
         {
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack"],
+          "sanbaiTier": 15.4
         }
       ],
       "remyLink": "https://remywiki.com/Finale_(Toby_Fox)",
@@ -35786,13 +35962,48 @@
       "folder": "DanceDanceRevolution A3",
       "bpm": "155",
       "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "beginner" },
-        { "lvl": 7, "style": "single", "diffClass": "basic" },
-        { "lvl": 13, "style": "single", "diffClass": "difficult" },
-        { "lvl": 16, "style": "single", "diffClass": "expert" },
-        { "lvl": 8, "style": "double", "diffClass": "basic" },
-        { "lvl": 13, "style": "double", "diffClass": "difficult" },
-        { "lvl": 16, "style": "double", "diffClass": "expert" }
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 7.3
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.5
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.55
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 8.4
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.6
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 16
+        }
       ],
       "jacket": "Not Alone.jpg",
       "remyLink": "https://remywiki.com/Not_Alone",
