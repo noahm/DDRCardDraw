@@ -40,10 +40,11 @@
       "grandPrixPack",
       "usLocked",
       "tempUnlock",
-      "doublesUnlock"
+      "doublesUnlock",
+      "babylonGalaxy"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1711515489636
+    "lastUpdated": 1711679119771
   },
   "defaults": {
     "style": "single",
@@ -71,6 +72,7 @@
       "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "doublesUnlock": "Double play unlockable",
+      "babylonGalaxy": "Babylon's Galaxy Event",
       "shock": "Shock arrow charts",
       "$abbr": {
         "beginner": "Beg",
@@ -504,7 +506,7 @@
       ],
       "jacket": "3y3s.jpg",
       "remyLink": "https://remywiki.com/3y3s",
-      "flags": ["bpl3"],
+      "flags": ["goldExclusive", "unlock"],
       "search_hint": "Eyes"
     },
     {
@@ -3504,7 +3506,7 @@
       ],
       "jacket": "Ambivalent Vermilia.jpg",
       "remyLink": "https://remywiki.com/Ambivalent_Vermilia",
-      "flags": ["bpl3"]
+      "flags": ["goldExclusive", "unlock"]
     },
     {
       "name": "Angelic Jelly",
@@ -65347,7 +65349,7 @@
       ],
       "jacket": "コメット⇒スケイター.jpg",
       "remyLink": "https://remywiki.com/Comet_skater",
-      "flags": ["bpl3"],
+      "flags": ["goldExclusive", "unlock"],
       "name_translation": "Comet Skater",
       "search_hint": "コメットスケイター"
     },
