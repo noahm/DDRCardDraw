@@ -106,18 +106,18 @@ function getCachedDifficultyList(difficulty, style) {
 
 const lockFlags = {
   10: null, //"a20+usLocked"
-  20: "goldenLeague",
+  20: ["goldenLeague"],
   60: null, //"a20+kacRegistration",
   80: null, // a20 unlock
   130: null, // a20 unlock
   150: null, //"a20+extraexclusive",
   160: null, //"a20+courseUnlock",
-  180: "unlock",
-  190: "grandPrixPack",
-  210: "tempUnlock",
-  220: "tempUnlock", // kacRegistration
-  230: "babylonGalaxy", // babylonGalaxy
-  240: "bpl3", // bpl3
+  180: ["unlock"],
+  190: ["grandPrixPack"],
+  210: ["tempUnlock"],
+  220: ["tempUnlock"], // kacRegistration
+  230: ["babylonGalaxy"], // babylonGalaxy
+  240: ["tempUnlock", "goldExclusive"], // bpl3
 };
 
 // let warnings = 0;
@@ -173,7 +173,7 @@ for (const song of ALL_SONG_DATA) {
         diffClass,
       };
       if (locks && locks[idx] && locks[idx] !== songLock) {
-        chart.flags = [lockFlags[locks[idx]]];
+        chart.flags = lockFlags[locks[idx]];
         // TODO add shock flags as appropriate
       }
       return chart;
@@ -273,8 +273,7 @@ for (const song of ALL_SONG_DATA) {
       charts,
       jacket,
       remyLink: remyLink ? remyLink : undefined,
-      flags:
-        songLock && lockFlags[songLock] ? [lockFlags[songLock]] : undefined,
+      flags: songLock && lockFlags[songLock] ? lockFlags[songLock] : undefined,
       name_translation: song.romanized_name,
       search_hint:
         [song.searchable_name, song.alternate_name].filter(Boolean).join(" ") ||
