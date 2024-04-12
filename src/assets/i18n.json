@@ -4,7 +4,8 @@
       "title": "Select game data",
       "parent": {
         "more": "More Games",
-        "itg": "ITG Packs"
+        "itg": "ITG Packs",
+        "imported": "Local Imports"
       }
     },
     "weights": {
@@ -15,8 +16,8 @@
         "label": "Force Expected Distribution"
       },
       "group": {
-        "title": "All charts at a this level or above will be weighted as part of a shared \"bucket\".",
-        "label": "Group top end charts starting at"
+        "title": "All charts will be grouped into this many individual \"decks\" of cards and drawn from each with separate probabilities.",
+        "label": "Group cards into this many buckets"
       }
     },
     "add": "Add",
@@ -24,15 +25,18 @@
       "drawerTitle": "Settings",
       "hideShowFilters": "Chart Filters",
       "chartCount": "Number to draw",
+      "playerPicks": "Free picks",
       "upperBoundLvl": "Lvl Max",
       "lowerBoundLvl": "Lvl Min",
       "upperBoundTier": "Tier Max",
       "lowerBoundTier": "Tier Min",
-      "constrainPocketPicks": "Pocket picks must match draw options",
+      "constrainPocketPicks": "Picks must match draw options",
       "useWeightedDistributions": "Use Weighted Distributions",
+      "sortByLevel": "Sort by chart level",
       "orderByAction": "Re-order by pick/ban",
       "style": "Style",
       "difficulties": "Difficulties",
+      "folders": "Folders",
       "include": "Include",
       "tabs": {
         "general": "General",
@@ -46,7 +50,8 @@
       "tournamentLabelEdit": "Tournament round labels",
       "shockArrows": "Shock Arrows",
       "invalid": "Couldn't draw anything with current settings!",
-      "playersPerDraw": "Players per draw"
+      "playersPerDraw": "Players per draw",
+      "useGranularLevels": "Use granular levels"
     },
     "tournamentRoundPlaceholder": "Tournament Round",
     "tournamentRoundAdd": "Add \"{round}\"",

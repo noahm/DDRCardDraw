@@ -10,6 +10,47 @@ import { JSDOM } from "jsdom";
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+import CacheableLookup from "cacheable-lookup";
+import { globalAgent as httpAgent } from "http";
+import { globalAgent as httpsAgent } from "https";
+{
+  /* globally install dns caching to avoid mass lookups of remywiki over and over */
+  const dnsCache = new CacheableLookup();
+  dnsCache.install(httpAgent);
+  dnsCache.install(httpsAgent);
+}
+
+/**
+ * sorts songs in-place, and charts within each song
+ * @template {{ name: string, charts: { style: string, lvl: number }[]}} Input
+ * @param songs {Array<Input>}
+ */
+export function sortSongs(songs) {
+  for (const song of songs) {
+    song.charts.sort((chartA, chartB) => {
+      if (chartA.style !== chartB.style) {
+        // sort singles first, doubles second
+        return chartA.style > chartB.style ? -1 : 1;
+      }
+      // sort by level within style
+      return chartA.lvl - chartB.lvl;
+    });
+  }
+  return songs.sort((songA, songB) => {
+    const nameA = songA.name.toLowerCase();
+    const nameB = songB.name.toLowerCase();
+
+    if (nameA === nameB) {
+      return songA.name > songB.name ? 1 : -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+}
+
 /**
  * @param {string} url
  */
@@ -102,7 +143,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
 /**
  *
  * @param {string} songName
- * @returns relative output path if jacket exists
+ * @returns {string|undefined} relative output path if jacket exists
  */
 export function checkJacketExists(songName) {
   const paths = getOutputPath("", songName);

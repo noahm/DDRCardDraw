@@ -12,6 +12,7 @@ import { UpdateManager } from "./update-manager";
 import { DrawStateManager } from "./draw-state";
 import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
+import { DropHandler } from "./drop-handler";
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
       <UpdateManager />
       <Header />
       <DrawingList />
+      <DropHandler />
     </DrawStateManager>
   );
 }

@@ -11,13 +11,12 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lvlMax": 28,
-    "lastUpdated": 1699063031699
+    "lastUpdated": 1712878353782
   },
   "defaults": {
     "style": "solo",
     "difficulties": ["wild", "hard"],
-    "flags": ["plus"],
+    "flags": ["plus", "bassmonkeys"],
     "lowerLvlBound": 18,
     "upperLvlBound": 22
   },
@@ -32,6 +31,7 @@
       "dual": "Dual",
       "full": "Full",
       "team": "Team",
+      "plus": "Plus Charts",
       "andorfineMedia": "Andorfine Media",
       "bassmonkeys": "The Bassmonkeys Pack",
       "cappRecords": "CAPP Records",
@@ -84,6 +84,7 @@
         { "style": "solo", "lvl": 19, "diffClass": "full" },
         { "style": "team", "lvl": 19, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 15, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 15, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -104,6 +105,7 @@
         { "style": "solo", "lvl": 16, "diffClass": "full" },
         { "style": "team", "lvl": 18, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -124,6 +126,7 @@
         { "style": "solo", "lvl": 22, "diffClass": "full" },
         { "style": "team", "lvl": 22, "diffClass": "team" },
         { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 13, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 15, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -144,6 +147,7 @@
         { "style": "solo", "lvl": 27, "diffClass": "full" },
         { "style": "team", "lvl": 26, "diffClass": "team" },
         { "style": "solo", "lvl": 8, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 15, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -164,6 +168,7 @@
         { "style": "solo", "lvl": 23, "diffClass": "full" },
         { "style": "team", "lvl": 20, "diffClass": "team" },
         { "style": "solo", "lvl": 8, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 14, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 17, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -184,6 +189,7 @@
         { "style": "solo", "lvl": 25, "diffClass": "full" },
         { "style": "team", "lvl": 25, "diffClass": "team" },
         { "style": "solo", "lvl": 7, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 14, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 17, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -204,6 +210,7 @@
         { "style": "solo", "lvl": 20, "diffClass": "full" },
         { "style": "team", "lvl": 17, "diffClass": "team" },
         { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 10, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -224,6 +231,7 @@
         { "style": "solo", "lvl": 16, "diffClass": "full" },
         { "style": "team", "lvl": 11, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -244,6 +252,7 @@
         { "style": "solo", "lvl": 21, "diffClass": "full" },
         { "style": "team", "lvl": 9, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 10, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 12, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -265,6 +274,7 @@
         { "style": "solo", "lvl": 19, "diffClass": "full" },
         { "style": "team", "lvl": 18, "diffClass": "team" },
         { "style": "solo", "lvl": 7, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 11, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -277,7 +287,7 @@
       "bpm": "190",
       "jacket": "smx/RememberDecember.jpg",
       "charts": [
-        { "style": "solo", "lvl": 6, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "beginner" },
         { "style": "solo", "lvl": 11, "diffClass": "easy" },
         { "style": "solo", "lvl": 18, "diffClass": "hard" },
         { "style": "solo", "lvl": 22, "diffClass": "wild" },
@@ -305,7 +315,10 @@
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 21, "diffClass": "full" },
         { "style": "team", "lvl": 16, "diffClass": "team" },
-        { "style": "solo", "lvl": 13, "diffClass": "easy", "flags": ["plus"] }
+        { "style": "solo", "lvl": 13, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "full", "flags": ["plus"] }
       ],
       "saIndex": "212"
     },
@@ -324,6 +337,7 @@
         { "style": "solo", "lvl": 19, "diffClass": "full" },
         { "style": "team", "lvl": 21, "diffClass": "team" },
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 12, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -344,6 +358,7 @@
         { "style": "solo", "lvl": 14, "diffClass": "full" },
         { "style": "team", "lvl": 19, "diffClass": "team" },
         { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
       ],
@@ -7424,6 +7439,405 @@
         { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
         { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "613",
+      "name": "BLEEP BLOOP",
+      "artist": "Tokyo Machine",
+      "genre": "Bass House",
+      "bpm": "135",
+      "jacket": "smx/BLEEPBLOOP.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 4, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 24, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 18, "diffClass": "full" },
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "614",
+      "name": "Elysium",
+      "artist": "Scott Brown",
+      "genre": "Hardcore",
+      "bpm": "177",
+      "jacket": "smx/Elysium.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 4, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "615",
+      "name": "Party",
+      "artist": "ChildsPlay",
+      "genre": "Pop",
+      "bpm": "140",
+      "jacket": "smx/Party.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 12, "diffClass": "hard" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild" },
+        { "style": "solo", "lvl": 9, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 12, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "616",
+      "name": "Supernova",
+      "artist": "Laszlo",
+      "genre": "Electro",
+      "bpm": "128",
+      "jacket": "smx/Supernova.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 12, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "617",
+      "name": "Jingle Bell Rock",
+      "artist": "KaW feat. Bobby Helms",
+      "genre": "Pop",
+      "bpm": "138",
+      "jacket": "smx/JingleBellRock.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 12, "diffClass": "full" },
+        { "style": "team", "lvl": 11, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "618",
+      "name": "Definition of a Badboy",
+      "artist": "Scott Brown",
+      "genre": "Hardcore",
+      "bpm": "170",
+      "jacket": "smx/DefinitionOfABadboy.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "619",
+      "name": "Kibo",
+      "artist": "Dion Timmer",
+      "genre": "Speed House",
+      "bpm": "150",
+      "jacket": "smx/Kibo.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 13, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 21, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "620",
+      "name": "Let's Remember",
+      "artist": "N.M.R",
+      "genre": "House",
+      "bpm": "130",
+      "jacket": "smx/Let'sRemember.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 12, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 13, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "621",
+      "name": "Never Let You Down",
+      "artist": "BEAUZ, Miles Away, & RYYZN",
+      "genre": "Dance",
+      "bpm": "124",
+      "jacket": "smx/NeverLetYouDown.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 15, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "622",
+      "name": "Tick Tock",
+      "artist": "Technikore",
+      "genre": "Hardcore",
+      "bpm": "85-170",
+      "jacket": "smx/TickTock.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 4, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "623",
+      "name": "Truth or Dare",
+      "artist": "PIXY",
+      "genre": "K-Pop",
+      "bpm": "118",
+      "jacket": "smx/TruthorDare.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 12, "diffClass": "hard" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild" },
+        { "style": "solo", "lvl": 10, "diffClass": "dual" },
+        { "style": "solo", "lvl": 14, "diffClass": "full" },
+        { "style": "team", "lvl": 14, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "624",
+      "name": "Zen",
+      "artist": "Re-venG",
+      "genre": "Ethnic Electronica",
+      "bpm": "128",
+      "jacket": "smx/Zen.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 20, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "625",
+      "name": "Fearless",
+      "artist": "Rolling Quartz",
+      "genre": "K-Pop",
+      "bpm": "118",
+      "jacket": "smx/Fearless.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 24, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 25, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "626",
+      "name": "Got Good Vibes",
+      "artist": "MO XO",
+      "genre": "Pop",
+      "bpm": "107",
+      "jacket": "smx/GotGoodVibes.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 16, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 12, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "627",
+      "name": "Beat It",
+      "artist": "from20",
+      "genre": "K-Pop",
+      "bpm": "158",
+      "jacket": "smx/BeatIt.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
+        { "style": "solo", "lvl": 16, "diffClass": "dual" },
+        { "style": "solo", "lvl": 13, "diffClass": "full" },
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "628",
+      "name": "Electronic City Pops",
+      "artist": "TOKYO twilight scene",
+      "genre": "Drum & Bass",
+      "bpm": "180",
+      "jacket": "smx/ElectronicCityPops.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 13, "diffClass": "dual" },
+        { "style": "solo", "lvl": 14, "diffClass": "full" },
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "629",
+      "name": "Heaven On Earth",
+      "artist": "HELLO GLOOM",
+      "genre": "K-Pop",
+      "bpm": "130",
+      "jacket": "smx/HeavenOnEarth.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 12, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 13, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "630",
+      "name": "Music Is Moving",
+      "artist": "Tatsunoshin",
+      "genre": "Hardcore",
+      "bpm": "160",
+      "jacket": "smx/MusicIsMoving.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 8, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
+        { "style": "solo", "lvl": 17, "diffClass": "dual" },
+        { "style": "solo", "lvl": 18, "diffClass": "full" },
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "631",
+      "name": "My Salsa",
+      "artist": "Carlito",
+      "genre": "Latin",
+      "bpm": "120",
+      "jacket": "smx/MySalsa.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 12, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 12, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 15, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ]
     }

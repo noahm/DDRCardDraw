@@ -60,6 +60,7 @@ module.exports = function (env = {}, argv = {}) {
     },
     module: {
       rules: [
+        // babel transformation for my own typescript files
         {
           enforce: "pre",
           test: /\.tsx?$/,
@@ -89,8 +90,8 @@ module.exports = function (env = {}, argv = {}) {
             },
           },
         },
+        // pass my own css files through css-loader with modules enabled and postcss+autoprefixer
         {
-          // pass 1st party css files through css-loader with modules enabled and postcss+autoprefixer
           test: /\.css$/,
           exclude: /node_modules/,
           use: [
@@ -114,15 +115,40 @@ module.exports = function (env = {}, argv = {}) {
             },
           ],
         },
+        // pass 3rd party css through css-loader without transforms
         {
-          // pass 3rd party css through css-loader without transforms
           test: /\.css$/,
           include: resolve(__dirname, "node_modules"),
           use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
+        // other asset files
         {
           test: /\.(woff2?|ttf|svg|eot|jpe?g|png|gif|mp4|mov|ogg|webm)(\?.*)?$/i,
           type: "asset/resource",
+        },
+        // process the html template too
+        {
+          test: /\.html$/i,
+          use: {
+            loader: "html-loader",
+            options: {
+              sources: {
+                /**
+                 *
+                 * @param {string} attribute
+                 * @param {string} value
+                 * @param {string} resourcePath
+                 * @returns {boolean}
+                 */
+                urlFilter(attribute, value, resourcePath) {
+                  if (value.startsWith("/favicons/")) {
+                    return false;
+                  }
+                  return true;
+                },
+              },
+            },
+          },
         },
       ],
     },
@@ -196,27 +222,27 @@ module.exports = function (env = {}, argv = {}) {
           description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
         },
-        template: "src/index.ejs",
+        template: "src/index.html",
       }),
     ].concat(
       !isProd
         ? [new ReactRefreshPlugin({ overlay: false })]
         : zip
-        ? [
-            new ZipPlugin({
-              path: __dirname,
-              filename: `DDRCardDraw-${version}.zip`,
-              exclude: "__offline_serviceworker",
-            }),
-          ]
-        : [
-            new OfflinePlugin({
-              ServiceWorker: {
-                events: true,
-              },
-              excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
-            }),
-          ],
+          ? [
+              new ZipPlugin({
+                path: __dirname,
+                filename: `DDRCardDraw-${version}.zip`,
+                exclude: "__offline_serviceworker",
+              }),
+            ]
+          : [
+              new OfflinePlugin({
+                ServiceWorker: {
+                  events: true,
+                },
+                excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
+              }),
+            ],
     ),
   };
 };

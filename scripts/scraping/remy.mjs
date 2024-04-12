@@ -4,7 +4,10 @@
 import * as path from "path";
 import { downloadJacket, getDom } from "../utils.mjs";
 
-/** Will try to return a jacket URL from the wiki page, if found */
+/** Will try to return a jacket URL from the wiki page, if found
+ * @param {string} pageUrl
+ * @param {string} overrideSongName
+ */
 export async function getJacketFromRemySong(pageUrl, overrideSongName) {
   const dom = await getDom(pageUrl);
   if (!dom) return;

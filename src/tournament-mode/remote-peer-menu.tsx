@@ -2,12 +2,11 @@ import {
   Tag,
   FormGroup,
   MenuItem,
-  Icon,
   Collapse,
   Button,
   Intent,
 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import { Clipboard, Duplicate, HeartBroken } from "@blueprintjs/icons";
 import { InputButtonPair } from "../controls/input-button-pair";
 import { toaster } from "../toaster";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
@@ -27,14 +26,14 @@ export function RemotePeerControls() {
     toaster.show({
       message: "Hostname copied to clipboard",
       intent: Intent.SUCCESS,
-      icon: IconNames.Clipboard,
+      icon: <Clipboard />,
     });
   }
   // Copy to keyboard button
   const copyButton = (
     <Button
       minimal
-      icon={IconNames.Duplicate}
+      icon={<Duplicate />}
       onClick={() => {
         copyToaster();
       }}
@@ -93,7 +92,7 @@ export function RemotePeerControls() {
             ))
           ) : (
             <span className="bp5-text-disabled">
-              <Icon icon={IconNames.HeartBroken} /> No connections
+              <HeartBroken /> No connections
             </span>
           )}
         </FormGroup>

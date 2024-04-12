@@ -13,9 +13,13 @@ export type UniqueStringArr = string[];
  */
 export type UniqueStringArr1 = string[];
 /**
- * An array of strings without any duplicate values
+ * List of all possible folders, in order
  */
 export type UniqueStringArr2 = string[];
+/**
+ * An array of strings without any duplicate values
+ */
+export type UniqueStringArr3 = string[];
 
 /**
  * Describes the shape of data that any individual json file under `src/songs` will conform to
@@ -49,16 +53,21 @@ export interface GameData {
       color: string;
     }[];
     flags: UniqueStringArr1;
-    lvlMax: number;
+    folders?: UniqueStringArr2;
     usesDrawGroups?: boolean;
+    /**
+     * Number of steps from one level to the next when using the `sanbaiTier` granular levels
+     */
+    granularTierResolution?: number;
   };
   /**
    * Defines the default configuration for this game
    */
   defaults: {
     style: string;
-    difficulties: UniqueStringArr2;
-    flags: UniqueStringArr2;
+    difficulties: UniqueStringArr3;
+    flags: UniqueStringArr3;
+    folders?: UniqueStringArr3;
     lowerLvlBound: number;
     upperLvlBound: number;
   };
@@ -80,7 +89,7 @@ export interface I18NDictBranch {
   [k: string]: string | I18NDictBranch;
 }
 export interface Song {
-  flags?: UniqueStringArr2;
+  flags?: UniqueStringArr3;
   name: string;
   artist: string;
   genre?: string;
@@ -88,6 +97,7 @@ export interface Song {
   bpm: string;
   name_translation?: string;
   search_hint?: string;
+  date_added?: string;
   charts: Chart[];
   jacket: string;
   folder?: string;
@@ -96,7 +106,7 @@ export interface Song {
   remyLink?: string;
 }
 export interface Chart {
-  flags?: UniqueStringArr2;
+  flags?: UniqueStringArr3;
   /**
    * e.g. single/double
    */
@@ -110,6 +120,10 @@ export interface Chart {
    */
   lvl: number;
   /**
+   * a more granular rating sourced from 3icecream, calculated based on community performance
+   */
+  sanbaiTier?: number;
+  /**
    * tournament-specific grouping of charts (e.g. tier)
    */
   drawGroup?: number;
@@ -118,4 +132,8 @@ export interface Chart {
   freeze?: number;
   jacket?: string;
   author?: string;
+  /**
+   * per-chart BPM range, if one applies
+   */
+  bpm?: string;
 }

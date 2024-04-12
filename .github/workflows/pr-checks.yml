@@ -1,4 +1,4 @@
-name: PR Checks
+name: Checks
 
 on:
   pull_request:
@@ -6,19 +6,50 @@ on:
 
 jobs:
   validate:
-    name: Validate & Build
+    name: Validate Song Data
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "yarn"
       - run: yarn --immutable
       - run: yarn validate:json
-        name: Validate Song Data
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+      - run: yarn --immutable
       - run: yarn validate:ts
-        name: Validate Types
-      - run: yarn webpack
-        name: Build App
+
+  formatting:
+    name: Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+      - run: yarn --immutable
+      - run: yarn validate:format
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+      - run: yarn --immutable
+      - name: Build App
+        run: yarn webpack

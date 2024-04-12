@@ -1,8 +1,5 @@
 // @ts-check
-import readline from "readline";
-import iconv from "iconv-lite";
 import he from "he";
-import fs from "fs";
 import { TextDecoderStream, ReadableStream } from "node:stream/web";
 
 const difficultyByIndex = [
@@ -64,6 +61,20 @@ export async function getSongsFromSkillAttack(log) {
   }
 
   return data;
+}
+
+/**
+ *
+ * @param {SaData[]} data
+ * @returns {Record<string, SaData>}
+ */
+export function indexSaData(data) {
+  /** @type {Record<string, SaData>} */
+  let ret = {};
+  for (const song of data) {
+    ret[song.saHash] = song;
+  }
+  return ret;
 }
 
 /**

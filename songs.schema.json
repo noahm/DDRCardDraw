@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Game Data",
   "description": "Describes the shape of data that any individual json file under `src/songs` will conform to",
@@ -11,7 +12,7 @@
     "meta": {
       "type": "object",
       "description": "Describes unique configuration options for this game",
-      "required": ["lastUpdated", "styles", "difficulties", "lvlMax", "flags"],
+      "required": ["lastUpdated", "styles", "difficulties", "flags"],
       "additionalProperties": false,
       "properties": {
         "menuParent": {
@@ -23,7 +24,7 @@
           "description": "Unix timestamp of last update to this data file"
         },
         "styles": {
-          "$ref": "#/$defs/uniqueStringArr",
+          "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all play styles available"
         },
         "difficulties": {
@@ -47,14 +48,19 @@
           "additionalItems": false
         },
         "flags": {
-          "$ref": "#/$defs/uniqueStringArr",
+          "$ref": "#/definitions/uniqueStringArr",
           "description": "List of all special flags one might filter songs by"
         },
-        "lvlMax": {
-          "type": "integer"
+        "folders": {
+          "$ref": "#/definitions/uniqueStringArr",
+          "description": "List of all possible folders, in order"
         },
         "usesDrawGroups": {
           "type": "boolean"
+        },
+        "granularTierResolution": {
+          "type": "integer",
+          "description": "Number of steps from one level to the next when using the `sanbaiTier` granular levels"
         }
       }
     },
@@ -71,10 +77,11 @@
       "additionalProperties": false,
       "properties": {
         "style": { "type": "string" },
-        "difficulties": { "$ref": "#/$defs/uniqueStringArr" },
-        "flags": { "$ref": "#/$defs/uniqueStringArr" },
-        "lowerLvlBound": { "type": "integer" },
-        "upperLvlBound": { "type": "integer" }
+        "difficulties": { "$ref": "#/definitions/uniqueStringArr" },
+        "flags": { "$ref": "#/definitions/uniqueStringArr" },
+        "folders": { "$ref": "#/definitions/uniqueStringArr" },
+        "lowerLvlBound": { "type": "number" },
+        "upperLvlBound": { "type": "number" }
       }
     },
     "i18n": {
@@ -82,7 +89,7 @@
       "description": "Set of localized values for display of any styles, difficulties, or flags",
       "required": ["en"],
       "additionalProperties": {
-        "$ref": "#/$defs/i18nDictRoot"
+        "$ref": "#/definitions/i18nDictRoot"
       }
     },
     "songs": {
@@ -91,7 +98,7 @@
         "type": "object",
         "title": "Song",
         "properties": {
-          "flags": { "$ref": "#/$defs/uniqueStringArr" },
+          "flags": { "$ref": "#/definitions/uniqueStringArr" },
           "name": {
             "type": "string"
           },
@@ -113,9 +120,12 @@
           "search_hint": {
             "type": "string"
           },
+          "date_added": {
+            "type": "string"
+          },
           "charts": {
             "type": "array",
-            "items": { "$ref": "#/$defs/chart" },
+            "items": { "$ref": "#/definitions/chart" },
             "additionalItems": false
           },
           "jacket": {
@@ -140,21 +150,25 @@
       "additionalItems": false
     }
   },
-  "$defs": {
+  "definitions": {
     "chart": {
       "type": "object",
       "title": "Chart",
       "additionalProperties": false,
       "properties": {
-        "flags": { "$ref": "#/$defs/uniqueStringArr" },
+        "flags": { "$ref": "#/definitions/uniqueStringArr" },
         "style": { "type": "string", "description": "e.g. single/double" },
         "diffClass": {
           "type": "string",
           "description": "e.g. expert/challenge"
         },
         "lvl": {
-          "type": "integer",
+          "type": "number",
           "description": "in-game numeric rating"
+        },
+        "sanbaiTier": {
+          "type": "number",
+          "description": "a more granular rating sourced from 3icecream, calculated based on community performance"
         },
         "drawGroup": {
           "type": "number",
@@ -174,6 +188,10 @@
         },
         "author": {
           "type": "string"
+        },
+        "bpm": {
+          "type": "string",
+          "description": "per-chart BPM range, if one applies"
         }
       },
       "required": ["lvl", "diffClass", "style"]
@@ -194,7 +212,7 @@
       "additionalProperties": {
         "oneOf": [
           { "type": "string" },
-          { "$ref": "#/$defs/i18nDictBranch" }
+          { "$ref": "#/definitions/i18nDictBranch" }
         ]
       }
     },
@@ -203,7 +221,7 @@
       "additionalProperties": {
         "oneOf": [
           { "type": "string" },
-          { "$ref": "#/$defs/i18nDictBranch" }
+          { "$ref": "#/definitions/i18nDictBranch" }
         ]
       }
     }

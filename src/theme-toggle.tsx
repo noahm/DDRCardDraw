@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Classes, MenuItem } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import { Flash, Moon } from "@blueprintjs/icons";
 import { FormattedMessage } from "react-intl";
 import { create } from "zustand";
 import { useMediaQuery } from "./hooks/useMediaQuery";
@@ -88,11 +88,11 @@ export function ThemeToggle() {
   const resolvedTheme = useThemeStore((t) => t.resolved);
   const setTheme = useThemeStore((t) => t.setTheme);
 
-  const icon = resolvedTheme === Theme.Dark ? IconNames.FLASH : IconNames.MOON;
+  const ThemeIcon = resolvedTheme === Theme.Dark ? Flash : Moon;
 
   return (
     <MenuItem
-      icon={icon}
+      icon={<ThemeIcon />}
       text={
         <FormattedMessage id="toggle-theme" defaultMessage="Toggle Theme" />
       }
@@ -103,14 +103,14 @@ export function ThemeToggle() {
   );
 }
 
-export function ObsToggle() {
-  const set = useThemeStore((t) => t.setObsLayer);
+// export function ObsToggle() {
+//   const set = useThemeStore((t) => t.setObsLayer);
 
-  return (
-    <MenuItem
-      icon={IconNames.EyeOff}
-      text={<FormattedMessage id="toggle-obs-layer" defaultMessage="Hide UI" />}
-      onClick={() => set(true)}
-    />
-  );
-}
+//   return (
+//     <MenuItem
+//       icon={<EyeOff />}
+//       text={<FormattedMessage id="toggle-obs-layer" defaultMessage="Hide UI" />}
+//       onClick={() => set(true)}
+//     />
+//   );
+// }

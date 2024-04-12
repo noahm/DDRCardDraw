@@ -1,28 +1,40 @@
 import { GameData } from "./models/SongData";
 import { useEffect } from "react";
-import { useConfigState } from "./config-state";
+import { ConfigState, useConfigState } from "./config-state";
 
 interface Props {
   defaults?: GameData["defaults"];
+  granularResolution: number | undefined;
 }
 
-export function ApplyDefaultConfig({ defaults }: Props) {
+export function ApplyDefaultConfig({ defaults, granularResolution }: Props) {
   useEffect(() => {
     if (!defaults) {
       return;
     }
 
     useConfigState.setState(() => {
-      const { lowerLvlBound, upperLvlBound, flags, difficulties, style } =
-        defaults;
-      return {
+      const {
+        lowerLvlBound,
+        upperLvlBound,
+        flags,
+        difficulties,
+        folders,
+        style,
+      } = defaults;
+      const ret: Partial<ConfigState> = {
         lowerBound: lowerLvlBound,
         upperBound: upperLvlBound,
         flags: new Set(flags),
         difficulties: new Set(difficulties),
+        folders: new Set(folders),
         style,
       };
+      if (!granularResolution) {
+        ret.useGranularLevels = false;
+      }
+      return ret;
     });
-  }, [defaults]);
+  }, [defaults, granularResolution]);
   return null;
 }

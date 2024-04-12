@@ -72,9 +72,7 @@ interface GameDataParent {
 
 /** ordered list of all available game data files */
 export const availableGameData = (
-  process.env.DATA_FILES as unknown as Array<
-    Omit<AvailableGameData, "type" | "index">
-  >
+  process.env.DATA_FILES as Array<Omit<AvailableGameData, "type" | "index">>
 ).sort((a, b) => {
   const parentDiff = a.parent.localeCompare(b.parent);
   if (parentDiff) {
@@ -119,58 +117,72 @@ export function firstOf<T>(iter: IterableIterator<T>): T | undefined {
 }
 
 /**
- * Data structure to count the number of times a given item is added
+ * Range, inclusive
  */
-export class CountingSet<T> implements ReadonlyCountingSet<T> {
-  static fromEntries<T>(entries: Array<[T, number]>): CountingSet<T> {
-    const ret = new CountingSet<T>();
-    ret.items = new Map(entries);
-    return ret;
-  }
-
-  private items = new Map<T, number>();
-  constructor(initialItems: ReadonlyArray<T> = []) {
-    for (const item of initialItems) {
-      this.add(item);
-    }
-  }
-
-  public get size() {
-    return this.items.size;
-  }
-
-  /** returns new count */
-  public add(item: T, amt = 1) {
-    const next = this.get(item) + amt;
-    this.items.set(item, next);
-    return next;
-  }
-
-  public get(item: T) {
-    return this.items.get(item) || 0;
-  }
-
-  public has(item: T) {
-    return this.items.has(item);
-  }
-
-  public values() {
-    return this.items.keys();
-  }
-
-  public valuesWithCount() {
-    return this.items.entries();
-  }
-
-  public freeze() {
-    return this as ReadonlyCountingSet<T>;
+export function* rangeI(start: number, end: number) {
+  for (let i = start; i <= end; i++) {
+    yield i;
   }
 }
 
-export interface ReadonlyCountingSet<T> {
-  size: number;
-  get(item: T): number;
-  has(item: T): boolean;
-  values(): IterableIterator<T>;
-  valuesWithCount(): IterableIterator<[T, number]>;
+/**
+ * Split an array up into chunks of a regular size
+ * @param chunkSize
+ * @param arr
+ */
+export function* chunkBy<T>(chunkSize: number, arr: Array<T>) {
+  let index = 0;
+  while (index < arr.length) {
+    yield arr.slice(index, index + chunkSize);
+    index += chunkSize;
+  }
+}
+
+export function* chunkInPieces<T>(pieces: number, arr: Array<T>) {
+  let index = 0;
+  let chunksYielded = 0;
+  let chunkSize = Math.round(arr.length / pieces);
+  if (chunkSize === 0) {
+    console.warn("Too many pieces to chunk this small an array", {
+      pieces,
+      arr,
+    });
+    chunkSize = 1;
+  }
+  while (index < arr.length) {
+    if (chunksYielded + 1 === pieces) {
+      // this is our last chunk, so just return the rest of the array
+      yield arr.slice(index);
+      return;
+    }
+    yield arr.slice(index, index + chunkSize);
+    chunksYielded++;
+    index += chunkSize;
+  }
+}
+
+/**
+ * is this an accurate F-Y shuffle? who knows!?!
+ */
+export function shuffle<Item>(arr: Array<Item>): Array<Item> {
+  const ret = arr.slice();
+  for (let i = 0; i < ret.length; i++) {
+    const randomUpcomingIndex =
+      i + Math.floor(Math.random() * (ret.length - i));
+    const currentItem = ret[i];
+    ret[i] = ret[randomUpcomingIndex];
+    ret[randomUpcomingIndex] = currentItem;
+  }
+  return ret;
+}
+
+export function pickRandomItem<T>(
+  list: Array<T>,
+): [idx: number, item: T] | [undefined, undefined] {
+  if (!list.length) {
+    return [undefined, undefined];
+  }
+  const idx = Math.floor(Math.random() * list.length);
+  const item = list[idx];
+  return [idx, item];
 }

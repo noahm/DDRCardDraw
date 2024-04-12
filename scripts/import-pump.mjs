@@ -71,7 +71,6 @@ function queueJacketDownload(jacketPath) {
 // main procedure
 try {
   const db = bettersqlite(DATABASE_FILE);
-  let lvlMax = 0;
   const ui = reportQueueStatusLive();
 
   const cuts = db.prepare("select * from cut order by sortOrder").all();
@@ -355,10 +354,6 @@ ORDER BY
       chartData.flags = flags;
     }
     song.charts.push(chartData);
-
-    if (chart.diffLvl > lvlMax) {
-      lvlMax = chart.diffLvl;
-    }
   }
 
   const pumpData = {
@@ -366,7 +361,6 @@ ORDER BY
       styles: ["solo", "coop"],
       difficulties,
       flags: [...otherFlags, ...cuts.map((cut) => "cut:" + cut.cutId)],
-      lvlMax,
       lastUpdated: Date.now(),
     },
     defaults: {

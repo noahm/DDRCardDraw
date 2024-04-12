@@ -1,7 +1,14 @@
-import { Checkbox, FormGroup, NumericInput, TagInput } from "@blueprintjs/core";
+import {
+  Checkbox,
+  Classes,
+  FormGroup,
+  NumericInput,
+  TagInput,
+} from "@blueprintjs/core";
 import { ReactNode } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
+import { DiagramTree, Person } from "@blueprintjs/icons";
 
 export function PlayerNamesControls() {
   const { t } = useIntl();
@@ -39,7 +46,7 @@ export function PlayerNamesControls() {
           values={playerNames}
           fill
           large
-          leftIcon="person"
+          leftIcon={<Person size={20} className={Classes.TAG_INPUT_ICON} />}
           onAdd={addPlayers}
           onRemove={removePlayer}
         />
@@ -117,7 +124,7 @@ function TournamentLabelEditor() {
         values={tournamentRounds}
         fill
         large
-        leftIcon="diagram-tree"
+        leftIcon={<DiagramTree size={20} className={Classes.TAG_INPUT_ICON} />}
         onAdd={addLabels}
         onRemove={removeLabel}
       />

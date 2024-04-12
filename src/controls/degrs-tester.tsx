@@ -9,6 +9,7 @@ import { draw } from "../card-draw";
 import { useDrawState } from "../draw-state";
 import { useAtom } from "jotai";
 import { useConfigState } from "../config-state";
+import { requestIdleCallback } from "../utils/idle-callback";
 import {
   TEST_SIZE,
   REPORT_FREQUENCY,
@@ -18,9 +19,11 @@ import {
 } from "./degrs-state";
 import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
+import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
+import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
 
-export function isDegrs(thing: { name: string; artist: string }) {
-  return thing.name.startsWith('DEAD END("GROOVE');
+export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
+  return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
 }
 
 function* oneMillionDraws() {
@@ -52,7 +55,7 @@ export function* degrsTester() {
 }
 
 function nextIdleCycle() {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     requestIdleCallback(resolve);
   });
 }
@@ -87,7 +90,7 @@ export function DegrsTestButton() {
         <Button
           onClick={startTest}
           intent="danger"
-          icon={hasResults ? "repeat" : "warning-sign"}
+          icon={hasResults ? <Repeat /> : <WarningSign />}
         >
           {hasResults ? "Recompute" : "Compute"} DEGRS Forecast
         </Button>
@@ -99,7 +102,7 @@ export function DegrsTestButton() {
         </p>
       )}
       {hasResults && (
-        <Callout icon="rain">
+        <Callout icon={<Rain />}>
           Today's risk of DEGRS is {(results * 100).toFixed(1)}%
         </Callout>
       )}
@@ -115,7 +118,7 @@ export function TesterCard(props: SongCardProps) {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         title="DEGRS Emergency Response System"
-        icon="warning-sign"
+        icon={<WarningSign />}
       >
         <DialogBody>
           <DegrsTestButton />

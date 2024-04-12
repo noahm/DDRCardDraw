@@ -1,5 +1,12 @@
 import { useIntl } from "../hooks/useIntl";
-import { IconNames, IconName } from "@blueprintjs/icons";
+import {
+  Inheritance,
+  BanCircle,
+  Lock,
+  Crown,
+  Person,
+  Refresh,
+} from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
 
@@ -20,28 +27,28 @@ export function IconMenu(props: Props) {
     <Menu>
       {onProtect && (
         <PlayerList
-          icon={IconNames.LOCK}
+          icon={<Lock />}
           text={t("songAction.lock")}
           onClick={onProtect}
         />
       )}
       {onStartPocketPick && (
         <PlayerList
-          icon={IconNames.INHERITANCE}
+          icon={<Inheritance />}
           text={t("songAction.pocketPick")}
           onClick={onStartPocketPick}
         />
       )}
       {onVeto && (
         <PlayerList
-          icon={IconNames.BAN_CIRCLE}
+          icon={<BanCircle />}
           text={t("songAction.ban")}
           onClick={onVeto}
         />
       )}
       {onSetWinner && (
         <PlayerList
-          icon={IconNames.CROWN}
+          icon={<Crown />}
           text={t("songAction.winner")}
           onClick={onSetWinner}
         />
@@ -51,7 +58,7 @@ export function IconMenu(props: Props) {
           <MenuDivider />
           <MenuItem
             text={t("songAction.redraw")}
-            icon={IconNames.REFRESH}
+            icon={<Refresh />}
             onClick={onRedraw}
           />
         </>
@@ -61,7 +68,7 @@ export function IconMenu(props: Props) {
 }
 
 interface IconRowProps {
-  icon: IconName;
+  icon: JSX.Element;
   text: string;
   onClick: (p: number) => void;
 }
@@ -75,7 +82,7 @@ function PlayerList({ icon, text, onClick }: IconRowProps) {
           key={idx}
           text={p || `P${idx + 1}`}
           onClick={() => onClick(idx + 1)}
-          icon={IconNames.PERSON}
+          icon={<Person />}
         />
       ))}
     </MenuItem>

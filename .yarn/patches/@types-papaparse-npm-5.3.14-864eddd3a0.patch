@@ -1,0 +1,36 @@
+diff --git a/index.d.ts b/index.d.ts
+index 9c9fd674e1ac8eebbce1bfcfa0ea3d6cf07835cf..908b60f84f0ccfe723937feda37f02e494a57881 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -1,6 +1,3 @@
+-/// <reference types="node" />
+-
+-import { Duplex } from "stream";
+ 
+ export as namespace Papa;
+ 
+@@ -58,15 +55,6 @@ export function parse<T>(
+             | ParseRemoteConfig<T>
+         ),
+ ): void;
+-/**
+- * Parse in a node streaming style
+- * @param stream `NODE_STREAM_INPUT`
+- * @param config a config object.
+- * @returns a node duplex stream.
+- *
+- * @see https://github.com/mholt/PapaParse#papa-parse-for-node
+- */
+-export function parse(stream: typeof NODE_STREAM_INPUT, config?: ParseConfig): Duplex;
+ 
+ /**
+  * Unparses javascript data objects and returns a csv string
+@@ -121,7 +109,7 @@ export let RemoteChunkSize: number;
+ export let DefaultDelimiter: string;
+ 
+ /** File object */
+-export type LocalFile = File | NodeJS.ReadableStream;
++export type LocalFile = File;
+ 
+ /**
+  * On Papa there are actually more classes exposed

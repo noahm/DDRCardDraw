@@ -17,12 +17,31 @@
       "usLocked",
       "tempUnlock"
     ],
-    "lvlMax": 19,
+    "folders": [
+      "DanceDanceRevolution A20 PLUS",
+      "DanceDanceRevolution A20",
+      "DanceDanceRevolution A",
+      "DanceDanceRevolution (2014)",
+      "DanceDanceRevolution (2013)",
+      "DanceDanceRevolution X3 vs 2nd MIX",
+      "DanceDanceRevolution X2",
+      "DanceDanceRevolution X",
+      "DanceDanceRevolution SuperNOVA2",
+      "DanceDanceRevolution SuperNOVA",
+      "DanceDanceRevolution EXTREME",
+      "DDRMAX2 -DanceDanceRevolution 7thMIX-",
+      "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "DanceDanceRevolution 5th Mix",
+      "DanceDanceRevolution 4th Mix",
+      "DanceDanceRevolution 3rd Mix",
+      "DanceDanceRevolution 2nd Mix",
+      "DanceDanceRevolution 1st Mix"
+    ],
     "lastUpdated": 1684695731352
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["expert", "challenge"],
+    "difficulties": ["difficult", "expert", "challenge"],
     "flags": ["shock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16

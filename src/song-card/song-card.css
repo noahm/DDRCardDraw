@@ -129,6 +129,11 @@
   box-shadow: 0px 0px 5px cornflowerblue;
 }
 
+.picked {
+  border-color: grey;
+  box-shadow: 0px 0px 5px grey;
+}
+
 .hideVeto.vetoed {
   display: none !important;
 }

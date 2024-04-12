@@ -1,7 +1,7 @@
 import { ConfigState, useConfigState } from "./config-state";
 import { useDrawState } from "./draw-state";
 import { toaster } from "./toaster";
-import { shareData } from "./utils/share";
+import { buildDataUri, dateForFilename, shareData } from "./utils/share";
 
 interface PersistedConfigV1 {
   version: 1;
@@ -19,21 +19,26 @@ type NonFunctionKeys<T extends object> = keyof {
 };
 
 /**
- * Strips mutations from an object, and converts sets to arrays
+ * Strips mutations from an object, and converts sets to arrays, maps to arrays of entry pairs
  */
 type Serialized<T extends object> = {
-  [K in NonFunctionKeys<T>]: T[K] extends ReadonlySet<infer Item>
-    ? Array<Item>
-    : T[K];
+  [K in NonFunctionKeys<T>]: T[K] extends ReadonlyMap<infer K, infer V>
+    ? Array<[K, V]>
+    : T[K] extends ReadonlySet<infer Item>
+      ? Array<Item>
+      : T[K];
 };
 
 export function saveConfig() {
   const persistedObj = buildPersistedConfig();
-  const dataUri = `data:application/json,${encodeURI(
+  const dataUri = buildDataUri(
     JSON.stringify(persistedObj, undefined, 2),
-  )}`;
+    "application/json",
+    "url",
+  );
+
   return shareData(dataUri, {
-    filename: `card-draw-config-${persistedObj.dataSetName}.json`,
+    filename: `ddr-tools-config-${persistedObj.dataSetName}-${dateForFilename()}.json`,
     methods: [
       { type: "nativeShare", allowDesktop: true },
       { type: "download" },
@@ -96,6 +101,7 @@ function buildPersistedConfig(): PersistedConfigV1 {
     ...configState,
     difficulties: Array.from(configState.difficulties),
     flags: Array.from(configState.flags),
+    folders: Array.from(configState.folders),
   };
   const ret: PersistedConfigV1 = {
     version: 1,
@@ -128,6 +134,7 @@ async function loadPersistedConfig(saved: PersistedConfigV1) {
     ...migrateOldNames(saved.configState),
     difficulties: new Set(saved.configState.difficulties),
     flags: new Set(saved.configState.flags),
+    folders: new Set(saved.configState.folders),
   });
 }
 
@@ -149,6 +156,15 @@ function migrateOldNames(
 
   if (showLabels) {
     modernConfig.showPlayerAndRoundLabels = showLabels;
+  }
+
+  const maybeOldWeights = modernConfig.weights as unknown as
+    | Array<[number, number]>
+    | Array<number | undefined>;
+  if (Array.isArray(maybeOldWeights[0])) {
+    modernConfig.weights = maybeOldWeights.map((pair) =>
+      Array.isArray(pair) ? pair[1] : pair,
+    );
   }
 
   return modernConfig;

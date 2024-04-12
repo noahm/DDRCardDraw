@@ -2,8 +2,9 @@
   "compilerOptions": {
     "checkJs": true,
     "moduleResolution": "Node16",
-    "module": "Node16",
-    "noEmit": true
+    "module": "NodeNext",
+    "noEmit": true,
+    "resolveJsonModule": true
   },
   "include": ["./*.mjs"]
 }

@@ -1,9 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
 
-export const prefersDarkQuery = window.matchMedia(
-  "(prefers-color-scheme: dark)",
-);
-
 /**
  * Returns true if matches a given query
  */

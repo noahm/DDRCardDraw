@@ -32,7 +32,6 @@ const data = {
   meta: {
     menuParent: "itg",
     flags: [],
-    lvlMax: 0,
     lastUpdated: Date.now(),
     usesDrawGroups: useTiers,
   },
@@ -141,20 +140,19 @@ for (const parsedSong of pack.simfiles) {
       diffClass: chart.difficulty,
     };
     if (useTiers) {
-      let tierMatch = parsedSong.title.titleName.match(/^\[T(\d+)\]/i);
-      if (tierMatch.length > 0) {
+      let tierMatch = parsedSong.title.titleName.match(
+        /^\[T(?:ier\s*)?(\d+)\]/i,
+      );
+      if (tierMatch && tierMatch.length > 0) {
         const parsedTier = parseInt(tierMatch[1]);
         chartData.drawGroup = parsedTier;
-        data.meta.lvlMax = Math.max(data.meta.lvlMax, parsedTier);
       } else {
         console.error(
-          'Expected song titles to include tiers in the form "[T01] ..." but found:\n' +
+          'Expected song titles to include tiers in the form "[T01] ..." but found:\n  ' +
             parsedSong.title.titleName,
+          "From folder: " + parsedSong.title.titleDir,
         );
       }
-    } else {
-      // lvl max is calculated on level for non-tiered packs
-      data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
     }
     song.charts.push(chartData);
 
@@ -170,7 +168,7 @@ data.meta.difficulties = data.defaults.difficulties.map((key) => ({
   key,
   color: someColors[key] || "grey", // TODO?
 }));
-data.defaults.upperLvlBound = data.meta.lvlMax;
+data.defaults.upperLvlBound = 0;
 data.defaults.style = data.meta.styles[0];
 
 writeJsonData(data, resolve(join(__dirname, `../src/songs/${stub}.json`)));
