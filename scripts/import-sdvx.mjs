@@ -47,8 +47,10 @@ async function main() {
   console.log(`getting list of song jackets from ${JACKETS_PATH}`);
   const availableJackets = new Set(await fs.readdir(JACKETS_PATH));
 
+  /** @type {GameData} */
   const data = {
     meta: {
+      menuParent: "more",
       styles: ["single"],
       difficulties: [
         { key: "novice", color: "#800080" },
@@ -62,6 +64,7 @@ async function main() {
         { key: "exceed", color: "#0047AB" },
       ],
       flags: typedKeys(SDVX_UNLOCK_IDS),
+      lastUpdated: Date.now(),
     },
     defaults: {
       style: "single",
@@ -91,6 +94,10 @@ async function main() {
         heavenly: "Heavenly",
         vivid: "Vivid",
         exceed: "Exceed",
+        omegaDimension: "Blaster Gate/Omega Dimension",
+        hexadiver: "Hexadiver",
+        otherEvents: "Time-limited & Other Events",
+        jpOnly: "J-Region Exclusive",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -189,6 +196,15 @@ function determineChartJacket(chartType, song, availableJackets) {
 
 /**
  *
+ * @param {string} input in the format YYYYMMDD
+ * @returns date string with dash separators YYYY-MM-DD
+ */
+function reformatDate(input) {
+  return `${input.slice(0, 4)}-${input.slice(4, 6)}-${input.slice(-2)}`;
+}
+
+/**
+ *
  * @param {*} song
  * @param {*} availableJackets
  * @returns {Song}
@@ -242,7 +258,8 @@ function buildSong(song, availableJackets) {
   const ret = {
     name: info.title_name[0],
     search_hint: info.ascii[0],
-    date_added: info.distribution_date[0],
+    date_added: reformatDate(info.distribution_date[0]._),
+    saHash: song.$.id,
     artist: info.artist_name[0],
     jacket: usesSharedJacket
       ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
