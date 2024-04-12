@@ -6,9 +6,24 @@ import { promises as fs } from "fs";
 import { resolve, join, dirname } from "path";
 import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
-import { writeJsonData } from "./utils.mjs";
 import { fileURLToPath } from "url";
+import { writeJsonData } from "./utils.mjs";
+import { SDVX_UNLOCK_IDS } from "./sdvx/unlocks.mjs";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+/** @typedef {import("../src/models/SongData.js").Song} Song */
+/** @typedef {import("../src/models/SongData.js").Chart} Chart */
+/** @typedef {import("../src/models/SongData.js").GameData} GameData */
+
+/**
+ * @template {Record<string, unknown>} T
+ * @param {T} object
+ * @returns {Array<keyof T>}
+ */
+function typedKeys(object) {
+  return Object.keys(object);
+}
 
 const OUTFILE = "src/songs/sdvx.json";
 const JACKETS_PATH = "src/assets/jackets/sdvx";
@@ -46,7 +61,7 @@ async function main() {
         { key: "vivid", color: "#f52a6e" },
         { key: "exceed", color: "#0047AB" },
       ],
-      flags: [],
+      flags: typedKeys(SDVX_UNLOCK_IDS),
     },
     defaults: {
       style: "single",
@@ -172,6 +187,12 @@ function determineChartJacket(chartType, song, availableJackets) {
   return `sdvx/${jacketName}`;
 }
 
+/**
+ *
+ * @param {*} song
+ * @param {*} availableJackets
+ * @returns {Song}
+ */
 function buildSong(song, availableJackets) {
   const info = song.info[0];
 
@@ -182,6 +203,7 @@ function buildSong(song, availableJackets) {
     bpm = `${bpmMin}-${bpmMax}`;
   }
 
+  /** @type {Array<Chart>} */
   const charts = [];
   let usesSharedJacket = false;
   for (const chartType of Object.keys(song.difficulty[0])) {
@@ -209,7 +231,15 @@ function buildSong(song, availableJackets) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
 
-  return {
+  const flags = [];
+  for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
+    if (SDVX_UNLOCK_IDS[flag].includes(song.$.id)) {
+      flags.push(flag);
+    }
+  }
+
+  /** @type {Song} */
+  const ret = {
     name: info.title_name[0],
     search_hint: info.ascii[0],
     date_added: info.distribution_date[0],
@@ -220,6 +250,12 @@ function buildSong(song, availableJackets) {
     bpm,
     charts,
   };
+
+  if (flags.length) {
+    ret.flags = flags;
+  }
+
+  return ret;
 }
 
 main();
