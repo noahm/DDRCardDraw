@@ -1379,12 +1379,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
-  version: 7.23.7
-  resolution: "@babel/runtime@npm:7.23.7"
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
+  version: 7.24.4
+  resolution: "@babel/runtime@npm:7.24.4"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
-  checksum: 10/b29cf3ca6277aea8c5c823d9b86e7f7153757f07eaaa81d726f125de00ac0e7451c90845770f919826a94ade8f71a6bda9c0421410dfcc285ee17a40f8f8ca00
+  checksum: 10/8ec8ce2c145bc7e31dd39ab66df124f357f65c11489aefacb30f431bae913b9aaa66aa5efe5321ea2bf8878af3fcee338c87e7599519a952e3a6f83aa1b03308
   languageName: node
   linkType: hard
 
@@ -1474,6 +1474,53 @@ __metadata:
     upgrade-blueprint-2.0.0-rename: scripts/upgrade-blueprint-2.0.0-rename.sh
     upgrade-blueprint-3.0.0-rename: scripts/upgrade-blueprint-3.0.0-rename.sh
   checksum: 10/93bc33b23cb5eff6e1cbffd343d9fc920e0c1fd0863d438a20b6ebb9ea4bcb7fe86d4eb2ab59a6206c068f1d0ea02f131de1aeca3a4eb4cf9c383e5215f55d1a
+  languageName: node
+  linkType: hard
+
+"@blueprintjs/datetime2@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "@blueprintjs/datetime2@npm:2.3.3"
+  dependencies:
+    "@blueprintjs/core": "npm:^5.10.1"
+    "@blueprintjs/datetime": "npm:^5.3.3"
+    "@blueprintjs/icons": "npm:^5.9.0"
+    classnames: "npm:^2.3.1"
+    date-fns: "npm:^2.28.0"
+    react-day-picker: "npm:^8.10.0"
+    react-innertext: "npm:^1.1.5"
+    tslib: "npm:~2.6.2"
+  peerDependencies:
+    "@types/react": ^16.14.41 || 17 || 18
+    react: ^16.8 || 17 || 18
+    react-dom: ^16.8 || 17 || 18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/42f75f4483fcfff88399f81623c1b58a3011909f1fb592f5b4234486042a785680d2c861e736c1c7e2b123b0cf66fbed1c5592a2013b567fa83c1811c8df28c7
+  languageName: node
+  linkType: hard
+
+"@blueprintjs/datetime@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "@blueprintjs/datetime@npm:5.3.3"
+  dependencies:
+    "@blueprintjs/core": "npm:^5.10.1"
+    "@blueprintjs/icons": "npm:^5.9.0"
+    "@blueprintjs/select": "npm:^5.1.3"
+    classnames: "npm:^2.3.1"
+    date-fns: "npm:^2.28.0"
+    date-fns-tz: "npm:^2.0.0"
+    lodash: "npm:^4.17.21"
+    react-day-picker: "npm:7.4.9"
+    tslib: "npm:~2.6.2"
+  peerDependencies:
+    "@types/react": ^16.14.41 || 17
+    react: ^16.8 || 17
+    react-dom: ^16.8 || 17
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/281b2f8383f758f71ac269d730d3182c72ed3190cdfe137978225b661be1040544e2d77e84af592a74f4ebdc6a6183e4df4a0cc37fd4bed3c923368ee98d8288
   languageName: node
   linkType: hard
 
@@ -4753,6 +4800,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns-tz@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "date-fns-tz@npm:2.0.1"
+  peerDependencies:
+    date-fns: 2.x
+  checksum: 10/f12e684bc13c9fe7ef7910c5b25437e15290a655d45102b7420f046cecdf9fa5715bf333d6dfb6bab6c382c7abc6b58241a50c216e9ab0b60d6fdb388f473d6b
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.28.0":
+  version: 2.30.0
+  resolution: "date-fns@npm:2.30.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.21.0"
+  checksum: 10/70b3e8ea7aaaaeaa2cd80bd889622a4bcb5d8028b4de9162cbcda359db06e16ff6e9309e54eead5341e71031818497f19aaf9839c87d1aba1e27bb4796e758a9
+  languageName: node
+  linkType: hard
+
 "ddr-card-draw@workspace:.":
   version: 0.0.0-use.local
   resolution: "ddr-card-draw@workspace:."
@@ -4766,6 +4831,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.24.3"
     "@babel/preset-typescript": "npm:^7.24"
     "@blueprintjs/core": "npm:^5.10.1"
+    "@blueprintjs/datetime2": "npm:^2.3.3"
     "@blueprintjs/icons": "npm:^5.1.0"
     "@blueprintjs/select": "npm:^5.1.3"
     "@lcdp/offline-plugin": "npm:^5.0.7"
@@ -4790,6 +4856,7 @@ __metadata:
     cross-spawn: "npm:^7.0.3"
     css-loader: "npm:^6.10.0"
     css-minimizer-webpack-plugin: "npm:^6.0.0"
+    date-fns: "npm:^2.28.0"
     eslint: "npm:^8.57.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-prettier: "npm:^5.1.3"
@@ -9209,6 +9276,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-day-picker@npm:7.4.9":
+  version: 7.4.9
+  resolution: "react-day-picker@npm:7.4.9"
+  dependencies:
+    prop-types: "npm:^15.6.2"
+  peerDependencies:
+    react: ~0.13.x || ~0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: 10/5c600948d470ca19e6a0039acf2b32b928ef292fa58dd24deef6ea209984214d80e7e1b4de4bcdd1e36b6560cd7d554a5b933d7d7389000afbddec7b400ecd80
+  languageName: node
+  linkType: hard
+
+"react-day-picker@npm:^8.10.0":
+  version: 8.10.0
+  resolution: "react-day-picker@npm:8.10.0"
+  peerDependencies:
+    date-fns: ^2.28.0 || ^3.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10/974496ce004762d521923fc533f6ad6ff8d1f24368220753106617eb199aeb9658b4b7734e12a3fe8a5057840464a3d2d08b4b7f9a84ec77a59c50cc647f6dbc
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18.0.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -9236,6 +9324,16 @@ __metadata:
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
   checksum: 10/a6826180ba75cefba1c8d3ac539735f9b627ca05d3d307fe155487f5d0228d376dac6c9708d04a283a7b9f9aee599b637446635b79c8c8753d0b4eece56c125c
+  languageName: node
+  linkType: hard
+
+"react-innertext@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "react-innertext@npm:1.1.5"
+  peerDependencies:
+    "@types/react": ">=0.0.0 <=99"
+    react: ">=0.0.0 <=99"
+  checksum: 10/01c9c8a5a471f03965b9d69c8bee02d420fd3a607b678004f0bdee098c9bccb3e2eae8460c90b1d180d2a8d544a3ddb09b8c2a11e5aa8b3a077733e2d9c25c2c
   languageName: node
   linkType: hard
 

@@ -16,6 +16,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const packageJson = require("./package.json");
 
+/** @returns {import("webpack").Configuration} */
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
