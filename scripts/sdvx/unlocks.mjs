@@ -78,6 +78,68 @@ export const SDVX_UNLOCK_IDS = {
     1499, // Butterfly Twist
     1500, // pique
     1501, // Teufel
+	
+	// BPL S2 Blaster Gate
+    1939, // DEUX EX MĀXHINĀ
+    1940, // All We Need is HAPPY END!!!
+    1941, // Glory of Fighters
+    1942, // MILITARY R04D
+    1943, // WINNING ROAD
+    1944, // Paradigm Shift
+    1945, // Thousand Triggers
+    1946, // Initiating League
+    1947, // Petit espoir
+    1948, // ENDGAME
+    1949, // MURASAME
+    1950, // イグノアザーズ
+    1951, // ИADIR
+    1952, // Chat perché
+    1953, // Fl0ating:
+    1954, // trea→journey
+    1955, // 最果ての勇者にラブソングを
+    1956, // Ice Fortress
+    1957, // 灼ナル刃、破カヰ譜
+    1958, // Scat Jazz Dance
+
+    // BPL Season 2 Stamp Event Blaster Gate
+    1919, // HALO
+    1920, // S(TAR)²☆pistol
+    1921, // 赫焉のヴァルキュリア -Ragnarøk-
+    1922, // CUDDLIE CUDDLIE
+    1923, // Brave Power Leader 《 = Voltage = 》
+    1924, // 零天視
+    1925, // ステラ・イミグレーション
+    1926, // Garland
+    1938, // SuddeИDeath
+
+    // BPL S3 Blaster Gate
+    2129, // We Are All The Dreamer
+    2130, // Double or Nothing
+    2131, // Crawl Out Immortal
+    2132, // トリコエリヌム▽コンチェルト
+    2133, // 群青纏う朱の槍
+    2134, // CHOVERY GOOSE!!!
+    2135, // V!LLA!N
+    2136, // TOYBOX CANNØN=͟͟͞ Σ≡=｡ﾟ:*.:+｡.☆
+    2137, // ON THE WORLD
+    2138, // 花火のおもちゃ箱
+    2139, // イグジスター
+    2140, // La Nostra Storia!
+    2141, // グリーディ・スターズ！
+    2142, // Di-Da-De-Doo
+    2143, // Break Through Δpex
+    2144, // LOVE TONIC
+    2145, // Inevitable Magic
+    2146, // Ars Magna
+    2147, // 異次元の孤独～カナタノキミヘ～
+    2148, // SΛMVICΛ
+    2149, // MΔX FLAVØR
+    2150, // Cuz we <3 this Game
+    2151, // Xeno Gravity
+    2152, // NEMSYS ARENA World Hexathlon
+	
+	// Unlock Chain
+    2034, // 無意識レクイエム(cosmobsp mix)
   ],
   hexadiver: [
     1580, // 666
@@ -170,68 +232,6 @@ export const SDVX_UNLOCK_IDS = {
     1765, // Reverenced Flower
     1811, // Reminiscence
 
-    // Unlock Chain
-    2034, // 無意識レクイエム(cosmobsp mix)
-
-    // BPL S2 Blaster Gate
-    1939, // DEUX EX MĀXHINĀ
-    1940, // All We Need is HAPPY END!!!
-    1941, // Glory of Fighters
-    1942, // MILITARY R04D
-    1943, // WINNING ROAD
-    1944, // Paradigm Shift
-    1945, // Thousand Triggers
-    1946, // Initiating League
-    1947, // Petit espoir
-    1948, // ENDGAME
-    1949, // MURASAME
-    1950, // イグノアザーズ
-    1951, // ИADIR
-    1952, // Chat perché
-    1953, // Fl0ating:
-    1954, // trea→journey
-    1955, // 最果ての勇者にラブソングを
-    1956, // Ice Fortress
-    1957, // 灼ナル刃、破カヰ譜
-    1958, // Scat Jazz Dance
-
-    // BPL Season 2 Stamp Event Blaster Gate
-    1919, // HALO
-    1920, // S(TAR)²☆pistol
-    1921, // 赫焉のヴァルキュリア -Ragnarøk-
-    1922, // CUDDLIE CUDDLIE
-    1923, // Brave Power Leader 《 = Voltage = 》
-    1924, // 零天視
-    1925, // ステラ・イミグレーション
-    1926, // Garland
-    1938, // SuddeИDeath
-
-    // BPL S3 Blaster Gate
-    2129, // We Are All The Dreamer
-    2130, // Double or Nothing
-    2131, // Crawl Out Immortal
-    2132, // トリコエリヌム▽コンチェルト
-    2133, // 群青纏う朱の槍
-    2134, // CHOVERY GOOSE!!!
-    2135, // V!LLA!N
-    2136, // TOYBOX CANNØN=͟͟͞ Σ≡=｡ﾟ:*.:+｡.☆
-    2137, // ON THE WORLD
-    2138, // 花火のおもちゃ箱
-    2139, // イグジスター
-    2140, // La Nostra Storia!
-    2141, // グリーディ・スターズ！
-    2142, // Di-Da-De-Doo
-    2143, // Break Through Δpex
-    2144, // LOVE TONIC
-    2145, // Inevitable Magic
-    2146, // Ars Magna
-    2147, // 異次元の孤独～カナタノキミヘ～
-    2148, // SΛMVICΛ
-    2149, // MΔX FLAVØR
-    2150, // Cuz we <3 this Game
-    2151, // Xeno Gravity
-    2152, // NEMSYS ARENA World Hexathlon
-
     // Arena Exclusive
     1742, // Kontrol Line
     1743, // Revvable Engine
@@ -249,6 +249,9 @@ export const SDVX_UNLOCK_IDS = {
     2162, // ちょえちょえまぎか
     2163, // Deep tenDon Reflex
     2164, // Ambivalent Vermilia
+
+	// KAC Entry
+	2059, // パーフェクトイーター
 
     // KAC Stamp
     2060, // 累乗のカルマ
