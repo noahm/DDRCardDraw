@@ -78,8 +78,8 @@ export const SDVX_UNLOCK_IDS = {
     1499, // Butterfly Twist
     1500, // pique
     1501, // Teufel
-	
-	// BPL S2 Blaster Gate
+
+    // BPL S2 Blaster Gate
     1939, // DEUX EX MĀXHINĀ
     1940, // All We Need is HAPPY END!!!
     1941, // Glory of Fighters
@@ -137,8 +137,8 @@ export const SDVX_UNLOCK_IDS = {
     2150, // Cuz we <3 this Game
     2151, // Xeno Gravity
     2152, // NEMSYS ARENA World Hexathlon
-	
-	// Unlock Chain
+
+    // Unlock Chain
     2034, // 無意識レクイエム(cosmobsp mix)
   ],
   hexadiver: [
@@ -250,8 +250,8 @@ export const SDVX_UNLOCK_IDS = {
     2163, // Deep tenDon Reflex
     2164, // Ambivalent Vermilia
 
-	// KAC Entry
-	2059, // パーフェクトイーター
+    // KAC Entry
+    2059, // パーフェクトイーター
 
     // KAC Stamp
     2060, // 累乗のカルマ
