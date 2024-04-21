@@ -14,7 +14,7 @@
       { "key": "exceed", "color": "#0047AB" }
     ],
     "flags": ["omegaDimension", "hexadiver", "otherEvents", "jpOnly"],
-    "lastUpdated": 1712893010960
+    "lastUpdated": 1713666046412
   },
   "defaults": {
     "style": "single",
@@ -44,6 +44,10 @@
       "heavenly": "Heavenly",
       "vivid": "Vivid",
       "exceed": "Exceed",
+      "omegaDimension": "Blaster Gate/Omega Dimension",
+      "hexadiver": "Hexadiver",
+      "otherEvents": "Time-limited & Other Events",
+      "jpOnly": "J-Region Exclusive",
       "$abbr": {
         "novice": "NOV",
         "advanced": "ADV",
@@ -321,10 +325,15 @@
       "date_added": "2012-01-18",
       "saHash": "8",
       "artist": "KN",
-      "jacket": "sdvx/jk_0008_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "177",
       "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0008_1_s.png"
+        },
         {
           "lvl": 8,
           "style": "single",
@@ -337,7 +346,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0008_3_s.png"
         },
-        { "lvl": 17, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0008_4_s.png"
+        }
       ]
     },
     {
@@ -3855,7 +3869,12 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 10, "style": "single", "diffClass": "advanced" },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0165_4_s.png"
+        }
       ]
     },
     {
@@ -5043,10 +5062,15 @@
       "date_added": "2013-07-18",
       "saHash": "241",
       "artist": "wa.",
-      "jacket": "sdvx/jk_0241_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "180",
       "charts": [
-        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0241_1_s.png"
+        },
         {
           "lvl": 8,
           "style": "single",
@@ -5059,7 +5083,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0241_3_s.png"
         },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0241_4_s.png"
+        }
       ]
     },
     {
@@ -5844,7 +5873,12 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0289_4_s.png"
+        }
       ]
     },
     {
@@ -6901,10 +6935,15 @@
       "date_added": "2014-04-11",
       "saHash": "348",
       "artist": "Kaoru feat.FG75",
-      "jacket": "sdvx/jk_0348_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "175-200",
       "charts": [
-        { "lvl": 1, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0348_1_s.png"
+        },
         {
           "lvl": 12,
           "style": "single",
@@ -6917,7 +6956,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0348_3_s.png"
         },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0348_4_s.png"
+        }
       ]
     },
     {
@@ -9702,7 +9746,12 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0510_4_s.png"
+        }
       ]
     },
     {
@@ -11728,10 +11777,15 @@
       "date_added": "2015-08-21",
       "saHash": "610",
       "artist": "Riz vs. Shiron",
-      "jacket": "sdvx/jk_0610_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "190",
       "charts": [
-        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0610_1_s.png"
+        },
         {
           "lvl": 13,
           "style": "single",
@@ -11744,7 +11798,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0610_3_s.png"
         },
-        { "lvl": 19, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0610_4_s.png"
+        }
       ]
     },
     {
@@ -11782,10 +11841,15 @@
       "date_added": "2015-08-13",
       "saHash": "612",
       "artist": "モリモリあつし+Verdammt",
-      "jacket": "sdvx/jk_0612_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "220",
       "charts": [
-        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0612_1_s.png"
+        },
         {
           "lvl": 11,
           "style": "single",
@@ -11798,7 +11862,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0612_3_s.png"
         },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0612_4_s.png"
+        }
       ]
     },
     {
@@ -12187,7 +12256,12 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 18, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 19, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0634_4_s.png"
+        }
       ]
     },
     {
@@ -15042,10 +15116,15 @@
       "date_added": "2016-02-05",
       "saHash": "786",
       "artist": "Cororo",
-      "jacket": "sdvx/jk_0786_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "150",
       "charts": [
-        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0786_1_s.png"
+        },
         {
           "lvl": 11,
           "style": "single",
@@ -15058,7 +15137,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0786_3_s.png"
         },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0786_4_s.png"
+        }
       ]
     },
     {
@@ -15073,7 +15157,12 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0787_4_s.png"
+        }
       ]
     },
     {
@@ -15082,10 +15171,15 @@
       "date_added": "2016-02-05",
       "saHash": "788",
       "artist": "lapix",
-      "jacket": "sdvx/jk_0788_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "165",
       "charts": [
-        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0788_1_s.png"
+        },
         {
           "lvl": 12,
           "style": "single",
@@ -15098,7 +15192,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0788_3_s.png"
         },
-        { "lvl": 18, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0788_4_s.png"
+        }
       ]
     },
     {
@@ -15107,10 +15206,15 @@
       "date_added": "2016-02-05",
       "saHash": "789",
       "artist": "Noah",
-      "jacket": "sdvx/jk_0789_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "250-255",
       "charts": [
-        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0789_1_s.png"
+        },
         {
           "lvl": 12,
           "style": "single",
@@ -15123,7 +15227,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0789_3_s.png"
         },
-        { "lvl": 19, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0789_4_s.png"
+        }
       ]
     },
     {
@@ -15132,10 +15241,15 @@
       "date_added": "2016-02-05",
       "saHash": "790",
       "artist": "かめりあ",
-      "jacket": "sdvx/jk_0790_1_s.png",
+      "jacket": "sdvx6.png",
       "bpm": "114",
       "charts": [
-        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/jk_0790_1_s.png"
+        },
         {
           "lvl": 12,
           "style": "single",
@@ -15148,7 +15262,12 @@
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0790_3_s.png"
         },
-        { "lvl": 19, "style": "single", "diffClass": "exceed" }
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0790_4_s.png"
+        }
       ]
     },
     {
@@ -33463,8 +33582,18 @@
       "bpm": "201",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1784_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1784_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -33568,8 +33697,18 @@
       "bpm": "165",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1791_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1791_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -33613,8 +33752,18 @@
       "bpm": "160",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1794_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1794_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -34433,8 +34582,18 @@
       "bpm": "180",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1846_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1846_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35423,8 +35582,18 @@
       "bpm": "240",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 15, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1902_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1902_3_s.png"
+        },
         { "lvl": 20, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35693,8 +35862,18 @@
       "bpm": "214",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1920_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1920_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35753,8 +35932,18 @@
       "bpm": "200",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1924_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1924_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35798,8 +35987,18 @@
       "bpm": "230-267",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1927_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1927_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35813,8 +36012,18 @@
       "bpm": "210",
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1928_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1928_3_s.png"
+        },
         { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35903,8 +36112,18 @@
       "bpm": "90-128",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1934_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1934_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35933,8 +36152,18 @@
       "bpm": "70-1080",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1936_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1936_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35948,8 +36177,18 @@
       "bpm": "185",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 11, "style": "single", "diffClass": "advanced" },
-        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1937_2_s.png"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1937_3_s.png"
+        },
         { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35963,8 +36202,18 @@
       "bpm": "236",
       "charts": [
         { "lvl": 8, "style": "single", "diffClass": "novice" },
-        { "lvl": 15, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1938_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1938_3_s.png"
+        },
         { "lvl": 20, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -35978,8 +36227,18 @@
       "bpm": "257",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1939_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1939_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36023,8 +36282,18 @@
       "bpm": "272",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1942_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1942_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36053,8 +36322,18 @@
       "bpm": "220",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1944_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1944_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36068,8 +36347,18 @@
       "bpm": "242",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1945_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1945_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36083,8 +36372,18 @@
       "bpm": "200",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1946_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1946_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36113,8 +36412,18 @@
       "bpm": "222",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1948_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1948_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36233,8 +36542,18 @@
       "bpm": "185",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1956_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1956_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36263,8 +36582,18 @@
       "bpm": "162",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1958_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1958_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36444,7 +36773,12 @@
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1979_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36458,8 +36792,18 @@
       "bpm": "160",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1980_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1980_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36563,8 +36907,18 @@
       "bpm": "150",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1992_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1992_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36578,8 +36932,18 @@
       "bpm": "140-210",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1995_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1995_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36608,8 +36972,18 @@
       "bpm": "220",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1997_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1997_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36623,8 +36997,18 @@
       "bpm": "188",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1998_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1998_3_s.png"
+        },
         { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36683,8 +37067,18 @@
       "bpm": "224",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2012_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2012_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36713,8 +37107,18 @@
       "bpm": "222",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2016_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2016_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36953,8 +37357,18 @@
       "bpm": "212",
       "charts": [
         { "lvl": 8, "style": "single", "diffClass": "novice" },
-        { "lvl": 15, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2037_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2037_3_s.png"
+        },
         { "lvl": 20, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36968,8 +37382,18 @@
       "bpm": "285",
       "charts": [
         { "lvl": 8, "style": "single", "diffClass": "novice" },
-        { "lvl": 15, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2038_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2038_3_s.png"
+        },
         { "lvl": 20, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36983,8 +37407,18 @@
       "bpm": "238-264",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2039_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2039_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -36998,8 +37432,18 @@
       "bpm": "210",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2040_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2040_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37013,8 +37457,18 @@
       "bpm": "64-192",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2041_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2041_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37028,8 +37482,18 @@
       "bpm": "165-250",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2042_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2042_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37043,8 +37507,18 @@
       "bpm": "160",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2043_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2043_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37058,8 +37532,18 @@
       "bpm": "150-208",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2044_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2044_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37073,8 +37557,18 @@
       "bpm": "165",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2045_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2045_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37088,8 +37582,18 @@
       "bpm": "234",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2046_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2046_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37103,8 +37607,18 @@
       "bpm": "205",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2047_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2047_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37118,8 +37632,18 @@
       "bpm": "203",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2048_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2048_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37133,8 +37657,18 @@
       "bpm": "207",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2049_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2049_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37148,8 +37682,18 @@
       "bpm": "190-210",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2050_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2050_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37508,8 +38052,18 @@
       "bpm": "170",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2079_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2079_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37523,8 +38077,18 @@
       "bpm": "140",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2080_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2080_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37538,8 +38102,18 @@
       "bpm": "250",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2081_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2081_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37553,8 +38127,18 @@
       "bpm": "163",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2082_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2082_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37568,8 +38152,18 @@
       "bpm": "244",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2083_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2083_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37583,8 +38177,18 @@
       "bpm": "203-232",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2084_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2084_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37598,8 +38202,18 @@
       "bpm": "180",
       "charts": [
         { "lvl": 8, "style": "single", "diffClass": "novice" },
-        { "lvl": 15, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2085_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2085_3_s.png"
+        },
         { "lvl": 20, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37793,8 +38407,18 @@
       "bpm": "246",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2140_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2140_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37838,8 +38462,18 @@
       "bpm": "190-210",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2143_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2143_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37853,8 +38487,18 @@
       "bpm": "165",
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2144_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2144_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37958,8 +38602,18 @@
       "bpm": "286",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2151_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2151_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37973,8 +38627,18 @@
       "bpm": "190",
       "charts": [
         { "lvl": 8, "style": "single", "diffClass": "novice" },
-        { "lvl": 15, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2152_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2152_3_s.png"
+        },
         { "lvl": 20, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37988,8 +38652,18 @@
       "bpm": "180",
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2162_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2162_3_s.png"
+        },
         { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -38018,8 +38692,18 @@
       "bpm": "185",
       "charts": [
         { "lvl": 7, "style": "single", "diffClass": "novice" },
-        { "lvl": 14, "style": "single", "diffClass": "advanced" },
-        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2164_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2164_3_s.png"
+        },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -38078,8 +38762,18 @@
       "bpm": "191",
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2169_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2169_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     }
