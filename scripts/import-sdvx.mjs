@@ -249,7 +249,7 @@ function buildSong(song, availableJackets) {
 
   const flags = [];
   for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
-    if (SDVX_UNLOCK_IDS[flag].includes(song.$.id)) {
+    if (SDVX_UNLOCK_IDS[flag].includes(Number.parseInt(song.$.id), 10)) {
       flags.push(flag);
     }
   }
