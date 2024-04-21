@@ -67,6 +67,11 @@ export function getDataFileFromPack(
       } else {
         bpm = `${parsedSong.minBpm}-${parsedSong.maxBpm}`;
       }
+    } else {
+      const [low, high] = bpm.split("-").map((n) => Number.parseInt(n));
+      if (Number.isInteger(low) && Number.isInteger(high)) {
+        bpm = `${low}-${high}`;
+      }
     }
 
     const song: Song = {

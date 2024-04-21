@@ -14,6 +14,10 @@ import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
 import { Import } from "@blueprintjs/icons";
 
+function loadParserModule() {
+  return import("simfile-parser/browser");
+}
+
 export function DropHandler() {
   const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
     null,
@@ -43,6 +47,8 @@ export function DropHandler() {
 
   const handleDragOver = useCallback((e: Event) => {
     e.preventDefault();
+    // preload parser as soon as a drag begins
+    loadParserModule();
   }, []);
 
   useEffect(() => {
@@ -81,7 +87,7 @@ function useDataParsing(
       setParsedPack(null);
       return;
     }
-    import("simfile-parser/browser")
+    loadParserModule()
       .then(({ parsePack }) => parsePack(droppedFolder))
       .then((pack) => {
         setParsedPack(pack);

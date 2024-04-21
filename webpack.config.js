@@ -102,6 +102,7 @@ module.exports = function (env = {}, argv = {}) {
               options: {
                 modules: {
                   localIdentName: "[local]__[hash:base64:5]",
+                  namedExport: false,
                 },
                 importLoaders: 1,
               },
