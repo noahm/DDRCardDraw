@@ -29,6 +29,7 @@ export function ApplyDefaultConfig({ defaults, granularResolution }: Props) {
         difficulties: new Set(difficulties),
         folders: new Set(folders),
         style,
+        cutoffDate: "",
       };
       if (!granularResolution) {
         ret.useGranularLevels = false;

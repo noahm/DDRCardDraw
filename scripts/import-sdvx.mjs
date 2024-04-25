@@ -6,9 +6,24 @@ import { promises as fs } from "fs";
 import { resolve, join, dirname } from "path";
 import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
-import { writeJsonData } from "./utils.mjs";
 import { fileURLToPath } from "url";
+import { writeJsonData } from "./utils.mjs";
+import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+/** @typedef {import("../src/models/SongData.js").Song} Song */
+/** @typedef {import("../src/models/SongData.js").Chart} Chart */
+/** @typedef {import("../src/models/SongData.js").GameData} GameData */
+
+/**
+ * @template {Record<string, unknown>} T
+ * @param {T} object
+ * @returns {Array<keyof T>}
+ */
+function typedKeys(object) {
+  return Object.keys(object);
+}
 
 const OUTFILE = "src/songs/sdvx.json";
 const JACKETS_PATH = "src/assets/jackets/sdvx";
@@ -32,8 +47,10 @@ async function main() {
   console.log(`getting list of song jackets from ${JACKETS_PATH}`);
   const availableJackets = new Set(await fs.readdir(JACKETS_PATH));
 
+  /** @type {GameData} */
   const data = {
     meta: {
+      menuParent: "more",
       styles: ["single"],
       difficulties: [
         { key: "novice", color: "#800080" },
@@ -46,7 +63,8 @@ async function main() {
         { key: "vivid", color: "#f52a6e" },
         { key: "exceed", color: "#0047AB" },
       ],
-      flags: [],
+      flags: typedKeys(SDVX_UNLOCK_IDS),
+      lastUpdated: Date.now(),
     },
     defaults: {
       style: "single",
@@ -76,6 +94,10 @@ async function main() {
         heavenly: "Heavenly",
         vivid: "Vivid",
         exceed: "Exceed",
+        omegaDimension: "Blaster Gate/Omega Dimension",
+        hexadiver: "Hexadiver",
+        otherEvents: "Time-limited & Other Events",
+        jpOnly: "J-Region Exclusive",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -142,13 +164,7 @@ function determineDiffClass(song, chartType) {
   }
 }
 
-const songIdsToSkip = new Set([
-  840, // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
-  1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
-  1259, // AUTOMATION PARADISE
-  1438, // AUTOMATION PARADISE, April Fools
-  1751, // EXCEEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
-]);
+const songIdsToSkip = new Set(UNPLAYABLE_IDS);
 function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
 }
@@ -170,7 +186,23 @@ function determineChartJacket(chartType, song, availableJackets) {
   return `sdvx/${jacketName}`;
 }
 
+/**
+ *
+ * @param {string} input in the format YYYYMMDD
+ * @returns date string with dash separators YYYY-MM-DD
+ */
+function reformatDate(input) {
+  return `${input.slice(0, 4)}-${input.slice(4, 6)}-${input.slice(-2)}`;
+}
+
+/**
+ *
+ * @param {*} song
+ * @param {*} availableJackets
+ * @returns {Song}
+ */
 function buildSong(song, availableJackets) {
+  const numericId = Number.parseInt(song.$.id, 10);
   const info = song.info[0];
 
   const bpmMax = info.bpm_max[0]._.slice(0, -2);
@@ -180,6 +212,7 @@ function buildSong(song, availableJackets) {
     bpm = `${bpmMin}-${bpmMax}`;
   }
 
+  /** @type {Array<Chart>} */
   const charts = [];
   let usesSharedJacket = false;
   for (const chartType of Object.keys(song.difficulty[0])) {
@@ -207,9 +240,19 @@ function buildSong(song, availableJackets) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
 
-  return {
+  const flags = [];
+  for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
+    if (SDVX_UNLOCK_IDS[flag].includes(numericId)) {
+      flags.push(flag);
+    }
+  }
+
+  /** @type {Song} */
+  const ret = {
     name: info.title_name[0],
     search_hint: info.ascii[0],
+    date_added: reformatDate(info.distribution_date[0]._),
+    saHash: song.$.id,
     artist: info.artist_name[0],
     jacket: usesSharedJacket
       ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
@@ -217,6 +260,12 @@ function buildSong(song, availableJackets) {
     bpm,
     charts,
   };
+
+  if (flags.length) {
+    ret.flags = flags;
+  }
+
+  return ret;
 }
 
 main();

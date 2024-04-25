@@ -24,6 +24,9 @@ import {
   SmallTick,
   SmallCross,
 } from "@blueprintjs/icons";
+import { DateInput3 } from "@blueprintjs/datetime2";
+import parse from "date-fns/parse";
+import format from "date-fns/format";
 import { useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
@@ -40,6 +43,7 @@ import { PlayerNamesControls } from "./player-names";
 import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
+import { detectedLanguage } from "../utils";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -122,6 +126,56 @@ export default function ControlsDrawer() {
   );
 }
 
+const dateFormat = "yyyy-MM-dd";
+function ReleaseDateFilter() {
+  const { t } = useIntl();
+  const gameData = useDrawState((s) => s.gameData);
+  const [updateState, cutoffDate] = useConfigState(
+    (s) => [s.update, s.cutoffDate],
+    shallow,
+  );
+  const mostRecentRelease = useMemo(
+    () =>
+      gameData?.songs.reduce<string>((prev, song) => {
+        if (song.date_added && song.date_added > prev) return song.date_added;
+        return prev;
+      }, ""),
+    [gameData],
+  );
+
+  if (!mostRecentRelease) {
+    return null;
+  }
+
+  const reference = new Date();
+  const maxDate = parse(mostRecentRelease, dateFormat, reference);
+  const minDate = parse("2000-01-01", dateFormat, reference);
+
+  return (
+    <FormGroup label={t("controls.releaseHeader")}>
+      <DateInput3
+        dateFnsFormat={dateFormat}
+        locale={detectedLanguage}
+        value={cutoffDate || mostRecentRelease}
+        onChange={(newDate, isUserChange) => {
+          if (!isUserChange) {
+            return;
+          }
+          if (!newDate) {
+            updateState({ cutoffDate: "" });
+            return;
+          }
+          updateState({ cutoffDate: format(new Date(newDate), dateFormat) });
+        }}
+        placeholder={t("controls.releaseInputPlaceholder", { dateFormat })}
+        maxDate={maxDate}
+        minDate={minDate}
+      />
+    </FormGroup>
+  );
+}
+
+/** Renders the checkboxes for each individual flag that exists in the data file's meta.flags */
 function FlagSettings() {
   const { t } = useIntl();
   const [dataSetName, gameData, hasFlags] = useDrawState(
@@ -162,6 +216,7 @@ function FlagSettings() {
   );
 }
 
+/** Renders the checkboxes for each individual folder that exists in the data file's meta.folders */
 function FolderSettings() {
   const { t } = useIntl();
   const availableFolders = useDrawState((s) => s.gameData?.meta.folders);
@@ -478,6 +533,7 @@ function GeneralSettings() {
               />
             ))}
           </FormGroup>
+          <ReleaseDateFilter />
           <FlagSettings />
           <FolderSettings />
         </Card>

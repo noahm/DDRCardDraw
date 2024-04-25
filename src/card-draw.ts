@@ -61,6 +61,13 @@ export function songIsValid(
   if (forPocketPick && !config.constrainPocketPicks) {
     return true;
   }
+  if (
+    config.cutoffDate &&
+    song.date_added &&
+    song.date_added > config.cutoffDate
+  ) {
+    return false;
+  }
   return (
     (!song.folder || !config.folders.size || config.folders.has(song.folder)) &&
     (!song.flags || song.flags.every((f) => config.flags.has(f)))

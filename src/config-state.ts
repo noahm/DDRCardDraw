@@ -17,6 +17,7 @@ export interface ConfigState {
   folders: ReadonlySet<string>;
   difficulties: ReadonlySet<string>;
   flags: ReadonlySet<string>;
+  cutoffDate: string;
   showEligibleCharts: boolean;
   playerNames: string[];
   tournamentRounds: string[];
@@ -41,6 +42,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     forceDistribution: true,
     constrainPocketPicks: true,
     style: "",
+    cutoffDate: "",
     folders: new Set(),
     difficulties: new Set(),
     flags: new Set(),
