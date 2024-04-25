@@ -204,6 +204,39 @@ function reformatDate(input) {
 function buildSong(song, availableJackets) {
   const numericId = Number.parseInt(song.$.id, 10);
   const info = song.info[0];
+  // Fix accent issues with title/artist
+  let accent_lut = {
+    驩: "Ø",
+    齲: "♥",
+    齶: "♡",
+    趁: "Ǣ",
+    騫: "á",
+    曦: "à",
+    驫: "ā",
+    齷: "é",
+    曩: "è",
+    罇: "ê",
+    骭: "ü",
+    隍: "Ü",
+    雋: "Ǜ",
+    鬻: "♃",
+    鬥: "Ã",
+    鬆: "Ý",
+    鬮: "¡",
+    龕: "€",
+    蹙: "ℱ",
+    頽: "ä",
+    彜: "ū",
+    餮: "Ƶ",
+    墸: "\u035f\u035f\u035e\u0020",
+  };
+
+  let name = info.title_name[0];
+  let artist = info.artist_name[0];
+  for (const [orig, rep] of Object.entries(accent_lut)) {
+    name = name.replaceAll(orig, rep);
+    artist = artist.replaceAll(orig, rep);
+  }
 
   const bpmMax = info.bpm_max[0]._.slice(0, -2);
   const bpmMin = info.bpm_min[0]._.slice(0, -2);
@@ -249,11 +282,11 @@ function buildSong(song, availableJackets) {
 
   /** @type {Song} */
   const ret = {
-    name: info.title_name[0],
+    name: name,
     search_hint: info.ascii[0],
     date_added: reformatDate(info.distribution_date[0]._),
     saHash: song.$.id,
-    artist: info.artist_name[0],
+    artist: artist,
     jacket: usesSharedJacket
       ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
       : "sdvx6.png",
