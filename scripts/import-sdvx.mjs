@@ -8,7 +8,7 @@ import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
 import { writeJsonData } from "./utils.mjs";
-import { SDVX_UNLOCK_IDS } from "./sdvx/unlocks.mjs";
+import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -164,15 +164,7 @@ function determineDiffClass(song, chartType) {
   }
 }
 
-const songIdsToSkip = new Set([
-  840, // Grace's Tutorial https://remywiki.com/GRACE-chan_no_chou~zetsu!!_GRAVITY_kouza_w
-  1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
-  1259, // AUTOMATION PARADISE
-  1438, // AUTOMATION PARADISE, April Fools
-  1490, // MAX BURNING!! (FOR INFINITE EXTENDED VERSION), Automation Paradise/Megamix Exclusive
-  1491, // Zusammenbruch of Gott, Automation Paradise/Megamix Exclusive
-  1751, // EXCEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
-]);
+const songIdsToSkip = new Set(UNPLAYABLE_IDS);
 function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
 }
@@ -210,6 +202,7 @@ function reformatDate(input) {
  * @returns {Song}
  */
 function buildSong(song, availableJackets) {
+  const numericId = Number.parseInt(song.$.id, 10);
   const info = song.info[0];
 
   const bpmMax = info.bpm_max[0]._.slice(0, -2);
@@ -249,7 +242,7 @@ function buildSong(song, availableJackets) {
 
   const flags = [];
   for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
-    if (SDVX_UNLOCK_IDS[flag].includes(Number.parseInt(song.$.id), 10)) {
+    if (SDVX_UNLOCK_IDS[flag].includes(numericId)) {
       flags.push(flag);
     }
   }
