@@ -1,0 +1,1864 @@
+{
+  "meta": {
+    "menuParent": "itg",
+    "flags": [],
+    "lastUpdated": 1714522099878,
+    "usesDrawGroups": true,
+    "styles": ["single", "double"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 1,
+    "difficulties": ["challenge"],
+    "upperLvlBound": 5,
+    "style": "single"
+  },
+  "i18n": {
+    "en": {
+      "name": "Storm 2024",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[LOW] [08] ANTIFRAGILE (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] ANTIFRAGILE (SH) [Talkion].jpg",
+      "bpm": "105",
+      "artist": "LE SSERAFIM",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] Beyond (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] Beyond (SH) [sangyule].jpg",
+      "bpm": "138",
+      "artist": "Lime",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] Cockroach Cooking (Medium)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] Cockroach Cooking (SM) [Talkion].jpg",
+      "bpm": "185",
+      "artist": "Yosk!",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] FALL",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] FALL (SX) [Hubert].jpg",
+      "bpm": "140",
+      "artist": "Copter4016882",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] GREAT GREAT (Medium)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] GREAT GREAT (SM) [CondorTalon].jpg",
+      "bpm": "161",
+      "artist": "Zris",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] I Can't Stop Me",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] I Can't Stop Me (SX) [Freyja].jpg",
+      "bpm": "150",
+      "artist": "TWICE",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] オオカミハート",
+      "name_translation": "[LOW] [08] Ookami Heart",
+      "jacket": "itg/storm24/[LOW] [08] Ookami Heart (SX) [Loak].jpg",
+      "bpm": "128",
+      "artist": "ORESAMA",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] Stellar Stellar (Easy)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] Stellar Stellar (SE) [wrsw].jpg",
+      "bpm": "178",
+      "artist": "星街すいせい (prod. TAKU INOUE)",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [08] Forgot Ya (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [08] [NO CMOD] Forgot Ya (SH) [Telperion].jpg",
+      "bpm": "188",
+      "artist": "Sobrem",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] A-ra (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] A-ra (SH) [Exschwasion].jpg",
+      "bpm": "105",
+      "artist": "PODA",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] China Express",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] China Express.jpg",
+      "bpm": "171",
+      "artist": "Ryu*",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] Happy Life Generator",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] Happy Life Generator (SX) [StoryTime].jpg",
+      "bpm": "170",
+      "artist": "CAPSULE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] Idol",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] Idol (SX) [teejusb].jpg",
+      "bpm": "126",
+      "artist": "BTS",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] キミの記憶",
+      "name_translation": "[LOW] [09] Memories of You",
+      "jacket": "itg/storm24/[LOW] [09] Memories of You (SX) [Hubert].jpg",
+      "bpm": "112",
+      "artist": "川村ゆみ",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] ON FIRE (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] ON FIRE.jpg",
+      "bpm": "125",
+      "artist": "JOYRYDE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] SEVENTH HAVEN",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] SEVENTH HAVEN (SX) [Gpop].jpg",
+      "bpm": "66-132",
+      "artist": "7th Sisters",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] 心臓",
+      "name_translation": "[LOW] [09] Shinzo",
+      "jacket": "itg/storm24/[LOW] [09] Shinzo (SX) [teri].jpg",
+      "bpm": "180",
+      "artist": "TOOBOE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] Sorry Sorry",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] Sorry Sorry (SX) [Freyja].jpg",
+      "bpm": "130",
+      "artist": "SUPER JUNIOR",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] Sugar Rush (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] Sugar Rush (SH) [M. Ruggiero].jpg",
+      "bpm": "127",
+      "artist": "Virtual Riot",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] Surf",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] Surf.jpg",
+      "bpm": "127",
+      "artist": "Mewmore",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [09] Timekeeper's Song",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [09] Timekeeper's Song (NO CMOD) [Sudzi781].jpg",
+      "bpm": "60-120",
+      "artist": "felys feat. Aki Misawa",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Buttonmasher",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Buttonmasher [SX].jpg",
+      "bpm": "128",
+      "artist": "Virtual Riot",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] COSMIC CYBER (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] COSMIC CYBER [SH].jpg",
+      "bpm": "170",
+      "artist": "BEMANI Sound Team \"Captain Sonic\"",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Meridian",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Meridian (SX) [Talkion].jpg",
+      "bpm": "175",
+      "artist": "Ayiko",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Multi-Thread",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Multi-Thread [SX].jpg",
+      "bpm": "126",
+      "artist": "Mameyudoufu",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Starstrukk",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Starstrukk [SX].jpg",
+      "bpm": "140",
+      "artist": "3OH!3 ft. Katy Perry",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Synchronize",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Synchronize [SX].jpg",
+      "bpm": "155",
+      "artist": "hyleo & Mameyudoufu",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Yoru ni Kakeru",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Yoru ni Kakeru [SX].jpg",
+      "bpm": "130",
+      "artist": "YOASOBI",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [10] Yuusha",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [10] Yuusha (SX) [tev].jpg",
+      "bpm": "104",
+      "artist": "YOASOBI",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [11] Catch the Wave",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [11] Catch the Wave [SX].jpg",
+      "bpm": "153",
+      "artist": "kz feat. Hatsune Miku",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [11] 有頂天ビバーチェ",
+      "name_translation": "[LOW] [11] Ecstatic Vivace",
+      "jacket": "itg/storm24/[LOW] [11] Ecstatic Vivace (SX) [Chief Skittles].jpg",
+      "bpm": "133",
+      "artist": "Last Note.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [11] Gradius",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [11] Gradius (SX) [mute].jpg",
+      "bpm": "160",
+      "artist": "Mr.T",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [11] Synthesizers",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [11] Synthesizers [SX].jpg",
+      "bpm": "127",
+      "artist": "The Hair Kid",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [11] Tesseract",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [11] Tesseract [SX].jpg",
+      "bpm": "150",
+      "artist": "kyo",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[LOW] [12] Hyper Drive",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW] [12] Hyper Drive (SX) [tev].jpg",
+      "bpm": "170",
+      "artist": "MINIMONSTER",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [09] Bullet Waiting for Me (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [09] Bullet Waiting for Me (SH) [Sangyule].jpg",
+      "bpm": "107",
+      "artist": "Nikki Simmons",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [09] Field of Hopes and Dreams",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [09] Field of Hopes and Dreams [SX].jpg",
+      "bpm": "125",
+      "artist": "Toby Fox",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [09] Groove District (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [09] Groove District (SH) [mute].jpg",
+      "bpm": "125",
+      "artist": "スタージャンク95",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [09] Love Ya (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [09] Love Ya (SH) [Highflyer].jpg",
+      "bpm": "143-145",
+      "artist": "Pure 100%",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [09] Timberwolves (Medium)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [09] Timberwolves [SM].jpg",
+      "bpm": "95-190",
+      "artist": "S-C-U",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [10] Aztec Bump",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [10] Aztec Bump (SX) [Hunter].jpg",
+      "bpm": "125",
+      "artist": "Electronic Boutique",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [10] Deep Deep Inside (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [10] Deep Deep Inside (SH) [chronon].jpg",
+      "bpm": "135",
+      "artist": "ino.",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [10] Goosebumps",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [10] Goosebumps (SX) [Feraligatr].jpg",
+      "bpm": "124",
+      "artist": "Travis Scott",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [10] 今宵Dance～花火やねん",
+      "name_translation": "[MID/LOW] [10] Koyoi Dance ~ Hanabiyanen",
+      "jacket": "itg/storm24/[LOW_MID] [10] Koyoi Dance ~ Hanabiyanen (SX) [Hubert].jpg",
+      "bpm": "146",
+      "artist": "鹿乃",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [10] Maintenance Monogatari",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [10] Maintenance Monogatari [NO CMOD].jpg",
+      "bpm": "152",
+      "artist": "742",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [11] Ideology",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [11] Ideology (SX) [Maxx].jpg",
+      "bpm": "126",
+      "artist": "aran",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [11] S-Bahn",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [11] S-Bahn (SX) [Scrypts].jpg",
+      "bpm": "142",
+      "artist": "BEMANI Sound Team 'DARK TRAIN'",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [11] Skyrocketing",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [11] Skyrocketing.jpg",
+      "bpm": "170",
+      "artist": "JAKAZiD",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [11] Wandering",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [11] Wandering (SX) [ITGAlex].jpg",
+      "bpm": "127",
+      "artist": "A_Rival",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID/LOW] [12] THE ELDERSTONE",
+      "name_translation": "",
+      "jacket": "itg/storm24/[LOW_MID] [12] THE ELDERSTONE (SX) [Sudzi781].jpg",
+      "bpm": "140",
+      "artist": "taqumi",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[MID] [09] Halo",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [09] Halo.jpg",
+      "bpm": "150",
+      "artist": "LUM!X ft. Pia Maria",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[MID] [10] Antithese",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [10] Antithese.jpg",
+      "bpm": "172",
+      "artist": "Blacklolita",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID] [10] Lick It",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [10] Lick It (SX) [Kingly].jpg",
+      "bpm": "128",
+      "artist": "Kaskade & Skrillex",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID] [10] MADELINE",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [10] MADELINE.jpg",
+      "bpm": "125",
+      "artist": "INJI",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID] [10] Mr. Electron",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [10] Mr. Electron (SX) [CopperPuppy].jpg",
+      "bpm": "128",
+      "artist": "The Brig x Michael White",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID] [10] Whine Up",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [10] Whine Up (SX) [Feraligatr].jpg",
+      "bpm": "125",
+      "artist": "Kat Deluna",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Bak Snap (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Bak Snap (SH) [Exschwasion].jpg",
+      "bpm": "130",
+      "artist": "Foxsky",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Burning Flame",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Burning Flame (SX) [Valex].jpg",
+      "bpm": "165",
+      "artist": "AJURIKA feat. SAK.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Feel So Gud",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Feel So Gud (SX) [Highflyer].jpg",
+      "bpm": "128",
+      "artist": "Mo Falk",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] HADES (Camellia's \"Recordatus Mortem\" Remix)",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] HADES (Remix) (NO CMOD).jpg",
+      "bpm": "88-175",
+      "artist": "Massive New Krew",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] RHYTHM AND POLICE",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] RHYTHM AND POLICE (SX) [Highflyer & djfipu].jpg",
+      "bpm": "155",
+      "artist": "CJ Crew FEATURING Christian D.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Raving Raptor",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Raving Raptor.jpg",
+      "bpm": "145",
+      "artist": "MADGRRL & Dino Shadix",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Surface",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Surface [SX].jpg",
+      "bpm": "150",
+      "artist": "Stessie",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Ugoki",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Ugoki [SX].jpg",
+      "bpm": "128",
+      "artist": "Lit Lords",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [11] Voxel",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [11] Voxel.jpg",
+      "bpm": "128",
+      "artist": "Ryoqucha",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[MID] [12] Funny Funky Freaky",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [12] Funny Funky Freaky (SX) [Sudzi781].jpg",
+      "bpm": "138",
+      "artist": "mommy",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[MID] [12] PROTECT ME",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [12] PROTECT ME (SX) [Maxx].jpg",
+      "bpm": "150",
+      "artist": "k?d x yadosan",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[MID] [12] Sector",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [12] Sector (SX) [Zaia].jpg",
+      "bpm": "160",
+      "artist": "RYOQUCHA",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[MID] [13] DIABLOSIS∷Nāga",
+      "name_translation": "[MID] [13] DIABLOSIS--Naga",
+      "jacket": "itg/storm24/[MID] [13] DIABLOSIS--Naga (SX) [Zaia].jpg",
+      "bpm": "100-200",
+      "artist": "sky_delta",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[MID] [13] Tricolor⁂circuS",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID] [13] Tricolor circuS (SX) [sorae].jpg",
+      "bpm": "180",
+      "artist": "ああ…翡翠茶漬け…",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [10] 6FINGERDEATHPUNCH",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [10] 6FINGERDEATHPUNCH [SX].jpg",
+      "bpm": "130",
+      "artist": "six impala",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [10] Hugs and Hexagons",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [10] Hugs and Hexagons (NO CMOD) [Exschwasion].jpg",
+      "bpm": "140",
+      "artist": "Isqa",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [11] 愛散 ~AI Chill~",
+      "name_translation": "[UPR/MID] [11] AI Chill",
+      "jacket": "itg/storm24/[MID_UPR] [11] AI Chill.jpg",
+      "bpm": "127",
+      "artist": "あいちむ",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [11] Fuzzy-Navel",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [11] Fuzzy-Navel.jpg",
+      "bpm": "141",
+      "artist": "*wakadori",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [12] Ascent",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [12] Ascent (SX) [Talkion].jpg",
+      "bpm": "145",
+      "artist": "TANUKI",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [12] BOSSY",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [12] BOSSY (Jorts Speedy Mix) [SX].jpg",
+      "bpm": "131",
+      "artist": "BABYPOWDER",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [12] Melonaid",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [12] Melonaid.jpg",
+      "bpm": "145",
+      "artist": "KATOMORI",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [12] Unspoken",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [12] Unspoken (SX) [Maxx].jpg",
+      "bpm": "140",
+      "artist": "KERO",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [12] You're Beautiful",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [12] You're Beautiful.jpg",
+      "bpm": "150",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [12] pseudonymph",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [12] pseudonymph (SX) [Valex].jpg",
+      "bpm": "150",
+      "artist": "のの",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [13] Carry Me Away",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [13] Carry Me Away.jpg",
+      "bpm": "175",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [13] Elbow Grease",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [13] Elbow Grease (SX) [Scrypts].jpg",
+      "bpm": "150",
+      "artist": "Ray Volpe & Soltan",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [13] Simurgh",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [13] Simurgh [SX].jpg",
+      "bpm": "186",
+      "artist": "BilliumMoto & Sobrem",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [13] Welcome to the Mosh Pit",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [13] Welcome to the Mosh Pit [SX].jpg",
+      "bpm": "172",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR/MID] [14] We Could Get More Machinegun Psystyle!",
+      "name_translation": "",
+      "jacket": "itg/storm24/[MID_UPR] [14] We Could Get More Machinegun Psystyle.jpg",
+      "bpm": "160",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] ABC",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] ABC [SX].jpg",
+      "bpm": "140",
+      "artist": "Polyphia ft. Sophia Black",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Demetrius",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Demetrius (SX) [dimo & Zaia].jpg",
+      "bpm": "128",
+      "artist": "James Landino",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] DrunkenStein",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] DrunkenStein.jpg",
+      "bpm": "128",
+      "artist": "Paul Bazooka",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Field of View",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Field of View [SX].jpg",
+      "bpm": "140",
+      "artist": "Sharks",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Gravedigger",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Gravedigger Saint Punk Remix [SX].jpg",
+      "bpm": "126",
+      "artist": "MXMS",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Moony eyes",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Moony eyes feat. Such [SX].jpg",
+      "bpm": "160",
+      "artist": "rejection",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Pleasure Seeker VIP",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Pleasure Seeker VIP (SX) [sorae].jpg",
+      "bpm": "136",
+      "artist": "Mr. Bill",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Rebellion",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Rebellion.jpg",
+      "bpm": "170",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] Speedrun",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] Speedrun (SX) [Chief Skittles].jpg",
+      "bpm": "150",
+      "artist": "Ace Aura x Skybreak",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [11] TECHNOPOLIS 2085",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [11] TECHNOPOLIS 2085 (No CMOD) [SX].jpg",
+      "bpm": "134",
+      "artist": "PRASTIK DANCEFLOOR",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] $1.78",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] $1.78.jpg",
+      "bpm": "200",
+      "artist": "Schwank",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Afterimage",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Afterimage (SX) [cmmf & Tony S.].jpg",
+      "bpm": "130",
+      "artist": "Dyatic",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] AGEN WIDA",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Agen Wida.jpg",
+      "bpm": "126",
+      "artist": "JOYRYDE & Skrillex",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Antipattern",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Antipattern (SX) [mang].jpg",
+      "bpm": "140",
+      "artist": "Strayframe & BilliumMoto",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Arrasando",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Arrasando (SX) [J. Nero].jpg",
+      "bpm": "132",
+      "artist": "Thalía",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Godslain",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Godslain.jpg",
+      "bpm": "130",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Shamshir",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Shamshir (SX) [Mirin].jpg",
+      "bpm": "135",
+      "artist": "Blacklolita",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Slaughta",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Slaughta [SX].jpg",
+      "bpm": "145",
+      "artist": "JAKAZiD",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [12] Turning Point",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [12] Turning Point.jpg",
+      "bpm": "150",
+      "artist": "M2U",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [13] Coconut",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [13] Coconut (SX) [A. Astral].jpg",
+      "bpm": "145",
+      "artist": "BeutNoise & SEED",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [13] Laserbeam",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [13] Laserbeam (SX) [sorae].jpg",
+      "bpm": "150",
+      "artist": "Ray Volpe",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [13] Mabinogi-ON",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [13] Mabinogi-ON [SX].jpg",
+      "bpm": "150",
+      "artist": "KARUT",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [13] Rainbow Rave Parade",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [13] Rainbow Rave Parade (SX) [Talkion].jpg",
+      "bpm": "150",
+      "artist": "Chime",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [13] hysteria",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [13] hysteria [SX].jpg",
+      "bpm": "150",
+      "artist": "virtual riot",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [13] sparky spark",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [13] sparky spark (SX) [RakkiiCB].jpg",
+      "bpm": "155",
+      "artist": "kamome sano",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] $100 Bills",
+      "name_translation": "[UPR] [14] 100 Bills",
+      "jacket": "itg/storm24/[UPR] [14] 100 Bills (SX) [cmmf].jpg",
+      "bpm": "215",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] DUAL BREAKER XX",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] DUAL BREAKER XX (No CMOD) [SX].jpg",
+      "bpm": "200",
+      "artist": "Srav3R vs Getty",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] Friction[!]Function",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] Friction[!]Function (SX) [Mirin].jpg",
+      "bpm": "150",
+      "artist": "Feryquitous",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] Leviathan",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] Leviathan [SX].jpg",
+      "bpm": "162",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] MAXRAGE",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] MAXRAGE (SX) [Exschwasion].jpg",
+      "bpm": "222",
+      "artist": "EBIMAYO",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] Upshift",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] Upshift.jpg",
+      "bpm": "155",
+      "artist": "Iriss",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] XENA",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] XENA (SX) [Zaia].jpg",
+      "bpm": "145",
+      "artist": "Skrillex & Nai Barghouti",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [14] clairvoyance",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [14] clairvoyance (siqlo vs. Aoi's liarvoyants RMX) [SX].jpg",
+      "bpm": "175",
+      "artist": "ikaruga_nex & 影虎。",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 14
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [15] Abyss of Frobenioid",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [15] Abyss of Frobenioid.jpg",
+      "bpm": "190",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 15
+        }
+      ]
+    },
+    {
+      "name": "[UPR] [15] Tech Alert",
+      "name_translation": "",
+      "jacket": "itg/storm24/[UPR] [15] Tech Alert (SX) [Chabala].jpg",
+      "bpm": "175",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 15
+        }
+      ]
+    }
+  ]
+}

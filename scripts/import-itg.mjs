@@ -59,25 +59,6 @@ const data = {
         edit: "Edit",
       },
     },
-    ja: {
-      name: pack.name,
-      single: "Single",
-      double: "Double",
-      beginner: "Beginner",
-      basic: "Basic",
-      difficult: "Difficult",
-      expert: "Expert",
-      challenge: "Challenge",
-      edit: "Edit",
-      $abbr: {
-        beginner: "Beg",
-        basic: "Bas",
-        difficult: "Dif",
-        expert: "Exp",
-        challenge: "Cha",
-        edit: "Edit",
-      },
-    },
   },
   songs: [],
 };
@@ -141,11 +122,36 @@ for (const parsedSong of pack.simfiles) {
     };
     if (useTiers) {
       let tierMatch = parsedSong.title.titleName.match(
-        /^\[T(?:ier\s*)?(\d+)\]/i,
+        // tier marker maybe some number of non-digit characters,
+        // maybe followed by some number of digits
+        /^\[(\D*)(\d*)\] /i,
       );
       if (tierMatch && tierMatch.length > 0) {
-        const parsedTier = parseInt(tierMatch[1]);
-        chartData.drawGroup = parsedTier;
+        if (tierMatch[2]) {
+          const parsedTier = parseInt(tierMatch[2]);
+          chartData.drawGroup = parsedTier;
+        } else if (tierMatch[1]) {
+          const tierName = tierMatch[1].trim();
+          switch (tierName) {
+            case "LOW":
+              chartData.drawGroup = 1;
+              break;
+            case "LOW_MID":
+              chartData.drawGroup = 2;
+              break;
+            case "MID":
+              chartData.drawGroup = 3;
+              break;
+            case "MID_UPR":
+              chartData.drawGroup = 4;
+              break;
+            case "UPR":
+              chartData.drawGroup = 5;
+              break;
+            default:
+              console.warn(`WARN: unhandled tier name '${tierName}'`);
+          }
+        }
       } else {
         console.error(
           'Expected song titles to include tiers in the form "[T01] ..." but found:\n  ' +
