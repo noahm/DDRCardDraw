@@ -76,7 +76,7 @@ export function DiffHistogram({ charts }: Props) {
         .sort((a, b) => a[0] - b[0])
         .map(([, count]) => count),
     ];
-  }, [allDiffs, charts, t, availableLevels]);
+  }, [allDiffs, charts, useGranularLevels, t, availableLevels]);
 
   return (
     <VictoryChart
