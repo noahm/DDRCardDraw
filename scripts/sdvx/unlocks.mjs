@@ -251,6 +251,7 @@ export const SDVX_UNLOCK_IDS = {
     1902, // You Are My Best RivaL!!
     2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
     2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
+	2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
 
     // BPL Season 3 Triple Tribe
     2063, // stellar rain
@@ -259,6 +260,18 @@ export const SDVX_UNLOCK_IDS = {
     2162, // ちょえちょえまぎか
     2163, // Deep tenDon Reflex
     2164, // Ambivalent Vermilia
+	
+	// BPL Season 3 Stamp Event
+	2121, // Knew Order
+	2122, // Ex concordia felicitas
+	2123, // Allegro Saetta
+	2124, // ARISE
+	2125, // プリュネシエル
+	2126, // Colorful Magical Parade
+	2127, // NO SURRENDER
+	2128, // StellarflightS
+	2160, // ウイジン
+	2161, // { eXLIPXe }
 
     // KAC Entry
     2059, // パーフェクトイーター
