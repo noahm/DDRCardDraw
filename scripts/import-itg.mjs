@@ -124,7 +124,7 @@ for (const parsedSong of pack.simfiles) {
       let tierMatch = parsedSong.title.titleName.match(
         // tier marker maybe some number of non-digit characters,
         // maybe followed by some number of digits
-        /^\[(\D*)(\d*)\] /i,
+        /^\[([^\d\]]*)(\d*)\] /i,
       );
       if (tierMatch && tierMatch.length > 0) {
         if (tierMatch[2]) {
@@ -136,13 +136,13 @@ for (const parsedSong of pack.simfiles) {
             case "LOW":
               chartData.drawGroup = 1;
               break;
-            case "LOW_MID":
+            case "MID/LOW":
               chartData.drawGroup = 2;
               break;
             case "MID":
               chartData.drawGroup = 3;
               break;
-            case "MID_UPR":
+            case "UPR/MID":
               chartData.drawGroup = 4;
               break;
             case "UPR":
