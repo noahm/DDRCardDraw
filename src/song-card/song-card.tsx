@@ -111,6 +111,7 @@ export function SongCard(props: Props) {
     diffColor,
     jacket,
     flags,
+    dateAdded,
   } = replacedWith || baseChartValues(chart);
 
   const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
@@ -214,6 +215,9 @@ export function SongCard(props: Props) {
         )}
         <div className={styles.artist} title={artistTranslation}>
           {artist}
+        </div>
+        <div className={styles.dateAdded} title={dateAdded}>
+          {dateAdded}
         </div>
       </div>
 

@@ -46,6 +46,7 @@ export function getDrawnChart(
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     song: currentSong,
+    dateAdded: currentSong.date_added,
     // Fill in variant data per game
     diffAbbr: getDiffAbbr(gameData, chart.diffClass),
     diffColor: getDifficultyColor(gameData, chart.diffClass),

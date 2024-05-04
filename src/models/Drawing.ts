@@ -14,6 +14,7 @@ export interface EligibleChart {
   granularLevel?: number;
   drawGroup?: number;
   flags: string[];
+  dateAdded?: string;
   song: Song;
 }
 
