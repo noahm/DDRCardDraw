@@ -1702,23 +1702,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl@npm:2.10.1":
-  version: 2.10.1
-  resolution: "@formatjs/intl@npm:2.10.1"
+"@formatjs/intl@npm:2.10.2":
+  version: 2.10.2
+  resolution: "@formatjs/intl@npm:2.10.2"
   dependencies:
     "@formatjs/ecma402-abstract": "npm:1.18.2"
     "@formatjs/fast-memoize": "npm:2.2.0"
     "@formatjs/icu-messageformat-parser": "npm:2.7.6"
     "@formatjs/intl-displaynames": "npm:6.6.6"
     "@formatjs/intl-listformat": "npm:7.5.5"
-    intl-messageformat: "npm:10.5.11"
+    intl-messageformat: "npm:10.5.12"
     tslib: "npm:^2.4.0"
   peerDependencies:
     typescript: ^4.7 || 5
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/170deebbb429a24753b184d299db53b0c6421f9f0ed57887562090941aa85180e562ac693dd5abcc76b59a9473a8ad48ca0f51b614c2555c451d5660b6697ae6
+  checksum: 10/3e3e5a7a50acef90a5b8f5803f68f62ee672c713be46ddc9092cda441b5f99999121a062e71514f60162f15bc1d61cea7dd4418b8100a605247577bb7362ca46
   languageName: node
   linkType: hard
 
@@ -2907,15 +2907,6 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10/d3aa194593e7df45fbf65ac6f394a95178a0a45d4150ee631bdd9bd862bcf834c857a22986bd6fd2ddb08ec2bb436babf8ac3be4a35f90470a99c46bb6c18c9e
-  languageName: node
-  linkType: hard
-
-"@types/prettier@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@types/prettier@npm:3.0.0"
-  dependencies:
-    prettier: "npm:*"
-  checksum: 10/a2a512d304e5bcf78f38089dc88ad19215e6ab871d435a17aef3ce538a63b07c0e359c18db23989dc1ed9fff96d99eee1f680416080184df5c7e0e3bf767e165
   languageName: node
   linkType: hard
 
@@ -4885,7 +4876,7 @@ __metadata:
     jimp: "npm:^0.22.12"
     jotai: "npm:^2.8.0"
     jsdom: "npm:^24.0.0"
-    json-schema-to-typescript: "npm:^14.0.0"
+    json-schema-to-typescript: "npm:^14.0.4"
     jsonschema: "npm:^1.4.1"
     mini-css-extract-plugin: "npm:^2.9.0"
     modern-screenshot: "npm:^4.4.39"
@@ -4900,7 +4891,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-error-boundary: "npm:^4.0.13"
-    react-intl: "npm:^6.6.5"
+    react-intl: "npm:^6.6.6"
     react-refresh: "npm:^0.14.2"
     sanitize-filename: "npm:^1.6.3"
     simfile-parser: "npm:^0.7.2"
@@ -6837,15 +6828,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"intl-messageformat@npm:10.5.11":
-  version: 10.5.11
-  resolution: "intl-messageformat@npm:10.5.11"
+"intl-messageformat@npm:10.5.12":
+  version: 10.5.12
+  resolution: "intl-messageformat@npm:10.5.12"
   dependencies:
     "@formatjs/ecma402-abstract": "npm:1.18.2"
     "@formatjs/fast-memoize": "npm:2.2.0"
     "@formatjs/icu-messageformat-parser": "npm:2.7.6"
     tslib: "npm:^2.4.0"
-  checksum: 10/2146f4d3e2c4bcf2c4fa343e4ee070fe1124d3821caa2fa0e7112a68fdefbedbbda6a3778f3ba04e38bbce3db33511ca9eecbb0a7e06013e6699255c153813ce
+  checksum: 10/d12e17bf7c4ce477df4ffe991268f2fbd37fd59ae103def2b8886f65691ff37d22eff559dcd063f8fe6d370fa2748a4b2064285c15f5c1b1ba6383049eecb111
   languageName: node
   linkType: hard
 
@@ -7294,14 +7285,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-schema-to-typescript@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "json-schema-to-typescript@npm:14.0.0"
+"json-schema-to-typescript@npm:^14.0.4":
+  version: 14.0.4
+  resolution: "json-schema-to-typescript@npm:14.0.4"
   dependencies:
     "@apidevtools/json-schema-ref-parser": "npm:^11.5.5"
     "@types/json-schema": "npm:^7.0.15"
     "@types/lodash": "npm:^4.17.0"
-    "@types/prettier": "npm:^3.0.0"
     cli-color: "npm:^2.0.4"
     glob: "npm:^10.3.12"
     is-glob: "npm:^4.0.3"
@@ -7314,7 +7304,7 @@ __metadata:
     prettier: "npm:^3.2.5"
   bin:
     json2ts: dist/src/cli.js
-  checksum: 10/d791e22e6e6af613af4037f1e1a077902113de9944182d1fa4b469d06a63cf4459487844f83f70fbfe56ec47222f88274dd28d184d8e59070729fbadcf1fde82
+  checksum: 10/adebd8eba01df3e91bc58d14fcb2b563829eb0e536f4fb575932025256341947e954382fcb07720a4d2cc86ca764e81886e65b1b5f57d79079999a67e1041a23
   languageName: node
   linkType: hard
 
@@ -9130,7 +9120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:*, prettier@npm:^3.2.5":
+"prettier@npm:^3.2.5":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
   bin:
@@ -9358,19 +9348,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intl@npm:^6.6.5":
-  version: 6.6.5
-  resolution: "react-intl@npm:6.6.5"
+"react-intl@npm:^6.6.6":
+  version: 6.6.6
+  resolution: "react-intl@npm:6.6.6"
   dependencies:
     "@formatjs/ecma402-abstract": "npm:1.18.2"
     "@formatjs/icu-messageformat-parser": "npm:2.7.6"
-    "@formatjs/intl": "npm:2.10.1"
+    "@formatjs/intl": "npm:2.10.2"
     "@formatjs/intl-displaynames": "npm:6.6.6"
     "@formatjs/intl-listformat": "npm:7.5.5"
     "@types/hoist-non-react-statics": "npm:^3.3.1"
     "@types/react": "npm:16 || 17 || 18"
     hoist-non-react-statics: "npm:^3.3.2"
-    intl-messageformat: "npm:10.5.11"
+    intl-messageformat: "npm:10.5.12"
     tslib: "npm:^2.4.0"
   peerDependencies:
     react: ^16.6.0 || 17 || 18
@@ -9378,7 +9368,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/b51c7b25cc87f1f7ea11359150292effb1034a00c7ff9b91110f56f0ea8fb044c5e10fdd1328de41b5afee5f396388b99e046da9a7d83c388c5f575581ddd776
+  checksum: 10/25c1e619abc62bf3629959edfd46efd22cb7134cb9fd97164e0631f6705d4a659f5dada05d9a2eb8b28f48d89408eabd68f2c1ea1736371fe20a3b667a7efb1d
   languageName: node
   linkType: hard
 
