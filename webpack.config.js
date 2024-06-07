@@ -77,8 +77,8 @@ module.exports = function (env = {}, argv = {}) {
                 require("@babel/preset-typescript"),
               ],
               plugins: [
-                require("@babel/plugin-proposal-optional-chaining"),
-                require("@babel/plugin-proposal-class-properties"),
+                require("@babel/plugin-transform-optional-chaining"),
+                require("@babel/plugin-transform-class-properties"),
                 require("@babel/plugin-syntax-dynamic-import"),
                 [
                   require("@babel/plugin-transform-react-jsx"),
