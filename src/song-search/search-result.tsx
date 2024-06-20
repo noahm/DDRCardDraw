@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useIntl } from "../hooks/useIntl";
 import { Song, Chart } from "../models/SongData";

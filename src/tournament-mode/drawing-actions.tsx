@@ -25,6 +25,7 @@ import { shareImage } from "../utils/share";
 import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
+import { JSX } from "react";
 
 const DEFAULT_FILENAME = "card-draw.png";
 

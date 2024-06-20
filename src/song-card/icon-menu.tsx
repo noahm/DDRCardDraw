@@ -9,6 +9,7 @@ import {
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
+import type { JSX } from "react";
 
 interface Props {
   onStartPocketPick?: (p: number) => void;
