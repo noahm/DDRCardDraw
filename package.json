@@ -93,6 +93,7 @@
     "normalize.css": "^8.0.1",
     "p-queue": "^8.0.1",
     "papaparse": "^5.4.1",
+    "partykit": "0.0.107",
     "peerjs": "^2.0.0-beta.3",
     "postcss": "^8.4.38",
     "postcss-loader": "^8.1.1",
@@ -105,7 +106,7 @@
     "sanitize-filename": "^1.6.3",
     "simfile-parser": "^0.7.2",
     "style-loader": "^4.0.0",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.2",
     "undici": "^6.19.0",
     "victory": "^37.0.2",
     "webpack": "^5.92.0",
@@ -121,5 +122,8 @@
     "semver": "^7.5.2",
     "xml2js": "^0.5.0"
   },
-  "packageManager": "yarn@4.3.0"
+  "packageManager": "yarn@4.3.0",
+  "dependencies": {
+    "partysocket": "1.0.1"
+  }
 }
