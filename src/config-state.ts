@@ -1,5 +1,7 @@
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
+import { sendToParty } from "./party/client";
+import { serializeConfig } from "./config-persistence";
 
 export interface ConfigState {
   chartCount: number;
@@ -29,7 +31,7 @@ export interface ConfigState {
 }
 
 export const useConfigState = createWithEqualityFn<ConfigState>(
-  (set) => ({
+  (set, get) => ({
     chartCount: 5,
     playerPicks: 0,
     upperBound: 0,
@@ -61,7 +63,10 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     sortByLevel: false,
     defaultPlayersPerDraw: 2,
     useGranularLevels: false,
-    update: set,
+    update: (input) => {
+      set(input);
+      sendToParty({ type: "config", config: serializeConfig(get()) });
+    },
   }),
   Object.is,
 );

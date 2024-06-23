@@ -6,7 +6,8 @@ import {
   createElement,
   useEffect,
 } from "react";
-import { StoreApi, useStore, createStore } from "zustand";
+import { StoreApi, createStore } from "zustand";
+import { useStoreWithEqualityFn } from "zustand/traditional";
 
 export function createContextualStore<
   StoreValue,
@@ -57,8 +58,11 @@ export function createContextualStore<
     equalityFn?: (a: Slice, b: Slice) => boolean,
   ) {
     const store = useThisStore();
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    return selector ? useStore(store, selector, equalityFn) : useStore(store);
+    return selector
+      ? // eslint-disable-next-line react-hooks/rules-of-hooks
+        useStoreWithEqualityFn(store, selector, equalityFn)
+      : // eslint-disable-next-line react-hooks/rules-of-hooks
+        useStoreWithEqualityFn(store);
   }
 
   return {

@@ -13,7 +13,7 @@ import { IntlProvider } from "./intl-provider";
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
 import { shallow } from "zustand/shallow";
-import { DataConnection } from "peerjs";
+import { sendToParty } from "./party/client";
 
 interface DrawState {
   importedData: Map<string, GameData>;
@@ -27,7 +27,6 @@ interface DrawState {
   /** returns false if no songs could be drawn */
   drawSongs(config: ConfigState): boolean;
   clearDrawings(): void;
-  injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
 }
 
 function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
@@ -110,6 +109,10 @@ export const useDrawState = createWithEqualityFn<DrawState>(
         dataSetName,
         drawings: [],
       });
+      sendToParty({
+        type: "dataSet",
+        data: dataSetName,
+      });
       writeDataSetToUrl(dataSetName);
 
       // Attempt to look up a local data file first
@@ -147,27 +150,8 @@ export const useDrawState = createWithEqualityFn<DrawState>(
           lastDrawFailed: false,
         };
       });
+      sendToParty({ type: "drawings", drawings: get().drawings });
       return true;
-    },
-    injectRemoteDrawing(drawing, syncWithPeer) {
-      set((prevState) => {
-        const currentDrawing = prevState.drawings.find(
-          (d) => d.id === drawing.id,
-        );
-        const newDrawings = prevState.drawings.filter(
-          (d) => d.id !== drawing.id,
-        );
-        newDrawings.unshift(drawing);
-        if (currentDrawing) {
-          drawing.__syncPeer = currentDrawing.__syncPeer;
-        }
-        if (syncWithPeer) {
-          drawing.__syncPeer = syncWithPeer;
-        }
-        return {
-          drawings: newDrawings,
-        };
-      });
     },
   }),
   Object.is,

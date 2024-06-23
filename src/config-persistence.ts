@@ -1,7 +1,12 @@
 import { ConfigState, useConfigState } from "./config-state";
 import { useDrawState } from "./draw-state";
+import { Roomstate } from "./party/types";
 import { toaster } from "./toaster";
 import { buildDataUri, dateForFilename, shareData } from "./utils/share";
+
+/** Mark specific fields in T optional, keeping others unchanged */
+type Optional<T, Fields extends keyof T> = Partial<Pick<T, Fields>> &
+  Omit<T, Fields>;
 
 interface PersistedConfigV1 {
   version: 1;
@@ -21,7 +26,7 @@ type NonFunctionKeys<T extends object> = keyof {
 /**
  * Strips mutations from an object, and converts sets to arrays, maps to arrays of entry pairs
  */
-type Serialized<T extends object> = {
+export type Serialized<T extends object> = {
   [K in NonFunctionKeys<T>]: T[K] extends ReadonlyMap<infer K, infer V>
     ? Array<[K, V]>
     : T[K] extends ReadonlySet<infer Item>
@@ -95,14 +100,21 @@ export function loadConfig() {
   return resolution;
 }
 
-function buildPersistedConfig(): PersistedConfigV1 {
-  const { ...configState } = useConfigState.getState();
-  const serializedState: PersistedConfigV1["configState"] = {
-    ...configState,
-    difficulties: Array.from(configState.difficulties),
-    flags: Array.from(configState.flags),
-    folders: Array.from(configState.folders),
+export function serializeConfig(
+  cfg: Optional<ConfigState, "update">,
+): Serialized<ConfigState> {
+  return {
+    ...cfg,
+    difficulties: Array.from(cfg.difficulties),
+    flags: Array.from(cfg.flags),
+    folders: Array.from(cfg.folders),
   };
+}
+
+function buildPersistedConfig(): PersistedConfigV1 {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { update, ...configState } = useConfigState.getState();
+  const serializedState = serializeConfig(configState);
   const ret: PersistedConfigV1 = {
     version: 1,
     dataSetName: useDrawState.getState().dataSetName,
@@ -111,7 +123,18 @@ function buildPersistedConfig(): PersistedConfigV1 {
   return ret;
 }
 
-async function loadPersistedConfig(saved: PersistedConfigV1) {
+export async function loadFromRoomstate(roomstate: Roomstate) {
+  await loadPersistedConfig({
+    version: 1,
+    dataSetName: roomstate.dataSetName || useDrawState.getState().dataSetName,
+    configState: roomstate.config,
+  });
+  useDrawState.setState({ drawings: roomstate.drawings });
+}
+
+async function loadPersistedConfig(
+  saved: Optional<PersistedConfigV1, "configState">,
+) {
   if (saved.version !== 1) {
     return false;
   }
@@ -130,11 +153,17 @@ async function loadPersistedConfig(saved: PersistedConfigV1) {
     await nextConfigChange;
   }
 
+  if (saved.configState) {
+    applySerializedConfig(saved.configState);
+  }
+}
+
+export function applySerializedConfig(config: Serialized<ConfigState>) {
   useConfigState.setState({
-    ...migrateOldNames(saved.configState),
-    difficulties: new Set(saved.configState.difficulties),
-    flags: new Set(saved.configState.flags),
-    folders: new Set(saved.configState.folders),
+    ...migrateOldNames(config),
+    difficulties: new Set(config.difficulties),
+    flags: new Set(config.flags),
+    folders: new Set(config.folders),
   });
 }
 
