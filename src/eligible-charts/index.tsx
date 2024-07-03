@@ -1,6 +1,5 @@
 import { eligibleCharts } from "../card-draw";
 import { useConfigState } from "../state/config.slice";
-import { useDrawState } from "../draw-state";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
@@ -19,13 +18,14 @@ import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
 import { Export } from "@blueprintjs/icons";
 import { shareCharts } from "../utils/share";
+import { useAppState } from "../state/store";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
 }
 
 export default function EligibleChartsList() {
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useAppState((s) => s.gameData.gameData);
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());
   const isNarrow = useIsNarrow();

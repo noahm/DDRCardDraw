@@ -5,9 +5,9 @@ import { useMemo } from "react";
 import { useConfigState, useUpdateConfig } from "../state/config.slice";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
-import { useDrawState } from "../draw-state";
 import { getAvailableLevels } from "../game-data-utils";
 import { LevelRangeBucket, getBuckets } from "../card-draw";
+import { useAppState } from "../state/store";
 
 interface Props {
   usesTiers: boolean;
@@ -52,7 +52,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     }),
     shallow,
   );
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useAppState((s) => s.gameData.gameData);
   const groups = useMemo(() => {
     const availableLevels = getAvailableLevels(gameData, useGranularLevels);
     return Array.from(

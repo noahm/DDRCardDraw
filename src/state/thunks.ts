@@ -11,7 +11,7 @@ export const loadGameDataByName = createTypedThunk(
   "gameData/load",
   async (name: string) => {
     return (
-      await import(/* webpackChunkName: "songData" */ `./songs/${name}.json`)
+      await import(/* webpackChunkName: "songData" */ `../songs/${name}.json`)
     ).default as GameData;
   },
   {

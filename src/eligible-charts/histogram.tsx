@@ -9,7 +9,6 @@ import {
 } from "victory";
 import { useMemo } from "react";
 import { CountingSet } from "../utils/counting-set";
-import { useDrawState } from "../draw-state";
 import { useIntl } from "../hooks/useIntl";
 import {
   chartLevelOrTier,
@@ -20,6 +19,7 @@ import {
 import { Theme, useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useConfigState } from "../state/config.slice";
+import { useAppState } from "../state/store";
 
 interface Props {
   charts: EligibleChart[];
@@ -29,8 +29,8 @@ export function DiffHistogram({ charts }: Props) {
   const { t } = useIntl();
   const fgColor = useTheme() === Theme.Dark ? "white" : undefined;
   const isNarrow = useIsNarrow();
-  const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useAppState((s) => s.gameData.gameData);
+  const allDiffs = gameData?.meta.difficulties;
   const useGranularLevels = useConfigState((s) => s.useGranularLevels);
   const availableLevels = getAvailableLevels(gameData, useGranularLevels);
   function formatLabel(idx: number) {

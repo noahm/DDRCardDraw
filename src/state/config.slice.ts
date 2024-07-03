@@ -39,7 +39,7 @@ export const configSlice = createSlice({
         const patch = createPartialFromDefaults(action.payload);
         Object.assign(state, patch);
       })
-      .addCase(gameDataSlice.actions.uploadGameData, (state, action) => {
+      .addCase(gameDataSlice.actions.selectCustomData, (state, action) => {
         const patch = createPartialFromDefaults(action.payload.gameData);
         Object.assign(state, patch);
       })

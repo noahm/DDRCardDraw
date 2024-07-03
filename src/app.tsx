@@ -14,15 +14,19 @@ import { DrawStateManager } from "./draw-state";
 import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { DropHandler } from "./drop-handler";
+import { Provider } from "react-redux";
+import { store } from "./state/store";
 
 export function App() {
   return (
-    <DrawStateManager defaultDataSet="a3">
-      <ThemeSyncWidget />
-      <UpdateManager />
-      <Header />
-      <DrawingList />
-      <DropHandler />
-    </DrawStateManager>
+    <Provider store={store}>
+      <DrawStateManager defaultDataSet="a3">
+        <ThemeSyncWidget />
+        <UpdateManager />
+        <Header />
+        <DrawingList />
+        <DropHandler />
+      </DrawStateManager>
+    </Provider>
   );
 }

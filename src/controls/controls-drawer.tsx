@@ -25,8 +25,6 @@ import { DateInput3 } from "@blueprintjs/datetime2";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
 import { useMemo, useState } from "react";
-import { shallow } from "zustand/shallow";
-import { useDrawState } from "../draw-state";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
@@ -41,6 +39,7 @@ import { detectedLanguage } from "../utils";
 import { useConfigState, useUpdateConfig } from "../state/config.slice";
 import { useAtomValue } from "jotai";
 import { showEligibleCharts } from "../config-state";
+import { useAppState } from "../state/store";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -113,7 +112,7 @@ export default function ControlsDrawer() {
 const dateFormat = "yyyy-MM-dd";
 function ReleaseDateFilter() {
   const { t } = useIntl();
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useAppState((s) => s.gameData.gameData);
   const updateState = useUpdateConfig();
   const cutoffDate = useConfigState((s) => s.cutoffDate);
   const mostRecentRelease = useMemo(
@@ -160,10 +159,9 @@ function ReleaseDateFilter() {
 /** Renders the checkboxes for each individual flag that exists in the data file's meta.flags */
 function FlagSettings() {
   const { t } = useIntl();
-  const [dataSetName, gameData, hasFlags] = useDrawState(
-    (s) => [s.dataSetName, s.gameData, !!s.gameData?.meta.flags.length],
-    shallow,
-  );
+  const dataSetName = useAppState((s) => s.gameData.dataSetName);
+  const gameData = useAppState((s) => s.gameData.gameData);
+  const hasFlags = !!gameData?.meta.flags.length;
   const updateState = useUpdateConfig();
   const selectedFlags = useConfigState((s) => s.flags);
 
@@ -199,8 +197,10 @@ function FlagSettings() {
 /** Renders the checkboxes for each individual folder that exists in the data file's meta.folders */
 function FolderSettings() {
   const { t } = useIntl();
-  const availableFolders = useDrawState((s) => s.gameData?.meta.folders);
-  const dataSetName = useDrawState((s) => s.dataSetName);
+  const availableFolders = useAppState(
+    (s) => s.gameData.gameData?.meta.folders,
+  );
+  const dataSetName = useAppState((s) => s.gameData.dataSetName);
   const updateState = useUpdateConfig();
   const selectedFolders = useConfigState((s) => s.folders);
 
@@ -254,7 +254,7 @@ function FolderSettings() {
 
 function GeneralSettings() {
   const { t } = useIntl();
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useAppState((s) => s.gameData.gameData);
   const updateState = useUpdateConfig();
   const showingEligibleCharts = useAtomValue(showEligibleCharts);
   const configState = useConfigState();

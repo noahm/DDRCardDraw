@@ -65,6 +65,7 @@ export const drawingsSlice = createSlice({
   reducers: {
     addDrawing: drawingsAdapter.addOne,
     updateOne: drawingsAdapter.updateOne,
+    clearDrawings: drawingsAdapter.removeAll,
     updateOneChart(
       state,
       action: PayloadAction<{
@@ -164,6 +165,11 @@ export const drawingsSlice = createSlice({
         }
         drawing.players[action.payload.asPlayerNo - 1] = action.payload.name;
       });
+  },
+  selectors: {
+    haveDrawings(state) {
+      return !!state.ids.length;
+    },
   },
 });
 

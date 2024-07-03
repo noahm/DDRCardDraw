@@ -6,7 +6,6 @@ import {
   ProgressBar,
 } from "@blueprintjs/core";
 import { draw } from "../card-draw";
-import { useDrawState } from "../draw-state";
 import { useAtom } from "jotai";
 import { configSlice } from "../state/config.slice";
 import { requestIdleCallback } from "../utils/idle-callback";
@@ -21,15 +20,14 @@ import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
-import { store } from "../state/store";
+import { store, useAppStore } from "../state/store";
+import { GameData } from "../models/SongData";
 
 export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
   return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
 }
 
-function* oneMillionDraws() {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const gameData = useDrawState.getState().gameData!;
+function* oneMillionDraws(gameData: GameData) {
   const configState = configSlice.selectSlice(store.getState());
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
@@ -42,9 +40,9 @@ function* oneMillionDraws() {
  * yields current progress every 1000 loops to allow passing back
  * the event loop
  **/
-export function* degrsTester() {
+export function* degrsTester(gameData: GameData) {
   let totalDegrs = 0;
-  for (const [set, idx] of oneMillionDraws()) {
+  for (const [set, idx] of oneMillionDraws(gameData)) {
     if (set.charts.some(isDegrs)) {
       totalDegrs++;
     }
@@ -65,13 +63,14 @@ export function DegrsTestButton() {
   const [isTesting, setIsTesting] = useAtom(degrsIsTesting);
   const [progress, setProgress] = useAtom(degrsTestProgress);
   const [results, setResults] = useAtom(degrsTestResults);
+  const store = useAppStore();
 
   async function startTest() {
     setIsTesting(true);
     setProgress(0);
     setResults(undefined);
     await nextIdleCycle();
-    const tester = degrsTester();
+    const tester = degrsTester(store.getState().gameData.gameData!);
     let report = tester.next();
     while (!report.done) {
       setProgress(report.value);

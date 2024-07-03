@@ -15,6 +15,7 @@ import { ErrorFallback } from "./utils/error-fallback";
 import { useAppState } from "./state/store";
 import { useAtomValue } from "jotai";
 import { showEligibleCharts } from "./config-state";
+import { drawingsSlice } from "./state/drawings.slice";
 
 const EligibleChartsList = lazy(() => import("./eligible-charts"));
 const DrawnSet = lazy(() => import("./drawn-set"));
@@ -32,7 +33,7 @@ const ScrollableDrawings = memo(() => {
 
 export function DrawingList() {
   const hasDrawings = useDeferredValue(
-    useAppState((s) => !!s.drawings.ids.length),
+    useAppState(drawingsSlice.selectors.haveDrawings),
   );
   const showEligible = useDeferredValue(useAtomValue(showEligibleCharts));
   if (showEligible) {

@@ -7,11 +7,11 @@ import {
 } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
 import { ReactNode, useEffect, useState } from "react";
-import { useDrawState } from "./draw-state";
 import { useDataSets } from "./hooks/useDataSets";
 import { groupGameData } from "./utils";
 import { useIntl } from "./hooks/useIntl";
 import { DoubleCaretVertical, FolderOpen } from "@blueprintjs/icons";
+import { useAppState } from "./state/store";
 
 export function VersionSelect() {
   const { t } = useIntl();
@@ -70,7 +70,7 @@ export function VersionSelect() {
 }
 
 export function DataLoadingSpinner() {
-  const dataIsLoading = useDrawState((s) => !s.gameData);
+  const dataIsLoading = useAppState((s) => !s.gameData.gameData);
   if (!dataIsLoading) {
     return null;
   }

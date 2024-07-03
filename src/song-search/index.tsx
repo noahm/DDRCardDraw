@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState } from "../state/config.slice";
-import { useDrawState } from "../draw-state";
 import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import styles from "./song-search.css";
+import { useAppStore } from "../state/store";
+import { useFuzzySearch } from "../hooks/useFuzzySearch";
 
 interface Props {
   isOpen: boolean;
@@ -18,7 +19,8 @@ export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
-  const fuzzySearch = useDrawState((s) => s.fuzzySearch);
+  const fuzzySearch = useFuzzySearch();
+  const store = useAppStore();
 
   let items: SearchResultData[] = [];
   if (fuzzySearch) {
@@ -52,8 +54,7 @@ export function SongSearch(props: Props) {
           item.chart === "none" || !item.chart
             ? undefined
             : getDrawnChart(
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                useDrawState.getState().gameData!,
+                store.getState().gameData.gameData!,
                 item.song,
                 item.chart,
               ),
