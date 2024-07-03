@@ -6,6 +6,7 @@ import { gameDataSlice } from "./game-data.slice";
 import { store, useAppDispatch, useAppState } from "./store";
 import { EqualityFn } from "react-redux";
 import { addPlayerNameToDrawing } from "./central";
+import { useCallback } from "react";
 
 function createPartialFromDefaults(gameData: GameData) {
   const { lowerLvlBound, upperLvlBound, flags, difficulties, folders, style } =
@@ -13,9 +14,9 @@ function createPartialFromDefaults(gameData: GameData) {
   const ret: Partial<ConfigState> = {
     lowerBound: lowerLvlBound,
     upperBound: upperLvlBound,
-    flags: new Set(flags),
-    difficulties: new Set(difficulties),
-    folders: new Set(folders),
+    flags,
+    difficulties,
+    folders,
     style,
     cutoffDate: "",
   };
@@ -70,15 +71,18 @@ export function useConfigState<T = ConfigState>(
 
 export function useUpdateConfig() {
   const dispatch = useAppDispatch();
-  return (
-    patch:
-      | Partial<ConfigState>
-      | ((state: ConfigState) => Partial<ConfigState>),
-  ) => {
-    if (typeof patch === "function") {
-      const state = configSlice.selectSlice(store.getState());
-      patch = patch(state);
-    }
-    dispatch(actions.update(patch));
-  };
+  return useCallback(
+    (
+      patch:
+        | Partial<ConfigState>
+        | ((state: ConfigState) => Partial<ConfigState>),
+    ) => {
+      if (typeof patch === "function") {
+        const state = configSlice.selectSlice(store.getState());
+        patch = patch(state);
+      }
+      dispatch(actions.update(patch));
+    },
+    [dispatch],
+  );
 }

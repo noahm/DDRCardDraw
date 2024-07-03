@@ -67,7 +67,7 @@ export default function EligibleChartsList() {
           {charts.length} eligible charts from {songs.size} songs (of{" "}
           {gameData.songs.length} total)
         </NavbarGroup>
-        {configState.flags.size > 0 && !isNarrow && (
+        {configState.flags.length > 0 && !isNarrow && (
           <NavbarGroup>
             <NavbarDivider />
             <EligibleChartsListFilter />

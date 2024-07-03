@@ -70,8 +70,10 @@ export function songIsValid(
     return false;
   }
   return (
-    (!song.folder || !config.folders.size || config.folders.has(song.folder)) &&
-    (!song.flags || song.flags.every((f) => config.flags.has(f)))
+    (!song.folder ||
+      !config.folders.length ||
+      config.folders.includes(song.folder)) &&
+    (!song.flags || song.flags.every((f) => config.flags.includes(f)))
   );
 }
 
@@ -90,10 +92,10 @@ export function chartIsValid(
   const levelMetric = chartLevelOrTier(chart, config.useGranularLevels);
   return (
     chart.style === config.style &&
-    config.difficulties.has(chart.diffClass) &&
+    config.difficulties.includes(chart.diffClass) &&
     levelMetric >= config.lowerBound &&
     levelMetric <= config.upperBound &&
-    (!chart.flags || chart.flags.every((f) => config.flags.has(f)))
+    (!chart.flags || chart.flags.every((f) => config.flags.includes(f)))
   );
 }
 

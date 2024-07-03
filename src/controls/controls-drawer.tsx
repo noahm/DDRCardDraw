@@ -176,7 +176,7 @@ function FlagSettings() {
           key={`${dataSetName}:${key}`}
           label={t("meta." + key)}
           value={key}
-          checked={selectedFlags.has(key)}
+          checked={selectedFlags.includes(key)}
           onChange={() =>
             updateState((s) => {
               const newFlags = new Set(s.flags);
@@ -185,7 +185,7 @@ function FlagSettings() {
               } else {
                 newFlags.add(key);
               }
-              return { flags: newFlags };
+              return { flags: Array.from(newFlags) };
             })
           }
         />
@@ -211,20 +211,20 @@ function FolderSettings() {
   return (
     <FormGroup
       label={t("controls.folders")}
-      style={{ opacity: selectedFolders.size ? undefined : 0.8 }}
+      style={{ opacity: selectedFolders.length ? undefined : 0.8 }}
     >
       <ButtonGroup className={styles.smallText}>
         <Button
           small
           icon={<SmallTick />}
-          onClick={() => updateState({ folders: new Set(availableFolders) })}
+          onClick={() => updateState({ folders: availableFolders })}
         >
           All
         </Button>
         <Button
           small
           icon={<SmallCross />}
-          onClick={() => updateState({ folders: new Set() })}
+          onClick={() => updateState({ folders: [] })}
         >
           Ignore Folders
         </Button>
@@ -234,7 +234,7 @@ function FolderSettings() {
           key={`${dataSetName}:${idx}`}
           label={folder}
           value={folder}
-          checked={selectedFolders.has(folder)}
+          checked={selectedFolders.includes(folder)}
           onChange={() =>
             updateState((s) => {
               const newFolders = new Set(s.folders);
@@ -243,7 +243,7 @@ function FolderSettings() {
               } else {
                 newFolders.add(folder);
               }
-              return { folders: newFolders };
+              return { folders: Array.from(newFolders) };
             })
           }
         />
@@ -345,7 +345,9 @@ function GeneralSettings() {
           <FormGroup>
             <ShowChartsToggle inDrawer />
           </FormGroup>
-          <Collapse isOpen={!!configState.flags.size && showingEligibleCharts}>
+          <Collapse
+            isOpen={!!configState.flags.length && showingEligibleCharts}
+          >
             <FormGroup label="Show only">
               <EligibleChartsListFilter />
             </FormGroup>
@@ -463,7 +465,7 @@ function GeneralSettings() {
                       next.style,
                     );
                     if (diffs.length === 1) {
-                      next.difficulties = new Set(diffs.map((d) => d.key));
+                      next.difficulties = diffs.map((d) => d.key);
                     }
                     if (lvlRange.low > next.upperBound) {
                       next.upperBound = lvlRange.low;
@@ -489,7 +491,7 @@ function GeneralSettings() {
                 key={`${dif.key}`}
                 name="difficulties"
                 value={dif.key}
-                checked={selectedDifficulties.has(dif.key)}
+                checked={selectedDifficulties.includes(dif.key)}
                 onChange={(e) => {
                   const { checked, value } = e.currentTarget;
                   updateState((s) => {
@@ -499,7 +501,7 @@ function GeneralSettings() {
                     } else {
                       difficulties.delete(value);
                     }
-                    return { difficulties };
+                    return { difficulties: Array.from(difficulties) };
                   });
                 }}
                 label={t("meta." + dif.key)}

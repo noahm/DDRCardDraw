@@ -16,9 +16,9 @@ export interface ConfigState {
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
   style: string;
-  folders: ReadonlySet<string>;
-  difficulties: ReadonlySet<string>;
-  flags: ReadonlySet<string>;
+  folders: Array<string>;
+  difficulties: Array<string>;
+  flags: Array<string>;
   cutoffDate: string;
   playerNames: string[];
   tournamentRounds: string[];
@@ -41,9 +41,9 @@ export const initialState: ConfigState = {
   constrainPocketPicks: true,
   style: "",
   cutoffDate: "",
-  folders: new Set(),
-  difficulties: new Set(),
-  flags: new Set(),
+  folders: [],
+  difficulties: [],
+  flags: [],
   playerNames: [],
   tournamentRounds: [
     "Pools",
