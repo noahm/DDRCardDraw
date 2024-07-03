@@ -388,9 +388,9 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     id: `draw-${nanoid(10)}`,
     charts,
     players: times(defaultPlayersPerDraw, () => ""),
-    bans: [],
-    protects: [],
-    pocketPicks: [],
-    winners: [],
+    bans: {},
+    protects: {},
+    pocketPicks: {},
+    winners: {},
   };
 }

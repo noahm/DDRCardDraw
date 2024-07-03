@@ -1,8 +1,7 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useMemo, useState } from "react";
-import { shallow } from "zustand/shallow";
-import { useConfigState } from "../config-state";
+import { useCallback, useMemo, useState } from "react";
+import { useConfigState } from "../state/config.slice";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_PLACEHOLDER,
@@ -17,6 +16,8 @@ import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
+import { useAppDispatch, useAppStore } from "../state/store";
+import { createRedrawChart, drawingsSlice } from "../state/drawings.slice";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -37,7 +38,7 @@ interface Props {
   vetoedBy?: Player;
   protectedBy?: Player;
   replacedBy?: Player;
-  winner?: Player;
+  winner?: Player | null;
   replacedWith?: EligibleChart;
   actionsEnabled?: boolean;
 }
@@ -45,26 +46,59 @@ interface Props {
 export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
-  const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
-    (d) => [
-      d.handleBanProtectReplace,
-      d.redrawChart,
-      d.resetChart,
-      d.setWinner,
-    ],
-    shallow,
+  const dispatch = useAppDispatch();
+  const store = useAppStore();
+  const drawingId = useDrawing((s) => s.id);
+
+  const handleBanPickPocket = useCallback(
+    (
+      type: "ban" | "protect" | "pocket",
+      player: number,
+      pick?: EligibleChart,
+    ) => {
+      let action;
+      if (type === "pocket") {
+        if (pick) {
+          action = drawingsSlice.actions.banProtectReplace({
+            drawingId,
+            chartId,
+            type,
+            player,
+            pick,
+          });
+        }
+      } else {
+        action = drawingsSlice.actions.banProtectReplace({
+          drawingId,
+          chartId,
+          type,
+          player,
+        });
+      }
+      if (action) {
+        dispatch(action);
+      }
+    },
+    [drawingId, chartId, dispatch],
   );
 
   return useMemo(
     () => ({
-      onVeto: handleBanPickPocket.bind(undefined, "ban", chartId),
-      onProtect: handleBanPickPocket.bind(undefined, "protect", chartId),
-      onReplace: handleBanPickPocket.bind(undefined, "pocket", chartId),
-      onRedraw: redrawChart.bind(undefined, chartId),
-      onReset: resetChart.bind(undefined, chartId),
-      onSetWinner: setWinner.bind(undefined, chartId),
+      onVeto: handleBanPickPocket.bind(undefined, "ban"),
+      onProtect: handleBanPickPocket.bind(undefined, "protect"),
+      onReplace: handleBanPickPocket.bind(undefined, "pocket"),
+      onRedraw: () => {
+        const action = createRedrawChart(store.getState(), drawingId, chartId);
+        if (action) dispatch(action);
+      },
+      onReset: () =>
+        dispatch(drawingsSlice.actions.resetChart({ drawingId, chartId })),
+      onSetWinner: (player) =>
+        dispatch(
+          drawingsSlice.actions.setWinner({ drawingId, chartId, player }),
+        ),
     }),
-    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner],
+    [handleBanPickPocket, store, drawingId, chartId, dispatch],
   );
 }
 

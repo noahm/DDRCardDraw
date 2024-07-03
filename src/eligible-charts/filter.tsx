@@ -1,6 +1,6 @@
 import { HTMLSelect } from "@blueprintjs/core";
 import { atom, useAtom } from "jotai";
-import { useConfigState } from "../config-state";
+import { useConfigState } from "../state/config.slice";
 import { useIntl } from "../hooks/useIntl";
 
 export const currentTabAtom = atom("all");

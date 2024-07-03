@@ -2,10 +2,10 @@ import { Classes, MenuItem } from "@blueprintjs/core";
 import { Suggest } from "@blueprintjs/select";
 
 import { filterRoundLabel, renderRoundLabel } from "./round-label";
-import { useDrawing } from "../drawing-context";
+import { useDrawing, useUpdateDrawing } from "../drawing-context";
 import { useIntl } from "../hooks/useIntl";
 import { useMemo } from "react";
-import { useConfigState } from "../config-state";
+import { useConfigState } from "../state/config.slice";
 import { Add } from "@blueprintjs/icons";
 
 function identity<T>(i: T) {
@@ -14,7 +14,7 @@ function identity<T>(i: T) {
 
 export function RoundSelect() {
   const { t } = useIntl();
-  const updateDrawing = useDrawing((d) => d.updateDrawing);
+  const updateDrawing = useUpdateDrawing();
   const tournamentTitle = useDrawing((d) => d.title);
   const roundLabels = useConfigState((c) => c.tournamentRounds);
   return (

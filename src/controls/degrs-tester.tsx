@@ -8,7 +8,7 @@ import {
 import { draw } from "../card-draw";
 import { useDrawState } from "../draw-state";
 import { useAtom } from "jotai";
-import { useConfigState } from "../config-state";
+import { configSlice } from "../state/config.slice";
 import { requestIdleCallback } from "../utils/idle-callback";
 import {
   TEST_SIZE,
@@ -21,6 +21,7 @@ import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
+import { store } from "../state/store";
 
 export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
   return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
@@ -29,7 +30,7 @@ export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
 function* oneMillionDraws() {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const gameData = useDrawState.getState().gameData!;
-  const configState = useConfigState.getState();
+  const configState = configSlice.selectSlice(store.getState());
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
     yield [draw(gameData, configState), idx] as const;

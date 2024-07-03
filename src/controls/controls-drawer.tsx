@@ -26,7 +26,6 @@ import parse from "date-fns/parse";
 import format from "date-fns/format";
 import { useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
-import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
@@ -39,6 +38,9 @@ import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { detectedLanguage } from "../utils";
+import { useConfigState, useUpdateConfig } from "../state/config.slice";
+import { useAtomValue } from "jotai";
+import { showEligibleCharts } from "../config-state";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -112,10 +114,8 @@ const dateFormat = "yyyy-MM-dd";
 function ReleaseDateFilter() {
   const { t } = useIntl();
   const gameData = useDrawState((s) => s.gameData);
-  const [updateState, cutoffDate] = useConfigState(
-    (s) => [s.update, s.cutoffDate],
-    shallow,
-  );
+  const updateState = useUpdateConfig();
+  const cutoffDate = useConfigState((s) => s.cutoffDate);
   const mostRecentRelease = useMemo(
     () =>
       gameData?.songs.reduce<string>((prev, song) => {
@@ -164,10 +164,8 @@ function FlagSettings() {
     (s) => [s.dataSetName, s.gameData, !!s.gameData?.meta.flags.length],
     shallow,
   );
-  const [updateState, selectedFlags] = useConfigState(
-    (s) => [s.update, s.flags],
-    shallow,
-  );
+  const updateState = useUpdateConfig();
+  const selectedFlags = useConfigState((s) => s.flags);
 
   if (!hasFlags) {
     return false;
@@ -203,10 +201,8 @@ function FolderSettings() {
   const { t } = useIntl();
   const availableFolders = useDrawState((s) => s.gameData?.meta.folders);
   const dataSetName = useDrawState((s) => s.dataSetName);
-  const [updateState, selectedFolders] = useConfigState(
-    (s) => [s.update, s.folders],
-    shallow,
-  );
+  const updateState = useUpdateConfig();
+  const selectedFolders = useConfigState((s) => s.folders);
 
   if (!availableFolders?.length) {
     return null;
@@ -259,6 +255,8 @@ function FolderSettings() {
 function GeneralSettings() {
   const { t } = useIntl();
   const gameData = useDrawState((s) => s.gameData);
+  const updateState = useUpdateConfig();
+  const showingEligibleCharts = useAtomValue(showEligibleCharts);
   const configState = useConfigState();
   const {
     useWeights,
@@ -267,7 +265,6 @@ function GeneralSettings() {
     hideVetos,
     lowerBound,
     upperBound,
-    update: updateState,
     difficulties: selectedDifficulties,
     style: selectedStyle,
     chartCount,
@@ -348,9 +345,7 @@ function GeneralSettings() {
           <FormGroup>
             <ShowChartsToggle inDrawer />
           </FormGroup>
-          <Collapse
-            isOpen={!!configState.flags.size && configState.showEligibleCharts}
-          >
+          <Collapse isOpen={!!configState.flags.size && showingEligibleCharts}>
             <FormGroup label="Show only">
               <EligibleChartsListFilter />
             </FormGroup>
@@ -373,9 +368,7 @@ function GeneralSettings() {
             clampValueOnBlur
             onValueChange={(chartCount) => {
               if (!isNaN(chartCount)) {
-                updateState(() => {
-                  return { chartCount };
-                });
+                updateState({ chartCount });
               }
             }}
           />
@@ -395,9 +388,7 @@ function GeneralSettings() {
             clampValueOnBlur
             onValueChange={(playerPicks) => {
               if (!isNaN(playerPicks)) {
-                updateState(() => {
-                  return { playerPicks };
-                });
+                updateState({ playerPicks });
               }
             }}
           />

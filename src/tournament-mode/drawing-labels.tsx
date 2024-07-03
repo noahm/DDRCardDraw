@@ -1,13 +1,18 @@
 import { useCallback } from "react";
-import { useConfigState } from "../config-state";
+import { useConfigState } from "../state/config.slice";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 import { AutoCompleteSelect, RoundSelect } from "./round-select";
 import { Icon } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
+import { useAtomValue } from "jotai";
+import { showPlayerAndRoundLabels } from "../config-state";
+import { useAppDispatch } from "../state/store";
+import { drawingsSlice } from "../state/drawings.slice";
+import { addPlayerNameToDrawing } from "../state/central";
 
 export function SetLabels() {
-  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const players = useDrawing((s) => s.players);
   if (!showLabels) {
     return null;
@@ -33,7 +38,12 @@ export function SetLabels() {
 
 function Versus() {
   const players = useDrawing((s) => s.players);
-  const ipp = useDrawing((s) => s.incrementPriorityPlayer);
+  const dispatch = useAppDispatch();
+  const drawingId = useDrawing((s) => s.id);
+  const ipp = useCallback(
+    () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(drawingId)),
+    [dispatch, drawingId],
+  );
   const priorityPlayer = useDrawing((s) => s.priorityPlayer);
   if (players.length !== 2) {
     return null;
@@ -72,26 +82,21 @@ function PlayerLabel({
   playerIndex: number;
   placeholder: string;
 }) {
-  const updateDrawing = useDrawing((s) => s.updateDrawing);
   const value = useDrawing((s) => s.players[playerIndex - 1] || null);
+  const drawingId = useDrawing((s) => s.id);
   const playerNames = useConfigState((s) => s.playerNames);
-  const updateConfig = useConfigState((s) => s.update);
+  const dispatch = useAppDispatch();
   const handleChange = useCallback(
     (value: string) => {
-      updateDrawing((drawing) => {
-        const prev = drawing.players.slice();
-        prev[playerIndex - 1] = value;
-        return { players: prev };
-      });
-      if (!playerNames.includes(value)) {
-        updateConfig((prev) => {
-          const nextNames = prev.playerNames.slice();
-          nextNames.push(value);
-          return { playerNames: nextNames };
-        });
-      }
+      dispatch(
+        addPlayerNameToDrawing({
+          name: value,
+          asPlayerNo: playerIndex,
+          drawingId,
+        }),
+      );
     },
-    [updateDrawing, playerIndex, playerNames, updateConfig],
+    [drawingId, playerIndex, dispatch],
   );
   const ret = (
     <AutoCompleteSelect

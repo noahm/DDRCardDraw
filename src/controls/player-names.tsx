@@ -6,14 +6,16 @@ import {
   TagInput,
 } from "@blueprintjs/core";
 import { ReactNode } from "react";
-import { useConfigState } from "../config-state";
+import { useConfigState, useUpdateConfig } from "../state/config.slice";
 import { useIntl } from "../hooks/useIntl";
 import { DiagramTree, Person } from "@blueprintjs/icons";
+import { useAtom } from "jotai";
+import { showPlayerAndRoundLabels } from "../config-state";
 
 export function PlayerNamesControls() {
   const { t } = useIntl();
   const playerNames = useConfigState((s) => s.playerNames);
-  const updateConfig = useConfigState((s) => s.update);
+  const updateConfig = useUpdateConfig();
 
   function addPlayers(names: string[]) {
     updateConfig((prev) => {
@@ -57,23 +59,20 @@ export function PlayerNamesControls() {
 }
 
 function ShowLabelsToggle() {
-  const update = useConfigState((s) => s.update);
-  const enabled = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
   const { t } = useIntl();
 
   return (
     <Checkbox
       checked={enabled}
-      onChange={(e) =>
-        update({ showPlayerAndRoundLabels: e.currentTarget.checked })
-      }
+      onChange={(e) => updateShowLabels(e.currentTarget.checked)}
       label={t("controls.playerLabels")}
     />
   );
 }
 
 function PlayersPerDraw() {
-  const update = useConfigState((s) => s.update);
+  const update = useUpdateConfig();
   const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
   const { t } = useIntl();
 
@@ -95,7 +94,7 @@ function PlayersPerDraw() {
 function TournamentLabelEditor() {
   const { t } = useIntl();
   const tournamentRounds = useConfigState((s) => s.tournamentRounds);
-  const updateConfig = useConfigState((s) => s.update);
+  const updateConfig = useUpdateConfig();
 
   function addLabels(names: string[]) {
     updateConfig((prev) => {

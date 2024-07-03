@@ -2,7 +2,7 @@ import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { zeroPad } from "../utils";
 import { useMemo } from "react";
-import { useConfigState } from "../config-state";
+import { useConfigState, useUpdateConfig } from "../state/config.slice";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { useDrawState } from "../draw-state";
@@ -33,12 +33,12 @@ function printGroup(
 
 export function WeightsControls({ usesTiers, high, low }: Props) {
   const { t } = useIntl();
+  const updateConfig = useUpdateConfig();
   const {
     weights,
     useWeights,
     forceDistribution,
     bucketCount,
-    updateConfig,
     totalToDraw,
     useGranularLevels,
   } = useConfigState(
@@ -47,7 +47,6 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       weights: cfg.weights,
       forceDistribution: cfg.forceDistribution,
       bucketCount: cfg.probabilityBucketCount,
-      updateConfig: cfg.update,
       totalToDraw: cfg.chartCount,
       useGranularLevels: cfg.useGranularLevels,
     }),

@@ -12,28 +12,37 @@ import {
 import { NewLayers, Cog, FloppyDisk, Import } from "@blueprintjs/icons";
 import { useState, lazy, Suspense } from "react";
 import { FormattedMessage } from "react-intl";
-import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
+import { createDraw } from "../state/drawings.slice";
+import { useAppDispatch, useAppStore } from "../state/store";
+import { useSetAtom } from "jotai";
+import { showEligibleCharts } from "../config-state";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
 export function HeaderControls() {
+  const setShowEligibleCharts = useSetAtom(showEligibleCharts);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
-  const [drawSongs, hasGameData] = useDrawState((s) => [
-    s.drawSongs,
-    !!s.gameData,
-  ]);
+  const hasGameData = useDrawState((s) => !!s.gameData);
   const isNarrow = useIsNarrow();
+  const dispatch = useAppDispatch();
+  const store = useAppStore();
 
   function handleDraw() {
-    useConfigState.setState({ showEligibleCharts: false });
-    drawSongs(useConfigState.getState());
+    setShowEligibleCharts(false);
+    const result = createDraw(store.getState());
+    if (typeof result === "boolean") {
+      setLastDrawFailed(result);
+    } else {
+      dispatch(result);
+      setLastDrawFailed(false);
+    }
   }
 
   function openSettings() {

@@ -37,7 +37,6 @@ export interface PlayerActionOnChart {
 
 export interface PocketPick extends PlayerActionOnChart {
   pick: EligibleChart;
-  targetType: typeof CHART_PLACEHOLDER | typeof CHART_DRAWN;
 }
 
 export interface Drawing {
@@ -45,9 +44,9 @@ export interface Drawing {
   title?: string;
   players: string[];
   charts: Array<DrawnChart | PlayerPickPlaceholder>;
-  bans: Array<PlayerActionOnChart>;
-  protects: Array<PlayerActionOnChart>;
-  winners: Array<PlayerActionOnChart>;
-  pocketPicks: Array<PocketPick>;
+  bans: Record<string, PlayerActionOnChart | null>;
+  protects: Record<string, PlayerActionOnChart | null>;
+  winners: Record<string, number | null>;
+  pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
 }

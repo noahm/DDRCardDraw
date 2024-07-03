@@ -7,7 +7,6 @@ import { requestIdleCallback, cancelIdleCallback } from "./utils/idle-callback";
 import { GameData, I18NDict, Song } from "./models/SongData";
 import i18nData from "./assets/i18n.json";
 import { availableGameData, detectedLanguage } from "./utils";
-import { ApplyDefaultConfig } from "./apply-default-config";
 import { ConfigState } from "./config-state";
 import { IntlProvider } from "./intl-provider";
 import type { StoreApi } from "zustand";
@@ -47,22 +46,6 @@ function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
       },
     ),
   });
-}
-
-declare const umami: {
-  track(
-    eventName?: string,
-    eventProperties?: Record<string, string | number | undefined>,
-  ): void;
-};
-
-function trackDraw(count: number | null, game?: string) {
-  if (typeof umami === "undefined") {
-    return;
-  }
-  const results =
-    count === null ? { result: "failed" } : { result: "success", count, game };
-  umami.track("cards-drawn", results);
 }
 
 export const useDrawState = createWithEqualityFn<DrawState>(
@@ -131,12 +114,10 @@ export const useDrawState = createWithEqualityFn<DrawState>(
     drawSongs(config: ConfigState) {
       const state = get();
       if (!state.gameData) {
-        trackDraw(null);
         return false;
       }
 
       const drawing = draw(state.gameData, config);
-      trackDraw(drawing.charts.length, state.dataSetName);
       if (!drawing.charts.length) {
         set({
           lastDrawFailed: true,
@@ -206,10 +187,6 @@ export function DrawStateManager(props: Props) {
       translations={i18nData as Record<string, I18NDict>}
       mergeTranslations={gameData?.i18n}
     >
-      <ApplyDefaultConfig
-        defaults={gameData?.defaults}
-        granularResolution={gameData?.meta.granularTierResolution}
-      />
       <UnloadHandler confirmUnload={hasDrawings} />
       {props.children}
     </IntlProvider>

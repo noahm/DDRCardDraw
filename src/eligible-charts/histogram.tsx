@@ -19,7 +19,7 @@ import {
 } from "../game-data-utils";
 import { Theme, useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { useConfigState } from "../config-state";
+import { useConfigState } from "../state/config.slice";
 
 interface Props {
   charts: EligibleChart[];

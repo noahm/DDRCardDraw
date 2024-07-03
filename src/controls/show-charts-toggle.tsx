@@ -1,18 +1,12 @@
 import { Switch } from "@blueprintjs/core";
-import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
-import { shallow } from "zustand/shallow";
 import styles from "./show-charts-toggle.css";
+import { showEligibleCharts } from "../config-state";
+import { useAtom } from "jotai";
 
 export function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
   const { t } = useIntl();
-  const { showEligible, update } = useConfigState(
-    (state) => ({
-      showEligible: state.showEligibleCharts,
-      update: state.update,
-    }),
-    shallow,
-  );
+  const [showEligible, setShowEligible] = useAtom(showEligibleCharts);
   return (
     <Switch
       alignIndicator={inDrawer ? "left" : "right"}
@@ -21,9 +15,7 @@ export function ShowChartsToggle({ inDrawer }: { inDrawer: boolean }) {
       label={t("showSongPool")}
       checked={showEligible}
       onChange={(e) => {
-        update({
-          showEligibleCharts: !!e.currentTarget.checked,
-        });
+        setShowEligible(!!e.currentTarget.checked);
       }}
     />
   );

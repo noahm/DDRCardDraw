@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
-import { useConfigState } from "../config-state";
+import { useConfigState } from "../state/config.slice";
 import { useDrawState } from "../draw-state";
 import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";

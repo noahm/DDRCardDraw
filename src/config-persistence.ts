@@ -1,6 +1,12 @@
-import { ConfigState, useConfigState } from "./config-state";
+import { getDefaultStore } from "jotai";
+import {
+  ConfigState,
+  showEligibleCharts,
+  showPlayerAndRoundLabels,
+} from "./config-state";
 import { useDrawState } from "./draw-state";
 import { Roomstate } from "./party/types";
+import { store } from "./state/store";
 import { toaster } from "./toaster";
 import { buildDataUri, dateForFilename, shareData } from "./utils/share";
 
@@ -35,7 +41,7 @@ export type Serialized<T extends object> = {
 };
 
 export function saveConfig() {
-  const persistedObj = buildPersistedConfig();
+  const persistedObj = buildPersistedConfig(store.getState().config);
   const dataUri = buildDataUri(
     JSON.stringify(persistedObj, undefined, 2),
     "application/json",
@@ -100,9 +106,7 @@ export function loadConfig() {
   return resolution;
 }
 
-export function serializeConfig(
-  cfg: Optional<ConfigState, "update">,
-): Serialized<ConfigState> {
+export function serializeConfig(cfg: ConfigState): Serialized<ConfigState> {
   return {
     ...cfg,
     difficulties: Array.from(cfg.difficulties),
@@ -111,10 +115,8 @@ export function serializeConfig(
   };
 }
 
-function buildPersistedConfig(): PersistedConfigV1 {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { update, ...configState } = useConfigState.getState();
-  const serializedState = serializeConfig(configState);
+function buildPersistedConfig(cfg: ConfigState): PersistedConfigV1 {
+  const serializedState = serializeConfig(cfg);
   const ret: PersistedConfigV1 = {
     version: 1,
     dataSetName: useDrawState.getState().dataSetName,
@@ -179,12 +181,13 @@ function migrateOldNames(
 ): Serialized<ConfigState> {
   const { showPool, showLabels, ...modernConfig } = config;
 
+  const jotaiStore = getDefaultStore();
   if (showPool) {
-    modernConfig.showEligibleCharts = showPool;
+    jotaiStore.set(showEligibleCharts, showPool);
   }
 
   if (showLabels) {
-    modernConfig.showPlayerAndRoundLabels = showLabels;
+    jotaiStore.set(showPlayerAndRoundLabels, showLabels);
   }
 
   const maybeOldWeights = modernConfig.weights as unknown as

@@ -1,5 +1,5 @@
 import { eligibleCharts } from "../card-draw";
-import { useConfigState } from "../config-state";
+import { useConfigState } from "../state/config.slice";
 import { useDrawState } from "../draw-state";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";

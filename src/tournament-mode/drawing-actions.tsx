@@ -10,18 +10,21 @@ import { useDrawing } from "../drawing-context";
 import styles from "./drawing-actions.css";
 import { domToPng } from "modern-screenshot";
 import { shareImage } from "../utils/share";
-import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
+import { useAppDispatch, useAppStore } from "../state/store";
+import { useAtomValue } from "jotai";
+import { showPlayerAndRoundLabels } from "../config-state";
+import { createRedrawAll, drawingsSlice } from "../state/drawings.slice";
 
 const DEFAULT_FILENAME = "card-draw.png";
 
 export function DrawingActions() {
-  const getDrawing = useDrawing((s) => s.serializeSyncFields);
-  const updateDrawing = useDrawing((s) => s.updateDrawing);
-  const redrawAllCharts = useDrawing((s) => s.redrawAllCharts);
+  const dispatch = useAppDispatch();
+  const drawingId = useDrawing((s) => s.id);
   const hasPlayers = useDrawing((s) => !!s.players.length);
-  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const { showBoundary } = useErrorBoundary();
+  const store = useAppStore();
 
   return (
     <div className={styles.networkButtons}>
@@ -30,7 +33,6 @@ export function DrawingActions() {
           minimal
           icon={<Camera />}
           onClick={async () => {
-            const drawingId = getDrawing().id;
             const drawingElement = document.querySelector(
               "#drawing-" + drawingId,
             );
@@ -52,7 +54,7 @@ export function DrawingActions() {
           onClick={() =>
             confirm(
               "This will replace everything besides protects and picks!",
-            ) && redrawAllCharts()
+            ) && dispatch(createRedrawAll(store.getState(), drawingId))
           }
         />
       </Tooltip>
@@ -68,11 +70,7 @@ export function DrawingActions() {
               minimal
               icon={<NewPerson />}
               onClick={() => {
-                updateDrawing((drawing) => {
-                  const next = drawing.players.slice();
-                  next.push("");
-                  return { players: next };
-                });
+                dispatch(drawingsSlice.actions.addEmptyPlayer(drawingId));
               }}
             />
           </Tooltip>
@@ -82,11 +80,7 @@ export function DrawingActions() {
               icon={<BlockedPerson />}
               disabled={!hasPlayers}
               onClick={() => {
-                updateDrawing((drawing) => {
-                  const next = drawing.players.slice();
-                  next.pop();
-                  return { players: next };
-                });
+                dispatch(drawingsSlice.actions.dropPlayer(drawingId));
               }}
             />
           </Tooltip>
