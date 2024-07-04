@@ -1,15 +1,18 @@
 import type * as Party from "partykit/server";
-import type { Drawing } from "../models/Drawing";
-import type { ConfigState } from "../config-state";
-import type { Serialized } from "../config-persistence";
-import type { ClientMsg, Roomstate } from "./types";
+import type { ReduxAction, Roomstate } from "./types";
+import { Action, configureStore } from "@reduxjs/toolkit";
+import { reducer } from "../state/root-reducer";
+import { AppState } from "../state/store";
+import { receivePartyState } from "../state/central";
 
 export default class Server implements Party.Server {
-  private dataSetName?: string;
-  private drawings: Drawing[] = [];
-  private config?: Serialized<ConfigState>;
+  private store = configureStore({ reducer });
 
   constructor(readonly room: Party.Room) {}
+
+  onStart(): void | Promise<void> {
+    return this.restoreFromStorage();
+  }
 
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
     // A websocket just connected!
@@ -34,43 +37,31 @@ export default class Server implements Party.Server {
       [sender.id],
     );
 
-    const parsed = JSON.parse(message) as ClientMsg;
-    switch (parsed.type) {
-      case "config":
-        this.config = parsed.config;
-        this.persistConfig();
-        break;
-      case "drawings":
-        this.drawings = parsed.drawings;
-        this.room.storage.put("allDrawings", this.drawings);
-        break;
-      case "dataSet":
-        if (typeof parsed.data === "string") {
-          this.dataSetName = parsed.data;
-        } else {
-          console.error(`party server does not yet support custom data`);
-        }
-        break;
-    }
+    const parsed = JSON.parse(message) as ReduxAction;
+    this.dispatchAndPersist(parsed);
   }
 
   private getRoomState() {
-    return JSON.stringify({
+    return JSON.stringify(<Roomstate>{
       type: "roomstate",
-      drawings: this.drawings,
-      config: this.config,
-      dataSetName: this.dataSetName,
-    } satisfies Roomstate);
+      state: this.store.getState(),
+    });
   }
 
-  private persistConfig() {
-    this.room.storage.put("config", this.config);
+  private async dispatchAndPersist(action: Action) {
+    this.store.dispatch(action);
+    await this.room.storage.put("currentState", this.store.getState());
   }
 
   private async restoreFromStorage() {
-    this.config = await this.room.storage.get("config");
-    this.drawings =
-      (await this.room.storage.get<Drawing[]>(`allDrawings`)) || [];
+    const preloadedState =
+      await this.room.storage.get<AppState>("currentState");
+    if (preloadedState) {
+      this.store.dispatch(
+        receivePartyState({ type: "roomstate", state: preloadedState }),
+      );
+    }
+    // this.store = configureStore({ reducer, preloadedState });
   }
 }
 

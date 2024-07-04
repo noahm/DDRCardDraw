@@ -1,11 +1,12 @@
-import { configureStore, combineSlices } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
-import { drawingsSlice } from "./drawings.slice";
-import { configSlice } from "./config.slice";
-import { gameDataSlice } from "./game-data.slice";
+import { reducer } from "./root-reducer";
+import { listenerMiddleware } from "./listener-middleware";
 
 export const store = configureStore({
-  reducer: combineSlices(drawingsSlice, configSlice, gameDataSlice),
+  reducer,
+  middleware: (getDefaults) =>
+    getDefaults().concat(listenerMiddleware.middleware),
 });
 
 export type AppState = ReturnType<typeof store.getState>;

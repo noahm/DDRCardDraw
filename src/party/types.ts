@@ -1,31 +1,15 @@
-import type { Serialized } from "../config-persistence";
-import type { ConfigState } from "../config-state";
-import type { Drawing } from "../models/Drawing";
-import type { GameData } from "../models/SongData";
+import { Action } from "@reduxjs/toolkit";
+import { AppState } from "../state/store";
 
 export interface Roomstate {
   type: "roomstate";
-  dataSetName?: string;
-  drawings: Drawing[];
-  config?: Serialized<ConfigState>;
+  state: AppState;
+}
+
+export interface ReduxAction {
+  type: "action";
+  action: Action;
 }
 
 /** All messages possibly sent by the server to clients */
-export type Broadcast = Roomstate | ClientMsg;
-
-export interface DrawingUpdate {
-  type: "drawings";
-  drawings: Drawing[];
-}
-
-export interface ConfigChange {
-  type: "config";
-  config: Serialized<ConfigState>;
-}
-
-export interface DataSetChange {
-  type: "dataSet";
-  data: string | GameData;
-}
-
-export type ClientMsg = DrawingUpdate | ConfigChange | DataSetChange;
+export type Broadcast = Roomstate | ReduxAction;

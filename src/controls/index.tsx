@@ -9,11 +9,11 @@ import {
   Spinner,
   Tooltip,
 } from "@blueprintjs/core";
-import { NewLayers, Cog, FloppyDisk, Import } from "@blueprintjs/icons";
+import { NewLayers, Cog } from "@blueprintjs/icons";
 import { useState, lazy, Suspense } from "react";
 import { FormattedMessage } from "react-intl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { loadConfig, saveConfig } from "../config-persistence";
+// import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
@@ -59,14 +59,14 @@ export function HeaderControls() {
         title={
           <>
             <FormattedMessage id="controls.drawerTitle" />
-            <ButtonGroup style={{ marginLeft: "10px" }}>
+            {/* <ButtonGroup style={{ marginLeft: "10px" }}>
               <Button icon={<FloppyDisk />} onClick={saveConfig}>
                 Save
               </Button>
               <Button icon={<Import />} onClick={loadConfig}>
                 Load
               </Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
           </>
         }
       >

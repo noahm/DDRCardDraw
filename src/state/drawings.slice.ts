@@ -9,7 +9,7 @@ import {
   EligibleChart,
   PlayerActionOnChart,
 } from "../models/Drawing";
-import { addPlayerNameToDrawing, receivePartyState } from "./central";
+import { addPlayerNameToDrawing } from "./central";
 import { AppState } from "./store";
 import { draw } from "../card-draw";
 
@@ -154,17 +154,13 @@ export const drawingsSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder
-      .addCase(receivePartyState, (state, action) => {
-        return drawingsAdapter.addMany(state, action.payload.drawings);
-      })
-      .addCase(addPlayerNameToDrawing, (state, action) => {
-        const drawing = state.entities[action.payload.drawingId];
-        if (!drawing) {
-          return;
-        }
-        drawing.players[action.payload.asPlayerNo - 1] = action.payload.name;
-      });
+    builder.addCase(addPlayerNameToDrawing, (state, action) => {
+      const drawing = state.entities[action.payload.drawingId];
+      if (!drawing) {
+        return;
+      }
+      drawing.players[action.payload.asPlayerNo - 1] = action.payload.name;
+    });
   },
   selectors: {
     haveDrawings(state) {
