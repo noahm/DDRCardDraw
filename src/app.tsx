@@ -16,10 +16,12 @@ import { ThemeSyncWidget } from "./theme-toggle";
 import { DropHandler } from "./drop-handler";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
+import { PartySocketManager } from "./party/client";
 
 export function App() {
   return (
     <Provider store={store}>
+      <PartySocketManager roomName="default" />
       <DrawStateManager defaultDataSet="a3">
         <ThemeSyncWidget />
         <UpdateManager />

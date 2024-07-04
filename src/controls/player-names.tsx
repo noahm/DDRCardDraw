@@ -6,7 +6,7 @@ import {
   TagInput,
 } from "@blueprintjs/core";
 import { ReactNode } from "react";
-import { useConfigState, useUpdateConfig } from "../state/config.slice";
+import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
 import { DiagramTree, Person } from "@blueprintjs/icons";
 import { useAtom } from "jotai";

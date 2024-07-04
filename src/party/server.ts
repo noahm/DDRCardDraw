@@ -1,6 +1,6 @@
 import type * as Party from "partykit/server";
 import type { ReduxAction, Roomstate } from "./types";
-import { Action, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import { AppState } from "../state/store";
 import { receivePartyState } from "../state/central";
@@ -8,10 +8,16 @@ import { receivePartyState } from "../state/central";
 export default class Server implements Party.Server {
   private store = configureStore({ reducer });
 
-  constructor(readonly room: Party.Room) {}
+  constructor(readonly room: Party.Room) {
+    console.log("constructor start");
+  }
 
-  onStart(): void | Promise<void> {
-    return this.restoreFromStorage();
+  async onStart() {
+    console.log("onStart", typeof reducer);
+    await this.restoreFromStorage();
+    this.store.subscribe(() => {
+      this.room.storage.put("currentState", this.store.getState());
+    });
   }
 
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
@@ -38,7 +44,7 @@ export default class Server implements Party.Server {
     );
 
     const parsed = JSON.parse(message) as ReduxAction;
-    this.dispatchAndPersist(parsed);
+    this.store.dispatch(parsed.action);
   }
 
   private getRoomState() {
@@ -48,20 +54,12 @@ export default class Server implements Party.Server {
     });
   }
 
-  private async dispatchAndPersist(action: Action) {
-    this.store.dispatch(action);
-    await this.room.storage.put("currentState", this.store.getState());
-  }
-
   private async restoreFromStorage() {
     const preloadedState =
       await this.room.storage.get<AppState>("currentState");
     if (preloadedState) {
-      this.store.dispatch(
-        receivePartyState({ type: "roomstate", state: preloadedState }),
-      );
+      this.store.dispatch(receivePartyState(preloadedState));
     }
-    // this.store = configureStore({ reducer, preloadedState });
   }
 }
 

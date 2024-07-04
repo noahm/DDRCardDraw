@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useConfigState } from "../state/config.slice";
+import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 import { AutoCompleteSelect, RoundSelect } from "./round-select";

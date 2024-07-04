@@ -2,7 +2,7 @@ import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { zeroPad } from "../utils";
 import { useMemo } from "react";
-import { useConfigState, useUpdateConfig } from "../state/config.slice";
+import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { getAvailableLevels } from "../game-data-utils";

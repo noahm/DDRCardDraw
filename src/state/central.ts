@@ -1,10 +1,10 @@
 import { createAction } from "@reduxjs/toolkit";
 import { withPayload } from "./util";
-import { Roomstate } from "../party/types";
+import type { AppState } from "./store";
 
 export const receivePartyState = createAction(
   "party/supplyState",
-  withPayload<Roomstate>(),
+  withPayload<AppState>(),
 );
 
 export const addPlayerNameToDrawing = createAction(

@@ -1,7 +1,7 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
 import { useCallback, useMemo, useState } from "react";
-import { useConfigState } from "../state/config.slice";
+import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_PLACEHOLDER,

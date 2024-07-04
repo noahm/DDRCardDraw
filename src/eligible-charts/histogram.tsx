@@ -18,7 +18,7 @@ import {
 } from "../game-data-utils";
 import { Theme, useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { useConfigState } from "../state/config.slice";
+import { useConfigState } from "../state/hooks";
 import { useAppState } from "../state/store";
 
 interface Props {

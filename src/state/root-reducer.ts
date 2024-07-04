@@ -12,7 +12,7 @@ const combinedReducer = combineSlices(
 
 export const reducer: typeof combinedReducer = (state, action) => {
   if (receivePartyState.match(action)) {
-    return action.payload.state;
+    return action.payload;
   }
   return combinedReducer(state, action);
 };

@@ -4,18 +4,19 @@ import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import { useEffect } from "react";
+import { loadGameDataByName } from "../state/thunks";
 
 export function PartySocketManager(props: { roomName?: string }) {
   const dispatch = useAppDispatch();
   const socket = usePartySocket({
     room: props.roomName,
-    host: "localhost:43735", // TODO determine this based on build type, other stuff
+    host: "localhost:1999", // TODO determine this based on build type, other stuff
     onMessage(evt) {
       try {
         const data: Broadcast = JSON.parse(evt.data);
         switch (data.type) {
           case "roomstate":
-            dispatch(receivePartyState(data));
+            dispatch(receivePartyState(data.state));
             break;
           case "action":
             const foreignAction = {
@@ -35,7 +36,19 @@ export function PartySocketManager(props: { roomName?: string }) {
     return startAppListening({
       predicate(action) {
         // @ts-expect-error i don't know how to type action meta properties yet
-        return action.meta.source !== "partykit";
+        if (action.meta?.source === "partykit") {
+          return false;
+        }
+
+        if (receivePartyState.match(action)) {
+          return false;
+        }
+
+        // don't try sending the loaded game data through
+        if (action.type.startsWith(loadGameDataByName.typePrefix)) {
+          return false;
+        }
+        return true;
       },
       effect(action) {
         const message: ReduxAction = {
@@ -46,4 +59,6 @@ export function PartySocketManager(props: { roomName?: string }) {
       },
     });
   }, [socket]);
+
+  return null;
 }

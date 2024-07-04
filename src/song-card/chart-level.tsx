@@ -1,4 +1,4 @@
-import { useConfigState } from "../state/config.slice";
+import { useConfigState } from "../state/hooks";
 import { formatLevel } from "../game-data-utils";
 import {
   CHART_PLACEHOLDER,

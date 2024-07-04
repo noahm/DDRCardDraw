@@ -5,7 +5,7 @@ import { filterRoundLabel, renderRoundLabel } from "./round-label";
 import { useDrawing, useUpdateDrawing } from "../drawing-context";
 import { useIntl } from "../hooks/useIntl";
 import { useMemo } from "react";
-import { useConfigState } from "../state/config.slice";
+import { useConfigState } from "../state/hooks";
 import { Add } from "@blueprintjs/icons";
 
 function identity<T>(i: T) {

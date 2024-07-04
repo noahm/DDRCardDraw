@@ -36,7 +36,7 @@ import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { detectedLanguage } from "../utils";
-import { useConfigState, useUpdateConfig } from "../state/config.slice";
+import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useAtomValue } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { useAppState } from "../state/store";
