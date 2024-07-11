@@ -1,34 +1,17 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { UnloadHandler } from "./unload-handler";
-import { requestIdleCallback, cancelIdleCallback } from "./utils/idle-callback";
 import { I18NDict } from "./models/SongData";
 import i18nData from "./assets/i18n.json";
-import { availableGameData, detectedLanguage } from "./utils";
+import { detectedLanguage } from "./utils";
 import { IntlProvider } from "./intl-provider";
-import { useAppDispatch, useAppState } from "./state/store";
-import { loadGameDataByName } from "./state/thunks";
+import { useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
+import { useAtomValue } from "jotai";
+import { gameDataAtom } from "./state/game-data.atoms";
 
 interface Props {
   defaultDataSet: string;
   children: ReactNode;
-}
-
-function getInitialDataSet(defaultDataName: string) {
-  const hash = window.location.hash.slice(1);
-  if (hash.startsWith("game-")) {
-    const targetData = hash.slice(5);
-    if (availableGameData.some((d) => d.name === targetData)) {
-      return targetData;
-    }
-  }
-  if (
-    defaultDataName &&
-    availableGameData.some((d) => d.name === defaultDataName)
-  ) {
-    return defaultDataName;
-  }
-  return availableGameData[0].name;
 }
 
 // function writeDataSetToUrl(game: string) {
@@ -41,15 +24,20 @@ function getInitialDataSet(defaultDataName: string) {
 // }
 
 export function DrawStateManager(props: Props) {
-  const gameData = useAppState((state) => state.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const hasDrawings = useAppState(drawingsSlice.selectors.haveDrawings);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    const idleHandle = requestIdleCallback(() =>
-      dispatch(loadGameDataByName(getInitialDataSet(props.defaultDataSet))),
-    );
-    return () => cancelIdleCallback(idleHandle);
-  }, [dispatch, props.defaultDataSet]);
+  // const dispatch = useAppDispatch();
+  // useEffect(() => {
+  //   const idleHandle = requestIdleCallback(() =>
+  //     dispatch(
+  //       gameDataSlice.actions.selectGameData({
+  //         dataSetName: getInitialDataSet(props.defaultDataSet),
+  //         dataType: "stock",
+  //       }),
+  //     ),
+  //   );
+  //   return () => cancelIdleCallback(idleHandle);
+  // }, [dispatch, props.defaultDataSet]);
 
   return (
     <IntlProvider

@@ -40,6 +40,7 @@ import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useAtomValue } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { useAppState } from "../state/store";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -112,7 +113,7 @@ export default function ControlsDrawer() {
 const dateFormat = "yyyy-MM-dd";
 function ReleaseDateFilter() {
   const { t } = useIntl();
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const updateState = useUpdateConfig();
   const cutoffDate = useConfigState((s) => s.cutoffDate);
   const mostRecentRelease = useMemo(
@@ -160,7 +161,7 @@ function ReleaseDateFilter() {
 function FlagSettings() {
   const { t } = useIntl();
   const dataSetName = useAppState((s) => s.gameData.dataSetName);
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const hasFlags = !!gameData?.meta.flags.length;
   const updateState = useUpdateConfig();
   const selectedFlags = useConfigState((s) => s.flags);
@@ -197,9 +198,8 @@ function FlagSettings() {
 /** Renders the checkboxes for each individual folder that exists in the data file's meta.folders */
 function FolderSettings() {
   const { t } = useIntl();
-  const availableFolders = useAppState(
-    (s) => s.gameData.gameData?.meta.folders,
-  );
+  const gameData = useAtomValue(gameDataAtom);
+  const availableFolders = gameData?.meta.folders;
   const dataSetName = useAppState((s) => s.gameData.dataSetName);
   const updateState = useUpdateConfig();
   const selectedFolders = useConfigState((s) => s.folders);
@@ -254,7 +254,7 @@ function FolderSettings() {
 
 function GeneralSettings() {
   const { t } = useIntl();
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const updateState = useUpdateConfig();
   const showingEligibleCharts = useAtomValue(showEligibleCharts);
   const configState = useConfigState();

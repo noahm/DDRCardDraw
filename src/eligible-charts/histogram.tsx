@@ -19,7 +19,8 @@ import {
 import { Theme, useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useConfigState } from "../state/hooks";
-import { useAppState } from "../state/store";
+import { useAtomValue } from "jotai";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 interface Props {
   charts: EligibleChart[];
@@ -29,7 +30,7 @@ export function DiffHistogram({ charts }: Props) {
   const { t } = useIntl();
   const fgColor = useTheme() === Theme.Dark ? "white" : undefined;
   const isNarrow = useIsNarrow();
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const allDiffs = gameData?.meta.difficulties;
   const useGranularLevels = useConfigState((s) => s.useGranularLevels);
   const availableLevels = getAvailableLevels(gameData, useGranularLevels);

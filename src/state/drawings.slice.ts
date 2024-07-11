@@ -12,6 +12,8 @@ import {
 import { addPlayerNameToDrawing } from "./central";
 import { AppState } from "./store";
 import { draw } from "../card-draw";
+import { getDefaultStore } from "jotai";
+import { gameDataAtom } from "./game-data.atoms";
 
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
 
@@ -38,12 +40,14 @@ function trackDraw(count: number | null, game?: string) {
  * addDrawing action in the default successful case
  */
 export function createDraw(state: AppState) {
-  if (!state.gameData.gameData) {
+  const jotaiStore = getDefaultStore();
+  const gameData = jotaiStore.get(gameDataAtom);
+  if (!gameData) {
     trackDraw(null);
     return false;
   }
 
-  const drawing = draw(state.gameData.gameData, state.config);
+  const drawing = draw(gameData, state.config);
   trackDraw(drawing.charts.length, state.gameData.dataSetName);
   if (!drawing.charts.length) {
     return true;
@@ -180,7 +184,9 @@ export function createRedrawAll(state: AppState, drawingId: string) {
     ...state.config,
     chartCount: drawing.charts.length,
   };
-  const drawResult = draw(state.gameData.gameData!, drawConfig);
+  const jotaiStore = getDefaultStore();
+  const gameData = jotaiStore.get(gameDataAtom);
+  const drawResult = draw(gameData!, drawConfig);
   return drawingsSlice.actions.updateOne({
     id: drawingId,
     changes: {
@@ -202,7 +208,9 @@ export function createRedrawChart(
     ...state.config,
     chartCount: 1,
   };
-  const drawResult = draw(state.gameData.gameData!, drawConfig);
+  const jotaiStore = getDefaultStore();
+  const gameData = jotaiStore.get(gameDataAtom);
+  const drawResult = draw(gameData!, drawConfig);
   const chart = drawResult.charts.find((c) => c.type === "DRAWN");
   if (!chart) {
     return;

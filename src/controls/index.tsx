@@ -13,14 +13,14 @@ import { NewLayers, Cog } from "@blueprintjs/icons";
 import { useState, lazy, Suspense } from "react";
 import { FormattedMessage } from "react-intl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-// import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { createDraw } from "../state/drawings.slice";
-import { useAppDispatch, useAppState, useAppStore } from "../state/store";
-import { useSetAtom } from "jotai";
+import { useAppDispatch, useAppStore } from "../state/store";
+import { useAtomValue, useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
+import { gameDataLoadingStatus } from "../state/game-data.atoms";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
@@ -28,7 +28,7 @@ export function HeaderControls() {
   const setShowEligibleCharts = useSetAtom(showEligibleCharts);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
-  const hasGameData = useAppState((s) => !!s.gameData.gameData);
+  const hasGameData = useAtomValue(gameDataLoadingStatus) === "available";
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
   const store = useAppStore();

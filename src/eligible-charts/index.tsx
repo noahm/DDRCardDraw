@@ -11,21 +11,21 @@ import {
   Button,
 } from "@blueprintjs/core";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { useCallback, useDeferredValue, useMemo } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
 import { Export } from "@blueprintjs/icons";
 import { shareCharts } from "../utils/share";
-import { useAppState } from "../state/store";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
 }
 
 export default function EligibleChartsList() {
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());
   const isNarrow = useIsNarrow();

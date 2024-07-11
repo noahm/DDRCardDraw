@@ -6,7 +6,7 @@ import {
   ProgressBar,
 } from "@blueprintjs/core";
 import { draw } from "../card-draw";
-import { useAtom } from "jotai";
+import { getDefaultStore, useAtom } from "jotai";
 import { configSlice } from "../state/config.slice";
 import { requestIdleCallback } from "../utils/idle-callback";
 import {
@@ -20,8 +20,9 @@ import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
-import { store, useAppStore } from "../state/store";
+import { store } from "../state/store";
 import { GameData } from "../models/SongData";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
   return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
@@ -63,14 +64,13 @@ export function DegrsTestButton() {
   const [isTesting, setIsTesting] = useAtom(degrsIsTesting);
   const [progress, setProgress] = useAtom(degrsTestProgress);
   const [results, setResults] = useAtom(degrsTestResults);
-  const store = useAppStore();
 
   async function startTest() {
     setIsTesting(true);
     setProgress(0);
     setResults(undefined);
     await nextIdleCycle();
-    const tester = degrsTester(store.getState().gameData.gameData!);
+    const tester = degrsTester(getDefaultStore().get(gameDataAtom)!);
     let report = tester.next();
     while (!report.done) {
       setProgress(report.value);

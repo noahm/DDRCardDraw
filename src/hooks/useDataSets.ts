@@ -2,33 +2,34 @@ import { useCallback, useMemo } from "react";
 import { availableGameData } from "../utils";
 import { useAppDispatch, useAppState } from "../state/store";
 import { gameDataSlice } from "../state/game-data.slice";
-import { GameData } from "../models/SongData";
-import { loadGameDataByName } from "../state/thunks";
+import {
+  customDataCache,
+  gameDataLoadingStatus,
+} from "../state/game-data.atoms";
+import { useAtomValue } from "jotai";
 
 export function useDataSets() {
   const dataSetName = useAppState((s) => s.gameData.dataSetName);
   const dispatch = useAppDispatch();
-  const dataIsLoaded = useAppState((s) => !!s.gameData);
-  const importedData = useAppState((s) => s.gameData.uploadCache);
+  const importedData = useAtomValue(customDataCache);
+  const dataLoadingState = useAtomValue(gameDataLoadingStatus);
 
   const loadGameData = useCallback(
-    (name: string, gameData?: GameData) => {
-      if (gameData) {
+    (name: string) => {
+      if (importedData[name]) {
         dispatch(
-          gameDataSlice.actions.selectCustomData({
-            name,
-            gameData,
-          }),
-        );
-      } else if (importedData[name]) {
-        dispatch(
-          gameDataSlice.actions.selectCustomData({
-            name,
-            gameData: importedData[name],
+          gameDataSlice.actions.selectGameData({
+            dataSetName: name,
+            dataType: "custom",
           }),
         );
       } else {
-        dispatch(loadGameDataByName(name));
+        dispatch(
+          gameDataSlice.actions.selectGameData({
+            dataSetName: name,
+            dataType: "stock",
+          }),
+        );
       }
     },
     [dispatch, importedData],
@@ -45,12 +46,14 @@ export function useDataSets() {
     ];
   }, [importedData]);
 
-  const current = available.find((s) => s.name === dataSetName) || available[0];
+  const current: (typeof availableGameData)[0] = available.find(
+    (s) => s.name === dataSetName,
+  ) || { display: "Select game data", name: "", parent: "" };
 
   return {
     available,
     current,
     loadData: loadGameData,
-    dataIsLoaded,
+    dataIsLoaded: dataLoadingState === "available",
   };
 }

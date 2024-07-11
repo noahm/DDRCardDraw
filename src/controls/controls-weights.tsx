@@ -7,7 +7,8 @@ import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { getAvailableLevels } from "../game-data-utils";
 import { LevelRangeBucket, getBuckets } from "../card-draw";
-import { useAppState } from "../state/store";
+import { useAtomValue } from "jotai";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 interface Props {
   usesTiers: boolean;
@@ -52,7 +53,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     }),
     shallow,
   );
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const groups = useMemo(() => {
     const availableLevels = getAvailableLevels(gameData, useGranularLevels);
     return Array.from(

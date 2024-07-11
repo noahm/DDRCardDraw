@@ -6,8 +6,9 @@ import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import styles from "./song-search.css";
-import { useAppStore } from "../state/store";
 import { useFuzzySearch } from "../hooks/useFuzzySearch";
+import { getDefaultStore } from "jotai";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 interface Props {
   isOpen: boolean;
@@ -20,7 +21,6 @@ export function SongSearch(props: Props) {
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
   const fuzzySearch = useFuzzySearch();
-  const store = useAppStore();
 
   let items: SearchResultData[] = [];
   if (fuzzySearch) {
@@ -54,7 +54,7 @@ export function SongSearch(props: Props) {
           item.chart === "none" || !item.chart
             ? undefined
             : getDrawnChart(
-                store.getState().gameData.gameData!,
+                getDefaultStore().get(gameDataAtom)!,
                 item.song,
                 item.chart,
               ),

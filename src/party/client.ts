@@ -4,7 +4,6 @@ import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import { useEffect } from "react";
-import { loadGameDataByName } from "../state/thunks";
 
 export function PartySocketManager(props: { roomName?: string }) {
   const dispatch = useAppDispatch();
@@ -44,10 +43,6 @@ export function PartySocketManager(props: { roomName?: string }) {
           return false;
         }
 
-        // don't try sending the loaded game data through
-        if (action.type.startsWith(loadGameDataByName.typePrefix)) {
-          return false;
-        }
         return true;
       },
       effect(action) {

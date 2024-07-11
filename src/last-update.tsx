@@ -3,10 +3,12 @@ import cn from "classnames";
 import { FormattedMessage } from "react-intl";
 import { detectedLanguage } from "./utils";
 import { useAppState } from "./state/store";
+import { useAtomValue } from "jotai";
+import { gameDataAtom } from "./state/game-data.atoms";
 
 export function LastUpdate() {
   const dataSetName = useAppState((s) => s.gameData.dataSetName);
-  const gameData = useAppState((s) => s.gameData.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   if (!gameData) {
     return null;
   }

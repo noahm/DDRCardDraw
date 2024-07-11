@@ -14,6 +14,8 @@ import { convertErrorToString } from "./utils/error-to-string";
 import { Import } from "@blueprintjs/icons";
 import { useAppDispatch } from "./state/store";
 import { gameDataSlice } from "./state/game-data.slice";
+import { useSetAtom } from "jotai";
+import { customDataCache } from "./state/game-data.atoms";
 
 function loadParserModule() {
   return import("simfile-parser/browser");
@@ -117,6 +119,7 @@ function useDataParsing(
 function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   const [tiered, setTiered] = useState(false);
   const [saving, setSaving] = useState(false);
+  const setCustomData = useSetAtom(customDataCache);
   const dispatch = useAppDispatch();
 
   const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
@@ -132,17 +135,23 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
       return;
     }
     setSaving(true);
+    setCustomData((prev) => {
+      return {
+        ...prev,
+        [parsedPack.name]: derivedData,
+      };
+    });
     dispatch(
-      gameDataSlice.actions.selectCustomData({
-        name: parsedPack.name,
-        gameData: derivedData,
+      gameDataSlice.actions.selectGameData({
+        dataSetName: parsedPack.name,
+        dataType: "custom",
       }),
     );
     pause(500).then(() => {
       setSaving(false);
       onSave();
     });
-  }, [parsedPack, derivedData, dispatch, onSave]);
+  }, [parsedPack, derivedData, setCustomData, dispatch, onSave]);
 
   const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
 
