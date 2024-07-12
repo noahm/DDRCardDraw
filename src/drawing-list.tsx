@@ -24,9 +24,9 @@ const ScrollableDrawings = memo(() => {
   const drawingIds = useDeferredValue(useAppState((s) => s.drawings.ids));
   return (
     <div>
-      {drawingIds.map((did) => (
-        <DrawnSet key={did} drawingId={did} />
-      ))}
+      {drawingIds
+        .map((did) => <DrawnSet key={did} drawingId={did} />)
+        .reverse()}
     </div>
   );
 });
