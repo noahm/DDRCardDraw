@@ -16,7 +16,10 @@ export function PartySocketManager(props: {
   const [ready, setReady] = useState(false);
   const socket = usePartySocket({
     room: props.roomName,
-    host: process.env.NODE_ENV === "development" ? "localhost:1999" : "",
+    host:
+      process.env.NODE_ENV === "development"
+        ? "localhost:1999"
+        : "ddr-card-draw-party.noahm.partykit.dev",
     onMessage(evt) {
       try {
         const data: Broadcast = JSON.parse(evt.data);
