@@ -51,7 +51,6 @@ function AppForRoom() {
     <Provider store={store}>
       <PartySocketManager roomName={params.roomName}>
         <IntlProvider>
-          <ThemeSyncWidget />
           <UpdateManager />
           <Header />
           <DrawingList />
@@ -63,5 +62,10 @@ function AppForRoom() {
 }
 
 export function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <ThemeSyncWidget />
+      <RouterProvider router={router} />
+    </>
+  );
 }

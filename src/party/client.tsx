@@ -4,16 +4,19 @@ import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import React, { useEffect, useState } from "react";
+import { Card, NonIdealState, Spinner } from "@blueprintjs/core";
+import { DelayRender } from "../utils/delay-render";
 
 export function PartySocketManager(props: {
   roomName?: string;
   children: React.ReactNode;
 }) {
   const dispatch = useAppDispatch();
+  // TODO move this state to redux???
   const [ready, setReady] = useState(false);
   const socket = usePartySocket({
     room: props.roomName,
-    host: "localhost:1999", // TODO determine this based on build type, other stuff
+    host: process.env.NODE_ENV === "development" ? "localhost:1999" : "",
     onMessage(evt) {
       try {
         const data: Broadcast = JSON.parse(evt.data);
@@ -61,8 +64,17 @@ export function PartySocketManager(props: {
   }, [socket]);
 
   if (!ready) {
-    // TODO move this into redux state, provide UI
-    return null;
+    return (
+      <section
+        style={{ display: "flex", justifyContent: "center", marginTop: "15vh" }}
+      >
+        <DelayRender>
+          <Card elevation={2} style={{ maxWidth: "30rem" }}>
+            <NonIdealState icon={<Spinner />} title="Connecting..." />
+          </Card>
+        </DelayRender>
+      </section>
+    );
   }
   return props.children;
 }

@@ -7,13 +7,13 @@ import {
 } from "@blueprintjs/core";
 import { Error } from "@blueprintjs/icons";
 import { Select } from "@blueprintjs/select";
-import { ReactNode, useEffect, useState } from "react";
 import { useDataSets } from "./hooks/useDataSets";
 import { groupGameData } from "./utils";
 import { useIntl } from "./hooks/useIntl";
 import { DoubleCaretVertical, FolderOpen } from "@blueprintjs/icons";
 import { useAtomValue } from "jotai";
 import { gameDataLoadingStatus } from "./state/game-data.atoms";
+import { DelayRender } from "./utils/delay-render";
 
 export function VersionSelect() {
   const { t } = useIntl();
@@ -86,24 +86,6 @@ export function DataLoadingSpinner() {
         <Spinner size={SpinnerSize.SMALL} /> Loading game...
       </DelayRender>
     );
-  }
-  return null;
-}
-
-interface DelayProps {
-  children: ReactNode;
-}
-
-function DelayRender(props: DelayProps) {
-  const [display, setDisplay] = useState(false);
-  useEffect(() => {
-    const handle = setTimeout(() => {
-      setDisplay(true);
-    }, 200);
-    return () => clearTimeout(handle);
-  }, []);
-  if (display) {
-    return <>{props.children}</>;
   }
   return null;
 }
