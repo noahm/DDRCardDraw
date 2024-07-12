@@ -33,11 +33,13 @@ module.exports = function (env = {}, argv = {}) {
           static: "./dist",
           hot: true,
           host: "0.0.0.0",
+          historyApiFallback: true,
         },
     entry: "./src/index.tsx",
     output: {
       filename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist"),
+      publicPath: "/",
     },
     optimization: {
       minimize: isProd,

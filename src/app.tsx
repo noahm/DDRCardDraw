@@ -10,7 +10,7 @@ FocusStyleManager.onlyShowFocusOnTabs();
 
 import { DrawingList } from "./drawing-list";
 import { UpdateManager } from "./update-manager";
-import { DrawStateManager } from "./draw-state";
+import { IntlProvider } from "./intl-provider";
 import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { DropHandler } from "./drop-handler";
@@ -18,17 +18,50 @@ import { Provider } from "react-redux";
 import { store } from "./state/store";
 import { PartySocketManager } from "./party/client";
 
-export function App() {
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useParams,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <p>
+          You need to pick an event first. How about this one:{" "}
+          <a href="/e/default">Default Event</a>
+        </p>
+      </>
+    ),
+  },
+  {
+    path: "e/:roomName",
+    element: <AppForRoom />,
+  },
+]);
+
+function AppForRoom() {
+  const params = useParams<"roomName">();
+  if (!params.roomName) {
+    return null;
+  }
   return (
     <Provider store={store}>
-      <PartySocketManager roomName="default" />
-      <DrawStateManager defaultDataSet="a3">
-        <ThemeSyncWidget />
-        <UpdateManager />
-        <Header />
-        <DrawingList />
-        <DropHandler />
-      </DrawStateManager>
+      <PartySocketManager roomName={params.roomName}>
+        <IntlProvider>
+          <ThemeSyncWidget />
+          <UpdateManager />
+          <Header />
+          <DrawingList />
+          <DropHandler />
+        </IntlProvider>
+      </PartySocketManager>
     </Provider>
   );
+}
+
+export function App() {
+  return <RouterProvider router={router} />;
 }

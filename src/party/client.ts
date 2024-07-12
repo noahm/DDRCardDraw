@@ -3,10 +3,14 @@ import type { Broadcast, ReduxAction } from "./types";
 import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-export function PartySocketManager(props: { roomName?: string }) {
+export function PartySocketManager(props: {
+  roomName?: string;
+  children: React.ReactNode;
+}) {
   const dispatch = useAppDispatch();
+  const [ready, setReady] = useState(false);
   const socket = usePartySocket({
     room: props.roomName,
     host: "localhost:1999", // TODO determine this based on build type, other stuff
@@ -16,6 +20,7 @@ export function PartySocketManager(props: { roomName?: string }) {
         switch (data.type) {
           case "roomstate":
             dispatch(receivePartyState(data.state));
+            setReady(true);
             break;
           case "action":
             const foreignAction = {
@@ -55,5 +60,9 @@ export function PartySocketManager(props: { roomName?: string }) {
     });
   }, [socket]);
 
-  return null;
+  if (!ready) {
+    // TODO move this into redux state, provide UI
+    return null;
+  }
+  return props.children;
 }

@@ -152,7 +152,7 @@ export function SongCard(props: Props) {
 
   let jacketBg = {};
   if (jacket) {
-    const prefix = jacket.startsWith("blob:") ? "" : "jackets/";
+    const prefix = jacket.startsWith("blob:") ? "" : "/jackets/";
     jacketBg = {
       backgroundImage: `url("${prefix}${jacket}")`,
     };
