@@ -5198,7 +5198,7 @@ __metadata:
     simfile-parser: "npm:^0.7.2"
     style-loader: "npm:^4.0.0"
     typescript: "npm:^5.5.2"
-    undici: "npm:^6.19.0"
+    undici: "npm:^6.19.2"
     victory: "npm:^37.0.2"
     webpack: "npm:^5.92.0"
     webpack-cli: "npm:^5.1.4"
@@ -11428,10 +11428,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^6.19.0":
-  version: 6.19.0
-  resolution: "undici@npm:6.19.0"
-  checksum: 10/d5dd89a67b38a89bd9779e46f4ccd0722d074ba0f369e35b01c4a789d91933da4cb7deb3e0a06aeabea4a5c2c46de947dc8fda579742c92245d789a6a7667145
+"undici@npm:^6.19.2":
+  version: 6.19.2
+  resolution: "undici@npm:6.19.2"
+  checksum: 10/f4895c0c1e2fcde18076ac98965c231875811b8e14ceab1a7b19e940ed1a2fce69e0864e1186bfdc9347dffe0f39a00daf6dd5e7c0169b2b33de59a859dc2f1d
   languageName: node
   linkType: hard
 
@@ -11563,7 +11563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:1.2.0, use-sync-external-store@npm:^1.2.0":
+"use-sync-external-store@npm:1.2.0":
   version: 1.2.0
   resolution: "use-sync-external-store@npm:1.2.0"
   peerDependencies:
@@ -11572,7 +11572,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:^1.0.0":
+"use-sync-external-store@npm:^1.0.0, use-sync-external-store@npm:^1.2.0":
   version: 1.2.2
   resolution: "use-sync-external-store@npm:1.2.2"
   peerDependencies:
