@@ -18,6 +18,13 @@ const initialState: EventState = {
   cabs: {},
 };
 
+const defaultCab: CabInfo = {
+  activeMatch: null,
+  name: "Primary Cab",
+  id: nanoid(5),
+};
+initialState.cabs[defaultCab.id] = defaultCab;
+
 export const eventSlice = createSlice({
   name: "event",
   initialState,
