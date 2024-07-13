@@ -23,6 +23,7 @@ import {
   RouterProvider,
   useParams,
 } from "react-router-dom";
+import { CabManagement } from "./cab-management";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,18 @@ function AppForRoom() {
         <IntlProvider>
           <UpdateManager />
           <Header />
-          <DrawingList />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "stretch",
+              flex: "1 1 0px",
+              overflow: "hidden",
+            }}
+          >
+            <CabManagement />
+            <DrawingList />
+          </div>
           <DropHandler />
         </IntlProvider>
       </PartySocketManager>

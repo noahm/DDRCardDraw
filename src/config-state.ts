@@ -1,7 +1,7 @@
 import { atom } from "jotai";
 
 export const showEligibleCharts = atom(false);
-export const showPlayerAndRoundLabels = atom(false);
+export const showPlayerAndRoundLabels = atom(true);
 
 export interface ConfigState {
   chartCount: number;

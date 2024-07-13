@@ -19,6 +19,11 @@ body:global(.bp5-dark) {
   position: relative;
 }
 
+.drawing[data-focused] {
+  outline: 2px inset red;
+  outline-offset: -2px;
+}
+
 body:global(.obs-layer) .drawing {
   background-image: none !important;
 }

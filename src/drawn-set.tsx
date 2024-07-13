@@ -85,6 +85,7 @@ const DrawnSet = memo<Props>(function DrawnSet({ drawingId }) {
       >
         <div
           key={drawingId}
+          id={`drawing:${drawingId}`}
           style={{ backgroundImage }}
           className={styles.drawing}
         >
