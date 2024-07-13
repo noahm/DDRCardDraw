@@ -1,9 +1,27 @@
-import { Button, Card, ControlGroup, InputGroup } from "@blueprintjs/core";
+import {
+  Button,
+  Card,
+  ControlGroup,
+  InputGroup,
+  Menu,
+  MenuItem,
+  Popover,
+} from "@blueprintjs/core";
 import { useAppDispatch, useAppState } from "./state/store";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { CabInfo, eventSlice } from "./state/event.slice";
-import { Add, Cross, Remove } from "@blueprintjs/icons";
+import {
+  Add,
+  Cross,
+  Font,
+  Layers,
+  MobileVideo,
+  More,
+  Person,
+  Remove,
+} from "@blueprintjs/icons";
 import { detectedLanguage } from "./utils";
+import { copyPlainTextToClipboard } from "./utils/share";
 
 export function CabManagement() {
   const cabs = Object.values(useAppState((s) => s.event.cabs));
@@ -41,9 +59,7 @@ function AddCabControl() {
           onChange={(e) => setName(e.currentTarget.value)}
           placeholder="Cab name"
         />
-        <Button onClick={addCab}>
-          <Add />
-        </Button>
+        <Button onClick={addCab} icon={<Add />} />
       </ControlGroup>
     </form>
   );
@@ -55,10 +71,63 @@ function CabSummary({ cab }: { cab: CabInfo }) {
     () => dispatch(eventSlice.actions.removeCab(cab.id)),
     [dispatch, cab.id],
   );
+
+  const copySource = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      const sourceType = e.currentTarget.dataset.source;
+      if (sourceType) {
+        const sourcePath = `${window.location.pathname}/cab/${cab.id}/source/${sourceType}`;
+        const sourceUrl = new URL(sourcePath, window.location.href);
+        console.info("Coyping source URL", sourceUrl.href);
+        copyPlainTextToClipboard(
+          sourceUrl.href,
+          "Copied OBS source URL to clipboard",
+        );
+      }
+    },
+    [cab],
+  );
+
+  const sourcesMenu = (
+    <Menu>
+      <MenuItem icon={<MobileVideo />} text="OBS Sources">
+        <MenuItem
+          icon={<Layers />}
+          text="Cards"
+          onClick={copySource}
+          data-source="cards"
+        />
+        <MenuItem
+          icon={<Font />}
+          text="Title"
+          onClick={copySource}
+          data-source="title"
+        />
+        <MenuItem
+          icon={<Person />}
+          text="Player 1"
+          onClick={copySource}
+          data-source="p1"
+        />
+        <MenuItem
+          icon={<Person />}
+          text="Player 2"
+          onClick={copySource}
+          data-source="p2"
+        />
+      </MenuItem>
+
+      <MenuItem icon={<Remove />} text="Remove Cab" onClick={removeCab} />
+    </Menu>
+  );
+
   return (
     <div id={cab.id}>
       <h1>
-        {cab.name} <Button minimal icon={<Remove />} onClick={removeCab} />
+        {cab.name}{" "}
+        <Popover content={sourcesMenu}>
+          <Button minimal icon={<More />} />
+        </Popover>{" "}
       </h1>
       <CurrentMatch cab={cab} />
     </div>

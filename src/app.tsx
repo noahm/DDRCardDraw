@@ -20,6 +20,7 @@ import { PartySocketManager } from "./party/client";
 
 import {
   createBrowserRouter,
+  Outlet,
   RouterProvider,
   useParams,
 } from "react-router-dom";
@@ -41,7 +42,57 @@ const router = createBrowserRouter([
     path: "e/:roomName",
     element: <AppForRoom />,
   },
+  {
+    path: "e/:roomName/cab/:cabId/source",
+    element: <ObsSource />,
+    children: [
+      {
+        path: "cards",
+        lazy: async () => {
+          const { CabCards } = await import("./obs-sources/cards");
+          return { Component: CabCards };
+        },
+      },
+      {
+        path: "title",
+        lazy: async () => {
+          const { CabTitle } = await import("./obs-sources/text");
+          return { Component: CabTitle };
+        },
+      },
+      {
+        path: "p1",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={1} /> };
+        },
+      },
+      {
+        path: "p2",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={2} /> };
+        },
+      },
+    ],
+  },
 ]);
+
+function ObsSource() {
+  const params = useParams<"roomName" | "cabId">();
+  if (!params.roomName) {
+    return null;
+  }
+  return (
+    <Provider store={store}>
+      <PartySocketManager roomName={params.roomName}>
+        <IntlProvider>
+          <Outlet />
+        </IntlProvider>
+      </PartySocketManager>
+    </Provider>
+  );
+}
 
 function AppForRoom() {
   const params = useParams<"roomName">();

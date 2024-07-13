@@ -32,6 +32,14 @@ function ChartList() {
   );
 }
 
+export function ChartsOnly({ drawingId }: Props) {
+  return (
+    <DrawingProvider value={drawingId}>
+      <ChartList />
+    </DrawingProvider>
+  );
+}
+
 function ChartFromContext({ chartId }: { chartId: string }) {
   const chart = useDrawing((d) => d.charts.find((c) => c.id === chartId));
   const veto = useDrawing((d) => d.bans[chartId]);
