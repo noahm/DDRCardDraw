@@ -25,6 +25,9 @@ module.exports = function (env = {}, argv = {}) {
 
   return {
     target: "web",
+    cache: {
+      type: "filesystem",
+    },
     mode: isProd ? "production" : "development",
     devtool: isProd ? "source-map" : "inline-cheap-module-source-map",
     devServer: !serve
