@@ -13,17 +13,19 @@ interface EventState {
   cabs: Record<string, CabInfo>;
 }
 
-const initialState: EventState = {
-  eventName: "",
-  cabs: {},
-};
-
-const defaultCab: CabInfo = {
-  activeMatch: null,
-  name: "Primary Cab",
-  id: nanoid(5),
-};
-initialState.cabs[defaultCab.id] = defaultCab;
+function initialState(): EventState {
+  const defaultCab: CabInfo = {
+    activeMatch: null,
+    name: "Primary Cab",
+    id: nanoid(5),
+  };
+  return {
+    eventName: "",
+    cabs: {
+      [defaultCab.id]: defaultCab,
+    },
+  };
+}
 
 export const eventSlice = createSlice({
   name: "event",
