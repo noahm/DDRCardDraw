@@ -14,15 +14,14 @@ interface EventState {
 }
 
 function initialState(): EventState {
-  const defaultCab: CabInfo = {
-    activeMatch: null,
-    name: "Primary Cab",
-    id: nanoid(5),
-  };
   return {
     eventName: "",
     cabs: {
-      [defaultCab.id]: defaultCab,
+      default: {
+        id: "default",
+        name: "Primary Cab",
+        activeMatch: null,
+      },
     },
   };
 }

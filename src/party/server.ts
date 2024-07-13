@@ -3,18 +3,19 @@ import type { ReduxAction, Roomstate } from "./types";
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import { AppState } from "../state/store";
-import { receivePartyState } from "../state/central";
 
 export default class Server implements Party.Server {
-  private store = configureStore({ reducer });
+  // @ts-expect-error I assign this for sure
+  private store: ReturnType<typeof configureStore>;
 
   constructor(readonly room: Party.Room) {
     console.log("constructor start");
   }
 
   async onStart() {
-    console.log("onStart", typeof reducer);
-    await this.restoreFromStorage();
+    const preloadedState =
+      await this.room.storage.get<AppState>("currentState");
+    this.store = configureStore({ reducer, preloadedState });
     this.store.subscribe(() => {
       this.room.storage.put("currentState", this.store.getState());
     });
@@ -52,14 +53,6 @@ export default class Server implements Party.Server {
       type: "roomstate",
       state: this.store.getState(),
     });
-  }
-
-  private async restoreFromStorage() {
-    const preloadedState =
-      await this.room.storage.get<AppState>("currentState");
-    if (preloadedState) {
-      this.store.dispatch(receivePartyState(preloadedState));
-    }
   }
 }
 
