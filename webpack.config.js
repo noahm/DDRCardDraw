@@ -1,3 +1,4 @@
+require("dotenv").setup();
 const fs = require("fs");
 const { resolve, basename } = require("path");
 
@@ -191,6 +192,7 @@ module.exports = function (env = {}, argv = {}) {
             };
           }),
         ),
+        "process.env.STARTGG_TOKEN": JSON.stringify(process.env.STARTGG_TOKEN),
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[chunkhash:5].css",
