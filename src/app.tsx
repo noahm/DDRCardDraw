@@ -8,7 +8,6 @@ import { FocusStyleManager } from "@blueprintjs/core";
 
 FocusStyleManager.onlyShowFocusOnTabs();
 
-import { DrawingList } from "./drawing-list";
 import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
 import { Header } from "./header";
@@ -25,6 +24,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { CabManagement } from "./cab-management";
+import { MainView } from "./main-view";
 
 const router = createBrowserRouter([
   {
@@ -115,7 +115,7 @@ function AppForRoom() {
             }}
           >
             <CabManagement />
-            <DrawingList />
+            <MainView />
           </div>
           <DropHandler />
         </IntlProvider>

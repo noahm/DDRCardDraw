@@ -3,18 +3,13 @@ import {
   ButtonGroup,
   Card,
   Checkbox,
-  Classes,
   Collapse,
   Divider,
   FormGroup,
   HTMLSelect,
   NumericInput,
-  Tab,
-  Tabs,
 } from "@blueprintjs/core";
 import {
-  Settings,
-  People,
   CaretDown,
   CaretRight,
   Plus,
@@ -31,7 +26,6 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
-import { PlayerNamesControls } from "./player-names";
 import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
@@ -80,32 +74,9 @@ function getDiffsAndRangeForNewStyle(
 }
 
 export default function ControlsDrawer() {
-  const { t } = useIntl();
   return (
     <div className={styles.drawer}>
-      <Tabs id="settings" large>
-        <Tab
-          id="general"
-          icon={<Settings className={Classes.TAB_ICON} />}
-          panel={<GeneralSettings />}
-        >
-          {t("controls.tabs.general")}
-        </Tab>
-        {/* <Tab
-          id="network"
-          icon={<Icon icon={<GlobeNetwork className={Classes.TAB_ICON} />} />}
-          panel={<RemotePeerControls />}
-        >
-          {t("controls.tabs.networking")}
-        </Tab> */}
-        <Tab
-          id="players"
-          icon={<People className={Classes.TAB_ICON} />}
-          panel={<PlayerNamesControls />}
-        >
-          {t("controls.tabs.players")}
-        </Tab>
-      </Tabs>
+      <GeneralSettings />
     </div>
   );
 }
