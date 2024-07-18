@@ -10,5 +10,5 @@ export default {
       },
     },
   ],
-  documents: ["./src/startgg-gql/queries.ts"],
+  documents: ["./src/startgg-gql/*.graphql"],
 };

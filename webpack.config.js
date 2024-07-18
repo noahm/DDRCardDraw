@@ -1,4 +1,4 @@
-require("dotenv").setup();
+require("dotenv/config");
 const fs = require("fs");
 const { resolve, basename } = require("path");
 

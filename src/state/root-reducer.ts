@@ -4,12 +4,14 @@ import { drawingsSlice } from "./drawings.slice";
 import { gameDataSlice } from "./game-data.slice";
 import { receivePartyState } from "./central";
 import { eventSlice } from "./event.slice";
+import { entrantsSlice } from "./entrants.slice";
 
 const combinedReducer = combineSlices(
   drawingsSlice,
   configSlice,
   gameDataSlice,
   eventSlice,
+  entrantsSlice,
 );
 
 export const reducer: typeof combinedReducer = (state, action) => {

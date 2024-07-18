@@ -13,7 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query EventEntrants($eventSlug: String) {\n    event(slug: $eventSlug) {\n      id\n      name\n    }\n  }\n": types.EventEntrantsDocument,
+    "query EventEntrants($eventSlug: String!, $pageNo: Int!) {\n  event(slug: $eventSlug) {\n    id\n    name\n    entrants(query: {page: $pageNo, perPage: 100}) {\n      pageInfo {\n        totalPages\n      }\n      nodes {\n        id\n        name\n      }\n    }\n  }\n}": types.EventEntrantsDocument,
+    "query EventSets($eventSlug: String!, $pageNo: Int!) {\n  event(slug: $eventSlug) {\n    id\n    sets(filters: {hideEmpty: true}, perPage: 100, page: $pageNo) {\n      pageInfo {\n        totalPages\n        total\n      }\n      nodes {\n        id\n        fullRoundText\n        identifier\n        slots {\n          prereqType\n          prereqId\n          prereqPlacement\n          entrant {\n            id\n            name\n          }\n        }\n      }\n    }\n  }\n}": types.EventSetsDocument,
 };
 
 /**
@@ -33,7 +34,11 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query EventEntrants($eventSlug: String) {\n    event(slug: $eventSlug) {\n      id\n      name\n    }\n  }\n"): (typeof documents)["\n  query EventEntrants($eventSlug: String) {\n    event(slug: $eventSlug) {\n      id\n      name\n    }\n  }\n"];
+export function graphql(source: "query EventEntrants($eventSlug: String!, $pageNo: Int!) {\n  event(slug: $eventSlug) {\n    id\n    name\n    entrants(query: {page: $pageNo, perPage: 100}) {\n      pageInfo {\n        totalPages\n      }\n      nodes {\n        id\n        name\n      }\n    }\n  }\n}"): (typeof documents)["query EventEntrants($eventSlug: String!, $pageNo: Int!) {\n  event(slug: $eventSlug) {\n    id\n    name\n    entrants(query: {page: $pageNo, perPage: 100}) {\n      pageInfo {\n        totalPages\n      }\n      nodes {\n        id\n        name\n      }\n    }\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query EventSets($eventSlug: String!, $pageNo: Int!) {\n  event(slug: $eventSlug) {\n    id\n    sets(filters: {hideEmpty: true}, perPage: 100, page: $pageNo) {\n      pageInfo {\n        totalPages\n        total\n      }\n      nodes {\n        id\n        fullRoundText\n        identifier\n        slots {\n          prereqType\n          prereqId\n          prereqPlacement\n          entrant {\n            id\n            name\n          }\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query EventSets($eventSlug: String!, $pageNo: Int!) {\n  event(slug: $eventSlug) {\n    id\n    sets(filters: {hideEmpty: true}, perPage: 100, page: $pageNo) {\n      pageInfo {\n        totalPages\n        total\n      }\n      nodes {\n        id\n        fullRoundText\n        identifier\n        slots {\n          prereqType\n          prereqId\n          prereqPlacement\n          entrant {\n            id\n            name\n          }\n        }\n      }\n    }\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
