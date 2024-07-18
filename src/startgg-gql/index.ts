@@ -2,17 +2,20 @@ import { Entrant } from "../state/entrants.slice";
 import { EventEntrantsDocument, EventSetsDocument } from "./generated/graphql";
 import { Client, cacheExchange, fetchExchange } from "@urql/core";
 
-const client = new Client({
-  url: "https://api.start.gg/gql/alpha",
-  fetchOptions: {
-    headers: {
-      Authorization: `Bearer ${process.env.STARTGG_TOKEN}`,
+function getClient(token: string) {
+  return new Client({
+    url: "https://api.start.gg/gql/alpha",
+    fetchOptions: {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  },
-  exchanges: [cacheExchange, fetchExchange],
-});
+    exchanges: [cacheExchange, fetchExchange],
+  });
+}
 
-export async function getEventEntrants(slug: string) {
+export async function getEventEntrants(token: string, slug: string) {
+  const client = getClient(token);
   let pageNo = 0;
 
   const ret: Entrant[] = [];
@@ -45,7 +48,8 @@ export interface TournamentSet {
   playerIds: string[];
 }
 
-export async function getEventSets(slug: string) {
+export async function getEventSets(token: string, slug: string) {
+  const client = getClient(token);
   let pageNo = 0;
 
   const ret: TournamentSet[] = [];
