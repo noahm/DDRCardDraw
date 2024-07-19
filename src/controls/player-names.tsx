@@ -36,8 +36,10 @@ export function PlayerNamesControls() {
   );
 }
 
-const startggKeyAtom = atom<string | null>(process.env.STARTGG_TOKEN as string);
-const startggEventSlug = atom<string | null>(null);
+export const startggKeyAtom = atom<string | null>(
+  process.env.STARTGG_TOKEN as string,
+);
+export const startggEventSlug = atom<string | null>(null);
 
 function StartggEntrantImport() {
   const [apiKey, setApiKey] = useAtom(startggKeyAtom);

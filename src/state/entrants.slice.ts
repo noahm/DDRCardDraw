@@ -1,5 +1,4 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-
 export interface Entrant {
   id: string;
   ingameName?: string;
@@ -20,6 +19,9 @@ export const entrantsSlice = createSlice({
   selectors: {
     selectAll: selectors.selectAll,
     selectById: selectors.selectById,
+    selectFromIds(state, entrantIds: string[]) {
+      return entrantIds.map((id) => selectors.selectById(state, id));
+    },
     selectIds: selectors.selectIds,
   },
 });

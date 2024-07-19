@@ -3,8 +3,9 @@ import { PlayerNamesControls } from "./controls/player-names";
 import { DrawingList } from "./drawing-list";
 import { atom, useAtom } from "jotai";
 import styles from "./main-view.css";
+import { MatchListAndSettings } from "./matches";
 
-export type MainTabId = "drawings" | "players";
+export type MainTabId = "drawings" | "players" | "sets";
 export const mainTabAtom = atom<MainTabId>("drawings");
 
 export function MainView() {
@@ -22,6 +23,9 @@ export function MainView() {
       </Tab>
       <Tab id="players" panel={<PlayerNamesControls />}>
         Participants
+      </Tab>
+      <Tab id="sets" panel={<MatchListAndSettings />}>
+        Sets
       </Tab>
     </Tabs>
   );

@@ -1,4 +1,5 @@
 import { Entrant } from "../state/entrants.slice";
+import { TournamentSet } from "../state/matches.slice";
 import { EventEntrantsDocument, EventSetsDocument } from "./generated/graphql";
 import { Client, cacheExchange, fetchExchange } from "@urql/core";
 
@@ -42,12 +43,6 @@ export async function getEventEntrants(token: string, slug: string) {
   return ret;
 }
 
-export interface TournamentSet {
-  id: string;
-  roundText: string;
-  playerIds: string[];
-}
-
 export async function getEventSets(token: string, slug: string) {
   const client = getClient(token);
   let pageNo = 0;
@@ -64,10 +59,11 @@ export async function getEventSets(token: string, slug: string) {
     if (results.data?.event?.sets?.nodes) {
       for (const set of results.data.event.sets.nodes) {
         if (!set) continue;
+        const players = set.slots!.map((slot) => slot!.entrant?.id);
         ret.push({
           id: set.id!,
           roundText: set.fullRoundText!,
-          playerIds: set.slots!.map((slot) => slot!.entrant!.id!),
+          playerIds: players.filter((pid): pid is string => !!pid),
         });
       }
     }

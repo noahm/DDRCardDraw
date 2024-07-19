@@ -22,6 +22,8 @@ import {
 } from "@blueprintjs/icons";
 import { detectedLanguage } from "./utils";
 import { copyPlainTextToClipboard } from "./utils/share";
+import { useSetAtom } from "jotai";
+import { mainTabAtom } from "./main-view";
 
 export function CabManagement() {
   const cabs = Object.values(useAppState((s) => s.event.cabs));
@@ -155,6 +157,7 @@ function CurrentMatch(props: { cab: CabInfo }) {
     if (!props.cab.activeMatch) return null;
     return s.drawings.entities[props.cab.activeMatch] || null;
   });
+  const setMainTab = useSetAtom(mainTabAtom);
 
   const scrollToDrawing = useCallback(() => {
     if (!drawing) {
@@ -170,6 +173,7 @@ function CurrentMatch(props: { cab: CabInfo }) {
     if (priorFocus) {
       delete priorFocus.dataset.focused;
     }
+    setMainTab("drawings");
     el.scrollIntoView({ behavior: "smooth" });
     el.dataset.focused = "";
   }, [drawing]);
