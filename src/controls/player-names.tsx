@@ -39,7 +39,9 @@ export function PlayerNamesControls() {
 export const startggKeyAtom = atom<string | null>(
   process.env.STARTGG_TOKEN as string,
 );
-export const startggEventSlug = atom<string | null>(null);
+export const startggEventSlug = atom<string | null>(
+  "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
+);
 
 function StartggEntrantImport() {
   const [apiKey, setApiKey] = useAtom(startggKeyAtom);

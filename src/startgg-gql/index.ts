@@ -59,11 +59,14 @@ export async function getEventSets(token: string, slug: string) {
     if (results.data?.event?.sets?.nodes) {
       for (const set of results.data.event.sets.nodes) {
         if (!set) continue;
-        const players = set.slots!.map((slot) => slot!.entrant?.id);
         ret.push({
           id: set.id!,
           roundText: set.fullRoundText!,
-          playerIds: players.filter((pid): pid is string => !!pid),
+          slots: set.slots!.map((slot) =>
+            slot!.entrant?.id
+              ? { type: "player", playerId: slot!.entrant.id }
+              : { type: "setprereq", setId: slot!.prereqId! },
+          ),
         });
       }
     }

@@ -1,9 +1,22 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
+interface SetPlayer {
+  type: "player";
+  playerId: string;
+}
+
+interface SetPrereq {
+  type: "setprereq";
+  setId: string;
+}
+
+export type Slot = SetPlayer | SetPrereq;
+
 export interface TournamentSet {
   id: string;
   roundText: string;
-  playerIds: string[];
+  slots: Slot[];
+  winningPlayerId?: string;
 }
 
 const setsAdapter = createEntityAdapter<TournamentSet>();

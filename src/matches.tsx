@@ -3,8 +3,8 @@ import { useAtom } from "jotai";
 import { useCallback } from "react";
 import { startggKeyAtom, startggEventSlug } from "./controls/player-names";
 import { getEventSets } from "./startgg-gql";
-import { useAppDispatch, useAppState } from "./state/store";
-import { setsSlice, TournamentSet } from "./state/matches.slice";
+import { AppState, useAppDispatch, useAppState } from "./state/store";
+import { setsSlice, Slot, TournamentSet } from "./state/matches.slice";
 import { entrantsSlice } from "./state/entrants.slice";
 
 export function MatchListAndSettings() {
@@ -21,13 +21,23 @@ export function MatchListAndSettings() {
 }
 
 function TournamentSetPreview(props: { set: TournamentSet }) {
-  const players = useAppState((s) =>
-    entrantsSlice.selectors.selectFromIds(s, props.set.playerIds),
-  );
+  const [slot1, slot2] = props.set.slots;
+  const getPlayerForSlot = (slot: Slot) => (s: AppState) => {
+    if (slot.type === "player")
+      return entrantsSlice.selectors.selectById(s, slot.playerId);
+    const prereqSet = setsSlice.selectors.selectById(s, slot.setId);
+    if (prereqSet.winningPlayerId) {
+      return entrantsSlice.selectors.selectById(s, prereqSet.winningPlayerId);
+    }
+    return null;
+  };
+  const player1 = useAppState(getPlayerForSlot(slot1));
+  const player2 = useAppState(getPlayerForSlot(slot2));
   return (
     <Text tagName="p">
-      <strong>{props.set.roundText}</strong> - {players[0]?.startggTag} vs{" "}
-      {players[1]?.startggTag || <em>???</em>}
+      <strong>{props.set.roundText}</strong> -{" "}
+      {player1?.startggTag || <em>TBD</em>} vs{" "}
+      {player2?.startggTag || <em>TBD</em>}
     </Text>
   );
 }
