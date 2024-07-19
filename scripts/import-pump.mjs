@@ -39,8 +39,9 @@ function labelToFlag(label) {
 }
 
 // specify a mix ancestor
-const DATABASE_FILE = "pumpout.db";
-const VERSION_ANCESTOR = 181;
+const DATABASE_FILE = "../pumpout-db-updates/db/pumpout-phoenix-2.01.db";
+const NEW_JACKETS_DIR = "../pumpout-db-updates/img_big";
+const VERSION_ANCESTOR = 187;
 const DATA_STUB = "pump-phoenix";
 const JACKET_DIR = "pump";
 
@@ -58,7 +59,10 @@ function queueJacketDownload(jacketPath) {
   const filename = path.basename(jacketPath, ".png");
   const outPath = `${JACKET_DIR}/${filename.replace(/^Phoenix_/, "")}.jpg`;
   if (GET_IMAGES) {
-    let imgLocation = path.resolve(__dirname, `../new_img/${filename}.png`);
+    let imgLocation = path.resolve(
+      __dirname,
+      `../${NEW_JACKETS_DIR}/${filename}.png`,
+    );
     if (!fs.existsSync(imgLocation)) {
       imgLocation = `https://pumpout2020.anyhowstep.com${jacketPath}`;
     }
