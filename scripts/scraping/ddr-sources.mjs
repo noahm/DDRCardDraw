@@ -7,6 +7,17 @@
  * Obviously the filename does what it says.
  */
 
+export const DDR_WORLD = {
+  remy: "https://remywiki.com/AC_DDR_WORLD",
+  ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=6561&show_notecounts=1&sort=&sort_order=asc",
+  mergeSkillAttack: false,
+  filename: "ddr_world.json",
+  jacketPrefix: "",
+  preferredJacketSource: "remy",
+  includeFolders: true,
+  fetchJackets: true,
+};
+
 export const DDR_A3 = {
   remy: "https://remywiki.com/AC_DDR_A3",
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5518&show_notecounts=1&sort=&sort_order=asc",

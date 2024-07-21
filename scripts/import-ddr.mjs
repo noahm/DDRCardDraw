@@ -8,7 +8,7 @@
 import { readFile } from "fs/promises";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { DDR_A3 as MIX_META } from "./scraping/ddr-sources.mjs";
+import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";

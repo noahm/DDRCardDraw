@@ -71,7 +71,9 @@ export async function getRemovedSongUrls(pageUrl) {
  * @param {JSDOM} dom
  */
 function isSongPage(dom) {
-  return !!dom.window.document.querySelector('a[href="/Category:DDR_Songs"]');
+  return !!dom.window.document.querySelector(
+    'a[href="/Category:DanceDanceRevolution_Songs"]',
+  );
 }
 
 /**
