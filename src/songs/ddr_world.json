@@ -30278,29 +30278,6 @@
       "saIndex": "365"
     },
     {
-      "name": "Lesson by DJ",
-      "name_translation": "",
-      "artist": "U.T.D & Friends",
-      "artist_translation": "",
-      "bpm": "120",
-      "folder": "DanceDanceRevolution A",
-      "charts": [
-        {
-          "step": 44,
-          "freeze": 1,
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 1.55
-        }
-      ],
-      "remyLink": "http://remywiki.com/Lesson%20by%20DJ",
-      "jacket": "Lesson by DJ.png",
-      "genre": "",
-      "saHash": "08QP8bOQ6OOdd11Dq81db1l8IdiDbod6",
-      "saIndex": "717"
-    },
-    {
       "name": "Let Me Know",
       "name_translation": "",
       "artist": "ZEOL",
@@ -40332,63 +40309,6 @@
       "genre": "HAPPY GABBA",
       "saHash": "6oI9d9lO6Q0iDD8dIIO08qIODiqiIqDl",
       "saIndex": "628"
-    },
-    {
-      "name": "Play Hard",
-      "name_translation": "",
-      "artist": "David Guetta feat. Ne-Yo, Akon",
-      "artist_translation": "",
-      "bpm": "130",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.55
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.5
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.5
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.5
-        },
-        {
-          "lvl": 5,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 5.45
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.45
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.5
-        }
-      ],
-      "remyLink": "http://remywiki.com/Play%20Hard",
-      "jacket": "Play Hard.png",
-      "genre": "",
-      "saHash": "oi6P9Oq19ooo00bDiPQ809DQQQD8qPlD",
-      "saIndex": "876"
     },
     {
       "name": "Playa (Original Mix)",
@@ -56481,6 +56401,11 @@
           "sanbaiTier": 15.6
         },
         {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
           "lvl": 6,
           "style": "double",
           "diffClass": "basic",
@@ -56497,6 +56422,11 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.3
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge"
         }
       ],
       "jacket": "Throw Out.jpg",
