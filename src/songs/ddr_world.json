@@ -36,7 +36,8 @@
       "flareRank",
       "goldExclusive",
       "grandPrixPack",
-      "tempUnlock"
+      "tempUnlock",
+      "copyStrikes"
     ],
     "granularTierResolution": 20,
     "lastUpdated": 1721680459079
@@ -67,6 +68,7 @@
       "usLocked": "Japan-only songs",
       "tempUnlock": "Formerly unlockable (SDVX, DRS, etc)",
       "shock": "Shock arrow charts",
+      "copyStrikes": "Songs with streaming copyright issues",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -9581,6 +9583,7 @@
           "sanbaiTier": 9.5
         }
       ],
+      "flags": ["copyStrikes"],
       "remyLink": "http://remywiki.com/Clarity",
       "jacket": "Clarity.png",
       "genre": "",
@@ -25832,6 +25835,7 @@
           "sanbaiTier": 11.55
         }
       ],
+      "flags": ["copyStrikes"],
       "remyLink": "http://remywiki.com/I%27m%20an%20Albatraoz",
       "jacket": "I'm an Albatraoz.png",
       "genre": "",
@@ -26102,6 +26106,7 @@
           "sanbaiTier": 17
         }
       ],
+      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/I-W-U_(I_Want_U)",
       "jacket": "I-W-U_(I_Want_U).jpg",
       "saHash": "ob6IPbiqD969Q66808obd908DI81bqPi"
@@ -32988,6 +32993,7 @@
           "sanbaiTier": 17.35
         }
       ],
+      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/Mathematical_good-bye",
       "jacket": "Mathematical_good-bye.jpg",
       "saHash": "08O1i8ib1lDPbdOoPlD069PoOI1860qi"
@@ -36906,6 +36912,7 @@
           "sanbaiTier": 10.6
         }
       ],
+      "flags": ["copyStrikes"],
       "remyLink": "http://remywiki.com/No%20Tears%20Left%20to%20Cry",
       "jacket": "No Tears Left to Cry.png",
       "genre": "",
@@ -44385,6 +44392,7 @@
           "sanbaiTier": 16.5
         }
       ],
+      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/ROCK_THE_PARTY",
       "jacket": "ROCK_THE_PARTY.jpg",
       "saHash": "1II6199qOd1bo0P0D19Q9qd06ll1QOl9"
@@ -49881,6 +49889,7 @@
           "sanbaiTier": 17.15
         }
       ],
+      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/Sparkle_Dreams",
       "jacket": "Sparkle_Dreams.jpg",
       "saHash": "o89biodIl0Oo1bQqll86QDi0oQQd61Db"
@@ -69166,6 +69175,7 @@
           "sanbaiTier": 17.1
         }
       ],
+      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/Perfect_eater",
       "jacket": "Perfect Eater.jpg",
       "saHash": "diq9D0qbI00iOOb69q6Q1Q90PQOlo6dl"

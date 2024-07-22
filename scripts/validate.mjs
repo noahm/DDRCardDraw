@@ -38,14 +38,12 @@ function validateContents(dataFile) {
     errors.add("default level bounds are reversed");
   }
 
-  if (dataFile.i18n.ja) {
-    for (const key of allKeys) {
-      if (!dataFile.i18n.en[key]) {
-        errors.add("missing translation for " + key);
-      }
-      if (difficulties.has(key) && !dataFile.i18n.en["$abbr"][key]) {
-        errors.add("missing abbreviated translation for " + key);
-      }
+  for (const key of allKeys) {
+    if (!dataFile.i18n.en[key]) {
+      errors.add("missing translation for " + key);
+    }
+    if (difficulties.has(key) && !dataFile.i18n.en["$abbr"][key]) {
+      errors.add("missing abbreviated translation for " + key);
     }
   }
 
