@@ -2964,6 +2964,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jsdom@npm:^21.1.7":
+  version: 21.1.7
+  resolution: "@types/jsdom@npm:21.1.7"
+  dependencies:
+    "@types/node": "npm:*"
+    "@types/tough-cookie": "npm:*"
+    parse5: "npm:^7.0.0"
+  checksum: 10/a5ee54aec813ac928ef783f69828213af4d81325f584e1fe7573a9ae139924c40768d1d5249237e62d51b9a34ed06bde059c86c6b0248d627457ec5e5d532dfa
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.15, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
@@ -3143,6 +3154,13 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 10/fd0b73f873a64ed5366d1d757c42e5dbbb2201002667c8958eda7ca02fff09d73de91360572db465ee00240c32d50c6039ea736d8eca374300f9664f93e8da39
+  languageName: node
+  linkType: hard
+
+"@types/tough-cookie@npm:*":
+  version: 4.0.5
+  resolution: "@types/tough-cookie@npm:4.0.5"
+  checksum: 10/01fd82efc8202670865928629697b62fe9bf0c0dcbc5b1c115831caeb073a2c0abb871ff393d7df1ae94ea41e256cb87d2a5a91fd03cdb1b0b4384e08d4ee482
   languageName: node
   linkType: hard
 
@@ -4957,6 +4975,7 @@ __metadata:
     "@types/better-sqlite3": "npm:^7.6.10"
     "@types/fuzzy-search": "npm:^2.1.5"
     "@types/inquirer": "npm:^9.0.7"
+    "@types/jsdom": "npm:^21.1.7"
     "@types/node": "npm:^20.8.9"
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch"
     "@types/react": "npm:^18.3.3"
@@ -8505,7 +8524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^7.1.1, parse5@npm:^7.1.2":
+"parse5@npm:^7.0.0, parse5@npm:^7.1.1, parse5@npm:^7.1.2":
   version: 7.1.2
   resolution: "parse5@npm:7.1.2"
   dependencies:
