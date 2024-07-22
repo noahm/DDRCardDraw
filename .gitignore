@@ -1,12 +1,12 @@
 .pnp.*
 .yarn/*
+.partykit/*
+.env
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-.env
-.partykit
 
 dist
 node_modules
