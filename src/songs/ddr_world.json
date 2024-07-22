@@ -5464,19 +5464,21 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "difficult",
-          "sanbaiTier": 12.9
+          "sanbaiTier": 12.9,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "expert",
-          "sanbaiTier": 15.8
+          "sanbaiTier": 15.8,
+          "flags": ["shock"]
         },
         {
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 18.7
         },
         {
@@ -5489,19 +5491,21 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "difficult",
-          "sanbaiTier": 12.85
+          "sanbaiTier": 12.85,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "double",
           "diffClass": "expert",
-          "sanbaiTier": 15.7
+          "sanbaiTier": 15.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 18.7
         }
       ],
@@ -13059,19 +13063,21 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "difficult",
-          "sanbaiTier": 11.65
+          "sanbaiTier": 11.65,
+          "flags": ["shock"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "expert",
-          "sanbaiTier": 14.7
+          "sanbaiTier": 14.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.9
         },
         { "lvl": 7, "style": "double", "diffClass": "basic", "sanbaiTier": 7 },
@@ -13079,19 +13085,21 @@
           "lvl": 11,
           "style": "double",
           "diffClass": "difficult",
-          "sanbaiTier": 11.55
+          "sanbaiTier": 11.55,
+          "flags": ["shock"]
         },
         {
           "lvl": 14,
           "style": "double",
           "diffClass": "expert",
-          "sanbaiTier": 14.7
+          "sanbaiTier": 14.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.75
         }
       ],
@@ -14045,7 +14053,8 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 18.7
+          "sanbaiTier": 18.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 8,
@@ -14069,7 +14078,8 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 18.9
+          "sanbaiTier": 18.9,
+          "flags": ["shock"]
         }
       ],
       "remyLink": "http://remywiki.com/DIGITALIZER",
@@ -18572,19 +18582,21 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "difficult",
-          "sanbaiTier": 8.4
+          "sanbaiTier": 8.4,
+          "flags": ["shock"]
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "expert",
-          "sanbaiTier": 13.3
+          "sanbaiTier": 13.3,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 15.5
         },
         {
@@ -18597,19 +18609,21 @@
           "lvl": 8,
           "style": "double",
           "diffClass": "difficult",
-          "sanbaiTier": 8.4
+          "sanbaiTier": 8.4,
+          "flags": ["shock"]
         },
         {
           "lvl": 12,
           "style": "double",
           "diffClass": "expert",
-          "sanbaiTier": 12.4
+          "sanbaiTier": 12.4,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 15.45
         }
       ],
@@ -61462,7 +61476,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.35
         },
         {
@@ -61487,7 +61501,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.55
         }
       ],
@@ -71653,11 +71667,31 @@
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
-        { "lvl": 10, "style": "single", "diffClass": "difficult" },
-        { "lvl": 14, "style": "single", "diffClass": "expert" },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "flags": ["shock"]
+        },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
-        { "lvl": 10, "style": "double", "diffClass": "difficult" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" }
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult",
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert",
+          "flags": ["shock"]
+        }
       ],
       "remyLink": "https://remywiki.com/Hito_mania",
       "jacket": "人マニア.jpg"
@@ -76980,12 +77014,22 @@
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 4, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
-        { "lvl": 12, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"]
+        },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "challenge" },
-        { "lvl": 14, "style": "double", "diffClass": "expert" }
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert",
+          "flags": ["shock"]
+        }
       ],
       "jacket": "粛聖!! ロリ神レクイエム☆.jpg",
       "remyLink": "https://remywiki.com/Shukusei!!_Loli-kami_requiem"
