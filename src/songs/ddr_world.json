@@ -6985,7 +6985,8 @@
           "lvl": 19,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 19.4
+          "sanbaiTier": 19.4,
+          "flags": ["grandPrixPack"]
         },
         {
           "lvl": 10,
@@ -7009,10 +7010,10 @@
           "lvl": 19,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 19.5
+          "sanbaiTier": 19.5,
+          "flags": ["grandPrixPack"]
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/BREAKING_THE_FUTURE",
       "saHash": "dlq91b19ld10IdIqQ9q99O8QDOOi18dq",
       "saIndex": "1188",
