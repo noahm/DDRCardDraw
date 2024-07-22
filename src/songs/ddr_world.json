@@ -34,7 +34,7 @@
     "flags": [
       "shock",
       "unlock",
-      "newInA3",
+      "flareRank",
       "goldenLeague",
       "extraExclusive",
       "goldExclusive",
@@ -50,7 +50,7 @@
   "defaults": {
     "style": "single",
     "difficulties": ["difficult", "expert", "challenge"],
-    "flags": ["shock", "unlock", "newInA3"],
+    "flags": ["shock", "unlock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
@@ -64,7 +64,7 @@
       "difficult": "Difficult",
       "expert": "Expert",
       "challenge": "Challenge",
-      "newInA3": "Challenge charts added in A3",
+      "flareRank": "Flare skill rank unlocks",
       "unlock": "Unlockable songs",
       "goldExclusive": "20th Gold Cab Exclusive",
       "goldenLeague": "Golden League",
@@ -1861,7 +1861,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["shock", "newInA3"],
+          "flags": ["shock"],
           "sanbaiTier": 14.75
         },
         {
@@ -1886,7 +1886,7 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["shock", "newInA3"],
+          "flags": ["shock"],
           "sanbaiTier": 14.7
         }
       ],
@@ -3058,7 +3058,6 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 15.35
         },
         {
@@ -3083,7 +3082,6 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 15.3
         }
       ],
@@ -3327,7 +3325,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.7
         },
         {
@@ -3352,7 +3349,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.65
         }
       ],
@@ -4410,7 +4406,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.9
         },
         {
@@ -4435,7 +4430,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.9
         }
       ],
@@ -6026,7 +6020,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.85
         },
         {
@@ -6051,7 +6044,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.95
         }
       ],
@@ -6609,7 +6601,6 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 14.35
         },
         {
@@ -6640,7 +6631,6 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 14.2
         }
       ],
@@ -11030,7 +11020,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.2
         },
         {
@@ -11061,7 +11050,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.3
         }
       ],
@@ -11465,7 +11453,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.7
         },
         {
@@ -11490,7 +11477,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.45
         }
       ],
@@ -14083,7 +14069,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.7
         },
         {
@@ -14108,7 +14093,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.9
         }
       ],
@@ -14969,7 +14953,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 16.75
         },
         {
@@ -14994,7 +14977,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 16.05
         }
       ],
@@ -19958,7 +19940,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 14.4
         },
         {
@@ -19989,7 +19971,7 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 14.45
         }
       ],
@@ -20558,7 +20540,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3", "grandPrixPack"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.7
         },
         {
@@ -20589,7 +20571,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3", "grandPrixPack"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.45
         }
       ],
@@ -21256,7 +21238,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 16.3
         },
         {
@@ -21281,7 +21262,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 16.45
         }
       ],
@@ -21383,7 +21363,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.4
         },
         {
@@ -21408,7 +21387,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.4
         }
       ],
@@ -21879,7 +21857,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.45
         },
         {
@@ -21904,7 +21881,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.1
         }
       ],
@@ -22100,7 +22076,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.55
         },
         { "lvl": 8, "style": "double", "diffClass": "basic", "sanbaiTier": 8 },
@@ -22120,7 +22095,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.65
         }
       ],
@@ -22165,7 +22139,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"]
+          "flags": []
         },
         { "lvl": 9, "style": "double", "diffClass": "basic", "sanbaiTier": 9 },
         {
@@ -22184,7 +22158,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"]
+          "flags": []
         }
       ],
       "remyLink": "http://remywiki.com/Good%20Looking",
@@ -22726,6 +22700,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" },
         { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["flareRank"],
       "jacket": "Gravity Collapse.jpg",
       "remyLink": "https://remywiki.com/Gravity_Collapse"
     },
@@ -22772,7 +22747,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.4
         },
         {
@@ -22803,7 +22778,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.25
         }
       ],
@@ -23328,7 +23303,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"]
+          "flags": []
         },
         {
           "step": 255,
@@ -23358,7 +23333,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"]
+          "flags": []
         }
       ],
       "remyLink": "http://remywiki.com/HAPPY%E2%98%86LUCKY%E2%98%86YEAPPY",
@@ -24873,7 +24848,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.1
         },
         {
@@ -24904,7 +24879,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"]
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/Hopeful",
@@ -25397,6 +25372,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["flareRank"],
       "jacket": "HyperNOAH.jpg",
       "remyLink": "https://remywiki.com/HyperNOAH"
     },
@@ -30814,7 +30790,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.8
         },
         {
@@ -30839,7 +30814,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.2
         }
       ],
@@ -35177,7 +35151,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.6
         },
         {
@@ -35202,7 +35175,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.65
         }
       ],
@@ -36084,7 +36056,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.4
         },
         {
@@ -36109,7 +36080,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.2
         }
       ],
@@ -40269,7 +40239,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3", "grandPrixPack"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.3
         },
         {
@@ -40300,7 +40270,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3", "grandPrixPack"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.5
         }
       ],
@@ -41746,7 +41716,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.85
         },
         {
@@ -41777,7 +41747,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.6
         }
       ],
@@ -42991,7 +42961,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.3
         },
         {
@@ -43016,7 +42985,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 17.4
         }
       ],
@@ -44457,6 +44425,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" },
         { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["flareRank"],
       "jacket": "Roche Limit.jpg",
       "remyLink": "https://remywiki.com/Roche_Limit"
     },
@@ -44898,7 +44867,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["shock", "newInA3"],
+          "flags": ["shock"],
           "sanbaiTier": 16.85
         },
         {
@@ -44923,7 +44892,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["shock", "newInA3"],
+          "flags": ["shock"],
           "sanbaiTier": 16.25
         }
       ],
@@ -50790,7 +50759,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["shock", "newInA3"],
+          "flags": ["shock"],
           "sanbaiTier": 16.55
         },
         {
@@ -50815,7 +50784,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["shock", "newInA3"],
+          "flags": ["shock"],
           "sanbaiTier": 16.25
         }
       ],
@@ -50867,7 +50836,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.8
         },
         {
@@ -50898,7 +50867,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.55
         }
       ],
@@ -54281,7 +54250,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.15
         },
         {
@@ -54312,7 +54281,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.15
         }
       ],
@@ -54942,7 +54911,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.6
         },
         {
@@ -54973,7 +54942,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.5
         }
       ],
@@ -55999,7 +55968,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.8
         },
         {
@@ -56024,7 +55992,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.8
         }
       ],
@@ -59861,7 +59828,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.1
         },
         {
@@ -59892,7 +59859,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.5
         }
       ],
@@ -62599,6 +62566,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["flareRank"],
       "jacket": "WONDER COASTER.jpg",
       "remyLink": "https://remywiki.com/WONDER_COASTER"
     },
@@ -62701,7 +62669,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 16.45
         },
         {
@@ -62732,7 +62699,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 16.2
         }
       ],
@@ -63528,7 +63494,7 @@
           "style": "single",
           "diffClass": "challenge",
           "sanbaiTier": 18.6,
-          "flags": ["newInA3"]
+          "flags": []
         },
         {
           "lvl": 6,
@@ -63553,7 +63519,7 @@
           "style": "double",
           "diffClass": "challenge",
           "sanbaiTier": 18.4,
-          "flags": ["newInA3"]
+          "flags": []
         }
       ],
       "remyLink": "http://remywiki.com/Yuni%27s%20Nocturnal%20Days",
@@ -63803,6 +63769,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" },
         { "lvl": 16, "style": "double", "diffClass": "challenge" }
       ],
+      "flags": ["flareRank"],
       "search_hint": "Odyssey",
       "jacket": "Ødyssey.jpg",
       "remyLink": "https://remywiki.com/Odyssey"
@@ -67460,7 +67427,6 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 14.4
         },
         { "lvl": 4, "style": "double", "diffClass": "basic", "sanbaiTier": 4 },
@@ -67480,7 +67446,6 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 14.3
         }
       ],
@@ -74448,7 +74413,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"]
+          "flags": []
         },
         {
           "step": 245,
@@ -74478,7 +74443,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"]
+          "flags": []
         }
       ],
       "remyLink": "http://remywiki.com/%E6%81%8B%E6%84%9B%E8%A6%B3%E6%B8%AC",
@@ -75852,7 +75817,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.05
         },
         {
@@ -75877,7 +75842,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.4
         }
       ],
@@ -76216,6 +76181,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["flareRank"],
       "jacket": "極地大衝撃.jpg",
       "remyLink": "https://remywiki.com/Kyokuchi_daishougeki"
     },
@@ -76263,7 +76229,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3", "grandPrixPack"]
+          "flags": ["grandPrixPack"]
         },
         {
           "step": 232,
@@ -76293,7 +76259,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3", "grandPrixPack"]
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/%E6%B5%B7%E7%A5%9E",
@@ -76615,7 +76581,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.8
         },
         {
@@ -76646,7 +76611,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
           "sanbaiTier": 18.6
         }
       ],
