@@ -99,6 +99,11 @@ try {
   //   return ratingsLists[key];
   // }
 
+  const knownRemoved = new Set([
+    "oi6P9Oq19ooo00bDiPQ809DQQQD8qPlD", // Play Hard
+    "08QP8bOQ6OOdd11Dq81db1l8IdiDbod6", // Lesson by DJ
+  ]);
+
   const lockFlags = {
     10: null, //"a20+usLocked"
     20: ["goldenLeague"],
@@ -138,7 +143,7 @@ try {
     const existingSong = existingData.songs.find(
       (s) => s.saHash === song.song_id,
     );
-    if (deleted) {
+    if (deleted || knownRemoved.has(song.song_id)) {
       if (existingSong) {
         ui.log.write(`Deleting removed song: ${existingSong.name}`);
         existingData.songs = existingData.songs.filter(
@@ -205,14 +210,14 @@ try {
         const givenTier =
           song.tiers[diffIdxFor(existingChart.diffClass, existingChart.style)];
         if (givenTier && givenTier !== 1) {
-          existingChart.sanbaiTier = existingChart.lvl + givenTier;
+          existingChart.sanbaiTier = freshChartData.lvl + givenTier;
         }
-        // if (existingChart.lvl !== freshChartData.lvl) {
-        //   ui.log.write(
-        //     `Updating lvl of ${song.song_name} ${freshChartData.diffClass}`,
-        //   );
-        //   existingChart.lvl = freshChartData.lvl;
-        // }
+        if (existingChart.lvl !== freshChartData.lvl) {
+          ui.log.write(
+            `Updating lvl of ${song.song_name} ${freshChartData.diffClass}`,
+          );
+          existingChart.lvl = freshChartData.lvl;
+        }
         // const meaningfulFlags = (existingChart.flags || []).filter(
         //   (f) => f !== "shock" && f !== "newInA3",
         // );
