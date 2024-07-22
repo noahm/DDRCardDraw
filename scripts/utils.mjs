@@ -53,15 +53,22 @@ export function sortSongs(songs) {
 
 /**
  * @param {string} url
+ * @returns {Promise<JSDOM | null>}
  */
 async function getDomInternal(url) {
   try {
-    return JSDOM.fromURL(url);
+    console.log("fetching", url);
+    const req = await fetch(url);
+    return new JSDOM(await req.text());
   } catch (e) {
-    console.error(e);
+    console.error("Caught error:", e);
   }
 }
 
+/**
+ *
+ * @param {string} url
+ */
 export function getDom(url) {
   return requestQueue.add(() => getDomInternal(url));
 }
@@ -79,7 +86,7 @@ export async function writeJsonData(data, filePath) {
 
 /** @type {PQueue} */
 export const requestQueue = new PQueue({
-  concurrency: 6, // 6 concurrent max
+  concurrency: 1, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
 });
@@ -127,13 +134,19 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
   const { absolute, relative } = getOutputPath(coverUrl, localFilename);
   if (!existsSync(absolute)) {
     requestQueue
-      .add(() => jimp.read(coverUrl), { throwOnTimeout: true })
+      .add(
+        () => {
+          console.log("fetching", coverUrl);
+          return jimp.read(coverUrl);
+        },
+        { throwOnTimeout: true },
+      )
       .then((img) =>
         img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute),
       )
       .catch((e) => {
-        console.error("image download failure");
-        console.error(e);
+        console.error("image download failure for", coverUrl);
+        console.error(e.cause);
       });
   }
 

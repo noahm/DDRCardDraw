@@ -133,7 +133,7 @@ try {
   //     );
   //   }
   // }
-  for (const song of sanbaiData) {
+  const tasks = sanbaiData.map(async (song) => {
     const deleted = song.deleted;
     const existingSong = existingData.songs.find(
       (s) => s.saHash === song.song_id,
@@ -145,7 +145,7 @@ try {
           (s) => s !== existingSong,
         );
       }
-      continue;
+      return;
     }
 
     const locks = song.lock_types;
@@ -234,18 +234,26 @@ try {
       //   );
       //   delete existingSong.flags;
       // }
-      if (!existingSong.jacket && existingSong.remyLink) {
-        existingSong.jacket = await getJacketFromRemySong(
-          existingSong.remyLink,
-          existingSong.name,
-        );
+      if (!existingSong.jacket) {
+        if (existingSong.remyLink) {
+          ui.log.write(
+            `missing jacket for ${existingSong.name}, fetching from remy`,
+          );
+          existingSong.jacket = await getJacketFromRemySong(
+            existingSong.remyLink,
+            existingSong.name,
+          );
+          ui.log.write(`updated jacket property to ${existingSong.jacket}`);
+        } else {
+          ui.log.write(
+            `no remy link for ${existingSong.name}, so will remain without image`,
+          );
+        }
       }
     } else {
       // insert new song (need to find jacket, bpm, folder, etc)
       ui.log.write(`Adding new song: ${song.song_name}`);
-      const remyLink = await requestQueue.add(() =>
-        guessUrlFromName(song.song_name),
-      );
+      const remyLink = await guessUrlFromName(song.song_name);
       ui.log.write("guessed url as " + (remyLink || "null"));
       let jacket = checkJacketExists(song.song_name);
       if (remyLink && !jacket) {
@@ -269,8 +277,9 @@ try {
             .join(" ") || undefined,
       });
     }
-  }
+  });
 
+  await Promise.all(tasks);
   await requestQueue.onIdle();
   await new Promise((resolve) => {
     setTimeout(resolve, 500);
@@ -279,12 +288,14 @@ try {
   existingData.songs = sortSongs(existingData.songs);
 
   await writeJsonData(existingData, targetFile);
+  if (warnings) {
+    ui.log.write(`Done, with ${warnings} warnings`);
+  } else {
+    ui.log.write("Done");
+  }
+  ui.close();
 } catch (e) {
-  ui.log.write(`Error: ${e.message}`);
+  ui.close();
+  console.error(e);
+  process.exitCode = 1;
 }
-if (warnings) {
-  ui.log.write(`Done, with ${warnings} warnings`);
-} else {
-  ui.log.write("Done");
-}
-ui.close();
