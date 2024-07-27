@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        check: [validate:json, validate:ts, validate:format, webpack]
+        check: ["validate:json", "validate:ts", "validate:format", webpack]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
