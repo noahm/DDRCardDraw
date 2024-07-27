@@ -62,6 +62,15 @@ type ActionOnSingleDrawing = PayloadAction<string>;
 type ActionOnSingleChart<extra extends object = {}> = PayloadAction<
   { drawingId: string; chartId: string } & extra
 >;
+// eslint-disable-next-line @typescript-eslint/ban-types
+type PlayerActionOnChartPayload<extra extends object = {}> = PayloadAction<
+  {
+    drawingId: string;
+    chartId: string;
+    player: number;
+    reorder: boolean;
+  } & extra
+>;
 
 export const drawingsSlice = createSlice({
   name: "drawings",
@@ -125,22 +134,30 @@ export const drawingsSlice = createSlice({
     },
     banProtectReplace(
       state,
-      action: ActionOnSingleChart<
-        | { type: "ban" | "protect"; player: number }
-        | { type: "pocket"; player: number; pick: EligibleChart }
+      action: PlayerActionOnChartPayload<
+        { type: "ban" | "protect" } | { type: "pocket"; pick: EligibleChart }
       >,
     ) {
-      const { chartId, drawingId, player } = action.payload;
+      const { chartId, drawingId, player, reorder } = action.payload;
       const drawing = state.entities[drawingId];
       if (!drawing) {
         return;
       }
       const playerAction: PlayerActionOnChart = { chartId, player };
       if (action.payload.type === "ban") {
+        if (reorder) {
+          moveChartInArray(drawing, chartId, "end");
+        }
         drawing.bans[chartId] = playerAction;
       } else if (action.payload.type === "protect") {
+        if (reorder) {
+          moveChartInArray(drawing, chartId, "start");
+        }
         drawing.protects[chartId] = playerAction;
       } else if (action.payload.type === "pocket") {
+        if (reorder) {
+          moveChartInArray(drawing, chartId, "start");
+        }
         drawing.pocketPicks[chartId] = {
           chartId,
           player,
@@ -220,4 +237,25 @@ export function createRedrawChart(
     chartId,
     changes: chart,
   });
+}
+
+function moveChartInArray(
+  drawing: Drawing,
+  chartId: string,
+  pos: "start" | "end",
+) {
+  const targetChart = drawing.charts.find((c) => c.id === chartId);
+  if (!targetChart) {
+    return;
+  }
+  const chartsWithoutTarget = drawing.charts.filter((c) => c.id !== chartId);
+  if (pos === "start") {
+    const insertIdx =
+      Object.keys(drawing.protects).length +
+      Object.keys(drawing.pocketPicks).length;
+    chartsWithoutTarget.splice(insertIdx, 0, targetChart);
+  } else {
+    chartsWithoutTarget.push(targetChart);
+  }
+  drawing.charts = chartsWithoutTarget;
 }

@@ -56,6 +56,7 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       player: number,
       pick?: EligibleChart,
     ) => {
+      const reorder = store.getState().config.orderByAction;
       let action;
       if (type === "pocket") {
         if (pick) {
@@ -65,6 +66,7 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
             type,
             player,
             pick,
+            reorder,
           });
         }
       } else {
@@ -73,13 +75,14 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
           chartId,
           type,
           player,
+          reorder,
         });
       }
       if (action) {
         dispatch(action);
       }
     },
-    [drawingId, chartId, dispatch],
+    [drawingId, chartId, dispatch, store],
   );
 
   return useMemo(
