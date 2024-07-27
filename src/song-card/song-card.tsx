@@ -18,6 +18,7 @@ import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
 import { useAppDispatch, useAppStore } from "../state/store";
 import { createRedrawChart, drawingsSlice } from "../state/drawings.slice";
+import { getJacketUrl } from "../utils/jackets";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -155,9 +156,8 @@ export function SongCard(props: Props) {
 
   let jacketBg = {};
   if (jacket) {
-    const prefix = jacket.startsWith("blob:") ? "" : "/jackets/";
     jacketBg = {
-      backgroundImage: `url("${prefix}${jacket}")`,
+      backgroundImage: `url("${getJacketUrl(jacket)}")`,
     };
   }
 
