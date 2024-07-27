@@ -22,21 +22,27 @@ import {
   Outlet,
   RouterProvider,
   useParams,
+  Link,
 } from "react-router-dom";
 import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
+import { nanoid } from "nanoid";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <p>
-          You need to pick an event first. How about this one:{" "}
-          <a href="/e/default">Default Event</a>
-        </p>
-      </>
-    ),
+    Component: () => {
+      return (
+        <div style={{ padding: "1em" }}>
+          <h1>DDR Tools Event Mode</h1>
+          <h2 style={{ fontStyle: "italic" }}>Alpha Preview</h2>
+          <p>
+            You need to pick an event first. Would you like to:{" "}
+            <Link to={`/e/${nanoid()}`}>Create New Event?</Link>
+          </p>
+        </div>
+      );
+    },
   },
   {
     path: "e/:roomName",
