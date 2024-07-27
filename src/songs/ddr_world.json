@@ -74308,7 +74308,12 @@
           "diffClass": "expert",
           "sanbaiTier": 12.45
         },
-        { "lvl": 15, "style": "single", "diffClass": "challenge", "flags": [] },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
         {
           "step": 245,
           "freeze": 3,
@@ -74333,7 +74338,12 @@
           "diffClass": "expert",
           "sanbaiTier": 12.55
         },
-        { "lvl": 16, "style": "double", "diffClass": "challenge", "flags": [] }
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        }
       ],
       "remyLink": "http://remywiki.com/%E6%81%8B%E6%84%9B%E8%A6%B3%E6%B8%AC",
       "jacket": "Measurement of Love.png",
