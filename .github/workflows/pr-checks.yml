@@ -5,9 +5,11 @@ on:
     branches: [main]
 
 jobs:
-  validate:
-    name: Validate Song Data
+  checks:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        check: [validate:json, validate:ts, validate:format, webpack]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -15,41 +17,5 @@ jobs:
           node-version: 20
           cache: "yarn"
       - run: yarn --immutable
-      - run: yarn validate:json
-
-  typecheck:
-    name: Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn --immutable
-      - run: yarn validate:ts
-
-  formatting:
-    name: Formatting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn --immutable
-      - run: yarn validate:format
-
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn --immutable
-      - name: Build App
-        run: yarn webpack
+      - name: Run ${{ matrix.check }} check
+        run: yarn ${{ matrix.check }}
