@@ -1,8 +1,7 @@
 import { Classes, Label, Text } from "@blueprintjs/core";
 import { useAtom } from "jotai";
 import { useCallback } from "react";
-import { startggKeyAtom, startggEventSlug } from "./controls/player-names";
-import { getEventSets } from "./startgg-gql";
+import { startggKeyAtom, startggEventSlug, getEventSets } from "./startgg-gql";
 import { AppState, useAppDispatch, useAppState } from "./state/store";
 import { setsSlice, Slot, TournamentSet } from "./state/matches.slice";
 import { entrantsSlice } from "./state/entrants.slice";
@@ -52,7 +51,7 @@ function StartggSetImport() {
       if (!apiKey || !eventSlug) {
         return;
       }
-      const sets = await getEventSets(apiKey, eventSlug);
+      const sets = await getEventSets(eventSlug);
       dispatch(setsSlice.actions.upsertMany(sets));
     },
     [dispatch, apiKey, eventSlug],

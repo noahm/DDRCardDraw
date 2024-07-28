@@ -2,21 +2,26 @@ import { Entrant } from "../state/entrants.slice";
 import { TournamentSet } from "../state/matches.slice";
 import { EventEntrantsDocument, EventSetsDocument } from "./generated/graphql";
 import { Client, cacheExchange, fetchExchange } from "@urql/core";
+import { getDefaultStore, atom } from "jotai";
 
-function getClient(token: string) {
-  return new Client({
-    url: "https://api.start.gg/gql/alpha",
-    fetchOptions: {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+export const startggKeyAtom = atom<string | null>(
+  process.env.STARTGG_TOKEN as string,
+);
+export const startggEventSlug = atom<string | null>(
+  "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
+);
+
+export const client = new Client({
+  url: "https://api.start.gg/gql/alpha",
+  fetchOptions: () => ({
+    headers: {
+      Authorization: `Bearer ${getDefaultStore().get(startggKeyAtom)}`,
     },
-    exchanges: [cacheExchange, fetchExchange],
-  });
-}
+  }),
+  exchanges: [cacheExchange, fetchExchange],
+});
 
-export async function getEventEntrants(token: string, slug: string) {
-  const client = getClient(token);
+export async function getEventEntrants(slug: string) {
   let pageNo = 0;
 
   const ret: Entrant[] = [];
@@ -43,8 +48,7 @@ export async function getEventEntrants(token: string, slug: string) {
   return ret;
 }
 
-export async function getEventSets(token: string, slug: string) {
-  const client = getClient(token);
+export async function getEventSets(slug: string) {
   let pageNo = 0;
 
   const ret: TournamentSet[] = [];

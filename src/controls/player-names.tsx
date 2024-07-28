@@ -10,11 +10,15 @@ import {
 import React, { useCallback } from "react";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
-import { atom, useAtom } from "jotai";
+import { useAtom } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useAppDispatch, useAppState } from "../state/store";
 import { entrantsSlice, Entrant } from "../state/entrants.slice";
-import { getEventEntrants } from "../startgg-gql";
+import {
+  getEventEntrants,
+  startggEventSlug,
+  startggKeyAtom,
+} from "../startgg-gql";
 import { Person } from "@blueprintjs/icons";
 
 export function PlayerNamesControls() {
@@ -62,13 +66,6 @@ export function PlayerNamesControls() {
   );
 }
 
-export const startggKeyAtom = atom<string | null>(
-  process.env.STARTGG_TOKEN as string,
-);
-export const startggEventSlug = atom<string | null>(
-  "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
-);
-
 export function StartggEntrantManager() {
   const { t } = useIntl();
   const entrants = useAppState(entrantsSlice.selectors.selectAll);
@@ -94,7 +91,7 @@ function StartggEntrantImport() {
       if (!apiKey || !eventSlug) {
         return;
       }
-      const entrants = await getEventEntrants(apiKey, eventSlug);
+      const entrants = await getEventEntrants(eventSlug);
       dispatch(entrantsSlice.actions.upsertMany(entrants));
     },
     [dispatch, apiKey, eventSlug],
