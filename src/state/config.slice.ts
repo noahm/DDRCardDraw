@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ConfigState, initialState } from "../config-state";
 import { GameData } from "../models/SongData";
-import { addPlayerNameToDrawing } from "./central";
 
 export const configSlice = createSlice({
   name: "config",
@@ -31,16 +30,5 @@ export const configSlice = createSlice({
       }
       Object.assign(state, patch);
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(addPlayerNameToDrawing, (state, action) => {
-      if (!action.payload.name) {
-        return;
-      }
-      if (state.playerNames.includes(action.payload.name)) {
-        return;
-      }
-      state.playerNames.push(action.payload.name);
-    });
   },
 });

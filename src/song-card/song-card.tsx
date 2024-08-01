@@ -16,9 +16,10 @@ import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
-import { useAppDispatch, useAppStore } from "../state/store";
-import { createRedrawChart, drawingsSlice } from "../state/drawings.slice";
+import { useAppDispatch } from "../state/store";
+import { createPickBanPocket, createRedrawChart } from "../state/thunks";
 import { getJacketUrl } from "../utils/jackets";
+import { drawingsSlice } from "../state/drawings.slice";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -48,7 +49,6 @@ export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
   const dispatch = useAppDispatch();
-  const store = useAppStore();
   const drawingId = useDrawing((s) => s.id);
 
   const handleBanPickPocket = useCallback(
@@ -56,34 +56,8 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       type: "ban" | "protect" | "pocket",
       player: number,
       pick?: EligibleChart,
-    ) => {
-      const reorder = store.getState().config.orderByAction;
-      let action;
-      if (type === "pocket") {
-        if (pick) {
-          action = drawingsSlice.actions.banProtectReplace({
-            drawingId,
-            chartId,
-            type,
-            player,
-            pick,
-            reorder,
-          });
-        }
-      } else {
-        action = drawingsSlice.actions.banProtectReplace({
-          drawingId,
-          chartId,
-          type,
-          player,
-          reorder,
-        });
-      }
-      if (action) {
-        dispatch(action);
-      }
-    },
-    [drawingId, chartId, dispatch, store],
+    ) => dispatch(createPickBanPocket(drawingId, chartId, type, player, pick)),
+    [drawingId, chartId, dispatch],
   );
 
   return useMemo(
@@ -92,8 +66,7 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       onProtect: handleBanPickPocket.bind(undefined, "protect"),
       onReplace: handleBanPickPocket.bind(undefined, "pocket"),
       onRedraw: () => {
-        const action = createRedrawChart(store.getState(), drawingId, chartId);
-        if (action) dispatch(action);
+        dispatch(createRedrawChart(drawingId, chartId));
       },
       onReset: () =>
         dispatch(drawingsSlice.actions.resetChart({ drawingId, chartId })),
@@ -102,7 +75,7 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
           drawingsSlice.actions.setWinner({ drawingId, chartId, player }),
         ),
     }),
-    [handleBanPickPocket, store, drawingId, chartId, dispatch],
+    [handleBanPickPocket, drawingId, chartId, dispatch],
   );
 }
 

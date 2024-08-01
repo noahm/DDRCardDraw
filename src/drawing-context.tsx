@@ -6,6 +6,8 @@ import { EqualityFn } from "react-redux";
 
 const stubDrawing: Drawing = {
   id: "",
+  title: "",
+  startggSetId: "",
   bans: {},
   charts: [],
   players: [],

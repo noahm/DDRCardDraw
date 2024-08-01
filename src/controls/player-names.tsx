@@ -5,7 +5,6 @@ import {
   Label,
   Text,
   NumericInput,
-  TagInput,
 } from "@blueprintjs/core";
 import React, { useCallback } from "react";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
@@ -19,54 +18,18 @@ import {
   startggEventSlug,
   startggKeyAtom,
 } from "../startgg-gql";
-import { Person } from "@blueprintjs/icons";
 
 export function PlayerNamesControls() {
-  const updateConfig = useUpdateConfig();
-  const playerNames = useConfigState((s) => s.playerNames);
-  const { t } = useIntl();
-
-  function addPlayers(names: string[]) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      for (const name of names) {
-        if (!next.includes(name)) {
-          next.push(name);
-        }
-      }
-      if (next.length !== prev.playerNames.length) {
-        return { playerNames: next };
-      }
-      return {};
-    });
-  }
-  function removePlayer(name: React.ReactNode, index: number) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      next.splice(index, 1);
-      return { playerNames: next };
-    });
-  }
-
   return (
     <>
       <ShowLabelsToggle />
       <PlayersPerDraw />
-      <FormGroup label={t("controls.addPlayerLabel")}>
-        <TagInput
-          values={playerNames}
-          fill
-          large
-          leftIcon={<Person size={20} className={Classes.TAG_INPUT_ICON} />}
-          onAdd={addPlayers}
-          onRemove={removePlayer}
-        />
-      </FormGroup>
+      <StartggEntrantManager />
     </>
   );
 }
 
-export function StartggEntrantManager() {
+function StartggEntrantManager() {
   const { t } = useIntl();
   const entrants = useAppState(entrantsSlice.selectors.selectAll);
   if (!entrants.length) {
