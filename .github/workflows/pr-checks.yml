@@ -9,7 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        check: ["validate:json", "validate:ts", "validate:format", webpack]
+        include:
+          - check: "validate:json"
+            name: Validate Song Data
+          - check: "validate:ts"
+            name: Typecheck
+          - check: "validate:format"
+            name: Formatting
+          - check: webpack
+            name: Build
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,5 +25,5 @@ jobs:
           node-version: 20
           cache: "yarn"
       - run: yarn --immutable
-      - name: Run ${{ matrix.check }} check
+      - name: ${{ matrix.name }}
         run: yarn ${{ matrix.check }}
