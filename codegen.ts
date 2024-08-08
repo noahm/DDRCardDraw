@@ -7,6 +7,9 @@ const config: CodegenConfig = {
   generates: {
     "./src/startgg-gql/generated/": {
       preset: "client",
+      presetConfig: {
+        fragmentMasking: false,
+      },
     },
   },
 };

@@ -9,52 +9,8 @@ import {
   EligibleChart,
   PlayerActionOnChart,
 } from "../models/Drawing";
-import { addPlayerNameToDrawing } from "./central";
-import { AppState } from "./store";
-import { draw } from "../card-draw";
-import { getDefaultStore } from "jotai";
-import { gameDataAtom } from "./game-data.atoms";
 
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
-
-declare const umami: {
-  track(
-    eventName?: string,
-    eventProperties?: Record<string, string | number | undefined>,
-  ): void;
-};
-
-function trackDraw(count: number | null, game?: string) {
-  if (typeof umami === "undefined") {
-    return;
-  }
-  const results =
-    count === null ? { result: "failed" } : { result: "success", count, game };
-  umami.track("cards-drawn", results);
-}
-
-/**
- * Performs a draw and returns an action to be dispatched
- * @returns false if no draw was possible, and
- * true if fewer charts were drawn than requested,
- * addDrawing action in the default successful case
- */
-export function createDraw(state: AppState) {
-  const jotaiStore = getDefaultStore();
-  const gameData = jotaiStore.get(gameDataAtom);
-  if (!gameData) {
-    trackDraw(null);
-    return false;
-  }
-
-  const drawing = draw(gameData, state.config);
-  trackDraw(drawing.charts.length, state.gameData.dataSetName);
-  if (!drawing.charts.length) {
-    return true;
-  }
-
-  return drawingsSlice.actions.addDrawing(drawing);
-}
 
 /** payload is the drawing id */
 type ActionOnSingleDrawing = PayloadAction<string>;
@@ -95,15 +51,12 @@ export const drawingsSlice = createSlice({
       }
       Object.assign(chart, action.payload.changes);
     },
-    addEmptyPlayer(state, action: ActionOnSingleDrawing) {
+    swapPlayerPositions(state, action: ActionOnSingleDrawing) {
       const drawing = state.entities[action.payload];
-      if (!drawing) return;
-      drawing.players.push("");
-    },
-    dropPlayer(state, action: ActionOnSingleDrawing) {
-      const drawing = state.entities[action.payload];
-      if (!drawing) return;
-      drawing.players.pop();
+      if (!drawing) {
+        return;
+      }
+      drawing.players = drawing.players.toReversed();
     },
     incrementPriorityPlayer(state, action: ActionOnSingleDrawing) {
       const drawing = state.entities[action.payload];
@@ -174,15 +127,6 @@ export const drawingsSlice = createSlice({
       }
     },
   },
-  extraReducers(builder) {
-    builder.addCase(addPlayerNameToDrawing, (state, action) => {
-      const drawing = state.entities[action.payload.drawingId];
-      if (!drawing) {
-        return;
-      }
-      drawing.players[action.payload.asPlayerNo - 1] = action.payload.name;
-    });
-  },
   selectors: {
     haveDrawings(state) {
       return !!state.ids.length;
@@ -193,51 +137,6 @@ export const drawingsSlice = createSlice({
 export const drawingSelectors = drawingsAdapter.getSelectors(
   drawingsSlice.selectSlice,
 );
-
-export function createRedrawAll(state: AppState, drawingId: string) {
-  // TODO preserve protects and pocket picks in this logic
-  const drawing = state.drawings.entities[drawingId];
-  const drawConfig = {
-    ...state.config,
-    chartCount: drawing.charts.length,
-  };
-  const jotaiStore = getDefaultStore();
-  const gameData = jotaiStore.get(gameDataAtom);
-  const drawResult = draw(gameData!, drawConfig);
-  return drawingsSlice.actions.updateOne({
-    id: drawingId,
-    changes: {
-      charts: drawResult.charts,
-      pocketPicks: {},
-      bans: {},
-      protects: {},
-      winners: {},
-    },
-  });
-}
-
-export function createRedrawChart(
-  state: AppState,
-  drawingId: string,
-  chartId: string,
-) {
-  const drawConfig = {
-    ...state.config,
-    chartCount: 1,
-  };
-  const jotaiStore = getDefaultStore();
-  const gameData = jotaiStore.get(gameDataAtom);
-  const drawResult = draw(gameData!, drawConfig);
-  const chart = drawResult.charts.find((c) => c.type === "DRAWN");
-  if (!chart) {
-    return;
-  }
-  return drawingsSlice.actions.updateOneChart({
-    drawingId,
-    chartId,
-    changes: chart,
-  });
-}
 
 function moveChartInArray(
   drawing: Drawing,

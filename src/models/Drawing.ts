@@ -41,7 +41,8 @@ export interface PocketPick extends PlayerActionOnChart {
 
 export interface Drawing {
   id: string;
-  title?: string;
+  startggSetId: string;
+  title: string;
   players: string[];
   charts: Array<DrawnChart | PlayerPickPlaceholder>;
   bans: Record<string, PlayerActionOnChart | null>;

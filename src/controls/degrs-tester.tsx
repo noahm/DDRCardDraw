@@ -32,7 +32,10 @@ function* oneMillionDraws(gameData: GameData) {
   const configState = configSlice.selectSlice(store.getState());
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
-    yield [draw(gameData, configState), idx] as const;
+    yield [
+      draw(gameData, configState, { players: [], title: "", startggSetId: "" }),
+      idx,
+    ] as const;
   }
 }
 

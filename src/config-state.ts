@@ -20,8 +20,6 @@ export interface ConfigState {
   difficulties: Array<string>;
   flags: Array<string>;
   cutoffDate: string;
-  playerNames: string[];
-  tournamentRounds: string[];
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
@@ -44,16 +42,6 @@ export const initialState: ConfigState = {
   folders: [],
   difficulties: [],
   flags: [],
-  playerNames: [],
-  tournamentRounds: [
-    "Pools",
-    "Winner's Bracket",
-    "Winner's Finals",
-    "Loser's Bracket",
-    "Loser's Finals",
-    "Grand Finals",
-    "Tiebreaker",
-  ],
   sortByLevel: false,
   defaultPlayersPerDraw: 2,
   useGranularLevels: false,

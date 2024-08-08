@@ -16,8 +16,8 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
-import { createDraw } from "../state/drawings.slice";
-import { useAppDispatch, useAppStore } from "../state/store";
+import { createDraw } from "../state/thunks";
+import { useAppDispatch } from "../state/store";
 import { useAtomValue, useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { gameDataLoadingStatus } from "../state/game-data.atoms";
@@ -31,15 +31,19 @@ export function HeaderControls() {
   const hasGameData = useAtomValue(gameDataLoadingStatus) === "available";
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
-  const store = useAppStore();
 
   function handleDraw() {
     setShowEligibleCharts(false);
-    const result = createDraw(store.getState());
+    const result = dispatch(
+      createDraw({
+        players: ["TEMP1", "TEMP2"],
+        title: "TEMP TITLE",
+        startggSetId: "PLACEHOLDER",
+      }),
+    );
     if (typeof result === "boolean") {
       setLastDrawFailed(result);
     } else {
-      dispatch(result);
       setLastDrawFailed(false);
     }
   }

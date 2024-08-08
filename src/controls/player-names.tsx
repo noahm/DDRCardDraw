@@ -5,71 +5,31 @@ import {
   Label,
   Text,
   NumericInput,
-  TagInput,
 } from "@blueprintjs/core";
 import React, { useCallback } from "react";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
-import { atom, useAtom } from "jotai";
+import { useAtom } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useAppDispatch, useAppState } from "../state/store";
 import { entrantsSlice, Entrant } from "../state/entrants.slice";
-import { getEventEntrants } from "../startgg-gql";
-import { Person } from "@blueprintjs/icons";
+import {
+  getEventEntrants,
+  startggEventSlug,
+  startggKeyAtom,
+} from "../startgg-gql";
 
 export function PlayerNamesControls() {
-  const updateConfig = useUpdateConfig();
-  const playerNames = useConfigState((s) => s.playerNames);
-  const { t } = useIntl();
-
-  function addPlayers(names: string[]) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      for (const name of names) {
-        if (!next.includes(name)) {
-          next.push(name);
-        }
-      }
-      if (next.length !== prev.playerNames.length) {
-        return { playerNames: next };
-      }
-      return {};
-    });
-  }
-  function removePlayer(name: React.ReactNode, index: number) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      next.splice(index, 1);
-      return { playerNames: next };
-    });
-  }
-
   return (
     <>
       <ShowLabelsToggle />
       <PlayersPerDraw />
-      <FormGroup label={t("controls.addPlayerLabel")}>
-        <TagInput
-          values={playerNames}
-          fill
-          large
-          leftIcon={<Person size={20} className={Classes.TAG_INPUT_ICON} />}
-          onAdd={addPlayers}
-          onRemove={removePlayer}
-        />
-      </FormGroup>
+      <StartggEntrantManager />
     </>
   );
 }
 
-export const startggKeyAtom = atom<string | null>(
-  process.env.STARTGG_TOKEN as string,
-);
-export const startggEventSlug = atom<string | null>(
-  "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
-);
-
-export function StartggEntrantManager() {
+function StartggEntrantManager() {
   const { t } = useIntl();
   const entrants = useAppState(entrantsSlice.selectors.selectAll);
   if (!entrants.length) {
@@ -94,7 +54,7 @@ function StartggEntrantImport() {
       if (!apiKey || !eventSlug) {
         return;
       }
-      const entrants = await getEventEntrants(apiKey, eventSlug);
+      const entrants = await getEventEntrants(eventSlug);
       dispatch(entrantsSlice.actions.upsertMany(entrants));
     },
     [dispatch, apiKey, eventSlug],

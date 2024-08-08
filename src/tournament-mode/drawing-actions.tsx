@@ -1,22 +1,16 @@
 import { Button, Menu, MenuItem, Popover, Tooltip } from "@blueprintjs/core";
-import {
-  Camera,
-  Refresh,
-  NewPerson,
-  BlockedPerson,
-  Error,
-  CubeAdd,
-} from "@blueprintjs/icons";
+import { Camera, Refresh, Error, CubeAdd, Exchange } from "@blueprintjs/icons";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-actions.css";
 import { domToPng } from "modern-screenshot";
 import { shareImage } from "../utils/share";
 import { useErrorBoundary } from "react-error-boundary";
-import { useAppDispatch, useAppState, useAppStore } from "../state/store";
+import { useAppDispatch, useAppState } from "../state/store";
 import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
-import { createRedrawAll, drawingsSlice } from "../state/drawings.slice";
+import { drawingsSlice } from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
+import { createRedrawAll } from "../state/thunks";
 
 const DEFAULT_FILENAME = "card-draw.png";
 
@@ -24,10 +18,8 @@ export function DrawingActions() {
   const dispatch = useAppDispatch();
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.id);
-  const hasPlayers = useDrawing((s) => !!s.players.length);
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const { showBoundary } = useErrorBoundary();
-  const store = useAppStore();
 
   const addToCabMenu = (
     <Menu>
@@ -76,7 +68,7 @@ export function DrawingActions() {
           onClick={() =>
             confirm(
               "This will replace everything besides protects and picks!",
-            ) && dispatch(createRedrawAll(store.getState(), drawingId))
+            ) && dispatch(createRedrawAll(drawingId))
           }
         />
       </Tooltip>
@@ -94,22 +86,12 @@ export function DrawingActions() {
       )}
       {showLabels && (
         <>
-          <Tooltip content="Add Player">
+          <Tooltip content="Swap Player Positions">
             <Button
               minimal
-              icon={<NewPerson />}
+              icon={<Exchange />}
               onClick={() => {
-                dispatch(drawingsSlice.actions.addEmptyPlayer(drawingId));
-              }}
-            />
-          </Tooltip>
-          <Tooltip content="Remove Player" disabled={!hasPlayers}>
-            <Button
-              minimal
-              icon={<BlockedPerson />}
-              disabled={!hasPlayers}
-              onClick={() => {
-                dispatch(drawingsSlice.actions.dropPlayer(drawingId));
+                dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
               }}
             />
           </Tooltip>

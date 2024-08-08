@@ -225,19 +225,25 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
   return null;
 }
 
+export type StartggInfo = Pick<Drawing, "players" | "title" | "startggSetId">;
+export type StartingPoint = Drawing | StartggInfo;
+
 /**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
  * @param songs The song data (see `src/songs/`)
  * @param configData the data gathered by all form elements on the page, indexed by `name` attribute
  */
-export function draw(gameData: GameData, configData: ConfigState): Drawing {
+export function draw(
+  gameData: GameData,
+  configData: ConfigState,
+  startPoint: StartingPoint,
+): Drawing {
   const {
     chartCount: numChartsToRandom,
     useWeights,
     forceDistribution,
     weights,
-    defaultPlayersPerDraw,
     useGranularLevels,
   } = configData;
 
@@ -389,10 +395,10 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   return {
     id: `draw-${nanoid(10)}`,
     charts,
-    players: times(defaultPlayersPerDraw, () => ""),
     bans: {},
     protects: {},
     pocketPicks: {},
     winners: {},
+    ...startPoint,
   };
 }
