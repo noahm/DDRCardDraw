@@ -2,78 +2,120 @@ import {
   Checkbox,
   Classes,
   FormGroup,
+  Label,
+  Text,
   NumericInput,
-  TagInput,
 } from "@blueprintjs/core";
-import { ReactNode } from "react";
-import { useConfigState } from "../config-state";
+import React, { useCallback } from "react";
+import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
-import { DiagramTree, Person } from "@blueprintjs/icons";
+import { useAtom } from "jotai";
+import { showPlayerAndRoundLabels } from "../config-state";
+import { useAppDispatch, useAppState } from "../state/store";
+import { entrantsSlice, Entrant } from "../state/entrants.slice";
+import {
+  getEventEntrants,
+  startggEventSlug,
+  startggKeyAtom,
+} from "../startgg-gql";
 
 export function PlayerNamesControls() {
-  const { t } = useIntl();
-  const playerNames = useConfigState((s) => s.playerNames);
-  const updateConfig = useConfigState((s) => s.update);
-
-  function addPlayers(names: string[]) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      for (const name of names) {
-        if (!next.includes(name)) {
-          next.push(name);
-        }
-      }
-      if (next.length !== prev.playerNames.length) {
-        return { playerNames: next };
-      }
-      return {};
-    });
-  }
-  function removePlayer(name: ReactNode, index: number) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      next.splice(index, 1);
-      return { playerNames: next };
-    });
-  }
-
   return (
     <>
       <ShowLabelsToggle />
       <PlayersPerDraw />
-      <FormGroup label={t("controls.addPlayerLabel")}>
-        <TagInput
-          values={playerNames}
-          fill
-          large
-          leftIcon={<Person size={20} className={Classes.TAG_INPUT_ICON} />}
-          onAdd={addPlayers}
-          onRemove={removePlayer}
-        />
-      </FormGroup>
-      <TournamentLabelEditor />
+      <StartggEntrantManager />
     </>
   );
 }
 
+function StartggEntrantManager() {
+  const { t } = useIntl();
+  const entrants = useAppState(entrantsSlice.selectors.selectAll);
+  if (!entrants.length) {
+    return <StartggEntrantImport />;
+  }
+  return (
+    <FormGroup label={t("controls.addPlayerLabel")}>
+      {entrants.map((e) => (
+        <EntrantNameForm key={e.id} entrant={e} />
+      ))}
+    </FormGroup>
+  );
+}
+
+function StartggEntrantImport() {
+  const [apiKey, setApiKey] = useAtom(startggKeyAtom);
+  const [eventSlug, setEventSlug] = useAtom(startggEventSlug);
+  const dispatch = useAppDispatch();
+  const importEntrants = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!apiKey || !eventSlug) {
+        return;
+      }
+      const entrants = await getEventEntrants(eventSlug);
+      dispatch(entrantsSlice.actions.upsertMany(entrants));
+    },
+    [dispatch, apiKey, eventSlug],
+  );
+  return (
+    <form onSubmit={importEntrants}>
+      <Text tagName="p">No players added yet, import from start.gg</Text>
+      <Label>
+        start.gg api key{" "}
+        <input
+          value={apiKey || ""}
+          onChange={(e) => setApiKey(e.currentTarget.value)}
+          className={Classes.INPUT}
+        />
+      </Label>
+      <Label>
+        event url
+        <input
+          value={eventSlug || ""}
+          onChange={(e) => setEventSlug(e.currentTarget.value)}
+          className={Classes.INPUT}
+        />
+      </Label>
+      <button type="submit">Import Players</button>
+    </form>
+  );
+}
+
+function inferShortname(name: string) {
+  const namePieces = name.split(" | ");
+  return namePieces.length > 1 ? namePieces[namePieces.length - 1] : undefined;
+}
+
+function EntrantNameForm(props: { entrant: Entrant }) {
+  return (
+    <Label>
+      {props.entrant.startggTag}{" "}
+      <input
+        className={Classes.INPUT}
+        placeholder="Leaderboard name"
+        value={inferShortname(props.entrant.startggTag)}
+      />
+    </Label>
+  );
+}
+
 function ShowLabelsToggle() {
-  const update = useConfigState((s) => s.update);
-  const enabled = useConfigState((s) => s.showPlayerAndRoundLabels);
+  const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
   const { t } = useIntl();
 
   return (
     <Checkbox
       checked={enabled}
-      onChange={(e) =>
-        update({ showPlayerAndRoundLabels: e.currentTarget.checked })
-      }
+      onChange={(e) => updateShowLabels(e.currentTarget.checked)}
       label={t("controls.playerLabels")}
     />
   );
 }
 
 function PlayersPerDraw() {
-  const update = useConfigState((s) => s.update);
+  const update = useUpdateConfig();
   const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
   const { t } = useIntl();
 
@@ -87,46 +129,6 @@ function PlayersPerDraw() {
         min={0}
         style={{ width: "58px" }}
         onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
-      />
-    </FormGroup>
-  );
-}
-
-function TournamentLabelEditor() {
-  const { t } = useIntl();
-  const tournamentRounds = useConfigState((s) => s.tournamentRounds);
-  const updateConfig = useConfigState((s) => s.update);
-
-  function addLabels(names: string[]) {
-    updateConfig((prev) => {
-      const next = prev.tournamentRounds.slice();
-      for (const name of names) {
-        if (!next.includes(name)) {
-          next.push(name);
-        }
-      }
-      if (next.length !== prev.tournamentRounds.length) {
-        return { tournamentRounds: next };
-      }
-      return {};
-    });
-  }
-  function removeLabel(name: ReactNode, index: number) {
-    updateConfig((prev) => {
-      const next = prev.tournamentRounds.slice();
-      next.splice(index, 1);
-      return { tournamentRounds: next };
-    });
-  }
-  return (
-    <FormGroup label={t("controls.tournamentLabelEdit")}>
-      <TagInput
-        values={tournamentRounds}
-        fill
-        large
-        leftIcon={<DiagramTree size={20} className={Classes.TAG_INPUT_ICON} />}
-        onAdd={addLabels}
-        onRemove={removeLabel}
       />
     </FormGroup>
   );

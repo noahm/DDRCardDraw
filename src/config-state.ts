@@ -1,5 +1,7 @@
-import type { StoreApi } from "zustand";
-import { createWithEqualityFn } from "zustand/traditional";
+import { atom } from "jotai";
+
+export const showEligibleCharts = atom(false);
+export const showPlayerAndRoundLabels = atom(true);
 
 export interface ConfigState {
   chartCount: number;
@@ -14,54 +16,33 @@ export interface ConfigState {
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
   style: string;
-  folders: ReadonlySet<string>;
-  difficulties: ReadonlySet<string>;
-  flags: ReadonlySet<string>;
+  folders: Array<string>;
+  difficulties: Array<string>;
+  flags: Array<string>;
   cutoffDate: string;
-  showEligibleCharts: boolean;
-  playerNames: string[];
-  tournamentRounds: string[];
-  showPlayerAndRoundLabels: boolean;
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
-  update: StoreApi<ConfigState>["setState"];
 }
 
-export const useConfigState = createWithEqualityFn<ConfigState>(
-  (set) => ({
-    chartCount: 5,
-    playerPicks: 0,
-    upperBound: 0,
-    lowerBound: 0,
-    useWeights: false,
-    hideVetos: false,
-    orderByAction: true,
-    weights: [],
-    probabilityBucketCount: null,
-    forceDistribution: true,
-    constrainPocketPicks: true,
-    style: "",
-    cutoffDate: "",
-    folders: new Set(),
-    difficulties: new Set(),
-    flags: new Set(),
-    showEligibleCharts: false,
-    playerNames: [],
-    tournamentRounds: [
-      "Pools",
-      "Winner's Bracket",
-      "Winner's Finals",
-      "Loser's Bracket",
-      "Loser's Finals",
-      "Grand Finals",
-      "Tiebreaker",
-    ],
-    showPlayerAndRoundLabels: false,
-    sortByLevel: false,
-    defaultPlayersPerDraw: 2,
-    useGranularLevels: false,
-    update: set,
-  }),
-  Object.is,
-);
+export const initialState: ConfigState = {
+  chartCount: 5,
+  playerPicks: 0,
+  upperBound: 0,
+  lowerBound: 0,
+  useWeights: false,
+  hideVetos: false,
+  orderByAction: true,
+  weights: [],
+  probabilityBucketCount: null,
+  forceDistribution: true,
+  constrainPocketPicks: true,
+  style: "",
+  cutoffDate: "",
+  folders: [],
+  difficulties: [],
+  flags: [],
+  sortByLevel: false,
+  defaultPlayersPerDraw: 2,
+  useGranularLevels: false,
+};

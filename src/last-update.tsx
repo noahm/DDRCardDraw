@@ -1,15 +1,14 @@
 import { Classes, Text } from "@blueprintjs/core";
 import cn from "classnames";
 import { FormattedMessage } from "react-intl";
-import { shallow } from "zustand/shallow";
-import { useDrawState } from "./draw-state";
 import { detectedLanguage } from "./utils";
+import { useAppState } from "./state/store";
+import { useAtomValue } from "jotai";
+import { gameDataAtom } from "./state/game-data.atoms";
 
 export function LastUpdate() {
-  const [dataSetName, gameData] = useDrawState(
-    (s) => [s.dataSetName, s.gameData],
-    shallow,
-  );
+  const dataSetName = useAppState((s) => s.gameData.dataSetName);
+  const gameData = useAtomValue(gameDataAtom);
   if (!gameData) {
     return null;
   }

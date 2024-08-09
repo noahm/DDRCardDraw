@@ -1,6 +1,5 @@
 import { eligibleCharts } from "../card-draw";
-import { useConfigState } from "../config-state";
-import { useDrawState } from "../draw-state";
+import { useConfigState } from "../state/hooks";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
@@ -12,20 +11,21 @@ import {
   Button,
 } from "@blueprintjs/core";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { useCallback, useDeferredValue, useMemo } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
 import { Export } from "@blueprintjs/icons";
 import { shareCharts } from "../utils/share";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
 }
 
 export default function EligibleChartsList() {
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useAtomValue(gameDataAtom);
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());
   const isNarrow = useIsNarrow();
@@ -67,7 +67,7 @@ export default function EligibleChartsList() {
           {charts.length} eligible charts from {songs.size} songs (of{" "}
           {gameData.songs.length} total)
         </NavbarGroup>
-        {configState.flags.size > 0 && !isNarrow && (
+        {configState.flags.length > 0 && !isNarrow && (
           <NavbarGroup>
             <NavbarDivider />
             <EligibleChartsListFilter />

@@ -6,9 +6,8 @@ import {
   ProgressBar,
 } from "@blueprintjs/core";
 import { draw } from "../card-draw";
-import { useDrawState } from "../draw-state";
-import { useAtom } from "jotai";
-import { useConfigState } from "../config-state";
+import { getDefaultStore, useAtom } from "jotai";
+import { configSlice } from "../state/config.slice";
 import { requestIdleCallback } from "../utils/idle-callback";
 import {
   TEST_SIZE,
@@ -21,18 +20,22 @@ import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
+import { store } from "../state/store";
+import { GameData } from "../models/SongData";
+import { gameDataAtom } from "../state/game-data.atoms";
 
 export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
   return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
 }
 
-function* oneMillionDraws() {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const gameData = useDrawState.getState().gameData!;
-  const configState = useConfigState.getState();
+function* oneMillionDraws(gameData: GameData) {
+  const configState = configSlice.selectSlice(store.getState());
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
-    yield [draw(gameData, configState), idx] as const;
+    yield [
+      draw(gameData, configState, { players: [], title: "", startggSetId: "" }),
+      idx,
+    ] as const;
   }
 }
 
@@ -41,9 +44,9 @@ function* oneMillionDraws() {
  * yields current progress every 1000 loops to allow passing back
  * the event loop
  **/
-export function* degrsTester() {
+export function* degrsTester(gameData: GameData) {
   let totalDegrs = 0;
-  for (const [set, idx] of oneMillionDraws()) {
+  for (const [set, idx] of oneMillionDraws(gameData)) {
     if (set.charts.some(isDegrs)) {
       totalDegrs++;
     }
@@ -70,7 +73,7 @@ export function DegrsTestButton() {
     setProgress(0);
     setResults(undefined);
     await nextIdleCycle();
-    const tester = degrsTester();
+    const tester = degrsTester(getDefaultStore().get(gameDataAtom)!);
     let report = tester.next();
     while (!report.done) {
       setProgress(report.value);

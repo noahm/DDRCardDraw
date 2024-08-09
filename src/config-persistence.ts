@@ -1,13 +1,16 @@
-import { ConfigState, useConfigState } from "./config-state";
-import { useDrawState } from "./draw-state";
+// import { ConfigState } from "./config-state";
 import { toaster } from "./toaster";
-import { buildDataUri, dateForFilename, shareData } from "./utils/share";
+// import { buildDataUri, dateForFilename, shareData } from "./utils/share";
 
-interface PersistedConfigV1 {
-  version: 1;
-  dataSetName: string;
-  configState: Serialized<ConfigState> & OldSettings;
-}
+/** Mark specific fields in T optional, keeping others unchanged */
+// type Optional<T, Fields extends keyof T> = Partial<Pick<T, Fields>> &
+//   Omit<T, Fields>;
+
+// interface PersistedConfigV1 {
+//   version: 1;
+//   dataSetName: string;
+//   configState: Serialized<ConfigState>;
+// }
 
 /**
  * Returns a union of all property names in T which do not contain a function value.
@@ -21,7 +24,7 @@ type NonFunctionKeys<T extends object> = keyof {
 /**
  * Strips mutations from an object, and converts sets to arrays, maps to arrays of entry pairs
  */
-type Serialized<T extends object> = {
+export type Serialized<T extends object> = {
   [K in NonFunctionKeys<T>]: T[K] extends ReadonlyMap<infer K, infer V>
     ? Array<[K, V]>
     : T[K] extends ReadonlySet<infer Item>
@@ -29,22 +32,22 @@ type Serialized<T extends object> = {
       : T[K];
 };
 
-export function saveConfig() {
-  const persistedObj = buildPersistedConfig();
-  const dataUri = buildDataUri(
-    JSON.stringify(persistedObj, undefined, 2),
-    "application/json",
-    "url",
-  );
+// export function saveConfig() {
+//   const persistedObj = buildPersistedConfig(store.getState().config);
+//   const dataUri = buildDataUri(
+//     JSON.stringify(persistedObj, undefined, 2),
+//     "application/json",
+//     "url",
+//   );
 
-  return shareData(dataUri, {
-    filename: `ddr-tools-config-${persistedObj.dataSetName}-${dateForFilename()}.json`,
-    methods: [
-      { type: "nativeShare", allowDesktop: true },
-      { type: "download" },
-    ],
-  });
-}
+//   return shareData(dataUri, {
+//     filename: `ddr-tools-config-${persistedObj.dataSetName}-${dateForFilename()}.json`,
+//     methods: [
+//       { type: "nativeShare", allowDesktop: true },
+//       { type: "download" },
+//     ],
+//   });
+// }
 
 export function loadConfig() {
   const fileInput = document.createElement("input");
@@ -69,8 +72,8 @@ export function loadConfig() {
           reject();
           throw new Error("file type is " + f.type);
         }
-        const contents: PersistedConfigV1 = JSON.parse(await f.text());
-        await loadPersistedConfig(contents);
+        // const contents: PersistedConfigV1 = JSON.parse(await f.text());
+        // await loadPersistedConfig(contents);
         resolve();
         toaster.show({
           message: "Successfully loaded draw settings",
@@ -93,79 +96,4 @@ export function loadConfig() {
   });
   fileInput.click();
   return resolution;
-}
-
-function buildPersistedConfig(): PersistedConfigV1 {
-  const { ...configState } = useConfigState.getState();
-  const serializedState: PersistedConfigV1["configState"] = {
-    ...configState,
-    difficulties: Array.from(configState.difficulties),
-    flags: Array.from(configState.flags),
-    folders: Array.from(configState.folders),
-  };
-  const ret: PersistedConfigV1 = {
-    version: 1,
-    dataSetName: useDrawState.getState().dataSetName,
-    configState: serializedState,
-  };
-  return ret;
-}
-
-async function loadPersistedConfig(saved: PersistedConfigV1) {
-  if (saved.version !== 1) {
-    return false;
-  }
-  const drawState = useDrawState.getState();
-  if (drawState.dataSetName !== saved.dataSetName) {
-    const nextConfigChange = new Promise<void>((resolve) => {
-      const unsub = useConfigState.subscribe(() => {
-        unsub();
-        resolve();
-      });
-    });
-    await drawState.loadGameData(saved.dataSetName);
-    // the ApplyDefaultConfig component will kick in
-    // to overwrite config in response to this change
-    // so we have to wait for that to happen before continuing
-    await nextConfigChange;
-  }
-
-  useConfigState.setState({
-    ...migrateOldNames(saved.configState),
-    difficulties: new Set(saved.configState.difficulties),
-    flags: new Set(saved.configState.flags),
-    folders: new Set(saved.configState.folders),
-  });
-}
-
-interface OldSettings {
-  /** renamed to `showEligibleCharts` */
-  showPool?: boolean;
-  /** renamed to `showPlayerAndRoundLabels` */
-  showLabels?: boolean;
-}
-
-function migrateOldNames(
-  config: PersistedConfigV1["configState"],
-): Serialized<ConfigState> {
-  const { showPool, showLabels, ...modernConfig } = config;
-
-  if (showPool) {
-    modernConfig.showEligibleCharts = showPool;
-  }
-
-  if (showLabels) {
-    modernConfig.showPlayerAndRoundLabels = showLabels;
-  }
-
-  const maybeOldWeights = modernConfig.weights as unknown as
-    | Array<[number, number]>
-    | Array<number | undefined>;
-  if (Array.isArray(maybeOldWeights[0])) {
-    modernConfig.weights = maybeOldWeights.map((pair) =>
-      Array.isArray(pair) ? pair[1] : pair,
-    );
-  }
-
-  return modernConfig;
 }

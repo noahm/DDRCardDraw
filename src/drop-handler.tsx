@@ -8,11 +8,14 @@ import {
 } from "@blueprintjs/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { PackWithSongs } from "simfile-parser/browser";
-import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
 import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
 import { Import } from "@blueprintjs/icons";
+import { useAppDispatch } from "./state/store";
+import { gameDataSlice } from "./state/game-data.slice";
+import { useSetAtom } from "jotai";
+import { customDataCache } from "./state/game-data.atoms";
 
 function loadParserModule() {
   return import("simfile-parser/browser");
@@ -116,7 +119,8 @@ function useDataParsing(
 function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   const [tiered, setTiered] = useState(false);
   const [saving, setSaving] = useState(false);
-  const loadGameData = useDrawState((s) => s.addImportedData);
+  const setCustomData = useSetAtom(customDataCache);
+  const dispatch = useAppDispatch();
 
   const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
   const derivedData = useMemo(() => {
@@ -131,12 +135,23 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
       return;
     }
     setSaving(true);
-    loadGameData(parsedPack.name, derivedData);
+    setCustomData((prev) => {
+      return {
+        ...prev,
+        [parsedPack.name]: derivedData,
+      };
+    });
+    dispatch(
+      gameDataSlice.actions.selectGameData({
+        dataSetName: parsedPack.name,
+        dataType: "custom",
+      }),
+    );
     pause(500).then(() => {
       setSaving(false);
       onSave();
     });
-  }, [parsedPack, derivedData, loadGameData, onSave]);
+  }, [parsedPack, derivedData, setCustomData, dispatch, onSave]);
 
   const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
 
