@@ -64,12 +64,13 @@ export function createRedrawAll(drawingId: string): AppThunk {
     const protectedChartIds = new Set(
       Object.keys(drawing.pocketPicks).concat(Object.keys(drawing.protects)),
     );
+    const chartsToKeep = drawing.charts.filter(
+      (chart) =>
+        protectedChartIds.has(chart.id) || chart.type === "PLACEHOLDER",
+    );
     const startingPoint = {
       ...drawing,
-      charts: drawing.charts.filter(
-        (chart) =>
-          protectedChartIds.has(chart.id) || chart.type === "PLACEHOLDER",
-      ),
+      charts: chartsToKeep,
     };
 
     const drawResult = draw(gameData!, drawConfig, startingPoint);
@@ -77,7 +78,7 @@ export function createRedrawAll(drawingId: string): AppThunk {
       drawingsSlice.actions.updateOne({
         id: drawingId,
         changes: {
-          charts: drawResult.charts,
+          charts: chartsToKeep.concat(drawResult.charts),
           pocketPicks: drawing.pocketPicks,
           bans: {},
           protects: drawing.protects,

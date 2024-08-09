@@ -398,30 +398,26 @@ export function draw(
   }
 
   let charts: Drawing["charts"];
-  if (preSeededCharts) {
-    charts = drawnCharts;
+  if (configData.sortByLevel) {
+    charts = drawnCharts.sort(
+      (a, b) =>
+        chartLevelOrTier(a, useGranularLevels, false) -
+        chartLevelOrTier(b, useGranularLevels, false),
+    );
   } else {
-    if (configData.sortByLevel) {
-      charts = drawnCharts.sort(
-        (a, b) =>
-          chartLevelOrTier(a, useGranularLevels, false) -
-          chartLevelOrTier(b, useGranularLevels, false),
-      );
-    } else {
-      charts = shuffle(drawnCharts);
-    }
+    charts = shuffle(drawnCharts);
+  }
 
-    if (configData.playerPicks) {
-      charts.unshift(
-        ...times(
-          configData.playerPicks,
-          (): PlayerPickPlaceholder => ({
-            id: `pick_placeholder-` + nanoid(5),
-            type: CHART_PLACEHOLDER,
-          }),
-        ),
-      );
-    }
+  if (!preSeededCharts && configData.playerPicks) {
+    charts.unshift(
+      ...times(
+        configData.playerPicks,
+        (): PlayerPickPlaceholder => ({
+          id: `pick_placeholder-` + nanoid(5),
+          type: CHART_PLACEHOLDER,
+        }),
+      ),
+    );
   }
 
   return {
