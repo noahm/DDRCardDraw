@@ -228,6 +228,8 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
 export type StartggInfo = Pick<Drawing, "players" | "title" | "startggSetId">;
 export type StartingPoint = Drawing | StartggInfo;
 
+const artistDrawBlocklist = new Set(["Carlito", "Dr. Bombay"]);
+
 /**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
@@ -262,6 +264,7 @@ export function draw(
   }
 
   for (const chart of eligibleCharts(configData, gameData)) {
+    if (artistDrawBlocklist.has(chart.artist)) continue;
     const bucketIdx = bucketIndexForChart(chart);
     if (bucketIdx === null) continue;
     validCharts.get(bucketIdx).push(chart);
