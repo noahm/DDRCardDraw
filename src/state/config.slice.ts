@@ -21,10 +21,12 @@ export const configSlice = createSlice({
         upperBound: action.payload.upperLvlBound,
         flags,
         difficulties,
-        folders,
         style,
         cutoffDate: "",
       };
+      if (folders) {
+        patch.folders = folders;
+      }
       if (!action.payload.supportsGranular) {
         patch.useGranularLevels = false;
       }
