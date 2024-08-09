@@ -343,6 +343,15 @@ export function draw(
       if (removeIdx >= 0) {
         requiredDrawIndexes.splice(removeIdx, 1);
       }
+      // remove this existing chart from eligible pool to prevent dupes
+      const bucket = validCharts.get(bucketIdx);
+      const idxInBucket = bucket.findIndex(
+        (eligibleChart) =>
+          eligibleChart.name === chart.name &&
+          chart.diffAbbr === eligibleChart.diffAbbr &&
+          chart.level === eligibleChart.level,
+      );
+      bucket.splice(idxInBucket, 1);
     }
   }
 
