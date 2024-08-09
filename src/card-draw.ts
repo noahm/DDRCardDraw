@@ -255,10 +255,14 @@ export function draw(
     getBuckets(configData, availableLvls, gameData.meta.granularTierResolution),
   );
 
-  for (const chart of eligibleCharts(configData, gameData)) {
-    const bucketIdx = useWeights
+  function bucketIndexForChart(chart: EligibleChart) {
+    return useWeights
       ? bucketIndexForLvl(chartLevelOrTier(chart, useGranularLevels), buckets)
       : 0; // outside of weights mode we just put all songs into one shared bucket
+  }
+
+  for (const chart of eligibleCharts(configData, gameData)) {
+    const bucketIdx = bucketIndexForChart(chart);
     if (bucketIdx === null) continue;
     validCharts.get(bucketIdx).push(chart);
   }
@@ -301,14 +305,15 @@ export function draw(
         (sum, current) => sum + (current || 0),
         0,
       );
+      const evenRatios = numChartsToRandom % totalWeightUsed === 0;
       for (const bucketIdx of validCharts.keys()) {
         const normalizedWeight = (weights[bucketIdx] || 0) / totalWeightUsed;
         const maxForThisBucket = Math.ceil(
           normalizedWeight * numChartsToRandom,
         );
         maxDrawPerBucket.set(bucketIdx, maxForThisBucket);
-        // setup minimum draws
-        for (let i = 1; i < maxForThisBucket; i++) {
+        // setup minimum draws (even ratios means we use max, not min, so +1)
+        for (let i = evenRatios ? 0 : 1; i < maxForThisBucket; i++) {
           requiredDrawIndexes.push(bucketIdx);
         }
       }
@@ -316,13 +321,33 @@ export function draw(
   }
 
   const drawnCharts: DrawnChart[] = [];
+
   /**
    * Record of how many songs of each bucket index have been drawn so far
    */
   const difficultyCounts = new CountingSet<number>();
 
+  let preSeededCharts = 0;
+  if ("charts" in startPoint) {
+    // account for the chart levels already in the draw starting point
+    preSeededCharts = startPoint.charts.length;
+    for (const chart of startPoint.charts) {
+      if (chart.type === "PLACEHOLDER") continue;
+      const bucketIdx = bucketIndexForChart(chart);
+      if (bucketIdx === null) continue;
+      // count this chart within quota
+      difficultyCounts.add(bucketIdx);
+
+      // remove from base requirements
+      const removeIdx = requiredDrawIndexes.indexOf(bucketIdx);
+      if (removeIdx >= 0) {
+        requiredDrawIndexes.splice(removeIdx, 1);
+      }
+    }
+  }
+
   // OK, setup work is done, here's whre we actually draw the cards!
-  while (drawnCharts.length < numChartsToRandom) {
+  while (drawnCharts.length + preSeededCharts < numChartsToRandom) {
     if (bucketDistribution.length === 0) {
       // no more songs available to pick in the requested range
       // will be returning fewer than requested number of charts
@@ -372,33 +397,40 @@ export function draw(
     }
   }
 
-  const charts: Drawing["charts"] = configData.sortByLevel
-    ? drawnCharts.sort(
+  let charts: Drawing["charts"];
+  if (preSeededCharts) {
+    charts = drawnCharts;
+  } else {
+    if (configData.sortByLevel) {
+      charts = drawnCharts.sort(
         (a, b) =>
           chartLevelOrTier(a, useGranularLevels, false) -
           chartLevelOrTier(b, useGranularLevels, false),
-      )
-    : shuffle(drawnCharts);
+      );
+    } else {
+      charts = shuffle(drawnCharts);
+    }
 
-  if (configData.playerPicks) {
-    charts.unshift(
-      ...times(
-        configData.playerPicks,
-        (): PlayerPickPlaceholder => ({
-          id: `pick_placeholder-` + nanoid(5),
-          type: CHART_PLACEHOLDER,
-        }),
-      ),
-    );
+    if (configData.playerPicks) {
+      charts.unshift(
+        ...times(
+          configData.playerPicks,
+          (): PlayerPickPlaceholder => ({
+            id: `pick_placeholder-` + nanoid(5),
+            type: CHART_PLACEHOLDER,
+          }),
+        ),
+      );
+    }
   }
 
   return {
     id: `draw-${nanoid(10)}`,
-    charts,
     bans: {},
     protects: {},
     pocketPicks: {},
     winners: {},
     ...startPoint,
+    charts,
   };
 }

@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
 export interface CabInfo {
@@ -13,18 +13,16 @@ interface EventState {
   cabs: Record<string, CabInfo>;
 }
 
-function initialState(): EventState {
-  return {
-    eventName: "",
-    cabs: {
-      default: {
-        id: "default",
-        name: "Primary Cab",
-        activeMatch: null,
-      },
+const initialState: EventState = {
+  eventName: "",
+  cabs: {
+    default: {
+      id: "default",
+      name: "Primary Cab",
+      activeMatch: null,
     },
-  };
-}
+  },
+};
 
 export const eventSlice = createSlice({
   name: "event",
@@ -52,8 +50,8 @@ export const eventSlice = createSlice({
     },
   },
   selectors: {
-    allCabs(state) {
-      return Object.values(state.cabs);
-    },
+    allCabs: createSelector([(state: EventState) => state.cabs], (cabs) => {
+      return Object.values(cabs);
+    }),
   },
 });
