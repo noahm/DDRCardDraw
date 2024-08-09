@@ -26,7 +26,7 @@ import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 
 export function CabManagement() {
-  const cabs = Object.values(useAppState((s) => s.event.cabs));
+  const cabs = useAppState(eventSlice.selectors.allCabs);
   return (
     <div style={{ padding: "1em" }}>
       <div>
@@ -176,7 +176,7 @@ function CurrentMatch(props: { cab: CabInfo }) {
     setMainTab("drawings");
     el.scrollIntoView({ behavior: "smooth" });
     el.dataset.focused = "";
-  }, [drawing]);
+  }, [drawing, setMainTab]);
 
   if (!drawing) {
     return <p>No match</p>;
