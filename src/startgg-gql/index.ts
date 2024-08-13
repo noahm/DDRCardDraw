@@ -9,13 +9,20 @@ import {
 } from "./generated/graphql";
 import { Client, fetchExchange, gql } from "@urql/core";
 import { cacheExchange } from "@urql/exchange-graphcache";
-import { getDefaultStore, atom, useAtomValue } from "jotai";
+import { getDefaultStore, useAtomValue } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 
-export const startggKeyAtom = atom<string | null>(
+export const startggKeyAtom = atomWithStorage<string | null>(
+  "ddrtools.event.startggtoken",
   process.env.STARTGG_TOKEN as string,
+  undefined,
+  { getOnInit: true },
 );
-export const startggEventSlug = atom<string | null>(
+export const startggEventSlug = atomWithStorage<string | null>(
+  "ddrtools.event.startggslug",
   "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
+  undefined,
+  { getOnInit: true },
 );
 
 export const urqlClient = new Client({
