@@ -131,6 +131,11 @@ export const drawingsSlice = createSlice({
     haveDrawings(state) {
       return !!state.ids.length;
     },
+    associatedMatchIds(state) {
+      return Object.values(state.entities).map(
+        (drawing) => drawing.startggSetId,
+      );
+    },
   },
 });
 

@@ -83,9 +83,10 @@ function StartggEntrantImport() {
   );
 }
 
-function inferShortname(name: string) {
+export function inferShortname(name: string | null | undefined) {
+  if (!name) return;
   const namePieces = name.split(" | ");
-  return namePieces.length > 1 ? namePieces[namePieces.length - 1] : undefined;
+  return namePieces.length >= 1 ? namePieces[namePieces.length - 1] : undefined;
 }
 
 function EntrantNameForm(props: { entrant: Entrant }) {

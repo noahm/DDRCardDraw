@@ -16,6 +16,7 @@ import { DropHandler } from "./drop-handler";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
 import { PartySocketManager } from "./party/client";
+import { Provider as UrqlProvider } from "urql";
 
 import {
   createBrowserRouter,
@@ -27,6 +28,7 @@ import {
 import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
 import { nanoid } from "nanoid";
+import { urqlClient } from "./startgg-gql";
 
 const router = createBrowserRouter([
   {
@@ -108,23 +110,25 @@ function AppForRoom() {
   return (
     <Provider store={store}>
       <PartySocketManager roomName={params.roomName}>
-        <IntlProvider>
-          <UpdateManager />
-          <Header />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "stretch",
-              flex: "1 1 0px",
-              overflow: "hidden",
-            }}
-          >
-            <CabManagement />
-            <MainView />
-          </div>
-          <DropHandler />
-        </IntlProvider>
+        <UrqlProvider value={urqlClient}>
+          <IntlProvider>
+            <UpdateManager />
+            <Header />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "stretch",
+                flex: "1 1 0px",
+                overflow: "hidden",
+              }}
+            >
+              <CabManagement />
+              <MainView />
+            </div>
+            <DropHandler />
+          </IntlProvider>
+        </UrqlProvider>
       </PartySocketManager>
     </Provider>
   );

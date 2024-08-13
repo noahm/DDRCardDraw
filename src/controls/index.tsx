@@ -1,6 +1,8 @@
 import {
   Button,
   ButtonGroup,
+  Dialog,
+  DialogBody,
   Drawer,
   DrawerSize,
   Intent,
@@ -21,6 +23,7 @@ import { useAppDispatch } from "../state/store";
 import { useAtomValue, useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { gameDataLoadingStatus } from "../state/game-data.atoms";
+import { MatchPicker, PickedMatch, StartggApiKeyGated } from "../matches";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
@@ -28,17 +31,18 @@ export function HeaderControls() {
   const setShowEligibleCharts = useSetAtom(showEligibleCharts);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
+  const [matchPickerOpen, setMatchPickerOpen] = useState(false);
   const hasGameData = useAtomValue(gameDataLoadingStatus) === "available";
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
 
-  function handleDraw() {
+  function handleDraw(match: PickedMatch) {
     setShowEligibleCharts(false);
     const result = dispatch(
       createDraw({
-        players: ["TEMP1", "TEMP2"],
-        title: "TEMP TITLE",
-        startggSetId: "PLACEHOLDER",
+        players: match.players,
+        title: match.title,
+        startggSetId: match.id,
       }),
     );
     if (typeof result === "boolean") {
@@ -80,6 +84,23 @@ export function HeaderControls() {
           </Suspense>
         </ErrorBoundary>
       </Drawer>
+      <Dialog
+        isOpen={matchPickerOpen}
+        onClose={() => setMatchPickerOpen(false)}
+        title="New Draw"
+      >
+        <DialogBody>
+          <p>Pick a startgg match</p>
+          <StartggApiKeyGated>
+            <MatchPicker
+              onPickMatch={(match) => {
+                handleDraw(match);
+                setMatchPickerOpen(false);
+              }}
+            />
+          </StartggApiKeyGated>
+        </DialogBody>
+      </Dialog>
       {!isNarrow && (
         <>
           <ShowChartsToggle inDrawer={false} />
@@ -89,7 +110,7 @@ export function HeaderControls() {
       <ButtonGroup>
         <Tooltip disabled={hasGameData} content="Loading game data">
           <Button
-            onClick={handleDraw}
+            onClick={() => setMatchPickerOpen(true)}
             icon={<NewLayers />}
             intent={Intent.PRIMARY}
             disabled={!hasGameData}

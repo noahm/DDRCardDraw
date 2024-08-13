@@ -9,7 +9,7 @@ import {
 } from "./generated/graphql";
 import { Client, fetchExchange, gql } from "@urql/core";
 import { cacheExchange } from "@urql/exchange-graphcache";
-import { getDefaultStore, atom } from "jotai";
+import { getDefaultStore, atom, useAtomValue } from "jotai";
 
 export const startggKeyAtom = atom<string | null>(
   process.env.STARTGG_TOKEN as string,
@@ -18,7 +18,7 @@ export const startggEventSlug = atom<string | null>(
   "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
 );
 
-export const client = new Client({
+export const urqlClient = new Client({
   url: "https://api.start.gg/gql/alpha",
   fetchOptions: () => ({
     headers: {
@@ -68,6 +68,17 @@ export function useStartggSetName(setId: string) {
   return result.data?.set?.fullRoundText;
 }
 
+export function useStartggMatches() {
+  const eventSlug = useAtomValue(startggEventSlug)!;
+  return useQuery({
+    query: EventSetsDoc,
+    variables: {
+      eventSlug,
+      pageNo: 0,
+    },
+  });
+}
+
 const EventEntrantsDoc: typeof EventEntrantsDocument = gql`
   query EventEntrants($eventSlug: String!, $pageNo: Int!) {
     event(slug: $eventSlug) {
@@ -103,7 +114,7 @@ export async function getEventEntrants(slug: string) {
 
   let totalPages = 0;
   do {
-    const results = await client
+    const results = await urqlClient
       .query(EventEntrantsDoc, {
         eventSlug: slug,
         pageNo,
@@ -160,7 +171,7 @@ export async function getEventSets(slug: string) {
 
   let totalPages = 0;
   do {
-    const results = await client
+    const results = await urqlClient
       .query(EventSetsDoc, {
         eventSlug: slug,
         pageNo,
