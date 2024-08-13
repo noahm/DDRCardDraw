@@ -154,7 +154,12 @@ export function StartggApiKeyGated(props: { children: ReactNode }) {
         <a target="_blank" href="https://start.gg/admin/profile/developer">
           create a personal token here
         </a>
-        ) <input ref={apikeyRef} className={Classes.INPUT} />
+        ){" "}
+        <input
+          defaultValue={apiKey || undefined}
+          ref={apikeyRef}
+          className={Classes.INPUT}
+        />
       </Label>
       <Label>
         event url slug (in the form of:{" "}
@@ -162,7 +167,11 @@ export function StartggApiKeyGated(props: { children: ReactNode }) {
           tournament/SOMETHING/event/SOMETHING
         </pre>
         )
-        <input ref={slugRef} className={Classes.INPUT} />
+        <input
+          defaultValue={eventSlug || undefined}
+          ref={slugRef}
+          className={Classes.INPUT}
+        />
       </Label>
       <button type="submit">Save</button>
     </form>
