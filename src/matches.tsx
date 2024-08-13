@@ -158,7 +158,10 @@ export function StartggApiKeyGated(props: { children: ReactNode }) {
       </Label>
       <Label>
         event url slug (in the form of:{" "}
-        <pre>tournament/SOMETHING/event/SOMETHING</pre>)
+        <pre style={{ display: "inline" }}>
+          tournament/SOMETHING/event/SOMETHING
+        </pre>
+        )
         <input ref={slugRef} className={Classes.INPUT} />
       </Label>
       <button type="submit">Save</button>
