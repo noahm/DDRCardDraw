@@ -6,11 +6,14 @@ import { EqualityFn } from "react-redux";
 
 const stubDrawing: Drawing = {
   id: "",
-  title: "",
-  startggSetId: "",
+  meta: {
+    type: "simple",
+    players: [],
+    title: "",
+  },
+  playerDisplayOrder: [],
   bans: {},
   charts: [],
-  players: [],
   pocketPicks: {},
   protects: {},
   winners: {},

@@ -24,6 +24,7 @@ import { detectedLanguage } from "./utils";
 import { copyPlainTextToClipboard } from "./utils/share";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
+import { playerNameByIndex } from "./models/Drawing";
 
 export function CabManagement() {
   const cabs = useAppState(eventSlice.selectors.allCabs);
@@ -181,8 +182,8 @@ function CurrentMatch(props: { cab: CabInfo }) {
   if (!drawing) {
     return <p>No match</p>;
   }
-  const filledPlayers = drawing.players.map(
-    (p, idx) => p || `Player ${idx + 1}`,
+  const filledPlayers = drawing.playerDisplayOrder.map((pIdx, idx) =>
+    playerNameByIndex(drawing.meta, pIdx, `Player ${idx + 1}`),
   );
   return (
     <Card
@@ -199,7 +200,7 @@ function CurrentMatch(props: { cab: CabInfo }) {
         style={{ position: "absolute", right: "0.5em", top: "0.5em" }}
         onClick={removeCab}
       />
-      <h3>{drawing.title}</h3>
+      <h3>{drawing.meta.title}</h3>
       <p>{listFormatter.format(filledPlayers)}</p>
     </Card>
   );

@@ -33,7 +33,9 @@ function* oneMillionDraws(gameData: GameData) {
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
     yield [
-      draw(gameData, configState, { players: [], title: "", startggSetId: "" }),
+      draw(gameData, configState, {
+        meta: { players: [], title: "", type: "simple" },
+      }),
       idx,
     ] as const;
   }

@@ -7,22 +7,25 @@ import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useAppDispatch } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
+import { playerNameByDisplayPos } from "../models/Drawing";
 
 export function SetLabels() {
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
-  const players = useDrawing((s) => s.players);
-  const title = useDrawing((s) => s.title);
+  const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
+  const meta = useDrawing((d) => d.meta);
   if (!showLabels) {
     return null;
   }
 
+  const psuedoDrawing = { meta, playerDisplayOrder };
+
   return (
     <div className={styles.headers}>
-      <div className={styles.title}>{title}</div>
+      <div className={styles.title}>{meta.title}</div>
       <div className={styles.players}>
-        <span>{players[0]}</span>
+        <span>{playerNameByDisplayPos(psuedoDrawing, 1)}</span>
         <Versus />
-        <span>{players[1]}</span>
+        <span>{playerNameByDisplayPos(psuedoDrawing, 2)}</span>
       </div>
     </div>
   );

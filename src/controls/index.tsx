@@ -40,9 +40,12 @@ export function HeaderControls() {
     setShowEligibleCharts(false);
     const result = dispatch(
       createDraw({
-        players: match.players,
-        title: match.title,
-        startggSetId: match.id,
+        meta: {
+          type: "startgg",
+          entrants: match.players,
+          title: match.title,
+          id: match.id,
+        },
       }),
     );
     if (typeof result === "boolean") {

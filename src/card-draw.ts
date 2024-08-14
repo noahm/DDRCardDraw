@@ -225,7 +225,7 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
   return null;
 }
 
-export type StartggInfo = Pick<Drawing, "players" | "title" | "startggSetId">;
+export type StartggInfo = Pick<Drawing, "meta">;
 export type StartingPoint = Drawing | StartggInfo;
 
 const artistDrawBlocklist = new Set(["Carlito", "Dr. Bombay"]);
@@ -432,12 +432,18 @@ export function draw(
     );
   }
 
+  const players =
+    startPoint.meta.type === "simple"
+      ? startPoint.meta.players
+      : startPoint.meta.entrants;
+
   return {
     id: `draw-${nanoid(10)}`,
     bans: {},
     protects: {},
     pocketPicks: {},
     winners: {},
+    playerDisplayOrder: players.map((_, idx) => idx),
     ...startPoint,
     charts,
   };

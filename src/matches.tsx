@@ -29,7 +29,7 @@ export function MatchListAndSettings() {
 
 export interface PickedMatch {
   title: string;
-  players: string[];
+  players: Array<{ id: string; name: string }>;
   id: string;
 }
 
@@ -91,7 +91,10 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
                   : () =>
                       props.onPickMatch?.({
                         title,
-                        players: [p1!, p2!],
+                        players: match.slots!.map((slot) => ({
+                          id: slot!.entrant!.id!,
+                          name: inferShortname(slot!.entrant!.name)!,
+                        })),
                         id: match.id!,
                       })
               }

@@ -56,7 +56,7 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      drawing.players = drawing.players.toReversed();
+      drawing.playerDisplayOrder = drawing.playerDisplayOrder.toReversed();
     },
     incrementPriorityPlayer(state, action: ActionOnSingleDrawing) {
       const drawing = state.entities[action.payload];
@@ -68,7 +68,7 @@ export const drawingsSlice = createSlice({
         priorityPlayer = 1;
       } else {
         priorityPlayer += 1;
-        if (priorityPlayer >= drawing.players.length + 1) {
+        if (priorityPlayer >= drawing.playerDisplayOrder.length + 1) {
           priorityPlayer = undefined;
         }
       }
@@ -132,9 +132,11 @@ export const drawingsSlice = createSlice({
       return !!state.ids.length;
     },
     associatedMatchIds(state) {
-      return Object.values(state.entities).map(
-        (drawing) => drawing.startggSetId,
-      );
+      return Object.values(state.entities)
+        .map((drawing) => drawing.meta.type === "startgg" && drawing.meta.id)
+        .filter(
+          (value): value is string => typeof value === "string" && !!value,
+        );
     },
   },
 });
