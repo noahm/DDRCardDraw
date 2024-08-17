@@ -1,85 +1,27 @@
-import {
-  Checkbox,
-  Classes,
-  FormGroup,
-  Label,
-  Text,
-  NumericInput,
-} from "@blueprintjs/core";
-import React, { useCallback } from "react";
-import { useConfigState, useUpdateConfig } from "../state/hooks";
-import { useIntl } from "../hooks/useIntl";
-import { useAtom } from "jotai";
-import { showPlayerAndRoundLabels } from "../config-state";
-import { useAppDispatch, useAppState } from "../state/store";
-import { entrantsSlice, Entrant } from "../state/entrants.slice";
-import {
-  getEventEntrants,
-  startggEventSlug,
-  startggKeyAtom,
-} from "../startgg-gql";
+import { Section, SectionCard } from "@blueprintjs/core";
+// import { useConfigState, useUpdateConfig } from "../state/hooks";
+// import { useIntl } from "../hooks/useIntl";
+import { useAtomValue } from "jotai";
+// import { showPlayerAndRoundLabels } from "../config-state";
+// import { useAppState } from "../state/store";
+import { startggEventSlug, startggKeyAtom } from "../startgg-gql";
+import { StartggCredsManager } from "../startgg-gql/components";
 
 export function PlayerNamesControls() {
+  const apiKey = useAtomValue(startggKeyAtom);
+  const eventSlug = useAtomValue(startggEventSlug);
   return (
     <>
-      <ShowLabelsToggle />
-      <PlayersPerDraw />
-      <StartggEntrantManager />
+      <Section
+        title="Start.gg Credentials"
+        collapsible
+        collapseProps={{ defaultIsOpen: !apiKey || !eventSlug }}
+      >
+        <SectionCard>
+          <StartggCredsManager />
+        </SectionCard>
+      </Section>
     </>
-  );
-}
-
-function StartggEntrantManager() {
-  const { t } = useIntl();
-  const entrants = useAppState(entrantsSlice.selectors.selectAll);
-  if (!entrants.length) {
-    return <StartggEntrantImport />;
-  }
-  return (
-    <FormGroup label={t("controls.addPlayerLabel")}>
-      {entrants.map((e) => (
-        <EntrantNameForm key={e.id} entrant={e} />
-      ))}
-    </FormGroup>
-  );
-}
-
-function StartggEntrantImport() {
-  const [apiKey, setApiKey] = useAtom(startggKeyAtom);
-  const [eventSlug, setEventSlug] = useAtom(startggEventSlug);
-  const dispatch = useAppDispatch();
-  const importEntrants = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault();
-      if (!apiKey || !eventSlug) {
-        return;
-      }
-      const entrants = await getEventEntrants(eventSlug);
-      dispatch(entrantsSlice.actions.upsertMany(entrants));
-    },
-    [dispatch, apiKey, eventSlug],
-  );
-  return (
-    <form onSubmit={importEntrants}>
-      <Text tagName="p">No players added yet, import from start.gg</Text>
-      <Label>
-        start.gg api key{" "}
-        <input
-          value={apiKey || ""}
-          onChange={(e) => setApiKey(e.currentTarget.value)}
-          className={Classes.INPUT}
-        />
-      </Label>
-      <Label>
-        event url
-        <input
-          value={eventSlug || ""}
-          onChange={(e) => setEventSlug(e.currentTarget.value)}
-          className={Classes.INPUT}
-        />
-      </Label>
-      <button type="submit">Import Players</button>
-    </form>
   );
 }
 
@@ -89,48 +31,48 @@ export function inferShortname(name: string | null | undefined) {
   return namePieces.length >= 1 ? namePieces[namePieces.length - 1] : undefined;
 }
 
-function EntrantNameForm(props: { entrant: Entrant }) {
-  return (
-    <Label>
-      {props.entrant.startggTag}{" "}
-      <input
-        className={Classes.INPUT}
-        placeholder="Leaderboard name"
-        value={inferShortname(props.entrant.startggTag)}
-      />
-    </Label>
-  );
-}
+// function EntrantNameForm(props: { entrant: Entrant }) {
+//   return (
+//     <Label>
+//       {props.entrant.startggTag}{" "}
+//       <input
+//         className={Classes.INPUT}
+//         placeholder="Leaderboard name"
+//         value={inferShortname(props.entrant.startggTag)}
+//       />
+//     </Label>
+//   );
+// }
 
-function ShowLabelsToggle() {
-  const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
-  const { t } = useIntl();
+// function ShowLabelsToggle() {
+//   const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
+//   const { t } = useIntl();
 
-  return (
-    <Checkbox
-      checked={enabled}
-      onChange={(e) => updateShowLabels(e.currentTarget.checked)}
-      label={t("controls.playerLabels")}
-    />
-  );
-}
+//   return (
+//     <Checkbox
+//       checked={enabled}
+//       onChange={(e) => updateShowLabels(e.currentTarget.checked)}
+//       label={t("controls.playerLabels")}
+//     />
+//   );
+// }
 
-function PlayersPerDraw() {
-  const update = useUpdateConfig();
-  const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
-  const { t } = useIntl();
+// function PlayersPerDraw() {
+//   const update = useUpdateConfig();
+//   const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
+//   const { t } = useIntl();
 
-  return (
-    <FormGroup label={t("controls.playersPerDraw")}>
-      <NumericInput
-        type="number"
-        inputMode="numeric"
-        value={ppd}
-        large
-        min={0}
-        style={{ width: "58px" }}
-        onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
-      />
-    </FormGroup>
-  );
-}
+//   return (
+//     <FormGroup label={t("controls.playersPerDraw")}>
+//       <NumericInput
+//         type="number"
+//         inputMode="numeric"
+//         value={ppd}
+//         large
+//         min={0}
+//         style={{ width: "58px" }}
+//         onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
+//       />
+//     </FormGroup>
+//   );
+// }

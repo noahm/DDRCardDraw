@@ -1,10 +1,8 @@
-import { useQuery } from "urql";
-import { Entrant } from "../state/entrants.slice";
-import { TournamentSet } from "../state/matches.slice";
+import { useMutation, useQuery } from "urql";
 import {
-  EventEntrantsDocument,
   EventSetsDocument,
   PlayerNameDocument,
+  ReportSetDocument,
   SetNameDocument,
 } from "./generated/graphql";
 import { Client, fetchExchange, gql } from "@urql/core";
@@ -86,62 +84,33 @@ export function useStartggMatches() {
   });
 }
 
-const EventEntrantsDoc: typeof EventEntrantsDocument = gql`
-  query EventEntrants($eventSlug: String!, $pageNo: Int!) {
-    event(slug: $eventSlug) {
-      __typename
-      id
-      name
-      entrants(query: { page: $pageNo, perPage: 100 }) {
-        pageInfo {
-          totalPages
-        }
-        nodes {
-          __typename
-          id
-          name
-          # paginatedSets {
-          #   nodes {
-          #     id
-          #   }
-          #   pageInfo {
-          #     totalPages
-          #   }
-          # }
-        }
-      }
-    }
-  }
-`;
-
-export async function getEventEntrants(slug: string) {
-  let pageNo = 0;
-
-  const ret: Entrant[] = [];
-
-  let totalPages = 0;
-  do {
-    const results = await urqlClient
-      .query(EventEntrantsDoc, {
-        eventSlug: slug,
-        pageNo,
-      })
-      .toPromise();
-    totalPages = results.data?.event?.entrants?.pageInfo?.totalPages || 0;
-    if (results.data?.event?.entrants?.nodes) {
-      for (const entrant of results.data.event.entrants.nodes) {
-        if (!entrant) continue;
-        ret.push({
-          id: entrant.id!,
-          startggTag: entrant.name!,
-        });
-      }
-    }
-    pageNo++;
-  } while (totalPages > pageNo + 1);
-
-  return ret;
-}
+// const EventEntrantsDoc: typeof EventEntrantsDocument = gql`
+//   query EventEntrants($eventSlug: String!, $pageNo: Int!) {
+//     event(slug: $eventSlug) {
+//       __typename
+//       id
+//       name
+//       entrants(query: { page: $pageNo, perPage: 100 }) {
+//         pageInfo {
+//           totalPages
+//         }
+//         nodes {
+//           __typename
+//           id
+//           name
+//           # paginatedSets {
+//           #   nodes {
+//           #     id
+//           #   }
+//           #   pageInfo {
+//           #     totalPages
+//           #   }
+//           # }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 const EventSetsDoc: typeof EventSetsDocument = gql`
   query EventSets($eventSlug: String!, $pageNo: Int!) {
@@ -171,36 +140,28 @@ const EventSetsDoc: typeof EventSetsDocument = gql`
   }
 `;
 
-export async function getEventSets(slug: string) {
-  let pageNo = 0;
-
-  const ret: TournamentSet[] = [];
-
-  let totalPages = 0;
-  do {
-    const results = await urqlClient
-      .query(EventSetsDoc, {
-        eventSlug: slug,
-        pageNo,
-      })
-      .toPromise();
-    totalPages = results.data?.event?.sets?.pageInfo?.totalPages || 0;
-    if (results.data?.event?.sets?.nodes) {
-      for (const set of results.data.event.sets.nodes) {
-        if (!set) continue;
-        ret.push({
-          id: set.id!,
-          roundText: set.fullRoundText!,
-          slots: set.slots!.map((slot) =>
-            slot!.entrant?.id
-              ? { type: "player", playerId: slot!.entrant.id }
-              : { type: "setprereq", setId: slot!.prereqId! },
-          ),
-        });
-      }
+const ReportSetMutation: typeof ReportSetDocument = gql`
+  mutation ReportSet(
+    $setId: ID!
+    $winnerId: ID
+    $gameData: [BracketSetGameDataInput]
+  ) {
+    reportBracketSet(setId: $setId, winnerId: $winnerId, gameData: $gameData) {
+      id
+      completedAt
     }
-    pageNo++;
-  } while (totalPages > pageNo + 1);
+  }
+`;
 
-  return ret;
+export type {
+  BracketSetGameDataInput,
+  ReportSetMutationVariables,
+} from "./generated/graphql";
+
+/**
+ * Passing a winnerId will mark the set as completed.
+ * Passing game data will overwrite any existing game data.
+ */
+export function useReportSetMutation() {
+  return useMutation(ReportSetMutation);
 }

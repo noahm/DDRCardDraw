@@ -23,7 +23,8 @@ import { useAppDispatch } from "../state/store";
 import { useAtomValue, useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { gameDataLoadingStatus } from "../state/game-data.atoms";
-import { MatchPicker, PickedMatch, StartggApiKeyGated } from "../matches";
+import { MatchPicker, PickedMatch } from "../matches";
+import { StartggApiKeyGated } from "../startgg-gql/components";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 

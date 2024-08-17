@@ -80,7 +80,7 @@ export interface Drawing {
   meta: SimpleMeta | StartggMeta;
   /** index of items of the players array, in the order they should be displayed */
   playerDisplayOrder: number[];
-  /** map of song ID to player index or id */
+  /** map of song ID to player index */
   winners: Record<string, number | null>;
   charts: Array<DrawnChart | PlayerPickPlaceholder>;
   bans: Record<string, PlayerActionOnChart | null>;

@@ -17,6 +17,7 @@ const documents = {
     "\n  query SetName($sid: ID!) {\n    set(id: $sid) {\n      __typename\n      id\n      fullRoundText\n    }\n  }\n": types.SetNameDocument,
     "\n  query EventEntrants($eventSlug: String!, $pageNo: Int!) {\n    event(slug: $eventSlug) {\n      __typename\n      id\n      name\n      entrants(query: { page: $pageNo, perPage: 100 }) {\n        pageInfo {\n          totalPages\n        }\n        nodes {\n          __typename\n          id\n          name\n          # paginatedSets {\n          #   nodes {\n          #     id\n          #   }\n          #   pageInfo {\n          #     totalPages\n          #   }\n          # }\n        }\n      }\n    }\n  }\n": types.EventEntrantsDocument,
     "\n  query EventSets($eventSlug: String!, $pageNo: Int!) {\n    event(slug: $eventSlug) {\n      id\n      sets(filters: { hideEmpty: true }, perPage: 100, page: $pageNo) {\n        pageInfo {\n          totalPages\n          total\n        }\n        nodes {\n          id\n          fullRoundText\n          identifier\n          slots {\n            prereqType\n            prereqId\n            prereqPlacement\n            entrant {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n  }\n": types.EventSetsDocument,
+    "\n  mutation ReportSet(\n    $setId: ID!\n    $winnerId: ID\n    $gameData: [BracketSetGameDataInput]\n  ) {\n    reportBracketSet(setId: $setId, winnerId: $winnerId, gameData: $gameData) {\n      id\n      completedAt\n    }\n  }\n": types.ReportSetDocument,
 };
 
 /**
@@ -49,6 +50,10 @@ export function graphql(source: "\n  query EventEntrants($eventSlug: String!, $p
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  query EventSets($eventSlug: String!, $pageNo: Int!) {\n    event(slug: $eventSlug) {\n      id\n      sets(filters: { hideEmpty: true }, perPage: 100, page: $pageNo) {\n        pageInfo {\n          totalPages\n          total\n        }\n        nodes {\n          id\n          fullRoundText\n          identifier\n          slots {\n            prereqType\n            prereqId\n            prereqPlacement\n            entrant {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query EventSets($eventSlug: String!, $pageNo: Int!) {\n    event(slug: $eventSlug) {\n      id\n      sets(filters: { hideEmpty: true }, perPage: 100, page: $pageNo) {\n        pageInfo {\n          totalPages\n          total\n        }\n        nodes {\n          id\n          fullRoundText\n          identifier\n          slots {\n            prereqType\n            prereqId\n            prereqPlacement\n            entrant {\n              id\n              name\n            }\n          }\n        }\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  mutation ReportSet(\n    $setId: ID!\n    $winnerId: ID\n    $gameData: [BracketSetGameDataInput]\n  ) {\n    reportBracketSet(setId: $setId, winnerId: $winnerId, gameData: $gameData) {\n      id\n      completedAt\n    }\n  }\n"): (typeof documents)["\n  mutation ReportSet(\n    $setId: ID!\n    $winnerId: ID\n    $gameData: [BracketSetGameDataInput]\n  ) {\n    reportBracketSet(setId: $setId, winnerId: $winnerId, gameData: $gameData) {\n      id\n      completedAt\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
