@@ -20,7 +20,15 @@ export function CabPlayer(props: { p: number }) {
     if (!drawingId) return null;
     const drawing = drawingSelectors.selectById(s, drawingId);
     const playerIndex = drawing.playerDisplayOrder[props.p - 1];
-    return playerNameByIndex(drawing.meta, playerIndex, "");
+    const name = playerNameByIndex(drawing.meta, playerIndex, "");
+    const score = Object.values(drawing.winners).reduce<number>(
+      (prev, curr) => {
+        if (curr === playerIndex) return prev + 1;
+        return prev;
+      },
+      0,
+    );
+    return `${name} (${score})`;
   });
   return <h1>{text}</h1>;
 }
