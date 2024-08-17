@@ -56,7 +56,10 @@ function getMatchResult(
     const orderedByWins = Array.from(winsPerPlayer.valuesWithCount()).sort(
       (a, b) => b[1] - a[1],
     );
-    if (orderedByWins[0][1] > orderedByWins[1][1]) {
+    if (
+      orderedByWins.length == 1 ||
+      orderedByWins[0][1] > orderedByWins[1][1]
+    ) {
       // confirmed no tie for first place
       winnerId = orderedByWins[0][0];
     }
