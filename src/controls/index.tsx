@@ -37,16 +37,23 @@ export function HeaderControls() {
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
 
-  function handleDraw(match: PickedMatch) {
+  function handleDraw(match?: PickedMatch) {
+    setMatchPickerOpen(false);
     setShowEligibleCharts(false);
     const result = dispatch(
       createDraw({
-        meta: {
-          type: "startgg",
-          entrants: match.players,
-          title: match.title,
-          id: match.id,
-        },
+        meta: match
+          ? {
+              type: "startgg",
+              entrants: match.players,
+              title: match.title,
+              id: match.id,
+            }
+          : {
+              type: "simple",
+              title: "",
+              players: ["", ""],
+            },
       }),
     );
     if (typeof result === "boolean") {
@@ -94,14 +101,14 @@ export function HeaderControls() {
         title="New Draw"
       >
         <DialogBody>
-          <p>Pick a startgg match</p>
+          <p>
+            Pick a startgg match or{" "}
+            <Button minimal onClick={() => handleDraw()}>
+              draw without a match
+            </Button>
+          </p>
           <StartggApiKeyGated>
-            <MatchPicker
-              onPickMatch={(match) => {
-                handleDraw(match);
-                setMatchPickerOpen(false);
-              }}
-            />
+            <MatchPicker onPickMatch={handleDraw} />
           </StartggApiKeyGated>
         </DialogBody>
       </Dialog>
