@@ -4,6 +4,7 @@ import {
   PlayerNameDocument,
   ReportSetDocument,
   SetNameDocument,
+  EventListDocument,
 } from "./generated/graphql";
 import { Client, fetchExchange, gql } from "@urql/core";
 import { cacheExchange } from "@urql/exchange-graphcache";
@@ -164,4 +165,45 @@ export type {
  */
 export function useReportSetMutation() {
   return useMutation(ReportSetMutation);
+}
+
+const EventListQuery: typeof EventListDocument = gql`
+  query EventList($page: Int!, $perPage: Int!) {
+    currentUser {
+      tournaments(
+        query: {
+          page: $page
+          perPage: $perPage
+          filter: { tournamentView: "admin" }
+        }
+      ) {
+        nodes {
+          id
+          name
+          slug
+          events {
+            id
+            name
+            slug
+          }
+        }
+        pageInfo {
+          total
+          totalPages
+          page
+          perPage
+        }
+      }
+    }
+  }
+`;
+
+export function useCurrentUserEvents() {
+  return useQuery({
+    query: EventListQuery,
+    variables: {
+      page: 1,
+      perPage: 25,
+    },
+  });
 }

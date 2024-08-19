@@ -16,6 +16,7 @@ export function PlayerNamesControls() {
         title="Start.gg Credentials"
         collapsible
         collapseProps={{ defaultIsOpen: !apiKey || !eventSlug }}
+        style={{ maxWidth: "50em" }}
       >
         <SectionCard>
           <StartggCredsManager />
