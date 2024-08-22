@@ -14,6 +14,9 @@ const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
+// these are the only date-fns locales we'll bother to bundle
+const supportedLocales = ["en-US", "en-AU", "en-GB", "ja", "id", "es"];
+
 const packageJson = require("./package.json");
 
 /** @returns {import("webpack").Configuration} */
@@ -170,6 +173,13 @@ module.exports = function (env = {}, argv = {}) {
       }),
       new webpack.ProgressPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
+      // exclude locale bundles we don't use
+      new webpack.ContextReplacementPlugin(
+        /^date-fns[/\\]locale$/,
+        new RegExp(
+          `\\.[/\\\\](${supportedLocales.join("|")})[/\\\\]index\\.js$`,
+        ),
+      ),
       new webpack.DefinePlugin({
         "process.env.NODE_ENV": JSON.stringify(
           isProd ? "production" : "development",
