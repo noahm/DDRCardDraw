@@ -47,6 +47,19 @@ const router = createBrowserRouter([
     },
   },
   {
+    path: "static-cards",
+    lazy: async () => {
+      const { StaticCards } = await import("./obs-sources/static-cards");
+      return {
+        element: (
+          <Provider store={store}>
+            <StaticCards />
+          </Provider>
+        ),
+      };
+    },
+  },
+  {
     path: "e/:roomName",
     element: <AppForRoom />,
   },

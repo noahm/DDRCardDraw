@@ -8,6 +8,7 @@ import { DrawingActions } from "./tournament-mode/drawing-actions";
 import { ErrorFallback } from "./utils/error-fallback";
 import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "./config-state";
+import { EligibleChart } from "./models/Drawing";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -37,6 +38,16 @@ export function ChartsOnly({ drawingId }: Props) {
     <DrawingProvider value={drawingId}>
       <ChartList />
     </DrawingProvider>
+  );
+}
+
+export function RawChartList(props: { charts: Array<EligibleChart> }) {
+  return (
+    <div className={styles.chartList}>
+      {props.charts.map((c, idx) => (
+        <SongCard key={idx} chart={c} />
+      ))}
+    </div>
   );
 }
 
