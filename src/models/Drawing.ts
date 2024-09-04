@@ -77,6 +77,7 @@ export function playerNameByIndex(
 
 export interface Drawing {
   id: string;
+  configId: string;
   meta: SimpleMeta | StartggMeta;
   /** index of items of the players array, in the order they should be displayed */
   playerDisplayOrder: number[];

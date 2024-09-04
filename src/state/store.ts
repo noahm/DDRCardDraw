@@ -5,12 +5,11 @@ import {
 } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
 import { reducer } from "./root-reducer";
-import { listenerMiddleware } from "./listener-middleware";
+import { middleware as listener } from "./listener-middleware";
 
 export const store = configureStore({
   reducer,
-  middleware: (getDefaults) =>
-    getDefaults().concat(listenerMiddleware.middleware),
+  middleware: (getDefaults) => getDefaults().concat(listener),
 });
 
 export type AppState = ReturnType<typeof store.getState>;

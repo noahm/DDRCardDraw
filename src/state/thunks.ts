@@ -4,6 +4,7 @@ import { getDefaultStore } from "jotai";
 import { gameDataAtom } from "./game-data.atoms";
 import { drawingsSlice } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
+import { configSlice } from "./config.slice";
 
 declare const umami: {
   track(
@@ -30,12 +31,13 @@ export function createDraw(startggTargetSet: StartggInfo): AppThunk {
     const state = getState();
     const jotaiStore = getDefaultStore();
     const gameData = jotaiStore.get(gameDataAtom);
-    if (!gameData) {
+    const config = configSlice.selectors.getCurrent(state);
+    if (!gameData || !config) {
       trackDraw(null);
       return false; // no draw was possible
     }
 
-    const drawing = draw(gameData, state.config, startggTargetSet);
+    const drawing = draw(gameData, config, startggTargetSet);
     trackDraw(drawing.charts.length, state.gameData.dataSetName);
     if (!drawing.charts.length) {
       return false; // could not draw the requested number of charts
@@ -52,8 +54,9 @@ export function createRedrawAll(drawingId: string): AppThunk {
   return (dispatch, getState) => {
     const state = getState();
     const drawing = state.drawings.entities[drawingId];
+    const originalConfig = state.config.entities[drawing.configId];
     const drawConfig = {
-      ...state.config,
+      ...originalConfig,
       chartCount: drawing.charts.length,
     };
     const jotaiStore = getDefaultStore();
@@ -102,12 +105,13 @@ export function createRedrawChart(
     if (!gameData) return;
     const state = getState();
     const drawing = state.drawings.entities[drawingId];
+    const originalConfig = state.config.entities[drawing.configId];
     const startingPoint = {
       ...drawing,
       charts: drawing.charts.filter((chart) => chart.id !== chartId),
     };
 
-    const drawResult = draw(gameData, state.config, startingPoint);
+    const drawResult = draw(gameData, originalConfig, startingPoint);
     const chart = drawResult.charts.pop();
     if (
       !chart ||
@@ -135,7 +139,8 @@ export function createPickBanPocket(
   pick?: EligibleChart,
 ): AppThunk {
   return (dispatch, getState) => {
-    const reorder = getState().config.orderByAction;
+    const reorder =
+      !!configSlice.selectors.getCurrent(getState())?.orderByAction;
     let action;
     if (type === "pocket") {
       if (pick) {

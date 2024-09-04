@@ -439,6 +439,7 @@ export function draw(
 
   return {
     id: `draw-${nanoid(10)}`,
+    configId: configData.id,
     bans: {},
     protects: {},
     pocketPicks: {},

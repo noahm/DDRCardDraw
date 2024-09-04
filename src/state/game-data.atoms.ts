@@ -1,7 +1,6 @@
 import { atom, getDefaultStore } from "jotai";
 import { GameData } from "../models/SongData";
 import { startAppListening } from "./listener-middleware";
-import { configSlice } from "./config.slice";
 
 export const gameDataAtom = atom<GameData | null>(null);
 
@@ -53,12 +52,6 @@ startAppListening({
     if (newData) {
       console.log("data arrived", { newData });
       jotaiStore.set(gameDataAtom, newData);
-      api.dispatch(
-        configSlice.actions.applyDefaults({
-          supportsGranular: !!newData.meta.granularTierResolution,
-          ...newData.defaults,
-        }),
-      );
       jotaiStore.set(gameDataLoadingStatus, "available");
     } else {
       console.log("data did not arrive");

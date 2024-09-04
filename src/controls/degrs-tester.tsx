@@ -29,11 +29,11 @@ export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
 }
 
 function* oneMillionDraws(gameData: GameData) {
-  const configState = configSlice.selectSlice(store.getState());
+  const configState = configSlice.selectors.getCurrent(store.getState());
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
     yield [
-      draw(gameData, configState, {
+      draw(gameData, configState!, {
         meta: { players: [], title: "", type: "simple" },
       }),
       idx,
