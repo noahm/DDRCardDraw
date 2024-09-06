@@ -1,8 +1,7 @@
 import { useAppDispatch, useAppState } from "./store";
 import { EqualityFn } from "react-redux";
 import { createContext, ReactNode, useCallback, useContext } from "react";
-import { ConfigState } from "../config-state";
-import { configSlice } from "./config.slice";
+import { configSlice, type ConfigState } from "./config.slice";
 
 const configContext = createContext<string | null>(null);
 

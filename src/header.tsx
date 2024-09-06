@@ -14,7 +14,6 @@ import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
-import { DataLoadingSpinner, VersionSelect } from "./version-select";
 import { useAppDispatch, useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
 
@@ -68,8 +67,7 @@ export function Header() {
           <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
         </Popover>
         <Navbar.Divider />
-        <VersionSelect />
-        <DataLoadingSpinner />
+        <Navbar.Heading>Event Mode</Navbar.Heading>
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>
         <HeaderControls />

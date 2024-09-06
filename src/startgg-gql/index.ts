@@ -127,6 +127,7 @@ const EventSetsDoc: typeof EventSetsDocument = gql`
           fullRoundText
           identifier
           slots {
+            id
             prereqType
             prereqId
             prereqPlacement

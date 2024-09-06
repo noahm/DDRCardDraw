@@ -1,9 +1,8 @@
 import { Button, Card, Classes, Spinner, Text } from "@blueprintjs/core";
 import { useStartggMatches } from "./startgg-gql";
-import { useAppState } from "./state/store";
+import { createAppSelector, useAppState } from "./state/store";
 import { inferShortname } from "./controls/player-names";
 import { Refresh } from "@blueprintjs/icons";
-import { drawingsSlice } from "./state/drawings.slice";
 
 export interface PickedMatch {
   title: string;
@@ -11,11 +10,18 @@ export interface PickedMatch {
   id: string;
 }
 
+const associatedMatchIds = createAppSelector(
+  [(s) => s.drawings.entities],
+  (entities) => {
+    return Object.values(entities)
+      .map((drawing) => drawing.meta.type === "startgg" && drawing.meta.id)
+      .filter((value): value is string => typeof value === "string" && !!value);
+  },
+);
+
 export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
   const [resp, refetch] = useStartggMatches();
-  const existingMatches = useAppState(
-    drawingsSlice.selectors.associatedMatchIds,
-  );
+  const existingMatches = useAppState(associatedMatchIds);
   const event = resp.data?.event;
   const matches = event?.sets?.nodes;
   const reloadButton = (

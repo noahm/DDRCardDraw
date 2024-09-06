@@ -9,6 +9,8 @@ import { ErrorFallback } from "./utils/error-fallback";
 import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "./config-state";
 import { EligibleChart } from "./models/Drawing";
+import { ConfigContextProvider } from "./state/hooks";
+import { useAppState } from "./state/store";
 
 const HUE_STEP = (255 / 8) * 3;
 let hue = Math.floor(Math.random() * 255);
@@ -83,39 +85,42 @@ function TournamentModeSpacer() {
 
 const DrawnSet = memo<Props>(function DrawnSet({ drawingId }) {
   const [backgroundImage] = useState(getRandomGradiant());
+  const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
 
   return (
     <DrawingProvider value={drawingId}>
-      <ErrorBoundary
-        fallback={
-          <div
-            className={styles.drawing}
-            style={{
-              backgroundImage,
-              padding: "2em",
-              minHeight: "15em",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <ErrorFallback />
-          </div>
-        }
-      >
-        <div
-          key={drawingId}
-          id={`drawing:${drawingId}`}
-          style={{ backgroundImage }}
-          className={styles.drawing}
+      <ConfigContextProvider value={configId}>
+        <ErrorBoundary
+          fallback={
+            <div
+              className={styles.drawing}
+              style={{
+                backgroundImage,
+                padding: "2em",
+                minHeight: "15em",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <ErrorFallback />
+            </div>
+          }
         >
-          <TournamentModeSpacer />
-          <div id={`drawing-${drawingId}`}>
-            <SetLabels />
-            <ChartList />
+          <div
+            key={drawingId}
+            id={`drawing:${drawingId}`}
+            style={{ backgroundImage }}
+            className={styles.drawing}
+          >
+            <TournamentModeSpacer />
+            <div id={`drawing-${drawingId}`}>
+              <SetLabels />
+              <ChartList />
+            </div>
+            <DrawingActions />
           </div>
-          <DrawingActions />
-        </div>
-      </ErrorBoundary>
+        </ErrorBoundary>
+      </ConfigContextProvider>
     </DrawingProvider>
   );
 });

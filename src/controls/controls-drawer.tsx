@@ -3,11 +3,17 @@ import {
   ButtonGroup,
   Card,
   Checkbox,
+  Classes,
   Collapse,
+  ControlGroup,
+  Dialog,
+  DialogBody,
+  DialogFooter,
   Divider,
   FormGroup,
   HTMLSelect,
   NumericInput,
+  Tooltip,
 } from "@blueprintjs/core";
 import {
   CaretDown,
@@ -15,6 +21,9 @@ import {
   Plus,
   SmallTick,
   SmallCross,
+  Add,
+  Duplicate,
+  Delete,
 } from "@blueprintjs/icons";
 import { DateInput3 } from "@blueprintjs/datetime2";
 import parse from "date-fns/parse";
@@ -29,7 +38,7 @@ import styles from "./controls.css";
 import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
-import { detectedLanguage } from "../utils";
+import { availableGameData, detectedLanguage } from "../utils";
 import {
   SelectedConfigContextProvider,
   useConfigState,
@@ -37,8 +46,9 @@ import {
 } from "../state/hooks";
 import { useAtomValue } from "jotai";
 import { showEligibleCharts } from "../config-state";
-import { useAppState } from "../state/store";
-import { gameDataAtom } from "../state/game-data.atoms";
+import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
+import { gameDataAtom, useStockGameData } from "../state/game-data.atoms";
+import { configSlice, createConfigFromInputs } from "../state/config.slice";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -80,9 +90,115 @@ function getDiffsAndRangeForNewStyle(
 export default function ControlsDrawer() {
   return (
     <div className={styles.drawer}>
+      <ControlsList />
       <SelectedConfigContextProvider>
         <GeneralSettings />
       </SelectedConfigContextProvider>
+    </div>
+  );
+}
+
+const getConfigEntries = createAppSelector(
+  [(s) => s.config.entities],
+  (entities) =>
+    Object.entries(entities).map(
+      ([key, config]) =>
+        [
+          key,
+          config.name,
+          config.gameKey,
+          config.lowerBound,
+          config.upperBound,
+        ] as const,
+    ),
+);
+
+function ControlsList() {
+  const summaryValues = useAppState(getConfigEntries);
+  const selected = useAppState((s) => s.config.current);
+  const [addOpen, setAddOpen] = useState(false);
+  const [busyCreating, setBusyCreating] = useState(false);
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (busyCreating) return;
+
+    const data = new FormData(e.currentTarget);
+    const name = data.get("name") as string;
+    const gameStub = data.get("game") as string;
+
+    if (!name) {
+      return;
+    }
+    if (!gameStub) {
+      return;
+    }
+
+    setBusyCreating(true);
+    dispatch(await createConfigFromInputs(name, gameStub));
+    setAddOpen(false);
+    setBusyCreating(false);
+  };
+
+  return (
+    <div>
+      <Dialog
+        isOpen={addOpen}
+        onClose={() => setAddOpen(false)}
+        title="Create Config"
+      >
+        <form onSubmit={handleSubmit}>
+          <DialogBody>
+            <FormGroup label="Name" inline>
+              <input
+                name="name"
+                disabled={busyCreating}
+                className={Classes.INPUT}
+              />
+            </FormGroup>
+            <FormGroup label="Game" inline>
+              <HTMLSelect name="game" disabled={busyCreating}>
+                {availableGameData.map((data) => (
+                  <option value={data.name}>{data.display}</option>
+                ))}
+              </HTMLSelect>
+            </FormGroup>
+          </DialogBody>
+          <DialogFooter
+            actions={
+              <Button type="submit" loading={busyCreating}>
+                Create
+              </Button>
+            }
+          ></DialogFooter>
+        </form>
+      </Dialog>
+      <FormGroup label="Config preset">
+        <ControlGroup>
+          <HTMLSelect
+            value={selected || undefined}
+            onChange={(e) =>
+              dispatch(configSlice.actions.pickCurrent(e.currentTarget.value))
+            }
+          >
+            {summaryValues.map(([key, name, gameKey, lb, ub]) => (
+              <option key={key} value={key}>
+                {name} ({gameKey}, {lb}-{ub})
+              </option>
+            ))}
+          </HTMLSelect>
+          <Tooltip content="Create new config">
+            <Button icon={<Add />} onClick={() => setAddOpen(true)} />
+          </Tooltip>
+          <Tooltip content="Duplicate config">
+            <Button icon={<Duplicate />} />
+          </Tooltip>
+          <Tooltip content="Delete config">
+            <Button icon={<Delete />} />
+          </Tooltip>
+        </ControlGroup>
+      </FormGroup>
     </div>
   );
 }
@@ -231,10 +347,10 @@ function FolderSettings() {
 
 function GeneralSettings() {
   const { t } = useIntl();
-  const gameData = useAtomValue(gameDataAtom);
   const updateState = useUpdateConfig();
   const showingEligibleCharts = useAtomValue(showEligibleCharts);
   const configState = useConfigState();
+  const gameData = useStockGameData(configState.gameKey);
   const {
     useWeights,
     constrainPocketPicks,

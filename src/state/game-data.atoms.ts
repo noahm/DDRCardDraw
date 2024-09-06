@@ -1,6 +1,8 @@
-import { atom, getDefaultStore } from "jotai";
+import { atom, getDefaultStore, useAtomValue } from "jotai";
 import { GameData } from "../models/SongData";
 import { startAppListening } from "./listener-middleware";
+import { useEffect } from "react";
+import { atomFamily } from "jotai/utils";
 
 export const gameDataAtom = atom<GameData | null>(null);
 
@@ -8,12 +10,40 @@ export const gameDataLoadingStatus = atom<
   "loading" | "failed" | "pending" | "available"
 >("pending");
 
+export const stockDataCache = atom<Record<string, GameData>>({});
 export const customDataCache = atom<Record<string, GameData>>({});
 
-async function loadStockGamedataByName(name: string) {
-  return (
+export const stockDataByName = atomFamily((name: string) =>
+  atom((get) => get(stockDataCache)[name]),
+);
+
+export async function loadStockGamedataByName(name: string) {
+  const jotaiStore = getDefaultStore();
+  const cache = jotaiStore.get(stockDataCache);
+  if (cache[name]) {
+    return cache[name];
+  }
+
+  const data = (
     await import(/* webpackChunkName: "songData" */ `../songs/${name}.json`)
   ).default as GameData;
+  jotaiStore.set(stockDataCache, (prev) => {
+    return {
+      ...prev,
+      [name]: data,
+    };
+  });
+  return data;
+}
+
+export function useStockGameData(name: string): GameData | null {
+  const data = useAtomValue(stockDataByName(name));
+  useEffect(() => {
+    if (!data) {
+      loadStockGamedataByName(name);
+    }
+  }, [data, name]);
+  return data || null;
 }
 
 startAppListening({

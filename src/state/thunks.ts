@@ -1,7 +1,6 @@
 import { AppThunk } from "./store";
 import { draw, StartggInfo } from "../card-draw";
-import { getDefaultStore } from "jotai";
-import { gameDataAtom } from "./game-data.atoms";
+import { loadStockGamedataByName } from "./game-data.atoms";
 import { drawingsSlice } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
 import { configSlice } from "./config.slice";
@@ -27,12 +26,16 @@ function trackDraw(count: number | null, game?: string) {
  * @returns false if draw was unsuccessful
  */
 export function createDraw(startggTargetSet: StartggInfo): AppThunk {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
     const state = getState();
-    const jotaiStore = getDefaultStore();
-    const gameData = jotaiStore.get(gameDataAtom);
     const config = configSlice.selectors.getCurrent(state);
-    if (!gameData || !config) {
+    if (!config) {
+      console.error("couldnt draw, no config");
+      return false;
+    }
+    const gameData = await loadStockGamedataByName(config.gameKey);
+    if (!gameData) {
+      console.error("couldnt draw, no game data");
       trackDraw(null);
       return false; // no draw was possible
     }
@@ -51,7 +54,7 @@ export function createDraw(startggTargetSet: StartggInfo): AppThunk {
  * thunk creator for redrawing all charts in a target drawing
  */
 export function createRedrawAll(drawingId: string): AppThunk {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
     const state = getState();
     const drawing = state.drawings.entities[drawingId];
     const originalConfig = state.config.entities[drawing.configId];
@@ -59,8 +62,7 @@ export function createRedrawAll(drawingId: string): AppThunk {
       ...originalConfig,
       chartCount: drawing.charts.length,
     };
-    const jotaiStore = getDefaultStore();
-    const gameData = jotaiStore.get(gameDataAtom);
+    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
 
     // preserve pocket picks and protects in the redraw by keeping them in the starting point info
     // and filtering out all other charts
@@ -99,13 +101,12 @@ export function createRedrawChart(
   drawingId: string,
   chartId: string,
 ): AppThunk {
-  return (dispatch, getState) => {
-    const jotaiStore = getDefaultStore();
-    const gameData = jotaiStore.get(gameDataAtom);
-    if (!gameData) return;
+  return async (dispatch, getState) => {
     const state = getState();
     const drawing = state.drawings.entities[drawingId];
     const originalConfig = state.config.entities[drawing.configId];
+    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
+    if (!gameData) return;
     const startingPoint = {
       ...drawing,
       charts: drawing.charts.filter((chart) => chart.id !== chartId),

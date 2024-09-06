@@ -5,6 +5,7 @@ import {
 } from "@reduxjs/toolkit";
 import { GameData } from "../models/SongData";
 import { nanoid } from "nanoid";
+import { loadStockGamedataByName } from "./game-data.atoms";
 
 export interface ConfigState {
   id: string;
@@ -106,11 +107,8 @@ function getOverridesFromGameData(gameData: GameData) {
   return gameSpecificOverrides;
 }
 
-export function createFromGameData(
-  gameData: GameData,
-  name: string,
-  gameKey: string,
-) {
+export async function createConfigFromInputs(name: string, gameKey: string) {
+  const gameData = await loadStockGamedataByName(gameKey);
   const newConfig: ConfigState = {
     id: nanoid(10),
     name,

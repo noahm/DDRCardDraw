@@ -1,10 +1,11 @@
 import {
   Button,
-  ButtonGroup,
+  ControlGroup,
   Dialog,
   DialogBody,
   Drawer,
   DrawerSize,
+  HTMLSelect,
   Intent,
   NavbarDivider,
   Position,
@@ -19,21 +20,58 @@ import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { createDraw } from "../state/thunks";
-import { useAppDispatch } from "../state/store";
-import { useAtomValue, useSetAtom } from "jotai";
+import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
+import { useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
-import { gameDataLoadingStatus } from "../state/game-data.atoms";
 import { MatchPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
+import { configSlice } from "../state/config.slice";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
+
+const getConfigEntries = createAppSelector(
+  [(s) => s.config.entities],
+  (entities) =>
+    Object.entries(entities).map(([key, config]) => [key, config.name]),
+);
+
+function ConfigSelect() {
+  const configEntries = useAppState(getConfigEntries);
+  const current = useAppState((s) => s.config.current);
+  const dispatch = useAppDispatch();
+
+  if (!configEntries.length) {
+    return (
+      <HTMLSelect disabled value="placeholder">
+        <option disabled value="placeholder">
+          Create a draw config
+        </option>
+      </HTMLSelect>
+    );
+  }
+
+  return (
+    <HTMLSelect
+      value={current || undefined}
+      onChange={(e) =>
+        dispatch(configSlice.actions.pickCurrent(e.currentTarget.value))
+      }
+    >
+      {configEntries.map(([key, name]) => (
+        <option key={key} value={key}>
+          {name}
+        </option>
+      ))}
+    </HTMLSelect>
+  );
+}
 
 export function HeaderControls() {
   const setShowEligibleCharts = useSetAtom(showEligibleCharts);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
   const [matchPickerOpen, setMatchPickerOpen] = useState(false);
-  const hasGameData = useAtomValue(gameDataLoadingStatus) === "available";
+  const hasConfig = useAppState((s) => !!s.config.current);
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
 
@@ -118,17 +156,8 @@ export function HeaderControls() {
           <NavbarDivider />
         </>
       )}
-      <ButtonGroup>
-        <Tooltip disabled={hasGameData} content="Loading game data">
-          <Button
-            onClick={() => setMatchPickerOpen(true)}
-            icon={<NewLayers />}
-            intent={Intent.PRIMARY}
-            disabled={!hasGameData}
-          >
-            <FormattedMessage id="draw" />
-          </Button>
-        </Tooltip>
+      <ControlGroup>
+        <ConfigSelect />
         <Tooltip
           isOpen={lastDrawFailed}
           content={<FormattedMessage id="controls.invalid" />}
@@ -142,7 +171,18 @@ export function HeaderControls() {
             data-umami-event="settings-open"
           />
         </Tooltip>
-      </ButtonGroup>
+      </ControlGroup>
+      <NavbarDivider />
+      <Tooltip disabled={hasConfig} content="Select a config first">
+        <Button
+          onClick={() => setMatchPickerOpen(true)}
+          icon={<NewLayers />}
+          intent={Intent.PRIMARY}
+          disabled={!hasConfig}
+        >
+          <FormattedMessage id="draw" />
+        </Button>
+      </Tooltip>
     </>
   );
 }
