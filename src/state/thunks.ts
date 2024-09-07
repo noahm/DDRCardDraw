@@ -3,7 +3,7 @@ import { draw, StartggInfo } from "../card-draw";
 import { loadStockGamedataByName } from "./game-data.atoms";
 import { drawingsSlice } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
-import { configSlice } from "./config.slice";
+import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
 declare const umami: {
   track(
@@ -41,7 +41,7 @@ export function createDraw(startggTargetSet: StartggInfo): AppThunk {
     }
 
     const drawing = draw(gameData, config, startggTargetSet);
-    trackDraw(drawing.charts.length, state.gameData.dataSetName);
+    trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
     if (!drawing.charts.length) {
       return false; // could not draw the requested number of charts
     }
@@ -166,5 +166,53 @@ export function createPickBanPocket(
     if (action) {
       dispatch(action);
     }
+  };
+}
+
+import { GameData } from "../models/SongData";
+import { nanoid } from "nanoid";
+
+function getOverridesFromGameData(gameData: GameData) {
+  const {
+    flags,
+    difficulties,
+    folders,
+    style,
+    lowerLvlBound: lowerBound,
+    upperLvlBound: upperBound,
+  } = gameData.defaults;
+  const gameSpecificOverrides: Partial<ConfigState> = {
+    lowerBound,
+    upperBound,
+    flags,
+    difficulties,
+    style,
+    cutoffDate: "",
+  };
+  if (folders) {
+    gameSpecificOverrides.folders = folders;
+  }
+  if (!gameData.meta.granularTierResolution) {
+    gameSpecificOverrides.useGranularLevels = false;
+  }
+  return gameSpecificOverrides;
+}
+
+export function createConfigFromInputs(
+  name: string,
+  gameKey: string,
+): AppThunk {
+  return async (dispatch) => {
+    const gameData = await loadStockGamedataByName(gameKey);
+    const newConfig: ConfigState = {
+      id: nanoid(10),
+      name,
+      gameKey,
+      ...defaultConfig,
+    };
+    if (gameData) {
+      Object.assign(newConfig, getOverridesFromGameData(gameData));
+    }
+    dispatch(configSlice.actions.addOne(newConfig));
   };
 }

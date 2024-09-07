@@ -3,9 +3,6 @@ import {
   createEntityAdapter,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { GameData } from "../models/SongData";
-import { nanoid } from "nanoid";
-import { loadStockGamedataByName } from "./game-data.atoms";
 
 export interface ConfigState {
   id: string;
@@ -88,41 +85,3 @@ export const configSlice = createSlice({
     },
   },
 });
-
-function getOverridesFromGameData(gameData: GameData) {
-  const {
-    flags,
-    difficulties,
-    folders,
-    style,
-    lowerLvlBound: lowerBound,
-    upperLvlBound: upperBound,
-  } = gameData.defaults;
-  const gameSpecificOverrides: Partial<ConfigState> = {
-    lowerBound,
-    upperBound,
-    flags,
-    difficulties,
-    style,
-    cutoffDate: "",
-  };
-  if (folders) {
-    gameSpecificOverrides.folders = folders;
-  }
-  if (!gameData.meta.granularTierResolution) {
-    gameSpecificOverrides.useGranularLevels = false;
-  }
-  return gameSpecificOverrides;
-}
-
-export async function createConfigFromInputs(name: string, gameKey: string) {
-  const gameData = await loadStockGamedataByName(gameKey);
-  const newConfig: ConfigState = {
-    id: nanoid(10),
-    name,
-    gameKey,
-    ...defaultConfig,
-    ...getOverridesFromGameData(gameData),
-  };
-  return configSlice.actions.addOne(newConfig);
-}

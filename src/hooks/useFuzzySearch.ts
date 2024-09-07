@@ -1,9 +1,8 @@
 import FuzzySearch from "fuzzy-search";
-import { useAtomValue } from "jotai";
-import { gameDataAtom } from "../state/game-data.atoms";
+import { useGameData } from "../state/hooks";
 
 export function useFuzzySearch() {
-  const gameData = useAtomValue(gameDataAtom);
+  const gameData = useGameData();
   if (!gameData) return null;
   return new FuzzySearch(
     gameData.songs,

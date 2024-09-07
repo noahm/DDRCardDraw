@@ -12,7 +12,6 @@ import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
 import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
-import { DropHandler } from "./drop-handler";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
 import { PartySocketManager } from "./party/client";
@@ -139,7 +138,6 @@ function AppForRoom() {
               <CabManagement />
               <MainView />
             </div>
-            <DropHandler />
           </IntlProvider>
         </UrqlProvider>
       </PartySocketManager>

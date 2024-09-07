@@ -1,91 +1,108 @@
-import {
-  Button,
-  Menu,
-  MenuItem,
-  Spinner,
-  SpinnerSize,
-} from "@blueprintjs/core";
-import { Error } from "@blueprintjs/icons";
+import { Button, Menu, MenuItem } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
 import { useDataSets } from "./hooks/useDataSets";
 import { groupGameData } from "./utils";
 import { useIntl } from "./hooks/useIntl";
 import { DoubleCaretVertical, FolderOpen } from "@blueprintjs/icons";
-import { useAtomValue } from "jotai";
-import { gameDataLoadingStatus } from "./state/game-data.atoms";
-import { DelayRender } from "./utils/delay-render";
+import { useState } from "react";
 
-export function VersionSelect() {
+export function GameDataSelect(props: {
+  /** if provided, a hidden input will be rendered with current value */
+  name?: string;
+  value?: string;
+  initialValue?: string;
+  onGameSelect?(gameKey: string): void;
+}) {
   const { t } = useIntl();
-  const { current, available, loadData } = useDataSets();
+  const { available } = useDataSets();
+  const [innerValue, setInnerValue] = useState(props.initialValue);
+  const currentDisplay = available.find(
+    (d) => d.name === (props.value || innerValue),
+  )?.display;
+
   return (
-    <Select
-      items={available}
-      filterable={false}
-      itemListRenderer={(listProps) => {
-        const groupedItems = groupGameData(listProps.filteredItems);
-        return (
-          <Menu role="listbox" ulRef={listProps.itemsParentRef}>
-            <MenuItem disabled text={t("gameMenu.title")} />
-            {groupedItems.map((item) => {
-              if (item.type === "game") {
-                return listProps.renderItem(item, item.index);
-              } else {
-                return (
-                  <MenuItem
-                    key={item.name}
-                    icon={<FolderOpen />}
-                    text={t("gameMenu.parent." + item.name)}
-                  >
-                    {item.games.map((g) => listProps.renderItem(g, g.index))}
-                  </MenuItem>
-                );
-              }
-            })}
-          </Menu>
-        );
-      }}
-      itemRenderer={(
-        item,
-        {
-          handleClick: onClick,
-          handleFocus: onFocus,
-          modifiers: { active, disabled, matchesPredicate },
-        },
-      ) =>
-        matchesPredicate ? null : (
-          <MenuItem
-            role="listitem"
-            // icon="document"
-            key={item.name}
-            text={item.display}
-            {...{ onClick, onFocus, active, disabled }}
-            selected={current.name === item.name}
-          />
-        )
-      }
-      onItemSelect={(item) => loadData(item.name)}
-    >
-      <Button text={current.display} rightIcon={<DoubleCaretVertical />} />
-    </Select>
+    <>
+      {props.name ? (
+        <input
+          type="hidden"
+          value={props.value || innerValue}
+          name={props.name}
+        />
+      ) : null}
+      <Select
+        items={available}
+        filterable={false}
+        itemListRenderer={(listProps) => {
+          const groupedItems = groupGameData(listProps.filteredItems);
+          return (
+            <Menu role="listbox" ulRef={listProps.itemsParentRef}>
+              <MenuItem disabled text={t("gameMenu.title")} />
+              {groupedItems.map((item) => {
+                if (item.type === "game") {
+                  return listProps.renderItem(item, item.index);
+                } else {
+                  return (
+                    <MenuItem
+                      key={item.name}
+                      icon={<FolderOpen />}
+                      text={t("gameMenu.parent." + item.name)}
+                    >
+                      {item.games.map((g) => listProps.renderItem(g, g.index))}
+                    </MenuItem>
+                  );
+                }
+              })}
+            </Menu>
+          );
+        }}
+        itemRenderer={(
+          item,
+          {
+            handleClick: onClick,
+            handleFocus: onFocus,
+            modifiers: { active, disabled, matchesPredicate },
+          },
+        ) =>
+          matchesPredicate ? null : (
+            <MenuItem
+              role="listitem"
+              // icon="document"
+              key={item.name}
+              text={item.display}
+              {...{ onClick, onFocus, active, disabled }}
+              selected={(props.value || innerValue) === item.name}
+            />
+          )
+        }
+        onItemSelect={(item) => {
+          props.onGameSelect?.(item.name);
+          setInnerValue(item.name);
+        }}
+      >
+        <Button
+          text={currentDisplay || "Select a game"}
+          rightIcon={<DoubleCaretVertical />}
+        />
+      </Select>
+    </>
   );
 }
 
-export function DataLoadingSpinner() {
-  const loadingStatus = useAtomValue(gameDataLoadingStatus);
-  if (loadingStatus === "failed") {
-    return (
-      <>
-        <Error /> Couldn't load game!
-      </>
-    );
-  }
-  if (loadingStatus === "loading") {
-    return (
-      <DelayRender>
-        <Spinner size={SpinnerSize.SMALL} /> Loading game...
-      </DelayRender>
-    );
-  }
-  return null;
-}
+// export function DataLoadingSpinner() {
+//   const loadingStatus = useAtomValue(gameDataLoadingStatus);
+//   if (loadingStatus === "failed") {
+//     return (
+//       <>
+//         <Error /> Couldn't load game!
+//       </>
+//     );
+//   }
+//   if (loadingStatus === "loading") {
+//     return (
+//       <DelayRender>
+//         <Spinner size={SpinnerSize.SMALL} /> Loading game...
+//       </DelayRender>
+//     );
+//   }
+//   return null;
+// }

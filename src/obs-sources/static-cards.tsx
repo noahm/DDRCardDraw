@@ -1,10 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { availableGameData } from "../utils";
-import { useEffect } from "react";
-import { useAtomValue } from "jotai";
-import { gameDataAtom } from "../state/game-data.atoms";
-import { gameDataSlice } from "../state/game-data.slice";
-import { useAppDispatch } from "../state/store";
+import { useStockGameData } from "../state/game-data.atoms";
 import { GameData } from "../models/SongData";
 import { getDrawnChart } from "../card-draw";
 import { RawChartList } from "../drawn-set";
@@ -26,16 +22,7 @@ export function StaticCards() {
 }
 
 function StaticCardsLoader(props: { game: string; charts: string[] }) {
-  const gameData = useAtomValue(gameDataAtom);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(
-      gameDataSlice.actions.selectGameData({
-        dataSetName: props.game,
-        dataType: "stock",
-      }),
-    );
-  }, [dispatch, props.game]);
+  const gameData = useStockGameData(props.game);
   if (!gameData) {
     return null;
   }

@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
-import { useConfigState } from "../state/hooks";
+import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import styles from "./song-search.css";
 import { useFuzzySearch } from "../hooks/useFuzzySearch";
-import { getDefaultStore } from "jotai";
-import { gameDataAtom } from "../state/game-data.atoms";
 
 interface Props {
   isOpen: boolean;
@@ -20,6 +18,7 @@ export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
+  const gameData = useGameData();
   const fuzzySearch = useFuzzySearch();
 
   let items: SearchResultData[] = [];
@@ -53,11 +52,7 @@ export function SongSearch(props: Props) {
           item.song,
           item.chart === "none" || !item.chart
             ? undefined
-            : getDrawnChart(
-                getDefaultStore().get(gameDataAtom)!,
-                item.song,
-                item.chart,
-              ),
+            : getDrawnChart(gameData!, item.song, item.chart),
         )
       }
       items={items}

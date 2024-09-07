@@ -2,13 +2,11 @@ import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
 import { zeroPad } from "../utils";
 import { useMemo } from "react";
-import { useConfigState, useUpdateConfig } from "../state/hooks";
+import { useConfigState, useGameData, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { getAvailableLevels } from "../game-data-utils";
 import { LevelRangeBucket, getBuckets } from "../card-draw";
-import { useAtomValue } from "jotai";
-import { gameDataAtom } from "../state/game-data.atoms";
 
 interface Props {
   usesTiers: boolean;
@@ -53,7 +51,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     }),
     shallow,
   );
-  const gameData = useAtomValue(gameDataAtom);
+  const gameData = useGameData();
   const groups = useMemo(() => {
     const availableLevels = getAvailableLevels(gameData, useGranularLevels);
     return Array.from(

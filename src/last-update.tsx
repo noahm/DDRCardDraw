@@ -3,12 +3,18 @@ import cn from "classnames";
 import { FormattedMessage } from "react-intl";
 import { detectedLanguage } from "./utils";
 import { useAppState } from "./state/store";
-import { useAtomValue } from "jotai";
-import { gameDataAtom } from "./state/game-data.atoms";
+import { useStockGameData } from "./state/game-data.atoms";
 
 export function LastUpdate() {
-  const dataSetName = useAppState((s) => s.gameData.dataSetName);
-  const gameData = useAtomValue(gameDataAtom);
+  const dataSetName = useAppState((s) => s.config.current);
+  if (!dataSetName) {
+    return null;
+  }
+  return <LastUpdateForGame game={dataSetName} />;
+}
+
+function LastUpdateForGame(props: { game: string }) {
+  const gameData = useStockGameData(props.game);
   if (!gameData) {
     return null;
   }
@@ -21,7 +27,7 @@ export function LastUpdate() {
       <FormattedMessage
         id="lastUpdate"
         values={{
-          gameName: dataSetName,
+          gameName: props.game,
           date: new Intl.DateTimeFormat(detectedLanguage).format(lastUpdate),
         }}
       />

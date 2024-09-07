@@ -35,20 +35,23 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
-import { getAvailableLevels } from "../game-data-utils";
+import { getAvailableLevels, useGetMetaString } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
-import { availableGameData, detectedLanguage } from "../utils";
+import { detectedLanguage } from "../utils";
 import {
   SelectedConfigContextProvider,
   useConfigState,
+  useGameData,
   useUpdateConfig,
 } from "../state/hooks";
 import { useAtomValue } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
-import { gameDataAtom, useStockGameData } from "../state/game-data.atoms";
-import { configSlice, createConfigFromInputs } from "../state/config.slice";
+import { useStockGameData } from "../state/game-data.atoms";
+import { configSlice } from "../state/config.slice";
+import { GameDataSelect } from "../version-select";
+import { createConfigFromInputs } from "../state/thunks";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -136,7 +139,7 @@ function ControlsList() {
     }
 
     setBusyCreating(true);
-    dispatch(await createConfigFromInputs(name, gameStub));
+    await dispatch(createConfigFromInputs(name, gameStub));
     setAddOpen(false);
     setBusyCreating(false);
   };
@@ -155,14 +158,12 @@ function ControlsList() {
                 name="name"
                 disabled={busyCreating}
                 className={Classes.INPUT}
+                autoComplete="off"
+                data-1p-ignore
               />
             </FormGroup>
             <FormGroup label="Game" inline>
-              <HTMLSelect name="game" disabled={busyCreating}>
-                {availableGameData.map((data) => (
-                  <option value={data.name}>{data.display}</option>
-                ))}
-              </HTMLSelect>
+              <GameDataSelect name="game" />
             </FormGroup>
           </DialogBody>
           <DialogFooter
@@ -206,7 +207,7 @@ function ControlsList() {
 const dateFormat = "yyyy-MM-dd";
 function ReleaseDateFilter() {
   const { t } = useIntl();
-  const gameData = useAtomValue(gameDataAtom);
+  const gameData = useGameData();
   const updateState = useUpdateConfig();
   const cutoffDate = useConfigState((s) => s.cutoffDate);
   const mostRecentRelease = useMemo(
@@ -253,22 +254,23 @@ function ReleaseDateFilter() {
 /** Renders the checkboxes for each individual flag that exists in the data file's meta.flags */
 function FlagSettings() {
   const { t } = useIntl();
-  const dataSetName = useAppState((s) => s.gameData.dataSetName);
-  const gameData = useAtomValue(gameDataAtom);
+  const gameData = useGameData();
   const hasFlags = !!gameData?.meta.flags.length;
   const updateState = useUpdateConfig();
   const selectedFlags = useConfigState((s) => s.flags);
+  const getMetaString = useGetMetaString();
 
-  if (!hasFlags) {
+  if (!hasFlags || !gameData) {
     return false;
   }
+  const dataSetName = gameData.i18n.en.name as string;
 
   return (
     <FormGroup label={t("controls.include")}>
       {gameData?.meta.flags.map((key) => (
         <Checkbox
           key={`${dataSetName}:${key}`}
-          label={t("meta." + key)}
+          label={getMetaString(key)}
           value={key}
           checked={selectedFlags.includes(key)}
           onChange={() =>
@@ -291,15 +293,15 @@ function FlagSettings() {
 /** Renders the checkboxes for each individual folder that exists in the data file's meta.folders */
 function FolderSettings() {
   const { t } = useIntl();
-  const gameData = useAtomValue(gameDataAtom);
+  const gameData = useGameData();
   const availableFolders = gameData?.meta.folders;
-  const dataSetName = useAppState((s) => s.gameData.dataSetName);
   const updateState = useUpdateConfig();
   const selectedFolders = useConfigState((s) => s.folders);
 
-  if (!availableFolders?.length) {
+  if (!availableFolders?.length || !gameData) {
     return null;
   }
+  const dataSetName = gameData?.i18n.en.name as string;
 
   return (
     <FormGroup
@@ -377,6 +379,7 @@ function GeneralSettings() {
     () => getAvailableLevels(gameData, useGranularLevels),
     [gameData, useGranularLevels],
   );
+  const getMetaString = useGetMetaString();
 
   if (!gameData) {
     return null;
@@ -572,7 +575,7 @@ function GeneralSettings() {
               >
                 {gameStyles.map((style) => (
                   <option key={style} value={style}>
-                    {t("meta." + style)}
+                    {getMetaString(style)}
                   </option>
                 ))}
               </HTMLSelect>
@@ -597,7 +600,7 @@ function GeneralSettings() {
                     return { difficulties: Array.from(difficulties) };
                   });
                 }}
-                label={t("meta." + dif.key)}
+                label={getMetaString(dif.key)}
               />
             ))}
           </FormGroup>

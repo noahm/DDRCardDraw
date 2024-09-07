@@ -2,6 +2,7 @@ import { useAppDispatch, useAppState } from "./store";
 import { EqualityFn } from "react-redux";
 import { createContext, ReactNode, useCallback, useContext } from "react";
 import { configSlice, type ConfigState } from "./config.slice";
+import { useStockGameData } from "./game-data.atoms";
 
 const configContext = createContext<string | null>(null);
 
@@ -34,6 +35,11 @@ export function useConfigState<T = ConfigState>(
     if (!selector) return configObj as T;
     return selector(configObj);
   }, equalityFn);
+}
+
+export function useGameData() {
+  const gameKey = useConfigState((c) => c.gameKey);
+  return useStockGameData(gameKey);
 }
 
 export function useUpdateConfig() {
