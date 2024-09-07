@@ -10,12 +10,12 @@ export function GameDataSelect(props: {
   /** if provided, a hidden input will be rendered with current value */
   name?: string;
   value?: string;
-  initialValue?: string;
+  defaultValue?: string;
   onGameSelect?(gameKey: string): void;
 }) {
   const { t } = useIntl();
   const { available } = useDataSets();
-  const [innerValue, setInnerValue] = useState(props.initialValue);
+  const [innerValue, setInnerValue] = useState(props.defaultValue);
   const currentDisplay = available.find(
     (d) => d.name === (props.value || innerValue),
   )?.display;

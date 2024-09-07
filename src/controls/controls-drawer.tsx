@@ -23,12 +23,12 @@ import {
   SmallCross,
   Add,
   Duplicate,
-  Delete,
+  Trash,
 } from "@blueprintjs/icons";
 import { DateInput3 } from "@blueprintjs/datetime2";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
@@ -119,9 +119,16 @@ const getConfigEntries = createAppSelector(
 function ControlsList() {
   const summaryValues = useAppState(getConfigEntries);
   const selected = useAppState((s) => s.config.current);
+  const selectedName = useAppState((s) =>
+    selected ? s.config.entities[selected].name : undefined,
+  );
+  const selectedGameId = useAppState((s) =>
+    selected ? s.config.entities[selected].gameKey : undefined,
+  );
   const [addOpen, setAddOpen] = useState(false);
   const [busyCreating, setBusyCreating] = useState(false);
   const dispatch = useAppDispatch();
+  const createBasisRef = useRef<string | undefined>();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -139,17 +146,23 @@ function ControlsList() {
     }
 
     setBusyCreating(true);
-    await dispatch(createConfigFromInputs(name, gameStub));
+    await dispatch(
+      createConfigFromInputs(name, gameStub, createBasisRef.current),
+    );
     setAddOpen(false);
     setBusyCreating(false);
+    createBasisRef.current = undefined;
   };
 
   return (
     <div>
       <Dialog
         isOpen={addOpen}
-        onClose={() => setAddOpen(false)}
-        title="Create Config"
+        onClose={() => {
+          setAddOpen(false);
+          createBasisRef.current = undefined;
+        }}
+        title={"Create Config"}
       >
         <form onSubmit={handleSubmit}>
           <DialogBody>
@@ -158,12 +171,15 @@ function ControlsList() {
                 name="name"
                 disabled={busyCreating}
                 className={Classes.INPUT}
+                defaultValue={
+                  createBasisRef.current && `copy of ${selectedName}`
+                }
                 autoComplete="off"
                 data-1p-ignore
               />
             </FormGroup>
             <FormGroup label="Game" inline>
-              <GameDataSelect name="game" />
+              <GameDataSelect name="game" defaultValue={selectedGameId} />
             </FormGroup>
           </DialogBody>
           <DialogFooter
@@ -193,10 +209,20 @@ function ControlsList() {
             <Button icon={<Add />} onClick={() => setAddOpen(true)} />
           </Tooltip>
           <Tooltip content="Duplicate config">
-            <Button icon={<Duplicate />} />
+            <Button
+              icon={<Duplicate />}
+              onClick={() => {
+                createBasisRef.current = selected || undefined;
+                setAddOpen(true);
+              }}
+            />
           </Tooltip>
           <Tooltip content="Delete config">
-            <Button icon={<Delete />} />
+            <Button
+              disabled={!selected}
+              icon={<Trash />}
+              onClick={() => dispatch(configSlice.actions.removeOne(selected!))}
+            />
           </Tooltip>
         </ControlGroup>
       </FormGroup>

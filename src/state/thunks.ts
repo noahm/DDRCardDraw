@@ -201,14 +201,19 @@ function getOverridesFromGameData(gameData: GameData) {
 export function createConfigFromInputs(
   name: string,
   gameKey: string,
+  basisConfigId?: string,
 ): AppThunk {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     const gameData = await loadStockGamedataByName(gameKey);
+    const basisConfig = basisConfigId
+      ? getState().config.entities[basisConfigId]
+      : {};
     const newConfig: ConfigState = {
+      ...defaultConfig,
+      ...basisConfig,
       id: nanoid(10),
       name,
       gameKey,
-      ...defaultConfig,
     };
     if (gameData) {
       Object.assign(newConfig, getOverridesFromGameData(gameData));
