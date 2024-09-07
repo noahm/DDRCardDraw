@@ -66,9 +66,17 @@ export const configSlice = createSlice({
     pickCurrent(state, action: PayloadAction<string | null>) {
       state.current = action.payload;
     },
-    addOne: adapter.addOne,
+    addOne: (state, action: PayloadAction<ConfigState>) => {
+      const nextState = adapter.addOne(state, action);
+      nextState.current = action.payload.id;
+    },
     updateOne: adapter.updateOne,
-    removeOne: adapter.removeOne,
+    removeOne: (state, action: PayloadAction<string>) => {
+      const nextState = adapter.removeOne(state, action);
+      if (nextState.current === action.payload) {
+        nextState.current = nextState.ids.length ? nextState.ids[0] : null;
+      }
+    },
   },
   selectors: {
     ...adapter.getSelectors(),
