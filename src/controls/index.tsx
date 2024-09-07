@@ -1,31 +1,49 @@
 import {
   Button,
+  Classes,
   ControlGroup,
   Dialog,
   DialogBody,
+  DialogFooter,
   Drawer,
   DrawerSize,
+  FormGroup,
   HTMLSelect,
   Intent,
+  Menu,
+  MenuDivider,
+  MenuItem,
   NavbarDivider,
+  Popover,
   Position,
   Spinner,
   Tooltip,
 } from "@blueprintjs/core";
-import { NewLayers, Cog } from "@blueprintjs/icons";
-import { useState, lazy, Suspense } from "react";
+import {
+  NewLayers,
+  Cog,
+  Add,
+  Duplicate,
+  Trash,
+  FloppyDisk,
+  Import,
+  Menu as MenuIcon,
+} from "@blueprintjs/icons";
+import { useState, lazy, Suspense, useRef } from "react";
 import { FormattedMessage } from "react-intl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
-import { createDraw } from "../state/thunks";
+import { createConfigFromInputs, createDraw } from "../state/thunks";
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
 import { useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { MatchPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
 import { configSlice } from "../state/config.slice";
+import { GameDataSelect } from "../version-select";
+import { loadConfig, saveConfig } from "../config-persistence";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
@@ -116,14 +134,7 @@ export function HeaderControls() {
         title={
           <>
             <FormattedMessage id="controls.drawerTitle" />
-            {/* <ButtonGroup style={{ marginLeft: "10px" }}>
-              <Button icon={<FloppyDisk />} onClick={saveConfig}>
-                Save
-              </Button>
-              <Button icon={<Import />} onClick={loadConfig}>
-                Load
-              </Button>
-            </ButtonGroup> */}
+            <ControlsList />
           </>
         }
       >
@@ -183,6 +194,164 @@ export function HeaderControls() {
           <FormattedMessage id="draw" />
         </Button>
       </Tooltip>
+    </>
+  );
+}
+
+const getConfigSummaryValues = createAppSelector(
+  [(s) => s.config.entities],
+  (entities) =>
+    Object.entries(entities).map(
+      ([key, config]) =>
+        [
+          key,
+          config.name,
+          config.gameKey,
+          config.lowerBound,
+          config.upperBound,
+        ] as const,
+    ),
+);
+
+function ControlsList() {
+  const summaryValues = useAppState(getConfigSummaryValues);
+  const selected = useAppState((s) => s.config.current);
+  const selectedName = useAppState((s) =>
+    selected ? s.config.entities[selected].name : undefined,
+  );
+  const selectedGameId = useAppState((s) =>
+    selected ? s.config.entities[selected].gameKey : undefined,
+  );
+  const [addOpen, setAddOpen] = useState(false);
+  const [busyCreating, setBusyCreating] = useState(false);
+  const dispatch = useAppDispatch();
+  const createBasisRef = useRef<string | undefined>();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (busyCreating) return;
+
+    const data = new FormData(e.currentTarget);
+    const name = data.get("name") as string;
+    const gameStub = data.get("game") as string;
+
+    if (!name) {
+      return;
+    }
+    if (!gameStub) {
+      return;
+    }
+
+    setBusyCreating(true);
+    await dispatch(
+      createConfigFromInputs(name, gameStub, createBasisRef.current),
+    );
+    setAddOpen(false);
+    setBusyCreating(false);
+    createBasisRef.current = undefined;
+  };
+
+  return (
+    <>
+      <Dialog
+        isOpen={addOpen}
+        onClose={() => {
+          setAddOpen(false);
+          createBasisRef.current = undefined;
+        }}
+        title={"Create Config"}
+      >
+        <form onSubmit={handleSubmit}>
+          <DialogBody>
+            <FormGroup label="Name" inline>
+              <input
+                name="name"
+                disabled={busyCreating}
+                className={Classes.INPUT}
+                defaultValue={
+                  createBasisRef.current && `copy of ${selectedName}`
+                }
+                autoComplete="off"
+                data-1p-ignore
+              />
+            </FormGroup>
+            <FormGroup label="Game" inline>
+              <GameDataSelect name="game" defaultValue={selectedGameId} />
+            </FormGroup>
+          </DialogBody>
+          <DialogFooter
+            actions={
+              <Button type="submit" loading={busyCreating}>
+                Create
+              </Button>
+            }
+          ></DialogFooter>
+        </form>
+      </Dialog>
+      <Popover
+        content={
+          <Menu>
+            <MenuItem
+              text="Create new"
+              icon={<Add />}
+              onClick={() => setAddOpen(true)}
+            />
+            <MenuItem
+              text="Duplicate"
+              disabled={!selected}
+              icon={<Duplicate />}
+              onClick={() => {
+                createBasisRef.current = selected || undefined;
+                setAddOpen(true);
+              }}
+            />
+            <MenuItem
+              text="Delete"
+              disabled={!selected}
+              icon={<Trash />}
+              onClick={() => dispatch(configSlice.actions.removeOne(selected!))}
+            />
+            <MenuDivider />
+            <MenuItem
+              text="Import from JSON"
+              icon={<Import />}
+              onClick={loadConfig}
+            />
+            <MenuItem
+              text="Save to JSON"
+              disabled={!selected}
+              icon={<FloppyDisk />}
+              onClick={() =>
+                saveConfig(
+                  dispatch(
+                    (d, gs) => gs().config.entities[gs().config.current!],
+                  ),
+                )
+              }
+            />
+          </Menu>
+        }
+      >
+        <Button style={{ marginInlineStart: "1em" }} icon={<MenuIcon />} />
+      </Popover>
+      <HTMLSelect
+        value={selected || "create"}
+        onChange={(e) =>
+          dispatch(configSlice.actions.pickCurrent(e.currentTarget.value))
+        }
+      >
+        {summaryValues.length ? (
+          summaryValues.map(([key, name, gameKey, lb, ub]) => (
+            <option key={key} value={key}>
+              {name} ({gameKey}, {lb}-{ub})
+            </option>
+          ))
+        ) : (
+          <option disabled value="create">
+            Create a config
+          </option>
+        )}
+      </HTMLSelect>
     </>
   );
 }

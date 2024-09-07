@@ -1,16 +1,15 @@
-// import { ConfigState } from "./config-state";
+import { ConfigState } from "./config-state";
 import { toaster } from "./toaster";
-// import { buildDataUri, dateForFilename, shareData } from "./utils/share";
+import { buildDataUri, dateForFilename, shareData } from "./utils/share";
 
 /** Mark specific fields in T optional, keeping others unchanged */
 // type Optional<T, Fields extends keyof T> = Partial<Pick<T, Fields>> &
 //   Omit<T, Fields>;
 
-// interface PersistedConfigV1 {
-//   version: 1;
-//   dataSetName: string;
-//   configState: Serialized<ConfigState>;
-// }
+interface PersistedConfigV2 {
+  version: 2;
+  configState: ConfigState;
+}
 
 /**
  * Returns a union of all property names in T which do not contain a function value.
@@ -32,22 +31,29 @@ export type Serialized<T extends object> = {
       : T[K];
 };
 
-// export function saveConfig() {
-//   const persistedObj = buildPersistedConfig(store.getState().config);
-//   const dataUri = buildDataUri(
-//     JSON.stringify(persistedObj, undefined, 2),
-//     "application/json",
-//     "url",
-//   );
+function buildPersistedConfig(config: ConfigState): PersistedConfigV2 {
+  return {
+    version: 2,
+    configState: config,
+  };
+}
 
-//   return shareData(dataUri, {
-//     filename: `ddr-tools-config-${persistedObj.dataSetName}-${dateForFilename()}.json`,
-//     methods: [
-//       { type: "nativeShare", allowDesktop: true },
-//       { type: "download" },
-//     ],
-//   });
-// }
+export function saveConfig(config: ConfigState) {
+  const persistedObj = buildPersistedConfig(config);
+  const dataUri = buildDataUri(
+    JSON.stringify(persistedObj, undefined, 2),
+    "application/json",
+    "url",
+  );
+
+  return shareData(dataUri, {
+    filename: `ddr-tools-config-${config.name.replaceAll(" ", "-")}-${dateForFilename()}.json`,
+    methods: [
+      { type: "nativeShare", allowDesktop: true },
+      { type: "download" },
+    ],
+  });
+}
 
 export function loadConfig() {
   const fileInput = document.createElement("input");
