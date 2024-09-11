@@ -14,11 +14,11 @@ export const drawingsAdapter = createEntityAdapter<Drawing>({});
 
 /** payload is the drawing id */
 type ActionOnSingleDrawing = PayloadAction<string>;
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type ActionOnSingleChart<extra extends object = {}> = PayloadAction<
   { drawingId: string; chartId: string } & extra
 >;
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type PlayerActionOnChartPayload<extra extends object = {}> = PayloadAction<
   {
     drawingId: string;

@@ -85,7 +85,10 @@ function TournamentModeSpacer() {
 
 const DrawnSet = memo<Props>(function DrawnSet({ drawingId }) {
   const [backgroundImage] = useState(getRandomGradiant());
-  const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
+  const configId = useAppState((s) => s.drawings.entities[drawingId]?.configId);
+  if (!configId) {
+    return null;
+  }
 
   return (
     <DrawingProvider value={drawingId}>
