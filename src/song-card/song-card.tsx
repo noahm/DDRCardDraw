@@ -107,7 +107,7 @@ export function SongCard(props: Props) {
   const hideMenu = () => setContextMenuOpen(false);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
-    useState<number>(0);
+    useState<PlayerIdx | null>(null);
 
   const baseChartIsPlaceholder =
     "type" in chart && chart.type === CHART_PLACEHOLDER;
@@ -175,21 +175,22 @@ export function SongCard(props: Props) {
     <div
       className={rootClassname}
       onClick={
-        !menuContent || showingContextMenu || pocketPickPendingForPlayer
+        !menuContent ||
+        showingContextMenu ||
+        pocketPickPendingForPlayer !== null
           ? props.onClick
           : showMenu
       }
       style={jacketBg}
     >
       <SongSearch
-        isOpen={!!pocketPickPendingForPlayer}
+        isOpen={pocketPickPendingForPlayer !== null}
         onSongSelect={(song, chart) => {
-          actionsEnabled &&
-            chart &&
-            iconCallbacks.onReplace(pocketPickPendingForPlayer as 1 | 2, chart);
-          setPocketPickPendingForPlayer(0);
+          if (actionsEnabled && chart)
+            iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
+          setPocketPickPendingForPlayer(null);
         }}
-        onCancel={() => setPocketPickPendingForPlayer(0)}
+        onCancel={() => setPocketPickPendingForPlayer(null)}
       />
       <div className={styles.cardCenter}>
         {vetoedBy !== undefined && (
