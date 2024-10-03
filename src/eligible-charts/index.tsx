@@ -1,6 +1,5 @@
 import { eligibleCharts } from "../card-draw";
-import { useConfigState } from "../config-state";
-import { useDrawState } from "../draw-state";
+import { useConfigState, useGameData } from "../state/hooks";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
@@ -25,7 +24,7 @@ function songKeyFromChart(chart: EligibleChart) {
 }
 
 export default function EligibleChartsList() {
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useGameData();
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());
   const isNarrow = useIsNarrow();
@@ -67,7 +66,7 @@ export default function EligibleChartsList() {
           {charts.length} eligible charts from {songs.size} songs (of{" "}
           {gameData.songs.length} total)
         </NavbarGroup>
-        {configState.flags.size > 0 && !isNarrow && (
+        {configState.flags.length > 0 && !isNarrow && (
           <NavbarGroup>
             <NavbarDivider />
             <EligibleChartsListFilter />

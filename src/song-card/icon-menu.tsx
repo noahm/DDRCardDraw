@@ -9,6 +9,7 @@ import {
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
+import { playerNameByIndex } from "../models/Drawing";
 
 interface Props {
   onStartPocketPick?: (p: number) => void;
@@ -74,14 +75,17 @@ interface IconRowProps {
 }
 
 function PlayerList({ icon, text, onClick }: IconRowProps) {
-  const players = useDrawing((d) => d.players);
+  const drawingMeta = useDrawing((d) => d.meta);
+  const players = useDrawing((d) => d.playerDisplayOrder).map(
+    (pIdx) => [playerNameByIndex(drawingMeta, pIdx), pIdx] as const,
+  );
   return (
     <MenuItem icon={icon} text={text}>
-      {players.map((p, idx) => (
+      {players.map(([playerName, pIdx]) => (
         <MenuItem
-          key={idx}
-          text={p || `P${idx + 1}`}
-          onClick={() => onClick(idx + 1)}
+          key={pIdx}
+          text={playerName}
+          onClick={() => onClick(pIdx)}
           icon={<Person />}
         />
       ))}

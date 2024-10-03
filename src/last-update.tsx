@@ -1,15 +1,20 @@
 import { Classes, Text } from "@blueprintjs/core";
 import cn from "classnames";
 import { FormattedMessage } from "react-intl";
-import { shallow } from "zustand/shallow";
-import { useDrawState } from "./draw-state";
 import { detectedLanguage } from "./utils";
+import { useAppState } from "./state/store";
+import { useStockGameData } from "./state/game-data.atoms";
 
 export function LastUpdate() {
-  const [dataSetName, gameData] = useDrawState(
-    (s) => [s.dataSetName, s.gameData],
-    shallow,
-  );
+  const dataSetName = useAppState((s) => s.config.current);
+  if (!dataSetName) {
+    return null;
+  }
+  return <LastUpdateForGame game={dataSetName} />;
+}
+
+function LastUpdateForGame(props: { game: string }) {
+  const gameData = useStockGameData(props.game);
   if (!gameData) {
     return null;
   }
@@ -22,7 +27,7 @@ export function LastUpdate() {
       <FormattedMessage
         id="lastUpdate"
         values={{
-          gameName: dataSetName,
+          gameName: props.game,
           date: new Intl.DateTimeFormat(detectedLanguage).format(lastUpdate),
         }}
       />

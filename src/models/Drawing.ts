@@ -1,4 +1,3 @@
-import { DataConnection } from "peerjs";
 import { Song } from "./SongData";
 
 export interface EligibleChart {
@@ -38,19 +37,55 @@ export interface PlayerActionOnChart {
 
 export interface PocketPick extends PlayerActionOnChart {
   pick: EligibleChart;
-  targetType: typeof CHART_PLACEHOLDER | typeof CHART_DRAWN;
+}
+
+export interface StartggMeta {
+  type: "startgg";
+  /** id of the set */
+  id: string;
+  title: string;
+  entrants: Array<{ id: string; name: string }>;
+}
+
+export interface SimpleMeta {
+  type: "simple";
+  title: string;
+  /** plain player names */
+  players: string[];
+}
+
+export function playerNameByDisplayPos(
+  d: Pick<Drawing, "playerDisplayOrder" | "meta">,
+  pos: number,
+) {
+  const playerIndex = d.playerDisplayOrder[pos - 1];
+  return playerNameByIndex(d.meta, playerIndex);
+}
+
+export function playerNameByIndex(
+  meta: Drawing["meta"],
+  idx: number,
+  fallback = `P${idx + 1}`,
+) {
+  switch (meta.type) {
+    case "simple":
+      return meta.players[idx] || fallback;
+    case "startgg":
+      return meta.entrants[idx].name || fallback;
+  }
 }
 
 export interface Drawing {
   id: string;
-  title?: string;
-  players: string[];
+  configId: string;
+  meta: SimpleMeta | StartggMeta;
+  /** index of items of the players array, in the order they should be displayed */
+  playerDisplayOrder: number[];
+  /** map of song ID to player index */
+  winners: Record<string, number | null>;
   charts: Array<DrawnChart | PlayerPickPlaceholder>;
-  bans: Array<PlayerActionOnChart>;
-  protects: Array<PlayerActionOnChart>;
-  winners: Array<PlayerActionOnChart>;
-  pocketPicks: Array<PocketPick>;
+  bans: Record<string, PlayerActionOnChart | null>;
+  protects: Record<string, PlayerActionOnChart | null>;
+  pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
-  /** __ prefix avoids serializing this field during sync */
-  __syncPeer?: DataConnection;
 }
