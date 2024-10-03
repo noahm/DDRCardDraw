@@ -43,7 +43,7 @@ export const drawingsSlice = createSlice({
       }>,
     ) {
       const drawing = state.entities[action.payload.drawingId];
-      drawing.charts.unshift(action.payload.chart);
+      drawing.charts.push(action.payload.chart);
     },
     updateOneChart(
       state,
