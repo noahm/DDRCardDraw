@@ -11,26 +11,6 @@ interface PersistedConfigV2 {
   configState: ConfigState;
 }
 
-/**
- * Returns a union of all property names in T which do not contain a function value.
- * Allows us to filter out mutations from a zustand store state.
- */
-type NonFunctionKeys<T extends object> = keyof {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  [K in keyof T as T[K] extends Function ? never : K]: T[K];
-};
-
-/**
- * Strips mutations from an object, and converts sets to arrays, maps to arrays of entry pairs
- */
-export type Serialized<T extends object> = {
-  [K in NonFunctionKeys<T>]: T[K] extends ReadonlyMap<infer K, infer V>
-    ? Array<[K, V]>
-    : T[K] extends ReadonlySet<infer Item>
-      ? Array<Item>
-      : T[K];
-};
-
 function buildPersistedConfig(config: ConfigState): PersistedConfigV2 {
   return {
     version: 2,
@@ -55,38 +35,33 @@ export function saveConfig(config: ConfigState) {
   });
 }
 
-export function loadConfig() {
+export function loadConfig(): Promise<ConfigState> {
   const fileInput = document.createElement("input");
   fileInput.type = "file";
   fileInput.accept = ".json,application/json";
   fileInput.style.visibility = "hidden";
   document.body.appendChild(fileInput);
-  const resolution = new Promise<void>((resolve, reject) => {
+  const resolution = new Promise<ConfigState>((resolve, reject) => {
     async function changeHandler() {
       try {
         const files = fileInput.files;
         if (!files) {
-          reject();
           throw new Error("no file selected");
         }
         const f = files.item(0);
         if (!f) {
-          reject();
           throw new Error("no file selected");
         }
         if (f.type !== "application/json") {
-          reject();
           throw new Error("file type is " + f.type);
         }
-        // const contents: PersistedConfigV1 = JSON.parse(await f.text());
-        // await loadPersistedConfig(contents);
-        resolve();
-        toaster.show({
-          message: "Successfully loaded draw settings",
-          icon: "import",
-          intent: "success",
-        });
+        const contents: PersistedConfigV2 = JSON.parse(await f.text());
+        if (contents.version !== 2) {
+          throw new Error("config version was not expected value");
+        }
+        resolve(contents.configState);
       } catch (e) {
+        reject();
         toaster.show({
           message: "Failed to load settings file",
           icon: "error",

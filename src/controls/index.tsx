@@ -35,13 +35,17 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import { ShowChartsToggle } from "./show-charts-toggle";
-import { createConfigFromInputs, createDraw } from "../state/thunks";
+import {
+  createConfigFromImport,
+  createConfigFromInputs,
+  createDraw,
+} from "../state/thunks";
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
 import { useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
 import { MatchPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
-import { configSlice } from "../state/config.slice";
+import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { loadConfig, saveConfig } from "../config-persistence";
 
@@ -225,7 +229,7 @@ function ControlsList() {
   const [addOpen, setAddOpen] = useState(false);
   const [busyCreating, setBusyCreating] = useState(false);
   const dispatch = useAppDispatch();
-  const createBasisRef = useRef<string | undefined>();
+  const createBasisRef = useRef<string | ConfigState | undefined>();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -243,13 +247,37 @@ function ControlsList() {
     }
 
     setBusyCreating(true);
-    await dispatch(
-      createConfigFromInputs(name, gameStub, createBasisRef.current),
-    );
+    const action =
+      typeof createBasisRef.current === "object"
+        ? createConfigFromImport(name, gameStub, createBasisRef.current)
+        : createConfigFromInputs(name, gameStub, createBasisRef.current);
+    await dispatch(action);
     setAddOpen(false);
     setBusyCreating(false);
     createBasisRef.current = undefined;
   };
+
+  function titleFromBasis() {
+    switch (typeof createBasisRef.current) {
+      case "object":
+        return "Import config";
+      case "string":
+        return "Duplicate config";
+      default:
+        return "Create config";
+    }
+  }
+
+  function defaultNameFromBasis() {
+    switch (typeof createBasisRef.current) {
+      case "object":
+        return `copy of ${createBasisRef.current.name}`;
+      case "string":
+        return `copy of ${selectedName}`;
+      default:
+        return "";
+    }
+  }
 
   return (
     <>
@@ -259,7 +287,7 @@ function ControlsList() {
           setAddOpen(false);
           createBasisRef.current = undefined;
         }}
-        title={"Create Config"}
+        title={titleFromBasis()}
       >
         <form onSubmit={handleSubmit}>
           <DialogBody>
@@ -268,9 +296,7 @@ function ControlsList() {
                 name="name"
                 disabled={busyCreating}
                 className={Classes.INPUT}
-                defaultValue={
-                  createBasisRef.current && `copy of ${selectedName}`
-                }
+                defaultValue={defaultNameFromBasis()}
                 autoComplete="off"
                 data-1p-ignore
               />
@@ -315,7 +341,10 @@ function ControlsList() {
             <MenuItem
               text="Import from JSON"
               icon={<Import />}
-              onClick={loadConfig}
+              onClick={async () => {
+                createBasisRef.current = await loadConfig();
+                setAddOpen(true);
+              }}
             />
             <MenuItem
               text="Save to JSON"

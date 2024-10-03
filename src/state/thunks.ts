@@ -242,12 +242,34 @@ export function createConfigFromInputs(
   name: string,
   gameKey: string,
   basisConfigId?: string,
-): AppThunk {
+): AppThunk<Promise<void>> {
   return async (dispatch, getState) => {
     const gameData = await loadStockGamedataByName(gameKey);
     const basisConfig = basisConfigId
       ? getState().config.entities[basisConfigId]
       : {};
+    const newConfig: ConfigState = {
+      ...defaultConfig,
+      ...basisConfig,
+      id: nanoid(10),
+      name,
+      gameKey,
+    };
+    if (gameData) {
+      Object.assign(newConfig, getOverridesFromGameData(gameData));
+    }
+    dispatch(configSlice.actions.addOne(newConfig));
+  };
+}
+
+export function createConfigFromImport(
+  name: string,
+  gameKey: string,
+  imported: ConfigState,
+): AppThunk<Promise<void>> {
+  return async (dispatch) => {
+    const gameData = await loadStockGamedataByName(gameKey);
+    const basisConfig = imported;
     const newConfig: ConfigState = {
       ...defaultConfig,
       ...basisConfig,
