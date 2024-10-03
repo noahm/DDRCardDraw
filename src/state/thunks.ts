@@ -212,7 +212,8 @@ export function createPickBanPocket(
 import { GameData } from "../models/SongData";
 import { nanoid } from "nanoid";
 
-function getOverridesFromGameData(gameData: GameData) {
+function getOverridesFromGameData(gameData?: GameData): Partial<ConfigState> {
+  if (!gameData) return {};
   const {
     flags,
     difficulties,
@@ -250,14 +251,12 @@ export function createConfigFromInputs(
       : {};
     const newConfig: ConfigState = {
       ...defaultConfig,
+      ...getOverridesFromGameData(gameData),
       ...basisConfig,
       id: nanoid(10),
       name,
       gameKey,
     };
-    if (gameData) {
-      Object.assign(newConfig, getOverridesFromGameData(gameData));
-    }
     dispatch(configSlice.actions.addOne(newConfig));
   };
 }
@@ -272,14 +271,12 @@ export function createConfigFromImport(
     const basisConfig = imported;
     const newConfig: ConfigState = {
       ...defaultConfig,
+      ...getOverridesFromGameData(gameData),
       ...basisConfig,
       id: nanoid(10),
       name,
       gameKey,
     };
-    if (gameData) {
-      Object.assign(newConfig, getOverridesFromGameData(gameData));
-    }
     dispatch(configSlice.actions.addOne(newConfig));
   };
 }
