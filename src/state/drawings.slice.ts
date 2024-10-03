@@ -35,6 +35,16 @@ export const drawingsSlice = createSlice({
     addDrawing: drawingsAdapter.addOne,
     updateOne: drawingsAdapter.updateOne,
     clearDrawings: drawingsAdapter.removeAll,
+    addOneChart(
+      state,
+      action: PayloadAction<{
+        drawingId: string;
+        chart: DrawnChart;
+      }>,
+    ) {
+      const drawing = state.entities[action.payload.drawingId];
+      drawing.charts.unshift(action.payload.chart);
+    },
     updateOneChart(
       state,
       action: PayloadAction<{

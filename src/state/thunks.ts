@@ -131,6 +131,46 @@ export function createRedrawChart(
   };
 }
 
+/**
+ * thunk creator for redrawing a single chart within a drawing
+ */
+export function createPlusOneChart(drawingId: string): AppThunk {
+  return async (dispatch, getState) => {
+    const state = getState();
+    const drawing = state.drawings.entities[drawingId];
+    const originalConfig = state.config.entities[drawing.configId];
+    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
+    if (!gameData) return;
+
+    const customConfig: ConfigState = {
+      ...originalConfig,
+      // force drawing one more chart than already exists
+      chartCount:
+        1 +
+        drawing.charts.reduce<number>(
+          (acc, curr) => (curr.type === "DRAWN" ? acc + 1 : acc),
+          0,
+        ),
+    };
+
+    const drawResult = draw(gameData, customConfig, drawing);
+    const chart = drawResult.charts.pop();
+    if (
+      !chart ||
+      chart.type !== "DRAWN" ||
+      drawing.charts.some((c) => c.id === chart.id)
+    ) {
+      return; // result didn't include a new chart
+    }
+    dispatch(
+      drawingsSlice.actions.addOneChart({
+        drawingId,
+        chart,
+      }),
+    );
+  };
+}
+
 /** thunk creator for pick/ban/pocket pick that can include orderByAction setting */
 export function createPickBanPocket(
   drawingId: string,

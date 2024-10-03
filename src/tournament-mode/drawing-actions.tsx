@@ -6,6 +6,7 @@ import {
   CubeAdd,
   Exchange,
   FloppyDisk,
+  NewLayer,
 } from "@blueprintjs/icons";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-actions.css";
@@ -17,7 +18,7 @@ import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { drawingsSlice } from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
-import { createRedrawAll } from "../state/thunks";
+import { createPlusOneChart, createRedrawAll } from "../state/thunks";
 import {
   useReportSetMutation,
   ReportSetMutationVariables as MutationVariables,
@@ -114,6 +115,22 @@ function SaveToStartggButton() {
   );
 }
 
+function AddCardButton() {
+  const dispatch = useAppDispatch();
+  const drawingId = useDrawing((s) => s.id);
+  return (
+    <Tooltip content="Draw Another Chart">
+      <Button
+        minimal
+        icon={<NewLayer />}
+        onClick={() => {
+          dispatch(createPlusOneChart(drawingId));
+        }}
+      />
+    </Tooltip>
+  );
+}
+
 export function DrawingActions() {
   const dispatch = useAppDispatch();
   const cabs = useAppState(eventSlice.selectors.allCabs);
@@ -196,6 +213,7 @@ export function DrawingActions() {
         </Tooltip>
       )}
       <SaveToStartggButton />
+      <AddCardButton />
     </div>
   );
 }
