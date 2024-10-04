@@ -307,14 +307,12 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   }
 
-
   // OK, setup work is done, here's whre we actually draw the cards!
 
   let redraw = false;
   const drawnCharts: DrawnChart[] = [];
 
   do {
-
     /**
      * Record of how many songs of each bucket index have been drawn so far
      */
@@ -363,25 +361,24 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
         let numMaximumAllowed = maxDrawPerBucket.get(bucketIndex) || 0;
 
-        for (let i=0; i <= requiredDrawIndexes.length; i++) {
-          if (requiredDrawIndexes[i] == bucketIndex){
+        for (let i = 0; i <= requiredDrawIndexes.length; i++) {
+          if (requiredDrawIndexes[i] == bucketIndex) {
             numRequiredCount++;
           }
         }
 
-        let numDrawn = difficultyCounts.get(bucketIndex)
+        let numDrawn = difficultyCounts.get(bucketIndex);
         const underDrawn = numDrawn < numRequiredCount;
         const overDrawn = numDrawn > numMaximumAllowed;
 
         redraw = false;
         if (underDrawn || overDrawn) {
-          redraw = true
-          drawnCharts.splice(0,drawnCharts.length)
+          redraw = true;
+          drawnCharts.splice(0, drawnCharts.length);
           break;
         }
       }
     }
-
   } while (redraw);
 
   const charts: Drawing["charts"] = configData.sortByLevel
