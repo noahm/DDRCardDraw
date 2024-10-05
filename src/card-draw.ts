@@ -318,6 +318,17 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
      */
     const difficultyCounts = new CountingSet<number>();
 
+    // make a copy of valid charts here in the loop so we
+    // can mutate it later during the draw process, but
+    // start with a fresh copy each full draw attempt
+    const localValidCharts = new DefaultingMap<number, EligibleChart[]>(
+      () => [],
+    );
+    for (const [bucketIdx, charts] of validCharts) {
+      // make a clone of each inner array, too
+      localValidCharts.set(bucketIdx, charts.slice());
+    }
+
     while (drawnCharts.length < numChartsToRandom) {
       if (bucketDistribution.length === 0) {
         // no more songs available to pick in the requested range
@@ -332,7 +343,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
         // nothing left to draw
         break;
       }
-      const selectableCharts = validCharts.get(chosenBucketIdx);
+      const selectableCharts = localValidCharts.get(chosenBucketIdx);
       if (!selectableCharts) {
         // something bad happened?!
         break;
@@ -359,7 +370,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
       for (const bucketIndex of validCharts.keys()) {
         let numRequiredCount = 0;
 
-        let numMaximumAllowed = maxDrawPerBucket.get(bucketIndex) || 0;
+        const numMaximumAllowed = maxDrawPerBucket.get(bucketIndex) || 0;
 
         for (let i = 0; i <= requiredDrawIndexes.length; i++) {
           if (requiredDrawIndexes[i] == bucketIndex) {
@@ -367,7 +378,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
           }
         }
 
-        let numDrawn = difficultyCounts.get(bucketIndex);
+        const numDrawn = difficultyCounts.get(bucketIndex);
         const underDrawn = numDrawn < numRequiredCount;
         const overDrawn = numDrawn > numMaximumAllowed;
 
