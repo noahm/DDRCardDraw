@@ -5,6 +5,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.45, 0.4, 0.4, 0.45, 0, 0.4, 0.4, 0.35, 0],
   },
   {
     song_id: "0088dOQPiD0Qb0Dl8ol09D98IOllI1id",
@@ -12,6 +13,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [3, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [0.45, 0.45, 0.4, 0.3, 0, 0.55, 0.35, 0.4, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -21,6 +23,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -31,6 +34,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 15,
     ratings: [5, 11, 14, 17, 18, 10, 14, 17, 18],
+    tiers: [0.8, 0.65, 0.8, 0.6, 0.8, 0.65, 0.7, 0.35, 0.4],
   },
   {
     song_id: "00q86iQQIIiOlqi6Doqi6b9PiOodo10O",
@@ -39,6 +43,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [2, 4, 9, 11, 0, 5, 9, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "00Qbd9qoI681Q0biQOIiI08bI91i080l",
@@ -47,6 +52,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [1, 3, 8, 11, 0, 3, 8, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "00qIiO99Q18biD8bQ6d1QOooDP00O1Od",
@@ -54,6 +60,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [5, 10, 15, 18, 0, 10, 15, 18, 0],
+    tiers: [0.2, 0.3, 0.5, 0.6, 0, 0.25, 0.35, 0.5, 0],
     lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
@@ -62,6 +69,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 4,
     ratings: [5, 6, 7, 10, 0, 5, 9, 11, 0],
+    tiers: [0.8, 0.95, 0.9, 0.8, 0, 0.9, 0.75, 0.6, 0],
   },
   {
     song_id: "01lbO69qQiP691ll6DIiqPbIdd9O806o",
@@ -69,6 +77,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 18,
     ratings: [2, 4, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [0.15, 0.15, 0.35, 0.35, 0, 0.15, 0.4, 0.35, 0],
   },
   {
     song_id: "06DO8bb0O891IQ9QP01diqOOl0D80QbO",
@@ -77,6 +86,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 17,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.35, 0.55, 0.35, 0.2, 0, 0.4, 0.3, 0.2, 0],
   },
   {
     song_id: "06lOillb6id0Dib9o1b06iPblqPl61PI",
@@ -84,6 +94,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [6, 9, 14, 17, 0, 9, 14, 17, 0],
+    tiers: [0.6, 0.55, 0.85, 0.6, 0, 0.4, 0.8, 0.6, 0],
   },
   {
     song_id: "06loOQ0DQb0DqbOibl6qO81qlIdoP9DI",
@@ -91,6 +102,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 1,
     ratings: [4, 8, 9, 11, 0, 8, 13, 11, 0],
+    tiers: [0.45, 0.75, 0.7, 0.45, 0, 0.65, 0.55, 0.45, 0],
   },
   {
     song_id: "06O0ObdQobq86lPDo6P18dQ1QPdilIQO",
@@ -101,6 +113,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [4, 7, 11, 14, 0, 7, 12, 15, 0],
+    tiers: [0.35, 0.4, 0.3, 0.25, 0, 0.4, 0.3, 0.25, 0],
   },
   {
     song_id: "08IP8i1qIbQIoP9DiP11IdP190Q98lil",
@@ -108,6 +121,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 5, 9, 12, 0, 5, 9, 11, 0],
+    tiers: [0.1, 0.1, 0.25, 0.45, 0, 0.2, 0.25, 0.55, 0],
   },
   {
     song_id: "08O1i8ib1lDPbdOoPlD069PoOI1860qi",
@@ -116,6 +130,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [3, 10, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.15, 0.25, 0.3, 0.4, 0, 0.3, 0.1, 0.35, 0],
     lock_types: [220, 220, 220, 220, 0, 220, 220, 220, 0],
   },
   {
@@ -124,6 +139,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 17,
     ratings: [3, 7, 10, 15, 0, 8, 11, 15, 0],
+    tiers: [0.45, 0.7, 0.45, 0.3, 0, 0.5, 0.3, 0.3, 0],
   },
   {
     song_id: "08PO96OlIoQqPdq91Q1Qqlo8lPidbPP8",
@@ -131,6 +147,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 13,
     ratings: [3, 5, 9, 11, 12, 6, 8, 11, 12],
+    tiers: [0.45, 0.5, 0.45, 0.4, 0.55, 0.45, 0.55, 0.3, 0.5],
   },
   {
     song_id: "08QP8bOQ6OOdd11Dq81db1l8IdiDbod6",
@@ -138,6 +155,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 16,
     ratings: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+    tiers: [0.55, 0, 0, 0, 0, 0, 0, 0, 0],
   },
   {
     song_id: "091IQQ1PqOdIl9ioPQDdO60Dq069DP69",
@@ -145,6 +163,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [3, 4, 6, 8, 0, 4, 6, 9, 0],
+    tiers: [0.25, 0.35, 0.45, 0.3, 0, 0.45, 0.45, 0.4, 0],
   },
   {
     song_id: "09looidO89Q9DiDdqQiDPlIQDoiobobQ",
@@ -153,6 +172,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 13,
     ratings: [5, 8, 11, 14, 17, 8, 11, 14, 17],
+    tiers: [0.6, 0.65, 0.7, 0.45, 0.65, 0.7, 0.6, 0.35, 0.4],
   },
   {
     song_id: "09oIbO1bi8O8Q1o01q610ID0qPOqoQQP",
@@ -160,6 +180,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 17,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.6, 0.6, 0.6, 0.35, 0, 0.6, 0.65, 0.3, 0],
   },
   {
     song_id: "09PIO19oPoo09q0ioli6oO1di89o8Ilb",
@@ -169,6 +190,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 19,
     ratings: [2, 4, 10, 14, 0, 4, 10, 14, 0],
+    tiers: [0.2, 0.2, 0.2, 0.3, 0, 0.15, 0.1, 0.05, 0],
   },
   {
     song_id: "0b1660ibo0liI01ibOO6lD8olIb88qDi",
@@ -176,6 +198,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 10,
     ratings: [3, 6, 9, 11, 13, 6, 9, 11, 13],
+    tiers: [0.65, 0.65, 0.6, 0.45, 0.7, 0.85, 0.7, 0.6, 0.8],
   },
   {
     song_id: "0bDqIO9Q0PPIPlPll1D8Pbol9O6DlPdb",
@@ -184,6 +207,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 14,
     ratings: [2, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.2, 0.45, 0.45, 0.25, 0, 0.45, 0.6, 0.55, 0],
   },
   {
     song_id: "0bq9qI9PoPIlQl89bDO60o9q8I1iIP66",
@@ -191,6 +215,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 18,
     ratings: [5, 8, 12, 15, 18, 8, 12, 15, 18],
+    tiers: [0.2, 0.2, 0.15, 0.05, 0.6, 0.35, 0.2, 0.25, 0.3],
     lock_types: [0, 0, 0, 0, 130, 0, 0, 0, 130],
   },
   {
@@ -199,6 +224,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [4, 6, 9, 12, 13, 6, 9, 11, 14],
+    tiers: [0.75, 0.8, 0.85, 0.85, 0.8, 0.9, 0.8, 0.85, 0.75],
   },
   {
     song_id: "0D1618DDbol8bl9dP0lDdiD66ioIiidD",
@@ -207,6 +233,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 11,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 15],
+    tiers: [0, 0, 0, 0, 0.65, 0, 0, 0, 0.7],
   },
   {
     song_id: "0d8Q9I86lo8oDlQiPd81ll66ob0qli89",
@@ -215,6 +242,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [3, 6, 9, 11, 0, 6, 9, 12, 0],
+    tiers: [0.15, 0.15, 0.4, 0.25, 0, 0.15, 0.35, 0.2, 0],
   },
   {
     song_id: "0dD8bq9QiD1DO0Io118idQoiP6PP900d",
@@ -222,6 +250,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 19,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.35, 0.25, 0.55, 0.55, 0, 0.25, 0.45, 0.25, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -230,6 +259,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.1, 0.35, 0.4, 0.25, 0, 0.15, 0.2, 0.25, 0],
   },
   {
     song_id: "0DDo1ilPDQoIoPd8ol9OPO1IPbi9ii6d",
@@ -237,6 +267,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 9,
     ratings: [3, 5, 9, 13, 0, 5, 10, 13, 0],
+    tiers: [0.35, 0.45, 0.4, 0.45, 0, 0.4, 0.55, 0.35, 0],
   },
   {
     song_id: "0ddPq801D8PiiqO1oqoQbdOIQ9lQl11o",
@@ -246,6 +277,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 15,
     ratings: [3, 7, 10, 14, 0, 7, 10, 15, 0],
+    tiers: [0.4, 0.25, 0.45, 0.3, 0, 0.3, 0.55, 0.2, 0],
   },
   {
     song_id: "0DODq0P9Qi6i6q8QPoPPOiOi6ib0188b",
@@ -253,6 +285,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 17,
     ratings: [3, 6, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.35, 0.55, 0.15, 0.3, 0, 0.35, 0.3, 0.35, 0],
   },
   {
     song_id: "0dOi10q9Q6oi0Q9960iQQDO6olqlDDqo",
@@ -260,6 +293,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 13,
     ratings: [2, 4, 8, 12, 0, 6, 8, 12, 0],
+    tiers: [0, 0, 0.05, 0.1, 0, 0.05, 0.25, 0.15, 0],
   },
   {
     song_id: "0dOOOolo0P6180OQDo16DdO6o6D8O8lQ",
@@ -267,6 +301,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 17,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.15, 0.05, 0.2, 0.2, 0, 0.1, 0.2, 0.1, 0],
   },
   {
     song_id: "0i68q1iQblI1Pb8QqoQ90i6ddPiqdq8b",
@@ -274,6 +309,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [2, 7, 11, 13, 0, 7, 11, 13, 0],
+    tiers: [0.75, 0.35, 0.35, 0.4, 0, 0.35, 0.25, 0.5, 0],
   },
   {
     song_id: "0ib0Pqol08o9ODDq166iDl8oll061lPl",
@@ -281,6 +317,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 9,
     ratings: [3, 5, 7, 12, 13, 5, 7, 11, 13],
+    tiers: [0.25, 0.3, 0.75, 0.6, 0.7, 0.35, 0.75, 0.6, 0.6],
   },
   {
     song_id: "0Ib6qIb0iPOoQqqDIl90dP0PI0o9QlDd",
@@ -290,6 +327,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [3, 6, 9, 13, 0, 6, 9, 12, 0],
+    tiers: [0.45, 0.35, 0.35, 0.3, 0, 0.25, 0.35, 0.45, 0],
   },
   {
     song_id: "0ibD9Oio99IlQ0di916lId0bi08IPD9b",
@@ -298,6 +336,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 12,
     ratings: [3, 5, 8, 14, 0, 5, 8, 13, 0],
+    tiers: [0.4, 0.35, 0.5, 0.4, 0, 0.45, 0.5, 0.5, 0],
   },
   {
     song_id: "0iII09bDqIbOQDDoo8lO8DOOQdiP1Iob",
@@ -305,6 +344,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [5, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.65, 0.8, 0.8, 0.7, 0, 0.65, 0.65, 0.55, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -313,6 +353,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 17,
     ratings: [3, 7, 9, 12, 0, 8, 10, 13, 0],
+    tiers: [0.55, 0.75, 0.8, 0.75, 0, 0.6, 0.7, 0.55, 0],
   },
   {
     song_id: "0IldoDlDQql99DqQo0Qq9ioPIiiPoIoi",
@@ -321,6 +362,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 10,
     ratings: [5, 12, 14, 17, 18, 12, 14, 18, 18],
+    tiers: [0.5, 0.8, 0.85, 0.65, 0.6, 0.75, 0.75, 0.5, 0.9],
   },
   {
     song_id: "0ill9Po6Db090biqIlD1I9lo6PO8lQQ9",
@@ -328,6 +370,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [2, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.25, 0.15, 0.05, 0.1, 0, 0.1, 0, 0, 0],
   },
   {
     song_id: "0l181DPDqbQPb0qQl0i0dlQd0oQPlQ6i",
@@ -335,6 +378,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 8,
     ratings: [3, 5, 8, 11, 0, 4, 7, 11, 0],
+    tiers: [0.15, 0.2, 0.25, 0.2, 0, 0.2, 0.45, 0.25, 0],
   },
   {
     song_id: "0lDDIlQ91lq6O16q9QQ681d6Db1l0oOb",
@@ -343,6 +387,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 2,
     ratings: [4, 5, 7, 9, 0, 5, 9, 10, 0],
+    tiers: [0.1, 0.25, 0.35, 0.2, 0, 0.45, 0.35, 0.6, 0],
   },
   {
     song_id: "0lDP0P06PIPl1iiIDOb919iqo1oPdlP8",
@@ -350,6 +395,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 3,
     ratings: [4, 8, 10, 13, 0, 9, 11, 13, 0],
+    tiers: [0.5, 0.6, 0.55, 0.3, 0, 0.5, 0.65, 0.5, 0],
   },
   {
     song_id: "0lIIil06b8q819P9lDil09o6qlqo9I1i",
@@ -357,6 +403,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 17,
     ratings: [4, 8, 12, 16, 0, 8, 11, 16, 0],
+    tiers: [0.3, 0.5, 0.5, 0.5, 0, 0.45, 0.6, 0.35, 0],
   },
   {
     song_id: "0Ob1601118Dii9Qdii9lPbioPP6qoi1I",
@@ -364,6 +411,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 16,
     ratings: [3, 5, 9, 12, 0, 5, 10, 12, 0],
+    tiers: [0.3, 0.4, 0.4, 0.25, 0, 0.4, 0.35, 0.35, 0],
   },
   {
     song_id: "0ol981b18biO0610IqPi9l6Db86PbIQ9",
@@ -371,6 +419,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 5, 7, 9, 0, 6, 8, 10, 0],
+    tiers: [0.4, 0.3, 0.35, 0.3, 0, 0.2, 0.35, 0.35, 0],
   },
   {
     song_id: "0Oo6iId08018qOqbo6O1o0QQ9D09Piq1",
@@ -378,6 +427,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [3, 5, 7, 12, 0, 5, 8, 12, 0],
+    tiers: [0.45, 0.5, 0.65, 0.5, 0, 0.5, 0.5, 0.5, 0],
   },
   {
     song_id: "0OQdlbo111ib1i88IdIPIbollD68Dii1",
@@ -385,6 +435,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 9,
     ratings: [4, 4, 7, 10, 0, 4, 7, 11, 0],
+    tiers: [0.2, 0.25, 0.3, 0.25, 0, 0.2, 0.5, 0.35, 0],
   },
   {
     song_id: "0OQiI9qD6OiodDoQlPllqPoPoqi98D8P",
@@ -392,7 +443,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 19,
     ratings: [2, 5, 7, 9, 0, 5, 7, 9, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.25, 0.2, 0.4, 0.6, 0, 0.25, 0.45, 0.5, 0],
   },
   {
     song_id: "0Pq6o89llQl10dl8O0DdP6lIO0ib6Doq",
@@ -401,6 +452,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [4, 8, 10, 15, 0, 7, 10, 14, 0],
+    tiers: [0.1, 0.2, 0.15, 0.1, 0, 0.2, 0.1, 0.3, 0],
   },
   {
     song_id: "0q8b6O0qOlDql0oP80OI8i8i1088qbIb",
@@ -408,6 +460,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [3, 7, 9, 11, 0, 6, 10, 12, 0],
+    tiers: [0.2, 0.35, 0.6, 0.3, 0, 0.45, 0.5, 0.45, 0],
   },
   {
     song_id: "0q90DbbI1O90D91I8ddDdDlP9IdoQ0oo",
@@ -417,6 +470,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 19,
     ratings: [3, 7, 11, 13, 0, 7, 11, 13, 0],
+    tiers: [0.2, 0.4, 0.35, 0.45, 0, 0.3, 0.25, 0.2, 0],
   },
   {
     song_id: "0Qb8PDoQ06Q66obPI1P988oI61ioPb6l",
@@ -426,6 +480,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 14,
     ratings: [3, 6, 9, 12, 0, 6, 9, 13, 0],
+    tiers: [0.3, 0.35, 0.4, 0.25, 0, 0.35, 0.55, 0.4, 0],
   },
   {
     song_id: "0qDb0d9oIoQPP1Ql0o0OOPoPDbQ699Iq",
@@ -433,6 +488,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [3, 5, 7, 12, 0, 5, 7, 12, 0],
+    tiers: [0.4, 0.5, 0.8, 0.5, 0, 0.45, 0.8, 0.65, 0],
   },
   {
     song_id: "0qOPDqq0qld66bll9ob9iIqiiQPiQIDQ",
@@ -440,6 +496,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Y",
     version_num: 12,
     ratings: [2, 4, 8, 12, 13, 6, 8, 12, 13],
+    tiers: [0.1, 0.15, 0.1, 0.2, 0.35, 0.1, 0.2, 0.45, 0.5],
   },
   {
     song_id: "0qP01Q60boPPlQ8qO6O6q89iI91Pl0PP",
@@ -448,6 +505,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 11,
     ratings: [0, 0, 0, 0, 12, 0, 0, 0, 13],
+    tiers: [0, 0, 0, 0, 0.4, 0, 0, 0, 0.5],
   },
   {
     song_id: "0qQ1odlooiQO99DDP6bD9bOq89669PQb",
@@ -455,6 +513,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.4, 0, 0, 0, 0.4],
   },
   {
     song_id: "1088IDQiIDl6I888OQi60l66DP6D0qOl",
@@ -462,6 +521,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [4, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0, 0.1, 0.3, 0.55, 0, 0.05, 0.3, 0.4, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -472,6 +532,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 9,
     ratings: [6, 9, 12, 14, 18, 9, 13, 15, 18],
+    tiers: [0.9, 0.85, 0.95, 0.9, 0.3, 0.9, 0.9, 0.8, 0.5],
   },
   {
     song_id: "10IOllioqPoOQ668PQqolDPiib0iIQql",
@@ -481,6 +542,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.25, 0.15, 0.35, 0.45, 0, 0.2, 0.25, 0.1, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -491,6 +553,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 8,
     ratings: [2, 3, 7, 9, 0, 3, 7, 9, 0],
+    tiers: [0.6, 0.65, 0.65, 0.6, 0, 0.7, 0.65, 0.55, 0],
   },
   {
     song_id: "111O66bbPIQb09PlIoolIOD666QqqIdP",
@@ -499,6 +562,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 19,
     ratings: [2, 5, 10, 15, 0, 5, 10, 15, 0],
+    tiers: [0.3, 0.3, 0.7, 0.9, 0, 0.25, 0.5, 0.7, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -508,6 +572,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 13,
     ratings: [6, 8, 12, 15, 18, 8, 11, 15, 18],
+    tiers: [0.5, 0.7, 0.75, 0.65, 0.4, 0.6, 0.6, 0.45, 0],
   },
   {
     song_id: "160Oo1q8DolI6068lQi66OQbQ9Q8ODQI",
@@ -518,6 +583,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [2, 7, 11, 15, 18, 7, 12, 15, 17],
+    tiers: [0.75, 0.55, 0.6, 0.7, 0.2, 0.65, 0.75, 0.65, 0.55],
     lock_types: [0, 0, 0, 0, 130, 0, 0, 0, 130],
   },
   {
@@ -527,6 +593,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 15, 0],
+    tiers: [0.7, 0.55, 0.35, 0.65, 0, 0.55, 0.3, 0.4, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -537,7 +604,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "vocaloidamano/gumiamano",
     alphabet: "あ",
     version_num: 16,
-    ratings: [3, 6, 10, 13, 0, 7, 10, 13, 0],
+    ratings: [4, 6, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.8, 0.75, 0.65, 0.5, 0, 0.75, 0.7, 0.65, 0],
   },
   {
     song_id: "16IqQ680IioldO69QD61liQod0DQ8boQ",
@@ -548,6 +616,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 16,
     ratings: [3, 5, 8, 11, 0, 6, 8, 11, 0],
+    tiers: [0.55, 0.55, 0.55, 0.3, 0, 0.5, 0.65, 0.35, 0],
   },
   {
     song_id: "16oDDIlP8bIODQ6Ql0881d9Qqdb19b98",
@@ -558,6 +627,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.65, 0.55, 0.5, 0.3, 0, 0.65, 0.6, 0.3, 0],
   },
   {
     song_id: "16Pio809ID669Di8OoPblQO0lDq668dQ",
@@ -565,6 +635,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [3, 4, 7, 11, 0, 5, 7, 10, 0],
+    tiers: [0.55, 0.6, 0.6, 0.45, 0, 0.65, 0.7, 0.65, 0],
   },
   {
     song_id: "186dd6DQq891Ib9Ilq8Qbo8lIqb0Qoll",
@@ -573,13 +644,15 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 12,
     ratings: [9, 13, 15, 18, 19, 13, 14, 18, 19],
+    tiers: [0.85, 0.85, 0.8, 0.5, 0.2, 0.8, 0.95, 0.4, 0],
   },
   {
     song_id: "18911Q6o6do9Dd1blIo6IliPd0PPb99i",
     song_name: "AFRONOVA PRIMEVAL",
     alphabet: "A",
     version_num: 5,
-    ratings: [4, 7, 9, 12, 0, 7, 9, 13, 0],
+    ratings: [4, 7, 9, 12, 0, 8, 9, 13, 0],
+    tiers: [0.35, 0.2, 0.45, 0.35, 0, 0.55, 0.6, 0.45, 0],
   },
   {
     song_id: "18d0iP6oIQQIb6IIOi99iDQ116bbP9I9",
@@ -587,6 +660,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [2, 6, 10, 13, 0, 6, 9, 12, 0],
+    tiers: [0.25, 0.1, 0.2, 0.1, 0, 0.05, 0.1, 0.15, 0],
   },
   {
     song_id: "18ibQ9qbqOI91Q1iiiOd990OPo1q1dPI",
@@ -594,6 +668,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 14,
     ratings: [2, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.45, 0.4, 0.25, 0.1, 0, 0.6, 0.55, 0.35, 0],
   },
   {
     song_id: "18id0bi1Q6lbl0091iP0QoOIq9DDPo9I",
@@ -601,6 +676,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 16,
     ratings: [2, 5, 9, 12, 0, 5, 10, 12, 0],
+    tiers: [0.25, 0.2, 0.35, 0.35, 0, 0.35, 0.35, 0.4, 0],
   },
   {
     song_id: "18l0blb188Oqqi8I68o8oq91Qbq86QDi",
@@ -608,6 +684,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 14,
     ratings: [3, 7, 11, 15, 17, 7, 11, 15, 17],
+    tiers: [0.45, 0.75, 0.75, 0.5, 0.4, 0.7, 0.7, 0.5, 0.35],
   },
   {
     song_id: "1900DdoIl00b88q6Qq9ob9D6lQ8IQiPb",
@@ -615,6 +692,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 17,
     ratings: [4, 8, 13, 16, 0, 8, 12, 16, 0],
+    tiers: [0.35, 0.35, 0.3, 0.45, 0, 0.3, 0.35, 0.3, 0],
   },
   {
     song_id: "1980q80l1Q96O881IidPd16qDbOol9Qd",
@@ -622,13 +700,15 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 11,
     ratings: [0, 0, 0, 0, 18, 0, 0, 0, 18],
+    tiers: [0, 0, 0, 0, 0.3, 0, 0, 0, 0.6],
   },
   {
     song_id: "19b01l0QPiDlDQb6lqd0dQ8Qlld6Dl6l",
     song_name: "Diamond Dust",
     alphabet: "D",
     version_num: 13,
-    ratings: [1, 5, 7, 10, 13, 5, 8, 11, 13],
+    ratings: [2, 5, 7, 10, 13, 5, 8, 11, 13],
+    tiers: [0.25, 0.15, 0.35, 0.35, 0.4, 0.2, 0.35, 0.3, 0.5],
   },
   {
     song_id: "19old9dq1q9DilPQDol88d19dI96blb6",
@@ -636,6 +716,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 18,
     ratings: [3, 7, 10, 13, 0, 7, 10, 12, 0],
+    tiers: [0.5, 0.6, 0.6, 0.45, 0, 0.4, 0.45, 0.45, 0],
     lock_types: [180, 180, 180, 180, 0, 180, 180, 180, 0],
   },
   {
@@ -644,6 +725,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 16,
     ratings: [8, 11, 14, 16, 18, 11, 15, 17, 18],
+    tiers: [0.5, 0.7, 0.65, 0.5, 0.8, 0.45, 0.55, 0.55, 0.9],
   },
   {
     song_id: "19Q9lQId91d9l8o09oI81OQqPd00dQ69",
@@ -653,6 +735,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 18,
     ratings: [4, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.1, 0.05, 0.05, 0.5, 0, 0.15, 0.2, 0.5, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -662,6 +745,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 4,
     ratings: [3, 4, 7, 12, 0, 5, 8, 9, 0],
+    tiers: [0.45, 0.45, 0.45, 0.3, 0, 0.4, 0.25, 0.7, 0],
   },
   {
     song_id: "1d9lDIl6iiiD0D0d8qd6dlDlq6P8o0QI",
@@ -672,6 +756,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [5, 9, 12, 14, 0, 9, 13, 15, 0],
+    tiers: [0.95, 0.95, 0.95, 0.95, 0, 0.95, 0.9, 0.75, 0],
   },
   {
     song_id: "1Dd0b8lIQOd011qqOPiq1QDbDqod9Od8",
@@ -679,6 +764,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.3, 0.25, 0.2, 0.4, 0, 0.4, 0.3, 0.5, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -686,7 +772,8 @@ export const ALL_SONG_DATA = [
     song_name: "Crazy Control",
     alphabet: "C",
     version_num: 12,
-    ratings: [1, 4, 6, 9, 12, 4, 7, 10, 12],
+    ratings: [2, 4, 6, 9, 12, 4, 7, 10, 12],
+    tiers: [0.3, 0.35, 0.35, 0.65, 0.45, 0.55, 0.55, 0.6, 0.55],
   },
   {
     song_id: "1diQi81loIodIdOlQ8Pd6Qd8b69Q1DP8",
@@ -694,13 +781,24 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 8,
     ratings: [3, 4, 7, 13, 0, 4, 7, 12, 0],
+    tiers: [0.3, 0.35, 0.45, 0.3, 0, 0.35, 0.6, 0.6, 0],
   },
   {
     song_id: "1Dl19idl0i0qiqidbDIIbQddiP6o11PP",
     song_name: "MAX 360",
     alphabet: "M",
     version_num: 16,
-    ratings: [9, 12, 15, 18, 19, 12, 15, 18, 19],
+    ratings: [9, 12, 16, 18, 19, 12, 16, 18, 19],
+    tiers: [0.65, 0.75, 0.85, 0, 0, 0.55, 0.5, 0, 0.3],
+  },
+  {
+    song_id: "1dldQ1il1O89O8Ol0Ib0Dq8Pl8ol111I",
+    song_name: "Dance With The Dead",
+    alphabet: "D",
+    version_num: 19,
+    ratings: [3, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.45, 0.3, 0.7, 0.5, 0, 0.2, 0.6, 0.45, 0],
+    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
     song_id: "1DPD60Q8D1qD8i80P160bqDQ81DObDlP",
@@ -708,6 +806,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 17,
     ratings: [2, 6, 11, 15, 0, 6, 10, 15, 0],
+    tiers: [0.25, 0.2, 0.25, 0.2, 0, 0.35, 0.25, 0.5, 0],
   },
   {
     song_id: "1dq6Oq918dIQb1doqQdbiPPPO9lIdl0P",
@@ -718,6 +817,7 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 15,
     ratings: [3, 6, 9, 14, 0, 6, 10, 14, 0],
+    tiers: [0.6, 0.75, 0.55, 0.45, 0, 0.5, 0.45, 0.5, 0],
   },
   {
     song_id: "1i10oIqlooQbOqO9qiodbIliilP1I06b",
@@ -725,6 +825,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 14,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.3, 0.55, 0.55, 0.4, 0, 0.55, 0.5, 0.5, 0],
   },
   {
     song_id: "1i6ObblIOoPo6dDd9dIIq11l60qiD9di",
@@ -732,6 +833,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 9,
     ratings: [3, 4, 6, 8, 0, 5, 6, 8, 0],
+    tiers: [0.5, 0.45, 0.5, 0.35, 0, 0.45, 0.7, 0.4, 0],
   },
   {
     song_id: "1i81dQboQ91QbdO9d6bQ1Pi00dPP01li",
@@ -739,6 +841,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 15,
     ratings: [2, 5, 7, 10, 12, 5, 7, 10, 12],
+    tiers: [0.15, 0.15, 0.45, 0.55, 0.3, 0.2, 0.55, 0.7, 0.35],
   },
   {
     song_id: "1i8d1DodloQiQ8doOlloDIOO9PI6OIoO",
@@ -747,6 +850,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [2, 5, 9, 11, 0, 5, 9, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "1I9ODbQ81qi1006QoQI6d6dbd9iiPD9O",
@@ -755,6 +859,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 15,
     ratings: [3, 8, 12, 16, 17, 8, 12, 16, 17],
+    tiers: [0.55, 0.35, 0.35, 0.3, 0.65, 0.3, 0.55, 0.45, 0.75],
   },
   {
     song_id: "1idIoi66ll806D8ddldOQi8bdiDO0Oil",
@@ -762,6 +867,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [4, 6, 10, 13, 0, 5, 10, 12, 0],
+    tiers: [0.3, 0.1, 0.15, 0, 0, 0.4, 0.2, 0.2, 0],
   },
   {
     song_id: "1iDPo19Pb9ooi8OqiidbqPb06DDdqiqo",
@@ -769,20 +875,23 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 17,
     ratings: [4, 8, 12, 15, 0, 8, 12, 14, 0],
+    tiers: [0.3, 0.3, 0.25, 0.3, 0, 0.25, 0.3, 0.5, 0],
   },
   {
     song_id: "1idPoQOiI8611P01Oddo1D19lQO8dQdl",
     song_name: "CANDY (UFO mix)",
     alphabet: "C",
     version_num: 19,
-    ratings: [2, 6, 10, 14, 0, 6, 11, 14, 0],
+    ratings: [2, 6, 10, 15, 0, 6, 11, 15, 0],
+    tiers: [0.4, 0.25, 0.4, 0.65, 0, 0.3, 0.25, 0.25, 0],
   },
   {
     song_id: "1IdqDqDdd08dboO911P6OQ8lobb16PDd",
     song_name: "Chromatic Burst",
     alphabet: "C",
     version_num: 19,
-    ratings: [1, 7, 12, 17, 0, 7, 12, 17, 0],
+    ratings: [2, 7, 12, 17, 0, 7, 12, 17, 0],
+    tiers: [0.15, 0.1, 0.15, 0.65, 0, 0.1, 0.1, 0.45, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -791,6 +900,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 19,
     ratings: [3, 5, 13, 16, 0, 5, 13, 16, 0],
+    tiers: [0.4, 0.3, 0.5, 0.5, 0, 0.25, 0.55, 0.5, 0],
     lock_types: [220, 220, 220, 220, 0, 220, 220, 220, 0],
   },
   {
@@ -799,13 +909,15 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [4, 9, 14, 16, 0, 9, 14, 16, 0],
+    tiers: [0.25, 0.1, 0.2, 0.55, 0, 0.15, 0.5, 0.65, 0],
   },
   {
     song_id: "1iIoi89doDiQoo8o0ddl9PQdQP0Ili8O",
     song_name: "THE REASON",
     alphabet: "T",
     version_num: 14,
-    ratings: [1, 4, 7, 12, 15, 4, 7, 12, 15],
+    ratings: [3, 4, 7, 12, 15, 4, 7, 12, 15],
+    tiers: [0.75, 0.65, 0.75, 0.65, 0.8, 0.65, 0.65, 0.65, 0.75],
   },
   {
     song_id: "1IQ16dPQPQ0Q1qdidld6lO1o86q98o69",
@@ -814,6 +926,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [3, 7, 11, 15, 17, 7, 11, 15, 17],
+    tiers: [0.1, 0.35, 0.25, 0.45, 0.4, 0.35, 0.2, 0.25, 0.25],
   },
   {
     song_id: "1iQIIPdQQOOlP9l90oPdIi60D9OOlqoQ",
@@ -821,6 +934,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 15,
     ratings: [6, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.4, 0.45, 0.55, 0.75, 0, 0.5, 0.55, 0.6, 0],
   },
   {
     song_id: "1l01billdl6oPP96Pq8d0lbbblQI8i8l",
@@ -829,6 +943,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 4, 7, 12, 10, 5, 7, 12, 11],
+    tiers: [0.3, 0.35, 0.45, 0.35, 0.6, 0.3, 0.45, 0.4, 0.55],
   },
   {
     song_id: "1l8ibdlb0O0q00o6l9Pq1ibdbIQqqOb1",
@@ -836,6 +951,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 13,
     ratings: [4, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.6, 0.6, 0.75, 0.45, 0, 0.65, 0.75, 0.35, 0],
   },
   {
     song_id: "1liPbq0890qqI0D8qDP9diOOPlDdi0Oi",
@@ -846,6 +962,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [3, 7, 11, 15, 18, 7, 11, 15, 18],
+    tiers: [0.25, 0.25, 0.2, 0.05, 0, 0.35, 0.25, 0.2, 0],
   },
   {
     song_id: "1lqii0IibdbPD19P6DiIl0Id9do6qqd1",
@@ -853,6 +970,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 19,
     ratings: [4, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.35, 0.55, 0.5, 0.5, 0, 0.4, 0.35, 0.3, 0],
   },
   {
     song_id: "1o6dQqq9P8IQ6PbQO88OI1b91P9DoqQ8",
@@ -860,6 +978,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [0, 0, 0, 0, 17, 0, 0, 0, 17],
+    tiers: [0, 0, 0, 0, 0.4, 0, 0, 0, 0.75],
   },
   {
     song_id: "1O9P1DqQQqObOQPP6Il989qDqi0bQ8Qb",
@@ -867,6 +986,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 10,
     ratings: [0, 0, 0, 0, 12, 0, 0, 0, 12],
+    tiers: [0, 0, 0, 0, 0.55, 0, 0, 0, 0.5],
   },
   {
     song_id: "1Ob1I0do8Iq6QqP6PQIiddD18dqDP9oo",
@@ -875,6 +995,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 16,
     ratings: [4, 10, 13, 16, 0, 10, 14, 16, 0],
+    tiers: [0.8, 0.7, 0.6, 0.6, 0, 0.55, 0.45, 0.5, 0],
   },
   {
     song_id: "1Ob9Il9bOQdbOQbq00oi1qoo1o1dPoI0",
@@ -882,6 +1003,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 12,
     ratings: [2, 4, 8, 11, 0, 4, 8, 11, 0],
+    tiers: [0.2, 0.2, 0.2, 0.45, 0, 0.1, 0.2, 0.45, 0],
   },
   {
     song_id: "1oIo1DliQqPol00Q1l1bPODbdOilodod",
@@ -891,6 +1013,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 11,
     ratings: [3, 6, 8, 13, 0, 5, 8, 14, 0],
+    tiers: [0.25, 0.2, 0.45, 0.3, 0, 0.35, 0.6, 0.5, 0],
   },
   {
     song_id: "1Ol1i86OQd61IlqPb9O1060l0OQDoDQI",
@@ -898,6 +1021,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 14,
     ratings: [2, 6, 9, 13, 15, 6, 9, 13, 15],
+    tiers: [0.45, 0.5, 0.65, 0.45, 0.7, 0.65, 0.75, 0.7, 0.75],
   },
   {
     song_id: "1OlD9Iqb9Oqol09dDi6iiQ9Iod1oP0il",
@@ -905,7 +1029,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "メサージュ",
     alphabet: "M",
     version_num: 13,
-    ratings: [1, 5, 7, 11, 0, 3, 7, 11, 0],
+    ratings: [2, 5, 7, 11, 0, 3, 7, 11, 0],
+    tiers: [0.3, 0.25, 0.45, 0.25, 0, 0.05, 0.4, 0.35, 0],
   },
   {
     song_id: "1OQd9o01Oq6Q018POOdlqodQ6bqDPOob",
@@ -916,6 +1041,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 16,
     ratings: [2, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.25, 0.1, 0.15, 0, 0, 0.1, 0.25, 0.25, 0],
   },
   {
     song_id: "1P00OOoibd668i90Oqb0dl9i8D10b1iD",
@@ -923,7 +1049,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "TRUE LOVE Clubstars True Club Mix",
     alphabet: "T",
     version_num: 19,
-    ratings: [1, 5, 9, 13, 0, 4, 9, 13, 0],
+    ratings: [2, 5, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [0.35, 0.05, 0.3, 0.25, 0, 0.2, 0.2, 0.1, 0],
   },
   {
     song_id: "1P9bqO00bIQ0q8d1Q80l0Dq8oi6boqb0",
@@ -934,6 +1061,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [3, 4, 9, 12, 0, 4, 9, 11, 0],
+    tiers: [0.3, 0.35, 0.35, 0.25, 0, 0.45, 0.45, 0.3, 0],
   },
   {
     song_id: "1P9qQdiiodODqQPl0OO88iiiqdoDIPO6",
@@ -942,6 +1070,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 2,
     ratings: [4, 8, 9, 10, 0, 8, 9, 10, 0],
+    tiers: [0.15, 0.35, 0.25, 0.3, 0, 0.45, 0.65, 0.65, 0],
   },
   {
     song_id: "1PiiOiQoq8dbdi819q9Ild966o6o19QQ",
@@ -949,6 +1078,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 10,
     ratings: [3, 5, 9, 11, 0, 6, 9, 11, 0],
+    tiers: [0.45, 0.55, 0.8, 0.8, 0, 0.55, 0.8, 0.7, 0],
   },
   {
     song_id: "1PoOQPd0D01Q9O0doiQQQ8D8Q096bDq9",
@@ -957,6 +1087,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 14,
     ratings: [3, 6, 10, 13, 0, 5, 10, 14, 0],
+    tiers: [0.35, 0.35, 0.25, 0.5, 0, 0.3, 0.4, 0.5, 0],
   },
   {
     song_id: "1PQdDiqOD6o1b61iiDOoiiblIQbI91Pb",
@@ -964,6 +1095,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 8,
     ratings: [3, 4, 7, 11, 0, 5, 8, 11, 0],
+    tiers: [0.55, 0.65, 0.65, 0.45, 0, 0.55, 0.8, 0.45, 0],
   },
   {
     song_id: "1PQiP6D6IqP016dqb8qPq86Q1o8bQq6q",
@@ -971,6 +1103,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 19,
     ratings: [4, 9, 12, 15, 0, 9, 12, 15, 0],
+    tiers: [0.2, 0.1, 0.1, 0.3, 0, 0.1, 0.1, 0.15, 0],
   },
   {
     song_id: "1Q1Q8oO600lodPbio8b8d66b8do1PIlQ",
@@ -978,6 +1111,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 8,
     ratings: [3, 6, 8, 12, 0, 6, 8, 12, 0],
+    tiers: [0.35, 0.25, 0.3, 0.5, 0, 0.15, 0.4, 0.45, 0],
   },
   {
     song_id: "1q6obddbql8lQdPI19liD6PdQ0dPIODd",
@@ -985,6 +1119,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 4,
     ratings: [3, 5, 6, 10, 0, 4, 5, 8, 0],
+    tiers: [0.35, 0.35, 0.6, 0.45, 0, 0.4, 0.35, 0.45, 0],
   },
   {
     song_id: "1q6Qoi0lldP6qoQI9PI199d6P0Q96ld0",
@@ -993,6 +1128,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 18,
     ratings: [5, 9, 13, 15, 0, 9, 12, 16, 0],
+    tiers: [0.5, 0.65, 0.75, 0.65, 0, 0.45, 0.6, 0.25, 0],
   },
   {
     song_id: "1Q809666i9oblO8qO688OiD6OIbiP0Oq",
@@ -1002,6 +1138,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 17,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.3, 0.3, 0.4, 0.25, 0, 0.25, 0.3, 0.15, 0],
   },
   {
     song_id: "1Q9l881P1bq8bQQ9OOqQ10OioP68bQ8o",
@@ -1009,6 +1146,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 11,
     ratings: [3, 4, 7, 10, 13, 5, 7, 9, 13],
+    tiers: [0.35, 0.5, 0.35, 0.3, 0.55, 0.45, 0.4, 0.5, 0.6],
   },
   {
     song_id: "1qdb8P8il9li6DOdPolq9d0d9Q6898oi",
@@ -1017,6 +1155,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [4, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.3, 0.3, 0.3, 0.3, 0, 0.55, 0.35, 0.2, 0],
   },
   {
     song_id: "1qDD1DdPlId69010IQ18I6q8Q00IoI6D",
@@ -1024,13 +1163,15 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 7,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.75, 0, 0, 0, 0.6],
   },
   {
     song_id: "1QIPID18qib8D9Oo9lOo8I6DPi9qiod6",
     song_name: "DYNAMITE RAVE",
     alphabet: "D",
     version_num: 3,
-    ratings: [3, 6, 10, 12, 12, 6, 7, 11, 12],
+    ratings: [3, 6, 10, 12, 12, 7, 8, 11, 12],
+    tiers: [0.35, 0.3, 0.5, 0.5, 0.65, 0.55, 0.65, 0.45, 0.5],
   },
   {
     song_id: "1qPbqd11l6b8ibq1ODQ6di90PIo0D618",
@@ -1040,6 +1181,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 18,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.25, 0.2, 0.2, 0.15, 0, 0.2, 0.15, 0.15, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -1048,6 +1190,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 17,
     ratings: [2, 7, 11, 15, 17, 7, 11, 15, 17],
+    tiers: [0.6, 0.45, 0.4, 0.2, 0.7, 0.35, 0.35, 0.3, 0.45],
   },
   {
     song_id: "1qPOO8o9089lI1qQIDIDi0lidob9i6lq",
@@ -1055,6 +1198,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 17,
     ratings: [4, 7, 11, 14, 0, 8, 12, 15, 0],
+    tiers: [0.3, 0.4, 0.3, 0.4, 0, 0.35, 0.4, 0.2, 0],
   },
   {
     song_id: "1Qqo9bID18OdiI1Qb0lP9DIqIO6ldPOP",
@@ -1062,7 +1206,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "CANDY HEART",
     alphabet: "C",
     version_num: 7,
-    ratings: [4, 5, 7, 10, 0, 4, 6, 10, 0],
+    ratings: [4, 5, 7, 10, 0, 4, 7, 10, 0],
+    tiers: [0.2, 0.1, 0.35, 0.3, 0, 0.35, 0.8, 0.6, 0],
   },
   {
     song_id: "1QqObIQPDOq6bI6iOqDiiI66oDQQidlb",
@@ -1070,6 +1215,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [3, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.7, 0.75, 0.75, 0.85, 0, 0.65, 0.55, 0.75, 0],
   },
   {
     song_id: "606b9d6OiliId69bO9Odi6qq8o8Qd0dq",
@@ -1078,6 +1224,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 13,
     ratings: [6, 10, 14, 18, 19, 10, 14, 18, 19],
+    tiers: [0.6, 0.8, 0.65, 0.4, 0.1, 0.6, 0.8, 0.1, 0.4],
   },
   {
     song_id: "60dq6Plo0do9iQOl6ql111P9OPd9i01l",
@@ -1085,6 +1232,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [3, 6, 10, 13, 16, 6, 10, 13, 16],
+    tiers: [0.3, 0.15, 0.35, 0.45, 0.55, 0.2, 0.45, 0.5, 0.35],
   },
   {
     song_id: "60P9IPOdi1OIbD61D8i0D9ODoq6QOIPO",
@@ -1092,6 +1240,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 16,
     ratings: [3, 6, 11, 15, 17, 6, 11, 15, 17],
+    tiers: [0.4, 0.35, 0.35, 0.2, 0.35, 0.45, 0.4, 0.4, 0.5],
   },
   {
     song_id: "60qiDd000qDIobO0QI916i18bbolO919",
@@ -1099,7 +1248,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "Raspberry Heart",
     alphabet: "R",
     version_num: 10,
-    ratings: [3, 5, 6, 9, 11, 5, 6, 9, 12],
+    ratings: [3, 5, 7, 9, 11, 5, 7, 9, 12],
+    tiers: [0.15, 0.2, 0.25, 0.1, 0.15, 0.4, 0.4, 0.55, 0.45],
   },
   {
     song_id: "60QoP9DoIo90D616989Q0D0iodOoOd91",
@@ -1107,6 +1257,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 4,
     ratings: [3, 7, 8, 11, 0, 5, 7, 10, 0],
+    tiers: [0.45, 0.45, 0.65, 0.55, 0, 0.65, 0.7, 0.8, 0],
   },
   {
     song_id: "61D9oiPDI68Dq60Dqi99qqd9DqD1D1qd",
@@ -1114,6 +1265,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 11,
     ratings: [3, 6, 8, 11, 0, 4, 7, 11, 0],
+    tiers: [0.15, 0.1, 0.4, 0.35, 0, 0.25, 0.65, 0.25, 0],
   },
   {
     song_id: "61Db8oi9d9bOIlloq8dqI8O000ilDb08",
@@ -1121,6 +1273,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 19,
     ratings: [4, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.5, 0.5, 0.55, 0.2, 0, 0.4, 0.5, 0.1, 0],
     lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
@@ -1129,6 +1282,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 6,
     ratings: [4, 9, 12, 13, 0, 9, 11, 13, 0],
+    tiers: [0.25, 0.55, 0.65, 0.6, 0, 0.6, 0.75, 0.7, 0],
   },
   {
     song_id: "61IoqIoODb6dlQlQqd99b90idO9QP9iI",
@@ -1137,6 +1291,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [3, 5, 8, 12, 12, 4, 7, 11, 12],
+    tiers: [0.2, 0.2, 0.45, 0.4, 0.15, 0.1, 0.3, 0.2, 0.4],
   },
   {
     song_id: "61oIP0QIlO90d18ObDP1Dii6PoIQoOD8",
@@ -1146,6 +1301,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 16,
     ratings: [3, 5, 8, 12, 0, 4, 8, 11, 0],
+    tiers: [0.5, 0.55, 0.6, 0.6, 0, 0.6, 0.55, 0.6, 0],
   },
   {
     song_id: "61P0I66id16QIi08Q1918PlldOOiooql",
@@ -1154,6 +1310,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 13,
     ratings: [4, 9, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.7, 0.6, 0.7, 0.75, 0, 0.6, 0.5, 0.3, 0],
   },
   {
     song_id: "61Q6Q8OOiiQIbIi0l6l10qQ0Ii8P0Qb6",
@@ -1161,13 +1318,15 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 10,
     ratings: [3, 4, 6, 9, 0, 4, 7, 10, 0],
+    tiers: [0.25, 0.3, 0.25, 0.15, 0, 0.35, 0.25, 0.2, 0],
   },
   {
     song_id: "61QQi8i9Iliq66IOq1ib888b666o08O8",
     song_name: "Mermaid girl",
     alphabet: "M",
     version_num: 13,
-    ratings: [1, 4, 7, 11, 12, 6, 8, 11, 12],
+    ratings: [3, 4, 7, 11, 12, 6, 8, 11, 12],
+    tiers: [0.7, 0.5, 0.45, 0.3, 0.4, 0.35, 0.45, 0.2, 0.35],
   },
   {
     song_id: "666ObIO9bO8D8q8q08I1OQo96DdIbbiO",
@@ -1178,6 +1337,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "668Q8qQdqoIQQiIQOilDqd8lDOOQ8bDQ",
@@ -1186,6 +1346,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [3, 5, 10, 13, 0, 6, 8, 13, 0],
+    tiers: [0.25, 0.25, 0.55, 0.2, 0, 0.3, 0.65, 0.3, 0],
   },
   {
     song_id: "66b1Pibq019dqbdPOdlqDbdbbDdi9Q08",
@@ -1194,6 +1355,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 18,
     ratings: [3, 6, 11, 13, 0, 6, 10, 13, 0],
+    tiers: [0.2, 0.25, 0.05, 0, 0, 0.15, 0.1, 0, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -1202,6 +1364,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [4, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.75, 0.8, 0.8, 0.55, 0, 0.55, 0.7, 0.7, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -1210,6 +1373,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 9,
     ratings: [3, 4, 6, 10, 0, 3, 6, 10, 0],
+    tiers: [0.45, 0.45, 0.65, 0.4, 0, 0.45, 0.5, 0.3, 0],
   },
   {
     song_id: "68iObo1dP91oqDQ18iiiPQDDb8O6ddq6",
@@ -1217,6 +1381,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [2, 7, 12, 17, 0, 7, 12, 17, 0],
+    tiers: [0.7, 0.65, 0.65, 0.25, 0, 0.5, 0.35, 0.2, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -1226,6 +1391,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 8,
     ratings: [5, 9, 11, 15, 16, 9, 11, 15, 16],
+    tiers: [0.75, 0.95, 0.95, 0.85, 0.75, 0.95, 0.9, 0.8, 0.55],
   },
   {
     song_id: "691bdoD0DIP6di9D6QoPiDbD19Ol0lqi",
@@ -1233,13 +1399,15 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [4, 7, 12, 14, 0, 7, 12, 14, 0],
+    tiers: [0.15, 0.2, 0.4, 0.3, 0, 0.25, 0.3, 0.35, 0],
   },
   {
     song_id: "69b01qbo8Qdi6liOPq091bqo01i16oQ9",
     song_name: "I'm an Albatraoz",
     alphabet: "I",
     version_num: 17,
-    ratings: [1, 4, 7, 11, 0, 4, 7, 11, 0],
+    ratings: [2, 3, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.4, 0.45, 0.7, 0.65, 0, 0.4, 0.65, 0.55, 0],
   },
   {
     song_id: "69diddO9DOI9IPd9b66l0o0DDlPb8oqP",
@@ -1247,6 +1415,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 19,
     ratings: [2, 5, 11, 15, 0, 5, 11, 15, 0],
+    tiers: [0.3, 0.35, 0.75, 0.6, 0, 0.4, 0.7, 0.45, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -1258,6 +1427,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 12,
     ratings: [3, 5, 8, 11, 0, 5, 7, 12, 0],
+    tiers: [0.05, 0.05, 0.15, 0, 0, 0.05, 0.4, 0.1, 0],
   },
   {
     song_id: "69qoD0l6olQqqbl09b069q898b600I6o",
@@ -1265,6 +1435,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 8,
     ratings: [3, 4, 7, 12, 0, 5, 7, 13, 0],
+    tiers: [0.3, 0.3, 0.35, 0.45, 0, 0.25, 0.3, 0.6, 0],
   },
   {
     song_id: "6b6QIoDPoQ010o8Di1q6Q8DdiQll0Di1",
@@ -1272,6 +1443,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 19,
     ratings: [2, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.5, 0.4, 0.65, 0.5, 0, 0.4, 0.65, 0.45, 0],
   },
   {
     song_id: "6bdDP91o1II60Qo99D60QI81o6oPlI80",
@@ -1279,6 +1451,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 10,
     ratings: [5, 11, 13, 15, 0, 12, 14, 16, 0],
+    tiers: [0.65, 0.2, 0.6, 0.35, 0, 0.45, 0.7, 0.4, 0],
   },
   {
     song_id: "6bid6d9qPQ80DOqiidQQ891o6Od8801l",
@@ -1286,7 +1459,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "オバペリ/オバピリ",
     alphabet: "O",
     version_num: 15,
-    ratings: [8, 12, 15, 18, 19, 12, 15, 18, 19],
+    ratings: [8, 12, 16, 18, 19, 12, 16, 18, 19],
+    tiers: [0.9, 0.9, 0.95, 0.8, 0.3, 0.8, 0.9, 0.7, 0.5],
   },
   {
     song_id: "6bIODbPoIDlOdO66b1id0q68qdQilDd6",
@@ -1294,6 +1468,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 10,
     ratings: [3, 4, 7, 11, 13, 4, 6, 10, 13],
+    tiers: [0.4, 0.35, 0.35, 0.45, 0.4, 0.65, 0.65, 0.7, 0.4],
   },
   {
     song_id: "6bO0Dq60bboi009iDbO8o9Q9999PiiDP",
@@ -1302,6 +1477,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 12,
     ratings: [2, 5, 8, 11, 13, 5, 8, 11, 13],
+    tiers: [0.25, 0.3, 0.45, 0.5, 0.2, 0.3, 0.5, 0.5, 0.3],
   },
   {
     song_id: "6boDb6Pdd6QDP1oPdlQ0Qo1ld0lQb6P6",
@@ -1309,6 +1485,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 10,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 15],
+    tiers: [0, 0, 0, 0, 0.7, 0, 0, 0, 0.95],
   },
   {
     song_id: "6d10P0Pd1PiD1l6DPQdoPD1Q8DP0QlqQ",
@@ -1318,6 +1495,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 18,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.35, 0.3, 0.3, 0.25, 0, 0.4, 0.4, 0.35, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -1327,6 +1505,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 12,
     ratings: [4, 7, 11, 16, 0, 7, 12, 16, 0],
+    tiers: [0.55, 0.4, 0.85, 0.6, 0, 0.55, 0.7, 0.6, 0],
   },
   {
     song_id: "6d8DiDl0i1oldbbo0o60PQ0q96d608Dq",
@@ -1334,6 +1513,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 17,
     ratings: [4, 9, 12, 16, 17, 9, 12, 16, 17],
+    tiers: [0.3, 0.05, 0.55, 0.25, 0.7, 0.25, 0.5, 0.35, 0.65],
   },
   {
     song_id: "6Ddo196olOPi9IQdbQ8Qbd8do8Q1obOD",
@@ -1341,6 +1521,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 4,
     ratings: [3, 4, 9, 12, 0, 5, 8, 11, 0],
+    tiers: [0.15, 0.35, 0.05, 0, 0, 0.35, 0.2, 0, 0],
   },
   {
     song_id: "6dO6i9qq601D8ild9QIlbO8bodbiQ1Pl",
@@ -1350,7 +1531,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "かまぼこ/BSB",
     alphabet: "さ",
     version_num: 15,
-    ratings: [3, 7, 11, 15, 18, 7, 12, 15, 18],
+    ratings: [4, 8, 11, 15, 18, 7, 12, 15, 18],
+    tiers: [0.45, 0.4, 0.5, 0.4, 0.8, 0.35, 0.4, 0.55, 0.6],
   },
   {
     song_id: "6doo1dQ16Ol86oIbQ19PPldI8lIbP0OI",
@@ -1360,6 +1542,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [4, 7, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.1, 0, 0.15, 0, 0, 0.3, 0.3, 0.2, 0],
   },
   {
     song_id: "6DP8POdO1PiP0D8il08Po6iD8oI9Pidl",
@@ -1368,6 +1551,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 6, 9, 11, 0, 6, 9, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "6DPiPD9qDboDlP8qq61Q89qPP0dIO0OI",
@@ -1375,6 +1559,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 19,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.1, 0.55, 0.55, 0.45, 0, 0.4, 0.3, 0.25, 0],
   },
   {
     song_id: "6dQ0P6odPlD6dQdbP8dIiQQdQ66qllI6",
@@ -1384,6 +1569,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 19,
     ratings: [4, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.4, 0.45, 0.55, 0.15, 0, 0.6, 0.6, 0.2, 0],
     lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
@@ -1392,6 +1578,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 17,
     ratings: [5, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.65, 0.85, 0.8, 0.4, 0, 0.7, 0.7, 0.1, 0],
   },
   {
     song_id: "6DQoDoliDO6P96P8D1POoOd8q9QbOibQ",
@@ -1399,6 +1586,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 16,
     ratings: [2, 4, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.7, 0.6, 0.55, 0.6, 0, 0.55, 0.5, 0.55, 0],
   },
   {
     song_id: "6dqPOId9Od11Il90QO0q9iQI6d68IolD",
@@ -1406,7 +1594,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "LOVE IS THE POWER Reborn",
     alphabet: "L",
     version_num: 13,
-    ratings: [1, 6, 7, 10, 0, 6, 7, 11, 0],
+    ratings: [3, 6, 7, 10, 0, 6, 7, 11, 0],
+    tiers: [0.7, 0.5, 0.65, 0.7, 0, 0.75, 0.6, 0.6, 0],
   },
   {
     song_id: "6dQQd1d1OQlqQdQ98i01DQ1i9P6QDQdQ",
@@ -1415,6 +1604,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [3, 6, 9, 12, 16, 6, 10, 12, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [0, 0, 0, 0, 160, 0, 0, 0, 160],
   },
   {
@@ -1423,6 +1613,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 15,
     ratings: [3, 5, 9, 13, 0, 5, 9, 14, 0],
+    tiers: [0.25, 0.25, 0.6, 0.4, 0, 0.35, 0.6, 0.3, 0],
   },
   {
     song_id: "6I0d1d8d690dl8boOb60O1Iq1Ddi6P8d",
@@ -1430,6 +1621,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [4, 5, 9, 12, 0, 6, 8, 13, 0],
+    tiers: [0.05, 0.2, 0.35, 0.45, 0, 0.15, 0.65, 0.2, 0],
   },
   {
     song_id: "6i189o0bl000608OPdOIODOOibq6QoPI",
@@ -1437,6 +1629,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 12,
     ratings: [2, 5, 7, 10, 11, 5, 7, 11, 12],
+    tiers: [0.4, 0.3, 0.35, 0.45, 0.5, 0.3, 0.45, 0.3, 0.5],
   },
   {
     song_id: "6i99bQI11qD818DDdq6qb0Dql880lP8l",
@@ -1444,6 +1637,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 14,
     ratings: [4, 7, 10, 14, 17, 7, 10, 14, 17],
+    tiers: [0.3, 0.6, 0.4, 0.5, 0.45, 0.65, 0.65, 0.7, 0.6],
   },
   {
     song_id: "6ibO1P1I1ooDdd9l1oDOqDDdOlO9o6io",
@@ -1451,6 +1645,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Q",
     version_num: 19,
     ratings: [2, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.55, 0.4, 0.7, 0.55, 0, 0.4, 0.65, 0.4, 0],
   },
   {
     song_id: "6ID160b99ibbd9OoblD0DPOl98lPbq6D",
@@ -1458,6 +1653,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 18,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.3, 0.35, 0.2, 0.4, 0, 0.25, 0.1, 0.15, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -1466,6 +1662,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 17,
     ratings: [4, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.25, 0.25, 0.5, 0.2, 0, 0.3, 0.6, 0.2, 0],
   },
   {
     song_id: "6IPiID10iO699bOQlODd1PQ0liDi9i1I",
@@ -1473,6 +1670,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 16,
     ratings: [2, 5, 7, 9, 0, 6, 8, 11, 0],
+    tiers: [0.5, 0.7, 0.7, 0.45, 0, 0.8, 0.7, 0.45, 0],
   },
   {
     song_id: "6iq1dqQ1PDQlDO0bio0l89oDDDi6b0oD",
@@ -1481,7 +1679,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Hana Ranman Flowers",
     alphabet: "は",
     version_num: 9,
-    ratings: [3, 5, 7, 11, 0, 4, 7, 11, 0],
+    ratings: [3, 6, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.3, 0.3, 0.5, 0.15, 0, 0.4, 0.7, 0.4, 0],
   },
   {
     song_id: "6l0iQ18D0I00P89lIqI8bl9biIOi018O",
@@ -1490,6 +1689,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 13,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.1, 0.2, 0.35, 0.4, 0, 0.2, 0.3, 0.4, 0],
   },
   {
     song_id: "6l1l8D006lD8OoOi91QI0b10d19Did1O",
@@ -1499,6 +1699,7 @@ export const ALL_SONG_DATA = [
     alphabet: "わ",
     version_num: 18,
     ratings: [3, 9, 11, 14, 0, 9, 11, 14, 0],
+    tiers: [0.3, 0.2, 0.35, 0.25, 0, 0.15, 0.2, 0.05, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -1511,6 +1712,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 19,
     ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.6, 0.6, 0.75, 0.75, 0, 0.65, 0.65, 0.65, 0],
   },
   {
     song_id: "6lb86I9Q18Di6do1lDdod8b1Po688019",
@@ -1520,6 +1722,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 18,
     ratings: [1, 3, 8, 11, 0, 3, 8, 11, 0],
+    tiers: [0.25, 0.25, 0.4, 0.3, 0, 0.2, 0.45, 0.35, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -1528,7 +1731,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "酢酸/サクサン/さくさん",
     alphabet: "S",
     version_num: 12,
-    ratings: [3, 7, 10, 14, 16, 8, 10, 15, 16],
+    ratings: [3, 8, 10, 14, 16, 9, 11, 15, 16],
+    tiers: [0.15, 0.3, 0.25, 0.2, 0.45, 0.5, 0.65, 0.45, 0.25],
     lock_types: [0, 0, 0, 0, 130, 0, 0, 0, 130],
   },
   {
@@ -1537,13 +1741,15 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 14,
     ratings: [2, 5, 9, 12, 14, 5, 9, 11, 14],
+    tiers: [0.3, 0.15, 0.65, 0.4, 0.45, 0.15, 0.75, 0.65, 0.6],
   },
   {
     song_id: "6lQ9iQdq8P0Q11q9O8dbl9Q9Pi8bIb98",
     song_name: "Dance Dance Revolution",
     alphabet: "D",
     version_num: 8,
-    ratings: [5, 6, 8, 12, 12, 6, 8, 12, 11],
+    ratings: [5, 6, 8, 12, 12, 7, 8, 12, 11],
+    tiers: [0.15, 0.25, 0.45, 0.35, 0.45, 0.3, 0.35, 0.4, 0.3],
   },
   {
     song_id: "6lqoOddiPQ6D6160bOdP116bQdIliII8",
@@ -1551,6 +1757,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 8,
     ratings: [3, 4, 7, 9, 0, 5, 7, 9, 0],
+    tiers: [0.3, 0.5, 0.45, 0.25, 0, 0.3, 0.4, 0.35, 0],
   },
   {
     song_id: "6o6OObQo9oQl6Q1oq6OPqibQI61IlPq8",
@@ -1558,6 +1765,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.3, 0.35, 0.35, 0.45, 0, 0.3, 0.25, 0.35, 0],
   },
   {
     song_id: "6o966dbdo9dPIil6qQ09d1I0o0Qld611",
@@ -1565,6 +1773,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 11,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 13],
+    tiers: [0, 0, 0, 0, 0.5, 0, 0, 0, 0.6],
   },
   {
     song_id: "6Obi001oi9Qd1966dOd6d6Qo66dbbill",
@@ -1572,6 +1781,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 18,
     ratings: [4, 7, 12, 15, 17, 7, 12, 15, 17],
+    tiers: [0.2, 0.2, 0.25, 0.3, 0.45, 0.2, 0.2, 0.1, 0.1],
   },
   {
     song_id: "6ObP9i0qi1ibbi9DOd6bOOOd6Q9dlPi6",
@@ -1579,6 +1789,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [2, 4, 8, 10, 0, 4, 8, 10, 0],
+    tiers: [0.65, 0.7, 0.55, 0.55, 0, 0.8, 0.55, 0.65, 0],
   },
   {
     song_id: "6obQo6d0oQ6QoQql0I60b81IO8IOl1IO",
@@ -1586,6 +1797,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 14,
     ratings: [3, 9, 11, 15, 18, 9, 11, 15, 17],
+    tiers: [0.15, 0.15, 0.1, 0.1, 0, 0.2, 0.35, 0.75, 0.7],
   },
   {
     song_id: "6Oi66iq9bqi8bDI6l6lPdqDObo1i9lDl",
@@ -1593,6 +1805,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 15,
     ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.7, 0.65, 0.6, 0.55, 0, 0.65, 0.65, 0.55, 0],
   },
   {
     song_id: "6oI9d9lO6Q0iDD8dIIO08qIODiqiIqDl",
@@ -1601,6 +1814,8 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 15,
     ratings: [4, 8, 11, 14, 18, 8, 11, 14, 18],
+    tiers: [0.55, 0.35, 0.4, 0.4, 0.3, 0.35, 0.35, 0.35, 0.5],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "6OiD0q6O8qi6oDbQ18Ilo8do8biDD1ll",
@@ -1608,6 +1823,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 18,
     ratings: [4, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.2, 0.3, 0.05, 0.15, 0, 0.15, 0.1, 0.1, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -1616,6 +1832,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 19,
     ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.3, 0.35, 0.6, 0.7, 0, 0.15, 0.6, 0.75, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -1627,6 +1844,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 19,
     ratings: [3, 8, 11, 14, 17, 8, 11, 14, 18],
+    tiers: [0.4, 0.4, 0.5, 0.65, 0.85, 0.25, 0.25, 0.45, 0.1],
   },
   {
     song_id: "6oldqOoilo1OoP6P9OoO8bdD9lI86qdQ",
@@ -1635,6 +1853,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 5,
     ratings: [4, 6, 9, 13, 0, 5, 9, 12, 0],
+    tiers: [0.8, 0.95, 0.9, 0.75, 0, 0.85, 0.8, 0.7, 0],
   },
   {
     song_id: "6OOd69q0oP8iblIIb08OQO9dq9oIq8i6",
@@ -1643,13 +1862,15 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [6, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.75, 0.9, 0.9, 0.8, 0, 0.7, 0.75, 0.3, 0],
   },
   {
     song_id: "6oolbQ0QiO90Dd0DQbb1D86d8q88id86",
     song_name: "Show me your moves",
     alphabet: "S",
     version_num: 16,
-    ratings: [3, 5, 8, 11, 14, 5, 8, 12, 14],
+    ratings: [3, 6, 8, 11, 14, 5, 8, 12, 14],
+    tiers: [0.25, 0.2, 0.3, 0.15, 0.4, 0.2, 0.3, 0.1, 0.3],
   },
   {
     song_id: "6P18lOliIQqIO6Di0PP8iDlDQ01b0o0q",
@@ -1658,6 +1879,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 6,
     ratings: [5, 9, 12, 15, 0, 9, 12, 15, 0],
+    tiers: [0.4, 0.6, 0.6, 0.4, 0, 0.6, 0.75, 0.35, 0],
   },
   {
     song_id: "6P6dPoi66qO980bQo6l1QdlQIooq086l",
@@ -1665,6 +1887,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [3, 5, 8, 11, 0, 5, 9, 12, 0],
+    tiers: [0.25, 0.15, 0.35, 0.1, 0, 0.15, 0.4, 0.4, 0],
   },
   {
     song_id: "6QdIl8odooDQ0oOQ0IObQqo1lO986PP6",
@@ -1672,6 +1895,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 16,
     ratings: [3, 7, 12, 15, 18, 7, 12, 15, 18],
+    tiers: [0.4, 0.3, 0.35, 0.5, 0.2, 0.4, 0.25, 0.55, 0.5],
   },
   {
     song_id: "6qPlI8DQPoDIo6D819boPioIPPDIPblq",
@@ -1679,7 +1903,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.35, 0.15, 0.4, 0.25, 0, 0.2, 0.35, 0.4, 0],
   },
   {
     song_id: "6QQ1OdO99Ob001OQ90iP86o0I8OoQbib",
@@ -1689,6 +1913,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 19,
     ratings: [4, 7, 10, 13, 17, 7, 10, 13, 17],
+    tiers: [0.25, 0.2, 0.5, 0.55, 0.5, 0.1, 0.4, 0.55, 0],
     lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
@@ -1698,6 +1923,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 4,
     ratings: [3, 5, 7, 10, 0, 5, 8, 10, 0],
+    tiers: [0.25, 0.4, 0.5, 0.35, 0, 0.45, 0.4, 0.4, 0],
   },
   {
     song_id: "6qQb9I0QbD89IID9b9iOPdO6dbqPDolQ",
@@ -1706,16 +1932,18 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [3, 6, 8, 9, 0, 6, 8, 11, 0],
+    tiers: [0.4, 0.55, 0.45, 0.5, 0, 0.7, 0.65, 0.35, 0],
   },
   {
     song_id: "8006PP188Qldob68ld6OPqlbl1biod6D",
     song_name: "osaka EVOLVED -毎度、おおきに！- (TYPE2)",
     searchable_name: "osaka EVOLVED まいどおおきに TYPE2",
-    romanized_name: "osaka EVOLVED Maido Ookini TYPE2",
+    romanized_name: "osaka EVOLVED Maido Ookini TYPE2",
     alternate_name: "大阪2",
     alphabet: "O",
     version_num: 13,
     ratings: [9, 11, 13, 15, 0, 10, 12, 15, 0],
+    tiers: [0.85, 0.9, 0.95, 0.9, 0, 0.95, 0.95, 0.75, 0],
   },
   {
     song_id: "8069d8dPiqloqD8i8od1o1Pq1Q6Q8i9D",
@@ -1724,6 +1952,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 19,
     ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18],
+    tiers: [0.3, 0.2, 0.15, 0.35, 0.5, 0.15, 0.05, 0.2, 0.3],
     lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
@@ -1732,6 +1961,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.75, 0, 0, 0, 0.75],
   },
   {
     song_id: "80bQi8IQ8o1iidqd6oQiDPQoPi909olq",
@@ -1739,6 +1969,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 3,
     ratings: [3, 4, 9, 10, 0, 5, 7, 11, 0],
+    tiers: [0.5, 0.55, 0.4, 0.45, 0, 0.6, 0.8, 0.4, 0],
   },
   {
     song_id: "80d8obPdlobP9qlqiDb01999o01q6DdP",
@@ -1746,7 +1977,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Zutto Mitsumete Ite Ryu Remix",
     alphabet: "さ",
     version_num: 14,
-    ratings: [1, 7, 9, 12, 15, 7, 10, 12, 15],
+    ratings: [2, 7, 9, 12, 15, 7, 10, 12, 15],
+    tiers: [0.2, 0.15, 0.25, 0.15, 0.35, 0.2, 0.4, 0.4, 0.45],
   },
   {
     song_id: "80OqPo1D6lD616lIDI1IPq0oPllld6b1",
@@ -1754,6 +1986,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [2, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.65, 0.6, 0.65, 0.4, 0, 0.65, 0.65, 0.45, 0],
   },
   {
     song_id: "80PdqQ0iiOQb9i91lIliodiO9PI8O609",
@@ -1764,6 +1997,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 16,
     ratings: [4, 8, 11, 13, 0, 8, 11, 13, 0],
+    tiers: [0.8, 0.7, 0.65, 0.6, 0, 0.7, 0.6, 0.65, 0],
   },
   {
     song_id: "80Q1idDo6O6Db0106b0q6qbOP1P8QQb0",
@@ -1774,6 +2008,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [4, 6, 8, 12, 0, 6, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "811o6o1QPP0lPiolI1ObiD99l08o1dQl",
@@ -1783,6 +2018,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 15,
     ratings: [2, 4, 7, 10, 0, 4, 7, 11, 0],
+    tiers: [0.45, 0.5, 0.7, 0.45, 0, 0.5, 0.7, 0.45, 0],
   },
   {
     song_id: "811qq00Il1Q681068l8dQbPO60l0oD1l",
@@ -1790,13 +2026,15 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 16,
     ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.4, 0.3, 0.35, 0.35, 0, 0.25, 0.35, 0.45, 0],
   },
   {
     song_id: "81O10b1Oob9blo0888PQbd1I6bP0b8q9",
     song_name: "Everything I Need",
     alphabet: "E",
     version_num: 14,
-    ratings: [1, 4, 6, 9, 0, 4, 6, 9, 0],
+    ratings: [2, 4, 6, 9, 0, 4, 6, 9, 0],
+    tiers: [0.8, 0.65, 0.7, 0.55, 0, 0.75, 0.65, 0.55, 0],
   },
   {
     song_id: "81QD89Q6Ob911oOoobO0D98IQ1D1q60d",
@@ -1805,6 +2043,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 9,
     ratings: [4, 6, 8, 12, 0, 6, 8, 11, 0],
+    tiers: [0.4, 0.4, 0.65, 0.6, 0, 0.55, 0.8, 0.55, 0],
   },
   {
     song_id: "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb",
@@ -1813,13 +2052,15 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 9,
     ratings: [4, 5, 9, 13, 0, 5, 9, 12, 0],
+    tiers: [0.4, 0.45, 0.55, 0.4, 0, 0.65, 0.65, 0.55, 0],
   },
   {
     song_id: "86688l9096PdIqDPl8qoQ10dI8Ioi86l",
     song_name: "Slip Out",
     alphabet: "S",
     version_num: 11,
-    ratings: [1, 3, 7, 9, 0, 5, 6, 9, 0],
+    ratings: [2, 3, 7, 9, 0, 5, 6, 9, 0],
+    tiers: [0.25, 0.3, 0.1, 0.15, 0, 0.25, 0.3, 0.4, 0],
   },
   {
     song_id: "8809ol0qbbd6919bbl0b8id1669PqQ08",
@@ -1829,6 +2070,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 7,
     ratings: [4, 5, 9, 13, 0, 5, 8, 11, 0],
+    tiers: [0.2, 0.25, 0.4, 0.45, 0, 0.35, 0.7, 0.6, 0],
   },
   {
     song_id: "88do8dl8O6Ql1Qlb981lOi8D86oiq91P",
@@ -1836,6 +2078,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 4,
     ratings: [3, 7, 8, 12, 0, 5, 9, 11, 0],
+    tiers: [0.4, 0.55, 0.5, 0.2, 0, 0.5, 0.5, 0.45, 0],
   },
   {
     song_id: "88lIDIi1Pi0IObl8D9oblqQ9PPdI1DqI",
@@ -1845,6 +2088,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 19,
     ratings: [2, 4, 10, 13, 0, 4, 10, 13, 0],
+    tiers: [0.55, 0.65, 0.75, 0.8, 0, 0.6, 0.75, 0.7, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -1854,6 +2098,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 13,
     ratings: [2, 6, 9, 14, 0, 6, 9, 14, 0],
+    tiers: [0.45, 0.6, 0.5, 0.45, 0, 0.65, 0.5, 0.5, 0],
   },
   {
     song_id: "88qIddPQ9Q0QbQb0l6obD6IQ99oIiQQi",
@@ -1861,6 +2106,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [2, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.15, 0.05, 0, 0, 0, 0, 0, 0.05, 0],
   },
   {
     song_id: "88Qq96qbdd69bqI089600l9bDDdiQI0l",
@@ -1868,6 +2114,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [2, 5, 10, 15, 0, 4, 10, 15, 0],
+    tiers: [0.45, 0.25, 0.3, 0.5, 0, 0.45, 0.15, 0.3, 0],
   },
   {
     song_id: "890q91iIbO96OOD10Qlob6qOObQoq1bd",
@@ -1875,6 +2122,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 15,
     ratings: [3, 5, 10, 13, 0, 6, 11, 13, 0],
+    tiers: [0.45, 0.45, 0.6, 0.6, 0, 0.7, 0.55, 0.75, 0],
   },
   {
     song_id: "891b0OdIdO8b9obi69b6PQlPIqDI01dO",
@@ -1882,6 +2130,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 16,
     ratings: [3, 8, 12, 16, 0, 8, 12, 15, 0],
+    tiers: [0.45, 0.6, 0.65, 0.55, 0, 0.45, 0.5, 0.55, 0],
   },
   {
     song_id: "891iilD9Pq1lPQd6diqiP0dd611dOPPl",
@@ -1890,6 +2139,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 18,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.4, 0.45, 0.6, 0.7, 0, 0.3, 0.4, 0.65, 0],
   },
   {
     song_id: "89I0ooQbbI1I6O1iq861PQQqIo9iO86b",
@@ -1897,6 +2147,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 15,
     ratings: [5, 12, 14, 16, 18, 11, 13, 16, 18],
+    tiers: [0.7, 0.85, 0.95, 0.9, 0.9, 0.75, 0.95, 0.75, 0.7],
   },
   {
     song_id: "89O8qIII0QPO0Q0l10P6dl19PlQ9d0oO",
@@ -1904,6 +2155,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 13,
     ratings: [3, 4, 9, 12, 0, 8, 10, 13, 0],
+    tiers: [0.2, 0.3, 0.15, 0.3, 0, 0.25, 0.5, 0.4, 0],
   },
   {
     song_id: "89ooi0i98Qlq9PloIl1b190DIo8Do16l",
@@ -1911,6 +2163,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 15,
     ratings: [2, 4, 6, 9, 12, 5, 6, 9, 12],
+    tiers: [0.55, 0.45, 0.55, 0.65, 0.75, 0.45, 0.6, 0.5, 0.65],
   },
   {
     song_id: "8bI68oIq08d99P880bDPQ9D80O099Q10",
@@ -1918,6 +2171,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 14,
     ratings: [2, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.4, 0.15, 0.05, 0.25, 0, 0.25, 0.35, 0.5, 0],
   },
   {
     song_id: "8bqd0Oibbo8q81QdODqdl1OOi1l99O88",
@@ -1925,6 +2179,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 16,
     ratings: [3, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.2, 0.2, 0.35, 0.3, 0, 0.4, 0.4, 0.35, 0],
   },
   {
     song_id: "8bQQ0lP96186D8Ibo8IoOd6o16qioiIo",
@@ -1933,6 +2188,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 13,
     ratings: [3, 6, 8, 11, 13, 6, 8, 12, 13],
+    tiers: [0.45, 0.45, 0.5, 0.35, 0.75, 0.35, 0.55, 0.3, 0.45],
   },
   {
     song_id: "8D9D6ld0bP9bP119OIlQI9ol919IDD86",
@@ -1940,6 +2196,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [1, 3, 9, 12, 0, 2, 9, 12, 0],
+    tiers: [0, 0.1, 0.5, 0.4, 0, 0, 0.3, 0.3, 0],
   },
   {
     song_id: "8d9Q0olQ980lQdPIdqbIiD8o1l1dQPI0",
@@ -1947,6 +2204,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [3, 8, 14, 17, 0, 8, 14, 17, 0],
+    tiers: [0.15, 0.35, 0.15, 0.55, 0, 0.1, 0.15, 0.3, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -1955,6 +2213,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 16,
     ratings: [6, 8, 13, 15, 16, 8, 13, 16, 17],
+    tiers: [0.9, 0.95, 0.8, 0.7, 0.8, 0.95, 0.75, 0.65, 0.45],
   },
   {
     song_id: "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi",
@@ -1963,6 +2222,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 9,
     ratings: [4, 4, 8, 12, 16, 3, 8, 11, 16],
+    tiers: [0.1, 0.15, 0.5, 0.1, 0.6, 0.1, 0.25, 0.3, 0.45],
     lock_types: [0, 0, 0, 0, 100, 0, 0, 0, 100],
   },
   {
@@ -1971,7 +2231,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 5, 11, 15, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.15, 0.25, 0.3, 0.55, 0, 0.1, 0.25, 0.45, 0],
   },
   {
     song_id: "8DO0DbDioIid8qDQiQdOdOPOo0PO0906",
@@ -1981,6 +2241,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 18,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.6, 0.45, 0.75, 0.65, 0, 0.5, 0.65, 0.6, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -1989,6 +2250,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 7,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.25, 0, 0, 0, 0.35],
   },
   {
     song_id: "8dqQDblP6dPI10qq10qiPbqi1llQ06iP",
@@ -1996,6 +2258,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 18,
     ratings: [4, 8, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.15, 0.3, 0.35, 0.15, 0, 0.35, 0.2, 0.05, 0],
   },
   {
     song_id: "8I090lbOOOP90O01bDbi0Qo0OPldIdP6",
@@ -2005,6 +2268,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 18,
     ratings: [2, 4, 10, 13, 0, 5, 11, 14, 0],
+    tiers: [0.65, 0.65, 0.8, 0.85, 0, 0.55, 0.8, 0.8, 0],
   },
   {
     song_id: "8i1ii188q9OlD0qQ9lQ0D1OdDbldqQbI",
@@ -2013,6 +2277,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [2, 3, 6, 9, 0, 3, 6, 9, 0],
+    tiers: [0.5, 0.5, 0.45, 0.4, 0, 0.55, 0.5, 0.4, 0],
   },
   {
     song_id: "8i61Oi09bOIP0lOldI668b8IPbIq8l0Q",
@@ -2020,6 +2285,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.2, 0.25, 0.25, 0.35, 0, 0.2, 0.3, 0.4, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2031,6 +2297,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 16,
     ratings: [3, 4, 8, 11, 0, 6, 8, 11, 0],
+    tiers: [0.5, 0.6, 0.75, 0.6, 0, 0.7, 0.65, 0.6, 0],
   },
   {
     song_id: "8idID0Pq0O68Qb0Q69P6IDldqI91qi1O",
@@ -2038,6 +2305,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 10,
     ratings: [4, 5, 8, 13, 0, 5, 8, 13, 0],
+    tiers: [0.6, 0.85, 0.85, 0.7, 0, 0.85, 0.9, 0.7, 0],
   },
   {
     song_id: "8IDiil0bDd00P1l1iQiq9DP6bO0b8dQb",
@@ -2045,7 +2313,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.35, 0.75, 0.8, 0.7, 0, 0.6, 0.85, 0.65, 0],
   },
   {
     song_id: "8IdlOq1qI8OO1PP88I6olPiI6IqqqIIO",
@@ -2053,6 +2321,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 14,
     ratings: [4, 9, 12, 16, 18, 9, 12, 16, 18],
+    tiers: [0.45, 0.7, 0.85, 0.85, 0.5, 0.6, 0.85, 0.7, 0.8],
   },
   {
     song_id: "8IdP90DQDi9bqodPqDQIIqOqOO08PPio",
@@ -2061,6 +2330,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 9,
     ratings: [3, 4, 7, 8, 0, 2, 5, 8, 0],
+    tiers: [0.3, 0.45, 0.8, 0.5, 0, 0.05, 0.55, 0.45, 0],
   },
   {
     song_id: "8IIoIQQqlooiI6QD9ldIO6qidP98QP68",
@@ -2070,6 +2340,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 8,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.5, 0.45, 0.6, 0.75, 0, 0.3, 0.5, 0.5, 0],
   },
   {
     song_id: "8iiqQ9o1P089901DPIq8PDPOl6oDOl1P",
@@ -2077,6 +2348,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [4, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.3, 0.4, 0.4, 0.3, 0, 0.4, 0.3, 0.3, 0],
   },
   {
     song_id: "8Il6980di8P89lil1PDIqqIbiq1QO8lQ",
@@ -2084,6 +2356,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 1,
     ratings: [3, 7, 9, 11, 0, 7, 9, 11, 0],
+    tiers: [0.4, 0.45, 0.35, 0.15, 0, 0.6, 0.4, 0.35, 0],
   },
   {
     song_id: "8Io6oi89Q8DblI8IPdPPI0q98Ql9o98Q",
@@ -2092,6 +2365,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [4, 9, 14, 16, 18, 10, 13, 16, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [0, 0, 0, 0, 160, 0, 0, 0, 160],
   },
   {
@@ -2100,6 +2374,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [2, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.3, 0.35, 0.35, 0.15, 0, 0.3, 0.25, 0.2, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -2108,13 +2383,15 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 12,
     ratings: [2, 5, 8, 12, 13, 5, 7, 12, 13],
+    tiers: [0.35, 0.4, 0.55, 0.65, 0.65, 0.4, 0.75, 0.65, 0.7],
   },
   {
     song_id: "8l808Do60DP0qDbD066QQqP1qOQdob90",
     song_name: "HYSTERIA",
     alphabet: "H",
     version_num: 4,
-    ratings: [5, 6, 8, 11, 0, 7, 8, 10, 0],
+    ratings: [5, 7, 8, 11, 0, 7, 8, 10, 0],
+    tiers: [0.1, 0.15, 0.5, 0.3, 0, 0.05, 0.55, 0.55, 0],
   },
   {
     song_id: "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",
@@ -2122,6 +2399,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 4,
     ratings: [3, 8, 9, 13, 0, 7, 10, 13, 0],
+    tiers: [0.2, 0.35, 0.55, 0.45, 0, 0.4, 0.55, 0.5, 0],
   },
   {
     song_id: "8liDbidQoI6Q01lO9iibIdboIiDl66Qo",
@@ -2129,6 +2407,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 2,
     ratings: [2, 5, 6, 8, 0, 6, 8, 11, 0],
+    tiers: [0.45, 0.4, 0.4, 0.4, 0, 0.6, 0.55, 0.5, 0],
   },
   {
     song_id: "8ll9P9bOloIqbI0O9PboP9li1iloIPPd",
@@ -2136,6 +2415,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 11,
     ratings: [2, 5, 7, 9, 7, 4, 6, 9, 7],
+    tiers: [0.25, 0.25, 0.45, 0.5, 0.4, 0.4, 0.55, 0.4, 0.55],
   },
   {
     song_id: "8lo1IDqPDD88DObIPodOd8oQ0Q6qQ1Dd",
@@ -2143,6 +2423,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 8,
     ratings: [3, 5, 8, 9, 12, 6, 9, 10, 11],
+    tiers: [0.2, 0.2, 0.45, 0.35, 0.5, 0.25, 0.4, 0.5, 0.35],
   },
   {
     song_id: "8o08l8DPiO01dlo1OI8DqQDq9lQ1bPq1",
@@ -2150,6 +2431,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [4, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.15, 0.25, 0.3, 0.3, 0, 0.2, 0.2, 0.2, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -2158,6 +2440,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 3,
     ratings: [3, 5, 7, 10, 0, 6, 8, 10, 0],
+    tiers: [0.4, 0.35, 0.45, 0.35, 0, 0.5, 0.65, 0.55, 0],
   },
   {
     song_id: "8o10d9O89d6DQOiDlbb160Id8IIO6b01",
@@ -2165,6 +2448,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [2, 4, 7, 12, 0, 3, 7, 12, 0],
+    tiers: [0.15, 0.15, 0.3, 0.25, 0, 0, 0.3, 0.15, 0],
   },
   {
     song_id: "8o1iQPiId8P6Db9Iqo1Oo119QDoq8qQ8",
@@ -2172,6 +2456,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 9,
     ratings: [6, 8, 12, 14, 16, 9, 12, 14, 15],
+    tiers: [0.6, 0.95, 0.8, 0.8, 0.9, 0.7, 0.75, 0.8, 0.85],
   },
   {
     song_id: "8O6b1D9PDO0ll1IO9d1ODDPPo0QPQbob",
@@ -2180,20 +2465,23 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [4, 9, 12, 16, 18, 9, 12, 17, 18],
+    tiers: [0.35, 0.5, 0.5, 0.8, 0.6, 0.35, 0.45, 0.65, 0.2],
   },
   {
     song_id: "8o6ibb0b1i66Q0D8699boob69b80Qb1i",
     song_name: "IN THE ZONE",
     alphabet: "I",
     version_num: 13,
-    ratings: [1, 4, 7, 9, 0, 5, 8, 10, 0],
+    ratings: [2, 4, 7, 9, 0, 5, 8, 10, 0],
+    tiers: [0.4, 0.45, 0.65, 0.45, 0, 0.7, 0.7, 0.65, 0],
   },
   {
     song_id: "8O86IP9dqQ8818ld9od8Q0PiDId6666P",
     song_name: "LOGICAL DASH",
     alphabet: "L",
     version_num: 9,
-    ratings: [3, 4, 7, 11, 0, 5, 6, 10, 0],
+    ratings: [3, 4, 7, 11, 0, 5, 7, 10, 0],
+    tiers: [0.35, 0.4, 0.4, 0.35, 0, 0.3, 0.6, 0.5, 0],
   },
   {
     song_id: "8O9o9OPPdd1Db6996P99bq9oQI66P88o",
@@ -2201,13 +2489,15 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [3, 6, 9, 14, 0, 5, 9, 14, 0],
+    tiers: [0.35, 0.35, 0.65, 0.6, 0, 0.25, 0.45, 0.4, 0],
   },
   {
     song_id: "8OIqIi996QI18Oo0q8iiiO8bbb6dI1l6",
     song_name: "HANDS UP IN THE AIR",
     alphabet: "H",
     version_num: 16,
-    ratings: [1, 5, 9, 13, 0, 5, 9, 13, 0],
+    ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.45, 0.4, 0.35, 0.4, 0, 0.35, 0.4, 0.5, 0],
   },
   {
     song_id: "8ooI09QP161IqI00IdPOD1QdDd8oDod9",
@@ -2218,6 +2508,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 19,
     ratings: [4, 6, 11, 12, 0, 6, 11, 12, 0],
+    tiers: [0.45, 0.45, 0.25, 0.4, 0, 0.6, 0.35, 0.5, 0],
   },
   {
     song_id: "8oP1ibbO9qdP19d9lQoi1q16P69b1II9",
@@ -2226,6 +2517,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 18,
     ratings: [4, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.3, 0.4, 0.35, 0, 0, 0.35, 0.4, 0.1, 0],
   },
   {
     song_id: "8OPDQ1oQIOPdqqD18oo0lQ8OQOIbbDoP",
@@ -2233,6 +2525,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Y",
     version_num: 16,
     ratings: [2, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.6, 0.35, 0.2, 0.45, 0, 0.5, 0.45, 0.55, 0],
   },
   {
     song_id: "8Oq81q8q1Q9D0l0PO0bQQ00l9P19didi",
@@ -2240,6 +2533,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.2, 0.2, 0.65, 0.55, 0, 0.25, 0.6, 0.35, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -2248,13 +2542,15 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 7,
     ratings: [3, 4, 8, 11, 0, 5, 9, 12, 0],
+    tiers: [0.2, 0.3, 0.3, 0.1, 0, 0.25, 0.35, 0.2, 0],
   },
   {
     song_id: "8Pl1i1o0O6oIio0b681qOoDOQdPPOObb",
     song_name: "The Island Song",
     alphabet: "T",
     version_num: 14,
-    ratings: [1, 3, 7, 9, 13, 4, 7, 9, 13],
+    ratings: [2, 3, 7, 9, 13, 4, 7, 9, 13],
+    tiers: [0.3, 0.3, 0.65, 0.65, 0.85, 0.25, 0.6, 0.65, 0.85],
   },
   {
     song_id: "8PQooio0ilPoQ8Di66I19QOQP90Ddbdi",
@@ -2262,6 +2558,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 9,
     ratings: [4, 5, 7, 10, 0, 6, 8, 10, 0],
+    tiers: [0.25, 0.2, 0.6, 0.5, 0, 0.25, 0.4, 0.4, 0],
   },
   {
     song_id: "8q68D8iP6lIdiP8bo9PoOib8lb9loIob",
@@ -2269,6 +2566,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 17,
     ratings: [4, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.2, 0.1, 0.55, 0.45, 0, 0.15, 0.6, 0.35, 0],
   },
   {
     song_id: "8Q8dP1odl1D9lIbiIO86OPPIoq6qPP1l",
@@ -2276,6 +2574,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 16,
     ratings: [3, 5, 8, 12, 0, 5, 9, 11, 0],
+    tiers: [0.5, 0.45, 0.75, 0.3, 0, 0.45, 0.6, 0.45, 0],
   },
   {
     song_id: "8Q8OiP8QPbl8bqID1loQq896ldPQd99o",
@@ -2286,6 +2585,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [2, 5, 7, 11, 0, 5, 8, 11, 0],
+    tiers: [0.95, 0.8, 0.95, 0.65, 0, 0.8, 0.8, 0.65, 0],
   },
   {
     song_id: "8q96ObOdqPq8blPob9QdDq9b1iQoIQOI",
@@ -2295,6 +2595,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 19,
     ratings: [2, 7, 11, 16, 0, 7, 11, 16, 0],
+    tiers: [0.4, 0.35, 0.55, 0.7, 0, 0.3, 0.35, 0.45, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -2304,6 +2605,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [9, 11, 13, 16, 18, 10, 13, 17, 17],
+    tiers: [0.6, 0.75, 0.8, 0.65, 0.1, 0.75, 0.7, 0.65, 0.75],
   },
   {
     song_id: "8qd0DIiiQ6dPl1b6b0OqDob6i0d1dQP1",
@@ -2311,6 +2613,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [3, 6, 9, 12, 0, 6, 8, 12, 0],
+    tiers: [0.2, 0.2, 0.3, 0, 0, 0.35, 0.6, 0.2, 0],
   },
   {
     song_id: "8Qd118IPdqld06Qd1q10iQd06bDdbdQI",
@@ -2319,6 +2622,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 18,
     ratings: [2, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.9, 0.85, 0.65, 0.85, 0, 0.95, 0.6, 0.8, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2327,6 +2631,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 8,
     ratings: [3, 4, 7, 10, 0, 6, 7, 11, 0],
+    tiers: [0.45, 0.65, 0.7, 0.4, 0, 0.55, 0.75, 0.2, 0],
   },
   {
     song_id: "8ql0DIiI0D9D1OP0qb8olo9bIQdP0ddq",
@@ -2334,6 +2639,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [3, 8, 13, 17, 0, 8, 13, 17, 0],
+    tiers: [0.1, 0.1, 0.15, 0.05, 0, 0.05, 0.1, 0, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2342,7 +2648,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [2, 4, 6, 8, 0, 4, 6, 8, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.5, 0.5, 0.5, 0.45, 0, 0.55, 0.6, 0.5, 0],
   },
   {
     song_id: "8qPoPbql190Pi9086ildIlQOqlPoQdP9",
@@ -2350,6 +2656,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 13,
     ratings: [2, 4, 7, 9, 0, 5, 7, 11, 0],
+    tiers: [0.55, 0.55, 0.65, 0.55, 0, 0.35, 0.75, 0.4, 0],
   },
   {
     song_id: "901q61iP6lPiDqIQoQod9PDqlOPq1bb9",
@@ -2357,7 +2664,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "La Senorita",
     alphabet: "L",
     version_num: 3,
-    ratings: [4, 6, 8, 10, 0, 5, 9, 13, 0],
+    ratings: [4, 7, 8, 10, 0, 5, 9, 13, 0],
+    tiers: [0.35, 0.4, 0.55, 0.55, 0, 0.65, 0.65, 0.45, 0],
   },
   {
     song_id: "90D66ObIiqP09oqoDoq6b908b699oqqi",
@@ -2365,6 +2673,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 15,
     ratings: [2, 4, 7, 11, 12, 5, 7, 11, 12],
+    tiers: [0.5, 0.6, 0.5, 0.35, 0.5, 0.6, 0.6, 0.4, 0.55],
   },
   {
     song_id: "90lolio9qd6qo6Pl8oo69iqi81oiiQib",
@@ -2372,7 +2681,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "愛無双",
     alphabet: "I",
     version_num: 12,
-    ratings: [3, 6, 8, 12, 16, 6, 8, 12, 16],
+    ratings: [4, 6, 9, 12, 16, 6, 9, 12, 16],
+    tiers: [0.55, 0.4, 0.6, 0.45, 0.25, 0.65, 0.6, 0.65, 0.4],
   },
   {
     song_id: "90qP0000qoO8o8dIidlO611ilO11Oo9Q",
@@ -2380,6 +2690,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 16,
     ratings: [2, 5, 10, 13, 15, 5, 10, 13, 15],
+    tiers: [0.35, 0.25, 0.2, 0.2, 0.1, 0.25, 0.15, 0.55, 0],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -2390,6 +2701,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 8,
     ratings: [5, 7, 11, 13, 11, 7, 11, 13, 11],
+    tiers: [0.9, 0.95, 0.9, 0.85, 0.95, 0.8, 0.75, 0.8, 0.8],
   },
   {
     song_id: "918oPDQDoPlD1OlqlqQI08I6dD9iqoil",
@@ -2399,6 +2711,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [2, 5, 9, 13, 0, 5, 10, 13, 0],
+    tiers: [0.7, 0.5, 0.6, 0.5, 0, 0.55, 0.6, 0.6, 0],
   },
   {
     song_id: "919bPoOo9QO6dODOI6d0loO6qo6OqDlI",
@@ -2406,6 +2719,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [2, 8, 12, 17, 0, 8, 12, 17, 0],
+    tiers: [0.6, 0.5, 0.3, 0.2, 0, 0.5, 0.3, 0.25, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -2417,6 +2731,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [2, 6, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.55, 0.45, 0.4, 0.25, 0, 0.45, 0.45, 0.35, 0],
   },
   {
     song_id: "91ioD99OdDD9db8qilod818OPqb88idQ",
@@ -2424,6 +2739,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 18,
     ratings: [2, 5, 10, 13, 0, 5, 11, 13, 0],
+    tiers: [0.6, 0.45, 0.7, 0.6, 0, 0.4, 0.55, 0.65, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2435,6 +2751,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 7, 11, 13, 16, 7, 11, 13, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "91Qdq6DbPDlQOiOq08di0IQo8IP8PPqQ",
@@ -2442,6 +2759,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [3, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.25, 0.45, 0.45, 0.5, 0, 0.35, 0.55, 0.45, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -2449,10 +2767,11 @@ export const ALL_SONG_DATA = [
     song_name: "未完成ノ蒸氣驅動乙女 (DDR Edition)",
     searchable_name: "みかんせいのじょうきくどうおとめ DDR Edition",
     romanized_name: "Mikansei no Jouki Kudou Otome DDR Edition",
-    alternate_name: "Unfinished Steam Engine Girl",
+    alternate_name: "Unfinished Steam Engine Girl/Unfinished Steam Maiden",
     alphabet: "ま",
     version_num: 17,
     ratings: [5, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.5, 0.55, 0.75, 0.6, 0, 0.4, 0.7, 0.35, 0],
   },
   {
     song_id: "96Q0Piqo9PPQoQdi9001DO6P9Piqi0dq",
@@ -2460,6 +2779,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 11,
     ratings: [4, 6, 8, 11, 11, 6, 8, 12, 12],
+    tiers: [0.15, 0.2, 0.6, 0.4, 0.75, 0.5, 0.55, 0.55, 0.7],
   },
   {
     song_id: "96Qo1idlD9o8q9qIdiDl18l0O06Qo108",
@@ -2468,6 +2788,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 16,
     ratings: [2, 5, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.45, 0.35, 0.55, 0.5, 0, 0.25, 0.55, 0.4, 0],
   },
   {
     song_id: "96QPqq0q6Id0Ii0QbD1bQqPbiDqb0lPo",
@@ -2476,7 +2797,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Zeta Sosuu no Sekai to Chouetsusha",
     alphabet: "Z",
     version_num: 12,
-    ratings: [3, 6, 11, 15, 17, 6, 9, 14, 17],
+    ratings: [3, 6, 11, 15, 18, 6, 9, 14, 18],
+    tiers: [0.7, 0.75, 0.55, 0.4, 0.65, 0.7, 0.75, 0.6, 0.7],
     lock_types: [0, 0, 0, 0, 100, 0, 0, 0, 100],
   },
   {
@@ -2485,6 +2807,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [5, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.35, 0.6, 0.7, 0.6, 0, 0.25, 0.4, 0.35, 0],
   },
   {
     song_id: "98D001P6b696O18P8qiIOl811bq1oQ16",
@@ -2492,6 +2815,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 11,
     ratings: [3, 6, 9, 13, 0, 7, 8, 13, 0],
+    tiers: [0.35, 0.4, 0.7, 0.4, 0, 0.3, 0.35, 0.55, 0],
   },
   {
     song_id: "98PiPl8P0qlq8dd8P60Iq6dq899lbQDI",
@@ -2499,6 +2823,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 10,
     ratings: [4, 5, 8, 12, 0, 5, 9, 12, 0],
+    tiers: [0.25, 0.2, 0.45, 0.4, 0, 0.2, 0.35, 0.5, 0],
   },
   {
     song_id: "98q8616ddDIqdo1dbqbO0Po96oldo1Oo",
@@ -2506,6 +2831,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 7,
     ratings: [3, 3, 7, 10, 0, 3, 8, 11, 0],
+    tiers: [0.2, 0.3, 0.5, 0.45, 0, 0.6, 0.7, 0.5, 0],
   },
   {
     song_id: "99I10l8o6DPI886l9818ID16OlqI8oId",
@@ -2514,6 +2840,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 19,
     ratings: [1, 5, 8, 15, 0, 5, 8, 14, 0],
+    tiers: [0.3, 0.25, 0.45, 0, 0, 0.15, 0.45, 0.4, 0],
   },
   {
     song_id: "99ll6bPDDPqQ8boPIQbdQ6bPo8bl69O9",
@@ -2521,6 +2848,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 19,
     ratings: [2, 6, 11, 14, 16, 7, 11, 14, 16],
+    tiers: [0.3, 0.05, 0.15, 0.4, 0.4, 0.05, 0.15, 0.45, 0.25],
     lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
@@ -2529,6 +2857,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.1, 0.1, 0.05, 0.1, 0, 0.2, 0.1, 0.1, 0],
   },
   {
     song_id: "99OQb9b0IQ98P6IQdPOiqi8q16o16iqP",
@@ -2537,6 +2866,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 17,
     ratings: [7, 9, 14, 17, 0, 9, 14, 17, 0],
+    tiers: [0.75, 0.7, 0.8, 0.5, 0, 0.55, 0.7, 0.65, 0],
   },
   {
     song_id: "99oQO1b8d9qQdPq6O1I6bd1bo1D16DP0",
@@ -2544,6 +2874,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [3, 4, 8, 9, 0, 5, 8, 9, 0],
+    tiers: [0.3, 0.4, 0.55, 0.5, 0, 0.2, 0.65, 0.55, 0],
   },
   {
     song_id: "99P8bDO1PqlddQqo81QOIPO60lPQqlO8",
@@ -2551,6 +2882,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 9,
     ratings: [3, 4, 8, 10, 0, 4, 6, 9, 0],
+    tiers: [0.45, 0.4, 0.4, 0.3, 0, 0.35, 0.55, 0.35, 0],
   },
   {
     song_id: "99q8i8bPldDbio919ob0DPi0bqdIoobi",
@@ -2558,6 +2890,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 16,
     ratings: [4, 8, 13, 17, 0, 8, 13, 17, 0],
+    tiers: [0.75, 0.95, 0.85, 0.6, 0, 0.85, 0.75, 0.5, 0],
   },
   {
     song_id: "9b60DI1OQddDI6D9D1qPoDPODD19Db8d",
@@ -2565,6 +2898,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [7, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.2, 0.15, 0.3, 0, 0, 0.15, 0.2, 0.05, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2574,6 +2908,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 5, 9, 11, 14, 5, 9, 11, 14],
+    tiers: [0.7, 0.5, 0.5, 0.45, 0.8, 0.75, 0.55, 0.5, 0.75],
   },
   {
     song_id: "9bo00PqOIDoDbO6P1116b9obolOiqPo1",
@@ -2581,6 +2916,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [3, 4, 7, 10, 0, 5, 7, 10, 0],
+    tiers: [0.25, 0.35, 0.45, 0.3, 0, 0.35, 0.45, 0.4, 0],
   },
   {
     song_id: "9bqO1dPbO1b89q9dO1iOP1ibiPdP01q9",
@@ -2590,6 +2926,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [4, 7, 12, 16, 18, 7, 12, 16, 18],
+    tiers: [0.4, 0.5, 0.35, 0.15, 0, 0.5, 0.3, 0.1, 0.4],
   },
   {
     song_id: "9d0oQdIolIb0Po9b06QOiOP60IQlb8qO",
@@ -2597,6 +2934,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 10,
     ratings: [3, 4, 6, 10, 0, 5, 6, 11, 0],
+    tiers: [0.25, 0.4, 0.5, 0.4, 0, 0.4, 0.5, 0.45, 0],
   },
   {
     song_id: "9dD6dlq01qd80loD6OOQb60ql6P6068O",
@@ -2604,6 +2942,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 15,
     ratings: [4, 9, 12, 15, 0, 9, 12, 15, 0],
+    tiers: [0.4, 0.55, 0.8, 0.7, 0, 0.5, 0.8, 0.65, 0],
   },
   {
     song_id: "9dDOQo8bQ6blDdd989l1QIO8liDq9O0q",
@@ -2612,6 +2951,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 16,
     ratings: [4, 5, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.55, 0.65, 0.55, 0.3, 0, 0.85, 0.7, 0.5, 0],
   },
   {
     song_id: "9dI8ilPi9bd9blI6Q8D6IPb1lblqDl1Q",
@@ -2619,6 +2959,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [5, 9, 14, 17, 18, 9, 14, 17, 18],
+    tiers: [0.55, 0.7, 0.8, 0.4, 0.4, 0.6, 0.65, 0.2, 0.2],
   },
   {
     song_id: "9DI8iOP0660lb968I6Oiiid6DQ68IbOO",
@@ -2626,6 +2967,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [2, 7, 11, 15, 0, 7, 12, 15, 0],
+    tiers: [0.45, 0.25, 0.5, 0.5, 0, 0.25, 0.55, 0.65, 0],
   },
   {
     song_id: "9Di9ODOOl8PDQiO1O6o8lD16QlI609ob",
@@ -2633,6 +2975,16 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 16,
     ratings: [4, 7, 11, 15, 18, 7, 11, 15, 18],
+    tiers: [0.55, 0.75, 0.75, 0.7, 0.3, 0.6, 0.6, 0.65, 0.3],
+  },
+  {
+    song_id: "9DlbD6PI1IQQ9q0OIdD1I8olIPPo6dPl",
+    song_name: "melody H4CKER",
+    searchable_name: "melody HACKER",
+    alphabet: "M",
+    version_num: 19,
+    ratings: [2, 6, 12, 15, 0, 6, 11, 15, 0],
+    tiers: [0.2, 0, 0.2, 0.5, 0, 0.3, 0.2, 0.35, 0],
   },
   {
     song_id: "9DoD10OPQ999IlP0doo69olbOQ680q09",
@@ -2640,7 +2992,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "安倍/あべ/アベ",
     alphabet: "A",
     version_num: 17,
-    ratings: [4, 10, 14, 17, 18, 10, 14, 17, 18],
+    ratings: [4, 10, 14, 17, 18, 10, 14, 18, 18],
+    tiers: [0.6, 0.7, 0.85, 0.65, 0.9, 0.5, 0.8, 0.85, 0.9],
   },
   {
     song_id: "9doPbId8qid9I9l6ooloPQD1lq1Plb6I",
@@ -2649,6 +3002,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 2,
     ratings: [4, 8, 9, 11, 15, 8, 10, 10, 15],
+    tiers: [0.15, 0.5, 0.4, 0.3, 0.1, 0.55, 0.55, 0.35, 0.25],
   },
   {
     song_id: "9I00D9Id61iD6QP8i8Dd6698PoQ9bdi9",
@@ -2661,6 +3015,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 14,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.6, 0.55, 0.35, 0.35, 0, 0.55, 0.4, 0.2, 0],
   },
   {
     song_id: "9i0q91lPPiO61b9P891O1i86iOP1I08O",
@@ -2669,6 +3024,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 15,
     ratings: [9, 10, 13, 18, 19, 10, 14, 17, 19],
+    tiers: [0.9, 0.95, 0.8, 0.7, 0.1, 0.95, 0.65, 0.9, 0.6],
   },
   {
     song_id: "9i6dOd608qb0IlqoDIPb8q1o8q1ddQQd",
@@ -2676,13 +3032,16 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 15,
     ratings: [3, 6, 10, 14, 17, 6, 10, 14, 17],
+    tiers: [0.3, 0.25, 0.4, 0.35, 0.7, 0.1, 0.3, 0.35, 0.45],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "9ib91bdq6i11l69d081qDD989Q0qO0qI",
     song_name: "BALLAD THE FEATHERS",
     alphabet: "B",
     version_num: 12,
-    ratings: [1, 4, 7, 10, 8, 4, 7, 11, 8],
+    ratings: [2, 4, 7, 10, 8, 4, 7, 11, 8],
+    tiers: [0.5, 0.45, 0.45, 0.8, 0.55, 0.35, 0.55, 0.6, 0.55],
   },
   {
     song_id: "9idOOIdDO01D8PO06bOPPbOIOoiQ8O0P",
@@ -2692,6 +3051,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 9,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.65, 0.85, 0.8, 0.65, 0, 0.75, 0.95, 0.75, 0],
   },
   {
     song_id: "9IdoP1ld9098PI90QQ6bP0Idl1ibo80D",
@@ -2699,6 +3059,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 17,
     ratings: [5, 8, 13, 17, 18, 8, 13, 17, 18],
+    tiers: [0.35, 0.6, 0.4, 0.1, 0.4, 0.6, 0.45, 0.1, 0.4],
   },
   {
     song_id: "9IlP00lPi6oOQQqOl1DoI0o10bi1iid1",
@@ -2706,6 +3067,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 18,
     ratings: [4, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.6, 0.5, 0.65, 0.8, 0, 0.4, 0.6, 0.55, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2714,6 +3076,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 8,
     ratings: [3, 4, 8, 11, 0, 4, 8, 10, 0],
+    tiers: [0.25, 0.4, 0.4, 0.25, 0, 0.35, 0.35, 0.45, 0],
   },
   {
     song_id: "9ioI0IQ16OPb1Q0q8Oqdd6D9dPqDb618",
@@ -2723,6 +3086,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 19,
     ratings: [3, 4, 10, 15, 0, 4, 10, 15, 0],
+    tiers: [0.3, 0.35, 0.65, 0.9, 0, 0.45, 0.6, 0.75, 0],
     lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
@@ -2730,7 +3094,8 @@ export const ALL_SONG_DATA = [
     song_name: "Samurai Shogun vs. Master Ninja",
     alphabet: "S",
     version_num: 15,
-    ratings: [3, 7, 12, 14, 0, 7, 12, 15, 0],
+    ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.75, 0.65, 0.4, 0.7, 0, 0.65, 0.6, 0.75, 0],
   },
   {
     song_id: "9IQoPbOidod8I0qQ989Ql60D09I99q1Q",
@@ -2738,6 +3103,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 18,
     ratings: [5, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.3, 0.35, 0.6, 0.3, 0, 0.3, 0.35, 0.25, 0],
   },
   {
     song_id: "9ldQqb9oqi60Q80iob61OiQbbDO6PID9",
@@ -2745,6 +3111,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [4, 9, 12, 15, 0, 9, 12, 14, 0],
+    tiers: [0.6, 0.55, 0.6, 0.5, 0, 0.45, 0.45, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2752,8 +3119,8 @@ export const ALL_SONG_DATA = [
     song_name: "Valanga",
     alphabet: "V",
     version_num: 19,
-    ratings: [4, 7, 11, 15, 17, 7, 11, 15, 17],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
+    ratings: [4, 7, 11, 15, 18, 7, 11, 15, 17],
+    tiers: [0.2, 0.35, 0.35, 0.35, 0.9, 0.3, 0.25, 0.2, 0.55],
   },
   {
     song_id: "9lob1d1QPd9qiPlQOQ6l0dbodOoDPq1d",
@@ -2761,6 +3128,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 3,
     ratings: [3, 5, 6, 9, 0, 6, 7, 10, 0],
+    tiers: [0.3, 0.65, 0.55, 0.2, 0, 0.65, 0.6, 0.55, 0],
   },
   {
     song_id: "9O1O0o8O1qbQ08Q961Ib1iOIDPQid109",
@@ -2768,6 +3136,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 14,
     ratings: [4, 7, 11, 15, 16, 7, 11, 15, 15],
+    tiers: [0.25, 0.3, 0.45, 0.35, 0.75, 0.35, 0.3, 0.2, 0.75],
   },
   {
     song_id: "9o6bIq98Qo8dOd11DI0d8boblOqO0I1i",
@@ -2775,6 +3144,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 18,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.5, 0.5, 0.35, 0.2, 0, 0.45, 0.25, 0.25, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -2785,6 +3155,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 16,
     ratings: [3, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.45, 0.5, 0.5, 0.3, 0, 0.6, 0.4, 0.25, 0],
   },
   {
     song_id: "9obIQOP8O1l0PQ0Oi1oPQI198o0Pd81o",
@@ -2795,6 +3166,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 14,
     ratings: [2, 8, 10, 13, 0, 8, 10, 14, 0],
+    tiers: [0.65, 0.6, 0.7, 0.65, 0, 0.65, 0.75, 0.65, 0],
   },
   {
     song_id: "9oIO98IPOiq1idiIIbOOqdDQIOdQPPd6",
@@ -2802,7 +3174,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Usatei",
     alphabet: "あ",
     version_num: 19,
-    ratings: [3, 7, 11, 14, 17, 7, 11, 14, 17],
+    ratings: [4, 8, 11, 14, 17, 7, 11, 14, 17],
+    tiers: [0.15, 0.1, 0.15, 0.3, 0.5, 0.1, 0.05, 0.2, 0.45],
   },
   {
     song_id: "9oll10Dq1qdbPQl68OQ8dOd9q86999i1",
@@ -2810,6 +3183,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [2, 6, 10, 15, 0, 6, 10, 15, 0],
+    tiers: [0.4, 0.25, 0.5, 0.6, 0, 0.2, 0.25, 0.3, 0],
   },
   {
     song_id: "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO",
@@ -2818,6 +3192,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 9, 12, 0, 6, 8, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "9P16o1bO16PDDObloibo1Il8IIDdo869",
@@ -2825,6 +3200,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [2, 4, 8, 12, 0, 4, 7, 12, 0],
+    tiers: [0.3, 0.45, 0.45, 0.5, 0, 0.45, 0.65, 0.4, 0],
   },
   {
     song_id: "9PoQqIP0D6lPIq9obl1db9IqD0D09i80",
@@ -2832,6 +3208,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 18,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.55, 0.6, 0.55, 0.6, 0, 0.45, 0.55, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2841,6 +3218,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 16,
     ratings: [4, 6, 11, 13, 0, 6, 10, 13, 0],
+    tiers: [0.6, 0.65, 0.5, 0.3, 0, 0.7, 0.65, 0.5, 0],
   },
   {
     song_id: "9qbdq1PiI1O81P1PdioQli66Ob9QiiQP",
@@ -2848,6 +3226,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 8,
     ratings: [2, 7, 11, 13, 13, 7, 12, 13, 13],
+    tiers: [0.3, 0.4, 0.55, 0.5, 0.9, 0.35, 0.65, 0.6, 0.95],
   },
   {
     song_id: "9QIo1lbD1ldlqPO0iD68io69Pd8b01Do",
@@ -2856,6 +3235,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [6, 9, 13, 16, 18, 9, 13, 16, 18],
+    tiers: [0.55, 0.6, 0.6, 0.7, 0.4, 0.55, 0.65, 0.6, 0.5],
   },
   {
     song_id: "9QlqQb9qO008DIPbq8DOlP60P110DPi1",
@@ -2864,6 +3244,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 16,
     ratings: [4, 6, 10, 12, 0, 6, 10, 13, 0],
+    tiers: [0.3, 0.3, 0.4, 0.3, 0, 0.35, 0.55, 0.35, 0],
   },
   {
     song_id: "9qO16DoQPDODQI6IPD0lPD10b88Qqi1i",
@@ -2871,6 +3252,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [1, 4, 9, 12, 0, 4, 9, 12, 0],
+    tiers: [0.1, 0.3, 0.45, 0.25, 0, 0.1, 0.25, 0.2, 0],
   },
   {
     song_id: "9qP16D6l11i9P1lQ0b1DIqoOqqiIQDl9",
@@ -2878,6 +3260,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 2,
     ratings: [2, 7, 8, 10, 12, 7, 9, 11, 12],
+    tiers: [0.85, 0.55, 0.45, 0.35, 0.55, 0.45, 0.45, 0.55, 0.65],
   },
   {
     song_id: "b08D1ODPP0IqlIl91dDDdD1d0lD8bP1d",
@@ -2885,6 +3268,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 13,
     ratings: [2, 4, 7, 11, 0, 4, 8, 11, 0],
+    tiers: [0.6, 0.55, 0.75, 0.65, 0, 0.55, 0.45, 0.4, 0],
   },
   {
     song_id: "b0dIdlPD6IDQ000l6lIoO9oD1IQiqQ6I",
@@ -2892,6 +3276,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.3, 0.35, 0.35, 0.4, 0, 0.3, 0.25, 0.15, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -2900,6 +3285,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [3, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.1, 0.2, 0.25, 0.2, 0, 0.15, 0.25, 0.1, 0],
   },
   {
     song_id: "b0lI9Ili8loOb1DD6Dd8lqII60b90101",
@@ -2908,6 +3294,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [3, 5, 8, 12, 0, 6, 7, 12, 0],
+    tiers: [0.45, 0.55, 0.55, 0.3, 0, 0.4, 0.65, 0.3, 0],
   },
   {
     song_id: "b0o6bl18Q1bqI9o9oqQ9POoP8DiDDibP",
@@ -2915,6 +3302,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [2, 7, 12, 17, 0, 7, 12, 17, 0],
+    tiers: [0.6, 0.45, 0.65, 0.7, 0, 0.3, 0.4, 0.45, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -2923,6 +3311,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 9,
     ratings: [4, 3, 8, 10, 0, 5, 7, 11, 0],
+    tiers: [0.3, 0.3, 0.45, 0.3, 0, 0.2, 0.5, 0.4, 0],
   },
   {
     song_id: "b0QQ6OPD1dDqQ6D6IDQqlDd180Db609I",
@@ -2931,6 +3320,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 10,
     ratings: [3, 8, 12, 15, 15, 8, 12, 16, 16],
+    tiers: [0.35, 0.6, 0.55, 0.6, 0.7, 0.55, 0.75, 0.2, 0.4],
   },
   {
     song_id: "b16OP1o9qb6bQd66qOl98iq0boiQP919",
@@ -2938,6 +3328,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [5, 8, 12, 15, 17, 8, 12, 15, 18],
+    tiers: [0.5, 0.85, 0.85, 0.7, 0.85, 0.85, 0.8, 0.45, 0.6],
   },
   {
     song_id: "b1do8OI6qDDlQO0PI16868ql6bdbI886",
@@ -2945,13 +3336,15 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [6, 10, 13, 16, 0, 10, 13, 16, 0],
+    tiers: [0.6, 0.65, 0.7, 0.7, 0, 0.55, 0.65, 0.5, 0],
   },
   {
     song_id: "b1ObooOQ9iI0DilD9Q6qlIQ8D1d8dQO9",
     song_name: "in love wit you",
     alphabet: "I",
     version_num: 12,
-    ratings: [1, 3, 6, 9, 0, 4, 6, 9, 0],
+    ratings: [2, 4, 7, 9, 0, 4, 7, 9, 0],
+    tiers: [0.5, 0.45, 0.6, 0.7, 0, 0.45, 0.65, 0.55, 0],
   },
   {
     song_id: "b1QllqO8oQdqo086QdIlIblDDbPodDoP",
@@ -2959,6 +3352,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [6, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.65, 0.7, 0.85, 0.45, 0, 0.55, 0.7, 0.6, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -2966,7 +3360,8 @@ export const ALL_SONG_DATA = [
     song_name: "Elysium",
     alphabet: "E",
     version_num: 15,
-    ratings: [1, 5, 8, 11, 13, 5, 8, 11, 13],
+    ratings: [2, 5, 8, 11, 13, 5, 8, 11, 13],
+    tiers: [0.35, 0.25, 0.5, 0.2, 0.65, 0.4, 0.45, 0.4, 0.7],
   },
   {
     song_id: "b6dqPiOO6iO6b8D90Ido6QPOlObd9o98",
@@ -2974,6 +3369,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [3, 5, 9, 13, 0, 5, 8, 10, 0],
+    tiers: [0.3, 0.5, 0.3, 0.15, 0, 0.4, 0.25, 0.3, 0],
   },
   {
     song_id: "b6l6qPPdiOqqPqqII0IPqI981bolOqIb",
@@ -2981,6 +3377,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 12,
     ratings: [3, 5, 9, 12, 14, 6, 9, 12, 14],
+    tiers: [0.2, 0.2, 0.3, 0.6, 0.45, 0.3, 0.4, 0.6, 0.75],
   },
   {
     song_id: "b6ldDOq9qi1IiIIdiIl1108q1iQ9O6d6",
@@ -2988,6 +3385,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 8, 11, 14, 16, 8, 11, 14, 16],
+    tiers: [0.4, 0.35, 0.35, 0.4, 0.7, 0.2, 0.3, 0.4, 0.95],
     lock_types: [0, 0, 0, 0, 130, 0, 0, 0, 130],
   },
   {
@@ -2996,6 +3394,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 18,
     ratings: [4, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.35, 0.25, 0.55, 0.35, 0, 0.2, 0.4, 0.25, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -3004,6 +3403,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 17,
     ratings: [4, 9, 12, 16, 18, 9, 13, 16, 18],
+    tiers: [0.35, 0.25, 0.45, 0.45, 0.8, 0.45, 0.35, 0.4, 0.8],
   },
   {
     song_id: "b8dqI0Iq60iQPPobiiQ8O6PiIqdodDiQ",
@@ -3013,6 +3413,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 10,
     ratings: [4, 5, 7, 12, 0, 5, 8, 12, 0],
+    tiers: [0.25, 0.6, 0.8, 0.65, 0, 0.55, 0.7, 0.55, 0],
   },
   {
     song_id: "b9IoO68b1Qd9I6O8qqoo6q1o8DQ8l9lo",
@@ -3020,6 +3421,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.15, 0.4, 0.35, 0.35, 0, 0.45, 0.5, 0.45, 0],
   },
   {
     song_id: "b9QiIQ18b6o1bqPdqI6lI1OIqboPIDI9",
@@ -3031,6 +3433,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [2, 5, 9, 11, 0, 5, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "bb9lOdO0Pbb1qOIb1oQq8lPlI9i6IP8q",
@@ -3038,6 +3441,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.35, 0.5, 0.5, 0.4, 0, 0.35, 0.35, 0.45, 0],
   },
   {
     song_id: "bbiPqbo0lQq9P19i06q690blI91dbbq6",
@@ -3045,6 +3449,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [4, 7, 11, 14, 16, 6, 11, 14, 16],
+    tiers: [0.25, 0.25, 0.2, 0.65, 0.55, 0.25, 0.25, 0.25, 0.25],
   },
   {
     song_id: "bD1DbibPIq9IIlQd0OIIl0o91QI1il69",
@@ -3052,7 +3457,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "猿ビジ",
     alphabet: "M",
     version_num: 14,
-    ratings: [3, 6, 9, 13, 16, 7, 10, 13, 16],
+    ratings: [3, 7, 9, 13, 16, 7, 10, 13, 16],
+    tiers: [0.45, 0.7, 0.7, 0.55, 0.65, 0.55, 0.65, 0.65, 0.8],
   },
   {
     song_id: "bd8o99iPI9lqOl1Q8P68lbQOlo8Oq1qO",
@@ -3060,6 +3466,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 9,
     ratings: [4, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.4, 0.8, 0.8, 0.7, 0, 0.9, 0.9, 0.8, 0],
   },
   {
     song_id: "bd8oD0iqDQ8Qobd1oIqi8981QbD6I6Iq",
@@ -3067,14 +3474,16 @@ export const ALL_SONG_DATA = [
     romanized_name: "Alien Alien",
     alphabet: "あ",
     version_num: 16,
-    ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    ratings: [3, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.55, 0.4, 0.45, 0.3, 0, 0.4, 0.4, 0.2, 0],
   },
   {
     song_id: "bd8OODli0POo9bOq6i0oIPdIlbDlI910",
     song_name: "GERBERA",
     alphabet: "G",
     version_num: 19,
-    ratings: [4, 9, 14, 16, 0, 9, 14, 16, 0],
+    ratings: [4, 9, 14, 17, 0, 9, 15, 17, 0],
+    tiers: [0.4, 0.35, 0.6, 0.85, 0, 0.3, 0.65, 0.75, 0],
   },
   {
     song_id: "bdbQoi98Dlb18DiPDPdD801DoOD8619O",
@@ -3082,6 +3491,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 17,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.3, 0.35, 0.3, 0.05, 0, 0.25, 0.4, 0.1, 0],
   },
   {
     song_id: "bDDd08iP8dlIlOo6iqd91dPiI1lQdOQq",
@@ -3089,6 +3499,7 @@ export const ALL_SONG_DATA = [
     alphabet: "X",
     version_num: 8,
     ratings: [3, 5, 10, 13, 0, 5, 9, 13, 0],
+    tiers: [0.25, 0.3, 0.6, 0.5, 0, 0.3, 0.4, 0.55, 0],
   },
   {
     song_id: "bdQ6IobP6II86I1io686Il9qQ69dOod1",
@@ -3096,6 +3507,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 16,
     ratings: [4, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.35, 0.25, 0.15, 0.2, 0, 0.3, 0.2, 0.45, 0],
   },
   {
     song_id: "bI0oqdIDPPi8dDqlOO1Ii8qDQb1lq88o",
@@ -3103,6 +3515,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [2, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.35, 0.2, 0.3, 0.2, 0, 0.15, 0.2, 0.1, 0],
   },
   {
     song_id: "bi1Obd9i99P0O9PqQ1l1P6P6o1IOi11P",
@@ -3110,6 +3523,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [4, 5, 7, 11, 0, 4, 8, 11, 0],
+    tiers: [0.2, 0.4, 0.65, 0.6, 0, 0.15, 0.4, 0.45, 0],
   },
   {
     song_id: "bi9OolI1P9oI8dDPlbQiq01Dl080PQ61",
@@ -3119,6 +3533,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.2, 0.1, 0.05, 0.4, 0, 0.2, 0.05, 0.55, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -3127,6 +3542,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 18,
     ratings: [3, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.4, 0.45, 0.35, 0.4, 0, 0.45, 0.3, 0.4, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -3135,6 +3551,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 15,
     ratings: [3, 8, 11, 16, 0, 8, 11, 16, 0],
+    tiers: [0.5, 0.3, 0.85, 0.7, 0, 0.25, 0.75, 0.5, 0],
   },
   {
     song_id: "bIloQ900Iq01ql6ddP9idIb6iQ11i9D6",
@@ -3143,6 +3560,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 16,
     ratings: [3, 7, 11, 13, 0, 7, 11, 13, 0],
+    tiers: [0.4, 0.35, 0.5, 0.2, 0, 0.55, 0.45, 0.4, 0],
   },
   {
     song_id: "bIlqP91O9ld1lqlq6qoq9OiPdqIDPP0l",
@@ -3150,6 +3568,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 17,
     ratings: [5, 9, 14, 18, 19, 9, 14, 18, 19],
+    tiers: [0.7, 0.7, 0.5, 0.7, 0.5, 0.75, 0.7, 0.9, 0.3],
     lock_types: [80, 80, 80, 80, 130, 80, 80, 80, 130],
   },
   {
@@ -3158,6 +3577,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [1, 3, 6, 10, 0, 3, 5, 10, 0],
+    tiers: [0.45, 0.6, 0.5, 0.35, 0, 0.45, 0.45, 0.35, 0],
   },
   {
     song_id: "biqbD9I9q9D16i0i1Idb9d111l1QDq86",
@@ -3168,6 +3588,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 14,
     ratings: [4, 7, 9, 12, 14, 7, 9, 12, 14],
+    tiers: [0.6, 0.75, 0.65, 0.45, 0.4, 0.75, 0.65, 0.5, 0.5],
   },
   {
     song_id: "bl90QbiqoOlDI6iQQQdo0Iol6PIdQblP",
@@ -3175,6 +3596,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 16,
     ratings: [3, 7, 14, 17, 0, 7, 14, 17, 0],
+    tiers: [0.65, 0.75, 0.85, 0.65, 0, 0.8, 0.85, 0.65, 0],
   },
   {
     song_id: "blDbDqdo1D0odlQd9biIoio8ioQPb80i",
@@ -3184,6 +3606,7 @@ export const ALL_SONG_DATA = [
     version_num: 12,
     deleted: 1,
     ratings: [1, 4, 6, 9, 7, 5, 8, 12, 8],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "blI8D10Q1IDQ8Q19bi0IDlD80oD0bloi",
@@ -3191,6 +3614,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 13,
     ratings: [2, 4, 8, 12, 0, 5, 8, 11, 0],
+    tiers: [0.35, 0.3, 0.3, 0.45, 0, 0.35, 0.4, 0.5, 0],
   },
   {
     song_id: "bll06Di6q1QOlddDlPDPiQDDI09bOOoP",
@@ -3198,7 +3622,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "Come to midy",
     alphabet: "C",
     version_num: 19,
-    ratings: [6, 11, 15, 16, 17, 11, 15, 16, 17],
+    ratings: [6, 11, 15, 17, 18, 11, 15, 17, 18],
+    tiers: [0.65, 0.65, 0.7, 0.9, 0.85, 0.4, 0.65, 0.75, 0.9],
     lock_types: [230, 230, 230, 230, 230, 230, 230, 230, 230],
   },
   {
@@ -3207,6 +3632,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 17,
     ratings: [4, 8, 11, 14, 0, 8, 11, 15, 0],
+    tiers: [0.7, 0.6, 0.75, 0.85, 0, 0.6, 0.7, 0.75, 0],
   },
   {
     song_id: "bllQi9boq8qobOQDOD6QDio9lii8109i",
@@ -3214,7 +3640,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "プッチャリミ",
     alphabet: "P",
     version_num: 13,
-    ratings: [1, 5, 8, 13, 0, 5, 9, 13, 0],
+    ratings: [2, 5, 8, 13, 0, 5, 9, 13, 0],
+    tiers: [0.3, 0.45, 0.45, 0.6, 0, 0.55, 0.55, 0.6, 0],
   },
   {
     song_id: "bo6PqbbPQ6D096OIP6dDPbPPiDi88609",
@@ -3223,6 +3650,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [3, 7, 11, 15, 17, 7, 11, 16, 18],
+    tiers: [0.4, 0.25, 0.6, 0.8, 0.65, 0.55, 0.75, 0.8, 0.2],
   },
   {
     song_id: "bo8DPdi09odO8oq9ql0iI8booOioOqi0",
@@ -3230,7 +3658,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [2, 7, 10, 15, 0, 6, 10, 14, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.55, 0.4, 0.4, 0.25, 0, 0.45, 0.35, 0.35, 0],
   },
   {
     song_id: "bo9l0Dl0PbqQQQ16Qq6bOOi68o0996Pq",
@@ -3241,6 +3669,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 13,
     ratings: [3, 6, 9, 12, 15, 6, 9, 12, 15],
+    tiers: [0.3, 0.35, 0.4, 0.5, 0.65, 0.3, 0.55, 0.5, 0.55],
   },
   {
     song_id: "boDqoIDqDlP1io6bQ0O10diDbbqOD96I",
@@ -3248,6 +3677,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 19,
     ratings: [2, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.3, 0.2, 0.4, 0.35, 0, 0.15, 0.3, 0.25, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -3256,6 +3686,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [3, 6, 7, 10, 0, 5, 7, 10, 0],
+    tiers: [0.35, 0.65, 0.6, 0.4, 0, 0.55, 0.7, 0.5, 0],
   },
   {
     song_id: "boO8d11P8o6l89i81i1i1IdPlP109QoQ",
@@ -3263,6 +3694,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [1, 5, 8, 13, 0, 5, 8, 13, 0],
+    tiers: [0.25, 0.5, 0.55, 0.5, 0, 0.4, 0.4, 0.4, 0],
   },
   {
     song_id: "boOdPIqbDd8li0O0IqliPo1Doq99Ob09",
@@ -3270,6 +3702,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 4,
     ratings: [4, 5, 8, 11, 0, 5, 7, 10, 0],
+    tiers: [0.3, 0.35, 0.45, 0.3, 0, 0.35, 0.55, 0.25, 0],
   },
   {
     song_id: "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb",
@@ -3278,6 +3711,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 3,
     ratings: [4, 8, 10, 12, 0, 9, 10, 12, 0],
+    tiers: [0.25, 0.45, 0.4, 0.2, 0, 0.4, 0.55, 0.45, 0],
   },
   {
     song_id: "bOQ0dIIIilDD9Do6qIDdlObQdo01DD80",
@@ -3285,7 +3719,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [2, 7, 10, 14, 0, 7, 10, 14, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.45, 0.35, 0.55, 0.65, 0, 0.4, 0.45, 0.5, 0],
   },
   {
     song_id: "boqo0IoO8DodOl99Q8P8qOi8PqDq11b1",
@@ -3296,6 +3730,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 18,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.6, 0.65, 0.7, 0.65, 0, 0.65, 0.45, 0.55, 0],
     lock_types: [180, 180, 180, 180, 0, 180, 180, 180, 0],
   },
   {
@@ -3305,6 +3740,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 14],
+    tiers: [0, 0, 0, 0, 0.25, 0, 0, 0, 0.55],
   },
   {
     song_id: "bP10qq9dPDDqIl16lPIDDd8b00dIIP08",
@@ -3312,6 +3748,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 17,
     ratings: [2, 5, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.7, 0.65, 0.55, 0.5, 0, 0.6, 0.6, 0.6, 0],
   },
   {
     song_id: "bP69QdDQ0QQ9dP0dDio0dO61i9Dbdl00",
@@ -3319,6 +3756,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 6,
     ratings: [3, 6, 7, 10, 0, 6, 7, 10, 0],
+    tiers: [0.05, 0.05, 0.05, 0, 0, 0.35, 0.25, 0.1, 0],
   },
   {
     song_id: "bPb96lbDP9OdI0Oi1189iOPPdllPIDQb",
@@ -3327,6 +3765,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 16,
     ratings: [3, 5, 11, 14, 16, 5, 11, 14, 16],
+    tiers: [0.2, 0.3, 0.15, 0.25, 0.65, 0.3, 0.2, 0.35, 0.45],
   },
   {
     song_id: "bPD6ObloQPOOiQb1DbQDdilodiddlIlb",
@@ -3334,6 +3773,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 5,
     ratings: [4, 5, 8, 10, 0, 6, 8, 11, 0],
+    tiers: [0.7, 0.7, 0.8, 0.5, 0, 0.75, 0.8, 0.5, 0],
   },
   {
     song_id: "bq1O60D90Qbb6iPoi90Ii9olQOIO0Ib1",
@@ -3341,6 +3781,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [3, 5, 10, 9, 0, 6, 9, 10, 0],
+    tiers: [0.4, 0.4, 0.45, 0.4, 0, 0.25, 0.65, 0.55, 0],
   },
   {
     song_id: "bq8DOQ9Idq9Ii9PQ1bqPIQoQPl961d1o",
@@ -3350,6 +3791,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 11,
     ratings: [3, 5, 8, 11, 0, 6, 8, 13, 0],
+    tiers: [0.4, 0.5, 0.55, 0.5, 0, 0.4, 0.45, 0.6, 0],
   },
   {
     song_id: "bQI1dIlIObIIQood96O9q9iO8li11OO9",
@@ -3357,6 +3799,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 14,
     ratings: [2, 4, 8, 11, 14, 6, 8, 11, 14],
+    tiers: [0.35, 0.4, 0.55, 0.55, 0.85, 0.15, 0.6, 0.55, 0.5],
   },
   {
     song_id: "bqi9QiQ0lbi8id6lOi88iIi9lo6Pdd90",
@@ -3364,6 +3807,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 18,
     ratings: [4, 8, 12, 16, 18, 8, 13, 16, 18],
+    tiers: [0.3, 0.25, 0.25, 0.2, 0.8, 0.2, 0.1, 0.15, 0.2],
   },
   {
     song_id: "bql00PQ1PiboIqDQoD909Il8o1PIDiD1",
@@ -3372,6 +3816,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 12],
+    tiers: [0, 0, 0, 0, 0.35, 0, 0, 0, 0.55],
   },
   {
     song_id: "bqoboI0o8lIObPPdqq8lDDdI8b1QPDb1",
@@ -3381,6 +3826,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 19,
     ratings: [3, 8, 12, 14, 0, 8, 12, 14, 0],
+    tiers: [0.3, 0.45, 0.3, 0.45, 0, 0.35, 0.25, 0.15, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -3390,6 +3836,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 7,
     ratings: [3, 5, 8, 12, 0, 5, 8, 13, 0],
+    tiers: [0.35, 0.3, 0.3, 0.45, 0, 0.45, 0.45, 0.65, 0],
   },
   {
     song_id: "bqqIiO96di90bdP0QD1biD8DoDQIddOD",
@@ -3397,6 +3844,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 14,
     ratings: [2, 5, 8, 10, 0, 5, 8, 10, 0],
+    tiers: [0.4, 0.45, 0.5, 0.65, 0, 0.35, 0.6, 0.75, 0],
   },
   {
     song_id: "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP",
@@ -3404,6 +3852,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Q",
     version_num: 9,
     ratings: [4, 5, 8, 11, 0, 5, 7, 10, 0],
+    tiers: [0.65, 0.75, 0.75, 0.7, 0, 0.65, 0.9, 0.8, 0],
   },
   {
     song_id: "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd",
@@ -3411,6 +3860,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 8,
     ratings: [3, 4, 7, 9, 0, 4, 7, 9, 0],
+    tiers: [0.5, 0.65, 0.4, 0.4, 0, 0.5, 0.7, 0.45, 0],
   },
   {
     song_id: "D08lqQOPdOO6D6ll690Qd6PdbO111011",
@@ -3419,6 +3869,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 17,
     ratings: [4, 8, 13, 17, 0, 8, 13, 17, 0],
+    tiers: [0.55, 0.3, 0.4, 0.5, 0, 0.4, 0.4, 0.2, 0],
   },
   {
     song_id: "D08qoOdPd8iOO916bOPIIIdqPP6O00iP",
@@ -3428,6 +3879,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 15,
     ratings: [4, 7, 10, 13, 16, 7, 10, 13, 16],
+    tiers: [0.55, 0.35, 0.6, 0.25, 0.5, 0.6, 0.5, 0.6, 0.25],
   },
   {
     song_id: "d0DDd1dP6llPbioqPdiQ0IDd918bDqI8",
@@ -3438,6 +3890,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "D0dI08oDqi11Oo819D6ob1dlDbPlIPl0",
@@ -3445,6 +3898,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 9,
     ratings: [3, 5, 8, 12, 0, 5, 8, 10, 0],
+    tiers: [0.65, 0.65, 0.75, 0.6, 0, 0.55, 0.8, 0.8, 0],
   },
   {
     song_id: "D0iDbio81PIbI8dD6QOIP9IidDOP0PDP",
@@ -3452,6 +3906,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 17,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.45, 0.5, 0.5, 0.5, 0, 0.55, 0.45, 0.55, 0],
   },
   {
     song_id: "d0IiI99IlI00lq606l68qOIl8PidiOlO",
@@ -3459,6 +3914,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 11,
     ratings: [3, 5, 7, 10, 0, 4, 7, 11, 0],
+    tiers: [0.4, 0.4, 0.5, 0.3, 0, 0.6, 0.65, 0.35, 0],
   },
   {
     song_id: "d0P01d9q8oOd8OP1bQPoqlq96906PqPD",
@@ -3466,6 +3922,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 7,
     ratings: [0, 0, 0, 0, 12, 0, 0, 0, 13],
+    tiers: [0, 0, 0, 0, 0.45, 0, 0, 0, 0.35],
   },
   {
     song_id: "D0Q0oIDDqoQd0IQddi1IiD16dO16O88o",
@@ -3473,6 +3930,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [3, 5, 11, 13, 0, 5, 11, 13, 0],
+    tiers: [0.4, 0.25, 0.55, 0.45, 0, 0.25, 0.45, 0.5, 0],
   },
   {
     song_id: "d0q8IDbqDI686q9Dl09ll0Id6bIio9Pd",
@@ -3480,6 +3938,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 9,
     ratings: [3, 5, 7, 9, 0, 4, 8, 9, 0],
+    tiers: [0.5, 0.4, 0.6, 0.35, 0, 0.5, 0.35, 0.4, 0],
   },
   {
     song_id: "D0Qb898oqblPoP68PPq1o9i9dI9o0D9i",
@@ -3490,13 +3949,15 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.2, 0.35, 0.2, 0.05, 0, 0.2, 0.15, 0.15, 0],
   },
   {
     song_id: "D0qloQo0bQliQqooQ609IP8i09old99D",
     song_name: "You",
     alphabet: "Y",
     version_num: 14,
-    ratings: [1, 3, 6, 10, 0, 3, 6, 10, 0],
+    ratings: [2, 4, 6, 10, 0, 4, 6, 10, 0],
+    tiers: [0.3, 0.6, 0.45, 0.6, 0, 0.55, 0.6, 0.8, 0],
   },
   {
     song_id: "d10d86DQqqd6QDlQlOI1bQi9do66l8Od",
@@ -3504,6 +3965,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 18,
     ratings: [4, 8, 11, 15, 17, 8, 11, 15, 17],
+    tiers: [0.5, 0.5, 0.6, 0.85, 0.6, 0.4, 0.4, 0.8, 0.65],
   },
   {
     song_id: "d11l6160iiP1bDbQPQl0Pi8lddlld80i",
@@ -3512,6 +3974,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 10,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 13],
+    tiers: [0, 0, 0, 0, 0.6, 0, 0, 0, 0.55],
   },
   {
     song_id: "D11ldIqD8dQIi9oQQIIo86QOI8D9olP8",
@@ -3521,7 +3984,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Yukari/vocaloidshiawase/yukarishiawase",
     alphabet: "さ",
     version_num: 16,
-    ratings: [2, 6, 10, 13, 0, 7, 11, 13, 0],
+    ratings: [3, 6, 10, 13, 0, 7, 11, 13, 0],
+    tiers: [0.45, 0.3, 0.3, 0.4, 0, 0.25, 0.4, 0.5, 0],
   },
   {
     song_id: "D16P668Q8loqIoDo1IdoIlIloiIoIDll",
@@ -3533,6 +3997,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 7, 9, 13, 0, 7, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "d18bbq1l699OP9Di6q8oqD9oPb1o1P6I",
@@ -3540,6 +4005,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [3, 7, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.4, 0.4, 0.55, 0.45, 0, 0.5, 0.5, 0.4, 0],
   },
   {
     song_id: "d18DI8bO1lql60Ol1dqQlI8qIobl191P",
@@ -3547,6 +4013,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 14,
     ratings: [3, 7, 9, 12, 15, 7, 9, 12, 15],
+    tiers: [0.2, 0.2, 0.3, 0.1, 0.5, 0.55, 0.45, 0.2, 0.6],
   },
   {
     song_id: "d1bQ1iIb0I1PoPOQqliIo9PiQQb1119d",
@@ -3554,6 +4021,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [2, 6, 9, 14, 0, 6, 10, 14, 0],
+    tiers: [0.55, 0.55, 0.7, 0.55, 0, 0.6, 0.65, 0.75, 0],
   },
   {
     song_id: "D1D88PPI0PDQqOq00OI6QI1o6dPolqlI",
@@ -3562,6 +4030,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 9,
     ratings: [3, 4, 8, 10, 0, 4, 7, 9, 0],
+    tiers: [0.2, 0.25, 0.2, 0.35, 0, 0.15, 0.3, 0.3, 0],
   },
   {
     song_id: "d1dPPII1o69IlI0d0DlPi1i1idbdPD6O",
@@ -3570,6 +4039,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 15,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.3, 0.35, 0.45, 0.45, 0, 0.3, 0.35, 0.75, 0],
   },
   {
     song_id: "D1I09111OiQPiDi9doqP9b1PlO1PqII8",
@@ -3577,7 +4047,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "SUNSUN SUMMER STEP",
     alphabet: "S",
     version_num: 16,
-    ratings: [1, 3, 8, 11, 0, 3, 8, 11, 0],
+    ratings: [2, 3, 8, 11, 0, 3, 8, 11, 0],
+    tiers: [0.3, 0.4, 0.5, 0.35, 0, 0.4, 0.45, 0.35, 0],
   },
   {
     song_id: "d1PbOD8o6b6o1OqOQ98ilDQbid6dddQd",
@@ -3585,6 +4056,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [4, 6, 9, 12, 0, 7, 10, 13, 0],
+    tiers: [0.2, 0.15, 0.25, 0, 0, 0, 0.2, 0.3, 0],
   },
   {
     song_id: "D1QDql1OQDl1dblId0P81Q999dO9POoP",
@@ -3593,16 +4065,18 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [6, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.7, 0.9, 0.95, 0.95, 0, 0.75, 0.9, 0.9, 0],
     lock_types: [230, 230, 230, 230, 0, 230, 230, 230, 0],
   },
   {
     song_id: "D686d06lO9IID8D0boPq0Pd8P89idO99",
     song_name: "未来（ダ）FUTURE",
-    searchable_name: "みらいダ FUTURE",
+    searchable_name: "みらいダ FUTURE",
     romanized_name: "Mirai Da FUTURE",
     alphabet: "ま",
     version_num: 17,
     ratings: [2, 7, 10, 15, 0, 7, 10, 15, 0],
+    tiers: [0.15, 0.2, 0.15, 0, 0, 0.15, 0.2, 0, 0],
   },
   {
     song_id: "D68PQib86POo9D6O8Q0qO8bD6bDb1bdl",
@@ -3611,7 +4085,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Tenkuu no Hana",
     alphabet: "た",
     version_num: 15,
-    ratings: [4, 7, 12, 15, 0, 7, 12, 15, 0],
+    ratings: [4, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.45, 0.3, 0.35, 0.5, 0, 0.35, 0.45, 0.65, 0],
   },
   {
     song_id: "D6b8boIiOqQOq1QP9D1qd08I6Q0IIqq9",
@@ -3622,6 +4097,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -3629,7 +4105,8 @@ export const ALL_SONG_DATA = [
     song_name: "will",
     alphabet: "W",
     version_num: 11,
-    ratings: [1, 4, 7, 11, 0, 5, 7, 11, 0],
+    ratings: [2, 4, 7, 11, 0, 5, 7, 11, 0],
+    tiers: [0.25, 0.25, 0.3, 0.45, 0, 0.3, 0.5, 0.4, 0],
   },
   {
     song_id: "D6iI9O90il0OoIqP1Q86OIQdDQQilII8",
@@ -3637,7 +4114,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Polaris no Uta",
     alphabet: "は",
     version_num: 19,
-    ratings: [1, 5, 9, 13, 16, 4, 9, 13, 16],
+    ratings: [2, 5, 9, 13, 16, 4, 9, 13, 16],
+    tiers: [0.2, 0.05, 0.4, 0.4, 0.65, 0.15, 0.35, 0.35, 0.35],
   },
   {
     song_id: "D6IIDqlO8idioiPo8l61Ob11D6Di0DiQ",
@@ -3646,6 +4124,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 18,
     ratings: [2, 5, 8, 10, 0, 5, 8, 10, 0],
+    tiers: [0.9, 0.85, 0.8, 0.6, 0, 0.85, 0.9, 0.65, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -3655,13 +4134,15 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 13,
     ratings: [5, 8, 11, 14, 17, 8, 11, 14, 17],
+    tiers: [0.7, 0.85, 0.85, 0.75, 0.65, 0.8, 0.65, 0.65, 0.5],
   },
   {
     song_id: "D6ll81qoDDPIq0d89O69dIQIldQdQoId",
     song_name: "Draw the Savage",
     alphabet: "D",
     version_num: 18,
-    ratings: [2, 6, 10, 14, 16, 6, 10, 14, 16],
+    ratings: [2, 6, 10, 14, 15, 6, 10, 14, 14],
+    tiers: [0.5, 0.35, 0.3, 0.7, 0.75, 0.25, 0.05, 0.6, 0.05],
   },
   {
     song_id: "D6o8lIiDQ80oi6iIbiP9DlOPIl0Q8d69",
@@ -3669,6 +4150,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [2, 7, 12, 14, 0, 7, 11, 13, 0],
+    tiers: [0.6, 0.55, 0.5, 0.6, 0, 0.5, 0.5, 0.55, 0],
   },
   {
     song_id: "d6OoI6oOd1l99DIoodI9lIDI0bidDP00",
@@ -3676,6 +4158,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 12, 14, 0],
+    tiers: [0.5, 0.4, 0.7, 0.55, 0, 0.4, 0.5, 0.5, 0],
   },
   {
     song_id: "D6oPIlOlIIOi1oq6Pd6011lqobbqOlib",
@@ -3683,6 +4166,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 9,
     ratings: [3, 5, 7, 9, 11, 5, 8, 8, 12],
+    tiers: [0.2, 0.15, 0.2, 0.15, 0.3, 0.3, 0.35, 0.55, 0.2],
   },
   {
     song_id: "d810q0I8q6d0l1POlIO6d66bOPb96dql",
@@ -3691,6 +4175,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 16,
     ratings: [7, 11, 14, 17, 0, 9, 14, 17, 0],
+    tiers: [0.5, 0.6, 0.3, 0.5, 0, 0.6, 0.5, 0.4, 0],
   },
   {
     song_id: "D81D8689llDiOqPq0IP19bbQQiioPl8d",
@@ -3699,6 +4184,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 4,
     ratings: [5, 7, 9, 12, 0, 7, 9, 12, 0],
+    tiers: [0.1, 0.4, 0.45, 0.4, 0, 0.75, 0.7, 0.5, 0],
   },
   {
     song_id: "D81Pq66DQPiQdliqIPl0ioPOi9OlQoQ9",
@@ -3707,6 +4193,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 4,
     ratings: [4, 5, 8, 11, 0, 5, 7, 11, 0],
+    tiers: [0.45, 0.7, 0.6, 0.6, 0, 0.6, 0.8, 0.3, 0],
   },
   {
     song_id: "d88boiQ609PO8ODDo6IliPIb69I80dlP",
@@ -3715,6 +4202,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 11,
     ratings: [3, 8, 10, 13, 0, 7, 11, 14, 0],
+    tiers: [0.25, 0.4, 0.7, 0.65, 0, 0.7, 0.55, 0.6, 0],
   },
   {
     song_id: "D89QP18016o01qoOi60I6Q19dlOQPbdo",
@@ -3723,6 +4211,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 12,
     ratings: [6, 11, 14, 17, 18, 11, 15, 17, 18],
+    tiers: [0.45, 0.65, 0.7, 0.6, 0.2, 0.6, 0.6, 0.3, 0.3],
   },
   {
     song_id: "D8I68Ibib9ldQDIPIQdO6lqI61PQlPO9",
@@ -3730,6 +4219,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Y",
     version_num: 9,
     ratings: [4, 5, 8, 10, 0, 5, 7, 10, 0],
+    tiers: [0.25, 0.25, 0.4, 0.45, 0, 0.3, 0.5, 0.55, 0],
   },
   {
     song_id: "d8oDqIQOoD6DQoQbOIP9I6DPPOl89lo6",
@@ -3737,6 +4227,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 17,
     ratings: [2, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.25, 0.2, 0.25, 0.25, 0, 0.1, 0.15, 0.1, 0],
   },
   {
     song_id: "D8P1qO8bqQIP9bOOP1dPOP660OdIllbD",
@@ -3745,6 +4236,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 19,
     ratings: [3, 5, 11, 14, 0, 5, 11, 14, 0],
+    tiers: [0.3, 0.4, 0.25, 0.2, 0, 0.4, 0.2, 0.3, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -3753,6 +4245,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 15,
     ratings: [5, 9, 13, 17, 0, 9, 12, 16, 0],
+    tiers: [0.6, 0.9, 0.65, 0.3, 0, 0.65, 0.8, 0.7, 0],
   },
   {
     song_id: "d91lIllbboPd668QP88I06Q6QqooQiO1",
@@ -3761,6 +4254,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 15,
     ratings: [4, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.5, 0.4, 0.5, 0.3, 0, 0.6, 0.5, 0.35, 0],
   },
   {
     song_id: "d96OiPiOIboqI8o6PIDO8D9qPb9P18il",
@@ -3768,6 +4262,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [3, 4, 7, 11, 0, 3, 8, 11, 0],
+    tiers: [0.4, 0.5, 0.45, 0.55, 0, 0.4, 0.5, 0.55, 0],
   },
   {
     song_id: "d99P0I1i960QO0oolD6oQIO8OObO9Plb",
@@ -3775,6 +4270,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 7,
     ratings: [0, 0, 0, 0, 12, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.1, 0, 0, 0, 0.3],
   },
   {
     song_id: "D9I8d1PDOQ8QqP1o1IIi0o8d6660ddOQ",
@@ -3782,6 +4278,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [4, 6, 9, 15, 0, 6, 10, 15, 0],
+    tiers: [0.65, 0.7, 0.8, 0.6, 0, 0.55, 0.75, 0.6, 0],
   },
   {
     song_id: "D9IO16idQq6iiI88loI1i986lIID0O9O",
@@ -3790,6 +4287,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [3, 6, 9, 12, 15, 6, 9, 13, 15],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [0, 0, 0, 0, 160, 0, 0, 0, 160],
   },
   {
@@ -3798,6 +4296,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 17,
     ratings: [3, 7, 12, 15, 16, 7, 12, 16, 16],
+    tiers: [0.2, 0.1, 0.3, 0.4, 0.3, 0.2, 0.15, 0.1, 0.45],
   },
   {
     song_id: "D9lq0DioIl9D6ll0d61990DP9qPPb1dP",
@@ -3805,6 +4304,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 15,
     ratings: [3, 7, 11, 16, 0, 6, 11, 16, 0],
+    tiers: [0.5, 0.45, 0.5, 0.3, 0, 0.3, 0.5, 0.2, 0],
   },
   {
     song_id: "D9o1DqDidP696lii99881io9Dbb0lQl0",
@@ -3812,6 +4312,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 19,
     ratings: [2, 5, 8, 12, 0, 4, 8, 11, 0],
+    tiers: [0.35, 0.45, 0.5, 0.3, 0, 0.5, 0.4, 0.3, 0],
   },
   {
     song_id: "D9odQ60DDolq9QI9DDl98DIobdPPIil9",
@@ -3819,6 +4320,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.45, 0.45, 0.35, 0.35, 0, 0.45, 0.4, 0.4, 0],
   },
   {
     song_id: "D9ooldO1009Pq1dP6P88lD80P0Oi060P",
@@ -3826,6 +4328,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 17,
     ratings: [4, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.1, 0.15, 0.25, 0.3, 0, 0.2, 0.25, 0.4, 0],
   },
   {
     song_id: "d9qd6lI0ddbQ068dq1oD8o6QDIi6blDO",
@@ -3833,6 +4336,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 11,
     ratings: [3, 6, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.15, 0.25, 0.55, 0.65, 0, 0.15, 0.65, 0.6, 0],
   },
   {
     song_id: "d9QO9odlI18i96I6DQPld1iiol8ODl0o",
@@ -3840,6 +4344,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 17,
     ratings: [4, 9, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.1, 0, 0.05, 0.2, 0, 0.15, 0.25, 0.25, 0],
   },
   {
     song_id: "db1DlQ9qqI8PiqPD6q88O1P8PDbP11dq",
@@ -3850,6 +4355,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 14,
     ratings: [3, 6, 9, 12, 16, 6, 9, 12, 15],
+    tiers: [0.4, 0.4, 0.5, 0.55, 0.5, 0.45, 0.55, 0.75, 0.6],
   },
   {
     song_id: "Db6odqIqQ90PIDIlD1DIb8l09ol6qIDl",
@@ -3857,13 +4363,15 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 17,
     ratings: [2, 5, 7, 10, 0, 5, 7, 10, 0],
+    tiers: [0.6, 0.6, 0.55, 0.65, 0, 0.5, 0.6, 0.6, 0],
   },
   {
     song_id: "db8Ddd060IQ9lPlOlqO0PoPi0Qdb88o6",
     song_name: "EMOTiON TRiPPER",
     alphabet: "E",
     version_num: 19,
-    ratings: [1, 5, 10, 14, 0, 5, 10, 14, 0],
+    ratings: [2, 5, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.2, 0.05, 0.3, 0.45, 0, 0, 0.3, 0.45, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -3872,6 +4380,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 7,
     ratings: [3, 4, 7, 12, 0, 4, 8, 12, 0],
+    tiers: [0.4, 0.45, 0.3, 0.25, 0, 0.75, 0.3, 0.25, 0],
   },
   {
     song_id: "Db9DllQooo6lqQdl6Q6OD6q066i1IdOO",
@@ -3881,13 +4390,15 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 15,
     ratings: [2, 6, 9, 13, 0, 6, 10, 13, 0],
+    tiers: [0.45, 0.25, 0.35, 0.4, 0, 0.35, 0.4, 0.4, 0],
   },
   {
     song_id: "db9qPQQ1lDbDIPP98IOqil9IO1i0oilO",
     song_name: "PARADISE",
     alphabet: "P",
     version_num: 19,
-    ratings: [1, 6, 9, 12, 0, 5, 9, 12, 0],
+    ratings: [2, 6, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.55, 0.45, 0.5, 0.55, 0, 0.4, 0.35, 0.45, 0],
   },
   {
     song_id: "Dbd0o8iob1D0990DDIOIIQ6bQqdDQ6ID",
@@ -3896,6 +4407,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [4, 7, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.55, 0.5, 0.7, 0.3, 0, 0.7, 0.75, 0.55, 0],
   },
   {
     song_id: "dbD8PlibPqqdI99901obObb6odqD8qDl",
@@ -3903,6 +4415,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 13,
     ratings: [3, 7, 10, 13, 15, 7, 10, 13, 15],
+    tiers: [0.4, 0.6, 0.55, 0.45, 0.35, 0.55, 0.55, 0.45, 0.35],
   },
   {
     song_id: "Dbdi9P91PQl660llPQO0l86oDqi1O9Ob",
@@ -3910,7 +4423,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "風の金",
     alphabet: "T",
     version_num: 14,
-    ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    ratings: [3, 7, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.3, 0.35, 0.65, 0.55, 0, 0.4, 0.65, 0.7, 0],
   },
   {
     song_id: "DbibObDP860iqI11POiqQDD0i8PPOibd",
@@ -3918,6 +4432,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.35, 0.4, 0.5, 0.3, 0, 0.55, 0.65, 0.6, 0],
   },
   {
     song_id: "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -3925,7 +4440,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "鰤",
     alphabet: "B",
     version_num: 2,
-    ratings: [3, 6, 6, 10, 10, 6, 7, 9, 10],
+    ratings: [3, 6, 6, 10, 10, 6, 8, 9, 10],
+    tiers: [0.1, 0.35, 0.25, 0.4, 0.35, 0.45, 0.4, 0.25, 0.65],
   },
   {
     song_id: "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9",
@@ -3934,6 +4450,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 18,
     ratings: [2, 5, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.25, 0.15, 0.35, 0.35, 0, 0.35, 0.4, 0.4, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -3942,21 +4459,24 @@ export const ALL_SONG_DATA = [
     alternate_name: "鰤桶",
     alphabet: "B",
     version_num: 2,
-    ratings: [4, 6, 8, 9, 12, 6, 8, 9, 12],
+    ratings: [4, 6, 8, 9, 12, 7, 8, 9, 12],
+    tiers: [0.15, 0.55, 0.45, 0.35, 0.15, 0.65, 0.7, 0.35, 0.4],
   },
   {
     song_id: "dbq9dPPOQ60ibOol0I6b9iQol9lD669D",
     song_name: "Why not",
     alphabet: "W",
     version_num: 10,
-    ratings: [4, 6, 9, 11, 0, 6, 7, 11, 0],
+    ratings: [4, 6, 9, 11, 0, 7, 8, 11, 0],
+    tiers: [0.1, 0, 0, 0.1, 0, 0.25, 0.5, 0.25, 0],
   },
   {
     song_id: "DbQbDQOl0lII16ib1081d6ddIodD0P9I",
     song_name: "oarfish",
     alphabet: "O",
     version_num: 12,
-    ratings: [1, 2, 8, 11, 0, 2, 9, 11, 0],
+    ratings: [2, 2, 8, 11, 0, 2, 9, 11, 0],
+    tiers: [0.45, 0.55, 0.65, 0.6, 0, 0.1, 0.55, 0.55, 0],
   },
   {
     song_id: "Dd6lP00DPqIb0d6iqOdlO08l69l6q1di",
@@ -3964,6 +4484,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 7,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.7, 0, 0, 0, 0.55],
   },
   {
     song_id: "DD6olq00PD91odbO9QbldDb0bQ18oqo1",
@@ -3971,6 +4492,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 12,
     ratings: [3, 8, 11, 14, 16, 8, 11, 14, 16],
+    tiers: [0.25, 0.35, 0.5, 0.55, 0.55, 0.35, 0.55, 0.5, 0.15],
     lock_types: [0, 0, 0, 0, 130, 0, 0, 0, 130],
   },
   {
@@ -3980,6 +4502,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 10,
     ratings: [6, 9, 12, 14, 16, 9, 13, 14, 17],
+    tiers: [0.85, 0.95, 0.95, 0.9, 0.85, 0.95, 0.85, 0.8, 0.5],
   },
   {
     song_id: "dd80OooqdOIi9O60i91PDdIPIbIiiD66",
@@ -3987,6 +4510,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 14,
     ratings: [3, 7, 9, 11, 12, 7, 9, 10, 13],
+    tiers: [0.15, 0.2, 0.35, 0.4, 0.4, 0.25, 0.4, 0.6, 0.45],
   },
   {
     song_id: "dd8loQPD0I86DiIql8b8o9qbO8l0d9Q9",
@@ -3994,6 +4518,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 10,
     ratings: [0, 0, 0, 0, 8, 0, 0, 0, 9],
+    tiers: [0, 0, 0, 0, 0.2, 0, 0, 0, 0.2],
   },
   {
     song_id: "dd8PodO0ilIQQb0P0OQPDiodI9biP91d",
@@ -4001,6 +4526,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 10,
     ratings: [3, 4, 8, 10, 12, 5, 7, 9, 12],
+    tiers: [0.3, 0.45, 0.3, 0.25, 0.2, 0.3, 0.5, 0.35, 0.5],
   },
   {
     song_id: "Dd98lDdo8Ob698d9qbO9iD0PqO19oQbI",
@@ -4009,13 +4535,15 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 15,
     ratings: [4, 7, 10, 14, 0, 7, 11, 14, 0],
+    tiers: [0.25, 0.3, 0.5, 0.7, 0, 0.45, 0.65, 0.8, 0],
   },
   {
     song_id: "DdbI8dPqPI8ll69q6QidI6lldDQod8b9",
     song_name: "Something Comforting",
     alphabet: "S",
     version_num: 19,
-    ratings: [2, 5, 8, 13, 0, 5, 8, 13, 0],
+    ratings: [2, 3, 7, 13, 0, 3, 7, 13, 0],
+    tiers: [0.45, 0.35, 0.5, 0.35, 0, 0.2, 0.25, 0.15, 0],
   },
   {
     song_id: "ddD8OPQoIiQi0IbDOIIdQ6dDDbPQ9bIO",
@@ -4024,6 +4552,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 10,
     ratings: [3, 5, 8, 10, 0, 4, 8, 11, 0],
+    tiers: [0.3, 0.35, 0.5, 0.4, 0, 0.35, 0.5, 0.4, 0],
   },
   {
     song_id: "DddIPd6iId8Doqq8OibDlD1dOi8PO8o9",
@@ -4032,6 +4561,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 7,
     ratings: [3, 4, 8, 12, 0, 3, 8, 12, 0],
+    tiers: [0.2, 0.3, 0.35, 0.45, 0, 0.1, 0.6, 0.65, 0],
   },
   {
     song_id: "DDDiQOd1IQQ6QIIq09PDqdQdDIll6bQI",
@@ -4041,6 +4571,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 16,
     ratings: [2, 5, 11, 13, 16, 5, 11, 13, 16],
+    tiers: [0.45, 0.4, 0.55, 0.55, 0.55, 0.4, 0.55, 0.6, 0.4],
   },
   {
     song_id: "ddib8P601q0Oqdb0Pl8oqobq9DD608P1",
@@ -4050,6 +4581,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 10,
     ratings: [3, 4, 7, 11, 0, 4, 7, 12, 0],
+    tiers: [0.35, 0.45, 0.55, 0.65, 0, 0.4, 0.7, 0.55, 0],
   },
   {
     song_id: "DdIbd6Pbl910P6QOqD6iQI0l0b1qdI8q",
@@ -4057,6 +4589,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 11,
     ratings: [2, 4, 8, 10, 0, 4, 8, 10, 0],
+    tiers: [0.4, 0.45, 0.2, 0.35, 0, 0.3, 0.15, 0.4, 0],
   },
   {
     song_id: "ddIiQ90DblbOQQIQPIbQOdb9DdPoOQ9Q",
@@ -4064,6 +4597,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 17,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.25, 0.4, 0.35, 0.35, 0, 0.4, 0.25, 0.3, 0],
   },
   {
     song_id: "DdIo9DQ0ddDld99DQdiiqbPP06OI91I0",
@@ -4071,13 +4605,15 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 17,
     ratings: [8, 11, 15, 17, 18, 11, 15, 17, 18],
+    tiers: [0.75, 0.65, 0.65, 0.15, 0.4, 0.55, 0.55, 0.05, 0.2],
   },
   {
     song_id: "DdIQdo1D01PblPQd06696dPq610o1lIl",
     song_name: "Rise As One",
     alphabet: "R",
     version_num: 19,
-    ratings: [2, 7, 12, 17, 0, 7, 12, 17, 0],
+    ratings: [2, 7, 12, 18, 0, 7, 12, 18, 0],
+    tiers: [0.85, 0.75, 0.85, 0.9, 0, 0.75, 0.65, 0.95, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -4087,6 +4623,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [3, 7, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.3, 0.55, 0.65, 0.55, 0, 0.4, 0.65, 0.55, 0],
   },
   {
     song_id: "dDlDPddq08iD8IOb9I1PbODP9696966D",
@@ -4095,6 +4632,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [5, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.2, 0.2, 0.4, 0.3, 0, 0.4, 0.55, 0.5, 0],
   },
   {
     song_id: "DdO1iboqI6980Q6QPD9P1PbQQ88I16lq",
@@ -4102,6 +4640,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 10],
+    tiers: [0, 0, 0, 0, 0.5, 0, 0, 0, 0.75],
   },
   {
     song_id: "dDO8ili1081QQIb86POQ8qd0P111011o",
@@ -4109,6 +4648,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 11,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 12],
+    tiers: [0, 0, 0, 0, 0.3, 0, 0, 0, 0.6],
   },
   {
     song_id: "dDOdPQOqD6P68dIOl6O6I8q99Q6dd9Ob",
@@ -4116,13 +4656,15 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [4, 5, 9, 12, 0, 6, 9, 11, 0],
+    tiers: [0.35, 0.4, 0.35, 0.5, 0, 0.35, 0.5, 0.65, 0],
   },
   {
     song_id: "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9",
     song_name: "1998",
     alphabet: "#",
     version_num: 8,
-    ratings: [4, 4, 6, 9, 0, 5, 6, 9, 0],
+    ratings: [4, 4, 6, 9, 0, 5, 7, 9, 0],
+    tiers: [0.25, 0.4, 0.35, 0.3, 0, 0.3, 0.6, 0.45, 0],
   },
   {
     song_id: "ddOqqDI91bqqiOoll6I0i16i1P18019q",
@@ -4130,6 +4672,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 16,
     ratings: [3, 6, 10, 13, 0, 6, 11, 13, 0],
+    tiers: [0.3, 0.3, 0.3, 0.4, 0, 0.3, 0.45, 0.55, 0],
   },
   {
     song_id: "DDPPb680Pd1Do0I0899Qq18OIIqiP06D",
@@ -4137,6 +4680,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [1, 5, 8, 12, 0, 5, 9, 12, 0],
+    tiers: [0.35, 0.3, 0.3, 0.4, 0, 0.45, 0.25, 0.45, 0],
   },
   {
     song_id: "DDPPI6IIi0i9looibDbiODoOPOl6ID8i",
@@ -4144,6 +4688,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 18,
     ratings: [2, 6, 8, 10, 0, 6, 8, 10, 0],
+    tiers: [0.15, 0.25, 0.3, 0.2, 0, 0.2, 0.2, 0.2, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -4152,6 +4697,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 16,
     ratings: [5, 7, 11, 13, 15, 7, 10, 13, 15],
+    tiers: [0.4, 0.45, 0.25, 0.4, 0.35, 0.5, 0.35, 0.45, 0.3],
   },
   {
     song_id: "DdQ1lQ1Qb1P1oPl1QOd0Q0O9qqidiI9q",
@@ -4161,6 +4707,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 18,
     ratings: [3, 6, 9, 11, 0, 6, 9, 11, 0],
+    tiers: [0.35, 0.4, 0.35, 0.3, 0, 0.4, 0.35, 0.4, 0],
   },
   {
     song_id: "DDqDDqDQ1Db60IiIDbIl6Pd8DPOq0q06",
@@ -4168,6 +4715,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 8,
     ratings: [3, 4, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.3, 0.45, 0.3, 0.65, 0, 0.3, 0.6, 0.75, 0],
   },
   {
     song_id: "ddqO1b1ldlQd6OOoQ1boPdoboDQqd9D8",
@@ -4175,6 +4723,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [5, 9, 13, 16, 0, 10, 13, 15, 0],
+    tiers: [0.3, 0.25, 0.25, 0.1, 0, 0.25, 0.25, 0.35, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4183,6 +4732,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [3, 7, 11, 14, 17, 7, 11, 14, 16],
+    tiers: [0.6, 0.9, 0.8, 0.85, 0.4, 0.8, 0.6, 0.65, 0.6],
   },
   {
     song_id: "dDQqqIQlDQ9POd90OPl9Dd1i106odDl0",
@@ -4190,6 +4740,247 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 15,
     ratings: [4, 8, 12, 15, 17, 8, 12, 15, 17],
+    tiers: [0.95, 0.95, 0.95, 0.9, 0.6, 0.95, 0.95, 0.8, 0.35],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000000",
+    song_name: "ブタサンダー",
+    alphabet: "は",
+    version_num: 20,
+    ratings: [1, 3, 9, 13, 0, 3, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000001",
+    song_name: "人マニア",
+    alphabet: "は",
+    version_num: 20,
+    ratings: [2, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000002",
+    song_name: "強風オールバック",
+    alphabet: "た",
+    version_num: 20,
+    ratings: [1, 4, 9, 12, 0, 4, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000003",
+    song_name: "きゅうくらりん",
+    alphabet: "か",
+    version_num: 20,
+    ratings: [3, 5, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000004",
+    song_name: "寝起きヤシの木",
+    alphabet: "な",
+    version_num: 20,
+    ratings: [2, 4, 8, 13, 0, 4, 8, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000005",
+    song_name: "粛聖!! ロリ神レクイエム☆",
+    alphabet: "さ",
+    version_num: 20,
+    ratings: [2, 4, 9, 14, 12, 5, 10, 14, 12],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000006",
+    song_name: "サインはB -New Arrange Ver.-",
+    alphabet: "さ",
+    version_num: 20,
+    ratings: [2, 4, 8, 12, 0, 4, 8, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000007",
+    song_name: "匿名M",
+    alphabet: "た",
+    version_num: 20,
+    ratings: [1, 4, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000008",
+    song_name: "ヴァンパイア",
+    alphabet: "あ",
+    version_num: 20,
+    ratings: [2, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000009",
+    song_name: "Arcadia",
+    alphabet: "A",
+    version_num: 20,
+    ratings: [3, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000010",
+    song_name: "DanRevoAthlon",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [1, 4, 8, 12, 0, 4, 8, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000011",
+    song_name: "Don't Stop The HYPERCORE",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000012",
+    song_name: "The Ashes of Boreas",
+    alphabet: "T",
+    version_num: 20,
+    ratings: [2, 4, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000013",
+    song_name: "バッドユース・アウェイク",
+    alphabet: "は",
+    version_num: 20,
+    ratings: [2, 5, 8, 13, 0, 4, 8, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000014",
+    song_name: "Dozen Flower",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [3, 7, 9, 12, 0, 7, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000015",
+    song_name: "Heavy Rain",
+    alphabet: "H",
+    version_num: 20,
+    ratings: [4, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000016",
+    song_name: "Origin Pulsation",
+    alphabet: "O",
+    version_num: 20,
+    ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000017",
+    song_name: "Sweetin' Fruity",
+    alphabet: "S",
+    version_num: 20,
+    ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000018",
+    song_name: "The 88's Instigation",
+    alphabet: "T",
+    version_num: 20,
+    ratings: [1, 4, 8, 13, 0, 4, 8, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000019",
+    song_name: "Happy Dance Day 2 U",
+    alphabet: "H",
+    version_num: 20,
+    ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000020",
+    song_name: "Move On",
+    alphabet: "M",
+    version_num: 20,
+    ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000021",
+    song_name: "Niji no Sekai",
+    alphabet: "N",
+    version_num: 20,
+    ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000022",
+    song_name: "きらきら☆ユニバース",
+    alphabet: "か",
+    version_num: 20,
+    ratings: [2, 8, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000023",
+    song_name: "踊れ！！バーチャルアニマル！！",
+    alphabet: "あ",
+    version_num: 20,
+    ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000024",
+    song_name: "Gravity Collapse",
+    alphabet: "G",
+    version_num: 20,
+    ratings: [3, 6, 10, 13, 15, 6, 10, 13, 15],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000025",
+    song_name: "HyperNOAH",
+    alphabet: "H",
+    version_num: 20,
+    ratings: [3, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000026",
+    song_name: "Ødyssey",
+    alphabet: "O",
+    version_num: 20,
+    ratings: [3, 7, 12, 14, 16, 7, 12, 14, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000027",
+    song_name: "Roche Limit",
+    alphabet: "R",
+    version_num: 20,
+    ratings: [3, 7, 11, 14, 15, 7, 11, 14, 15],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000028",
+    song_name: "WONDER COASTER",
+    alphabet: "W",
+    version_num: 20,
+    ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "DDRWORLD000000000000000000000029",
+    song_name: "極地大衝撃",
+    alphabet: "か",
+    version_num: 20,
+    ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "di088lOPlqQ1OoQIbilI1P0q119i8o9O",
@@ -4200,6 +4991,17 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 13,
     ratings: [9, 11, 13, 15, 0, 10, 12, 15, 0],
+    tiers: [0.9, 0.95, 0.95, 0.9, 0, 0.9, 0.9, 0.8, 0],
+  },
+  {
+    song_id: "Di0ODIlddo8d90oo09qqd98QObQP1llI",
+    song_name: "[ ]DENTITY",
+    alternate_name: "IDENTITY",
+    alphabet: "#",
+    version_num: 19,
+    ratings: [4, 8, 14, 17, 0, 8, 14, 17, 0],
+    tiers: [0.55, 0.4, 0.65, 0.65, 0, 0.3, 0.4, 0.35, 0],
+    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
     song_id: "dI1Ii100bQ6006l89diod0d116diOl8D",
@@ -4207,6 +5009,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.45, 0.35, 0.2, 0.35, 0, 0.35, 0.15, 0.25, 0],
   },
   {
     song_id: "Di8lP6PobQ6l8do0llO9IIqQ6iqqiqDo",
@@ -4214,6 +5017,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 18,
     ratings: [3, 7, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.4, 0.3, 0.55, 0.4, 0, 0.45, 0.45, 0.45, 0],
   },
   {
     song_id: "DI91q6O00bliOldqO6DqDdqib86iqPPP",
@@ -4221,6 +5025,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 13,
     ratings: [4, 8, 12, 14, 0, 8, 12, 14, 0],
+    tiers: [0.7, 0.45, 0.45, 0.55, 0, 0.5, 0.4, 0.35, 0],
   },
   {
     song_id: "di9ddbd1lb80q98ODdod0ODQ0q6PdQP1",
@@ -4228,6 +5033,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 3,
     ratings: [3, 5, 7, 10, 0, 5, 7, 10, 0],
+    tiers: [0.35, 0.45, 0.5, 0.45, 0, 0.55, 0.7, 0.55, 0],
   },
   {
     song_id: "DibOOIOD1id66O0DqOQ61O6I9bIIQQ0q",
@@ -4235,6 +5041,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 14,
     ratings: [3, 6, 9, 12, 13, 6, 9, 12, 13],
+    tiers: [0.15, 0.25, 0.45, 0.35, 0.65, 0.35, 0.5, 0.5, 0.7],
   },
   {
     song_id: "dIbPlPdo09i8oOlOQ1OOq166Q8iP8Oqi",
@@ -4242,6 +5049,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 18,
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.35, 0.3, 0.4, 0.2, 0, 0.3, 0.3, 0.3, 0],
   },
   {
     song_id: "DibQ8O0bIodbdQo8D681qlqiDqllDPql",
@@ -4249,6 +5057,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 9,
     ratings: [3, 4, 8, 9, 0, 4, 8, 9, 0],
+    tiers: [0.35, 0.45, 0.35, 0.25, 0, 0.4, 0.4, 0.45, 0],
   },
   {
     song_id: "DID6l8bbD0D6661lPiP6QIQ1dPbb010d",
@@ -4256,6 +5065,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [2, 6, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.3, 0.4, 0.35, 0.3, 0, 0.4, 0.3, 0.35, 0],
   },
   {
     song_id: "DIDd9l0dbi1QdQ89I6Do9bolDqdb1dPO",
@@ -4264,6 +5074,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [6, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.8, 0.9, 0.85, 0.6, 0, 0.8, 0.75, 0.3, 0],
   },
   {
     song_id: "dIdDQD1Q8oPQ90Q1DPbiQI661qD9oi6I",
@@ -4271,6 +5082,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 17,
     ratings: [4, 8, 12, 16, 17, 8, 12, 16, 17],
+    tiers: [0.1, 0, 0.15, 0.15, 0.55, 0, 0.15, 0.25, 0.65],
   },
   {
     song_id: "diDO6qoqo9li6qDdidDiqO9bi8lOP8ib",
@@ -4279,6 +5091,18 @@ export const ALL_SONG_DATA = [
     alphabet: "Q",
     version_num: 14,
     ratings: [3, 5, 8, 12, 0, 5, 8, 11, 0],
+    tiers: [0.25, 0.55, 0.55, 0.55, 0, 0.45, 0.65, 0.6, 0],
+  },
+  {
+    song_id: "dIiD86llO8biiDollQ1ioIoQl6iQ8dbQ",
+    song_name: "輪廻の鴉",
+    searchable_name: "りんねのからす",
+    romanized_name: "Rinne no Karasu",
+    alphabet: "ら",
+    version_num: 19,
+    ratings: [3, 8, 12, 14, 0, 8, 12, 15, 0],
+    tiers: [0.2, 0.3, 0.1, 0.5, 0, 0.25, 0.05, 0.3, 0],
+    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
     song_id: "DIiQbd09D0PoIiPl9iP1q8qldOOqol8i",
@@ -4289,6 +5113,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [6, 9, 12, 15, 18, 9, 12, 15, 18],
+    tiers: [0.65, 0.7, 0.5, 0.45, 0.3, 0.65, 0.55, 0.55, 0.3],
   },
   {
     song_id: "DIoP0QD6i8PoQOo6DIdb1o19iqb10qQO",
@@ -4296,6 +5121,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [1, 4, 9, 12, 0, 3, 8, 11, 0],
+    tiers: [0.4, 0.4, 0.3, 0.6, 0, 0.35, 0.2, 0.6, 0],
   },
   {
     song_id: "diPbi6I8O1lQ1b9lO0q8IoqDqbD9P6dP",
@@ -4305,6 +5131,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 19,
     ratings: [2, 5, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.05, 0.05, 0.2, 0.2, 0, 0.05, 0.05, 0.2, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -4314,6 +5141,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 19,
     ratings: [3, 6, 12, 17, 0, 6, 12, 17, 0],
+    tiers: [0.15, 0.25, 0.2, 0.25, 0, 0.25, 0.1, 0.1, 0],
     lock_types: [220, 220, 220, 220, 0, 220, 220, 220, 0],
   },
   {
@@ -4323,6 +5151,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 11,
     ratings: [5, 8, 10, 13, 13, 8, 12, 13, 13],
+    tiers: [0.8, 0.75, 0.8, 0.65, 0.9, 0.9, 0.7, 0.75, 0.8],
   },
   {
     song_id: "DiqobPO1iliqP6DbQiDodPIPDiQO96dl",
@@ -4330,6 +5159,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 13,
     ratings: [3, 5, 9, 12, 0, 5, 8, 13, 0],
+    tiers: [0.15, 0.25, 0.35, 0.6, 0, 0.25, 0.55, 0.3, 0],
   },
   {
     song_id: "Dl690bPIlIq0Ol1PdPbb9QO0I66lIqO0",
@@ -4339,6 +5169,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 14,
     ratings: [3, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.3, 0.45, 0.6, 0.55, 0, 0.5, 0.85, 0.75, 0],
   },
   {
     song_id: "Dl69Pb9OQDlbOi80OQdIObiQ1Q08Dlqo",
@@ -4349,6 +5180,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 8,
     ratings: [4, 5, 8, 12, 0, 5, 9, 13, 0],
+    tiers: [0.8, 0.9, 0.95, 0.85, 0, 0.85, 0.95, 0.95, 0],
   },
   {
     song_id: "Dl91ldlb8PODoO96OI801DP0PPl8Plqi",
@@ -4356,6 +5188,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 18,
     ratings: [4, 8, 11, 14, 0, 8, 11, 14, 0],
+    tiers: [0.4, 0.3, 0.25, 0.05, 0, 0.25, 0.2, 0.05, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4365,6 +5198,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 8, 13, 0, 5, 8, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "Dlq6qdP1bOPDObbbQQ6b8iPbd1ODq69P",
@@ -4374,14 +5208,16 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 17,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.25, 0.25, 0.4, 0.35, 0, 0.3, 0.4, 0.35, 0],
   },
   {
     song_id: "dlq91b19ld10IdIqQ9q99O8QDOOi18dq",
     song_name: "BREAKING THE FUTURE",
     alphabet: "B",
     version_num: 19,
-    ratings: [5, 10, 14, 17, 19, 10, 14, 17, 19],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
+    ratings: [6, 10, 15, 18, 19, 10, 15, 18, 19],
+    tiers: [0.65, 0.85, 0.85, 0.95, 0.4, 0.75, 0.8, 0.9, 0.5],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "dlqPb1iqPo81qI89816QIoi01b1b0P06",
@@ -4391,6 +5227,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [2, 6, 10, 15, 0, 7, 10, 14, 0],
+    tiers: [0.5, 0.4, 0.45, 0.55, 0, 0.25, 0.35, 0.65, 0],
   },
   {
     song_id: "Do06Q18olQo0bloll9919olDQ8lDoqbd",
@@ -4400,6 +5237,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 19,
     ratings: [2, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.2, 0.05, 0.3, 0.15, 0, 0, 0.05, 0.35, 0],
   },
   {
     song_id: "Do6oPoo1QbOPo9DIii0Q0180l8b1Doqi",
@@ -4407,6 +5245,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [2, 4, 9, 12, 15, 6, 8, 12, 14],
+    tiers: [0.5, 0.35, 0.75, 0.75, 0.3, 0.65, 0.75, 0.65, 0.25],
   },
   {
     song_id: "dO9b8Id9QQ8DOO69Q0lqi6O9QlDPIPl9",
@@ -4414,6 +5253,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 13,
     ratings: [3, 6, 9, 13, 15, 6, 9, 13, 15],
+    tiers: [0.25, 0.25, 0.3, 0.4, 0.5, 0.3, 0.4, 0.55, 0.55],
   },
   {
     song_id: "dOb880lOloIIod00PQ1iQOQqlOOQ0Ql0",
@@ -4421,13 +5261,15 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 16,
     ratings: [7, 9, 13, 17, 0, 10, 14, 17, 0],
+    tiers: [0.45, 0.65, 0.45, 0.1, 0, 0.6, 0.4, 0.35, 0],
   },
   {
     song_id: "DObld6O6OdblOo1di9dlP86DO909O6qI",
     song_name: "cachaca",
     alphabet: "C",
     version_num: 9,
-    ratings: [1, 3, 7, 12, 0, 4, 9, 11, 0],
+    ratings: [2, 3, 7, 12, 0, 4, 9, 11, 0],
+    tiers: [0.6, 0.5, 0.55, 0.7, 0, 0.5, 0.55, 0.75, 0],
   },
   {
     song_id: "dOblQOoDb96l00dqPlIb9DQl86q9PboI",
@@ -4439,6 +5281,7 @@ export const ALL_SONG_DATA = [
     version_num: 15,
     deleted: 1,
     ratings: [2, 5, 8, 11, 13, 3, 7, 12, 13],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "DodQ1I1DiPIqDQP0PqO6PIQ1iPQd6O8d",
@@ -4446,6 +5289,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 18,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.3, 0.4, 0.3, 0.6, 0, 0.4, 0.3, 0.35, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -4456,6 +5300,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 5,
     ratings: [3, 4, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.2, 0.3, 0, 0.05, 0, 0.25, 0.2, 0.45, 0],
   },
   {
     song_id: "DOOb99dlP8PdIbDOQIqoqll60Iob9189",
@@ -4463,6 +5308,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 7,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 12],
+    tiers: [0, 0, 0, 0, 0.5, 0, 0, 0, 0.45],
   },
   {
     song_id: "Dooii0960OioP6Q1l0qi68Q8Dbd9OO91",
@@ -4472,6 +5318,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 18,
     ratings: [3, 7, 11, 15, 0, 7, 11, 16, 0],
+    tiers: [0.3, 0.25, 0.2, 0.15, 0, 0.3, 0.2, 0.1, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4481,7 +5328,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "RPG",
     alphabet: "ら",
     version_num: 16,
-    ratings: [2, 5, 10, 14, 0, 5, 10, 14, 0],
+    ratings: [3, 5, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.4, 0.2, 0.2, 0.1, 0, 0.25, 0.15, 0.1, 0],
   },
   {
     song_id: "doqDbod0d81qP6PoPiP8b0P00PD8oboD",
@@ -4489,6 +5337,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 9,
     ratings: [3, 4, 6, 8, 0, 4, 6, 8, 0],
+    tiers: [0.3, 0.35, 0.45, 0.2, 0, 0.35, 0.6, 0.25, 0],
   },
   {
     song_id: "doQI0i6lQbOo66DOi6olPqOPqIqO8Qd1",
@@ -4496,6 +5345,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 8,
     ratings: [3, 3, 4, 9, 0, 4, 6, 9, 0],
+    tiers: [0.25, 0.4, 0.45, 0.25, 0, 0.25, 0.55, 0.45, 0],
   },
   {
     song_id: "DoQi6oPoD9DlO0898oo0ol0qoo6891Db",
@@ -4505,6 +5355,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [4, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.4, 0.35, 0.35, 0.25, 0, 0.5, 0.4, 0.4, 0],
   },
   {
     song_id: "DOqPd1Iid6oObd8i96I9oo8obbODb96o",
@@ -4513,6 +5364,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 5,
     ratings: [4, 6, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.2, 0.3, 0.3, 0.45, 0, 0.35, 0.3, 0.05, 0],
   },
   {
     song_id: "dP88i6I9b9QPQDPPO90POOIo0Il6QloI",
@@ -4522,6 +5374,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [3, 6, 9, 11, 0, 6, 10, 12, 0],
+    tiers: [0.4, 0.6, 0.5, 0.55, 0, 0.7, 0.5, 0.35, 0],
   },
   {
     song_id: "dPb99qdqOQ1ioQ9Dqb1I9Q1bI0l0POII",
@@ -4529,6 +5382,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 18,
     ratings: [2, 6, 11, 14, 0, 8, 11, 14, 0],
+    tiers: [0.25, 0.25, 0.7, 0.2, 0, 0.35, 0.7, 0.25, 0],
   },
   {
     song_id: "dPbOQdio1OI8OOI6OlOIqI1Ii18i8ID0",
@@ -4536,6 +5390,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.55, 0.55, 0.7, 0.55, 0, 0.5, 0.65, 0.7, 0],
   },
   {
     song_id: "dPdO9OP6616o99l99qiI9DddQdD9D80b",
@@ -4543,6 +5398,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 11,
     ratings: [3, 4, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.05, 0.15, 0.45, 0.35, 0, 0.15, 0.4, 0.25, 0],
   },
   {
     song_id: "dPI9loII89Q6P6iD6Ioo1iiI880DI1Dd",
@@ -4553,6 +5409,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 19,
     ratings: [4, 10, 14, 17, 18, 9, 13, 17, 18],
+    tiers: [0.85, 0.8, 0.5, 0.5, 0.9, 0.8, 0.55, 0.35, 0.8],
   },
   {
     song_id: "DPo0bi8Dibli118P6D981oQIPPQI01lo",
@@ -4561,6 +5418,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 15,
     ratings: [3, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.25, 0.25, 0.25, 0.1, 0, 0.3, 0.25, 0.2, 0],
   },
   {
     song_id: "DPQo8Q0l9D8IPiDiq11l8OI6i11OOb6O",
@@ -4568,7 +5426,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "パラエボ",
     alphabet: "P",
     version_num: 4,
-    ratings: [5, 9, 10, 12, 0, 6, 10, 13, 0],
+    ratings: [5, 9, 10, 12, 0, 7, 10, 13, 0],
+    tiers: [0.25, 0.3, 0.35, 0.3, 0, 0.55, 0.6, 0.35, 0],
   },
   {
     song_id: "Dq0Iio09Pb9iD0lbb0I0qd8Q8i10II09",
@@ -4576,7 +5435,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ゲノムスクリーム",
     alphabet: "G",
     version_num: 2,
-    ratings: [3, 6, 8, 11, 0, 9, 11, 12, 0],
+    ratings: [3, 7, 8, 11, 0, 9, 11, 12, 0],
+    tiers: [0.4, 0.45, 0.45, 0.3, 0, 0.6, 0.5, 0.6, 0],
   },
   {
     song_id: "dq190Il9iO1bD698ll6ddObIlqdIQ1O9",
@@ -4584,6 +5444,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 2,
     ratings: [3, 7, 8, 11, 0, 8, 9, 10, 0],
+    tiers: [0.2, 0.45, 0.5, 0.25, 0, 0.5, 0.55, 0.3, 0],
   },
   {
     song_id: "DQ1dqP1IoiD11QOPiI0Q8PqO0Qddo6q6",
@@ -4591,7 +5452,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Innocent Bible",
     alphabet: "あ",
     version_num: 18,
-    ratings: [1, 4, 7, 10, 0, 4, 7, 10, 0],
+    ratings: [2, 4, 7, 10, 0, 4, 7, 10, 0],
+    tiers: [0.65, 0.7, 0.7, 0.55, 0, 0.85, 0.7, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4600,6 +5462,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 8,
     ratings: [4, 4, 9, 10, 0, 5, 8, 10, 0],
+    tiers: [0.55, 0.65, 0.55, 0.55, 0, 0.5, 0.65, 0.35, 0],
   },
   {
     song_id: "dQ69Oqd0Do8Dodd6bQD9l16Olo9P01DQ",
@@ -4608,6 +5471,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 14],
+    tiers: [0, 0, 0, 0, 0.45, 0, 0, 0, 0.65],
   },
   {
     song_id: "dq6b0b6OD9DbDPQOO608oDo8Q80ODIqO",
@@ -4615,6 +5479,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 18,
     ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.2, 0.2, 0.35, 0.3, 0, 0.2, 0.2, 0.2, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -4623,6 +5488,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 16,
     ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.15, 0.35, 0.45, 0.4, 0, 0.3, 0.45, 0.45, 0],
   },
   {
     song_id: "Dqb08DI0Ii8ilD0lioi9o9D1dodl6dO0",
@@ -4630,6 +5496,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [4, 7, 11, 15, 0, 7, 12, 15, 0],
+    tiers: [0.35, 0.45, 0.6, 0.6, 0, 0.4, 0.55, 0.5, 0],
   },
   {
     song_id: "dqb09QD6o0O8PooiqbqQOdqQ1l80o691",
@@ -4637,13 +5504,15 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 16,
     ratings: [5, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.35, 0.4, 0.3, 0, 0, 0.35, 0.5, 0.4, 0],
   },
   {
     song_id: "dqbd8PD01bI8qlQ1QQ9iP896P88D1O1o",
     song_name: "Heavens and the Earth",
     alphabet: "H",
     version_num: 19,
-    ratings: [1, 5, 7, 11, 0, 5, 8, 11, 0],
+    ratings: [2, 5, 7, 11, 0, 5, 8, 11, 0],
+    tiers: [0.25, 0.3, 0.3, 0.35, 0, 0.35, 0.15, 0.25, 0],
   },
   {
     song_id: "dQbolPiDiiObioli96DlOo9OlP9DoDIi",
@@ -4651,6 +5520,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 18,
     ratings: [2, 6, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.6, 0.5, 0.2, 0.5, 0, 0.55, 0.2, 0.35, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4659,6 +5529,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 11,
     ratings: [3, 5, 8, 10, 0, 6, 8, 10, 0],
+    tiers: [0.2, 0.35, 0.55, 0.4, 0, 0.3, 0.5, 0.45, 0],
   },
   {
     song_id: "dQdo08Qb6bOPIl8686DPDd60I1oqidIP",
@@ -4666,6 +5537,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [3, 8, 11, 15, 0, 8, 11, 15, 0],
+    tiers: [0.35, 0.35, 0.05, 0.3, 0, 0.15, 0, 0.4, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -4674,6 +5546,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 10,
     ratings: [3, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.5, 0.45, 0.3, 0.25, 0, 0.25, 0.4, 0.25, 0],
   },
   {
     song_id: "DqioIqbiolQ0lQlo19idi96Obi6DDl9D",
@@ -4682,6 +5555,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [2, 5, 8, 13, 0, 5, 8, 13, 0],
+    tiers: [0.05, 0, 0.1, 0.15, 0, 0, 0, 0.15, 0],
   },
   {
     song_id: "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l",
@@ -4690,6 +5564,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 2,
     ratings: [3, 5, 6, 9, 0, 6, 8, 8, 0],
+    tiers: [0.35, 0.4, 0.45, 0.15, 0, 0.6, 0.5, 0.3, 0],
   },
   {
     song_id: "DQO6qbiP6dldo6IIqlob9i8dqiqOio6o",
@@ -4699,6 +5574,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 9,
     ratings: [4, 4, 8, 11, 0, 4, 8, 11, 0],
+    tiers: [0.3, 0.4, 0.55, 0.35, 0, 0.35, 0.6, 0.55, 0],
   },
   {
     song_id: "dQODIo01o98oPll086Qdol8bq9QP8d61",
@@ -4706,6 +5582,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 18,
     ratings: [6, 11, 14, 17, 0, 11, 14, 17, 0],
+    tiers: [0.75, 0.8, 0.9, 0.6, 0, 0.65, 0.8, 0.5, 0],
   },
   {
     song_id: "dqOoPll1qlDdo6Pd6O0DPPO6l16OIdD1",
@@ -4715,6 +5592,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 16,
     ratings: [2, 5, 8, 12, 0, 5, 8, 11, 0],
+    tiers: [0.55, 0.45, 0.65, 0.3, 0, 0.25, 0.55, 0.25, 0],
   },
   {
     song_id: "DqoQD9iDodq9Iq108l119OQ1olOPi6D1",
@@ -4722,6 +5600,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [1, 4, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.05, 0.2, 0.45, 0.4, 0, 0.05, 0.35, 0.25, 0],
   },
   {
     song_id: "dQoqo68881IiO9i00bP0q1lOD6i1PdD8",
@@ -4729,6 +5608,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 12,
     ratings: [2, 5, 7, 9, 12, 5, 7, 10, 12],
+    tiers: [0.25, 0.25, 0.65, 0.55, 0.25, 0.35, 0.45, 0.5, 0.55],
   },
   {
     song_id: "dqP6loDiD0l6b0I6i0iO90i6D0O68qO1",
@@ -4738,6 +5618,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 19,
     ratings: [2, 6, 12, 15, 0, 6, 12, 15, 0],
+    tiers: [0.2, 0.1, 0.25, 0.45, 0, 0.15, 0.3, 0.45, 0],
   },
   {
     song_id: "dqPDQ8Pb68iib8bIIPld10Q0oD8l600o",
@@ -4745,6 +5626,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 12,
     ratings: [3, 7, 10, 12, 11, 7, 11, 13, 12],
+    tiers: [0.5, 0.5, 0.45, 0.35, 0.55, 0.6, 0.35, 0.45, 0.5],
   },
   {
     song_id: "dQPPd10QO9d8IiOiIi8iDD1Qdq8lQli0",
@@ -4753,6 +5635,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 13,
     ratings: [4, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.2, 0.35, 0.3, 0.2, 0, 0.5, 0.3, 0.2, 0],
   },
   {
     song_id: "dQQ6dQb1dQDd8bPqIPI0blb11ioq1QQo",
@@ -4762,6 +5645,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [1, 5, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.2, 0.1, 0.3, 0.35, 0, 0.05, 0.2, 0.25, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -4770,6 +5654,15 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 18,
     ratings: [4, 8, 12, 17, 18, 8, 12, 16, 18],
+    tiers: [0.25, 0.15, 0.2, 0, 0.7, 0.05, 0.25, 0.45, 0.9],
+  },
+  {
+    song_id: "DQqO696iPldD6olDOOdP09l08ll989l8",
+    song_name: "My Drama",
+    alphabet: "M",
+    version_num: 19,
+    ratings: [7, 10, 13, 15, 0, 10, 13, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "I0091lboOD1Dii10dQ0qbDqil69PQ0io",
@@ -4778,6 +5671,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 19,
     ratings: [3, 6, 10, 13, 17, 6, 10, 13, 17],
+    tiers: [0.25, 0.2, 0.2, 0.1, 0.35, 0.2, 0.05, 0.05, 0.55],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -4785,7 +5679,8 @@ export const ALL_SONG_DATA = [
     song_name: "HYPER EUROBEAT",
     alphabet: "H",
     version_num: 8,
-    ratings: [3, 4, 6, 10, 0, 6, 9, 11, 0],
+    ratings: [3, 4, 7, 10, 0, 6, 9, 11, 0],
+    tiers: [0.25, 0.4, 0.45, 0.5, 0, 0.5, 0.45, 0.5, 0],
   },
   {
     song_id: "i0b0118q8D1QlQbIbli0P0IQ0QP08QdO",
@@ -4794,6 +5689,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [6, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.85, 0.95, 0.85, 0.7, 0, 0.8, 0.75, 0.35, 0],
   },
   {
     song_id: "I0b6lIP691dOOI8PqDDlbPid9iO8o0lO",
@@ -4801,13 +5697,15 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 8,
     ratings: [3, 5, 7, 10, 0, 4, 5, 10, 0],
+    tiers: [0.15, 0.1, 0.2, 0.25, 0, 0.1, 0.25, 0.25, 0],
   },
   {
     song_id: "i0bdP6II6dqb6lbQQ9q9OQq68i1qPddO",
     song_name: "CELEBRATE NITE",
     alphabet: "C",
     version_num: 4,
-    ratings: [3, 6, 8, 11, 0, 6, 8, 10, 0],
+    ratings: [3, 6, 8, 11, 0, 7, 8, 10, 0],
+    tiers: [0.2, 0.25, 0.45, 0.3, 0, 0.4, 0.5, 0.45, 0],
   },
   {
     song_id: "I0DDidl0PIo6bO6o8I08Q1Pq89IdP6Pb",
@@ -4815,6 +5713,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [3, 6, 8, 12, 0, 6, 8, 12, 0],
+    tiers: [0.2, 0.2, 0.25, 0.25, 0, 0.1, 0.2, 0.15, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -4824,6 +5723,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 13,
     ratings: [3, 6, 12, 15, 18, 7, 12, 15, 18],
+    tiers: [0.4, 0.4, 0.7, 0.55, 0.2, 0.35, 0.45, 0.25, 0.3],
   },
   {
     song_id: "i0P1O6lbP1oDd6q6b08iPPoq6iPdI818",
@@ -4834,6 +5734,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 17,
     ratings: [4, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.4, 0.35, 0.45, 0.35, 0, 0.35, 0.4, 0.5, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -4843,6 +5744,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [5, 10, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.65, 0.7, 0.75, 0.7, 0, 0.6, 0.55, 0.2, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4854,23 +5756,26 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 17,
     ratings: [4, 7, 11, 15, 17, 7, 11, 15, 17],
+    tiers: [0.35, 0.25, 0.25, 0.15, 0.5, 0.4, 0.4, 0.35, 0.85],
   },
   {
     song_id: "I0Ql0Di1qD6i0Qq1ql0qPb19q0IQ6iO9",
     song_name: "FUJIMORI -祭- FESTIVAL",
     searchable_name: "FUJIMORI まつりFESTIVAL",
-    romanized_name: "FUJIMORI Matsuri FESTIVAL",
+    romanized_name: "FUJIMORI Matsuri FESTIVAL",
     alternate_name: "Fujimori Festival",
     alphabet: "F",
     version_num: 15,
     ratings: [3, 5, 9, 12, 0, 5, 8, 12, 0],
+    tiers: [0.25, 0.25, 0.35, 0.35, 0, 0.35, 0.3, 0.2, 0],
   },
   {
     song_id: "i11d86DOOdOb8Pbb1QqIilQI9Idib8PP",
     song_name: "Music In The Rhythm",
     alphabet: "M",
     version_num: 10,
-    ratings: [4, 7, 8, 11, 0, 5, 7, 12, 0],
+    ratings: [4, 7, 8, 11, 0, 5, 9, 12, 0],
+    tiers: [0.55, 0.45, 0.8, 0.7, 0, 0.7, 0.75, 0.55, 0],
   },
   {
     song_id: "I189iqQI6iPDdIDbo81b1iD6lIQiI0Po",
@@ -4878,6 +5783,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 18,
     ratings: [4, 7, 11, 15, 16, 7, 11, 15, 16],
+    tiers: [0.3, 0.3, 0.35, 0.45, 0.85, 0.25, 0.25, 0.45, 0.25],
   },
   {
     song_id: "i18OPo6l8Q6bo9q0qP6889IDqoP8O0Qq",
@@ -4885,6 +5791,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 9],
+    tiers: [0, 0, 0, 0, 0.6, 0, 0, 0, 0.8],
   },
   {
     song_id: "i19IOi90Dq90ll989iIdOP9diodqi968",
@@ -4892,6 +5799,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 14,
     ratings: [2, 4, 7, 12, 14, 4, 7, 12, 14],
+    tiers: [0.15, 0.15, 0.35, 0.45, 0.65, 0.15, 0.35, 0.4, 0.6],
   },
   {
     song_id: "I1DiOI16Id0qdlqbQ6ObPlilDP1oiI98",
@@ -4899,6 +5807,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [2, 5, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.4, 0.45, 0.55, 0.65, 0, 0.5, 0.4, 0.65, 0],
   },
   {
     song_id: "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI",
@@ -4908,6 +5817,7 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 18,
     ratings: [4, 8, 11, 14, 0, 8, 11, 14, 0],
+    tiers: [0.35, 0.25, 0.3, 0.2, 0, 0.15, 0.3, 0.45, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4916,7 +5826,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [4, 8, 11, 14, 0, 8, 11, 14, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.25, 0.35, 0.3, 0.45, 0, 0.1, 0.15, 0.3, 0],
   },
   {
     song_id: "i1ol0PO8QbQD0q0oDI6qq0IO68868bP8",
@@ -4924,13 +5834,15 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 11,
     ratings: [3, 4, 6, 10, 0, 5, 6, 8, 0],
+    tiers: [0.5, 0.65, 0.65, 0.8, 0, 0.45, 0.9, 0.75, 0],
   },
   {
     song_id: "i1Q080DDQD81l8o0109Q6blq0oo8o69q",
     song_name: "Taking It To The Sky",
     alphabet: "T",
     version_num: 12,
-    ratings: [1, 3, 5, 8, 0, 4, 6, 8, 0],
+    ratings: [2, 4, 6, 9, 0, 5, 7, 10, 0],
+    tiers: [0.2, 0.45, 0.45, 0.4, 0, 0.45, 0.5, 0.45, 0],
   },
   {
     song_id: "I1qd16dPdqPi96ql0lP10OQDbo11D89P",
@@ -4940,6 +5852,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [3, 7, 9, 12, 0, 7, 9, 13, 0],
+    tiers: [0.15, 0.1, 0.25, 0.25, 0, 0.2, 0.35, 0.3, 0],
   },
   {
     song_id: "I606oqOODOdQoP0IQOdP6b0DPdb86ddO",
@@ -4949,6 +5862,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 18,
     ratings: [4, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.6, 0.6, 0.65, 0.4, 0, 0.65, 0.7, 0.45, 0],
   },
   {
     song_id: "I61ioI01IOPDPbP1OO0l98PD0iDbid0D",
@@ -4956,6 +5870,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Z",
     version_num: 16,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.3, 0.25, 0.5, 0.2, 0, 0.25, 0.45, 0.5, 0],
   },
   {
     song_id: "i66lIl9D60DPq0dQ0O9666ID8bPlID9i",
@@ -4963,6 +5878,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [3, 4, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.3, 0.55, 0.5, 0.65, 0, 0.5, 0.35, 0.1, 0],
   },
   {
     song_id: "i6bIQ6D0P09olqbOiP8I919006DdII1P",
@@ -4970,6 +5886,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 19,
     ratings: [3, 7, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.1, 0.3, 0.5, 0.5, 0, 0.5, 0.55, 0, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -4978,6 +5895,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 18,
     ratings: [5, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.55, 0.45, 0.6, 0.4, 0, 0.35, 0.5, 0.7, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -4988,7 +5906,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Touhouhimawari",
     alphabet: "は",
     version_num: 16,
-    ratings: [3, 5, 10, 13, 0, 5, 11, 13, 0],
+    ratings: [4, 5, 10, 13, 0, 5, 11, 13, 0],
+    tiers: [0.55, 0.45, 0.6, 0.3, 0, 0.35, 0.4, 0.5, 0],
   },
   {
     song_id: "I6DdI9O1Oo8O9lo1D08ldOllo0o166I8",
@@ -4996,6 +5915,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 18,
     ratings: [5, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.25, 0.45, 0.35, 0.25, 0, 0.35, 0.3, 0.8, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5004,7 +5924,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 13,
     ratings: [4, 7, 11, 15, 18, 8, 12, 16, 18],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    tiers: [0.25, 0.1, 0.35, 0.35, 0.1, 0.1, 0.45, 0.25, 0.5],
   },
   {
     song_id: "I6oq8ODq6DOOiqod1iI1109DO1II9iiO",
@@ -5013,6 +5933,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [2, 7, 12, 15, 18, 7, 12, 15, 18],
+    tiers: [0.65, 0.6, 0.9, 0.8, 0.7, 0.55, 0.85, 0.7, 0.7],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -5021,6 +5942,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 18,
     ratings: [4, 9, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.3, 0.05, 0.1, 0.4, 0, 0.05, 0.05, 0.15, 0],
   },
   {
     song_id: "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8",
@@ -5028,6 +5950,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [4, 5, 4, 8, 0, 4, 6, 8, 0],
+    tiers: [0.2, 0.3, 0.45, 0.3, 0, 0.3, 0.75, 0.3, 0],
   },
   {
     song_id: "I6q1PQ1D1Dblli8Iilo9ood8DbbQlb8O",
@@ -5039,6 +5962,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [2, 4, 8, 12, 0, 4, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "I6qdO8Di181P6Q9Ooq0d8d0DOdq1dOOQ",
@@ -5046,6 +5970,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 16,
     ratings: [3, 6, 12, 15, 16, 6, 12, 15, 16],
+    tiers: [0.45, 0.5, 0.55, 0.7, 0.65, 0.45, 0.5, 0.8, 0.65],
   },
   {
     song_id: "I81iP0Io9o1l9li0Iq99P1091O8DoDOd",
@@ -5053,7 +5978,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "腰",
     alphabet: "W",
     version_num: 14,
-    ratings: [3, 6, 9, 11, 13, 6, 9, 11, 13],
+    ratings: [3, 7, 9, 11, 13, 6, 9, 11, 13],
+    tiers: [0.1, 0.35, 0.4, 0.35, 0.4, 0.25, 0.35, 0.5, 0.55],
   },
   {
     song_id: "i86bPlP6ioldqb1OqPqidboqqQ8dQqdl",
@@ -5061,6 +5987,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [2, 5, 8, 10, 10, 5, 8, 10, 11],
+    tiers: [0.35, 0.15, 0.3, 0.25, 0.75, 0.15, 0.35, 0.35, 0.4],
   },
   {
     song_id: "I86OI9lQ1qQ66dPDlddo8PoPo01PO66i",
@@ -5070,6 +5997,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 7, 12, 15, 0],
+    tiers: [0.6, 0.65, 0.45, 0.75, 0, 0.5, 0.3, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5078,6 +6006,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 7,
     ratings: [3, 4, 8, 13, 0, 4, 7, 12, 0],
+    tiers: [0.4, 0.5, 0.85, 0.7, 0, 0.4, 0.95, 0.95, 0],
   },
   {
     song_id: "i89IO1PPOl0boOol0bQI19Q9liQ0l6O1",
@@ -5087,13 +6016,15 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 14,
     ratings: [2, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.55, 0.45, 0.5, 0.55, 0, 0.5, 0.7, 0.55, 0],
   },
   {
     song_id: "I8b69IdbID0Di06ldo6o1lb1IdI89Iqo",
     song_name: "dirty digital",
     alphabet: "D",
     version_num: 12,
-    ratings: [1, 4, 7, 11, 13, 4, 7, 11, 13],
+    ratings: [2, 5, 8, 11, 13, 5, 8, 11, 13],
+    tiers: [0.3, 0.35, 0.6, 0.4, 0.6, 0.35, 0.6, 0.55, 0.55],
   },
   {
     song_id: "I8bQ8ilD9l1Qi9Q9iI0q6qqqiolo01QP",
@@ -5102,6 +6033,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 14],
+    tiers: [0, 0, 0, 0, 0.5, 0, 0, 0, 0.7],
   },
   {
     song_id: "I8diIQiPO90qDD60oQ0o669I99dI69DD",
@@ -5111,6 +6043,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 14,
     ratings: [4, 7, 9, 12, 0, 7, 9, 11, 0],
+    tiers: [0.85, 0.85, 0.85, 0.65, 0, 0.85, 0.85, 0.8, 0],
   },
   {
     song_id: "i8II16blIIbQQd196b616OPbPO910oi9",
@@ -5119,6 +6052,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 3,
     ratings: [4, 9, 10, 11, 0, 10, 11, 12, 0],
+    tiers: [0.6, 0.7, 0.75, 0.65, 0, 0.8, 0.7, 0.7, 0],
   },
   {
     song_id: "i8iPdIlP1IIDib96Qq080ibq6bblQqQD",
@@ -5126,6 +6060,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 18,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.8, 0.65, 0.5, 0.5, 0, 0.6, 0.45, 0.4, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5136,6 +6071,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 8,
     ratings: [4, 4, 8, 12, 13, 5, 8, 13, 14],
+    tiers: [0.7, 0.7, 0.75, 0.45, 0.4, 0.75, 0.75, 0.6, 0.55],
   },
   {
     song_id: "i8O81i0iQdqiI8qqP0oo8IPl9IoId1bO",
@@ -5146,6 +6082,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 12,
     ratings: [2, 6, 9, 14, 0, 5, 8, 14, 0],
+    tiers: [0.55, 0.4, 0.4, 0.4, 0, 0.5, 0.45, 0.25, 0],
   },
   {
     song_id: "I8Odid0QlODlOilqdllqlQldq996QQbP",
@@ -5153,6 +6090,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 19,
     ratings: [2, 5, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.05, 0.05, 0.05, 0.55, 0, 0, 0, 0.35, 0],
   },
   {
     song_id: "I8qDQbQoiPPi9D1bdQ6iOlqb0Il9DlI0",
@@ -5162,6 +6100,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 19,
     ratings: [4, 7, 10, 12, 16, 7, 10, 12, 16],
+    tiers: [0.55, 0.7, 0.5, 0.3, 0.3, 0.75, 0.55, 0.45, 0.2],
     lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
@@ -5170,6 +6109,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 11,
     ratings: [2, 5, 8, 11, 12, 6, 7, 11, 12],
+    tiers: [0.25, 0.4, 0.6, 0.65, 0.6, 0.25, 0.75, 0.55, 0.65],
   },
   {
     song_id: "I90bd6obO890P0d1iiPD0dol8o8QloQD",
@@ -5178,6 +6118,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 16,
     ratings: [3, 6, 9, 12, 16, 5, 10, 13, 16],
+    tiers: [0.5, 0.45, 0.6, 0.5, 0.4, 0.6, 0.75, 0.55, 0.25],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -5186,6 +6127,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [2, 5, 7, 9, 14, 5, 7, 9, 14],
+    tiers: [0.5, 0.45, 0.45, 0.4, 0.4, 0.4, 0.5, 0.4, 0.6],
   },
   {
     song_id: "i916bDibPI9l869o9IIQb8DbO9bPDi6q",
@@ -5193,6 +6135,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 16,
     ratings: [5, 11, 15, 18, 18, 11, 15, 18, 18],
+    tiers: [0.4, 0.35, 0.6, 0.1, 0.3, 0.55, 0.5, 0.3, 0.8],
   },
   {
     song_id: "i91q8l0bbi8qll000ob6qDiQP891iiql",
@@ -5203,6 +6146,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [4, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.6, 0.55, 0.7, 0.5, 0, 0.65, 0.85, 0.55, 0],
   },
   {
     song_id: "I96dOqqqQIi9oiqbqDPbQ8I8PQbqOb1o",
@@ -5213,6 +6157,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 16,
     ratings: [3, 6, 8, 11, 13, 6, 10, 12, 14],
+    tiers: [0.4, 0.35, 0.4, 0.15, 0.3, 0.45, 0.35, 0.1, 0.45],
   },
   {
     song_id: "i9DPi1Do9qoIQid09o1oilodPlDP6doO",
@@ -5220,6 +6165,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 8,
     ratings: [3, 4, 6, 9, 0, 3, 6, 10, 0],
+    tiers: [0.45, 0.6, 0.6, 0.45, 0, 0.55, 0.75, 0.5, 0],
   },
   {
     song_id: "i9il1DIDl91Db0OdllOddIqO600Pl89q",
@@ -5229,6 +6175,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [3, 6, 9, 11, 0, 6, 9, 11, 0],
+    tiers: [0.3, 0.2, 0.25, 0.2, 0, 0.15, 0.25, 0.2, 0],
   },
   {
     song_id: "I9iODl9bl1d8PilOilii9Dd19PP6QI66",
@@ -5237,6 +6184,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 9,
     ratings: [4, 5, 8, 10, 0, 4, 9, 13, 0],
+    tiers: [0.4, 0.2, 0.5, 0.5, 0, 0.55, 0.55, 0.6, 0],
   },
   {
     song_id: "I9Ob6PlIiOQl6iQ6qO6QO0iQ1ld9DDO0",
@@ -5245,6 +6193,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 17,
     ratings: [3, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.4, 0.25, 0.35, 0.3, 0, 0.4, 0.25, 0.4, 0],
   },
   {
     song_id: "I9Oood9l9li0D08Q6d6DQPiIQiloidO6",
@@ -5252,6 +6201,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 18,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.6, 0.7, 0.75, 0.55, 0, 0.5, 0.65, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5260,6 +6210,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.3, 0.2, 0.25, 0.35, 0, 0.2, 0.2, 0.25, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -5268,13 +6219,15 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 11,
     ratings: [2, 4, 7, 8, 0, 3, 6, 8, 0],
+    tiers: [0.4, 0.35, 0.45, 0.45, 0, 0.25, 0.5, 0.5, 0],
   },
   {
     song_id: "i9PQoDbQI0qqd6I00d19bQo6q9PoOIbO",
     song_name: "Good Looking",
     alphabet: "G",
     version_num: 18,
-    ratings: [3, 9, 12, 15, 0, 9, 12, 15, 0],
+    ratings: [3, 9, 12, 15, 17, 9, 12, 15, 18],
+    tiers: [0.15, 0.1, 0.45, 0.5, 1, 0, 0.3, 0.3, 1],
   },
   {
     song_id: "Ib01P6O8OPl8qqQi9QO6dii18ID69I8P",
@@ -5283,6 +6236,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 16,
     ratings: [3, 7, 11, 13, 0, 7, 11, 13, 0],
+    tiers: [0.55, 0.55, 0.6, 0.55, 0, 0.55, 0.6, 0.75, 0],
   },
   {
     song_id: "ib0l98Q00O1Do9oQq1IQOOqQOOb80bIo",
@@ -5291,6 +6245,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 14,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.4, 0.45, 0.65, 0.75, 0, 0.45, 0.6, 0.8, 0],
   },
   {
     song_id: "ib19PQ61bi0lI8qi98IQ8dOqOoP91olq",
@@ -5299,6 +6254,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 4, 7, 10, 13, 4, 7, 11, 14],
+    tiers: [0.15, 0.25, 0.45, 0.25, 0.3, 0.15, 0.5, 0.15, 0.35],
   },
   {
     song_id: "ib8o1iD68il66olQ1lddIPi0lIb9dd1I",
@@ -5307,6 +6263,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 12,
     ratings: [2, 5, 8, 12, 0, 6, 7, 13, 0],
+    tiers: [0.2, 0.25, 0.45, 0.5, 0, 0.35, 0.6, 0.6, 0],
   },
   {
     song_id: "Ibd8d0bllqOo61lqlQPd8lP01D0Qb9o6",
@@ -5315,6 +6272,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 9,
     ratings: [3, 4, 7, 11, 0, 4, 7, 13, 0],
+    tiers: [0.25, 0.3, 0.25, 0.2, 0, 0.3, 0.5, 0.2, 0],
   },
   {
     song_id: "ibdIdIO60b880i8oPOdQD9qIqldOdDl8",
@@ -5323,6 +6281,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [4, 6, 7, 11, 0, 5, 7, 11, 0],
+    tiers: [0.15, 0.1, 0.1, 0.25, 0, 0.25, 0.2, 0.2, 0],
   },
   {
     song_id: "IbDoODD9qb66Iqd6DbOQiOoDll1DqiO9",
@@ -5333,6 +6292,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [3, 6, 10, 12, 0, 6, 10, 13, 0],
+    tiers: [0.2, 0.05, 0.3, 0.05, 0, 0.3, 0.4, 0.05, 0],
   },
   {
     song_id: "ibI0QllidqQ089ql8dob6bIoodbbIoqq",
@@ -5343,6 +6303,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 9,
     ratings: [4, 5, 8, 11, 0, 3, 7, 11, 0],
+    tiers: [0.6, 0.6, 0.85, 0.85, 0, 0.65, 0.75, 0.75, 0],
   },
   {
     song_id: "ibI69PPO1iP0D1IlI0bb11QOq6081POo",
@@ -5352,7 +6313,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Sumidagawa Summer Love Song",
     alphabet: "さ",
     version_num: 13,
-    ratings: [2, 5, 10, 12, 16, 6, 9, 12, 16],
+    ratings: [3, 5, 10, 12, 16, 6, 9, 12, 16],
+    tiers: [0.3, 0.1, 0.2, 0.05, 0.4, 0.2, 0.5, 0.2, 0.15],
   },
   {
     song_id: "IbI90PiioDlqPP19D1odPPbP1PP0009O",
@@ -5361,6 +6323,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [2, 5, 9, 12, 17, 6, 9, 12, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [0, 0, 0, 0, 160, 0, 0, 0, 160],
   },
   {
@@ -5369,7 +6332,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [2, 7, 9, 11, 15, 6, 10, 12, 15],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    tiers: [0.3, 0.15, 0.45, 0.15, 0.15, 0.35, 0.6, 0.4, 0.15],
   },
   {
     song_id: "ibl00b69Oli68l96d6o1P1ob8QPillbO",
@@ -5377,6 +6340,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [4, 8, 10, 14, 0, 8, 12, 14, 0],
+    tiers: [0.9, 0.9, 0.9, 0.95, 0, 0.8, 0.75, 0.9, 0],
   },
   {
     song_id: "ibOId89QQPI6dli9I6PO09Qo86686O6i",
@@ -5384,6 +6348,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.5, 0.65, 0.65, 0.25, 0, 0.6, 0.5, 0.3, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5392,6 +6357,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 7,
     ratings: [0, 0, 0, 0, 9, 0, 0, 0, 10],
+    tiers: [0, 0, 0, 0, 0.5, 0, 0, 0, 0.55],
   },
   {
     song_id: "ID00liOPPd6PiDb09608dQbOIDlQ68qo",
@@ -5399,6 +6365,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 18,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.2, 0.2, 0.1, 0.25, 0, 0.15, 0.15, 0.25, 0],
   },
   {
     song_id: "id099qDODdQ9Ooi9dq1I981Diq101QDO",
@@ -5407,6 +6374,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [1, 4, 7, 10, 0, 4, 7, 10, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -5415,6 +6383,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 13,
     ratings: [2, 4, 7, 9, 0, 6, 10, 13, 0],
+    tiers: [0.1, 0.1, 0.25, 0.1, 0, 0.25, 0.45, 0.25, 0],
   },
   {
     song_id: "id0QqdbI8oloO9l08IqI9q1D0819OQID",
@@ -5424,7 +6393,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "vocaloidburaikku",
     alphabet: "は",
     version_num: 16,
-    ratings: [1, 4, 8, 13, 15, 5, 9, 13, 15],
+    ratings: [2, 4, 8, 13, 15, 5, 9, 13, 15],
+    tiers: [0.5, 0.55, 0.55, 0.45, 0.4, 0.35, 0.4, 0.4, 0.5],
   },
   {
     song_id: "Id1D9D68OOqqqdDiOoDd6Q6oo10P6oqI",
@@ -5432,7 +6402,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 19,
     ratings: [3, 6, 8, 14, 0, 6, 8, 14, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.2, 0.35, 0.35, 0.2, 0, 0.3, 0.3, 0.4, 0],
   },
   {
     song_id: "id1lodDbo0Iq9088Qd19d1OlDPP01D8o",
@@ -5440,7 +6410,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Colorful Pastel",
     alphabet: "か",
     version_num: 14,
-    ratings: [2, 6, 9, 12, 0, 6, 9, 13, 0],
+    ratings: [2, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.55, 0.5, 0.5, 0.65, 0, 0.45, 0.55, 0.6, 0],
   },
   {
     song_id: "Id8IPlqQodD01dPiq8oPPQoPQq6booi0",
@@ -5448,6 +6419,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [2, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.3, 0.45, 0.35, 0.15, 0, 0.3, 0.3, 0.4, 0],
   },
   {
     song_id: "id9oObq9P6Q6Pq6lQPqI88OP1DD8D0O1",
@@ -5456,6 +6428,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 12,
     ratings: [3, 6, 13, 14, 18, 7, 12, 15, 18],
+    tiers: [0.8, 0.85, 0.9, 0.85, 0.5, 0.85, 0.9, 0.75, 0.8],
   },
   {
     song_id: "idDdoI9bD186blQ9Q8610bIQqb86dilo",
@@ -5463,6 +6436,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 9,
     ratings: [3, 4, 8, 10, 0, 4, 7, 11, 0],
+    tiers: [0.5, 0.65, 0.65, 0.55, 0, 0.75, 0.65, 0.6, 0],
   },
   {
     song_id: "idI1dd69l1il16P0d9DoldDP1QDP0911",
@@ -5471,6 +6445,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [3, 3, 7, 12, 0, 4, 8, 10, 0],
+    tiers: [0.25, 0.45, 0.55, 0.35, 0, 0.4, 0.45, 0.6, 0],
   },
   {
     song_id: "idIibqoooOlQ1DId8lOidd6il0bdoql8",
@@ -5479,6 +6454,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 14,
     ratings: [3, 10, 13, 16, 0, 10, 13, 16, 0],
+    tiers: [0.45, 0.5, 0.4, 0.2, 0, 0.5, 0.35, 0.65, 0],
   },
   {
     song_id: "IDldD8o8P8dbIP6oiDo11i10lo6bP6oQ",
@@ -5486,6 +6462,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 12,
     ratings: [2, 4, 6, 8, 0, 4, 6, 9, 0],
+    tiers: [0.4, 0.45, 0.6, 0.55, 0, 0.5, 0.55, 0.5, 0],
   },
   {
     song_id: "IdlqO9DoOq0qPQdDbOb80dOPDlb98l0l",
@@ -5494,6 +6471,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 18,
     ratings: [3, 6, 10, 14, 0, 5, 10, 13, 0],
+    tiers: [0.05, 0.05, 0.1, 0, 0, 0.15, 0.1, 0.05, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -5504,6 +6482,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 17,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.35, 0.25, 0.35, 0.4, 0, 0.15, 0.3, 0.4, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5512,6 +6491,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 12,
     ratings: [3, 4, 7, 11, 13, 5, 7, 11, 13],
+    tiers: [0.3, 0.35, 0.6, 0.6, 0.5, 0.3, 0.6, 0.75, 0.65],
   },
   {
     song_id: "IDqoidbllIb0bQQb8dQ1QqP91Q8li9P0",
@@ -5519,6 +6499,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [2, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [0.4, 0.35, 0.45, 0.2, 0, 0.25, 0.3, 0.1, 0],
   },
   {
     song_id: "ii119ll8dOQ8IQqi1IOP1o8DIQbqo8Pi",
@@ -5526,13 +6507,15 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 10,
     ratings: [3, 3, 6, 8, 0, 5, 7, 8, 0],
+    tiers: [0.4, 0.55, 0.65, 0.55, 0, 0.55, 0.65, 0.7, 0],
   },
   {
     song_id: "iI1iQD6Id0PiPDoo919doOooDib09I6b",
     song_name: "MIDNIGHT SPECIAL",
     alphabet: "M",
     version_num: 9,
-    ratings: [3, 7, 9, 10, 0, 7, 10, 12, 0],
+    ratings: [3, 7, 9, 10, 0, 8, 10, 12, 0],
+    tiers: [0.65, 0.6, 0.75, 0.65, 0, 0.65, 0.85, 0.6, 0],
   },
   {
     song_id: "II68b0dooOIOlOiq0iQO18blDd6b9O9D",
@@ -5541,6 +6524,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 13,
     ratings: [4, 9, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.7, 0.75, 0.9, 0.9, 0, 0.65, 0.75, 0.75, 0],
   },
   {
     song_id: "ii6Oooool0IoOqi1qdDo96QIil6IoOq0",
@@ -5548,6 +6532,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 4,
     ratings: [3, 5, 8, 10, 0, 5, 7, 10, 0],
+    tiers: [0.2, 0.2, 0.35, 0.25, 0, 0.4, 0.55, 0.45, 0],
   },
   {
     song_id: "II8Dlo69PoPOII9P88qdlQPP8I61DlDo",
@@ -5558,6 +6543,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [3, 7, 11, 16, 0, 6, 11, 16, 0],
+    tiers: [0.35, 0.15, 0.4, 0.6, 0, 0.4, 0.45, 0.45, 0],
   },
   {
     song_id: "iI8qbP0IIb16Oi9bIbb8O9dbDDi1ql86",
@@ -5567,7 +6553,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Love 2 Sugar/Love Love Sugar/のりあ",
     alphabet: "L",
     version_num: 8,
-    ratings: [3, 5, 6, 8, 0, 4, 7, 9, 0],
+    ratings: [3, 5, 7, 8, 0, 4, 7, 9, 0],
+    tiers: [0.25, 0.25, 0.4, 0.45, 0, 0.25, 0.35, 0.45, 0],
   },
   {
     song_id: "iI90119iIb9l609b9981l8QDblDOb0I6",
@@ -5575,7 +6562,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 19,
     ratings: [2, 7, 10, 14, 0, 7, 10, 14, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.25, 0.15, 0.25, 0.1, 0, 0.05, 0.3, 0.15, 0],
   },
   {
     song_id: "iI96000Ib9DlIOPlDQIO00oDiO9DbPI0",
@@ -5583,6 +6570,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 15,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.55, 0.55, 0.6, 0.65, 0, 0.6, 0.65, 0.65, 0],
   },
   {
     song_id: "IIDiDdQ1d6bIqbld9IdO106POdiPO6PO",
@@ -5590,6 +6578,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 15,
     ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.45, 0.35, 0.4, 0.35, 0, 0.45, 0.55, 0.3, 0],
   },
   {
     song_id: "IidO8qlodqdoioodqqb9Dqiq991Ilo10",
@@ -5599,6 +6588,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 19,
     ratings: [4, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.45, 0.45, 0.25, 0.4, 0, 0.35, 0.25, 0.25, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5606,14 +6596,16 @@ export const ALL_SONG_DATA = [
     song_name: "Go Down",
     alphabet: "G",
     version_num: 19,
-    ratings: [1, 4, 10, 14, 0, 4, 10, 13, 0],
+    ratings: [2, 5, 10, 14, 0, 5, 10, 13, 0],
+    tiers: [0.65, 0.5, 0.65, 0.8, 0, 0.5, 0.6, 0.75, 0],
   },
   {
     song_id: "iiIblq9IDiOill8qdI68OOIPq6OPdiDo",
     song_name: "Easy Peasy",
     alphabet: "E",
     version_num: 19,
-    ratings: [1, 4, 10, 14, 0, 5, 10, 14, 0],
+    ratings: [2, 4, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.15, 0.5, 0.5, 0.35, 0, 0.35, 0.45, 0.35, 0],
   },
   {
     song_id: "iIIDo60oO0lOdiQ9ibIPD0106I69098b",
@@ -5621,6 +6613,7 @@ export const ALL_SONG_DATA = [
     alphabet: "X",
     version_num: 18,
     ratings: [2, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [0.3, 0.15, 0.35, 0.4, 0, 0.15, 0.2, 0.45, 0],
   },
   {
     song_id: "IiiqDblQ8Oqlbo8OOiqI6IqO6P8I8I1d",
@@ -5628,6 +6621,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [3, 7, 13, 15, 0, 7, 13, 15, 0],
+    tiers: [0.3, 0.2, 0.05, 0.3, 0, 0.15, 0.05, 0.3, 0],
   },
   {
     song_id: "iIP09bOq1l1b9b1l011IDIQ6Iill90Io",
@@ -5635,6 +6629,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 5,
     ratings: [3, 5, 7, 12, 0, 5, 9, 12, 0],
+    tiers: [0.35, 0.4, 0.45, 0.25, 0, 0.5, 0.5, 0.3, 0],
   },
   {
     song_id: "iIPq9q8PQDDObo610oQoi0ob96PDi8li",
@@ -5644,6 +6639,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 15,
     ratings: [3, 7, 10, 14, 0, 6, 11, 15, 0],
+    tiers: [0.1, 0.1, 0.4, 0.3, 0, 0.3, 0.3, 0.2, 0],
   },
   {
     song_id: "Iiq6Qoll0oQi801QdPdlOO06DOdIDdD9",
@@ -5652,6 +6648,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [4, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.2, 0.25, 0.1, 0.45, 0, 0.1, 0.05, 0.35, 0],
   },
   {
     song_id: "il0QbI6IOIidllO108olqd8i9Pb1Oq8Q",
@@ -5659,6 +6656,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 12,
     ratings: [2, 5, 8, 11, 0, 5, 8, 12, 0],
+    tiers: [0.35, 0.2, 0.3, 0.2, 0, 0.25, 0.35, 0.35, 0],
   },
   {
     song_id: "il6PIiDq11dD1981dQ00918D96lPQ0iQ",
@@ -5666,6 +6664,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 8,
     ratings: [3, 5, 7, 10, 0, 5, 7, 11, 0],
+    tiers: [0.3, 0.3, 0.25, 0.15, 0, 0.3, 0.7, 0.25, 0],
   },
   {
     song_id: "IlbI1QQOPI0o0IdoPI6QPldqQob16DOq",
@@ -5673,7 +6672,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Night of Knights Ryu Remix",
     alphabet: "な",
     version_num: 17,
-    ratings: [4, 8, 13, 16, 0, 8, 13, 16, 0],
+    ratings: [5, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.4, 0.2, 0.2, 0.15, 0, 0.25, 0.2, 0.3, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -5683,6 +6683,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 18,
     ratings: [3, 6, 10, 15, 0, 6, 10, 14, 0],
+    tiers: [0.35, 0.35, 0.35, 0.4, 0, 0.4, 0.45, 0.25, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -5693,6 +6694,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.6, 0.65, 0.65, 0.55, 0, 0.6, 0.5, 0.55, 0],
   },
   {
     song_id: "ilIbq9Db1d86PIo0b96qdd0oPOQ6bqi1",
@@ -5700,6 +6702,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 9,
     ratings: [2, 3, 7, 10, 0, 4, 5, 12, 0],
+    tiers: [0.5, 0.55, 0.45, 0.55, 0, 0.45, 0.65, 0.55, 0],
   },
   {
     song_id: "illQ66d0QlbDl18OOb8P0ODD0oDP19PQ",
@@ -5710,6 +6713,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [3, 4, 7, 10, 18, 4, 7, 11, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [10, 10, 10, 10, 10, 10, 10, 10, 10],
   },
   {
@@ -5719,6 +6723,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 8,
     ratings: [3, 5, 8, 12, 13, 5, 7, 11, 13],
+    tiers: [0.35, 0.35, 0.6, 0.3, 0.45, 0.35, 0.6, 0.3, 0.5],
   },
   {
     song_id: "IlP88I0bbl91iOD6OQ6o6PPb9o6dlDb8",
@@ -5726,13 +6731,15 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [3, 7, 11, 14, 0, 7, 11, 15, 0],
+    tiers: [0.4, 0.3, 0.45, 0.25, 0, 0.25, 0.3, 0.2, 0],
   },
   {
     song_id: "Ilqd06QqoQd9IlQobq9idPqb1111Q96b",
     song_name: "Ah La La La",
     alphabet: "A",
     version_num: 14,
-    ratings: [1, 5, 7, 12, 0, 5, 7, 11, 0],
+    ratings: [2, 5, 7, 12, 0, 5, 7, 11, 0],
+    tiers: [0.6, 0.35, 0.55, 0.5, 0, 0.55, 0.65, 0.65, 0],
   },
   {
     song_id: "ilqiIlDdiQQ0oOIP8bPobDQqP0O90Q08",
@@ -5740,6 +6747,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 13,
     ratings: [2, 5, 8, 12, 6, 5, 8, 12, 6],
+    tiers: [0.4, 0.3, 0.35, 0.2, 0.3, 0.2, 0.35, 0.3, 0.5],
   },
   {
     song_id: "IO0IbQPOP6q8OddoiO99qq9I81l90D1i",
@@ -5747,6 +6755,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 17,
     ratings: [2, 4, 7, 9, 0, 4, 7, 9, 0],
+    tiers: [0.6, 0.65, 0.75, 0.5, 0, 0.75, 0.8, 0.5, 0],
   },
   {
     song_id: "Io1661doQq6OQ8DoobPq1IQlbqoDD1q8",
@@ -5754,6 +6763,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [3, 4, 7, 9, 0, 3, 7, 11, 0],
+    tiers: [0.25, 0.25, 0.3, 0.45, 0, 0.05, 0.35, 0.4, 0],
   },
   {
     song_id: "Io196q006I86IllQPOb098qd1DQd60Oq",
@@ -5761,6 +6771,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [3, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.35, 0.15, 0.2, 0.2, 0, 0.15, 0.2, 0.15, 0],
   },
   {
     song_id: "io1d1Dq80Di08O1Pb9bQ8DoP9d9Ooi90",
@@ -5769,6 +6780,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 10,
     ratings: [7, 11, 15, 16, 18, 12, 15, 17, 18],
+    tiers: [0.75, 0.6, 0.65, 0.7, 0.6, 0.7, 0.6, 0.4, 0.8],
   },
   {
     song_id: "Io1D1l9QiDo6IDObd8qo1Q9lQ6iollQ9",
@@ -5778,6 +6790,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 9,
     ratings: [3, 4, 8, 11, 13, 4, 7, 13, 13],
+    tiers: [0.4, 0.45, 0.55, 0.55, 0.35, 0.25, 0.55, 0.6, 0.55],
   },
   {
     song_id: "iO61Dq9iiIQO0Qbbdo1O8bdqO8dqoiio",
@@ -5785,6 +6798,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [3, 5, 7, 10, 0, 6, 9, 11, 0],
+    tiers: [0.2, 0.3, 0.5, 0.35, 0, 0.4, 0.3, 0.3, 0],
   },
   {
     song_id: "io688qld6Pqq6bI01q86illP18biq0bd",
@@ -5792,6 +6806,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 7,
     ratings: [3, 5, 9, 12, 0, 6, 9, 13, 0],
+    tiers: [0.35, 0.3, 0.8, 0.75, 0, 0.8, 0.85, 0.55, 0],
   },
   {
     song_id: "iO90Qo66I88P1IdDldo1oIqb8bldqDI6",
@@ -5799,6 +6814,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 13,
     ratings: [2, 4, 8, 12, 0, 5, 9, 13, 0],
+    tiers: [0.45, 0.3, 0.5, 0.5, 0, 0.35, 0.65, 0.8, 0],
   },
   {
     song_id: "io9b89PD18ibIO8PIqb1QODliqDdqiIO",
@@ -5807,6 +6823,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 9, 12, 0, 5, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "Io9i8oQlbO1QqIdbbDPQl6b00OIPlIOP",
@@ -5814,6 +6831,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 11,
     ratings: [2, 5, 6, 9, 0, 5, 7, 10, 0],
+    tiers: [0.55, 0.45, 0.75, 0.5, 0, 0.45, 0.75, 0.8, 0],
   },
   {
     song_id: "IOb6Qdi861O00I8q969bDdd60I6I89oI",
@@ -5821,6 +6839,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [4, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.25, 0.45, 0.5, 0.35, 0, 0.35, 0.3, 0.3, 0],
   },
   {
     song_id: "iObdoO9b1O9o8dP8o0id9b1QioQ0q9q9",
@@ -5829,6 +6848,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 11,
     ratings: [4, 7, 10, 13, 0, 6, 11, 13, 0],
+    tiers: [0.5, 0.45, 0.6, 0.35, 0, 0.7, 0.45, 0.5, 0],
   },
   {
     song_id: "IObPQb9QlP0iIiboObPoPqIqDo0O11Qi",
@@ -5837,7 +6857,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Haru wo Tsugeru",
     alphabet: "は",
     version_num: 18,
-    ratings: [2, 4, 8, 10, 0, 4, 8, 10, 0],
+    ratings: [3, 5, 8, 11, 0, 4, 8, 10, 0],
+    tiers: [0.6, 0.65, 0.4, 0.35, 0, 0.6, 0.35, 0.4, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -5846,6 +6867,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [2, 4, 8, 9, 12, 4, 8, 10, 12],
+    tiers: [0.7, 0.7, 0.45, 0.3, 0.45, 0.8, 0.45, 0.35, 0.6],
   },
   {
     song_id: "IoI10obli6qd9DI699l61Pq16P9bboDd",
@@ -5853,6 +6875,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 9,
     ratings: [3, 4, 8, 11, 0, 5, 8, 10, 0],
+    tiers: [0.1, 0.1, 0.15, 0.05, 0, 0.05, 0.15, 0.1, 0],
   },
   {
     song_id: "ioi6db99oOPPDd1db888D6oi6bb06o0P",
@@ -5860,7 +6883,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "キャンスト",
     alphabet: "C",
     version_num: 4,
-    ratings: [3, 5, 6, 11, 0, 5, 6, 12, 0],
+    ratings: [3, 5, 7, 11, 0, 5, 7, 12, 0],
+    tiers: [0.2, 0.4, 0.5, 0.4, 0, 0.45, 0.5, 0.45, 0],
   },
   {
     song_id: "IoiD0b6IqiDi6qP1qb0P1dbQlIODbiid",
@@ -5868,6 +6892,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 19,
     ratings: [2, 4, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [0.05, 0, 0.1, 0.15, 0, 0, 0.1, 0.05, 0],
   },
   {
     song_id: "iOl86b6I00IP9Q9I881oq9qOIDPqqDoO",
@@ -5875,6 +6900,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [2, 5, 10, 12, 0, 5, 10, 12, 0],
+    tiers: [0.3, 0.4, 0.15, 0.55, 0, 0.35, 0.25, 0.45, 0],
   },
   {
     song_id: "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO",
@@ -5882,6 +6908,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 6,
     ratings: [4, 5, 8, 13, 0, 5, 9, 13, 0],
+    tiers: [0.25, 0.2, 0.45, 0.15, 0, 0.4, 0.45, 0.4, 0],
   },
   {
     song_id: "iOqb60DOOolIioDIOPi09P91i8PDiOqq",
@@ -5889,6 +6916,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 8,
     ratings: [3, 3, 6, 10, 0, 3, 6, 11, 0],
+    tiers: [0.25, 0.25, 0.2, 0.35, 0, 0.15, 0.35, 0.25, 0],
   },
   {
     song_id: "iOql19lQibIoo1bObo0Q1DqQ9qOqI0oq",
@@ -5896,6 +6924,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 19,
     ratings: [4, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.45, 0.4, 0.6, 0.5, 0, 0.3, 0.65, 0.2, 0],
   },
   {
     song_id: "ioQP0b6I11Do1OQPIQ6OIDiPODD0l0dd",
@@ -5904,6 +6933,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 13],
+    tiers: [0, 0, 0, 0, 0.65, 0, 0, 0, 0.9],
   },
   {
     song_id: "IP00ID9bdlOoP9o9lo1qlO0D1Pdo9I8l",
@@ -5912,6 +6942,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 9,
     ratings: [5, 11, 12, 16, 0, 8, 12, 15, 0],
+    tiers: [0.7, 0.7, 0.85, 0.65, 0, 0.8, 0.8, 0.6, 0],
   },
   {
     song_id: "iP6qIl6lD809098io0OiPP08Ii18I6OI",
@@ -5920,6 +6951,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 10,
     ratings: [6, 10, 12, 15, 18, 10, 11, 16, 17],
+    tiers: [0.95, 0.9, 0.95, 0.85, 0.4, 0.95, 0.95, 0.8, 0.7],
   },
   {
     song_id: "iP8ll9I0dd8d689PPqlI9008d06io09q",
@@ -5929,7 +6961,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Happy Love Gazer",
     alphabet: "ら",
     version_num: 16,
-    ratings: [3, 7, 10, 12, 0, 7, 10, 12, 0],
+    ratings: [3, 7, 10, 12, 15, 7, 10, 12, 16],
+    tiers: [0.4, 0.25, 0.5, 0.45, 1, 0.3, 0.55, 0.55, 1],
   },
   {
     song_id: "IPdDlblblqO1do9IQbDoi0iOoPDoiDlI",
@@ -5938,6 +6971,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 12,
     ratings: [2, 6, 9, 11, 0, 6, 10, 12, 0],
+    tiers: [0.15, 0.3, 0.4, 0.25, 0, 0.5, 0.65, 0.35, 0],
   },
   {
     song_id: "IPDid8ii1iQb19lb6iqOi91O0il018Ql",
@@ -5945,6 +6979,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 15,
     ratings: [3, 5, 9, 12, 16, 5, 9, 13, 16],
+    tiers: [0.55, 0.55, 0.5, 0.75, 0.6, 0.7, 0.6, 0.7, 0.5],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -5952,7 +6987,8 @@ export const ALL_SONG_DATA = [
     song_name: "BONE BORN",
     alphabet: "B",
     version_num: 19,
-    ratings: [1, 5, 10, 13, 0, 5, 11, 14, 0],
+    ratings: [2, 5, 10, 13, 0, 5, 11, 14, 0],
+    tiers: [0.55, 0.45, 0.5, 0.4, 0, 0.35, 0.25, 0.2, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -5961,6 +6997,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 5,
     ratings: [4, 6, 9, 12, 0, 5, 9, 11, 0],
+    tiers: [0.8, 0.9, 0.7, 0.65, 0, 0.85, 0.8, 0.55, 0],
   },
   {
     song_id: "IPid909iDid06d68IDo816OqbdQq8O0O",
@@ -5970,6 +7007,7 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 18,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.4, 0.45, 0.4, 0.55, 0, 0.35, 0.25, 0.6, 0],
     lock_types: [180, 180, 180, 180, 0, 180, 180, 180, 0],
   },
   {
@@ -5978,6 +7016,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 15,
     ratings: [2, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.4, 0.25, 0.4, 0.4, 0, 0.25, 0.45, 0.4, 0],
   },
   {
     song_id: "IPq8dO1lD8qidDlI0ObboI9IIldQO6IQ",
@@ -5987,6 +7026,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 14,
     ratings: [3, 7, 11, 14, 17, 7, 11, 14, 17],
+    tiers: [0.6, 0.4, 0.45, 0.3, 0.4, 0.5, 0.35, 0.35, 0.6],
   },
   {
     song_id: "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
@@ -5996,6 +7036,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 4,
     ratings: [3, 5, 8, 11, 0, 5, 8, 10, 0],
+    tiers: [0.6, 0.7, 0.65, 0.6, 0, 0.7, 0.75, 0.55, 0],
   },
   {
     song_id: "IQ0ID09qD6O1oOdIq0oilI8I8l9DlP9b",
@@ -6004,7 +7045,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Vocaloidsetsuna",
     alphabet: "さ",
     version_num: 15,
-    ratings: [1, 4, 10, 14, 0, 4, 10, 14, 0],
+    ratings: [3, 4, 10, 14, 0, 4, 10, 14, 0],
+    tiers: [0.85, 0.6, 0.55, 0.55, 0, 0.55, 0.75, 0.7, 0],
   },
   {
     song_id: "iq6b9lP6qQQIOIPQDdPD8ld1o9891Pq9",
@@ -6012,6 +7054,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [5, 9, 14, 16, 0, 9, 14, 17, 0],
+    tiers: [0.65, 0.75, 0.7, 0.75, 0, 0.6, 0.55, 0, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -6021,13 +7064,15 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 15,
     ratings: [3, 6, 10, 14, 0, 6, 9, 13, 0],
+    tiers: [0.4, 0.3, 0.45, 0.1, 0, 0.4, 0.6, 0.3, 0],
   },
   {
     song_id: "iq6QI06oQlloO9Db9dbI8IDoi91dD8d9",
     song_name: "HEARTBREAK (Sound Selektaz remix)",
     alphabet: "H",
     version_num: 13,
-    ratings: [1, 4, 6, 10, 0, 4, 6, 11, 0],
+    ratings: [2, 4, 7, 10, 0, 4, 7, 11, 0],
+    tiers: [0.3, 0.3, 0.35, 0.35, 0, 0.15, 0.4, 0.15, 0],
   },
   {
     song_id: "IQ9bDo1dPbIo0ODQiObbQ99iP1bOi8iI",
@@ -6035,6 +7080,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 8,
     ratings: [4, 5, 9, 12, 0, 4, 8, 11, 0],
+    tiers: [0.25, 0.3, 0.35, 0.45, 0, 0.35, 0.45, 0.4, 0],
   },
   {
     song_id: "IQ9ddqDqq908QqQl196DQODQD9Q6oOiQ",
@@ -6044,6 +7090,7 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 19,
     ratings: [2, 6, 12, 15, 0, 5, 12, 14, 0],
+    tiers: [0.35, 0.15, 0.15, 0.35, 0, 0.25, 0.15, 0.55, 0],
   },
   {
     song_id: "iq9qPoPlIlbIDqlD81DqO1110QI1qoOl",
@@ -6051,6 +7098,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 18,
     ratings: [5, 10, 13, 16, 0, 10, 13, 16, 0],
+    tiers: [0.4, 0.6, 0.6, 0.4, 0, 0.35, 0.4, 0.35, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -6059,6 +7107,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [2, 5, 11, 16, 0, 5, 11, 16, 0],
+    tiers: [0.15, 0.15, 0.3, 0.15, 0, 0.15, 0.15, 0, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -6069,7 +7118,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 19,
     ratings: [3, 7, 12, 16, 18, 7, 12, 16, 18],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
+    tiers: [0.6, 0.5, 0.55, 0.8, 0.8, 0.4, 0.4, 0.55, 0.7],
   },
   {
     song_id: "iQi8Oool866oDQ6i660o88b86689QiOb",
@@ -6077,6 +7126,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.25, 0.3, 0.25, 0.25, 0, 0.25, 0.2, 0.2, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -6087,6 +7137,16 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 19,
     ratings: [1, 3, 9, 13, 0, 3, 9, 13, 0],
+    tiers: [0.3, 0.3, 0.3, 0.5, 0, 0.3, 0.25, 0.55, 0],
+  },
+  {
+    song_id: "IqiOOoDoo061DlbqPPQdPlP1qloP6096",
+    song_name: "Metamorphic",
+    alphabet: "M",
+    version_num: 19,
+    ratings: [6, 11, 14, 16, 0, 11, 14, 16, 0],
+    tiers: [0.1, 0.1, 0, 0, 0, 0.1, 0, 0.2, 0],
+    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
     song_id: "iqiqod1l08DlDql98QOi10oibldd8b86",
@@ -6096,13 +7156,15 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 12,
     ratings: [3, 7, 11, 16, 18, 7, 12, 15, 18],
+    tiers: [0.85, 0.85, 0.9, 0.45, 0.4, 0.9, 0.9, 0.6, 0.1],
   },
   {
     song_id: "iqlOo1bdoiDqDbIODDl0POl1PqlQd8l6",
     song_name: "Take Me",
     alphabet: "T",
     version_num: 19,
-    ratings: [1, 5, 7, 11, 0, 5, 7, 11, 0],
+    ratings: [2, 5, 7, 11, 0, 5, 7, 11, 0],
+    tiers: [0.35, 0.2, 0.7, 0.55, 0, 0.25, 0.6, 0.35, 0],
   },
   {
     song_id: "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO",
@@ -6110,6 +7172,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 7,
     ratings: [3, 4, 7, 11, 0, 4, 8, 11, 0],
+    tiers: [0.4, 0.45, 0.55, 0.55, 0, 0.5, 0.65, 0.6, 0],
   },
   {
     song_id: "Iqo9PQiPbq8Q0I6io6lPIDi608lQqbbq",
@@ -6120,6 +7183,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 10,
     ratings: [4, 5, 8, 13, 0, 5, 8, 13, 0],
+    tiers: [0.2, 0.3, 0.55, 0.3, 0, 0.25, 0.45, 0.45, 0],
   },
   {
     song_id: "iQP6PI8oDQi1OPQObDQO1IIP9I8i0I1o",
@@ -6129,6 +7193,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.25, 0.3, 0.5, 0.3, 0, 0.35, 0.4, 0.4, 0],
   },
   {
     song_id: "iQqbdqOlqlPP11d1qI8lO6iQb19dO991",
@@ -6136,6 +7201,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 15,
     ratings: [2, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.45, 0.35, 0.15, 0.3, 0, 0.35, 0.35, 0.55, 0],
   },
   {
     song_id: "IQqi9Q9qD0DDQIqQOb868QIOioqDqI01",
@@ -6143,6 +7209,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [7, 9, 13, 17, 0, 8, 13, 17, 0],
+    tiers: [0.15, 0.4, 0.05, 0.25, 0, 0.45, 0.1, 0.1, 0],
   },
   {
     song_id: "IQqOIb6ob8bIbOII66ID0oIQDPl6bdbb",
@@ -6151,6 +7218,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 2,
     ratings: [2, 6, 7, 9, 11, 7, 8, 11, 11],
+    tiers: [0.55, 0.55, 0.5, 0.3, 0.75, 0.45, 0.7, 0.45, 0.65],
   },
   {
     song_id: "l08bl1dddob81IP1IbQqbDbiPo9l069l",
@@ -6158,6 +7226,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [3, 6, 11, 15, 16, 7, 11, 15, 16],
+    tiers: [0.4, 0.5, 0.45, 0.2, 0.45, 0.45, 0.65, 0.5, 0.5],
   },
   {
     song_id: "l0od6D6dl9PQdl1iDPOlD80io0iqqDb8",
@@ -6165,6 +7234,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 12,
     ratings: [2, 4, 6, 8, 0, 3, 6, 8, 0],
+    tiers: [0.7, 0.65, 0.6, 0.7, 0, 0.75, 0.65, 0.65, 0],
   },
   {
     song_id: "l0OPoQ1O8q8DPDo0Iol6qD6DiIqdD9P9",
@@ -6175,6 +7245,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 18,
     ratings: [3, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.2, 0.1, 0.35, 0.25, 0, 0.1, 0.2, 0.1, 0],
   },
   {
     song_id: "l0QP6DiIDIId0oiQiOl8q10DlI96OPiO",
@@ -6183,6 +7254,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 11,
     ratings: [2, 6, 9, 11, 0, 7, 9, 11, 0],
+    tiers: [0.25, 0.35, 0.35, 0.4, 0, 0.2, 0.4, 0.4, 0],
   },
   {
     song_id: "l106dqq891bI19iPoIo9OO688l8oOQQ6",
@@ -6190,6 +7262,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [3, 6, 12, 15, 0, 6, 12, 15, 0],
+    tiers: [0.25, 0.25, 0.35, 0.4, 0, 0.3, 0.35, 0.45, 0],
   },
   {
     song_id: "l1bDOIlb6ddI6od0q1llI0I6blq9oP0l",
@@ -6198,6 +7271,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.5, 0.4, 0.35, 0.25, 0, 0.4, 0.4, 0.4, 0],
   },
   {
     song_id: "l1lO999PqIboPQOD86PDQo1ol1iIiiOi",
@@ -6208,6 +7282,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 17,
     ratings: [3, 6, 10, 13, 0, 5, 9, 13, 0],
+    tiers: [0.35, 0.3, 0.55, 0.45, 0, 0.4, 0.75, 0.3, 0],
   },
   {
     song_id: "l1ODQ1bO9POQ6d8O0Iobbio11qb6O6bd",
@@ -6219,13 +7294,15 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 17,
     ratings: [3, 7, 9, 12, 0, 7, 9, 11, 0],
+    tiers: [0.15, 0.1, 0.3, 0.6, 0, 0.2, 0.25, 0.5, 0],
   },
   {
     song_id: "l609D9lOqbDP6iIld1dI18l888dODQ6Q",
     song_name: "Polovtsian Dances And Chorus",
     alphabet: "P",
     version_num: 9,
-    ratings: [3, 4, 9, 11, 0, 5, 7, 12, 0],
+    ratings: [3, 4, 9, 11, 0, 5, 9, 12, 0],
+    tiers: [0.15, 0.3, 0.05, 0.15, 0, 0.1, 0.15, 0.05, 0],
   },
   {
     song_id: "l61ldlPo1DQ081860O86D0Qo0qdOd0qP",
@@ -6233,6 +7310,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 17,
     ratings: [3, 5, 9, 14, 14, 5, 9, 13, 14],
+    tiers: [0.35, 0.45, 0.35, 0.2, 0.75, 0.5, 0.35, 0.45, 0.7],
   },
   {
     song_id: "l666Dd0bIO9O69boPd898b19bPDo1IdO",
@@ -6241,7 +7319,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [3, 7, 11, 15, 17, 7, 11, 14, 17],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    tiers: [0.25, 0.15, 0.5, 0.15, 0.8, 0.2, 0.45, 0.55, 0.55],
   },
   {
     song_id: "l66Io69ob00OoOiDOI9lIqlidbDoDq89",
@@ -6249,6 +7327,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 16,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.8, 0.7, 0.6, 0.7, 0, 0.7, 0.55, 0.75, 0],
   },
   {
     song_id: "l6999IbQI61IO9qQbllobqo68lqobibq",
@@ -6256,6 +7335,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 12,
     ratings: [3, 6, 8, 11, 13, 7, 8, 11, 13],
+    tiers: [0.2, 0.2, 0.4, 0.25, 0.25, 0.15, 0.5, 0.25, 0.15],
   },
   {
     song_id: "l6d0ibbliQPQDdb1lP18D9qbPDi1698b",
@@ -6265,6 +7345,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 15,
     ratings: [6, 9, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.8, 0.75, 0.55, 0.4, 0, 0.8, 0.7, 0.45, 0],
   },
   {
     song_id: "l6oP66ODld89Q99o0lDPP90qdbo11PPQ",
@@ -6273,6 +7354,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 19,
     ratings: [3, 8, 12, 14, 0, 8, 12, 14, 0],
+    tiers: [0.3, 0.55, 0.55, 0.7, 0, 0.4, 0.35, 0.65, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -6282,7 +7364,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ハレルヤ",
     alphabet: "H",
     version_num: 16,
-    ratings: [1, 5, 9, 12, 0, 4, 9, 12, 0],
+    ratings: [2, 5, 9, 12, 0, 4, 9, 12, 0],
+    tiers: [0.45, 0.4, 0.45, 0.2, 0, 0.5, 0.55, 0.45, 0],
   },
   {
     song_id: "l81l981iPod0PDIIObIldoQb6Ol9o1Iq",
@@ -6290,6 +7373,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 17,
     ratings: [4, 8, 11, 14, 0, 8, 11, 14, 0],
+    tiers: [0.15, 0.05, 0.05, 0.5, 0, 0.05, 0.05, 0.15, 0],
   },
   {
     song_id: "l8q6diIod06OdP11P6I8oIddiPo16DPd",
@@ -6298,6 +7382,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 12,
     ratings: [6, 8, 11, 15, 0, 8, 12, 16, 0],
+    tiers: [0.75, 0.85, 0.9, 0.85, 0, 0.8, 0.75, 0.65, 0],
   },
   {
     song_id: "l9i996ld6PbbiO1911OoOI8lIPQ06ID8",
@@ -6305,6 +7390,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 14,
     ratings: [3, 5, 8, 12, 14, 5, 8, 12, 14],
+    tiers: [0, 0, 0.1, 0.1, 0.45, 0.05, 0.15, 0.15, 0.6],
   },
   {
     song_id: "l9lq19DdiD8qQPoPOlboi1qQii0IQI86",
@@ -6314,6 +7400,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 7,
     ratings: [3, 5, 9, 12, 11, 4, 8, 11, 11],
+    tiers: [0.55, 0.55, 0.6, 0.7, 0.75, 0.6, 0.7, 0.85, 0.7],
   },
   {
     song_id: "l9OQPi0do19dQPO8ilq0QDbll8P8Ib6O",
@@ -6322,6 +7409,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.3, 0.45, 0.45, 0.85, 0, 0.35, 0.45, 0.5, 0],
   },
   {
     song_id: "l9QibD8IoooD9DIl1O8Q0lo89I9qdido",
@@ -6332,6 +7420,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 18,
     ratings: [5, 10, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.4, 0.55, 0.55, 0.8, 0, 0.35, 0.4, 0.65, 0],
     lock_types: [60, 60, 60, 60, 0, 60, 60, 60, 0],
   },
   {
@@ -6340,6 +7429,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 18,
     ratings: [5, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.5, 0.65, 0.7, 0.6, 0, 0.55, 0.65, 0.75, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -6348,6 +7438,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 15,
     ratings: [3, 8, 12, 15, 0, 8, 13, 15, 0],
+    tiers: [0.4, 0.4, 0.3, 0.55, 0, 0.45, 0.25, 0.45, 0],
   },
   {
     song_id: "lb1l0DibId6Pb9ddlqlDoP6d6oD0o0IP",
@@ -6355,6 +7446,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 11,
     ratings: [2, 4, 6, 10, 0, 6, 7, 9, 0],
+    tiers: [0.5, 0.5, 0.45, 0.35, 0, 0.35, 0.4, 0.4, 0],
   },
   {
     song_id: "lb969IOOoI06P18PPq81o1lPD1b1OqqI",
@@ -6362,6 +7454,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 7, 12, 17, 0],
+    tiers: [0.25, 0.3, 0.6, 0.45, 0, 0.25, 0.45, 0.35, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -6371,6 +7464,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 12,
     ratings: [6, 8, 11, 15, 0, 8, 12, 16, 0],
+    tiers: [0.3, 0.6, 0.7, 0.65, 0, 0.55, 0.6, 0.45, 0],
   },
   {
     song_id: "lbD8DodiOiP8D61lidIi88DIiPqi8o6P",
@@ -6378,6 +7472,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 17,
     ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.55, 0.6, 0.7, 0.65, 0, 0.65, 0.65, 0.65, 0],
   },
   {
     song_id: "ld6P1lbb0bPO9doqbbPOoPb8qoDo8id0",
@@ -6386,6 +7481,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 16,
     ratings: [4, 7, 13, 15, 18, 7, 13, 15, 18],
+    tiers: [0.45, 0.45, 0.7, 0.85, 0.2, 0.6, 0.7, 0.85, 0.4],
   },
   {
     song_id: "ld8b6iqPIiqqbb9q69l8obO66ibI96od",
@@ -6394,6 +7490,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [3, 5, 7, 10, 0, 5, 7, 9, 0],
+    tiers: [0.2, 0.35, 0.55, 0.45, 0, 0.3, 0.55, 0.6, 0],
   },
   {
     song_id: "ld8lOqloqD6lOl880ldDo819bDb9q1Qi",
@@ -6403,16 +7500,18 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [2, 7, 9, 12, 0, 7, 9, 12, 0],
+    tiers: [0.4, 0.35, 0.3, 0.05, 0, 0.3, 0.4, 0.1, 0],
   },
   {
     song_id: "ldDD06dIQ0qQPD9OI88P90OOi0bQPD1O",
     song_name: "osaka EVOLVED -毎度、おおきに！- (TYPE1)",
     searchable_name: "osaka EVOLVED まいどおおきに TYPE1",
-    romanized_name: "osaka EVOLVED Maido Ookini TYPE1",
+    romanized_name: "osaka EVOLVED Maido Ookini TYPE1",
     alternate_name: "osaka EVOLVED TYPE 1/大阪1",
     alphabet: "O",
     version_num: 13,
     ratings: [9, 11, 13, 15, 0, 10, 12, 15, 0],
+    tiers: [0.85, 0.9, 0.95, 0.85, 0, 0.95, 0.95, 0.7, 0],
   },
   {
     song_id: "ldlqDQ0bb8d9do86o898P0qo1OlD88qD",
@@ -6421,6 +7520,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 15,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.65, 0.65, 0.7, 0.4, 0, 0.8, 0.75, 0.55, 0],
   },
   {
     song_id: "lDOPd60Q9obl6D0q8qqdQi9lioblD1db",
@@ -6429,6 +7529,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 14,
     ratings: [4, 8, 12, 16, 18, 8, 12, 17, 18],
+    tiers: [0.35, 0.4, 0.3, 0.65, 0.2, 0.45, 0.25, 0.15, 0.5],
   },
   {
     song_id: "li0IboIqq8qddDP0Oi1Q9i8OPoD88IQl",
@@ -6436,6 +7537,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 15,
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.75, 0.6, 0.8, 0.7, 0, 0.55, 0.85, 0.85, 0],
   },
   {
     song_id: "li608di8PolqqIP808iddOqi11qDDq0Q",
@@ -6444,6 +7546,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 8,
     ratings: [7, 8, 13, 15, 0, 8, 12, 16, 0],
+    tiers: [0.75, 0.8, 0.4, 0.6, 0, 0.8, 0.65, 0.45, 0],
   },
   {
     song_id: "li6dD9b8dboOd9bbqli886lDl08IPQ00",
@@ -6451,6 +7554,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [4, 7, 11, 13, 0, 7, 12, 13, 0],
+    tiers: [0.65, 0.75, 0.8, 0.85, 0, 0.75, 0.65, 0.8, 0],
   },
   {
     song_id: "lI8qIDQPD0PDOdO1d01iOq8bI98iiQ1l",
@@ -6458,13 +7562,15 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [3, 3, 7, 10, 0, 3, 8, 10, 0],
+    tiers: [0.25, 0.3, 0.55, 0.4, 0, 0.15, 0.75, 0.65, 0],
   },
   {
     song_id: "lii9bbbIq08b6DIdQ16Q0QOPiOibliIO",
     song_name: "Baile Le Samba",
     alphabet: "B",
     version_num: 9,
-    ratings: [1, 3, 10, 11, 0, 3, 6, 10, 0],
+    ratings: [2, 3, 9, 11, 0, 3, 6, 10, 0],
+    tiers: [0.35, 0.25, 0.35, 0.3, 0, 0.25, 0.4, 0.5, 0],
   },
   {
     song_id: "liiPP608Oqbbb1Do88DPolOlQiq0Di60",
@@ -6472,6 +7578,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 14,
     ratings: [3, 7, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.35, 0.2, 0.55, 0.7, 0, 0.4, 0.65, 0.7, 0],
   },
   {
     song_id: "lilO9P0i1dlOl1PI6dQbiob1iP0dliOQ",
@@ -6479,6 +7586,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 18,
     ratings: [4, 8, 11, 15, 0, 8, 11, 15, 0],
+    tiers: [0.4, 0.55, 0.5, 0.25, 0, 0.45, 0.3, 0.15, 0],
     lock_types: [180, 180, 180, 180, 0, 180, 180, 180, 0],
   },
   {
@@ -6489,6 +7597,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.3, 0.45, 0.4, 0.3, 0, 0.5, 0.45, 0.4, 0],
   },
   {
     song_id: "lIlQ8DbPP6Iil1DOlQ6d8IPQblDQ8IiI",
@@ -6497,6 +7606,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [2, 4, 7, 11, 17, 4, 7, 10, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [0, 0, 0, 0, 160, 0, 0, 0, 160],
   },
   {
@@ -6506,6 +7616,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 12,
     ratings: [2, 6, 8, 10, 8, 6, 8, 10, 8],
+    tiers: [0.45, 0.45, 0.7, 0.7, 0.6, 0.6, 0.75, 0.9, 0.75],
   },
   {
     song_id: "lIQ1608o9O6bdoPO0ooi8io8i6q6bO1b",
@@ -6516,6 +7627,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [3, 6, 8, 10, 13, 5, 8, 11, 13],
+    tiers: [0.3, 0.2, 0.45, 0.5, 0.75, 0.3, 0.5, 0.5, 0.75],
   },
   {
     song_id: "liq91ddlPQ16iooqDDQ86qlodIO10Qb1",
@@ -6526,7 +7638,8 @@ export const ALL_SONG_DATA = [
       "Knight of Nights/Night of Nights/Knight of Knights/ナイツ/Touhounight",
     alphabet: "な",
     version_num: 16,
-    ratings: [1, 7, 11, 15, 16, 7, 11, 15, 17],
+    ratings: [3, 7, 11, 15, 16, 7, 11, 15, 17],
+    tiers: [0.05, 0, 0.1, 0.3, 0.4, 0.2, 0.1, 0.15, 0.2],
   },
   {
     song_id: "ll0O8PlqQd0iOO8ib61lO6iDiliQdiPP",
@@ -6534,6 +7647,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 18,
     ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.5, 0.45, 0.3, 0.8, 0, 0.45, 0.3, 0.75, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -6542,6 +7656,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 16,
     ratings: [2, 6, 10, 13, 0, 7, 11, 13, 0],
+    tiers: [0.55, 0.6, 0.55, 0.55, 0, 0.6, 0.45, 0.65, 0],
   },
   {
     song_id: "lldPQPDP0qq8iqQ910l8b8PoQ6O668Q0",
@@ -6549,6 +7664,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 17,
     ratings: [3, 6, 9, 13, 10, 6, 10, 13, 10],
+    tiers: [0.35, 0.3, 0.45, 0.3, 0.75, 0.35, 0.35, 0.35, 0.65],
   },
   {
     song_id: "lliDD9qPqiIDI8P9bb18IO60l9D061Io",
@@ -6556,6 +7672,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [5, 10, 14, 17, 18, 10, 14, 17, 18],
+    tiers: [0.6, 0.55, 0.75, 0.65, 0.6, 0.3, 0.45, 0.25, 0.2],
     lock_types: [230, 230, 230, 230, 230, 230, 230, 230, 230],
   },
   {
@@ -6566,6 +7683,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 18,
     ratings: [2, 7, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.8, 0.75, 0.6, 0.55, 0, 0.9, 0.6, 0.5, 0],
   },
   {
     song_id: "lO08lblo68qbdPq0dIlIqqdiiOq900Pb",
@@ -6575,6 +7693,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [1, 3, 9, 13, 0, 3, 9, 13, 0],
+    tiers: [0.25, 0.5, 0.5, 0.2, 0, 0.35, 0.5, 0.3, 0],
   },
   {
     song_id: "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0",
@@ -6583,6 +7702,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 8,
     ratings: [5, 7, 11, 12, 0, 7, 10, 14, 0],
+    tiers: [0.8, 0.8, 0.7, 0.8, 0, 0.8, 0.95, 0.75, 0],
   },
   {
     song_id: "lo6bOoq86d9od6qQ9PiPibOioOQb96lP",
@@ -6590,7 +7710,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "TWINKLE HEART",
     alphabet: "T",
     version_num: 13,
-    ratings: [1, 4, 8, 11, 10, 4, 8, 11, 11],
+    ratings: [2, 4, 8, 11, 10, 4, 8, 11, 11],
+    tiers: [0.5, 0.5, 0.4, 0.35, 0.35, 0.45, 0.55, 0.4, 0.25],
   },
   {
     song_id: "lO8O011qIqioPDi9d0oib09DDDPIbqOI",
@@ -6601,6 +7722,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 15,
     ratings: [4, 7, 11, 13, 0, 7, 10, 12, 0],
+    tiers: [0.6, 0.45, 0.4, 0.35, 0, 0.6, 0.55, 0.6, 0],
   },
   {
     song_id: "lO91bIQ0Q990PqPbPIq88b9I9PI6ID0Q",
@@ -6608,6 +7730,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 16,
     ratings: [6, 9, 12, 16, 18, 9, 13, 16, 18],
+    tiers: [0.55, 0.65, 0.75, 0.9, 0.7, 0.5, 0.6, 0.9, 0.8],
   },
   {
     song_id: "lob09DPQD0Dl6Q09dbq8biIb6QqDql8i",
@@ -6615,6 +7738,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 19,
     ratings: [3, 5, 11, 14, 0, 5, 11, 14, 0],
+    tiers: [0.3, 0.35, 0.3, 0.3, 0, 0.2, 0.25, 0.2, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -6626,6 +7750,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 13,
     ratings: [2, 6, 8, 11, 15, 6, 8, 11, 15],
+    tiers: [0.6, 0.5, 0.65, 0.45, 0.55, 0.5, 0.6, 0.5, 0.5],
   },
   {
     song_id: "lObPDQDI08DoodDq1061IP1qbQ1qQQbl",
@@ -6634,6 +7759,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 7,
     ratings: [5, 10, 13, 16, 0, 7, 12, 15, 0],
+    tiers: [0.7, 0.85, 0.85, 0.65, 0, 0.75, 0.85, 0.8, 0],
   },
   {
     song_id: "loD6oi96869O8ilii1QPOPDoP91l1PQQ",
@@ -6641,6 +7767,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [2, 7, 10, 13, 11, 7, 10, 13, 13],
+    tiers: [0.35, 0.15, 0.3, 0.3, 0.7, 0.15, 0.45, 0.5, 0.45],
   },
   {
     song_id: "loD8qPl09qqi0o1iqbbDOdllDblioDIl",
@@ -6649,6 +7776,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 19,
     ratings: [4, 9, 14, 17, 0, 9, 14, 17, 0],
+    tiers: [0.2, 0.25, 0.25, 0.25, 0, 0.2, 0.2, 0.2, 0],
     lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
@@ -6658,6 +7786,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 17,
     ratings: [2, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.45, 0.35, 0.35, 0.45, 0, 0.3, 0.4, 0.4, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -6666,6 +7795,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 19,
     ratings: [4, 8, 11, 16, 0, 8, 11, 16, 0],
+    tiers: [0.25, 0.25, 0.2, 0.1, 0, 0.2, 0.2, 0.4, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -6674,6 +7804,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [2, 5, 8, 12, 0, 5, 8, 12, 0],
+    tiers: [0.5, 0.4, 0.4, 0.55, 0, 0.45, 0.6, 0.55, 0],
   },
   {
     song_id: "loQ0Ibqqo8OO11oI9i9D6o0DDI0PDiOO",
@@ -6683,6 +7814,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [3, 6, 12, 16, 0, 6, 12, 16, 0],
+    tiers: [0.05, 0.1, 0.3, 0.05, 0, 0.05, 0.1, 0, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -6690,7 +7822,8 @@ export const ALL_SONG_DATA = [
     song_name: "Do The Evolution",
     alphabet: "D",
     version_num: 15,
-    ratings: [1, 4, 7, 10, 0, 5, 9, 13, 0],
+    ratings: [2, 4, 8, 10, 0, 5, 9, 13, 0],
+    tiers: [0.4, 0.35, 0.5, 0.3, 0, 0.2, 0.45, 0.35, 0],
   },
   {
     song_id: "lPloI86odlIbIo96P169b9I0Ob8lD189",
@@ -6698,6 +7831,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.4, 0, 0, 0, 0.4],
   },
   {
     song_id: "lPoD60qooQ91QDq1qO9d19q9IoDIlPq9",
@@ -6705,6 +7839,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 8,
     ratings: [3, 4, 7, 9, 0, 4, 7, 11, 0],
+    tiers: [0.4, 0.4, 0.35, 0.5, 0, 0.4, 0.35, 0.35, 0],
   },
   {
     song_id: "lQ1QDdooiOO9QPo8q91iD1IqI8Po9ODl",
@@ -6712,6 +7847,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 15,
     ratings: [3, 5, 10, 13, 16, 6, 10, 13, 16],
+    tiers: [0.15, 0.1, 0.25, 0.2, 0.25, 0.1, 0.35, 0.3, 0.65],
   },
   {
     song_id: "lQ86Pod1b9oI8OiDDoId099di9OI8d9I",
@@ -6722,6 +7858,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [3, 6, 9, 13, 0, 5, 8, 13, 0],
+    tiers: [0.4, 0.4, 0.5, 0.8, 0, 0.4, 0.6, 0.8, 0],
   },
   {
     song_id: "lq9iPP06O8qiP1iooiboPO910b86di19",
@@ -6729,6 +7866,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 17,
     ratings: [2, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.35, 0.3, 0.3, 0.25, 0, 0.3, 0.25, 0.3, 0],
   },
   {
     song_id: "lQbiI10Qo9DdD8liqPIiob61qDO9d861",
@@ -6736,6 +7874,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 9,
     ratings: [3, 4, 8, 10, 0, 5, 7, 11, 0],
+    tiers: [0.35, 0.4, 0.55, 0.45, 0, 0.45, 0.9, 0.4, 0],
   },
   {
     song_id: "lqI8DD9Plq6IO8P8P6Pl8Di98DlI9oP8",
@@ -6744,6 +7883,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 17,
     ratings: [3, 7, 12, 15, 0, 6, 12, 15, 0],
+    tiers: [0.35, 0.2, 0.2, 0.1, 0, 0.3, 0.15, 0.3, 0],
   },
   {
     song_id: "lqOQbO0ql96IdDdD689o9PI1iI8Q1Ibi",
@@ -6751,6 +7891,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 12,
     ratings: [2, 3, 6, 10, 0, 5, 7, 11, 0],
+    tiers: [0.15, 0.25, 0.5, 0.4, 0, 0.3, 0.7, 0.45, 0],
   },
   {
     song_id: "o068b00O6QD8lo9O1i9PbQlqO6IQOidD",
@@ -6759,6 +7900,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 16,
     ratings: [4, 9, 14, 17, 18, 8, 14, 17, 18],
+    tiers: [0.35, 0.4, 0.15, 0.35, 0.6, 0.35, 0.3, 0.35, 0.6],
   },
   {
     song_id: "O06Id8PIDbDblO109ddi1dldd0bqDdQ1",
@@ -6766,13 +7908,15 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 9],
+    tiers: [0, 0, 0, 0, 0.2, 0, 0, 0, 0.3],
   },
   {
     song_id: "O09lbd0I8D0DI08O06l6iiI0i11I1iIb",
     song_name: "Pink Rose",
     alphabet: "P",
     version_num: 8,
-    ratings: [3, 4, 6, 10, 0, 4, 7, 10, 0],
+    ratings: [3, 4, 7, 10, 0, 4, 7, 10, 0],
+    tiers: [0.1, 0.2, 0.4, 0.25, 0, 0.1, 0.3, 0.3, 0],
   },
   {
     song_id: "O0Id19qQlDibiDdIP90o81bOo16qbQ0o",
@@ -6780,6 +7924,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 13,
     ratings: [3, 7, 10, 13, 16, 6, 9, 13, 16],
+    tiers: [0.5, 0.5, 0.7, 0.65, 0.7, 0.7, 0.65, 0.6, 0.5],
   },
   {
     song_id: "o0l1Qioq1i9iQl6b9q6il0iqi1b1OQ9b",
@@ -6788,13 +7933,15 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 12,
     ratings: [4, 11, 14, 17, 18, 11, 14, 17, 18],
+    tiers: [0.4, 0.55, 0.7, 0.75, 0.6, 0.45, 0.75, 0.45, 0.6],
   },
   {
     song_id: "O0O1lPoIIIQ9lbOi90odI0Di80qq16lo",
     song_name: "A thing called LOVE",
     alphabet: "A",
     version_num: 10,
-    ratings: [3, 4, 7, 10, 0, 5, 6, 11, 0],
+    ratings: [3, 4, 7, 10, 0, 5, 7, 11, 0],
+    tiers: [0.05, 0.2, 0.2, 0.25, 0, 0.15, 0.5, 0.2, 0],
   },
   {
     song_id: "O110IdDiDlDQ66bb1o9lbqiqQq6lOid1",
@@ -6802,6 +7949,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [2, 4, 7, 9, 0, 5, 6, 8, 0],
+    tiers: [0.7, 0.75, 0.5, 0.45, 0, 0.6, 0.7, 0.55, 0],
   },
   {
     song_id: "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI",
@@ -6809,6 +7957,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 10,
     ratings: [4, 5, 8, 13, 0, 4, 7, 13, 0],
+    tiers: [0.3, 0.5, 0.9, 0.75, 0, 0.65, 0.9, 0.6, 0],
   },
   {
     song_id: "O11olQOQIOOqdo1IbPP8iDDqIP0b1Dl6",
@@ -6816,6 +7965,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 18,
     ratings: [2, 5, 10, 13, 0, 5, 10, 14, 0],
+    tiers: [0.35, 0.35, 0.5, 0.6, 0, 0.25, 0.35, 0.45, 0],
   },
   {
     song_id: "O1blDPOQ8IQb00o0D89QIDIlo8b06liD",
@@ -6823,14 +7973,16 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 4,
     ratings: [3, 4, 7, 9, 0, 4, 7, 10, 0],
+    tiers: [0.3, 0.45, 0.5, 0.3, 0, 0.35, 0.5, 0.25, 0],
   },
   {
     song_id: "o1d0DDobPPPlq0l8Qli1d6ODI8ldo1qb",
     song_name: "シル・ヴ・プレジデント",
     romanized_name: "S'il Vous President",
-    alphabet: " さ",
+    alphabet: " さ",
     version_num: 18,
-    ratings: [1, 4, 8, 12, 14, 4, 8, 12, 14],
+    ratings: [2, 4, 8, 12, 14, 4, 8, 12, 14],
+    tiers: [0, 0.05, 0.1, 0.15, 0.4, 0, 0.2, 0.1, 0.3],
     lock_types: [10, 10, 10, 10, 10, 10, 10, 10, 10],
   },
   {
@@ -6839,6 +7991,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 15,
     ratings: [3, 5, 9, 11, 0, 5, 9, 12, 0],
+    tiers: [0.4, 0.5, 0.65, 0.75, 0, 0.35, 0.55, 0.5, 0],
   },
   {
     song_id: "o1Od8IPqddIP0oIPod81PDodPo1qo88o",
@@ -6847,13 +8000,15 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 15,
     ratings: [3, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.6, 0.5, 0.3, 0, 0, 0.45, 0.45, 0.05, 0],
   },
   {
     song_id: "o1QoI9dQ1i89bPl1oDl6999861obD0qI",
     song_name: "SOUL CRASH",
     alphabet: "S",
     version_num: 10,
-    ratings: [3, 6, 9, 13, 0, 6, 9, 12, 0],
+    ratings: [3, 7, 9, 13, 0, 6, 9, 12, 0],
+    tiers: [0.45, 0.6, 0.5, 0.45, 0, 0.5, 0.55, 0.6, 0],
   },
   {
     song_id: "o6bPdI8O089O8lbl8OlIb1lPo8o1lODQ",
@@ -6862,6 +8017,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 14],
+    tiers: [0, 0, 0, 0, 0.35, 0, 0, 0, 0.7],
   },
   {
     song_id: "o6I06bPq8dqIlllbQDPP8boqdq6iQ8Qb",
@@ -6869,6 +8025,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 10,
     ratings: [2, 5, 7, 11, 0, 5, 7, 11, 0],
+    tiers: [0.45, 0.3, 0.6, 0.45, 0, 0.2, 0.45, 0.4, 0],
   },
   {
     song_id: "O6I9ioqii8i6I1DIb1PqOD6q0ooo8bDo",
@@ -6876,6 +8033,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 8,
     ratings: [7, 8, 10, 12, 13, 8, 11, 13, 13],
+    tiers: [0.6, 0.85, 0.8, 0.65, 0.75, 0.75, 0.7, 0.55, 0.75],
   },
   {
     song_id: "O6llIdODQD6oDQ6QiPQDOlob9i8l6qib",
@@ -6884,6 +8042,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [6, 11, 13, 17, 18, 10, 13, 17, 18],
+    tiers: [0.85, 0.7, 0.65, 0.65, 0.2, 0.65, 0.65, 0.75, 0.5],
   },
   {
     song_id: "o6oqqiOOb9Pob66loQoQddlDP6PP69lo",
@@ -6892,6 +8051,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 15],
+    tiers: [0, 0, 0, 0, 0.55, 0, 0, 0, 0.65],
   },
   {
     song_id: "O6P1dIO0IDO6o8ib6i8oP86Qb9D08idd",
@@ -6899,8 +8059,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Colorful Minutes",
     alphabet: "か",
     version_num: 19,
-    ratings: [1, 4, 7, 11, 0, 4, 7, 11, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    ratings: [2, 4, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.25, 0.3, 0.4, 0.15, 0, 0.15, 0.35, 0.15, 0],
   },
   {
     song_id: "O6q0qIQdII9086d9q6o0D1PO06liQ9iO",
@@ -6908,6 +8068,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 16,
     ratings: [5, 8, 12, 16, 0, 8, 12, 15, 0],
+    tiers: [0.45, 0.6, 0.6, 0.95, 0, 0.5, 0.65, 0.85, 0],
   },
   {
     song_id: "O6q1o06Po9lQbqOl08Io1obqQ9QPi09b",
@@ -6915,6 +8076,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 7,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 10],
+    tiers: [0, 0, 0, 0, 0.35, 0, 0, 0, 0.65],
   },
   {
     song_id: "O6q9qPQ1q69ddPl6DPO0bQO6989QO1ii",
@@ -6922,6 +8084,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [5, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.3, 0.6, 0.65, 0.5, 0, 0.5, 0.45, 0.5, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -6930,6 +8093,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 12,
     ratings: [3, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.2, 0.25, 0.3, 0.55, 0, 0.15, 0.3, 0.4, 0],
   },
   {
     song_id: "o81iq91q6lI6OODP9Pb9OboDlQD9Q08d",
@@ -6937,6 +8101,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 14,
     ratings: [2, 4, 8, 12, 14, 4, 8, 12, 14],
+    tiers: [0.45, 0.45, 0.35, 0.2, 0.7, 0.45, 0.4, 0.35, 0.3],
   },
   {
     song_id: "O86D9iqi81QllOqP19dQqqId1qdIolqI",
@@ -6944,6 +8109,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 18,
     ratings: [2, 5, 8, 11, 0, 6, 9, 11, 0],
+    tiers: [0.45, 0.35, 0.3, 0.2, 0, 0.45, 0.4, 0.4, 0],
   },
   {
     song_id: "o8996Q8lQ08dQbOoqP0id80bi18lql9b",
@@ -6951,6 +8117,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [3, 7, 11, 13, 0, 7, 10, 13, 0],
+    tiers: [0.15, 0.2, 0.2, 0.35, 0, 0.1, 0.3, 0.3, 0],
   },
   {
     song_id: "o89biodIl0Oo1bQqll86QDi0oQQd61Db",
@@ -6958,6 +8125,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [3, 8, 13, 17, 0, 7, 13, 17, 0],
+    tiers: [0.1, 0.15, 0.05, 0.3, 0, 0.35, 0.1, 0.15, 0],
     lock_types: [220, 220, 220, 220, 0, 220, 220, 220, 0],
   },
   {
@@ -6967,6 +8135,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 18,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.5, 0.35, 0.85, 0.7, 0, 0.35, 0.75, 0.6, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -6974,7 +8143,8 @@ export const ALL_SONG_DATA = [
     song_name: "KING",
     alphabet: "K",
     version_num: 19,
-    ratings: [1, 7, 13, 16, 0, 7, 13, 16, 0],
+    ratings: [2, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.1, 0.25, 0.1, 0.15, 0, 0.3, 0.15, 0.1, 0],
   },
   {
     song_id: "O8oPP6D8OQq1Q6Q860dqlOi6609bO1lD",
@@ -6982,6 +8152,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.3, 0.2, 0.2, 0.75, 0, 0.2, 0.2, 0.5, 0],
   },
   {
     song_id: "O8Qb086QQIQ109d1lqilOQ9QD8lPIqdd",
@@ -6989,6 +8160,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [2, 6, 12, 16, 0, 6, 12, 16, 0],
+    tiers: [0.45, 0.5, 0.2, 0.45, 0, 0.5, 0.15, 0.1, 0],
     lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
@@ -6997,6 +8169,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 9,
     ratings: [3, 4, 6, 9, 0, 3, 6, 9, 0],
+    tiers: [0.45, 0.5, 0.5, 0.3, 0, 0.65, 0.7, 0.4, 0],
   },
   {
     song_id: "o91qiqqDi9b6d6l1dQ6qO6oO0QDIlPql",
@@ -7007,6 +8180,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 14,
     ratings: [3, 5, 8, 11, 0, 6, 8, 11, 0],
+    tiers: [0.6, 0.45, 0.35, 0.35, 0, 0.4, 0.45, 0.35, 0],
   },
   {
     song_id: "o96i9P9iO9o0DdbPb9bbQ66DqDq88Db1",
@@ -7015,6 +8189,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 15,
     ratings: [2, 6, 8, 13, 0, 6, 9, 13, 0],
+    tiers: [0.7, 0.6, 0.6, 0.55, 0, 0.55, 0.55, 0.55, 0],
   },
   {
     song_id: "o9Ib8bob6b9qIDq1d09bq8q1I06Odi90",
@@ -7022,6 +8197,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 15,
     ratings: [2, 6, 10, 13, 0, 6, 9, 13, 0],
+    tiers: [0.5, 0.25, 0.3, 0.4, 0, 0.2, 0.25, 0.45, 0],
   },
   {
     song_id: "O9Id8Qi6OIDIQ6bPi610q0001l1P099q",
@@ -7030,6 +8206,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 8,
     ratings: [4, 9, 11, 15, 0, 9, 11, 15, 0],
+    tiers: [0.8, 0.9, 0.9, 0.6, 0, 0.9, 0.8, 0.55, 0],
   },
   {
     song_id: "o9l8Id0D1lQdl1o9DDIPbO6q998lq8bd",
@@ -7037,6 +8214,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [3, 4, 6, 8, 0, 4, 6, 8, 0],
+    tiers: [0.3, 0.45, 0.5, 0.4, 0, 0.45, 0.6, 0.5, 0],
   },
   {
     song_id: "O9Odqd8qiQiOqQdOOq01D8OQlOiO1iPD",
@@ -7044,6 +8222,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [5, 9, 16, 17, 18, 9, 16, 17, 18],
+    tiers: [0.35, 0.25, 0.3, 0.15, 0.5, 0.25, 0.4, 0.05, 0.1],
   },
   {
     song_id: "o9P816l0QQ1b9l1l6i1o6OD9bl9dP00l",
@@ -7051,7 +8230,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ビタチョコ/お菓子曲bitter",
     alphabet: "B",
     version_num: 18,
-    ratings: [3, 6, 10, 14, 17, 6, 10, 14, 17],
+    ratings: [3, 6, 10, 14, 18, 6, 10, 14, 18],
+    tiers: [0.35, 0.25, 0.4, 0.45, 0.85, 0.2, 0.3, 0.45, 0.95],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -7063,6 +8243,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 17,
     ratings: [5, 11, 14, 17, 0, 11, 15, 17, 0],
+    tiers: [0.8, 0.8, 0.9, 0.95, 0, 0.7, 0.75, 0.8, 0],
   },
   {
     song_id: "ob0P66Q8dqbI81qi6OQDPP6086iPoO1P",
@@ -7070,10 +8251,11 @@ export const ALL_SONG_DATA = [
     searchable_name:
       "GRADIUS REMIX うえうえしたしたひだりみぎひだりみぎ BA Ver",
     alternate_name:
-      "Gradius up up down down left right left right BA/Gradius UUDDLRLRBA/Gradius Konami code",
+      "Gradius up up down down left right left right BA/Gradius UUDDLRLRBA/Gradius Konami code",
     alphabet: "G",
     version_num: 19,
     ratings: [2, 6, 8, 12, 0, 6, 8, 12, 0],
+    tiers: [0.55, 0.55, 0.6, 0.5, 0, 0.3, 0.45, 0.4, 0],
   },
   {
     song_id: "ob6IPbiqD969Q66808obd908DI81bqPi",
@@ -7083,6 +8265,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 19,
     ratings: [3, 7, 12, 17, 0, 7, 12, 17, 0],
+    tiers: [0.3, 0.15, 0, 0, 0, 0.1, 0.05, 0, 0],
     lock_types: [220, 220, 220, 220, 0, 220, 220, 220, 0],
   },
   {
@@ -7092,6 +8275,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [2, 4, 7, 10, 0, 5, 7, 11, 0],
+    tiers: [0.4, 0.45, 0.35, 0.25, 0, 0.4, 0.35, 0.35, 0],
   },
   {
     song_id: "ObbOibP0ll9I00di6i9oO1qlIQbdD0ql",
@@ -7101,6 +8285,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [4, 7, 9, 12, 0, 7, 9, 12, 0],
+    tiers: [0.4, 0.55, 0.65, 0.45, 0, 0.55, 0.65, 0.5, 0],
   },
   {
     song_id: "obd0PDIDq8qqd9q9qdbDdqD98bd61I8D",
@@ -7108,6 +8293,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [5, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.7, 0.75, 0.85, 0.85, 0, 0.6, 0.85, 0.8, 0],
   },
   {
     song_id: "ObI1oo6QlO981880DDDOlo8bQobI0I9P",
@@ -7115,14 +8301,15 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 15,
     ratings: [2, 5, 8, 11, 14, 5, 8, 12, 14],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    tiers: [0.55, 0.4, 0.6, 0.45, 0.4, 0.3, 0.55, 0.5, 0.45],
   },
   {
     song_id: "ObiIq6PDlOiPd0d1oP8IIQbqiq09IDII",
     song_name: "DROP",
     alphabet: "D",
     version_num: 12,
-    ratings: [1, 4, 7, 11, 0, 4, 7, 13, 0],
+    ratings: [2, 5, 8, 11, 0, 4, 8, 13, 0],
+    tiers: [0.2, 0.3, 0.45, 0.35, 0, 0.15, 0.55, 0.25, 0],
   },
   {
     song_id: "ObIOQ6id8DOdlQlil8819ObqoDQIIoiO",
@@ -7131,6 +8318,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 17,
     ratings: [2, 6, 10, 14, 0, 6, 11, 14, 0],
+    tiers: [0.2, 0.3, 0.25, 0.45, 0, 0.2, 0.15, 0.45, 0],
   },
   {
     song_id: "OboID1PloIIoOOObQdQOP110I61Ddl9I",
@@ -7140,7 +8328,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Aoi Shoudou for EXTREME",
     alphabet: "あ",
     version_num: 8,
-    ratings: [2, 4, 6, 9, 0, 4, 6, 11, 0],
+    ratings: [2, 4, 7, 9, 0, 4, 7, 11, 0],
+    tiers: [0.4, 0.35, 0.45, 0.5, 0, 0.3, 0.65, 0.2, 0],
   },
   {
     song_id: "ObP1P1OoDII9b9ll698Q981ilIddb8Id",
@@ -7151,6 +8340,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 9,
     ratings: [2, 5, 7, 8, 0, 4, 7, 9, 0],
+    tiers: [0.8, 0.75, 0.7, 0.55, 0, 0.65, 0.65, 0.55, 0],
   },
   {
     song_id: "Od08diDbdbl1Pi90QdO0ibqq8D111q9b",
@@ -7160,6 +8350,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 18,
     ratings: [2, 4, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.55, 0.6, 0.55, 0.35, 0, 0.55, 0.6, 0.25, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -7171,6 +8362,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 6, 10, 14, 12, 6, 10, 14, 13],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "Od6bOOb69PqbqPdb6lO1QI66DOqo0POO",
@@ -7178,6 +8370,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [3, 8, 12, 17, 0, 8, 13, 17, 0],
+    tiers: [0.55, 0.45, 0.8, 0.6, 0, 0.35, 0.6, 0.4, 0],
   },
   {
     song_id: "oD6l698q0bQqoIOi0Dd66bqObII8QqDl",
@@ -7185,7 +8378,8 @@ export const ALL_SONG_DATA = [
     searchable_name: "TRUE LOVE",
     alphabet: "T",
     version_num: 9,
-    ratings: [4, 4, 8, 10, 0, 4, 7, 10, 0],
+    ratings: [4, 4, 8, 10, 0, 4, 8, 10, 0],
+    tiers: [0.25, 0.4, 0.25, 0.45, 0, 0.35, 0.55, 0.55, 0],
   },
   {
     song_id: "Od8ld9bQQPDddIqDQ1PloOOdQ0IQo0O9",
@@ -7194,6 +8388,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 13,
     ratings: [4, 9, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.75, 0.6, 0.7, 0.75, 0, 0.7, 0.7, 0.4, 0],
   },
   {
     song_id: "Odb0b0ld6P80b8b6QD0IIO866iq8OQ0b",
@@ -7203,6 +8398,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 18,
     ratings: [4, 7, 10, 13, 0, 7, 10, 14, 0],
+    tiers: [0.45, 0.4, 0.55, 0.3, 0, 0.4, 0.55, 0.1, 0],
     lock_types: [180, 180, 180, 180, 0, 180, 180, 180, 0],
   },
   {
@@ -7210,7 +8406,8 @@ export const ALL_SONG_DATA = [
     song_name: "MAGIC PARADE",
     alphabet: "M",
     version_num: 13,
-    ratings: [1, 4, 7, 10, 0, 4, 7, 10, 0],
+    ratings: [2, 4, 8, 10, 0, 4, 8, 10, 0],
+    tiers: [0.25, 0.45, 0.55, 0.55, 0, 0.5, 0.45, 0.65, 0],
   },
   {
     song_id: "oDD1DQ161816dd9Dl8IioOoi9OQdO01O",
@@ -7219,6 +8416,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [3, 8, 11, 13, 15, 8, 11, 14, 16],
+    tiers: [0.55, 0.45, 0.4, 0.6, 0.7, 0.65, 0.6, 0.55, 0.6],
   },
   {
     song_id: "odd1O0boo1boqDb0dIOQdQi1IqdO1DQd",
@@ -7227,6 +8425,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 12,
     ratings: [6, 8, 11, 15, 0, 8, 12, 16, 0],
+    tiers: [0.1, 0.45, 0.4, 0.4, 0, 0.45, 0.4, 0.6, 0],
   },
   {
     song_id: "Odd6dI6o98O68I98l6q8PqODIooQO9ol",
@@ -7234,7 +8433,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [3, 7, 11, 15, 0, 7, 11, 16, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.2, 0.45, 0.45, 0.5, 0, 0.25, 0.3, 0.4, 0],
   },
   {
     song_id: "ODd6QDIIdi6ild0O8lqIdl0oiQ98669l",
@@ -7242,6 +8441,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 18,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.3, 0.4, 0.3, 0.25, 0, 0.35, 0.2, 0.25, 0],
   },
   {
     song_id: "OddDoQ6dqi0QdQDDOO6qlO08d8bPbli1",
@@ -7250,6 +8450,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [6, 10, 14, 17, 18, 10, 14, 17, 18],
+    tiers: [0.5, 0.75, 0.75, 0.85, 0.6, 0.7, 0.7, 0.75, 0.9],
   },
   {
     song_id: "ODdoiODodb0ddIP06IqDQdl100q0dIP6",
@@ -7257,13 +8458,15 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 17,
     ratings: [3, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.35, 0.3, 0.3, 0.25, 0, 0.35, 0.3, 0.3, 0],
   },
   {
     song_id: "oDIliqQl90bQo6Qil9bOiD1iO19qI1dd",
     song_name: "TIME",
     alphabet: "T",
     version_num: 13,
-    ratings: [1, 5, 7, 9, 0, 5, 7, 10, 0],
+    ratings: [2, 5, 7, 9, 0, 5, 7, 10, 0],
+    tiers: [0.6, 0.65, 0.55, 0.5, 0, 0.65, 0.75, 0.6, 0],
   },
   {
     song_id: "oDiqd818i0IPPoIOddbb8DQiQqqqo098",
@@ -7271,6 +8474,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [4, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.3, 0.25, 0.45, 0.3, 0, 0.1, 0.3, 0.35, 0],
   },
   {
     song_id: "OdldObODIdilOP0QqI0b1oO1diqdq61b",
@@ -7278,6 +8482,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [1, 4, 7, 10, 0, 4, 7, 10, 0],
+    tiers: [0.2, 0.55, 0.4, 0.5, 0, 0.55, 0.45, 0.55, 0],
   },
   {
     song_id: "ODli9liO1loIiqb9qIol6o1PO91DP8QQ",
@@ -7286,6 +8491,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 18,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.3, 0.35, 0.05, 0.25, 0, 0.25, 0.2, 0.25, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -7294,6 +8500,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [2, 7, 10, 12, 0, 7, 10, 12, 0],
+    tiers: [0.35, 0.45, 0.35, 0.3, 0, 0.45, 0.25, 0.3, 0],
   },
   {
     song_id: "oDlO8QQOQ68IO61q9PQd800QiOll1odI",
@@ -7301,6 +8508,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 8,
     ratings: [4, 5, 7, 12, 0, 5, 7, 13, 0],
+    tiers: [0.5, 0.55, 0.95, 0.8, 0, 0.7, 0.95, 0.8, 0],
   },
   {
     song_id: "OdlOPPblPlbbldOdqblI06Dd1q00PPo9",
@@ -7308,6 +8516,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 16,
     ratings: [3, 6, 11, 15, 17, 7, 11, 15, 18],
+    tiers: [0.3, 0.4, 0.35, 0.55, 0.25, 0.45, 0.45, 0.65, 0.2],
   },
   {
     song_id: "odOQ1d1i6oil81b1QIDP6dOqqdooD918",
@@ -7316,6 +8525,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 8,
     ratings: [3, 5, 8, 9, 13, 5, 7, 10, 13],
+    tiers: [0.3, 0.35, 0.4, 0.45, 0.4, 0.4, 0.65, 0.5, 0.4],
   },
   {
     song_id: "odPq866q0QPOP9QOQ9QQIlIO60Oid16o",
@@ -7325,6 +8535,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [2, 5, 10, 15, 0, 5, 10, 15, 0],
+    tiers: [0.4, 0.35, 0.5, 0.6, 0, 0.5, 0.55, 0.45, 0],
     lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
@@ -7334,6 +8545,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 4,
     ratings: [4, 7, 9, 11, 0, 7, 8, 11, 0],
+    tiers: [0.3, 0.4, 0.35, 0.05, 0, 0.45, 0.5, 0.1, 0],
   },
   {
     song_id: "odQbP0bQqD89PolQ96II0PiqQQIddPi6",
@@ -7341,6 +8553,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 14,
     ratings: [3, 5, 8, 10, 13, 5, 8, 10, 14],
+    tiers: [0.35, 0.25, 0.4, 0.4, 0.6, 0.25, 0.5, 0.45, 0.5],
   },
   {
     song_id: "ODQOP1dblD6q8d160Ioi0dIoQloI6oQO",
@@ -7348,6 +8561,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 9,
     ratings: [4, 4, 6, 9, 0, 5, 6, 9, 0],
+    tiers: [0.4, 0.5, 0.5, 0.35, 0, 0.5, 0.7, 0.45, 0],
   },
   {
     song_id: "oDQqbI86bdlqbiO1dbiDP0PDd91bI6iP",
@@ -7359,6 +8573,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "OdQqDiIDbD6ioi60ob6lDOlD8oio9l0b",
@@ -7366,6 +8581,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 17,
     ratings: [2, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [0.55, 0.45, 0.35, 0.5, 0, 0.5, 0.3, 0.45, 0],
   },
   {
     song_id: "OI01b6I6OQ9IdQidll890oqlOPDql9ol",
@@ -7374,6 +8590,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 9,
     ratings: [3, 5, 8, 9, 0, 5, 7, 12, 0],
+    tiers: [0.3, 0.4, 0.4, 0.2, 0, 0.4, 0.6, 0.5, 0],
   },
   {
     song_id: "oI0P1oq89blIobOd0QqilPqd9Didd0OD",
@@ -7382,6 +8599,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [2, 4, 8, 12, 0, 4, 8, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -7389,14 +8607,16 @@ export const ALL_SONG_DATA = [
     song_name: "DANCE ALL NIGHT (DDR EDITION)",
     alphabet: "D",
     version_num: 16,
-    ratings: [1, 5, 8, 10, 0, 5, 8, 10, 0],
+    ratings: [2, 5, 8, 10, 0, 5, 8, 10, 0],
+    tiers: [0.4, 0.25, 0.35, 0.3, 0, 0.25, 0.4, 0.35, 0],
   },
   {
     song_id: "oi6P9Oq19ooo00bDiPQ809DQQQD8qPlD",
     song_name: "Play Hard",
     alphabet: "P",
     version_num: 17,
-    ratings: [2, 5, 9, 12, 0, 5, 9, 11, 0],
+    ratings: [3, 5, 9, 12, 0, 5, 9, 11, 0],
+    tiers: [0.55, 0.5, 0.5, 0.5, 0, 0.45, 0.45, 0.5, 0],
   },
   {
     song_id: "oi9q8DQ1QddP1699qIbqP886iOIPI16I",
@@ -7404,6 +8624,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [2, 4, 7, 11, 0, 5, 7, 11, 0],
+    tiers: [0.6, 0.5, 0.45, 0.5, 0, 0.55, 0.5, 0.5, 0],
   },
   {
     song_id: "oIb699q80OIPdlP0odl6bqbD0PlQodOq",
@@ -7411,6 +8632,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 8,
     ratings: [4, 5, 8, 11, 12, 5, 7, 11, 13],
+    tiers: [0.65, 0.6, 0.65, 0.4, 0.55, 0.6, 0.8, 0.5, 0.4],
   },
   {
     song_id: "OiDP81OQD0I810I89qdqIiDDP6i9qO0q",
@@ -7418,6 +8640,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 18,
     ratings: [2, 5, 8, 12, 0, 5, 8, 12, 0],
+    tiers: [0.25, 0.15, 0.25, 0, 0, 0.1, 0.1, 0, 0],
   },
   {
     song_id: "oIid19qq6dQ00O16IDiQ991D9OqdQil0",
@@ -7429,6 +8652,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [3, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -7438,6 +8662,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [4, 8, 12, 16, 18, 8, 13, 16, 18],
+    tiers: [0.45, 0.4, 0.25, 0.45, 0, 0.3, 0.25, 0.35, 0.4],
   },
   {
     song_id: "oiIob81i6d6P6qbddOP6Q0d0obQ0PID9",
@@ -7445,6 +8670,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Y",
     version_num: 12,
     ratings: [2, 4, 7, 10, 0, 4, 7, 11, 0],
+    tiers: [0.45, 0.4, 0.65, 0.55, 0, 0.35, 0.7, 0.5, 0],
   },
   {
     song_id: "OiIOPd80d9PQQIbidO6ObioboO88OD9l",
@@ -7453,6 +8679,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 14,
     ratings: [8, 11, 14, 17, 18, 11, 14, 17, 18],
+    tiers: [0.6, 0.75, 0.65, 0.2, 0.2, 0.7, 0.6, 0.25, 0.3],
   },
   {
     song_id: "oilPP86l0PPq6Db0qqibQlqDiIOD0l1O",
@@ -7460,6 +8687,7 @@ export const ALL_SONG_DATA = [
     alphabet: "Y",
     version_num: 19,
     ratings: [3, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.1, 0.15, 0.15, 0.4, 0, 0.2, 0.2, 0.45, 0],
   },
   {
     song_id: "oio6bqP08PPoP9qIq1oi9Dib9PIq9l11",
@@ -7467,13 +8695,15 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 11],
+    tiers: [0, 0, 0, 0, 0.25, 0, 0, 0, 0.15],
   },
   {
     song_id: "OIOdod8llPlO0lOlb6P8iIQ90qQqoDiP",
     song_name: "Yuni's Nocturnal Days",
     alphabet: "Y",
     version_num: 18,
-    ratings: [3, 6, 10, 14, 0, 6, 11, 14, 0],
+    ratings: [3, 6, 10, 14, 18, 6, 11, 14, 18],
+    tiers: [0.35, 0.25, 0.25, 0.25, 0.6, 0.2, 0.05, 0.4, 0.4],
   },
   {
     song_id: "oIPb0iPd8OdDD181dQd8OI18OQDl01QO",
@@ -7484,6 +8714,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 16,
     ratings: [3, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.2, 0.3, 0.4, 0.3, 0, 0.45, 0.65, 0.45, 0],
   },
   {
     song_id: "OiQI998qPiooq60099bPdO886q9bd011",
@@ -7493,6 +8724,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 19,
     ratings: [2, 5, 10, 15, 0, 5, 10, 15, 0],
+    tiers: [0.5, 0.4, 0.2, 0.1, 0, 0.35, 0.05, 0.1, 0],
   },
   {
     song_id: "oiQliqIliq91Dl169ldqbb18OPblOb1i",
@@ -7500,6 +8732,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 9,
     ratings: [2, 2, 5, 11, 0, 3, 6, 8, 0],
+    tiers: [0.55, 0.5, 0.4, 0.25, 0, 0.6, 0.85, 0.7, 0],
   },
   {
     song_id: "oIQo8IQPbobO6bioiqqdP6P6O8898DOQ",
@@ -7507,6 +8740,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [4, 6, 9, 12, 0, 6, 9, 13, 0],
+    tiers: [0.4, 0.4, 0.4, 0.5, 0, 0.5, 0.4, 0.5, 0],
   },
   {
     song_id: "Ol01P9IIoDIOldo8IQI0l6bd9lb9q0oo",
@@ -7518,13 +8752,15 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [4, 5, 9, 12, 16, 6, 9, 12, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "ol6IDd019O0qq8dblPQ96ol1oPbI990b",
     song_name: "HAPPY☆LUCKY☆YEAPPY",
     alphabet: "H",
     version_num: 15,
-    ratings: [6, 10, 13, 16, 0, 9, 13, 16, 0],
+    ratings: [6, 10, 13, 16, 18, 9, 13, 16, 18],
+    tiers: [0.55, 0.65, 0.75, 0.85, 1, 0.45, 0.55, 0.85, 1],
   },
   {
     song_id: "Ol8PPooqO8iOqQ6900o0q0QI9dPo0O0b",
@@ -7532,6 +8768,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 17,
     ratings: [4, 9, 12, 16, 17, 9, 12, 16, 17],
+    tiers: [0.2, 0.15, 0.3, 0.2, 0.3, 0.3, 0.4, 0.25, 0.4],
   },
   {
     song_id: "OlDo09P8l0d6d80i8qD0qQddbi0QQD8b",
@@ -7540,6 +8777,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 13,
     ratings: [5, 8, 11, 14, 17, 8, 11, 14, 17],
+    tiers: [0.8, 0.95, 0.85, 0.7, 0.65, 0.9, 0.7, 0.6, 0.65],
   },
   {
     song_id: "olDoq69qD008Q9bb8d9OOlPO160Qd0dq",
@@ -7547,6 +8785,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [2, 5, 9, 11, 0, 5, 9, 11, 0],
+    tiers: [0.15, 0.05, 0.15, 0.15, 0, 0.05, 0.15, 0.15, 0],
   },
   {
     song_id: "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo",
@@ -7554,6 +8793,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 13,
     ratings: [2, 7, 9, 12, 0, 7, 10, 12, 0],
+    tiers: [0.15, 0.2, 0.35, 0.4, 0, 0.3, 0.6, 0.65, 0],
   },
   {
     song_id: "olloQOobddiIIPObP91l0qPl6oo8P9Dl",
@@ -7561,6 +8801,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 12,
     ratings: [2, 4, 6, 13, 0, 5, 7, 13, 0],
+    tiers: [0.35, 0.4, 0.6, 0.55, 0, 0.45, 0.6, 0.6, 0],
   },
   {
     song_id: "olOOdb66Q0bP0dqQPdIdQ8IPQql8D6bi",
@@ -7568,6 +8809,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 10,
     ratings: [4, 5, 7, 12, 0, 4, 7, 10, 0],
+    tiers: [0.2, 0.25, 0.5, 0.5, 0, 0.35, 0.4, 0.5, 0],
   },
   {
     song_id: "oloPOQPQ8Q8IQQoiO9bqdDOo8o6OQ6qI",
@@ -7575,6 +8817,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 18,
     ratings: [3, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.35, 0.3, 0.65, 0.55, 0, 0.3, 0.65, 0.55, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -7583,7 +8826,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 19,
     ratings: [2, 7, 11, 15, 0, 7, 11, 15, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.2, 0.1, 0.1, 0.1, 0, 0.05, 0, 0.15, 0],
   },
   {
     song_id: "olQl6Qoi0IbobI980q9Q0QIo9qlbq1PO",
@@ -7591,6 +8834,7 @@ export const ALL_SONG_DATA = [
     alphabet: "U",
     version_num: 10,
     ratings: [4, 8, 12, 15, 0, 8, 12, 14, 0],
+    tiers: [0.65, 0.8, 0.7, 0.45, 0, 0.9, 0.8, 0.65, 0],
   },
   {
     song_id: "olQQ8QPPqqObDD9ooodOl9i9od8b06I9",
@@ -7599,6 +8843,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 6,
     ratings: [5, 7, 11, 13, 0, 8, 10, 14, 0],
+    tiers: [0.4, 0.55, 0.4, 0.25, 0, 0.55, 0.65, 0.4, 0],
   },
   {
     song_id: "OO0QbD9D6QQIb10Q9IDOQd8odb6ob6qP",
@@ -7606,6 +8851,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 9,
     ratings: [4, 5, 8, 12, 13, 5, 8, 12, 14],
+    tiers: [0.35, 0.4, 0.45, 0.3, 0.35, 0.4, 0.45, 0.45, 0.3],
   },
   {
     song_id: "OO1O10bDI6OP0O1OlOlI6qQDiPIdidbO",
@@ -7613,6 +8859,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 18,
     ratings: [5, 9, 12, 16, 0, 10, 12, 15, 0],
+    tiers: [0, 0.1, 0.05, 0.05, 0, 0.05, 0.1, 0.1, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -7622,13 +8869,15 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 17,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.25, 0.2, 0.3, 0.15, 0, 0.3, 0.3, 0.1, 0],
   },
   {
     song_id: "Oo66i08qboI8PDbdQoiIb9qQ1i99oboP",
     song_name: "DDR System Songs+Replicant Mix ",
-    alphabet: "?",
+    alphabet: "D",
     version_num: 19,
     ratings: [1, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [0.2, 0.1, 0.25, 0.55, 0, 0.1, 0.1, 0.35, 0],
   },
   {
     song_id: "oo6iiQQbqQ98D9oP6OQPibIqIPd66Qb0",
@@ -7636,6 +8885,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [4, 9, 12, 15, 0, 9, 12, 16, 0],
+    tiers: [0.85, 0.8, 0.75, 0.85, 0, 0.75, 0.75, 0.65, 0],
   },
   {
     song_id: "oo8DId90dbDliiQQlQPQQoIq6lPliqo9",
@@ -7643,6 +8893,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 8,
     ratings: [3, 4, 6, 10, 0, 5, 6, 9, 0],
+    tiers: [0.35, 0.4, 0.45, 0.2, 0, 0.35, 0.5, 0.25, 0],
   },
   {
     song_id: "Oo91QPdQDd1Od1oQI6IIldbQ1lQ88bO0",
@@ -7650,6 +8901,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 10,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 13],
+    tiers: [0, 0, 0, 0, 0.75, 0, 0, 0, 0.85],
   },
   {
     song_id: "Oo9O18oqOi9DIoOoqb9IqQDo0dbdqP9q",
@@ -7657,6 +8909,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 14,
     ratings: [2, 5, 7, 12, 0, 5, 7, 11, 0],
+    tiers: [0.45, 0.3, 0.45, 0.4, 0, 0.35, 0.6, 0.45, 0],
   },
   {
     song_id: "oOdl0d1IOo0bd008DOl91606Pd0PP86d",
@@ -7664,6 +8917,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 10,
     ratings: [3, 4, 8, 11, 0, 4, 10, 13, 0],
+    tiers: [0.45, 0.55, 0.5, 0.35, 0, 0.65, 0.5, 0.65, 0],
   },
   {
     song_id: "oOI18qilo91qPQl9Q0l9iliO96Pi6DIi",
@@ -7673,6 +8927,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [2, 5, 8, 10, 0, 5, 8, 10, 0],
+    tiers: [0.4, 0.4, 0.3, 0.2, 0, 0.45, 0.35, 0.25, 0],
   },
   {
     song_id: "oOI88lollO1OOQQd9DPi0690I6i6oiII",
@@ -7680,6 +8935,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 11,
     ratings: [0, 0, 0, 0, 17, 0, 0, 0, 18],
+    tiers: [0, 0, 0, 0, 0.55, 0, 0, 0, 0.4],
   },
   {
     song_id: "OoIPPqIDbQ6qIb69q8dil0iq0l6q6DQD",
@@ -7688,6 +8944,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 8,
     ratings: [3, 5, 9, 13, 0, 4, 10, 12, 0],
+    tiers: [0.25, 0.2, 0.5, 0.25, 0, 0.2, 0.3, 0.45, 0],
   },
   {
     song_id: "ooiqoi6Q0dil6b10QOq8DiOIiq9iQb10",
@@ -7695,6 +8952,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 18,
     ratings: [3, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.55, 0.55, 0.7, 0.6, 0, 0.55, 0.55, 0.45, 0],
     lock_types: [180, 180, 180, 180, 0, 180, 180, 180, 0],
   },
   {
@@ -7703,6 +8961,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [4, 6, 10, 13, 0, 6, 10, 13, 0],
+    tiers: [0.25, 0.25, 0.3, 0.25, 0, 0.35, 0.25, 0.45, 0],
   },
   {
     song_id: "oOOI98q81oQQQP88d6Q6qlbl8QI9d0dI",
@@ -7714,6 +8973,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 6, 10, 12, 14, 6, 10, 12, 14],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "OoQ6Oq81oIql8iIlbI6qldIlqoD1Di1I",
@@ -7721,6 +8981,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [4, 5, 8, 10, 0, 5, 8, 10, 0],
+    tiers: [0.4, 0.45, 0.35, 0.55, 0, 0.55, 0.4, 0.55, 0],
   },
   {
     song_id: "OoqbDO180q18oqi1ooO1QIdOoOPl69b1",
@@ -7731,6 +8992,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [4, 6, 9, 13, 0, 7, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "OoQiq8OiPbIPI80OqOlliP661bOIDd9o",
@@ -7740,6 +9002,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [3, 7, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.3, 0.35, 0.65, 0.75, 0, 0.35, 0.5, 0.7, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -7751,6 +9014,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 15,
     ratings: [4, 8, 11, 13, 0, 7, 11, 13, 0],
+    tiers: [0.5, 0.35, 0.5, 0.4, 0, 0.6, 0.45, 0.4, 0],
   },
   {
     song_id: "oP8iIdilQ0QiDllqDbDIOl0iQPd9PQ9I",
@@ -7758,6 +9022,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [2, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.6, 0.5, 0.55, 0.55, 0, 0.45, 0.45, 0.55, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -7767,6 +9032,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 19,
     ratings: [4, 8, 14, 17, 0, 8, 14, 17, 0],
+    tiers: [0.35, 0.35, 0.25, 0.2, 0, 0.2, 0.3, 0.1, 0],
   },
   {
     song_id: "OPbqldiq0dQIo1011086IOl1qbOloOl9",
@@ -7775,6 +9041,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 6,
     ratings: [4, 6, 7, 11, 0, 5, 8, 11, 0],
+    tiers: [0.1, 0.1, 0.3, 0.25, 0, 0.35, 0.45, 0.3, 0],
   },
   {
     song_id: "OPdooDlO9iO09lI1ODP00660loDiiodi",
@@ -7782,6 +9049,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 17,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.35, 0.65, 0.6, 0.45, 0, 0.7, 0.45, 0.3, 0],
   },
   {
     song_id: "OPDQ9Oi8I6D1I1iqi8iOiP0bDI9Pl86P",
@@ -7790,6 +9058,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 11,
     ratings: [3, 7, 11, 14, 16, 6, 9, 14, 15],
+    tiers: [0.55, 0.65, 0.55, 0.25, 0.35, 0.65, 0.75, 0.4, 0.5],
   },
   {
     song_id: "OPOIPIi1OioQ98qbO100q6QiDP8dIDq6",
@@ -7797,6 +9066,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 11,
     ratings: [5, 9, 12, 16, 18, 7, 12, 16, 18],
+    tiers: [0.75, 0.9, 0.95, 0.95, 0.5, 0.95, 0.9, 0.85, 0.6],
   },
   {
     song_id: "oPP1Pdl6Qdlb8oq10PP1doDibdbbl9bl",
@@ -7807,7 +9077,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 16,
     ratings: [3, 5, 8, 12, 16, 7, 9, 13, 16],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    tiers: [0.35, 0.35, 0.35, 0.2, 0.05, 0.4, 0.4, 0.3, 0.4],
   },
   {
     song_id: "OPQQo1idQoqOq88lIPOQo6DooiP8QO9d",
@@ -7816,6 +9086,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [4, 8, 12, 15, 0, 7, 12, 14, 0],
+    tiers: [0.75, 0.65, 0.95, 0.7, 0, 0.65, 0.9, 0.95, 0],
   },
   {
     song_id: "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6",
@@ -7824,6 +9095,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 10,
     ratings: [3, 4, 6, 11, 0, 5, 7, 11, 0],
+    tiers: [0.3, 0.35, 0.6, 0.15, 0, 0.35, 0.55, 0.3, 0],
   },
   {
     song_id: "oQ1PPlOd8Ilb8I1I6biqO0lQPIoOldP1",
@@ -7832,6 +9104,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.25, 0.25, 0.15, 0, 0, 0.35, 0.2, 0.25, 0],
   },
   {
     song_id: "OQ6o9D6ldd0iqoqoQQ0QbIi01DI9dO6b",
@@ -7839,6 +9112,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 19,
     ratings: [3, 6, 12, 16, 0, 6, 12, 16, 0],
+    tiers: [0.35, 0.4, 0.2, 0, 0, 0.3, 0.1, 0, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -7849,6 +9123,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 18,
     ratings: [5, 9, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [0.45, 0.55, 0.7, 0.5, 0, 0.4, 0.55, 0.35, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -7859,6 +9134,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 18,
     ratings: [3, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.25, 0.05, 0.3, 0.15, 0, 0.05, 0.3, 0.1, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -7869,14 +9145,17 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 13,
     ratings: [2, 5, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [0.75, 0.6, 0.6, 0.6, 0, 0.6, 0.55, 0.6, 0],
   },
   {
     song_id: "Oq900IIl1Ob8qoIPqDP0PD6blbqIqlP1",
     song_name: "いーあるふぁんくらぶ",
-    romanized_name: "Iiaru Fan Club",
+    romanized_name: "Yi Er Fan Club",
+    alternate_name: "Iiaru Fan Club/1 2 Fan Club",
     alphabet: "あ",
     version_num: 16,
-    ratings: [1, 4, 8, 12, 0, 5, 9, 12, 0],
+    ratings: [2, 4, 8, 12, 0, 5, 9, 12, 0],
+    tiers: [0.35, 0.4, 0.35, 0.2, 0, 0.25, 0.3, 0.3, 0],
   },
   {
     song_id: "oQ91qO6Dii66bO69I9ooIQD101Dl68Qi",
@@ -7884,6 +9163,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [3, 5, 10, 12, 0, 5, 10, 12, 0],
+    tiers: [0.15, 0.4, 0.45, 0.35, 0, 0.4, 0.3, 0.25, 0],
   },
   {
     song_id: "oQ9QDQ6I9oo9DP8Oi86id61o9Pbbl9bD",
@@ -7893,6 +9173,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 13,
     ratings: [2, 5, 8, 13, 0, 5, 8, 13, 0],
+    tiers: [0.65, 0.65, 0.8, 0.65, 0, 0.75, 0.75, 0.55, 0],
   },
   {
     song_id: "Oq9QIlI8l11ddqbbDoQ1ql61OqlIi9lo",
@@ -7900,6 +9181,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 12,
     ratings: [3, 6, 9, 12, 10, 6, 9, 12, 11],
+    tiers: [0.15, 0.3, 0.2, 0.1, 0.65, 0.35, 0.3, 0.2, 0.5],
   },
   {
     song_id: "OQb96d6qD9bPdD819QO0b88blIllldoi",
@@ -7907,6 +9189,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 15,
     ratings: [2, 5, 8, 10, 12, 5, 9, 11, 13],
+    tiers: [0.25, 0.05, 0.2, 0.15, 0.5, 0.15, 0.3, 0.1, 0.35],
   },
   {
     song_id: "OQbdD9iD898Q01oIddDliq8q9D1QlQ1I",
@@ -7915,6 +9198,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [3, 6, 9, 12, 16, 6, 9, 12, 16],
+    tiers: [0.25, 0.45, 0.5, 0.55, 0.65, 0.4, 0.45, 0.6, 0.75],
   },
   {
     song_id: "OQbPdOIo6dPPIq6d8qid6DbPP0q991i6",
@@ -7924,6 +9208,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 13,
     ratings: [2, 5, 8, 12, 0, 5, 8, 12, 0],
+    tiers: [0.65, 0.55, 0.5, 0.5, 0, 0.5, 0.5, 0.35, 0],
   },
   {
     song_id: "OqIlb9PQIo0Io90PIQi6q86dO8iP19Oi",
@@ -7931,6 +9216,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 13,
     ratings: [2, 4, 8, 12, 0, 4, 8, 11, 0],
+    tiers: [0.3, 0.3, 0.5, 0.3, 0, 0.25, 0.6, 0.4, 0],
   },
   {
     song_id: "Oqo009llDdDIODldDOI6OIolqlI9PI0d",
@@ -7940,6 +9226,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 19,
     ratings: [3, 7, 12, 15, 0, 6, 12, 15, 0],
+    tiers: [0.5, 0.5, 0.5, 0.3, 0, 0.45, 0.45, 0.4, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -7948,6 +9235,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [3, 8, 13, 17, 0, 8, 13, 17, 0],
+    tiers: [0.3, 0.3, 0.4, 0.5, 0, 0.15, 0.15, 0, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -7956,6 +9244,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [5, 6, 9, 12, 0, 6, 9, 11, 0],
+    tiers: [0.2, 0.3, 0.35, 0.3, 0, 0.35, 0.5, 0.4, 0],
   },
   {
     song_id: "oQolO9oOO01ll0I8969i8O1IQliloDqP",
@@ -7964,6 +9253,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 15,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.55, 0.4, 0.55, 0.65, 0, 0.5, 0.5, 0.5, 0],
   },
   {
     song_id: "oQPdiPPdQO1Ob6DqDi0l0q0PDP06QlO0",
@@ -7971,6 +9261,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 14,
     ratings: [2, 5, 8, 10, 13, 5, 8, 11, 12],
+    tiers: [0.45, 0.7, 0.6, 0.6, 0.65, 0.75, 0.55, 0.5, 0.35],
   },
   {
     song_id: "oqPii6QDdPOI6lDDQ96DOI8ill61bobd",
@@ -7978,6 +9269,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.4, 0.4, 0.5, 0.6, 0, 0.5, 0.4, 0.75, 0],
   },
   {
     song_id: "OqQ68Ooiqi80891QIPoioib11qdl0l9b",
@@ -7985,6 +9277,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [3, 7, 12, 14, 0, 7, 12, 14, 0],
+    tiers: [0.25, 0.15, 0.15, 0.35, 0, 0.15, 0.05, 0.15, 0],
   },
   {
     song_id: "oQQqlb666o69DDOQoboOI1b1q09lQ9P6",
@@ -7992,6 +9285,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 15,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.55, 0.35, 0.5, 0.25, 0, 0.4, 0.85, 0.4, 0],
   },
   {
     song_id: "P01qbiIoO6dqIIqo6Db9dqq1bI6ddbqI",
@@ -7999,13 +9293,15 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 11,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 14],
+    tiers: [0, 0, 0, 0, 0.55, 0, 0, 0, 0.7],
   },
   {
     song_id: "P06O6iQbiPPqiIqOd0IQdqolbPbDId6Q",
     song_name: "Evans",
     alphabet: "E",
     version_num: 18,
-    ratings: [5, 10, 14, 17, 0, 10, 14, 17, 0],
+    ratings: [5, 10, 14, 17, 0, 10, 14, 18, 0],
+    tiers: [0.35, 0.35, 0.7, 0.55, 0, 0.15, 0.6, 0.8, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8015,6 +9311,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 14,
     ratings: [4, 8, 11, 14, 16, 8, 11, 14, 16],
+    tiers: [0.5, 0.65, 0.5, 0.4, 0.7, 0.6, 0.55, 0.4, 0.65],
   },
   {
     song_id: "P0IoP69l6q08q8DoPD1Q8bqq099Pi1iP",
@@ -8025,6 +9322,8 @@ export const ALL_SONG_DATA = [
     alphabet: "わ",
     version_num: 15,
     ratings: [3, 8, 12, 16, 18, 7, 12, 16, 18],
+    tiers: [0.45, 0.35, 0.4, 0.25, 0, 0.45, 0.55, 0.1, 0],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "P0O81Dl9Oiiid8bdOi0oqbD8DqolObbP",
@@ -8032,6 +9331,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 8,
     ratings: [4, 5, 9, 12, 0, 5, 10, 12, 0],
+    tiers: [0.4, 0.2, 0.25, 0.15, 0, 0.3, 0.55, 0.3, 0],
   },
   {
     song_id: "P160qOD09PQoOPI6iIOO69qDoqQl1qDQ",
@@ -8042,6 +9342,16 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 17,
     ratings: [2, 5, 9, 13, 0, 5, 10, 13, 0],
+    tiers: [0.85, 0.7, 0.8, 0.55, 0, 0.7, 0.75, 0.55, 0],
+  },
+  {
+    song_id: "P18io0P06q09qiId0lP6OO901li96bbl",
+    song_name: "Indigo Nocturne",
+    alphabet: "I",
+    version_num: 19,
+    ratings: [2, 6, 12, 15, 0, 6, 12, 15, 0],
+    tiers: [0.3, 0.3, 0.2, 0.5, 0, 0.3, 0.1, 0.5, 0],
+    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
     song_id: "P1boP1O60bdI16i6lqqd1Q8ioiPbolqd",
@@ -8050,6 +9360,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 17,
     ratings: [3, 6, 12, 15, 17, 6, 12, 15, 17],
+    tiers: [0.4, 0.4, 0.5, 0.2, 0.15, 0.3, 0.45, 0.45, 0.15],
     lock_types: [80, 80, 80, 80, 130, 80, 80, 80, 130],
   },
   {
@@ -8061,6 +9372,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 16,
     ratings: [3, 6, 10, 13, 15, 6, 10, 13, 15],
+    tiers: [0.35, 0.3, 0.5, 0.35, 0.3, 0.25, 0.55, 0.65, 0.35],
   },
   {
     song_id: "P6id8qqolbP0oqO060OOqbl60DI9iQoQ",
@@ -8068,6 +9380,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 16,
     ratings: [5, 10, 13, 17, 0, 9, 14, 18, 0],
+    tiers: [0.4, 0.4, 0.5, 0.3, 0, 0.65, 0.4, 0.1, 0],
   },
   {
     song_id: "P869didbP8Q69IQ0dIqo1ibOb0bb99Q1",
@@ -8078,6 +9391,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 16,
     ratings: [3, 7, 10, 13, 0, 7, 9, 12, 0],
+    tiers: [0.05, 0, 0.1, 0, 0, 0.15, 0.25, 0.15, 0],
   },
   {
     song_id: "P8DoiO0QO6Qb8iiP9D1IQ080lQQPD6ll",
@@ -8087,20 +9401,23 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 16,
     ratings: [3, 6, 9, 13, 0, 6, 10, 13, 0],
+    tiers: [0.35, 0.35, 0.35, 0.25, 0, 0.3, 0.25, 0.25, 0],
   },
   {
     song_id: "P8DQP9QIioPdi9IO6q0100PlQOIl86I9",
     song_name: "Chronos",
     alphabet: "C",
     version_num: 13,
-    ratings: [1, 4, 8, 12, 15, 4, 8, 12, 15],
+    ratings: [2, 4, 8, 12, 15, 4, 8, 12, 15],
+    tiers: [0.9, 0.9, 0.9, 0.65, 0.45, 0.9, 0.95, 0.65, 0.4],
   },
   {
     song_id: "P8IQ8blOl1i08oP18i06Oq1iP9biP6Do",
     song_name: "Rhythms Inside",
     alphabet: "R",
     version_num: 13,
-    ratings: [1, 3, 7, 9, 0, 4, 7, 9, 0],
+    ratings: [2, 3, 8, 9, 0, 4, 8, 10, 0],
+    tiers: [0.7, 0.55, 0.5, 0.5, 0, 0.6, 0.7, 0.6, 0],
   },
   {
     song_id: "P8obb0oQq1lbb6Do01PPDI1o8ooO6Pb0",
@@ -8109,20 +9426,23 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 14,
     ratings: [4, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.45, 0.5, 0.6, 0.3, 0, 0.55, 0.6, 0.4, 0],
   },
   {
     song_id: "P8od0Q9DO8i9dl881oPQQIOIIq1Q9Oi9",
     song_name: "Sucka Luva",
     alphabet: "S",
     version_num: 14,
-    ratings: [1, 4, 7, 11, 0, 5, 8, 11, 0],
+    ratings: [2, 5, 8, 11, 0, 5, 9, 11, 0],
+    tiers: [0.7, 0.55, 0.55, 0.3, 0, 0.45, 0.65, 0.5, 0],
   },
   {
     song_id: "P8P1dlqi9D111iIDPOP0l9DIO1l6lqO9",
     song_name: "BABY BABY GIMME YOUR LOVE",
     alphabet: "B",
     version_num: 4,
-    ratings: [1, 2, 4, 7, 0, 3, 5, 8, 0],
+    ratings: [2, 2, 4, 7, 0, 3, 5, 8, 0],
+    tiers: [0.5, 0.4, 0.5, 0.3, 0, 0.5, 0.5, 0.3, 0],
   },
   {
     song_id: "P98dl8qdoilqbPqIO86ood601o1696D8",
@@ -8130,6 +9450,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 3,
     ratings: [4, 7, 10, 12, 0, 8, 9, 13, 0],
+    tiers: [0.45, 0.7, 0.8, 0.45, 0, 0.55, 0.6, 0.45, 0],
   },
   {
     song_id: "Pb0D8b8b8PoDIO9Q9DbiQiI8qi0D89D8",
@@ -8139,6 +9460,7 @@ export const ALL_SONG_DATA = [
     alphabet: "わ",
     version_num: 19,
     ratings: [2, 5, 11, 15, 0, 5, 11, 15, 0],
+    tiers: [0.15, 0.05, 0.2, 0.1, 0, 0.05, 0.05, 0.05, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8148,6 +9470,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 1,
     ratings: [3, 8, 9, 10, 0, 9, 10, 10, 0],
+    tiers: [0.3, 0.35, 0.3, 0.15, 0, 0.35, 0.45, 0.4, 0],
   },
   {
     song_id: "PbQ8Q9ol09I18IIb0d6iO8i9ODID10iO",
@@ -8155,6 +9478,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 13,
     ratings: [2, 5, 7, 10, 0, 5, 8, 10, 0],
+    tiers: [0.35, 0.35, 0.5, 0.25, 0, 0.25, 0.35, 0.4, 0],
   },
   {
     song_id: "Pd1d96Q91oiboqb86DdddD68dbq81Pdo",
@@ -8165,6 +9489,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 15,
     ratings: [3, 6, 9, 13, 0, 5, 10, 12, 0],
+    tiers: [0.05, 0.1, 0.2, 0.05, 0, 0.2, 0.35, 0.2, 0],
   },
   {
     song_id: "Pd8bD1od1iOOl80oOiiiIb9QdqIQQllQ",
@@ -8175,6 +9500,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 19,
     ratings: [5, 10, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.65, 0.7, 0.75, 0.95, 0, 0.6, 0.6, 0.55, 0],
     lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
@@ -8183,6 +9509,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 3,
     ratings: [5, 7, 9, 13, 0, 8, 9, 13, 0],
+    tiers: [0.25, 0.35, 0.35, 0.3, 0, 0.55, 0.5, 0.55, 0],
   },
   {
     song_id: "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl",
@@ -8190,6 +9517,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 9,
     ratings: [5, 9, 10, 11, 0, 9, 11, 11, 0],
+    tiers: [0.7, 0.6, 0.7, 0.65, 0, 0.65, 0.55, 0.7, 0],
   },
   {
     song_id: "PddldblI909IqI8PPiQIo9lIIiQdDo1l",
@@ -8198,6 +9526,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [4, 9, 12, 16, 18, 9, 12, 16, 18],
+    tiers: [0.7, 0.5, 0.7, 0.45, 0.3, 0.5, 0.7, 0.3, 0.2],
   },
   {
     song_id: "PDODO6Qdb9iqd6q0QoI0PiI0lb8l9I6d",
@@ -8205,6 +9534,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 11,
     ratings: [4, 8, 12, 15, 0, 8, 12, 16, 0],
+    tiers: [0.45, 0.75, 0.7, 0.6, 0, 0.5, 0.6, 0.45, 0],
   },
   {
     song_id: "PDoiQoi9q08PQ96Pl6oD9IIi6iq0Q6D6",
@@ -8214,13 +9544,15 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 19,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.2, 0.15, 0.25, 0.1, 0, 0.2, 0.25, 0, 0],
   },
   {
     song_id: "PdPdbdQ1lDI18O90Q0li8QI0bo99bidd",
     song_name: "This Beat Is.....",
     alphabet: "T",
     version_num: 17,
-    ratings: [1, 4, 7, 11, 0, 4, 7, 10, 0],
+    ratings: [2, 5, 8, 11, 0, 5, 8, 10, 0],
+    tiers: [0.45, 0.45, 0.5, 0.35, 0, 0.3, 0.55, 0.45, 0],
   },
   {
     song_id: "PdqQ0oO8lIOi800i69I9100olb9Q6D8Q",
@@ -8228,6 +9560,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 14,
     ratings: [3, 6, 9, 12, 14, 6, 9, 12, 14],
+    tiers: [0.25, 0.4, 0.3, 0.1, 0.2, 0.3, 0.45, 0.3, 0.45],
   },
   {
     song_id: "PI1DiP0bIi8PodP6O1i8P0P1i8iI1oD8",
@@ -8235,6 +9568,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 14,
     ratings: [3, 5, 8, 12, 15, 5, 8, 12, 15],
+    tiers: [0.2, 0.25, 0.45, 0.4, 0.45, 0.2, 0.4, 0.55, 0.5],
   },
   {
     song_id: "Pi69o0idP1obO9QDqIDbPdqlb90q8Dq8",
@@ -8244,6 +9578,7 @@ export const ALL_SONG_DATA = [
     alphabet: "な",
     version_num: 15,
     ratings: [4, 8, 12, 16, 18, 8, 12, 16, 18],
+    tiers: [0.35, 0.75, 0.45, 0.4, 0.4, 0.85, 0.65, 0.55, 0.5],
   },
   {
     song_id: "Pi81dQi00lo9i1Pib91lQ01i0biIbPIP",
@@ -8251,6 +9586,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 18,
     ratings: [2, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.5, 0.45, 0.65, 0.65, 0, 0.4, 0.6, 0.65, 0],
   },
   {
     song_id: "PibQ18qDb06Doq99boODIDQODqiDQIbP",
@@ -8258,6 +9594,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 18,
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.5, 0.6, 0.7, 0.4, 0, 0.5, 0.65, 0.4, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -8266,6 +9603,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 11,
     ratings: [3, 4, 9, 15, 15, 5, 8, 14, 14],
+    tiers: [0.3, 0.5, 0.55, 0.55, 0.75, 0.35, 0.75, 0.5, 0.8],
   },
   {
     song_id: "PIl8P90Pll19Pido608olD61QIqq0b9d",
@@ -8273,6 +9611,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 19,
     ratings: [3, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.65, 0.65, 0.8, 0.65, 0, 0.6, 0.7, 0.55, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -8282,6 +9621,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 12,
     ratings: [8, 10, 14, 17, 18, 10, 15, 18, 18],
+    tiers: [0.85, 0.95, 0.95, 0.95, 0.8, 0.9, 0.9, 0.6, 0.8],
   },
   {
     song_id: "PIP1OIoObQ11Q0Po6idiloqOl9OQqqdd",
@@ -8291,6 +9631,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [2, 5, 9, 11, 16, 5, 9, 11, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [10, 10, 10, 10, 10, 10, 10, 10, 10],
   },
   {
@@ -8300,6 +9641,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 11,
     ratings: [6, 10, 12, 15, 17, 10, 12, 15, 17],
+    tiers: [0.75, 0.8, 0.75, 0.75, 0.45, 0.8, 0.85, 0.75, 0.75],
   },
   {
     song_id: "Pl0dPid9lQDo6PDQDqPboPqO6iIDIqoo",
@@ -8308,6 +9650,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 2,
     ratings: [5, 9, 10, 12, 0, 10, 12, 11, 0],
+    tiers: [0.4, 0.6, 0.6, 0.45, 0, 0.6, 0.5, 0.55, 0],
   },
   {
     song_id: "Pld9iO6oi9qlDD08l8QDdIi6d6Q6iDd1",
@@ -8316,7 +9659,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 13,
     ratings: [2, 5, 9, 12, 16, 5, 9, 13, 16],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
+    tiers: [0.8, 0.7, 0.7, 0.75, 0.85, 0.55, 0.65, 0.55, 0.6],
   },
   {
     song_id: "PldO10PIiQ6lOiI16o060OQIiq69QO96",
@@ -8327,6 +9670,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [3, 5, 9, 13, 0, 5, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "PlIiPiPoI9DIbPdIPoqQlIq61Pd8QIDo",
@@ -8334,6 +9678,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 13,
     ratings: [2, 5, 7, 10, 13, 4, 7, 10, 14],
+    tiers: [0.65, 0.55, 0.65, 0.55, 0.75, 0.55, 0.65, 0.7, 0.95],
   },
   {
     song_id: "PllDll9di16l8ild6b688l6OP6olQid8",
@@ -8341,6 +9686,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 18,
     ratings: [4, 8, 12, 16, 0, 8, 13, 16, 0],
+    tiers: [0.5, 0.35, 0.55, 0.3, 0, 0.3, 0.35, 0.2, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8351,7 +9697,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Marisa Stole the Precious Thing/Touhoumarisa",
     alphabet: "ま",
     version_num: 16,
-    ratings: [3, 6, 9, 12, 0, 6, 10, 12, 0],
+    ratings: [4, 6, 9, 12, 0, 6, 10, 12, 0],
+    tiers: [0.35, 0.25, 0.5, 0.05, 0, 0.35, 0.5, 0.35, 0],
   },
   {
     song_id: "PlqI9Q1I6qdqb0IolOl1qP0bOQP0ibPP",
@@ -8359,6 +9706,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 10,
     ratings: [4, 5, 8, 11, 0, 4, 8, 12, 0],
+    tiers: [0.4, 0.55, 0.7, 0.5, 0, 0.55, 0.6, 0.65, 0],
   },
   {
     song_id: "Po09DbIQ9QPoboQi0900lbbOqDoPbIod",
@@ -8368,6 +9716,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 15,
     ratings: [2, 5, 9, 11, 14, 3, 9, 12, 13],
+    tiers: [0.65, 0.55, 0.55, 0.65, 0.45, 0.8, 0.55, 0.55, 0.55],
   },
   {
     song_id: "Po1D6bo0dQbdl91bPOl86lo8DbP9biiO",
@@ -8375,6 +9724,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 16,
     ratings: [2, 6, 9, 11, 0, 6, 9, 11, 0],
+    tiers: [0.3, 0.15, 0.3, 0.2, 0, 0.1, 0.25, 0.25, 0],
   },
   {
     song_id: "PO1olqI8DiDiO0loDIIQ08oPd910bQbQ",
@@ -8382,6 +9732,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [3, 6, 9, 12, 0, 6, 8, 12, 0],
+    tiers: [0.55, 0.5, 0.55, 0.35, 0, 0.65, 0.9, 0.55, 0],
   },
   {
     song_id: "PO68qOQI1oo8iQidQ9iIi9o9PPOD9OP6",
@@ -8390,13 +9741,15 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 11,
     ratings: [2, 5, 6, 11, 14, 5, 7, 11, 14],
+    tiers: [0.25, 0.15, 0.5, 0.35, 0.35, 0.15, 0.6, 0.4, 0.2],
   },
   {
     song_id: "PO9Pl1q896bDDl89qQb98D80DQoPio1I",
     song_name: "ENDYMION",
     alphabet: "E",
     version_num: 16,
-    ratings: [9, 13, 15, 18, 19, 13, 15, 18, 19],
+    ratings: [9, 13, 16, 18, 19, 13, 16, 18, 19],
+    tiers: [0.8, 0.8, 0.9, 0.9, 0.6, 0.75, 0.95, 0.9, 0.7],
   },
   {
     song_id: "POdll6oPi1dd68q19q8ID6iQ6d08bl99",
@@ -8404,6 +9757,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.1, 0.05, 0.3, 0.2, 0, 0.05, 0.2, 0.1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -8412,6 +9766,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 10],
+    tiers: [0, 0, 0, 0, 0.4, 0, 0, 0, 0.55],
   },
   {
     song_id: "PoiPd1OP1q9I9IP00PDlI1Q09QQ9b16o",
@@ -8419,6 +9774,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 19,
     ratings: [4, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.7, 0.75, 0.6, 0.75, 0, 0.5, 0.4, 0.7, 0],
   },
   {
     song_id: "POl689q8ODbPI0PDo8l8oD81Plio8qlP",
@@ -8426,6 +9782,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 13,
     ratings: [2, 5, 7, 13, 0, 4, 7, 13, 0],
+    tiers: [0.25, 0.15, 0.4, 0.4, 0, 0.35, 0.5, 0.5, 0],
   },
   {
     song_id: "POO9PlPq66OqIQO6Oq1i90D6Ill100il",
@@ -8434,6 +9791,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 8,
     ratings: [4, 5, 11, 13, 0, 6, 11, 12, 0],
+    tiers: [0.55, 0.55, 0.6, 0.6, 0, 0.55, 0.55, 0.7, 0],
   },
   {
     song_id: "PooiIP8qP0IPd9D1Ibi6l9bDoqdi9P8O",
@@ -8442,6 +9800,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 10,
     ratings: [0, 0, 0, 0, 18, 0, 0, 0, 18],
+    tiers: [0, 0, 0, 0, 0.8, 0, 0, 0, 0.9],
   },
   {
     song_id: "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl",
@@ -8451,6 +9810,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 9,
     ratings: [3, 4, 7, 12, 0, 4, 8, 10, 0],
+    tiers: [0.45, 0.6, 0.7, 0.65, 0, 0.65, 0.8, 0.65, 0],
   },
   {
     song_id: "PoP6o0Db8odIO9oOqddodd8IlPl1iDli",
@@ -8458,6 +9818,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 18,
     ratings: [4, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.3, 0.15, 0.2, 0.15, 0, 0.1, 0.25, 0.15, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8466,6 +9827,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 16,
     ratings: [7, 10, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.5, 0.55, 0.6, 0.35, 0, 0.5, 0.55, 0.7, 0],
   },
   {
     song_id: "POQQQqI8q69qP6Id8Ol01QI60OIoiil8",
@@ -8474,6 +9836,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 10,
     ratings: [5, 6, 10, 16, 0, 6, 10, 15, 0],
+    tiers: [0.6, 0.85, 0.95, 0.8, 0, 0.95, 0.9, 0.65, 0],
   },
   {
     song_id: "PP1q0iii1D6Dq9QOd0qqDOQD0160QoPD",
@@ -8482,6 +9845,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 5,
     ratings: [4, 8, 10, 13, 0, 9, 11, 13, 0],
+    tiers: [0.5, 0.8, 0.55, 0.5, 0, 0.7, 0.7, 0.65, 0],
   },
   {
     song_id: "PP9q1DDi0liP1P00lqIoIbbqo9QqlIqP",
@@ -8489,6 +9853,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 12,
     ratings: [2, 4, 7, 10, 0, 4, 7, 11, 0],
+    tiers: [0.4, 0.4, 0.5, 0.4, 0, 0.35, 0.6, 0.5, 0],
   },
   {
     song_id: "PP9QDQ0IQQID00P61d8qdDdP09b19iiI",
@@ -8497,6 +9862,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 10,
     ratings: [3, 5, 8, 12, 0, 5, 8, 12, 0],
+    tiers: [0.4, 0.6, 0.6, 0.4, 0, 0.55, 0.65, 0.3, 0],
   },
   {
     song_id: "PPb6l1di1Pi0o8O08odqIDlbPll61QbQ",
@@ -8504,6 +9870,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 18,
     ratings: [5, 10, 14, 17, 0, 11, 14, 17, 0],
+    tiers: [0.75, 0.8, 0.8, 0.9, 0, 0.55, 0.6, 0.35, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -8512,6 +9879,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [3, 5, 7, 11, 0, 4, 7, 11, 0],
+    tiers: [0.25, 0.2, 0.3, 0.45, 0, 0.35, 0.3, 0.35, 0],
   },
   {
     song_id: "PPQb966D6Ql6Q8iPo68810PdDiI6D0bl",
@@ -8519,6 +9887,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 17,
     ratings: [3, 6, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.35, 0.55, 0.4, 0.5, 0, 0.45, 0.4, 0.3, 0],
   },
   {
     song_id: "Pq0Qq0OQqlPDQOld8bddlIDPD89o8bO8",
@@ -8527,6 +9896,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 17,
     ratings: [2, 5, 8, 11, 0, 4, 8, 11, 0],
+    tiers: [0.15, 0.3, 0.4, 0.45, 0, 0.3, 0.4, 0.6, 0],
   },
   {
     song_id: "Pq1O0qIiQII9PP1Qi6dbi9Pdo88dO8Dq",
@@ -8536,6 +9906,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 16,
     ratings: [4, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [0.35, 0.35, 0.05, 0, 0, 0.45, 0.1, 0.3, 0],
   },
   {
     song_id: "Pqb60bq60o9QO0obI1Od9liQo9iIiOD0",
@@ -8543,6 +9914,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 17,
     ratings: [2, 5, 7, 10, 0, 5, 7, 10, 0],
+    tiers: [0.55, 0.5, 0.5, 0.5, 0, 0.55, 0.55, 0.55, 0],
   },
   {
     song_id: "PqOilI0ql6QDID6oo0Qb9iDo1doqQqPQ",
@@ -8553,6 +9925,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 10, 15, 0, 5, 11, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "PQP1l9qDilqbD0qOqiD8dd86qboI8bob",
@@ -8560,6 +9933,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 12,
     ratings: [2, 5, 8, 10, 0, 5, 9, 11, 0],
+    tiers: [0.1, 0.1, 0.4, 0.35, 0, 0.1, 0.3, 0.2, 0],
   },
   {
     song_id: "PQPloiIQ19QDP9QoI1ld9DlDObIOP689",
@@ -8568,13 +9942,15 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 9,
     ratings: [3, 5, 7, 11, 0, 4, 8, 12, 0],
+    tiers: [0.3, 0.3, 0.45, 0.45, 0, 0.25, 0.5, 0.4, 0],
   },
   {
     song_id: "PqPPDibPdD8qd88D0d01dqo6918b0POD",
     song_name: "Votum stellarum -forest #25 DDR RMX-",
     alphabet: "V",
     version_num: 10,
-    ratings: [1, 4, 9, 12, 0, 4, 7, 12, 0],
+    ratings: [2, 5, 9, 12, 0, 5, 7, 12, 0],
+    tiers: [0.15, 0.35, 0.5, 0.5, 0, 0.3, 0.75, 0.45, 0],
   },
   {
     song_id: "PQQd6lQlDqilqliI0IobolqIDlo0Iboq",
@@ -8583,6 +9959,7 @@ export const ALL_SONG_DATA = [
     alphabet: "X",
     version_num: 9,
     ratings: [4, 7, 10, 13, 15, 7, 10, 13, 15],
+    tiers: [0.4, 0.6, 0.6, 0.5, 0.3, 0.65, 0.85, 0.45, 0.55],
   },
   {
     song_id: "q08PbOPPbPobob0OII096bP9iil9908D",
@@ -8591,13 +9968,15 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 13,
     ratings: [3, 7, 10, 13, 15, 6, 9, 13, 15],
+    tiers: [0.4, 0.4, 0.45, 0.35, 0.5, 0.7, 0.65, 0.3, 0.35],
   },
   {
     song_id: "Q0dQDqillPqIId0Q81q01ooObQIlO1QI",
     song_name: "Poppin' Soda",
     alphabet: "P",
     version_num: 18,
-    ratings: [4, 9, 12, 15, 0, 9, 12, 16, 0],
+    ratings: [4, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.55, 0.5, 0.15, 0.55, 0, 0.35, 0.2, 0.25, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8605,7 +9984,8 @@ export const ALL_SONG_DATA = [
     song_name: "CROSS",
     alphabet: "C",
     version_num: 17,
-    ratings: [1, 5, 10, 13, 0, 5, 10, 14, 0],
+    ratings: [2, 5, 10, 13, 0, 5, 10, 14, 0],
+    tiers: [0.15, 0.25, 0.2, 0.2, 0, 0.3, 0.45, 0.15, 0],
   },
   {
     song_id: "Q0OiPQQ8IbIDq08IO9Io0qDdoDPPdd1q",
@@ -8613,6 +9993,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 4,
     ratings: [4, 8, 10, 13, 0, 6, 9, 13, 0],
+    tiers: [0.8, 0.65, 0.55, 0.5, 0, 0.75, 0.8, 0.55, 0],
   },
   {
     song_id: "q0QIob1PDI6IP86dlPb6I6il9d6bP606",
@@ -8622,7 +10003,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "渚の小悪魔",
     alphabet: "な",
     version_num: 14,
-    ratings: [2, 6, 11, 16, 9, 6, 12, 16, 9],
+    ratings: [3, 7, 11, 16, 9, 7, 12, 16, 9],
+    tiers: [0.5, 0.45, 0.5, 0.4, 0.55, 0.55, 0.6, 0.6, 0.55],
   },
   {
     song_id: "Q0qQO0P8818lIoo0boO66O0qd09dIlO8",
@@ -8630,7 +10012,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "アビ",
     alphabet: "A",
     version_num: 5,
-    ratings: [3, 4, 7, 10, 0, 5, 8, 11, 0],
+    ratings: [3, 5, 7, 10, 0, 6, 8, 11, 0],
+    tiers: [0.55, 0.65, 0.75, 0.65, 0, 0.7, 0.75, 0.55, 0],
   },
   {
     song_id: "Q10PdOD6bDD9QPQQqiO11669bb0lQ189",
@@ -8640,6 +10023,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 12,
     ratings: [5, 8, 12, 15, 0, 8, 13, 16, 0],
+    tiers: [0.15, 0.2, 0.4, 0.55, 0, 0.45, 0.45, 0.5, 0],
   },
   {
     song_id: "q11d0oiQIlbP91dqqddPq9D80lbODbDi",
@@ -8647,7 +10031,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ドンチューノー",
     alphabet: "R",
     version_num: 14,
-    ratings: [2, 6, 9, 14, 13, 6, 9, 14, 13],
+    ratings: [2, 7, 9, 14, 13, 7, 9, 14, 13],
+    tiers: [0.35, 0.25, 0.45, 0.35, 0.6, 0.2, 0.5, 0.3, 0.5],
   },
   {
     song_id: "q1DPdd1ooiPi9P0b0Obqq1QqbD86Qb18",
@@ -8656,7 +10041,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Kyoka Suigetsurou (DDR EDITION)",
     alphabet: "か",
     version_num: 19,
-    ratings: [1, 6, 11, 14, 0, 7, 12, 15, 0],
+    ratings: [2, 6, 11, 14, 0, 7, 12, 15, 0],
+    tiers: [0.3, 0.35, 0.45, 0.5, 0, 0.25, 0.1, 0.15, 0],
   },
   {
     song_id: "q1o901oPqbbI1Q61qo688bDd0Pqlb08l",
@@ -8664,6 +10050,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 4, 6, 9, 12, 4, 7, 9, 12],
+    tiers: [0.3, 0.4, 0.55, 0.4, 0.6, 0.45, 0.55, 0.65, 0.75],
   },
   {
     song_id: "q1q8IlPI1111D8IqiQ190qIoP0b0bIIo",
@@ -8671,6 +10058,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 11,
     ratings: [3, 5, 7, 9, 0, 4, 7, 10, 0],
+    tiers: [0.2, 0.2, 0.15, 0.3, 0, 0.25, 0.3, 0.5, 0],
   },
   {
     song_id: "q1qI0QibDDP6oPdl8DlIlPo80DqDd66P",
@@ -8681,6 +10069,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.5, 0.45, 0.5, 0.75, 0, 0.5, 0.55, 0.65, 0],
   },
   {
     song_id: "Q61QoIQOQdoO98DP1oDlOIoO6D6lqq1o",
@@ -8688,6 +10077,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 11,
     ratings: [3, 5, 7, 8, 0, 4, 6, 9, 0],
+    tiers: [0.2, 0.25, 0.25, 0.35, 0, 0.4, 0.5, 0.5, 0],
   },
   {
     song_id: "q6661PIbbb1O80OQQ11iD6bP1l6bio0Q",
@@ -8696,6 +10086,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "Q6b1odD8q99D190oP6ol01DolQPD0OdD",
@@ -8706,6 +10097,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 16,
     ratings: [3, 6, 10, 12, 15, 6, 10, 13, 15],
+    tiers: [0.5, 0.35, 0.3, 0.3, 0.25, 0.55, 0.45, 0.3, 0.4],
   },
   {
     song_id: "q6di1DQbi88i9QlPol1iIPbb8lP1qP1b",
@@ -8714,6 +10106,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 12,
     ratings: [7, 10, 14, 17, 18, 11, 14, 17, 19],
+    tiers: [0.45, 0.55, 0.25, 0.05, 0.6, 0.55, 0.5, 0.65, 0.2],
   },
   {
     song_id: "q6iD8idqo69qIPl00IQidoq1o1o1d1b9",
@@ -8722,6 +10115,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 15,
     ratings: [3, 7, 10, 13, 0, 6, 9, 12, 0],
+    tiers: [0.65, 0.5, 0.6, 0.65, 0, 0.8, 0.8, 0.75, 0],
   },
   {
     song_id: "q6qI6llb69D1IQq0OiP8OD06Qioob91Q",
@@ -8730,6 +10124,7 @@ export const ALL_SONG_DATA = [
     alphabet: "G",
     version_num: 3,
     ratings: [3, 8, 10, 13, 0, 9, 11, 13, 0],
+    tiers: [0.45, 0.5, 0.65, 0.7, 0, 0.5, 0.75, 0.8, 0],
   },
   {
     song_id: "Q6ql0lOOdq90DI1PqO1bd10bP0Oi8Q0Q",
@@ -8738,6 +10133,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [4, 8, 11, 15, 0, 9, 12, 15, 0],
+    tiers: [0.5, 0.6, 0.55, 0.6, 0, 0.35, 0.35, 0.45, 0],
   },
   {
     song_id: "Q86b6I1Qi6Q918l6iOoOQl866oQoIQOi",
@@ -8748,6 +10144,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [0.45, 0.3, 0.45, 0.2, 0, 0.35, 0.45, 0.2, 0],
   },
   {
     song_id: "Q86bq1iQDIqDllbdD6ldIO089q8Q1689",
@@ -8755,6 +10152,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [3, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.1, 0.1, 0.4, 0.4, 0, 0.2, 0.45, 0.3, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -8763,6 +10161,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 18,
     ratings: [5, 9, 12, 15, 0, 9, 12, 15, 0],
+    tiers: [0.5, 0.5, 0.65, 0.7, 0, 0.35, 0.45, 0.65, 0],
   },
   {
     song_id: "Q88iD188IiqQbIoP9Oq818bPbOP1d1bQ",
@@ -8770,6 +10169,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [5, 9, 14, 18, 0, 9, 14, 18, 0],
+    tiers: [0.55, 0.65, 0.8, 0.4, 0, 0.45, 0.8, 0.1, 0],
     lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
@@ -8780,6 +10180,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 19,
     ratings: [3, 6, 9, 13, 0, 5, 9, 14, 0],
+    tiers: [0.15, 0.3, 0.25, 0.35, 0, 0.25, 0.2, 0.15, 0],
   },
   {
     song_id: "Q8bIDb60oPo890oi0l0O9PQd9lOb8o1Q",
@@ -8787,6 +10188,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 17,
     ratings: [5, 9, 14, 17, 0, 9, 14, 17, 0],
+    tiers: [0.35, 0.4, 0.35, 0.75, 0, 0.4, 0.3, 0.5, 0],
   },
   {
     song_id: "Q8bIddo10ilqbd6I8QOq1bod1OO8dqlO",
@@ -8794,6 +10196,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 17,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.7, 0.7, 0.65, 0.55, 0, 0.65, 0.5, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8802,6 +10205,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 17,
     ratings: [2, 6, 10, 15, 0, 6, 10, 15, 0],
+    tiers: [0.4, 0.25, 0.4, 0.5, 0, 0.3, 0.35, 0.45, 0],
   },
   {
     song_id: "Q8iOiOPbl1lI6D6bbib8Il8lPqlIl1b9",
@@ -8809,6 +10213,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 19,
     ratings: [3, 6, 11, 15, 0, 6, 11, 15, 0],
+    tiers: [0.25, 0.25, 0.05, 0.05, 0, 0.35, 0.2, 0, 0],
   },
   {
     song_id: "Q8Ioq8POo69ol8bPiOPQPq61oqoPo0DO",
@@ -8816,6 +10221,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 9,
     ratings: [3, 4, 7, 8, 0, 3, 6, 8, 0],
+    tiers: [0.35, 0.4, 0.3, 0.4, 0, 0.3, 0.35, 0.5, 0],
   },
   {
     song_id: "q8iPi1DP6Do6D110OQiQDdPq06q80Qb0",
@@ -8825,6 +10231,7 @@ export const ALL_SONG_DATA = [
     alphabet: "あ",
     version_num: 18,
     ratings: [2, 5, 8, 11, 0, 5, 9, 11, 0],
+    tiers: [0.85, 0.75, 0.75, 0.6, 0, 0.75, 0.65, 0.65, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8835,6 +10242,7 @@ export const ALL_SONG_DATA = [
     alphabet: "こ",
     version_num: 19,
     ratings: [2, 6, 10, 14, 0, 5, 10, 14, 0],
+    tiers: [0.25, 0.2, 0.2, 0.35, 0, 0.25, 0.25, 0.4, 0],
     lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
@@ -8844,6 +10252,7 @@ export const ALL_SONG_DATA = [
     alphabet: "V",
     version_num: 19,
     ratings: [5, 9, 13, 16, 0, 9, 13, 16, 0],
+    tiers: [0.25, 0.4, 0.5, 0.4, 0, 0.35, 0.4, 0.1, 0],
   },
   {
     song_id: "Q8P19lIP698I9Q8oolP98Qb6DIqQ10ql",
@@ -8853,6 +10262,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 19,
     ratings: [2, 4, 8, 12, 0, 4, 8, 12, 0],
+    tiers: [0.35, 0.4, 0.35, 0.15, 0, 0.45, 0.1, 0.1, 0],
   },
   {
     song_id: "q8q0D8QoP89IqooiiD0q66QPI1b8lDi0",
@@ -8860,6 +10270,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [1, 3, 8, 12, 0, 3, 8, 12, 0],
+    tiers: [0.6, 0.6, 0.6, 0.45, 0, 0.6, 0.65, 0.4, 0],
   },
   {
     song_id: "Q8Q6d00DoIiPolOb9PIO0Pll96O0I1qD",
@@ -8870,6 +10281,7 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 15,
     ratings: [2, 6, 8, 11, 14, 5, 8, 11, 14],
+    tiers: [0.4, 0.3, 0.45, 0.25, 0.4, 0.35, 0.35, 0.3, 0.35],
   },
   {
     song_id: "Q8qb1oQobdqDqi0i19qqb11P1oDoiD8O",
@@ -8877,6 +10289,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 15,
     ratings: [4, 8, 11, 14, 15, 8, 11, 14, 15],
+    tiers: [0.4, 0.6, 0.6, 0.65, 0.65, 0.55, 0.5, 0.65, 0.65],
   },
   {
     song_id: "q8QPqbiQ00i6odq81P0D960I108bIiQb",
@@ -8885,6 +10298,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [3, 5, 11, 14, 17, 5, 11, 14, 17],
+    tiers: [0.6, 0.7, 0.75, 0.8, 0.7, 0.6, 0.55, 0.65, 0.6],
     lock_types: [150, 150, 150, 150, 150, 150, 150, 150, 150],
   },
   {
@@ -8893,7 +10307,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 19,
     ratings: [1, 3, 8, 12, 0, 3, 8, 12, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    tiers: [0.3, 0.4, 0.5, 0.35, 0, 0.3, 0.35, 0.4, 0],
   },
   {
     song_id: "Q96bO9D61lib19IiIi0i69P80bo6q69Q",
@@ -8902,6 +10316,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 8,
     ratings: [4, 5, 9, 11, 0, 5, 8, 11, 0],
+    tiers: [0.2, 0.3, 0.45, 0.25, 0, 0.35, 0.6, 0.25, 0],
   },
   {
     song_id: "q96q9D9oIIOQl8QQ60ii19P0Dbq8Q609",
@@ -8909,6 +10324,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 19,
     ratings: [6, 12, 15, 17, 18, 12, 15, 17, 18],
+    tiers: [0.75, 0.8, 0.7, 0.4, 0.9, 0.6, 0.6, 0.25, 0.5],
     lock_types: [230, 230, 230, 230, 230, 230, 230, 230, 230],
   },
   {
@@ -8919,7 +10335,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Touhoucirnoremix",
     alphabet: "た",
     version_num: 16,
-    ratings: [1, 4, 10, 13, 0, 5, 11, 13, 0],
+    ratings: [2, 4, 10, 13, 0, 5, 11, 13, 0],
+    tiers: [0.65, 0.75, 0.7, 0.75, 0, 0.7, 0.6, 0.7, 0],
   },
   {
     song_id: "Q99q619i0lDqll6Q0lq8l1oQ0qPO8o6I",
@@ -8927,6 +10344,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 19,
     ratings: [6, 10, 14, 17, 0, 10, 14, 17, 0],
+    tiers: [0.45, 0.6, 0.45, 0.6, 0, 0.45, 0.25, 0.4, 0],
     lock_types: [230, 230, 230, 230, 0, 230, 230, 230, 0],
   },
   {
@@ -8935,6 +10353,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 19,
     ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.15, 0.4, 0.15, 0.15, 0, 0.45, 0.1, 0.1, 0],
   },
   {
     song_id: "Q9l0i6DPO08obldq101ldDioiqdIDqlq",
@@ -8945,6 +10364,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [2, 5, 9, 13, 17, 5, 10, 13, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "q9oQ1Pid9OiIDO66Pd19blOi09019i98",
@@ -8953,6 +10373,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 13,
     ratings: [2, 4, 7, 11, 0, 4, 7, 12, 0],
+    tiers: [0.5, 0.5, 0.6, 0.45, 0, 0.45, 0.65, 0.4, 0],
   },
   {
     song_id: "Q9PP10bOQdIPD1iI99llI9QID9b09q0o",
@@ -8960,6 +10381,7 @@ export const ALL_SONG_DATA = [
     alphabet: "#",
     version_num: 19,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
+    tiers: [0.25, 0.2, 0.45, 0.65, 0, 0.25, 0.4, 0.3, 0],
     lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
   },
   {
@@ -8971,6 +10393,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [4, 7, 12, 14, 17, 8, 13, 15, 17],
+    tiers: [0.35, 0.25, 0.25, 0.3, 0.15, 0.3, 0.25, 0.1, 0.35],
   },
   {
     song_id: "Q9QlQI6Dd09P6i1bP9d8q0IQlPoqiQ81",
@@ -8978,6 +10401,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 18,
     ratings: [4, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.55, 0.55, 0.65, 0.65, 0, 0.45, 0.5, 0.5, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -8987,6 +10411,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 13,
     ratings: [4, 8, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.3, 0.2, 0.25, 0.25, 0, 0.3, 0.3, 0.15, 0],
   },
   {
     song_id: "Qb6PqOQO8Qd8i91D018olPiD01PbQ061",
@@ -8994,13 +10419,15 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 16,
     ratings: [2, 6, 9, 13, 0, 6, 9, 13, 0],
+    tiers: [0.55, 0.55, 0.5, 0.45, 0, 0.55, 0.4, 0.45, 0],
   },
   {
     song_id: "Qb8P9PODDo68lPqQ0o6d80bIqDOiPD9Q",
     song_name: "HARD BRAIN",
     alphabet: "H",
     version_num: 18,
-    ratings: [3, 6, 10, 15, 0, 7, 10, 15, 0],
+    ratings: [3, 7, 10, 15, 0, 7, 10, 15, 0],
+    tiers: [0.25, 0.25, 0.2, 0.05, 0, 0.1, 0.2, 0.15, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -9009,6 +10436,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 5,
     ratings: [3, 6, 8, 10, 0, 6, 7, 9, 0],
+    tiers: [0.35, 0.35, 0.5, 0.35, 0, 0.3, 0.55, 0.55, 0],
   },
   {
     song_id: "qb9Od0IQI16b6D9PP0O6ilqoq0dDQO66",
@@ -9018,6 +10446,7 @@ export const ALL_SONG_DATA = [
     alphabet: "や",
     version_num: 19,
     ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [0.35, 0.7, 0.5, 0.3, 0, 0.55, 0.5, 0.3, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -9028,6 +10457,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [3, 6, 9, 11, 0, 6, 9, 11, 0],
+    tiers: [0.2, 0.1, 0.1, 0, 0, 0.15, 0.15, 0.3, 0],
   },
   {
     song_id: "Qbbqd9O98bl0DobQ9l6blO8iOPP8QdDd",
@@ -9035,6 +10465,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [3, 6, 10, 12, 0, 5, 9, 13, 0],
+    tiers: [0.25, 0.3, 0.35, 0.2, 0, 0.3, 0.45, 0.15, 0],
   },
   {
     song_id: "QbD9QQP9bqoD00bQQl8obibP9PloQ9Qo",
@@ -9043,6 +10474,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 16,
     ratings: [4, 10, 14, 16, 0, 10, 14, 16, 0],
+    tiers: [0.45, 0.45, 0.75, 0.55, 0, 0.4, 0.65, 0.6, 0],
   },
   {
     song_id: "qbDidIlodPP6PqI00D18P6dDbioIdDPD",
@@ -9050,13 +10482,15 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 9,
     ratings: [3, 4, 6, 11, 0, 3, 7, 11, 0],
+    tiers: [0.35, 0.45, 0.5, 0.4, 0, 0.4, 0.55, 0.25, 0],
   },
   {
     song_id: "QbdQold98oq9lODoIloIbPiIqld6i0Qb",
     song_name: "GUILTY DIAMONDS",
     alphabet: "G",
     version_num: 18,
-    ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.25, 0.45, 0.5, 0.2, 0, 0.5, 0.45, 0.15, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -9065,6 +10499,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 15,
     ratings: [2, 5, 7, 11, 13, 5, 8, 11, 12],
+    tiers: [0.6, 0.5, 0.65, 0.6, 0.5, 0.4, 0.6, 0.6, 0.55],
   },
   {
     song_id: "qbl10iqqdO1Do1dIq181Pl6oi8QilQo1",
@@ -9072,6 +10507,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [2, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [0.6, 0.45, 0.55, 0.4, 0, 0.7, 0.6, 0.7, 0],
   },
   {
     song_id: "qbQ9I1bI6q91Q18DlDlI1Qdi8q6Qlo91",
@@ -9079,6 +10515,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 9,
     ratings: [3, 5, 8, 11, 0, 6, 8, 12, 0],
+    tiers: [0.45, 0.3, 0.6, 0.5, 0, 0.3, 0.65, 0.65, 0],
   },
   {
     song_id: "QD0q90q9PIl9PdqqO9D9DO09DbiODOI6",
@@ -9086,6 +10523,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 9,
     ratings: [3, 3, 7, 10, 0, 3, 8, 11, 0],
+    tiers: [0.25, 0.35, 0.55, 0.55, 0, 0.35, 0.75, 0.55, 0],
   },
   {
     song_id: "qD1I6qqll88q9dq9PoloD68lqddIDo6O",
@@ -9093,6 +10531,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 18,
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [0.75, 0.8, 0.6, 0.4, 0, 0.75, 0.5, 0.2, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -9101,6 +10540,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 14,
     ratings: [3, 5, 8, 12, 14, 5, 8, 11, 14],
+    tiers: [0.3, 0.25, 0.45, 0.75, 0.7, 0.25, 0.3, 0.6, 0.65],
   },
   {
     song_id: "qD6P1ldl09Dqq8QP01bbid0b9IdqobPl",
@@ -9111,6 +10551,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [3, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.4, 0.25, 0.45, 0.3, 0, 0.25, 0.55, 0.35, 0],
   },
   {
     song_id: "qD6q1PD0lIDP89DPDbOOIdq0Pi8iIdD6",
@@ -9118,6 +10559,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 12,
     ratings: [2, 5, 9, 14, 0, 4, 9, 13, 0],
+    tiers: [0.2, 0.2, 0.35, 0.15, 0, 0.1, 0.3, 0.25, 0],
   },
   {
     song_id: "QD8D6IQ1QoOPIPIIbI10QDOdd96OPIQi",
@@ -9125,6 +10567,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 16,
     ratings: [3, 6, 9, 12, 11, 6, 9, 12, 11],
+    tiers: [0.55, 0.55, 0.55, 0.4, 0.25, 0.45, 0.4, 0.45, 0.35],
   },
   {
     song_id: "QD8l9QQd89PO9ql1iOD0dO69OQ1DldbP",
@@ -9132,6 +10575,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 19,
     ratings: [4, 8, 13, 16, 18, 9, 13, 16, 18],
+    tiers: [0.45, 0.6, 0.65, 0.6, 0.6, 0.4, 0.4, 0.55, 0.6],
   },
   {
     song_id: "qD8Q180QlIi11o1IiI6DPoqolqoD61Ib",
@@ -9139,6 +10583,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 12,
     ratings: [3, 5, 9, 12, 0, 5, 9, 13, 0],
+    tiers: [0, 0, 0.05, 0.2, 0, 0.15, 0.25, 0.3, 0],
   },
   {
     song_id: "QD9Ib18D9lIO10O19d16PbPb68q1190d",
@@ -9148,6 +10593,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 17,
     ratings: [5, 9, 12, 17, 18, 9, 12, 17, 18],
+    tiers: [0.7, 0.6, 0.45, 0, 0.4, 0.5, 0.4, 0, 0.3],
     lock_types: [150, 150, 150, 150, 130, 150, 150, 150, 130],
   },
   {
@@ -9156,6 +10602,16 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 16,
     ratings: [2, 5, 9, 12, 0, 6, 9, 13, 0],
+    tiers: [0.3, 0.25, 0.5, 0.3, 0, 0.2, 0.45, 0.35, 0],
+  },
+  {
+    song_id: "qdbO199oIDIbQ61iDQIPObOPQOIDP68i",
+    song_name: "White Stream",
+    alphabet: "W",
+    version_num: 19,
+    ratings: [4, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [0.4, 0.35, 0.2, 0.35, 0, 0.25, 0, 0.3, 0],
+    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
   },
   {
     song_id: "QdbPPPDlIQiI191qPdblO01O8P8o6D68",
@@ -9163,6 +10619,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 7,
     ratings: [0, 0, 0, 0, 10, 0, 0, 0, 10],
+    tiers: [0, 0, 0, 0, 0.3, 0, 0, 0, 0.55],
   },
   {
     song_id: "qDi0dIlObi6Q6P8dQ1b8oIb188O9608o",
@@ -9170,6 +10627,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 9,
     ratings: [3, 5, 10, 12, 0, 5, 9, 12, 0],
+    tiers: [0.75, 0.7, 0.75, 0.85, 0, 0.7, 0.7, 0.85, 0],
   },
   {
     song_id: "qdi88l6bo1Iqi9Qiqli8lIQQIPO1doQ9",
@@ -9178,6 +10636,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 5,
     ratings: [3, 4, 8, 11, 0, 4, 7, 11, 0],
+    tiers: [0.6, 0.55, 0.75, 0.5, 0, 0.6, 0.65, 0.6, 0],
   },
   {
     song_id: "qDIdbDO1OiDPqd1i60Dd6OPOlO90D10Q",
@@ -9185,6 +10644,7 @@ export const ALL_SONG_DATA = [
     alphabet: "P",
     version_num: 11,
     ratings: [2, 4, 6, 11, 0, 5, 6, 10, 0],
+    tiers: [0.4, 0.4, 0.75, 0.45, 0, 0.2, 0.8, 0.65, 0],
   },
   {
     song_id: "QdIl6D808iDoDQi0Qii99Do6do8DOdQO",
@@ -9195,6 +10655,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 12,
     ratings: [2, 5, 8, 12, 0, 4, 8, 12, 0],
+    tiers: [0.2, 0.2, 0.4, 0.15, 0, 0.25, 0.35, 0.35, 0],
   },
   {
     song_id: "QDP0i688bQi1Idqil1dOqDdPdoIPP6Q0",
@@ -9203,7 +10664,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ディキシ",
     alphabet: "D",
     version_num: 5,
-    ratings: [5, 6, 9, 12, 0, 6, 9, 12, 0],
+    ratings: [5, 6, 9, 12, 0, 7, 9, 12, 0],
+    tiers: [0.1, 0.55, 0.35, 0.3, 0, 0.5, 0.5, 0.3, 0],
   },
   {
     song_id: "qdQoQli1d8DP0Obb919I6P1Odilib1Dd",
@@ -9211,7 +10673,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Onegai Darling",
     alphabet: "あ",
     version_num: 16,
-    ratings: [1, 3, 8, 11, 0, 3, 8, 11, 0],
+    ratings: [2, 3, 8, 11, 0, 3, 8, 11, 0],
+    tiers: [0.25, 0.25, 0.45, 0.2, 0, 0.2, 0.35, 0.15, 0],
   },
   {
     song_id: "qI06bbQ1dloi0IIIO1IQ1q8bdPdl6l69",
@@ -9219,6 +10682,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 13,
     ratings: [3, 4, 8, 13, 0, 5, 11, 13, 0],
+    tiers: [0.25, 0.3, 0.5, 0.3, 0, 0.3, 0.25, 0.75, 0],
   },
   {
     song_id: "QI06q9lPIoo80DlI18Ooi6dbPl89bqi0",
@@ -9226,6 +10690,7 @@ export const ALL_SONG_DATA = [
     alphabet: "O",
     version_num: 17,
     ratings: [3, 6, 8, 11, 15, 6, 9, 11, 15],
+    tiers: [0.3, 0.3, 0.4, 0.15, 0.05, 0.35, 0.3, 0.3, 0.15],
   },
   {
     song_id: "qi0lbbDIo8Qlo9IiD8oqqo69DIPQ1IIO",
@@ -9233,6 +10698,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [3, 7, 10, 14, 0, 7, 10, 14, 0],
+    tiers: [0.1, 0.15, 0.25, 0.1, 0, 0.2, 0.25, 0.05, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -9241,6 +10707,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 18,
     ratings: [3, 6, 11, 14, 0, 6, 10, 13, 0],
+    tiers: [0.5, 0.5, 0.35, 0.1, 0, 0.5, 0.6, 0.3, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -9249,7 +10716,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "クイッケ",
     alphabet: "Q",
     version_num: 9,
-    ratings: [3, 6, 7, 11, 0, 5, 6, 8, 0],
+    ratings: [3, 6, 7, 11, 0, 5, 7, 8, 0],
+    tiers: [0.35, 0.25, 0.3, 0.45, 0, 0.3, 0.45, 0.35, 0],
   },
   {
     song_id: "qi9qP1dPd6PPDlldbb8OIlD08Pbd9006",
@@ -9258,6 +10726,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 16,
     ratings: [3, 5, 8, 11, 14, 5, 8, 11, 14],
+    tiers: [0.2, 0.25, 0.5, 0.35, 0.35, 0.25, 0.45, 0.35, 0.55],
   },
   {
     song_id: "QiboqIool99ol9Q0d08b68OIIiD89qqO",
@@ -9267,6 +10736,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 18,
     ratings: [3, 6, 10, 13, 0, 7, 11, 13, 0],
+    tiers: [0.35, 0.4, 0.45, 0.35, 0, 0.4, 0.4, 0.3, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -9276,6 +10746,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 19,
     ratings: [2, 5, 8, 13, 15, 5, 8, 12, 15],
+    tiers: [0.55, 0.45, 0.4, 0.3, 0.5, 0.45, 0.4, 0.4, 0.45],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -9287,6 +10758,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 16,
     ratings: [3, 5, 8, 11, 0, 5, 10, 11, 0],
+    tiers: [0.25, 0.2, 0.4, 0, 0, 0.3, 0.35, 0.15, 0],
   },
   {
     song_id: "qIDI69oIo8OlQqdqqDilI1do6IbP16Q6",
@@ -9295,6 +10767,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 5,
     ratings: [4, 5, 7, 11, 0, 4, 8, 13, 0],
+    tiers: [0.45, 0.6, 0.75, 0.65, 0, 0.7, 0.75, 0.45, 0],
   },
   {
     song_id: "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po",
@@ -9304,7 +10777,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Moonlight Butterfly",
     alphabet: "か",
     version_num: 9,
-    ratings: [4, 4, 7, 10, 0, 3, 7, 11, 0],
+    ratings: [5, 5, 9, 11, 0, 4, 9, 11, 0],
+    tiers: [0.55, 0.55, 0.7, 0.7, 0, 0.7, 0.9, 0.7, 0],
   },
   {
     song_id: "QIDqidPlPQll9q6Il0dblIo609lii1di",
@@ -9313,6 +10787,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [1, 4, 8, 10, 14, 4, 8, 10, 14],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
     lock_types: [10, 10, 10, 10, 10, 10, 10, 10, 10],
   },
   {
@@ -9323,6 +10798,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 19,
     ratings: [3, 7, 10, 13, 0, 7, 10, 13, 0],
+    tiers: [0.15, 0.1, 0.25, 0.3, 0, 0.05, 0.1, 0.2, 0],
     lock_types: [150, 150, 150, 150, 0, 150, 150, 150, 0],
   },
   {
@@ -9334,13 +10810,15 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 15,
     ratings: [4, 7, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [0.7, 0.85, 0.75, 0.55, 0, 0.95, 0.7, 0.65, 0],
   },
   {
     song_id: "qIoDdQ1OOoPO8Q1Io0P168161DODPoqb",
     song_name: "KISS KISS KISS",
     alphabet: "K",
     version_num: 8,
-    ratings: [4, 5, 6, 12, 0, 5, 8, 12, 0],
+    ratings: [4, 5, 7, 12, 0, 5, 8, 12, 0],
+    tiers: [0.2, 0.25, 0.45, 0.45, 0, 0.25, 0.35, 0.45, 0],
   },
   {
     song_id: "QiOl969Iq1Pl6o60QOQ9PooDbbiOPioo",
@@ -9351,6 +10829,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     deleted: 1,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
     lock_types: [10, 10, 10, 10, 0, 10, 10, 10, 0],
   },
   {
@@ -9360,7 +10839,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ラブシャ/らぶしね/くだーたい",
     alphabet: "L",
     version_num: 8,
-    ratings: [3, 5, 6, 9, 0, 5, 7, 11, 0],
+    ratings: [3, 6, 7, 9, 0, 5, 7, 11, 0],
+    tiers: [0.2, 0.2, 0.3, 0.25, 0, 0.35, 0.3, 0.55, 0],
   },
   {
     song_id: "QiPiIb8I99loq8loIq91iP6l1OOoq8oq",
@@ -9371,6 +10851,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 19,
     ratings: [7, 11, 16, 18, 19, 11, 16, 18, 19],
+    tiers: [0.95, 0.95, 0.75, 0.8, 0.4, 0.85, 0.6, 0.7, 0.2],
     lock_types: [0, 0, 230, 230, 230, 0, 230, 230, 230],
   },
   {
@@ -9379,6 +10860,7 @@ export const ALL_SONG_DATA = [
     alphabet: "L",
     version_num: 16,
     ratings: [3, 9, 12, 16, 0, 9, 12, 16, 0],
+    tiers: [0.3, 0.4, 0.3, 0.15, 0, 0.25, 0.25, 0.25, 0],
   },
   {
     song_id: "QiQi666Qd9I6d1899iii80PdQdDlO1i1",
@@ -9386,6 +10868,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [3, 7, 12, 15, 0, 7, 12, 16, 0],
+    tiers: [0.6, 0.7, 0.55, 0.65, 0, 0.55, 0.55, 0.25, 0],
   },
   {
     song_id: "qiqP8qb8Qlld0Oqbll00o0bqlq9PoO09",
@@ -9393,6 +10876,7 @@ export const ALL_SONG_DATA = [
     alphabet: "N",
     version_num: 19,
     ratings: [2, 6, 10, 15, 0, 6, 10, 15, 0],
+    tiers: [0.45, 0.35, 0.35, 0.5, 0, 0.3, 0.35, 0.35, 0],
     lock_types: [160, 160, 160, 160, 0, 160, 160, 160, 0],
   },
   {
@@ -9403,6 +10887,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 11,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 14],
+    tiers: [0, 0, 0, 0, 0.7, 0, 0, 0, 0.65],
   },
   {
     song_id: "ql1Q8P100IIlbl0Pdi08I8qD900idqQq",
@@ -9411,15 +10896,17 @@ export const ALL_SONG_DATA = [
     alternate_name: "Kagerow",
     alphabet: "か",
     version_num: 9,
-    ratings: [3, 4, 7, 9, 0, 4, 6, 9, 0],
+    ratings: [3, 4, 7, 9, 0, 4, 7, 9, 0],
+    tiers: [0.4, 0.55, 0.65, 0.5, 0, 0.45, 0.7, 0.7, 0],
   },
   {
     song_id: "QldQ19DlqDbq1l091q0l1Q1qD6ldQ6qi",
     song_name: "VOLAQUAS",
     alphabet: "V",
     version_num: 19,
-    ratings: [5, 11, 15, 18, 0, 11, 15, 18, 0],
-    lock_types: [210, 210, 210, 210, 0, 210, 210, 210, 0],
+    ratings: [5, 11, 15, 18, 19, 11, 15, 18, 19],
+    tiers: [0.35, 0.4, 0.55, 0.6, 0, 0.25, 0.35, 0.6, 0.1],
+    lock_types: [210, 210, 210, 210, 210, 210, 210, 210, 210],
   },
   {
     song_id: "QlID98Ddoi6O8lP8IQd6iid610011l60",
@@ -9430,6 +10917,7 @@ export const ALL_SONG_DATA = [
     alphabet: "か",
     version_num: 15,
     ratings: [3, 6, 9, 12, 0, 7, 9, 13, 0],
+    tiers: [0.35, 0.3, 0.55, 0.4, 0, 0.4, 0.5, 0.5, 0],
   },
   {
     song_id: "qlPqO10q6PliDQDbd01IP0b6iqO0bDb6",
@@ -9439,6 +10927,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 18,
     ratings: [3, 6, 9, 12, 0, 6, 10, 12, 0],
+    tiers: [0.45, 0.55, 0.6, 0.5, 0, 0.45, 0.5, 0.4, 0],
   },
   {
     song_id: "QlQ10I6o1l88loioo6DIObi0P09PPdiD",
@@ -9447,6 +10936,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [3, 11, 15, 17, 0, 11, 14, 17, 0],
+    tiers: [0.5, 0.4, 0.35, 0.3, 0, 0.25, 0.3, 0.2, 0],
     lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
@@ -9458,6 +10948,7 @@ export const ALL_SONG_DATA = [
     alphabet: "は",
     version_num: 16,
     ratings: [3, 8, 10, 13, 15, 10, 13, 14, 15],
+    tiers: [0.7, 0.65, 0.55, 0.65, 0.45, 0.6, 0.7, 0.65, 0.45],
   },
   {
     song_id: "Qo1qdD0Q9d11d9Id6o09P9id8lPbOQ6o",
@@ -9466,6 +10957,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 14,
     ratings: [2, 4, 8, 11, 16, 5, 8, 12, 16],
+    tiers: [0.25, 0.35, 0.6, 0.45, 0.45, 0.2, 0.55, 0.45, 0.2],
   },
   {
     song_id: "QO69qib8Q61lqbO8QI0dODo8D1b6Iqlq",
@@ -9474,6 +10966,7 @@ export const ALL_SONG_DATA = [
     alphabet: "A",
     version_num: 19,
     ratings: [2, 5, 10, 11, 0, 5, 10, 11, 0],
+    tiers: [0.3, 0.25, 0.3, 0.45, 0, 0.45, 0.5, 0.45, 0],
   },
   {
     song_id: "qo6Ib8QqqDd16i91d8dlQoqIq08bo68d",
@@ -9481,6 +10974,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 10,
     ratings: [3, 5, 8, 10, 0, 5, 7, 10, 0],
+    tiers: [0.2, 0.2, 0.35, 0.2, 0, 0.35, 0.5, 0.35, 0],
   },
   {
     song_id: "qo6l9dbb8D0iDQI1odo0Qb9O1ibDdoIb",
@@ -9489,6 +10983,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 15,
     ratings: [5, 9, 12, 15, 0, 9, 12, 16, 0],
+    tiers: [0.85, 0.85, 0.9, 0.9, 0, 0.8, 0.85, 0.7, 0],
   },
   {
     song_id: "Qo9l6l6lq0q618bQOb8d6qiooiiPQqoI",
@@ -9496,13 +10991,15 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 7,
     ratings: [3, 3, 9, 12, 0, 5, 7, 12, 0],
+    tiers: [0.25, 0.4, 0.6, 0.6, 0, 0.3, 0.7, 0.65, 0],
   },
   {
     song_id: "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D",
     song_name: "AFTER THE GAME OF LOVE",
     alphabet: "A",
     version_num: 3,
-    ratings: [1, 2, 6, 8, 0, 5, 6, 8, 0],
+    ratings: [2, 3, 6, 8, 0, 5, 6, 8, 0],
+    tiers: [0.2, 0.45, 0.35, 0.15, 0, 0.45, 0.6, 0.3, 0],
   },
   {
     song_id: "qObI8DOldoqob8OQD6Dqdiob0dIb0ll9",
@@ -9510,6 +11007,7 @@ export const ALL_SONG_DATA = [
     alphabet: "H",
     version_num: 15,
     ratings: [4, 8, 11, 13, 0, 8, 11, 14, 0],
+    tiers: [0.5, 0.45, 0.65, 0.45, 0, 0.5, 0.55, 0.45, 0],
   },
   {
     song_id: "QobO6O8iQP6I16l0I8QPd0Iq6iQ1loQ6",
@@ -9518,6 +11016,7 @@ export const ALL_SONG_DATA = [
     alphabet: "R",
     version_num: 12,
     ratings: [6, 8, 11, 15, 0, 8, 12, 16, 0],
+    tiers: [0.2, 0.5, 0.6, 0.45, 0, 0.4, 0.55, 0.6, 0],
   },
   {
     song_id: "qoD0olPq6qbOi6bbPllOib0q1i16iI1O",
@@ -9525,6 +11024,7 @@ export const ALL_SONG_DATA = [
     alphabet: "C",
     version_num: 19,
     ratings: [3, 5, 12, 16, 0, 5, 12, 16, 0],
+    tiers: [0.85, 0.95, 0.85, 0.8, 0, 0.85, 0.9, 0.85, 0],
   },
   {
     song_id: "qOD6OPbP6b0l0ODOiObiQbl1DbPqOi9I",
@@ -9532,6 +11032,7 @@ export const ALL_SONG_DATA = [
     alphabet: "J",
     version_num: 16,
     ratings: [3, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.35, 0.35, 0.3, 0.25, 0, 0.5, 0.35, 0.25, 0],
   },
   {
     song_id: "qOdib0OIO1qOdiQiOi9qIiQiO91idbQq",
@@ -9539,7 +11040,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "フィーバー",
     alphabet: "F",
     version_num: 13,
-    ratings: [1, 4, 7, 9, 0, 4, 6, 9, 0],
+    ratings: [2, 4, 7, 9, 0, 4, 6, 9, 0],
+    tiers: [0.3, 0.4, 0.3, 0.2, 0, 0.2, 0.55, 0.35, 0],
   },
   {
     song_id: "qoDOoP99lq8bd19iqiloObQDqD8QbOq0",
@@ -9548,6 +11050,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 13,
     ratings: [3, 6, 9, 12, 10, 6, 9, 12, 10],
+    tiers: [0.4, 0.25, 0.4, 0.15, 0.35, 0.25, 0.5, 0.25, 0.6],
   },
   {
     song_id: "QoDQ0oq08QqiI0DQ8dIPb10qIi6d6i89",
@@ -9559,6 +11062,7 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     deleted: 1,
     ratings: [3, 8, 13, 15, 17, 8, 13, 16, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "QoId0biOD18610ii0DDP61QqOl6qq86q",
@@ -9569,6 +11073,7 @@ export const ALL_SONG_DATA = [
     alphabet: "た",
     version_num: 15,
     ratings: [3, 6, 9, 14, 0, 6, 10, 14, 0],
+    tiers: [0.5, 0.45, 0.5, 0.4, 0, 0.5, 0.4, 0.35, 0],
   },
   {
     song_id: "qoidddb08iIoDOo9DQoO0loPl8lPQ81o",
@@ -9579,6 +11084,7 @@ export const ALL_SONG_DATA = [
     alphabet: "さ",
     version_num: 17,
     ratings: [2, 4, 9, 13, 0, 4, 9, 13, 0],
+    tiers: [0.25, 0.3, 0.3, 0.25, 0, 0.4, 0.3, 0.4, 0],
   },
   {
     song_id: "qOlDPoiqibIOqod69dPilbiqD6qdO1qQ",
@@ -9587,6 +11093,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 8, 10, 12, 5, 8, 11, 12],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "QoODOoqDli0bOoqqDo8ODo1lDI9llblo",
@@ -9594,7 +11101,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Dopamine",
     alphabet: "た",
     version_num: 15,
-    ratings: [7, 10, 13, 17, 0, 10, 13, 17, 0],
+    ratings: [7, 10, 13, 17, 0, 10, 13, 18, 0],
+    tiers: [0.55, 0.7, 0.7, 0.5, 0, 0.55, 0.7, 0.85, 0],
   },
   {
     song_id: "qOP1qP69o6id061o9bo8l6P11P1PQI1O",
@@ -9602,7 +11110,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "MAX 300 SMMM/赤300/300mix/ヨロロ/ﾖﾛﾛ/max 300 remix",
     alphabet: "M",
     version_num: 9,
-    ratings: [6, 10, 13, 15, 16, 10, 12, 15, 17],
+    ratings: [7, 10, 13, 15, 16, 10, 12, 15, 17],
+    tiers: [0.85, 0.65, 0.9, 0.75, 0.5, 0.85, 0.85, 0.65, 0.35],
   },
   {
     song_id: "QOPioi8P81q9l0QiP6q06b06bdOO8b1O",
@@ -9612,6 +11121,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [5, 8, 12, 16, 0, 8, 12, 16, 0],
+    tiers: [0.45, 0.5, 0.6, 0.7, 0, 0.4, 0.55, 0.6, 0],
   },
   {
     song_id: "qOQQ1qdQPPQ1bbdPldPlIil99IDoPi61",
@@ -9619,6 +11129,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 12,
     ratings: [2, 4, 7, 11, 12, 5, 8, 11, 13],
+    tiers: [0.35, 0.35, 0.4, 0.25, 0.35, 0.45, 0.45, 0.45, 0.55],
   },
   {
     song_id: "QPd01OQqbOIiDoO1dbdo1IIbb60bqPdl",
@@ -9630,6 +11141,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [3, 5, 7, 11, 0, 5, 8, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "qPDO188oQ0i1b8b1b9OPoO0I10lPbQbi",
@@ -9637,6 +11149,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 19,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.2, 0.25, 0.3, 0.2, 0, 0.2, 0.15, 0.25, 0],
   },
   {
     song_id: "qPDQbQ6lOqqbI9Plb6o9lld0ddIP8oiP",
@@ -9645,6 +11158,7 @@ export const ALL_SONG_DATA = [
     alphabet: "E",
     version_num: 15,
     ratings: [2, 5, 9, 13, 0, 5, 9, 12, 0],
+    tiers: [0.35, 0.3, 0.25, 0.35, 0, 0.25, 0.4, 0.4, 0],
   },
   {
     song_id: "qPi8qIqO1lQd08b01PiPlql9O1dOPDPq",
@@ -9653,6 +11167,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     deleted: 1,
     ratings: [2, 5, 8, 11, 0, 5, 9, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "QPol19bIb009IDOPildbi1QPdPlO0dq9",
@@ -9660,6 +11175,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 16,
     ratings: [2, 5, 8, 14, 0, 6, 9, 14, 0],
+    tiers: [0.95, 0.9, 0.95, 0.5, 0, 0.95, 0.9, 0.7, 0],
   },
   {
     song_id: "Qq6D900bD60PddqqbdQb96Pd60918100",
@@ -9670,6 +11186,7 @@ export const ALL_SONG_DATA = [
     alphabet: "ま",
     version_num: 15,
     ratings: [4, 6, 9, 12, 0, 6, 9, 12, 0],
+    tiers: [0.65, 0.6, 0.6, 0.5, 0, 0.75, 0.7, 0.6, 0],
   },
   {
     song_id: "Qq8bbbqO6qQ1DPODd16oi1QDQoQ9b8DO",
@@ -9678,6 +11195,7 @@ export const ALL_SONG_DATA = [
     alphabet: "K",
     version_num: 15,
     ratings: [3, 7, 11, 16, 0, 7, 11, 15, 0],
+    tiers: [0.4, 0.2, 0.55, 0.3, 0, 0.25, 0.35, 0.55, 0],
   },
   {
     song_id: "qq8qDqqPQdP0loDI6DDO9d6dQ601iOID",
@@ -9685,6 +11203,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 16,
     ratings: [2, 5, 10, 13, 0, 5, 10, 14, 0],
+    tiers: [0.4, 0.45, 0.35, 0.5, 0, 0.5, 0.4, 0.35, 0],
   },
   {
     song_id: "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO",
@@ -9693,6 +11212,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 3,
     ratings: [3, 9, 10, 12, 0, 9, 10, 11, 0],
+    tiers: [0.1, 0.25, 0.3, 0.05, 0, 0.55, 0.7, 0.3, 0],
   },
   {
     song_id: "QQbiq1qQd8d1blOldi889OdQd9P1106Q",
@@ -9701,6 +11221,7 @@ export const ALL_SONG_DATA = [
     alphabet: "W",
     version_num: 12,
     ratings: [3, 5, 9, 13, 0, 5, 9, 13, 0],
+    tiers: [0.35, 0.35, 0.55, 0.75, 0, 0.45, 0.6, 0.7, 0],
   },
   {
     song_id: "qQd06O6d19ODl0QP8l6Q8lPlloo69ddP",
@@ -9709,6 +11230,7 @@ export const ALL_SONG_DATA = [
     alphabet: "B",
     version_num: 19,
     ratings: [5, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [0.3, 0.7, 0.7, 0.6, 0, 0.6, 0.55, 0.4, 0],
     lock_types: [230, 230, 230, 230, 0, 230, 230, 230, 0],
   },
   {
@@ -9718,6 +11240,7 @@ export const ALL_SONG_DATA = [
     alphabet: "S",
     version_num: 15,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [0.3, 0.5, 0.5, 0.25, 0, 0.65, 0.35, 0.6, 0],
   },
   {
     song_id: "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il",
@@ -9726,6 +11249,7 @@ export const ALL_SONG_DATA = [
     alphabet: "M",
     version_num: 9,
     ratings: [3, 4, 8, 11, 0, 3, 8, 11, 0],
+    tiers: [0.25, 0.45, 0.45, 0.45, 0, 0.2, 0.4, 0.55, 0],
   },
   {
     song_id: "qqdlo1QOQo6QIi8PqOi8iIOO0il1IblQ",
@@ -9734,6 +11258,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 19,
     ratings: [3, 7, 11, 14, 17, 7, 11, 14, 17],
+    tiers: [0.25, 0.2, 0.65, 0.7, 0.9, 0, 0.55, 0.7, 0.75],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
@@ -9742,6 +11267,7 @@ export const ALL_SONG_DATA = [
     alphabet: "F",
     version_num: 17,
     ratings: [5, 8, 13, 16, 16, 8, 13, 16, 16],
+    tiers: [0.15, 0.25, 0.4, 0.1, 0.65, 0.35, 0.4, 0.15, 0.75],
     lock_types: [80, 80, 80, 80, 130, 80, 80, 80, 130],
   },
   {
@@ -9750,6 +11276,7 @@ export const ALL_SONG_DATA = [
     alphabet: "I",
     version_num: 13,
     ratings: [4, 6, 9, 11, 0, 6, 10, 11, 0],
+    tiers: [0.25, 0.2, 0.4, 0.25, 0, 0.4, 0.3, 0.3, 0],
   },
   {
     song_id: "qQl6O8IdiI6991IiqDqidO96bll1qPDl",
@@ -9757,6 +11284,7 @@ export const ALL_SONG_DATA = [
     alphabet: "T",
     version_num: 12,
     ratings: [2, 5, 8, 11, 0, 6, 8, 11, 0],
+    tiers: [0.2, 0.15, 0.25, 0.4, 0, 0.15, 0.45, 0.25, 0],
   },
   {
     song_id: "QQldo10ObPPQPlliODiDIIl0Q1oPoo61",
@@ -9766,6 +11294,7 @@ export const ALL_SONG_DATA = [
     alphabet: "D",
     version_num: 12,
     ratings: [3, 5, 13, 17, 17, 8, 14, 17, 18],
+    tiers: [0.9, 0.9, 0.9, 0.4, 0.9, 0.95, 0.8, 0.4, 0.5],
   },
   {
     song_id: "QQOOldqQ8QQDQ06i81d9DP9PlOlo1lqq",
@@ -9776,10 +11305,11 @@ export const ALL_SONG_DATA = [
     alphabet: "ら",
     version_num: 11,
     ratings: [3, 6, 8, 10, 0, 5, 7, 11, 0],
+    tiers: [0.55, 0.5, 0.55, 0.4, 0, 0.6, 0.75, 0.5, 0],
   },
 ];
 const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
-  230, 240,
+  230, 240, 250,
 ];
-const SONG_DATA_LAST_UPDATED_unixms = 1710303886128;
+const SONG_DATA_LAST_UPDATED_unixms = 1720673925390;

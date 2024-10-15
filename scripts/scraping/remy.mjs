@@ -71,7 +71,9 @@ export async function getRemovedSongUrls(pageUrl) {
  * @param {JSDOM} dom
  */
 function isSongPage(dom) {
-  return !!dom.window.document.querySelector('a[href="/Category:DDR_Songs"]');
+  return !!dom.window.document.querySelector(
+    'a[href="/Category:DanceDanceRevolution_Songs"]',
+  );
 }
 
 /**
@@ -107,7 +109,8 @@ export async function getCanonicalRemyURL(pageUrl) {
 function getJacketFromThumb(node, songName) {
   /** @type {HTMLImageElement | null} */
   const img = node.querySelector("img");
-  if (img && img.src) return downloadJacket(img.src, songName);
+  const url = new URL(img.src, "https://remywiki.com");
+  if (img && img.src) return downloadJacket(url.href, songName);
 }
 
 /**

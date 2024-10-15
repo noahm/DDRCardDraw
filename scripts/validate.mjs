@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const dataFileNames = readdirSync(resolve(join(__dirname, "../src/songs")));
 const jacketsDir = resolve(join(__dirname, "../src/assets/jackets"));
-import songsSchema from "../songs.schema.json" assert { type: "json" };
+import songsSchema from "../songs.schema.json" with { type: "json" };
 const schemaLocation = "src/models/SongData.ts";
 
 function validateContents(dataFile) {
@@ -38,14 +38,12 @@ function validateContents(dataFile) {
     errors.add("default level bounds are reversed");
   }
 
-  if (dataFile.i18n.ja) {
-    for (const key of allKeys) {
-      if (!dataFile.i18n.en[key]) {
-        errors.add("missing translation for " + key);
-      }
-      if (difficulties.has(key) && !dataFile.i18n.en["$abbr"][key]) {
-        errors.add("missing abbreviated translation for " + key);
-      }
+  for (const key of allKeys) {
+    if (!dataFile.i18n.en[key]) {
+      errors.add("missing translation for " + key);
+    }
+    if (difficulties.has(key) && !dataFile.i18n.en["$abbr"][key]) {
+      errors.add("missing abbreviated translation for " + key);
     }
   }
 
@@ -86,7 +84,7 @@ let hasError = false;
 for (const dataFile of dataFileNames) {
   const songData = (
     await import(`../src/songs/${dataFile}`, {
-      assert: { type: "json" },
+      with: { type: "json" },
     })
   ).default;
   const result = validateJSONSchema(songData, songsSchema, {

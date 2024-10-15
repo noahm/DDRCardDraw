@@ -5,51 +5,25 @@ on:
     branches: [main]
 
 jobs:
-  validate:
-    name: Validate Song Data
+  checks:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - check: "validate:json"
+            name: Validate Song Data
+          - check: "validate:ts"
+            name: Typecheck
+          - check: "validate:format"
+            name: Formatting
+          - check: webpack
+            name: Build
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
+      - uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "yarn"
       - run: yarn --immutable
-      - run: yarn validate:json
-
-  typecheck:
-    name: Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn --immutable
-      - run: yarn validate:ts
-
-  formatting:
-    name: Formatting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn --immutable
-      - run: yarn validate:format
-
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn --immutable
-      - name: Build App
-        run: yarn webpack
+      - name: ${{ matrix.name }}
+        run: yarn ${{ matrix.check }}

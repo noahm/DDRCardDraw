@@ -88,6 +88,10 @@
   font-size: 75%;
 }
 
+.dateAdded {
+  font-size: 110%;
+}
+
 .cardFooter {
   flex: 0 0 auto;
   display: flex;

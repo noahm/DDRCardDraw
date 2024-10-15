@@ -48,6 +48,7 @@ const difficultyMap = {
 };
 
 const titleList = [
+  { name: "DanceDanceRevolution World" },
   { name: "DanceDanceRevolution A3" },
   { name: "DanceDanceRevolution A20 PLUS" },
   { name: "DanceDanceRevolution A20" },
@@ -85,8 +86,12 @@ function scrapeSongData(dom, log, withFolders, titleOffset = 0) {
   /** @type {NodeListOf<HTMLSpanElement>} */
   const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
   const titleMap = Array.from(spans).map((span, index) => {
+    const folder = titleList[index + titleOffset];
+    if (!folder) {
+      throw new Error(`missing titleList entry at offset ${titleOffset}`);
+    }
     return {
-      name: titleList[index + titleOffset].name,
+      name: folder.name,
       count: +span.textContent.match(/^[0-9]*/)[0],
     };
   });

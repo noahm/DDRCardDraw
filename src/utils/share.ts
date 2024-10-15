@@ -66,7 +66,7 @@ export function buildDataUri(
     ).join("");
     encodedData = btoa(binString);
   } else {
-    encodedData = encodeURI(utf8Payload);
+    encodedData = encodeURIComponent(utf8Payload);
   }
   return `data:${mimetype}${encodingMarker},${encodedData}`;
 }
