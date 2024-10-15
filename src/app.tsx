@@ -81,6 +81,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "players",
+        lazy: async () => {
+          const { CabPlayers } = await import("./obs-sources/text");
+          return { Component: CabPlayers };
+        },
+      },
+      {
         path: "p1",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");

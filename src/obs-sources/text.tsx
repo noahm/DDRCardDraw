@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { drawingSelectors } from "../state/drawings.slice";
 import { useAppState } from "../state/store";
-import { playerNameByIndex } from "../models/Drawing";
+import { getAllPlayers, playerNameByIndex } from "../models/Drawing";
 
 export function CabTitle() {
   const params = useParams<"roomName" | "cabId">();
@@ -9,6 +9,17 @@ export function CabTitle() {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
     return drawingSelectors.selectById(s, drawingId).meta.title;
+  });
+  return <h1>{text}</h1>;
+}
+
+export function CabPlayers() {
+  const params = useParams<"roomName" | "cabId">();
+  const text = useAppState((s) => {
+    const drawingId = s.event.cabs[params.cabId!].activeMatch;
+    if (!drawingId) return null;
+    const drawing = drawingSelectors.selectById(s, drawingId);
+    return getAllPlayers(drawing).join(", ");
   });
   return <h1>{text}</h1>;
 }

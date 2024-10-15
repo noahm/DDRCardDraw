@@ -17,6 +17,7 @@ import {
   Layers,
   MobileVideo,
   More,
+  People,
   Person,
   Remove,
 } from "@blueprintjs/icons";
@@ -105,6 +106,12 @@ function CabSummary({ cab }: { cab: CabInfo }) {
           text="Title"
           onClick={copySource}
           data-source="title"
+        />
+        <MenuItem
+          icon={<People />}
+          text="All Players"
+          onClick={copySource}
+          data-source="players"
         />
         <MenuItem
           icon={<Person />}
