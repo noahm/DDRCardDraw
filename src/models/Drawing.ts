@@ -54,6 +54,23 @@ export interface SimpleMeta {
   players: string[];
 }
 
+export function playerCount(meta: Drawing["meta"]) {
+  switch (meta.type) {
+    case "simple":
+      return meta.players.length;
+    case "startgg":
+      return meta.entrants.length;
+  }
+}
+
+export function getAllPlayers(d: Pick<Drawing, "playerDisplayOrder" | "meta">) {
+  const ret = [] as string[];
+  for (let i = 1; i <= playerCount(d.meta); i++) {
+    ret.push(playerNameByDisplayPos(d, i));
+  }
+  return ret;
+}
+
 export function playerNameByDisplayPos(
   d: Pick<Drawing, "playerDisplayOrder" | "meta">,
   pos: number,

@@ -7,7 +7,7 @@ import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useAppDispatch } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
-import { playerNameByDisplayPos } from "../models/Drawing";
+import { getAllPlayers } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
 
 export function SetLabels() {
@@ -26,21 +26,28 @@ export function SetLabels() {
     winsPerPlayer.add(pIdx);
   }
 
-  const psuedoDrawing = { meta, playerDisplayOrder };
+  const allPlayers = getAllPlayers({ meta, playerDisplayOrder });
 
   return (
     <div className={styles.headers}>
       <div className={styles.title}>{meta.title}</div>
       <div className={styles.players}>
-        <span>
-          {playerNameByDisplayPos(psuedoDrawing, 1)} (
-          {winsPerPlayer.get(playerDisplayOrder[0])})
-        </span>
-        <Versus />
-        <span>
-          {playerNameByDisplayPos(psuedoDrawing, 2)} (
-          {winsPerPlayer.get(playerDisplayOrder[1])})
-        </span>
+        {allPlayers.map((name, idx) => {
+          const ret = (
+            <span key={idx}>
+              {name} ({winsPerPlayer.get(playerDisplayOrder[idx])})
+            </span>
+          );
+          if (idx === 0 && allPlayers.length === 2) {
+            return (
+              <>
+                {ret}
+                <Versus />
+              </>
+            );
+          }
+          return ret;
+        })}
       </div>
     </div>
   );

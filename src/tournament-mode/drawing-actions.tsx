@@ -25,6 +25,7 @@ import {
   BracketSetGameDataInput as GDI,
 } from "../startgg-gql";
 import { CountingSet } from "../utils/counting-set";
+import { playerCount } from "../models/Drawing";
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
 function getMatchResult(
@@ -135,6 +136,7 @@ export function DrawingActions() {
   const dispatch = useAppDispatch();
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.id);
+  const isTwoPlayers = useDrawing((s) => playerCount(s.meta) === 2);
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const { showBoundary } = useErrorBoundary();
 
@@ -201,7 +203,7 @@ export function DrawingActions() {
           </Popover>
         </Tooltip>
       )}
-      {showLabels && (
+      {showLabels && isTwoPlayers && (
         <Tooltip content="Swap Player Positions">
           <Button
             minimal

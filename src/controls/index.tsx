@@ -9,6 +9,7 @@ import {
   DrawerSize,
   FormGroup,
   HTMLSelect,
+  InputGroup,
   Intent,
   Menu,
   MenuDivider,
@@ -17,6 +18,9 @@ import {
   Popover,
   Position,
   Spinner,
+  Tab,
+  Tabs,
+  TagInput,
   Tooltip,
 } from "@blueprintjs/core";
 import {
@@ -48,6 +52,7 @@ import { StartggApiKeyGated } from "../startgg-gql/components";
 import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { loadConfig, saveConfig } from "../config-persistence";
+import { SimpleMeta } from "../models/Drawing";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
@@ -88,6 +93,43 @@ function ConfigSelect() {
   );
 }
 
+function CustomDrawForm(props: {
+  initialMeta?: SimpleMeta;
+  onSubmit(meta: SimpleMeta): void;
+}) {
+  const [players, setPlayers] = useState<string[]>(
+    props.initialMeta?.players || [],
+  );
+  const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
+
+  function handleSubmit() {
+    props.onSubmit({
+      type: "simple",
+      players,
+      title,
+    });
+  }
+  return (
+    <>
+      <FormGroup label="title">
+        <InputGroup
+          value={title}
+          onChange={(e) => setTitle(e.currentTarget.value)}
+        />
+      </FormGroup>
+      <FormGroup label="players">
+        <TagInput
+          onChange={(v) => setPlayers(v as string[])}
+          values={players}
+        />
+      </FormGroup>
+      <Button intent="primary" onClick={handleSubmit}>
+        Create
+      </Button>
+    </>
+  );
+}
+
 export function HeaderControls() {
   const setShowEligibleCharts = useSetAtom(showEligibleCharts);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -97,23 +139,17 @@ export function HeaderControls() {
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
 
-  function handleDraw(match?: PickedMatch) {
+  function handleDraw(match: PickedMatch) {
     setMatchPickerOpen(false);
     setShowEligibleCharts(false);
     const result = dispatch(
       createDraw({
-        meta: match
-          ? {
-              type: "startgg",
-              entrants: match.players,
-              title: match.title,
-              id: match.id,
-            }
-          : {
-              type: "simple",
-              title: "",
-              players: ["", ""],
-            },
+        meta: {
+          type: "startgg",
+          entrants: match.players,
+          title: match.title,
+          id: match.id,
+        },
       }),
     );
     if (typeof result === "boolean") {
@@ -154,15 +190,28 @@ export function HeaderControls() {
         title="New Draw"
       >
         <DialogBody>
-          <p>
-            Pick a startgg match or{" "}
-            <Button minimal onClick={() => handleDraw()}>
-              draw without a match
-            </Button>
-          </p>
-          <StartggApiKeyGated>
-            <MatchPicker onPickMatch={handleDraw} />
-          </StartggApiKeyGated>
+          <Tabs id="new-draw">
+            <Tab
+              id="drawings"
+              panel={
+                <StartggApiKeyGated>
+                  <MatchPicker onPickMatch={handleDraw} />
+                </StartggApiKeyGated>
+              }
+            >
+              start.gg match
+            </Tab>
+            <Tab
+              id="players"
+              panel={
+                <CustomDrawForm
+                  onSubmit={(meta) => dispatch(createDraw({ meta }))}
+                />
+              }
+            >
+              custom draw
+            </Tab>
+          </Tabs>
         </DialogBody>
       </Dialog>
       {!isNarrow && (
