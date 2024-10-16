@@ -14,7 +14,7 @@
       { "key": "exceed", "color": "#0047AB" }
     ],
     "flags": ["omegaDimension", "hexadiver", "otherEvents", "jpOnly"],
-    "lastUpdated": 1729116495520
+    "lastUpdated": 1729119671072
   },
   "defaults": {
     "style": "single",
@@ -27,7 +27,7 @@
       "vivid",
       "exceed"
     ],
-    "flags": [],
+    "flags": ["omegaDimension", "hexadiver", "otherEvents"],
     "lowerLvlBound": 16,
     "upperLvlBound": 19
   },

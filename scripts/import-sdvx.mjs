@@ -77,7 +77,7 @@ async function main() {
         "vivid",
         "exceed",
       ],
-      flags: [],
+      flags: ["omegaDimension", "hexadiver", "otherEvents"],
       lowerLvlBound: 16,
       upperLvlBound: 19,
     },
