@@ -229,7 +229,7 @@ function buildSong(song, availableJackets) {
     彜: "ū",
     餮: "Ƶ",
     墸: "\u035f\u035f\u035e\u0020",
-	盥: "⚙︎",
+    盥: "⚙︎",
   };
 
   let name = info.title_name[0];

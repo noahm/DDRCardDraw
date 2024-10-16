@@ -14,7 +14,7 @@
       { "key": "exceed", "color": "#0047AB" }
     ],
     "flags": ["omegaDimension", "hexadiver", "otherEvents", "jpOnly"],
-    "lastUpdated": 1714086068560
+    "lastUpdated": 1729116495520
   },
   "defaults": {
     "style": "single",
@@ -1348,6 +1348,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0044_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0044_4_s.png"
         }
       ]
     },
@@ -2345,15 +2351,10 @@
       "date_added": "2012-08-30",
       "saHash": "85",
       "artist": "Mayumi Morinaga  (moimoi)",
-      "jacket": "sdvx6.png",
+      "jacket": "sdvx/jk_0085_1_s.png",
       "bpm": "156",
       "charts": [
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "novice",
-          "jacket": "sdvx/jk_0085_1_s.png"
-        },
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
         {
           "lvl": 10,
           "style": "single",
@@ -2365,7 +2366,8 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0085_3_s.png"
-        }
+        },
+        { "lvl": 17, "style": "single", "diffClass": "exceed" }
       ]
     },
     {
@@ -7809,7 +7811,8 @@
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" }
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "exceed" }
       ]
     },
     {
@@ -8782,7 +8785,8 @@
       "charts": [
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 11, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" }
+        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "exceed" }
       ]
     },
     {
@@ -9135,21 +9139,6 @@
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 9, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" }
-      ]
-    },
-    {
-      "name": "リズの内心革命",
-      "search_hint": "rizno_naisin_jippusu",
-      "date_added": "2014-07-18",
-      "saHash": "476",
-      "artist": "じっぷす",
-      "jacket": "sdvx/jk_0476_1_s.png",
-      "bpm": "180",
-      "charts": [
-        { "lvl": 4, "style": "single", "diffClass": "novice" },
-        { "lvl": 10, "style": "single", "diffClass": "advanced" },
-        { "lvl": 13, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "infinite" }
       ]
     },
     {
@@ -12275,7 +12264,13 @@
       "charts": [
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 18, "style": "single", "diffClass": "exhaust" }
+        { "lvl": 18, "style": "single", "diffClass": "exhaust" },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0635_4_s.png"
+        }
       ]
     },
     {
@@ -12469,6 +12464,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0642_3_s.png"
+        },
+        {
+          "lvl": 20,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0642_4_s.png"
         }
       ]
     },
@@ -12676,6 +12677,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0650_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0650_4_s.png"
         }
       ]
     },
@@ -12763,6 +12770,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0653_3_s.png"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0653_4_s.png"
         }
       ]
     },
@@ -12854,6 +12867,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0657_3_s.png"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0657_4_s.png"
         }
       ]
     },
@@ -14951,7 +14970,8 @@
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "novice" },
         { "lvl": 7, "style": "single", "diffClass": "advanced" },
-        { "lvl": 13, "style": "single", "diffClass": "exhaust" }
+        { "lvl": 13, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "exceed" }
       ]
     },
     {
@@ -33154,51 +33174,6 @@
       ]
     },
     {
-      "name": "くらべられっ子",
-      "search_hint": "kuraberarekko_tsuyu",
-      "date_added": "2021-05-20",
-      "saHash": "1759",
-      "artist": "ツユ",
-      "jacket": "sdvx/jk_1759_1_s.png",
-      "bpm": "194",
-      "charts": [
-        { "lvl": 2, "style": "single", "diffClass": "novice" },
-        { "lvl": 9, "style": "single", "diffClass": "advanced" },
-        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 16, "style": "single", "diffClass": "maximum" }
-      ]
-    },
-    {
-      "name": "泥の分際で私だけの大切を奪おうだなんて",
-      "search_hint": "doronobunzai_tsuyu",
-      "date_added": "2021-05-20",
-      "saHash": "1760",
-      "artist": "ツユ",
-      "jacket": "sdvx/jk_1760_1_s.png",
-      "bpm": "225",
-      "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "novice" },
-        { "lvl": 11, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "maximum" }
-      ]
-    },
-    {
-      "name": "ナミカレ",
-      "search_hint": "namikare_tsuyu",
-      "date_added": "2021-05-20",
-      "saHash": "1761",
-      "artist": "ツユ",
-      "jacket": "sdvx/jk_1761_1_s.png",
-      "bpm": "204",
-      "charts": [
-        { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 13, "style": "single", "diffClass": "advanced" },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "maximum" }
-      ]
-    },
-    {
       "name": "ドゥサンコオデッセイ!!",
       "search_hint": "dosancoodyssey_cosmo",
       "date_added": "2021-06-10",
@@ -33445,7 +33420,7 @@
       "flags": ["hexadiver"]
     },
     {
-      "name": "Rhapsody 盥f Triumph",
+      "name": "Rhapsody ⚙︎f Triumph",
       "search_hint": "rhapsodyof_kameria",
       "date_added": "2022-03-10",
       "saHash": "1773",
@@ -35112,36 +35087,6 @@
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
-      ]
-    },
-    {
-      "name": "過去に囚われている",
-      "search_hint": "kakonitorawareteiru_tsuyu",
-      "date_added": "2022-07-21",
-      "saHash": "1873",
-      "artist": "ツユ",
-      "jacket": "sdvx/jk_1873_1_s.png",
-      "bpm": "180",
-      "charts": [
-        { "lvl": 5, "style": "single", "diffClass": "novice" },
-        { "lvl": 12, "style": "single", "diffClass": "advanced" },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 18, "style": "single", "diffClass": "maximum" }
-      ]
-    },
-    {
-      "name": "終点の先が在るとするならば。",
-      "search_hint": "syuutennosakiga_tsuyu",
-      "date_added": "2022-07-21",
-      "saHash": "1874",
-      "artist": "ツユ",
-      "jacket": "sdvx/jk_1874_1_s.png",
-      "bpm": "235",
-      "charts": [
-        { "lvl": 4, "style": "single", "diffClass": "novice" },
-        { "lvl": 11, "style": "single", "diffClass": "advanced" },
-        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
-        { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
     {
@@ -37044,6 +36989,36 @@
       ]
     },
     {
+      "name": "Scarlet Pinheel -appassionato-",
+      "search_hint": "scapinrmx_blacky",
+      "date_added": "2024-06-27",
+      "saHash": "1988",
+      "artist": "BlackY",
+      "jacket": "sdvx/jk_1988_1_s.png",
+      "bpm": "168",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "PANIC HOLIC (かめりあ's \"24600 POWER\" Remix)",
+      "search_hint": "paniholirmx_kameria",
+      "date_added": "2024-09-26",
+      "saHash": "1989",
+      "artist": "かめりあ",
+      "jacket": "sdvx/jk_1989_1_s.png",
+      "bpm": "246",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
       "name": "トーキョーサマーナイト（華金Remix）",
       "search_hint": "tokyosummerrmx_amamihinami",
       "date_added": "2023-07-06",
@@ -37055,6 +37030,31 @@
         { "lvl": 4, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 14, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Four Leaves (Whitelily. remix)",
+      "search_hint": "fourleavesrmx_whitelily",
+      "date_added": "2024-09-26",
+      "saHash": "1991",
+      "artist": "Whitelily.(みーに&しろさきあや)",
+      "jacket": "sdvx/jk_1991_1_s.png",
+      "bpm": "191",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1991_2_s.png"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1991_3_s.png"
+        },
         { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37079,6 +37079,46 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_1992_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Max Burning!!(GαineN Beyond yΩu Remix)",
+      "search_hint": "makubarmx_gainen",
+      "date_added": "2024-05-23",
+      "saHash": "1993",
+      "artist": "概念",
+      "jacket": "sdvx/jk_1993_1_s.png",
+      "bpm": "200",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "ミュージックプレイヤー （J-pop Remix）",
+      "search_hint": "musicplayerrmx_technoplanet",
+      "date_added": "2024-06-27",
+      "saHash": "1994",
+      "artist": "technoplanet feat. Risa Yuzuki",
+      "jacket": "sdvx/jk_1994_1_s.png",
+      "bpm": "236",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_1994_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_1994_3_s.png"
         },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
@@ -37189,6 +37229,46 @@
       ]
     },
     {
+      "name": "Appliqué(Vocal Remix)",
+      "search_hint": "appliquermx_nonomori",
+      "date_added": "2024-05-23",
+      "saHash": "2001",
+      "artist": "nonomori feat. Nanao",
+      "jacket": "sdvx/jk_2001_1_s.png",
+      "bpm": "224",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Gate of Atlantis (Vocal ∞ Mix)",
+      "search_hint": "gateofrmx_maskaleido",
+      "date_added": "2024-05-23",
+      "saHash": "2003",
+      "artist": "MasKaleido feat. ぁゅ",
+      "jacket": "sdvx/jk_2003_1_s.png",
+      "bpm": "8-240",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2003_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2003_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
       "name": "GEROL (Yooh Remix)",
       "search_hint": "gerolrmx_yooh",
       "date_added": "2023-10-26",
@@ -37215,6 +37295,71 @@
         { "lvl": 6, "style": "single", "diffClass": "novice" },
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "おにいちゃんグリッチホップ ～eternal love remix～",
+      "search_hint": "onichanrmx_houjirou",
+      "date_added": "2024-06-27",
+      "saHash": "2007",
+      "artist": "HOUJIROU feat. 杠葉えりか",
+      "jacket": "sdvx/jk_2007_1_s.png",
+      "bpm": "110",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2007_2_s.png"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2007_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "WobbleTangleFestival (影虎。 & ikaruga_nex's HDM RMX)",
+      "search_hint": "wobbletanglermx_kagetoraikaruga",
+      "date_added": "2024-06-27",
+      "saHash": "2008",
+      "artist": "影虎。 & ikaruga_nex",
+      "jacket": "sdvx/jk_2008_1_s.png",
+      "bpm": "155",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "GIGI BABA(brz_style)",
+      "search_hint": "gigibabarmx_brz1128",
+      "date_added": "2024-09-26",
+      "saHash": "2009",
+      "artist": "brz1128",
+      "jacket": "sdvx/jk_2009_1_s.png",
+      "bpm": "180",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2009_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2009_3_s.png"
+        },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37256,6 +37401,26 @@
         { "lvl": 13, "style": "single", "diffClass": "advanced" },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Voice 2 Voice n Voice",
+      "search_hint": "v2vrmx_acotto",
+      "date_added": "2024-09-26",
+      "saHash": "2015",
+      "artist": "Acotto",
+      "jacket": "sdvx/jk_2015_1_s.png",
+      "bpm": "157",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2015_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
     {
@@ -37314,6 +37479,21 @@
       ]
     },
     {
+      "name": "The setting sun(burst)",
+      "search_hint": "settingsunrmx_nozakitakazumi",
+      "date_added": "2024-05-23",
+      "saHash": "2020",
+      "artist": "nozakita kazumi",
+      "jacket": "sdvx/jk_2020_1_s.png",
+      "bpm": "141",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
       "name": "Pixelated Platform (Super Honey!)",
       "search_hint": "pixelatedrmx_soyomogi",
       "date_added": "2023-07-06",
@@ -37325,6 +37505,21 @@
         { "lvl": 5, "style": "single", "diffClass": "novice" },
         { "lvl": 12, "style": "single", "diffClass": "advanced" },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Vigor(siqlo's Hi-Tech Veats)",
+      "search_hint": "vigorrmx_siqlo",
+      "date_added": "2024-06-27",
+      "saHash": "2022",
+      "artist": "siqlo",
+      "jacket": "sdvx/jk_2022_1_s.png",
+      "bpm": "154",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 11, "style": "single", "diffClass": "advanced" },
+        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
         { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     },
@@ -37905,6 +38100,81 @@
       ]
     },
     {
+      "name": "梅雪夜",
+      "search_hint": "umeyukiyo_qrispy",
+      "date_added": "2024-08-01",
+      "saHash": "2053",
+      "artist": "Qrispy Joybox feat.mao",
+      "jacket": "sdvx/jk_2053_1_s.png",
+      "bpm": "167",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        { "lvl": 11, "style": "single", "diffClass": "advanced" },
+        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "ARACHNE",
+      "search_hint": "arachne_maxmaximizer",
+      "date_added": "2024-08-01",
+      "saHash": "2054",
+      "artist": "MAX MAXIMIZER",
+      "jacket": "sdvx/jk_2054_1_s.png",
+      "bpm": "179",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Poochie",
+      "search_hint": "poochie_korsk",
+      "date_added": "2024-08-01",
+      "saHash": "2055",
+      "artist": "kors k",
+      "jacket": "sdvx/jk_2055_1_s.png",
+      "bpm": "110",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Crazy Jackpot",
+      "search_hint": "crazyjackpot_hommarju",
+      "date_added": "2024-08-01",
+      "saHash": "2056",
+      "artist": "Hommarju",
+      "jacket": "sdvx/jk_2056_1_s.png",
+      "bpm": "170",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "黒紅掬い",
+      "search_hint": "kurobenisukui_nekomata",
+      "date_added": "2024-08-01",
+      "saHash": "2057",
+      "artist": "猫叉Master feat.霜月はるか",
+      "jacket": "sdvx/jk_2057_1_s.png",
+      "bpm": "104",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
       "name": "おねがいダーリン",
       "search_hint": "onedari_one",
       "date_added": "2023-08-03",
@@ -38411,6 +38681,216 @@
       "flags": ["hexadiver"]
     },
     {
+      "name": "King's Gambit",
+      "search_hint": "kingsgambit_brz1128",
+      "date_added": "2024-06-13",
+      "saHash": "2093",
+      "artist": "brz1128",
+      "jacket": "sdvx/jk_2093_1_s.png",
+      "bpm": "195",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "You Only Live Twice",
+      "search_hint": "youonlylive_sephid",
+      "date_added": "2024-06-13",
+      "saHash": "2095",
+      "artist": "Sephid feat. aria",
+      "jacket": "sdvx/jk_2095_1_s.png",
+      "bpm": "185",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2095_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2095_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "アイの雫",
+      "search_hint": "ainoshizuku_kuro",
+      "date_added": "2024-07-25",
+      "saHash": "2096",
+      "artist": "kuro",
+      "jacket": "sdvx/jk_2096_1_s.png",
+      "bpm": "261",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2096_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2096_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "HEAVEN KNOWS",
+      "search_hint": "heavenknows_uske",
+      "date_added": "2024-06-13",
+      "saHash": "2099",
+      "artist": "U-ske feat.石橋桃",
+      "jacket": "sdvx/jk_2099_1_s.png",
+      "bpm": "275",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2099_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "邪魔をしないで",
+      "search_hint": "jamawoshinaide_symholic",
+      "date_added": "2024-07-25",
+      "saHash": "2101",
+      "artist": "Symholic feat.狛茉璃奈",
+      "jacket": "sdvx/jk_2101_1_s.png",
+      "bpm": "155-188",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "¡¡Fanta∽cramble!!",
+      "search_hint": "fantacramble_potwi",
+      "date_added": "2024-08-29",
+      "saHash": "2102",
+      "artist": "Potwi",
+      "jacket": "sdvx/jk_2102_1_s.png",
+      "bpm": "110-154",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "七七七夕",
+      "search_hint": "nananata_monouynet",
+      "date_added": "2024-06-13",
+      "saHash": "2103",
+      "artist": "Mono. + uynet",
+      "jacket": "sdvx/jk_2103_1_s.png",
+      "bpm": "192",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Hopscotch",
+      "search_hint": "hopscotch_grivr",
+      "date_added": "2024-07-25",
+      "saHash": "2104",
+      "artist": "GrivR.",
+      "jacket": "sdvx/jk_2104_1_s.png",
+      "bpm": "175",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "ハガネノツルギ",
+      "search_hint": "haganenotsurugi_cotatsu",
+      "date_added": "2024-08-29",
+      "saHash": "2105",
+      "artist": "coTatsu",
+      "jacket": "sdvx/jk_2105_1_s.png",
+      "bpm": "144",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "∞vitUniverse",
+      "search_hint": "8vituniverse_lime",
+      "date_added": "2024-08-29",
+      "saHash": "2111",
+      "artist": "Lime",
+      "jacket": "sdvx/jk_2111_1_s.png",
+      "bpm": "234",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2111_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Almandite",
+      "search_hint": "almandeite_7mai",
+      "date_added": "2024-07-25",
+      "saHash": "2114",
+      "artist": "7mai",
+      "jacket": "sdvx/jk_2114_1_s.png",
+      "bpm": "207",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "We Are GamerZ!",
+      "search_hint": "wearegamerz_nnds",
+      "date_added": "2024-08-29",
+      "saHash": "2118",
+      "artist": "Ninja Never DieS!",
+      "jacket": "sdvx/jk_2118_1_s.png",
+      "bpm": "210",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
       "name": "Circuit Surfer",
       "search_hint": "circuitsurfer_korsk",
       "date_added": "2024-01-18",
@@ -38424,6 +38904,154 @@
         { "lvl": 17, "style": "single", "diffClass": "exhaust" },
         { "lvl": 19, "style": "single", "diffClass": "maximum" }
       ]
+    },
+    {
+      "name": "Knew Order",
+      "search_hint": "kneworder_amamihinami",
+      "date_added": "2024-05-02",
+      "saHash": "2121",
+      "artist": "あまみ×ひなみ",
+      "jacket": "sdvx/jk_2121_1_s.png",
+      "bpm": "195",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2121_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2121_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Ex concordia felicitas",
+      "search_hint": "exconcordia_connexio",
+      "date_added": "2024-05-02",
+      "saHash": "2122",
+      "artist": "Connexio",
+      "jacket": "sdvx/jk_2122_1_s.png",
+      "bpm": "205",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Allegro Saetta",
+      "search_hint": "allegrosaetta_amatsuka",
+      "date_added": "2024-05-02",
+      "saHash": "2123",
+      "artist": "天束 vs. siromaru",
+      "jacket": "sdvx/jk_2123_1_s.png",
+      "bpm": "182",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        { "lvl": 14, "style": "single", "diffClass": "advanced" },
+        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "ARISE",
+      "search_hint": "arise_juggernaut",
+      "date_added": "2024-05-02",
+      "saHash": "2124",
+      "artist": "Juggernaut.",
+      "jacket": "sdvx/jk_2124_1_s.png",
+      "bpm": "256",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        { "lvl": 14, "style": "single", "diffClass": "advanced" },
+        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "プリュネシエル",
+      "search_hint": "pluneciel_sena",
+      "date_added": "2024-05-02",
+      "saHash": "2125",
+      "artist": "瀬名 feat. 音羽ことり。",
+      "jacket": "sdvx/jk_2125_1_s.png",
+      "bpm": "190",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2125_2_s.png"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2125_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Colorful Magical Parade",
+      "search_hint": "colorfulmagical_tsubusarebozz",
+      "date_added": "2024-05-02",
+      "saHash": "2126",
+      "artist": "Tsubusare BOZZ feat.madoka*",
+      "jacket": "sdvx/jk_2126_1_s.png",
+      "bpm": "160",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "NO SURRENDER",
+      "search_hint": "nosurrender_493water",
+      "date_added": "2024-05-02",
+      "saHash": "2127",
+      "artist": "493Water",
+      "jacket": "sdvx/jk_2127_1_s.png",
+      "bpm": "160",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "StellarflightS",
+      "search_hint": "stellarfights_otoshib",
+      "date_added": "2024-05-02",
+      "saHash": "2128",
+      "artist": "otoshi.b",
+      "jacket": "sdvx/jk_2128_1_s.png",
+      "bpm": "225",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "We Are All The Dreamer",
@@ -38860,6 +39488,195 @@
       "flags": ["omegaDimension"]
     },
     {
+      "name": "トキノコエト",
+      "search_hint": "tokinokoeto_setuo",
+      "date_added": "2024-07-11",
+      "saHash": "2153",
+      "artist": "setu-O meets 駄々子",
+      "jacket": "sdvx/jk_2153_1_s.png",
+      "bpm": "210",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "Entropic En鹹αncemEnt",
+      "search_hint": "entropicenhancement_chubay",
+      "date_added": "2024-07-11",
+      "saHash": "2154",
+      "artist": "CHUBAY",
+      "jacket": "sdvx/jk_2154_1_s.png",
+      "bpm": "254",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        { "lvl": 14, "style": "single", "diffClass": "advanced" },
+        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "Sweetie Beauti Magic",
+      "search_hint": "sweetiebeauti_dadadaizu",
+      "date_added": "2024-07-11",
+      "saHash": "2155",
+      "artist": "打打だいず feat. 凜々",
+      "jacket": "sdvx/jk_2155_1_s.png",
+      "bpm": "150-285",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "月明りの旅人たち",
+      "search_hint": "tsukiakarino_cotatsu",
+      "date_added": "2024-07-11",
+      "saHash": "2156",
+      "artist": "coTatsu",
+      "jacket": "sdvx/jk_2156_1_s.png",
+      "bpm": "137",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2156_2_s.png"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2156_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "SAD1STIC Я04D",
+      "search_hint": "sadisticroad_enterskip",
+      "date_added": "2024-07-11",
+      "saHash": "2157",
+      "artist": "Enterskip",
+      "jacket": "sdvx/jk_2157_1_s.png",
+      "bpm": "292",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2157_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2157_3_s.png"
+        },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "XΛLT=ØVER",
+      "search_hint": "xaltover_ashrount",
+      "date_added": "2024-07-11",
+      "saHash": "2158",
+      "artist": "Ashrount",
+      "jacket": "sdvx/jk_2158_1_s.png",
+      "bpm": "321",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        { "lvl": 14, "style": "single", "diffClass": "advanced" },
+        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "Two of Wonder Lights",
+      "search_hint": "twoofwonder_technoplanet",
+      "date_added": "2024-07-11",
+      "saHash": "2159",
+      "artist": "technoplanet feat. Tamako Kinoshita",
+      "jacket": "sdvx/jk_2159_1_s.png",
+      "bpm": "264",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2159_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "ウイジン",
+      "search_hint": "uijin_chubay",
+      "date_added": "2024-05-02",
+      "saHash": "2160",
+      "artist": "CHUBAY as \"NOVICE\"",
+      "jacket": "sdvx/jk_2160_1_s.png",
+      "bpm": "190",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2160_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2160_3_s.png"
+        },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "{ eXLIPXe }",
+      "search_hint": "exlipxe_kameria",
+      "date_added": "2024-05-02",
+      "saHash": "2161",
+      "artist": "{ かめりあ }",
+      "jacket": "sdvx/jk_2161_1_s.png",
+      "bpm": "271",
+      "charts": [
+        { "lvl": 8, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2161_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2161_3_s.png"
+        },
+        { "lvl": 20, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
       "name": "ちょえちょえまぎか",
       "search_hint": "choechoemagika_pizuya",
       "date_added": "2024-02-15",
@@ -38995,6 +39812,250 @@
           "jacket": "sdvx/jk_2169_3_s.png"
         },
         { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY",
+      "search_hint": "bpls2thememedley",
+      "date_added": "2024-05-02",
+      "saHash": "2171",
+      "artist": "FLOOR LEGENDS -BPL S2 SDVX-",
+      "jacket": "sdvx/jk_2171_1_s.png",
+      "bpm": "215",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "愛昧ショコラーテ",
+      "search_hint": "aimaichocolate_watame",
+      "date_added": "2024-06-06",
+      "saHash": "2172",
+      "artist": "角巻わため",
+      "jacket": "sdvx/jk_2172_1_s.png",
+      "bpm": "135",
+      "charts": [
+        { "lvl": 2, "style": "single", "diffClass": "novice" },
+        { "lvl": 9, "style": "single", "diffClass": "advanced" },
+        { "lvl": 13, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 16, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "曇天羊",
+      "search_hint": "dontenhitsuji_watame",
+      "date_added": "2024-06-06",
+      "saHash": "2173",
+      "artist": "角巻わため",
+      "jacket": "sdvx/jk_2173_1_s.png",
+      "bpm": "135",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        { "lvl": 10, "style": "single", "diffClass": "advanced" },
+        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "My song",
+      "search_hint": "mysong_watame",
+      "date_added": "2024-06-06",
+      "saHash": "2174",
+      "artist": "角巻わため",
+      "jacket": "sdvx/jk_2174_1_s.png",
+      "bpm": "188",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "What an amazing swing",
+      "search_hint": "whatanamazing_watame",
+      "date_added": "2024-06-06",
+      "saHash": "2175",
+      "artist": "角巻わため",
+      "jacket": "sdvx/jk_2175_1_s.png",
+      "bpm": "125",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        { "lvl": 11, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "Lichtsäule",
+      "search_hint": "lichtsaule_kameriaphquase",
+      "date_added": "2024-09-12",
+      "saHash": "2177",
+      "artist": "かめりあ & BEMANI Sound Team \"PHQUASE\"",
+      "jacket": "sdvx/jk_2177_1_s.png",
+      "bpm": "215",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        { "lvl": 14, "style": "single", "diffClass": "advanced" },
+        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "OROCHI STRIKE",
+      "search_hint": "orochistrike_hommarjutotto",
+      "date_added": "2024-09-12",
+      "saHash": "2178",
+      "artist": "Hommarju & BEMANI Sound Team \"兎々\"",
+      "jacket": "sdvx/jk_2178_1_s.png",
+      "bpm": "50-200",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Blφφdy Cφncertφ",
+      "search_hint": "bloodyconcerto_osterrough",
+      "date_added": "2024-09-12",
+      "saHash": "2179",
+      "artist": "OSTER project & RoughSketch",
+      "jacket": "sdvx/jk_2179_1_s.png",
+      "bpm": "210",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "REINCARNATION",
+      "search_hint": "reincarnation_plight",
+      "date_added": "2024-09-12",
+      "saHash": "2180",
+      "artist": "P*Light",
+      "jacket": "sdvx/jk_2180_1_s.png",
+      "bpm": "220",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "novice" },
+        { "lvl": 14, "style": "single", "diffClass": "advanced" },
+        { "lvl": 17, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 19, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Re:RHYZE",
+      "search_hint": "rerhyze_beatnationrhyze",
+      "date_added": "2024-09-12",
+      "saHash": "2181",
+      "artist": "beatnation RHYZE",
+      "jacket": "sdvx/jk_2181_1_s.png",
+      "bpm": "200",
+      "charts": [
+        { "lvl": 6, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "閉塞的フレーション",
+      "search_hint": "heisokuteki_pizuyataka",
+      "date_added": "2024-08-07",
+      "saHash": "2183",
+      "artist": "Pizuya's Cell VS BEMANI Sound Team \"dj TAKA\"",
+      "jacket": "sdvx/jk_2183_1_s.png",
+      "bpm": "176",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "novice" },
+        { "lvl": 12, "style": "single", "diffClass": "advanced" },
+        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "残像ニ繋ガレタ追憶ノHIDEAWAY",
+      "search_hint": "zanzouni_soundholickeiju",
+      "date_added": "2024-08-07",
+      "saHash": "2184",
+      "artist": "SOUND HOLIC Vs. BEMANI Sound Team \"KE!JU\" feat. Nana Takahashi",
+      "jacket": "sdvx/jk_2184_1_s.png",
+      "bpm": "160",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        { "lvl": 11, "style": "single", "diffClass": "advanced" },
+        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ]
+    },
+    {
+      "name": "弾幕信仰",
+      "search_hint": "danmakushinkou_butaotomepon",
+      "date_added": "2024-08-07",
+      "saHash": "2185",
+      "artist": "豚乙女×BEMANI Sound Team \"PON\"",
+      "jacket": "sdvx/jk_2185_1_s.png",
+      "bpm": "170",
+      "charts": [
+        { "lvl": 5, "style": "single", "diffClass": "novice" },
+        { "lvl": 13, "style": "single", "diffClass": "advanced" },
+        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 18, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "SUPER HEROINE!!",
+      "search_hint": "superheroine_amaterasutatsuya",
+      "date_added": "2024-08-07",
+      "saHash": "2186",
+      "artist": "Amateras Records vs BEMANI Sound Team \"TATSUYA\" feat. miko",
+      "jacket": "sdvx/jk_2186_1_s.png",
+      "bpm": "186",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2186_2_s.png"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2186_3_s.png"
+        },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
+      ],
+      "flags": ["omegaDimension"]
+    },
+    {
+      "name": "Growing Up／アニメ「この素晴らしい世界に祝福を！３」より",
+      "search_hint": "growingup_machico",
+      "date_added": "2024-09-26",
+      "saHash": "2193",
+      "artist": "Machico",
+      "jacket": "sdvx/jk_2193_1_s.png",
+      "bpm": "190",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "novice" },
+        { "lvl": 10, "style": "single", "diffClass": "advanced" },
+        { "lvl": 14, "style": "single", "diffClass": "exhaust" },
+        { "lvl": 17, "style": "single", "diffClass": "maximum" }
       ]
     }
   ]

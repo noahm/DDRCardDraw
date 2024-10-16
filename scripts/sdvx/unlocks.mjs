@@ -150,20 +150,19 @@ export const SDVX_UNLOCK_IDS = {
 
     // Unlock Chain
     2034, // 無意識レクイエム(cosmobsp mix)
-	
-	// TAMANEKO adventure
-	2153, // トキノコエト
-	2154, // Entropic EnĤαncemEnt
-	2155, // Sweetie Beauti Magic
-	2156, // 月明りの旅人たち
-	2157, // SAD1STIC Я04D
-	2158, // XΛLT=ØVER
-	2159, // Two of Wonder Lights
-	
-	2183, // 閉塞的フレーション
-	2185, // 弾幕信仰
-	2186, // SUPER HEROINE!!
-	
+
+    // TAMANEKO adventure
+    2153, // トキノコエト
+    2154, // Entropic EnĤαncemEnt
+    2155, // Sweetie Beauti Magic
+    2156, // 月明りの旅人たち
+    2157, // SAD1STIC Я04D
+    2158, // XΛLT=ØVER
+    2159, // Two of Wonder Lights
+
+    2183, // 閉塞的フレーション
+    2185, // 弾幕信仰
+    2186, // SUPER HEROINE!!
   ],
   hexadiver: [
     1580, // 666
@@ -246,14 +245,14 @@ export const SDVX_UNLOCK_IDS = {
     2083, // OVEЯ+TUЯE
     2084, // Burst Λnd reBoost
     2085, // Λkasha
-	
-	2086, // JACK -the KING Ki11ing-
-	2087, // Don't you dare play GOD
-	2088, // Xinca
-	2089, // 憧憬のファンファーレ
-	2090, // Imitated Visions
-	2091, // こどもかくしのアンダーランド
-	2092, // すべてを賭して
+
+    2086, // JACK -the KING Ki11ing-
+    2087, // Don't you dare play GOD
+    2088, // Xinca
+    2089, // 憧憬のファンファーレ
+    2090, // Imitated Visions
+    2091, // こどもかくしのアンダーランド
+    2092, // すべてを賭して
   ],
 
   otherEvents: [
@@ -273,7 +272,7 @@ export const SDVX_UNLOCK_IDS = {
     1902, // You Are My Best RivaL!!
     2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
     2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
-	2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
+    2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
 
     // BPL Season 3 Triple Tribe
     2063, // stellar rain
@@ -282,18 +281,18 @@ export const SDVX_UNLOCK_IDS = {
     2162, // ちょえちょえまぎか
     2163, // Deep tenDon Reflex
     2164, // Ambivalent Vermilia
-	
-	// BPL Season 3 Stamp Event
-	2121, // Knew Order
-	2122, // Ex concordia felicitas
-	2123, // Allegro Saetta
-	2124, // ARISE
-	2125, // プリュネシエル
-	2126, // Colorful Magical Parade
-	2127, // NO SURRENDER
-	2128, // StellarflightS
-	2160, // ウイジン
-	2161, // { eXLIPXe }
+
+    // BPL Season 3 Stamp Event
+    2121, // Knew Order
+    2122, // Ex concordia felicitas
+    2123, // Allegro Saetta
+    2124, // ARISE
+    2125, // プリュネシエル
+    2126, // Colorful Magical Parade
+    2127, // NO SURRENDER
+    2128, // StellarflightS
+    2160, // ウイジン
+    2161, // { eXLIPXe }
 
     // KAC Entry
     2059, // パーフェクトイーター
@@ -302,15 +301,15 @@ export const SDVX_UNLOCK_IDS = {
     2060, // 累乗のカルマ
     2061, // Stylus
     2062, // QQ
-	
-	// MYSTICAL Re:UNION
-	2177, // Lichtsäule
-	2178, // OROCHI STRIKE
-	2179, // Blφφdy Cφncertφ
-	2180, // REINCARNATION
-	2181, // Re:RHYZE
+
+    // MYSTICAL Re:UNION
+    2177, // Lichtsäule
+    2178, // OROCHI STRIKE
+    2179, // Blφφdy Cφncertφ
+    2180, // REINCARNATION
+    2181, // Re:RHYZE
   ],
-  
+
   jpOnly: [
     // Chase Chase Jokers J-Region Exclusive
     2027, // チェイスチェイスジョーカーズのうた
