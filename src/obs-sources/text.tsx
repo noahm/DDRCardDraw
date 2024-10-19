@@ -32,6 +32,11 @@ export function CabPlayer(props: { p: number }) {
     const drawing = drawingSelectors.selectById(s, drawingId);
     const playerIndex = drawing.playerDisplayOrder[props.p - 1];
     const name = playerNameByIndex(drawing.meta, playerIndex, "");
+    const hideWins =
+      drawing.meta.type === "startgg" && drawing.meta.subtype === "gauntlet";
+    if (hideWins) {
+      return name;
+    }
     const score = Object.values(drawing.winners).reduce<number>(
       (prev, curr) => {
         if (curr === playerIndex) return prev + 1;
