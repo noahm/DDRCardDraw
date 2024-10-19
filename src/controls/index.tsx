@@ -417,6 +417,7 @@ function ControlsList() {
         onChange={(e) =>
           dispatch(configSlice.actions.pickCurrent(e.currentTarget.value))
         }
+        disabled={!summaryValues.length}
       >
         {summaryValues.length ? (
           summaryValues.map(([key, name, gameKey, lb, ub]) => (
@@ -426,7 +427,7 @@ function ControlsList() {
           ))
         ) : (
           <option disabled value="create">
-            Create a config
+            👈 Create a config here
           </option>
         )}
       </HTMLSelect>
