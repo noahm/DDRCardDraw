@@ -34,6 +34,7 @@ export const drawingsSlice = createSlice({
   reducers: {
     addDrawing: drawingsAdapter.addOne,
     updateOne: drawingsAdapter.updateOne,
+    removeOne: drawingsAdapter.removeOne,
     clearDrawings: drawingsAdapter.removeAll,
     addOneChart(
       state,

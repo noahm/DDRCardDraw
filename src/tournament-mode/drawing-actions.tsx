@@ -7,6 +7,7 @@ import {
   Exchange,
   FloppyDisk,
   NewLayer,
+  Trash,
 } from "@blueprintjs/icons";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-actions.css";
@@ -216,6 +217,17 @@ export function DrawingActions() {
       )}
       <SaveToStartggButton />
       <AddCardButton />
+      <Tooltip content="Delete this draw">
+        <Button
+          minimal
+          icon={<Trash />}
+          onClick={() =>
+            confirm(
+              "This draw will be permanently removed and cannot be recovered!",
+            ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
+          }
+        />
+      </Tooltip>
     </div>
   );
 }
