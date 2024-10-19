@@ -1,8 +1,7 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useMemo, useState } from "react";
-import { shallow } from "zustand/shallow";
-import { useConfigState } from "../config-state";
+import { useCallback, useMemo, useState } from "react";
+import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_PLACEHOLDER,
@@ -17,27 +16,31 @@ import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
+import { useAppDispatch } from "../state/store";
+import { createPickBanPocket, createRedrawChart } from "../state/thunks";
+import { getJacketUrl } from "../utils/jackets";
+import { drawingsSlice } from "../state/drawings.slice";
 
 const isJapanese = detectedLanguage === "ja";
 
-type Player = number;
+type PlayerIdx = number;
 
 interface IconCallbacks {
-  onVeto: (p: Player) => void;
-  onProtect: (p: Player) => void;
-  onReplace: (p: Player, chart: EligibleChart) => void;
+  onVeto: (p: PlayerIdx) => void;
+  onProtect: (p: PlayerIdx) => void;
+  onReplace: (p: PlayerIdx, chart: EligibleChart) => void;
   onRedraw: () => void;
   onReset: () => void;
-  onSetWinner: (p: Player | null) => void;
+  onSetWinner: (p: PlayerIdx | null) => void;
 }
 
 interface Props {
   onClick?: () => void;
   chart: DrawnChart | EligibleChart | PlayerPickPlaceholder;
-  vetoedBy?: Player;
-  protectedBy?: Player;
-  replacedBy?: Player;
-  winner?: Player;
+  vetoedBy?: PlayerIdx;
+  protectedBy?: PlayerIdx;
+  replacedBy?: PlayerIdx;
+  winner?: PlayerIdx | null;
   replacedWith?: EligibleChart;
   actionsEnabled?: boolean;
 }
@@ -45,26 +48,34 @@ interface Props {
 export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
-  const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
-    (d) => [
-      d.handleBanProtectReplace,
-      d.redrawChart,
-      d.resetChart,
-      d.setWinner,
-    ],
-    shallow,
+  const dispatch = useAppDispatch();
+  const drawingId = useDrawing((s) => s.id);
+
+  const handleBanPickPocket = useCallback(
+    (
+      type: "ban" | "protect" | "pocket",
+      player: number,
+      pick?: EligibleChart,
+    ) => dispatch(createPickBanPocket(drawingId, chartId, type, player, pick)),
+    [drawingId, chartId, dispatch],
   );
 
   return useMemo(
     () => ({
-      onVeto: handleBanPickPocket.bind(undefined, "ban", chartId),
-      onProtect: handleBanPickPocket.bind(undefined, "protect", chartId),
-      onReplace: handleBanPickPocket.bind(undefined, "pocket", chartId),
-      onRedraw: redrawChart.bind(undefined, chartId),
-      onReset: resetChart.bind(undefined, chartId),
-      onSetWinner: setWinner.bind(undefined, chartId),
+      onVeto: handleBanPickPocket.bind(undefined, "ban"),
+      onProtect: handleBanPickPocket.bind(undefined, "protect"),
+      onReplace: handleBanPickPocket.bind(undefined, "pocket"),
+      onRedraw: () => {
+        dispatch(createRedrawChart(drawingId, chartId));
+      },
+      onReset: () =>
+        dispatch(drawingsSlice.actions.resetChart({ drawingId, chartId })),
+      onSetWinner: (player) =>
+        dispatch(
+          drawingsSlice.actions.setWinner({ drawingId, chartId, player }),
+        ),
     }),
-    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner],
+    [handleBanPickPocket, drawingId, chartId, dispatch],
   );
 }
 
@@ -96,7 +107,7 @@ export function SongCard(props: Props) {
   const hideMenu = () => setContextMenuOpen(false);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
-    useState<number>(0);
+    useState<PlayerIdx | null>(null);
 
   const baseChartIsPlaceholder =
     "type" in chart && chart.type === CHART_PLACEHOLDER;
@@ -114,21 +125,25 @@ export function SongCard(props: Props) {
     dateAdded,
   } = replacedWith || baseChartValues(chart);
 
-  const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
+  const hasLabel = !!(
+    vetoedBy !== undefined ||
+    protectedBy !== undefined ||
+    replacedBy !== undefined
+  );
+  const hasWinner = typeof winner === "number";
 
   let jacketBg = {};
   if (jacket) {
-    const prefix = jacket.startsWith("blob:") ? "" : "jackets/";
     jacketBg = {
-      backgroundImage: `url("${prefix}${jacket}")`,
+      backgroundImage: `url("${getJacketUrl(jacket)}")`,
     };
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
 
   let menuContent: undefined | JSX.Element;
-  if (actionsEnabled && !winner) {
-    if (!replacedWith && baseChartIsPlaceholder) {
+  if (actionsEnabled && !hasWinner) {
+    if (replacedWith !== undefined && baseChartIsPlaceholder) {
       menuContent = (
         <IconMenu onStartPocketPick={setPocketPickPendingForPlayer} />
       );
@@ -142,16 +157,16 @@ export function SongCard(props: Props) {
           onSetWinner={iconCallbacks.onSetWinner}
         />
       );
-    } else if (!vetoedBy) {
+    } else if (vetoedBy === undefined) {
       menuContent = <IconMenu onSetWinner={iconCallbacks.onSetWinner} />;
     }
   }
 
   const rootClassname = classNames(styles.chart, {
-    [styles.vetoed]: vetoedBy,
-    [styles.protected]: protectedBy,
-    [styles.replaced]: replacedBy && !baseChartIsPlaceholder,
-    [styles.picked]: replacedBy && baseChartIsPlaceholder,
+    [styles.vetoed]: vetoedBy !== undefined,
+    [styles.protected]: protectedBy !== undefined,
+    [styles.replaced]: replacedBy !== undefined && !baseChartIsPlaceholder,
+    [styles.picked]: replacedBy !== undefined && baseChartIsPlaceholder,
     [styles.clickable]: !!menuContent || !!props.onClick,
     [styles.hideVeto]: hideVetos,
   });
@@ -160,49 +175,50 @@ export function SongCard(props: Props) {
     <div
       className={rootClassname}
       onClick={
-        !menuContent || showingContextMenu || pocketPickPendingForPlayer
+        !menuContent ||
+        showingContextMenu ||
+        pocketPickPendingForPlayer !== null
           ? props.onClick
           : showMenu
       }
       style={jacketBg}
     >
       <SongSearch
-        isOpen={!!pocketPickPendingForPlayer}
+        isOpen={pocketPickPendingForPlayer !== null}
         onSongSelect={(song, chart) => {
-          actionsEnabled &&
-            chart &&
-            iconCallbacks.onReplace(pocketPickPendingForPlayer as 1 | 2, chart);
-          setPocketPickPendingForPlayer(0);
+          if (actionsEnabled && chart)
+            iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
+          setPocketPickPendingForPlayer(null);
         }}
-        onCancel={() => setPocketPickPendingForPlayer(0)}
+        onCancel={() => setPocketPickPendingForPlayer(null)}
       />
       <div className={styles.cardCenter}>
-        {vetoedBy && (
+        {vetoedBy !== undefined && (
           <CardLabel
-            player={vetoedBy}
+            playerIdx={vetoedBy}
             type={LabelType.Ban}
             onRemove={iconCallbacks?.onReset}
           />
         )}
-        {protectedBy && (
+        {protectedBy !== undefined && (
           <CardLabel
-            player={protectedBy}
+            playerIdx={protectedBy}
             type={LabelType.Protect}
             onRemove={iconCallbacks?.onReset}
           />
         )}
-        {replacedBy && (
+        {replacedBy !== undefined && (
           <CardLabel
-            player={replacedBy}
+            playerIdx={replacedBy}
             type={
               baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket
             }
             onRemove={iconCallbacks?.onReset}
           />
         )}
-        {winner && (
+        {hasWinner && (
           <CardLabel
-            player={winner}
+            playerIdx={winner}
             type={LabelType.Winner}
             onRemove={() => iconCallbacks?.onSetWinner(null)}
           />

@@ -1,105 +1,172 @@
+import { Button, Menu, MenuItem, Popover, Tooltip } from "@blueprintjs/core";
 import {
-  Button,
-  Icon,
-  Menu,
-  MenuItem,
-  Popover,
-  Tooltip,
-} from "@blueprintjs/core";
-import {
-  SendMessage,
-  Changes,
-  Share,
   Camera,
   Refresh,
-  NewPerson,
-  BlockedPerson,
   Error,
+  CubeAdd,
+  Exchange,
+  FloppyDisk,
+  NewLayer,
+  Trash,
 } from "@blueprintjs/icons";
-import { useDrawing, useDrawingStore } from "../drawing-context";
+import { useDrawing } from "../drawing-context";
 import styles from "./drawing-actions.css";
-import { CurrentPeersMenu } from "./remote-peer-menu";
-import { displayFromPeerId, useRemotePeers } from "./remote-peers";
 import { domToPng } from "modern-screenshot";
 import { shareImage } from "../utils/share";
-import { firstOf } from "../utils";
-import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
+import { AppThunk, useAppDispatch, useAppState } from "../state/store";
+import { useAtomValue } from "jotai";
+import { showPlayerAndRoundLabels } from "../config-state";
+import { drawingsSlice } from "../state/drawings.slice";
+import { eventSlice } from "../state/event.slice";
+import { createPlusOneChart, createRedrawAll } from "../state/thunks";
+import {
+  useReportSetMutation,
+  ReportSetMutationVariables as MutationVariables,
+  BracketSetGameDataInput as GDI,
+} from "../startgg-gql";
+import { CountingSet } from "../utils/counting-set";
+import { playerCount } from "../models/Drawing";
+
+/** thunk that dispatches nothing, but calculates the result to be sent to startgg */
+function getMatchResult(
+  drawingId: string,
+): AppThunk<MutationVariables | undefined> {
+  return (_, getState): MutationVariables | undefined => {
+    const s = getState();
+    const gameData: Array<GDI> = [];
+    const drawing = s.drawings.entities[drawingId];
+    if (drawing.meta.type !== "startgg") {
+      return;
+    }
+    const winsPerPlayer = new CountingSet<string>();
+    for (const [songId, pIdx] of Object.entries(drawing.winners)) {
+      if (pIdx === null) {
+        continue;
+      }
+      try {
+        const entrant = drawing.meta.entrants[pIdx];
+        gameData.push({
+          gameNum: gameData.length + 1,
+          winnerId: entrant.id,
+        });
+        winsPerPlayer.add(entrant.id);
+      } catch (e) {
+        console.warn(`failed to add game data for song ${songId}`, e);
+      }
+    }
+    let winnerId: string | undefined;
+    const orderedByWins = Array.from(winsPerPlayer.valuesWithCount()).sort(
+      (a, b) => b[1] - a[1],
+    );
+    if (
+      orderedByWins.length == 1 ||
+      orderedByWins[0][1] > orderedByWins[1][1]
+    ) {
+      // confirmed no tie for first place
+      winnerId = orderedByWins[0][0];
+    }
+    const ret: MutationVariables = {
+      setId: drawing.meta.id,
+      winnerId,
+    };
+    if (gameData.length) {
+      ret.gameData = gameData;
+    }
+    return ret;
+  };
+}
 
 const DEFAULT_FILENAME = "card-draw.png";
 
-export function DrawingActions() {
-  const getDrawing = useDrawing((s) => s.serializeSyncFields);
-  const updateDrawing = useDrawing((s) => s.updateDrawing);
-  const redrawAllCharts = useDrawing((s) => s.redrawAllCharts);
-  const hasPlayers = useDrawing((s) => !!s.players.length);
-  const syncPeer = useDrawing((s) => s.__syncPeer);
-  const isConnected = useRemotePeers((s) => !!s.thisPeer);
-  const remotePeers = useRemotePeers((s) => s.remotePeers);
-  const sendDrawing = useRemotePeers((s) => s.sendDrawing);
-  const syncDrawing = useRemotePeers((s) => s.beginSyncWithPeer);
-  const drawingStore = useDrawingStore();
-  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
-  const { showBoundary } = useErrorBoundary();
-
-  let remoteActions: JSX.Element | undefined = undefined;
-
-  const onlyRemote = firstOf(remotePeers.values());
-  if (remotePeers.size === 1 && onlyRemote) {
-    const peerId = displayFromPeerId(onlyRemote.peer);
-    remoteActions = (
-      <Menu>
-        <MenuItem
-          icon={<SendMessage />}
-          text={`Send to ${peerId}`}
-          onClick={() => sendDrawing(getDrawing())}
-        />
-        <MenuItem
-          icon={<Changes />}
-          text={`Start sync with ${peerId}`}
-          onClick={() => syncDrawing(drawingStore)}
-        />
-      </Menu>
-    );
-  } else if (remotePeers.size > 1) {
-    remoteActions = (
-      <Menu>
-        <MenuItem icon={<SendMessage />} text="Send to...">
-          <CurrentPeersMenu
-            disabled={syncPeer ? [syncPeer.peer] : false}
-            onClickPeer={(peerId) => sendDrawing(getDrawing(), peerId)}
-          />
-        </MenuItem>
-        <MenuItem icon={<Changes />} text="Start sync with...">
-          <CurrentPeersMenu
-            disabled={syncPeer ? [syncPeer.peer] : false}
-            onClickPeer={(peerId) => syncDrawing(drawingStore, peerId)}
-          />
-        </MenuItem>
-      </Menu>
-    );
+function SaveToStartggButton() {
+  const dispatch = useAppDispatch();
+  const drawingId = useDrawing((s) => s.id);
+  const drawingMeta = useDrawing((s) => s.meta);
+  const [mutationData, reportSet] = useReportSetMutation();
+  if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
+    return null;
   }
 
-  const button = (
-    <Button minimal text={<Share />} disabled={!remotePeers.size} />
+  let tooltipContent = "Save Winner to Start.gg";
+  if (mutationData.error) {
+    tooltipContent = `Error saving: ${mutationData.error.message}`;
+  }
+  if (mutationData.fetching) {
+    tooltipContent = "Saving...";
+  }
+
+  return (
+    <Tooltip
+      intent={mutationData.error ? "danger" : "none"}
+      content={tooltipContent}
+    >
+      <Button
+        minimal
+        disabled={mutationData.fetching}
+        icon={<FloppyDisk />}
+        onClick={() => {
+          const results = dispatch(getMatchResult(drawingId));
+          if (!results) {
+            return;
+          }
+          reportSet(results);
+        }}
+      />
+    </Tooltip>
+  );
+}
+
+function AddCardButton() {
+  const dispatch = useAppDispatch();
+  const drawingId = useDrawing((s) => s.id);
+  return (
+    <Tooltip content="Draw Another Chart">
+      <Button
+        minimal
+        icon={<NewLayer />}
+        onClick={() => {
+          dispatch(createPlusOneChart(drawingId));
+        }}
+      />
+    </Tooltip>
+  );
+}
+
+export function DrawingActions() {
+  const dispatch = useAppDispatch();
+  const cabs = useAppState(eventSlice.selectors.allCabs);
+  const drawingId = useDrawing((s) => s.id);
+  const isTwoPlayers = useDrawing((s) => playerCount(s.meta) === 2);
+  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+  const { showBoundary } = useErrorBoundary();
+
+  const addToCabMenu = (
+    <Menu>
+      {cabs.map((cab) => (
+        <MenuItem
+          key={cab.id}
+          text={cab.name}
+          onClick={() =>
+            dispatch(
+              eventSlice.actions.assignMatchToCab({
+                cabId: cab.id,
+                matchId: drawingId,
+              }),
+            )
+          }
+        />
+      ))}
+    </Menu>
   );
 
   return (
     <div className={styles.networkButtons}>
-      {syncPeer && <Icon icon={<Changes />} intent="success" />}
-      {isConnected ? (
-        remotePeers.size ? (
-          <Popover content={remoteActions}>{button}</Popover>
-        ) : (
-          <Tooltip content="Connect to a peer to share">{button}</Tooltip>
-        )
-      ) : null}
       <Tooltip content="Save Image">
         <Button
           minimal
           icon={<Camera />}
           onClick={async () => {
-            const drawingId = getDrawing().id;
             const drawingElement = document.querySelector(
               "#drawing-" + drawingId,
             );
@@ -121,7 +188,7 @@ export function DrawingActions() {
           onClick={() =>
             confirm(
               "This will replace everything besides protects and picks!",
-            ) && redrawAllCharts()
+            ) && dispatch(createRedrawAll(drawingId))
           }
         />
       </Tooltip>
@@ -130,37 +197,37 @@ export function DrawingActions() {
           <Button minimal icon={<Error />} onClick={showBoundary} />
         </Tooltip>
       )}
-      {showLabels && (
-        <>
-          <Tooltip content="Add Player">
-            <Button
-              minimal
-              icon={<NewPerson />}
-              onClick={() => {
-                updateDrawing((drawing) => {
-                  const next = drawing.players.slice();
-                  next.push("");
-                  return { players: next };
-                });
-              }}
-            />
-          </Tooltip>
-          <Tooltip content="Remove Player" disabled={!hasPlayers}>
-            <Button
-              minimal
-              icon={<BlockedPerson />}
-              disabled={!hasPlayers}
-              onClick={() => {
-                updateDrawing((drawing) => {
-                  const next = drawing.players.slice();
-                  next.pop();
-                  return { players: next };
-                });
-              }}
-            />
-          </Tooltip>
-        </>
+      {!!cabs.length && (
+        <Tooltip content="Assign to Cab">
+          <Popover content={addToCabMenu} placement="bottom">
+            <Button minimal icon={<CubeAdd />} />
+          </Popover>
+        </Tooltip>
       )}
+      {showLabels && isTwoPlayers && (
+        <Tooltip content="Swap Player Positions">
+          <Button
+            minimal
+            icon={<Exchange />}
+            onClick={() => {
+              dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
+            }}
+          />
+        </Tooltip>
+      )}
+      <SaveToStartggButton />
+      <AddCardButton />
+      <Tooltip content="Delete this draw">
+        <Button
+          minimal
+          icon={<Trash />}
+          onClick={() =>
+            confirm(
+              "This draw will be permanently removed and cannot be recovered!",
+            ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
+          }
+        />
+      </Tooltip>
     </div>
   );
 }

@@ -8,19 +8,23 @@ import {
   Popover,
 } from "@blueprintjs/core";
 import { Trash, InfoSign, Menu as MenuIcon, Help } from "@blueprintjs/icons";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
-import { DataLoadingSpinner, VersionSelect } from "./version-select";
-import { useDrawState } from "./draw-state";
+import { useAppDispatch, useAppState } from "./state/store";
+import { drawingsSlice } from "./state/drawings.slice";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
-  const clearDrawings = useDrawState((d) => d.clearDrawings);
-  const haveDrawings = useDrawState((d) => !!d.drawings.length);
+  const dispatch = useAppDispatch();
+  const clearDrawings = useCallback(
+    () => dispatch(drawingsSlice.actions.clearDrawings()),
+    [dispatch],
+  );
+  const haveDrawings = useAppState(drawingsSlice.selectors.haveDrawings);
   const { t } = useIntl();
 
   const menu = (
@@ -63,8 +67,7 @@ export function Header() {
           <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
         </Popover>
         <Navbar.Divider />
-        <VersionSelect />
-        <DataLoadingSpinner />
+        <Navbar.Heading>Event Mode</Navbar.Heading>
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>
         <HeaderControls />

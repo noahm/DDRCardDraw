@@ -70,8 +70,10 @@ export function songIsValid(
     return false;
   }
   return (
-    (!song.folder || !config.folders.size || config.folders.has(song.folder)) &&
-    (!song.flags || song.flags.every((f) => config.flags.has(f)))
+    (!song.folder ||
+      !config.folders.length ||
+      config.folders.includes(song.folder)) &&
+    (!song.flags || song.flags.every((f) => config.flags.includes(f)))
   );
 }
 
@@ -90,10 +92,10 @@ export function chartIsValid(
   const levelMetric = chartLevelOrTier(chart, config.useGranularLevels);
   return (
     chart.style === config.style &&
-    config.difficulties.has(chart.diffClass) &&
+    config.difficulties.includes(chart.diffClass) &&
     levelMetric >= config.lowerBound &&
     levelMetric <= config.upperBound &&
-    (!chart.flags || chart.flags.every((f) => config.flags.has(f)))
+    (!chart.flags || chart.flags.every((f) => config.flags.includes(f)))
   );
 }
 
@@ -223,19 +225,27 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
   return null;
 }
 
+export type StartggInfo = Pick<Drawing, "meta">;
+export type StartingPoint = Drawing | StartggInfo;
+
+const artistDrawBlocklist = new Set(["Carlito", "Dr. Bombay"]);
+
 /**
  * Produces a drawn set of charts given the song data and the user
  * input of the html form elements.
  * @param songs The song data (see `src/songs/`)
  * @param configData the data gathered by all form elements on the page, indexed by `name` attribute
  */
-export function draw(gameData: GameData, configData: ConfigState): Drawing {
+export function draw(
+  gameData: GameData,
+  configData: ConfigState,
+  startPoint: StartingPoint,
+): Drawing {
   const {
     chartCount: numChartsToRandom,
     useWeights,
     forceDistribution,
     weights,
-    defaultPlayersPerDraw,
     useGranularLevels,
   } = configData;
 
@@ -247,10 +257,15 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     getBuckets(configData, availableLvls, gameData.meta.granularTierResolution),
   );
 
-  for (const chart of eligibleCharts(configData, gameData)) {
-    const bucketIdx = useWeights
+  function bucketIndexForChart(chart: EligibleChart) {
+    return useWeights
       ? bucketIndexForLvl(chartLevelOrTier(chart, useGranularLevels), buckets)
       : 0; // outside of weights mode we just put all songs into one shared bucket
+  }
+
+  for (const chart of eligibleCharts(configData, gameData)) {
+    if (artistDrawBlocklist.has(chart.artist)) continue;
+    const bucketIdx = bucketIndexForChart(chart);
     if (bucketIdx === null) continue;
     validCharts.get(bucketIdx).push(chart);
   }
@@ -293,14 +308,15 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
         (sum, current) => sum + (current || 0),
         0,
       );
+      const evenRatios = numChartsToRandom % totalWeightUsed === 0;
       for (const bucketIdx of validCharts.keys()) {
         const normalizedWeight = (weights[bucketIdx] || 0) / totalWeightUsed;
         const maxForThisBucket = Math.ceil(
           normalizedWeight * numChartsToRandom,
         );
         maxDrawPerBucket.set(bucketIdx, maxForThisBucket);
-        // setup minimum draws
-        for (let i = 1; i < maxForThisBucket; i++) {
+        // setup minimum draws (even ratios means we use max, not min, so +1)
+        for (let i = evenRatios ? 0 : 1; i < maxForThisBucket; i++) {
           requiredDrawIndexes.push(bucketIdx);
         }
       }
@@ -312,11 +328,40 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
   let redraw = false;
   const drawnCharts: DrawnChart[] = [];
 
+  let preSeededCharts = 0;
+  const preSeededDifficulties: number[] = [];
+  if ("charts" in startPoint) {
+    // account for the chart levels already in the draw starting point
+    preSeededCharts = startPoint.charts.length;
+    for (const chart of startPoint.charts) {
+      if (chart.type === "PLACEHOLDER") continue;
+      const bucketIdx = bucketIndexForChart(chart);
+      if (bucketIdx === null) continue;
+      // count this chart within quota
+      preSeededDifficulties.push(bucketIdx);
+
+      // remove from base requirements
+      const removeIdx = requiredDrawIndexes.indexOf(bucketIdx);
+      if (removeIdx >= 0) {
+        requiredDrawIndexes.splice(removeIdx, 1);
+      }
+      // remove this existing chart from eligible pool to prevent dupes
+      const bucket = validCharts.get(bucketIdx);
+      const idxInBucket = bucket.findIndex(
+        (eligibleChart) =>
+          eligibleChart.name === chart.name &&
+          chart.diffAbbr === eligibleChart.diffAbbr &&
+          chart.level === eligibleChart.level,
+      );
+      bucket.splice(idxInBucket, 1);
+    }
+  }
+
   do {
     /**
      * Record of how many songs of each bucket index have been drawn so far
      */
-    const difficultyCounts = new CountingSet<number>();
+    const difficultyCounts = new CountingSet<number>(preSeededDifficulties);
 
     // make a copy of valid charts here in the loop so we
     // can mutate it later during the draw process, but
@@ -392,15 +437,18 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     }
   } while (redraw);
 
-  const charts: Drawing["charts"] = configData.sortByLevel
-    ? drawnCharts.sort(
-        (a, b) =>
-          chartLevelOrTier(a, useGranularLevels, false) -
-          chartLevelOrTier(b, useGranularLevels, false),
-      )
-    : shuffle(drawnCharts);
+  let charts: Drawing["charts"];
+  if (configData.sortByLevel) {
+    charts = drawnCharts.sort(
+      (a, b) =>
+        chartLevelOrTier(a, useGranularLevels, false) -
+        chartLevelOrTier(b, useGranularLevels, false),
+    );
+  } else {
+    charts = shuffle(drawnCharts);
+  }
 
-  if (configData.playerPicks) {
+  if (!preSeededCharts && configData.playerPicks) {
     charts.unshift(
       ...times(
         configData.playerPicks,
@@ -412,13 +460,20 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     );
   }
 
+  const players =
+    startPoint.meta.type === "simple"
+      ? startPoint.meta.players
+      : startPoint.meta.entrants;
+
   return {
     id: `draw-${nanoid(10)}`,
+    configId: configData.id,
+    bans: {},
+    protects: {},
+    pocketPicks: {},
+    winners: {},
+    playerDisplayOrder: players.map((_, idx) => idx),
+    ...startPoint,
     charts,
-    players: times(defaultPlayersPerDraw, () => ""),
-    bans: [],
-    protects: [],
-    pocketPicks: [],
-    winners: [],
   };
 }

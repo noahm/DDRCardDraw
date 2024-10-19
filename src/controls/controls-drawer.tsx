@@ -3,21 +3,13 @@ import {
   ButtonGroup,
   Card,
   Checkbox,
-  Classes,
   Collapse,
   Divider,
   FormGroup,
   HTMLSelect,
-  Icon,
   NumericInput,
-  Tab,
-  Tabs,
 } from "@blueprintjs/core";
 import {
-  ThirdParty,
-  GlobeNetwork,
-  Settings,
-  People,
   CaretDown,
   CaretRight,
   Plus,
@@ -28,22 +20,25 @@ import { DateInput3 } from "@blueprintjs/datetime2";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
 import { useMemo, useState } from "react";
-import { shallow } from "zustand/shallow";
-import { useConfigState } from "../config-state";
-import { useDrawState } from "../draw-state";
 import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
-import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
-import { useRemotePeers } from "../tournament-mode/remote-peers";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
-import { PlayerNamesControls } from "./player-names";
-import { getAvailableLevels } from "../game-data-utils";
+import { getAvailableLevels, useGetMetaString } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { detectedLanguage } from "../utils";
+import {
+  SelectedConfigContextProvider,
+  useConfigState,
+  useGameData,
+  useUpdateConfig,
+} from "../state/hooks";
+import { useAtomValue } from "jotai";
+import { showEligibleCharts } from "../config-state";
+import { useStockGameData } from "../state/game-data.atoms";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -83,45 +78,11 @@ function getDiffsAndRangeForNewStyle(
 }
 
 export default function ControlsDrawer() {
-  const { t } = useIntl();
-  const isConnected = useRemotePeers((r) => !!r.thisPeer);
-  const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
   return (
     <div className={styles.drawer}>
-      <Tabs id="settings" large>
-        <Tab
-          id="general"
-          icon={<Settings className={Classes.TAB_ICON} />}
-          panel={<GeneralSettings />}
-        >
-          {t("controls.tabs.general")}
-        </Tab>
-        <Tab
-          id="network"
-          icon={
-            <Icon
-              icon={
-                hasPeers ? (
-                  <ThirdParty className={Classes.TAB_ICON} />
-                ) : (
-                  <GlobeNetwork className={Classes.TAB_ICON} />
-                )
-              }
-              intent={isConnected ? "success" : "none"}
-            />
-          }
-          panel={<RemotePeerControls />}
-        >
-          {t("controls.tabs.networking")}
-        </Tab>
-        <Tab
-          id="players"
-          icon={<People className={Classes.TAB_ICON} />}
-          panel={<PlayerNamesControls />}
-        >
-          {t("controls.tabs.players")}
-        </Tab>
-      </Tabs>
+      <SelectedConfigContextProvider>
+        <GeneralSettings />
+      </SelectedConfigContextProvider>
     </div>
   );
 }
@@ -129,11 +90,9 @@ export default function ControlsDrawer() {
 const dateFormat = "yyyy-MM-dd";
 function ReleaseDateFilter() {
   const { t } = useIntl();
-  const gameData = useDrawState((s) => s.gameData);
-  const [updateState, cutoffDate] = useConfigState(
-    (s) => [s.update, s.cutoffDate],
-    shallow,
-  );
+  const gameData = useGameData();
+  const updateState = useUpdateConfig();
+  const cutoffDate = useConfigState((s) => s.cutoffDate);
   const mostRecentRelease = useMemo(
     () =>
       gameData?.songs.reduce<string>((prev, song) => {
@@ -178,27 +137,25 @@ function ReleaseDateFilter() {
 /** Renders the checkboxes for each individual flag that exists in the data file's meta.flags */
 function FlagSettings() {
   const { t } = useIntl();
-  const [dataSetName, gameData, hasFlags] = useDrawState(
-    (s) => [s.dataSetName, s.gameData, !!s.gameData?.meta.flags.length],
-    shallow,
-  );
-  const [updateState, selectedFlags] = useConfigState(
-    (s) => [s.update, s.flags],
-    shallow,
-  );
+  const gameData = useGameData();
+  const hasFlags = !!gameData?.meta.flags.length;
+  const updateState = useUpdateConfig();
+  const selectedFlags = useConfigState((s) => s.flags);
+  const getMetaString = useGetMetaString();
 
-  if (!hasFlags) {
+  if (!hasFlags || !gameData) {
     return false;
   }
+  const dataSetName = gameData.i18n.en.name as string;
 
   return (
     <FormGroup label={t("controls.include")}>
       {gameData?.meta.flags.map((key) => (
         <Checkbox
           key={`${dataSetName}:${key}`}
-          label={t("meta." + key)}
+          label={getMetaString(key)}
           value={key}
-          checked={selectedFlags.has(key)}
+          checked={selectedFlags.includes(key)}
           onChange={() =>
             updateState((s) => {
               const newFlags = new Set(s.flags);
@@ -207,7 +164,7 @@ function FlagSettings() {
               } else {
                 newFlags.add(key);
               }
-              return { flags: newFlags };
+              return { flags: Array.from(newFlags) };
             })
           }
         />
@@ -219,34 +176,33 @@ function FlagSettings() {
 /** Renders the checkboxes for each individual folder that exists in the data file's meta.folders */
 function FolderSettings() {
   const { t } = useIntl();
-  const availableFolders = useDrawState((s) => s.gameData?.meta.folders);
-  const dataSetName = useDrawState((s) => s.dataSetName);
-  const [updateState, selectedFolders] = useConfigState(
-    (s) => [s.update, s.folders],
-    shallow,
-  );
+  const gameData = useGameData();
+  const availableFolders = gameData?.meta.folders;
+  const updateState = useUpdateConfig();
+  const selectedFolders = useConfigState((s) => s.folders);
 
-  if (!availableFolders?.length) {
+  if (!availableFolders?.length || !gameData) {
     return null;
   }
+  const dataSetName = gameData?.i18n.en.name as string;
 
   return (
     <FormGroup
       label={t("controls.folders")}
-      style={{ opacity: selectedFolders.size ? undefined : 0.8 }}
+      style={{ opacity: selectedFolders.length ? undefined : 0.8 }}
     >
       <ButtonGroup className={styles.smallText}>
         <Button
           small
           icon={<SmallTick />}
-          onClick={() => updateState({ folders: new Set(availableFolders) })}
+          onClick={() => updateState({ folders: availableFolders })}
         >
           All
         </Button>
         <Button
           small
           icon={<SmallCross />}
-          onClick={() => updateState({ folders: new Set() })}
+          onClick={() => updateState({ folders: [] })}
         >
           Ignore Folders
         </Button>
@@ -256,7 +212,7 @@ function FolderSettings() {
           key={`${dataSetName}:${idx}`}
           label={folder}
           value={folder}
-          checked={selectedFolders.has(folder)}
+          checked={selectedFolders.includes(folder)}
           onChange={() =>
             updateState((s) => {
               const newFolders = new Set(s.folders);
@@ -265,7 +221,7 @@ function FolderSettings() {
               } else {
                 newFolders.add(folder);
               }
-              return { folders: newFolders };
+              return { folders: Array.from(newFolders) };
             })
           }
         />
@@ -276,8 +232,10 @@ function FolderSettings() {
 
 function GeneralSettings() {
   const { t } = useIntl();
-  const gameData = useDrawState((s) => s.gameData);
+  const updateState = useUpdateConfig();
+  const showingEligibleCharts = useAtomValue(showEligibleCharts);
   const configState = useConfigState();
+  const gameData = useStockGameData(configState.gameKey);
   const {
     useWeights,
     constrainPocketPicks,
@@ -285,7 +243,6 @@ function GeneralSettings() {
     hideVetos,
     lowerBound,
     upperBound,
-    update: updateState,
     difficulties: selectedDifficulties,
     style: selectedStyle,
     chartCount,
@@ -305,6 +262,7 @@ function GeneralSettings() {
     () => getAvailableLevels(gameData, useGranularLevels),
     [gameData, useGranularLevels],
   );
+  const getMetaString = useGetMetaString();
 
   if (!gameData) {
     return null;
@@ -367,7 +325,7 @@ function GeneralSettings() {
             <ShowChartsToggle inDrawer />
           </FormGroup>
           <Collapse
-            isOpen={!!configState.flags.size && configState.showEligibleCharts}
+            isOpen={!!configState.flags.length && showingEligibleCharts}
           >
             <FormGroup label="Show only">
               <EligibleChartsListFilter />
@@ -391,9 +349,7 @@ function GeneralSettings() {
             clampValueOnBlur
             onValueChange={(chartCount) => {
               if (!isNaN(chartCount)) {
-                updateState(() => {
-                  return { chartCount };
-                });
+                updateState({ chartCount });
               }
             }}
           />
@@ -413,9 +369,7 @@ function GeneralSettings() {
             clampValueOnBlur
             onValueChange={(playerPicks) => {
               if (!isNaN(playerPicks)) {
-                updateState(() => {
-                  return { playerPicks };
-                });
+                updateState({ playerPicks });
               }
             }}
           />
@@ -490,7 +444,7 @@ function GeneralSettings() {
                       next.style,
                     );
                     if (diffs.length === 1) {
-                      next.difficulties = new Set(diffs.map((d) => d.key));
+                      next.difficulties = diffs.map((d) => d.key);
                     }
                     if (lvlRange.low > next.upperBound) {
                       next.upperBound = lvlRange.low;
@@ -504,7 +458,7 @@ function GeneralSettings() {
               >
                 {gameStyles.map((style) => (
                   <option key={style} value={style}>
-                    {t("meta." + style)}
+                    {getMetaString(style)}
                   </option>
                 ))}
               </HTMLSelect>
@@ -516,7 +470,7 @@ function GeneralSettings() {
                 key={`${dif.key}`}
                 name="difficulties"
                 value={dif.key}
-                checked={selectedDifficulties.has(dif.key)}
+                checked={selectedDifficulties.includes(dif.key)}
                 onChange={(e) => {
                   const { checked, value } = e.currentTarget;
                   updateState((s) => {
@@ -526,10 +480,10 @@ function GeneralSettings() {
                     } else {
                       difficulties.delete(value);
                     }
-                    return { difficulties };
+                    return { difficulties: Array.from(difficulties) };
                   });
                 }}
-                label={t("meta." + dif.key)}
+                label={getMetaString(dif.key)}
               />
             ))}
           </FormGroup>
