@@ -44,7 +44,7 @@
       "babylonGalaxy"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1711679119771
+    "lastUpdated": 1727556490564
   },
   "defaults": {
     "style": "single",
@@ -506,7 +506,7 @@
       ],
       "jacket": "3y3s.jpg",
       "remyLink": "https://remywiki.com/3y3s",
-      "flags": ["goldExclusive", "unlock"],
+      "flags": ["goldExclusive", "tempUnlock"],
       "search_hint": "Eyes"
     },
     {
@@ -912,6 +912,61 @@
       "jacket": "9th Outburst.jpg",
       "remyLink": "https://remywiki.com/9th_Outburst",
       "flags": ["goldenLeague"]
+    },
+    {
+      "name": "[ ]DENTITY",
+      "saHash": "Di0ODIlddo8d90oo09qqd98QObQP1llI",
+      "artist": "BEMANI Sound Team \"HuΣeR\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "100-200",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 4.55
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 8.4
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.65
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.65
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 8.3
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.4
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 17.35
+        }
+      ],
+      "search_hint": "IDENTITY",
+      "remyLink": "https://remywiki.com/IDENTITY",
+      "jacket": "IDENTITY.jpg",
+      "flags": ["unlock"]
     },
     {
       "name": "A",
@@ -3506,7 +3561,7 @@
       ],
       "jacket": "Ambivalent Vermilia.jpg",
       "remyLink": "https://remywiki.com/Ambivalent_Vermilia",
-      "flags": ["goldExclusive", "unlock"]
+      "flags": ["goldExclusive", "tempUnlock"]
     },
     {
       "name": "Angelic Jelly",
@@ -5202,7 +5257,6 @@
       ],
       "remyLink": "http://remywiki.com/Bang%20Pad%28Werk%20Mix%29",
       "jacket": "Bang Pad(Werk Mix).jpg",
-      "flags": ["unlock"],
       "saHash": "oloPOQPQ8Q8IQQoiO9bqdDOo8o6OQ6qI",
       "saIndex": "963"
     },
@@ -5297,19 +5351,21 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "difficult",
-          "sanbaiTier": 12.9
+          "sanbaiTier": 12.9,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "expert",
-          "sanbaiTier": 15.85
+          "sanbaiTier": 15.85,
+          "flags": ["shock"]
         },
         {
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 18.6
         },
         {
@@ -5322,19 +5378,21 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "difficult",
-          "sanbaiTier": 12.9
+          "sanbaiTier": 12.9,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "double",
           "diffClass": "expert",
-          "sanbaiTier": 15.75
+          "sanbaiTier": 15.75,
+          "flags": ["shock"]
         },
         {
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 18.7
         }
       ],
@@ -6053,7 +6111,6 @@
       ],
       "remyLink": "http://remywiki.com/BLAKE",
       "jacket": "BLAKE.jpg",
-      "flags": ["unlock"],
       "saHash": "b0dIdlPD6IDQ000l6lIoO9oD1IQiqQ6I",
       "saIndex": "1039"
     },
@@ -6858,7 +6915,7 @@
           "sanbaiTier": 16.1
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/BREDLI",
       "jacket": "BREDLI.jpg",
       "saHash": "O8Qb086QQIQ109d1lqilOQ9QD8lPIqdd",
@@ -6973,7 +7030,6 @@
       ],
       "remyLink": "http://remywiki.com/BRIDAL%20FESTIVAL%20%21%21%21",
       "jacket": "BRIDAL FESTIVAL !!!.jpg",
-      "flags": ["unlock"],
       "saHash": "91ioD99OdDD9db8qilod818OPqb88idQ",
       "saIndex": "984"
     },
@@ -7308,7 +7364,6 @@
           "sanbaiTier": 13.35
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Broken",
       "saHash": "6qPlI8DQPoDIo6D819boPioIPPDIPblq",
       "saIndex": "1183",
@@ -9325,7 +9380,6 @@
       ],
       "remyLink": "http://remywiki.com/City%20Never%20Sleeps",
       "jacket": "City Never Sleeps.jpg",
-      "flags": ["unlock"],
       "saHash": "6OiD0q6O8qi6oDbQ18Ilo8do8biDD1ll",
       "saIndex": "946"
     },
@@ -11971,6 +12025,60 @@
       "saIndex": "1055"
     },
     {
+      "name": "Dance With The Dead",
+      "saHash": "1dldQ1il1O89O8Ol0Ib0Dq8Pl8ol111I",
+      "artist": "BEMANI Sound Team \"SYUNN\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "?150",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3.45
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 8.3
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.7
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 8.2
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.6
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dance_With_The_Dead",
+      "jacket": "Dance With The Dead.jpg",
+      "flags": ["unlock"]
+    },
+    {
       "name": "Dancer in the flare",
       "name_translation": "",
       "artist": "猫叉Master",
@@ -12094,7 +12202,6 @@
       ],
       "remyLink": "http://remywiki.com/DANCERUSH%20STARDOM%20ANTHEM",
       "jacket": "DANCERUSH STARDOM ANTHEM.jpg",
-      "flags": ["unlock"],
       "saHash": "9PoQqIP0D6lPIq9obl1db9IqD0D09i80",
       "saIndex": "942"
     },
@@ -12650,7 +12757,6 @@
       ],
       "remyLink": "http://remywiki.com/DEADLOCK%20-Out%20Of%20Reach-",
       "jacket": "DEADLOCK -Out Of Reach-.jpg",
-      "flags": ["unlock"],
       "saHash": "i6bl89d6OOi1O00qlQOIl8b8Qld6IiQP",
       "saIndex": "966"
     },
@@ -12677,19 +12783,21 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "difficult",
-          "sanbaiTier": 11.7
+          "sanbaiTier": 11.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "expert",
-          "sanbaiTier": 14.7
+          "sanbaiTier": 14.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.95
         },
         { "lvl": 7, "style": "double", "diffClass": "basic", "sanbaiTier": 7 },
@@ -12697,19 +12805,21 @@
           "lvl": 11,
           "style": "double",
           "diffClass": "difficult",
-          "sanbaiTier": 11.55
+          "sanbaiTier": 11.55,
+          "flags": ["shock"]
         },
         {
           "lvl": 14,
           "style": "double",
           "diffClass": "expert",
-          "sanbaiTier": 14.7
+          "sanbaiTier": 14.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.65
         }
       ],
@@ -13664,7 +13774,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
+          "flags": ["newInA3", "shock"],
           "sanbaiTier": 18.6
         },
         {
@@ -13689,7 +13799,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["newInA3"],
+          "flags": ["newInA3", "shock"],
           "sanbaiTier": 18.9
         }
       ],
@@ -17255,7 +17365,6 @@
       ],
       "remyLink": "http://remywiki.com/Evans",
       "jacket": "Evans.jpg",
-      "flags": ["unlock"],
       "saHash": "P06O6iQbiPPqiIqOd0IQdqolbPbDId6Q",
       "saIndex": "994"
     },
@@ -18095,19 +18204,21 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "difficult",
-          "sanbaiTier": 8.4
+          "sanbaiTier": 8.4,
+          "flags": ["shock"]
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "expert",
-          "sanbaiTier": 13.35
+          "sanbaiTier": 13.35,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 15.6
         },
         {
@@ -18120,19 +18231,21 @@
           "lvl": 8,
           "style": "double",
           "diffClass": "difficult",
-          "sanbaiTier": 8.4
+          "sanbaiTier": 8.4,
+          "flags": ["shock"]
         },
         {
           "lvl": 12,
           "style": "double",
           "diffClass": "expert",
-          "sanbaiTier": 12.45
+          "sanbaiTier": 12.45,
+          "flags": ["shock"]
         },
         {
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 15.4
         }
       ],
@@ -18778,7 +18891,6 @@
           "sanbaiTier": 14.4
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Flip_Flap",
       "saHash": "Id1D9D68OOqqqdDiOoDd6Q6oo10P6oqI",
       "saIndex": "1179",
@@ -19407,7 +19519,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["newInA3"],
           "sanbaiTier": 14.45
         },
         {
@@ -19438,7 +19550,7 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["newInA3"],
           "sanbaiTier": 14.4
         }
       ],
@@ -20593,7 +20705,6 @@
       ],
       "remyLink": "http://remywiki.com/GHOST%20KINGDOM",
       "jacket": "GHOST KINGDOM.jpg",
-      "flags": ["unlock"],
       "saHash": "dQbolPiDiiObioli96DlOo9OlP9DoDIi",
       "saIndex": "967"
     },
@@ -20915,7 +21026,6 @@
           "sanbaiTier": 16.65
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/GLITTER",
       "saHash": "8IDiil0bDd00P1l1iQiq9DP6bO0b8dQb",
       "saIndex": "1180",
@@ -21608,6 +21718,12 @@
           "diffClass": "expert",
           "sanbaiTier": 15.5
         },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["newInA3"]
+        },
         { "lvl": 9, "style": "double", "diffClass": "basic", "sanbaiTier": 9 },
         {
           "lvl": 12,
@@ -21620,6 +21736,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.3
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["newInA3"]
         }
       ],
       "remyLink": "http://remywiki.com/Good%20Looking",
@@ -22298,7 +22420,6 @@
       ],
       "remyLink": "http://remywiki.com/GUILTY%20DIAMONDS",
       "jacket": "GUILTY DIAMONDS.jpg",
-      "flags": ["usLocked"],
       "saHash": "QbdQold98oq9lODoIloIbPiIqld6i0Qb",
       "saIndex": "930"
     },
@@ -22650,6 +22771,12 @@
           "sanbaiTier": 16.85
         },
         {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack", "newInA3"]
+        },
+        {
           "step": 255,
           "freeze": 5,
           "lvl": 9,
@@ -22672,6 +22799,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.85
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack", "newInA3"]
         }
       ],
       "remyLink": "http://remywiki.com/HAPPY%E2%98%86LUCKY%E2%98%86YEAPPY",
@@ -23619,7 +23752,6 @@
       ],
       "remyLink": "http://remywiki.com/Hella%20Deep",
       "jacket": "Hella Deep.jpg",
-      "flags": ["unlock"],
       "saHash": "i8iPdIlP1IIDib96Qq080ibq6bblQqQD",
       "saIndex": "995"
     },
@@ -23838,7 +23970,6 @@
       ],
       "remyLink": "http://remywiki.com/High%20%26%20Low",
       "jacket": "High & Low.jpg",
-      "flags": ["unlock"],
       "saHash": "ODli9liO1loIiqb9qIol6o1PO91DP8QQ",
       "saIndex": "1017"
     },
@@ -24019,7 +24150,6 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Hold_Tight",
       "saHash": "Q910dl1olqQ9qdO6q1q1O9Pq9b80lP6P",
       "saIndex": "1169",
@@ -25637,7 +25767,6 @@
       ],
       "remyLink": "http://remywiki.com/If",
       "jacket": "If.jpg",
-      "flags": ["unlock"],
       "saHash": "6ID160b99ibbd9OoblD0DPOl98lPbq6D",
       "saIndex": "1005"
     },
@@ -26294,6 +26423,60 @@
       "saIndex": "420"
     },
     {
+      "name": "Indigo Nocturne",
+      "saHash": "P18io0P06q09qiId0lP6OO901li96bbl",
+      "artist": "BEMANI Sound Team \"Power Of Nature\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "150",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 2.3
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 6.3
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.2
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 6.3
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.1
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5
+        }
+      ],
+      "jacket": "Indigo Nocturne.jpg",
+      "remyLink": "https://remywiki.com/Indigo_Nocturne",
+      "flags": ["unlock"]
+    },
+    {
       "name": "INFINITE WORLD",
       "saHash": "lob09DPQD0Dl6Q09dbq8biIb6QqDql8i",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
@@ -26365,7 +26548,6 @@
       ],
       "remyLink": "http://remywiki.com/Inner%20Spirit%20-GIGA%20HiTECH%20MIX-",
       "jacket": "Inner Spirit -GIGA HiTECH MIX-.jpg",
-      "flags": ["unlock"],
       "saHash": "9o6bIq98Qo8dOd11DI0d8boblOqO0I1i",
       "saIndex": "970"
     },
@@ -27240,7 +27422,6 @@
       ],
       "remyLink": "http://remywiki.com/Jet%20coaster%E2%98%86girl",
       "jacket": "jet coaster girl.jpg",
-      "flags": ["unlock"],
       "saHash": "66b1Pibq019dqbdPOdlqDbdbbDdi9Q08",
       "saIndex": "1044"
     },
@@ -27667,7 +27848,6 @@
       ],
       "remyLink": "http://remywiki.com/Jucunda%20Memoria",
       "jacket": "Jucunda Memoria.jpg",
-      "flags": ["unlock"],
       "saHash": "PPb6l1di1Pi0o8O08odqIDlbPll61QbQ",
       "saIndex": "1015"
     },
@@ -27744,7 +27924,6 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/JUST_BELIEVE",
       "saHash": "iI90119iIb9l609b9981l8QDblDOb0I6",
       "saIndex": "1170",
@@ -28097,7 +28276,7 @@
           "sanbaiTier": 17.1
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Kilonova",
       "jacket": "Kilonova.jpg",
       "saHash": "61Db8oi9d9bOIlloq8dqI8O000ilDb08",
@@ -30539,7 +30718,6 @@
           "sanbaiTier": 17.55
         }
       ],
-      "flags": ["goldenLeague"],
       "remyLink": "https://remywiki.com/Lose_Your_Sense",
       "jacket": "Lose_Your_Sense.jpg",
       "saHash": "b1QllqO8oQdqo086QdIlIblDDbPodDoP",
@@ -30871,7 +31049,6 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/LOVE_SHINE_(Body_Grooverz_2006_mix)",
       "saHash": "8dDQIPOo681iID8IiibbD8IbIldI86P1",
       "saIndex": "1171",
@@ -32880,6 +33057,56 @@
       "saIndex": "1071"
     },
     {
+      "name": "melody H4CKER",
+      "saHash": "9DlbD6PI1IQQ9q0OIdD1I8olIPPo6dPl",
+      "artist": "Moe Shop",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "155",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 2.2
+        },
+        { "lvl": 6, "style": "single", "diffClass": "basic" },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.2
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 6.3
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.2
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.35
+        }
+      ],
+      "search_hint": "melody HACKER",
+      "remyLink": "https://remywiki.com/Melody_H4CKER",
+      "jacket": "melody H4CKER.jpg",
+      "flags": ["unlock"]
+    },
+    {
       "name": "Melody Life",
       "name_translation": "",
       "artist": "Noria",
@@ -33180,6 +33407,45 @@
       "saIndex": "451"
     },
     {
+      "name": "Metamorphic",
+      "saHash": "IqiOOoDoo061DlbqPPQdPlP1qloP6096",
+      "artist": "BEMANI Sound Team \"Sota Fujimori\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "200",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 6.1
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 11.1
+        },
+        { "lvl": 14, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 11.1
+        },
+        { "lvl": 14, "style": "double", "diffClass": "difficult" },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 16.2
+        }
+      ],
+      "jacket": "Metamorphic.jpg",
+      "remyLink": "https://remywiki.com/Metamorphic",
+      "flags": ["unlock"]
+    },
+    {
       "name": "Midnight Amaretto",
       "name_translation": "",
       "artist": "かめりあ",
@@ -33232,7 +33498,6 @@
       ],
       "remyLink": "http://remywiki.com/Midnight%20Amaretto",
       "jacket": "Midnight Amaretto.jpg",
-      "flags": ["unlock"],
       "saHash": "ll0O8PlqQd0iOO8ib61lO6iDiliQdiPP",
       "saIndex": "944"
     },
@@ -34120,6 +34385,25 @@
       "saIndex": "969"
     },
     {
+      "name": "My Drama",
+      "saHash": "DQqO696iPldD6olDOOdP09l08ll989l8",
+      "artist": "Coretex feat. MIDI War",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "220",
+      "charts": [
+        { "lvl": 7, "style": "single", "diffClass": "beginner" },
+        { "lvl": 10, "style": "single", "diffClass": "basic" },
+        { "lvl": 13, "style": "single", "diffClass": "difficult" },
+        { "lvl": 15, "style": "single", "diffClass": "expert" },
+        { "lvl": 10, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 14, "style": "double", "diffClass": "expert" }
+      ],
+      "jacket": "My Drama.jpg",
+      "remyLink": "https://remywiki.com/My_Drama",
+      "flags": ["goldenLeague"]
+    },
+    {
       "name": "My Only Shining Star",
       "name_translation": "",
       "artist": "NAOKI feat.Becky Lucinda",
@@ -34609,7 +34893,6 @@
       ],
       "remyLink": "http://remywiki.com/Never%20See%20You%20Again",
       "jacket": "Never See You Again.jpg",
-      "flags": ["unlock"],
       "saHash": "Q9QlQI6Dd09P6i1bP9d8q0IQlPoqiQ81",
       "saIndex": "985"
     },
@@ -35544,7 +35827,6 @@
       ],
       "remyLink": "http://remywiki.com/Next%20Phase",
       "jacket": "Next Phase.jpg",
-      "flags": ["unlock"],
       "saHash": "b80oDO98iPDO1100IbOo8160bPdd898I",
       "saIndex": "1004"
     },
@@ -35758,63 +36040,6 @@
       "jacket": "No Life Queen [DJ Command Remix].jpg",
       "saHash": "I9P1dbOqD1qIP8bd9O80Ooo869bldobD",
       "saIndex": "931"
-    },
-    {
-      "name": "No Tears Left to Cry",
-      "name_translation": "",
-      "artist": "Ariana Grande",
-      "artist_translation": "",
-      "bpm": "97-127",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.65
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.65
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.6
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 10.65
-        },
-        {
-          "lvl": 5,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 5.6
-        },
-        {
-          "lvl": 7,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.65
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.7
-        }
-      ],
-      "remyLink": "http://remywiki.com/No%20Tears%20Left%20to%20Cry",
-      "jacket": "No Tears Left to Cry.png",
-      "genre": "",
-      "saHash": "Db6odqIqQ90PIDIlD1DIb8l09ol6qIDl",
-      "saIndex": "874"
     },
     {
       "name": "No.13",
@@ -36491,7 +36716,6 @@
       ],
       "remyLink": "http://remywiki.com/ONYX",
       "jacket": "ONYX.jpg",
-      "flags": ["unlock"],
       "saHash": "Dl91ldlb8PODoO96OI801DP0PPl8Plqi",
       "saIndex": "1006"
     },
@@ -37319,7 +37543,6 @@
       ],
       "remyLink": "http://remywiki.com/Paparazzi",
       "jacket": "paparazzi.jpg",
-      "flags": ["unlock"],
       "saHash": "lb01Qb1iOOIIobPO06Oob9ODilIDOQ6Q",
       "saIndex": "1018"
     },
@@ -38420,7 +38643,6 @@
       ],
       "remyLink": "http://remywiki.com/PARTY%20ALL%20NIGHT%28DJ%20KEN-BOW%20MIX%29",
       "jacket": "PARTY ALL NIGHT(DJ KEN-BOW MIX).jpg",
-      "flags": ["unlock"],
       "saHash": "bIio1d6QOPlqlDOqoIQoPIbIbb0iQIil",
       "saIndex": "993"
     },
@@ -39082,63 +39304,6 @@
       "saIndex": "628"
     },
     {
-      "name": "Play Hard",
-      "name_translation": "",
-      "artist": "David Guetta feat. Ne-Yo, Akon",
-      "artist_translation": "",
-      "bpm": "130",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.55
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.5
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.55
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.5
-        },
-        {
-          "lvl": 5,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 5.5
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.45
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.5
-        }
-      ],
-      "remyLink": "http://remywiki.com/Play%20Hard",
-      "jacket": "Play Hard.png",
-      "genre": "",
-      "saHash": "oi6P9Oq19ooo00bDiPQ809DQQQD8qPlD",
-      "saIndex": "876"
-    },
-    {
       "name": "Playa (Original Mix)",
       "name_translation": "",
       "artist": "Hamel and St. Croix feat. Jules Mari",
@@ -39258,7 +39423,6 @@
           "sanbaiTier": 14.5
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Playing_With_Fire",
       "saHash": "bOQ0dIIIilDD9Do6qIDdlObQdo01DD80",
       "saIndex": "1184",
@@ -39714,7 +39878,6 @@
       ],
       "remyLink": "http://remywiki.com/Poppin%27%20Soda",
       "jacket": "Poppin' Soda.jpg",
-      "flags": ["unlock"],
       "saHash": "Q0dQDqillPqIId0Q81q01ooObQIlO1QI",
       "saIndex": "1007"
     },
@@ -41966,7 +42129,6 @@
       ],
       "remyLink": "http://remywiki.com/Rave%20Accelerator",
       "jacket": "Rave Accelerator.jpg",
-      "flags": ["unlock"],
       "saHash": "DodQ1I1DiPIqDQP0PqO6PIQ1iPQd6O8d",
       "saIndex": "972"
     },
@@ -42347,7 +42509,6 @@
       ],
       "remyLink": "http://remywiki.com/Red%20Cape%20Theorem",
       "jacket": "Red Cape Theorem.jpg",
-      "flags": ["unlock"],
       "saHash": "Qi1Q6I80b09Oq91OPldbO19080q0dd0b",
       "saIndex": "977"
     },
@@ -43113,7 +43274,6 @@
       ],
       "remyLink": "http://remywiki.com/Riot%20of%20Color",
       "jacket": "Riot of Color.jpg",
-      "flags": ["unlock"],
       "saHash": "I9Oood9l9li0D08Q6d6DQPiIQiloidO6",
       "saIndex": "947"
     },
@@ -45047,7 +45207,6 @@
       ],
       "remyLink": "http://remywiki.com/SCHWARZSCHILD%20FIELD",
       "jacket": "SCHWARZSCHILD FIELD.jpg",
-      "flags": ["unlock"],
       "saHash": "iq9qPoPlIlbIDqlD81DqO1110QI1qoOl",
       "saIndex": "1045"
     },
@@ -45468,7 +45627,6 @@
           "sanbaiTier": 16.5
         }
       ],
-      "flags": ["goldenLeague"],
       "remyLink": "https://remywiki.com/Sector",
       "jacket": "Sector.jpg",
       "saHash": "O6q9qPQ1q69ddPl6DPO0bQO6989QO1ii",
@@ -46462,7 +46620,6 @@
       ],
       "remyLink": "http://remywiki.com/Shout%20It%20Out",
       "jacket": "Shout It Out.jpg",
-      "flags": ["unlock"],
       "saHash": "9ldQqb9oqi60Q80iob61OiQbbDO6PID9",
       "saIndex": "1040"
     },
@@ -47031,7 +47188,7 @@
           "diffClass": "basic",
           "sanbaiTier": 7.55
         },
-        { "lvl": 11, "style": "single", "diffClass": "difficult" },
+        { "lvl": 12, "style": "single", "diffClass": "difficult" },
         {
           "lvl": 14,
           "style": "single",
@@ -52223,7 +52380,6 @@
       ],
       "remyLink": "http://remywiki.com/Sweet%20Clock",
       "jacket": "Sweet Clock.jpg",
-      "flags": ["unlock"],
       "saHash": "I0DDidl0PIo6bO6o8I08Q1Pq89IdP6Pb",
       "saIndex": "1026"
     },
@@ -52532,7 +52688,6 @@
       ],
       "remyLink": "http://remywiki.com/Sword%20of%20Vengeance",
       "jacket": "Sword of Vengeance.jpg",
-      "flags": ["unlock"],
       "saHash": "ddqO1b1ldlQd6OOoQ1boPdoboDQqd9D8",
       "saIndex": "1008"
     },
@@ -53002,7 +53157,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["newInA3"],
           "sanbaiTier": 15.2
         },
         {
@@ -53033,7 +53188,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack", "newInA3"],
+          "flags": ["newInA3"],
           "sanbaiTier": 15.1
         }
       ],
@@ -53334,7 +53489,6 @@
       ],
       "remyLink": "http://remywiki.com/Taking%20It%20To%20The%20Sky%20%28PLUS%20step%29",
       "jacket": "Taking It To The Sky (PLUS step).jpg",
-      "flags": ["unlock"],
       "saHash": "8IODdDQI6P8o0QobDPOldbQ06169b01o",
       "saIndex": "1011"
     },
@@ -53774,7 +53928,6 @@
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/The_beat",
       "saHash": "i1ibID6lOoiPQ1lli86P9lIIqOoDlldQ",
       "saIndex": "1172",
@@ -56075,7 +56228,6 @@
           "sanbaiTier": 16.4
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Towards_The_Horizon",
       "saHash": "Odd6dI6o98O68I98l6q8PqODIooQO9ol",
       "saIndex": "1185",
@@ -58142,7 +58294,6 @@
       ],
       "remyLink": "http://remywiki.com/Twinkle%20Wonderland",
       "jacket": "Twinkle Wonderland.jpg",
-      "flags": ["unlock"],
       "saHash": "91Qdq6DbPDlQOiOq08di0IQo8IP8PPqQ",
       "saIndex": "982"
     },
@@ -58173,7 +58324,7 @@
         {
           "step": 288,
           "freeze": 16,
-          "lvl": 7,
+          "lvl": 8,
           "style": "single",
           "diffClass": "difficult"
         },
@@ -58289,7 +58440,6 @@
       ],
       "remyLink": "http://remywiki.com/TYPH%C3%98N",
       "jacket": "TYPHON.jpg",
-      "flags": ["unlock"],
       "saHash": "i0Q0o98q0DqbbiDd6966QIIoddlob6lI",
       "saIndex": "1041"
     },
@@ -59108,7 +59258,6 @@
           "sanbaiTier": 17.55
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Valanga",
       "saHash": "9lo10Dl06QIblQqOOid1qi0bd10I9lQ9",
       "saIndex": "1181",
@@ -59730,7 +59879,6 @@
       ],
       "remyLink": "https://remywiki.com/Vertigo_(Hylen_feat._VGYO)",
       "jacket": "Vertigo.jpg",
-      "flags": ["unlock"],
       "saHash": "PibQ18qDb06Doq99boODIDQODqiDQIbP",
       "saIndex": "989"
     },
@@ -59766,6 +59914,7 @@
           "diffClass": "expert",
           "sanbaiTier": 18.6
         },
+        { "lvl": 19, "style": "single", "diffClass": "challenge" },
         {
           "lvl": 11,
           "style": "double",
@@ -59783,9 +59932,15 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 18.5
+        },
+        {
+          "lvl": 19,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 19.1
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/VOLAQUAS",
       "jacket": "VOLAQUAS.jpg",
       "saHash": "QldQ19DlqDbq1l091q0l1Q1qD6ldQ6qi",
@@ -60167,7 +60322,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack", "shock"]
         },
         {
           "lvl": 6,
@@ -60191,7 +60346,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "flags": ["grandPrixPack", "shock"]
         }
       ],
       "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
@@ -60359,7 +60514,6 @@
       ],
       "remyLink": "http://remywiki.com/We%27re%20so%20Happy",
       "jacket": "We're so Happy.jpg",
-      "flags": ["unlock"],
       "saHash": "I6DdI9O1Oo8O9lo1D08ldOllo0o166I8",
       "saIndex": "991"
     },
@@ -60503,6 +60657,55 @@
       "genre": "",
       "saHash": "olloQOobddiIIPObP91l0qPl6oo8P9Dl",
       "saIndex": "398"
+    },
+    {
+      "name": "White Stream",
+      "saHash": "qdbO199oIDIbQ61iDQIPObOPQOIDP68i",
+      "artist": "BEMANI Sound Team \"ZAQUVA\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "222",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 4.4
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 8.35
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.2
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.35
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 8.25
+        },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 16.3
+        }
+      ],
+      "jacket": "White Stream.jpg",
+      "remyLink": "https://remywiki.com/White_Stream",
+      "flags": ["unlock"]
     },
     {
       "name": "Why not",
@@ -62010,6 +62213,13 @@
           "sanbaiTier": 14.25
         },
         {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.6,
+          "flags": ["newInA3"]
+        },
+        {
           "lvl": 6,
           "style": "double",
           "diffClass": "basic",
@@ -62026,6 +62236,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.4
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.4,
+          "flags": ["newInA3"]
         }
       ],
       "remyLink": "http://remywiki.com/Yuni%27s%20Nocturnal%20Days",
@@ -62060,9 +62277,10 @@
         {
           "step": 422,
           "freeze": 22,
-          "lvl": 12,
+          "lvl": 11,
           "style": "single",
-          "diffClass": "difficult"
+          "diffClass": "difficult",
+          "sanbaiTier": 11.5
         },
         {
           "step": 592,
@@ -62190,7 +62408,7 @@
       "name_translation": "AETHER",
       "artist": "TAG underground",
       "artist_translation": "",
-      "bpm": "192",
+      "bpm": "192-384",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -64109,7 +64327,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%81%BB%E3%81%97%E3%81%AE%E3%81%A4%E3%81%8F%E3%82%8A%E3%81%8B%E3%81%9F",
       "jacket": "Hoshi no tsukurikata.jpg",
-      "flags": ["unlock"],
       "saHash": "IdlqO9DoOq0qPQdDbOb80dOPDlb98l0l",
       "saIndex": "1031"
     },
@@ -64446,7 +64663,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%82%A2%E3%83%AA%E3%82%B9%E3%82%B5%E3%82%A4%E3%83%89%E3%83%BB%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%AA%E3%83%B3%E3%82%B0",
       "jacket": "Alice side castling.jpg",
-      "flags": ["unlock"],
       "saHash": "D6IIDqlO8idioiPo8l61Ob11D6Di0DiQ",
       "saIndex": "957"
     },
@@ -64594,7 +64810,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%82%A4%E3%83%8E%E3%82%BB%E3%83%B3%E3%83%88%E3%83%90%E3%82%A4%E3%83%96%E3%83%AB",
       "jacket": "Innocent bible.jpg",
-      "flags": ["unlock"],
       "saHash": "DQ1dqP1IoiD11QOPiI0Q8PqO0Qddo6q6",
       "saIndex": "974"
     },
@@ -64790,7 +65005,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%82%A6%E3%82%BD%E3%83%84%E3%82%AD%E6%A8%AA%E4%B8%81%E3%81%AF%E9%9B%A8%E6%A8%A1%E6%A7%98",
       "jacket": "Usotsuki yokochou wa amemoyou.jpg",
-      "flags": ["unlock"],
       "saHash": "q8iPi1DP6Do6D110OQiQDdPq06q80Qb0",
       "saIndex": "975"
     },
@@ -65128,7 +65342,6 @@
           "sanbaiTier": 11.2
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Colorful_minutes",
       "saHash": "O6P1dIO0IDO6o8ib6i8oP86Qb9D08idd",
       "saIndex": "1178",
@@ -65256,7 +65469,7 @@
           "sanbaiTier": 16.2
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Kiyarora_eisei_no_kiseki",
       "jacket": "Kiyarora eisei no kiseki.jpg",
       "saHash": "6dQ0P6odPlD6dQdbP8dIiQQdQ66qllI6",
@@ -65350,7 +65563,7 @@
       ],
       "jacket": "コメット⇒スケイター.jpg",
       "remyLink": "https://remywiki.com/Comet_skater",
-      "flags": ["goldExclusive", "unlock"],
+      "flags": ["goldExclusive", "tempUnlock"],
       "name_translation": "Comet Skater",
       "search_hint": "コメットスケイター"
     },
@@ -65428,7 +65641,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%82%B5%E3%82%A4%E3%82%AB",
       "jacket": "Saika.jpg",
-      "flags": ["usLocked"],
       "saHash": "o8IDq8P8lP9o8IIO6lPPqqQP91bo0ddl",
       "saIndex": "1035"
     },
@@ -66344,7 +66556,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%86%E3%83%AC%E3%82%AD%E3%83%A3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%93%E3%83%BC%E3%83%9C%E3%83%BC%E3%82%A4",
       "jacket": "Telecaster B-boy.jpg",
-      "flags": ["usLocked"],
       "saHash": "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9",
       "saIndex": "1036"
     },
@@ -66898,7 +67109,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%8E%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3%E3%83%BB%E3%83%87%E3%82%A4%E3%82%BA",
       "jacket": "No plan days.jpg",
-      "flags": ["unlock"],
       "saHash": "Oq8ID68oq16I9QP9bio0ibD6PQiDbqqI",
       "saIndex": "1038"
     },
@@ -67097,7 +67307,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%8F%E3%83%A9%E3%82%B7%E3%83%A7%E3%83%BC%EF%BC%81%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%E3%82%B5%E3%83%BC%E3%82%AB%E3%82%B9%E5%9B%A3%E2%98%86",
       "jacket": "Khorosho! Onigiri circus dan.jpg",
-      "flags": ["unlock"],
       "saHash": "16b91IPI881lPIo8Qq9Pl1IPiD8Ddodl",
       "saIndex": "976"
     },
@@ -67372,7 +67581,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%91%E3%83%94%E3%83%9D%E3%83%9A%E3%83%94%E3%83%97%E3%83%9A%E3%83%91",
       "jacket": "Papipopepipupepa.jpg",
-      "flags": ["unlock"],
       "saHash": "19Q9lQId91d9l8o09oI81OQqPd00dQ69",
       "saIndex": "1043"
     },
@@ -68573,7 +68781,6 @@
       ],
       "remyLink": "http://remywiki.com/%E3%83%A2%E3%83%8E%E3%82%AF%E3%83%AD%E3%83%A2%E3%83%BC%E3%83%A1%E3%83%B3%E3%83%88",
       "jacket": "Monochrome moment.jpg",
-      "flags": ["unlock"],
       "saHash": "10IOllioqPoOQ668PQqolDPiib0iIQql",
       "saIndex": "1034"
     },
@@ -69877,7 +70084,6 @@
           "sanbaiTier": 18.7
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Vajra",
       "saHash": "iQDQD8889Q8O018Oi60I69D6qD6odDI0",
       "saIndex": "1182",
@@ -70434,7 +70640,6 @@
       ],
       "remyLink": "http://remywiki.com/%E5%8B%87%E7%8C%9B%E7%84%A1%E6%AF%94",
       "jacket": "YU-MOU-MU-HI.jpg",
-      "flags": ["unlock"],
       "saHash": "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI",
       "saIndex": "1016"
     },
@@ -70641,7 +70846,6 @@
       ],
       "remyLink": "http://remywiki.com/%E5%8F%9B%E9%80%86%E3%81%AE%E3%83%87%E3%82%A3%E3%82%B9%E3%83%91%E3%83%AC%E3%83%BC%E3%83%88",
       "jacket": "Hangyaku no disparate.jpg",
-      "flags": ["unlock"],
       "saHash": "QiboqIool99ol9Q0d08b68OIIiD89qqO",
       "saIndex": "960"
     },
@@ -71787,7 +71991,6 @@
       ],
       "remyLink": "http://remywiki.com/%E5%BD%BC%E6%96%B9%E3%81%AE%E3%83%AA%E3%83%95%E3%83%AC%E3%82%B7%E3%82%A2",
       "jacket": "Kanata no Reflesia.jpg",
-      "flags": ["unlock"],
       "saHash": "ilbQ0lq89DId9oDl89lbb8lQIPl6i0QO",
       "saIndex": "999"
     },
@@ -71987,62 +72190,6 @@
       "genre": "MONGOL",
       "saHash": "ibI0QllidqQ089ql8dob6bIoodbbIoqq",
       "saIndex": "223"
-    },
-    {
-      "name": "恋",
-      "name_translation": "Koi",
-      "artist": "星野 源",
-      "artist_translation": "Gen Hoshino",
-      "bpm": "158",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 1.3
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 3.3
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.45
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.35
-        },
-        {
-          "lvl": 3,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 3.2
-        },
-        {
-          "lvl": 8,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.45
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.35
-        }
-      ],
-      "remyLink": "http://remywiki.com/%E6%81%8B",
-      "jacket": "Koi.jpg",
-      "saHash": "6lb86I9Q18Di6do1lDdod8b1Po688019",
-      "saIndex": "1009"
     },
     {
       "name": "恋する☆宇宙戦争っ！！",
@@ -72336,6 +72483,12 @@
           "sanbaiTier": 12.45
         },
         {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack", "newInA3"]
+        },
+        {
           "step": 245,
           "freeze": 3,
           "lvl": 7,
@@ -72358,6 +72511,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.55
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack", "newInA3"]
         }
       ],
       "remyLink": "http://remywiki.com/%E6%81%8B%E6%84%9B%E8%A6%B3%E6%B8%AC",
@@ -72899,7 +73058,7 @@
           "sanbaiTier": 17.55
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Shin_hebi_hime",
       "jacket": "Shin hebi hime.jpg",
       "saHash": "Pd8bD1od1iOOl80oOiiiIb9QdqIQQllQ",
@@ -73143,7 +73302,6 @@
       ],
       "remyLink": "http://remywiki.com/%E6%98%A5%E3%82%92%E5%91%8A%E3%81%92%E3%82%8B",
       "jacket": "Haru wo tsugeru.jpg",
-      "flags": ["usLocked"],
       "saHash": "IObPQb9QlP0iIiboObPoPqIqDo0O11Qi",
       "saIndex": "980"
     },
@@ -73932,7 +74090,6 @@
       ],
       "remyLink": "http://remywiki.com/%E6%9D%B1%E4%BA%AC%E7%A5%9E%E8%A9%B1",
       "jacket": "Tokyo shinwa.jpg",
-      "flags": ["unlock"],
       "saHash": "oQ868oOio6O90i9qO1o8I96P1do11ID0",
       "saIndex": "945"
     },
@@ -74075,7 +74232,6 @@
       ],
       "remyLink": "http://remywiki.com/%E6%A2%85%E9%9B%AA%E5%A4%9C",
       "jacket": "Ume yukiyo.jpg",
-      "flags": ["unlock"],
       "saHash": "bi9OolI1P9oI8dDPlbQiq01Dl080PQ61",
       "saIndex": "992"
     },
@@ -74959,7 +75115,6 @@
       ],
       "remyLink": "https://remywiki.com/Watashi_wo_disco_ni_tsuretette_TOKYO",
       "jacket": "Watashi wo disco ni tsuretette TOKYO.jpg",
-      "flags": ["unlock"],
       "saHash": "6l1l8D006lD8OoOi91QI0b10d19Did1O",
       "saIndex": "1052"
     },
@@ -75414,7 +75569,6 @@
       ],
       "remyLink": "http://remywiki.com/%E8%8A%B1%E3%81%AF%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%97%E6%A2%A2%E3%81%AF%E9%AB%98%E3%81%97",
       "jacket": "Hana wa oritashi kozue wa takashi.jpg",
-      "flags": ["unlock"],
       "saHash": "8DO0DbDioIid8qDQiQdOdOPOo0PO0906",
       "saIndex": "959"
     },
@@ -75775,6 +75929,62 @@
       "search_hint": "はしれめろんぱん"
     },
     {
+      "name": "輪廻の鴉",
+      "saHash": "dIiD86llO8biiDollQ1ioIoQl6iQ8dbQ",
+      "artist": "BEMANI Sound Team \"dj TAKA\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "198",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3.2
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 8.3
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.1
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.5
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 8.25
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.05
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.3
+        }
+      ],
+      "jacket": "輪廻の鴉.jpg",
+      "remyLink": "https://remywiki.com/Rinne_no_karasu",
+      "name_translation": "Rinne no Karasu",
+      "search_hint": "りんねのからす",
+      "flags": ["unlock"]
+    },
+    {
       "name": "轟け！恋のビーンボール！！",
       "name_translation": "Todoroke! Koi no beanball!!",
       "artist": "ダイナミック野球兄弟 v.s. クロスファイヤーPrim",
@@ -75898,7 +76108,6 @@
       ],
       "remyLink": "http://remywiki.com/%E8%BF%BD%E6%86%B6%E3%81%AE%E3%82%A2%E3%83%AA%E3%82%A2",
       "jacket": "Tsuioku no aria.jpg",
-      "flags": ["unlock"],
       "saHash": "Od08diDbdbl1Pi90QdO0ibqq8D111q9b",
       "saIndex": "958"
     },

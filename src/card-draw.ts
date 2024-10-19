@@ -282,7 +282,7 @@ export function draw(
    */
   const maxDrawPerBucket = new Map<number, number>();
   /**
-   * List of bucket indexes that must be picked first, to meet minimums. Only used with `forceDistribution`
+   * List of bucket indexes that must be picked, to meet minimums. Only used with `forceDistribution`
    */
   const requiredDrawIndexes: number[] = [];
 
@@ -295,7 +295,7 @@ export function draw(
       times(weightAmount, () => bucketDistribution.push(bucketIndex));
     }
 
-    // If we are focing distribution, maxDrawPerBucket[level] will be the maximum number
+    // If we are forcing distribution, maxDrawPerBucket[level] will be the maximum number
     // of cards of that level allowed in the card draw.
     // e.g. For a 5-card draw, we increase the cap by 1 at every 100%/5 = 20% threshold,
     // so a level with a weight of 15% can only show up on at most 1 card, a level with
@@ -323,14 +323,13 @@ export function draw(
     }
   }
 
+  // OK, setup work is done, here's whre we actually draw the cards!
+
+  let redraw = false;
   const drawnCharts: DrawnChart[] = [];
 
-  /**
-   * Record of how many songs of each bucket index have been drawn so far
-   */
-  const difficultyCounts = new CountingSet<number>();
-
   let preSeededCharts = 0;
+  const preSeededDifficulties: number[] = [];
   if ("charts" in startPoint) {
     // account for the chart levels already in the draw starting point
     preSeededCharts = startPoint.charts.length;
@@ -339,7 +338,7 @@ export function draw(
       const bucketIdx = bucketIndexForChart(chart);
       if (bucketIdx === null) continue;
       // count this chart within quota
-      difficultyCounts.add(bucketIdx);
+      preSeededDifficulties.push(bucketIdx);
 
       // remove from base requirements
       const removeIdx = requiredDrawIndexes.indexOf(bucketIdx);
@@ -358,56 +357,85 @@ export function draw(
     }
   }
 
-  // OK, setup work is done, here's whre we actually draw the cards!
-  while (drawnCharts.length + preSeededCharts < numChartsToRandom) {
-    if (bucketDistribution.length === 0) {
-      // no more songs available to pick in the requested range
-      // will be returning fewer than requested number of charts
-      break;
+  do {
+    /**
+     * Record of how many songs of each bucket index have been drawn so far
+     */
+    const difficultyCounts = new CountingSet<number>(preSeededDifficulties);
+
+    // make a copy of valid charts here in the loop so we
+    // can mutate it later during the draw process, but
+    // start with a fresh copy each full draw attempt
+    const localValidCharts = new DefaultingMap<number, EligibleChart[]>(
+      () => [],
+    );
+    for (const [bucketIdx, charts] of validCharts) {
+      // make a clone of each inner array, too
+      localValidCharts.set(bucketIdx, charts.slice());
     }
 
-    // first pick a difficulty (with priority to minimum draws)
-    let chosenBucketIdx = requiredDrawIndexes.shift();
-    if (chosenBucketIdx === undefined) {
+    while (drawnCharts.length < numChartsToRandom) {
+      if (bucketDistribution.length === 0) {
+        // no more songs available to pick in the requested range
+        // will be returning fewer than requested number of charts
+        break;
+      }
+
+      let chosenBucketIdx = undefined;
       [, chosenBucketIdx] = pickRandomItem(bucketDistribution);
-    }
-    if (chosenBucketIdx === undefined) {
-      // nothing left to draw
-      break;
-    }
-    const selectableCharts = validCharts.get(chosenBucketIdx);
-    if (!selectableCharts) {
-      // something bad happened?!
-      break;
-    }
-    const [randomIndex, randomChart] = pickRandomItem(selectableCharts);
 
-    if (randomChart) {
-      // Save it in our list of drawn charts
-      drawnCharts.push({
-        ...randomChart,
-        // Give this random chart a unique id within this drawing
-        id: `drawn_chart-${nanoid(5)}`,
-        type: CHART_DRAWN,
-      });
-      // remove drawn chart from deck so it cannot be re-drawn
-      selectableCharts.splice(randomIndex, 1);
-      difficultyCounts.add(chosenBucketIdx);
+      if (chosenBucketIdx === undefined) {
+        // nothing left to draw
+        break;
+      }
+      const selectableCharts = localValidCharts.get(chosenBucketIdx);
+      if (!selectableCharts) {
+        // something bad happened?!
+        break;
+      }
+      const [randomIndex, randomChart] = pickRandomItem(selectableCharts);
+
+      if (randomChart) {
+        // Save it in our list of drawn charts
+        drawnCharts.push({
+          ...randomChart,
+          // Give this random chart a unique id within this drawing
+          id: `drawn_chart-${nanoid(5)}`,
+          type: CHART_DRAWN,
+        });
+        // remove drawn chart from deck so it cannot be re-drawn
+        selectableCharts.splice(randomIndex, 1);
+        difficultyCounts.add(chosenBucketIdx);
+      }
     }
 
-    // check if maximum number of expected occurrences of this level of chart has been reached
-    const reachedExpected =
-      forceDistribution &&
-      difficultyCounts.get(chosenBucketIdx) ===
-        maxDrawPerBucket.get(chosenBucketIdx);
+    if (useWeights && forceDistribution) {
+      // Check if we have a valid draw, if not discard and redraw
 
-    if (selectableCharts.length === 0 || reachedExpected) {
-      // can't pick any more songs of this difficulty
-      bucketDistribution = bucketDistribution.filter(
-        (n) => n !== chosenBucketIdx,
-      );
+      for (const bucketIndex of validCharts.keys()) {
+        let numRequiredCount = 0;
+
+        const numMaximumAllowed = maxDrawPerBucket.get(bucketIndex) || 0;
+
+        for (let i = 0; i <= requiredDrawIndexes.length; i++) {
+          if (requiredDrawIndexes[i] == bucketIndex) {
+            numRequiredCount++;
+          }
+        }
+
+        const numDrawn = difficultyCounts.get(bucketIndex);
+        const underDrawn = numDrawn < numRequiredCount;
+        const overDrawn = numDrawn > numMaximumAllowed;
+
+        redraw = false;
+        if (underDrawn || overDrawn) {
+          redraw = true;
+          drawnCharts.splice(0, drawnCharts.length);
+          break;
+        }
+      }
     }
-  }
+  } while (redraw);
 
   let charts: Drawing["charts"];
   if (configData.sortByLevel) {

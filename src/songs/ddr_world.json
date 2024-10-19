@@ -22109,7 +22109,7 @@
           "diffClass": "expert",
           "sanbaiTier": 15.5
         },
-        { "lvl": 17, "style": "single", "diffClass": "challenge", "flags": [] },
+        { "lvl": 17, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "double", "diffClass": "basic", "sanbaiTier": 9 },
         {
           "lvl": 12,
@@ -22123,7 +22123,7 @@
           "diffClass": "expert",
           "sanbaiTier": 15.3
         },
-        { "lvl": 18, "style": "double", "diffClass": "challenge", "flags": [] }
+        { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/Good%20Looking",
       "jacket": "Good Looking.jpg",
@@ -23260,7 +23260,7 @@
           "diffClass": "expert",
           "sanbaiTier": 16.85
         },
-        { "lvl": 18, "style": "single", "diffClass": "challenge", "flags": [] },
+        { "lvl": 18, "style": "single", "diffClass": "challenge" },
         {
           "step": 255,
           "freeze": 5,
@@ -23285,7 +23285,7 @@
           "diffClass": "expert",
           "sanbaiTier": 16.85
         },
-        { "lvl": 18, "style": "double", "diffClass": "challenge", "flags": [] }
+        { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "http://remywiki.com/HAPPY%E2%98%86LUCKY%E2%98%86YEAPPY",
       "jacket": "HAPPY☆LUCKY☆YEAPPY.png",
@@ -63384,8 +63384,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 18.6,
-          "flags": []
+          "sanbaiTier": 18.6
         },
         {
           "lvl": 6,
@@ -63409,8 +63408,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 18.4,
-          "flags": []
+          "sanbaiTier": 18.4
         }
       ],
       "remyLink": "http://remywiki.com/Yuni%27s%20Nocturnal%20Days",
@@ -63576,7 +63574,7 @@
       "name_translation": "AETHER",
       "artist": "TAG underground",
       "artist_translation": "",
-      "bpm": "192",
+      "bpm": "192-384",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -73950,62 +73948,6 @@
       "genre": "MONGOL",
       "saHash": "ibI0QllidqQ089ql8dob6bIoodbbIoqq",
       "saIndex": "223"
-    },
-    {
-      "name": "恋",
-      "name_translation": "Koi",
-      "artist": "星野 源",
-      "artist_translation": "Gen Hoshino",
-      "bpm": "158",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 1.25
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 3.25
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.4
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.3
-        },
-        {
-          "lvl": 3,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 3.2
-        },
-        {
-          "lvl": 8,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.45
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.35
-        }
-      ],
-      "remyLink": "http://remywiki.com/%E6%81%8B",
-      "jacket": "Koi.jpg",
-      "saHash": "6lb86I9Q18Di6do1lDdod8b1Po688019",
-      "saIndex": "1009"
     },
     {
       "name": "恋する☆宇宙戦争っ！！",
