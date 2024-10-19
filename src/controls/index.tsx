@@ -47,7 +47,7 @@ import {
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
 import { useSetAtom } from "jotai";
 import { showEligibleCharts } from "../config-state";
-import { MatchPicker, PickedMatch } from "../matches";
+import { GauntletPicker, MatchPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
 import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
@@ -146,6 +146,7 @@ export function HeaderControls() {
       createDraw({
         meta: {
           type: "startgg",
+          subtype: match.subtype,
           entrants: match.players,
           title: match.title,
           id: match.id,
@@ -192,17 +193,27 @@ export function HeaderControls() {
         <DialogBody>
           <Tabs id="new-draw">
             <Tab
-              id="drawings"
+              id="startgg-versus"
               panel={
                 <StartggApiKeyGated>
                   <MatchPicker onPickMatch={handleDraw} />
                 </StartggApiKeyGated>
               }
             >
-              start.gg match
+              start.gg (h2h)
             </Tab>
             <Tab
-              id="players"
+              id="startgg-group"
+              panel={
+                <StartggApiKeyGated>
+                  <GauntletPicker onPickMatch={handleDraw} />
+                </StartggApiKeyGated>
+              }
+            >
+              start.gg (gauntlet)
+            </Tab>
+            <Tab
+              id="custom"
               panel={
                 <CustomDrawForm
                   onSubmit={(meta) => dispatch(createDraw({ meta }))}

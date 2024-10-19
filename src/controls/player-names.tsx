@@ -26,6 +26,10 @@ export function PlayerNamesControls() {
   );
 }
 
+export function inferShortname(name: string): string;
+export function inferShortname(
+  name: string | null | undefined,
+): string | undefined;
 export function inferShortname(name: string | null | undefined) {
   if (!name) return;
   const namePieces = name.split(" | ");

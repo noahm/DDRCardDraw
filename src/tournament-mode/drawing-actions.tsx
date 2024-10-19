@@ -84,7 +84,7 @@ function SaveToStartggButton() {
   const drawingId = useDrawing((s) => s.id);
   const drawingMeta = useDrawing((s) => s.meta);
   const [mutationData, reportSet] = useReportSetMutation();
-  if (drawingMeta.type !== "startgg") {
+  if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
     return null;
   }
 

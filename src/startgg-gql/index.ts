@@ -1,10 +1,11 @@
 import { useMutation, useQuery } from "urql";
-import {
+import type {
   EventSetsDocument,
   PlayerNameDocument,
   ReportSetDocument,
   SetNameDocument,
   EventListDocument,
+  GauntletDivisionsDocument,
 } from "./generated/graphql";
 import { Client, fetchExchange, gql } from "@urql/core";
 import { cacheExchange } from "@urql/exchange-graphcache";
@@ -19,7 +20,7 @@ export const startggKeyAtom = atomWithStorage<string | null>(
 );
 export const startggEventSlug = atomWithStorage<string | null>(
   "ddrtools.event.startggslug",
-  "tournament/red-october-2024/event/stepmaniax-singles-hard-and-wild",
+  "tournament/red-october-2024/event/stepmaniax-full-mode",
   undefined,
   { getOnInit: true },
 );
@@ -85,33 +86,37 @@ export function useStartggMatches() {
   });
 }
 
-// const EventEntrantsDoc: typeof EventEntrantsDocument = gql`
-//   query EventEntrants($eventSlug: String!, $pageNo: Int!) {
-//     event(slug: $eventSlug) {
-//       __typename
-//       id
-//       name
-//       entrants(query: { page: $pageNo, perPage: 100 }) {
-//         pageInfo {
-//           totalPages
-//         }
-//         nodes {
-//           __typename
-//           id
-//           name
-//           # paginatedSets {
-//           #   nodes {
-//           #     id
-//           #   }
-//           #   pageInfo {
-//           #     totalPages
-//           #   }
-//           # }
-//         }
-//       }
-//     }
-//   }
-// `;
+export function useStartggPhases() {
+  const eventSlug = useAtomValue(startggEventSlug)!;
+  return useQuery({
+    query: GauntletDivisions,
+    variables: {
+      eventSlug,
+    },
+  });
+}
+
+const GauntletDivisions: typeof GauntletDivisionsDocument = gql`
+  query GauntletDivisions($eventSlug: String!) {
+    event(slug: $eventSlug) {
+      id
+      phases {
+        id
+        name
+        state
+        bracketType
+        seeds(query: { page: 0, perPage: 32 }) {
+          nodes {
+            entrant {
+              id
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const EventSetsDoc: typeof EventSetsDocument = gql`
   query EventSets($eventSlug: String!, $pageNo: Int!) {

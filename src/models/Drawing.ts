@@ -39,12 +39,22 @@ export interface PocketPick extends PlayerActionOnChart {
   pick: EligibleChart;
 }
 
-export interface StartggMeta {
+interface StartggMeta {
   type: "startgg";
-  /** id of the set */
-  id: string;
   title: string;
   entrants: Array<{ id: string; name: string }>;
+}
+
+export interface StartggVersusMeta extends StartggMeta {
+  subtype: "versus";
+  /** id of the set */
+  id: string;
+}
+
+export interface StartggGauntletMeta extends StartggMeta {
+  subtype: "gauntlet";
+  /** id of the phase */
+  id: string;
 }
 
 export interface SimpleMeta {
@@ -95,7 +105,7 @@ export function playerNameByIndex(
 export interface Drawing {
   id: string;
   configId: string;
-  meta: SimpleMeta | StartggMeta;
+  meta: SimpleMeta | StartggVersusMeta | StartggGauntletMeta;
   /** index of items of the players array, in the order they should be displayed */
   playerDisplayOrder: number[];
   /** map of song ID to player index */
