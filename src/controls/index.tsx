@@ -255,14 +255,19 @@ export function HeaderControls() {
           usePortal={false}
           position={Position.BOTTOM_RIGHT}
         >
-          <Button
-            onClick={() => setMatchPickerOpen(true)}
-            icon={<NewLayers />}
-            intent={Intent.PRIMARY}
-            disabled={!hasAnyConfig}
+          <Tooltip
+            content="Create a config before drawing"
+            disabled={hasAnyConfig}
           >
-            <FormattedMessage id="draw" />
-          </Button>
+            <Button
+              onClick={() => setMatchPickerOpen(true)}
+              icon={<NewLayers />}
+              intent={Intent.PRIMARY}
+              disabled={!hasAnyConfig}
+            >
+              <FormattedMessage id="draw" />
+            </Button>
+          </Tooltip>
         </Tooltip>
         <Button
           icon={<Cog />}
