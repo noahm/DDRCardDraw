@@ -67,7 +67,12 @@ export function Header() {
           <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
         </Popover>
         <Navbar.Divider />
-        <Navbar.Heading>Event Mode</Navbar.Heading>
+        <Navbar.Heading>
+          Event Mode{" "}
+          <small>
+            <em>Alpha Preview</em>
+          </small>
+        </Navbar.Heading>
       </Navbar.Group>
       <Navbar.Group align={Alignment.RIGHT}>
         <HeaderControls />
