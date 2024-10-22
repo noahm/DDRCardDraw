@@ -6,12 +6,15 @@ import {
   Menu,
   MenuItem,
   Popover,
+  Tooltip,
 } from "@blueprintjs/core";
 import { useAppDispatch, useAppState } from "./state/store";
-import React, { useCallback, useState } from "react";
+import React, { ReactNode, useCallback, useState } from "react";
 import { CabInfo, eventSlice } from "./state/event.slice";
 import {
   Add,
+  CaretLeft,
+  CaretRight,
   Cross,
   Font,
   Layers,
@@ -28,11 +31,31 @@ import { mainTabAtom } from "./main-view";
 import { playerNameByIndex } from "./models/Drawing";
 
 export function CabManagement() {
+  const [isCollapsed, setCollapsed] = useState(true);
   const cabs = useAppState(eventSlice.selectors.allCabs);
+
+  if (isCollapsed) {
+    return (
+      <div style={{ width: "40px", paddingTop: "1em" }}>
+        <Tooltip content="Show cabs">
+          <Button minimal onClick={() => setCollapsed(false)}>
+            <CaretRight />
+          </Button>
+        </Tooltip>
+      </div>
+    );
+  }
+
   return (
     <div style={{ padding: "1em" }}>
       <div>
-        <AddCabControl />
+        <AddCabControl>
+          <Tooltip content="Hide cabs">
+            <Button minimal onClick={() => setCollapsed(true)}>
+              <CaretLeft />
+            </Button>
+          </Tooltip>
+        </AddCabControl>
       </div>
       <div>
         {cabs.map((cab) => (
@@ -43,7 +66,7 @@ export function CabManagement() {
   );
 }
 
-function AddCabControl() {
+function AddCabControl(props: { children?: ReactNode }) {
   const [name, setName] = useState("");
   const dispatch = useAppDispatch();
   const addCab = useCallback(() => {
@@ -64,6 +87,7 @@ function AddCabControl() {
           placeholder="Cab name"
         />
         <Button onClick={addCab} icon={<Add />} />
+        {props.children}
       </ControlGroup>
     </form>
   );
