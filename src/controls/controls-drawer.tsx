@@ -4,7 +4,6 @@ import {
   Card,
   Checkbox,
   Collapse,
-  Divider,
   FormGroup,
   HTMLSelect,
   NumericInput,
@@ -20,24 +19,19 @@ import { DateInput3 } from "@blueprintjs/datetime2";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
 import { useMemo, useState } from "react";
-import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
-import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { getAvailableLevels, useGetMetaString } from "../game-data-utils";
-import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { detectedLanguage } from "../utils";
 import {
-  SelectedConfigContextProvider,
+  ConfigContextProvider,
   useConfigState,
   useGameData,
   useUpdateConfig,
 } from "../state/hooks";
-import { useAtomValue } from "jotai";
-import { showEligibleCharts } from "../config-state";
 import { useStockGameData } from "../state/game-data.atoms";
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
@@ -77,12 +71,15 @@ function getDiffsAndRangeForNewStyle(
   };
 }
 
-export default function ControlsDrawer() {
+export default function ControlsDrawer(props: { configId: string | null }) {
+  if (!props.configId) {
+    return null;
+  }
   return (
     <div className={styles.drawer}>
-      <SelectedConfigContextProvider>
+      <ConfigContextProvider value={props.configId}>
         <GeneralSettings />
-      </SelectedConfigContextProvider>
+      </ConfigContextProvider>
     </div>
   );
 }
@@ -233,7 +230,6 @@ function FolderSettings() {
 function GeneralSettings() {
   const { t } = useIntl();
   const updateState = useUpdateConfig();
-  const showingEligibleCharts = useAtomValue(showEligibleCharts);
   const configState = useConfigState();
   const gameData = useStockGameData(configState.gameKey);
   const {
@@ -256,7 +252,6 @@ function GeneralSettings() {
     }
     return getAvailableDifficulties(gameData, selectedStyle);
   }, [gameData, selectedStyle]);
-  const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
   const availableLevels = useMemo(
     () => getAvailableLevels(gameData, useGranularLevels),
@@ -319,21 +314,6 @@ function GeneralSettings() {
 
   return (
     <>
-      {isNarrow && (
-        <>
-          <FormGroup>
-            <ShowChartsToggle inDrawer />
-          </FormGroup>
-          <Collapse
-            isOpen={!!configState.flags.length && showingEligibleCharts}
-          >
-            <FormGroup label="Show only">
-              <EligibleChartsListFilter />
-            </FormGroup>
-          </Collapse>
-          <Divider />
-        </>
-      )}
       <div className={styles.inlineControls}>
         <FormGroup
           label={t("controls.chartCount")}
@@ -527,7 +507,6 @@ function GeneralSettings() {
           onChange={(e) => {
             const useGranularLevels = !!e.currentTarget.checked;
             updateState((prev) => {
-              1 / (gameData?.meta.granularTierResolution || 0);
               let nextUpperBound = !useGranularLevels
                 ? Math.floor(prev.upperBound)
                 : new Fraction(prev.upperBound + 1)

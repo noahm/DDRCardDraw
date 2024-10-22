@@ -1,21 +1,12 @@
 import { useAppDispatch, useAppState } from "./store";
 import { EqualityFn } from "react-redux";
-import { createContext, ReactNode, useCallback, useContext } from "react";
+import { createContext, useCallback, useContext } from "react";
 import { configSlice, type ConfigState } from "./config.slice";
 import { useStockGameData } from "./game-data.atoms";
 
 const configContext = createContext<string | null>(null);
 
 export const ConfigContextProvider = configContext.Provider;
-export function SelectedConfigContextProvider(props: { children: ReactNode }) {
-  const selected = useAppState(configSlice.selectors.getCurrent);
-  if (!selected) return null;
-  return (
-    <ConfigContextProvider value={selected.id}>
-      {props.children}
-    </ConfigContextProvider>
-  );
-}
 
 function useConfigId() {
   const id = useContext(configContext);

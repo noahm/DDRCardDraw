@@ -1,5 +1,9 @@
 import { eligibleCharts } from "../card-draw";
-import { useConfigState, useGameData } from "../state/hooks";
+import {
+  ConfigContextProvider,
+  useConfigState,
+  useGameData,
+} from "../state/hooks";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
@@ -12,18 +16,39 @@ import {
 } from "@blueprintjs/core";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useAtom } from "jotai";
-import { useCallback, useDeferredValue, useMemo } from "react";
+import { useCallback, useDeferredValue, useMemo, useState } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
 import { Export } from "@blueprintjs/icons";
 import { shareCharts } from "../utils/share";
+import { ConfigSelect } from "../controls";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
 }
 
-export default function EligibleChartsList() {
+export default function EligibleChartsView() {
+  const [configId, setConfigId] = useState<string | null>(null);
+  const selector = (
+    <ConfigSelect onChange={setConfigId} selectedId={configId} />
+  );
+
+  if (!configId) {
+    return selector;
+  }
+
+  return (
+    <>
+      {selector}
+      <ConfigContextProvider value={configId}>
+        <EligibleChartsList />
+      </ConfigContextProvider>
+    </>
+  );
+}
+
+export function EligibleChartsList() {
   const gameData = useGameData();
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());

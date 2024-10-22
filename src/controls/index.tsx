@@ -1,7 +1,7 @@
 import {
   Button,
+  ButtonGroup,
   Classes,
-  ControlGroup,
   Dialog,
   DialogBody,
   DialogFooter,
@@ -14,7 +14,6 @@ import {
   Menu,
   MenuDivider,
   MenuItem,
-  NavbarDivider,
   Popover,
   Position,
   Spinner,
@@ -38,15 +37,12 @@ import { FormattedMessage } from "react-intl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
-import { ShowChartsToggle } from "./show-charts-toggle";
 import {
   createConfigFromImport,
   createConfigFromInputs,
   createDraw,
 } from "../state/thunks";
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
-import { useSetAtom } from "jotai";
-import { showEligibleCharts } from "../config-state";
 import { GauntletPicker, MatchPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
 import { configSlice, ConfigState } from "../state/config.slice";
@@ -56,22 +52,42 @@ import { SimpleMeta } from "../models/Drawing";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
-const getConfigEntries = createAppSelector(
+const getConfigSummaryValues = createAppSelector(
   [(s) => s.config.entities],
   (entities) =>
-    Object.entries(entities).map(([key, config]) => [key, config.name]),
+    Object.entries(entities).map(
+      ([key, config]) =>
+        [
+          key,
+          config.name,
+          config.gameKey,
+          config.lowerBound,
+          config.upperBound,
+        ] as const,
+    ),
 );
 
-function ConfigSelect() {
-  const configEntries = useAppState(getConfigEntries);
-  const current = useAppState((s) => s.config.current);
-  const dispatch = useAppDispatch();
+export function ConfigSelect(props: {
+  selectedId: string | null;
+  onChange(nextId: string): void;
+  createDirection?: "left" | "right";
+}) {
+  const summaryValues = useAppState(getConfigSummaryValues);
 
-  if (!configEntries.length) {
+  if (!summaryValues.length) {
+    let emptyMsg = "no configs created";
+    switch (props.createDirection) {
+      case "left":
+        emptyMsg = "👈 Create a config here";
+        break;
+      case "right":
+        emptyMsg = "Create a config here 👉";
+        break;
+    }
     return (
       <HTMLSelect disabled value="placeholder">
         <option disabled value="placeholder">
-          Create a draw config
+          {emptyMsg}
         </option>
       </HTMLSelect>
     );
@@ -79,14 +95,15 @@ function ConfigSelect() {
 
   return (
     <HTMLSelect
-      value={current || undefined}
-      onChange={(e) =>
-        dispatch(configSlice.actions.pickCurrent(e.currentTarget.value))
-      }
+      value={props.selectedId || undefined}
+      onChange={(e) => props.onChange(e.currentTarget.value)}
     >
-      {configEntries.map(([key, name]) => (
+      <option disabled selected={!props.selectedId}>
+        select a config
+      </option>
+      {summaryValues.map(([key, name, gameKey, lb, ub]) => (
         <option key={key} value={key}>
-          {name}
+          {name} ({gameKey}, {lb}-{ub})
         </option>
       ))}
     </HTMLSelect>
@@ -95,6 +112,7 @@ function ConfigSelect() {
 
 function CustomDrawForm(props: {
   initialMeta?: SimpleMeta;
+  disableCreate?: boolean;
   onSubmit(meta: SimpleMeta): void;
 }) {
   const [players, setPlayers] = useState<string[]>(
@@ -123,7 +141,11 @@ function CustomDrawForm(props: {
           values={players}
         />
       </FormGroup>
-      <Button intent="primary" onClick={handleSubmit}>
+      <Button
+        intent="primary"
+        onClick={handleSubmit}
+        disabled={props.disableCreate}
+      >
         Create
       </Button>
     </>
@@ -131,27 +153,32 @@ function CustomDrawForm(props: {
 }
 
 export function HeaderControls() {
-  const setShowEligibleCharts = useSetAtom(showEligibleCharts);
+  const [configId, setConfigId] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
   const [matchPickerOpen, setMatchPickerOpen] = useState(false);
-  const hasConfig = useAppState((s) => !!s.config.current);
+  const hasAnyConfig = useAppState((s) => !!s.config.ids.length);
   const isNarrow = useIsNarrow();
   const dispatch = useAppDispatch();
 
   function handleDraw(match: PickedMatch) {
+    if (!configId) {
+      return;
+    }
     setMatchPickerOpen(false);
-    setShowEligibleCharts(false);
     const result = dispatch(
-      createDraw({
-        meta: {
-          type: "startgg",
-          subtype: match.subtype,
-          entrants: match.players,
-          title: match.title,
-          id: match.id,
+      createDraw(
+        {
+          meta: {
+            type: "startgg",
+            subtype: match.subtype,
+            entrants: match.players,
+            title: match.title,
+            id: match.id,
+          },
         },
-      }),
+        configId,
+      ),
     );
     if (typeof result === "boolean") {
       setLastDrawFailed(result);
@@ -167,30 +194,24 @@ export function HeaderControls() {
 
   return (
     <>
-      <Drawer
+      <MultiControlsDrawer
+        isNarrow={isNarrow}
         isOpen={settingsOpen}
-        position={Position.RIGHT}
-        size={isNarrow ? DrawerSize.LARGE : "500px"}
         onClose={() => setSettingsOpen(false)}
-        title={
-          <>
-            <FormattedMessage id="controls.drawerTitle" />
-            <ControlsList />
-          </>
-        }
-      >
-        <ErrorBoundary fallback={<ErrorFallback />}>
-          <Suspense fallback={<Spinner style={{ marginTop: "2rem" }} />}>
-            <ControlsDrawer />
-          </Suspense>
-        </ErrorBoundary>
-      </Drawer>
+      />
       <Dialog
         isOpen={matchPickerOpen}
         onClose={() => setMatchPickerOpen(false)}
         title="New Draw"
       >
         <DialogBody>
+          <FormGroup label="Config">
+            <ConfigSelect
+              selectedId={configId}
+              onChange={setConfigId}
+              createDirection="right"
+            />
+          </FormGroup>
           <Tabs id="new-draw">
             <Tab
               id="startgg-versus"
@@ -216,7 +237,8 @@ export function HeaderControls() {
               id="custom"
               panel={
                 <CustomDrawForm
-                  onSubmit={(meta) => dispatch(createDraw({ meta }))}
+                  disableCreate={!configId}
+                  onSubmit={(meta) => dispatch(createDraw({ meta }, configId!))}
                 />
               }
             >
@@ -225,14 +247,7 @@ export function HeaderControls() {
           </Tabs>
         </DialogBody>
       </Dialog>
-      {!isNarrow && (
-        <>
-          <ShowChartsToggle inDrawer={false} />
-          <NavbarDivider />
-        </>
-      )}
-      <ControlGroup>
-        <ConfigSelect />
+      <ButtonGroup>
         <Tooltip
           isOpen={lastDrawFailed}
           content={<FormattedMessage id="controls.invalid" />}
@@ -241,45 +256,64 @@ export function HeaderControls() {
           position={Position.BOTTOM_RIGHT}
         >
           <Button
-            icon={<Cog />}
-            onClick={openSettings}
-            data-umami-event="settings-open"
-          />
+            onClick={() => setMatchPickerOpen(true)}
+            icon={<NewLayers />}
+            intent={Intent.PRIMARY}
+            disabled={!hasAnyConfig}
+          >
+            <FormattedMessage id="draw" />
+          </Button>
         </Tooltip>
-      </ControlGroup>
-      <NavbarDivider />
-      <Tooltip disabled={hasConfig} content="Select a config first">
         <Button
-          onClick={() => setMatchPickerOpen(true)}
-          icon={<NewLayers />}
-          intent={Intent.PRIMARY}
-          disabled={!hasConfig}
-        >
-          <FormattedMessage id="draw" />
-        </Button>
-      </Tooltip>
+          icon={<Cog />}
+          onClick={openSettings}
+          data-umami-event="settings-open"
+        />
+      </ButtonGroup>
     </>
   );
 }
 
-const getConfigSummaryValues = createAppSelector(
-  [(s) => s.config.entities],
-  (entities) =>
-    Object.entries(entities).map(
-      ([key, config]) =>
-        [
-          key,
-          config.name,
-          config.gameKey,
-          config.lowerBound,
-          config.upperBound,
-        ] as const,
-    ),
-);
+function MultiControlsDrawer(props: {
+  isOpen: boolean;
+  isNarrow: boolean;
+  onClose(): void;
+}) {
+  const [configId, setConfigId] = useState<string | null>(null);
 
-function ControlsList() {
-  const summaryValues = useAppState(getConfigSummaryValues);
-  const selected = useAppState((s) => s.config.current);
+  return (
+    <Drawer
+      isOpen={props.isOpen}
+      position={Position.RIGHT}
+      size={props.isNarrow ? DrawerSize.LARGE : "500px"}
+      onClose={props.onClose}
+      title={
+        <>
+          <FormattedMessage id="controls.drawerTitle" />
+          <MultiControlsManager
+            configId={configId}
+            onConfigSelected={setConfigId}
+          />
+        </>
+      }
+    >
+      <ErrorBoundary fallback={<ErrorFallback />}>
+        <Suspense fallback={<Spinner style={{ marginTop: "2rem" }} />}>
+          <ControlsDrawer configId={configId} />
+        </Suspense>
+      </ErrorBoundary>
+    </Drawer>
+  );
+}
+
+/**
+ * provides UI for selecting/creating/cloning/import/exporting configs at the top of the config drawer
+ */
+function MultiControlsManager(props: {
+  configId: string | null;
+  onConfigSelected(configId: string): void;
+}) {
+  const selected = props.configId;
   const selectedName = useAppState((s) =>
     selected ? s.config.entities[selected].name : undefined,
   );
@@ -311,10 +345,11 @@ function ControlsList() {
       typeof createBasisRef.current === "object"
         ? createConfigFromImport(name, gameStub, createBasisRef.current)
         : createConfigFromInputs(name, gameStub, createBasisRef.current);
-    await dispatch(action);
+    const newConfig = await dispatch(action);
     setAddOpen(false);
     setBusyCreating(false);
     createBasisRef.current = undefined;
+    props.onConfigSelected(newConfig.id);
   };
 
   function titleFromBasis() {
@@ -411,11 +446,7 @@ function ControlsList() {
               disabled={!selected}
               icon={<FloppyDisk />}
               onClick={() =>
-                saveConfig(
-                  dispatch(
-                    (d, gs) => gs().config.entities[gs().config.current!],
-                  ),
-                )
+                saveConfig(dispatch((d, gs) => gs().config.entities[selected!]))
               }
             />
           </Menu>
@@ -423,25 +454,11 @@ function ControlsList() {
       >
         <Button style={{ marginInlineStart: "1em" }} icon={<MenuIcon />} />
       </Popover>
-      <HTMLSelect
-        value={selected || "create"}
-        onChange={(e) =>
-          dispatch(configSlice.actions.pickCurrent(e.currentTarget.value))
-        }
-        disabled={!summaryValues.length}
-      >
-        {summaryValues.length ? (
-          summaryValues.map(([key, name, gameKey, lb, ub]) => (
-            <option key={key} value={key}>
-              {name} ({gameKey}, {lb}-{ub})
-            </option>
-          ))
-        ) : (
-          <option disabled value="create">
-            👈 Create a config here
-          </option>
-        )}
-      </HTMLSelect>
+      <ConfigSelect
+        selectedId={selected}
+        onChange={props.onConfigSelected}
+        createDirection="left"
+      />
     </>
   );
 }

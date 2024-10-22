@@ -1,7 +1,7 @@
 import { AppThunk } from "./store";
 import { draw, StartggInfo } from "../card-draw";
 import { loadStockGamedataByName } from "./game-data.atoms";
-import { drawingsSlice } from "./drawings.slice";
+import { drawingSelectors, drawingsSlice } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
@@ -25,10 +25,13 @@ function trackDraw(count: number | null, game?: string) {
  * Thunk creator for performing a new draw
  * @returns false if draw was unsuccessful
  */
-export function createDraw(startggTargetSet: StartggInfo): AppThunk {
+export function createDraw(
+  startggTargetSet: StartggInfo,
+  configId: string,
+): AppThunk {
   return async (dispatch, getState) => {
     const state = getState();
-    const config = configSlice.selectors.getCurrent(state);
+    const config = configSlice.selectors.selectById(state, configId);
     if (!config) {
       console.error("couldnt draw, no config");
       return false;
@@ -180,8 +183,10 @@ export function createPickBanPocket(
   pick?: EligibleChart,
 ): AppThunk {
   return (dispatch, getState) => {
-    const reorder =
-      !!configSlice.selectors.getCurrent(getState())?.orderByAction;
+    const state = getState();
+    const drawing = drawingSelectors.selectById(state, drawingId);
+    const reorder = !!configSlice.selectors.selectById(state, drawing.configId)
+      ?.orderByAction;
     let action;
     if (type === "pocket") {
       if (pick) {
@@ -243,7 +248,7 @@ export function createConfigFromInputs(
   name: string,
   gameKey: string,
   basisConfigId?: string,
-): AppThunk<Promise<void>> {
+): AppThunk<Promise<ConfigState>> {
   return async (dispatch, getState) => {
     const gameData = await loadStockGamedataByName(gameKey);
     const basisConfig = basisConfigId
@@ -258,6 +263,7 @@ export function createConfigFromInputs(
       gameKey,
     };
     dispatch(configSlice.actions.addOne(newConfig));
+    return newConfig;
   };
 }
 
@@ -265,7 +271,7 @@ export function createConfigFromImport(
   name: string,
   gameKey: string,
   imported: ConfigState,
-): AppThunk<Promise<void>> {
+): AppThunk<Promise<ConfigState>> {
   return async (dispatch) => {
     const gameData = await loadStockGamedataByName(gameKey);
     const basisConfig = imported;
@@ -278,5 +284,6 @@ export function createConfigFromImport(
       gameKey,
     };
     dispatch(configSlice.actions.addOne(newConfig));
+    return newConfig;
   };
 }

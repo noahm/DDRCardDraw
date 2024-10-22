@@ -1,8 +1,4 @@
-import {
-  createSlice,
-  createEntityAdapter,
-  PayloadAction,
-} from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
 export interface ConfigState {
   id: string;
@@ -55,33 +51,13 @@ const adapter = createEntityAdapter<ConfigState>({});
 
 export const configSlice = createSlice({
   name: "config",
-  initialState: {
-    ...adapter.getInitialState(),
-    current: null as string | null,
-  },
+  initialState: adapter.getInitialState(),
   reducers: {
-    pickCurrent(state, action: PayloadAction<string | null>) {
-      state.current = action.payload;
-    },
-    addOne: (state, action: PayloadAction<ConfigState>) => {
-      const nextState = adapter.addOne(state, action);
-      nextState.current = action.payload.id;
-    },
+    addOne: adapter.addOne,
     updateOne: adapter.updateOne,
-    removeOne: (state, action: PayloadAction<string>) => {
-      const nextState = adapter.removeOne(state, action);
-      if (nextState.current === action.payload) {
-        nextState.current = nextState.ids.length ? nextState.ids[0] : null;
-      }
-    },
+    removeOne: adapter.removeOne,
   },
   selectors: {
     ...adapter.getSelectors(),
-    getCurrent(state) {
-      if (state.current) {
-        return state.entities[state.current];
-      }
-      return null;
-    },
   },
 });
