@@ -214,6 +214,17 @@ export function HeaderControls() {
           </FormGroup>
           <Tabs id="new-draw">
             <Tab
+              id="custom"
+              panel={
+                <CustomDrawForm
+                  disableCreate={!configId}
+                  onSubmit={(meta) => dispatch(createDraw({ meta }, configId!))}
+                />
+              }
+            >
+              custom draw
+            </Tab>
+            <Tab
               id="startgg-versus"
               panel={
                 <StartggApiKeyGated>
@@ -232,17 +243,6 @@ export function HeaderControls() {
               }
             >
               start.gg (gauntlet)
-            </Tab>
-            <Tab
-              id="custom"
-              panel={
-                <CustomDrawForm
-                  disableCreate={!configId}
-                  onSubmit={(meta) => dispatch(createDraw({ meta }, configId!))}
-                />
-              }
-            >
-              custom draw
             </Tab>
           </Tabs>
         </DialogBody>
