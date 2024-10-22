@@ -43,6 +43,8 @@ interface StartggMeta {
   type: "startgg";
   title: string;
   entrants: Array<{ id: string; name: string }>;
+  /** first index is entrant ID, second index is the drawn chart ID */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
 export interface StartggVersusMeta extends StartggMeta {

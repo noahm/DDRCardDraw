@@ -1,32 +1,44 @@
-import { Button, Menu, MenuItem, Popover, Tooltip } from "@blueprintjs/core";
+import {
+  Button,
+  Dialog,
+  DialogBody,
+  Menu,
+  MenuItem,
+  Popover,
+  Tooltip,
+} from "@blueprintjs/core";
 import {
   Camera,
-  Refresh,
-  Error,
   CubeAdd,
+  Error,
   Exchange,
   FloppyDisk,
   NewLayer,
+  Refresh,
+  Th,
   Trash,
 } from "@blueprintjs/icons";
-import { useDrawing } from "../drawing-context";
-import styles from "./drawing-actions.css";
-import { domToPng } from "modern-screenshot";
-import { shareImage } from "../utils/share";
-import { useErrorBoundary } from "react-error-boundary";
-import { AppThunk, useAppDispatch, useAppState } from "../state/store";
 import { useAtomValue } from "jotai";
+import { domToPng } from "modern-screenshot";
+import { useState, lazy } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import { showPlayerAndRoundLabels } from "../config-state";
+import { useDrawing } from "../drawing-context";
+import { playerCount, StartggGauntletMeta } from "../models/Drawing";
+import {
+  BracketSetGameDataInput as GDI,
+  ReportSetMutationVariables as MutationVariables,
+  useReportSetMutation,
+} from "../startgg-gql";
 import { drawingsSlice } from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
+import { AppThunk, useAppDispatch, useAppState } from "../state/store";
 import { createPlusOneChart, createRedrawAll } from "../state/thunks";
-import {
-  useReportSetMutation,
-  ReportSetMutationVariables as MutationVariables,
-  BracketSetGameDataInput as GDI,
-} from "../startgg-gql";
 import { CountingSet } from "../utils/counting-set";
-import { playerCount } from "../models/Drawing";
+import { shareImage } from "../utils/share";
+import styles from "./drawing-actions.css";
+
+const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
 function getMatchResult(
@@ -137,9 +149,15 @@ export function DrawingActions() {
   const dispatch = useAppDispatch();
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.id);
-  const isTwoPlayers = useDrawing((s) => playerCount(s.meta) === 2);
+  const drawingMeta = useDrawing((s) => s.meta);
+  const isTwoPlayers = playerCount(drawingMeta) === 2;
+  const isGauntlet =
+    drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const { showBoundary } = useErrorBoundary();
+  const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
+    StartggGauntletMeta | undefined
+  >(undefined);
 
   const addToCabMenu = (
     <Menu>
@@ -214,6 +232,29 @@ export function DrawingActions() {
             }}
           />
         </Tooltip>
+      )}
+      {isGauntlet && (
+        <>
+          <Tooltip content="Edit Gauntlet Scores">
+            <Button
+              minimal
+              icon={<Th />}
+              onClick={() => {
+                setGauntletEditorMeta(drawingMeta);
+              }}
+            />
+          </Tooltip>
+          <Dialog
+            onClose={() => setGauntletEditorMeta(undefined)}
+            isOpen={!!gauntletEditorMeta}
+            title="Gauntlet Scores Editor"
+            style={{ width: "auto" }}
+          >
+            <DialogBody>
+              <GauntletEditor meta={gauntletEditorMeta!} />
+            </DialogBody>
+          </Dialog>
+        </>
       )}
       <SaveToStartggButton />
       <AddCardButton />

@@ -2181,6 +2181,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@blueprintjs/table@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "@blueprintjs/table@npm:5.2.2"
+  dependencies:
+    "@blueprintjs/core": "npm:^5.13.1"
+    classnames: "npm:^2.3.1"
+    react-innertext: "npm:^1.1.5"
+    tslib: "npm:~2.6.2"
+  peerDependencies:
+    "@types/react": ^16.14.41 || 17 || 18
+    react: ^16.8 || 17 || 18
+    react-dom: ^16.8 || 17 || 18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/b5b6a4bbd07a333d2aad099f29e3880d5262e223234a8f46058473056be6db14c3e6c61867f9e6f75bdc8904d8df6cf83165e0a56348b2d9f6d2942e31489041
+  languageName: node
+  linkType: hard
+
 "@cloudflare/workerd-darwin-64@npm:1.20240718.0":
   version: 1.20240718.0
   resolution: "@cloudflare/workerd-darwin-64@npm:1.20240718.0"
@@ -6692,6 +6711,7 @@ __metadata:
     "@blueprintjs/datetime2": "npm:2.3.11"
     "@blueprintjs/icons": "npm:5.13.0"
     "@blueprintjs/select": "npm:5.2.5"
+    "@blueprintjs/table": "npm:^5.2.2"
     "@graphql-codegen/cli": "npm:5.0.3"
     "@graphql-codegen/client-preset": "npm:4.4.0"
     "@lcdp/offline-plugin": "npm:5.1.1"

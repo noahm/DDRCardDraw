@@ -326,7 +326,7 @@ export function draw(
   // OK, setup work is done, here's whre we actually draw the cards!
 
   let redraw = false;
-  const drawnCharts: DrawnChart[] = [];
+  let drawnCharts: DrawnChart[] = [];
 
   let preSeededCharts = 0;
   const preSeededDifficulties: number[] = [];
@@ -430,7 +430,7 @@ export function draw(
         redraw = false;
         if (underDrawn || overDrawn) {
           redraw = true;
-          drawnCharts.splice(0, drawnCharts.length);
+          drawnCharts = [];
           break;
         }
       }
