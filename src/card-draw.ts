@@ -374,7 +374,7 @@ export function draw(
       localValidCharts.set(bucketIdx, charts.slice());
     }
 
-    while (drawnCharts.length < numChartsToRandom) {
+    while (drawnCharts.length + preSeededCharts < numChartsToRandom) {
       if (bucketDistribution.length === 0) {
         // no more songs available to pick in the requested range
         // will be returning fewer than requested number of charts
