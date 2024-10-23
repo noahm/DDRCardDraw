@@ -24,6 +24,20 @@ interface Props {
   drawingId: string;
 }
 
+export function ChartsOnly({ drawingId }: Props) {
+  const configId = useAppState((s) => s.drawings.entities[drawingId]?.configId);
+  if (!configId) {
+    return null;
+  }
+  return (
+    <DrawingProvider value={drawingId}>
+      <ConfigContextProvider value={configId}>
+        <ChartList />
+      </ConfigContextProvider>
+    </DrawingProvider>
+  );
+}
+
 function ChartList() {
   const charts = useDrawing((d) => d.charts);
   return (
@@ -32,14 +46,6 @@ function ChartList() {
         <ChartFromContext key={c.id} chartId={c.id} />
       ))}
     </div>
-  );
-}
-
-export function ChartsOnly({ drawingId }: Props) {
-  return (
-    <DrawingProvider value={drawingId}>
-      <ChartList />
-    </DrawingProvider>
   );
 }
 
