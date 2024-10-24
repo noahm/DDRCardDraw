@@ -44,7 +44,7 @@ const router = createBrowserRouter([
           </p>
           <p>
             No idea what this is?{" "}
-            <a href="https://youtu.be/4Gpj9jTNcfM">I made a video</a> trying to
+            <a href="https://youtu.be/4Gpj9jTNcfM">Here's a video</a> trying to
             explain how to use it!
           </p>
         </div>
@@ -123,22 +123,19 @@ function AppForRoom() {
     <Provider store={store}>
       <PartySocketManager roomName={params.roomName}>
         <UrqlProvider value={urqlClient}>
-          <IntlProvider>
-            <UpdateManager />
-            <Header />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "stretch",
-                flex: "1 1 0px",
-                overflow: "hidden",
-              }}
-            >
-              <CabManagement />
-              <MainView />
-            </div>
-          </IntlProvider>
+          <Header />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "stretch",
+              flex: "1 1 0px",
+              overflow: "hidden",
+            }}
+          >
+            <CabManagement />
+            <MainView />
+          </div>
         </UrqlProvider>
       </PartySocketManager>
     </Provider>
@@ -147,9 +144,10 @@ function AppForRoom() {
 
 export function App() {
   return (
-    <>
+    <IntlProvider>
       <ThemeSyncWidget />
+      <UpdateManager />
       <RouterProvider router={router} />
-    </>
+    </IntlProvider>
   );
 }
