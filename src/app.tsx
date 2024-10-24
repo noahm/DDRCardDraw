@@ -42,6 +42,11 @@ const router = createBrowserRouter([
             You need to pick an event first. Would you like to:{" "}
             <Link to={`/e/${nanoid()}`}>Create New Event?</Link>
           </p>
+          <p>
+            No idea what this is?{" "}
+            <a href="https://youtu.be/4Gpj9jTNcfM">I made a video</a> trying to
+            explain how to use it!
+          </p>
         </div>
       );
     },
