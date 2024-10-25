@@ -8,7 +8,9 @@ export function CabTitle() {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    return drawingSelectors.selectById(s, drawingId).meta.title;
+    const drawing = drawingSelectors.selectById(s, drawingId);
+    if (!drawing) return null;
+    return drawing.meta.title;
   });
   return <h1>{text}</h1>;
 }
@@ -19,6 +21,7 @@ export function CabPlayers() {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
     const drawing = drawingSelectors.selectById(s, drawingId);
+    if (!drawing) return null;
     return getAllPlayers(drawing).join(", ");
   });
   return <h1>{text}</h1>;
@@ -30,6 +33,7 @@ export function CabPlayer(props: { p: number }) {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
     const drawing = drawingSelectors.selectById(s, drawingId);
+    if (!drawing) return null;
     const playerIndex = drawing.playerDisplayOrder[props.p - 1];
     const name = playerNameByIndex(drawing.meta, playerIndex, "");
     const hideWins =
