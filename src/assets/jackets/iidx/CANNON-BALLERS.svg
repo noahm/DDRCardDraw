@@ -9,11 +9,18 @@
         <stop offset="0%" stop-color="black" />
         <stop offset="100%" stop-color="white" />
         </linearGradient>
+        <linearGradient id="accent" x1="0.3" x2="0.7" y1="0.7" y2="0.3">
+        <stop offset="0%" stop-color="#dc1003" />
+        <stop offset="100%" stop-color="#05b474" />
+        </linearGradient>
         <mask id="gradientMask">
             <rect width="480" height="320" style="fill:url(#hide)" />
         </mask>
         <mask id="stripeMask">
             <rect width="480" height="320" style="fill:url(#strote)" />
+        </mask>
+        <mask id="folderNameMask">
+            <rect width="480" height="320" style="fill:url(#folderName)" />
         </mask>
     </defs>
     <pattern id="stripes" width="12" height="12" patternUnits="userSpaceOnUse">
@@ -25,7 +32,15 @@
             <rect width="960" height="960" x="-480" y="-480" style="fill:url(#stripes)" />
         </g></g>
     </pattern>
+    <pattern id="folderName" width="230.1796875" height="60" patternUnits="userSpaceOnUse">
+        <text x="115.08984375" y="15" style="fill:white;font:bold 28px Evogria,sans-serif;dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px">CANNON BALLERS</text>
+        <text x="0" y="45" style="fill:white;font:bold 28px Evogria,sans-serif;dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px">CANNON BALLERS</text>
+        <text x="230.1796875" y="45" style="fill:white;font:bold 28px Evogria,sans-serif;dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px">CANNON BALLERS</text>
+    </pattern>
     <rect width="480" height="320" style="fill:#000000" />
+    <g mask="url(#folderNameMask)">
+        <rect width="480" height="320" style="fill:url(#accent)" />
+    </g>
     <g mask="url(#gradientMask)">
         <rect width="480" height="320" style="fill:#05b474" mask="url(#stripeMask)" />
     </g>

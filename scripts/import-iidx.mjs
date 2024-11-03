@@ -8,6 +8,7 @@ import { writeJsonData } from "./utils.mjs";
 import { fileURLToPath } from "url";
 import { parseStringPromise } from "xml2js";
 import { decode as decodeHTML } from "html-entities";
+import { JSDOM } from "jsdom";
 import { fakeTextage } from "./scraping/textage.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -94,6 +95,19 @@ const jacketPalettes = [
   ["#000000", "#000000", "#000000"], // 34th
   ["#000000", "#feb900", "#d36a00"], // "35th" / substream
 ];
+const jacketFont = "bold 28px Evogria,sans-serif";
+const jacketFontStyling = `fill:white;font:${jacketFont};dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px`
+
+function measureTextWidth(text) {
+  var dom = new JSDOM(`<!DOCTYPE html><head><meta charset="UTF-8"></head>`);
+  var document = dom.window.document;
+  const canvas = document.createElement("canvas");  // Requires the npm package canvas in the dev environment
+  const ctx = canvas.getContext("2d");
+  ctx.font = jacketFont;
+  const metrics = ctx.measureText(text);
+  return metrics.width;
+}
+
 
 // textage.cc doesn't indicate songs that are time-locked or shop-bought, most of the time
 // (some are colored red in the list, but not all)
@@ -450,12 +464,25 @@ async function main() {
   );
   for (let fn of folderNames.entries()) {
     const folderName = folderNames[fn[0]];
+    const folderNameWidth = measureTextWidth(" " + folderName + " ");
     const folderFile = folderName.replaceAll(" ", "-");
     var jacketSpecific = jacketTemplate;
     for (let jp of jacketPaletteEntries.entries()) {
       jacketSpecific = jacketSpecific.replaceAll(
         `{{${jp[1]}}}`,
         jacketPalettes[fn[0]][jp[0]],
+      );
+    }
+    const otherJacketParameters = {
+        "folderName": folderName,
+        "folderNameStyling": jacketFontStyling,
+        "folderNameWidth": `${folderNameWidth}`,
+        "folderNameWidthHalf": `${folderNameWidth * 0.5}`
+    };
+    for (let jp of Object.entries(otherJacketParameters)) {
+      jacketSpecific = jacketSpecific.replaceAll(
+        `{{${jp[0]}}}`,
+        jp[1],
       );
     }
     await fs.writeFile(
