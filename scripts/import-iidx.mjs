@@ -96,18 +96,17 @@ const jacketPalettes = [
   ["#000000", "#feb900", "#d36a00"], // "35th" / substream
 ];
 const jacketFont = "bold 28px Evogria,sans-serif";
-const jacketFontStyling = `fill:white;font:${jacketFont};dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px`
+const jacketFontStyling = `fill:white;font:${jacketFont};dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px`;
 
 function measureTextWidth(text) {
   var dom = new JSDOM(`<!DOCTYPE html><head><meta charset="UTF-8"></head>`);
   var document = dom.window.document;
-  const canvas = document.createElement("canvas");  // Requires the npm package canvas in the dev environment
+  const canvas = document.createElement("canvas"); // Requires the npm package canvas in the dev environment
   const ctx = canvas.getContext("2d");
   ctx.font = jacketFont;
   const metrics = ctx.measureText(text);
   return metrics.width;
 }
-
 
 // textage.cc doesn't indicate songs that are time-locked or shop-bought, most of the time
 // (some are colored red in the list, but not all)
@@ -474,16 +473,13 @@ async function main() {
       );
     }
     const otherJacketParameters = {
-        "folderName": folderName,
-        "folderNameStyling": jacketFontStyling,
-        "folderNameWidth": `${folderNameWidth}`,
-        "folderNameWidthHalf": `${folderNameWidth * 0.5}`
+      folderName: folderName,
+      folderNameStyling: jacketFontStyling,
+      folderNameWidth: `${folderNameWidth}`,
+      folderNameWidthHalf: `${folderNameWidth * 0.5}`,
     };
     for (let jp of Object.entries(otherJacketParameters)) {
-      jacketSpecific = jacketSpecific.replaceAll(
-        `{{${jp[0]}}}`,
-        jp[1],
-      );
+      jacketSpecific = jacketSpecific.replaceAll(`{{${jp[0]}}}`, jp[1]);
     }
     await fs.writeFile(
       path.resolve(path.join(jacketPath, `${folderFile}.svg`)),
