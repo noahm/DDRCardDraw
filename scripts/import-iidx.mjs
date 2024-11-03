@@ -193,7 +193,7 @@ async function unwrapHTML(s) {
   return parseStringPromise(
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><root>` +
       s +
-      `</root>`,
+      `</root>`
   ).then((v) => {
     var v_inner = JSON.parse(JSON.stringify(v));
     var nested = true;
@@ -223,7 +223,7 @@ async function main() {
       existingData = JSON.parse(v);
     },
     (reason) =>
-      console.error("Couldn't find existing data, need to rescrape\n" + reason),
+      console.error("Couldn't find existing data, need to rescrape\n" + reason)
   );
 
   console.log(`Building chart info database for import using textage JS...`);
@@ -313,7 +313,7 @@ async function main() {
     songs: [],
   };
   var eventFlags = new Map(
-    listProps(data.i18n.ja).map((v) => [data.i18n.ja[v], v]),
+    listProps(data.i18n.ja).map((v) => [data.i18n.ja[v], v])
   );
 
   var songList = existingData ? existingData.songs : [];
@@ -344,7 +344,7 @@ async function main() {
     const datatbl = textageDOM.window.eval("datatbl");
     const eventMap = textageDOM.window.eval("e_list[2]");
     const eventTags = await Promise.all(
-      Array.from(eventMap.values()).map((v) => unwrapHTML(v[0])),
+      Array.from(eventMap.values()).map((v) => unwrapHTML(v[0]))
     );
 
     for (let songTag in titletbl) {
@@ -353,10 +353,10 @@ async function main() {
           continue;
         }
         const chartLevels = textageDOM.window.eval(
-          `Array.from(Array(11).entries()).map((v) => get_level("${songTag}", v[0], 1))`,
+          `Array.from(Array(11).entries()).map((v) => get_level("${songTag}", v[0], 1))`
         );
         const chartBPMs = textageDOM.window.eval(
-          `Array.from(Array(11).entries()).map((v) => get_bpm("${songTag}", v[0]))`,
+          `Array.from(Array(11).entries()).map((v) => get_bpm("${songTag}", v[0]))`
         );
         const songBPM = datatbl[songTag][11] || "[BPM N/A]";
 
@@ -398,7 +398,7 @@ async function main() {
             if (diffClass == "leggendaria" && timelockLegs.includes(songTag)) {
               // Is the leg an arena unlock or secret unlock?
               console.log(
-                `c[] ${songTag} (${nameExt}) [${v[1]}] is an arena unlock or secret unlock`,
+                `c[] ${songTag} (${nameExt}) [${v[1]}] is an arena unlock or secret unlock`
               );
               chartInfo.flags = ["timelock"];
             }
@@ -411,14 +411,14 @@ async function main() {
         for (let em of eventMap.entries()) {
           if (em[1][1].includes(songTag) && !eventReleases.includes(songTag)) {
             console.log(
-              `c[] ${songTag} (${nameExt}) is locked behind the ${em[1][0]} event`,
+              `c[] ${songTag} (${nameExt}) is locked behind the ${em[1][0]} event`
             );
             songFlags.push(eventFlags.get(eventTags[em[0]]));
           }
         }
         if (timelockTags.includes(songTag)) {
           console.log(
-            `c[] ${songTag} (${nameExt}) is time-locked or must be acquired through the shop`,
+            `c[] ${songTag} (${nameExt}) is time-locked or must be acquired through the shop`
           );
           songFlags.push("timelock");
         }
@@ -459,7 +459,7 @@ async function main() {
   const jacketPath = path.join(__dirname, "../src/assets/jackets/iidx");
   const jacketTemplate = await fs.readFile(
     path.resolve(path.join(__dirname, "jacket_template.svg")),
-    { encoding: "utf-8" },
+    { encoding: "utf-8" }
   );
   for (let fn of folderNames.entries()) {
     const folderName = folderNames[fn[0]];
@@ -469,7 +469,7 @@ async function main() {
     for (let jp of jacketPaletteEntries.entries()) {
       jacketSpecific = jacketSpecific.replaceAll(
         `{{${jp[1]}}}`,
-        jacketPalettes[fn[0]][jp[0]],
+        jacketPalettes[fn[0]][jp[0]]
       );
     }
     const otherJacketParameters = {
@@ -484,18 +484,18 @@ async function main() {
     await fs.writeFile(
       path.resolve(path.join(jacketPath, `${folderFile}.svg`)),
       jacketSpecific,
-      { encoding: "utf-8" },
+      { encoding: "utf-8" }
     );
   }
   console.log(`Successfully built version folder SVG jackets`);
 
   console.log(`Successfully imported data, writing data to ${OUTFILE}`);
   const outfilePath = path.resolve(
-    path.join(__dirname, "../src/songs/iidx.json"),
+    path.join(__dirname, "../src/songs/iidx.json")
   );
   writeJsonData(data, outfilePath);
   console.log(
-    `Complete. Make sure new arena and time-locked/shop-bought exclusives are indicated manually!`,
+    `Complete. Make sure new arena and time-locked/shop-bought exclusives are indicated manually!`
   );
 }
 
