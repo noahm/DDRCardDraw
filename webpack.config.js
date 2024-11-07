@@ -14,8 +14,12 @@ const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
+// these are the only date-fns locales we'll bother to bundle
+const supportedLocales = ["en-US", "en-AU", "en-GB", "ja", "id", "es"];
+
 const packageJson = require("./package.json");
 
+/** @returns {import("webpack").Configuration} */
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
@@ -60,6 +64,7 @@ module.exports = function (env = {}, argv = {}) {
     },
     module: {
       rules: [
+        // babel transformation for my own typescript files
         {
           enforce: "pre",
           test: /\.tsx?$/,
@@ -75,8 +80,8 @@ module.exports = function (env = {}, argv = {}) {
                 require("@babel/preset-typescript"),
               ],
               plugins: [
-                require("@babel/plugin-proposal-optional-chaining"),
-                require("@babel/plugin-proposal-class-properties"),
+                require("@babel/plugin-transform-optional-chaining"),
+                require("@babel/plugin-transform-class-properties"),
                 require("@babel/plugin-syntax-dynamic-import"),
                 [
                   require("@babel/plugin-transform-react-jsx"),
@@ -89,8 +94,8 @@ module.exports = function (env = {}, argv = {}) {
             },
           },
         },
+        // pass my own css files through css-loader with modules enabled and postcss+autoprefixer
         {
-          // pass 1st party css files through css-loader with modules enabled and postcss+autoprefixer
           test: /\.css$/,
           exclude: /node_modules/,
           use: [
@@ -100,6 +105,7 @@ module.exports = function (env = {}, argv = {}) {
               options: {
                 modules: {
                   localIdentName: "[local]__[hash:base64:5]",
+                  namedExport: false,
                 },
                 importLoaders: 1,
               },
@@ -114,15 +120,40 @@ module.exports = function (env = {}, argv = {}) {
             },
           ],
         },
+        // pass 3rd party css through css-loader without transforms
         {
-          // pass 3rd party css through css-loader without transforms
           test: /\.css$/,
           include: resolve(__dirname, "node_modules"),
           use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
+        // other asset files
         {
           test: /\.(woff2?|ttf|svg|eot|jpe?g|png|gif|mp4|mov|ogg|webm)(\?.*)?$/i,
           type: "asset/resource",
+        },
+        // process the html template too
+        {
+          test: /\.html$/i,
+          use: {
+            loader: "html-loader",
+            options: {
+              sources: {
+                /**
+                 *
+                 * @param {string} attribute
+                 * @param {string} value
+                 * @param {string} resourcePath
+                 * @returns {boolean}
+                 */
+                urlFilter(attribute, value, resourcePath) {
+                  if (value.startsWith("/favicons/")) {
+                    return false;
+                  }
+                  return true;
+                },
+              },
+            },
+          },
         },
       ],
     },
@@ -142,6 +173,13 @@ module.exports = function (env = {}, argv = {}) {
       }),
       new webpack.ProgressPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
+      // exclude locale bundles we don't use
+      new webpack.ContextReplacementPlugin(
+        /^date-fns[/\\]locale$/,
+        new RegExp(
+          `\\.[/\\\\](${supportedLocales.join("|")})[/\\\\]index\\.js$`,
+        ),
+      ),
       new webpack.DefinePlugin({
         "process.env.NODE_ENV": JSON.stringify(
           isProd ? "production" : "development",
@@ -196,27 +234,27 @@ module.exports = function (env = {}, argv = {}) {
           description: packageJson.description,
           viewport: "width=device-width, initial-scale=1",
         },
-        template: "src/index.ejs",
+        template: "src/index.html",
       }),
     ].concat(
       !isProd
         ? [new ReactRefreshPlugin({ overlay: false })]
         : zip
-        ? [
-            new ZipPlugin({
-              path: __dirname,
-              filename: `DDRCardDraw-${version}.zip`,
-              exclude: "__offline_serviceworker",
-            }),
-          ]
-        : [
-            new OfflinePlugin({
-              ServiceWorker: {
-                events: true,
-              },
-              excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
-            }),
-          ],
+          ? [
+              new ZipPlugin({
+                path: __dirname,
+                filename: `DDRCardDraw-${version}.zip`,
+                exclude: "__offline_serviceworker",
+              }),
+            ]
+          : [
+              new OfflinePlugin({
+                ServiceWorker: {
+                  events: true,
+                },
+                excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
+              }),
+            ],
     ),
   };
 };

@@ -4,13 +4,19 @@ import { useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawing } from "../drawing-context";
-import { DrawnChart, EligibleChart } from "../models/Drawing";
+import {
+  CHART_PLACEHOLDER,
+  DrawnChart,
+  EligibleChart,
+  PlayerPickPlaceholder,
+} from "../models/Drawing";
 import { SongSearch } from "../song-search";
 import { detectedLanguage } from "../utils";
 import { CardLabel, LabelType } from "./card-label";
 import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
+import { ChartLevel } from "./chart-level";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -27,7 +33,7 @@ interface IconCallbacks {
 
 interface Props {
   onClick?: () => void;
-  chart: DrawnChart | EligibleChart;
+  chart: DrawnChart | EligibleChart | PlayerPickPlaceholder;
   vetoedBy?: Player;
   protectedBy?: Player;
   replacedBy?: Player;
@@ -62,6 +68,17 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
   );
 }
 
+function baseChartValues(
+  chart: EligibleChart | DrawnChart | PlayerPickPlaceholder,
+): Partial<EligibleChart> & { name: string } {
+  if ("type" in chart && chart.type === CHART_PLACEHOLDER) {
+    return {
+      name: "Your Pick Here",
+    };
+  }
+  return chart;
+}
+
 export function SongCard(props: Props) {
   const {
     chart,
@@ -81,6 +98,9 @@ export function SongCard(props: Props) {
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
     useState<number>(0);
 
+  const baseChartIsPlaceholder =
+    "type" in chart && chart.type === CHART_PLACEHOLDER;
+
   const {
     name,
     nameTranslation,
@@ -89,10 +109,10 @@ export function SongCard(props: Props) {
     bpm,
     diffAbbr,
     diffColor,
-    level,
     jacket,
     flags,
-  } = replacedWith || chart;
+    dateAdded,
+  } = replacedWith || baseChartValues(chart);
 
   const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
 
@@ -108,7 +128,11 @@ export function SongCard(props: Props) {
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !winner) {
-    if (!hasLabel) {
+    if (!replacedWith && baseChartIsPlaceholder) {
+      menuContent = (
+        <IconMenu onStartPocketPick={setPocketPickPendingForPlayer} />
+      );
+    } else if (!hasLabel) {
       menuContent = (
         <IconMenu
           onProtect={iconCallbacks.onProtect}
@@ -126,7 +150,8 @@ export function SongCard(props: Props) {
   const rootClassname = classNames(styles.chart, {
     [styles.vetoed]: vetoedBy,
     [styles.protected]: protectedBy,
-    [styles.replaced]: replacedBy,
+    [styles.replaced]: replacedBy && !baseChartIsPlaceholder,
+    [styles.picked]: replacedBy && baseChartIsPlaceholder,
     [styles.clickable]: !!menuContent || !!props.onClick,
     [styles.hideVeto]: hideVetos,
   });
@@ -169,7 +194,9 @@ export function SongCard(props: Props) {
         {replacedBy && (
           <CardLabel
             player={replacedBy}
-            type={LabelType.Pocket}
+            type={
+              baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket
+            }
             onRemove={iconCallbacks?.onReset}
           />
         )}
@@ -189,6 +216,9 @@ export function SongCard(props: Props) {
         <div className={styles.artist} title={artistTranslation}>
           {artist}
         </div>
+        <div className={styles.dateAdded} title={dateAdded}>
+          {dateAdded}
+        </div>
       </div>
 
       <Popover
@@ -204,10 +234,10 @@ export function SongCard(props: Props) {
           className={styles.cardFooter}
           style={{ backgroundColor: diffColor }}
         >
-          <div className={styles.bpm}>{bpm} BPM</div>
-          {flags.includes("shock") && <ShockBadge />}
+          {bpm ? <div className={styles.bpm}>{bpm} BPM</div> : <div />}
+          {flags?.includes("shock") && <ShockBadge />}
           <div className={styles.difficulty}>
-            {diffAbbr} {level}
+            {diffAbbr} <ChartLevel chart={replacedWith || chart} />
           </div>
         </div>
       </Popover>

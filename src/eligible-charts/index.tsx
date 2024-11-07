@@ -4,13 +4,21 @@ import { useDrawState } from "../draw-state";
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
-import { Navbar, NavbarGroup, NavbarDivider, Spinner } from "@blueprintjs/core";
+import {
+  Navbar,
+  NavbarGroup,
+  NavbarDivider,
+  Spinner,
+  Button,
+} from "@blueprintjs/core";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useAtom } from "jotai";
-import { useDeferredValue, useMemo } from "react";
+import { useCallback, useDeferredValue, useMemo } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
+import { Export } from "@blueprintjs/icons";
+import { shareCharts } from "../utils/share";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
@@ -39,6 +47,10 @@ export default function EligibleChartsList() {
     return [songs, filtered];
   }, [charts, isDisplayFiltered, currentTab]);
 
+  const exportData = useCallback(async () => {
+    shareCharts(filteredCharts);
+  }, [filteredCharts]);
+
   if (!gameData) {
     return <Spinner />;
   }
@@ -61,6 +73,16 @@ export default function EligibleChartsList() {
             <EligibleChartsListFilter />
           </NavbarGroup>
         )}
+        <NavbarGroup align="right">
+          <Button
+            aria-label={isNarrow ? "Export Chart Data" : undefined}
+            title="Export current chart data as a CSV file"
+            icon={<Export />}
+            onClick={exportData}
+          >
+            {isNarrow ? "" : "Export Chart Data"}
+          </Button>
+        </NavbarGroup>
       </Navbar>
       <DiffHistogram charts={filteredCharts} />
       <div className={styles.chartList}>

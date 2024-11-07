@@ -7,10 +7,6 @@
   user-select: none;
 }
 
-.showAllToggle {
-  margin-bottom: 0;
-}
-
 .inlineControls {
   display: flex;
   flex-direction: row;
@@ -21,12 +17,22 @@
   margin-bottom: 0;
 }
 
-.inlineControls > * {
+.inlineControls > div {
   margin-right: 25px;
 }
 
+.smallText button {
+  font-size: 8pt !important;
+}
+
+.plus {
+  margin-top: 30px;
+  margin-left: -23px;
+  margin-right: 1px;
+}
+
 .narrowInput {
-  width: 100px;
+  width: 110px;
 }
 
 /* remove native styling on number type inputs */

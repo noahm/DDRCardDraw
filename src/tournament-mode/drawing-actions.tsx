@@ -6,7 +6,16 @@ import {
   Popover,
   Tooltip,
 } from "@blueprintjs/core";
-import { IconNames } from "@blueprintjs/icons";
+import {
+  SendMessage,
+  Changes,
+  Share,
+  Camera,
+  Refresh,
+  NewPerson,
+  BlockedPerson,
+  Error,
+} from "@blueprintjs/icons";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import styles from "./drawing-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
@@ -41,12 +50,12 @@ export function DrawingActions() {
     remoteActions = (
       <Menu>
         <MenuItem
-          icon={IconNames.SendMessage}
+          icon={<SendMessage />}
           text={`Send to ${peerId}`}
           onClick={() => sendDrawing(getDrawing())}
         />
         <MenuItem
-          icon={IconNames.Changes}
+          icon={<Changes />}
           text={`Start sync with ${peerId}`}
           onClick={() => syncDrawing(drawingStore)}
         />
@@ -55,13 +64,13 @@ export function DrawingActions() {
   } else if (remotePeers.size > 1) {
     remoteActions = (
       <Menu>
-        <MenuItem icon={IconNames.SendMessage} text="Send to...">
+        <MenuItem icon={<SendMessage />} text="Send to...">
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => sendDrawing(getDrawing(), peerId)}
           />
         </MenuItem>
-        <MenuItem icon={IconNames.Changes} text="Start sync with...">
+        <MenuItem icon={<Changes />} text="Start sync with...">
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => syncDrawing(drawingStore, peerId)}
@@ -72,92 +81,86 @@ export function DrawingActions() {
   }
 
   const button = (
-    <Button
-      minimal
-      text={<Icon icon={IconNames.Share} />}
-      disabled={!remotePeers.size}
-    />
+    <Button minimal text={<Share />} disabled={!remotePeers.size} />
   );
 
   return (
-    <>
-      <div className={styles.networkButtons}>
-        {syncPeer && <Icon icon={IconNames.Changes} intent="success" />}
-        {isConnected ? (
-          remotePeers.size ? (
-            <Popover content={remoteActions}>{button}</Popover>
-          ) : (
-            <Tooltip content="Connect to a peer to share">{button}</Tooltip>
-          )
-        ) : null}
-        <Tooltip content="Save Image">
-          <Button
-            minimal
-            icon={IconNames.Camera}
-            onClick={async () => {
-              const drawingId = getDrawing().id;
-              const drawingElement = document.querySelector(
-                "#drawing-" + drawingId,
+    <div className={styles.networkButtons}>
+      {syncPeer && <Icon icon={<Changes />} intent="success" />}
+      {isConnected ? (
+        remotePeers.size ? (
+          <Popover content={remoteActions}>{button}</Popover>
+        ) : (
+          <Tooltip content="Connect to a peer to share">{button}</Tooltip>
+        )
+      ) : null}
+      <Tooltip content="Save Image">
+        <Button
+          minimal
+          icon={<Camera />}
+          onClick={async () => {
+            const drawingId = getDrawing().id;
+            const drawingElement = document.querySelector(
+              "#drawing-" + drawingId,
+            );
+            if (drawingElement) {
+              shareImage(
+                await domToPng(drawingElement, {
+                  scale: 2,
+                }),
+                DEFAULT_FILENAME,
               );
-              if (drawingElement) {
-                shareImage(
-                  await domToPng(drawingElement, {
-                    scale: 2,
-                  }),
-                  DEFAULT_FILENAME,
-                );
-              }
-            }}
-          />
-        </Tooltip>
-        <Tooltip content="Redraw all charts">
-          <Button
-            minimal
-            icon={IconNames.Refresh}
-            onClick={() =>
-              confirm(
-                "This will replace everything besides protects and pocket picks!",
-              ) && redrawAllCharts()
             }
-          />
+          }}
+        />
+      </Tooltip>
+      <Tooltip content="Redraw all charts">
+        <Button
+          minimal
+          icon={<Refresh />}
+          onClick={() =>
+            confirm(
+              "This will replace everything besides protects and picks!",
+            ) && redrawAllCharts()
+          }
+        />
+      </Tooltip>
+      {process.env.NODE_ENV === "production" ? null : (
+        <Tooltip content="Cause Error">
+          <Button minimal icon={<Error />} onClick={showBoundary} />
         </Tooltip>
-        {process.env.NODE_ENV === "production" ? null : (
-          <Tooltip content="Cause Error">
-            <Button minimal icon={IconNames.Error} onClick={showBoundary} />
+      )}
+      {showLabels && (
+        <>
+          <Tooltip content="Add Player">
+            <Button
+              minimal
+              icon={<NewPerson />}
+              onClick={() => {
+                updateDrawing((drawing) => {
+                  const next = drawing.players.slice();
+                  next.push("");
+                  return { players: next };
+                });
+              }}
+            />
           </Tooltip>
-        )}
-        {showLabels && (
-          <>
-            <Tooltip content="Add Player">
-              <Button
-                minimal
-                icon={IconNames.NewPerson}
-                onClick={() => {
-                  updateDrawing((drawing) => {
-                    const next = drawing.players.slice();
-                    next.push("");
-                    return { players: next };
-                  });
-                }}
-              />
-            </Tooltip>
-            <Tooltip content="Remove Player" disabled={!hasPlayers}>
-              <Button
-                minimal
-                icon={IconNames.BlockedPerson}
-                disabled={!hasPlayers}
-                onClick={() => {
-                  updateDrawing((drawing) => {
-                    const next = drawing.players.slice();
-                    next.pop();
-                    return { players: next };
-                  });
-                }}
-              />
-            </Tooltip>
-          </>
-        )}
-      </div>
-    </>
+          <Tooltip content="Remove Player" disabled={!hasPlayers}>
+            <Button
+              minimal
+              icon={<BlockedPerson />}
+              disabled={!hasPlayers}
+              onClick={() => {
+                updateDrawing((drawing) => {
+                  const next = drawing.players.slice();
+                  next.pop();
+                  return { players: next };
+                });
+              }}
+            />
+          </Tooltip>
+        </>
+      )}
+    </div>
   );
 }

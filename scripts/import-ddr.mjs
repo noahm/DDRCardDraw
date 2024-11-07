@@ -8,7 +8,7 @@
 import { readFile } from "fs/promises";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { DDR_A3 as MIX_META } from "./scraping/ddr-sources.mjs";
+import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
 import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";
@@ -18,36 +18,10 @@ import {
   writeJsonData,
   setJacketPrefix,
   checkJacketExists,
+  sortSongs,
 } from "./utils.mjs";
 
 setJacketPrefix(MIX_META.jacketPrefix);
-
-/** @param songs {Array<{ name: string, charts: { style: string, lvl: number }[]}>} */
-function sortSongs(songs) {
-  for (const song of songs) {
-    song.charts.sort((chartA, chartB) => {
-      if (chartA.style !== chartB.style) {
-        // sort singles first, doubles second
-        return chartA.style > chartB.style ? -1 : 1;
-      }
-      // sort by level within style
-      return chartA.lvl - chartB.lvl;
-    });
-  }
-  return songs.sort((songA, songB) => {
-    const nameA = songA.name.toLowerCase();
-    const nameB = songB.name.toLowerCase();
-
-    if (nameA === nameB) {
-      return songA.name > songB.name ? 1 : -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-}
 
 /** returns data to use for given songs */
 async function mergeSongs(oldData, zivData, saData, log) {
@@ -73,7 +47,7 @@ async function mergeSongs(oldData, zivData, saData, log) {
     data.saHash = saData.saHash;
     data.saIndex = saData.saIndex;
   }
-  if (oldData.artist_translation.length > data.artist_translation.length) {
+  if (oldData.artist_translation?.length > data.artist_translation?.length) {
     data.artist_translation = oldData.artist_translation;
   }
   if (oldData.bpm.length > data.bpm) {

@@ -7,11 +7,16 @@ import {
   Switch,
 } from "@blueprintjs/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { PackWithSongs, parsePack } from "simfile-parser/browser";
+import type { PackWithSongs } from "simfile-parser/browser";
 import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
 import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
+import { Import } from "@blueprintjs/icons";
+
+function loadParserModule() {
+  return import("simfile-parser/browser");
+}
 
 export function DropHandler() {
   const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
@@ -42,6 +47,8 @@ export function DropHandler() {
 
   const handleDragOver = useCallback((e: Event) => {
     e.preventDefault();
+    // preload parser as soon as a drag begins
+    loadParserModule();
   }, []);
 
   useEffect(() => {
@@ -80,7 +87,8 @@ function useDataParsing(
       setParsedPack(null);
       return;
     }
-    parsePack(droppedFolder)
+    loadParserModule()
+      .then(({ parsePack }) => parsePack(droppedFolder))
       .then((pack) => {
         setParsedPack(pack);
         if (
@@ -185,7 +193,7 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
               intent="primary"
               onClick={handleConfirm}
               loading={saving}
-              icon="import"
+              icon={<Import />}
             >
               Import
             </Button>

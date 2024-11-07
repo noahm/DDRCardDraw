@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":preserveSemverRanges",
+    "group:allNonMajor",
+    "group:linters",
+    "group:react"
+  ]
+}

@@ -2,7 +2,7 @@ import { MenuItem } from "@blueprintjs/core";
 import { ItemPredicate, ItemRenderer } from "@blueprintjs/select";
 import { ReactNode } from "react";
 import FuzzySearch from "fuzzy-search";
-import { BlueprintIcons_16Id } from "@blueprintjs/icons/lib/esm/generated/16px/blueprint-icons-16";
+import { Delete } from "@blueprintjs/icons";
 
 export const renderRoundLabel: ItemRenderer<string> = (
   roundLabel,
@@ -11,10 +11,10 @@ export const renderRoundLabel: ItemRenderer<string> = (
   if (!modifiers.matchesPredicate) {
     return null;
   }
-  let icon: BlueprintIcons_16Id | null = null;
+  let icon: JSX.Element | null = null;
   let text = roundLabel;
   if (roundLabel === "") {
-    icon = "delete";
+    icon = <Delete />;
     text = "No label";
   }
   return (

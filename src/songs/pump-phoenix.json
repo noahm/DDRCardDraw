@@ -14,8 +14,7 @@
       { "key": "R", "color": "#23a98d" }
     ],
     "flags": ["unlock", "ampass", "cut:1", "cut:2", "cut:3", "cut:4"],
-    "lvlMax": 28,
-    "lastUpdated": 1700956320227
+    "lastUpdated": 1721429380300
   },
   "defaults": {
     "style": "solo",
@@ -91,7 +90,8 @@
         { "lvl": 1, "diffClass": "C2", "style": "coop" },
         { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
-        { "lvl": 17, "diffClass": "S", "style": "solo" }
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" }
       ]
     },
     {
@@ -390,7 +390,8 @@
         { "lvl": 9, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" },
         { "lvl": 16, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
-        { "lvl": 6, "diffClass": "S", "style": "solo" }
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -473,7 +474,8 @@
         { "lvl": 3, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
         { "lvl": 13, "diffClass": "S", "style": "solo" },
-        { "lvl": 7, "diffClass": "D", "style": "solo" }
+        { "lvl": 7, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -1004,7 +1006,8 @@
         { "lvl": 15, "diffClass": "D", "style": "solo" },
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
-        { "lvl": 24, "diffClass": "D", "style": "solo" }
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" }
       ]
     },
     {
@@ -1720,7 +1723,9 @@
         { "lvl": 21, "diffClass": "S", "style": "solo" },
         { "lvl": 23, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
-        { "lvl": 25, "diffClass": "D", "style": "solo" }
+        { "lvl": 25, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -2782,7 +2787,8 @@
         { "lvl": 6, "diffClass": "S", "style": "solo" },
         { "lvl": 10, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" },
-        { "lvl": 16, "diffClass": "S", "style": "solo" }
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -3119,7 +3125,9 @@
         { "lvl": 10, "diffClass": "S", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 13, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo" }
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -3386,7 +3394,8 @@
         { "lvl": 6, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "S", "style": "solo" },
         { "lvl": 14, "diffClass": "S", "style": "solo" },
-        { "lvl": 19, "diffClass": "D", "style": "solo" }
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" }
       ]
     },
     {
@@ -5208,7 +5217,8 @@
         { "lvl": 19, "diffClass": "S", "style": "solo", "flags": ["ampass"] },
         { "lvl": 12, "diffClass": "D", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" },
-        { "lvl": 19, "diffClass": "D", "style": "solo", "flags": ["ampass"] }
+        { "lvl": 19, "diffClass": "D", "style": "solo", "flags": ["ampass"] },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -5905,7 +5915,9 @@
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
-        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+        { "lvl": 1, "diffClass": "C2", "style": "coop" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -6771,6 +6783,26 @@
       ]
     },
     {
+      "saIndex": "784",
+      "name": "Conflict",
+      "jacket": "pump/1676.jpg",
+      "artist": "Siromaru +  Cranky",
+      "bpm": "160",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
       "saIndex": "785",
       "name": "Can-can ~Orpheus in The Party Mix~",
       "jacket": "pump/16A0.jpg",
@@ -7449,7 +7481,8 @@
         { "lvl": 11, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
-        { "lvl": 21, "diffClass": "D", "style": "solo" }
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -8156,7 +8189,9 @@
         { "lvl": 15, "diffClass": "D", "style": "solo" },
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
-        { "lvl": 23, "diffClass": "D", "style": "solo" }
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -8624,7 +8659,8 @@
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "D", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo" }
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C3", "style": "coop" }
       ]
     },
     {
@@ -8643,7 +8679,8 @@
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 8, "diffClass": "D", "style": "solo" },
         { "lvl": 15, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo" }
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -8697,7 +8734,8 @@
         { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" },
-        { "lvl": 26, "diffClass": "D", "style": "solo" }
+        { "lvl": 26, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" }
       ]
     },
     {
@@ -8940,6 +8978,747 @@
         { "lvl": 14, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
         { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "945",
+      "name": "Spray",
+      "jacket": "pump/Spray.jpg",
+      "artist": "WEi",
+      "bpm": "92",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 2, "diffClass": "S", "style": "solo" },
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "D", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "946",
+      "name": "Yo! Say!! Fairy!!!",
+      "jacket": "pump/Yo_Say_Fairy.jpg",
+      "artist": "MYUKKE.",
+      "bpm": "150",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C3", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "947",
+      "name": "Curiosity Overdrive",
+      "jacket": "pump/Curiosity_Overdrive.jpg",
+      "artist": "t+pazolite",
+      "bpm": "192",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "948",
+      "name": "iRELLiA",
+      "jacket": "pump/iRELLiA.jpg",
+      "artist": "HyuN",
+      "bpm": "204",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "949",
+      "name": "PUPA",
+      "jacket": "pump/PUPA.jpg",
+      "artist": "Morimori Atsushi",
+      "bpm": "50-202",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "950",
+      "name": "TOMBOY",
+      "jacket": "pump/TOMBOY.jpg",
+      "artist": "(G)I-DLE",
+      "bpm": "124",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "951",
+      "name": "PANDORA",
+      "jacket": "pump/PANDORA.jpg",
+      "artist": "MAVE:",
+      "bpm": "75",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 2, "diffClass": "S", "style": "solo" },
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "D", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "952",
+      "name": "Bluish Rose",
+      "jacket": "pump/Bluish_Rose.jpg",
+      "artist": "WyvernP",
+      "bpm": "130",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "D", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "953",
+      "name": "Flavor Step!",
+      "jacket": "pump/Flavor_Step.jpg",
+      "artist": "EmoCosine",
+      "bpm": "150",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "954",
+      "name": "TRICKL4SH 220",
+      "jacket": "pump/TRICKL4SH_220.jpg",
+      "artist": "Lite Show Magic",
+      "bpm": "220",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "955",
+      "name": "See",
+      "jacket": "pump/See.jpg",
+      "artist": "Doin",
+      "bpm": "293",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "956",
+      "name": "Sudden Appearance Image",
+      "jacket": "pump/Sudden_Appearance_Image.jpg",
+      "artist": "Blacklolita",
+      "bpm": "170",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "957",
+      "name": "Little Munchkin",
+      "jacket": "pump/Little_Munchkin.jpg",
+      "artist": "Castellia",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "D", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "958",
+      "name": "Simon Says, EURODANCE!!",
+      "jacket": "pump/Simon_Says_EURODANCE.jpg",
+      "artist": "Jehezukiel & KAZEMURA & Hideky feat. Sara☆M",
+      "bpm": "157",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "959",
+      "name": "STAGER",
+      "jacket": "pump/STAGER.jpg",
+      "artist": "Ras",
+      "bpm": "146",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "960",
+      "name": "Lucid Dream",
+      "jacket": "pump/Lucid_Dream.jpg",
+      "artist": "Cosmograph",
+      "bpm": "173",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "961",
+      "name": "Solfeggietto",
+      "jacket": "pump/Solfeggietto.jpg",
+      "artist": "Fiverwater",
+      "bpm": "157",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "962",
+      "name": "Le Nozze di Figaro ~Celebrazione Remix~",
+      "jacket": "pump/Le_Nozze_di_Figaro_Celebrazione_Remix.jpg",
+      "artist": "Sr. Lan Belmont",
+      "bpm": "172",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "963",
+      "name": "PRiMA MATERiA",
+      "jacket": "pump/PRiMA_MATERiA.jpg",
+      "artist": "xi",
+      "bpm": "187",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "964",
+      "name": "Destr0yer",
+      "jacket": "pump/Destr0yer.jpg",
+      "artist": "Sakuzyo",
+      "bpm": "90",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "965",
+      "name": "CRUSH",
+      "jacket": "pump/CRUSH.jpg",
+      "artist": "ZEROBASEONE",
+      "bpm": "154",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 2, "diffClass": "S", "style": "solo" },
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "966",
+      "name": "Bubble",
+      "jacket": "pump/Bubble.jpg",
+      "artist": "STAYC",
+      "bpm": "132",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 2, "diffClass": "S", "style": "solo" },
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 10, "diffClass": "D", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "967",
+      "name": "Queencard",
+      "jacket": "pump/Queencard.jpg",
+      "artist": "(G)I-DLE",
+      "bpm": "130",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "968",
+      "name": "Imperium",
+      "jacket": "pump/Imperium.jpg",
+      "artist": "Sakuzyo",
+      "bpm": "174",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "969",
+      "name": "Hercules",
+      "jacket": "pump/Hercules.jpg",
+      "artist": "Abel",
+      "bpm": "195",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "970",
+      "name": "wither garden",
+      "jacket": "pump/wither_garden.jpg",
+      "artist": "uma feat. Kanon Tachibana",
+      "bpm": "168",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "971",
+      "name": "Poppin' Shower",
+      "jacket": "pump/Poppin_Shower.jpg",
+      "artist": "P*Light",
+      "bpm": "175",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "972",
+      "name": "Giselle",
+      "jacket": "pump/Giselle.jpg",
+      "artist": "Sobrem a.k.a. Widowmaker",
+      "bpm": "128-152",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "973",
+      "name": "Big Daddy",
+      "jacket": "pump/Big_Daddy.jpg",
+      "artist": "USAO",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "974",
+      "name": "Horang Pungryuga",
+      "jacket": "pump/Horang_Pungryuga.jpg",
+      "artist": "Sangnoksu feat. HANANA",
+      "bpm": "160",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "975",
+      "name": "Discord",
+      "jacket": "pump/Discord.jpg",
+      "artist": "QWER",
+      "bpm": "132",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "D", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "976",
+      "name": "Uh-Heung",
+      "jacket": "pump/Uh_Heung.jpg",
+      "artist": "DKZ",
+      "bpm": "128",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 2, "diffClass": "S", "style": "solo" },
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "977",
+      "name": "MEGAHEARTZ",
+      "jacket": "pump/MEGAHEARTZ.jpg",
+      "artist": "DJ Noriken",
+      "bpm": "200",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "978",
+      "name": "Highway Chaser",
+      "jacket": "pump/Highway_Chaser.jpg",
+      "artist": "Cosmograph",
+      "bpm": "155",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "979",
+      "name": "Earendel",
+      "jacket": "pump/Earendel.jpg",
+      "artist": "Palami feat. neur6sia",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "980",
+      "name": "Athena's Shield",
+      "jacket": "pump/Athenas_Shield.jpg",
+      "artist": "Jehezukiel",
+      "bpm": "176",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "981",
+      "name": "Fracture Temporelle",
+      "jacket": "pump/Fracture_Temporelle.jpg",
+      "artist": "Kurokotei",
+      "bpm": "232",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "982",
+      "name": "Rush-More",
+      "jacket": "pump/Rush_More.jpg",
+      "artist": "litmus*",
+      "bpm": "160",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "983",
+      "name": "Chobit Flavor",
+      "jacket": "pump/Chobit_Flavor.jpg",
+      "artist": "aran & t+pazolite",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
       ]
     }
   ]

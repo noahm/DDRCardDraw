@@ -6,6 +6,7 @@ import { useDrawing } from "../drawing-context";
 import { useIntl } from "../hooks/useIntl";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";
+import { Add } from "@blueprintjs/icons";
 
 function identity<T>(i: T) {
   return i;
@@ -75,7 +76,7 @@ export function AutoCompleteSelect(props: Props) {
           key={query}
           onClick={handleClick}
           text={t("tournamentRoundAdd", { round: query })}
-          icon="add"
+          icon={<Add />}
           roleStructure="listoption"
         />
       )}

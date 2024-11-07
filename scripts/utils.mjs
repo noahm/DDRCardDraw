@@ -21,16 +21,54 @@ import { globalAgent as httpsAgent } from "https";
 }
 
 /**
+ * sorts songs in-place, and charts within each song
+ * @template {{ name: string, charts: { style: string, lvl: number }[]}} Input
+ * @param songs {Array<Input>}
+ */
+export function sortSongs(songs) {
+  for (const song of songs) {
+    song.charts.sort((chartA, chartB) => {
+      if (chartA.style !== chartB.style) {
+        // sort singles first, doubles second
+        return chartA.style > chartB.style ? -1 : 1;
+      }
+      // sort by level within style
+      return chartA.lvl - chartB.lvl;
+    });
+  }
+  return songs.sort((songA, songB) => {
+    const nameA = songA.name.toLowerCase();
+    const nameB = songB.name.toLowerCase();
+
+    if (nameA === nameB) {
+      return songA.name > songB.name ? 1 : -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+}
+
+/**
  * @param {string} url
+ * @returns {Promise<JSDOM | null>}
  */
 async function getDomInternal(url) {
   try {
-    return JSDOM.fromURL(url);
+    console.log("fetching", url);
+    const req = await fetch(url);
+    return new JSDOM(await req.text());
   } catch (e) {
-    console.error(e);
+    console.error("Caught error:", e);
   }
 }
 
+/**
+ *
+ * @param {string} url
+ */
 export function getDom(url) {
   return requestQueue.add(() => getDomInternal(url));
 }
@@ -48,7 +86,7 @@ export async function writeJsonData(data, filePath) {
 
 /** @type {PQueue} */
 export const requestQueue = new PQueue({
-  concurrency: 6, // 6 concurrent max
+  concurrency: 1, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
 });
@@ -96,13 +134,19 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
   const { absolute, relative } = getOutputPath(coverUrl, localFilename);
   if (!existsSync(absolute)) {
     requestQueue
-      .add(() => jimp.read(coverUrl), { throwOnTimeout: true })
+      .add(
+        () => {
+          console.log("fetching", coverUrl);
+          return jimp.read(coverUrl);
+        },
+        { throwOnTimeout: true },
+      )
       .then((img) =>
         img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute),
       )
       .catch((e) => {
-        console.error("image download failure");
-        console.error(e);
+        console.error("image download failure for", coverUrl);
+        console.error(e.cause);
       });
   }
 
@@ -112,7 +156,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
 /**
  *
  * @param {string} songName
- * @returns relative output path if jacket exists
+ * @returns {string|undefined} relative output path if jacket exists
  */
 export function checkJacketExists(songName) {
   const paths = getOutputPath("", songName);

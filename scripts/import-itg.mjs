@@ -32,7 +32,6 @@ const data = {
   meta: {
     menuParent: "itg",
     flags: [],
-    lvlMax: 0,
     lastUpdated: Date.now(),
     usesDrawGroups: useTiers,
   },
@@ -42,25 +41,6 @@ const data = {
   },
   i18n: {
     en: {
-      name: pack.name,
-      single: "Single",
-      double: "Double",
-      beginner: "Beginner",
-      basic: "Basic",
-      difficult: "Difficult",
-      expert: "Expert",
-      challenge: "Challenge",
-      edit: "Edit",
-      $abbr: {
-        beginner: "Beg",
-        basic: "Bas",
-        difficult: "Dif",
-        expert: "Exp",
-        challenge: "Cha",
-        edit: "Edit",
-      },
-    },
-    ja: {
       name: pack.name,
       single: "Single",
       double: "Double",
@@ -142,12 +122,36 @@ for (const parsedSong of pack.simfiles) {
     };
     if (useTiers) {
       let tierMatch = parsedSong.title.titleName.match(
-        /^\[T(?:ier\s*)?(\d+)\]/i,
+        // tier marker maybe some number of non-digit characters,
+        // maybe followed by some number of digits
+        /^\[([^\d\]]*)(\d*)\] /i,
       );
       if (tierMatch && tierMatch.length > 0) {
-        const parsedTier = parseInt(tierMatch[1]);
-        chartData.drawGroup = parsedTier;
-        data.meta.lvlMax = Math.max(data.meta.lvlMax, parsedTier);
+        if (tierMatch[2]) {
+          const parsedTier = parseInt(tierMatch[2]);
+          chartData.drawGroup = parsedTier;
+        } else if (tierMatch[1]) {
+          const tierName = tierMatch[1].trim();
+          switch (tierName) {
+            case "LOW":
+              chartData.drawGroup = 1;
+              break;
+            case "MID/LOW":
+              chartData.drawGroup = 2;
+              break;
+            case "MID":
+              chartData.drawGroup = 3;
+              break;
+            case "UPR/MID":
+              chartData.drawGroup = 4;
+              break;
+            case "UPR":
+              chartData.drawGroup = 5;
+              break;
+            default:
+              console.warn(`WARN: unhandled tier name '${tierName}'`);
+          }
+        }
       } else {
         console.error(
           'Expected song titles to include tiers in the form "[T01] ..." but found:\n  ' +
@@ -155,9 +159,6 @@ for (const parsedSong of pack.simfiles) {
           "From folder: " + parsedSong.title.titleDir,
         );
       }
-    } else {
-      // lvl max is calculated on level for non-tiered packs
-      data.meta.lvlMax = Math.max(data.meta.lvlMax, chartData.lvl);
     }
     song.charts.push(chartData);
 
@@ -173,7 +174,7 @@ data.meta.difficulties = data.defaults.difficulties.map((key) => ({
   key,
   color: someColors[key] || "grey", // TODO?
 }));
-data.defaults.upperLvlBound = data.meta.lvlMax;
+data.defaults.upperLvlBound = 0;
 data.defaults.style = data.meta.styles[0];
 
 writeJsonData(data, resolve(join(__dirname, `../src/songs/${stub}.json`)));

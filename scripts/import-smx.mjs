@@ -5,6 +5,7 @@
  */
 
 import { join, resolve, dirname } from "path";
+import { fetch, Agent, setGlobalDispatcher } from "undici";
 import { readFile } from "fs/promises";
 import {
   downloadJacket,
@@ -35,7 +36,6 @@ function queueJacketDownload(coverPath) {
 const ui = reportQueueStatusLive();
 try {
   const songs = [];
-  let lvlMax = 0;
   const log = (whatever) => ui.log.write(whatever);
   const targetFile = join(__dirname, "../src/songs/smx.json");
   const existingData = JSON.parse(
@@ -47,8 +47,21 @@ try {
   }
 
   log(`pulling chart details`);
-  const req = await fetch(`https://statmaniax.com/api/get_song_data`);
-  const songsById = await req.json();
+  let songsById;
+  try {
+    // added in case statmaniax is under load from cab updates and can't
+    // handle TLS handshakes in time for the default timeout
+    const dispatcher = new Agent({ connectTimeout: 30_000 });
+    const req = await fetch(`https://statmaniax.com/api/get_song_data`, {
+      dispatcher,
+    });
+    songsById = await req.json();
+    setGlobalDispatcher(dispatcher);
+  } catch (e) {
+    ui.close();
+    console.error(e);
+    process.exit(1);
+  }
 
   for (const [songId, song] of Object.entries(songsById)) {
     if (!songs[songId]) {
@@ -84,7 +97,6 @@ try {
         chart.flags = ["plus"];
       }
       songs[songId].charts.push(chart);
-      lvlMax = Math.max(lvlMax, chart.lvl);
     }
   }
 
@@ -92,8 +104,6 @@ try {
     ...existingData,
     songs: songs.filter((s) => !!s),
   };
-
-  smxData.meta.lvlMax = lvlMax;
 
   ui.log.write("finished downloading data, writing final JSON output");
   await writeJsonData(smxData, resolve(targetFile));

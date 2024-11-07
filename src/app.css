@@ -4,8 +4,11 @@ body {
   width: 100%;
 }
 
-body {
+:root {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
   position: absolute;
   margin: 0;
 }

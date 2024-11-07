@@ -39,8 +39,9 @@ function labelToFlag(label) {
 }
 
 // specify a mix ancestor
-const DATABASE_FILE = "pumpout.db";
-const VERSION_ANCESTOR = 181;
+const DATABASE_FILE = "../pumpout-db-updates/db/pumpout-phoenix-2.01.db";
+const NEW_JACKETS_DIR = "../pumpout-db-updates/img_big";
+const VERSION_ANCESTOR = 187;
 const DATA_STUB = "pump-phoenix";
 const JACKET_DIR = "pump";
 
@@ -58,7 +59,10 @@ function queueJacketDownload(jacketPath) {
   const filename = path.basename(jacketPath, ".png");
   const outPath = `${JACKET_DIR}/${filename.replace(/^Phoenix_/, "")}.jpg`;
   if (GET_IMAGES) {
-    let imgLocation = path.resolve(__dirname, `../new_img/${filename}.png`);
+    let imgLocation = path.resolve(
+      __dirname,
+      `../${NEW_JACKETS_DIR}/${filename}.png`,
+    );
     if (!fs.existsSync(imgLocation)) {
       imgLocation = `https://pumpout2020.anyhowstep.com${jacketPath}`;
     }
@@ -71,7 +75,6 @@ function queueJacketDownload(jacketPath) {
 // main procedure
 try {
   const db = bettersqlite(DATABASE_FILE);
-  let lvlMax = 0;
   const ui = reportQueueStatusLive();
 
   const cuts = db.prepare("select * from cut order by sortOrder").all();
@@ -355,10 +358,6 @@ ORDER BY
       chartData.flags = flags;
     }
     song.charts.push(chartData);
-
-    if (chart.diffLvl > lvlMax) {
-      lvlMax = chart.diffLvl;
-    }
   }
 
   const pumpData = {
@@ -366,7 +365,6 @@ ORDER BY
       styles: ["solo", "coop"],
       difficulties,
       flags: [...otherFlags, ...cuts.map((cut) => "cut:" + cut.cutId)],
-      lvlMax,
       lastUpdated: Date.now(),
     },
     defaults: {

@@ -4,7 +4,10 @@
 import * as path from "path";
 import { downloadJacket, getDom } from "../utils.mjs";
 
-/** Will try to return a jacket URL from the wiki page, if found */
+/** Will try to return a jacket URL from the wiki page, if found
+ * @param {string} pageUrl
+ * @param {string} overrideSongName
+ */
 export async function getJacketFromRemySong(pageUrl, overrideSongName) {
   const dom = await getDom(pageUrl);
   if (!dom) return;
@@ -68,7 +71,9 @@ export async function getRemovedSongUrls(pageUrl) {
  * @param {JSDOM} dom
  */
 function isSongPage(dom) {
-  return !!dom.window.document.querySelector('a[href="/Category:DDR_Songs"]');
+  return !!dom.window.document.querySelector(
+    'a[href="/Category:DanceDanceRevolution_Songs"]',
+  );
 }
 
 /**
@@ -104,7 +109,8 @@ export async function getCanonicalRemyURL(pageUrl) {
 function getJacketFromThumb(node, songName) {
   /** @type {HTMLImageElement | null} */
   const img = node.querySelector("img");
-  if (img && img.src) return downloadJacket(img.src, songName);
+  const url = new URL(img.src, "https://remywiki.com");
+  if (img && img.src) return downloadJacket(url.href, songName);
 }
 
 /**

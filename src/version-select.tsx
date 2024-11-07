@@ -11,6 +11,7 @@ import { useDrawState } from "./draw-state";
 import { useDataSets } from "./hooks/useDataSets";
 import { groupGameData } from "./utils";
 import { useIntl } from "./hooks/useIntl";
+import { DoubleCaretVertical, FolderOpen } from "@blueprintjs/icons";
 
 export function VersionSelect() {
   const { t } = useIntl();
@@ -31,7 +32,7 @@ export function VersionSelect() {
                 return (
                   <MenuItem
                     key={item.name}
-                    icon="folder-open"
+                    icon={<FolderOpen />}
                     text={t("gameMenu.parent." + item.name)}
                   >
                     {item.games.map((g) => listProps.renderItem(g, g.index))}
@@ -63,7 +64,7 @@ export function VersionSelect() {
       }
       onItemSelect={(item) => loadData(item.name)}
     >
-      <Button text={current.display} rightIcon="double-caret-vertical" />
+      <Button text={current.display} rightIcon={<DoubleCaretVertical />} />
     </Select>
   );
 }

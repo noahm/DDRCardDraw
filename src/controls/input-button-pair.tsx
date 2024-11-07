@@ -18,6 +18,7 @@ export function InputButtonPair({ onClick, ...props }: Props) {
   const handleClick = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const el = inputRef.current!;
+    console.log(el);
     return onClick(el.value, el);
   }, [onClick]);
   return (
