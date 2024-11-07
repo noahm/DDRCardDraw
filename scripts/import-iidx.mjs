@@ -8,6 +8,7 @@ import { writeJsonData } from "./utils.mjs";
 import { fileURLToPath } from "url";
 import { parseStringPromise } from "xml2js";
 import { decode as decodeHTML } from "html-entities";
+import { JSDOM } from "jsdom";
 import { fakeTextage } from "./scraping/textage.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -48,7 +49,7 @@ const folderNames = [
   "CastHour",
   "RESIDENT",
   "EPOLIS",
-  "---",
+  "Pinky Crush",
   "---",
   "---",
   "substream", // textage files substream charts as 35th style - subject to change
@@ -89,23 +90,38 @@ const jacketPalettes = [
   ["#000000", "#fb6701", "#1a2162"], // 29th / CastHour
   ["#000000", "#010efd", "#cb2690"], // 30th / RESIDENT
   ["#000000", "#f0ff00", "#6229d1"], // 31st / EPOLIS
-  ["#000000", "#000000", "#000000"], // 32nd
+  ["#000000", "#ec2f95", "#00f7fe"], // 32nd / Pinky Crush
   ["#000000", "#000000", "#000000"], // 33rd
   ["#000000", "#000000", "#000000"], // 34th
   ["#000000", "#feb900", "#d36a00"], // "35th" / substream
 ];
+const jacketFont = "bold 28px Evogria,sans-serif";
+const jacketFontStyling = `fill:white;font:${jacketFont};dominant-baseline:middle;text-anchor:middle;stroke:#000000;stroke-width:2px`;
+
+function measureTextWidth(text) {
+  var dom = new JSDOM(`<!DOCTYPE html><head><meta charset="UTF-8"></head>`);
+  var document = dom.window.document;
+  const canvas = document.createElement("canvas"); // Requires the npm package canvas in the dev environment
+  const ctx = canvas.getContext("2d");
+  ctx.font = jacketFont;
+  const metrics = ctx.measureText(text);
+  return metrics.width;
+}
 
 // textage.cc doesn't indicate songs that are time-locked or shop-bought, most of the time
 // (some are colored red in the list, but not all)
 // TODO: bemaniwiki can give us this info, but navigating/reading it may be a bit tricky
-// https://bemaniwiki.com/?beatmania+IIDX+31+EPOLIS/%B5%EC%B6%CA%A5%EA%A5%B9%A5%C8
+// https://bemaniwiki.com/?beatmania+IIDX+32+Pinky+Crush/%B5%EC%B6%CA%A5%EA%A5%B9%A5%C8
 const timelockTags = [
-  // arena unlocks
-  "logic",
+  // arena unlocks from last mix
   "fun30",
   "max300",
   "tpolak30",
   "ref_eden",
+  // arena unlocks from this mix
+  "logic",
+  "parasv31",
+  "guilty",
   // one-offs (kiwami class unlocks, KAC quals, cross-game promos, etc.)
   "deeproar",
   "_pfeater",
@@ -113,38 +129,50 @@ const timelockTags = [
   "_isnpyon",
 ];
 // TODO: bemaniwiki can give us this info, but navigating/reading it may be a bit tricky
-// https://bemaniwiki.com/?beatmania+IIDX+31+EPOLIS/LEGGENDARIA%A5%D5%A5%A9%A5%EB%A5%C0
+// https://bemaniwiki.com/?beatmania+IIDX+32+Pinky+Crush/LEGGENDARIA%A5%D5%A5%A9%A5%EB%A5%C0
 const timelockLegs = [
-  // secret legs from this mix
+  // secret legs from last mix
   "neogenes",
   "blstwind",
   "yheadjoe",
   "bldragon",
   "_koisuru",
   "code_0",
+  // secret legs from this mix
+  "smooooch",
+  "script_n",
+  "script_h",
+  "alba",
+  "bitchoco",
+  "_casino",
+  "lightstr",
   // arena legs from this & last mix
-  "eden",
-  "elespada",
-  "hydrblue",
-  "brnflame",
-  "dancwith",
-  "euphoria",
-  "fourpces",
-  "viopulse",
-  "_aether",
-  "_mausole",
   "_hyouri",
+  "explorer",
+  "o_d_20",
+  "miracle5",
+  "madatack",
+  "saturn",
+  "pinkr_ra",
+  "_kachofu",
+  "strtrail",
+  "slwyvern",
+  "starjunc",
+  "_azisai",
+  "guilty",
+  "lostsoul",
+  "zeroone",
+  "_wadatmi",
+  "dthzigoq",
 ];
 // Some songs come up as part of events, but are actually available now in the default songlist.
 const eventReleases = [
-  // X-record 1st
-  "apolioth",
-  "blkwhite",
-  "_dscrdia",
-  // ULTIMATE MOBILE time release
-  "firebeat",
-  "otokozak",
-  "sparknit",
+  // Triple Tribe 1st & 2nd were both EPOLIS? damn tho
+  // "ccrimson",
+  // "max_360",
+  // "suspcion",
+  // ULTIMATE MOBILE time release should be cleared out.
+  // "_shvnccd",
 ];
 
 function listProps(x) {
@@ -212,12 +240,12 @@ async function main() {
       ],
       flags: [
         "mypolis",
+        "restoration",
+        "singularity",
+        "bplSeason4",
         "ultimateMobile",
         "worldTourism",
-        "residentParty",
         "tripleTribe",
-        "xRecord",
-        "ichikaGochamaze",
         "timelock",
       ],
       lastUpdated: 0,
@@ -231,7 +259,7 @@ async function main() {
     },
     i18n: {
       en: {
-        name: "IIDX AC (EPOLIS)", // TODO: automatically determine from textage?
+        name: "IIDX AC (Pinky Crush)", // TODO: automatically determine from textage?
         single: "SP",
         double: "DP",
         beginner: "BEGINNER",
@@ -240,12 +268,12 @@ async function main() {
         another: "ANOTHER",
         leggendaria: "LEGGENDARIA",
         mypolis: "MYPOLIS DESIGNER",
+        restoration: "EPOLIS RESTORATION",
+        singularity: "EPOLIS SINGULARITY",
+        bplSeason4: "BPL SEASON4 PURCHASE PERKS",
         ultimateMobile: "ULTIMATE MOBILE ARCADE CONNECT",
         worldTourism: "WORLD TOURISM",
-        residentParty: "RESIDENT PARTY",
         tripleTribe: "Triple Tribe",
-        xRecord: "X-record",
-        ichikaGochamaze: "Ichika's Gochamaze Mix UP!",
         timelock: "Time-locked or shop-bought",
         $abbr: {
           beginner: "[B]",
@@ -256,7 +284,7 @@ async function main() {
         },
       },
       ja: {
-        name: "IIDX AC (EPOLIS)", // TODO: automatically determine from textage?
+        name: "IIDX AC (Pinky Crush)", // TODO: automatically determine from textage?
         single: "SP",
         double: "DP",
         beginner: "BEGINNER",
@@ -265,12 +293,12 @@ async function main() {
         another: "ANOTHER",
         leggendaria: "LEGGENDARIA",
         mypolis: "マイポリスデザイナー",
+        restoration: "EPOLIS RESTORATION",
+        singularity: "EPOLIS SINGULARITY",
+        bplSeason4: "BPL SEASON4 チケット購入特典",
         ultimateMobile: "ULTIMATE MOBILE アーケード連動",
         worldTourism: "WORLD TOURISM",
-        residentParty: "RESIDENT PARTY",
         tripleTribe: "Triple Tribe",
-        xRecord: "X-record",
-        ichikaGochamaze: "いちかのごちゃまぜMix UP!",
         timelock: "現在解禁不可・公式サイトに購入必須",
         $abbr: {
           beginner: "[B]",
@@ -331,6 +359,18 @@ async function main() {
         );
         const songBPM = datatbl[songTag][11] || "[BPM N/A]";
 
+        // Title and subtitle
+        var nameExt = decodeHTML(await unwrapHTML(titletbl[songTag][5]), {
+          scope: "strict",
+        });
+        if (titletbl[songTag][6]) {
+          nameExt +=
+            " " +
+            decodeHTML(await unwrapHTML(titletbl[songTag][6]), {
+              scope: "strict",
+            });
+        }
+
         var chartData = [];
         for (let v of chartSlot.entries()) {
           // DP -> double, SP -> single
@@ -363,18 +403,6 @@ async function main() {
             }
             chartData.push(chartInfo);
           }
-        }
-
-        // Title and subtitle
-        var nameExt = decodeHTML(await unwrapHTML(titletbl[songTag][5]), {
-          scope: "strict",
-        });
-        if (titletbl[songTag][6]) {
-          nameExt +=
-            " " +
-            decodeHTML(await unwrapHTML(titletbl[songTag][6]), {
-              scope: "strict",
-            });
         }
 
         // Unlock category, if applicable
@@ -434,6 +462,7 @@ async function main() {
   );
   for (let fn of folderNames.entries()) {
     const folderName = folderNames[fn[0]];
+    const folderNameWidth = measureTextWidth(" " + folderName + " ");
     const folderFile = folderName.replaceAll(" ", "-");
     var jacketSpecific = jacketTemplate;
     for (let jp of jacketPaletteEntries.entries()) {
@@ -441,6 +470,15 @@ async function main() {
         `{{${jp[1]}}}`,
         jacketPalettes[fn[0]][jp[0]],
       );
+    }
+    const otherJacketParameters = {
+      folderName: folderName,
+      folderNameStyling: jacketFontStyling,
+      folderNameWidth: `${folderNameWidth}`,
+      folderNameWidthHalf: `${folderNameWidth * 0.5}`,
+    };
+    for (let jp of Object.entries(otherJacketParameters)) {
+      jacketSpecific = jacketSpecific.replaceAll(`{{${jp[0]}}}`, jp[1]);
     }
     await fs.writeFile(
       path.resolve(path.join(jacketPath, `${folderFile}.svg`)),

@@ -9,11 +9,18 @@
         <stop offset="0%" stop-color="black" />
         <stop offset="100%" stop-color="white" />
         </linearGradient>
+        <linearGradient id="accent" x1="0.3" x2="0.7" y1="0.7" y2="0.3">
+        <stop offset="0%" stop-color="{{accentUpper}}" />
+        <stop offset="100%" stop-color="{{accentLower}}" />
+        </linearGradient>
         <mask id="gradientMask">
             <rect width="480" height="320" style="fill:url(#hide)" />
         </mask>
         <mask id="stripeMask">
             <rect width="480" height="320" style="fill:url(#strote)" />
+        </mask>
+        <mask id="folderNameMask">
+            <rect width="480" height="320" style="fill:url(#folderName)" />
         </mask>
     </defs>
     <pattern id="stripes" width="12" height="12" patternUnits="userSpaceOnUse">
@@ -25,7 +32,15 @@
             <rect width="960" height="960" x="-480" y="-480" style="fill:url(#stripes)" />
         </g></g>
     </pattern>
+    <pattern id="folderName" width="{{folderNameWidth}}" height="60" patternUnits="userSpaceOnUse">
+        <text x="{{folderNameWidthHalf}}" y="15" style="{{folderNameStyling}}">{{folderName}}</text>
+        <text x="0" y="45" style="{{folderNameStyling}}">{{folderName}}</text>
+        <text x="{{folderNameWidth}}" y="45" style="{{folderNameStyling}}">{{folderName}}</text>
+    </pattern>
     <rect width="480" height="320" style="fill:{{backdrop}}" />
+    <g mask="url(#folderNameMask)">
+        <rect width="480" height="320" style="fill:url(#accent)" />
+    </g>
     <g mask="url(#gradientMask)">
         <rect width="480" height="320" style="fill:{{accentLower}}" mask="url(#stripeMask)" />
     </g>
