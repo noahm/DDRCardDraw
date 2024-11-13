@@ -573,7 +573,6 @@ function GeneralSettings() {
           onChange={(e) => {
             const useGranularLevels = !!e.currentTarget.checked;
             updateState((prev) => {
-              1 / (gameData?.meta.granularTierResolution || 0);
               let nextUpperBound = !useGranularLevels
                 ? Math.floor(prev.upperBound)
                 : new Fraction(prev.upperBound + 1)

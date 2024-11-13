@@ -147,12 +147,10 @@ export async function shareData(
  * @returns promise of share event if initiated, or false if not attempted
  */
 export function mobileShare(shareData: ShareData, allowDesktop = false) {
-  const agent: string =
-    navigator.userAgent || navigator.vendor || (window as any).opera;
   if (
     typeof navigator.share !== "undefined" &&
     typeof navigator.canShare === "function" &&
-    (allowDesktop || isMobile(agent))
+    (allowDesktop || isMobile(navigator.userAgent))
   ) {
     if (navigator.canShare(shareData)) {
       return navigator.share(shareData).catch();
