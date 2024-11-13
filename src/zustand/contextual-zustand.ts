@@ -6,7 +6,8 @@ import {
   createElement,
   useEffect,
 } from "react";
-import { StoreApi, useStore, createStore } from "zustand";
+import { StoreApi, createStore } from "zustand";
+import { useStoreWithEqualityFn as useStore } from "zustand/traditional";
 
 export function createContextualStore<
   StoreValue,
