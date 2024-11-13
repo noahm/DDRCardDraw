@@ -16,6 +16,8 @@ jobs:
             name: Typecheck
           - check: "validate:format"
             name: Formatting
+          - check: "validate:lint"
+            name: Linter
           - check: webpack
             name: Build
     steps:

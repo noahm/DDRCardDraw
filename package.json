@@ -20,7 +20,8 @@
     "import:iidx": "node scripts/import-iidx.mjs",
     "import:smx": "node scripts/import-smx.mjs",
     "import:itg": "node scripts/import-itg.mjs",
-    "validate": "npm run validate:json && npm run validate:ts && npm run validate:format && eslint src",
+    "validate": "npm run validate:json && npm run validate:ts && npm run validate:format && npm run validate:lint",
+    "validate:lint": "eslint",
     "validate:json": "node scripts/validate.mjs",
     "validate:format": "prettier --check ./src ./scripts",
     "validate:ts": "tsc --noemit"
