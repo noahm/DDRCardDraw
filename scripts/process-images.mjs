@@ -2,7 +2,7 @@
  * Place manually downloaded images into `new-jackets`
  * and run this to downscale and post-proccess names
  **/
-import jimp from "jimp";
+import { Jimp, ResizeStrategy } from "jimp";
 import { statSync, readdirSync } from "fs";
 import { resolve, join, dirname } from "path";
 
@@ -17,9 +17,9 @@ function transformFilename(f) {
 
 async function processImg(input, output) {
   try {
-    const img = await jimp.read(input);
+    const img = await Jimp.read(input);
 
-    await img.resize(200, jimp.AUTO).quality(80).writeAsync(output);
+    await img.resize({ w: 200, mode: ResizeStrategy.BILINEAR }).write(output);
 
     console.log(
       `Wrote ${output} (${(statSync(output).size / 1024).toFixed(0)}kb)`,
