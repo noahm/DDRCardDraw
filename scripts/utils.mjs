@@ -2,7 +2,7 @@ import { promises, existsSync } from "fs";
 import { resolve, basename, join, dirname } from "path";
 import { format } from "prettier";
 import PQueue from "p-queue";
-import jimp from "jimp";
+import { Jimp, ResizeStrategy } from "jimp";
 import BottomBar from "inquirer/lib/ui/bottom-bar.js";
 import sanitize from "sanitize-filename";
 
@@ -117,6 +117,8 @@ function getOutputPath(coverUrl, localFilename) {
   );
   const outputPath = join(dirname(localFilename), sanitizedFilename);
   return {
+    /** @type {"someFilePath.jpg"} */
+    // @ts-ignore
     absolute: join(JACKETS_PATH, outputPath),
     relative: outputPath.replace(/\\/g, "/"),
   };
@@ -137,12 +139,14 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
       .add(
         () => {
           console.log("fetching", coverUrl);
-          return jimp.read(coverUrl);
+          return Jimp.read(coverUrl);
         },
         { throwOnTimeout: true },
       )
       .then((img) =>
-        img.resize(128, jimp.AUTO).quality(80).writeAsync(absolute),
+        img
+          .resize({ w: 128, mode: ResizeStrategy.BILINEAR })
+          .write(absolute, { quality: 80 }),
       )
       .catch((e) => {
         console.error("image download failure for", coverUrl);
