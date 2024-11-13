@@ -169,9 +169,9 @@ export function SongCard(props: Props) {
       <SongSearch
         isOpen={!!pocketPickPendingForPlayer}
         onSongSelect={(song, chart) => {
-          actionsEnabled &&
-            chart &&
+          if (actionsEnabled && chart) {
             iconCallbacks.onReplace(pocketPickPendingForPlayer as 1 | 2, chart);
+          }
           setPocketPickPendingForPlayer(0);
         }}
         onCancel={() => setPocketPickPendingForPlayer(0)}

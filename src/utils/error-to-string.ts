@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function hasToString(i: any): i is { toString(): string } {
   return "toString" in i && typeof i["toString"] === "function";
 }

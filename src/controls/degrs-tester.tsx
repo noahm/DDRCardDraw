@@ -27,7 +27,6 @@ export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
 }
 
 function* oneMillionDraws() {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const gameData = useDrawState.getState().gameData!;
   const configState = useConfigState.getState();
 
