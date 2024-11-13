@@ -2,7 +2,6 @@
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 
-// import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 
 /** @type {import("@typescript-eslint/utils").TSESLint.FlatConfig.Config}*/
@@ -29,8 +28,6 @@ export default tseslint.config(
   },
   // eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  // reactPlugin.configs.flat.recommended,
-  // reactPlugin.configs.flat["jsx-runtime"],
   reactHooksConfig,
   eslintConfigPrettier,
 );
