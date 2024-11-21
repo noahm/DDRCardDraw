@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1731463862015
+    "lastUpdated": 1732222706322
   },
   "defaults": {
     "style": "solo",
@@ -4583,7 +4583,7 @@
         { "style": "solo", "lvl": 16, "diffClass": "hard" },
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 17, "diffClass": "dual" },
-        { "style": "solo", "lvl": 21, "diffClass": "full" },
+        { "style": "solo", "lvl": 20, "diffClass": "full" },
         { "style": "team", "lvl": 17, "diffClass": "team" }
       ],
       "saIndex": "454"
@@ -4618,7 +4618,7 @@
         { "style": "solo", "lvl": 23, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 25, "diffClass": "full" },
-        { "style": "team", "lvl": 25, "diffClass": "team" }
+        { "style": "team", "lvl": 26, "diffClass": "team" }
       ],
       "saIndex": "456"
     },
@@ -5152,18 +5152,19 @@
     {
       "saIndex": "488",
       "name": "403",
-      "artist": "NAOKI Underground",
+      "artist": "NAOKI underground",
       "genre": "Orchestral Drumstep",
       "bpm": "160",
       "jacket": "smx/403.jpg",
       "charts": [
         { "style": "solo", "lvl": 5, "diffClass": "beginner" },
         { "style": "solo", "lvl": 11, "diffClass": "easy" },
-        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
         { "style": "solo", "lvl": 23, "diffClass": "wild" },
         { "style": "solo", "lvl": 21, "diffClass": "dual" },
         { "style": "solo", "lvl": 25, "diffClass": "full" },
-        { "style": "team", "lvl": 21, "diffClass": "team" }
+        { "style": "team", "lvl": 21, "diffClass": "team" },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] }
       ]
     },
     {
