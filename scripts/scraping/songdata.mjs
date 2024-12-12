@@ -7301,7 +7301,7 @@ export const ALL_SONG_DATA = [
     song_name: "Polovtsian Dances And Chorus",
     alphabet: "P",
     version_num: 9,
-    ratings: [3, 4, 9, 11, 0, 5, 9, 12, 0],
+    ratings: [3, 4, 9, 11, 0, 5, 9, 11, 0],
     tiers: [0.15, 0.3, 0.05, 0.15, 0, 0.1, 0.15, 0.05, 0],
   },
   {
