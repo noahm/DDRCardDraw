@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1732222706322
+    "lastUpdated": 1736151903996
   },
   "defaults": {
     "style": "solo",
@@ -5283,7 +5283,11 @@
         { "style": "solo", "lvl": 23, "diffClass": "wild" },
         { "style": "solo", "lvl": 18, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
-        { "style": "team", "lvl": 19, "diffClass": "team" }
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 12, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "full", "flags": ["plus"] }
       ]
     },
     {
@@ -5295,12 +5299,16 @@
       "jacket": "smx/GetUp'nMove.jpg",
       "charts": [
         { "style": "solo", "lvl": 4, "diffClass": "beginner" },
-        { "style": "solo", "lvl": 8, "diffClass": "easy" },
+        { "style": "solo", "lvl": 7, "diffClass": "easy" },
         { "style": "solo", "lvl": 17, "diffClass": "hard" },
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 19, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
-        { "style": "team", "lvl": 16, "diffClass": "team" }
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 13, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 15, "diffClass": "full", "flags": ["plus"] }
       ]
     },
     {
@@ -5312,12 +5320,16 @@
       "jacket": "smx/Insane.jpg",
       "charts": [
         { "style": "solo", "lvl": 4, "diffClass": "beginner" },
-        { "style": "solo", "lvl": 9, "diffClass": "easy" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy" },
         { "style": "solo", "lvl": 15, "diffClass": "hard" },
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 19, "diffClass": "dual" },
         { "style": "solo", "lvl": 20, "diffClass": "full" },
-        { "style": "team", "lvl": 17, "diffClass": "team" }
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 14, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "full", "flags": ["plus"] }
       ]
     },
     {
@@ -5334,7 +5346,11 @@
         { "style": "solo", "lvl": 19, "diffClass": "wild" },
         { "style": "solo", "lvl": 8, "diffClass": "dual" },
         { "style": "solo", "lvl": 19, "diffClass": "full" },
-        { "style": "team", "lvl": 17, "diffClass": "team" }
+        { "style": "team", "lvl": 17, "diffClass": "team" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 13, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 13, "diffClass": "full", "flags": ["plus"] }
       ]
     },
     {
@@ -5351,7 +5367,11 @@
         { "style": "solo", "lvl": 21, "diffClass": "wild" },
         { "style": "solo", "lvl": 14, "diffClass": "dual" },
         { "style": "solo", "lvl": 18, "diffClass": "full" },
-        { "style": "team", "lvl": 18, "diffClass": "team" }
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 12, "diffClass": "full", "flags": ["plus"] }
       ]
     },
     {
@@ -5363,12 +5383,16 @@
       "jacket": "smx/WeDoThisDance.jpg",
       "charts": [
         { "style": "solo", "lvl": 2, "diffClass": "beginner" },
-        { "style": "solo", "lvl": 7, "diffClass": "easy" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy" },
         { "style": "solo", "lvl": 15, "diffClass": "hard" },
         { "style": "solo", "lvl": 22, "diffClass": "wild" },
         { "style": "solo", "lvl": 17, "diffClass": "dual" },
         { "style": "solo", "lvl": 23, "diffClass": "full" },
-        { "style": "team", "lvl": 19, "diffClass": "team" }
+        { "style": "team", "lvl": 19, "diffClass": "team" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 11, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "full", "flags": ["plus"] }
       ]
     },
     {
@@ -8513,6 +8537,132 @@
         { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "663",
+      "name": "Baila Bolero",
+      "artist": "Fun Fun",
+      "genre": "Eurodisco",
+      "bpm": "126",
+      "jacket": "smx/BailaBolero.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 11, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 12, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "664",
+      "name": "Be Alright",
+      "artist": "Red Parker",
+      "genre": "Rock",
+      "bpm": "164",
+      "jacket": "smx/BeAlright.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 16, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "665",
+      "name": "Set My Heart On Fire",
+      "artist": "Rocket Man",
+      "genre": "Eurobeat",
+      "bpm": "162",
+      "jacket": "smx/SetMyHeartOnFire.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 22, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "666",
+      "name": "Total Nuclear Annihilation",
+      "artist": "Scott Danesi",
+      "genre": "Synthwave",
+      "bpm": "121",
+      "jacket": "smx/TotalNuclearAnnihilation.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 16, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 20, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "667",
+      "name": "Happy Holiday",
+      "artist": "Luv Limited -NM-",
+      "genre": "Happy Hardcore",
+      "bpm": "180",
+      "jacket": "smx/HappyHoliday.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 21, "diffClass": "wild" },
+        { "style": "solo", "lvl": 12, "diffClass": "dual" },
+        { "style": "solo", "lvl": 13, "diffClass": "full" },
+        { "style": "team", "lvl": 21, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "668",
+      "name": "Running In The 90s",
+      "artist": "Max Coveri",
+      "genre": "Eurobeat",
+      "bpm": "158",
+      "jacket": "smx/RunningInThe90s.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 15, "diffClass": "hard" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 24, "diffClass": "team" },
+        { "style": "solo", "lvl": 12, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 24, "diffClass": "full", "flags": ["plus"] }
       ]
     }
   ]
