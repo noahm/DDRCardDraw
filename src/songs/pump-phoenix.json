@@ -14,7 +14,7 @@
       { "key": "R", "color": "#23a98d" }
     ],
     "flags": ["unlock", "ampass", "cut:1", "cut:2", "cut:3", "cut:4"],
-    "lastUpdated": 1721429380300
+    "lastUpdated": 1731787557894
   },
   "defaults": {
     "style": "solo",
@@ -9719,6 +9719,289 @@
         { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "984",
+      "name": "DO or DIE",
+      "jacket": "pump/DO_or_DIE.jpg",
+      "artist": "xikers",
+      "bpm": "170",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 2, "diffClass": "S", "style": "solo" },
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "985",
+      "name": "Appassionata",
+      "jacket": "pump/Appassionata.jpg",
+      "artist": "Cashew x D_AAN x Jehezukiel",
+      "bpm": "160-210",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 25, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" },
+        { "lvl": 27, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C4", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "986",
+      "name": "Murdoch vs Otada",
+      "jacket": "pump/Murdoch_vs_Otada.jpg",
+      "artist": "ESPITZ vs WONDERTRAVELER Project",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "987",
+      "name": "Dancing",
+      "jacket": "pump/Dancing.jpg",
+      "artist": "Said",
+      "bpm": "151",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "988",
+      "name": "Mahika",
+      "jacket": "pump/Mahika.jpg",
+      "artist": "The Musical Ghost",
+      "bpm": "188",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "989",
+      "name": "Nostalgia",
+      "jacket": "pump/Nostalgia.jpg",
+      "artist": "Woody",
+      "bpm": "100",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 3, "diffClass": "S", "style": "solo" },
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 10, "diffClass": "D", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "990",
+      "name": "Stardream -Eurobeat Remix-",
+      "jacket": "pump/Stardream_Eurobeat_Remix.jpg",
+      "artist": "MAX x Cashew x Dave Rodgers",
+      "bpm": "160",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "991",
+      "name": "Hymn of Golden Glory",
+      "jacket": "pump/Hymn_of_Golden_Glory.jpg",
+      "artist": "Essbee",
+      "bpm": "244",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 25, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "992",
+      "name": "Perpetual",
+      "jacket": "pump/Perpetual.jpg",
+      "artist": "Qu-ail",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "993",
+      "name": "* this game does not exist *",
+      "jacket": "pump/this_game_does_not_exist.jpg",
+      "artist": "litmus* x Ester",
+      "bpm": "40~240",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "994",
+      "name": "DUEL",
+      "jacket": "pump/DUEL.jpg",
+      "artist": "Cashew & D_AAN",
+      "bpm": "155",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "995",
+      "name": "INVASION",
+      "jacket": "pump/INVASION.jpg",
+      "artist": "D_AAN",
+      "bpm": "220",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "996",
+      "name": "Underworld ft. Skizzo (PIU Edit.)",
+      "jacket": "pump/Underworld_ft_Skizzo.jpg",
+      "artist": "MonstDeath vs Neutral Moon",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "997",
+      "name": "Odin",
+      "jacket": "pump/Odin.jpg",
+      "artist": "Gram",
+      "bpm": "200",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "998",
+      "name": "Soldiers (TANO*C W TEAM RED ANTHEM)",
+      "jacket": "pump/Soldiers.jpg",
+      "artist": "DJ Noriken",
+      "bpm": "170",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
       ]
     }
   ]
