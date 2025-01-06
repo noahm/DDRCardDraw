@@ -228,7 +228,7 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
 export type StartggInfo = Pick<Drawing, "meta">;
 export type StartingPoint = Drawing | StartggInfo;
 
-const artistDrawBlocklist = new Set(["Carlito", "Dr. Bombay"]);
+const artistDrawBlocklist = new Set();
 
 /**
  * Produces a drawn set of charts given the song data and the user
