@@ -5,7 +5,7 @@ import { reducer } from "../state/root-reducer";
 import { AppState, type store as appReduxStore } from "../state/store";
 
 import { createClient } from "@supabase/supabase-js";
-import { Database, Json } from "./database.types";
+import type { Database, Json } from "./database.types";
 
 const supabase = createClient<Database>(
   process.env.SUPABASE_URL as string,
@@ -57,6 +57,14 @@ export default class Server implements Party.Server {
     return this.room.storage.get<AppState>("currentState");
   }
 
+  onRequest(req: Party.Request): Response | Promise<Response> {
+    if (req.method === "GET") {
+      return new Response(this.getRoomState());
+    }
+
+    return new Response("Method not allowed", { status: 405 });
+  }
+
   onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
     // A websocket just connected!
     console.log(
@@ -70,7 +78,7 @@ export default class Server implements Party.Server {
     conn.send(this.getRoomState());
   }
 
-  onMessage(message: string, sender: Party.Connection) {
+  async onMessage(message: string, sender: Party.Connection) {
     // broadcast it to all the other connections in the room...
     this.room.broadcast(
       message,
@@ -85,11 +93,15 @@ export default class Server implements Party.Server {
     // persist to partykit storage
     this.room.storage.put("currentState", nextState);
     // persist the state to supabase
-    supabase.from("event_state").upsert({
-      id: this.room.id,
-      state: nextState as unknown as Json,
-      updated_at: new Date().toISOString(),
-    });
+    try {
+      await supabase.from("event_state").upsert({
+        id: this.room.id,
+        state: nextState as unknown as Json,
+        updated_at: new Date().toISOString(),
+      });
+    } catch (e) {
+      console.warn("error with upsert", e);
+    }
   }
 
   private getRoomState() {
