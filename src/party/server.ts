@@ -29,8 +29,11 @@ export default class Server implements Party.Server {
   }
 
   async onStart() {
-    const preloadedState =
-      (await this.getFromStorage()) || (await this.getFromSupabase());
+    let preloadedState: AppState | undefined;
+    try {
+      preloadedState =
+        (await this.getFromStorage()) || (await this.getFromSupabase());
+    } catch {}
     if (preloadedState) {
       this.store = configureStore({ reducer, preloadedState });
     } else {
