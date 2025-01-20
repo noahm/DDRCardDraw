@@ -5,15 +5,17 @@ import {
   createSelector,
 } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, useStore } from "react-redux";
-import { reducer } from "./root-reducer";
+import { reducer, type AppState } from "./root-reducer";
 import { middleware as listener } from "./listener-middleware";
+import { preloadedState } from "./localstorage";
 
 export const store = configureStore({
   reducer,
   middleware: (getDefaults) => getDefaults().concat(listener),
+  preloadedState,
 });
 
-export type AppState = ReturnType<typeof store.getState>;
+export type { AppState };
 export const useAppState = useSelector.withTypes<AppState>();
 export const createAppSelector = createSelector.withTypes<AppState>();
 export type AppDispatch = typeof store.dispatch;

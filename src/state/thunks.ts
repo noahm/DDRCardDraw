@@ -28,28 +28,29 @@ function trackDraw(count: number | null, game?: string) {
 export function createDraw(
   startggTargetSet: StartggInfo,
   configId: string,
-): AppThunk {
+): AppThunk<Promise<"nok" | "ok">> {
   return async (dispatch, getState) => {
     const state = getState();
     const config = configSlice.selectors.selectById(state, configId);
     if (!config) {
       console.error("couldnt draw, no config");
-      return false;
+      return "nok";
     }
     const gameData = await loadStockGamedataByName(config.gameKey);
     if (!gameData) {
       console.error("couldnt draw, no game data");
       trackDraw(null);
-      return false; // no draw was possible
+      return "nok"; // no draw was possible
     }
 
     const drawing = draw(gameData, config, startggTargetSet);
     trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
     if (!drawing.charts.length) {
-      return false; // could not draw the requested number of charts
+      return "nok"; // could not draw the requested number of charts
     }
 
     dispatch(drawingsSlice.actions.addDrawing(drawing));
+    return "ok";
   };
 }
 

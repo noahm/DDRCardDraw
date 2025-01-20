@@ -48,7 +48,7 @@ export default function EligibleChartsView() {
   );
 }
 
-export function EligibleChartsList() {
+function EligibleChartsList() {
   const gameData = useGameData();
   const [currentTab] = useDeferredValue(useAtom(currentTabAtom));
   const configState = useDeferredValue(useConfigState());

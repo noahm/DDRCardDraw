@@ -6,6 +6,8 @@ import { eventSlice } from "./event.slice";
 
 const combinedReducer = combineSlices(drawingsSlice, configSlice, eventSlice);
 
+export type AppState = ReturnType<typeof combinedReducer>;
+
 export const reducer: typeof combinedReducer = (state, action) => {
   if (receivePartyState.match(action)) {
     return Object.assign({}, state, action.payload);

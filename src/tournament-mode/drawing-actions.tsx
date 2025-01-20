@@ -37,6 +37,7 @@ import { createPlusOneChart, createRedrawAll } from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
 import { shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
+import { EventModeGated } from "../common-components/app-mode";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
@@ -215,13 +216,15 @@ export function DrawingActions() {
           <Button minimal icon={<Error />} onClick={showBoundary} />
         </Tooltip>
       )}
-      {!!cabs.length && (
-        <Tooltip content="Assign to Cab">
-          <Popover content={addToCabMenu} placement="bottom">
-            <Button minimal icon={<CubeAdd />} />
-          </Popover>
-        </Tooltip>
-      )}
+      <EventModeGated>
+        {!!cabs.length && (
+          <Tooltip content="Assign to Cab">
+            <Popover content={addToCabMenu} placement="bottom">
+              <Button minimal icon={<CubeAdd />} />
+            </Popover>
+          </Tooltip>
+        )}
+      </EventModeGated>
       {showLabels && isTwoPlayers && (
         <Tooltip content="Swap Player Positions">
           <Button
@@ -256,7 +259,9 @@ export function DrawingActions() {
           </Dialog>
         </>
       )}
-      <SaveToStartggButton />
+      <EventModeGated>
+        <SaveToStartggButton />
+      </EventModeGated>
       <AddCardButton />
       <Tooltip content="Delete this draw">
         <Button

@@ -16,6 +16,7 @@ import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { useAppDispatch, useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
+import { EventModeGated } from "./common-components/app-mode";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -70,7 +71,11 @@ export function Header() {
         <Navbar.Heading>
           Event Mode{" "}
           <small>
-            <em>Alpha Preview</em>
+            <em>
+              <EventModeGated fallback="Classic Variant Alpha">
+                Alpha Preview
+              </EventModeGated>
+            </em>
           </small>
         </Navbar.Heading>
       </Navbar.Group>

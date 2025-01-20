@@ -1,0 +1,143 @@
+import {
+  Dialog,
+  DialogBody,
+  FormGroup,
+  Tabs,
+  Tab,
+  InputGroup,
+  TagInput,
+  Button,
+} from "@blueprintjs/core";
+import { ConfigSelect } from ".";
+import { MatchPicker, GauntletPicker, PickedMatch } from "../matches";
+import { StartggApiKeyGated } from "../startgg-gql/components";
+import { createDraw } from "../state/thunks";
+import { useAppDispatch } from "../state/store";
+import { SimpleMeta } from "../models/Drawing";
+import { useState } from "react";
+import { EventModeGated } from "../common-components/app-mode";
+
+interface Props {
+  isOpen: boolean;
+  onClose(): void;
+  onDrawAttempt(wasSuccess: boolean): void;
+}
+
+export function DrawDialog(props: Props) {
+  const [configId, setConfigId] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+
+  function handleDraw(match: PickedMatch) {
+    if (!configId) {
+      return;
+    }
+    props.onClose();
+    dispatch(
+      createDraw(
+        {
+          meta: {
+            type: "startgg",
+            subtype: match.subtype,
+            entrants: match.players,
+            title: match.title,
+            id: match.id,
+          },
+        },
+        configId,
+      ),
+    ).then((result) => {
+      props.onDrawAttempt(result === "ok");
+    });
+  }
+
+  return (
+    <Dialog isOpen={props.isOpen} onClose={props.onClose} title="New Draw">
+      <DialogBody>
+        <FormGroup label="Config">
+          <ConfigSelect
+            selectedId={configId}
+            onChange={setConfigId}
+            createDirection="right"
+          />
+        </FormGroup>
+        <Tabs id="new-draw">
+          <Tab
+            id="custom"
+            panel={
+              <CustomDrawForm
+                disableCreate={!configId}
+                onSubmit={(meta) => dispatch(createDraw({ meta }, configId!))}
+              />
+            }
+          >
+            custom draw
+          </Tab>
+          <EventModeGated>
+            <Tab
+              id="startgg-versus"
+              panel={
+                <StartggApiKeyGated>
+                  <MatchPicker onPickMatch={handleDraw} />
+                </StartggApiKeyGated>
+              }
+            >
+              start.gg (h2h)
+            </Tab>
+            <Tab
+              id="startgg-group"
+              panel={
+                <StartggApiKeyGated>
+                  <GauntletPicker onPickMatch={handleDraw} />
+                </StartggApiKeyGated>
+              }
+            >
+              start.gg (gauntlet)
+            </Tab>
+          </EventModeGated>
+        </Tabs>
+      </DialogBody>
+    </Dialog>
+  );
+}
+
+function CustomDrawForm(props: {
+  initialMeta?: SimpleMeta;
+  disableCreate?: boolean;
+  onSubmit(meta: SimpleMeta): void;
+}) {
+  const [players, setPlayers] = useState<string[]>(
+    props.initialMeta?.players || [],
+  );
+  const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
+
+  function handleSubmit() {
+    props.onSubmit({
+      type: "simple",
+      players,
+      title,
+    });
+  }
+  return (
+    <>
+      <FormGroup label="title">
+        <InputGroup
+          value={title}
+          onChange={(e) => setTitle(e.currentTarget.value)}
+        />
+      </FormGroup>
+      <FormGroup label="players">
+        <TagInput
+          onChange={(v) => setPlayers(v as string[])}
+          values={players}
+        />
+      </FormGroup>
+      <Button
+        intent="primary"
+        onClick={handleSubmit}
+        disabled={props.disableCreate}
+      >
+        Create
+      </Button>
+    </>
+  );
+}

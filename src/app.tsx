@@ -11,12 +11,10 @@ FocusStyleManager.onlyShowFocusOnTabs();
 
 import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
-import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { Provider } from "react-redux";
 import { store } from "./state/store";
 import { PartySocketManager } from "./party/client";
-import { Provider as UrqlProvider } from "urql";
 
 import {
   createBrowserRouter,
@@ -25,10 +23,8 @@ import {
   useParams,
   Link,
 } from "react-router-dom";
-import { CabManagement } from "./cab-management";
-import { MainView } from "./main-view";
 import { nanoid } from "nanoid";
-import { urqlClient } from "./startgg-gql";
+import { ClassicModeShell } from "./classic-mode";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +39,10 @@ const router = createBrowserRouter([
             <Link to={`/e/${nanoid()}`}>Create New Event?</Link>
           </p>
           <p>
+            Or... perhaps just use the app in{" "}
+            <Link to="/classic">Classic Mode</Link>
+          </p>
+          <p>
             No idea what this is?{" "}
             <a href="https://youtu.be/4Gpj9jTNcfM">Here's a video</a> trying to
             explain how to use it!
@@ -52,8 +52,30 @@ const router = createBrowserRouter([
     },
   },
   {
+    path: "classic",
+    Component: ClassicModeShell,
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const mod = await import("./drawing-list");
+          return { Component: mod.DrawingList };
+        },
+      },
+      {
+        path: "charts",
+        lazy: async () => {
+          const mod = await import("./eligible-charts");
+          return { Component: mod.default };
+        },
+      },
+    ],
+  },
+  {
     path: "e/:roomName",
-    element: <AppForRoom />,
+    lazy: async () => ({
+      Component: (await import("./tournament-mode")).TournamentModeApp,
+    }),
   },
   {
     path: "e/:roomName/cab/:cabId/source",
@@ -109,34 +131,6 @@ function ObsSource() {
         <IntlProvider>
           <Outlet />
         </IntlProvider>
-      </PartySocketManager>
-    </Provider>
-  );
-}
-
-function AppForRoom() {
-  const params = useParams<"roomName">();
-  if (!params.roomName) {
-    return null;
-  }
-  return (
-    <Provider store={store}>
-      <PartySocketManager roomName={params.roomName}>
-        <UrqlProvider value={urqlClient}>
-          <Header />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "stretch",
-              flex: "1 1 0px",
-              overflow: "hidden",
-            }}
-          >
-            <CabManagement />
-            <MainView />
-          </div>
-        </UrqlProvider>
       </PartySocketManager>
     </Provider>
   );

@@ -8,9 +8,9 @@ import {
   Popover,
   Tooltip,
 } from "@blueprintjs/core";
-import { useAppDispatch, useAppState } from "./state/store";
+import { useAppDispatch, useAppState } from "../state/store";
 import React, { ReactNode, useCallback, useState } from "react";
-import { CabInfo, eventSlice } from "./state/event.slice";
+import { CabInfo, eventSlice } from "../state/event.slice";
 import {
   Add,
   CaretLeft,
@@ -24,11 +24,11 @@ import {
   Person,
   Remove,
 } from "@blueprintjs/icons";
-import { detectedLanguage } from "./utils";
-import { copyPlainTextToClipboard } from "./utils/share";
+import { detectedLanguage } from "../utils";
+import { copyPlainTextToClipboard } from "../utils/share";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
-import { playerNameByIndex } from "./models/Drawing";
+import { playerNameByIndex } from "../models/Drawing";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);

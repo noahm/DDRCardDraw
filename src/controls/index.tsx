@@ -9,7 +9,6 @@ import {
   DrawerSize,
   FormGroup,
   HTMLSelect,
-  InputGroup,
   Intent,
   Menu,
   MenuDivider,
@@ -17,9 +16,6 @@ import {
   Popover,
   Position,
   Spinner,
-  Tab,
-  Tabs,
-  TagInput,
   Tooltip,
 } from "@blueprintjs/core";
 import {
@@ -40,15 +36,12 @@ import { ErrorFallback } from "../utils/error-fallback";
 import {
   createConfigFromImport,
   createConfigFromInputs,
-  createDraw,
 } from "../state/thunks";
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
-import { GauntletPicker, MatchPicker, PickedMatch } from "../matches";
-import { StartggApiKeyGated } from "../startgg-gql/components";
 import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { loadConfig, saveConfig } from "../config-persistence";
-import { SimpleMeta } from "../models/Drawing";
+import { DrawDialog } from "./draw-dialog";
 
 const ControlsDrawer = lazy(() => import("./controls-drawer"));
 
@@ -110,82 +103,12 @@ export function ConfigSelect(props: {
   );
 }
 
-function CustomDrawForm(props: {
-  initialMeta?: SimpleMeta;
-  disableCreate?: boolean;
-  onSubmit(meta: SimpleMeta): void;
-}) {
-  const [players, setPlayers] = useState<string[]>(
-    props.initialMeta?.players || [],
-  );
-  const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
-
-  function handleSubmit() {
-    props.onSubmit({
-      type: "simple",
-      players,
-      title,
-    });
-  }
-  return (
-    <>
-      <FormGroup label="title">
-        <InputGroup
-          value={title}
-          onChange={(e) => setTitle(e.currentTarget.value)}
-        />
-      </FormGroup>
-      <FormGroup label="players">
-        <TagInput
-          onChange={(v) => setPlayers(v as string[])}
-          values={players}
-        />
-      </FormGroup>
-      <Button
-        intent="primary"
-        onClick={handleSubmit}
-        disabled={props.disableCreate}
-      >
-        Create
-      </Button>
-    </>
-  );
-}
-
 export function HeaderControls() {
-  const [configId, setConfigId] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
   const [matchPickerOpen, setMatchPickerOpen] = useState(false);
   const hasAnyConfig = useAppState((s) => !!s.config.ids.length);
   const isNarrow = useIsNarrow();
-  const dispatch = useAppDispatch();
-
-  function handleDraw(match: PickedMatch) {
-    if (!configId) {
-      return;
-    }
-    setMatchPickerOpen(false);
-    const result = dispatch(
-      createDraw(
-        {
-          meta: {
-            type: "startgg",
-            subtype: match.subtype,
-            entrants: match.players,
-            title: match.title,
-            id: match.id,
-          },
-        },
-        configId,
-      ),
-    );
-    if (typeof result === "boolean") {
-      setLastDrawFailed(result);
-    } else {
-      setLastDrawFailed(false);
-    }
-  }
 
   function openSettings() {
     setSettingsOpen((open) => !open);
@@ -199,54 +122,11 @@ export function HeaderControls() {
         isOpen={settingsOpen}
         onClose={() => setSettingsOpen(false)}
       />
-      <Dialog
+      <DrawDialog
         isOpen={matchPickerOpen}
         onClose={() => setMatchPickerOpen(false)}
-        title="New Draw"
-      >
-        <DialogBody>
-          <FormGroup label="Config">
-            <ConfigSelect
-              selectedId={configId}
-              onChange={setConfigId}
-              createDirection="right"
-            />
-          </FormGroup>
-          <Tabs id="new-draw">
-            <Tab
-              id="custom"
-              panel={
-                <CustomDrawForm
-                  disableCreate={!configId}
-                  onSubmit={(meta) => dispatch(createDraw({ meta }, configId!))}
-                />
-              }
-            >
-              custom draw
-            </Tab>
-            <Tab
-              id="startgg-versus"
-              panel={
-                <StartggApiKeyGated>
-                  <MatchPicker onPickMatch={handleDraw} />
-                </StartggApiKeyGated>
-              }
-            >
-              start.gg (h2h)
-            </Tab>
-            <Tab
-              id="startgg-group"
-              panel={
-                <StartggApiKeyGated>
-                  <GauntletPicker onPickMatch={handleDraw} />
-                </StartggApiKeyGated>
-              }
-            >
-              start.gg (gauntlet)
-            </Tab>
-          </Tabs>
-        </DialogBody>
-      </Dialog>
+        onDrawAttempt={(success) => setLastDrawFailed(!success)}
+      />
       <ButtonGroup>
         <Tooltip
           isOpen={lastDrawFailed}
