@@ -2,6 +2,7 @@
   "$schema": "../../songs.schema.json",
   "meta": {
     "styles": ["single", "double"],
+    "menuParent": "events",
     "difficulties": [
       {
         "key": "beginner",
@@ -66,7 +67,7 @@
   },
   "i18n": {
     "en": {
-      "name": "DDR World",
+      "name": "The Big Deal 5 (DDR World)",
       "single": "Single",
       "double": "Double",
       "beginner": "Beginner",
@@ -93,7 +94,7 @@
       }
     },
     "ja": {
-      "name": "DDR World",
+      "name": "The Big Deal 5 (DDR World)",
       "single": "Single",
       "double": "Double",
       "beginner": "Beginner",

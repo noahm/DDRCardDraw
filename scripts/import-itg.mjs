@@ -30,7 +30,7 @@ const difficulties = new Set();
 const styles = new Set();
 const data = {
   meta: {
-    menuParent: "itg",
+    menuParent: "imported",
     flags: [],
     lastUpdated: Date.now(),
     usesDrawGroups: useTiers,
