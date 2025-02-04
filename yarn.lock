@@ -4575,7 +4575,6 @@ __metadata:
     jsonschema: "npm:1.4.1"
     mini-css-extract-plugin: "npm:2.9.2"
     modern-screenshot: "npm:4.5.4"
-    nanoid: "npm:5.0.9"
     normalize.css: "npm:8.0.1"
     p-queue: "npm:8.0.1"
     papaparse: "npm:5.4.1"
@@ -7372,15 +7371,6 @@ __metadata:
   version: 1.0.0
   resolution: "mute-stream@npm:1.0.0"
   checksum: 10/36fc968b0e9c9c63029d4f9dc63911950a3bdf55c9a87f58d3a266289b67180201cade911e7699f8b2fa596b34c9db43dad37649e3f7fdd13c3bb9edb0017ee7
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:5.0.9":
-  version: 5.0.9
-  resolution: "nanoid@npm:5.0.9"
-  bin:
-    nanoid: bin/nanoid.js
-  checksum: 10/8a3f9104f81095e3e4785f58caae47a05755599824b8611b9730cbf73db706b664f100e6189f8303f08764f144d499613d8e4a39e83125c53f4b4986d6576621
   languageName: node
   linkType: hard
 
