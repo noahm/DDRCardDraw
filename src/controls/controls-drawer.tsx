@@ -15,17 +15,13 @@ import {
   SmallTick,
   SmallCross,
 } from "@blueprintjs/icons";
-import { DateInput3 } from "@blueprintjs/datetime2";
-import parse from "date-fns/parse";
-import format from "date-fns/format";
-import { useMemo, useState } from "react";
+import { useMemo, useState, lazy } from "react";
 import { useIntl } from "../hooks/useIntl";
 import { GameData } from "../models/SongData";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { getAvailableLevels, useGetMetaString } from "../game-data-utils";
 import { Fraction } from "../utils/fraction";
-import { detectedLanguage } from "../utils";
 import {
   ConfigContextProvider,
   useConfigState,
@@ -33,6 +29,24 @@ import {
   useUpdateConfig,
 } from "../state/hooks";
 import { useStockGameData } from "../state/game-data.atoms";
+
+const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
+function ReleaseDateFilter() {
+  const gameData = useGameData();
+  const mostRecentRelease = useMemo(
+    () =>
+      gameData?.songs.reduce<string>((prev, song) => {
+        if (song.date_added && song.date_added > prev) return song.date_added;
+        return prev;
+      }, ""),
+    [gameData],
+  );
+
+  if (!mostRecentRelease) {
+    return null;
+  }
+  return <ReleaseDateFilterControl mostRecentRelease={mostRecentRelease} />;
+}
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -81,53 +95,6 @@ export default function ControlsDrawer(props: { configId: string | null }) {
         <GeneralSettings />
       </ConfigContextProvider>
     </div>
-  );
-}
-
-const dateFormat = "yyyy-MM-dd";
-function ReleaseDateFilter() {
-  const { t } = useIntl();
-  const gameData = useGameData();
-  const updateState = useUpdateConfig();
-  const cutoffDate = useConfigState((s) => s.cutoffDate);
-  const mostRecentRelease = useMemo(
-    () =>
-      gameData?.songs.reduce<string>((prev, song) => {
-        if (song.date_added && song.date_added > prev) return song.date_added;
-        return prev;
-      }, ""),
-    [gameData],
-  );
-
-  if (!mostRecentRelease) {
-    return null;
-  }
-
-  const reference = new Date();
-  const maxDate = parse(mostRecentRelease, dateFormat, reference);
-  const minDate = parse("2000-01-01", dateFormat, reference);
-
-  return (
-    <FormGroup label={t("controls.releaseHeader")}>
-      <DateInput3
-        dateFnsFormat={dateFormat}
-        locale={detectedLanguage}
-        value={cutoffDate || mostRecentRelease}
-        onChange={(newDate, isUserChange) => {
-          if (!isUserChange) {
-            return;
-          }
-          if (!newDate) {
-            updateState({ cutoffDate: "" });
-            return;
-          }
-          updateState({ cutoffDate: format(new Date(newDate), dateFormat) });
-        }}
-        placeholder={t("controls.releaseInputPlaceholder", { dateFormat })}
-        maxDate={maxDate}
-        minDate={minDate}
-      />
-    </FormGroup>
   );
 }
 

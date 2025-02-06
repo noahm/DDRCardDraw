@@ -315,3 +315,23 @@ export const SDVX_UNLOCK_IDS = {
     2027, // チェイスチェイスジョーカーズのうた
   ],
 };
+
+/**
+ * @type {Record<string, number[]>}
+ * Add song IDs to each array according to which chart difficulty should be flagged
+ * as Time-limited & Other Events separate from the rest of the song
+ */
+export const TEMP_UNLOCK_CHARTS = {
+  novice: [],
+  advanced: [
+    // example: this would flag JUST the advanced chart of QQ
+    // 2062
+  ],
+  exhaust: [],
+  maximum: [],
+  infinite: [],
+  gravity: [],
+  heavenly: [],
+  vivid: [],
+  exceed: [],
+};
