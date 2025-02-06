@@ -8,7 +8,11 @@ import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
 import { writeJsonData } from "./utils.mjs";
-import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
+import {
+  SDVX_UNLOCK_IDS,
+  UNPLAYABLE_IDS,
+  TEMP_UNLOCK_CHARTS,
+} from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -262,12 +266,17 @@ function buildSong(song, availableJackets) {
       usesSharedJacket = true;
     }
 
-    charts.push({
+    /** @type {Chart} */
+    const chart = {
       lvl,
       style: "single",
       diffClass: determineDiffClass(song, chartType),
       jacket: chartJacket,
-    });
+    };
+    if (TEMP_UNLOCK_CHARTS[chart.diffClass]?.includes(numericId)) {
+      chart.flags = ["otherEvents"];
+    }
+    charts.push(chart);
   }
 
   if (usesSharedJacket) {
