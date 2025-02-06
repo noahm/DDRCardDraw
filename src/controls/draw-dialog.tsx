@@ -15,7 +15,7 @@ import { createDraw } from "../state/thunks";
 import { useAppDispatch } from "../state/store";
 import { SimpleMeta } from "../models/Drawing";
 import { useState } from "react";
-import { EventModeGated } from "../common-components/app-mode";
+import { useAppMode } from "../common-components/app-mode";
 
 interface Props {
   isOpen: boolean;
@@ -26,6 +26,7 @@ interface Props {
 export function DrawDialog(props: Props) {
   const [configId, setConfigId] = useState<string | null>(null);
   const dispatch = useAppDispatch();
+  const appMode = useAppMode();
 
   function handleDraw(match: PickedMatch) {
     if (!configId) {
@@ -72,7 +73,7 @@ export function DrawDialog(props: Props) {
           >
             custom draw
           </Tab>
-          <EventModeGated>
+          {appMode === "event" && (
             <Tab
               id="startgg-versus"
               panel={
@@ -83,6 +84,8 @@ export function DrawDialog(props: Props) {
             >
               start.gg (h2h)
             </Tab>
+          )}
+          {appMode === "event" && (
             <Tab
               id="startgg-group"
               panel={
@@ -93,7 +96,7 @@ export function DrawDialog(props: Props) {
             >
               start.gg (gauntlet)
             </Tab>
-          </EventModeGated>
+          )}
         </Tabs>
       </DialogBody>
     </Dialog>
