@@ -17,7 +17,7 @@ import { DropHandler } from "./drop-handler";
 
 export function App() {
   return (
-    <DrawStateManager defaultDataSet="a3">
+    <DrawStateManager defaultDataSet="ddr_world">
       <ThemeSyncWidget />
       <UpdateManager />
       <Header />
