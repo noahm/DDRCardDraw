@@ -28,7 +28,7 @@ export async function loadStockGamedataByName(name: string) {
       };
     });
     return data;
-  } catch (e) {
+  } catch {
     console.warn(`failed to load song data with key '${name}'`);
   }
 }

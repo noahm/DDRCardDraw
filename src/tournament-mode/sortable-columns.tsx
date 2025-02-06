@@ -2,6 +2,7 @@ import { Menu, MenuItem } from "@blueprintjs/core";
 import { SortAsc, SortDesc } from "@blueprintjs/icons";
 import { CellRenderer, Column, ColumnHeaderCell } from "@blueprintjs/table";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type SortCallback<Data = any> = (
   columnId: string,
   comparator: (a: Data, b: Data) => number,
