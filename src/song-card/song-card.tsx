@@ -29,6 +29,7 @@ interface IconCallbacks {
   onRedraw: () => void;
   onReset: () => void;
   onSetWinner: (p: Player | null) => void;
+  onCopy: () => void;
 }
 
 interface Props {
@@ -45,12 +46,19 @@ interface Props {
 export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
-  const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
+  const [
+    handleBanPickPocket,
+    redrawChart,
+    resetChart,
+    setWinner,
+    copyNameAndDifficulty,
+  ] = useDrawing(
     (d) => [
       d.handleBanProtectReplace,
       d.redrawChart,
       d.resetChart,
       d.setWinner,
+      d.copyNameAndDifficulty,
     ],
     shallow,
   );
@@ -63,8 +71,16 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       onRedraw: redrawChart.bind(undefined, chartId),
       onReset: resetChart.bind(undefined, chartId),
       onSetWinner: setWinner.bind(undefined, chartId),
+      onCopy: copyNameAndDifficulty.bind(undefined, chartId),
     }),
-    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner],
+    [
+      handleBanPickPocket,
+      chartId,
+      redrawChart,
+      resetChart,
+      setWinner,
+      copyNameAndDifficulty,
+    ],
   );
 }
 
@@ -140,10 +156,16 @@ export function SongCard(props: Props) {
           onVeto={iconCallbacks.onVeto}
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={iconCallbacks.onCopy}
         />
       );
     } else if (!vetoedBy) {
-      menuContent = <IconMenu onSetWinner={iconCallbacks.onSetWinner} />;
+      menuContent = (
+        <IconMenu
+          onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={iconCallbacks.onCopy}
+        />
+      );
     }
   }
 
