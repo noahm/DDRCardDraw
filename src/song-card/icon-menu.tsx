@@ -6,6 +6,7 @@ import {
   Crown,
   Person,
   Refresh,
+  Clipboard,
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
@@ -16,10 +17,18 @@ interface Props {
   onProtect?: (p: number) => void;
   onRedraw?: () => void;
   onSetWinner?: (p: number | null) => void;
+  onCopy?: () => void;
 }
 
 export function IconMenu(props: Props) {
-  const { onStartPocketPick, onVeto, onProtect, onRedraw, onSetWinner } = props;
+  const {
+    onStartPocketPick,
+    onVeto,
+    onProtect,
+    onRedraw,
+    onSetWinner,
+    onCopy,
+  } = props;
 
   const { t } = useIntl();
 
@@ -51,6 +60,13 @@ export function IconMenu(props: Props) {
           icon={<Crown />}
           text={t("songAction.winner")}
           onClick={onSetWinner}
+        />
+      )}
+      {onCopy && (
+        <MenuItem
+          text={t("songAction.copy")}
+          icon={<Clipboard />}
+          onClick={onCopy}
         />
       )}
       {onRedraw && (

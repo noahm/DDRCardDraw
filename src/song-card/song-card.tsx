@@ -1,6 +1,6 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawing } from "../drawing-context";
@@ -17,6 +17,7 @@ import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
+import { copyTextToClipboard } from "../utils/share";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -125,6 +126,16 @@ export function SongCard(props: Props) {
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
+  const handleCopy = useCallback(() => {
+    if (!diffAbbr) {
+      return;
+    }
+    copyTextToClipboard(
+      `${name} [${diffAbbr.toUpperCase()}]`,
+      "Copied name & difficulty",
+    );
+  }, [name, diffAbbr]);
+  const canCopy = !!name && !!diffAbbr;
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !winner) {
@@ -140,10 +151,13 @@ export function SongCard(props: Props) {
           onVeto={iconCallbacks.onVeto}
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={handleCopy}
         />
       );
     } else if (!vetoedBy) {
-      menuContent = <IconMenu onSetWinner={iconCallbacks.onSetWinner} />;
+      menuContent = (
+        <IconMenu onSetWinner={iconCallbacks.onSetWinner} onCopy={handleCopy} />
+      );
     }
   }
 
@@ -152,7 +166,7 @@ export function SongCard(props: Props) {
     [styles.protected]: protectedBy,
     [styles.replaced]: replacedBy && !baseChartIsPlaceholder,
     [styles.picked]: replacedBy && baseChartIsPlaceholder,
-    [styles.clickable]: !!menuContent || !!props.onClick,
+    [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
     [styles.hideVeto]: hideVetos,
   });
 
@@ -161,7 +175,7 @@ export function SongCard(props: Props) {
       className={rootClassname}
       onClick={
         !menuContent || showingContextMenu || pocketPickPendingForPlayer
-          ? props.onClick
+          ? props.onClick || handleCopy
           : showMenu
       }
       style={jacketBg}
