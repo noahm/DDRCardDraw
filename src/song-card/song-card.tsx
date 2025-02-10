@@ -127,10 +127,15 @@ export function SongCard(props: Props) {
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
   const handleCopy = useCallback(() => {
-    if (!("name" in chart)) return;
-    const { name, diffAbbr } = replacedWith || chart;
-    copyTextToClipboard(`${name} [${diffAbbr.toUpperCase()}]`);
-  }, [chart, replacedWith]);
+    if (!diffAbbr) {
+      return;
+    }
+    copyTextToClipboard(
+      `${name} [${diffAbbr.toUpperCase()}]`,
+      "Copied name & difficulty",
+    );
+  }, [name, diffAbbr]);
+  const canCopy = !!name && !!diffAbbr;
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !winner) {
@@ -161,7 +166,7 @@ export function SongCard(props: Props) {
     [styles.protected]: protectedBy,
     [styles.replaced]: replacedBy && !baseChartIsPlaceholder,
     [styles.picked]: replacedBy && baseChartIsPlaceholder,
-    [styles.clickable]: !!menuContent || !!props.onClick,
+    [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
     [styles.hideVeto]: hideVetos,
   });
 
@@ -170,7 +175,7 @@ export function SongCard(props: Props) {
       className={rootClassname}
       onClick={
         !menuContent || showingContextMenu || pocketPickPendingForPlayer
-          ? props.onClick
+          ? props.onClick || handleCopy
           : showMenu
       }
       style={jacketBg}
