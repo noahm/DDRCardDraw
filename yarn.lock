@@ -4069,15 +4069,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"copy-to-clipboard@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "copy-to-clipboard@npm:3.3.3"
-  dependencies:
-    toggle-selection: "npm:^1.0.6"
-  checksum: 10/e0a325e39b7615108e6c1c8ac110ae7b829cdc4ee3278b1df6a0e4228c490442cc86444cd643e2da344fbc424b3aab8909e2fec82f8bc75e7e5b190b7c24eecf
-  languageName: node
-  linkType: hard
-
 "copy-webpack-plugin@npm:12.0.2":
   version: 12.0.2
   resolution: "copy-webpack-plugin@npm:12.0.2"
@@ -4536,7 +4527,6 @@ __metadata:
     canvas: "npm:3.0.0-rc2"
     classnames: "npm:2.5.1"
     clean-webpack-plugin: "npm:4.0.0"
-    copy-to-clipboard: "npm:^3.3.3"
     copy-webpack-plugin: "npm:12.0.2"
     cross-spawn: "npm:7.0.5"
     css-loader: "npm:7.1.2"
@@ -9888,13 +9878,6 @@ __metadata:
   dependencies:
     is-number: "npm:^7.0.0"
   checksum: 10/10dda13571e1f5ad37546827e9b6d4252d2e0bc176c24a101252153ef435d83696e2557fe128c4678e4e78f5f01e83711c703eef9814eb12dab028580d45980a
-  languageName: node
-  linkType: hard
-
-"toggle-selection@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "toggle-selection@npm:1.0.6"
-  checksum: 10/9a0ed0ecbaac72b4944888dacd79fe0a55eeea76120a4c7e46b3bb3d85b24f086e90560bb22f5a965654a25ab43d79ec47dfdb3f1850ba740b14c5a50abc7040
   languageName: node
   linkType: hard
 

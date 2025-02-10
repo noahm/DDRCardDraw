@@ -1,6 +1,6 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawing } from "../drawing-context";
@@ -17,6 +17,7 @@ import { IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
+import { copyTextToClipboard } from "../utils/share";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -29,7 +30,6 @@ interface IconCallbacks {
   onRedraw: () => void;
   onReset: () => void;
   onSetWinner: (p: Player | null) => void;
-  onCopy: () => void;
 }
 
 interface Props {
@@ -46,19 +46,12 @@ interface Props {
 export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
-  const [
-    handleBanPickPocket,
-    redrawChart,
-    resetChart,
-    setWinner,
-    copyNameAndDifficulty,
-  ] = useDrawing(
+  const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
     (d) => [
       d.handleBanProtectReplace,
       d.redrawChart,
       d.resetChart,
       d.setWinner,
-      d.copyNameAndDifficulty,
     ],
     shallow,
   );
@@ -71,16 +64,8 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       onRedraw: redrawChart.bind(undefined, chartId),
       onReset: resetChart.bind(undefined, chartId),
       onSetWinner: setWinner.bind(undefined, chartId),
-      onCopy: copyNameAndDifficulty.bind(undefined, chartId),
     }),
-    [
-      handleBanPickPocket,
-      chartId,
-      redrawChart,
-      resetChart,
-      setWinner,
-      copyNameAndDifficulty,
-    ],
+    [handleBanPickPocket, chartId, redrawChart, resetChart, setWinner],
   );
 }
 
@@ -141,6 +126,11 @@ export function SongCard(props: Props) {
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
+  const handleCopy = useCallback(() => {
+    if (!("name" in chart)) return;
+    const { name, diffAbbr } = replacedWith || chart;
+    copyTextToClipboard(`${name} [${diffAbbr.toUpperCase()}]`);
+  }, [chart, replacedWith]);
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !winner) {
@@ -156,15 +146,12 @@ export function SongCard(props: Props) {
           onVeto={iconCallbacks.onVeto}
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
-          onCopy={iconCallbacks.onCopy}
+          onCopy={handleCopy}
         />
       );
     } else if (!vetoedBy) {
       menuContent = (
-        <IconMenu
-          onSetWinner={iconCallbacks.onSetWinner}
-          onCopy={iconCallbacks.onCopy}
-        />
+        <IconMenu onSetWinner={iconCallbacks.onSetWinner} onCopy={handleCopy} />
       );
     }
   }

@@ -1,4 +1,3 @@
-import copy from "copy-to-clipboard";
 import { ReactNode } from "react";
 import { StoreApi } from "zustand";
 import { draw } from "./card-draw";
@@ -49,7 +48,6 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
     chart?: EligibleChart,
   ): void;
   setWinner(chartId: string, p: number | null): void;
-  copyNameAndDifficulty(chartId: string): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {
@@ -208,12 +206,6 @@ const {
       set({
         winners: arr,
       });
-    },
-    copyNameAndDifficulty(chartId) {
-      const chart = get().charts.find((c) => c.id === chartId);
-      if (!chart || chart.type !== "DRAWN") return;
-      const { name, diffAbbr } = chart;
-      copy(`${name} [${diffAbbr.toUpperCase()}]`, { format: "text/plain" });
     },
   }),
   (p) => p.initialDrawing.id,
