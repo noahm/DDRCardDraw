@@ -20,6 +20,7 @@ import { useAppDispatch } from "../state/store";
 import { createPickBanPocket, createRedrawChart } from "../state/thunks";
 import { getJacketUrl } from "../utils/jackets";
 import { drawingsSlice } from "../state/drawings.slice";
+import { copyTextToClipboard } from "../utils/share";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -140,6 +141,16 @@ export function SongCard(props: Props) {
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
+  const handleCopy = useCallback(() => {
+    if (!diffAbbr) {
+      return;
+    }
+    copyTextToClipboard(
+      `${name} [${diffAbbr.toUpperCase()}]`,
+      "Copied name & difficulty",
+    );
+  }, [name, diffAbbr]);
+  const canCopy = !!name && !!diffAbbr;
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !hasWinner) {
@@ -155,10 +166,13 @@ export function SongCard(props: Props) {
           onVeto={iconCallbacks.onVeto}
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={handleCopy}
         />
       );
     } else if (vetoedBy === undefined) {
-      menuContent = <IconMenu onSetWinner={iconCallbacks.onSetWinner} />;
+      menuContent = (
+        <IconMenu onSetWinner={iconCallbacks.onSetWinner} onCopy={handleCopy} />
+      );
     }
   }
 
@@ -167,7 +181,7 @@ export function SongCard(props: Props) {
     [styles.protected]: protectedBy !== undefined,
     [styles.replaced]: replacedBy !== undefined && !baseChartIsPlaceholder,
     [styles.picked]: replacedBy !== undefined && baseChartIsPlaceholder,
-    [styles.clickable]: !!menuContent || !!props.onClick,
+    [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
     [styles.hideVeto]: hideVetos,
   });
 
@@ -178,7 +192,7 @@ export function SongCard(props: Props) {
         !menuContent ||
         showingContextMenu ||
         pocketPickPendingForPlayer !== null
-          ? props.onClick
+          ? props.onClick || handleCopy
           : showMenu
       }
       style={jacketBg}
