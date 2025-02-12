@@ -35,6 +35,7 @@
 
 .players > * {
   flex: 1 1 250px;
+  text-align: center;
 }
 
 .versus + .players {
