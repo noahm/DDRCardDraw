@@ -163,6 +163,17 @@ export const SDVX_UNLOCK_IDS = {
     2183, // 閉塞的フレーション
     2185, // 弾幕信仰
     2186, // SUPER HEROINE!!
+
+    2098, // Kool Awesome Croon
+    2109, // ØverwriteTheCatastrophe
+    2112, // Cumulonimbus
+    2117, // ΛNXIENT:LEGΛXIEZ
+
+    2094, // 一水山風
+    2097, // Superstar!
+    2100, // 鳳凰誓歌
+    2107, // 永久の粒虹
+    2115, // Lunatic Mare
   ],
   hexadiver: [
     1580, // 666
@@ -308,11 +319,30 @@ export const SDVX_UNLOCK_IDS = {
     2179, // Blφφdy Cφncertφ
     2180, // REINCARNATION
     2181, // Re:RHYZE
+
+    // BPL Season 4 Triple Tribe
+    2189, // Come to Life
+    2190, // SOLAR ECLIPSE
+    2191, // COSMIC V3LOCITY
+
+    // PRECIOUS UNIVERSAL CELEBRATE Stamp
+    1969, // X1GNUS
+    1970, // Nebula Dysorder
+    1971, // For All The Challengers
+    1972, // Guinevere～白き妖精～
+    1973, // 細氷
+    1974, // while (screen is blue)
+    1975, // Never Forget Evergreen
+    1976, // ヴァルプルギスの夜
+    1977, // Little Red Riding Hood
   ],
 
   jpOnly: [
     // Chase Chase Jokers J-Region Exclusive
     2027, // チェイスチェイスジョーカーズのうた
+
+    // Tetoris
+    2216, //テトリス
   ],
 };
 
@@ -333,5 +363,50 @@ export const TEMP_UNLOCK_CHARTS = {
   gravity: [],
   heavenly: [],
   vivid: [],
-  exceed: [],
+  exceed: [
+    // Arena Exclusive Exceed Charts
+    872, // Din Don Dan (Fusion Remix)
+    88, // Grip & Break down !! - SDVX Edit. -
+    64, // SOUL EXPLOSION
+    332, // crazy cinema story
+    871, // The star in eclipse
+    711, // ちくわパフェだよ☆ＣＫＰ
+    633, // 2 MINUTES FIGHTERS
+    381, // HYENA
+
+    111, // 地球最後の告白を
+    132, // 色は匂へど散りぬるを
+    239, // Foolish Hero
+    37, // neu BSP style
+    632, // Invitation from Mr.C
+
+    8, // smooooch・∀・ KN mix
+    323, // マネマネサイコトロピック
+    612, // Le Fruit Défendu
+    131, // 物凄い勢いでけーねが物凄いうた
+    342, // Fiat Lux
+
+    787, // Candy Colored Hearts
+    790, // EMPIRE OF FLAME
+    789, // End to end
+    788, // NEO GRAVITY
+    610, // veRtrageS
+    786, // 雲の彼方
+
+    842, // B.B.K.K.B.K.K.
+    510, // The Sampling Paradise (P*Light Remix)
+    281, // ネトゲ廃人シュプレヒコール
+
+    165, // Hello world!
+    634, // LegenD.
+    348, // ボルテ体操第一
+
+    241, // Lieselotte
+    289, // U.N.オーエンは彼女なのか？haru_naba Remix
+    390, // 轟け！恋のビーンボール！！
+
+    85, // dreamin' feat.Ryu☆
+    635, // World's end
+    389, // デッドボヲルdeホームラン
+  ],
 };
