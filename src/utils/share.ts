@@ -126,6 +126,7 @@ export async function shareData(
             {
               message: method.toastMessage,
               icon: "paperclip",
+              intent: "success",
             },
             "copied-data",
           );
@@ -174,6 +175,31 @@ export function downloadDataUrl(dataUrl: string, filename: string) {
   link.download = filename;
   link.href = dataUrl;
   link.click();
+}
+
+export async function copyTextToClipboard(text: string, toastSuccess?: string) {
+  try {
+    await navigator.clipboard.writeText(text);
+    toaster.show(
+      {
+        message: toastSuccess || "Copied to clipboard",
+        icon: "clipboard",
+        intent: "success",
+      },
+      "copied-data",
+    );
+    return;
+  } catch (e) {
+    console.warn("clipboard share failed", e);
+    toaster.show(
+      {
+        message: "Copy failed",
+        icon: "warning-sign",
+        intent: "danger",
+      },
+      "copied-data",
+    );
+  }
 }
 
 export function copyToClipboard(blob: Blob) {
