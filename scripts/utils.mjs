@@ -66,11 +66,17 @@ async function getDomInternal(url) {
 }
 
 /**
+ * @type {Record<string, Promise<void | JSDOM>>}
+ */
+const domForUrl = {};
+
+/**
  *
  * @param {string} url
  */
 export function getDom(url) {
-  return requestQueue.add(() => getDomInternal(url));
+  if (domForUrl[url]) return domForUrl[url];
+  return (domForUrl[url] = requestQueue.add(() => getDomInternal(url)));
 }
 
 export async function writeJsonData(data, filePath) {

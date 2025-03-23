@@ -45,6 +45,20 @@ export async function getJacketFromRemySong(pageUrl, overrideSongName) {
     }
   }
 }
+/** Will try to return a jacket URL from the wiki page, if found
+ * @param {string} pageUrl
+ */
+export async function getMetaFromRemy(pageUrl) {
+  const dom = await getDom(pageUrl);
+  if (!dom) return;
+  const firstP = dom.window.document.querySelector("#mw-content-text p");
+  const artist = firstP.innerHTML.match(/Artist: (.+)<br>/);
+  const bpm = firstP.innerHTML.match(/BPM: (.+)<br>/);
+  return {
+    artist: artist ? artist[1] : null,
+    bpm: bpm ? bpm[1] : null,
+  };
+}
 
 /**
  * @param {string} pageUrl url of game page on remy
@@ -119,7 +133,7 @@ function getJacketFromThumb(node, songName) {
 export async function guessUrlFromName(songName) {
   try {
     const urlGuess = new URL(
-      songName.replaceAll(" ", "_"),
+      songName.replaceAll(" ", "_").replaceAll(":", "%3A"),
       "https://remywiki.com/",
     );
     const dom = await getDom(urlGuess.toString());
