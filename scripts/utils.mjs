@@ -1,4 +1,4 @@
-import { promises, existsSync } from "fs";
+import { promises, existsSync, mkdirSync } from "fs";
 import { resolve, basename, join, dirname } from "path";
 import { format } from "prettier";
 import PQueue from "p-queue";
@@ -85,12 +85,20 @@ export async function writeJsonData(data, filePath) {
 }
 
 /** @type {PQueue} */
-export const requestQueue = new PQueue({
+export let requestQueue = new PQueue({
   concurrency: 1, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
 });
 const JACKETS_PATH = resolve(__dirname, "../src/assets/jackets");
+
+/**
+ * call in import files where all jacket lookups are being done locally
+ * to remove all throttling (originally intended to be more polite to remywiki & al)
+ */
+export function unlockRequestConcurrency() {
+  requestQueue = new PQueue({});
+}
 
 let JACKET_PREFIX = "";
 export function setJacketPrefix(prefix) {
@@ -124,6 +132,14 @@ function getOutputPath(coverUrl, localFilename) {
   };
 }
 
+/** @param {string} absoluteImgPath */
+function createParentFolderIfNeeded(absoluteImgPath) {
+  const base = dirname(absoluteImgPath);
+  if (!existsSync(base)) {
+    mkdirSync(base, { recursive: true });
+  }
+}
+
 /**
  * @param coverUrl {string} url of image to fetch
  * @param localFilename {string | undefined} override filename found in url
@@ -135,6 +151,7 @@ function getOutputPath(coverUrl, localFilename) {
 export function downloadJacket(coverUrl, localFilename = undefined) {
   const { absolute, relative } = getOutputPath(coverUrl, localFilename);
   if (!existsSync(absolute)) {
+    createParentFolderIfNeeded(absolute);
     requestQueue
       .add(
         () => {
@@ -150,7 +167,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
       )
       .catch((e) => {
         console.error("image download failure for", coverUrl);
-        console.error(e.cause);
+        e.cause ? console.error(e.cause) : console.error(e);
       });
   }
 
