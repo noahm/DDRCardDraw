@@ -2711,7 +2711,7 @@
       "saHash": "1dldQ1il1O89O8Ol0Ib0Dq8Pl8ol111I",
       "artist": "BEMANI Sound Team \"SYUNN\"",
       "folder": "DanceDanceRevolution A3",
-      "bpm": "?150",
+      "bpm": "150",
       "charts": [
         {
           "lvl": 3,
@@ -8011,6 +8011,56 @@
       "saIndex": "479"
     },
     {
+      "name": "パーフェクトイーター",
+      "name_translation": "Perfect Eater",
+      "artist": "BEMANI Sound Team \"PON\" feat.かなたん",
+      "artist_translation": "",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3.15
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 6.25
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.25
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 6.25
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.1
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 17.1
+        }
+      ],
+      "flags": ["tempUnlock"],
+      "remyLink": "https://remywiki.com/Perfect_eater",
+      "jacket": "Perfect Eater.jpg",
+      "saHash": "diq9D0qbI00iOOb69q6Q1Q90PQOlo6dl"
+    },
+    {
       "name": "Plan 8",
       "name_translation": "",
       "artist": "Ryu☆",
@@ -8745,14 +8795,6 @@
           "style": "single",
           "diffClass": "expert",
           "sanbaiTier": 15.2
-        },
-        {
-          "step": 664,
-          "freeze": 11,
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 17.35
         },
         {
           "step": 225,
