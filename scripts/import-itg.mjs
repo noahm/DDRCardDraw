@@ -1,10 +1,15 @@
 import { parsePack } from "simfile-parser";
-import { writeJsonData, downloadJacket } from "./utils.mjs";
+import {
+  writeJsonData,
+  downloadJacket,
+  unlockRequestConcurrency,
+} from "./utils.mjs";
 import { resolve, join, basename, extname, dirname } from "path";
 import { existsSync, readdirSync } from "fs";
-import { fileURLToPath } from "url";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+unlockRequestConcurrency();
+
+const __dirname = import.meta.dirname;
 
 const [, , inputPath, stub, tiered] = process.argv;
 
@@ -87,14 +92,19 @@ function getBestJacket(candidates, songDir) {
   }
 }
 
+/**
+ * get the output location for a jacket image
+ * @param {string} titleDir path to the song folder as parsed
+ */
+function getFinalJacketPath(titleDir) {
+  return join("itg", stub, basename(titleDir) + ".jpg");
+}
+
 for (const parsedSong of pack.simfiles) {
   const { bg, banner, jacket, titleDir } = parsedSong.title;
   let finalJacket = getBestJacket([jacket, bg, banner], titleDir);
   if (finalJacket) {
-    finalJacket = downloadJacket(
-      finalJacket,
-      join("itg", stub, basename(titleDir) + ".jpg"),
-    );
+    finalJacket = downloadJacket(finalJacket, getFinalJacketPath(titleDir));
   }
 
   let bpm = parsedSong.displayBpm;
