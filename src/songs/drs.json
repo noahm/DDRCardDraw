@@ -1021,7 +1021,7 @@
       "bpm": "",
       "artist": "BLACKPINK",
       "folder": "DANCERUSH STARDOM",
-      "flags": ["stream"],
+      "flags": ["stream, removed"],
       "charts": [
         {
           "lvl": 3,
@@ -1041,6 +1041,7 @@
       "bpm": "",
       "artist": "BLACKPINK",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["stream, removed"],      
       "charts": [
         {
           "lvl": 3,
@@ -1260,6 +1261,7 @@
       "bpm": "",
       "artist": "kors k feat.Starbitz",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 6,
@@ -2505,6 +2507,7 @@
       "bpm": "",
       "artist": "(TRF)",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["stream, removed"],
       "charts": [
         {
           "lvl": 3,
@@ -3793,7 +3796,7 @@
       "artist": "ちゃんみな",
       "artist_translation": "CHANMINA",
       "folder": "DANCERUSH STARDOM",
-      "flags": ["stream"],
+      "flags": ["stream, removed"],
       "charts": [
         {
           "lvl": 1,
@@ -4250,7 +4253,7 @@
       "bpm": "",
       "artist": "NiziU",
       "folder": "DANCERUSH STARDOM",
-      "flags": ["jaex"],
+      "flags": ["jaex, removed"],
       "charts": [
         {
           "lvl": 3,
@@ -5301,6 +5304,7 @@
       "bpm": "",
       "artist": "(Official髭男dism)",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 2,
@@ -7744,6 +7748,7 @@
       "bpm": "",
       "artist": "Ado",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 3,
@@ -7955,6 +7960,7 @@
       "bpm": "",
       "artist": "UNISON SQUARE GARDEN",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 3,
@@ -8317,6 +8323,7 @@
       "artist": "ゴールデンボンバー",
       "artist_translation": "Golden Bomber",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 3,
@@ -8338,6 +8345,7 @@
       "artist": "ゴールデンボンバー",
       "artist_translation": "Golden Bomber",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 3,
@@ -8358,6 +8366,7 @@
       "bpm": "",
       "artist": "YOASOBI",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 3,
@@ -8546,6 +8555,7 @@
       "bpm": "",
       "artist": "(YOASOBI)",
       "folder": "DANCERUSH STARDOM",
+      "flags": ["removed"],
       "charts": [
         {
           "lvl": 3,
@@ -8661,6 +8671,593 @@
         },
         {
           "lvl": 10,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Keiko my Love)",
+      "name_translation": "Keiko my Love",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Jimmy Weckl",
+      "folder": "DANCERUSH STARDOM",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Ark",
+      "name_translation": "Ark",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "kors k",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Passion",
+      "name_translation": "Passion",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "KAN TAKAHIKO",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Blue Sky",
+      "name_translation": "Blue Sky",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Sota F.",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Mouse Music",
+      "name_translation": "Mouse Music",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "uno(IOSYS TRAX)",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Last Summer",
+      "name_translation": "Last Summer",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "BEMAI Sound Team 'Monolith vs. Nautilus'",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Barbless Ego",
+      "name_translation": "Barbless Ego",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Mad Child",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Crazy Control",
+      "name_translation": "Crazy Control",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "D-crew with VAL TIATIA",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "aleatrik",
+      "name_translation": "aleatrik",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "nc ft. NRGFactory",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Vermillion",
+      "name_translation": "Vermillion",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Remo-con",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Into UR Heart",
+      "name_translation": "Into UR Heart",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Sota Fujimori feat. yoshiko",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Sleepin' in the night",
+      "name_translation": "Sleepin' in the night",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "nagomu tamaki feat. 彩夏",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "New High",
+      "name_translation": "New High",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "The Herb Shop",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Freeway Shuffle",
+      "name_translation": "Freeway Shuffle",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "dj TAKA",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Rushiest Rush",
+      "name_translation": "Rushiest Rush",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "かめりあ",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Stay Alone",
+      "name_translation": "Stay Alone",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "コバヤシユウヤ(IOSYS)",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "I-W-U (I Want U)",
+      "name_translation": "I-W-U (I Want U)",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "najomu tamaki",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Get Up! feat. Kanae Asaba",
+      "name_translation": "Get Up! feat. Kanae Asaba",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "MK",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Sky Is The Limit",
+      "name_translation": "Sky Is The Limit",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Sota F. feat. Anna",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Too Late Snow RUNNING MAN EDITION",
+      "name_translation": "Too Late Snow RUNNING MAN EDITION",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "movies (moimoi × Xceon × Dai.)",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Tropical White RUNNING MAN EDITION",
+      "name_translation": "Tropical White RUNNING MAN EDITION",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "星宮とと+TEMPLIME",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Meltdown RUNNING MAN EDITION",
+      "name_translation": "Meltdown RUNNING MAN EDITION",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "G Blazen",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Awakening RUNNING MAN EDITION",
+      "name_translation": "Awakening RUNNING MAN EDITION",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Shouya Namai",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "MOVE! (We Keep It Movin') RUNNING MAN EDITION",
+      "name_translation": "MOVE! (We Keep It Movin') RUNNING MAN EDITION",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Jonny Dynamite!,Lisa - paint with stars -,Rio Hiiragi by BEMANI Sound Team 'U1-ASAMi'",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "Get On The Floor RUNNING MAN EDITION",
+      "name_translation": "Get On The Floor RUNNING MAN EDITION",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "RoughSketch",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "TITANS RETURN (STARDOM Remix)",
+      "name_translation": "TITANS RETURN (STARDOM Remix)",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "Hommarju",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "明鏡止水 (STARDOM Remix)",
+      "name_translation": "明鏡止水 (STARDOM Remix)",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "MK",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "normal"
+        }
+      ]
+    }
+    {
+      "name": "隅田川夏恋歌 (STARDOM Remix)",
+      "name_translation": "隅田川夏恋歌 (STARDOM Remix)",
+      "jacket": "drs.png",
+      "bpm": "",
+      "artist": "PRIDASK",
+      "folder": "DANCERUSH STARDOM",
+      "flags": ["tempUnlock"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "easy"
+        },
+        {
+          "lvl": 9,
           "style": "single",
           "diffClass": "normal"
         }
