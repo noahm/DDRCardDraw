@@ -1,5 +1,9 @@
 import { getDifficultyList, getSanbaiData } from "./scraping/sanbai.mjs";
-import { guessUrlFromName, getJacketFromRemySong } from "./scraping/remy.mjs";
+import {
+  guessUrlFromName,
+  getJacketFromRemySong,
+  getMetaFromRemy,
+} from "./scraping/remy.mjs";
 import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import * as path from "path";
 import { readFile } from "fs/promises";
@@ -141,7 +145,7 @@ try {
   const tasks = sanbaiData.map(async (song) => {
     const deleted = song.deleted;
     const existingSong = existingData.songs.find(
-      (s) => s.saHash === song.song_id,
+      (s) => s.saHash === song.song_id || s.name === song.song_name,
     );
     if (deleted || knownRemoved.has(song.song_id)) {
       if (existingSong) {
@@ -185,6 +189,10 @@ try {
       .filter((c) => !!c.lvl);
 
     if (existingSong) {
+      // add missing id
+      if (!existingSong.saHash) {
+        existingSong.saHash = song.song_id;
+      }
       // update charts/flags
       for (const freshChartData of charts) {
         const existingChart = existingSong.charts.find(
@@ -193,13 +201,6 @@ try {
             existingChart.style === freshChartData.style,
         );
         if (!existingChart) {
-          if (
-            song.version_num !== 19 &&
-            freshChartData.diffClass === "challenge"
-          ) {
-            freshChartData.flags ||= [];
-            freshChartData.flags.push("newInA3");
-          }
           ui.log.write(
             `Adding missing ${freshChartData.diffClass} chart of ${song.song_name}`,
           );
@@ -255,6 +256,16 @@ try {
           );
         }
       }
+      if (existingSong.artist === "???" || existingSong.bpm === "???") {
+        if (!existingSong.remyLink) {
+          ui.log.write(
+            `missing remy link for ${existingSong.name} so can't add bpm or artist data`,
+          );
+        }
+        const meta = await getMetaFromRemy(existingSong.remyLink);
+        existingSong.artist = meta.artist || "???";
+        existingSong.bpm = meta.bpm || "???";
+      }
     } else {
       // insert new song (need to find jacket, bpm, folder, etc)
       ui.log.write(`Adding new song: ${song.song_name}`);
@@ -264,12 +275,13 @@ try {
       if (remyLink && !jacket) {
         jacket = await getJacketFromRemySong(remyLink, song.song_name);
       }
+      const meta = await getMetaFromRemy(remyLink);
       existingData.songs.push({
         name: song.song_name,
         saHash: song.song_id,
-        artist: "???", // TODO
+        artist: meta.artist || "???",
         folder: foldersByIndex[song.version_num],
-        bpm: "???", // TODO
+        bpm: meta.bpm || "???",
         charts,
         jacket,
         remyLink: remyLink ? remyLink : undefined,
