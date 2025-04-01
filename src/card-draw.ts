@@ -285,12 +285,18 @@ export function draw(
    * List of bucket indexes that must be picked, to meet minimums. Only used with `forceDistribution`
    */
   const requiredDrawIndexes: number[] = [];
+  /**
+   * Total amount of weight used, so we can determine expected outcomes
+   * for the `forceDistribution` setting.
+   */
+  let totalWeightUsed = 0;
 
   if (useWeights) {
     // build a distribution based on the weights used for each bucket
     bucketDistribution = [];
     for (const bucketIndex of validCharts.keys()) {
       const weightAmount = weights[bucketIndex] || 0;
+      totalWeightUsed += weightAmount;
       // add the appropriate amount of "cards" representing this bucket to the overall distro
       times(weightAmount, () => bucketDistribution.push(bucketIndex));
     }
@@ -301,13 +307,6 @@ export function draw(
     // so a level with a weight of 15% can only show up on at most 1 card, a level with
     // a weight of 30% can only show up on at most 2 cards, etc.
     if (forceDistribution) {
-      /**
-       * Total amount of weight used, so we can determine expected outcomes
-       */
-      const totalWeightUsed = weights.reduce<number>(
-        (sum, current) => sum + (current || 0),
-        0,
-      );
       const evenRatios = numChartsToRandom % totalWeightUsed === 0;
       for (const bucketIdx of validCharts.keys()) {
         const normalizedWeight = (weights[bucketIdx] || 0) / totalWeightUsed;
