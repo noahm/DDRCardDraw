@@ -31,6 +31,7 @@ export function AbbrDifficulty({ diffClass }: AbbrProps) {
 export function getAvailableLevels(
   gameData: GameData | null,
   useGranular = false,
+  ignoreTiers = false,
 ): number[] {
   if (gameData === null) {
     return [];
@@ -40,7 +41,11 @@ export function getAvailableLevels(
   for (const song of gameData.songs) {
     for (const chart of song.charts) {
       levelSet.add(
-        chartLevelOrTier(chart, useGranular, gameData.meta.usesDrawGroups),
+        chartLevelOrTier(
+          chart,
+          useGranular,
+          ignoreTiers ? false : gameData.meta.usesDrawGroups,
+        ),
       );
     }
   }
