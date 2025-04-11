@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, Fragment } from "react";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 import { Icon } from "@blueprintjs/core";
@@ -47,12 +47,12 @@ export function SetLabels() {
               {winCount}
             </span>
           );
-          if (idx === 0 && allPlayers.length === 2) {
+          if (allPlayers.length === 2 && idx === 0) {
             return (
-              <>
+              <Fragment key={idx}>
                 {ret}
                 <Versus />
-              </>
+              </Fragment>
             );
           }
           return ret;
