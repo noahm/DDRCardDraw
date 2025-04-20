@@ -170,13 +170,15 @@ export function SongCard(props: Props) {
     [styles.hideVeto]: hideVetos,
   });
 
+  const handleCardClick = menuContent ? showMenu : props.onClick || handleCopy;
+
   return (
     <div
       className={rootClassname}
       onClick={
-        !menuContent || showingContextMenu || pocketPickPendingForPlayer
-          ? props.onClick || handleCopy
-          : showMenu
+        showingContextMenu || pocketPickPendingForPlayer
+          ? undefined
+          : handleCardClick
       }
       style={jacketBg}
     >
