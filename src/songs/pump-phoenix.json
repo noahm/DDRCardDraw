@@ -4797,7 +4797,8 @@
         { "lvl": 6, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "S", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
-        { "lvl": 21, "diffClass": "D", "style": "solo" }
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C4", "style": "coop" }
       ]
     },
     {
@@ -5883,7 +5884,8 @@
         { "lvl": 18, "diffClass": "S", "style": "solo", "flags": ["ampass"] },
         { "lvl": 8, "diffClass": "D", "style": "solo" },
         { "lvl": 13, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo", "flags": ["unlock"] }
+        { "lvl": 18, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -6617,7 +6619,8 @@
         { "lvl": 18, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
         { "lvl": 11, "diffClass": "D", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" },
-        { "lvl": 19, "diffClass": "D", "style": "solo", "flags": ["unlock"] }
+        { "lvl": 19, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -7411,6 +7414,7 @@
         { "lvl": 12, "diffClass": "S", "style": "solo" },
         { "lvl": 16, "diffClass": "S", "style": "solo" },
         { "lvl": 19, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
         { "lvl": 10, "diffClass": "D", "style": "solo" },
         { "lvl": 14, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
@@ -7866,7 +7870,8 @@
         { "lvl": 19, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
-        { "lvl": 21, "diffClass": "D", "style": "solo", "flags": ["unlock"] }
+        { "lvl": 21, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
       ]
     },
     {
@@ -8296,6 +8301,7 @@
         { "lvl": 15, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
@@ -8704,7 +8710,8 @@
         { "lvl": 22, "diffClass": "S", "style": "solo" },
         { "lvl": 16, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" },
-        { "lvl": 24, "diffClass": "D", "style": "solo" }
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -8814,6 +8821,7 @@
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
         { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
@@ -10405,6 +10413,164 @@
         { "lvl": 18, "diffClass": "S", "style": "solo" },
         { "lvl": 22, "diffClass": "S", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1021",
+      "name": "1948",
+      "jacket": "pump/1948.jpg",
+      "artist": "SLAM",
+      "bpm": "240",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 26, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 27, "diffClass": "D", "style": "solo" },
+        { "lvl": 29, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1022",
+      "name": "Super Akuma Emperor",
+      "jacket": "pump/Super_Akuma_Emperor.jpg",
+      "artist": "REDALiCE",
+      "bpm": "240",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1023",
+      "name": "Deca Dance",
+      "jacket": "pump/Deca_Dance.jpg",
+      "artist": "Yooh",
+      "bpm": "160",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1024",
+      "name": "Burn Out",
+      "jacket": "pump/Burn_Out.jpg",
+      "artist": "WyvernP",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1025",
+      "name": "Ultimate Eyes",
+      "jacket": "pump/Ultimate_Eyes.jpg",
+      "artist": "Hyun",
+      "bpm": "185",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1026",
+      "name": "Rush-Hour",
+      "jacket": "pump/Rush_Hour.jpg",
+      "artist": "litmus*",
+      "bpm": "112",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1027",
+      "name": "Human Extinction (PIU Edit.)",
+      "jacket": "pump/Human_Extinction.jpg",
+      "artist": "MonstDeath",
+      "bpm": "199",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1028",
+      "name": "Neo Catharsis - SHORT CUT -",
+      "jacket": "pump/Neo_Catharsis_Shortcut.jpg",
+      "artist": "TAG underground overlay",
+      "bpm": "120~300",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1029",
+      "name": "Hymn of Golden Glory - SHORT CUT -",
+      "jacket": "pump/Hymn_of_Golden_Glory_Shortcut.jpg",
+      "artist": "Essbee",
+      "bpm": "244",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" }
       ]
     }
