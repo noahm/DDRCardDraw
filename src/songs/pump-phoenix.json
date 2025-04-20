@@ -299,7 +299,8 @@
         { "lvl": 20, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
         { "lvl": 9, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" },
-        { "lvl": 24, "diffClass": "D", "style": "solo", "flags": ["unlock"] }
+        { "lvl": 24, "diffClass": "D", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -493,7 +494,8 @@
         { "lvl": 14, "diffClass": "D", "style": "solo" },
         { "lvl": 17, "diffClass": "D", "style": "solo" },
         { "lvl": 21, "diffClass": "D", "style": "solo" },
-        { "lvl": 20, "diffClass": "S", "style": "solo", "flags": ["unlock"] }
+        { "lvl": 20, "diffClass": "S", "style": "solo", "flags": ["unlock"] },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -578,7 +580,8 @@
         { "lvl": 4, "diffClass": "S", "style": "solo" },
         { "lvl": 6, "diffClass": "S", "style": "solo" },
         { "lvl": 15, "diffClass": "S", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo" }
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
       ]
     },
     {
@@ -8126,7 +8129,8 @@
         { "lvl": 6, "diffClass": "D", "style": "solo" },
         { "lvl": 13, "diffClass": "D", "style": "solo" },
         { "lvl": 18, "diffClass": "D", "style": "solo" },
-        { "lvl": 21, "diffClass": "D", "style": "solo" }
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C3", "style": "coop" }
       ]
     },
     {
@@ -10244,6 +10248,163 @@
         { "lvl": 19, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1012",
+      "name": "Darkside Of The Mind",
+      "jacket": "pump/Darkside_Of_The_Mind.jpg",
+      "artist": "DJ Myosuke",
+      "bpm": "220",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1013",
+      "name": "ESP",
+      "jacket": "pump/ESP.jpg",
+      "artist": "nato",
+      "bpm": "175",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1014",
+      "name": "New Rose",
+      "jacket": "pump/New_Rose.jpg",
+      "artist": "Hommarju",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1015",
+      "name": "Crimson hood",
+      "jacket": "pump/Crimson_hood.jpg",
+      "artist": "Springhead",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 24, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1016",
+      "name": "Nade Nade",
+      "jacket": "pump/Nade_Nade.jpg",
+      "artist": "Doin",
+      "bpm": "100",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1017",
+      "name": "Catastrophe",
+      "jacket": "pump/Catastrophe.jpg",
+      "artist": "rareguy & MonstDeath",
+      "bpm": "202",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 26, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1018",
+      "name": "FLVSH OUT",
+      "jacket": "pump/FLVSH_OUT.jpg",
+      "artist": "Getty",
+      "bpm": "160",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1019",
+      "name": "Phoenix Opening - SHORT CUT -",
+      "jacket": "pump/Phoenix_Opening_Shortcut.jpg",
+      "artist": "MAX",
+      "bpm": "174",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "1020",
+      "name": "Ghroth - SHORT CUT -",
+      "jacket": "pump/Ghroth_Shortcut.jpg",
+      "artist": "nato",
+      "bpm": "212",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" }
       ]
     }
