@@ -1,16 +1,7 @@
-// import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-
-/** @type {import("@typescript-eslint/utils").TSESLint.FlatConfig.Config}*/
-const reactHooksConfig = {
-  plugins: {
-    "react-hooks": reactHooksPlugin,
-  },
-  rules: reactHooksPlugin.configs.recommended.rules,
-};
 
 export default tseslint.config(
   {
@@ -26,8 +17,7 @@ export default tseslint.config(
       },
     },
   },
-  // eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  reactHooksConfig,
+  reactHooksPlugin.configs["recommended-latest"],
   eslintConfigPrettier,
 );
