@@ -110,10 +110,38 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "p1-name",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={1} displayType="Name" /> };
+        },
+      },
+      {
+        path: "p1-score",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={1} displayType="Score" /> };
+        },
+      },
+      {
         path: "p2",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
           return { element: <CabPlayer p={2} /> };
+        },
+      },
+      {
+        path: "p2-name",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={2} displayType="Name" /> };
+        },
+      },
+      {
+        path: "p2-score",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={2} displayType="Score" /> };
         },
       },
     ],

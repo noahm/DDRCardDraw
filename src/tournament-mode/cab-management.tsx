@@ -145,9 +145,33 @@ function CabSummary({ cab }: { cab: CabInfo }) {
         />
         <MenuItem
           icon={<Person />}
+          text="Player 1 Name"
+          onClick={copySource}
+          data-source="p1-name"
+        />
+        <MenuItem
+          icon={<Person />}
+          text="Player 1 Score"
+          onClick={copySource}
+          data-source="p1-score"
+        />
+        <MenuItem
+          icon={<Person />}
           text="Player 2"
           onClick={copySource}
           data-source="p2"
+        />
+        <MenuItem
+          icon={<Person />}
+          text="Player 2 Name"
+          onClick={copySource}
+          data-source="p2-name"
+        />
+        <MenuItem
+          icon={<Person />}
+          text="Player 2 Score"
+          onClick={copySource}
+          data-source="p2-score"
         />
       </MenuItem>
 
