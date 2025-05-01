@@ -123,7 +123,6 @@ const DrawnSet = memo<Props>(function DrawnSet({ drawingId }) {
           >
             <TournamentModeSpacer />
             <div id={`drawing-${drawingId}`}>
-              <SetLabels />
               <ChartList />
             </div>
             <DrawingActions />
