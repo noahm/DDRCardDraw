@@ -7,11 +7,20 @@ import { AppState, type store as appReduxStore } from "../state/store";
 import { createClient } from "@supabase/supabase-js";
 import type { Database, Json } from "./database.types";
 
-const supabase = createClient<Database>(
-  process.env.SUPABASE_URL as string,
-  process.env.SUPABASE_KEY as string,
-  { auth: { persistSession: false } },
-);
+function getSupabase() {
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
+    console.log("Your env both SUPABASE_URL and SUPABASE_KEY available.");
+    console.log("Disabling subpabase persistence.");
+    return;
+  }
+  return createClient<Database>(
+    process.env.SUPABASE_URL as string,
+    process.env.SUPABASE_KEY as string,
+    { auth: { persistSession: false } },
+  );
+}
+
+const supabase = getSupabase();
 
 function isAppState(state: unknown): state is AppState {
   if (state && !Array.isArray(state) && typeof state === "object") {
@@ -42,6 +51,7 @@ export default class Server implements Party.Server {
   }
 
   private async getFromSupabase() {
+    if (!supabase) return;
     const { data, error } = await supabase
       .from("event_state")
       .select("state")
@@ -94,11 +104,13 @@ export default class Server implements Party.Server {
     this.room.storage.put("currentState", nextState);
     // persist the state to supabase
     try {
-      await supabase.from("event_state").upsert({
-        id: this.room.id,
-        state: nextState as unknown as Json,
-        updated_at: new Date().toISOString(),
-      });
+      if (supabase) {
+        await supabase.from("event_state").upsert({
+          id: this.room.id,
+          state: nextState as unknown as Json,
+          updated_at: new Date().toISOString(),
+        });
+      }
     } catch (e) {
       console.warn("error with upsert", e);
     }
