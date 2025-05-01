@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": [],
+    "lastUpdated": 1746063307389,
+    "usesDrawGroups": false,
+    "styles": ["single"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 11,
+    "difficulties": ["challenge"],
+    "upperLvlBound": 15,
+    "style": "single"
+  },
+  "i18n": {
+    "en": {
+      "name": "Storm 2025 Bracket",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[11] Arabian Nights",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Arabian Nights [SX].jpg",
+      "bpm": "128",
+      "artist": "RudeLies & Facading",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] BADBOY",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] BADBOY (SX) [cmmf].jpg",
+      "bpm": "165",
+      "artist": "CamaCon",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Exoseven",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Exoseven [SX].jpg",
+      "bpm": "112",
+      "artist": "PSYQUO vs. PTB10",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Ghost Ship",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Ghost Ship [SX].jpg",
+      "bpm": "110",
+      "artist": "Teminite",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Mr. Werewolf",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Mr. Werewolf (android52 Edit) [SX].jpg",
+      "bpm": "175",
+      "artist": "t+pazolite",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Slamurai",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Slamurai (SX) [Zaia].jpg",
+      "bpm": "132",
+      "artist": "kLL Bill",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Speedrun",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Speedrun (SX) [Chief Skittles].jpg",
+      "bpm": "150",
+      "artist": "Ace Aura x Skybreak",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Swampgator",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Swampgator (SX) [ITGAlex].jpg",
+      "bpm": "126",
+      "artist": "Zekk",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] The Virus",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] The Virus (SX) [Chief Skittles].jpg",
+      "bpm": "140",
+      "artist": "AKOV",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Third Sun",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[11] Third Sun [SX].jpg",
+      "bpm": "113-150",
+      "artist": "Ash Astral",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] $1.78",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] $1.78.jpg",
+      "bpm": "200",
+      "artist": "Schwank",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Antipattern",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Antipattern (SX) [mang].jpg",
+      "bpm": "140",
+      "artist": "Strayframe & BilliumMoto",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Arrasando",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Arrasando (SX) [J. Nero].jpg",
+      "bpm": "132",
+      "artist": "Thalía",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Astray",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Astray (SX) [cmmf].jpg",
+      "bpm": "146",
+      "artist": "Cynax",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Burning Flame",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Burning Flame (SX) [Valex].jpg",
+      "bpm": "165",
+      "artist": "AJURIKA feat. SAK.",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Dodo (RED VERSION)",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Dodo (RED VERSION) (SX) [Maxx].jpg",
+      "bpm": "130",
+      "artist": "CHOMPO, meganeko",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Godslain",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Godslain.jpg",
+      "bpm": "130",
+      "artist": "Juggernaut.",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Immediate Results!",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Immediate Results! (SX) [CERiNG].jpg",
+      "bpm": "141",
+      "artist": "Arch Echo",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Juggler's Maddness",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Juggler's Maddness (SX) [ITGAlex].jpg",
+      "bpm": "125",
+      "artist": "Lite Show Magic",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Picture in My Mind",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Picture in My Mind (SX) [Zaia].jpg",
+      "bpm": "128",
+      "artist": "Pinkpantheress, Sam Gellaitry",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] pseudonymph",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] pseudonymph (SX) [Valex].jpg",
+      "bpm": "150",
+      "artist": "のの",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] summersick",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] summersick (SX) [cmmf].jpg",
+      "bpm": "150",
+      "artist": "nitro",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] TSLove",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] TSLove (SX) [Hubert].jpg",
+      "bpm": "185",
+      "artist": "O2i3",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Unspoken",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] Unspoken (SX) [Maxx].jpg",
+      "bpm": "140",
+      "artist": "KERO",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Chariot",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[12] [NO CMOD] Chariot (SX) [Benpai].jpg",
+      "bpm": "128",
+      "artist": "USAO",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] \\#CMFLG",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] CMFLG (SX) [sorae].jpg",
+      "bpm": "155",
+      "artist": "Qlarabelle",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] ALERT",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] ALERT (SX) [ITGAlex].jpg",
+      "bpm": "150",
+      "artist": "Juggernaut. & flatt",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] All Hail",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] All Hail (SX) [Tony S. & cmmf].jpg",
+      "bpm": "145",
+      "artist": "Dyatic x Dr. Ozi",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] ATOPY",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] ATOPY [SX].jpg",
+      "bpm": "190",
+      "artist": "SANY-ON",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Elbow Grease",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] Elbow Grease (SX) [Scrypts].jpg",
+      "bpm": "150",
+      "artist": "Ray Volpe & Soltan",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Flechette",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] Flechette (SX) [Talkion].jpg",
+      "bpm": "180",
+      "artist": "awfuless meets PODA",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] HiTECH Stay Alive",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] HiTECH Stay Alive (SX) [Exschwasion].jpg",
+      "bpm": "152",
+      "artist": "siqlo",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Laserbeam",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] Laserbeam (SX) [sorae].jpg",
+      "bpm": "150",
+      "artist": "Ray Volpe",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] logicx-1.wav",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] logicx-1.wav (SX) [Maractus].jpg",
+      "bpm": "160",
+      "artist": "HYØUKA & TBN (Kou!)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Niflheimr",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] Niflheimr (SX) [DVogan].jpg",
+      "bpm": "186",
+      "artist": "Qrispy Joybox",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Ou Legends",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] Ou Legends (SX) [Chief Skittles].jpg",
+      "bpm": "191",
+      "artist": "かめりあ",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Repentance",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] Repentance (SX) [Valex].jpg",
+      "bpm": "120",
+      "artist": "Abel",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] sparky spark",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] sparky spark (SX) [RakkiiCB].jpg",
+      "bpm": "155",
+      "artist": "kamome sano",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] SYNERGY",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[13] SYNERGY (SX) [Snooze].jpg",
+      "bpm": "165",
+      "artist": "lapix",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] $100 Bills",
+      "name_translation": "[14] 100 Bills",
+      "jacket": "itg/storm25_bracket/[14] 100 Bills (SX) [cmmf].jpg",
+      "bpm": "215",
+      "artist": "Camellia",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] Anti Safety Zone",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] Anti Safety Zone (SX) [Kerpa & sangyule].jpg",
+      "bpm": "170",
+      "artist": "MYUKKE.",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] Clinozoisite",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] Clinozoisite (SX) [Maractus & Talkion].jpg",
+      "bpm": "175",
+      "artist": "Ludicin",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] Duplication",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] Duplication (SX) [sorae].jpg",
+      "bpm": "202",
+      "artist": "Zekk",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] MAXRAGE",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] MAXRAGE (SX) [Exschwasion].jpg",
+      "bpm": "222",
+      "artist": "EBIMAYO",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] Modular Technology",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] Modular Technology [SX].jpg",
+      "bpm": "170",
+      "artist": "Sota Fujimori",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] Trrricksters!!",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] Trrricksters!! [SX].jpg",
+      "bpm": "155",
+      "artist": "s-don vs. Hino Isuka",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[14] XENA",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[14] XENA (SX) [Zaia].jpg",
+      "bpm": "145",
+      "artist": "Skrillex & Nai Barghouti",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[15] deadeye",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[15] deadeye (SX) [Exschwasion].jpg",
+      "bpm": "167",
+      "artist": "Acotto",
+      "charts": [{ "lvl": 15, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[15] Tech Alert",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[15] Tech Alert (SX) [Chabala].jpg",
+      "bpm": "175",
+      "artist": "lapix",
+      "charts": [{ "lvl": 15, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[15] XHAOS JUDGE",
+      "name_translation": "",
+      "jacket": "itg/storm25_bracket/[15] XHAOS JUDGE (SX) [Valex].jpg",
+      "bpm": "200",
+      "artist": "BlackYooh vs. siromaru",
+      "charts": [{ "lvl": 15, "style": "single", "diffClass": "challenge" }]
+    }
+  ]
+}
