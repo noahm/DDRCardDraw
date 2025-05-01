@@ -7,7 +7,9 @@
     "node": "^22.14.0"
   },
   "scripts": {
-    "start": "webpack serve --env dev=true",
+    "start": "echo 'You also need to run `yarn start:backend` in another shell'; yarn start:frontend",
+    "start:frontend": "webpack serve --env dev=true",
+    "start:backend": "partykit dev",
     "build": "webpack",
     "build:zip": "npm run validate && webpack --env zip",
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
@@ -20,11 +22,12 @@
     "import:iidx": "node scripts/import-iidx.mjs",
     "import:smx": "node scripts/import-smx.mjs",
     "import:itg": "node scripts/import-itg.mjs",
-    "validate": "npm run validate:json && npm run validate:ts && npm run validate:format && npm run validate:lint",
+    "validate": "run-p 'validate:*'",
     "validate:lint": "eslint",
-    "validate:json": "node scripts/validate.mjs",
     "validate:format": "prettier --check ./src ./scripts",
-    "validate:ts": "tsc --noemit"
+    "validate:types": "run-s validate:types:data validate:types:ts",
+    "validate:types:data": "node scripts/validate.mjs",
+    "validate:types:ts": "tsc --noemit"
   },
   "author": "Noah Manneschmidt",
   "contributors": [
@@ -100,6 +103,7 @@
     "modern-screenshot": "4.6.0",
     "nanoid": "5.1.5",
     "normalize.css": "8.0.1",
+    "npm-run-all": "^4.1.5",
     "p-queue": "8.1.0",
     "papaparse": "5.5.2",
     "partykit": "0.0.114",
