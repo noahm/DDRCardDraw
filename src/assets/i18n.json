@@ -87,29 +87,90 @@
     "applyUpdate": "Apply"
   },
   "ja": {
-    "weights": {
-      "explanation": "各レベルごとに数字で出やすさの重みを付ける",
-      "check": {
-        "title": "「17に10%が設定されている状態で17が2つ以上ドローされる」というような非常にまれな結果を除外",
-        "label": "厳密に設定を反映する"
+    "gameMenu": {
+      "title": "Select game data",
+      "parent": {
+        "more": "More Games",
+        "events": "Event Packs",
+        "imported": "Local Imports"
       }
     },
+    "weights": {
+      "explanation": "各レベルごとに数字で出やすさの重みを付ける",
+      "forcedExplanation": "Sets a fixed limit on exactly how many charts of each difficulty level will be drawn.",
+    "check": {
+        "title": "「17に10%が設定されている状態で17が2つ以上ドローされる」というような非常にまれな結果を除外",
+        "label": "厳密に設定を反映する"
+      },
+      "group": {
+        "title": "All charts will be grouped into this many individual \"decks\" of cards and drawn from each with separate probabilities.",
+        "label": "Group cards into this many buckets"
+      }
+    },
+    "add": "Add",
     "controls": {
+      "drawerTitle": "Settings",
+      "hideShowFilters": "Chart Filters",
       "chartCount": "ドロー数",
+      "playerPicks": "Free picks",
       "upperBoundLvl": "上限",
       "lowerBoundLvl": "下限",
+      "upperBoundTier": "Tier Max",
+      "lowerBoundTier": "Tier Min",
+      "constrainPocketPicks": "Picks must match draw options",
       "useWeightedDistributions": "レベル別に確率を設定する",
+      "sortByLevel": "Sort by chart level",
+      "orderByAction": "Re-order by pick/ban",
       "style": "スタイル",
       "difficulties": "難易度",
+      "folders": "Folders",
       "include": "特殊な譜面",
-      "show": "メニューを表示",
-      "hide": "メニューを隠す",
+      "tabs": {
+        "general": "General",
+        "flags": "Flags",
+        "networking": "Networking",
+        "players": "Players"
+      },
+      "hideVetos": "Hide vetoed charts",
+      "playerLabels": "Show player & round labels on draws",
+      "addPlayerLabel": "Manage Player Names",
+      "tournamentLabelEdit": "Tournament round labels",
       "shockArrows": "ショックアロー",
-      "invalid": "対象譜面がありません！"
+      "invalid": "対象譜面がありません！",
+      "playersPerDraw": "Players per draw",
+      "useGranularLevels": "Use granular levels",
+      "releaseHeader": "Released on or before"
     },
+    "tournamentRoundPlaceholder": "Tournament Round",
+    "tournamentRoundAdd": "Add \"{round}\"",
+    "noResults": "No results",
+    "noMatchingCharts": "No chart matching filters",
     "draw": "ドロー！",
+    "clearDrawings": "Clear Draws",
     "updateLoading": "更新中...",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
-    "lastUpdate": "楽曲の更新日：{date}"
+    "credits": "Credits",
+    "help": "Help",
+    "lastUpdate": "{gameName} 楽曲の更新日：{date}",
+    "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Pump it Up data sourced from PUMPOUT, maintained by AnyhowStep and Haru-kaze. * Maintained by Noah Manneschmidt, aka Cathadan.",
+    "contact": {
+      "prompt": "Please reach out with feedback, ideas, or code contributions:",
+      "facebook": "Facebook",
+      "discord": "Discord",
+      "github": "Github"
+    },
+    "songAction": {
+      "lock": "Protect",
+      "ban": "Veto",
+      "pocketPick": "Pocket Pick",
+      "reset": "Reset",
+      "cancel": "Cancel",
+      "winner": "Pick Winner",
+      "copy": "Copy Name and Difficulty",
+      "redraw": "Redraw this chart"
+    },
+    "noValidCharts": "No valid charts",
+    "showSongPool": "Show eligible charts",
+    "applyUpdate": "Apply"
   }
 }
