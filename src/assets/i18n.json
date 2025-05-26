@@ -1,5 +1,10 @@
 {
   "en": {
+    "clearDrawings": "Clear Draws",
+    "credits": "Credits",
+    "help": "Help",
+    "toggleTheme": "Toggle Theme",
+    "lastUpdate": "{gameName} data last updated {date}",
     "gameMenu": {
       "title": "Select game data",
       "parent": {
@@ -7,6 +12,55 @@
         "events": "Event Packs",
         "imported": "Local Imports"
       }
+    },
+    "showSongPool": "Show eligible charts",
+    "draw": "Draw!",
+    "tournamentRoundPlaceholder": "Tournament Round",
+    "tournamentRoundAdd": "Add \"{round}\"",
+    "noResults": "No results",
+    "noMatchingCharts": "No chart matching filters",
+    "songAction": {
+      "lock": "Protect",
+      "ban": "Veto",
+      "pocketPick": "Pocket Pick",
+      "reset": "Reset",
+      "cancel": "Cancel",
+      "winner": "Pick Winner",
+      "copy": "Copy Name and Difficulty",
+      "redraw": "Redraw this chart"
+    },
+    "controls": {
+      "drawerTitle": "Settings",
+      "tabs": {
+        "general": "General",
+        "flags": "Flags",
+        "networking": "Networking",
+        "players": "Players"
+      },
+      "chartCount": "Number to draw",
+      "playerPicks": "Free picks",
+      "upperBoundLvl": "Lvl Max",
+      "upperBoundTier": "Tier Max",
+      "lowerBoundLvl": "Lvl Min",
+      "lowerBoundTier": "Tier Min",
+      "hideShowFilters": "Chart Filters",
+      "style": "Style",
+      "difficulties": "Difficulties",
+      "releaseHeader": "Released on or before",
+      "include": "Include",
+      "folders": "Folders",
+      "orderByAction": "Re-order by pick/ban",
+      "constrainPocketPicks": "Picks must match draw options",
+      "sortByLevel": "Sort by chart level",
+      "useGranularLevels": "Use granular levels",
+      "hideVetos": "Hide vetoed charts",
+      "useWeightedDistributions": "Use Weighted Distributions",
+      "playerLabels": "Show player & round labels on draws",
+      "playersPerDraw": "Players per draw",
+      "addPlayerLabel": "Manage Player Names",
+      "tournamentLabelEdit": "Tournament round labels",
+      "shockArrows": "Shock Arrows",
+      "invalid": "Couldn't draw anything with current settings!"
     },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
@@ -20,51 +74,6 @@
         "label": "Group cards into this many buckets"
       }
     },
-    "add": "Add",
-    "controls": {
-      "drawerTitle": "Settings",
-      "hideShowFilters": "Chart Filters",
-      "chartCount": "Number to draw",
-      "playerPicks": "Free picks",
-      "upperBoundLvl": "Lvl Max",
-      "lowerBoundLvl": "Lvl Min",
-      "upperBoundTier": "Tier Max",
-      "lowerBoundTier": "Tier Min",
-      "constrainPocketPicks": "Picks must match draw options",
-      "useWeightedDistributions": "Use Weighted Distributions",
-      "sortByLevel": "Sort by chart level",
-      "orderByAction": "Re-order by pick/ban",
-      "style": "Style",
-      "difficulties": "Difficulties",
-      "folders": "Folders",
-      "include": "Include",
-      "tabs": {
-        "general": "General",
-        "flags": "Flags",
-        "networking": "Networking",
-        "players": "Players"
-      },
-      "hideVetos": "Hide vetoed charts",
-      "playerLabels": "Show player & round labels on draws",
-      "addPlayerLabel": "Manage Player Names",
-      "tournamentLabelEdit": "Tournament round labels",
-      "shockArrows": "Shock Arrows",
-      "invalid": "Couldn't draw anything with current settings!",
-      "playersPerDraw": "Players per draw",
-      "useGranularLevels": "Use granular levels",
-      "releaseHeader": "Released on or before"
-    },
-    "tournamentRoundPlaceholder": "Tournament Round",
-    "tournamentRoundAdd": "Add \"{round}\"",
-    "noResults": "No results",
-    "noMatchingCharts": "No chart matching filters",
-    "draw": "Draw!",
-    "clearDrawings": "Clear Draws",
-    "updateLoading": "Installing an update...",
-    "updateReady": "Update ready, refresh for the freshest code around!",
-    "credits": "Credits",
-    "help": "Help",
-    "lastUpdate": "{gameName} data last updated {date}",
     "about": "App inspired by work from Jeff Lloyd. * Weighted distribution code contributed by Chris Chike. * Jacket images prepared by FuriousDCSL. * Japanese localization made possible by nalpan. * DRS data provided by Joseph Bowersox. * SDVX data made possible by Vincent Nguyen. * Order songs by Protect/Pocket Pick feature by Ornrumpa Kanchanomai and Thanh Dang. * Pump it Up data sourced from PUMPOUT, maintained by AnyhowStep and Haru-kaze. * Maintained by Noah Manneschmidt, aka Cathadan.",
     "contact": {
       "prompt": "Please reach out with feedback, ideas, or code contributions:",
@@ -72,21 +81,16 @@
       "discord": "Discord",
       "github": "Github"
     },
-    "songAction": {
-      "lock": "Protect",
-      "ban": "Veto",
-      "pocketPick": "Pocket Pick",
-      "reset": "Reset",
-      "cancel": "Cancel",
-      "winner": "Pick Winner",
-      "copy": "Copy Name and Difficulty",
-      "redraw": "Redraw this chart"
-    },
-    "noValidCharts": "No valid charts",
-    "showSongPool": "Show eligible charts",
+    "updateLoading": "Installing an update...",
+    "updateReady": "Update ready, refresh for the freshest code around!",
     "applyUpdate": "Apply"
   },
   "ja": {
+    "clearDrawings": "全消去",
+    "credits": "クレジット",
+    "help": "使い方 (English)",
+    "toggleTheme": "テーマを切り替える",
+    "lastUpdate": "{gameName} 楽曲の更新日：{date}",
     "gameMenu": {
       "title": "ゲームデータを選択",
       "parent": {
@@ -94,6 +98,55 @@
         "events": "イベント",
         "imported": "ローカルインポート"
       }
+    },
+    "showSongPool": "ドロー対象となる譜面を表示",
+    "draw": "ドロー！",
+    "tournamentRoundPlaceholder": "大会ラウンド",
+    "tournamentRoundAdd": "\"{round}\"を追加",
+    "noResults": "検索結果がありません",
+    "noMatchingCharts": "対象譜面なし",
+    "songAction": {
+      "lock": "選択",
+      "ban": "拒否",
+      "pocketPick": "自由選曲",
+      "reset": "リセット",
+      "cancel": "キャンセル",
+      "winner": "勝者を設定",
+      "copy": "曲名と難易度をコピー",
+      "redraw": "この譜面を引き直す"
+    },
+    "controls": {
+      "drawerTitle": "設定",
+      "tabs": {
+        "general": "一般",
+        "flags": "属性",
+        "networking": "ネットワーク",
+        "players": "プレイヤー"
+      },
+      "chartCount": "ドロー数",
+      "playerPicks": "自由枠",
+      "upperBoundLvl": "レベル上限",
+      "upperBoundTier": "Tier上限",
+      "lowerBoundLvl": "レベル下限",
+      "lowerBoundTier": "Tier下限",
+      "hideShowFilters": "譜面フィルター",
+      "style": "スタイル",
+      "difficulties": "難易度",
+      "releaseHeader": "リリース日",
+      "include": "特殊な譜面",
+      "folders": "フォルダー",
+      "orderByAction": "選択/拒否した譜面を並べ替える",
+      "constrainPocketPicks": "自由選曲にも制限を適用する",
+      "sortByLevel": "譜面をレベル順にソート",
+      "useGranularLevels": "\"厳密な\"レベルを使用",
+      "hideVetos": "拒否した譜面を非表示にする",
+      "useWeightedDistributions": "レベル別に確率を設定する",
+      "playerLabels": "プレイヤー名と大会のラウンドをトップに表示する",
+      "playersPerDraw": "プレー人数",
+      "addPlayerLabel": "プレイヤー名の管理",
+      "tournamentLabelEdit": "大会ラウンドの管理",
+      "shockArrows": "ショックアロー",
+      "invalid": "対象譜面がありません！"
     },
     "weights": {
       "explanation": "各レベルの譜面がドローされる確率を、割合で設定します。",
@@ -107,51 +160,6 @@
         "label": "譜面のレベル帯を、この数でグループ化する"
       }
     },
-    "add": "追加",
-    "controls": {
-      "drawerTitle": "設定",
-      "hideShowFilters": "譜面フィルター",
-      "chartCount": "ドロー数",
-      "playerPicks": "自由枠",
-      "upperBoundLvl": "レベル上限",
-      "lowerBoundLvl": "レベル下限",
-      "upperBoundTier": "Tier上限",
-      "lowerBoundTier": "Tier下限",
-      "constrainPocketPicks": "自由選曲にも制限を適用する",
-      "useWeightedDistributions": "レベル別に確率を設定する",
-      "sortByLevel": "譜面をレベル順にソート",
-      "orderByAction": "選択/拒否した譜面を並べ替える",
-      "style": "スタイル",
-      "difficulties": "難易度",
-      "folders": "フォルダー",
-      "include": "特殊な譜面",
-      "tabs": {
-        "general": "一般",
-        "flags": "属性",
-        "networking": "ネットワーク",
-        "players": "プレイヤー"
-      },
-      "hideVetos": "拒否した譜面を非表示にする",
-      "playerLabels": "プレイヤー名と大会のラウンドをトップに表示する",
-      "addPlayerLabel": "プレイヤー名の管理",
-      "tournamentLabelEdit": "大会ラウンドの管理",
-      "shockArrows": "ショックアロー",
-      "invalid": "対象譜面がありません！",
-      "playersPerDraw": "プレー人数",
-      "useGranularLevels": "\"厳密な\"レベルを使用",
-      "releaseHeader": "リリース日"
-    },
-    "tournamentRoundPlaceholder": "大会ラウンド",
-    "tournamentRoundAdd": "\"{round}\"を追加",
-    "noResults": "検索結果がありません",
-    "noMatchingCharts": "対象譜面なし",
-    "draw": "ドロー！",
-    "clearDrawings": "デッキを崩す",
-    "updateLoading": "更新中...",
-    "updateReady": "更新の準備ができました、このページをリロードしてください！",
-    "credits": "クレジット",
-    "help": "使い方 (English)",
-    "lastUpdate": "{gameName} 楽曲の更新日：{date}",
     "about": "このアプリは Jeff Lloyd の作品にインスパイアされました。 * 確率配分のコードは Chris Chike が提供しました。 * ジャケット画像は FuriousDCSL が提供しました。 * 日本語ローカライズは nalpan が行いました。 * DRS のデータは Joseph Bowersox が提供しました。 * SDVX のデータは Vincent Nguyen が提供しました。 * 選択/拒否による並び替え機能は Ornrumpa Kanchanomai と Thanh Dang が提供しました。 * Pump it Up のデータは AnyhowStep と Haru-kaze が管理する PUMPOUT から取得しています。 * Noah Manneschmidt (Cathadan) がメンテナンスしています。",
     "contact": {
       "prompt": "フィードバック、アイデア、コードの貢献については、ぜひ下記までご連絡ください。",
@@ -159,18 +167,8 @@
       "discord": "Discord",
       "github": "GitHub"
     },
-    "songAction": {
-      "lock": "選択",
-      "ban": "拒否",
-      "pocketPick": "自由選曲",
-      "reset": "リセット",
-      "cancel": "キャンセル",
-      "winner": "勝者を設定",
-      "copy": "曲名と難易度をコピー",
-      "redraw": "この譜面を引き直す"
-    },
-    "noValidCharts": "正しい譜面がありません",
-    "showSongPool": "ドロー対象となる全譜面を表示",
+    "updateLoading": "更新中...",
+    "updateReady": "更新の準備ができました、このページをリロードしてください！",
     "applyUpdate": "更新を適用"
   }
 }
