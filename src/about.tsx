@@ -1,4 +1,4 @@
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { ButtonGroup, AnchorButton, UL, Classes, H2 } from "@blueprintjs/core";
 import { Comment, GitBranch, Chat } from "@blueprintjs/icons";
 
@@ -21,37 +21,41 @@ export function About() {
 
   return (
     <div className={Classes.DIALOG_BODY}>
-      <H2>Credits</H2>
+      <H2>
+        <FormattedMessage id="about.credits" defaultMessage="Credits" />
+      </H2>
       <UL>
-        {t({ id: "about" })
+        {t({ id: "about.creditsDescription" })
           .split(" * ")
           .map((line, i) => (
             <li key={i}>{injectPumpoutLink(line)}</li>
           ))}
       </UL>
-      <H2>Contribute</H2>
-      <p>{t({ id: "contact.prompt" })}</p>
+      <H2>
+        <FormattedMessage id="about.contribute" defaultMessage="Contribute" />
+      </H2>
+      <p>{t({ id: "about.contributeDescription" })}</p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <ButtonGroup>
           <AnchorButton
             large
             href="https://discord.gg/QPyEATsbP7"
             target="_blank"
-            text={t({ id: "contact.discord" })}
+            text={t({ id: "about.discord" })}
             icon={<Comment size={20} />}
           />
           <AnchorButton
             large
             href="https://github.com/noahm/DDRCardDraw"
             target="_blank"
-            text={t({ id: "contact.github" })}
+            text={t({ id: "about.github" })}
             icon={<GitBranch size={20} />}
           />
           <AnchorButton
             large
             href="https://m.me/noah.manneschmidt"
             target="_blank"
-            text={t({ id: "contact.facebook" })}
+            text={t({ id: "about.facebook" })}
             icon={<Chat size={20} />}
           />
         </ButtonGroup>
