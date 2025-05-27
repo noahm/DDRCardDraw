@@ -1,6 +1,11 @@
 {
   "en": {
+    "hero": {
+      "description": "Click 'Draw' above to draw some songs at random. Choose from other games in the top left menu.",
+      "callout": "Instant local pack imports are now available! Drag and drop a pack folder onto this page to get started."
+    },
     "clearDrawings": "Clear Draws",
+    "clearDrawingsConfirm": "This will clear all songs drawn so far. Confirm?",
     "credits": "Credits",
     "help": "Help",
     "toggleTheme": "Toggle Theme",
@@ -19,6 +24,18 @@
     "tournamentRoundAdd": "Add \"{round}\"",
     "noResults": "No results",
     "noMatchingCharts": "No chart matching filters",
+    "drawing": {
+      "sendToOne": "Send to {peerId}",
+      "startSyncOne": "Start sync with {peerId}",
+      "sendToPeer": "Send to...",
+      "startSync": "Start sync with...",
+      "connect": "Connect to a peer to share",
+      "saveImage": "Save Image",
+      "redrawAll": "Redraw all charts",
+      "redrawConfirm": "This will replace everything besides protects and picks!",
+      "addPlayer": "Add Player",
+      "removePlayer": "Remove Player"
+    },
     "songAction": {
       "lock": "Protect",
       "ban": "Veto",
@@ -31,6 +48,8 @@
     },
     "controls": {
       "drawerTitle": "Settings",
+      "save": "Save",
+      "load": "Load",
       "tabs": {
         "general": "General",
         "flags": "Flags",
@@ -83,10 +102,20 @@
     },
     "updateLoading": "Installing an update...",
     "updateReady": "Update ready, refresh for the freshest code around!",
-    "applyUpdate": "Apply"
+    "applyUpdate": "Apply",
+    "error": {
+      "title": "Error Caught!",
+      "description": "A deeply embarassing error just happened somewhere near here. If you're lucky, a reset will fix things up.",
+      "reset": "Reset"
+    }
   },
   "ja": {
+    "hero": {
+      "description": "右上の「ドロー」をクリックすると、ランダムに曲が選ばれます。左上のメニューから他のゲームを選択できます。",
+      "callout": "ローカルパックの取り込み機能が利用可能になりました！開始するには、パックフォルダをこのページにドラッグ&ドロップしてください。"
+    },
     "clearDrawings": "全消去",
+    "clearDrawingsConfirm": "これまでに引いた譜面をすべて消去します。よろしいですか？",
     "credits": "クレジット",
     "help": "使い方 (English)",
     "toggleTheme": "テーマを切り替える",
@@ -105,6 +134,18 @@
     "tournamentRoundAdd": "\"{round}\"を追加",
     "noResults": "検索結果がありません",
     "noMatchingCharts": "対象譜面なし",
+    "drawing": {
+      "sendToOne": "{peerId}に送信",
+      "startSyncOne": "{peerId}と同期",
+      "sendToPeer": "送信",
+      "startSync": "同期",
+      "connect": "接続して共有",
+      "saveImage": "画像として保存",
+      "redrawAll": "すべてドローし直す",
+      "redrawConfirm": "選択/拒否した譜面を除き、すべての譜面をドローし直します！",
+      "addPlayer": "プレイヤーを追加",
+      "removePlayer": "プレイヤーを削除"
+    },
     "songAction": {
       "lock": "選択",
       "ban": "拒否",
@@ -117,6 +158,8 @@
     },
     "controls": {
       "drawerTitle": "設定",
+      "save": "セーブ",
+      "load": "ロード",
       "tabs": {
         "general": "一般",
         "flags": "属性",
@@ -145,7 +188,7 @@
       "playersPerDraw": "プレー人数",
       "addPlayerLabel": "プレイヤー名の管理",
       "tournamentLabelEdit": "大会ラウンドの管理",
-      "shockArrows": "ショックアロー",
+      "shockArrows": "ショックアローを含む",
       "invalid": "対象譜面がありません！"
     },
     "weights": {
@@ -169,6 +212,11 @@
     },
     "updateLoading": "更新中...",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
-    "applyUpdate": "更新を適用"
+    "applyUpdate": "更新を適用",
+    "error": {
+      "title": "エラーが発生しました！",
+      "description": "恥ずかしながら、どこかでエラーが発生したようです。リセットすることで解決するかもしれません。",
+      "reset": "リセット"
+    }
   }
 }

@@ -25,10 +25,12 @@ import { shareImage } from "../utils/share";
 import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
+import { useIntl } from "../hooks/useIntl";
 
 const DEFAULT_FILENAME = "card-draw.png";
 
 export function DrawingActions() {
+  const { t } = useIntl();
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const updateDrawing = useDrawing((s) => s.updateDrawing);
   const redrawAllCharts = useDrawing((s) => s.redrawAllCharts);
@@ -51,12 +53,16 @@ export function DrawingActions() {
       <Menu>
         <MenuItem
           icon={<SendMessage />}
-          text={`Send to ${peerId}`}
+          text={t("drawing.sendToOne", { peerId }, "Send to {peerId}")}
           onClick={() => sendDrawing(getDrawing())}
         />
         <MenuItem
           icon={<Changes />}
-          text={`Start sync with ${peerId}`}
+          text={t(
+            "drawing.startSyncOne",
+            { peerId },
+            "Start sync with {peerId}",
+          )}
           onClick={() => syncDrawing(drawingStore)}
         />
       </Menu>
@@ -64,13 +70,19 @@ export function DrawingActions() {
   } else if (remotePeers.size > 1) {
     remoteActions = (
       <Menu>
-        <MenuItem icon={<SendMessage />} text="Send to...">
+        <MenuItem
+          icon={<SendMessage />}
+          text={t("drawing.sendToPeer", undefined, "Send to...")}
+        >
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => sendDrawing(getDrawing(), peerId)}
           />
         </MenuItem>
-        <MenuItem icon={<Changes />} text="Start sync with...">
+        <MenuItem
+          icon={<Changes />}
+          text={t("drawing.startSync", undefined, "Start sync with...")}
+        >
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => syncDrawing(drawingStore, peerId)}
@@ -91,10 +103,18 @@ export function DrawingActions() {
         remotePeers.size ? (
           <Popover content={remoteActions}>{button}</Popover>
         ) : (
-          <Tooltip content="Connect to a peer to share">{button}</Tooltip>
+          <Tooltip
+            content={t(
+              "drawing.connect",
+              undefined,
+              "Connect to a peer to share",
+            )}
+          >
+            {button}
+          </Tooltip>
         )
       ) : null}
-      <Tooltip content="Save Image">
+      <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
         <Button
           minimal
           icon={<Camera />}
@@ -114,13 +134,17 @@ export function DrawingActions() {
           }}
         />
       </Tooltip>
-      <Tooltip content="Redraw all charts">
+      <Tooltip content={t("drawing.redrawAll", undefined, "Redraw all charts")}>
         <Button
           minimal
           icon={<Refresh />}
           onClick={() =>
             confirm(
-              "This will replace everything besides protects and picks!",
+              t(
+                "drawing.redrawConfirm",
+                undefined,
+                "This will replace everything besides protects and picks!",
+              ),
             ) && redrawAllCharts()
           }
         />
@@ -132,7 +156,7 @@ export function DrawingActions() {
       )}
       {showLabels && (
         <>
-          <Tooltip content="Add Player">
+          <Tooltip content={t("drawing.addPlayer", undefined, "Add Player")}>
             <Button
               minimal
               icon={<NewPerson />}
@@ -145,7 +169,10 @@ export function DrawingActions() {
               }}
             />
           </Tooltip>
-          <Tooltip content="Remove Player" disabled={!hasPlayers}>
+          <Tooltip
+            content={t("drawing.removePlayer", undefined, "Remove Player")}
+            disabled={!hasPlayers}
+          >
             <Button
               minimal
               icon={<BlockedPerson />}
