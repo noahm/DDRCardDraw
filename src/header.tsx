@@ -19,10 +19,17 @@ import { useDrawState } from "./draw-state";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
-  const clearDrawings = useDrawState((d) => d.clearDrawings);
-  const haveDrawings = useDrawState((d) => !!d.drawings.length);
+  const [__clearDrawings, haveDrawings] = useDrawState((d) => [
+    d.clearDrawings,
+    !!d.drawings.length,
+  ]);
   const { t } = useIntl();
-  useDrawState.setState({ confirmMessage: t("clearDrawingsConfirm") });
+  const clearDrawings = () => {
+    if (haveDrawings && !confirm(t("clearDrawingsConfirm"))) {
+      return;
+    }
+    __clearDrawings();
+  };
 
   const menu = (
     <Menu>

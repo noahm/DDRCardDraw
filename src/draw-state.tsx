@@ -22,7 +22,6 @@ interface DrawState {
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
-  confirmMessage: string;
   addImportedData(dataSetName: string, gameData: GameData): void;
   loadGameData(dataSetName: string, gameData?: GameData): Promise<GameData>;
   /** returns false if no songs could be drawn */
@@ -75,11 +74,7 @@ export const useDrawState = createWithEqualityFn<DrawState>(
     drawings: [],
     dataSetName: "",
     lastDrawFailed: false,
-    confirmMessage: "This will clear all songs drawn so far. Confirm?",
     clearDrawings() {
-      if (get().drawings.length && !window.confirm(get().confirmMessage)) {
-        return;
-      }
       set({ drawings: [] });
     },
     addImportedData(dataSetName, gameData) {
@@ -96,9 +91,6 @@ export const useDrawState = createWithEqualityFn<DrawState>(
     async loadGameData(dataSetName: string, gameData?: GameData) {
       const state = get();
       if (state.dataSetName === dataSetName && state.gameData) {
-        return state.gameData;
-      }
-      if (state.drawings.length && !window.confirm(get().confirmMessage)) {
         return state.gameData;
       }
       set({
