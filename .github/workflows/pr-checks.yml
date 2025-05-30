@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - check: "validate:json"
+          - check: "validate:types:data"
             name: Validate Song Data
           - check: "validate:types:ts"
             name: Typecheck
