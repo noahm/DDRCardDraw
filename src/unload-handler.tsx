@@ -1,10 +1,17 @@
 import { useEffect } from "react";
+import { useIntl } from "./hooks/useIntl";
+import { useDrawState } from "./draw-state/store";
 
 interface Props {
   confirmUnload: boolean;
 }
 
 export function UnloadHandler(props: Props) {
+  const { t } = useIntl();
+  useEffect(() => {
+    useDrawState.setState({ confirmMessage: t("clearDrawingsConfirm") });
+  }, []);
+
   useEffect(() => {
     if (!props.confirmUnload) {
       return;

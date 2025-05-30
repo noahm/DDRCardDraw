@@ -22,7 +22,6 @@ export function Header() {
   const clearDrawings = useDrawState((d) => d.clearDrawings);
   const haveDrawings = useDrawState((d) => !!d.drawings.length);
   const { t } = useIntl();
-  useDrawState.setState({ confirmMessage: t("clearDrawingsConfirm") });
 
   const menu = (
     <Menu>
