@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1744144376248
+    "lastUpdated": 1748585045862
   },
   "defaults": {
     "style": "solo",
@@ -9006,6 +9006,111 @@
         { "style": "solo", "lvl": 19, "diffClass": "hard", "flags": ["plus"] },
         { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
         { "style": "solo", "lvl": 23, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "684",
+      "name": "Ekstasis",
+      "artist": "d-complex",
+      "genre": "Trance",
+      "bpm": "70-140",
+      "jacket": "smx/Ekstasis.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 16, "diffClass": "hard" },
+        { "style": "solo", "lvl": 23, "diffClass": "wild" },
+        { "style": "solo", "lvl": 17, "diffClass": "dual" },
+        { "style": "solo", "lvl": 17, "diffClass": "full" },
+        { "style": "team", "lvl": 18, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 24, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "685",
+      "name": "Falling In Love Again",
+      "artist": "Naoki feat. Paula Terry",
+      "genre": "Pop",
+      "bpm": "157",
+      "jacket": "smx/FallingInLoveAgain.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 1, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 4, "diffClass": "easy" },
+        { "style": "solo", "lvl": 13, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 20, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 16, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 21, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "686",
+      "name": "Go! Rocky Joe",
+      "artist": "Maximum Power",
+      "genre": "Eurobeat",
+      "bpm": "167",
+      "jacket": "smx/GoRockyJoe.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 6, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 20, "diffClass": "wild" },
+        { "style": "solo", "lvl": 12, "diffClass": "dual" },
+        { "style": "solo", "lvl": 15, "diffClass": "full" },
+        { "style": "team", "lvl": 21, "diffClass": "team" },
+        { "style": "solo", "lvl": 11, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "687",
+      "name": "In The Echo",
+      "artist": "Koven",
+      "genre": "Drum & Bass",
+      "bpm": "174",
+      "jacket": "smx/InTheEcho.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 4, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 22, "diffClass": "wild" },
+        { "style": "solo", "lvl": 14, "diffClass": "dual" },
+        { "style": "solo", "lvl": 16, "diffClass": "full" },
+        { "style": "team", "lvl": 15, "diffClass": "team" },
+        { "style": "solo", "lvl": 9, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 18, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 22, "diffClass": "full", "flags": ["plus"] }
+      ]
+    },
+    {
+      "saIndex": "688",
+      "name": "Letting Go",
+      "artist": "Bensley & Voicians",
+      "genre": "Drum & Bass",
+      "bpm": "174",
+      "jacket": "smx/LettingGo.jpg",
+      "charts": [
+        { "style": "solo", "lvl": 2, "diffClass": "beginner" },
+        { "style": "solo", "lvl": 5, "diffClass": "easy" },
+        { "style": "solo", "lvl": 14, "diffClass": "hard" },
+        { "style": "solo", "lvl": 19, "diffClass": "wild" },
+        { "style": "solo", "lvl": 15, "diffClass": "dual" },
+        { "style": "solo", "lvl": 13, "diffClass": "full" },
+        { "style": "team", "lvl": 15, "diffClass": "team" },
+        { "style": "solo", "lvl": 10, "diffClass": "easy", "flags": ["plus"] },
+        { "style": "solo", "lvl": 17, "diffClass": "hard", "flags": ["plus"] },
+        { "style": "solo", "lvl": 19, "diffClass": "dual", "flags": ["plus"] },
+        { "style": "solo", "lvl": 20, "diffClass": "full", "flags": ["plus"] }
       ]
     }
   ]
