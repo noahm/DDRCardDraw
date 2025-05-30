@@ -12,7 +12,7 @@ jobs:
         include:
           - check: "validate:json"
             name: Validate Song Data
-          - check: "validate:ts"
+          - check: "validate:types:ts"
             name: Typecheck
           - check: "validate:format"
             name: Formatting
