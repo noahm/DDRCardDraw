@@ -93,9 +93,7 @@ export function ThemeToggle() {
   return (
     <MenuItem
       icon={<ThemeIcon />}
-      text={
-        <FormattedMessage id="toggle-theme" defaultMessage="Toggle Theme" />
-      }
+      text={<FormattedMessage id="toggleTheme" defaultMessage="Toggle Theme" />}
       onClick={() =>
         setTheme(resolvedTheme === Theme.Dark ? Theme.Light : Theme.Dark)
       }

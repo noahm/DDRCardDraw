@@ -14,7 +14,7 @@
       { "key": "R", "color": "#23a98d" }
     ],
     "flags": ["unlock", "ampass", "cut:1", "cut:2", "cut:3", "cut:4"],
-    "lastUpdated": 1731787557894
+    "lastUpdated": 1748335907000
   },
   "defaults": {
     "style": "solo",
@@ -10572,6 +10572,167 @@
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" },
         { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1030",
+      "name": "Autumn Break",
+      "jacket": "pump/Autumn_Break.jpg",
+      "artist": "Cosmograph",
+      "bpm": "175",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1031",
+      "name": "Solve My Hurt",
+      "jacket": "pump/Solve_My_Hurt.jpg",
+      "artist": "Doin",
+      "bpm": "234",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 1, "diffClass": "C2", "style": "coop" }
+      ]
+    },
+    {
+      "saIndex": "1032",
+      "name": "Vanish 2",
+      "jacket": "pump/Vanish_2.jpg",
+      "artist": "Applesoda",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1033",
+      "name": "Becouse of You",
+      "jacket": "pump/Becouse_of_You.jpg",
+      "artist": "Srav3R & USAO",
+      "bpm": "175",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1034",
+      "name": "About The Universe",
+      "jacket": "pump/About_The_Universe.jpg",
+      "artist": "SOTUI & MIssionary",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1035",
+      "name": "ALiVE",
+      "jacket": "pump/ALiVE.jpg",
+      "artist": "REDALiCE",
+      "bpm": "170",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 5, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 17, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1036",
+      "name": "Eternal Universe",
+      "jacket": "pump/Eternal_Universe.jpg",
+      "artist": "Quree",
+      "bpm": "200",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1037",
+      "name": "Halloween Party ~Multiverse~ - SHORT CUT -",
+      "jacket": "pump/Halloween_Party_Shortcut.jpg",
+      "artist": "SHK",
+      "bpm": "160",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1038",
+      "name": "Stardream ~Eurobeat Remix~ - SHORT CUT -",
+      "jacket": "pump/Stardream_Eurobeat_Shortcut.jpg",
+      "artist": "MAX x Cashew x Dave Rodgers",
+      "bpm": "160",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" }
       ]
     }
   ]

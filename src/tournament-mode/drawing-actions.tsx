@@ -38,6 +38,7 @@ import { CountingSet } from "../utils/counting-set";
 import { shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
 import { EventModeGated } from "../common-components/app-mode";
+import { useIntl } from "../hooks/useIntl";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
@@ -148,6 +149,7 @@ function AddCardButton() {
 
 export function DrawingActions() {
   const dispatch = useAppDispatch();
+  const { t } = useIntl();
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.id);
   const drawingMeta = useDrawing((s) => s.meta);
@@ -181,7 +183,7 @@ export function DrawingActions() {
 
   return (
     <div className={styles.networkButtons}>
-      <Tooltip content="Save Image">
+      <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
         <Button
           minimal
           icon={<Camera />}
@@ -200,13 +202,17 @@ export function DrawingActions() {
           }}
         />
       </Tooltip>
-      <Tooltip content="Redraw all charts">
+      <Tooltip content={t("drawing.redrawAll", undefined, "Redraw all charts")}>
         <Button
           minimal
           icon={<Refresh />}
           onClick={() =>
             confirm(
-              "This will replace everything besides protects and picks!",
+              t(
+                "drawing.redrawConfirm",
+                undefined,
+                "This will replace everything besides protects and picks!",
+              ),
             ) && dispatch(createRedrawAll(drawingId))
           }
         />
