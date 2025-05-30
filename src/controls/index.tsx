@@ -53,10 +53,10 @@ export function HeaderControls() {
             <FormattedMessage id="controls.drawerTitle" />
             <ButtonGroup style={{ marginLeft: "10px" }}>
               <Button icon={<FloppyDisk />} onClick={saveConfig}>
-                Save
+                <FormattedMessage id="controls.save" defaultMessage="Save" />
               </Button>
               <Button icon={<Import />} onClick={loadConfig}>
-                Load
+                <FormattedMessage id="controls.load" defaultMessage="Load" />
               </Button>
             </ButtonGroup>
           </>

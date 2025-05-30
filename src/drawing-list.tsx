@@ -6,9 +6,11 @@ import {
   useEffect,
   useState,
 } from "react";
+import { FormattedMessage } from "react-intl";
 import styles from "./drawing-list.css";
 import { useDrawState } from "./draw-state";
 import { useConfigState } from "./config-state";
+import { useIntl } from "./hooks/useIntl";
 import { Callout, NonIdealState, Spinner } from "@blueprintjs/core";
 import { Import } from "@blueprintjs/icons";
 import logo from "./assets/ddr-tools-256.png";
@@ -30,6 +32,7 @@ const ScrollableDrawings = memo(() => {
 });
 
 export function DrawingList() {
+  const { t } = useIntl();
   const hasDrawings = useDeferredValue(
     useDrawState((s) => !!s.drawings.length),
   );
@@ -51,11 +54,10 @@ export function DrawingList() {
         <NonIdealState
           icon={<img src={logo} height={128} width={128} alt="" />}
           title="DDR Tools"
-          description="Click 'Draw' above to draw some songs at random. Chose from other games in the top left menu."
+          description={t("hero.description")}
           action={
             <Callout intent="primary" icon={<Import />}>
-              Instant local pack imports are now available! Drag and drop a pack
-              folder onto this page to get started.
+              <FormattedMessage id="hero.callout" />
             </Callout>
           }
         />

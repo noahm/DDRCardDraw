@@ -1,18 +1,10 @@
-import { ReactNode, useEffect } from "react";
-import { UnloadHandler } from "./unload-handler";
-import { draw } from "./card-draw";
-import { Drawing } from "./models/Drawing";
+import { draw } from "../card-draw";
+import { Drawing } from "../models/Drawing";
 import FuzzySearch from "fuzzy-search";
-import { requestIdleCallback, cancelIdleCallback } from "./utils/idle-callback";
-import { GameData, I18NDict, Song } from "./models/SongData";
-import i18nData from "./assets/i18n.json";
-import { availableGameData, detectedLanguage } from "./utils";
-import { ApplyDefaultConfig } from "./apply-default-config";
-import { ConfigState } from "./config-state";
-import { IntlProvider } from "./intl-provider";
+import { GameData, Song } from "../models/SongData";
+import { ConfigState } from "../config-state";
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
-import { shallow } from "zustand/shallow";
 import { DataConnection } from "peerjs";
 
 interface DrawState {
@@ -22,6 +14,7 @@ interface DrawState {
   drawings: Drawing[];
   dataSetName: string;
   lastDrawFailed: boolean;
+  confirmMessage: string;
   addImportedData(dataSetName: string, gameData: GameData): void;
   loadGameData(dataSetName: string, gameData?: GameData): Promise<GameData>;
   /** returns false if no songs could be drawn */
@@ -74,11 +67,9 @@ export const useDrawState = createWithEqualityFn<DrawState>(
     drawings: [],
     dataSetName: "",
     lastDrawFailed: false,
+    confirmMessage: "This will clear all songs drawn so far. Confirm?",
     clearDrawings() {
-      if (
-        get().drawings.length &&
-        !window.confirm("This will clear all songs drawn so far. Confirm?")
-      ) {
+      if (get().drawings.length && !window.confirm(get().confirmMessage)) {
         return;
       }
       set({ drawings: [] });
@@ -99,10 +90,7 @@ export const useDrawState = createWithEqualityFn<DrawState>(
       if (state.dataSetName === dataSetName && state.gameData) {
         return state.gameData;
       }
-      if (
-        state.drawings.length &&
-        !window.confirm("This will clear all songs drawn so far. Confirm?")
-      ) {
+      if (state.drawings.length && !window.confirm(get().confirmMessage)) {
         return state.gameData;
       }
       set({
@@ -119,7 +107,7 @@ export const useDrawState = createWithEqualityFn<DrawState>(
         gameData ||
         (
           await import(
-            /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
+            /* webpackChunkName: "songData" */ `../songs/${dataSetName}.json`
           )
         ).default;
       applyNewData(data, set);
@@ -173,28 +161,6 @@ export const useDrawState = createWithEqualityFn<DrawState>(
   Object.is,
 );
 
-interface Props {
-  defaultDataSet: string;
-  children: ReactNode;
-}
-
-function getInitialDataSet(defaultDataName: string) {
-  const hash = window.location.hash.slice(1);
-  if (hash.startsWith("game-")) {
-    const targetData = hash.slice(5);
-    if (availableGameData.some((d) => d.name === targetData)) {
-      return targetData;
-    }
-  }
-  if (
-    defaultDataName &&
-    availableGameData.some((d) => d.name === defaultDataName)
-  ) {
-    return defaultDataName;
-  }
-  return availableGameData[0].name;
-}
-
 function writeDataSetToUrl(game: string) {
   const nextHash = `game-${game}`;
   if ("#" + nextHash !== window.location.hash) {
@@ -202,32 +168,4 @@ function writeDataSetToUrl(game: string) {
     nextUrl.hash = encodeURIComponent(nextHash);
     window.history.replaceState(undefined, "", nextUrl);
   }
-}
-
-export function DrawStateManager(props: Props) {
-  const [gameData, hasDrawings, loadGameData] = useDrawState(
-    (state) => [state.gameData, !!state.drawings.length, state.loadGameData],
-    shallow,
-  );
-  useEffect(() => {
-    const idleHandle = requestIdleCallback(() =>
-      loadGameData(getInitialDataSet(props.defaultDataSet)),
-    );
-    return () => cancelIdleCallback(idleHandle);
-  }, [loadGameData, props.defaultDataSet]);
-
-  return (
-    <IntlProvider
-      locale={detectedLanguage}
-      translations={i18nData as Record<string, I18NDict>}
-      mergeTranslations={gameData?.i18n}
-    >
-      <ApplyDefaultConfig
-        defaults={gameData?.defaults}
-        granularResolution={gameData?.meta.granularTierResolution}
-      />
-      <UnloadHandler confirmUnload={hasDrawings} />
-      {props.children}
-    </IntlProvider>
-  );
 }
