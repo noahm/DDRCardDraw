@@ -4,7 +4,7 @@ import {
   requestIdleCallback,
   cancelIdleCallback,
 } from "../utils/idle-callback";
-import i18nData from "./assets/i18n.json";
+import i18nData from "../assets/i18n.json";
 import { availableGameData, detectedLanguage } from "../utils";
 import { I18NDict } from "../models/SongData";
 import { ApplyDefaultConfig } from "../apply-default-config";
