@@ -107,7 +107,7 @@ export const useDrawState = createWithEqualityFn<DrawState>(
         gameData ||
         (
           await import(
-            /* webpackChunkName: "songData" */ `./songs/${dataSetName}.json`
+            /* webpackChunkName: "songData" */ `../songs/${dataSetName}.json`
           )
         ).default;
       applyNewData(data, set);
