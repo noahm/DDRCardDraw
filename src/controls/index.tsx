@@ -14,7 +14,6 @@ import { useState, lazy, Suspense } from "react";
 import { FormattedMessage } from "react-intl";
 import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
-import { useIntl } from "../hooks/useIntl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { loadConfig, saveConfig } from "../config-persistence";
 import { ErrorBoundary } from "react-error-boundary";
@@ -26,13 +25,11 @@ const ControlsDrawer = lazy(() => import("./controls-drawer"));
 export function HeaderControls() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
-  const [drawSongs, hasGameData, haveDrawings] = useDrawState((s) => [
+  const [drawSongs, hasGameData] = useDrawState((s) => [
     s.drawSongs,
     !!s.gameData,
-    !!s.drawings.length,
   ]);
   const isNarrow = useIsNarrow();
-  const { t } = useIntl();
 
   function handleDraw() {
     useConfigState.setState({ showEligibleCharts: false });
@@ -58,15 +55,7 @@ export function HeaderControls() {
               <Button icon={<FloppyDisk />} onClick={saveConfig}>
                 <FormattedMessage id="controls.save" defaultMessage="Save" />
               </Button>
-              <Button
-                icon={<Import />}
-                onClick={async () => {
-                  if (haveDrawings && !confirm(t("clearDrawingsConfirm"))) {
-                    return;
-                  }
-                  await loadConfig();
-                }}
-              >
+              <Button icon={<Import />} onClick={loadConfig}>
                 <FormattedMessage id="controls.load" defaultMessage="Load" />
               </Button>
             </ButtonGroup>

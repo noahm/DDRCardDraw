@@ -16,8 +16,6 @@ import { DoubleCaretVertical, FolderOpen } from "@blueprintjs/icons";
 export function VersionSelect() {
   const { t } = useIntl();
   const { current, available, loadData } = useDataSets();
-  const haveDrawings = useDrawState((s) => !!s.drawings.length);
-
   return (
     <Select
       items={available}
@@ -64,12 +62,7 @@ export function VersionSelect() {
           />
         )
       }
-      onItemSelect={async (item) => {
-        if (haveDrawings && !confirm(t("clearDrawingsConfirm"))) {
-          return;
-        }
-        await loadData(item.name);
-      }}
+      onItemSelect={(item) => loadData(item.name)}
     >
       <Button text={current.display} rightIcon={<DoubleCaretVertical />} />
     </Select>
