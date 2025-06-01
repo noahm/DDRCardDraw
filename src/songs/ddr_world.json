@@ -3,11 +3,26 @@
   "meta": {
     "styles": ["single", "double"],
     "difficulties": [
-      { "key": "beginner", "color": "#6eccc4" },
-      { "key": "basic", "color": "#e0de5c" },
-      { "key": "difficult", "color": "#e8715f" },
-      { "key": "expert", "color": "#72cc6e" },
-      { "key": "challenge", "color": "#cc71e8" }
+      {
+        "key": "beginner",
+        "color": "#6eccc4"
+      },
+      {
+        "key": "basic",
+        "color": "#e0de5c"
+      },
+      {
+        "key": "difficult",
+        "color": "#e8715f"
+      },
+      {
+        "key": "expert",
+        "color": "#72cc6e"
+      },
+      {
+        "key": "challenge",
+        "color": "#cc71e8"
+      }
     ],
     "folders": [
       "DanceDanceRevolution World",
@@ -6892,8 +6907,7 @@
           "step": 101,
           "lvl": 4,
           "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.35
+          "diffClass": "beginner"
         },
         {
           "step": 139,
@@ -36520,8 +36534,7 @@
           "freeze": 2,
           "lvl": 5,
           "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.4
+          "diffClass": "basic"
         },
         {
           "step": 256,
