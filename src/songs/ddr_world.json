@@ -41,7 +41,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1742770633222
+    "lastUpdated": 1748650387275
   },
   "defaults": {
     "style": "single",
@@ -620,7 +620,7 @@
       ],
       "jacket": "3y3s.jpg",
       "remyLink": "https://remywiki.com/3y3s",
-      "flags": ["goldExclusive", "tempUnlock"],
+      "flags": ["unlock"],
       "search_hint": "Eyes"
     },
     {
@@ -3867,6 +3867,7 @@
           "sanbaiTier": 14.35
         }
       ],
+      "flags": ["unlock"],
       "jacket": "Amazing Bomberman.jpg",
       "remyLink": "https://remywiki.com/Amazing_Bomberman"
     },
@@ -3922,7 +3923,7 @@
       ],
       "jacket": "Ambivalent Vermilia.jpg",
       "remyLink": "https://remywiki.com/Ambivalent_Vermilia",
-      "flags": ["goldExclusive", "tempUnlock"]
+      "flags": ["unlock"]
     },
     {
       "name": "Angelic Jelly",
@@ -5809,7 +5810,7 @@
       ],
       "jacket": "Battle Against a True Hero.jpg",
       "remyLink": "https://remywiki.com/Battle_Against_a_True_Hero_/_Honmono_no_hero_to_no_tatakai",
-      "search_hint": "ほんものひーろとのたたかい/本物のヒーローとの戦い"
+      "search_hint": "ほんものひーろーとのたたかい/本物のヒーローとの戦い"
     },
     {
       "name": "Be a Hero!",
@@ -6347,6 +6348,7 @@
           "sanbaiTier": 13.55
         }
       ],
+      "flags": ["unlock"],
       "jacket": "Beyond The Earth.jpg",
       "remyLink": "https://remywiki.com/BEYOND_THE_EARTH"
     },
@@ -6812,7 +6814,7 @@
       "charts": [
         {
           "step": 101,
-          "lvl": 3,
+          "lvl": 4,
           "style": "single",
           "diffClass": "beginner",
           "sanbaiTier": 3.35
@@ -11348,7 +11350,7 @@
           "sanbaiTier": 18.3
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["goldExclusive", "tempUnlock"],
       "remyLink": "https://remywiki.com/COSMIC_V3LOCITY",
       "jacket": "COSMIC_V3LOCITY.jpg",
       "saHash": "68oQQ8lO1qbi0qI8lbO60bP1098qOD88"
@@ -22255,7 +22257,8 @@
         {
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         },
         {
           "step": 165,
@@ -22284,7 +22287,8 @@
         {
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/Get%20Back%20Up%21",
@@ -27832,7 +27836,6 @@
           "sanbaiTier": 17.1
         }
       ],
-      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/I-W-U_(I_Want_U)",
       "jacket": "I-W-U_(I_Want_U).jpg",
       "saHash": "ob6IPbiqD969Q66808obd908DI81bqPi"
@@ -32149,22 +32152,6 @@
       "saIndex": "64"
     },
     {
-      "name": "LET'S CHECK YOUR LEVEL!",
-      "name_translation": "",
-      "artist": "適正レベル測定",
-      "artist_translation": "Tekisei reberu sokutei",
-      "bpm": "128",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "beginner"
-        }
-      ],
-      "jacket": "LET'S CHECK YOUR LEVEL!.jpg"
-    },
-    {
       "name": "Let's DANCE aROUND!!",
       "name_translation": "",
       "artist": "kors k feat.Jaejun by NuevoStudio",
@@ -34845,7 +34832,6 @@
           "sanbaiTier": 17.45
         }
       ],
-      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/Mathematical_good-bye",
       "jacket": "Mathematical_good-bye.jpg",
       "saHash": "08O1i8ib1lDPbdOoPlD069PoOI1860qi"
@@ -35816,7 +35802,7 @@
         {
           "step": 207,
           "freeze": 2,
-          "lvl": 6,
+          "lvl": 5,
           "style": "double",
           "diffClass": "basic",
           "sanbaiTier": 6.4
@@ -39164,6 +39150,7 @@
           "sanbaiTier": 16.2
         }
       ],
+      "flags": ["unlock"],
       "jacket": "No More Love.jpg",
       "remyLink": "https://remywiki.com/No_More_Love"
     },
@@ -41174,7 +41161,8 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 18.9
+          "sanbaiTier": 18.9,
+          "flags": ["unlock"]
         },
         {
           "step": 224,
@@ -41201,7 +41189,8 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 18.9
+          "sanbaiTier": 18.9,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/PARANOiA%20EVOLUTION",
@@ -46818,7 +46807,8 @@
         {
           "lvl": 17,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         },
         {
           "lvl": 8,
@@ -46841,7 +46831,8 @@
         {
           "lvl": 17,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/Riot%20of%20Color",
@@ -47109,7 +47100,6 @@
           "sanbaiTier": 16.55
         }
       ],
-      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/ROCK_THE_PARTY",
       "jacket": "ROCK_THE_PARTY.jpg",
       "saHash": "1II6199qOd1bo0P0D19Q9qd06ll1QOl9"
@@ -52747,7 +52737,6 @@
           "sanbaiTier": 17.25
         }
       ],
-      "flags": ["tempUnlock"],
       "remyLink": "https://remywiki.com/Sparkle_Dreams",
       "jacket": "Sparkle_Dreams.jpg",
       "saHash": "o89biodIl0Oo1bQqll86QDi0oQQd61Db"
@@ -54622,7 +54611,7 @@
     {
       "name": "Steps to the Star",
       "saHash": "bD1bQi091lOIO01Q1dq9bQqQ1blDI0Pq",
-      "artist": "BEMANI Sound Team \"Coyaan &amp; KE!JU 1%\"",
+      "artist": "BEMANI Sound Team \"Coyaan & KE!JU 1%\"",
       "folder": "DanceDanceRevolution World",
       "bpm": "124",
       "charts": [
@@ -54976,6 +54965,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["worldLeague"],
       "jacket": "STOMP!!.jpg",
       "remyLink": "https://remywiki.com/STOMP!!",
       "search_hint": "STOMP"
@@ -56358,7 +56348,7 @@
         }
       ],
       "remyLink": "https://remywiki.com/Suspicions",
-      "flags": ["tempUnlock", "goldExclusive"],
+      "flags": ["unlock"],
       "jacket": "Suspicions.jpg",
       "saHash": "Q88iD188IiqQbIoP9Oq818bPbOP1d1bQ"
     },
@@ -67240,7 +67230,8 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 18.4
+          "sanbaiTier": 18.4,
+          "flags": ["unlock"]
         },
         {
           "step": 179,
@@ -67270,7 +67261,8 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 18.3
+          "sanbaiTier": 18.3,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/%C3%9Cbertreffen",
@@ -72578,7 +72570,7 @@
           "sanbaiTier": 15.3
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["goldExclusive", "tempUnlock"],
       "remyLink": "https://remywiki.com/Hi-tech_Tokio",
       "jacket": "Hi-tech Tokio.jpg",
       "saHash": "DOd9bIqddQ91qbQI1bdbbDi1lqPObo8l"
@@ -75591,7 +75583,8 @@
         {
           "lvl": 15,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         },
         {
           "step": 202,
@@ -75620,7 +75613,8 @@
         {
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/%E3%83%AD%E3%83%B3%E3%83%AD%E3%83%B3%E3%81%B8%20%E3%83%A9%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%A9%E3%82%A4%EF%BC%81",
@@ -76722,7 +76716,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         },
         {
           "lvl": 8,
@@ -76745,7 +76740,8 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "http://remywiki.com/%E5%8B%87%E7%8C%9B%E7%84%A1%E6%AF%94",
@@ -80149,7 +80145,8 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 15.2
+          "sanbaiTier": 15.2,
+          "flags": ["grandPrixPack"]
         },
         {
           "lvl": 5,
@@ -80172,10 +80169,10 @@
         {
           "lvl": 15,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Tsuki_ni_murakumo_hana_ni_kaze",
       "jacket": "Tsuki ni murakumo hana ni kaze.jpg",
       "saHash": "QQ8IoPqdIb61D8o886oo8b6didDIPqql"
@@ -81033,7 +81030,7 @@
           "sanbaiTier": 17.55
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["goldExclusive", "tempUnlock"],
       "remyLink": "https://remywiki.com/Konran_shoujo_Soflan-chan!!",
       "jacket": "Konran shoujo Soflan-chan!!.jpg",
       "saHash": "Q9iiOo800blDqO0DDDPI1PIbl1lIidI1"
@@ -82016,7 +82013,8 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 12.7
+          "sanbaiTier": 12.7,
+          "flags": ["shock"]
         },
         {
           "lvl": 14,
@@ -82525,7 +82523,8 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 14.2
+          "sanbaiTier": 14.2,
+          "flags": ["unlock"]
         },
         {
           "step": 184,
@@ -82555,7 +82554,8 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "sanbaiTier": 14.3
+          "sanbaiTier": 14.3,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "http://remywiki.com/%E8%8F%AF%E7%88%9B%E6%BC%AB%20-Flowers-",
@@ -83297,7 +83297,7 @@
       "jacket": "逆月.jpg",
       "remyLink": "https://remywiki.com/Sakazuki",
       "name_translation": "Sakazuki",
-      "search_hint": "さかずき",
+      "search_hint": "さかづき",
       "flags": ["unlock"]
     },
     {
