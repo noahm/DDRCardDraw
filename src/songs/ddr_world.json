@@ -1867,7 +1867,7 @@
       "name_translation": "",
       "artist": "TAG×U1",
       "artist_translation": "",
-      "bpm": "100-200",
+      "bpm": "200",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -1892,6 +1892,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "difficult",
+          "bpm": "100-200",
           "sanbaiTier": 13.65
         },
         {
@@ -1900,6 +1901,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "expert",
+          "bpm": "50-400",
           "sanbaiTier": 15.9
         },
         {
@@ -1908,6 +1910,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "bpm": "50-400",
           "sanbaiTier": 18.2
         },
         {
@@ -1924,6 +1927,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "difficult",
+          "bpm": "100-200",
           "sanbaiTier": 13.65
         },
         {
@@ -1932,6 +1936,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "expert",
+          "bpm": "50-400",
           "sanbaiTier": 15.85
         },
         {
@@ -1940,6 +1945,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "bpm": "50-400",
           "sanbaiTier": 18.4
         }
       ],
@@ -39160,7 +39166,7 @@
       "artist": "Ariana Grande",
       "artist_translation": "",
       "bpm": "97-127",
-      "folder": "DanceDanceRevolution A20",
+      "folder": "DanceDanceRevolution World",
       "charts": [
         {
           "lvl": 2,
@@ -54547,18 +54553,20 @@
       "saHash": "I0dOli6do1l1008I8PllOq8DoOoIO8oq",
       "artist": "kors k×nagomu tamaki×BEMANI Sound Team \"U1\" with taru",
       "folder": "DanceDanceRevolution World",
-      "bpm": "210 (BEGINNER/BASIC), 105-420 (DIFFICULT/EXPERT), 52-420 (CHALLENGE)",
+      "bpm": "105-420",
       "charts": [
         {
           "lvl": 4,
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "210",
           "sanbaiTier": 4.2
         },
         {
           "lvl": 8,
           "style": "single",
           "diffClass": "basic",
+          "bpm": "210",
           "sanbaiTier": 8.25
         },
         {
@@ -54577,12 +54585,14 @@
           "lvl": 19,
           "style": "single",
           "diffClass": "challenge",
+          "bpm": "52-420",
           "sanbaiTier": 19.5
         },
         {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
+          "bpm": "210",
           "sanbaiTier": 7.4
         },
         {
@@ -54601,6 +54611,7 @@
           "lvl": 19,
           "style": "double",
           "diffClass": "challenge",
+          "bpm": "52-420",
           "sanbaiTier": 19.3
         }
       ],
@@ -69357,7 +69368,7 @@
       "jacket": "まにぃまにあ××.jpg",
       "remyLink": "https://remywiki.com/Many_mania",
       "name_translation": "Manimaniaxx",
-      "search_hint": "まにまにいあxx",
+      "search_hint": "まにいまにあxx",
       "flags": ["worldLeauge"]
     },
     {
@@ -71144,7 +71155,7 @@
       "artist": "P丸様。",
       "artist_translation": "Pmarusama.",
       "bpm": "176",
-      "folder": "DanceDanceRevolution A20 PLUS",
+      "folder": "DanceDanceRevolution World",
       "charts": [
         {
           "lvl": 2,
@@ -75012,18 +75023,21 @@
           "lvl": 3,
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "173",
           "sanbaiTier": 3.2
         },
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "basic",
+          "bpm": "173",
           "sanbaiTier": 6.3
         },
         {
           "lvl": 10,
           "style": "single",
           "diffClass": "difficult",
+          "bpm": "173",
           "sanbaiTier": 10.2
         },
         {
@@ -75036,12 +75050,14 @@
           "lvl": 6,
           "style": "double",
           "diffClass": "basic",
+          "bpm": "173",
           "sanbaiTier": 6.4
         },
         {
           "lvl": 10,
           "style": "double",
           "diffClass": "difficult",
+          "bpm": "173",
           "sanbaiTier": 10.05
         },
         {
@@ -75259,6 +75275,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "bpm": "100-200",
           "flags": ["grandPrixPack"]
         },
         {
@@ -75283,6 +75300,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "bpm": "100-200",
           "flags": ["grandPrixPack"]
         }
       ],
@@ -79108,7 +79126,7 @@
       "name_translation": "Kanbu de tomatte sugu tokeru ~ kyouki no udongein",
       "artist": "ARM(IOSYS)",
       "artist_translation": "",
-      "bpm": "200",
+      "bpm": "100-200",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -79139,6 +79157,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
+          "bpm": "100-400",
           "sanbaiTier": 17.85
         },
         {
@@ -79163,6 +79182,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "bpm": "100-400",
           "sanbaiTier": 18.1
         }
       ],
@@ -81988,6 +82008,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
+          "bpm": "165-330",
           "flags": ["shock"],
           "sanbaiTier": 12.75
         },
@@ -82013,6 +82034,7 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
+          "bpm": "165-330",
           "sanbaiTier": 12.7,
           "flags": ["shock"]
         },
@@ -82020,7 +82042,6 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "expert",
-          "flags": ["shock"],
           "sanbaiTier": 14.35
         }
       ],
