@@ -83,7 +83,9 @@ export async function writeJsonData(data, filePath) {
   data.meta.lastUpdated = Date.now();
   let formatted;
   try {
-    formatted = await format(JSON.stringify(data), { filepath: filePath });
+    formatted = await format(JSON.stringify(data, null, 2), {
+      filepath: filePath,
+    });
   } catch (e) {
     throw new Error("Formatting failed", { cause: e });
   }

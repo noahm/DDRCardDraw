@@ -1,4 +1,7 @@
 // direct copy/paste from https://3icecream.com/js/songdata.js
+// NOTE: Some chart levels as below are not accurate, so we should fix them manually.
+// - Bloody Tears(IIDX EDITION) [SINGLE/BEGINNER]: Official level is 4, but 3icecream is 3
+// - Mermaid girl [DOUBLE/BASIC]: Official level is 5, but 3icecream is 6
 
 export const ALL_SONG_DATA = [
   {
@@ -513,6 +516,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.3, 0.3, 0.35, 0.6, 0, 0.25, 0.5, 0.5, 0],
   },
   {
+    song_id: "0Pd8il0PQd80i1O01i1D9960IdqoQo01",
+    song_name: "Chocolate Planet",
+    alphabet: "C",
+    version_num: 20,
+    ratings: [3, 8, 12, 16, 17, 8, 12, 16, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+  },
+  {
     song_id: "0Pq6o89llQl10dl8O0DdP6lIO0ib6Doq",
     song_name: "Sakura Reflection",
     alternate_name: "さくりふ/サクリフ",
@@ -572,7 +584,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
     tiers: [0.2, 0.05, 0.3, 0.6, 0, 0.1, 0.3, 0.4, 0],
-    lock_types: [280, 280, 280, 280, 0, 280, 0, 280, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "0qOPDqq0qld66bll9ob9iIqiiQPiQIDQ",
@@ -853,8 +865,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "文明オリオン",
     alphabet: "O",
     version_num: 4,
-    ratings: [3, 4, 7, 12, 0, 5, 8, 9, 0],
-    tiers: [0.45, 0.45, 0.45, 0.3, 0, 0.4, 0.25, 0.7, 0],
+    ratings: [3, 4, 7, 12, 14, 5, 8, 9, 14],
+    tiers: [0.45, 0.45, 0.45, 0.3, 1, 0.4, 0.25, 0.7, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "1d6oI0ol8oO8O1qq16O96d1D19doD0bl",
@@ -1288,6 +1301,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.4, 0.5, 0.4, 0.35, 0.55, 0.45, 0.45, 0.5, 0.6],
   },
   {
+    song_id: "1QbddbDiOiii8O90Dq68dqO91oQq0oqi",
+    song_name: "Dense Flyer",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [3, 6, 10, 14, 0, 6, 10, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "1qdb8P8il9li6DOdPolq9d0d9Q6898oi",
     song_name: "ビビットストリーム",
     romanized_name: "BeBeat Stream",
@@ -1687,7 +1708,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 10, 13, 0, 6, 10, 13, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
-    lock_types: [290, 290, 290, 290, 0, 290, 290, 290, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "6dO6i9qq601D8ild9QIlbO8bodbiQ1Pl",
@@ -1940,6 +1961,15 @@ export const ALL_SONG_DATA = [
     tiers: [0, 0, 0, 0, 0.5, 0, 0, 0, 0.6],
   },
   {
+    song_id: "6O9O0ooOb8O8Q6D0ldqi1O8o6891Iq86",
+    song_name: "Bad Maniacs",
+    alphabet: "B",
+    version_num: 20,
+    ratings: [4, 11, 13, 16, 18, 11, 13, 16, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+  },
+  {
     song_id: "6Obi001oi9Qd1966dOd6d6Qo66dbbill",
     song_name: "Going Hypersonic",
     alphabet: "G",
@@ -1979,7 +2009,6 @@ export const ALL_SONG_DATA = [
     version_num: 15,
     ratings: [4, 8, 11, 14, 18, 8, 11, 14, 18],
     tiers: [0.55, 0.35, 0.4, 0.4, 0.3, 0.35, 0.4, 0.35, 0.4],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "6OiD0q6O8qi6oDbQ18Ilo8do8biDD1ll",
@@ -2116,7 +2145,7 @@ export const ALL_SONG_DATA = [
     song_id: "8006PP188Qldob68ld6OPqlbl1biod6D",
     song_name: "osaka EVOLVED -毎度、おおきに！- (TYPE2)",
     searchable_name: "osaka EVOLVED まいどおおきに TYPE2",
-    romanized_name: "osaka EVOLVED Maido Ookini TYPE2",
+    romanized_name: "osaka EVOLVED Maido Ookini TYPE2",
     alternate_name: "大阪2",
     alphabet: "O",
     version_num: 13,
@@ -2246,6 +2275,17 @@ export const ALL_SONG_DATA = [
     version_num: 11,
     ratings: [2, 3, 7, 9, 0, 5, 6, 9, 0],
     tiers: [0.25, 0.3, 0.1, 0.15, 0, 0.25, 0.4, 0.4, 0],
+  },
+  {
+    song_id: "86q90PPqld0qili801IqDOD0Q6boblI1",
+    song_name: "Couleur=Blanche",
+    searchable_name: "Couleur Blanche",
+    alternate_name: "Color White",
+    alphabet: "C",
+    version_num: 20,
+    ratings: [4, 7, 12, 16, 0, 7, 13, 16, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "8809ol0qbbd6919bbl0b8id1669PqQ08",
@@ -2785,6 +2825,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.25, 0.25, 0.6, 0.5, 0, 0.3, 0.4, 0.4, 0],
   },
   {
+    song_id: "8Q08qIiIOq0P66q90b0lI0PbP6lb9bOI",
+    song_name: "Cheerleader",
+    alphabet: "C",
+    version_num: 20,
+    ratings: [2, 6, 9, 13, 15, 6, 9, 13, 15],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  },
+  {
     song_id: "8q68D8iP6lIdiP8bo9PoOib8lb9loIob",
     song_name: "Une mage blanche",
     alphabet: "U",
@@ -2856,6 +2904,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.5, 0.65, 0.7, 0.4, 0, 0.6, 0.75, 0.2, 0],
   },
   {
+    song_id: "8qIbQqbIDDPPi10Io0QdQ8Ilod11qQdl",
+    song_name: "fluctus",
+    alphabet: "F",
+    version_num: 20,
+    ratings: [4, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+  },
+  {
     song_id: "8ql0DIiI0D9D1OP0qb8olo9bIQdP0ddq",
     song_name: "Snow Garland Fairy",
     alphabet: "S",
@@ -2895,6 +2952,16 @@ export const ALL_SONG_DATA = [
     version_num: 15,
     ratings: [2, 4, 7, 11, 12, 5, 7, 11, 12],
     tiers: [0.55, 0.6, 0.5, 0.35, 0.55, 0.6, 0.65, 0.45, 0.6],
+  },
+  {
+    song_id: "90DO081odOdPDblDOqQi1O68Iq988obq",
+    song_name: "HYPER OVERR DANCEFLOORRR",
+    searchable_name: "HYPER OVER DANCEFLOOR",
+    alphabet: "H",
+    version_num: 20,
+    ratings: [3, 8, 13, 16, 0, 8, 13, 16, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "90lolio9qd6qo6Pl8oo69iqi81oiiQib",
@@ -3168,6 +3235,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.4, 0.55, 0.8, 0.75, 0, 0.5, 0.85, 0.65, 0],
   },
   {
+    song_id: "9ddIP1i0O6l8oO9iI9Ii1Q1o800boQ0D",
+    song_name: "Komainu Adventure!",
+    alphabet: "K",
+    version_num: 20,
+    ratings: [3, 7, 11, 13, 17, 7, 11, 13, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
+  },
+  {
     song_id: "9dDOQo8bQ6blDdd989l1QIO8liDq9O0q",
     song_name: "Help me, ERINNNNNN!!",
     alternate_name: "Help me ERIN/えーりん/Touhouhelp",
@@ -3256,7 +3332,6 @@ export const ALL_SONG_DATA = [
     version_num: 15,
     ratings: [3, 6, 10, 14, 17, 6, 10, 14, 17],
     tiers: [0.4, 0.25, 0.45, 0.35, 0.7, 0.2, 0.3, 0.35, 0.4],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "9ib91bdq6i11l69d081qDD989Q0qO0qI",
@@ -3385,7 +3460,7 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     ratings: [3, 6, 10, 12, 15, 6, 10, 12, 15],
     tiers: [0.5, 0.55, 0.5, 0.35, 1, 0.65, 0.35, 0.35, 1],
-    lock_types: [0, 0, 0, 0, 290, 0, 0, 0, 290],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "9obIQOP8O1l0PQ0Oi1oPQI198o0Pd81o",
@@ -3451,6 +3526,16 @@ export const ALL_SONG_DATA = [
     version_num: 13,
     ratings: [2, 4, 8, 12, 0, 4, 7, 12, 0],
     tiers: [0.35, 0.45, 0.45, 0.55, 0, 0.4, 0.65, 0.45, 0],
+  },
+  {
+    song_id: "9PO0qPdi1OQo68Qb09qdIOo6008QoIPq",
+    song_name: "量子の海のリントヴルム (STARDOM Remix)",
+    searchable_name: "りょうしのうみのりんどヴるむ STARDOM Remix",
+    romanized_name: "Ryoushi no Umi no Lindwurm STARDOM Remix",
+    alphabet: "ら",
+    version_num: 20,
+    ratings: [3, 7, 11, 15, 17, 7, 12, 15, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "9PoQqIP0D6lPIq9obl1db9IqD0D09i80",
@@ -3606,8 +3691,9 @@ export const ALL_SONG_DATA = [
     song_name: "Lose Your Sense",
     alphabet: "L",
     version_num: 19,
-    ratings: [6, 9, 13, 17, 0, 9, 13, 17, 0],
-    tiers: [0.7, 0.75, 0.8, 0.4, 0, 0.55, 0.65, 0.6, 0],
+    ratings: [6, 9, 13, 17, 18, 9, 13, 17, 18],
+    tiers: [0.7, 0.75, 0.8, 0.4, 1, 0.55, 0.65, 0.6, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "b60odbPO1IQd6d0qPIi1dQODq16i9811",
@@ -4440,7 +4526,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "D686d06lO9IID8D0boPq0Pd8P89idO99",
     song_name: "未来（ダ）FUTURE",
-    searchable_name: "みらいダ FUTURE",
+    searchable_name: "みらいダ FUTURE",
     romanized_name: "Mirai Da FUTURE",
     alphabet: "ま",
     version_num: 17,
@@ -4599,6 +4685,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.3, 0.25, 0.4, 0.5, 0, 0.3, 0.5, 0.5, 0],
   },
   {
+    song_id: "D8o868di9DidPo98ibOdqbi98Ii869Qb",
+    song_name: "Love You",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [2, 6, 10, 12, 0, 6, 10, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "d8oDqIQOoD6DQoQbOIP9I6DPPOl89lo6",
     song_name: "ENDLESS",
     alphabet: "E",
@@ -4618,6 +4712,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "D8q1ObblD0i6liQ0OD6OdD0qIo9oPldb",
     song_name: "PRANA+REVOLUTIONARY ADDICT (U1 DJ Mix)",
+    searchable_name: "PRANA REVOLUTIONARY ADDICT U1 DJ Mix",
     alphabet: "P",
     version_num: 15,
     ratings: [5, 9, 13, 17, 0, 9, 12, 16, 0],
@@ -4745,9 +4840,20 @@ export const ALL_SONG_DATA = [
     song_id: "Db6odqIqQ90PIDIlD1DIb8l09ol6qIDl",
     song_name: "No Tears Left to Cry",
     alphabet: "N",
-    version_num: 17,
+    version_num: 20,
     ratings: [2, 5, 7, 10, 0, 5, 7, 10, 0],
     tiers: [0.65, 0.55, 0.55, 0.65, 0, 0.5, 0.65, 0.55, 0],
+  },
+  {
+    song_id: "db6q6DlPd68bbQOOQ99OI1I9QD8PqDo8",
+    song_name: "恋歌疾風！かるたクイーンいろは",
+    searchable_name: "こいうたしっぷかるたくいーんいろは",
+    romanized_name: "Koiuta Karuta Queen Iroha",
+    alphabet: "か",
+    version_num: 20,
+    ratings: [3, 7, 12, 15, 17, 7, 12, 15, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "db8Ddd060IQ9lPlOlqO0PoPi0Qdb88o6",
@@ -4879,7 +4985,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 6, 11, 15, 0, 7, 11, 15, 0],
     tiers: [0.3, 0.15, 0.3, 0.25, 0, 0.15, 0.15, 0.1, 0],
-    lock_types: [280, 280, 280, 280, 0, 280, 0, 280, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "Dd6lP00DPqIb0d6iqOdlO08l69l6q1di",
@@ -4917,6 +5023,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "dd8loQPD0I86DiIql8b8o9qbO8l0d9Q9",
     song_name: 'DYNAMITE RAVE ("AIR" Special)',
+    searchable_name: "DYNAMITE RAVE AIR Special",
     alphabet: "D",
     version_num: 10,
     ratings: [0, 0, 0, 0, 8, 0, 0, 0, 9],
@@ -5029,6 +5136,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "dDlDPddq08iD8IOb9I1PbODP9696966D",
     song_name: "プレインエイジア -PHQ remix-",
+    searchable_name: "プレインエイジア PHQ remix",
     romanized_name: "Plain Asia PHQ remix",
     alphabet: "は",
     version_num: 16,
@@ -5047,6 +5155,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "dDO8ili1081QQIb86POQ8qd0P111011o",
     song_name: "SP-TRIP MACHINE～JUNGLE MIX～(X-Special)",
+    searchable_name: "SP TRIP MACHINE JUNGLE MIX X Special",
     alphabet: "S",
     version_num: 11,
     ratings: [0, 0, 0, 0, 11, 0, 0, 0, 12],
@@ -5079,6 +5188,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "DDPPb680Pd1Do0I0899Qq18OIIqiP06D",
     song_name: "Be With You (Still Miss you)",
+    searchable_name: "Be With You Still Miss you",
     alphabet: "B",
     version_num: 19,
     ratings: [1, 5, 8, 12, 0, 5, 9, 12, 0],
@@ -5159,12 +5269,14 @@ export const ALL_SONG_DATA = [
     alternate_name: "IDENTITY",
     alphabet: "#",
     version_num: 19,
-    ratings: [4, 8, 14, 17, 0, 8, 14, 17, 0],
-    tiers: [0.55, 0.4, 0.65, 0.65, 0, 0.25, 0.4, 0.4, 0],
+    ratings: [4, 8, 14, 17, 18, 8, 14, 17, 18],
+    tiers: [0.55, 0.4, 0.65, 0.65, 1, 0.25, 0.4, 0.4, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "dI1Ii100bQ6006l89diod0d116diOl8D",
     song_name: "Uh-Oh",
+    searchable_name: "Uh Oh",
     alphabet: "U",
     version_num: 18,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
@@ -5368,6 +5480,16 @@ export const ALL_SONG_DATA = [
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
+    song_id: "Dld100o9l88o6qqId6O96IbiIQiOdbQD",
+    song_name: "S.O.D",
+    searchable_name: "SOD",
+    alphabet: "S",
+    version_num: 20,
+    ratings: [3, 6, 12, 14, 0, 6, 12, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
+  },
+  {
     song_id: "dll6Dq0blbl1iPbIIiQ61QIoo00doqiI",
     song_name: "Hillbilly Shoes",
     alphabet: "H",
@@ -5375,6 +5497,16 @@ export const ALL_SONG_DATA = [
     deleted: 1,
     ratings: [3, 5, 8, 13, 0, 5, 8, 13, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    song_id: "Dlo0PPibIoQbOI8I61O1DobQOIiDb11b",
+    song_name: "Ganymede -re:born-",
+    searchable_name: "Ganymede Reborn",
+    alphabet: "G",
+    version_num: 20,
+    ratings: [2, 5, 11, 14, 17, 5, 11, 14, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "Dlq6qdP1bOPDObbbQQ6b8iPbd1ODq69P",
@@ -5789,8 +5921,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "プッチャ",
     alphabet: "P",
     version_num: 2,
-    ratings: [3, 5, 6, 9, 0, 6, 8, 8, 0],
-    tiers: [0.4, 0.4, 0.45, 0.15, 0, 0.65, 0.45, 0.3, 0],
+    ratings: [3, 5, 6, 9, 13, 6, 8, 8, 13],
+    tiers: [0.4, 0.4, 0.45, 0.15, 1, 0.65, 0.45, 0.3, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "DQO6qbiP6dldo6IIqlob9i8dqiqOio6o",
@@ -5992,7 +6125,7 @@ export const ALL_SONG_DATA = [
     song_id: "I0Ql0Di1qD6i0Qq1ql0qPb19q0IQ6iO9",
     song_name: "FUJIMORI -祭- FESTIVAL",
     searchable_name: "FUJIMORI まつりFESTIVAL",
-    romanized_name: "FUJIMORI Matsuri FESTIVAL",
+    romanized_name: "FUJIMORI Matsuri FESTIVAL",
     alternate_name: "Fujimori Festival",
     alphabet: "F",
     version_num: 15,
@@ -6058,16 +6191,17 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     ratings: [4, 8, 11, 14, 18, 8, 11, 14, 18],
     tiers: [0.35, 0.25, 0.3, 0.25, 1, 0.15, 0.3, 0.45, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "I1i6li9l091l6ooqPlP91OlODPbqqo9P",
     song_name: "ムラサキグルマ",
-    romanized_name: "Murasaki Gourmet",
+    romanized_name: "Murasaki Guruma",
     alphabet: "ま",
     version_num: 20,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
-    lock_types: [290, 290, 290, 290, 0, 290, 290, 290, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "i1ibID6lOoiPQ1lli86P9lIIqOoDlldQ",
@@ -6297,8 +6431,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "Love this feelin",
     alphabet: "L",
     version_num: 3,
-    ratings: [4, 9, 10, 11, 0, 10, 11, 12, 0],
-    tiers: [0.6, 0.7, 0.75, 0.65, 0, 0.75, 0.7, 0.7, 0],
+    ratings: [4, 9, 10, 11, 17, 10, 11, 12, 17],
+    tiers: [0.6, 0.7, 0.75, 0.65, 1, 0.75, 0.7, 0.7, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "i8iPdIlP1IIDib96Qq080ibq6bblQqQD",
@@ -6445,6 +6580,7 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     ratings: [4, 8, 12, 16, 17, 8, 12, 16, 17],
     tiers: [0.6, 0.7, 0.75, 0.6, 1, 0.45, 0.7, 0.5, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "I9P1dbOqD1qIP8bd9O80Ooo869bldobD",
@@ -6478,6 +6614,14 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     ratings: [3, 7, 11, 13, 0, 7, 11, 13, 0],
     tiers: [0.55, 0.55, 0.55, 0.55, 0, 0.6, 0.55, 0.7, 0],
+  },
+  {
+    song_id: "Ib08idDooQbP00Q1Io0QlObloibb1b8Q",
+    song_name: "Dance wiz the Rhythm",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "ib0l98Q00O1Do9oQq1IQOOqQOOb80bIo",
@@ -6713,6 +6857,14 @@ export const ALL_SONG_DATA = [
     version_num: 14,
     ratings: [3, 10, 13, 16, 0, 10, 13, 16, 0],
     tiers: [0.5, 0.55, 0.4, 0.25, 0, 0.5, 0.35, 0.6, 0],
+  },
+  {
+    song_id: "IDIQilDID9lO6lO86dq6ldoDlqiii1o1",
+    song_name: "Robot Footwork",
+    alphabet: "R",
+    version_num: 20,
+    ratings: [3, 8, 12, 14, 0, 8, 12, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "IDldD8o8P8dbIP6oiDo11i10lo6bP6oQ",
@@ -7322,6 +7474,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.6, 0.4, 0.45, 0.3, 0.4, 0.5, 0.4, 0.35, 0.7],
   },
   {
+    song_id: "iq001Pi8b699iil0b9IlqOqodI606q8P",
+    song_name: "Knock Yourself Out XD",
+    alphabet: "K",
+    version_num: 20,
+    ratings: [2, 5, 11, 13, 0, 6, 11, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
     song_name: ".59",
     searchable_name: "059",
@@ -7827,7 +7987,7 @@ export const ALL_SONG_DATA = [
     song_id: "ldDD06dIQ0qQPD9OI88P90OOi0bQPD1O",
     song_name: "osaka EVOLVED -毎度、おおきに！- (TYPE1)",
     searchable_name: "osaka EVOLVED まいどおおきに TYPE1",
-    romanized_name: "osaka EVOLVED Maido Ookini TYPE1",
+    romanized_name: "osaka EVOLVED Maido Ookini TYPE1",
     alternate_name: "osaka EVOLVED TYPE 1/大阪1",
     alphabet: "O",
     version_num: 13,
@@ -8263,6 +8423,17 @@ export const ALL_SONG_DATA = [
     tiers: [0.2, 0.3, 0.55, 0.4, 0, 0.3, 0.7, 0.45, 0],
   },
   {
+    song_id: "lqqIbPboOl80QOioqb0bq6DoibdOQOlD",
+    song_name: "童話回廊",
+    searchable_name: "どうわかいろう",
+    romanized_name: "Douwa Kairou",
+    alphabet: "た",
+    version_num: 20,
+    ratings: [3, 7, 12, 15, 0, 7, 12, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+  },
+  {
     song_id: "o068b00O6QD8lo9O1i9PbQlqO6IQOidD",
     song_name: "New Century",
     alternate_name: "ニューセン",
@@ -8348,8 +8519,8 @@ export const ALL_SONG_DATA = [
     song_id: "o1d0DDobPPPlq0l8Qli1d6ODI8ldo1qb",
     song_name: "シル・ヴ・プレジデント",
     romanized_name: "S'il Vous President",
-    alphabet: " さ",
-    version_num: 18,
+    alphabet: " さ",
+    version_num: 20,
     ratings: [2, 4, 8, 12, 14, 4, 8, 12, 14],
     tiers: [0, 0.05, 0.1, 0.2, 0.4, 0, 0.15, 0.15, 0.35],
   },
@@ -8615,7 +8786,7 @@ export const ALL_SONG_DATA = [
     searchable_name:
       "GRADIUS REMIX うえうえしたしたひだりみぎひだりみぎ BA Ver",
     alternate_name:
-      "Gradius up up down down left right left right BA/Gradius UUDDLRLRBA/Gradius Konami code",
+      "Gradius up up down down left right left right BA/Gradius UUDDLRLRBA/Gradius Konami code",
     alphabet: "G",
     version_num: 19,
     ratings: [2, 6, 8, 12, 0, 6, 8, 12, 0],
@@ -8683,7 +8854,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 10, 14, 0, 6, 10, 14, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
-    lock_types: [0, 0, 270, 270, 0, 0, 0, 270, 0],
+    lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
   },
   {
     song_id: "ObIOQ6id8DOdlQlil8819ObqoDQIIoiO",
@@ -8752,8 +8923,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "TRUE LOVE",
     alphabet: "T",
     version_num: 9,
-    ratings: [4, 4, 8, 10, 0, 4, 8, 10, 0],
-    tiers: [0.25, 0.4, 0.3, 0.45, 0, 0.4, 0.4, 0.55, 0],
+    ratings: [4, 4, 8, 10, 15, 4, 8, 10, 15],
+    tiers: [0.25, 0.4, 0.3, 0.45, 1, 0.4, 0.4, 0.55, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "Od8ld9bQQPDddIqDQ1PloOOdQ0IQo0O9",
@@ -8909,7 +9081,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 10, 16, 0, 6, 10, 16, 0],
     tiers: [0.1, 0.15, 0.5, 0.45, 0, 0.05, 0.25, 0.2, 0],
-    lock_types: [280, 280, 280, 280, 0, 280, 0, 280, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "OdlOPPblPlbbldOdqblI06Dd1q00PPo9",
@@ -9117,6 +9289,17 @@ export const ALL_SONG_DATA = [
     tiers: [0.4, 0.2, 0.3, 0.25, 0.6, 0.25, 0.1, 0.45, 0.4],
   },
   {
+    song_id: "oIOq6lQQPoD1q11Qiq6dDI6l8DdoQ169",
+    song_name: "Timepiece phase Ⅱ",
+    searchable_name: "Timepiece Phase II",
+    alternate_name: "Timepiece Phase 2",
+    alphabet: "T",
+    version_num: 20,
+    ratings: [3, 6, 11, 15, 18, 6, 11, 15, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+  },
+  {
     song_id: "oIPb0iPd8OdDD181dQd8OI18OQDl01QO",
     song_name: "ALL MY HEART -この恋に、わたしの全てを賭ける-",
     searchable_name: "ALL MY HEART こここいにわたしのすべてをかける",
@@ -9206,6 +9389,7 @@ export const ALL_SONG_DATA = [
     version_num: 13,
     ratings: [2, 7, 9, 12, 15, 7, 10, 12, 15],
     tiers: [0.2, 0.25, 0.35, 0.4, 1, 0.35, 0.55, 0.7, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "olloQOobddiIIPObP91l0qPl6oo8P9Dl",
@@ -9761,7 +9945,6 @@ export const ALL_SONG_DATA = [
     version_num: 15,
     ratings: [3, 8, 12, 16, 18, 7, 12, 16, 18],
     tiers: [0.5, 0.35, 0.4, 0.25, 0, 0.5, 0.6, 0.1, 0],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "P0O81Dl9Oiiid8bdOi0oqbD8DqolObbP",
@@ -9799,6 +9982,15 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     ratings: [3, 6, 12, 15, 17, 6, 12, 15, 17],
     tiers: [0.45, 0.4, 0.5, 0.2, 0.15, 0.35, 0.5, 0.45, 0.25],
+  },
+  {
+    song_id: "P1D0q8O1QblDOQP96QQolql9QII0i6Pb",
+    song_name: "Four Leaves",
+    alphabet: "F",
+    version_num: 20,
+    ratings: [3, 7, 9, 13, 15, 7, 9, 13, 15],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "P66d8iQQIIQO96qoDdIqi9l19i69D9Dq",
@@ -9931,7 +10123,7 @@ export const ALL_SONG_DATA = [
     song_name: "激アツ☆マジヤバ☆チアガール",
     searchable_name: "げきアツマジヤバチアガール",
     romanized_name: "Gekiatsu Majiyaba Cheer Girl",
-    alternate_name: "チアガール/Cheerleader/Hinabitacheer",
+    alternate_name: "チアガール/Cheerleader Girl/Hinabitacheer",
     alphabet: "か",
     version_num: 15,
     ratings: [3, 6, 9, 13, 0, 5, 10, 12, 0],
@@ -10733,6 +10925,16 @@ export const ALL_SONG_DATA = [
     version_num: 19,
     ratings: [2, 4, 8, 12, 0, 4, 8, 12, 0],
     tiers: [0.35, 0.4, 0.35, 0.15, 0, 0.45, 0.1, 0.15, 0],
+  },
+  {
+    song_id: "Q8PqoP91qqI6I909IdQ098091q9q0i19",
+    song_name: "ドーパミン (STARDOM Remix)",
+    searchable_name: "どーぱみん STARDOM Remix",
+    romanized_name: "Dopamine STARDOM Remix",
+    alphabet: "た",
+    version_num: 20,
+    ratings: [2, 8, 12, 15, 17, 8, 12, 15, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "q8q0D8QoP89IqooiiD0q66QPI1b8lDi0",
@@ -11767,6 +11969,16 @@ export const ALL_SONG_DATA = [
     tiers: [0.15, 0.25, 0.35, 0.05, 0, 0.5, 0.65, 0.3, 0],
   },
   {
+    song_id: "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
+    song_name: "リメンバーリメンバー",
+    romanized_name: "Remember Remember",
+    alphabet: "ら",
+    version_num: 20,
+    ratings: [3, 6, 8, 11, 0, 6, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+  },
+  {
     song_id: "QQbiq1qQd8d1blOldi889OdQd9P1106Q",
     song_name: "WH1TE RO5E",
     searchable_name: "WHITE ROSE",
@@ -11799,8 +12011,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "マーマー",
     alphabet: "M",
     version_num: 9,
-    ratings: [3, 4, 8, 11, 0, 3, 8, 11, 0],
-    tiers: [0.35, 0.45, 0.5, 0.45, 0, 0.2, 0.35, 0.55, 0],
+    ratings: [3, 4, 8, 11, 16, 3, 8, 11, 16],
+    tiers: [0.35, 0.45, 0.5, 0.45, 1, 0.2, 0.35, 0.55, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "qqdlo1QOQo6QIi8PqOi8iIOO0il1IblQ",
@@ -11869,4 +12082,4 @@ const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290,
 ];
-const SONG_DATA_LAST_UPDATED_unixms = 1742575501228;
+const SONG_DATA_LAST_UPDATED_unixms = 1748501958788;
