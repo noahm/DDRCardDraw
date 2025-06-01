@@ -135,9 +135,7 @@
             "type": "string"
           },
           "saHash": {
-            "type": "string",
-            "pattern": "^[01689bdiloqDIOPQ]{32}$",
-            "description": "Song ID used in Konami e-amusement site"
+            "type": "string"
           },
           "saIndex": {
             "type": "string"
