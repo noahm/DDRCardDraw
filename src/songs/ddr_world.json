@@ -43214,7 +43214,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.3
         },
         {
@@ -43245,7 +43244,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.4
         }
       ],
@@ -79740,7 +79738,6 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.65
         },
         {
@@ -79771,7 +79768,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.15
         }
       ],
@@ -81889,8 +81885,7 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "diffClass": "challenge"
         },
         {
           "step": 232,
@@ -81919,8 +81914,7 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "diffClass": "challenge"
         }
       ],
       "remyLink": "http://remywiki.com/%E6%B5%B7%E7%A5%9E",
