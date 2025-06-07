@@ -1,14 +1,14 @@
 {
   "meta": {
     "menuParent": "events",
-    "flags": [],
+    "flags": ["noCmod"],
     "lastUpdated": 1746063307389,
     "usesDrawGroups": false,
     "styles": ["single"],
     "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
   },
   "defaults": {
-    "flags": [],
+    "flags": ["noCmod"],
     "lowerLvlBound": 11,
     "difficulties": ["challenge"],
     "upperLvlBound": 15,
@@ -25,6 +25,7 @@
       "expert": "Expert",
       "challenge": "Challenge",
       "edit": "Edit",
+      "noCmod": "No CMOD",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -234,7 +235,7 @@
       "jacket": "itg/storm25_bracket/[12] [NO CMOD] Chariot (SX) [Benpai].jpg",
       "bpm": "128",
       "artist": "USAO",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
     },
     {
       "name": "[13] \\#CMFLG",
@@ -322,7 +323,7 @@
       "jacket": "itg/storm25_bracket/[13] Ou Legends (SX) [Chief Skittles].jpg",
       "bpm": "191",
       "artist": "かめりあ",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
     },
     {
       "name": "[13] Repentance",
