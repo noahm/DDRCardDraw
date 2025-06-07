@@ -235,7 +235,14 @@
       "jacket": "itg/storm25_bracket/[12] [NO CMOD] Chariot (SX) [Benpai].jpg",
       "bpm": "128",
       "artist": "USAO",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod"]
+        }
+      ]
     },
     {
       "name": "[13] \\#CMFLG",
@@ -323,7 +330,14 @@
       "jacket": "itg/storm25_bracket/[13] Ou Legends (SX) [Chief Skittles].jpg",
       "bpm": "191",
       "artist": "かめりあ",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod"]
+        }
+      ]
     },
     {
       "name": "[13] Repentance",
