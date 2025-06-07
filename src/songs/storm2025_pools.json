@@ -1,14 +1,14 @@
 {
   "meta": {
     "menuParent": "events",
-    "flags": [],
+    "flags": ["noCmod"],
     "lastUpdated": 1746069804760,
     "usesDrawGroups": true,
     "styles": ["single"],
     "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
   },
   "defaults": {
-    "flags": [],
+    "flags": ["noCmod"],
     "lowerLvlBound": 1,
     "difficulties": ["challenge"],
     "upperLvlBound": 5,
@@ -25,6 +25,7 @@
       "expert": "Expert",
       "challenge": "Challenge",
       "edit": "Edit",
+      "noCmod": "No CMOD",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -107,7 +108,8 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 1
+          "drawGroup": 1,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -122,7 +124,8 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 1
+          "drawGroup": 1,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -392,7 +395,8 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 1
+          "drawGroup": 1,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -752,7 +756,8 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 2
+          "drawGroup": 2,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -992,7 +997,8 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 3
+          "drawGroup": 3,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -1052,7 +1058,8 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 3
+          "drawGroup": 3,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -1592,7 +1599,8 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 5
+          "drawGroup": 5,
+          "flags": ["noCmod"]
         }
       ]
     },
@@ -1697,7 +1705,8 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "drawGroup": 5
+          "drawGroup": 5,
+          "flags": ["noCmod"]
         }
       ]
     },
