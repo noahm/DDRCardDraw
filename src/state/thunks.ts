@@ -1,6 +1,9 @@
 import { AppThunk } from "./store";
 import { draw, DrawingMeta } from "../card-draw";
-import { loadStockGamedataByName } from "./game-data.atoms";
+import {
+  getLastGameSelected,
+  loadStockGamedataByName,
+} from "./game-data.atoms";
 import { drawingSelectors, drawingsSlice } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
@@ -217,6 +220,7 @@ export function createPickBanPocket(
 
 import { GameData } from "../models/SongData";
 import { nanoid } from "nanoid";
+import { availableGameData } from "../utils";
 
 function getOverridesFromGameData(gameData?: GameData): Partial<ConfigState> {
   if (!gameData) return {};
@@ -243,6 +247,32 @@ function getOverridesFromGameData(gameData?: GameData): Partial<ConfigState> {
     gameSpecificOverrides.useGranularLevels = false;
   }
   return gameSpecificOverrides;
+}
+
+export function createNewConfig(
+  roomName: string,
+  basisConfigId?: string,
+): AppThunk<Promise<ConfigState>> {
+  return async (dispatch, getState) => {
+    const basisConfig: Partial<ConfigState> = basisConfigId
+      ? getState().config.entities[basisConfigId]
+      : {};
+    const gameKey =
+      basisConfig.gameKey ||
+      getLastGameSelected(roomName) ||
+      availableGameData[0].name;
+    const gameData = await loadStockGamedataByName(gameKey);
+    const newConfig: ConfigState = {
+      ...defaultConfig,
+      ...getOverridesFromGameData(gameData),
+      ...basisConfig,
+      id: nanoid(10),
+      name: basisConfig.name ? `copy of ${basisConfig.name}` : "new config",
+      gameKey,
+    };
+    dispatch(configSlice.actions.addOne(newConfig));
+    return newConfig;
+  };
 }
 
 export function createConfigFromInputs(

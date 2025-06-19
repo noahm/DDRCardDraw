@@ -1,5 +1,5 @@
 import { Provider as ReduxProvider } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { Provider as UrqlProvider } from "urql";
 import { Header } from "../header";
 import { PartySocketManager } from "../party/client";
@@ -8,7 +8,7 @@ import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
 import { store } from "../state/store";
 
-export function TournamentModeApp() {
+export function TournamentModeAppShell() {
   const params = useParams<"roomName">();
   if (!params.roomName) {
     return null;
@@ -18,20 +18,26 @@ export function TournamentModeApp() {
       <PartySocketManager roomName={params.roomName}>
         <UrqlProvider value={urqlClient}>
           <Header />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "stretch",
-              flex: "1 1 0px",
-              overflow: "hidden",
-            }}
-          >
-            <CabManagement />
-            <MainView />
-          </div>
+          <Outlet />
         </UrqlProvider>
       </PartySocketManager>
     </ReduxProvider>
+  );
+}
+
+export function TournamentModeAppMain() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "stretch",
+        flex: "1 1 0px",
+        overflow: "hidden",
+      }}
+    >
+      <CabManagement />
+      <MainView />
+    </div>
   );
 }

@@ -5,6 +5,7 @@ import { groupGameData } from "./utils";
 import { useIntl } from "./hooks/useIntl";
 import { DoubleCaretVertical, FolderOpen } from "@blueprintjs/icons";
 import { useState } from "react";
+import { useSetLastGameSelected } from "./state/game-data.atoms";
 
 export function GameDataSelect(props: {
   /** if provided, a hidden input will be rendered with current value */
@@ -12,8 +13,10 @@ export function GameDataSelect(props: {
   value?: string;
   defaultValue?: string;
   onGameSelect?(gameKey: string): void;
+  fill?: boolean;
 }) {
   const { t } = useIntl();
+  const setLastGameSelected = useSetLastGameSelected();
   const { available } = useDataSets();
   const [innerValue, setInnerValue] = useState(props.defaultValue);
   const currentDisplay = available.find(
@@ -30,6 +33,7 @@ export function GameDataSelect(props: {
         />
       ) : null}
       <Select
+        fill={props.fill}
         items={available}
         filterable={false}
         itemListRenderer={(listProps) => {
@@ -76,12 +80,15 @@ export function GameDataSelect(props: {
         }
         onItemSelect={(item) => {
           props.onGameSelect?.(item.name);
+          setLastGameSelected(item.name);
           setInnerValue(item.name);
         }}
       >
         <Button
+          fill={props.fill}
+          style={{ justifyContent: "space-between" }}
           text={currentDisplay || "Select a game"}
-          rightIcon={<DoubleCaretVertical />}
+          endIcon={<DoubleCaretVertical />}
         />
       </Select>
     </>

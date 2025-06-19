@@ -1,5 +1,4 @@
 import {
-  Dialog,
   DialogBody,
   FormGroup,
   Tabs,
@@ -17,15 +16,17 @@ import { SimpleMeta } from "../models/Drawing";
 import { useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
 import { DrawingMeta } from "../card-draw";
+import { useLastConfigSelected } from "../state/config.atoms";
 
 interface Props {
-  isOpen: boolean;
   onClose(): void;
   onDrawAttempt(wasSuccess: boolean): void;
 }
 
 export function DrawDialog(props: Props) {
-  const [configId, setConfigId] = useState<string | null>(null);
+  const [configId, setConfigId] = useState<string | null>(
+    useLastConfigSelected() || null,
+  );
   const dispatch = useAppDispatch();
   const appMode = useAppMode();
 
@@ -50,51 +51,49 @@ export function DrawDialog(props: Props) {
   }
 
   return (
-    <Dialog isOpen={props.isOpen} onClose={props.onClose} title="New Draw">
-      <DialogBody>
-        <FormGroup label="Config">
-          <ConfigSelect
-            selectedId={configId}
-            onChange={setConfigId}
-            createDirection="right"
-          />
-        </FormGroup>
-        <Tabs id="new-draw">
+    <DialogBody>
+      <FormGroup label="Config">
+        <ConfigSelect
+          selectedId={configId}
+          onChange={setConfigId}
+          createDirection="right"
+        />
+      </FormGroup>
+      <Tabs id="new-draw">
+        <Tab
+          id="custom"
+          panel={
+            <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
+          }
+        >
+          custom draw
+        </Tab>
+        {appMode === "event" && (
           <Tab
-            id="custom"
+            id="startgg-versus"
             panel={
-              <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
+              <StartggApiKeyGated>
+                <MatchPicker onPickMatch={handleStartggDraw} />
+              </StartggApiKeyGated>
             }
           >
-            custom draw
+            start.gg (h2h)
           </Tab>
-          {appMode === "event" && (
-            <Tab
-              id="startgg-versus"
-              panel={
-                <StartggApiKeyGated>
-                  <MatchPicker onPickMatch={handleStartggDraw} />
-                </StartggApiKeyGated>
-              }
-            >
-              start.gg (h2h)
-            </Tab>
-          )}
-          {appMode === "event" && (
-            <Tab
-              id="startgg-group"
-              panel={
-                <StartggApiKeyGated>
-                  <GauntletPicker onPickMatch={handleStartggDraw} />
-                </StartggApiKeyGated>
-              }
-            >
-              start.gg (gauntlet)
-            </Tab>
-          )}
-        </Tabs>
-      </DialogBody>
-    </Dialog>
+        )}
+        {appMode === "event" && (
+          <Tab
+            id="startgg-group"
+            panel={
+              <StartggApiKeyGated>
+                <GauntletPicker onPickMatch={handleStartggDraw} />
+              </StartggApiKeyGated>
+            }
+          >
+            start.gg (gauntlet)
+          </Tab>
+        )}
+      </Tabs>
+    </DialogBody>
   );
 }
 

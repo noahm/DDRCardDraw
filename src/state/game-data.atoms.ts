@@ -1,7 +1,33 @@
-import { atom, getDefaultStore, useAtomValue } from "jotai";
+import { atom, getDefaultStore, useAtomValue, useSetAtom } from "jotai";
+import { atomFamily, atomWithStorage } from "jotai/utils";
 import { GameData } from "../models/SongData";
 import { useEffect } from "react";
-import { atomFamily } from "jotai/utils";
+import { useRoomName } from "../hooks/useRoomName";
+
+const lastGameSelectedByEvent = atomFamily((roomName: string) =>
+  atomWithStorage<string | undefined>(
+    `ddrtools.lastGameSelected:${roomName}`,
+    undefined,
+    undefined,
+    { getOnInit: true },
+  ),
+);
+
+export function useLastGameSelected() {
+  const roomName = useRoomName();
+  return useAtomValue(lastGameSelectedByEvent(roomName));
+}
+
+export function useSetLastGameSelected() {
+  const roomName = useRoomName();
+  return useSetAtom(lastGameSelectedByEvent(roomName));
+}
+
+/** should be the return value from `useRoomName` */
+export function getLastGameSelected(roomName: string) {
+  const jotaiStore = getDefaultStore();
+  return jotaiStore.get(lastGameSelectedByEvent(roomName));
+}
 
 export const stockDataCache = atom<Record<string, GameData>>({});
 export const customDataCache = atom<Record<string, GameData>>({});

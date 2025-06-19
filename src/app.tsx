@@ -69,13 +69,35 @@ const router = createBrowserRouter([
           return { Component: mod.default };
         },
       },
+      {
+        path: "config",
+        lazy: async () => {
+          const mod = await import("./controls/config-page");
+          return { Component: mod.ConfigPage };
+        },
+      },
     ],
   },
   {
     path: "e/:roomName",
     lazy: async () => ({
-      Component: (await import("./tournament-mode")).TournamentModeApp,
+      Component: (await import("./tournament-mode")).TournamentModeAppShell,
     }),
+    children: [
+      {
+        index: true,
+        lazy: async () => ({
+          Component: (await import("./tournament-mode")).TournamentModeAppMain,
+        }),
+      },
+      {
+        path: "config",
+        lazy: async () => {
+          const mod = await import("./controls/config-page");
+          return { Component: mod.ConfigPage };
+        },
+      },
+    ],
   },
   {
     path: "e/:roomName/cab/:cabId/source",
