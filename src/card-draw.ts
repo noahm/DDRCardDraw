@@ -225,8 +225,8 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
   return null;
 }
 
-export type StartggInfo = Pick<Drawing, "meta">;
-export type StartingPoint = Drawing | StartggInfo;
+export type DrawingMeta = Pick<Drawing, "meta">;
+export type StartingPoint = Drawing | DrawingMeta;
 
 const artistDrawBlocklist = new Set();
 

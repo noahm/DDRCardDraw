@@ -88,10 +88,11 @@ export function ConfigSelect(props: {
 
   return (
     <HTMLSelect
-      value={props.selectedId || undefined}
+      value={props.selectedId || ""}
       onChange={(e) => props.onChange(e.currentTarget.value)}
+      placeholder="select a config"
     >
-      <option disabled selected={!props.selectedId}>
+      <option disabled value="">
         select a config
       </option>
       {summaryValues.map(([key, name, gameKey, lb, ub]) => (

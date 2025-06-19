@@ -1,5 +1,5 @@
 import { AppThunk } from "./store";
-import { draw, StartggInfo } from "../card-draw";
+import { draw, DrawingMeta } from "../card-draw";
 import { loadStockGamedataByName } from "./game-data.atoms";
 import { drawingSelectors, drawingsSlice } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
@@ -26,7 +26,7 @@ function trackDraw(count: number | null, game?: string) {
  * @returns false if draw was unsuccessful
  */
 export function createDraw(
-  startggTargetSet: StartggInfo,
+  startggTargetSet: DrawingMeta,
   configId: string,
 ): AppThunk<Promise<"nok" | "ok">> {
   return async (dispatch, getState) => {

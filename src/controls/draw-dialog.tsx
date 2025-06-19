@@ -16,6 +16,7 @@ import { useAppDispatch } from "../state/store";
 import { SimpleMeta } from "../models/Drawing";
 import { useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
+import { DrawingMeta } from "../card-draw";
 
 interface Props {
   isOpen: boolean;
@@ -28,25 +29,22 @@ export function DrawDialog(props: Props) {
   const dispatch = useAppDispatch();
   const appMode = useAppMode();
 
-  function handleDraw(match: PickedMatch) {
+  function handleStartggDraw(match: PickedMatch) {
+    return handleDraw({
+      type: "startgg",
+      subtype: match.subtype,
+      entrants: match.players,
+      title: match.title,
+      id: match.id,
+    });
+  }
+
+  function handleDraw(meta: DrawingMeta["meta"]) {
     if (!configId) {
       return;
     }
     props.onClose();
-    dispatch(
-      createDraw(
-        {
-          meta: {
-            type: "startgg",
-            subtype: match.subtype,
-            entrants: match.players,
-            title: match.title,
-            id: match.id,
-          },
-        },
-        configId,
-      ),
-    ).then((result) => {
+    dispatch(createDraw({ meta }, configId)).then((result) => {
       props.onDrawAttempt(result === "ok");
     });
   }
@@ -65,10 +63,7 @@ export function DrawDialog(props: Props) {
           <Tab
             id="custom"
             panel={
-              <CustomDrawForm
-                disableCreate={!configId}
-                onSubmit={(meta) => dispatch(createDraw({ meta }, configId!))}
-              />
+              <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
             }
           >
             custom draw
@@ -78,7 +73,7 @@ export function DrawDialog(props: Props) {
               id="startgg-versus"
               panel={
                 <StartggApiKeyGated>
-                  <MatchPicker onPickMatch={handleDraw} />
+                  <MatchPicker onPickMatch={handleStartggDraw} />
                 </StartggApiKeyGated>
               }
             >
@@ -90,7 +85,7 @@ export function DrawDialog(props: Props) {
               id="startgg-group"
               panel={
                 <StartggApiKeyGated>
-                  <GauntletPicker onPickMatch={handleDraw} />
+                  <GauntletPicker onPickMatch={handleStartggDraw} />
                 </StartggApiKeyGated>
               }
             >
