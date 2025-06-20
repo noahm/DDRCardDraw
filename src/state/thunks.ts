@@ -319,3 +319,34 @@ export function createConfigFromImport(
     return newConfig;
   };
 }
+
+export function changeGameKeyForConfig(
+  configId: string,
+  gameKey: string,
+): AppThunk<Promise<void>> {
+  return async (dispatch, getState) => {
+    const startingConfig = getState().config.entities[configId];
+    const gameData = await loadStockGamedataByName(gameKey);
+    if (!gameData) return;
+    const changes: Partial<ConfigState> = { gameKey };
+    if (!gameData.meta.styles.includes(startingConfig.style)) {
+      changes.style = gameData.defaults.style;
+    }
+    if (
+      startingConfig.difficulties.some(
+        (d) =>
+          !gameData.meta.difficulties.some((metaDiff) => metaDiff.key === d),
+      )
+    ) {
+      changes.difficulties = gameData.defaults.difficulties;
+    }
+    if (
+      startingConfig.flags.some(
+        (f) => !gameData.meta.flags.some((metaFlag) => metaFlag === f),
+      )
+    ) {
+      changes.flags = gameData.defaults.flags;
+    }
+    dispatch(configSlice.actions.updateOne({ id: configId, changes }));
+  };
+}
