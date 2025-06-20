@@ -97,9 +97,10 @@ export function DrawDialog(props: Props) {
   );
 }
 
-function CustomDrawForm(props: {
+export function CustomDrawForm(props: {
   initialMeta?: SimpleMeta;
   disableCreate?: boolean;
+  submitText?: string;
   onSubmit(meta: SimpleMeta): void;
 }) {
   const [players, setPlayers] = useState<string[]>(
@@ -133,7 +134,7 @@ function CustomDrawForm(props: {
         onClick={handleSubmit}
         disabled={props.disableCreate}
       >
-        Create
+        {props.submitText || "Create"}
       </Button>
     </>
   );

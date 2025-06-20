@@ -37,7 +37,16 @@ export const drawingsSlice = createSlice({
   reducers: {
     addDrawing: drawingsAdapter.addOne,
     updateOne: drawingsAdapter.updateOne,
-    removeOne: drawingsAdapter.removeOne,
+    removeOne(state, action: PayloadAction<string>) {
+      const [mainId, subId] = splitCompoundId(action.payload);
+      if (!subId) {
+        return drawingsAdapter.removeOne(state, mainId);
+      }
+      const drawing = state.entities[mainId];
+      if (drawing.subDrawings) {
+        delete drawing.subDrawings[subId];
+      }
+    },
     clearDrawings: drawingsAdapter.removeAll,
     addOneChart(
       state,
@@ -157,7 +166,10 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      if (drawing.meta.type !== "startgg") {
+      if (
+        drawing.meta.type !== "startgg" ||
+        drawing.meta.subtype !== "gauntlet"
+      ) {
         return;
       }
       if (!drawing.meta.scoresByEntrant) {
@@ -167,6 +179,18 @@ export const drawingsSlice = createSlice({
         }
       }
       drawing.meta.scoresByEntrant[playerId][chartId] = score;
+    },
+    addSubdraw(
+      state,
+      action: PayloadAction<{ newSubdraw: SubDrawing; existingDrawId: string }>,
+    ) {
+      const { existingDrawId, newSubdraw } = action.payload;
+      const [mainId] = splitCompoundId(existingDrawId);
+      const existingDraw = state.entities[mainId];
+      if (!existingDraw.subDrawings) {
+        existingDraw.subDrawings = {};
+      }
+      existingDraw.subDrawings[newSubdraw.id] = newSubdraw;
     },
   },
   selectors: {
@@ -182,7 +206,11 @@ export const drawingSelectors = drawingsAdapter.getSelectors(
 
 type StateOfSlice<S> = S extends Slice<infer State> ? State : never;
 
-function splitCompoundId(id: string) {
+/**
+ * for convenience, sometimes a sub drawing is passed around with a synthetic id of:
+ * `parentId:ownId` and this is used to break the parts down again.
+ */
+export function splitCompoundId(id: string) {
   return id.split(":") as [mainId: string, subId?: string];
 }
 

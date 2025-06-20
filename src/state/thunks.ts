@@ -4,7 +4,11 @@ import {
   getLastGameSelected,
   loadStockGamedataByName,
 } from "./game-data.atoms";
-import { drawingSelectors, drawingsSlice } from "./drawings.slice";
+import {
+  drawingSelectors,
+  drawingsSlice,
+  splitCompoundId,
+} from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
@@ -47,13 +51,62 @@ export function createDraw(
     }
 
     const drawing = draw(gameData, config, startggTargetSet);
-    /** @todo create subdraws here */
     trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
     if (!drawing.charts.length) {
       return "nok"; // could not draw the requested number of charts
     }
 
     dispatch(drawingsSlice.actions.addDrawing(drawing));
+    return "ok";
+  };
+}
+
+/**
+ * Thunk creator for performing a new draw, and adding it
+ * as a sub-draw of an existing draw
+ * @returns false if draw was unsuccessful
+ */
+export function createSubdraw(
+  existingDrawId: string,
+  configId: string,
+): AppThunk<Promise<"nok" | "ok">> {
+  return async (dispatch, getState) => {
+    const state = getState();
+    const config = configSlice.selectors.selectById(state, configId);
+    if (!config) {
+      console.error("couldnt draw, no config");
+      return "nok";
+    }
+    const gameData = await loadStockGamedataByName(config.gameKey);
+    if (!gameData) {
+      console.error("couldnt draw, no game data");
+      trackDraw(null);
+      return "nok"; // no draw was possible
+    }
+    const [mainId] = splitCompoundId(existingDrawId);
+    const existingDraw = state.drawings.entities[mainId];
+
+    const drawing = draw(gameData, config, { meta: existingDraw.meta });
+    trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
+    if (!drawing.charts.length) {
+      return "nok"; // could not draw the requested number of charts
+    }
+
+    dispatch(
+      drawingsSlice.actions.addSubdraw({
+        existingDrawId,
+        newSubdraw: {
+          id: drawing.id,
+          parentId: existingDrawId,
+          configId: drawing.configId,
+          charts: drawing.charts,
+          bans: drawing.bans,
+          protects: drawing.protects,
+          pocketPicks: drawing.pocketPicks,
+          winners: drawing.winners,
+        },
+      }),
+    );
     return "ok";
   };
 }

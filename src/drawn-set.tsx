@@ -1,21 +1,11 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import { useDrawing } from "./drawing-context";
 import { DrawingActions } from "./tournament-mode/drawing-actions";
 import { ErrorFallback } from "./utils/error-fallback";
-import { useAtomValue } from "jotai";
-import { showPlayerAndRoundLabels } from "./config-state";
 import { EligibleChart } from "./models/Drawing";
-
-const HUE_STEP = (255 / 8) * 3;
-let hue = Math.floor(Math.random() * 255);
-
-function getRandomGradiant() {
-  hue += HUE_STEP;
-  return `linear-gradient(hsl(${hue}, var(--drawing-grad-saturation), var(--drawing-grad-lightness)), transparent, transparent)`;
-}
 
 /**
  * expects a drawing context wrapper
@@ -65,15 +55,10 @@ function ChartFromContext({ chartId }: { chartId: string }) {
 }
 
 function TournamentModeSpacer() {
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
-  if (showLabels) {
-    return null;
-  }
   return <div style={{ height: "15px" }} />;
 }
 
 const DrawnSet = memo(function DrawnSet() {
-  const [backgroundImage] = useState(getRandomGradiant());
   const drawingId = useDrawing((d) => d.id);
 
   return (
@@ -82,7 +67,6 @@ const DrawnSet = memo(function DrawnSet() {
         <div
           className={styles.drawing}
           style={{
-            backgroundImage,
             padding: "2em",
             minHeight: "15em",
             display: "flex",
@@ -96,7 +80,6 @@ const DrawnSet = memo(function DrawnSet() {
       <div
         key={drawingId}
         id={`drawing:${drawingId}`}
-        style={{ backgroundImage }}
         className={styles.drawing}
       >
         <TournamentModeSpacer />
