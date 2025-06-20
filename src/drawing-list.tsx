@@ -9,14 +9,16 @@ import { DelayedSpinner } from "./common-components/delayed-spinner";
 import { useIntl } from "./hooks/useIntl";
 import { FormattedMessage } from "react-intl";
 
-const DrawnSet = lazy(() => import("./drawn-set"));
+const DrawnSetGroup = lazy(() => import("./drawn-set-group"));
 
 const ScrollableDrawings = memo(() => {
-  const drawingIds = useDeferredValue(useAppState((s) => s.drawings.ids));
+  const drawingIds = useDeferredValue(useAppState((s) => s.drawingGroups.ids));
   return (
     <div style={{ height: "100%", flex: "1 1 auto", overflowY: "auto" }}>
       {drawingIds
-        .map((did) => <DrawnSet key={did} drawingId={did} />)
+        .map((groupId) => (
+          <DrawnSetGroup key={groupId} drawingGroupId={groupId} />
+        ))
         .reverse()}
     </div>
   );

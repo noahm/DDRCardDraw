@@ -118,3 +118,14 @@ export interface Drawing {
   pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
 }
+
+export interface DrawingGroup {
+  id: string;
+  configId: string;
+  /** array of drawing IDs */
+  drawingIds: string[];
+  meta: SimpleMeta | StartggVersusMeta | StartggGauntletMeta;
+  /** index of items of the players array, in the order they should be displayed */
+  playerDisplayOrder: number[];
+  priorityPlayer?: number;
+}
