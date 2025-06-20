@@ -13,10 +13,11 @@ export default function DrawnSetGroup(props: { drawingId: string }) {
         {drawing.subDrawings &&
           drawing.subDrawings.map((subDraw) => (
             <DrawingProvider
+              key={subDraw.id}
               drawingId={subDraw.parentId}
               subDrawId={subDraw.id}
             >
-              <DrawnSet key={subDraw.id} />
+              <DrawnSet />
             </DrawingProvider>
           ))}
       </DrawingProvider>

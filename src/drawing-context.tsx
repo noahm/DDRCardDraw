@@ -3,6 +3,7 @@ import { drawingSelectors, drawingsSlice } from "./state/drawings.slice";
 import { Drawing } from "./models/Drawing";
 import { createAppSelector, useAppDispatch, useAppState } from "./state/store";
 import { EqualityFn } from "react-redux";
+import { ConfigContextProvider } from "./state/hooks";
 
 const stubDrawing: Drawing = {
   id: "",
@@ -77,10 +78,19 @@ export function DrawingProvider({
   children: ReactNode;
 }) {
   const ret = (
-    <RawDrawingProvider value={drawingId}>{children}</RawDrawingProvider>
+    <RawDrawingProvider value={drawingId}>
+      <ContextualConfigProvider>{children}</ContextualConfigProvider>
+    </RawDrawingProvider>
   );
   if (subDrawId) {
     return <SubDrawingProvider value={subDrawId}>{ret}</SubDrawingProvider>;
   }
   return ret;
+}
+
+function ContextualConfigProvider({ children }: { children: ReactNode }) {
+  const configId = useDrawing((d) => d.configId);
+  return (
+    <ConfigContextProvider value={configId}>{children}</ConfigContextProvider>
+  );
 }
