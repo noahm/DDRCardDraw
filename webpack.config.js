@@ -256,6 +256,8 @@ module.exports = function (env = {}, argv = {}) {
             ]
           : [
               new OfflinePlugin({
+                responseStrategy: "network-first",
+                autoUpdate: true,
                 ServiceWorker: {
                   events: true,
                 },
