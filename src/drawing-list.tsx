@@ -1,32 +1,23 @@
-import {
-  Suspense,
-  lazy,
-  memo,
-  useDeferredValue,
-  useEffect,
-  useState,
-} from "react";
-import { FormattedMessage } from "react-intl";
+import { Suspense, lazy, memo, useDeferredValue } from "react";
 import styles from "./drawing-list.css";
-import { useDrawState } from "./draw-state";
-import { useConfigState } from "./config-state";
-import { useIntl } from "./hooks/useIntl";
-import { Callout, NonIdealState, Spinner } from "@blueprintjs/core";
+import { Callout, NonIdealState } from "@blueprintjs/core";
 import { Import } from "@blueprintjs/icons";
 import logo from "./assets/ddr-tools-256.png";
-import { ErrorBoundary } from "react-error-boundary";
-import { ErrorFallback } from "./utils/error-fallback";
+import { useAppState } from "./state/store";
+import { drawingsSlice } from "./state/drawings.slice";
+import { DelayedSpinner } from "./common-components/delayed-spinner";
+import { useIntl } from "./hooks/useIntl";
+import { FormattedMessage } from "react-intl";
 
-const EligibleChartsList = lazy(() => import("./eligible-charts"));
 const DrawnSet = lazy(() => import("./drawn-set"));
 
 const ScrollableDrawings = memo(() => {
-  const drawings = useDeferredValue(useDrawState((s) => s.drawings));
+  const drawingIds = useDeferredValue(useAppState((s) => s.drawings.ids));
   return (
-    <div>
-      {drawings.map((d) => (
-        <DrawnSet key={d.id} drawing={d} />
-      ))}
+    <div style={{ height: "100%", flex: "1 1 auto", overflowY: "auto" }}>
+      {drawingIds
+        .map((did) => <DrawnSet key={did} drawingId={did} />)
+        .reverse()}
     </div>
   );
 });
@@ -34,20 +25,8 @@ const ScrollableDrawings = memo(() => {
 export function DrawingList() {
   const { t } = useIntl();
   const hasDrawings = useDeferredValue(
-    useDrawState((s) => !!s.drawings.length),
+    useAppState(drawingsSlice.selectors.haveDrawings),
   );
-  const showEligible = useDeferredValue(
-    useConfigState((cfg) => cfg.showEligibleCharts),
-  );
-  if (showEligible) {
-    return (
-      <ErrorBoundary fallback={<ErrorFallback />}>
-        <Suspense fallback={<DelayedSpinner />}>
-          <EligibleChartsList />
-        </Suspense>
-      </ErrorBoundary>
-    );
-  }
   if (!hasDrawings) {
     return (
       <div className={styles.empty}>
@@ -69,20 +48,4 @@ export function DrawingList() {
       <ScrollableDrawings />
     </Suspense>
   );
-}
-
-function DelayedSpinner(props: { timeout?: number }) {
-  const [show, updateShow] = useState(false);
-  useEffect(() => {
-    if (show) return;
-
-    const timeout = setTimeout(() => {
-      updateShow(true);
-    }, props.timeout || 250);
-    return () => clearTimeout(timeout);
-  }, [props.timeout, show]);
-  if (show) {
-    return <Spinner style={{ marginTop: "15px" }} />;
-  }
-  return null;
 }
