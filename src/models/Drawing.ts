@@ -117,7 +117,7 @@ export interface Drawing {
   protects: Record<string, PlayerActionOnChart | null>;
   pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
-  subDrawings?: SubDrawing[];
+  subDrawings?: Record<string, SubDrawing>;
 }
 
 export interface SubDrawing

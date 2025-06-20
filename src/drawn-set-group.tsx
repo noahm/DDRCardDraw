@@ -11,7 +11,7 @@ export default function DrawnSetGroup(props: { drawingId: string }) {
         <SetLabels />
         <DrawnSet />
         {drawing.subDrawings &&
-          drawing.subDrawings.map((subDraw) => (
+          Object.values(drawing.subDrawings).map((subDraw) => (
             <DrawingProvider
               key={subDraw.id}
               drawingId={subDraw.parentId}

@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext } from "react";
-import { drawingSelectors, drawingsSlice } from "./state/drawings.slice";
+import { drawingSelectors } from "./state/drawings.slice";
 import { Drawing } from "./models/Drawing";
-import { createAppSelector, useAppDispatch, useAppState } from "./state/store";
+import { createAppSelector, useAppState } from "./state/store";
 import { EqualityFn } from "react-redux";
 import { ConfigContextProvider } from "./state/hooks";
 
@@ -31,15 +31,15 @@ const selectDrawingByIdAndSubId = createAppSelector(
   [
     (s, drawingId: string) => drawingSelectors.selectById(s, drawingId),
     (s, drawingId: string, subDraw: string | undefined) =>
-      drawingSelectors
-        .selectById(s, drawingId)
-        ?.subDrawings?.find((d) => d.id === subDraw),
+      subDraw &&
+      drawingSelectors.selectById(s, drawingId)?.subDrawings?.[subDraw],
   ],
   (drawing, subDrawing) => {
-    if (!subDrawContext) return drawing || stubDrawing;
+    if (!subDrawing) return drawing || stubDrawing;
     return {
       ...drawing,
       ...subDrawing,
+      id: `${drawing.id}:${subDrawing.id}`,
     };
   },
 );
@@ -57,16 +57,16 @@ export function useDrawing<T>(
 }
 
 /** @todo figure out updating sub drawings somehow */
-export function useUpdateDrawing(): (changes: Partial<Drawing>) => void {
-  const drawingId = useContext(context);
-  const dispatch = useAppDispatch();
+// export function useUpdateDrawing(): (changes: Partial<Drawing>) => void {
+//   const drawingId = useContext(context);
+//   const dispatch = useAppDispatch();
 
-  if (!drawingId) {
-    return () => {};
-  }
-  return (changes) =>
-    dispatch(drawingsSlice.actions.updateOne({ id: drawingId, changes }));
-}
+//   if (!drawingId) {
+//     return () => {};
+//   }
+//   return (changes) =>
+//     dispatch(drawingsSlice.actions.updateOne({ id: drawingId, changes }));
+// }
 
 export function DrawingProvider({
   drawingId,

@@ -1,13 +1,16 @@
 import {
   PayloadAction,
+  Slice,
   createEntityAdapter,
   createSlice,
 } from "@reduxjs/toolkit";
+import type { WritableDraft } from "immer";
 import {
   Drawing,
   DrawnChart,
   EligibleChart,
   PlayerActionOnChart,
+  SubDrawing,
 } from "../models/Drawing";
 
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
@@ -43,7 +46,7 @@ export const drawingsSlice = createSlice({
         chart: DrawnChart;
       }>,
     ) {
-      const drawing = state.entities[action.payload.drawingId];
+      const drawing = getDrawingFromCompoundId(state, action.payload.drawingId);
       drawing.charts.push(action.payload.chart);
     },
     updateOneChart(
@@ -54,23 +57,24 @@ export const drawingsSlice = createSlice({
         changes: Partial<DrawnChart>;
       }>,
     ) {
-      const chart = state.entities[action.payload.drawingId].charts.find(
-        (c) => c.id === action.payload.chartId,
-      );
+      const drawing = getDrawingFromCompoundId(state, action.payload.drawingId);
+      const chart = drawing.charts.find((c) => c.id === action.payload.chartId);
       if (!chart) {
         return;
       }
       Object.assign(chart, action.payload.changes);
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
-      const drawing = state.entities[action.payload];
+      const [mainId] = splitCompoundId(action.payload);
+      const drawing = state.entities[mainId];
       if (!drawing) {
         return;
       }
       drawing.playerDisplayOrder = drawing.playerDisplayOrder.toReversed();
     },
     incrementPriorityPlayer(state, action: ActionOnSingleDrawing) {
-      const drawing = state.entities[action.payload];
+      const [mainId] = splitCompoundId(action.payload);
+      const drawing = state.entities[mainId];
       if (!drawing) {
         return;
       }
@@ -87,7 +91,7 @@ export const drawingsSlice = createSlice({
     },
     resetChart(state, action: ActionOnSingleChart) {
       const { chartId, drawingId } = action.payload;
-      const drawing = state.entities[drawingId];
+      const drawing = getDrawingFromCompoundId(state, drawingId);
       if (!drawing) {
         return;
       }
@@ -103,7 +107,7 @@ export const drawingsSlice = createSlice({
       >,
     ) {
       const { chartId, drawingId, player, reorder } = action.payload;
-      const drawing = state.entities[drawingId];
+      const drawing = getDrawingFromCompoundId(state, drawingId);
       if (!drawing) {
         return;
       }
@@ -130,7 +134,8 @@ export const drawingsSlice = createSlice({
       }
     },
     setWinner(state, action: ActionOnSingleChart<{ player: number | null }>) {
-      const winners = state.entities[action.payload.drawingId].winners;
+      const drawing = getDrawingFromCompoundId(state, action.payload.drawingId);
+      const winners = drawing.winners;
       if (action.payload.player === null) {
         delete winners[action.payload.chartId];
       } else {
@@ -147,7 +152,8 @@ export const drawingsSlice = createSlice({
       }>,
     ) {
       const { drawingId, playerId, chartId, score } = action.payload;
-      const drawing = state.entities[drawingId];
+      const [mainId] = splitCompoundId(drawingId);
+      const drawing = state.entities[mainId];
       if (!drawing) {
         return;
       }
@@ -174,8 +180,26 @@ export const drawingSelectors = drawingsAdapter.getSelectors(
   drawingsSlice.selectSlice,
 );
 
+type StateOfSlice<S> = S extends Slice<infer State> ? State : never;
+
+function splitCompoundId(id: string) {
+  return id.split(":") as [mainId: string, subId?: string];
+}
+
+function getDrawingFromCompoundId(
+  state: WritableDraft<StateOfSlice<typeof drawingsSlice>>,
+  id: string,
+) {
+  const [mainId, subId] = splitCompoundId(id);
+  const drawing = state.entities[mainId];
+  if (subId && drawing.subDrawings) {
+    return drawing.subDrawings[subId];
+  }
+  return drawing;
+}
+
 function moveChartInArray(
-  drawing: Drawing,
+  drawing: Drawing | SubDrawing,
   chartId: string,
   pos: "start" | "end",
 ) {
