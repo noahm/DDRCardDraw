@@ -5,41 +5,23 @@ import { Icon } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
 import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
-import { useAppDispatch, useAppState } from "../state/store";
+import { useAppDispatch } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
 import { getAllPlayers } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
 
-export function SetLabels(props: { drawingGroupId: string }) {
+export function SetLabels() {
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
-  const drawingGroup = useAppState(
-    (s) => s.drawingGroups.entities[props.drawingGroupId],
-  );
-  // const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
-  // const meta = useDrawing((d) => d.meta);
-  // const winners = useDrawing((d) => d.winners);
-  const playerDisplayOrder = drawingGroup.playerDisplayOrder;
-  const meta = drawingGroup.meta;
-  const singleDrawing = useAppState((s) => {
-    const drawings = [];
-    for (const drawingId of drawingGroup.drawingIds) {
-      const drawing = s.drawings.entities[drawingId];
-      if (drawing) {
-        drawings.push(drawing);
-      }
-    }
-    if (drawings.length === 1) {
-      return drawings[0];
-    }
-  });
-  const winners = singleDrawing?.winners;
+  const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
+  const meta = useDrawing((d) => d.meta);
+  const winners = useDrawing((d) => d.winners);
   if (!showLabels) {
     return null;
   }
 
   const hideWins = meta.type === "startgg" && meta.subtype === "gauntlet";
   let winsPerPlayer: CountingSet<number> | undefined;
-  if (!hideWins && winners) {
+  if (!hideWins) {
     winsPerPlayer = new CountingSet<number>();
     for (const pIdx of Object.values(winners)) {
       if (pIdx === null) {

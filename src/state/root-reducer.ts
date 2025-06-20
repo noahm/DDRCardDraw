@@ -3,14 +3,8 @@ import { configSlice } from "./config.slice";
 import { drawingsSlice } from "./drawings.slice";
 import { receivePartyState } from "./central";
 import { eventSlice } from "./event.slice";
-import { drawingGroupsSlice } from "./drawing-groups.slice";
 
-const combinedReducer = combineSlices(
-  drawingsSlice,
-  configSlice,
-  eventSlice,
-  drawingGroupsSlice,
-);
+const combinedReducer = combineSlices(drawingsSlice, configSlice, eventSlice);
 
 export type AppState = ReturnType<typeof combinedReducer>;
 

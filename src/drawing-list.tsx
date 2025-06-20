@@ -12,12 +12,12 @@ import { FormattedMessage } from "react-intl";
 const DrawnSetGroup = lazy(() => import("./drawn-set-group"));
 
 const ScrollableDrawings = memo(() => {
-  const drawingIds = useDeferredValue(useAppState((s) => s.drawingGroups.ids));
+  const drawingIds = useDeferredValue(useAppState((s) => s.drawings.ids));
   return (
     <div style={{ height: "100%", flex: "1 1 auto", overflowY: "auto" }}>
       {drawingIds
-        .map((groupId) => (
-          <DrawnSetGroup key={groupId} drawingGroupId={groupId} />
+        .map((drawingId) => (
+          <DrawnSetGroup key={drawingId} drawingId={drawingId} />
         ))
         .reverse()}
     </div>

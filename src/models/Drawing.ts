@@ -117,15 +117,14 @@ export interface Drawing {
   protects: Record<string, PlayerActionOnChart | null>;
   pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
+  subDrawings?: SubDrawing[];
 }
 
-export interface DrawingGroup {
+export interface SubDrawing
+  extends Pick<
+    Drawing,
+    "configId" | "charts" | "winners" | "bans" | "protects" | "pocketPicks"
+  > {
   id: string;
-  configId: string;
-  /** array of drawing IDs */
-  drawingIds: string[];
-  meta: SimpleMeta | StartggVersusMeta | StartggGauntletMeta;
-  /** index of items of the players array, in the order they should be displayed */
-  playerDisplayOrder: number[];
-  priorityPlayer?: number;
+  parentId: string;
 }

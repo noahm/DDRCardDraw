@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { ChartsOnly } from "../drawn-set";
 import { useAppState } from "../state/store";
+import { DrawingProvider } from "../drawing-context";
 
 export function CabCards() {
   const params = useParams<"roomName" | "cabId">();
@@ -8,5 +9,9 @@ export function CabCards() {
   if (!drawingId) {
     return null;
   }
-  return <ChartsOnly drawingId={drawingId} />;
+  return (
+    <DrawingProvider drawingId={drawingId}>
+      <ChartsOnly />
+    </DrawingProvider>
+  );
 }

@@ -5,7 +5,7 @@ import {
   loadStockGamedataByName,
 } from "./game-data.atoms";
 import { drawingSelectors, drawingsSlice } from "./drawings.slice";
-import { Drawing, EligibleChart } from "../models/Drawing";
+import { EligibleChart } from "../models/Drawing";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
 declare const umami: {
@@ -46,27 +46,14 @@ export function createDraw(
       return "nok"; // no draw was possible
     }
 
-    const drawings: Drawing[] = [];
-    for (let i = 0; i < 3; i++) {
-      const drawing = draw(gameData, config, startggTargetSet);
-      trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
-      if (!drawing.charts.length) {
-        return "nok"; // could not draw the requested number of charts
-      }
-
-      dispatch(drawingsSlice.actions.addDrawing(drawing));
-      drawings.push(drawing);
+    const drawing = draw(gameData, config, startggTargetSet);
+    /** @todo create subdraws here */
+    trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
+    if (!drawing.charts.length) {
+      return "nok"; // could not draw the requested number of charts
     }
 
-    dispatch(
-      drawingGroupsSlice.actions.addDrawingGroup({
-        id: nanoid(),
-        meta: startggTargetSet.meta,
-        configId: config.id,
-        drawingIds: drawings.map((d) => d.id),
-        playerDisplayOrder: drawings[0].playerDisplayOrder,
-      }),
-    );
+    dispatch(drawingsSlice.actions.addDrawing(drawing));
     return "ok";
   };
 }
@@ -235,7 +222,6 @@ export function createPickBanPocket(
 import { GameData } from "../models/SongData";
 import { nanoid } from "nanoid";
 import { availableGameData } from "../utils";
-import { drawingGroupsSlice } from "./drawing-groups.slice";
 
 function getOverridesFromGameData(gameData?: GameData): Partial<ConfigState> {
   if (!gameData) return {};
