@@ -34,7 +34,9 @@ export function RawChartList(props: { charts: Array<EligibleChart> }) {
 
 function ChartFromContext({ chartId }: { chartId: string }) {
   const chart = useDrawing((d) => d.charts.find((c) => c.id === chartId));
-  const veto = useDrawing((d) => d.bans[chartId]);
+  const veto = useDrawing((d) => {
+    return d.bans[chartId];
+  });
   const protect = useDrawing((d) => d.protects[chartId]);
   const pocketPick = useDrawing((d) => d.pocketPicks[chartId]);
   const winner = useDrawing((d) => d.winners[chartId]);

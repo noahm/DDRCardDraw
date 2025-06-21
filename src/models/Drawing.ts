@@ -120,11 +120,7 @@ export interface Drawing {
   subDrawings?: Record<string, SubDrawing>;
 }
 
-export interface SubDrawing
-  extends Pick<
-    Drawing,
-    "configId" | "charts" | "winners" | "bans" | "protects" | "pocketPicks"
-  > {
+export interface SubDrawing extends Pick<Drawing, "configId" | "charts"> {
   id: string;
   parentId: string;
 }

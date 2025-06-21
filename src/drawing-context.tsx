@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useDebugValue } from "react";
 import { drawingSelectors } from "./state/drawings.slice";
 import { Drawing } from "./models/Drawing";
 import { createAppSelector, useAppState } from "./state/store";
@@ -50,23 +50,13 @@ export function useDrawing<T>(
 ) {
   const drawingId = useContext(context);
   const subDrawId = useContext(subDrawContext);
-  return useAppState((state) => {
+  const ret = useAppState((state) => {
     const drawing = selectDrawingByIdAndSubId(state, drawingId, subDrawId);
     return selector(drawing);
   }, equalityFn);
+  useDebugValue(ret);
+  return ret;
 }
-
-/** @todo figure out updating sub drawings somehow */
-// export function useUpdateDrawing(): (changes: Partial<Drawing>) => void {
-//   const drawingId = useContext(context);
-//   const dispatch = useAppDispatch();
-
-//   if (!drawingId) {
-//     return () => {};
-//   }
-//   return (changes) =>
-//     dispatch(drawingsSlice.actions.updateOne({ id: drawingId, changes }));
-// }
 
 export function DrawingProvider({
   drawingId,

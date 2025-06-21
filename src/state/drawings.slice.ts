@@ -4,7 +4,6 @@ import {
   createEntityAdapter,
   createSlice,
 } from "@reduxjs/toolkit";
-import type { WritableDraft } from "immer";
 import {
   Drawing,
   DrawnChart,
@@ -44,7 +43,14 @@ export const drawingsSlice = createSlice({
       }
       const drawing = state.entities[mainId];
       if (drawing.subDrawings) {
+        const target = drawing.subDrawings[subId];
         delete drawing.subDrawings[subId];
+        for (const chart of target.charts) {
+          delete drawing.winners[chart.id];
+          delete drawing.pocketPicks[chart.id];
+          delete drawing.bans[chart.id];
+          delete drawing.protects[chart.id];
+        }
       }
     },
     clearDrawings: drawingsAdapter.removeAll,
@@ -55,8 +61,11 @@ export const drawingsSlice = createSlice({
         chart: DrawnChart;
       }>,
     ) {
-      const drawing = getDrawingFromCompoundId(state, action.payload.drawingId);
-      drawing.charts.push(action.payload.chart);
+      const [, target] = getDrawingFromCompoundId(
+        state,
+        action.payload.drawingId,
+      );
+      target.charts.push(action.payload.chart);
     },
     updateOneChart(
       state,
@@ -66,8 +75,11 @@ export const drawingsSlice = createSlice({
         changes: Partial<DrawnChart>;
       }>,
     ) {
-      const drawing = getDrawingFromCompoundId(state, action.payload.drawingId);
-      const chart = drawing.charts.find((c) => c.id === action.payload.chartId);
+      const [, target] = getDrawingFromCompoundId(
+        state,
+        action.payload.drawingId,
+      );
+      const chart = target.charts.find((c) => c.id === action.payload.chartId);
       if (!chart) {
         return;
       }
@@ -100,7 +112,7 @@ export const drawingsSlice = createSlice({
     },
     resetChart(state, action: ActionOnSingleChart) {
       const { chartId, drawingId } = action.payload;
-      const drawing = getDrawingFromCompoundId(state, drawingId);
+      const [drawing] = getDrawingFromCompoundId(state, drawingId);
       if (!drawing) {
         return;
       }
@@ -116,24 +128,39 @@ export const drawingsSlice = createSlice({
       >,
     ) {
       const { chartId, drawingId, player, reorder } = action.payload;
-      const drawing = getDrawingFromCompoundId(state, drawingId);
+      const [drawing, target] = getDrawingFromCompoundId(state, drawingId);
       if (!drawing) {
         return;
       }
       const playerAction: PlayerActionOnChart = { chartId, player };
       if (action.payload.type === "ban") {
         if (reorder) {
-          moveChartInArray(drawing, chartId, "end");
+          target.charts = moveChartInArray(
+            drawing,
+            target.charts,
+            chartId,
+            "end",
+          );
         }
         drawing.bans[chartId] = playerAction;
       } else if (action.payload.type === "protect") {
         if (reorder) {
-          moveChartInArray(drawing, chartId, "start");
+          target.charts = moveChartInArray(
+            drawing,
+            target.charts,
+            chartId,
+            "start",
+          );
         }
         drawing.protects[chartId] = playerAction;
       } else if (action.payload.type === "pocket") {
         if (reorder) {
-          moveChartInArray(drawing, chartId, "start");
+          target.charts = moveChartInArray(
+            drawing,
+            target.charts,
+            chartId,
+            "start",
+          );
         }
         drawing.pocketPicks[chartId] = {
           chartId,
@@ -143,7 +170,10 @@ export const drawingsSlice = createSlice({
       }
     },
     setWinner(state, action: ActionOnSingleChart<{ player: number | null }>) {
-      const drawing = getDrawingFromCompoundId(state, action.payload.drawingId);
+      const [drawing] = getDrawingFromCompoundId(
+        state,
+        action.payload.drawingId,
+      );
       const winners = drawing.winners;
       if (action.payload.player === null) {
         delete winners[action.payload.chartId];
@@ -214,28 +244,29 @@ export function splitCompoundId(id: string) {
   return id.split(":") as [mainId: string, subId?: string];
 }
 
-function getDrawingFromCompoundId(
-  state: WritableDraft<StateOfSlice<typeof drawingsSlice>>,
+export function getDrawingFromCompoundId(
+  state: StateOfSlice<typeof drawingsSlice>,
   id: string,
-) {
+): [parent: Drawing, target: Drawing | SubDrawing] {
   const [mainId, subId] = splitCompoundId(id);
   const drawing = state.entities[mainId];
   if (subId && drawing.subDrawings) {
-    return drawing.subDrawings[subId];
+    return [drawing, drawing.subDrawings[subId]];
   }
-  return drawing;
+  return [drawing, drawing];
 }
 
 function moveChartInArray(
-  drawing: Drawing | SubDrawing,
+  drawing: Drawing,
+  charts: Drawing["charts"],
   chartId: string,
   pos: "start" | "end",
 ) {
-  const targetChart = drawing.charts.find((c) => c.id === chartId);
+  const targetChart = charts.find((c) => c.id === chartId);
   if (!targetChart) {
-    return;
+    return charts;
   }
-  const chartsWithoutTarget = drawing.charts.filter((c) => c.id !== chartId);
+  const chartsWithoutTarget = charts.filter((c) => c.id !== chartId);
   if (pos === "start") {
     const insertIdx =
       Object.keys(drawing.protects).length +
@@ -244,5 +275,5 @@ function moveChartInArray(
   } else {
     chartsWithoutTarget.push(targetChart);
   }
-  drawing.charts = chartsWithoutTarget;
+  return chartsWithoutTarget;
 }

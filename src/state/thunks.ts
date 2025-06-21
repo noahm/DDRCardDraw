@@ -5,8 +5,8 @@ import {
   loadStockGamedataByName,
 } from "./game-data.atoms";
 import {
-  drawingSelectors,
   drawingsSlice,
+  getDrawingFromCompoundId,
   splitCompoundId,
 } from "./drawings.slice";
 import { EligibleChart } from "../models/Drawing";
@@ -100,10 +100,6 @@ export function createSubdraw(
           parentId: existingDrawId,
           configId: drawing.configId,
           charts: drawing.charts,
-          bans: drawing.bans,
-          protects: drawing.protects,
-          pocketPicks: drawing.pocketPicks,
-          winners: drawing.winners,
         },
       }),
     );
@@ -242,8 +238,8 @@ export function createPickBanPocket(
 ): AppThunk {
   return (dispatch, getState) => {
     const state = getState();
-    const drawing = drawingSelectors.selectById(state, drawingId);
-    const reorder = !!configSlice.selectors.selectById(state, drawing.configId)
+    const [, target] = getDrawingFromCompoundId(state.drawings, drawingId);
+    const reorder = !!configSlice.selectors.selectById(state, target.configId)
       ?.orderByAction;
     let action;
     if (type === "pocket") {

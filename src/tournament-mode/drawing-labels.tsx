@@ -10,7 +10,7 @@ import { drawingsSlice } from "../state/drawings.slice";
 import { getAllPlayers } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
 
-export function SetLabels() {
+export function MatchLabels() {
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
   const meta = useDrawing((d) => d.meta);
