@@ -19,7 +19,7 @@ export default function GauntletScoreEditor({
 }: {
   meta: StartggGauntletMeta;
 }) {
-  const drawingId = useDrawing((d) => d.id);
+  const drawingId = useDrawing((d) => d.compoundId);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);
   const charts = useDrawing((d) => d.charts).filter(

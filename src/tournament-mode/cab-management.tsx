@@ -29,6 +29,7 @@ import { copyPlainTextToClipboard } from "../utils/share";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { playerNameByIndex } from "../models/Drawing";
+import { drawingsSlice } from "../state/drawings.slice";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
@@ -211,7 +212,10 @@ function CurrentMatch(props: { cab: CabInfo }) {
   );
   const drawing = useAppState((s) => {
     if (!props.cab.activeMatch) return null;
-    return s.drawings.entities[props.cab.activeMatch] || null;
+    return drawingsSlice.selectors.selectMergedByCompoundId(
+      s,
+      props.cab.activeMatch,
+    );
   });
   const setMainTab = useSetAtom(mainTabAtom);
 

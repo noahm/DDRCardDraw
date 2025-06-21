@@ -50,7 +50,7 @@ export { Props as SongCardProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
   const dispatch = useAppDispatch();
-  const drawingId = useDrawing((s) => s.id);
+  const drawingId = useDrawing((s) => s.compoundId);
 
   const handleBanPickPocket = useCallback(
     (

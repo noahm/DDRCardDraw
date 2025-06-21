@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { drawingSelectors } from "../state/drawings.slice";
+import { drawingsSlice } from "../state/drawings.slice";
 import { useAppState } from "../state/store";
 import { getAllPlayers, playerNameByIndex } from "../models/Drawing";
 
@@ -8,9 +8,9 @@ export function CabTitle() {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const drawing = drawingSelectors.selectById(s, drawingId);
-    if (!drawing) return null;
-    return drawing.meta.title;
+    const [parent] = drawingsSlice.selectors.byCompoundId(s, drawingId);
+    if (!parent) return null;
+    return parent.meta.title;
   });
   return <h1>{text}</h1>;
 }
@@ -20,9 +20,9 @@ export function CabPlayers() {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const drawing = drawingSelectors.selectById(s, drawingId);
-    if (!drawing) return null;
-    return getAllPlayers(drawing).join(", ");
+    const [parent] = drawingsSlice.selectors.byCompoundId(s, drawingId);
+    if (!parent) return null;
+    return getAllPlayers(parent).join(", ");
   });
   return <h1>{text}</h1>;
 }
@@ -36,22 +36,19 @@ export function CabPlayer(props: {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const drawing = drawingSelectors.selectById(s, drawingId);
-    if (!drawing) return null;
-    const playerIndex = drawing.playerDisplayOrder[props.p - 1];
-    const name = playerNameByIndex(drawing.meta, playerIndex, "");
+    const [parent] = drawingsSlice.selectors.byCompoundId(s, drawingId);
+    if (!parent) return null;
+    const playerIndex = parent.playerDisplayOrder[props.p - 1];
+    const name = playerNameByIndex(parent.meta, playerIndex, "");
     const hideWins =
-      drawing.meta.type === "startgg" && drawing.meta.subtype === "gauntlet";
+      parent.meta.type === "startgg" && parent.meta.subtype === "gauntlet";
     if (hideWins) {
       return name;
     }
-    const score = Object.values(drawing.winners).reduce<number>(
-      (prev, curr) => {
-        if (curr === playerIndex) return prev + 1;
-        return prev;
-      },
-      0,
-    );
+    const score = Object.values(parent.winners).reduce<number>((prev, curr) => {
+      if (curr === playerIndex) return prev + 1;
+      return prev;
+    }, 0);
     if (displayType === "Name") {
       return name;
     }

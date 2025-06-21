@@ -1,9 +1,10 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
+import { CompoundSetId } from "../models/Drawing";
 
 export interface CabInfo {
   /** drawing id if active */
-  activeMatch: string | null;
+  activeMatch: CompoundSetId | null;
   name: string;
   id: string;
 }
@@ -42,7 +43,7 @@ export const eventSlice = createSlice({
     },
     assignMatchToCab(
       state,
-      action: PayloadAction<{ cabId: string; matchId: string | null }>,
+      action: PayloadAction<{ cabId: string; matchId: CompoundSetId | null }>,
     ) {
       const cab = state.cabs[action.payload.cabId];
       if (!cab) return;

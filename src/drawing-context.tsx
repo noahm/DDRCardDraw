@@ -1,57 +1,23 @@
 import { createContext, ReactNode, useContext, useDebugValue } from "react";
-import { drawingSelectors } from "./state/drawings.slice";
-import { Drawing } from "./models/Drawing";
-import { createAppSelector, useAppState } from "./state/store";
+import { CompoundSetId, MergedDrawing } from "./models/Drawing";
+import { useAppState } from "./state/store";
 import { EqualityFn } from "react-redux";
 import { ConfigContextProvider } from "./state/hooks";
+import { drawingsSlice } from "./state/drawings.slice";
 
-const stubDrawing: Drawing = {
-  id: "",
-  configId: "",
-  meta: {
-    type: "simple",
-    players: [],
-    title: "",
-  },
-  playerDisplayOrder: [],
-  bans: {},
-  charts: [],
-  pocketPicks: {},
-  protects: {},
-  winners: {},
-};
-
-const context = createContext<string>("");
+const context = createContext<CompoundSetId>(["", ""]);
 const RawDrawingProvider = context.Provider;
 
-const subDrawContext = createContext<string>("");
-const SubDrawingProvider = subDrawContext.Provider;
-
-const selectDrawingByIdAndSubId = createAppSelector(
-  [
-    (s, drawingId: string) => drawingSelectors.selectById(s, drawingId),
-    (s, drawingId: string, subDraw: string | undefined) =>
-      subDraw &&
-      drawingSelectors.selectById(s, drawingId)?.subDrawings?.[subDraw],
-  ],
-  (drawing, subDrawing) => {
-    if (!subDrawing) return drawing || stubDrawing;
-    return {
-      ...drawing,
-      ...subDrawing,
-      id: `${drawing.id}:${subDrawing.id}`,
-    };
-  },
-);
-
 export function useDrawing<T>(
-  selector: (d: Drawing) => T,
+  selector: (d: MergedDrawing) => T,
   equalityFn?: EqualityFn<T>,
 ) {
   const drawingId = useContext(context);
-  const subDrawId = useContext(subDrawContext);
   const ret = useAppState((state) => {
-    const drawing = selectDrawingByIdAndSubId(state, drawingId, subDrawId);
+    const drawing = drawingsSlice.selectors.selectMergedByCompoundId(
+      state,
+      drawingId,
+    );
     return selector(drawing);
   }, equalityFn);
   useDebugValue(ret);
@@ -60,22 +26,16 @@ export function useDrawing<T>(
 
 export function DrawingProvider({
   drawingId,
-  subDrawId,
   children,
 }: {
-  drawingId: string;
-  subDrawId?: string;
+  drawingId: CompoundSetId;
   children: ReactNode;
 }) {
-  const ret = (
+  return (
     <RawDrawingProvider value={drawingId}>
       <ContextualConfigProvider>{children}</ContextualConfigProvider>
     </RawDrawingProvider>
   );
-  if (subDrawId) {
-    return <SubDrawingProvider value={subDrawId}>{ret}</SubDrawingProvider>;
-  }
-  return ret;
 }
 
 function ContextualConfigProvider({ children }: { children: ReactNode }) {

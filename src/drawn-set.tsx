@@ -61,7 +61,7 @@ function TournamentModeSpacer() {
 }
 
 const DrawnSet = memo(function DrawnSet() {
-  const drawingId = useDrawing((d) => d.id);
+  const [, drawingId] = useDrawing((d) => d.compoundId);
 
   return (
     <ErrorBoundary

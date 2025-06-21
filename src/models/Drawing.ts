@@ -104,6 +104,9 @@ export function playerNameByIndex(
   }
 }
 
+/** used to reference a sub draw, or the charts in the parent draw by omitting the target */
+export type CompoundSetId = [parentId: string, targetId: string];
+
 export interface Drawing {
   id: string;
   configId: string;
@@ -112,15 +115,20 @@ export interface Drawing {
   playerDisplayOrder: number[];
   /** map of song ID to player index */
   winners: Record<string, number | null>;
-  charts: Array<DrawnChart | PlayerPickPlaceholder>;
+  /** @deprecated migrating to subDraws */
+  charts?: Array<DrawnChart | PlayerPickPlaceholder>;
   bans: Record<string, PlayerActionOnChart | null>;
   protects: Record<string, PlayerActionOnChart | null>;
   pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
-  subDrawings?: Record<string, SubDrawing>;
+  subDrawings: Record<string, SubDrawing>;
 }
 
-export interface SubDrawing extends Pick<Drawing, "configId" | "charts"> {
+export interface SubDrawing {
   id: string;
-  parentId: string;
+  compoundId: CompoundSetId;
+  configId: string;
+  charts: Array<DrawnChart | PlayerPickPlaceholder>;
 }
+
+export type MergedDrawing = Drawing & SubDrawing;

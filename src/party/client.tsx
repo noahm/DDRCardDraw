@@ -6,6 +6,7 @@ import { startAppListening } from "../state/listener-middleware";
 import React, { useEffect, useState } from "react";
 import { Card, NonIdealState, Spinner } from "@blueprintjs/core";
 import { DelayRender } from "../utils/delay-render";
+import { migrateToSubdraws } from "../state/drawings.slice";
 
 export function PartySocketManager(props: {
   roomName?: string;
@@ -25,6 +26,7 @@ export function PartySocketManager(props: {
         const data: Broadcast = JSON.parse(evt.data);
         switch (data.type) {
           case "roomstate":
+            migrateToSubdraws(data.state.drawings);
             dispatch(receivePartyState(data.state));
             setReady(true);
             break;

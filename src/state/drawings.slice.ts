@@ -2,12 +2,15 @@ import {
   PayloadAction,
   Slice,
   createEntityAdapter,
+  createSelector,
   createSlice,
 } from "@reduxjs/toolkit";
 import {
+  CompoundSetId,
   Drawing,
   DrawnChart,
   EligibleChart,
+  MergedDrawing,
   PlayerActionOnChart,
   SubDrawing,
 } from "../models/Drawing";
@@ -15,15 +18,15 @@ import {
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
 
 /** payload is the drawing id */
-type ActionOnSingleDrawing = PayloadAction<string>;
+type ActionOnSingleDrawing = PayloadAction<CompoundSetId>;
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type ActionOnSingleChart<extra extends object = {}> = PayloadAction<
-  { drawingId: string; chartId: string } & extra
+  { drawingId: CompoundSetId; chartId: string } & extra
 >;
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type PlayerActionOnChartPayload<extra extends object = {}> = PayloadAction<
   {
-    drawingId: string;
+    drawingId: CompoundSetId;
     chartId: string;
     player: number;
     reorder: boolean;
@@ -36,8 +39,8 @@ export const drawingsSlice = createSlice({
   reducers: {
     addDrawing: drawingsAdapter.addOne,
     updateOne: drawingsAdapter.updateOne,
-    removeOne(state, action: PayloadAction<string>) {
-      const [mainId, subId] = splitCompoundId(action.payload);
+    removeOne(state, action: PayloadAction<CompoundSetId>) {
+      const [mainId, subId] = action.payload;
       if (!subId) {
         return drawingsAdapter.removeOne(state, mainId);
       }
@@ -57,7 +60,7 @@ export const drawingsSlice = createSlice({
     addOneChart(
       state,
       action: PayloadAction<{
-        drawingId: string;
+        drawingId: CompoundSetId;
         chart: DrawnChart;
       }>,
     ) {
@@ -70,7 +73,7 @@ export const drawingsSlice = createSlice({
     updateOneChart(
       state,
       action: PayloadAction<{
-        drawingId: string;
+        drawingId: CompoundSetId;
         chartId: string;
         changes: Partial<DrawnChart>;
       }>,
@@ -86,7 +89,7 @@ export const drawingsSlice = createSlice({
       Object.assign(chart, action.payload.changes);
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
-      const [mainId] = splitCompoundId(action.payload);
+      const [mainId] = action.payload;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
@@ -94,7 +97,7 @@ export const drawingsSlice = createSlice({
       drawing.playerDisplayOrder = drawing.playerDisplayOrder.toReversed();
     },
     incrementPriorityPlayer(state, action: ActionOnSingleDrawing) {
-      const [mainId] = splitCompoundId(action.payload);
+      const [mainId] = action.payload;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
@@ -184,14 +187,14 @@ export const drawingsSlice = createSlice({
     addPlayerScore(
       state,
       action: PayloadAction<{
-        drawingId: string;
+        drawingId: CompoundSetId;
         chartId: string;
         playerId: string;
         score: number;
       }>,
     ) {
       const { drawingId, playerId, chartId, score } = action.payload;
-      const [mainId] = splitCompoundId(drawingId);
+      const [mainId] = drawingId;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
@@ -212,20 +215,49 @@ export const drawingsSlice = createSlice({
     },
     addSubdraw(
       state,
-      action: PayloadAction<{ newSubdraw: SubDrawing; existingDrawId: string }>,
+      action: PayloadAction<{
+        newSubdraw: SubDrawing;
+        existingDrawId: string;
+      }>,
     ) {
       const { existingDrawId, newSubdraw } = action.payload;
-      const [mainId] = splitCompoundId(existingDrawId);
-      const existingDraw = state.entities[mainId];
+      const existingDraw = state.entities[existingDrawId];
       if (!existingDraw.subDrawings) {
         existingDraw.subDrawings = {};
       }
       existingDraw.subDrawings[newSubdraw.id] = newSubdraw;
     },
+    updateCharts(
+      state,
+      action: PayloadAction<{
+        drawId: CompoundSetId;
+        newCharts: SubDrawing["charts"];
+      }>,
+    ) {
+      const { newCharts, drawId } = action.payload;
+      const [parent, target] = getDrawingFromCompoundId(state, drawId);
+      // cleanup charts being removed
+      for (const chart of target.charts) {
+        if (!newCharts.some((c) => c.id === chart.id)) {
+          // `chart` is not in the new set, so we should remove
+          delete parent.winners[chart.id];
+          delete parent.bans[chart.id];
+          delete parent.pocketPicks[chart.id];
+          delete parent.protects[chart.id];
+        }
+      }
+      target.charts = newCharts;
+    },
   },
   selectors: {
     haveDrawings(state) {
       return !!state.ids.length;
+    },
+    byCompoundId(state, compoundId: CompoundSetId) {
+      return getDrawingFromCompoundId(state, compoundId);
+    },
+    selectMergedByCompoundId(state, compoundId: CompoundSetId) {
+      return selectMergedByCompoundId(state, compoundId);
     },
   },
 });
@@ -236,29 +268,57 @@ export const drawingSelectors = drawingsAdapter.getSelectors(
 
 type StateOfSlice<S> = S extends Slice<infer State> ? State : never;
 
-/**
- * for convenience, sometimes a sub drawing is passed around with a synthetic id of:
- * `parentId:ownId` and this is used to break the parts down again.
- */
-export function splitCompoundId(id: string) {
-  return id.split(":") as [mainId: string, subId?: string];
+/** one-time migration for old data. mutates state */
+export function migrateToSubdraws(state: StateOfSlice<typeof drawingsSlice>) {
+  for (const id of state.ids) {
+    const parent = state.entities[id];
+    if (parent.subDrawings) {
+      for (const subDraw of Object.values(parent.subDrawings)) {
+        if (!subDraw.compoundId) {
+          subDraw.compoundId = [parent.id, subDraw.id];
+        }
+      }
+    } else {
+      parent.subDrawings = {};
+    }
+    if (parent.charts) {
+      parent.subDrawings[parent.id] = {
+        id: parent.id,
+        compoundId: [parent.id, parent.id],
+        configId: parent.configId,
+        charts: parent.charts,
+      };
+    }
+  }
 }
 
 export function getDrawingFromCompoundId(
   state: StateOfSlice<typeof drawingsSlice>,
-  id: string,
-): [parent: Drawing, target: Drawing | SubDrawing] {
-  const [mainId, subId] = splitCompoundId(id);
+  id: CompoundSetId,
+): [parent: Drawing, target: SubDrawing] {
+  const [mainId, subId] = id;
   const drawing = state.entities[mainId];
-  if (subId && drawing.subDrawings) {
-    return [drawing, drawing.subDrawings[subId]];
-  }
-  return [drawing, drawing];
+  return [drawing, drawing.subDrawings[subId]];
 }
+
+const selectMergedByCompoundId = createSelector(
+  [
+    (s: StateOfSlice<typeof drawingsSlice>, drawingId: CompoundSetId) =>
+      s.entities[drawingId[0]],
+    (s: StateOfSlice<typeof drawingsSlice>, drawingId: CompoundSetId) =>
+      s.entities[drawingId[0]]?.subDrawings?.[drawingId[1]],
+  ],
+  (drawing, subDrawing): MergedDrawing => {
+    return {
+      ...drawing,
+      ...subDrawing,
+    };
+  },
+);
 
 function moveChartInArray(
   drawing: Drawing,
-  charts: Drawing["charts"],
+  charts: SubDrawing["charts"],
   chartId: string,
   pos: "start" | "end",
 ) {

@@ -53,8 +53,8 @@ function* oneMillionDraws(gameData: GameData, configId: string) {
  **/
 export function* degrsTester(gameData: GameData, configId: string) {
   let totalDegrs = 0;
-  for (const [set, idx] of oneMillionDraws(gameData, configId)) {
-    if (set.charts.some(isDegrs)) {
+  for (const [charts, idx] of oneMillionDraws(gameData, configId)) {
+    if (charts.some(isDegrs)) {
       totalDegrs++;
     }
     if (idx % REPORT_FREQUENCY === 0) {

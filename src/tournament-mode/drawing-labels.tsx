@@ -64,7 +64,7 @@ export function MatchLabels() {
 
 function Versus() {
   const dispatch = useAppDispatch();
-  const drawingId = useDrawing((s) => s.id);
+  const drawingId = useDrawing((s) => s.compoundId);
   const ipp = useCallback(
     () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(drawingId)),
     [dispatch, drawingId],

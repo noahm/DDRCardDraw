@@ -226,7 +226,7 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
 }
 
 export type DrawingMeta = Pick<Drawing, "meta">;
-export type StartingPoint = Drawing | DrawingMeta;
+export type StartingPoint = DrawingMeta & { charts?: Drawing["charts"] };
 
 const artistDrawBlocklist = new Set();
 
@@ -240,7 +240,7 @@ export function draw(
   gameData: GameData,
   configData: ConfigState,
   startPoint: StartingPoint,
-): Drawing {
+) {
   const {
     chartCount: numChartsToRandom,
     useWeights,
@@ -329,7 +329,7 @@ export function draw(
 
   let preSeededCharts = 0;
   const preSeededDifficulties: number[] = [];
-  if ("charts" in startPoint) {
+  if (startPoint.charts) {
     // account for the chart levels already in the draw starting point
     preSeededCharts = startPoint.charts.length;
     for (const chart of startPoint.charts) {
@@ -459,20 +459,5 @@ export function draw(
     );
   }
 
-  const players =
-    startPoint.meta.type === "simple"
-      ? startPoint.meta.players
-      : startPoint.meta.entrants;
-
-  return {
-    id: `draw-${nanoid(10)}`,
-    configId: configData.id,
-    bans: {},
-    protects: {},
-    pocketPicks: {},
-    winners: {},
-    playerDisplayOrder: players.map((_, idx) => idx),
-    ...startPoint,
-    charts,
-  };
+  return charts;
 }

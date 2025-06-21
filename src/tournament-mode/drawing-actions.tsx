@@ -27,13 +27,20 @@ import { useState, lazy } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";
-import { playerCount, StartggGauntletMeta } from "../models/Drawing";
+import {
+  CompoundSetId,
+  playerCount,
+  StartggGauntletMeta,
+} from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
   ReportSetMutationVariables as MutationVariables,
   useReportSetMutation,
 } from "../startgg-gql";
-import { drawingsSlice, splitCompoundId } from "../state/drawings.slice";
+import {
+  drawingsSlice,
+  getDrawingFromCompoundId,
+} from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
 import { AppThunk, useAppDispatch, useAppState } from "../state/store";
 import {
@@ -54,22 +61,22 @@ const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
 function getMatchResult(
-  drawingId: string,
+  drawingId: CompoundSetId,
 ): AppThunk<MutationVariables | undefined> {
   return (_, getState): MutationVariables | undefined => {
     const s = getState();
     const gameData: Array<GDI> = [];
-    const drawing = s.drawings.entities[drawingId];
-    if (drawing.meta.type !== "startgg") {
+    const [parent] = getDrawingFromCompoundId(s.drawings, drawingId);
+    if (parent.meta.type !== "startgg") {
       return;
     }
     const winsPerPlayer = new CountingSet<string>();
-    for (const [songId, pIdx] of Object.entries(drawing.winners)) {
+    for (const [songId, pIdx] of Object.entries(parent.winners)) {
       if (pIdx === null) {
         continue;
       }
       try {
-        const entrant = drawing.meta.entrants[pIdx];
+        const entrant = parent.meta.entrants[pIdx];
         gameData.push({
           gameNum: gameData.length + 1,
           winnerId: entrant.id,
@@ -91,7 +98,7 @@ function getMatchResult(
       winnerId = orderedByWins[0][0];
     }
     const ret: MutationVariables = {
-      setId: drawing.meta.id,
+      setId: parent.meta.id,
       winnerId,
     };
     if (gameData.length) {
@@ -105,7 +112,7 @@ const DEFAULT_FILENAME = "card-draw.png";
 
 function SaveToStartggButton() {
   const dispatch = useAppDispatch();
-  const drawingId = useDrawing((s) => s.id);
+  const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const [mutationData, reportSet] = useReportSetMutation();
   if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
@@ -145,7 +152,7 @@ function EditDrawMenu() {
   const dispatch = useAppDispatch();
   const { t } = useIntl();
   const [metaEditorOpen, setMetaEditorOpen] = useState(false);
-  const drawingId = useDrawing((s) => s.id);
+  const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const isTwoPlayers = playerCount(drawingMeta) === 2;
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
@@ -158,7 +165,7 @@ function EditDrawMenu() {
           initialMeta={drawingMeta}
           submitText="Save"
           onSubmit={(meta) => {
-            const [mainId] = splitCompoundId(drawingId);
+            const [mainId] = drawingId;
             dispatch(
               drawingsSlice.actions.updateOne({
                 id: mainId,
@@ -260,7 +267,7 @@ function ConfigAsMenuItem(props: { configId: string }) {
   const config = useAppState((s) => s.config.entities[props.configId]);
   const dispatch = useAppDispatch();
   const currentConfigId = useConfigId();
-  const drawingId = useDrawing((d) => d.id);
+  const [drawingId] = useDrawing((d) => d.compoundId);
   return (
     <MenuItem
       intent={currentConfigId === props.configId ? "primary" : undefined}
@@ -274,7 +281,7 @@ export function DrawingActions() {
   const dispatch = useAppDispatch();
   const { t } = useIntl();
   const cabs = useAppState(eventSlice.selectors.allCabs);
-  const drawingId = useDrawing((s) => s.id);
+  const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const isGauntlet =
     drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";

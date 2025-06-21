@@ -4,12 +4,8 @@ import {
   getLastGameSelected,
   loadStockGamedataByName,
 } from "./game-data.atoms";
-import {
-  drawingsSlice,
-  getDrawingFromCompoundId,
-  splitCompoundId,
-} from "./drawings.slice";
-import { EligibleChart } from "../models/Drawing";
+import { drawingsSlice, getDrawingFromCompoundId } from "./drawings.slice";
+import { CompoundSetId, EligibleChart } from "../models/Drawing";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
 declare const umami: {
@@ -50,13 +46,40 @@ export function createDraw(
       return "nok"; // no draw was possible
     }
 
-    const drawing = draw(gameData, config, startggTargetSet);
-    trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
-    if (!drawing.charts.length) {
+    const charts = draw(gameData, config, startggTargetSet);
+    trackDraw(charts.length, gameData.i18n.en.name as string);
+    if (!charts.length) {
       return "nok"; // could not draw the requested number of charts
     }
 
-    dispatch(drawingsSlice.actions.addDrawing(drawing));
+    const players =
+      startggTargetSet.meta.type === "simple"
+        ? startggTargetSet.meta.players
+        : startggTargetSet.meta.entrants;
+
+    const matchId = `draw-${nanoid(10)}`;
+    const setId = `set-${nanoid(10)}`;
+
+    dispatch(
+      drawingsSlice.actions.addDrawing({
+        id: matchId,
+        winners: {},
+        bans: {},
+        protects: {},
+        pocketPicks: {},
+        meta: startggTargetSet.meta,
+        playerDisplayOrder: players.map((_, idx) => idx),
+        configId,
+        subDrawings: {
+          [setId]: {
+            id: setId,
+            compoundId: [matchId, setId],
+            configId,
+            charts,
+          },
+        },
+      }),
+    );
     return "ok";
   };
 }
@@ -67,7 +90,7 @@ export function createDraw(
  * @returns false if draw was unsuccessful
  */
 export function createSubdraw(
-  existingDrawId: string,
+  parentDrawId: string,
   configId: string,
 ): AppThunk<Promise<"nok" | "ok">> {
   return async (dispatch, getState) => {
@@ -83,23 +106,23 @@ export function createSubdraw(
       trackDraw(null);
       return "nok"; // no draw was possible
     }
-    const [mainId] = splitCompoundId(existingDrawId);
-    const existingDraw = state.drawings.entities[mainId];
+    const existingDraw = state.drawings.entities[parentDrawId];
 
-    const drawing = draw(gameData, config, { meta: existingDraw.meta });
-    trackDraw(drawing.charts.length, gameData.i18n.en.name as string);
-    if (!drawing.charts.length) {
+    const charts = draw(gameData, config, { meta: existingDraw.meta });
+    trackDraw(charts.length, gameData.i18n.en.name as string);
+    if (!charts.length) {
       return "nok"; // could not draw the requested number of charts
     }
 
+    const setId = `set-${nanoid(10)}`;
     dispatch(
       drawingsSlice.actions.addSubdraw({
-        existingDrawId,
+        existingDrawId: parentDrawId,
         newSubdraw: {
-          id: drawing.id,
-          parentId: existingDrawId,
-          configId: drawing.configId,
-          charts: drawing.charts,
+          id: setId,
+          compoundId: [parentDrawId, setId],
+          configId,
+          charts,
         },
       }),
     );
@@ -110,42 +133,38 @@ export function createSubdraw(
 /**
  * thunk creator for redrawing all charts in a target drawing
  */
-export function createRedrawAll(drawingId: string): AppThunk {
+export function createRedrawAll(drawingId: CompoundSetId): AppThunk {
   return async (dispatch, getState) => {
     const state = getState();
-    const drawing = state.drawings.entities[drawingId];
-    const originalConfig = state.config.entities[drawing.configId];
+    const [parent, target] = getDrawingFromCompoundId(
+      state.drawings,
+      drawingId,
+    );
+    const originalConfig = state.config.entities[target.configId];
     const drawConfig = {
       ...originalConfig,
-      chartCount: drawing.charts.length,
+      chartCount: target.charts.length,
     };
     const gameData = await loadStockGamedataByName(originalConfig.gameKey);
 
     // preserve pocket picks and protects in the redraw by keeping them in the starting point info
     // and filtering out all other charts
     const protectedChartIds = new Set(
-      Object.keys(drawing.pocketPicks).concat(Object.keys(drawing.protects)),
+      Object.keys(parent.pocketPicks).concat(Object.keys(parent.protects)),
     );
-    const chartsToKeep = drawing.charts.filter(
+    const chartsToKeep = target.charts.filter(
       (chart) =>
         protectedChartIds.has(chart.id) || chart.type === "PLACEHOLDER",
     );
-    const startingPoint = {
-      ...drawing,
-      charts: chartsToKeep,
-    };
 
-    const drawResult = draw(gameData!, drawConfig, startingPoint);
+    const charts = draw(gameData!, drawConfig, {
+      meta: parent.meta,
+      charts: chartsToKeep,
+    });
     dispatch(
-      drawingsSlice.actions.updateOne({
-        id: drawingId,
-        changes: {
-          charts: chartsToKeep.concat(drawResult.charts),
-          pocketPicks: drawing.pocketPicks,
-          bans: {},
-          protects: drawing.protects,
-          winners: {},
-        },
+      drawingsSlice.actions.updateCharts({
+        drawId: drawingId,
+        newCharts: chartsToKeep.concat(charts),
       }),
     );
   };
@@ -155,26 +174,28 @@ export function createRedrawAll(drawingId: string): AppThunk {
  * thunk creator for redrawing a single chart within a drawing
  */
 export function createRedrawChart(
-  drawingId: string,
+  drawingId: CompoundSetId,
   chartId: string,
 ): AppThunk {
   return async (dispatch, getState) => {
     const state = getState();
-    const drawing = state.drawings.entities[drawingId];
-    const originalConfig = state.config.entities[drawing.configId];
+    const [parent, target] = getDrawingFromCompoundId(
+      state.drawings,
+      drawingId,
+    );
+    const originalConfig = state.config.entities[target.configId];
     const gameData = await loadStockGamedataByName(originalConfig.gameKey);
     if (!gameData) return;
-    const startingPoint = {
-      ...drawing,
-      charts: drawing.charts.filter((chart) => chart.id !== chartId),
-    };
 
-    const drawResult = draw(gameData, originalConfig, startingPoint);
-    const chart = drawResult.charts.pop();
+    const charts = draw(gameData, originalConfig, {
+      meta: parent.meta,
+      charts: target.charts.filter((chart) => chart.id !== chartId),
+    });
+    const chart = charts.pop();
     if (
       !chart ||
       chart.type !== "DRAWN" ||
-      drawing.charts.some((c) => c.id === chart.id)
+      target.charts.some((c) => c.id === chart.id)
     ) {
       return; // result didn't include a new chart
     }
@@ -191,11 +212,14 @@ export function createRedrawChart(
 /**
  * thunk creator for redrawing a single chart within a drawing
  */
-export function createPlusOneChart(drawingId: string): AppThunk {
+export function createPlusOneChart(drawingId: CompoundSetId): AppThunk {
   return async (dispatch, getState) => {
     const state = getState();
-    const drawing = state.drawings.entities[drawingId];
-    const originalConfig = state.config.entities[drawing.configId];
+    const [parent, target] = getDrawingFromCompoundId(
+      state.drawings,
+      drawingId,
+    );
+    const originalConfig = state.config.entities[target.configId];
     const gameData = await loadStockGamedataByName(originalConfig.gameKey);
     if (!gameData) return;
 
@@ -204,18 +228,21 @@ export function createPlusOneChart(drawingId: string): AppThunk {
       // force drawing one more chart than already exists
       chartCount:
         1 +
-        drawing.charts.reduce<number>(
+        target.charts.reduce<number>(
           (acc, curr) => (curr.type === "DRAWN" ? acc + 1 : acc),
           0,
         ),
     };
 
-    const drawResult = draw(gameData, customConfig, drawing);
-    const chart = drawResult.charts.pop();
+    const charts = draw(gameData, customConfig, {
+      meta: parent.meta,
+      charts: target.charts,
+    });
+    const chart = charts.pop();
     if (
       !chart ||
       chart.type !== "DRAWN" ||
-      drawing.charts.some((c) => c.id === chart.id)
+      target.charts.some((c) => c.id === chart.id)
     ) {
       return; // result didn't include a new chart
     }
@@ -230,7 +257,7 @@ export function createPlusOneChart(drawingId: string): AppThunk {
 
 /** thunk creator for pick/ban/pocket pick that can include orderByAction setting */
 export function createPickBanPocket(
-  drawingId: string,
+  drawingId: CompoundSetId,
   chartId: string,
   type: "ban" | "protect" | "pocket",
   player: number,
