@@ -1,0 +1,3 @@
+.drawnSetGroup:not(:first-child) {
+  border-top: 2px solid #777;
+}

@@ -43,8 +43,6 @@ interface StartggMeta {
   type: "startgg";
   title: string;
   entrants: Array<{ id: string; name: string }>;
-  /** first index is entrant ID, second index is the drawn chart ID */
-  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
 export interface StartggVersusMeta extends StartggMeta {
@@ -57,6 +55,8 @@ export interface StartggGauntletMeta extends StartggMeta {
   subtype: "gauntlet";
   /** id of the phase */
   id: string;
+  /** first index is entrant ID, second index is the drawn chart ID */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
 export interface SimpleMeta {
@@ -117,4 +117,14 @@ export interface Drawing {
   protects: Record<string, PlayerActionOnChart | null>;
   pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
+  subDrawings?: Record<string, SubDrawing>;
+}
+
+export interface SubDrawing
+  extends Pick<
+    Drawing,
+    "configId" | "charts" | "winners" | "bans" | "protects" | "pocketPicks"
+  > {
+  id: string;
+  parentId: string;
 }

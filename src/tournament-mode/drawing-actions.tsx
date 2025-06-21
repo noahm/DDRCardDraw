@@ -10,10 +10,13 @@ import {
 import {
   Camera,
   CubeAdd,
+  Edit,
   Error,
   Exchange,
   FloppyDisk,
+  Label,
   NewLayer,
+  NewLayers,
   Refresh,
   Th,
   Trash,
@@ -30,15 +33,22 @@ import {
   ReportSetMutationVariables as MutationVariables,
   useReportSetMutation,
 } from "../startgg-gql";
-import { drawingsSlice } from "../state/drawings.slice";
+import { drawingsSlice, splitCompoundId } from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
 import { AppThunk, useAppDispatch, useAppState } from "../state/store";
-import { createPlusOneChart, createRedrawAll } from "../state/thunks";
+import {
+  createPlusOneChart,
+  createRedrawAll,
+  createSubdraw,
+} from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
 import { shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
 import { EventModeGated } from "../common-components/app-mode";
 import { useIntl } from "../hooks/useIntl";
+import { useConfigId } from "../state/hooks";
+import { CustomDrawForm } from "../controls/draw-dialog";
+import { times } from "../utils";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
@@ -116,7 +126,7 @@ function SaveToStartggButton() {
       content={tooltipContent}
     >
       <Button
-        minimal
+        variant="minimal"
         disabled={mutationData.fetching}
         icon={<FloppyDisk />}
         onClick={() => {
@@ -131,19 +141,132 @@ function SaveToStartggButton() {
   );
 }
 
-function AddCardButton() {
+function EditDrawMenu() {
   const dispatch = useAppDispatch();
+  const { t } = useIntl();
+  const [metaEditorOpen, setMetaEditorOpen] = useState(false);
   const drawingId = useDrawing((s) => s.id);
+  const drawingMeta = useDrawing((s) => s.meta);
+  const isTwoPlayers = playerCount(drawingMeta) === 2;
+  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+
+  let dialogBody: JSX.Element | null;
+  switch (drawingMeta.type) {
+    case "simple":
+      dialogBody = (
+        <CustomDrawForm
+          initialMeta={drawingMeta}
+          submitText="Save"
+          onSubmit={(meta) => {
+            const [mainId] = splitCompoundId(drawingId);
+            dispatch(
+              drawingsSlice.actions.updateOne({
+                id: mainId,
+                changes: {
+                  meta,
+                  playerDisplayOrder: times(meta.players.length, (n) => n - 1),
+                },
+              }),
+            );
+            setMetaEditorOpen(false);
+          }}
+        />
+      );
+      break;
+    case "startgg":
+      dialogBody = null;
+  }
   return (
-    <Tooltip content="Draw Another Chart">
-      <Button
-        minimal
-        icon={<NewLayer />}
-        onClick={() => {
-          dispatch(createPlusOneChart(drawingId));
-        }}
-      />
-    </Tooltip>
+    <>
+      <Dialog
+        isOpen={metaEditorOpen}
+        title="Edit Match"
+        onClose={() => setMetaEditorOpen(false)}
+      >
+        <DialogBody>{dialogBody}</DialogBody>
+      </Dialog>
+      <Tooltip content="Update Draw">
+        <Popover
+          content={
+            <Menu>
+              <MenuItem
+                icon={<Label />}
+                text="Edit Title & Players"
+                onClick={() => setMetaEditorOpen(true)}
+              />
+              <MenuItem
+                icon={<NewLayer />}
+                text="Draw Another Chart"
+                onClick={() => dispatch(createPlusOneChart(drawingId))}
+              />
+              <MenuItem icon={<NewLayers />} text="Draw Extra Set">
+                <ConfigsAsMenuItems />
+              </MenuItem>
+              {showLabels && isTwoPlayers && (
+                <MenuItem
+                  text="Swap Player Positions"
+                  icon={<Exchange />}
+                  onClick={() => {
+                    dispatch(
+                      drawingsSlice.actions.swapPlayerPositions(drawingId),
+                    );
+                  }}
+                />
+              )}
+              <MenuItem
+                text={t("drawing.redrawAll", undefined, "Redraw all charts")}
+                icon={<Refresh />}
+                onClick={() =>
+                  confirm(
+                    t(
+                      "drawing.redrawConfirm",
+                      undefined,
+                      "This will replace everything besides protects and picks!",
+                    ),
+                  ) && dispatch(createRedrawAll(drawingId))
+                }
+              />
+              <MenuItem
+                text="Delete this draw"
+                icon={<Trash />}
+                onClick={() =>
+                  confirm(
+                    "This draw will be permanently removed and cannot be recovered!",
+                  ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
+                }
+              />
+            </Menu>
+          }
+        >
+          <Button variant="minimal" icon={<Edit />} />
+        </Popover>
+      </Tooltip>
+    </>
+  );
+}
+
+function ConfigsAsMenuItems() {
+  const configs = useAppState((s) => s.config.ids);
+  return (
+    <>
+      {configs.map((cid) => (
+        <ConfigAsMenuItem key={cid} configId={cid} />
+      ))}
+    </>
+  );
+}
+
+function ConfigAsMenuItem(props: { configId: string }) {
+  const config = useAppState((s) => s.config.entities[props.configId]);
+  const dispatch = useAppDispatch();
+  const currentConfigId = useConfigId();
+  const drawingId = useDrawing((d) => d.id);
+  return (
+    <MenuItem
+      intent={currentConfigId === props.configId ? "primary" : undefined}
+      text={`${config.name} (${config.chartCount}@${config.lowerBound}-${config.upperBound})`}
+      onClick={() => dispatch(createSubdraw(drawingId, props.configId))}
+    />
   );
 }
 
@@ -153,10 +276,8 @@ export function DrawingActions() {
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.id);
   const drawingMeta = useDrawing((s) => s.meta);
-  const isTwoPlayers = playerCount(drawingMeta) === 2;
   const isGauntlet =
     drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const { showBoundary } = useErrorBoundary();
   const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
     StartggGauntletMeta | undefined
@@ -185,7 +306,7 @@ export function DrawingActions() {
     <div className={styles.networkButtons}>
       <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
         <Button
-          minimal
+          variant="minimal"
           icon={<Camera />}
           onClick={async () => {
             const drawingElement = document.querySelector(
@@ -202,51 +323,25 @@ export function DrawingActions() {
           }}
         />
       </Tooltip>
-      <Tooltip content={t("drawing.redrawAll", undefined, "Redraw all charts")}>
-        <Button
-          minimal
-          icon={<Refresh />}
-          onClick={() =>
-            confirm(
-              t(
-                "drawing.redrawConfirm",
-                undefined,
-                "This will replace everything besides protects and picks!",
-              ),
-            ) && dispatch(createRedrawAll(drawingId))
-          }
-        />
-      </Tooltip>
       {process.env.NODE_ENV === "production" ? null : (
         <Tooltip content="Cause Error">
-          <Button minimal icon={<Error />} onClick={showBoundary} />
+          <Button variant="minimal" icon={<Error />} onClick={showBoundary} />
         </Tooltip>
       )}
       <EventModeGated>
         {!!cabs.length && (
           <Tooltip content="Assign to Cab">
             <Popover content={addToCabMenu} placement="bottom">
-              <Button minimal icon={<CubeAdd />} />
+              <Button variant="minimal" icon={<CubeAdd />} />
             </Popover>
           </Tooltip>
         )}
       </EventModeGated>
-      {showLabels && isTwoPlayers && (
-        <Tooltip content="Swap Player Positions">
-          <Button
-            minimal
-            icon={<Exchange />}
-            onClick={() => {
-              dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
-            }}
-          />
-        </Tooltip>
-      )}
       {isGauntlet && (
         <>
           <Tooltip content="Edit Gauntlet Scores">
             <Button
-              minimal
+              variant="minimal"
               icon={<Th />}
               onClick={() => {
                 setGauntletEditorMeta(drawingMeta);
@@ -268,18 +363,7 @@ export function DrawingActions() {
       <EventModeGated>
         <SaveToStartggButton />
       </EventModeGated>
-      <AddCardButton />
-      <Tooltip content="Delete this draw">
-        <Button
-          minimal
-          icon={<Trash />}
-          onClick={() =>
-            confirm(
-              "This draw will be permanently removed and cannot be recovered!",
-            ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
-          }
-        />
-      </Tooltip>
+      <EditDrawMenu />
     </div>
   );
 }

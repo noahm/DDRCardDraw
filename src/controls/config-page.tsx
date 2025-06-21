@@ -11,6 +11,7 @@ import { useAppDispatch, useAppState } from "../state/store";
 import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { useLastConfigSelected } from "../state/config.atoms";
+import { changeGameKeyForConfig } from "../state/thunks";
 
 export function ConfigPage() {
   const initialState = useLastConfigSelected() || null;
@@ -87,7 +88,9 @@ function ConfigCoreFields({ configId }: { configId: string | null }) {
         <GameDataSelect
           fill
           value={gameKey || undefined}
-          onGameSelect={(newGame) => updateConfig({ gameKey: newGame })}
+          onGameSelect={(newGame) =>
+            dispatch(changeGameKeyForConfig(configId, newGame))
+          }
         />
       </FormGroup>
     </div>
