@@ -65,7 +65,7 @@ export function MultidrawControls() {
   ));
 
   return (
-    <>
+    <div style={{ marginBottom: "1em" }}>
       <Button
         onClick={toggleCollapse}
         endIcon={collapseOpen ? <CaretDown /> : <CaretRight />}
@@ -93,6 +93,6 @@ export function MultidrawControls() {
           </FormGroup>
         </Card>
       </Collapse>
-    </>
+    </div>
   );
 }
