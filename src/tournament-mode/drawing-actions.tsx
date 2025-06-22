@@ -10,6 +10,7 @@ import {
 import {
   Camera,
   DataLineage,
+  DocumentShare,
   Edit,
   Error,
   Exchange,
@@ -18,6 +19,7 @@ import {
   NewLayer,
   NewLayers,
   Refresh,
+  SendTo,
   Th,
   Trash,
 } from "@blueprintjs/icons";
@@ -275,7 +277,7 @@ export function DrawingActions() {
         {!!cabs.length && (
           <Tooltip content="Assign Set to Cab">
             <Popover content={addToCabMenu} placement="bottom">
-              <Button variant="minimal" icon={<NewLayer />} />
+              <Button variant="minimal" icon={<SendTo />} />
             </Popover>
           </Tooltip>
         )}
@@ -337,7 +339,7 @@ export function MatchActions({ drawingId }: { drawingId: string }) {
         {!!cabs.length && (
           <Tooltip content="Assign Match to Cab">
             <Popover content={addToCabMenu} placement="bottom">
-              <Button variant="minimal" icon={<NewLayers />} />
+              <Button variant="minimal" icon={<DocumentShare />} />
             </Popover>
           </Tooltip>
         )}
