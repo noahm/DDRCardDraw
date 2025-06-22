@@ -125,7 +125,6 @@ export interface Drawing {
 }
 
 export interface SubDrawing {
-  id: string;
   compoundId: CompoundSetId;
   configId: string;
   charts: Array<DrawnChart | PlayerPickPlaceholder>;

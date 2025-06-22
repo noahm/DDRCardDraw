@@ -58,7 +58,7 @@ export function createDraw(
         : startggTargetSet.meta.entrants;
 
     const matchId = `draw-${nanoid(10)}`;
-    const setId = `set-${nanoid(10)}`;
+    const setId = `set-${nanoid(12)}`;
 
     dispatch(
       drawingsSlice.actions.addDrawing({
@@ -72,7 +72,6 @@ export function createDraw(
         configId,
         subDrawings: {
           [setId]: {
-            id: setId,
             compoundId: [matchId, setId],
             configId,
             charts,
@@ -114,12 +113,11 @@ export function createSubdraw(
       return "nok"; // could not draw the requested number of charts
     }
 
-    const setId = `set-${nanoid(10)}`;
+    const setId = `set-${nanoid(12)}`;
     dispatch(
       drawingsSlice.actions.addSubdraw({
         existingDrawId: parentDrawId,
         newSubdraw: {
-          id: setId,
           compoundId: [parentDrawId, setId],
           configId,
           charts,

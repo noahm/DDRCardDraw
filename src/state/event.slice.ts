@@ -1,6 +1,7 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 import { CompoundSetId } from "../models/Drawing";
+import { mergeDraws } from "./central";
 
 export interface CabInfo {
   /** drawing id if active */
@@ -62,6 +63,18 @@ export const eventSlice = createSlice({
       if (!cab) return;
       cab.activeMatch = action.payload.matchId;
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(mergeDraws, (state, { payload }) => {
+      for (const cab of Object.values(state.cabs)) {
+        if (
+          Array.isArray(cab.activeMatch) &&
+          cab.activeMatch[0] === payload.drawingId
+        ) {
+          cab.activeMatch[1] = payload.newSubdrawId;
+        }
+      }
+    });
   },
   selectors: {
     allCabs: createSelector([(state: EventState) => state.cabs], (cabs) => {

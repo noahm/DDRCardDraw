@@ -14,7 +14,10 @@ export default function DrawnSetGroup({ drawingId }: { drawingId: string }) {
     <div style={{ ...gradient }} className={styles.drawnSetGroup}>
       {drawing.subDrawings &&
         Object.values(drawing.subDrawings).map((subDraw, idx) => (
-          <DrawingProvider key={subDraw.id} drawingId={subDraw.compoundId}>
+          <DrawingProvider
+            key={subDraw.compoundId[1]}
+            drawingId={subDraw.compoundId}
+          >
             {idx === 0 && <MatchLabels />}
             <DrawnSet />
           </DrawingProvider>
@@ -31,7 +34,10 @@ export function PlainDrawnSetGroup({ drawingId }: { drawingId: string }) {
     <div>
       {drawing.subDrawings &&
         Object.values(drawing.subDrawings).map((subDraw) => (
-          <DrawingProvider key={subDraw.id} drawingId={subDraw.compoundId}>
+          <DrawingProvider
+            key={subDraw.compoundId[1]}
+            drawingId={subDraw.compoundId}
+          >
             <ChartList />
           </DrawingProvider>
         ))}

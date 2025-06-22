@@ -14,6 +14,7 @@ import {
   PlayerActionOnChart,
   SubDrawing,
 } from "../models/Drawing";
+import { mergeDraws } from "./central";
 
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
 
@@ -225,7 +226,7 @@ export const drawingsSlice = createSlice({
       if (!existingDraw.subDrawings) {
         existingDraw.subDrawings = {};
       }
-      existingDraw.subDrawings[newSubdraw.id] = newSubdraw;
+      existingDraw.subDrawings[newSubdraw.compoundId[1]] = newSubdraw;
     },
     updateCharts(
       state,
@@ -248,6 +249,25 @@ export const drawingsSlice = createSlice({
       }
       target.charts = newCharts;
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(
+      mergeDraws,
+      (state, { payload: { drawingId, newSubdrawId } }) => {
+        const draw = state.entities[drawingId];
+        if (!draw) return;
+        const oldDraws = draw.subDrawings;
+        draw.subDrawings = {
+          [newSubdrawId]: {
+            compoundId: [drawingId, newSubdrawId],
+            configId: draw.configId,
+            charts: Object.values(oldDraws).flatMap(
+              (subDraw) => subDraw.charts,
+            ),
+          },
+        };
+      },
+    );
   },
   selectors: {
     haveDrawings(state) {
@@ -274,9 +294,11 @@ export function migrateToSubdraws(state: StateOfSlice<typeof drawingsSlice>) {
   for (const id of state.ids) {
     const parent = state.entities[id];
     if (parent.subDrawings) {
-      for (const subDraw of Object.values(parent.subDrawings)) {
+      for (const [subId, subDraw] of Object.entries(parent.subDrawings)) {
+        // @ts-expect-error this field no longer exists
+        delete subDraw.id;
         if (!subDraw.compoundId) {
-          subDraw.compoundId = [parent.id, subDraw.id];
+          subDraw.compoundId = [parent.id, subId];
         }
       }
     } else {
@@ -284,11 +306,11 @@ export function migrateToSubdraws(state: StateOfSlice<typeof drawingsSlice>) {
     }
     if (parent.charts) {
       parent.subDrawings[parent.id] = {
-        id: parent.id,
         compoundId: [parent.id, parent.id],
         configId: parent.configId,
         charts: parent.charts,
       };
+      delete parent.charts;
     }
   }
 }

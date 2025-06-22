@@ -9,6 +9,7 @@ import {
 } from "@blueprintjs/core";
 import {
   Camera,
+  DataLineage,
   Edit,
   Error,
   Exchange,
@@ -48,6 +49,7 @@ import { useIntl } from "../hooks/useIntl";
 import { ConfigContextProvider, useConfigId } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
 import { times } from "../utils";
+import { mergeDraws } from "../state/central";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
@@ -356,18 +358,17 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
   const isTwoPlayers = playerCount(drawingMeta) === 2;
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
 
-  let dialogBody: JSX.Element | null;
+  let editPlayersDialog: JSX.Element | null;
   switch (drawingMeta.type) {
     case "simple":
-      dialogBody = (
+      editPlayersDialog = (
         <CustomDrawForm
           initialMeta={drawingMeta}
           submitText="Save"
           onSubmit={(meta) => {
-            const [mainId] = drawingId;
             dispatch(
               drawingsSlice.actions.updateOne({
-                id: mainId,
+                id: drawingId,
                 changes: {
                   meta,
                   playerDisplayOrder: times(meta.players.length, (n) => n - 1),
@@ -380,8 +381,50 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       );
       break;
     case "startgg":
-      dialogBody = null;
+      // @todo figure out what edit looks like for startgg?
+      editPlayersDialog = null;
   }
+
+  const menu = (
+    <Menu>
+      {editPlayersDialog && (
+        <MenuItem
+          icon={<Label />}
+          text="Edit Title & Players"
+          onClick={() => setMetaEditorOpen(true)}
+        />
+      )}
+      <MenuItem icon={<NewLayers />} text="Draw Extra Set">
+        <ConfigContextProvider value={configId}>
+          <ConfigsAsMenuItems drawingId={drawingId} />
+        </ConfigContextProvider>
+      </MenuItem>
+      <MenuItem
+        icon={<DataLineage />}
+        text="Merge All Sets"
+        onClick={() => dispatch(mergeDraws({ drawingId }))}
+      />
+      {showLabels && isTwoPlayers && (
+        <MenuItem
+          text="Swap Player Positions"
+          icon={<Exchange />}
+          onClick={() => {
+            dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
+          }}
+        />
+      )}
+      <MenuItem
+        text="Delete this match"
+        icon={<Trash />}
+        onClick={() =>
+          confirm(
+            "This match will be permanently removed and cannot be recovered!",
+          ) && dispatch(drawingsSlice.actions.removeOne([drawingId, ""]))
+        }
+      />
+    </Menu>
+  );
+
   return (
     <>
       <Dialog
@@ -389,46 +432,10 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
         title="Edit Match"
         onClose={() => setMetaEditorOpen(false)}
       >
-        <DialogBody>{dialogBody}</DialogBody>
+        <DialogBody>{editPlayersDialog}</DialogBody>
       </Dialog>
       <Tooltip content="Alter Match">
-        <Popover
-          content={
-            <Menu>
-              <MenuItem
-                icon={<Label />}
-                text="Edit Title & Players"
-                onClick={() => setMetaEditorOpen(true)}
-              />
-              <MenuItem icon={<NewLayers />} text="Draw Extra Set">
-                <ConfigContextProvider value={configId}>
-                  <ConfigsAsMenuItems drawingId={drawingId} />
-                </ConfigContextProvider>
-              </MenuItem>
-              {showLabels && isTwoPlayers && (
-                <MenuItem
-                  text="Swap Player Positions"
-                  icon={<Exchange />}
-                  onClick={() => {
-                    dispatch(
-                      drawingsSlice.actions.swapPlayerPositions(drawingId),
-                    );
-                  }}
-                />
-              )}
-              <MenuItem
-                text="Delete this match"
-                icon={<Trash />}
-                onClick={() =>
-                  confirm(
-                    "This match will be permanently removed and cannot be recovered!",
-                  ) &&
-                  dispatch(drawingsSlice.actions.removeOne([drawingId, ""]))
-                }
-              />
-            </Menu>
-          }
-        >
+        <Popover content={menu}>
           <Button variant="minimal" icon={<Edit />} />
         </Popover>
       </Tooltip>
