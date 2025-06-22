@@ -1,13 +1,3 @@
-:root {
-  --drawing-grad-saturation: 40%;
-  --drawing-grad-lightness: 85%;
-}
-
-body:global(.bp5-dark) {
-  --drawing-grad-saturation: 25%;
-  --drawing-grad-lightness: 15%;
-}
-
 .chartList {
   display: flex;
   padding: 10px;
