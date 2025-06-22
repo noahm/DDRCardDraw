@@ -104,7 +104,7 @@ export function CustomDrawForm(props: {
   onSubmit(meta: SimpleMeta): void;
 }) {
   const [players, setPlayers] = useState<string[]>(
-    props.initialMeta?.players || [],
+    props.initialMeta?.players || ["P1", "P2"],
   );
   const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
 
