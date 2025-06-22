@@ -53,11 +53,7 @@ export function DrawDialog(props: Props) {
   return (
     <DialogBody>
       <FormGroup label="Config">
-        <ConfigSelect
-          selectedId={configId}
-          onChange={setConfigId}
-          createDirection="right"
-        />
+        <ConfigSelect selectedId={configId} onChange={setConfigId} />
       </FormGroup>
       <Tabs id="new-draw">
         <Tab

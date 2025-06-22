@@ -26,27 +26,46 @@ const getConfigSummaryValues = createAppSelector(
           config.lowerBound,
           config.upperBound,
           config.chartCount,
+          config.multiDraws?.configs.length
+            ? `${config.multiDraws.configs.length} ${config.multiDraws.merge ? "draws" : "sets"}`
+            : null,
         ] as const,
     ),
 );
 
-function getEmptyItemLabel(empty: boolean, direction?: "left" | "right") {
+function getEmptyItemLabel(empty: boolean) {
   if (!empty) return "select a config";
-  switch (direction) {
-    case "left":
-      return "👈 Create a config here";
-    case "right":
-      return "Create a config here 👉";
-    default:
-      return "no configs created";
-  }
+  return "no configs created";
 }
 
 export function ConfigSelect(props: {
   selectedId: string | null;
+  onChange(nextId: string): void;
+}) {
+  const summaryValues = useAppState(getConfigSummaryValues);
+  const isEmpty = !summaryValues.length;
+
+  return (
+    <HTMLSelect
+      disabled={isEmpty}
+      value={props.selectedId || ""}
+      onChange={(e) => props.onChange(e.currentTarget.value)}
+    >
+      <option disabled value="">
+        {getEmptyItemLabel(isEmpty)}
+      </option>
+      {summaryValues.map(([key, name, gameKey, lb, ub]) => (
+        <option key={key} value={key}>
+          {name} ({gameKey}, {lb}-{ub})
+        </option>
+      ))}
+    </HTMLSelect>
+  );
+}
+
+export function ConfigList(props: {
+  selectedId: string | null;
   onChange(nextId: string | null): void;
-  createDirection?: "left" | "right";
-  asList?: boolean;
 }) {
   const summaryValues = useAppState(getConfigSummaryValues);
   const dispatch = useAppDispatch();
@@ -59,12 +78,11 @@ export function ConfigSelect(props: {
     props.onChange(key);
     setLastConfigSelected(key || undefined);
   }
-
-  if (props.asList) {
-    return (
-      <div className={styles.listContainer}>
-        {isEmpty && getEmptyItemLabel(true, props.createDirection)}
-        {summaryValues.map(([key, name, gameKey, lb, ub, count], idx) => (
+  return (
+    <div className={styles.listContainer}>
+      {isEmpty && getEmptyItemLabel(true)}
+      {summaryValues.map(
+        ([key, name, gameKey, lb, ub, count, multiDraws], idx) => (
           <Card
             key={key}
             interactive
@@ -112,51 +130,36 @@ export function ConfigSelect(props: {
             <h2>{name}</h2>
             <p>
               {gameKey}, draw {count}, lvl {lb}&ndash;{ub}
+              <br />
+              {multiDraws && ` (+${multiDraws})`}
             </p>
           </Card>
-        ))}
-        <Card compact style={{ opacity: 0.6 }}>
-          <ButtonGroup className={styles.actionButtons}>
-            <Tooltip content={"Import JSON"} placement="top">
-              <Button
-                icon={<Import />}
-                onClick={() => {
-                  loadConfig().then((c) => {
-                    dispatch(configSlice.actions.addOne(c));
-                    changeConfig(c.id);
-                  });
-                }}
-              />
-            </Tooltip>
+        ),
+      )}
+      <Card compact style={{ opacity: 0.6 }}>
+        <ButtonGroup className={styles.actionButtons}>
+          <Tooltip content={"Import JSON"} placement="top">
             <Button
-              icon={<Add />}
-              onClick={() =>
-                dispatch(createNewConfig(roomName)).then((c) =>
-                  changeConfig(c.id),
-                )
-              }
+              icon={<Import />}
+              onClick={() => {
+                loadConfig().then((c) => {
+                  dispatch(configSlice.actions.addOne(c));
+                  changeConfig(c.id);
+                });
+              }}
             />
-          </ButtonGroup>
-          <h2>Create new</h2>
-        </Card>
-      </div>
-    );
-  }
-
-  return (
-    <HTMLSelect
-      disabled={isEmpty}
-      value={props.selectedId || ""}
-      onChange={(e) => props.onChange(e.currentTarget.value)}
-    >
-      <option disabled value="">
-        {getEmptyItemLabel(isEmpty, props.createDirection)}
-      </option>
-      {summaryValues.map(([key, name, gameKey, lb, ub]) => (
-        <option key={key} value={key}>
-          {name} ({gameKey}, {lb}-{ub})
-        </option>
-      ))}
-    </HTMLSelect>
+          </Tooltip>
+          <Button
+            icon={<Add />}
+            onClick={() =>
+              dispatch(createNewConfig(roomName)).then((c) =>
+                changeConfig(c.id),
+              )
+            }
+          />
+        </ButtonGroup>
+        <h2>Create new</h2>
+      </Card>
+    </div>
   );
 }

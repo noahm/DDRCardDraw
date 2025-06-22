@@ -5,7 +5,12 @@ import {
   loadStockGamedataByName,
 } from "./game-data.atoms";
 import { drawingsSlice, getDrawingFromCompoundId } from "./drawings.slice";
-import { CompoundSetId, EligibleChart } from "../models/Drawing";
+import {
+  CompoundSetId,
+  Drawing,
+  EligibleChart,
+  SubDrawing,
+} from "../models/Drawing";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
 declare const umami: {
@@ -29,7 +34,7 @@ function trackDraw(count: number | null, game?: string) {
  * @returns false if draw was unsuccessful
  */
 export function createDraw(
-  startggTargetSet: DrawingMeta,
+  drawMeta: DrawingMeta,
   configId: string,
 ): AppThunk<Promise<"nok" | "ok">> {
   return async (dispatch, getState) => {
@@ -46,39 +51,76 @@ export function createDraw(
       return "nok"; // no draw was possible
     }
 
-    const charts = draw(gameData, config, startggTargetSet);
-    trackDraw(charts.length, gameData.i18n.en.name as string);
+    const charts = draw(gameData, config, drawMeta);
     if (!charts.length) {
+      trackDraw(null);
       return "nok"; // could not draw the requested number of charts
     }
 
     const players =
-      startggTargetSet.meta.type === "simple"
-        ? startggTargetSet.meta.players
-        : startggTargetSet.meta.entrants;
+      drawMeta.meta.type === "simple"
+        ? drawMeta.meta.players
+        : drawMeta.meta.entrants;
 
     const matchId = `draw-${nanoid(10)}`;
     const setId = `set-${nanoid(12)}`;
+    const mainDraw: SubDrawing = {
+      compoundId: [matchId, setId],
+      configId,
+      charts,
+    };
+    const drawing: Drawing = {
+      id: matchId,
+      winners: {},
+      bans: {},
+      protects: {},
+      pocketPicks: {},
+      meta: drawMeta.meta,
+      playerDisplayOrder: players.map((_, idx) => idx),
+      configId,
+      subDrawings: {
+        [setId]: mainDraw,
+      },
+    };
+    trackDraw(charts.length, gameData.i18n.en.name as string);
 
-    dispatch(
-      drawingsSlice.actions.addDrawing({
-        id: matchId,
-        winners: {},
-        bans: {},
-        protects: {},
-        pocketPicks: {},
-        meta: startggTargetSet.meta,
-        playerDisplayOrder: players.map((_, idx) => idx),
-        configId,
-        subDrawings: {
-          [setId]: {
-            compoundId: [matchId, setId],
-            configId,
-            charts,
-          },
-        },
-      }),
-    );
+    if (config.multiDraws) {
+      for (const otherConfigId of config.multiDraws.configs) {
+        const otherConfig = configSlice.selectors.selectById(
+          state,
+          otherConfigId,
+        );
+        if (!otherConfig) {
+          console.error("couldnt perform extra draw, no config");
+          continue;
+        }
+        const otherGameData = await loadStockGamedataByName(
+          otherConfig.gameKey,
+        );
+        if (!otherGameData) {
+          console.error("couldnt perform extra draw, no game data");
+          continue;
+        }
+        const otherCharts = draw(otherGameData, otherConfig, drawMeta);
+        if (!otherCharts.length) {
+          continue; // could not draw the requested number of charts
+        }
+
+        trackDraw(otherCharts.length, otherGameData.i18n.en.name as string);
+        if (config.multiDraws.merge) {
+          mainDraw.charts = mainDraw.charts.concat(otherCharts);
+        } else {
+          const otherSetId = `set-${nanoid(12)}`;
+          drawing.subDrawings[otherSetId] = {
+            compoundId: [drawing.id, otherSetId],
+            configId: otherConfigId,
+            charts: otherCharts,
+          };
+        }
+      }
+    }
+
+    dispatch(drawingsSlice.actions.addDrawing(drawing));
     return "ok";
   };
 }
