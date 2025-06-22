@@ -18,7 +18,7 @@ import {
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
 
 /** payload is the drawing id */
-type ActionOnSingleDrawing = PayloadAction<CompoundSetId>;
+type ActionOnSingleDrawing = PayloadAction<string>;
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type ActionOnSingleChart<extra extends object = {}> = PayloadAction<
   { drawingId: CompoundSetId; chartId: string } & extra
@@ -253,8 +253,9 @@ export const drawingsSlice = createSlice({
     haveDrawings(state) {
       return !!state.ids.length;
     },
-    byCompoundId(state, compoundId: CompoundSetId) {
-      return getDrawingFromCompoundId(state, compoundId);
+    byCompoundOrPlainId(state, id: CompoundSetId | string) {
+      if (typeof id === "string") return [state.entities[id]];
+      return getDrawingFromCompoundId(state, id);
     },
     selectMergedByCompoundId(state, compoundId: CompoundSetId) {
       return selectMergedByCompoundId(state, compoundId);

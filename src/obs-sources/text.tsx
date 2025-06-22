@@ -8,7 +8,7 @@ export function CabTitle() {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundId(s, drawingId);
+    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
     if (!parent) return null;
     return parent.meta.title;
   });
@@ -20,7 +20,7 @@ export function CabPlayers() {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundId(s, drawingId);
+    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
     if (!parent) return null;
     return getAllPlayers(parent).join(", ");
   });
@@ -36,7 +36,7 @@ export function CabPlayer(props: {
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundId(s, drawingId);
+    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
     if (!parent) return null;
     const playerIndex = parent.playerDisplayOrder[props.p - 1];
     const name = playerNameByIndex(parent.meta, playerIndex, "");

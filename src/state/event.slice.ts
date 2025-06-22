@@ -4,7 +4,7 @@ import { CompoundSetId } from "../models/Drawing";
 
 export interface CabInfo {
   /** drawing id if active */
-  activeMatch: CompoundSetId | null;
+  activeMatch: CompoundSetId | string | null;
   name: string;
   id: string;
 }
@@ -41,9 +41,22 @@ export const eventSlice = createSlice({
     removeCab(state, action: PayloadAction<string>) {
       delete state.cabs[action.payload];
     },
+    clearCabAssignment(state, action: PayloadAction<string>) {
+      const cab = state.cabs[action.payload];
+      if (!cab) return;
+      cab.activeMatch = null;
+    },
     assignMatchToCab(
       state,
-      action: PayloadAction<{ cabId: string; matchId: CompoundSetId | null }>,
+      action: PayloadAction<{ cabId: string; matchId: string }>,
+    ) {
+      const cab = state.cabs[action.payload.cabId];
+      if (!cab) return;
+      cab.activeMatch = action.payload.matchId;
+    },
+    assignSetToCab(
+      state,
+      action: PayloadAction<{ cabId: string; matchId: CompoundSetId }>,
     ) {
       const cab = state.cabs[action.payload.cabId];
       if (!cab) return;

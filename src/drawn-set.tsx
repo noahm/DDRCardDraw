@@ -5,7 +5,6 @@ import styles from "./drawn-set.css";
 import { useDrawing } from "./drawing-context";
 import { DrawingActions } from "./tournament-mode/drawing-actions";
 import { ErrorFallback } from "./utils/error-fallback";
-import { EligibleChart } from "./models/Drawing";
 
 /**
  * expects a drawing context wrapper
@@ -17,16 +16,6 @@ export function ChartList() {
     <div className={styles.chartList}>
       {charts.map((c) => (
         <ChartFromContext key={c.id} chartId={c.id} />
-      ))}
-    </div>
-  );
-}
-
-export function RawChartList(props: { charts: Array<EligibleChart> }) {
-  return (
-    <div className={styles.chartList}>
-      {props.charts.map((c, idx) => (
-        <SongCard key={idx} chart={c} />
       ))}
     </div>
   );
