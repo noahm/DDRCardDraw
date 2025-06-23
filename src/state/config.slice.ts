@@ -23,6 +23,13 @@ export interface ConfigState {
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
+  /** if present, will draw an additional set of cards for each string id in `configs` */
+  multiDraws?: {
+    /** if true, auto-merge the resulting draws */
+    merge: boolean;
+    /** ids of other configs to use for the subsequent draws */
+    configs: Array<string>;
+  };
 }
 
 export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {

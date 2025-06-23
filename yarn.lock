@@ -6134,6 +6134,7 @@ __metadata:
     html-loader: "npm:5.1.0"
     html-webpack-plugin: "npm:5.6.3"
     iconv-lite: "npm:0.6.3"
+    immer: "npm:^10.1.1"
     inquirer: "npm:9.3.7"
     jimp: "npm:1.6.0"
     jotai: "npm:2.12.3"
@@ -8338,7 +8339,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immer@npm:^10.0.3":
+"immer@npm:^10.0.3, immer@npm:^10.1.1":
   version: 10.1.1
   resolution: "immer@npm:10.1.1"
   checksum: 10/9dacf1e8c201d69191ccd88dc5d733bafe166cd45a5a360c5d7c88f1de0dff974a94114d72b35f3106adfe587fcfb131c545856184a2247d89d735ad25589863

@@ -12,3 +12,7 @@
 .actionButtons {
   float: right;
 }
+
+.listContainer p {
+  margin-bottom: 0;
+}

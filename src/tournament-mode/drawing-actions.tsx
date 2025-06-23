@@ -9,12 +9,17 @@ import {
 } from "@blueprintjs/core";
 import {
   Camera,
-  CubeAdd,
+  DataLineage,
+  DocumentShare,
+  Edit,
   Error,
   Exchange,
   FloppyDisk,
+  Label,
   NewLayer,
+  NewLayers,
   Refresh,
+  SendTo,
   Th,
   Trash,
 } from "@blueprintjs/icons";
@@ -33,12 +38,20 @@ import {
 import { drawingsSlice } from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
 import { AppThunk, useAppDispatch, useAppState } from "../state/store";
-import { createPlusOneChart, createRedrawAll } from "../state/thunks";
+import {
+  createPlusOneChart,
+  createRedrawAll,
+  createSubdraw,
+} from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
 import { shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
 import { EventModeGated } from "../common-components/app-mode";
 import { useIntl } from "../hooks/useIntl";
+import { ConfigContextProvider, useConfigId } from "../state/hooks";
+import { CustomDrawForm } from "../controls/draw-dialog";
+import { times } from "../utils";
+import { mergeDraws } from "../state/central";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
@@ -49,17 +62,17 @@ function getMatchResult(
   return (_, getState): MutationVariables | undefined => {
     const s = getState();
     const gameData: Array<GDI> = [];
-    const drawing = s.drawings.entities[drawingId];
-    if (drawing.meta.type !== "startgg") {
+    const parent = s.drawings.entities[drawingId];
+    if (parent.meta.type !== "startgg") {
       return;
     }
     const winsPerPlayer = new CountingSet<string>();
-    for (const [songId, pIdx] of Object.entries(drawing.winners)) {
+    for (const [songId, pIdx] of Object.entries(parent.winners)) {
       if (pIdx === null) {
         continue;
       }
       try {
-        const entrant = drawing.meta.entrants[pIdx];
+        const entrant = parent.meta.entrants[pIdx];
         gameData.push({
           gameNum: gameData.length + 1,
           winnerId: entrant.id,
@@ -81,7 +94,7 @@ function getMatchResult(
       winnerId = orderedByWins[0][0];
     }
     const ret: MutationVariables = {
-      setId: drawing.meta.id,
+      setId: parent.meta.id,
       winnerId,
     };
     if (gameData.length) {
@@ -93,10 +106,9 @@ function getMatchResult(
 
 const DEFAULT_FILENAME = "card-draw.png";
 
-function SaveToStartggButton() {
+function SaveToStartggButton({ drawingId }: { drawingId: string }) {
   const dispatch = useAppDispatch();
-  const drawingId = useDrawing((s) => s.id);
-  const drawingMeta = useDrawing((s) => s.meta);
+  const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
   const [mutationData, reportSet] = useReportSetMutation();
   if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
     return null;
@@ -116,7 +128,7 @@ function SaveToStartggButton() {
       content={tooltipContent}
     >
       <Button
-        minimal
+        variant="minimal"
         disabled={mutationData.fetching}
         icon={<FloppyDisk />}
         onClick={() => {
@@ -131,19 +143,75 @@ function SaveToStartggButton() {
   );
 }
 
-function AddCardButton() {
+function EditSetMenu() {
   const dispatch = useAppDispatch();
-  const drawingId = useDrawing((s) => s.id);
+  const { t } = useIntl();
+  const drawingId = useDrawing((s) => s.compoundId);
+
   return (
-    <Tooltip content="Draw Another Chart">
-      <Button
-        minimal
-        icon={<NewLayer />}
-        onClick={() => {
-          dispatch(createPlusOneChart(drawingId));
-        }}
-      />
-    </Tooltip>
+    <>
+      <Tooltip content="Alter Set">
+        <Popover
+          content={
+            <Menu>
+              <MenuItem
+                icon={<NewLayer />}
+                text="Draw Another Chart"
+                onClick={() => dispatch(createPlusOneChart(drawingId))}
+              />
+              <MenuItem
+                text={t("drawing.redrawAll", undefined, "Redraw set")}
+                icon={<Refresh />}
+                onClick={() =>
+                  confirm(
+                    t(
+                      "drawing.redrawConfirm",
+                      undefined,
+                      "This will replace everything besides protects and picks!",
+                    ),
+                  ) && dispatch(createRedrawAll(drawingId))
+                }
+              />
+              <MenuItem
+                text="Delete this set"
+                icon={<Trash />}
+                onClick={() =>
+                  confirm(
+                    "This draw will be permanently removed and cannot be recovered!",
+                  ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
+                }
+              />
+            </Menu>
+          }
+        >
+          <Button variant="minimal" icon={<Edit />} />
+        </Popover>
+      </Tooltip>
+    </>
+  );
+}
+
+function ConfigsAsMenuItems({ drawingId }: { drawingId: string }) {
+  const configs = useAppState((s) => s.config.ids);
+  return (
+    <>
+      {configs.map((cid) => (
+        <ConfigAsMenuItem key={cid} configId={cid} drawingId={drawingId} />
+      ))}
+    </>
+  );
+}
+
+function ConfigAsMenuItem(props: { configId: string; drawingId: string }) {
+  const config = useAppState((s) => s.config.entities[props.configId]);
+  const dispatch = useAppDispatch();
+  const currentConfigId = useConfigId();
+  return (
+    <MenuItem
+      intent={currentConfigId === props.configId ? "primary" : undefined}
+      text={`${config.name} (${config.chartCount}@${config.lowerBound}-${config.upperBound})`}
+      onClick={() => dispatch(createSubdraw(props.drawingId, props.configId))}
+    />
   );
 }
 
@@ -151,16 +219,100 @@ export function DrawingActions() {
   const dispatch = useAppDispatch();
   const { t } = useIntl();
   const cabs = useAppState(eventSlice.selectors.allCabs);
-  const drawingId = useDrawing((s) => s.id);
+  const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
-  const isTwoPlayers = playerCount(drawingMeta) === 2;
   const isGauntlet =
     drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const { showBoundary } = useErrorBoundary();
   const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
     StartggGauntletMeta | undefined
   >(undefined);
+
+  const addToCabMenu = (
+    <Menu>
+      {cabs.map((cab) => (
+        <MenuItem
+          key={cab.id}
+          text={cab.name}
+          onClick={() =>
+            dispatch(
+              eventSlice.actions.assignSetToCab({
+                cabId: cab.id,
+                matchId: drawingId,
+              }),
+            )
+          }
+        />
+      ))}
+    </Menu>
+  );
+
+  return (
+    <div className={styles.networkButtons}>
+      <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
+        <Button
+          variant="minimal"
+          icon={<Camera />}
+          onClick={async () => {
+            const drawingElement = document.querySelector(
+              "#drawing-" + drawingId[1],
+            );
+            if (drawingElement) {
+              shareImage(
+                await domToPng(drawingElement, {
+                  scale: 2,
+                }),
+                DEFAULT_FILENAME,
+              );
+            }
+          }}
+        />
+      </Tooltip>
+      {process.env.NODE_ENV === "production" ? null : (
+        <Tooltip content="Cause Error">
+          <Button variant="minimal" icon={<Error />} onClick={showBoundary} />
+        </Tooltip>
+      )}
+      <EventModeGated>
+        {!!cabs.length && (
+          <Tooltip content="Assign Set to Cab">
+            <Popover content={addToCabMenu} placement="bottom">
+              <Button variant="minimal" icon={<SendTo />} />
+            </Popover>
+          </Tooltip>
+        )}
+      </EventModeGated>
+      {isGauntlet && (
+        <>
+          <Tooltip content="Edit Gauntlet Scores">
+            <Button
+              variant="minimal"
+              icon={<Th />}
+              onClick={() => {
+                setGauntletEditorMeta(drawingMeta);
+              }}
+            />
+          </Tooltip>
+          <Dialog
+            onClose={() => setGauntletEditorMeta(undefined)}
+            isOpen={!!gauntletEditorMeta}
+            title="Gauntlet Scores Editor"
+            style={{ width: "auto" }}
+          >
+            <DialogBody>
+              <GauntletEditor meta={gauntletEditorMeta!} />
+            </DialogBody>
+          </Dialog>
+        </>
+      )}
+      <EditSetMenu />
+    </div>
+  );
+}
+
+export function MatchActions({ drawingId }: { drawingId: string }) {
+  const dispatch = useAppDispatch();
+  const cabs = useAppState(eventSlice.selectors.allCabs);
 
   const addToCabMenu = (
     <Menu>
@@ -183,103 +335,112 @@ export function DrawingActions() {
 
   return (
     <div className={styles.networkButtons}>
-      <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
-        <Button
-          minimal
-          icon={<Camera />}
-          onClick={async () => {
-            const drawingElement = document.querySelector(
-              "#drawing-" + drawingId,
-            );
-            if (drawingElement) {
-              shareImage(
-                await domToPng(drawingElement, {
-                  scale: 2,
-                }),
-                DEFAULT_FILENAME,
-              );
-            }
-          }}
-        />
-      </Tooltip>
-      <Tooltip content={t("drawing.redrawAll", undefined, "Redraw all charts")}>
-        <Button
-          minimal
-          icon={<Refresh />}
-          onClick={() =>
-            confirm(
-              t(
-                "drawing.redrawConfirm",
-                undefined,
-                "This will replace everything besides protects and picks!",
-              ),
-            ) && dispatch(createRedrawAll(drawingId))
-          }
-        />
-      </Tooltip>
-      {process.env.NODE_ENV === "production" ? null : (
-        <Tooltip content="Cause Error">
-          <Button minimal icon={<Error />} onClick={showBoundary} />
-        </Tooltip>
-      )}
       <EventModeGated>
         {!!cabs.length && (
-          <Tooltip content="Assign to Cab">
+          <Tooltip content="Assign Match to Cab">
             <Popover content={addToCabMenu} placement="bottom">
-              <Button minimal icon={<CubeAdd />} />
+              <Button variant="minimal" icon={<DocumentShare />} />
             </Popover>
           </Tooltip>
         )}
       </EventModeGated>
-      {showLabels && isTwoPlayers && (
-        <Tooltip content="Swap Player Positions">
-          <Button
-            minimal
-            icon={<Exchange />}
-            onClick={() => {
-              dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
-            }}
-          />
-        </Tooltip>
-      )}
-      {isGauntlet && (
-        <>
-          <Tooltip content="Edit Gauntlet Scores">
-            <Button
-              minimal
-              icon={<Th />}
-              onClick={() => {
-                setGauntletEditorMeta(drawingMeta);
-              }}
-            />
-          </Tooltip>
-          <Dialog
-            onClose={() => setGauntletEditorMeta(undefined)}
-            isOpen={!!gauntletEditorMeta}
-            title="Gauntlet Scores Editor"
-            style={{ width: "auto" }}
-          >
-            <DialogBody>
-              <GauntletEditor meta={gauntletEditorMeta!} />
-            </DialogBody>
-          </Dialog>
-        </>
-      )}
       <EventModeGated>
-        <SaveToStartggButton />
+        <SaveToStartggButton drawingId={drawingId} />
       </EventModeGated>
-      <AddCardButton />
-      <Tooltip content="Delete this draw">
-        <Button
-          minimal
-          icon={<Trash />}
-          onClick={() =>
-            confirm(
-              "This draw will be permanently removed and cannot be recovered!",
-            ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
-          }
-        />
-      </Tooltip>
+      <EditMatchMenu drawingId={drawingId} />
     </div>
+  );
+}
+
+function EditMatchMenu({ drawingId }: { drawingId: string }) {
+  const dispatch = useAppDispatch();
+  const [metaEditorOpen, setMetaEditorOpen] = useState(false);
+  const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
+  const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
+  const isTwoPlayers = playerCount(drawingMeta) === 2;
+  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+
+  let editPlayersDialog: JSX.Element | null;
+  switch (drawingMeta.type) {
+    case "simple":
+      editPlayersDialog = (
+        <CustomDrawForm
+          initialMeta={drawingMeta}
+          submitText="Save"
+          onSubmit={(meta) => {
+            dispatch(
+              drawingsSlice.actions.updateOne({
+                id: drawingId,
+                changes: {
+                  meta,
+                  playerDisplayOrder: times(meta.players.length, (n) => n - 1),
+                },
+              }),
+            );
+            setMetaEditorOpen(false);
+          }}
+        />
+      );
+      break;
+    case "startgg":
+      // @todo figure out what edit looks like for startgg?
+      editPlayersDialog = null;
+  }
+
+  const menu = (
+    <Menu>
+      {editPlayersDialog && (
+        <MenuItem
+          icon={<Label />}
+          text="Edit Title & Players"
+          onClick={() => setMetaEditorOpen(true)}
+        />
+      )}
+      <MenuItem icon={<NewLayers />} text="Draw Extra Set">
+        <ConfigContextProvider value={configId}>
+          <ConfigsAsMenuItems drawingId={drawingId} />
+        </ConfigContextProvider>
+      </MenuItem>
+      <MenuItem
+        icon={<DataLineage />}
+        text="Merge All Sets"
+        onClick={() => dispatch(mergeDraws({ drawingId }))}
+      />
+      {showLabels && isTwoPlayers && (
+        <MenuItem
+          text="Swap Player Positions"
+          icon={<Exchange />}
+          onClick={() => {
+            dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
+          }}
+        />
+      )}
+      <MenuItem
+        text="Delete this match"
+        icon={<Trash />}
+        onClick={() =>
+          confirm(
+            "This match will be permanently removed and cannot be recovered!",
+          ) && dispatch(drawingsSlice.actions.removeOne([drawingId, ""]))
+        }
+      />
+    </Menu>
+  );
+
+  return (
+    <>
+      <Dialog
+        isOpen={metaEditorOpen}
+        title="Edit Match"
+        onClose={() => setMetaEditorOpen(false)}
+      >
+        <DialogBody>{editPlayersDialog}</DialogBody>
+      </Dialog>
+      <Tooltip content="Alter Match">
+        <Popover content={menu}>
+          <Button variant="minimal" icon={<Edit />} />
+        </Popover>
+      </Tooltip>
+    </>
   );
 }

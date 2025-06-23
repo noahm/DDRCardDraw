@@ -29,6 +29,7 @@ import {
   useUpdateConfig,
 } from "../state/hooks";
 import { useStockGameData } from "../state/game-data.atoms";
+import { MultidrawControls } from "./multidraw-controls";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -322,6 +323,7 @@ function GeneralSettings() {
           />
         </FormGroup>
       </div>
+      <MultidrawControls key={configState.id} />
       <div className={styles.inlineControls}>
         <FormGroup
           label={
@@ -370,7 +372,7 @@ function GeneralSettings() {
       </div>
       <Button
         alignText="left"
-        rightIcon={expandFilters ? <CaretDown /> : <CaretRight />}
+        endIcon={expandFilters ? <CaretDown /> : <CaretRight />}
         onClick={() => setExpandFilters((p) => !p)}
       >
         {t("controls.hideShowFilters")}

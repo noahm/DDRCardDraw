@@ -53,11 +53,7 @@ export function DrawDialog(props: Props) {
   return (
     <DialogBody>
       <FormGroup label="Config">
-        <ConfigSelect
-          selectedId={configId}
-          onChange={setConfigId}
-          createDirection="right"
-        />
+        <ConfigSelect selectedId={configId} onChange={setConfigId} />
       </FormGroup>
       <Tabs id="new-draw">
         <Tab
@@ -97,13 +93,14 @@ export function DrawDialog(props: Props) {
   );
 }
 
-function CustomDrawForm(props: {
+export function CustomDrawForm(props: {
   initialMeta?: SimpleMeta;
   disableCreate?: boolean;
+  submitText?: string;
   onSubmit(meta: SimpleMeta): void;
 }) {
   const [players, setPlayers] = useState<string[]>(
-    props.initialMeta?.players || [],
+    props.initialMeta?.players || ["P1", "P2"],
   );
   const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
 
@@ -133,7 +130,7 @@ function CustomDrawForm(props: {
         onClick={handleSubmit}
         disabled={props.disableCreate}
       >
-        Create
+        {props.submitText || "Create"}
       </Button>
     </>
   );

@@ -10,7 +10,7 @@ import { drawingsSlice } from "../state/drawings.slice";
 import { getAllPlayers } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
 
-export function SetLabels() {
+export function MatchLabels() {
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
   const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
   const meta = useDrawing((d) => d.meta);
@@ -64,10 +64,10 @@ export function SetLabels() {
 
 function Versus() {
   const dispatch = useAppDispatch();
-  const drawingId = useDrawing((s) => s.id);
+  const parentId = useDrawing((s) => s.id);
   const ipp = useCallback(
-    () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(drawingId)),
-    [dispatch, drawingId],
+    () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(parentId)),
+    [dispatch, parentId],
   );
   const priorityPlayer = useDrawing((s) => s.priorityPlayer);
   return (

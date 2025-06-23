@@ -8,7 +8,7 @@ const configContext = createContext<string | null>(null);
 
 export const ConfigContextProvider = configContext.Provider;
 
-function useConfigId() {
+export function useConfigId() {
   const id = useContext(configContext);
   if (!id) {
     throw new Error("config id used without provider parent");

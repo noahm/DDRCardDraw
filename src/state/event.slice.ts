@@ -1,9 +1,11 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
+import { CompoundSetId } from "../models/Drawing";
+import { mergeDraws } from "./central";
 
 export interface CabInfo {
   /** drawing id if active */
-  activeMatch: string | null;
+  activeMatch: CompoundSetId | string | null;
   name: string;
   id: string;
 }
@@ -40,14 +42,39 @@ export const eventSlice = createSlice({
     removeCab(state, action: PayloadAction<string>) {
       delete state.cabs[action.payload];
     },
+    clearCabAssignment(state, action: PayloadAction<string>) {
+      const cab = state.cabs[action.payload];
+      if (!cab) return;
+      cab.activeMatch = null;
+    },
     assignMatchToCab(
       state,
-      action: PayloadAction<{ cabId: string; matchId: string | null }>,
+      action: PayloadAction<{ cabId: string; matchId: string }>,
     ) {
       const cab = state.cabs[action.payload.cabId];
       if (!cab) return;
       cab.activeMatch = action.payload.matchId;
     },
+    assignSetToCab(
+      state,
+      action: PayloadAction<{ cabId: string; matchId: CompoundSetId }>,
+    ) {
+      const cab = state.cabs[action.payload.cabId];
+      if (!cab) return;
+      cab.activeMatch = action.payload.matchId;
+    },
+  },
+  extraReducers(builder) {
+    builder.addCase(mergeDraws, (state, { payload }) => {
+      for (const cab of Object.values(state.cabs)) {
+        if (
+          Array.isArray(cab.activeMatch) &&
+          cab.activeMatch[0] === payload.drawingId
+        ) {
+          cab.activeMatch[1] = payload.newSubdrawId;
+        }
+      }
+    });
   },
   selectors: {
     allCabs: createSelector([(state: EventState) => state.cabs], (cabs) => {

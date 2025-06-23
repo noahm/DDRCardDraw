@@ -1,49 +1,46 @@
-import { createContext, useContext } from "react";
-import { drawingSelectors, drawingsSlice } from "./state/drawings.slice";
-import { Drawing } from "./models/Drawing";
-import { useAppDispatch, useAppState } from "./state/store";
+import { createContext, ReactNode, useContext, useDebugValue } from "react";
+import { CompoundSetId, MergedDrawing } from "./models/Drawing";
+import { useAppState } from "./state/store";
 import { EqualityFn } from "react-redux";
+import { ConfigContextProvider } from "./state/hooks";
+import { drawingsSlice } from "./state/drawings.slice";
 
-const stubDrawing: Drawing = {
-  id: "",
-  configId: "",
-  meta: {
-    type: "simple",
-    players: [],
-    title: "",
-  },
-  playerDisplayOrder: [],
-  bans: {},
-  charts: [],
-  pocketPicks: {},
-  protects: {},
-  winners: {},
-};
+const context = createContext<CompoundSetId>(["", ""]);
+const RawDrawingProvider = context.Provider;
 
-const context = createContext<string>("");
-const DrawingProvider = context.Provider;
-
-function useDrawing<T>(
-  selector: (d: Drawing) => T,
+export function useDrawing<T>(
+  selector: (d: MergedDrawing) => T,
   equalityFn?: EqualityFn<T>,
 ) {
   const drawingId = useContext(context);
-  return useAppState((state) => {
-    const drawing =
-      drawingSelectors.selectById(state, drawingId) || stubDrawing;
+  const ret = useAppState((state) => {
+    const drawing = drawingsSlice.selectors.selectMergedByCompoundId(
+      state,
+      drawingId,
+    );
     return selector(drawing);
   }, equalityFn);
+  useDebugValue(ret);
+  return ret;
 }
 
-export function useUpdateDrawing(): (changes: Partial<Drawing>) => void {
-  const drawingId = useContext(context);
-  const dispatch = useAppDispatch();
-
-  if (!drawingId) {
-    return () => {};
-  }
-  return (changes) =>
-    dispatch(drawingsSlice.actions.updateOne({ id: drawingId, changes }));
+export function DrawingProvider({
+  drawingId,
+  children,
+}: {
+  drawingId: CompoundSetId;
+  children: ReactNode;
+}) {
+  return (
+    <RawDrawingProvider value={drawingId}>
+      <ContextualConfigProvider>{children}</ContextualConfigProvider>
+    </RawDrawingProvider>
+  );
 }
 
-export { useDrawing, DrawingProvider };
+function ContextualConfigProvider({ children }: { children: ReactNode }) {
+  const configId = useDrawing((d) => d.configId);
+  return (
+    <ConfigContextProvider value={configId}>{children}</ConfigContextProvider>
+  );
+}

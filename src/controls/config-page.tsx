@@ -3,7 +3,6 @@ import { ErrorFallback } from "../utils/error-fallback";
 import ControlsDrawer from "./controls-drawer";
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { ConfigSelect } from ".";
 import { Link } from "react-router-dom";
 import { CircleArrowLeft } from "@blueprintjs/icons";
 import { FormGroup, InputGroup } from "@blueprintjs/core";
@@ -11,6 +10,8 @@ import { useAppDispatch, useAppState } from "../state/store";
 import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { useLastConfigSelected } from "../state/config.atoms";
+import { changeGameKeyForConfig } from "../state/thunks";
+import { ConfigList } from "./config-select";
 
 export function ConfigPage() {
   const initialState = useLastConfigSelected() || null;
@@ -28,7 +29,7 @@ export function ConfigPage() {
         <FormattedMessage id="controls.drawerTitle" />
       </h1>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 5fr" }}>
-        <ConfigSelect selectedId={configId} onChange={setNextConfig} asList />
+        <ConfigList selectedId={configId} onChange={setNextConfig} />
         <ConfigIdGate configId={configId}>
           <div style={{ maxWidth: "30em" }}>
             <ConfigCoreFields configId={configId} />
@@ -87,7 +88,9 @@ function ConfigCoreFields({ configId }: { configId: string | null }) {
         <GameDataSelect
           fill
           value={gameKey || undefined}
-          onGameSelect={(newGame) => updateConfig({ gameKey: newGame })}
+          onGameSelect={(newGame) =>
+            dispatch(changeGameKeyForConfig(configId, newGame))
+          }
         />
       </FormGroup>
     </div>

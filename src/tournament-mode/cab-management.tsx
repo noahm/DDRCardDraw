@@ -29,6 +29,7 @@ import { copyPlainTextToClipboard } from "../utils/share";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { playerNameByIndex } from "../models/Drawing";
+import { drawingsSlice } from "../state/drawings.slice";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
@@ -200,18 +201,18 @@ const listFormatter = new Intl.ListFormat(detectedLanguage, {
 function CurrentMatch(props: { cab: CabInfo }) {
   const dispatch = useAppDispatch();
   const removeCab = useCallback(
-    () =>
-      dispatch(
-        eventSlice.actions.assignMatchToCab({
-          cabId: props.cab.id,
-          matchId: null,
-        }),
-      ),
+    () => dispatch(eventSlice.actions.clearCabAssignment(props.cab.id)),
     [dispatch, props.cab.id],
   );
   const drawing = useAppState((s) => {
     if (!props.cab.activeMatch) return null;
-    return s.drawings.entities[props.cab.activeMatch] || null;
+    if (typeof props.cab.activeMatch === "string") {
+      return s.drawings.entities[props.cab.activeMatch];
+    }
+    return drawingsSlice.selectors.selectMergedByCompoundId(
+      s,
+      props.cab.activeMatch,
+    );
   });
   const setMainTab = useSetAtom(mainTabAtom);
 
@@ -240,6 +241,8 @@ function CurrentMatch(props: { cab: CabInfo }) {
   const filledPlayers = drawing.playerDisplayOrder.map((pIdx, idx) =>
     playerNameByIndex(drawing.meta, pIdx, `Player ${idx + 1}`),
   );
+  const assignmentType =
+    typeof props.cab.activeMatch === "string" ? "match" : "set";
   return (
     <Card
       elevation={2}
@@ -255,7 +258,9 @@ function CurrentMatch(props: { cab: CabInfo }) {
         style={{ position: "absolute", right: "0.5em", top: "0.5em" }}
         onClick={removeCab}
       />
-      <h3>{drawing.meta.title}</h3>
+      <h3>
+        {drawing.meta.title} ({assignmentType})
+      </h3>
       <p>{listFormatter.format(filledPlayers)}</p>
     </Card>
   );
