@@ -1,6 +1,6 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useCallback, useMemo, useState } from "react";
+import { type JSX, useCallback, useMemo, useState } from "react";
 import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {

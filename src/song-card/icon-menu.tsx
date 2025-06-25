@@ -11,6 +11,7 @@ import {
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
 import { playerNameByIndex } from "../models/Drawing";
+import { JSX } from "react";
 
 interface Props {
   onStartPocketPick?: (p: number) => void;

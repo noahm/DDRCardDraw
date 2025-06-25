@@ -1,6 +1,6 @@
 import { MenuItem } from "@blueprintjs/core";
 import { ItemPredicate, ItemRenderer } from "@blueprintjs/select";
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 import FuzzySearch from "fuzzy-search";
 import { Delete } from "@blueprintjs/icons";
 

@@ -1308,12 +1308,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.0.0":
   version: 7.24.8
   resolution: "@babel/runtime@npm:7.24.8"
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
   checksum: 10/e6f335e472a8a337379effc15815dd0eddf6a7d0c00b50deb4f9e9585819b45431d0ff3c2d3d0fa58c227a9b04dcc4a85e7245fb57493adb2863b5208c769cbd
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
+  version: 7.24.4
+  resolution: "@babel/runtime@npm:7.24.4"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10/8ec8ce2c145bc7e31dd39ab66df124f357f65c11489aefacb30f431bae913b9aaa66aa5efe5321ea2bf8878af3fcee338c87e7599519a952e3a6f83aa1b03308
   languageName: node
   linkType: hard
 
@@ -1362,133 +1371,110 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blueprintjs/core@npm:5.18.0, @blueprintjs/core@npm:^5.18.0":
-  version: 5.18.0
-  resolution: "@blueprintjs/core@npm:5.18.0"
+"@blueprintjs/core@npm:6.0.0, @blueprintjs/core@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/core@npm:6.0.0"
   dependencies:
     "@blueprintjs/colors": "npm:^5.1.8"
-    "@blueprintjs/icons": "npm:^5.21.0"
+    "@blueprintjs/icons": "npm:^6.0.0"
     "@popperjs/core": "npm:^2.11.8"
     classnames: "npm:^2.3.1"
     normalize.css: "npm:^8.0.1"
     react-popper: "npm:^2.3.0"
     react-transition-group: "npm:^4.4.5"
-    react-uid: "npm:^2.3.3"
     tslib: "npm:~2.6.2"
     use-sync-external-store: "npm:^1.2.0"
   peerDependencies:
-    "@types/react": ^16.14.41 || 17 || 18
-    react: ^16.8 || 17 || 18
-    react-dom: ^16.8 || 17 || 18
+    "@types/react": 18
+    react: 18
+    react-dom: 18
   peerDependenciesMeta:
     "@types/react":
       optional: true
   bin:
     upgrade-blueprint-2.0.0-rename: scripts/upgrade-blueprint-2.0.0-rename.sh
     upgrade-blueprint-3.0.0-rename: scripts/upgrade-blueprint-3.0.0-rename.sh
-  checksum: 10/1357fd752d01dc53dd54a81fdb180ee3167956281b07add806144ecb5e66eead3fd1a1ecb517ee48c9c95e1808052076c8e8774f92ed155cac533ff6ce2705a3
+  checksum: 10/0bfcec31ab5aa0f697cc7dea24868447f6b6b9a78b1f8f8ba053a7a76c3320e9b2dd46bc4eeb05fdbe671604f39e462fe7691a6b4904c22ee9d7e83688c8fc19
   languageName: node
   linkType: hard
 
-"@blueprintjs/datetime2@npm:2.3.31":
-  version: 2.3.31
-  resolution: "@blueprintjs/datetime2@npm:2.3.31"
+"@blueprintjs/datetime@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/datetime@npm:6.0.0"
   dependencies:
-    "@blueprintjs/core": "npm:^5.18.0"
-    "@blueprintjs/datetime": "npm:^5.3.31"
-    "@blueprintjs/icons": "npm:^5.21.0"
+    "@blueprintjs/core": "npm:^6.0.0"
+    "@blueprintjs/icons": "npm:^6.0.0"
+    "@blueprintjs/select": "npm:^6.0.0"
     classnames: "npm:^2.3.1"
     date-fns: "npm:^2.28.0"
+    date-fns-tz: "npm:^2.0.0"
     react-day-picker: "npm:^8.10.0"
     react-innertext: "npm:^1.1.5"
     tslib: "npm:~2.6.2"
   peerDependencies:
-    "@types/react": ^16.14.41 || 17 || 18
-    react: ^16.8 || 17 || 18
-    react-dom: ^16.8 || 17 || 18
+    "@types/react": 18
+    react: 18
+    react-dom: 18
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/5bc5bbfe94f29b69780f39620711192f859293f403af9e796291977f177578040c7af3b01fbcde789872662c7c8d53a08426bd60b60bce102ddafc2a8d449a7b
+  checksum: 10/9d6264645d03b1045d6a8a2f7f54ec5cb40a54d0300ba449b9b9e5bf984c706451e55d29847523804063a7aa43d53abc08d952f5e9c6dcbfcdd7c07875415976
   languageName: node
   linkType: hard
 
-"@blueprintjs/datetime@npm:^5.3.31":
-  version: 5.3.31
-  resolution: "@blueprintjs/datetime@npm:5.3.31"
-  dependencies:
-    "@blueprintjs/core": "npm:^5.18.0"
-    "@blueprintjs/icons": "npm:^5.21.0"
-    "@blueprintjs/select": "npm:^5.3.19"
-    classnames: "npm:^2.3.1"
-    date-fns: "npm:^2.28.0"
-    date-fns-tz: "npm:^2.0.0"
-    react-day-picker: "npm:7.4.9"
-    tslib: "npm:~2.6.2"
-  peerDependencies:
-    "@types/react": ^16.14.41 || 17
-    react: ^16.8 || 17
-    react-dom: ^16.8 || 17
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 10/a7bc7de9046626b904b2dd8c2bfb582cb4597712ea3e7b12af92b1955eff5cf78c271685ae9432e605cc8cf32804b5d3f9a1c9a67aaeeee6770f14af8089e8d5
-  languageName: node
-  linkType: hard
-
-"@blueprintjs/icons@npm:5.21.0, @blueprintjs/icons@npm:^5.21.0":
-  version: 5.21.0
-  resolution: "@blueprintjs/icons@npm:5.21.0"
+"@blueprintjs/icons@npm:6.0.0, @blueprintjs/icons@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/icons@npm:6.0.0"
   dependencies:
     change-case: "npm:^4.1.2"
     classnames: "npm:^2.3.1"
     tslib: "npm:~2.6.2"
   peerDependencies:
-    "@types/react": ^16.14.41 || 17 || 18
-    react: ^16.8 || 17 || 18
-    react-dom: ^16.8 || 17 || 18
+    "@types/react": 18
+    react: 18
+    react-dom: 18
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/d8bde81dac2f7a365cae89772e153bc70fcc3893e2872b0a519e50912890990ad4a31fd09d83c1cd4bc315d28a663d2ebfabb04888c0c7d11538430686dfb7ac
+  checksum: 10/2fe412c430ad56bc1529416170cce0b5121e67b410ac277f89947bcf0d71a06e9ad0c398e50fe0abfe0fd7b1a52e0dd3497296b9c6349b4f209217c337840350
   languageName: node
   linkType: hard
 
-"@blueprintjs/select@npm:5.3.19, @blueprintjs/select@npm:^5.3.19":
-  version: 5.3.19
-  resolution: "@blueprintjs/select@npm:5.3.19"
+"@blueprintjs/select@npm:6.0.0, @blueprintjs/select@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/select@npm:6.0.0"
   dependencies:
-    "@blueprintjs/core": "npm:^5.18.0"
-    "@blueprintjs/icons": "npm:^5.21.0"
+    "@blueprintjs/core": "npm:^6.0.0"
+    "@blueprintjs/icons": "npm:^6.0.0"
     classnames: "npm:^2.3.1"
     tslib: "npm:~2.6.2"
   peerDependencies:
-    "@types/react": ^16.14.41 || 17 || 18
-    react: ^16.8 || 17 || 18
-    react-dom: ^16.8 || 17 || 18
+    "@types/react": 18
+    react: 18
+    react-dom: 18
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/b455c2960a5a468c8a443f46e6316cbcc44afd516bbfb354f77793519d6dbf2facc6f0535f49afc0d5bdf899b2932d1a85fc4e9684f5a60eadebe480614ad701
+  checksum: 10/b4bce6e925673cdd6cebbb30dbb73d9bca974182610344512e456d959dfc5c6083d2053b4930f137f9e246bc8bc538e886ffa571ee89ebc7bdf00ac09d0f4080
   languageName: node
   linkType: hard
 
-"@blueprintjs/table@npm:5.3.13":
-  version: 5.3.13
-  resolution: "@blueprintjs/table@npm:5.3.13"
+"@blueprintjs/table@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/table@npm:6.0.0"
   dependencies:
-    "@blueprintjs/core": "npm:^5.18.0"
+    "@blueprintjs/core": "npm:^6.0.0"
     classnames: "npm:^2.3.1"
     react-innertext: "npm:^1.1.5"
     tslib: "npm:~2.6.2"
   peerDependencies:
-    "@types/react": ^16.14.41 || 17 || 18
-    react: ^16.8 || 17 || 18
-    react-dom: ^16.8 || 17 || 18
+    "@types/react": 18
+    react: 18
+    react-dom: 18
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/6fe25b4586657af5ef476f9045b9905d666b143eb4e80ade87a8f8b32c94d94f54b9eed58d8b2431911681fb46021a93d6443eabb06373680ee59699dbb60769
+  checksum: 10/3d1df1cb01cbf56446f63e871d25cd46651ebf56ae45969f4ef7b219fd10f1985a71e633b7e9dbd228d7c32e7903a03da4cfda8d11864413a6b5e830b7d7a0f6
   languageName: node
   linkType: hard
 
@@ -3116,10 +3102,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/resolve-uri@npm:^3.0.3, @jridgewell/resolve-uri@npm:^3.1.0":
+"@jridgewell/resolve-uri@npm:^3.0.3":
   version: 3.1.2
   resolution: "@jridgewell/resolve-uri@npm:3.1.2"
   checksum: 10/97106439d750a409c22c8bff822d648f6a71f3aa9bc8e5129efdc36343cd3096ddc4eeb1c62d2fe48e9bdd4db37b05d4646a17114ecebd3bbcacfa2de51c3c1d
+  languageName: node
+  linkType: hard
+
+"@jridgewell/resolve-uri@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "@jridgewell/resolve-uri@npm:3.1.1"
+  checksum: 10/64d59df8ae1a4e74315eb1b61e012f1c7bc8aac47a3a1e683f6fe7008eab07bc512a742b7aa7c0405685d1421206de58c9c2e6adbfe23832f8bd69408ffc183e
   languageName: node
   linkType: hard
 
@@ -3798,13 +3791,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*":
-  version: 15.7.11
-  resolution: "@types/prop-types@npm:15.7.11"
-  checksum: 10/7519ff11d06fbf6b275029fe03fff9ec377b4cb6e864cac34d87d7146c7f5a7560fd164bdc1d2dbe00b60c43713631251af1fd3d34d46c69cd354602bc0c7c54
-  languageName: node
-  linkType: hard
-
 "@types/qs@npm:*":
   version: 6.9.11
   resolution: "@types/qs@npm:6.9.11"
@@ -3819,22 +3805,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.3.0":
-  version: 18.3.0
-  resolution: "@types/react-dom@npm:18.3.0"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 10/6ff53f5a7b7fba952a68e114d3b542ebdc1e87a794234785ebab0bcd9bde7fb4885f21ebaf93d26dc0a1b5b93287f42cad68b78ae04dddf6b20da7aceff0beaf
+"@types/react-dom@npm:^19.0.0":
+  version: 19.1.6
+  resolution: "@types/react-dom@npm:19.1.6"
+  peerDependencies:
+    "@types/react": ^19.0.0
+  checksum: 10/b5b20b7f0797f34c5a11915b74dcf8b3b7a9da9fea90279975ce6f150ca5d31bb069dbb0838638a5e9e168098aa4bb4a6f61d078efa1bbb55d7f0bdfe47bb142
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:16 || 17 || 18 || 19, @types/react@npm:^18.3.3":
-  version: 18.3.3
-  resolution: "@types/react@npm:18.3.3"
+"@types/react@npm:*, @types/react@npm:16 || 17 || 18 || 19, @types/react@npm:^19.0.0":
+  version: 19.1.8
+  resolution: "@types/react@npm:19.1.8"
   dependencies:
-    "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/68e203b7f1f91d6cf21f33fc7af9d6d228035a26c83f514981e54aa3da695d0ec6af10c277c6336de1dd76c4adbe9563f3a21f80c4462000f41e5f370b46e96c
+  checksum: 10/a3e6fe0f60f22828ef887f30993aa147b71532d7b1219dd00d246277eb7a9ca01ec533096237fa21ca1bccb3653373b4e8e59e5ae59f9c793058384bbc1f4d5c
   languageName: node
   linkType: hard
 
@@ -3907,12 +3892,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.0.0, @types/ws@npm:^8.5.10":
+"@types/ws@npm:^8.0.0":
   version: 8.5.11
   resolution: "@types/ws@npm:8.5.11"
   dependencies:
     "@types/node": "npm:*"
   checksum: 10/950d13b762fc7c092a0fc1450c41229a1d41abb93cb72251068885bd46fa4bbcf461c00df2e77de3f7a547371998b650a720ed90417562af0772b14a8a009dec
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.10":
+  version: 8.5.10
+  resolution: "@types/ws@npm:8.5.10"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10/9b414dc5e0b6c6f1ea4b1635b3568c58707357f68076df9e7cd33194747b7d1716d5189c0dbdd68c8d2521b148e88184cf881bac7429eb0e5c989b001539ed31
   languageName: node
   linkType: hard
 
@@ -6086,11 +6080,11 @@ __metadata:
     "@babel/plugin-transform-react-jsx-source": "npm:7.25.9"
     "@babel/preset-env": "npm:7.26.9"
     "@babel/preset-typescript": "npm:7.27.0"
-    "@blueprintjs/core": "npm:5.18.0"
-    "@blueprintjs/datetime2": "npm:2.3.31"
-    "@blueprintjs/icons": "npm:5.21.0"
-    "@blueprintjs/select": "npm:5.3.19"
-    "@blueprintjs/table": "npm:5.3.13"
+    "@blueprintjs/core": "npm:6.0.0"
+    "@blueprintjs/datetime": "npm:6.0.0"
+    "@blueprintjs/icons": "npm:6.0.0"
+    "@blueprintjs/select": "npm:6.0.0"
+    "@blueprintjs/table": "npm:6.0.0"
     "@graphql-codegen/cli": "npm:5.0.3"
     "@graphql-codegen/client-preset": "npm:4.8.0"
     "@lcdp/offline-plugin": "npm:5.1.1"
@@ -6103,8 +6097,8 @@ __metadata:
     "@types/jsdom": "npm:21.1.7"
     "@types/node": "npm:22.14.1"
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch"
-    "@types/react": "npm:^18.3.3"
-    "@types/react-dom": "npm:^18.3.0"
+    "@types/react": "npm:^19.0.0"
+    "@types/react-dom": "npm:^19.0.0"
     "@urql/core": "npm:^5.1.1"
     "@urql/exchange-graphcache": "npm:^7.2.3"
     autoprefixer: "npm:10.4.21"
@@ -6154,9 +6148,9 @@ __metadata:
     postcss: "npm:8.5.3"
     postcss-loader: "npm:8.1.1"
     prettier: "npm:^3.3.3"
-    react: "npm:18.3.1"
-    react-dom: "npm:18.3.1"
-    react-error-boundary: "npm:5.0.0"
+    react: "npm:19.1.0"
+    react-dom: "npm:19.1.0"
+    react-error-boundary: "npm:6.0.0"
     react-intl: "npm:7.1.11"
     react-redux: "npm:^9.2.0"
     react-refresh: "npm:0.17.0"
@@ -9118,12 +9112,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.17.1, jiti@npm:^1.20.0":
+"jiti@npm:^1.17.1":
   version: 1.21.6
   resolution: "jiti@npm:1.21.6"
   bin:
     jiti: bin/jiti.js
   checksum: 10/289b124cea411c130a14ffe88e3d38376ab44b6695616dfa0a1f32176a8f20ec90cdd6d2b9d81450fc6467cfa4d865f04f49b98452bff0f812bc400fd0ae78d6
+  languageName: node
+  linkType: hard
+
+"jiti@npm:^1.20.0":
+  version: 1.21.0
+  resolution: "jiti@npm:1.21.0"
+  bin:
+    jiti: bin/jiti.js
+  checksum: 10/005a0239e50381b5c9919f59dbab86128367bd64872f3376dbbde54b6523f41bd134bf22909e2a509e38fd87e1c22125ca255b9b6b53e7df0fedd23f737334cc
   languageName: node
   linkType: hard
 
@@ -9515,7 +9518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -11526,17 +11529,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-day-picker@npm:7.4.9":
-  version: 7.4.9
-  resolution: "react-day-picker@npm:7.4.9"
-  dependencies:
-    prop-types: "npm:^15.6.2"
-  peerDependencies:
-    react: ~0.13.x || ~0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10/5c600948d470ca19e6a0039acf2b32b928ef292fa58dd24deef6ea209984214d80e7e1b4de4bcdd1e36b6560cd7d554a5b933d7d7389000afbddec7b400ecd80
-  languageName: node
-  linkType: hard
-
 "react-day-picker@npm:^8.10.0":
   version: 8.10.0
   resolution: "react-day-picker@npm:8.10.0"
@@ -11547,26 +11539,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.3.1":
-  version: 18.3.1
-  resolution: "react-dom@npm:18.3.1"
+"react-dom@npm:19.1.0":
+  version: 19.1.0
+  resolution: "react-dom@npm:19.1.0"
   dependencies:
-    loose-envify: "npm:^1.1.0"
-    scheduler: "npm:^0.23.2"
+    scheduler: "npm:^0.26.0"
   peerDependencies:
-    react: ^18.3.1
-  checksum: 10/3f4b73a3aa083091173b29812b10394dd06f4ac06aff410b74702cfb3aa29d7b0ced208aab92d5272919b612e5cda21aeb1d54191848cf6e46e9e354f3541f81
+    react: ^19.1.0
+  checksum: 10/c5b58605862c7b0bb044416b01c73647bb8e89717fb5d7a2c279b11815fb7b49b619fe685c404e59f55eb52c66831236cc565c25ee1c2d042739f4a2cc538aa2
   languageName: node
   linkType: hard
 
-"react-error-boundary@npm:5.0.0":
-  version: 5.0.0
-  resolution: "react-error-boundary@npm:5.0.0"
+"react-error-boundary@npm:6.0.0":
+  version: 6.0.0
+  resolution: "react-error-boundary@npm:6.0.0"
   dependencies:
     "@babel/runtime": "npm:^7.12.5"
   peerDependencies:
     react: ">=16.13.1"
-  checksum: 10/8b68de3441bd3d50a2c8433f9c921ff02c691e920e268972ae002087b5080e38435c6f9b2198241683b7f4c6a6ed2f53bf593b83c42946f14daa00322b3c2909
+  checksum: 10/3de587be3e72bd3e32b3bd7769d09354b27ed94be580f33a80a85ddc8c1d1ed1cad90199bc24b22a7911ef1ebacc0163c664b2c395f7c37ffd493f59e6e5c9f9
   languageName: node
   linkType: hard
 
@@ -11695,27 +11686,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-uid@npm:^2.3.3":
-  version: 2.3.3
-  resolution: "react-uid@npm:2.3.3"
-  dependencies:
-    tslib: "npm:^2.0.0"
-  peerDependencies:
-    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 10/c026f9a5cda9e1cb5fa7d8327c6661cdd05f818f20387563b4ca830f8895199dbdf50e41a26c8c3e00e1a440f512c84fb5a6222e55c6f1259f2c392efa8a0028
-  languageName: node
-  linkType: hard
-
-"react@npm:18.3.1":
-  version: 18.3.1
-  resolution: "react@npm:18.3.1"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10/261137d3f3993eaa2368a83110466fc0e558bc2c7f7ae7ca52d94f03aac945f45146bd85e5f481044db1758a1dbb57879e2fcdd33924e2dde1bdc550ce73f7bf
+"react@npm:19.1.0":
+  version: 19.1.0
+  resolution: "react@npm:19.1.0"
+  checksum: 10/d0180689826fd9de87e839c365f6f361c561daea397d61d724687cae88f432a307d1c0f53a0ee95ddbe3352c10dac41d7ff1ad85530fb24951b27a39e5398db4
   languageName: node
   linkType: hard
 
@@ -12237,12 +12211,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.2":
-  version: 0.23.2
-  resolution: "scheduler@npm:0.23.2"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10/e8d68b89d18d5b028223edf090092846868a765a591944760942b77ea1f69b17235f7e956696efbb62c8130ab90af7e0949bfb8eba7896335507317236966bc9
+"scheduler@npm:^0.26.0":
+  version: 0.26.0
+  resolution: "scheduler@npm:0.26.0"
+  checksum: 10/1ecf2e5d7de1a7a132796834afe14a2d589ba7e437615bd8c06f3e0786a3ac3434655e67aac8755d9b14e05754c177e49c064261de2673aaa3c926bc98caa002
   languageName: node
   linkType: hard
 
@@ -13412,10 +13384,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:~2.6.0, tslib@npm:~2.6.2":
+"tslib@npm:~2.6.0":
   version: 2.6.3
   resolution: "tslib@npm:2.6.3"
   checksum: 10/52109bb681f8133a2e58142f11a50e05476de4f075ca906d13b596ae5f7f12d30c482feb0bff167ae01cfc84c5803e575a307d47938999246f5a49d174fc558c
+  languageName: node
+  linkType: hard
+
+"tslib@npm:~2.6.2":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: 10/bd26c22d36736513980091a1e356378e8b662ded04204453d353a7f34a4c21ed0afc59b5f90719d4ba756e581a162ecbf93118dc9c6be5acf70aa309188166ca
   languageName: node
   linkType: hard
 

@@ -25,7 +25,7 @@ import {
 } from "@blueprintjs/icons";
 import { useAtomValue } from "jotai";
 import { domToPng } from "modern-screenshot";
-import { useState, lazy } from "react";
+import { useState, lazy, JSX } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";

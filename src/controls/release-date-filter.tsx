@@ -1,5 +1,5 @@
 import { FormGroup } from "@blueprintjs/core";
-import { DateInput3 } from "@blueprintjs/datetime2";
+import { DateInput } from "@blueprintjs/datetime";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
 import { detectedLanguage } from "../utils";
@@ -20,7 +20,7 @@ export default function ReleaseDateFilterControl(props: {
 
   return (
     <FormGroup label={t("controls.releaseHeader")}>
-      <DateInput3
+      <DateInput
         dateFnsFormat={dateFormat}
         locale={detectedLanguage}
         value={cutoffDate || props.mostRecentRelease}
