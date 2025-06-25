@@ -91,7 +91,7 @@ export function RemotePeerControls() {
               </Tag>
             ))
           ) : (
-            <span className="bp5-text-disabled">
+            <span className="bp6-text-disabled">
               <HeartBroken /> No connections
             </span>
           )}

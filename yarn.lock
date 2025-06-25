@@ -1256,27 +1256,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blueprintjs/datetime2@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@blueprintjs/datetime2@npm:3.0.0"
-  dependencies:
-    "@blueprintjs/core": "npm:^6.0.0"
-    "@blueprintjs/datetime": "npm:^6.0.0"
-    date-fns: "npm:^2.28.0"
-    react-day-picker: "npm:^8.10.0"
-    tslib: "npm:~2.6.2"
-  peerDependencies:
-    "@types/react": 18
-    react: 18
-    react-dom: 18
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 10/ac603b2fdab5043047adada1719ce293bff48c564a9ae4f94e0c579430fdefa61d296e99f3501af6ba84af99baab42a79206153ef8439239a01b6f19d9085757
-  languageName: node
-  linkType: hard
-
-"@blueprintjs/datetime@npm:^6.0.0":
+"@blueprintjs/datetime@npm:6.0.0":
   version: 6.0.0
   resolution: "@blueprintjs/datetime@npm:6.0.0"
   dependencies:
@@ -4527,7 +4507,7 @@ __metadata:
     "@babel/preset-env": "npm:7.26.9"
     "@babel/preset-typescript": "npm:7.27.0"
     "@blueprintjs/core": "npm:6.0.0"
-    "@blueprintjs/datetime2": "npm:3.0.0"
+    "@blueprintjs/datetime": "npm:6.0.0"
     "@blueprintjs/icons": "npm:6.0.0"
     "@blueprintjs/select": "npm:6.0.0"
     "@lcdp/offline-plugin": "npm:5.1.1"
