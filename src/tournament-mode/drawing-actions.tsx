@@ -26,6 +26,7 @@ import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
 import { useIntl } from "../hooks/useIntl";
+import { JSX } from "react";
 
 const DEFAULT_FILENAME = "card-draw.png";
 

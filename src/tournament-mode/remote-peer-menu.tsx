@@ -10,6 +10,7 @@ import { Clipboard, Duplicate, HeartBroken } from "@blueprintjs/icons";
 import { InputButtonPair } from "../controls/input-button-pair";
 import { toaster } from "../toaster";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
+import { JSX } from "react";
 
 export function RemotePeerControls() {
   const peers = useRemotePeers();
