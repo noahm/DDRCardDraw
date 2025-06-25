@@ -1229,7 +1229,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blueprintjs/core@npm:5.18.0, @blueprintjs/core@npm:^5.18.0":
+"@blueprintjs/core@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/core@npm:6.0.0"
+  dependencies:
+    "@blueprintjs/colors": "npm:^5.1.8"
+    "@blueprintjs/icons": "npm:^6.0.0"
+    "@popperjs/core": "npm:^2.11.8"
+    classnames: "npm:^2.3.1"
+    normalize.css: "npm:^8.0.1"
+    react-popper: "npm:^2.3.0"
+    react-transition-group: "npm:^4.4.5"
+    tslib: "npm:~2.6.2"
+    use-sync-external-store: "npm:^1.2.0"
+  peerDependencies:
+    "@types/react": 18
+    react: 18
+    react-dom: 18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  bin:
+    upgrade-blueprint-2.0.0-rename: scripts/upgrade-blueprint-2.0.0-rename.sh
+    upgrade-blueprint-3.0.0-rename: scripts/upgrade-blueprint-3.0.0-rename.sh
+  checksum: 10/0bfcec31ab5aa0f697cc7dea24868447f6b6b9a78b1f8f8ba053a7a76c3320e9b2dd46bc4eeb05fdbe671604f39e462fe7691a6b4904c22ee9d7e83688c8fc19
+  languageName: node
+  linkType: hard
+
+"@blueprintjs/core@npm:^5.18.0":
   version: 5.18.0
   resolution: "@blueprintjs/core@npm:5.18.0"
   dependencies:
@@ -1318,6 +1345,24 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10/d8bde81dac2f7a365cae89772e153bc70fcc3893e2872b0a519e50912890990ad4a31fd09d83c1cd4bc315d28a663d2ebfabb04888c0c7d11538430686dfb7ac
+  languageName: node
+  linkType: hard
+
+"@blueprintjs/icons@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@blueprintjs/icons@npm:6.0.0"
+  dependencies:
+    change-case: "npm:^4.1.2"
+    classnames: "npm:^2.3.1"
+    tslib: "npm:~2.6.2"
+  peerDependencies:
+    "@types/react": 18
+    react: 18
+    react-dom: 18
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/2fe412c430ad56bc1529416170cce0b5121e67b410ac277f89947bcf0d71a06e9ad0c398e50fe0abfe0fd7b1a52e0dd3497296b9c6349b4f209217c337840350
   languageName: node
   linkType: hard
 
@@ -4529,7 +4574,7 @@ __metadata:
     "@babel/plugin-transform-react-jsx-source": "npm:7.25.9"
     "@babel/preset-env": "npm:7.26.9"
     "@babel/preset-typescript": "npm:7.27.0"
-    "@blueprintjs/core": "npm:5.18.0"
+    "@blueprintjs/core": "npm:6.0.0"
     "@blueprintjs/datetime2": "npm:2.3.31"
     "@blueprintjs/icons": "npm:5.21.0"
     "@blueprintjs/select": "npm:5.3.19"
