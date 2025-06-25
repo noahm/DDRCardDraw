@@ -1,5 +1,11 @@
 import { ControlGroup, InputGroup, Button } from "@blueprintjs/core";
-import { InputHTMLAttributes, ReactNode, useCallback, useRef } from "react";
+import {
+  InputHTMLAttributes,
+  JSX,
+  ReactNode,
+  useCallback,
+  useRef,
+} from "react";
 
 interface Props {
   placeholder?: string;
