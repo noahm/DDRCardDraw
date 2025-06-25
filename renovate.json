@@ -11,6 +11,10 @@
     {
       "matchPackageNames": ["@blueprintjs/**"],
       "groupName": "blueprint"
+    },
+    {
+      "matchPackageNames": ["@babel/**"],
+      "groupName": "babel"
     }
   ]
 }
