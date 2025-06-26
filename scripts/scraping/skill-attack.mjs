@@ -1,5 +1,5 @@
 // @ts-check
-import he from "he";
+import { decode } from "html-entities";
 import { TextDecoderStream, ReadableStream } from "node:stream/web";
 
 const difficultyByIndex = [
@@ -54,8 +54,8 @@ export async function getSongsFromSkillAttack(log) {
     data.push({
       saHash: hash,
       saIndex: index,
-      name: he.decode(fields[9]),
-      artist: he.decode(fields[10]),
+      name: decode(fields[9]),
+      artist: decode(fields[10]),
       charts,
     });
   }

@@ -64,9 +64,6 @@ module.exports = function (env = {}, argv = {}) {
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".json"],
-      alias: {
-        peerjs$: resolve(__dirname, "node_modules/peerjs/dist/peerjs.esm.js"),
-      },
     },
     module: {
       rules: [
