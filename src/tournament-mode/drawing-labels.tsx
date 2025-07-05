@@ -1,43 +1,75 @@
-import { useCallback } from "react";
-import { useConfigState } from "../config-state";
+import { useCallback, Fragment } from "react";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
-import { AutoCompleteSelect, RoundSelect } from "./round-select";
 import { Icon } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
+import { useAtomValue } from "jotai";
+import { showPlayerAndRoundLabels } from "../config-state";
+import { useAppDispatch } from "../state/store";
+import { drawingsSlice } from "../state/drawings.slice";
+import { getAllPlayers } from "../models/Drawing";
+import { CountingSet } from "../utils/counting-set";
 
-export function SetLabels() {
-  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
-  const players = useDrawing((s) => s.players);
+export function MatchLabels() {
+  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+  const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
+  const meta = useDrawing((d) => d.meta);
+  const winners = useDrawing((d) => d.winners);
   if (!showLabels) {
     return null;
   }
 
+  const hideWins = meta.type === "startgg" && meta.subtype === "gauntlet";
+  let winsPerPlayer: CountingSet<number> | undefined;
+  if (!hideWins) {
+    winsPerPlayer = new CountingSet<number>();
+    for (const pIdx of Object.values(winners)) {
+      if (pIdx === null) {
+        continue;
+      }
+      winsPerPlayer.add(pIdx);
+    }
+  }
+
+  const allPlayers = getAllPlayers({ meta, playerDisplayOrder });
+
   return (
     <div className={styles.headers}>
-      <div className={styles.title}>
-        <RoundSelect />
-      </div>
+      <div className={styles.title}>{meta.title}</div>
       <div className={styles.players}>
-        {players.map((p, idx) => (
-          <PlayerLabel
-            key={idx}
-            placeholder={`Player ${idx + 1}`}
-            playerIndex={idx + 1}
-          />
-        ))}
+        {allPlayers.map((name, idx) => {
+          const winCount = winsPerPlayer ? (
+            <> ({winsPerPlayer.get(playerDisplayOrder[idx])})</>
+          ) : null;
+          const ret = (
+            <span key={idx}>
+              {name}
+              {winCount}
+            </span>
+          );
+          if (allPlayers.length === 2 && idx === 0) {
+            return (
+              <Fragment key={idx}>
+                {ret}
+                <Versus />
+              </Fragment>
+            );
+          }
+          return ret;
+        })}
       </div>
     </div>
   );
 }
 
 function Versus() {
-  const players = useDrawing((s) => s.players);
-  const ipp = useDrawing((s) => s.incrementPriorityPlayer);
+  const dispatch = useAppDispatch();
+  const parentId = useDrawing((s) => s.id);
+  const ipp = useCallback(
+    () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(parentId)),
+    [dispatch, parentId],
+  );
   const priorityPlayer = useDrawing((s) => s.priorityPlayer);
-  if (players.length !== 2) {
-    return null;
-  }
   return (
     <div className={styles.versus} onClick={ipp}>
       <Icon
@@ -63,52 +95,4 @@ function Versus() {
       />
     </div>
   );
-}
-
-function PlayerLabel({
-  playerIndex,
-  placeholder,
-}: {
-  playerIndex: number;
-  placeholder: string;
-}) {
-  const updateDrawing = useDrawing((s) => s.updateDrawing);
-  const value = useDrawing((s) => s.players[playerIndex - 1] || null);
-  const playerNames = useConfigState((s) => s.playerNames);
-  const updateConfig = useConfigState((s) => s.update);
-  const handleChange = useCallback(
-    (value: string) => {
-      updateDrawing((drawing) => {
-        const prev = drawing.players.slice();
-        prev[playerIndex - 1] = value;
-        return { players: prev };
-      });
-      if (!playerNames.includes(value)) {
-        updateConfig((prev) => {
-          const nextNames = prev.playerNames.slice();
-          nextNames.push(value);
-          return { playerNames: nextNames };
-        });
-      }
-    },
-    [updateDrawing, playerIndex, playerNames, updateConfig],
-  );
-  const ret = (
-    <AutoCompleteSelect
-      value={value}
-      itemList={playerNames}
-      placeholder={placeholder}
-      onSelect={handleChange}
-      size="large"
-    />
-  );
-  if (playerIndex === 1) {
-    return (
-      <>
-        {ret}
-        <Versus />
-      </>
-    );
-  }
-  return ret;
 }
