@@ -77,7 +77,10 @@ function styleAndDiffFor(idx) {
 function chartKeyFor(id, diffClass, style) {
   return `${id}/${diffIdxFor(diffClass, style)}`;
 }
-import { ALL_SONG_DATA as sanbaiData } from "./scraping/songdata.mjs";
+import {
+  ALL_SONG_DATA as sanbaiData,
+  SONG_DATA_LAST_UPDATED_unixms,
+} from "./scraping/songdata.mjs";
 
 const ui = reportQueueStatusLive();
 let warnings = 0;
@@ -333,7 +336,7 @@ try {
 
   existingData.songs = sortSongs(existingData.songs);
 
-  await writeJsonData(existingData, targetFile);
+  await writeJsonData(existingData, targetFile, SONG_DATA_LAST_UPDATED_unixms);
   if (warnings) {
     ui.log.write(`Done, with ${warnings} warnings`);
   } else {
