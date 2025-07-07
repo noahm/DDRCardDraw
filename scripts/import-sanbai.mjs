@@ -1,4 +1,3 @@
-import { getDifficultyList, getSanbaiData } from "./scraping/sanbai.mjs";
 import {
   guessUrlFromName,
   getJacketFromRemySong,
@@ -27,6 +26,26 @@ const idxMap = [
   "double:expert",
   "double:challenge",
 ];
+
+/** Invalid data on 3icecream site */
+const invalidDataOnSanbai = new Map([
+  [
+    // Bloody Tears (IIDX EDITION)
+    "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6",
+    {
+      sanbaiLevel: [3, 0, 0, 0, 0, 0, 0, 0, 0],
+      actualLevel: [4, 0, 0, 0, 0, 0, 0, 0, 0],
+    },
+  ],
+  [
+    // Mermaid girl
+    "61QQi8i9Iliq66IOq1ib888b666o08O8",
+    {
+      sanbaiLevel: [0, 0, 0, 0, 0, 6, 0, 0, 0],
+      actualLevel: [0, 0, 0, 0, 0, 5, 0, 0, 0],
+    },
+  ],
+]);
 
 /**
  *
@@ -103,25 +122,17 @@ try {
   //   return ratingsLists[key];
   // }
 
-  const knownRemoved = new Set([
-    "oi6P9Oq19ooo00bDiPQ809DQQQD8qPlD", // Play Hard
-    "08QP8bOQ6OOdd11Dq81db1l8IdiDbod6", // Lesson by DJ
-  ]);
+  const knownRemoved = new Set([]);
 
   const lockFlags = {
-    10: null, //"a20+usLocked"
-    20: ["goldenLeague"],
-    60: null, //"a20+kacRegistration",
-    80: null, // a20 unlock
-    130: null, // a20 unlock
-    150: null, //"a20+extraexclusive",
-    160: null, //"a20+courseUnlock",
-    180: ["unlock"],
-    190: ["grandPrixPack"],
-    210: ["tempUnlock"],
-    220: ["tempUnlock"], // kacRegistration
-    230: ["babylonGalaxy"], // babylonGalaxy
-    240: ["tempUnlock", "goldExclusive"], // bpl3
+    20: ["goldExclusive", "tempUnlock"], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
+    190: ["grandPrixPack"], // DDR GRAND PRIX packs
+    250: ["flareRank"], // FLARE SKILL unlock
+    260: ["tempUnlock"], // MYSTICAL Re:UNION
+    270: ["worldLeague"], // WORLD LEAGUE
+    280: ["unlock"], // EXTRA SAVIOR WORLD
+    290: ["unlock"], // GALAXY BRAVE
+    300: ["platinumMembers"], // DDR PLATINUM MEMBERS
   };
 
   // let warnings = 0;
@@ -143,11 +154,12 @@ try {
   //   }
   // }
   const tasks = sanbaiData.map(async (song) => {
-    const deleted = song.deleted;
     const existingSong = existingData.songs.find(
       (s) => s.saHash === song.song_id || s.name === song.song_name,
     );
-    if (deleted || knownRemoved.has(song.song_id)) {
+
+    // Delete songs that are removed from the game
+    if (song.deleted || knownRemoved.has(song.song_id)) {
       if (existingSong) {
         ui.log.write(`Deleting removed song: ${existingSong.name}`);
         existingData.songs = existingData.songs.filter(
@@ -155,6 +167,22 @@ try {
         );
       }
       return;
+    }
+
+    // Fix invalid data
+    if (invalidDataOnSanbai.has(song.song_id)) {
+      const actual = invalidDataOnSanbai.get(song.song_id);
+      song.ratings = song.ratings.map((lvl, idx) => {
+        const actualLevel = actual.actualLevel[idx];
+        if (actualLevel && lvl !== actualLevel) {
+          ui.log.write(
+            `Fixing invalid level for ${song.song_name} (${idxMap[idx]}): ${lvl} -> ${actualLevel}`,
+          );
+          song.tiers[idx] = 1; // reset tier
+          return actualLevel;
+        }
+        return lvl;
+      });
     }
 
     const locks = song.lock_types;
@@ -168,6 +196,7 @@ try {
         songLock = locks[0];
       }
     }
+
     const charts = song.ratings
       .map((lvl, idx) => {
         const [style, diffClass] = styleAndDiffFor(idx);
