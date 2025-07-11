@@ -560,8 +560,10 @@
       ],
       "remyLink": "https://remywiki.com/321_STARS",
       "jacket": "321STARS.png",
+      "genre": "TECHNO POP",
       "saHash": "Q96bO9D61lib19IiIi0i69P80bo6q69Q",
-      "saIndex": "99"
+      "saIndex": "99",
+      "search_hint": "TECHNO POP/テクノポップ"
     },
     {
       "name": "3y3s",
@@ -627,6 +629,7 @@
       ],
       "jacket": "3y3s.jpg",
       "remyLink": "https://remywiki.com/3y3s",
+      "genre": "DANCE SPEED",
       "flags": ["unlock"],
       "search_hint": "Eyes"
     },
@@ -681,7 +684,7 @@
       ],
       "remyLink": "https://remywiki.com/50th_Memorial_Songs_-Beginning_Story-",
       "jacket": "Beginning Story.png",
-      "genre": "",
+      "genre": "ANNIVERSARY",
       "saHash": "bP10qq9dPDDqIl16lPIDDd8b00dIIP08",
       "saIndex": "838"
     },
@@ -917,7 +920,8 @@
       "jacket": "8000000.png",
       "genre": "",
       "saHash": "Dd98lDdo8Ob698d9qbO9iD0PqO19oQbI",
-      "saIndex": "666"
+      "saIndex": "666",
+      "search_hint": "八百万/やおよろず/yaoyorozu"
     },
     {
       "name": "888",
@@ -1001,7 +1005,8 @@
       "remyLink": "https://remywiki.com/888",
       "jacket": "888.png",
       "saHash": "id9oObq9P6Q6Pq6lQPqI88OP1DD8D0O1",
-      "saIndex": "336"
+      "saIndex": "336",
+      "search_hint": "はちやそば/hachiyasoba"
     },
     {
       "name": "9th Outburst",
@@ -1120,7 +1125,8 @@
       ],
       "search_hint": "IDENTITY",
       "remyLink": "https://remywiki.com/IDENTITY",
-      "jacket": "IDENTITY.jpg"
+      "jacket": "IDENTITY.jpg",
+      "genre": "FORTUNE OVERTURE"
     },
     {
       "name": "A",
@@ -1420,7 +1426,6 @@
       ],
       "remyLink": "https://remywiki.com/A_Stupid_Barber",
       "jacket": "A Stupid Barber.png",
-      "genre": "",
       "saHash": "DibQ8O0bIodbdQo8D681qlqiDqllDPql",
       "saIndex": "145"
     },
@@ -2146,7 +2151,6 @@
       ],
       "remyLink": "https://remywiki.com/Across_the_nightmare",
       "jacket": "Across the nightmare.png",
-      "genre": "",
       "saHash": "O6I9ioqii8i6I1DIb1PqOD6q0ooo8bDo",
       "saIndex": "101"
     },
@@ -2534,9 +2538,10 @@
       ],
       "remyLink": "https://remywiki.com/AFRONOVA_PRIMEVAL",
       "jacket": "AFRONOVA PRIMEVAL.png",
-      "genre": "",
+      "genre": "トライバル",
       "saHash": "18911Q6o6do9Dd1blIo6IliPd0PPb99i",
-      "saIndex": "50"
+      "saIndex": "50",
+      "search_hint": "TRIBAL/トライバル"
     },
     {
       "name": "AFTER THE GAME OF LOVE",
@@ -2651,6 +2656,7 @@
       ],
       "remyLink": "https://remywiki.com/Afterimage_d%27automne",
       "jacket": "Afterimage_d'automne.jpg",
+      "genre": "ASYMMETRY ART",
       "saHash": "blld8o09oQo80PIIoIdbP9688DIqlbdb",
       "saIndex": "894"
     },
@@ -2706,6 +2712,7 @@
       ],
       "remyLink": "https://remywiki.com/Aftermath",
       "jacket": "Aftermath.jpg",
+      "genre": "ROCK",
       "saHash": "9IQoPbOidod8I0qQ989Ql60D09I99q1Q",
       "saIndex": "1037"
     },
@@ -2960,7 +2967,7 @@
       ],
       "remyLink": "https://remywiki.com/Air",
       "jacket": "air.png",
-      "genre": "",
+      "genre": "HOUSE",
       "saHash": "il6PIiDq11dD1981dQ00918D96lPQ0iQ",
       "saIndex": "102"
     },
@@ -3163,6 +3170,7 @@
       ],
       "remyLink": "https://remywiki.com/ALBIDA",
       "jacket": "ALBIDA.jpg",
+      "genre": "HARD RENAISSANCE",
       "saHash": "Io196q006I86IllQPOb098qd1DQd60Oq",
       "saIndex": "1091"
     },
@@ -3733,9 +3741,10 @@
       ],
       "remyLink": "https://remywiki.com/Amalgamation",
       "jacket": "Amalgamation.png",
-      "genre": "",
+      "genre": "エレクトロバロック",
       "saHash": "dbD8PlibPqqdI99901obObb6odqD8qDl",
-      "saIndex": "429"
+      "saIndex": "429",
+      "search_hint": "ELECTRO BAROQUE/エレクトロバロック"
     },
     {
       "name": "Amazing Bomberman",
@@ -3843,7 +3852,8 @@
       ],
       "jacket": "Ambivalent Vermilia.jpg",
       "remyLink": "https://remywiki.com/Ambivalent_Vermilia",
-      "flags": ["unlock"]
+      "flags": ["unlock"],
+      "genre": "HARD RENAISSANCE"
     },
     {
       "name": "Angelic Jelly",
@@ -4601,7 +4611,7 @@
       ],
       "remyLink": "https://remywiki.com/Astrogazer",
       "jacket": "Astrogazer.png",
-      "genre": "",
+      "genre": "PROGRESSIVE EDM",
       "saHash": "6QdIl8odooDQ0oOQ0IObQqo1lO986PP6",
       "saIndex": "728"
     },
@@ -5030,7 +5040,8 @@
       ],
       "jacket": "BabeL ～Next Story～.jpg",
       "remyLink": "https://remywiki.com/BabeL_~Next_Story~",
-      "search_hint": "BabeL Next Story"
+      "genre": "スケールアウト",
+      "search_hint": "SCALE OUT/スケールアウト"
     },
     {
       "name": "BABY BABY GIMME YOUR LOVE",
@@ -5292,6 +5303,7 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Bad_Maniacs",
+      "genre": "INDUSTRIAL",
       "saHash": "6O9O0ooOb8O8Q6D0ldqi1O8o6891Iq86",
       "jacket": "Bad_Maniacs.jpg"
     },
@@ -5500,7 +5512,7 @@
       ],
       "remyLink": "https://remywiki.com/Baile_Le_Samba",
       "jacket": "Baile Le Samba.png",
-      "genre": "",
+      "genre": "SAMBA",
       "saHash": "lii9bbbIq08b6DIdQ16Q0QOPiOibliIO",
       "saIndex": "148"
     },
@@ -5993,7 +6005,7 @@
       ],
       "remyLink": "https://remywiki.com/BE_LOVIN",
       "jacket": "BE LOVIN.png",
-      "genre": "",
+      "genre": "HAPPY HARDCORE",
       "saHash": "P0O81Dl9Oiiid8bdOi0oqbD8DqolObbP",
       "saIndex": "105"
     },
@@ -6439,6 +6451,7 @@
       ],
       "remyLink": "https://remywiki.com/BITTER_CHOCOLATE_STRIKER",
       "jacket": "BITTER CHOCOLATE STRIKER.jpg",
+      "genre": "JUMPSTYLE",
       "saHash": "o9P816l0QQ1b9l1l6i1o6OD9bl9dP00l",
       "saIndex": "990"
     },
@@ -6948,6 +6961,7 @@
       "name": "blue anthem",
       "saHash": "bO10Q9999DQ9DDP890lQbdlIlIl6IID9",
       "artist": "OSTER project feat. 花たん",
+      "artist_translation": "OSTER project feat. HaNaTan",
       "folder": "DanceDanceRevolution World",
       "bpm": "160",
       "charts": [
@@ -8891,7 +8905,8 @@
       "jacket": "CANDY♡.png",
       "genre": "CANDY POP",
       "saHash": "1Qqo9bID18OdiI1Qb0lP9DIqIO6ldPOP",
-      "saIndex": "74"
+      "saIndex": "74",
+      "search_hint": "CANDY POP/キャンディポップ"
     },
     {
       "name": "CaptivAte～誓い～",
@@ -9886,7 +9901,8 @@
       "jacket": "CHOCOLATE PHILOSOPHY.png",
       "genre": "SWING WALTZ",
       "saHash": "ioDOIO9iP8qqPiP9io9Ib1I91OoQ0q0O",
-      "saIndex": "776"
+      "saIndex": "776",
+      "search_hint": "SWING WALTZ/スウィングワルツ"
     },
     {
       "name": "Chocolate Planet",
@@ -10909,8 +10925,10 @@
       ],
       "remyLink": "https://remywiki.com/Concertino_in_Blue",
       "jacket": "Concertino in Blue.jpg",
+      "genre": "PROGRESSIVE",
       "saHash": "qoD0olPq6qbOi6bbPllOib0q1i16iI1O",
-      "saIndex": "1106"
+      "saIndex": "1106",
+      "search_hint": "PROGRESSIVE/プログレッシブ"
     },
     {
       "name": "concon",
@@ -36426,8 +36444,10 @@
       ],
       "remyLink": "https://remywiki.com/Miracle_Moon_~L.E.D.LIGHT_STYLE_MIX~",
       "jacket": "Miracle Moon ～L.E.D.LIGHT STYLE MIX～.png",
+      "genre": "EPIC HOUSE",
       "saHash": "i9DPi1Do9qoIQid09o1oilodPlDP6doO",
-      "saIndex": "125"
+      "saIndex": "125",
+      "search_hint": "J-GARAGE POP REMIX/JガラージポップREMIX"
     },
     {
       "name": "MITOれて！いばらきっしゅだ～りん",
@@ -36578,7 +36598,7 @@
       ],
       "remyLink": "https://remywiki.com/Monkey_Business",
       "jacket": "Monkey Business.png",
-      "genre": "",
+      "genre": "HARD DANCE",
       "saHash": "bD1DbibPIq9IIlQd0OIIl0o91QI1il69",
       "saIndex": "525"
     },
@@ -36773,7 +36793,8 @@
       "jacket": "MOON.png",
       "genre": "哀愁ユーロ",
       "saHash": "lI8qIDQPD0PDOdO1d01iOq8bI98iiQ1l",
-      "saIndex": "186"
+      "saIndex": "186",
+      "search_hint": "AISYU-EURO/哀愁ユーロ"
     },
     {
       "name": "MOONSTER",
@@ -36946,6 +36967,7 @@
       ],
       "remyLink": "https://remywiki.com/MOVE!_(We_Keep_It_Movin%27)",
       "jacket": "MOVE! (We Keep It Movin').jpg",
+      "genre": "ORBITALIC ELECTRIC MUSIC",
       "saHash": "19old9dq1q9DilPQDol88d19dI96blb6",
       "saIndex": "1019"
     },
@@ -37078,7 +37100,8 @@
       "jacket": "murmur twins.png",
       "genre": "CUDDLECORE",
       "saHash": "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il",
-      "saIndex": "187"
+      "saIndex": "187",
+      "search_hint": "CUDDLECORE/カドルコア"
     },
     {
       "name": "Music In The Rhythm",
@@ -37319,6 +37342,7 @@
       ],
       "remyLink": "https://remywiki.com/MVP",
       "jacket": "MVP.jpg",
+      "genre": "HARD TRAP",
       "saHash": "bD1P1l6dDPdl0b99lPl0llD9i9blQIi1"
     },
     {
@@ -37639,6 +37663,7 @@
       ],
       "remyLink": "https://remywiki.com/Neko%2Aneko",
       "jacket": "neko-neko.png",
+      "genre": "",
       "saHash": "Po09DbIQ9QPoboQi0900lbbOqDoPbIod"
     },
     {
@@ -39759,6 +39784,7 @@
       ],
       "remyLink": "https://remywiki.com/ON-DO",
       "jacket": "ON-DO.jpg",
+      "genre": "",
       "saHash": "l6oP66ODld89Q99o0lDPP90qdbo11PPQ",
       "saIndex": "1102"
     },
@@ -39911,6 +39937,7 @@
       ],
       "remyLink": "https://remywiki.com/ONYX",
       "jacket": "ONYX.jpg",
+      "genre": "",
       "saHash": "Dl91ldlb8PODoO96OI801DP0PPl8Plqi",
       "saIndex": "1006"
     },
@@ -40020,7 +40047,7 @@
       ],
       "remyLink": "https://remywiki.com/ORCA",
       "jacket": "ORCA.png",
-      "genre": "",
+      "genre": "CETACEA HDM",
       "saHash": "99OQb9b0IQ98P6IQdPOiqi8q16o16iqP",
       "saIndex": "837"
     },
@@ -40832,6 +40859,7 @@
       ],
       "remyLink": "https://remywiki.com/Paparazzi",
       "jacket": "paparazzi.jpg",
+      "genre": "",
       "saHash": "lb01Qb1iOOIIobPO06Oob9ODilIDOQ6Q",
       "saIndex": "1018"
     },
@@ -42200,6 +42228,7 @@
       ],
       "remyLink": "https://remywiki.com/Perditus%E2%80%A0paradisus",
       "jacket": "Perditus†paradisus.jpg",
+      "genre": "ANTHEM CORE",
       "saHash": "OPbd0ldd89Ddll690qiObDld9oDdPdOi",
       "saIndex": "1110"
     },
@@ -42308,6 +42337,7 @@
       ],
       "remyLink": "https://remywiki.com/Phlox",
       "jacket": "Phlox.jpg",
+      "genre": "",
       "saHash": "1088IDQiIDl6I888OQi60l66DP6D0qOl",
       "saIndex": "1168"
     },
@@ -42456,7 +42486,8 @@
       "jacket": "Pink Rose.png",
       "genre": "HEART",
       "saHash": "O09lbd0I8D0DI08O06l6iiI0i11I1iIb",
-      "saIndex": "128"
+      "saIndex": "128",
+      "search_hint": "HEART/ハート"
     },
     {
       "name": "Plan 8",
@@ -42656,6 +42687,7 @@
       ],
       "remyLink": "https://remywiki.com/Playing_With_Fire",
       "saHash": "bOQ0dIIIilDD9Do6qIDdlObQdo01DD80",
+      "genre": "SPEED RAVE",
       "saIndex": "1184",
       "jacket": "Playing_With_Fire.jpg"
     },
@@ -42978,7 +43010,6 @@
       ],
       "remyLink": "https://remywiki.com/Polovtsian_Dances_And_Chorus",
       "jacket": "Polovtsian Dances And Chorus.png",
-      "genre": "",
       "saHash": "l609D9lOqbDP6iIld1dI18l888dODQ6Q",
       "saIndex": "192"
     },
@@ -43101,6 +43132,7 @@
       ],
       "remyLink": "https://remywiki.com/Poppin%27_Soda",
       "jacket": "Poppin' Soda.jpg",
+      "genre": "KAWAII FUTURE BASS",
       "saHash": "Q0dQDqillPqIId0Q81q01ooObQIlO1QI",
       "saIndex": "1007"
     },
@@ -43515,9 +43547,10 @@
       ],
       "remyLink": "https://remywiki.com/PRANA",
       "jacket": "PRANA.png",
-      "genre": "",
+      "genre": "AKASHIC HARDCORE",
       "saHash": "P0iOob80dDPqI8oIqq1dOiDd9qilQqDl",
-      "saIndex": "555"
+      "saIndex": "555",
+      "search_hint": "AKASHIC HARDCORE/アカシックハードコア"
     },
     {
       "name": "PRANA+REVOLUTIONARY ADDICT (U1 DJ Mix)",
@@ -43689,6 +43722,7 @@
       ],
       "remyLink": "https://remywiki.com/Prey",
       "jacket": "Prey.png",
+      "genre": "",
       "saHash": "i916bDibPI9l869o9IIQb8DbO9bPDi6q",
       "saIndex": "809"
     },
@@ -43957,7 +43991,7 @@
       ],
       "remyLink": "https://remywiki.com/Programmed_Universe",
       "jacket": "Programmed Universe.png",
-      "genre": "",
+      "genre": "MORNING FULL ON",
       "saHash": "Pld9iO6oi9qlDD08l8QDdIi6d6Q6iDd1",
       "saIndex": "407"
     },
@@ -44012,6 +44046,7 @@
       ],
       "remyLink": "https://remywiki.com/Puberty_Dysthymia",
       "jacket": "Puberty Dysthmia.png",
+      "genre": "",
       "saHash": "99q8i8bPldDbio919ob0DPi0bqdIoobi",
       "saIndex": "806"
     },
@@ -44136,7 +44171,8 @@
       "jacket": "PUNISHER.png",
       "genre": "VARIANT RAVE",
       "saHash": "IIDiDdQ1d6bIqbld9IdO106POdiPO6PO",
-      "saIndex": "569"
+      "saIndex": "569",
+      "search_hint": "VARIANT RAVE/ヴァリアントレイヴ"
     },
     {
       "name": "Pure Rude",
@@ -44188,9 +44224,10 @@
         }
       ],
       "remyLink": "https://remywiki.com/Pure_Rude",
+      "jacket": "Pure_Rude.jpg",
       "saHash": "IiiqDblQ8Oqlbo8OOiqI6IqO6P8I8I1d",
-      "saIndex": "1195",
-      "jacket": "Pure_Rude.jpg"
+      "genre": "",
+      "saIndex": "1195"
     },
     {
       "name": "Pursuer",
@@ -44706,8 +44743,9 @@
       ],
       "jacket": "quaver♪.jpg",
       "remyLink": "https://remywiki.com/Quaver",
-      "search_hint": "quaver",
-      "flags": ["unlock"]
+      "genre": "HAPPY",
+      "flags": ["unlock"],
+      "search_hint": "HAPPY/ハッピー"
     },
     {
       "name": "Quick Master",
@@ -44775,7 +44813,8 @@
       "jacket": "Quick Master.png",
       "genre": "J-TEKNO",
       "saHash": "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP",
-      "saIndex": "194"
+      "saIndex": "194",
+      "search_hint": "J-TEKNO/J-テクノ"
     },
     {
       "name": "Quickening",
@@ -45283,6 +45322,7 @@
       ],
       "remyLink": "https://remywiki.com/Raspberry_Heart_(English_version)",
       "jacket": "Raspberry♡Heart(English version).png",
+      "genre": "COLORFUL HARDCORE",
       "saHash": "60qiDd000qDIobO0QI916i18bbolO919",
       "saIndex": "255"
     },
@@ -45445,6 +45485,7 @@
       ],
       "remyLink": "https://remywiki.com/Re:GENERATION",
       "jacket": "Re-GENERATION.jpg",
+      "genre": "EMOTIONAL SENTENCE",
       "saHash": "ODdoiODodb0ddIP06IqDQdl100q0dIP6",
       "saIndex": "913"
     },
@@ -45567,7 +45608,6 @@
       ],
       "remyLink": "https://remywiki.com/Reach_The_Sky,_Without_you",
       "jacket": "Reach The Sky, Without you.png",
-      "genre": "",
       "saHash": "POq8OPlOO9199i11Od0P00801Qo01DQo",
       "saIndex": "771"
     },
@@ -45757,6 +45797,7 @@
       ],
       "remyLink": "https://remywiki.com/Red_Cape_Theorem",
       "jacket": "Red Cape Theorem.jpg",
+      "genre": "",
       "saHash": "Qi1Q6I80b09Oq91OPldbO19080q0dd0b",
       "saIndex": "977"
     },
@@ -45891,6 +45932,7 @@
       ],
       "jacket": "Red. by Full Metal Jacket.jpg",
       "remyLink": "https://remywiki.com/Red._by_Full_Metal_Jacket",
+      "genre": "TECH-BREAKBEATS",
       "search_hint": "Red by Full Metal Jacket",
       "flags": ["unlock"]
     },
@@ -46070,7 +46112,8 @@
       "jacket": "Remain.png",
       "genre": "RUINOUS SPIRITUALS",
       "saHash": "qo6l9dbb8D0iDQI1odo0Qb9O1ibDdoIb",
-      "saIndex": "632"
+      "saIndex": "632",
+      "search_hint": "RUINOUS SPIRITUALS/ルイナススピリチュアル"
     },
     {
       "name": "Rescue Me",
@@ -46639,8 +46682,10 @@
       ],
       "remyLink": "https://remywiki.com/Riot_of_Color",
       "jacket": "Riot of Color.jpg",
+      "genre": "COLOR FUSION",
       "saHash": "I9Oood9l9li0D08Q6d6DQPiIQiloidO6",
-      "saIndex": "947"
+      "saIndex": "947",
+      "search_hint": "COLOR FUSION/カラーフュージョン"
     },
     {
       "name": "Rise As One",
@@ -46777,7 +46822,7 @@
       ],
       "remyLink": "https://remywiki.com/RISING_FIRE_HAWK",
       "jacket": "RISING FIRE HAWK.png",
-      "genre": "",
+      "genre": "HARDSTYLE",
       "saHash": "60P9IPOdi1OIbD61D8i0D9ODoq6QOIPO",
       "saIndex": "708"
     },
@@ -47071,6 +47116,7 @@
       ],
       "remyLink": "https://remywiki.com/ROOM",
       "jacket": "ROOM.jpg",
+      "genre": "",
       "saHash": "ODd6QDIIdi6ild0O8lqIdl0oiQ98669l",
       "saIndex": "940"
     },
@@ -48238,9 +48284,10 @@
       ],
       "remyLink": "https://remywiki.com/Sakura_Sunrise",
       "jacket": "Sakura Sunrise.png",
-      "genre": "",
+      "genre": "HAPPY HARDCORE",
       "saHash": "6lD1ooDi8Pdl0OlO0QoIioI8119I0PPq",
-      "saIndex": "384"
+      "saIndex": "384",
+      "search_hint": "HAPPY HARDCORE/ハッピーハードコア"
     },
     {
       "name": "Samurai Shogun vs. Master Ninja",
@@ -48757,6 +48804,7 @@
       ],
       "remyLink": "https://remywiki.com/SCHWARZSCHILD_FIELD",
       "jacket": "SCHWARZSCHILD FIELD.jpg",
+      "genre": "FULL ON",
       "saHash": "iq9qPoPlIlbIDqlD81DqO1110QI1qoOl",
       "saIndex": "1045"
     },
@@ -48824,7 +48872,7 @@
       ],
       "remyLink": "https://remywiki.com/Scorching_Moon",
       "jacket": "Scorching Moon.png",
-      "genre": "",
+      "genre": "HOUSE",
       "saHash": "16Pio809ID669Di8OoPblQO0lDq668dQ",
       "saIndex": "200"
     },
@@ -48977,7 +49025,8 @@
       "jacket": "Second Heaven.png",
       "genre": "HANDZ UP",
       "saHash": "9bI0dQdb01Dl1bQq1Pq998i0l096D99P",
-      "saIndex": "385"
+      "saIndex": "385",
+      "search_hint": "HANDZ UP/ハンズアップ"
     },
     {
       "name": "second spring storm",
@@ -50065,7 +50114,8 @@
       "jacket": "SHION.png",
       "genre": "HI-SPEED FANTASY TUNE",
       "saHash": "Dbd0o8iob1D0990DDIOIIQ6bQqdDQ6ID",
-      "saIndex": "698"
+      "saIndex": "698",
+      "search_hint": "HI-SPEED FANTASY TUNE/ハイスピード幻想チューン"
     },
     {
       "name": "Shout It Out",
@@ -50342,7 +50392,8 @@
       "jacket": "SigSig.png",
       "genre": "MAKINA",
       "saHash": "qoDOoP99lq8bd19iqiloObQDqD8QbOq0",
-      "saIndex": "450"
+      "saIndex": "450",
+      "search_hint": "MAKINA/マキナ"
     },
     {
       "name": "Silent Hill",
@@ -50484,6 +50535,7 @@
       ],
       "remyLink": "https://remywiki.com/Silly_Love",
       "jacket": "Silly Love.jpg",
+      "genre": "ELECTRO NU DISCO",
       "saHash": "Q8bIddo10ilqbd6I8QOq1bod1OO8dqlO",
       "saIndex": "924"
     },
@@ -50741,6 +50793,7 @@
       ],
       "remyLink": "https://remywiki.com/Six_String_Proof",
       "jacket": "Six_String_Proof.jpg",
+      "genre": "HARDROCK",
       "saHash": "D6o8lIiDQ80oi6iIbiP9DlOPIl0Q8d69",
       "saIndex": "890"
     },
@@ -50806,7 +50859,8 @@
       "jacket": "Ska Ska No.3.png",
       "genre": "SKA",
       "saHash": "idI1dd69l1il16P0d9DoldDP1QDP0911",
-      "saIndex": "203"
+      "saIndex": "203",
+      "search_hint": "SKA/スカ"
     },
     {
       "name": "Sky Is The Limit",
@@ -51303,8 +51357,10 @@
       ],
       "remyLink": "https://remywiki.com/Smooooch",
       "jacket": "smooooch･∀･.png",
+      "genre": "CANDY RAVE",
       "saHash": "1l01billdl6oPP96Pq8d0lbbblQI8i8l",
-      "saIndex": "390"
+      "saIndex": "390",
+      "search_hint": "CANDY RAVE/キャンディレイヴ"
     },
     {
       "name": "Snow Garland Fairy",
@@ -51443,7 +51499,8 @@
       "jacket": "snow prism.png",
       "genre": "SNOWY CORE",
       "saHash": "OQbdD9iD898Q01oIddDliq8q9D1QlQ1I",
-      "saIndex": "488"
+      "saIndex": "488",
+      "search_hint": "SNOWYCORE/スノーウィーコア"
     },
     {
       "name": "SO IN LOVE",
@@ -51578,6 +51635,7 @@
       ],
       "remyLink": "https://remywiki.com/So_What_(PRIDASK)",
       "jacket": "So_What_(PRIDASK).jpg",
+      "genre": "BASS HOUSE",
       "saHash": "OOqoq9IPOQIqiid16l0bDdiQQ11QQD88"
     },
     {
@@ -52508,6 +52566,7 @@
       ],
       "remyLink": "https://remywiki.com/Sparkle_Smilin%27",
       "jacket": "Sparkle Smilin'.jpg",
+      "genre": "TWINKLE POP",
       "saHash": "8i61Oi09bOIP0lOldI668b8IPbIq8l0Q",
       "saIndex": "952"
     },
@@ -52752,9 +52811,11 @@
         }
       ],
       "remyLink": "https://remywiki.com/Spring_pony",
+      "jacket": "Spring_pony.jpg",
+      "genre": "SPRING TECHNO",
       "saHash": "DID6l8bbD0D6661lPiP6QIQ1dPbb010d",
       "saIndex": "1174",
-      "jacket": "Spring_pony.jpg"
+      "search_hint": "SPRING TECHNO/スプリングテクノ"
     },
     {
       "name": "Squeeze",
@@ -52823,7 +52884,8 @@
       "jacket": "Squeeze.png",
       "genre": "WITHOUT YOU TONIGHT -VI-",
       "saHash": "D9I8d1PDOQ8QqP1o1IIi0o8d6660ddOQ",
-      "saIndex": "577"
+      "saIndex": "577",
+      "search_hint": "WITHOUT YOU TONIGHT -VI-/ウィザウチュナイ-ゼクス-"
     },
     {
       "name": "Stand Alone Beat Masta",
@@ -52880,8 +52942,7 @@
       ],
       "jacket": "Stand Alone Beat Masta.jpg",
       "remyLink": "https://remywiki.com/Stand_Alone_Beat_Masta",
-      "flags": ["platinumMembers"],
-      "search_hint": "Stand Alone Beat Master"
+      "flags": ["platinumMembers"]
     },
     {
       "name": "Star Gate Heaven",
@@ -52947,7 +53008,7 @@
       ],
       "remyLink": "https://remywiki.com/Star_Gate_Heaven",
       "jacket": "Star Gate Heaven.png",
-      "genre": "",
+      "genre": "EPIC TRANCE",
       "saHash": "QD0q90q9PIl9PdqqO9D9DO09DbiODOI6",
       "saIndex": "204"
     },
@@ -53226,7 +53287,7 @@
     },
     {
       "name": "Starlight in the Snow",
-      "artist": "BEMANI Sound Team\"劇団レコード\"ft.Lisa-Paint with stars",
+      "artist": "BEMANI Sound Team \"劇団レコード\" ft.Lisa-Paint with stars",
       "artist_translation": "BEMANI Sound Team \"Gekidan Record\" ft.Lisa-Paint with stars",
       "bpm": "150",
       "folder": "DanceDanceRevolution A20",
@@ -53942,6 +54003,7 @@
       ],
       "remyLink": "https://remywiki.com/STAY_GOLD",
       "jacket": "STAY GOLD.jpg",
+      "genre": "HARD DANCE",
       "saHash": "989od088q99DPIIq6IQidI1IQ1qQOlb6",
       "saIndex": "1072"
     },
@@ -54079,7 +54141,8 @@
       "jacket": "Stella Sinistra.png",
       "genre": "SYMPHONOVATIVE ROCK",
       "saHash": "OPQQo1idQoqOq88lIPOQo6DooiP8QO9d",
-      "saIndex": "567"
+      "saIndex": "567",
+      "search_hint": "SYMPHONOVATIVE ROCK/シンフォノベーティブロック"
     },
     {
       "name": "stellar rain",
@@ -55041,7 +55104,8 @@
       "jacket": "STULTI.png",
       "genre": "GRAVIOL",
       "saHash": "oo6iiQQbqQ98D9oP6OQPibIqIPd66Qb0",
-      "saIndex": "529"
+      "saIndex": "529",
+      "search_hint": "GRAVIOL/グラヴィオール"
     },
     {
       "name": "Such A Feeling",
@@ -55593,6 +55657,7 @@
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/SUPER_HEROINE!!",
       "jacket": "SUPER_HEROINE!!.jpg",
+      "genre": "GENSOU FULLON",
       "saHash": "d1bdqOI8IPIO8i00Plq09d189lIbIo0I"
     },
     {
@@ -56016,6 +56081,7 @@
       "remyLink": "https://remywiki.com/Suspicions",
       "flags": ["unlock"],
       "jacket": "Suspicions.jpg",
+      "genre": "JAZZ CORE",
       "saHash": "Q88iD188IiqQbIoP9Oq818bPbOP1d1bQ"
     },
     {
@@ -56247,8 +56313,10 @@
       ],
       "remyLink": "https://remywiki.com/Sweet_Sweet_Love_Magic",
       "jacket": "Sweet Sweet ♥ Magic.png",
+      "genre": "HAPPY HARDCORE",
       "saHash": "8809ol0qbbd6919bbl0b8id1669PqQ08",
-      "saIndex": "92"
+      "saIndex": "92",
+      "search_hint": "HAPPY HARDCORE/ハッピーハードコア"
     },
     {
       "name": "Sweetin' Fruity",
@@ -56422,6 +56490,7 @@
       ],
       "remyLink": "https://remywiki.com/Sword_of_Vengeance",
       "jacket": "Sword of Vengeance.jpg",
+      "genre": "HI-SPEED TECHCORE",
       "saHash": "ddqO1b1ldlQd6OOoQ1boPdoboDQqd9D8",
       "saIndex": "1008"
     },
@@ -56575,7 +56644,8 @@
       "jacket": "Synergy For Angels.png",
       "genre": "ORBITALIC REVOLUTION",
       "saHash": "b9IoO68b1Qd9I6O8qqoo6q1o8DQ8l9lo",
-      "saIndex": "533"
+      "saIndex": "533",
+      "search_hint": "ORBITALIC REVOLUTION/オービタリックレボリューション"
     },
     {
       "name": "S･A･G･A",
@@ -57072,6 +57142,7 @@
       ],
       "remyLink": "https://remywiki.com/Take_me_higher",
       "jacket": "Take me higher.jpg",
+      "genre": "FUTURE JERSEY",
       "saHash": "0088dOQPiD0Qb0Dl8ol09D98IOllI1id",
       "saIndex": "943"
     },
@@ -58101,7 +58172,8 @@
       "jacket": "The Least 100sec.png",
       "genre": "PROGRESSIVE",
       "saHash": "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0",
-      "saIndex": "134"
+      "saIndex": "134",
+      "search_hint": "PROGRESSIVE/プログレッシブ"
     },
     {
       "name": "The legend of MAX",
@@ -58625,9 +58697,10 @@
       ],
       "remyLink": "https://remywiki.com/The_Wind_of_Gold",
       "jacket": "The Wind of Gold.png",
-      "genre": "",
+      "genre": "ORIENTAL CORE",
       "saHash": "Dbdi9P91PQl660llPQO0l86oDqi1O9Ob",
-      "saIndex": "552"
+      "saIndex": "552",
+      "search_hint": "ORIENTAL CORE/オリエンタルコア"
     },
     {
       "name": "The World Ends Now",
@@ -59652,6 +59725,7 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Timepiece_phase_II",
+      "genre": "PROGRESSIVE ROCK",
       "saHash": "oIOq6lQQPoD1q11Qiq6dDI6l8DdoQ169",
       "jacket": "Timepiece_phase_II.jpg"
     },
@@ -60185,6 +60259,7 @@
       ],
       "remyLink": "https://remywiki.com/Too_Late_Snow",
       "jacket": "Too Late Snow.jpg",
+      "genre": "J-DANCE POP",
       "saHash": "IDqoidbllIb0bQQb8dQ1QqP91Q8li9P0",
       "saIndex": "1093"
     },
@@ -60504,6 +60579,7 @@
       ],
       "remyLink": "https://remywiki.com/Toy_boxer",
       "jacket": "Toy_boxer.jpg",
+      "genre": "BOXINGCORE",
       "saHash": "d9QO9odlI18i96I6DQPld1iiol8ODl0o",
       "saIndex": "891"
     },
@@ -60793,6 +60869,7 @@
       ],
       "remyLink": "https://remywiki.com/Trill_auf_G",
       "jacket": "Trill_auf_G.jpg",
+      "genre": "MUSIC GAMES HARDCORE",
       "saHash": "0lIIil06b8q819P9lDil09o6qlqo9I1i",
       "saIndex": "888"
     },
@@ -61496,6 +61573,7 @@
       ],
       "remyLink": "https://remywiki.com/Triple_Cross",
       "jacket": "Triple Cross.jpg",
+      "genre": "MUSIC GAME TRADITIONAL",
       "saHash": "IQqi9Q9qD0DDQIqQOb868QIOioqDqI01",
       "saIndex": "1032"
     },
@@ -61718,7 +61796,8 @@
       "jacket": "True Blue.png",
       "genre": "ESSENTIALLY",
       "saHash": "D9lq0DioIl9D6ll0d61990DP9qPPb1dP",
-      "saIndex": "571"
+      "saIndex": "571",
+      "search_hint": "ESSENTIALLY/エッセンシャリー"
     },
     {
       "name": "TRUE♥LOVE",
@@ -62123,9 +62202,10 @@
       ],
       "remyLink": "https://remywiki.com/TSUGARU",
       "jacket": "TSUGARU.png",
-      "genre": "",
+      "genre": "JONGARA SPIRITUAL",
       "saHash": "io688qld6Pqq6bI01q86illP18biq0bd",
-      "saIndex": "93"
+      "saIndex": "93",
+      "search_hint": "JONGARA SPIRITUAL/じょんがらスピリチュアル"
     },
     {
       "name": "TSUGARU (APPLE MIX)",
@@ -62206,8 +62286,10 @@
       ],
       "remyLink": "https://remywiki.com/Twin_Bee_~Generation_X~",
       "jacket": "Twin Bee -Generation X-.png",
+      "genre": "EUROBEAT",
       "saHash": "0l181DPDqbQPb0qQl0i0dlQd0oQPlQ6i",
-      "saIndex": "137"
+      "saIndex": "137",
+      "search_hint": "EUROBEAT/ユーロビート"
     },
     {
       "name": "Twin memories W",
@@ -62330,8 +62412,10 @@
       ],
       "remyLink": "https://remywiki.com/Twinkle_Wonderland",
       "jacket": "Twinkle Wonderland.jpg",
+      "genre": "TWINKLE POP",
       "saHash": "91Qdq6DbPDlQOiOq08di0IQo8IP8PPqQ",
-      "saIndex": "982"
+      "saIndex": "982",
+      "search_hint": "TWINKLE POP/トゥインクルポップ"
     },
     {
       "name": "TWINKLE♡HEART",
@@ -62582,6 +62666,7 @@
       ],
       "remyLink": "https://remywiki.com/Uh-Oh",
       "jacket": "Uh-Oh.jpg",
+      "genre": "CANDY RAVE",
       "saHash": "dI1Ii100bQ6006l89diod0d116diOl8D",
       "saIndex": "1013"
     },
@@ -62649,7 +62734,6 @@
       ],
       "remyLink": "https://remywiki.com/Un_deux_trois",
       "jacket": "un deux trois.png",
-      "genre": "",
       "saHash": "99P8bDO1PqlddQqo81QOIPO60lPQqlO8",
       "saIndex": "212"
     },
@@ -63351,9 +63435,11 @@
         }
       ],
       "remyLink": "https://remywiki.com/Valanga",
+      "jacket": "Valanga.jpg",
+      "genre": "ARTCORE",
       "saHash": "9lo10Dl06QIblQqOOid1qi0bd10I9lQ9",
       "saIndex": "1181",
-      "jacket": "Valanga.jpg"
+      "search_hint": "ARTCORE/アートコア"
     },
     {
       "name": "Valkyrie dimension",
@@ -64015,6 +64101,7 @@
       ],
       "remyLink": "https://remywiki.com/VOLAQUAS",
       "jacket": "VOLAQUAS.jpg",
+      "genre": "EMPYREAL HYDRO ARTCORE",
       "saHash": "QldQ19DlqDbq1l091q0l1Q1qD6ldQ6qi",
       "saIndex": "1150"
     },
@@ -64137,6 +64224,7 @@
       ],
       "remyLink": "https://remywiki.com/Voltississimo",
       "jacket": "Voltississimo.jpg",
+      "genre": "VVV",
       "saHash": "6DQ9D9oi66I8ODi8o0dPdOD1ibbIqIdI",
       "saIndex": "893"
     },
@@ -64200,9 +64288,10 @@
       ],
       "remyLink": "https://remywiki.com/Votum_stellarum_-forest_25_DDR_RMX-",
       "jacket": "Votum stellarum forest 25 DDR RMX.png",
-      "genre": "",
+      "genre": "ANTHEM TRANCE REMIX",
       "saHash": "PqPPDibPdD8qd88D0d01dqo6918b0POD",
-      "saIndex": "273"
+      "saIndex": "273",
+      "search_hint": "ANTHEM TRANCE REMIX/アンセムトランスREMIX"
     },
     {
       "name": "Waiting",
@@ -65134,7 +65223,8 @@
       "jacket": "will.png",
       "genre": "HOTTEST PARTY",
       "saHash": "d6iI8ii9qi0Pi80dDQQlPq6qQo69860P",
-      "saIndex": "331"
+      "saIndex": "331",
+      "search_hint": "HOTTEST PARTY/ホッテストパーティー"
     },
     {
       "name": "Windy Fairy",
@@ -65566,9 +65656,10 @@
       ],
       "remyLink": "https://remywiki.com/Wow_Wow_VENUS",
       "jacket": "Wow Wow VENUS.png",
-      "genre": "",
+      "genre": "WITHOUT YOU TONIGHT -IV-",
       "saHash": "Qo1qdD0Q9d11d9Id6o09P9id8lPbOQ6o",
-      "saIndex": "563"
+      "saIndex": "563",
+      "search_hint": "WITHOUT YOU TONIGHT -IV-/ウィザウチュナイ-クアトロ-"
     },
     {
       "name": "Wowie Zowie!",
@@ -65675,8 +65766,10 @@
       ],
       "remyLink": "https://remywiki.com/Wuv_U",
       "jacket": "Wuv U.jpg",
+      "genre": "CANDY RAVE",
       "saHash": "6DPiPD9qDboDlP8qq61Q89qPP0dIO0OI",
-      "saIndex": "1114"
+      "saIndex": "1114",
+      "search_hint": "CANDY RAVE/キャンディレイヴ"
     },
     {
       "name": "X-ray binary",
@@ -65729,6 +65822,7 @@
       ],
       "remyLink": "https://remywiki.com/X-ray_binary",
       "jacket": "X-ray binary.jpg",
+      "genre": "TRANCE",
       "saHash": "iIIDo60oO0lOdiQ9ibIPD0106I69098b",
       "saIndex": "973"
     },
@@ -66510,7 +66604,8 @@
       "jacket": "ZETA～The World of Prime Numbers and the Transcendental Being～.png",
       "genre": "IDM",
       "saHash": "96QPqq0q6Id0Ii0QbD1bQqPbiDqb0lPo",
-      "saIndex": "401"
+      "saIndex": "401",
+      "search_hint": "IDM"
     },
     {
       "name": "ÆTHER",
@@ -66730,7 +66825,7 @@
       "remyLink": "https://remywiki.com/Ubertreffen",
       "jacket": "Übertreffen.png",
       "genre": "PROGRESSIVE BAROQUE",
-      "search_hint": "ubertreffen",
+      "search_hint": "Ubertreffen PROGRESSIVE BAROQUE/プログレッシブバロック",
       "saHash": "1oIo1DliQqPol00Q1l1bPODbdOilodod",
       "saIndex": "329"
     },
@@ -66881,6 +66976,7 @@
       ],
       "remyLink": "https://remywiki.com/OVERSOUL",
       "jacket": "OVERSOUL.jpg",
+      "genre": "",
       "saHash": "P1boP1O60bdI16i6lqqd1Q8ioiPbolqd",
       "saIndex": "918"
     },
@@ -66951,8 +67047,10 @@
       ],
       "remyLink": "https://remywiki.com/Nagisa_no_koakuma_lovely~radio",
       "jacket": "Nagisa no koakuma Lovely Radio.png",
+      "genre": "Hi-CORE",
       "saHash": "q0QIob1PDI6IP86dlPb6I6il9d6bP606",
-      "saIndex": "557"
+      "saIndex": "557",
+      "search_hint": "Hi-CORE/ハイコア"
     },
     {
       "name": "↑↑↓↓←→←→BA",
@@ -67199,12 +67297,15 @@
       "jacket": "LOVE LOVE SUGAR.png",
       "genre": "EURO BEAT",
       "saHash": "iI8qbP0IIb16Oi9bIbb8O9dbDDi1ql86",
-      "saIndex": "98"
+      "saIndex": "98",
+      "search_hint": "EURO BEAT/ユーロビート"
     },
     {
       "name": "あおばの足音",
-      "saHash": "PP0P9ilQb1o160O6O6PqQIl60oDi8Db6",
+      "name_translation": "Aoba no ashioto",
       "artist": "駄菓子O型",
+      "artist_translation": "OgataDagashi",
+      "saHash": "PP0P9ilQb1o160O6O6PqQIl60oDi8Db6",
       "folder": "DanceDanceRevolution World",
       "bpm": "98",
       "charts": [
@@ -67497,6 +67598,7 @@
       ],
       "remyLink": "https://remywiki.com/Oh_my!_Lovely!_Sweety!_Darling!",
       "jacket": "Oh_my!_Lovely!_Sweety!_Darling!.jpg",
+      "genre": "LOVELY YOUTH",
       "saHash": "lqI8DD9Plq6IO8P8P6Pl8Di98DlI9oP8",
       "saIndex": "892"
     },
@@ -67569,7 +67671,8 @@
       "jacket": "How to Cook Delicious Rice and the Effect of Eating Rice.png",
       "genre": "お米タル",
       "saHash": "9I00D9Id61iD6QP8i8Dd6698PoQ9bdi9",
-      "saIndex": "531"
+      "saIndex": "531",
+      "search_hint": "RICE METAL/お米タル"
     },
     {
       "name": "からふるぱすてる",
@@ -67692,7 +67795,8 @@
         }
       ],
       "jacket": "きゅうくらりん.jpg",
-      "remyLink": "https://remywiki.com/Kyu-kurarin"
+      "remyLink": "https://remywiki.com/Kyu-kurarin",
+      "genre": "VOCALOID"
     },
     {
       "name": "きゅん×きゅんばっきゅん☆LOVE",
@@ -67873,6 +67977,7 @@
       ],
       "remyLink": "https://remywiki.com/Koko_kara_yoroshiku_daisakusen_143",
       "jacket": "Koko kara yoroshiku daisakusen 143.jpg",
+      "genre": "ROCK",
       "saHash": "DdQ1lQ1Qb1P1oPl1QOd0Q0O9qqidiI9q",
       "saIndex": "987"
     },
@@ -67943,7 +68048,7 @@
       "remyLink": "https://remywiki.com/Kono_ko_no_nanatsu_no_oiwai_ni",
       "jacket": "Konoko no nanatsu no oiwaini.png",
       "genre": "ELEGY 2",
-      "search_hint": "Konoko no nanatsu no oiwaini",
+      "search_hint": "ELEGY 2/エレジィ2",
       "saHash": "9idOOIdDO01D8PO06bOPPbOIOoiQ8O0P",
       "saIndex": "217"
     },
@@ -68343,9 +68448,10 @@
       ],
       "remyLink": "https://remywiki.com/Chikuwa_parfait_da_yo_CKP",
       "jacket": "Chikuwa Pafedayo CKP.jpg",
-      "genre": "",
+      "genre": "SWEET'S PROGRESSIVE",
       "saHash": "biqbD9I9q9D16i0i1Idb9d111l1QDq86",
-      "saIndex": "561"
+      "saIndex": "561",
+      "search_hint": "SWEET'S PROGRESSIVE/スイーツプログレッシヴ"
     },
     {
       "name": "ちくわパフェだよ☆ＣＫＰ (Yvya Remix)",
@@ -68411,6 +68517,7 @@
       ],
       "jacket": "ちくわパフェだよ☆ＣＫＰ (Yvya Remix).jpg",
       "remyLink": "https://remywiki.com/Chikuwa_parfait_da_yo_CKP_(Yvya_Remix)",
+      "genre": "",
       "name_translation": "Chikuwa Parfait Dayo CKP Yvya Remix",
       "search_hint": "ちくわぱふぇだよCKP Yvya Remix"
     },
@@ -68805,6 +68912,7 @@
       ],
       "remyLink": "https://remywiki.com/Hoshi_no_tsukurikata",
       "jacket": "Hoshi no tsukurikata.jpg",
+      "genre": "",
       "saHash": "IdlqO9DoOq0qPQdDbOb80dOPDlb98l0l",
       "saIndex": "1031"
     },
@@ -69004,9 +69112,10 @@
       ],
       "remyLink": "https://remywiki.com/Meumeupettantan!!",
       "jacket": "Meu Meu Petantan!!.png",
-      "genre": "",
+      "genre": "MOE OKOSHI DENPA SONG",
       "saHash": "db1DlQ9qqI8PiqPD6q88O1P8PDbP11dq",
-      "saIndex": "495"
+      "saIndex": "495",
+      "search_hint": "MOE OKOSHI DENPA SONG/萌えおこし電波ソング"
     },
     {
       "name": "めうめうぺったんたん！！ (ZAQUVA Remix)",
@@ -69072,7 +69181,8 @@
         }
       ],
       "jacket": "めうめうぺったんたん！！ (ZAQUVA Remix).jpg",
-      "remyLink": "https://remywiki.com/Meumeupettantan!!_(ZAQUVA_Remix)"
+      "remyLink": "https://remywiki.com/Meumeupettantan!!_(ZAQUVA_Remix)",
+      "genre": "HYPERACTIVE HELLCORE"
     },
     {
       "name": "アドレナリン",
@@ -69238,6 +69348,7 @@
       ],
       "remyLink": "https://remywiki.com/Alice_side_castling",
       "jacket": "Alice side castling.jpg",
+      "genre": "",
       "saHash": "D6IIDqlO8idioiPo8l61Ob11D6Di0DiQ",
       "saIndex": "957"
     },
@@ -69438,6 +69549,7 @@
       ],
       "remyLink": "https://remywiki.com/Innocent_bible",
       "jacket": "Innocent bible.jpg",
+      "genre": "",
       "saHash": "DQ1dqP1IoiD11QOPiI0Q8PqO0Qddo6q6",
       "saIndex": "974"
     },
@@ -69494,6 +69606,7 @@
       ],
       "remyLink": "https://remywiki.com/Ima_koko!_Kono_shunkan",
       "jacket": "Ima koko! Kono shunkan.jpg",
+      "genre": "",
       "saHash": "d01QdIl6i69DqIbbQQd6IPOiQOObPdIi"
     },
     {
@@ -69687,6 +69800,7 @@
       ],
       "remyLink": "https://remywiki.com/Usotsuki_yokochou_wa_amemoyou",
       "jacket": "Usotsuki yokochou wa amemoyou.jpg",
+      "genre": "",
       "saHash": "q8iPi1DP6Do6D110OQiQDdPq06q80Qb0",
       "saIndex": "975"
     },
@@ -69969,7 +70083,8 @@
       "jacket": "KAGEROW (Dragonfly).png",
       "genre": "輪生",
       "saHash": "ql1Q8P100IIlbl0Pdi08I8qD900idqQq",
-      "saIndex": "216"
+      "saIndex": "216",
+      "search_hint": "輪生"
     },
     {
       "name": "カタルシスの月",
@@ -70025,7 +70140,8 @@
       ],
       "jacket": "カタルシスの月.jpg",
       "remyLink": "https://remywiki.com/Catharsis_no_tsuki",
-      "search_hint": "かたるしすのつき",
+      "genre": "EMOTIONAL DUO",
+      "search_hint": "かたるしすのつき EMOTIONAL DUO/エモーショナルデュオ",
       "flags": ["grandPrixPack"]
     },
     {
@@ -70255,7 +70371,8 @@
         }
       ],
       "jacket": "ギャ・ギャ・ギャ・ギャラクシー！.jpg",
-      "remyLink": "https://remywiki.com/Ga-ga-ga-galaxy!"
+      "remyLink": "https://remywiki.com/Ga-ga-ga-galaxy!",
+      "genre": "VOCALOID"
     },
     {
       "name": "クリムゾンゲイト",
@@ -70564,7 +70681,8 @@
       "jacket": "SANA MOLLETE NE ENTE.png",
       "genre": "CUBAN GROOVE",
       "saHash": "doIiQl6oDPP6i9qobqoobblPQqPiI9bD",
-      "saIndex": "60"
+      "saIndex": "60",
+      "search_hint": "CUBAN GROOVE/キューバングルーブ"
     },
     {
       "name": "サヨナラ・ヘヴン",
@@ -70619,8 +70737,10 @@
       ],
       "remyLink": "https://remywiki.com/Sayonara_heaven",
       "jacket": "Sayonara Heaven.jpg",
+      "genre": "コンテンポラリーネイション2",
       "saHash": "lO08lblo68qbdPq0dIlIqqdiiOq900Pb",
-      "saIndex": "1103"
+      "saIndex": "1103",
+      "search_hint": "CONTEMPORARY NATION 2/コンテンポラリーネイション2"
     },
     {
       "name": "シュレーディンガーの猫",
@@ -70686,9 +70806,10 @@
       ],
       "remyLink": "https://remywiki.com/Schrodinger_no_neko",
       "jacket": "Schrodinger's Cat.png",
-      "genre": "",
+      "genre": "トイコンテンポラリー",
       "saHash": "DIiQbd09D0PoIiPl9iP1q8qldOOqol8i",
-      "saIndex": "817"
+      "saIndex": "817",
+      "search_hint": "TOY CONTEMPORARY/トイコンテンポラリー"
     },
     {
       "name": "シル・ヴ・プレジデント",
@@ -70755,6 +70876,7 @@
       ],
       "remyLink": "https://remywiki.com/S%27il_vous_president",
       "jacket": "S'il vous president.jpg",
+      "genre": "J-POP",
       "saHash": "o1d0DDobPPPlq0l8Qli1d6ODI8ldo1qb",
       "saIndex": "1022"
     },
@@ -70951,6 +71073,7 @@
       ],
       "remyLink": "https://remywiki.com/Super_sentou_Babanburn",
       "jacket": "Super sentou Babanburn.jpg",
+      "genre": "オンセン♨ヒーロー",
       "saHash": "boqo0IoO8DodOl99Q8P8qOi8PqDq11b1",
       "saIndex": "1021"
     },
@@ -71086,9 +71209,10 @@
       ],
       "remyLink": "https://remywiki.com/Chikara",
       "jacket": "CHIKARA.png",
-      "genre": "",
+      "genre": "ガールズロックエクストリーム",
       "saHash": "I9iODl9bl1d8PilOilii9Dd19PP6QI66",
-      "saIndex": "218"
+      "saIndex": "218",
+      "search_hint": "GIRLS ROCK EXTREME/ガールズロックエクストリーム"
     },
     {
       "name": "チュッチュ♪マチュピチュ",
@@ -71143,6 +71267,7 @@
       ],
       "remyLink": "https://remywiki.com/Chucchu_Machu_Picchu",
       "jacket": "Chucchu Machu Picchu.jpg",
+      "genre": "",
       "saHash": "OoQiq8OiPbIPI80OqOlliP661bOIDd9o",
       "saIndex": "1115"
     },
@@ -71494,7 +71619,8 @@
       "jacket": "Deadball de Homerun.png",
       "genre": "ELECTRIC MANOUSH SWING",
       "saHash": "lQ86Pod1b9oI8OiDDoId099di9OI8d9I",
-      "saIndex": "576"
+      "saIndex": "576",
+      "search_hint": "ELECTRIC MANOUSH SWING/エレクトリックマヌーシュスウィング"
     },
     {
       "name": "トラウマ催眠少女さとり！",
@@ -72178,6 +72304,7 @@
       ],
       "remyLink": "https://remywiki.com/No_plan_days",
       "jacket": "No plan days.jpg",
+      "genre": "",
       "saHash": "Oq8ID68oq16I9QP9bio0ibD6PQiDbqqI",
       "saIndex": "1038"
     },
@@ -72233,6 +72360,7 @@
       "flags": ["goldExclusive", "tempUnlock"],
       "remyLink": "https://remywiki.com/Hi-tech_Tokio",
       "jacket": "Hi-tech Tokio.jpg",
+      "genre": "ハイテックトキオ",
       "saHash": "DOd9bIqddQ91qbQI1bdbbDi1lqPObo8l"
     },
     {
@@ -72479,6 +72607,7 @@
       ],
       "remyLink": "https://remywiki.com/Khorosho!_Onigiri_circus_dan",
       "jacket": "Khorosho! Onigiri circus dan.jpg",
+      "genre": "",
       "saHash": "16b91IPI881lPIo8Qq9Pl1IPiD8Ddodl",
       "saIndex": "976"
     },
@@ -72867,6 +72996,7 @@
       ],
       "remyLink": "https://remywiki.com/Perfect_eater",
       "jacket": "Perfect Eater.jpg",
+      "genre": "ROCK",
       "saHash": "diq9D0qbI00iOOb69q6Q1Q90PQOlo6dl"
     },
     {
@@ -73117,6 +73247,7 @@
       ],
       "remyLink": "https://remywiki.com/Beautiful_receipt",
       "jacket": "BEAUTIFUL RECEIPT.png",
+      "genre": "HAPPY HARDCORE",
       "saHash": "Qb1db18qP1Ib6liPI1668Pq8QPb0QO09",
       "saIndex": "405"
     },
@@ -73573,8 +73704,10 @@
       ],
       "remyLink": "https://remywiki.com/Haunted_maid_lunch",
       "jacket": "Haunted_maid_lunch.png",
+      "genre": "メイドメタル",
       "saHash": "I0qiD6Ob86D1oQOib81lID6Dll8iOOOP",
-      "saIndex": "897"
+      "saIndex": "897",
+      "search_hint": "MAID METAL/メイドメタル"
     },
     {
       "name": "ポジティブ☆ダンスタイム",
@@ -73676,7 +73809,9 @@
         }
       ],
       "jacket": "ポチコの幸せな日常.jpg",
-      "remyLink": "https://remywiki.com/Pochiko_no_shiawasena_nichijou"
+      "remyLink": "https://remywiki.com/Pochiko_no_shiawasena_nichijou",
+      "genre": "わんわんコア",
+      "search_hint": "ぽちこのしあわせなにちじょう PUPCORE/わんわんコア"
     },
     {
       "name": "ポッピンキャンディ☆フィーバー！",
@@ -73798,7 +73933,8 @@
         }
       ],
       "jacket": "ポラリスノウタ.jpg",
-      "remyLink": "https://remywiki.com/Polaris_no_uta"
+      "remyLink": "https://remywiki.com/Polaris_no_uta",
+      "genre": "FUTUREBASS"
     },
     {
       "name": "マインド・ゲーム",
@@ -73868,7 +74004,8 @@
       "jacket": "Mind Game.png",
       "genre": "青春剛速球メタル",
       "saHash": "0ddPq801D8PiiqO1oqoQbdOIQ9lQl11o",
-      "saIndex": "568"
+      "saIndex": "568",
+      "search_hint": "青春剛速球メタル"
     },
     {
       "name": "ミックスナッツ",
@@ -73992,6 +74129,7 @@
       ],
       "remyLink": "https://remywiki.com/Midnight_WAR",
       "jacket": "Midnight_WAR.png",
+      "genre": "BEMANIZED ROCKCORE",
       "saHash": "06DO8bb0O891IQ9QP01diqOOl0D80QbO",
       "saIndex": "895"
     },
@@ -74174,7 +74312,8 @@
         }
       ],
       "jacket": "メズマライザー.jpg",
-      "remyLink": "https://remywiki.com/Mesmerizer"
+      "remyLink": "https://remywiki.com/Mesmerizer",
+      "genre": "HAPPY HARDCORE"
     },
     {
       "name": "メテオラ-meteor-",
@@ -74538,6 +74677,7 @@
       ],
       "remyLink": "https://remywiki.com/Yumebuki",
       "jacket": "Yumebuki.jpg",
+      "genre": "",
       "saHash": "IPid909iDid06d68IDo816OqbdQq8O0O",
       "saIndex": "1024"
     },
@@ -74609,7 +74749,8 @@
       "jacket": "RAKIRAKI.png",
       "genre": "LUCKY TECHNO",
       "saHash": "0bDqIO9Q0PPIPlPll1D8Pbol9O6DlPdb",
-      "saIndex": "527"
+      "saIndex": "527",
+      "search_hint": "LUCKY TECHNO/ラッキーテクノ"
     },
     {
       "name": "ラクガキスト",
@@ -74753,7 +74894,8 @@
         }
       ],
       "jacket": "ラビットホール.jpg",
-      "remyLink": "https://remywiki.com/Rabbit_hole"
+      "remyLink": "https://remywiki.com/Rabbit_hole",
+      "genre": "J-POP"
     },
     {
       "name": "ラブキラ☆スプラッシュ",
@@ -74808,6 +74950,7 @@
       ],
       "remyLink": "https://remywiki.com/Love_kira_splash",
       "jacket": "Love kira splash.jpg",
+      "genre": "HYPER POP",
       "saHash": "loii6b8OODDOl9q0OD88Ibb9I0qO0PPo",
       "saIndex": "927"
     },
@@ -74864,6 +75007,7 @@
       ],
       "remyLink": "https://remywiki.com/Ranker_killer_girl",
       "jacket": "Ranker Killer Girl.jpg",
+      "genre": "KILLER PUNK",
       "saHash": "D08lqQOPdOO6D6ll690Qd6PdbO111011",
       "saIndex": "904"
     },
@@ -74975,8 +75119,10 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Remember_remember",
+      "genre": "レイニーワルツ",
       "saHash": "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
-      "jacket": "Remember_remember.jpg"
+      "jacket": "Remember_remember.jpg",
+      "search_hint": "RAINY WALTZ/レイニーワルツ"
     },
     {
       "name": "リリーゼと炎龍レーヴァテイン",
@@ -75047,6 +75193,7 @@
       ],
       "remyLink": "https://remywiki.com/Lilieze_to_enryuu_Laevateinn",
       "jacket": "Ririze to honou ryuu revatein.jpg",
+      "genre": "OLDSTYLE GAMEMUSIC",
       "saHash": "IidO8qlodqdoioodqqb9Dqiq991Ilo10",
       "saIndex": "1098"
     },
@@ -75305,7 +75452,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Romancing_escape_(song)",
-      "jacket": "ロマンシングエスケープ.jpg"
+      "jacket": "ロマンシングエスケープ.jpg",
+      "genre": "SYNTHWAVE POP"
     },
     {
       "name": "ロンロンへ　ライライライ！",
@@ -75622,9 +75770,10 @@
       ],
       "remyLink": "https://remywiki.com/Mikeneko_rock",
       "jacket": "CALICO CAT ROCK.png",
-      "genre": "",
+      "genre": "ブラスロック",
       "saHash": "Dl69Pb9OQDlbOi80OQdIObiQ1Q08Dlqo",
-      "saIndex": "142"
+      "saIndex": "142",
+      "search_hint": "BRASS ROCK/ブラスロック"
     },
     {
       "name": "不沈艦CANDY",
@@ -75945,9 +76094,10 @@
         }
       ],
       "remyLink": "https://remywiki.com/Vajra",
+      "jacket": "Vajra.jpg",
+      "genre": "KUDOS CORE",
       "saHash": "iQDQD8889Q8O018Oi60I69D6qD6odDI0",
-      "saIndex": "1182",
-      "jacket": "Vajra.jpg"
+      "saIndex": "1182"
     },
     {
       "name": "倉野川音頭",
@@ -76073,6 +76223,7 @@
       ],
       "remyLink": "https://remywiki.com/Kyouhan_heaven%27s_code",
       "jacket": "Kyohan Heaven's Code.jpg",
+      "genre": "ELEGANT SWING",
       "saHash": "8I090lbOOOP90O01bDbi0Qo0OPldIdP6",
       "saIndex": "1053"
     },
@@ -76230,7 +76381,8 @@
       "jacket": "Rin To Shite Saku Hana No Gotoku.png",
       "genre": "撫子ロック",
       "saHash": "QQOOldqQ8QQDQ06i81d9DP9PlOlo1lqq",
-      "saIndex": "335"
+      "saIndex": "335",
+      "search_hint": "撫子ロック"
     },
     {
       "name": "凛として咲く花の如く～ひなビタ♪edition～",
@@ -76285,6 +76437,7 @@
       ],
       "remyLink": "https://remywiki.com/Rin_to_shite_saku_hana_no_gotoku_~HinaBitter_edition~",
       "jacket": "Rinto shite saku hana no gotoku ~Hinabita edition~.png",
+      "genre": "",
       "saHash": "o91qiqqDi9b6d6l1dQ6qO6oO0QDIlPql",
       "saIndex": "562"
     },
@@ -76442,7 +76595,8 @@
       "jacket": "GENESIS NOTE.png",
       "genre": "CREATOR",
       "saHash": "9obIQOP8O1l0PQ0Oi1oPQI198o0Pd81o",
-      "saIndex": "532"
+      "saIndex": "532",
+      "search_hint": "CREATOR/クリエイター"
     },
     {
       "name": "勇猛無比",
@@ -76508,6 +76662,7 @@
       ],
       "remyLink": "https://remywiki.com/Yuumoumuhi",
       "jacket": "YU-MOU-MU-HI.jpg",
+      "genre": "",
       "saHash": "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI",
       "saIndex": "1016"
     },
@@ -76813,7 +76968,7 @@
       ],
       "remyLink": "https://remywiki.com/Sennen_no_kotowari",
       "jacket": "Sennen no kotowari.png",
-      "genre": "",
+      "genre": "WORLD/ELECTRONICA",
       "saHash": "D0Qb898oqblPoP68PPq1o9i9dI9o0D9i",
       "saIndex": "790"
     },
@@ -76869,6 +77024,7 @@
       ],
       "remyLink": "https://remywiki.com/Hangyaku_no_disparate",
       "jacket": "Hangyaku no disparate.jpg",
+      "genre": "",
       "saHash": "QiboqIool99ol9Q0d08b68OIIiD89qqO",
       "saIndex": "960"
     },
@@ -77365,7 +77521,8 @@
       "jacket": "Mugen.png",
       "genre": "HYPER JAPANESQUE",
       "saHash": "DQO6qbiP6dldo6IIqlob9i8dqiqOio6o",
-      "saIndex": "225"
+      "saIndex": "225",
+      "search_hint": "HYPER JAPANESQUE/ハイパージャパネスク"
     },
     {
       "name": "大見解",
@@ -77451,7 +77608,8 @@
       "jacket": "DAIKENKAI.png",
       "genre": "HIP ROCK",
       "saHash": "I8lidoibqQqoQOqiDi6QiDbP9DIdd989",
-      "saIndex": "144"
+      "saIndex": "144",
+      "search_hint": "HIP ROCK/ヒップロック"
     },
     {
       "name": "天ノ弱",
@@ -77589,7 +77747,8 @@
       "jacket": "Tenjou no hoshi ～Reimeiki～.png",
       "genre": "HYPER JAPANESQUE 3",
       "saHash": "OQbPdOIo6dPPIq6d8qid6DbPP0q991i6",
-      "saIndex": "452"
+      "saIndex": "452",
+      "search_hint": "ハイパージャパネスク3/HYPER JAPANESQUE 3"
     },
     {
       "name": "天空の華",
@@ -78115,7 +78274,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Kyoufuu_all_back",
-      "jacket": "強風オールバック.jpg"
+      "jacket": "強風オールバック.jpg",
+      "genre": ""
     },
     {
       "name": "弾幕信仰",
@@ -78170,6 +78330,7 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Danmaku_shinkou",
+      "genre": "HARD ORIENTAL",
       "jacket": "Danmaku shinkou.jpg",
       "saHash": "lDIO66Dqili0bD0Qo00iIlO6b100i8i0"
     },
@@ -78282,6 +78443,7 @@
       ],
       "remyLink": "https://remywiki.com/Otogibanashi_ni_makugire_wo",
       "jacket": "Otogibanashi ni makugire wo.jpg",
+      "genre": "",
       "saHash": "I606oqOODOdQoP0IQOdP6b0DPdb86ddO",
       "saIndex": "933"
     },
@@ -78423,7 +78585,8 @@
       "jacket": "Tino's White Horse.png",
       "genre": "MONGOL",
       "saHash": "ibI0QllidqQ089ql8dob6bIoodbbIoqq",
-      "saIndex": "223"
+      "saIndex": "223",
+      "search_hint": "MONGOL/モンゴル"
     },
     {
       "name": "恋する☆宇宙戦争っ！！",
@@ -78489,8 +78652,10 @@
       ],
       "remyLink": "https://remywiki.com/Koisuru_uchuu_sensou!!",
       "jacket": "Koisuru Uchusensou!!.jpg",
+      "genre": "Hi-BLEEP",
       "saHash": "Q9Q088PPd0bPi9QQ8iil1lQqPdiQP69D",
-      "saIndex": "747"
+      "saIndex": "747",
+      "search_hint": "Hi-BLEEP/ハイブリープ"
     },
     {
       "name": "恋のパズルマジック",
@@ -78672,8 +78837,10 @@
       ],
       "remyLink": "https://remywiki.com/Koi_hadou%3F_Moro_hadou_OK_houteishiki!!",
       "jacket": "Koihadou Moro Hadou OK Theory.png",
+      "genre": "理系ポップ",
       "saHash": "qilOP8l6bDPi98lqDbO6O1obOi068QOQ",
-      "saIndex": "572"
+      "saIndex": "572",
+      "search_hint": "SCIENCE POP/理系ポップ"
     },
     {
       "name": "恋愛観測",
@@ -78753,9 +78920,10 @@
       ],
       "remyLink": "https://remywiki.com/Renaikansoku",
       "jacket": "Measurement of Love.png",
-      "genre": "",
+      "genre": "ハッピーラブゲイザー",
       "saHash": "iP8ll9I0dd8d689PPqlI9008d06io09q",
-      "saIndex": "748"
+      "saIndex": "748",
+      "search_hint": "HAPPY LOVEGAZER/ハッピーラブゲイザー"
     },
     {
       "name": "恋愛観測 -2021真夏のエンディング ver.-",
@@ -78949,6 +79117,7 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Koiuta_shippuu!_Karuta_queen_Iroha",
+      "genre": "ハイスピードラブ一首",
       "saHash": "db6q6DlPd68bbQOOQ99OI1I9QD8PqDo8",
       "jacket": "Koiuta_shippuu!_Karuta_queen_Iroha.jpg"
     },
@@ -79035,7 +79204,8 @@
       "jacket": "Rensen Ryouran.png",
       "genre": "華恋ロック",
       "saHash": "lOb8O16P9P81olPdI1o1Dl9I6QQoIqIP",
-      "saIndex": "491"
+      "saIndex": "491",
+      "search_hint": "華恋ロック"
     },
     {
       "name": "患部で止まってすぐ溶ける～狂気の優曇華院",
@@ -79151,7 +79321,8 @@
         }
       ],
       "jacket": "悲報！ワイ！ニート！.jpg",
-      "remyLink": "https://remywiki.com/Hihou!_Wai!_Neet!"
+      "remyLink": "https://remywiki.com/Hihou!_Wai!_Neet!",
+      "genre": ""
     },
     {
       "name": "惑星☆ロリポップ",
@@ -79205,6 +79376,7 @@
       ],
       "remyLink": "https://remywiki.com/Wakusei_lollipop",
       "jacket": "Wakusei lollipop.jpg",
+      "genre": "ANIMTRIBE POP",
       "saHash": "Pb0D8b8b8PoDIO9Q9DbiQiI8qi0D89D8",
       "saIndex": "1135"
     },
@@ -79331,6 +79503,7 @@
       ],
       "jacket": "我ら完全無敵のアイドル!!.jpg",
       "remyLink": "https://remywiki.com/Warera_kanzen_muteki_no_idol!!",
+      "genre": "J-POP",
       "search_hint": "われらかんぜんむてきのあいどる Oshi no ko/推しの子"
     },
     {
@@ -79577,7 +79750,8 @@
       ],
       "jacket": "明鏡止水.jpg",
       "remyLink": "https://remywiki.com/Meikyoushisui",
-      "search_hint": "めいきょうしすい"
+      "genre": "禅ジャズ",
+      "search_hint": "めいきょうしすい ZEN-JAZZ/禅ジャズ"
     },
     {
       "name": "星屑のキロク",
@@ -79701,6 +79875,7 @@
       ],
       "remyLink": "https://remywiki.com/Hoshikuzu_no_yo_hate",
       "jacket": "Hoshikuzu no yoru hate.jpg",
+      "genre": "",
       "saHash": "IDP9ldQoD8bdQ6d9Q0oI6QlI9b6Db9Oo",
       "saIndex": "925"
     },
@@ -79813,6 +79988,7 @@
       ],
       "remyLink": "https://remywiki.com/Haru_wo_tsugeru",
       "jacket": "Haru wo tsugeru.jpg",
+      "genre": "",
       "saHash": "IObPQb9QlP0iIiboObPoPqIqDo0O11Qi",
       "saIndex": "980"
     },
@@ -79953,7 +80129,8 @@
       "jacket": "Seiten Bon Voyage.png",
       "genre": "スウィートロニカ",
       "saHash": "I8diIQiPO90qDD60oQ0o669I99dI69DD",
-      "saIndex": "528"
+      "saIndex": "528",
+      "search_hint": "SWEETRONICA/スウィートロニカ"
     },
     {
       "name": "最小三倍完全数",
@@ -80007,6 +80184,7 @@
       ],
       "remyLink": "https://remywiki.com/Saishou_sanbai_kanzensuu",
       "jacket": "Saishou_sanbai_kanzensuu.jpg",
+      "genre": "ピタゴラス的不完全性破壊衝動音律(ハンマーによる)",
       "saHash": "O9qDQOQO8dDDIiO9dPP0Pb8qQo9l89D9",
       "saIndex": "887"
     },
@@ -80269,9 +80447,10 @@
       ],
       "remyLink": "https://remywiki.com/Gekkou_chou",
       "jacket": "Gekkou chou.png",
-      "genre": "",
+      "genre": "ビジュアル",
       "saHash": "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po",
-      "saIndex": "221"
+      "saIndex": "221",
+      "search_hint": "VISUAL/ビジュアル"
     },
     {
       "name": "朝色の紙飛行機",
@@ -80427,7 +80606,8 @@
       "jacket": "Oboro.png",
       "genre": "FASCINATION",
       "saHash": "I96dOqqqQIi9oiqbqDPbQ8I8PQbqOb1o",
-      "saIndex": "691"
+      "saIndex": "691",
+      "search_hint": "FASCINATION/ファッシネイション"
     },
     {
       "name": "朧 (dj TAKA Remix)",
@@ -80659,6 +80839,7 @@
       ],
       "remyLink": "https://remywiki.com/Tokyo_shinwa",
       "jacket": "Tokyo shinwa.jpg",
+      "genre": "ORBITALIC GABBER STEP",
       "saHash": "oQ868oOio6O90i9qO1o8I96P1do11ID0",
       "saIndex": "945"
     },
@@ -80799,8 +80980,10 @@
       ],
       "remyLink": "https://remywiki.com/Umeyukiyo",
       "jacket": "Ume yukiyo.jpg",
+      "genre": "想歌 梅",
       "saHash": "bi9OolI1P9oI8dDPlbQiq01Dl080PQ61",
-      "saIndex": "992"
+      "saIndex": "992",
+      "search_hint": "想歌 梅"
     },
     {
       "name": "極地大衝撃",
@@ -80910,6 +81093,7 @@
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Zanzou_ni_tsunagareta_tsuioku_no_HIDEAWAY",
       "jacket": "Zanzou ni tsunagareta tsuioku no HIDEAWAY.jpg",
+      "genre": "HYPER DIG!ROCK",
       "saHash": "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1"
     },
     {
@@ -81048,6 +81232,7 @@
       "flags": ["goldExclusive", "tempUnlock"],
       "remyLink": "https://remywiki.com/Konran_shoujo_Soflan-chan!!",
       "jacket": "Konran shoujo Soflan-chan!!.jpg",
+      "genre": "",
       "saHash": "Q9iiOo800blDqO0DDDPI1PIbl1lIidI1"
     },
     {
@@ -81329,6 +81514,7 @@
       ],
       "remyLink": "https://remywiki.com/Shakunetsu_Pt.2_Long_Train_Running",
       "jacket": "Shakunetsu Pt.2 Long Train Running.jpg",
+      "genre": "BROKEN SAMBA BREAK",
       "saHash": "l0OPoQ1O8q8DPDo0Iol6qD6DiIqdD9P9",
       "saIndex": "1025"
     },
@@ -81411,7 +81597,8 @@
       "jacket": "Shakunetsu Beach Side Bunny.png",
       "genre": "BROKEN SAMBA BREAK",
       "saHash": "6dO6i9qq601D8ild9QIlbO8bodbiQ1Pl",
-      "saIndex": "615"
+      "saIndex": "615",
+      "search_hint": "BROKEN SAMBA BREAK/ブロークンサンバブレイク"
     },
     {
       "name": "炉心融解",
@@ -81730,6 +81917,7 @@
       ],
       "remyLink": "https://remywiki.com/Kyousui_ichika",
       "jacket": "Kyousui ichika.jpg",
+      "genre": "STYLISH CROSSOVER",
       "saHash": "Dooii0960OioP6Q1l0qi68Q8Dbd9OO91",
       "saIndex": "965"
     },
@@ -81796,7 +81984,8 @@
       "jacket": "DanDanDo (The true MAN's Road).png",
       "genre": "HIP ROCK 2",
       "saHash": "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl",
-      "saIndex": "222"
+      "saIndex": "222",
+      "search_hint": "HIP ROCK 2/ヒップロック2"
     },
     {
       "name": "白日と幻月",
@@ -81961,6 +82150,7 @@
       ],
       "remyLink": "https://remywiki.com/Totsugeki!_Glass_no_kneeso_hime!",
       "jacket": "Totsugeki! Glass no Nisohime!.png",
+      "genre": "電波",
       "saHash": "q1qI0QibDDP6oPdl8DlIlPo80DqDd66P",
       "saIndex": "659"
     },
@@ -82015,6 +82205,7 @@
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Douwa_kairou",
+      "genre": "空想ファンタジーシリーズ",
       "saHash": "lqqIbPboOl80QOioqb0bq6DoibdOQOlD",
       "jacket": "Douwa_kairou.jpg"
     },
@@ -82173,7 +82364,8 @@
       "jacket": "Kouen.png",
       "genre": "SCARLET",
       "saHash": "bo9l0Dl0PbqQQQ16Qq6bOOi68o0996Pq",
-      "saIndex": "489"
+      "saIndex": "489",
+      "search_hint": "こうえん SCARLET/スカーレット"
     },
     {
       "name": "絶対零度",
@@ -82290,9 +82482,10 @@
       ],
       "remyLink": "https://remywiki.com/Ryouran_hit_chart",
       "jacket": "Ryouran Hit Chart.png",
-      "genre": "MEGANE ROCK",
+      "genre": "NEGAME ROCK",
       "saHash": "oQ9QDQ6I9oo9DP8Oi86id61o9Pbbl9bD",
-      "saIndex": "453"
+      "saIndex": "453",
+      "search_hint": "NEGAME ROCK/ネガメロック"
     },
     {
       "name": "罪と罰",
@@ -82347,6 +82540,7 @@
       ],
       "jacket": "罪と罰.jpg",
       "remyLink": "https://remywiki.com/Tsumi_to_batsu",
+      "genre": "HYPER J-POP",
       "search_hint": "つみとばつ",
       "flags": ["unlock"]
     },
@@ -82403,6 +82597,7 @@
       ],
       "remyLink": "https://remywiki.com/Youhishi_no_ue_no_ginga",
       "saHash": "qb9Od0IQI16b6D9PP0O6ilqoq0dDQO66",
+      "genre": "",
       "saIndex": "1187",
       "jacket": "Youhishi no ue no ginga.jpg"
     },
@@ -82458,6 +82653,7 @@
       ],
       "remyLink": "https://remywiki.com/Shijou_no_laturia",
       "jacket": "Shijou no laturia.jpg",
+      "genre": "",
       "saHash": "qlPqO10q6PliDQDbd01IP0b6iqO0bDb6",
       "saIndex": "935"
     },
@@ -82669,7 +82865,8 @@
       "jacket": "Hana Ranman -Flowers-.png",
       "genre": "HYPER JAPANESQUE 2",
       "saHash": "6iq1dqQ1PDQlDO0bio0l89oDDDi6b0oD",
-      "saIndex": "220"
+      "saIndex": "220",
+      "search_hint": "HYPER JAPANESQUE 2/ハイパージャパネスク2"
     },
     {
       "name": "蒼い衝動 (for EXTREME)",
@@ -82778,6 +82975,7 @@
       ],
       "remyLink": "https://remywiki.com/Ao_ga_kieru_toki",
       "jacket": "Ao ga kieru toki.jpg",
+      "genre": "",
       "saHash": "6d10P0Pd1PiD1l6DPQdoPD1Q8DP0QlqQ",
       "saIndex": "961"
     },
@@ -82860,7 +83058,8 @@
       "jacket": "NIJIIRO.png",
       "genre": "LOVELY TRANS POP",
       "saHash": "Io1D1l9QiDo6IDObd8qo1Q9lQ6iollQ9",
-      "saIndex": "224"
+      "saIndex": "224",
+      "search_hint": "LOVELY TRANS POP/ラブリートランスポップ"
     },
     {
       "name": "虹色の花",
@@ -82930,7 +83129,8 @@
       "jacket": "Nijiiro no Hana.png",
       "genre": "LIGHT-VISUAL POP",
       "saHash": "Dl690bPIlIq0Ol1PdPbb9QO0I66lIqO0",
-      "saIndex": "530"
+      "saIndex": "530",
+      "search_hint": "LIGHT-VISUAL POP/ライトビジュアルポップ"
     },
     {
       "name": "蛇神",
@@ -82986,6 +83186,7 @@
       "flags": ["unlock"],
       "jacket": "蛇神.jpg",
       "remyLink": "https://remywiki.com/Kagachi",
+      "genre": "ORIENTAL MYTHOLOGY",
       "search_hint": "かがち"
     },
     {
@@ -83041,7 +83242,8 @@
       ],
       "jacket": "走れメロンパン.jpg",
       "remyLink": "https://remywiki.com/Hashire_melonpan",
-      "search_hint": "はしれめろんぱん"
+      "genre": "フォーエバーフレンズ",
+      "search_hint": "FOREVER FRIENDS/フォーエバーフレンズ"
     },
     {
       "name": "路男",
@@ -83090,7 +83292,8 @@
       ],
       "jacket": "路男.jpg",
       "remyLink": "https://remywiki.com/Roman",
-      "search_hint": "ろまん"
+      "genre": "ヒップロック4",
+      "search_hint": "ろまん HIP ROCK 4/ヒップロック4"
     },
     {
       "name": "踊れ！！バーチャルアニマル！！",
@@ -83200,6 +83403,7 @@
       ],
       "jacket": "輪廻の鴉.jpg",
       "remyLink": "https://remywiki.com/Rinne_no_karasu",
+      "genre": "SPIRITUAL CORE",
       "search_hint": "りんねのからす"
     },
     {
@@ -83271,7 +83475,8 @@
       "jacket": "Todoroke! Koi no beanball!!.png",
       "genre": "ベースボールヒロイン",
       "saHash": "II8Dlo69PoPOII9P88qdlQPP8I61DlDo",
-      "saIndex": "579"
+      "saIndex": "579",
+      "search_hint": "BASEBALL HEROINE/ベースボールヒロイン"
     },
     {
       "name": "追憶のアリア",
@@ -83325,6 +83530,7 @@
       ],
       "remyLink": "https://remywiki.com/Tsuioku_no_aria",
       "jacket": "Tsuioku no aria.jpg",
+      "genre": "",
       "saHash": "Od08diDbdbl1Pi90QdO0ibqq8D111q9b",
       "saIndex": "958"
     },
@@ -83381,6 +83587,7 @@
       ],
       "remyLink": "https://remywiki.com/Sakasama_Cinderella_parade",
       "jacket": "Sakasama Cinderella parade.jpg",
+      "genre": "",
       "saHash": "llo89P08I1PlID9DO8lqdbbq69O8Qiib",
       "saIndex": "934"
     },
@@ -83449,6 +83656,7 @@
       ],
       "jacket": "逆月.jpg",
       "remyLink": "https://remywiki.com/Sakazuki",
+      "genre": "JAPANESQUE",
       "search_hint": "さかづき",
       "flags": ["unlock"]
     },
@@ -83630,7 +83838,7 @@
       "remyLink": "https://remywiki.com/Yakyuu_no_asobikata_soshite_sono_rekishi_~ketteiban~",
       "jacket": "Yakyu no asobikata soshite sono rekishi ~ketteihan~.png",
       "genre": "野球のことがよくわかる",
-      "search_hint": "Yakyu no asobikata soshite sono rekishi ~ketteihan~",
+      "search_hint": "the BASEBALL/野球のことがよくわかる",
       "saHash": "1dq6Oq918dIQb1doqQdbiPPPO9lIdl0P",
       "saIndex": "578"
     },
@@ -83699,8 +83907,10 @@
       ],
       "remyLink": "https://remywiki.com/Ryoushi_no_umi_no_Lindwurm",
       "jacket": "Ryoushi no umi no Lindwurm.jpg",
+      "genre": "エピックプログレ",
       "saHash": "dPI9loII89Q6P6iD6Ioo1iiI880DI1Dd",
-      "saIndex": "1090"
+      "saIndex": "1090",
+      "search_hint": "EPIC PROG/エピックプログレ"
     },
     {
       "name": "量子の海のリントヴルム (STARDOM Remix)",
@@ -83824,7 +84034,8 @@
       "remyLink": "https://remywiki.com/Itetsu_no_pride",
       "jacket": "Itetsu no pride.jpg",
       "saHash": "Odb0b0ld6P80b8b6QD0IIO866iq8OQ0b",
-      "saIndex": "1014"
+      "saIndex": "1014",
+      "search_hint": "いてつのプライド"
     },
     {
       "name": "鏡花水月楼 (DDR EDITION)",
@@ -83934,6 +84145,7 @@
       ],
       "remyLink": "https://remywiki.com/Heisokuteki_flation",
       "jacket": "Heisoku-teki flation.jpg",
+      "genre": "ROCK",
       "saHash": "Pbd01POIdQPdl6IDd6D6oP0006o6iO00"
     },
     {
@@ -84153,9 +84365,10 @@
       ],
       "remyLink": "https://remywiki.com/Sumidagawa_karenka",
       "jacket": "SUMIDAGAWA KARENKA.png",
-      "genre": "",
+      "genre": "A.I.デイトポップ",
       "saHash": "ibI69PPO1iP0D1IlI0bb11QOq6081POo",
-      "saIndex": "428"
+      "saIndex": "428",
+      "search_hint": "A.I.DATE POP/A.I.デイトポップ"
     },
     {
       "name": "雪上断火",
@@ -84224,7 +84437,8 @@
       "flags": ["unlock"],
       "jacket": "雪上断火.jpg",
       "remyLink": "https://remywiki.com/Setsujou_danka",
-      "search_hint": "せつじょうだんか"
+      "genre": "HIP ROCK 3",
+      "search_hint": "せつじょうだんか HIP ROCK 3/ヒップロック3"
     },
     {
       "name": "雫",
@@ -84294,7 +84508,8 @@
       "jacket": "Shizuku.png",
       "genre": "LAMENTO",
       "saHash": "oQ8oqddQOObiq0ldo68i1d6o1IidObi6",
-      "saIndex": "454"
+      "saIndex": "454",
+      "search_hint": "LAMENTO/ラメント"
     },
     {
       "name": "零 - ZERO -",
