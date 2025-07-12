@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1750901316274
+    "lastUpdated": 1752252516270
   },
   "defaults": {
     "style": "single",
@@ -285,6 +285,9 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "step": 631,
+          "freeze": 13,
+          "shock": 71,
           "flags": ["shock"],
           "sanbaiTier": 18.5
         },
@@ -310,6 +313,9 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "step": 650,
+          "freeze": 15,
+          "shock": 136,
           "flags": ["shock"],
           "sanbaiTier": 18.5
         }
@@ -540,6 +546,12 @@
           "sanbaiTier": 11.3
         },
         {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
@@ -556,6 +568,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.35
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/321_STARS",
@@ -1534,6 +1552,12 @@
           "sanbaiTier": 13.45
         },
         {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 186,
           "freeze": 2,
           "lvl": 5,
@@ -1556,6 +1580,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.35
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/AA",
@@ -1889,7 +1919,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "expert",
-          "bpm": "50-400",
+          "bpm": "50-800",
           "sanbaiTier": 15.9
         },
         {
@@ -1924,7 +1954,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "expert",
-          "bpm": "50-400",
+          "bpm": "50-800",
           "sanbaiTier": 15.85
         },
         {
@@ -1976,6 +2006,9 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
+          "step": 340,
+          "freeze": 7,
+          "shock": 91,
           "flags": ["shock"],
           "sanbaiTier": 14.6
         },
@@ -2001,6 +2034,9 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
+          "step": 475,
+          "freeze": 7,
+          "shock": 119,
           "flags": ["shock"],
           "sanbaiTier": 14.7
         }
@@ -2013,7 +2049,7 @@
     {
       "name": "Acid,Tribal & Dance (DDR EDITION)",
       "artist": "Relect",
-      "bpm": "72-286",
+      "bpm": "71-286",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -3533,6 +3569,12 @@
           "sanbaiTier": 11.25
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 166,
           "lvl": 8,
           "style": "double",
@@ -3552,6 +3594,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.3
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/AM-3P",
@@ -4021,7 +4069,7 @@
         {
           "step": 542,
           "shock": 41,
-          "freeze": 47,
+          "freeze": 6,
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
@@ -4055,7 +4103,7 @@
         {
           "step": 526,
           "shock": 34,
-          "freeze": 38,
+          "freeze": 4,
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
@@ -4125,7 +4173,7 @@
     {
       "name": "ANTI ANTHEM",
       "artist": "BEMANI Sound Team \"ZAQUVA\"",
-      "bpm": "128-175",
+      "bpm": "128-700",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         {
@@ -4302,6 +4350,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "ARACHNE.jpg",
       "remyLink": "https://remywiki.com/ARACHNE"
     },
@@ -4416,7 +4465,7 @@
     {
       "name": "Aria",
       "artist": "ZxNX",
-      "bpm": "90-180",
+      "bpm": "90-182",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -4539,7 +4588,7 @@
     {
       "name": "Astrogazer",
       "artist": "DJ TOTTO",
-      "bpm": "154",
+      "bpm": "150-155",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -5040,6 +5089,7 @@
           "diffClass": "challenge"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "BabeL ～Next Story～.jpg",
       "remyLink": "https://remywiki.com/BabeL_~Next_Story~",
       "genre": "スケールアウト",
@@ -5080,6 +5130,12 @@
           "sanbaiTier": 7.3
         },
         {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 80,
           "lvl": 3,
           "style": "double",
@@ -5099,6 +5155,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 8.35
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/BABY_BABY_GIMME_YOUR_LOVE",
@@ -5522,7 +5584,7 @@
       "name": "BALLAD FOR YOU～想いの雨～",
       "name_translation": "BALLAD FOR YOU -OMOI NO AME-",
       "artist": "NM feat. THOMAS HOWARD",
-      "bpm": "65",
+      "bpm": "65-68",
       "folder": "DanceDanceRevolution SuperNOVA",
       "charts": [
         {
@@ -5617,7 +5679,7 @@
         {
           "step": 180,
           "shock": 22,
-          "freeze": 22,
+          "freeze": 0,
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
@@ -5648,7 +5710,7 @@
         {
           "step": 183,
           "shock": 24,
-          "freeze": 24,
+          "freeze": 0,
           "lvl": 8,
           "style": "double",
           "diffClass": "challenge",
@@ -5812,6 +5874,9 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "difficult",
+          "step": 324,
+          "freeze": 19,
+          "shock": 68,
           "sanbaiTier": 12.85,
           "flags": ["shock"]
         },
@@ -5819,6 +5884,9 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "expert",
+          "step": 493,
+          "freeze": 60,
+          "shock": 63,
           "sanbaiTier": 15.75,
           "flags": ["shock"]
         },
@@ -5826,6 +5894,9 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "step": 567,
+          "freeze": 5,
+          "shock": 147,
           "flags": ["shock"],
           "sanbaiTier": 18.2
         },
@@ -5839,6 +5910,9 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "difficult",
+          "step": 318,
+          "freeze": 11,
+          "shock": 69,
           "sanbaiTier": 12.85,
           "flags": ["shock"]
         },
@@ -5846,6 +5920,9 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "expert",
+          "step": 487,
+          "freeze": 50,
+          "shock": 65,
           "sanbaiTier": 15.65,
           "flags": ["shock"]
         },
@@ -5853,13 +5930,16 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "step": 569,
+          "freeze": 16,
+          "shock": 153,
           "flags": ["shock"],
           "sanbaiTier": 18.15
         }
       ],
       "jacket": "Battle Against a True Hero.jpg",
       "remyLink": "https://remywiki.com/Battle_Against_a_True_Hero_/_Honmono_no_hero_to_no_tatakai",
-      "search_hint": "ほんものひーろーとのたたかい/本物のヒーローとの戦い"
+      "search_hint": "Undertale ほんものひーろーとのたたかい/本物のヒーローとの戦い"
     },
     {
       "name": "Be a Hero!",
@@ -6675,7 +6755,7 @@
         {
           "step": 665,
           "shock": 2,
-          "freeze": 48,
+          "freeze": 46,
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
@@ -6709,7 +6789,7 @@
         {
           "step": 662,
           "shock": 2,
-          "freeze": 48,
+          "freeze": 46,
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
@@ -7327,7 +7407,7 @@
     {
       "name": "Boss Rush",
       "artist": "USAO",
-      "bpm": "190",
+      "bpm": "95-190",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -7517,7 +7597,7 @@
     {
       "name": "BREAKING THE FUTURE",
       "artist": "ARM (IOSYS) x BEMANI Sound Team \"U1\" ft. Kradness x TRIΔNGLE",
-      "bpm": "45-360",
+      "bpm": "45-361",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -7801,7 +7881,7 @@
     {
       "name": "BRILLIANT 2U",
       "artist": "NAOKI",
-      "bpm": "149",
+      "bpm": "150",
       "folder": "DanceDanceRevolution 2nd Mix",
       "charts": [
         {
@@ -9332,7 +9412,7 @@
     {
       "name": "CHAOS",
       "artist": "DE-SIRE retunes",
-      "bpm": "170",
+      "bpm": "160-281",
       "folder": "DanceDanceRevolution SuperNOVA",
       "charts": [
         {
@@ -10610,7 +10690,7 @@
         {
           "step": 134,
           "shock": 28,
-          "freeze": 45,
+          "freeze": 17,
           "lvl": 6,
           "style": "single",
           "diffClass": "challenge",
@@ -10644,7 +10724,7 @@
         {
           "step": 136,
           "shock": 27,
-          "freeze": 45,
+          "freeze": 18,
           "lvl": 6,
           "style": "double",
           "diffClass": "challenge",
@@ -11220,7 +11300,7 @@
       "saHash": "1Dd0b8lIQOd011qqOPiq1QDbDqod9Od8",
       "artist": "NUU$HI",
       "folder": "DanceDanceRevolution A3",
-      "bpm": "93-186",
+      "bpm": "93-187",
       "charts": [
         {
           "lvl": 3,
@@ -11513,12 +11593,18 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "difficult",
+          "step": 412,
+          "freeze": 82,
+          "shock": 54,
           "flags": ["shock"]
         },
         {
           "lvl": 16,
           "style": "single",
           "diffClass": "expert",
+          "step": 673,
+          "freeze": 93,
+          "shock": 70,
           "flags": ["shock"]
         },
         {
@@ -11530,12 +11616,18 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "difficult",
+          "step": 418,
+          "freeze": 79,
+          "shock": 54,
           "flags": ["shock"]
         },
         {
           "lvl": 16,
           "style": "double",
           "diffClass": "expert",
+          "step": 601,
+          "freeze": 104,
+          "shock": 97,
           "flags": ["shock"]
         }
       ],
@@ -11732,7 +11824,7 @@
       "name": "CRAZY♥LOVE",
       "name_translation": "CRAZY LOVE",
       "artist": "jun",
-      "bpm": "89-177",
+      "bpm": "88-177",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
       "charts": [
         {
@@ -12222,7 +12314,7 @@
     {
       "name": "Cytokinesis",
       "artist": "Hommarju",
-      "bpm": "111-280",
+      "bpm": "111-284",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -12608,7 +12700,7 @@
         {
           "step": 308,
           "shock": 26,
-          "freeze": 36,
+          "freeze": 10,
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
@@ -12642,7 +12734,7 @@
         {
           "step": 275,
           "shock": 25,
-          "freeze": 32,
+          "freeze": 7,
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -13571,7 +13663,7 @@
     {
       "name": "DDR MEGAMIX",
       "artist": "DDR",
-      "bpm": "65-333",
+      "bpm": "65-332",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -13959,6 +14051,9 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "difficult",
+          "step": 368,
+          "freeze": 44,
+          "shock": 71,
           "sanbaiTier": 11.65,
           "flags": ["shock"]
         },
@@ -13966,6 +14061,9 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "expert",
+          "step": 520,
+          "freeze": 54,
+          "shock": 74,
           "sanbaiTier": 14.65,
           "flags": ["shock"]
         },
@@ -13973,6 +14071,9 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
+          "step": 698,
+          "freeze": 42,
+          "shock": 119,
           "flags": ["shock"],
           "sanbaiTier": 17.65
         },
@@ -13986,6 +14087,9 @@
           "lvl": 11,
           "style": "double",
           "diffClass": "difficult",
+          "step": 379,
+          "freeze": 28,
+          "shock": 81,
           "sanbaiTier": 11.55,
           "flags": ["shock"]
         },
@@ -13993,6 +14097,9 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "expert",
+          "step": 555,
+          "freeze": 46,
+          "shock": 116,
           "sanbaiTier": 14.65,
           "flags": ["shock"]
         },
@@ -14000,11 +14107,14 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
+          "step": 643,
+          "freeze": 51,
+          "shock": 164,
           "flags": ["shock"],
           "sanbaiTier": 17.4
         }
       ],
-      "search_hint": "かれいなるしとう/華麗なる死闘",
+      "search_hint": "Undertale かれいなるしとう/華麗なる死闘",
       "remyLink": "https://remywiki.com/Death_by_Glamour_/_Kareinaru_shitou",
       "jacket": "Death by Glamour.jpg"
     },
@@ -14290,7 +14400,7 @@
         {
           "step": 456,
           "shock": 35,
-          "freeze": 51,
+          "freeze": 16,
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
@@ -14324,7 +14434,7 @@
         {
           "step": 429,
           "shock": 35,
-          "freeze": 50,
+          "freeze": 15,
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
@@ -14545,7 +14655,7 @@
     {
       "name": "DeStRuCtIvE FoRcE",
       "artist": "BADMYTH",
-      "bpm": "89-177",
+      "bpm": "88-177",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         {
@@ -14771,7 +14881,7 @@
         {
           "step": 274,
           "shock": 39,
-          "freeze": 57,
+          "freeze": 18,
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
@@ -14805,7 +14915,7 @@
         {
           "step": 277,
           "shock": 41,
-          "freeze": 57,
+          "freeze": 16,
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
@@ -15061,6 +15171,9 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "step": 725,
+          "freeze": 4,
+          "shock": 18,
           "sanbaiTier": 18.65,
           "flags": ["shock"]
         },
@@ -15086,6 +15199,9 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "step": 707,
+          "freeze": 4,
+          "shock": 19,
           "sanbaiTier": 18.95,
           "flags": ["shock"]
         }
@@ -15791,6 +15907,8 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
+          "step": 190,
+          "freeze": 45,
           "shock": 58,
           "flags": ["shock"],
           "sanbaiTier": 10.7
@@ -15817,6 +15935,8 @@
           "lvl": 10,
           "style": "double",
           "diffClass": "challenge",
+          "step": 190,
+          "freeze": 44,
           "shock": 58,
           "flags": ["shock"],
           "sanbaiTier": 10.65
@@ -16514,6 +16634,12 @@
           "sanbaiTier": 13.5
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 175,
           "lvl": 6,
           "style": "double",
@@ -16533,6 +16659,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.5
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/DROP_OUT",
@@ -17194,6 +17326,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "EBONY & IVORY.jpg",
       "remyLink": "https://remywiki.com/EBONY_%26_IVORY",
       "genre": "RAGTIME CHIPTUNE"
@@ -19196,6 +19329,12 @@
           "sanbaiTier": 13.2
         },
         {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 176,
           "freeze": 9,
           "lvl": 5,
@@ -19218,6 +19357,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.45
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Exotic_ethnic",
@@ -19435,7 +19580,7 @@
     {
       "name": "Fascination MAXX",
       "artist": "100-200-400",
-      "bpm": "100-400",
+      "bpm": "100-401",
       "folder": "DanceDanceRevolution SuperNOVA",
       "charts": [
         {
@@ -19762,7 +19907,7 @@
       "saHash": "Qid6OQOIibbOiDo808oq9oQO668bDodP",
       "artist": "Toby Fox",
       "folder": "DanceDanceRevolution A3",
-      "bpm": "48-190",
+      "bpm": "47-190",
       "charts": [
         {
           "lvl": 2,
@@ -19780,6 +19925,9 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "difficult",
+          "step": 198,
+          "freeze": 58,
+          "shock": 20,
           "sanbaiTier": 8.4,
           "flags": ["shock"]
         },
@@ -19787,6 +19935,9 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "expert",
+          "step": 316,
+          "freeze": 66,
+          "shock": 25,
           "sanbaiTier": 13.3,
           "flags": ["shock"]
         },
@@ -19794,7 +19945,10 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "bpm": "24-780",
+          "bpm": "24-190",
+          "step": 439,
+          "freeze": 95,
+          "shock": 64,
           "flags": ["shock"],
           "sanbaiTier": 15.3
         },
@@ -19808,6 +19962,9 @@
           "lvl": 8,
           "style": "double",
           "diffClass": "difficult",
+          "step": 194,
+          "freeze": 56,
+          "shock": 14,
           "sanbaiTier": 8.4,
           "flags": ["shock"]
         },
@@ -19815,6 +19972,9 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "expert",
+          "step": 326,
+          "freeze": 101,
+          "shock": 45,
           "sanbaiTier": 12.45,
           "flags": ["shock"]
         },
@@ -19822,13 +19982,16 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "bpm": "24-780",
+          "bpm": "24-190",
+          "step": 418,
+          "freeze": 78,
+          "shock": 76,
           "flags": ["shock"],
           "sanbaiTier": 15.4
         }
       ],
       "remyLink": "https://remywiki.com/Finale_(Toby_Fox)",
-      "search_hint": "フィナーレ",
+      "search_hint": "Undertale フィナーレ",
       "jacket": "Finale.jpg"
     },
     {
@@ -20188,7 +20351,9 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "shock": 1,
+          "step": 431,
+          "freeze": 8,
+          "shock": 122,
           "flags": ["shock"],
           "sanbaiTier": 16.55
         },
@@ -20214,7 +20379,9 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "shock": 1,
+          "step": 442,
+          "freeze": 7,
+          "shock": 144,
           "flags": ["shock"],
           "sanbaiTier": 16.75
         }
@@ -20429,7 +20596,7 @@
         {
           "step": 169,
           "shock": 29,
-          "freeze": 42,
+          "freeze": 13,
           "lvl": 7,
           "style": "single",
           "diffClass": "challenge",
@@ -20463,7 +20630,7 @@
         {
           "step": 158,
           "shock": 19,
-          "freeze": 33,
+          "freeze": 14,
           "lvl": 7,
           "style": "double",
           "diffClass": "challenge",
@@ -20586,7 +20753,8 @@
         }
       ],
       "jacket": "Florence.jpg",
-      "remyLink": "https://remywiki.com/Florence"
+      "remyLink": "https://remywiki.com/Florence",
+      "flags": ["worldLeague"]
     },
     {
       "name": "Flourish",
@@ -21143,7 +21311,7 @@
       "name": "Fly far bounce",
       "artist": "猫叉Master",
       "artist_translation": "Nekomata Master",
-      "bpm": "163",
+      "bpm": "113-172",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -21682,7 +21850,7 @@
         {
           "step": 268,
           "shock": 23,
-          "freeze": 77,
+          "freeze": 54,
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
@@ -21716,7 +21884,7 @@
         {
           "step": 272,
           "shock": 23,
-          "freeze": 64,
+          "freeze": 41,
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
@@ -22372,7 +22540,7 @@
     {
       "name": "GERBERA",
       "artist": "BEMANI Sound Team \"TAG\"",
-      "bpm": "102-205",
+      "bpm": "103-205",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -22778,7 +22946,7 @@
       "name": "GIRIGILI門前雀羅",
       "name_translation": "GIRIGILI Burning 24H!",
       "artist": "Cheki-ROWS",
-      "bpm": "148",
+      "bpm": "148-150",
       "folder": "DanceDanceRevolution SuperNOVA2",
       "charts": [
         {
@@ -23306,7 +23474,7 @@
     {
       "name": "Go For The Top",
       "artist": "U1 overground",
-      "bpm": "74-180",
+      "bpm": "74-409",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
       "charts": [
         {
@@ -23539,7 +23707,7 @@
         {
           "step": 352,
           "shock": 46,
-          "freeze": 46,
+          "freeze": 0,
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
@@ -23571,7 +23739,7 @@
         {
           "step": 347,
           "shock": 43,
-          "freeze": 43,
+          "freeze": 0,
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -25257,6 +25425,30 @@
       "saIndex": "56"
     },
     {
+      "name": "Healing Vision (X-Special)",
+      "artist": "DE-SIRE",
+      "bpm": "49-196",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 14.65
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 15.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Healing_Vision",
+      "jacket": "Healing Vision(X-Special).png",
+      "saHash": "0D1618DDbol8bl9dP0lDdiD66ioIiidD",
+      "saIndex": "290"
+    },
+    {
       "name": "Healing Vision ～Angelic mix～",
       "artist": "2MB",
       "bpm": "49-196",
@@ -25309,30 +25501,6 @@
       "jacket": "Healing Vision ～Angelic mix～.png",
       "saHash": "olQQ8QPPqqObDD9ooodOl9i9od8b06I9",
       "saIndex": "63"
-    },
-    {
-      "name": "Healing Vision (X-Special)",
-      "artist": "DE-SIRE",
-      "bpm": "49-196",
-      "folder": "DanceDanceRevolution X",
-      "charts": [
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 14.65
-        },
-        {
-          "lvl": 15,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 15.7
-        }
-      ],
-      "remyLink": "https://remywiki.com/Healing_Vision",
-      "jacket": "Healing Vision(X-Special).png",
-      "saHash": "0D1618DDbol8bl9dP0lDdiD66ioIiidD",
-      "saIndex": "290"
     },
     {
       "name": "Healing-D-Vision",
@@ -25654,7 +25822,7 @@
         {
           "step": 201,
           "shock": 20,
-          "freeze": 57,
+          "freeze": 37,
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
@@ -25688,7 +25856,7 @@
         {
           "step": 201,
           "shock": 20,
-          "freeze": 48,
+          "freeze": 28,
           "lvl": 8,
           "style": "double",
           "diffClass": "challenge",
@@ -25926,7 +26094,7 @@
     {
       "name": "Hella Deep",
       "artist": "MASAYOSHI IIMORI",
-      "bpm": "132-150",
+      "bpm": "75-150",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         {
@@ -25982,7 +26150,7 @@
       "name": "Help me, ERINNNNNN!!",
       "artist": "ビートまりお(COOL&CREATE)",
       "artist_translation": "Beat Mario (COOL&CREATE)",
-      "bpm": "185",
+      "bpm": "180-184",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -26088,7 +26256,7 @@
         {
           "step": 301,
           "shock": 35,
-          "freeze": 49,
+          "freeze": 14,
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
@@ -26122,7 +26290,7 @@
         {
           "step": 297,
           "shock": 35,
-          "freeze": 51,
+          "freeze": 16,
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
@@ -26734,7 +26902,7 @@
         {
           "step": 436,
           "shock": 37,
-          "freeze": 49,
+          "freeze": 12,
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
@@ -26768,7 +26936,7 @@
         {
           "step": 382,
           "shock": 43,
-          "freeze": 46,
+          "freeze": 3,
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
@@ -28333,7 +28501,7 @@
     {
       "name": "IMANOGUILTS",
       "artist": "Mystic Moon",
-      "bpm": "184",
+      "bpm": "180-188",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -29626,7 +29794,7 @@
       "name": "IX",
       "artist": "dj TAKA VS DJ TOTTO feat.藍",
       "artist_translation": "dj TAKA VS DJ TOTTO feat.Ai",
-      "bpm": "198",
+      "bpm": "99-400",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -30155,7 +30323,7 @@
     {
       "name": "JOMANDA",
       "artist": "DJ YOSHITAKA",
-      "bpm": "90-195",
+      "bpm": "90-600",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -30241,7 +30409,7 @@
     {
       "name": "Jucunda Memoria",
       "artist": "Akhuta",
-      "bpm": "145-290",
+      "bpm": "48-290",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         {
@@ -30789,7 +30957,7 @@
       "name": "KIMONO♥PRINCESS",
       "name_translation": "KIMONO PRINCESS",
       "artist": "jun",
-      "bpm": "95-190",
+      "bpm": "94-190",
       "folder": "DanceDanceRevolution X2",
       "charts": [
         {
@@ -32510,6 +32678,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "Liar×Girl.jpg",
       "remyLink": "https://remywiki.com/Liar_Girl",
       "genre": ""
@@ -33301,7 +33470,7 @@
     {
       "name": "Lose Your Sense",
       "artist": "ZxNX",
-      "bpm": "44-175",
+      "bpm": "44-352",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -34590,6 +34759,12 @@
           "sanbaiTier": 11.15
         },
         {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 130,
           "lvl": 7,
           "style": "double",
@@ -34609,6 +34784,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.4
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/MAKE_IT_BETTER",
@@ -34653,7 +34834,7 @@
         {
           "step": 237,
           "shock": 29,
-          "freeze": 39,
+          "freeze": 10,
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
@@ -34684,7 +34865,7 @@
         {
           "step": 192,
           "shock": 29,
-          "freeze": 51,
+          "freeze": 22,
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -35345,7 +35526,7 @@
     {
       "name": "MAX.(period)",
       "artist": "2MB",
-      "bpm": "180-600",
+      "bpm": "150-600",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -35697,21 +35878,26 @@
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
-          "lvl": 4,
+          "lvl": 3,
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "120",
           "sanbaiTier": 4.7
         },
         {
           "lvl": 9,
           "style": "single",
           "diffClass": "basic",
+          "bpm": "120",
           "sanbaiTier": 9.55
         },
         {
           "lvl": 12,
           "style": "single",
           "diffClass": "difficult",
+          "step": 351,
+          "freeze": 30,
+          "shock": 30,
           "flags": ["shock"],
           "sanbaiTier": 12.7
         },
@@ -35719,6 +35905,9 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "expert",
+          "step": 533,
+          "freeze": 120,
+          "shock": 36,
           "flags": ["shock"],
           "sanbaiTier": 16.35
         },
@@ -35726,6 +35915,9 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "step": 581,
+          "freeze": 115,
+          "shock": 116,
           "flags": ["shock"],
           "sanbaiTier": 18.05
         },
@@ -35733,12 +35925,16 @@
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
+          "bpm": "120",
           "sanbaiTier": 9.5
         },
         {
           "lvl": 12,
           "style": "double",
           "diffClass": "difficult",
+          "step": 361,
+          "freeze": 31,
+          "shock": 94,
           "flags": ["shock"],
           "sanbaiTier": 12.7
         },
@@ -35746,6 +35942,9 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "expert",
+          "step": 527,
+          "freeze": 109,
+          "shock": 229,
           "flags": ["shock"],
           "sanbaiTier": 16.25
         },
@@ -35753,6 +35952,9 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
+          "step": 575,
+          "freeze": 115,
+          "shock": 266,
           "flags": ["shock"],
           "sanbaiTier": 18.1
         }
@@ -35761,7 +35963,8 @@
       "jacket": "MEGALOVANIA.jpg",
       "genre": "",
       "saHash": "PddldblI909IqI8PPiQIo9lIIiQdDo1l",
-      "saIndex": "1071"
+      "saIndex": "1071",
+      "search_hint": "Undertale サンズ"
     },
     {
       "name": "melody H4CKER",
@@ -35858,7 +36061,7 @@
         {
           "step": 328,
           "shock": 42,
-          "freeze": 52,
+          "freeze": 10,
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
@@ -35892,7 +36095,7 @@
         {
           "step": 340,
           "shock": 36,
-          "freeze": 44,
+          "freeze": 8,
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -35946,7 +36149,7 @@
         {
           "step": 343,
           "shock": 37,
-          "freeze": 37,
+          "freeze": 0,
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
@@ -35979,7 +36182,7 @@
         {
           "step": 323,
           "shock": 29,
-          "freeze": 30,
+          "freeze": 1,
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -36287,9 +36490,9 @@
       "saIndex": "944"
     },
     {
-      "name": "Midnight Special",
-      "artist": "Love Machineguns",
-      "bpm": "182",
+      "name": "MIDNIGHT SPECIAL",
+      "artist": "Love machineguns",
+      "bpm": "182-187",
       "folder": "DanceDanceRevolution SuperNOVA",
       "charts": [
         {
@@ -38055,7 +38258,7 @@
         {
           "step": 315,
           "shock": 28,
-          "freeze": 62,
+          "freeze": 34,
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
@@ -38089,7 +38292,7 @@
         {
           "step": 305,
           "shock": 24,
-          "freeze": 55,
+          "freeze": 31,
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -38143,7 +38346,7 @@
         {
           "step": 669,
           "shock": 19,
-          "freeze": 80,
+          "freeze": 61,
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
@@ -38177,7 +38380,7 @@
         {
           "step": 611,
           "shock": 45,
-          "freeze": 93,
+          "freeze": 59,
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
@@ -38629,7 +38832,7 @@
     {
       "name": "New York EVOLVED (Type A)",
       "artist": "NC underground",
-      "bpm": "190-380",
+      "bpm": "95-380",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
       "charts": [
         {
@@ -38941,7 +39144,7 @@
       "name": "NGO",
       "artist": "鍋島圭一",
       "artist_translation": "Keiichi Nabeshima",
-      "bpm": "69-274",
+      "bpm": "68-274",
       "folder": "DanceDanceRevolution SuperNOVA2",
       "charts": [
         {
@@ -39912,7 +40115,7 @@
         {
           "step": 265,
           "shock": 65,
-          "freeze": 95,
+          "freeze": 30,
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
@@ -39946,7 +40149,7 @@
         {
           "step": 249,
           "shock": 65,
-          "freeze": 91,
+          "freeze": 26,
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
@@ -41387,30 +41590,6 @@
       "saIndex": "9"
     },
     {
-      "name": "PARANOiA MAX～DIRTY MIX～(X-Special)",
-      "artist": "190",
-      "bpm": "190",
-      "folder": "DanceDanceRevolution X",
-      "charts": [
-        {
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 13.45
-        },
-        {
-          "lvl": 14,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 14.65
-        }
-      ],
-      "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
-      "jacket": "PARANOiA MAX～DIRTY MIX～(X-Special).png",
-      "saHash": "dQ69Oqd0Do8Dodd6bQD9l16Olo9P01DQ",
-      "saIndex": "303"
-    },
-    {
       "name": "PARANOiA MAX～DIRTY MIX～",
       "artist": "190",
       "bpm": "190",
@@ -41470,6 +41649,30 @@
       "jacket": "PARANOiA MAX～DIRTY MIX～.png",
       "genre": "JUNGLE",
       "saHash": "Pl0dPid9lQDo6PDQDqPboPqO6iIDIqoo"
+    },
+    {
+      "name": "PARANOiA MAX～DIRTY MIX～(X-Special)",
+      "artist": "190",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 13.45
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 14.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
+      "jacket": "PARANOiA MAX～DIRTY MIX～(X-Special).png",
+      "saHash": "dQ69Oqd0Do8Dodd6bQD9l16Olo9P01DQ",
+      "saIndex": "303"
     },
     {
       "name": "PARANOiA Rebirth",
@@ -42986,7 +43189,7 @@
         {
           "step": 481,
           "shock": 57,
-          "freeze": 59,
+          "freeze": 2,
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
@@ -43020,7 +43223,7 @@
         {
           "step": 481,
           "shock": 48,
-          "freeze": 53,
+          "freeze": 5,
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
@@ -43294,7 +43497,7 @@
     {
       "name": "Poseidon(kors k mix)",
       "artist": "NAOKI underground",
-      "bpm": "76-152",
+      "bpm": "76-155",
       "folder": "DanceDanceRevolution X2",
       "charts": [
         {
@@ -43461,6 +43664,8 @@
           "sanbaiTier": 16.45
         },
         {
+          "step": 704,
+          "freeze": 12,
           "shock": 55,
           "lvl": 18,
           "style": "single",
@@ -43487,6 +43692,8 @@
           "sanbaiTier": 17.6
         },
         {
+          "step": 751,
+          "freeze": 8,
           "shock": 132,
           "lvl": 18,
           "style": "double",
@@ -44086,7 +44293,7 @@
     {
       "name": "Puberty Dysthymia",
       "artist": "BEMANI Sound Team \"person09\"",
-      "bpm": "70-210",
+      "bpm": "67-210",
       "folder": "DanceDanceRevolution A",
       "charts": [
         {
@@ -46584,7 +46791,7 @@
         {
           "step": 217,
           "shock": 63,
-          "freeze": 69,
+          "freeze": 6,
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
@@ -46618,7 +46825,7 @@
         {
           "step": 217,
           "shock": 62,
-          "freeze": 68,
+          "freeze": 6,
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
@@ -47459,6 +47666,9 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
+          "step": 492,
+          "freeze": 10,
+          "shock": 64,
           "flags": ["shock"],
           "sanbaiTier": 16.7
         },
@@ -47484,6 +47694,9 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
+          "step": 417,
+          "freeze": 19,
+          "shock": 39,
           "flags": ["shock"],
           "sanbaiTier": 16.25
         }
@@ -47723,7 +47936,7 @@
         {
           "step": 389,
           "shock": 59,
-          "freeze": 77,
+          "freeze": 18,
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
@@ -47757,7 +47970,7 @@
         {
           "step": 389,
           "shock": 48,
-          "freeze": 61,
+          "freeze": 13,
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
@@ -50427,7 +50640,7 @@
         {
           "step": 318,
           "shock": 35,
-          "freeze": 63,
+          "freeze": 28,
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
@@ -50461,7 +50674,7 @@
         {
           "step": 320,
           "shock": 31,
-          "freeze": 46,
+          "freeze": 15,
           "lvl": 10,
           "style": "double",
           "diffClass": "challenge",
@@ -50519,6 +50732,15 @@
           "sanbaiTier": 10.45
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 275,
+          "freeze": 24,
+          "shock": 44,
+          "flags": ["shock", "grandPrixPack"]
+        },
+        {
           "step": 165,
           "lvl": 5,
           "style": "double",
@@ -50538,6 +50760,15 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.45
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "step": 263,
+          "freeze": 33,
+          "shock": 62,
+          "flags": ["shock", "grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Silent_Hill",
@@ -50667,6 +50898,12 @@
           "sanbaiTier": 11.55
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 94,
           "freeze": 35,
           "lvl": 4,
@@ -50689,6 +50926,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.45
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Silver_Platform_-_I_wanna_get_your_heart_-",
@@ -51385,7 +51628,7 @@
     {
       "name": "smooooch・∀・",
       "artist": "kors k",
-      "bpm": "177",
+      "bpm": "172-180",
       "folder": "DanceDanceRevolution X2",
       "charts": [
         {
@@ -51410,6 +51653,9 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
+          "step": 278,
+          "freeze": 8,
+          "shock": 46,
           "flags": ["shock"],
           "sanbaiTier": 10.55
         },
@@ -51435,6 +51681,9 @@
           "lvl": 11,
           "style": "double",
           "diffClass": "challenge",
+          "step": 289,
+          "freeze": 15,
+          "shock": 34,
           "flags": ["shock"],
           "sanbaiTier": 11.6
         },
@@ -51682,6 +51931,9 @@
           "lvl": 8,
           "style": "single",
           "diffClass": "challenge",
+          "step": 185,
+          "freeze": 118,
+          "shock": 60,
           "flags": ["shock"],
           "sanbaiTier": 8.6
         },
@@ -51707,6 +51959,9 @@
           "lvl": 9,
           "style": "double",
           "diffClass": "challenge",
+          "step": 185,
+          "freeze": 118,
+          "shock": 60,
           "flags": ["shock"],
           "sanbaiTier": 9.5
         },
@@ -52384,30 +52639,6 @@
       "jacket": "SOUVENIR.jpg"
     },
     {
-      "name": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special)",
-      "artist": "DE-SIRE",
-      "bpm": "160",
-      "folder": "DanceDanceRevolution X",
-      "charts": [
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.3
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 12.6
-        }
-      ],
-      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE~JUNGLE_MIX~",
-      "jacket": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special).png",
-      "saHash": "dDO8ili1081QQIb86POQ8qd0P111011o",
-      "saIndex": "314"
-    },
-    {
       "name": "SP-TRIP MACHINE～JUNGLE MIX～",
       "artist": "DE-SIRE",
       "bpm": "160",
@@ -52467,6 +52698,30 @@
       "jacket": "SP-TRIP MACHINE～JUNGLE MIX～.png",
       "saHash": "1P9qQdiiodODqQPl0OO88iiiqdoDIPO6",
       "saIndex": "12"
+    },
+    {
+      "name": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special)",
+      "artist": "DE-SIRE",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.3
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 12.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE~JUNGLE_MIX~",
+      "jacket": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special).png",
+      "saHash": "dDO8ili1081QQIb86POQ8qd0P111011o",
+      "saIndex": "314"
     },
     {
       "name": "Spanish Snowy Dance",
@@ -53413,6 +53668,9 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
+          "step": 490,
+          "freeze": 21,
+          "shock": 64,
           "flags": ["shock"],
           "sanbaiTier": 16.5
         },
@@ -53438,6 +53696,9 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
+          "step": 496,
+          "freeze": 21,
+          "shock": 71,
           "flags": ["shock"],
           "sanbaiTier": 16.2
         }
@@ -53666,60 +53927,6 @@
       "saIndex": "833"
     },
     {
-      "name": "STARS☆☆☆（Re-tuned by HΛL） - DDR EDITION -",
-      "artist": "TЁЯRA",
-      "bpm": "145",
-      "folder": "DanceDanceRevolution SuperNOVA2",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.45
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.4
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 9.4
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 10.45
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.3
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.65
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.5
-        }
-      ],
-      "remyLink": "https://remywiki.com/STARS(Re-tuned_by_HAL)_-_DDR_EDITION_-",
-      "jacket": "STARS☆☆☆（Re-tuned by HΛL） - DDR EDITION -.png",
-      "saHash": "bq1O60D90Qbb6iPoi90Ii9olQOIO0Ib1",
-      "saIndex": "261"
-    },
-    {
       "name": "STARS☆☆☆(2nd NAOKI's style)",
       "artist": "TЁЯRA",
       "bpm": "140",
@@ -53785,6 +53992,60 @@
       "jacket": "STARS☆☆☆(2nd NAOKI's style).png",
       "saHash": "6qQb9I0QbD89IID9b9iOPdO6dbqPDolQ",
       "saIndex": "205"
+    },
+    {
+      "name": "STARS☆☆☆（Re-tuned by HΛL） - DDR EDITION -",
+      "artist": "TЁЯRA",
+      "bpm": "145",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3.45
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 5.4
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 9.4
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.45
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 6.3
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 9.65
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 10.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/STARS(Re-tuned_by_HAL)_-_DDR_EDITION_-",
+      "jacket": "STARS☆☆☆（Re-tuned by HΛL） - DDR EDITION -.png",
+      "saHash": "bq1O60D90Qbb6iPoi90Ii9olQOIO0Ib1",
+      "saIndex": "261"
     },
     {
       "name": "Start a New Day",
@@ -55757,7 +56018,7 @@
     {
       "name": "SUPER SAMURAI",
       "artist": "jun",
-      "bpm": "170",
+      "bpm": "169-170",
       "folder": "DanceDanceRevolution X",
       "charts": [
         {
@@ -59311,6 +59572,7 @@
           "sanbaiTier": 16.2
         }
       ],
+      "flags": ["unlock"],
       "jacket": "Thunderstorm.jpg",
       "remyLink": "https://remywiki.com/Thunderstorm"
     },
@@ -61097,59 +61359,6 @@
       "saIndex": "2"
     },
     {
-      "name": "TRIP MACHINE～luv mix～",
-      "artist": "2MB",
-      "bpm": "160",
-      "folder": "DanceDanceRevolution 3rd Mix",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.15
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 9.25
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 10.35
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.1
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 9.55
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 10.65
-        },
-        {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.35
-        }
-      ],
-      "remyLink": "https://remywiki.com/TRIP_MACHINE~luv_mix~",
-      "jacket": "TRIP MACHINE～luv mix～.png",
-      "saHash": "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO"
-    },
-    {
       "name": "TRIP MACHINE (xac nanoglide mix)",
       "artist": "DE-SIRE",
       "bpm": "170",
@@ -61547,6 +61756,59 @@
       "jacket": "TRIP MACHINE(X-Special).png",
       "saHash": "bql00PQ1PiboIqDQoD909Il8o1PIDiD1",
       "saIndex": "328"
+    },
+    {
+      "name": "TRIP MACHINE～luv mix～",
+      "artist": "2MB",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution 3rd Mix",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 3.15
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 9.25
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.35
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.1
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 9.55
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 11.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/TRIP_MACHINE~luv_mix~",
+      "jacket": "TRIP MACHINE～luv mix～.png",
+      "saHash": "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO"
     },
     {
       "name": "Triple Counter",
@@ -64565,6 +64827,9 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
+          "step": 495,
+          "freeze": 92,
+          "shock": 19,
           "flags": ["shock"],
           "sanbaiTier": 17.2
         },
@@ -64590,6 +64855,9 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
+          "step": 475,
+          "freeze": 94,
+          "shock": 34,
           "flags": ["shock"],
           "sanbaiTier": 17.7
         }
@@ -66706,7 +66974,7 @@
       "name": "ÆTHER",
       "name_translation": "AETHER",
       "artist": "TAG underground",
-      "bpm": "192-384",
+      "bpm": "191-384",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -67099,6 +67367,9 @@
           "lvl": 9,
           "style": "single",
           "diffClass": "challenge",
+          "step": 234,
+          "freeze": 26,
+          "shock": 73,
           "flags": ["shock"],
           "sanbaiTier": 9.5
         },
@@ -67124,6 +67395,9 @@
           "lvl": 9,
           "style": "double",
           "diffClass": "challenge",
+          "step": 228,
+          "freeze": 25,
+          "shock": 72,
           "flags": ["shock"],
           "sanbaiTier": 9.55
         },
@@ -69280,6 +69554,55 @@
       "genre": "HYPERACTIVE HELLCORE"
     },
     {
+      "name": "アイスクリームマジック",
+      "name_translation": "Ice cream magic",
+      "artist": "雪乃イト",
+      "artist_translation": "Yukino Ito",
+      "saHash": "6iqOPoP6lQi8ilD10o8ol11DQbqooOqP",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "110",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "remyLink": "https://remywiki.com/Ice_cream_magic",
+      "jacket": "アイスクリームマジック.jpg",
+      "genre": ""
+    },
+    {
       "name": "アドレナリン",
       "name_translation": "Adrenaline",
       "artist": "U1 overground",
@@ -70040,6 +70363,55 @@
       "genre": "",
       "saHash": "80PdqQ0iiOQb9i91lIliodiO9PI8O609",
       "saIndex": "753"
+    },
+    {
+      "name": "エクスプロウル",
+      "name_translation": "Explore",
+      "artist": "晴いちばん",
+      "artist_translation": "Haru-ichiban",
+      "saHash": "0Od1iPb8QO8oDd9db9iq6iOP8DQ08I01",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "164",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "remyLink": "https://remywiki.com/Explore",
+      "jacket": "エクスプロウル.jpg",
+      "genre": "VOCALOID"
     },
     {
       "name": "エンドルフィン",
@@ -73906,6 +74278,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "ポチコの幸せな日常.jpg",
       "remyLink": "https://remywiki.com/Pochiko_no_shiawasena_nichijou",
       "genre": "わんわんコア",
@@ -74474,7 +74847,7 @@
       "name": "メンタンピンドラドラ",
       "name_translation": "Mentanpindoradora",
       "artist": "enzo + O2i3",
-      "bpm": "93-185",
+      "bpm": "92-370",
       "folder": "DanceDanceRevolution A3",
       "charts": [
         {
@@ -75947,7 +76320,7 @@
       "name": "世界の果てに約束の凱歌を -DDR Extended Megamix-",
       "name_translation": "Sekai no hate ni yakusoku no gaika wo -DDR Extended Megamix-",
       "artist": "BEMANI Sound Team \"TAG\"",
-      "bpm": "100-200",
+      "bpm": "100-400",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
         {
@@ -76095,6 +76468,9 @@
           "lvl": 10,
           "style": "single",
           "diffClass": "difficult",
+          "step": 319,
+          "freeze": 46,
+          "shock": 63,
           "flags": ["shock"],
           "sanbaiTier": 10.5
         },
@@ -76102,6 +76478,9 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "expert",
+          "step": 399,
+          "freeze": 104,
+          "shock": 76,
           "flags": ["shock"],
           "sanbaiTier": 14.35
         },
@@ -76115,6 +76494,9 @@
           "lvl": 10,
           "style": "double",
           "diffClass": "difficult",
+          "step": 315,
+          "freeze": 44,
+          "shock": 61,
           "flags": ["shock"],
           "sanbaiTier": 10.5
         },
@@ -76122,6 +76504,9 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "expert",
+          "step": 398,
+          "freeze": 93,
+          "shock": 84,
           "flags": ["shock"],
           "sanbaiTier": 14.35
         }
@@ -77856,7 +78241,7 @@
       "name": "天空の華",
       "name_translation": "Tenkuu no hana",
       "artist": "S-C-U × U1 overground",
-      "bpm": "90-180",
+      "bpm": "90-188",
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
@@ -79850,6 +80235,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "明鏡止水.jpg",
       "remyLink": "https://remywiki.com/Meikyoushisui",
       "genre": "禅ジャズ",
@@ -82061,6 +82447,12 @@
           "sanbaiTier": 12.65
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 145,
           "lvl": 4,
           "style": "double",
@@ -82080,6 +82472,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.6
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Dandandou",
@@ -82343,6 +82741,9 @@
           "style": "single",
           "diffClass": "challenge",
           "bpm": "165-330",
+          "step": 290,
+          "freeze": 136,
+          "shock": 6,
           "flags": ["shock"],
           "sanbaiTier": 12.75
         },
@@ -82369,6 +82770,9 @@
           "style": "double",
           "diffClass": "challenge",
           "bpm": "165-330",
+          "step": 284,
+          "freeze": 137,
+          "shock": 27,
           "sanbaiTier": 12.75,
           "flags": ["shock"]
         },
@@ -82513,6 +82917,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "絶対零度.jpg",
       "remyLink": "https://remywiki.com/Zettaireido",
       "search_hint": "ぜったいれいど"
@@ -83292,6 +83697,55 @@
       "search_hint": "かがち"
     },
     {
+      "name": "覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～",
+      "name_translation": "Kakugoseyo! Enternmeen ~yori mi no kiriuri jiboujiki ban~",
+      "artist": "マキシウキョウ",
+      "artist_translation": "Maxi Ukyo",
+      "saHash": "dDqq9QbDDO8l6q8i1l91oQPbQD8Pqi0i",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "141-176",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "remyLink": "https://remywiki.com/Kakugoseyo!_Enternmeen_~yori_mi_no_kiriuri_jiboujiki_ban~",
+      "jacket": "覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～.jpg",
+      "genre": "ビックリポップ"
+    },
+    {
       "name": "走れメロンパン",
       "name_translation": "Hashire Melonpan",
       "saHash": "diPbi6I8O1lQ1b9lO0q8IoqDqbD9P6dP",
@@ -83392,6 +83846,7 @@
           "diffClass": "expert"
         }
       ],
+      "flags": ["grandPrixPack"],
       "jacket": "路男.jpg",
       "remyLink": "https://remywiki.com/Roman",
       "genre": "ヒップロック4",

@@ -1,4 +1,5 @@
 // direct copy/paste from https://3icecream.com/js/songdata.js
+// After pasting, replace `const` & `var` to `export const`
 
 export const ALL_SONG_DATA = [
   {
@@ -44,6 +45,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 8, 12, 16, 0, 8, 12, 16, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "00obPO6oPIPOoD9qb0dIl6q6D8P6o9bI",
@@ -250,6 +252,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 9, 13, 15, 0, 9, 12, 16, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "0bDqIO9Q0PPIPlPll1D8Pbol9O6DlPdb",
@@ -324,8 +327,9 @@ export const ALL_SONG_DATA = [
     song_name: "AA",
     alphabet: "A",
     version_num: 9,
-    ratings: [3, 5, 9, 13, 0, 5, 10, 13, 0],
-    tiers: [0.4, 0.45, 0.45, 0.45, 0, 0.45, 0.5, 0.35, 0],
+    ratings: [3, 5, 9, 13, 17, 5, 10, 13, 17],
+    tiers: [0.4, 0.45, 0.45, 0.45, 1, 0.45, 0.5, 0.35, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "0ddPq801D8PiiqO1oqoQbdOIQ9lQl11o",
@@ -491,6 +495,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.3, 0.4, 0.4, 0.3, 0, 0.45, 0.4, 0.4, 0],
   },
   {
+    song_id: "0Od1iPb8QO8oDd9db9iq6iOP8DQ08I01",
+    song_name: "エクスプロウル",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "0ODl10P0O10D1OQID91QiPlQd988bio8",
     song_name: "TYCOON",
     alphabet: "T",
@@ -558,6 +570,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 10, 13, 15, 0, 9, 13, 15, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "0q8b6O0qOlDql0oP80OI8i8i1088qbIb",
@@ -1501,7 +1514,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "61iqiQDQiobb8Pbq8o9qoldq8PlIdbIb",
     song_name: "ギャ・ギャ・ギャ・ギャラクシー！",
-    alphabet: "?",
+    searchable_name: "ぎゃぎゃぎゃぎゃらくしー",
+    romanized_name: "Gya Gya Gya Galaxy",
+    alphabet: "か",
     version_num: 20,
     ratings: [2, 5, 10, 13, 0, 5, 10, 13, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -1912,6 +1927,14 @@ export const ALL_SONG_DATA = [
     lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280],
   },
   {
+    song_id: "6iqOPoP6lQi8ilD10o8ol11DQbqooOqP",
+    song_name: "アイスクリームマジック",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [3, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "6l0iQ18D0I00P89lIqI8bl9biIOi018O",
     song_name: "BRILLIANT 2U (AKBK MIX)",
     alternate_name: "鰤AKBK",
@@ -1970,6 +1993,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 6, 11, 14, 16, 6, 11, 14, 16],
     tiers: [0.2, 0.15, 0.45, 0.2, 0.6, 0.4, 0.3, 0.15, 0.2],
+    lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
   },
   {
     song_id: "6loP1dbiOq0Q8i9QQOI6o0iOO6bdIQOO",
@@ -2225,8 +2249,9 @@ export const ALL_SONG_DATA = [
     song_name: "Silent Hill",
     alphabet: "S",
     version_num: 3,
-    ratings: [3, 4, 9, 10, 0, 5, 7, 11, 0],
-    tiers: [0.5, 0.55, 0.4, 0.45, 0, 0.6, 0.8, 0.45, 0],
+    ratings: [3, 4, 9, 10, 13, 5, 7, 11, 12],
+    tiers: [0.5, 0.55, 0.4, 0.45, 1, 0.6, 0.8, 0.45, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "80d8obPdlobP9qlqiDb01999o01q6DdP",
@@ -2411,6 +2436,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 7, 12, 15, 0, 8, 12, 14, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "890q91iIbO96OOD10Qlob6qOObQoq1bd",
@@ -2665,8 +2691,9 @@ export const ALL_SONG_DATA = [
     song_name: "MAKE IT BETTER",
     alphabet: "M",
     version_num: 1,
-    ratings: [3, 7, 9, 11, 0, 7, 9, 11, 0],
-    tiers: [0.4, 0.5, 0.35, 0.15, 0, 0.6, 0.4, 0.4, 0],
+    ratings: [3, 7, 9, 11, 14, 7, 9, 11, 14],
+    tiers: [0.4, 0.5, 0.35, 0.15, 1, 0.6, 0.4, 0.4, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "8Io6oi89Q8DblI8IPdPPI0q98Ql9o98Q",
@@ -3193,6 +3220,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 8, 12, 16, 0, 8, 12, 16, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "99I10l8o6DPI886l9818ID16OlqI8oId",
@@ -4016,8 +4044,9 @@ export const ALL_SONG_DATA = [
     song_name: "Silver Platform - I wanna get your heart -",
     alphabet: "S",
     version_num: 10,
-    ratings: [4, 5, 7, 11, 0, 4, 8, 11, 0],
-    tiers: [0.2, 0.35, 0.7, 0.55, 0, 0.15, 0.4, 0.45, 0],
+    ratings: [4, 5, 7, 11, 13, 4, 8, 11, 13],
+    tiers: [0.2, 0.35, 0.7, 0.55, 1, 0.15, 0.4, 0.45, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "bi9OolI1P9oI8dDPlbQiq01Dl080PQ61",
@@ -4142,6 +4171,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 6, 11, 14, 0, 6, 10, 14, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "bO10Q9999DQ9DDP890lQbdlIlIl6IID9",
@@ -5334,6 +5364,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.6, 0.9, 0.8, 0.85, 0.4, 0.85, 0.65, 0.7, 0.6],
   },
   {
+    song_id: "dDqq9QbDDO8l6q8i1l91oQPbQD8Pqi0i",
+    song_name: "覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "dDQqqIQlDQ9POd90OPl9Dd1i106odDl0",
     song_name: "JOMANDA",
     alphabet: "J",
@@ -5875,8 +5913,9 @@ export const ALL_SONG_DATA = [
     song_name: "AM-3P",
     alphabet: "A",
     version_num: 2,
-    ratings: [3, 7, 8, 11, 0, 8, 9, 10, 0],
-    tiers: [0.25, 0.5, 0.5, 0.25, 0, 0.5, 0.55, 0.3, 0],
+    ratings: [3, 7, 8, 11, 13, 8, 9, 10, 13],
+    tiers: [0.25, 0.5, 0.5, 0.25, 1, 0.5, 0.55, 0.3, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "DQ1dqP1IoiD11QOPiI0Q8PqO0Qddo6q6",
@@ -6139,6 +6178,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [5, 9, 14, 17, 0, 9, 14, 17, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "I08olqilqQi9Dd0qOq0o09PPqI0l11QI",
@@ -7452,8 +7492,9 @@ export const ALL_SONG_DATA = [
     song_name: "exotic ethnic",
     alphabet: "E",
     version_num: 6,
-    ratings: [4, 5, 8, 13, 0, 5, 9, 13, 0],
-    tiers: [0.2, 0.2, 0.45, 0.2, 0, 0.4, 0.5, 0.45, 0],
+    ratings: [4, 5, 8, 13, 15, 5, 9, 13, 15],
+    tiers: [0.2, 0.2, 0.45, 0.2, 1, 0.4, 0.5, 0.45, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "iOqb60DOOolIioDIOPi09P91i8PDiOqq",
@@ -7778,6 +7819,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 9, 14, 17, 8, 10, 14, 17],
     tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
     song_id: "iQqbdqOlqlPP11d1qI8lO6iQb19dO991",
@@ -9145,7 +9187,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "ODIdIPOi6q6i0i6qDqODQ9qIbD0DQbqd",
     song_name: "悲報！ワイ！ニート！",
-    alphabet: "?",
+    searchable_name: "ひほうわいにーと",
+    romanized_name: "Hihou Wai Neet",
+    alphabet: "は",
     version_num: 20,
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -10206,8 +10250,9 @@ export const ALL_SONG_DATA = [
     song_name: "BABY BABY GIMME YOUR LOVE",
     alphabet: "B",
     version_num: 4,
-    ratings: [2, 2, 4, 7, 0, 3, 5, 8, 0],
-    tiers: [0.45, 0.5, 0.45, 0.3, 0, 0.45, 0.5, 0.35, 0],
+    ratings: [2, 2, 4, 7, 12, 3, 5, 8, 13],
+    tiers: [0.45, 0.5, 0.45, 0.3, 1, 0.45, 0.5, 0.35, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "P98dl8qdoilqbPqIO86ood601o1696D8",
@@ -10437,6 +10482,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 5, 11, 16, 0, 5, 11, 17, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
   },
   {
     song_id: "Pl0dPid9lQDo6PDQDqPboPqO6iIDIqoo",
@@ -10602,8 +10648,9 @@ export const ALL_SONG_DATA = [
     romanized_name: "Dan Dan Dou",
     alphabet: "た",
     version_num: 9,
-    ratings: [3, 4, 7, 12, 0, 4, 8, 10, 0],
-    tiers: [0.5, 0.65, 0.7, 0.65, 0, 0.65, 0.8, 0.6, 0],
+    ratings: [3, 4, 7, 12, 16, 4, 8, 10, 16],
+    tiers: [0.5, 0.65, 0.7, 0.65, 1, 0.65, 0.8, 0.6, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "PoP6o0Db8odIO9oOqddodd8IlPl1iDli",
@@ -10633,7 +10680,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "PP0P9ilQb1o160O6O6PqQIl60oDi8Db6",
     song_name: "あおばの足音",
-    alphabet: "?",
+    searchable_name: "あおばのあしおと",
+    romanized_name: "Aoba no Ashioto",
+    alphabet: "あ",
     version_num: 20,
     ratings: [2, 7, 11, 14, 0, 7, 12, 14, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -10800,8 +10849,9 @@ export const ALL_SONG_DATA = [
     song_name: "DROP OUT",
     alphabet: "D",
     version_num: 4,
-    ratings: [4, 8, 10, 13, 0, 6, 9, 13, 0],
-    tiers: [0.75, 0.7, 0.55, 0.5, 0, 0.8, 0.85, 0.5, 0],
+    ratings: [4, 8, 10, 13, 16, 6, 9, 13, 17],
+    tiers: [0.75, 0.7, 0.55, 0.5, 1, 0.8, 0.85, 0.5, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "q0QIob1PDI6IP86dlPb6I6il9d6bP606",
@@ -11138,8 +11188,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "321 STARS",
     alphabet: "#",
     version_num: 8,
-    ratings: [4, 5, 9, 11, 0, 5, 8, 11, 0],
-    tiers: [0.2, 0.3, 0.45, 0.3, 0, 0.35, 0.55, 0.35, 0],
+    ratings: [4, 5, 9, 11, 14, 5, 8, 11, 15],
+    tiers: [0.2, 0.3, 0.45, 0.3, 1, 0.35, 0.55, 0.35, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "q96q9D9oIIOQl8QQ60ii19P0Dbq8Q609",
@@ -12242,6 +12293,6 @@ export const ALL_SONG_DATA = [
 ];
 export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
-  230, 240, 260, 270, 290,
+  230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1750901316274;
+export const SONG_DATA_LAST_UPDATED_unixms = 1752252516270;
