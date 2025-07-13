@@ -266,6 +266,9 @@ export const SDVX_UNLOCK_IDS = {
     2092, // すべてを賭して
   ],
 
+  // Variant Gate
+  variantgate: [],
+
   otherEvents: [
     // Cloud-Exclusive
     1762, // ドゥサンコオデッセイ!!

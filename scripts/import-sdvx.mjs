@@ -100,6 +100,7 @@ async function main() {
         exceed: "Exceed",
         omegaDimension: "Blaster Gate/Omega Dimension",
         hexadiver: "Hexadiver",
+        variantgate: "Variant Gate",
         otherEvents: "Time-limited & Other Events",
         jpOnly: "J-Region Exclusive",
         $abbr: {
