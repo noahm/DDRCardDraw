@@ -274,9 +274,27 @@ function buildSong(song, availableJackets) {
       diffClass: determineDiffClass(song, chartType),
       jacket: chartJacket,
     };
+    /** @type {string[]} */
+    const flags = [];
     if (TEMP_UNLOCK_CHARTS[chart.diffClass]?.includes(numericId)) {
-      chart.flags = ["otherEvents"];
+      flags.push("otherEvents");
     }
+    for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
+      if (
+        SDVX_UNLOCK_IDS[flag].some(
+          (item) =>
+            typeof item !== "number" &&
+            item[0] === numericId &&
+            item[1] === chart.diffClass,
+        )
+      ) {
+        flags.push(flag);
+      }
+    }
+    if (flags.length) {
+      chart.flags = flags;
+    }
+
     charts.push(chart);
   }
 
@@ -284,6 +302,7 @@ function buildSong(song, availableJackets) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
 
+  /** @type {string[]} */
   const flags = [];
   for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
     if (SDVX_UNLOCK_IDS[flag].includes(numericId)) {

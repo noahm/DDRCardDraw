@@ -8,8 +8,26 @@ export const UNPLAYABLE_IDS = [
   1751, // EXCEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
 ];
 
+/**
+ * @typedef ChartType
+ * @type {"novice"|"advanced"|"exhaust"|"infinite"|"gravity"|"heavenly"|"vivid"|"exceed"}
+ */
+
+/**
+ * @type {Record<string, Array<number | [number, ChartType]>>}
+ * Specifies specific songs or charts which are unlocked via various events.
+ * Each event has an array of song IDs or charts (specified as a tuple of song
+ * id and chart type) that should be flagged as part of that particular event.
+ */
 export const SDVX_UNLOCK_IDS = {
   omegaDimension: [
+    // EXAMPLES:
+    // to flag all charts of WHITEOUT, put its id here:
+    // 1100,
+    // or, to flag only a particular chart, wrap in braces,
+    // then specify the chart afterwards:
+    // [1100, "exceed"],
+
     1099, // FIN4LE ～終止線の彼方へ～
     1100, // WHITEOUT
     1101, // Deadly force
