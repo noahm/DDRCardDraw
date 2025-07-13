@@ -48,7 +48,7 @@ export function CabManagement() {
   }
 
   return (
-    <div style={{ padding: "1em", height: "100%", overflow: "auto" }}>
+    <div style={{ padding: "1em", overflow: "auto" }}>
       <div>
         <AddCabControl>
           <Tooltip content="Hide cabs">
