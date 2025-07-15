@@ -1,4 +1,4 @@
-import { promises, existsSync, mkdirSync } from "fs";
+import { promises, existsSync, mkdirSync } from "node:fs";
 import { resolve, basename, join, dirname } from "path";
 import { format } from "prettier";
 import PQueue from "p-queue";
@@ -79,8 +79,13 @@ export function getDom(url) {
   return (domForUrl[url] = requestQueue.add(() => getDomInternal(url)));
 }
 
-export async function writeJsonData(data, filePath) {
-  data.meta.lastUpdated = Date.now();
+/**
+ * @param {import('../src/models/SongData.js').GameData} data Game data object
+ * @param {string} filePath Destination JSON file path
+ * @param {number | undefined} lastUpdated Last updated UNIX timestamp, defaults to current time
+ */
+export async function writeJsonData(data, filePath, lastUpdated = undefined) {
+  data.meta.lastUpdated = lastUpdated ?? Date.now();
   let formatted;
   try {
     formatted = await format(JSON.stringify(data, null, 2), {
