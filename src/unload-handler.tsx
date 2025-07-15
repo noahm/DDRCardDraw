@@ -10,7 +10,7 @@ export function UnloadHandler(props: Props) {
   const { t } = useIntl();
   useEffect(() => {
     useDrawState.setState({ confirmMessage: t("clearDrawingsConfirm") });
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     if (!props.confirmUnload) {
