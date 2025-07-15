@@ -8,11 +8,7 @@ import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
 import { writeJsonData } from "./utils.mjs";
-import {
-  SDVX_UNLOCK_IDS,
-  UNPLAYABLE_IDS,
-  TEMP_UNLOCK_CHARTS,
-} from "./sdvx/unlocks.mjs";
+import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -100,6 +96,7 @@ async function main() {
         exceed: "Exceed",
         omegaDimension: "Blaster Gate/Omega Dimension",
         hexadiver: "Hexadiver",
+        variantgate: "Variant Gate",
         otherEvents: "Time-limited & Other Events",
         jpOnly: "J-Region Exclusive",
         $abbr: {
@@ -234,6 +231,8 @@ function buildSong(song, availableJackets) {
     餮: "Ƶ",
     墸: "\u035f\u035f\u035e\u0020",
     盥: "⚙︎",
+    疉: "Ö",
+    鑒: "₩",
   };
 
   let name = info.title_name[0];
@@ -273,9 +272,24 @@ function buildSong(song, availableJackets) {
       diffClass: determineDiffClass(song, chartType),
       jacket: chartJacket,
     };
-    if (TEMP_UNLOCK_CHARTS[chart.diffClass]?.includes(numericId)) {
-      chart.flags = ["otherEvents"];
+    /** @type {string[]} */
+    const flags = [];
+    for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
+      if (
+        SDVX_UNLOCK_IDS[flag].some(
+          (item) =>
+            typeof item !== "number" &&
+            item[0] === numericId &&
+            item[1] === chart.diffClass,
+        )
+      ) {
+        flags.push(flag);
+      }
     }
+    if (flags.length) {
+      chart.flags = flags;
+    }
+
     charts.push(chart);
   }
 
@@ -283,6 +297,7 @@ function buildSong(song, availableJackets) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
 
+  /** @type {string[]} */
   const flags = [];
   for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
     if (SDVX_UNLOCK_IDS[flag].includes(numericId)) {

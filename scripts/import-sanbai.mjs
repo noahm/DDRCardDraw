@@ -1,4 +1,3 @@
-import { getDifficultyList, getSanbaiData } from "./scraping/sanbai.mjs";
 import {
   guessUrlFromName,
   getJacketFromRemySong,
@@ -27,6 +26,59 @@ const idxMap = [
   "double:expert",
   "double:challenge",
 ];
+
+/**
+ * Invalid data on 3icecream site
+ * @typedef {typeof import('./scraping/songdata.mjs').ALL_SONG_DATA[number]} SongData
+ * @type {Map<SongData['song_id'], Pick<Partial<SongData>, 'ratings' | 'lock_types' | 'deleted'>>}
+ */
+const invalidDataOnSanbai = new Map([
+  [
+    "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6", // Bloody Tears (IIDX EDITION)
+    { ratings: [4, 5, 6, 11, 0, 5, 7, 11, 0] },
+  ],
+  [
+    "61QQi8i9Iliq66IOq1ib888b666o08O8", // Mermaid girl
+    { ratings: [3, 4, 7, 11, 12, 5, 8, 11, 12] },
+  ],
+  [
+    "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
+    { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
+  ],
+  [
+    "9PO0qPdi1OQo68Qb09qdIOo6008QoIPq", // 量子の海のリントヴルム (STARDOM Remix)
+    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
+  ],
+  [
+    "Q8PqoP91qqI6I909IdQ098091q9q0i19", // ドーパミン (STARDOM Remix)
+    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
+  ],
+  [
+    "D8o868di9DidPo98ibOdqbi98Ii869Qb", // Love You
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
+  [
+    "iP8ll9I0dd8d689PPqlI9008d06io09q", // 恋愛観測
+    { lock_types: [0, 0, 0, 0, 0, 0, 0, 0, 0] },
+  ],
+  [
+    "ol6IDd019O0qq8dblPQ96ol1oPbI990b", // HAPPY☆LUCKY☆YEAPPY
+    { lock_types: [0, 0, 0, 0, 0, 0, 0, 0, 0] },
+  ],
+]);
+
+const lockFlags = {
+  20: ["goldExclusive", "tempUnlock"], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
+  190: ["grandPrixPack"], // DDR GRAND PRIX packs
+  250: ["flareRank"], // FLARE SKILL unlock
+  260: ["tempUnlock"], // MYSTICAL Re:UNION
+  270: ["worldLeague"], // WORLD LEAGUE
+  280: ["unlock"], // EXTRA SAVIOR WORLD
+  290: ["unlock"], // GALAXY BRAVE
+  300: ["platinumMembers"], // DDR PLATINUM MEMBERS
+};
+
+const manualyAddFlags = new Set(["copyStrikes"]);
 
 /**
  *
@@ -58,7 +110,10 @@ function styleAndDiffFor(idx) {
 function chartKeyFor(id, diffClass, style) {
   return `${id}/${diffIdxFor(diffClass, style)}`;
 }
-import { ALL_SONG_DATA as sanbaiData } from "./scraping/songdata.mjs";
+import {
+  ALL_SONG_DATA as sanbaiData,
+  SONG_DATA_LAST_UPDATED_unixms,
+} from "./scraping/songdata.mjs";
 
 const ui = reportQueueStatusLive();
 let warnings = 0;
@@ -103,27 +158,6 @@ try {
   //   return ratingsLists[key];
   // }
 
-  const knownRemoved = new Set([
-    "oi6P9Oq19ooo00bDiPQ809DQQQD8qPlD", // Play Hard
-    "08QP8bOQ6OOdd11Dq81db1l8IdiDbod6", // Lesson by DJ
-  ]);
-
-  const lockFlags = {
-    10: null, //"a20+usLocked"
-    20: ["goldenLeague"],
-    60: null, //"a20+kacRegistration",
-    80: null, // a20 unlock
-    130: null, // a20 unlock
-    150: null, //"a20+extraexclusive",
-    160: null, //"a20+courseUnlock",
-    180: ["unlock"],
-    190: ["grandPrixPack"],
-    210: ["tempUnlock"],
-    220: ["tempUnlock"], // kacRegistration
-    230: ["babylonGalaxy"], // babylonGalaxy
-    240: ["tempUnlock", "goldExclusive"], // bpl3
-  };
-
   // let warnings = 0;
   // const ui = reportQueueStatusLive();
   // for (const song of existingData.songs) {
@@ -143,11 +177,42 @@ try {
   //   }
   // }
   const tasks = sanbaiData.map(async (song) => {
-    const deleted = song.deleted;
+    // Fix invalid data
+    if (invalidDataOnSanbai.has(song.song_id)) {
+      const actual = invalidDataOnSanbai.get(song.song_id);
+      if (
+        actual.ratings &&
+        song.ratings.some((lvl, i) => lvl !== actual.ratings[i])
+      ) {
+        ui.log.write(
+          `Fixing invalid ratings of ${song.song_name} on 3ice : ${song.ratings} -> ${actual.ratings}`,
+        );
+        song.ratings = actual.ratings;
+        song.tiers = song.tiers.map((_) => 1); // reset tiers
+      }
+      if (
+        !!actual.lock_types !== !!song.lock_types ||
+        song.lock_types?.some((l, i) => l !== actual.lock_types[i])
+      ) {
+        ui.log.write(
+          `Fixing invalid lock_types of ${song.song_name} on 3ice : ${song.lock_types?.map((i) => lockFlags[i])} -> ${actual.lock_types?.map((i) => lockFlags[i])}`,
+        );
+        song.lock_types = actual.lock_types;
+      }
+      if (actual.deleted !== song.deleted) {
+        ui.log.write(
+          `Fixing invalid deleted of ${song.song_name} on 3ice : ${song.deleted} -> ${actual.deleted}`,
+        );
+        song.deleted = actual.deleted;
+      }
+    }
+
     const existingSong = existingData.songs.find(
       (s) => s.saHash === song.song_id || s.name === song.song_name,
     );
-    if (deleted || knownRemoved.has(song.song_id)) {
+
+    // Delete songs that are removed from the game
+    if (song.deleted) {
       if (existingSong) {
         ui.log.write(`Deleting removed song: ${existingSong.name}`);
         existingData.songs = existingData.songs.filter(
@@ -168,6 +233,7 @@ try {
         songLock = locks[0];
       }
     }
+
     const charts = song.ratings
       .map((lvl, idx) => {
         const [style, diffClass] = styleAndDiffFor(idx);
@@ -179,7 +245,6 @@ try {
         };
         if (locks && locks[idx] && locks[idx] !== songLock) {
           chart.flags = lockFlags[locks[idx]];
-          // TODO add shock flags as appropriate
         }
         if (song.tiers[idx] && song.tiers[idx] !== 1) {
           chart.sanbaiTier = chart.lvl + song.tiers[idx];
@@ -219,27 +284,57 @@ try {
           );
           existingChart.lvl = freshChartData.lvl;
         }
-        // const meaningfulFlags = (existingChart.flags || []).filter(
-        //   (f) => f !== "shock" && f !== "newInA3",
-        // );
-        // if (meaningfulFlags.length && !freshChartData.flags) {
-        //   ui.log.write(
-        //     `Removing flags [${meaningfulFlags.join(",")}] of ${song.song_name} ${freshChartData.diffClass}`,
-        //   );
-        //   existingChart.flags = existingChart.flags.filter(
-        //     (f) => f === "shock" || f === "newInA3",
-        //   );
-        //   if (!existingChart.flags.length) {
-        //     delete existingChart.flags;
-        //   }
-        // }
+
+        // Update chart flags
+        const meaningfulChartFlags = (existingChart.flags ?? []).filter(
+          (f) => !manualyAddFlags.has(f),
+        );
+        freshChartData.flags = [
+          ...(existingChart.shock ? ["shock"] : []),
+          ...(freshChartData.flags ?? []),
+        ];
+        if (
+          meaningfulChartFlags.length !== freshChartData.flags.length ||
+          meaningfulChartFlags.some((f, i) => f !== freshChartData.flags[i])
+        ) {
+          ui.log.write(
+            `Updating flags of ${song.song_name} ${freshChartData.diffClass}`,
+          );
+          existingChart.flags = [
+            ...(existingChart.flags?.filter((f) => manualyAddFlags.has(f)) ??
+              []),
+            ...(freshChartData.flags ?? []),
+          ];
+          if (!existingChart.flags.length) {
+            delete existingChart.flags;
+          }
+        }
       }
-      // if (existingSong.flags && !songLock) {
-      //   ui.log.write(
-      //     `Removing flags [${existingSong.flags.join(",")}] from ${existingSong.name}`,
-      //   );
-      //   delete existingSong.flags;
-      // }
+      // Update song flags
+      const meaningfulSongFlags = (existingSong.flags ?? []).filter(
+        (f) => !manualyAddFlags.has(f),
+      );
+      if (
+        meaningfulSongFlags.length !== (lockFlags[songLock]?.length ?? 0) ||
+        meaningfulSongFlags.some((f, i) => f !== lockFlags[songLock][i])
+      ) {
+        ui.log.write(
+          `Updating flags [${existingSong.flags}] from ${existingSong.name}`,
+        );
+        existingSong.flags = [
+          ...(existingSong.flags?.filter((f) => manualyAddFlags.has(f)) ?? []),
+          ...(lockFlags[songLock] ?? []),
+        ];
+        if (!existingSong.flags.length) {
+          delete existingSong.flags;
+        }
+      }
+
+      if (!existingSong.remyLink) {
+        const remyLink = await guessUrlFromName(song.song_name);
+        ui.log.write("guessed url as " + (remyLink || "null"));
+        existingSong.remyLink = remyLink || null;
+      }
       if (!existingSong.jacket) {
         if (existingSong.remyLink) {
           ui.log.write(
@@ -304,7 +399,7 @@ try {
 
   existingData.songs = sortSongs(existingData.songs);
 
-  await writeJsonData(existingData, targetFile);
+  await writeJsonData(existingData, targetFile, SONG_DATA_LAST_UPDATED_unixms);
   if (warnings) {
     ui.log.write(`Done, with ${warnings} warnings`);
   } else {

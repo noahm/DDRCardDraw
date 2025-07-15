@@ -8,8 +8,26 @@ export const UNPLAYABLE_IDS = [
   1751, // EXCEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
 ];
 
+/**
+ * @typedef ChartType
+ * @type {"novice"|"advanced"|"exhaust"|"infinite"|"gravity"|"heavenly"|"vivid"|"exceed"}
+ */
+
+/**
+ * @type {Record<string, Array<number | [number, ChartType]>>}
+ * Specifies specific songs or charts which are unlocked via various events.
+ * Each event has an array of song IDs or charts (specified as a tuple of song
+ * id and chart type) that should be flagged as part of that particular event.
+ */
 export const SDVX_UNLOCK_IDS = {
   omegaDimension: [
+    // EXAMPLES:
+    // to flag all charts of WHITEOUT, put its id here:
+    // 1100,
+    // or, to flag only a particular chart, wrap in braces,
+    // then specify the chart afterwards:
+    // [1100, "exceed"],
+
     1099, // FIN4LE ～終止線の彼方へ～
     1100, // WHITEOUT
     1101, // Deadly force
@@ -148,6 +166,18 @@ export const SDVX_UNLOCK_IDS = {
     2151, // Xeno Gravity
     2152, // NEMSYS ARENA World Hexathlon
 
+    // BPL Season 3 Stamp Event
+    2121, // Knew Order
+    2122, // Ex concordia felicitas
+    2123, // Allegro Saetta
+    2124, // ARISE
+    2125, // プリュネシエル
+    2126, // Colorful Magical Parade
+    2127, // NO SURRENDER
+    2128, // StellarflightS
+    2160, // ウイジン
+    2161, // { eXLIPXe }
+
     // Unlock Chain
     2034, // 無意識レクイエム(cosmobsp mix)
 
@@ -174,6 +204,31 @@ export const SDVX_UNLOCK_IDS = {
     2100, // 鳳凰誓歌
     2107, // 永久の粒虹
     2115, // Lunatic Mare
+
+    2106, // 孤独のドロップハンター
+    2108, // MiRÀi
+    2110, // reSTART yOUR STORIES
+    2113, // ぼくらのはじまりのおと
+    2116, // Line markeR
+
+    2198, // Our garden is blue.
+    2200, // Golden Rotation
+    2201, // Titanomachia
+    2202, // Ardenok
+    2203, // Jupiter
+    2204, // 流転に咲く魂の花
+
+    [774, "exceed"], // neko＊neko XCD
+    [450, "exceed"], // VILE CAT XCD
+    [44, "exceed"], // 世界はネコのもの XCD
+
+    [650, "exceed"], // Chant du Cygne XCD
+    [642, "exceed"], // Sayonara Planet Wars XCD
+    [653, "exceed"], // 混乱少女♥そふらんちゃん!! XCD
+    [657, "exceed"], // 到達してしまった僕らと夢と希望の最之果 XCD
+
+    [675, "exceed"], // BEAT-NEW-WORLD XCD
+    [182, "exceed"], // 待チ人ハ来ズ。 XCD
   ],
   hexadiver: [
     1580, // 666
@@ -266,6 +321,15 @@ export const SDVX_UNLOCK_IDS = {
     2092, // すべてを賭して
   ],
 
+  // Variant Gate
+  variantgate: [
+    //Variant Gate 1
+    2199, // 神凪
+    2225, // 黒蝶のワルツ
+    2226, // Gryphone
+    2227, // Who then no 灯
+  ],
+
   otherEvents: [
     // Cloud-Exclusive
     1762, // ドゥサンコオデッセイ!!
@@ -275,15 +339,25 @@ export const SDVX_UNLOCK_IDS = {
     1811, // Reminiscence
 
     // Arena Exclusive
-    1742, // Kontrol Line
-    1743, // Revvable Engine
     1745, // graduation
     1846, // Tickled Pink
-    1855, // Resonant Gear
     1902, // You Are My Best RivaL!!
     2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
     2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
     2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
+
+    //REFLEC BEAT Special Stamp!
+    2053, // 梅雪夜
+    2054, // ARACHNE
+    2055, // Poochie
+    2056, // Crazy Jackpot
+    2057, // 黒紅掬い
+
+    2235, // Windy Fairy
+    2236, // 幻影ノ消失
+    2237, // Towards The Horizon
+    2238, // SCHWARZSCHILD FIELD
+    2239, // ビューティフル レシート
 
     // BPL Season 3 Triple Tribe
     2063, // stellar rain
@@ -292,26 +366,6 @@ export const SDVX_UNLOCK_IDS = {
     2162, // ちょえちょえまぎか
     2163, // Deep tenDon Reflex
     2164, // Ambivalent Vermilia
-
-    // BPL Season 3 Stamp Event
-    2121, // Knew Order
-    2122, // Ex concordia felicitas
-    2123, // Allegro Saetta
-    2124, // ARISE
-    2125, // プリュネシエル
-    2126, // Colorful Magical Parade
-    2127, // NO SURRENDER
-    2128, // StellarflightS
-    2160, // ウイジン
-    2161, // { eXLIPXe }
-
-    // KAC Entry
-    2059, // パーフェクトイーター
-
-    // KAC Stamp
-    2060, // 累乗のカルマ
-    2061, // Stylus
-    2062, // QQ
 
     // MYSTICAL Re:UNION
     2177, // Lichtsäule
@@ -335,6 +389,60 @@ export const SDVX_UNLOCK_IDS = {
     1975, // Never Forget Evergreen
     1976, // ヴァルプルギスの夜
     1977, // Little Red Riding Hood
+
+    // ぼる×りこ Cross Resonance
+    2231, // Crossfade
+    2232, // 星界のアルペジオ
+    2233, // Ö<3rf10₩
+
+    // Arena Exclusive Exceed Charts
+    [872, "exceed"], // Din Don Dan (Fusion Remix)
+    [88, "exceed"], // Grip & Break down !! - SDVX Edit. -
+    [64, "exceed"], // SOUL EXPLOSION
+    [332, "exceed"], // crazy cinema story
+    [871, "exceed"], // The star in eclipse
+    [711, "exceed"], // ちくわパフェだよ☆ＣＫＰ
+    [633, "exceed"], // 2 MINUTES FIGHTERS
+    [381, "exceed"], // HYENA
+
+    [111, "exceed"], // 地球最後の告白を
+    [132, "exceed"], // 色は匂へど散りぬるを
+    [239, "exceed"], // Foolish Hero
+    [37, "exceed"], // neu BSP style
+    [632, "exceed"], // Invitation from Mr.C
+
+    [8, "exceed"], // smooooch・∀・ KN mix
+    [323, "exceed"], // マネマネサイコトロピック
+    [612, "exceed"], // Le Fruit Défendu
+    [131, "exceed"], // 物凄い勢いでけーねが物凄いうた
+    [342, "exceed"], // Fiat Lux
+
+    [787, "exceed"], // Candy Colored Hearts
+    [790, "exceed"], // EMPIRE OF FLAME
+    [789, "exceed"], // End to end
+    [788, "exceed"], // NEO GRAVITY
+    [610, "exceed"], // veRtrageS
+    [786, "exceed"], // 雲の彼方
+
+    [842, "exceed"], // B.B.K.K.B.K.K.
+    [510, "exceed"], // The Sampling Paradise (P*Light Remix)
+    [281, "exceed"], // ネトゲ廃人シュプレヒコール
+
+    [165, "exceed"], // Hello world!
+    [634, "exceed"], // LegenD.
+    [348, "exceed"], // ボルテ体操第一
+
+    [241, "exceed"], // Lieselotte
+    [289, "exceed"], // U.N.オーエンは彼女なのか？haru_naba Remix
+    [390, "exceed"], // 轟け！恋のビーンボール！！
+
+    [85, "exceed"], // dreamin' feat.Ryu☆
+    [635, "exceed"], // World's end
+    [389, "exceed"], // デッドボヲルdeホームラン
+
+    [779, "exceed"], // conflict
+    [225, "exceed"], // Next infection
+    [418, "exceed"], // werewolf howls.
   ],
 
   jpOnly: [
@@ -343,70 +451,5 @@ export const SDVX_UNLOCK_IDS = {
 
     // Tetoris
     2216, //テトリス
-  ],
-};
-
-/**
- * @type {Record<string, number[]>}
- * Add song IDs to each array according to which chart difficulty should be flagged
- * as Time-limited & Other Events separate from the rest of the song
- */
-export const TEMP_UNLOCK_CHARTS = {
-  novice: [],
-  advanced: [
-    // example: this would flag JUST the advanced chart of QQ
-    // 2062
-  ],
-  exhaust: [],
-  maximum: [],
-  infinite: [],
-  gravity: [],
-  heavenly: [],
-  vivid: [],
-  exceed: [
-    // Arena Exclusive Exceed Charts
-    872, // Din Don Dan (Fusion Remix)
-    88, // Grip & Break down !! - SDVX Edit. -
-    64, // SOUL EXPLOSION
-    332, // crazy cinema story
-    871, // The star in eclipse
-    711, // ちくわパフェだよ☆ＣＫＰ
-    633, // 2 MINUTES FIGHTERS
-    381, // HYENA
-
-    111, // 地球最後の告白を
-    132, // 色は匂へど散りぬるを
-    239, // Foolish Hero
-    37, // neu BSP style
-    632, // Invitation from Mr.C
-
-    8, // smooooch・∀・ KN mix
-    323, // マネマネサイコトロピック
-    612, // Le Fruit Défendu
-    131, // 物凄い勢いでけーねが物凄いうた
-    342, // Fiat Lux
-
-    787, // Candy Colored Hearts
-    790, // EMPIRE OF FLAME
-    789, // End to end
-    788, // NEO GRAVITY
-    610, // veRtrageS
-    786, // 雲の彼方
-
-    842, // B.B.K.K.B.K.K.
-    510, // The Sampling Paradise (P*Light Remix)
-    281, // ネトゲ廃人シュプレヒコール
-
-    165, // Hello world!
-    634, // LegenD.
-    348, // ボルテ体操第一
-
-    241, // Lieselotte
-    289, // U.N.オーエンは彼女なのか？haru_naba Remix
-    390, // 轟け！恋のビーンボール！！
-
-    85, // dreamin' feat.Ryu☆
-    635, // World's end
-    389, // デッドボヲルdeホームラン
   ],
 };
