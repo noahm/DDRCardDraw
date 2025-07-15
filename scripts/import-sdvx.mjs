@@ -8,11 +8,7 @@ import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
 import { writeJsonData } from "./utils.mjs";
-import {
-  SDVX_UNLOCK_IDS,
-  UNPLAYABLE_IDS,
-  TEMP_UNLOCK_CHARTS,
-} from "./sdvx/unlocks.mjs";
+import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -235,6 +231,8 @@ function buildSong(song, availableJackets) {
     餮: "Ƶ",
     墸: "\u035f\u035f\u035e\u0020",
     盥: "⚙︎",
+    疉: "Ö",
+    鑒: "₩",
   };
 
   let name = info.title_name[0];
@@ -276,9 +274,6 @@ function buildSong(song, availableJackets) {
     };
     /** @type {string[]} */
     const flags = [];
-    if (TEMP_UNLOCK_CHARTS[chart.diffClass]?.includes(numericId)) {
-      flags.push("otherEvents");
-    }
     for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
       if (
         SDVX_UNLOCK_IDS[flag].some(
