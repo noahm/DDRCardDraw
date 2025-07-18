@@ -10,7 +10,7 @@ export const UNPLAYABLE_IDS = [
 
 /**
  * @typedef ChartType
- * @type {"novice"|"advanced"|"exhaust"|"infinite"|"gravity"|"heavenly"|"vivid"|"exceed"}
+ * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"}
  */
 
 /**
@@ -27,6 +27,12 @@ export const SDVX_UNLOCK_IDS = {
     // or, to flag only a particular chart, wrap in braces,
     // then specify the chart afterwards:
     // [1100, "exceed"],
+
+    [1025, "maximum"], // Make Magic MXM
+    [1027, "maximum"], // infinite:youniverse MXM
+    [1028, "maximum"], // HE4VEN ～天国へようこそ～ MXM
+    [1032, "maximum"], // Fin.ArcDeaR MXM
+    [1044, "maximum"], // Immortal Saga MXM
 
     1099, // FIN4LE ～終止線の彼方へ～
     1100, // WHITEOUT
