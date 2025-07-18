@@ -33,7 +33,7 @@ export const SDVX_UNLOCK_IDS = {
     [1028, "maximum"], // HE4VEN ～天国へようこそ～ MXM
     [1032, "maximum"], // Fin.ArcDeaR MXM
     [1044, "maximum"], // Immortal Saga MXM
-    
+
     1099, // FIN4LE ～終止線の彼方へ～
     1100, // WHITEOUT
     1101, // Deadly force
