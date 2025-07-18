@@ -10,7 +10,7 @@ export const UNPLAYABLE_IDS = [
 
 /**
  * @typedef ChartType
- * @type {"novice"|"advanced"|"exhaust"|"infinite"|"gravity"|"heavenly"|"vivid"|"exceed"}
+ * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"}
  */
 
 /**
