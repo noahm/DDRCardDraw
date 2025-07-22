@@ -1,4 +1,5 @@
 {
+  "$schema": "../../songs.schema.json",
   "meta": {
     "menuParent": "more",
     "styles": ["single", "double"],
@@ -91,7 +92,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/.59",
-      "jacket": "banner/ddr_x/59.jpg",
+      "jacket": "banner/ddr_4th/59.png",
       "genre": "CHILL OUT",
       "saHash": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69"
     },
@@ -110,7 +111,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/1998",
-      "jacket": "banner/ddr_x/1998.jpg",
+      "jacket": "banner/ddr_ext/1998.png",
       "saHash": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9"
     },
     {
@@ -146,7 +147,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/321_STARS",
-      "jacket": "banner/ddr_x/321 STARS.jpg",
+      "jacket": "banner/ddr_ext/321 STARS.png",
       "genre": "TECHNO POP",
       "saHash": "Q96bO9D61lib19IiIi0i69P80bo6q69Q",
       "search_hint": "TECHNO POP/テクノポップ"
@@ -168,7 +169,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/A",
-      "jacket": "banner/ddr_x/A.jpg",
+      "jacket": "banner/ddr_ext/A.png",
       "genre": "RENAISSANCE",
       "saHash": "oIb699q80OIPdlP0odl6bqbD0PlQodOq"
     },
@@ -206,7 +207,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/A_LOVE_LIKE_THIS",
-      "jacket": "banner/ddr_x/A LOVE LIKE THIS.jpg"
+      "jacket": "banner/ddr_sn/A LOVE LIKE THIS.jpg"
     },
     {
       "name": "A Stupid Barber",
@@ -223,7 +224,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/A_Stupid_Barber",
-      "jacket": "banner/ddr_x/A Stupid Barber.jpg",
+      "jacket": "banner/ddr_sn/A Stupid Barber.jpg",
       "saHash": "DibQ8O0bIodbdQo8D681qlqiDqllDPql"
     },
     {
@@ -241,7 +242,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/A_thing_called_LOVE",
-      "jacket": "banner/ddr_x/A thing called LOVE.jpg",
+      "jacket": "banner/ddr_sn2/A thing called LOVE.jpg",
       "saHash": "O0O1lPoIIIQ9lbOi90odI0Di80qq16lo"
     },
     {
@@ -259,7 +260,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/AA",
-      "jacket": "banner/ddr_x/AA.jpg",
+      "jacket": "banner/ddr_sn/AA.jpg",
       "genre": "RENAISSANCE",
       "saHash": "0DDo1ilPDQoIoPd8ol9OPO1IPbi9ii6d"
     },
@@ -278,7 +279,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/ABSOLUTE",
-      "jacket": "banner/ddr_x/ABSOLUTE.jpg",
+      "jacket": "banner/ddr_5th/ABSOLUTE.png",
       "genre": "EPIC TRANCE",
       "saHash": "qdi88l6bo1Iqi9Qiqli8lIQQIPO1doQ9"
     },
@@ -297,7 +298,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Abyss",
-      "jacket": "banner/ddr_x/Abyss.jpg",
+      "jacket": "banner/ddr_5th/Abyss.png",
       "genre": "INTELLIGENCE",
       "saHash": "Q0qQO0P8818lIoo0boO66O0qd09dIlO8"
     },
@@ -318,7 +319,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Across_the_nightmare",
-      "jacket": "banner/ddr_x/Across the nightmare.jpg",
+      "jacket": "banner/ddr_ext/Across the nightmare.png",
       "saHash": "O6I9ioqii8i6I1DIb1PqOD6q0ooo8bDo"
     },
     {
@@ -336,7 +337,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/AFRONOVA",
-      "jacket": "banner/ddr_x/AFRONOVA.jpg",
+      "jacket": "banner/ddr_3rd/AFRONOVA.png",
       "saHash": "Pd99DQo0bD9D9oIbPIId18P6l8qlDQO6"
     },
     {
@@ -367,7 +368,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/AFRONOVA_PRIMEVAL",
-      "jacket": "banner/ddr_x/AFRONOVA PRIMEVAL.jpg",
+      "jacket": "banner/ddr_5th/AFRONOVA PRIMEVAL.png",
       "genre": "トライバル",
       "saHash": "18911Q6o6do9Dd1blIo6IliPd0PPb99i",
       "search_hint": "TRIBAL/トライバル"
@@ -382,7 +383,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/AFRONOVA(FROM_NONSTOP_MEGAMIX)",
-      "jacket": "banner/ddr_x/AFRONOVA (FROM NONSTOP MEGAMIX).jpg",
+      "jacket": "banner/ddrmax2/AFRONOVA (FROM NONSTOP MEGAMIX).png",
       "saHash": "DdO1iboqI6980Q6QPD9P1PbQQ88I16lq"
     },
     {
@@ -400,7 +401,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/AFTER_THE_GAME_OF_LOVE",
-      "jacket": "banner/ddr_x/AFTER THE GAME OF LOVE.jpg",
+      "jacket": "banner/ddr_3rd/AFTER THE GAME OF LOVE.png",
       "saHash": "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D"
     },
     {
@@ -419,7 +420,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/AIN%27T_NO_MOUNTAIN_HIGH_ENOUGH",
-      "jacket": "banner/ddr_x/AIN'T NO MOUNTAIN HIGH ENOUGH.jpg"
+      "jacket": "banner/ddr_sn2/AIN'T NO MOUNTAIN HIGH ENOUGH.jpg"
     },
     {
       "name": "air",
@@ -436,7 +437,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Air",
-      "jacket": "banner/ddr_x/air.jpg",
+      "jacket": "banner/ddr_ext/air.png",
       "genre": "HOUSE",
       "saHash": "il6PIiDq11dD1981dQ00918D96lPQ0iQ"
     },
@@ -473,7 +474,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/AM-3P",
-      "jacket": "banner/ddr_x/AM-3P.jpg",
+      "jacket": "banner/ddr_2nd/AM-3P.png",
       "saHash": "dq190Il9iO1bD698ll6ddObIlqdIQ1O9"
     },
     {
@@ -486,7 +487,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/AM-3P",
-      "jacket": "banner/ddr_x/AM-3P(CHAOS Special).jpg",
+      "jacket": "banner/ddr_sn2/AM-3P(CHAOS Special).jpg",
       "saHash": "Oo91QPdQDd1Od1oQI6IIldbQ1lQ88bO0"
     },
     {
@@ -504,7 +505,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/AM-3P_-303_BASS_MIX-",
-      "jacket": "banner/ddr_x/AM-3P (303 BASS MIX).jpg",
+      "jacket": "banner/ddr_ext/AM-3P (303 BASS MIX).png",
       "saHash": "dQ1oPoQqD0db8O19P1P0D1oq8I68i1Id"
     },
     {
@@ -517,7 +518,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/AM-3P(AM_EAST_mix)",
-      "jacket": "banner/ddr_x/AM-3P (AM EAST mix).jpg",
+      "jacket": "banner/ddrmax2/AM-3P (AM EAST mix).png",
       "saHash": "808dq8OIq16PP19i1bP0IDP1OqPOlo6q"
     },
     {
@@ -538,7 +539,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/ANGELUS",
-      "jacket": "banner/ddr_x/ANGELUS -アンジェラス-.jpg"
+      "jacket": "banner/ddr_sn2/ANGELUS -アンジェラス-.jpg"
     },
     {
       "name": "Arrabbiata",
@@ -556,7 +557,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Arrabbiata",
-      "jacket": "banner/ddr_x/Arrabbiata.jpg",
+      "jacket": "banner/ddr_sn2/Arrabbiata.jpg",
       "genre": "CYBER ARABIAN",
       "saHash": "6bdDP91o1II60Qo99D60QI81o6oPlI80"
     },
@@ -575,7 +576,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/B4U",
-      "jacket": "banner/ddr_x/B4U.jpg",
+      "jacket": "banner/ddr_4th/B4U.png",
       "genre": "SPEED RAVE",
       "saHash": "6Qq1q91q8iIPlI89qDq96bO8QDD0qOql"
     },
@@ -589,7 +590,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/B4U(B4_ZA_BEAT_MIX)",
-      "jacket": "banner/ddr_x/B4U (B4 ZA BEAT MIX).jpg",
+      "jacket": "banner/ddrmax2/B4U (B4 ZA BEAT MIX).png",
       "saHash": "POIDil00didIo98D10loIObibPOob88O"
     },
     {
@@ -602,7 +603,7 @@
         { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/B4U",
-      "jacket": "banner/ddr_x/B4U(VOLTAGE Special).jpg",
+      "jacket": "banner/ddr_sn2/B4U(VOLTAGE Special).jpg",
       "saHash": "6boDb6Pdd6QDP1oPdlQ0Qo1ld0lQb6P6"
     },
     {
@@ -620,7 +621,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BABY_BABY_GIMME_YOUR_LOVE",
-      "jacket": "banner/ddr_x/BABY BABY GIMME YOUR LOVE.jpg",
+      "jacket": "banner/ddr_4th/BABY BABY GIMME YOUR LOVE.png",
       "saHash": "P8P1dlqi9D111iIDPOP0l9DIO1l6lqO9"
     },
     {
@@ -638,7 +639,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Bad_Routine",
-      "jacket": "banner/ddr_x/BAD ROUTINE.jpg",
+      "jacket": "banner/ddr_sn/BAD ROUTINE.jpg",
       "genre": "FILTER HOUSE",
       "saHash": "d0q8IDbqDI686q9Dl09ll0Id6bIio9Pd"
     },
@@ -657,7 +658,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Bag",
-      "jacket": "banner/ddr_x/bag.jpg",
+      "jacket": "banner/ddr_ext/bag.png",
       "genre": "SPIRITUAL",
       "saHash": "9qbdq1PiI1O81P1PdioQli66Ob9QiiQP"
     },
@@ -676,7 +677,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Baile_Le_Samba",
-      "jacket": "banner/ddr_x/Baile Le Samba.jpg",
+      "jacket": "banner/ddr_sn/Baile Le Samba.jpg",
       "saHash": "lii9bbbIq08b6DIdQ16Q0QOPiOibliIO"
     },
     {
@@ -695,7 +696,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BALLAD_FOR_YOU~omoi_no_ame~",
-      "jacket": "banner/ddr_x/BALLAD FOR YOU～想いの雨～.jpg",
+      "jacket": "banner/ddr_sn/BALLAD FOR YOU～想いの雨～.jpg",
       "genre": "BALLAD",
       "saHash": "ObP1P1OoDII9b9ll698Q981ilIddb8Id"
     },
@@ -714,7 +715,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BE_LOVIN",
-      "jacket": "banner/ddr_x/BE LOVIN.jpg",
+      "jacket": "banner/ddr_ext/BE LOVIN.png",
       "genre": "HAPPY HARDCORE",
       "saHash": "P0O81Dl9Oiiid8bdOi0oqbD8DqolObbP"
     },
@@ -769,7 +770,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Blind_Justice_~Torn_souls,_Hurt_Faiths~",
-      "jacket": "banner/ddr_x/Blind Justice ～Torn souls, Hurt Faiths～.jpg",
+      "jacket": "banner/ddr_sn2/Blind Justice ～Torn souls, Hurt Faiths～.jpg",
       "genre": "エピックポエトリー",
       "saHash": "PP9QDQ0IQQID00P61d8qdDdP09b19iiI",
       "search_hint": "EPIC POETRY/エピックポエトリー"
@@ -789,7 +790,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Bloody_Tears(IIDX_EDITION)",
-      "jacket": "banner/ddr_x/Bloody Tears(IIDX EDITION).jpg",
+      "jacket": "banner/ddr_sn2/Bloody Tears(IIDX EDITION).jpg",
       "genre": "HARD RENAISSANCE",
       "saHash": "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6"
     },
@@ -847,13 +848,13 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Brazilian_Anthem",
-      "jacket": "banner/ddr_x/Brazilian Anthem.jpg",
+      "jacket": "banner/ddr_sn/Brazilian Anthem.jpg",
       "saHash": "D0dI08oDqi11Oo819D6ob1dlDbPlIPl0"
     },
     {
       "name": "BRILLIANT 2U",
       "artist": "NAOKI",
-      "bpm": "149",
+      "bpm": "150",
       "folder": "DanceDanceRevolution 2nd Mix",
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
@@ -867,7 +868,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/BRILLIANT_2U",
-      "jacket": "banner/ddr_x/BRILLIANT 2U.jpg",
+      "jacket": "banner/ddr_2nd/BRILLIANT 2U.png",
       "genre": "EURO GROOVE",
       "saHash": "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID"
     },
@@ -881,7 +882,7 @@
         { "lvl": 9, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/BRILLIANT_2U_(K.O.G_G3_MIX)",
-      "jacket": "banner/ddr_x/BRILLIANT 2U (K.O.G. G3 MIX).jpg",
+      "jacket": "banner/ddrmax2/BRILLIANT 2U (K.O.G G3 MIX).png",
       "saHash": "i18OPo6l8Q6bo9q0qP6889IDqoP8O0Qq"
     },
     {
@@ -894,7 +895,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/BRILLIANT_2U",
-      "jacket": "banner/ddr_x/BRILLIANT 2U(STREAM Special).jpg",
+      "jacket": "banner/ddr_sn2/BRILLIANT 2U(STREAM Special).jpg",
       "saHash": "d11l6160iiP1bDbQPQl0Pi8lddlld80i"
     },
     {
@@ -914,7 +915,7 @@
         { "lvl": 12, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/BRILLIANT_2U(Orchestra_Groove)",
-      "jacket": "banner/ddr_x/BRILLIANT 2U(Orchestra Groove).jpg",
+      "jacket": "banner/ddr_2nd/BRILLIANT 2U (Orchestra Groove).png",
       "saHash": "DbPodlqiOQdD88bo8lPO9D6iql1DO8P0"
     },
     {
@@ -932,7 +933,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BROKEN_MY_HEART",
-      "jacket": "banner/ddr_x/BROKEN MY HEART.jpg",
+      "jacket": "banner/ddr_5th/BROKEN MY HEART.png",
       "genre": "HYPER EUROBEAT",
       "saHash": "iIP09bOq1l1b9b1l011IDIQ6Iill90Io"
     },
@@ -952,7 +953,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/Burn_Baby_Burn",
-      "jacket": "banner/ddr_x/Burn Baby Burn.jpg"
+      "jacket": "banner/ddr_sn2/Burn Baby Burn.jpg"
     },
     {
       "name": "BURNIN' THE FLOOR",
@@ -969,7 +970,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BURNIN%27_THE_FLOOR",
-      "jacket": "banner/ddr_x/BURNIN' THE FLOOR.jpg",
+      "jacket": "banner/ddr_4th/BURNIN' THE FLOOR.png",
       "genre": "EURO GROOVE",
       "saHash": "ii6Oooool0IoOqi1qdDo96QIil6IoOq0"
     },
@@ -983,7 +984,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/BURNIN%27_THE_FLOOR(BLUE_FIRE_mix)",
-      "jacket": "banner/ddr_x/BURNIN' THE FLOOR (BLUE FIRE mix).jpg",
+      "jacket": "banner/ddrmax2/BURNIN' THE FLOOR (BLUE FIRE mix).png",
       "saHash": "QdbPPPDlIQiI191qPdblO01O8P8o6D68"
     },
     {
@@ -1001,7 +1002,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BURNING_HEAT!(3_Option_MIX)",
-      "jacket": "banner/ddr_x/Burning Heat! (3 Option Mix).jpg",
+      "jacket": "banner/ddrmax2/Burning Heat! (3 Option Mix).png",
       "saHash": "i86qD6Pl61dPI0Q9db1P8bl1ii99q1lD"
     },
     {
@@ -1039,7 +1040,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Cachaca",
-      "jacket": "banner/ddr_x/cachaca.jpg",
+      "jacket": "banner/ddr_sn/cachaca.jpg",
       "saHash": "DObld6O6OdblOo1di9dlP86DO909O6qI"
     },
     {
@@ -1057,7 +1058,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Can_Be_Real",
-      "jacket": "banner/ddr_x/Can Be Real.jpg",
+      "jacket": "banner/ddr_sn/Can Be Real.jpg",
       "saHash": "68dqbIdOiiiiddlbb1OD66qq6d80I6D8"
     },
     {
@@ -1075,7 +1076,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE",
-      "jacket": "banner/ddr_x/CAN'T STOP FALLIN' IN LOVE.jpg",
+      "jacket": "banner/ddr_4th/CAN'T STOP FALLIN' IN LOVE.png",
       "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P"
     },
     {
@@ -1093,7 +1094,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_~SPEED_MIX~",
-      "jacket": "banner/ddr_x/CAN'T STOP FALLIN' IN LOVE (SPEED MIX).jpg",
+      "jacket": "banner/ddr_5th/CAN'T STOP FALLIN' IN LOVE (SPEED MIX).png",
       "saHash": "DOqPd1Iid6oObd8i96I9oo8obbODb96o"
     },
     {
@@ -1111,7 +1112,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_-super_euro_version-",
-      "jacket": "banner/ddr_x/CAN'T STOP FALLIN' IN LOVE -super euro version-.jpg",
+      "jacket": "banner/ddr_sn/CAN'T STOP FALLIN' IN LOVE -super euro version-.jpg",
       "saHash": "8IdP90DQDi9bqodPqDQIIqOqOO08PPio"
     },
     {
@@ -1129,7 +1130,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CANDY_(Luv_UNLIMITED)",
-      "jacket": "banner/ddr_x/CANDY☆.jpg",
+      "jacket": "banner/ddrmax/CANDY☆.png",
       "genre": "CANDY POP",
       "saHash": "OPbqldiq0dQIo1011086IOl1qbOloOl9"
     },
@@ -1162,7 +1163,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CaptivAte~chikai~",
-      "jacket": "banner/ddr_x/CaptivAte～誓い～.jpg",
+      "jacket": "banner/ddr_sn2/CaptivAte～誓い～.jpg",
       "genre": "NOSTALISH REQUIEM",
       "saHash": "Iqo9PQiPbq8Q0I6io6lPIDi608lQqbbq"
     },
@@ -1181,7 +1182,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CELEBRATE_NITE",
-      "jacket": "banner/ddr_x/CELEBRATE NITE.jpg",
+      "jacket": "banner/ddr_4th/CELEBRATE NITE.png",
       "genre": "EURO GROOVE",
       "saHash": "i0bdP6II6dqb6lbQQ9q9OQq68i1qPddO"
     },
@@ -1195,7 +1196,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/CELEBRATE_NITE(EURO_TRANCE_STYLE)",
-      "jacket": "banner/ddr_x/CELEBRATE NITE (EURO TRANCE STYLE).jpg",
+      "jacket": "banner/ddrmax2/CELEBRATE NITE (EURO TRANCE STYLE).png",
       "saHash": "O6q1o06Po9lQbqOl08Io1obqQ9QPi09b"
     },
     {
@@ -1213,7 +1214,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CENTAUR",
-      "jacket": "banner/ddr_x/CENTAUR.jpg",
+      "jacket": "banner/ddr_sn/CENTAUR.jpg",
       "saHash": "bd8o99iPI9lqOl1Q8P68lbQOlo8Oq1qO"
     },
     {
@@ -1231,7 +1232,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CENTERFOLD(130BPM_move_it_remix)",
-      "jacket": "banner/ddr_x/CENTERFOLD (130BPM move it remix).jpg"
+      "jacket": "banner/ddr_sn/CENTERFOLD (130BPM move it remix).jpg"
     },
     {
       "name": "Chance and Dice",
@@ -1269,7 +1270,7 @@
         { "lvl": 16, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/CHAOS",
-      "jacket": "banner/ddr_x/CHAOS.jpg",
+      "jacket": "banner/ddr_sn/CHAOS.jpg",
       "saHash": "8o1iQPiId8P6Db9Iqo1Oo119QDoq8qQ8"
     },
     {
@@ -1289,7 +1290,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Colors_~for_EXTREME~",
-      "jacket": "banner/ddr_x/Colors (for EXTREME).jpg",
+      "jacket": "banner/ddr_ext/Colors(for EXTREME).png",
       "saHash": "odOQ1d1i6oil81b1QIDP6dOqqdooD918",
       "search_hint": "TRANCE/トランス"
     },
@@ -1308,7 +1309,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/COME_CLEAN",
-      "jacket": "banner/ddr_x/COME CLEAN.jpg"
+      "jacket": "banner/ddr_sn2/COME CLEAN.jpg"
     },
     {
       "name": "CURUS",
@@ -1325,7 +1326,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CURUS",
-      "jacket": "banner/ddr_x/CURUS.jpg",
+      "jacket": "banner/ddr_sn/CURUS.jpg",
       "genre": "FLOW BEAT",
       "saHash": "ilIbq9Db1d86PIo0b96qdd0oPOQ6bqi1",
       "search_hint": "FLOW BEAT/フロウビート"
@@ -1345,7 +1346,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CUTIE_CHASER",
-      "jacket": "banner/ddr_x/CUTIE CHASER.jpg",
+      "jacket": "banner/ddr_3rd/CUTIE CHASER.png",
       "saHash": "di9ddbd1lb80q98ODdod0ODQ0q6PdQP1"
     },
     {
@@ -1363,7 +1364,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/CUTIE_CHASER(MORNING_MIX)",
-      "jacket": "banner/ddr_x/CUTIE CHASER (MORNING MIX).jpg",
+      "jacket": "banner/ddr_ext/CUTIE CHASER (MORNING MIX).png",
       "saHash": "doQI0i6lQbOo66DOi6olPqOPqIqO8Qd1"
     },
     {
@@ -1381,7 +1382,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/D2R",
-      "jacket": "banner/ddr_x/D2R.jpg",
+      "jacket": "banner/ddrmax2/D2R.png",
       "genre": "HYPER ROCK BEAT",
       "saHash": "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO"
     },
@@ -1395,7 +1396,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/D2R",
-      "jacket": "banner/ddr_x/D2R(FREEZE Special).jpg",
+      "jacket": "banner/ddr_sn2/D2R(FREEZE Special).jpg",
       "saHash": "1O9P1DqQQqObOQPP6Il989qDqi0bQ8Qb"
     },
     {
@@ -1413,7 +1414,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DA_CAPO",
-      "jacket": "banner/ddr_x/DA CAPO.jpg"
+      "jacket": "banner/ddr_sn/DA CAPO.jpg"
     },
     {
       "name": "Dance Celebration",
@@ -1470,7 +1471,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Dance_Dance_Revolution_(song)",
-      "jacket": "banner/ddr_x/Dance Dance Revolution.jpg",
+      "jacket": "banner/ddr_ext/Dance Dance Revolution.png",
       "saHash": "6lQ9iQdq8P0Q11q9O8dbl9Q9Pi8bIb98"
     },
     {
@@ -1537,7 +1538,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DEAD_END",
-      "jacket": "banner/ddr_x/DEAD END.jpg",
+      "jacket": "banner/ddr_3rd/DEAD END.png",
       "saHash": "P98dl8qdoilqbPqIO86ood601o1696D8"
     },
     {
@@ -1550,7 +1551,7 @@
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DEAD_END",
-      "jacket": "banner/ddr_x/DEAD END(GROOVE RADAR Special).jpg",
+      "jacket": "banner/ddr_sn2/DEAD END(GROOVE RADAR Special).jpg",
       "saHash": "PooiIP8qP0IPd9D1Ibi6l9bDoqdi9P8O"
     },
     {
@@ -1568,7 +1569,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DESTINY",
-      "jacket": "banner/ddr_x/DESTINY.jpg",
+      "jacket": "banner/ddrmax2/DESTINY.png",
       "genre": "HYPER EUROBEAT",
       "saHash": "98q8616ddDIqdo1dbqbO0Po96oldo1Oo"
     },
@@ -1588,7 +1589,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Destiny_lovers",
-      "jacket": "banner/ddr_x/Destiny lovers.jpg",
+      "jacket": "banner/ddr_ext/Destiny lovers.png",
       "genre": "J-POP",
       "saHash": "1diQi81loIodIdOlQ8Pd6Qd8b69Q1DP8",
       "search_hint": "J-POP/J-ポップ"
@@ -1609,7 +1610,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DIVE_TO_THE_NIGHT",
-      "jacket": "banner/ddr_x/DIVE TO THE NIGHT.jpg",
+      "jacket": "banner/ddrmax2/DIVE TO THE NIGHT.png",
       "saHash": "8Pb6oPdbO6lo8lbiQ181IDidI9ll8q80"
     },
     {
@@ -1627,7 +1628,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DOESN%27T_REALLY_MATTER",
-      "jacket": "banner/ddr_x/DOESN'T REALLY MATTER.jpg"
+      "jacket": "banner/ddr_sn/DOESN'T REALLY MATTER.jpg"
     },
     {
       "name": "DoLL",
@@ -1646,7 +1647,7 @@
         { "lvl": 14, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DoLL",
-      "jacket": "banner/ddr_x/DoLL.jpg",
+      "jacket": "banner/ddr_sn/DoLL.jpg",
       "genre": "HYPER J-POP FOUR",
       "saHash": "OO0QbD9D6QQIb10Q9IDOQd8odb6ob6qP"
     },
@@ -1665,7 +1666,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Don%27t_Stop!~AMD_2nd_MIX~",
-      "jacket": "banner/ddr_x/Don't Stop! (AMD 2nd MIX).jpg",
+      "jacket": "banner/ddr_4th/Don't Stop! (AMD 2nd MIX).png",
       "saHash": "1q6obddbql8lQdPI19liD6PdQ0dPIODd"
     },
     {
@@ -1683,7 +1684,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Dragon_Blade",
-      "jacket": "banner/ddr_x/Dragon Blade.jpg",
+      "jacket": "banner/ddr_sn/Dragon Blade.jpg",
       "saHash": "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl"
     },
     {
@@ -1719,7 +1720,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Dream_of_love",
-      "jacket": "banner/ddr_x/dream of love.jpg",
+      "jacket": "banner/ddr_sn2/dream of love.jpg",
       "saHash": "ii119ll8dOQ8IQqi1IOP1o8DIQbqo8Pi"
     },
     {
@@ -1737,7 +1738,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DROP_OUT",
-      "jacket": "banner/ddr_x/DROP OUT.jpg",
+      "jacket": "banner/ddr_4th/DROP OUT.png",
       "saHash": "Q0OiPQQ8IbIDq08IO9Io0qDdoDPPdd1q"
     },
     {
@@ -1750,7 +1751,8 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DROP_OUT(FROM_NONSTOP_MEGAMIX)",
-      "jacket": "banner/ddr_x/DROP OUT (FROM NONSTOP MEGAMIX).jpg"
+      "jacket": "banner/ddrmax2/DROP OUT (FROM NONSTOP MEGAMIX).png",
+      "saHash": "d0P01d9q8oOd8OP1bQPoqlq96906PqPD"
     },
     {
       "name": "DROP THE BOMB",
@@ -1767,7 +1769,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DROP_THE_BOMB",
-      "jacket": "banner/ddr_x/DROP THE BOMB.jpg",
+      "jacket": "banner/ddr_3rd/DROP THE BOMB.png",
       "genre": "TECHNO RAVE",
       "saHash": "8O0D9P6l9P9ooQdODioDIdQPq6DiDlbl"
     },
@@ -1786,7 +1788,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DROP_THE_BOMB(SyS.F._Mix)",
-      "jacket": "banner/ddr_x/DROP THE BOMB (SySF. Mix).jpg",
+      "jacket": "banner/ddr_ext/DROP THE BOMB (System S.F. Mix).png",
       "saHash": "I0b6lIP691dOOI8PqDDlbPid9iO8o0lO"
     },
     {
@@ -1824,7 +1826,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DXY!",
-      "jacket": "banner/ddr_x/DXY!.jpg",
+      "jacket": "banner/ddr_5th/DXY!.png",
       "genre": "TECHNO",
       "saHash": "QDP0i688bQi1Idqil1dOqDdPdoIPP6Q0"
     },
@@ -1845,7 +1847,7 @@
         { "lvl": 12, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DYNAMITE_RAVE",
-      "jacket": "banner/ddr_x/DYNAMITE RAVE.jpg",
+      "jacket": "banner/ddr_3rd/DYNAMITE RAVE.png",
       "genre": "SPEED RAVE",
       "saHash": "1QIPID18qib8D9Oo9lOo8I6DPi9qiod6"
     },
@@ -1859,7 +1861,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DYNAMITE_RAVE_(B4_ZA_BEAT_MIX)",
-      "jacket": "banner/ddr_x/DYNAMITE RAVE (B4 ZA BEAT MIX).jpg"
+      "jacket": "banner/ddrmax2/DYNAMITE RAVE (B4 ZA BEAT MIX).png"
     },
     {
       "name": "DYNAMITE RAVE (Down Bird SOTA Mix)",
@@ -1876,7 +1878,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/DYNAMITE_RAVE_(Down_Bird_SOTA_Mix)",
-      "jacket": "banner/ddr_x/DYNAMITE RAVE (Down Bird SOTA Mix).jpg"
+      "jacket": "banner/ddr_ext/DYNAMITE RAVE (Down Bird SOTA Mix).png"
     },
     {
       "name": "DYNAMITE RAVE (super euro version)",
@@ -1894,7 +1896,7 @@
       ],
       "flags": ["asiaExclusive"],
       "remyLink": "https://remywiki.com/DYNAMITE_RAVE_(super_euro_version)",
-      "jacket": "banner/ddr_x/DYNAMITE RAVE (super euro version).jpg"
+      "jacket": "banner/ddr_sn/DYNAMITE RAVE (super euro version).jpg"
     },
     {
       "name": "DYNAMITE RAVE(\"AIR\" Special)",
@@ -1906,7 +1908,7 @@
         { "lvl": 9, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DYNAMITE_RAVE",
-      "jacket": "banner/ddr_x/DYNAMITE RAVE(AIR Special).jpg",
+      "jacket": "banner/ddr_sn2/DYNAMITE RAVE(AIR Special).jpg",
       "saHash": "dd8loQPD0I86DiIql8b8o9qbO8l0d9Q9"
     },
     {
@@ -1924,7 +1926,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/E-motion",
-      "jacket": "banner/ddr_x/e-motion.jpg",
+      "jacket": "banner/ddr_2nd/e-motion.png",
       "genre": "RAVE",
       "saHash": "8liDbidQoI6Q01lO9iibIdboIiDl66Qo"
     },
@@ -1943,7 +1945,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/ECSTASY",
-      "jacket": "banner/ddr_x/ECSTASY.jpg",
+      "jacket": "banner/ddr_5th/ECSTASY.png",
       "saHash": "bPD6ObloQPOOiQb1DbQDdilodiddlIlb"
     },
     {
@@ -1956,7 +1958,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/ECSTASY_(midnight_blue_mix)",
-      "jacket": "banner/ddr_x/ECSTASY (midnight blue mix).jpg",
+      "jacket": "banner/ddrmax2/ECSTASY (midnight blue mix).png",
       "saHash": "Dd6lP00DPqIb0d6iqOdlO08l69l6q1di"
     },
     {
@@ -1974,7 +1976,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Electrified",
-      "jacket": "banner/ddr_x/Electrified.jpg",
+      "jacket": "banner/ddr_sn2/Electrified.jpg",
       "genre": "ELECTRO",
       "saHash": "9d0oQdIolIb0Po9b06QOiOP60IQlb8qO"
     },
@@ -1993,7 +1995,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Electro_Tuned(the_SubS_mix)",
-      "jacket": "banner/ddr_x/Electro Tuned(the SubS mix).jpg",
+      "jacket": "banner/ddr_5th/Electro Tuned (the SubS mix).png",
       "genre": "BIG BEAT",
       "saHash": "IPi69l86oqdDd8qoll61166D8969869I"
     },
@@ -2012,7 +2014,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/END_OF_THE_CENTURY",
-      "jacket": "banner/ddr_x/END OF THE CENTURY.jpg"
+      "jacket": "banner/ddr_3rd/END OF THE CENTURY.png"
     },
     {
       "name": "era (nostalmix)",
@@ -2029,7 +2031,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Era_(nostalmix)",
-      "jacket": "banner/ddr_x/era (nostalmix).jpg",
+      "jacket": "banner/ddr_4th/era (nostalmix).png",
       "genre": "DRUM'N'BASS",
       "saHash": "D81Pq66DQPiQdliqIPl0ioPOi9OlQoQ9"
     },
@@ -2048,7 +2050,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Every_Day,_Every_Night(NM_STYLE)",
-      "jacket": "banner/ddr_x/Every Day, Every Night(NM STYLE).jpg",
+      "jacket": "banner/ddr_sn2/Every Day, Every Night(NM STYLE).jpg",
       "saHash": "61Q6Q8OOiiQIbIi0l6l10qQ0Ii8P0Qb6"
     },
     {
@@ -2066,7 +2068,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Exotic_ethnic",
-      "jacket": "banner/ddr_x/exotic ethnic.jpg",
+      "jacket": "banner/ddrmax/exotic ethnic.png",
       "saHash": "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO"
     },
     {
@@ -2083,8 +2085,9 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
+      "flags": ["licensed"],
       "remyLink": "https://remywiki.com/FAINT",
-      "jacket": "banner/ddr_x/FAINT.jpg"
+      "jacket": "banner/ddr_sn2/FAINT.jpg"
     },
     {
       "name": "Fascination MAXX",
@@ -2103,7 +2106,7 @@
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Fascination_MAXX",
-      "jacket": "banner/ddr_x/Fascination MAXX.jpg",
+      "jacket": "banner/ddr_sn/Fascination MAXX.jpg",
       "genre": "SuperNOVA BEAT",
       "saHash": "O6llIdODQD6oDQ6QiPQDOlob9i8l6qib"
     },
@@ -2124,7 +2127,7 @@
         { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Fascination_~eternal_love_mix~",
-      "jacket": "banner/ddr_x/Fascination ~eternal love mix~.jpg",
+      "jacket": "banner/ddr_sn/Fascination ~eternal love mix~.jpg",
       "saHash": "8QbqP80q9PI8bbi0qOoiibOQD08OPdli"
     },
     {
@@ -2160,7 +2163,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Feelings_Won%27t_Fade(Extend_Trance_Mix)",
-      "jacket": "banner/ddr_x/Feelings Won't Fade (Extend Trance Mix).jpg",
+      "jacket": "banner/ddr_sn2/Feelings Won't Fade (Extend Trance Mix).jpg",
       "saHash": "98PiPl8P0qlq8dd8P60Iq6dq899lbQDI"
     },
     {
@@ -2179,7 +2182,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/Feels_Just_Like_It_Should",
-      "jacket": "banner/ddr_x/FEELS JUST LIKE IT SHOULD.jpg"
+      "jacket": "banner/ddr_sn/FEELS JUST LIKE IT SHOULD.jpg"
     },
     {
       "name": "FIRE",
@@ -2197,7 +2200,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/FIRE",
-      "jacket": "banner/ddr_x/FIRE.jpg",
+      "jacket": "banner/ddr_sn2/FIRE.jpg",
       "saHash": "PlqI9Q1I6qdqb0IolOl1qP0bOQP0ibPP"
     },
     {
@@ -2253,7 +2256,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Flow_(Scotty_D._revisits_U1)",
-      "jacket": "banner/ddr_x/Flow.jpg",
+      "jacket": "banner/ddr_sn/Flow.jpg",
       "genre": "オービタリックテクノ",
       "saHash": "dDOdPQOqD6P68dIOl6O6I8q99Q6dd9Ob",
       "search_hint": "Orbitalic Techno/オービタリックテクノ"
@@ -2275,7 +2278,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Flow_(Scotty_D._revisits_U1)",
-      "jacket": "banner/ddr_x/Flow (True Style).jpg",
+      "jacket": "banner/ddr_sn/Flow (True Style).jpg",
       "genre": "オービタリックテクノ",
       "saHash": "0D096II0i9l0doPlbPQbiPo1IQDDoOP0",
       "search_hint": "Orbitalic Techno/オービタリックテクノ"
@@ -2295,7 +2298,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Flow_(Jammin%27_Ragga_Mix)",
-      "jacket": "banner/ddr_x/Flow(Jammin' Ragga Mix).jpg",
+      "jacket": "banner/ddr_sn2/Flow(Jammin' Ragga Mix).jpg",
       "saHash": "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI"
     },
     {
@@ -2313,7 +2316,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Fly_away",
-      "jacket": "banner/ddr_x/Fly away.jpg",
+      "jacket": "banner/ddr_sn/Fly away.jpg",
       "saHash": "d96OiPiOIboqI8o6PIDO8D9qPb9P18il"
     },
     {
@@ -2331,7 +2334,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Fly_away_-mix_del_matador-",
-      "jacket": "banner/ddr_x/Fly away -mix del matador-.jpg",
+      "jacket": "banner/ddr_sn2/Fly away -mix del matador-.jpg",
       "saHash": "DQI8O1bD9Oi9i90i0DqqOqbll91IiQI1"
     },
     {
@@ -2349,7 +2352,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Forever_Sunshine",
-      "jacket": "banner/ddr_x/Forever Sunshine.jpg",
+      "jacket": "banner/ddr_sn/Forever Sunshine.jpg",
       "saHash": "Q8Ioq8POo69ol8bPiOPQPq61oqoPo0DO"
     },
     {
@@ -2369,7 +2372,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Freeway_Shuffle",
-      "jacket": "banner/ddr_x/Freeway Shuffle.jpg",
+      "jacket": "banner/ddr_sn2/Freeway Shuffle.jpg",
       "genre": "TRANCE",
       "saHash": "dd8PodO0ilIQQb0P0OQPDiodI9biP91d"
     },
@@ -2388,7 +2391,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Frozen_Ray_~for_EXTREME~",
-      "jacket": "banner/ddr_x/Frozen Ray (for EXTREME).jpg",
+      "jacket": "banner/ddr_ext/Frozen Ray (for EXTREME).png",
       "saHash": "IQ9bDo1dPbIo0ODQiObbQ99iP1bOi8iI"
     },
     {
@@ -2406,7 +2409,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Funk_Boogie",
-      "jacket": "banner/ddr_x/Funk Boogie.jpg",
+      "jacket": "banner/ddr_sn/Funk Boogie.jpg",
       "saHash": "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8"
     },
     {
@@ -2424,7 +2427,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Gamelan_de_Couple",
-      "jacket": "banner/ddr_x/Gamelan de Couple.jpg",
+      "jacket": "banner/ddr_ext/Gamelan de Couple.png",
       "genre": "GAMELAN TRANCE",
       "saHash": "69qoD0l6olQqqbl09b069q898b600I6o",
       "search_hint": "GAMELAN TRANCE/ガムラントランス"
@@ -2444,7 +2447,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/GENOM_SCREAMS",
-      "jacket": "banner/ddr_x/GENOM SCREAMS.jpg",
+      "jacket": "banner/ddr_2nd/GENOM SCREAMS.png",
       "genre": "TRANCE",
       "saHash": "Dq0Iio09Pb9iD0lbb0I0qd8Q8i10II09"
     },
@@ -2502,7 +2505,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/GIRIGILI_monzen_jakura",
-      "jacket": "banner/ddr_x/GIRIGILI門前雀羅.jpg",
+      "jacket": "banner/ddr_sn2/GIRIGILI門前雀羅.jpg",
       "genre": "MIXTURENPON",
       "saHash": "b8dqI0Iq60iQPPobiiQ8O6PiIqdodDiQ",
       "search_hint": "MIXTURENPON/ミクスチャンポン"
@@ -2523,7 +2526,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/GIRL_IN_A_DAYDREAM",
-      "jacket": "banner/ddr_x/GIRL IN A DAYDREAM.jpg"
+      "jacket": "banner/ddr_sn/GIRL IN A DAYDREAM.jpg"
     },
     {
       "name": "GIVE ME UP",
@@ -2541,7 +2544,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/GIVE_ME_UP",
-      "jacket": "banner/ddr_x/GIVE ME UP.jpg"
+      "jacket": "banner/ddr_sn/GIVE ME UP.jpg"
     },
     {
       "name": "GOLDEN SKY",
@@ -2559,7 +2562,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/GOLDEN_SKY",
-      "jacket": "banner/ddr_x/GOLDEN SKY.jpg"
+      "jacket": "banner/ddr_sn/GOLDEN SKY.jpg"
     },
     {
       "name": "GORGEOUS 2012",
@@ -2576,7 +2579,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/GORGEOUS_2012",
-      "jacket": "banner/ddr_x/GORGEOUS 2012.jpg",
+      "jacket": "banner/ddr_sn/GORGEOUS 2012.jpg",
       "saHash": "b0Po680ibI600ObOi6qqidI06oqo0Olq"
     },
     {
@@ -2594,7 +2597,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/GRADIUSIC_CYBER_~AMD_G5_MIX~",
-      "jacket": "banner/ddr_x/GRADIUSIC CYBER (AMD G5 MIX).jpg",
+      "jacket": "banner/ddr_3rd/GRADIUSIC CYBER (AMD G5 MIX).png",
       "saHash": "q6qI6llb69D1IQq0OiP8OD06Qioob91Q"
     },
     {
@@ -2630,7 +2633,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Happy_Wedding",
-      "jacket": "banner/ddr_x/Happy Wedding.jpg",
+      "jacket": "banner/ddr_ext/Happy Wedding.png",
       "genre": "HOUSE",
       "saHash": "oo8DId90dbDliiQQlQPQQoIq6lPliqo9"
     },
@@ -2650,7 +2653,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/HAPPY_ANGEL",
-      "jacket": "banner/ddr_x/HAPPY☆ANGEL.jpg",
+      "jacket": "banner/ddr_sn/HAPPY☆ANGEL.jpg",
       "genre": "HAPPY HARDCORE",
       "saHash": "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi"
     },
@@ -2669,7 +2672,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Healing_Vision",
-      "jacket": "banner/ddr_x/Healing Vision.jpg",
+      "jacket": "banner/ddr_5th/Healing Vision.png",
       "saHash": "qIDI69oIo8OlQqdqqDilI1do6IbP16Q6"
     },
     {
@@ -2687,7 +2690,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Healing_Vision_~Angelic_mix~",
-      "jacket": "banner/ddr_x/Healing Vision (Angelic mix).jpg",
+      "jacket": "banner/ddrmax/Healing Vision (Angelic mix).png",
       "saHash": "olQQ8QPPqqObDD9ooodOl9i9od8b06I9"
     },
     {
@@ -2720,7 +2723,7 @@
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Healing-D-Vision",
-      "jacket": "banner/ddr_x/Healing-D-Vision.jpg",
+      "jacket": "banner/ddr_sn/Healing-D-Vision.jpg",
       "saHash": "109P1iO9i6q1q0bdQobiodQDoD619dqd"
     },
     {
@@ -2738,7 +2741,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Heaven_is_a_%2757_metallic_gray_~gimmix~",
-      "jacket": "banner/ddr_x/Heaven is a '57 metallic gray (gimmix).jpg",
+      "jacket": "banner/ddr_ext/Heaven is a '57 metallic gray (gimmix).png",
       "saHash": "oDlO8QQOQ68IO61q9PQd800QiOll1odI"
     },
     {
@@ -2774,7 +2777,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/HIGHER_(NM_feat._SUNNY)",
-      "jacket": "banner/ddr_x/HIGHER.jpg",
+      "jacket": "banner/ddr_4th/HIGHER.png",
       "genre": "DANCE POP",
       "saHash": "O1blDPOQ8IQb00o0D89QIDIlo8b06liD"
     },
@@ -2788,7 +2791,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/HIGHER(next_morning_mix)",
-      "jacket": "banner/ddr_x/HIGHER (next morning mix).jpg",
+      "jacket": "banner/ddrmax2/HIGHER (next morning mix).png",
       "saHash": "8DQDq16PPlli6o9iDl11DqooqOPlOb08"
     },
     {
@@ -2806,7 +2809,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Holic",
-      "jacket": "banner/ddr_x/Holic.jpg",
+      "jacket": "banner/ddr_4th/Holic.png",
       "genre": "HARD TECHNO",
       "saHash": "ODq019O9o1OPdq9PiPl0o8D8DQ8bid88"
     },
@@ -2854,7 +2857,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/HYPER_EUROBEAT",
-      "jacket": "banner/ddr_x/HYPER EUROBEAT.jpg",
+      "jacket": "banner/ddr_ext/HYPER EUROBEAT.png",
       "saHash": "I08olqilqQi9Dd0qOq0o09PPqI0l11QI"
     },
     {
@@ -2872,7 +2875,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/HYSTERIA",
-      "jacket": "banner/ddr_x/HYSTERIA.jpg",
+      "jacket": "banner/ddr_4th/HYSTERIA.png",
       "saHash": "8l808Do60DP0qDbD066QQqP1qOQdob90"
     },
     {
@@ -2885,7 +2888,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/HYSTERIA_2001",
-      "jacket": "banner/ddr_x/HYSTERIA 2001.jpg",
+      "jacket": "banner/ddrmax2/HYSTERIA 2001.png",
       "genre": "R&B",
       "saHash": "lPloI86odlIbIo96P169b9I0Ob8lD189"
     },
@@ -2904,7 +2907,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/I_feel_...",
-      "jacket": "banner/ddr_x/i feel ....jpg",
+      "jacket": "banner/ddrmax2/i feel.png",
       "genre": "TRANCE",
       "saHash": "DddIPd6iId8Doqq8OibDlD1dOi8PO8o9"
     },
@@ -2923,7 +2926,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/I_Need_You",
-      "jacket": "banner/ddr_x/I Need You.jpg",
+      "jacket": "banner/ddr_sn/I Need You.jpg",
       "saHash": "1i6ObblIOoPo6dDd9dIIq11l60qiD9di"
     },
     {
@@ -2942,7 +2945,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/I%27ll_Make_Love_To_You",
-      "jacket": "banner/ddr_x/I'll Make Love To You.jpg"
+      "jacket": "banner/ddr_sn/I'll Make Love To You.jpg"
     },
     {
       "name": "I'm gonna get you!",
@@ -2959,7 +2962,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/I%27M_GONNA_GET_YOU!",
-      "jacket": "banner/ddr_x/I'm gonna get you!.jpg",
+      "jacket": "banner/ddr_ext/I'm gonna get you!.png",
       "saHash": "lPoD60qooQ91QDq1qO9d19q9IoDIlPq9"
     },
     {
@@ -2979,7 +2982,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/IFUTURELIST(DDR_VERSION)",
-      "jacket": "banner/ddr_x/iFUTURELIST(DDR VERSION).jpg",
+      "jacket": "banner/ddr_sn/iFUTURELIST(DDR VERSION).jpg",
       "saHash": "0ib0Pqol08o9ODDq166iDl8oll061lPl"
     },
     {
@@ -2997,7 +3000,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/INNOCENCE_OF_SILENCE",
-      "jacket": "banner/ddr_x/INNOCENCE OF SILENCE.jpg",
+      "jacket": "banner/ddr_sn/INNOCENCE OF SILENCE.jpg",
       "saHash": "qDi0dIlObi6Q6P8dQ1b8oIb188O9608o"
     },
     {
@@ -3015,7 +3018,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/INSERTiON",
-      "jacket": "banner/ddr_x/INSERTiON.jpg",
+      "jacket": "banner/ddr_5th/INSERTiON.png",
       "genre": "EURO TRANCE",
       "saHash": "6oldqOoilo1OoP6P9OoO8bdD9lI86qdQ"
     },
@@ -3034,7 +3037,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/INSIDE_YOUR_HEART",
-      "jacket": "banner/ddr_x/INSIDE YOUR HEART.jpg",
+      "jacket": "banner/ddr_sn/INSIDE YOUR HEART.jpg",
       "saHash": "O8qii6oiooPd8lbPqDo9QQioIoQQOoq0"
     },
     {
@@ -3088,7 +3091,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Jam_%26_Marmalade",
-      "jacket": "banner/ddr_x/Jam&Marmalade.jpg",
+      "jacket": "banner/ddr_sn/Jam&Marmalade.jpg",
       "genre": "WARP HOUSE",
       "saHash": "IoI10obli6qd9DI699l61Pq16P9bboDd"
     },
@@ -3107,7 +3110,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Jane_jana",
-      "jacket": "banner/ddr_x/JANEJANA.jpg",
+      "jacket": "banner/ddr_ext/JANEJANA.png",
       "saHash": "8qd9d01dPOq1lOOoPiOIoPobdd1QODPq"
     },
     {
@@ -3126,7 +3129,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/JERK_IT_OUT",
-      "jacket": "banner/ddr_x/JERK IT OUT.jpg"
+      "jacket": "banner/ddr_sn/JERK IT OUT.jpg"
     },
     {
       "name": "JET WORLD",
@@ -3143,7 +3146,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/JET_WORLD",
-      "jacket": "banner/ddr_x/JET WORLD.jpg",
+      "jacket": "banner/ddr_ext/JET WORLD.png",
       "genre": "HARD COUNTRY",
       "saHash": "1PQdDiqOD6o1b61iiDOoiiblIQbI91Pb",
       "search_hint": "HARD COUNTRY/ハードカントリー"
@@ -3163,7 +3166,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/KEEP_ON_MOVIN%27",
-      "jacket": "banner/ddr_x/KEEP ON MOVIN'.jpg",
+      "jacket": "banner/ddr_2nd/KEEP ON MOVIN'.png",
       "genre": "DANCE POP",
       "saHash": "0lDDIlQ91lq6O16q9QQ681d6Db1l0oOb"
     },
@@ -3182,7 +3185,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/KEEP_ON_MOVIN%27_~DMX_MIX~",
-      "jacket": "banner/ddr_x/KEEP ON MOVIN' ～DMX MIX～.jpg",
+      "jacket": "banner/ddr_sn/KEEP ON MOVIN' ～DMX MIX～.jpg",
       "saHash": "PQPloiIQ19QDP9QoI1ld9DlDObIOP689"
     },
     {
@@ -3200,7 +3203,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Kind_Lady",
-      "jacket": "banner/ddr_x/Kind Lady.jpg"
+      "jacket": "banner/ddr_ext/Kind Lady.png"
     },
     {
       "name": "KISS KISS KISS",
@@ -3217,7 +3220,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/KISS_KISS_KISS",
-      "jacket": "banner/ddr_x/KISS KISS KISS.jpg",
+      "jacket": "banner/ddr_ext/KISS KISS KISS.png",
       "genre": "HYPER EUROBEAT",
       "saHash": "qIoDdQ1OOoPO8Q1Io0P168161DODPoqb",
       "search_hint": "HYPER EUROBEAT/ハイパーユーロビート"
@@ -3237,7 +3240,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Kiss_me_all_night_long",
-      "jacket": "banner/ddr_x/KISS ME ALL NIGHT LONG.jpg",
+      "jacket": "banner/ddr_ext/KISS ME ALL NIGHT LONG.png",
       "genre": "J-EURO POP",
       "saHash": "iOqb60DOOolIioDIOPi09P91i8PDiOqq"
     },
@@ -3274,7 +3277,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/L%27amour_et_la_liberte(Darwin_%26_DJ_Silver_remix)",
-      "jacket": "banner/ddr_x/L'amour et la liberté (Darwin & DJ Silver remix).jpg",
+      "jacket": "banner/ddr_sn2/L'amour et la liberté (Darwin & DJ Silver remix).jpg",
       "saHash": "ddib8P601q0Oqdb0Pl8oqobq9DD608P1"
     },
     {
@@ -3292,7 +3295,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/L%27amour_et_la_liberte(DDR_Ver.)",
-      "jacket": "banner/ddr_x/L'amour et la liberté (DDR Ver.).jpg",
+      "jacket": "banner/ddr_ext/L'amour et la liberte (DDR ver.).png",
       "saHash": "8IIoIQQqlooiI6QD9ldIO6qidP98QP68"
     },
     {
@@ -3311,7 +3314,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/LA_BAMBA",
-      "jacket": "banner/ddr_x/LA BAMBA (the other one).jpg",
+      "jacket": "banner/ddr_ext/LA BAMBA.png",
       "saHash": "9IOdDPPO1IIPD9oDbOPo0Qo99Ii6Q8oi"
     },
     {
@@ -3329,7 +3332,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Bamba",
-      "jacket": "banner/ddr_x/La Bamba.jpg",
+      "jacket": "banner/ddr_sn/La Bamba.jpg",
       "saHash": "qbQ9I1bI6q91Q18DlDlI1Qdi8q6Qlo91"
     },
     {
@@ -3348,7 +3351,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita",
-      "jacket": "banner/ddr_x/La Señorita.jpg",
+      "jacket": "banner/ddr_3rd/La Senorita.png",
       "saHash": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9"
     },
     {
@@ -3367,7 +3370,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita_Virtual",
-      "jacket": "banner/ddr_x/La Señorita Virtual.jpg",
+      "jacket": "banner/ddr_3rd/La Senorita Virtual.png",
       "saHash": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb"
     },
     {
@@ -3385,7 +3388,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/LEADING_CYBER",
-      "jacket": "banner/ddr_x/LEADING CYBER.jpg",
+      "jacket": "banner/ddr_4th/LEADING CYBER.png",
       "genre": "DIGI-ROCK",
       "saHash": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8"
     },
@@ -3404,7 +3407,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Let_the_beat_hit_em!(CLASSIC_R%26B_STYLE)",
-      "jacket": "banner/ddr_x/Let the beat hit em! (CLASSIC R&B STYLE).jpg",
+      "jacket": "banner/ddrmax/Let the beat hit em! (CLASSIC R&B STYLE).png",
       "saHash": "bP69QdDQ0QQ9dP0dDio0dO61i9Dbdl00"
     },
     {
@@ -3440,7 +3443,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/LOGICAL_DASH",
-      "jacket": "banner/ddr_x/LOGICAL DASH.jpg",
+      "jacket": "banner/ddr_sn/LOGICAL DASH.jpg",
       "genre": "HAPPY",
       "saHash": "8O86IP9dqQ8818ld9od8Q0PiDId6666P"
     },
@@ -3460,7 +3463,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/LONG_TRAIN_RUNNIN%27",
-      "jacket": "banner/ddr_x/LONG TRAIN RUNNIN'.jpg"
+      "jacket": "banner/ddr_sn/LONG TRAIN RUNNIN'.jpg"
     },
     {
       "name": "LOVE AGAIN TONIGHT～for Melissa mix～",
@@ -3478,7 +3481,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/LOVE_AGAIN_TONIGHT~For_Melissa_MIX~",
-      "jacket": "banner/ddr_x/LOVE AGAIN TONIGHT～for Melissa mix～.jpg",
+      "jacket": "banner/ddr_4th/LOVE AGAIN TONIGHT (For Melissa MIX).png",
       "genre": "HYPER EUROBEAT",
       "saHash": "boOdPIqbDd8li0O0IqliPo1Doq99Ob09"
     },
@@ -3498,7 +3501,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/LOVE_AT_FIRSTSIGHT(TwinMasterplan_Mix)",
-      "jacket": "banner/ddr_x/LOVE AT FIRST SIGHT(Twin Masterplan Mix).jpg"
+      "jacket": "banner/ddr_sn/LOVE AT FIRST SIGHT(Twin Masterplan Mix).jpg"
     },
     {
       "name": "LOVE IS ORANGE",
@@ -3517,7 +3520,7 @@
         { "lvl": 12, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/LOVE_IS_ORANGE",
-      "jacket": "banner/ddr_x/LOVE IS ORANGE.jpg",
+      "jacket": "banner/ddr_sn/LOVE IS ORANGE.jpg",
       "genre": "HARD CHANSON",
       "saHash": "D6oPIlOlIIOi1oq6Pd6011lqobbqOlib",
       "search_hint": "HARD CHANSON/ハードシャンソン"
@@ -3537,7 +3540,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/LOVE_THIS_FEELIN%27",
-      "jacket": "banner/ddr_x/LOVE THIS FEELIN'.jpg",
+      "jacket": "banner/ddr_3rd/LOVE THIS FEELIN'.png",
       "saHash": "i8II16blIIbQQd196b616OPbPO910oi9"
     },
     {
@@ -3573,7 +3576,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Make_A_Difference",
-      "jacket": "banner/ddr_x/Make A Difference.jpg",
+      "jacket": "banner/ddr_sn/Make A Difference.jpg",
       "genre": "GOSPEL",
       "saHash": "0Oo6iId08018qOqbo6O1o0QQ9D09Piq1"
     },
@@ -3592,7 +3595,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MAKE_IT_BETTER",
-      "jacket": "banner/ddr_x/MAKE IT BETTER.jpg",
+      "jacket": "banner/ddr_1st/MAKE IT BETTER.png",
       "saHash": "8Il6980di8P89lil1PDIqqIbiq1QO8lQ"
     },
     {
@@ -3646,7 +3649,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MARIA_(I_believe..._)",
-      "jacket": "banner/ddr_x/MARIA (I believe...).jpg",
+      "jacket": "banner/ddr_sn/MARIA (I believe...).jpg",
       "genre": "EUROBEAT",
       "saHash": "6P6dPoi66qO980bQo6l1QdlQIooq086l"
     },
@@ -3665,7 +3668,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MARS_WAR_3",
-      "jacket": "banner/ddr_x/MARS WAR 3.jpg",
+      "jacket": "banner/ddr_sn2/MARS WAR 3.jpg",
       "genre": "TOY BREAK CORE",
       "saHash": "oOdl0d1IOo0bd008DOl91606Pd0PP86d",
       "search_hint": "TOY BRAKE CORE/トイブレークコア"
@@ -3685,7 +3688,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MAX_300",
-      "jacket": "banner/ddr_x/MAX 300.jpg",
+      "jacket": "banner/ddrmax/MAX 300.png",
       "genre": "HARDCORE TECHNO",
       "saHash": "6P18lOliIQqIO6Di0PP8iDlDQ01b0o0q"
     },
@@ -3706,7 +3709,7 @@
         { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/MAX_300_(Super-Max-Me_Mix)",
-      "jacket": "banner/ddr_x/MAX 300 (Super-Max-Me Mix).jpg",
+      "jacket": "banner/ddr_sn/MAX 300 (Super-Max-Me Mix).jpg",
       "saHash": "qOP1qP69o6id061o9bo8l6P11P1PQI1O"
     },
     {
@@ -3737,7 +3740,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MAXIMIZER",
-      "jacket": "banner/ddr_x/MAXIMIZER.jpg",
+      "jacket": "banner/ddr_sn/MAXIMIZER.jpg",
       "saHash": "OQol16I968Q8bDoQd80i90oQQbqOdbdP"
     },
     {
@@ -3755,7 +3758,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MAXX_UNLIMITED",
-      "jacket": "banner/ddr_x/MAXX UNLIMITED.jpg",
+      "jacket": "banner/ddrmax2/MAXX UNLIMITED.png",
       "saHash": "lObPDQDI08DoodDq1061IP1qbQ1qQQbl"
     },
     {
@@ -3787,7 +3790,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/ME_AGAINST_THE_MUSIC",
-      "jacket": "banner/ddr_x/ME AGAINST THE MUSIC.jpg"
+      "jacket": "banner/ddr_sn2/ME AGAINST THE MUSIC.jpg"
     },
     {
       "name": "MIDNIGHT SPECIAL",
@@ -3804,7 +3807,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MIDNIGHT_SPECIAL",
-      "jacket": "banner/ddr_x/Midnight Special.jpg",
+      "jacket": "banner/ddr_sn/Midnight Special.jpg",
       "saHash": "iI1iQD6Id0PiPDoo919doOooDib09I6b"
     },
     {
@@ -3822,7 +3825,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Mind_Parasite",
-      "jacket": "banner/ddr_x/Mind Parasite.jpg",
+      "jacket": "banner/ddr_sn/Mind Parasite.jpg",
       "saHash": "b6dqPiOO6iO6b8D90Ido6QPOlObd9o98"
     },
     {
@@ -3840,7 +3843,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Miracle_Moon_~L.E.D.LIGHT_STYLE_MIX~",
-      "jacket": "banner/ddr_x/Miracle Moon -L.E.D. LIGHT STYLE MIX-.jpg",
+      "jacket": "banner/ddr_ext/Miracle Moon ~L.E.D.LIGHT STYLE MIX~.png",
       "genre": "EPIC HOUSE",
       "saHash": "i9DPi1Do9qoIQid09o1oilodPlDP6doO",
       "search_hint": "J-GARAGE POP REMIX/JガラージポップREMIX"
@@ -3861,7 +3864,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/MODERN_GIRL",
-      "jacket": "banner/ddr_x/MODERN GIRL.jpg"
+      "jacket": "banner/ddr_sn/MODERN GIRL.jpg"
     },
     {
       "name": "Monkey Punk",
@@ -3878,7 +3881,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Monkey_Punk",
-      "jacket": "banner/ddr_x/Monkey Punk.jpg",
+      "jacket": "banner/ddr_sn/Monkey Punk.jpg",
       "saHash": "OoQ6Oq81oIql8iIlbI6qldIlqoD1Di1I"
     },
     {
@@ -3896,7 +3899,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MOON",
-      "jacket": "banner/ddr_x/MOON.jpg",
+      "jacket": "banner/ddr_sn/MOON.jpg",
       "genre": "哀愁ユーロ",
       "saHash": "lI8qIDQPD0PDOdO1d01iOq8bI98iiQ1l",
       "search_hint": "AISYU-EURO/哀愁ユーロ"
@@ -3916,7 +3919,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MOONSTER",
-      "jacket": "banner/ddr_x/MOONSTER.jpg",
+      "jacket": "banner/ddr_sn2/MOONSTER.jpg",
       "saHash": "olOOdb66Q0bP0dqQPdIdQ8IPQql8D6bi"
     },
     {
@@ -3935,7 +3938,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/MR.DABADA_(Groove_Wonder_Remix)",
-      "jacket": "banner/ddr_x/MR.DABADA (Groove Wonder Remix).jpg"
+      "jacket": "banner/ddr_sn/MR.DABADA (Groove Wonder Remix).jpg"
     },
     {
       "name": "murmur twins",
@@ -3952,7 +3955,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Murmur_twins",
-      "jacket": "banner/ddr_x/murmur twins.jpg",
+      "jacket": "banner/ddr_sn/murmur twins.jpg",
       "genre": "CUDDLECORE",
       "saHash": "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il",
       "search_hint": "CUDDLECORE/カドルコア"
@@ -3973,7 +3976,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Music_In_The_Rhythm",
-      "jacket": "banner/ddr_x/Music In The Rhythm.jpg",
+      "jacket": "banner/ddr_sn2/Music In The Rhythm.jpg",
       "saHash": "i11d86DOOdOb8Pbb1QqIilQI9Idib8PP"
     },
     {
@@ -3992,7 +3995,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/My_Favorite_Things_(SLOTH_MUSIC_PROJECT_feat._ALISON_WADE)",
-      "jacket": "banner/ddr_x/My Favorite Things.jpg"
+      "jacket": "banner/ddr_sn2/My Favorite Things.jpg"
     },
     {
       "name": "My Only Shining Star",
@@ -4009,7 +4012,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/My_Only_Shining_Star",
-      "jacket": "banner/ddr_x/My Only Shining Star.jpg",
+      "jacket": "banner/ddr_sn/My Only Shining Star.jpg",
       "genre": "HYPER EUROBEAT",
       "saHash": "Io1661doQq6OQ8DoobPq1IQlbqoDD1q8"
     },
@@ -4028,7 +4031,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/MY_SUMMER_LOVE",
-      "jacket": "banner/ddr_x/MY SUMMER LOVE.jpg",
+      "jacket": "banner/ddr_4th/MY SUMMER LOVE.png",
       "saHash": "6Ddo196olOPi9IQdbQ8Qbd8do8Q1obOD"
     },
     {
@@ -4041,7 +4044,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/MY_SUMMER_LOVE(TOMMY%27S_SMILE_MIX)",
-      "jacket": "banner/ddr_x/MY SUMMER LOVE (TOMMY'S SMILE MIX).jpg",
+      "jacket": "banner/ddrmax2/MY SUMMER LOVE (TOMMY'S SMILE MIX).png",
       "saHash": "d99P0I1i960QO0oolD6oQIO8OObO9Plb"
     },
     {
@@ -4062,7 +4065,7 @@
         { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/NGO",
-      "jacket": "banner/ddr_x/NGO.jpg",
+      "jacket": "banner/ddr_sn2/NGO.jpg",
       "saHash": "iP6qIl6lD809098io0OiPP08Ii18I6OI"
     },
     {
@@ -4080,7 +4083,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/No.13",
-      "jacket": "banner/ddr_x/No.13.jpg",
+      "jacket": "banner/ddr_sn/No.13.jpg",
       "genre": "PROGRESSIVE BAROQUE",
       "saHash": "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb"
     },
@@ -4137,7 +4140,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/ORION.78(AMeuro-MIX)",
-      "jacket": "banner/ddr_x/ORION.78 (AMeuro-MIX).jpg",
+      "jacket": "banner/ddr_4th/ORION.78 (AMeuro-MIX).png",
       "saHash": "1d10660Dd0IOibDI890Ild80q6ddoQO8"
     },
     {
@@ -4155,7 +4158,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/ORION.78~civilization_mix~",
-      "jacket": "banner/ddr_x/ORION.78 (civilization mix).jpg",
+      "jacket": "banner/ddrmax/ORION.78 (civilization mix).png",
       "saHash": "61ido0DPl8q0dI1i011Do1b6669dPIlo"
     },
     {
@@ -4173,7 +4176,7 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA",
-      "jacket": "banner/ddr_x/PARANOiA.jpg",
+      "jacket": "banner/ddr_1st/PARANOiA.png",
       "saHash": "06loOQ0DQb0DqbOibl6qO81qlIdoP9DI"
     },
     {
@@ -4191,7 +4194,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_ETERNAL",
-      "jacket": "banner/ddr_x/PARANOiA ETERNAL.jpg",
+      "jacket": "banner/ddr_5th/PARANOiA ETERNAL.png",
       "saHash": "PP1q0iii1D6Dq9QOd0qqDOQD0160QoPD"
     },
     {
@@ -4222,7 +4225,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOIA_EVOLUTION",
-      "jacket": "banner/ddr_x/PARANOiA EVOLUTION.jpg",
+      "jacket": "banner/ddr_4th/PARANOIA EVOLUTION.png",
       "saHash": "DPQo8Q0l9D8IPiDiq11l8OI6i11OOb6O"
     },
     {
@@ -4253,7 +4256,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_KCET_~clean_mix~",
-      "jacket": "banner/ddr_x/PARANOiA KCET (clean mix).jpg",
+      "jacket": "banner/ddr_2nd/PARANOiA KCET (clean mix).png",
       "saHash": "9doPbId8qid9I9l6ooloPQD1lq1Plb6I"
     },
     {
@@ -4271,7 +4274,7 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
-      "jacket": "banner/ddr_x/PARANOIA MAX～DIRTY MIX～.jpg",
+      "jacket": "banner/ddr_2nd/PARANOIA MAX～DIRTY MIX～.png",
       "genre": "JUNGLE",
       "saHash": "Pl0dPid9lQDo6PDQDqPboPqO6iIDIqoo"
     },
@@ -4315,7 +4318,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_Rebirth",
-      "jacket": "banner/ddr_x/PARANOiA Rebirth.jpg",
+      "jacket": "banner/ddr_3rd/PARANOiA Rebirth.png",
       "saHash": "0lDP0P06PIPl1iiIDOb919iqo1oPdlP8"
     },
     {
@@ -4346,7 +4349,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOIA_survivor",
-      "jacket": "banner/ddr_x/PARANOiA survivor.jpg",
+      "jacket": "banner/ddr_ext/PARANOIA survivor.png",
       "saHash": "O9Id8Qi6OIDIQ6bPi610q0001l1P099q"
     },
     {
@@ -4366,7 +4369,7 @@
         { "lvl": 16, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/PARANOIA_survivor_MAX",
-      "jacket": "banner/ddr_x/PARANOIA survivor MAX.jpg",
+      "jacket": "banner/ddr_ext/PARANOIA survivor MAX.png",
       "genre": "JUNGLE MIXTURE",
       "saHash": "68iQ9666QIQP1IOQbbd9989DQQ1D0dOl"
     },
@@ -4387,7 +4390,7 @@
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_~HADES~",
-      "jacket": "banner/ddr_x/PARANOiA ～HADES～.jpg",
+      "jacket": "banner/ddr_sn2/PARANOiA ～HADES～.jpg",
       "genre": "SUPERNOVA2 BEAT #1",
       "saHash": "io1d1Dq80Di08O1Pb9bQ8DoP9d9Ooi90"
     },
@@ -4419,7 +4422,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA-Respect-",
-      "jacket": "banner/ddr_x/PARANOiA-Respect-.jpg",
+      "jacket": "banner/ddr_sn/PARANOiA-Respect-.jpg",
       "saHash": "IP00ID9bdlOoP9o9lo1qlO0D1Pdo9I8l"
     },
     {
@@ -4455,13 +4458,13 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PASSION_OF_LOVE",
-      "jacket": "banner/ddr_x/PASSION OF LOVE.jpg",
+      "jacket": "banner/ddr_sn/PASSION OF LOVE.jpg",
       "saHash": "8PQooio0ilPoQ8Di66I19QOQP90Ddbdi"
     },
     {
       "name": "Pink Rose",
       "artist": "Kiyommy+Seiya",
-      "bpm": "116-146",
+      "bpm": "146",
       "folder": "DanceDanceRevolution EXTREME",
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
@@ -4473,7 +4476,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Pink_Rose",
-      "jacket": "banner/ddr_x/Pink Rose.jpg",
+      "jacket": "banner/ddr_ext/Pink Rose.png",
       "genre": "HEART",
       "saHash": "O09lbd0I8D0DI08O06l6iiI0i11I1iIb",
       "search_hint": "HEART/ハート"
@@ -4513,7 +4516,7 @@
         { "lvl": 17, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Pluto",
-      "jacket": "banner/ddr_x/Pluto.jpg",
+      "jacket": "banner/ddr_sn2/Pluto.jpg",
       "genre": "SUPERNOVA2 BEAT EX",
       "saHash": "dD6PqbboDil89DPIID86Pldi6obI1b8l"
     },
@@ -4534,7 +4537,7 @@
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Pluto_Relinquish",
-      "jacket": "banner/ddr_x/Pluto Relinquish.jpg",
+      "jacket": "banner/ddr_sn2/Pluto Relinquish.jpg",
       "saHash": "0IldoDlDQql99DqQo0Qq9ioPIiiPoIoi"
     },
     {
@@ -4552,7 +4555,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Polovtsian_Dances_And_Chorus",
-      "jacket": "banner/ddr_x/Polovtsian Dances And Chorus.jpg",
+      "jacket": "banner/ddr_sn/Polovtsian Dances And Chorus.jpg",
       "saHash": "l609D9lOqbDP6iIld1dI18l888dODQ6Q",
       "search_hint": "韃靼人の踊り/タタール人の踊り/タタール人の踊りと合唱"
     },
@@ -4571,7 +4574,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Poseidon",
-      "jacket": "banner/ddr_x/Poseidon.jpg",
+      "jacket": "banner/ddr_sn2/Poseidon.jpg",
       "saHash": "1PiiOiQoq8dbdi819q9Ild966o6o19QQ"
     },
     {
@@ -4607,7 +4610,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PUT_YOUR_FAITH_IN_ME",
-      "jacket": "banner/ddr_x/PUT YOUR FAITH IN ME.jpg",
+      "jacket": "banner/ddr_2nd/PUT YOUR FAITH IN ME.png",
       "saHash": "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l"
     },
     {
@@ -4625,7 +4628,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PUT_YOUR_FAITH_IN_ME_~SATURDAY_NIGHT_MIX~",
-      "jacket": "banner/ddr_x/PUT YOUR FAITH IN ME ～SATURDAY NIGHT MIX～.jpg",
+      "jacket": "banner/ddr_sn/PUT YOUR FAITH IN ME ～SATURDAY NIGHT MIX～.jpg",
       "saHash": "OI01b6I6OQ9IdQidll890oqlOPDql9ol"
     },
     {
@@ -4662,7 +4665,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Quick_Master",
-      "jacket": "banner/ddr_x/Quick Master.jpg",
+      "jacket": "banner/ddr_sn/Quick Master.jpg",
       "genre": "J-TEKNO",
       "saHash": "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP",
       "search_hint": "J-TEKNO/J-テクノ"
@@ -4682,7 +4685,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Quickening",
-      "jacket": "banner/ddr_x/Quickening.jpg",
+      "jacket": "banner/ddr_sn/Quickening.jpg",
       "genre": "PSYCHEDELIC",
       "saHash": "QI96D9PqIQ90PidPQPdbqbi0q9q8lQbb"
     },
@@ -4701,7 +4704,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Rain_of_sorrow",
-      "jacket": "banner/ddr_x/rain of sorrow.jpg",
+      "jacket": "banner/ddrmax2/rain of sorrow.png",
       "saHash": "Qo9l6l6lq0q618bQOb8d6qiooiiPQqoI"
     },
     {
@@ -4719,7 +4722,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Rainbow_flyer",
-      "jacket": "banner/ddr_x/rainbow flyer.jpg",
+      "jacket": "banner/ddr_sn/rainbow flyer.jpg",
       "genre": "TRANCE",
       "saHash": "qbDidIlodPP6PqI00D18P6dDbioIdDPD"
     },
@@ -4738,7 +4741,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Rainbow_rainbow",
-      "jacket": "banner/ddr_x/rainbow rainbow.jpg",
+      "jacket": "banner/ddr_sn/rainbow rainbow.jpg",
       "genre": "HAPPY HARDCORE",
       "saHash": "0OQdlbo111ib1i88IdIPIbollD68Dii1"
     },
@@ -4759,7 +4762,7 @@
         { "lvl": 12, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Raspberry_Heart_(English_version)",
-      "jacket": "banner/ddr_x/Raspberry♥Heart(English version).jpg",
+      "jacket": "banner/ddr_sn2/Raspberry♥Heart(English version).jpg",
       "genre": "COLORFUL HARDCORE",
       "saHash": "60qiDd000qDIobO0QI916i18bbolO919"
     },
@@ -4796,7 +4799,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/RED_ZONE",
-      "jacket": "banner/ddr_x/RED ZONE.jpg",
+      "jacket": "banner/ddr_sn/RED ZONE.jpg",
       "genre": "SPEED RAVE",
       "saHash": "81QD89Q6Ob911oOoobO0D98IQ1D1q60d"
     },
@@ -4856,7 +4859,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Saturday_Night_Love",
-      "jacket": "banner/ddr_x/Saturday Night Love.jpg",
+      "jacket": "banner/ddr_sn/Saturday Night Love.jpg",
       "saHash": "o9l8Id0D1lQdl1o9DDIPbO6q998lq8bd"
     },
     {
@@ -4874,7 +4877,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Saturn",
-      "jacket": "banner/ddr_x/Saturn.jpg",
+      "jacket": "banner/ddr_sn2/Saturn.jpg",
       "genre": "PROGRESSIVE TRIBAL",
       "saHash": "dDldd8OlbPQDoD80dO0DiDOiIoP1PQoD"
     },
@@ -4893,7 +4896,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Scorching_Moon",
-      "jacket": "banner/ddr_x/Scorching Moon.jpg",
+      "jacket": "banner/ddr_sn/Scorching Moon.jpg",
       "genre": "HOUSE",
       "saHash": "16Pio809ID669Di8OoPblQO0lDq668dQ"
     },
@@ -4912,7 +4915,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Secret_Rendez-vous",
-      "jacket": "banner/ddr_x/Secret Rendez-vous.jpg",
+      "jacket": "banner/ddrmax2/Secret Rendez-vous.png",
       "saHash": "Db9D6Old6lIo01q0qlQ0dD1oDdbdob8I"
     },
     {
@@ -4930,7 +4933,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SEDUCTION",
-      "jacket": "banner/ddr_x/SEDUCTION.jpg",
+      "jacket": "banner/ddr_sn/SEDUCTION.jpg",
       "saHash": "oIQo8IQPbobO6bioiqqdP6P6O8898DOQ"
     },
     {
@@ -4948,7 +4951,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SEDUCTION(Vocal_Remix)",
-      "jacket": "banner/ddr_x/SEDUCTION(Vocal Remix).jpg",
+      "jacket": "banner/ddr_sn/SEDUCTION(Vocal Remix).jpg",
       "saHash": "PO1olqI8DiDiO0loDIIQ08oPd910bQbQ"
     },
     {
@@ -4966,7 +4969,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SEXY_PLANET",
-      "jacket": "banner/ddr_x/SEXY PLANET.jpg",
+      "jacket": "banner/ddr_4th/SEXY PLANET.png",
       "saHash": "60QoP9DoIo90D616989Q0D0iodOoOd91"
     },
     {
@@ -4979,7 +4982,7 @@
         { "lvl": 8, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/SEXY_PLANET(FROM_NONSTOP_MEGAMIX)",
-      "jacket": "banner/ddr_x/SEXY PLANET (FROM NONSTOP MEGAMIX).jpg",
+      "jacket": "banner/ddrmax2/SEXY PLANET (FROM NONSTOP MEGAMIX).png",
       "saHash": "O06Id8PIDbDblO109ddi1dldd0bqDdQ1"
     },
     {
@@ -4997,7 +5000,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Shades_of_Grey",
-      "jacket": "banner/ddr_x/Shades of Grey.jpg",
+      "jacket": "banner/ddr_sn2/Shades of Grey.jpg",
       "genre": "HARD TRANCE",
       "saHash": "qo6Ib8QqqDd16i91d8dlQoqIq08bo68d"
     },
@@ -5016,7 +5019,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Silent_Hill",
-      "jacket": "banner/ddr_x/Silent Hill.jpg",
+      "jacket": "banner/ddr_3rd/Silent Hill.png",
       "saHash": "80bQi8IQ8o1iidqd6oQiDPQoPi909olq"
     },
     {
@@ -5029,7 +5032,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Silent_Hill_(3rd_christmas_mix)",
-      "jacket": "banner/ddr_x/Silent Hill (3rd christmas mix).jpg",
+      "jacket": "banner/ddrmax2/Silent Hill (3rd christmas mix).png",
       "saHash": "oio6bqP08PPoP9qIq1oi9Dib9PIq9l11"
     },
     {
@@ -5047,7 +5050,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Silver_Platform_-_I_wanna_get_your_heart_-",
-      "jacket": "banner/ddr_x/Silver Platform - I wanna get your heart -.jpg",
+      "jacket": "banner/ddr_sn2/Silver Platform - I wanna get your heart -.jpg",
       "saHash": "bi1Obd9i99P0O9PqQ1l1P6P6o1IOi11P"
     },
     {
@@ -5066,7 +5069,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Ska_Ska_No.3",
-      "jacket": "banner/ddr_x/Ska Ska No.3.jpg",
+      "jacket": "banner/ddr_sn/Ska Ska No.3.jpg",
       "genre": "SKA",
       "saHash": "idI1dd69l1il16P0d9DoldDP1QDP0911",
       "search_hint": "SKA/スカ"
@@ -5122,7 +5125,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SO_IN_LOVE",
-      "jacket": "banner/ddr_x/SO IN LOVE.jpg",
+      "jacket": "banner/ddr_ext/SO IN LOVE.png",
       "saHash": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd"
     },
     {
@@ -5140,7 +5143,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SOUL_CRASH",
-      "jacket": "banner/ddr_x/SOUL CRASH.jpg",
+      "jacket": "banner/ddr_sn2/SOUL CRASH.jpg",
       "saHash": "o1QoI9dQ1i89bPl1oDl6999861obD0qI"
     },
     {
@@ -5158,7 +5161,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SP-TRIP_MACHINE_~JUNGLE_MIX~",
-      "jacket": "banner/ddr_x/SP-TRIP MACHINE～JUNGLE MIX～.jpg",
+      "jacket": "banner/ddr_2nd/SP-TRIP MACHINE (JUNGLE MIX).png",
       "saHash": "1P9qQdiiodODqQPl0OO88iiiqdoDIPO6"
     },
     {
@@ -5189,7 +5192,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Star_Gate_Heaven",
-      "jacket": "banner/ddr_x/Star Gate Heaven.jpg",
+      "jacket": "banner/ddr_sn/Star Gate Heaven.jpg",
       "saHash": "QD0q90q9PIl9PdqqO9D9DO09DbiODOI6"
     },
     {
@@ -5207,7 +5210,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Star_Gate_Heaven_(FUTURE_LOVE_Mix)",
-      "jacket": "banner/ddr_x/Star Gate Heaven (FUTURE LOVE Mix).jpg",
+      "jacket": "banner/ddr_sn2/Star Gate Heaven (FUTURE LOVE Mix).jpg",
       "saHash": "6I0d1d8d690dl8boOb60O1Iq1Ddi6P8d"
     },
     {
@@ -5225,7 +5228,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/STARS(2nd_NAOKI%27s_style)",
-      "jacket": "banner/ddr_x/STARS☆☆☆(2nd NAOKI's style).jpg",
+      "jacket": "banner/ddr_sn/STARS☆☆☆(2nd NAOKI's style).jpg",
       "saHash": "6qQb9I0QbD89IID9b9iOPdO6dbqPDolQ"
     },
     {
@@ -5243,7 +5246,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/STARS(Re-tuned_by_HAL)_-_DDR_EDITION_-",
-      "jacket": "banner/ddr_x/STARS★★★ (Re-tuned by HΛL) -DDR EDITION-.jpg",
+      "jacket": "banner/ddr_sn2/STARS★★★ (Re-tuned by HΛL) -DDR EDITION-.jpg",
       "saHash": "bq1O60D90Qbb6iPoi90Ii9olQOIO0Ib1"
     },
     {
@@ -5261,7 +5264,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/STAY_(Organic_house_Version)",
-      "jacket": "banner/ddr_x/STAY (Organic house Version).jpg",
+      "jacket": "banner/ddr_ext/STAY (Organic house Version).png",
       "saHash": "6lqoOddiPQ6D6160bOdP116bQdIliII8"
     },
     {
@@ -5279,7 +5282,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Stealth",
-      "jacket": "banner/ddr_x/stealth.jpg",
+      "jacket": "banner/ddr_sn2/stealth.jpg",
       "saHash": "b0DP0oqbid0iIQ6D88dDIiiDiq9oi19Q"
     },
     {
@@ -5297,7 +5300,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/STILL_IN_MY_HEART",
-      "jacket": "banner/ddr_x/STILL IN MY HEART.jpg",
+      "jacket": "banner/ddr_5th/STILL IN MY HEART.png",
       "genre": "HYPER EUROBEAT",
       "saHash": "Qb90bo6I0Pd9181iIoOPoqPOOOQq6dQ1"
     },
@@ -5311,7 +5314,7 @@
         { "lvl": 12, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/STILL_IN_MY_HEART(MOMO_MIX)",
-      "jacket": "banner/ddr_x/STILL IN MY HEART (MOMO MIX).jpg",
+      "jacket": "banner/ddrmax2/STILL IN MY HEART (MOMO MIX).png",
       "saHash": "DOOb99dlP8PdIbDOQIqoqll60Iob9189"
     },
     {
@@ -5329,7 +5332,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Stoic_(EXTREME_version)",
-      "jacket": "banner/ddr_x/stoic (EXTREME version).jpg",
+      "jacket": "banner/ddr_ext/stoic (EXTREME version).png",
       "saHash": "OoIPPqIDbQ6qIb69q8dil0iq0l6q6DQD"
     },
     {
@@ -5349,7 +5352,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/SUNKiSS_DROP",
-      "jacket": "banner/ddr_x/SUNKiSS♥DROP.jpg",
+      "jacket": "banner/ddr_sn2/SUNKiSS♥DROP.jpg",
       "saHash": "61IoqIoODb6dlQlQqd99b90idO9QP9iI"
     },
     {
@@ -5368,7 +5371,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/SUNRISE(JASON_NEVINS_REMIX)",
-      "jacket": "banner/ddr_x/SUNRISE(JASON NEVINS REMIX).jpg"
+      "jacket": "banner/ddr_sn2/SUNRISE(JASON NEVINS REMIX).jpg"
     },
     {
       "name": "SUPER SAMURAI",
@@ -5403,7 +5406,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SUPER_STAR",
-      "jacket": "banner/ddr_x/SUPER STAR.jpg",
+      "jacket": "banner/ddr_4th/SUPER STAR.png",
       "saHash": "88do8dl8O6Ql1Qlb981lOi8D86oiq91P"
     },
     {
@@ -5416,7 +5419,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/SUPER_STAR(FROM_NONSTOP_MEGAMIX)",
-      "jacket": "banner/ddr_x/SUPER STAR (FROM NONSTOP MEGAMIX).jpg",
+      "jacket": "banner/ddrmax2/SUPER STAR (FROM NONSTOP MEGAMIX).png",
       "saHash": "0qQ1odlooiQO99DDP6bD9bOq89669PQb"
     },
     {
@@ -5435,7 +5438,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/SURRENDER(YOUR_LOVE)",
-      "jacket": "banner/ddr_x/SURRENDER(YOUR LOVE).jpg"
+      "jacket": "banner/ddr_sn/SURRENDER(YOUR LOVE).jpg"
     },
     {
       "name": "Sweet Sweet♥Magic",
@@ -5453,7 +5456,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Sweet_Sweet_Love_Magic",
-      "jacket": "banner/ddr_x/Sweet Sweet♥Magic.jpg",
+      "jacket": "banner/ddrmax2/Sweet Sweet Love Magic.png",
       "genre": "HAPPY HARDCORE",
       "saHash": "8809ol0qbbd6919bbl0b8id1669PqQ08",
       "search_hint": "HAPPY HARDCORE/ハッピーハードコア"
@@ -5491,7 +5494,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Switch",
-      "jacket": "banner/ddr_x/switch.jpg",
+      "jacket": "banner/ddr_sn2/switch.jpg",
       "genre": "ULTIMATE J-POP",
       "saHash": "9bo00PqOIDoDbO6P1116b9obolOiqPo1"
     },
@@ -5512,7 +5515,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Sync_(EXTREME_version)",
-      "jacket": "banner/ddr_x/sync (EXTREME version).jpg",
+      "jacket": "banner/ddr_ext/sync (EXTREME version).png",
       "saHash": "8lo1IDqPDD88DObIPodOd8oQ0Q6qQ1Dd"
     },
     {
@@ -5622,7 +5625,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/The_Least_100sec",
-      "jacket": "banner/ddr_x/The Least 100sec.jpg",
+      "jacket": "banner/ddr_ext/The Least 100sec.png",
       "genre": "PROGRESSIVE",
       "saHash": "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0",
       "search_hint": "PROGRESSIVE/プログレッシブ"
@@ -5642,7 +5645,7 @@
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/The_legend_of_MAX",
-      "jacket": "banner/ddr_x/The legend of MAX.jpg",
+      "jacket": "banner/ddr_ext/The legend of MAX.png",
       "saHash": "li608di8PolqqIP808iddOqi11qDDq0Q"
     },
     {
@@ -5673,7 +5676,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/THE_SHINING_POLARIS",
-      "jacket": "banner/ddr_x/THE SHINING POLARIS.jpg",
+      "jacket": "banner/ddr_sn/THE SHINING POLARIS.jpg",
       "genre": "EPIC TRANCE",
       "saHash": "ODQOP1dblD6q8d160Ioi0dIoQloI6oQO"
     },
@@ -5692,7 +5695,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Think_ya_better_D",
-      "jacket": "banner/ddr_x/think ya better D.jpg",
+      "jacket": "banner/ddr_3rd/think ya better D.png",
       "saHash": "9lob1d1QPd9qiPlQOQ6l0dbodOoDPq1d"
     },
     {
@@ -5728,7 +5731,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TIERRA_BUENA",
-      "jacket": "banner/ddr_x/TIERRA BUENA.jpg",
+      "jacket": "banner/ddr_sn/TIERRA BUENA.jpg",
       "saHash": "idDdoI9bD186blQ9Q8610bIQqb86dilo"
     },
     {
@@ -5782,7 +5785,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TOMORROW",
-      "jacket": "banner/ddr_x/TOMORROW.jpg",
+      "jacket": "banner/ddr_sn/TOMORROW.jpg",
       "saHash": "lQbiI10Qo9DdD8liqPIiob61qDO9d861"
     },
     {
@@ -5800,7 +5803,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Tomorrow_Perfume",
-      "jacket": "banner/ddr_x/Tomorrow Perfume.jpg",
+      "jacket": "banner/ddr_sn/Tomorrow Perfume.jpg",
       "genre": "TRANCE",
       "saHash": "D1D88PPI0PDQqOq00OI6QI1o6dPolqlI"
     },
@@ -5820,7 +5823,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/TOXIC_(FT_company_Edit)",
-      "jacket": "banner/ddr_x/TOXIC (FT company Edit).jpg"
+      "jacket": "banner/ddr_sn/TOXIC (FT company Edit).jpg"
     },
     {
       "name": "Tracers (4Beat Remix)",
@@ -5894,7 +5897,7 @@
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Trim",
-      "jacket": "banner/ddr_x/Trim.jpg",
+      "jacket": "banner/ddr_sn2/Trim.jpg",
       "saHash": "POQQQqI8q69qP6Id8Ol01QI60OIoiil8"
     },
     {
@@ -5912,7 +5915,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TRIP_MACHINE",
-      "jacket": "banner/ddr_x/TRIP MACHINE.jpg",
+      "jacket": "banner/ddr_1st/TRIP MACHINE.png",
       "saHash": "Pb9II0oiI9ODQ8OP8IqIPQP9P68biqIi"
     },
     {
@@ -5930,7 +5933,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_CLIMAX",
-      "jacket": "banner/ddr_x/TRIP MACHINE CLIMAX.jpg",
+      "jacket": "banner/ddr_4th/TRIP MACHINE CLIMAX.png",
       "saHash": "D81D8689llDiOqPq0IP19bbQQiioPl8d"
     },
     {
@@ -5964,7 +5967,7 @@
         { "lvl": 16, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_PhoeniX",
-      "jacket": "banner/ddr_x/TRIP MACHINE PhoeniX.jpg",
+      "jacket": "banner/ddr_sn2/TRIP MACHINE PhoeniX.jpg",
       "genre": "SUPERNOVA2 BEAT #2",
       "saHash": "b0QQ6OPD1dDqQ6D6IDQqlDd180Db609I"
     },
@@ -5983,7 +5986,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_survivor",
-      "jacket": "banner/ddr_x/TRIP MACHINE Survivor.jpg",
+      "jacket": "banner/ddr_ext/TRIP MACHINE survivor.png",
       "saHash": "POO9PlPq66OqIQO6Oq1i90D6Ill100il"
     },
     {
@@ -6014,7 +6017,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_~luv_mix~",
-      "jacket": "banner/ddr_x/TRIP MACHINE (luv mix).jpg",
+      "jacket": "banner/ddr_3rd/TRIP MACHINE ～luv mix～.png",
       "saHash": "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO"
     },
     {
@@ -6033,7 +6036,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/True...(radio_edit)",
-      "jacket": "banner/ddr_x/true... (radio edit).jpg"
+      "jacket": "banner/ddrmax/true... (radio edit).png"
     },
     {
       "name": "true...(trance sunrise mix)",
@@ -6051,7 +6054,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/True...(Trance_Sunrise_Mix)",
-      "jacket": "banner/ddr_x/true... (trance sunrise mix).jpg"
+      "jacket": "banner/ddrmax/true... (Trance Sunrise Mix).png"
     },
     {
       "name": "TRUE♥LOVE",
@@ -6069,7 +6072,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TRUE_LOVE",
-      "jacket": "banner/ddr_x/TRUE♥LOVE.jpg",
+      "jacket": "banner/ddr_sn/TRUE♥LOVE.jpg",
       "saHash": "oD6l698q0bQqoIOi0Dd66bqObII8QqDl"
     },
     {
@@ -6088,7 +6091,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Trust_-DanceDanceRevolution_mix-",
-      "jacket": "banner/ddr_x/Trust -DanceDanceRevolution mix-.jpg",
+      "jacket": "banner/ddr_sn2/Trust -DanceDanceRevolution mix-.jpg",
       "saHash": "ddD8OPQoIiQi0IbDOIIdQ6dDDbPQ9bIO",
       "search_hint": "天元突破グレンラガン"
     },
@@ -6107,7 +6110,7 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Try_2_Luv._U",
-      "jacket": "banner/ddr_x/Try 2 Luv. U.jpg",
+      "jacket": "banner/ddr_sn/Try 2 Luv. U.jpg",
       "saHash": "doqDbod0d81qP6PoPiP8b0P00PD8oboD"
     },
     {
@@ -6125,7 +6128,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/TSUGARU",
-      "jacket": "banner/ddr_x/TSUGARU.jpg",
+      "jacket": "banner/ddrmax2/TSUGARU.png",
       "genre": "JONGARA SPIRITUAL",
       "saHash": "io688qld6Pqq6bI01q86illP18biq0bd",
       "search_hint": "JONGARA SPIRITUAL/じょんがらスピリチュアル"
@@ -6140,7 +6143,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/TSUGARU_(APPLE_MIX)",
-      "jacket": "banner/ddr_x/TSUGARU (APPLE MIX).jpg",
+      "jacket": "banner/ddrmax2/TSUGARU (APPLE MIX).png",
       "saHash": "1qDD1DdPlId69010IQ18I6q8Q00IoI6D"
     },
     {
@@ -6158,7 +6161,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Twin_Bee_~Generation_X~",
-      "jacket": "banner/ddr_x/Twin Bee(Generation X).jpg",
+      "jacket": "banner/ddr_ext/TwinBee ~Generation X~.png",
       "genre": "EUROBEAT",
       "saHash": "0l181DPDqbQPb0qQl0i0dlQd0oQPlQ6i",
       "search_hint": "EUROBEAT/ユーロビート"
@@ -6179,7 +6182,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/Two_Months_Off",
-      "jacket": "banner/ddr_x/Two Months Off.jpg"
+      "jacket": "banner/ddr_sn2/Two Months Off.jpg"
     },
     {
       "name": "U Can't Touch This",
@@ -6214,7 +6217,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Un_deux_trois",
-      "jacket": "banner/ddr_x/un deux trois.jpg",
+      "jacket": "banner/ddr_sn/un deux trois.jpg",
       "saHash": "99P8bDO1PqlddQqo81QOIPO60lPQqlO8"
     },
     {
@@ -6233,7 +6236,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/Unbelievable",
-      "jacket": "banner/ddr_x/Unbelievable.jpg"
+      "jacket": "banner/ddr_sn2/Unbelievable.jpg"
     },
     {
       "name": "Unreal",
@@ -6250,7 +6253,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Unreal",
-      "jacket": "banner/ddr_x/Unreal.jpg",
+      "jacket": "banner/ddr_sn2/Unreal.jpg",
       "saHash": "olQl6Qoi0IbobI980q9Q0QIo9qlbq1PO"
     },
     {
@@ -6270,7 +6273,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Uranus",
-      "jacket": "banner/ddr_x/Uranus.jpg",
+      "jacket": "banner/ddr_sn2/Uranus.jpg",
       "saHash": "0b1660ibo0liI01ibOO6lD8olIb88qDi"
     },
     {
@@ -6290,7 +6293,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/V_~for_EXTREME~",
-      "jacket": "banner/ddr_x/V (for EXTREME).jpg",
+      "jacket": "banner/ddr_ext/V (for EXTREME).png",
       "genre": "PROGRESSIVE",
       "saHash": "Ilo6IboPOq8Q10qDOdDDoO6P989bPPi6",
       "search_hint": "PROGRESSIVE/プログレッシブ"
@@ -6310,7 +6313,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/VANITY_ANGEL",
-      "jacket": "banner/ddr_x/VANITY ANGEL.jpg",
+      "jacket": "banner/ddr_ext/VANITY ANGEL.png",
       "saHash": "DDqDDqDQ1Db60IiIDbIl6Pd8DPOq0q06"
     },
     {
@@ -6328,7 +6331,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Vem_brincar",
-      "jacket": "banner/ddr_x/Vem brincar.jpg",
+      "jacket": "banner/ddr_sn2/Vem brincar.jpg",
       "saHash": "o6I06bPq8dqIlllbQDPP8boqdq6iQ8Qb"
     },
     {
@@ -6348,7 +6351,7 @@
         { "lvl": 13, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Venus",
-      "jacket": "banner/ddr_x/Venus.jpg",
+      "jacket": "banner/ddr_sn2/Venus.jpg",
       "saHash": "6bIODbPoIDlOdO66b1id0q68qdQilDd6"
     },
     {
@@ -6366,7 +6369,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Volcano",
-      "jacket": "banner/ddr_x/volcano.jpg",
+      "jacket": "banner/ddr_sn2/volcano.jpg",
       "saHash": "8idID0Pq0O68Qb0Q69P6IDldqI91qi1O"
     },
     {
@@ -6384,7 +6387,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Votum_stellarum_-forest_25_DDR_RMX-",
-      "jacket": "banner/ddr_x/Votum_stellarum_-forest_25_DDR_RMX-.png",
+      "jacket": "banner/ddr_sn2/Votum_stellarum_-forest_25_DDR_RMX-.png",
       "genre": "ANTHEM TRANCE REMIX",
       "saHash": "PqPPDibPdD8qd88D0d01dqo6918b0POD",
       "search_hint": "ANTHEM TRANCE REMIX/アンセムトランスREMIX"
@@ -6425,7 +6428,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/WAITING_FOR_TONIGHT",
-      "jacket": "banner/ddr_x/WAITING FOR TONIGHT.jpg"
+      "jacket": "banner/ddr_sn2/WAITING FOR TONIGHT.jpg"
     },
     {
       "name": "We Come Alive",
@@ -6479,7 +6482,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/WHAT_A_WONDERFUL_WORLD",
-      "jacket": "banner/ddr_x/WHAT A WONDERFUL WORLD.jpg"
+      "jacket": "banner/ddr_sn/WHAT A WONDERFUL WORLD.jpg"
     },
     {
       "name": "Why not",
@@ -6496,7 +6499,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Why_not",
-      "jacket": "banner/ddr_x/Why not.jpg",
+      "jacket": "banner/ddr_sn2/Why not.jpg",
       "saHash": "dbq9dPPOQ60ibOol0I6b9iQol9lD669D"
     },
     {
@@ -6514,7 +6517,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/WILD_RUSH",
-      "jacket": "banner/ddr_x/WILD RUSH.jpg",
+      "jacket": "banner/ddr_4th/WILD RUSH.png",
       "saHash": "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP"
     },
     {
@@ -6527,7 +6530,7 @@
         { "lvl": 10, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/WILD_RUSH(FROM_NONSTOP_MEGAMIX)",
-      "jacket": "banner/ddr_x/WILD RUSH (FROM NONSTOP MEGAMIX).jpg",
+      "jacket": "banner/ddrmax2/WILD RUSH (FROM NONSTOP MEGAMIX).png",
       "saHash": "ibOQ0QOdIPdIbIo0oPoDDI1DqPId00li"
     },
     {
@@ -6566,7 +6569,7 @@
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/WOOKIE_WOOKIE",
-      "jacket": "banner/ddr_x/WOOKIE WOOKIE.jpg"
+      "jacket": "banner/ddr_sn/WOOKIE WOOKIE.jpg"
     },
     {
       "name": "xenon",
@@ -6583,7 +6586,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Xenon",
-      "jacket": "banner/ddr_x/xenon.jpg",
+      "jacket": "banner/ddr_ext/xenon.png",
       "genre": "ELECTROSHOCK",
       "saHash": "bDDd08iP8dlIlOo6iqd91dPiI1lQdOQq"
     },
@@ -6604,7 +6607,7 @@
         { "lvl": 15, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Xepher",
-      "jacket": "banner/ddr_x/Xepher.jpg",
+      "jacket": "banner/ddr_sn/Xepher.jpg",
       "genre": "MEDIEVAL CHOIR",
       "saHash": "PQQd6lQlDqilqliI0IobolqIDlo0Iboq"
     },
@@ -6708,7 +6711,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/You_gotta_move_it_(feat._Julie_Rugaard)",
-      "jacket": "banner/ddr_x/You gotta move it (feat. Julie Rugaard).jpg",
+      "jacket": "banner/ddr_sn/You gotta move it (feat. Julie Rugaard).jpg",
       "saHash": "D8I68Ibib9ldQDIPIQdO6lqI61PQlPO9"
     },
     {
@@ -6749,7 +6752,7 @@
         { "lvl": 14, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Kono_ko_no_nanatsu_no_oiwai_ni",
-      "jacket": "banner/ddr_x/この子の七つのお祝いに.jpg",
+      "jacket": "banner/ddr_sn/この子の七つのお祝いに.jpg",
       "genre": "ELEGY 2",
       "saHash": "9idOOIdDO01D8PO06bOPPbOIOoiQ8O0P",
       "search_hint": "ELEGY 2/エレジィ2"
@@ -6771,7 +6774,7 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Kagerou",
-      "jacket": "banner/ddr_x/カゲロウ.jpg",
+      "jacket": "banner/ddr_sn/カゲロウ.jpg",
       "genre": "輪生",
       "saHash": "ql1Q8P100IIlbl0Pdi08I8qD900idqQq",
       "search_hint": "輪生/リンセイ/RINSEI"
@@ -6792,7 +6795,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SANA_MOLLETE_NE_ENTE",
-      "jacket": "banner/ddr_x/サナ・モレッテ・ネ・エンテ.jpg",
+      "jacket": "banner/ddr_5th/SANA MOLLETE NE ENTE.png",
       "genre": "CUBAN GROOVE",
       "saHash": "doIiQl6oDPP6i9qobqoobblPQqPiI9bD",
       "search_hint": "CUBAN GROOVE/キューバングルーブ"
@@ -6833,7 +6836,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Chikara",
-      "jacket": "banner/ddr_x/チカラ.jpg",
+      "jacket": "banner/ddr_sn/チカラ.jpg",
       "genre": "ガールズロックエクストリーム",
       "saHash": "I9iODl9bl1d8PilOilii9Dd19PP6QI66",
       "search_hint": "GIRLS ROCK EXTREME/ガールズロックエクストリーム"
@@ -6875,7 +6878,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Mikeneko_rock",
-      "jacket": "banner/ddr_x/三毛猫ロック.jpg",
+      "jacket": "banner/ddr_ext/CALICO CAT ROCK.png",
       "genre": "ブラスロック",
       "saHash": "Dl69Pb9OQDlbOi80OQdIObiQ1Q08Dlqo",
       "search_hint": "BRASS ROCK/ブラスロック"
@@ -6937,7 +6940,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Mugen_no_hikari",
-      "jacket": "banner/ddr_x/夢幻ノ光.jpg",
+      "jacket": "banner/ddr_sn/夢幻ノ光.jpg",
       "genre": "HYPER JAPANESQUE",
       "saHash": "DQO6qbiP6dldo6IIqlob9i8dqiqOio6o",
       "search_hint": "HYPER JAPANESQUE/ハイパージャパネスク"
@@ -6961,7 +6964,7 @@
         { "lvl": 14, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Daikenkai",
-      "jacket": "banner/ddr_x/大見解.jpg",
+      "jacket": "banner/ddr_ext/DAIKENKAI.png",
       "genre": "HIP ROCK",
       "saHash": "I8lidoibqQqoQOqiDi6QiDbP9DIdd989",
       "search_hint": "HIP ROCK/ヒップロック"
@@ -6982,7 +6985,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Ikareru_ookina_shiroi_uma",
-      "jacket": "banner/ddr_x/怒れる大きな白い馬.jpg",
+      "jacket": "banner/ddr_sn/怒れる大きな白い馬.jpg",
       "genre": "MONGOL",
       "saHash": "ibI0QllidqQ089ql8dob6bIoodbbIoqq",
       "search_hint": "MONGOL/モンゴル"
@@ -7024,7 +7027,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Gekkou_chou",
-      "jacket": "banner/ddr_x/月光蝶.jpg",
+      "jacket": "banner/ddr_sn/月光蝶.jpg",
       "genre": "ビジュアル",
       "saHash": "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po",
       "search_hint": "VISUAL/ビジュアル"
@@ -7045,7 +7048,7 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Mokusei_~kumikyoku_%22wakusei%22_yori",
-      "jacket": "banner/ddr_x/木星～組曲「惑星」よリ.jpg"
+      "jacket": "banner/ddr_sn2/木星～組曲「惑星」よリ.jpg"
     },
     {
       "name": "桜",
@@ -7065,7 +7068,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Sakura",
-      "jacket": "banner/ddr_x/桜.jpg",
+      "jacket": "banner/ddr_ext/SAKURA.png",
       "genre": "SPIRITUAL",
       "saHash": "911lId0IooIOq1oDPoQ0iQiDiOIbd6oo"
     },
@@ -7086,7 +7089,7 @@
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Dandandou",
-      "jacket": "banner/ddr_x/男々道.jpg",
+      "jacket": "banner/ddr_sn/男々道.jpg",
       "genre": "HIP ROCK 2",
       "saHash": "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl",
       "search_hint": "HIP ROCK 2/ヒップロック2"
@@ -7107,7 +7110,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Hana_ranman_-Flowers-",
-      "jacket": "banner/ddr_x/華爛漫 -Flowers-.jpg",
+      "jacket": "banner/ddr_sn/華爛漫 -Flowers-.jpg",
       "genre": "HYPER JAPANESQUE 2",
       "saHash": "6iq1dqQ1PDQlDO0bio0l89oDDDi6b0oD",
       "search_hint": "HYPER JAPANESQUE 2/ハイパージャパネスク2"
@@ -7128,7 +7131,7 @@
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Aoi_shoudou_~for_EXTREME~",
-      "jacket": "banner/ddr_x/蒼い衝動 (for EXTREME).jpg",
+      "jacket": "banner/ddr_ext/BLUE IMPULSE(for EXTREME).png",
       "genre": "J-TRANCE",
       "saHash": "OboID1PloIIoOOObQdQOP110I61Ddl9I"
     },
@@ -7148,7 +7151,7 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Nijiiro",
-      "jacket": "banner/ddr_x/虹色.jpg",
+      "jacket": "banner/ddr_sn/虹色.jpg",
       "genre": "LOVELY TRANS POP",
       "saHash": "Io1D1l9QiDo6IDObd8qo1Q9lQ6iollQ9",
       "search_hint": "LOVELY TRANS POP/ラブリートランスポップ"
@@ -7191,7 +7194,7 @@
         { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Kakumei",
-      "jacket": "banner/ddr_x/革命.jpg",
+      "jacket": "banner/ddrmax2/KAKUMEI.png",
       "genre": "ORCHESTRAL",
       "saHash": "l9lq19DdiD8qQPoPOlboi1qQii0IQI86"
     },
