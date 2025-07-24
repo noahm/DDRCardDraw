@@ -559,13 +559,22 @@
         { "lvl": 7, "style": "single", "diffClass": "basic" },
         { "lvl": 10, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 15, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" },
-        { "lvl": 15, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Amalgamation",
       "jacket": "ddr_x3/Amalgamation.png",
       "genre": "エレクトロバロック",
@@ -2914,7 +2923,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/FLOWER",
       "jacket": "ddr_x3/FLOWER.png",
       "genre": "TRANCE CORE",
@@ -3265,7 +3273,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Go_For_The_Top",
       "jacket": "ddr_x3/Go For The Top.png",
       "saHash": "11dQb0qIdbO098ObDqOQQ8Ili9Il0lOd"
@@ -4728,13 +4735,22 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/London_EVOLVED",
       "jacket": "ddr_x3/London EVOLVED ver.A.png",
       "saHash": "D6IQ1O1D00D1o8IQq0O9qqIibqDiiO0i"
@@ -4749,13 +4765,22 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/London_EVOLVED",
       "jacket": "ddr_x3/London EVOLVED ver.B.png",
       "saHash": "OlDo09P8l0d6d80i8qD0qQddbi0QQD8b"
@@ -4770,13 +4795,22 @@
         { "lvl": 8, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
         { "lvl": 14, "style": "single", "diffClass": "expert" },
-        { "lvl": 17, "style": "single", "diffClass": "challenge" },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
         { "lvl": 14, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["extraOnly"]
+        }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/London_EVOLVED",
       "jacket": "ddr_x3/London EVOLVED ver.C.png",
       "saHash": "09looidO89Q9DiDdqQiDPlIQDoiobobQ"
@@ -4873,7 +4907,6 @@
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/LOVE_IS_THE_POWER_-Re:born-",
       "jacket": "ddr_x3/LOVE IS THE POWER Re born.png",
       "saHash": "6dqPOId9Od11Il90QO0q9iQI6d68IolD"
@@ -5279,7 +5312,6 @@
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Message",
       "jacket": "ddr_x3/message.png",
       "saHash": "1OlD9Iqb9Oqol09dDi6iiQ9Iod1oP0il"
@@ -5537,7 +5569,6 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 15, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/NEPHILIM_DELTA",
       "jacket": "ddr_x3/NEPHILIM DELTA.png",
       "saHash": "DI91q6O00bliOldqO6DqDdqib86iqPPP"
@@ -5607,7 +5638,6 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/New_York_EVOLVED",
       "jacket": "ddr_x3/New York EVOLVED (Type A).png",
       "saHash": "II68b0dooOIOlOiq0iQO18blDd6b9O9D"
@@ -5626,7 +5656,6 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/New_York_EVOLVED",
       "jacket": "ddr_x3/New York EVOLVED (Type B).png",
       "saHash": "61P0I66id16QIi08Q1918PlldOOiooql"
@@ -5645,7 +5674,6 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/New_York_EVOLVED",
       "jacket": "ddr_x3/New York EVOLVED (Type C).png",
       "saHash": "Od8ld9bQQPDddIqDQ1PloOOdQ0IQo0O9"
@@ -5828,7 +5856,6 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Osaka_EVOLVED_-maido,_ohkini!-",
       "jacket": "ddr_x3/osaka EVOLVED -MAIDO,OHKINI- (TYPE1).png",
       "saHash": "ldDD06dIQ0qQPD9OI88P90OOi0bQPD1O"
@@ -5848,7 +5875,6 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Osaka_EVOLVED_-maido,_ohkini!-",
       "jacket": "ddr_x3/osaka EVOLVED -MAIDO,OHKINI- (TYPE2).png",
       "saHash": "8006PP188Qldob68ld6OPqlbl1biod6D"
@@ -5868,7 +5894,6 @@
         { "lvl": 14, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Osaka_EVOLVED_-maido,_ohkini!-",
       "jacket": "ddr_x3/osaka EVOLVED -MAIDO,OHKINI- (TYPE3).png",
       "saHash": "di088lOPlqQ1OoQIbilI1P0q119i8o9O"
@@ -6079,7 +6104,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/PARANOiA_Revolution",
       "jacket": "ddr_x3/PARANOiA Revolution.png",
       "saHash": "606b9d6OiliId69bO9Odi6qq8o8Qd0dq"
@@ -6801,7 +6825,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/REVOLUTIONARY_ADDICT",
       "jacket": "ddr_x3/REVOLUTIONARY ADDICT.png",
       "saHash": "O0Id19qQlDibiDdIP90o81bOo16qbQ0o"
@@ -7330,7 +7353,6 @@
         },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/SigSig",
       "jacket": "ddr_x3/SigSig.png",
       "genre": "MAKINA",
@@ -7401,7 +7423,6 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/SILVER_DREAM",
       "jacket": "ddr_x3/SILVER☆DREAM.png",
       "saHash": "Q6ql0lOOdq90DI1PqO1bd10bP0Oi8Q0Q",
@@ -8505,7 +8526,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Tohoku_EVOLVED",
       "jacket": "ddr_x3/Tohoku EVOLVED.png",
       "saHash": "OddDoQ6dqi0QdQDDOO6qlO08d8bPbli1"
@@ -8524,7 +8544,6 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/TokyoEVOLVED",
       "jacket": "ddr_x3/tokyoEVOLVED (TYPE1).png",
       "saHash": "DIDd9l0dbi1QdQ89I6Do9bolDqdb1dPO"
@@ -8543,7 +8562,6 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/TokyoEVOLVED",
       "jacket": "ddr_x3/tokyoEVOLVED (TYPE2).png",
       "saHash": "i0b0118q8D1QlQbIbli0P0IQ0QP08QdO"
@@ -8562,7 +8580,6 @@
         { "lvl": 13, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/TokyoEVOLVED",
       "jacket": "ddr_x3/tokyoEVOLVED (TYPE3).png",
       "saHash": "6OOd69q0oP8iblIIb08OQO9dq9oIq8i6"
@@ -8793,7 +8810,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_EVOLUTION",
       "jacket": "ddr_x3/TRIP MACHINE EVOLUTION.png",
       "saHash": "8O6b1D9PDO0ll1IO9d1ODDPPo0QPQbob"
@@ -9006,7 +9022,6 @@
           "flags": ["shock", "extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/TWINKLE_HEART",
       "jacket": "ddr_x3/TWINKLE♡HEART.png",
       "saHash": "lo6bOoq86d9od6qQ9PiPibOioOQb96lP"
@@ -9043,7 +9058,6 @@
         { "lvl": 12, "style": "double", "diffClass": "difficult" },
         { "lvl": 16, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/UNBELIEVABLE_(Sparky_remix)",
       "jacket": "ddr_x3/UNBELIEVABLE (Sparky remix).png",
       "saHash": "I6dI99IOolDD6l6Q1ooPIiDO8Odq0QIP"
@@ -9703,7 +9717,6 @@
           "flags": ["shock", "extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Alstroemeria_(walk_with_you_remix)",
       "jacket": "ddr_x3/Alstroemeria (walk with you remix).png",
       "saHash": "8bQQ0lP96186D8Ibo8IoOd6o16qioiIo"
@@ -10029,7 +10042,6 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Tenjou_no_hoshi_~reimeiki~",
       "jacket": "ddr_x3/Tenjou no hoshi ～Reimeiki～.png",
       "genre": "HYPER JAPANESQUE 3",
@@ -10238,7 +10250,6 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Ryouran_hit_chart",
       "jacket": "ddr_x3/Ryouran Hit Chart.png",
       "genre": "NEGAME ROCK",
@@ -10336,7 +10347,6 @@
           "flags": ["extraOnly"]
         }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Sumidagawa_karenka",
       "jacket": "ddr_x3/SUMIDAGAWA KARENKA.png",
       "genre": "A.I.デイトポップ",
@@ -10359,7 +10369,6 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
-      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Shizuku",
       "jacket": "ddr_x3/Shizuku.png",
       "genre": "LAMENTO",
