@@ -12,7 +12,7 @@ export const DDR_WORLD = {
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=6561&show_notecounts=1&sort=&sort_order=asc",
   mergeSkillAttack: false,
   filename: "ddr_world.json",
-  jacketPrefix: "",
+  jacketPrefix: "ddr_world/",
   preferredJacketSource: "remy",
   includeFolders: true,
   fetchJackets: true,
