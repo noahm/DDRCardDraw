@@ -13,6 +13,7 @@ import {
   reportQueueStatusLive,
   checkJacketExists,
   sortSongs,
+  setJacketPrefix,
 } from "./utils.mjs";
 
 const idxMap = [
@@ -26,6 +27,8 @@ const idxMap = [
   "double:expert",
   "double:challenge",
 ];
+
+setJacketPrefix(MIX_META.jacketPrefix);
 
 /**
  * Invalid data on 3icecream site
