@@ -90,7 +90,7 @@ export const drawingsSlice = createSlice({
       Object.assign(chart, action.payload.changes);
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
-      const [mainId] = action.payload;
+      const mainId = action.payload;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
@@ -98,7 +98,7 @@ export const drawingsSlice = createSlice({
       drawing.playerDisplayOrder = drawing.playerDisplayOrder.toReversed();
     },
     incrementPriorityPlayer(state, action: ActionOnSingleDrawing) {
-      const [mainId] = action.payload;
+      const mainId = action.payload;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
