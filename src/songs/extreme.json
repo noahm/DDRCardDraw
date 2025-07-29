@@ -1,4 +1,5 @@
 {
+  "$schema": "../../songs.schema.json",
   "meta": {
     "menuParent": "more",
     "styles": ["single", "double"],
@@ -53,12 +54,9 @@
   "songs": [
     {
       "name": "BURNIN' THE FLOOR (MOMO MIX)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_BURNIN' THE FLOOR (MOMO MIX).png",
+      "jacket": "banner/ddr_ext/BURNIN' THE FLOOR (MOMO MIX).png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -103,16 +101,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BURNIN%27_THE_FLOOR_(MOMO_MIX)"
     },
     {
       "name": "CARTOON HEROES (Speedy Mix)",
-      "name_translation": "",
       "artist": "BARBIE YOUNG",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_CARTOON HEROES (Speedy Mix).png",
+      "jacket": "banner/ddr_ext/CARTOON HEROES (Speedy Mix).png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -157,16 +153,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CARTOON_HEROES_(Speedy_Mix)"
     },
     {
       "name": "I DO I DO I DO",
-      "name_translation": "",
       "artist": "CREAMY",
-      "artist_translation": "",
       "bpm": "134",
-      "genre": "",
-      "jacket": "ex_I DO I DO I DO.png",
+      "jacket": "banner/ddr_ext/I DO I DO I DO.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -211,16 +205,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/I_DO_I_DO_I_DO"
     },
     {
       "name": "IRRESISTIBLEMENT",
-      "name_translation": "",
       "artist": "WILDSIDE",
-      "artist_translation": "",
       "bpm": "166",
-      "genre": "",
-      "jacket": "ex_IRRESISTIBLEMENT.png",
+      "jacket": "banner/ddr_ext/IRRESISTIBLEMENT.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -265,16 +257,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/IRRESISTIBLEMENT"
     },
     {
       "name": "LA COPA DE LA VIDA",
-      "name_translation": "",
       "artist": "PATRICK VICTORIO",
-      "artist_translation": "",
       "bpm": "134",
-      "genre": "",
-      "jacket": "ex_LA COPA DE LA VIDA.png",
+      "jacket": "banner/ddr_ext/LA COPA DE LA VIDA.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -319,16 +309,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LA_COPA_DE_LA_VIDA"
     },
     {
       "name": "SENORITA(Speedy Mix)",
-      "name_translation": "",
       "artist": "JENNY ROM",
-      "artist_translation": "",
       "bpm": "174",
-      "genre": "",
-      "jacket": "ex_SENORITA(Speedy Mix).png",
+      "jacket": "banner/ddr_ext/SENORITA(Speedy Mix).png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -373,16 +361,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SENORITA_(Speedy_Mix)"
     },
     {
       "name": "SPEED OVER BEETHOVEN",
-      "name_translation": "",
       "artist": "ROSE",
-      "artist_translation": "",
       "bpm": "169",
-      "genre": "",
-      "jacket": "ex_SPEED OVER BEETHOVEN.png",
+      "jacket": "banner/ddr_ext/SPEED OVER BEETHOVEN.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 153, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -415,16 +401,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SPEED_OVER_BEETHOVEN"
     },
     {
       "name": "WE ARE THE CHAMPIONS (Factory Team Remix)",
-      "name_translation": "",
       "artist": "LIVE 2 LOVE",
-      "artist_translation": "",
       "bpm": "136",
-      "genre": "",
-      "jacket": "ex_WE ARE THE CHAMPIONS (Factory Team Remix).png",
+      "jacket": "banner/ddr_ext/WE ARE THE CHAMPIONS (Factory Team Remix).png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -469,16 +453,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WE_ARE_THE_CHAMPIONS_(Factory_Team_Remix)"
     },
     {
       "name": "WE WILL ROCK YOU",
-      "name_translation": "",
       "artist": "HOUSEBOYZ",
-      "artist_translation": "",
       "bpm": "90",
-      "genre": "",
-      "jacket": "ex_WE WILL ROCK YOU.png",
+      "jacket": "banner/ddr_ext/WE WILL ROCK YOU.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -523,16 +505,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WE_WILL_ROCK_YOU"
     },
     {
       "name": "1998",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_1998.png",
+      "jacket": "banner/ddr_ext/1998.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -577,16 +557,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/1998",
+      "saHash": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9"
     },
     {
       "name": "bag",
-      "name_translation": "",
       "artist": "RevenG",
-      "artist_translation": "",
       "bpm": "65",
       "genre": "SPIRITUAL",
-      "jacket": "ex_bag.png",
+      "jacket": "banner/ddr_ext/bag.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 149, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -595,16 +575,15 @@
         { "step": 148, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 217, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 360, "lvl": 10, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Bag",
+      "saHash": "9qbdq1PiI1O81P1PdioQli66Ob9QiiQP"
     },
     {
       "name": "CRASH!",
-      "name_translation": "",
       "artist": "mr.BRIAN & THE FINAL BAND",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_CRASH!.png",
+      "jacket": "banner/ddr_ext/CRASH!.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 211, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -613,16 +592,14 @@
         { "step": 212, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 241, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 363, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CRASH!"
     },
     {
       "name": "Dance Dance Revolution",
-      "name_translation": "",
       "artist": "DDR ALL STARS",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_Dance Dance Revolution.png",
+      "jacket": "banner/ddr_ext/Dance Dance Revolution.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 170, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -645,16 +622,17 @@
         },
         { "step": 345, "lvl": 9, "style": "double", "diffClass": "expert" },
         { "step": 344, "lvl": 9, "style": "double", "diffClass": "challenge" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Dance_Dance_Revolution_(song)",
+      "saHash": "6lQ9iQdq8P0Q11q9O8dbl9Q9Pi8bIb98"
     },
     {
       "name": "GRADUATION ～それぞれの明日～",
-      "name_translation": "GRADUATION~SOREZORE NO ASHITA~",
+      "name_translation": "GRADUATION ~SOREZORE NO ASHITA~",
       "artist": "BeForU",
-      "artist_translation": "",
       "bpm": "120",
-      "genre": "SOTSUGYOU from DDR",
-      "jacket": "ex_GRADUATION~SOREZORE NO ASHITA~.png",
+      "genre": "卒業",
+      "jacket": "banner/ddr_ext/GRADUATION~SOREZORE NO ASHITA~.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 110, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -687,16 +665,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/GRADUATION_~sorezore_no_ashita~",
+      "saHash": "10oQOoD00O1ql8qD88dI0i0biP69blq6",
+      "search_hint": "卒業 from DDR"
     },
     {
       "name": "HYPER EUROBEAT",
-      "name_translation": "",
       "artist": "NAOKI feat. DDR ALL STARS",
-      "artist_translation": "",
       "bpm": "152",
-      "genre": "",
-      "jacket": "ex_HYPER EUROBEAT.png",
+      "jacket": "banner/ddr_ext/HYPER EUROBEAT.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -741,7 +719,9 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HYPER_EUROBEAT",
+      "saHash": "I08olqilqQi9Dd0qOq0o09PPqI0l11QI"
     },
     {
       "name": "LOVE♥SHINE",
@@ -750,7 +730,7 @@
       "artist_translation": "RIYU KOSAKA",
       "bpm": "177",
       "genre": "J-HAPPY HARDCORE",
-      "jacket": "ex_LOVE LOVE SHINE.png",
+      "jacket": "banner/ddr_ext/LOVE LOVE SHINE.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -795,16 +775,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LOVE_SHINE",
+      "saHash": "qIP6DPdbD9iO86i1DO9qDd8l6dPdbl0P"
     },
     {
       "name": "MEMORIES",
-      "name_translation": "",
       "artist": "NAOKI feat. PAULA TERRY",
-      "artist_translation": "",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_MEMORIES.png",
+      "jacket": "banner/ddr_ext/MEMORIES.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 126, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -813,16 +792,14 @@
         { "step": 119, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 211, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 288, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MEMORIES"
     },
     {
-      "name": "PARANOiA survivor",
-      "name_translation": "",
+      "name": "PARANOIA survivor",
       "artist": "270",
-      "artist_translation": "",
       "bpm": "135-270",
-      "genre": "",
-      "jacket": "ex_PARANOiA survivor.png",
+      "jacket": "banner/ddr_ext/PARANOIA survivor.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -867,16 +844,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOIA_survivor",
+      "saHash": "O9Id8Qi6OIDIQ6bPi610q0001l1P099q"
     },
     {
-      "name": "PARANOiA survivor MAX",
-      "name_translation": "",
+      "name": "PARANOIA survivor MAX",
       "artist": "290",
-      "artist_translation": "",
       "bpm": "73-290",
       "genre": "JUNGLE MIXTURE",
-      "jacket": "ex_PARANOiA survivor MAX.png",
+      "jacket": "banner/ddr_ext/PARANOIA survivor MAX.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -935,16 +912,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOIA_survivor_MAX",
+      "saHash": "68iQ9666QIQP1IOQbbd9989DQQ1D0dOl"
     },
     {
       "name": "TEARS",
-      "name_translation": "",
       "artist": "NAOKI underground feat. EK",
-      "artist_translation": "",
       "bpm": "143",
-      "genre": "",
-      "jacket": "ex_TEARS.png",
+      "jacket": "banner/ddr_ext/TEARS.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -989,16 +965,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TEARS",
+      "saHash": "1Q1Q8oO600lodPbio8b8d66b8do1PIlQ"
     },
     {
       "name": "The legend of MAX",
-      "name_translation": "",
       "artist": "ZZ",
-      "artist_translation": "",
       "bpm": "83-333",
-      "genre": "",
-      "jacket": "ex_The legend of MAX.png",
+      "jacket": "banner/ddr_ext/The legend of MAX.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -1043,16 +1018,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/The_legend_of_MAX",
+      "saHash": "li608di8PolqqIP808iddOqi11qDDq0Q"
     },
     {
       "name": "TRIP MACHINE survivor",
-      "name_translation": "",
       "artist": "DE-SIRE",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_TRIP MACHINE survivor.png",
+      "jacket": "banner/ddr_ext/TRIP MACHINE survivor.png",
       "folder": "DDR EXTREME",
       "charts": [
         {
@@ -1097,16 +1071,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TRIP_MACHINE_survivor",
+      "saHash": "POO9PlPq66OqIQO6Oq1i90D6Ill100il"
     },
     {
       "name": "VANITY ANGEL",
-      "name_translation": "",
       "artist": "FIXX",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_VANITY ANGEL.png",
+      "jacket": "banner/ddr_ext/VANITY ANGEL.png",
       "folder": "DDR EXTREME",
       "charts": [
         { "step": 144, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -1121,16 +1094,16 @@
         { "step": 134, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 222, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 284, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/VANITY_ANGEL",
+      "saHash": "DDqDDqDQ1Db60IiIDbIl6Pd8DPOq0q06"
     },
     {
       "name": "321 STARS",
-      "name_translation": "",
       "artist": "DJ SIMON",
-      "artist_translation": "",
       "bpm": "192",
-      "genre": "",
-      "jacket": "ex_321 STARS.png",
+      "genre": "TECHNO POP",
+      "jacket": "banner/ddr_ext/321 STARS.png",
       "folder": "beatmania",
       "charts": [
         {
@@ -1175,16 +1148,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/321_STARS",
+      "saHash": "Q96bO9D61lib19IiIi0i69P80bo6q69Q",
+      "search_hint": "TECHNO POP/テクノポップ"
     },
     {
       "name": "A",
-      "name_translation": "",
       "artist": "D.J.Amuro",
-      "artist_translation": "",
       "bpm": "93-191",
       "genre": "RENAISSANCE",
-      "jacket": "ex_A.png",
+      "jacket": "banner/ddr_ext/A.png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -1243,16 +1217,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/A",
+      "saHash": "oIb699q80OIPdlP0odl6bqbD0PlQodOq"
     },
     {
       "name": "Across the nightmare",
-      "name_translation": "",
       "artist": "Jimmy Weckl",
-      "artist_translation": "",
       "bpm": "300",
-      "genre": "",
-      "jacket": "ex_Across the nightmare.png",
+      "jacket": "banner/ddr_ext/Across the nightmare.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
         { "step": 205, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -1287,16 +1260,16 @@
           "diffClass": "expert"
         },
         { "step": 365, "lvl": 9, "style": "double", "diffClass": "challenge" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Across_the_nightmare",
+      "saHash": "O6I9ioqii8i6I1DIb1PqOD6q0ooo8bDo"
     },
     {
       "name": "AFRONOVA PRIMEVAL",
-      "name_translation": "",
       "artist": "8-bit",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_AFRONOVA PRIMEVAL.png",
+      "genre": "トライバル",
+      "jacket": "banner/ddr_5th/AFRONOVA PRIMEVAL.png",
       "folder": "Dance Maniax",
       "charts": [
         { "step": 272, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -1305,16 +1278,17 @@
         { "step": 287, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 332, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 437, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AFRONOVA_PRIMEVAL",
+      "saHash": "18911Q6o6do9Dd1blIo6IliPd0PPb99i",
+      "search_hint": "TRIBAL/トライバル"
     },
     {
       "name": "air",
-      "name_translation": "",
       "artist": "DJ SIMON",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_air.png",
+      "genre": "HOUSE",
+      "jacket": "banner/ddr_ext/air.png",
       "folder": "beatmania",
       "charts": [
         { "step": 152, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -1347,16 +1321,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Air",
+      "saHash": "il6PIiDq11dD1981dQ00918D96lPQ0iQ"
     },
     {
       "name": "BE LOVIN",
-      "name_translation": "",
       "artist": "D-Crew",
-      "artist_translation": "",
       "bpm": "185",
-      "genre": "",
-      "jacket": "ex_BE LOVIN.png",
+      "genre": "HAPPY HARDCORE",
+      "jacket": "banner/ddr_ext/BE LOVIN.png",
       "folder": "beatmania",
       "charts": [
         {
@@ -1401,16 +1375,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BE_LOVIN",
+      "saHash": "P0O81Dl9Oiiid8bdOi0oqbD8DqolObbP"
     },
     {
       "name": "蒼い衝動 (for EXTREME)",
       "name_translation": "BLUE IMPULSE(for EXTREME)",
       "artist": "NAOKI feat. YUKI",
-      "artist_translation": "",
+      "genre": "J-TRANCE",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_BLUE IMPULSE(for EXTREME).png",
+      "jacket": "banner/ddr_ext/BLUE IMPULSE(for EXTREME).png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -1455,16 +1430,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Aoi_shoudou_~for_EXTREME~",
+      "saHash": "OboID1PloIIoOOObQdQOP110I61Ddl9I"
     },
     {
       "name": "BROKEN MY HEART",
-      "name_translation": "",
       "artist": "NAOKI feat. PAULA TERRY",
-      "artist_translation": "",
       "bpm": "160",
       "genre": "HYPER EUROBEAT",
-      "jacket": "ex_BROKEN MY HEART.png",
+      "jacket": "banner/ddr_5th/BROKEN MY HEART.png",
       "folder": "Dance Maniax",
       "charts": [
         { "step": 215, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -1473,7 +1448,9 @@
         { "step": 217, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 273, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 353, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BROKEN_MY_HEART",
+      "saHash": "iIP09bOq1l1b9b1l011IDIQ6Iill90Io"
     },
     {
       "name": "三毛猫ロック",
@@ -1481,8 +1458,8 @@
       "artist": "亜熱帯マジ-SKA爆弾",
       "artist_translation": "ANETTAI MAJI-SKA BAKUDAN",
       "bpm": "246",
-      "genre": "",
-      "jacket": "ex_CALICO CAT ROCK.png",
+      "genre": "ブラスロック",
+      "jacket": "banner/ddr_ext/CALICO CAT ROCK.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
         {
@@ -1527,16 +1504,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Mikeneko_rock",
+      "saHash": "Dl69Pb9OQDlbOi80OQdIObiQ1Q08Dlqo",
+      "search_hint": "BRASS ROCK/ブラスロック"
     },
     {
       "name": "Colors(for EXTREME)",
-      "name_translation": "",
       "artist": "dj TAKA",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_Colors(for EXTREME).png",
+      "genre": "TRANCE",
+      "jacket": "banner/ddr_ext/Colors(for EXTREME).png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -1595,16 +1573,18 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Colors_~for_EXTREME~",
+      "saHash": "odOQ1d1i6oil81b1QIDP6dOqqdooD918",
+      "search_hint": "TRANCE/トランス"
     },
     {
       "name": "大見解",
       "name_translation": "DAIKENKAI",
       "artist": "Des-ROW feat. TSUBOI for ALPHA",
-      "artist_translation": "",
       "bpm": "143-172",
       "genre": "HIP ROCK",
-      "jacket": "ex_DAIKENKAI.png",
+      "jacket": "banner/ddr_ext/DAIKENKAI.png",
       "folder": "pop'n music",
       "charts": [
         {
@@ -1663,16 +1643,18 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Daikenkai",
+      "saHash": "I8lidoibqQqoQOqiDi6QiDbP9DIdd989",
+      "search_hint": "HIP ROCK/ヒップロック"
     },
     {
       "name": "Destiny lovers",
-      "name_translation": "",
       "artist": "くにたけみゆき",
       "artist_translation": "Kunitake Miyuki",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_Destiny lovers.png",
+      "genre": "J-POP",
+      "jacket": "banner/ddr_ext/Destiny lovers.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
         {
@@ -1717,16 +1699,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Destiny_lovers",
+      "saHash": "1diQi81loIodIdOlQ8Pd6Qd8b69Q1DP8",
+      "search_hint": "J-POP/J-ポップ"
     },
     {
       "name": "feeling of love",
-      "name_translation": "",
       "artist": "youhei shimizu",
-      "artist_translation": "",
       "bpm": "136",
       "genre": "HOUSE",
-      "jacket": "ex_feeling of love.png",
+      "jacket": "banner/ddr_ext/feeling of love.png",
       "folder": "beatmania III",
       "charts": [
         {
@@ -1771,16 +1754,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Feeling_of_love",
+      "search_hint": "HOUSE/ハウス"
     },
     {
       "name": "Frozen Ray (for EXTREME)",
-      "name_translation": "",
       "artist": "dj TAKA",
-      "artist_translation": "",
       "bpm": "156",
-      "genre": "",
-      "jacket": "ex_Frozen Ray (for EXTREME).png",
+      "jacket": "banner/ddr_ext/Frozen Ray (for EXTREME).png",
       "folder": "KEYBOARD MANIA",
       "charts": [
         {
@@ -1825,16 +1807,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Frozen_Ray_~for_EXTREME~",
+      "saHash": "IQ9bDo1dPbIo0ODQiObbQ99iP1bOi8iI"
     },
     {
       "name": "Gamelan de Couple",
-      "name_translation": "",
       "artist": "TOMOSUKE",
-      "artist_translation": "",
       "bpm": "150",
       "genre": "GAMELAN TRANCE",
-      "jacket": "ex_Gamelan de Couple.png",
+      "jacket": "banner/ddr_ext/Gamelan de Couple.png",
       "folder": "MAMBO A GO GO",
       "charts": [
         { "step": 149, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -1843,16 +1825,17 @@
         { "step": 152, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 171, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 297, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Gamelan_de_Couple",
+      "saHash": "69qoD0l6olQqqbl09b069q898b600I6o",
+      "search_hint": "GAMELAN TRANCE/ガムラントランス"
     },
     {
       "name": "Happy Wedding",
-      "name_translation": "",
       "artist": "ASKA",
-      "artist_translation": "",
       "bpm": "126",
       "genre": "HOUSE",
-      "jacket": "ex_Happy Wedding.png",
+      "jacket": "banner/ddr_ext/Happy Wedding.png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -1897,16 +1880,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Happy_Wedding",
+      "saHash": "oo8DId90dbDliiQQlQPQQoIq6lPliqo9"
     },
     {
       "name": "Heaven is a '57 metallic gray (gimmix)",
-      "name_translation": "",
       "artist": "Hiro feat. Sweet little 30's",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_Heaven is a '57 metallic gray (gimmix).png",
+      "jacket": "banner/ddr_ext/Heaven is a '57 metallic gray (gimmix).png",
       "folder": "Dance Maniax",
       "charts": [
         {
@@ -1951,16 +1933,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Heaven_is_a_%2757_metallic_gray_~gimmix~",
+      "saHash": "oDlO8QQOQ68IO61q9PQd800QiOll1odI"
     },
     {
       "name": "HOLD ON ME",
-      "name_translation": "",
       "artist": "tiger YAMATO",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_HOLD ON ME.png",
+      "jacket": "banner/ddr_ext/HOLD ON ME.png",
       "folder": "ParaPara Paradise",
       "charts": [
         {
@@ -2005,16 +1986,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HOLD_ON_ME"
     },
     {
       "name": "I'm gonna get you!",
-      "name_translation": "",
       "artist": "Kelly Cosmo",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_I'm gonna get you!.png",
+      "jacket": "banner/ddr_ext/I'm gonna get you!.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
         {
@@ -2059,16 +2038,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/I%27M_GONNA_GET_YOU!",
+      "saHash": "lPoD60qooQ91QDq1qO9d19q9IoDIlPq9"
     },
     {
       "name": "JANEJANA",
-      "name_translation": "",
       "artist": "T.E.M.P.O. feat. Mohammed & Emi",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_JANEJANA.png",
+      "jacket": "banner/ddr_ext/JANEJANA.png",
       "folder": "Dance Maniax",
       "charts": [
         { "step": 157, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -2077,16 +2055,16 @@
         { "step": 161, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 173, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 305, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Jane_jana",
+      "saHash": "8qd9d01dPOq1lOOoPiOIoPobdd1QODPq"
     },
     {
       "name": "JET WORLD",
-      "name_translation": "",
       "artist": "Mutsuhiko Izumi",
-      "artist_translation": "",
       "bpm": "138",
       "genre": "HARD COUNTRY",
-      "jacket": "ex_JET WORLD.png",
+      "jacket": "banner/ddr_ext/JET WORLD.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
         {
@@ -2131,16 +2109,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/JET_WORLD",
+      "saHash": "1PQdDiqOD6o1b61iiDOoiiblIQbI91Pb",
+      "search_hint": "HARD COUNTRY/ハードカントリー"
     },
     {
       "name": "KISS KISS KISS",
-      "name_translation": "",
       "artist": "NAOKI feat. SHANTI",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_KISS KISS KISS.png",
+      "genre": "HYPER EUROBEAT",
+      "jacket": "banner/ddr_ext/KISS KISS KISS.png",
       "folder": "Dance Maniax",
       "charts": [
         {
@@ -2185,16 +2164,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/KISS_KISS_KISS",
+      "saHash": "qIoDdQ1OOoPO8Q1Io0P168161DODPoqb",
+      "search_hint": "HYPER EUROBEAT/ハイパーユーロビート"
     },
     {
       "name": "KISS ME ALL NIGHT LONG",
-      "name_translation": "",
       "artist": "NAOKI J-STYLE feat. MIU",
-      "artist_translation": "",
       "bpm": "155",
       "genre": "J-EURO POP",
-      "jacket": "ex_KISS ME ALL NIGHT LONG.png",
+      "jacket": "banner/ddr_ext/KISS ME ALL NIGHT LONG.png",
       "folder": "Dance Maniax",
       "charts": [
         {
@@ -2239,16 +2219,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Kiss_me_all_night_long",
+      "saHash": "iOqb60DOOolIioDIOPi09P91i8PDiOqq"
     },
     {
       "name": "L'amour et la liberte (DDR ver.)",
-      "name_translation": "",
       "artist": "NAOKI underground",
-      "artist_translation": "",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_L'amour et la liberte (DDR ver.).png",
+      "jacket": "banner/ddr_ext/L'amour et la liberte (DDR ver.).png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -2293,16 +2272,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/L%27amour_et_la_liberte(DDR_Ver.)",
+      "saHash": "8IIoIQQqlooiI6QD9ldIO6qidP98QP68"
     },
     {
       "name": "LA BAMBA",
-      "name_translation": "",
       "artist": "メキシコ民謡",
       "artist_translation": "MEXICAN FOLK SONG",
       "bpm": "179",
-      "genre": "",
-      "jacket": "ex_LA BAMBA.png",
+      "jacket": "banner/ddr_ext/LA BAMBA.png",
       "folder": "MAMBO A GO GO",
       "charts": [
         {
@@ -2347,16 +2326,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LA_BAMBA",
+      "saHash": "9IOdDPPO1IIPD9oDbOPo0Qo99Ii6Q8oi"
     },
     {
       "name": "Last Message",
-      "name_translation": "",
       "artist": "good-cool feat. Meg",
-      "artist_translation": "",
       "bpm": "155",
       "genre": "EUROBEAT",
-      "jacket": "ex_Last Message.png",
+      "jacket": "banner/ddr_ext/Last Message.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 150, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -2389,7 +2368,8 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Last_Message"
     },
     {
       "name": "♥Love²シュガ→♥",
@@ -2398,7 +2378,7 @@
       "artist_translation": "dj TAKA feat. Noria",
       "bpm": "155",
       "genre": "EURO BEAT",
-      "jacket": "ex_LOVE LOVE SUGAR.png",
+      "jacket": "banner/ddr_ext/LOVE LOVE SUGAR.png",
       "folder": "pop'n music",
       "charts": [
         { "step": 131, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -2431,16 +2411,18 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LOVE2_Sugar",
+      "saHash": "iI8qbP0IIb16Oi9bIbb8O9dbDDi1ql86",
+      "search_hint": "EURO BEAT/ユーロビート"
     },
     {
       "name": "魔法の扉 (スペース☆マコのテーマ)",
       "name_translation": "MAGIC DOOR(Theme of SPACE MACO)",
       "artist": "a.s.a.",
-      "artist_translation": "",
       "bpm": "184",
-      "genre": "ANIME HEROINE",
-      "jacket": "ex_MAGIC DOOR(Theme of SPACE MACO).png",
+      "genre": "アニメヒロイン",
+      "jacket": "banner/ddr_ext/MAGIC DOOR(Theme of SPACE MACO).png",
       "folder": "pop'n music",
       "charts": [
         { "step": 189, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -2449,16 +2431,17 @@
         { "step": 148, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 251, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 284, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Mahou_no_tobira(SPACE_MACO_no_theme)",
+      "search_hint": "ANIME HEROINE/アニメヒロイン"
     },
     {
       "name": "祭 JAPAN",
       "name_translation": "MATSURI JAPAN",
       "artist": "RE-VENGE",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_MATSURI JAPAN.png",
+      "genre": "MATSURI",
+      "jacket": "banner/ddr_5th/MATSURI JAPAN.png",
       "folder": "Dance Maniax",
       "charts": [
         { "step": 216, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -2467,16 +2450,16 @@
         { "step": 207, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 286, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 349, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Matsuri_JAPAN",
+      "search_hint": "MATSURI/祭"
     },
     {
       "name": "Miracle Moon ~L.E.D.LIGHT STYLE MIX~",
-      "name_translation": "",
       "artist": "Togo Project feat. Sana",
-      "artist_translation": "",
       "bpm": "138",
-      "genre": "J-GARAGE POP REMIX",
-      "jacket": "ex_Miracle Moon ~L.E.D.LIGHT STYLE MIX~.png",
+      "genre": "EPIC HOUSE",
+      "jacket": "banner/ddr_ext/Miracle Moon ~L.E.D.LIGHT STYLE MIX~.png",
       "folder": "beatmania",
       "charts": [
         {
@@ -2521,16 +2504,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Miracle_Moon_~L.E.D.LIGHT_STYLE_MIX~",
+      "saHash": "i9DPi1Do9qoIQid09o1oilodPlDP6doO",
+      "search_hint": "J-GARAGE POP REMIX/JガラージポップREMIX"
     },
     {
       "name": "MOBO★MOGA",
-      "name_translation": "",
       "artist": "Orange Lounge",
-      "artist_translation": "",
       "bpm": "172",
       "genre": "FRENCH POP",
-      "jacket": "ex_MOBO★MOGA.png",
+      "jacket": "banner/ddr_ext/MOBO★MOGA.png",
       "folder": "Dance Maniax",
       "charts": [
         {
@@ -2575,16 +2559,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Mobo_Moga",
+      "search_hint": "FRENCH POP/フレンチポップ"
     },
     {
       "name": "Pink Rose",
-      "name_translation": "",
       "artist": "Kiyommy+Seiya",
-      "artist_translation": "",
-      "bpm": "116-146",
+      "bpm": "146",
       "genre": "HEART",
-      "jacket": "ex_Pink Rose.png",
+      "jacket": "banner/ddr_ext/Pink Rose.png",
       "folder": "KEYBOARD MANIA",
       "charts": [
         {
@@ -2629,16 +2613,18 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Pink_Rose",
+      "saHash": "O09lbd0I8D0DI08O06l6iiI0i11I1iIb",
+      "search_hint": "HEART/ハート"
     },
     {
       "name": "桜",
       "name_translation": "SAKURA",
       "artist": "RevenG",
-      "artist_translation": "",
-      "bpm": "20-320",
+      "bpm": "14-320",
       "genre": "SPIRITUAL",
-      "jacket": "ex_SAKURA.png",
+      "jacket": "banner/ddr_ext/SAKURA.png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -2697,16 +2683,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Sakura",
+      "saHash": "911lId0IooIOq1oDPoQ0iQiDiOIbd6oo"
     },
     {
       "name": "STAY (Organic house Version)",
-      "name_translation": "",
       "artist": "emi",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_STAY (Organic house Version).png",
+      "jacket": "banner/ddr_ext/STAY (Organic house Version).png",
       "folder": "Dance Maniax",
       "charts": [
         {
@@ -2751,16 +2736,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/STAY_(Organic_house_Version)",
+      "saHash": "6lqoOddiPQ6D6160bOdP116bQdIliII8"
     },
     {
       "name": "stoic (EXTREME version)",
-      "name_translation": "",
       "artist": "TaQ",
-      "artist_translation": "",
       "bpm": "155",
-      "genre": "",
-      "jacket": "ex_stoic (EXTREME version).png",
+      "jacket": "banner/ddr_ext/stoic (EXTREME version).png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 134, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -2775,16 +2759,15 @@
         { "step": 131, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 265, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 333, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Stoic_(EXTREME_version)",
+      "saHash": "OoIPPqIDbQ6qIb69q8dil0iq0l6q6DQD"
     },
     {
       "name": "sync (EXTREME version)",
-      "name_translation": "",
       "artist": "OutPhase",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_sync (EXTREME version).png",
+      "jacket": "banner/ddr_ext/sync (EXTREME version).png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -2843,16 +2826,16 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Sync_(EXTREME_version)",
+      "saHash": "8lo1IDqPDD88DObIPodOd8oQ0Q6qQ1Dd"
     },
     {
       "name": "The Least 100sec",
-      "name_translation": "",
       "artist": "Sasaki Hirofumi",
-      "artist_translation": "",
       "bpm": "200-263",
       "genre": "PROGRESSIVE",
-      "jacket": "ex_The Least 100sec.png",
+      "jacket": "banner/ddr_ext/The Least 100sec.png",
       "folder": "GUITAR FREAKS drum mania",
       "charts": [
         {
@@ -2897,16 +2880,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/The_Least_100sec",
+      "saHash": "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0",
+      "search_hint": "PROGRESSIVE/プログレッシブ"
     },
     {
-      "name": "TwinBee ~Generation X~",
-      "name_translation": "",
+      "name": "TwinBee ～Generation X～",
       "artist": "FinalOffset",
-      "artist_translation": "",
       "bpm": "169",
       "genre": "EURO BEAT",
-      "jacket": "ex_TwinBee ~Generation X~.png",
+      "jacket": "banner/ddr_ext/TwinBee ~Generation X~.png",
       "folder": "beatmania III",
       "charts": [
         {
@@ -2951,16 +2935,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Twin_Bee_~Generation_X~",
+      "saHash": "0l181DPDqbQPb0qQl0i0dlQd0oQPlQ6i",
+      "search_hint": "EUROBEAT/ユーロビート"
     },
     {
       "name": "V (for EXTREME)",
-      "name_translation": "",
       "artist": "TAKA",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_V (for EXTREME).png",
+      "genre": "PROGRESSIVE",
+      "jacket": "banner/ddr_ext/V (for EXTREME).png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -3019,16 +3004,18 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/V_~for_EXTREME~",
+      "saHash": "Ilo6IboPOq8Q10qDOdDDoO6P989bPPi6",
+      "search_hint": "PROGRESSIVE/プログレッシブ"
     },
     {
       "name": "White Lovers",
-      "name_translation": "",
       "artist": "新谷さなえ",
       "artist_translation": "Sana Shintani",
       "bpm": "125",
       "genre": "WINTER POP",
-      "jacket": "ex_White Lovers.png",
+      "jacket": "banner/ddr_ext/White Lovers.png",
       "folder": "pop'n music",
       "charts": [
         {
@@ -3073,16 +3060,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/White_Lovers",
+      "search_hint": "WINTER POP/ウィンターポップ"
     },
     {
       "name": "xenon",
-      "name_translation": "",
       "artist": "Mr.T",
-      "artist_translation": "",
       "bpm": "158",
       "genre": "ELECTROSHOCK",
-      "jacket": "ex_xenon.png",
+      "jacket": "banner/ddr_ext/xenon.png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -3127,16 +3114,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Xenon",
+      "saHash": "bDDd08iP8dlIlOo6iqd91dPiI1lQdOQq"
     },
     {
       "name": ".59",
       "name_translation": "59",
       "artist": "dj TAKA",
-      "artist_translation": "",
       "bpm": "123-135",
       "genre": "CHILL OUT",
-      "jacket": "ex_59.png",
+      "jacket": "banner/ddr_4th/59.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 157, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3145,16 +3133,16 @@
         { "step": 173, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 226, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 281, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/.59",
+      "saHash": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69"
     },
     {
       "name": "20,november",
-      "name_translation": "",
       "artist": "dj nagureo",
-      "artist_translation": "",
       "bpm": "130",
       "genre": "HOUSE",
-      "jacket": "ex_20,november.png",
+      "jacket": "banner/ddr_2nd/20,november.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 122, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3169,16 +3157,17 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/20,november",
+      "search_hint": "HOUSE/ハウス"
     },
     {
       "name": "5.1.1.",
       "name_translation": "5.1.1",
       "artist": "dj nagureo",
-      "artist_translation": "",
       "bpm": "101",
       "genre": "PIANO AMBIENT",
-      "jacket": "ex_5.1.1.png",
+      "jacket": "banner/ddr_2nd/5.1.1.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 48, "lvl": 1, "style": "single", "diffClass": "basic" },
@@ -3193,16 +3182,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/5.1.1."
     },
     {
       "name": "ABSOLUTE",
-      "name_translation": "",
       "artist": "dj TAKA",
-      "artist_translation": "",
       "bpm": "144",
       "genre": "EPIC TRANCE",
-      "jacket": "ex_ABSOLUTE.png",
+      "jacket": "banner/ddr_5th/ABSOLUTE.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 142, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3211,16 +3199,16 @@
         { "step": 135, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 215, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 303, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ABSOLUTE",
+      "saHash": "qdi88l6bo1Iqi9Qiqli8lIQQIPO1doQ9"
     },
     {
       "name": "Abyss",
-      "name_translation": "",
       "artist": "dj TAKA",
-      "artist_translation": "",
       "bpm": "142",
       "genre": "INTELLIGENCE",
-      "jacket": "ex_Abyss.png",
+      "jacket": "banner/ddr_5th/Abyss.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 168, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3229,16 +3217,15 @@
         { "step": 171, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 233, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 309, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Abyss",
+      "saHash": "Q0qQO0P8818lIoo0boO66O0qd09dIlO8"
     },
     {
       "name": "AFRONOVA",
-      "name_translation": "",
       "artist": "RE-VENGE",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_AFRONOVA.png",
+      "jacket": "banner/ddr_3rd/AFRONOVA.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 214, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -3247,16 +3234,15 @@
         { "step": 233, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 245, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 357, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AFRONOVA",
+      "saHash": "Pd99DQo0bD9D9oIbPIId18P6l8qlDQO6"
     },
     {
       "name": "AFRONOVA (FROM NONSTOP MEGAMIX)",
-      "name_translation": "",
       "artist": "RE-VENGE",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_AFRONOVA (FROM NONSTOP MEGAMIX).png",
+      "jacket": "banner/ddrmax2/AFRONOVA (FROM NONSTOP MEGAMIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3273,16 +3259,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AFRONOVA(FROM_NONSTOP_MEGAMIX)",
+      "saHash": "DdO1iboqI6980Q6QPD9P1PbQQ88I16lq"
     },
     {
       "name": "AFTER THE GAME OF LOVE",
-      "name_translation": "",
       "artist": "NPD3",
-      "artist_translation": "",
       "bpm": "105",
-      "genre": "",
-      "jacket": "ex_AFTER THE GAME OF LOVE.png",
+      "jacket": "banner/ddr_3rd/AFTER THE GAME OF LOVE.png",
       "folder": "DDR home",
       "charts": [
         { "step": 72, "lvl": 1, "style": "single", "diffClass": "basic" },
@@ -3291,16 +3276,15 @@
         { "step": 114, "lvl": 2, "style": "double", "diffClass": "basic" },
         { "step": 167, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 207, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AFTER_THE_GAME_OF_LOVE",
+      "saHash": "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D"
     },
     {
       "name": "AM-3P",
-      "name_translation": "",
       "artist": "KTz",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_AM-3P.png",
+      "jacket": "banner/ddr_2nd/AM-3P.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 164, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -3309,16 +3293,15 @@
         { "step": 166, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 194, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 240, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AM-3P",
+      "saHash": "dq190Il9iO1bD698ll6ddObIlqdIQ1O9"
     },
     {
       "name": "AM-3P (303 BASS MIX)",
-      "name_translation": "",
       "artist": "KTz remixed by U1",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_AM-3P (303 BASS MIX).png",
+      "jacket": "banner/ddr_ext/AM-3P (303 BASS MIX).png",
       "folder": "DDR home",
       "charts": [
         { "step": 128, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3327,16 +3310,15 @@
         { "step": 123, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 204, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 233, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AM-3P_-303_BASS_MIX-",
+      "saHash": "dQ1oPoQqD0db8O19P1P0D1oq8I68i1Id"
     },
     {
       "name": "AM-3P (AM EAST mix)",
-      "name_translation": "",
       "artist": "KTz",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_AM-3P (AM EAST mix).png",
+      "jacket": "banner/ddrmax2/AM-3P (AM EAST mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3353,16 +3335,16 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/AM-3P(AM_EAST_mix)",
+      "saHash": "808dq8OIq16PP19i1bP0IDP1OqPOlo6q"
     },
     {
       "name": "B4U",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "155",
       "genre": "SPEED RAVE",
-      "jacket": "ex_B4U.png",
+      "jacket": "banner/ddr_4th/B4U.png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 188, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3371,16 +3353,15 @@
         { "step": 191, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 225, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 301, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/B4U",
+      "saHash": "6Qq1q91q8iIPlI89qDq96bO8QDD0qOql"
     },
     {
       "name": "B4U (B4 ZA BEAT MIX)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_B4U (B4 ZA BEAT MIX).png",
+      "jacket": "banner/ddrmax2/B4U (B4 ZA BEAT MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3397,16 +3378,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/B4U(B4_ZA_BEAT_MIX)",
+      "saHash": "POIDil00didIo98D10loIObibPOob88O"
     },
     {
       "name": "BABY BABY GIMME YOUR LOVE",
-      "name_translation": "",
       "artist": "DIVAS",
-      "artist_translation": "",
       "bpm": "96",
-      "genre": "",
-      "jacket": "ex_BABY BABY GIMME YOUR LOVE.png",
+      "jacket": "banner/ddr_4th/BABY BABY GIMME YOUR LOVE.png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 62, "lvl": 1, "style": "single", "diffClass": "basic" },
@@ -3415,16 +3395,16 @@
         { "step": 80, "lvl": 2, "style": "double", "diffClass": "basic" },
         { "step": 107, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 176, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BABY_BABY_GIMME_YOUR_LOVE",
+      "saHash": "P8P1dlqi9D111iIDPOP0l9DIO1l6lqO9"
     },
     {
       "name": "Be in my paradise",
-      "name_translation": "",
       "artist": "JJ COMPANY",
-      "artist_translation": "",
       "bpm": "63",
       "genre": "SOUL CLASSIC BALLAD",
-      "jacket": "ex_Be in my paradise.png",
+      "jacket": "banner/ddr_2nd/Be in my paradise.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 53, "lvl": 1, "style": "single", "diffClass": "basic" },
@@ -3433,16 +3413,15 @@
         { "step": 85, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 137, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 209, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Be_in_my_paradise"
     },
     {
       "name": "BRE∀K DOWN!",
       "name_translation": "BREAK DOWN!",
       "artist": "BeForU",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_BREAK DOWN!.png",
+      "jacket": "banner/ddrmax2/BREAK DOWN!.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3487,16 +3466,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BREAK_DOWN!",
+      "saHash": "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP"
     },
     {
       "name": "BRILLIANT 2U",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
-      "bpm": "149",
+      "bpm": "150",
       "genre": "EURO GROOVE",
-      "jacket": "ex_BRILLIANT 2U.png",
+      "jacket": "banner/ddr_2nd/BRILLIANT 2U.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 162, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3513,16 +3492,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BRILLIANT_2U",
+      "saHash": "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID"
     },
     {
       "name": "BRILLIANT 2U (K.O.G G3 MIX)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_BRILLIANT 2U (K.O.G G3 MIX).png",
+      "jacket": "banner/ddrmax2/BRILLIANT 2U (K.O.G G3 MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3539,16 +3517,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BRILLIANT_2U_(K.O.G_G3_MIX)",
+      "saHash": "i18OPo6l8Q6bo9q0qP6889IDqoP8O0Qq"
     },
     {
       "name": "BRILLIANT 2U (Orchestra Groove)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_BRILLIANT 2U (Orchestra Groove).png",
+      "jacket": "banner/ddr_2nd/BRILLIANT 2U (Orchestra Groove).png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 166, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -3559,16 +3536,16 @@
         { "step": 187, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 236, "lvl": 7, "style": "double", "diffClass": "expert" },
         { "step": 324, "lvl": 8, "style": "double", "diffClass": "challenge" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BRILLIANT_2U(Orchestra_Groove)",
+      "saHash": "DbPodlqiOQdD88bo8lPO9D6iql1DO8P0"
     },
     {
       "name": "BURNIN' THE FLOOR",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "155",
       "genre": "EURO GROOVE",
-      "jacket": "ex_BURNIN' THE FLOOR.png",
+      "jacket": "banner/ddr_4th/BURNIN' THE FLOOR.png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 177, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3577,16 +3554,15 @@
         { "step": 189, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 238, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 296, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BURNIN%27_THE_FLOOR",
+      "saHash": "ii6Oooool0IoOqi1qdDo96QIil6IoOq0"
     },
     {
       "name": "BURNIN' THE FLOOR (BLUE FIRE mix)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "155",
-      "genre": "",
-      "jacket": "ex_BURNIN' THE FLOOR (BLUE FIRE mix).png",
+      "jacket": "banner/ddrmax2/BURNIN' THE FLOOR (BLUE FIRE mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3603,16 +3579,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BURNIN%27_THE_FLOOR(BLUE_FIRE_mix)",
+      "saHash": "QdbPPPDlIQiI191qPdblO01O8P8o6D68"
     },
     {
       "name": "Burning Heat! (3 Option Mix)",
-      "name_translation": "",
       "artist": "Mr. T. feat. Motoaki F.",
-      "artist_translation": "",
       "bpm": "166",
-      "genre": "",
-      "jacket": "ex_Burning Heat! (3 Option Mix).png",
+      "jacket": "banner/ddrmax2/Burning Heat! (3 Option Mix).png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -3657,16 +3632,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/BURNING_HEAT!(3_Option_MIX)",
+      "saHash": "i86qD6Pl61dPI0Q9db1P8bl1ii99q1lD"
     },
     {
       "name": "BUTTERFLY",
-      "name_translation": "",
       "artist": "SMiLE.dk",
-      "artist_translation": "",
       "bpm": "135",
-      "genre": "",
-      "jacket": "ex_BUTTERFLY.png",
+      "jacket": "banner/ddr_1st/BUTTERFLY.png",
       "folder": "DDR 1st",
       "charts": [
         { "step": 160, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3689,16 +3663,14 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Butterfly"
     },
     {
       "name": "CAN'T STOP FALLIN' IN LOVE (SPEED MIX)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_CAN'T STOP FALLIN' IN LOVE (SPEED MIX).png",
+      "jacket": "banner/ddr_5th/CAN'T STOP FALLIN' IN LOVE (SPEED MIX).png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 238, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3707,16 +3679,16 @@
         { "step": 241, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 323, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 432, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_~SPEED_MIX~",
+      "saHash": "DOqPd1Iid6oObd8i96I9oo8obbODb96o"
     },
     {
       "name": "CAN'T STOP FALLIN' IN LOVE",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "155",
       "genre": "HYPER EUROBEAT",
-      "jacket": "ex_CAN'T STOP FALLIN' IN LOVE.png",
+      "jacket": "banner/ddr_4th/CAN'T STOP FALLIN' IN LOVE.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 160, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3725,16 +3697,15 @@
         { "step": 182, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 224, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 299, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE",
+      "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P"
     },
     {
-      "name": "CANDY★",
-      "name_translation": "",
-      "artist": "Luv unlimited",
-      "artist_translation": "",
+      "name": "CANDY☆",
+      "artist": "Luv UNLIMITED",
       "bpm": "192",
-      "genre": "",
-      "jacket": "ex_CANDY★.png",
+      "jacket": "banner/ddrmax/CANDY☆.png",
       "folder": "DDRMAX",
       "charts": [
         { "step": 170, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3767,16 +3738,18 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CANDY_(Luv_UNLIMITED)",
+      "genre": "CANDY POP",
+      "saHash": "OPbqldiq0dQIo1011086IOl1qbOloOl9"
     },
     {
       "name": "CANDY♥",
-      "name_translation": "",
       "artist": "小坂りゆ",
       "artist_translation": "RIYU KOSAKA",
       "bpm": "180",
       "genre": "CANDY POP",
-      "jacket": "ex_CANDY♥.png",
+      "jacket": "banner/ddrmax2/CANDY♥.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3821,16 +3794,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CANDY_(Riyu_Kosaka)",
+      "saHash": "1Qqo9bID18OdiI1Qb0lP9DIqIO6ldPOP",
+      "search_hint": "CANDY POP/キャンディポップ"
     },
     {
       "name": "CAPTAIN JACK (GRANDALE REMIX)",
-      "name_translation": "",
       "artist": "CAPTAIN JACK",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_CAPTAIN JACK (GRANDALE REMIX).png",
+      "jacket": "banner/ddr_3rd/CAPTAIN JACK (GRANDALE REMIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 217, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3839,16 +3812,15 @@
         { "step": 179, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 239, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 360, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CAPTAIN_JACK(GRANDALE_REMIX)"
     },
     {
       "name": "celebrate",
-      "name_translation": "",
       "artist": "JJ COMPANY",
-      "artist_translation": "",
       "bpm": "134",
       "genre": "SOUL CLASSIC",
-      "jacket": "ex_celebrate.png",
+      "jacket": "banner/ddr_2nd/celebrate.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 166, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3863,16 +3835,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Celebrate"
     },
     {
       "name": "CELEBRATE NITE",
-      "name_translation": "",
       "artist": "N.M.R",
-      "artist_translation": "",
       "bpm": "144",
       "genre": "EURO GROOVE",
-      "jacket": "ex_CELEBRATE NITE.png",
+      "jacket": "banner/ddr_4th/CELEBRATE NITE.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 171, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -3881,16 +3852,15 @@
         { "step": 178, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 208, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 238, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CELEBRATE_NITE",
+      "saHash": "i0bdP6II6dqb6lbQQ9q9OQq68i1qPddO"
     },
     {
       "name": "CELEBRATE NITE (EURO TRANCE STYLE)",
-      "name_translation": "",
       "artist": "N.M.R.",
-      "artist_translation": "",
       "bpm": "144",
-      "genre": "",
-      "jacket": "ex_CELEBRATE NITE (EURO TRANCE STYLE).png",
+      "jacket": "banner/ddrmax2/CELEBRATE NITE (EURO TRANCE STYLE).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -3907,16 +3877,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CELEBRATE_NITE(EURO_TRANCE_STYLE)",
+      "saHash": "O6q1o06Po9lQbqOl08Io1obqQ9QPi09b"
     },
     {
       "name": "COW GIRL",
-      "name_translation": "",
       "artist": "BAMBEE",
-      "artist_translation": "",
       "bpm": "138",
-      "genre": "",
-      "jacket": "ex_COW GIRL.png",
+      "jacket": "banner/ddrmax/COW GIRL.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -3961,16 +3930,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/COW_GIRL"
     },
     {
       "name": "CUTIE CHASER",
-      "name_translation": "",
       "artist": "CLUB SPICE",
-      "artist_translation": "",
       "bpm": "126",
-      "genre": "",
-      "jacket": "ex_CUTIE CHASER.png",
+      "jacket": "banner/ddr_3rd/CUTIE CHASER.png",
       "folder": "DDR home",
       "charts": [
         { "step": 148, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -3979,16 +3946,15 @@
         { "step": 148, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 186, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 254, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CUTIE_CHASER",
+      "saHash": "di9ddbd1lb80q98ODdod0ODQ0q6PdQP1"
     },
     {
       "name": "CUTIE CHASER (MORNING MIX)",
-      "name_translation": "",
       "artist": "CLUB SPICE",
-      "artist_translation": "",
       "bpm": "126",
-      "genre": "",
-      "jacket": "ex_CUTIE CHASER (MORNING MIX).png",
+      "jacket": "banner/ddr_ext/CUTIE CHASER (MORNING MIX).png",
       "folder": "DDR home",
       "charts": [
         { "step": 91, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -4009,16 +3975,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/CUTIE_CHASER(MORNING_MIX)",
+      "saHash": "doQI0i6lQbOo66DOi6olPqOPqIqO8Qd1"
     },
     {
       "name": "D2R",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "160",
       "genre": "HYPER ROCK BEAT",
-      "jacket": "ex_D2R.png",
+      "jacket": "banner/ddrmax2/D2R.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4057,16 +4023,15 @@
           "diffClass": "difficult"
         },
         { "step": 332, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/D2R",
+      "saHash": "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO"
     },
     {
       "name": "DAM DARIRAM",
-      "name_translation": "",
       "artist": "JOGA",
-      "artist_translation": "",
       "bpm": "142",
-      "genre": "",
-      "jacket": "ex_DAM DARIRAM.png",
+      "jacket": "banner/ddr_3rd/DAM DARIRAM.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 133, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4075,16 +4040,14 @@
         { "step": 192, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 195, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 282, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DAM_DARIRAM"
     },
     {
       "name": "DEAD END",
-      "name_translation": "",
       "artist": "N&S",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_DEAD END.png",
+      "jacket": "banner/ddr_3rd/DEAD END.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 216, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -4093,16 +4056,16 @@
         { "step": 274, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 298, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 455, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DEAD_END",
+      "saHash": "P98dl8qdoilqbPqIO86ood601o1696D8"
     },
     {
       "name": "DESTINY",
-      "name_translation": "",
       "artist": "NAOKI feat.PAULA TERRY",
-      "artist_translation": "",
       "bpm": "155",
       "genre": "HYPER EUROBEAT",
-      "jacket": "ex_DESTINY.png",
+      "jacket": "banner/ddrmax2/DESTINY.png",
       "folder": "DDRMAX2",
       "charts": [
         { "step": 116, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -4141,16 +4104,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DESTINY",
+      "saHash": "98q8616ddDIqdo1dbqbO0Po96oldo1Oo"
     },
     {
       "name": "DIVE (more deep & deeper style)",
-      "name_translation": "",
       "artist": "BeForU",
-      "artist_translation": "",
       "bpm": "155",
-      "genre": "",
-      "jacket": "ex_DIVE (more deep & deeper style).png",
+      "jacket": "banner/ddrmax/DIVE (more deep & deeper style).png",
       "folder": "DDR home",
       "charts": [
         { "step": 154, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -4159,16 +4121,15 @@
         { "step": 137, "lvl": 2, "style": "double", "diffClass": "basic" },
         { "step": 228, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 293, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DIVE(more_deep_%26_deeper_style)"
     },
     {
       "name": "DIVE TO THE NIGHT",
-      "name_translation": "",
       "artist": "小坂りゆ",
       "artist_translation": "RIYU KOSAKA",
       "bpm": "155",
-      "genre": "",
-      "jacket": "ex_DIVE TO THE NIGHT.png",
+      "jacket": "banner/ddrmax2/DIVE TO THE NIGHT.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4213,16 +4174,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DIVE_TO_THE_NIGHT",
+      "saHash": "8Pb6oPdbO6lo8lbiQ181IDidI9ll8q80"
     },
     {
       "name": "Do It Right",
-      "name_translation": "",
       "artist": "SOTA feat. Ebony Fay",
-      "artist_translation": "",
       "bpm": "135",
-      "genre": "",
-      "jacket": "ex_Do It Right.png",
+      "jacket": "banner/ddrmax/Do It Right.png",
       "folder": "DDR home",
       "charts": [
         { "step": 154, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4231,16 +4191,14 @@
         { "step": 159, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 202, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 284, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Do_It_Right"
     },
     {
       "name": "Do It Right (Harmonized 2Step Mix)",
-      "name_translation": "",
       "artist": "SOTA feat. Ebony Fay",
-      "artist_translation": "",
       "bpm": "135",
-      "genre": "",
-      "jacket": "ex_Do It Right (Harmonized 2Step Mix).png",
+      "jacket": "banner/ddr_ext/Do It Right (Harmonized 2Step Mix).png",
       "folder": "DDR home",
       "charts": [
         {
@@ -4285,16 +4243,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Do_It_Right(Harmonized_2Step_Mix)"
     },
     {
       "name": "DO YOU REMEMBER ME",
-      "name_translation": "",
       "artist": "JENNY",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_DO YOU REMEMBER ME.png",
+      "jacket": "banner/ddrmax/DO YOU REMEMBER ME.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -4339,16 +4295,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DO_YOU_REMEMBER_ME"
     },
     {
       "name": "Don't Stop! (AMD 2nd MIX)",
-      "name_translation": "",
       "artist": "Dr. VIBE feat. JP miles",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_Don't Stop! (AMD 2nd MIX).png",
+      "jacket": "banner/ddr_4th/Don't Stop! (AMD 2nd MIX).png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 156, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4357,16 +4311,16 @@
         { "step": 113, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 174, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 221, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Don%27t_Stop!~AMD_2nd_MIX~",
+      "saHash": "1q6obddbql8lQdPI19liD6PdQ0dPIODd"
     },
     {
       "name": "Dr.LOVE",
-      "name_translation": "",
       "artist": "baby weapon feat.Asuka.M",
-      "artist_translation": "",
       "bpm": "123",
       "genre": "DANCE POP",
-      "jacket": "ex_Dr.LOVE.png",
+      "jacket": "banner/ddr_2nd/Dr.LOVE.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 151, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -4381,16 +4335,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Dr.LOVE"
     },
     {
       "name": "DROP OUT",
-      "name_translation": "",
       "artist": "NW260",
-      "artist_translation": "",
       "bpm": "260",
-      "genre": "",
-      "jacket": "ex_DROP OUT.png",
+      "jacket": "banner/ddr_4th/DROP OUT.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 200, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -4399,16 +4351,15 @@
         { "step": 175, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 296, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 378, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DROP_OUT",
+      "saHash": "Q0OiPQQ8IbIDq08IO9Io0qDdoDPPdd1q"
     },
     {
       "name": "DROP OUT (FROM NONSTOP MEGAMIX)",
-      "name_translation": "",
       "artist": "NW260",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_DROP OUT (FROM NONSTOP MEGAMIX).png",
+      "jacket": "banner/ddrmax2/DROP OUT (FROM NONSTOP MEGAMIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4425,16 +4376,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DROP_OUT(FROM_NONSTOP_MEGAMIX)",
+      "saHash": "d0P01d9q8oOd8OP1bQPoqlq96906PqPD"
     },
     {
       "name": "DROP THE BOMB",
-      "name_translation": "",
       "artist": "Scotty D.",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_DROP THE BOMB.png",
+      "jacket": "banner/ddr_3rd/DROP THE BOMB.png",
       "folder": "DDR home",
       "charts": [
         { "step": 199, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4443,16 +4393,16 @@
         { "step": 199, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 237, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 299, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DROP_THE_BOMB",
+      "genre": "TECHNO RAVE",
+      "saHash": "8O0D9P6l9P9ooQdODioDIdQPq6DiDlbl"
     },
     {
       "name": "DROP THE BOMB (System S.F. Mix)",
-      "name_translation": "",
       "artist": "Scotty D.",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_DROP THE BOMB (System S.F. Mix).png",
+      "jacket": "banner/ddr_ext/DROP THE BOMB (System S.F. Mix).png",
       "folder": "DDR home",
       "charts": [
         {
@@ -4497,16 +4447,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DROP_THE_BOMB(SyS.F._Mix)",
+      "saHash": "I0b6lIP691dOOI8PqDDlbPid9iO8o0lO"
     },
     {
       "name": "DXY!",
-      "name_translation": "",
       "artist": "TaQ",
-      "artist_translation": "",
       "bpm": "148",
       "genre": "TECHNO",
-      "jacket": "ex_DXY!.png",
+      "jacket": "banner/ddr_5th/DXY!.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 157, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4515,16 +4465,16 @@
         { "step": 205, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 277, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 334, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DXY!",
+      "saHash": "QDP0i688bQi1Idqil1dOqDdPdoIPP6Q0"
     },
     {
       "name": "DYNAMITE RAVE",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
-      "bpm": "149",
+      "bpm": "150",
       "genre": "SPEED RAVE",
-      "jacket": "ex_DYNAMITE RAVE.png",
+      "jacket": "banner/ddr_3rd/DYNAMITE RAVE.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 188, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -4541,16 +4491,15 @@
         { "step": 250, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 331, "lvl": 8, "style": "double", "diffClass": "expert" },
         { "step": 327, "lvl": 8, "style": "double", "diffClass": "challenge" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DYNAMITE_RAVE",
+      "saHash": "1QIPID18qib8D9Oo9lOo8I6DPi9qiod6"
     },
     {
       "name": "DYNAMITE RAVE (B4 ZA BEAT MIX)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_DYNAMITE RAVE (B4 ZA BEAT MIX).png",
+      "jacket": "banner/ddrmax2/DYNAMITE RAVE (B4 ZA BEAT MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4567,16 +4516,14 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DYNAMITE_RAVE_(B4_ZA_BEAT_MIX)"
     },
     {
       "name": "DYNAMITE RAVE (Down Bird SOTA Mix)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_DYNAMITE RAVE (Down Bird SOTA Mix).png",
+      "jacket": "banner/ddr_ext/DYNAMITE RAVE (Down Bird SOTA Mix).png",
       "folder": "DDR home",
       "charts": [
         {
@@ -4621,16 +4568,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/DYNAMITE_RAVE_(Down_Bird_SOTA_Mix)"
     },
     {
       "name": "e-motion",
-      "name_translation": "",
       "artist": "e.o.s.",
-      "artist_translation": "",
-      "bpm": "140-145",
+      "bpm": "145",
       "genre": "RAVE",
-      "jacket": "ex_e-motion.png",
+      "jacket": "banner/ddr_2nd/e-motion.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 99, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -4645,16 +4591,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/E-motion",
+      "saHash": "8liDbidQoI6Q01lO9iibIdboIiDl66Qo"
     },
     {
       "name": "ECSTASY",
-      "name_translation": "",
       "artist": "d-complex",
-      "artist_translation": "",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_ECSTASY.png",
+      "jacket": "banner/ddr_5th/ECSTASY.png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 169, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4663,16 +4608,15 @@
         { "step": 183, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 235, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 296, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ECSTASY",
+      "saHash": "bPD6ObloQPOOiQb1DbQDdilodiddlIlb"
     },
     {
       "name": "ECSTASY (midnight blue mix)",
-      "name_translation": "",
       "artist": "d-complex",
-      "artist_translation": "",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_ECSTASY (midnight blue mix).png",
+      "jacket": "banner/ddrmax2/ECSTASY (midnight blue mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4689,16 +4633,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ECSTASY_(midnight_blue_mix)",
+      "saHash": "Dd6lP00DPqIb0d6iqOdlO08l69l6q1di"
     },
     {
       "name": "EL RITMO TROPICAL",
-      "name_translation": "",
       "artist": "DIXIE'S GANG",
-      "artist_translation": "",
       "bpm": "132",
-      "genre": "",
-      "jacket": "ex_EL RITMO TROPICAL.png",
+      "jacket": "banner/ddr_2nd/EL RITMO TROPICAL.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 124, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -4707,16 +4650,15 @@
         { "step": 163, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 174, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 217, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/EL_RITMO_TROPICAL"
     },
     {
       "name": "Electro Tuned (the SubS mix)",
-      "name_translation": "",
       "artist": "TaQ",
-      "artist_translation": "",
       "bpm": "125",
       "genre": "BIG BEAT",
-      "jacket": "ex_Electro Tuned (the SubS mix).png",
+      "jacket": "banner/ddr_5th/Electro Tuned (the SubS mix).png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 179, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -4725,16 +4667,16 @@
         { "step": 168, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 248, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 305, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Electro_Tuned(the_SubS_mix)",
+      "saHash": "IPi69l86oqdDd8qoll61166D8969869I"
     },
     {
       "name": "END OF THE CENTURY",
-      "name_translation": "",
       "artist": "NO.9",
-      "artist_translation": "",
       "bpm": "171",
       "genre": "DANCE SPEED",
-      "jacket": "ex_END OF THE CENTURY.png",
+      "jacket": "banner/ddr_3rd/END OF THE CENTURY.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 231, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -4743,16 +4685,15 @@
         { "step": 231, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 245, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 390, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/END_OF_THE_CENTURY"
     },
     {
       "name": "era (nostalmix)",
-      "name_translation": "",
       "artist": "TaQ",
-      "artist_translation": "",
       "bpm": "90-180",
       "genre": "DRUM'N'BASS",
-      "jacket": "ex_era (nostalmix).png",
+      "jacket": "banner/ddr_4th/era (nostalmix).png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 125, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -4761,16 +4702,15 @@
         { "step": 142, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 217, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 331, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Era_(nostalmix)",
+      "saHash": "D81Pq66DQPiQdliqIPl0ioPOi9OlQoQ9"
     },
     {
       "name": "ever snow",
-      "name_translation": "",
       "artist": "YOMA KOMATSU",
-      "artist_translation": "",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_ever snow.png",
+      "jacket": "banner/ddrmax2/ever snow.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4815,16 +4755,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Ever_snow"
     },
     {
       "name": "exotic ethnic",
-      "name_translation": "",
       "artist": "RevenG",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_exotic ethnic.png",
+      "jacket": "banner/ddrmax/exotic ethnic.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -4869,16 +4807,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Exotic_ethnic",
+      "saHash": "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO"
     },
     {
       "name": "FANTASY",
-      "name_translation": "FANTASY (LOCKOUT)",
       "artist": "LOCKOUT",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_FANTASY (LOCKOUT).png",
+      "jacket": "banner/ddrmax2/FANTASY (LOCKOUT).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -4923,16 +4860,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/FANTASY_(LOCKOUT)"
     },
     {
       "name": "FANTASY",
-      "name_translation": "FANTASY (MELISSA)",
       "artist": "MELISSA",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_FANTASY (MELISSA).png",
+      "jacket": "banner/ddrmax/FANTASY (MELISSA).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -4977,16 +4912,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/FANTASY_(MELISSA)"
     },
     {
       "name": "Firefly",
-      "name_translation": "",
       "artist": "BeForU",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_Firefly.png",
+      "jacket": "banner/ddrmax/Firefly.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -5031,16 +4964,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Firefly"
     },
     {
       "name": "そばかす (KCP Re-Edit)",
       "name_translation": "FRECKLES (KCP Re-Edit)",
       "artist": "TIGGY",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_FRECKLES (KCP Re-Edit).png",
+      "jacket": "banner/ddrmax/FRECKLES (KCP Re-Edit).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -5085,16 +5017,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Sobakasu_FRECKLES_(KCP_Re-Edit)"
     },
     {
       "name": "GENOM SCREAMS",
-      "name_translation": "",
       "artist": "L.E.D.LIGHT",
-      "artist_translation": "",
       "bpm": "150",
       "genre": "TRANCE",
-      "jacket": "ex_GENOM SCREAMS.png",
+      "jacket": "banner/ddr_2nd/GENOM SCREAMS.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 169, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5109,16 +5040,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/GENOM_SCREAMS",
+      "saHash": "Dq0Iio09Pb9iD0lbb0I0qd8Q8i10II09"
     },
     {
       "name": "gentle stress (AMD SEXUAL MIX)",
-      "name_translation": "",
       "artist": "MR. DOG feat. DJ Swan",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_gentle stress (AMD SEXUAL MIX).png",
+      "jacket": "banner/ddr_3rd/gentle stress (AMD SEXUAL MIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 171, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5127,16 +5057,14 @@
         { "step": 193, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 241, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 328, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Gentle_stress(SENSUAL_MIX)"
     },
     {
       "name": "GET UP'N MOVE",
-      "name_translation": "",
       "artist": "S&K",
-      "artist_translation": "",
       "bpm": "132",
-      "genre": "",
-      "jacket": "ex_GET UP'N MOVE.png",
+      "jacket": "banner/ddr_2nd/GET UP'N MOVE.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 175, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5145,16 +5073,14 @@
         { "step": 163, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 183, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 229, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/GET_UP%27N_MOVE"
     },
     {
       "name": "GRADIUSIC CYBER (AMD G5 MIX)",
-      "name_translation": "",
       "artist": "BIG-O feat. TAKA",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_GRADIUSIC CYBER (AMD G5 MIX).png",
+      "jacket": "banner/ddr_3rd/GRADIUSIC CYBER (AMD G5 MIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 265, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5163,16 +5089,15 @@
         { "step": 266, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 308, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 368, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/GRADIUSIC_CYBER_~AMD_G5_MIX~",
+      "saHash": "q6qI6llb69D1IQq0OiP8OD06Qioob91Q"
     },
     {
       "name": "Groove",
-      "name_translation": "",
       "artist": "Sho-T feat. Brenda",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_Groove.png",
+      "jacket": "banner/ddrmax/Groove.png",
       "folder": "DDR home",
       "charts": [
         { "step": 139, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5181,16 +5106,14 @@
         { "step": 134, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 193, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 255, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Groove"
     },
     {
       "name": "Groove 2001",
-      "name_translation": "",
       "artist": "Sho-T feat. Brenda",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_Groove 2001.png",
+      "jacket": "banner/ddrmax/Groove 2001.png",
       "folder": "DDR home",
       "charts": [
         { "step": 165, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5199,16 +5122,14 @@
         { "step": 165, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 218, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 256, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Groove_2001"
     },
     {
       "name": "Healing Vision",
-      "name_translation": "",
       "artist": "DE-SIRE",
-      "artist_translation": "",
       "bpm": "49-196",
-      "genre": "",
-      "jacket": "ex_Healing Vision.png",
+      "jacket": "banner/ddr_5th/Healing Vision.png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 128, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -5217,16 +5138,15 @@
         { "step": 136, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 275, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 358, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Healing_Vision",
+      "saHash": "qIDI69oIo8OlQqdqqDilI1do6IbP16Q6"
     },
     {
       "name": "Healing Vision (Angelic mix)",
-      "name_translation": "",
       "artist": "2MB",
-      "artist_translation": "",
       "bpm": "49-196",
-      "genre": "",
-      "jacket": "ex_Healing Vision (Angelic mix).png",
+      "jacket": "banner/ddrmax/Healing Vision (Angelic mix).png",
       "folder": "DDR home",
       "charts": [
         { "step": 273, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5235,16 +5155,16 @@
         { "step": 272, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 377, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 471, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Healing_Vision_~Angelic_mix~",
+      "saHash": "olQQ8QPPqqObDD9ooodOl9i9od8b06I9"
     },
     {
       "name": "HIGHER",
-      "name_translation": "",
       "artist": "NM feat. SUNNY",
-      "artist_translation": "",
       "bpm": "132",
       "genre": "DANCE POP",
-      "jacket": "ex_HIGHER.png",
+      "jacket": "banner/ddr_4th/HIGHER.png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 140, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -5253,16 +5173,15 @@
         { "step": 159, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 230, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 279, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HIGHER_(NM_feat._SUNNY)",
+      "saHash": "O1blDPOQ8IQb00o0D89QIDIlo8b06liD"
     },
     {
       "name": "HIGHER (next morning mix)",
-      "name_translation": "",
       "artist": "NM feat. SUNNY",
-      "artist_translation": "",
       "bpm": "132",
-      "genre": "",
-      "jacket": "ex_HIGHER (next morning mix).png",
+      "jacket": "banner/ddrmax2/HIGHER (next morning mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -5279,16 +5198,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HIGHER(next_morning_mix)",
+      "saHash": "8DQDq16PPlli6o9iDl11DqooqOPlOb08"
     },
     {
       "name": "HIGHS OFF U (Scorccio XY Mix)",
-      "name_translation": "",
       "artist": "4 REEEL",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_HIGHS OFF U (Scorccio XY Mix).png",
+      "jacket": "banner/ddrmax/HIGHS OFF U (Scorccio XY Mix).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -5327,16 +5245,15 @@
           "diffClass": "difficult"
         },
         { "step": 323, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HIGHS_OFF_U(Scorccio_XY_Mix)"
     },
     {
       "name": "Holic",
-      "name_translation": "",
       "artist": "TaQ",
-      "artist_translation": "",
       "bpm": "154",
       "genre": "HARD TECHNO",
-      "jacket": "ex_Holic.png",
+      "jacket": "banner/ddr_4th/Holic.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 189, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5345,16 +5262,15 @@
         { "step": 198, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 232, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 336, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Holic",
+      "saHash": "ODq019O9o1OPdq9PiPl0o8D8DQ8bid88"
     },
     {
       "name": "HYSTERIA",
-      "name_translation": "",
       "artist": "NAOKI 190",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_HYSTERIA.png",
+      "jacket": "banner/ddr_4th/HYSTERIA.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 224, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5363,16 +5279,15 @@
         { "step": 158, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 279, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 286, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HYSTERIA",
+      "saHash": "8l808Do60DP0qDbD066QQqP1qOQdob90"
     },
     {
       "name": "HYSTERIA 2001",
-      "name_translation": "",
       "artist": "NM",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_HYSTERIA 2001.png",
+      "jacket": "banner/ddrmax2/HYSTERIA 2001.png",
       "folder": "beatmania",
       "charts": [
         {
@@ -5389,16 +5304,16 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/HYSTERIA_2001",
+      "genre": "R&B",
+      "saHash": "lPloI86odlIbIo96P169b9I0Ob8lD189"
     },
     {
       "name": "I believe in miracles",
-      "name_translation": "",
       "artist": "HI-RISE",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_I believe in miracles.png",
+      "jacket": "banner/ddr_2nd/I believe in miracles.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 174, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5407,16 +5322,16 @@
         { "step": 177, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 182, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 263, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/I_Believe_In_Miracles_(The_Lisa_Marie_Experience_Radio_Edit)"
     },
     {
       "name": "i feel...",
       "name_translation": "i feel",
       "artist": "AKIRA YAMAOKA",
-      "artist_translation": "",
       "bpm": "141",
       "genre": "TRANCE",
-      "jacket": "ex_i feel.png",
+      "jacket": "banner/ddrmax2/i feel.png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -5461,16 +5376,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/I_feel_...",
+      "saHash": "DddIPd6iId8Doqq8OibDlD1dOi8PO8o9"
     },
     {
       "name": "I Was The One",
-      "name_translation": "",
       "artist": "good-cool",
-      "artist_translation": "",
       "bpm": "124",
       "genre": "ITALO HOUSE",
-      "jacket": "ex_I Was The One.png",
+      "jacket": "banner/ddr_5th/I Was The One.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 145, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -5479,16 +5394,14 @@
         { "step": 141, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 236, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 277, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/I_Was_The_One"
     },
     {
       "name": "I'M IN THE MOOD FOR DANCING",
-      "name_translation": "",
       "artist": "SHARON",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_I'M IN THE MOOD FOR DANCING.png",
+      "jacket": "banner/ddrmax/I'M IN THE MOOD FOR DANCING.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -5533,16 +5446,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/I%27M_IN_THE_MOOD_FOR_DANCING"
     },
     {
       "name": "IF YOU WERE HERE",
-      "name_translation": "",
       "artist": "JENNIFER",
-      "artist_translation": "",
       "bpm": "145",
-      "genre": "",
-      "jacket": "ex_IF YOU WERE HERE.png",
+      "jacket": "banner/ddr_2nd/IF YOU WERE HERE.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 150, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5551,16 +5462,15 @@
         { "step": 150, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 187, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 225, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/IF_YOU_WERE_HERE"
     },
     {
       "name": "INSERTiON",
-      "name_translation": "",
       "artist": "NAOKI underground",
-      "artist_translation": "",
       "bpm": "110-225",
       "genre": "EURO TRANCE",
-      "jacket": "ex_INSERTiON.png",
+      "jacket": "banner/ddr_5th/INSERTiON.png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 187, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5569,16 +5479,15 @@
         { "step": 181, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 256, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 316, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/INSERTiON",
+      "saHash": "6oldqOoilo1OoP6P9OoO8bdD9lI86qdQ"
     },
     {
       "name": "IT'S RAINING MEN (Almighty Mix)",
-      "name_translation": "",
       "artist": "GERI HALLIWELL",
-      "artist_translation": "",
       "bpm": "136",
-      "genre": "",
-      "jacket": "ex_IT'S RAINING MEN (Almighty Mix).png",
+      "jacket": "banner/ddrmax2/IT'S RAINING MEN (Almighty Mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -5623,16 +5532,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/IT%27S_RAINING_MEN(Almighty_Mix)"
     },
     {
       "name": "Jam Jam Reggae",
-      "name_translation": "",
       "artist": "jam master '73",
-      "artist_translation": "",
       "bpm": "90",
-      "genre": "",
-      "jacket": "ex_Jam Jam Reggae.png",
+      "jacket": "banner/ddr_2nd/Jam Jam Reggae.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 76, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -5647,16 +5554,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Jam_jam_reggae"
     },
     {
       "name": "Jam Jam Reggae ~AMD SWING MIX~",
-      "name_translation": "",
       "artist": "Rice. C feat. Jam master 73",
-      "artist_translation": "",
       "bpm": "90",
-      "genre": "",
-      "jacket": "ex_Jam Jam Reggae ~AMD SWING MIX~.png",
+      "jacket": "banner/ddr_3rd/Jam Jam Reggae ~AMD SWING MIX~.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 123, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -5665,16 +5570,16 @@
         { "step": 112, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 137, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 223, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Jam_Jam_Reggae_~AMD_SWING_MIX~"
     },
     {
       "name": "革命",
       "name_translation": "KAKUMEI",
       "artist": "dj TAKA with NAOKI",
-      "artist_translation": "",
       "bpm": "83-148",
       "genre": "ORCHESTRAL",
-      "jacket": "ex_KAKUMEI.png",
+      "jacket": "banner/ddrmax2/KAKUMEI.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -5733,16 +5638,16 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Kakumei",
+      "saHash": "l9lq19DdiD8qQPoPOlboi1qQii0IQI86"
     },
     {
       "name": "KEEP ON MOVIN'",
-      "name_translation": "",
       "artist": "N.M.R.",
-      "artist_translation": "",
       "bpm": "132",
       "genre": "DANCE POP",
-      "jacket": "ex_KEEP ON MOVIN'.png",
+      "jacket": "banner/ddr_2nd/KEEP ON MOVIN'.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 110, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5751,16 +5656,15 @@
         { "step": 113, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 162, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 164, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/KEEP_ON_MOVIN%27",
+      "saHash": "0lDDIlQ91lq6O16q9QQ681d6Db1l0oOb"
     },
     {
       "name": "Kind Lady",
-      "name_translation": "",
       "artist": "OKUYATOS",
-      "artist_translation": "",
       "bpm": "135",
-      "genre": "",
-      "jacket": "ex_Kind Lady.png",
+      "jacket": "banner/ddr_ext/Kind Lady.png",
       "folder": "DDR home",
       "charts": [
         {
@@ -5805,16 +5709,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Kind_Lady"
     },
     {
       "name": "La Senorita",
-      "name_translation": "",
       "artist": "CAPTAIN. T",
-      "artist_translation": "",
       "bpm": "182",
-      "genre": "",
-      "jacket": "ex_La Senorita.png",
+      "jacket": "banner/ddr_3rd/La Senorita.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 241, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5823,16 +5725,15 @@
         { "step": 181, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 293, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 420, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/La_Senorita",
+      "saHash": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9"
     },
     {
       "name": "La Senorita Virtual",
-      "name_translation": "",
       "artist": "2MB",
-      "artist_translation": "",
       "bpm": "182",
-      "genre": "",
-      "jacket": "ex_La Senorita Virtual.png",
+      "jacket": "banner/ddr_3rd/La Senorita Virtual.png",
       "folder": "DDR home",
       "charts": [
         { "step": 270, "lvl": 7, "style": "single", "diffClass": "basic" },
@@ -5841,16 +5742,16 @@
         { "step": 240, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 298, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 358, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/La_Senorita_Virtual",
+      "saHash": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb"
     },
     {
       "name": "LEADING CYBER",
-      "name_translation": "",
       "artist": "dj TAKA",
-      "artist_translation": "",
       "bpm": "150",
       "genre": "DIGI-ROCK",
-      "jacket": "ex_LEADING CYBER.png",
+      "jacket": "banner/ddr_4th/LEADING CYBER.png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 193, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -5859,16 +5760,15 @@
         { "step": 185, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 258, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 357, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LEADING_CYBER",
+      "saHash": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8"
     },
     {
       "name": "Let the beat hit em! (CLASSIC R&B STYLE)",
-      "name_translation": "",
       "artist": "STONE BROS.",
-      "artist_translation": "",
       "bpm": "102",
-      "genre": "",
-      "jacket": "ex_Let the beat hit em! (CLASSIC R&B STYLE).png",
+      "jacket": "banner/ddrmax/Let the beat hit em! (CLASSIC R&B STYLE).png",
       "folder": "DDR home",
       "charts": [
         { "step": 133, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -5877,16 +5777,15 @@
         { "step": 134, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 172, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 190, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Let_the_beat_hit_em!(CLASSIC_R%26B_STYLE)",
+      "saHash": "bP69QdDQ0QQ9dP0dDio0dO61i9Dbdl00"
     },
     {
       "name": "LET'S GET DOWN",
-      "name_translation": "",
       "artist": "JT PLAYAZ",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_LET'S GET DOWN.png",
+      "jacket": "banner/ddr_1st/LET'S GET DOWN.png",
       "folder": "DDR 1st",
       "charts": [
         { "step": 117, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -5897,16 +5796,14 @@
         { "step": 152, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 212, "lvl": 7, "style": "double", "diffClass": "expert" },
         { "step": 246, "lvl": 7, "style": "double", "diffClass": "challenge" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LET%27S_GET_DOWN"
     },
     {
       "name": "LET'S GROOVE",
-      "name_translation": "",
       "artist": "TIPS & TRICKS VS WISDOME",
-      "artist_translation": "",
       "bpm": "65-130",
-      "genre": "",
-      "jacket": "ex_LET'S GROOVE.png",
+      "jacket": "banner/ddrmax/LET'S GROOVE.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -5951,16 +5848,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LET%27S_GROOVE"
     },
     {
       "name": "LITTLE BITCH",
-      "name_translation": "",
       "artist": "THE SPECIALS",
-      "artist_translation": "",
       "bpm": "152",
-      "genre": "",
-      "jacket": "ex_LITTLE BITCH.png",
+      "jacket": "banner/ddr_1st/LITTLE BITCH.png",
       "folder": "DDR 1st",
       "charts": [
         { "step": 170, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -5977,16 +5872,14 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Little_Bitch"
     },
     {
       "name": "LITTLE BOY (BOY ON BOY MIX)",
-      "name_translation": "",
       "artist": "CAPTAIN JACK",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_LITTLE BOY (BOY ON BOY MIX).png",
+      "jacket": "banner/ddrmax2/LITTLE BOY (BOY ON BOY MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6031,16 +5924,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LITTLE_BOY(BOY_ON_BOY_MIX)"
     },
     {
       "name": "LIVING IN AMERICA",
-      "name_translation": "",
       "artist": "ROSE & JOHN",
-      "artist_translation": "",
       "bpm": "169",
-      "genre": "",
-      "jacket": "ex_LIVING IN AMERICA.png",
+      "jacket": "banner/ddrmax2/LIVING IN AMERICA.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6085,16 +5976,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LIVING_IN_AMERICA"
     },
     {
       "name": "LONG TRAIN RUNNIN'",
-      "name_translation": "",
       "artist": "BUS STOP",
-      "artist_translation": "",
       "bpm": "126",
-      "genre": "",
-      "jacket": "ex_LONG TRAIN RUNNIN'.png",
+      "jacket": "banner/ddrmax2/LONG TRAIN RUNNIN'.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6139,16 +6028,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LONG_TRAIN_RUNNIN%27"
     },
     {
       "name": "Look To The Sky",
-      "name_translation": "",
       "artist": "SySF. feat.ANNA",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_Look To The Sky.png",
+      "jacket": "banner/ddrmax/Look To The Sky.png",
       "folder": "DDR home",
       "charts": [
         { "step": 153, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -6157,16 +6044,14 @@
         { "step": 136, "lvl": 2, "style": "double", "diffClass": "basic" },
         { "step": 194, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 278, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Look_To_The_Sky"
     },
     {
       "name": "Look To The Sky (True Color Mix)",
-      "name_translation": "",
       "artist": "SySF. feat. ANNA",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_Look To The Sky (True Color Mix).png",
+      "jacket": "banner/ddr_ext/Look To The Sky (True Color Mix).png",
       "folder": "DDR home",
       "charts": [
         {
@@ -6211,16 +6096,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Look_To_The_Sky(True_Color_Mix)"
     },
     {
       "name": "LOVE AGAIN TONIGHT～for Mellisa mix～",
       "name_translation": "LOVE AGAIN TONIGHT (For Melissa MIX)",
       "artist": "NAOKI feat. PAULA TERRY",
-      "artist_translation": "",
       "bpm": "150",
       "genre": "HYPER EUROBEAT",
-      "jacket": "ex_LOVE AGAIN TONIGHT (For Melissa MIX).png",
+      "jacket": "banner/ddr_4th/LOVE AGAIN TONIGHT (For Melissa MIX).png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 191, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -6229,16 +6114,15 @@
         { "step": 180, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 235, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 281, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LOVE_AGAIN_TONIGHT~For_Melissa_MIX~",
+      "saHash": "boOdPIqbDd8li0O0IqliPo1Doq99Ob09"
     },
     {
       "name": "LOVE THIS FEELIN'",
-      "name_translation": "",
       "artist": "Chang Ma",
-      "artist_translation": "",
       "bpm": "95-190",
-      "genre": "",
-      "jacket": "ex_LOVE THIS FEELIN'.png",
+      "jacket": "banner/ddr_3rd/LOVE THIS FEELIN'.png",
       "folder": "DDR home",
       "charts": [
         { "step": 210, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -6247,16 +6131,15 @@
         { "step": 214, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 227, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 241, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LOVE_THIS_FEELIN%27",
+      "saHash": "i8II16blIIbQQd196b616OPbPO910oi9"
     },
     {
       "name": "LOVIN' YOU (ROB SEARLE CLUB MIX)",
-      "name_translation": "",
       "artist": "VINYL BABY",
-      "artist_translation": "",
       "bpm": "139",
-      "genre": "",
-      "jacket": "ex_LOVIN' YOU (ROB SEARLE CLUB MIX).png",
+      "jacket": "banner/ddrmax/LOVIN' YOU (ROB SEARLE CLUB MIX).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -6301,16 +6184,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LOVIN%27_YOU(ROB_SEARLE_CLUB_MIX)"
     },
     {
       "name": "LUV TO ME (AMD MIX)",
-      "name_translation": "",
       "artist": "DJ KAZU feat. Tiger YAMATO",
-      "artist_translation": "",
       "bpm": "154",
-      "genre": "",
-      "jacket": "ex_LUV TO ME (AMD MIX).png",
+      "jacket": "banner/ddr_3rd/LUV TO ME (AMD MIX).png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 203, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -6319,16 +6200,15 @@
         { "step": 217, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 228, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 352, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LUV_TO_ME_(AMD_MIX)"
     },
     {
       "name": "LUV TO ME (disco mix)",
-      "name_translation": "",
       "artist": "tiger YAMATO",
-      "artist_translation": "",
       "bpm": "154",
       "genre": "EURO BEAT",
-      "jacket": "ex_LUV TO ME (disco mix).png",
+      "jacket": "banner/ddr_2nd/LUV TO ME (disco mix).png",
       "folder": "DDR club version",
       "charts": [
         { "step": 160, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -6337,16 +6217,14 @@
         { "step": 160, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 274, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 319, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/LUV_TO_ME_(disco_mix)"
     },
     {
       "name": "MAKE IT BETTER",
-      "name_translation": "",
       "artist": "MITSU-O!",
-      "artist_translation": "",
       "bpm": "119",
-      "genre": "",
-      "jacket": "ex_MAKE IT BETTER.png",
+      "jacket": "banner/ddr_1st/MAKE IT BETTER.png",
       "folder": "DDR 1st",
       "charts": [
         { "step": 143, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -6355,16 +6233,16 @@
         { "step": 130, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 181, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 220, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MAKE_IT_BETTER",
+      "saHash": "8Il6980di8P89lil1PDIqqIbiq1QO8lQ"
     },
     {
       "name": "祭 JAPAN (FROM NONSTOP MEGAMIX)",
       "name_translation": "MATSURI JAPAN (FROM NONSTOP MEGAMIX)",
       "artist": "RE-VENGE",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_MATSURI JAPAN (FROM NONSTOP MEGAMIX).png",
+      "jacket": "banner/ddrmax2/MATSURI JAPAN (FROM NONSTOP MEGAMIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6381,16 +6259,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Matsuri_JAPAN_(FROM_NONSTOP_MEGAMIX)"
     },
     {
       "name": "MAX 300",
-      "name_translation": "",
       "artist": "Ω",
-      "artist_translation": "",
       "bpm": "12-300",
       "genre": "HARDCORE TECHNO",
-      "jacket": "ex_MAX 300.png",
+      "jacket": "banner/ddrmax/MAX 300.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -6435,16 +6312,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MAX_300",
+      "saHash": "6P18lOliIQqIO6Di0PP8iDlDQ01b0o0q"
     },
     {
       "name": "MAXIMUM OVERDRIVE (KC Club Mix)",
-      "name_translation": "",
       "artist": "2 UNLIMITED",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_MAXIMUM OVERDRIVE (KC Club Mix).png",
+      "jacket": "banner/ddrmax2/MAXIMUM OVERDRIVE (KC Club Mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6489,16 +6365,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MAXIMUM_OVERDRIVE_(KC_Club_Mix)"
     },
     {
       "name": "MAXX UNLIMITED",
-      "name_translation": "",
       "artist": "Z",
-      "artist_translation": "",
       "bpm": "140-320",
-      "genre": "",
-      "jacket": "ex_MAXX UNLIMITED.png",
+      "jacket": "banner/ddrmax2/MAXX UNLIMITED.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6543,16 +6417,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MAXX_UNLIMITED",
+      "saHash": "lObPDQDI08DoodDq1061IP1qbQ1qQQbl"
     },
     {
       "name": "Midnite Blaze",
-      "name_translation": "",
       "artist": "U1 Jewel Style",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_Midnite Blaze.png",
+      "jacket": "banner/ddrmax/Midnite Blaze.png",
       "folder": "DDR home",
       "charts": [
         { "step": 176, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -6561,16 +6434,14 @@
         { "step": 178, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 224, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 334, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Midnite_Blaze"
     },
     {
       "name": "MIRACLE",
-      "name_translation": "",
       "artist": "ST.JENNARO",
-      "artist_translation": "",
       "bpm": "128",
-      "genre": "",
-      "jacket": "ex_MIRACLE.png",
+      "jacket": "banner/ddrmax/MIRACLE.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -6615,16 +6486,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MIRACLE"
     },
     {
       "name": "Mr.T. (take me higher)",
-      "name_translation": "",
       "artist": "Risky Men feat.Asuka-M",
-      "artist_translation": "",
       "bpm": "128",
       "genre": "DANCE POP",
-      "jacket": "ex_Mr.T. (take me higher).png",
+      "jacket": "banner/ddr_5th/Mr.T. (take me higher).png",
       "folder": "beatmania IIDX",
       "charts": [
         { "step": 120, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -6633,16 +6503,14 @@
         { "step": 121, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 223, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 292, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Mr.T.(take_me_higher)"
     },
     {
       "name": "MY SUMMER LOVE",
-      "name_translation": "",
       "artist": "MITSU-O! with GEILA",
-      "artist_translation": "",
       "bpm": "100",
-      "genre": "",
-      "jacket": "ex_MY SUMMER LOVE.png",
+      "jacket": "banner/ddr_4th/MY SUMMER LOVE.png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 117, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -6651,16 +6519,15 @@
         { "step": 119, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 186, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 244, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MY_SUMMER_LOVE",
+      "saHash": "6Ddo196olOPi9IQdbQ8Qbd8do8Q1obOD"
     },
     {
       "name": "MY SUMMER LOVE (TOMMY'S SMILE MIX)",
-      "name_translation": "",
       "artist": "MITSU-O! with GEILA",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_MY SUMMER LOVE (TOMMY'S SMILE MIX).png",
+      "jacket": "banner/ddrmax2/MY SUMMER LOVE (TOMMY'S SMILE MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -6677,16 +6544,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MY_SUMMER_LOVE(TOMMY%27S_SMILE_MIX)",
+      "saHash": "d99P0I1i960QO0oolD6oQIO8OObO9Plb"
     },
     {
       "name": "MY SWEET DARLIN'",
-      "name_translation": "",
       "artist": "WILDSIDE",
-      "artist_translation": "",
       "bpm": "157",
-      "genre": "",
-      "jacket": "ex_MY SWEET DARLIN'.png",
+      "jacket": "banner/ddrmax/MY SWEET DARLIN'.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -6731,16 +6597,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/MY_SWEET_DARLIN%27"
     },
     {
       "name": "NORI NORI NORI",
-      "name_translation": "",
       "artist": "JUDY CRYSTAL",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_NORI NORI NORI.png",
+      "jacket": "banner/ddrmax/NORI NORI NORI.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -6785,16 +6649,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/NORI_NORI_NORI"
     },
     {
       "name": "ON THE JAZZ",
-      "name_translation": "",
       "artist": "Jonny Dynamite!",
-      "artist_translation": "",
       "bpm": "130",
-      "genre": "",
-      "jacket": "ex_ON THE JAZZ.png",
+      "jacket": "banner/ddrmax/ON THE JAZZ.png",
       "folder": "DDR home",
       "charts": [
         { "step": 108, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -6803,16 +6665,14 @@
         { "step": 121, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 220, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 329, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ON_THE_JAZZ"
     },
     {
       "name": "ORDINARY WORLD",
-      "name_translation": "",
       "artist": "AURORA featuring NAIMEE COLEMAN",
-      "artist_translation": "",
       "bpm": "139",
-      "genre": "",
-      "jacket": "ex_ORDINARY WORLD.png",
+      "jacket": "banner/ddrmax/ORDINARY WORLD.png",
       "folder": "DDRMAX",
       "charts": [
         { "step": 69, "lvl": 1, "style": "single", "diffClass": "basic" },
@@ -6845,16 +6705,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ORDINARY_WORLD"
     },
     {
       "name": "ORION.78 (AMeuro-MIX)",
-      "name_translation": "",
       "artist": "RE-VENGE",
-      "artist_translation": "",
       "bpm": "105",
-      "genre": "",
-      "jacket": "ex_ORION.78 (AMeuro-MIX).png",
+      "jacket": "banner/ddr_4th/ORION.78 (AMeuro-MIX).png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 101, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -6863,16 +6721,15 @@
         { "step": 113, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 184, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 261, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ORION.78(AMeuro-MIX)",
+      "saHash": "1d10660Dd0IOibDI890Ild80q6ddoQO8"
     },
     {
       "name": "ORION.78 (civilization mix)",
-      "name_translation": "",
       "artist": "2MB",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_ORION.78 (civilization mix).png",
+      "jacket": "banner/ddrmax/ORION.78 (civilization mix).png",
       "folder": "DDR home",
       "charts": [
         { "step": 232, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -6881,16 +6738,15 @@
         { "step": 232, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 277, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 383, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/ORION.78~civilization_mix~",
+      "saHash": "61ido0DPl8q0dI1i011Do1b6669dPIlo"
     },
     {
       "name": "PARANOiA",
-      "name_translation": "",
       "artist": "180",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_PARANOiA.png",
+      "jacket": "banner/ddr_1st/PARANOiA.png",
       "folder": "DDR 1st",
       "charts": [
         { "step": 264, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -6899,16 +6755,15 @@
         { "step": 254, "lvl": 7, "style": "double", "diffClass": "basic" },
         { "step": 309, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 382, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA",
+      "saHash": "06loOQ0DQb0DqbOibl6qO81qlIdoP9DI"
     },
     {
       "name": "PARANOiA ETERNAL",
-      "name_translation": "",
       "artist": "STM 200",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_PARANOiA ETERNAL.png",
+      "jacket": "banner/ddr_5th/PARANOiA ETERNAL.png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 237, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -6941,16 +6796,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_ETERNAL",
+      "saHash": "PP1q0iii1D6Dq9QOd0qqDOQD0160QoPD"
     },
     {
-      "name": "PARANOiA EVOLUTION",
-      "name_translation": "",
+      "name": "PARANOIA EVOLUTION",
       "artist": "200",
-      "artist_translation": "",
       "bpm": "200",
-      "genre": "",
-      "jacket": "ex_PARANOiA EVOLUTION.png",
+      "jacket": "banner/ddr_4th/PARANOIA EVOLUTION.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 278, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -6959,16 +6813,15 @@
         { "step": 224, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 274, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 320, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOIA_EVOLUTION",
+      "saHash": "DPQo8Q0l9D8IPiDiq11l8OI6i11OOb6O"
     },
     {
       "name": "PARANOiA KCET (clean mix)",
-      "name_translation": "",
       "artist": "2MB",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_PARANOiA KCET (clean mix).png",
+      "jacket": "banner/ddr_2nd/PARANOiA KCET (clean mix).png",
       "folder": "DDR home",
       "charts": [
         { "step": 262, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -6977,16 +6830,16 @@
         { "step": 261, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 289, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 351, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_KCET_~clean_mix~",
+      "saHash": "9doPbId8qid9I9l6ooloPQD1lq1Plb6I"
     },
     {
       "name": "PARANOIA MAX～DIRTY MIX～",
-      "name_translation": "",
       "artist": "190",
-      "artist_translation": "",
       "bpm": "190",
       "genre": "JUNGLE",
-      "jacket": "ex_PARANOIA MAX～DIRTY MIX～.png",
+      "jacket": "banner/ddr_2nd/PARANOIA MAX～DIRTY MIX～.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 268, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -6995,16 +6848,15 @@
         { "step": 274, "lvl": 7, "style": "double", "diffClass": "basic" },
         { "step": 311, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 363, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
+      "saHash": "Pl0dPid9lQDo6PDQDqPboPqO6iIDIqoo"
     },
     {
       "name": "PARANOiA Rebirth",
-      "name_translation": "",
       "artist": "190'",
-      "artist_translation": "",
       "bpm": "190",
-      "genre": "",
-      "jacket": "ex_PARANOiA Rebirth.png",
+      "jacket": "banner/ddr_3rd/PARANOiA Rebirth.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 280, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -7013,16 +6865,15 @@
         { "step": 281, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 321, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 423, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_Rebirth",
+      "saHash": "0lDP0P06PIPl1iiIDOb919iqo1oPdlP8"
     },
     {
       "name": "PUT YOUR FAITH IN ME",
-      "name_translation": "",
       "artist": "UZI-LAY",
-      "artist_translation": "",
       "bpm": "120",
-      "genre": "",
-      "jacket": "ex_PUT YOUR FAITH IN ME.png",
+      "jacket": "banner/ddr_2nd/PUT YOUR FAITH IN ME.png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 128, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -7031,16 +6882,16 @@
         { "step": 135, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 147, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 170, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/PUT_YOUR_FAITH_IN_ME",
+      "saHash": "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l"
     },
     {
       "name": "R3",
-      "name_translation": "",
       "artist": "tiger YAMATO",
-      "artist_translation": "",
       "bpm": "157",
       "genre": "RAVE",
-      "jacket": "ex_R3.png",
+      "jacket": "banner/ddr_2nd/R3.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 161, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -7055,16 +6906,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/R3"
     },
     {
       "name": "rain of sorrow",
-      "name_translation": "",
       "artist": "NM feat. EBONY FAY",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_rain of sorrow.png",
+      "jacket": "banner/ddrmax2/rain of sorrow.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7109,16 +6958,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Rain_of_sorrow",
+      "saHash": "Qo9l6l6lq0q618bQOb8d6qiooiiPQqoI"
     },
     {
       "name": "Remember You",
-      "name_translation": "",
       "artist": "NM feat.Julie",
-      "artist_translation": "",
       "bpm": "105",
       "genre": "BALLAD",
-      "jacket": "ex_Remember You.png",
+      "jacket": "banner/ddr_5th/Remember You.png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 41, "lvl": 1, "style": "single", "diffClass": "basic" },
@@ -7127,16 +6976,14 @@
         { "step": 47, "lvl": 1, "style": "double", "diffClass": "basic" },
         { "step": 135, "lvl": 3, "style": "double", "diffClass": "difficult" },
         { "step": 198, "lvl": 6, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Remember_You"
     },
     {
       "name": "RHYTHM AND POLICE (K.O.G G3 Mix)",
-      "name_translation": "",
       "artist": "CJ CREW feat. CHRISTIAN D",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_RHYTHM AND POLICE (K.O.G G3 Mix).png",
+      "jacket": "banner/ddr_4th/RHYTHM AND POLICE (K.O.G G3 Mix).png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 225, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -7145,16 +6992,14 @@
         { "step": 215, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 278, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 364, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/RHYTHM_AND_POLICE(K.O.G_G3_Mix)"
     },
     {
       "name": "SAINT GOES MARCHING (REMIX)",
-      "name_translation": "",
       "artist": "THE SAINT",
-      "artist_translation": "",
       "bpm": "110-175",
-      "genre": "",
-      "jacket": "ex_SAINT GOES MARCHING (REMIX).png",
+      "jacket": "banner/ddr_4th/SAINT GOES MARCHING (REMIX).png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 151, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -7163,16 +7008,16 @@
         { "step": 152, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 195, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 298, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SAINT_GOES_MARCHING(REMIX)"
     },
     {
       "name": "サナ・モレッテ・ネ・エンテ",
       "name_translation": "SANA MOLLETE NE ENTE",
       "artist": "Togo Project feat. Sana",
-      "artist_translation": "",
       "bpm": "90",
       "genre": "CUBAN GROOVE",
-      "jacket": "ex_SANA MOLLETE NE ENTE.png",
+      "jacket": "banner/ddr_5th/SANA MOLLETE NE ENTE.png",
       "folder": "beatmania",
       "charts": [
         { "step": 128, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -7181,16 +7026,16 @@
         { "step": 128, "lvl": 2, "style": "double", "diffClass": "basic" },
         { "step": 225, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 269, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SANA_MOLLETE_NE_ENTE",
+      "saHash": "doIiQl6oDPP6i9qobqoobblPQqPiI9bD",
+      "search_hint": "CUBAN GROOVE/キューバングルーブ"
     },
     {
       "name": "Secret Rendez-vous",
-      "name_translation": "",
       "artist": "DIVAS",
-      "artist_translation": "",
       "bpm": "98",
-      "genre": "",
-      "jacket": "ex_Secret Rendez-vous.png",
+      "jacket": "banner/ddrmax2/Secret Rendez-vous.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7235,16 +7080,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Secret_Rendez-vous",
+      "saHash": "Db9D6Old6lIo01q0qlQ0dD1oDdbdob8I"
     },
     {
       "name": "SEXY PLANET",
-      "name_translation": "",
       "artist": "CRYSTAL ALIENS",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_SEXY PLANET.png",
+      "jacket": "banner/ddr_4th/SEXY PLANET.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 201, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -7253,16 +7097,15 @@
         { "step": 175, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 207, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 236, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SEXY_PLANET",
+      "saHash": "60QoP9DoIo90D616989Q0D0iodOoOd91"
     },
     {
       "name": "SEXY PLANET (FROM NONSTOP MEGAMIX)",
-      "name_translation": "",
       "artist": "CRYSTAL ALIENS",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_SEXY PLANET (FROM NONSTOP MEGAMIX).png",
+      "jacket": "banner/ddrmax2/SEXY PLANET (FROM NONSTOP MEGAMIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7279,16 +7122,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SEXY_PLANET(FROM_NONSTOP_MEGAMIX)",
+      "saHash": "O06Id8PIDbDblO109ddi1dldd0bqDdQ1"
     },
     {
       "name": "Share My Love",
-      "name_translation": "",
       "artist": "Julie Frost",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_Share My Love.png",
+      "jacket": "banner/ddrmax/Share My Love.png",
       "folder": "DDR home",
       "charts": [
         { "step": 124, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -7297,16 +7139,14 @@
         { "step": 130, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 163, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 227, "lvl": 5, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Share_My_Love"
     },
     {
       "name": "Silent Hill",
-      "name_translation": "",
       "artist": "THOMAS HOWARD",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_Silent Hill.png",
+      "jacket": "banner/ddr_3rd/Silent Hill.png",
       "folder": "DDR 3rdMIX",
       "charts": [
         { "step": 117, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -7315,16 +7155,15 @@
         { "step": 165, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 206, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 268, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Silent_Hill",
+      "saHash": "80bQi8IQ8o1iidqd6oQiDPQoPi909olq"
     },
     {
       "name": "Silent Hill (3rd christmas mix)",
-      "name_translation": "",
       "artist": "THOMAS HOWARD",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_Silent Hill (3rd christmas mix).png",
+      "jacket": "banner/ddrmax2/Silent Hill (3rd christmas mix).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7341,16 +7180,16 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Silent_Hill_(3rd_christmas_mix)",
+      "saHash": "oio6bqP08PPoP9qIq1oi9Dib9PIq9l11"
     },
     {
       "name": "ska a go go",
-      "name_translation": "",
       "artist": "THE BALD HEADS",
-      "artist_translation": "",
       "bpm": "144-160",
       "genre": "SKA",
-      "jacket": "ex_ska a go go.png",
+      "jacket": "banner/ddr_2nd/ska a go go.png",
       "folder": "DDR club version",
       "charts": [
         { "step": 175, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -7359,16 +7198,15 @@
         { "step": 175, "lvl": 6, "style": "double", "diffClass": "basic" },
         { "step": 281, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 329, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Ska_a_gogo",
+      "search_hint": "Ska/スカ"
     },
     {
       "name": "SKY HIGH",
-      "name_translation": "",
       "artist": "DJ MIKO",
-      "artist_translation": "",
       "bpm": "136",
-      "genre": "",
-      "jacket": "ex_SKY HIGH.png",
+      "jacket": "banner/ddr_ext/SKY HIGH.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 113, "lvl": 2, "style": "single", "diffClass": "basic" },
@@ -7395,16 +7233,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SKY_HIGH"
     },
     {
       "name": "SO DEEP (PERFECT SPHERE REMIX)",
-      "name_translation": "",
       "artist": "SILVERTEAR",
-      "artist_translation": "",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_SO DEEP (PERFECT SPHERE REMIX).png",
+      "jacket": "banner/ddrmax/SO DEEP (PERFECT SPHERE REMIX).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -7449,16 +7285,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SO_DEEP(PERFECT_SPHERE_REMIX)"
     },
     {
       "name": "SO IN LOVE",
-      "name_translation": "",
       "artist": "Caramel S.",
-      "artist_translation": "",
       "bpm": "112",
-      "genre": "",
-      "jacket": "ex_SO IN LOVE.png",
+      "jacket": "banner/ddr_ext/SO IN LOVE.png",
       "folder": "DDR home",
       "charts": [
         {
@@ -7503,16 +7337,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SO_IN_LOVE",
+      "saHash": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd"
     },
     {
       "name": "SOMEWHERE OVER THE RAINBOW",
-      "name_translation": "",
       "artist": "COSMIC GATE",
-      "artist_translation": "",
       "bpm": "35-140",
-      "genre": "",
-      "jacket": "ex_SOMEWHERE OVER THE RAINBOW.png",
+      "jacket": "banner/ddrmax/SOMEWHERE OVER THE RAINBOW.png",
       "folder": "DDRMAX",
       "charts": [
         { "step": 123, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -7545,16 +7378,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SOMEWHERE_OVER_THE_RAINBOW"
     },
     {
       "name": "SP-TRIP MACHINE (JUNGLE MIX)",
-      "name_translation": "",
       "artist": "DE-SIRE",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_SP-TRIP MACHINE (JUNGLE MIX).png",
+      "jacket": "banner/ddr_2nd/SP-TRIP MACHINE (JUNGLE MIX).png",
       "folder": "DDR 2ndMIX",
       "charts": [
         { "step": 194, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -7563,16 +7394,16 @@
         { "step": 198, "lvl": 7, "style": "double", "diffClass": "basic" },
         { "step": 227, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 250, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE_~JUNGLE_MIX~",
+      "saHash": "1P9qQdiiodODqQPl0OO88iiiqdoDIPO6"
     },
     {
       "name": "Spin the disc",
-      "name_translation": "",
       "artist": "good-cool",
-      "artist_translation": "",
       "bpm": "130",
       "genre": "HOUSE",
-      "jacket": "ex_Spin the disc.png",
+      "jacket": "banner/ddrmax2/Spin the disc.png",
       "folder": "beatmania IIDX",
       "charts": [
         {
@@ -7617,16 +7448,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Spin_the_disc"
     },
     {
       "name": "STILL IN MY HEART",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "150",
       "genre": "HYPER EUROBEAT",
-      "jacket": "ex_STILL IN MY HEART.png",
+      "jacket": "banner/ddr_5th/STILL IN MY HEART.png",
       "folder": "DDR 5thMIX",
       "charts": [
         { "step": 180, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -7635,16 +7465,15 @@
         { "step": 169, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 230, "lvl": 5, "style": "double", "diffClass": "difficult" },
         { "step": 276, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/STILL_IN_MY_HEART",
+      "saHash": "Qb90bo6I0Pd9181iIoOPoqPOOOQq6dQ1"
     },
     {
       "name": "STILL IN MY HEART (MOMO MIX)",
-      "name_translation": "",
       "artist": "NAOKI",
-      "artist_translation": "",
       "bpm": "85-170",
-      "genre": "",
-      "jacket": "ex_STILL IN MY HEART (MOMO MIX).png",
+      "jacket": "banner/ddrmax2/STILL IN MY HEART (MOMO MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7661,16 +7490,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/STILL_IN_MY_HEART(MOMO_MIX)",
+      "saHash": "DOOb99dlP8PdIbDOQIqoqll60Iob9189"
     },
     {
       "name": "SUPER STAR",
-      "name_translation": "",
       "artist": "D.J.RICH feat. TAILBROS.",
-      "artist_translation": "",
       "bpm": "128",
-      "genre": "",
-      "jacket": "ex_SUPER STAR.png",
+      "jacket": "banner/ddr_4th/SUPER STAR.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 195, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -7679,16 +7507,15 @@
         { "step": 157, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 195, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 262, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SUPER_STAR",
+      "saHash": "88do8dl8O6Ql1Qlb981lOi8D86oiq91P"
     },
     {
       "name": "SUPER STAR (FROM NONSTOP MEGAMIX)",
-      "name_translation": "",
       "artist": "D.J.RICH feat. TAILBROS.",
-      "artist_translation": "",
       "bpm": "128",
-      "genre": "",
-      "jacket": "ex_SUPER STAR (FROM NONSTOP MEGAMIX).png",
+      "jacket": "banner/ddrmax2/SUPER STAR (FROM NONSTOP MEGAMIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7705,16 +7532,17 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SUPER_STAR(FROM_NONSTOP_MEGAMIX)",
+      "saHash": "0qQ1odlooiQO99DDP6bD9bOq89669PQb"
     },
     {
       "name": "Sweet Sweet♥Magic",
       "name_translation": "Sweet Sweet Love Magic",
       "artist": "jun",
-      "artist_translation": "",
       "bpm": "180",
       "genre": "HAPPY HARDCORE",
-      "jacket": "ex_Sweet Sweet Love Magic.png",
+      "jacket": "banner/ddrmax2/Sweet Sweet Love Magic.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7759,16 +7587,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Sweet_Sweet_Love_Magic",
+      "saHash": "8809ol0qbbd6919bbl0b8id1669PqQ08",
+      "search_hint": "HAPPY HARDCORE/ハッピーハードコア"
     },
     {
       "name": "SYNCHRONIZED LOVE (Red Monster Hyper Mix)",
-      "name_translation": "",
       "artist": "JOE RINOIE",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_SYNCHRONIZED LOVE (Red Monster Hyper Mix).png",
+      "jacket": "banner/ddr_4th/SYNCHRONIZED LOVE (Red Monster Hyper Mix).png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 196, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -7777,16 +7605,14 @@
         { "step": 208, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 250, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 385, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/SYNCHRONIZED_LOVE(Red_Monster_Hyper_Mix)"
     },
     {
       "name": "TELEPHONE OPERATOR (Club MIX)",
-      "name_translation": "",
       "artist": "SHELLEY PETER",
-      "artist_translation": "",
       "bpm": "146",
-      "genre": "",
-      "jacket": "ex_TELEPHONE OPERATOR (Club MIX).png",
+      "jacket": "banner/ddrmax/TELEPHONE OPERATOR (Club MIX).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -7831,16 +7657,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TELEPHONE_OPERATOR(Club_MIX)"
     },
     {
       "name": "The Centre Of The Heart (STONEBRIDGE CLUB MIX)",
-      "name_translation": "",
       "artist": "Roxette",
-      "artist_translation": "",
       "bpm": "128",
-      "genre": "",
-      "jacket": "ex_The Centre Of The Heart (STONEBRIDGE CLUB MIX).png",
+      "jacket": "banner/ddrmax/The Centre Of The Heart (STONEBRIDGE CLUB MIX).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -7885,16 +7709,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/The_Centre_Of_The_Heart(STONEBRIDGE_CLUBMIX)"
     },
     {
       "name": "THE REFLEX",
-      "name_translation": "",
       "artist": "DURAN DURAN",
-      "artist_translation": "",
       "bpm": "126",
-      "genre": "",
-      "jacket": "ex_THE REFLEX.png",
+      "jacket": "banner/ddrmax2/THE REFLEX.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7939,16 +7761,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/The_Reflex"
     },
     {
       "name": "THERE YOU'LL BE",
-      "name_translation": "",
       "artist": "DJ SPEEDO feat. ANGELICA",
-      "artist_translation": "",
       "bpm": "172",
-      "genre": "",
-      "jacket": "ex_THERE YOU'LL BE.png",
+      "jacket": "banner/ddrmax2/THERE YOU'LL BE.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -7987,16 +7807,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/THERE_YOU%27LL_BE"
     },
     {
       "name": "think ya better D",
-      "name_translation": "",
       "artist": "sAmi",
-      "artist_translation": "",
       "bpm": "136",
-      "genre": "",
-      "jacket": "ex_think ya better D.png",
+      "jacket": "banner/ddr_3rd/think ya better D.png",
       "folder": "DDR home",
       "charts": [
         { "step": 148, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -8005,16 +7823,15 @@
         { "step": 172, "lvl": 3, "style": "double", "diffClass": "basic" },
         { "step": 194, "lvl": 4, "style": "double", "diffClass": "difficult" },
         { "step": 274, "lvl": 7, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Think_ya_better_D",
+      "saHash": "9lob1d1QPd9qiPlQOQ6l0dbodOoDPq1d"
     },
     {
       "name": "TRIP MACHINE",
-      "name_translation": "",
       "artist": "DE-SIRE",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_TRIP MACHINE.png",
+      "jacket": "banner/ddr_1st/TRIP MACHINE.png",
       "folder": "DDR 1st",
       "charts": [
         { "step": 191, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -8023,16 +7840,15 @@
         { "step": 201, "lvl": 7, "style": "double", "diffClass": "basic" },
         { "step": 215, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 264, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TRIP_MACHINE",
+      "saHash": "Pb9II0oiI9ODQ8OP8IqIPQP9P68biqIi"
     },
     {
       "name": "TRIP MACHINE ～luv mix～",
-      "name_translation": "",
       "artist": "2MB",
-      "artist_translation": "",
       "bpm": "160",
-      "genre": "",
-      "jacket": "ex_TRIP MACHINE ～luv mix～.png",
+      "jacket": "banner/ddr_3rd/TRIP MACHINE ～luv mix～.png",
       "folder": "DDR home",
       "charts": [
         { "step": 209, "lvl": 6, "style": "single", "diffClass": "basic" },
@@ -8041,16 +7857,15 @@
         { "step": 209, "lvl": 7, "style": "double", "diffClass": "basic" },
         { "step": 251, "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "step": 303, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TRIP_MACHINE~luv_mix~",
+      "saHash": "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO"
     },
     {
       "name": "TRIP MACHINE CLIMAX",
-      "name_translation": "",
       "artist": "DE-SIRE",
-      "artist_translation": "",
       "bpm": "180",
-      "genre": "",
-      "jacket": "ex_TRIP MACHINE CLIMAX.png",
+      "jacket": "banner/ddr_4th/TRIP MACHINE CLIMAX.png",
       "folder": "DDR 4thMIX",
       "charts": [
         { "step": 195, "lvl": 5, "style": "single", "diffClass": "basic" },
@@ -8059,16 +7874,16 @@
         { "step": 211, "lvl": 5, "style": "double", "diffClass": "basic" },
         { "step": 273, "lvl": 7, "style": "double", "diffClass": "difficult" },
         { "step": 338, "lvl": 9, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TRIP_MACHINE_CLIMAX",
+      "saHash": "D81D8689llDiOqPq0IP19bbQQiioPl8d"
     },
     {
       "name": "true... (radio edit)",
-      "name_translation": "",
       "artist": "小坂りゆ",
       "artist_translation": "RIYU KOSAKA",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_true... (radio edit).png",
+      "jacket": "banner/ddrmax/true... (radio edit).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -8113,16 +7928,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/True...(radio_edit)"
     },
     {
       "name": "true... (Trance Sunrise Mix)",
-      "name_translation": "",
       "artist": "小坂りゆ",
       "artist_translation": "RIYU KOSAKA",
       "bpm": "140",
-      "genre": "",
-      "jacket": "ex_true... (Trance Sunrise Mix).png",
+      "jacket": "banner/ddrmax/true... (Trance Sunrise Mix).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -8167,16 +7981,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/True..._(trance_sunrise_mix)"
     },
     {
       "name": "TSUGARU",
-      "name_translation": "",
       "artist": "RevenG VS. DE-SIRE",
-      "artist_translation": "",
       "bpm": "165",
-      "genre": "",
-      "jacket": "ex_TSUGARU.png",
+      "genre": "JONGARA SPIRITUAL",
+      "jacket": "banner/ddrmax2/TSUGARU.png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -8221,16 +8034,16 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TSUGARU",
+      "saHash": "io688qld6Pqq6bI01q86illP18biq0bd",
+      "search_hint": "JONGARA SPIRITUAL/じょんがらスピリチュアル"
     },
     {
       "name": "TSUGARU (APPLE MIX)",
-      "name_translation": "",
       "artist": "RevenG vs. DE-SIRE",
-      "artist_translation": "",
       "bpm": "165",
-      "genre": "",
-      "jacket": "ex_TSUGARU (APPLE MIX).png",
+      "jacket": "banner/ddrmax2/TSUGARU (APPLE MIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -8247,16 +8060,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TSUGARU_(APPLE_MIX)",
+      "saHash": "1qDD1DdPlId69010IQ18I6q8Q00IoI6D"
     },
     {
       "name": "TWILIGHT ZONE (R-C Extended Club MIX)",
-      "name_translation": "",
       "artist": "2 UNLIMITED",
-      "artist_translation": "",
       "bpm": "138",
-      "genre": "",
-      "jacket": "ex_TWILIGHT ZONE (R-C Extended Club MIX).png",
+      "jacket": "banner/ddrmax/TWILIGHT ZONE (R-C Extended Club MIX).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -8301,16 +8113,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/TWILIGHT_ZONE(R-C_Extended_Club_MIX)"
     },
     {
       "name": "WAKA LAKA",
-      "name_translation": "",
       "artist": "JENNY ROM vs ZIPPERS",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_WAKA LAKA.png",
+      "jacket": "banner/ddrmax2/WAKA LAKA.png",
       "folder": "DDRMAX2",
       "charts": [
         { "step": 154, "lvl": 3, "style": "single", "diffClass": "basic" },
@@ -8337,16 +8147,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WAKA_LAKA"
     },
     {
       "name": "WILD RUSH",
-      "name_translation": "",
       "artist": "FACTOR-X",
-      "artist_translation": "",
       "bpm": "80-180",
-      "genre": "",
-      "jacket": "ex_WILD RUSH.png",
+      "jacket": "banner/ddr_4th/WILD RUSH.png",
       "folder": "DDR solo",
       "charts": [
         { "step": 153, "lvl": 4, "style": "single", "diffClass": "basic" },
@@ -8355,16 +8163,15 @@
         { "step": 184, "lvl": 4, "style": "double", "diffClass": "basic" },
         { "step": 240, "lvl": 6, "style": "double", "diffClass": "difficult" },
         { "step": 242, "lvl": 8, "style": "double", "diffClass": "expert" }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WILD_RUSH",
+      "saHash": "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP"
     },
     {
       "name": "WILD RUSH (FROM NONSTOP MEGAMIX)",
-      "name_translation": "",
       "artist": "FACTOR-X",
-      "artist_translation": "",
       "bpm": "125",
-      "genre": "",
-      "jacket": "ex_WILD RUSH (FROM NONSTOP MEGAMIX).png",
+      "jacket": "banner/ddrmax2/WILD RUSH (FROM NONSTOP MEGAMIX).png",
       "folder": "DDRMAX2",
       "charts": [
         {
@@ -8381,16 +8188,15 @@
           "style": "double",
           "diffClass": "challenge"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WILD_RUSH(FROM_NONSTOP_MEGAMIX)",
+      "saHash": "ibOQ0QOdIPdIbIo0oPoDDI1DqPId00li"
     },
     {
       "name": "WITCH DOCTOR (GIANTS TOONS VERSION)",
-      "name_translation": "",
       "artist": "CARTOONS",
-      "artist_translation": "",
       "bpm": "150",
-      "genre": "",
-      "jacket": "ex_WITCH DOCTOR (GIANTS TOONS VERSION).png",
+      "jacket": "banner/ddrmax/WITCH DOCTOR (GIANTS TOONS VERSION).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -8435,16 +8241,14 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WITCH_DOCTOR(GIANTS_TOONS_VERSION)"
     },
     {
       "name": "WWW.BLONDE GIRL (MOMO MIX)",
-      "name_translation": "",
       "artist": "JENNY ROM",
-      "artist_translation": "",
       "bpm": "170",
-      "genre": "",
-      "jacket": "ex_WWW.BLONDE GIRL (MOMO MIX).png",
+      "jacket": "banner/ddrmax/WWW.BLONDE GIRL (MOMO MIX).png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -8489,16 +8293,15 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/WWW.BLONDE_GIRL(MOMO_MIX)"
     },
     {
       "name": "夜空ノムコウ",
       "name_translation": "YOZORA NO MUKO",
       "artist": "EUROBEAT LOVERS",
-      "artist_translation": "",
       "bpm": "156",
-      "genre": "",
-      "jacket": "ex_YOZORA NO MUKO.png",
+      "jacket": "banner/ddrmax/YOZORA NO MUKO.png",
       "folder": "DDRMAX",
       "charts": [
         {
@@ -8543,7 +8346,8 @@
           "style": "double",
           "diffClass": "expert"
         }
-      ]
+      ],
+      "remyLink": "https://remywiki.com/Yozora_no_mukou_(EUROBEAT_LOVERS)"
     }
   ]
 }
