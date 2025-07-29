@@ -45,7 +45,7 @@ export const DDR_SN = {
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=238&show_notecounts=1&sort=&sort_order=asc",
   mergeSkillAttack: false, // modern difficulty scale will mess up the data
   filename: "ddr_sn.json",
-  jacketPrefix: "ddr_sn/",
+  jacketPrefix: "banner/ddr_sn/",
   preferredJacketSource: "ziv",
 };
 
@@ -54,7 +54,7 @@ export const DDR_X = {
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=148&show_notecounts=1&sort=&sort_order=asc",
   mergeSkillAttack: false,
   filename: "ddr_x.json",
-  jacketPrefix: "ddr_x/",
+  jacketPrefix: "banner/ddr_x/",
   preferredJacketSource: "ziv",
 };
 
@@ -63,7 +63,7 @@ export const DDR_X3 = {
   ziv: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=347&show_notecounts=1&sort=&sort_order=asc",
   mergeSkillAttack: false,
   filename: "ddr_x3.json",
-  jacketPrefix: "ddr_x/",
+  jacketPrefix: "ddr_x3/",
   fetchJackets: false,
   preferredJacketSource: "remy",
   includeFolders: false,
