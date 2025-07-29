@@ -497,7 +497,8 @@ export const ALL_SONG_DATA = [
   {
     song_id: "0Od1iPb8QO8oDd9db9iq6iOP8DQ08I01",
     song_name: "エクスプロウル",
-    alphabet: "?",
+    romanized_name: "Explore",
+    alphabet: "あ",
     version_num: 20,
     ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -542,6 +543,15 @@ export const ALL_SONG_DATA = [
     version_num: 19,
     ratings: [2, 5, 7, 9, 0, 5, 7, 9, 0],
     tiers: [0.3, 0.25, 0.4, 0.6, 0, 0.25, 0.55, 0.55, 0],
+  },
+  {
+    song_id: "0P6PI0QP9b91QOlIibodd9IO90PbQO6I",
+    song_name: "Bye or not",
+    alphabet: "B",
+    version_num: 20,
+    ratings: [4, 8, 12, 14, 0, 8, 12, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
     song_id: "0Pd8il0PQd80i1O01i1D9960IdqoQo01",
@@ -633,6 +643,15 @@ export const ALL_SONG_DATA = [
     ratings: [3, 7, 12, 15, 0, 7, 12, 15, 0],
     tiers: [0.15, 0, 0.3, 0.55, 0, 0.05, 0.25, 0.4, 0],
     lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+  },
+  {
+    song_id: "0QOP6QqdlobOo9i8O6dOl8IdQl89P6PP",
+    song_name: "ZENDEGI DANCE",
+    alphabet: "Z",
+    version_num: 20,
+    ratings: [4, 9, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
   },
   {
     song_id: "0qOPDqq0qld66bll9ob9iIqiiQPiQIDQ",
@@ -1929,7 +1948,8 @@ export const ALL_SONG_DATA = [
   {
     song_id: "6iqOPoP6lQi8ilD10o8ol11DQbqooOqP",
     song_name: "アイスクリームマジック",
-    alphabet: "?",
+    romanized_name: "Ice Cream Magic",
+    alphabet: "あ",
     version_num: 20,
     ratings: [3, 5, 10, 13, 0, 5, 10, 13, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -3551,8 +3571,8 @@ export const ALL_SONG_DATA = [
   {
     song_id: "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi",
     song_name: "ロンロンへ　ライライライ！",
-    romanized_name: "Lon Lon he Rai Rai Rai",
-    alternate_name: "CoconatsuLon",
+    romanized_name: "Ronron e Rairairai",
+    alternate_name: "Lonlon e Rairairai",
     alphabet: "ら",
     version_num: 16,
     ratings: [3, 6, 10, 12, 15, 6, 10, 12, 15],
@@ -3633,6 +3653,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 11, 15, 17, 7, 12, 15, 17],
     tiers: [0.5, 0.3, 0.6, 0.95, 0.95, 0.3, 0.6, 0.95, 0.95],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "9PoQqIP0D6lPIq9obl1db9IqD0D09i80",
@@ -4810,6 +4831,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 6, 10, 12, 0, 6, 10, 12, 0],
     tiers: [0.6, 0.55, 0.4, 0.35, 0, 0.55, 0.4, 0.35, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "d8oDqIQOoD6DQoQbOIP9I6DPPOl89lo6",
@@ -5220,6 +5242,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.45, 0.4, 0.25, 0.35, 0, 0.35, 0.2, 0.4, 0],
   },
   {
+    song_id: "dDIbQIPo0PIoIP6lbbl8q9Q1Q8ib9P18",
+    song_name: "EYE OF THE HEAVEN",
+    alphabet: "E",
+    version_num: 20,
+    ratings: [4, 9, 14, 18, 0, 9, 14, 18, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
+  },
+  {
     song_id: "ddIiQ90DblbOQQIQPIbQOdb9DdPoOQ9Q",
     song_name: "Toy Box Factory",
     alphabet: "T",
@@ -5366,7 +5397,10 @@ export const ALL_SONG_DATA = [
   {
     song_id: "dDqq9QbDDO8l6q8i1l91oQPbQD8Pqi0i",
     song_name: "覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～",
-    alphabet: "?",
+    searchable_name: "かくごせよえんたんめーんよりみのきりうりじぼうじきばん",
+    romanized_name: "Kakugoseyo Enternmeen Yori Mi no Kiriuri Jiboujiki Ban",
+    alternate_name: "えんたんめん/Entanmen",
+    alphabet: "か",
     version_num: 20,
     ratings: [4, 7, 11, 14, 0, 7, 11, 14, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -7549,7 +7583,6 @@ export const ALL_SONG_DATA = [
     version_num: 16,
     ratings: [3, 7, 10, 12, 15, 7, 10, 12, 16],
     tiers: [0.4, 0.25, 0.5, 0.5, 0.6, 0.35, 0.55, 0.6, 0.15],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "IPdDlblblqO1do9IQbDoi0iOoPDoiDlI",
@@ -8668,6 +8701,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.4, 0.35, 0.5, 0.6, 0, 0.25, 0.4, 0.45, 0],
   },
   {
+    song_id: "o1biqbO9i1IiObD0d1D8d8iqb6q86Qqi",
+    song_name: "Daisycutter",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [5, 10, 13, 17, 0, 9, 13, 17, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
+  },
+  {
     song_id: "O1blDPOQ8IQb00o0D89QIDIlo8b06liD",
     song_name: "HIGHER",
     alphabet: "H",
@@ -9008,8 +9050,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "ObiiQb81io69166olbOqODQOQO10DbQi",
     song_name: "まにぃまにあ××",
-    searchable_name: "まにまにいあxx",
-    romanized_name: "Manimaniaxx",
+    searchable_name: "まにぃまにいあxx",
+    romanized_name: "Many Mania",
+    alternate_name: "Many Mania xx",
     alphabet: "ま",
     version_num: 20,
     ratings: [3, 7, 10, 14, 0, 6, 10, 14, 0],
@@ -9535,7 +9578,6 @@ export const ALL_SONG_DATA = [
     version_num: 15,
     ratings: [6, 10, 13, 16, 18, 9, 13, 16, 18],
     tiers: [0.5, 0.6, 0.7, 0.8, 0.7, 0.4, 0.55, 0.8, 0.35],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "Ol8PPooqO8iOqQ6900o0q0QI9dPo0O0b",
@@ -10346,6 +10388,17 @@ export const ALL_SONG_DATA = [
     lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
   },
   {
+    song_id: "PdD1dlq1q00q8o9Il6IIqi61Il9DIo61",
+    song_name: "疾風迅雷",
+    searchable_name: "しっぷうじんらい",
+    romanized_name: "Shippuujinrai",
+    alphabet: "さ",
+    version_num: 20,
+    ratings: [4, 9, 13, 17, 0, 9, 14, 17, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [240, 240, 240, 240, 0, 240, 240, 240, 0],
+  },
+  {
     song_id: "PddldblI909IqI8PPiQIo9lIIiQdDo1l",
     song_name: "MEGALOVANIA",
     alternate_name: "Undertale/サンズ",
@@ -11137,6 +11190,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 8, 12, 15, 17, 8, 12, 15, 17],
     tiers: [0.45, 0.25, 0.5, 0.6, 0.5, 0.25, 0.35, 0.6, 0.5],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "q8q0D8QoP89IqooiiD0q66QPI1b8lDi0",
@@ -12295,4 +12349,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1752252516270;
+export const SONG_DATA_LAST_UPDATED_unixms = 1753286655912;

@@ -33,7 +33,7 @@ setJacketPrefix(MIX_META.jacketPrefix);
 /**
  * Invalid data on 3icecream site
  * @typedef {typeof import('./scraping/songdata.mjs').ALL_SONG_DATA[number]} SongData
- * @type {Map<SongData['song_id'], Pick<Partial<SongData>, 'ratings' | 'lock_types' | 'deleted'>>}
+ * @type {Map<SongData['song_id'], Partial<SongData>>}
  */
 const invalidDataOnSanbai = new Map([
   [
@@ -48,31 +48,12 @@ const invalidDataOnSanbai = new Map([
     "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
     { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
   ],
-  [
-    "9PO0qPdi1OQo68Qb09qdIOo6008QoIPq", // 量子の海のリントヴルム (STARDOM Remix)
-    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
-  ],
-  [
-    "Q8PqoP91qqI6I909IdQ098091q9q0i19", // ドーパミン (STARDOM Remix)
-    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
-  ],
-  [
-    "D8o868di9DidPo98ibOdqbi98Ii869Qb", // Love You
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "iP8ll9I0dd8d689PPqlI9008d06io09q", // 恋愛観測
-    { lock_types: [0, 0, 0, 0, 0, 0, 0, 0, 0] },
-  ],
-  [
-    "ol6IDd019O0qq8dblPQ96ol1oPbI990b", // HAPPY☆LUCKY☆YEAPPY
-    { lock_types: [0, 0, 0, 0, 0, 0, 0, 0, 0] },
-  ],
 ]);
 
 const lockFlags = {
   20: ["goldExclusive", "tempUnlock"], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
   190: ["grandPrixPack"], // DDR GRAND PRIX packs
+  240: ["unlock"], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   250: ["flareRank"], // FLARE SKILL unlock
   260: ["tempUnlock"], // MYSTICAL Re:UNION
   270: ["worldLeague"], // WORLD LEAGUE
@@ -183,30 +164,29 @@ try {
     // Fix invalid data
     if (invalidDataOnSanbai.has(song.song_id)) {
       const actual = invalidDataOnSanbai.get(song.song_id);
-      if (
-        actual.ratings &&
-        song.ratings.some((lvl, i) => lvl !== actual.ratings[i])
-      ) {
-        ui.log.write(
-          `Fixing invalid ratings of ${song.song_name} on 3ice : ${song.ratings} -> ${actual.ratings}`,
-        );
-        song.ratings = actual.ratings;
-        song.tiers = song.tiers.map((_) => 1); // reset tiers
-      }
-      if (
-        !!actual.lock_types !== !!song.lock_types ||
-        song.lock_types?.some((l, i) => l !== actual.lock_types[i])
-      ) {
-        ui.log.write(
-          `Fixing invalid lock_types of ${song.song_name} on 3ice : ${song.lock_types?.map((i) => lockFlags[i])} -> ${actual.lock_types?.map((i) => lockFlags[i])}`,
-        );
-        song.lock_types = actual.lock_types;
-      }
-      if (actual.deleted !== song.deleted) {
-        ui.log.write(
-          `Fixing invalid deleted of ${song.song_name} on 3ice : ${song.deleted} -> ${actual.deleted}`,
-        );
-        song.deleted = actual.deleted;
+      for (const [key, value] of Object.entries(actual)) {
+        if (!Array.isArray(value) && value !== song[key]) {
+          ui.log.write(
+            `Fixing invalid ${key} of ${song.song_name} on 3ice : ${song[key]} -> ${value}`,
+          );
+          song[key] = value;
+        } else if (
+          Array.isArray(value) &&
+          (value.length !== song[key]?.length ||
+            value.some((v, i) => v !== song[key][i]))
+        ) {
+          ui.log.write(
+            `Fixing invalid ${key} of ${song.song_name} on 3ice : ${song[key]} -> ${value}`,
+          );
+          song[key] = value;
+          if (key === "ratings") {
+            song.tiers = song.tiers.map((_) => 1); // reset tiers
+          }
+        } else {
+          ui.log.write(
+            `invalidDataOnSanbai has ${song.song_name}.${key}, but no change needed`,
+          );
+        }
       }
     }
 
@@ -373,7 +353,9 @@ try {
       if (remyLink && !jacket) {
         jacket = await getJacketFromRemySong(remyLink, song.song_name);
       }
-      const meta = await getMetaFromRemy(remyLink);
+      const meta = remyLink
+        ? await getMetaFromRemy(remyLink)
+        : { artist: null, bpm: null };
       existingData.songs.push({
         name: song.song_name,
         saHash: song.song_id,

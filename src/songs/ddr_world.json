@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1752252516270
+    "lastUpdated": 1753286655912
   },
   "defaults": {
     "style": "single",
@@ -8402,6 +8402,53 @@
       "saIndex": "73"
     },
     {
+      "name": "Bye or not",
+      "saHash": "0P6PI0QP9b91QOlIibodd9IO90PbQO6I",
+      "artist": "PSYQUI feat. mikanzil",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "170",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/Bye_or_not.png",
+      "remyLink": "https://remywiki.com/Bye_or_not",
+      "flags": ["unlock"]
+    },
+    {
       "name": "C-C-C-N-N-N",
       "artist": "RoughSkreamZ feat. Aikapin",
       "bpm": "162-180",
@@ -12531,6 +12578,53 @@
       "saHash": "ldlqDQ0bb8d9do86o898P0qo1OlD88qD",
       "saIndex": "582",
       "search_hint": "LUCKY HARDCORE/ラッキーハードコア"
+    },
+    {
+      "name": "Daisycutter",
+      "saHash": "o1biqbO9i1IiObD0d1D8d8iqb6q86Qqi",
+      "artist": "ETIA.",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "192",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/Daisycutter.png",
+      "remyLink": "https://remywiki.com/Daisycutter",
+      "flags": ["unlock"]
     },
     {
       "name": "DANCE ALL NIGHT (DDR EDITION)",
@@ -19363,6 +19457,57 @@
       "jacket": "ddr_max-ext/exotic ethnic.png",
       "saHash": "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO",
       "saIndex": "62"
+    },
+    {
+      "name": "EYE OF THE HEAVEN",
+      "saHash": "dDIbQIPo0PIoIP6lbbl8q9Q1Q8ib9P18",
+      "artist": "BEMANI Sound Team \"U1-ASAMi\"",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "154-308",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "308"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "308"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "308"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
+      "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
+      "flags": ["unlock"],
+      "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
       "name": "F4SH10N",
@@ -66811,6 +66956,57 @@
       "saIndex": "1000"
     },
     {
+      "name": "ZENDEGI DANCE",
+      "saHash": "0QOP6QqdlobOo9i8O6dOl8IdQl89P6PP",
+      "artist": "ARM × BEMANI Sound Team \"U1 overground\"",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "80-160",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "160"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "160"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "160"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/ZENDEGI DANCE.jpg",
+      "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
+      "flags": ["unlock"],
+      "genre": "ORBITALIC ORIENTAL ELECTRO"
+    },
+    {
       "name": "ZEPHYRANTHES",
       "artist": "TAG",
       "bpm": "180",
@@ -82493,6 +82689,59 @@
       "saHash": "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl",
       "saIndex": "222",
       "search_hint": "HIP ROCK 2/ヒップロック2"
+    },
+    {
+      "name": "疾風迅雷",
+      "name_translation": "Shippuujinrai",
+      "saHash": "PdD1dlq1q00q8o9Il6IIqi61Il9DIo61",
+      "artist": "KUMOKIRI",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "90-180",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "180"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "180"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "180"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/疾風迅雷.jpg",
+      "remyLink": "https://remywiki.com/Shippuujinrai",
+      "flags": ["unlock"],
+      "genre": "ORIENTAL CORE",
+      "search_hint": "しっぷうじんらい"
     },
     {
       "name": "白日と幻月",
