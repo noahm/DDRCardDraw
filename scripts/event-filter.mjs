@@ -19,6 +19,11 @@ const existingData = JSON.parse(
 existingData.i18n.en.name = "MotL6 DDR";
 existingData.i18n.ja.name = "MotL6 DDR";
 existingData.meta.menuParent = "events";
+existingData.meta.styles = ["single"];
+delete existingData.meta.folders;
+existingData.meta.flags = ["shock"];
+existingData.defaults.flags = ["shock"];
+existingData.defaults.difficulties.push("basic");
 
 const csvFile = process.argv[2];
 if (!csvFile) {
@@ -58,6 +63,18 @@ function normalizeDiff(chart) {
   }
 }
 
+/**
+ * deletes all flags other than shock
+ * @param {{flags?: string[]}} flaggable
+ */
+function clearFlags(flaggable) {
+  if (flaggable.flags?.includes("shock")) {
+    flaggable.flags = ["shock"];
+  } else {
+    delete flaggable.flags;
+  }
+}
+
 let totalCharts = 0;
 
 existingData.songs = existingData.songs.filter((song) => {
@@ -65,12 +82,12 @@ existingData.songs = existingData.songs.filter((song) => {
   if (!matching.length) return false;
   song.charts = song.charts.filter((chart) => {
     if (chart.style !== "single") return false;
-    delete chart.flags;
+    clearFlags(chart);
     return matching.some((row) => row.Difficulty === normalizeDiff(chart));
   });
   if (song.charts.length) {
     totalCharts += song.charts.length;
-    delete song.flags;
+    clearFlags(song);
     return true;
   }
   console.log("filtered all", song);

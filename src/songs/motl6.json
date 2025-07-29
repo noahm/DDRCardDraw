@@ -1,7 +1,7 @@
 {
   "$schema": "../../songs.schema.json",
   "meta": {
-    "styles": ["single", "double"],
+    "styles": ["single"],
     "difficulties": [
       {
         "key": "beginner",
@@ -24,37 +24,15 @@
         "color": "#cc71e8"
       }
     ],
-    "folders": [
-      "DanceDanceRevolution World",
-      "DanceDanceRevolution A3",
-      "DanceDanceRevolution A20 PLUS",
-      "DanceDanceRevolution A20",
-      "DanceDanceRevolution A",
-      "DanceDanceRevolution (2014)",
-      "DanceDanceRevolution (2013)",
-      "DanceDanceRevolution X3 vs 2nd MIX",
-      "DanceDanceRevolution X2",
-      "DanceDanceRevolution X",
-      "DanceDanceRevolution SuperNOVA2",
-      "DanceDanceRevolution SuperNOVA",
-      "DanceDanceRevolution EXTREME",
-      "DDRMAX2 -DanceDanceRevolution 7thMIX-",
-      "DDRMAX -DanceDanceRevolution 6thMIX-",
-      "DanceDanceRevolution 5th Mix",
-      "DanceDanceRevolution 4th Mix",
-      "DanceDanceRevolution 3rd Mix",
-      "DanceDanceRevolution 2nd Mix",
-      "DanceDanceRevolution 1st Mix"
-    ],
-    "flags": [],
+    "flags": ["shock"],
     "granularTierResolution": 20,
-    "lastUpdated": 1753800139775,
+    "lastUpdated": 1753824988857,
     "menuParent": "events"
   },
   "defaults": {
     "style": "single",
-    "difficulties": ["difficult", "expert", "challenge"],
-    "flags": ["shock", "flareRank"],
+    "difficulties": ["difficult", "expert", "challenge", "basic"],
+    "flags": ["shock"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
@@ -253,6 +231,7 @@
           "step": 340,
           "freeze": 7,
           "shock": 91,
+          "flags": ["shock"],
           "sanbaiTier": 14.6
         }
       ],
@@ -1401,7 +1380,8 @@
           "step": 725,
           "freeze": 4,
           "shock": 18,
-          "sanbaiTier": 18.65
+          "sanbaiTier": 18.65,
+          "flags": ["shock"]
         }
       ],
       "remyLink": "https://remywiki.com/DIGITALIZER",
@@ -1777,6 +1757,7 @@
           "step": 431,
           "freeze": 8,
           "shock": 122,
+          "flags": ["shock"],
           "sanbaiTier": 16.55
         }
       ],
@@ -1895,6 +1876,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 13.65
         }
       ],
@@ -2132,6 +2114,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 11.5
         }
       ],
@@ -2364,6 +2347,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 15.8
         }
       ],
@@ -2901,6 +2885,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 12.6
         }
       ],
@@ -3095,6 +3080,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 12.45
         }
       ],
@@ -3320,6 +3306,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 18.55
         }
       ],
@@ -3534,6 +3521,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 12.5
         }
       ],
@@ -3843,6 +3831,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 18.75
         }
       ],
@@ -4160,6 +4149,7 @@
           "step": 492,
           "freeze": 10,
           "shock": 64,
+          "flags": ["shock"],
           "sanbaiTier": 16.7
         }
       ],
@@ -4227,6 +4217,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 13.85
         }
       ],
@@ -4779,6 +4770,7 @@
           "lvl": 11,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 11.7
         }
       ],
@@ -5732,6 +5724,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
+          "flags": ["shock"],
           "sanbaiTier": 13.75
         }
       ],
