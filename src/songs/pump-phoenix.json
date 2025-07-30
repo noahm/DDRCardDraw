@@ -14,7 +14,7 @@
       { "key": "R", "color": "#23a98d" }
     ],
     "flags": ["unlock", "ampass", "cut:1", "cut:2", "cut:3", "cut:4"],
-    "lastUpdated": 1748335907000
+    "lastUpdated": 1753917355
   },
   "defaults": {
     "style": "solo",
@@ -10575,24 +10575,6 @@
       ]
     },
     {
-      "saIndex": "1030",
-      "name": "Autumn Break",
-      "jacket": "pump/Autumn_Break.jpg",
-      "artist": "Cosmograph",
-      "bpm": "175",
-      "flags": ["cut:2"],
-      "charts": [
-        { "lvl": 4, "diffClass": "S", "style": "solo" },
-        { "lvl": 7, "diffClass": "S", "style": "solo" },
-        { "lvl": 12, "diffClass": "S", "style": "solo" },
-        { "lvl": 16, "diffClass": "S", "style": "solo" },
-        { "lvl": 21, "diffClass": "S", "style": "solo" },
-        { "lvl": 14, "diffClass": "D", "style": "solo" },
-        { "lvl": 18, "diffClass": "D", "style": "solo" },
-        { "lvl": 23, "diffClass": "D", "style": "solo" }
-      ]
-    },
-    {
       "saIndex": "1031",
       "name": "Solve My Hurt",
       "jacket": "pump/Solve_My_Hurt.jpg",
@@ -10733,6 +10715,165 @@
         { "lvl": 18, "diffClass": "D", "style": "solo" },
         { "lvl": 20, "diffClass": "D", "style": "solo" },
         { "lvl": 22, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1039",
+      "name": "4NT",
+      "jacket": "pump/4NT.jpg",
+      "artist": "PODA",
+      "bpm": "180",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 9, "diffClass": "S", "style": "solo" },
+        { "lvl": 12, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1040",
+      "name": "The Apocalypse",
+      "jacket": "pump/The_Apocalypse.jpg",
+      "artist": "HyuN feat. Elika",
+      "bpm": "171",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 4, "diffClass": "S", "style": "solo" },
+        { "lvl": 7, "diffClass": "S", "style": "solo" },
+        { "lvl": 11, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "D", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1041",
+      "name": "Glimmer Gleam",
+      "jacket": "pump/Glimmer_Gleam.jpg",
+      "artist": "Doin",
+      "bpm": "85",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 8, "diffClass": "S", "style": "solo" },
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 14, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1042",
+      "name": "Demon of Laplace",
+      "jacket": "pump/Demon_of_Laplace.jpg",
+      "artist": "Quree",
+      "bpm": "144",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 6, "diffClass": "S", "style": "solo" },
+        { "lvl": 10, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 20, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1043",
+      "name": "†DOOF†SENC†",
+      "jacket": "pump/DOOF_SENC.jpg",
+      "artist": "Kobaryo",
+      "bpm": "200",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 15, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 19, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1044",
+      "name": "That Kitty (PIU Edit.)",
+      "jacket": "pump/That_Kitty.jpg",
+      "artist": "MonstDeath",
+      "bpm": "190",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 13, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 15, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1045",
+      "name": "Spooky Macaron",
+      "jacket": "pump/Spooky_Macaron.jpg",
+      "artist": "Sobrem",
+      "bpm": "201",
+      "flags": ["cut:2"],
+      "charts": [
+        { "lvl": 14, "diffClass": "S", "style": "solo" },
+        { "lvl": 17, "diffClass": "S", "style": "solo" },
+        { "lvl": 20, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 16, "diffClass": "D", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 25, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1046",
+      "name": "PRiMA MATERiA - SHORT CUT -",
+      "jacket": "pump/PRiMA_MATERiA_Shortcut.jpg",
+      "artist": "xi",
+      "bpm": "187",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 18, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 23, "diffClass": "S", "style": "solo" },
+        { "lvl": 22, "diffClass": "D", "style": "solo" },
+        { "lvl": 24, "diffClass": "D", "style": "solo" }
+      ]
+    },
+    {
+      "saIndex": "1047",
+      "name": "DUEL - SHORT CUT -",
+      "jacket": "pump/DUEL_Shortcut.jpg",
+      "artist": "Cashew & D_AAN",
+      "bpm": "155",
+      "flags": ["cut:1"],
+      "charts": [
+        { "lvl": 16, "diffClass": "S", "style": "solo" },
+        { "lvl": 19, "diffClass": "S", "style": "solo" },
+        { "lvl": 21, "diffClass": "S", "style": "solo" },
+        { "lvl": 18, "diffClass": "D", "style": "solo" },
+        { "lvl": 21, "diffClass": "D", "style": "solo" },
+        { "lvl": 23, "diffClass": "D", "style": "solo" }
       ]
     }
   ]
