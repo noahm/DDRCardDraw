@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1753286655912
+    "lastUpdated": 1753979276963
   },
   "defaults": {
     "style": "single",
@@ -2469,30 +2469,6 @@
       "saIndex": "13"
     },
     {
-      "name": "AFRONOVA(FROM NONSTOP MEGAMIX)",
-      "artist": "RE-VENGE",
-      "bpm": "200",
-      "folder": "DDRMAX2 -DanceDanceRevolution 7thMIX-",
-      "charts": [
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 10.5
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 10.75
-        }
-      ],
-      "remyLink": "https://remywiki.com/AFRONOVA_(FROM_NONSTOP_MEGAMIX)",
-      "jacket": "ddr_max-ext/AFRONOVA(FROM NONSTOP MEGAMIX).png",
-      "saHash": "DdO1iboqI6980Q6QPD9P1PbQQ88I16lq",
-      "saIndex": "67"
-    },
-    {
       "name": "AFRONOVA (X-Special)",
       "artist": "RE-VENGE",
       "bpm": "200",
@@ -2578,6 +2554,30 @@
       "saHash": "18911Q6o6do9Dd1blIo6IliPd0PPb99i",
       "saIndex": "50",
       "search_hint": "TRIBAL/トライバル"
+    },
+    {
+      "name": "AFRONOVA(FROM NONSTOP MEGAMIX)",
+      "artist": "RE-VENGE",
+      "bpm": "200",
+      "folder": "DDRMAX2 -DanceDanceRevolution 7thMIX-",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 10.5
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 10.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/AFRONOVA_(FROM_NONSTOP_MEGAMIX)",
+      "jacket": "ddr_max-ext/AFRONOVA(FROM NONSTOP MEGAMIX).png",
+      "saHash": "DdO1iboqI6980Q6QPD9P1PbQQ88I16lq",
+      "saIndex": "67"
     },
     {
       "name": "AFTER THE GAME OF LOVE",
@@ -8704,60 +8704,6 @@
       "saIndex": "31"
     },
     {
-      "name": "CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～",
-      "artist": "NAOKI",
-      "bpm": "170",
-      "folder": "DanceDanceRevolution 5th Mix",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 4.2
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 6.25
-        },
-        {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.35
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.5
-        },
-        {
-          "lvl": 5,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 5.35
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 9.3
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.1
-        }
-      ],
-      "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_~SPEED_MIX~",
-      "jacket": "ddr_1st-5th/CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～.png",
-      "saHash": "DOqPd1Iid6oObd8i96I9oo8obbODb96o",
-      "saIndex": "52"
-    },
-    {
       "name": "CAN'T STOP FALLIN' IN LOVE -super euro version-",
       "artist": "NAOKI with Y&Co.",
       "bpm": "155",
@@ -8819,6 +8765,60 @@
       "jacket": "ddr_sn-sn2/CAN'T STOP FALLIN' IN LOVE -super euro version-.png",
       "saHash": "8IdP90DQDi9bqodPqDQIIqOqOO08PPio",
       "saIndex": "153"
+    },
+    {
+      "name": "CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～",
+      "artist": "NAOKI",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution 5th Mix",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 4.2
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 6.25
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 9.35
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.5
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 5.35
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 9.3
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 12.1
+        }
+      ],
+      "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_~SPEED_MIX~",
+      "jacket": "ddr_1st-5th/CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～.png",
+      "saHash": "DOqPd1Iid6oObd8i96I9oo8obbODb96o",
+      "saIndex": "52"
     },
     {
       "name": "CANDY (UFO mix)",
@@ -16932,7 +16932,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.6
         },
         {
@@ -16957,7 +16956,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.6
         }
       ],
@@ -21031,6 +21029,60 @@
       "search_hint": "Orbitalic Techno/オービタリックテクノ"
     },
     {
+      "name": "Flow (Jammin' Ragga Mix)",
+      "artist": "Scotty D. revisits U1",
+      "bpm": "70-140",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "sanbaiTier": 4.35
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 5.5
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 8.9
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.75
+        },
+        {
+          "lvl": 4,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 4.65
+        },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 7.85
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 13.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Flow_(Jammin%27_Ragga_Mix)",
+      "jacket": "ddr_sn-sn2/Flow (Jammin' Ragga Mix).png",
+      "saHash": "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI",
+      "saIndex": "242"
+    },
+    {
       "name": "Flow (True Style)",
       "artist": "Scotty D. revisits U1",
       "bpm": "140-280",
@@ -21114,60 +21166,6 @@
       "saHash": "0D096II0i9l0doPlbPQbiPo1IQDDoOP0",
       "saIndex": "162",
       "search_hint": "Orbitalic Techno/オービタリックテクノ"
-    },
-    {
-      "name": "Flow (Jammin' Ragga Mix)",
-      "artist": "Scotty D. revisits U1",
-      "bpm": "70-140",
-      "folder": "DanceDanceRevolution SuperNOVA2",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 4.35
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.5
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.9
-        },
-        {
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.75
-        },
-        {
-          "lvl": 4,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 4.65
-        },
-        {
-          "lvl": 7,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 7.85
-        },
-        {
-          "lvl": 13,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 13.55
-        }
-      ],
-      "remyLink": "https://remywiki.com/Flow_(Jammin%27_Ragga_Mix)",
-      "jacket": "ddr_sn-sn2/Flow (Jammin' Ragga Mix).png",
-      "saHash": "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI",
-      "saIndex": "242"
     },
     {
       "name": "FLOWER",
@@ -25560,30 +25558,6 @@
       "saIndex": "56"
     },
     {
-      "name": "Healing Vision(X-Special)",
-      "artist": "DE-SIRE",
-      "bpm": "49-196",
-      "folder": "DanceDanceRevolution X",
-      "charts": [
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 14.65
-        },
-        {
-          "lvl": 15,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 15.7
-        }
-      ],
-      "remyLink": "https://remywiki.com/Healing_Vision",
-      "jacket": "ddr_x/Healing Vision(X-Special).png",
-      "saHash": "0D1618DDbol8bl9dP0lDdiD66ioIiidD",
-      "saIndex": "290"
-    },
-    {
       "name": "Healing Vision ～Angelic mix～",
       "artist": "2MB",
       "bpm": "49-196",
@@ -25636,6 +25610,30 @@
       "jacket": "ddr_max-ext/Healing Vision ～Angelic mix～.png",
       "saHash": "olQQ8QPPqqObDD9ooodOl9i9od8b06I9",
       "saIndex": "63"
+    },
+    {
+      "name": "Healing Vision(X-Special)",
+      "artist": "DE-SIRE",
+      "bpm": "49-196",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 14.65
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 15.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Healing_Vision",
+      "jacket": "ddr_x/Healing Vision(X-Special).png",
+      "saHash": "0D1618DDbol8bl9dP0lDdiD66ioIiidD",
+      "saIndex": "290"
     },
     {
       "name": "Healing-D-Vision",
@@ -59050,7 +59048,6 @@
           "sanbaiTier": 16.35
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/THE_SAFARI_(STARDOM_Remix)",
       "jacket": "ddr_world/THE_SAFARI_(STARDOM_Remix).jpg",
       "saHash": "bd9dlo8IQOOdQD0dlPQ0bqqdOdl90ol0"
@@ -66079,6 +66076,54 @@
       "jacket": "ddr_a3/Worst Plan.jpg",
       "saHash": "1lqii0IibdbPD19P6DiIl0Id9do6qqd1",
       "saIndex": "1074"
+    },
+    {
+      "name": "WOW WAR TONIGHT ～時には起こせよムーヴメント",
+      "name_translation": "WOW WAR TONIGHT Tokini wa Okoseyo Movement",
+      "artist": "Covered by uzumaki with Hommarju",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "180",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/WOW WAR TONIGHT ～時には起こせよムーヴメント.jpg",
+      "remyLink": "https://remywiki.com/WOW_WAR_TONIGHT_~toki_ni_wa_okoseyo_movement",
+      "saHash": "09lOI9Ii1OD9b9bi9q0q1DQi668bO8qb",
+      "search_hint": "WOW WAR TONIGHT ときにはおこせよムーヴメント"
     },
     {
       "name": "Wow Wow VENUS",
@@ -74764,7 +74809,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.75
         },
         {
@@ -74789,7 +74833,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.55
         }
       ],
@@ -77713,6 +77756,54 @@
       "saIndex": "960"
     },
     {
+      "name": "可愛くてごめん",
+      "name_translation": "Kawaikute Gomen",
+      "artist": "Remixed by MK feat. 紫咲ほたる",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "160",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/可愛くてごめん.jpg",
+      "remyLink": "https://remywiki.com/Kawaikute_gomen",
+      "saHash": "O6ld8Oo6Dq6OO61dIl1iPqqPO8b0d9bd",
+      "search_hint": "かわいくてごめん"
+    },
+    {
       "name": "向日葵サンセット",
       "name_translation": "Himawari sunset",
       "artist": "ARM・まろん (IOSYS) × ランコ・パプリカ (豚乙女)",
@@ -77890,6 +77981,11 @@
           "sanbaiTier": 12.25
         },
         {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
           "lvl": 4,
           "style": "double",
           "diffClass": "basic",
@@ -77906,6 +78002,11 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.25
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge"
         }
       ],
       "flags": ["copyStrikes"],
@@ -85186,6 +85287,54 @@
       "search_hint": "A.I.DATE POP/A.I.デイトポップ"
     },
     {
+      "name": "雑踏、僕らの街",
+      "name_translation": "Zattou Bokura no Machi",
+      "artist": "Covered by taru",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "171",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/雑踏、僕らの街.jpg",
+      "remyLink": "https://remywiki.com/Zattou,_bokura_no_machi",
+      "saHash": "O91llDdDb1lbbPDbDoPQ09l0l68o9iQ1",
+      "search_hint": "ざっとうぼくらのまち Wrong World"
+    },
+    {
       "name": "雪上断火",
       "name_translation": "Setsujou Danka",
       "artist": "Des-ROW・組",
@@ -85624,7 +85773,6 @@
           "sanbaiTier": 17.5
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Ongaku_(STARDOM_Remix)",
       "jacket": "ddr_world/Ongaku (STARDOM Remix).jpg",
       "saHash": "bdP0IOiPiQ8OlIbD1QQO8O6dPQqqb1Qb"

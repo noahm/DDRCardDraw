@@ -108,7 +108,6 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     ratings: [3, 7, 11, 14, 17, 7, 11, 14, 17],
     tiers: [0.35, 0.55, 0.4, 0.2, 0.75, 0.45, 0.4, 0.2, 0.55],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "06lOillb6id0Dib9o1b06iPblqPl61PI",
@@ -161,7 +160,6 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     ratings: [3, 7, 10, 15, 16, 8, 11, 15, 16],
     tiers: [0.5, 0.7, 0.45, 0.35, 0.6, 0.5, 0.35, 0.3, 0.6],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "08PO96OlIoQqPdq91Q1Qqlo8lPidbPP8",
@@ -187,6 +185,16 @@ export const ALL_SONG_DATA = [
     version_num: 11,
     ratings: [3, 4, 6, 8, 0, 4, 6, 9, 0],
     tiers: [0.3, 0.3, 0.5, 0.3, 0, 0.4, 0.45, 0.4, 0],
+  },
+  {
+    song_id: "09lOI9Ii1OD9b9bi9q0q1DQi668bO8qb",
+    song_name: "WOW WAR TONIGHT ～時には起こせよムーヴメント",
+    searchable_name: "WOW WAR TONIGHT ときにはおこせよムーヴメント",
+    romanized_name: "WOW WAR TONIGHT Tokini wa Okoseyo Movement",
+    alphabet: "W",
+    version_num: 20,
+    ratings: [3, 6, 9, 12, 0, 5, 9, 12, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "09looidO89Q9DiDdqQiDPlIQDoiobobQ",
@@ -3729,8 +3737,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Show",
     alphabet: "し",
     version_num: 20,
-    ratings: [1, 4, 7, 12, 0, 4, 7, 12, 0],
-    tiers: [0.35, 0.35, 0.45, 0.25, 0, 0.2, 0.35, 0.25, 0],
+    ratings: [1, 4, 7, 12, 15, 4, 7, 12, 15],
+    tiers: [0.35, 0.35, 0.45, 0.25, 1, 0.2, 0.35, 0.25, 1],
   },
   {
     song_id: "b08D1ODPP0IqlIl91dDDdD1d0lD8bP1d",
@@ -4006,7 +4014,6 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 6, 11, 13, 16, 6, 11, 13, 16],
     tiers: [0.25, 0.2, 0.15, 0.65, 0.65, 0.15, 0.15, 0.6, 0.35],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
     song_id: "bdbQoi98Dlb18DiPDPdD801DoOD8619O",
@@ -4042,7 +4049,6 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 5, 8, 12, 17, 5, 8, 12, 17],
     tiers: [0.25, 0.2, 0.45, 0.25, 0.55, 0, 0.3, 0.15, 0.5],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
     song_id: "bdQ6IobP6II86I1io686Il9qQ69dOod1",
@@ -8777,6 +8783,16 @@ export const ALL_SONG_DATA = [
     tiers: [0.65, 0.85, 0.8, 0.7, 0.7, 0.8, 0.7, 0.55, 0.7],
   },
   {
+    song_id: "O6ld8Oo6Dq6OO61dIl1iPqqPO8b0d9bd",
+    song_name: "可愛くてごめん",
+    searchable_name: "かわいくてごめん",
+    romanized_name: "Kawaikute Gomen",
+    alphabet: "か",
+    version_num: 20,
+    ratings: [1, 5, 8, 11, 0, 5, 8, 11, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "O6llIdODQD6oDQ6QiPQDOlob9i8l6qib",
     song_name: "Fascination MAXX",
     alternate_name: "FaXX/ファックス",
@@ -8908,6 +8924,17 @@ export const ALL_SONG_DATA = [
     version_num: 9,
     ratings: [3, 4, 6, 9, 0, 3, 6, 9, 0],
     tiers: [0.5, 0.55, 0.55, 0.3, 0, 0.65, 0.7, 0.4, 0],
+  },
+  {
+    song_id: "O91llDdDb1lbbPDbDoPQ09l0l68o9iQ1",
+    song_name: "雑踏、僕らの街",
+    searchable_name: "ざっとうぼくらのまち",
+    romanized_name: "Zattou Bokura no Machi",
+    alternate_name: "Wrong World",
+    alphabet: "さ",
+    version_num: 20,
+    ratings: [2, 5, 10, 13, 0, 5, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "o91qiqqDi9b6d6l1dQ6qO6oO0QDIlPql",
@@ -12349,4 +12376,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1753286655912;
+export const SONG_DATA_LAST_UPDATED_unixms = 1753979276963;

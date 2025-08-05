@@ -358,16 +358,16 @@ try {
         : { artist: null, bpm: null };
       existingData.songs.push({
         name: song.song_name,
-        saHash: song.song_id,
+        name_translation: song.romanized_name,
         artist: meta.artist || "???",
         folder: foldersByIndex[song.version_num],
         bpm: meta.bpm || "???",
         charts,
-        jacket,
-        remyLink: remyLink ? remyLink : undefined,
         flags:
           songLock && lockFlags[songLock] ? lockFlags[songLock] : undefined,
-        name_translation: song.romanized_name,
+        jacket,
+        remyLink: remyLink ? remyLink : undefined,
+        saHash: song.song_id,
         search_hint:
           [song.searchable_name, song.alternate_name]
             .filter(Boolean)
