@@ -52,6 +52,10 @@ const invalidDataOnSanbai = new Map([
     "99I10l8o6DPI886l9818ID16OlqI8oId", // ミックスナッツ
     { deleted: true },
   ],
+  [
+    "i09oqb0o1boQdi1blIb1D08PlDI1o6lo", // Saiph
+    { flags: ["unlock"] },
+  ],
 ]);
 
 const lockFlags = {
