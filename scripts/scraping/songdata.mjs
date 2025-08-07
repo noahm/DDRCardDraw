@@ -190,7 +190,7 @@ export const ALL_SONG_DATA = [
     song_id: "09lOI9Ii1OD9b9bi9q0q1DQi668bO8qb",
     song_name: "WOW WAR TONIGHT ～時には起こせよムーヴメント",
     searchable_name: "WOW WAR TONIGHT ときにはおこせよムーヴメント",
-    romanized_name: "WOW WAR TONIGHT Tokini wa Okoseyo Movement",
+    romanized_name: "WOW WAR TONIGHT Toki ni wa Okoseyo Movement",
     alphabet: "W",
     version_num: 20,
     ratings: [3, 6, 9, 12, 0, 5, 9, 12, 0],
@@ -5602,8 +5602,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Vampire",
     alphabet: "あ",
     version_num: 20,
-    ratings: [2, 6, 10, 13, 0, 6, 10, 13, 0],
-    tiers: [0, 0, 0.25, 0, 0, 0.05, 0.2, 0, 0],
+    ratings: [2, 6, 10, 13, 15, 6, 10, 13, 15],
+    tiers: [0, 0, 0.25, 0, 1, 0.05, 0.2, 0, 1],
   },
   {
     song_id: "Dl690bPIlIq0Ol1PdPbb9QO0I66lIqO0",
@@ -6227,6 +6227,14 @@ export const ALL_SONG_DATA = [
     version_num: 8,
     ratings: [3, 4, 7, 10, 0, 6, 9, 11, 0],
     tiers: [0.25, 0.4, 0.3, 0.5, 0, 0.5, 0.5, 0.55, 0],
+  },
+  {
+    song_id: "i09oqb0o1boQdi1blIb1D08PlDI1o6lo",
+    song_name: "Saiph",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [5, 9, 12, 16, 18, 9, 12, 16, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "i0b0118q8D1QlQbIbli0P0IQ0QP08QdO",
@@ -7687,8 +7695,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "Vocaloidsetsuna",
     alphabet: "さ",
     version_num: 15,
-    ratings: [3, 4, 10, 14, 0, 4, 10, 14, 0],
-    tiers: [0.6, 0.6, 0.55, 0.55, 0, 0.6, 0.75, 0.7, 0],
+    ratings: [3, 4, 10, 14, 17, 4, 10, 14, 17],
+    tiers: [0.6, 0.6, 0.55, 0.55, 1, 0.6, 0.75, 0.7, 1],
   },
   {
     song_id: "iQ0qQP11I8I9D9oIdllbP6989PDiiPoI",
@@ -12376,4 +12384,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1753979276963;
+export const SONG_DATA_LAST_UPDATED_unixms = 1754564702600;
