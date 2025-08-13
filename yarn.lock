@@ -3747,14 +3747,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-sqlite3@npm:11.9.1":
-  version: 11.9.1
-  resolution: "better-sqlite3@npm:11.9.1"
+"better-sqlite3@npm:12.2.0":
+  version: 12.2.0
+  resolution: "better-sqlite3@npm:12.2.0"
   dependencies:
     bindings: "npm:^1.5.0"
     node-gyp: "npm:latest"
     prebuild-install: "npm:^7.1.1"
-  checksum: 10/bfd820e7a32d6f8bbc43607ccb3a27d89ce20923118bf5c5f6c1550b55e8ce3b1c69db2273131791d866a078be66d3b15e6fedea96824cd3aeac3e492c61d1e1
+  checksum: 10/2662e321237624d5813a7b97528dfc11fc5110b068d57f4096de82d7136e7e4a4b722a2a4266ddfb5095070712fd3d2542f6212ccb68e2d3eb2042498269e1cf
   languageName: node
   linkType: hard
 
@@ -4853,7 +4853,7 @@ __metadata:
     autoprefixer: "npm:10.4.21"
     axios: "npm:1.8.4"
     babel-loader: "npm:10.0.0"
-    better-sqlite3: "npm:11.9.1"
+    better-sqlite3: "npm:12.2.0"
     cacheable-lookup: "npm:7.0.0"
     canvas: "npm:3.1.0"
     classnames: "npm:2.5.1"
