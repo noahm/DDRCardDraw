@@ -32,7 +32,7 @@
       }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1752594498503
+    "lastUpdated": 1755891244427
   },
   "defaults": {
     "style": "solo",
@@ -27137,6 +27137,696 @@
         {
           "style": "solo",
           "lvl": 19,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "696",
+      "name": "Boogie Shoes",
+      "artist": "AronChupa & Little Sis Nora",
+      "genre": "Pop",
+      "bpm": "123",
+      "jacket": "smx/BoogieShoes.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "697",
+      "name": "Calling",
+      "artist": "Donots",
+      "genre": "Rock",
+      "bpm": "159",
+      "jacket": "smx/Calling.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 22,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "698",
+      "name": "Strange Stubborn Proud",
+      "artist": "ELYXR feat. Kurt Harland Larson",
+      "genre": "Miami Bass",
+      "bpm": "125",
+      "jacket": "smx/StrangeStubbornProud.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 15,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "699",
+      "name": "Why Me",
+      "artist": "Desire",
+      "genre": "House",
+      "bpm": "128",
+      "jacket": "smx/WhyMe.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 1,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 12,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "700",
+      "name": "Worn Out Tapes",
+      "artist": "peak divide",
+      "genre": "Electronica",
+      "bpm": "149",
+      "jacket": "smx/WornOutTapes.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "701",
+      "name": "Bad Boy",
+      "artist": "E-Rotic",
+      "genre": "Eurodance",
+      "bpm": "148",
+      "jacket": "smx/BadBoy.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 21,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "702",
+      "name": "Every Time I Close My Eyes",
+      "artist": "Scott Brown & Gillian Tennant",
+      "genre": "Hardcore",
+      "bpm": "175",
+      "jacket": "smx/EveryTimeICloseMyEyes.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 16,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "703",
+      "name": "Forever Now",
+      "artist": "peak divide",
+      "genre": "Chiprock",
+      "bpm": "182",
+      "jacket": "smx/ForeverNow.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "704",
+      "name": "Frontal Impact",
+      "artist": "Daniel",
+      "genre": "Eurobeat",
+      "bpm": "162",
+      "jacket": "smx/FrontalImpact.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 23,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "705",
+      "name": "Revolution",
+      "artist": "Naoki",
+      "genre": "Classical Electronica",
+      "bpm": "165",
+      "jacket": "smx/Revolution.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
           "diffClass": "dual",
           "flags": ["plus"]
         },
