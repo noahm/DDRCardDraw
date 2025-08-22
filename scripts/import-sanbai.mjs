@@ -48,6 +48,26 @@ const invalidDataOnSanbai = new Map([
     "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
     { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
   ],
+  [
+    "668Q8qQdqoIQQiIQOilDqd8lDOOQ8bDQ", // パ→ピ→プ→Yeah!
+    { lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280] },
+  ],
+  [
+    "D9lq0DioIl9D6ll0d61990DP9qPPb1dP", // True Blue
+    { lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280] },
+  ],
+  [
+    "o1dbD61Qi98O60liQQ91d8O16I86dqDd", // In The Breeze
+    { lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280] },
+  ],
+  [
+    "q6iD8idqo69qIPl00IQidoq1o1o1d1b9", // クリムゾンゲイト
+    { lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280] },
+  ],
+  [
+    "qo6l9dbb8D0iDQI1odo0Qb9O1ibDdoIb", // Remain
+    { lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280] },
+  ],
 ]);
 
 const lockFlags = {
@@ -358,16 +378,16 @@ try {
         : { artist: null, bpm: null };
       existingData.songs.push({
         name: song.song_name,
-        saHash: song.song_id,
+        name_translation: song.romanized_name,
         artist: meta.artist || "???",
         folder: foldersByIndex[song.version_num],
         bpm: meta.bpm || "???",
         charts,
-        jacket,
-        remyLink: remyLink ? remyLink : undefined,
         flags:
           songLock && lockFlags[songLock] ? lockFlags[songLock] : undefined,
-        name_translation: song.romanized_name,
+        jacket,
+        remyLink: remyLink ? remyLink : undefined,
+        saHash: song.song_id,
         search_hint:
           [song.searchable_name, song.alternate_name]
             .filter(Boolean)
