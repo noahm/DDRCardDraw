@@ -1600,8 +1600,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "PA PI PU Yeah",
     alphabet: "は",
     version_num: 15,
-    ratings: [3, 5, 10, 13, 0, 6, 8, 13, 0],
-    tiers: [0.3, 0.25, 0.6, 0.25, 0, 0.35, 0.65, 0.35, 0],
+    ratings: [3, 5, 10, 13, 15, 6, 8, 13, 16],
+    tiers: [0.3, 0.25, 0.6, 0.25, 1, 0.35, 0.65, 0.35, 1],
   },
   {
     song_id: "66b1Pibq019dqbdPOdlqDbdbbDdi9Q08",
@@ -3256,6 +3256,7 @@ export const ALL_SONG_DATA = [
     romanized_name: "Mixed Nuts",
     alphabet: "ま",
     version_num: 19,
+    deleted: 1,
     ratings: [1, 5, 8, 15, 0, 5, 8, 14, 0],
     tiers: [0.45, 0.2, 0.45, 0, 0, 0.15, 0.45, 0.45, 0],
   },
@@ -4929,8 +4930,8 @@ export const ALL_SONG_DATA = [
     song_name: "True Blue",
     alphabet: "T",
     version_num: 15,
-    ratings: [3, 7, 11, 16, 0, 6, 11, 16, 0],
-    tiers: [0.55, 0.45, 0.55, 0.3, 0, 0.35, 0.55, 0.15, 0],
+    ratings: [3, 7, 11, 16, 17, 6, 11, 16, 17],
+    tiers: [0.55, 0.45, 0.55, 0.3, 1, 0.35, 0.55, 0.15, 1],
   },
   {
     song_id: "D9o1DqDidP696lii99881io9Dbb0lQl0",
@@ -6231,10 +6232,11 @@ export const ALL_SONG_DATA = [
   {
     song_id: "i09oqb0o1boQdi1blIb1D08PlDI1o6lo",
     song_name: "Saiph",
-    alphabet: "?",
+    alphabet: "S",
     version_num: 20,
     ratings: [5, 9, 12, 16, 18, 9, 12, 16, 18],
     tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
   },
   {
     song_id: "i0b0118q8D1QlQbIbli0P0IQ0QP08QdO",
@@ -8745,8 +8747,8 @@ export const ALL_SONG_DATA = [
     song_name: "In The Breeze",
     alphabet: "I",
     version_num: 15,
-    ratings: [3, 5, 9, 11, 0, 5, 9, 12, 0],
-    tiers: [0.4, 0.5, 0.65, 0.75, 0, 0.35, 0.55, 0.55, 0],
+    ratings: [3, 5, 9, 11, 14, 5, 9, 12, 14],
+    tiers: [0.4, 0.5, 0.65, 0.75, 1, 0.35, 0.55, 0.55, 1],
   },
   {
     song_id: "o1Od8IPqddIP0oIPod81PDodPo1qo88o",
@@ -11060,8 +11062,8 @@ export const ALL_SONG_DATA = [
     romanized_name: "Crimson Gate",
     alphabet: "か",
     version_num: 15,
-    ratings: [3, 7, 10, 13, 0, 6, 9, 12, 0],
-    tiers: [0.65, 0.5, 0.6, 0.65, 0, 0.85, 0.8, 0.8, 0],
+    ratings: [3, 7, 10, 13, 16, 6, 9, 12, 16],
+    tiers: [0.65, 0.5, 0.6, 0.65, 1, 0.85, 0.8, 0.8, 1],
   },
   {
     song_id: "q6o1id8doDb988l1o01P8dllQ0d6IP9P",
@@ -11996,8 +11998,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ルイナススピリチュアル",
     alphabet: "R",
     version_num: 15,
-    ratings: [5, 9, 12, 15, 0, 9, 12, 16, 0],
-    tiers: [0.85, 0.85, 0.9, 0.9, 0, 0.75, 0.85, 0.7, 0],
+    ratings: [5, 9, 12, 15, 18, 9, 12, 16, 18],
+    tiers: [0.85, 0.85, 0.9, 0.9, 1, 0.75, 0.85, 0.7, 1],
   },
   {
     song_id: "Qo9l6l6lq0q618bQOb8d6qiooiiPQqoI",
@@ -12384,4 +12386,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1754564702600;
+export const SONG_DATA_LAST_UPDATED_unixms = 1755802291486;

@@ -48,14 +48,6 @@ const invalidDataOnSanbai = new Map([
     "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
     { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
   ],
-  [
-    "99I10l8o6DPI886l9818ID16OlqI8oId", // ミックスナッツ
-    { deleted: true },
-  ],
-  [
-    "i09oqb0o1boQdi1blIb1D08PlDI1o6lo", // Saiph
-    { flags: ["unlock"] },
-  ],
 ]);
 
 const lockFlags = {
