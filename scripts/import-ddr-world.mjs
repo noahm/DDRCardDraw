@@ -1,7 +1,4 @@
-import {
-  fetchAllDDRWorldSongs,
-  getJacketFromDDRWorld,
-} from "./scraping/ddr-world.mjs";
+import { EAGateSongImporter } from "./scraping/ddr-world.mjs";
 import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import * as path from "path";
 import { readFile } from "fs/promises";
@@ -9,10 +6,10 @@ import { fileURLToPath } from "url";
 import {
   writeJsonData,
   requestQueue,
-  reportQueueStatusLive,
   checkJacketExists,
   sortSongs,
   setJacketPrefix,
+  downloadJacket,
 } from "./utils.mjs";
 import {
   guessUrlFromName,
@@ -21,8 +18,6 @@ import {
 } from "./scraping/remy.mjs";
 
 setJacketPrefix(MIX_META.jacketPrefix);
-
-const ui = reportQueueStatusLive();
 
 try {
   const targetFile = path.join(
@@ -38,10 +33,15 @@ try {
     await readFile(targetFile, { encoding: "utf-8" }),
   );
 
-  ui.log.write("Fetching songs from DDR World...");
-  const ddrWorldSongs = await fetchAllDDRWorldSongs();
+  console.log("Fetching songs from DDR World...");
+  const songListUrl =
+    "https://p.eagate.573.jp/game/ddr/ddrworld/music/index.html?filter=7";
+  const jacketUrl =
+    "https://p.eagate.573.jp/game/ddr/ddrworld/images/binary_jk.html?kind=1";
+  const importer = new EAGateSongImporter(songListUrl, jacketUrl);
+  const ddrWorldSongs = await importer.fetchSongs();
 
-  ui.log.write(`Fetched ${ddrWorldSongs.length} songs from DDR World`);
+  console.log(`Fetched ${ddrWorldSongs.length} songs from DDR World`);
 
   const tasks = ddrWorldSongs.map(async (worldSong) => {
     // Find existing song by saHash
@@ -55,7 +55,7 @@ try {
 
       // Update name if different (prefer DDR World notation)
       if (existingSong.name !== worldSong.name) {
-        ui.log.write(
+        console.log(
           `Updating song name: "${existingSong.name}" -> "${worldSong.name}"`,
         );
         existingSong.name = worldSong.name;
@@ -64,7 +64,7 @@ try {
 
       // Update artist (prefer DDR World notation)
       if (existingSong.artist !== worldSong.artist) {
-        ui.log.write(
+        console.log(
           `Updating artist for ${worldSong.name}: "${existingSong.artist}" -> "${worldSong.artist}"`,
         );
         existingSong.artist = worldSong.artist;
@@ -82,7 +82,7 @@ try {
         if (existingChart) {
           // Update level if different
           if (existingChart.lvl !== worldChart.lvl) {
-            ui.log.write(
+            console.log(
               `Updating ${worldSong.name} ${worldChart.style} ${worldChart.diffClass}: ${existingChart.lvl} -> ${worldChart.lvl}`,
             );
             existingChart.lvl = worldChart.lvl;
@@ -90,7 +90,7 @@ try {
           }
         } else {
           // Add missing chart
-          ui.log.write(
+          console.log(
             `Adding missing chart for ${worldSong.name}: ${worldChart.style} ${worldChart.diffClass} Lv.${worldChart.lvl}`,
           );
           existingSong.charts.push({ ...worldChart });
@@ -105,7 +105,7 @@ try {
           const remyLink = await guessUrlFromName(existingSong.name);
           if (remyLink) {
             existingSong.remyLink = remyLink;
-            ui.log.write(`Set remyLink for ${existingSong.name}: ${remyLink}`);
+            console.log(`Set remyLink for ${existingSong.name}: ${remyLink}`);
             hasUpdates = true;
           }
         }
@@ -118,7 +118,7 @@ try {
           );
           if (jacket) {
             existingSong.jacket = jacket;
-            ui.log.write(
+            console.log(
               `Set jacket from remyLink for ${existingSong.name}: ${jacket}`,
             );
             hasUpdates = true;
@@ -127,13 +127,13 @@ try {
 
         // If still no jacket, try to get from DDR World using saHash
         if (!existingSong.jacket && worldSong.saHash) {
-          const jacket = await getJacketFromDDRWorld(
-            worldSong.saHash,
+          const jacket = downloadJacket(
+            importer.getJacketUrl(worldSong.saHash),
             existingSong.name,
           );
           if (jacket) {
             existingSong.jacket = jacket;
-            ui.log.write(
+            console.log(
               `Set jacket from DDR World for ${existingSong.name}: ${jacket}`,
             );
             hasUpdates = true;
@@ -153,7 +153,7 @@ try {
           if (existingSong.flags.length === 0) {
             delete existingSong.flags;
           }
-          ui.log.write(
+          console.log(
             `Removed unlock flags for ${worldSong.name}: ${flagsToRemove.join(", ")}`,
           );
           hasUpdates = true;
@@ -162,11 +162,11 @@ try {
 
       // Only log summary if there were actual updates
       if (hasUpdates) {
-        ui.log.write(`Updated existing song: ${worldSong.name}`);
+        console.log(`Updated existing song: ${worldSong.name}`);
       }
     } else {
       // Add new song
-      ui.log.write(`Adding new song: ${worldSong.name}`);
+      console.log(`Adding new song: ${worldSong.name}`);
 
       const remyLink = await guessUrlFromName(worldSong.name);
       let jacket = checkJacketExists(worldSong.name);
@@ -178,7 +178,10 @@ try {
 
       // If still no jacket, try to get from DDR World using saHash
       if (!jacket && worldSong.saHash) {
-        jacket = await getJacketFromDDRWorld(worldSong.saHash, worldSong.name);
+        jacket = downloadJacket(
+          importer.getJacketUrl(worldSong.saHash),
+          worldSong.name,
+        );
       }
 
       const meta = remyLink ? await getMetaFromRemy(remyLink) : {};
@@ -199,7 +202,7 @@ try {
     }
   });
 
-  ui.log.write("Processing all songs...");
+  console.log("Processing all songs...");
   await Promise.all(tasks);
   await requestQueue.onIdle();
 
@@ -207,13 +210,11 @@ try {
 
   await writeJsonData(existingData, targetFile);
 
-  ui.log.write(`Successfully updated ${MIX_META.filename}`);
-  ui.log.write(`Total songs in database: ${existingData.songs.length}`);
-  ui.log.write(`Songs from DDR World: ${ddrWorldSongs.length}`);
-  ui.log.write("Done");
-  ui.close();
+  console.log(`Successfully updated ${MIX_META.filename}`);
+  console.log(`Total songs in database: ${existingData.songs.length}`);
+  console.log(`Songs from DDR World: ${ddrWorldSongs.length}`);
+  console.log("Done");
 } catch (e) {
-  ui.close();
   console.error("Error updating DDR World data:", e);
   process.exitCode = 1;
 }
