@@ -32,7 +32,7 @@
       }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1755891244427
+    "lastUpdated": 1755979824092
   },
   "defaults": {
     "style": "solo",
@@ -27833,6 +27833,351 @@
         {
           "style": "solo",
           "lvl": 23,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "706",
+      "name": "Bella Ciao",
+      "artist": "BEAUZ & XYSM",
+      "genre": "Hard Techno",
+      "bpm": "79-158",
+      "jacket": "smx/BellaCiao.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "707",
+      "name": "Let's Go! (This Is It)",
+      "artist": "2 The Limit",
+      "genre": "Eurodance",
+      "bpm": "141",
+      "jacket": "smx/Let'sGo!.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 1,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "708",
+      "name": "My X",
+      "artist": "Little Sis Nora",
+      "genre": "Dance",
+      "bpm": "126",
+      "jacket": "smx/MyX.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "709",
+      "name": "Sevillana Mirage",
+      "artist": "Re-venG",
+      "genre": "Ethnic Electronica",
+      "bpm": "175",
+      "jacket": "smx/SevillanaMirage.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 4,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 7,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 24,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 23,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 25,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "710",
+      "name": "When I Lose Control",
+      "artist": "Desire",
+      "genre": "House",
+      "bpm": "125",
+      "jacket": "smx/WhenILoseControl.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
           "diffClass": "full",
           "flags": ["plus"]
         }
