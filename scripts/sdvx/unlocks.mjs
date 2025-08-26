@@ -6,11 +6,14 @@ export const UNPLAYABLE_IDS = [
   1490, // MAX BURNING!! (FOR INFINITE EXTENDED VERSION), Automation Paradise/Megamix Exclusive
   1491, // Zusammenbruch of Gott, Automation Paradise/Megamix Exclusive
   1751, // EXCEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
+
+  1455, // Aug 26th Song removal 回レ！雪月花 (Heart's Cry Remix)
+  1446, // Aug 26th Song removal 太陽曰く燃えよカオス (Sol oscuro ¡Nya! Mix)
 ];
 
 /**
  * @typedef ChartType
- * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"}
+ * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"|"ultimate"}
  */
 
 /**
@@ -235,6 +238,28 @@ export const SDVX_UNLOCK_IDS = {
 
     [675, "exceed"], // BEAT-NEW-WORLD XCD
     [182, "exceed"], // 待チ人ハ来ズ。 XCD
+
+    // Arena Station Blaster Move
+    [872, "exceed"], // Din Don Dan (Fusion Remix)
+    [88, "exceed"], // Grip & Break down !! - SDVX Edit. -
+    [64, "exceed"], // SOUL EXPLOSION
+    [332, "exceed"], // crazy cinema story
+    [871, "exceed"], // The star in eclipse
+    [711, "exceed"], // ちくわパフェだよ☆ＣＫＰ
+    [633, "exceed"], // 2 MINUTES FIGHTERS
+    [381, "exceed"], // HYENA
+
+    [111, "exceed"], // 地球最後の告白を
+    [132, "exceed"], // 色は匂へど散りぬるを
+    [239, "exceed"], // Foolish Hero
+    [37, "exceed"], // neu BSP style
+    [632, "exceed"], // Invitation from Mr.C
+
+    [8, "exceed"], // smooooch・∀・ KN mix
+    [323, "exceed"], // マネマネサイコトロピック
+    [612, "exceed"], // Le Fruit Défendu
+    [131, "exceed"], // 物凄い勢いでけーねが物凄いうた
+    [342, "exceed"], // Fiat Lux
   ],
   hexadiver: [
     1580, // 666
@@ -334,6 +359,12 @@ export const SDVX_UNLOCK_IDS = {
     2225, // 黒蝶のワルツ
     2226, // Gryphone
     2227, // Who then no 灯
+
+    [272, "exceed"], // I'm so Happy XCD
+    [315, "exceed"], // 恋はどう？モロ◎波動OK☆方程式！！ XCD
+    [699, "exceed"], // ΕΛΠΙΣ XCD
+    [271, "exceed"], // VALLIS-NERIA XCD
+    [636, "ultimate"], // Everlasting Message ULT
   ],
 
   otherEvents: [
@@ -345,9 +376,6 @@ export const SDVX_UNLOCK_IDS = {
     1811, // Reminiscence
 
     // Arena Exclusive
-    1745, // graduation
-    1846, // Tickled Pink
-    1902, // You Are My Best RivaL!!
     2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
     2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
     2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
@@ -402,26 +430,6 @@ export const SDVX_UNLOCK_IDS = {
     2233, // Ö<3rf10₩
 
     // Arena Exclusive Exceed Charts
-    [872, "exceed"], // Din Don Dan (Fusion Remix)
-    [88, "exceed"], // Grip & Break down !! - SDVX Edit. -
-    [64, "exceed"], // SOUL EXPLOSION
-    [332, "exceed"], // crazy cinema story
-    [871, "exceed"], // The star in eclipse
-    [711, "exceed"], // ちくわパフェだよ☆ＣＫＰ
-    [633, "exceed"], // 2 MINUTES FIGHTERS
-    [381, "exceed"], // HYENA
-
-    [111, "exceed"], // 地球最後の告白を
-    [132, "exceed"], // 色は匂へど散りぬるを
-    [239, "exceed"], // Foolish Hero
-    [37, "exceed"], // neu BSP style
-    [632, "exceed"], // Invitation from Mr.C
-
-    [8, "exceed"], // smooooch・∀・ KN mix
-    [323, "exceed"], // マネマネサイコトロピック
-    [612, "exceed"], // Le Fruit Défendu
-    [131, "exceed"], // 物凄い勢いでけーねが物凄いうた
-    [342, "exceed"], // Fiat Lux
 
     [787, "exceed"], // Candy Colored Hearts
     [790, "exceed"], // EMPIRE OF FLAME
