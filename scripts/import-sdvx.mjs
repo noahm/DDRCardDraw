@@ -62,6 +62,7 @@ async function main() {
         { key: "heavenly", color: "#00ffff" },
         { key: "vivid", color: "#f52a6e" },
         { key: "exceed", color: "#0047AB" },
+        { key: "ultimate", color: "#efbf04" },
       ],
       flags: typedKeys(SDVX_UNLOCK_IDS),
       lastUpdated: Date.now(),
@@ -76,6 +77,7 @@ async function main() {
         "heavenly",
         "vivid",
         "exceed",
+        "ultimate",
       ],
       flags: ["omegaDimension", "hexadiver", "otherEvents"],
       lowerLvlBound: 16,
@@ -92,6 +94,7 @@ async function main() {
         infinite: "Infinite",
         gravity: "Gravity",
         heavenly: "Heavenly",
+        ultimate: "Ultimate",
         vivid: "Vivid",
         exceed: "Exceed",
         omegaDimension: "Blaster Gate/Omega Dimension",
@@ -109,6 +112,7 @@ async function main() {
           heavenly: "HVN",
           vivid: "VVD",
           exceed: "XCD",
+          ultimate: "ULT",
         },
       },
       ja: {
@@ -123,6 +127,7 @@ async function main() {
         heavenly: "Heavenly",
         vivid: "Vivid",
         exceed: "Exceed",
+        ultimate: "Ultimate",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -133,6 +138,7 @@ async function main() {
           heavenly: "HVN",
           vivid: "VVD",
           exceed: "XCD",
+          ultimate: "ULT",
         },
       },
     },
@@ -178,6 +184,7 @@ function determineChartJacket(chartType, song, availableJackets) {
     exhaust: 3,
     infinite: 4,
     maximimum: 5,
+    ultimate: 6,
   };
   // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
   let jacketName = `jk_${songId}_${chartTypeToNumber[chartType]}_s.png`;

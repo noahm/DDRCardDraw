@@ -38,6 +38,10 @@
       {
         "key": "exceed",
         "color": "#0047AB"
+      },
+      {
+        "key": "ultimate",
+        "color": "#efbf04"
       }
     ],
     "flags": [
@@ -47,7 +51,7 @@
       "otherEvents",
       "jpOnly"
     ],
-    "lastUpdated": 1752554054999
+    "lastUpdated": 1756185385586
   },
   "defaults": {
     "style": "single",
@@ -58,7 +62,8 @@
       "gravity",
       "heavenly",
       "vivid",
-      "exceed"
+      "exceed",
+      "ultimate"
     ],
     "flags": ["omegaDimension", "hexadiver", "otherEvents"],
     "lowerLvlBound": 16,
@@ -75,6 +80,7 @@
       "infinite": "Infinite",
       "gravity": "Gravity",
       "heavenly": "Heavenly",
+      "ultimate": "Ultimate",
       "vivid": "Vivid",
       "exceed": "Exceed",
       "omegaDimension": "Blaster Gate/Omega Dimension",
@@ -91,7 +97,8 @@
         "gravity": "GRV",
         "heavenly": "HVN",
         "vivid": "VVD",
-        "exceed": "XCD"
+        "exceed": "XCD",
+        "ultimate": "ULT"
       }
     },
     "ja": {
@@ -106,6 +113,7 @@
       "heavenly": "Heavenly",
       "vivid": "Vivid",
       "exceed": "Exceed",
+      "ultimate": "Ultimate",
       "$abbr": {
         "novice": "NOV",
         "advanced": "ADV",
@@ -115,7 +123,8 @@
         "gravity": "GRV",
         "heavenly": "HVN",
         "vivid": "VVD",
-        "exceed": "XCD"
+        "exceed": "XCD",
+        "ultimate": "ULT"
       }
     }
   },
@@ -385,7 +394,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0008_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -1239,7 +1248,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0037_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -2018,7 +2027,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0064_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -2767,7 +2776,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -3458,7 +3467,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -4065,7 +4074,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -4097,7 +4106,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -6767,7 +6776,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0239_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -7575,6 +7584,12 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "exhaust"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "exceed",
+          "flags": ["variantgate"]
         }
       ]
     },
@@ -7601,6 +7616,12 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "flags": ["variantgate"]
         }
       ]
     },
@@ -8731,6 +8752,12 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "flags": ["variantgate"]
         }
       ]
     },
@@ -8949,7 +8976,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -9204,7 +9231,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -9499,7 +9526,7 @@
           "lvl": 19,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -10607,7 +10634,7 @@
           "lvl": 19,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -16843,7 +16870,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0612_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -17370,7 +17397,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0632_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -17403,7 +17430,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0633_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -17505,6 +17532,13 @@
           "style": "single",
           "diffClass": "gravity",
           "jacket": "sdvx/jk_0636_4_s.png"
+        },
+        {
+          "lvl": 20,
+          "style": "single",
+          "diffClass": "ultimate",
+          "jacket": "sdvx/jk_0636_6_s.png",
+          "flags": ["variantgate"]
         }
       ]
     },
@@ -18299,32 +18333,6 @@
         },
         {
           "lvl": 16,
-          "style": "single",
-          "diffClass": "exhaust"
-        }
-      ]
-    },
-    {
-      "name": "ELECT",
-      "search_hint": "elect_niki",
-      "date_added": "2015-06-12",
-      "saHash": "664",
-      "artist": "niki",
-      "jacket": "sdvx/jk_0664_1_s.png",
-      "bpm": "130",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "novice"
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "advanced"
-        },
-        {
-          "lvl": 15,
           "style": "single",
           "diffClass": "exhaust"
         }
@@ -19292,14 +19300,13 @@
       "date_added": "2015-08-07",
       "saHash": "699",
       "artist": "dj TAKA",
-      "jacket": "sdvx6.png",
+      "jacket": "sdvx/jk_0699_1_s.png",
       "bpm": "175",
       "charts": [
         {
           "lvl": 5,
           "style": "single",
-          "diffClass": "novice",
-          "jacket": "sdvx/jk_0699_1_s.png"
+          "diffClass": "novice"
         },
         {
           "lvl": 11,
@@ -19312,6 +19319,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0699_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "flags": ["variantgate"]
         }
       ]
     },
@@ -19661,7 +19674,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "exceed",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -24084,7 +24097,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0871_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -24120,7 +24133,7 @@
           "style": "single",
           "diffClass": "exceed",
           "jacket": "sdvx/jk_0872_4_s.png",
-          "flags": ["otherEvents"]
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -28915,7 +28928,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "maximum"
+          "diffClass": "maximum",
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -28981,7 +28995,8 @@
         {
           "lvl": 17,
           "style": "single",
-          "diffClass": "maximum"
+          "diffClass": "maximum",
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -29014,7 +29029,8 @@
         {
           "lvl": 20,
           "style": "single",
-          "diffClass": "maximum"
+          "diffClass": "maximum",
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -29146,7 +29162,8 @@
         {
           "lvl": 19,
           "style": "single",
-          "diffClass": "maximum"
+          "diffClass": "maximum",
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -29534,7 +29551,8 @@
         {
           "lvl": 19,
           "style": "single",
-          "diffClass": "maximum"
+          "diffClass": "maximum",
+          "flags": ["omegaDimension"]
         }
       ]
     },
@@ -41824,37 +41842,6 @@
       ]
     },
     {
-      "name": "太陽曰く燃えよカオス（Sol oscuro ¡Nya! Mix）",
-      "search_hint": "taiyouiwaku_u1",
-      "date_added": "2019-08-29",
-      "saHash": "1446",
-      "artist": "Remixed by BEMANI Sound Team \"U1-ASAMi\" feat.ななひら",
-      "jacket": "sdvx/jk_1446_1_s.png",
-      "bpm": "150",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "novice"
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "advanced"
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "exhaust"
-        },
-        {
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "maximum"
-        }
-      ]
-    },
-    {
       "name": "Princess Rose（Sunshine Mix）",
       "search_hint": "princessrose_sota",
       "date_added": "2019-12-19",
@@ -42082,37 +42069,6 @@
       "charts": [
         {
           "lvl": 3,
-          "style": "single",
-          "diffClass": "novice"
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "advanced"
-        },
-        {
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "exhaust"
-        },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "maximum"
-        }
-      ]
-    },
-    {
-      "name": "回レ！雪月花 (Heart's Cry Remix)",
-      "search_hint": "mawaresetsugekka_heartscry",
-      "date_added": "2019-08-29",
-      "saHash": "1455",
-      "artist": "Remixed by Heart's Cry",
-      "jacket": "sdvx/jk_1455_1_s.png",
-      "bpm": "150",
-      "charts": [
-        {
-          "lvl": 4,
           "style": "single",
           "diffClass": "novice"
         },
@@ -50804,8 +50760,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Jailbreaker",
@@ -53816,8 +53771,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "2 Beasts Unchained",
@@ -55537,8 +55491,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "あいあむなんばーわんパトラちゃん様",
@@ -65936,7 +65889,7 @@
       "flags": ["otherEvents"]
     },
     {
-      "name": "ビューティフルレシート",
+      "name": "ビューティフル レシート",
       "search_hint": "beautifulreceipt_luckyvacuum",
       "date_added": "2025-05-29",
       "saHash": "2239",
@@ -65966,6 +65919,223 @@
         }
       ],
       "flags": ["otherEvents"]
+    },
+    {
+      "name": "エクスプロウル",
+      "search_hint": "explore_haruichiban",
+      "date_added": "2025-06-26",
+      "saHash": "2240",
+      "artist": "晴いちばん",
+      "jacket": "sdvx/jk_2240_1_s.png",
+      "bpm": "164",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "あおばの足音",
+      "search_hint": "aobanoashioto_dagashiogata",
+      "date_added": "2025-06-12",
+      "saHash": "2241",
+      "artist": "駄菓子O型",
+      "jacket": "sdvx/jk_2241_1_s.png",
+      "bpm": "98",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "悲報！ワイ！ニート！",
+      "search_hint": "hihouwaineat_shu",
+      "date_added": "2025-06-19",
+      "saHash": "2242",
+      "artist": "Shu",
+      "jacket": "sdvx/jk_2242_1_s.png",
+      "bpm": "165",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "ギャ・ギャ・ギャ・ギャラクシー！",
+      "search_hint": "gyagyagya_tsukimiguu",
+      "date_added": "2025-06-19",
+      "saHash": "2243",
+      "artist": "つきみぐー、",
+      "jacket": "sdvx/jk_2243_1_s.png",
+      "bpm": "140",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～",
+      "search_hint": "kakugoseyo_makishiukyou",
+      "date_added": "2025-06-12",
+      "saHash": "2244",
+      "artist": "マキシウキョウ",
+      "jacket": "sdvx/jk_2244_1_s.png",
+      "bpm": "141-176",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "アイスクリームマジック",
+      "search_hint": "icecreammagic_yukinoito",
+      "date_added": "2025-06-26",
+      "saHash": "2245",
+      "artist": "雪乃イト",
+      "jacket": "sdvx/jk_2245_1_s.png",
+      "bpm": "220",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "惑星ループ (花芽すみれ Cover)",
+      "search_hint": "wakuseiloop_kagasumire",
+      "date_added": "2025-06-26",
+      "saHash": "2251",
+      "artist": "ナユタン星人",
+      "jacket": "sdvx/jk_2251_1_s.png",
+      "bpm": "170",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
     }
   ]
 }
