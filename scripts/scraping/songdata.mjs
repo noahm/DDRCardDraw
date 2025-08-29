@@ -1,6 +1,3 @@
-// direct copy/paste from https://3icecream.com/js/songdata.js
-// After pasting, replace `const` & `var` to `export const`
-
 export const ALL_SONG_DATA = [
   {
     song_id: "006i1i6OOl1bPdql9ID8o6QQ6IIiqP0P",
@@ -984,8 +981,8 @@ export const ALL_SONG_DATA = [
     song_name: "Destiny lovers",
     alphabet: "D",
     version_num: 8,
-    ratings: [3, 4, 7, 13, 0, 4, 7, 12, 0],
-    tiers: [0.35, 0.35, 0.45, 0.3, 0, 0.4, 0.65, 0.65, 0],
+    ratings: [3, 4, 7, 13, 16, 4, 7, 12, 16],
+    tiers: [0.35, 0.35, 0.45, 0.3, 1, 0.4, 0.65, 0.65, 1],
   },
   {
     song_id: "1Dl19idl0i0qiqidbDIIbQddiP6o11PP",
@@ -1313,8 +1310,8 @@ export const ALL_SONG_DATA = [
     song_name: "JET WORLD",
     alphabet: "J",
     version_num: 8,
-    ratings: [3, 4, 7, 11, 0, 5, 8, 11, 0],
-    tiers: [0.55, 0.6, 0.6, 0.45, 0, 0.6, 0.75, 0.5, 0],
+    ratings: [3, 4, 7, 11, 14, 5, 8, 11, 14],
+    tiers: [0.55, 0.6, 0.6, 0.45, 1, 0.6, 0.75, 0.5, 1],
   },
   {
     song_id: "1PQDi1P0dd6bIi9bQ0P0IQId808bPi1Q",
@@ -1491,8 +1488,8 @@ export const ALL_SONG_DATA = [
     song_name: "SEXY PLANET",
     alphabet: "S",
     version_num: 4,
-    ratings: [3, 7, 8, 11, 0, 5, 7, 10, 0],
-    tiers: [0.4, 0.5, 0.65, 0.55, 0, 0.65, 0.75, 0.75, 0],
+    ratings: [3, 7, 8, 11, 13, 5, 7, 10, 13],
+    tiers: [0.4, 0.5, 0.65, 0.55, 1, 0.65, 0.75, 0.75, 1],
   },
   {
     song_id: "618q1bI6Odd9dqQd9Q8OIoOdolqi66lq",
@@ -3558,8 +3555,8 @@ export const ALL_SONG_DATA = [
     song_name: "think ya better D",
     alphabet: "T",
     version_num: 3,
-    ratings: [3, 5, 6, 9, 0, 6, 7, 10, 0],
-    tiers: [0.35, 0.6, 0.6, 0.2, 0, 0.7, 0.65, 0.55, 0],
+    ratings: [3, 5, 6, 9, 14, 6, 7, 10, 14],
+    tiers: [0.35, 0.6, 0.6, 0.2, 1, 0.7, 0.65, 0.55, 1],
   },
   {
     song_id: "9O1O0o8O1qbQ08Q961Ib1iOIDPQid109",
@@ -6336,8 +6333,8 @@ export const ALL_SONG_DATA = [
     song_name: "Music In The Rhythm",
     alphabet: "M",
     version_num: 10,
-    ratings: [4, 7, 8, 11, 0, 5, 9, 12, 0],
-    tiers: [0.5, 0.45, 0.8, 0.7, 0, 0.75, 0.75, 0.6, 0],
+    ratings: [4, 7, 8, 11, 13, 5, 9, 12, 13],
+    tiers: [0.5, 0.45, 0.8, 0.7, 1, 0.75, 0.75, 0.6, 1],
   },
   {
     song_id: "I189iqQI6iPDdIDbo81b1iD6lIQiI0Po",
@@ -7168,8 +7165,8 @@ export const ALL_SONG_DATA = [
     song_name: "BURNIN' THE FLOOR",
     alphabet: "B",
     version_num: 4,
-    ratings: [3, 5, 8, 10, 0, 5, 7, 10, 0],
-    tiers: [0.25, 0.2, 0.35, 0.3, 0, 0.45, 0.55, 0.45, 0],
+    ratings: [3, 5, 8, 10, 13, 5, 7, 10, 13],
+    tiers: [0.25, 0.2, 0.35, 0.3, 1, 0.45, 0.55, 0.45, 1],
   },
   {
     song_id: "II8Dlo69PoPOII9P88qdlQPP8I61DlDo",
@@ -8407,8 +8404,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "The Least 100 sec/100秒",
     alphabet: "T",
     version_num: 8,
-    ratings: [5, 7, 11, 12, 0, 7, 10, 14, 0],
-    tiers: [0.8, 0.85, 0.7, 0.8, 0, 0.8, 0.85, 0.75, 0],
+    ratings: [5, 7, 11, 12, 18, 7, 10, 14, 18],
+    tiers: [0.8, 0.85, 0.7, 0.8, 1, 0.8, 0.85, 0.75, 1],
   },
   {
     song_id: "lo6bOoq86d9od6qQ9PiPibOioOQb96lP",
@@ -10800,8 +10797,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ブラジャス",
     alphabet: "B",
     version_num: 10,
-    ratings: [3, 5, 8, 12, 0, 5, 8, 12, 0],
-    tiers: [0.4, 0.6, 0.65, 0.45, 0, 0.6, 0.6, 0.4, 0],
+    ratings: [3, 5, 8, 12, 17, 5, 8, 12, 17],
+    tiers: [0.4, 0.6, 0.65, 0.45, 1, 0.6, 0.6, 0.4, 1],
   },
   {
     song_id: "PPb6l1di1Pi0o8O08odqIDlbPll61QbQ",
@@ -11849,8 +11846,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "ラブシャ/らぶしね/くだーたい",
     alphabet: "L",
     version_num: 8,
-    ratings: [3, 6, 7, 9, 0, 5, 7, 11, 0],
-    tiers: [0.25, 0.1, 0.2, 0.25, 0, 0.35, 0.4, 0.55, 0],
+    ratings: [3, 6, 7, 9, 13, 5, 7, 11, 13],
+    tiers: [0.25, 0.1, 0.2, 0.25, 1, 0.35, 0.4, 0.55, 1],
   },
   {
     song_id: "QiPiIb8I99loq8loIq91iP6l1OOoq8oq",
@@ -12259,8 +12256,8 @@ export const ALL_SONG_DATA = [
     alternate_name: "鳥ラブ",
     alphabet: "T",
     version_num: 3,
-    ratings: [3, 9, 10, 12, 0, 9, 10, 11, 0],
-    tiers: [0.15, 0.25, 0.35, 0.1, 0, 0.55, 0.65, 0.35, 0],
+    ratings: [3, 9, 10, 12, 15, 9, 10, 11, 15],
+    tiers: [0.15, 0.25, 0.35, 0.1, 1, 0.55, 0.65, 0.35, 1],
   },
   {
     song_id: "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
@@ -12386,4 +12383,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1755802291486;
+export const SONG_DATA_LAST_UPDATED_unixms = 1756375563714;
