@@ -6,6 +6,7 @@
   font-size: 200%;
   padding-top: 8px;
   position: relative;
+  min-height: 1.8rem;
 }
 
 .title {
@@ -35,6 +36,7 @@
 
 .players > * {
   flex: 1 1 250px;
+  text-align: center;
 }
 
 .versus + .players {
