@@ -2,7 +2,7 @@
 /** @typedef {import("../../src/models/SongData.ts").Song} Song */
 /** @typedef {import("../../src/models/SongData.ts").Chart} Chart */
 
-import { getDom } from "../utils.mjs";
+import { downloadJacket, getDom } from "../utils.mjs";
 
 /**
  * Name & Artist Normalization
@@ -76,19 +76,13 @@ export class EAGateSongImporter {
   }
 
   /**
-   * @param {string} saHash
-   */
-  getJacketUrl(saHash) {
-    return `${this.#jacketUrl}&img=${saHash}`;
-  }
-
-  /**
    * Fetches song data from KONAMI e-amusement GATE
-   * @returns {Promise<Required<Pick<Song, "name" | "artist" | "saHash" | "charts">>[]>}
+   * @returns {Promise<(Required<Pick<Song, "name" | "artist" | "saHash" | "charts">> & { getJacketUrl: () => string })[]>}
    */
   async fetchSongs() {
     console.log(`Starting to fetch song data from KONAMI e-amusement GATE`);
 
+    const jacketUrl = this.#jacketUrl;
     const songsPerPage = 50;
     const allSongs = [];
     let currentPage = 0;
@@ -106,7 +100,7 @@ export class EAGateSongImporter {
       console.log(`Fetching page ${currentPage + 1}... (offset=${offset})`);
 
       try {
-        const pageSongs = await this.fetchSongsPerPage(pageUrl);
+        const pageSongs = await scrape(pageUrl);
 
         if (pageSongs.length === 0) {
           emptyPageCount++;
@@ -166,101 +160,220 @@ export class EAGateSongImporter {
     console.log(`Pages processed: ${currentPage}`);
 
     return uniqueSongs;
+
+    /**
+     * @summary Scrapes song data from KONAMI e-amusement GATE website
+     * @param {string} pageUrl DDR song list URL
+     */
+    async function scrape(pageUrl) {
+      const dom = await getDom(pageUrl);
+      if (!dom) return [];
+
+      const songs = [];
+
+      // Scrape based on DDR site table structure
+      const table = dom.window.document.querySelector("table");
+      if (!table) {
+        console.warn("Song table not found");
+        return [];
+      }
+
+      const rows = table.querySelectorAll("tr");
+      if (rows.length < 3) {
+        console.warn("Insufficient number of rows");
+        return [];
+      }
+
+      // Rows from the 3rd onward contain song data (1st row is header, 2nd row is subheader)
+      for (let i = 2; i < rows.length; i++) {
+        const row = rows[i];
+        const cells = row.querySelectorAll("td");
+
+        if (cells.length < 4) continue;
+
+        try {
+          // Get hash value (extracted from jacket image filename)
+          /** @type {HTMLImageElement | null} */
+          const jacketImg = cells[0].querySelector("img");
+          let saHash = "";
+
+          if (jacketImg?.src) {
+            // URL example: /game/ddr/ddrworld/images/binary_jk.html?img=6iqOPoP6lQi8ilD10o8ol11DQbqooOqP&kind=2
+            const imgMatch = jacketImg.src.match(/img=([a-zA-Z0-9]+)/);
+            saHash = imgMatch ? imgMatch[1] : "";
+          }
+
+          // Get song name (2nd cell)
+          const name = cells[1]?.textContent?.trim() || "";
+
+          // Get artist name (3rd cell) - can be empty for cover songs
+          const artist = cells[2]?.textContent?.trim() || "";
+
+          if (!name) continue; // Only require name, artist can be empty for cover songs
+
+          // Get chart difficulties
+          const charts = [];
+
+          /**
+           * Chart difficulties
+           * (cells 4-8: Single BE, BA, DI, EX, CH)
+           * (cells 9-12: Double BA, DI, EX, CH)
+           * @type {Pick<Chart, 'style' | 'diffClass'>[]}
+           */
+          const difficulties = [
+            { style: "single", diffClass: "beginner" },
+            { style: "single", diffClass: "basic" },
+            { style: "single", diffClass: "difficult" },
+            { style: "single", diffClass: "expert" },
+            { style: "single", diffClass: "challenge" },
+            { style: "double", diffClass: "basic" },
+            { style: "double", diffClass: "difficult" },
+            { style: "double", diffClass: "expert" },
+            { style: "double", diffClass: "challenge" },
+          ];
+          for (let j = 0; j < difficulties.length; j++) {
+            const cellIndex = 3 + j; // Starting from 4th cell
+            if (cellIndex < cells.length) {
+              const level = cells[cellIndex]?.textContent?.trim();
+              if (level && !isNaN(parseInt(level)) && parseInt(level) > 0) {
+                charts.push({ ...difficulties[j], lvl: parseInt(level) });
+              }
+            }
+          }
+
+          songs.push({
+            name,
+            artist,
+            ...normalized.get(saHash), // Name & Artist Normalization
+            saHash,
+            charts,
+            getJacketUrl: () => `${jacketUrl}&img=${saHash}`,
+          });
+        } catch (error) {
+          console.error(`Failed to parse song data (row ${i + 1}):`, error);
+        }
+      }
+
+      return songs;
+    }
   }
 
   /**
-   * @summary Scrapes song data from KONAMI e-amusement GATE website
-   * @param {string} pageUrl DDR song list URL
-   * @private
+   * Compares two song objects for equality
+   * @param {Song} existingSong
+   * @param {Awaited<ReturnType<EAGateSongImporter["fetchSongs"]>>[number]} eagateSong
+   * @returns {boolean} True if songs are considered equal (same saHash)
    */
-  async fetchSongsPerPage(pageUrl) {
-    const dom = await getDom(pageUrl);
-    if (!dom) return [];
+  static songEquals(existingSong, eagateSong) {
+    return existingSong.saHash === eagateSong.saHash;
+  }
 
-    const songs = [];
+  /**
+   * Merges data from an `eagateSong` into `existingSong` object.
+   * @summary This function with side effects that change `existingSong` object
+   * @param {Song} existingSong Existing song object to update
+   * @param {Awaited<ReturnType<EAGateSongImporter["fetchSongs"]>>[number]} eagateSong Song data from e-amusement GATE
+   * @param {string[]} unmanagedFlags Flags to preserve
+   * @returns {boolean} True if the merge resulted in any updates
+   */
+  static merge(existingSong, eagateSong, unmanagedFlags = []) {
+    let hasUpdates = false;
 
-    // Scrape based on DDR site table structure
-    const table = dom.window.document.querySelector("table");
-    if (!table) {
-      console.warn("Song table not found");
-      return [];
+    // Update name if different (prefer e-amusement GATE notation)
+    if (existingSong.name !== eagateSong.name) {
+      console.log(
+        `Updated song name: "${existingSong.name}" -> "${eagateSong.name}"`,
+      );
+      existingSong.name = eagateSong.name;
+      hasUpdates = true;
     }
 
-    const rows = table.querySelectorAll("tr");
-    if (rows.length < 3) {
-      console.warn("Insufficient number of rows");
-      return [];
+    // Update artist (prefer e-amusement GATE notation)
+    if (existingSong.artist !== eagateSong.artist) {
+      console.log(
+        `Updated "${eagateSong.name}" artist: "${existingSong.artist}" -> "${eagateSong.artist}"`,
+      );
+      existingSong.artist = eagateSong.artist;
+      hasUpdates = true;
     }
 
-    // Rows from the 3rd onward contain song data (1st row is header, 2nd row is subheader)
-    for (let i = 2; i < rows.length; i++) {
-      const row = rows[i];
-      const cells = row.querySelectorAll("td");
+    // Update charts - merge with existing charts, prefer e-amusement GATE data for lvl
+    for (const eagateChart of eagateSong.charts) {
+      const existingChart = existingSong.charts.find(
+        (chart) =>
+          chart.style === eagateChart.style &&
+          chart.diffClass === eagateChart.diffClass,
+      );
 
-      if (cells.length < 4) continue;
+      if (!existingChart) {
+        console.log(
+          `Added "${eagateSong.name}": [${eagateChart.style}/${eagateChart.diffClass}] (Lv.${eagateChart.lvl})`,
+        );
+        existingSong.charts.push({ ...eagateChart });
+        hasUpdates = true;
+        continue;
+      }
 
-      try {
-        // Get hash value (extracted from jacket image filename)
-        /** @type {HTMLImageElement | null} */
-        const jacketImg = cells[0].querySelector("img");
-        let saHash = "";
+      // Update level if different
+      if (existingChart.lvl !== eagateChart.lvl) {
+        console.log(
+          `Updated "${eagateSong.name}" [${eagateChart.style}/${eagateChart.diffClass}] level: ${existingChart.lvl} -> ${eagateChart.lvl}`,
+        );
+        existingChart.lvl = eagateChart.lvl;
+        hasUpdates = true;
+      }
 
-        if (jacketImg?.src) {
-          // URL example: /game/ddr/ddrworld/images/binary_jk.html?img=6iqOPoP6lQi8ilD10o8ol11DQbqooOqP&kind=2
-          const imgMatch = jacketImg.src.match(/img=([a-zA-Z0-9]+)/);
-          saHash = imgMatch ? imgMatch[1] : "";
-        }
-
-        // Get song name (2nd cell)
-        const name = cells[1]?.textContent?.trim() || "";
-
-        // Get artist name (3rd cell) - can be empty for cover songs
-        const artist = cells[2]?.textContent?.trim() || "";
-
-        if (!name) continue; // Only require name, artist can be empty for cover songs
-
-        // Get chart difficulties
-        const charts = [];
-
-        /**
-         * Chart difficulties
-         * (cells 4-8: Single BE, BA, DI, EX, CH)
-         * (cells 9-12: Double BA, DI, EX, CH)
-         * @type {Pick<Chart, 'style' | 'diffClass'>[]}
-         */
-        const difficulties = [
-          { style: "single", diffClass: "beginner" },
-          { style: "single", diffClass: "basic" },
-          { style: "single", diffClass: "difficult" },
-          { style: "single", diffClass: "expert" },
-          { style: "single", diffClass: "challenge" },
-          { style: "double", diffClass: "basic" },
-          { style: "double", diffClass: "difficult" },
-          { style: "double", diffClass: "expert" },
-          { style: "double", diffClass: "challenge" },
-        ];
-        for (let j = 0; j < difficulties.length; j++) {
-          const cellIndex = 3 + j; // Starting from 4th cell
-          if (cellIndex < cells.length) {
-            const level = cells[cellIndex]?.textContent?.trim();
-            if (level && !isNaN(parseInt(level)) && parseInt(level) > 0) {
-              charts.push({ ...difficulties[j], lvl: parseInt(level) });
-            }
+      // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)
+      if (existingChart.flags) {
+        const flagsToRemove = existingChart.flags.filter(
+          (f) => !unmanagedFlags.includes(f),
+        );
+        if (flagsToRemove.length > 0) {
+          existingChart.flags = existingChart.flags.filter((f) =>
+            unmanagedFlags.includes(f),
+          );
+          if (existingChart.flags.length === 0) {
+            delete existingChart.flags;
           }
+          console.log(
+            `Removed "${eagateSong.name}" [${eagateChart.style}/${eagateChart.diffClass}] flags: ${flagsToRemove}`,
+          );
+          hasUpdates = true;
         }
-
-        songs.push({
-          name,
-          artist,
-          ...normalized.get(saHash), // Name & Artist Normalization
-          saHash,
-          charts,
-        });
-      } catch (error) {
-        console.error(`Failed to parse song data (row ${i + 1}):`, error);
       }
     }
 
-    return songs;
+    // Try to get jacket from e-amusement GATE
+    if (!existingSong.jacket && eagateSong.saHash) {
+      const jacket = downloadJacket(
+        eagateSong.getJacketUrl(),
+        existingSong.name,
+      );
+      if (jacket) {
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        existingSong.jacket = jacket;
+        hasUpdates = true;
+      }
+    }
+
+    // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)
+    if (existingSong.flags) {
+      const flagsToRemove = existingSong.flags.filter(
+        (f) => !unmanagedFlags.includes(f),
+      );
+      if (flagsToRemove.length > 0) {
+        existingSong.flags = existingSong.flags.filter((f) =>
+          unmanagedFlags.includes(f),
+        );
+        if (existingSong.flags.length === 0) {
+          delete existingSong.flags;
+        }
+        console.log(
+          `Removed unlock flags for ${existingSong.name}: ${flagsToRemove.join(", ")}`,
+        );
+        hasUpdates = true;
+      }
+    }
+    return hasUpdates;
   }
 }

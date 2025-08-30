@@ -1,13 +1,13 @@
 // @ts-check
-import { writeFile } from "fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
-import { requestQueue } from "../utils.mjs";
-import { format } from "prettier";
-
 /** @typedef {import("../../src/models/SongData.ts").Song} Song */
 /** @typedef {import("../../src/models/SongData.ts").Chart} Chart */
 /** @typedef {typeof import('./songdata.mjs').ALL_SONG_DATA[number]} SanbaiSong */
+
+import { writeFile } from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
+import { downloadJacket, requestQueue } from "../utils.mjs";
+import { format } from "prettier";
 
 /**
  * Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags`
@@ -136,17 +136,9 @@ const invalidDataOnSanbai = new Map([
 
 export class SanbaiSongImporter {
   /**
-   * Get jacket image URL from 3icecream for a song
-   * @param {Pick<Song, "saHash">} song Song info with saHash
-   */
-  getJacketUrl(song) {
-    return `https://3icecream.com/img/banners/${song.saHash}.jpg`;
-  }
-
-  /**
    * Fetches and converts song data from 3icecream (ALL_SONG_DATA)
    * Applies corrections and returns array for merging
-   * @returns {Promise<(Pick<Song, 'name' | 'name_translation' | 'artist' | 'bpm' | 'charts' | 'flags' | 'saHash' | 'search_hint'> & { deleted: boolean })[]>}
+   * @returns {Promise<(Pick<Song, 'name' | 'name_translation' | 'charts' | 'flags' | 'saHash' | 'search_hint'> & { deleted: boolean, getJacketUrl: () => string })[]>}
    */
   async fetchSongs() {
     await this.updateSongDataFile();
@@ -223,9 +215,7 @@ export class SanbaiSongImporter {
       songs.push({
         name: song.song_name,
         name_translation: song.romanized_name,
-        artist: "???",
         folder: titleList[song.version_num - 1],
-        bpm: "???",
         charts,
         flags:
           songLock && lockFlags[songLock] ? lockFlags[songLock] : undefined,
@@ -235,6 +225,8 @@ export class SanbaiSongImporter {
             .filter(Boolean)
             .join(" ") || undefined,
         deleted: !!song.deleted || false,
+        getJacketUrl: () =>
+          `https://3icecream.com/img/banners/${song.song_id}.jpg`,
       });
     }
     return songs;
@@ -264,5 +256,122 @@ export class SanbaiSongImporter {
     const formatted = await format(mjsText, { filepath: filePath });
     await writeFile(filePath, formatted);
     return filePath;
+  }
+
+  /**
+   * Compares two song objects for equality
+   * @param {Song} existingSong
+   * @param {Awaited<ReturnType<SanbaiSongImporter["fetchSongs"]>>[number]} sanbaiSong
+   * @returns {boolean} True if songs are considered equal (same saHash)
+   */
+  static songEquals(existingSong, sanbaiSong) {
+    return existingSong.saHash === sanbaiSong.saHash;
+  }
+
+  /**
+   * Merges data from an `sanbaiSong` into `existingSong` object.
+   * @summary This function with side effects that change `existingSong` object
+   * @param {Song} existingSong Existing song object to update
+   * @param {Awaited<ReturnType<SanbaiSongImporter["fetchSongs"]>>[number]} sanbaiSong Song data 3icecream
+   * @param {string[]} unmanagedFlags Flags to preserve
+   * @returns {boolean} True if the merge resulted in any updates
+   */
+  static merge(existingSong, sanbaiSong, unmanagedFlags = []) {
+    let hasUpdates = false;
+
+    // update charts
+    for (const chart of sanbaiSong.charts) {
+      const existingChart = existingSong.charts.find(
+        (c) => c.style === chart.style && c.diffClass === chart.diffClass,
+      );
+
+      if (!existingChart) {
+        console.log(
+          `Added "${existingSong.name}": [${chart.style}/${chart.diffClass}] (Lv.${chart.lvl})`,
+        );
+        existingSong.charts.push(chart);
+        hasUpdates = true;
+        continue;
+      }
+
+      // Update level if different
+      if (existingChart.lvl !== chart.lvl) {
+        console.log(
+          `Updated "${existingSong.name}" [${chart.style}/${chart.diffClass}] level: ${existingChart.lvl} -> ${chart.lvl}`,
+        );
+        existingChart.lvl = chart.lvl;
+        hasUpdates = true;
+      }
+      // Update sanbaiTier if different
+      if (chart.sanbaiTier && chart.sanbaiTier !== existingChart.sanbaiTier) {
+        console.log(
+          `Updated "${existingSong.name}" [${chart.style}/${chart.diffClass}] sanbaiTier: ${existingChart.sanbaiTier} -> ${chart.sanbaiTier}`,
+        );
+        existingChart.sanbaiTier = chart.sanbaiTier;
+        hasUpdates = true;
+      }
+
+      // Update chart flags (except unmanaged)
+      const managedFlags = (existingChart.flags ?? []).filter(
+        (f) => !unmanagedFlags.includes(f),
+      );
+      if (
+        managedFlags.length !== (chart.flags?.length ?? 0) ||
+        managedFlags.some((f, i) => f !== chart.flags[i])
+      ) {
+        const flags = [
+          ...(existingChart.flags?.filter((f) => unmanagedFlags.includes(f)) ??
+            []),
+          ...(chart.flags ?? []),
+        ];
+        console.log(
+          `Updated "${existingSong.name}" [${chart.style}/${chart.diffClass}] flags: ${existingChart.flags} -> ${flags}`,
+        );
+        existingChart.flags = flags;
+        hasUpdates = true;
+      }
+      if (!existingChart.flags?.length) {
+        delete existingChart.flags;
+      }
+    }
+
+    // Update song flags (except unmanaged)
+    const managedFlags = (existingSong.flags ?? []).filter(
+      (f) => !unmanagedFlags.includes(f),
+    );
+    sanbaiSong.flags ??= [];
+    if (
+      managedFlags.length !== (sanbaiSong.flags?.length ?? 0) ||
+      managedFlags.some((f, i) => f !== sanbaiSong.flags[i])
+    ) {
+      console.log(
+        `Updated flags [${existingSong.flags}] from ${existingSong.name}`,
+      );
+      const flags = [
+        ...(existingSong.flags?.filter((f) => unmanagedFlags.includes(f)) ??
+          []),
+        ...(sanbaiSong.flags ?? []),
+      ];
+      console.log(
+        `Updated "${existingSong.name}" flags: ${existingSong.flags} -> ${flags}`,
+      );
+      existingSong.flags = flags;
+      hasUpdates = true;
+    }
+    if (!existingSong.flags?.length) {
+      delete existingSong.flags;
+    }
+
+    // Try to get jacket from 3icecream
+    if (!existingSong.jacket) {
+      const jacket = downloadJacket(sanbaiSong.getJacketUrl(), sanbaiSong.name);
+      if (jacket) {
+        existingSong.jacket = jacket;
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        hasUpdates = true;
+      }
+    }
+
+    return hasUpdates;
   }
 }
