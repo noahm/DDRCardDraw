@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1756375563714
+    "lastUpdated": 1756661915344
   },
   "defaults": {
     "style": "single",
@@ -8470,7 +8470,7 @@
       ],
       "jacket": "ddr_world/Bye_or_not.png",
       "remyLink": "https://remywiki.com/Bye_or_not",
-      "flags": ["unlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "C-C-C-N-N-N",
@@ -12648,7 +12648,7 @@
       ],
       "jacket": "ddr_world/Daisycutter.png",
       "remyLink": "https://remywiki.com/Daisycutter",
-      "flags": ["unlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "DANCE ALL NIGHT (DDR EDITION)",
@@ -19540,7 +19540,7 @@
       ],
       "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
       "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
@@ -19577,7 +19577,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.85
         },
         {
@@ -19602,7 +19601,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.7
         }
       ],
@@ -47107,7 +47105,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.7
         },
         {
@@ -47132,7 +47129,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.85
         }
       ],
@@ -67261,7 +67257,7 @@
       ],
       "jacket": "ddr_world/ZENDEGI DANCE.jpg",
       "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "genre": "ORBITALIC ORIENTAL ELECTRO"
     },
     {
@@ -74364,7 +74360,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.05
         },
         {
@@ -74389,7 +74384,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.1
         }
       ],
@@ -81341,8 +81335,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 15.2,
-          "flags": ["grandPrixPack"]
+          "sanbaiTier": 15.2
         },
         {
           "lvl": 5,
@@ -81366,7 +81359,6 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.05
         }
       ],
@@ -83041,7 +83033,7 @@
       ],
       "jacket": "ddr_world/疾風迅雷.jpg",
       "remyLink": "https://remywiki.com/Shippuujinrai",
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "genre": "ORIENTAL CORE",
       "search_hint": "しっぷうじんらい"
     },
