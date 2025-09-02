@@ -13,7 +13,7 @@
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "format": "prettier --experimental-cli --write ./src ./scripts",
-    "import:ddr": "node scripts/import-ddr.mjs",
+    "import:ddr": "node scripts/import-ddr-world.mjs",
     "import:jubeat": "node scripts/import-jubeat.mjs",
     "import:pump": "node scripts/import-pump.mjs",
     "import:sdvx": "node scripts/import-sdvx.mjs",
