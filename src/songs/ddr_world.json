@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1755802291486
+    "lastUpdated": 1756661915344
   },
   "defaults": {
     "style": "single",
@@ -6832,6 +6832,12 @@
           "sanbaiTier": 12.45
         },
         {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
@@ -6848,6 +6854,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.4
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Blind_Justice_~Torn_souls,_Hurt_Faiths~",
@@ -8296,6 +8308,12 @@
           "sanbaiTier": 10.3
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 189,
           "lvl": 5,
           "style": "double",
@@ -8315,6 +8333,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.45
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/BURNIN%27_THE_FLOOR",
@@ -8446,7 +8470,7 @@
       ],
       "jacket": "ddr_world/Bye_or_not.png",
       "remyLink": "https://remywiki.com/Bye_or_not",
-      "flags": ["unlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "C-C-C-N-N-N",
@@ -12624,7 +12648,7 @@
       ],
       "jacket": "ddr_world/Daisycutter.png",
       "remyLink": "https://remywiki.com/Daisycutter",
-      "flags": ["unlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "DANCE ALL NIGHT (DDR EDITION)",
@@ -14707,6 +14731,12 @@
           "sanbaiTier": 13.3
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 115,
           "freeze": 4,
           "lvl": 4,
@@ -14729,6 +14759,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.65
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Destiny_lovers",
@@ -19504,7 +19540,7 @@
       ],
       "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
       "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
@@ -19541,7 +19577,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.85
         },
         {
@@ -19566,7 +19601,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.7
         }
       ],
@@ -30224,6 +30258,12 @@
           "sanbaiTier": 11.45
         },
         {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 153,
           "freeze": 10,
           "lvl": 5,
@@ -30246,6 +30286,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.5
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/JET_WORLD",
@@ -34422,6 +34468,12 @@
           "sanbaiTier": 9.25
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 161,
           "freeze": 20,
           "lvl": 5,
@@ -34444,6 +34496,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.55
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/LOVE_SHINE",
@@ -37573,6 +37631,12 @@
           "sanbaiTier": 11.7
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 226,
           "freeze": 3,
           "lvl": 5,
@@ -37595,6 +37659,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.6
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Music_In_The_Rhythm",
@@ -47035,7 +47105,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.7
         },
         {
@@ -47060,7 +47129,6 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 16.85
         }
       ],
@@ -50144,6 +50212,12 @@
           "sanbaiTier": 11.55
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 175,
           "lvl": 5,
           "style": "double",
@@ -50163,6 +50237,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.75
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/SEXY_PLANET",
@@ -58713,6 +58793,12 @@
           "sanbaiTier": 12.8
         },
         {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 167,
           "freeze": 5,
           "lvl": 7,
@@ -58735,6 +58821,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.75
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/The_Least_100sec",
@@ -59458,6 +59550,12 @@
           "sanbaiTier": 9.2
         },
         {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 172,
           "lvl": 6,
           "style": "double",
@@ -59477,6 +59575,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.55
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Think_ya_better_D",
@@ -62001,6 +62105,12 @@
           "sanbaiTier": 12.1
         },
         {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -62017,6 +62127,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.35
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/TRIP_MACHINE~luv_mix~",
@@ -67141,7 +67257,7 @@
       ],
       "jacket": "ddr_world/ZENDEGI DANCE.jpg",
       "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "genre": "ORBITALIC ORIENTAL ELECTRO"
     },
     {
@@ -74244,7 +74360,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.05
         },
         {
@@ -74269,7 +74384,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.1
         }
       ],
@@ -81221,8 +81335,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "sanbaiTier": 15.2,
-          "flags": ["grandPrixPack"]
+          "sanbaiTier": 15.2
         },
         {
           "lvl": 5,
@@ -81246,7 +81359,6 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.05
         }
       ],
@@ -82921,7 +83033,7 @@
       ],
       "jacket": "ddr_world/疾風迅雷.jpg",
       "remyLink": "https://remywiki.com/Shippuujinrai",
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "genre": "ORIENTAL CORE",
       "search_hint": "しっぷうじんらい"
     },
