@@ -33,16 +33,22 @@ const someColors = {
 
 const difficulties = new Set();
 const styles = new Set();
+/** @type {import('../src/models/SongData.js').GameData} */
 const data = {
   meta: {
-    menuParent: "imported",
+    menuParent: "events",
     flags: [],
     lastUpdated: Date.now(),
     usesDrawGroups: useTiers,
+    styles: [],
+    difficulties: [],
   },
   defaults: {
     flags: [],
     lowerLvlBound: 1,
+    difficulties: [],
+    style: "",
+    upperLvlBound: 0,
   },
   i18n: {
     en: {
@@ -184,7 +190,16 @@ data.meta.difficulties = data.defaults.difficulties.map((key) => ({
   key,
   color: someColors[key] || "grey", // TODO?
 }));
-data.defaults.upperLvlBound = 0;
+let lowest = Infinity;
+let highest = 0;
+for (const song of data.songs) {
+  for (const chart of song.charts) {
+    if (lowest > chart.lvl) lowest = chart.lvl;
+    if (highest < chart.lvl) highest = chart.lvl;
+  }
+}
+data.defaults.lowerLvlBound = lowest;
+data.defaults.upperLvlBound = highest;
 data.defaults.style = data.meta.styles[0];
 
 writeJsonData(data, resolve(join(__dirname, `../src/songs/${stub}.json`)));
