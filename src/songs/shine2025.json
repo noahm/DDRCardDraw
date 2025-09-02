@@ -1,0 +1,605 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": [],
+    "lastUpdated": 1756789569852,
+    "usesDrawGroups": false,
+    "styles": ["single"],
+    "difficulties": [
+      {
+        "key": "challenge",
+        "color": "#0191F2"
+      }
+    ]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 11,
+    "difficulties": ["challenge"],
+    "style": "single",
+    "upperLvlBound": 15
+  },
+  "i18n": {
+    "en": {
+      "name": "SHINE Invitational 2025",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[11] 愛散 ~AI Chill~",
+      "name_translation": "[11] AI Chill",
+      "jacket": "itg/shine2025/[11] AI Chill [teri].jpg",
+      "bpm": "127",
+      "artist": "あいちむ",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Chloé",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Chloe (SX) [Lou].jpg",
+      "bpm": "176",
+      "artist": "DJ Totoriott",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Marionette",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Marionette [Benpai].jpg",
+      "bpm": "165",
+      "artist": "Memme",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Mr. Werewolf",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Mr. Werewolf (android52 Edit) [ITGAlex].jpg",
+      "bpm": "175",
+      "artist": "t+pazolite",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Neon Nights",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Neon Nights - [Zaia].jpg",
+      "bpm": "150",
+      "artist": "Syncatto",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Slamurai",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Slamurai [Zaia].jpg",
+      "bpm": "132",
+      "artist": "kLL Bill",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] The Virus",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] The Virus [Chief Skittles].jpg",
+      "bpm": "140",
+      "artist": "AKOV",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Whipdash",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Whipdash [Exschwasion].jpg",
+      "bpm": "150",
+      "artist": "Sixtroke",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] Whiteout (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] Whiteout (No CMOD) [CERiNG].jpg",
+      "bpm": "110-138",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[11] STRUT",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[11] strut [Mirin].jpg",
+      "bpm": "128",
+      "artist": "KURORAK",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Antipattern",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Antipattern [mang].jpg",
+      "bpm": "140",
+      "artist": "Strayframe & BilliumMoto",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Astray",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Astray [cmmf].jpg",
+      "bpm": "146",
+      "artist": "Cynax",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Backyard",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Backyard [ITGAlex].jpg",
+      "bpm": "132",
+      "artist": "Reaper",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Deller",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Deller [ITGAlex].jpg",
+      "bpm": "126",
+      "artist": "Fellsius",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Divine Attack",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Divine Attack [valgrind].jpg",
+      "bpm": "180",
+      "artist": "BABYMETAL",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Godslain",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Godslain [Zaia].jpg",
+      "bpm": "130",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Hypnotize",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Hypnotize [Maxx & Zaia].jpg",
+      "bpm": "160",
+      "artist": "rejection",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Melonaid",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Melonaid [ATB].jpg",
+      "bpm": "145",
+      "artist": "KATOMORI",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Raspberry Railgun",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Raspberry Railgun [Valex & Zaia].jpg",
+      "bpm": "142",
+      "artist": "OSTER Project",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] Submerge Serenade",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] Submerge Serenade [sorae].jpg",
+      "bpm": "157",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] TSLove",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] TSLove [Hubert].jpg",
+      "bpm": "185",
+      "artist": "O2i3",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[12] pseudonymph",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[12] pseudonymph [Valex].jpg",
+      "bpm": "150",
+      "artist": "のの",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] \\#CMFLG",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] CMFLG [sorae].jpg",
+      "bpm": "155",
+      "artist": "Qlarabelle",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] B L A C K - R A Y",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] B L A C K - R A Y [Maxx & Zaia].jpg",
+      "bpm": "174",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] BLSTR",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] BLSTR - [Zaia].jpg",
+      "bpm": "160",
+      "artist": "Ujico*",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] Blast+",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] Blast+ [Hubert].jpg",
+      "bpm": "160",
+      "artist": "Zenpaku",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] δ\\:for the DELTA",
+      "name_translation": "[13] DELTA\\:for the DELTA",
+      "jacket": "itg/shine2025/[13] DELTA for the DELTA (Camellia's 'PLANETARYDUBSTEP' Remix) - [Zaia].jpg",
+      "bpm": "144",
+      "artist": "かめりあ",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] Ou Legends",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] Ou Legends [Chief Skittles].jpg",
+      "bpm": "191",
+      "artist": "かめりあ",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] Pedi",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] Pedi (Schwank Moment) [Yisus].jpg",
+      "bpm": "140",
+      "artist": "Baby Tate",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] Satellite Transmission (Edit)",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] Satellite Transmission (SEdit) [Exschwasion].jpg",
+      "bpm": "150",
+      "artist": "siqlo",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] Simurgh",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] Simurgh [Talkion].jpg",
+      "bpm": "186",
+      "artist": "BilliumMoto & Sobrem",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] Visitor",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] Visitor [Kigha & Snooze].jpg",
+      "bpm": "172",
+      "artist": "PSYQUI",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] chaplet",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] chaplet [bkirz].jpg",
+      "bpm": "200",
+      "artist": "DJ TOTTO",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[13] logicx-1.wav",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[13] logicx-1.wav [Maractus].jpg",
+      "bpm": "160",
+      "artist": "HYØUKA & TBN (Kou!)",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[14] Clinozoisite",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[14] Clinozoisite [Maractus & Talkion].jpg",
+      "bpm": "175",
+      "artist": "Ludicin",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[14] Duplication",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[14] Duplication [sorae].jpg",
+      "bpm": "202",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[14] 第六天魔王",
+      "name_translation": "[14] Great Devil of the Sixth Heaven",
+      "jacket": "itg/shine2025/[14] Great Devil of the Sixth Heaven [ITGAlex].jpg",
+      "bpm": "150",
+      "artist": "黒沢ダイスケ x Masahiro \"Godspeed\" Aoki",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[14] Mazy Metroplex",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[14] Mazy Metroplex [Tony S.].jpg",
+      "bpm": "155",
+      "artist": "aran",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[14] 星河一天",
+      "name_translation": "[14] Seigaitten",
+      "jacket": "itg/shine2025/[14] Seigaitten [Rakkii].jpg",
+      "bpm": "214",
+      "artist": "打打だいず",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    },
+    {
+      "name": "[15] Tech Alert",
+      "name_translation": "",
+      "jacket": "itg/shine2025/[15] Tech Alert [Chabala].jpg",
+      "bpm": "175",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ]
+    }
+  ]
+}
