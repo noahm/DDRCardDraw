@@ -42,6 +42,7 @@ export interface PocketPick extends PlayerActionOnChart {
 interface StartggMeta {
   type: "startgg";
   title: string;
+  phaseName: string;
   entrants: Array<{ id: string; name: string }>;
 }
 

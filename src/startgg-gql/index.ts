@@ -141,6 +141,13 @@ const EventSetsDoc: typeof EventSetsDocument = gql`
               name
             }
           }
+          phaseGroup {
+            displayIdentifier
+            phase {
+              name
+              groupCount
+            }
+          }
         }
       }
     }

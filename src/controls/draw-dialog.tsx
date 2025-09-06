@@ -37,6 +37,7 @@ export function DrawDialog(props: Props) {
       entrants: match.players,
       title: match.title,
       id: match.id,
+      phaseName: match.phaseName,
     });
   }
 

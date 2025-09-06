@@ -16,6 +16,7 @@ import {
   CaretLeft,
   CaretRight,
   Cross,
+  DiagramTree,
   Font,
   Layers,
   MobileVideo,
@@ -131,6 +132,12 @@ function CabSummary({ cab }: { cab: CabInfo }) {
           text="Title"
           onClick={copySource}
           data-source="title"
+        />
+        <MenuItem
+          icon={<DiagramTree />}
+          text="Current Phase"
+          onClick={copySource}
+          data-source="phase"
         />
         <MenuItem
           icon={<People />}

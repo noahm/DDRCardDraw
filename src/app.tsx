@@ -111,6 +111,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "phase",
+        lazy: async () => {
+          const { PhaseName } = await import("./obs-sources/text");
+          return { Component: PhaseName };
+        },
+      },
+      {
         path: "title",
         lazy: async () => {
           const { CabTitle } = await import("./obs-sources/text");

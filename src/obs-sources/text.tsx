@@ -59,3 +59,16 @@ export function CabPlayer(props: {
   });
   return <h1>{text}</h1>;
 }
+
+export function PhaseName() {
+  const params = useParams<"roomName" | "cabId">();
+  const text = useAppState((s) => {
+    const drawingId = s.event.cabs[params.cabId!].activeMatch;
+    if (!drawingId) return null;
+    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
+    if (!parent) return null;
+    return parent.meta.type === "startgg" ? parent.meta.phaseName : null;
+  });
+
+  return <h1>{text}</h1>;
+}

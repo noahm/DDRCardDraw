@@ -9,6 +9,7 @@ export interface PickedMatch {
   players: Array<{ id: string; name: string }>;
   id: string;
   subtype: "versus" | "gauntlet";
+  phaseName: string;
 }
 
 const associatedMatchIds = createAppSelector(
@@ -68,7 +69,15 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
       {matches
         .filter((m) => !!m)
         .map((match) => {
-          const title = match.fullRoundText || "???";
+          const titlePieces: string[] = [match.fullRoundText || "???"];
+          if ((match.phaseGroup?.phase?.groupCount || 0) > 1) {
+            titlePieces.unshift(`Group ${match.phaseGroup?.displayIdentifier}`);
+          }
+          if (match.phaseGroup?.phase?.name) {
+            titlePieces.unshift(match.phaseGroup.phase.name);
+          }
+          const title = titlePieces.join(" - ");
+
           const p1 = inferShortname(match.slots![0]?.entrant?.name);
           const p2 = inferShortname(match.slots![1]?.entrant?.name);
           const matchUsed = existingMatches.includes(match.id!);
@@ -92,6 +101,7 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
                         })),
                         id: match.id!,
                         subtype: "versus",
+                        phaseName: match.phaseGroup?.phase?.name || "",
                       })
               }
             >
@@ -191,6 +201,7 @@ export function GauntletPicker(props: {
                         players: entrants,
                         id: phase.id!,
                         subtype: "gauntlet",
+                        phaseName: phase.name || "",
                       })
               }
             >
