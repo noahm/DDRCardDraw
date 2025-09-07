@@ -1,3 +1,11 @@
+.container {
+  padding: 1rem;
+}
+
+.container section {
+  margin-bottom: 1rem;
+}
+
 .textSourceCard {
   display: flex;
   justify-content: space-between;

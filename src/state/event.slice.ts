@@ -14,6 +14,7 @@ interface EventState {
   eventName: string;
   cabs: Record<string, CabInfo>;
   obsLabels: Record<string, { label: string; value: string }>;
+  obsCss: string;
 }
 
 const initialState: EventState = {
@@ -26,6 +27,9 @@ const initialState: EventState = {
     },
   },
   obsLabels: {},
+  obsCss: `h1 {
+  /* add text styles here */
+}`,
 };
 
 export const eventSlice = createSlice({
@@ -76,6 +80,9 @@ export const eventSlice = createSlice({
     },
     removeLabel(state, action: PayloadAction<{ id: string }>) {
       delete state.obsLabels[action.payload.id];
+    },
+    updateObsCss(state, action: PayloadAction<string>) {
+      state.obsCss = action.payload;
     },
   },
   extraReducers(builder) {

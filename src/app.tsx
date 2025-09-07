@@ -13,7 +13,7 @@ import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { Provider } from "react-redux";
-import { store } from "./state/store";
+import { store, useAppState } from "./state/store";
 import { PartySocketManager } from "./party/client";
 
 import {
@@ -206,11 +206,17 @@ function ObsSource() {
     <Provider store={store}>
       <PartySocketManager roomName={params.roomName}>
         <IntlProvider>
+          <ObsStyles />
           <Outlet />
         </IntlProvider>
       </PartySocketManager>
     </Provider>
   );
+}
+
+function ObsStyles() {
+  const cssText = useAppState((s) => s.event.obsCss);
+  return <style>{cssText}</style>;
 }
 
 export function App() {

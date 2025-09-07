@@ -13,15 +13,16 @@ import {
   InputGroup,
 } from "@blueprintjs/core";
 import { useAppDispatch, useAppState } from "../state/store";
-import { Add, Duplicate, Edit } from "@blueprintjs/icons";
+import { Add, Duplicate, Edit, FloppyDisk } from "@blueprintjs/icons";
 import React, { useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
 import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
 
 import styles from "./dashboard.css";
-import { useInObs } from "../theme-toggle";
+import { useInObs, useTheme } from "../theme-toggle";
 import { useHref } from "react-router-dom";
+import ReactCodeMirror from "@uiw/react-codemirror";
 
 export function Dashboard() {
   const [currentEdit, setCurrentEdit] = useState<string | null>(null);
@@ -30,7 +31,7 @@ export function Dashboard() {
 
   return (
     <>
-      <div style={{ padding: "1rem" }}>
+      <div className={styles.container}>
         {!isObs && (
           <p>
             <em>
@@ -62,6 +63,7 @@ export function Dashboard() {
             ))}
           </CardList>
         </section>
+        <CssEditor />
       </div>
     </>
   );
@@ -165,5 +167,47 @@ function EditDialog({
         }
       />
     </Dialog>
+  );
+}
+
+import { css } from "@codemirror/lang-css";
+
+function CssEditor() {
+  const cleanDoc = useAppState((s) => s.event.obsCss);
+  const [isDirty, setIsDirty] = useState(false);
+  const [localDoc, setLocalDoc] = useState(cleanDoc);
+  const dispatch = useAppDispatch();
+  const theme = useTheme();
+
+  return (
+    <section>
+      <H3>
+        Global OBS Source Styles{" "}
+        <Button
+          icon={<FloppyDisk />}
+          disabled={!isDirty}
+          intent={isDirty ? "primary" : undefined}
+          onClick={() => {
+            dispatch(eventSlice.actions.updateObsCss(localDoc));
+            setIsDirty(false);
+          }}
+        />
+      </H3>
+      <ReactCodeMirror
+        height="200"
+        minHeight="5"
+        theme={theme}
+        value={isDirty ? localDoc : cleanDoc}
+        extensions={[css()]}
+        onChange={(newDoc) => {
+          if (newDoc === cleanDoc) {
+            setIsDirty(false);
+          } else {
+            setIsDirty(true);
+          }
+          setLocalDoc(newDoc);
+        }}
+      />
+    </section>
   );
 }
