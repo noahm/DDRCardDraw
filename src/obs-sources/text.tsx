@@ -3,6 +3,17 @@ import { drawingsSlice } from "../state/drawings.slice";
 import { useAppState } from "../state/store";
 import { getAllPlayers, playerNameByIndex } from "../models/Drawing";
 
+export function GlobalLabel() {
+  const params = useParams<"roomName" | "labelId">();
+  const text = useAppState((s) => {
+    if (!params.labelId) return null;
+    const label = s.event.obsLabels[params.labelId];
+    if (!label) return null;
+    return label.value;
+  });
+  return <h1>{text}</h1>;
+}
+
 export function CabTitle() {
   const params = useParams<"roomName" | "cabId">();
   const text = useAppState((s) => {

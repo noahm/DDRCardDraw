@@ -21,15 +21,17 @@ export function useThemePref() {
     : Theme.Light;
 }
 
-function applyThemeBodyClass(theme: Theme, isObsLayer: boolean) {
+function applyThemeBodyClass(theme: Theme, isOBSSource: boolean) {
   document.body.classList.toggle(Classes.DARK, theme === Theme.Dark);
-  document.body.classList.toggle("obs-layer", isObsLayer);
+  document.body.classList.toggle("obs-layer", isOBSSource);
 }
 
 interface ThemeContext {
-  /** is this instance operating as a layer inside OBS */
-  obsLayer: boolean;
-  setObsLayer(next: boolean): void;
+  /** is this instance loaded in OBS (either browser source or dock) */
+  inObs: boolean;
+  /** is this instance operating as a browser source inside OBS */
+  obsBrowserSource: boolean;
+  setIsObsSource(next: boolean): void;
   userPref: Theme | undefined;
   resolved: Theme;
   updateBrowserPref(t: Theme): void;
@@ -44,13 +46,15 @@ declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace obsstudio {
     const pluginVersion: string;
+    const getControlLevel: (cb: (level: number) => void) => void;
   }
 }
 
 const useThemeStore = create<ThemeContext>((set, get) => ({
-  obsLayer: typeof window.obsstudio !== "undefined",
-  setObsLayer(next) {
-    set({ obsLayer: next });
+  inObs: !!window.obsstudio,
+  obsBrowserSource: false,
+  setIsObsSource(next) {
+    set({ obsBrowserSource: next });
   },
   userPref: undefined,
   resolved: darkQuery.matches ? Theme.Dark : Theme.Light,
@@ -65,19 +69,33 @@ const useThemeStore = create<ThemeContext>((set, get) => ({
   },
 }));
 
+// based on https://github.com/obsproject/obs-browser/issues/455#issuecomment-2351761820
+// there's no built-in way to distinguish between a browser source and a dock,
+// but in a dock some basic APIs are just stubbed, so this `getControlLevel` function
+// never calls the provided callback.
+// this results in detection of OBS delayed until we get the CB, but that will be adequate.
+if (window.obsstudio) {
+  window.obsstudio.getControlLevel(() => {
+    useThemeStore.getState().setIsObsSource(true);
+  });
+}
+
+export const useInObs = () => useThemeStore((s) => s.inObs);
+export const useInObsSource = () => useThemeStore((s) => s.obsBrowserSource);
+
 /** hook to get current app theme */
 export const useTheme = () => useThemeStore((s) => s.resolved);
 
 export function ThemeSyncWidget() {
   const {
     resolved: resolvedTheme,
-    obsLayer: isOBS,
+    obsBrowserSource: isOBSSource,
     updateBrowserPref,
   } = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
-    applyThemeBodyClass(resolvedTheme, isOBS);
-  }, [resolvedTheme, isOBS]);
+    applyThemeBodyClass(resolvedTheme, isOBSSource);
+  }, [resolvedTheme, isOBSSource]);
   useEffect(() => {
     updateBrowserPref(browserPref);
   }, [updateBrowserPref, browserPref]);

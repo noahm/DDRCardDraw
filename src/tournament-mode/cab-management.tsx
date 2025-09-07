@@ -5,6 +5,7 @@ import {
   InputGroup,
   Menu,
   MenuItem,
+  MenuItemProps,
   Popover,
   Tooltip,
 } from "@blueprintjs/core";
@@ -26,11 +27,12 @@ import {
   Remove,
 } from "@blueprintjs/icons";
 import { detectedLanguage } from "../utils";
-import { copyPlainTextToClipboard } from "../utils/share";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { playerNameByIndex } from "../models/Drawing";
 import { drawingsSlice } from "../state/drawings.slice";
+import { copyObsSourceForCab } from "./copy-obs-source";
+import { useHref } from "react-router-dom";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
@@ -104,15 +106,10 @@ function CabSummary({ cab }: { cab: CabInfo }) {
 
   const copySource = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      e.preventDefault();
       const sourceType = e.currentTarget.dataset.source;
       if (sourceType) {
-        const sourcePath = `${window.location.pathname}/cab/${cab.id}/source/${sourceType}`;
-        const sourceUrl = new URL(sourcePath, window.location.href);
-        console.info("Coyping source URL", sourceUrl.href);
-        copyPlainTextToClipboard(
-          sourceUrl.href,
-          "Copied OBS source URL to clipboard",
-        );
+        copyObsSourceForCab(cab.id, sourceType);
       }
     },
     [cab],
@@ -121,65 +118,75 @@ function CabSummary({ cab }: { cab: CabInfo }) {
   const sourcesMenu = (
     <Menu>
       <MenuItem icon={<MobileVideo />} text="OBS Sources">
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Layers />}
           text="Cards"
           onClick={copySource}
-          data-source="cards"
+          stub="cards"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Font />}
           text="Title"
           onClick={copySource}
-          data-source="title"
+          stub="title"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<DiagramTree />}
           text="Current Phase"
           onClick={copySource}
-          data-source="phase"
+          stub="phase"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<People />}
           text="All Players"
           onClick={copySource}
-          data-source="players"
+          stub="players"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Person />}
           text="Player 1"
           onClick={copySource}
-          data-source="p1"
+          stub="p1"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Person />}
           text="Player 1 Name"
           onClick={copySource}
-          data-source="p1-name"
+          stub="p1-name"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Person />}
           text="Player 1 Score"
           onClick={copySource}
-          data-source="p1-score"
+          stub="p1-score"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Person />}
           text="Player 2"
           onClick={copySource}
-          data-source="p2"
+          stub="p2"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Person />}
           text="Player 2 Name"
           onClick={copySource}
-          data-source="p2-name"
+          stub="p2-name"
+          cabId={cab.id}
         />
-        <MenuItem
+        <CopySourceMenuItem
           icon={<Person />}
           text="Player 2 Score"
           onClick={copySource}
-          data-source="p2-score"
+          stub="p2-score"
+          cabId={cab.id}
         />
       </MenuItem>
 
@@ -197,6 +204,24 @@ function CabSummary({ cab }: { cab: CabInfo }) {
       </h1>
       <CurrentMatch cab={cab} />
     </div>
+  );
+}
+
+function CopySourceMenuItem(
+  props: Pick<MenuItemProps, "icon" | "text" | "onClick"> & {
+    stub: string;
+    cabId: string;
+  },
+) {
+  const href = useHref(`cab/${props.cabId}/source/${props.stub}`);
+  return (
+    <MenuItem
+      icon={props.icon}
+      text={props.text}
+      onClick={props.onClick}
+      data-source={props.stub}
+      href={href}
+    />
   );
 }
 

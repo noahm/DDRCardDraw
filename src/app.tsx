@@ -93,8 +93,28 @@ const router = createBrowserRouter([
       {
         path: "config",
         lazy: async () => {
-          const mod = await import("./controls/config-page");
-          return { Component: mod.ConfigPage };
+          const { ConfigPage } = await import("./controls/config-page");
+          return { Component: ConfigPage };
+        },
+      },
+      {
+        path: "dash",
+        lazy: async () => {
+          const { Dashboard } = await import("./tournament-mode/dashboard");
+          return { Component: Dashboard };
+        },
+      },
+    ],
+  },
+  {
+    path: "e/:roomName/obs-globals/:labelId",
+    element: <ObsSource />,
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const { GlobalLabel } = await import("./obs-sources/text");
+          return { Component: GlobalLabel };
         },
       },
     ],

@@ -6,7 +6,7 @@ import { AppState, type store as appReduxStore } from "../state/store";
 
 import { createClient } from "@supabase/supabase-js";
 import type { Database, Json } from "./database.types";
-import { migrateToSubdraws } from "../state/drawings.slice";
+import { applyMigrations } from "../state/migrations";
 
 function getSupabase() {
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
@@ -43,7 +43,7 @@ export default class Server implements Party.Server {
     try {
       preloadedState =
         (await this.getFromStorage()) || (await this.getFromSupabase());
-      if (preloadedState) migrateToSubdraws(preloadedState.drawings);
+      if (preloadedState) applyMigrations(preloadedState);
     } catch {}
     if (preloadedState) {
       this.store = configureStore({ reducer, preloadedState });

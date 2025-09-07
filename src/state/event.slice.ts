@@ -13,6 +13,7 @@ export interface CabInfo {
 interface EventState {
   eventName: string;
   cabs: Record<string, CabInfo>;
+  obsLabels: Record<string, { label: string; value: string }>;
 }
 
 const initialState: EventState = {
@@ -24,6 +25,7 @@ const initialState: EventState = {
       activeMatch: null,
     },
   },
+  obsLabels: {},
 };
 
 export const eventSlice = createSlice({
@@ -63,6 +65,18 @@ export const eventSlice = createSlice({
       if (!cab) return;
       cab.activeMatch = action.payload.matchId;
     },
+    updateLabel(
+      state,
+      action: PayloadAction<{ id: string; value: string; label: string }>,
+    ) {
+      state.obsLabels[action.payload.id] = {
+        label: action.payload.label,
+        value: action.payload.value,
+      };
+    },
+    removeLabel(state, action: PayloadAction<{ id: string }>) {
+      delete state.obsLabels[action.payload.id];
+    },
   },
   extraReducers(builder) {
     builder.addCase(mergeDraws, (state, { payload }) => {
@@ -82,3 +96,9 @@ export const eventSlice = createSlice({
     }),
   },
 });
+
+export function addObsLabels(state: EventState) {
+  if (!state.obsLabels) {
+    state.obsLabels = {};
+  }
+}
