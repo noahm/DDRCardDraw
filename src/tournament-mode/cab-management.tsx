@@ -31,7 +31,7 @@ import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { playerNameByIndex } from "../models/Drawing";
 import { drawingsSlice } from "../state/drawings.slice";
-import { copyObsSourceForCab } from "./copy-obs-source";
+import { copyObsSource, routableCabSourcePath } from "./copy-obs-source";
 import { useHref } from "react-router-dom";
 
 export function CabManagement() {
@@ -109,7 +109,7 @@ function CabSummary({ cab }: { cab: CabInfo }) {
       e.preventDefault();
       const sourceType = e.currentTarget.dataset.source;
       if (sourceType) {
-        copyObsSourceForCab(cab.id, sourceType);
+        copyObsSource(routableCabSourcePath(cab.id, sourceType));
       }
     },
     [cab],
@@ -213,7 +213,7 @@ function CopySourceMenuItem(
     cabId: string;
   },
 ) {
-  const href = useHref(`cab/${props.cabId}/source/${props.stub}`);
+  const href = useHref(routableCabSourcePath(props.cabId, props.stub));
   return (
     <MenuItem
       icon={props.icon}

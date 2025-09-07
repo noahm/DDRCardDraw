@@ -1,4 +1,5 @@
 import {
+  AnchorButton,
   Button,
   ButtonGroup,
   Card,
@@ -16,10 +17,11 @@ import { Add, Duplicate, Edit } from "@blueprintjs/icons";
 import React, { useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
-import { copyObsGlobal } from "./copy-obs-source";
+import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
 
 import styles from "./dashboard.css";
 import { useInObs } from "../theme-toggle";
+import { useHref } from "react-router-dom";
 
 export function Dashboard() {
   const [currentEdit, setCurrentEdit] = useState<string | null>(null);
@@ -71,6 +73,7 @@ function LabelCard(props: {
   value: string;
   onEdit(): void;
 }) {
+  const href = useHref(routableGlobalSourcePath(props.id));
   return (
     <Card className={styles.textSourceCard}>
       <div>
@@ -79,7 +82,14 @@ function LabelCard(props: {
       </div>
       <ButtonGroup>
         <Button icon={<Edit />} onClick={props.onEdit} />
-        <Button icon={<Duplicate />} onClick={() => copyObsGlobal(props.id)} />
+        <AnchorButton
+          icon={<Duplicate />}
+          onClick={(e) => {
+            e.preventDefault();
+            copyObsSource(href);
+          }}
+          href={href}
+        />
       </ButtonGroup>
     </Card>
   );
