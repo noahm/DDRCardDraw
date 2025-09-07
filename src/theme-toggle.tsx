@@ -7,22 +7,17 @@ import { useMediaQuery } from "./hooks/useMediaQuery";
 
 export const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-export enum Theme {
-  Light = "light",
-  Dark = "dark",
-}
+export type Theme = "light" | "dark";
 
 /**
  * Returns true if user prefers dark theme
  */
 export function useThemePref() {
-  return useMediaQuery("(prefers-color-scheme: dark)")
-    ? Theme.Dark
-    : Theme.Light;
+  return useMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light";
 }
 
 function applyThemeBodyClass(theme: Theme, isOBSSource: boolean) {
-  document.body.classList.toggle(Classes.DARK, theme === Theme.Dark);
+  document.body.classList.toggle(Classes.DARK, theme === "dark");
   document.body.classList.toggle("obs-layer", isOBSSource);
 }
 
@@ -57,7 +52,7 @@ const useThemeStore = create<ThemeContext>((set, get) => ({
     set({ obsBrowserSource: next });
   },
   userPref: undefined,
-  resolved: darkQuery.matches ? Theme.Dark : Theme.Light,
+  resolved: darkQuery.matches ? "dark" : "light",
   updateBrowserPref(t) {
     const state = get();
     if (!state.userPref && state.resolved !== t) {
@@ -106,15 +101,13 @@ export function ThemeToggle() {
   const resolvedTheme = useThemeStore((t) => t.resolved);
   const setTheme = useThemeStore((t) => t.setTheme);
 
-  const ThemeIcon = resolvedTheme === Theme.Dark ? Flash : Moon;
+  const ThemeIcon = resolvedTheme === "dark" ? Flash : Moon;
 
   return (
     <MenuItem
       icon={<ThemeIcon />}
       text={<FormattedMessage id="toggleTheme" defaultMessage="Toggle Theme" />}
-      onClick={() =>
-        setTheme(resolvedTheme === Theme.Dark ? Theme.Light : Theme.Dark)
-      }
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     />
   );
 }

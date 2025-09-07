@@ -15,7 +15,7 @@ import {
   useGetDiffClass,
   useGetMetaString,
 } from "../game-data-utils";
-import { Theme, useTheme } from "../theme-toggle";
+import { useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useConfigState, useGameData } from "../state/hooks";
 
@@ -24,7 +24,7 @@ interface Props {
 }
 
 export function DiffHistogram({ charts }: Props) {
-  const fgColor = useTheme() === Theme.Dark ? "white" : undefined;
+  const fgColor = useTheme() === "dark" ? "white" : undefined;
   const isNarrow = useIsNarrow();
   const gameData = useGameData();
   const allDiffs = gameData?.meta.difficulties;
