@@ -51,7 +51,7 @@
       "otherEvents",
       "jpOnly"
     ],
-    "lastUpdated": 1756185385586
+    "lastUpdated": 1757393162670
   },
   "defaults": {
     "style": "single",
@@ -1922,6 +1922,13 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0061_3_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exceed",
+          "jacket": "sdvx/jk_0061_4_s.png",
+          "flags": ["otherEvents"]
         }
       ]
     },
@@ -5320,14 +5327,13 @@
       "date_added": "2013-09-05",
       "saHash": "183",
       "artist": "あまね＋ビートまりお（COOL&CREATE）",
-      "jacket": "sdvx6.png",
+      "jacket": "sdvx/jk_0183_1_s.png",
       "bpm": "190",
       "charts": [
         {
           "lvl": 4,
           "style": "single",
-          "diffClass": "novice",
-          "jacket": "sdvx/jk_0183_1_s.png"
+          "diffClass": "novice"
         },
         {
           "lvl": 8,
@@ -5340,6 +5346,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "jacket": "sdvx/jk_0183_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "flags": ["otherEvents"]
         }
       ]
     },
@@ -12892,6 +12904,12 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exceed",
+          "flags": ["otherEvents"]
         }
       ]
     },
@@ -60264,8 +60282,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "ARACHNE",
@@ -60296,8 +60313,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Poochie",
@@ -60328,8 +60344,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Crazy Jackpot",
@@ -60360,8 +60375,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "黒紅掬い",
@@ -60392,8 +60406,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "おねがいダーリン",
@@ -60579,8 +60592,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "THE PEERLESS UNDER HEAVEN",
@@ -60611,8 +60623,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "suspicions",
@@ -60643,8 +60654,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Virtual to LIVE",
@@ -63788,8 +63798,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Deep tenDon Reflex",
@@ -63820,8 +63829,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Ambivalent Vermilia",
@@ -63854,8 +63862,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "カミサマ・ネコサマ",
@@ -64230,8 +64237,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "OROCHI STRIKE",
@@ -64262,8 +64268,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Blφφdy Cφncertφ",
@@ -64294,8 +64299,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "REINCARNATION",
@@ -64326,8 +64330,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "Re:RHYZE",
@@ -64358,8 +64361,7 @@
           "style": "single",
           "diffClass": "maximum"
         }
-      ],
-      "flags": ["otherEvents"]
+      ]
     },
     {
       "name": "CO5M1C R4ILR0AD",
@@ -66107,6 +66109,138 @@
       ]
     },
     {
+      "name": "EROICA",
+      "search_hint": "eroica_hero",
+      "date_added": "2025-07-17",
+      "saHash": "2246",
+      "artist": "BEMANI Sound Team \"HERO\"",
+      "jacket": "sdvx/jk_2246_1_s.png",
+      "bpm": "200",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2246_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2246_3_s.png"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Secret Rouge",
+      "search_hint": "secretrouge_haretokidoki",
+      "date_added": "2025-07-17",
+      "saHash": "2247",
+      "artist": "ハレトキドキ",
+      "jacket": "sdvx/jk_2247_1_s.png",
+      "bpm": "139",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2247_2_s.png"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2247_3_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Snow Garland Fairy",
+      "search_hint": "snowgarlandf_keiju",
+      "date_added": "2025-07-17",
+      "saHash": "2249",
+      "artist": "BEMANI Sound Team \"KE!JU\"",
+      "jacket": "sdvx/jk_2249_1_s.png",
+      "bpm": "200",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "EYE OF THE HEAVEN",
+      "search_hint": "eyesoftheheaven_u1",
+      "date_added": "2025-07-17",
+      "saHash": "2250",
+      "artist": "BEMANI Sound Team \"U1-ASAMi\"",
+      "jacket": "sdvx/jk_2250_1_s.png",
+      "bpm": "308",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
       "name": "惑星ループ (花芽すみれ Cover)",
       "search_hint": "wakuseiloop_kagasumire",
       "date_added": "2025-06-26",
@@ -66132,6 +66266,526 @@
         },
         {
           "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "右肩の蝶 (空澄セナ Cover)",
+      "search_hint": "migikatanocho_asumisena",
+      "date_added": "2025-08-28",
+      "saHash": "2252",
+      "artist": "のりP",
+      "jacket": "sdvx/jk_2252_1_s.png",
+      "bpm": "140",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "KINGDOM COME",
+      "search_hint": "kingdomcome_roughsketch",
+      "date_added": "2025-08-07",
+      "saHash": "2253",
+      "artist": "RoughSketch",
+      "jacket": "sdvx/jk_2253_1_s.png",
+      "bpm": "282",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2253_2_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2253_3_s.png"
+        },
+        {
+          "lvl": 20,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "// If Summer Ever Comes_",
+      "search_hint": "ifsummerevercomes_kuroma",
+      "date_added": "2025-08-07",
+      "saHash": "2254",
+      "artist": "黒魔",
+      "jacket": "sdvx/jk_2254_1_s.png",
+      "bpm": "155-185",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2254_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2254_3_s.png"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "ØVER《Δ》",
+      "search_hint": "overdelta_emocosine",
+      "date_added": "2025-08-07",
+      "saHash": "2255",
+      "artist": "EmoCosine overlay",
+      "jacket": "sdvx/jk_2255_1_s.png",
+      "bpm": "100-573",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2255_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2255_3_s.png"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "オムニシエント・ゼロ",
+      "search_hint": "omnicientzero_keji",
+      "date_added": "2025-08-07",
+      "saHash": "2256",
+      "artist": "ke-ji（CERTIA）",
+      "jacket": "sdvx/jk_2256_1_s.png",
+      "bpm": "134-208",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2256_2_s.png"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2256_3_s.png"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "Lollipop Error 404",
+      "search_hint": "lollipoperror_tsubusarebozz",
+      "date_added": "2025-08-07",
+      "saHash": "2257",
+      "artist": "Tsubusare BOZZ feat.madoka*",
+      "jacket": "sdvx/jk_2257_1_s.png",
+      "bpm": "120-176",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2257_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2257_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "カミツレの成り方",
+      "search_hint": "kamitsurenonarikata_teduka",
+      "date_added": "2025-08-07",
+      "saHash": "2258",
+      "artist": "テヅカ feat. 遠山小春",
+      "jacket": "sdvx/jk_2258_1_s.png",
+      "bpm": "212",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2258_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "Grαnd Arχitect",
+      "search_hint": "grandarxitect_chubay",
+      "date_added": "2025-08-07",
+      "saHash": "2259",
+      "artist": "CHUBAY",
+      "jacket": "sdvx/jk_2259_1_s.png",
+      "bpm": "198",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["hexadiver"]
+    },
+    {
+      "name": "ぐしゃ",
+      "search_hint": "gusha_polarisp",
+      "date_added": "2025-07-10",
+      "saHash": "2260",
+      "artist": "ポラリスピー",
+      "jacket": "sdvx/jk_2260_1_s.png",
+      "bpm": "200",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Dear Deer",
+      "search_hint": "deardeer_hylen",
+      "date_added": "2025-07-10",
+      "saHash": "2261",
+      "artist": "Hylen",
+      "jacket": "sdvx/jk_2261_1_s.png",
+      "bpm": "185",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "DISTORDER",
+      "search_hint": "distorder_djmyosuke",
+      "date_added": "2025-07-10",
+      "saHash": "2262",
+      "artist": "DJ Myosuke",
+      "jacket": "sdvx/jk_2262_1_s.png",
+      "bpm": "220",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Electronic Sports Complex",
+      "search_hint": "electronicsc_eimenkensetsu",
+      "date_added": "2025-07-17",
+      "saHash": "2263",
+      "artist": "栄免建設",
+      "jacket": "sdvx/jk_2263_1_s.png",
+      "bpm": "220",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Misfortune Crawler",
+      "search_hint": "misfortune_aoi",
+      "date_added": "2025-08-28",
+      "saHash": "2272",
+      "artist": "Aoi",
+      "jacket": "sdvx/jk_2272_1_s.png",
+      "bpm": "155",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/jk_2272_2_s.png"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/jk_2272_3_s.png"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "千歳に泡影",
+      "search_hint": "chitosenihouei_inaori",
+      "date_added": "2025-07-24",
+      "saHash": "2274",
+      "artist": "Inaori feat.兎角あかり",
+      "jacket": "sdvx/jk_2274_1_s.png",
+      "bpm": "200",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "幻想プロミネンス",
+      "search_hint": "gensouprominence_deli",
+      "date_added": "2025-08-28",
+      "saHash": "2278",
+      "artist": "deli. vs 駄々子 vs かなたん",
+      "jacket": "sdvx/jk_2278_1_s.png",
+      "bpm": "205",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "maximum"
+        }
+      ]
+    },
+    {
+      "name": "Lost Gear Syndrome",
+      "search_hint": "lostgear_polyshamorimori",
+      "date_added": "2025-07-24",
+      "saHash": "2282",
+      "artist": "polysha vs. モリモリあつし",
+      "jacket": "sdvx/jk_2282_1_s.png",
+      "bpm": "240",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice"
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust"
+        },
+        {
+          "lvl": 18,
           "style": "single",
           "diffClass": "maximum"
         }
