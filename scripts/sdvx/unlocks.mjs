@@ -350,6 +350,14 @@ export const SDVX_UNLOCK_IDS = {
     2090, // Imitated Visions
     2091, // こどもかくしのアンダーランド
     2092, // すべてを賭して
+
+    2253, // KINGDOM COME
+    2254, // // If Summer Ever Comes_
+    2255, // ØVER《Δ》
+    2256, // オムニシエント・ゼロ
+    2257, // Lollipop Error 404
+    2258, // カミツレの成り方
+    2259, // Grαnd Arχitect
   ],
 
   // Variant Gate
@@ -381,37 +389,23 @@ export const SDVX_UNLOCK_IDS = {
     2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
 
     //REFLEC BEAT Special Stamp!
-    2053, // 梅雪夜
-    2054, // ARACHNE
-    2055, // Poochie
-    2056, // Crazy Jackpot
-    2057, // 黒紅掬い
-
     2235, // Windy Fairy
     2236, // 幻影ノ消失
     2237, // Towards The Horizon
     2238, // SCHWARZSCHILD FIELD
     2239, // ビューティフル レシート
 
-    // BPL Season 3 Triple Tribe
-    2063, // stellar rain
-    2064, // THE PEERLESS UNDER HEAVEN
-    2065, // suspicions
-    2162, // ちょえちょえまぎか
-    2163, // Deep tenDon Reflex
-    2164, // Ambivalent Vermilia
-
-    // MYSTICAL Re:UNION
-    2177, // Lichtsäule
-    2178, // OROCHI STRIKE
-    2179, // Blφφdy Cφncertφ
-    2180, // REINCARNATION
-    2181, // Re:RHYZE
-
     // BPL Season 4 Triple Tribe
     2189, // Come to Life
     2190, // SOLAR ECLIPSE
     2191, // COSMIC V3LOCITY
+
+    // BPL Season 5 Triple Tribe
+    2246, // EROICA
+    2247, // Secret Rouge
+    2249, // Snow Garland Fairy
+    2250, // EYE OF THE HEAVEN
+    2263, // Electronic Sports Complex
 
     // PRECIOUS UNIVERSAL CELEBRATE Stamp
     1969, // X1GNUS
@@ -428,6 +422,10 @@ export const SDVX_UNLOCK_IDS = {
     2231, // Crossfade
     2232, // 星界のアルペジオ
     2233, // Ö<3rf10₩
+
+    2260, // ぐしゃ
+    2261, // Dear Deer
+    2262, // DISTORDER
 
     // Arena Exclusive Exceed Charts
 
@@ -457,6 +455,10 @@ export const SDVX_UNLOCK_IDS = {
     [779, "exceed"], // conflict
     [225, "exceed"], // Next infection
     [418, "exceed"], // werewolf howls.
+
+    [61, "exceed"], // レトロスペクティビリー・メリーゴーランド
+    [466, "exceed"], // 有頂天ビバーチェ
+    [183, "exceed"], // ウサテイ
   ],
 
   jpOnly: [

@@ -1,0 +1,5413 @@
+{
+  "$schema": "../../songs.schema.json",
+  "meta": {
+    "menuParent": "events",
+    "styles": ["single", "double"],
+    "difficulties": [
+      {
+        "key": "beginner",
+        "color": "#6eccc4"
+      },
+      {
+        "key": "basic",
+        "color": "#e0de5c"
+      },
+      {
+        "key": "difficult",
+        "color": "#e8715f"
+      },
+      {
+        "key": "expert",
+        "color": "#72cc6e"
+      },
+      {
+        "key": "challenge",
+        "color": "#cc71e8"
+      }
+    ],
+    "folders": [
+      "DanceDanceRevolution World",
+      "DanceDanceRevolution A3",
+      "DanceDanceRevolution A20 PLUS",
+      "DanceDanceRevolution A20",
+      "DanceDanceRevolution A",
+      "DanceDanceRevolution (2014)",
+      "DanceDanceRevolution (2013)",
+      "DanceDanceRevolution X3 vs 2nd MIX",
+      "DanceDanceRevolution X2",
+      "DanceDanceRevolution X",
+      "DanceDanceRevolution SuperNOVA2",
+      "DanceDanceRevolution SuperNOVA",
+      "DanceDanceRevolution EXTREME",
+      "DDRMAX2 -DanceDanceRevolution 7thMIX-",
+      "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "DanceDanceRevolution 5th Mix",
+      "DanceDanceRevolution 4th Mix",
+      "DanceDanceRevolution 3rd Mix",
+      "DanceDanceRevolution 2nd Mix",
+      "DanceDanceRevolution 1st Mix"
+    ],
+    "flags": [
+      "shock",
+      "flareRank",
+      "worldLeague",
+      "unlock",
+      "goldExclusive",
+      "grandPrixPack",
+      "platinumMembers",
+      "tempUnlock",
+      "copyStrikes"
+    ],
+    "granularTierResolution": 20,
+    "lastUpdated": 1756661915344
+  },
+  "defaults": {
+    "style": "single",
+    "difficulties": ["basic", "difficult", "expert", "challenge"],
+    "flags": ["shock", "flareRank"],
+    "lowerLvlBound": 10,
+    "upperLvlBound": 19
+  },
+  "i18n": {
+    "en": {
+      "name": "First Step 2026",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "flareRank": "Flare skill rank unlocks",
+      "unlock": "Unlockable songs",
+      "goldExclusive": "20th Gold Cab Exclusive",
+      "worldLeague": "World League",
+      "grandPrixPack": "DDR GRAND PRIX music packs",
+      "platinumMembers": "DDR Platinum Members Pass",
+      "tempUnlock": "Formerly unlockable (KAC, BPL, etc.)",
+      "shock": "Shock arrow charts",
+      "copyStrikes": "Songs with streaming copyright issues",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
+      }
+    },
+    "ja": {
+      "name": "DDR World",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "flareRank": "フレアスキル解禁楽曲",
+      "unlock": "解禁が必要な楽曲/譜面",
+      "goldExclusive": "20th anniversary model(金筐体)限定",
+      "worldLeague": "WORLD LEAGUE解禁楽曲",
+      "grandPrixPack": "DDR GRAND PRIX先行プレー特典",
+      "platinumMembers": "プラチナメンバーズパス先行プレー特典",
+      "tempUnlock": "現在解禁できない楽曲/譜面",
+      "shock": "ショックアロー譜面",
+      "copyStrikes": "配信で使用できない楽曲",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "888",
+      "artist": "DJ TECHNORCH",
+      "bpm": "111-444",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 515,
+          "freeze": 11,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.85
+        }
+      ],
+      "remyLink": "https://remywiki.com/888",
+      "jacket": "ddr_x2/888.png",
+      "saHash": "id9oObq9P6Q6Pq6lQPqI88OP1DD8D0O1",
+      "saIndex": "336",
+      "search_hint": "はちやそば/hachiyasoba"
+    },
+    {
+      "name": "9th Outburst",
+      "artist": "Zekk",
+      "saHash": "Q9PP10bOQdIPD1iI99llI9QID9b09q0o",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "82-163",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.45
+        }
+      ],
+      "jacket": "ddr_a3/9th Outburst.jpg",
+      "remyLink": "https://remywiki.com/9th_Outburst"
+    },
+    {
+      "name": "Abrupt Madness",
+      "artist": "Mameyudoufu",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Abrupt_Madness",
+      "saHash": "OQO1Di8IQIQqP1d81d1ID9QD110b0888",
+      "saIndex": "1203",
+      "jacket": "ddr_a3/Abrupt_Madness.jpg",
+      "search_hint": "SUPER NOVA Tohoku"
+    },
+    {
+      "name": "ACE FOR ACES",
+      "artist": "TAG×U1",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 786,
+          "freeze": 16,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "bpm": "50-400",
+          "sanbaiTier": 18.2
+        }
+      ],
+      "remyLink": "https://remywiki.com/ACE_FOR_ACES",
+      "jacket": "ddr_a/ACE FOR ACES.png",
+      "saHash": "ld6P1lbb0bPO9doqbbPOoPb8qoDo8id0",
+      "saIndex": "757"
+    },
+    {
+      "name": "Acid,Tribal & Dance (DDR EDITION)",
+      "artist": "Relect",
+      "bpm": "71-286",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Acid,Tribal_%26_Dance_(DDR_EDITION)",
+      "jacket": "ddr_a3/Acid,Tribal_&_Dance_(DDR_EDITION).jpg",
+      "saHash": "q8QPqbiQ00i6odq81P0D960I108bIiQb",
+      "saIndex": "1122"
+    },
+    {
+      "name": "Across the nightmare",
+      "artist": "Jimmy Weckl",
+      "bpm": "300",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 305,
+          "freeze": 12,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Across_the_nightmare",
+      "jacket": "ddr_max-ext/Across the nightmare.png",
+      "saHash": "O6I9ioqii8i6I1DIb1PqOD6q0ooo8bDo",
+      "saIndex": "101"
+    },
+    {
+      "name": "ACROSS WORLD",
+      "artist": "Royz",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 363,
+          "freeze": 3,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/ACROSS_WORLD",
+      "jacket": "ddr_2013/ACROSS WORLD.png",
+      "saHash": "o81iq91q6lI6OODP9Pb9OboDlQD9Q08d",
+      "saIndex": "537"
+    },
+    {
+      "name": "Adularia",
+      "artist": "DJ TOTTO",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 290,
+          "freeze": 14,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Adularia",
+      "jacket": "ddr_2014/Adularia.png",
+      "genre": "ARTCORE",
+      "saHash": "IQ6I61i1b0Ob01QiQlld8o09iIQPoPOl",
+      "saIndex": "611"
+    },
+    {
+      "name": "ALBIDA",
+      "artist": "DJ YOSHITAKA",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.2
+        }
+      ],
+      "remyLink": "https://remywiki.com/ALBIDA",
+      "jacket": "ddr_a3/ALBIDA.jpg",
+      "genre": "HARD RENAISSANCE",
+      "saHash": "Io196q006I86IllQPOb098qd1DQd60Oq",
+      "saIndex": "1091"
+    },
+    {
+      "name": "ALPACORE",
+      "artist": "Cranky",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.6
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/ALPACORE",
+      "jacket": "ddr_a20/ALPACORE.png",
+      "saHash": "6d8DiDl0i1oldbbo0o60PQ0q96d608Dq",
+      "saIndex": "901"
+    },
+    {
+      "name": "Another Phase",
+      "artist": "TAG",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 333,
+          "freeze": 5,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Another_Phase",
+      "jacket": "ddr_2013/Another Phase.png",
+      "saHash": "9O1O0o8O1qbQ08Q961Ib1iOIDPQid109",
+      "saIndex": "526"
+    },
+    {
+      "name": "Anti-Matter",
+      "artist": "Orbit1 & Milo",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 600,
+          "freeze": 36,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Anti-Matter",
+      "jacket": "ddr_x2/Anti-Matter.png",
+      "saHash": "D89QP18016o01qoOi60I6Q19dlOQPbdo",
+      "saIndex": "341"
+    },
+    {
+      "name": "Avenger",
+      "artist": "USAO",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.85
+        }
+      ],
+      "remyLink": "https://remywiki.com/Avenger",
+      "jacket": "ddr_a20/Avenger.png",
+      "saHash": "9DoD10OPQ999IlP0doo69olbOQ680q09",
+      "saIndex": "857"
+    },
+    {
+      "name": "Awakening Wings",
+      "artist": "伊達朱里紗",
+      "artist_translation": "Arisa Date",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Awakening_Wings",
+      "jacket": "ddr_a3/Awakening_Wings.jpg",
+      "saHash": "QO69qib8Q61lqbO8QI0dODo8D1b6Iqlq",
+      "saIndex": "1140"
+    },
+    {
+      "name": "bag",
+      "artist": "RevenG",
+      "bpm": "65",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 382,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Bag",
+      "jacket": "ddr_max-ext/bag.png",
+      "genre": "SPIRITUAL",
+      "saHash": "9qbdq1PiI1O81P1PdioQli66Ob9QiiQP",
+      "saIndex": "104"
+    },
+    {
+      "name": "Battle Against a True Hero",
+      "saHash": "I6oq8ODq6DOOiqod1iI1109DO1II9iiO",
+      "artist": "Toby Fox",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "75-150",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 567,
+          "freeze": 5,
+          "shock": 147,
+          "flags": ["shock"],
+          "sanbaiTier": 18.2
+        }
+      ],
+      "jacket": "ddr_a3/Battle Against a True Hero.jpg",
+      "remyLink": "https://remywiki.com/Battle_Against_a_True_Hero_/_Honmono_no_hero_to_no_tatakai",
+      "search_hint": "Undertale ほんものひーろーとのたたかい/本物のヒーローとの戦い"
+    },
+    {
+      "name": "BITTER CHOCOLATE STRIKER",
+      "artist": "L.E.D.-G",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/BITTER_CHOCOLATE_STRIKER",
+      "jacket": "ddr_a20plus/BITTER CHOCOLATE STRIKER.jpg",
+      "genre": "JUMPSTYLE",
+      "saHash": "o9P816l0QQ1b9l1l6i1o6OD9bl9dP00l",
+      "saIndex": "990"
+    },
+    {
+      "name": "Black Emperor",
+      "artist": "黒魔",
+      "artist_translation": "Kuroma",
+      "bpm": "30-195",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Black_Emperor",
+      "jacket": "ddr_a3/Black Emperor.jpg",
+      "saHash": "9dI8ilPi9bd9blI6Q8D6IPb1lblqDl1Q",
+      "saIndex": "1077"
+    },
+    {
+      "name": "BLAKE",
+      "artist": "A.T.park",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/BLAKE",
+      "jacket": "ddr_a20plus/BLAKE.jpg",
+      "saHash": "b0dIdlPD6IDQ000l6lIoO9oD1IQiqQ6I",
+      "saIndex": "1039"
+    },
+    {
+      "name": "Blew My Mind",
+      "artist": "Sota F.",
+      "bpm": "95-380",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 665,
+          "shock": 2,
+          "freeze": 46,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 18.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Blew_My_Mind",
+      "jacket": "ddr_2013/Blew My Mind.png",
+      "saHash": "8IdlOq1qI8OO1PP88I6olPiI6IqqqIIO",
+      "saIndex": "560"
+    },
+    {
+      "name": "BLSTR",
+      "artist": "Ujico*",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/BLSTR",
+      "jacket": "ddr_a20/BLSTR.png",
+      "genre": "",
+      "saHash": "I9Ob6PlIiOQl6iQ6qO6QO0iQ1ld9DDO0",
+      "saIndex": "864"
+    },
+    {
+      "name": "BLUE FOG, SILVER BULLET.",
+      "saHash": "qQd06O6d19ODl0QP8l6Q8lPlloo69ddP",
+      "artist": "BEMANI Sound Team \"L.E.D.\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "93-185",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.65
+        }
+      ],
+      "jacket": "ddr_a3/BLUE FOG, SILVER BULLET..jpg",
+      "remyLink": "https://remywiki.com/BLUE_FOG,_SILVER_BULLET.",
+      "search_hint": "BLUE FOG SILVER BULLET"
+    },
+    {
+      "name": "Bounce Trippy",
+      "artist": "Dustvoxx",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Bounce_Trippy",
+      "jacket": "ddr_a20/Bounce Trippy.png",
+      "saHash": "l81l981iPod0PDIIObIldoQb6Ol9o1Iq",
+      "saIndex": "907"
+    },
+    {
+      "name": "BREAKING THE FUTURE",
+      "artist": "ARM (IOSYS) x BEMANI Sound Team \"U1\" ft. Kradness x TRIΔNGLE",
+      "bpm": "45-361",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 10.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/BREAKING_THE_FUTURE",
+      "saHash": "dlq91b19ld10IdIqQ9q99O8QDOOi18dq",
+      "saIndex": "1188",
+      "jacket": "ddr_a3/BREAKING_THE_FUTURE.jpg"
+    },
+    {
+      "name": "BRILLIANT 2U (AKBK MIX)",
+      "artist": "NAOKI",
+      "bpm": "162",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 571,
+          "freeze": 18,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/BRILLIANT_2U_(AKBK_MIX)",
+      "jacket": "ddr_x3/BRILLIANT 2U (AKBK MIX).png",
+      "saHash": "6l0iQ18D0I00P89lIqI8bl9biIOi018O",
+      "saIndex": "486"
+    },
+    {
+      "name": "BRILLIANT 2U(Orchestra Groove)",
+      "artist": "NAOKI",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution 2nd Mix",
+      "charts": [
+        {
+          "step": 309,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 12.2
+        }
+      ],
+      "remyLink": "https://remywiki.com/BRILLIANT_2U(Orchestra_Groove)",
+      "jacket": "ddr_1st-5th/BRILLIANT 2U(Orchestra Groove).png",
+      "saHash": "DbPodlqiOQdD88bo8lPO9D6iql1DO8P0",
+      "saIndex": "5"
+    },
+    {
+      "name": "CANDY☆",
+      "artist": "Luv UNLIMITED",
+      "bpm": "192",
+      "folder": "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "charts": [
+        {
+          "step": 327,
+          "freeze": 29,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/CANDY_(Luv_UNLIMITED)",
+      "jacket": "ddr_max-ext/CANDY☆.png",
+      "genre": "CANDY POP",
+      "saHash": "OPbqldiq0dQIo1011086IOl1qbOloOl9",
+      "saIndex": "61"
+    },
+    {
+      "name": "CHAOS",
+      "artist": "DE-SIRE retunes",
+      "bpm": "160-281",
+      "folder": "DanceDanceRevolution SuperNOVA",
+      "charts": [
+        {
+          "step": 321,
+          "freeze": 5,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/CHAOS",
+      "jacket": "ddr_sn-sn2/CHAOS.png",
+      "saHash": "8o1iQPiId8P6Db9Iqo1Oo119QDoq8qQ8",
+      "saIndex": "155"
+    },
+    {
+      "name": "CHAOS Terror-Tech Mix",
+      "artist": "ARM (IOSYS)",
+      "bpm": "164-167",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/CHAOS_Terror-Tech_Mix",
+      "jacket": "ddr_a/CHAOS Terror-Tech Mix.png",
+      "genre": "",
+      "saHash": "b16OP1o9qb6bQd66qOl98iq0boiQP919",
+      "saIndex": "814"
+    },
+
+    {
+      "name": "Come To m1dy",
+      "saHash": "bll06Di6q1QOlddDlPDPiQDDI09bOOoP",
+      "artist": "m1dy",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "113-450",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 15.75
+        }
+      ],
+      "jacket": "ddr_a3/Come To m1dy.jpg",
+      "remyLink": "https://remywiki.com/Come_To_m1dy",
+      "search_hint": "Come to midy"
+    },
+    {
+      "name": "Condor",
+      "artist": "Remo-con",
+      "bpm": "142",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 479,
+          "freeze": 67,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 15.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Condor",
+      "jacket": "ddr_2013/Condor.png",
+      "genre": "",
+      "saHash": "1Ol1i86OQd61IlqPb9O1060l0OQDoDQI",
+      "saIndex": "498"
+    },
+    {
+      "name": "Cosy Catastrophe",
+      "artist": "SYUNN",
+      "bpm": "90-360",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 550,
+          "freeze": 9,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Cosy_Catastrophe",
+      "jacket": "ddr_a/Cosy Catastrophe.png",
+      "genre": "DRUMSTEP",
+      "saHash": "9QIo1lbD1ldlqPO0iD68io69Pd8b01Do",
+      "saIndex": "755"
+    },
+    {
+      "name": "Crazy Shuffle",
+      "artist": "Yooh",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Crazy_Shuffle",
+      "jacket": "ddr_a20/Crazy_Shuffle.png",
+      "genre": "",
+      "saHash": "OdQqDiIDbD6ioi60ob6lDOlD8oio9l0b",
+      "saIndex": "885"
+    },
+    {
+      "name": "Crystarium",
+      "artist": "BlackY",
+      "bpm": "130",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Crystarium",
+      "jacket": "ddr_a3/Crystarium.jpg",
+      "saHash": "oP8iIdilQ0QiDllqDbDIOl0iQPd9PQ9I",
+      "saIndex": "1157"
+    },
+    {
+      "name": "CyberConnect",
+      "artist": "Blacklolita",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/CyberConnect",
+      "jacket": "ddr_a20/CyberConnect.jpg",
+      "genre": "HARD DANCE",
+      "saHash": "1qPIiqqQo0P9dD90I11q90b0ooIidbPO",
+      "saIndex": "921"
+    },
+    {
+      "name": "Cytokinesis",
+      "artist": "Hommarju",
+      "bpm": "111-284",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 481,
+          "freeze": 7,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.95
+        }
+      ],
+      "remyLink": "https://remywiki.com/Cytokinesis",
+      "jacket": "ddr_a/Cytokinesis.png",
+      "saHash": "ibl00b69Oli68l96d6o1P1ob8QPillbO",
+      "saIndex": "729"
+    },
+    {
+      "name": "Daily Lunch Special",
+      "artist": "Lucky Vacuum",
+      "bpm": "205",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 362,
+          "freeze": 44,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Daily_Lunch_Special",
+      "jacket": "ddr_2014/Daily Lunch Special.png",
+      "genre": "ラッキーハードコア",
+      "saHash": "ldlqDQ0bb8d9do86o898P0qo1OlD88qD",
+      "saIndex": "582",
+      "search_hint": "LUCKY HARDCORE/ラッキーハードコア"
+    },
+    {
+      "name": "Dance and Death",
+      "saHash": "86106098616o998i9d1PD6Pl0bD19dlD",
+      "artist": "ikaruga_nex",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "145",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.25
+        }
+      ],
+      "jacket": "ddr_world/Dance and Death.jpg",
+      "remyLink": "https://remywiki.com/Dance_and_Death"
+    },
+    {
+      "name": "Dance Phenomena",
+      "artist": "BEMANI Sound Team \"Captain KING\"",
+      "bpm": "71-142",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dance_Phenomena",
+      "jacket": "ddr_a3/Dance Phenomena.jpg",
+      "saHash": "oQ91qO6Dii66bO69I9ooIQD101Dl68Qi",
+      "saIndex": "1055"
+    },
+    {
+      "name": "Dance With The Dead",
+      "saHash": "1dldQ1il1O89O8Ol0Ib0Dq8Pl8ol111I",
+      "artist": "BEMANI Sound Team \"SYUNN\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "150",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dance_With_The_Dead",
+      "jacket": "ddr_a3/Dance With The Dead.jpg"
+    },
+    {
+      "name": "DDR MEGAMIX",
+      "artist": "DDR",
+      "bpm": "65-332",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 16.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/DDR_MEGAMIX",
+      "jacket": "ddr_a/DDR MEGAMIX.png",
+      "genre": "DDR",
+      "saHash": "8dbiodDo1i6IolDQdqdOoqDDD90q6liQ",
+      "saIndex": "810",
+      "search_hint": "DDR"
+    },
+    {
+      "name": "DDR TAGMIX -LAST DanceR-",
+      "artist": "BEMANI Sound Team \"TAG underground overlay UNLEASHED\"",
+      "bpm": "50-800",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/DDR_TAGMIX_-LAST_DanceR-",
+      "jacket": "ddr_a20plus/DDR TAGMIX -LAST DanceR-.jpg",
+      "saHash": "dQODIo01o98oPll086Qdol8bq9QP8d61",
+      "saIndex": "1046"
+    },
+    {
+      "name": "Dead Heat",
+      "artist": "Maozon",
+      "bpm": "177",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.2
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dead_Heat",
+      "jacket": "ddr_a20/Dead Heat.png",
+      "saHash": "6iO8d9ld00I6lDIO6qbOldP99oqloqb9",
+      "saIndex": "827"
+    },
+    {
+      "name": "DEADLOCK -Out Of Reach-",
+      "artist": "U1 undefined behavior",
+      "bpm": "205",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/DEADLOCK_-Out_Of_Reach-",
+      "jacket": "ddr_a20plus/DEADLOCK -Out Of Reach-.jpg",
+      "saHash": "i6bl89d6OOi1O00qlQOIl8b8Qld6IiQP",
+      "saIndex": "966"
+    },
+    {
+      "name": "Death by Glamour",
+      "saHash": "qqdlo1QOQo6QIi8PqOi8iIOO0il1IblQ",
+      "artist": "Toby Fox",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "148",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "step": 368,
+          "freeze": 44,
+          "shock": 71,
+          "sanbaiTier": 11.65,
+          "flags": ["shock"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 698,
+          "freeze": 42,
+          "shock": 119,
+          "flags": ["shock"],
+          "sanbaiTier": 17.65
+        }
+      ],
+      "search_hint": "Undertale かれいなるしとう/華麗なる死闘",
+      "remyLink": "https://remywiki.com/Death_by_Glamour_/_Kareinaru_shitou",
+      "jacket": "ddr_a3/Death by Glamour.jpg"
+    },
+    {
+      "name": "Dense Flyer",
+      "saHash": "1QbddbDiOiii8O90Dq68dqO91oQq0oqi",
+      "artist": "seatrus",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "166",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.4
+        }
+      ],
+      "jacket": "ddr_world/Dense Flyer.jpg",
+      "remyLink": "https://remywiki.com/Dense_Flyer"
+    },
+    {
+      "name": "Desert Journey",
+      "artist": "dj TAKA",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 456,
+          "shock": 35,
+          "freeze": 16,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 15.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Desert_Journey",
+      "jacket": "ddr_2013/Desert Journey.png",
+      "saHash": "PI1DiP0bIi8PodP6O1i8P0P1i8iI1oD8",
+      "saIndex": "523"
+    },
+    {
+      "name": "Destination",
+      "artist": "Sota F.",
+      "bpm": "85-170",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 498,
+          "freeze": 48,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Destination",
+      "jacket": "ddr_2014/Destination.png",
+      "saHash": "9dD6dlq01qd80loD6OOQb60ql6P6068O",
+      "saIndex": "638"
+    },
+    {
+      "name": "DeStRuCtIvE FoRcE",
+      "artist": "BADMYTH",
+      "bpm": "88-177",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/DeStRuCtIvE_FoRcE",
+      "jacket": "ddr_a20plus/DeStRuCtIvE FoRcE.jpg",
+      "saHash": "Pi81dQi00lo9i1Pib91lQ01i0biIbPIP",
+      "saIndex": "936"
+    },
+    {
+      "name": "Diamond Night",
+      "artist": "TOMOSUKE feat. Alexa Slaymaker",
+      "bpm": "135",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 326,
+          "freeze": 15,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Diamond_Night",
+      "jacket": "ddr_2013/Diamond Night.png",
+      "genre": "",
+      "saHash": "QD6b8i08P1IQloIPOPiqlIPoDlPi9DPI",
+      "saIndex": "516"
+    },
+    {
+      "name": "DIGITALIZER",
+      "artist": "BEMANI Sound Team \"Sota F.\"",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.25
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 725,
+          "freeze": 4,
+          "shock": 18,
+          "sanbaiTier": 18.65,
+          "flags": ["shock"]
+        }
+      ],
+      "remyLink": "https://remywiki.com/DIGITALIZER",
+      "jacket": "ddr_a20plus/DIGITALIZER.jpg",
+      "saHash": "dqQbQ9oPlIi6bDdi18d9qPlDb0PiDddi",
+      "saIndex": "954"
+    },
+    {
+      "name": "Dispersion Star",
+      "artist": "ZUKI",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 340,
+          "freeze": 23,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dispersion_Star",
+      "jacket": "ddr_2014/Dispersion Star.png",
+      "saHash": "6i000qlo9PD9oi9I9Qb990D6D9i19699",
+      "saIndex": "575"
+    },
+    {
+      "name": "DOUBLE TORNARD",
+      "artist": "evo-X",
+      "bpm": "153",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/DOUBLE_TORNARD",
+      "jacket": "ddr_a3/DOUBLE TORNARD.jpg",
+      "saHash": "Iiq6Qoll0oQi801QdPdlOO06DOdIDdD9",
+      "saIndex": "1082"
+    },
+    {
+      "name": "DOWNER & UPPER",
+      "artist": "BEMANI Sound Team \"DJ TOTTO\"",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 190,
+          "freeze": 45,
+          "shock": 58,
+          "flags": ["shock"],
+          "sanbaiTier": 10.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/DOWNER_%26_UPPER",
+      "jacket": "ddr_a20/DOWNER_&_UPPER.png",
+      "saHash": "lldPQPDP0qq8iqQ910l8b8PoQ6O668Q0",
+      "saIndex": "884"
+    },
+    {
+      "name": "Draw the Savage",
+      "artist": "Ryunosuke Kudo",
+      "bpm": "134",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 15.95
+        }
+      ],
+      "remyLink": "https://remywiki.com/Draw_the_Savage",
+      "jacket": "ddr_a20plus/Draw the Savage.jpg",
+      "saHash": "D6ll81qoDDPIq0d89O69dIQIldQdQoId",
+      "saIndex": "962"
+    },
+    {
+      "name": "Drive Away",
+      "artist": "Tanukichi",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Drive_Away",
+      "saHash": "b0o6bl18Q1bqI9o9oqQ9POoP8DiDDibP",
+      "saIndex": "1198",
+      "jacket": "ddr_a3/Drive_Away.jpg",
+      "search_hint": "GiGO"
+    },
+    {
+      "name": "DROP OUT",
+      "artist": "NW260",
+      "bpm": "260",
+      "folder": "DanceDanceRevolution 4th Mix",
+      "charts": [
+        {
+          "step": 397,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/DROP_OUT",
+      "jacket": "ddr_1st-5th/DROP OUT.png",
+      "saHash": "Q0OiPQQ8IbIDq08IO9Io0qDdoDPPdd1q",
+      "saIndex": "34"
+    },
+    {
+      "name": "Dummy",
+      "artist": "RAM",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 299,
+          "freeze": 3,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 10.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dummy",
+      "jacket": "ddr_x2/Dummy.png",
+      "saHash": "PP9q1DDi0liP1P00lqIoIbbqo9QqlIqP",
+      "saIndex": "350"
+    },
+    {
+      "name": "EGOISM 440",
+      "artist": "U1 High-Speed",
+      "bpm": "55-879",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 811,
+          "freeze": 6,
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 19.1
+        }
+      ],
+      "remyLink": "https://remywiki.com/EGOISM_440",
+      "jacket": "ddr_2014/EGOISM 440.png",
+      "saHash": "9i0q91lPPiO61b9P891O1i86iOP1I08O",
+      "saIndex": "640"
+    },
+    {
+      "name": "Electric Dance System Music",
+      "artist": "U1 overground",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 506,
+          "freeze": 2,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Electric_Dance_System_Music",
+      "jacket": "ddr_a/Electric Dance System Music.png",
+      "saHash": "96Qo1idlD9o8q9qIdiDl18l0O06Qo108",
+      "saIndex": "706"
+    },
+    {
+      "name": "Electronic or Treat!",
+      "artist": "PON",
+      "bpm": "143-190",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 383,
+          "freeze": 26,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/Electronic_or_Treat!",
+      "jacket": "ddr_2014/Electronic or Treat!.png",
+      "genre": "NU STYLE ROCKABILLY",
+      "saHash": "li0IboIqq8qddDP0Oi1Q9i8OPoD88IQl",
+      "saIndex": "625",
+      "search_hint": "NU STYLE ROCKABILLY/NUスタイルロカビリー"
+    },
+    {
+      "name": "Electronic Sports Complex",
+      "saHash": "Q99q619i0lDqll6Q0lq8l1oQ0qPO8o6I",
+      "artist": "栄免建設",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "110-220",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.5
+        }
+      ],
+      "jacket": "ddr_a3/Electronic Sports Complex.jpg",
+      "remyLink": "https://remywiki.com/Electronic_Sports_Complex"
+    },
+    {
+      "name": "Elemental Creation",
+      "artist": "dj TAKA meets DJ YOSHITAKA",
+      "bpm": "106-424",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 860,
+          "freeze": 22,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.1
+        }
+      ],
+      "remyLink": "https://remywiki.com/Elemental_Creation",
+      "jacket": "ddr_2013/Elemental Creation.png",
+      "genre": "HARD RENAISSANCE",
+      "saHash": "OiIOPd80d9PQQIbidO6ObioboO88OD9l",
+      "saIndex": "536",
+      "search_hint": "HARD RENAISSANCE/ハードルネッサンス"
+    },
+    {
+      "name": "ENDYMION",
+      "artist": "fallen shepherd ft. RabbiTon Strings",
+      "bpm": "110-880",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 783,
+          "freeze": 22,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 18.85
+        }
+      ],
+      "remyLink": "https://remywiki.com/ENDYMION",
+      "jacket": "ddr_a/ENDYMION.png",
+      "saHash": "PO9Pl1q896bDDl89qQb98D80DQoPio1I",
+      "saIndex": "756"
+    },
+    {
+      "name": "escape",
+      "artist": "U1 & Krystal B",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 352,
+          "shock": 35,
+          "freeze": 45,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 13.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Escape",
+      "jacket": "ddr_2013/escape.png",
+      "saHash": "odQbP0bQqD89PolQ96II0PiqQQIddPi6",
+      "saIndex": "524"
+    },
+    {
+      "name": "Evans",
+      "artist": "DJ YOSHITAKA",
+      "bpm": "185-369",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 10.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Evans",
+      "jacket": "ddr_a20plus/Evans.jpg",
+      "saHash": "P06O6iQbiPPqiIqOd0IQdqolbPbDId6Q",
+      "saIndex": "994",
+      "search_hint": "HARD RENAISSANCE 2/ハードルネッサンス2"
+    },
+    {
+      "name": "Far east nightbird",
+      "artist": "猫叉Master",
+      "artist_translation": "Nekomata Master",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 453,
+          "freeze": 7,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Far_east_nightbird",
+      "jacket": "ddr_a/Far east nightbird.png",
+      "genre": "DRUM'N'BASS",
+      "saHash": "9QlqQb9qO008DIPbq8DOlP60P110DPi1",
+      "saIndex": "735",
+      "search_hint": "DRUM'N'BASS/ドラムンベース"
+    },
+    {
+      "name": "Fascination MAXX",
+      "artist": "100-200-400",
+      "bpm": "100-401",
+      "folder": "DanceDanceRevolution SuperNOVA",
+      "charts": [
+        {
+          "step": 640,
+          "freeze": 4,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Fascination_MAXX",
+      "jacket": "ddr_sn-sn2/Fascination MAXX.png",
+      "genre": "SuperNOVA BEAT",
+      "saHash": "O6llIdODQD6oDQ6QiPQDOlob9i8l6qib",
+      "saIndex": "160"
+    },
+    {
+      "name": "Fascination ～eternal love mix～",
+      "artist": "2MB",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution SuperNOVA",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.15
+        }
+      ],
+      "remyLink": "https://remywiki.com/Fascination_~eternal_love_mix~",
+      "jacket": "ddr_sn-sn2/Fascination ～eternal love mix～.png",
+      "saHash": "8QbqP80q9PI8bbi0qOoiibOQD08OPdli",
+      "saIndex": "159"
+    },
+    {
+      "name": "Finale",
+      "saHash": "Qid6OQOIibbOiDo808oq9oQO668bDodP",
+      "artist": "Toby Fox",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "47-190",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "step": 316,
+          "freeze": 66,
+          "shock": 25,
+          "sanbaiTier": 13.3,
+          "flags": ["shock"]
+        }
+      ],
+      "remyLink": "https://remywiki.com/Finale_(Toby_Fox)",
+      "search_hint": "Undertale フィナーレ",
+      "jacket": "ddr_a3/Finale.jpg"
+    },
+    {
+      "name": "Firestorm",
+      "artist": "ETIA.",
+      "bpm": "177",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.15
+        }
+      ],
+      "remyLink": "https://remywiki.com/Firestorm",
+      "jacket": "ddr_a20/Firestorm.jpg",
+      "saHash": "qqDOddP66Ol1q1IIOb1OPO68DP1ood1i",
+      "saIndex": "919"
+    },
+    {
+      "name": "First Time",
+      "artist": "BEMANI Sound Team \"Metal Stepper\"",
+      "bpm": "70-563",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/First_Time",
+      "jacket": "ddr_a/First Time.png",
+      "saHash": "9Di9ODOOl8PDQiO1O6o8lD16QlI609ob",
+      "saIndex": "820"
+    },
+    {
+      "name": "Fly far bounce",
+      "artist": "猫叉Master",
+      "artist_translation": "Nekomata Master",
+      "bpm": "113-172",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 236,
+          "freeze": 3,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Fly_far_bounce",
+      "jacket": "ddr_a/Fly far bounce.png",
+      "genre": "",
+      "saHash": "Dq8b8DPD06Q8qob8OOiQIlOdD8QQD0q9",
+      "saIndex": "750"
+    },
+    {
+      "name": "Follow Tomorrow",
+      "artist": "HHH×MM×ST",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 387,
+          "freeze": 4,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Follow_Tomorrow",
+      "jacket": "ddr_2014/Follow Tomorrow.png",
+      "genre": "J-DANCE POP",
+      "saHash": "ObI1oo6QlO981880DDDOlo8bQobI0I9P",
+      "saIndex": "609"
+    },
+    {
+      "name": "FUJIMORI -祭- FESTIVAL",
+      "name_translation": "FUJIMORI -MATSURI- FESTIVAL",
+      "artist": "VENUS",
+      "bpm": "158",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 391,
+          "freeze": 10,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/FUJIMORI_-matsuri-_FESTIVAL",
+      "jacket": "ddr_2014/FUJIMORI -MATSURI- FESTIVAL.png",
+      "saHash": "I0Ql0Di1qD6i0Qq1ql0qPb19q0IQ6iO9",
+      "saIndex": "610"
+    },
+    {
+      "name": "Glitch Angel",
+      "artist": "lapix",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Glitch_Angel",
+      "jacket": "ddr_a20/Glitch Angel.jpg",
+      "saHash": "9IdoP1ld9098PI90QQ6bP0Idl1ibo80D",
+      "saIndex": "909"
+    },
+    {
+      "name": "GLOW THE CROWN",
+      "artist": "DJ Shimamura",
+      "bpm": "174",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/GLOW_THE_CROWN",
+      "saHash": "8d9Q0olQ980lQdPIdqbIiD8o1l1dQPI0",
+      "saIndex": "1200",
+      "jacket": "ddr_a3/GLOW_THE_CROWN.jpg",
+      "search_hint": "GAME PANIC/ゲームパニック"
+    },
+    {
+      "name": "Go Down",
+      "artist": "KO3",
+      "bpm": "126",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Go_Down",
+      "jacket": "ddr_a3/Go_Down.jpg",
+      "saHash": "iIDOlq6QoQPiqoii0iiDOiI9ODiQOIDb",
+      "saIndex": "1125"
+    },
+    {
+      "name": "Going Hypersonic",
+      "artist": "Mameyudoufu",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Going_Hypersonic",
+      "jacket": "ddr_a20plus/Going Hypersonic.jpg",
+      "saHash": "6Obi001oi9Qd1966dOd6d6Qo66dbbill",
+      "saIndex": "971"
+    },
+    {
+      "name": "Golden Arrow",
+      "artist": "Zekk",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Golden_Arrow",
+      "jacket": "ddr_a20/Golden Arrow.jpg",
+      "saHash": "dIdDQD1Q8oPQ90Q1DPbiQI661qD9oi6I",
+      "saIndex": "916"
+    },
+    {
+      "name": "Good Looking",
+      "artist": "JAKAZiD",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Good_Looking",
+      "jacket": "ddr_a20plus/Good Looking.jpg",
+      "genre": "RAVE BREAKS",
+      "saHash": "i9PQoDbQI0qqd6I00d19bQo6q9PoOIbO",
+      "saIndex": "1010"
+    },
+    {
+      "name": "Good Sound United",
+      "artist": "Hommarju",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Good_Sound_United",
+      "jacket": "ddr_a3/Good Sound United.jpg",
+      "saHash": "0iII09bDqIbOQDDoo8lO8DOOQdiP1Iob",
+      "saIndex": "1094"
+    },
+    {
+      "name": "HANIPAGANDA",
+      "saHash": "8Oq81q8q1Q9D0l0PO0bQQ00l9P19didi",
+      "artist": "暁Records",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "91-181",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.65
+        }
+      ],
+      "jacket": "ddr_a3/HANIPAGANDA.jpg",
+      "remyLink": "https://remywiki.com/HANIPAGANDA"
+    },
+    {
+      "name": "HAPPY☆LUCKY☆YEAPPY",
+      "name_translation": "HAPPY LUCKY YEAPPY",
+      "artist": "DJ ミラクル☆ストーン",
+      "artist_translation": "DJ Miracle Stone",
+      "bpm": "190-380",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/HAPPY_LUCKY_YEAPPY",
+      "jacket": "ddr_2014/HAPPY☆LUCKY☆YEAPPY.png",
+      "genre": "YEAPPY HARDCORE",
+      "saHash": "ol6IDd019O0qq8dblPQ96ol1oPbI990b",
+      "saIndex": "639"
+    },
+    {
+      "name": "Healing Vision ～Angelic mix～",
+      "artist": "2MB",
+      "bpm": "49-196",
+      "folder": "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Healing_Vision_~Angelic_mix~",
+      "jacket": "ddr_max-ext/Healing Vision ～Angelic mix～.png",
+      "saHash": "olQQ8QPPqqObDD9ooodOl9i9od8b06I9",
+      "saIndex": "63"
+    },
+    {
+      "name": "Healing-D-Vision",
+      "artist": "DE-STRAD",
+      "bpm": "180-360",
+      "folder": "DanceDanceRevolution SuperNOVA",
+      "charts": [
+        {
+          "step": 421,
+          "freeze": 2,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.9
+        }
+      ],
+      "remyLink": "https://remywiki.com/Healing-D-Vision",
+      "jacket": "ddr_sn-sn2/Healing-D-Vision.png",
+      "saHash": "109P1iO9i6q1q0bdQobiodQDoD619dqd",
+      "saIndex": "169"
+    },
+    {
+      "name": "Heavens and the Earth",
+      "artist": "The Lonely Hearts",
+      "bpm": "70",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Heavens_and_the_Earth",
+      "jacket": "ddr_a3/Heavens_and_the_Earth.jpg",
+      "saHash": "dqbd8PD01bI8qlQ1QQ9iP896P88D1O1o",
+      "saIndex": "1130"
+    },
+
+    {
+      "name": "heron",
+      "artist": "S-C-U",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 357,
+          "freeze": 5,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Heron",
+      "jacket": "ddr_2013/heron.png",
+      "saHash": "DibOOIOD1id66O0DqOQ61O6I9bIIQQ0q",
+      "saIndex": "493"
+    },
+    {
+      "name": "Hunny Bunny",
+      "artist": "U1 overground",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Hunny_Bunny",
+      "jacket": "ddr_a20/Hunny Bunny.jpg",
+      "saHash": "q8i11qPbo9iq8lQb9d08di81Q88q8P9o",
+      "saIndex": "912"
+    },
+    {
+      "name": "Hyper Bomb",
+      "artist": "Yunosuke",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Hyper_Bomb",
+      "jacket": "ddr_a20plus/Hyper Bomb.jpg",
+      "saHash": "Di8lP6PobQ6l8do0llO9IIqQ6iqqiqDo",
+      "saIndex": "937"
+    },
+    {
+      "name": "HYPERDRIVE",
+      "artist": "Moe Shop",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/HYPERDRIVE",
+      "jacket": "ddr_a20plus/HYPERDRIVE.jpg",
+      "saHash": "ID00liOPPd6PiDb09608dQbOIDlQ68qo",
+      "saIndex": "948"
+    },
+    {
+      "name": "HyperTwist",
+      "artist": "TANUKI",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/HyperTwist",
+      "jacket": "ddr_a20plus/HyperTwist.jpg",
+      "saHash": "0bq9qI9PoPIlQl89bDO60o9q8I1iIP66",
+      "saIndex": "938"
+    },
+    {
+      "name": "I Want To Do This Keep",
+      "artist": "KOTONOHOUSE",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/I_Want_To_Do_This_Keep",
+      "jacket": "ddr_a20plus/I Want To Do This Keep.jpg",
+      "saHash": "dIbPlPdo09i8oOlOQ1OOq166Q8iP8Oqi",
+      "saIndex": "949"
+    },
+    {
+      "name": "Idola",
+      "artist": "iconoclasm feat.GUMI",
+      "bpm": "201",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 681,
+          "freeze": 55,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Idola",
+      "jacket": "ddr_2014/Idola.png",
+      "genre": "REPLICANT CORE",
+      "saHash": "1I9ODbQ81qi1006QoQI6d6dbd9iiPD9O",
+      "saIndex": "599"
+    },
+    {
+      "name": "insist",
+      "artist": "Tomoyuki Uchida feat.秋成",
+      "artist_translation": "Tomoyuki Uchida feat.Akinari",
+      "bpm": "136",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Insist",
+      "jacket": "ddr_a3/Insist.jpg",
+      "genre": "",
+      "saHash": "6oIO00P8bdqqbP9qlqIqDP1Q1d9PD0qi",
+      "saIndex": "1164"
+    },
+    {
+      "name": "Ishtar",
+      "artist": "劇団レコード",
+      "artist_translation": "Gekidan Record",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 481,
+          "shock": 56,
+          "freeze": 58,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 16.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Ishtar",
+      "jacket": "ddr_a/Ishtar.png",
+      "saHash": "bPb96lbDP9OdI0Oi1189iOPPdllPIDQb",
+      "saIndex": "749"
+    },
+    {
+      "name": "IX",
+      "artist": "dj TAKA VS DJ TOTTO feat.藍",
+      "artist_translation": "dj TAKA VS DJ TOTTO feat.Ai",
+      "bpm": "99-400",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 753,
+          "freeze": 49,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/IX",
+      "jacket": "ddr_2014/IX.png",
+      "genre": "BLOOD METAL",
+      "saHash": "00obPO6oPIPOoD9qb0dIl6q6D8P6o9bI",
+      "saIndex": "583",
+      "search_hint": "BLOOD METAL/ブラッドメタル"
+    },
+    {
+      "name": "JOKER",
+      "artist": "Royz",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 375,
+          "freeze": 28,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/JOKER",
+      "jacket": "ddr_2013/JOKER.png",
+      "saHash": "bQI1dIlIObIIQood96O9q9iO8li11OO9",
+      "saIndex": "539"
+    },
+    {
+      "name": "Jucunda Memoria",
+      "artist": "Akhuta",
+      "bpm": "48-290",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 10.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/Jucunda_Memoria",
+      "jacket": "ddr_a20plus/Jucunda Memoria.jpg",
+      "saHash": "PPb6l1di1Pi0o8O08odqIDlbPll61QbQ",
+      "saIndex": "1015"
+    },
+    {
+      "name": "KIMONO♥PRINCESS",
+      "name_translation": "KIMONO PRINCESS",
+      "artist": "jun",
+      "bpm": "94-190",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 510,
+          "freeze": 35,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/KIMONO_PRINCESS",
+      "jacket": "ddr_x2/KIMONO♥PRINCESS.png",
+      "genre": "姫コア",
+      "saHash": "Q10PdOD6bDD9QPQQqiO11669bb0lQ189",
+      "saIndex": "361",
+      "search_hint": "PRINCESS CORE/姫コア"
+    },
+    {
+      "name": "La Señorita",
+      "name_translation": "La Senorita",
+      "artist": "CAPTAIN.T",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution 3rd Mix",
+      "charts": [
+        {
+          "step": 294,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 10.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/La_Senorita",
+      "jacket": "ddr_1st-5th/La Señorita.png",
+      "saHash": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9",
+      "saIndex": "20"
+    },
+    {
+      "name": "Lachryma《Re:Queen’M》",
+      "artist": "かねこちはる",
+      "artist_translation": "Kaneko Chiharu",
+      "bpm": "236",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.5
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 18.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Lachryma(Re:Queen%27M)",
+      "jacket": "ddr_a20/Lachryma.jpg",
+      "saHash": "bIlqP91O9ld1lqlq6qoq9OiPdqIDPP0l",
+      "saIndex": "920"
+    },
+    {
+      "name": "Last Card",
+      "artist": "kors k",
+      "bpm": "85-170",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/Last_Card",
+      "jacket": "ddr_a20plus/Last Card.jpg",
+      "saHash": "891iilD9Pq1lPQd6diqiP0dd611dOPPl",
+      "saIndex": "941"
+    },
+    {
+      "name": "Lightspeed",
+      "artist": "Tanukichi",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.2
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Lightspeed",
+      "jacket": "ddr_a20plus/Lightspeed.jpg",
+      "genre": "FRENCHCORE",
+      "saHash": "bqi9QiQ0lbi8id6lOi88iIi9lo6Pdd90",
+      "saIndex": "978"
+    },
+    {
+      "name": "London EVOLVED ver.A",
+      "artist": "TAG underground",
+      "bpm": "43-340",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 433,
+          "freeze": 4,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/London_EVOLVED",
+      "jacket": "ddr_x3/London EVOLVED ver.A.png",
+      "saHash": "D6IQ1O1D00D1o8IQq0O9qqIibqDiiO0i",
+      "saIndex": "468"
+    },
+    {
+      "name": "Love You More",
+      "artist": "BEMANI Sound Team \"Sota F.\"",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Love_You_More",
+      "jacket": "ddr_a/Love You More.png",
+      "saHash": "qIqbqPblQIIObd9166bbDiioOIiIq991",
+      "saIndex": "792"
+    },
+    {
+      "name": "Magnetic",
+      "artist": "Sota Fujimori",
+      "bpm": "40-160",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 383,
+          "freeze": 49,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Magnetic",
+      "jacket": "ddr_2013/Magnetic.png",
+      "saHash": "18l0blb188Oqqi8I68o8oq91Qbq86QDi",
+      "saIndex": "548"
+    },
+    {
+      "name": "MANA",
+      "artist": "DJ YOSHITAKA",
+      "bpm": "97-195",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/MANA",
+      "jacket": "ddr_a3/MANA.jpg",
+      "genre": "スーパースプラッシュチューン",
+      "saHash": "ibOId89QQPI6dli9I6PO09Qo86686O6i",
+      "saIndex": "1099",
+      "search_hint": "SUPER SPLASH TUNE/スーパースプラッシュチューン"
+    },
+    {
+      "name": "mathematical good-bye",
+      "artist": "三代目 ADULTIC TEACHERS feat. BEMANI Sound Team \"スコーピオン志村\"",
+      "artist_translation": "Sandaime ADULTIC TEACHERS feat. BEMANI Sound Team \"Scorpion Simura\"",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Mathematical_good-bye",
+      "jacket": "ddr_a3/Mathematical_good-bye.jpg",
+      "genre": "ハードコア",
+      "saHash": "08O1i8ib1lDPbdOoPlD069PoOI1860qi"
+    },
+    {
+      "name": "MAX 300",
+      "artist": "Ω",
+      "bpm": "300",
+      "folder": "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "charts": [
+        {
+          "step": 555,
+          "freeze": 2,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/MAX_300",
+      "jacket": "ddr_max-ext/MAX 300.png",
+      "genre": "HARDCORE TECHNO",
+      "saHash": "6P18lOliIQqIO6Di0PP8iDlDQ01b0o0q",
+      "saIndex": "65"
+    },
+    {
+      "name": "MAX 360",
+      "artist": "BEMANI Sound Team \"[𝑥]\"",
+      "bpm": "180-360",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 19
+        }
+      ],
+      "remyLink": "https://remywiki.com/MAX_360",
+      "jacket": "ddr_a/MAX 360.png",
+      "genre": "HARDCORE TECHNO",
+      "saHash": "1Dl19idl0i0qiqidbDIIbQddiP6o11PP",
+      "saIndex": "815"
+    },
+    {
+      "name": "MAX.(period)",
+      "artist": "2MB",
+      "bpm": "150-600",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.85
+        }
+      ],
+      "remyLink": "https://remywiki.com/MAX.(period)",
+      "jacket": "ddr_2014/MAX.(period).png",
+      "saHash": "89I0ooQbbI1I6O1iq861PQQqIo9iO86b",
+      "saIndex": "641"
+    },
+    {
+      "name": "MAXX UNLIMITED",
+      "artist": "Z",
+      "bpm": "140-320",
+      "folder": "DDRMAX2 -DanceDanceRevolution 7thMIX-",
+      "charts": [
+        {
+          "step": 555,
+          "freeze": 56,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/MAXX_UNLIMITED",
+      "jacket": "ddr_max-ext/MAXX UNLIMITED.png",
+      "saHash": "lObPDQDI08DoodDq1061IP1qbQ1qQQbl",
+      "saIndex": "84"
+    },
+    {
+      "name": "Megalara Garuda",
+      "artist": "SYUNN",
+      "bpm": "90-180",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Megalara_Garuda",
+      "jacket": "ddr_a3/Megalara Garuda.jpg",
+      "genre": "DRUMSTEP",
+      "saHash": "O9Odqd8qiQiOqQdOOq01D8OQlOiO1iPD",
+      "saIndex": "1088"
+    },
+    {
+      "name": "MEGALOVANIA",
+      "artist": "Toby Fox",
+      "bpm": "120-240",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "step": 351,
+          "freeze": 30,
+          "shock": 30,
+          "flags": ["shock"],
+          "sanbaiTier": 12.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/MEGALOVANIA",
+      "jacket": "ddr_a3/MEGALOVANIA.jpg",
+      "genre": "",
+      "saHash": "PddldblI909IqI8PPiQIo9lIIiQdDo1l",
+      "saIndex": "1071",
+      "search_hint": "Undertale サンズ"
+    },
+    {
+      "name": "メズマライザー",
+      "name_translation": "Mesmerizer",
+      "saHash": "8DO8obP1b669b9QI6q01609bPOdd1o1b",
+      "artist": "サツキ feat.初音ミク・重音テト",
+      "artist_translation": "Satsuki",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "185",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5
+        }
+      ],
+      "jacket": "ddr_world/メズマライザー.jpg",
+      "remyLink": "https://remywiki.com/Mesmerizer",
+      "genre": "HAPPY HARDCORE"
+    },
+    {
+      "name": "Midnight Amaretto",
+      "artist": "かめりあ",
+      "artist_translation": "Camellia",
+      "bpm": "135",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.85
+        }
+      ],
+      "remyLink": "https://remywiki.com/Midnight_Amaretto",
+      "jacket": "ddr_a20plus/Midnight Amaretto.jpg",
+      "saHash": "ll0O8PlqQd0iOO8ib61lO6iDiliQdiPP",
+      "saIndex": "944"
+    },
+    {
+      "name": "Monkey Business",
+      "artist": "kors k",
+      "bpm": "80-160",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 651,
+          "freeze": 52,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 16.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Monkey_Business",
+      "jacket": "ddr_2013/Monkey Business.png",
+      "genre": "HARD DANCE",
+      "saHash": "bD1DbibPIq9IIlQd0OIIl0o91QI1il69",
+      "saIndex": "525"
+    },
+    {
+      "name": "MUTEKI BUFFALO",
+      "artist": "C-Show",
+      "bpm": "88-176",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/MUTEKI_BUFFALO",
+      "jacket": "ddr_a20plus/MUTEKI BUFFALO.jpg",
+      "saHash": "d10d86DQqqd6QDlQlOI1bQi9do66l8Od",
+      "saIndex": "969"
+    },
+    {
+      "name": "Mythomane",
+      "artist": "Hylen",
+      "bpm": "140-180",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Mythomane",
+      "jacket": "ddr_a20/Mythomane.png",
+      "saHash": "lbD8DodiOiP8D61lidIi88DIiPqi8o6P",
+      "saIndex": "915"
+    },
+    {
+      "name": "Neutrino",
+      "artist": "HuΣeR",
+      "bpm": "75-300",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 499,
+          "freeze": 24,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.9
+        }
+      ],
+      "remyLink": "https://remywiki.com/Neutrino",
+      "jacket": "ddr_a/Neutrino.png",
+      "saHash": "lO91bIQ0Q990PqPbPIq88b9I9PI6ID0Q",
+      "saIndex": "752"
+    },
+    {
+      "name": "New Century",
+      "artist": "Sota F.",
+      "bpm": "98-195",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 626,
+          "freeze": 31,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/New_Century",
+      "jacket": "ddr_a/New Century.png",
+      "saHash": "o068b00O6QD8lo9O1i9PbQlqO6IQOidD",
+      "saIndex": "700"
+    },
+    {
+      "name": "New Generation",
+      "artist": "鍋嶋圭一",
+      "artist_translation": "Keiichi Nabeshima",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 575,
+          "freeze": 11,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/New_Generation",
+      "jacket": "ddr_2013/New Generation.png",
+      "saHash": "6i99bQI11qD818DDdq6qb0Dql880lP8l",
+      "saIndex": "559"
+    },
+    {
+      "name": "New Gravity",
+      "artist": "Starving Trancer",
+      "bpm": "154",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 471,
+          "freeze": 1,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 14.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/New_Gravity",
+      "jacket": "ddr_2013/New Gravity.png",
+      "saHash": "PdqQ0oO8lIOi800i69I9100olb9Q6D8Q",
+      "saIndex": "497"
+    },
+    {
+      "name": "New Millennium",
+      "saHash": "q96q9D9oIIOQl8QQ60ii19P0Dbq8Q609",
+      "artist": "BEMANI Sound Team \"Sota F.\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "60-300",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.85
+        }
+      ],
+      "jacket": "ddr_a3/New Millennium.jpg",
+      "remyLink": "https://remywiki.com/New_Millennium"
+    },
+    {
+      "name": "New York EVOLVED (Type B)",
+      "artist": "NC underground",
+      "bpm": "47-190",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 430,
+          "freeze": 18,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/New_York_EVOLVED",
+      "jacket": "ddr_x3/New York EVOLVED (Type B).png",
+      "saHash": "61P0I66id16QIi08Q1918PlldOOiooql",
+      "saIndex": "466"
+    },
+    {
+      "name": "New York EVOLVED (Type C)",
+      "artist": "NC underground",
+      "bpm": "48-190",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 523,
+          "freeze": 16,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/New_York_EVOLVED",
+      "jacket": "ddr_x3/New York EVOLVED (Type C).png",
+      "saHash": "Od8ld9bQQPDddIqDQ1PloOOdQ0IQo0O9",
+      "saIndex": "467"
+    },
+    {
+      "name": "Next Phase",
+      "artist": "Dazsta",
+      "bpm": "174",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Next_Phase",
+      "jacket": "ddr_a20plus/Next Phase.jpg",
+      "saHash": "b80oDO98iPDO1100IbOo8160bPdd898I",
+      "saIndex": "1004"
+    },
+    {
+      "name": "nightbird lost wing",
+      "artist": "猫叉Master+",
+      "artist_translation": "Nekomata Master+",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 334,
+          "freeze": 24,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Nightbird_lost_wing",
+      "jacket": "ddr_2013/nightbird lost wing.png",
+      "saHash": "ib0l98Q00O1Do9oQq1IQOOqQOOb80bIo",
+      "saIndex": "494"
+    },
+    {
+      "name": "No Life Queen [DJ Command Remix]",
+      "artist": "SOUND HOLIC Vs. Eurobeat Union feat. Nana Takahashi",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/No_Life_Queen_(DJ_Command_Remix)",
+      "jacket": "ddr_a20plus/No Life Queen [DJ Command Remix].jpg",
+      "saHash": "I9P1dbOqD1qIP8bd9O80Ooo869bldobD",
+      "saIndex": "931"
+    },
+    {
+      "name": "Not Alone",
+      "saHash": "i6bIQ6D0P09olqbOiP8I919006DdII1P",
+      "artist": "Odyssey Eurobeat",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "155",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.55
+        }
+      ],
+      "jacket": "ddr_a3/Not Alone.jpg",
+      "remyLink": "https://remywiki.com/Not_Alone"
+    },
+    {
+      "name": "ORCA",
+      "artist": "かめりあ",
+      "artist_translation": "Camellia",
+      "bpm": "39-310",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.85
+        }
+      ],
+      "remyLink": "https://remywiki.com/ORCA",
+      "jacket": "ddr_a20/ORCA.png",
+      "genre": "CETACEA HDM",
+      "saHash": "99OQb9b0IQ98P6IQdPOiqi8q16o16iqP",
+      "saIndex": "837"
+    },
+    {
+      "name": "osaka EVOLVED -毎度、おおきに！- (TYPE1)",
+      "name_translation": "osaka EVOLVED -MAIDO,OHKINI- (TYPE1)",
+      "artist": "NAOKI underground",
+      "bpm": "50-300",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 446,
+          "freeze": 29,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.9
+        }
+      ],
+      "remyLink": "https://remywiki.com/Osaka_EVOLVED_-maido,_ohkini!-",
+      "jacket": "ddr_x3/osaka EVOLVED -MAIDO,OHKINI- (TYPE1).png",
+      "saHash": "ldDD06dIQ0qQPD9OI88P90OOi0bQPD1O",
+      "saIndex": "459"
+    },
+    {
+      "name": "Over The “Period”",
+      "artist": "TAG underground overlay",
+      "bpm": "25-838",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 18.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Over_The_%22Period%22",
+      "jacket": "ddr_2014/Over The “Period”.png",
+      "saHash": "6bid6d9qPQ80DOqiidQQ891o6Od8801l",
+      "saIndex": "648"
+    },
+    {
+      "name": "PANIC HOLIC",
+      "artist": "C-Show",
+      "bpm": "110-220",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/PANIC_HOLIC",
+      "jacket": "ddr_a20plus/PANIC HOLIC.jpg",
+      "saHash": "9IlP00lPi6oOQQqOl1DoI0o10bi1iid1",
+      "saIndex": "956"
+    },
+    {
+      "name": "PARANOiA Rebirth",
+      "artist": "190'",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution 3rd Mix",
+      "charts": [
+        {
+          "step": 322,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_Rebirth",
+      "jacket": "ddr_1st-5th/PARANOiA Rebirth.png",
+      "saHash": "0lDP0P06PIPl1iiIDOb919iqo1oPdlP8",
+      "saIndex": "23"
+    },
+    {
+      "name": "PARANOiA Revolution",
+      "artist": "CLIMAX of MAXX 360",
+      "bpm": "180-360",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 753,
+          "freeze": 18,
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 19.1
+        }
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_Revolution",
+      "jacket": "ddr_x3/PARANOiA Revolution.png",
+      "saHash": "606b9d6OiliId69bO9Odi6qq8o8Qd0dq",
+      "saIndex": "479"
+    },
+    {
+      "name": "PARANOIA survivor",
+      "artist": "270",
+      "bpm": "135-270",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 509,
+          "freeze": 4,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/PARANOIA_survivor",
+      "jacket": "ddr_max-ext/PARANOIA survivor.png",
+      "saHash": "O9Id8Qi6OIDIQ6bPi610q0001l1P099q"
+    },
+    {
+      "name": "PARANOIA survivor MAX",
+      "artist": "290",
+      "bpm": "73-290",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 613,
+          "freeze": 4,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 16.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/PARANOIA_survivor_MAX",
+      "jacket": "ddr_max-ext/PARANOIA survivor MAX.png",
+      "genre": "JUNGLE MIXTURE",
+      "saHash": "68iQ9666QIQP1IOQbbd9989DQQ1D0dOl",
+      "saIndex": "127"
+    },
+    {
+      "name": "PARANOiA ～HADES～",
+      "artist": "αTYPE-300",
+      "bpm": "75-300",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        {
+          "step": 662,
+          "freeze": 1,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/PARANOiA_~HADES~",
+      "jacket": "ddr_sn-sn2/PARANOiA ～HADES～.png",
+      "genre": "SUPERNOVA2 BEAT #1",
+      "saHash": "io1d1Dq80Di08O1Pb9bQ8DoP9d9Ooi90",
+      "saIndex": "251"
+    },
+    {
+      "name": "Plan 8",
+      "artist": "Ryu☆",
+      "bpm": "212",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 416,
+          "freeze": 23,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.4
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Plan_8",
+      "jacket": "ddr_2014/Plan 8.png",
+      "genre": "HAPPY GABBA",
+      "saHash": "6oI9d9lO6Q0iDD8dIIO08qIODiqiIqDl",
+      "saIndex": "628"
+    },
+    {
+      "name": "Playing With Fire",
+      "artist": "kors k",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Playing_With_Fire",
+      "saHash": "bOQ0dIIIilDD9Do6qIDdlObQdo01DD80",
+      "genre": "SPEED RAVE",
+      "saIndex": "1184",
+      "jacket": "ddr_a3/Playing_With_Fire.jpg"
+    },
+    {
+      "name": "Pluto",
+      "artist": "Black∞Hole",
+      "bpm": "50-225",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        {
+          "step": 516,
+          "freeze": 10,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 16.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Pluto",
+      "jacket": "ddr_sn-sn2/Pluto.png",
+      "genre": "SUPERNOVA2 BEAT EX",
+      "saHash": "dD6PqbboDil89DPIID86Pldi6obI1b8l",
+      "saIndex": "252"
+    },
+    {
+      "name": "Poochie",
+      "artist": "kors k",
+      "bpm": "110-220",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 627,
+          "freeze": 32,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.95
+        }
+      ],
+      "remyLink": "https://remywiki.com/Poochie",
+      "jacket": "ddr_a/Poochie.png",
+      "saHash": "O6q0qIQdII9086d9q6o0D1PO06liQ9iO",
+      "saIndex": "697"
+    },
+    {
+      "name": "Poseidon",
+      "artist": "NAOKI underground",
+      "bpm": "75-300",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        {
+          "step": 298,
+          "freeze": 7,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Poseidon",
+      "jacket": "ddr_sn-sn2/Poseidon.png",
+      "saHash": "1PiiOiQoq8dbdi819q9Ild966o6o19QQ",
+      "saIndex": "254"
+    },
+    {
+      "name": "PRANA",
+      "artist": "TAG",
+      "bpm": "188",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 369,
+          "freeze": 8,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/PRANA",
+      "jacket": "ddr_2013/PRANA.png",
+      "genre": "AKASHIC HARDCORE",
+      "saHash": "P0iOob80dDPqI8oIqq1dOiDd9qilQqDl",
+      "saIndex": "555",
+      "search_hint": "AKASHIC HARDCORE/アカシックハードコア"
+    },
+    {
+      "name": "printemps",
+      "artist": "Qrispy Joybox",
+      "bpm": "168",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 266,
+          "freeze": 13,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Printemps",
+      "jacket": "ddr_2013/printemps.png",
+      "saHash": "1PoOQPd0D01Q9O0doiQQQ8D8Q096bDq9",
+      "saIndex": "565"
+    },
+    {
+      "name": "Procyon",
+      "artist": "矢鴇つかさ",
+      "artist_translation": "Tsukasa Yatoki",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/Procyon",
+      "jacket": "ddr_a20/Procyon.png",
+      "saHash": "1DPD60Q8D1qD8i80P160bqDQ81DObDlP",
+      "saIndex": "831"
+    },
+    {
+      "name": "Puberty Dysthymia",
+      "artist": "BEMANI Sound Team \"person09\"",
+      "bpm": "67-210",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Puberty_Dysthymia",
+      "jacket": "ddr_a/Puberty Dysthmia.png",
+      "genre": "",
+      "saHash": "99q8i8bPldDbio919ob0DPi0bqdIoobi",
+      "saIndex": "806"
+    },
+    {
+      "name": "Pursuer",
+      "artist": "白澤亮（noisycroak）",
+      "artist_translation": "Ryo Shirasawa (noisycroak)",
+      "bpm": "75-300",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Pursuer",
+      "jacket": "ddr_a/Pursuer.png",
+      "saHash": "bl90QbiqoOlDI6iQQQdo0Iol6PIdQblP",
+      "saIndex": "797"
+    },
+    {
+      "name": "Rampage Hero",
+      "artist": "DJ Shimamura",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Rampage_Hero",
+      "jacket": "ddr_a20/Rampage_Hero.png",
+      "saHash": "Ol8PPooqO8iOqQ6900o0q0QI9dPo0O0b",
+      "saIndex": "896"
+    },
+    {
+      "name": "Rave Accelerator",
+      "artist": "M-Project",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Rave_Accelerator",
+      "jacket": "ddr_a20plus/Rave Accelerator.jpg",
+      "saHash": "DodQ1I1DiPIqDQP0PqO6PIQ1iPQd6O8d",
+      "saIndex": "972"
+    },
+    {
+      "name": "Rave in the Shell",
+      "artist": "yadosan",
+      "bpm": "75-300",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Rave_in_the_Shell",
+      "saHash": "PIl8P90Pll19Pido608olD61QIqq0b9d",
+      "saIndex": "1204",
+      "jacket": "ddr_a3/Rave_in_the_Shell.jpg"
+    },
+    {
+      "name": "Reach The Sky, Without you",
+      "artist": "nc ft.NRGFactory",
+      "bpm": "48-190",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 461,
+          "freeze": 21,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Reach_The_Sky,_Without_you",
+      "jacket": "ddr_a/Reach The Sky, Without you.png",
+      "saHash": "POq8OPlOO9199i11Od0P00801Qo01DQo",
+      "saIndex": "771"
+    },
+    {
+      "name": "Right on time (Ryu☆Remix)",
+      "artist": "Ryu☆",
+      "bpm": "149",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 217,
+          "shock": 63,
+          "freeze": 6,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 13.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Right_on_time_(Ryu_Remix)",
+      "jacket": "ddr_2013/Right on time (Ryu☆Remix).png",
+      "saHash": "q11d0oiQIlbP91dqqddPq9D80lbODbDi",
+      "saIndex": "554"
+    },
+    {
+      "name": "Right Time Right Way",
+      "artist": "KAN TAKAHIKO",
+      "bpm": "174",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Right_Time_Right_Way",
+      "jacket": "ddr_a20/Right Time Right Way.png",
+      "saHash": "1qPOO8o9089lI1qQIDIDi0lidob9i6lq",
+      "saIndex": "861"
+    },
+    {
+      "name": "Robot Footwork",
+      "saHash": "IDIQilDID9lO6lO86dq6ldoDlqiii1o1",
+      "artist": "Super Shrimp",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "162",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.8
+        }
+      ],
+      "jacket": "ddr_world/Robot Footwork.jpg",
+      "remyLink": "https://remywiki.com/Robot_Footwork"
+    },
+    {
+      "name": "ROCK THE PARTY",
+      "artist": "BEMANI Sound Team \"KE!JU\"",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/ROCK_THE_PARTY",
+      "jacket": "ddr_a3/ROCK_THE_PARTY.jpg",
+      "saHash": "1II6199qOd1bo0P0D19Q9qd06ll1QOl9"
+    },
+    {
+      "name": "Romancing Layer",
+      "artist": "TAG",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 437,
+          "freeze": 18,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Romancing_Layer",
+      "jacket": "ddr_2014/Romancing Layer.png",
+      "saHash": "iQqbdqOlqlPP11d1qI8lO6iQb19dO991",
+      "saIndex": "584"
+    },
+    {
+      "name": "ROOM",
+      "artist": "Blanc Bunny Bandit",
+      "bpm": "145",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/ROOM",
+      "jacket": "ddr_a20plus/ROOM.jpg",
+      "genre": "",
+      "saHash": "ODd6QDIIdi6ild0O8lqIdl0oiQ98669l",
+      "saIndex": "940"
+    },
+    {
+      "name": "roppongi EVOLVED ver.B",
+      "artist": "TAG underground",
+      "bpm": "85-170",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Roppongi_EVOLVED",
+      "jacket": "ddr_x2/roppongi EVOLVED ver.B.png",
+      "saHash": "QobO6O8iQP6I16l0I8QPd0Iq6iQ1loQ6",
+      "saIndex": "379"
+    },
+    {
+      "name": "Run The Show",
+      "artist": "fazerock",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 492,
+          "freeze": 10,
+          "shock": 64,
+          "flags": ["shock"],
+          "sanbaiTier": 16.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Run_The_Show",
+      "jacket": "ddr_a20plus/Run The Show.jpg",
+      "saHash": "I189iqQI6iPDdIDbo81b1iD6lIQiI0Po",
+      "saIndex": "988"
+    },
+    {
+      "name": "S!ck",
+      "artist": "Eagle",
+      "bpm": "88-177",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 648,
+          "freeze": 58,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/S!ck",
+      "jacket": "ddr_a/S!ck.png",
+      "genre": "DRUMSTEP",
+      "saHash": "QOPioi8P81q9l0QiP6q06b06bdOO8b1O",
+      "saIndex": "730"
+    },
+    {
+      "name": "SABER WING",
+      "artist": "TAG",
+      "bpm": "74-444",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "step": 442,
+          "freeze": 24,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/SABER_WING",
+      "jacket": "ddr_x/SABER WING.png",
+      "genre": "SHOOTING WALTZ",
+      "saHash": "dIQDOoO80odDP8OiOQIQ9oI0o99OdQDQ",
+      "saIndex": "310"
+    },
+    {
+      "name": "SABER WING (Akira Ishihara Headshot mix)",
+      "artist": "TAG",
+      "bpm": "79-316",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "step": 492,
+          "freeze": 31,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/SABER_WING_(AKIRA_ISHIHARA_Headshot_mix)",
+      "jacket": "ddr_x/SABER WING (Akira Ishihara Headshot mix).png",
+      "saHash": "PIP60POo0dDQlIiqO9bIQ1oddQD8P9Il",
+      "saIndex": "311"
+    },
+    {
+      "name": "SABER WING (satellite silhouette remix)",
+      "artist": "TAG",
+      "bpm": "138",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 508,
+          "freeze": 6,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 15.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/SABER_WING_(satellite_silhouette_remix)",
+      "jacket": "ddr_2014/SABER WING (satellite silhouette remix).png",
+      "saHash": "Do6oPoo1QbOPo9DIii0Q0180l8b1Doqi",
+      "saIndex": "588"
+    },
+    {
+      "name": "SCHWARZSCHILD FIELD",
+      "artist": "L.E.D.",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/SCHWARZSCHILD_FIELD",
+      "jacket": "ddr_a20plus/SCHWARZSCHILD FIELD.jpg",
+      "genre": "FULL ON",
+      "saHash": "iq9qPoPlIlbIDqlD81DqO1110QI1qoOl",
+      "saIndex": "1045"
+    },
+    {
+      "name": "Shiny World",
+      "artist": "CAPACITY GATE",
+      "bpm": "25-100",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 371,
+          "freeze": 1,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Shiny_World",
+      "jacket": "ddr_x2/Shiny World.png",
+      "saHash": "b6ldDOq9qi1IiIIdiIl1108q1iQ9O6d6",
+      "saIndex": "388"
+    },
+    {
+      "name": "Show me your moves",
+      "artist": "BEMANI Sound Team \"TAG\" feat. 柊木りお",
+      "artist_translation": "BEMANI Sound Team \"TAG\" feat. Rio Hiiragi",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 14.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Show_me_your_moves",
+      "jacket": "ddr_a/Show me your moves.png",
+      "saHash": "6oolbQ0QiO90Dd0DQbb1D86d8q88id86",
+      "saIndex": "812"
+    },
+    {
+      "name": "siberite",
+      "artist": "Captain KING",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 463,
+          "freeze": 4,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Siberite",
+      "jacket": "ddr_a/siberite.png",
+      "saHash": "qq8qDqqPQdP0loDI6DDO9d6dQ601iOID",
+      "saIndex": "689"
+    },
+    {
+      "name": "Silly Love",
+      "artist": "DÉ DÉ MOUSE",
+      "bpm": "124-153",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Silly_Love",
+      "jacket": "ddr_a20/Silly Love.jpg",
+      "genre": "ELECTRO NU DISCO",
+      "saHash": "Q8bIddo10ilqbd6I8QOq1bod1OO8dqlO",
+      "saIndex": "924"
+    },
+    {
+      "name": "SISYPHUS",
+      "saHash": "lliDD9qPqiIDI8P9bb18IO60l9D061Io",
+      "artist": "BEMANI Sound Team \"Paoon\"",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "45-360",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.6
+        }
+      ],
+      "jacket": "ddr_a3/SISYPHUS.jpg",
+      "remyLink": "https://remywiki.com/SISYPHUS"
+    },
+    {
+      "name": "Skywalking",
+      "artist": "Nhato",
+      "bpm": "90-180",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Skywalking",
+      "jacket": "ddr_a20/Skywalking.png",
+      "saHash": "Dqb08DI0Ii8ilD0lioi9o9D1dodl6dO0",
+      "saIndex": "842"
+    },
+    {
+      "name": "Somehow You Found Me",
+      "artist": "DIGI-SEQ-BAND2000",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 406,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Somehow_You_Found_Me",
+      "jacket": "ddr_2013/Somehow You Found Me.png",
+      "saHash": "60dq6Plo0do9iQOl6ql111P9OPd9i01l",
+      "saIndex": "522"
+    },
+    {
+      "name": "SP-TRIP MACHINE～JUNGLE MIX～(X-Special)",
+      "artist": "DE-SIRE",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution X",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE~JUNGLE_MIX~",
+      "jacket": "ddr_x/SP-TRIP MACHINE～JUNGLE MIX～(X-Special).png",
+      "saHash": "dDO8ili1081QQIb86POQ8qd0P111011o",
+      "saIndex": "314"
+    },
+    {
+      "name": "Spanish Snowy Dance",
+      "artist": "Mutsuhiko Izumi",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 726,
+          "freeze": 32,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Spanish_Snowy_Dance",
+      "jacket": "ddr_2013/Spanish Snowy Dance.png",
+      "saHash": "bo6PqbbPQ6D096OIP6dDPbPPiDi88609",
+      "saIndex": "545"
+    },
+    {
+      "name": "Splash Gold",
+      "artist": "BEMANI Sound Team \"TAG underground\"",
+      "bpm": "75-300",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Splash_Gold",
+      "jacket": "ddr_a20/Splash Gold.png",
+      "saHash": "b1do8OI6qDDlQO0PI16868ql6bdbI886",
+      "saIndex": "878"
+    },
+    {
+      "name": "Squeeze",
+      "artist": "VENUS feat. Mutsuhiko Izumi",
+      "bpm": "87-173",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 477,
+          "freeze": 11,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Squeeze",
+      "jacket": "ddr_2014/Squeeze.png",
+      "genre": "WITHOUT YOU TONIGHT -VI-",
+      "saHash": "D9I8d1PDOQ8QqP1o1IIi0o8d6660ddOQ",
+      "saIndex": "577",
+      "search_hint": "WITHOUT YOU TONIGHT -VI-/ウィザウチュナイ-ゼクス-"
+    },
+    {
+      "name": "Star Trail",
+      "artist": "Nhato",
+      "bpm": "74-148",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 462,
+          "freeze": 19,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Star_Trail",
+      "jacket": "ddr_a/Star Trail.png",
+      "genre": "TRANCE",
+      "saHash": "I1DiOI16Id0qdlqbQ6ObPlilDP1oiI98",
+      "saIndex": "699"
+    },
+    {
+      "name": "Starlight Fantasia",
+      "artist": "TAG",
+      "bpm": "148",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 477,
+          "freeze": 33,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Starlight_Fantasia",
+      "jacket": "ddr_2014/Starlight Fantasia.png",
+      "saHash": "bb9lOdO0Pbb1qOIb1oQq8lPlI9i6IP8q",
+      "saIndex": "624"
+    },
+    {
+      "name": "Starlight Fantasia (Endorphins Mix)",
+      "artist": "U1 overground feat.TAG",
+      "bpm": "77-310",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 395,
+          "freeze": 15,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Starlight_Fantasia_(Endorphins_Mix)",
+      "jacket": "ddr_2014/Starlight Fantasia (Endorphins Mix).png",
+      "saHash": "1QqObIQPDOq6bI6iOqDiiI66oDQQidlb",
+      "saIndex": "647"
+    },
+    {
+      "name": "Starlight in the Snow",
+      "artist": "BEMANI Sound Team \"劇団レコード\" ft.Lisa - paint with stars",
+      "artist_translation": "BEMANI Sound Team \"Gekidan Record\" ft.Lisa-Paint with stars",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 490,
+          "freeze": 21,
+          "shock": 64,
+          "flags": ["shock"],
+          "sanbaiTier": 16.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Starlight_in_the_Snow",
+      "jacket": "ddr_a20/Starlight in the Snow.jpg",
+      "saHash": "bbiPqbo0lQq9P19i06q690blI91dbbq6",
+      "saIndex": "917"
+    },
+    {
+      "name": "starmine",
+      "artist": "Ryu☆",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 495,
+          "freeze": 24,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.2
+        }
+      ],
+      "remyLink": "https://remywiki.com/Starmine",
+      "jacket": "ddr_2014/starmine.png",
+      "genre": "HAPPY HARDCORE",
+      "saHash": "l666Dd0bIO9O69boPd898b19bPDo1IdO",
+      "saIndex": "618"
+    },
+    {
+      "name": "STAY GOLD",
+      "artist": "Yuta Imai",
+      "bpm": "41-330",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/STAY_GOLD",
+      "jacket": "ddr_a3/STAY GOLD.jpg",
+      "genre": "HARD DANCE",
+      "saHash": "989od088q99DPIIq6IQidI1IQ1qQOlb6",
+      "saIndex": "1072"
+    },
+    {
+      "name": "STERLING SILVER",
+      "artist": "TAG",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 486,
+          "freeze": 6,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/STERLING_SILVER",
+      "jacket": "ddr_a/STERLING SILVER.png",
+      "genre": "",
+      "saHash": "ooo6qID66I6191bQib1QQdlPoio6Iodl",
+      "saIndex": "732"
+    },
+    {
+      "name": "StrayedCatz",
+      "artist": "削除",
+      "artist_translation": "sakuzyo",
+      "bpm": "114-152",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 336,
+          "freeze": 11,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/StrayedCatz",
+      "jacket": "ddr_a/StrayedCatz.png",
+      "genre": "FANTASY",
+      "saHash": "li6dD9b8dboOd9bbqli886lDl08IPQ00",
+      "saIndex": "740"
+    },
+    {
+      "name": "Such A Feeling",
+      "artist": "U1",
+      "bpm": "120",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Such_A_Feeling",
+      "jacket": "ddr_a3/Such_A_Feeling.jpg",
+      "saHash": "6o6OObQo9oQl6Q1oq6OPqibQI61IlPq8",
+      "saIndex": "1162"
+    },
+    {
+      "name": "Summer fantasy (Darwin remix)",
+      "artist": "Lazy U1 ft. Fraz & Chalk E",
+      "bpm": "178",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 208,
+          "shock": 83,
+          "freeze": 99,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 11.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Summer_fantasy_(Darwin_remix)",
+      "jacket": "ddr_2014/Summer fantasy (Darwin remix).png",
+      "saHash": "loD6oi96869O8ilii1QPOPDoP91l1PQQ",
+      "saIndex": "663"
+    },
+    {
+      "name": "SUNKiSS♥DROP",
+      "artist": "jun with Alison",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        {
+          "step": 422,
+          "freeze": 14,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/SUNKiSS_DROP",
+      "jacket": "ddr_sn-sn2/SUNKiSS♥DROP.png",
+      "saHash": "61IoqIoODb6dlQlQqd99b90idO9QP9iI",
+      "saIndex": "263"
+    },
+    {
+      "name": "Surface",
+      "artist": "Stessie",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Surface",
+      "jacket": "ddr_a3/Surface.jpg",
+      "saHash": "9qO16DoQPDODQI6IPD0lPD10b88Qqi1i",
+      "saIndex": "1061"
+    },
+    {
+      "name": "SURVIVAL AT THE END OF THE UNIVERSE",
+      "artist": "Akira Complex",
+      "bpm": "150-200",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/SURVIVAL_AT_THE_END_OF_THE_UNIVERSE",
+      "saHash": "iq6b9lP6qQQIOIPQDdPD8ld1o9891Pq9",
+      "saIndex": "1186",
+      "jacket": "ddr_a3/SURVIVAL_AT_THE_END_OF_THE_UNIVERSE.jpg"
+    },
+    {
+      "name": "Sword of Vengeance",
+      "artist": "sky_delta",
+      "bpm": "208",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Sword_of_Vengeance",
+      "jacket": "ddr_a20plus/Sword of Vengeance.jpg",
+      "genre": "HI-SPEED TECHCORE",
+      "saHash": "ddqO1b1ldlQd6OOoQ1boPdoboDQqd9D8",
+      "saIndex": "1008"
+    },
+    {
+      "name": "sync (EXTREME version)",
+      "artist": "OutPhase",
+      "bpm": "167",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 328,
+          "freeze": 8,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 12.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Sync_(EXTREME_version)",
+      "jacket": "ddr_max-ext/sync (EXTREME version).png",
+      "saHash": "8lo1IDqPDD88DObIPodOd8oQ0Q6qQ1Dd",
+      "saIndex": "132"
+    },
+    {
+      "name": "TAKE ME HIGHER",
+      "artist": "DJ Shimamura",
+      "bpm": "140-175",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/TAKE_ME_HIGHER",
+      "jacket": "ddr_a3/TAKE_ME_HIGHER.jpg",
+      "saHash": "PoiPd1OP1q9I9IP00PDlI1Q09QQ9b16o",
+      "saIndex": "1156"
+    },
+    {
+      "name": "Thank You Merry Christmas",
+      "artist": "VENUS",
+      "bpm": "220",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 429,
+          "freeze": 41,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Thank_You_Merry_Christmas",
+      "jacket": "ddr_2014/Thank You Merry Christmas.png",
+      "genre": "",
+      "saHash": "IPDid8ii1iQb19lb6iqOi91O0il018Ql",
+      "saIndex": "623"
+    },
+    {
+      "name": "THE ANCIENT KING IS BACK",
+      "artist": "BEMANI Sound Team \"L.E.D.-G\"",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/THE_ANCIENT_KING_IS_BACK",
+      "jacket": "ddr_a3/THE_ANCIENT_KING_IS_BACK.jpg",
+      "saHash": "IlP88I0bbl91iOD6OQ6o6PPb9o6dlDb8",
+      "saIndex": "1126"
+    },
+    {
+      "name": "The Least 100sec",
+      "artist": "Hirofumi Sasaki",
+      "bpm": "200-263",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 429,
+          "freeze": 2,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/The_Least_100sec",
+      "jacket": "ddr_max-ext/The Least 100sec.png",
+      "genre": "PROGRESSIVE",
+      "saHash": "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0",
+      "saIndex": "134",
+      "search_hint": "PROGRESSIVE/プログレッシブ"
+    },
+    {
+      "name": "The legend of MAX",
+      "artist": "ZZ",
+      "bpm": "83-333",
+      "folder": "DanceDanceRevolution EXTREME",
+      "charts": [
+        {
+          "step": 357,
+          "freeze": 29,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/The_legend_of_MAX",
+      "jacket": "ddr_max-ext/The legend of MAX.png",
+      "saHash": "li608di8PolqqIP808iddOqi11qDDq0Q",
+      "saIndex": "135"
+    },
+    {
+      "name": "The Wind of Gold",
+      "artist": "kors k",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 299,
+          "freeze": 15,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/The_Wind_of_Gold",
+      "jacket": "ddr_2013/The Wind of Gold.png",
+      "genre": "ORIENTAL CORE",
+      "saHash": "Dbdi9P91PQl660llPQO0l86oDqi1O9Ob",
+      "saIndex": "552",
+      "search_hint": "ORIENTAL CORE/オリエンタルコア"
+    },
+    {
+      "name": "The World Ends Now",
+      "artist": "Akira Complex",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/The_World_Ends_Now",
+      "jacket": "ddr_a20/The_World_Ends_Now.png",
+      "saHash": "b80qOO6l8060990qQPod1bOd8Q9d69qo",
+      "saIndex": "886"
+    },
+    {
+      "name": "Theory of Eternity",
+      "artist": "TAG",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 275,
+          "shock": 46,
+          "freeze": 58,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 10.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Theory_of_Eternity",
+      "jacket": "ddr_x2/Theory of Eternity.png",
+      "saHash": "Oq9QIlI8l11ddqbbDoQ1ql61OqlIi9lo",
+      "saIndex": "393"
+    },
+    {
+      "name": "This Beat Is.....",
+      "artist": "Shoichiro Hirata",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/This_Beat_Is.....",
+      "jacket": "ddr_a20/This Beat Is.png",
+      "saHash": "PdPdbdQ1lDI18O90Q0li8QI0bo99bidd",
+      "saIndex": "834"
+    },
+    {
+      "name": "Tohoku EVOLVED",
+      "artist": "2.1MB underground",
+      "bpm": "42-1021",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 656,
+          "freeze": 17,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/Tohoku_EVOLVED",
+      "jacket": "ddr_x3/Tohoku EVOLVED.png",
+      "saHash": "OddDoQ6dqi0QdQDDOO6qlO08d8bPbli1",
+      "saIndex": "471"
+    },
+    {
+      "name": "tokyoEVOLVED (TYPE1)",
+      "artist": "NAOKI underground",
+      "bpm": "69-555",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 523,
+          "freeze": 6,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/TokyoEVOLVED",
+      "jacket": "ddr_x3/tokyoEVOLVED (TYPE1).png",
+      "saHash": "DIDd9l0dbi1QdQ89I6Do9bolDqdb1dPO",
+      "saIndex": "462"
+    },
+    {
+      "name": "Top The Charts",
+      "artist": "J-Mi & Midi-D feat. Hanna Stockzell",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 404,
+          "shock": 22,
+          "freeze": 41,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 14.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Top_The_Charts",
+      "jacket": "ddr_2013/Top The Charts.png",
+      "saHash": "l9i996ld6PbbiO1911OoOI8lIPQ06ID8",
+      "saIndex": "519"
+    },
+    {
+      "name": "Trill auf G",
+      "artist": "BEMANI Sound Team \"dj TAKA\"",
+      "bpm": "188",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Trill_auf_G",
+      "jacket": "ddr_a20/Trill_auf_G.jpg",
+      "genre": "MUSIC GAMES HARDCORE",
+      "saHash": "0lIIil06b8q819P9lDil09o6qlqo9I1i",
+      "saIndex": "888"
+    },
+    {
+      "name": "TRIP MACHINE EVOLUTION",
+      "artist": "DE-JAVU",
+      "bpm": "95-379",
+      "folder": "DanceDanceRevolution X3 vs 2nd MIX",
+      "charts": [
+        {
+          "step": 668,
+          "freeze": 32,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/TRIP_MACHINE_EVOLUTION",
+      "jacket": "ddr_x3/TRIP MACHINE EVOLUTION.png",
+      "saHash": "8O6b1D9PDO0ll1IO9d1ODDPPo0QPQbob",
+      "saIndex": "480"
+    },
+    {
+      "name": "Triple Counter",
+      "artist": "DJ YOSHITAKA meets dj TAKA",
+      "bpm": "216",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 718,
+          "freeze": 23,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Triple_Counter",
+      "jacket": "ddr_a/Triple Counter.png",
+      "genre": "RISK + VACUUM",
+      "saHash": "d810q0I8q6d0l1POlIO6d66bOPb96dql",
+      "saIndex": "742"
+    },
+    {
+      "name": "TSUBASA",
+      "artist": "柊木りお featured by TAG",
+      "artist_translation": "Hiragi Rio featured by TAG",
+      "bpm": "151",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 454,
+          "freeze": 10,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/TSUBASA",
+      "jacket": "ddr_2014/TSUBASA.png",
+      "saHash": "o9Ib8bob6b9qIDq1d09bq8q1I06Odi90",
+      "saIndex": "669"
+    },
+    {
+      "name": "Twinkle Wonderland",
+      "artist": "Qrispy Joybox feat.Sana",
+      "bpm": "188",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Twinkle_Wonderland",
+      "jacket": "ddr_a20plus/Twinkle Wonderland.jpg",
+      "genre": "TWINKLE POP",
+      "saHash": "91Qdq6DbPDlQOiOq08di0IQo8IP8PPqQ",
+      "saIndex": "982",
+      "search_hint": "TWINKLE POP/トゥインクルポップ"
+    },
+    {
+      "name": "TYPHØN",
+      "name_translation": "TYPHON",
+      "artist": "BlackY",
+      "bpm": "113-451",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/TYPHON",
+      "jacket": "ddr_a20plus/TYPHON.jpg",
+      "saHash": "i0Q0o98q0DqbbiDd6966QIIoddlob6lI",
+      "saIndex": "1041"
+    },
+    {
+      "name": "Une mage blanche",
+      "artist": "Dormir",
+      "bpm": "193",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.55
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Une_mage_blanche",
+      "jacket": "ddr_a20/Une_mage_blanche.png",
+      "saHash": "8q68D8iP6lIdiP8bo9PoOib8lb9loIob",
+      "saIndex": "900"
+    },
+    {
+      "name": "Valanga",
+      "artist": "DJ TOTTO",
+      "bpm": "186",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.35
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Valanga",
+      "jacket": "ddr_a3/Valanga.jpg",
+      "genre": "ARTCORE",
+      "saHash": "9lo10Dl06QIblQqOOid1qi0bd10I9lQ9",
+      "saIndex": "1181",
+      "search_hint": "ARTCORE/アートコア"
+    },
+    {
+      "name": "Valkyrie dimension",
+      "artist": "Spriggan",
+      "bpm": "47-742",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 632,
+          "freeze": 39,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 18.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Valkyrie_dimension",
+      "jacket": "ddr_x2/Valkyrie dimension.png",
+      "saHash": "186dd6DQq891Ib9Ilq8Qbo8lIqb0Qoll",
+      "saIndex": "395"
+    },
+    {
+      "name": "VALLIS-NERIA",
+      "artist": "DJ YOSHITAKA",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/VALLIS-NERIA",
+      "jacket": "ddr_a3/VALLIS-NERIA.jpg",
+      "saHash": "q8o866OdqqDPOQdO88D1DOdbqQo1q8Q1",
+      "saIndex": "1113"
+    },
+    {
+      "name": "VEGA",
+      "artist": "REDALiCE",
+      "bpm": "191",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 605,
+          "freeze": 28,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/VEGA",
+      "jacket": "ddr_2014/VEGA.png",
+      "genre": "UNIVERSAL J-CORE",
+      "saHash": "d1dPPII1o69IlI0d0DlPi1i1idbdPD6O",
+      "saIndex": "581"
+    },
+    {
+      "name": "VOLAQUAS",
+      "artist": "BEMANI Sound Team \"DJ TOTTO VS 兎々\"",
+      "artist_translation": "BEMANI Sound Team \"DJ TOTTO VS Totto\"",
+      "bpm": "106-212",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 19,
+          "style": "single",
+          "diffClass": "challenge"
+        }
+      ],
+      "remyLink": "https://remywiki.com/VOLAQUAS",
+      "jacket": "ddr_a3/VOLAQUAS.jpg",
+      "genre": "EMPYREAL HYDRO ARTCORE",
+      "saHash": "QldQ19DlqDbq1l091q0l1Q1qD6ldQ6qi",
+      "saIndex": "1150"
+    },
+    {
+      "name": "voltississimo",
+      "artist": "BEMANI Sound Team \"PHQUASE\"",
+      "bpm": "113-226",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Voltississimo",
+      "jacket": "ddr_a20/Voltississimo.jpg",
+      "genre": "VVV",
+      "saHash": "6DQ9D9oi66I8ODi8o0dPdOD1ibbIqIdI",
+      "saIndex": "893"
+    },
+    {
+      "name": "WARNING×WARNING×WARNING",
+      "name_translation": "WARNINGxWARNINGxWARNING",
+      "artist": "暁Records",
+      "artist_translation": "Akatsuki Records",
+      "bpm": "172",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 495,
+          "freeze": 92,
+          "shock": 19,
+          "flags": ["shock"],
+          "sanbaiTier": 17.2
+        }
+      ],
+      "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
+      "jacket": "ddr_a3/WARNINGxWARNINGxWARNING.jpg",
+      "saHash": "I0091lboOD1Dii10dQ0qbDqil69PQ0io",
+      "saIndex": "1070"
+    },
+    {
+      "name": "We're so Happy",
+      "artist": "Ryu☆",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/We%27re_so_Happy",
+      "jacket": "ddr_a20plus/We're so Happy.jpg",
+      "saHash": "I6DdI9O1Oo8O9lo1D08ldOllo0o166I8",
+      "saIndex": "991"
+    },
+    {
+      "name": "WILD RUSH",
+      "artist": "FACTOR-X",
+      "bpm": "80-180",
+      "folder": "DanceDanceRevolution 4th Mix",
+      "charts": [
+        {
+          "step": 247,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 10.8
+        }
+      ],
+      "remyLink": "https://remywiki.com/WILD_RUSH",
+      "jacket": "ddr_1st-5th/WILD RUSH.png",
+      "saHash": "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP",
+      "saIndex": "47"
+    },
+    {
+      "name": "Windy Fairy",
+      "artist": "DJ TOTTO",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 555,
+          "freeze": 53,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Windy_Fairy",
+      "jacket": "ddr_2013/Windy Fairy.png",
+      "genre": "",
+      "saHash": "8bI68oIq08d99P880bDPQ9D80O099Q10",
+      "saIndex": "564"
+    },
+    {
+      "name": "Worst Plan",
+      "artist": "BEMANI Sound Team \"SYUNN\"",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Worst_Plan",
+      "jacket": "ddr_a3/Worst Plan.jpg",
+      "saHash": "1lqii0IibdbPD19P6DiIl0Id9do6qqd1",
+      "saIndex": "1074"
+    },
+    {
+      "name": "Wow Wow VENUS",
+      "artist": "VENUS",
+      "bpm": "157",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 16.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Wow_Wow_VENUS",
+      "jacket": "ddr_2013/Wow Wow VENUS.png",
+      "genre": "WITHOUT YOU TONIGHT -IV-",
+      "saHash": "Qo1qdD0Q9d11d9Id6o09P9id8lPbOQ6o",
+      "saIndex": "563",
+      "search_hint": "WITHOUT YOU TONIGHT -IV-/ウィザウチュナイ-クアトロ-"
+    },
+    {
+      "name": "Wowie Zowie!",
+      "artist": "Hommarju",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Wowie_Zowie!",
+      "jacket": "ddr_a3/Wowie Zowie!.jpg",
+      "saHash": "6b6QIoDPoQ010o8Di1q6Q8DdiQll0Di1",
+      "saIndex": "1089"
+    },
+    {
+      "name": "Wuv U",
+      "artist": "kors k",
+      "bpm": "87-346",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Wuv_U",
+      "jacket": "ddr_a3/Wuv U.jpg",
+      "genre": "CANDY RAVE",
+      "saHash": "6DPiPD9qDboDlP8qq61Q89qPP0dIO0OI",
+      "saIndex": "1114",
+      "search_hint": "CANDY RAVE/キャンディレイヴ"
+    },
+    {
+      "name": "Yuni's Nocturnal Days",
+      "artist": "かめりあ",
+      "artist_translation": "Camellia",
+      "bpm": "153",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days",
+      "jacket": "ddr_a20plus/Yuni's Nocturnal Days.jpg",
+      "saHash": "OIOdod8llPlO0lOlb6P8iIQ90qQqoDiP",
+      "saIndex": "1000"
+    },
+    {
+      "name": "ZEPHYRANTHES",
+      "artist": "TAG",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 422,
+          "freeze": 22,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/ZEPHYRANTHES",
+      "jacket": "ddr_a/ZEPHYRANTHES.png",
+      "genre": "BLOOM CORE",
+      "saHash": "I61ioI01IOPDPbP1OO0l98PD0iDbid0D",
+      "saIndex": "741"
+    },
+    {
+      "name": "ÆTHER",
+      "name_translation": "AETHER",
+      "artist": "TAG underground",
+      "bpm": "191-384",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 704,
+          "freeze": 6,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/AETHER",
+      "jacket": "ddr_2014/ÆTHER.png",
+      "genre": "ASTRAL HARDCORE",
+      "search_hint": "aether",
+      "saHash": "l6d0ibbliQPQDdb1lP18D9qbPDi1698b",
+      "saIndex": "587"
+    },
+    {
+      "name": "ΔMAX",
+      "name_translation": "deltaMAX",
+      "artist": "DM Ashura",
+      "bpm": "100-600",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 573,
+          "freeze": 110,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/DeltaMAX",
+      "jacket": "ddr_x2/ΔMAX.png",
+      "saHash": "QQldo10ObPPQPlliODiDIIl0Q1oPoo61",
+      "saIndex": "402"
+    },
+    {
+      "name": "び",
+      "name_translation": "Bi",
+      "artist": "立秋 feat.ちょこ",
+      "artist_translation": "Rissyuu feat.Choko",
+      "bpm": "169",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Bi",
+      "jacket": "ddr_a20/Bi.jpg",
+      "saHash": "QD9Ib18D9lIO10O19d16PbPb68q1190d",
+      "saIndex": "926"
+    },
+    {
+      "name": "アドレナリン",
+      "name_translation": "Adrenaline",
+      "artist": "U1 overground",
+      "bpm": "70-140",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Adrenaline_(U1_overground)",
+      "saHash": "111O66bbPIQb09PlIoolIOD666QqqIdP",
+      "saIndex": "1177",
+      "jacket": "ddr_a3/Adrenaline.jpg"
+    },
+    {
+      "name": "ウソツキ横丁は雨模様",
+      "name_translation": "Usotsuki yokochou wa amemoyou",
+      "artist": "夜叉姫神楽",
+      "artist_translation": "Yasha-hime Kagura",
+      "bpm": "110",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Usotsuki_yokochou_wa_amemoyou",
+      "jacket": "ddr_a20plus/Usotsuki yokochou wa amemoyou.jpg",
+      "genre": "",
+      "saHash": "q8iPi1DP6Do6D110OQiQDdPq06q80Qb0",
+      "saIndex": "975"
+    },
+    {
+      "name": "エンドルフィン",
+      "name_translation": "Endorphin",
+      "artist": "U1 overground",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 582,
+          "freeze": 9,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Endorphin",
+      "jacket": "ddr_2014/Endorphin.png",
+      "saHash": "oQolO9oOO01ll0I8969i8O1IQliloDqP",
+      "saIndex": "626"
+    },
+    {
+      "name": "クリムゾンゲイト",
+      "name_translation": "Crimson Gate",
+      "artist": "工藤吉三（ベイシスケイプ）",
+      "artist_translation": "Kichizo Kudo (Basis Cape)",
+      "bpm": "198",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 480,
+          "freeze": 8,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Crimson_gate",
+      "jacket": "ddr_2014/Crimson Gate.png",
+      "saHash": "q6iD8idqo69qIPl00IQidoq1o1o1d1b9",
+      "saIndex": "629"
+    },
+    {
+      "name": "トランスダンスアナーキー",
+      "saHash": "8069d8dPiqloqD8i8od1o1Pq1Q6Q8i9D",
+      "artist": "暁Records",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "195",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.35
+        }
+      ],
+      "jacket": "ddr_a3/トランスダンスアナーキー.jpg",
+      "remyLink": "https://remywiki.com/Trance_dance_anarcky",
+      "name_translation": "Trance Dance Anarchy"
+    },
+    {
+      "name": "ドーパミン",
+      "name_translation": "Dopamine",
+      "artist": "U1 overground",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 743,
+          "freeze": 3,
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dopamine",
+      "jacket": "ddr_2014/Dopamine.png",
+      "saHash": "QoODOoqDli0bOoqqDo8ODo1lDI9llblo",
+      "saIndex": "661"
+    },
+    {
+      "name": "ナイト・オブ・ナイツ (Ryu☆Remix)",
+      "name_translation": "Night of knights (Ryu☆Remix)",
+      "artist": "Ryu☆",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.15
+        }
+      ],
+      "remyLink": "https://remywiki.com/Night_of_knights_(Ryu_Remix)",
+      "jacket": "ddr_a20/Night of knights (Ryu☆Remix).jpg",
+      "saHash": "IlbI1QQOPI0o0IdoPI6QPldqQob16DOq",
+      "saIndex": "923"
+    },
+    {
+      "name": "マインド・ゲーム",
+      "name_translation": "Mind Game",
+      "artist": "96 with メカショッチョー",
+      "artist_translation": "96 with Mega Shocchou",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 509,
+          "freeze": 28,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Mind_game",
+      "jacket": "ddr_2014/Mind Game.png",
+      "genre": "青春剛速球メタル",
+      "saHash": "0ddPq801D8PiiqO1oqoQbdOIQ9lQl11o",
+      "saIndex": "568",
+      "search_hint": "青春剛速球メタル"
+    },
+    {
+      "name": "モノクロモーメント",
+      "name_translation": "Monochrome moment",
+      "artist": "BEMANI Sound Team \"TAG\"",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Monochrome_moment",
+      "jacket": "ddr_a20plus/Monochrome moment.jpg",
+      "saHash": "10IOllioqPoOQ668PQqolDPiib0iIQql",
+      "saIndex": "1034"
+    },
+    {
+      "name": "ラキラキ",
+      "name_translation": "RAKIRAKI",
+      "artist": "Mutsuhiko Izumi & S-C-U",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution (2013)",
+      "charts": [
+        {
+          "step": 422,
+          "freeze": 26,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Lucky_lucky",
+      "jacket": "ddr_2013/RAKIRAKI.png",
+      "genre": "LUCKY TECHNO",
+      "saHash": "0bDqIO9Q0PPIPlPll1D8Pbol9O6DlPdb",
+      "saIndex": "527",
+      "search_hint": "LUCKY TECHNO/ラッキーテクノ"
+    },
+    {
+      "name": "ラクガキスト",
+      "name_translation": "Luckgakist",
+      "artist": "cosMo＠暴走P feat.GUMI",
+      "artist_translation": "cosMo@BousouP feat. GUMI",
+      "bpm": "199",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 383,
+          "freeze": 2,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Luckgakist",
+      "jacket": "ddr_2014/Luckgakist.png",
+      "saHash": "D08qoOdPd8iOO916bOPIIIdqPP6O00iP",
+      "saIndex": "596"
+    },
+    {
+      "name": "ランカーキラーガール",
+      "name_translation": "Ranker Killer Girl",
+      "artist": "中島由貴 × いちか",
+      "artist_translation": "Yuki Nakashima x Ichika",
+      "bpm": "199-201",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Ranker_killer_girl",
+      "jacket": "ddr_a20/Ranker Killer Girl.jpg",
+      "genre": "KILLER PUNK",
+      "saHash": "D08lqQOPdOO6D6ll690Qd6PdbO111011",
+      "saIndex": "904"
+    },
+    {
+      "name": "ルミナスデイズ",
+      "name_translation": "Luminous days",
+      "artist": "ここなつ",
+      "artist_translation": "Coconatsu",
+      "bpm": "96-145",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 398,
+          "freeze": 18,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Luminous_days",
+      "jacket": "ddr_a/Luminous days.png",
+      "genre": "",
+      "saHash": "dqOoPll1qlDdo6Pd6O0DPPO6l16OIdD1",
+      "saIndex": "772"
+    },
+    {
+      "name": "乙女繚乱 舞い咲き誇れ",
+      "name_translation": "Otome ryouran mai sakihokore",
+      "artist": "日向美ビタースイーツ♪",
+      "artist_translation": "Hinatabi Bitter Sweets",
+      "bpm": "210",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 360,
+          "freeze": 21,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Otome_ryouran_mai_sakihokore",
+      "jacket": "ddr_2014/Otome ryouran mai sakihokore.png",
+      "genre": "",
+      "search_hint": "Otome ryouran mai sakihokore",
+      "saHash": "i91q8l0bbi8qll000ob6qDiQP891iiql",
+      "saIndex": "642"
+    },
+    {
+      "name": "伐折羅-vajra-",
+      "name_translation": "Vajra",
+      "artist": "DJ TOTTO VS 兎々",
+      "artist_translation": "DJ TOTTO VS Totto",
+      "bpm": "87-173",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 12.55
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Vajra",
+      "jacket": "ddr_a3/Vajra.jpg",
+      "genre": "KUDOS CORE",
+      "saHash": "iQDQD8889Q8O018Oi60I69D6qD6odDI0",
+      "saIndex": "1182"
+    },
+    {
+      "name": "冥",
+      "name_translation": "MEI",
+      "artist": "Amuro vs Killer",
+      "bpm": "66-200",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "step": 730,
+          "freeze": 10,
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 18.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Mei",
+      "jacket": "ddr_x2/MEI.png",
+      "genre": "HUMAN SEQUENCER",
+      "saHash": "iqiqod1l08DlDql98QOi10oibldd8b86",
+      "saIndex": "404"
+    },
+    {
+      "name": "嘆きの樹",
+      "name_translation": "Nageki no Ki",
+      "artist": "金獅子",
+      "artist_translation": "Kinjishi",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 666,
+          "freeze": 16,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.4
+        }
+      ],
+      "remyLink": "https://remywiki.com/Nageki_no_ki",
+      "jacket": "ddr_2014/Nageki no Ki.png",
+      "genre": "CONTEMPORARY",
+      "saHash": "Pi69o0idP1obO9QDqIDbPdqlb90q8Dq8",
+      "saIndex": "614"
+    },
+    {
+      "name": "天ノ弱",
+      "name_translation": "Ama no jyaku",
+      "artist": "164",
+      "bpm": "197-205",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 299,
+          "freeze": 7,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.65
+        }
+      ],
+      "remyLink": "https://remywiki.com/Amanojaku",
+      "jacket": "ddr_a/Ama no jyaku.png",
+      "genre": "",
+      "saHash": "16bl8D8lOddP9Obq0OIlOI6q8Pi1l9O0",
+      "saIndex": "725"
+    },
+    {
+      "name": "天空の華",
+      "name_translation": "Tenkuu no hana",
+      "artist": "S-C-U × U1 overground",
+      "bpm": "90-188",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 344,
+          "freeze": 10,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 11.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Tenkuu_no_hana",
+      "jacket": "ddr_2014/Tenkuu no hana.png",
+      "saHash": "D68PQib86POo9D6O8Q0qO8bD6bDb1bdl",
+      "saIndex": "665"
+    },
+    {
+      "name": "寝起きヤシの木",
+      "name_translation": "Neoki yashi no ki",
+      "saHash": "IdOQPlbD9d9IO16Pd1IDO0b88Qo0boO9",
+      "artist": "Yukopi",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "160",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.4
+        }
+      ],
+      "jacket": "ddr_world/寝起きヤシの木.jpg",
+      "remyLink": "https://remywiki.com/Neoki_yashi_no_ki"
+    },
+    {
+      "name": "幸せになれる隠しコマンドがあるらしい",
+      "name_translation": "Shiawase ni nareru kakushi command ga arurashii",
+      "artist": "うたたP feat. 結月ゆかり",
+      "artist_translation": "UtataP feat. Yukari Yuzuki",
+      "bpm": "142",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 319,
+          "freeze": 4,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Shiawase_ni_nareru_kakushi_command_ga_arurashii",
+      "jacket": "ddr_a/Apparently There's a Cheat Code to Happiness.png",
+      "search_hint": "Apparently There's a Cheat Code to Happiness",
+      "saHash": "D11ldIqD8dQIi9oQQIIo86QOI8D9olP8",
+      "saIndex": "758"
+    },
+    {
+      "name": "新蛇姫",
+      "name_translation": "Shin hebi hime",
+      "artist": "BEMANI Sound Team \"U1-ASAMi\"",
+      "bpm": "115-230",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 10.7
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.9
+        }
+      ],
+      "remyLink": "https://remywiki.com/Shin_hebi_hime",
+      "jacket": "ddr_a3/Shin hebi hime.jpg",
+      "saHash": "Pd8bD1od1iOOl80oOiiiIb9QdqIQQllQ",
+      "saIndex": "1147"
+    },
+    {
+      "name": "春風ブローインウィンド",
+      "name_translation": "Shunpuu blowing wind",
+      "artist": "TAG",
+      "bpm": "80-160",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "step": 573,
+          "freeze": 33,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Shunpuu_blowing_wind",
+      "jacket": "ddr_a/Shunpuu blowing wind.png",
+      "genre": "",
+      "saHash": "dlqPb1iqPo81qI89816QIoi01b1b0P06",
+      "saIndex": "786"
+    },
+    {
+      "name": "最小三倍完全数",
+      "name_translation": "Saishou sanbai kanzensuu",
+      "artist": "DJ TECHNORCH",
+      "bpm": "55-440",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.9
+        }
+      ],
+      "remyLink": "https://remywiki.com/Saishou_sanbai_kanzensuu",
+      "jacket": "ddr_a20/Saishou_sanbai_kanzensuu.jpg",
+      "genre": "ピタゴラス的不完全性破壊衝動音律(ハンマーによる)",
+      "saHash": "O9qDQOQO8dDDIiO9dPP0Pb8qQo9l89D9",
+      "saIndex": "887"
+    },
+    {
+      "name": "東京神話",
+      "name_translation": "Tokyo shinwa",
+      "artist": "DJ TECHNORCH feat.宇宙★海月 vs BEMANI Sound Team \"U1-ASAMi\"",
+      "artist_translation": "DJ TECHNORCH feat.Uchuu kurage vs BEMANI Sound Team \"U1-ASAMi\"",
+      "bpm": "98-196",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.5
+        }
+      ],
+      "remyLink": "https://remywiki.com/Tokyo_shinwa",
+      "jacket": "ddr_a20plus/Tokyo shinwa.jpg",
+      "genre": "ORBITALIC GABBER STEP",
+      "saHash": "oQ868oOio6O90i9qO1o8I96P1do11ID0",
+      "saIndex": "945"
+    },
+    {
+      "name": "海神",
+      "name_translation": "Wadatsumi",
+      "artist": "兎々",
+      "artist_translation": "Totto",
+      "bpm": "159",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 596,
+          "freeze": 29,
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/Wadatsumi",
+      "jacket": "ddr_2014/Wadatsumi.png",
+      "genre": "HYDRO CORE",
+      "saHash": "P0IoP69l6q08q8DoPD1Q8bqq099Pi1iP",
+      "saIndex": "630"
+    },
+    {
+      "name": "灼熱 Pt.2 Long Train Running",
+      "name_translation": "Shakunetsu Pt.2 Long Train Running",
+      "artist": "DJ Mass MAD Izm*",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.25
+        }
+      ],
+      "remyLink": "https://remywiki.com/Shakunetsu_Pt.2_Long_Train_Running",
+      "jacket": "ddr_a20plus/Shakunetsu Pt.2 Long Train Running.jpg",
+      "genre": "BROKEN SAMBA BREAK",
+      "saHash": "l0OPoQ1O8q8DPDo0Iol6qD6DiIqdD9P9",
+      "saIndex": "1025"
+    },
+    {
+      "name": "灼熱Beach Side Bunny",
+      "name_translation": "Shakunetsu Beach Side Bunny",
+      "artist": "DJ Mass MAD Izm*",
+      "bpm": "153",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "step": 586,
+          "freeze": 27,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Shakunetsu_Beach_Side_Bunny",
+      "jacket": "ddr_2014/Shakunetsu Beach Side Bunny.png",
+      "genre": "BROKEN SAMBA BREAK",
+      "saHash": "6dO6i9qq601D8ild9QIlbO8bodbiQ1Pl",
+      "saIndex": "615",
+      "search_hint": "BROKEN SAMBA BREAK/ブロークンサンバブレイク"
+    },
+    {
+      "name": "酔いどれ知らず",
+      "name_translation": "Yoidore shirazu",
+      "artist": "Kanaria",
+      "bpm": "115",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.55
+        }
+      ],
+      "remyLink": "https://remywiki.com/Yoidore_shirazu",
+      "jacket": "ddr_a3/Yoidore shirazu.jpg",
+      "saHash": "IqibilD8QI9idP60P8o9ob0lqblQD89P",
+      "saIndex": "1100"
+    },
+    {
+      "name": "量子の海のリントヴルム",
+      "name_translation": "Ryoushi no umi no Lindwurm",
+      "artist": "黒猫ダンジョン",
+      "artist_translation": "Black Cat Labyrinth",
+      "bpm": "280",
+      "folder": "DanceDanceRevolution A3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 10.75
+        }
+      ],
+      "remyLink": "https://remywiki.com/Ryoushi_no_umi_no_Lindwurm",
+      "jacket": "ddr_a3/Ryoushi no umi no Lindwurm.jpg",
+      "genre": "エピックプログレ",
+      "saHash": "dPI9loII89Q6P6iD6Ioo1iiI880DI1Dd",
+      "saIndex": "1090",
+      "search_hint": "EPIC PROG/エピックプログレ"
+    },
+    {
+      "name": "閉塞的フレーション",
+      "name_translation": "Heisoku-teki flation",
+      "artist": "Pizuya's Cell VS BEMANI Sound Team \"dj TAKA\"",
+      "bpm": "176",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.3
+        }
+      ],
+      "remyLink": "https://remywiki.com/Heisokuteki_flation",
+      "jacket": "ddr_world/Heisoku-teki flation.jpg",
+      "genre": "ROCK",
+      "saHash": "Pbd01POIdQPdl6IDd6D6oP0006o6iO00"
+    },
+    {
+      "name": "鳳",
+      "saHash": "QiPiIb8I99loq8loIq91iP6l1OOoq8oq",
+      "artist": "かめりあ",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "57-912",
+      "charts": [
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 18.8
+        }
+      ],
+      "jacket": "ddr_a3/鳳.jpg",
+      "remyLink": "https://remywiki.com/Hou",
+      "name_translation": "Hou",
+      "search_hint": "ほう Otori/Ootori/Phoenix/おおとり"
+    },
+    {
+      "name": "ｍｅｍｏｒｙ／／ＤＡＴＡＭＯＳＨＥＲ",
+      "saHash": "D1QDql1OQDl1dblId0P81Q999dO9POoP",
+      "artist": "SYSTEM VALKYRIE:type-overdrive",
+      "folder": "DanceDanceRevolution A3",
+      "bpm": "115-460",
+      "charts": [
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.9
+        }
+      ],
+      "jacket": "ddr_a3/ｍｅｍｏｒｙ／／ＤＡＴＡＭＯＳＨＥＲ.jpg",
+      "remyLink": "https://remywiki.com/Memory//DATAMOSHER",
+      "search_hint": "memory datamosher"
+    }
+  ]
+}
