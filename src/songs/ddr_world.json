@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1756661915344
+    "lastUpdated": 1757640558504
   },
   "defaults": {
     "style": "single",
@@ -4668,6 +4668,51 @@
       "saIndex": "728"
     },
     {
+      "name": "Autosummer",
+      "artist": "Aoi",
+      "bpm": "88-177",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/Autosummer.jpg",
+      "saHash": "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol",
+      "flags": ["unlock"]
+    },
+    {
       "name": "Avenger",
       "artist": "USAO",
       "bpm": "100-400",
@@ -7539,6 +7584,52 @@
       "saIndex": "907"
     },
     {
+      "name": "BRAIN-HEART",
+      "artist": "SOUND HOLIC Vs. ZYTOKINE feat. Nana Takahashi",
+      "bpm": "140",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/BRAIN-HEART.jpg",
+      "remyLink": "https://remywiki.com/BRAIN-HEART",
+      "saHash": "oo1P6l616OOdl0IqPPqobPI0Il81qqii"
+    },
+    {
       "name": "Brazilian Anthem",
       "artist": "Berimbau '66",
       "bpm": "140",
@@ -8424,6 +8515,51 @@
       "jacket": "ddr_max-ext/BURNING HEAT！（3 Option MIX）.png",
       "saHash": "i86qD6Pl61dPI0Q9db1P8bl1ii99q1lD",
       "saIndex": "73"
+    },
+    {
+      "name": "Burstix Comet",
+      "artist": "Ninja Never DieS!",
+      "bpm": "79-158",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/Burstix Comet.jpg",
+      "saHash": "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01",
+      "flags": ["unlock"]
     },
     {
       "name": "Bye or not",
@@ -10541,6 +10677,51 @@
       "jacket": "ddr_a3/Closer to my Heart (jun remix).jpg",
       "saHash": "0ill9Po6Db090biqIlD1I9lo6PO8lQQ9",
       "saIndex": "1081"
+    },
+    {
+      "name": "Collapse of the Sanctuary",
+      "artist": "打打だいず vs. siromaru",
+      "bpm": "165",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/Collapse of the Sanctuary.jpg",
+      "saHash": "oIIPQQD09OqdOP8bb61biDOPI69OP8q8",
+      "flags": ["unlock"]
     },
     {
       "name": "Colors ～for EXTREME～",
