@@ -10,7 +10,7 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
-import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
+import { SkillAttackSongImporter } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";
 import {
   reportQueueStatusLive,
@@ -22,6 +22,7 @@ import {
 } from "./utils.mjs";
 
 setJacketPrefix(MIX_META.jacketPrefix);
+const saImporter = new SkillAttackSongImporter();
 
 /** returns data to use for given songs */
 async function mergeSongs(oldData, zivData, saData, log) {
@@ -138,7 +139,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       return songs;
     }),
     MIX_META.mergeSkillAttack
-      ? getSongsFromSkillAttack(log).then((songs) => {
+      ? saImporter.fetchSongs().then((songs) => {
           log(`Found ${songs.length} songs on SA`);
           return songs;
         })
