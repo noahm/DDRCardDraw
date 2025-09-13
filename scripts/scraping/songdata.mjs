@@ -3082,6 +3082,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "90lolio9qd6qo6Pl8oo69iqi81oiiQib",
     song_name: "I'm so Happy",
+    searchable_name: "Im so Happy",
     alternate_name: "愛無双",
     alphabet: "I",
     version_num: 12,
@@ -4814,6 +4815,14 @@ export const ALL_SONG_DATA = [
     version_num: 11,
     ratings: [3, 8, 10, 13, 0, 7, 11, 14, 0],
     tiers: [0.3, 0.4, 0.7, 0.65, 0, 0.75, 0.6, 0.6, 0],
+  },
+  {
+    song_id: "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01",
+    song_name: "Burstix Comet",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [3, 6, 12, 16, 0, 6, 12, 16, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "D89QP18016o01qoOi60I6Q19dlOQPbdo",
@@ -7213,6 +7222,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.55, 0.5, 0.6, 0.7, 0, 0.6, 0.7, 0.65, 0],
   },
   {
+    song_id: "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol",
+    song_name: "Autosummer",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [3, 8, 12, 15, 0, 8, 12, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "IIDiDdQ1d6bIqbld9IdO106POdiPO6PO",
     song_name: "PUNISHER",
     alphabet: "P",
@@ -7414,6 +7431,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "io1d1Dq80Di08O1Pb9bQ8DoP9d9Ooi90",
     song_name: "PARANOiA ～HADES～",
+    searchable_name: "PARANOiA HADES",
     alternate_name: "パラハデス",
     alphabet: "P",
     version_num: 10,
@@ -9529,6 +9547,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.6, 0.75, 0.65, 0.1, 0.1, 0.75, 0.6, 0.3, 0.25],
   },
   {
+    song_id: "oIIPQQD09OqdOP8bb61biDOPI69OP8q8",
+    song_name: "Collapse of the Sanctuary",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [4, 7, 12, 16, 0, 7, 12, 16, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "oilPP86l0PPq6Db0qqibQlqDiIOD0l1O",
     song_name: "You You You",
     alphabet: "Y",
@@ -9736,6 +9762,15 @@ export const ALL_SONG_DATA = [
     version_num: 17,
     ratings: [3, 7, 11, 15, 0, 7, 11, 15, 0],
     tiers: [0.3, 0.2, 0.3, 0.15, 0, 0.3, 0.35, 0.1, 0],
+  },
+  {
+    song_id: "oo1P6l616OOdl0IqPPqobPI0Il81qqii",
+    song_name: "BRAIN-HEART",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
   },
   {
     song_id: "Oo66i08qboI8PDbdQoiIb9qQ1i99oboP",
@@ -12394,4 +12429,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1756661915344;
+export const SONG_DATA_LAST_UPDATED_unixms = 1757640558504;

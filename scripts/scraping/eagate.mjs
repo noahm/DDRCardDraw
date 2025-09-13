@@ -62,13 +62,16 @@ const normalized = new Map([
   ],
 ]);
 
+/** Song importer from KONAMI e-amusement GATE */
 export class EAGateSongImporter {
+  /** URL to DDR song list page */
   #songListUrl;
+  /** URL to jacket image file (without `&img={saHash}` parameter) */
   #jacketUrl;
 
   /**
-   * @param {string} songListUrl
-   * @param {string} jacketUrl
+   * @param {string} songListUrl URL to DDR song list page
+   * @param {string} jacketUrl URL to jacket image file (without `&img={saHash}` parameter)
    */
   constructor(songListUrl, jacketUrl) {
     this.#songListUrl = songListUrl;
