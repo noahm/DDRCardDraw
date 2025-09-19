@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1757640558504
+    "lastUpdated": 1758385276160
   },
   "defaults": {
     "style": "single",
@@ -2614,6 +2614,12 @@
           "sanbaiTier": 8.15
         },
         {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 114,
           "lvl": 5,
           "style": "double",
@@ -2633,6 +2639,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 8.3
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/AFTER_THE_GAME_OF_LOVE",
@@ -6990,7 +7002,8 @@
           "step": 101,
           "lvl": 4,
           "style": "single",
-          "diffClass": "beginner"
+          "diffClass": "beginner",
+          "sanbaiTier": 4.35
         },
         {
           "step": 139,
@@ -7902,6 +7915,12 @@
           "sanbaiTier": 12.5
         },
         {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
@@ -7918,6 +7937,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.65
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/BREAK_DOWN!",
@@ -9071,6 +9096,12 @@
           "sanbaiTier": 11.25
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 198,
           "lvl": 5,
           "style": "double",
@@ -9092,6 +9123,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.35
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/CANDY_(Luv_UNLIMITED)",
@@ -17503,6 +17540,12 @@
           "sanbaiTier": 8.4
         },
         {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 110,
           "lvl": 6,
           "style": "double",
@@ -17523,6 +17566,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.55
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/E-motion",
@@ -25804,6 +25853,12 @@
           "sanbaiTier": 13.3
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -25820,6 +25875,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.45
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Healing_Vision_~Angelic_mix~",
@@ -27805,6 +27866,12 @@
           "sanbaiTier": 11.3
         },
         {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 158,
           "lvl": 4,
           "style": "double",
@@ -27824,6 +27891,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.55
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/HYSTERIA",
@@ -36264,7 +36337,7 @@
           "style": "single",
           "diffClass": "beginner",
           "bpm": "120",
-          "sanbaiTier": 4.7
+          "sanbaiTier": 3.7
         },
         {
           "lvl": 9,
@@ -36543,7 +36616,8 @@
           "freeze": 2,
           "lvl": 5,
           "style": "double",
-          "diffClass": "basic"
+          "diffClass": "basic",
+          "sanbaiTier": 5.4
         },
         {
           "step": 256,
@@ -61034,6 +61108,12 @@
           "sanbaiTier": 10.4
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 118,
           "freeze": 12,
           "lvl": 4,
@@ -61056,6 +61136,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 9.25
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Tomorrow_Perfume",
@@ -66800,6 +66886,12 @@
           "sanbaiTier": 13.5
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 177,
           "freeze": 12,
           "lvl": 5,
@@ -66822,6 +66914,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.55
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Xenon",
@@ -76738,62 +76836,6 @@
       "remyLink": "https://remywiki.com/Vampire"
     },
     {
-      "name": "一途",
-      "name_translation": "Ichizu",
-      "artist": "",
-      "bpm": "160",
-      "folder": "DanceDanceRevolution A3",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 2.2
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 6.15
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 12.3
-        },
-        {
-          "lvl": 15,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 15.5
-        },
-        {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.2
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 12.35
-        },
-        {
-          "lvl": 15,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 15.4
-        }
-      ],
-      "flags": ["copyStrikes"],
-      "remyLink": "https://remywiki.com/Ichizu",
-      "jacket": "ddr_a3/Ichizu.jpg",
-      "saHash": "dqP6loDiD0l6b0I6i0iO90i6D0O68qO1",
-      "saIndex": "1138"
-    },
-    {
       "name": "三毛猫ロック",
       "name_translation": "CALICO CAT ROCK",
       "artist": "亜熱帯マジ-SKA爆弾",
@@ -81588,6 +81630,12 @@
           "sanbaiTier": 11.55
         },
         {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 109,
           "freeze": 3,
           "lvl": 4,
@@ -81610,6 +81658,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.7
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Gekkou_chou",
@@ -84140,6 +84194,12 @@
           "sanbaiTier": 9.45
         },
         {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 4,
           "style": "double",
           "diffClass": "basic",
@@ -84156,6 +84216,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.25
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Aoi_shoudou_~for_EXTREME~",

@@ -1579,7 +1579,7 @@ export const ALL_SONG_DATA = [
     song_name: "Mermaid girl",
     alphabet: "M",
     version_num: 13,
-    ratings: [3, 4, 7, 11, 12, 6, 8, 11, 12],
+    ratings: [3, 4, 7, 11, 12, 5, 8, 11, 12],
     tiers: [0.45, 0.5, 0.45, 0.25, 0.45, 0.4, 0.4, 0.25, 0.4],
   },
   {
@@ -2763,8 +2763,9 @@ export const ALL_SONG_DATA = [
     song_name: "HYSTERIA",
     alphabet: "H",
     version_num: 4,
-    ratings: [5, 7, 8, 11, 0, 4, 8, 10, 0],
-    tiers: [0.1, 0.05, 0.55, 0.3, 0, 0.45, 0.6, 0.55, 0],
+    ratings: [5, 7, 8, 11, 14, 4, 8, 10, 15],
+    tiers: [0.1, 0.05, 0.55, 0.3, 1, 0.45, 0.6, 0.55, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",
@@ -2779,8 +2780,9 @@ export const ALL_SONG_DATA = [
     song_name: "e-motion",
     alphabet: "E",
     version_num: 2,
-    ratings: [2, 5, 6, 8, 0, 6, 8, 11, 0],
-    tiers: [0.5, 0.4, 0.4, 0.4, 0, 0.6, 0.55, 0.55, 0],
+    ratings: [2, 5, 6, 8, 12, 6, 8, 11, 12],
+    tiers: [0.5, 0.4, 0.4, 0.4, 1, 0.6, 0.55, 0.55, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "8ll9P9bOloIqbI0O9PboP9li1iloIPPd",
@@ -4031,8 +4033,9 @@ export const ALL_SONG_DATA = [
     song_name: "xenon",
     alphabet: "X",
     version_num: 8,
-    ratings: [3, 5, 10, 13, 0, 5, 9, 13, 0],
-    tiers: [0.3, 0.25, 0.6, 0.5, 0, 0.3, 0.45, 0.55, 0],
+    ratings: [3, 5, 10, 13, 16, 5, 9, 13, 16],
+    tiers: [0.3, 0.25, 0.6, 0.5, 1, 0.3, 0.45, 0.55, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "bDDq1qO80o6806dQOb1Qo0bPI6899q1D",
@@ -4411,8 +4414,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "BREAK DOWN",
     alphabet: "B",
     version_num: 7,
-    ratings: [3, 5, 8, 12, 0, 5, 8, 13, 0],
-    tiers: [0.4, 0.25, 0.3, 0.5, 0, 0.45, 0.5, 0.65, 0],
+    ratings: [3, 5, 8, 12, 15, 5, 8, 13, 16],
+    tiers: [0.4, 0.25, 0.3, 0.5, 1, 0.45, 0.5, 0.65, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "bqqIiO96di90bdP0QD1biD8DoDQIddOD",
@@ -4634,8 +4638,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "明日香水",
     alphabet: "T",
     version_num: 9,
-    ratings: [3, 4, 8, 10, 0, 4, 7, 9, 0],
-    tiers: [0.25, 0.3, 0.2, 0.4, 0, 0.2, 0.35, 0.25, 0],
+    ratings: [3, 4, 8, 10, 13, 4, 7, 9, 13],
+    tiers: [0.25, 0.3, 0.2, 0.4, 1, 0.2, 0.35, 0.25, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "d1dPPII1o69IlI0d0DlPi1i1idbdPD6O",
@@ -4819,10 +4824,11 @@ export const ALL_SONG_DATA = [
   {
     song_id: "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01",
     song_name: "Burstix Comet",
-    alphabet: "?",
+    alphabet: "B",
     version_num: 20,
     ratings: [3, 6, 12, 16, 0, 6, 12, 16, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "D89QP18016o01qoOi60I6Q19dlOQPbdo",
@@ -6165,6 +6171,7 @@ export const ALL_SONG_DATA = [
     romanized_name: "Ichizu",
     alphabet: "あ",
     version_num: 19,
+    deleted: 1,
     ratings: [2, 6, 12, 15, 0, 6, 12, 15, 0],
     tiers: [0.2, 0.15, 0.3, 0.5, 0, 0.2, 0.35, 0.4, 0],
   },
@@ -7224,10 +7231,11 @@ export const ALL_SONG_DATA = [
   {
     song_id: "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol",
     song_name: "Autosummer",
-    alphabet: "?",
+    alphabet: "A",
     version_num: 20,
     ratings: [3, 8, 12, 15, 0, 8, 12, 15, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "IIDiDdQ1d6bIqbld9IdO106POdiPO6PO",
@@ -9136,8 +9144,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "Aoi Shoudou for EXTREME",
     alphabet: "あ",
     version_num: 8,
-    ratings: [2, 4, 7, 9, 0, 4, 7, 11, 0],
-    tiers: [0.4, 0.35, 0.3, 0.45, 0, 0.3, 0.5, 0.25, 0],
+    ratings: [2, 4, 7, 9, 12, 4, 7, 11, 12],
+    tiers: [0.4, 0.35, 0.3, 0.45, 1, 0.3, 0.5, 0.25, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "ObP1P1OoDII9b9ll698Q981ilIddb8Id",
@@ -9549,10 +9558,11 @@ export const ALL_SONG_DATA = [
   {
     song_id: "oIIPQQD09OqdOP8bb61biDOPI69OP8q8",
     song_name: "Collapse of the Sanctuary",
-    alphabet: "?",
+    alphabet: "C",
     version_num: 20,
     ratings: [4, 7, 12, 16, 0, 7, 12, 16, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "oilPP86l0PPq6Db0qqibQlqDiIOD0l1O",
@@ -9641,6 +9651,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "ol6IDd019O0qq8dblPQ96ol1oPbI990b",
     song_name: "HAPPY☆LUCKY☆YEAPPY",
+    searchable_name: "HAPPY LUCKY YEAPPY",
     alphabet: "H",
     version_num: 15,
     ratings: [6, 10, 13, 16, 18, 9, 13, 16, 18],
@@ -9657,6 +9668,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "OlDo09P8l0d6d80i8qD0qQddbi0QQD8b",
     song_name: "London EVOLVED ver.B",
+    searchable_name: "London EVOLVED ver B",
     alternate_name: "ロンドンB",
     alphabet: "L",
     version_num: 13,
@@ -9708,6 +9720,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "oloqOddo8oI1696Oqidb081ldlPQ89qO",
     song_name: "Racing with Time (NAOKI's 999 remix)",
+    searchable_name: "Racing with Time NAOKIs 999 remix",
     alphabet: "R",
     version_num: 19,
     ratings: [2, 7, 11, 15, 0, 7, 11, 15, 0],
@@ -9732,11 +9745,13 @@ export const ALL_SONG_DATA = [
   {
     song_id: "olQQ8QPPqqObDD9ooodOl9i9od8b06I9",
     song_name: "Healing Vision ～Angelic mix～",
+    searchable_name: "Healing Vision Angelic mix",
     alternate_name: "HVAM/天ヒーmix",
     alphabet: "H",
     version_num: 6,
-    ratings: [5, 7, 11, 13, 0, 8, 10, 14, 0],
-    tiers: [0.4, 0.55, 0.4, 0.3, 0, 0.55, 0.6, 0.45, 0],
+    ratings: [5, 7, 11, 13, 16, 8, 10, 14, 16],
+    tiers: [0.4, 0.55, 0.4, 0.3, 1, 0.55, 0.6, 0.45, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "OO0QbD9D6QQIb10Q9IDOQd8odb6ob6qP",
@@ -9766,7 +9781,8 @@ export const ALL_SONG_DATA = [
   {
     song_id: "oo1P6l616OOdl0IqPPqobPI0Il81qqii",
     song_name: "BRAIN-HEART",
-    alphabet: "?",
+    searchable_name: "BRAIN HEART",
+    alphabet: "B",
     version_num: 20,
     ratings: [3, 6, 11, 14, 0, 6, 11, 14, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -9775,6 +9791,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "Oo66i08qboI8PDbdQoiIb9qQ1i99oboP",
     song_name: "DDR System Songs+Replicant Mix ",
+    searchable_name: "DDR System Songs Replicant Mix",
     alphabet: "D",
     version_num: 19,
     ratings: [1, 5, 10, 13, 0, 5, 10, 13, 0],
@@ -9799,6 +9816,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "Oo91QPdQDd1Od1oQI6IIldbQ1lQ88bO0",
     song_name: 'AM-3P ("CHAOS" Special)',
+    searchable_name: "AM3P CHAOS Special",
     alphabet: "A",
     version_num: 10,
     ratings: [0, 0, 0, 0, 14, 0, 0, 0, 13],
@@ -9833,6 +9851,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "oOI88lollO1OOQQd9DPi0690I6i6oiII",
     song_name: "MAX 300(X-Special)",
+    searchable_name: "MAX 300 X Special",
     alphabet: "M",
     version_num: 11,
     ratings: [0, 0, 0, 0, 17, 0, 0, 0, 18],
@@ -9851,6 +9870,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "OoIPPqIDbQ6qIb69q8dil0iq0l6q6DQD",
     song_name: "stoic (EXTREME version)",
+    searchable_name: "stoic EXTREME version",
     alternate_name: "ストイックextreme",
     alphabet: "S",
     version_num: 8,
@@ -9956,8 +9976,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "CANDY STAR",
     alphabet: "C",
     version_num: 6,
-    ratings: [4, 6, 7, 11, 0, 5, 8, 11, 0],
-    tiers: [0.1, 0.1, 0.25, 0.25, 0, 0.35, 0.45, 0.35, 0],
+    ratings: [4, 6, 7, 11, 16, 5, 8, 11, 16],
+    tiers: [0.1, 0.1, 0.25, 0.25, 1, 0.35, 0.45, 0.35, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "OPdooDlO9iO09lI1ODP00660loDiiodi",
@@ -10007,10 +10028,11 @@ export const ALL_SONG_DATA = [
   {
     song_id: "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6",
     song_name: "Bloody Tears (IIDX EDITION)",
+    searchable_name: "Bloody Tears IIDX EDITION",
     alternate_name: "血涙",
     alphabet: "B",
     version_num: 10,
-    ratings: [3, 5, 6, 11, 0, 5, 7, 11, 0],
+    ratings: [4, 5, 6, 11, 0, 5, 7, 11, 0],
     tiers: [0.35, 0.2, 0.6, 0.15, 0, 0.3, 0.6, 0.35, 0],
   },
   {
@@ -10203,6 +10225,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "oQQqlb666o69DDOQoboOI1b1q09lQ9P6",
     song_name: "Party Lights (Tommie Sunshine's Brooklyn Fire Remix)",
+    searchable_name: "Party Lights Tommie Sunshines Brooklyn Fire Remix",
     alphabet: "P",
     version_num: 15,
     ratings: [2, 5, 8, 11, 0, 5, 8, 11, 0],
@@ -10211,6 +10234,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "P01qbiIoO6dqIIqo6Db9dqq1bI6ddbqI",
     song_name: "AFRONOVA (X-Special)",
+    searchable_name: "AFRONOVA X Special",
     alphabet: "A",
     version_num: 11,
     ratings: [0, 0, 0, 0, 13, 0, 0, 0, 14],
@@ -10480,7 +10504,7 @@ export const ALL_SONG_DATA = [
     alternate_name: "Undertale/サンズ",
     alphabet: "M",
     version_num: 19,
-    ratings: [4, 9, 12, 16, 18, 9, 12, 16, 18],
+    ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18],
     tiers: [0.7, 0.55, 0.7, 0.35, 0.05, 0.5, 0.7, 0.25, 0.1],
   },
   {
@@ -11829,8 +11853,9 @@ export const ALL_SONG_DATA = [
     alternate_name: "Moonlight Butterfly",
     alphabet: "か",
     version_num: 9,
-    ratings: [5, 5, 9, 11, 0, 4, 9, 11, 0],
-    tiers: [0.4, 0.45, 0.45, 0.55, 0, 0.6, 0.55, 0.7, 0],
+    ratings: [5, 5, 9, 11, 16, 4, 9, 11, 16],
+    tiers: [0.4, 0.45, 0.45, 0.55, 1, 0.6, 0.55, 0.7, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "QIDqidPlPQll9q6Il0dblIo609lii1di",
@@ -12057,8 +12082,9 @@ export const ALL_SONG_DATA = [
     song_name: "AFTER THE GAME OF LOVE",
     alphabet: "A",
     version_num: 3,
-    ratings: [2, 3, 6, 8, 0, 5, 6, 8, 0],
-    tiers: [0.2, 0.35, 0.35, 0.15, 0, 0.5, 0.65, 0.3, 0],
+    ratings: [2, 3, 6, 8, 12, 5, 6, 8, 12],
+    tiers: [0.2, 0.35, 0.35, 0.15, 1, 0.5, 0.65, 0.3, 1],
+    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "qObI8DOldoqob8OQD6Dqdiob0dIb0ll9",
@@ -12429,4 +12455,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1757640558504;
+export const SONG_DATA_LAST_UPDATED_unixms = 1758385276160;
