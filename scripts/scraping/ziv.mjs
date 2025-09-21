@@ -1,255 +1,269 @@
 // @ts-check
-import { JSDOM } from "jsdom";
+/** @typedef {import("../../src/models/SongData.ts").Song} Song */
+/** @typedef {import("../../src/models/SongData.ts").Chart} Chart */
+/** @typedef {import("../../src/models/SongData.ts").GameData} GameData */
 
-import { requestQueue, getDom, downloadJacket } from "../utils.mjs";
-import { getCanonicalRemyURL, guessUrlFromName } from "./remy.mjs";
+import { getDom, downloadJacket } from "../utils.mjs";
 
-/**
- * @param {Function} log
- * @param {string} url
- * @param {boolean} withFolders
- * @param {number} titleOffset
- */
-export async function getSongsFromZiv(
-  log,
-  url,
-  withFolders = false,
-  titleOffset,
-) {
-  log("fetching data from zenius-i-vanisher.com");
-  const dom = await requestQueue.add(() => JSDOM.fromURL(url));
-  return scrapeSongData(dom, log, withFolders, titleOffset);
-}
+/** Song importer from zenius-i-vanisher */
+export class ZivSongImporter {
+  /** URL to zenius-i-vanisher game database page for this mix */
+  #url;
+  /** List of difficulties in order of appearance on the page */
+  #difficulties;
+  /** List of folder titles, if the mix has folders */
+  #titleList;
+  /** Map of song corrections (name, partial data to merge) */
+  #correctionMap;
 
-const translationNodeQuery = "span[onmouseover]";
-
-/**
- * @param {Element} node
- */
-function getTranslationText(node) {
-  if (node.nodeName === "#text") {
-    return "";
-  }
-  const translationNode = node.matches(translationNodeQuery)
-    ? node
-    : node.querySelector(translationNodeQuery);
-  if (!translationNode) {
-    return "";
-  }
-  return translationNode.attributes.onmouseover.value.slice(16, -2);
-}
-
-const difficultyMap = {
-  lightblue: "beginner",
-  yellow: "basic",
-  fuchsia: "difficult",
-  green: "expert",
-  purple: "challenge",
-};
-
-const titleList = [
-  { name: "DanceDanceRevolution World" },
-  { name: "DanceDanceRevolution A3" },
-  { name: "DanceDanceRevolution A20 PLUS" },
-  { name: "DanceDanceRevolution A20" },
-  { name: "DanceDanceRevolution A" },
-  { name: "DanceDanceRevolution (2014)" },
-  { name: "DanceDanceRevolution (2013)" },
-  { name: "DanceDanceRevolution X3 vs 2nd MIX" },
-  { name: "DanceDanceRevolution X2" },
-  { name: "DanceDanceRevolution X" },
-  { name: "DanceDanceRevolution SuperNOVA2" },
-  { name: "DanceDanceRevolution SuperNOVA" },
-  { name: "DanceDanceRevolution EXTREME" },
-  { name: "DDRMAX2 -DanceDanceRevolution 7thMIX-" },
-  { name: "DDRMAX -DanceDanceRevolution 6thMIX-" },
-  { name: "DanceDanceRevolution 5th Mix" },
-  { name: "DanceDanceRevolution 4th Mix" },
-  { name: "DanceDanceRevolution 3rd Mix" },
-  { name: "DanceDanceRevolution 2nd Mix" },
-  { name: "DanceDanceRevolution 1st Mix" },
-];
-
-/**
- * @param {JSDOM} dom
- * @param {Function} log
- * @param {boolean} withFolders
- * @param {number} titleOffset
- */
-function scrapeSongData(dom, log, withFolders, titleOffset = 0) {
-  /** @type {NodeListOf<HTMLAnchorElement>} */
-  const links = dom.window.document.querySelectorAll('a[href^="songdb.php"]');
-  if (!withFolders) {
-    return Array.from(links).map((link) => createSongData(link));
+  /**
+   * @param {string} url URL to zenius-i-vanisher game database page for this mix
+   * @param {Pick<Chart, 'style' | 'diffClass'>[]} [difficulties] List of difficulties in order of appearance on the page
+   * @param {GameData['meta']['folders']} [titleList=[]] List of folder titles, if the mix has folders
+   * @param {[string, Partial<Omit<Song, 'charts'>> & { deleted?: boolean, lvls?: number[] }][]} [correctionMap=[]] Map of song corrections (name, partial data to merge)
+   */
+  constructor(
+    url,
+    difficulties = [
+      { style: "single", diffClass: "beginner" },
+      { style: "single", diffClass: "basic" },
+      { style: "single", diffClass: "difficult" },
+      { style: "single", diffClass: "expert" },
+      { style: "single", diffClass: "challenge" },
+      { style: "double", diffClass: "basic" },
+      { style: "double", diffClass: "difficult" },
+      { style: "double", diffClass: "expert" },
+      { style: "double", diffClass: "challenge" },
+    ],
+    titleList = [],
+    correctionMap = [],
+  ) {
+    this.#url = url;
+    this.#difficulties = difficulties;
+    this.#titleList = titleList;
+    this.#correctionMap = new Map(correctionMap);
   }
 
-  /** @type {NodeListOf<HTMLSpanElement>} */
-  const spans = dom.window.document.querySelectorAll('th[colspan="11"] span');
-  const titleMap = Array.from(spans).map((span, index) => {
-    const folder = titleList[index + titleOffset];
-    if (!folder) {
-      throw new Error(`missing titleList entry at offset ${titleOffset}`);
-    }
-    return {
-      name: folder.name,
-      count: +span.textContent.match(/^[0-9]*/)[0],
-    };
-  });
-  log("Songs scraped:", JSON.stringify(titleMap, undefined, 2));
+  /**
+   * Fetch songs from ZiV and merge with existing data
+   * @returns {Promise<(Pick<Song, "name" | "name_translation" | "artist" | "artist_translation" | "bpm" | "folder" | "charts" | "genre"> & { deleted?: boolean, getJacketUrl: () => Promise<string> })[]>}
+   */
+  async fetchSongs() {
+    console.log(`Starting to fetch song data from zenius-i-vanisher.com`);
 
-  const songs = [];
-  let loop = 0;
-  for (const title of titleMap) {
-    for (let current = 0; current < title.count; ) {
-      songs.push(createSongData(links[loop], title.name));
-      current++;
-      loop++;
-    }
-  }
-  return songs;
-}
+    const dom = await getDom(this.#url);
+    if (!dom) return [];
 
-// map from bad ziv title to our better title
-const ZIV_TITLE_CORRECTIONS = {
-  "CAN'T STOP FALLIN'IN LOVE": "CAN'T STOP FALLIN' IN LOVE",
-  "MARIA (I believe... )": "MARIA (I believe...)",
-  "魔法のたまご～心菜 ELECTRO POP edition～":
-    "魔法のたまご ～心菜 ELECTRO POP edition～",
-  "Lachryma(Re:Queen'M)": "Lachryma《Re:Queen’M》",
-};
+    /** @type {NodeListOf<HTMLAnchorElement>} */
+    const songLinks = dom.window.document.querySelectorAll(
+      'a[href^="songdb.php"]',
+    );
+    if (!this.#titleList?.length)
+      return [...songLinks].map((link) => this.createSongData(link));
 
-/**
- * @param {HTMLAnchorElement} songLink
- * @param {string=} folder
- * @returns
- */
-function createSongData(songLink, folder) {
-  const songRow = songLink.parentElement.parentElement;
-  const artistNode = songRow.firstChild.lastChild.textContent.trim()
-    ? songRow.firstChild.lastChild
-    : songRow.firstChild.lastElementChild;
-  const chartNodes = Array.from(songRow.children).slice(2);
+    /** n Songs @type {NodeListOf<HTMLSpanElement>} */
+    const spans = dom.window.document.querySelectorAll(
+      `th[colspan="${this.#difficulties.length + 2}"] span`,
+    );
+    const folders = [...spans].map((span, index) => {
+      const name = this.#titleList[index];
+      if (!name) {
+        throw new Error(`missing titleList entry at index ${index}`);
+      }
+      return {
+        name: name,
+        count: +span.textContent.match(/^[0-9]*/)[0],
+      };
+    });
 
-  let songName = songLink.text.trim();
-  if (ZIV_TITLE_CORRECTIONS[songName]) {
-    songName = ZIV_TITLE_CORRECTIONS[songName];
-  }
-  const songData = {
-    name: songName,
-    name_translation: getTranslationText(songLink),
-    artist: artistNode.textContent.trim(),
-    artist_translation: getTranslationText(artistNode),
-    bpm: songRow.children[1].textContent.trim(),
-    folder,
-    charts: getCharts(chartNodes),
-    getRemyLink: () => getRemyLinkForSong(songLink, songName),
-    getZivJacket: () => getZivJacketForSong(songLink, songName),
-  };
-  const flags = getFlagsForSong(songLink);
-  if (flags) {
-    songData.flags = flags;
-  }
-  return songData;
-}
-
-const flagIndex = {
-  "DDR GP Early Access": "grandPrixPack",
-  "GRAND PRIX music pack vol.2": "unlocked_by_default",
-  "EXTRA SAVIOR A3": "unlock",
-  "EXTRA SAVIOR PLUS": "unlock",
-  "GOLDEN LEAGUER'S PRIVILEGE": "goldenLeague",
-  "GOLDEN LEAGUER PLUS' PRIVILEGE": "goldenLeague",
-  "EXTRA EXCLUSIVE": "extraExclusive",
-  "COURSE TRIAL A3": "unlock",
-  "COURSE TRIAL": "unlock",
-  "DANCE aROUND × DanceDanceRevolution 2022夏のMUSIC CHOICE": "unlock",
-  "いちかのごちゃまぜMix UP！": "tempUnlock",
-  "毎週！いちかの超BEMANIラッシュ2020": "tempUnlock",
-  "BEMANI 2021真夏の歌合戦5番勝負": "unlock",
-  "BPL応援 楽曲解禁スタンプラリー": "unlock",
-  "武装神姫BC×BEMANI 稼働記念キャンペーン": "unlocked_by_default",
-  "BEMANI MusiQ FES": "unlocked_by_default",
-  "SUMMER DANCE CAMP 2020": "unlock",
-  "The 10th KAC": "tempUnlock",
-  "GRAND PRIX music pack vol.14": "grandPrixPack",
-};
-
-/**
- * @param {HTMLAnchorElement} songLink
- */
-function getFlagsForSong(songLink) {
-  /** @type {HTMLImageElement | null} */
-  const previous = songLink.previousElementSibling;
-  if (previous && previous.src && previous.src.endsWith("lock.png")) {
-    const titleBits = previous.title.split(" / ");
-    if (titleBits[1]) {
-      const flag = flagIndex[titleBits[1].trim()] || titleBits[1].trim();
-      if (flag !== "unlocked_by_default") {
-        return [flag];
+    const songs = [];
+    let totalCount = 0;
+    for (const folder of folders) {
+      for (let i = 0; i < folder.count; i++) {
+        songs.push(this.createSongData(songLinks[totalCount], folder.name));
+        totalCount++;
       }
     }
-    return ["unlock"];
+    return songs;
   }
-}
 
-const singlesColumnCount = 5;
-/**
- * @param {any[]} chartNodes
- */
-function getCharts(chartNodes) {
-  const charts = [];
-  let index = 0;
-  for (const current of chartNodes) {
-    index++;
-    if (current.firstChild.textContent === "-") continue;
-    const chart = {
-      lvl: +current.firstChild.textContent,
-      style: index > singlesColumnCount ? "double" : "single",
-      diffClass: difficultyMap[current.classList[1]],
+  /**
+   *
+   * @param {HTMLAnchorElement} songLink
+   * @param {string=} folder
+   * @returns {Awaited<ReturnType<ZivSongImporter["fetchSongs"]>  & { deleted: boolean }>[number]}
+   */
+  createSongData(songLink, folder) {
+    const songRow = songLink.parentElement.parentElement;
+    const firstColumn = songRow.getElementsByTagName("td")[0];
+    const artistNode = firstColumn.lastChild.textContent.trim()
+      ? firstColumn.lastChild
+      : firstColumn.lastElementChild;
+    const genreNode = firstColumn.querySelector("span.rightfloat");
+
+    const songName = songLink.text.trim();
+    const actual = this.#correctionMap.get(songName);
+
+    // Generate charts
+    const charts = [];
+    const chartNodes = [...songRow.getElementsByTagName("td")].slice(2);
+    if (chartNodes.length !== this.#difficulties.length) {
+      throw new Error(
+        `unexpected number of chart columns: ${chartNodes.length} (expected ${this.#difficulties.length}) for song ${songLink.textContent.trim()}`,
+      );
+    }
+    for (const [i, current] of chartNodes.entries()) {
+      if (current.firstChild.textContent === "-") continue;
+      const [step, freeze, shock] = current.lastElementChild.textContent
+        .split(" / ")
+        .map(Number);
+      const actualLv = actual?.lvls?.[i];
+      if (actualLv) {
+        if (actualLv !== +current.firstChild.textContent)
+          console.log(
+            `Fixed ziv data "${songName}" [${this.#difficulties[i].style}/${this.#difficulties[i].diffClass}] lvl: ${current.firstChild.textContent} -> ${actualLv}`,
+          );
+        else
+          console.warn(
+            `No changes needed for lvl on ${songName}[${this.#difficulties[i].style}/${this.#difficulties[i].diffClass}]. Consider remove on correctionMap.lvls.`,
+          );
+      }
+
+      const chart = {
+        lvl: actualLv || +current.firstChild.textContent,
+        ...this.#difficulties[i],
+        ...(step > 0 ? { step } : {}),
+        ...(freeze > 0 ? { freeze } : {}),
+        ...(shock > 0 ? { shock, flags: ["shock"] } : {}),
+      };
+      charts.push(chart);
+    }
+
+    const song = {
+      name: songName,
+      name_translation: getTranslationText(songLink),
+      artist: artistNode.textContent.trim(),
+      artist_translation: getTranslationText(artistNode),
+      bpm: songRow.children[1].textContent.trim(),
+      folder,
+      charts,
+      genre: genreNode ? genreNode.textContent.trim() : undefined,
+      getJacketUrl: () => getJacketUri(songLink.href),
     };
-    const flags = [];
-    if (current.firstChild.style.color === "red") {
-      flags.push("unlock");
+
+    if (actual) {
+      for (const [key, value] of Object.entries(actual)) {
+        // Except lvls
+        if (key === "lvls") continue;
+
+        if (!Array.isArray(value) && value !== song[key]) {
+          song[key] = value;
+        } else {
+          console.warn(
+            `No changes needed for ${key} on ${song.name}. Consider remove on correctionMap.`,
+          );
+        }
+      }
     }
-    const [step, freeze, shock] = current.lastElementChild.textContent
-      .split(" / ")
-      .map(Number);
-    if (!isNaN(shock) && shock > 0) {
-      flags.push("shock");
+    return song;
+
+    /**
+     * @param {Element|Node} node
+     * @returns {string|undefined}
+     */
+    function getTranslationText(node) {
+      if (!isElement(node)) {
+        return undefined;
+      }
+      const translationNodeQuery = "span[onmouseover]";
+      const translationNode = node.matches(translationNodeQuery)
+        ? node
+        : node.querySelector(translationNodeQuery);
+      if (!translationNode) {
+        return undefined;
+      }
+      return translationNode.attributes["onmouseover"].value.replace(
+        /this\.innerHTML='(.+)';/,
+        "$1",
+      );
+
+      /**
+       * @returns {node is Element}
+       * @param {Element | Node} node
+       */
+      function isElement(node) {
+        return node.nodeName !== "#text";
+      }
     }
-    if (flags.length) {
-      chart.flags = flags;
+
+    /**
+     * @param {string} songUri
+     * @return {Promise<string|undefined>}
+     */
+    async function getJacketUri(songUri) {
+      const dom = await getDom(songUri);
+      if (!dom) return undefined;
+      /** @type {HTMLImageElement} */
+      const image = dom.window.document.querySelector(
+        "table > tbody > tr > td > img",
+      );
+      return image ? image.src : undefined;
     }
-    charts.push(chart);
   }
-  return charts;
-}
 
-/**
- * @param {HTMLAnchorElement} songLink
- * @param {string} name song name (native) for guessing if no wiki link provided
- */
-async function getRemyLinkForSong(songLink, name) {
-  const dom = await getDom(songLink.href);
-  if (!dom) return;
-  /** @type {HTMLAnchorElement | null} */
-  const remyLink = dom.window.document.querySelector('a[href*="remywiki.com"]');
-  if (remyLink) return getCanonicalRemyURL(remyLink.href);
+  /**
+   * Compares two song objects for equality
+   * @param {Song} existingSong
+   * @param {Awaited<ReturnType<ZivSongImporter["fetchSongs"]>>[number]} zivSong
+   * @returns {boolean} True if songs are considered equal (same name)
+   */
+  static songEquals(existingSong, zivSong) {
+    return existingSong.name === zivSong.name;
+  }
 
-  // try to guess wiki link
-  return guessUrlFromName(name);
-}
+  /**
+   * Merges data from an `zivSong` into `existingSong` object.
+   * @summary This function with side effects that change `existingSong` object
+   * @param {Song} existingSong Existing song object to update
+   * @param {Awaited<ReturnType<ZivSongImporter["fetchSongs"]>>[number]} zivSong Song data from ZIV
+   * @returns {Promise<boolean>} True if the merge resulted in any updates
+   */
+  static async merge(existingSong, zivSong) {
+    let hasUpdates = false;
 
-/**
- * @param {HTMLAnchorElement} songLink
- * @param {string} songName for the filename
- */
-async function getZivJacketForSong(songLink, songName) {
-  const dom = await getDom(songLink.href);
-  if (!dom) return;
-  const images = dom.window.document.querySelectorAll("img");
-  for (const img of images) {
-    if (!img.alt || img.alt === "Logo") continue;
-    if (img.src) return downloadJacket(img.src, songName);
+    // Update song metadata if missing
+    if (!existingSong.name_translation && zivSong.name_translation) {
+      console.log(
+        `Updated "${existingSong.name}" name_translation: ${existingSong.name_translation} -> ${zivSong.name_translation}`,
+      );
+      existingSong.name_translation = zivSong.name_translation;
+      hasUpdates = true;
+    }
+    if (!existingSong.artist_translation && zivSong.artist_translation) {
+      console.log(
+        `Updated "${existingSong.name}" artist_translation: ${existingSong.artist_translation} -> ${zivSong.artist_translation}`,
+      );
+      existingSong.artist_translation = zivSong.artist_translation;
+      hasUpdates = true;
+    }
+    if (!existingSong.genre && zivSong.genre) {
+      console.log(
+        `Updated "${existingSong.name}" genre: ${existingSong.genre} -> ${zivSong.genre}`,
+      );
+      existingSong.genre = zivSong.genre;
+      hasUpdates = true;
+    }
+
+    // Try to get jacket from ziv
+    if (!existingSong.jacket) {
+      const jacket = downloadJacket(await zivSong.getJacketUrl(), zivSong.name);
+      if (jacket) {
+        existingSong.jacket = jacket;
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        hasUpdates = true;
+      }
+    }
+
+    return hasUpdates;
   }
 }
