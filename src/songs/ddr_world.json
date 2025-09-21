@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1762405202500
+    "lastUpdated": 1762710683384
   },
   "defaults": {
     "style": "single",
@@ -588,6 +588,7 @@
       "name": "3y3s",
       "saHash": "loD8qPl09qqi0o1iqbbDOdllDblioDIl",
       "artist": "青龍",
+      "artist_translation": "Seiryu",
       "folder": "DanceDanceRevolution A3",
       "bpm": "191",
       "charts": [
@@ -3220,7 +3221,8 @@
       "flags": ["copyStrikes"],
       "remyLink": "https://remywiki.com/Akatsuki_(PRIDASK)",
       "jacket": "ddr_world/Akatsuki_(PRIDASK).jpg",
-      "saHash": "0Q9b998QQ60806lqq8b8dOlbqqb18Pbb"
+      "saHash": "0Q9b998QQ60806lqq8b8dOlbqqb18Pbb",
+      "genre": "LOUD TRAP"
     },
     {
       "name": "ALBIDA",
@@ -6559,6 +6561,7 @@
       "name": "Beyond The Earth",
       "saHash": "bP61iObqb9Oo1IOQOdlQ0idilOII9O66",
       "artist": "猫叉Master",
+      "artist_translation": "Nekomata Master",
       "folder": "DanceDanceRevolution World",
       "bpm": "140",
       "charts": [
@@ -6607,7 +6610,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/Beyond The Earth.jpg",
-      "remyLink": "https://remywiki.com/BEYOND_THE_EARTH"
+      "remyLink": "https://remywiki.com/BEYOND_THE_EARTH",
+      "genre": "CONTEMPORARY NATION"
     },
     {
       "name": "BITTER CHOCOLATE STRIKER",
@@ -6795,7 +6799,8 @@
       "remyLink": "https://remywiki.com/BLACK_JACKAL",
       "jacket": "ddr_a20/BLACK_JACKAL.jpg",
       "saHash": "OO1oqdIPP80QdoP11QP61OdDb0lI1qIq",
-      "saIndex": "889"
+      "saIndex": "889",
+      "genre": "DANCE MUSIC"
     },
     {
       "name": "BLAKE",
@@ -8105,7 +8110,8 @@
       "remyLink": "https://remywiki.com/BRIDAL_FESTIVAL_!!!",
       "jacket": "ddr_a20plus/BRIDAL FESTIVAL !!!.jpg",
       "saHash": "91ioD99OdDD9db8qilod818OPqb88idQ",
-      "saIndex": "984"
+      "saIndex": "984",
+      "genre": "HAPPY☆JIG"
     },
     {
       "name": "BRILLIANT 2U",
@@ -8427,7 +8433,8 @@
       "remyLink": "https://remywiki.com/Broken",
       "saHash": "6qPlI8DQPoDIo6D819boPioIPPDIPblq",
       "saIndex": "1183",
-      "jacket": "ddr_a3/Broken.jpg"
+      "jacket": "ddr_a3/Broken.jpg",
+      "genre": "TRANCE"
     },
     {
       "name": "BROKEN MY HEART",
@@ -8816,7 +8823,8 @@
       "remyLink": "https://remywiki.com/C-C-C-N-N-N",
       "flags": ["unlock"],
       "jacket": "ddr_a3/C-C-C-N-N-N.jpg",
-      "saHash": "odPq866q0QPOP9QOQ9QQIlIO60Oid16o"
+      "saHash": "odPq866q0QPOP9QOQ9QQIlIO60Oid16o",
+      "genre": "ELECTRONICORE"
     },
     {
       "name": "cachaca",
@@ -9005,7 +9013,8 @@
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE",
       "jacket": "ddr_1st-5th/CAN'T STOP FALLIN' IN LOVE.png",
       "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P",
-      "saIndex": "31"
+      "saIndex": "31",
+      "genre": "HYPER EUROBEAT"
     },
     {
       "name": "CAN'T STOP FALLIN' IN LOVE -super euro version-",
@@ -9471,7 +9480,7 @@
       ],
       "remyLink": "https://remywiki.com/Catch_Our_Fire!",
       "jacket": "ddr_a/Catch Our Fire.png",
-      "genre": "",
+      "genre": "MARVELOUS CHEER",
       "saHash": "P6id8qqolbP0oqO060OOqbl60DI9iQoQ",
       "saIndex": "819"
     },
@@ -10346,6 +10355,7 @@
     {
       "name": "Chocolate Planet",
       "artist": "Freezer feat.妃苺",
+      "artist_translation": "Freezer feat.Kiichigo",
       "bpm": "185",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -10404,7 +10414,8 @@
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Chocolate_Planet",
       "saHash": "0Pd8il0PQd80i1O01i1D9960IdqoQo01",
-      "jacket": "ddr_world/Chocolate_Planet.jpg"
+      "jacket": "ddr_world/Chocolate_Planet.jpg",
+      "genre": "HAPPY CHOCO CORE"
     },
     {
       "name": "Chromatic Burst",
@@ -11479,7 +11490,8 @@
       "remyLink": "https://remywiki.com/Concon",
       "jacket": "ddr_a3/Concon.jpg",
       "saHash": "OqQ68Ooiqi80891QIPoioib11qdl0l9b",
-      "saIndex": "1107"
+      "saIndex": "1107",
+      "genre": "HARD ELECTRIC POP"
     },
     {
       "name": "Condor",
@@ -13879,6 +13891,7 @@
       "name": "DanRevoAthlon",
       "saHash": "l08OoDq6P9DIQo1Po0Pdd80qoq6QID9o",
       "artist": "アツムワンダフル",
+      "artist_translation": "Atsumu Wonderful",
       "folder": "DanceDanceRevolution World",
       "bpm": "133",
       "charts": [
@@ -15551,6 +15564,7 @@
       "name": "DIAVOLO",
       "saHash": "Pdlib1o06DD6oIbdIdIoIqQqO8P896do",
       "artist": "度胸兄弟",
+      "artist_translation": "Dokyou Kyoudai",
       "folder": "DanceDanceRevolution World",
       "bpm": "160",
       "charts": [
@@ -16489,6 +16503,7 @@
       "name": "Dozen Flower",
       "saHash": "1d6oI0ol8oO8O1qq16O96d1D19doD0bl",
       "artist": "赤木エリ & BJ.chika feat. 菜月なこ",
+      "artist_translation": "Eri Akagi & BJ.chika feat. Nako Natsuki",
       "folder": "DanceDanceRevolution World",
       "bpm": "178",
       "charts": [
@@ -18451,6 +18466,7 @@
       "name": "Electronic Sports Complex",
       "saHash": "Q99q619i0lDqll6Q0lq8l1oQ0qPO8o6I",
       "artist": "栄免建設",
+      "artist_translation": "Amenkensetsu",
       "folder": "DanceDanceRevolution A3",
       "bpm": "110-220",
       "charts": [
@@ -19641,7 +19657,8 @@
       "jacket": "ddr_a20plus/Evans.jpg",
       "saHash": "P06O6iQbiPPqiIqOd0IQdqolbPbDId6Q",
       "saIndex": "994",
-      "search_hint": "HARD RENAISSANCE 2/ハードルネッサンス2"
+      "search_hint": "HARD RENAISSANCE 2/ハードルネッサンス2",
+      "genre": "HARD RENAISSANCE"
     },
     {
       "name": "ever snow",
@@ -20608,6 +20625,7 @@
       "name": "Finally Dive",
       "saHash": "OQ6o9D6ldd0iqoqoQQ0QbIi01DI9dO6b",
       "artist": "ここなつ Produced by lapix",
+      "artist_translation": "Coconatsu Produced by lapix",
       "folder": "DanceDanceRevolution A3",
       "bpm": "146",
       "charts": [
@@ -25466,6 +25484,7 @@
       "name": "HANIPAGANDA",
       "saHash": "8Oq81q8q1Q9D0l0PO0bQQ00l9P19didi",
       "artist": "暁Records",
+      "artist_translation": "Akatsuki Records",
       "folder": "DanceDanceRevolution A3",
       "bpm": "91-181",
       "charts": [
@@ -25519,6 +25538,7 @@
       "name": "Happy Dance Day 2 U",
       "saHash": "OlPqPi1qq1bIlDPOQQPi80D0lOQl8PP8",
       "artist": "Shoichiro Hirata feat. ちょぴん",
+      "artist_translation": "Shoichiro Hirata feat. CHOPIN",
       "folder": "DanceDanceRevolution World",
       "bpm": "137",
       "charts": [
@@ -29284,7 +29304,8 @@
       "remyLink": "https://remywiki.com/IN_BETWEEN",
       "jacket": "ddr_a/IN BETWEEN.png",
       "saHash": "bdQ6IobP6II86I1io686Il9qQ69dOod1",
-      "saIndex": "789"
+      "saIndex": "789",
+      "genre": "HARDSTYLE"
     },
     {
       "name": "in love wit you",
@@ -33300,6 +33321,7 @@
     },
     {
       "name": "Liar×Girl",
+      "name_translation": "Liar Girl",
       "saHash": "blq0Oq8q6oi89odoPOqIDDQIPO11IQ9O",
       "artist": "BEMANI Sound Team \"HuΣeR\" feat.ゆきまめ",
       "folder": "DanceDanceRevolution World",
@@ -34338,6 +34360,7 @@
       "name": "LOVE EAST",
       "saHash": "Q86bq1iQDIqDllbdD6ldIO089q8Q1689",
       "artist": "暁Records",
+      "artist_translation": "Akatsuki Records",
       "folder": "DanceDanceRevolution A3",
       "bpm": "168",
       "charts": [
@@ -52062,7 +52085,8 @@
         }
       ],
       "jacket": "ddr_a3/SISYPHUS.jpg",
-      "remyLink": "https://remywiki.com/SISYPHUS"
+      "remyLink": "https://remywiki.com/SISYPHUS",
+      "genre": "ABSURD STYLE"
     },
     {
       "name": "Six String Proof",
@@ -52673,6 +52697,7 @@
     },
     {
       "name": "smooooch･∀･",
+      "name_translation": "smooooch",
       "artist": "kors k",
       "bpm": "172-180",
       "folder": "DanceDanceRevolution X2",
@@ -61106,6 +61131,7 @@
     {
       "name": "Timepiece phase Ⅱ",
       "artist": "佐々木博史",
+      "artist_translation": "Sasaki Hirofumi",
       "bpm": "153-287",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -65060,7 +65086,8 @@
       "remyLink": "https://remywiki.com/VALLIS-NERIA",
       "jacket": "ddr_a3/VALLIS-NERIA.jpg",
       "saHash": "q8o866OdqqDPOQdO88D1DOdbqQo1q8Q1",
-      "saIndex": "1113"
+      "saIndex": "1113",
+      "genre": "TRANCE CORE"
     },
     {
       "name": "VANESSA",
@@ -66856,6 +66883,7 @@
       "name": "Wizards!",
       "saHash": "lqd0I0Pbqo60I8iDOO88bbD1d9qlQ18O",
       "artist": "暁Records",
+      "artist_translation": "Akatsuki Records",
       "folder": "DanceDanceRevolution World",
       "bpm": "154",
       "charts": [
@@ -71178,7 +71206,8 @@
       ],
       "jacket": "ddr_world/イガク.jpg",
       "remyLink": "https://remywiki.com/Igaku",
-      "search_hint": "医学/Medicine"
+      "search_hint": "医学/Medicine",
+      "genre": "ボーカロイド・J-POP・ダンス"
     },
     {
       "name": "イノセントバイブル",
@@ -72120,7 +72149,8 @@
       "remyLink": "https://remywiki.com/Kiyarora_eisei_no_kiseki",
       "jacket": "ddr_a3/Kiyarora eisei no kiseki.jpg",
       "saHash": "6dQ0P6odPlD6dQdbP8dIiQQdQ66qllI6",
-      "saIndex": "1146"
+      "saIndex": "1146",
+      "genre": "COSMIC PROG ROCK"
     },
     {
       "name": "ギャ・ギャ・ギャ・ギャラクシー！",
@@ -73575,8 +73605,10 @@
     },
     {
       "name": "トランスダンスアナーキー",
+      "name_translation": "Trance Dance Anarchy",
       "saHash": "8069d8dPiqloqD8i8od1o1Pq1Q6Q8i9D",
       "artist": "暁Records",
+      "artist_translation": "Akatsuki Records",
       "folder": "DanceDanceRevolution A3",
       "bpm": "195",
       "charts": [
@@ -73636,8 +73668,7 @@
         }
       ],
       "jacket": "ddr_a3/トランスダンスアナーキー.jpg",
-      "remyLink": "https://remywiki.com/Trance_dance_anarcky",
-      "name_translation": "Trance Dance Anarchy"
+      "remyLink": "https://remywiki.com/Trance_dance_anarcky"
     },
     {
       "name": "ドキドキ☆流星トラップガール!!",
@@ -73780,6 +73811,7 @@
     },
     {
       "name": "ドーパミン (STARDOM Remix)",
+      "name_translation": "Dopamine (STARDOM Remix)",
       "artist": "ARM (IOSYS)",
       "bpm": "55-220",
       "folder": "DanceDanceRevolution World",
@@ -73990,8 +74022,10 @@
     },
     {
       "name": "ナナイロライト",
+      "name_translation": "Nanairo Light",
       "saHash": "D8P1qO8bqQIP9bOOP1dPOP660OdIllbD",
       "artist": "ここなつ",
+      "artist_translation": "Coconatsu",
       "folder": "DanceDanceRevolution A3",
       "bpm": "135",
       "charts": [
@@ -74039,8 +74073,7 @@
         }
       ],
       "jacket": "ddr_a3/ナナイロライト.jpg",
-      "remyLink": "https://remywiki.com/Nanairo_light",
-      "name_translation": "Nanairo Light"
+      "remyLink": "https://remywiki.com/Nanairo_light"
     },
     {
       "name": "ナナホシ",
@@ -81300,7 +81333,7 @@
     },
     {
       "name": "悲報！ワイ！ニート！",
-      "artist_translation": "Hihou! Wai! Neet!",
+      "name_translation": "Hihou! Wai! Neet!",
       "saHash": "ODIdIPOi6q6i0i6qDqODQ9qIbD0DQbqd",
       "artist": "Shu",
       "folder": "DanceDanceRevolution World",
@@ -84232,8 +84265,10 @@
     },
     {
       "name": "白日と幻月",
+      "name_translation": "Hakujitsu to Gengetsu",
       "saHash": "16l6O00OPl9Ilqob1i8PlllDP1b6898Q",
       "artist": "めと（Metomate）",
+      "artist_translation": "Meto (Metomate)",
       "folder": "DanceDanceRevolution World",
       "bpm": "118",
       "charts": [
@@ -84282,7 +84317,6 @@
       ],
       "jacket": "ddr_world/白日と幻月.jpg",
       "remyLink": "https://remywiki.com/Hakujitsu_to_gengetsu",
-      "name_translation": "Hakujitsu to Gengetsu",
       "search_hint": "はくじつとげんげつ"
     },
     {
@@ -84399,6 +84433,7 @@
     },
     {
       "name": "童話回廊",
+      "name_translation": "DOUWAKAIROU",
       "artist": "DJ TOTTO",
       "bpm": "262",
       "folder": "DanceDanceRevolution World",
@@ -84622,6 +84657,7 @@
       "name_translation": "Zettaireido",
       "saHash": "i080lP1QqIiO998qPl888qboIiIDdiD1",
       "artist": "かねこちはる",
+      "artist_translation": "Chiharu Kaneko",
       "folder": "DanceDanceRevolution World",
       "bpm": "209",
       "charts": [
@@ -85520,6 +85556,7 @@
       "name_translation": "Hashire Melonpan",
       "saHash": "diPbi6I8O1lQ1b9lO0q8IoqDqbD9P6dP",
       "artist": "日向美ビタースイーツ♪",
+      "artist_translation": "Hinatabi Bitter Sweets",
       "folder": "DanceDanceRevolution A3",
       "bpm": "170",
       "charts": [
@@ -86057,6 +86094,7 @@
       "name": "都会征服Girls☆",
       "saHash": "88lIDIi1Pi0IObl8D9oblqQ9PPdI1DqI",
       "artist": "日向美ビタースイーツ♪",
+      "artist_translation": "Hinatabi Bitter Sweets",
       "folder": "DanceDanceRevolution A3",
       "bpm": "140",
       "charts": [
@@ -87448,6 +87486,7 @@
       "name": "鳳",
       "saHash": "QiPiIb8I99loq8loIq91iP6l1OOoq8oq",
       "artist": "かめりあ",
+      "artist_translation": "Camellia",
       "folder": "DanceDanceRevolution A3",
       "bpm": "57-912",
       "charts": [
