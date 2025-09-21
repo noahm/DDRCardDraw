@@ -1,3 +1,10 @@
+/**
+ * Import DDR series song data from various sources and merge into existing data file.
+ * Usage: `node scripts/import-ddr.mjs`
+ * (Note: This script is registered in npm script, so you can also call it with `yarn import:ddr`)
+ *
+ * If you want to import a different series (ex. DDR EXTREME), change the `MIX_META` import from `./scraping/ddr-sources.mjs`.
+ */
 // @ts-check
 /** @typedef {import("../src/models/SongData.ts").Song} Song */
 /** @typedef {import("../src/models/SongData.ts").GameData} GameData */
@@ -259,7 +266,10 @@ try {
 
   if (MIX_META.sortSongs) existingData.songs = sortSongs(existingData.songs);
 
-  await writeJsonData(existingData, targetFile);
+  const lastUpdated = MIX_META.sanbai
+    ? (await import("./scraping/songdata.mjs")).SONG_DATA_LAST_UPDATED_unixms
+    : undefined;
+  await writeJsonData(existingData, targetFile, lastUpdated);
 
   console.log(`Successfully updated ${MIX_META.filename}`);
   console.log(`Total songs in database: ${existingData.songs.length}`);
