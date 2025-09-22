@@ -69,6 +69,18 @@ const invalidDataOnSanbai = new Map([
     "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
     { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
   ],
+  [
+    "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01", // Burstix Comet
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
+  [
+    "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol", // Autosummer
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
+  [
+    "oIIPQQD09OqdOP8bb61biDOPI69OP8q8", // Collapse of the Sanctuary
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
 ]);
 
 export class SanbaiSongImporter {

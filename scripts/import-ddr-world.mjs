@@ -2,7 +2,7 @@ import * as path from "path";
 import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 
-import { EAGateSongImporter } from "./scraping/ddr-world.mjs";
+import { EAGateSongImporter } from "./scraping/eagate.mjs";
 import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import {
   guessUrlFromName,
@@ -28,9 +28,7 @@ try {
     MIX_META.filename,
   );
 
-  /**
-   * @type {import('../src/models/SongData.js').GameData}
-   */
+  /** @type {import('../src/models/SongData.js').GameData} */
   const existingData = JSON.parse(
     await readFile(targetFile, { encoding: "utf-8" }),
   );

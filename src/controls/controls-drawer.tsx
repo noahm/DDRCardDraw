@@ -293,7 +293,7 @@ function GeneralSettings() {
             type="number"
             inputMode="numeric"
             value={chartCount}
-            min={1}
+            min={playerPicks ? 0 : 1}
             clampValueOnBlur
             onValueChange={(chartCount) => {
               if (!isNaN(chartCount)) {
@@ -313,7 +313,7 @@ function GeneralSettings() {
             type="number"
             inputMode="numeric"
             value={playerPicks}
-            min={0}
+            min={chartCount ? 0 : 1}
             clampValueOnBlur
             onValueChange={(playerPicks) => {
               if (!isNaN(playerPicks)) {
@@ -484,10 +484,7 @@ function GeneralSettings() {
               if (nextUpperBound < prev.lowerBound) {
                 nextUpperBound = prev.lowerBound + 1;
               }
-              return {
-                useGranularLevels,
-                upperBound: nextUpperBound,
-              };
+              return { useGranularLevels, upperBound: nextUpperBound };
             });
           }}
           label={t("controls.useGranularLevels")}
