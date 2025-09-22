@@ -81,9 +81,7 @@ const {
             priorityPlayer = undefined;
           }
         }
-        return {
-          priorityPlayer,
-        };
+        return { priorityPlayer };
       });
     },
     resetChart(chartId) {
@@ -121,11 +119,9 @@ const {
       const newCharts = draw(useDrawState.getState().gameData!, {
         ...useConfigState.getState(),
         chartCount: get().charts.length - keepCharts.length,
+        playerPicks: 0,
       });
-      set(() => ({
-        charts: [...keepCharts, ...newCharts.charts],
-        bans: [],
-      }));
+      set(() => ({ charts: [...keepCharts, ...newCharts.charts], bans: [] }));
     },
     handleBanProtectReplace(action, chartId, player, newChart) {
       const drawing = get();
@@ -162,9 +158,7 @@ const {
           // insert at head of list, behind other picks/placeholders
           charts.splice(frontLockedCardCount, 0, targetChart);
         }
-        set({
-          charts,
-        });
+        set({ charts });
       }
 
       const existingIndex = arr.findIndex((b) => b.chartId === chartId);
@@ -178,9 +172,7 @@ const {
           targetType: targetChart.type,
         });
       }
-      set({
-        [key]: arr,
-      });
+      set({ [key]: arr });
     },
     serializeSyncFields() {
       return Object.entries(get()).reduce((ret: Partial<Drawing>, [k, v]) => {
@@ -203,9 +195,7 @@ const {
       if (player) {
         arr.push({ player, chartId });
       }
-      set({
-        winners: arr,
-      });
+      set({ winners: arr });
     },
   }),
   (p) => p.initialDrawing.id,
