@@ -78,9 +78,7 @@ export function createDraw(
       meta: drawMeta.meta,
       playerDisplayOrder: players.map((_, idx) => idx),
       configId,
-      subDrawings: {
-        [setId]: mainDraw,
-      },
+      subDrawings: { [setId]: mainDraw },
     };
     trackDraw(charts.length, gameData.i18n.en.name as string);
 
@@ -159,11 +157,7 @@ export function createSubdraw(
     dispatch(
       drawingsSlice.actions.addSubdraw({
         existingDrawId: parentDrawId,
-        newSubdraw: {
-          compoundId: [parentDrawId, setId],
-          configId,
-          charts,
-        },
+        newSubdraw: { compoundId: [parentDrawId, setId], configId, charts },
       }),
     );
     return "ok";
@@ -180,12 +174,6 @@ export function createRedrawAll(drawingId: CompoundSetId): AppThunk {
       state.drawings,
       drawingId,
     );
-    const originalConfig = state.config.entities[target.configId];
-    const drawConfig = {
-      ...originalConfig,
-      chartCount: target.charts.length,
-    };
-    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
 
     // preserve pocket picks and protects in the redraw by keeping them in the starting point info
     // and filtering out all other charts
@@ -196,6 +184,13 @@ export function createRedrawAll(drawingId: CompoundSetId): AppThunk {
       (chart) =>
         protectedChartIds.has(chart.id) || chart.type === "PLACEHOLDER",
     );
+
+    const originalConfig = state.config.entities[target.configId];
+    const drawConfig: ConfigState = {
+      ...originalConfig,
+      chartCount: target.charts.length - chartsToKeep.length,
+    };
+    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
 
     const charts = draw(gameData!, drawConfig, {
       meta: parent.meta,
@@ -223,11 +218,13 @@ export function createRedrawChart(
       state.drawings,
       drawingId,
     );
-    const originalConfig = state.config.entities[target.configId];
-    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
+    const customConfig: ConfigState = {
+      ...state.config.entities[target.configId],
+    };
+    const gameData = await loadStockGamedataByName(customConfig.gameKey);
     if (!gameData) return;
 
-    const charts = draw(gameData, originalConfig, {
+    const charts = draw(gameData, customConfig, {
       meta: parent.meta,
       charts: target.charts.filter((chart) => chart.id !== chartId),
     });
@@ -286,12 +283,7 @@ export function createPlusOneChart(drawingId: CompoundSetId): AppThunk {
     ) {
       return; // result didn't include a new chart
     }
-    dispatch(
-      drawingsSlice.actions.addOneChart({
-        drawingId,
-        chart,
-      }),
-    );
+    dispatch(drawingsSlice.actions.addOneChart({ drawingId, chart }));
   };
 }
 

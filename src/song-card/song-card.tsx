@@ -12,7 +12,7 @@ import {
 import { SongSearch } from "../song-search";
 import { detectedLanguage } from "../utils";
 import { CardLabel, LabelType } from "./card-label";
-import { IconMenu } from "./icon-menu";
+import { FillPlaceholderList, IconMenu } from "./icon-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
@@ -84,9 +84,7 @@ function baseChartValues(
   chart: EligibleChart | DrawnChart | PlayerPickPlaceholder,
 ): Partial<EligibleChart> & { name: string } {
   if ("type" in chart && chart.type === CHART_PLACEHOLDER) {
-    return {
-      name: "Your Pick Here",
-    };
+    return { name: "Your Pick Here" };
   }
   return chart;
 }
@@ -135,9 +133,7 @@ export function SongCard(props: Props) {
 
   let jacketBg = {};
   if (jacket) {
-    jacketBg = {
-      backgroundImage: `url("${getJacketUrl(jacket)}")`,
-    };
+    jacketBg = { backgroundImage: `url("${getJacketUrl(jacket)}")` };
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
@@ -154,9 +150,11 @@ export function SongCard(props: Props) {
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !hasWinner) {
-    if (replacedWith !== undefined && baseChartIsPlaceholder) {
+    if (replacedWith === undefined && baseChartIsPlaceholder) {
       menuContent = (
-        <IconMenu onStartPocketPick={setPocketPickPendingForPlayer} />
+        <FillPlaceholderList
+          onFillPlaceholder={setPocketPickPendingForPlayer}
+        />
       );
     } else if (!hasLabel) {
       menuContent = (
@@ -257,9 +255,7 @@ export function SongCard(props: Props) {
         isOpen={showingContextMenu}
         onClose={hideMenu}
         placement="top"
-        modifiers={{
-          offset: { options: { offset: [0, 35] } },
-        }}
+        modifiers={{ offset: { options: { offset: [0, 35] } } }}
       >
         <div
           className={styles.cardFooter}

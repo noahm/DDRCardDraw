@@ -327,33 +327,30 @@ export function draw(
   let redraw = false;
   let drawnCharts: DrawnChart[] = [];
 
-  let preSeededCharts = 0;
+  const preSeededDrawnCharts =
+    startPoint.charts?.filter((c) => c.type === "DRAWN") || [];
   const preSeededDifficulties: number[] = [];
-  if (startPoint.charts) {
-    // account for the chart levels already in the draw starting point
-    preSeededCharts = startPoint.charts.length;
-    for (const chart of startPoint.charts) {
-      if (chart.type === "PLACEHOLDER") continue;
-      const bucketIdx = bucketIndexForChart(chart);
-      if (bucketIdx === null) continue;
-      // count this chart within quota
-      preSeededDifficulties.push(bucketIdx);
+  // account for the chart levels already in the draw starting point
+  for (const chart of preSeededDrawnCharts) {
+    const bucketIdx = bucketIndexForChart(chart);
+    if (bucketIdx === null) continue;
+    // count this chart within quota
+    preSeededDifficulties.push(bucketIdx);
 
-      // remove from base requirements
-      const removeIdx = requiredDrawIndexes.indexOf(bucketIdx);
-      if (removeIdx >= 0) {
-        requiredDrawIndexes.splice(removeIdx, 1);
-      }
-      // remove this existing chart from eligible pool to prevent dupes
-      const bucket = validCharts.get(bucketIdx);
-      const idxInBucket = bucket.findIndex(
-        (eligibleChart) =>
-          eligibleChart.name === chart.name &&
-          chart.diffAbbr === eligibleChart.diffAbbr &&
-          chart.level === eligibleChart.level,
-      );
-      bucket.splice(idxInBucket, 1);
+    // remove from base requirements
+    const removeIdx = requiredDrawIndexes.indexOf(bucketIdx);
+    if (removeIdx >= 0) {
+      requiredDrawIndexes.splice(removeIdx, 1);
     }
+    // remove this existing chart from eligible pool to prevent dupes
+    const bucket = validCharts.get(bucketIdx);
+    const idxInBucket = bucket.findIndex(
+      (eligibleChart) =>
+        eligibleChart.name === chart.name &&
+        chart.diffAbbr === eligibleChart.diffAbbr &&
+        chart.level === eligibleChart.level,
+    );
+    bucket.splice(idxInBucket, 1);
   }
 
   do {
@@ -373,7 +370,10 @@ export function draw(
       localValidCharts.set(bucketIdx, charts.slice());
     }
 
-    while (drawnCharts.length + preSeededCharts < numChartsToRandom) {
+    while (
+      drawnCharts.length + preSeededDrawnCharts.length <
+      numChartsToRandom
+    ) {
       if (bucketDistribution.length === 0) {
         // no more songs available to pick in the requested range
         // will be returning fewer than requested number of charts
@@ -447,7 +447,7 @@ export function draw(
     charts = shuffle(drawnCharts);
   }
 
-  if (!preSeededCharts && configData.playerPicks) {
+  if (!startPoint.charts && configData.playerPicks) {
     charts.unshift(
       ...times(
         configData.playerPicks,
