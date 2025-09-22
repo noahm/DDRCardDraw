@@ -96,6 +96,7 @@ const {
       const newChart = draw(useDrawState.getState().gameData!, {
         ...useConfigState.getState(),
         chartCount: 1,
+        playerPicks: 0,
       }).charts[0];
       set((d) => ({
         charts: d.charts.map((chart) => {
