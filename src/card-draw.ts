@@ -448,16 +448,12 @@ export function draw(
   }
 
   if (!startPoint.charts && configData.playerPicks) {
-    charts.unshift(
-      ...times(
-        configData.playerPicks,
-        (): PlayerPickPlaceholder => ({
-          id: `pick_placeholder-` + nanoid(5),
-          type: CHART_PLACEHOLDER,
-        }),
-      ),
-    );
+    charts.unshift(...times(configData.playerPicks, newPlaceholder));
   }
 
   return charts;
+}
+
+export function newPlaceholder(): PlayerPickPlaceholder {
+  return { id: `pick_placeholder-` + nanoid(5), type: CHART_PLACEHOLDER };
 }

@@ -1,11 +1,12 @@
 import { AppThunk } from "./store";
-import { draw, DrawingMeta } from "../card-draw";
+import { draw, DrawingMeta, newPlaceholder } from "../card-draw";
 import {
   getLastGameSelected,
   loadStockGamedataByName,
 } from "./game-data.atoms";
 import { drawingsSlice, getDrawingFromCompoundId } from "./drawings.slice";
 import {
+  CHART_PLACEHOLDER,
   CompoundSetId,
   Drawing,
   EligibleChart,
@@ -247,10 +248,21 @@ export function createRedrawChart(
 }
 
 /**
- * thunk creator for redrawing a single chart within a drawing
+ * thunk creator for adding one more chart to an existing drawing
  */
-export function createPlusOneChart(drawingId: CompoundSetId): AppThunk {
+export function createPlusOneChart(
+  drawingId: CompoundSetId,
+  type: "DRAWN" | "PLACEHOLDER",
+): AppThunk {
   return async (dispatch, getState) => {
+    if (type === CHART_PLACEHOLDER) {
+      dispatch(
+        drawingsSlice.actions.addOneChart({
+          drawingId,
+          chart: newPlaceholder(),
+        }),
+      );
+    }
     const state = getState();
     const [parent, target] = getDrawingFromCompoundId(
       state.drawings,

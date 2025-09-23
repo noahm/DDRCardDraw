@@ -13,6 +13,7 @@ import {
   MergedDrawing,
   PlayerActionOnChart,
   SubDrawing,
+  PlayerPickPlaceholder,
 } from "../models/Drawing";
 import { mergeDraws } from "./central";
 
@@ -62,7 +63,7 @@ export const drawingsSlice = createSlice({
       state,
       action: PayloadAction<{
         drawingId: CompoundSetId;
-        chart: DrawnChart;
+        chart: DrawnChart | PlayerPickPlaceholder;
       }>,
     ) {
       const [, target] = getDrawingFromCompoundId(
@@ -216,10 +217,7 @@ export const drawingsSlice = createSlice({
     },
     addSubdraw(
       state,
-      action: PayloadAction<{
-        newSubdraw: SubDrawing;
-        existingDrawId: string;
-      }>,
+      action: PayloadAction<{ newSubdraw: SubDrawing; existingDrawId: string }>,
     ) {
       const { existingDrawId, newSubdraw } = action.payload;
       const existingDraw = state.entities[existingDrawId];
@@ -332,10 +330,7 @@ const selectMergedByCompoundId = createSelector(
       s.entities[drawingId[0]]?.subDrawings?.[drawingId[1]],
   ],
   (drawing, subDrawing): MergedDrawing => {
-    return {
-      ...drawing,
-      ...subDrawing,
-    };
+    return { ...drawing, ...subDrawing };
   },
 );
 

@@ -29,7 +29,12 @@ import { useState, lazy, JSX } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";
-import { playerCount, StartggGauntletMeta } from "../models/Drawing";
+import {
+  CHART_DRAWN,
+  CHART_PLACEHOLDER,
+  playerCount,
+  StartggGauntletMeta,
+} from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
   ReportSetMutationVariables as MutationVariables,
@@ -73,10 +78,7 @@ function getMatchResult(
       }
       try {
         const entrant = parent.meta.entrants[pIdx];
-        gameData.push({
-          gameNum: gameData.length + 1,
-          winnerId: entrant.id,
-        });
+        gameData.push({ gameNum: gameData.length + 1, winnerId: entrant.id });
         winsPerPlayer.add(entrant.id);
       } catch (e) {
         console.warn(`failed to add game data for song ${songId}`, e);
@@ -93,10 +95,7 @@ function getMatchResult(
       // confirmed no tie for first place
       winnerId = orderedByWins[0][0];
     }
-    const ret: MutationVariables = {
-      setId: parent.meta.id,
-      winnerId,
-    };
+    const ret: MutationVariables = { setId: parent.meta.id, winnerId };
     if (gameData.length) {
       ret.gameData = gameData;
     }
@@ -157,7 +156,16 @@ function EditSetMenu() {
               <MenuItem
                 icon={<NewLayer />}
                 text="Draw Another Chart"
-                onClick={() => dispatch(createPlusOneChart(drawingId))}
+                onClick={() =>
+                  dispatch(createPlusOneChart(drawingId, CHART_DRAWN))
+                }
+              />
+              <MenuItem
+                icon={<Edit />}
+                text="Add New Player Pick"
+                onClick={() =>
+                  dispatch(createPlusOneChart(drawingId, CHART_PLACEHOLDER))
+                }
               />
               <MenuItem
                 text={t("drawing.redrawAll", undefined, "Redraw set")}
@@ -259,9 +267,7 @@ export function DrawingActions() {
             );
             if (drawingElement) {
               shareImage(
-                await domToPng(drawingElement, {
-                  scale: 2,
-                }),
+                await domToPng(drawingElement, { scale: 2 }),
                 DEFAULT_FILENAME,
               );
             }
