@@ -104,87 +104,66 @@ function CabSummary({ cab }: { cab: CabInfo }) {
     [dispatch, cab.id],
   );
 
-  const copySource = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      e.preventDefault();
-      const sourceType = e.currentTarget.dataset.source;
-      if (sourceType) {
-        copyObsSource(routableCabSourcePath(cab.id, sourceType));
-      }
-    },
-    [cab],
-  );
-
   const sourcesMenu = (
     <Menu>
       <MenuItem icon={<MobileVideo />} text="OBS Sources">
         <CopySourceMenuItem
           icon={<Layers />}
           text="Cards"
-          onClick={copySource}
           stub="cards"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Font />}
           text="Title"
-          onClick={copySource}
           stub="title"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<DiagramTree />}
           text="Current Phase"
-          onClick={copySource}
           stub="phase"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<People />}
           text="All Players"
-          onClick={copySource}
           stub="players"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Person />}
           text="Player 1"
-          onClick={copySource}
           stub="p1"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Person />}
           text="Player 1 Name"
-          onClick={copySource}
           stub="p1-name"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Person />}
           text="Player 1 Score"
-          onClick={copySource}
           stub="p1-score"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Person />}
           text="Player 2"
-          onClick={copySource}
           stub="p2"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Person />}
           text="Player 2 Name"
-          onClick={copySource}
           stub="p2-name"
           cabId={cab.id}
         />
         <CopySourceMenuItem
           icon={<Person />}
           text="Player 2 Score"
-          onClick={copySource}
           stub="p2-score"
           cabId={cab.id}
         />
@@ -208,18 +187,17 @@ function CabSummary({ cab }: { cab: CabInfo }) {
 }
 
 function CopySourceMenuItem(
-  props: Pick<MenuItemProps, "icon" | "text" | "onClick"> & {
-    stub: string;
-    cabId: string;
-  },
+  props: Pick<MenuItemProps, "icon" | "text"> & { stub: string; cabId: string },
 ) {
   const href = useHref(routableCabSourcePath(props.cabId, props.stub));
   return (
     <MenuItem
       icon={props.icon}
       text={props.text}
-      onClick={props.onClick}
-      data-source={props.stub}
+      onClick={(e) => {
+        e.preventDefault();
+        copyObsSource(e.currentTarget.href);
+      }}
       href={href}
     />
   );

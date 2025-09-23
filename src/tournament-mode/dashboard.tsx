@@ -88,7 +88,7 @@ function LabelCard(props: {
           icon={<Duplicate />}
           onClick={(e) => {
             e.preventDefault();
-            copyObsSource(href);
+            copyObsSource(new URL(href, document.location.href).href);
           }}
           href={href}
         />
