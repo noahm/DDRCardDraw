@@ -3074,7 +3074,7 @@ export const ALL_SONG_DATA = [
   {
     song_id: "90DO081odOdPDblDOqQi1O68Iq988obq",
     song_name: "HYPER OVERR DANCEFLOORRR",
-    searchable_name: "HYPER OVER DANCEFLOOR",
+    alternate_name: "HYPER OVER DANCE FLOOR",
     alphabet: "H",
     version_num: 20,
     ratings: [3, 8, 13, 16, 0, 8, 13, 16, 0],
@@ -5094,9 +5094,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "Bloody Concerto",
     alphabet: "B",
     version_num: 20,
-    ratings: [4, 8, 14, 16, 0, 8, 14, 16, 0],
-    tiers: [0.4, 0.25, 0.35, 0.55, 0, 0.05, 0.25, 0.35, 0],
-    lock_types: [260, 260, 260, 260, 0, 260, 260, 260, 0],
+    ratings: [4, 8, 14, 16, 17, 8, 14, 16, 17],
+    tiers: [0.4, 0.25, 0.35, 0.55, 1, 0.05, 0.25, 0.35, 1],
+    lock_types: [260, 260, 260, 260, 260, 260, 260, 260, 260],
   },
   {
     song_id: "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -7983,9 +7983,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "Re RHYZE",
     alphabet: "R",
     version_num: 20,
-    ratings: [4, 9, 13, 16, 0, 9, 13, 16, 0],
-    tiers: [0.5, 0.3, 0.5, 0.55, 0, 0.35, 0.5, 0.5, 0],
-    lock_types: [260, 260, 260, 260, 0, 260, 260, 260, 0],
+    ratings: [4, 9, 13, 16, 18, 9, 13, 16, 18],
+    tiers: [0.5, 0.3, 0.5, 0.55, 1, 0.35, 0.5, 0.5, 1],
+    lock_types: [260, 260, 260, 260, 260, 260, 260, 260, 260],
   },
   {
     song_id: "l1bDOIlb6ddI6od0q1llI0I6blq9oP0l",
@@ -12455,4 +12455,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1758385276160;
+export const SONG_DATA_LAST_UPDATED_unixms = 1758818139454;

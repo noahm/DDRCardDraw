@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1758385276160
+    "lastUpdated": 1758818139454
   },
   "defaults": {
     "style": "single",
@@ -7333,6 +7333,11 @@
           "sanbaiTier": 16.55
         },
         {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -7349,9 +7354,14 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.35
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge"
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Bloody_Concerto",
       "jacket": "ddr_world/Bloody Concerto.jpg",
       "saHash": "dbIQ6o1lDi1OqqdO60q0lqqD9qPD0qlP"
@@ -33177,7 +33187,7 @@
           "sanbaiTier": 17.1
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Lichtsaule",
       "jacket": "ddr_world/Lichtsaule.jpg",
       "saHash": "qP8qb6lIqPIlO696q8881qoIqi1O6ldI"
@@ -41032,7 +41042,7 @@
           "sanbaiTier": 16.5
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/OROCHI_STRIKE",
       "jacket": "ddr_world/OROCHI_STRIKE.jpg",
       "saHash": "dOilPdQDPQP0l8Po6Pli96i010d88dii"
@@ -46284,6 +46294,11 @@
           "sanbaiTier": 16.55
         },
         {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -46300,9 +46315,14 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.5
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge"
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Re:RHYZE",
       "jacket": "ddr_world/ReRHYZE.jpg",
       "saHash": "l1b8iDqOdQl6PbIIdb966qQ8d9i9dOPQ"
@@ -46749,7 +46769,7 @@
           "sanbaiTier": 18.75
         }
       ],
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/REINCARNATION_(P*Light)",
       "jacket": "ddr_world/REINCARNATION_(PLight).jpg",
       "saHash": "DqIO9PI98blQlid88dQiO0ldoiobOqdb"
