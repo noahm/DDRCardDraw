@@ -57,30 +57,28 @@ const titleList = {
  * @type {Map<SanbaiSong['song_id'], Partial<SanbaiSong>>}
  */
 const invalidDataOnSanbai = new Map([
+  // #region EXTRA SAVIOR WORLD (MYSTICAL Re:UNION)
   [
-    "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6", // Bloody Tears (IIDX EDITION)
-    { ratings: [4, 5, 6, 11, 0, 5, 7, 11, 0] },
+    "dbIQ6o1lDi1OqqdO60q0lqqD9qPD0qlP", // Blφφdy Cφncertφ
+    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
   ],
   [
-    "61QQi8i9Iliq66IOq1ib888b666o08O8", // Mermaid girl
-    { ratings: [3, 4, 7, 11, 12, 5, 8, 11, 12] },
-  ],
-  [
-    "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
-    { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
-  ],
-  [
-    "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01", // Burstix Comet
+    "dOilPdQDPQP0l8Po6Pli96i010d88dii", // OROCHI STRIKE
     { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
   ],
   [
-    "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol", // Autosummer
+    "DqIO9PI98blQlid88dQiO0ldoiobOqdb", // REINCARNATION
     { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
   ],
   [
-    "oIIPQQD09OqdOP8bb61biDOPI69OP8q8", // Collapse of the Sanctuary
+    "l1b8iDqOdQl6PbIIdb966qQ8d9i9dOPQ", // Re:RHYZE
+    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
+  ],
+  [
+    "qP8qb6lIqPIlO696q8881qoIqi1O6ldI", // Lichtsäule
     { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
   ],
+  // #endregion EXTRA SAVIOR WORLD (MYSTICAL Re:UNION)
 ]);
 
 export class SanbaiSongImporter {
