@@ -4933,7 +4933,7 @@ __metadata:
     modern-screenshot: "npm:4.6.0"
     nanoid: "npm:5.1.5"
     normalize.css: "npm:8.0.1"
-    p-queue: "npm:8.1.0"
+    p-queue: "npm:9.0.0"
     papaparse: "npm:5.5.2"
     peerjs: "npm:2.0.0-beta.3"
     postcss: "npm:8.5.3"
@@ -8117,13 +8117,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-queue@npm:8.1.0":
-  version: 8.1.0
-  resolution: "p-queue@npm:8.1.0"
+"p-queue@npm:9.0.0":
+  version: 9.0.0
+  resolution: "p-queue@npm:9.0.0"
   dependencies:
     eventemitter3: "npm:^5.0.1"
-    p-timeout: "npm:^6.1.2"
-  checksum: 10/0dc23488b855c6b3a6c551e41c3c9c1c0991f097c294a2476f34d47ea3b1c74deac5ccd465ebc1560432e6a490a133a60b428dd44d8e51dff662f6b792814320
+    p-timeout: "npm:^7.0.0"
+  checksum: 10/62df9f8bcfc738372b6b64a0398e7388eee3991d979697dd51b61f6b533622ff4e71b05ad516c06355d41858535e59a72e380e20b82a50a53d7fecfaf65d630e
   languageName: node
   linkType: hard
 
@@ -8138,10 +8138,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-timeout@npm:^6.1.2":
-  version: 6.1.2
-  resolution: "p-timeout@npm:6.1.2"
-  checksum: 10/ca3ede368d792bd86fcfa4e133220536382225d31e5f62e2cedb8280df267b25f6684aa0056b22e8aa538cc85014b310058d8fdddeb0a1ff363093d56e87ac3a
+"p-timeout@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "p-timeout@npm:7.0.0"
+  checksum: 10/ad95f01e97a9dd06406b8e2852f90cf3ac7f9d7ef6a4770b66b9aecdb42d5fe19981f82fad9145307f1b1830cd482567305ca91db0de11a81dea73a456c76d17
   languageName: node
   linkType: hard
 
