@@ -1924,7 +1924,6 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     ratings: [4, 8, 12, 15, 17, 8, 12, 15, 17],
     tiers: [0.25, 0.4, 0.25, 0.45, 0.75, 0.25, 0.2, 0.15, 0.25],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "6iO8d9ld00I6lDIO6qbOldP99oqloqb9",
@@ -2751,6 +2750,16 @@ export const ALL_SONG_DATA = [
     tiers: [0.3, 0.25, 0.3, 0.25, 0, 0.4, 0.25, 0.15, 0],
   },
   {
+    song_id: "8IQIld8DI9OPD00dqio1lDQ1bq6Q6P6D",
+    song_name: "朱と碧のランページ",
+    searchable_name: "あかとあおのらんぺーじ",
+    romanized_name: "Aka to Ao no Rampage",
+    alphabet: "あ",
+    version_num: 20,
+    ratings: [2, 8, 11, 15, 0, 8, 11, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "8l0ld8Oq86P09lb91DdD9OliiPq9oq9D",
     song_name: "Freeze",
     alphabet: "F",
@@ -3037,6 +3046,16 @@ export const ALL_SONG_DATA = [
     version_num: 19,
     ratings: [3, 8, 13, 17, 0, 8, 13, 17, 0],
     tiers: [0.15, 0.1, 0.2, 0.05, 0, 0.05, 0.15, 0.05, 0],
+  },
+  {
+    song_id: "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
+    song_name: "リメンバーリメンバー",
+    romanized_name: "Remember Remember",
+    alternate_name: "Remember Remember ReGLOSS",
+    alphabet: "ら",
+    version_num: 20,
+    ratings: [2, 7, 10, 12, 0, 7, 10, 13, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "8QPioDo6lIDdq861DDooq1O9dqdOOPiD",
@@ -3554,7 +3573,6 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [1, 3, 7, 11, 0, 3, 7, 11, 0],
     tiers: [0.15, 0.25, 0.05, 0.05, 0, 0.2, 0.05, 0, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "9lob1d1QPd9qiPlQOQ6l0dbodOoDPq1d",
@@ -3628,7 +3646,6 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 4, 10, 13, 0, 4, 9, 13, 0],
     tiers: [0, 0, 0.1, 0.25, 0, 0.05, 0.1, 0.15, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO",
@@ -4044,7 +4061,6 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 5, 9, 13, 0, 5, 9, 13, 0],
     tiers: [0.35, 0.05, 0.25, 0.1, 0, 0.1, 0.25, 0.05, 0],
-    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "bdP0IOiPiQ8OlIbD1QQO8O6dPQqqb1Qb",
@@ -4302,7 +4318,6 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     ratings: [4, 7, 11, 14, 17, 7, 11, 14, 17],
     tiers: [0.6, 0.7, 0.75, 0.7, 0.8, 0.6, 0.55, 0.55, 0.65],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "boQPliilD01OD1bIdOOIOOi0Q9P16OlO",
@@ -5096,7 +5111,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 8, 14, 16, 17, 8, 14, 16, 17],
     tiers: [0.4, 0.25, 0.35, 0.55, 1, 0.05, 0.25, 0.35, 1],
-    lock_types: [260, 260, 260, 260, 260, 260, 260, 260, 260],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -5809,7 +5824,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 12, 16, 0, 7, 12, 16, 0],
     tiers: [0.8, 0.95, 0.85, 0.75, 0, 0.85, 0.7, 0.5, 0],
-    lock_types: [260, 260, 260, 260, 0, 260, 260, 260, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "Doo9l68ddi11PQOOd6o11Q9Dd1lIQ9I6",
@@ -6089,7 +6104,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 10, 15, 18, 0, 10, 15, 18, 0],
     tiers: [0.55, 0.5, 0.6, 0.6, 0, 0.2, 0.35, 0.75, 0],
-    lock_types: [260, 260, 260, 260, 0, 260, 260, 260, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "DqioIqbiolQ0lQlo19idi96Obi6DDl9D",
@@ -7157,6 +7172,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.45, 0.4, 0.5, 0.25, 0, 0.25, 0.3, 0.15, 0],
   },
   {
+    song_id: "II1199iiDiido80Iq0Q199I1olq0l8i9",
+    song_name: "カジノファイヤーことみちゃん",
+    romanized_name: "Casino Fire Kotomi Chan",
+    alphabet: "か",
+    version_num: 20,
+    ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "ii119ll8dOQ8IQqi1IOP1o8DIQbqo8Pi",
     song_name: "dream of love",
     alphabet: "D",
@@ -7958,7 +7982,6 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     ratings: [3, 8, 13, 16, 18, 8, 13, 16, 18],
     tiers: [0.25, 0.15, 0.4, 0.25, 0.9, 0.1, 0.25, 0.1, 0.3],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "l0QP6DiIDIId0oiQiOl8q10DlI96OPiO",
@@ -7985,7 +8008,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 9, 13, 16, 18, 9, 13, 16, 18],
     tiers: [0.5, 0.3, 0.5, 0.55, 1, 0.35, 0.5, 0.5, 1],
-    lock_types: [260, 260, 260, 260, 260, 260, 260, 260, 260],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "l1bDOIlb6ddI6od0q1llI0I6blq9oP0l",
@@ -8467,7 +8490,6 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 6, 9, 12, 14, 5, 9, 12, 14],
     tiers: [0.4, 0.45, 0.3, 0.5, 0.7, 0.4, 0.3, 0.45, 0.65],
-    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
     song_id: "lO91bIQ0Q990PqPbPIq88b9I9PI6ID0Q",
@@ -9733,6 +9755,15 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
     tiers: [0.4, 0.3, 0.2, 0.3, 0, 0.3, 0.2, 0.25, 0],
+  },
+  {
+    song_id: "OlQbP19IPDDDqDDO1bd0DII8IoqDo1QP",
+    song_name: "murmur twins (guitar pop ver.)",
+    searchable_name: "murmur twins guitar pop ver",
+    alphabet: "M",
+    version_num: 20,
+    ratings: [3, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
   },
   {
     song_id: "olQl6Qoi0IbobI980q9Q0QIo9qlbq1PO",
@@ -11202,7 +11233,6 @@ export const ALL_SONG_DATA = [
     version_num: 19,
     ratings: [3, 6, 9, 13, 17, 5, 9, 14, 17],
     tiers: [0.2, 0.3, 0.3, 0.4, 0.55, 0.25, 0.2, 0.2, 0],
-    lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
   },
   {
     song_id: "Q8bIDb60oPo890oi0l0O9PQd9lOb8o1Q",
@@ -12070,6 +12100,14 @@ export const ALL_SONG_DATA = [
     lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280],
   },
   {
+    song_id: "QO86biQ6lDOb8I0oD0i90bqi1ooIIi0O",
+    song_name: "Shooting Star",
+    alphabet: "S",
+    version_num: 20,
+    ratings: [2, 7, 11, 14, 0, 7, 11, 14, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "Qo9l6l6lq0q618bQOb8d6qiooiiPQqoI",
     song_name: "rain of sorrow",
     alphabet: "R",
@@ -12234,7 +12272,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [4, 7, 13, 17, 0, 7, 13, 17, 0],
     tiers: [0.9, 0.95, 0.65, 0.25, 0, 0.95, 0.65, 0.1, 0],
-    lock_types: [260, 260, 260, 260, 0, 260, 260, 260, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "QPd01OQqbOIiDoO1dbdo1IIbb60bqPdl",
@@ -12335,6 +12373,7 @@ export const ALL_SONG_DATA = [
     song_id: "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
     song_name: "リメンバーリメンバー",
     romanized_name: "Remember Remember",
+    alternate_name: "Remember Remember Popn Music",
     alphabet: "ら",
     version_num: 20,
     ratings: [3, 6, 8, 11, 0, 6, 9, 12, 0],
@@ -12455,4 +12494,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1758818139454;
+export const SONG_DATA_LAST_UPDATED_unixms = 1759223152945;

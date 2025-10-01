@@ -56,30 +56,7 @@ const titleList = {
  * Correction map for invalid data on 3icecream site
  * @type {Map<SanbaiSong['song_id'], Partial<SanbaiSong>>}
  */
-const invalidDataOnSanbai = new Map([
-  // #region EXTRA SAVIOR WORLD (MYSTICAL Re:UNION)
-  [
-    "dbIQ6o1lDi1OqqdO60q0lqqD9qPD0qlP", // Blφφdy Cφncertφ
-    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
-  ],
-  [
-    "dOilPdQDPQP0l8Po6Pli96i010d88dii", // OROCHI STRIKE
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "DqIO9PI98blQlid88dQiO0ldoiobOqdb", // REINCARNATION
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "l1b8iDqOdQl6PbIIdb966qQ8d9i9dOPQ", // Re:RHYZE
-    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
-  ],
-  [
-    "qP8qb6lIqPIlO696q8881qoIqi1O6ldI", // Lichtsäule
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  // #endregion EXTRA SAVIOR WORLD (MYSTICAL Re:UNION)
-]);
+const invalidDataOnSanbai = new Map([]);
 
 export class SanbaiSongImporter {
   /**

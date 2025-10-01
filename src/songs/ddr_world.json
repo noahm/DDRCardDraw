@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1758818139454
+    "lastUpdated": 1759223152945
   },
   "defaults": {
     "style": "single",
@@ -4720,6 +4720,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Autosummer",
       "jacket": "ddr_world/Autosummer.jpg",
       "saHash": "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol",
       "flags": ["unlock"]
@@ -7888,7 +7889,6 @@
           "sanbaiTier": 13.15
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/BREAK_DOWN!_(World_Version)",
       "jacket": "ddr_world/BREAK_DOWN!_(World_Version).jpg",
       "saHash": "9OOIPiqDooPb1QQ900QODl60dqbP8Dib"
@@ -8592,6 +8592,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Burstix_Comet",
       "jacket": "ddr_world/Burstix Comet.jpg",
       "saHash": "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01",
       "flags": ["unlock"]
@@ -10767,6 +10768,7 @@
           "diffClass": "expert"
         }
       ],
+      "remyLink": "https://remywiki.com/Collapse_of_the_Sanctuary",
       "jacket": "ddr_world/Collapse of the Sanctuary.jpg",
       "saHash": "oIIPQQD09OqdOP8bb61biDOPI69OP8q8",
       "flags": ["unlock"]
@@ -17992,7 +17994,6 @@
           "sanbaiTier": 14.65
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/El_ritmo_te_controla",
       "saHash": "lO8oill61lld1do1O96bIDbPPQD6Ob0b",
       "jacket": "ddr_world/El_ritmo_te_controla.jpg"
@@ -28742,7 +28743,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.75
         },
         {
@@ -28767,7 +28767,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.25
         }
       ],
@@ -37774,7 +37773,6 @@
           "diffClass": "expert"
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Moving_On",
       "jacket": "ddr_world/Moving_On.jpg",
       "saHash": "9lO9do19O1I9dbiPi8q9OdqdiOoQ8PQQ"
@@ -37856,6 +37854,54 @@
       "genre": "CUDDLECORE",
       "saHash": "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il",
       "saIndex": "187",
+      "search_hint": "CUDDLECORE/カドルコア"
+    },
+    {
+      "name": "murmur twins (guitar pop ver.)",
+      "artist": "covered by 音乃瀬奏(ReGLOSS)",
+      "bpm": "174",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "remyLink": "https://remywiki.com/Murmur_twins(guitar_pop_ver.)",
+      "jacket": "ddr_world/murmur twins (guitar pop ver.)_ReGLOSS.jpg",
+      "saHash": "OlQbP19IPDDDqDDO1bd0DII8IoqDo1QP",
       "search_hint": "CUDDLECORE/カドルコア"
     },
     {
@@ -39927,7 +39973,6 @@
           "sanbaiTier": 13.05
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/No_Matter_What",
       "jacket": "ddr_world/No_Matter_What.jpg",
       "saHash": "bDDq1qO80o6806dQOb1Qo0bPI6899q1D"
@@ -49509,7 +49554,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.55
         },
         {
@@ -49533,8 +49577,7 @@
         {
           "lvl": 17,
           "style": "double",
-          "diffClass": "challenge",
-          "flags": ["grandPrixPack"]
+          "diffClass": "challenge"
         }
       ],
       "remyLink": "https://remywiki.com/SAYONARA_disco_light",
@@ -50986,6 +51029,52 @@
       "saHash": "Dbd0o8iob1D0990DDIOIIQ6bQqdDQ6ID",
       "saIndex": "698",
       "search_hint": "HI-SPEED FANTASY TUNE/ハイスピード幻想チューン"
+    },
+    {
+      "name": "Shooting Star",
+      "artist": "ReGLOSS",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "jacket": "ddr_world/Shooting Star.jpg",
+      "saHash": "QO86biQ6lDOb8I0oD0i90bqi1ooIIi0O"
     },
     {
       "name": "Shout It Out",
@@ -71297,6 +71386,56 @@
       "search_hint": "輪生/リンセイ/RINSEI"
     },
     {
+      "name": "カジノファイヤーことみちゃん",
+      "artist": "covered by 一条莉々華(ReGLOSS)",
+      "bpm": "115-230",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "bpm": "230"
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "bpm": "230"
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "bpm": "230"
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "remyLink": "https://remywiki.com/Casino_fire_Kotomi-chan",
+      "jacket": "ddr_world/カジノファイヤーことみちゃん_ReGLOSS.jpg",
+      "saHash": "II1199iiDiido80Iq0Q199I1olq0l8i9"
+    },
+    {
       "name": "カタルシスの月",
       "name_translation": "Catharsis no Tsuki",
       "artist": "日向美ビタースイーツ♪",
@@ -72266,7 +72405,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.8
         },
         {
@@ -72291,7 +72429,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.65
         }
       ],
@@ -76318,6 +76455,54 @@
       "genre": "レイニーワルツ",
       "saHash": "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
       "jacket": "ddr_world/Remember_remember.jpg",
+      "search_hint": "RAINY WALTZ/レイニーワルツ"
+    },
+    {
+      "name": "リメンバーリメンバー",
+      "artist": "covered by 轟はじめ(ReGLOSS)",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "remyLink": "https://remywiki.com/Remember_remember",
+      "jacket": "ddr_world/リメンバーリメンバー_ReGLOSS.jpg",
+      "saHash": "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
       "search_hint": "RAINY WALTZ/レイニーワルツ"
     },
     {
@@ -82028,6 +82213,53 @@
       "saIndex": "867"
     },
     {
+      "name": "朱と碧のランページ",
+      "artist": "covered by 儒烏風亭らでん(ReGLOSS)",
+      "bpm": "178",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage",
+      "jacket": "ddr_world/朱と碧のランページ_ReGLOSS.jpg",
+      "saHash": "8IQIld8DI9OPD00dqio1lDQ1bq6Q6P6D"
+    },
+    {
       "name": "東京神話",
       "name_translation": "Tokyo shinwa",
       "artist": "DJ TECHNORCH feat.宇宙★海月 vs BEMANI Sound Team \"U1-ASAMi\"",
@@ -82724,7 +82956,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.9
         },
         {
@@ -82749,7 +82980,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.3
         }
       ],
