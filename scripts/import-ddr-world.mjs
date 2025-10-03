@@ -81,17 +81,12 @@ try {
       // Add new song
       console.log(`Adding new song: ${worldSong.name}`);
 
-      let jacket = "";
+      let jacket = downloadJacket(worldSong.getJacketUrl(), worldSong.name);
 
       // Try to get jacket from remyLink if not already exists
       const remyLink = await guessUrlFromName(worldSong.name);
-      if (remyLink) {
+      if (remyLink && !jacket) {
         jacket = await getJacketFromRemySong(remyLink, worldSong.name);
-      }
-
-      // If still no jacket, try to get from DDR World using saHash
-      if (!jacket) {
-        jacket = downloadJacket(worldSong.getJacketUrl(), worldSong.name);
       }
 
       const meta = remyLink ? await getMetaFromRemy(remyLink) : {};
@@ -121,8 +116,8 @@ try {
 
   // Merge with existing data
   const sanbaiTasks = sanbaiSongs.map(async (sanbaiSong) => {
-    const existingSong = existingData.songs.find(
-      (s) => s.saHash === sanbaiSong.saHash || s.name === sanbaiSong.name,
+    const existingSong = existingData.songs.find((s) =>
+      SanbaiSongImporter.songEquals(s, sanbaiSong),
     );
 
     // Delete songs that are removed from the game
