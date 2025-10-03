@@ -1,29 +1,28 @@
 // @ts-check
 import { readFile } from "fs/promises";
 import * as path from "path";
-import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import { writeJsonData } from "./utils.mjs";
 import pp from "papaparse";
 
-const targetFile = path.join(import.meta.dirname, "../src/songs", "motl6.json");
-
-const sourceFile = path.join(
+const targetFile = path.join(
   import.meta.dirname,
   "../src/songs",
-  MIX_META.filename,
+  "motl6-iidx.json",
 );
+
+const sourceFile = path.join(import.meta.dirname, "../src/songs/iidx.json");
 /** @type {import('../src/models/SongData.js').GameData} */
 const existingData = JSON.parse(
   await readFile(sourceFile, { encoding: "utf-8" }),
 );
-existingData.i18n.en.name = "MotL6 DDR";
-existingData.i18n.ja.name = "MotL6 DDR";
+existingData.i18n.en.name = "MotL6 IIDX";
+existingData.i18n.ja.name = "MotL6 IIDX";
 existingData.meta.menuParent = "events";
 existingData.meta.styles = ["single"];
-delete existingData.meta.folders;
-existingData.meta.flags = ["shock"];
-existingData.defaults.flags = ["shock"];
-existingData.defaults.difficulties.push("basic");
+// delete existingData.meta.folders;
+// existingData.meta.flags = ["shock"];
+// existingData.defaults.flags = ["shock"];
+// existingData.defaults.difficulties.push("basic");
 
 const csvFile = process.argv[2];
 if (!csvFile) {
@@ -33,6 +32,7 @@ if (!csvFile) {
   process.exit();
 }
 
+/** @type {pp.ParseResult<{name:string;newLvl:number;diffClass:string}>} */
 const songlistData = pp.parse(await readFile(csvFile, { encoding: "utf-8" }), {
   header: true,
 });
@@ -77,21 +77,40 @@ function clearFlags(flaggable) {
 
 let totalCharts = 0;
 
-existingData.songs = existingData.songs.filter((song) => {
-  const matching = songlistData.data.filter((row) => comp(row.Song, song.name));
-  if (!matching.length) return false;
-  song.charts = song.charts.filter((chart) => {
-    if (chart.style !== "single") return false;
-    clearFlags(chart);
-    return matching.some((row) => row.Difficulty === normalizeDiff(chart));
-  });
-  if (song.charts.length) {
-    totalCharts += song.charts.length;
-    clearFlags(song);
-    return true;
+// existingData.songs = existingData.songs.filter((song) => {
+//   const matching = songlistData.data.filter((row) => comp(row.name, song.name));
+//   if (!matching.length) return false;
+//   song.charts = song.charts.filter((chart) => {
+//     if (chart.style !== "single") return false;
+//     // clearFlags(chart);
+//     return matching.some(
+//       (row) => (row.diffClass || "another") === chart.diffClass,
+//     );
+//   });
+//   if (song.charts.length) {
+//     totalCharts += song.charts.length;
+//     // clearFlags(song);
+//     return true;
+//   }
+//   console.log("filtered all", song);
+//   return false;
+// });
+
+songlistData.data.forEach((row) => {
+  const foundSong = existingData.songs.find((s) => s.name === row.name.trim());
+  if (!foundSong) {
+    console.log("missing: ", row.name);
+    return;
   }
-  console.log("filtered all", song);
-  return false;
+  foundSong.charts = foundSong.charts.filter((c) => c.style === "single");
+  const foundChart = foundSong.charts.find(
+    (c) => c.diffClass === (row.diffClass || "another"),
+  );
+  if (!foundChart) {
+    console.log(`missing ${row.diffClass || "another"} for `, row.name);
+    return;
+  }
+  foundChart.lvl = +row.newLvl;
 });
 
 await writeJsonData(existingData, targetFile);
@@ -102,6 +121,9 @@ console.log(
   } target) charts to ${path.basename(targetFile)}`,
 );
 
+// const missing = songlistData.data.filter((row) =>
+//   existingData.songs.some((song) => song.name === row.name),
+// );
 // console.log("Missing songs", missing);
 
 console.log("Done");
