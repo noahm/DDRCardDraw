@@ -7,9 +7,11 @@ import {
   Person,
   Refresh,
   Clipboard,
+  Draw,
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
+import { playerNameByIndex } from "../models/Drawing";
 import { JSX } from "react";
 
 interface Props {
@@ -84,6 +86,27 @@ export function IconMenu(props: Props) {
   );
 }
 
+export function FillPlaceholderList(props: {
+  onFillPlaceholder(p: number): void;
+}) {
+  const drawingMeta = useDrawing((d) => d.meta);
+  const players = useDrawing((d) => d.playerDisplayOrder).map(
+    (pIdx) => [playerNameByIndex(drawingMeta, pIdx), pIdx] as const,
+  );
+  return (
+    <Menu>
+      {players.map(([playerName, pIdx]) => (
+        <MenuItem
+          key={pIdx}
+          text={`Pick as ${playerName}`}
+          onClick={() => props.onFillPlaceholder(pIdx)}
+          icon={<Draw />}
+        />
+      ))}
+    </Menu>
+  );
+}
+
 interface IconRowProps {
   icon: JSX.Element;
   text: string;
@@ -91,14 +114,17 @@ interface IconRowProps {
 }
 
 function PlayerList({ icon, text, onClick }: IconRowProps) {
-  const players = useDrawing((d) => d.players);
+  const drawingMeta = useDrawing((d) => d.meta);
+  const players = useDrawing((d) => d.playerDisplayOrder).map(
+    (pIdx) => [playerNameByIndex(drawingMeta, pIdx), pIdx] as const,
+  );
   return (
     <MenuItem icon={icon} text={text}>
-      {players.map((p, idx) => (
+      {players.map(([playerName, pIdx]) => (
         <MenuItem
-          key={idx}
-          text={p || `P${idx + 1}`}
-          onClick={() => onClick(idx + 1)}
+          key={pIdx}
+          text={playerName}
+          onClick={() => onClick(pIdx)}
           icon={<Person />}
         />
       ))}
