@@ -56,7 +56,15 @@ const titleList = {
  * Correction map for invalid data on 3icecream site
  * @type {Map<SanbaiSong['song_id'], Partial<SanbaiSong>>}
  */
-const invalidDataOnSanbai = new Map([]);
+const invalidDataOnSanbai = new Map([
+  [
+    "DDlbDddPO8liioQ196P0I9090bDDPQ6Q", // 迷宮のロンド
+    {
+      ratings: [3, 6, 12, 15, 18, 6, 12, 15, 18],
+      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
+    },
+  ],
+]);
 
 export class SanbaiSongImporter {
   /**

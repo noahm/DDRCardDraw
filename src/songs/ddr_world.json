@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1759223152945
+    "lastUpdated": 1759975845717
   },
   "defaults": {
     "style": "single",
@@ -76403,6 +76403,55 @@
     {
       "name": "リメンバーリメンバー",
       "name_translation": "Remember remember",
+      "artist": "covered by 轟はじめ(ReGLOSS)",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "remyLink": "https://remywiki.com/Remember_remember",
+      "jacket": "ddr_world/リメンバーリメンバー_ReGLOSS.jpg",
+      "saHash": "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
+      "search_hint": "RAINY WALTZ/レイニーワルツ"
+    },
+    {
+      "name": "リメンバーリメンバー",
+      "name_translation": "Remember remember",
       "artist": "rino & m@sumi from plastic penguin",
       "bpm": "182",
       "folder": "DanceDanceRevolution World",
@@ -76455,54 +76504,6 @@
       "genre": "レイニーワルツ",
       "saHash": "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
       "jacket": "ddr_world/Remember_remember.jpg",
-      "search_hint": "RAINY WALTZ/レイニーワルツ"
-    },
-    {
-      "name": "リメンバーリメンバー",
-      "artist": "covered by 轟はじめ(ReGLOSS)",
-      "bpm": "182",
-      "folder": "DanceDanceRevolution World",
-      "charts": [
-        {
-          "style": "single",
-          "diffClass": "beginner",
-          "lvl": 2
-        },
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 7
-        },
-        {
-          "style": "single",
-          "diffClass": "difficult",
-          "lvl": 10
-        },
-        {
-          "style": "single",
-          "diffClass": "expert",
-          "lvl": 12
-        },
-        {
-          "style": "double",
-          "diffClass": "basic",
-          "lvl": 7
-        },
-        {
-          "style": "double",
-          "diffClass": "difficult",
-          "lvl": 10
-        },
-        {
-          "style": "double",
-          "diffClass": "expert",
-          "lvl": 13
-        }
-      ],
-      "flags": ["copyStrikes"],
-      "remyLink": "https://remywiki.com/Remember_remember",
-      "jacket": "ddr_world/リメンバーリメンバー_ReGLOSS.jpg",
-      "saHash": "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
       "search_hint": "RAINY WALTZ/レイニーワルツ"
     },
     {
@@ -85084,6 +85085,64 @@
       "saHash": "II8Dlo69PoPOII9P88qdlQPP8I61DlDo",
       "saIndex": "579",
       "search_hint": "BASEBALL HEROINE/ベースボールヒロイン"
+    },
+    {
+      "name": "迷宮のロンド",
+      "artist": "BEMANI Sound Team \"Captain KING\"",
+      "bpm": "85-340",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "340"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "340"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "340"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge"
+        }
+      ],
+      "jacket": "ddr_world/迷宮のロンド.jpg",
+      "saHash": "DDlbDddPO8liioQ196P0I9090bDDPQ6Q",
+      "flags": ["unlock"]
     },
     {
       "name": "追憶のアリア",

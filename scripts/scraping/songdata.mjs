@@ -5314,6 +5314,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.85, 0.7, 0.85, 0.1, 0, 0.7, 0.6, 0.5, 0],
   },
   {
+    song_id: "DDlbDddPO8liioQ196P0I9090bDDPQ6Q",
+    song_name: "迷宮のロンド",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [0, 0, 0, 15, 18, 0, 0, 0, 0],
+    tiers: [0, 0, 0, 1, 1, 0, 0, 0, 0],
+  },
+  {
     song_id: "dDldd8OlbPQDoD80dO0DiDOiIoP1PQoD",
     song_name: "Saturn",
     alternate_name: "土星",
@@ -12494,4 +12502,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1759223152945;
+export const SONG_DATA_LAST_UPDATED_unixms = 1759975845717;
