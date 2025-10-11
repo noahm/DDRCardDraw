@@ -18,6 +18,6 @@ export default tseslint.config(
     },
   },
   ...tseslint.configs.recommended,
-  reactHooksPlugin.configs.recommended,
+  reactHooksPlugin.configs.flat.recommended,
   eslintConfigPrettier,
 );
