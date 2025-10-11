@@ -1,299 +1,280 @@
-// @ts-check
 /**
- * This script pulls song data from ZiV, SkillAttack, and jackets from RemyWiki
- * all while merging with the existing data on disk to get the most up to date
- * song data with the least amount of manual work on my part.
+ * Import DDR series song data from various sources and merge into existing data file.
+ * Usage: `node scripts/import-ddr.mjs`
+ * (Note: This script is registered in npm script, so you can also call it with `yarn import:ddr`)
+ *
+ * If you want to import a different series (ex. DDR EXTREME), change the `MIX_META` import from `./scraping/ddr-sources.mjs`.
  */
+// @ts-check
+/** @typedef {import("../src/models/SongData.ts").Song} Song */
+/** @typedef {import("../src/models/SongData.ts").GameData} GameData */
 
-import { readFile } from "fs/promises";
 import * as path from "path";
+import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
-import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
-import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
-import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
-import { getSongsFromZiv } from "./scraping/ziv.mjs";
+
 import {
-  reportQueueStatusLive,
-  requestQueue,
   writeJsonData,
-  setJacketPrefix,
-  checkJacketExists,
+  requestQueue,
   sortSongs,
+  setJacketPrefix,
+  downloadJacket,
 } from "./utils.mjs";
+import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
+import { EAGateSongImporter } from "./scraping/eagate.mjs";
+import {
+  guessUrlFromName,
+  getJacketFromRemySong,
+  getMetaFromRemy,
+} from "./scraping/remy.mjs";
+import { SanbaiSongImporter } from "./scraping/sanbai.mjs";
+import { SkillAttackSongImporter } from "./scraping/skill-attack.mjs";
+import { ZivSongImporter } from "./scraping/ziv.mjs";
 
 setJacketPrefix(MIX_META.jacketPrefix);
 
-/** returns data to use for given songs */
-async function mergeSongs(oldData, zivData, saData, log) {
-  if (!oldData) {
-    oldData = zivData;
-  }
-
-  const data = {
-    ...zivData,
-    remyLink: oldData.remyLink,
-    jacket: oldData.jacket,
-    genre: oldData.genre,
-    flags: mergeFlags(oldData.flags, zivData.flags),
-    search_hint: oldData.search_hint,
-  };
-
-  delete data.getRemyLink;
-  if (!data.remyLink && MIX_META.fetchJackets) {
-    data.remyLink = await zivData.getRemyLink();
-  }
-
-  if (saData) {
-    data.saHash = saData.saHash;
-    data.saIndex = saData.saIndex;
-  }
-  if (oldData.artist_translation?.length > data.artist_translation?.length) {
-    data.artist_translation = oldData.artist_translation;
-  }
-  if (oldData.bpm.length > data.bpm) {
-    data.bpm = oldData.bpm;
-  }
-
-  if (!saData && MIX_META.mergeSkillAttack) {
-    log("[WARN] missing SA data for:", zivData.name);
-  }
-  // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
-  data.charts = (saData || data).charts.map((chart) => {
-    const oldChart = findMatchingChart(oldData.charts, chart);
-    let zivChart = findMatchingChart(zivData.charts, chart);
-    if (oldChart) {
-      return {
-        ...oldChart,
-        lvl: chart.lvl,
-        flags: zivChart
-          ? mergeFlags(oldChart.flags, zivChart.flags)
-          : oldChart.flags,
-      };
-    }
-    return chart;
-  });
-  return data;
-}
-
-function findMatchingChart(charts, target) {
-  return charts.find(
-    (oc) => oc.style === target.style && oc.diffClass === target.diffClass,
-  );
-}
-
+/** @type {Set<string>} */
+const alreadyFetched = new Set();
 /**
- *
- * @param {string[]} flagsA
- * @param {string[]} flagsB
- * @returns
+ * @param {Pick<Song, 'name'> & Partial<Pick<Song, 'remyLink' | 'jacket' | 'bpm' | 'artist'>>} song
+ * @returns {Promise<boolean>} whether any meta was added
  */
-function mergeFlags(flagsA = [], flagsB = []) {
-  const flags = new Set([...flagsA, ...flagsB]);
-  if (!flags.size) {
-    return;
-  }
-  if (flags.has("tempUnlock")) {
-    flags.delete("unlock");
-  }
-  return Array.from(flags);
-}
+async function tryGetMetaFromRemy(song) {
+  if ((song.remyLink && song.jacket) || alreadyFetched.has(song.name))
+    return false;
 
-function findSongFromSa(indexedSongs, saIndex, song) {
-  if (saIndex[song.saIndex]) {
-    return saIndex[song.saIndex];
-  }
-  let title = song.name;
-  const transforms = [
-    (s) => s,
-    (s) => s.replace("PARANOiA", "PARANOIA"),
-    (s) => s.replace("PARANOIA", "PARANOiA"),
-    (s) => s.replace(/～(.+)～/, " ($1)"),
-    (s) => s.replace(/（(.+)）/, " ($1)"),
-    (s) => s.replace(/-(.+)-/, " ($1)"),
-    (s) => s.replace(/[^\s]\(/, " ("),
-    (s) => s.replace("！", "!"),
-    (s) => s.replace("＋", "+"),
-    (s) => s.replace("＊", "*"),
-    (s) => s.replace("[“”]", '"'),
-    (s) => s.replace("･", "・"),
-  ];
-  for (const transform of transforms) {
-    title = transform(title);
-    if (indexedSongs[title]) {
-      return indexedSongs[title];
+  // Try to guess remyLink from name only once
+  alreadyFetched.add(song.name);
+  song.remyLink ||= await guessUrlFromName(song.name);
+  if (!song.remyLink) return false;
+
+  console.log(`Added "${song.name}" remyLink: ${song.remyLink}`);
+
+  // Try to get jacket from remyLink
+  if (!song.jacket && song.remyLink) {
+    const jacket = await getJacketFromRemySong(song.remyLink, song.name);
+    if (jacket) {
+      song.jacket = jacket;
+      console.log(`Added "${song.name}" jacket from remyLink: ${jacket}`);
     }
   }
-}
-
-/** best attempt at reconsiling data from ziv and sa */
-async function importSongsFromExternal(indexedSongs, saIndex, log) {
-  const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
-    getSongsFromZiv(
-      log,
-      MIX_META.ziv,
-      MIX_META.includeFolders,
-      MIX_META.titleOffset,
-    ).then((songs) => {
-      log(`Found ${songs.length} songs on ZiV`);
-      return songs;
-    }),
-    MIX_META.mergeSkillAttack
-      ? getSongsFromSkillAttack(log).then((songs) => {
-          log(`Found ${songs.length} songs on SA`);
-          return songs;
-        })
-      : [],
-    getRemovedSongUrls(MIX_META.remy)
-      .then((delSongs) => {
-        log(`Found ${delSongs.size} removed songs from RemyWiki`);
-        // if (delSongs.size) {
-        //   console.log(delSongs);
-        // }
-        return delSongs;
-      })
-      .catch(() => {
-        log("Failed to find removed songs on remy");
-        return new Set();
-      }),
-  ]);
-  let unmatchedSa = 0;
-  for (const saSong of saSongs) {
-    const existingSong = findSongFromSa(indexedSongs, saIndex, saSong);
-    if (!existingSong) {
-      unmatchedSa++;
-      log(
-        `  Unmatched song from SA: ${saSong.name}\n    index ${saSong.saIndex}\n    hash ${saSong.saHash}`,
-      );
+  if (!song.bpm || !song.artist) {
+    const meta = await getMetaFromRemy(song.remyLink);
+    if (!song.bpm && meta?.bpm) {
+      song.bpm = meta.bpm;
+      console.log(`Added "${song.name}" bpm from remyLink: ${meta.bpm}`);
+    }
+    if (!song.artist && meta?.artist) {
+      song.artist = meta.artist;
+      console.log(`Added "${song.name}" artist from remyLink: ${meta.artist}`);
     }
   }
-  log(`Total of ${unmatchedSa} unmatched SA songs`);
-  return Promise.all(
-    zivSongs.map(async (promiseOfSong) => {
-      const zivSong = await promiseOfSong;
-      if (
-        MIX_META.excludeTitles &&
-        MIX_META.excludeTitles.some((pattern) => zivSong.name.match(pattern))
-      ) {
-        return;
-      }
-      const existingSong = indexedSongs[zivSong.name];
-      const saSong = saSongs.find((song) => {
-        if (existingSong && existingSong.saIndex === song.saIndex) {
-          return true;
-        }
-        if (song.name === zivSong.name) return true;
-        return false;
-      });
-      const song = await mergeSongs(existingSong, zivSong, saSong, log);
-      if (removedRemyLinks.has(song.remyLink)) {
-        log("Skipping removed song");
-        return;
-      } else if (!existingSong) {
-        log(`  New song from ziv: ${song.name} (${song.remyLink})`);
-      }
-      if (!song.jacket) {
-        delete song.jacket;
-        if (MIX_META.fetchJackets) {
-          switch (MIX_META.preferredJacketSource) {
-            case "remy":
-              if (song.remyLink) {
-                const remyJacket = await getJacketFromRemySong(
-                  song.remyLink,
-                  song.name_translation,
-                );
-                if (remyJacket) {
-                  song.jacket = remyJacket;
-                  break;
-                }
-              }
-            case "ziv": {
-              const zivJacket = await zivSong.getZivJacket();
-              if (zivJacket) {
-                song.jacket = zivJacket;
-              }
-            }
-          }
-        } else {
-          const maybeJacket = checkJacketExists(
-            song.name_translation || song.name,
-          );
-          if (maybeJacket) {
-            song.jacket = maybeJacket;
-          }
-        }
-      }
-      // re-order flags field to be after jacket
-      // const flags = song.flags;
-      // if (flags) {
-      //   delete song.flags;
-      //   song.flags = flags;
-      // }
-      if (existingSong) {
-        if (!song.saHash) song.saHash = existingSong.saHash;
-        if (!song.saIndex) song.saIndex = existingSong.saIndex;
-      }
-      indexedSongs[zivSong.name] = song;
-    }),
-  );
+  return true;
 }
 
-async function main() {
+try {
   const targetFile = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     "../src/songs",
     MIX_META.filename,
   );
+
+  /** @type {import('../src/models/SongData.js').GameData} */
   const existingData = JSON.parse(
     await readFile(targetFile, { encoding: "utf-8" }),
   );
-  const prevCount = existingData.songs.length;
-  /** index of songs by title */
-  const indexedSongs = {};
-  const songsBySaIndex = {};
-  for (const song of existingData.songs) {
-    if (indexedSongs[song.name]) {
-      console.warn(`Duplicate song title: ${song.name}`);
-    }
-    indexedSongs[song.name] = song;
-    if (song.saIndex) {
-      songsBySaIndex[song.saIndex] = song;
-    }
-  }
 
-  const ui = reportQueueStatusLive();
-  const log = (...msgs) =>
-    ui.log.write(msgs.map((item) => item.toString()).join(" "));
+  if (MIX_META.eagate) {
+    console.log("Fetching songs from e-amusement GATE...");
+    const importer = new EAGateSongImporter(
+      MIX_META.eagate.songList,
+      MIX_META.eagate.jacket,
+    );
+    const fetchedSongs = await importer.fetchSongs();
 
-  await importSongsFromExternal(indexedSongs, songsBySaIndex, log);
+    console.log(`Fetched ${fetchedSongs.length} songs from DDR World`);
 
-  existingData.songs = sortSongs(Object.values(indexedSongs));
+    const tasks = fetchedSongs.map(
+      async (
+        /** @type {typeof fetchedSongs[number] & Partial<Song>} */ worldSong,
+      ) => {
+        // Find existing song by saHash
+        const existingSong = existingData.songs.find((s) =>
+          EAGateSongImporter.songEquals(s, worldSong),
+        );
 
-  for (const song of existingData.songs) {
-    if (!song.jacket && song.remyLink) {
-      const remyJacket = await getJacketFromRemySong(
-        song.remyLink,
-        song.name_translation,
-      );
-      if (remyJacket) {
-        song.jacket = remyJacket;
-      }
-    }
-  }
-  await writeJsonData(existingData, targetFile);
+        if (existingSong) {
+          // Get remyLink and jacket if missing
+          await tryGetMetaFromRemy(existingSong);
 
-  ui.log.write(
-    `Wrote ${existingData.songs.length} (${
-      existingData.songs.length - prevCount
-    } new) sorted songs to ${path.basename(targetFile)}`,
-  );
+          EAGateSongImporter.merge(existingSong, worldSong, [
+            "copyStrikes",
+            "shock",
+          ]);
+        } else {
+          console.log(`Adding new song: ${worldSong.name}`);
 
-  if (requestQueue.size) {
-    ui.log.write("waiting on remaining images to finish downloading...");
+          // Try to get meta data from remyLink
+          await tryGetMetaFromRemy(worldSong);
+
+          // If still no jacket, try to get from e-amusement GATE
+          if (!worldSong.jacket) {
+            worldSong.jacket = downloadJacket(
+              worldSong.getJacketUrl(),
+              worldSong.name,
+            );
+          }
+
+          /** @type {import('../src/models/SongData.js').Song} */
+          const newSong = {
+            name: worldSong.name,
+            artist: worldSong.artist || "",
+            bpm: worldSong.bpm || "???",
+            folder: "DanceDanceRevolution World",
+            charts: worldSong.charts,
+            remyLink: worldSong.remyLink,
+            jacket: worldSong.jacket,
+            saHash: worldSong.saHash,
+          };
+
+          existingData.songs.push(newSong);
+        }
+      },
+    );
+    console.log("Processing all e-amusement GATE songs...");
+    await Promise.all(tasks);
     await requestQueue.onIdle();
+    console.log(`Songs from e-amusement GATE: ${fetchedSongs.length}`);
   }
-  ui.log.write("Done");
-  ui.close();
+
+  if (MIX_META.sanbai) {
+    // Fetch 3icecream data using SanbaiSongImporter
+    const importer = new SanbaiSongImporter();
+    const fetchedSongs = await importer.fetchSongs();
+
+    // Merge with existing data
+    const tasks = fetchedSongs.map(
+      async (
+        /** @type {typeof fetchedSongs[number] & Partial<Song>} */ sanbaiSong,
+      ) => {
+        const existingSong = existingData.songs.find((s) =>
+          SanbaiSongImporter.songEquals(s, sanbaiSong),
+        );
+
+        // Delete songs that are removed from the game
+        if (sanbaiSong.deleted) {
+          if (existingSong) {
+            console.log(`Deleting removed song: ${existingSong.name}`);
+            existingData.songs = existingData.songs.filter(
+              (s) => s !== existingSong,
+            );
+          }
+          return;
+        }
+
+        if (existingSong) {
+          // Get remyLink and jacket if missing
+          await tryGetMetaFromRemy(existingSong);
+
+          SanbaiSongImporter.merge(existingSong, sanbaiSong, [
+            "copyStrikes",
+            "shock",
+          ]);
+        } else {
+          console.log(`Adding new song: ${sanbaiSong.name}`);
+
+          // Try to get meta data from remyLink
+          await tryGetMetaFromRemy(sanbaiSong);
+
+          // If still no jacket, try to get from 3icecream
+          if (!sanbaiSong.jacket) {
+            sanbaiSong.jacket = downloadJacket(
+              sanbaiSong.getJacketUrl(),
+              sanbaiSong.name,
+            );
+          }
+
+          existingData.songs.push({
+            name: sanbaiSong.name,
+            name_translation: sanbaiSong.name_translation,
+            artist: sanbaiSong.artist || "???",
+            bpm: sanbaiSong.bpm || "???",
+            charts: sanbaiSong.charts,
+            flags: sanbaiSong.flags,
+            jacket: sanbaiSong.jacket,
+            remyLink: sanbaiSong.remyLink,
+            saHash: sanbaiSong.saHash,
+            search_hint: sanbaiSong.search_hint,
+          });
+        }
+      },
+    );
+    console.log("Processing all 3icecream songs...");
+    await Promise.all(tasks);
+    await requestQueue.onIdle();
+    console.log(
+      `Songs from 3icecream (except deleted): ${fetchedSongs.filter((s) => !s.deleted).length}`,
+    );
+  }
+
+  if (MIX_META.ziv) {
+    const importer = new ZivSongImporter(
+      MIX_META.ziv.url,
+      MIX_META.ziv.difficulties,
+      existingData.meta?.folders,
+      MIX_META.ziv.correctionMap,
+    );
+    const fetchedSongs = await importer.fetchSongs();
+
+    const tasks = fetchedSongs.map(
+      async (
+        /** @type {typeof fetchedSongs[number] & Partial<Song>} */ zivSong,
+      ) => {
+        const existingSong = existingData.songs.find((s) =>
+          ZivSongImporter.songEquals(s, zivSong),
+        );
+        if (!existingSong || zivSong.deleted) return; // only merge existing songs
+        ZivSongImporter.merge(existingSong, zivSong);
+      },
+    );
+    console.log("Processing all zenius-i-vanisher songs...");
+    await Promise.all(tasks);
+    await requestQueue.onIdle();
+    console.log(`Songs from zenius-i-vanisher: ${fetchedSongs.length}`);
+  }
+
+  if (MIX_META.skillAttack) {
+    const importer = new SkillAttackSongImporter();
+    const fetchedSongs = await importer.fetchSongs();
+
+    const tasks = fetchedSongs.map(
+      async (
+        /** @type {typeof fetchedSongs[number] & Partial<Song>} */ saSong,
+      ) => {
+        const existingSong = existingData.songs.find((s) =>
+          SkillAttackSongImporter.songEquals(s, saSong),
+        );
+        if (!existingSong) return; // only merge existing songs
+        SkillAttackSongImporter.merge(existingSong, saSong);
+      },
+    );
+    console.log("Processing all Skill Attack songs...");
+    await Promise.all(tasks);
+    await requestQueue.onIdle();
+    console.log(`Songs from Skill Attack: ${fetchedSongs.length}`);
+  }
+
+  if (MIX_META.sortSongs) existingData.songs = sortSongs(existingData.songs);
+
+  const lastUpdated = MIX_META.sanbai
+    ? (await import("./scraping/songdata.mjs")).SONG_DATA_LAST_UPDATED_unixms
+    : undefined;
+  await writeJsonData(existingData, targetFile, lastUpdated);
+
+  console.log(`Successfully updated ${MIX_META.filename}`);
+  console.log(`Total songs in database: ${existingData.songs.length}`);
+  console.log("Done");
+} catch (e) {
+  console.error("Error updating DDR World data:", e);
+  process.exitCode = 1;
 }
-main().catch((e) => {
-  console.error(e);
-});
