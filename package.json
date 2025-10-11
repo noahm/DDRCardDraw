@@ -46,7 +46,7 @@
     "@babel/plugin-transform-react-jsx-source": "7.27.1",
     "@babel/preset-env": "7.28.3",
     "@babel/preset-typescript": "7.27.1",
-    "@blueprintjs/core": "6.3.1",
+    "@blueprintjs/core": "6.1.0",
     "@blueprintjs/datetime": "6.0.5",
     "@blueprintjs/icons": "6.1.0",
     "@blueprintjs/select": "6.0.5",
@@ -139,6 +139,7 @@
     "zustand": "5.0.3"
   },
   "resolutions": {
+    "@blueprintjs/core": "6.1.0",
     "loader-utils": "^2.0.0",
     "semver": "^7.5.2",
     "xml2js": "0.6.2"
