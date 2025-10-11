@@ -83,6 +83,7 @@ function useDataParsing(
   const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParseError(null);
     if (!droppedFolder) {
       setParsedPack(null);

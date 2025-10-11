@@ -58,28 +58,11 @@ const titleList = {
  */
 const invalidDataOnSanbai = new Map([
   [
-    "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6", // Bloody Tears (IIDX EDITION)
-    { ratings: [4, 5, 6, 11, 0, 5, 7, 11, 0] },
-  ],
-  [
-    "61QQi8i9Iliq66IOq1ib888b666o08O8", // Mermaid girl
-    { ratings: [3, 4, 7, 11, 12, 5, 8, 11, 12] },
-  ],
-  [
-    "PddldblI909IqI8PPiQIo9lIIiQdDo1l", // MEGALOVANIA
-    { ratings: [3, 9, 12, 16, 18, 9, 12, 16, 18] },
-  ],
-  [
-    "d88qo6I08PI8lDiiPoo0o8lPdqQDiq01", // Burstix Comet
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "iiDdl6b6Pb81oIPbd1DPPQOI1iq0D6ol", // Autosummer
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "oIIPQQD09OqdOP8bb61biDOPI69OP8q8", // Collapse of the Sanctuary
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+    "DDlbDddPO8liioQ196P0I9090bDDPQ6Q", // 迷宮のロンド
+    {
+      ratings: [3, 6, 12, 15, 18, 6, 12, 15, 18],
+      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
+    },
   ],
 ]);
 

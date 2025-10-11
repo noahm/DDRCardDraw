@@ -2,7 +2,14 @@ import classNames from "classnames";
 import React from "react";
 import { Intent, Tag } from "@blueprintjs/core";
 import styles from "./card-label.css";
-import { Inheritance, BanCircle, Lock, Crown, Draw } from "@blueprintjs/icons";
+import {
+  Inheritance,
+  BanCircle,
+  Lock,
+  Crown,
+  Draw,
+  SVGIconProps,
+} from "@blueprintjs/icons";
 import { usePlayerLabelForIndex } from "./use-player-label";
 
 export enum LabelType {
@@ -34,18 +41,18 @@ function getIntent(type: LabelType) {
   }
 }
 
-function getIcon(type: LabelType) {
+function LabelIcon({ type, ...props }: SVGIconProps & { type: LabelType }) {
   switch (type) {
     case LabelType.Pocket:
-      return Inheritance;
+      return <Inheritance {...props} />;
     case LabelType.Ban:
-      return BanCircle;
+      return <BanCircle {...props} />;
     case LabelType.Protect:
-      return Lock;
+      return <Lock {...props} />;
     case LabelType.Winner:
-      return Crown;
+      return <Crown {...props} />;
     case LabelType.FreePick:
-      return Draw;
+      return <Draw {...props} />;
   }
 }
 
@@ -56,14 +63,12 @@ export function CardLabel({ playerIdx, type, onRemove }: Props) {
     [styles.winner]: type === LabelType.Winner,
   });
 
-  const LabelIcon = getIcon(type);
-
   return (
     <div className={rootClassname}>
       <Tag
         intent={getIntent(type)}
-        icon={<LabelIcon size={20} />}
-        large
+        icon={<LabelIcon type={type} size={20} />}
+        size="large"
         onRemove={onRemove}
       >
         {label}
