@@ -10,7 +10,6 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mjs";
 import { getJacketFromRemySong, getRemovedSongUrls } from "./scraping/remy.mjs";
-import { getSongsFromSkillAttack } from "./scraping/skill-attack.mjs";
 import { getSongsFromZiv } from "./scraping/ziv.mjs";
 import {
   reportQueueStatusLive,
@@ -24,7 +23,7 @@ import {
 setJacketPrefix(MIX_META.jacketPrefix);
 
 /** returns data to use for given songs */
-async function mergeSongs(oldData, zivData, saData, log) {
+async function mergeSongs(oldData, zivData, log) {
   if (!oldData) {
     oldData = zivData;
   }
@@ -43,10 +42,6 @@ async function mergeSongs(oldData, zivData, saData, log) {
     data.remyLink = await zivData.getRemyLink();
   }
 
-  if (saData) {
-    data.saHash = saData.saHash;
-    data.saIndex = saData.saIndex;
-  }
   if (oldData.artist_translation?.length > data.artist_translation?.length) {
     data.artist_translation = oldData.artist_translation;
   }
@@ -54,11 +49,8 @@ async function mergeSongs(oldData, zivData, saData, log) {
     data.bpm = oldData.bpm;
   }
 
-  if (!saData && MIX_META.mergeSkillAttack) {
-    log("[WARN] missing SA data for:", zivData.name);
-  }
   // copy flags and stuff over from previous chart definitions onto sa lvl difficulty data
-  data.charts = (saData || data).charts.map((chart) => {
+  data.charts = data.charts.map((chart) => {
     const oldChart = findMatchingChart(oldData.charts, chart);
     let zivChart = findMatchingChart(zivData.charts, chart);
     if (oldChart) {
@@ -127,7 +119,7 @@ function findSongFromSa(indexedSongs, saIndex, song) {
 
 /** best attempt at reconsiling data from ziv and sa */
 async function importSongsFromExternal(indexedSongs, saIndex, log) {
-  const [zivSongs, saSongs, removedRemyLinks] = await Promise.all([
+  const [zivSongs, removedRemyLinks] = await Promise.all([
     getSongsFromZiv(
       log,
       MIX_META.ziv,
@@ -137,12 +129,6 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       log(`Found ${songs.length} songs on ZiV`);
       return songs;
     }),
-    MIX_META.mergeSkillAttack
-      ? getSongsFromSkillAttack(log).then((songs) => {
-          log(`Found ${songs.length} songs on SA`);
-          return songs;
-        })
-      : [],
     getRemovedSongUrls(MIX_META.remy)
       .then((delSongs) => {
         log(`Found ${delSongs.size} removed songs from RemyWiki`);
@@ -157,15 +143,6 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
       }),
   ]);
   let unmatchedSa = 0;
-  for (const saSong of saSongs) {
-    const existingSong = findSongFromSa(indexedSongs, saIndex, saSong);
-    if (!existingSong) {
-      unmatchedSa++;
-      log(
-        `  Unmatched song from SA: ${saSong.name}\n    index ${saSong.saIndex}\n    hash ${saSong.saHash}`,
-      );
-    }
-  }
   log(`Total of ${unmatchedSa} unmatched SA songs`);
   return Promise.all(
     zivSongs.map(async (promiseOfSong) => {
@@ -177,14 +154,7 @@ async function importSongsFromExternal(indexedSongs, saIndex, log) {
         return;
       }
       const existingSong = indexedSongs[zivSong.name];
-      const saSong = saSongs.find((song) => {
-        if (existingSong && existingSong.saIndex === song.saIndex) {
-          return true;
-        }
-        if (song.name === zivSong.name) return true;
-        return false;
-      });
-      const song = await mergeSongs(existingSong, zivSong, saSong, log);
+      const song = await mergeSongs(existingSong, zivSong, log);
       if (removedRemyLinks.has(song.remyLink)) {
         log("Skipping removed song");
         return;
