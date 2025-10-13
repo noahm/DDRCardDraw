@@ -156,7 +156,10 @@ export function DrawingActions() {
           variant="minimal"
           icon={<FloppyDisk />}
           onClick={() =>
-            shareCharts(getDrawing().charts.filter((c) => c.type === "DRAWN"))
+            shareCharts(
+              getDrawing().charts.filter((c) => c.type === "DRAWN"),
+              "drawn",
+            )
           }
         />
       </Tooltip>

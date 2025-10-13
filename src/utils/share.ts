@@ -22,7 +22,10 @@ export function dateForFilename() {
   return `${d.getFullYear()}${zeroPad(d.getMonth() + 1, 2)}${zeroPad(d.getDay(), 2)}-${zeroPad(d.getHours(), 2)}${zeroPad(d.getMinutes(), 2)}${zeroPad(d.getSeconds(), 2)}`;
 }
 
-export async function shareCharts(charts: EligibleChart[]) {
+export async function shareCharts(
+  charts: EligibleChart[],
+  type: "drawn" | "eligible",
+) {
   const csvData = [
     ["name", "diff", "lvl", "sanbaiLvl", "bpm", "artist", "sanbai_url"],
     ...charts.map((chart) => {
@@ -43,7 +46,7 @@ export async function shareCharts(charts: EligibleChart[]) {
   const pp = await import("papaparse");
 
   shareData(buildDataUri(pp.unparse(csvData), "text/csv", "url"), {
-    filename: `ddr-tools-eligible-charts-${dateForFilename()}.csv`,
+    filename: `ddr-tools-${type}-charts-${dateForFilename()}.csv`,
     methods: [
       { type: "nativeShare", allowDesktop: false },
       { type: "download" },

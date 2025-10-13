@@ -48,7 +48,7 @@ export default function EligibleChartsList() {
   }, [charts, isDisplayFiltered, currentTab]);
 
   const exportData = useCallback(async () => {
-    shareCharts(filteredCharts);
+    shareCharts(filteredCharts, "eligible");
   }, [filteredCharts]);
 
   if (!gameData) {
