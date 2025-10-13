@@ -294,6 +294,7 @@ export function DrawingActions() {
                 store.getState().drawings,
                 drawingId,
               )[1].charts.filter((c) => c.type === "DRAWN"),
+              "drawn",
             )
           }
         />
