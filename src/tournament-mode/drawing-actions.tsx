@@ -12,6 +12,7 @@ import {
   Share,
   Camera,
   Refresh,
+  FloppyDisk,
   NewPerson,
   BlockedPerson,
   Error,
@@ -21,7 +22,7 @@ import styles from "./drawing-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
 import { domToPng } from "modern-screenshot";
-import { shareImage } from "../utils/share";
+import { shareImage, shareCharts } from "../utils/share";
 import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
@@ -94,7 +95,7 @@ export function DrawingActions() {
   }
 
   const button = (
-    <Button minimal text={<Share />} disabled={!remotePeers.size} />
+    <Button variant="minimal" text={<Share />} disabled={!remotePeers.size} />
   );
 
   return (
@@ -117,7 +118,7 @@ export function DrawingActions() {
       ) : null}
       <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
         <Button
-          minimal
+          variant="minimal"
           icon={<Camera />}
           onClick={async () => {
             const drawingId = getDrawing().id;
@@ -137,7 +138,7 @@ export function DrawingActions() {
       </Tooltip>
       <Tooltip content={t("drawing.redrawAll", undefined, "Redraw all charts")}>
         <Button
-          minimal
+          variant="minimal"
           icon={<Refresh />}
           onClick={() =>
             confirm(
@@ -150,16 +151,25 @@ export function DrawingActions() {
           }
         />
       </Tooltip>
+      <Tooltip content={t("drawing.copyCards", undefined, "Save as CSV")}>
+        <Button
+          variant="minimal"
+          icon={<FloppyDisk />}
+          onClick={() =>
+            shareCharts(getDrawing().charts.filter((c) => c.type === "DRAWN"))
+          }
+        />
+      </Tooltip>
       {process.env.NODE_ENV === "production" ? null : (
         <Tooltip content="Cause Error">
-          <Button minimal icon={<Error />} onClick={showBoundary} />
+          <Button variant="minimal" icon={<Error />} onClick={showBoundary} />
         </Tooltip>
       )}
       {showLabels && (
         <>
           <Tooltip content={t("drawing.addPlayer", undefined, "Add Player")}>
             <Button
-              minimal
+              variant="minimal"
               icon={<NewPerson />}
               onClick={() => {
                 updateDrawing((drawing) => {
@@ -175,7 +185,7 @@ export function DrawingActions() {
             disabled={!hasPlayers}
           >
             <Button
-              minimal
+              variant="minimal"
               icon={<BlockedPerson />}
               disabled={!hasPlayers}
               onClick={() => {
