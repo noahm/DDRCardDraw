@@ -5277,14 +5277,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvas@npm:3.1.0":
-  version: 3.1.0
-  resolution: "canvas@npm:3.1.0"
+"canvas@npm:3.1.1":
+  version: 3.1.1
+  resolution: "canvas@npm:3.1.1"
   dependencies:
     node-addon-api: "npm:^7.0.0"
     node-gyp: "npm:latest"
-    prebuild-install: "npm:^7.1.1"
-  checksum: 10/810f28fd340374b14579d96651afb1e8c0a01fa4aa636f7092260bd376eaf3fa158e3996331ee9fb6c0c805cb44c49c7ebd8a2ca6366c1a494dedc3385ac6112
+    prebuild-install: "npm:^7.1.3"
+  checksum: 10/c0e882d1f47d0a91282872c0f8e61fd68ba531c6168acb235fb46390242cf80cf4f8a08f3907e5caa9e9fa14601675c9115a119ce2f01647224d50a1b8304eb9
   languageName: node
   linkType: hard
 
@@ -6347,7 +6347,7 @@ __metadata:
     babel-loader: "npm:10.0.0"
     better-sqlite3: "npm:12.4.1"
     cacheable-lookup: "npm:7.0.0"
-    canvas: "npm:3.1.0"
+    canvas: "npm:3.1.1"
     classnames: "npm:2.5.1"
     clean-webpack-plugin: "npm:4.0.0"
     copy-webpack-plugin: "npm:13.0.0"
@@ -11527,7 +11527,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prebuild-install@npm:^7.1.1":
+"prebuild-install@npm:^7.1.1, prebuild-install@npm:^7.1.3":
   version: 7.1.3
   resolution: "prebuild-install@npm:7.1.3"
   dependencies:

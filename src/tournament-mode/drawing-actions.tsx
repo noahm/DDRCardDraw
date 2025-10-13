@@ -40,16 +40,25 @@ import {
   ReportSetMutationVariables as MutationVariables,
   useReportSetMutation,
 } from "../startgg-gql";
-import { drawingsSlice } from "../state/drawings.slice";
+import {
+  drawingsSlice,
+  getDrawingFromCompoundId,
+} from "../state/drawings.slice";
 import { eventSlice } from "../state/event.slice";
-import { AppThunk, useAppDispatch, useAppState } from "../state/store";
+import {
+  AppThunk,
+  store,
+  useAppDispatch,
+  useAppState,
+  useAppStore,
+} from "../state/store";
 import {
   createPlusOneChart,
   createRedrawAll,
   createSubdraw,
 } from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
-import { shareImage } from "../utils/share";
+import { shareCharts, shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
 import { EventModeGated } from "../common-components/app-mode";
 import { useIntl } from "../hooks/useIntl";
@@ -107,6 +116,7 @@ const DEFAULT_FILENAME = "card-draw.png";
 
 function SaveToStartggButton({ drawingId }: { drawingId: string }) {
   const dispatch = useAppDispatch();
+  const store = useAppStore();
   const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
   const [mutationData, reportSet] = useReportSetMutation();
   if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
@@ -272,6 +282,20 @@ export function DrawingActions() {
               );
             }
           }}
+        />
+      </Tooltip>
+      <Tooltip content={t("drawing.copyCards", undefined, "Save as CSV")}>
+        <Button
+          variant="minimal"
+          icon={<FloppyDisk />}
+          onClick={() =>
+            shareCharts(
+              getDrawingFromCompoundId(
+                store.getState().drawings,
+                drawingId,
+              )[1].charts.filter((c) => c.type === "DRAWN"),
+            )
+          }
         />
       </Tooltip>
       {process.env.NODE_ENV === "production" ? null : (
