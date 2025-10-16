@@ -10,7 +10,7 @@ import {
   Draw,
   SVGIconProps,
 } from "@blueprintjs/icons";
-import { usePlayerLabel } from "./use-player-label";
+import { usePlayerLabelForIndex } from "./use-player-label";
 
 export enum LabelType {
   Protect = 1,
@@ -21,7 +21,7 @@ export enum LabelType {
 }
 
 interface Props {
-  player: number;
+  playerIdx: number;
   type: LabelType;
   onRemove?: () => void;
 }
@@ -56,8 +56,8 @@ function LabelIcon({ type, ...props }: SVGIconProps & { type: LabelType }) {
   }
 }
 
-export function CardLabel({ player, type, onRemove }: Props) {
-  const label = usePlayerLabel(player);
+export function CardLabel({ playerIdx, type, onRemove }: Props) {
+  const label = usePlayerLabelForIndex(playerIdx);
 
   const rootClassname = classNames(styles.cardLabel, {
     [styles.winner]: type === LabelType.Winner,
