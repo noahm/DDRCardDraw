@@ -32,7 +32,7 @@
       }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1755979824092
+    "lastUpdated": 1760573168074
   },
   "defaults": {
     "style": "solo",
@@ -28172,6 +28172,351 @@
         {
           "style": "solo",
           "lvl": 18,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "711",
+      "name": "Daydream Therapy",
+      "artist": "Joe Bermudez feat. Dana Mckeon",
+      "genre": "Dance",
+      "bpm": "130",
+      "jacket": "smx/DaydreamTherapy.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "712",
+      "name": "Mm-Hmm",
+      "artist": "W3WAY",
+      "genre": "K-Pop",
+      "bpm": "107",
+      "jacket": "smx/Mm-hmm.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 20,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 9,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "713",
+      "name": "Singin' Every Nite",
+      "artist": "Paso vs. Maximus",
+      "genre": "Italodance",
+      "bpm": "133",
+      "jacket": "smx/Singin'EveryNite.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 1,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "714",
+      "name": "Under The Moonlight",
+      "artist": "M-Project",
+      "genre": "Hardcore",
+      "bpm": "170",
+      "jacket": "smx/UnderTheMoonlight.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 19,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "715",
+      "name": "Waiting",
+      "artist": "KUURO feat. Bianca",
+      "genre": "Pop Trap",
+      "bpm": "90-180",
+      "jacket": "smx/Waiting.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 11,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
           "diffClass": "dual",
           "flags": ["plus"]
         },
