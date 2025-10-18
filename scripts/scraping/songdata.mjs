@@ -5316,7 +5316,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "DDlbDddPO8liioQ196P0I9090bDDPQ6Q",
     song_name: "迷宮のロンド",
-    alphabet: "?",
+    searchable_name: "めいきゅうのろんど",
+    romanized_name: "Meikyuu no Rondo",
+    alphabet: "ま",
     version_num: 20,
     ratings: [0, 0, 0, 15, 18, 0, 0, 0, 0],
     tiers: [0, 0, 0, 1, 1, 0, 0, 0, 0],
@@ -12502,4 +12504,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1759975845717;
+export const SONG_DATA_LAST_UPDATED_unixms = 1760143650267;
