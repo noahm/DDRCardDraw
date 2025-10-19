@@ -1251,7 +1251,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blueprintjs/colors@npm:^5.1.8":
+"@blueprintjs/colors@npm:^5.1.9":
   version: 5.1.9
   resolution: "@blueprintjs/colors@npm:5.1.9"
   dependencies:
@@ -1260,12 +1260,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blueprintjs/core@npm:6.1.0":
-  version: 6.1.0
-  resolution: "@blueprintjs/core@npm:6.1.0"
+"@blueprintjs/core@npm:6.3.2":
+  version: 6.3.2
+  resolution: "@blueprintjs/core@npm:6.3.2"
   dependencies:
-    "@blueprintjs/colors": "npm:^5.1.8"
-    "@blueprintjs/icons": "npm:^6.0.0"
+    "@blueprintjs/colors": "npm:^5.1.9"
+    "@blueprintjs/icons": "npm:^6.2.0"
     "@popperjs/core": "npm:^2.11.8"
     classnames: "npm:^2.3.1"
     normalize.css: "npm:^8.0.1"
@@ -1283,17 +1283,17 @@ __metadata:
   bin:
     upgrade-blueprint-2.0.0-rename: scripts/upgrade-blueprint-2.0.0-rename.sh
     upgrade-blueprint-3.0.0-rename: scripts/upgrade-blueprint-3.0.0-rename.sh
-  checksum: 10/728a135d4bec1218531b9503e145461316d5b953605788f3f71550a69195b70e89592eafcef63e6fa95fecb22bc5dc542d3ddc2556bbe8573f711e2e153df8c3
+  checksum: 10/93132d6d117a5a47550bff55c474e103a4057a4418dd94f31e08853fff4daeec297b91082a6a62debec12d9d7f4c36ba7b853cb00bf2652380e348f150d66eee
   languageName: node
   linkType: hard
 
-"@blueprintjs/datetime@npm:6.0.5":
-  version: 6.0.5
-  resolution: "@blueprintjs/datetime@npm:6.0.5"
+"@blueprintjs/datetime@npm:6.0.6":
+  version: 6.0.6
+  resolution: "@blueprintjs/datetime@npm:6.0.6"
   dependencies:
-    "@blueprintjs/core": "npm:^6.3.1"
-    "@blueprintjs/icons": "npm:^6.1.0"
-    "@blueprintjs/select": "npm:^6.0.5"
+    "@blueprintjs/core": "npm:^6.3.2"
+    "@blueprintjs/icons": "npm:^6.2.0"
+    "@blueprintjs/select": "npm:^6.0.6"
     classnames: "npm:^2.3.1"
     date-fns: "npm:^2.28.0"
     date-fns-tz: "npm:^2.0.0"
@@ -1307,13 +1307,13 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/051203b44cfee2d9f642ad56ebf78afb419cc332bfee1c4013fc5bec11663944ad8c81bae5e27fe4ab6847e0d12e60d04e79daf42434166a4b50356707d25a47
+  checksum: 10/85c20975acb6a4b41ce57db21e1f9634165f0c54f4c32f1264369690abeecf2970c2ab0855ba794fd7f3d657a10aba916b2b126ae47a2fd1fc8ad777cd4e9c03
   languageName: node
   linkType: hard
 
-"@blueprintjs/icons@npm:6.1.0, @blueprintjs/icons@npm:^6.0.0, @blueprintjs/icons@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@blueprintjs/icons@npm:6.1.0"
+"@blueprintjs/icons@npm:6.2.0, @blueprintjs/icons@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@blueprintjs/icons@npm:6.2.0"
   dependencies:
     change-case: "npm:^4.1.2"
     classnames: "npm:^2.3.1"
@@ -1325,16 +1325,16 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/82ef37caeb999a22da56f0256f0ac29954e48aa156a4181d1a5f7186acb57e2f37f579b152debc5360d4e709d000ac819f56515b7639d58d7cb07e35cc741edc
+  checksum: 10/59d262ebc6a938cbcb238617603c5da70f62399b2d4533f5d65892e704eb4eae53b843e00c6f5413b2e7f2b7ce209a77348d45279e04578861d6e9ace1859fa2
   languageName: node
   linkType: hard
 
-"@blueprintjs/select@npm:6.0.5, @blueprintjs/select@npm:^6.0.5":
-  version: 6.0.5
-  resolution: "@blueprintjs/select@npm:6.0.5"
+"@blueprintjs/select@npm:6.0.6, @blueprintjs/select@npm:^6.0.6":
+  version: 6.0.6
+  resolution: "@blueprintjs/select@npm:6.0.6"
   dependencies:
-    "@blueprintjs/core": "npm:^6.3.1"
-    "@blueprintjs/icons": "npm:^6.1.0"
+    "@blueprintjs/core": "npm:^6.3.2"
+    "@blueprintjs/icons": "npm:^6.2.0"
     classnames: "npm:^2.3.1"
     tslib: "npm:~2.6.2"
   peerDependencies:
@@ -1344,7 +1344,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/3d32e28ed48ed7d801ba2633189accfd4f048cca06268e7b0d2a2c91994a1e54c1903f2bb3711e78b8ee7a2c2ae41816096a20aa13d6559b184dee3bcbd4ec92
+  checksum: 10/5594b15899ee95188db0d0b55d5fa90759a71b15b1b4a2c0d7a19acf79c9870c39cf8545bb65327e0df2fc42bb70901b3ef9f0e93f11487aab0b77a737c6cbf5
   languageName: node
   linkType: hard
 
@@ -4560,10 +4560,10 @@ __metadata:
     "@babel/plugin-transform-react-jsx-source": "npm:7.27.1"
     "@babel/preset-env": "npm:7.28.3"
     "@babel/preset-typescript": "npm:7.27.1"
-    "@blueprintjs/core": "npm:6.1.0"
-    "@blueprintjs/datetime": "npm:6.0.5"
-    "@blueprintjs/icons": "npm:6.1.0"
-    "@blueprintjs/select": "npm:6.0.5"
+    "@blueprintjs/core": "npm:6.3.2"
+    "@blueprintjs/datetime": "npm:6.0.6"
+    "@blueprintjs/icons": "npm:6.2.0"
+    "@blueprintjs/select": "npm:6.0.6"
     "@lcdp/offline-plugin": "npm:5.1.1"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:0.5.16"
     "@types/better-sqlite3": "npm:7.6.13"
