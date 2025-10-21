@@ -2,7 +2,7 @@
 /** @typedef {import("jsdom").JSDOM} JSDOM */
 
 import * as path from "path";
-import { downloadJacket, getDom } from "../utils.mjs";
+import { downloadJacket, getDom } from "../utils.mts";
 
 /** Will try to return a jacket URL from the wiki page, if found
  * @param {string} pageUrl

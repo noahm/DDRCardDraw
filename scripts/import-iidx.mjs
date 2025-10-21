@@ -4,7 +4,7 @@
 
 import { promises as fs } from "fs";
 import * as path from "path";
-import { writeJsonData } from "./utils.mjs";
+import { writeJsonData } from "./utils.mts";
 import { fileURLToPath } from "url";
 import { parseStringPromise } from "xml2js";
 import { decode as decodeHTML } from "html-entities";

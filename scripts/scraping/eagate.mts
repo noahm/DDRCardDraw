@@ -1,14 +1,12 @@
-// @ts-check
-/** @typedef {import("../../src/models/SongData.ts").Song} Song */
-/** @typedef {import("../../src/models/SongData.ts").Chart} Chart */
+import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import { downloadJacket, getDom } from "../utils.mts";
+import type { DDRSongImporter } from "./ddr-sources.mts";
 
-import { downloadJacket, getDom } from "../utils.mjs";
-
-/**
- * Name & Artist Normalization
- * @type {Map<Song['saHash'], Partial<Pick<Song, 'name' | "artist">>>}
- */
-const normalized = new Map([
+/** Name & Artist Normalization */
+const normalized: Map<
+  Song["saHash"],
+  Partial<Pick<Song, "name" | "artist">>
+> = new Map([
   [
     "q1DPdd1ooiPi9P0b0Obqq1QqbD86Qb18",
     { name: "鏡花水月楼 (DDR EDITION)", artist: "TЁЯRA feat.宇宙戦隊NOIZ" },
@@ -62,27 +60,40 @@ const normalized = new Map([
   ],
 ]);
 
+type EAGateSongData = Required<
+  Pick<Song, "name" | "artist" | "saHash" | "charts">
+> & {
+  getJacketUrl: () => string;
+};
+
 /** Song importer from KONAMI e-amusement GATE */
-export class EAGateSongImporter {
+export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
   /** URL to DDR song list page */
-  #songListUrl;
+  readonly #songListUrl: string;
   /** URL to jacket image file (without `&img={saHash}` parameter) */
-  #jacketUrl;
+  readonly #jacketUrl: string;
+  /** Flags to preserve */
+  readonly #unmanagedFlags: string[];
 
   /**
-   * @param {string} songListUrl URL to DDR song list page
-   * @param {string} jacketUrl URL to jacket image file (without `&img={saHash}` parameter)
+   * @param songListUrl URL to DDR song list page
+   * @param jacketUrl URL to jacket image file (without `&img={saHash}` parameter)
+   * @param unmanagedFlags Flags to preserve
    */
-  constructor(songListUrl, jacketUrl) {
+  constructor(
+    songListUrl: string,
+    jacketUrl: string,
+    unmanagedFlags: string[],
+  ) {
     this.#songListUrl = songListUrl;
     this.#jacketUrl = jacketUrl;
+    this.#unmanagedFlags = unmanagedFlags;
   }
 
   /**
    * Fetches song data from KONAMI e-amusement GATE
-   * @returns {Promise<(Required<Pick<Song, "name" | "artist" | "saHash" | "charts">> & { getJacketUrl: () => string })[]>}
    */
-  async fetchSongs() {
+  async fetchSongs(): Promise<EAGateSongData[]> {
     console.log(`Starting to fetch song data from KONAMI e-amusement GATE`);
 
     const jacketUrl = this.#jacketUrl;
@@ -168,7 +179,7 @@ export class EAGateSongImporter {
      * @summary Scrapes song data from KONAMI e-amusement GATE website
      * @param {string} pageUrl DDR song list URL
      */
-    async function scrape(pageUrl) {
+    async function scrape(pageUrl: string) {
       const dom = await getDom(pageUrl);
       if (!dom) return [];
 
@@ -196,8 +207,8 @@ export class EAGateSongImporter {
 
         try {
           // Get hash value (extracted from jacket image filename)
-          /** @type {HTMLImageElement | null} */
-          const jacketImg = cells[0].querySelector("img");
+          const jacketImg: HTMLImageElement | null =
+            cells[0].querySelector("img");
           let saHash = "";
 
           if (jacketImg?.src) {
@@ -221,9 +232,8 @@ export class EAGateSongImporter {
            * Chart difficulties
            * (cells 4-8: Single BE, BA, DI, EX, CH)
            * (cells 9-12: Double BA, DI, EX, CH)
-           * @type {Pick<Chart, 'style' | 'diffClass'>[]}
            */
-          const difficulties = [
+          const difficulties: Pick<Chart, "style" | "diffClass">[] = [
             { style: "single", diffClass: "beginner" },
             { style: "single", diffClass: "basic" },
             { style: "single", diffClass: "difficult" },
@@ -263,45 +273,44 @@ export class EAGateSongImporter {
 
   /**
    * Compares two song objects for equality
-   * @param {Song} existingSong
-   * @param {Awaited<ReturnType<EAGateSongImporter["fetchSongs"]>>[number]} eagateSong
-   * @returns {boolean} True if songs are considered equal (same saHash)
+   * @param existingSong
+   * @param fetchedSong
+   * @returns True if songs are considered equal (same saHash)
    */
-  static songEquals(existingSong, eagateSong) {
-    return existingSong.saHash === eagateSong.saHash;
+  songEquals(existingSong: Song, fetchedSong: EAGateSongData): boolean {
+    return existingSong.saHash === fetchedSong.saHash;
   }
 
   /**
    * Merges data from an `eagateSong` into `existingSong` object.
    * @summary This function with side effects that change `existingSong` object
-   * @param {Song} existingSong Existing song object to update
-   * @param {Awaited<ReturnType<EAGateSongImporter["fetchSongs"]>>[number]} eagateSong Song data from e-amusement GATE
-   * @param {string[]} unmanagedFlags Flags to preserve
-   * @returns {boolean} True if the merge resulted in any updates
+   * @param existingSong Existing song object to update
+   * @param fetchedSong Song data from e-amusement GATE
+   * @returns True if the merge resulted in any updates
    */
-  static merge(existingSong, eagateSong, unmanagedFlags = []) {
+  merge(existingSong: Song, fetchedSong: EAGateSongData): boolean {
     let hasUpdates = false;
 
     // Update name if different (prefer e-amusement GATE notation)
-    if (existingSong.name !== eagateSong.name) {
+    if (existingSong.name !== fetchedSong.name) {
       console.log(
-        `Updated song name: "${existingSong.name}" -> "${eagateSong.name}"`,
+        `Updated song name: "${existingSong.name}" -> "${fetchedSong.name}"`,
       );
-      existingSong.name = eagateSong.name;
+      existingSong.name = fetchedSong.name;
       hasUpdates = true;
     }
 
     // Update artist (prefer e-amusement GATE notation)
-    if (existingSong.artist !== eagateSong.artist) {
+    if (existingSong.artist !== fetchedSong.artist) {
       console.log(
-        `Updated "${eagateSong.name}" artist: "${existingSong.artist}" -> "${eagateSong.artist}"`,
+        `Updated "${fetchedSong.name}" artist: "${existingSong.artist}" -> "${fetchedSong.artist}"`,
       );
-      existingSong.artist = eagateSong.artist;
+      existingSong.artist = fetchedSong.artist;
       hasUpdates = true;
     }
 
     // Update charts - merge with existing charts, prefer e-amusement GATE data for lvl
-    for (const eagateChart of eagateSong.charts) {
+    for (const eagateChart of fetchedSong.charts) {
       const existingChart = existingSong.charts.find(
         (chart) =>
           chart.style === eagateChart.style &&
@@ -310,7 +319,7 @@ export class EAGateSongImporter {
 
       if (!existingChart) {
         console.log(
-          `Added "${eagateSong.name}": [${eagateChart.style}/${eagateChart.diffClass}] (Lv.${eagateChart.lvl})`,
+          `Added "${fetchedSong.name}": [${eagateChart.style}/${eagateChart.diffClass}] (Lv.${eagateChart.lvl})`,
         );
         existingSong.charts.push({ ...eagateChart });
         hasUpdates = true;
@@ -320,7 +329,7 @@ export class EAGateSongImporter {
       // Update level if different
       if (existingChart.lvl !== eagateChart.lvl) {
         console.log(
-          `Updated "${eagateSong.name}" [${eagateChart.style}/${eagateChart.diffClass}] level: ${existingChart.lvl} -> ${eagateChart.lvl}`,
+          `Updated "${fetchedSong.name}" [${eagateChart.style}/${eagateChart.diffClass}] level: ${existingChart.lvl} -> ${eagateChart.lvl}`,
         );
         existingChart.lvl = eagateChart.lvl;
         hasUpdates = true;
@@ -329,17 +338,17 @@ export class EAGateSongImporter {
       // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)
       if (existingChart.flags) {
         const flagsToRemove = existingChart.flags.filter(
-          (f) => !unmanagedFlags.includes(f),
+          (f) => !this.#unmanagedFlags.includes(f),
         );
         if (flagsToRemove.length > 0) {
           existingChart.flags = existingChart.flags.filter((f) =>
-            unmanagedFlags.includes(f),
+            this.#unmanagedFlags.includes(f),
           );
           if (existingChart.flags.length === 0) {
             delete existingChart.flags;
           }
           console.log(
-            `Removed "${eagateSong.name}" [${eagateChart.style}/${eagateChart.diffClass}] flags: ${flagsToRemove}`,
+            `Removed "${fetchedSong.name}" [${eagateChart.style}/${eagateChart.diffClass}] flags: ${flagsToRemove}`,
           );
           hasUpdates = true;
         }
@@ -347,9 +356,9 @@ export class EAGateSongImporter {
     }
 
     // Try to get jacket from e-amusement GATE
-    if (!existingSong.jacket && eagateSong.saHash) {
+    if (!existingSong.jacket && fetchedSong.saHash) {
       const jacket = downloadJacket(
-        eagateSong.getJacketUrl(),
+        fetchedSong.getJacketUrl(),
         existingSong.name,
       );
       if (jacket) {
@@ -362,11 +371,11 @@ export class EAGateSongImporter {
     // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)
     if (existingSong.flags) {
       const flagsToRemove = existingSong.flags.filter(
-        (f) => !unmanagedFlags.includes(f),
+        (f) => !this.#unmanagedFlags.includes(f),
       );
       if (flagsToRemove.length > 0) {
         existingSong.flags = existingSong.flags.filter((f) =>
-          unmanagedFlags.includes(f),
+          this.#unmanagedFlags.includes(f),
         );
         if (existingSong.flags.length === 0) {
           delete existingSong.flags;

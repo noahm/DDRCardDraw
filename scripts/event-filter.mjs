@@ -1,7 +1,7 @@
 // @ts-check
 import { readFile } from "fs/promises";
 import * as path from "path";
-import { writeJsonData } from "./utils.mjs";
+import { writeJsonData } from "./utils.mts";
 import pp from "papaparse";
 
 const targetFile = path.join(
