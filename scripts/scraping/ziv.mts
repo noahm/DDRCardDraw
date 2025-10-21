@@ -1,30 +1,42 @@
-// @ts-check
-/** @typedef {import("../../src/models/SongData.ts").Song} Song */
-/** @typedef {import("../../src/models/SongData.ts").Chart} Chart */
-/** @typedef {import("../../src/models/SongData.ts").GameData} GameData */
+import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import { getDom, downloadJacket } from "../utils.mts";
+import type { DDRSongImporter, DDRSourceMeta } from "./ddr-sources.mts";
 
-import { getDom, downloadJacket } from "../utils.mjs";
+type ZivSongData = Pick<
+  Song,
+  | "name"
+  | "name_translation"
+  | "artist"
+  | "artist_translation"
+  | "bpm"
+  | "folder"
+  | "charts"
+  | "genre"
+> & { getJacketUrl: () => Promise<string | undefined> };
 
 /** Song importer from zenius-i-vanisher */
-export class ZivSongImporter {
+export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
   /** URL to zenius-i-vanisher game database page for this mix */
-  #url;
+  readonly #url: string;
   /** List of difficulties in order of appearance on the page */
-  #difficulties;
+  readonly #difficulties: Pick<Chart, "style" | "diffClass">[];
   /** List of folder titles, if the mix has folders */
-  #titleList;
+  readonly #titleList: Exclude<GameData["meta"]["folders"], undefined>;
   /** Map of song corrections (name, partial data to merge) */
-  #correctionMap;
+  readonly #correctionMap: Map<
+    string,
+    Partial<Omit<Song, "charts">> & { lvls?: number[] }
+  >;
 
   /**
-   * @param {string} url URL to zenius-i-vanisher game database page for this mix
-   * @param {Pick<Chart, 'style' | 'diffClass'>[]} [difficulties] List of difficulties in order of appearance on the page
-   * @param {GameData['meta']['folders']} [titleList=[]] List of folder titles, if the mix has folders
-   * @param {[string, Partial<Omit<Song, 'charts'>> & { deleted?: boolean, lvls?: number[] }][]} [correctionMap=[]] Map of song corrections (name, partial data to merge)
+   * @param url URL to zenius-i-vanisher game database page for this mix
+   * @param difficulties List of difficulties in order of appearance on the page
+   * @param titleList List of folder titles, if the mix has folders
+   * @param correctionMap Map of song corrections (name, partial data to merge)
    */
   constructor(
-    url,
-    difficulties = [
+    url: string,
+    difficulties: Pick<Chart, "style" | "diffClass">[] = [
       { style: "single", diffClass: "beginner" },
       { style: "single", diffClass: "basic" },
       { style: "single", diffClass: "difficult" },
@@ -35,8 +47,8 @@ export class ZivSongImporter {
       { style: "double", diffClass: "expert" },
       { style: "double", diffClass: "challenge" },
     ],
-    titleList = [],
-    correctionMap = [],
+    titleList: GameData["meta"]["folders"] = [],
+    correctionMap: Required<DDRSourceMeta>["ziv"]["correctionMap"] = [],
   ) {
     this.#url = url;
     this.#difficulties = difficulties;
@@ -46,25 +58,23 @@ export class ZivSongImporter {
 
   /**
    * Fetch songs from ZiV and merge with existing data
-   * @returns {Promise<(Pick<Song, "name" | "name_translation" | "artist" | "artist_translation" | "bpm" | "folder" | "charts" | "genre"> & { deleted?: boolean, getJacketUrl: () => Promise<string> })[]>}
    */
-  async fetchSongs() {
+  async fetchSongs(): Promise<ZivSongData[]> {
     console.log(`Starting to fetch song data from zenius-i-vanisher.com`);
 
     const dom = await getDom(this.#url);
     if (!dom) return [];
 
-    /** @type {NodeListOf<HTMLAnchorElement>} */
-    const songLinks = dom.window.document.querySelectorAll(
-      'a[href^="songdb.php"]',
-    );
+    const songLinks: NodeListOf<HTMLAnchorElement> =
+      dom.window.document.querySelectorAll('a[href^="songdb.php"]');
     if (!this.#titleList?.length)
       return [...songLinks].map((link) => this.createSongData(link));
 
-    /** n Songs @type {NodeListOf<HTMLSpanElement>} */
-    const spans = dom.window.document.querySelectorAll(
-      `th[colspan="${this.#difficulties.length + 2}"] span`,
-    );
+    /** n Songs */
+    const spans: NodeListOf<HTMLSpanElement> =
+      dom.window.document.querySelectorAll(
+        `th[colspan="${this.#difficulties.length + 2}"] span`,
+      );
     const folders = [...spans].map((span, index) => {
       const name = this.#titleList[index];
       if (!name) {
@@ -72,7 +82,7 @@ export class ZivSongImporter {
       }
       return {
         name: name,
-        count: +span.textContent.match(/^[0-9]*/)[0],
+        count: +(span.textContent.match(/^[0-9]*/)?.[0] ?? 0),
       };
     });
 
@@ -88,17 +98,19 @@ export class ZivSongImporter {
   }
 
   /**
-   *
-   * @param {HTMLAnchorElement} songLink
-   * @param {string=} folder
-   * @returns {Awaited<ReturnType<ZivSongImporter["fetchSongs"]>  & { deleted: boolean }>[number]}
+   * Create song data from a song link element in table cell
+   * @param songLink Anchor element linking to the song details page
+   * @param folder Folder name, if applicable
    */
-  createSongData(songLink, folder) {
-    const songRow = songLink.parentElement.parentElement;
+  createSongData(
+    songLink: HTMLAnchorElement,
+    folder: string | undefined = undefined,
+  ): ZivSongData {
+    const songRow = songLink.parentElement!.parentElement!;
     const firstColumn = songRow.getElementsByTagName("td")[0];
-    const artistNode = firstColumn.lastChild.textContent.trim()
+    const artistNode = firstColumn.lastChild?.textContent?.trim()
       ? firstColumn.lastChild
-      : firstColumn.lastElementChild;
+      : firstColumn.lastElementChild!;
     const genreNode = firstColumn.querySelector("span.rightfloat");
 
     const songName = songLink.text.trim();
@@ -113,13 +125,15 @@ export class ZivSongImporter {
       );
     }
     for (const [i, current] of chartNodes.entries()) {
-      if (current.firstChild.textContent === "-") continue;
-      const [step, freeze, shock] = current.lastElementChild.textContent
-        .split(" / ")
+      if (!current.firstChild || current.firstChild.textContent === "-")
+        continue;
+      const [step, freeze, shock] = current
+        .lastElementChild!.textContent.split(" / ")
         .map(Number);
+      const lv = Number(current.firstChild.textContent);
       const actualLv = actual?.lvls?.[i];
       if (actualLv) {
-        if (actualLv !== +current.firstChild.textContent)
+        if (actualLv !== lv)
           console.log(
             `Fixed ziv data "${songName}" [${this.#difficulties[i].style}/${this.#difficulties[i].diffClass}] lvl: ${current.firstChild.textContent} -> ${actualLv}`,
           );
@@ -130,7 +144,7 @@ export class ZivSongImporter {
       }
 
       const chart = {
-        lvl: actualLv || +current.firstChild.textContent,
+        lvl: actualLv || lv,
         ...this.#difficulties[i],
         ...(step > 0 ? { step } : {}),
         ...(freeze > 0 ? { freeze } : {}),
@@ -142,7 +156,7 @@ export class ZivSongImporter {
     const song = {
       name: songName,
       name_translation: getTranslationText(songLink),
-      artist: artistNode.textContent.trim(),
+      artist: artistNode?.textContent?.trim() ?? "",
       artist_translation: getTranslationText(artistNode),
       bpm: songRow.children[1].textContent.trim(),
       folder,
@@ -155,9 +169,11 @@ export class ZivSongImporter {
       for (const [key, value] of Object.entries(actual)) {
         // Except lvls
         if (key === "lvls") continue;
+        const typedKey = key as keyof typeof song;
 
-        if (!Array.isArray(value) && value !== song[key]) {
-          song[key] = value;
+        if (!Array.isArray(value) && value !== song[typedKey]) {
+          // Use type assertion to safely assign the value
+          (song as Record<string, unknown>)[key] = value;
         } else {
           console.warn(
             `No changes needed for ${key} on ${song.name}. Consider remove on correctionMap.`,
@@ -171,7 +187,7 @@ export class ZivSongImporter {
      * @param {Element|Node} node
      * @returns {string|undefined}
      */
-    function getTranslationText(node) {
+    function getTranslationText(node: Element | Node): string | undefined {
       if (!isElement(node)) {
         return undefined;
       }
@@ -182,16 +198,15 @@ export class ZivSongImporter {
       if (!translationNode) {
         return undefined;
       }
-      return translationNode.attributes["onmouseover"].value.replace(
-        /this\.innerHTML='(.+)';/,
-        "$1",
-      );
+      return translationNode.attributes
+        .getNamedItem("onmouseover")
+        ?.value.replace(/this\.innerHTML='(.+)';/, "$1");
 
       /**
        * @returns {node is Element}
        * @param {Element | Node} node
        */
-      function isElement(node) {
+      function isElement(node: Element | Node): node is Element {
         return node.nodeName !== "#text";
       }
     }
@@ -200,11 +215,10 @@ export class ZivSongImporter {
      * @param {string} songUri
      * @return {Promise<string|undefined>}
      */
-    async function getJacketUri(songUri) {
+    async function getJacketUri(songUri: string): Promise<string | undefined> {
       const dom = await getDom(songUri);
       if (!dom) return undefined;
-      /** @type {HTMLImageElement} */
-      const image = dom.window.document.querySelector(
+      const image: HTMLImageElement | null = dom.window.document.querySelector(
         "table > tbody > tr > td > img",
       );
       return image ? image.src : undefined;
@@ -213,50 +227,54 @@ export class ZivSongImporter {
 
   /**
    * Compares two song objects for equality
-   * @param {Song} existingSong
-   * @param {Awaited<ReturnType<ZivSongImporter["fetchSongs"]>>[number]} zivSong
-   * @returns {boolean} True if songs are considered equal (same name)
+   * @param existingSong Existing song in the database
+   * @param fetchedSong Newly fetched song from zenius-i-vanisher
+   * @returns True if songs are considered equal (same name)
    */
-  static songEquals(existingSong, zivSong) {
-    return existingSong.name === zivSong.name;
+  songEquals(existingSong: Song, fetchedSong: ZivSongData): boolean {
+    return existingSong.name === fetchedSong.name;
   }
 
   /**
-   * Merges data from an `zivSong` into `existingSong` object.
+   * Merges data from an `fetchedSong` into `existingSong` object.
    * @summary This function with side effects that change `existingSong` object
-   * @param {Song} existingSong Existing song object to update
-   * @param {Awaited<ReturnType<ZivSongImporter["fetchSongs"]>>[number]} zivSong Song data from ZIV
-   * @returns {Promise<boolean>} True if the merge resulted in any updates
+   * @param existingSong Existing song object to update
+   * @param fetchedSong Song data from ZIV
+   * @returns True if the merge resulted in any updates
    */
-  static async merge(existingSong, zivSong) {
+  async merge(existingSong: Song, fetchedSong: ZivSongData): Promise<boolean> {
     let hasUpdates = false;
 
     // Update song metadata if missing
-    if (!existingSong.name_translation && zivSong.name_translation) {
+    if (!existingSong.name_translation && fetchedSong.name_translation) {
       console.log(
-        `Updated "${existingSong.name}" name_translation: ${existingSong.name_translation} -> ${zivSong.name_translation}`,
+        `Updated "${existingSong.name}" name_translation: ${existingSong.name_translation} -> ${fetchedSong.name_translation}`,
       );
-      existingSong.name_translation = zivSong.name_translation;
+      existingSong.name_translation = fetchedSong.name_translation;
       hasUpdates = true;
     }
-    if (!existingSong.artist_translation && zivSong.artist_translation) {
+    if (!existingSong.artist_translation && fetchedSong.artist_translation) {
       console.log(
-        `Updated "${existingSong.name}" artist_translation: ${existingSong.artist_translation} -> ${zivSong.artist_translation}`,
+        `Updated "${existingSong.name}" artist_translation: ${existingSong.artist_translation} -> ${fetchedSong.artist_translation}`,
       );
-      existingSong.artist_translation = zivSong.artist_translation;
+      existingSong.artist_translation = fetchedSong.artist_translation;
       hasUpdates = true;
     }
-    if (!existingSong.genre && zivSong.genre) {
+    if (!existingSong.genre && fetchedSong.genre) {
       console.log(
-        `Updated "${existingSong.name}" genre: ${existingSong.genre} -> ${zivSong.genre}`,
+        `Updated "${existingSong.name}" genre: ${existingSong.genre} -> ${fetchedSong.genre}`,
       );
-      existingSong.genre = zivSong.genre;
+      existingSong.genre = fetchedSong.genre;
       hasUpdates = true;
     }
 
     // Try to get jacket from ziv
     if (!existingSong.jacket) {
-      const jacket = downloadJacket(await zivSong.getJacketUrl(), zivSong.name);
+      const jacketUrl = await fetchedSong.getJacketUrl();
+      if (!jacketUrl) {
+        return hasUpdates;
+      }
+      const jacket = downloadJacket(jacketUrl, fetchedSong.name);
       if (jacket) {
         existingSong.jacket = jacket;
         console.log(`Added "${existingSong.name}" jacket: ${jacket}`);

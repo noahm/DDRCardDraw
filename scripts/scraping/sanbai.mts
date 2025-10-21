@@ -1,19 +1,17 @@
-// @ts-check
-/** @typedef {import("../../src/models/SongData.ts").Song} Song */
-/** @typedef {import("../../src/models/SongData.ts").Chart} Chart */
-/** @typedef {typeof import('./songdata.mjs').ALL_SONG_DATA[number]} SanbaiSong */
-
 import { writeFile } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import { downloadJacket, requestQueue } from "../utils.mjs";
 import { format } from "prettier";
 
-/**
- * Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags`
- * @type {Record<number, Song['flags']>}
- */
-const lockFlags = {
+import { downloadJacket, requestQueue } from "../utils.mts";
+import type { Chart, Song } from "../../src/models/SongData.ts";
+import type { ALL_SONG_DATA } from "./songdata.mjs";
+import type { DDRSongImporter } from "./ddr-sources.mts";
+
+type SanbaiSong = (typeof ALL_SONG_DATA)[number];
+
+/** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
+const lockFlags: Record<number, Song["flags"]> = {
   20: ["goldExclusive", "tempUnlock"], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
   190: ["grandPrixPack"], // DDR GRAND PRIX packs
   240: ["tempUnlock"], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
@@ -25,11 +23,8 @@ const lockFlags = {
   300: ["platinumMembers"], // DDR PLATINUM MEMBERS
 };
 
-/**
- * Mapping from 3icecream's `version_num` to DDR folder name
- * @type {Record<SanbaiSong['version_num'], Song['folder']>}
- */
-const titleList = {
+/** Mapping from 3icecream's `version_num` to DDR folder name */
+const titleList: Record<SanbaiSong["version_num"], Song["folder"]> = {
   1: "DanceDanceRevolution 1st Mix",
   2: "DanceDanceRevolution 2nd Mix",
   3: "DanceDanceRevolution 3rd Mix",
@@ -52,42 +47,62 @@ const titleList = {
   20: "DanceDanceRevolution World",
 };
 
-/**
- * Correction map for invalid data on 3icecream site
- * @type {Map<SanbaiSong['song_id'], Partial<SanbaiSong>>}
- */
-const invalidDataOnSanbai = new Map([]);
+/** Correction map for invalid data on 3icecream site */
+const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([]);
 
-export class SanbaiSongImporter {
+type SanbaiSongData = Pick<
+  Song,
+  | "name"
+  | "name_translation"
+  | "folder"
+  | "charts"
+  | "flags"
+  | "saHash"
+  | "search_hint"
+> & { deleted: boolean; getJacketUrl: () => string };
+
+export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
+  /** Flags to preserve */
+  readonly #unmanagedFlags: string[];
+  /**
+   * @param unmanagedFlags Flags to preserve
+   */
+  constructor(unmanagedFlags: string[] = []) {
+    this.#unmanagedFlags = unmanagedFlags;
+  }
+
   /**
    * Fetches and converts song data from 3icecream (ALL_SONG_DATA)
    * Applies corrections and returns array for merging
-   * @returns {Promise<(Pick<Song, 'name' | 'name_translation' | 'charts' | 'flags' | 'saHash' | 'search_hint'> & { deleted: boolean, getJacketUrl: () => string })[]>}
    */
-  async fetchSongs() {
+  async fetchSongs(): Promise<SanbaiSongData[]> {
     await this.updateSongDataFile();
     const { ALL_SONG_DATA } = await import("./songdata.mjs");
 
-    const songs = [];
+    const songs: SanbaiSongData[] = [];
     for (const song of ALL_SONG_DATA) {
       // Fix invalid data
       const actual = invalidDataOnSanbai.get(song.song_id);
       if (actual) {
         for (const [key, value] of Object.entries(actual)) {
-          if (!Array.isArray(value) && value !== song[key]) {
+          const typedKey = key as keyof SanbaiSong;
+          const currentValue = song[typedKey];
+
+          if (!Array.isArray(value) && value !== currentValue) {
             console.log(
-              `Fixing invalid ${key} for ${song.song_name} on 3ice : ${song[key]} -> ${value}`,
+              `Fixing invalid ${key} for ${song.song_name} on 3ice : ${currentValue} -> ${value}`,
             );
-            song[key] = value;
+            (song as Record<string, unknown>)[typedKey] = value;
           } else if (
             Array.isArray(value) &&
-            (value.length !== song[key]?.length ||
-              value.some((v, i) => v !== song[key][i]))
+            Array.isArray(currentValue) &&
+            (value.length !== currentValue.length ||
+              value.some((v, i) => v !== currentValue[i]))
           ) {
             console.log(
-              `Fixing invalid ${key} for ${song.song_name} on 3ice : ${song[key]} -> ${value}`,
+              `Fixing invalid ${key} for ${song.song_name} on 3ice : ${currentValue} -> ${value}`,
             );
-            song[key] = value;
+            (song as Record<string, unknown>)[typedKey] = value;
             if (key === "ratings" && Array.isArray(song.tiers)) {
               song.tiers = song.tiers.map(() => 1); // reset tiers
             }
@@ -123,8 +138,7 @@ export class SanbaiSongImporter {
       ];
       const charts = song.ratings
         .map((lvl, idx) => {
-          /** @type {Chart} */
-          const chart = { lvl, ...ratingsToStyleAndDiff[idx] };
+          const chart: Chart = { lvl, ...ratingsToStyleAndDiff[idx] };
           if (locks && locks[idx] && locks[idx] !== songLock) {
             chart.flags = lockFlags[locks[idx]];
           }
@@ -162,7 +176,7 @@ export class SanbaiSongImporter {
    * @returns {Promise<string>} Path to the updated songdata.mjs file
    * @private
    */
-  async updateSongDataFile() {
+  async updateSongDataFile(): Promise<string | null> {
     const url = "https://3icecream.com/js/songdata.js";
     const jsText = await requestQueue.add(async () => {
       const resp = await fetch(url);
@@ -184,27 +198,24 @@ export class SanbaiSongImporter {
 
   /**
    * Compares two song objects for equality
-   * @param {Song} existingSong
-   * @param {Awaited<ReturnType<SanbaiSongImporter["fetchSongs"]>>[number]} sanbaiSong
    * @returns {boolean} True if songs are considered equal (same saHash)
    */
-  static songEquals(existingSong, sanbaiSong) {
-    return existingSong.saHash === sanbaiSong.saHash;
+  songEquals(existingSong: Song, fetchedSong: SanbaiSongData): boolean {
+    return existingSong.saHash === fetchedSong.saHash;
   }
 
   /**
-   * Merges data from an `sanbaiSong` into `existingSong` object.
+   * Merges data from an `fetchedSong` into `existingSong` object.
    * @summary This function with side effects that change `existingSong` object
-   * @param {Song} existingSong Existing song object to update
-   * @param {Awaited<ReturnType<SanbaiSongImporter["fetchSongs"]>>[number]} sanbaiSong Song data 3icecream
-   * @param {string[]} unmanagedFlags Flags to preserve
-   * @returns {boolean} True if the merge resulted in any updates
+   * @param existingSong Existing song object to update
+   * @param fetchedSong Song data from 3icecream
+   * @returns True if the merge resulted in any updates
    */
-  static merge(existingSong, sanbaiSong, unmanagedFlags = []) {
+  merge(existingSong: Song, fetchedSong: SanbaiSongData): boolean {
     let hasUpdates = false;
 
     // update charts
-    for (const chart of sanbaiSong.charts) {
+    for (const chart of fetchedSong.charts) {
       const existingChart = existingSong.charts.find(
         (c) => c.style === chart.style && c.diffClass === chart.diffClass,
       );
@@ -237,15 +248,17 @@ export class SanbaiSongImporter {
 
       // Update chart flags (except unmanaged)
       const managedFlags = (existingChart.flags ?? []).filter(
-        (f) => !unmanagedFlags.includes(f),
+        (f) => !this.#unmanagedFlags.includes(f),
       );
+      const chartFlags = chart.flags ?? [];
       if (
-        managedFlags.length !== (chart.flags?.length ?? 0) ||
-        managedFlags.some((f, i) => f !== chart.flags[i])
+        managedFlags.length !== chartFlags.length ||
+        managedFlags.some((f, i) => f !== chartFlags[i])
       ) {
         const flags = [
-          ...(existingChart.flags?.filter((f) => unmanagedFlags.includes(f)) ??
-            []),
+          ...(existingChart.flags?.filter((f) =>
+            this.#unmanagedFlags.includes(f),
+          ) ?? []),
           ...(chart.flags ?? []),
         ];
         console.log(
@@ -261,20 +274,21 @@ export class SanbaiSongImporter {
 
     // Update song flags (except unmanaged)
     const managedFlags = (existingSong.flags ?? []).filter(
-      (f) => !unmanagedFlags.includes(f),
+      (f) => !this.#unmanagedFlags.includes(f),
     );
-    sanbaiSong.flags ??= [];
+    const fetchedFlags = fetchedSong.flags ?? [];
     if (
-      managedFlags.length !== (sanbaiSong.flags?.length ?? 0) ||
-      managedFlags.some((f, i) => f !== sanbaiSong.flags[i])
+      managedFlags.length !== fetchedFlags.length ||
+      managedFlags.some((f, i) => f !== fetchedFlags[i])
     ) {
       console.log(
         `Updated flags [${existingSong.flags}] from ${existingSong.name}`,
       );
       const flags = [
-        ...(existingSong.flags?.filter((f) => unmanagedFlags.includes(f)) ??
-          []),
-        ...(sanbaiSong.flags ?? []),
+        ...(existingSong.flags?.filter((f) =>
+          this.#unmanagedFlags.includes(f),
+        ) ?? []),
+        ...fetchedFlags,
       ];
       console.log(
         `Updated "${existingSong.name}" flags: ${existingSong.flags} -> ${flags}`,
@@ -288,7 +302,10 @@ export class SanbaiSongImporter {
 
     // Try to get jacket from 3icecream
     if (!existingSong.jacket) {
-      const jacket = downloadJacket(sanbaiSong.getJacketUrl(), sanbaiSong.name);
+      const jacket = downloadJacket(
+        fetchedSong.getJacketUrl(),
+        fetchedSong.name,
+      );
       if (jacket) {
         existingSong.jacket = jacket;
         console.log(`Added "${existingSong.name}" jacket: ${jacket}`);

@@ -16,16 +16,16 @@ import {
   sortSongs,
   setJacketPrefix,
   downloadJacket,
-} from "./utils.mjs";
+} from "./utils.mts";
 import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mts";
-import { EAGateSongImporter } from "./scraping/eagate.mjs";
+import { EAGateSongImporter } from "./scraping/eagate.mts";
 import {
   guessUrlFromName,
   getJacketFromRemySong,
   getMetaFromRemy,
 } from "./scraping/remy.mjs";
-import { SanbaiSongImporter } from "./scraping/sanbai.mjs";
-import { ZivSongImporter } from "./scraping/ziv.mjs";
+import { SanbaiSongImporter } from "./scraping/sanbai.mts";
+import { ZivSongImporter } from "./scraping/ziv.mts";
 
 setJacketPrefix(MIX_META.jacketPrefix);
 
@@ -83,11 +83,14 @@ try {
     await readFile(targetFile, { encoding: "utf-8" }),
   );
 
+  let lastUpdated = Date.now();
+
   if (MIX_META.eagate) {
     console.log("Fetching songs from e-amusement GATE...");
     const importer = new EAGateSongImporter(
       MIX_META.eagate.songList,
       MIX_META.eagate.jacket,
+      ["copyStrikes", "shock"],
     );
     const fetchedSongs = await importer.fetchSongs();
 
@@ -97,17 +100,14 @@ try {
       async (worldSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
         // Find existing song by saHash
         const existingSong = existingData.songs.find((s) =>
-          EAGateSongImporter.songEquals(s, worldSong),
+          importer.songEquals(s, worldSong),
         );
 
         if (existingSong) {
           // Get remyLink and jacket if missing
           await tryGetMetaFromRemy(existingSong);
 
-          EAGateSongImporter.merge(existingSong, worldSong, [
-            "copyStrikes",
-            "shock",
-          ]);
+          importer.merge(existingSong, worldSong);
         } else {
           console.log(`Adding new song: ${worldSong.name}`);
 
@@ -145,14 +145,14 @@ try {
 
   if (MIX_META.sanbai) {
     // Fetch 3icecream data using SanbaiSongImporter
-    const importer = new SanbaiSongImporter();
+    const importer = new SanbaiSongImporter(["copyStrikes", "shock"]);
     const fetchedSongs = await importer.fetchSongs();
 
     // Merge with existing data
     const tasks = fetchedSongs.map(
       async (sanbaiSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
         const existingSong = existingData.songs.find((s) =>
-          SanbaiSongImporter.songEquals(s, sanbaiSong),
+          importer.songEquals(s, sanbaiSong),
         );
 
         // Delete songs that are removed from the game
@@ -170,10 +170,7 @@ try {
           // Get remyLink and jacket if missing
           await tryGetMetaFromRemy(existingSong);
 
-          SanbaiSongImporter.merge(existingSong, sanbaiSong, [
-            "copyStrikes",
-            "shock",
-          ]);
+          importer.merge(existingSong, sanbaiSong);
         } else {
           console.log(`Adding new song: ${sanbaiSong.name}`);
 
@@ -209,6 +206,9 @@ try {
     console.log(
       `Songs from 3icecream (except deleted): ${fetchedSongs.filter((s) => !s.deleted).length}`,
     );
+
+    lastUpdated = (await import("./scraping/songdata.mjs"))
+      .SONG_DATA_LAST_UPDATED_unixms;
   }
 
   if (MIX_META.ziv) {
@@ -223,10 +223,10 @@ try {
     const tasks = fetchedSongs.map(
       async (zivSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
         const existingSong = existingData.songs.find((s) =>
-          ZivSongImporter.songEquals(s, zivSong),
+          importer.songEquals(s, zivSong),
         );
-        if (!existingSong || zivSong.deleted) return; // only merge existing songs
-        ZivSongImporter.merge(existingSong, zivSong);
+        if (!existingSong) return; // only merge existing songs
+        importer.merge(existingSong, zivSong);
       },
     );
     console.log("Processing all zenius-i-vanisher songs...");
@@ -235,9 +235,10 @@ try {
     console.log(`Songs from zenius-i-vanisher: ${fetchedSongs.length}`);
   }
 
-  if (MIX_META.sortSongs) existingData.songs = sortSongs(existingData.songs);
+  if (MIX_META.sortSongs)
+    existingData.songs = sortSongs(existingData.songs, existingData.meta);
 
-  await writeJsonData(existingData, targetFile);
+  await writeJsonData(existingData, targetFile, lastUpdated);
 
   console.log(`Successfully updated ${MIX_META.filename}`);
   console.log(`Total songs in database: ${existingData.songs.length}`);

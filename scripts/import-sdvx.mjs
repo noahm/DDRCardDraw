@@ -7,7 +7,7 @@ import { resolve, join, dirname } from "path";
 import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
-import { writeJsonData } from "./utils.mjs";
+import { writeJsonData } from "./utils.mts";
 import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

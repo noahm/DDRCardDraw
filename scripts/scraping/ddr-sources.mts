@@ -1,5 +1,28 @@
 import type { Chart, Song } from "../../src/models/SongData.ts";
 
+/** Interface for importing DDR songs from a source */
+export interface DDRSongImporter<T extends Partial<Song>> {
+  /** Fetches songs from the source */
+  fetchSongs(): Promise<T[]>;
+
+  /**
+   * Compares two song objects for equality
+   * @param existingSong Existing song in the database
+   * @param fetchedSong Newly fetched song from the source
+   * @returns True if songs are considered equal
+   */
+  songEquals(existingSong: Song, fetchedSong: T): boolean;
+
+  /**
+   * Merges data from an `fetchedSong` into `existingSong` object.
+   * @summary This function with side effects that change `existingSong` object
+   * @param existingSong Existing song object to update
+   * @param fetchedSong Newly fetched song from the source
+   * @returns True if the merge resulted in any updates
+   */
+  merge(existingSong: Song, fetchedSong: T): boolean | Promise<boolean>;
+}
+
 interface ZIVSourceMeta {
   /** URL to zenius-i-vanisher game database page for this mix */
   url: string;
