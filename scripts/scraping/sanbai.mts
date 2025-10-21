@@ -54,10 +54,7 @@ const invalidDataOnSanbai: Map<
 > = new Map([
   [
     "DDlbDddPO8liioQ196P0I9090bDDPQ6Q", // 迷宮のロンド
-    {
-      ratings: [3, 6, 12, 15, 18, 6, 12, 15, 18],
-      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
-    },
+    { lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290] },
   ],
 ]);
 
@@ -105,10 +102,11 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
             );
             (song as Record<string, unknown>)[typedKey] = value;
           } else if (
-            Array.isArray(value) &&
-            Array.isArray(currentValue) &&
-            (value.length !== currentValue.length ||
-              value.some((v, i) => v !== currentValue[i]))
+            (Array.isArray(value) &&
+              Array.isArray(currentValue) &&
+              (value.length !== currentValue.length ||
+                value.some((v, i) => v !== currentValue[i]))) ||
+            !Array.isArray(currentValue)
           ) {
             console.log(
               `Fixing invalid ${key} for ${song.song_name} on 3ice : ${currentValue} -> ${value}`,
