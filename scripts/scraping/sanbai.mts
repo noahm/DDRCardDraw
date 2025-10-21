@@ -94,10 +94,11 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
             );
             (song as Record<string, unknown>)[typedKey] = value;
           } else if (
-            Array.isArray(value) &&
-            Array.isArray(currentValue) &&
-            (value.length !== currentValue.length ||
-              value.some((v, i) => v !== currentValue[i]))
+            (Array.isArray(value) &&
+              Array.isArray(currentValue) &&
+              (value.length !== currentValue.length ||
+                value.some((v, i) => v !== currentValue[i]))) ||
+            !Array.isArray(currentValue)
           ) {
             console.log(
               `Fixing invalid ${key} for ${song.song_name} on 3ice : ${currentValue} -> ${value}`,

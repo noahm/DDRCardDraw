@@ -147,16 +147,16 @@
           "sanbaiTier": 9.55
         },
         {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.25
-        },
-        {
           "lvl": 12,
           "style": "single",
           "diffClass": "expert",
           "sanbaiTier": 12.4
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.25
         },
         {
           "lvl": 6,
@@ -171,16 +171,16 @@
           "sanbaiTier": 9.45
         },
         {
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.4
-        },
-        {
           "lvl": 12,
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.45
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.4
         }
       ],
       "remyLink": "https://remywiki.com/OurMemories",
@@ -5818,6 +5818,13 @@
           "sanbaiTier": 7.5
         },
         {
+          "step": 279,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 10.8
+        },
+        {
           "step": 180,
           "shock": 22,
           "freeze": 0,
@@ -5826,13 +5833,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 8.55
-        },
-        {
-          "step": 279,
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 10.8
         },
         {
           "step": 123,
@@ -5849,6 +5849,13 @@
           "sanbaiTier": 7.55
         },
         {
+          "step": 276,
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 11.65
+        },
+        {
           "step": 183,
           "shock": 24,
           "freeze": 0,
@@ -5857,13 +5864,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 8.55
-        },
-        {
-          "step": 276,
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.65
         }
       ],
       "remyLink": "https://remywiki.com/BALLAD_THE_FEATHERS",
@@ -11110,16 +11110,6 @@
           "sanbaiTier": 5.3
         },
         {
-          "step": 134,
-          "shock": 28,
-          "freeze": 17,
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "challenge",
-          "flags": ["shock"],
-          "sanbaiTier": 6.3
-        },
-        {
           "step": 193,
           "freeze": 13,
           "lvl": 8,
@@ -11136,22 +11126,22 @@
           "sanbaiTier": 12.25
         },
         {
+          "step": 134,
+          "shock": 28,
+          "freeze": 17,
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 6.3
+        },
+        {
           "step": 109,
           "freeze": 10,
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
           "sanbaiTier": 5.2
-        },
-        {
-          "step": 136,
-          "shock": 27,
-          "freeze": 18,
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "challenge",
-          "flags": ["shock"],
-          "sanbaiTier": 6.6
         },
         {
           "step": 180,
@@ -11168,6 +11158,16 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.35
+        },
+        {
+          "step": 136,
+          "shock": 27,
+          "freeze": 18,
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "challenge",
+          "flags": ["shock"],
+          "sanbaiTier": 6.6
         }
       ],
       "remyLink": "https://remywiki.com/COME_BACK_TO_MY_HEART",
@@ -13357,18 +13357,18 @@
           "sanbaiTier": 8.4
         },
         {
-          "step": 344,
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.35
-        },
-        {
           "step": 345,
           "lvl": 12,
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.45
+        },
+        {
+          "step": 344,
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.35
         }
       ],
       "remyLink": "https://remywiki.com/Dance_Dance_Revolution_(song)",
@@ -16450,6 +16450,12 @@
           "sanbaiTier": 9.45
         },
         {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        },
+        {
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
@@ -16458,12 +16464,6 @@
           "shock": 58,
           "flags": ["shock"],
           "sanbaiTier": 10.7
-        },
-        {
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.35
         },
         {
           "lvl": 6,
@@ -16478,6 +16478,12 @@
           "sanbaiTier": 10.35
         },
         {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 13.4
+        },
+        {
           "lvl": 10,
           "style": "double",
           "diffClass": "challenge",
@@ -16486,12 +16492,6 @@
           "shock": 58,
           "flags": ["shock"],
           "sanbaiTier": 10.65
-        },
-        {
-          "lvl": 13,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 13.4
         }
       ],
       "remyLink": "https://remywiki.com/DOWNER_%26_UPPER",
@@ -21221,6 +21221,14 @@
           "sanbaiTier": 7.45
         },
         {
+          "step": 212,
+          "freeze": 29,
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 9.55
+        },
+        {
           "step": 169,
           "shock": 29,
           "freeze": 13,
@@ -21229,14 +21237,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 7.45
-        },
-        {
-          "step": 212,
-          "freeze": 29,
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 9.55
         },
         {
           "step": 138,
@@ -21255,6 +21255,14 @@
           "sanbaiTier": 6.55
         },
         {
+          "step": 209,
+          "freeze": 32,
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 9.45
+        },
+        {
           "step": 158,
           "shock": 19,
           "freeze": 14,
@@ -21263,14 +21271,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 7.6
-        },
-        {
-          "step": 209,
-          "freeze": 32,
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 9.45
         }
       ],
       "remyLink": "https://remywiki.com/Flight_of_the_Phoenix",
@@ -22667,20 +22667,20 @@
           "sanbaiTier": 4.2
         },
         {
-          "step": 123,
-          "freeze": 16,
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 4.45
-        },
-        {
           "step": 126,
           "freeze": 25,
           "lvl": 5,
           "style": "single",
           "diffClass": "basic",
           "sanbaiTier": 5.3
+        },
+        {
+          "step": 123,
+          "freeze": 16,
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 4.45
         },
         {
           "step": 219,
@@ -24339,6 +24339,13 @@
           "sanbaiTier": 10.5
         },
         {
+          "step": 491,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.4
+        },
+        {
           "step": 352,
           "shock": 46,
           "freeze": 0,
@@ -24347,13 +24354,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 11.55
-        },
-        {
-          "step": 491,
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.4
         },
         {
           "step": 269,
@@ -24371,6 +24371,13 @@
           "sanbaiTier": 11.35
         },
         {
+          "step": 489,
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 13.4
+        },
+        {
           "step": 347,
           "shock": 43,
           "freeze": 0,
@@ -24379,13 +24386,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 12.5
-        },
-        {
-          "step": 489,
-          "lvl": 13,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 13.4
         }
       ],
       "remyLink": "https://remywiki.com/Going_up",
@@ -24656,17 +24656,17 @@
       "charts": [
         {
           "step": 81,
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 3.35
-        },
-        {
-          "step": 81,
           "lvl": 4,
           "style": "single",
           "diffClass": "beginner",
           "sanbaiTier": 4.25
+        },
+        {
+          "step": 81,
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "basic",
+          "sanbaiTier": 3.35
         },
         {
           "step": 233,
@@ -26466,6 +26466,14 @@
           "sanbaiTier": 8.7
         },
         {
+          "step": 305,
+          "freeze": 4,
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 10.7
+        },
+        {
           "step": 201,
           "shock": 20,
           "freeze": 37,
@@ -26474,14 +26482,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 8.6
-        },
-        {
-          "step": 305,
-          "freeze": 4,
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 10.7
         },
         {
           "step": 170,
@@ -26500,6 +26500,14 @@
           "sanbaiTier": 8.8
         },
         {
+          "step": 300,
+          "freeze": 4,
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 10.85
+        },
+        {
           "step": 201,
           "shock": 20,
           "freeze": 28,
@@ -26508,14 +26516,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 8.75
-        },
-        {
-          "step": 300,
-          "freeze": 4,
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.85
         }
       ],
       "remyLink": "https://remywiki.com/Heatstroke",
@@ -42098,18 +42098,18 @@
           "sanbaiTier": 8.65
         },
         {
-          "step": 382,
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.5
-        },
-        {
           "step": 309,
           "lvl": 13,
           "style": "double",
           "diffClass": "difficult",
           "sanbaiTier": 13.5
+        },
+        {
+          "step": 382,
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 11.5
         }
       ],
       "remyLink": "https://remywiki.com/PARANOiA",
@@ -42480,18 +42480,18 @@
           "sanbaiTier": 10.55
         },
         {
-          "step": 363,
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 11.6
-        },
-        {
           "step": 311,
           "lvl": 12,
           "style": "double",
           "diffClass": "difficult",
           "sanbaiTier": 12.55
+        },
+        {
+          "step": 363,
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 11.6
         }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
@@ -47667,6 +47667,14 @@
           "sanbaiTier": 9.45
         },
         {
+          "step": 387,
+          "freeze": 7,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.4
+        },
+        {
           "step": 217,
           "shock": 63,
           "freeze": 6,
@@ -47675,14 +47683,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 13.55
-        },
-        {
-          "step": 387,
-          "freeze": 7,
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 14.4
         },
         {
           "step": 176,
@@ -47701,6 +47701,14 @@
           "sanbaiTier": 9.5
         },
         {
+          "step": 381,
+          "freeze": 7,
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 14.35
+        },
+        {
           "step": 217,
           "shock": 62,
           "freeze": 6,
@@ -47709,14 +47717,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 13.45
-        },
-        {
-          "step": 381,
-          "freeze": 7,
-          "lvl": 14,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 14.35
         }
       ],
       "remyLink": "https://remywiki.com/Right_on_time_(Ryu_Remix)",
@@ -51647,6 +51647,14 @@
           "sanbaiTier": 9.4
         },
         {
+          "step": 416,
+          "freeze": 26,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.15
+        },
+        {
           "step": 318,
           "shock": 35,
           "freeze": 28,
@@ -51655,14 +51663,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 10.4
-        },
-        {
-          "step": 416,
-          "freeze": 26,
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.15
         },
         {
           "step": 236,
@@ -51681,6 +51681,14 @@
           "sanbaiTier": 9.55
         },
         {
+          "step": 422,
+          "freeze": 24,
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 12.3
+        },
+        {
           "step": 320,
           "shock": 31,
           "freeze": 15,
@@ -51689,14 +51697,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 10.55
-        },
-        {
-          "step": 422,
-          "freeze": 24,
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.3
         }
       ],
       "remyLink": "https://remywiki.com/SigSig",
@@ -52721,6 +52721,12 @@
           "sanbaiTier": 7.45
         },
         {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.4
+        },
+        {
           "lvl": 10,
           "style": "single",
           "diffClass": "challenge",
@@ -52729,12 +52735,6 @@
           "shock": 46,
           "flags": ["shock"],
           "sanbaiTier": 10.55
-        },
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.4
         },
         {
           "lvl": 5,
@@ -52749,6 +52749,12 @@
           "sanbaiTier": 7.45
         },
         {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 12.45
+        },
+        {
           "lvl": 11,
           "style": "double",
           "diffClass": "challenge",
@@ -52757,12 +52763,6 @@
           "shock": 34,
           "flags": ["shock"],
           "sanbaiTier": 11.6
-        },
-        {
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.45
         }
       ],
       "remyLink": "https://remywiki.com/Smooooch",
@@ -52999,16 +52999,6 @@
           "sanbaiTier": 6.4
         },
         {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "challenge",
-          "step": 185,
-          "freeze": 118,
-          "shock": 60,
-          "flags": ["shock"],
-          "sanbaiTier": 8.6
-        },
-        {
           "lvl": 10,
           "style": "single",
           "diffClass": "difficult",
@@ -53021,20 +53011,20 @@
           "sanbaiTier": 13.4
         },
         {
-          "lvl": 6,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 6.45
-        },
-        {
-          "lvl": 9,
-          "style": "double",
+          "lvl": 8,
+          "style": "single",
           "diffClass": "challenge",
           "step": 185,
           "freeze": 118,
           "shock": 60,
           "flags": ["shock"],
-          "sanbaiTier": 9.55
+          "sanbaiTier": 8.6
+        },
+        {
+          "lvl": 6,
+          "style": "double",
+          "diffClass": "basic",
+          "sanbaiTier": 6.45
         },
         {
           "lvl": 10,
@@ -53047,6 +53037,16 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.35
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "step": 185,
+          "freeze": 118,
+          "shock": 60,
+          "flags": ["shock"],
+          "sanbaiTier": 9.55
         }
       ],
       "remyLink": "https://remywiki.com/So_What_(PRIDASK)",
@@ -55094,16 +55094,16 @@
           "sanbaiTier": 5.35
         },
         {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 9.4
-        },
-        {
           "lvl": 10,
           "style": "single",
           "diffClass": "difficult",
           "sanbaiTier": 10.45
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 9.4
         },
         {
           "lvl": 6,
@@ -56779,6 +56779,14 @@
           "sanbaiTier": 10.35
         },
         {
+          "step": 348,
+          "freeze": 21,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        },
+        {
           "step": 208,
           "shock": 83,
           "freeze": 99,
@@ -56787,14 +56795,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 11.7
-        },
-        {
-          "step": 348,
-          "freeze": 21,
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.35
         },
         {
           "step": 188,
@@ -60248,6 +60248,14 @@
           "sanbaiTier": 9.2
         },
         {
+          "step": 419,
+          "freeze": 6,
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.15
+        },
+        {
           "step": 275,
           "shock": 46,
           "freeze": 58,
@@ -60256,14 +60264,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 10.6
-        },
-        {
-          "step": 419,
-          "freeze": 6,
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.15
         },
         {
           "step": 228,
@@ -60282,6 +60282,14 @@
           "sanbaiTier": 9.35
         },
         {
+          "step": 416,
+          "freeze": 8,
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 12.25
+        },
+        {
           "step": 275,
           "shock": 45,
           "freeze": 59,
@@ -60290,14 +60298,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 11.55
-        },
-        {
-          "step": 416,
-          "freeze": 8,
-          "lvl": 12,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 12.25
         }
       ],
       "remyLink": "https://remywiki.com/Theory_of_Eternity",
@@ -63956,6 +63956,14 @@
           "sanbaiTier": 8.35
         },
         {
+          "step": 359,
+          "freeze": 52,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 11.35
+        },
+        {
           "step": 231,
           "shock": 49,
           "freeze": 85,
@@ -63964,14 +63972,6 @@
           "diffClass": "challenge",
           "flags": ["shock"],
           "sanbaiTier": 10.35
-        },
-        {
-          "step": 359,
-          "freeze": 52,
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.35
         },
         {
           "step": 155,
@@ -68642,16 +68642,6 @@
           "sanbaiTier": 7.35
         },
         {
-          "lvl": 9,
-          "style": "single",
-          "diffClass": "challenge",
-          "step": 234,
-          "freeze": 26,
-          "shock": 73,
-          "flags": ["shock"],
-          "sanbaiTier": 9.5
-        },
-        {
           "lvl": 11,
           "style": "single",
           "diffClass": "difficult",
@@ -68664,20 +68654,20 @@
           "sanbaiTier": 16.4
         },
         {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "step": 234,
+          "freeze": 26,
+          "shock": 73,
+          "flags": ["shock"],
+          "sanbaiTier": 9.5
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
           "sanbaiTier": 7.4
-        },
-        {
-          "lvl": 9,
-          "style": "double",
-          "diffClass": "challenge",
-          "step": 228,
-          "freeze": 25,
-          "shock": 72,
-          "flags": ["shock"],
-          "sanbaiTier": 9.6
         },
         {
           "lvl": 12,
@@ -68690,6 +68680,16 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.6
+        },
+        {
+          "lvl": 9,
+          "style": "double",
+          "diffClass": "challenge",
+          "step": 228,
+          "freeze": 25,
+          "shock": 72,
+          "flags": ["shock"],
+          "sanbaiTier": 9.6
         }
       ],
       "remyLink": "https://remywiki.com/Nagisa_no_koakuma_lovely~radio",
@@ -76978,62 +76978,6 @@
     {
       "name": "リメンバーリメンバー",
       "name_translation": "Remember remember",
-      "artist": "covered by 轟はじめ(ReGLOSS)",
-      "bpm": "182",
-      "folder": "DanceDanceRevolution World",
-      "charts": [
-        {
-          "style": "single",
-          "diffClass": "beginner",
-          "lvl": 2,
-          "sanbaiTier": 2.4
-        },
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 7,
-          "sanbaiTier": 7.4
-        },
-        {
-          "style": "single",
-          "diffClass": "difficult",
-          "lvl": 10,
-          "sanbaiTier": 10.3
-        },
-        {
-          "style": "single",
-          "diffClass": "expert",
-          "lvl": 12,
-          "sanbaiTier": 12.2
-        },
-        {
-          "style": "double",
-          "diffClass": "basic",
-          "lvl": 7,
-          "sanbaiTier": 7.5
-        },
-        {
-          "style": "double",
-          "diffClass": "difficult",
-          "lvl": 10,
-          "sanbaiTier": 10.45
-        },
-        {
-          "style": "double",
-          "diffClass": "expert",
-          "lvl": 13,
-          "sanbaiTier": 13.2
-        }
-      ],
-      "flags": ["copyStrikes"],
-      "remyLink": "https://remywiki.com/Remember_remember_(covered_by_Todoroki_Hajime(ReGLOSS))",
-      "jacket": "ddr_world/リメンバーリメンバー_ReGLOSS.jpg",
-      "saHash": "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
-      "search_hint": "RAINY WALTZ/レイニーワルツ"
-    },
-    {
-      "name": "リメンバーリメンバー",
-      "name_translation": "Remember remember",
       "artist": "rino & m@sumi from plastic penguin",
       "bpm": "182",
       "folder": "DanceDanceRevolution World",
@@ -77086,6 +77030,62 @@
       "genre": "レイニーワルツ",
       "saHash": "qQb09PdOD61ioPPdD9DbIil9iQQii1q1",
       "jacket": "ddr_world/Remember_remember.jpg",
+      "search_hint": "RAINY WALTZ/レイニーワルツ"
+    },
+    {
+      "name": "リメンバーリメンバー",
+      "name_translation": "Remember remember",
+      "artist": "covered by 轟はじめ(ReGLOSS)",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "sanbaiTier": 2.4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.3
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12,
+          "sanbaiTier": 12.2
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.45
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "sanbaiTier": 13.2
+        }
+      ],
+      "flags": ["copyStrikes"],
+      "remyLink": "https://remywiki.com/Remember_remember_(covered_by_Todoroki_Hajime(ReGLOSS))",
+      "jacket": "ddr_world/リメンバーリメンバー_ReGLOSS.jpg",
+      "saHash": "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
       "search_hint": "RAINY WALTZ/レイニーワルツ"
     },
     {
@@ -83068,20 +83068,20 @@
           "sanbaiTier": 11.9
         },
         {
-          "step": 356,
-          "freeze": 1,
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.95
-        },
-        {
           "step": 446,
           "freeze": 1,
           "lvl": 13,
           "style": "single",
           "diffClass": "expert",
           "sanbaiTier": 13.85
+        },
+        {
+          "step": 356,
+          "freeze": 1,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.95
         },
         {
           "step": 226,
@@ -83100,20 +83100,20 @@
           "sanbaiTier": 11.8
         },
         {
-          "step": 352,
-          "freeze": 1,
-          "lvl": 11,
-          "style": "double",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.85
-        },
-        {
           "step": 438,
           "freeze": 1,
           "lvl": 13,
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.8
+        },
+        {
+          "step": 352,
+          "freeze": 1,
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.85
         }
       ],
       "remyLink": "https://remywiki.com/Sakura",
@@ -84515,6 +84515,12 @@
           "sanbaiTier": 9.45
         },
         {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.5
+        },
+        {
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
@@ -84524,12 +84530,6 @@
           "shock": 6,
           "flags": ["shock"],
           "sanbaiTier": 12.75
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 14.5
         },
         {
           "lvl": 5,
@@ -84544,6 +84544,12 @@
           "sanbaiTier": 10.35
         },
         {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 14.3
+        },
+        {
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
@@ -84553,12 +84559,6 @@
           "shock": 27,
           "sanbaiTier": 12.75,
           "flags": ["shock"]
-        },
-        {
-          "lvl": 14,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 14.3
         }
       ],
       "flags": ["copyStrikes"],
@@ -87097,20 +87097,20 @@
           "sanbaiTier": 9.65
         },
         {
-          "step": 317,
-          "freeze": 7,
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "challenge",
-          "sanbaiTier": 11.75
-        },
-        {
           "step": 371,
           "freeze": 7,
           "lvl": 12,
           "style": "single",
           "diffClass": "expert",
           "sanbaiTier": 12.75
+        },
+        {
+          "step": 317,
+          "freeze": 7,
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 11.75
         },
         {
           "step": 109,

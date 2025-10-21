@@ -48,7 +48,7 @@ import type { GameData, Song } from "../src/models/SongData.ts";
     const rightLowerName = right.name.toLowerCase();
 
     if (leftLowerName === rightLowerName) {
-      return left.name > right.name ? 1 : -1;
+      return left.name == right.name ? 0 : left.name > right.name ? 1 : -1;
     }
     return leftLowerName > rightLowerName ? 1 : -1;
   });
