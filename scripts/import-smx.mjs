@@ -12,7 +12,7 @@ import {
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
-} from "./utils.mjs";
+} from "./utils.mts";
 
 const GET_IMAGES = true;
 import { fileURLToPath } from "url";

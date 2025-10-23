@@ -6,7 +6,7 @@ import {
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
-} from "./utils.mjs";
+} from "./utils.mts";
 import bettersqlite from "better-sqlite3";
 
 import { fileURLToPath } from "url";
