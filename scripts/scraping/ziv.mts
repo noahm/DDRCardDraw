@@ -16,14 +16,8 @@ type ZivSongData = Pick<
 
 /** Song importer from zenius-i-vanisher */
 export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
-  /** URL to zenius-i-vanisher game database page for this mix */
-  readonly #url: string;
-  /** List of difficulties in order of appearance on the page */
-  readonly #difficulties: Pick<Chart, "style" | "diffClass">[];
-  /** List of folder titles, if the mix has folders */
-  readonly #titleList: Exclude<GameData["meta"]["folders"], undefined>;
   /** Map of song corrections (name, partial data to merge) */
-  readonly #correctionMap: Map<
+  private readonly correctionMap: Map<
     string,
     Partial<Omit<Song, "charts">> & { lvls?: number[] }
   >;
@@ -35,8 +29,8 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
    * @param correctionMap Map of song corrections (name, partial data to merge)
    */
   constructor(
-    url: string,
-    difficulties: Pick<Chart, "style" | "diffClass">[] = [
+    private readonly url: string,
+    private readonly difficulties: Pick<Chart, "style" | "diffClass">[] = [
       { style: "single", diffClass: "beginner" },
       { style: "single", diffClass: "basic" },
       { style: "single", diffClass: "difficult" },
@@ -47,13 +41,10 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
       { style: "double", diffClass: "expert" },
       { style: "double", diffClass: "challenge" },
     ],
-    titleList: GameData["meta"]["folders"] = [],
+    private readonly titleList: GameData["meta"]["folders"] = [],
     correctionMap: Required<DDRSourceMeta>["ziv"]["correctionMap"] = [],
   ) {
-    this.#url = url;
-    this.#difficulties = difficulties;
-    this.#titleList = titleList;
-    this.#correctionMap = new Map(correctionMap);
+    this.correctionMap = new Map(correctionMap);
   }
 
   /**
@@ -62,21 +53,21 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
   async fetchSongs(): Promise<ZivSongData[]> {
     console.log(`Starting to fetch song data from zenius-i-vanisher.com`);
 
-    const dom = await getDom(this.#url);
+    const dom = await getDom(this.url);
     if (!dom) return [];
 
     const songLinks: NodeListOf<HTMLAnchorElement> =
       dom.window.document.querySelectorAll('a[href^="songdb.php"]');
-    if (!this.#titleList?.length)
+    if (!this.titleList?.length)
       return [...songLinks].map((link) => this.createSongData(link));
 
     /** n Songs */
     const spans: NodeListOf<HTMLSpanElement> =
       dom.window.document.querySelectorAll(
-        `th[colspan="${this.#difficulties.length + 2}"] span`,
+        `th[colspan="${this.difficulties.length + 2}"] span`,
       );
     const folders = [...spans].map((span, index) => {
-      const name = this.#titleList[index];
+      const name = this.titleList?.[index];
       if (!name) {
         throw new Error(`missing titleList entry at index ${index}`);
       }
@@ -114,14 +105,14 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
     const genreNode = firstColumn.querySelector("span.rightfloat");
 
     const songName = songLink.text.trim();
-    const actual = this.#correctionMap.get(songName);
+    const actual = this.correctionMap.get(songName);
 
     // Generate charts
     const charts = [];
     const chartNodes = [...songRow.getElementsByTagName("td")].slice(2);
-    if (chartNodes.length !== this.#difficulties.length) {
+    if (chartNodes.length !== this.difficulties.length) {
       throw new Error(
-        `unexpected number of chart columns: ${chartNodes.length} (expected ${this.#difficulties.length}) for song ${songLink.textContent.trim()}`,
+        `unexpected number of chart columns: ${chartNodes.length} (expected ${this.difficulties.length}) for song ${songLink.textContent.trim()}`,
       );
     }
     for (const [i, current] of chartNodes.entries()) {
@@ -135,17 +126,17 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
       if (actualLv) {
         if (actualLv !== lv)
           console.log(
-            `Fixed ziv data "${songName}" [${this.#difficulties[i].style}/${this.#difficulties[i].diffClass}] lvl: ${current.firstChild.textContent} -> ${actualLv}`,
+            `Fixed ziv data "${songName}" [${this.difficulties[i].style}/${this.difficulties[i].diffClass}] lvl: ${current.firstChild.textContent} -> ${actualLv}`,
           );
         else
           console.warn(
-            `No changes needed for lvl on ${songName}[${this.#difficulties[i].style}/${this.#difficulties[i].diffClass}]. Consider remove on correctionMap.lvls.`,
+            `No changes needed for lvl on ${songName}[${this.difficulties[i].style}/${this.difficulties[i].diffClass}]. Consider remove on correctionMap.lvls.`,
           );
       }
 
       const chart = {
         lvl: actualLv || lv,
-        ...this.#difficulties[i],
+        ...this.difficulties[i],
         ...(step > 0 ? { step } : {}),
         ...(freeze > 0 ? { freeze } : {}),
         ...(shock > 0 ? { shock, flags: ["shock"] } : {}),

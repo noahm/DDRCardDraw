@@ -68,27 +68,16 @@ type EAGateSongData = Required<
 
 /** Song importer from KONAMI e-amusement GATE */
 export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
-  /** URL to DDR song list page */
-  readonly #songListUrl: string;
-  /** URL to jacket image file (without `&img={saHash}` parameter) */
-  readonly #jacketUrl: string;
-  /** Flags to preserve */
-  readonly #unmanagedFlags: string[];
-
   /**
    * @param songListUrl URL to DDR song list page
    * @param jacketUrl URL to jacket image file (without `&img={saHash}` parameter)
    * @param unmanagedFlags Flags to preserve
    */
   constructor(
-    songListUrl: string,
-    jacketUrl: string,
-    unmanagedFlags: string[],
-  ) {
-    this.#songListUrl = songListUrl;
-    this.#jacketUrl = jacketUrl;
-    this.#unmanagedFlags = unmanagedFlags;
-  }
+    private readonly songListUrl: string,
+    private readonly jacketUrl: string,
+    private readonly unmanagedFlags: string[],
+  ) {}
 
   /**
    * Fetches song data from KONAMI e-amusement GATE
@@ -96,7 +85,7 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
   async fetchSongs(): Promise<EAGateSongData[]> {
     console.log(`Starting to fetch song data from KONAMI e-amusement GATE`);
 
-    const jacketUrl = this.#jacketUrl;
+    const jacketUrl = this.jacketUrl;
     const songsPerPage = 50;
     const allSongs = [];
     let currentPage = 0;
@@ -107,7 +96,7 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
       const offset = currentPage;
 
       // Construct URL with offset parameter
-      const url = new URL(this.#songListUrl);
+      const url = new URL(this.songListUrl);
       url.searchParams.set("offset", offset.toString());
       const pageUrl = url.toString();
 
@@ -338,11 +327,11 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
       // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)
       if (existingChart.flags) {
         const flagsToRemove = existingChart.flags.filter(
-          (f) => !this.#unmanagedFlags.includes(f),
+          (f) => !this.unmanagedFlags.includes(f),
         );
         if (flagsToRemove.length > 0) {
           existingChart.flags = existingChart.flags.filter((f) =>
-            this.#unmanagedFlags.includes(f),
+            this.unmanagedFlags.includes(f),
           );
           if (existingChart.flags.length === 0) {
             delete existingChart.flags;
@@ -371,11 +360,11 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
     // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)
     if (existingSong.flags) {
       const flagsToRemove = existingSong.flags.filter(
-        (f) => !this.#unmanagedFlags.includes(f),
+        (f) => !this.unmanagedFlags.includes(f),
       );
       if (flagsToRemove.length > 0) {
         existingSong.flags = existingSong.flags.filter((f) =>
-          this.#unmanagedFlags.includes(f),
+          this.unmanagedFlags.includes(f),
         );
         if (existingSong.flags.length === 0) {
           delete existingSong.flags;

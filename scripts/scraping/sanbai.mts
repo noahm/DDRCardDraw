@@ -70,14 +70,10 @@ type SanbaiSongData = Pick<
 > & { deleted: boolean; getJacketUrl: () => string };
 
 export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
-  /** Flags to preserve */
-  readonly #unmanagedFlags: string[];
   /**
    * @param unmanagedFlags Flags to preserve
    */
-  constructor(unmanagedFlags: string[] = []) {
-    this.#unmanagedFlags = unmanagedFlags;
-  }
+  constructor(private readonly unmanagedFlags: string[] = []) {}
 
   /**
    * Fetches and converts song data from 3icecream (ALL_SONG_DATA)
@@ -257,7 +253,7 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
 
       // Update chart flags (except unmanaged)
       const managedFlags = (existingChart.flags ?? []).filter(
-        (f) => !this.#unmanagedFlags.includes(f),
+        (f) => !this.unmanagedFlags.includes(f),
       );
       const chartFlags = chart.flags ?? [];
       if (
@@ -266,7 +262,7 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       ) {
         const flags = [
           ...(existingChart.flags?.filter((f) =>
-            this.#unmanagedFlags.includes(f),
+            this.unmanagedFlags.includes(f),
           ) ?? []),
           ...(chart.flags ?? []),
         ];
@@ -283,7 +279,7 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
 
     // Update song flags (except unmanaged)
     const managedFlags = (existingSong.flags ?? []).filter(
-      (f) => !this.#unmanagedFlags.includes(f),
+      (f) => !this.unmanagedFlags.includes(f),
     );
     const fetchedFlags = fetchedSong.flags ?? [];
     if (
@@ -295,7 +291,7 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       );
       const flags = [
         ...(existingSong.flags?.filter((f) =>
-          this.#unmanagedFlags.includes(f),
+          this.unmanagedFlags.includes(f),
         ) ?? []),
         ...fetchedFlags,
       ];
