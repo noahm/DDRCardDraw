@@ -59,11 +59,22 @@ const titleList = {
 const invalidDataOnSanbai = new Map([
   [
     "DDlbDddPO8liioQ196P0I9090bDDPQ6Q", // 迷宮のロンド
-    {
-      ratings: [3, 6, 12, 15, 18, 6, 12, 15, 18],
-      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
-    },
+    { lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290] },
   ],
+  // #region EXTRA SAVIOR WORLD (BEMANI PRO LEAGUE -SEASON 4- Triple Tribe)
+  [
+    "68oQQ8lO1qbi0qI8lbO60bP1098qOD88", // COSMIC V3LOCITY
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
+  [
+    "Q9iiOo800blDqO0DDDPI1PIbl1lIidI1", // 混乱少女♥そふらんちゃん!!
+    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
+  ],
+  [
+    "DOd9bIqddQ91qbQI1bdbbDi1lqPObo8l", // ハイテックトキオ
+    { lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280] },
+  ],
+  // #endregion EXTRA SAVIOR WORLD (BEMANI PRO LEAGUE -SEASON 4- Triple Tribe)
 ]);
 
 export class SanbaiSongImporter {
