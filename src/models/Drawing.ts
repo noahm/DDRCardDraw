@@ -51,6 +51,7 @@ export interface Drawing {
   winners: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
   priorityPlayer?: number;
+  cardVariant: string | undefined;
   /** __ prefix avoids serializing this field during sync */
   __syncPeer?: DataConnection;
 }

@@ -61,6 +61,10 @@
         "granularTierResolution": {
           "type": "integer",
           "description": "Number of steps from one level to the next when using the `sanbaiTier` granular levels"
+        },
+        "cardVariant": {
+          "type": "string",
+          "description": "Specifies a unique card type which can show info tailored to a specific game"
         }
       }
     },
