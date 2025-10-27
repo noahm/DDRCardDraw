@@ -17,7 +17,7 @@ import {
   degrsTestProgress,
   degrsTestResults,
 } from "./degrs-state";
-import { SongCard, SongCardProps } from "../song-card/song-card";
+import { SongCard, SongCardProps } from "../song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
