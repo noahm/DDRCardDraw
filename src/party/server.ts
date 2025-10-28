@@ -71,7 +71,9 @@ export default class Server implements Party.Server {
 
   onRequest(req: Party.Request): Response | Promise<Response> {
     if (req.method === "GET") {
-      return new Response(JSON.stringify(this.store.getState()));
+      return new Response(JSON.stringify(this.store.getState()), {
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     return new Response("Method not allowed", { status: 405 });
