@@ -71,7 +71,7 @@ export default class Server implements Party.Server {
 
   onRequest(req: Party.Request): Response | Promise<Response> {
     if (req.method === "GET") {
-      return new Response(this.getRoomState());
+      return new Response(JSON.stringify(this.store.getState()));
     }
 
     return new Response("Method not allowed", { status: 405 });
@@ -87,7 +87,12 @@ export default class Server implements Party.Server {
     );
 
     // send the initial state to this client
-    conn.send(this.getRoomState());
+    conn.send(
+      JSON.stringify(<Roomstate>{
+        type: "roomstate",
+        state: this.store.getState(),
+      }),
+    );
   }
 
   async onMessage(message: string, sender: Party.Connection) {
@@ -116,13 +121,6 @@ export default class Server implements Party.Server {
     } catch (e) {
       console.warn("error with upsert", e);
     }
-  }
-
-  private getRoomState() {
-    return JSON.stringify(<Roomstate>{
-      type: "roomstate",
-      state: this.store.getState(),
-    });
   }
 }
 
