@@ -176,6 +176,15 @@ export const ALL_SONG_DATA = [
     tiers: [1, 0, 0, 0, 0, 0, 0, 0, 0],
   },
   {
+    song_id: "08QQ8iPldb6o96bl0ld61qb99Q0Q19Qd",
+    song_name: "4NT1 D34D",
+    alternate_name: "ANTI DEAD",
+    alphabet: "#",
+    version_num: 20,
+    ratings: [2, 5, 11, 15, 0, 5, 10, 15, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+  },
+  {
     song_id: "091IQQ1PqOdIl9ioPQDdO60Dq069DP69",
     song_name: "puzzle",
     alphabet: "P",
@@ -1653,7 +1662,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 8, 15, 18, 0, 8, 14, 18, 0],
     tiers: [0.3, 0.5, 0.05, 0.05, 0, 0.55, 0.4, 0.4, 0],
-    lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
+    lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
   },
   {
     song_id: "691bdoD0DIP6di9D6QoPiDbD19Ol0lqi",
@@ -1924,6 +1933,16 @@ export const ALL_SONG_DATA = [
     version_num: 18,
     ratings: [4, 8, 12, 15, 17, 8, 12, 15, 17],
     tiers: [0.3, 0.4, 0.25, 0.4, 0.7, 0.3, 0.15, 0.15, 0.3],
+  },
+  {
+    song_id: "6IDll6i6d8iII686qq6DddiI00iD8o9d",
+    song_name: "東方妖々夢 ULTIMATE MEDLEY",
+    searchable_name: "とうほうようようむ ULTIMATE MEDLEY",
+    romanized_name: "Touhouyouyoumu ULTIMATE MEDLEY",
+    alphabet: "た",
+    version_num: 20,
+    ratings: [5, 10, 12, 16, 18, 10, 12, 16, 0],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 0],
   },
   {
     song_id: "6iO8d9ld00I6lDIO6qbOldP99oqloqb9",
@@ -2930,7 +2949,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "8P1809bo8PoqQoqOQilPidOdobbo6iiO",
     song_name: "チルノのパーフェクトさんすう学園",
-    alphabet: "?",
+    searchable_name: "ちるののぱーふぇくとさんすきょうしつ",
+    romanized_name: "Cirno no Perfect Sansuu Kyoushitsu",
+    alphabet: "さ",
     version_num: 20,
     ratings: [3, 7, 12, 15, 17, 7, 12, 15, 17],
     tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -4379,6 +4400,15 @@ export const ALL_SONG_DATA = [
     tiers: [0.7, 0.65, 0.8, 0.55, 0, 0.8, 0.75, 0.55, 0],
   },
   {
+    song_id: "bPI6QobOQl9Q161l8l68069QdO1QbO9b",
+    song_name: "SkyDrive! (HASEKO EUROBEAT MIX)",
+    searchable_name: "SkyDrive HASEKO EUROBEAT MIX",
+    alphabet: "S",
+    version_num: 20,
+    ratings: [3, 7, 12, 14, 17, 8, 0, 14, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 0, 1, 1],
+  },
+  {
     song_id: "bq1O60D90Qbb6iPoi90Ii9olQOIO0Ib1",
     song_name: "STARS☆☆☆ (Re-tuned by HΛL) - DDR EDITION -",
     alphabet: "S",
@@ -4906,6 +4936,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.65, 0.9, 0.65, 0.3, 0, 0.7, 0.8, 0.75, 0],
   },
   {
+    song_id: "D90qii9D6P0POQ69Iiblib00Po1DIoi8",
+    song_name: "Deadly Dolly Dance",
+    alphabet: "D",
+    version_num: 20,
+    ratings: [2, 5, 12, 17, 0, 5, 0, 17, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 0, 1, 0],
+  },
+  {
     song_id: "d91lIllbboPd668QP88I06Q6QqooQiO1",
     song_name: "Cleopatrysm",
     alternate_name: "ピラミッド",
@@ -5330,6 +5368,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 6, 12, 15, 18, 6, 12, 15, 18],
     tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
   },
   {
     song_id: "dDldd8OlbPQDoD80dO0DiDOiIoP1PQoD",
@@ -5815,7 +5854,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [3, 6, 13, 15, 18, 7, 13, 15, 17],
     tiers: [0.15, 0.2, 0.2, 0.3, 1, 0.15, 0, 0.3, 1],
-    lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "DodQ1I1DiPIqDQP0PqO6PIQ1iPQd6O8d",
@@ -10828,7 +10867,9 @@ export const ALL_SONG_DATA = [
   {
     song_id: "PoO90Q6P0q9oOQ16i0P0l1iodOQP9o0O",
     song_name: "恋繋エピローグ",
-    alphabet: "?",
+    searchable_name: "れんけいえぴろーぐ",
+    romanized_name: "Renkei Epilogue",
+    alphabet: "ら",
     version_num: 20,
     ratings: [3, 7, 10, 13, 0, 7, 10, 13, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
@@ -11448,7 +11489,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [5, 10, 13, 17, 18, 10, 13, 17, 18],
     tiers: [0.95, 0.95, 0.95, 0.65, 1, 0.95, 0.95, 0.55, 1],
-    lock_types: [20, 20, 20, 20, 0, 20, 20, 20, 0],
+    lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
   },
   {
     song_id: "Q9l0i6DPO08obldq101ldDioiqdIDqlq",
@@ -12520,4 +12561,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1761186028618;
+export const SONG_DATA_LAST_UPDATED_unixms = 1761840833307;

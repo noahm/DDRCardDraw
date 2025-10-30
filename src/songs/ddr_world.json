@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1761186028618
+    "lastUpdated": 1761840833307
   },
   "defaults": {
     "style": "single",
@@ -651,6 +651,53 @@
       "genre": "DANCE SPEED",
       "flags": ["unlock"],
       "search_hint": "Eyes"
+    },
+    {
+      "name": "4NT1 D34D",
+      "artist": "N-Driver",
+      "bpm": "109",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/4NT1 D34D.jpg",
+      "remyLink": "https://remywiki.com/4NT1_D34D",
+      "saHash": "08QQ8iPldb6o96bl0ld61qb99Q0Q19Qd",
+      "search_hint": "ANTI DEAD",
+      "flags": ["grandPrixPack"]
     },
     {
       "name": "50th Memorial Songs -Beginning Story-",
@@ -14452,6 +14499,52 @@
       "jacket": "ddr_a20plus/DEADLOCK -Out Of Reach-.jpg",
       "saHash": "i6bl89d6OOi1O00qlQOIl8b8Qld6IiQP",
       "saIndex": "966"
+    },
+    {
+      "name": "Deadly Dolly Dance",
+      "artist": "Shiron",
+      "bpm": "160",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 11,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "expert"
+        }
+      ],
+      "jacket": "ddr_world/Deadly Dolly Dance.jpg",
+      "remyLink": "https://remywiki.com/Deadly_Dolly_Dance",
+      "saHash": "D90qii9D6P0POQ69Iiblib00Po1DIoi8",
+      "flags": ["grandPrixPack"]
     },
     {
       "name": "Death by Glamour",
@@ -52104,6 +52197,62 @@
       "saIndex": "389"
     },
     {
+      "name": "SkyDrive! (HASEKO EUROBEAT MIX)",
+      "artist": "???",
+      "bpm": "???",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
+          "lvl": 8,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge"
+        }
+      ],
+      "jacket": "ddr_world/SkyDrive! (HASEKO EUROBEAT MIX).jpg",
+      "saHash": "bPI6QobOQl9Q161l8l68069QdO1QbO9b",
+      "search_hint": "SkyDrive HASEKO EUROBEAT MIX",
+      "flags": ["grandPrixPack"]
+    },
+    {
       "name": "Skywalking",
       "artist": "Nhato",
       "bpm": "90-180",
@@ -82741,6 +82890,64 @@
       "genre": "ORBITALIC GABBER STEP",
       "saHash": "oQ868oOio6O90i9qO1o8I96P1do11ID0",
       "saIndex": "945"
+    },
+    {
+      "name": "東方妖々夢 ULTIMATE MEDLEY",
+      "name_translation": "Touhouyouyoumu ULTIMATE MEDLEY",
+      "artist": "uma vs. モリモリあつし",
+      "bpm": "110-220",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 12,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge"
+        }
+      ],
+      "jacket": "ddr_world/東方妖々夢 ULTIMATE MEDLEY.jpg",
+      "remyLink": "https://remywiki.com/Touhouyouyoumu_ULTIMATE_MEDLEY",
+      "saHash": "6IDll6i6d8iII686qq6DddiI00iD8o9d",
+      "search_hint": "とうほうようようむ ULTIMATE MEDLEY",
+      "flags": ["grandPrixPack"]
     },
     {
       "name": "桜",
