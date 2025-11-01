@@ -47,7 +47,6 @@ import {
 import { eventSlice } from "../state/event.slice";
 import {
   AppThunk,
-  store,
   useAppDispatch,
   useAppState,
   useAppStore,
@@ -116,7 +115,6 @@ const DEFAULT_FILENAME = "card-draw.png";
 
 function SaveToStartggButton({ drawingId }: { drawingId: string }) {
   const dispatch = useAppDispatch();
-  const store = useAppStore();
   const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
   const [mutationData, reportSet] = useReportSetMutation();
   if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
@@ -235,6 +233,7 @@ function ConfigAsMenuItem(props: { configId: string; drawingId: string }) {
 
 export function DrawingActions() {
   const dispatch = useAppDispatch();
+  const store = useAppStore();
   const { t } = useIntl();
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.compoundId);

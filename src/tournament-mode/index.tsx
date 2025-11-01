@@ -6,10 +6,12 @@ import { PartySocketManager } from "../party/client";
 import { urqlClient } from "../startgg-gql";
 import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
-import { store } from "../state/store";
+import { createClientStore } from "../state/store";
+import { useMemo } from "react";
 
 export function TournamentModeAppShell() {
   const params = useParams<"roomName">();
+  const store = useMemo(() => createClientStore(), []);
   if (!params.roomName) {
     return null;
   }

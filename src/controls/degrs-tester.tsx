@@ -21,7 +21,7 @@ import { SongCard, SongCardProps } from "../song-card/song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
-import { store } from "../state/store";
+import { useAppStore, type StoreType } from "../state/store";
 import { GameData } from "../models/SongData";
 import { useGameData } from "../state/hooks";
 import { ConfigSelect } from ".";
@@ -30,7 +30,11 @@ export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
   return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
 }
 
-function* oneMillionDraws(gameData: GameData, configId: string) {
+function* oneMillionDraws(
+  store: StoreType,
+  gameData: GameData,
+  configId: string,
+) {
   const configState = configSlice.selectors.selectById(
     store.getState(),
     configId,
@@ -51,9 +55,13 @@ function* oneMillionDraws(gameData: GameData, configId: string) {
  * yields current progress every 1000 loops to allow passing back
  * the event loop
  **/
-export function* degrsTester(gameData: GameData, configId: string) {
+export function* degrsTester(
+  store: StoreType,
+  gameData: GameData,
+  configId: string,
+) {
   let totalDegrs = 0;
-  for (const [charts, idx] of oneMillionDraws(gameData, configId)) {
+  for (const [charts, idx] of oneMillionDraws(store, gameData, configId)) {
     if (charts.some(isDegrs)) {
       totalDegrs++;
     }
@@ -75,13 +83,14 @@ export function DegrsTestButton(props: { configId: string | null }) {
   const [progress, setProgress] = useAtom(degrsTestProgress);
   const [results, setResults] = useAtom(degrsTestResults);
   const gameData = useGameData();
+  const store = useAppStore();
 
   async function startTest() {
     setIsTesting(true);
     setProgress(0);
     setResults(undefined);
     await nextIdleCycle();
-    const tester = degrsTester(gameData!, props.configId!);
+    const tester = degrsTester(store, gameData!, props.configId!);
     let report = tester.next();
     while (!report.done) {
       setProgress(report.value);

@@ -13,7 +13,7 @@ import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { Provider } from "react-redux";
-import { store, useAppState } from "./state/store";
+import { createClientStore, useAppState } from "./state/store";
 import { PartySocketManager } from "./party/client";
 
 import {
@@ -25,6 +25,7 @@ import {
 } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
+import { useMemo } from "react";
 
 const router = createBrowserRouter([
   {
@@ -199,6 +200,7 @@ const router = createBrowserRouter([
 
 function ObsSource() {
   const params = useParams<"roomName" | "cabId">();
+  const store = useMemo(() => createClientStore(), []);
   if (!params.roomName) {
     return null;
   }

@@ -2,7 +2,7 @@ import type * as Party from "partykit/server";
 import type { ReduxAction, Roomstate } from "./types";
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
-import { AppState, type store as appReduxStore } from "../state/store";
+import type { AppState } from "../state/store";
 
 import { createClient } from "@supabase/supabase-js";
 import type { Database, Json } from "./database.types";
