@@ -3,9 +3,20 @@ import {
   ButtonGroup,
   Card,
   HTMLSelect,
+  Menu,
+  MenuItem,
+  Popover,
   Tooltip,
 } from "@blueprintjs/core";
-import { Add, Duplicate, FloppyDisk, Import, Trash } from "@blueprintjs/icons";
+import {
+  ThAdd,
+  Duplicate,
+  FloppyDisk,
+  Import,
+  Trash,
+  More,
+  DocumentShare,
+} from "@blueprintjs/icons";
 import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
 import styles from "./config-select.css";
 import { createNewConfig } from "../state/thunks";
@@ -13,6 +24,8 @@ import { useRoomName } from "../hooks/useRoomName";
 import { useSetLastConfigSelected } from "../state/config.atoms";
 import { configSlice } from "../state/config.slice";
 import { loadConfig, saveConfig } from "../config-persistence";
+import { copyTextToClipboard } from "../utils/share";
+import { useParams } from "react-router-dom";
 
 const getConfigSummaryValues = createAppSelector(
   [(s) => s.config.entities],
@@ -71,6 +84,7 @@ export function ConfigList(props: {
   const dispatch = useAppDispatch();
   const roomName = useRoomName();
   const setLastConfigSelected = useSetLastConfigSelected();
+  const params = useParams<"roomName">();
 
   const isEmpty = !summaryValues.length;
 
@@ -91,41 +105,39 @@ export function ConfigList(props: {
             compact
           >
             {props.selectedId === key && (
-              <ButtonGroup className={styles.actionButtons}>
-                <Button
-                  icon={<FloppyDisk />}
-                  onClick={() => {
-                    saveConfig(
-                      dispatch((_, gs) =>
-                        configSlice.selectors.selectById(gs(), key),
-                      ),
-                    );
-                  }}
-                />
-                <Button
-                  icon={<Duplicate />}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    dispatch(createNewConfig(roomName, key)).then((c) =>
-                      changeConfig(c.id),
-                    );
-                  }}
-                />
-                <Button
-                  icon={<Trash />}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (!confirm(`Are you sure you want to delete "${name}"?`))
-                      return;
-                    const nextIdx =
-                      idx < summaryValues.length - 1 ? idx + 1 : idx - 1;
-                    const nextConfigId =
-                      nextIdx > -1 ? summaryValues[nextIdx][0] : null;
-                    changeConfig(nextConfigId);
-                    dispatch(configSlice.actions.removeOne(key));
-                  }}
-                />
-              </ButtonGroup>
+              <ConfigActionsMenu
+                onShareLink={() => {
+                  const url = new URL(document.location.href);
+                  url.pathname = `/preview/${params.roomName}`;
+                  url.search = "?configId=" + key;
+                  copyTextToClipboard(
+                    url.href,
+                    "Preview URL copied to clipboard",
+                  );
+                }}
+                onExport={() => {
+                  saveConfig(
+                    dispatch((_, gs) =>
+                      configSlice.selectors.selectById(gs(), key),
+                    ),
+                  );
+                }}
+                onDuplicate={() => {
+                  dispatch(createNewConfig(roomName, key)).then((c) =>
+                    changeConfig(c.id),
+                  );
+                }}
+                onDelete={() => {
+                  if (!confirm(`Are you sure you want to delete "${name}"?`))
+                    return;
+                  const nextIdx =
+                    idx < summaryValues.length - 1 ? idx + 1 : idx - 1;
+                  const nextConfigId =
+                    nextIdx > -1 ? summaryValues[nextIdx][0] : null;
+                  changeConfig(nextConfigId);
+                  dispatch(configSlice.actions.removeOne(key));
+                }}
+              />
             )}
             <h2>{name}</h2>
             <p>
@@ -138,7 +150,7 @@ export function ConfigList(props: {
       )}
       <Card compact style={{ opacity: 0.6 }}>
         <ButtonGroup className={styles.actionButtons}>
-          <Tooltip content={"Import JSON"} placement="top">
+          <Tooltip content={"Import from JSON"} placement="top">
             <Button
               icon={<Import />}
               onClick={() => {
@@ -149,17 +161,62 @@ export function ConfigList(props: {
               }}
             />
           </Tooltip>
-          <Button
-            icon={<Add />}
-            onClick={() =>
-              dispatch(createNewConfig(roomName)).then((c) =>
-                changeConfig(c.id),
-              )
-            }
-          />
+          <Tooltip content={"New Config"} placement="top">
+            <Button
+              icon={<ThAdd />}
+              onClick={() =>
+                dispatch(createNewConfig(roomName)).then((c) =>
+                  changeConfig(c.id),
+                )
+              }
+            />
+          </Tooltip>
         </ButtonGroup>
         <h2>Create new</h2>
       </Card>
     </div>
+  );
+}
+
+function ConfigActionsMenu(props: {
+  onExport(): void;
+  onShareLink(): void;
+  onDuplicate(): void;
+  onDelete(): void;
+}) {
+  const menu = (
+    <Menu>
+      <MenuItem
+        icon={<FloppyDisk />}
+        text="Export to JSON"
+        onClick={props.onExport}
+      />
+      <MenuItem
+        icon={<DocumentShare />}
+        text="Share preview link"
+        onClick={props.onShareLink}
+      />
+      <MenuItem
+        icon={<Duplicate />}
+        text="Duplicate"
+        onClick={(e) => {
+          e.preventDefault();
+          props.onDuplicate();
+        }}
+      />
+      <MenuItem
+        icon={<Trash />}
+        text="Delete"
+        onClick={(e) => {
+          e.preventDefault();
+          props.onDelete();
+        }}
+      />
+    </Menu>
+  );
+  return (
+    <Popover className={styles.actionButtons} content={menu}>
+      <Button icon={<More />} />
+    </Popover>
   );
 }
