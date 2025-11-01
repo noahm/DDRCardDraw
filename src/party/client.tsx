@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { Card, NonIdealState, Spinner } from "@blueprintjs/core";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
+import { PARTYKIT_HOST } from "./host";
 
 export function PartySocketManager(props: {
   roomName?: string;
@@ -17,10 +18,7 @@ export function PartySocketManager(props: {
   const [ready, setReady] = useState(false);
   const socket = usePartySocket({
     room: props.roomName,
-    host:
-      process.env.NODE_ENV === "development"
-        ? "localhost:1999"
-        : "ddr-card-draw-party.noahm.partykit.dev",
+    host: PARTYKIT_HOST,
     onMessage(evt) {
       try {
         const data: Broadcast = JSON.parse(evt.data);

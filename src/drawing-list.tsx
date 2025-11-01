@@ -1,7 +1,7 @@
-import { Suspense, lazy, memo, useDeferredValue } from "react";
+import React, { Suspense, lazy, memo, useDeferredValue } from "react";
 import styles from "./drawing-list.css";
 import { Callout, NonIdealState } from "@blueprintjs/core";
-import { Import } from "@blueprintjs/icons";
+import { WarningSign } from "@blueprintjs/icons";
 import logo from "./assets/ddr-tools-256.png";
 import { useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
@@ -24,7 +24,7 @@ const ScrollableDrawings = memo(() => {
   );
 });
 
-export function DrawingList() {
+export function DrawingList(props: { introString?: React.ReactNode }) {
   const { t } = useIntl();
   const hasDrawings = useDeferredValue(
     useAppState(drawingsSlice.selectors.haveDrawings),
@@ -35,9 +35,9 @@ export function DrawingList() {
         <NonIdealState
           icon={<img src={logo} height={128} width={128} alt="" />}
           title="DDR Tools"
-          description={t("hero.description")}
+          description={props.introString || t("hero.description")}
           action={
-            <Callout intent="primary" icon={<Import />}>
+            <Callout intent="warning" icon={<WarningSign />}>
               <FormattedMessage id="hero.callout" />
             </Callout>
           }

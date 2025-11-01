@@ -80,6 +80,27 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "preview/:roomName",
+    async loader(f) {
+      const { roomName } = f.params;
+      const mod = await import("./preview-mode/shell");
+      return mod.PreviewShell.loader(roomName);
+    },
+    lazy: async () => {
+      const mod = await import("./preview-mode/shell");
+      return { Component: mod.PreviewShell };
+    },
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const mod = await import("./preview-mode/shell");
+          return { Component: mod.PreviewView };
+        },
+      },
+    ],
+  },
+  {
     path: "e/:roomName",
     lazy: async () => ({
       Component: (await import("./tournament-mode")).TournamentModeAppShell,

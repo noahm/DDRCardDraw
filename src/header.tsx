@@ -14,7 +14,7 @@ import {
   Help,
   Control,
 } from "@blueprintjs/icons";
-import { useCallback, useState } from "react";
+import { JSX, useCallback, useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
@@ -25,20 +25,58 @@ import { drawingsSlice } from "./state/drawings.slice";
 import { EventModeGated } from "./common-components/app-mode";
 import { useNavigate, useHref } from "react-router-dom";
 
-export function Header() {
+export function Header({
+  heading,
+  controls,
+}: {
+  heading?: JSX.Element;
+  controls?: JSX.Element;
+}) {
   const inObs = useInObs();
+
+  if (inObs) return null;
+
+  return (
+    <Navbar
+      style={{
+        position: "sticky",
+        top: 0,
+      }}
+    >
+      <Navbar.Group align={Alignment.LEFT}>
+        <HamburgerMenu />
+        <Navbar.Divider />
+        {heading || (
+          <Navbar.Heading>
+            Event Mode{" "}
+            <small>
+              <em>
+                <EventModeGated fallback="Classic Variant Alpha">
+                  Alpha Preview
+                </EventModeGated>
+              </em>
+            </small>
+          </Navbar.Heading>
+        )}
+      </Navbar.Group>
+      <Navbar.Group align={Alignment.RIGHT}>
+        {controls || <HeaderControls />}
+      </Navbar.Group>
+    </Navbar>
+  );
+}
+
+export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const dashHref = useHref("dash", { relative: "route" });
-  const dispatch = useAppDispatch();
   const clearDrawings = useCallback(
     () => dispatch(drawingsSlice.actions.clearDrawings()),
     [dispatch],
   );
   const haveDrawings = useAppState(drawingsSlice.selectors.haveDrawings);
   const { t } = useIntl();
-
-  if (inObs) return null;
 
   const menu = (
     <Menu>
@@ -73,36 +111,14 @@ export function Header() {
       <LastUpdate />
     </Menu>
   );
-
   return (
-    <Navbar
-      style={{
-        position: "sticky",
-        top: 0,
-      }}
-    >
+    <>
       <Dialog isOpen={aboutOpen} onClose={() => setAboutOpen(false)}>
         <About />
       </Dialog>
-      <Navbar.Group align={Alignment.LEFT}>
-        <Popover content={menu} placement="bottom-start">
-          <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
-        </Popover>
-        <Navbar.Divider />
-        <Navbar.Heading>
-          Event Mode{" "}
-          <small>
-            <em>
-              <EventModeGated fallback="Classic Variant Alpha">
-                Alpha Preview
-              </EventModeGated>
-            </em>
-          </small>
-        </Navbar.Heading>
-      </Navbar.Group>
-      <Navbar.Group align={Alignment.RIGHT}>
-        <HeaderControls />
-      </Navbar.Group>
-    </Navbar>
+      <Popover content={menu} placement="bottom-start">
+        <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
+      </Popover>
+    </>
   );
 }
