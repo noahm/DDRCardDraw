@@ -32,7 +32,7 @@
       }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1760573168074
+    "lastUpdated": 1762217954534
   },
   "defaults": {
     "style": "solo",
@@ -28517,6 +28517,282 @@
         {
           "style": "solo",
           "lvl": 19,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "716",
+      "name": "Euphoria Rush",
+      "artist": "CHYL & Skybreak",
+      "genre": "Speed House",
+      "bpm": "150",
+      "jacket": "smx/EuphoriaRush.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 21,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 19,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 23,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "717",
+      "name": "King Of Fire",
+      "artist": "Max Casanova",
+      "genre": "Eurobeat",
+      "bpm": "155",
+      "jacket": "smx/KingOfFire.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 3,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 5,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 16,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 17,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 22,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "718",
+      "name": "Morning Call",
+      "artist": "U_Chae feat. Uki Satake",
+      "genre": "K-Pop",
+      "bpm": "132",
+      "jacket": "smx/MorningCall.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 7,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 13,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 10,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 17,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "dual",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
+          "diffClass": "full",
+          "flags": ["plus"]
+        }
+      ]
+    },
+    {
+      "saIndex": "719",
+      "name": "Uncanny Valley",
+      "artist": "Freezepop",
+      "genre": "Electronica",
+      "bpm": "150",
+      "jacket": "smx/UncannyValley.jpg",
+      "charts": [
+        {
+          "style": "solo",
+          "lvl": 2,
+          "diffClass": "beginner"
+        },
+        {
+          "style": "solo",
+          "lvl": 6,
+          "diffClass": "easy"
+        },
+        {
+          "style": "solo",
+          "lvl": 15,
+          "diffClass": "hard"
+        },
+        {
+          "style": "solo",
+          "lvl": 21,
+          "diffClass": "wild"
+        },
+        {
+          "style": "solo",
+          "lvl": 14,
+          "diffClass": "dual"
+        },
+        {
+          "style": "solo",
+          "lvl": 13,
+          "diffClass": "full"
+        },
+        {
+          "style": "team",
+          "lvl": 18,
+          "diffClass": "team"
+        },
+        {
+          "style": "solo",
+          "lvl": 12,
+          "diffClass": "easy",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 18,
+          "diffClass": "hard",
+          "flags": ["plus"]
+        },
+        {
+          "style": "solo",
+          "lvl": 20,
           "diffClass": "dual",
           "flags": ["plus"]
         },
