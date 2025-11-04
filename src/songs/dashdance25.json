@@ -1,0 +1,1395 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": [],
+    "lastUpdated": 1762216082744,
+    "usesDrawGroups": true,
+    "styles": ["single"],
+    "difficulties": [
+      {
+        "key": "challenge",
+        "color": "#0191F2"
+      }
+    ]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 7,
+    "difficulties": ["challenge"],
+    "style": "single",
+    "upperLvlBound": 15
+  },
+  "i18n": {
+    "en": {
+      "name": "Dash Dance",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[T01] Artificial Chariot (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Artificial Chariot (SH).jpg",
+      "bpm": "160",
+      "artist": "Riya",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Caramelldansen (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Caramelldansen (SH).jpg",
+      "bpm": "164",
+      "artist": "Caramell",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Checkpoint (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Checkpoint (SH).jpg",
+      "bpm": "140",
+      "artist": "Nitro Fun X Hyper Potions",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Espresso (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Espresso (SM).jpg",
+      "bpm": "104",
+      "artist": "Sabrina Carpenter",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] If U Need It (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] If U Need It (SH).jpg",
+      "bpm": "132",
+      "artist": "Sammy Virji",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Limbo (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Limbo (SM).jpg",
+      "bpm": "150",
+      "artist": "Nitti Gritti & Adair",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] MADELINE (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] MADELINE (SM).jpg",
+      "bpm": "125",
+      "artist": "INJI",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Upshift (No CMOD) (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Upshift (Yunosuke Remix) (No CMOD) (SM).jpg",
+      "bpm": "84-167",
+      "artist": "Iriss",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Your Idol (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T01] Your Idol (SM).jpg",
+      "bpm": "180",
+      "artist": "Saja Boys & Andrew Choi & Neckwav & Danny Chung & Kevin Woo",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T02] Blossom (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Blossom (SM).jpg",
+      "bpm": "140",
+      "artist": "Syncatto",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Bounce",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Bounce (SX).jpg",
+      "bpm": "150",
+      "artist": "VESK GREEN & Pegboard Nerds",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Bubblegum K.K. (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Bubblegum K.K. (Qumu Remix) (SH).jpg",
+      "bpm": "170",
+      "artist": "Animal Crossing",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Cockroach Cooking (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Cockroach Cooking (SM).jpg",
+      "bpm": "185",
+      "artist": "Yosk!",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Honeypie (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Honeypie (SH).jpg",
+      "bpm": "115",
+      "artist": "JAWNY",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Somebody That I Used To Know (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Somebody That I Used To Know (SM).jpg",
+      "bpm": "150",
+      "artist": "Prezioso, SP3CTRUM, Kickbait",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Sorry (No CMOD) (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Sorry (No CMOD) (SM).jpg",
+      "bpm": "126-172",
+      "artist": "Fox Stevenson",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Unbelievable (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] Unbelievable (SH).jpg",
+      "bpm": "158",
+      "artist": "Diamond Rio",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] alien friend request (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T02] alien friend request (SM).jpg",
+      "bpm": "200",
+      "artist": "alien3",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T03] Addicted (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Addicted (SH).jpg",
+      "bpm": "132",
+      "artist": "Redsign",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Desert",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Desert (SX).jpg",
+      "bpm": "90",
+      "artist": "Inova",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Immaterial",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Immaterial (SX).jpg",
+      "bpm": "140",
+      "artist": "SOPHIE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Killa (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Killa (SM).jpg",
+      "bpm": "204",
+      "artist": "DISTO",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Kronic (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Kronic (SM).jpg",
+      "bpm": "150",
+      "artist": "Kill the Clowns, Another Mexican Dude",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Lover Online (ITL Rebuild)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Lover Online (ITL Rebuild) (SX).jpg",
+      "bpm": "132",
+      "artist": "NOTD, Maia Wright",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Magnetic (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] Magnetic (No CMOD) (SX).jpg",
+      "bpm": "131",
+      "artist": "ILLIT",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] reflect me internet",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] reflect me internet (SX).jpg",
+      "bpm": "140",
+      "artist": "z² & DC Mizey",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] unlucky number (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T03] unlucky number (SH).jpg",
+      "bpm": "128",
+      "artist": "xaev",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T04] Cha Cha Cha",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] Cha Cha Cha (SX).jpg",
+      "bpm": "155",
+      "artist": "Käärijä",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Chaos of Drum",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] Chaos of Drum (SX).jpg",
+      "bpm": "128",
+      "artist": "KO3",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Lesbians <3",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] Lesbians (SX).jpg",
+      "bpm": "140",
+      "artist": "Alice Longyu Gao",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Maneater",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] Maneater (SX).jpg",
+      "bpm": "140",
+      "artist": "JKRS, ECHO",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] ON FIRE (Hard) (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] ON FIRE (No CMOD) (SH).jpg",
+      "bpm": "125",
+      "artist": "JOYRYDE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Palette Lab (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] Palette Lab (SH).jpg",
+      "bpm": "130",
+      "artist": "かんざきしおん",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Virus Funk",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] Virus Funk (SX).jpg",
+      "bpm": "132",
+      "artist": "Nhato",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] chipotle",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] chipotle.jpg",
+      "bpm": "123",
+      "artist": "bbno$",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Heather",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T04] heather (SX).jpg",
+      "bpm": "200",
+      "artist": "glaive",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T05] Chromatically",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] Chromatically (SX).jpg",
+      "bpm": "120",
+      "artist": "Haywyre",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] First Rendezvous (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] First Rendezvous (No CMOD) (SX).jpg",
+      "bpm": "170",
+      "artist": "t+pazolite",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] MAKE IT FUNKY NOW",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] MAKE IT FUNKY NOW (SX).jpg",
+      "bpm": "146",
+      "artist": "DOT96",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] MANTIS RITUAL",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] MANTIS RITUAL (SX).jpg",
+      "bpm": "162",
+      "artist": "KAIFU",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Multitalents (Medium)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] Multitalents (SM).jpg",
+      "bpm": "160",
+      "artist": "PSYQUI",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Overjoy ★ OVERDOSE!!",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] Overjoy OVERDOSE (SX).jpg",
+      "bpm": "143",
+      "artist": "Luna Fozer",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Tell Me",
+      "name_translation": "[T05] Tell Me",
+      "jacket": "itg/dashdance25/[T05] Tell Me (SX).jpg",
+      "bpm": "115",
+      "artist": "Haywyre",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] When I Fall",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T05] When I Fall (SX).jpg",
+      "bpm": "140",
+      "artist": "Tsu Nami & Runn",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] [09] くいくい (Hard)",
+      "name_translation": "[T05] kuikui (Hard)",
+      "jacket": "itg/dashdance25/[T05] kuikui (SH).jpg",
+      "bpm": "145",
+      "artist": "KOTONOHOUSE feat. くいしんぼあかちゃん",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T06] Alxaid (Hard)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Alxaid (SH).jpg",
+      "bpm": "188",
+      "artist": "Renpul",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Ascent",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Ascent (SX).jpg",
+      "bpm": "145",
+      "artist": "TANUKI",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] BOOMSHAKALAKKA (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Boomshakalaka (No CMOD) (SX).jpg",
+      "bpm": "128",
+      "artist": "X enc'ount",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Celery Complex",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Celery Complex (SX).jpg",
+      "bpm": "124",
+      "artist": "Takahiro Eguchi + Tomohiko Togashi",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Dodo (RED VERSION)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Dodo (RED VERSION) (SX).jpg",
+      "bpm": "130",
+      "artist": "CHOMPO, meganeko",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Freezing Hot",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Freezing Hot (SX).jpg",
+      "bpm": "128",
+      "artist": "M2U",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Fuzzy-Navel",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Fuzzy Navel (SX).jpg",
+      "bpm": "141",
+      "artist": "*wakadori",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Whipdash",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] Whipdash (SX).jpg",
+      "bpm": "150",
+      "artist": "Sixtroke",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] check",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T06] check (SX).jpg",
+      "bpm": "134",
+      "artist": "bbno$",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T07] 39",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] 39 (SX).jpg",
+      "bpm": "120",
+      "artist": "XYLÖZ",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Codex",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] Codex (SX).jpg",
+      "bpm": "125",
+      "artist": "Syncatto",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Drama",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] Drama (HANAEL Remix) (SX).jpg",
+      "bpm": "131",
+      "artist": "Aespa",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] FLASHH!",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] FLASHH! (SX).jpg",
+      "bpm": "158",
+      "artist": "Wooden",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Gorgetech (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] Gorgetech (No CMOD) (SX).jpg",
+      "bpm": "160",
+      "artist": "Shiron",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Like This",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] Like This (SX).jpg",
+      "bpm": "125",
+      "artist": "rejection",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Niflheimr",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] Niflheimr (SX).jpg",
+      "bpm": "186",
+      "artist": "Qrispy Joybox",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Welcome to the Mosh Pit",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] Welcome to the Mosh Pit (SX).jpg",
+      "bpm": "172",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] break it down!",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T07] break it down! (SX).jpg",
+      "bpm": "110",
+      "artist": "Ruxxi",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T08] Astray",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] Astray (SX).jpg",
+      "bpm": "146",
+      "artist": "Cynax",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] CO5M1C R4ILR0AD (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] CO5M1C R4ILR0AD (No CMOD).jpg",
+      "bpm": "155",
+      "artist": "kanone",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Chariot (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] Chariot (No CMOD) (SX).jpg",
+      "bpm": "128",
+      "artist": "USAO",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] DIABLOSIS∷Nāga",
+      "name_translation": "[T08] DIABLOSIS--Naga",
+      "jacket": "itg/dashdance25/[T08] DIABLOSIS--Naga (SX).jpg",
+      "bpm": "100-200",
+      "artist": "sky_delta",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Headspace",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] Headspace (SX).jpg",
+      "bpm": "155",
+      "artist": "Ash Astral",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Hypnotize",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] Hypnotize (SX).jpg",
+      "bpm": "160",
+      "artist": "rejection",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] STICKY",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] STICKY (Skybreak + splitter Remix) (SX).jpg",
+      "bpm": "160",
+      "artist": "Tyler, The Creator",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] clairvoyance",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] clairvoyance (siqlo vs. Aoi's -liarvoyants- RMX) (SX).jpg",
+      "bpm": "175",
+      "artist": "ikaruga_nex & 影虎。",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Xylobone",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T08] xyloBONE (SX).jpg",
+      "bpm": "106-151",
+      "artist": "Tanger",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T09] Backyard",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] Backyard (SX).jpg",
+      "bpm": "132",
+      "artist": "Reaper",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Carry Me Away",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] Carry Me Away (SX).jpg",
+      "bpm": "175",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Duplication",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] Duplication.jpg",
+      "bpm": "202",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] ETIQUETTE",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] ETIQUETTE (SX).jpg",
+      "bpm": "128-150",
+      "artist": "Schwank",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Paradial Resonator",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] Paradial Resonator (SX).jpg",
+      "bpm": "156",
+      "artist": "Reku Mochizuki",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Picture in My Mind",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] Picture in My Mind [nikko X WINK RMX] (SX).jpg",
+      "bpm": "128",
+      "artist": "Pinkpantheress, Sam Gellaitry",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] SCREW owo SCREW",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] SCREW owo SCREW (SX).jpg",
+      "bpm": "114",
+      "artist": "Camellia",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Voice 2 Voice n Voice (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] Voice 2 Voice n Voice (No CMOD) (SX).jpg",
+      "bpm": "157",
+      "artist": "Acotto",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] WORM RAVE (No CMOD)",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T09] WORM RAVE (No CMOD) (SX).jpg",
+      "bpm": "160",
+      "artist": "METAROOM",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T10] 9876734123",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] 9876734123 (SX).jpg",
+      "bpm": "157",
+      "artist": "Silentroom",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Apocaliptix",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] Apocaliptix (SX).jpg",
+      "bpm": "210",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Circulator",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] Circulator (SX).jpg",
+      "bpm": "165",
+      "artist": "Reaper",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] MONONOKE",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] MONONOKE (SX).jpg",
+      "bpm": "175",
+      "artist": "seatrus",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] NITE 2 STAR",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] NITE 2 STAR (SX).jpg",
+      "bpm": "115-135",
+      "artist": "icesawder x moyu",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Nothing Left",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] Nothing Left (SX).jpg",
+      "bpm": "155",
+      "artist": "Ash Astral",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] One Bite",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] One Bite (SX).jpg",
+      "bpm": "150",
+      "artist": "かめりあ",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] ニルヴの心臓",
+      "name_translation": "[T10] Tower of Nirv",
+      "jacket": "itg/dashdance25/[T10] Tower of Nirv (SX).jpg",
+      "bpm": "128",
+      "artist": "TJ.hangneil + Atomic Sphere feat. Annabel",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] VECTOR↑ZΣ",
+      "name_translation": "",
+      "jacket": "itg/dashdance25/[T10] VECTORIZE (SX).jpg",
+      "bpm": "179",
+      "artist": "Trina Lydia",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    }
+  ]
+}
