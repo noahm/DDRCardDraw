@@ -57,36 +57,22 @@ const titleList = {
  * @type {Map<SanbaiSong['song_id'], Partial<SanbaiSong>>}
  */
 const invalidDataOnSanbai = new Map([
-  // #region DDR GRAND PRIX スペシャル楽曲パック feat.東方Project vol.7
+  // #region GALAXY BRAVE (added 2025-11-06)
   [
-    "08QQ8iPldb6o96bl0ld61qb99Q0Q19Qd", // 4NT1 D34D
+    "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q", // 鳳 (Five Flares Mix)
     {
-      ratings: [2, 5, 11, 15, 0, 5, 10, 15, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+      ratings: [6, 10, 14, 16, 18, 10, 14, 16, 18],
+      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
     },
   ],
   [
-    "6IDll6i6d8iII686qq6DddiI00iD8o9d", // 東方妖々夢 ULTIMATE MEDLEY
+    "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq", // New Millennium Pt.2
     {
-      ratings: [5, 10, 12, 16, 18, 10, 12, 16, 18],
-      lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
+      ratings: [3, 7, 10, 14, 17, 7, 10, 14, 17],
+      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
     },
   ],
-  [
-    "bPI6QobOQl9Q161l8l68069QdO1QbO9b", // SkyDrive! (HASEKO EUROBEAT MIX)
-    {
-      ratings: [3, 7, 12, 14, 17, 8, 12, 14, 17],
-      lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
-    },
-  ],
-  [
-    "D90qii9D6P0POQ69Iiblib00Po1DIoi8", // Deadly Dolly Dance
-    {
-      ratings: [2, 5, 12, 17, 0, 5, 11, 17, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  // #endregion DDR GRAND PRIX スペシャル楽曲パック feat.東方Project vol.7
+  // #endregion GALAXY BRAVE (added 2025-11-06)
 ]);
 
 export class SanbaiSongImporter {

@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1761840833307
+    "lastUpdated": 1762405202500
   },
   "defaults": {
     "style": "single",
@@ -39543,6 +39543,61 @@
       ],
       "jacket": "ddr_a3/New Millennium.jpg",
       "remyLink": "https://remywiki.com/New_Millennium"
+    },
+    {
+      "name": "New Millennium Pt.2",
+      "artist": "Remixed by Zekk",
+      "bpm": "160",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
+          "lvl": 7,
+          "style": "double",
+          "diffClass": "basic"
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge"
+        }
+      ],
+      "jacket": "ddr_world/New Millennium Pt.2.jpg",
+      "saHash": "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq",
+      "flags": ["unlock"]
     },
     {
       "name": "New Rules",
@@ -87455,6 +87510,64 @@
       "remyLink": "https://remywiki.com/Hou",
       "name_translation": "Hou",
       "search_hint": "ほう Otori/Ootori/Phoenix/おおとり"
+    },
+    {
+      "name": "鳳 (Five Flares Mix)",
+      "artist": "Remixed by BEMANI Sound Team \"Coyaan + U1\"",
+      "bpm": "105-210",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "210"
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "210"
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "single",
+          "diffClass": "challenge"
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "210"
+        },
+        {
+          "lvl": 14,
+          "style": "double",
+          "diffClass": "difficult"
+        },
+        {
+          "lvl": 16,
+          "style": "double",
+          "diffClass": "expert"
+        },
+        {
+          "lvl": 18,
+          "style": "double",
+          "diffClass": "challenge"
+        }
+      ],
+      "jacket": "ddr_world/鳳 (Five Flares Mix).jpg",
+      "saHash": "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
+      "flags": ["unlock"]
     },
     {
       "name": "黒髪乱れし修羅となりて～凛 edition～",

@@ -183,6 +183,7 @@ export const ALL_SONG_DATA = [
     version_num: 20,
     ratings: [2, 5, 11, 15, 0, 5, 10, 15, 0],
     tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "091IQQ1PqOdIl9ioPQDdO60Dq069DP69",
@@ -1941,8 +1942,9 @@ export const ALL_SONG_DATA = [
     romanized_name: "Touhouyouyoumu ULTIMATE MEDLEY",
     alphabet: "た",
     version_num: 20,
-    ratings: [5, 10, 12, 16, 18, 10, 12, 16, 0],
-    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 0],
+    ratings: [5, 10, 12, 16, 18, 10, 12, 16, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
     song_id: "6iO8d9ld00I6lDIO6qbOldP99oqloqb9",
@@ -4405,8 +4407,9 @@ export const ALL_SONG_DATA = [
     searchable_name: "SkyDrive HASEKO EUROBEAT MIX",
     alphabet: "S",
     version_num: 20,
-    ratings: [3, 7, 12, 14, 17, 8, 0, 14, 17],
-    tiers: [1, 1, 1, 1, 1, 1, 0, 1, 1],
+    ratings: [3, 7, 12, 14, 17, 8, 12, 14, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
   },
   {
     song_id: "bq1O60D90Qbb6iPoi90Ii9olQOIO0Ib1",
@@ -4940,8 +4943,9 @@ export const ALL_SONG_DATA = [
     song_name: "Deadly Dolly Dance",
     alphabet: "D",
     version_num: 20,
-    ratings: [2, 5, 12, 17, 0, 5, 0, 17, 0],
-    tiers: [1, 1, 1, 1, 0, 1, 0, 1, 0],
+    ratings: [2, 5, 12, 17, 0, 5, 11, 17, 0],
+    tiers: [1, 1, 1, 1, 0, 1, 1, 1, 0],
+    lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
   },
   {
     song_id: "d91lIllbboPd668QP88I06Q6QqooQiO1",
@@ -5158,6 +5162,14 @@ export const ALL_SONG_DATA = [
     ratings: [4, 8, 14, 16, 17, 8, 14, 16, 17],
     tiers: [0.3, 0.25, 0.3, 0.55, 0.95, 0.1, 0.25, 0.35, 0.95],
     lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+  },
+  {
+    song_id: "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
+    song_name: "鳳 (Five Flares Mix)",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [6, 10, 14, 16, 18, 0, 0, 0, 0],
+    tiers: [1, 1, 1, 1, 1, 0, 0, 0, 0],
   },
   {
     song_id: "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -5734,6 +5746,14 @@ export const ALL_SONG_DATA = [
     ratings: [4, 8, 11, 14, 17, 8, 11, 14, 17],
     tiers: [0.4, 0.3, 0.3, 0.05, 0.1, 0.25, 0.3, 0.05, 0.05],
     lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+  },
+  {
+    song_id: "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq",
+    song_name: "New Millennium Pt.2",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [3, 7, 10, 14, 17, 0, 0, 0, 0],
+    tiers: [1, 1, 1, 1, 1, 0, 0, 0, 0],
   },
   {
     song_id: "Dld100o9l88o6qqId6O96IbiIQiOdbQD",
@@ -12561,4 +12581,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1761840833307;
+export const SONG_DATA_LAST_UPDATED_unixms = 1762405202500;
