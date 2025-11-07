@@ -467,6 +467,8 @@ export function changeGameKeyForConfig(
     ) {
       changes.flags = gameData.defaults.flags;
     }
+    changes.upperBound = gameData.defaults.upperLvlBound;
+    changes.lowerBound = gameData.defaults.lowerLvlBound;
     dispatch(configSlice.actions.updateOne({ id: configId, changes }));
   };
 }
