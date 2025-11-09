@@ -403,15 +403,16 @@ async function main() {
         var songFlags = [];
         for (let em of eventMap.entries()) {
           if (em[1][1].includes(songTag) && !eventReleases.includes(songTag)) {
-            const eventFlagsRelated = Array.from(eventFlags.entries()).filter((v) => em[1][0].includes(v[0]));
+            const eventFlagsRelated = Array.from(eventFlags.entries()).filter(
+              (v) => em[1][0].includes(v[0]),
+            );
             if (eventFlagsRelated.length == 1) {
               const eventFlag = eventFlagsRelated[0];
               console.log(
                 `c[] ${songTag} (${nameExt}) is locked behind the ${eventFlag[0]} event`,
               );
               songFlags.push(eventFlag[1]);
-            }
-            else {
+            } else {
               console.log(
                 `c[] ${songTag} (${nameExt}) is locked behind unknown event ${em[1][0]}`,
               );
