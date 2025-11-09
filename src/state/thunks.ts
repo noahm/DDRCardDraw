@@ -256,7 +256,7 @@ export function createPlusOneChart(
 ): AppThunk {
   return async (dispatch, getState) => {
     if (type === CHART_PLACEHOLDER) {
-      dispatch(
+      return dispatch(
         drawingsSlice.actions.addOneChart({
           drawingId,
           chart: newPlaceholder(),
@@ -295,7 +295,7 @@ export function createPlusOneChart(
     ) {
       return; // result didn't include a new chart
     }
-    dispatch(drawingsSlice.actions.addOneChart({ drawingId, chart }));
+    return dispatch(drawingsSlice.actions.addOneChart({ drawingId, chart }));
   };
 }
 
