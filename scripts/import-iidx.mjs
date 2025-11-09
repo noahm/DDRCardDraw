@@ -255,7 +255,7 @@ async function main() {
     },
     i18n: {
       en: {
-        name: "IIDX AC (Pinky Crush)", // TODO: automatically determine from textage?
+        name: "IIDX AC (Sparkle Shower)", // TODO: automatically determine from textage?
         single: "SP",
         double: "DP",
         beginner: "BEGINNER",
@@ -279,7 +279,7 @@ async function main() {
         },
       },
       ja: {
-        name: "IIDX AC (Pinky Crush)", // TODO: automatically determine from textage?
+        name: "IIDX AC (Sparkle Shower)", // TODO: automatically determine from textage?
         single: "SP",
         double: "DP",
         beginner: "BEGINNER",
@@ -403,10 +403,19 @@ async function main() {
         var songFlags = [];
         for (let em of eventMap.entries()) {
           if (em[1][1].includes(songTag) && !eventReleases.includes(songTag)) {
-            console.log(
-              `c[] ${songTag} (${nameExt}) is locked behind the ${em[1][0]} event`,
-            );
-            songFlags.push(eventFlags.get(eventTags[em[0]]));
+            const eventFlagsRelated = Array.from(eventFlags.entries()).filter((v) => em[1][0].includes(v[0]));
+            if (eventFlagsRelated.length == 1) {
+              const eventFlag = eventFlagsRelated[0];
+              console.log(
+                `c[] ${songTag} (${nameExt}) is locked behind the ${eventFlag[0]} event`,
+              );
+              songFlags.push(eventFlag[1]);
+            }
+            else {
+              console.log(
+                `c[] ${songTag} (${nameExt}) is locked behind unknown event ${em[1][0]}`,
+              );
+            }
           }
         }
         if (timelockTags.includes(songTag)) {
