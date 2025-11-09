@@ -50,7 +50,7 @@ const folderNames = [
   "RESIDENT",
   "EPOLIS",
   "Pinky Crush",
-  "---",
+  "Sparkle Shower",
   "---",
   "substream", // textage files substream charts as 35th style - subject to change
 ];
@@ -91,7 +91,7 @@ const jacketPalettes = [
   ["#000000", "#010efd", "#cb2690"], // 30th / RESIDENT
   ["#000000", "#f0ff00", "#6229d1"], // 31st / EPOLIS
   ["#000000", "#ec2f95", "#00f7fe"], // 32nd / Pinky Crush
-  ["#000000", "#000000", "#000000"], // 33rd
+  ["#000000", "#009f4c", "#ffee00"], // 33rd / Sparkle Shower
   ["#000000", "#000000", "#000000"], // 34th
   ["#000000", "#feb900", "#d36a00"], // "35th" / substream
 ];
@@ -111,34 +111,20 @@ function measureTextWidth(text) {
 // textage.cc doesn't indicate songs that are time-locked or shop-bought, most of the time
 // (some are colored red in the list, but not all)
 // TODO: bemaniwiki can give us this info, but navigating/reading it may be a bit tricky
-// https://bemaniwiki.com/?beatmania+IIDX+32+Pinky+Crush/%B5%EC%B6%CA%A5%EA%A5%B9%A5%C8
+// https://bemaniwiki.com/?beatmania+IIDX+33+Sparkle+Shower/%B1%A3%A4%B7%CD%D7%C1%C7
 const timelockTags = [
   // arena unlocks from last mix
-  "fun30",
-  "max300",
-  "tpolak30",
-  "ref_eden",
+  "a_minstr",
+  "advanc32",
   // arena unlocks from this mix
-  "logic",
-  "parasv31",
-  "guilty",
+  // none yet!
   // one-offs (kiwami class unlocks, KAC quals, cross-game promos, etc.)
-  "deeproar",
-  "_pfeater",
-  "_ccj_oni",
-  "_isnpyon",
+  // ...none yet??
 ];
 // TODO: bemaniwiki can give us this info, but navigating/reading it may be a bit tricky
 // https://bemaniwiki.com/?beatmania+IIDX+32+Pinky+Crush/LEGGENDARIA%A5%D5%A5%A9%A5%EB%A5%C0
 const timelockLegs = [
   // secret legs from last mix
-  "neogenes",
-  "blstwind",
-  "yheadjoe",
-  "bldragon",
-  "_koisuru",
-  "code_0",
-  // secret legs from this mix
   "smooooch",
   "script_n",
   "script_h",
@@ -146,33 +132,44 @@ const timelockLegs = [
   "bitchoco",
   "_casino",
   "lightstr",
+  // secret legs from this mix
+  "overtime",
+  "selfishs",
+  "lab",
+  "plkmania",
+  "_3plus3",
   // arena legs from this & last mix
-  "_hyouri",
-  "explorer",
-  "o_d_20",
-  "miracle5",
-  "madatack",
-  "saturn",
-  "pinkr_ra",
-  "_kachofu",
-  "strtrail",
-  "slwyvern",
-  "starjunc",
-  "_azisai",
-  "guilty",
-  "lostsoul",
-  "zeroone",
-  "_wadatmi",
-  "dthzigoq",
+  "a_minstr",
+  "cuerscue",
+  "high",
+  "_kagachi",
+  "hyena",
+  "call",
+  "bowshock",
+  "_ope_143",
+  "_therele",
+  "punch_lv",
+  "chaserxx",
+  "braveout",
+  "inazuma",
+  "_seijin",
+  // other sources of legs (e.g. kiwami dans)
+  "nbtheory",
+  "_hrenten",
+  "implant",
 ];
 // Some songs come up as part of events, but are actually available now in the default songlist.
 const eventReleases = [
-  // Triple Tribe 1st & 2nd were both EPOLIS? damn tho
-  // "ccrimson",
-  // "max_360",
-  // "suspcion",
+  // Triple Tribe seasons 1-2 unlocked now!
+  "ccrimson",
+  "max_360",
+  "suspcion",
+  // Triple Tribe season 3 still locked :(
+  // "monkeybs",
+  // "xb10r",
+  // "ambiverm",
   // ULTIMATE MOBILE time release should be cleared out.
-  // "_shvnccd",
+  "psychint",
 ];
 
 function listProps(x) {
@@ -239,13 +236,12 @@ async function main() {
         { key: "leggendaria", color: "#980053" },
       ],
       flags: [
-        "mypolis",
-        "restoration",
-        "singularity",
-        "bplSeason4",
+        "pinkyJumpUp",
+        "pinkyExtraChallenge",
+        "pinkyUnderground",
+        "tripleTribe",
         "ultimateMobile",
         "worldTourism",
-        "tripleTribe",
         "timelock",
       ],
       lastUpdated: 0,
@@ -267,13 +263,12 @@ async function main() {
         hyper: "HYPER",
         another: "ANOTHER",
         leggendaria: "LEGGENDARIA",
-        mypolis: "MYPOLIS DESIGNER",
-        restoration: "EPOLIS RESTORATION",
-        singularity: "EPOLIS SINGULARITY",
-        bplSeason4: "BPL SEASON4 PURCHASE PERKS",
+        pinkyJumpUp: "PINKY JUMP UP!",
+        pinkyExtraChallenge: "PINKY EXTRA CHALLENGE",
+        pinkyUnderground: "PINKY UNDERGROUND",
         ultimateMobile: "ULTIMATE MOBILE ARCADE CONNECT",
-        worldTourism: "WORLD TOURISM",
         tripleTribe: "Triple Tribe",
+        worldTourism: "WORLD TOURISM",
         timelock: "Time-locked or shop-bought",
         $abbr: {
           beginner: "[B]",
@@ -292,13 +287,12 @@ async function main() {
         hyper: "HYPER",
         another: "ANOTHER",
         leggendaria: "LEGGENDARIA",
-        mypolis: "マイポリスデザイナー",
-        restoration: "EPOLIS RESTORATION",
-        singularity: "EPOLIS SINGULARITY",
-        bplSeason4: "BPL SEASON4 チケット購入特典",
+        pinkyJumpUp: "ピンキージャンプアップ！",
+        pinkyExtraChallenge: "PINKY EXTRA CHALLENGE",
+        pinkyUnderground: "ピンキーアンダーグラウンド",
         ultimateMobile: "ULTIMATE MOBILE アーケード連動",
-        worldTourism: "WORLD TOURISM",
         tripleTribe: "Triple Tribe",
+        worldTourism: "WORLD TOURISM",
         timelock: "現在解禁不可・公式サイトに購入必須",
         $abbr: {
           beginner: "[B]",
