@@ -57,13 +57,22 @@ const titleList = {
  * @type {Map<SanbaiSong['song_id'], Partial<SanbaiSong>>}
  */
 const invalidDataOnSanbai = new Map([
+  // #region GALAXY BRAVE (added 2025-11-06)
   [
-    "DDlbDddPO8liioQ196P0I9090bDDPQ6Q", // 迷宮のロンド
+    "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q", // 鳳 (Five Flares Mix)
     {
-      ratings: [3, 6, 12, 15, 18, 6, 12, 15, 18],
+      ratings: [6, 10, 14, 16, 18, 10, 14, 16, 18],
       lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
     },
   ],
+  [
+    "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq", // New Millennium Pt.2
+    {
+      ratings: [3, 7, 10, 14, 17, 7, 10, 14, 17],
+      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
+    },
+  ],
+  // #endregion GALAXY BRAVE (added 2025-11-06)
 ]);
 
 export class SanbaiSongImporter {
