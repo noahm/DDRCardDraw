@@ -122,7 +122,7 @@ const timelockTags = [
   // ...none yet??
 ];
 // TODO: bemaniwiki can give us this info, but navigating/reading it may be a bit tricky
-// https://bemaniwiki.com/?beatmania+IIDX+32+Pinky+Crush/LEGGENDARIA%A5%D5%A5%A9%A5%EB%A5%C0
+// https://bemaniwiki.com/?beatmania+IIDX+33+Sparkle+Shower/LEGGENDARIA%A5%D5%A5%A9%A5%EB%A5%C0
 const timelockLegs = [
   // secret legs from last mix
   "smooooch",
