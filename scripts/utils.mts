@@ -26,7 +26,8 @@ import type { GameData, Song } from "../src/models/SongData.ts";
 /**
  * sorts songs in-place, and charts within each song
  * @param songs
- */ export function sortSongs(songs: Song[], meta: GameData["meta"]) {
+ */
+export function sortSongs(songs: Song[], meta: GameData["meta"]) {
   for (const song of songs) {
     song.charts.sort((left, right) => {
       if (left.style !== right.style) {

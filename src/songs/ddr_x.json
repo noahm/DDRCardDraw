@@ -24,7 +24,7 @@
       "DanceDanceRevolution 1st Mix"
     ],
     "flags": ["licensed", "asiaExclusive", "long"],
-    "lastUpdated": 1753000695394
+    "lastUpdated": 1762744816215
   },
   "defaults": {
     "style": "single",
@@ -559,7 +559,8 @@
       "remyLink": "https://remywiki.com/Arrabbiata",
       "jacket": "banner/ddr_sn2/Arrabbiata.jpg",
       "genre": "CYBER ARABIAN",
-      "saHash": "6bdDP91o1II60Qo99D60QI81o6oPlI80"
+      "saHash": "6bdDP91o1II60Qo99D60QI81o6oPlI80",
+      "search_hint": "サイバーアラビアン/CYBER ARABIAN"
     },
     {
       "name": "B4U",
@@ -678,7 +679,8 @@
       ],
       "remyLink": "https://remywiki.com/Baile_Le_Samba",
       "jacket": "banner/ddr_sn/Baile Le Samba.jpg",
-      "saHash": "lii9bbbIq08b6DIdQ16Q0QOPiOibliIO"
+      "saHash": "lii9bbbIq08b6DIdQ16Q0QOPiOibliIO",
+      "genre": "SAMBA"
     },
     {
       "name": "BALLAD FOR YOU(想いの雨)",
@@ -773,7 +775,8 @@
       "jacket": "banner/ddr_sn2/Blind Justice ～Torn souls, Hurt Faiths～.jpg",
       "genre": "エピックポエトリー",
       "saHash": "PP9QDQ0IQQID00P61d8qdDdP09b19iiI",
-      "search_hint": "EPIC POETRY/エピックポエトリー"
+      "search_hint": "EPIC POETRY/エピックポエトリー",
+      "name_translation": "Blind Justice -Torn souls, Hurt Faiths-"
     },
     {
       "name": "Bloody Tears(IIDX EDITION)",
@@ -821,13 +824,13 @@
       "charts": [
         { "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
-        { "lvl": 5, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "single", "diffClass": "difficult" },
         { "lvl": 10, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "single", "diffClass": "challenge" },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
-        { "lvl": 6, "style": "double", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
-        { "lvl": 8, "style": "double", "diffClass": "expert" }
+        { "lvl": 8, "style": "double", "diffClass": "expert" },
+        { "lvl": 6, "style": "double", "diffClass": "challenge" }
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/Boys_(2008_X-edit)",
@@ -881,7 +884,7 @@
         { "lvl": 9, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "double", "diffClass": "challenge" }
       ],
-      "remyLink": "https://remywiki.com/BRILLIANT_2U_(K.O.G_G3_MIX)",
+      "remyLink": "https://remywiki.com/BRILLIANT_2U(K.O.G_G3_MIX)",
       "jacket": "banner/ddrmax2/BRILLIANT 2U (K.O.G G3 MIX).png",
       "saHash": "i18OPo6l8Q6bo9q0qP6889IDqoP8O0Qq"
     },
@@ -1013,13 +1016,13 @@
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
-        { "lvl": 5, "style": "single", "diffClass": "challenge" },
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 5, "style": "single", "diffClass": "challenge" },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
-        { "lvl": 5, "style": "double", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
-        { "lvl": 11, "style": "double", "diffClass": "expert" }
+        { "lvl": 11, "style": "double", "diffClass": "expert" },
+        { "lvl": 5, "style": "double", "diffClass": "challenge" }
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/Butterfly_(2008_X-edit)",
@@ -1077,7 +1080,8 @@
       ],
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE",
       "jacket": "banner/ddr_4th/CAN'T STOP FALLIN' IN LOVE.png",
-      "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P"
+      "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P",
+      "genre": "HYPER EUROBEAT"
     },
     {
       "name": "CAN'T STOP FALLIN' IN LOVE (SPEED MIX)",
@@ -1292,7 +1296,8 @@
       "remyLink": "https://remywiki.com/Colors_~for_EXTREME~",
       "jacket": "banner/ddr_ext/Colors(for EXTREME).png",
       "saHash": "odOQ1d1i6oil81b1QIDP6dOqqdooD918",
-      "search_hint": "TRANCE/トランス"
+      "search_hint": "TRANCE/トランス",
+      "genre": "TRANCE"
     },
     {
       "name": "COME CLEAN",
@@ -1467,8 +1472,8 @@
         { "lvl": 12, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
-        { "lvl": 11, "style": "double", "diffClass": "challenge" },
-        { "lvl": 12, "style": "double", "diffClass": "expert" }
+        { "lvl": 12, "style": "double", "diffClass": "expert" },
+        { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Dance_Dance_Revolution_(song)",
       "jacket": "banner/ddr_ext/Dance Dance Revolution.png",
@@ -1799,13 +1804,13 @@
       "charts": [
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
-        { "lvl": 7, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "single", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
-        { "lvl": 8, "style": "double", "diffClass": "challenge" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
+        { "lvl": 13, "style": "double", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "challenge" }
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/DUB-I-DUB_(2008_X-edit)",
@@ -2014,7 +2019,8 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/END_OF_THE_CENTURY",
-      "jacket": "banner/ddr_3rd/END OF THE CENTURY.png"
+      "jacket": "banner/ddr_3rd/END OF THE CENTURY.png",
+      "genre": "DANCE SPEED"
     },
     {
       "name": "era (nostalmix)",
@@ -2090,6 +2096,26 @@
       "jacket": "banner/ddr_sn2/FAINT.jpg"
     },
     {
+      "name": "Fascination -eternal love mix-",
+      "artist": "2MB",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution SuperNOVA",
+      "charts": [
+        { "lvl": 9, "style": "single", "diffClass": "beginner" },
+        { "lvl": 11, "style": "single", "diffClass": "basic" },
+        { "lvl": 13, "style": "single", "diffClass": "difficult" },
+        { "lvl": 16, "style": "single", "diffClass": "expert" },
+        { "lvl": 18, "style": "single", "diffClass": "challenge" },
+        { "lvl": 10, "style": "double", "diffClass": "basic" },
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 17, "style": "double", "diffClass": "expert" },
+        { "lvl": 17, "style": "double", "diffClass": "challenge" }
+      ],
+      "remyLink": "https://remywiki.com/Fascination_~eternal_love_mix~",
+      "jacket": "banner/ddr_sn/Fascination ~eternal love mix~.jpg",
+      "saHash": "8QbqP80q9PI8bbi0qOoiibOQD08OPdli"
+    },
+    {
       "name": "Fascination MAXX",
       "artist": "100-200-400",
       "bpm": "100-400",
@@ -2109,26 +2135,6 @@
       "jacket": "banner/ddr_sn/Fascination MAXX.jpg",
       "genre": "SuperNOVA BEAT",
       "saHash": "O6llIdODQD6oDQ6QiPQDOlob9i8l6qib"
-    },
-    {
-      "name": "Fascination -eternal love mix-",
-      "artist": "2MB",
-      "bpm": "100-400",
-      "folder": "DanceDanceRevolution SuperNOVA",
-      "charts": [
-        { "lvl": 9, "style": "single", "diffClass": "beginner" },
-        { "lvl": 11, "style": "single", "diffClass": "basic" },
-        { "lvl": 13, "style": "single", "diffClass": "difficult" },
-        { "lvl": 16, "style": "single", "diffClass": "expert" },
-        { "lvl": 18, "style": "single", "diffClass": "challenge" },
-        { "lvl": 10, "style": "double", "diffClass": "basic" },
-        { "lvl": 13, "style": "double", "diffClass": "difficult" },
-        { "lvl": 17, "style": "double", "diffClass": "expert" },
-        { "lvl": 17, "style": "double", "diffClass": "challenge" }
-      ],
-      "remyLink": "https://remywiki.com/Fascination_~eternal_love_mix~",
-      "jacket": "banner/ddr_sn/Fascination ~eternal love mix~.jpg",
-      "saHash": "8QbqP80q9PI8bbi0qOoiibOQD08OPdli"
     },
     {
       "name": "Feel",
@@ -2212,12 +2218,12 @@
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 7, "style": "single", "diffClass": "difficult" },
-        { "lvl": 7, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 7, "style": "single", "diffClass": "challenge" },
         { "lvl": 4, "style": "double", "diffClass": "basic" },
         { "lvl": 6, "style": "double", "diffClass": "difficult" },
-        { "lvl": 7, "style": "double", "diffClass": "challenge" },
-        { "lvl": 9, "style": "double", "diffClass": "expert" }
+        { "lvl": 9, "style": "double", "diffClass": "expert" },
+        { "lvl": 7, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Flight_of_the_Phoenix",
       "jacket": "banner/ddr_x/Flight of the Phoenix.jpg",
@@ -2262,6 +2268,24 @@
       "search_hint": "Orbitalic Techno/オービタリックテクノ"
     },
     {
+      "name": "Flow (Jammin' Ragga Mix)",
+      "artist": "Scotty D. revisits U1",
+      "bpm": "70-140",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 8, "style": "single", "diffClass": "difficult" },
+        { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" },
+        { "lvl": 13, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "https://remywiki.com/Flow_(Jammin%27_Ragga_Mix)",
+      "jacket": "banner/ddr_sn2/Flow(Jammin' Ragga Mix).jpg",
+      "saHash": "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI"
+    },
+    {
       "name": "Flow (True Style)",
       "artist": "Scotty D. revisits U1",
       "bpm": "140-280",
@@ -2282,24 +2306,6 @@
       "genre": "オービタリックテクノ",
       "saHash": "0D096II0i9l0doPlbPQbiPo1IQDDoOP0",
       "search_hint": "Orbitalic Techno/オービタリックテクノ"
-    },
-    {
-      "name": "Flow (Jammin' Ragga Mix)",
-      "artist": "Scotty D. revisits U1",
-      "bpm": "70-140",
-      "folder": "DanceDanceRevolution SuperNOVA2",
-      "charts": [
-        { "lvl": 4, "style": "single", "diffClass": "beginner" },
-        { "lvl": 5, "style": "single", "diffClass": "basic" },
-        { "lvl": 8, "style": "single", "diffClass": "difficult" },
-        { "lvl": 13, "style": "single", "diffClass": "expert" },
-        { "lvl": 4, "style": "double", "diffClass": "basic" },
-        { "lvl": 7, "style": "double", "diffClass": "difficult" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
-      ],
-      "remyLink": "https://remywiki.com/Flow_(Jammin%27_Ragga_Mix)",
-      "jacket": "banner/ddr_sn2/Flow(Jammin' Ragga Mix).jpg",
-      "saHash": "O111bDqd0oQ1O8IqiIDQq091l1IDO8oI"
     },
     {
       "name": "Fly away",
@@ -2401,8 +2407,8 @@
       "folder": "DanceDanceRevolution SuperNOVA",
       "charts": [
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
-        { "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
+        { "lvl": 4, "style": "single", "diffClass": "difficult" },
         { "lvl": 8, "style": "single", "diffClass": "expert" },
         { "lvl": 4, "style": "double", "diffClass": "basic" },
         { "lvl": 6, "style": "double", "diffClass": "difficult" },
@@ -2460,12 +2466,12 @@
         { "lvl": 2, "style": "single", "diffClass": "beginner" },
         { "lvl": 6, "style": "single", "diffClass": "basic" },
         { "lvl": 7, "style": "single", "diffClass": "difficult" },
-        { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 7, "style": "double", "diffClass": "difficult" },
-        { "lvl": 8, "style": "double", "diffClass": "challenge" },
-        { "lvl": 11, "style": "double", "diffClass": "expert" }
+        { "lvl": 11, "style": "double", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "challenge" }
       ],
       "flags": ["licensed"],
       "remyLink": "https://remywiki.com/GET_UP%27N_MOVE_(2008_X-edit)",
@@ -2570,8 +2576,8 @@
       "bpm": "135",
       "folder": "DanceDanceRevolution SuperNOVA",
       "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "basic" },
         { "lvl": 4, "style": "single", "diffClass": "beginner" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
         { "lvl": 10, "style": "single", "diffClass": "expert" },
         { "lvl": 5, "style": "double", "diffClass": "basic" },
@@ -3263,24 +3269,6 @@
       "jacket": "banner/ddr_x/Koko Soko.jpg"
     },
     {
-      "name": "L'amour et la liberté(Darwin & DJ Silver remix)",
-      "artist": "NAOKI in the MERCURE",
-      "bpm": "70-140",
-      "folder": "DanceDanceRevolution SuperNOVA2",
-      "charts": [
-        { "lvl": 3, "style": "single", "diffClass": "beginner" },
-        { "lvl": 4, "style": "single", "diffClass": "basic" },
-        { "lvl": 7, "style": "single", "diffClass": "difficult" },
-        { "lvl": 11, "style": "single", "diffClass": "expert" },
-        { "lvl": 4, "style": "double", "diffClass": "basic" },
-        { "lvl": 7, "style": "double", "diffClass": "difficult" },
-        { "lvl": 12, "style": "double", "diffClass": "expert" }
-      ],
-      "remyLink": "https://remywiki.com/L%27amour_et_la_liberte(Darwin_%26_DJ_Silver_remix)",
-      "jacket": "banner/ddr_sn2/L'amour et la liberté (Darwin & DJ Silver remix).jpg",
-      "saHash": "ddib8P601q0Oqdb0Pl8oqobq9DD608P1"
-    },
-    {
       "name": "L'amour et la liberté (DDR Ver.)",
       "artist": "NAOKI underground",
       "bpm": "145",
@@ -3297,6 +3285,24 @@
       "remyLink": "https://remywiki.com/L%27amour_et_la_liberte(DDR_Ver.)",
       "jacket": "banner/ddr_ext/L'amour et la liberte (DDR ver.).png",
       "saHash": "8IIoIQQqlooiI6QD9ldIO6qidP98QP68"
+    },
+    {
+      "name": "L'amour et la liberté(Darwin & DJ Silver remix)",
+      "artist": "NAOKI in the MERCURE",
+      "bpm": "70-140",
+      "folder": "DanceDanceRevolution SuperNOVA2",
+      "charts": [
+        { "lvl": 3, "style": "single", "diffClass": "beginner" },
+        { "lvl": 4, "style": "single", "diffClass": "basic" },
+        { "lvl": 7, "style": "single", "diffClass": "difficult" },
+        { "lvl": 11, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 7, "style": "double", "diffClass": "difficult" },
+        { "lvl": 12, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "https://remywiki.com/L%27amour_et_la_liberte(Darwin_%26_DJ_Silver_remix)",
+      "jacket": "banner/ddr_sn2/L'amour et la liberté (Darwin & DJ Silver remix).jpg",
+      "saHash": "ddib8P601q0Oqdb0Pl8oqobq9DD608P1"
     },
     {
       "name": "LA BAMBA",
@@ -3467,7 +3473,6 @@
     },
     {
       "name": "LOVE AGAIN TONIGHT～for Melissa mix～",
-      "name_translation": "LOVE AGAIN TONIGHT (For Melissa MIX)",
       "artist": "NAOKI feat. PAULA TERRY",
       "bpm": "150",
       "folder": "DanceDanceRevolution 4th Mix",
@@ -3483,7 +3488,8 @@
       "remyLink": "https://remywiki.com/LOVE_AGAIN_TONIGHT~For_Melissa_MIX~",
       "jacket": "banner/ddr_4th/LOVE AGAIN TONIGHT (For Melissa MIX).png",
       "genre": "HYPER EUROBEAT",
-      "saHash": "boOdPIqbDd8li0O0IqliPo1Doq99Ob09"
+      "saHash": "boOdPIqbDd8li0O0IqliPo1Doq99Ob09",
+      "name_translation": "LOVE AGAIN TONIGHT (For Melissa MIX)"
     },
     {
       "name": "LOVE AT FIRST SIGHT (TwinMasterplan Mix)",
@@ -4172,8 +4178,8 @@
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
         { "lvl": 11, "style": "single", "diffClass": "expert" },
         { "lvl": 8, "style": "double", "diffClass": "basic" },
-        { "lvl": 11, "style": "double", "diffClass": "expert" },
-        { "lvl": 13, "style": "double", "diffClass": "difficult" }
+        { "lvl": 13, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA",
       "jacket": "banner/ddr_1st/PARANOiA.png",
@@ -4270,8 +4276,8 @@
         { "lvl": 10, "style": "single", "diffClass": "difficult" },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
         { "lvl": 10, "style": "double", "diffClass": "basic" },
-        { "lvl": 11, "style": "double", "diffClass": "expert" },
-        { "lvl": 12, "style": "double", "diffClass": "difficult" }
+        { "lvl": 12, "style": "double", "diffClass": "difficult" },
+        { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
       "jacket": "banner/ddr_2nd/PARANOIA MAX～DIRTY MIX～.png",
@@ -4392,7 +4398,8 @@
       "remyLink": "https://remywiki.com/PARANOiA_~HADES~",
       "jacket": "banner/ddr_sn2/PARANOiA ～HADES～.jpg",
       "genre": "SUPERNOVA2 BEAT #1",
-      "saHash": "io1d1Dq80Di08O1Pb9bQ8DoP9d9Ooi90"
+      "saHash": "io1d1Dq80Di08O1Pb9bQ8DoP9d9Ooi90",
+      "name_translation": "PARANOiA (HADES)"
     },
     {
       "name": "PARANOiA(X-Special)",
@@ -5126,7 +5133,8 @@
       ],
       "remyLink": "https://remywiki.com/SO_IN_LOVE",
       "jacket": "banner/ddr_ext/SO IN LOVE.png",
-      "saHash": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd"
+      "saHash": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd",
+      "genre": "70'S POP/JAZZ"
     },
     {
       "name": "SOUL CRASH",
@@ -5160,7 +5168,7 @@
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 10, "style": "double", "diffClass": "expert" }
       ],
-      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE_~JUNGLE_MIX~",
+      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE~JUNGLE_MIX~",
       "jacket": "banner/ddr_2nd/SP-TRIP MACHINE (JUNGLE MIX).png",
       "saHash": "1P9qQdiiodODqQPl0OO88iiiqdoDIPO6"
     },
@@ -5239,8 +5247,8 @@
       "charts": [
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
-        { "lvl": 9, "style": "single", "diffClass": "expert" },
         { "lvl": 10, "style": "single", "diffClass": "difficult" },
+        { "lvl": 9, "style": "single", "diffClass": "expert" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 9, "style": "double", "diffClass": "difficult" },
         { "lvl": 10, "style": "double", "diffClass": "expert" }
@@ -6016,7 +6024,7 @@
         { "lvl": 10, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" }
       ],
-      "remyLink": "https://remywiki.com/TRIP_MACHINE_~luv_mix~",
+      "remyLink": "https://remywiki.com/TRIP_MACHINE~luv_mix~",
       "jacket": "banner/ddr_3rd/TRIP MACHINE ～luv mix～.png",
       "saHash": "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO"
     },
@@ -7060,12 +7068,12 @@
         { "lvl": 5, "style": "single", "diffClass": "beginner" },
         { "lvl": 7, "style": "single", "diffClass": "basic" },
         { "lvl": 11, "style": "single", "diffClass": "difficult" },
-        { "lvl": 11, "style": "single", "diffClass": "challenge" },
         { "lvl": 13, "style": "single", "diffClass": "expert" },
+        { "lvl": 11, "style": "single", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "basic" },
         { "lvl": 11, "style": "double", "diffClass": "difficult" },
-        { "lvl": 11, "style": "double", "diffClass": "challenge" },
-        { "lvl": 13, "style": "double", "diffClass": "expert" }
+        { "lvl": 13, "style": "double", "diffClass": "expert" },
+        { "lvl": 11, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Sakura",
       "jacket": "banner/ddr_ext/SAKURA.png",
@@ -7186,8 +7194,8 @@
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 9, "style": "single", "diffClass": "difficult" },
-        { "lvl": 11, "style": "single", "diffClass": "challenge" },
         { "lvl": 12, "style": "single", "diffClass": "expert" },
+        { "lvl": 11, "style": "single", "diffClass": "challenge" },
         { "lvl": 4, "style": "double", "diffClass": "basic" },
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 11, "style": "double", "diffClass": "expert" },

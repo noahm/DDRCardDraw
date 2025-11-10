@@ -17,7 +17,10 @@ import {
   setJacketPrefix,
   downloadJacket,
 } from "./utils.mts";
-import { DDR_WORLD as MIX_META } from "./scraping/ddr-sources.mts";
+import {
+  JsonDDRSongImporter,
+  DDR_WORLD as MIX_META,
+} from "./scraping/ddr-sources.mts";
 import { EAGateSongImporter } from "./scraping/eagate.mts";
 import {
   guessUrlFromName,
@@ -90,7 +93,7 @@ try {
     const importer = new EAGateSongImporter(
       MIX_META.eagate.songList,
       MIX_META.eagate.jacket,
-      ["copyStrikes", "shock"],
+      MIX_META.unmanagedFlags ?? [],
     );
     const fetchedSongs = await importer.fetchSongs();
 
@@ -145,7 +148,7 @@ try {
 
   if (MIX_META.sanbai) {
     // Fetch 3icecream data using SanbaiSongImporter
-    const importer = new SanbaiSongImporter(["copyStrikes", "shock"]);
+    const importer = new SanbaiSongImporter(MIX_META.unmanagedFlags ?? []);
     const fetchedSongs = await importer.fetchSongs();
 
     // Merge with existing data
@@ -235,6 +238,31 @@ try {
     console.log(`Songs from zenius-i-vanisher: ${fetchedSongs.length}`);
   }
 
+  if (MIX_META.copyFrom) {
+    const importer = new JsonDDRSongImporter(
+      MIX_META.copyFrom.file,
+      MIX_META.copyFrom.keys,
+    );
+    const fetchedSongs = await importer.fetchSongs();
+
+    const tasks = fetchedSongs.map(
+      async (sourceSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
+        const existingSong = existingData.songs.find((s) =>
+          importer.songEquals(s, sourceSong),
+        );
+        if (!existingSong) return; // only merge existing songs
+        importer.merge(existingSong, sourceSong);
+      },
+    );
+    console.log(
+      `Processing all songs from ${MIX_META.copyFrom.file} to copy properties...`,
+    );
+    await Promise.all(tasks);
+    console.log(
+      `Songs processed for property copy from ${MIX_META.copyFrom.file}: ${fetchedSongs.length}`,
+    );
+  }
+
   if (MIX_META.sortSongs)
     existingData.songs = sortSongs(existingData.songs, existingData.meta);
 
@@ -244,6 +272,6 @@ try {
   console.log(`Total songs in database: ${existingData.songs.length}`);
   console.log("Done");
 } catch (e) {
-  console.error("Error updating DDR World data:", e);
+  console.error(`Error updating ${MIX_META.filename} data:`, e);
   process.exitCode = 1;
 }

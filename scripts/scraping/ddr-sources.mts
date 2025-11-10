@@ -1,3 +1,7 @@
+import * as path from "path";
+import { readFile } from "fs/promises";
+import { fileURLToPath } from "url";
+
 import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
 
 /** Interface for importing DDR songs from a source */
@@ -49,10 +53,14 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   }
 
   async fetchSongs(): Promise<Song[]> {
-    const gameData: GameData = await import(
-      `../../src/songs/${this.#jsonFileName}`
+    const filePath = path.join(
+      path.dirname(fileURLToPath(import.meta.url)),
+      `../../src/songs/${this.#jsonFileName}`,
     );
-    return gameData.songs;
+
+    const fileContent = await readFile(filePath, "utf-8");
+    const gameData: GameData = JSON.parse(fileContent);
+    return gameData.songs || [];
   }
 
   songEquals(existingSong: Song, fetchedSong: Song): boolean {
@@ -112,18 +120,28 @@ export interface DDRSourceMeta {
   jacketPrefix: string;
   /** Whether to sort songs by name */
   sortSongs: boolean;
+  /** Flags that are not managed by importer, to be copied as-is */
+  unmanagedFlags?: string[];
   /** e-amusement GATE page for this mix */
   eagate?: { songList: string; jacket: string };
   /** zenius-i-vanisher game database page for this mix */
   ziv?: ZIVSourceMeta;
+  /** Whether to use 3icecream song data */
   sanbai?: boolean;
+  /** Link to RemyWiki page for this mix (unused on script now) */
   remy?: string;
+  /** Copy specified properties from another DDR mix JSON data */
+  copyFrom?: {
+    file: `${string}.json`;
+    keys: (Exclude<keyof Song, "charts"> | `charts.${keyof Chart}`)[];
+  };
 }
 
 export const DDR_WORLD: DDRSourceMeta = {
   filename: "ddr_world.json",
   jacketPrefix: "ddr_world/",
   sortSongs: true,
+  unmanagedFlags: ["copyStrikes", "shock"],
   eagate: {
     songList:
       "https://p.eagate.573.jp/game/ddr/ddrworld/music/index.html?filter=7",
@@ -449,6 +467,7 @@ export const DDR_A3: DDRSourceMeta = {
   filename: "a3.json",
   jacketPrefix: "ddr_a3/",
   sortSongs: true,
+  unmanagedFlags: ["shock", "eAMUSEMENT", "eventMode"],
   eagate: {
     songList: "https://p.eagate.573.jp/game/ddr/ddra3/p/music/index.html",
     jacket:
@@ -456,14 +475,34 @@ export const DDR_A3: DDRSourceMeta = {
   },
   ziv: {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5518&show_notecounts=1&sort=&sort_order=asc",
+    correctionMap: DDR_WORLD.ziv?.correctionMap,
   },
   remy: "https://remywiki.com/AC_DDR_A3",
+  copyFrom: {
+    file: "ddr_world.json",
+    keys: [
+      "name_translation",
+      "artist_translation",
+      "search_hint",
+      "genre",
+      "jacket",
+      "saIndex",
+      "remyLink",
+    ],
+  },
 };
 
 export const DDR_A20_PLUS: DDRSourceMeta = {
   filename: "a20plus.json",
   jacketPrefix: "ddr_a20plus/",
   sortSongs: true,
+  unmanagedFlags: [
+    "shock",
+    "eventMode",
+    "usLocked",
+    "removedOnA20plus",
+    "euLocked",
+  ],
   eagate: {
     songList: "https://p.eagate.573.jp/game/ddr/ddra20/p/music/index.html",
     jacket:
@@ -471,8 +510,10 @@ export const DDR_A20_PLUS: DDRSourceMeta = {
   },
   ziv: {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc",
+    correctionMap: DDR_WORLD.ziv?.correctionMap,
   },
   remy: "https://remywiki.com/AC_DDR_A20_PLUS",
+  copyFrom: DDR_A3.copyFrom,
 };
 
 export const DDR_X3: DDRSourceMeta = {
@@ -481,8 +522,14 @@ export const DDR_X3: DDRSourceMeta = {
   sortSongs: true,
   ziv: {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=347&show_notecounts=1&sort=&sort_order=asc",
+    correctionMap: DDR_WORLD.ziv?.correctionMap,
   },
   remy: "https://remywiki.com/AC_DDR_X3",
+  copyFrom: {
+    file: "ddr_world.json",
+    // 2ndMIX cross over song's jackets are different from current version, so don't copy jackets
+    keys: ["search_hint", "genre", "remyLink"],
+  },
 };
 
 export const DDR_X: DDRSourceMeta = {
@@ -493,6 +540,11 @@ export const DDR_X: DDRSourceMeta = {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=148&show_notecounts=1&sort=&sort_order=asc",
   },
   remy: "https://remywiki.com/AC_DDR_X",
+  copyFrom: {
+    file: "ddr_world.json",
+    // DDR X or earlier uses banners instead of jackets
+    keys: ["search_hint", "genre", "remyLink"],
+  },
 };
 
 export const DDR_SN: DDRSourceMeta = {
@@ -503,6 +555,7 @@ export const DDR_SN: DDRSourceMeta = {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=238&show_notecounts=1&sort=&sort_order=asc",
   },
   remy: "https://remywiki.com/AC_DDR_SuperNOVA",
+  copyFrom: DDR_X.copyFrom,
 };
 
 export const DDR_EXTREME: DDRSourceMeta = {
@@ -513,4 +566,5 @@ export const DDR_EXTREME: DDRSourceMeta = {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=81&show_notecounts=1&sort=&sort_order=asc",
   },
   remy: "https://remywiki.com/AC_DDR_EXTREME",
+  copyFrom: DDR_X.copyFrom,
 };
