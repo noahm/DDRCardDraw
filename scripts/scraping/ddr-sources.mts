@@ -1,4 +1,4 @@
-import type { Chart, Song } from "../../src/models/SongData.ts";
+import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
 
 /** Interface for importing DDR songs from a source */
 export interface DDRSongImporter<T extends Partial<Song>> {
@@ -21,6 +21,77 @@ export interface DDRSongImporter<T extends Partial<Song>> {
    * @returns True if the merge resulted in any updates
    */
   merge(existingSong: Song, fetchedSong: T): boolean | Promise<boolean>;
+}
+
+/**
+ * DDR song importer that imports from a local JSON file.
+ * Useful for importing from other DDR mixes' JSON data.
+ */
+export class JsonDDRSongImporter implements DDRSongImporter<Song> {
+  readonly #jsonFileName: `${string}.json`;
+  readonly #updatedPropertyKeys: (
+    | Exclude<keyof Song, "charts">
+    | `charts.${keyof Chart}`
+  )[];
+  /**
+   * @param jsonFileName The name of the JSON file to import songs from
+   * @param updatedPropertyKeys The list of properties to update in existing songs
+   */
+  constructor(
+    jsonFileName: `${string}.json`,
+    updatedPropertyKeys: (
+      | Exclude<keyof Song, "charts">
+      | `charts.${keyof Chart}`
+    )[],
+  ) {
+    this.#jsonFileName = jsonFileName;
+    this.#updatedPropertyKeys = updatedPropertyKeys;
+  }
+
+  async fetchSongs(): Promise<Song[]> {
+    const gameData: GameData = await import(
+      `../../src/songs/${this.#jsonFileName}`
+    );
+    return gameData.songs;
+  }
+
+  songEquals(existingSong: Song, fetchedSong: Song): boolean {
+    return existingSong.saHash === fetchedSong.saHash;
+  }
+
+  merge(existingSong: Song, fetchedSong: Song): boolean {
+    let updated = false;
+
+    for (const key of this.#updatedPropertyKeys) {
+      if (isChartKey(key)) {
+        const chartKey = key.slice(7) as keyof Chart;
+        for (const fetchedChart of fetchedSong.charts) {
+          const existingChart = existingSong.charts.find(
+            (c) =>
+              c.style === fetchedChart.style &&
+              c.diffClass === fetchedChart.diffClass,
+          );
+          if (
+            existingChart &&
+            existingChart[chartKey] !== fetchedChart[chartKey]
+          ) {
+            (existingChart as unknown as Record<string, unknown>)[chartKey] =
+              fetchedChart[chartKey];
+            updated = true;
+          }
+        }
+      } else if (existingSong[key] !== fetchedSong[key]) {
+        (existingSong as unknown as Record<string, unknown>)[key] =
+          fetchedSong[key];
+        updated = true;
+      }
+    }
+    return updated;
+
+    function isChartKey(key: string): key is `charts.${keyof Chart}` {
+      return key.startsWith("charts.");
+    }
+  }
 }
 
 interface ZIVSourceMeta {
