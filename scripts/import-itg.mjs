@@ -3,7 +3,7 @@ import {
   writeJsonData,
   downloadJacket,
   unlockRequestConcurrency,
-} from "./utils.mjs";
+} from "./utils.mts";
 import { resolve, join, basename, extname, dirname } from "path";
 import { existsSync, readdirSync } from "fs";
 

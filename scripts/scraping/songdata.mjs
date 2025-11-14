@@ -5166,10 +5166,13 @@ export const ALL_SONG_DATA = [
   {
     song_id: "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
     song_name: "鳳 (Five Flares Mix)",
-    alphabet: "?",
+    searchable_name: "ほう Five Flares Mix",
+    romanized_name: "Hou (Five Flares Mix)",
+    alphabet: "は",
     version_num: 20,
-    ratings: [6, 10, 14, 16, 18, 0, 0, 0, 0],
-    tiers: [1, 1, 1, 1, 1, 0, 0, 0, 0],
+    ratings: [6, 10, 14, 16, 18, 10, 14, 16, 18],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
   },
   {
     song_id: "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -5750,10 +5753,12 @@ export const ALL_SONG_DATA = [
   {
     song_id: "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq",
     song_name: "New Millennium Pt.2",
-    alphabet: "?",
+    searchable_name: "New Millennium Pt 2",
+    alphabet: "N",
     version_num: 20,
-    ratings: [3, 7, 10, 14, 17, 0, 0, 0, 0],
-    tiers: [1, 1, 1, 1, 1, 0, 0, 0, 0],
+    ratings: [3, 7, 10, 14, 17, 7, 10, 14, 17],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
   },
   {
     song_id: "Dld100o9l88o6qqId6O96IbiIQiOdbQD",
@@ -12581,4 +12586,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1762405202500;
+export const SONG_DATA_LAST_UPDATED_unixms = 1762710683384;

@@ -5,14 +5,17 @@ import PQueue from "p-queue";
 import { Jimp, ResizeStrategy } from "jimp";
 import BottomBar from "inquirer/lib/ui/bottom-bar.js";
 import sanitize from "sanitize-filename";
-
 import { JSDOM } from "jsdom";
 import { fileURLToPath } from "url";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import CacheableLookup from "cacheable-lookup";
 import { globalAgent as httpAgent } from "http";
 import { globalAgent as httpsAgent } from "https";
+
+import type { GameData, Song } from "../src/models/SongData.ts";
+
 {
   /* globally install dns caching to avoid mass lookups of remywiki over and over */
   const dnsCache = new CacheableLookup();
@@ -22,32 +25,33 @@ import { globalAgent as httpsAgent } from "https";
 
 /**
  * sorts songs in-place, and charts within each song
- * @template {{ name: string, charts: { style: string, lvl: number }[]}} Input
- * @param songs {Array<Input>}
+ * @param songs
  */
-export function sortSongs(songs) {
+export function sortSongs(songs: Song[], meta: GameData["meta"]) {
   for (const song of songs) {
-    song.charts.sort((chartA, chartB) => {
-      if (chartA.style !== chartB.style) {
-        // sort singles first, doubles second
-        return chartA.style > chartB.style ? -1 : 1;
+    song.charts.sort((left, right) => {
+      if (left.style !== right.style) {
+        return (
+          meta.styles.indexOf(left.style) - meta.styles.indexOf(right.style)
+        );
       }
-      // sort by level within style
-      return chartA.lvl - chartB.lvl;
+      if (left.diffClass !== right.diffClass) {
+        return (
+          meta.difficulties.findIndex((d) => d.key === left.diffClass) -
+          meta.difficulties.findIndex((d) => d.key === right.diffClass)
+        );
+      }
+      return left.lvl - right.lvl;
     });
   }
-  return songs.sort((songA, songB) => {
-    const nameA = songA.name.toLowerCase();
-    const nameB = songB.name.toLowerCase();
+  return songs.sort((left, right) => {
+    const leftLowerName = left.name.toLowerCase();
+    const rightLowerName = right.name.toLowerCase();
 
-    if (nameA === nameB) {
-      return songA.name > songB.name ? 1 : -1;
+    if (leftLowerName === rightLowerName) {
+      return left.name == right.name ? 0 : left.name > right.name ? 1 : -1;
     }
-    if (nameA > nameB) {
-      return 1;
-    } else {
-      return -1;
-    }
+    return leftLowerName > rightLowerName ? 1 : -1;
   });
 }
 
@@ -55,7 +59,7 @@ export function sortSongs(songs) {
  * @param {string} url
  * @returns {Promise<JSDOM | null>}
  */
-async function getDomInternal(url) {
+async function getDomInternal(url: string): Promise<JSDOM | undefined> {
   try {
     console.log("fetching", url);
     const req = await fetch(url);
@@ -65,26 +69,27 @@ async function getDomInternal(url) {
   }
 }
 
-/**
- * @type {Record<string, Promise<void | JSDOM>>}
- */
-const domForUrl = {};
+const domForUrl: Record<string, JSDOM | undefined> = {};
 
 /**
  *
- * @param {string} url
+ * @param url
  */
-export function getDom(url) {
+export async function getDom(url: string): Promise<JSDOM | undefined> {
   if (domForUrl[url]) return domForUrl[url];
-  return (domForUrl[url] = requestQueue.add(() => getDomInternal(url)));
+  return (domForUrl[url] = await requestQueue.add(() => getDomInternal(url)));
 }
 
 /**
- * @param {import('../src/models/SongData.js').GameData} data Game data object
- * @param {string} filePath Destination JSON file path
- * @param {number | undefined} lastUpdated Last updated UNIX timestamp, defaults to current time
+ * @param data Game data object
+ * @param filePath Destination JSON file path
+ * @param lastUpdated Last updated UNIX timestamp, defaults to current time
  */
-export async function writeJsonData(data, filePath, lastUpdated = undefined) {
+export async function writeJsonData(
+  data: GameData,
+  filePath: string,
+  lastUpdated: number | undefined = undefined,
+) {
   data.meta.lastUpdated = lastUpdated ?? Date.now();
   let formatted;
   try {
@@ -98,7 +103,7 @@ export async function writeJsonData(data, filePath, lastUpdated = undefined) {
 }
 
 /** @type {PQueue} */
-export let requestQueue = new PQueue({
+export let requestQueue: PQueue = new PQueue({
   concurrency: 1, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
@@ -114,16 +119,16 @@ export function unlockRequestConcurrency() {
 }
 
 let JACKET_PREFIX = "";
-export function setJacketPrefix(prefix) {
+export function setJacketPrefix(prefix: string) {
   JACKET_PREFIX = prefix;
 }
 
 /**
- * @param {string} coverUrl url of file to be fetched
- * @param {string} localFilename known local filename, or song name
+ * @param coverUrl url of file to be fetched
+ * @param localFilename known local filename, or song name
  * @returns absolute and relative paths
  */
-function getOutputPath(coverUrl, localFilename) {
+function getOutputPath(coverUrl: string, localFilename: string) {
   if (!localFilename) {
     localFilename = JACKET_PREFIX + basename(coverUrl);
   } else {
@@ -138,15 +143,13 @@ function getOutputPath(coverUrl, localFilename) {
   );
   const outputPath = join(dirname(localFilename), sanitizedFilename);
   return {
-    /** @type {"someFilePath.jpg"} */
-    // @ts-ignore
-    absolute: join(JACKETS_PATH, outputPath),
+    absolute: join(JACKETS_PATH, outputPath) as `${string}.jpg`,
     relative: outputPath.replace(/\\/g, "/"),
   };
 }
 
-/** @param {string} absoluteImgPath */
-function createParentFolderIfNeeded(absoluteImgPath) {
+/** @param absoluteImgPath */
+function createParentFolderIfNeeded(absoluteImgPath: string) {
   const base = dirname(absoluteImgPath);
   if (!existsSync(base)) {
     mkdirSync(base, { recursive: true });
@@ -154,14 +157,17 @@ function createParentFolderIfNeeded(absoluteImgPath) {
 }
 
 /**
- * @param coverUrl {string} url of image to fetch
- * @param localFilename {string | undefined} override filename found in url
+ * @param coverUrl url of image to fetch
+ * @param localFilename override filename found in url
  *
  * queues a cover path for download into the imageQueue.
  * Always skips if file already exists.
  * Immediately returns the relative path to the jacket where it will be saved
  */
-export function downloadJacket(coverUrl, localFilename = undefined) {
+export function downloadJacket(
+  coverUrl: string,
+  localFilename: string | undefined = undefined,
+) {
   const { absolute, relative } = getOutputPath(coverUrl, localFilename);
   if (!existsSync(absolute)) {
     createParentFolderIfNeeded(absolute);
@@ -192,7 +198,7 @@ export function downloadJacket(coverUrl, localFilename = undefined) {
  * @param {string} songName
  * @returns {string|undefined} relative output path if jacket exists
  */
-export function checkJacketExists(songName) {
+export function checkJacketExists(songName: string): string | undefined {
   const paths = getOutputPath("", songName);
   if (existsSync(paths.absolute)) {
     return paths.relative;
