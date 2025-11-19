@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Tools for music game tournaments and training",
   "engines": {
-    "node": "^22.14.0"
+    "node": "^24.0.0"
   },
   "scripts": {
     "start": "webpack serve --env dev=true",
@@ -53,7 +53,7 @@
     "@types/fuzzy-search": "2.1.5",
     "@types/inquirer": "9.0.7",
     "@types/jsdom": "27.0.0",
-    "@types/node": "22.14.1",
+    "@types/node": "24.10.1",
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
