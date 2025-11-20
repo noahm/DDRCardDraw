@@ -7861,6 +7861,14 @@ export const ALL_SONG_DATA = [
     tiers: [0.5, 0.3, 0.5, 0.1, 0, 0.45, 0.6, 0.3, 0],
   },
   {
+    song_id: "Iq6olol00o1q66l61QIDdl6biq8OoIoQ",
+    song_name: "打打打打打打打打打打 (にじさんじダンス部 ver.)",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [2, 5, 10, 14, 16, 6, 11, 14, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  },
+  {
     song_id: "iq6QI06oQlloO9Db9dbI8IDoi91dD8d9",
     song_name: "HEARTBREAK (Sound Selektaz remix)",
     alphabet: "H",
@@ -9184,6 +9192,14 @@ export const ALL_SONG_DATA = [
     version_num: 11,
     ratings: [2, 4, 7, 10, 0, 5, 7, 11, 0],
     tiers: [0.4, 0.4, 0.3, 0.3, 0, 0.4, 0.35, 0.45, 0],
+  },
+  {
+    song_id: "Ob8Q19QldDliP6qddP1o1ODP91bd1oQl",
+    song_name: "Din Don Dan (にじさんじダンス部 ver.)",
+    alphabet: "?",
+    version_num: 20,
+    ratings: [1, 3, 9, 12, 16, 3, 9, 12, 16],
+    tiers: [1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
     song_id: "ObbOibP0ll9I00di6i9oO1qlIQbdD0ql",
@@ -12586,4 +12602,4 @@ export const EVENT_EXCLUSIONS = [
   30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 170, 180, 200, 210, 220,
   230, 240, 260, 270, 290, 300,
 ];
-export const SONG_DATA_LAST_UPDATED_unixms = 1762710683384;
+export const SONG_DATA_LAST_UPDATED_unixms = 1763601495355;

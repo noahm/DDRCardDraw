@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1762744816215
+    "lastUpdated": 1763601495355
   },
   "defaults": {
     "style": "single",
@@ -15840,6 +15840,61 @@
       "jacket": "ddr_2014/Din Don Dan.png",
       "saHash": "1i81dQboQ91QbdO9d6bQ1Pi00dPP01li",
       "saIndex": "593"
+    },
+    {
+      "name": "Din Don Dan (にじさんじダンス部 ver.)",
+      "artist": "レイン・パターソン & 山神カルタ & 東堂コハク",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 3
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/Din Don Dan (にじさんじダンス部 ver.).jpg",
+      "saHash": "Ob8Q19QldDliP6qddP1o1ODP91bd1oQl"
     },
     {
       "name": "dirty digital",
@@ -39620,6 +39675,7 @@
         }
       ],
       "jacket": "ddr_world/New Millennium Pt.2.jpg",
+      "remyLink": "https://remywiki.com/New_Millennium_Pt.2",
       "saHash": "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq",
       "flags": ["unlock"]
     },
@@ -52328,6 +52384,7 @@
         }
       ],
       "jacket": "ddr_world/SkyDrive! (HASEKO EUROBEAT MIX).jpg",
+      "remyLink": "https://remywiki.com/SkyDrive!_(HASEKO_EUROBEAT_MIX)",
       "saHash": "bPI6QobOQl9Q161l8l68069QdO1QbO9b",
       "search_hint": "SkyDrive HASEKO EUROBEAT MIX",
       "flags": ["grandPrixPack"]
@@ -73263,6 +73320,7 @@
       ],
       "flags": ["copyStrikes"],
       "jacket": "ddr_world/チルノのパーフェクトさんすう学園.jpg",
+      "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_gakuen",
       "saHash": "8P1809bo8PoqQoqOQilPidOdobbo6iiO"
     },
     {
@@ -81657,6 +81715,61 @@
       "saIndex": "693"
     },
     {
+      "name": "打打打打打打打打打打 (にじさんじダンス部 ver.)",
+      "artist": "長尾景 & 倉持めると & セラフ・ダズルガーデン",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/打打打打打打打打打打 (にじさんじダンス部 ver.).jpg",
+      "saHash": "Iq6olol00o1q66l61QIDdl6biq8OoIoQ"
+    },
+    {
       "name": "斑咲花",
       "name_translation": "Murasakibana",
       "artist": "mami,駄々子 by BEMANI Sound Team \"Akhuta Works\"",
@@ -87606,6 +87719,7 @@
         }
       ],
       "jacket": "ddr_world/鳳 (Five Flares Mix).jpg",
+      "remyLink": "https://remywiki.com/Hou_(Five_Flares_Mix)",
       "saHash": "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
       "flags": ["unlock"]
     },
