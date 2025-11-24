@@ -1,14 +1,25 @@
-import { writeFile } from "fs/promises";
+import { existsSync } from "node:fs";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { format } from "prettier";
 
 import { downloadJacket, requestQueue } from "../utils.mts";
 import type { Chart, Song } from "../../src/models/SongData.ts";
-import type { ALL_SONG_DATA } from "./songdata.mjs";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 
-type SanbaiSong = (typeof ALL_SONG_DATA)[number];
+type SanbaiSong = {
+  song_id: string;
+  song_name: string;
+  searchable_name?: string;
+  romanized_name?: string;
+  alternate_name?: string;
+  version_num: number;
+  lock_types?: number[];
+  deleted?: 1;
+  ratings: number[];
+  tiers: number[];
+};
 
 /** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
 const lockFlags: Record<number, Song["flags"]> = {
@@ -79,7 +90,10 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
    */
   async fetchSongs(): Promise<SanbaiSongData[]> {
     await this.updateSongDataFile();
-    const { ALL_SONG_DATA } = await import("./songdata.mjs");
+    // @ts-ignore: This file is dynamic import
+    const { ALL_SONG_DATA } = (await import("./sanbai/songdata.mjs")) as {
+      ALL_SONG_DATA: SanbaiSong[];
+    };
 
     const songs: SanbaiSongData[] = [];
     for (const song of ALL_SONG_DATA) {
@@ -192,9 +206,11 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       .replace(/\u00a0/g, " "); // Replace non-breaking spaces
     const filePath = path.join(
       path.dirname(fileURLToPath(import.meta.url)),
+      "sanbai",
       "songdata.mjs",
     );
     const formatted = await format(mjsText, { filepath: filePath });
+    if (!existsSync("./sanbai/")) await mkdir("./sanbai/");
     await writeFile(filePath, formatted);
     return filePath;
   }

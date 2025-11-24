@@ -210,8 +210,12 @@ try {
       `Songs from 3icecream (except deleted): ${fetchedSongs.filter((s) => !s.deleted).length}`,
     );
 
-    lastUpdated = (await import("./scraping/songdata.mjs"))
-      .SONG_DATA_LAST_UPDATED_unixms;
+    // @ts-ignore: This file is dynamic import
+    lastUpdated = (
+      (await import("./scraping/sanbai/songdata.mjs")) as {
+        SONG_DATA_LAST_UPDATED_unixms: number;
+      }
+    ).SONG_DATA_LAST_UPDATED_unixms;
   }
 
   if (MIX_META.ziv) {
