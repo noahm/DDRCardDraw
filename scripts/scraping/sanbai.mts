@@ -48,7 +48,9 @@ const titleList: Record<SanbaiSong["version_num"], Song["folder"]> = {
 };
 
 /** Correction map for invalid data on 3icecream site */
-const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([]);
+const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
+  ["IObPQb9QlP0iIiboObPoPqIqDo0O11Qi", { deleted: 1 }], // 春を告げる
+]);
 
 type SanbaiSongData = Pick<
   Song,
