@@ -22,45 +22,114 @@ type SanbaiSong = {
 };
 
 /** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
-const lockFlags: Record<number, Song["flags"]> = {
-  20: ["goldExclusive", "tempUnlock"], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
-  190: ["grandPrixPack"], // DDR GRAND PRIX packs
-  240: ["tempUnlock"], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
-  250: ["flareRank"], // FLARE SKILL unlock
-  260: ["tempUnlock"], // MYSTICAL Re:UNION
-  270: ["worldLeague"], // WORLD LEAGUE
-  280: ["unlock"], // EXTRA SAVIOR WORLD
-  290: ["unlock"], // GALAXY BRAVE
-  300: ["platinumMembers"], // DDR PLATINUM MEMBERS
-};
+const lockFlags: Map<number, Song["flags"]> = new Map([
+  [20, ["goldExclusive", "tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
+  [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
+  [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
+  [250, ["flareRank"]], // FLARE SKILL unlock
+  [260, ["tempUnlock"]], // MYSTICAL Re:UNION
+  [270, ["worldLeague"]], // WORLD LEAGUE
+  [280, ["unlock"]], // EXTRA SAVIOR WORLD
+  [290, ["unlock"]], // GALAXY BRAVE
+  [300, ["platinumMembers"]], // DDR PLATINUM MEMBERS
+]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
-const titleList: Record<SanbaiSong["version_num"], Song["folder"]> = {
-  1: "DanceDanceRevolution 1st Mix",
-  2: "DanceDanceRevolution 2nd Mix",
-  3: "DanceDanceRevolution 3rd Mix",
-  4: "DanceDanceRevolution 4th Mix",
-  5: "DanceDanceRevolution 5th Mix",
-  6: "DDRMAX -DanceDanceRevolution 6thMIX-",
-  7: "DDRMAX2 -DanceDanceRevolution 7thMIX-",
-  8: "DanceDanceRevolution EXTREME",
-  9: "DanceDanceRevolution SuperNOVA",
-  10: "DanceDanceRevolution SuperNOVA2",
-  11: "DanceDanceRevolution X",
-  12: "DanceDanceRevolution X2",
-  13: "DanceDanceRevolution X3 vs 2nd MIX",
-  14: "DanceDanceRevolution (2013)",
-  15: "DanceDanceRevolution (2014)",
-  16: "DanceDanceRevolution A",
-  17: "DanceDanceRevolution A20",
-  18: "DanceDanceRevolution A20 PLUS",
-  19: "DanceDanceRevolution A3",
-  20: "DanceDanceRevolution World",
-};
+const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
+  [1, "DanceDanceRevolution 1st Mix"],
+  [2, "DanceDanceRevolution 2nd Mix"],
+  [3, "DanceDanceRevolution 3rd Mix"],
+  [4, "DanceDanceRevolution 4th Mix"],
+  [5, "DanceDanceRevolution 5th Mix"],
+  [6, "DDRMAX -DanceDanceRevolution 6thMIX-"],
+  [7, "DDRMAX2 -DanceDanceRevolution 7thMIX-"],
+  [8, "DanceDanceRevolution EXTREME"],
+  [9, "DanceDanceRevolution SuperNOVA"],
+  [10, "DanceDanceRevolution SuperNOVA2"],
+  [11, "DanceDanceRevolution X"],
+  [12, "DanceDanceRevolution X2"],
+  [13, "DanceDanceRevolution X3 vs 2nd MIX"],
+  [14, "DanceDanceRevolution (2013)"],
+  [15, "DanceDanceRevolution (2014)"],
+  [16, "DanceDanceRevolution A"],
+  [17, "DanceDanceRevolution A20"],
+  [18, "DanceDanceRevolution A20 PLUS"],
+  [19, "DanceDanceRevolution A3"],
+  [20, "DanceDanceRevolution World"],
+]);
 
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ["IObPQb9QlP0iIiboObPoPqIqDo0O11Qi", { deleted: 1 }], // 春を告げる
+  // #region グランプリ譜面パックvol.5
+  [
+    "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
+    {
+      ratings: [3, 5, 7, 12, 14, 5, 9, 12, 15],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO", // D2R
+    {
+      ratings: [3, 4, 7, 11, 15, 4, 8, 11, 15],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl", // Dragon Blade
+    {
+      ratings: [5, 9, 10, 11, 18, 9, 11, 11, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8", // Funk Boogie
+    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
+  ],
+  [
+    "69qoD0l6olQqqbl09b069q898b600I6o", // Gamelan de Couple
+    {
+      ratings: [3, 4, 7, 12, 16, 5, 7, 13, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "901q61iP6lPiDqIQoQod9PDqlOPq1bb9", // La Señorita
+    {
+      ratings: [4, 7, 8, 10, 14, 5, 9, 13, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb", // No.13
+    {
+      ratings: [4, 5, 9, 13, 17, 5, 9, 12, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP", // Quick Master
+    {
+      ratings: [4, 5, 8, 11, 15, 5, 7, 10, 15],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP", // WILD RUSH
+    {
+      ratings: [5, 6, 7, 10, 14, 5, 9, 11, 15],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "ql1Q8P100IIlbl0Pdi08I8qD900idqQq", // カゲロウ
+    {
+      ratings: [3, 4, 7, 9, 14, 4, 7, 9, 14],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  // #endregion グランプリ譜面パックvol.5
 ]);
 
 type SanbaiSongData = Pick<
@@ -131,15 +200,10 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
         }
       }
 
-      const locks = song.lock_types;
-      let songLock = null;
-      if (locks) {
-        // If all charts are locked, set songLock
-        const allChartsLocked = song.ratings.every(
-          (lvl, idx) => !lvl || locks[idx],
-        );
-        if (allChartsLocked) songLock = locks[0];
-      }
+      const songLock =
+        song.lock_types?.reduce((prev, curr, i) =>
+          prev === curr || !song.ratings[i] ? prev : -1,
+        ) ?? 0;
 
       // Build charts array from ratings and lock_types
       const ratingsToStyleAndDiff = [
@@ -154,13 +218,13 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
         { style: "double", diffClass: "challenge" },
       ];
       const charts = song.ratings
-        .map((lvl, idx) => {
-          const chart: Chart = { lvl, ...ratingsToStyleAndDiff[idx] };
-          if (locks && locks[idx] && locks[idx] !== songLock) {
-            chart.flags = lockFlags[locks[idx]];
+        .map((lvl, i) => {
+          const chart: Chart = { ...ratingsToStyleAndDiff[i], lvl };
+          if (songLock < 0 && song.lock_types?.[i]) {
+            chart.flags = lockFlags.get(song.lock_types[i]);
           }
-          if (song.tiers[idx] && song.tiers[idx] !== 1) {
-            chart.sanbaiTier = chart.lvl + song.tiers[idx];
+          if (song.tiers[i] && song.tiers[i] !== 1) {
+            chart.sanbaiTier = chart.lvl + song.tiers[i];
           }
           return chart;
         })
@@ -170,11 +234,10 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       songs.push({
         name: song.song_name,
         name_translation: song.romanized_name,
-        folder: titleList[song.version_num - 1],
-        charts,
-        flags:
-          songLock && lockFlags[songLock] ? lockFlags[songLock] : undefined,
         saHash: song.song_id,
+        folder: titleList.get(song.version_num),
+        charts,
+        flags: lockFlags.get(songLock),
         search_hint:
           [song.searchable_name, song.alternate_name]
             .filter(Boolean)
