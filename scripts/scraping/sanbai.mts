@@ -62,73 +62,21 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ["IObPQb9QlP0iIiboObPoPqIqDo0O11Qi", { deleted: 1 }], // 春を告げる
   // #region グランプリ譜面パックvol.5
-  [
+  ...[
     "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
-    {
-      ratings: [3, 5, 7, 12, 14, 5, 9, 12, 15],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO", // D2R
-    {
-      ratings: [3, 4, 7, 11, 15, 4, 8, 11, 15],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl", // Dragon Blade
-    {
-      ratings: [5, 9, 10, 11, 18, 9, 11, 11, 17],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8", // Funk Boogie
-    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
-  ],
-  [
     "69qoD0l6olQqqbl09b069q898b600I6o", // Gamelan de Couple
-    {
-      ratings: [3, 4, 7, 12, 16, 5, 7, 13, 16],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "901q61iP6lPiDqIQoQod9PDqlOPq1bb9", // La Señorita
-    {
-      ratings: [4, 7, 8, 10, 14, 5, 9, 13, 16],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb", // No.13
-    {
-      ratings: [4, 5, 9, 13, 17, 5, 9, 12, 17],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP", // Quick Master
-    {
-      ratings: [4, 5, 8, 11, 15, 5, 7, 10, 15],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP", // WILD RUSH
-    {
-      ratings: [5, 6, 7, 10, 14, 5, 9, 11, 15],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
-  [
     "ql1Q8P100IIlbl0Pdi08I8qD900idqQq", // カゲロウ
-    {
-      ratings: [3, 4, 7, 9, 14, 4, 7, 9, 14],
-      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
-    },
-  ],
+  ].map<[string, Partial<SanbaiSong>]>((s) => [
+    s,
+    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
+  ]),
   // #endregion グランプリ譜面パックvol.5
 ]);
 
