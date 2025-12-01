@@ -1,10 +1,9 @@
-import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { format } from "prettier";
 
-import { downloadJacket, requestQueue } from "../utils.mts";
+import { downloadJacket, exists, requestQueue } from "../utils.mts";
 import type { Chart, Song } from "../../src/models/SongData.ts";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 
@@ -215,13 +214,13 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
     const mjsText = jsText
       .replace(/\b(const|var)\b/g, "export const")
       .replace(/\u00a0/g, " "); // Replace non-breaking spaces
-    const filePath = path.join(
+    const folderPath = path.join(
       path.dirname(fileURLToPath(import.meta.url)),
       "sanbai",
-      "songdata.mjs",
     );
+    const filePath = path.join(folderPath, "songdata.mjs");
     const formatted = await format(mjsText, { filepath: filePath });
-    if (!existsSync("./sanbai/")) await mkdir("./sanbai/");
+    if (!(await exists(folderPath))) await mkdir(folderPath);
     await writeFile(filePath, formatted);
     return filePath;
   }
