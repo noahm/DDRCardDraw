@@ -21,59 +21,12 @@ import {
   JsonDDRSongImporter,
   DDR_WORLD as MIX_META,
 } from "./scraping/ddr-sources.mts";
-import { EAGateSongImporter } from "./scraping/eagate.mts";
-import {
-  guessUrlFromName,
-  getJacketFromRemySong,
-  getMetaFromRemy,
-} from "./scraping/remy.mjs";
+import { EAGateSongImporter } from "./scraping/eagate-ddr.mts";
+import { tryGetMetaFromRemy } from "./scraping/remy.mts";
 import { SanbaiSongImporter } from "./scraping/sanbai.mts";
 import { ZivSongImporter } from "./scraping/ziv.mts";
 
 setJacketPrefix(MIX_META.jacketPrefix);
-
-/** Already fetched from RemyWiki */
-const alreadyFetched: Set<string> = new Set();
-/**
- * Try to get song meta data from RemyWiki if missing
- * @param song Song to get meta for
- * @returns whether any meta was added
- */
-async function tryGetMetaFromRemy(
-  song: Pick<Song, "name"> &
-    Partial<Pick<Song, "remyLink" | "jacket" | "bpm" | "artist">>,
-): Promise<boolean> {
-  if ((song.remyLink && song.jacket) || alreadyFetched.has(song.name))
-    return false;
-
-  // Try to guess remyLink from name only once
-  alreadyFetched.add(song.name);
-  song.remyLink ||= await guessUrlFromName(song.name);
-  if (!song.remyLink) return false;
-
-  console.log(`Added "${song.name}" remyLink: ${song.remyLink}`);
-
-  // Try to get jacket from remyLink
-  if (!song.jacket && song.remyLink) {
-    const jacket = await getJacketFromRemySong(song.remyLink, song.name);
-    if (jacket) {
-      song.jacket = jacket;
-      console.log(`Added "${song.name}" jacket from remyLink: ${jacket}`);
-    }
-  }
-  if (!song.bpm || !song.artist) {
-    const meta = await getMetaFromRemy(song.remyLink);
-    if (!song.bpm && meta?.bpm) {
-      song.bpm = meta.bpm;
-      console.log(`Added "${song.name}" bpm from remyLink: ${meta.bpm}`);
-    }
-    if (!song.artist && meta?.artist) {
-      song.artist = meta.artist;
-      console.log(`Added "${song.name}" artist from remyLink: ${meta.artist}`);
-    }
-  }
-  return true;
-}
 
 try {
   const targetFile = path.join(
@@ -107,16 +60,15 @@ try {
         );
 
         if (existingSong) {
-          // Get remyLink and jacket if missing
-          await tryGetMetaFromRemy(existingSong);
+          // Get remyLink if missing
+          await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
 
           importer.merge(existingSong, worldSong);
         } else {
           console.log(`Adding new song: ${worldSong.name}`);
 
           // Try to get meta data from remyLink
-          await tryGetMetaFromRemy(worldSong);
-
+          await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
           // If still no jacket, try to get from e-amusement GATE
           if (!worldSong.jacket) {
             worldSong.jacket = downloadJacket(
@@ -170,17 +122,17 @@ try {
         }
 
         if (existingSong) {
-          // Get remyLink and jacket if missing
-          await tryGetMetaFromRemy(existingSong);
+          // Get remyLink if missing
+          await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
 
           importer.merge(existingSong, sanbaiSong);
         } else {
           console.log(`Adding new song: ${sanbaiSong.name}`);
 
           // Try to get meta data from remyLink
-          await tryGetMetaFromRemy(sanbaiSong);
+          await tryGetMetaFromRemy(sanbaiSong, "DanceDanceRevolution");
 
-          // If still no jacket, try to get from 3icecream
+          // If no jacket, try to get from 3icecream
           if (!sanbaiSong.jacket) {
             sanbaiSong.jacket = downloadJacket(
               sanbaiSong.getJacketUrl(),
@@ -266,7 +218,7 @@ try {
   if (MIX_META.sortSongs)
     existingData.songs = sortSongs(existingData.songs, existingData.meta);
 
-  await writeJsonData(existingData, targetFile, lastUpdated);
+  await writeJsonData(existingData, targetFile, lastUpdated, 2);
 
   console.log(`Successfully updated ${MIX_META.filename}`);
   console.log(`Total songs in database: ${existingData.songs.length}`);
