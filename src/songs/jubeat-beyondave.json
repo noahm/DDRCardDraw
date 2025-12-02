@@ -1,4 +1,5 @@
 {
+  "$schema": "../../songs.schema.json",
   "meta": {
     "menuParent": "more",
     "styles": ["solo"],
@@ -8,6 +9,20 @@
       { "key": "extreme", "color": "#e12a5a" }
     ],
     "flags": ["licensed", "holds"],
+    "folders": [
+      "jubeat",
+      "jubeat ripples",
+      "jubeat knit",
+      "jubeat copious",
+      "jubeat saucer",
+      "jubeat saucer fulfill",
+      "jubeat prop",
+      "jubeat Qubell",
+      "jubeat clan",
+      "jubeat festo",
+      "jubeat Ave.",
+      "jubeat beyond the Ave."
+    ],
     "lastUpdated": 1764637666381
   },
   "defaults": {
@@ -28,7 +43,15 @@
       "holds": "Holds",
       "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
     },
-    "ja": { "licensed": "ライセンス楽曲", "holds": "ホールド譜面" }
+    "ja": {
+      "name": "jubeat beyond the Ave.",
+      "basic": "Basic",
+      "advanced": "Advanced",
+      "extreme": "Extreme",
+      "licensed": "ライセンス楽曲",
+      "holds": "ホールド譜面",
+      "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
+    }
   },
   "songs": [
     {
@@ -389,6 +412,7 @@
     {
       "name": "AIR RAID FROM THA UNDAGROUND",
       "artist": "GUHROOVY",
+      "folder": "jubeat ripples",
       "saHash": "id80401748",
       "bpm": "180",
       "charts": [
@@ -397,7 +421,7 @@
         { "lvl": 10.7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/AIR_RAID_FROM_THA_UNDAGROUND",
-      "jacket": "jubeat/id80401748.jpg"
+      "jacket": "jubeat/ripples/id80401748.jpg"
     },
     {
       "name": "AIR RAID FROM THA UNDAGROUND [ 2 ]",
@@ -416,6 +440,7 @@
     {
       "name": "ALBIDA",
       "artist": "DJ YOSHITAKA",
+      "folder": "jubeat ripples",
       "saHash": "id89950113",
       "bpm": "185",
       "charts": [
@@ -424,7 +449,7 @@
         { "lvl": 10.1, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/ALBIDA",
-      "jacket": "jubeat/id89950113.jpg"
+      "jacket": "jubeat/ripples/id89950113.jpg"
     },
     {
       "name": "aleatrik",
@@ -639,6 +664,7 @@
     {
       "name": "AREA 51",
       "artist": "96",
+      "folder": "jubeat ripples",
       "saHash": "id62369331",
       "bpm": "188",
       "charts": [
@@ -647,7 +673,7 @@
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/AREA_51",
-      "jacket": "jubeat/id62369331.jpg"
+      "jacket": "jubeat/ripples/id62369331.jpg"
     },
     {
       "name": "Arena Deiporta",
@@ -823,6 +849,7 @@
     {
       "name": "bass 2 bass",
       "artist": "Ryu☆",
+      "folder": "jubeat",
       "saHash": "id13239494",
       "bpm": "140",
       "charts": [
@@ -831,7 +858,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Bass_2_bass",
-      "jacket": "jubeat/id13239494.jpg"
+      "jacket": "jubeat/first/id13239494.jpg"
     },
     {
       "name": "Be a Hero!",
@@ -1323,6 +1350,7 @@
     {
       "name": "Chance and Dice",
       "artist": "日本少年",
+      "folder": "jubeat",
       "saHash": "id18346724",
       "bpm": "150",
       "charts": [
@@ -1331,7 +1359,7 @@
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Chance_and_Dice",
-      "jacket": "jubeat/id18346724.jpg"
+      "jacket": "jubeat/first/id18346724.jpg"
     },
     {
       "name": "chaplet",
@@ -1588,6 +1616,7 @@
     {
       "name": "coming true",
       "artist": "GUHROOVY Vs. L.E.D.",
+      "folder": "jubeat ripples",
       "saHash": "id46576344",
       "bpm": "175",
       "charts": [
@@ -1596,7 +1625,7 @@
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Coming_true",
-      "jacket": "jubeat/id46576344.jpg"
+      "jacket": "jubeat/ripples/id46576344.jpg"
     },
     {
       "name": "Concertino in Blue",
@@ -1822,6 +1851,7 @@
     {
       "name": "Crosswind",
       "artist": "Mutsuhiko Izumi",
+      "folder": "jubeat",
       "saHash": "id67780562",
       "bpm": "107",
       "charts": [
@@ -1830,7 +1860,7 @@
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Crosswind",
-      "jacket": "jubeat/id67780562.jpg"
+      "jacket": "jubeat/first/id67780562.jpg"
     },
     {
       "name": "crêpe suzette",
@@ -2324,6 +2354,7 @@
     {
       "name": "ECO FIGHTER",
       "artist": "入尾信充",
+      "folder": "jubeat ripples",
       "saHash": "id61440275",
       "bpm": "140",
       "charts": [
@@ -2332,7 +2363,7 @@
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/ECO_FIGHTER",
-      "jacket": "jubeat/id61440275.jpg"
+      "jacket": "jubeat/ripples/id61440275.jpg"
     },
     {
       "name": "electro peaceful",
@@ -2549,6 +2580,7 @@
     {
       "name": "Evans",
       "artist": "DJ YOSHITAKA",
+      "folder": "jubeat",
       "saHash": "id59871483",
       "bpm": "185",
       "charts": [
@@ -2557,7 +2589,7 @@
         { "lvl": 10.6, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Evans",
-      "jacket": "jubeat/id59871483.jpg"
+      "jacket": "jubeat/first/id59871483.jpg"
     },
     {
       "name": "Evans ～NOSTALGIA Ver. ～",
@@ -2654,6 +2686,7 @@
     {
       "name": "eyes",
       "artist": "小野秀幸",
+      "folder": "jubeat ripples",
       "saHash": "id18798856",
       "bpm": "300",
       "charts": [
@@ -2662,7 +2695,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Eyes",
-      "jacket": "jubeat/id18798856.jpg"
+      "jacket": "jubeat/ripples/id18798856.jpg"
     },
     {
       "name": "Fairy Fair",
@@ -3115,6 +3148,7 @@
     {
       "name": "GIGA BREAK",
       "artist": "96",
+      "folder": "jubeat",
       "saHash": "id92987568",
       "bpm": "135",
       "charts": [
@@ -3123,7 +3157,7 @@
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/GIGA_BREAK",
-      "jacket": "jubeat/id92987568.jpg"
+      "jacket": "jubeat/first/id92987568.jpg"
     },
     {
       "name": "Gimme a Big Beat",
@@ -3246,6 +3280,7 @@
     {
       "name": "Good-bye Chalon",
       "artist": "猫叉Master+",
+      "folder": "jubeat ripples",
       "saHash": "id11893148",
       "bpm": "154",
       "charts": [
@@ -3254,7 +3289,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Good-bye_Chalon",
-      "jacket": "jubeat/id11893148.jpg"
+      "jacket": "jubeat/ripples/id11893148.jpg"
     },
     {
       "name": "Got more raves？",
@@ -3379,6 +3414,7 @@
     {
       "name": "Happy Happy",
       "artist": "ki☆ki",
+      "folder": "jubeat",
       "saHash": "id45641891",
       "bpm": "130",
       "charts": [
@@ -3387,7 +3423,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Happy_Happy",
-      "jacket": "jubeat/id45641891.jpg"
+      "jacket": "jubeat/first/id45641891.jpg"
     },
     {
       "name": "HAPPY limelight",
@@ -3616,6 +3652,7 @@
     {
       "name": "HOT LIMIT",
       "artist": "",
+      "folder": "jubeat ripples",
       "saHash": "id51896993",
       "bpm": "139",
       "charts": [
@@ -3624,7 +3661,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/HOT_LIMIT_(HIGH_and_MIGHTY_COLOR)",
-      "jacket": "jubeat/id51896993.jpg",
+      "jacket": "jubeat/ripples/id51896993.jpg",
       "flags": ["licensed"]
     },
     {
@@ -3709,6 +3746,7 @@
     {
       "name": "I love マミー",
       "artist": "荒牧陽子",
+      "folder": "jubeat",
       "saHash": "id88151052",
       "bpm": "160",
       "charts": [
@@ -3717,7 +3755,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/I_love_mammy",
-      "jacket": "jubeat/id88151052.jpg"
+      "jacket": "jubeat/first/id88151052.jpg"
     },
     {
       "name": "I'm so Happy",
@@ -3800,6 +3838,7 @@
     {
       "name": "Icicles",
       "artist": "Jimmy Weckl",
+      "folder": "jubeat",
       "saHash": "id35367035",
       "bpm": "158",
       "charts": [
@@ -3808,7 +3847,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Icicles",
-      "jacket": "jubeat/id35367035.jpg"
+      "jacket": "jubeat/first/id35367035.jpg"
     },
     {
       "name": "Icicles [ 2 ]",
@@ -3894,6 +3933,7 @@
     {
       "name": "In Scottish Highlands",
       "artist": "Thomas Howard Lichtenstein",
+      "folder": "jubeat",
       "saHash": "id67469002",
       "bpm": "145",
       "charts": [
@@ -3902,7 +3942,7 @@
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/In_Scottish_Highlands",
-      "jacket": "jubeat/id67469002.jpg"
+      "jacket": "jubeat/first/id67469002.jpg"
     },
     {
       "name": "In The Breeze",
@@ -3920,6 +3960,7 @@
     {
       "name": "IN THE NAME OF LOVE",
       "artist": "Y&Co. feat. Erica",
+      "folder": "jubeat",
       "saHash": "id26243783",
       "bpm": "155",
       "charts": [
@@ -3928,7 +3969,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/IN_THE_NAME_OF_LOVE",
-      "jacket": "jubeat/id26243783.jpg"
+      "jacket": "jubeat/first/id26243783.jpg"
     },
     {
       "name": "In The Ruins",
@@ -4038,6 +4079,7 @@
     {
       "name": "INVISIBLE WORLD",
       "artist": "SILKY F",
+      "folder": "jubeat ripples",
       "saHash": "id88336511",
       "bpm": "128",
       "charts": [
@@ -4046,7 +4088,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/INVISIBLE_WORLD",
-      "jacket": "jubeat/id88336511.jpg"
+      "jacket": "jubeat/ripples/id88336511.jpg"
     },
     {
       "name": "It's my Miracle",
@@ -4169,6 +4211,7 @@
     {
       "name": "Jumping Boogie",
       "artist": "Kozo Nakamura",
+      "folder": "jubeat",
       "saHash": "id81355986",
       "bpm": "198",
       "charts": [
@@ -4177,7 +4220,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Jumping_Boogie",
-      "jacket": "jubeat/id81355986.jpg"
+      "jacket": "jubeat/first/id81355986.jpg"
     },
     {
       "name": "Just a Game",
@@ -4531,6 +4574,7 @@
     {
       "name": "Lead Me",
       "artist": "SHOGO",
+      "folder": "jubeat ripples",
       "saHash": "id81681558",
       "bpm": "172",
       "charts": [
@@ -4539,7 +4583,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Lead_Me",
-      "jacket": "jubeat/id81681558.jpg"
+      "jacket": "jubeat/ripples/id81681558.jpg"
     },
     {
       "name": "Liar×Girl",
@@ -4863,6 +4907,7 @@
     {
       "name": "Macuilxochitl",
       "artist": "TOMOSUKE",
+      "folder": "jubeat ripples",
       "saHash": "id59286717",
       "bpm": "148",
       "charts": [
@@ -4871,7 +4916,7 @@
         { "lvl": 10.3, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Macuilxochitl",
-      "jacket": "jubeat/id59286717.jpg"
+      "jacket": "jubeat/ripples/id59286717.jpg"
     },
     {
       "name": "Magical electrica",
@@ -5899,6 +5944,7 @@
     {
       "name": "Polaris",
       "artist": "Mutsuhiko Izumi",
+      "folder": "jubeat",
       "saHash": "id38381201",
       "bpm": "180",
       "charts": [
@@ -5907,7 +5953,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Polaris",
-      "jacket": "jubeat/id38381201.jpg"
+      "jacket": "jubeat/first/id38381201.jpg"
     },
     {
       "name": "Polaris [ 2 ]",
@@ -6203,6 +6249,7 @@
     {
       "name": "Queen's Paradise",
       "artist": "Nanako",
+      "folder": "jubeat ripples",
       "saHash": "id59060891",
       "bpm": "157",
       "charts": [
@@ -6211,7 +6258,7 @@
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Queen%27s_Paradise",
-      "jacket": "jubeat/id59060891.jpg"
+      "jacket": "jubeat/ripples/id59060891.jpg"
     },
     {
       "name": "Queen's Paradise [ 2 ]",
@@ -6598,6 +6645,7 @@
     {
       "name": "Russian Snowy Dance",
       "artist": "Mutsuhiko Izumi",
+      "folder": "jubeat ripples",
       "saHash": "id33264982",
       "bpm": "170-240",
       "charts": [
@@ -6606,7 +6654,7 @@
         { "lvl": 10, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Russian_Snowy_Dance",
-      "jacket": "jubeat/id33264982.jpg"
+      "jacket": "jubeat/ripples/id33264982.jpg"
     },
     {
       "name": "Sacrifice for Justice",
@@ -6852,6 +6900,7 @@
     {
       "name": "Shining Star",
       "artist": "Sota Fujimori feat.Nagisa",
+      "folder": "jubeat ripples",
       "saHash": "id15097558",
       "bpm": "140",
       "charts": [
@@ -6860,7 +6909,7 @@
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Shining_Star",
-      "jacket": "jubeat/id15097558.jpg"
+      "jacket": "jubeat/ripples/id15097558.jpg"
     },
     {
       "name": "Shining Wizard",
@@ -6917,6 +6966,7 @@
     {
       "name": "SigSig",
       "artist": "kors k",
+      "folder": "jubeat",
       "saHash": "id54355142",
       "bpm": "179",
       "charts": [
@@ -6925,7 +6975,7 @@
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/SigSig",
-      "jacket": "jubeat/id54355142.jpg"
+      "jacket": "jubeat/first/id54355142.jpg"
     },
     {
       "name": "SigSig [ 2 ]",
@@ -7023,6 +7073,7 @@
     {
       "name": "Slang",
       "artist": "Kozo Nakamura",
+      "folder": "jubeat",
       "saHash": "id47211790",
       "bpm": "160",
       "charts": [
@@ -7031,7 +7082,7 @@
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Slang",
-      "jacket": "jubeat/id47211790.jpg"
+      "jacket": "jubeat/first/id47211790.jpg"
     },
     {
       "name": "Slipstream",
@@ -7102,6 +7153,7 @@
     {
       "name": "Snow Goose",
       "artist": "Mutsuhiko Izumi",
+      "folder": "jubeat",
       "saHash": "id25574425",
       "bpm": "200",
       "charts": [
@@ -7110,7 +7162,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Snow_Goose",
-      "jacket": "jubeat/id25574425.jpg"
+      "jacket": "jubeat/first/id25574425.jpg"
     },
     {
       "name": "Snow Goose [ 2 ]",
@@ -7273,6 +7325,7 @@
     {
       "name": "Special One",
       "artist": "kors k feat. Suzuyo Miyamoto",
+      "folder": "jubeat",
       "saHash": "id95915185",
       "bpm": "128",
       "charts": [
@@ -7281,7 +7334,7 @@
         { "lvl": 6, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Special_One",
-      "jacket": "jubeat/id95915185.jpg"
+      "jacket": "jubeat/first/id95915185.jpg"
     },
     {
       "name": "Spica",
@@ -7430,6 +7483,7 @@
     {
       "name": "STARLIT DUST/スティルに捧ぐ",
       "artist": "Des-ROW + ANT",
+      "folder": "jubeat ripples",
       "saHash": "id63527834",
       "bpm": "183",
       "charts": [
@@ -7438,7 +7492,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/STARLIT_DUST/Still_ni_sasagu",
-      "jacket": "jubeat/id63527834.jpg"
+      "jacket": "jubeat/ripples/id63527834.jpg"
     },
     {
       "name": "starmine (BEMANI SYMPHONY Arr.)",
@@ -7708,6 +7762,7 @@
     {
       "name": "SWEET ANGEL",
       "artist": "古川もとあき",
+      "folder": "jubeat ripples",
       "saHash": "id22401731",
       "bpm": "150",
       "charts": [
@@ -7716,7 +7771,7 @@
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/SWEET_ANGEL",
-      "jacket": "jubeat/id22401731.jpg"
+      "jacket": "jubeat/ripples/id22401731.jpg"
     },
     {
       "name": "SWEET CUBE",
@@ -8126,8 +8181,9 @@
       "flags": ["holds"]
     },
     {
-      "name": "TRUE LOVE",
+      "name": "TRUE♥LOVE",
       "artist": "jun feat. Schanita",
+      "folder": "jubeat",
       "saHash": "id35802983",
       "bpm": "188",
       "charts": [
@@ -8136,7 +8192,7 @@
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/TRUE_LOVE",
-      "jacket": "jubeat/id35802983.jpg"
+      "jacket": "jubeat/first/id35802983.jpg"
     },
     {
       "name": "TSAR BOMBA",
@@ -9037,6 +9093,7 @@
     {
       "name": "あいのうた",
       "artist": "肥塚良彦",
+      "folder": "jubeat",
       "saHash": "id11455076",
       "bpm": "130",
       "charts": [
@@ -9045,7 +9102,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Ai_no_uta",
-      "jacket": "jubeat/id11455076.jpg"
+      "jacket": "jubeat/first/id11455076.jpg"
     },
     {
       "name": "あおばの足音",
@@ -9756,7 +9813,7 @@
       "name": "アイスクリームマジック",
       "artist": "雪乃イト",
       "saHash": "id17130843",
-      "bpm": "110 (all BEMANI games except SOUND VOLTEX), 220 (SOUND VOLTEX)",
+      "bpm": "110",
       "charts": [
         { "style": "solo", "diffClass": "basic", "lvl": 2 },
         { "style": "solo", "diffClass": "advanced", "lvl": 5 },
@@ -9968,6 +10025,7 @@
     {
       "name": "ウィリアム・テル序曲",
       "artist": "W.T. Orchestra",
+      "folder": "jubeat ripples",
       "saHash": "id13396844",
       "bpm": "120-190",
       "charts": [
@@ -9976,7 +10034,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/William_Tell_jokyoku",
-      "jacket": "jubeat/id13396844.jpg"
+      "jacket": "jubeat/ripples/id13396844.jpg"
     },
     {
       "name": "ウラシブヤのテーマ",
@@ -10383,6 +10441,7 @@
     {
       "name": "コイノチカラ",
       "artist": "石阪久美子",
+      "folder": "jubeat ripples",
       "saHash": "id31462334",
       "bpm": "162",
       "charts": [
@@ -10391,7 +10450,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Koi_no_chikara",
-      "jacket": "jubeat/id31462334.jpg"
+      "jacket": "jubeat/ripples/id31462334.jpg"
     },
     {
       "name": "コドモライブ",
@@ -10581,6 +10640,7 @@
     {
       "name": "スペースカーニバル",
       "artist": "shooting star",
+      "folder": "jubeat ripples",
       "saHash": "id64604535",
       "bpm": "160",
       "charts": [
@@ -10589,7 +10649,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Space_carnival",
-      "jacket": "jubeat/id64604535.jpg"
+      "jacket": "jubeat/ripples/id64604535.jpg"
     },
     {
       "name": "スペースカーニバル [ 2 ]",
@@ -12116,6 +12176,7 @@
     {
       "name": "凛として咲く花の如く",
       "artist": "紅色リトマス",
+      "folder": "jubeat",
       "saHash": "id89148169",
       "bpm": "163",
       "charts": [
@@ -12124,7 +12185,7 @@
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Rin_to_shite_saku_hana_no_gotoku",
-      "jacket": "jubeat/id89148169.jpg"
+      "jacket": "jubeat/first/id89148169.jpg"
     },
     {
       "name": "凛として咲く花の如く",
@@ -12521,6 +12582,7 @@
     {
       "name": "天国と地獄",
       "artist": "Mutsuhiko Izumi",
+      "folder": "jubeat",
       "saHash": "id78361624",
       "bpm": "195",
       "charts": [
@@ -12529,7 +12591,7 @@
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Tengoku_to_jigoku",
-      "jacket": "jubeat/id78361624.jpg"
+      "jacket": "jubeat/first/id78361624.jpg"
     },
     {
       "name": "天空の夜明け (BEMANI SYMPHONY Arr.)",
@@ -12694,6 +12756,7 @@
     {
       "name": "少年リップルズ",
       "artist": "常盤ゆう",
+      "folder": "jubeat ripples",
       "saHash": "id80331613",
       "bpm": "210",
       "charts": [
@@ -12702,7 +12765,7 @@
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Shounen_ripples",
-      "jacket": "jubeat/id80331613.jpg"
+      "jacket": "jubeat/ripples/id80331613.jpg"
     },
     {
       "name": "幸せが鳴る夜に",
@@ -12932,6 +12995,7 @@
     {
       "name": "恋のメリーゴーランド",
       "artist": "森野くま子",
+      "folder": "jubeat ripples",
       "saHash": "id80304845",
       "bpm": "195",
       "charts": [
@@ -12940,7 +13004,7 @@
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Koi_no_merry-go-round",
-      "jacket": "jubeat/id80304845.jpg"
+      "jacket": "jubeat/ripples/id80304845.jpg"
     },
     {
       "name": "恋はどう？モロ◎波動OK☆方程式!! ～めう edition～",
@@ -13051,6 +13115,7 @@
     {
       "name": "情熱大陸",
       "artist": "",
+      "folder": "jubeat ripples",
       "saHash": "id19993311",
       "bpm": "128",
       "charts": [
@@ -13059,7 +13124,7 @@
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Jounetsu_tairiku",
-      "jacket": "jubeat/id19993311.jpg",
+      "jacket": "jubeat/ripples/id19993311.jpg",
       "flags": ["licensed"]
     },
     {
@@ -13210,6 +13275,7 @@
     {
       "name": "星に願いを",
       "artist": "flumpool",
+      "folder": "jubeat ripples",
       "saHash": "id11908453",
       "bpm": "137",
       "charts": [
@@ -13218,7 +13284,7 @@
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Hoshi_ni_negai_wo",
-      "jacket": "jubeat/id11908453.jpg",
+      "jacket": "jubeat/ripples/id11908453.jpg",
       "flags": ["licensed"]
     },
     {
@@ -14036,6 +14102,7 @@
     {
       "name": "空色デイズ",
       "artist": "",
+      "folder": "jubeat ripples",
       "saHash": "id72070515",
       "bpm": "174",
       "charts": [
@@ -14044,7 +14111,7 @@
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Sorairo_days",
-      "jacket": "jubeat/id72070515.jpg",
+      "jacket": "jubeat/ripples/id72070515.jpg",
       "flags": ["licensed"]
     },
     {
@@ -14674,6 +14741,7 @@
     {
       "name": "隅田川夏恋歌",
       "artist": "seiya-murai feat.ALT",
+      "folder": "jubeat ripples",
       "saHash": "id44526843",
       "bpm": "180",
       "charts": [
@@ -14682,7 +14750,7 @@
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
       "remyLink": "https://remywiki.com/Sumidagawa_karenka",
-      "jacket": "jubeat/id44526843.jpg"
+      "jacket": "jubeat/ripples/id44526843.jpg"
     },
     {
       "name": "雨ノチHello",
