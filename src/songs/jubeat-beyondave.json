@@ -7,25 +7,28 @@
       { "key": "advanced", "color": "#e28831" },
       { "key": "extreme", "color": "#e12a5a" }
     ],
-    "flags": [],
-    "lastUpdated": 1707461318008
+    "flags": ["licensed", "holds"],
+    "lastUpdated": 1764637666381
   },
   "defaults": {
     "style": "solo",
     "difficulties": ["basic", "advanced", "extreme"],
-    "flags": [],
+    "flags": ["licensed", "holds"],
     "lowerLvlBound": 1,
     "upperLvlBound": 10.9
   },
   "i18n": {
     "en": {
-      "name": "Jubeat Beyond The Avenue",
+      "name": "jubeat beyond the Ave.",
       "solo": "Single",
       "basic": "Basic",
       "advanced": "Advanced",
       "extreme": "Extreme",
+      "licensed": "Licensed",
+      "holds": "Holds",
       "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
-    }
+    },
+    "ja": { "licensed": "ライセンス楽曲", "holds": "ホールド譜面" }
   },
   "songs": [
     {
@@ -183,15 +186,18 @@
       "name": "800nm"
     },
     {
+      "name": "[A]ddiction",
       "artist": "EVO+",
-      "bpm": "",
+      "saHash": "id54593628",
+      "bpm": "164",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/(A)ddiction",
       "jacket": "jubeat/id54593628.jpg",
-      "name": "[A]ddiction"
+      "flags": ["licensed"]
     },
     {
       "artist": "dj MAX STEROID",
@@ -392,15 +398,18 @@
       "name": "Amalgamation"
     },
     {
+      "name": "AMBERGRIS",
       "artist": "かめりあ",
-      "bpm": "",
+      "saHash": "id63888566",
+      "bpm": "160",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/AMBERGRIS",
       "jacket": "jubeat/id63888566.jpg",
-      "name": "AMBERGRIS"
+      "flags": ["licensed"]
     },
     {
       "artist": "red glasses",
@@ -639,15 +648,18 @@
       "name": "Baby Bleep March"
     },
     {
+      "name": "Bad Apple!! feat. nomico",
       "artist": "Masayoshi Minoshima",
-      "bpm": "",
+      "saHash": "id96323008",
+      "bpm": "138",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Bad_Apple!!_feat._nomico",
       "jacket": "jubeat/id96323008.jpg",
-      "name": "Bad Apple!! feat. nomico"
+      "flags": ["licensed"]
     },
     {
       "artist": "Ryu☆",
@@ -683,15 +695,18 @@
       "name": "Beastie Starter"
     },
     {
+      "name": "BEAT-NEW-WORLD",
       "artist": "ビートまりお（COOL&CREATE）",
-      "bpm": "",
+      "saHash": "id85205721",
+      "bpm": "190",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/BEAT-NEW-WORLD",
       "jacket": "jubeat/id85205721.jpg",
-      "name": "BEAT-NEW-WORLD"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"牛\"",
@@ -782,15 +797,18 @@
       "name": "Blew My Mind"
     },
     {
+      "name": "BLUE DRAGON",
       "artist": "青龍",
-      "bpm": "",
+      "saHash": "id81173950",
+      "bpm": "191",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/BLUE_DRAGON",
       "jacket": "jubeat/id81173950.jpg",
-      "name": "BLUE DRAGON"
+      "flags": ["licensed"]
     },
     {
       "artist": "Mutsuhiko Izumi",
@@ -925,15 +943,18 @@
       "name": "candii"
     },
     {
+      "name": "CandyPop★Showcase",
       "artist": "OSTER project",
-      "bpm": "",
+      "saHash": "id19372761",
+      "bpm": "170",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/CandyPop_Showcase",
       "jacket": "jubeat/id19372761.jpg",
-      "name": "CandyPop★Showcase"
+      "flags": ["licensed"]
     },
     {
       "artist": "O2i3",
@@ -1161,15 +1182,18 @@
       "name": "citrus"
     },
     {
+      "name": "Claidheamh Soluis-光の剣- feat.はるの",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id63451368",
+      "bpm": "160",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Claidheamh_Soluis-hikari_no_tsurugi-_feat.haruno",
       "jacket": "jubeat/id63451368.jpg",
-      "name": "Claidheamh Soluis-光の剣- feat.はるの"
+      "flags": ["licensed"]
     },
     {
       "artist": "ピラミッ℃",
@@ -1216,15 +1240,18 @@
       "name": "Clumsy thoughts"
     },
     {
+      "name": "Colorful Cookie (BEMANI SYMPHONY Arr.)",
       "artist": "Lucky Vacuum × デビン木下 + gaQdan",
-      "bpm": "",
+      "saHash": "id38923868",
+      "bpm": "168",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Colorful_Cookie_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id38923868.jpg",
-      "name": "Colorful Cookie (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "ARM (IOSYS) feat. Nicole Curry",
@@ -1496,15 +1523,32 @@
       "name": "Dance With The Dead"
     },
     {
+      "name": "darinGGamers",
+      "artist": "バンドじゃないもん!MAXX NAKAYOSHI",
+      "saHash": "id94567661",
+      "bpm": "160",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
+      ],
+      "remyLink": "https://remywiki.com/DarinGGamers",
+      "jacket": "jubeat/id94567661.jpg",
+      "flags": ["licensed"]
+    },
+    {
+      "name": "DEATH WORMHOLE",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
-      "bpm": "",
+      "saHash": "id40457306",
+      "bpm": "137",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/DEATH_WORMHOLE",
       "jacket": "jubeat/id40457306.jpg",
-      "name": "DEATH WORMHOLE"
+      "flags": ["licensed"]
     },
     {
       "artist": "dj silverberg",
@@ -1529,26 +1573,32 @@
       "name": "December in Strasbourg"
     },
     {
+      "name": "DENPA NEVER DIE",
       "artist": "かめりあ feat. ななひら",
-      "bpm": "",
+      "saHash": "id51938445",
+      "bpm": "162",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/DENPA_NEVER_DIE",
       "jacket": "jubeat/id51938445.jpg",
-      "name": "DENPA NEVER DIE"
+      "flags": ["licensed"]
     },
     {
+      "name": "DesireDrive",
       "artist": "岸田教団＆THE明星ロケッツ",
-      "bpm": "",
+      "saHash": "id38825397",
+      "bpm": "184",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/DesireDrive",
       "jacket": "jubeat/id38825397.jpg",
-      "name": "DesireDrive"
+      "flags": ["licensed"]
     },
     {
       "artist": "くにたけみゆき",
@@ -1628,15 +1678,18 @@
       "name": "Din Don Dan"
     },
     {
+      "name": "Ding Dong Bell",
       "artist": "A応P",
-      "bpm": "",
+      "saHash": "id31784098",
+      "bpm": "157",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Ding_Dong_Bell",
       "jacket": "jubeat/id31784098.jpg",
-      "name": "Ding Dong Bell"
+      "flags": ["licensed"]
     },
     {
       "artist": "ZUKI",
@@ -1661,15 +1714,18 @@
       "name": "Don't believe the hype"
     },
     {
+      "name": "Don't Break Me Down",
       "artist": "A-One",
-      "bpm": "",
+      "saHash": "id47748099",
+      "bpm": "163",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Don%27t_Break_Me_Down",
       "jacket": "jubeat/id47748099.jpg",
-      "name": "Don't Break Me Down"
+      "flags": ["licensed"]
     },
     {
       "artist": "DOUBLE IMPACT",
@@ -1738,15 +1794,18 @@
       "name": "DREAMING-ING!!"
     },
     {
+      "name": "Drenched in Air",
       "artist": "Camellia ft. Ninomae Ina'nis",
-      "bpm": "",
+      "saHash": "id15641340",
+      "bpm": "189",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Drenched_in_Air",
       "jacket": "jubeat/id15641340.jpg",
-      "name": "Drenched in Air"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -1826,15 +1885,18 @@
       "name": "electro peaceful"
     },
     {
+      "name": "Element of SPADA (BEMANI SYMPHONY Arr.)",
       "artist": "猫叉Master feat.霜月はるか × 大嶋 啓之 + gaQdan",
-      "bpm": "",
+      "saHash": "id24081249",
+      "bpm": "170",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Element_of_SPADA_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id24081249.jpg",
-      "name": "Element of SPADA (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "dj TAKA meets DJ YOSHITAKA",
@@ -1914,15 +1976,18 @@
       "name": "Endless Chain～2人でトリガーをひこう～"
     },
     {
+      "name": "Endless, Sleepless Night",
       "artist": "samfree feat. (V)・∀・(V) かにぱん。",
-      "bpm": "",
+      "saHash": "id83725258",
+      "bpm": "165",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Endless,_Sleepless_Night",
       "jacket": "jubeat/id83725258.jpg",
-      "name": "Endless, Sleepless Night"
+      "flags": ["licensed"]
     },
     {
       "artist": "SAYA",
@@ -1958,26 +2023,32 @@
       "name": "Entrapment"
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "ETERNAL BLAZE",
+      "artist": "",
+      "saHash": "id17635140",
+      "bpm": "105-155",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/ETERNAL_BLAZE",
       "jacket": "jubeat/id17635140.jpg",
-      "name": "ETERNAL BLAZE"
+      "flags": ["licensed"]
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "ETERNAL BLAZE [ 2 ]",
+      "artist": "",
+      "saHash": "id75722936",
+      "bpm": "105-155",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
         { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
         { "lvl": 8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
       ],
+      "remyLink": "https://remywiki.com/ETERNAL_BLAZE",
       "jacket": "jubeat/id75722936.jpg",
-      "name": "ETERNAL BLAZE [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "DJ YOSHITAKA",
@@ -2002,15 +2073,18 @@
       "name": "Evans ～NOSTALGIA Ver. ～"
     },
     {
+      "name": "Everlasting Message (BEMANI SYMPHONY Arr.)",
       "artist": "ぺのれり × Osamu Kubota + gaQdan",
-      "bpm": "",
+      "saHash": "id47945401",
+      "bpm": "92-214",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Everlasting_Message_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id47945401.jpg",
-      "name": "Everlasting Message (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "REMO-CON",
@@ -2145,15 +2219,18 @@
       "name": "Finally Dive"
     },
     {
+      "name": "Find your way",
       "artist": "J.Speaks",
-      "bpm": "",
+      "saHash": "id82355452",
+      "bpm": "130",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Find_your_way",
       "jacket": "jubeat/id82355452.jpg",
-      "name": "Find your way"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"Bumble Bee\"",
@@ -2211,15 +2288,18 @@
       "name": "FLOWER"
     },
     {
+      "name": "FLOWER (BEMANI SYMPHONY Arr.)",
       "artist": "DJ YOSHITAKA × onoken + gaQdan",
-      "bpm": "",
+      "saHash": "id51665960",
+      "bpm": "158",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.1, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/FLOWER_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id51665960.jpg",
-      "name": "FLOWER (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "DJ YOSHITAKA",
@@ -2348,15 +2428,18 @@
       "name": "FRIENDSHIP"
     },
     {
+      "name": "From⑨Girl",
       "artist": "uno (IOSYS) × 越田Rute隆人&あき (A-One)",
-      "bpm": "",
+      "saHash": "id55579982",
+      "bpm": "113",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/From9Girl",
       "jacket": "jubeat/id55579982.jpg",
-      "name": "From⑨Girl"
+      "flags": ["licensed"]
     },
     {
       "artist": "VENUS",
@@ -2370,15 +2453,18 @@
       "name": "FUJIMORI -祭- FESTIVAL"
     },
     {
+      "name": "FUJIN Rumble",
       "artist": "COSIO（ZUNTATA）「グルーヴコースター」より",
-      "bpm": "",
+      "saHash": "id25924717",
+      "bpm": "192",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/FUJIN_Rumble",
       "jacket": "jubeat/id25924717.jpg",
-      "name": "FUJIN Rumble"
+      "flags": ["licensed"]
     },
     {
       "artist": "P*Light",
@@ -2403,15 +2489,18 @@
       "name": "GAIA"
     },
     {
+      "name": "Garakuta Doll Play",
       "artist": "t+pazolite 「maimai」より",
-      "bpm": "",
+      "saHash": "id16580492",
+      "bpm": "256",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Garakuta_Doll_Play",
       "jacket": "jubeat/id16580492.jpg",
-      "name": "Garakuta Doll Play"
+      "flags": ["licensed"]
     },
     {
       "artist": "RoughSketch",
@@ -2578,15 +2667,18 @@
       "name": "Good-bye Chalon"
     },
     {
+      "name": "Got more raves？",
       "artist": "E.G.G.「グルーヴコースター」より",
-      "bpm": "",
+      "saHash": "id10177039",
+      "bpm": "266",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Got_more_raves%3F",
       "jacket": "jubeat/id10177039.jpg",
-      "name": "Got more raves？"
+      "flags": ["licensed"]
     },
     {
       "artist": "Hommarju",
@@ -2622,15 +2714,18 @@
       "name": "Grand Chariot"
     },
     {
+      "name": "Gray Heaven",
       "artist": "かめりあ",
-      "bpm": "",
+      "saHash": "id93624908",
+      "bpm": "220",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gray_Heaven",
       "jacket": "jubeat/id93624908.jpg",
-      "name": "Gray Heaven"
+      "flags": ["licensed"]
     },
     {
       "artist": "Mutsuhiko Izumi",
@@ -2655,15 +2750,18 @@
       "name": "Hades Doll"
     },
     {
+      "name": "Happiness World",
       "artist": "BABACORN(宝鐘マリン/白上フブキ)",
-      "bpm": "",
+      "saHash": "id25374290",
+      "bpm": "150",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Happiness_World",
       "jacket": "jubeat/id25374290.jpg",
-      "name": "Happiness World"
+      "flags": ["licensed"]
     },
     {
       "artist": "Sota Fujimori",
@@ -2781,6 +2879,20 @@
       "name": "Hello world!"
     },
     {
+      "name": "Help me, ERINNNNNN!!",
+      "artist": "ビートまりお",
+      "saHash": "id69716780",
+      "bpm": "185",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.3 }
+      ],
+      "remyLink": "https://remywiki.com/Help_me,_ERINNNNNN!!",
+      "jacket": "jubeat/id69716780.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "artist": "Yooh",
       "bpm": "",
       "charts": [
@@ -2847,26 +2959,32 @@
       "name": "Hopeful Frontier!!!"
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "HOT LIMIT",
+      "artist": "",
+      "saHash": "id51896993",
+      "bpm": "139",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/HOT_LIMIT_(HIGH_and_MIGHTY_COLOR)",
       "jacket": "jubeat/id51896993.jpg",
-      "name": "HOT LIMIT"
+      "flags": ["licensed"]
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "HOT LIMIT [ 2 ]",
+      "artist": "",
+      "saHash": "id13095404",
+      "bpm": "139",
       "charts": [
-        { "lvl": 3, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
       ],
+      "remyLink": "https://remywiki.com/HOT_LIMIT_(HIGH_and_MIGHTY_COLOR)",
       "jacket": "jubeat/id13095404.jpg",
-      "name": "HOT LIMIT [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "U1 overground",
@@ -3028,15 +3146,18 @@
       "name": "Idola"
     },
     {
+      "name": "Idola (BEMANI SYMPHONY Arr.)",
       "artist": "iconoclasm × 原口 大 + gaQdan",
-      "bpm": "",
+      "saHash": "id23163274",
+      "bpm": "140-176",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Idola_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id23163274.jpg",
-      "name": "Idola (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "Pa's Lam System",
@@ -3050,15 +3171,18 @@
       "name": "If"
     },
     {
+      "name": "Ignis Danse",
       "artist": "Yuji Masubuchi「太鼓の達人」より",
-      "bpm": "",
+      "saHash": "id21912238",
+      "bpm": "246",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Ignis_Danse",
       "jacket": "jubeat/id21912238.jpg",
-      "name": "Ignis Danse"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"L.E.D.\"",
@@ -3138,15 +3262,18 @@
       "name": "Indigo Nocturne"
     },
     {
+      "name": "Initial song",
       "artist": "40mP",
-      "bpm": "",
+      "saHash": "id95162924",
+      "bpm": "90",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 3, "diffClass": "advanced", "style": "solo" },
         { "lvl": 6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Initial_song",
       "jacket": "jubeat/id95162924.jpg",
-      "name": "Initial song"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"SYUNN & Yvya\"",
@@ -3226,15 +3353,18 @@
       "name": "IX"
     },
     {
+      "name": "JACK THE RIPPER feat. Iceon",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id11075477",
+      "bpm": "145",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/JACK_THE_RIPPER_feat._Iceon",
       "jacket": "jubeat/id11075477.jpg",
-      "name": "JACK THE RIPPER feat. Iceon"
+      "flags": ["licensed"]
     },
     {
       "artist": "Kozo Nakamura",
@@ -3380,15 +3510,18 @@
       "name": "Kilonova"
     },
     {
+      "name": "KINGWORLD",
       "artist": "白上フブキ",
-      "bpm": "",
+      "saHash": "id65664704",
+      "bpm": "240",
       "charts": [
         { "lvl": 6, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/KINGWORLD",
       "jacket": "jubeat/id65664704.jpg",
-      "name": "KINGWORLD"
+      "flags": ["licensed"]
     },
     {
       "artist": "Project B-",
@@ -3435,103 +3568,130 @@
       "name": "La libertad"
     },
     {
+      "name": "Lachryma《Re:Queen’M》 (BEMANI SYMPHONY Arr.)",
       "artist": "かねこちはる × Morrigan + gaQdan",
-      "bpm": "",
+      "saHash": "id98515350",
+      "bpm": "200",
       "charts": [
         { "lvl": 6, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Lachryma(Re:Queen%27M)_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id98515350.jpg",
-      "name": "Lachryma《Re:Queen’M》 (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - Answer I -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id56878148",
+      "bpm": "171",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_Answer_I_-",
       "jacket": "jubeat/id56878148.jpg",
-      "name": "LANA - Answer I -"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - Answer II -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id39926566",
+      "bpm": "165",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_Answer_II_-",
       "jacket": "jubeat/id39926566.jpg",
-      "name": "LANA - Answer II -"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - キロクノカケラ (sasakure.UK Framework Remix) -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id71506609",
+      "bpm": "200",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_kiroku_no_kakera_(sasakure.UK_Framework_Remix)_-",
       "jacket": "jubeat/id71506609.jpg",
-      "name": "LANA - キロクノカケラ (sasakure.UK Framework Remix) -"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - キロクノカケラ -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id83552878",
+      "bpm": "84-168",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_kiroku_no_kakera_-",
       "jacket": "jubeat/id83552878.jpg",
-      "name": "LANA - キロクノカケラ -"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - キロクノカケラ - [ 2 ]",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id47975509",
+      "bpm": "84-168",
       "charts": [
-        { "lvl": 2, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 5, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 7, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 5 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 7 }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_kiroku_no_kakera_-",
       "jacket": "jubeat/id47975509.jpg",
-      "name": "LANA - キロクノカケラ - [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
+      "name": "LANA - ココロノキオク -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id69749389",
+      "bpm": "84",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_kokoro_no_kioku_-",
       "jacket": "jubeat/id69749389.jpg",
-      "name": "LANA - ココロノキオク -"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - セカイノハズレ -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id17857627",
+      "bpm": "214",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_sekai_no_hazure_-",
       "jacket": "jubeat/id17857627.jpg",
-      "name": "LANA - セカイノハズレ -"
+      "flags": ["licensed"]
     },
     {
+      "name": "LANA - ヒトリノウタ -",
       "artist": "TOMOSUKE×Jazzin'park",
-      "bpm": "",
+      "saHash": "id82530763",
+      "bpm": "180",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LANA_-_hitori_no_uta_-",
       "jacket": "jubeat/id82530763.jpg",
-      "name": "LANA - ヒトリノウタ -"
+      "flags": ["licensed"]
     },
     {
       "artist": "はるなば",
@@ -3671,15 +3831,18 @@
       "name": "Life Without You"
     },
     {
+      "name": "Lifetime Journey",
       "artist": "J.Speaks",
-      "bpm": "",
+      "saHash": "id40895507",
+      "bpm": "123",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Lifetime_Journey",
       "jacket": "jubeat/id40895507.jpg",
-      "name": "Lifetime Journey"
+      "flags": ["licensed"]
     },
     {
       "artist": "Ryu☆",
@@ -3715,26 +3878,32 @@
       "name": "Lisa-RICCIA"
     },
     {
+      "name": "Lisa-RICCIA (BEMANI SYMPHONY Arr.)",
       "artist": "DJ YOSHITAKA × onoken + gaQdan",
-      "bpm": "",
+      "saHash": "id79570740",
+      "bpm": "180",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Lisa-RICCIA_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id79570740.jpg",
-      "name": "Lisa-RICCIA (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
+      "name": "LISTEN TO THE STEREO!!",
       "artist": "GOING UNDER GROUND",
-      "bpm": "",
+      "saHash": "id36243753",
+      "bpm": "182",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/LISTEN_TO_THE_STEREO!!",
       "jacket": "jubeat/id36243753.jpg",
-      "name": "LISTEN TO THE STEREO!!"
+      "flags": ["licensed"]
     },
     {
       "artist": "S-C-U",
@@ -3803,15 +3972,18 @@
       "name": "Love 2 Shuffle"
     },
     {
+      "name": "Love at First Sight",
       "artist": "Fear, and Loathing in Las Vegas",
-      "bpm": "",
+      "saHash": "id81119663",
+      "bpm": "160",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Love_at_First_Sight",
       "jacket": "jubeat/id81119663.jpg",
-      "name": "Love at First Sight"
+      "flags": ["licensed"]
     },
     {
       "artist": "dj TAKA feat. REN",
@@ -3858,15 +4030,18 @@
       "name": "LUV CAN SAVE U"
     },
     {
+      "name": "M.A.Y.U.",
       "artist": "Ryu☆ feat.MAYU",
-      "bpm": "",
+      "saHash": "id50128676",
+      "bpm": "128",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/M.A.Y.U.",
       "jacket": "jubeat/id50128676.jpg",
-      "name": "M.A.Y.U."
+      "flags": ["licensed"]
     },
     {
       "artist": "TOMOSUKE",
@@ -4177,15 +4352,18 @@
       "name": "neko＊neko"
     },
     {
+      "name": "NEON WORLD",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
-      "bpm": "",
+      "saHash": "id55330887",
+      "bpm": "154-164",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/NEON_WORLD",
       "jacket": "jubeat/id55330887.jpg",
-      "name": "NEON WORLD"
+      "flags": ["licensed"]
     },
     {
       "artist": "少年ラジオ",
@@ -4270,15 +4448,18 @@
       "name": "New Gravity"
     },
     {
+      "name": "New World",
       "artist": "FELT",
-      "bpm": "",
+      "saHash": "id48806387",
+      "bpm": "195",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/New_World",
       "jacket": "jubeat/id48806387.jpg",
-      "name": "New World"
+      "flags": ["licensed"]
     },
     {
       "artist": "NC underground",
@@ -4413,15 +4594,18 @@
       "name": "One More Reason"
     },
     {
+      "name": "only my railgun",
       "artist": "fripSide",
-      "bpm": "",
+      "saHash": "id96896079",
+      "bpm": "143",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Only_my_railgun",
       "jacket": "jubeat/id96896079.jpg",
-      "name": "only my railgun"
+      "flags": ["licensed"]
     },
     {
       "artist": "kors k",
@@ -4522,26 +4706,32 @@
       "name": "Pale Garden"
     },
     {
+      "name": "Paranoia",
       "artist": "DiGiTAL WiNG feat. 花たん",
-      "bpm": "",
+      "saHash": "id67351634",
+      "bpm": "150",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Paranoia_(DiGiTAL_WiNG_feat._HaNaTan)",
       "jacket": "jubeat/id67351634.jpg",
-      "name": "Paranoia"
+      "flags": ["licensed"]
     },
     {
+      "name": "paranoia",
       "artist": "つなまる",
-      "bpm": "",
+      "saHash": "id34544668",
+      "bpm": "150",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Paranoia_(Tsunamaru)",
       "jacket": "jubeat/id34544668.jpg",
-      "name": "paranoia"
+      "flags": ["licensed"]
     },
     {
       "artist": "KAN TAKAHIKO",
@@ -4753,15 +4943,18 @@
       "name": "polygon"
     },
     {
+      "name": "PON☆PON☆PARADE",
       "artist": "キノシタ",
-      "bpm": "",
+      "saHash": "id86227720",
+      "bpm": "194",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/PON_PON_PARADE",
       "jacket": "jubeat/id86227720.jpg",
-      "name": "PON☆PON☆PARADE"
+      "flags": ["licensed"]
     },
     {
       "artist": "上坂すみれ",
@@ -4786,15 +4979,18 @@
       "name": "POSSESSION"
     },
     {
+      "name": "POSSESSION (BEMANI SYMPHONY Arr.)",
       "artist": "TAG underground × 中村 康隆 + gaQdan",
-      "bpm": "",
+      "saHash": "id65788635",
+      "bpm": "180",
       "charts": [
         { "lvl": 6, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/POSSESSION_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id65788635.jpg",
-      "name": "POSSESSION (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "TAG",
@@ -4934,15 +5130,18 @@
       "name": "PUNISHER"
     },
     {
+      "name": "Pure Rude",
       "artist": "kors k",
-      "bpm": "",
+      "saHash": "id20618281",
+      "bpm": "175",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Pure_Rude",
       "jacket": "jubeat/id20618281.jpg",
-      "name": "Pure Rude"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"PHQUASE & ZAQUVA\"",
@@ -5000,15 +5199,18 @@
       "name": "Queen's Paradise [ 2 ]"
     },
     {
+      "name": "R.P.G.～Rockin' Playing Game",
       "artist": "SuG",
-      "bpm": "",
+      "saHash": "id18283302",
+      "bpm": "205",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/R.P.G.~Rockin%27_Playing_Game",
       "jacket": "jubeat/id18283302.jpg",
-      "name": "R.P.G.～Rockin' Playing Game"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"Sota F.\"",
@@ -5264,15 +5466,18 @@
       "name": "Romancing Layer"
     },
     {
+      "name": "Runway Drive",
       "artist": "舞花",
-      "bpm": "",
+      "saHash": "id78661804",
+      "bpm": "160",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Runway_Drive",
       "jacket": "jubeat/id78661804.jpg",
-      "name": "Runway Drive"
+      "flags": ["licensed"]
     },
     {
       "artist": "kors k feat.吉河順央",
@@ -5286,15 +5491,18 @@
       "name": "Rush!!"
     },
     {
+      "name": "Russian Caravan Rhapsody",
       "artist": "Power Of Nature",
-      "bpm": "",
+      "saHash": "id67462485",
+      "bpm": "158",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Russian_Caravan_Rhapsody",
       "jacket": "jubeat/id67462485.jpg",
-      "name": "Russian Caravan Rhapsody"
+      "flags": ["licensed"]
     },
     {
       "artist": "Mutsuhiko Izumi",
@@ -5385,37 +5593,46 @@
       "name": "Saturday Night Love"
     },
     {
+      "name": "Say!ファンファーレ!",
       "artist": "白上フブキ",
-      "bpm": "",
+      "saHash": "id59853258",
+      "bpm": "170",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Say!Fanfare!",
       "jacket": "jubeat/id59853258.jpg",
-      "name": "Say!ファンファーレ!"
+      "flags": ["licensed"]
     },
     {
+      "name": "Scarlet Moon",
       "artist": "REDALiCE feat. Ayumi Nomiya",
-      "bpm": "",
+      "saHash": "id30628592",
+      "bpm": "180",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Scarlet_Moon",
       "jacket": "jubeat/id30628592.jpg",
-      "name": "Scarlet Moon"
+      "flags": ["licensed"]
     },
     {
+      "name": "Scarlet Moon [ 2 ]",
       "artist": "REDALiCE feat. Ayumi Nomiya",
-      "bpm": "",
+      "saHash": "id54812767",
+      "bpm": "180",
       "charts": [
-        { "lvl": 3, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 7, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.5, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
       ],
+      "remyLink": "https://remywiki.com/Scarlet_Moon",
       "jacket": "jubeat/id54812767.jpg",
-      "name": "Scarlet Moon [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "猫叉Master",
@@ -5445,15 +5662,18 @@
       "name": "Scars of FAUNA [ 2 ]"
     },
     {
+      "name": "Scream out!",
       "artist": "A-One",
-      "bpm": "",
+      "saHash": "id63391627",
+      "bpm": "166",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Scream_out!_(SDVX_EDIT)",
       "jacket": "jubeat/id63391627.jpg",
-      "name": "Scream out!"
+      "flags": ["licensed"]
     },
     {
       "artist": "Ryu☆",
@@ -5588,15 +5808,18 @@
       "name": "SigSig [ 2 ]"
     },
     {
+      "name": "Silent Story",
       "artist": "発熱巫女～ず",
-      "bpm": "",
+      "saHash": "id54805034",
+      "bpm": "126",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Silent_Story",
       "jacket": "jubeat/id54805034.jpg",
-      "name": "Silent Story"
+      "flags": ["licensed"]
     },
     {
       "artist": "jun",
@@ -5922,15 +6145,18 @@
       "name": "spring pony"
     },
     {
+      "name": "Spring Rouge",
       "artist": "izna",
-      "bpm": "",
+      "saHash": "id60703963",
+      "bpm": "125",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Spring_Rouge",
       "jacket": "jubeat/id60703963.jpg",
-      "name": "Spring Rouge"
+      "flags": ["licensed"]
     },
     {
       "artist": "猫叉Master+",
@@ -6010,26 +6236,32 @@
       "name": "STARLIT DUST/スティルに捧ぐ"
     },
     {
+      "name": "starmine (BEMANI SYMPHONY Arr.)",
       "artist": "Ryu☆ × デビン木下 + gaQdan",
-      "bpm": "",
+      "saHash": "id65836580",
+      "bpm": "100-164",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Starmine_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id65836580.jpg",
-      "name": "starmine (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
+      "name": "STATIC",
       "artist": "164 feat.GUMI",
-      "bpm": "",
+      "saHash": "id95317321",
+      "bpm": "255",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/STATIC",
       "jacket": "jubeat/id95317321.jpg",
-      "name": "STATIC"
+      "flags": ["licensed"]
     },
     {
       "artist": "Akhuta Philharmonic Orchestra",
@@ -6120,26 +6352,32 @@
       "name": "STREET DANCER"
     },
     {
+      "name": "Struggle",
       "artist": "Masayoshi Minoshima(ALR)",
-      "bpm": "",
+      "saHash": "id13093017",
+      "bpm": "180",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Struggle",
       "jacket": "jubeat/id13093017.jpg",
-      "name": "Struggle"
+      "flags": ["licensed"]
     },
     {
+      "name": "Struggle [ 2 ]",
       "artist": "Masayoshi Minoshima(ALR)",
-      "bpm": "",
+      "saHash": "id20561396",
+      "bpm": "180",
       "charts": [
-        { "lvl": 2, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
       ],
+      "remyLink": "https://remywiki.com/Struggle",
       "jacket": "jubeat/id20561396.jpg",
-      "name": "Struggle [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "MAX MAXIMIZER VS DJ TOTTO",
@@ -6197,6 +6435,20 @@
       "name": "Super GERO GE-RO"
     },
     {
+      "name": "SUPER HEROINE!!",
+      "artist": "Amateras Records vs BEMANI Sound Team \"TATSUYA\" feat. miko",
+      "saHash": "id13231232",
+      "bpm": "186",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.1 }
+      ],
+      "remyLink": "https://remywiki.com/SUPER_HEROINE!!",
+      "jacket": "jubeat/id13231232.jpg",
+      "flags": ["licensed", "holds"]
+    },
+    {
       "artist": "BEMANI Sound Team \"U1 overground\"",
       "bpm": "",
       "charts": [
@@ -6230,15 +6482,18 @@
       "name": "SWEET ANGEL"
     },
     {
+      "name": "SWEET CUBE",
       "artist": "plazma",
-      "bpm": "",
+      "saHash": "id54248724",
+      "bpm": "140",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/SWEET_CUBE",
       "jacket": "jubeat/id54248724.jpg",
-      "name": "SWEET CUBE"
+      "flags": ["licensed"]
     },
     {
       "artist": "劇団レコード",
@@ -6395,15 +6650,18 @@
       "name": "Time Lapse"
     },
     {
+      "name": "Timepiece phase II (BEMANI SYMPHONY Arr.)",
       "artist": "佐々木博史 × bermei.inazawa + gaQdan",
-      "bpm": "",
+      "saHash": "id19793220",
+      "bpm": "140",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Timepiece_phase_II_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id19793220.jpg",
-      "name": "Timepiece phase II (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "movies (moimoi × Xceon × Dai.)",
@@ -6822,15 +7080,18 @@
       "name": "Vermilion"
     },
     {
+      "name": "VERTeX",
       "artist": "Hiro「maimai」より",
-      "bpm": "",
+      "saHash": "id73154085",
+      "bpm": "237",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/VERTeX",
       "jacket": "jubeat/id73154085.jpg",
-      "name": "VERTeX"
+      "flags": ["licensed"]
     },
     {
       "artist": "Riz vs. Shiron",
@@ -6921,26 +7182,46 @@
       "name": "Wandering Gravity"
     },
     {
+      "name": "WARNING×WARNING×WARNING",
       "artist": "暁Records",
-      "bpm": "",
+      "saHash": "id93894207",
+      "bpm": "172",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
       "jacket": "jubeat/id93894207.jpg",
-      "name": "WARNING×WARNING×WARNING"
+      "flags": ["licensed"]
     },
     {
+      "name": "WARNING×WARNING×WARNING [ 2 ]",
+      "artist": "暁Records",
+      "saHash": "id82513185",
+      "bpm": "172",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.6 }
+      ],
+      "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
+      "jacket": "jubeat/id82513185.jpg",
+      "flags": ["licensed", "holds"]
+    },
+    {
+      "name": "Water Horizon",
       "artist": "青龍",
-      "bpm": "",
+      "saHash": "id86560381",
+      "bpm": "191",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Water_Horizon",
       "jacket": "jubeat/id86560381.jpg",
-      "name": "Water Horizon"
+      "flags": ["licensed"]
     },
     {
       "artist": "Ryu☆",
@@ -7283,26 +7564,46 @@
       "name": "あいのうた"
     },
     {
+      "name": "あおばの足音",
+      "artist": "駄菓子O型",
+      "saHash": "id50358342",
+      "bpm": "98",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 4 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
+      ],
+      "remyLink": "https://remywiki.com/Aoba_no_ashioto",
+      "jacket": "jubeat/id50358342.jpg",
+      "flags": ["licensed"]
+    },
+    {
+      "name": "いーあるふぁんくらぶ",
       "artist": "みきとP",
-      "bpm": "",
+      "saHash": "id16027868",
+      "bpm": "145",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Yi-er_funclub",
       "jacket": "jubeat/id16027868.jpg",
-      "name": "いーあるふぁんくらぶ"
+      "flags": ["licensed"]
     },
     {
+      "name": "いーあるふぁんくらぶ [ 2 ]",
       "artist": "みきとP",
-      "bpm": "",
+      "saHash": "id83135244",
+      "bpm": "145",
       "charts": [
-        { "lvl": 2, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "diffClass": "basic", "style": "solo", "lvl": 2 },
+        { "diffClass": "advanced", "style": "solo", "lvl": 6 },
+        { "diffClass": "extreme", "style": "solo", "lvl": 8 }
       ],
+      "remyLink": "https://remywiki.com/Yi-er_funclub",
       "jacket": "jubeat/id83135244.jpg",
-      "name": "いーあるふぁんくらぶ [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "Nanako",
@@ -7327,15 +7628,18 @@
       "name": "おにぎりディスコ"
     },
     {
+      "name": "おにけもだんす",
       "artist": "いろはにほへっと あやふぶみ",
-      "bpm": "",
+      "saHash": "id72738050",
+      "bpm": "197",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Onikemodance",
       "jacket": "jubeat/id72738050.jpg",
-      "name": "おにけもだんす"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"PON\" feat.NU-KO",
@@ -7349,15 +7653,18 @@
       "name": "おーまい！らぶりー！すうぃーてぃ！だーりん！"
     },
     {
+      "name": "お嫁にしなさいっ！",
       "artist": "ARM＋夕野ヨシミ (IOSYS)",
-      "bpm": "",
+      "saHash": "id94311831",
+      "bpm": "110-180",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Oyome_ni_shinasai!",
       "jacket": "jubeat/id94311831.jpg",
-      "name": "お嫁にしなさいっ！"
+      "flags": ["licensed"]
     },
     {
       "artist": "大日本鉄倶楽部【あさき＆９６】",
@@ -7393,15 +7700,18 @@
       "name": "がんばれゴエモン　～ ビーストメドレー ～"
     },
     {
+      "name": "きたさいたま2000",
       "artist": "LindaAI-CUE（BNGI）「太鼓の達人」より",
-      "bpm": "",
+      "saHash": "id90871924",
+      "bpm": "222",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kita_Saitama_2000",
       "jacket": "jubeat/id90871924.jpg",
-      "name": "きたさいたま2000"
+      "flags": ["licensed"]
     },
     {
       "artist": "松下feat.Sota & wac",
@@ -7415,15 +7725,18 @@
       "name": "きゅん×きゅんばっきゅん☆LOVE"
     },
     {
+      "name": "きょうもハレバレ",
       "artist": "ふわりP feat. GUMI's",
-      "bpm": "",
+      "saHash": "id72682535",
+      "bpm": "134",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kyou_mo_harebare",
       "jacket": "jubeat/id72682535.jpg",
-      "name": "きょうもハレバレ"
+      "flags": ["licensed"]
     },
     {
       "artist": "さわわ",
@@ -7492,15 +7805,18 @@
       "name": "さよならトリップ"
     },
     {
+      "name": "さよなら世界 (BEMANI SYMPHONY Arr.)",
       "artist": "猫叉Master Arranged by ござ",
-      "bpm": "",
+      "saHash": "id25506943",
+      "bpm": "104-120",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Sayonara_sekai_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id25506943.jpg",
-      "name": "さよなら世界 (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "ときめきアイドル project 結城秋葉",
@@ -7525,15 +7841,18 @@
       "name": "じもとっこスイーツ♪"
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "じょいふる",
+      "artist": "",
+      "saHash": "id40719358",
+      "bpm": "159",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Joyful",
       "jacket": "jubeat/id40719358.jpg",
-      "name": "じょいふる"
+      "flags": ["licensed"]
     },
     {
       "artist": "ピノキオピー",
@@ -7591,15 +7910,18 @@
       "name": "たたえよ！絶対覇権アリーシャ帝国"
     },
     {
+      "name": "ただ君に晴れ",
       "artist": "ヨルシカ",
-      "bpm": "",
+      "saHash": "id89331867",
+      "bpm": "140",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Tada_kimi_ni_hare",
       "jacket": "jubeat/id89331867.jpg",
-      "name": "ただ君に晴れ"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -7624,15 +7946,18 @@
       "name": "ちくわパフェだよ☆ＣＫＰ (Yvya Remix)"
     },
     {
+      "name": "ちゅ、多様性。",
       "artist": "ano",
-      "bpm": "",
+      "saHash": "id63050713",
+      "bpm": "153",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Chu,_tayousei.",
       "jacket": "jubeat/id63050713.jpg",
-      "name": "ちゅ、多様性。"
+      "flags": ["licensed"]
     },
     {
       "artist": "達見 恵 featured by 佐野宏晃",
@@ -7690,15 +8015,18 @@
       "name": "にゃんのパレードマーチ♪"
     },
     {
+      "name": "はなまるぴっぴはよいこだけ",
       "artist": "A応P",
-      "bpm": "",
+      "saHash": "id61974785",
+      "bpm": "172",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hanamaru_pippi_wa_yoiko_dake",
       "jacket": "jubeat/id61974785.jpg",
-      "name": "はなまるぴっぴはよいこだけ"
+      "flags": ["licensed"]
     },
     {
       "artist": "おひさまくらぶ",
@@ -7734,15 +8062,18 @@
       "name": "ふしぎなくすり"
     },
     {
+      "name": "ほおずき程度には赤い頭髪",
       "artist": "Akhuta",
-      "bpm": "",
+      "saHash": "id47790925",
+      "bpm": "174",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hoozukiteido_ni_wa_akai_touhatsu",
       "jacket": "jubeat/id47790925.jpg",
-      "name": "ほおずき程度には赤い頭髪"
+      "flags": ["licensed"]
     },
     {
       "artist": "Sana",
@@ -7778,15 +8109,18 @@
       "name": "まるでマトリョーシカ"
     },
     {
+      "name": "みくみくにしてあげる♪【してやんよ】",
       "artist": "ika",
-      "bpm": "",
+      "saHash": "id29506311",
+      "bpm": "160",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Miku_Miku_ni_shite_ageru_(shiteyanyo)",
       "jacket": "jubeat/id29506311.jpg",
-      "name": "みくみくにしてあげる♪【してやんよ】"
+      "flags": ["licensed"]
     },
     {
       "artist": "Yunomi",
@@ -7855,26 +8189,46 @@
       "name": "ゆめのかなたで"
     },
     {
+      "name": "わくわくエブリデイ",
       "artist": "白上フブキ・大神ミオ",
-      "bpm": "",
+      "saHash": "id55317640",
+      "bpm": "120",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Wakuwaku_everyday",
       "jacket": "jubeat/id55317640.jpg",
-      "name": "わくわくエブリデイ"
+      "flags": ["licensed"]
     },
     {
+      "name": "アイスクリームマジック",
+      "artist": "雪乃イト",
+      "saHash": "id17130843",
+      "bpm": "110 (all BEMANI games except SOUND VOLTEX), 220 (SOUND VOLTEX)",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 5 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
+      ],
+      "remyLink": "https://remywiki.com/Ice_cream_magic",
+      "jacket": "jubeat/id17130843.jpg",
+      "flags": ["licensed"]
+    },
+    {
+      "name": "アカリがやってきたぞっ",
       "artist": "GYARI(ココアシガレットP)",
-      "bpm": "",
+      "saHash": "id54941286",
+      "bpm": "136",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Akari_ga_yatte_kita_zo",
       "jacket": "jubeat/id54941286.jpg",
-      "name": "アカリがやってきたぞっ"
+      "flags": ["licensed"]
     },
     {
       "artist": "Bazole",
@@ -8047,15 +8401,32 @@
       "name": "ウィリアム・テル序曲"
     },
     {
+      "name": "エイリアンエイリアン",
       "artist": "ナユタン星人",
-      "bpm": "",
+      "saHash": "id39803749",
+      "bpm": "152",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Alien_alien",
       "jacket": "jubeat/id39803749.jpg",
-      "name": "エイリアンエイリアン"
+      "flags": ["licensed"]
+    },
+    {
+      "name": "エイリアンエイリアン [ 2 ]",
+      "artist": "ナユタン星人",
+      "saHash": "id31262242",
+      "bpm": "152",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.6 }
+      ],
+      "remyLink": "https://remywiki.com/Alien_alien",
+      "jacket": "jubeat/id31262242.jpg",
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -8067,6 +8438,20 @@
       ],
       "jacket": "jubeat/id34227316.jpg",
       "name": "エキサイティング！！も・ちゃ・ちゃ☆"
+    },
+    {
+      "name": "エクスプロウル",
+      "artist": "晴いちばん",
+      "saHash": "id58061724",
+      "bpm": "164",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.2 }
+      ],
+      "remyLink": "https://remywiki.com/Explore",
+      "jacket": "jubeat/id58061724.jpg",
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "水曜日のカンパネラ",
@@ -8102,26 +8487,32 @@
       "name": "エンドルフィン"
     },
     {
+      "name": "エンヴィーベイビー",
       "artist": "Kanaria",
-      "bpm": "",
+      "saHash": "id10789174",
+      "bpm": "171",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Envy_baby",
       "jacket": "jubeat/id10789174.jpg",
-      "name": "エンヴィーベイビー"
+      "flags": ["licensed"]
     },
     {
+      "name": "オムライス",
       "artist": "オーロラ三人娘",
-      "bpm": "",
+      "saHash": "id93836398",
+      "bpm": "177",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Omurice",
       "jacket": "jubeat/id93836398.jpg",
-      "name": "オムライス"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -8267,15 +8658,18 @@
       "name": "キルト"
     },
     {
+      "name": "ギザバ怪文書",
       "artist": "cosMo＠暴走P",
-      "bpm": "",
+      "saHash": "id80596859",
+      "bpm": "280",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gizaba_kaibunsho",
       "jacket": "jubeat/id80596859.jpg",
-      "name": "ギザバ怪文書"
+      "flags": ["licensed"]
     },
     {
       "artist": "DNM盛り上げ隊",
@@ -8289,6 +8683,20 @@
       "name": "ギタ・ドラ・jubeat大夏祭りのテーマ"
     },
     {
+      "name": "ギャ・ギャ・ギャ・ギャラクシー！",
+      "artist": "つきみぐー、",
+      "saHash": "id17326420",
+      "bpm": "140",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.4 }
+      ],
+      "remyLink": "https://remywiki.com/Ga-ga-ga-galaxy!",
+      "jacket": "jubeat/id17326420.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "artist": "日向美ビタースイーツ♪",
       "bpm": "",
       "charts": [
@@ -8300,26 +8708,46 @@
       "name": "クラゲファンタジーソーダ"
     },
     {
+      "name": "ケッペキショウ",
       "artist": "すこっぷ feat.GUMI",
-      "bpm": "",
+      "saHash": "id38632734",
+      "bpm": "190",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Keppekishou",
       "jacket": "jubeat/id38632734.jpg",
-      "name": "ケッペキショウ"
+      "flags": ["licensed"]
     },
     {
+      "name": "ケッペキショウ [ 2 ]",
+      "artist": "すこっぷ feat.GUMI",
+      "saHash": "id16975111",
+      "bpm": "190",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.4 }
+      ],
+      "remyLink": "https://remywiki.com/Keppekishou",
+      "jacket": "jubeat/id16975111.jpg",
+      "flags": ["licensed", "holds"]
+    },
+    {
+      "name": "ケムマキunderground",
       "artist": "t+pazolite feat. リズナ",
-      "bpm": "",
+      "saHash": "id77625079",
+      "bpm": "200",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kemumaki_underground",
       "jacket": "jubeat/id77625079.jpg",
-      "name": "ケムマキunderground"
+      "flags": ["licensed"]
     },
     {
       "artist": "ぱんぱんぱん打",
@@ -8377,15 +8805,18 @@
       "name": "サヨナラ・ヘヴン"
     },
     {
+      "name": "サヨナラ・ヘヴン (BEMANI SYMPHONY Arr.)",
       "artist": "猫叉Master × Morrigan feat.Lily + gaQdan",
-      "bpm": "",
+      "saHash": "id26866892",
+      "bpm": "111",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Sayonara_heaven_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id26866892.jpg",
-      "name": "サヨナラ・ヘヴン (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "猫叉Master",
@@ -8415,15 +8846,18 @@
       "name": "シノビシノノメ"
     },
     {
+      "name": "シャルル",
       "artist": "バルーン",
-      "bpm": "",
+      "saHash": "id55663424",
+      "bpm": "145",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Charles",
       "jacket": "jubeat/id55663424.jpg",
-      "name": "シャルル"
+      "flags": ["licensed"]
     },
     {
       "artist": "UNISON SQUARE GARDEN",
@@ -8580,15 +9014,18 @@
       "name": "スーパー戦湯ババンバーン"
     },
     {
+      "name": "セツナトリップ",
       "artist": "Last Note. feat. GUMI",
-      "bpm": "",
+      "saHash": "id19008373",
+      "bpm": "145",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Setsuna_trip",
       "jacket": "jubeat/id19008373.jpg",
-      "name": "セツナトリップ"
+      "flags": ["licensed"]
     },
     {
       "artist": "豚乙女",
@@ -8635,15 +9072,18 @@
       "name": "チョコレートスマイル"
     },
     {
+      "name": "チルノのパーフェクトさんすう教室",
       "artist": "ARM(IOSYS)",
-      "bpm": "",
+      "saHash": "id28527155",
+      "bpm": "175",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_kyoushitsu",
       "jacket": "jubeat/id28527155.jpg",
-      "name": "チルノのパーフェクトさんすう教室"
+      "flags": ["licensed"]
     },
     {
       "artist": "CULTVOICE by S.S.D. PRODUCTS",
@@ -8679,15 +9119,18 @@
       "name": "ツーマンライブ [ 2 ]"
     },
     {
+      "name": "テレキャスタービーボーイ",
       "artist": "すりぃ",
-      "bpm": "",
+      "saHash": "id57050586",
+      "bpm": "182",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Telecaster_B-boy",
       "jacket": "jubeat/id57050586.jpg",
-      "name": "テレキャスタービーボーイ"
+      "flags": ["licensed"]
     },
     {
       "artist": "猫叉Masterβ2",
@@ -8701,26 +9144,32 @@
       "name": "デッドボヲルdeホームラン"
     },
     {
+      "name": "デンノウス・キルズ",
       "artist": "cosMo＠暴走P feat.初音ミク",
-      "bpm": "",
+      "saHash": "id29648144",
+      "bpm": "217",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Demnorth_kills",
       "jacket": "jubeat/id29648144.jpg",
-      "name": "デンノウス・キルズ"
+      "flags": ["licensed"]
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "トウキョウ・シャンディ・ランデヴ",
+      "artist": "",
+      "saHash": "id28432296",
+      "bpm": "137",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Tokyo_shandy_rendez-vous",
       "jacket": "jubeat/id28432296.jpg",
-      "name": "トウキョウ・シャンディ・ランデヴ"
+      "flags": ["licensed"]
     },
     {
       "artist": "Qrispy Joybox",
@@ -8783,15 +9232,18 @@
       "name": "トルコ行進曲"
     },
     {
+      "name": "ドーナツホール",
       "artist": "ハチ",
-      "bpm": "",
+      "saHash": "id62825556",
+      "bpm": "252",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Donut_hole",
       "jacket": "jubeat/id62825556.jpg",
-      "name": "ドーナツホール"
+      "flags": ["licensed"]
     },
     {
       "artist": "U1 overground",
@@ -8805,15 +9257,18 @@
       "name": "ドーパミン"
     },
     {
+      "name": "ナイト・オブ・ナイツ",
       "artist": "ビートまりお（COOL&CREATE）",
-      "bpm": "",
+      "saHash": "id45039880",
+      "bpm": "180",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Night_of_knights",
       "jacket": "jubeat/id45039880.jpg",
-      "name": "ナイト・オブ・ナイツ"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -8838,26 +9293,32 @@
       "name": "ナナホシ"
     },
     {
+      "name": "ネトゲ廃人シュプレヒコール",
       "artist": "さつき が てんこもり",
-      "bpm": "",
+      "saHash": "id73069520",
+      "bpm": "176",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Netoge_haijin_sprechchor",
       "jacket": "jubeat/id73069520.jpg",
-      "name": "ネトゲ廃人シュプレヒコール"
+      "flags": ["licensed"]
     },
     {
+      "name": "ネハン",
       "artist": "Somari",
-      "bpm": "",
+      "saHash": "id14808536",
+      "bpm": "130-160",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Nehan",
       "jacket": "jubeat/id14808536.jpg",
-      "name": "ネハン"
+      "flags": ["licensed"]
     },
     {
       "artist": "sasakure.UK",
@@ -8871,26 +9332,32 @@
       "name": "ネリと琥珀糖"
     },
     {
+      "name": "ハウリング",
       "artist": "Liz Triangle",
+      "saHash": "id14941164",
       "bpm": "",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Howling_(Liz_Triangle)",
       "jacket": "jubeat/id14941164.jpg",
-      "name": "ハウリング"
+      "flags": ["licensed"]
     },
     {
+      "name": "ハッピーシンセサイザ",
       "artist": "EasyPop",
-      "bpm": "",
+      "saHash": "id32209228",
+      "bpm": "127",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Happy_synthesizer",
       "jacket": "jubeat/id32209228.jpg",
-      "name": "ハッピーシンセサイザ"
+      "flags": ["licensed"]
     },
     {
       "artist": "ときめきアイドル project",
@@ -8926,15 +9393,18 @@
       "name": "ハートシェイプ・スピカ"
     },
     {
+      "name": "バッドエンド・シンドローム (BEMANI SYMPHONY Arr.)",
       "artist": "アリスシャッハと魔法の楽団 × onoken + gaQdan",
-      "bpm": "",
+      "saHash": "id77956060",
+      "bpm": "125",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Bad_end_syndrome_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id77956060.jpg",
-      "name": "バッドエンド・シンドローム (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "劇団レコード",
@@ -8959,15 +9429,18 @@
       "name": "バビロニアの旅人たち"
     },
     {
+      "name": "バンブーソード・ガール",
       "artist": "cosMo＠暴走P",
-      "bpm": "",
+      "saHash": "id15839132",
+      "bpm": "208",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.1, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/BambooSword_Girl",
       "jacket": "jubeat/id15839132.jpg",
-      "name": "バンブーソード・ガール"
+      "flags": ["licensed"]
     },
     {
       "artist": "ヒゲドライバー join. shully & Nimo",
@@ -8992,15 +9465,18 @@
       "name": "パピポペピプペパ"
     },
     {
+      "name": "パンダヒーロー",
       "artist": "ハチ",
-      "bpm": "",
+      "saHash": "id98808001",
+      "bpm": "190",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Panda_hero",
       "jacket": "jubeat/id98808001.jpg",
-      "name": "パンダヒーロー"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"PON\" feat.かなたん",
@@ -9025,15 +9501,18 @@
       "name": "ヒカリユリイカ"
     },
     {
+      "name": "ヒトガタ",
       "artist": "HIMEHINA",
-      "bpm": "",
+      "saHash": "id39871176",
+      "bpm": "150",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hitogata",
       "jacket": "jubeat/id39871176.jpg",
-      "name": "ヒトガタ"
+      "flags": ["licensed"]
     },
     {
       "artist": "鈴木友里絵",
@@ -9102,15 +9581,18 @@
       "name": "ピザが食べたくてしょうがない皆さんの気持ちを代弁しました"
     },
     {
+      "name": "フィクサー",
       "artist": "ぬゆり",
-      "bpm": "",
+      "saHash": "id92838263",
+      "bpm": "135",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Fixer",
       "jacket": "jubeat/id92838263.jpg",
-      "name": "フィクサー"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -9146,15 +9628,18 @@
       "name": "フー・フローツ"
     },
     {
+      "name": "プレインエイジア -PHQ remix-",
       "artist": "PHQUASE",
-      "bpm": "",
+      "saHash": "id53924712",
+      "bpm": "182",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.1, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Plain_Asia_-PHQ_remix-",
       "jacket": "jubeat/id53924712.jpg",
-      "name": "プレインエイジア -PHQ remix-"
+      "flags": ["licensed"]
     },
     {
       "artist": "RoughSketch ft.Aikapin & Chiyoko",
@@ -9179,15 +9664,18 @@
       "name": "ベビーステップ"
     },
     {
+      "name": "ホメ猫☆センセーション",
       "artist": "P*Light feat. mow*2",
-      "bpm": "",
+      "saHash": "id67278058",
+      "bpm": "200",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Homeneko_sensation",
       "jacket": "jubeat/id67278058.jpg",
-      "name": "ホメ猫☆センセーション"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -9201,15 +9689,18 @@
       "name": "ホーンテッド★メイドランチ"
     },
     {
+      "name": "ボッカデラベリタ",
       "artist": "柊キライ",
-      "bpm": "",
+      "saHash": "id44114910",
+      "bpm": "170",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Bocca_della_verita",
       "jacket": "jubeat/id44114910.jpg",
-      "name": "ボッカデラベリタ"
+      "flags": ["licensed"]
     },
     {
       "artist": "NU-KO",
@@ -9267,26 +9758,32 @@
       "name": "マインド・ゲーム"
     },
     {
+      "name": "マツヨイナイトバグ",
       "artist": "ビートまりおとまろん",
-      "bpm": "",
+      "saHash": "id49452570",
+      "bpm": "190",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.1, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Matsuyoi_Nightbug",
       "jacket": "jubeat/id49452570.jpg",
-      "name": "マツヨイナイトバグ"
+      "flags": ["licensed"]
     },
     {
+      "name": "マトリョシカ",
       "artist": "ハチ",
-      "bpm": "",
+      "saHash": "id49710111",
+      "bpm": "205-296",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Matryoshka",
       "jacket": "jubeat/id49710111.jpg",
-      "name": "マトリョシカ"
+      "flags": ["licensed"]
     },
     {
       "artist": "かゆき",
@@ -9366,6 +9863,20 @@
       "name": "ムラサキグルマ"
     },
     {
+      "name": "メズマライザー",
+      "artist": "サツキ",
+      "saHash": "id93524776",
+      "bpm": "185",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
+      ],
+      "remyLink": "https://remywiki.com/Mesmerizer",
+      "jacket": "jubeat/id93524776.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "artist": "ここなつ2.0",
       "bpm": "",
       "charts": [
@@ -9377,15 +9888,18 @@
       "name": "メモリーズ"
     },
     {
+      "name": "メランコリック",
       "artist": "Junky",
-      "bpm": "",
+      "saHash": "id30367909",
+      "bpm": "140",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Melancholic",
       "jacket": "jubeat/id30367909.jpg",
-      "name": "メランコリック"
+      "flags": ["licensed"]
     },
     {
       "artist": "ロマンチックPrim姫",
@@ -9421,26 +9935,32 @@
       "name": "ラキラキ"
     },
     {
+      "name": "ラクガキスト",
       "artist": "cosMo＠暴走P feat.GUMI",
-      "bpm": "",
+      "saHash": "id96177028",
+      "bpm": "199",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Luckgakist",
       "jacket": "jubeat/id96177028.jpg",
-      "name": "ラクガキスト"
+      "flags": ["licensed"]
     },
     {
+      "name": "ラグトレイン",
       "artist": "稲葉曇",
-      "bpm": "",
+      "saHash": "id75728040",
+      "bpm": "147",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Lagtrain",
       "jacket": "jubeat/id75728040.jpg",
-      "name": "ラグトレイン"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"Sota F.\" feat.いちか",
@@ -9487,15 +10007,18 @@
       "name": "リカーシブ・ファンクション"
     },
     {
+      "name": "リバースユニバース",
       "artist": "ナユタン星人",
-      "bpm": "",
+      "saHash": "id79300495",
+      "bpm": "139",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Reverse_universe",
       "jacket": "jubeat/id79300495.jpg",
-      "name": "リバースユニバース"
+      "flags": ["licensed"]
     },
     {
       "artist": "rino & m@sumi from plastic penguin",
@@ -9520,15 +10043,18 @@
       "name": "リリーゼと炎龍レーヴァテイン"
     },
     {
+      "name": "ルナティックモンスター",
       "artist": "フーリンキャットマーク",
-      "bpm": "",
+      "saHash": "id76426911",
+      "bpm": "136",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Lunatic_monster",
       "jacket": "jubeat/id76426911.jpg",
-      "name": "ルナティックモンスター"
+      "flags": ["licensed"]
     },
     {
       "artist": "ここなつ",
@@ -9542,15 +10068,18 @@
       "name": "ルミナスデイズ"
     },
     {
+      "name": "ルービックキューブ",
       "artist": "otetsu feat.GUMI",
-      "bpm": "",
+      "saHash": "id73297875",
+      "bpm": "140",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Rubik%27s_cube",
       "jacket": "jubeat/id73297875.jpg",
-      "name": "ルービックキューブ"
+      "flags": ["licensed"]
     },
     {
       "artist": "中島由貴",
@@ -9564,26 +10093,32 @@
       "name": "レゾンデートル、前線より"
     },
     {
+      "name": "ロストワンの号哭",
       "artist": "Neru",
-      "bpm": "",
+      "saHash": "id75525569",
+      "bpm": "162",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Lost_one_no_goukoku",
       "jacket": "jubeat/id75525569.jpg",
-      "name": "ロストワンの号哭"
+      "flags": ["licensed"]
     },
     {
+      "name": "ロストワンの号哭 [ 2 ]",
       "artist": "Neru",
-      "bpm": "",
+      "saHash": "id70830611",
+      "bpm": "162",
       "charts": [
-        { "lvl": 4, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.5, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
       ],
+      "remyLink": "https://remywiki.com/Lost_one_no_goukoku",
       "jacket": "jubeat/id70830611.jpg",
-      "name": "ロストワンの号哭 [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "Akhuta",
@@ -9619,26 +10154,32 @@
       "name": "ロンロンへ　ライライライ！"
     },
     {
+      "name": "ロールプレイングゲーム",
       "artist": "そらまふうらさか",
-      "bpm": "",
+      "saHash": "id17067770",
+      "bpm": "162",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Role-playing_game",
       "jacket": "jubeat/id17067770.jpg",
-      "name": "ロールプレイングゲーム"
+      "flags": ["licensed"]
     },
     {
+      "name": "ワールズエンド・ダンスホール",
       "artist": "wowaka",
-      "bpm": "",
+      "saHash": "id34910154",
+      "bpm": "171",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/World%27s_end_dancehall",
       "jacket": "jubeat/id34910154.jpg",
-      "name": "ワールズエンド・ダンスホール"
+      "flags": ["licensed"]
     },
     {
       "artist": "-",
@@ -9729,15 +10270,18 @@
       "name": "倉野川音頭"
     },
     {
+      "name": "僕は空気が嫁ない",
       "artist": "cosMo＠暴走P",
-      "bpm": "",
+      "saHash": "id89171766",
+      "bpm": "192",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Boku_wa_kuuki_ga_yomenai",
       "jacket": "jubeat/id89171766.jpg",
-      "name": "僕は空気が嫁ない"
+      "flags": ["licensed"]
     },
     {
       "artist": "テヅカ feat. 大西あみみ",
@@ -9751,15 +10295,18 @@
       "name": "僕らの時間"
     },
     {
+      "name": "僕らの永遠～何度生まれ変わっても、手を繋ぎたいだけの愛だから～",
       "artist": "WEAVER",
-      "bpm": "",
+      "saHash": "id30631427",
+      "bpm": "128",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Bokura_no_eien_~nando_umare_kawattemo,_te_wo_tsunagitai_dake_no_ai_dakara~",
       "jacket": "jubeat/id30631427.jpg",
-      "name": "僕らの永遠～何度生まれ変わっても、手を繋ぎたいだけの愛だから～"
+      "flags": ["licensed"]
     },
     {
       "artist": "PON",
@@ -9773,26 +10320,32 @@
       "name": "優勢オーバードーズ"
     },
     {
+      "name": "元気でやってるのかい?",
       "artist": "イルリメ",
-      "bpm": "",
+      "saHash": "id45588034",
+      "bpm": "165",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Genkide_yatteru_no_kai%3F",
       "jacket": "jubeat/id45588034.jpg",
-      "name": "元気でやってるのかい?"
+      "flags": ["licensed"]
     },
     {
+      "name": "全力ハッピーライフ",
       "artist": "森羅万象",
-      "bpm": "",
+      "saHash": "id26343607",
+      "bpm": "190",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Zenryoku_happy_life",
       "jacket": "jubeat/id26343607.jpg",
-      "name": "全力ハッピーライフ"
+      "flags": ["licensed"]
     },
     {
       "artist": "Akhuta",
@@ -9817,15 +10370,18 @@
       "name": "凛として咲く花の如く"
     },
     {
+      "name": "凛として咲く花の如く",
       "artist": "大神ミオ",
-      "bpm": "",
+      "saHash": "id22318351",
+      "bpm": "163",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Rin_to_shite_saku_hana_no_gotoku_(Ookami_Mio_Cover)",
       "jacket": "jubeat/id22318351.jpg",
-      "name": "凛として咲く花の如く"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -9877,48 +10433,74 @@
       "name": "創世ノート [ 2 ]"
     },
     {
+      "name": "十面相",
       "artist": "YM feat. GUMI",
-      "bpm": "",
+      "saHash": "id13364904",
+      "bpm": "173",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Juumensou",
       "jacket": "jubeat/id13364904.jpg",
-      "name": "十面相"
+      "flags": ["licensed"]
     },
     {
+      "name": "千年ノ理",
       "artist": "猫叉Master",
-      "bpm": "",
+      "saHash": "id64137901",
+      "bpm": "153",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Sennen_no_kotowari",
       "jacket": "jubeat/id64137901.jpg",
-      "name": "千年ノ理"
+      "flags": ["licensed"]
     },
     {
+      "name": "千年ノ理 [ 2 ]",
+      "artist": "猫叉Master",
+      "saHash": "id51076281",
+      "bpm": "153",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.5 }
+      ],
+      "remyLink": "https://remywiki.com/Sennen_no_kotowari",
+      "jacket": "jubeat/id51076281.jpg",
+      "flags": ["licensed", "holds"]
+    },
+    {
+      "name": "千本桜",
       "artist": "黒うさP",
-      "bpm": "",
+      "saHash": "id38991890",
+      "bpm": "154",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Senbonzakura",
       "jacket": "jubeat/id38991890.jpg",
-      "name": "千本桜"
+      "flags": ["licensed"]
     },
     {
+      "name": "厳冬記",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id64728317",
+      "bpm": "150",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gentouki",
       "jacket": "jubeat/id64728317.jpg",
-      "name": "厳冬記"
+      "flags": ["licensed"]
     },
     {
       "artist": "一舞 ＆ 夏陽",
@@ -9932,48 +10514,60 @@
       "name": "双星ルミネセンス"
     },
     {
+      "name": "反撃",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id81833461",
+      "bpm": "145",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hangeki",
       "jacket": "jubeat/id81833461.jpg",
-      "name": "反撃"
+      "flags": ["licensed"]
     },
     {
+      "name": "取り残された美術(Arranged:HiZuMi)",
       "artist": "幽閉サテライト feat. senya",
-      "bpm": "",
+      "saHash": "id54970003",
+      "bpm": "160",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Torinokosareta_bijutsu(Arranged:HiZuMi)",
       "jacket": "jubeat/id54970003.jpg",
-      "name": "取り残された美術(Arranged:HiZuMi)"
+      "flags": ["licensed"]
     },
     {
+      "name": "取り残された美術(Arranged:HiZuMi) [ 2 ]",
       "artist": "幽閉サテライト feat. senya",
-      "bpm": "",
+      "saHash": "id80909498",
+      "bpm": "160",
       "charts": [
-        { "lvl": 4, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 7, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.3, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.3 }
       ],
+      "remyLink": "https://remywiki.com/Torinokosareta_bijutsu(Arranged:HiZuMi)",
       "jacket": "jubeat/id80909498.jpg",
-      "name": "取り残された美術(Arranged:HiZuMi) [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
+      "name": "向日葵サンセット",
       "artist": "ARM・まろん (IOSYS) × ランコ・パプリカ (豚乙女)",
-      "bpm": "",
+      "saHash": "id61487355",
+      "bpm": "135",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Himawari_sunset",
       "jacket": "jubeat/id61487355.jpg",
-      "name": "向日葵サンセット"
+      "flags": ["licensed"]
     },
     {
       "artist": "久保田祥平",
@@ -9987,15 +10581,18 @@
       "name": "君の元へ"
     },
     {
+      "name": "君氏危うくも近うよれ",
       "artist": "A応P",
-      "bpm": "",
+      "saHash": "id26497600",
+      "bpm": "162",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kunshi_ayauku_mo_chikou_yore",
       "jacket": "jubeat/id26497600.jpg",
-      "name": "君氏危うくも近うよれ"
+      "flags": ["licensed"]
     },
     {
       "artist": "Flash back Dominant",
@@ -10009,15 +10606,18 @@
       "name": "和beat"
     },
     {
+      "name": "嘆きの樹 (BEMANI SYMPHONY Arr.)",
       "artist": "金獅子 × Nagiha & Osamu Kubota + gaQdan",
-      "bpm": "",
+      "saHash": "id89731744",
+      "bpm": "61-156",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Nageki_no_ki_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id89731744.jpg",
-      "name": "嘆きの樹 (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -10086,26 +10686,32 @@
       "name": "夢有"
     },
     {
+      "name": "天ノ弱",
       "artist": "164 feat. GUMI",
-      "bpm": "",
+      "saHash": "id82056867",
+      "bpm": "200-205",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Amanojaku",
       "jacket": "jubeat/id82056867.jpg",
-      "name": "天ノ弱"
+      "flags": ["licensed"]
     },
     {
+      "name": "天ノ弱 [ 2 ]",
       "artist": "164 feat. GUMI",
-      "bpm": "",
+      "saHash": "id17308557",
+      "bpm": "200-205",
       "charts": [
-        { "lvl": 4, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 7, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.8 }
       ],
+      "remyLink": "https://remywiki.com/Amanojaku",
       "jacket": "jubeat/id17308557.jpg",
-      "name": "天ノ弱 [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "マジックアカデミー管弦楽部×劇団レコード",
@@ -10141,15 +10747,18 @@
       "name": "天国と地獄"
     },
     {
+      "name": "天空の夜明け (BEMANI SYMPHONY Arr.)",
       "artist": "Cuvelia × Nagiha + gaQdan",
-      "bpm": "",
+      "saHash": "id98123279",
+      "bpm": "150",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Tenkuu_no_yoake_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id98123279.jpg",
-      "name": "天空の夜明け (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "S-C-U × U1 overground",
@@ -10196,15 +10805,18 @@
       "name": "妄想感傷代償連盟"
     },
     {
+      "name": "妖隠し -あやかしかくし-",
       "artist": "DJ TOTTO feat.3L",
+      "saHash": "id93247578",
       "bpm": "",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Ayakashi_kakushi",
       "jacket": "jubeat/id93247578.jpg",
-      "name": "妖隠し -あやかしかくし-"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -10251,15 +10863,18 @@
       "name": "少女、摩天楼へ"
     },
     {
+      "name": "少女レイ",
       "artist": "みきとP",
-      "bpm": "",
+      "saHash": "id77757789",
+      "bpm": "150",
       "charts": [
         { "lvl": 1, "diffClass": "basic", "style": "solo" },
         { "lvl": 4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Shoujo_rei",
       "jacket": "jubeat/id77757789.jpg",
-      "name": "少女レイ"
+      "flags": ["licensed"]
     },
     {
       "artist": "Power Of Nature",
@@ -10317,15 +10932,32 @@
       "name": "幻想リフレクト"
     },
     {
+      "name": "幻想系世界修復少女",
       "artist": "Last Note.",
-      "bpm": "",
+      "saHash": "id87879796",
+      "bpm": "193",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gensoukei_sekaishuufuku_shoujo",
       "jacket": "jubeat/id87879796.jpg",
-      "name": "幻想系世界修復少女"
+      "flags": ["licensed"]
+    },
+    {
+      "name": "幻想系世界修復少女 [ 2 ]",
+      "artist": "Last Note.",
+      "saHash": "id64596876",
+      "bpm": "193",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.4 }
+      ],
+      "remyLink": "https://remywiki.com/Gensoukei_sekaishuufuku_shoujo",
+      "jacket": "jubeat/id64596876.jpg",
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "中島由貴",
@@ -10337,6 +10969,20 @@
       ],
       "jacket": "jubeat/id24758171.jpg",
       "name": "廻る季節のゆく先に"
+    },
+    {
+      "name": "弾幕信仰",
+      "artist": "豚乙女×BEMANI Sound Team \"PON\"",
+      "saHash": "id69309230",
+      "bpm": "170",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
+      ],
+      "remyLink": "https://remywiki.com/Danmaku_shinkou",
+      "jacket": "jubeat/id69309230.jpg",
+      "flags": ["licensed"]
     },
     {
       "artist": "Akhuta",
@@ -10361,15 +11007,18 @@
       "name": "御千手メディテーション"
     },
     {
+      "name": "快晴",
       "artist": "Orangestar",
-      "bpm": "",
+      "saHash": "id11135257",
+      "bpm": "172",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kaisei",
       "jacket": "jubeat/id11135257.jpg",
-      "name": "快晴"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"桃山珍太郎\"",
@@ -10471,15 +11120,18 @@
       "name": "恋はどう？モロ◎波動OK☆方程式！！"
     },
     {
+      "name": "恋をしたい、もう一度",
       "artist": "デッドボールP feat.GUMI",
-      "bpm": "",
+      "saHash": "id40624191",
+      "bpm": "145",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Koi_wo_shitai,_mou_ichido",
       "jacket": "jubeat/id40624191.jpg",
-      "name": "恋をしたい、もう一度"
+      "flags": ["licensed"]
     },
     {
       "artist": "NU-KO",
@@ -10526,26 +11178,46 @@
       "name": "恋閃繚乱"
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "悲報！ワイ！ニート！",
+      "artist": "Shu",
+      "saHash": "id90523575",
+      "bpm": "165",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.7 }
+      ],
+      "remyLink": "https://remywiki.com/Hihou!_Wai!_Neet!",
+      "jacket": "jubeat/id90523575.jpg",
+      "flags": ["licensed", "holds"]
+    },
+    {
+      "name": "情熱大陸",
+      "artist": "",
+      "saHash": "id19993311",
+      "bpm": "128",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Jounetsu_tairiku",
       "jacket": "jubeat/id19993311.jpg",
-      "name": "情熱大陸"
+      "flags": ["licensed"]
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "情熱大陸 [ 2 ]",
+      "artist": "",
+      "saHash": "id47137132",
+      "bpm": "128",
       "charts": [
-        { "lvl": 4, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.5, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
       ],
+      "remyLink": "https://remywiki.com/Jounetsu_tairiku",
       "jacket": "jubeat/id47137132.jpg",
-      "name": "情熱大陸 [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "SOUND HOLIC feat. Nana Takahashi",
@@ -10603,15 +11275,18 @@
       "name": "拙者拙者拙者拙者"
     },
     {
+      "name": "放課後ストライド",
       "artist": "Last Note.",
-      "bpm": "",
+      "saHash": "id68243764",
+      "bpm": "225",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Houkago_stride",
       "jacket": "jubeat/id68243764.jpg",
-      "name": "放課後ストライド"
+      "flags": ["licensed"]
     },
     {
       "artist": "mami,駄々子 by BEMANI Sound Team \"Akhuta Works\"",
@@ -10658,15 +11333,18 @@
       "name": "日天悦扇紊舞"
     },
     {
+      "name": "星に願いを",
       "artist": "flumpool",
-      "bpm": "",
+      "saHash": "id11908453",
+      "bpm": "137",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hoshi_ni_negai_wo",
       "jacket": "jubeat/id11908453.jpg",
-      "name": "星に願いを"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team\"猫叉劇団\"",
@@ -10680,15 +11358,18 @@
       "name": "星の小舟"
     },
     {
+      "name": "星を飛び越えて",
       "artist": "Liz Triangle",
-      "bpm": "",
+      "saHash": "id50721491",
+      "bpm": "160",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hoshi_wo_tobikoete",
       "jacket": "jubeat/id50721491.jpg",
-      "name": "星を飛び越えて"
+      "flags": ["licensed"]
     },
     {
       "artist": "Akhuta",
@@ -10735,15 +11416,18 @@
       "name": "晴天Bon Voyage"
     },
     {
+      "name": "最凶アンビバレント",
       "artist": "森羅万象",
-      "bpm": "",
+      "saHash": "id41809573",
+      "bpm": "178",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.6, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Saikyo_ambivalent",
       "jacket": "jubeat/id41809573.jpg",
-      "name": "最凶アンビバレント"
+      "flags": ["licensed"]
     },
     {
       "artist": "DJ TECHNORCH",
@@ -10757,48 +11441,59 @@
       "name": "最小三倍完全数"
     },
     {
+      "name": "最終回STORY",
       "artist": "MY FIRST STORY",
-      "bpm": "",
+      "saHash": "id67124580",
+      "bpm": "215",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Saishuukai_STORY",
       "jacket": "jubeat/id67124580.jpg",
-      "name": "最終回STORY"
+      "flags": ["licensed"]
     },
     {
+      "name": "最終鬼畜妹フランドール・S",
       "artist": "ビートまりお（COOL&CREATE）",
-      "bpm": "",
+      "saHash": "id59370343",
+      "bpm": "200",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Saishuu_kichiku_imouto_Flandre-S",
       "jacket": "jubeat/id59370343.jpg",
-      "name": "最終鬼畜妹フランドール・S"
+      "flags": ["licensed"]
     },
     {
+      "name": "月に叢雲華に風",
       "artist": "幽閉サテライト feat. senya",
-      "bpm": "",
+      "saHash": "id24760451",
+      "bpm": "160",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Tsuki_ni_murakumo_hana_ni_kaze",
       "jacket": "jubeat/id24760451.jpg",
-      "name": "月に叢雲華に風"
+      "flags": ["licensed"]
     },
     {
+      "name": "月に叢雲華に風 [ 2 ]",
       "artist": "幽閉サテライト feat. senya",
-      "bpm": "",
+      "saHash": "id35158730",
+      "bpm": "160",
       "charts": [
-        { "lvl": 3, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
       ],
       "jacket": "jubeat/id35158730.jpg",
-      "name": "月に叢雲華に風 [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "駄々子",
@@ -10823,15 +11518,18 @@
       "name": "月風魔伝　～ ビーストメドレー ～"
     },
     {
+      "name": "朝色の紙飛行機",
       "artist": "かめりあ",
-      "bpm": "",
+      "saHash": "id26550719",
+      "bpm": "132",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Asairo_no_kamihikouki",
       "jacket": "jubeat/id26550719.jpg",
-      "name": "朝色の紙飛行機"
+      "flags": ["licensed"]
     },
     {
       "artist": "HHH×MM×ST",
@@ -10845,15 +11543,18 @@
       "name": "朧"
     },
     {
+      "name": "朧 (BEMANI SYMPHONY Arr.)",
       "artist": "HHH×MM×ST × 浦木 裕太  + gaQdan",
-      "bpm": "",
+      "saHash": "id95324011",
+      "bpm": "149",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Oboro_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id95324011.jpg",
-      "name": "朧 (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "NU-KO",
@@ -10867,15 +11568,18 @@
       "name": "朱と碧のランページ"
     },
     {
+      "name": "東京テディベア",
       "artist": "Neru",
-      "bpm": "",
+      "saHash": "id91310934",
+      "bpm": "204",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Tokyo_teddy_bear",
       "jacket": "jubeat/id91310934.jpg",
-      "name": "東京テディベア"
+      "flags": ["licensed"]
     },
     {
       "artist": "Akhuta",
@@ -10944,6 +11648,20 @@
       "name": "此岸の戯事"
     },
     {
+      "name": "残像ニ繋ガレタ追憶ノHIDEAWAY",
+      "artist": "SOUND HOLIC Vs. BEMANI Sound Team \"KE!JU\" feat. Nana Takahashi",
+      "saHash": "id70976158",
+      "bpm": "160",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.3 }
+      ],
+      "remyLink": "https://remywiki.com/Zanzou_ni_tsunagareta_tsuioku_no_HIDEAWAY",
+      "jacket": "jubeat/id70976158.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "artist": "日向美ビタースイーツ♪",
       "bpm": "",
       "charts": [
@@ -10966,15 +11684,18 @@
       "name": "水槽のクジラ"
     },
     {
+      "name": "泡沫、哀のまほろば",
       "artist": "幽閉サテライト",
-      "bpm": "",
+      "saHash": "id85645485",
+      "bpm": "155",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Utakata,_ai_no_mahoroba",
       "jacket": "jubeat/id85645485.jpg",
-      "name": "泡沫、哀のまほろば"
+      "flags": ["licensed"]
     },
     {
       "artist": "劇団レコード",
@@ -10988,15 +11709,18 @@
       "name": "流砂の嵐"
     },
     {
+      "name": "流砂の嵐 (BEMANI SYMPHONY Arr.)",
       "artist": "劇団レコード Arranged by ござ",
-      "bpm": "",
+      "saHash": "id96116681",
+      "bpm": "142",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Ryuusa_no_arashi_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id96116681.jpg",
-      "name": "流砂の嵐 (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "兎々",
@@ -11010,15 +11734,18 @@
       "name": "海神"
     },
     {
+      "name": "海神 (BEMANI SYMPHONY Arr.)",
       "artist": "兎々 Arranged by ござ",
-      "bpm": "",
+      "saHash": "id97423720",
+      "bpm": "160",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Wadatsumi_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/id97423720.jpg",
-      "name": "海神 (BEMANI SYMPHONY Arr.)"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11087,15 +11814,18 @@
       "name": "激闘保安官！DEMPA撲滅大作戦"
     },
     {
+      "name": "灰の羽搏",
       "artist": "かめりあ feat. かめりあ",
-      "bpm": "",
+      "saHash": "id48731315",
+      "bpm": "240",
       "charts": [
         { "lvl": 7, "diffClass": "basic", "style": "solo" },
         { "lvl": 9.5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hai_no_habataki_(song)",
       "jacket": "jubeat/id48731315.jpg",
-      "name": "灰の羽搏"
+      "flags": ["licensed"]
     },
     {
       "artist": "DJ Mass MAD Izm*",
@@ -11120,26 +11850,31 @@
       "name": "灼熱の翼"
     },
     {
+      "name": "炉心融解",
       "artist": "iroha",
-      "bpm": "",
+      "saHash": "id71231163",
+      "bpm": "165",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Roshin_yuukai",
       "jacket": "jubeat/id71231163.jpg",
-      "name": "炉心融解"
+      "flags": ["licensed"]
     },
     {
+      "name": "炉心融解 [ 2 ]",
       "artist": "iroha",
-      "bpm": "",
+      "saHash": "id32561331",
+      "bpm": "165",
       "charts": [
-        { "lvl": 2, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 8, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
       ],
       "jacket": "jubeat/id32561331.jpg",
-      "name": "炉心融解 [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "Mutsuhiko Izumi",
@@ -11208,15 +11943,18 @@
       "name": "猫侍の逆襲"
     },
     {
+      "name": "現世の彼方",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id83041866",
+      "bpm": "176",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gense_no_kanata",
       "jacket": "jubeat/id83041866.jpg",
-      "name": "現世の彼方"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪＆日向美ブルームーン",
@@ -11230,26 +11968,31 @@
       "name": "琥珀のくちづけ"
     },
     {
+      "name": "白い雪のプリンセスは",
       "artist": "のぼる↑",
-      "bpm": "",
+      "saHash": "id69544682",
+      "bpm": "200",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.1, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Shiroi_yuki_no_princess_wa",
       "jacket": "jubeat/id69544682.jpg",
-      "name": "白い雪のプリンセスは"
+      "flags": ["licensed"]
     },
     {
+      "name": "白い雪のプリンセスは [ 2 ]",
       "artist": "のぼる↑",
-      "bpm": "",
+      "saHash": "id22243595",
+      "bpm": "200",
       "charts": [
-        { "lvl": 4, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 6, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.5, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
       ],
       "jacket": "jubeat/id22243595.jpg",
-      "name": "白い雪のプリンセスは [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "Swan Lake Orchestra",
@@ -11263,26 +12006,31 @@
       "name": "白鳥の湖"
     },
     {
+      "name": "眼光",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id83205131",
+      "bpm": "165",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 7, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gankou",
       "jacket": "jubeat/id83205131.jpg",
-      "name": "眼光"
+      "flags": ["licensed"]
     },
     {
+      "name": "眼光 [ 2 ]",
       "artist": "猫大樹",
-      "bpm": "",
+      "saHash": "id10343674",
+      "bpm": "165",
       "charts": [
-        { "lvl": 2, "diffClass": "basic", "style": "solo", "flags": ["v2"] },
-        { "lvl": 7, "diffClass": "advanced", "style": "solo", "flags": ["v2"] },
-        { "lvl": 9.1, "diffClass": "extreme", "style": "solo", "flags": ["v2"] }
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.1 }
       ],
       "jacket": "jubeat/id10343674.jpg",
-      "name": "眼光 [ 2 ]"
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "小野秀幸",
@@ -11296,15 +12044,18 @@
       "name": "瞬"
     },
     {
+      "name": "神っぽいな",
       "artist": "ピノキオピー",
-      "bpm": "",
+      "saHash": "id22030496",
+      "bpm": "142",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kamippoina",
       "jacket": "jubeat/id22030496.jpg",
-      "name": "神っぽいな"
+      "flags": ["licensed"]
     },
     {
       "artist": "MaMiKa（松下×mitsu×T.kakuta）",
@@ -11329,15 +12080,18 @@
       "name": "空の飛び方"
     },
     {
-      "artist": "-",
-      "bpm": "",
+      "name": "空色デイズ",
+      "artist": "",
+      "saHash": "id72070515",
+      "bpm": "174",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Sorairo_days",
       "jacket": "jubeat/id72070515.jpg",
-      "name": "空色デイズ"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11351,15 +12105,18 @@
       "name": "空言の海 ～咲子 edition～"
     },
     {
+      "name": "竹取飛翔 ～ Lunatic Princess (Ryu☆Remix)",
       "artist": "Ryu☆",
+      "saHash": "id15549172",
       "bpm": "",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10.4, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Taketori_hishou_~_Lunatic_Princess_(Ryu_Remix)",
       "jacket": "jubeat/id15549172.jpg",
-      "name": "竹取飛翔 ～ Lunatic Princess (Ryu☆Remix)"
+      "flags": ["licensed"]
     },
     {
       "artist": "Blanc Bunny Bandit",
@@ -11417,15 +12174,18 @@
       "name": "羽根亡キ少女唄"
     },
     {
+      "name": "脱法ロック",
       "artist": "Neru",
-      "bpm": "",
+      "saHash": "id25866791",
+      "bpm": "155",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Dappou_rock",
       "jacket": "jubeat/id25866791.jpg",
-      "name": "脱法ロック"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11472,15 +12232,32 @@
       "name": "蒼天"
     },
     {
+      "name": "蒼空に舞え、墨染の桜",
       "artist": "Silver Forest feat. さゆり",
-      "bpm": "",
+      "saHash": "id24729875",
+      "bpm": "150",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Sora_ni_mae,_sumizome_no_sakura",
       "jacket": "jubeat/id24729875.jpg",
-      "name": "蒼空に舞え、墨染の桜"
+      "flags": ["licensed"]
+    },
+    {
+      "name": "蒼空に舞え、墨染の桜 [ 2 ]",
+      "artist": "Silver Forest feat. さゆり",
+      "saHash": "id56335270",
+      "bpm": "150",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.4 }
+      ],
+      "remyLink": "https://remywiki.com/Sora_ni_mae,_sumizome_no_sakura",
+      "jacket": "jubeat/id56335270.jpg",
+      "flags": ["licensed", "holds"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11560,6 +12337,20 @@
       "name": "見習い天使と星降りの丘"
     },
     {
+      "name": "覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～",
+      "artist": "マキシウキョウ",
+      "saHash": "id73753211",
+      "bpm": "141-176",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.4 }
+      ],
+      "remyLink": "https://remywiki.com/Kakugoseyo!_Enternmeen_~yori_mi_no_kiriuri_jiboujiki_ban~",
+      "jacket": "jubeat/id73753211.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "artist": "Sana",
       "bpm": "",
       "charts": [
@@ -11593,15 +12384,18 @@
       "name": "走れメロンパン [ 2 ]"
     },
     {
+      "name": "超人ひじりのエアマッソー",
       "artist": "IOSYS feat. ビートまりお",
-      "bpm": "",
+      "saHash": "id83114360",
+      "bpm": "210",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Choujin_Hijiri_no_air_muscle",
       "jacket": "jubeat/id83114360.jpg",
-      "name": "超人ひじりのエアマッソー"
+      "flags": ["licensed"]
     },
     {
       "artist": "Ayatsugu_Otowa",
@@ -11648,15 +12442,18 @@
       "name": "逆ナンされたのにドタキャン!!"
     },
     {
+      "name": "進め↑BAKATARATION",
       "artist": "バカタレ共",
-      "bpm": "",
+      "saHash": "id76938721",
+      "bpm": "148",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 4, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Susume_BAKATARATION",
       "jacket": "jubeat/id76938721.jpg",
-      "name": "進め↑BAKATARATION"
+      "flags": ["licensed"]
     },
     {
       "artist": "No.5 Orchestra",
@@ -11670,15 +12467,18 @@
       "name": "運命"
     },
     {
+      "name": "過食性:アイドル症候群",
       "artist": "スズム feat.GUMI＆MAYU",
-      "bpm": "",
+      "saHash": "id50794802",
+      "bpm": "200",
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo" },
         { "lvl": 8, "diffClass": "advanced", "style": "solo" },
         { "lvl": 10, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kashokusei:_idol_shoukougun",
       "jacket": "jubeat/id50794802.jpg",
-      "name": "過食性:アイドル症候群"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11725,15 +12525,18 @@
       "name": "量子の海のリントヴルム"
     },
     {
+      "name": "銀の旋律-Silver melodia-",
       "artist": "ちょこふぁん",
-      "bpm": "",
+      "saHash": "id62793962",
+      "bpm": "175",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Gin_no_senritsu-Silver_melodia-",
       "jacket": "jubeat/id62793962.jpg",
-      "name": "銀の旋律-Silver melodia-"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11756,6 +12559,20 @@
       ],
       "jacket": "jubeat/id38492405.jpg",
       "name": "鋳鉄の檻"
+    },
+    {
+      "name": "閉塞的フレーション",
+      "artist": "Pizuya's Cell VS BEMANI Sound Team \"dj TAKA\"",
+      "saHash": "id32265837",
+      "bpm": "176",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 5 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 9.6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.5 }
+      ],
+      "remyLink": "https://remywiki.com/Heisokuteki_flation",
+      "jacket": "jubeat/id32265837.jpg",
+      "flags": ["licensed"]
     },
     {
       "artist": "マジックアカデミー管弦楽部×劇団レコード",
@@ -11857,15 +12674,18 @@
       "name": "霖が哭く"
     },
     {
+      "name": "非公開日誌",
       "artist": "みきとP feat.GUMI",
-      "bpm": "",
+      "saHash": "id41292502",
+      "bpm": "190",
       "charts": [
         { "lvl": 4, "diffClass": "basic", "style": "solo" },
         { "lvl": 5, "diffClass": "advanced", "style": "solo" },
         { "lvl": 8, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Hikoukai_nisshi",
       "jacket": "jubeat/id41292502.jpg",
-      "name": "非公開日誌"
+      "flags": ["licensed"]
     },
     {
       "artist": "日向美ビタースイーツ♪",
@@ -11879,15 +12699,18 @@
       "name": "革命パッショネイト"
     },
     {
+      "name": "響縁",
       "artist": "豚乙女",
-      "bpm": "",
+      "saHash": "id46356259",
+      "bpm": "180",
       "charts": [
         { "lvl": 2, "diffClass": "basic", "style": "solo" },
         { "lvl": 7, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.3, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Kyouen",
       "jacket": "jubeat/id46356259.jpg",
-      "name": "響縁"
+      "flags": ["licensed"]
     },
     {
       "artist": "BEMANI Sound Team \"劇団レコード\"feat.結良まり",
@@ -11923,26 +12746,32 @@
       "name": "高嶺の花子さん"
     },
     {
+      "name": "魔法少女とチョコレゐト",
       "artist": "ピノキオピー",
-      "bpm": "",
+      "saHash": "id55150491",
+      "bpm": "150",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.2, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Mahou_shoujo_to_chocolate",
       "jacket": "jubeat/id55150491.jpg",
-      "name": "魔法少女とチョコレゐト"
+      "flags": ["licensed"]
     },
     {
+      "name": "魔理沙は大変なものを盗んでいきました",
       "artist": "ARM＋夕野ヨシミ (IOSYS) feat. 藤咲かりん",
-      "bpm": "",
+      "saHash": "id19600729",
+      "bpm": "170",
       "charts": [
         { "lvl": 3, "diffClass": "basic", "style": "solo" },
         { "lvl": 6, "diffClass": "advanced", "style": "solo" },
         { "lvl": 9.5, "diffClass": "extreme", "style": "solo" }
       ],
+      "remyLink": "https://remywiki.com/Marisa_wa_taihen_na_mono_wo_nusunde_ikimashita",
       "jacket": "jubeat/id19600729.jpg",
-      "name": "魔理沙は大変なものを盗んでいきました"
+      "flags": ["licensed"]
     },
     {
       "artist": "村正クオリア",
