@@ -6,6 +6,7 @@ const normalized: Map<
   Song["saHash"],
   Partial<Pick<Song, "name" | "artist">>
 > = new Map([
+  ["id10177039", { name: "Got more raves?" }],
   ["id35802983", { name: "TRUE♥LOVE" }],
   ["id68218329", { name: "Love ♡ km" }],
   ["id75837790", { name: "Love ♡ km [ 2 ]" }],
