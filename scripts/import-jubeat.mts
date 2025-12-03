@@ -65,6 +65,7 @@ try {
       const newSong: Song = {
         name: fetchedSong.name,
         artist: fetchedSong.artist || "",
+        folder: existingData.meta.folders?.at(-1),
         saHash: fetchedSong.saHash,
         bpm: fetchedSong.bpm || "???",
         charts: fetchedSong.charts,
@@ -111,6 +112,7 @@ try {
       const newSong: Song = {
         name: fetchedSong.name,
         artist: fetchedSong.artist || "",
+        folder: existingData.meta.folders?.at(-1),
         saHash: fetchedSong.saHash,
         bpm: fetchedSong.bpm || "???",
         charts: fetchedSong.charts,
