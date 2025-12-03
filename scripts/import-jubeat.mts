@@ -56,7 +56,10 @@ try {
       console.log(`Adding new licensed song: ${fetchedSong.name}`);
       await tryGetMetaFromRemy(fetchedSong, "Jubeat");
       const jacket = fetchedSong.jacketUrl
-        ? downloadJacket(fetchedSong.jacketUrl, `jubeat/${fetchedSong.saHash}`)
+        ? downloadJacket(
+            fetchedSong.jacketUrl,
+            `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
+          )
         : "";
 
       const newSong: Song = {
@@ -99,7 +102,10 @@ try {
       console.log(`Adding new original song: ${fetchedSong.name}`);
       await tryGetMetaFromRemy(fetchedSong, "Jubeat");
       const jacket = fetchedSong.jacketUrl
-        ? downloadJacket(fetchedSong.jacketUrl, `jubeat/${fetchedSong.saHash}`)
+        ? downloadJacket(
+            fetchedSong.jacketUrl,
+            `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
+          )
         : "";
 
       const newSong: Song = {
