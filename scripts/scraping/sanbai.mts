@@ -77,6 +77,14 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ]),
   // #endregion グランプリ譜面パックvol.5
+  // #region スペシャル楽曲パック feat.jubeat vol.3, グランプリ楽曲パックvol.33＆vol.34 (unlocked at 2025-11-28)
+  ...[
+    "006i1i6OOl1bPdql9ID8o6QQ6IIiqP0P", // 1116
+    "qlQbI6dQ8i1iOO1oPbOoQ9b6ODII08Qb", // Sahara
+    "ODli9liO1loIiqb9qIol6o1PO91DP8QQ", // High & Low
+    "Dl91ldlb8PODoO96OI801DP0PPl8Plqi", // ONYX
+  ].map<[string, Partial<SanbaiSong>]>((s) => [s, { lock_types: undefined }]),
+  // #endregion スペシャル楽曲パック feat.jubeat vol.3, グランプリ楽曲パックvol.33＆vol.34 (unlocked at 2025-11-28)
 ]);
 
 type SanbaiSongData = Pick<
