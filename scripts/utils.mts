@@ -173,13 +173,10 @@ export function downloadJacket(
   if (!existsSync(absolute)) {
     createParentFolderIfNeeded(absolute);
     requestQueue
-      .add(
-        () => {
-          console.log("fetching", coverUrl);
-          return Jimp.read(coverUrl);
-        },
-        { throwOnTimeout: true },
-      )
+      .add(() => {
+        console.log("fetching", coverUrl);
+        return Jimp.read(coverUrl);
+      })
       .then((img) =>
         img
           .resize({ w: 128, mode: ResizeStrategy.BILINEAR })
