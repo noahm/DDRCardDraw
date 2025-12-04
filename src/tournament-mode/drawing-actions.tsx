@@ -14,13 +14,14 @@ import {
   Edit,
   Error,
   Exchange,
-  FloppyDisk,
   Label,
   NewLayer,
   NewLayers,
   Refresh,
   SendTo,
+  TableSync,
   Th,
+  ThVirtual,
   Trash,
 } from "@blueprintjs/icons";
 import { useAtomValue } from "jotai";
@@ -137,7 +138,7 @@ function SaveToStartggButton({ drawingId }: { drawingId: string }) {
       <Button
         variant="minimal"
         disabled={mutationData.fetching}
-        icon={<FloppyDisk />}
+        icon={<TableSync />}
         onClick={() => {
           const results = dispatch(getMatchResult(drawingId));
           if (!results) {
@@ -286,7 +287,7 @@ export function DrawingActions() {
       <Tooltip content={t("drawing.copyCards", undefined, "Save as CSV")}>
         <Button
           variant="minimal"
-          icon={<FloppyDisk />}
+          icon={<ThVirtual />}
           onClick={() =>
             shareCharts(
               getDrawingFromCompoundId(
