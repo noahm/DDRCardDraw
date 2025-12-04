@@ -34,14 +34,11 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
     );
 
     await Promise.all([
-      task("Licensed songs", async ({ setStatus, task }) => {
+      task("Licensed songs", async ({ setStatus, setTitle, task }) => {
         // Fetch licensed songs
         setStatus("Fetching licensed songs from e-amusement GATE...");
         const licensedImporter = new SongImporter(licensedSongUrl);
         const licensedSongs = await licensedImporter.fetchSongs(task);
-        console.log(
-          `Fetched ${licensedSongs.length} licensed songs from e-amusement GATE`,
-        );
 
         // Process licensed songs
         setStatus("Processing all licensed songs...");
@@ -79,18 +76,16 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
             existingData.songs.push(newSong);
           }
         }
-        setStatus(
+        setStatus("Done");
+        setTitle(
           `Licensed songs from e-amusement GATE: ${licensedSongs.length}`,
         );
       }),
-      task("Original songs", async ({ setStatus, task }) => {
+      task("Original songs", async ({ setStatus, setTitle, task }) => {
         // Fetch original songs
         setStatus("Fetching original songs from e-amusement GATE...");
         const originalImporter = new SongImporter(originalSongUrl);
         const originalSongs = await originalImporter.fetchSongs(task);
-        console.log(
-          `Fetched ${originalSongs.length} original songs from e-amusement GATE`,
-        );
 
         // Process original songs
         setStatus("Processing all original songs...");
@@ -127,7 +122,8 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
             existingData.songs.push(newSong);
           }
         }
-        setStatus(
+        setStatus("Done");
+        setTitle(
           `Original songs from e-amusement GATE: ${originalSongs.length}`,
         );
       }),

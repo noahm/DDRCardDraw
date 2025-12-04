@@ -40,7 +40,7 @@ export class SongImporter {
   async fetchSongs(task: Task): Promise<EagateSong[]> {
     const result = await task(
       "Fetch from jubeat e-amusement GATE",
-      async ({ setStatus }) => {
+      async ({ setStatus, setOutput }) => {
         setStatus(`Starting to fetch song data from jubeat e-amusement GATE`);
 
         const songsPerPage = 50;
@@ -56,7 +56,7 @@ export class SongImporter {
           const url = new URL(this.#songListUrl);
           url.searchParams.set("page", page.toString());
 
-          setStatus(`Fetching page ${currentPage + 1}... (page=${page})`);
+          setOutput(`Fetching page ${currentPage + 1}... (page=${page})`);
 
           try {
             const pageSongs = await scrape(url);
@@ -69,7 +69,7 @@ export class SongImporter {
             } else {
               emptyPageCount = 0; // Reset counter when songs are found
               allSongs.push(...pageSongs);
-              console.log(
+              setStatus(
                 `Page ${currentPage + 1}: ${pageSongs.length} songs fetched (total: ${allSongs.length} songs)`,
               );
 
@@ -103,10 +103,10 @@ export class SongImporter {
           }
         }
 
-        console.log(
+        setStatus(
           `Fetch completed: ${uniqueSongs.length} songs (before deduplication: ${allSongs.length} songs)`,
         );
-        setStatus(`Pages processed: ${currentPage}`);
+        setOutput(`Pages processed: ${currentPage}`);
 
         return uniqueSongs;
       },
