@@ -11,7 +11,7 @@
       { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": ["jp_only", "licensed"],
-    "lastUpdated": 1753083586651
+    "lastUpdated": 1762744816215
   },
   "defaults": {
     "style": "single",
@@ -730,7 +730,7 @@
         { "lvl": 7, "style": "single", "diffClass": "challenge" },
         { "lvl": 7, "style": "double", "diffClass": "challenge" }
       ],
-      "remyLink": "https://remywiki.com/BRILLIANT_2U_(K.O.G_G3_MIX)",
+      "remyLink": "https://remywiki.com/BRILLIANT_2U(K.O.G_G3_MIX)",
       "jacket": "banner/ddrmax2/BRILLIANT 2U (K.O.G G3 MIX).png",
       "saHash": "i18OPo6l8Q6bo9q0qP6889IDqoP8O0Qq"
     },
@@ -892,7 +892,8 @@
       ],
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE",
       "jacket": "banner/ddr_4th/CAN'T STOP FALLIN' IN LOVE.png",
-      "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P"
+      "saHash": "ioi6db99oOPPDd1db888D6oi6bb06o0P",
+      "genre": "HYPER EUROBEAT"
     },
     {
       "name": "CAN'T STOP FALLIN' IN LOVE (SPEED MIX)",
@@ -1287,23 +1288,6 @@
       "search_hint": "J-POP/J-ポップ"
     },
     {
-      "name": "DIVE(more deep & deeper style)",
-      "artist": "BeForU",
-      "bpm": "155",
-      "folder": "CS DDR",
-      "charts": [
-        { "lvl": 1, "style": "single", "diffClass": "beginner" },
-        { "lvl": 3, "style": "single", "diffClass": "basic" },
-        { "lvl": 5, "style": "single", "diffClass": "difficult" },
-        { "lvl": 7, "style": "single", "diffClass": "expert" },
-        { "lvl": 2, "style": "double", "diffClass": "basic" },
-        { "lvl": 5, "style": "double", "diffClass": "difficult" },
-        { "lvl": 6, "style": "double", "diffClass": "expert" }
-      ],
-      "remyLink": "https://remywiki.com/DIVE(more_deep_%26_deeper_style)",
-      "jacket": "banner/ddrmax/DIVE (more deep & deeper style).png"
-    },
-    {
       "name": "DIVE TO THE NIGHT",
       "artist": "小坂りゆ",
       "artist_translation": "RIYU KOSAKA",
@@ -1321,6 +1305,23 @@
       "remyLink": "https://remywiki.com/DIVE_TO_THE_NIGHT",
       "jacket": "banner/ddrmax2/DIVE TO THE NIGHT.png",
       "saHash": "8Pb6oPdbO6lo8lbiQ181IDidI9ll8q80"
+    },
+    {
+      "name": "DIVE(more deep & deeper style)",
+      "artist": "BeForU",
+      "bpm": "155",
+      "folder": "CS DDR",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 5, "style": "single", "diffClass": "difficult" },
+        { "lvl": 7, "style": "single", "diffClass": "expert" },
+        { "lvl": 2, "style": "double", "diffClass": "basic" },
+        { "lvl": 5, "style": "double", "diffClass": "difficult" },
+        { "lvl": 6, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "https://remywiki.com/DIVE(more_deep_%26_deeper_style)",
+      "jacket": "banner/ddrmax/DIVE (more deep & deeper style).png"
     },
     {
       "name": "Do It Right",
@@ -1428,7 +1429,8 @@
         { "lvl": 6, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Dr.LOVE",
-      "jacket": "banner/ddr_2nd/Dr.LOVE.png"
+      "jacket": "banner/ddr_2nd/Dr.LOVE.png",
+      "genre": "DANCE POP"
     },
     {
       "name": "Dragon Blade",
@@ -1704,7 +1706,8 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/END_OF_THE_CENTURY",
-      "jacket": "banner/ddr_3rd/END OF THE CENTURY.png"
+      "jacket": "banner/ddr_3rd/END OF THE CENTURY.png",
+      "genre": "DANCE SPEED"
     },
     {
       "name": "era (nostalmix)",
@@ -2642,6 +2645,25 @@
       "saHash": "O8qii6oiooPd8lbPqDo9QQioIoQQOoq0"
     },
     {
+      "name": "Jam & Marmalade",
+      "artist": "FinalOffset",
+      "bpm": "145",
+      "folder": "DDR SuperNOVA",
+      "charts": [
+        { "lvl": 1, "style": "single", "diffClass": "beginner" },
+        { "lvl": 3, "style": "single", "diffClass": "basic" },
+        { "lvl": 5, "style": "single", "diffClass": "difficult" },
+        { "lvl": 8, "style": "single", "diffClass": "expert" },
+        { "lvl": 4, "style": "double", "diffClass": "basic" },
+        { "lvl": 6, "style": "double", "diffClass": "difficult" },
+        { "lvl": 7, "style": "double", "diffClass": "expert" }
+      ],
+      "remyLink": "https://remywiki.com/Jam_%26_Marmalade",
+      "jacket": "banner/ddr_sn/Jam&Marmalade.jpg",
+      "genre": "WARP HOUSE",
+      "saHash": "IoI10obli6qd9DI699l61Pq16P9bboDd"
+    },
+    {
       "name": "Jam Jam Reggae",
       "artist": "jam master '73",
       "bpm": "90",
@@ -2674,25 +2696,6 @@
       ],
       "remyLink": "https://remywiki.com/Jam_Jam_Reggae_~AMD_SWING_MIX~",
       "jacket": "banner/ddr_3rd/Jam Jam Reggae ~AMD SWING MIX~.png"
-    },
-    {
-      "name": "Jam & Marmalade",
-      "artist": "FinalOffset",
-      "bpm": "145",
-      "folder": "DDR SuperNOVA",
-      "charts": [
-        { "lvl": 1, "style": "single", "diffClass": "beginner" },
-        { "lvl": 3, "style": "single", "diffClass": "basic" },
-        { "lvl": 5, "style": "single", "diffClass": "difficult" },
-        { "lvl": 8, "style": "single", "diffClass": "expert" },
-        { "lvl": 4, "style": "double", "diffClass": "basic" },
-        { "lvl": 6, "style": "double", "diffClass": "difficult" },
-        { "lvl": 7, "style": "double", "diffClass": "expert" }
-      ],
-      "remyLink": "https://remywiki.com/Jam_%26_Marmalade",
-      "jacket": "banner/ddr_sn/Jam&Marmalade.jpg",
-      "genre": "WARP HOUSE",
-      "saHash": "IoI10obli6qd9DI699l61Pq16P9bboDd"
     },
     {
       "name": "JANEJANA",
@@ -4393,7 +4396,8 @@
       ],
       "remyLink": "https://remywiki.com/SO_IN_LOVE",
       "jacket": "banner/ddr_ext/SO IN LOVE.png",
-      "saHash": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd"
+      "saHash": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd",
+      "genre": "70'S POP/JAZZ"
     },
     {
       "name": "SP-TRIP MACHINE (JUNGLE MIX)",
@@ -4409,7 +4413,7 @@
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
-      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE_~JUNGLE_MIX~",
+      "remyLink": "https://remywiki.com/SP-TRIP_MACHINE~JUNGLE_MIX~",
       "jacket": "banner/ddr_2nd/SP-TRIP MACHINE (JUNGLE MIX).png",
       "saHash": "1P9qQdiiodODqQPl0OO88iiiqdoDIPO6"
     },
@@ -5455,8 +5459,8 @@
         { "lvl": 3, "style": "single", "diffClass": "beginner" },
         { "lvl": 5, "style": "single", "diffClass": "basic" },
         { "lvl": 8, "style": "single", "diffClass": "difficult" },
-        { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 6, "style": "double", "diffClass": "basic" },
         { "lvl": 8, "style": "double", "diffClass": "difficult" },
         { "lvl": 9, "style": "double", "diffClass": "expert" },
@@ -5612,12 +5616,12 @@
         { "lvl": 1, "style": "single", "diffClass": "beginner" },
         { "lvl": 4, "style": "single", "diffClass": "basic" },
         { "lvl": 6, "style": "single", "diffClass": "difficult" },
-        { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 9, "style": "single", "diffClass": "expert" },
+        { "lvl": 8, "style": "single", "diffClass": "challenge" },
         { "lvl": 3, "style": "double", "diffClass": "basic" },
         { "lvl": 5, "style": "double", "diffClass": "difficult" },
-        { "lvl": 8, "style": "double", "diffClass": "challenge" },
-        { "lvl": 9, "style": "double", "diffClass": "expert" }
+        { "lvl": 9, "style": "double", "diffClass": "expert" },
+        { "lvl": 8, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/Kakumei",
       "jacket": "banner/ddrmax2/KAKUMEI.png",

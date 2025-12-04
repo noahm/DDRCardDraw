@@ -43,7 +43,7 @@ There are some other useful scripts in `scripts/` that help in maintaining data 
 # download latest StepManiaX song data and jackets
 yarn import:smx
 
-# download latest DDR A3 song data and jackets (blends data from ZIv, RemyWiki, skillattack)
+# download latest DDR song data and jackets (blends data from KONAMI official site, 3icecream, RemyWiki and ZIv)
 yarn import:ddr
 
 # import an ITG/StepMania song pack into card draw

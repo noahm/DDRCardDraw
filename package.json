@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Tools for music game tournaments and training",
   "engines": {
-    "node": "^22.14.0"
+    "node": "^24.0.0"
   },
   "scripts": {
     "start": "echo 'You also need to run `yarn start:backend` in another shell'; yarn start:frontend",
@@ -15,8 +15,8 @@
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "format": "prettier --experimental-cli --write ./src ./scripts",
-    "import:ddr": "node scripts/import-ddr-world.mjs",
-    "import:jubeat": "node scripts/import-jubeat.mjs",
+    "import:ddr": "node --experimental-strip-types scripts/import-ddr.mts",
+    "import:jubeat": "node --experimental-strip-types  scripts/import-jubeat.mts",
     "import:pump": "node scripts/import-pump.mjs",
     "import:sdvx": "node scripts/import-sdvx.mjs",
     "import:iidx": "node scripts/import-iidx.mjs",
@@ -38,14 +38,14 @@
   "license": "BSD-2-Clause",
   "prettier": {},
   "devDependencies": {
-    "@babel/core": "7.28.4",
+    "@babel/core": "7.28.5",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/plugin-transform-class-properties": "7.27.1",
-    "@babel/plugin-transform-optional-chaining": "7.27.1",
+    "@babel/plugin-transform-optional-chaining": "7.28.5",
     "@babel/plugin-transform-react-jsx": "7.27.1",
     "@babel/plugin-transform-react-jsx-source": "7.27.1",
-    "@babel/preset-env": "7.28.3",
-    "@babel/preset-typescript": "7.27.1",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-typescript": "7.28.5",
     "@blueprintjs/core": "6.3.2",
     "@blueprintjs/datetime": "6.0.6",
     "@blueprintjs/icons": "6.2.0",
@@ -63,7 +63,7 @@
     "@types/fuzzy-search": "2.1.5",
     "@types/inquirer": "9.0.7",
     "@types/jsdom": "27.0.0",
-    "@types/node": "22.14.1",
+    "@types/node": "24.10.1",
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
