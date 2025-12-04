@@ -70,28 +70,14 @@ export function sortSongs(songs: Song[], meta: GameData["meta"]) {
 }
 
 /**
- * @param {string} url
- * @returns {Promise<JSDOM | null>}
+ * Fetches and parses a URL into a JSDOM object, using the request queue
+ * @param url URL to fetch
  */
-async function getDomInternal(url: string): Promise<JSDOM | undefined> {
-  try {
-    console.log("fetching", url);
+export async function getDom(url: string): Promise<JSDOM> {
+  return await requestQueue.add(async () => {
     const req = await fetch(url);
     return new JSDOM(await req.text());
-  } catch (e) {
-    console.error("Caught error:", e);
-  }
-}
-
-const domForUrl: Record<string, JSDOM | undefined> = {};
-
-/**
- *
- * @param url
- */
-export async function getDom(url: string): Promise<JSDOM | undefined> {
-  if (domForUrl[url]) return domForUrl[url];
-  return (domForUrl[url] = await requestQueue.add(() => getDomInternal(url)));
+  });
 }
 
 /**
@@ -103,11 +89,12 @@ export async function writeJsonData(
   data: GameData,
   filePath: string,
   lastUpdated: number | undefined = undefined,
+  space?: number,
 ) {
   data.meta.lastUpdated = lastUpdated ?? Date.now();
   let formatted;
   try {
-    formatted = await format(JSON.stringify(data, null, 2), {
+    formatted = await format(JSON.stringify(data, null, space), {
       filepath: filePath,
     });
   } catch (e) {

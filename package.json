@@ -14,7 +14,7 @@
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "format": "prettier --experimental-cli --write ./src ./scripts",
     "import:ddr": "node --experimental-strip-types scripts/import-ddr.mts",
-    "import:jubeat": "node scripts/import-jubeat.mjs",
+    "import:jubeat": "node --experimental-strip-types  scripts/import-jubeat.mts",
     "import:pump": "node scripts/import-pump.mjs",
     "import:sdvx": "node scripts/import-sdvx.mjs",
     "import:iidx": "node scripts/import-iidx.mjs",
