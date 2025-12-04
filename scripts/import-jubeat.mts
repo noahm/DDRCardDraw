@@ -33,102 +33,107 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
       await readFile(targetFile, { encoding: "utf-8" }),
     );
 
-    // Fetch licensed songs
-    console.log("Fetching licensed songs from e-amusement GATE...");
-    const licensedImporter = new SongImporter(licensedSongUrl);
-    const licensedSongs = await licensedImporter.fetchSongs();
-    console.log(
-      `Fetched ${licensedSongs.length} licensed songs from e-amusement GATE`,
-    );
+    await Promise.all([
+      task("Licensed songs", async ({ setStatus, task }) => {
+        // Fetch licensed songs
+        setStatus("Fetching licensed songs from e-amusement GATE...");
+        const licensedImporter = new SongImporter(licensedSongUrl);
+        const licensedSongs = await licensedImporter.fetchSongs(task);
+        console.log(
+          `Fetched ${licensedSongs.length} licensed songs from e-amusement GATE`,
+        );
 
-    // Process licensed songs
-    console.log("Processing all licensed songs...");
-    for (const fetchedSong of licensedSongs as ((typeof licensedSongs)[number] &
-      Partial<Song>)[]) {
-      const existingSong = existingData.songs.find((s) =>
-        licensedImporter.songEquals(s, fetchedSong),
-      );
+        // Process licensed songs
+        setStatus("Processing all licensed songs...");
+        for (const fetchedSong of licensedSongs as ((typeof licensedSongs)[number] &
+          Partial<Song>)[]) {
+          const existingSong = existingData.songs.find((s) =>
+            licensedImporter.songEquals(s, fetchedSong),
+          );
 
-      if (existingSong) {
-        await tryGetMetaFromRemy(existingSong, "Jubeat");
-        licensedImporter.merge(existingSong, fetchedSong);
-      } else {
-        console.log(`Adding new licensed song: ${fetchedSong.name}`);
-        await tryGetMetaFromRemy(fetchedSong, "Jubeat");
-        const jacket = fetchedSong.jacketUrl
-          ? downloadJacket(
-              fetchedSong.jacketUrl,
-              `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
-            )
-          : "";
+          if (existingSong) {
+            await tryGetMetaFromRemy(existingSong, "Jubeat");
+            licensedImporter.merge(existingSong, fetchedSong);
+          } else {
+            console.log(`Adding new licensed song: ${fetchedSong.name}`);
+            await tryGetMetaFromRemy(fetchedSong, "Jubeat");
+            const jacket = fetchedSong.jacketUrl
+              ? downloadJacket(
+                  fetchedSong.jacketUrl,
+                  `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
+                )
+              : "";
 
-        const newSong: Song = {
-          name: fetchedSong.name,
-          artist: fetchedSong.artist || "",
-          folder: existingData.meta.folders?.at(-1),
-          saHash: fetchedSong.saHash,
-          bpm: fetchedSong.bpm || "???",
-          charts: fetchedSong.charts,
-          remyLink: fetchedSong.remyLink,
-          jacket,
-          flags: ["licensed"],
-        };
+            const newSong: Song = {
+              name: fetchedSong.name,
+              artist: fetchedSong.artist || "",
+              folder: existingData.meta.folders?.at(-1),
+              saHash: fetchedSong.saHash,
+              bpm: fetchedSong.bpm || "???",
+              charts: fetchedSong.charts,
+              remyLink: fetchedSong.remyLink,
+              jacket,
+              flags: ["licensed"],
+            };
 
-        existingData.songs.push(newSong);
-      }
-    }
+            existingData.songs.push(newSong);
+          }
+        }
+        setStatus(
+          `Licensed songs from e-amusement GATE: ${licensedSongs.length}`,
+        );
+      }),
+      task("Original songs", async ({ setStatus, task }) => {
+        // Fetch original songs
+        setStatus("Fetching original songs from e-amusement GATE...");
+        const originalImporter = new SongImporter(originalSongUrl);
+        const originalSongs = await originalImporter.fetchSongs(task);
+        console.log(
+          `Fetched ${originalSongs.length} original songs from e-amusement GATE`,
+        );
+
+        // Process original songs
+        setStatus("Processing all original songs...");
+        for (const fetchedSong of originalSongs as ((typeof originalSongs)[number] &
+          Partial<Song>)[]) {
+          const existingSong = existingData.songs.find((s) =>
+            originalImporter.songEquals(s, fetchedSong),
+          );
+
+          if (existingSong) {
+            await tryGetMetaFromRemy(existingSong, "Jubeat");
+            originalImporter.merge(existingSong, fetchedSong);
+          } else {
+            console.log(`Adding new original song: ${fetchedSong.name}`);
+            await tryGetMetaFromRemy(fetchedSong, "Jubeat");
+            const jacket = fetchedSong.jacketUrl
+              ? downloadJacket(
+                  fetchedSong.jacketUrl,
+                  `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
+                )
+              : "";
+
+            const newSong: Song = {
+              name: fetchedSong.name,
+              artist: fetchedSong.artist || "",
+              folder: existingData.meta.folders?.at(-1),
+              saHash: fetchedSong.saHash,
+              bpm: fetchedSong.bpm || "???",
+              charts: fetchedSong.charts,
+              remyLink: fetchedSong.remyLink,
+              jacket,
+            };
+
+            existingData.songs.push(newSong);
+          }
+        }
+        setStatus(
+          `Original songs from e-amusement GATE: ${originalSongs.length}`,
+        );
+      }),
+    ]);
+
     await requestQueue.onIdle();
-    console.log(
-      `Licensed songs from e-amusement GATE: ${licensedSongs.length}`,
-    );
-
-    // Fetch original songs
-    console.log("Fetching original songs from e-amusement GATE...");
-    const originalImporter = new SongImporter(originalSongUrl);
-    const originalSongs = await originalImporter.fetchSongs();
-    console.log(
-      `Fetched ${originalSongs.length} original songs from e-amusement GATE`,
-    );
-
-    // Process original songs
-    console.log("Processing all original songs...");
-    for (const fetchedSong of originalSongs as ((typeof originalSongs)[number] &
-      Partial<Song>)[]) {
-      const existingSong = existingData.songs.find((s) =>
-        originalImporter.songEquals(s, fetchedSong),
-      );
-
-      if (existingSong) {
-        await tryGetMetaFromRemy(existingSong, "Jubeat");
-        originalImporter.merge(existingSong, fetchedSong);
-      } else {
-        console.log(`Adding new original song: ${fetchedSong.name}`);
-        await tryGetMetaFromRemy(fetchedSong, "Jubeat");
-        const jacket = fetchedSong.jacketUrl
-          ? downloadJacket(
-              fetchedSong.jacketUrl,
-              `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
-            )
-          : "";
-
-        const newSong: Song = {
-          name: fetchedSong.name,
-          artist: fetchedSong.artist || "",
-          folder: existingData.meta.folders?.at(-1),
-          saHash: fetchedSong.saHash,
-          bpm: fetchedSong.bpm || "???",
-          charts: fetchedSong.charts,
-          remyLink: fetchedSong.remyLink,
-          jacket,
-        };
-
-        existingData.songs.push(newSong);
-      }
-    }
-    await requestQueue.onIdle();
-    console.log(
-      `Original songs from e-amusement GATE: ${originalSongs.length}`,
-    );
 
     // Sort songs
     existingData.songs = sortSongs(existingData.songs, existingData.meta);
