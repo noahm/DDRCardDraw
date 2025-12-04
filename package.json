@@ -23,7 +23,7 @@
     "import:ongeki": "node --experimental-strip-types scripts/import-ongeki.mts",
     "import:sdvx": "node scripts/import-sdvx.mjs",
     "import:iidx": "node scripts/import-iidx.mjs",
-    "import:smx": "node scripts/import-smx.mjs",
+    "import:smx": "node --experimental-strip-types scripts/import-smx.mts",
     "import:itg": "node scripts/import-itg.mjs",
     "import:eventList": "node scripts/event-filter.mjs",
     "validate": "npm run validate:json && npm run validate:ts && npm run validate:format && npm run validate:lint",
