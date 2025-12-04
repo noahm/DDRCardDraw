@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1762744816215
+    "lastUpdated": 1764833681001
   },
   "defaults": {
     "style": "single",
@@ -320,7 +320,6 @@
           "sanbaiTier": 18.5
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/1116",
       "jacket": "ddr_world/1116.jpg",
       "genre": "BREAKBEATS",
@@ -6615,6 +6614,64 @@
       "genre": "CONTEMPORARY NATION"
     },
     {
+      "name": "BIGソムタム",
+      "name_translation": "BIG Som Tam",
+      "artist": "AJURIKA",
+      "saHash": "66P0q8Ibddl9q669b6bD6Ood9IOQbDPI",
+      "bpm": "187",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/BIGソムタム.jpg",
+      "remyLink": "https://remywiki.com/BIG_som_tam",
+      "genre": "DRUMSTEP"
+    },
+    {
       "name": "BITTER CHOCOLATE STRIKER",
       "artist": "L.E.D.-G",
       "bpm": "165",
@@ -8472,6 +8529,12 @@
           "sanbaiTier": 12.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 217,
           "lvl": 5,
           "style": "double",
@@ -8491,6 +8554,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/BROKEN_MY_HEART",
@@ -12441,6 +12510,65 @@
       "saIndex": "1157"
     },
     {
+      "name": "CUE CUE RESCUE",
+      "artist": "TORIENA",
+      "saHash": "od0idqqoq6lb9qIo9iOblo6D8q18DQDb",
+      "bpm": "160",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"]
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"]
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/CUE CUE RESCUE.jpg",
+      "remyLink": "https://remywiki.com/CUE_CUE_RESCUE",
+      "genre": "EMERGENCY CORE"
+    },
+    {
       "name": "Curry Up",
       "artist": "OR-IF-IS",
       "bpm": "165",
@@ -12848,6 +12976,12 @@
           "sanbaiTier": 11.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 138,
           "freeze": 4,
           "lvl": 4,
@@ -12869,6 +13003,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.65
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/D2R",
@@ -15842,6 +15982,62 @@
       "saIndex": "593"
     },
     {
+      "name": "Din Don Dan (にじさんじダンス部 ver.)",
+      "artist": "レイン・パターソン & 山神カルタ & 東堂コハク",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 3
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "remyLink": "https://remywiki.com/Din_Don_Dan_(Nijisanji_Dance-bu_ver.)",
+      "jacket": "ddr_world/Din Don Dan (にじさんじダンス部 ver.).jpg",
+      "saHash": "Ob8Q19QldDliP6qddP1o1ODP91bd1oQl"
+    },
+    {
       "name": "dirty digital",
       "artist": "kors k",
       "bpm": "140",
@@ -16592,6 +16788,12 @@
           "sanbaiTier": 11.65
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 248,
           "freeze": 1,
           "lvl": 9,
@@ -16614,6 +16816,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Dragon_Blade",
@@ -22692,6 +22900,12 @@
           "sanbaiTier": 8.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 108,
           "freeze": 5,
           "lvl": 4,
@@ -22714,6 +22928,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 8.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Funk_Boogie",
@@ -23014,6 +23234,12 @@
           "sanbaiTier": 12.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 152,
           "lvl": 5,
           "style": "double",
@@ -23033,6 +23259,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.6
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Gamelan_de_Couple",
@@ -26985,7 +27217,6 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.55
         },
         {
@@ -27010,7 +27241,6 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.2
         }
       ],
@@ -32520,6 +32750,12 @@
           "sanbaiTier": 10.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 181,
           "lvl": 5,
           "style": "double",
@@ -32539,6 +32775,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/La_Senorita",
@@ -39620,6 +39862,7 @@
         }
       ],
       "jacket": "ddr_world/New Millennium Pt.2.jpg",
+      "remyLink": "https://remywiki.com/New_Millennium_Pt.2",
       "saHash": "dlbqIDqQiolDo6qdoQli6OO9lQolP6Iq",
       "flags": ["unlock"]
     },
@@ -40448,6 +40691,12 @@
           "sanbaiTier": 13.45
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 175,
           "freeze": 3,
           "lvl": 5,
@@ -40470,6 +40719,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.6
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/No.13",
@@ -40598,6 +40853,62 @@
       ],
       "jacket": "ddr_a3/Not Alone.jpg",
       "remyLink": "https://remywiki.com/Not_Alone"
+    },
+    {
+      "name": "O JIYA",
+      "artist": "ASMAT & emi",
+      "saHash": "I98DbDO1OqIPD9Q608DqoO1I6Iqi1ddo",
+      "bpm": "151",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/O JIYA.jpg",
+      "remyLink": "https://remywiki.com/O_JIYA"
     },
     {
       "name": "oarfish",
@@ -41044,7 +41355,6 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.1
         },
         {
@@ -41069,7 +41379,6 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.05
         }
       ],
@@ -45933,6 +46242,12 @@
           "sanbaiTier": 11.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 133,
           "freeze": 21,
           "lvl": 5,
@@ -45955,6 +46270,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.8
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Quick_Master",
@@ -49163,7 +49484,6 @@
           "sanbaiTier": 15.2
         }
       ],
-      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Sahara",
       "jacket": "ddr_world/Sahara.jpg",
       "saHash": "qlQbI6dQ8i1iOO1oPbOoQ9b6ODII08Qb"
@@ -52328,6 +52648,7 @@
         }
       ],
       "jacket": "ddr_world/SkyDrive! (HASEKO EUROBEAT MIX).jpg",
+      "remyLink": "https://remywiki.com/SkyDrive!_(HASEKO_EUROBEAT_MIX)",
       "saHash": "bPI6QobOQl9Q161l8l68069QdO1QbO9b",
       "search_hint": "SkyDrive HASEKO EUROBEAT MIX",
       "flags": ["grandPrixPack"]
@@ -66541,6 +66862,12 @@
           "sanbaiTier": 10.8
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 184,
           "lvl": 5,
           "style": "double",
@@ -66560,6 +66887,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.65
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/WILD_RUSH",
@@ -71825,6 +72158,12 @@
           "sanbaiTier": 9.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 135,
           "freeze": 3,
           "lvl": 4,
@@ -71847,6 +72186,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 9.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Kagerou",
@@ -72594,6 +72939,55 @@
       "search_hint": "CONTEMPORARY NATION 2/コンテンポラリーネイション2"
     },
     {
+      "name": "シャムシールの舞",
+      "name_translation": "Shamshir no Mai",
+      "artist": "Zektbach",
+      "saHash": "i6bb1iQb8qObPd09dOlibbdqb91Q0OOb",
+      "bpm": "100-154",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/シャムシールの舞.jpg",
+      "remyLink": "https://remywiki.com/Shamshir_no_mai",
+      "genre": "BATTLE DANCE/バトルダンス",
+      "search_hint": "しゃむしーるのまい"
+    },
+    {
       "name": "シュレーディンガーの猫",
       "name_translation": "Schrodinger no Neko",
       "artist": "Cait Sith",
@@ -73263,6 +73657,7 @@
       ],
       "flags": ["copyStrikes"],
       "jacket": "ddr_world/チルノのパーフェクトさんすう学園.jpg",
+      "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_gakuen",
       "saHash": "8P1809bo8PoqQoqOQilPidOdobbo6iiO"
     },
     {
@@ -75970,6 +76365,64 @@
       "saHash": "0ddPq801D8PiiqO1oqoQbdOIQ9lQl11o",
       "saIndex": "568",
       "search_hint": "青春剛速球メタル"
+    },
+    {
+      "name": "ミカヅキ:コネクト",
+      "name_translation": "Mirazuki Connect",
+      "artist": "かゆき",
+      "artist_translation": "Kayuki",
+      "saHash": "8PIO18IQqIoODlD8866Dd0I0OD8lb9ol",
+      "bpm": "160",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/ミカヅキコネクト.jpg",
+      "remyLink": "https://remywiki.com/Mikazuki:connect"
     },
     {
       "name": "ミッドナイト☆WAR",
@@ -81657,6 +82110,62 @@
       "saIndex": "693"
     },
     {
+      "name": "打打打打打打打打打打 (にじさんじダンス部 ver.)",
+      "artist": "長尾景 & 倉持めると & セラフ・ダズルガーデン",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "remyLink": "https://remywiki.com/Dadadadadadadadadada_(Nijisanji_Dance-bu_ver.)",
+      "jacket": "ddr_world/打打打打打打打打打打 (にじさんじダンス部 ver.).jpg",
+      "saHash": "Iq6olol00o1q66l61QIDdl6biq8OoIoQ"
+    },
+    {
       "name": "斑咲花",
       "name_translation": "Murasakibana",
       "artist": "mami,駄々子 by BEMANI Sound Team \"Akhuta Works\"",
@@ -82007,62 +82516,6 @@
       "search_hint": "Seiza ga koishita shunkan wo",
       "saHash": "ld8lOqloqD6lOl880ldDo819bDb9q1Qi",
       "saIndex": "803"
-    },
-    {
-      "name": "春を告げる",
-      "name_translation": "Haru wo tsugeru",
-      "artist": "yama",
-      "bpm": "120",
-      "folder": "DanceDanceRevolution A20 PLUS",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "beginner",
-          "sanbaiTier": 3.45
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "basic",
-          "sanbaiTier": 5.5
-        },
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.4
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 11.25
-        },
-        {
-          "lvl": 4,
-          "style": "double",
-          "diffClass": "basic",
-          "sanbaiTier": 4.6
-        },
-        {
-          "lvl": 8,
-          "style": "double",
-          "diffClass": "difficult",
-          "sanbaiTier": 8.35
-        },
-        {
-          "lvl": 10,
-          "style": "double",
-          "diffClass": "expert",
-          "sanbaiTier": 10.4
-        }
-      ],
-      "remyLink": "https://remywiki.com/Haru_wo_tsugeru",
-      "jacket": "ddr_a20plus/Haru wo tsugeru.jpg",
-      "genre": "",
-      "saHash": "IObPQb9QlP0iIiboObPoPqIqDo0O11Qi",
-      "saIndex": "980"
     },
     {
       "name": "春風ブローインウィンド",
@@ -82452,6 +82905,64 @@
       "remyLink": "https://remywiki.com/Tsuki_ni_murakumo_hana_ni_kaze",
       "jacket": "ddr_world/Tsuki ni murakumo hana ni kaze.jpg",
       "saHash": "QQ8IoPqdIb61D8o886oo8b6didDIPqql"
+    },
+    {
+      "name": "月光乱舞",
+      "name_translation": "Gekkou Ranbu",
+      "artist": "P*Light",
+      "saHash": "8D0OOb0bi90oi1Io9iIqqiI9110ll8I1",
+      "bpm": "186",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/月光乱舞.jpg",
+      "remyLink": "https://remywiki.com/Gekkou_ranbu",
+      "search_hint": "げっこうらんぶ"
     },
     {
       "name": "月光蝶",
@@ -82924,6 +83435,55 @@
       "saHash": "8IQIld8DI9OPD00dqio1lDQ1bq6Q6P6D"
     },
     {
+      "name": "朱と碧のランページ",
+      "name_translation": "Aka to Ao no Rampage",
+      "artist": "NU-KO",
+      "saHash": "d6Doi9oi600lP9lI9iiO8q68li8iOO8D",
+      "bpm": "178",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/朱と碧のランページ.jpg",
+      "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage",
+      "genre": "ANIMA SONG",
+      "search_hint": "あかとあおのらんぺーじ"
+    },
+    {
       "name": "東京神話",
       "name_translation": "Tokyo shinwa",
       "artist": "DJ TECHNORCH feat.宇宙★海月 vs BEMANI Sound Team \"U1-ASAMi\"",
@@ -83290,6 +83850,54 @@
       "jacket": "ddr_world/Zanzou ni tsunagareta tsuioku no HIDEAWAY.jpg",
       "genre": "HYPER DIG!ROCK",
       "saHash": "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1"
+    },
+    {
+      "name": "水槽のクジラ",
+      "name_translation": "Suisou no Kujira",
+      "artist": "テヅカ feat. 大西あみみ",
+      "saHash": "Po8qD6i6io866qdQ00QbbO0i9I1qIO0O",
+      "bpm": "206",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/水槽のクジラ.jpg",
+      "remyLink": "https://remywiki.com/Suisou_no_kujira",
+      "search_hint": "すいそうのくじら"
     },
     {
       "name": "海神",
@@ -87606,6 +88214,7 @@
         }
       ],
       "jacket": "ddr_world/鳳 (Five Flares Mix).jpg",
+      "remyLink": "https://remywiki.com/Hou_(Five_Flares_Mix)",
       "saHash": "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
       "flags": ["unlock"]
     },

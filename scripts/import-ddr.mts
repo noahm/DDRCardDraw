@@ -128,12 +128,12 @@ try {
           const newSong: Song = {
             name: worldSong.name,
             artist: worldSong.artist || "",
+            saHash: worldSong.saHash,
             bpm: worldSong.bpm || "???",
             folder: "DanceDanceRevolution World",
             charts: worldSong.charts,
             remyLink: worldSong.remyLink,
             jacket: worldSong.jacket,
-            saHash: worldSong.saHash,
           };
 
           existingData.songs.push(newSong);
@@ -192,12 +192,12 @@ try {
             name: sanbaiSong.name,
             name_translation: sanbaiSong.name_translation,
             artist: sanbaiSong.artist || "???",
+            saHash: sanbaiSong.saHash,
             bpm: sanbaiSong.bpm || "???",
             charts: sanbaiSong.charts,
             flags: sanbaiSong.flags,
             jacket: sanbaiSong.jacket,
             remyLink: sanbaiSong.remyLink,
-            saHash: sanbaiSong.saHash,
             search_hint: sanbaiSong.search_hint,
           });
         }
@@ -210,8 +210,12 @@ try {
       `Songs from 3icecream (except deleted): ${fetchedSongs.filter((s) => !s.deleted).length}`,
     );
 
-    lastUpdated = (await import("./scraping/songdata.mjs"))
-      .SONG_DATA_LAST_UPDATED_unixms;
+    // @ts-ignore: This file is dynamic import
+    lastUpdated = (
+      (await import("./scraping/sanbai/songdata.mjs")) as {
+        SONG_DATA_LAST_UPDATED_unixms: number;
+      }
+    ).SONG_DATA_LAST_UPDATED_unixms;
   }
 
   if (MIX_META.ziv) {

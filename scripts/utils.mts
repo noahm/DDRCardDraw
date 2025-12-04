@@ -1,18 +1,19 @@
-import { promises, existsSync, mkdirSync } from "node:fs";
-import { resolve, basename, join, dirname } from "path";
+import { existsSync, mkdirSync } from "node:fs";
+import { stat, writeFile } from "node:fs/promises";
+import { globalAgent as httpAgent } from "node:http";
+import { globalAgent as httpsAgent } from "node:https";
+import { resolve, basename, join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { format } from "prettier";
 import PQueue from "p-queue";
 import { Jimp, ResizeStrategy } from "jimp";
 import BottomBar from "inquirer/lib/ui/bottom-bar.js";
 import sanitize from "sanitize-filename";
 import { JSDOM } from "jsdom";
-import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import CacheableLookup from "cacheable-lookup";
-import { globalAgent as httpAgent } from "http";
-import { globalAgent as httpsAgent } from "https";
 
 import type { GameData, Song } from "../src/models/SongData.ts";
 
@@ -21,6 +22,19 @@ import type { GameData, Song } from "../src/models/SongData.ts";
   const dnsCache = new CacheableLookup();
   dnsCache.install(httpAgent);
   dnsCache.install(httpsAgent);
+}
+
+/**
+ * Returns whether a file or folder exists asynchronously
+ * @param path file or folder path
+ */
+export async function exists(path: string): Promise<boolean> {
+  try {
+    const s = await stat(path);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -99,7 +113,7 @@ export async function writeJsonData(
   } catch (e) {
     throw new Error("Formatting failed", { cause: e });
   }
-  return promises.writeFile(filePath, formatted);
+  return writeFile(filePath, formatted);
 }
 
 /** @type {PQueue} */
