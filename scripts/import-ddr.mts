@@ -128,12 +128,12 @@ try {
           const newSong: Song = {
             name: worldSong.name,
             artist: worldSong.artist || "",
+            saHash: worldSong.saHash,
             bpm: worldSong.bpm || "???",
             folder: "DanceDanceRevolution World",
             charts: worldSong.charts,
             remyLink: worldSong.remyLink,
             jacket: worldSong.jacket,
-            saHash: worldSong.saHash,
           };
 
           existingData.songs.push(newSong);
@@ -192,12 +192,12 @@ try {
             name: sanbaiSong.name,
             name_translation: sanbaiSong.name_translation,
             artist: sanbaiSong.artist || "???",
+            saHash: sanbaiSong.saHash,
             bpm: sanbaiSong.bpm || "???",
             charts: sanbaiSong.charts,
             flags: sanbaiSong.flags,
             jacket: sanbaiSong.jacket,
             remyLink: sanbaiSong.remyLink,
-            saHash: sanbaiSong.saHash,
             search_hint: sanbaiSong.search_hint,
           });
         }

@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1764239417273
+    "lastUpdated": 1764833681001
   },
   "defaults": {
     "style": "single",
@@ -6614,6 +6614,64 @@
       "genre": "CONTEMPORARY NATION"
     },
     {
+      "name": "BIGソムタム",
+      "name_translation": "BIG Som Tam",
+      "artist": "AJURIKA",
+      "saHash": "66P0q8Ibddl9q669b6bD6Ood9IOQbDPI",
+      "bpm": "187",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/BIGソムタム.jpg",
+      "remyLink": "https://remywiki.com/BIG_som_tam",
+      "genre": "DRUMSTEP"
+    },
+    {
       "name": "BITTER CHOCOLATE STRIKER",
       "artist": "L.E.D.-G",
       "bpm": "165",
@@ -12450,6 +12508,65 @@
       "jacket": "ddr_a3/Crystarium.jpg",
       "saHash": "oP8iIdilQ0QiDllqDbDIOl0iQPd9PQ9I",
       "saIndex": "1157"
+    },
+    {
+      "name": "CUE CUE RESCUE",
+      "artist": "TORIENA",
+      "saHash": "od0idqqoq6lb9qIo9iOblo6D8q18DQDb",
+      "bpm": "160",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"]
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"]
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/CUE CUE RESCUE.jpg",
+      "remyLink": "https://remywiki.com/CUE_CUE_RESCUE",
+      "genre": "EMERGENCY CORE"
     },
     {
       "name": "Curry Up",
@@ -40736,6 +40853,62 @@
       ],
       "jacket": "ddr_a3/Not Alone.jpg",
       "remyLink": "https://remywiki.com/Not_Alone"
+    },
+    {
+      "name": "O JIYA",
+      "artist": "ASMAT & emi",
+      "saHash": "I98DbDO1OqIPD9Q608DqoO1I6Iqi1ddo",
+      "bpm": "151",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/O JIYA.jpg",
+      "remyLink": "https://remywiki.com/O_JIYA"
     },
     {
       "name": "oarfish",
@@ -72766,6 +72939,55 @@
       "search_hint": "CONTEMPORARY NATION 2/コンテンポラリーネイション2"
     },
     {
+      "name": "シャムシールの舞",
+      "name_translation": "Shamshir no Mai",
+      "artist": "Zektbach",
+      "saHash": "i6bb1iQb8qObPd09dOlibbdqb91Q0OOb",
+      "bpm": "100-154",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/シャムシールの舞.jpg",
+      "remyLink": "https://remywiki.com/Shamshir_no_mai",
+      "genre": "BATTLE DANCE/バトルダンス",
+      "search_hint": "しゃむしーるのまい"
+    },
+    {
       "name": "シュレーディンガーの猫",
       "name_translation": "Schrodinger no Neko",
       "artist": "Cait Sith",
@@ -76143,6 +76365,64 @@
       "saHash": "0ddPq801D8PiiqO1oqoQbdOIQ9lQl11o",
       "saIndex": "568",
       "search_hint": "青春剛速球メタル"
+    },
+    {
+      "name": "ミカヅキ:コネクト",
+      "name_translation": "Mirazuki Connect",
+      "artist": "かゆき",
+      "artist_translation": "Kayuki",
+      "saHash": "8PIO18IQqIoODlD8866Dd0I0OD8lb9ol",
+      "bpm": "160",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/ミカヅキコネクト.jpg",
+      "remyLink": "https://remywiki.com/Mikazuki:connect"
     },
     {
       "name": "ミッドナイト☆WAR",
@@ -82627,6 +82907,64 @@
       "saHash": "QQ8IoPqdIb61D8o886oo8b6didDIPqql"
     },
     {
+      "name": "月光乱舞",
+      "name_translation": "Gekkou Ranbu",
+      "artist": "P*Light",
+      "saHash": "8D0OOb0bi90oi1Io9iIqqiI9110ll8I1",
+      "bpm": "186",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/月光乱舞.jpg",
+      "remyLink": "https://remywiki.com/Gekkou_ranbu",
+      "search_hint": "げっこうらんぶ"
+    },
+    {
       "name": "月光蝶",
       "name_translation": "Gekkou chou",
       "artist": "あさき",
@@ -83097,6 +83435,55 @@
       "saHash": "8IQIld8DI9OPD00dqio1lDQ1bq6Q6P6D"
     },
     {
+      "name": "朱と碧のランページ",
+      "name_translation": "Aka to Ao no Rampage",
+      "artist": "NU-KO",
+      "saHash": "d6Doi9oi600lP9lI9iiO8q68li8iOO8D",
+      "bpm": "178",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/朱と碧のランページ.jpg",
+      "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage",
+      "genre": "ANIMA SONG",
+      "search_hint": "あかとあおのらんぺーじ"
+    },
+    {
       "name": "東京神話",
       "name_translation": "Tokyo shinwa",
       "artist": "DJ TECHNORCH feat.宇宙★海月 vs BEMANI Sound Team \"U1-ASAMi\"",
@@ -83463,6 +83850,54 @@
       "jacket": "ddr_world/Zanzou ni tsunagareta tsuioku no HIDEAWAY.jpg",
       "genre": "HYPER DIG!ROCK",
       "saHash": "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1"
+    },
+    {
+      "name": "水槽のクジラ",
+      "name_translation": "Suisou no Kujira",
+      "artist": "テヅカ feat. 大西あみみ",
+      "saHash": "Po8qD6i6io866qdQ00QbbO0i9I1qIO0O",
+      "bpm": "206",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/水槽のクジラ.jpg",
+      "remyLink": "https://remywiki.com/Suisou_no_kujira",
+      "search_hint": "すいそうのくじら"
     },
     {
       "name": "海神",

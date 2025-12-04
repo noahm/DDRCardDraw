@@ -77,14 +77,58 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ]),
   // #endregion グランプリ譜面パックvol.5
-  // #region スペシャル楽曲パック feat.jubeat vol.3, グランプリ楽曲パックvol.33＆vol.34 (unlocked at 2025-11-28)
-  ...[
-    "006i1i6OOl1bPdql9ID8o6QQ6IIiqP0P", // 1116
-    "qlQbI6dQ8i1iOO1oPbOoQ9b6ODII08Qb", // Sahara
-    "ODli9liO1loIiqb9qIol6o1PO91DP8QQ", // High & Low
-    "Dl91ldlb8PODoO96OI801DP0PPl8Plqi", // ONYX
-  ].map<[string, Partial<SanbaiSong>]>((s) => [s, { lock_types: undefined }]),
-  // #endregion スペシャル楽曲パック feat.jubeat vol.3, グランプリ楽曲パックvol.33＆vol.34 (unlocked at 2025-11-28)
+  // #region EXTRA SAVIOR WORLD (BEMANI SELECTION vol.3)
+  [
+    "66P0q8Ibddl9q669b6bD6Ood9IOQbDPI", // BIGソムタム
+    {
+      ratings: [3, 6, 11, 16, 17, 6, 11, 16, 17],
+      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+    },
+  ],
+  [
+    "od0idqqoq6lb9qIo9iOblo6D8q18DQDb", // CUE CUE RESCUE
+    {
+      ratings: [2, 4, 11, 15, 17, 4, 11, 15, 17],
+      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+    },
+  ],
+  [
+    "I98DbDO1OqIPD9Q608DqoO1I6Iqi1ddo", // O JIYA
+    {
+      ratings: [2, 4, 9, 13, 16, 4, 9, 13, 17],
+      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+    },
+  ],
+  [
+    "i6bb1iQb8qObPd09dOlibbdqb91Q0OOb", // シャムシールの舞
+    {
+      ratings: [3, 6, 10, 15, 0, 5, 10, 15, 0],
+      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+    },
+  ],
+  [
+    "8PIO18IQqIoODlD8866Dd0I0OD8lb9ol", // ミカヅキ:コネクト
+    {
+      ratings: [3, 7, 11, 15, 18, 7, 11, 15, 18],
+      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+    },
+  ],
+  [
+    "8D0OOb0bi90oi1Io9iIqqiI9110ll8I1", // 月光乱舞
+    {
+      ratings: [3, 8, 12, 15, 18, 8, 12, 15, 18],
+      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+    },
+  ],
+  [
+    "d6Doi9oi600lP9lI9iiO8q68li8iOO8D", // 朱と碧のランページ
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
+  [
+    "Po8qD6i6io866qdQ00QbbO0i9I1qIO0O", // 水槽のクジラ
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ],
+  // #endregion EXTRA SAVIOR WORLD (BEMANI SELECTION vol.3)
 ]);
 
 type SanbaiSongData = Pick<
