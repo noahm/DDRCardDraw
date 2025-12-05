@@ -55,7 +55,7 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
             console.log(`Adding new licensed song: ${fetchedSong.name}`);
             await tryGetMetaFromRemy(fetchedSong, "Jubeat");
             const jacket = fetchedSong.jacketUrl
-              ? downloadJacket(
+              ? await downloadJacket(
                   fetchedSong.jacketUrl,
                   `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
                 )
@@ -102,7 +102,7 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
             console.log(`Adding new original song: ${fetchedSong.name}`);
             await tryGetMetaFromRemy(fetchedSong, "Jubeat");
             const jacket = fetchedSong.jacketUrl
-              ? downloadJacket(
+              ? await downloadJacket(
                   fetchedSong.jacketUrl,
                   `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
                 )

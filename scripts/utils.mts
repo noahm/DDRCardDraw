@@ -154,46 +154,12 @@ function createParentFolderIfNeeded(absoluteImgPath: string) {
 }
 
 /**
- * @param coverUrl url of image to fetch
- * @param localFilename override filename found in url
- *
- * queues a cover path for download into the imageQueue.
- * Always skips if file already exists.
- * Immediately returns the relative path to the jacket where it will be saved
- */
-export function downloadJacket(
-  coverUrl: string,
-  localFilename: string | undefined = undefined,
-) {
-  const { absolute, relative } = getOutputPath(coverUrl, localFilename);
-  if (!existsSync(absolute)) {
-    createParentFolderIfNeeded(absolute);
-    requestQueue
-      .add(() => {
-        console.log("fetching", coverUrl);
-        return Jimp.read(coverUrl);
-      })
-      .then((img) =>
-        img
-          .resize({ w: 128, mode: ResizeStrategy.BILINEAR })
-          .write(absolute, { quality: 80 }),
-      )
-      .catch((e) => {
-        console.error("image download failure for", coverUrl);
-        e.cause ? console.error(e.cause) : console.error(e);
-      });
-  }
-
-  return relative;
-}
-
-/**
  * Queues a cover path for download into the imageQueue.
  * Immediately returns the relative path to the jacket where it will be saved
  * @param coverUrl url of image to fetch
  * @param localFilename override filename found in url
  */
-export async function downloadJacketAsync(
+export async function downloadJacket(
   coverUrl: string,
   localFilename: string | undefined = undefined,
 ) {

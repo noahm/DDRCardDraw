@@ -1,4 +1,4 @@
-import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import type { Chart, Song } from "../../src/models/SongData.ts";
 import { downloadJacket, getDom } from "../utils.mts";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 
@@ -357,15 +357,15 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
 
     // Try to get jacket from e-amusement GATE
     if (!existingSong.jacket && fetchedSong.saHash) {
-      const jacket = downloadJacket(
-        fetchedSong.getJacketUrl(),
-        existingSong.name,
+      downloadJacket(fetchedSong.getJacketUrl(), existingSong.name).then(
+        (jacket) => {
+          if (jacket) {
+            console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+            existingSong.jacket = jacket;
+            hasUpdates = true;
+          }
+        },
       );
-      if (jacket) {
-        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
-        existingSong.jacket = jacket;
-        hasUpdates = true;
-      }
     }
 
     // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)

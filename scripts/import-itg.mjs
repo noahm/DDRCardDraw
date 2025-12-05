@@ -1,8 +1,8 @@
 import { parsePack } from "simfile-parser";
 import {
-  writeJsonData,
   downloadJacket,
   unlockRequestConcurrency,
+  writeJsonData,
 } from "./utils.mts";
 import { resolve, join, basename, extname, dirname } from "path";
 import { existsSync, readdirSync } from "fs";
@@ -110,7 +110,10 @@ for (const parsedSong of pack.simfiles) {
   const { bg, banner, jacket, titleDir } = parsedSong.title;
   let finalJacket = getBestJacket([jacket, bg, banner], titleDir);
   if (finalJacket) {
-    finalJacket = downloadJacket(finalJacket, getFinalJacketPath(titleDir));
+    finalJacket = await downloadJacket(
+      finalJacket,
+      getFinalJacketPath(titleDir),
+    );
   }
 
   let bpm = parsedSong.displayBpm;

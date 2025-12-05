@@ -1,5 +1,5 @@
 import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
-import { getDom, downloadJacket } from "../utils.mts";
+import { downloadJacket, getDom } from "../utils.mts";
 import type { DDRSongImporter, DDRSourceMeta } from "./ddr-sources.mts";
 
 type ZivSongData = Pick<
@@ -279,12 +279,13 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
       if (!jacketUrl) {
         return hasUpdates;
       }
-      const jacket = downloadJacket(jacketUrl, fetchedSong.name);
-      if (jacket) {
-        existingSong.jacket = jacket;
-        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
-        hasUpdates = true;
-      }
+      downloadJacket(jacketUrl, fetchedSong.name).then((jacket) => {
+        if (jacket) {
+          existingSong.jacket = jacket;
+          console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+          hasUpdates = true;
+        }
+      });
     }
 
     return hasUpdates;

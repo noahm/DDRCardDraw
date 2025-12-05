@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import task from "tasuku";
 
 import {
-  downloadJacketAsync,
+  downloadJacket,
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
@@ -24,10 +24,7 @@ async function fetchJacket(coverPath: string): Promise<string> {
   coverPath = join(coverPath, "cover.png");
   const coverStub = coverPath.split("/")[2];
   const outPath = `smx/${coverStub}.jpg`;
-  await downloadJacketAsync(
-    `https://data.stepmaniax.com/${coverPath}`,
-    outPath,
-  );
+  await downloadJacket(`https://data.stepmaniax.com/${coverPath}`, outPath);
   return outPath;
 }
 

@@ -11,11 +11,11 @@ import { fileURLToPath } from "url";
 
 import type { GameData, Song } from "../src/models/SongData.ts";
 import {
-  writeJsonData,
+  downloadJacket,
   requestQueue,
   sortSongs,
   setJacketPrefix,
-  downloadJacket,
+  writeJsonData,
 } from "./utils.mts";
 import {
   JsonDDRSongImporter,
@@ -74,7 +74,7 @@ try {
             await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
             // If still no jacket, try to get from e-amusement GATE
             if (!worldSong.jacket) {
-              worldSong.jacket = downloadJacket(
+              worldSong.jacket = await downloadJacket(
                 worldSong.getJacketUrl(),
                 worldSong.name,
               );
@@ -191,7 +191,7 @@ try {
 
           // If no jacket, try to get from 3icecream
           if (!sanbaiSong.jacket) {
-            sanbaiSong.jacket = downloadJacket(
+            sanbaiSong.jacket = await downloadJacket(
               sanbaiSong.getJacketUrl(),
               sanbaiSong.name,
             );
