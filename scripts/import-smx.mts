@@ -1,22 +1,18 @@
-// @ts-check
-
 /**
  * Script to import SMX data from direct from statmaniax (thanks cube!)
  */
-
-import { join, resolve, dirname } from "path";
-import { fetch, Agent, setGlobalDispatcher } from "undici";
+import { readFile } from "node:fs/promises";
+import { join, resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import task from "tasuku";
-import { readFile } from "fs/promises";
+
 import {
-  downloadJacket,
+  downloadJacketAsync,
   requestQueue,
   reportQueueStatusLive,
   writeJsonData,
 } from "./utils.mts";
-
-const GET_IMAGES = true;
-import { fileURLToPath } from "url";
+import type { Chart, GameData, Song } from "../src/models/SongData.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -24,91 +20,144 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * queues a cover path for download,
  * returns the filename that will eventually be used
  */
-function queueJacketDownload(coverPath) {
+async function fetchJacket(coverPath: string): Promise<string> {
   coverPath = join(coverPath, "cover.png");
   const coverStub = coverPath.split("/")[2];
   const outPath = `smx/${coverStub}.jpg`;
-  if (GET_IMAGES) {
-    downloadJacket(`https://data.stepmaniax.com/${coverPath}`, outPath);
-  }
-
+  await downloadJacketAsync(
+    `https://data.stepmaniax.com/${coverPath}`,
+    outPath,
+  );
   return outPath;
 }
 
-task("SMX Import", async ({ setStatus, setError, task }) => {
+type SMXSongData = Record<
+  string,
+  {
+    title: string;
+    subtitle: string;
+    artist: string;
+    label: string;
+    bpm: string;
+    cover_path: string;
+    genre: string;
+    created_at: string;
+    website: string;
+    difficulties: Record<string, { difficulty: string; name: string }>;
+  }
+>;
+
+task("Import StepManiaX", async ({ setStatus, setError, task }) => {
   const cleanup = reportQueueStatusLive(task);
   try {
-    const songs = [];
     const targetFile = join(__dirname, "../src/songs/smx.json");
-    const existingData = JSON.parse(
+    const existingData: GameData = JSON.parse(
       await readFile(targetFile, { encoding: "utf-8" }),
     );
-    const indexedSongs = {};
-    for (const song of existingData.songs) {
-      indexedSongs[song.saIndex] = song;
-    }
 
-    setStatus(`pulling chart details`);
-    let songsById;
-    try {
-      // added in case statmaniax is under load from cab updates and can't
-      // handle TLS handshakes in time for the default timeout
-      const dispatcher = new Agent({ connectTimeout: 30_000 });
-      const req = await fetch(`https://statmaniax.com/api/get_song_data`, {
-        dispatcher,
-      });
-      songsById = await req.json();
-      setGlobalDispatcher(dispatcher);
-    } catch (e) {
-      cleanup();
-      console.error(e);
-      process.exit(1);
-    }
+    setStatus(`Fetching song data from statmaniax.com...`);
+    // added in case statmaniax is under load from cab updates and can't
+    // handle TLS handshakes in time for the default timeout
+    const req = await fetch(`https://statmaniax.com/api/get_song_data`, {
+      signal: AbortSignal.timeout(30000),
+    });
+    const songsById: SMXSongData = await req.json();
 
+    let count = 1;
+    let lastUpdatedString = "";
+    const totalCount = Object.keys(songsById).length;
+    const songs: Song[] = [];
     for (const [songId, song] of Object.entries(songsById)) {
-      if (!songs[songId]) {
-        songs[songId] = {
-          ...indexedSongs[songId],
-          saIndex: songId,
-          name: song.title,
-          artist: song.artist,
-          genre: song.genre,
-          bpm: song.bpm,
-          jacket: queueJacketDownload(song.cover_path),
-          charts: [],
-        };
-        if (!indexedSongs[songId]) {
-          console.log(`added new song: ${song.title}`);
+      setStatus(`Processing ${count++}/${totalCount} songs...`);
+      const charts = processCharts(song.difficulties);
+      if (song.created_at > lastUpdatedString)
+        lastUpdatedString = song.created_at;
+
+      const existingSong = existingData.songs.find((s) => s.saIndex === songId);
+      if (existingSong) {
+        if (
+          existingSong.name !== song.title ||
+          existingSong.artist !== song.artist ||
+          existingSong.bpm !== song.bpm ||
+          existingSong.genre !== song.genre ||
+          !chartsEquals(existingSong.charts, charts)
+        ) {
+          await task(
+            `${song.title} / ${song.artist || "(No Artist)"}`,
+            async ({ setStatus }) => {
+              existingSong.name = song.title;
+              existingSong.artist = song.artist;
+              existingSong.bpm = song.bpm;
+              existingSong.genre = song.genre;
+              existingSong.charts = charts;
+              existingSong.jacket ||= await fetchJacket(song.cover_path);
+              setStatus("Updated");
+            },
+          );
         }
+        songs.push(existingSong);
+        continue;
       }
-      for (const diff of Object.values(song.difficulties)) {
-        if (!diff.name) {
-          console.log(`skipping bunk chart for ${song.title}`);
-          continue;
+      await task(
+        `${song.title} / ${song.artist || "(No Artist)"}`,
+        async ({ setStatus }) => {
+          songs.push({
+            name: song.title,
+            artist: song.artist,
+            bpm: song.bpm,
+            genre: song.genre,
+            saIndex: songId,
+            jacket: await fetchJacket(song.cover_path),
+            charts,
+          });
+          setStatus("Added");
+        },
+      );
+
+      function processCharts(
+        difficulties: SMXSongData[string]["difficulties"],
+      ): Chart[] {
+        const charts: Chart[] = [];
+        for (const diff of Object.values(difficulties)) {
+          if (!diff.name) continue;
+          const isPlus = diff.name.endsWith("+");
+          if (isPlus) {
+            diff.name = diff.name.slice(0, -1);
+          }
+          const chart: Chart = {
+            style: diff.name === "team" ? "team" : "solo",
+            diffClass: diff.name,
+            lvl: +diff.difficulty,
+            ...(isPlus ? { flags: ["plus"] } : {}),
+          };
+          charts.push(chart);
         }
-        const isPlus = diff.name.endsWith("+");
-        if (isPlus) {
-          diff.name = diff.name.slice(0, -1);
+        return charts;
+      }
+
+      function chartsEquals(left: Chart[], right: Chart[]) {
+        if (left.length !== right.length) return false;
+        for (const lChart of left) {
+          const match = right.find(
+            (rChart) =>
+              rChart.style === lChart.style &&
+              rChart.diffClass === lChart.diffClass &&
+              rChart.flags?.length === lChart.flags?.length,
+          );
+          if (lChart.lvl !== match?.lvl) return false;
         }
-        const chart = {
-          style: diff.name === "team" ? "team" : "solo",
-          lvl: +diff.difficulty,
-          diffClass: diff.name,
-        };
-        if (isPlus) {
-          chart.flags = ["plus"];
-        }
-        songs[songId].charts.push(chart);
+        return true;
       }
     }
 
     const smxData = {
       ...existingData,
-      songs: songs.filter((s) => !!s),
+      songs,
     };
 
     setStatus("finished downloading data, writing final JSON output");
-    await writeJsonData(smxData, resolve(targetFile));
+    const lastUpdated = Date.parse(lastUpdatedString.replace(" ", "T") + "Z");
+    await writeJsonData(smxData, resolve(targetFile), lastUpdated);
 
     if (requestQueue.size) {
       setStatus("waiting on images to finish downloading...");
@@ -117,6 +166,7 @@ task("SMX Import", async ({ setStatus, setError, task }) => {
     setStatus("done!");
   } catch (e) {
     setError(e);
+    process.exitCode = 1;
   } finally {
     cleanup();
   }
