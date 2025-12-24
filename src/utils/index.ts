@@ -68,7 +68,7 @@ interface GameDataParent {
 
 /** ordered list of all available game data files */
 export const availableGameData = (
-  (process.env.DATA_FILES as Array<
+  (process.env.DATA_FILES as unknown as Array<
     Omit<AvailableGameData, "type" | "index">
   >) || []
 ).sort((a, b) => {
