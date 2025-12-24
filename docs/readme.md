@@ -19,11 +19,13 @@ DDR Tools has song data available from a variety of different games selectable f
 
 ## Basics
 
-Clicking "Draw!" in the top right corner will present a random selection charts from the selected game data. Each card can be clicked to access a menu of [actions](#actions).
+Clicking "Draw!" in the top right corner will ask you to pick a settings preset, and pick between entering a match title and player names manually, or import a match from a start.gg bracket. Once confirmed, a new _match_ will be created with one _set_ of charts, selected at random based on the chosen settings. Each card can be clicked to access a menu of [actions](#actions).
 
 ![Screenshot of 3 cards representing charts from StepManiaX](images/cards.png)
 
-Draws are not saved anywhere and cannot be recovered after the page is closed or refreshed.
+All matches and drawn sets are automatically saved and will persist after the page is closed or refreshed.
+
+Additional sets can be drawn within a single match, and kept separately, or merged together into a single set later.
 
 ## Settings
 
