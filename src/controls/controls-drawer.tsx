@@ -404,7 +404,6 @@ function GeneralSettings() {
             min={availableLevels[0]}
             max={Math.max(upperBound, lowerBound, 1)}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            minorStepSize={null}
             majorStepSize={useGranularLevels ? 1 : null}
             onValueChange={handleLowerBoundChange}
           />
@@ -426,7 +425,6 @@ function GeneralSettings() {
             min={lowerBound}
             max={availableLevels[availableLevels.length - 1]}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            minorStepSize={null}
             majorStepSize={useGranularLevels ? 1 : null}
             onValueChange={handleUpperBoundChange}
           />
