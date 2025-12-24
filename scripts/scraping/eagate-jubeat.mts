@@ -1,5 +1,6 @@
 import { downloadJacket, getDom } from "../utils.mts";
 import type { Chart, Song } from "../../src/models/SongData.ts";
+import type { Task } from "tasuku";
 
 /** Name & Artist Normalization */
 const normalized: Map<
@@ -36,79 +37,82 @@ export class SongImporter {
     this.#songListUrl = songListUrl;
   }
 
-  async fetchSongs(): Promise<EagateSong[]> {
-    console.log(`Starting to fetch song data from jubeat e-amusement GATE`);
+  async fetchSongs(task: Task): Promise<EagateSong[]> {
+    const result = await task(
+      "Fetch from jubeat e-amusement GATE",
+      async ({ setStatus, setOutput }) => {
+        setStatus(`Starting to fetch song data from jubeat e-amusement GATE`);
 
-    const songsPerPage = 50;
-    const allSongs: EagateSong[] = [];
-    let currentPage = 0;
-    let emptyPageCount = 0;
-    const maxEmptyPages = 3; // Stop after 3 consecutive empty pages
+        const songsPerPage = 50;
+        const allSongs: EagateSong[] = [];
+        let currentPage = 0;
+        let emptyPageCount = 0;
+        const maxEmptyPages = 3; // Stop after 3 consecutive empty pages
 
-    while (emptyPageCount < maxEmptyPages) {
-      const page = currentPage;
+        while (emptyPageCount < maxEmptyPages) {
+          const page = currentPage;
 
-      // Construct URL with offset parameter (same strategy as DDR importer)
-      const url = new URL(this.#songListUrl);
-      url.searchParams.set("page", page.toString());
+          // Construct URL with offset parameter (same strategy as DDR importer)
+          const url = new URL(this.#songListUrl);
+          url.searchParams.set("page", page.toString());
 
-      console.log(`Fetching page ${currentPage + 1}... (page=${page})`);
+          setOutput(`Fetching page ${currentPage + 1}... (page=${page})`);
 
-      try {
-        const pageSongs = await scrape(url);
+          try {
+            const pageSongs = await scrape(url);
 
-        if (pageSongs.length === 0) {
-          emptyPageCount++;
-          console.log(
-            `Page ${currentPage + 1} is empty (consecutive empty pages: ${emptyPageCount}/${maxEmptyPages})`,
-          );
-        } else {
-          emptyPageCount = 0; // Reset counter when songs are found
-          allSongs.push(...pageSongs);
-          console.log(
-            `Page ${currentPage + 1}: ${pageSongs.length} songs fetched (total: ${allSongs.length} songs)`,
-          );
+            if (pageSongs.length === 0) {
+              emptyPageCount++;
+              console.log(
+                `Page ${currentPage + 1} is empty (consecutive empty pages: ${emptyPageCount}/${maxEmptyPages})`,
+              );
+            } else {
+              emptyPageCount = 0; // Reset counter when songs are found
+              allSongs.push(...pageSongs);
+              setStatus(
+                `Page ${currentPage + 1}: ${pageSongs.length} songs fetched (total: ${allSongs.length} songs)`,
+              );
 
-          // If songs fetched is less than songsPerPage, likely the last page
-          if (pageSongs.length < songsPerPage) {
-            console.log(
-              `Songs fetched (${pageSongs.length}) is less than expected (${songsPerPage}), assuming last page`,
+              // If songs fetched is less than songsPerPage, likely the last page
+              if (pageSongs.length < songsPerPage) {
+                console.log(
+                  `Songs fetched (${pageSongs.length}) is less than expected (${songsPerPage}), assuming last page`,
+                );
+                break;
+              }
+            }
+          } catch (error) {
+            console.error(
+              `Error occurred while fetching page ${currentPage + 1}:`,
+              error,
             );
-            break;
+            emptyPageCount++;
+          }
+
+          currentPage++;
+        }
+
+        // Remove duplicate songs by name+artist
+        const uniqueSongs: EagateSong[] = [];
+        const seen = new Set<string>();
+        for (const song of allSongs) {
+          const key = `${song.name}::${song.artist}`;
+          if (!seen.has(key)) {
+            seen.add(key);
+            uniqueSongs.push(song);
           }
         }
 
-        // Wait briefly between pages (reduce server load)
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-      } catch (error) {
-        console.error(
-          `Error occurred while fetching page ${currentPage + 1}:`,
-          error,
+        setStatus(
+          `Fetch completed: ${uniqueSongs.length} songs (before deduplication: ${allSongs.length} songs)`,
         );
-        emptyPageCount++;
-      }
+        setOutput(`Pages processed: ${currentPage}`);
 
-      currentPage++;
-    }
-
-    // Remove duplicate songs by name+artist
-    const uniqueSongs: EagateSong[] = [];
-    const seen = new Set<string>();
-    for (const song of allSongs) {
-      const key = `${song.name}::${song.artist}`;
-      if (!seen.has(key)) {
-        seen.add(key);
-        uniqueSongs.push(song);
-      }
-    }
-
-    console.log(
-      `Fetch completed: ${uniqueSongs.length} songs (before deduplication: ${allSongs.length} songs)`,
+        return uniqueSongs;
+      },
     );
-    console.log(`Pages processed: ${currentPage}`);
 
-    return uniqueSongs;
-
+    return result.result;
     /**
      * Scrapes song data from jubeat e-amusement GATE website
      * @param url jubeat song list URL

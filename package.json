@@ -61,7 +61,6 @@
     "@supabase/supabase-js": "^2.49.4",
     "@types/better-sqlite3": "7.6.13",
     "@types/fuzzy-search": "2.1.5",
-    "@types/inquirer": "9.0.7",
     "@types/jsdom": "27.0.0",
     "@types/node": "24.10.1",
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch",
@@ -97,7 +96,6 @@
     "html-webpack-plugin": "5.6.3",
     "iconv-lite": "0.6.3",
     "immer": "^10.1.1",
-    "inquirer": "9.3.7",
     "jimp": "1.6.0",
     "jotai": "2.12.3",
     "jsdom": "27.0.0",
@@ -125,6 +123,7 @@
     "sanitize-filename": "1.6.3",
     "simfile-parser": "0.8.1",
     "style-loader": "4.0.0",
+    "tasuku": "^2.0.4",
     "typescript": "5.8.3",
     "typescript-eslint": "^8.30.0",
     "undici": "7.8.0",
@@ -143,5 +142,5 @@
     "semver": "^7.5.2",
     "xml2js": "0.6.2"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.12.0"
 }

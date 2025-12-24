@@ -8,6 +8,7 @@ import {
   writeJsonData,
 } from "./utils.mts";
 import bettersqlite from "better-sqlite3";
+import task from "tasuku";
 
 import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -72,15 +73,15 @@ function queueJacketDownload(jacketPath) {
   return outPath;
 }
 
-// main procedure
-try {
-  const db = bettersqlite(DATABASE_FILE);
-  const ui = reportQueueStatusLive();
+task("Pump Import", async ({ task, setStatus, setError }) => {
+  const cleanup = reportQueueStatusLive(task);
+  try {
+    const db = bettersqlite(DATABASE_FILE);
 
-  const cuts = db.prepare("select * from cut order by sortOrder").all();
-  const songs = db
-    .prepare(
-      `SELECT
+    const cuts = db.prepare("select * from cut order by sortOrder").all();
+    const songs = db
+      .prepare(
+        `SELECT
 song.songId saIndex,
 song.internalTitle name,
 song.cutId
@@ -117,12 +118,12 @@ EXISTS(
       )
     )
 );`,
-    )
-    .all();
+      )
+      .all();
 
-  const charts = db
-    .prepare(
-      `
+    const charts = db
+      .prepare(
+        `
 WITH
 	difficultyRatings as (
 		select crv.chartId, chartRating.difficultyId, mode.modeId, routine, coOp, performance, max(version.sortOrder)
@@ -174,12 +175,12 @@ WHERE
 				  )
 		  	)
 	);`,
-    )
-    .all();
+      )
+      .all();
 
-  const jackets = db
-    .prepare(
-      `
+    const jackets = db
+      .prepare(
+        `
 SELECT
 	songCard.songId,
 	songCard.path
@@ -207,46 +208,46 @@ WHERE
 				  songCardVersion.songCardId = songCard.songCardId
 		  	)
 	);`,
-    )
-    .all();
+      )
+      .all();
 
-  const rawDiffs = db
-    .prepare(
-      `select
+    const rawDiffs = db
+      .prepare(
+        `select
       internalAbbreviation key,
       internalHexColor color,
       internalTitle title,
       modeId
     from mode order by sortOrder`,
-    )
-    .all();
-  const difficultyById = new Map();
-  const diffTranslit = {};
-  const difficulties = [];
-  for (const d of rawDiffs) {
-    difficultyById.set(d.modeId, { ...d });
-    diffTranslit[d.key] = d.title;
-    delete d.modeId;
-    delete d.title;
+      )
+      .all();
+    const difficultyById = new Map();
+    const diffTranslit = {};
+    const difficulties = [];
+    for (const d of rawDiffs) {
+      difficultyById.set(d.modeId, { ...d });
+      diffTranslit[d.key] = d.title;
+      delete d.modeId;
+      delete d.title;
 
-    if (d.key === "C") {
-      // create copies for COOPx2 - COOPx5
-      difficulties.push({ key: "C2", color: d.color });
-      difficulties.push({ key: "C3", color: d.color });
-      difficulties.push({ key: "C4", color: d.color });
-      difficulties.push({ key: "C5", color: d.color });
+      if (d.key === "C") {
+        // create copies for COOPx2 - COOPx5
+        difficulties.push({ key: "C2", color: d.color });
+        difficulties.push({ key: "C3", color: d.color });
+        difficulties.push({ key: "C4", color: d.color });
+        difficulties.push({ key: "C5", color: d.color });
 
-      diffTranslit["C2"] = "Co-Op 2P";
-      diffTranslit["C3"] = "Co-Op 3P";
-      diffTranslit["C4"] = "Co-Op 4P";
-      diffTranslit["C5"] = "Co-Op 5P";
-      delete diffTranslit["C"];
-    } else {
-      difficulties.push({ key: d.key, color: d.color });
+        diffTranslit["C2"] = "Co-Op 2P";
+        diffTranslit["C3"] = "Co-Op 3P";
+        diffTranslit["C4"] = "Co-Op 4P";
+        diffTranslit["C5"] = "Co-Op 5P";
+        delete diffTranslit["C"];
+      } else {
+        difficulties.push({ key: d.key, color: d.color });
+      }
     }
-  }
 
-  const artistQuery = db.prepare(`
+    const artistQuery = db.prepare(`
 select
 	artist.internalTitle,
 	prefix
@@ -257,16 +258,16 @@ WHERE
 	songId = ?
 order by
 	sortOrder`);
-  function getArtistForSong(songId) {
-    return artistQuery.all(songId).reduce((acc, curr) => {
-      if (!acc) {
-        return curr.internalTitle;
-      }
-      return `${acc} ${curr.prefix || "&"} ${curr.internalTitle}`;
-    }, "");
-  }
+    function getArtistForSong(songId) {
+      return artistQuery.all(songId).reduce((acc, curr) => {
+        if (!acc) {
+          return curr.internalTitle;
+        }
+        return `${acc} ${curr.prefix || "&"} ${curr.internalTitle}`;
+      }, "");
+    }
 
-  const bpmQuery = db.prepare(`
+    const bpmQuery = db.prepare(`
 select
 	bpmMin min, bpmMax max
 from
@@ -275,18 +276,18 @@ from
 	version using (versionId)
 where sbv.songId = ?
 order by version.sortOrder desc`);
-  function getBpmForSong(songId) {
-    const bpm = bpmQuery.get(songId);
-    if (!bpm.min && !bpm.max) {
-      return "???";
+    function getBpmForSong(songId) {
+      const bpm = bpmQuery.get(songId);
+      if (!bpm.min && !bpm.max) {
+        return "???";
+      }
+      if (bpm.min === bpm.max) {
+        return bpm.min.toString();
+      }
+      return `${bpm.min}-${bpm.max}`;
     }
-    if (bpm.min === bpm.max) {
-      return bpm.min.toString();
-    }
-    return `${bpm.min}-${bpm.max}`;
-  }
 
-  const flagsQuery = db.prepare(`
+    const flagsQuery = db.prepare(`
 SELECT
 	internalTitle
 FROM
@@ -297,127 +298,129 @@ WHERE
 ORDER BY
 	label.sortOrder DESC
 `);
-  function getFlagsForChart(chartId) {
-    const rows = flagsQuery.all(chartId);
-    const ret = [];
-    for (const row of rows) {
-      const flag = labelToFlag(row.internalTitle);
-      if (flag) {
-        ret.push(flag);
+    function getFlagsForChart(chartId) {
+      const rows = flagsQuery.all(chartId);
+      const ret = [];
+      for (const row of rows) {
+        const flag = labelToFlag(row.internalTitle);
+        if (flag) {
+          ret.push(flag);
+        }
+      }
+      if (ret.length) {
+        return ret;
       }
     }
-    if (ret.length) {
-      return ret;
-    }
-  }
 
-  const jacketPathsById = new Map();
-  for (const jacket of jackets) {
-    jacketPathsById.set(jacket.songId, jacket.path);
-  }
-
-  const songsById = new Map();
-  ui.log.write(`Iterating across ${songs.length} songs`);
-  for (const song of songs) {
-    songsById.set(song.saIndex, song);
-    const jacketPath = jacketPathsById.get(song.saIndex);
-    if (!jacketPath) {
-      console.error("missing jacket for song", song);
-    } else {
-      song.jacket = queueJacketDownload(jacketPath);
-    }
-    song.artist = getArtistForSong(song.saIndex);
-    song.bpm = getBpmForSong(song.saIndex);
-    song.saIndex = song.saIndex.toString();
-    song.flags = ["cut:" + song.cutId];
-    delete song.cutId;
-  }
-
-  for (const chart of charts) {
-    const song = songsById.get(chart.songId);
-    if (!song) {
-      continue;
-    }
-    if (!song.charts) {
-      song.charts = [];
-    }
-    const chartData = {
-      lvl: chart.diffLvl,
-      diffClass: difficultyById.get(chart.modeId).key,
-      style: chart.coOp ? "coop" : "solo",
-    };
-
-    if (chartData.diffClass === "C") {
-      // massage co-op chart nonsense
-      chartData.diffClass = "C" + chartData.lvl;
-      chartData.lvl = 1;
+    const jacketPathsById = new Map();
+    for (const jacket of jackets) {
+      jacketPathsById.set(jacket.songId, jacket.path);
     }
 
-    const flags = getFlagsForChart(chart.chartId);
-    if (flags) {
-      chartData.flags = flags;
+    const songsById = new Map();
+    setStatus(`Iterating across ${songs.length} songs`);
+    for (const song of songs) {
+      songsById.set(song.saIndex, song);
+      const jacketPath = jacketPathsById.get(song.saIndex);
+      if (!jacketPath) {
+        console.error("missing jacket for song", song);
+      } else {
+        song.jacket = queueJacketDownload(jacketPath);
+      }
+      song.artist = getArtistForSong(song.saIndex);
+      song.bpm = getBpmForSong(song.saIndex);
+      song.saIndex = song.saIndex.toString();
+      song.flags = ["cut:" + song.cutId];
+      delete song.cutId;
     }
-    song.charts.push(chartData);
-  }
 
-  const pumpData = {
-    meta: {
-      styles: ["solo", "coop"],
-      difficulties,
-      flags: [...otherFlags, ...cuts.map((cut) => "cut:" + cut.cutId)],
-      lastUpdated: Date.now(),
-    },
-    defaults: {
-      style: "solo",
-      difficulties: ["S", "D"],
-      flags: [...otherFlags, "cut:2"],
-      lowerLvlBound: 14,
-      upperLvlBound: 20,
-    },
-    i18n: {
-      en: {
-        name: "Pump It Up Phoenix",
-        solo: "Solo",
-        coop: "Co-Op",
-        ...diffTranslit,
-        ...flagI18n,
-        ...cuts.reduce((acc, cut) => {
-          let cutTranslation = cut.internalTitle;
-          if (cut.cutId === 2) {
-            cutTranslation = "Arcade Cut";
-          }
-          acc["cut:" + cut.cutId] = cutTranslation;
-          return acc;
-        }, {}),
-        $abbr: {
-          S: "S",
-          HDB: "HDB",
-          D: "D",
-          SP: "SP",
-          DP: "DP",
-          C2: "COOPx2",
-          C3: "COOPx3",
-          C4: "COOPx4",
-          C5: "COOPx5",
-          R: "R",
+    for (const chart of charts) {
+      const song = songsById.get(chart.songId);
+      if (!song) {
+        continue;
+      }
+      if (!song.charts) {
+        song.charts = [];
+      }
+      const chartData = {
+        lvl: chart.diffLvl,
+        diffClass: difficultyById.get(chart.modeId).key,
+        style: chart.coOp ? "coop" : "solo",
+      };
+
+      if (chartData.diffClass === "C") {
+        // massage co-op chart nonsense
+        chartData.diffClass = "C" + chartData.lvl;
+        chartData.lvl = 1;
+      }
+
+      const flags = getFlagsForChart(chart.chartId);
+      if (flags) {
+        chartData.flags = flags;
+      }
+      song.charts.push(chartData);
+    }
+
+    const pumpData = {
+      meta: {
+        styles: ["solo", "coop"],
+        difficulties,
+        flags: [...otherFlags, ...cuts.map((cut) => "cut:" + cut.cutId)],
+        lastUpdated: Date.now(),
+      },
+      defaults: {
+        style: "solo",
+        difficulties: ["S", "D"],
+        flags: [...otherFlags, "cut:2"],
+        lowerLvlBound: 14,
+        upperLvlBound: 20,
+      },
+      i18n: {
+        en: {
+          name: "Pump It Up Phoenix",
+          solo: "Solo",
+          coop: "Co-Op",
+          ...diffTranslit,
+          ...flagI18n,
+          ...cuts.reduce((acc, cut) => {
+            let cutTranslation = cut.internalTitle;
+            if (cut.cutId === 2) {
+              cutTranslation = "Arcade Cut";
+            }
+            acc["cut:" + cut.cutId] = cutTranslation;
+            return acc;
+          }, {}),
+          $abbr: {
+            S: "S",
+            HDB: "HDB",
+            D: "D",
+            SP: "SP",
+            DP: "DP",
+            C2: "COOPx2",
+            C3: "COOPx3",
+            C4: "COOPx4",
+            C5: "COOPx5",
+            R: "R",
+          },
         },
       },
-    },
-    songs,
-  };
+      songs,
+    };
 
-  db.close();
+    db.close();
 
-  await writeJsonData(
-    pumpData,
-    path.resolve(path.join(__dirname, `../src/songs/${DATA_STUB}.json`)),
-  );
-  if (requestQueue.size) {
-    ui.log.write("waiting on images to finish downloading...");
-    await requestQueue.onIdle();
+    await writeJsonData(
+      pumpData,
+      path.resolve(path.join(__dirname, `../src/songs/${DATA_STUB}.json`)),
+    );
+    if (requestQueue.size) {
+      setStatus("waiting on images to finish downloading...");
+      await requestQueue.onIdle();
+    }
+    setStatus("done!");
+  } catch (e) {
+    setError(e);
+  } finally {
+    cleanup;
   }
-  ui.log.write("done!");
-  ui.close();
-} catch (e) {
-  console.error(e);
-}
+});

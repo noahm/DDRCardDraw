@@ -288,7 +288,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -308,7 +308,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -334,7 +334,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -342,7 +342,6 @@ function GeneralSettings() {
             min={availableLevels[0]}
             max={Math.max(upperBound, lowerBound, 1)}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            minorStepSize={null}
             majorStepSize={useGranularLevels ? 1 : null}
             onValueChange={handleLowerBoundChange}
           />
@@ -356,7 +355,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -364,7 +363,6 @@ function GeneralSettings() {
             min={lowerBound}
             max={availableLevels[availableLevels.length - 1]}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            minorStepSize={null}
             majorStepSize={useGranularLevels ? 1 : null}
             onValueChange={handleUpperBoundChange}
           />

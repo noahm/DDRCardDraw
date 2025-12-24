@@ -7,9 +7,9 @@ import { fileURLToPath } from "node:url";
 import { format } from "prettier";
 import PQueue from "p-queue";
 import { Jimp, ResizeStrategy } from "jimp";
-import BottomBar from "inquirer/lib/ui/bottom-bar.js";
 import sanitize from "sanitize-filename";
 import { JSDOM } from "jsdom";
+import type { Task } from "tasuku";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -207,37 +207,39 @@ export function checkJacketExists(songName: string): string | undefined {
 
 let jobCount = 0;
 
-class ClosableBottomBar extends BottomBar {
-  /** exposes protected method */
-  close() {
-    super.close();
-  }
+export function reportQueueStatusLive(task: Task) {
+  const outerController = new AbortController();
+  task("Request Queue", ({ setStatus }) => {
+    const controller = new AbortController();
+    requestQueue
+      .on("add", () => {
+        setStatus(queueStatus());
+      })
+      .on("active", () => {
+        setStatus(queueStatus());
+      })
+      .on("next", () => {
+        jobCount++;
+        setStatus(queueStatus());
+      })
+      .on("idle", () => {
+        setStatus("Empty");
+        if (outerController.signal.aborted) {
+          controller.abort();
+        }
+      });
 
-  /** exposes protected method */
-  clean() {
-    return super.clean();
-  }
-}
-
-export function reportQueueStatusLive() {
-  const ui = new ClosableBottomBar();
-
-  requestQueue
-    .on("add", () => {
-      ui.updateBottomBar(queueStatus());
-    })
-    .on("active", () => {
-      ui.updateBottomBar(queueStatus());
-    })
-    .on("next", () => {
-      jobCount++;
-      ui.updateBottomBar(queueStatus());
-    })
-    .on("idle", () => {
-      ui.clean();
+    outerController.signal.addEventListener("abort", () => {
+      if (!requestQueue.size && !requestQueue.pending) {
+        controller.abort();
+      }
     });
 
-  return ui;
+    return new Promise<void>((resolve, reject) => {
+      controller.signal.addEventListener("abort", () => resolve());
+    });
+  });
+  return () => outerController.abort();
 }
 
 function queueStatus() {
