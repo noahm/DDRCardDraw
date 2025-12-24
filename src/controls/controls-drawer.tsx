@@ -102,7 +102,7 @@ export default function ControlsDrawer() {
   const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
   return (
     <div className={styles.drawer}>
-      <Tabs id="settings" large>
+      <Tabs id="settings" size="large">
         <Tab
           id="general"
           icon={<Settings className={Classes.TAB_ICON} />}
@@ -347,7 +347,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -369,7 +369,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -396,7 +396,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
@@ -417,7 +417,7 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
