@@ -30550,7 +30550,7 @@
     {
       "name": "Is this dance a Hakken?",
       "saHash": "q0I018lPqbdi66qiiiQlqIb9O19O9061",
-      "artist": "68-205",
+      "artist": "RoughSketch",
       "folder": "DanceDanceRevolution World",
       "bpm": "68-205",
       "charts": [
@@ -48146,7 +48146,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.65
         },
         {
@@ -48171,7 +48171,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.7
         }
       ],
@@ -84016,7 +84016,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "lvl": 10,
@@ -84039,13 +84040,13 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Konran_shoujo_Soflan-chan!!",
       "jacket": "ddr_world/Konran shoujo Soflan-chan!!.jpg",
-      "genre": "",
       "saHash": "Q9iiOo800blDqO0DDDPI1PIbl1lIidI1"
     },
     {
