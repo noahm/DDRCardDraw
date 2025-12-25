@@ -60,75 +60,117 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ["IObPQb9QlP0iIiboObPoPqIqDo0O11Qi", { deleted: 1 }], // 春を告げる
-  // #region グランプリ譜面パックvol.5
-  ...[
-    "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
-    "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO", // D2R
-    "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl", // Dragon Blade
-    "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8", // Funk Boogie
-    "69qoD0l6olQqqbl09b069q898b600I6o", // Gamelan de Couple
-    "901q61iP6lPiDqIQoQod9PDqlOPq1bb9", // La Señorita
-    "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb", // No.13
-    "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP", // Quick Master
-    "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP", // WILD RUSH
-    "ql1Q8P100IIlbl0Pdi08I8qD900idqQq", // カゲロウ
-  ].map<[string, Partial<SanbaiSong>]>((s) => [
-    s,
+  // #region グランプリ譜面パック vol.6
+  [
+    "Pd99DQo0bD9D9oIbPIId18P6l8qlDQO6", // AFRONOVA
+    {
+      ratings: [5, 7, 9, 13, 17, 8, 9, 13, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "i86qD6Pl61dPI0Q9db1P8bl1ii99q1lD", // BURNING HEAT！（3 Option MIX）
+    {
+      ratings: [3, 4, 8, 13, 15, 4, 7, 12, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "68dqbIdOiiiiddlbb1OD66qq6d80I6D8", // Can Be Real
+    {
+      ratings: [3, 4, 6, 10, 12, 3, 6, 10, 12],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "bPD6ObloQPOOiQb1DbQDdilodiddlIlb", // ECSTASY
+    {
+      ratings: [4, 5, 8, 10, 13, 6, 8, 11, 13],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "O1blDPOQ8IQb00o0D89QIDIlo8b06liD", // HIGHER
+    {
+      ratings: [3, 4, 7, 9, 12, 4, 7, 10, 12],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "O8qii6oiooPd8lbPqDo9QQioIoQQOoq0", // INSIDE YOUR HEART
+    {
+      ratings: [3, 4, 6, 9, 12, 3, 6, 9, 12],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "8O86IP9dqQ8818ld9od8Q0PiDId6666P", // LOGICAL DASH
+    {
+      ratings: [3, 4, 7, 11, 13, 5, 7, 10, 13],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "0OQdlbo111ib1i88IdIPIbollD68Dii1", // rainbow rainbow
+    {
+      ratings: [4, 4, 7, 10, 14, 4, 7, 11, 14],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "81QD89Q6Ob911oOoobO0D98IQ1D1q60d", // RED ZONE
+    {
+      ratings: [4, 6, 8, 12, 17, 6, 8, 11, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "olQl6Qoi0IbobI980q9Q0QIo9qlbq1PO", // Unreal
+    {
+      ratings: [4, 8, 12, 15, 17, 8, 12, 14, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  // #endregion グランプリ譜面パック vol.6
+  // #region BEMANI SELECTION楽曲パック vol.4
+  [
+    "iq6b9lP6qQQIOIPQDdPD8ld1o9891Pq9", // SURVIVAL AT THE END OF THE UNIVERSE
+    {
+      ratings: [5, 9, 14, 16, 17, 9, 14, 17, 18],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "boDqoIDqDlP1io6bQ0O10diDbbqOD96I", // Unreality
+    {
+      ratings: [2, 6, 11, 14, 16, 6, 11, 14, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "dIiD86llO8biiDollQ1ioIoQl6iQ8dbQ", // 輪廻の鴉
+    {
+      ratings: [3, 8, 12, 14, 17, 8, 12, 15, 18],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  // #endregion BEMANI SELECTION楽曲パック vol.4
+  ...[].map<[string, Partial<SanbaiSong>]>((id) => [
+    id,
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ]),
-  // #endregion グランプリ譜面パックvol.5
-  // #region EXTRA SAVIOR WORLD (BEMANI SELECTION vol.3)
-  [
-    "66P0q8Ibddl9q669b6bD6Ood9IOQbDPI", // BIGソムタム
-    {
-      ratings: [3, 6, 11, 16, 17, 6, 11, 16, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "od0idqqoq6lb9qIo9iOblo6D8q18DQDb", // CUE CUE RESCUE
-    {
-      ratings: [2, 4, 11, 15, 17, 4, 11, 15, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "I98DbDO1OqIPD9Q608DqoO1I6Iqi1ddo", // O JIYA
-    {
-      ratings: [2, 4, 9, 13, 16, 4, 9, 13, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "i6bb1iQb8qObPd09dOlibbdqb91Q0OOb", // シャムシールの舞
-    {
-      ratings: [3, 6, 10, 15, 0, 5, 10, 15, 0],
-      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
-    },
-  ],
-  [
-    "8PIO18IQqIoODlD8866Dd0I0OD8lb9ol", // ミカヅキ:コネクト
-    {
-      ratings: [3, 7, 11, 15, 18, 7, 11, 15, 18],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "8D0OOb0bi90oi1Io9iIqqiI9110ll8I1", // 月光乱舞
-    {
-      ratings: [3, 8, 12, 15, 18, 8, 12, 15, 18],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "d6Doi9oi600lP9lI9iiO8q68li8iOO8D", // 朱と碧のランページ
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "Po8qD6i6io866qdQ00QbbO0i9I1qIO0O", // 水槽のクジラ
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  // #endregion EXTRA SAVIOR WORLD (BEMANI SELECTION vol.3)
+  // #region EXTRA SAVIOR WORLD - The 1st ひなビタ♪ CHALLENGE
+  ...[
+    "16oDDIlP8bIODQ6Ql0881d9Qqdb19b98", // 黒髪乱れし修羅となりて～凛 edition～
+    "Pd1d96Q91oiboqb86DdddD68dbq81Pdo", // 激アツ☆マジヤバ☆チアガール
+    "91bPDIdqPbdOIQPP68Q6IP61Io980QlI", // ロマンシングエスケープ
+    "91dD6iqPO066do99169POPbQPbo9o6oq", // 地方創生☆チクワクティクス
+    "OoQoQIP06Doq1d88dDQQdlQ8i68Do9DO", // 漆黒のスペシャルプリンセスサンデー
+  ].map<[string, Partial<SanbaiSong>]>((id) => [
+    id,
+    { lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280] },
+  ]),
+  // #endregion EXTRA SAVIOR WORLD - The 1st ひなビタ♪ CHALLENGE
 ]);
 
 type SanbaiSongData = Pick<
