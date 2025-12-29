@@ -66,6 +66,53 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ],
   // #endregion グランプリ譜面パック vol.6
+  // #region PRE PRIVILEGE to playable default (about 1 year after release)
+  ...(new Date() >= new Date("2026-01-30T15:00:00+09:00")
+    ? [
+        // BPL S4楽曲パック
+        "I0dOli6do1l1008I8PllOq8DoOoIO8oq", // Steps for Victory
+        "bO10Q9999DQ9DDP890lQbdlIlIl6IID9", // blue anthem
+        "Doo9l68ddi11PQOOd6o11Q9Dd1lIQ9I6", // ESPRIT ONE
+        "ODlO019O088Q0bl9QI1PPqQ01iD68191", // Get Into The Groove feat.WaMi
+        "QID6qIPod8III8ll8ooQild1QdlPOIdi", // Mighty Beat Monsterz
+        "d0ll11iidiii09D9q81oo1Pq00oDbQ1i", // THUNDERSTRIKE
+        "lqd0I0Pbqo60I8iDOO88bbD1d9qlQ18O", // Wizards!
+        "QI8ID6bQ9Ql0IdqddI16OqPdib9OO1Do", // メテオラ-meteor-
+      ].map<[string, Partial<SanbaiSong>]>((id) => [
+        id,
+        { lock_types: undefined },
+      ])
+    : []),
+  ...(new Date() >= new Date("2026-02-27T15:00:00+09:00")
+    ? [
+        // スペシャル楽曲パック feat.ひなビタ♪ vol.3
+        "6DibIbiiDlq1OiI6QOlPlO1loQOiDb1q", // カタルシスの月
+        "I1i6li9l091l6ooqPlP91OlODPbqqo9P", // ムラサキグルマ
+        "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi", // ロンロンへ ライライライ！
+        // スペシャル楽曲パック feat.REFLEC BEAT vol.3
+        "0Ilqbl8q8Q6l6886Q9P9DOi69oIb1b1d", // Gale Rider
+        "qdbod6lI0I8O118DPq80D8b0o00OodlI", // Hollywood Galaxy
+      ].map<[string, Partial<SanbaiSong>]>((id) => [
+        id,
+        { lock_types: undefined },
+      ])
+    : []),
+  ...(new Date() >= new Date("2026-03-31T15:00:00+09:00")
+    ? [
+        // BEMANI SELECTION楽曲パックvol.3
+        "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo", // Get Back Up!
+        "I9Oood9l9li0D08Q6d6DQPiIQiloidO6", // Riot of Color
+        "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI", // 勇猛無比
+        // グランプリ楽曲パックvol.35
+        "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
+        "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
+        "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
+      ].map<[string, Partial<SanbaiSong>]>((id) => [
+        id,
+        { lock_types: undefined },
+      ])
+    : []),
+  // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
 ]);
 
 type SanbaiSongData = Pick<
