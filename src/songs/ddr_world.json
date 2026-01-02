@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1764833681001
+    "lastUpdated": 1766711605950
   },
   "defaults": {
     "style": "single",
@@ -2496,6 +2496,12 @@
           "sanbaiTier": 13.35
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 233,
           "lvl": 8,
           "style": "double",
@@ -2515,6 +2521,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.6
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/AFRONOVA",
@@ -6153,6 +6165,52 @@
       "saIndex": "765"
     },
     {
+      "name": "Be Happy Next 2 You",
+      "artist": "nc feat. maimie",
+      "saHash": "O0DDiq9DQlI9iq861lOoo1d1DI8qqd6d",
+      "bpm": "175",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/Be Happy Next 2 You.jpg"
+    },
+    {
       "name": "BE LOVIN",
       "artist": "D-Crew",
       "bpm": "185",
@@ -8699,6 +8757,12 @@
           "sanbaiTier": 13.7
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 4,
           "style": "double",
           "diffClass": "basic",
@@ -8715,6 +8779,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.95
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/BURNING_HEAT!(3_Option_MIX)",
@@ -9002,6 +9072,12 @@
           "sanbaiTier": 10.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 105,
           "freeze": 4,
           "lvl": 3,
@@ -9024,6 +9100,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.25
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Can_Be_Real",
@@ -18141,6 +18223,12 @@
           "sanbaiTier": 10.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 183,
           "lvl": 6,
           "style": "double",
@@ -18160,6 +18248,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/ECSTASY",
@@ -27354,6 +27448,12 @@
           "sanbaiTier": 9.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 159,
           "lvl": 4,
           "style": "double",
@@ -27373,6 +27473,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.25
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/HIGHER_(NM_feat._SUNNY)",
@@ -30205,6 +30311,12 @@
           "sanbaiTier": 9.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 118,
           "freeze": 9,
           "lvl": 3,
@@ -30227,6 +30339,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 9.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/INSIDE_YOUR_HEART",
@@ -30550,7 +30668,7 @@
     {
       "name": "Is this dance a Hakken?",
       "saHash": "q0I018lPqbdi66qiiiQlqIb9O19O9061",
-      "artist": "68-205",
+      "artist": "RoughSketch",
       "folder": "DanceDanceRevolution World",
       "bpm": "68-205",
       "charts": [
@@ -34066,6 +34184,12 @@
           "sanbaiTier": 11.35
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 103,
           "freeze": 7,
           "lvl": 5,
@@ -34088,6 +34212,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/LOGICAL_DASH",
@@ -46633,6 +46763,12 @@
           "sanbaiTier": 10.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack", "shock"]
+        },
+        {
           "step": 109,
           "lvl": 4,
           "style": "double",
@@ -46654,6 +46790,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["grandPrixPack", "shock"]
         }
       ],
       "remyLink": "https://remywiki.com/Rainbow_rainbow",
@@ -47320,6 +47462,12 @@
           "sanbaiTier": 12.6
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 188,
           "freeze": 6,
           "lvl": 6,
@@ -47342,6 +47490,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/RED_ZONE",
@@ -48146,7 +48300,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.65
         },
         {
@@ -48171,7 +48325,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["grandPrixPack", "shock"],
           "sanbaiTier": 17.7
         }
       ],
@@ -57765,6 +57919,12 @@
           "sanbaiTier": 16.65
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -57781,6 +57941,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 17.05
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/SURVIVAL_AT_THE_END_OF_THE_UNIVERSE",
@@ -64857,6 +65023,12 @@
           "sanbaiTier": 15.45
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "step": 212,
           "lvl": 8,
           "style": "double",
@@ -64876,6 +65048,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Unreal",
@@ -64914,6 +65092,12 @@
           "sanbaiTier": 14.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 6,
           "style": "double",
           "diffClass": "basic",
@@ -64930,6 +65114,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Unreality",
@@ -77851,6 +78041,12 @@
           "sanbaiTier": 12.6
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
@@ -77867,6 +78063,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Romancing_escape_(song)",
@@ -79815,6 +80017,12 @@
           "sanbaiTier": 13.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
+        },
+        {
           "step": 186,
           "freeze": 3,
           "lvl": 7,
@@ -79837,6 +80045,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.4
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Chihou_sousei_chikuwactics",
@@ -84016,7 +84230,8 @@
         {
           "lvl": 18,
           "style": "single",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         },
         {
           "lvl": 10,
@@ -84039,13 +84254,13 @@
         {
           "lvl": 18,
           "style": "double",
-          "diffClass": "challenge"
+          "diffClass": "challenge",
+          "flags": ["shock"]
         }
       ],
       "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Konran_shoujo_Soflan-chan!!",
       "jacket": "ddr_world/Konran shoujo Soflan-chan!!.jpg",
-      "genre": "",
       "saHash": "Q9iiOo800blDqO0DDDPI1PIbl1lIidI1"
     },
     {
@@ -84160,6 +84375,12 @@
           "sanbaiTier": 13.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
+        },
+        {
           "step": 276,
           "freeze": 11,
           "lvl": 7,
@@ -84182,6 +84403,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.4
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Shikkoku_no_special_princess_sundae",
@@ -84231,6 +84458,12 @@
           "sanbaiTier": 13.1
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
+        },
+        {
           "step": 143,
           "freeze": 9,
           "lvl": 5,
@@ -84253,6 +84486,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.25
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Gekiatsu_majiyaba_cheer_girl",
@@ -86363,6 +86602,12 @@
           "sanbaiTier": 14.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -86379,6 +86624,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["grandPrixPack"]
         }
       ],
       "jacket": "ddr_a3/輪廻の鴉.jpg",
@@ -88259,6 +88510,12 @@
           "sanbaiTier": 14.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
+        },
+        {
           "step": 217,
           "freeze": 20,
           "lvl": 6,
@@ -88281,6 +88538,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Kurokami_midareshi_shura_to_narite~Rin_edition~",
