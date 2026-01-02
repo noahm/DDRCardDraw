@@ -15,7 +15,7 @@ import {
   FloppyDisk,
   NewPerson,
   BlockedPerson,
-  Error,
+  Error as ErrorIcon,
 } from "@blueprintjs/icons";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import styles from "./drawing-actions.css";
@@ -165,7 +165,11 @@ export function DrawingActions() {
       </Tooltip>
       {process.env.NODE_ENV === "production" ? null : (
         <Tooltip content="Cause Error">
-          <Button variant="minimal" icon={<Error />} onClick={showBoundary} />
+          <Button
+            variant="minimal"
+            icon={<ErrorIcon />}
+            onClick={() => showBoundary(new Error("synthetic error"))}
+          />
         </Tooltip>
       )}
       {showLabels && (
