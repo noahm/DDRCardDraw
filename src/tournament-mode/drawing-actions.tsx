@@ -12,7 +12,7 @@ import {
   DataLineage,
   DocumentShare,
   Edit,
-  Error,
+  Error as ErrorIcon,
   Exchange,
   Label,
   NewLayer,
@@ -301,7 +301,11 @@ export function DrawingActions() {
       </Tooltip>
       {process.env.NODE_ENV === "production" ? null : (
         <Tooltip content="Cause Error">
-          <Button variant="minimal" icon={<Error />} onClick={showBoundary} />
+          <Button
+            variant="minimal"
+            icon={<ErrorIcon />}
+            onClick={() => showBoundary(new Error("synthetic error"))}
+          />
         </Tooltip>
       )}
       <EventModeGated>
