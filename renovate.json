@@ -17,6 +17,10 @@
     {
       "matchPackageNames": ["@babel/**"],
       "groupName": "babel"
+    },
+    {
+      "matchPackageNames": ["@lcdp/offline-plugin"],
+      "enabled": false
     }
   ]
 }
