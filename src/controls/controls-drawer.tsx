@@ -404,7 +404,8 @@ function GeneralSettings() {
             min={availableLevels[0]}
             max={Math.max(upperBound, lowerBound, 1)}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            majorStepSize={useGranularLevels ? 1 : null}
+            majorStepSize={useGranularLevels ? 1.00 : null}
+            minorStepSize={useGranularLevels ? granularIncrement.valueOf() : null}
             onValueChange={handleLowerBoundChange}
           />
         </FormGroup>
@@ -425,7 +426,8 @@ function GeneralSettings() {
             min={lowerBound}
             max={availableLevels[availableLevels.length - 1]}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            majorStepSize={useGranularLevels ? 1 : null}
+            majorStepSize={useGranularLevels ? 1.00 : null}
+            minorStepSize={useGranularLevels ? granularIncrement.valueOf() : null}
             onValueChange={handleUpperBoundChange}
           />
         </FormGroup>
