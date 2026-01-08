@@ -308,18 +308,25 @@ function GeneralSettings() {
     });
   }
 
-  const handleLowerBoundChange = (newLow: number) => {
+  const handleLowerBoundChange = (newLow: number, newLowRaw: string, element: HTMLInputElement) => {
+    console.log(element);
     if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
         newLow = upperBound;
       }
       setNextStateStep("lowerBound", newLow);
     }
+    else if (useGranularLevels) {
+      element.value = newLow.toFixed(2);
+    }
   };
 
-  const handleUpperBoundChange = (newHigh: number) => {
+  const handleUpperBoundChange = (newHigh: number, newHighRaw: string, element: HTMLInputElement) => {
     if (newHigh !== upperBound && !isNaN(newHigh)) {
       setNextStateStep("upperBound", newHigh);
+    }
+    else if (useGranularLevels) {
+      element.value = newHigh.toFixed(2);
     }
   };
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
