@@ -308,24 +308,30 @@ function GeneralSettings() {
     });
   }
 
-  const handleLowerBoundChange = (newLow: number, newLowRaw: string, element: HTMLInputElement) => {
+  const handleLowerBoundChange = (
+    newLow: number,
+    newLowRaw: string,
+    element: HTMLInputElement,
+  ) => {
     console.log(element);
     if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
         newLow = upperBound;
       }
       setNextStateStep("lowerBound", newLow);
-    }
-    else if (useGranularLevels) {
+    } else if (useGranularLevels) {
       element.value = newLow.toFixed(2);
     }
   };
 
-  const handleUpperBoundChange = (newHigh: number, newHighRaw: string, element: HTMLInputElement) => {
+  const handleUpperBoundChange = (
+    newHigh: number,
+    newHighRaw: string,
+    element: HTMLInputElement,
+  ) => {
     if (newHigh !== upperBound && !isNaN(newHigh)) {
       setNextStateStep("upperBound", newHigh);
-    }
-    else if (useGranularLevels) {
+    } else if (useGranularLevels) {
       element.value = newHigh.toFixed(2);
     }
   };
@@ -411,8 +417,10 @@ function GeneralSettings() {
             min={availableLevels[0]}
             max={Math.max(upperBound, lowerBound, 1)}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            majorStepSize={useGranularLevels ? 1.00 : null}
-            minorStepSize={useGranularLevels ? granularIncrement.valueOf() : null}
+            majorStepSize={useGranularLevels ? 1.0 : null}
+            minorStepSize={
+              useGranularLevels ? granularIncrement.valueOf() : null
+            }
             onValueChange={handleLowerBoundChange}
           />
         </FormGroup>
@@ -433,8 +441,10 @@ function GeneralSettings() {
             min={lowerBound}
             max={availableLevels[availableLevels.length - 1]}
             stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            majorStepSize={useGranularLevels ? 1.00 : null}
-            minorStepSize={useGranularLevels ? granularIncrement.valueOf() : null}
+            majorStepSize={useGranularLevels ? 1.0 : null}
+            minorStepSize={
+              useGranularLevels ? granularIncrement.valueOf() : null
+            }
             onValueChange={handleUpperBoundChange}
           />
         </FormGroup>
