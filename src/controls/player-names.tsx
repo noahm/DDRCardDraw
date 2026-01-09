@@ -49,6 +49,7 @@ export function PlayerNamesControls() {
           leftIcon={<Person size={20} className={Classes.TAG_INPUT_ICON} />}
           onAdd={addPlayers}
           onRemove={removePlayer}
+          addOnBlur={true}
         />
       </FormGroup>
       <TournamentLabelEditor />
