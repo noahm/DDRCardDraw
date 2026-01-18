@@ -37,6 +37,7 @@ export const SDVX_UNLOCK_IDS = {
     [1032, "maximum"], // Fin.ArcDeaR MXM
     [1044, "maximum"], // Immortal Saga MXM
 
+    // Omega Dimension
     1099, // FIN4LE ～終止線の彼方へ～
     1100, // WHITEOUT
     1101, // Deadly force
@@ -115,6 +116,104 @@ export const SDVX_UNLOCK_IDS = {
     1499, // Butterfly Twist
     1500, // pique
     1501, // Teufel
+
+    // Hexadiver
+    1580, // 666
+    1581, // 色を喪った街
+    1582, // ЯeviveR
+    1583, // 9TH5IN
+    1585, // Katharsis
+    1586, // ZEИITH
+    1587, // SAMURAI TIGER
+
+    1584, // VVelcome!!
+    1588, // Redshift 2nd Ignition
+    1589, // ミュージックプレイヤー
+    1590, // 春告胡蝶
+    1591, // †:OLPHEUX:†
+    1592, // GEMINI LA2ER
+    1593, // LubedeR
+    1594, // Яe:son D'être
+
+    1660, // MAYHEM
+    1661, // 飄える翼追い掛けて
+    1662, // Calamity Tempest
+    1663, // Daisycutter
+    1664, // ΛΛemoria
+    1665, // With It This Heaven?
+    1666, // apo:llioth
+
+    1766, // XHRONOXAPSULΞ
+    1768, // EncorE & cALL
+    1769, // AμreoLe ~for Triumph~
+    1770, // ZEUS
+    1774, // All for One
+    1775, // Wings to fly high
+    1776, // AIM HIGHER
+
+    1767, // MixxioN
+    1771, // Xb10r
+    1772, // 十の試練
+    1773, // Rhapsody ⚙︎f Triumph
+    1777, // 火狐之舞
+    1778, // 蝕
+    1779, // refluxio
+
+    1889, // Bl∞min'
+    1891, // LaμreLs ~the Angelus~
+    1893, // Avalanx
+    1895, // すべてが幻になった後で
+    1896, // Grandeur
+    1897, // Stairway to the sun
+    1900, // 極夜、暁を望んで
+
+    1888, // いまきみに
+    1890, // Fαtα∠ Ent∠mEnt
+    1892, // VɅZiLiSQ
+    1894, // 赫焉
+    1898, // STIGMA
+    1899, // 光風霽月
+    1901, // Lost Parliament
+
+    2037, // APØCALYPSE RAY
+    2039, // Spectacular“V”Adventure!
+    2040, // Breakneck Pursuit
+    2044, // 忘れないように、失くさないように
+    2046, // Marielle
+    2047, // ΣMERGENCY CODΣ
+    2050, // BLISS
+
+    2038, // HeaveИ's Rain
+    2041, // and After the Merry BADEND
+    2042, // Undead Raving Scare
+    2043, // Enter The Rave
+    2045, // SHARK IMPACT
+    2048, // 十三不塔
+    2049, // リュミレイラ
+
+    2079, // TOKAKU=ALMiRAJ
+    2080, // レインボウ・フレーバー
+    2081, // =∴NOMADE∵OTION=
+    2082, // 随神
+    2083, // OVEЯ+TUЯE
+    2084, // Burst Λnd reBoost
+    2085, // Λkasha
+
+    2086, // JACK -the KING Ki11ing-
+    2087, // Don't you dare play GOD
+    2088, // Xinca
+    2089, // 憧憬のファンファーレ
+    2090, // Imitated Visions
+    2091, // こどもかくしのアンダーランド
+    2092, // すべてを賭して
+
+    2253, // KINGDOM COME
+    2254, // // If Summer Ever Comes_
+    2255, // ØVER《Δ》
+    2256, // オムニシエント・ゼロ
+    2257, // Lollipop Error 404
+    2258, // カミツレの成り方
+    2259, // Grαnd Arχitect
 
     // BPL S2 Blaster Gate
     1939, // DEUX EX MĀXHINĀ
@@ -239,7 +338,12 @@ export const SDVX_UNLOCK_IDS = {
     [675, "exceed"], // BEAT-NEW-WORLD XCD
     [182, "exceed"], // 待チ人ハ来ズ。 XCD
 
-    // Arena Station Blaster Move
+    // Arena Exclusive
+    2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
+    2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
+    2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
+
+    // Exceed Gear Arena Exclusive Exceed Charts
     [872, "exceed"], // Din Don Dan (Fusion Remix)
     [88, "exceed"], // Grip & Break down !! - SDVX Edit. -
     [64, "exceed"], // SOUL EXPLOSION
@@ -260,110 +364,53 @@ export const SDVX_UNLOCK_IDS = {
     [612, "exceed"], // Le Fruit Défendu
     [131, "exceed"], // 物凄い勢いでけーねが物凄いうた
     [342, "exceed"], // Fiat Lux
+    [787, "exceed"], // Candy Colored Hearts
+    [790, "exceed"], // EMPIRE OF FLAME
+    [789, "exceed"], // End to end
+    [788, "exceed"], // NEO GRAVITY
+    [610, "exceed"], // veRtrageS
+    [786, "exceed"], // 雲の彼方
+
+    [842, "exceed"], // B.B.K.K.B.K.K.
+    [510, "exceed"], // The Sampling Paradise (P*Light Remix)
+    [281, "exceed"], // ネトゲ廃人シュプレヒコール
+
+    [165, "exceed"], // Hello world!
+    [634, "exceed"], // LegenD.
+    [348, "exceed"], // ボルテ体操第一
+
+    [241, "exceed"], // Lieselotte
+    [289, "exceed"], // U.N.オーエンは彼女なのか？haru_naba Remix
+    [390, "exceed"], // 轟け！恋のビーンボール！！
+
+    [85, "exceed"], // dreamin' feat.Ryu☆
+    [635, "exceed"], // World's end
+    [389, "exceed"], // デッドボヲルdeホームラン
+
+    [779, "exceed"], // conflict
+    [225, "exceed"], // Next infection
+    [418, "exceed"], // werewolf howls.
+
+    [61, "exceed"], // レトロスペクティビリー・メリーゴーランド
+    [466, "exceed"], // 有頂天ビバーチェ
+    [183, "exceed"], // ウサテイ
+
+    [836, "exceed"], // Halcyon
+    [475, "exceed"], // SkyDrive!
+    [687, "exceed"], // Sounds Of Summer
+
+    // Cloud-Exclusive
+    1762, // ドゥサンコオデッセイ!!
+    1763, // Azalea
+    1764, // Bayonex
+    1765, // Reverenced Flower
+    1811, // Reminiscence
 
     //BPL S5 Blaster GATE
     2314, // Divine Ether
     2315, // #Evil_Signs_of_Bloodlines
     2316, // Blessed Horizon
     2317, // 双星の冒険録
-  ],
-  hexadiver: [
-    1580, // 666
-    1581, // 色を喪った街
-    1582, // ЯeviveR
-    1583, // 9TH5IN
-    1585, // Katharsis
-    1586, // ZEИITH
-    1587, // SAMURAI TIGER
-
-    1584, // VVelcome!!
-    1588, // Redshift 2nd Ignition
-    1589, // ミュージックプレイヤー
-    1590, // 春告胡蝶
-    1591, // †:OLPHEUX:†
-    1592, // GEMINI LA2ER
-    1593, // LubedeR
-    1594, // Яe:son D'être
-
-    1660, // MAYHEM
-    1661, // 飄える翼追い掛けて
-    1662, // Calamity Tempest
-    1663, // Daisycutter
-    1664, // ΛΛemoria
-    1665, // With It This Heaven?
-    1666, // apo:llioth
-
-    1766, // XHRONOXAPSULΞ
-    1768, // EncorE & cALL
-    1769, // AμreoLe ~for Triumph~
-    1770, // ZEUS
-    1774, // All for One
-    1775, // Wings to fly high
-    1776, // AIM HIGHER
-
-    1767, // MixxioN
-    1771, // Xb10r
-    1772, // 十の試練
-    1773, // Rhapsody ⚙︎f Triumph
-    1777, // 火狐之舞
-    1778, // 蝕
-    1779, // refluxio
-
-    1889, // Bl∞min'
-    1891, // LaμreLs ~the Angelus~
-    1893, // Avalanx
-    1895, // すべてが幻になった後で
-    1896, // Grandeur
-    1897, // Stairway to the sun
-    1900, // 極夜、暁を望んで
-
-    1888, // いまきみに
-    1890, // Fαtα∠ Ent∠mEnt
-    1892, // VɅZiLiSQ
-    1894, // 赫焉
-    1898, // STIGMA
-    1899, // 光風霽月
-    1901, // Lost Parliament
-
-    2037, // APØCALYPSE RAY
-    2039, // Spectacular“V”Adventure!
-    2040, // Breakneck Pursuit
-    2044, // 忘れないように、失くさないように
-    2046, // Marielle
-    2047, // ΣMERGENCY CODΣ
-    2050, // BLISS
-
-    2038, // HeaveИ's Rain
-    2041, // and After the Merry BADEND
-    2042, // Undead Raving Scare
-    2043, // Enter The Rave
-    2045, // SHARK IMPACT
-    2048, // 十三不塔
-    2049, // リュミレイラ
-
-    2079, // TOKAKU=ALMiRAJ
-    2080, // レインボウ・フレーバー
-    2081, // =∴NOMADE∵OTION=
-    2082, // 随神
-    2083, // OVEЯ+TUЯE
-    2084, // Burst Λnd reBoost
-    2085, // Λkasha
-
-    2086, // JACK -the KING Ki11ing-
-    2087, // Don't you dare play GOD
-    2088, // Xinca
-    2089, // 憧憬のファンファーレ
-    2090, // Imitated Visions
-    2091, // こどもかくしのアンダーランド
-    2092, // すべてを賭して
-
-    2253, // KINGDOM COME
-    2254, // // If Summer Ever Comes_
-    2255, // ØVER《Δ》
-    2256, // オムニシエント・ゼロ
-    2257, // Lollipop Error 404
-    2258, // カミツレの成り方
-    2259, // Grαnd Arχitect
   ],
 
   // Variant Gate
@@ -374,6 +421,7 @@ export const SDVX_UNLOCK_IDS = {
     2226, // Gryphone
     2227, // Who then no 灯
 
+    //Variant Gate 2
     [272, "exceed"], // I'm so Happy XCD
     [315, "exceed"], // 恋はどう？モロ◎波動OK☆方程式！！ XCD
     [699, "exceed"], // ΕΛΠΙΣ XCD
@@ -382,18 +430,6 @@ export const SDVX_UNLOCK_IDS = {
   ],
 
   otherEvents: [
-    // Cloud-Exclusive
-    1762, // ドゥサンコオデッセイ!!
-    1763, // Azalea
-    1764, // Bayonex
-    1765, // Reverenced Flower
-    1811, // Reminiscence
-
-    // Arena Exclusive
-    2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
-    2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
-    2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
-
     //REFLEC BEAT Special Stamp!
     2235, // Windy Fairy
     2236, // 幻影ノ消失
@@ -441,41 +477,12 @@ export const SDVX_UNLOCK_IDS = {
     2340, // Temporal Veil
     2341, // 555 (Please call me “Go! Go! Go!”)
 
-    // Arena Exclusive Exceed Charts
-    [787, "exceed"], // Candy Colored Hearts
-    [790, "exceed"], // EMPIRE OF FLAME
-    [789, "exceed"], // End to end
-    [788, "exceed"], // NEO GRAVITY
-    [610, "exceed"], // veRtrageS
-    [786, "exceed"], // 雲の彼方
+    // GITADORA Special Stamp!
+    2342, // めた・メタ？ひまわり＊パンチ
+    2338, // 天泣
 
-    [842, "exceed"], // B.B.K.K.B.K.K.
-    [510, "exceed"], // The Sampling Paradise (P*Light Remix)
-    [281, "exceed"], // ネトゲ廃人シュプレヒコール
-
-    [165, "exceed"], // Hello world!
-    [634, "exceed"], // LegenD.
-    [348, "exceed"], // ボルテ体操第一
-
-    [241, "exceed"], // Lieselotte
-    [289, "exceed"], // U.N.オーエンは彼女なのか？haru_naba Remix
-    [390, "exceed"], // 轟け！恋のビーンボール！！
-
-    [85, "exceed"], // dreamin' feat.Ryu☆
-    [635, "exceed"], // World's end
-    [389, "exceed"], // デッドボヲルdeホームラン
-
-    [779, "exceed"], // conflict
-    [225, "exceed"], // Next infection
-    [418, "exceed"], // werewolf howls.
-
-    [61, "exceed"], // レトロスペクティビリー・メリーゴーランド
-    [466, "exceed"], // 有頂天ビバーチェ
-    [183, "exceed"], // ウサテイ
-
-    [836, "exceed"], // Halcyon
-    [475, "exceed"], // SkyDrive!
-    [687, "exceed"], // Sounds Of Summer
+    //Seiryu Kai Stamp Bonus!
+    2170, // Blue Diamond
   ],
 
   jpOnly: [
