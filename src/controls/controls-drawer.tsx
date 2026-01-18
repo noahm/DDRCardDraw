@@ -313,7 +313,6 @@ function GeneralSettings() {
     newLowRaw: string,
     element: HTMLInputElement,
   ) => {
-    console.log(element);
     if (newLow !== lowerBound && !isNaN(newLow)) {
       if (newLow > upperBound) {
         newLow = upperBound;
