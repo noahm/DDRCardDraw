@@ -260,6 +260,12 @@ export const SDVX_UNLOCK_IDS = {
     [612, "exceed"], // Le Fruit Défendu
     [131, "exceed"], // 物凄い勢いでけーねが物凄いうた
     [342, "exceed"], // Fiat Lux
+
+    //BPL S5 Blaster GATE
+    2314, // Divine Ether
+    2315, // #Evil_Signs_of_Bloodlines
+    2316, // Blessed Horizon
+    2317, // 双星の冒険録
   ],
   hexadiver: [
     1580, // 666
@@ -427,8 +433,15 @@ export const SDVX_UNLOCK_IDS = {
     2261, // Dear Deer
     2262, // DISTORDER
 
-    // Arena Exclusive Exceed Charts
+    2284, // HOLOGRAPHY
+    2285, // Like the Starlight
+    2286, // FRENZY HEART
 
+    2339, // フラッフィー・アドベンチャー！
+    2340, // Temporal Veil
+    2341, // 555 (Please call me “Go! Go! Go!”)
+
+    // Arena Exclusive Exceed Charts
     [787, "exceed"], // Candy Colored Hearts
     [790, "exceed"], // EMPIRE OF FLAME
     [789, "exceed"], // End to end
@@ -459,6 +472,10 @@ export const SDVX_UNLOCK_IDS = {
     [61, "exceed"], // レトロスペクティビリー・メリーゴーランド
     [466, "exceed"], // 有頂天ビバーチェ
     [183, "exceed"], // ウサテイ
+
+    [836, "exceed"], // Halcyon
+    [475, "exceed"], // SkyDrive!
+    [687, "exceed"], // Sounds Of Summer
   ],
 
   jpOnly: [
