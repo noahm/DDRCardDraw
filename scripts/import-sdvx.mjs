@@ -25,7 +25,7 @@ function typedKeys(object) {
   return Object.keys(object);
 }
 
-const OUTFILE = "src/songs/sdvx.json";
+const OUTFILE = "src/songs/sdvx_nabla.json";
 const JACKETS_PATH = "src/assets/jackets/sdvx";
 
 async function main() {
@@ -85,7 +85,7 @@ async function main() {
     },
     i18n: {
       en: {
-        name: "SDVX: EG",
+        name: "SDVX: ∇",
         single: "Single",
         novice: "Novice",
         advanced: "Advanced",
@@ -116,7 +116,7 @@ async function main() {
         },
       },
       ja: {
-        name: "SDVX: EG",
+        name: "SDVX: ∇",
         single: "Single",
         novice: "Novice",
         advanced: "Advanced",
@@ -148,7 +148,7 @@ async function main() {
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
-  const outfilePath = resolve(join(__dirname, "../src/songs/sdvx.json"));
+  const outfilePath = resolve(join(__dirname, "../src/songs/sdvx_nabla.json"));
   writeJsonData(data, outfilePath);
 }
 
@@ -262,7 +262,7 @@ function buildSong(song, availableJackets) {
   for (const chartType of Object.keys(song.difficulty[0])) {
     const chartInfo = song.difficulty[0][chartType][0];
 
-    const lvl = parseInt(chartInfo.difnum[0]._, 10);
+    const lvl = parseInt(chartInfo.difnum[0]._, 10) / 10;
     if (lvl < 1) {
       continue;
     }

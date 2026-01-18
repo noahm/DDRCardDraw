@@ -15,7 +15,7 @@ This app can be easily customized for novel formats a tournament might use. If y
 
 If you want to take a stab at developing on the app yourself, you will need have node.js >= 18.0.0 installed along with [yarn](https://yarnpkg.com/). Some familarity with React will also help.
 
-Clone this repo to your computer. Then the following commands will be useful:
+Fork this repo to your account and then clone the fork to your computer. Then the following commands will be useful:
 
 ```sh
 # Before running anything else, do this!
