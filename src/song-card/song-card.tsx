@@ -12,7 +12,7 @@ import {
 import { SongSearch } from "../song-search";
 import { detectedLanguage } from "../utils";
 import { CardLabel, LabelType } from "./card-label";
-import { FillPlaceholderList, IconMenu } from "./icon-menu";
+import { FillPlaceholderList, ActionMenu } from "./acton-menu";
 import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
 import { ChartLevel } from "./chart-level";
@@ -158,7 +158,7 @@ export function SongCard(props: Props) {
       );
     } else if (!hasLabel) {
       menuContent = (
-        <IconMenu
+        <ActionMenu
           onProtect={iconCallbacks.onProtect}
           onStartPocketPick={setPocketPickPendingForPlayer}
           onVeto={iconCallbacks.onVeto}
@@ -169,7 +169,10 @@ export function SongCard(props: Props) {
       );
     } else if (vetoedBy === undefined) {
       menuContent = (
-        <IconMenu onSetWinner={iconCallbacks.onSetWinner} onCopy={handleCopy} />
+        <ActionMenu
+          onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={handleCopy}
+        />
       );
     }
   }

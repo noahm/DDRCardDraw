@@ -23,7 +23,7 @@ interface Props {
   onCopy?: () => void;
 }
 
-export function IconMenu(props: Props) {
+export function ActionMenu(props: Props) {
   const {
     onStartPocketPick,
     onVeto,
