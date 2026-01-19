@@ -348,19 +348,21 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
         break;
       }
       const [randomIndex, randomChart] = pickRandomItem(selectableCharts);
-
-      if (randomChart) {
-        // Save it in our list of drawn charts
-        drawnCharts.push({
-          ...randomChart,
-          // Give this random chart a unique id within this drawing
-          id: `drawn_chart-${nanoid(5)}`,
-          type: CHART_DRAWN,
-        });
-        // remove drawn chart from deck so it cannot be re-drawn
-        selectableCharts.splice(randomIndex, 1);
-        difficultyCounts.add(chosenBucketIdx);
+      if (!randomChart) {
+        // no charts left in selectable set
+        break;
       }
+
+      // Save it in our list of drawn charts
+      drawnCharts.push({
+        ...randomChart,
+        // Give this random chart a unique id within this drawing
+        id: `drawn_chart-${nanoid(5)}`,
+        type: CHART_DRAWN,
+      });
+      // remove drawn chart from deck so it cannot be re-drawn
+      selectableCharts.splice(randomIndex, 1);
+      difficultyCounts.add(chosenBucketIdx);
     }
 
     if (useWeights && forceDistribution) {
