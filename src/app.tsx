@@ -26,6 +26,7 @@ import {
 import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
 import { useMemo } from "react";
+import { ToasterHost } from "./toaster";
 
 const router = createBrowserRouter([
   {
@@ -248,6 +249,7 @@ export function App() {
       <ThemeSyncWidget />
       <UpdateManager />
       <RouterProvider router={router} />
+      <ToasterHost />
     </IntlProvider>
   );
 }

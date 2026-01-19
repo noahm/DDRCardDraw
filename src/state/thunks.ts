@@ -54,6 +54,7 @@ export function createDraw(
 
     const charts = draw(gameData, config, drawMeta);
     if (!charts.length) {
+      showDrawErrorToast();
       trackDraw(null);
       return "nok"; // could not draw the requested number of charts
     }
@@ -151,6 +152,7 @@ export function createSubdraw(
     const charts = draw(gameData, config, { meta: existingDraw.meta });
     trackDraw(charts.length, gameData.i18n.en.name as string);
     if (!charts.length) {
+      showDrawErrorToast();
       return "nok"; // could not draw the requested number of charts
     }
 
@@ -235,6 +237,7 @@ export function createRedrawChart(
       chart.type !== "DRAWN" ||
       target.charts.some((c) => c.id === chart.id)
     ) {
+      showDrawErrorToast();
       return; // result didn't include a new chart
     }
     dispatch(
@@ -293,6 +296,7 @@ export function createPlusOneChart(
       chart.type !== "DRAWN" ||
       target.charts.some((c) => c.id === chart.id)
     ) {
+      showDrawErrorToast();
       return; // result didn't include a new chart
     }
     return dispatch(drawingsSlice.actions.addOneChart({ drawingId, chart }));
@@ -342,6 +346,7 @@ export function createPickBanPocket(
 import { GameData } from "../models/SongData";
 import { nanoid } from "nanoid";
 import { availableGameData } from "../utils";
+import { showDrawErrorToast } from "../draw-state/error-toast";
 
 function getOverridesFromGameData(gameData?: GameData): Partial<ConfigState> {
   if (!gameData) return {};

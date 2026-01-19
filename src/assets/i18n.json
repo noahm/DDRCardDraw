@@ -80,7 +80,7 @@
       "addPlayerLabel": "Manage Player Names",
       "tournamentLabelEdit": "Tournament round labels",
       "shockArrows": "Shock Arrows",
-      "invalid": "Couldn't draw anything with current settings!"
+      "invalid": "Couldn't draw enough charts with current settings!"
     },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
@@ -188,7 +188,7 @@
       "addPlayerLabel": "プレイヤー名の管理",
       "tournamentLabelEdit": "大会ラウンドの管理",
       "shockArrows": "ショックアローを含む",
-      "invalid": "対象譜面がありません！"
+      "invalid": "対象譜面が足りません！"
     },
     "weights": {
       "explanation": "各レベルの譜面がドローされる確率を、割合で設定します。",
