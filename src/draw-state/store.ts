@@ -6,6 +6,7 @@ import { ConfigState } from "../config-state";
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
 import { DataConnection } from "peerjs";
+import { showDrawErrorToast } from "./error-toast";
 
 interface DrawState {
   importedData: Map<string, GameData>;
@@ -13,7 +14,6 @@ interface DrawState {
   fuzzySearch: FuzzySearch<Song> | null;
   drawings: Drawing[];
   dataSetName: string;
-  lastDrawFailed: boolean;
   confirmMessage: string;
   addImportedData(dataSetName: string, gameData: GameData): void;
   loadGameData(dataSetName: string, gameData?: GameData): Promise<GameData>;
@@ -66,7 +66,6 @@ export const useDrawState = createWithEqualityFn<DrawState>(
     fuzzySearch: null,
     drawings: [],
     dataSetName: "",
-    lastDrawFailed: false,
     confirmMessage: "This will clear all songs drawn so far. Confirm?",
     clearDrawings() {
       if (get().drawings.length && !window.confirm(get().confirmMessage)) {
@@ -122,17 +121,14 @@ export const useDrawState = createWithEqualityFn<DrawState>(
 
       const drawing = draw(state.gameData, config);
       trackDraw(drawing.charts.length, state.dataSetName);
-      if (!drawing.charts.length) {
-        set({
-          lastDrawFailed: true,
-        });
+      if (drawing.charts.length < config.chartCount + config.playerPicks) {
+        showDrawErrorToast();
         return false;
       }
 
       set((prevState) => {
         return {
           drawings: [drawing, ...prevState.drawings].filter(Boolean),
-          lastDrawFailed: false,
         };
       });
       return true;
