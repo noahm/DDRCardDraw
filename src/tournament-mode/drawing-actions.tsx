@@ -11,6 +11,7 @@ import {
   Camera,
   DataLineage,
   DocumentShare,
+  Random,
   Edit,
   Error as ErrorIcon,
   Exchange,
@@ -66,6 +67,7 @@ import { ConfigContextProvider, useConfigId } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
 import { times } from "../utils";
 import { mergeDraws } from "../state/central";
+import { useHighlightRandom } from "./highlight-random";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
@@ -239,6 +241,7 @@ export function DrawingActions() {
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
+  const highlighAtRandom = useHighlightRandom();
   const isGauntlet =
     drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
   const { showBoundary } = useErrorBoundary();
@@ -267,6 +270,13 @@ export function DrawingActions() {
 
   return (
     <div className={styles.networkButtons}>
+      <Tooltip content={t("drawing.pickRandom", undefined, "Pick Random")}>
+        <Button
+          variant="minimal"
+          icon={<Random />}
+          onClick={highlighAtRandom}
+        />
+      </Tooltip>
       <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
         <Button
           variant="minimal"

@@ -1,6 +1,13 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { type JSX, useCallback, useMemo, useState } from "react";
+import {
+  type JSX,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {
@@ -21,6 +28,7 @@ import { createPickBanPocket, createRedrawChart } from "../state/thunks";
 import { getJacketUrl } from "../utils/jackets";
 import { drawingsSlice } from "../state/drawings.slice";
 import { copyTextToClipboard } from "../utils/share";
+import { useChartRandomSelected } from "../tournament-mode/highlight-random";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -100,6 +108,18 @@ export function SongCard(props: Props) {
     actionsEnabled,
   } = props;
   const hideVetos = useConfigState((s) => s.hideVetos);
+
+  const [wasRandomlySelected, clearRandomSelection] =
+    useChartRandomSelected(chart);
+  const rootRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (wasRandomlySelected && rootRef.current) {
+      rootRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [wasRandomlySelected]);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
   const showMenu = () => setContextMenuOpen(true);
@@ -184,94 +204,104 @@ export function SongCard(props: Props) {
     [styles.picked]: replacedBy !== undefined && baseChartIsPlaceholder,
     [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
     [styles.hideVeto]: hideVetos,
+    [styles.randomSelected]: wasRandomlySelected,
   });
 
   const handleCardClick = menuContent ? showMenu : props.onClick || handleCopy;
 
   return (
-    <div
-      className={rootClassname}
-      onClick={
-        showingContextMenu || pocketPickPendingForPlayer !== null
-          ? undefined
-          : handleCardClick
-      }
-      style={jacketBg}
+    <Popover
+      isOpen={wasRandomlySelected}
+      onClose={clearRandomSelection}
+      content={<div style={{ padding: "0.5em" }}>This one!</div>}
+      targetTagName="div"
+      className={styles.popoverWrapper}
     >
-      <SongSearch
-        isOpen={pocketPickPendingForPlayer !== null}
-        onSongSelect={(song, chart) => {
-          if (actionsEnabled && chart) {
-            iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
-          }
-          setPocketPickPendingForPlayer(null);
-        }}
-        onCancel={() => setPocketPickPendingForPlayer(null)}
-      />
-      <div className={styles.cardCenter}>
-        {vetoedBy !== undefined && (
-          <CardLabel
-            playerIdx={vetoedBy}
-            type={LabelType.Ban}
-            onRemove={iconCallbacks?.onReset}
-          />
-        )}
-        {protectedBy !== undefined && (
-          <CardLabel
-            playerIdx={protectedBy}
-            type={LabelType.Protect}
-            onRemove={iconCallbacks?.onReset}
-          />
-        )}
-        {replacedBy !== undefined && (
-          <CardLabel
-            playerIdx={replacedBy}
-            type={
-              baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket
-            }
-            onRemove={iconCallbacks?.onReset}
-          />
-        )}
-        {hasWinner && (
-          <CardLabel
-            playerIdx={winner}
-            type={LabelType.Winner}
-            onRemove={() => iconCallbacks?.onSetWinner(null)}
-          />
-        )}
-        <div className={styles.name} title={nameTranslation}>
-          {name}
-        </div>
-        {isJapanese ? null : (
-          <div className={styles.nameTranslation}>{nameTranslation}</div>
-        )}
-        <div className={styles.artist} title={artistTranslation}>
-          {artist}
-        </div>
-        <div className={styles.dateAdded} title={dateAdded}>
-          {dateAdded}
-        </div>
-      </div>
-
-      <Popover
-        content={menuContent}
-        isOpen={showingContextMenu}
-        onClose={hideMenu}
-        placement="top"
-        modifiers={{ offset: { options: { offset: [0, 35] } } }}
+      <div
+        ref={rootRef}
+        className={rootClassname}
+        onClick={
+          showingContextMenu || pocketPickPendingForPlayer !== null
+            ? undefined
+            : handleCardClick
+        }
+        style={jacketBg}
       >
-        <div
-          className={styles.cardFooter}
-          style={{ backgroundColor: diffColor }}
-        >
-          {bpm ? <div className={styles.bpm}>{bpm} BPM</div> : <div />}
-          {flags?.includes("shock") && <ShockBadge />}
-          {flags?.includes("noCmod") && "🚫"}
-          <div className={styles.difficulty}>
-            {diffAbbr} <ChartLevel chart={replacedWith || chart} />
+        <SongSearch
+          isOpen={pocketPickPendingForPlayer !== null}
+          onSongSelect={(song, chart) => {
+            if (actionsEnabled && chart) {
+              iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
+            }
+            setPocketPickPendingForPlayer(null);
+          }}
+          onCancel={() => setPocketPickPendingForPlayer(null)}
+        />
+        <div className={styles.cardCenter}>
+          {vetoedBy !== undefined && (
+            <CardLabel
+              playerIdx={vetoedBy}
+              type={LabelType.Ban}
+              onRemove={iconCallbacks?.onReset}
+            />
+          )}
+          {protectedBy !== undefined && (
+            <CardLabel
+              playerIdx={protectedBy}
+              type={LabelType.Protect}
+              onRemove={iconCallbacks?.onReset}
+            />
+          )}
+          {replacedBy !== undefined && (
+            <CardLabel
+              playerIdx={replacedBy}
+              type={
+                baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket
+              }
+              onRemove={iconCallbacks?.onReset}
+            />
+          )}
+          {hasWinner && (
+            <CardLabel
+              playerIdx={winner}
+              type={LabelType.Winner}
+              onRemove={() => iconCallbacks?.onSetWinner(null)}
+            />
+          )}
+          <div className={styles.name} title={nameTranslation}>
+            {name}
+          </div>
+          {isJapanese ? null : (
+            <div className={styles.nameTranslation}>{nameTranslation}</div>
+          )}
+          <div className={styles.artist} title={artistTranslation}>
+            {artist}
+          </div>
+          <div className={styles.dateAdded} title={dateAdded}>
+            {dateAdded}
           </div>
         </div>
-      </Popover>
-    </div>
+
+        <Popover
+          content={menuContent}
+          isOpen={showingContextMenu}
+          onClose={hideMenu}
+          placement="top"
+          modifiers={{ offset: { options: { offset: [0, 35] } } }}
+        >
+          <div
+            className={styles.cardFooter}
+            style={{ backgroundColor: diffColor }}
+          >
+            {bpm ? <div className={styles.bpm}>{bpm} BPM</div> : <div />}
+            {flags?.includes("shock") && <ShockBadge />}
+            {flags?.includes("noCmod") && "🚫"}
+            <div className={styles.difficulty}>
+              {diffAbbr} <ChartLevel chart={replacedWith || chart} />
+            </div>
+          </div>
+        </Popover>
+      </div>
+    </Popover>
   );
 }
