@@ -26,6 +26,7 @@ export function App() {
         <Header />
         <DrawingList />
         <DropHandler />
+        <ToasterHost />
       </DrawStateManager>
     </OverlaysProvider>
   );
