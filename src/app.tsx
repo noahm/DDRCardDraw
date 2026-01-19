@@ -14,6 +14,7 @@ import { DrawStateManager } from "./draw-state";
 import { Header } from "./header";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { DropHandler } from "./drop-handler";
+import { ToasterHost } from "./toaster";
 
 export function App() {
   return (
@@ -23,6 +24,7 @@ export function App() {
       <Header />
       <DrawingList />
       <DropHandler />
+      <ToasterHost />
     </DrawStateManager>
   );
 }
