@@ -7,7 +7,6 @@ import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 import { FocusStyleManager } from "@blueprintjs/core";
 import { OverlaysProvider } from "@blueprintjs/core";
 
-
 FocusStyleManager.onlyShowFocusOnTabs();
 
 import { DrawingList } from "./drawing-list";
