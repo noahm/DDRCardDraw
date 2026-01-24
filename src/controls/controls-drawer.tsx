@@ -20,7 +20,7 @@ import { useIntl } from "../hooks/useIntl";
 import { GameData } from "../models/SongData";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
-import { getAvailableLevels, useGetMetaString } from "../game-data-utils";
+import { useGetMetaString } from "../game-data-utils";
 import { Fraction } from "../utils/fraction";
 import {
   ConfigContextProvider,
@@ -30,6 +30,7 @@ import {
 } from "../state/hooks";
 import { useStockGameData } from "../state/game-data.atoms";
 import { MultidrawControls } from "./multidraw-controls";
+import { LvlRangeControls } from "./lvl-range";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -221,10 +222,6 @@ function GeneralSettings() {
     return getAvailableDifficulties(gameData, selectedStyle);
   }, [gameData, selectedStyle]);
   const [expandFilters, setExpandFilters] = useState(false);
-  const availableLevels = useMemo(
-    () => getAvailableLevels(gameData, useGranularLevels),
-    [gameData, useGranularLevels],
-  );
   const getMetaString = useGetMetaString();
 
   if (!gameData) {
@@ -236,60 +233,6 @@ function GeneralSettings() {
   );
   const { styles: gameStyles } = gameData.meta;
 
-  /**
-   * attempts to step to the next value of available levels for either bounds field
-   */
-  function setNextStateStep(
-    stateKey: "upperBound" | "lowerBound",
-    newValue: number,
-  ) {
-    updateState((prev) => {
-      // re-calc with current state of granular levels. the one in scope above may be stale
-      const availableLevels = getAvailableLevels(
-        gameData,
-        prev.useGranularLevels,
-      );
-      if (availableLevels.includes(newValue)) {
-        return { [stateKey]: newValue };
-      }
-      const currentValue = configState[stateKey];
-      const currentIndex = availableLevels.indexOf(currentValue);
-      const direction = newValue > currentValue ? 1 : -1;
-      const newIndex = currentIndex + direction;
-      if (newIndex < 0 || newIndex >= availableLevels.length) {
-        console.error("cannot go outside of available levels");
-        return {};
-      }
-      return { [stateKey]: availableLevels[newIndex] };
-    });
-  }
-
-  const handleLowerBoundChange = (
-    newLow: number,
-    newLowRaw: string,
-    element: HTMLInputElement,
-  ) => {
-    if (newLow !== lowerBound && !isNaN(newLow)) {
-      if (newLow > upperBound) {
-        newLow = upperBound;
-      }
-      setNextStateStep("lowerBound", newLow);
-    } else if (useGranularLevels) {
-      element.value = newLow.toFixed(2);
-    }
-  };
-
-  const handleUpperBoundChange = (
-    newHigh: number,
-    newHighRaw: string,
-    element: HTMLInputElement,
-  ) => {
-    if (newHigh !== upperBound && !isNaN(newHigh)) {
-      setNextStateStep("upperBound", newHigh);
-    } else if (useGranularLevels) {
-      element.value = newHigh.toFixed(2);
-    }
-  };
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   return (
@@ -337,54 +280,7 @@ function GeneralSettings() {
       </div>
       <MultidrawControls key={configState.id} />
       <div className={styles.inlineControls}>
-        <FormGroup
-          label={
-            usesDrawGroups
-              ? t("controls.lowerBoundTier")
-              : t("controls.lowerBoundLvl")
-          }
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            size="large"
-            fill
-            type="number"
-            inputMode="numeric"
-            value={useGranularLevels ? lowerBound.toFixed(2) : lowerBound}
-            min={availableLevels[0]}
-            max={Math.max(upperBound, lowerBound, 1)}
-            stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            majorStepSize={useGranularLevels ? 1.0 : null}
-            minorStepSize={
-              useGranularLevels ? granularIncrement.valueOf() : null
-            }
-            onValueChange={handleLowerBoundChange}
-          />
-        </FormGroup>
-        <FormGroup
-          label={
-            usesDrawGroups
-              ? t("controls.upperBoundTier")
-              : t("controls.upperBoundLvl")
-          }
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            size="large"
-            fill
-            type="number"
-            inputMode="numeric"
-            value={useGranularLevels ? upperBound.toFixed(2) : upperBound}
-            min={lowerBound}
-            max={availableLevels[availableLevels.length - 1]}
-            stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            majorStepSize={useGranularLevels ? 1.0 : null}
-            minorStepSize={
-              useGranularLevels ? granularIncrement.valueOf() : null
-            }
-            onValueChange={handleUpperBoundChange}
-          />
-        </FormGroup>
+        <LvlRangeControls />
       </div>
       <Button
         alignText="left"
