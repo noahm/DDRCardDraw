@@ -211,6 +211,7 @@ function NudgableRangeInput({
           inputSize={4}
           inputMode="numeric"
           onChange={(e) => setNewValue(e.currentTarget.value)}
+          onBlur={() => setLocalValue("")}
           onKeyDown={(e) => {
             switch (e.key) {
               case "ArrowUp":
