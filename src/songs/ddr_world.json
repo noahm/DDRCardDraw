@@ -11565,6 +11565,12 @@
           "sanbaiTier": 16.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
@@ -11581,6 +11587,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.9
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Concertino_in_Blue",
@@ -37886,6 +37898,62 @@
       "jacket": "ddr_2014/MITO rete! Ibarakisshudarin.png",
       "saHash": "Db9DllQooo6lqQdl6Q6OD6q066i1IdOO",
       "saIndex": "590"
+    },
+    {
+      "name": "MODEL FT2 Miracle Version",
+      "artist": "Mutsuhiko Izumi",
+      "saHash": "IdDblQIbq8Di9iOo61O0bQIIPqPQ16o8",
+      "bpm": "155",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/MODEL FT2 Miracle Version.jpg",
+      "remyLink": "https://remywiki.com/MODEL_FT2_Miracle_Version"
     },
     {
       "name": "Monkey Business",
@@ -85790,6 +85858,54 @@
       "genre": "",
       "saIndex": "1187",
       "jacket": "ddr_a3/Youhishi no ue no ginga.jpg"
+    },
+    {
+      "name": "羽根亡キ少女唄",
+      "name_translation": "Hanenaki Shoujo Uta",
+      "artist": "純情ディスコード",
+      "saHash": "dI0q9QdPOI1lq6888qI980dqll6dbqib",
+      "bpm": "174",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/羽根亡キ少女唄.jpg",
+      "remyLink": "https://remywiki.com/Hanenaki_shoujo_uta",
+      "search_hint": "はねなきしょうじょうた"
     },
     {
       "name": "至上のラトゥーリア",

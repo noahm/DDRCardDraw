@@ -95,6 +95,9 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
       ])
     : []),
   // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
+  // #region EXTRA SAVIOR WORLD - The 1st GITADORA
+  ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
+  // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
 ]);
 
 type SanbaiSongData = Pick<
