@@ -29,6 +29,12 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [280, ["unlock"]], // EXTRA SAVIOR WORLD
   [290, ["unlock"]], // GALAXY BRAVE
   [300, ["platinumMembers"]], // DDR PLATINUM MEMBERS
+  [
+    310,
+    new Date() < new Date("2026-03-22T23:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
