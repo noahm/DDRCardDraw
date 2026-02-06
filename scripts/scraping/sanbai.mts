@@ -22,11 +22,9 @@ type SanbaiSong = {
 
 /** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
 const lockFlags: Map<number, Song["flags"]> = new Map([
-  [20, ["goldExclusive", "tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   [250, ["flareRank"]], // FLARE SKILL unlock
-  [260, ["tempUnlock"]], // MYSTICAL Re:UNION
   [270, ["worldLeague"]], // WORLD LEAGUE
   [280, ["unlock"]], // EXTRA SAVIOR WORLD
   [290, ["unlock"]], // GALAXY BRAVE
@@ -67,22 +65,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ],
   // #endregion グランプリ譜面パック vol.6
   // #region PRE PRIVILEGE to playable default (about 1 year after release)
-  ...(new Date() >= new Date("2026-01-30T15:00:00+09:00")
-    ? [
-        // BPL S4楽曲パック
-        "I0dOli6do1l1008I8PllOq8DoOoIO8oq", // Steps for Victory
-        "bO10Q9999DQ9DDP890lQbdlIlIl6IID9", // blue anthem
-        "Doo9l68ddi11PQOOd6o11Q9Dd1lIQ9I6", // ESPRIT ONE
-        "ODlO019O088Q0bl9QI1PPqQ01iD68191", // Get Into The Groove feat.WaMi
-        "QID6qIPod8III8ll8ooQild1QdlPOIdi", // Mighty Beat Monsterz
-        "d0ll11iidiii09D9q81oo1Pq00oDbQ1i", // THUNDERSTRIKE
-        "lqd0I0Pbqo60I8iDOO88bbD1d9qlQ18O", // Wizards!
-        "QI8ID6bQ9Ql0IdqddI16OqPdib9OO1Do", // メテオラ-meteor-
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
   ...(new Date() >= new Date("2026-02-27T15:00:00+09:00")
     ? [
         // スペシャル楽曲パック feat.ひなビタ♪ vol.3
