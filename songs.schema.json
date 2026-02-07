@@ -142,6 +142,9 @@
           },
           "remyLink": {
             "type": "string"
+          },
+          "extras": {
+            "type": "string"
           }
         },
         "required": ["name", "artist", "bpm", "jacket", "charts"],
@@ -192,6 +195,9 @@
         "bpm": {
           "type": "string",
           "description": "per-chart BPM range, if one applies"
+        },
+        "extras": {
+          "type": "string"
         }
       },
       "required": ["lvl", "diffClass", "style"]
