@@ -33,20 +33,14 @@ export interface DDRSongImporter<T extends Partial<Song>> {
  */
 export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   readonly #jsonFileName: `${string}.json`;
-  readonly #updatedPropertyKeys: (
-    | Exclude<keyof Song, "charts">
-    | `charts.${keyof Chart}`
-  )[];
+  readonly #updatedPropertyKeys: (keyof Song | `charts.${keyof Chart}`)[];
   /**
    * @param jsonFileName The name of the JSON file to import songs from
    * @param updatedPropertyKeys The list of properties to update in existing songs
    */
   constructor(
     jsonFileName: `${string}.json`,
-    updatedPropertyKeys: (
-      | Exclude<keyof Song, "charts">
-      | `charts.${keyof Chart}`
-    )[],
+    updatedPropertyKeys: (keyof Song | `charts.${keyof Chart}`)[],
   ) {
     this.#jsonFileName = jsonFileName;
     this.#updatedPropertyKeys = updatedPropertyKeys;
@@ -64,7 +58,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   }
 
   songEquals(existingSong: Song, fetchedSong: Song): boolean {
-    return existingSong.saHash === fetchedSong.saHash;
+    return existingSong.saHash && fetchedSong.saHash
+      ? existingSong.saHash === fetchedSong.saHash
+      : existingSong.name === fetchedSong.name &&
+          existingSong.artist === fetchedSong.artist;
   }
 
   merge(existingSong: Song, fetchedSong: Song): boolean {
@@ -123,7 +120,20 @@ export interface DDRSourceMeta {
   /** Flags that are not managed by importer, to be copied as-is */
   unmanagedFlags?: string[];
   /** e-amusement GATE page for this mix */
-  eagate?: { songList: string; jacket: string };
+  eagate?: {
+    /**
+     * Music list page URL
+     * @example
+     * - https://p.eagate.573.jp/game/ddr/ddrworld/music/index.html?filter=7
+     * - https://p.eagate.573.jp/game/eacddr/konaddr/info/mlist.html
+     */
+    songList: string;
+    /**
+     * Jacket image base URL
+     * @description if truthy, use `EAGateSongImporter`, otherwise use `GrandPrixSongImporter`
+     */
+    jacket?: string;
+  };
   /** zenius-i-vanisher game database page for this mix */
   ziv?: ZIVSourceMeta;
   /** Whether to use 3icecream song data */
@@ -133,7 +143,7 @@ export interface DDRSourceMeta {
   /** Copy specified properties from another DDR mix JSON data */
   copyFrom?: {
     file: `${string}.json`;
-    keys: (Exclude<keyof Song, "charts"> | `charts.${keyof Chart}`)[];
+    keys: (keyof Song | `charts.${keyof Chart}`)[];
   };
 }
 
@@ -567,4 +577,28 @@ export const DDR_EXTREME: DDRSourceMeta = {
   },
   remy: "https://remywiki.com/AC_DDR_EXTREME",
   copyFrom: DDR_X.copyFrom,
+};
+
+export const DDR_GRAND_PRIX: DDRSourceMeta = {
+  filename: "ddr_grand_prix.json",
+  jacketPrefix: "ddr_grand_prix/",
+  sortSongs: true,
+  eagate: {
+    songList: "https://p.eagate.573.jp/game/eacddr/konaddr/info/mlist.html",
+  },
+  copyFrom: {
+    file: "ddr_world.json",
+    keys: [
+      "saHash",
+      "bpm",
+      "name_translation",
+      "artist_translation",
+      "search_hint",
+      "genre",
+      "jacket",
+      "remyLink",
+      "charts",
+      "folder",
+    ],
+  },
 };

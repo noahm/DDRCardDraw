@@ -25,6 +25,7 @@ import { EAGateSongImporter } from "./scraping/eagate-ddr.mts";
 import { tryGetMetaFromRemy } from "./scraping/remy.mts";
 import { SanbaiSongImporter } from "./scraping/sanbai.mts";
 import { ZivSongImporter } from "./scraping/ziv.mts";
+import { GrandPrixSongImporter } from "./scraping/grand-prix.mts";
 
 setJacketPrefix(MIX_META.jacketPrefix);
 
@@ -43,59 +44,89 @@ try {
 
   if (MIX_META.eagate) {
     console.log("Fetching songs from e-amusement GATE...");
-    const importer = new EAGateSongImporter(
-      MIX_META.eagate.songList,
-      MIX_META.eagate.jacket,
-      MIX_META.unmanagedFlags ?? [],
-    );
-    const fetchedSongs = await importer.fetchSongs();
+    if (MIX_META.eagate.jacket) {
+      // AC version
+      const importer = new EAGateSongImporter(
+        MIX_META.eagate.songList,
+        MIX_META.eagate.jacket,
+        MIX_META.unmanagedFlags ?? [],
+      );
+      const fetchedSongs = await importer.fetchSongs();
 
-    console.log(`Fetched ${fetchedSongs.length} songs from DDR World`);
+      console.log(`Fetched ${fetchedSongs.length} songs from DDR World`);
 
-    const tasks = fetchedSongs.map(
-      async (worldSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
-        // Find existing song by saHash
-        const existingSong = existingData.songs.find((s) =>
-          importer.songEquals(s, worldSong),
-        );
+      const tasks = fetchedSongs.map(
+        async (worldSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
+          // Find existing song by saHash
+          const existingSong = existingData.songs.find((s) =>
+            importer.songEquals(s, worldSong),
+          );
 
-        if (existingSong) {
-          // Get remyLink if missing
-          await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
+          if (existingSong) {
+            // Get remyLink if missing
+            await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
 
-          importer.merge(existingSong, worldSong);
-        } else {
-          console.log(`Adding new song: ${worldSong.name}`);
+            importer.merge(existingSong, worldSong);
+          } else {
+            console.log(`Adding new song: ${worldSong.name}`);
 
-          // Try to get meta data from remyLink
-          await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
-          // If still no jacket, try to get from e-amusement GATE
-          if (!worldSong.jacket) {
-            worldSong.jacket = downloadJacket(
-              worldSong.getJacketUrl(),
-              worldSong.name,
-            );
+            // Try to get meta data from remyLink
+            await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
+            // If still no jacket, try to get from e-amusement GATE
+            if (!worldSong.jacket) {
+              worldSong.jacket = downloadJacket(
+                worldSong.getJacketUrl(),
+                worldSong.name,
+              );
+            }
+
+            const newSong: Song = {
+              name: worldSong.name,
+              artist: worldSong.artist || "",
+              saHash: worldSong.saHash,
+              bpm: worldSong.bpm || "???",
+              folder: existingData.meta.folders[0],
+              charts: worldSong.charts,
+              remyLink: worldSong.remyLink,
+              jacket: worldSong.jacket,
+            };
+
+            existingData.songs.push(newSong);
           }
+        },
+      );
+      console.log("Processing all e-amusement GATE songs...");
+      await Promise.all(tasks);
+      await requestQueue.onIdle();
+      console.log(`Songs from e-amusement GATE: ${fetchedSongs.length}`);
+    } else {
+      // DDR GRAND PRIX
+      const importer = new GrandPrixSongImporter(MIX_META.eagate.songList);
+      const fetchedSongs = await importer.fetchSongs();
+
+      const tasks = fetchedSongs.map(
+        async (gpSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
+          const existingSong = existingData.songs.find((s) =>
+            importer.songEquals(s, gpSong),
+          );
+          if (existingSong) return; // Add only new songs
 
           const newSong: Song = {
-            name: worldSong.name,
-            artist: worldSong.artist || "",
-            saHash: worldSong.saHash,
-            bpm: worldSong.bpm || "???",
-            folder: existingData.meta.folders[0],
-            charts: worldSong.charts,
-            remyLink: worldSong.remyLink,
-            jacket: worldSong.jacket,
+            name: gpSong.name,
+            artist: gpSong.artist,
+            bpm: gpSong.bpm,
+            charts: gpSong.charts ?? [],
+            jacket: gpSong.jacket,
           };
 
           existingData.songs.push(newSong);
-        }
-      },
-    );
-    console.log("Processing all e-amusement GATE songs...");
-    await Promise.all(tasks);
-    await requestQueue.onIdle();
-    console.log(`Songs from e-amusement GATE: ${fetchedSongs.length}`);
+        },
+      );
+      console.log("Processing all Grand Prix songs...");
+      await Promise.all(tasks);
+      await requestQueue.onIdle();
+      console.log(`Songs from Grand Prix: ${fetchedSongs.length}`);
+    }
   }
 
   if (MIX_META.sanbai) {

@@ -1,0 +1,129 @@
+{
+  "$schema": "../../songs.schema.json",
+  "meta": {
+    "styles": ["single", "double"],
+    "difficulties": [
+      {
+        "key": "beginner",
+        "color": "#6eccc4"
+      },
+      {
+        "key": "basic",
+        "color": "#e0de5c"
+      },
+      {
+        "key": "difficult",
+        "color": "#e8715f"
+      },
+      {
+        "key": "expert",
+        "color": "#72cc6e"
+      },
+      {
+        "key": "challenge",
+        "color": "#cc71e8"
+      }
+    ],
+    "folders": [
+      "DDR GRAND PRIX",
+      "DanceDanceRevolution World",
+      "DanceDanceRevolution A3",
+      "DanceDanceRevolution A20 PLUS",
+      "DanceDanceRevolution A20",
+      "DanceDanceRevolution A",
+      "DanceDanceRevolution (2014)",
+      "DanceDanceRevolution (2013)",
+      "DanceDanceRevolution X3 vs 2nd MIX",
+      "DanceDanceRevolution X2",
+      "DanceDanceRevolution X",
+      "DanceDanceRevolution SuperNOVA2",
+      "DanceDanceRevolution SuperNOVA",
+      "DanceDanceRevolution EXTREME",
+      "DDRMAX2 -DanceDanceRevolution 7thMIX-",
+      "DDRMAX -DanceDanceRevolution 6thMIX-",
+      "DanceDanceRevolution 5th Mix",
+      "DanceDanceRevolution 4th Mix",
+      "DanceDanceRevolution 3rd Mix",
+      "DanceDanceRevolution 2nd Mix",
+      "DanceDanceRevolution 1st Mix"
+    ],
+    "flags": [
+      "shock",
+      "grandPrixPack",
+      "withoutPrivilege",
+      "prePrivilege",
+      "arcade",
+      "eAMUSEMENT",
+      "finalOnly",
+      "extraOnly"
+    ],
+    "granularTierResolution": 20,
+    "lastUpdated": 1770429052141
+  },
+  "defaults": {
+    "style": "single",
+    "difficulties": ["difficult", "expert", "challenge"],
+    "flags": [
+      "shock",
+      "grandPrixPack",
+      "prePrivilege",
+      "withoutPrivilege",
+      "eAMUSEMENT"
+    ],
+    "lowerLvlBound": 13,
+    "upperLvlBound": 16
+  },
+  "i18n": {
+    "en": {
+      "name": "DDR GRAND PRIX",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "shock": "Shock arrow charts",
+      "grandPrixPack": "Music/Chart Pack",
+      "withoutPrivilege": "Packs without Pre privilege",
+      "prePrivilege": "Pre privilege",
+      "arcade": "Only playable in arcade modes",
+      "eAMUSEMENT": "Unplayable in Trial Normal Play",
+      "finalOnly": "FINAL STAGE exclusive",
+      "extraOnly": "EXTRA STAGE exclusive",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
+      }
+    },
+    "ja": {
+      "name": "DDR GRAND PRIX",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "shock": "ショックアロー譜面",
+      "grandPrixPack": "楽曲/譜面パック",
+      "withoutPrivilege": "先行プレー特典のないパック",
+      "prePrivilege": "先行プレー特典",
+      "arcade": "アーケードモードでのみプレー可能",
+      "eAMUSEMENT": "トライアルノーマルプレーでプレー不可",
+      "finalOnly": "FINAL STAGE専用",
+      "extraOnly": "EXTRA STAGE専用",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha"
+      }
+    }
+  },
+  "songs": []
+}
