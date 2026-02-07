@@ -1964,7 +1964,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "difficult",
-          "bpm": "100-200",
+          "bpm": "100-800",
           "sanbaiTier": 13.7
         },
         {
@@ -1982,7 +1982,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "bpm": "50-400",
+          "bpm": "50-800",
           "sanbaiTier": 18.25
         },
         {
@@ -1999,7 +1999,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "difficult",
-          "bpm": "100-200",
+          "bpm": "100-800",
           "sanbaiTier": 13.65
         },
         {
@@ -2017,7 +2017,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "bpm": "50-400",
+          "bpm": "50-800",
           "sanbaiTier": 18.4
         }
       ],
@@ -20828,7 +20828,7 @@
     },
     {
       "name": "Feidie",
-      "artist": "A-One feat. Napoleon",
+      "artist": "A-One feat.Napoleon",
       "bpm": "150",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -49703,6 +49703,7 @@
     },
     {
       "name": "S!ck",
+      "name_translation": "Sick",
       "artist": "Eagle",
       "bpm": "88-177",
       "folder": "DanceDanceRevolution A",
@@ -67313,7 +67314,7 @@
       "saIndex": "1070"
     },
     {
-      "name": "We Can Win the Fight",
+      "name": "We Can Win The Fight",
       "artist": "D-crew feat.Matt Tucker",
       "bpm": "119",
       "folder": "DanceDanceRevolution A20 PLUS",
@@ -69769,7 +69770,7 @@
       "remyLink": "https://remywiki.com/Ubertreffen",
       "jacket": "ddr_x/Übertreffen.png",
       "genre": "PROGRESSIVE BAROQUE",
-      "search_hint": "Ubertreffen PROGRESSIVE BAROQUE/プログレッシブバロック",
+      "search_hint": "PROGRESSIVE BAROQUE/プログレッシブバロック",
       "saHash": "1oIo1DliQqPol00Q1l1bPODbdOilodod",
       "saIndex": "329"
     },
@@ -73610,7 +73611,7 @@
     {
       "name": "コメット⇒スケイター",
       "name_translation": "Comet Skater",
-      "artist": "U-ske feat.棗いつき",
+      "artist": "U-ske feat. 棗いつき",
       "artist_translation": "U-ske feat. Itsuki Natsume",
       "saHash": "9ioI0IQ16OPb1Q0q8Oqdd6D9dPqDb618",
       "folder": "DanceDanceRevolution A3",
