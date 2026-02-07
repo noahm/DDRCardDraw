@@ -22,7 +22,7 @@ import {
   DDR_WORLD as MIX_META,
 } from "./scraping/ddr-sources.mts";
 import { EAGateSongImporter } from "./scraping/eagate-ddr.mts";
-import { tryGetMetaFromRemy } from "./scraping/remy.mts";
+import { getJacketFromRemySong, tryGetMetaFromRemy } from "./scraping/remy.mts";
 import { SanbaiSongImporter } from "./scraping/sanbai.mts";
 import { ZivSongImporter } from "./scraping/ziv.mts";
 import { GrandPrixSongImporter } from "./scraping/grand-prix.mts";
@@ -111,12 +111,25 @@ try {
           );
           if (existingSong) return; // Add only new songs
 
+          // Try to get meta data from remyLink
+          await tryGetMetaFromRemy(gpSong, "DanceDanceRevolution");
+          if (gpSong.remyLink && !gpSong.jacket) {
+            gpSong.jacket = await getJacketFromRemySong(
+              gpSong.remyLink,
+              gpSong.name,
+              "DanceDanceRevolution GRAND PRIX",
+              "DanceDanceRevolution",
+              "DDR",
+            );
+          }
           const newSong: Song = {
             name: gpSong.name,
             artist: gpSong.artist,
             bpm: gpSong.bpm,
+            folder: existingData.meta.folders[0],
             charts: gpSong.charts ?? [],
             jacket: gpSong.jacket,
+            remyLink: gpSong.remyLink,
           };
 
           existingData.songs.push(newSong);

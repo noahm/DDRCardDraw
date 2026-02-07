@@ -76,10 +76,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
               c.style === fetchedChart.style &&
               c.diffClass === fetchedChart.diffClass,
           );
-          if (
-            existingChart &&
-            existingChart[chartKey] !== fetchedChart[chartKey]
-          ) {
+          if (!existingChart) {
+            existingSong.charts.push(fetchedChart);
+            updated = true;
+          } else if (existingChart[chartKey] !== fetchedChart[chartKey]) {
             (existingChart as unknown as Record<string, unknown>)[chartKey] =
               fetchedChart[chartKey];
             updated = true;
@@ -591,14 +591,18 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
     keys: [
       "saHash",
       "bpm",
+      "folder",
       "name_translation",
       "artist_translation",
       "search_hint",
       "genre",
       "jacket",
       "remyLink",
-      "charts",
-      "folder",
+      "charts.lvl",
+      "charts.sanbaiTier",
+      "charts.step",
+      "charts.freeze",
+      "charts.shock",
     ],
   },
 };
