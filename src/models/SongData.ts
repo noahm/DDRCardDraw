@@ -104,6 +104,7 @@ export interface Song {
   saHash?: string;
   saIndex?: string;
   remyLink?: string;
+  extras?: string;
 }
 export interface Chart {
   flags?: UniqueStringArr3;
@@ -136,4 +137,5 @@ export interface Chart {
    * per-chart BPM range, if one applies
    */
   bpm?: string;
+  extras?: string;
 }
