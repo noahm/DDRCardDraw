@@ -22,15 +22,19 @@ type SanbaiSong = {
 
 /** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
 const lockFlags: Map<number, Song["flags"]> = new Map([
-  [20, ["goldExclusive", "tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 4- Triple Tribe
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   [250, ["flareRank"]], // FLARE SKILL unlock
-  [260, ["tempUnlock"]], // MYSTICAL Re:UNION
   [270, ["worldLeague"]], // WORLD LEAGUE
   [280, ["unlock"]], // EXTRA SAVIOR WORLD
   [290, ["unlock"]], // GALAXY BRAVE
   [300, ["platinumMembers"]], // DDR PLATINUM MEMBERS
+  [
+    310,
+    new Date() < new Date("2026-03-22T23:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -67,22 +71,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ],
   // #endregion グランプリ譜面パック vol.6
   // #region PRE PRIVILEGE to playable default (about 1 year after release)
-  ...(new Date() >= new Date("2026-01-30T15:00:00+09:00")
-    ? [
-        // BPL S4楽曲パック
-        "I0dOli6do1l1008I8PllOq8DoOoIO8oq", // Steps for Victory
-        "bO10Q9999DQ9DDP890lQbdlIlIl6IID9", // blue anthem
-        "Doo9l68ddi11PQOOd6o11Q9Dd1lIQ9I6", // ESPRIT ONE
-        "ODlO019O088Q0bl9QI1PPqQ01iD68191", // Get Into The Groove feat.WaMi
-        "QID6qIPod8III8ll8ooQild1QdlPOIdi", // Mighty Beat Monsterz
-        "d0ll11iidiii09D9q81oo1Pq00oDbQ1i", // THUNDERSTRIKE
-        "lqd0I0Pbqo60I8iDOO88bbD1d9qlQ18O", // Wizards!
-        "QI8ID6bQ9Ql0IdqddI16OqPdib9OO1Do", // メテオラ-meteor-
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
   ...(new Date() >= new Date("2026-02-27T15:00:00+09:00")
     ? [
         // スペシャル楽曲パック feat.ひなビタ♪ vol.3
@@ -113,6 +101,62 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
       ])
     : []),
   // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
+  // #region EXTRA SAVIOR WORLD - The 1st GITADORA
+  ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
+  // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
+  // #region BPL S5楽曲パック
+  [
+    "b9Qbd61bPOPiDIPdIO9oqqo9D1Q6qdoQ", // Astra Blaze
+    {
+      ratings: [3, 7, 13, 16, 0, 8, 13, 16, 0],
+      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    },
+  ],
+  [
+    "P600DiDIlPQ1Ql9DI8QlI6P8il1oOQd6", // COLOR BURST
+    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
+  ],
+  [
+    "Pdl6bi6dOb1O6bo9Qibb018odPQ8D11q", // GO!
+    {
+      ratings: [3, 9, 13, 15, 0, 8, 13, 15, 0],
+      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    },
+  ],
+  [
+    "bOOIQqdDllioii8Ill98dIQbbloQ8Do1", // HORIZON BEATZ
+    {
+      ratings: [3, 6, 12, 16, 0, 6, 12, 16, 0],
+      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    },
+  ],
+  [
+    "O00OboQl9oOIodo69iiIq1o8bPoDdq9Q", // King of Tribe
+    {
+      ratings: [3, 8, 13, 16, 0, 8, 13, 16, 0],
+      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    },
+  ],
+  [
+    "IObOi8dQo68Q19DI9oD8DI9O81IPqOlQ", // Meteor☆Shower
+    {
+      ratings: [3, 8, 12, 16, 0, 8, 12, 16, 0],
+      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    },
+  ],
+  [
+    "8Pl66oObI8diD6b9li0o8bPlIO0iO6ib", // RIZING-GAMERS.
+    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
+  ],
+  [
+    "0iO086qDbPOd8DlPPqP8q0DDi6O8iP9I", // SILKY BRAVE
+    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
+  ],
+  [
+    "ibDqd11d81i8ll91bib9I6IoDqdl6D8O", // Superior MAXXX
+    { lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190] },
+  ],
+  // #endregion BPL S5楽曲パック
 ]);
 
 type SanbaiSongData = Pick<

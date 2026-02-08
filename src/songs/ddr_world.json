@@ -58,7 +58,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1766711605950
+    "lastUpdated": 1770333421968
   },
   "defaults": {
     "style": "single",
@@ -4675,6 +4675,54 @@
       "search_hint": "サイバーアラビアン/CYBER ARABIAN"
     },
     {
+      "name": "Astra Blaze",
+      "artist": "MK",
+      "saHash": "b9Qbd61bPOPiDIPdIO9oqqo9D1Q6qdoQ",
+      "bpm": "168",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/Astra Blaze.jpg",
+      "remyLink": "https://remywiki.com/Astra_Blaze",
+      "genre": "DRUMSTEP",
+      "flags": ["grandPrixPack"],
+      "search_hint": "レジャーランド/LEISURE LAND"
+    },
+    {
       "name": "Astrogazer",
       "artist": "DJ TOTTO",
       "bpm": "150-155",
@@ -6208,7 +6256,8 @@
         }
       ],
       "flags": ["worldLeague"],
-      "jacket": "ddr_world/Be Happy Next 2 You.jpg"
+      "jacket": "ddr_world/Be Happy Next 2 You.jpg",
+      "remyLink": "https://remywiki.com/Be_Happy_Next_2_You"
     },
     {
       "name": "BE LOVIN",
@@ -7368,7 +7417,6 @@
       ],
       "jacket": "ddr_world/blue anthem.jpg",
       "remyLink": "https://remywiki.com/Blue_anthem",
-      "flags": ["grandPrixPack"],
       "search_hint": "APINA VRAMeS/アピナ"
     },
     {
@@ -11053,6 +11101,53 @@
       "flags": ["unlock"]
     },
     {
+      "name": "COLOR BURST",
+      "artist": "Rainy。",
+      "saHash": "P600DiDIlPQ1Ql9DI8QlI6P8il1oOQd6",
+      "bpm": "170",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "jacket": "ddr_world/COLOR BURST.jpg",
+      "remyLink": "https://remywiki.com/COLOR_BURST",
+      "genre": "COLOR DANCE POP",
+      "flags": ["grandPrixPack"]
+    },
+    {
       "name": "Colors ～for EXTREME～",
       "artist": "dj TAKA",
       "bpm": "150",
@@ -11565,6 +11660,12 @@
           "sanbaiTier": 16.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 5,
           "style": "double",
           "diffClass": "basic",
@@ -11581,6 +11682,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.9
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Concertino_in_Blue",
@@ -14486,7 +14593,7 @@
           "sanbaiTier": 13.35
         }
       ],
-      "jacket": "ddr_a3/DDR System Songs+Replicant Mix .jpg",
+      "jacket": "ddr_a3/DDR System Songs Replicant Mix .jpg",
       "remyLink": "https://remywiki.com/DDR_System_Songs%2BReplicant_Mix"
     },
     {
@@ -19727,7 +19834,6 @@
       ],
       "jacket": "ddr_world/ESPRIT ONE.jpg",
       "remyLink": "https://remywiki.com/ESPRIT_ONE",
-      "flags": ["grandPrixPack"],
       "search_hint": "ROUND1/ラウンドワン"
     },
     {
@@ -21439,6 +21545,53 @@
       "jacket": "ddr_a/First Time.png",
       "saHash": "9Di9ODOOl8PDQiO1O6o8lD16QlI609ob",
       "saIndex": "820"
+    },
+    {
+      "name": "fixer",
+      "artist": "PHQUASE vs. dj TAKA",
+      "saHash": "q6l9OQ91o1PDO9qiPl1iiPO6OOPdI886",
+      "bpm": "90-215",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 18
+        }
+      ],
+      "jacket": "ddr_world/fixer.jpg",
+      "remyLink": "https://remywiki.com/Fixer_(PHQUASE_vs._dj_TAKA)",
+      "genre": "DOUBLE DRIVE",
+      "flags": ["unlock"]
     },
     {
       "name": "Fleur",
@@ -23684,7 +23837,6 @@
       ],
       "jacket": "ddr_world/Get Into The Groove feat.WaMi.jpg",
       "remyLink": "https://remywiki.com/Get_Into_The_Groove_feat.WaMi",
-      "flags": ["grandPrixPack"],
       "search_hint": "GiGO"
     },
     {
@@ -24570,6 +24722,57 @@
       "jacket": "ddr_a3/Go_To_The_Oasis.jpg",
       "saHash": "l106dqq891bI19iPoIo9OO688l8oOQQ6",
       "saIndex": "1153"
+    },
+    {
+      "name": "GO!",
+      "artist": "Juggernaut.",
+      "saHash": "Pdl6bi6dOb1O6bo9Qibb018odPQ8D11q",
+      "bpm": "128-256",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "128",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "128",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "128",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "jacket": "ddr_world/GO!.jpg",
+      "remyLink": "https://remywiki.com/GO!",
+      "genre": "GLHF",
+      "flags": ["grandPrixPack"],
+      "search_hint": "GiGO"
     },
     {
       "name": "Going Hypersonic",
@@ -27934,6 +28137,54 @@
       "saIndex": "291"
     },
     {
+      "name": "HORIZON BEATZ",
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "saHash": "bOOIQqdDllioii8Ill98dIQbbloQ8Do1",
+      "bpm": "152",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/HORIZON BEATZ.jpg",
+      "remyLink": "https://remywiki.com/HORIZON_BEATZ",
+      "genre": "FUTURE VIBES",
+      "flags": ["grandPrixPack"],
+      "search_hint": "ROUND1/ラウンドワン"
+    },
+    {
       "name": "Hunny Bunny",
       "artist": "U1 overground",
       "bpm": "160",
@@ -28342,6 +28593,7 @@
     {
       "name": "HyperTwist",
       "artist": "TANUKI",
+      "saHash": "0bq9qI9PoPIlQl89bDO60o9q8I1iIP66",
       "bpm": "190",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -28402,7 +28654,7 @@
       ],
       "remyLink": "https://remywiki.com/HyperTwist",
       "jacket": "ddr_a20plus/HyperTwist.jpg",
-      "saHash": "0bq9qI9PoPIlQl89bDO60o9q8I1iIP66",
+      "genre": "YALDICORE",
       "saIndex": "938"
     },
     {
@@ -32112,6 +32364,54 @@
       "saIndex": "1101"
     },
     {
+      "name": "King of Tribe",
+      "artist": "Numb’n’dub",
+      "saHash": "O00OboQl9oOIodo69iiIq1o8bPoDdq9Q",
+      "bpm": "200",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/King of Tribe.jpg",
+      "remyLink": "https://remywiki.com/King_of_Tribe",
+      "genre": "ブレイクコア",
+      "flags": ["grandPrixPack"],
+      "search_hint": "TAITO STATION Tradz/タイトーステーション"
+    },
+    {
       "name": "KISS KISS KISS",
       "artist": "NAOKI feat. SHANTI",
       "bpm": "150",
@@ -33038,6 +33338,7 @@
     {
       "name": "Last Card",
       "artist": "kors k",
+      "saHash": "891iilD9Pq1lPQd6diqiP0dd611dOPPl",
       "bpm": "85-170",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -33086,7 +33387,7 @@
       ],
       "remyLink": "https://remywiki.com/Last_Card",
       "jacket": "ddr_a20plus/Last Card.jpg",
-      "saHash": "891iilD9Pq1lPQd6diqiP0dd611dOPPl",
+      "genre": "BEBOP CORE",
       "saIndex": "941"
     },
     {
@@ -35461,6 +35762,52 @@
       "saIndex": "295"
     },
     {
+      "name": "LubedeR",
+      "artist": "C-Show",
+      "saHash": "l8IqlD99d81l6PdldDql08ODOQo6lDdq",
+      "bpm": "256",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/LubedeR.jpg",
+      "remyLink": "https://remywiki.com/LubedeR"
+    },
+    {
       "name": "M.A.Y.U.",
       "artist": "Ryu☆ feat.MAYU",
       "bpm": "128",
@@ -37521,6 +37868,54 @@
       "flags": ["unlock"]
     },
     {
+      "name": "Meteor☆Shower",
+      "artist": "Tatsunoshin",
+      "saHash": "IObOi8dQo68Q19DI9oD8DI9O81IPqOlQ",
+      "bpm": "177",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/Meteor☆Shower.jpg",
+      "remyLink": "https://remywiki.com/Meteor_Shower",
+      "genre": "STAR☆CORE",
+      "flags": ["grandPrixPack"],
+      "search_hint": "APINA VRAMeS/アピナ"
+    },
+    {
       "name": "Midnight Amaretto",
       "artist": "かめりあ",
       "artist_translation": "Camellia",
@@ -37695,7 +38090,6 @@
       ],
       "jacket": "ddr_world/Mighty Beat Monsterz.jpg",
       "remyLink": "https://remywiki.com/Mighty_Beat_Monsterz",
-      "flags": ["grandPrixPack"],
       "search_hint": "TAITO STATION Tradz/タイトーステーション"
     },
     {
@@ -37889,6 +38283,62 @@
       "jacket": "ddr_2014/MITO rete! Ibarakisshudarin.png",
       "saHash": "Db9DllQooo6lqQdl6Q6OD6q066i1IdOO",
       "saIndex": "590"
+    },
+    {
+      "name": "MODEL FT2 Miracle Version",
+      "artist": "Mutsuhiko Izumi",
+      "saHash": "IdDblQIbq8Di9iOo61O0bQIIPqPQ16o8",
+      "bpm": "155",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/MODEL FT2 Miracle Version.jpg",
+      "remyLink": "https://remywiki.com/MODEL_FT2_Miracle_Version"
     },
     {
       "name": "Monkey Business",
@@ -48477,6 +48927,54 @@
       "saIndex": "708"
     },
     {
+      "name": "RIZING-GAMERS.",
+      "artist": "BlackY",
+      "saHash": "8Pl66oObI8diD6b9li0o8bPlIO0iO6ib",
+      "bpm": "165",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "jacket": "ddr_world/RIZING-GAMERS..jpg",
+      "remyLink": "https://remywiki.com/RIZING-GAMERS.",
+      "genre": "GOLDEN FORCE",
+      "flags": ["grandPrixPack"],
+      "search_hint": "GAME PANIC/ゲームパニック"
+    },
+    {
       "name": "Robot Footwork",
       "saHash": "IDIQilDID9lO6lO86dq6ldoDlqiii1o1",
       "artist": "Super Shrimp",
@@ -48647,6 +49145,62 @@
       "remyLink": "https://remywiki.com/ROCK_THE_PARTY",
       "jacket": "ddr_a3/ROCK_THE_PARTY.jpg",
       "saHash": "1II6199qOd1bo0P0D19Q9qd06ll1QOl9"
+    },
+    {
+      "name": "Roll the Dice",
+      "artist": "lapix",
+      "saHash": "0i8idqoQ8lOIi6qOPO0DOOi8OlPq10D8",
+      "bpm": "165",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Roll the Dice.jpg",
+      "remyLink": "https://remywiki.com/Roll_the_Dice"
     },
     {
       "name": "Romancing Layer",
@@ -50595,6 +51149,56 @@
       "saIndex": "200"
     },
     {
+      "name": "SCREW // owo // SCREW",
+      "artist": "かめりあ",
+      "saHash": "D0dPPodlDQO9lQblI6PP1OIIQPO61O1D",
+      "bpm": "114-171",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "114",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "114",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "114",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/SCREW_owo_SCREW.jpg",
+      "genre": "TWERKCORE // uwu // BEATJUGGLE",
+      "remyLink": "https://remywiki.com/SCREW_//_owo_//_SCREW"
+    },
+    {
       "name": "Seasons",
       "artist": "TOMOSUKE feat. Crystal Paloa",
       "bpm": "168",
@@ -52289,6 +52893,54 @@
       "jacket": "ddr_max-ext/Silent Hill (3rd christmas mix).png",
       "saHash": "oio6bqP08PPoP9qIq1oi9Dib9PIq9l11",
       "saIndex": "89"
+    },
+    {
+      "name": "SILKY BRAVE",
+      "artist": "DJ Shimamura",
+      "saHash": "0iO086qDbPOd8DlPPqP8q0DDi6O8iP9I",
+      "bpm": "178",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "jacket": "ddr_world/SILKY BRAVE.jpg",
+      "remyLink": "https://remywiki.com/SILKY_BRAVE",
+      "genre": "HARDCORE RAVE",
+      "flags": ["grandPrixPack"],
+      "search_hint": "SILK HAT/シルクハット"
     },
     {
       "name": "Silly Love",
@@ -56297,8 +56949,7 @@
         }
       ],
       "jacket": "ddr_world/Steps for Victory.jpg",
-      "remyLink": "https://remywiki.com/Steps_for_Victory",
-      "flags": ["grandPrixPack"]
+      "remyLink": "https://remywiki.com/Steps_for_Victory"
     },
     {
       "name": "Steps to the Star",
@@ -57779,6 +58430,64 @@
       "genre": "",
       "saHash": "Id8IPlqQodD01dPiq8oPPQoPQq6booi0",
       "saIndex": "808"
+    },
+    {
+      "name": "Superior MAXXX",
+      "artist": "333-DJ TOTTO-444",
+      "saHash": "ibDqd11d81i8ll91bib9I6IoDqdl6D8O",
+      "bpm": "168-889",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "333-444",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "333-444",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 15
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 19
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "333-444",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 19
+        }
+      ],
+      "jacket": "ddr_world/Superior MAXXX.jpg",
+      "flags": ["grandPrixPack"]
     },
     {
       "name": "Surface",
@@ -61225,7 +61934,6 @@
       ],
       "jacket": "ddr_world/THUNDERSTRIKE.jpg",
       "remyLink": "https://remywiki.com/THUNDERSTRIKE",
-      "flags": ["grandPrixPack"],
       "search_hint": "GAME PANIC/ゲームパニック"
     },
     {
@@ -62701,6 +63409,53 @@
       "jacket": "ddr_x3/Tribe.png",
       "saHash": "PlIiPiPoI9DIbPdIPoqQlIq61Pd8QIDo",
       "saIndex": "433"
+    },
+    {
+      "name": "tricky trick",
+      "artist": "kamome sano",
+      "saHash": "l6Dbo9DQD0PIb0lbDDb66qqObOloDP6P",
+      "bpm": "165",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/tricky trick.jpg",
+      "genre": "DUBSTEP",
+      "remyLink": "https://remywiki.com/Tricky_trick"
     },
     {
       "name": "Trigger",
@@ -67456,7 +68211,6 @@
       ],
       "jacket": "ddr_world/Wizards!.jpg",
       "remyLink": "https://remywiki.com/Wizards!",
-      "flags": ["grandPrixPack"],
       "search_hint": "SILK HAT/シルクハット"
     },
     {
@@ -76919,7 +77673,6 @@
       ],
       "jacket": "ddr_world/メテオラ-meteor-.jpg",
       "remyLink": "https://remywiki.com/Meteora-meteor-",
-      "flags": ["grandPrixPack"],
       "search_hint": "レジャーランド/LEISURE LAND"
     },
     {
@@ -82491,6 +83244,53 @@
       "saIndex": "1147"
     },
     {
+      "name": "旅人リラン",
+      "artist": "XOGO BRYKK",
+      "saHash": "b8QDI09il61i0qlO9IibPQPiqQOoi6iQ",
+      "bpm": "155",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/旅人リラン.jpg",
+      "genre": "ELECLORE",
+      "remyLink": "https://remywiki.com/Tabibito_Rerun"
+    },
+    {
       "name": "明鏡止水",
       "name_translation": "Meikyoushisui",
       "artist": "TOMOSUKE feat.あさき",
@@ -85741,6 +86541,54 @@
       "genre": "",
       "saIndex": "1187",
       "jacket": "ddr_a3/Youhishi no ue no ginga.jpg"
+    },
+    {
+      "name": "羽根亡キ少女唄",
+      "name_translation": "Hanenaki Shoujo Uta",
+      "artist": "純情ディスコード",
+      "saHash": "dI0q9QdPOI1lq6888qI980dqll6dbqib",
+      "bpm": "174",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/羽根亡キ少女唄.jpg",
+      "remyLink": "https://remywiki.com/Hanenaki_shoujo_uta",
+      "search_hint": "はねなきしょうじょうた"
     },
     {
       "name": "至上のラトゥーリア",
