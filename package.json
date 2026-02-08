@@ -51,7 +51,6 @@
     "@lcdp/offline-plugin": "5.1.1",
     "@pmmmwh/react-refresh-webpack-plugin": "0.6.2",
     "@types/better-sqlite3": "7.6.13",
-    "@types/download": "^8",
     "@types/fuzzy-search": "2.1.5",
     "@types/jsdom": "27.0.0",
     "@types/node": "24.10.4",
@@ -123,8 +122,5 @@
     "semver": "^7.5.2",
     "xml2js": "0.6.2"
   },
-  "packageManager": "yarn@4.12.0",
-  "dependencies": {
-    "download": "^8.0.0"
-  }
+  "packageManager": "yarn@4.12.0"
 }
