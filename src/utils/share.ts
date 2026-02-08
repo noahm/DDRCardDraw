@@ -213,6 +213,22 @@ export function copyToClipboard(blob: Blob) {
   ]);
 }
 
+export async function copyPlainTextToClipboard(
+  text: string,
+  toastMessage?: string,
+) {
+  await navigator.clipboard.writeText(text);
+  if (toastMessage) {
+    toaster.show(
+      {
+        message: toastMessage,
+        icon: "paperclip",
+      },
+      "copied-data",
+    );
+  }
+}
+
 function dataUriToBlob(dataUri: string) {
   const headerIndex = dataUri.indexOf(",");
   const header = dataUri.slice(0, headerIndex);
