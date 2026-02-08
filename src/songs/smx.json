@@ -1,6 +1,7 @@
 {
   "meta": {
     "styles": ["solo", "team"],
+    "menuParent": "more",
     "difficulties": [
       { "key": "beginner", "color": "#03da00" },
       { "key": "easy", "color": "#d3b211" },
