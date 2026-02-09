@@ -3,21 +3,21 @@
  * Fields here will override/fill missing song info or chart info
  */
 // Song Patch Example
-// "エンジェル ドリーム" : {
-// title: "test",
-// artist: "test",
-// bpm: 100,
-// imageName: "testjacket.png",
-// version: "test",                  -> Must match existing folder values exactly or folder filter will not work with song
-// charts: [
-// {
-// index: 0,                     -> Adjust value to change which Chart to patch
-// style: "single",
-// diffClass: "master",          -> "basic, advanced, expert, master, remaster, utage"
-// lvl: 1,                       -> Levels 1.0 - 15.0
-// extras: "std"                 -> std | dx
-// }
-// ]
+// "エンジェル ドリーム" :{
+//   title: "test",
+//   artist: "test",
+//   bpm: 100,
+//   imageName: "testjacket.png",
+//   version: "test",                  -> Must match existing folder values exactly or folder filter will not work with song
+//   charts: [
+//     {
+//       index: 0,                     -> Adjust value to change which Chart to patch
+//       style: "single",
+//       diffClass: "master",          -> "basic, advanced, expert, master, remaster, utage"
+//       lvl: 1,                       -> Levels 1.0 - 15.0
+//       extras: "std"                 -> std | dx
+//     }
+//   ]
 // }
 
 // https://silentblue.remywiki.com/
