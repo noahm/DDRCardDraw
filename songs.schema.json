@@ -98,7 +98,14 @@
         "type": "object",
         "title": "Song",
         "properties": {
-          "flags": { "$ref": "#/definitions/uniqueStringArr" },
+          "flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Holds info about a song that may make it worth filtering out"
+          },
           "name": {
             "type": "string"
           },
@@ -118,7 +125,8 @@
             "type": "string"
           },
           "search_hint": {
-            "type": "string"
+            "type": "string",
+            "description": "Extra text to make this easier to find by text entry"
           },
           "date_added": {
             "type": "string"
@@ -135,7 +143,8 @@
             "type": "string"
           },
           "saHash": {
-            "type": "string"
+            "type": "string",
+            "description": "a unique identifier for a song"
           },
           "saIndex": {
             "type": "string"
@@ -144,7 +153,12 @@
             "type": "string"
           },
           "extras": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Holds cosmetic only info about a song"
           }
         },
         "required": ["name", "artist", "bpm", "jacket", "charts"],
@@ -159,7 +173,14 @@
       "title": "Chart",
       "additionalProperties": false,
       "properties": {
-        "flags": { "$ref": "#/definitions/uniqueStringArr" },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Holds info about a chart that may make it worth filtering out"
+        },
         "style": { "type": "string", "description": "e.g. single/double" },
         "diffClass": {
           "type": "string",
@@ -197,7 +218,12 @@
           "description": "per-chart BPM range, if one applies"
         },
         "extras": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Holds cosmetic only info about a chart"
         }
       },
       "required": ["lvl", "diffClass", "style"]
