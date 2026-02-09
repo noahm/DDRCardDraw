@@ -138,10 +138,9 @@ function getOutputPath(coverUrl: string, localFilename: string) {
   if (!localFilename.endsWith(".jpg")) {
     localFilename += ".jpg";
   }
-  const sanitizedFilename = sanitize(basename(localFilename)).replaceAll(
-    /#/g,
-    "",
-  );
+  const sanitizedFilename = sanitize(basename(localFilename))
+    .replaceAll("#", "")
+    .replaceAll("+", " ");
   const outputPath = join(dirname(localFilename), sanitizedFilename);
   return {
     absolute: join(JACKETS_PATH, outputPath) as `${string}.jpg`,
