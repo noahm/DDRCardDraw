@@ -30,7 +30,7 @@ export interface ConfigState {
 
 export const useConfigState = createWithEqualityFn<ConfigState>(
   (set) => ({
-    chartCount: 5,
+    chartCount: 7, //5
     playerPicks: 0,
     upperBound: 0,
     lowerBound: 0,
@@ -49,15 +49,20 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     showEligibleCharts: false,
     playerNames: [],
     tournamentRounds: [
-      "Pools",
-      "Winner's Bracket",
-      "Winner's Finals",
-      "Loser's Bracket",
-      "Loser's Finals",
-      "Grand Finals",
+      // "Pools",
+      // "Winner's Bracket",
+      // "Winner's Finals",
+      // "Loser's Bracket",
+      // "Loser's Finals",
+      // "Grand Finals",
+      "Kwalifikacje",
+      "Runda 1",
+      "Półfinały",
+      "Mecz o 3 miejsce",
+      "Wielki Finał",
       "Tiebreaker",
     ],
-    showPlayerAndRoundLabels: false,
+    showPlayerAndRoundLabels: true, // standardowo false
     sortByLevel: false,
     defaultPlayersPerDraw: 2,
     useGranularLevels: false,

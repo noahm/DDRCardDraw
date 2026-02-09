@@ -18,7 +18,7 @@ import { ToasterHost } from "./toaster";
 
 export function App() {
   return (
-    <DrawStateManager defaultDataSet="ddr_world">
+    <DrawStateManager defaultDataSet="turniej">
       <ThemeSyncWidget />
       <UpdateManager />
       <Header />
