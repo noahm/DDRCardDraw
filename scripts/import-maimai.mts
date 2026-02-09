@@ -8,7 +8,7 @@ import {
   writeJsonData,
 } from "./utils.mts";
 import { MAIMAI_PATCH } from "./maimai/maimai-patches.mjs";
-import { Chart, GameData, Song } from "../src/models/SongData.ts";
+import type { Chart, GameData, Song } from "../src/models/SongData.ts";
 
 const [, , inputPath] = process.argv;
 if (!inputPath) {
@@ -16,13 +16,15 @@ if (!inputPath) {
   process.exit(1);
 }
 
-const hash = crypto.createHash("sha256");
-
 /**
  * compute an abbreviated hash of `input`
  */
 function shortHash(input: string, length = 12) {
-  return hash.update(input).digest("base64").slice(0, length);
+  return crypto
+    .createHash("sha256")
+    .update(input)
+    .digest("base64")
+    .slice(0, length);
 }
 
 const OUTPUT_PATH = "src/songs/maimai.json";
