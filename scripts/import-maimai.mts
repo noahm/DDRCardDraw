@@ -90,11 +90,14 @@ function normalizeSong(song): Song {
     flags.push("long");
   }
 
-  // --- chart normalization + chart warnings ---
-  const charts = (song.sheets as Array<any>).map<Chart>((sheet, index) => {
-    let diffClass = sheet.difficulty;
-    let extras = sheet.type;
+  interface Sheet {
+    difficulty: string;
+    type: string;
+    internalLevelValue: null | number;
+  }
 
+  // --- chart normalization + chart warnings ---
+  const charts = (song.sheets as Array<Sheet>).map((sheet, index): Chart => {
     if (!sheet.difficulty) {
       warnings.push(`Chart ${index}: Missing difficulty`);
     }
@@ -107,17 +110,20 @@ function normalizeSong(song): Song {
       warnings.push(`Chart ${index}: Missing chart type`);
     }
 
+    let diffClass: string, type: string;
     if (sheet.type === "utage") {
-      const temp = diffClass;
-      diffClass = extras;
-      extras = temp;
+      diffClass = sheet.type;
+      type = sheet.difficulty;
+    } else {
+      diffClass = sheet.difficulty;
+      type = sheet.type;
     }
 
     return {
       style: "single",
       diffClass,
       lvl: sheet.internalLevelValue,
-      extras,
+      extras: [type],
     };
   });
 
@@ -141,52 +147,6 @@ function normalizeSong(song): Song {
     charts,
   };
 }
-
-task("Import MaiMai Data", async function ({ setStatus, setTitle, task }) {
-  const cleanup = reportQueueStatusLive(task);
-  setStatus("Reading MaiMai source data...");
-  const raw = JSON.parse(fs.readFileSync(inputPath, "utf-8"));
-
-  // --- Apply patches from MAIMAI_PATCH ---
-  const patchedSongs = (raw.songs as Array<any>).map((song) => {
-    const patch = MAIMAI_PATCH[song.songId] || MAIMAI_PATCH[song.title];
-    if (!patch) return song;
-
-    // Map patch fields to raw JSON keys
-    if (patch.title !== undefined) song.title = patch.title;
-    if (patch.artist !== undefined) song.artist = patch.artist;
-    if (patch.bpm !== undefined) song.bpm = patch.bpm;
-    if (patch.imageName !== undefined) song.imageName = patch.imageName;
-    if (patch.version !== undefined) song.version = patch.version;
-
-    // Merge chart-level patches
-    if (Array.isArray(patch.charts) && Array.isArray(song.sheets)) {
-      song.sheets = song.sheets.map((sheet, idx) => {
-        const chartPatch = patch.charts.find((c) => c.index === idx);
-        if (!chartPatch) return sheet;
-
-        return {
-          ...sheet,
-          difficulty: chartPatch.diffClass ?? sheet.difficulty,
-          internalLevelValue: chartPatch.lvl ?? sheet.internalLevelValue,
-          type: chartPatch.extras ?? sheet.type,
-        };
-      });
-    }
-
-    setStatus(`Applied patch for song: ${song.title ?? song.songId}`);
-    return song;
-  });
-
-  setStatus("Normalizing data...");
-  baseGameData.songs = patchedSongs.map(normalizeSong);
-
-  setStatus("Writing data...");
-  await writeJsonData(baseGameData, OUTPUT_PATH);
-
-  setStatus(`Wrote ${OUTPUT_PATH}`);
-  cleanup();
-});
 
 const baseGameData: GameData = {
   meta: {
@@ -286,3 +246,29 @@ const baseGameData: GameData = {
   },
   songs: [],
 };
+
+task("Import MaiMai Data", async function ({ setStatus, setTitle, task }) {
+  const cleanup = reportQueueStatusLive(task);
+  setStatus("Reading MaiMai source data...");
+  const raw = JSON.parse(fs.readFileSync(inputPath, "utf-8"));
+
+  // --- Apply patches from MAIMAI_PATCH ---
+  const patchedSongs = (raw.songs as Array<any>).map((song) => {
+    const patch = MAIMAI_PATCH[song.songId] || MAIMAI_PATCH[song.title];
+    if (!patch) return song;
+
+    Object.assign(song, patch);
+
+    setStatus(`Applied patch for song: ${song.title ?? song.songId}`);
+    return song;
+  });
+
+  setStatus("Normalizing data...");
+  baseGameData.songs = patchedSongs.map(normalizeSong);
+
+  setStatus("Writing data...");
+  await writeJsonData(baseGameData, OUTPUT_PATH);
+
+  setStatus(`Wrote ${OUTPUT_PATH}`);
+  cleanup();
+});
