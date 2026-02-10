@@ -7,6 +7,7 @@ import {
   reportQueueStatusLive,
   writeJsonData,
 } from "./utils.mts";
+import "./maimai/sslfix.mts";
 import { MAIMAI_PATCH } from "./maimai/maimai-patches.mjs";
 import type { Chart, GameData, Song } from "../src/models/SongData.ts";
 
