@@ -12,7 +12,7 @@ import path from "node:path";
 
 const currentCerts = tls.getCACertificates("default");
 const globalsign2018 = fs.readFileSync(
-  path.join(import.meta.dirname, "maimai", "gsrsaovsslca2018.pem"),
+  path.join(import.meta.dirname, "gsrsaovsslca2018.pem"),
   "utf-8",
 );
 tls.setDefaultCACertificates([...currentCerts, globalsign2018]);
