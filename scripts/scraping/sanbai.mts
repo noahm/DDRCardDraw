@@ -104,59 +104,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
   // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
-  // #region BPL S5楽曲パック
-  [
-    "b9Qbd61bPOPiDIPdIO9oqqo9D1Q6qdoQ", // Astra Blaze
-    {
-      ratings: [3, 7, 13, 16, 0, 8, 13, 16, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "P600DiDIlPQ1Ql9DI8QlI6P8il1oOQd6", // COLOR BURST
-    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
-  ],
-  [
-    "Pdl6bi6dOb1O6bo9Qibb018odPQ8D11q", // GO!
-    {
-      ratings: [3, 9, 13, 15, 0, 8, 13, 15, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "bOOIQqdDllioii8Ill98dIQbbloQ8Do1", // HORIZON BEATZ
-    {
-      ratings: [3, 6, 12, 16, 0, 6, 12, 16, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "O00OboQl9oOIodo69iiIq1o8bPoDdq9Q", // King of Tribe
-    {
-      ratings: [3, 8, 13, 16, 0, 8, 13, 16, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "IObOi8dQo68Q19DI9oD8DI9O81IPqOlQ", // Meteor☆Shower
-    {
-      ratings: [3, 8, 12, 16, 0, 8, 12, 16, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "8Pl66oObI8diD6b9li0o8bPlIO0iO6ib", // RIZING-GAMERS.
-    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
-  ],
-  [
-    "0iO086qDbPOd8DlPPqP8q0DDi6O8iP9I", // SILKY BRAVE
-    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
-  ],
-  [
-    "ibDqd11d81i8ll91bib9I6IoDqdl6D8O", // Superior MAXXX
-    { lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190] },
-  ],
-  // #endregion BPL S5楽曲パック
 ]);
 
 type SanbaiSongData = Pick<
