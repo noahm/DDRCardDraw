@@ -409,6 +409,14 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       delete existingSong.flags;
     }
 
+    if (!existingSong.folder && fetchedSong.folder) {
+      console.log(
+        `Updated "${existingSong.name}" folder: ${existingSong.folder} -> ${fetchedSong.folder}`,
+      );
+      existingSong.folder = fetchedSong.folder;
+      hasUpdates = true;
+    }
+
     // Try to get jacket from 3icecream
     if (!existingSong.jacket) {
       const jacket = downloadJacket(
