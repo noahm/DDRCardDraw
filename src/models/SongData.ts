@@ -59,6 +59,10 @@ export interface GameData {
      * Number of steps from one level to the next when using the `sanbaiTier` granular levels
      */
     granularTierResolution?: number;
+    /**
+     * Specifies a unique card type which can show info tailored to a specific game
+     */
+    cardVariant?: string;
   };
   /**
    * Defines the default configuration for this game
@@ -89,24 +93,40 @@ export interface I18NDictBranch {
   [k: string]: string | I18NDictBranch;
 }
 export interface Song {
-  flags?: UniqueStringArr3;
+  /**
+   * Holds info about a song that may make it worth filtering out
+   */
+  flags?: string[];
   name: string;
   artist: string;
   genre?: string;
   artist_translation?: string;
   bpm: string;
   name_translation?: string;
+  /**
+   * Extra text to make this easier to find by text entry
+   */
   search_hint?: string;
   date_added?: string;
   charts: Chart[];
   jacket: string;
   folder?: string;
+  /**
+   * a unique identifier for a song
+   */
   saHash?: string;
   saIndex?: string;
   remyLink?: string;
+  /**
+   * Holds cosmetic only info about a song
+   */
+  extras?: string[];
 }
 export interface Chart {
-  flags?: UniqueStringArr3;
+  /**
+   * Holds info about a chart that may make it worth filtering out
+   */
+  flags?: string[];
   /**
    * e.g. single/double
    */
@@ -136,4 +156,8 @@ export interface Chart {
    * per-chart BPM range, if one applies
    */
   bpm?: string;
+  /**
+   * Holds cosmetic only info about a chart
+   */
+  extras?: string[];
 }

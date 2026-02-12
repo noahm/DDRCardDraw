@@ -13,6 +13,8 @@ export interface EligibleChart {
   granularLevel?: number;
   drawGroup?: number;
   flags: string[];
+  extras: string[];
+  cardVariant: string | undefined;
   dateAdded?: string;
   song: Song;
 }
