@@ -105,7 +105,7 @@ export async function writeJsonData(
 
 /** @type {PQueue} */
 export let requestQueue: PQueue = new PQueue({
-  concurrency: 1, // 6 concurrent max
+  concurrency: 6, // 6 concurrent max
   interval: 1000,
   intervalCap: 10, // 10 per second max
 });

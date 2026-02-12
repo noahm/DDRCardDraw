@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import fs from "node:fs";
-import crypto from "node:crypto";
+import path from "node:path";
 import task from "tasuku";
 import {
   downloadJacket,
@@ -18,14 +18,11 @@ if (!inputPath) {
 }
 
 /**
- * compute an abbreviated hash of `input`
+ * preserves original filename, convert to jpg
  */
-function shortHash(input: string, length = 12) {
-  return crypto
-    .createHash("sha256")
-    .update(input)
-    .digest("base64")
-    .slice(0, length);
+function localImageName(input: string) {
+  const imageSansExt = path.basename(input).slice(0, -4);
+  return `maimai/${imageSansExt}.jpg`;
 }
 
 const OUTPUT_PATH = "src/songs/maimai.json";
@@ -143,7 +140,7 @@ function normalizeSong(song): Song {
     artist: song.artist,
     bpm: bpmValue,
     jacket: song.imageName
-      ? downloadJacket(song.imageName, `maimai/${shortHash(song.songId)}.jpg`)
+      ? downloadJacket(song.imageName, localImageName(song.imageName))
       : null,
     folder: song.version,
     ...(flags.length > 0 && { flags }),
