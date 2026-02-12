@@ -7,24 +7,88 @@ import {
   Navbar,
   Popover,
 } from "@blueprintjs/core";
-import { Trash, InfoSign, Menu as MenuIcon, Help } from "@blueprintjs/icons";
-import { useState } from "react";
+import {
+  Trash,
+  InfoSign,
+  Menu as MenuIcon,
+  Help,
+  Control,
+} from "@blueprintjs/icons";
+import { JSX, useCallback, useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
-import { ThemeToggle } from "./theme-toggle";
-import { DataLoadingSpinner, VersionSelect } from "./version-select";
-import { useDrawState } from "./draw-state";
+import { ThemeToggle, useInObs } from "./theme-toggle";
+import { useAppDispatch, useAppState } from "./state/store";
+import { drawingsSlice } from "./state/drawings.slice";
+import { EventModeGated } from "./common-components/app-mode";
+import { useNavigate, useHref } from "react-router-dom";
 
-export function Header() {
+export function Header({
+  heading,
+  controls,
+}: {
+  heading?: JSX.Element;
+  controls?: JSX.Element;
+}) {
+  const inObs = useInObs();
+
+  if (inObs) return null;
+
+  return (
+    <Navbar
+      style={{
+        position: "sticky",
+        top: 0,
+      }}
+    >
+      <Navbar.Group align={Alignment.LEFT}>
+        <HamburgerMenu />
+        <Navbar.Divider />
+        {heading || (
+          <Navbar.Heading>
+            Event Mode{" "}
+            <small>
+              <em>
+                <EventModeGated fallback="Classic Variant Alpha">
+                  Alpha Preview
+                </EventModeGated>
+              </em>
+            </small>
+          </Navbar.Heading>
+        )}
+      </Navbar.Group>
+      <Navbar.Group align={Alignment.RIGHT}>
+        {controls || <HeaderControls />}
+      </Navbar.Group>
+    </Navbar>
+  );
+}
+
+export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
-  const clearDrawings = useDrawState((d) => d.clearDrawings);
-  const haveDrawings = useDrawState((d) => !!d.drawings.length);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const dashHref = useHref("dash", { relative: "route" });
+  const clearDrawings = useCallback(
+    () => dispatch(drawingsSlice.actions.clearDrawings()),
+    [dispatch],
+  );
+  const haveDrawings = useAppState(drawingsSlice.selectors.haveDrawings);
   const { t } = useIntl();
 
   const menu = (
     <Menu>
+      <MenuItem
+        icon={<Control />}
+        text="Stream Dashboard"
+        href={dashHref}
+        onClick={(e) => {
+          e.preventDefault();
+          navigate("dash");
+        }}
+      />
       <MenuItem
         icon={<Trash />}
         onClick={clearDrawings}
@@ -47,28 +111,14 @@ export function Header() {
       <LastUpdate />
     </Menu>
   );
-
   return (
-    <Navbar
-      style={{
-        position: "sticky",
-        top: 0,
-      }}
-    >
+    <>
       <Dialog isOpen={aboutOpen} onClose={() => setAboutOpen(false)}>
         <About />
       </Dialog>
-      <Navbar.Group align={Alignment.LEFT}>
-        <Popover content={menu} placement="bottom-start">
-          <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
-        </Popover>
-        <Navbar.Divider />
-        <VersionSelect />
-        <DataLoadingSpinner />
-      </Navbar.Group>
-      <Navbar.Group align={Alignment.RIGHT}>
-        <HeaderControls />
-      </Navbar.Group>
-    </Navbar>
+      <Popover content={menu} placement="bottom-start">
+        <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
+      </Popover>
+    </>
   );
 }

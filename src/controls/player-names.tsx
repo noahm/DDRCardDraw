@@ -1,134 +1,83 @@
-import {
-  Checkbox,
-  Classes,
-  FormGroup,
-  NumericInput,
-  TagInput,
-} from "@blueprintjs/core";
-import { ReactNode } from "react";
-import { useConfigState } from "../config-state";
-import { useIntl } from "../hooks/useIntl";
-import { DiagramTree, Person } from "@blueprintjs/icons";
+import { Section, SectionCard } from "@blueprintjs/core";
+// import { useConfigState, useUpdateConfig } from "../state/hooks";
+// import { useIntl } from "../hooks/useIntl";
+import { useAtomValue } from "jotai";
+// import { showPlayerAndRoundLabels } from "../config-state";
+// import { useAppState } from "../state/store";
+import { startggEventSlug, startggKeyAtom } from "../startgg-gql";
+import { StartggCredsManager } from "../startgg-gql/components";
 
 export function PlayerNamesControls() {
-  const { t } = useIntl();
-  const playerNames = useConfigState((s) => s.playerNames);
-  const updateConfig = useConfigState((s) => s.update);
-
-  function addPlayers(names: string[]) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      for (const name of names) {
-        if (!next.includes(name)) {
-          next.push(name);
-        }
-      }
-      if (next.length !== prev.playerNames.length) {
-        return { playerNames: next };
-      }
-      return {};
-    });
-  }
-  function removePlayer(name: ReactNode, index: number) {
-    updateConfig((prev) => {
-      const next = prev.playerNames.slice();
-      next.splice(index, 1);
-      return { playerNames: next };
-    });
-  }
-
+  const apiKey = useAtomValue(startggKeyAtom);
+  const eventSlug = useAtomValue(startggEventSlug);
   return (
     <>
-      <ShowLabelsToggle />
-      <PlayersPerDraw />
-      <FormGroup label={t("controls.addPlayerLabel")}>
-        <TagInput
-          values={playerNames}
-          fill
-          large
-          leftIcon={<Person size={20} className={Classes.TAG_INPUT_ICON} />}
-          onAdd={addPlayers}
-          onRemove={removePlayer}
-          addOnBlur={true}
-        />
-      </FormGroup>
-      <TournamentLabelEditor />
+      <Section
+        title="Start.gg Credentials"
+        collapsible
+        collapseProps={{ defaultIsOpen: !apiKey || !eventSlug }}
+        style={{ maxWidth: "50em" }}
+      >
+        <SectionCard>
+          <StartggCredsManager />
+        </SectionCard>
+      </Section>
     </>
   );
 }
 
-function ShowLabelsToggle() {
-  const update = useConfigState((s) => s.update);
-  const enabled = useConfigState((s) => s.showPlayerAndRoundLabels);
-  const { t } = useIntl();
-
-  return (
-    <Checkbox
-      checked={enabled}
-      onChange={(e) =>
-        update({ showPlayerAndRoundLabels: e.currentTarget.checked })
-      }
-      label={t("controls.playerLabels")}
-    />
-  );
+export function inferShortname(name: string): string;
+export function inferShortname(
+  name: string | null | undefined,
+): string | undefined;
+export function inferShortname(name: string | null | undefined) {
+  if (!name) return;
+  const namePieces = name.split(" | ");
+  return namePieces.length >= 1 ? namePieces[namePieces.length - 1] : undefined;
 }
 
-function PlayersPerDraw() {
-  const update = useConfigState((s) => s.update);
-  const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
-  const { t } = useIntl();
+// function EntrantNameForm(props: { entrant: Entrant }) {
+//   return (
+//     <Label>
+//       {props.entrant.startggTag}{" "}
+//       <input
+//         className={Classes.INPUT}
+//         placeholder="Leaderboard name"
+//         value={inferShortname(props.entrant.startggTag)}
+//       />
+//     </Label>
+//   );
+// }
 
-  return (
-    <FormGroup label={t("controls.playersPerDraw")}>
-      <NumericInput
-        type="number"
-        inputMode="numeric"
-        value={ppd}
-        large
-        min={0}
-        style={{ width: "58px" }}
-        onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
-      />
-    </FormGroup>
-  );
-}
+// function ShowLabelsToggle() {
+//   const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
+//   const { t } = useIntl();
 
-function TournamentLabelEditor() {
-  const { t } = useIntl();
-  const tournamentRounds = useConfigState((s) => s.tournamentRounds);
-  const updateConfig = useConfigState((s) => s.update);
+//   return (
+//     <Checkbox
+//       checked={enabled}
+//       onChange={(e) => updateShowLabels(e.currentTarget.checked)}
+//       label={t("controls.playerLabels")}
+//     />
+//   );
+// }
 
-  function addLabels(names: string[]) {
-    updateConfig((prev) => {
-      const next = prev.tournamentRounds.slice();
-      for (const name of names) {
-        if (!next.includes(name)) {
-          next.push(name);
-        }
-      }
-      if (next.length !== prev.tournamentRounds.length) {
-        return { tournamentRounds: next };
-      }
-      return {};
-    });
-  }
-  function removeLabel(name: ReactNode, index: number) {
-    updateConfig((prev) => {
-      const next = prev.tournamentRounds.slice();
-      next.splice(index, 1);
-      return { tournamentRounds: next };
-    });
-  }
-  return (
-    <FormGroup label={t("controls.tournamentLabelEdit")}>
-      <TagInput
-        values={tournamentRounds}
-        fill
-        large
-        leftIcon={<DiagramTree size={20} className={Classes.TAG_INPUT_ICON} />}
-        onAdd={addLabels}
-        onRemove={removeLabel}
-      />
-    </FormGroup>
-  );
-}
+// function PlayersPerDraw() {
+//   const update = useUpdateConfig();
+//   const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
+//   const { t } = useIntl();
+
+//   return (
+//     <FormGroup label={t("controls.playersPerDraw")}>
+//       <NumericInput
+//         type="number"
+//         inputMode="numeric"
+//         value={ppd}
+//         large
+//         min={0}
+//         style={{ width: "58px" }}
+//         onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
+//       />
+//     </FormGroup>
+//   );
+// }
