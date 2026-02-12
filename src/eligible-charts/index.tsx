@@ -19,6 +19,7 @@ import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
 import { Export } from "@blueprintjs/icons";
 import { shareCharts } from "../utils/share";
+import { DrawingProvider, stubDrawing } from "../drawing-context";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
@@ -50,6 +51,11 @@ export default function EligibleChartsList() {
   const exportData = useCallback(async () => {
     shareCharts(filteredCharts, "eligible");
   }, [filteredCharts]);
+
+  const customStubDrawing = useMemo(
+    () => ({ ...stubDrawing, cardVariant: gameData?.meta.cardVariant }),
+    [gameData?.meta.cardVariant],
+  );
 
   if (!gameData) {
     return <Spinner />;
@@ -86,13 +92,18 @@ export default function EligibleChartsList() {
       </Navbar>
       <DiffHistogram charts={filteredCharts} />
       <div className={styles.chartList}>
-        {filteredCharts.map((chart, idx) =>
-          isDegrs(chart) ? (
-            <TesterCard chart={chart} key={idx} />
-          ) : (
-            <SongCard chart={chart} key={idx} />
-          ),
-        )}
+        <DrawingProvider
+          key={gameData?.meta.cardVariant}
+          initialDrawing={customStubDrawing}
+        >
+          {filteredCharts.map((chart, idx) =>
+            isDegrs(chart) ? (
+              <TesterCard chart={chart} key={idx} />
+            ) : (
+              <SongCard chart={chart} key={idx} />
+            ),
+          )}
+        </DrawingProvider>
       </div>
     </>
   );

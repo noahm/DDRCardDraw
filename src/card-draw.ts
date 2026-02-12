@@ -45,6 +45,7 @@ export function getDrawnChart(
     granularLevel: chart.sanbaiTier,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
+    extras: (chart.extras || []).concat(currentSong.extras || []),
     song: currentSong,
     dateAdded: currentSong.date_added,
     // Fill in variant data per game
@@ -415,6 +416,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   return {
     id: `draw-${nanoid(10)}`,
+    cardVariant: gameData.meta.cardVariant,
     charts,
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],

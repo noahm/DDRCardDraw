@@ -2,6 +2,7 @@
   "$schema": "../../songs.schema.json",
   "meta": {
     "menuParent": "more",
+    "cardVariant": "ddr",
     "styles": ["single", "double"],
     "difficulties": [
       { "key": "beginner", "color": "#6eccc4" },
