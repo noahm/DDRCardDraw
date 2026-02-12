@@ -152,9 +152,11 @@ function normalizeSong(song): Song {
 }
 
 const baseGameData: GameData = {
+  $schema: "../../songs.schema.json",
   meta: {
     lastUpdated: 0,
     menuParent: "more",
+    cardVariant: "maimai",
     styles: ["single"],
     difficulties: [
       { key: "basic", color: "#22bb5b" },

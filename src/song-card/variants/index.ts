@@ -4,6 +4,7 @@ export { baseChartValues } from "./base";
 import { BaseCardCenter, type CardContentsProps, BaseCardFooter } from "./base";
 import { DdrCardFooter } from "./ddr";
 import { ItgCardFooter } from "./itg";
+import { MaimaiCardFooter } from "./maimai";
 
 export function getContentVariants(
   cardType: string | undefined,
@@ -18,6 +19,11 @@ export function getContentVariants(
       return {
         CenterContent: BaseCardCenter,
         FooterContent: ItgCardFooter,
+      };
+    case "maimai":
+      return {
+        CenterContent: BaseCardCenter,
+        FooterContent: MaimaiCardFooter,
       };
     default:
       return {
