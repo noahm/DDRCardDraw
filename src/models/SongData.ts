@@ -59,6 +59,10 @@ export interface GameData {
      * Number of steps from one level to the next when using the `sanbaiTier` granular levels
      */
     granularTierResolution?: number;
+    /**
+     * Specifies a unique card type which can show info tailored to a specific game
+     */
+    cardVariant?: string;
   };
   /**
    * Defines the default configuration for this game

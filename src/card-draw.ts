@@ -415,6 +415,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   return {
     id: `draw-${nanoid(10)}`,
+    cardVariant: gameData.meta.cardVariant,
     charts,
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],

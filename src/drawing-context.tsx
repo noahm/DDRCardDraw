@@ -13,8 +13,9 @@ import {
 } from "./models/Drawing";
 import { SerializibleStore } from "./zustand/shared-zustand";
 
-const stubDrawing: Drawing = {
+export const stubDrawing: Drawing = {
   id: "stub",
+  cardVariant: undefined,
   players: [],
   charts: [],
   bans: [],
