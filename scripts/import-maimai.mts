@@ -52,44 +52,6 @@ function normalizeSong(song): Song {
     warnings.push("BPM defaulted to 0");
   }
 
-  // --- flags logic (unchanged) ---
-  if (
-    song.isLocked &&
-    !["Xaleid◆scopiX", "Ref:rain (for 7th Heaven)"].includes(song.title)
-  ) {
-    flags.push("unlockable");
-  }
-
-  const hasJpnOnly = song.sheets.some(
-    (sheet) =>
-      sheet.regions &&
-      sheet.regions.jp === true &&
-      sheet.regions.intl === false &&
-      sheet.regions.usa === false,
-  );
-
-  const hasIntlNoUsa = song.sheets.some(
-    (sheet) =>
-      sheet.regions &&
-      sheet.regions.jp === true &&
-      sheet.regions.intl === true &&
-      sheet.regions.usa === false,
-  );
-
-  // JP-only songs
-  if (hasJpnOnly) {
-    flags.push("jpn");
-  }
-
-  // International but not USA
-  if (!hasJpnOnly && hasIntlNoUsa) {
-    flags.push("usa");
-  }
-
-  if (["Xaleid◆scopiX", "Ref:rain (for 7th Heaven)"].includes(song.title)) {
-    flags.push("long");
-  }
-
   interface Sheet {
     difficulty: string;
     type: string;
@@ -98,6 +60,7 @@ function normalizeSong(song): Song {
 
   // --- chart normalization + chart warnings ---
   const charts = (song.sheets as Array<Sheet>).map((sheet, index): Chart => {
+    const flags = [];
     if (!sheet.difficulty) {
       warnings.push(`Chart ${index}: Missing difficulty`);
     }
@@ -108,6 +71,28 @@ function normalizeSong(song): Song {
 
     if (!sheet.type) {
       warnings.push(`Chart ${index}: Missing chart type`);
+    }
+
+    // --- flags logic ---
+    if (sheet.regions) {
+      const { jp, intl, usa } = sheet.regions;
+
+      if (jp && !intl && !usa) {
+        flags.push("jpn");
+      } else if (jp && intl && !usa) {
+        flags.push("usa");
+      }
+    }
+
+    if (
+      song.isLocked &&
+      !["Xaleid◆scopiX", "Ref:rain (for 7th Heaven)"].includes(song.title)
+    ) {
+      flags.push("unlockable");
+    }
+
+    if (["Xaleid◆scopiX", "Ref:rain (for 7th Heaven)"].includes(song.title)) {
+      flags.push("long");
     }
 
     let diffClass: string, type: string;
@@ -123,6 +108,7 @@ function normalizeSong(song): Song {
       style: "single",
       diffClass,
       lvl: sheet.internalLevelValue,
+      ...(flags.length > 0 && { flags }),
       extras: [type],
     };
   });
@@ -143,7 +129,6 @@ function normalizeSong(song): Song {
       ? downloadJacket(song.imageName, localImageName(song.imageName))
       : null,
     folder: song.version,
-    ...(flags.length > 0 && { flags }),
     charts,
   };
 }
