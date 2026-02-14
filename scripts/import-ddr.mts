@@ -19,7 +19,7 @@ import {
 } from "./utils.mts";
 import {
   JsonDDRSongImporter,
-  DDR_WORLD as MIX_META,
+  DDR_GRAND_PRIX as MIX_META,
 } from "./scraping/ddr-sources.mts";
 import { EAGateSongImporter } from "./scraping/eagate-ddr.mts";
 import { getJacketFromRemySong, tryGetMetaFromRemy } from "./scraping/remy.mts";
@@ -109,7 +109,19 @@ try {
           const existingSong = existingData.songs.find((s) =>
             importer.songEquals(s, gpSong),
           );
-          if (existingSong) return; // Add only new songs
+          if (existingSong) {
+            await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
+            if (existingSong.remyLink && !existingSong.jacket) {
+              existingSong.jacket = await getJacketFromRemySong(
+                existingSong.remyLink,
+                existingSong.name,
+                "DanceDanceRevolution GRAND PRIX",
+                "DanceDanceRevolution",
+                "DDR",
+              );
+            }
+            return;
+          }
 
           // Try to get meta data from remyLink
           await tryGetMetaFromRemy(gpSong, "DanceDanceRevolution");
@@ -243,6 +255,7 @@ try {
     const importer = new JsonDDRSongImporter(
       MIX_META.copyFrom.file,
       MIX_META.copyFrom.keys,
+      MIX_META.copyFrom.overwriteKeys,
     );
     const fetchedSongs = await importer.fetchSongs();
 

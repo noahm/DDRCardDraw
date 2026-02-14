@@ -27,23 +27,32 @@ export interface DDRSongImporter<T extends Partial<Song>> {
   merge(existingSong: Song, fetchedSong: T): boolean | Promise<boolean>;
 }
 
+type KeyOfSong = keyof Song | `charts.${keyof Chart}`;
+
 /**
  * DDR song importer that imports from a local JSON file.
  * Useful for importing from other DDR mixes' JSON data.
  */
 export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   readonly #jsonFileName: `${string}.json`;
-  readonly #updatedPropertyKeys: (keyof Song | `charts.${keyof Chart}`)[];
+  readonly #updatedPropertyKeys: readonly KeyOfSong[];
+  readonly #overwriteProperties: readonly KeyOfSong[];
+
   /**
    * @param jsonFileName The name of the JSON file to import songs from
    * @param updatedPropertyKeys The list of properties to update in existing songs
+   * @param overwriteProperties The list of properties to overwrite in existing songs
    */
   constructor(
     jsonFileName: `${string}.json`,
-    updatedPropertyKeys: (keyof Song | `charts.${keyof Chart}`)[],
+    updatedPropertyKeys: readonly KeyOfSong[],
+    overwriteProperties: readonly KeyOfSong[] = [],
   ) {
     this.#jsonFileName = jsonFileName;
     this.#updatedPropertyKeys = updatedPropertyKeys;
+    this.#overwriteProperties = overwriteProperties?.length
+      ? overwriteProperties
+      : updatedPropertyKeys;
   }
 
   async fetchSongs(): Promise<Song[]> {
@@ -85,7 +94,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
             updated = true;
           }
         }
-      } else if (existingSong[key] !== fetchedSong[key]) {
+      } else if (
+        existingSong[key] !== fetchedSong[key] &&
+        (this.#overwriteProperties.includes(key) || !existingSong[key])
+      ) {
         (existingSong as unknown as Record<string, unknown>)[key] =
           fetchedSong[key];
         updated = true;
@@ -143,7 +155,8 @@ export interface DDRSourceMeta {
   /** Copy specified properties from another DDR mix JSON data */
   copyFrom?: {
     file: `${string}.json`;
-    keys: (keyof Song | `charts.${keyof Chart}`)[];
+    keys: KeyOfSong[];
+    overwriteKeys?: KeyOfSong[];
   };
 }
 
@@ -592,6 +605,23 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
       "saHash",
       "bpm",
       "folder",
+      "name_translation",
+      "artist_translation",
+      "search_hint",
+      "genre",
+      "jacket",
+      "remyLink",
+      "charts.lvl",
+      "charts.sanbaiTier",
+      "charts.step",
+      "charts.freeze",
+      "charts.shock",
+    ],
+    // excepts `bpm` and `folder`
+    // `bpm`: DDR GRAND PRIX is displayed BPM, but DDR WORLD is actual BPM
+    // `folder`: Some songs (ex. licensed songs) are moved to DDR GRAND PRIX folder
+    overwriteKeys: [
+      "saHash",
       "name_translation",
       "artist_translation",
       "search_hint",
