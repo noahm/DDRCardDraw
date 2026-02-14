@@ -1,7 +1,7 @@
 {
   "$schema": "../../songs.schema.json",
   "meta": {
-    "lastUpdated": 1770928206893,
+    "lastUpdated": 1771049341424,
     "menuParent": "more",
     "cardVariant": "maimai",
     "styles": ["single"],
@@ -175,30 +175,33 @@
       "bpm": "135",
       "jacket": "maimai/daf6adeacb8fc300.jpg",
       "folder": "maimai",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -359,30 +362,33 @@
       "bpm": "128",
       "jacket": "maimai/4d2c50f8046c8c8f.jpg",
       "folder": "maimai",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -511,30 +517,33 @@
       "bpm": "155",
       "jacket": "maimai/8205c81e9d23470d.jpg",
       "folder": "maimai",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -545,30 +554,33 @@
       "bpm": "130",
       "jacket": "maimai/23aec440c8812a0d.jpg",
       "folder": "maimai",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.4,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -579,30 +591,33 @@
       "bpm": "128",
       "jacket": "maimai/a04ffc79950a73a2.jpg",
       "folder": "maimai",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.4,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -770,30 +785,33 @@
       "bpm": "164",
       "jacket": "maimai/ba0f9d3b5b630461.jpg",
       "folder": "maimai",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -1321,25 +1339,33 @@
       "bpm": "147",
       "jacket": "maimai/7164862f8378206f.jpg",
       "folder": "maimai",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
@@ -1755,25 +1781,33 @@
       "bpm": "204",
       "jacket": "maimai/379a393f1e3acfbf.jpg",
       "folder": "maimai PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
@@ -1998,49 +2032,61 @@
       "bpm": "154",
       "jacket": "maimai/fa67a0cdb0ac0035.jpg",
       "folder": "maimai PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -2437,30 +2483,33 @@
       "bpm": "190",
       "jacket": "maimai/c7d50e554e2b7083.jpg",
       "folder": "maimai PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -2642,7 +2691,6 @@
       "bpm": "105",
       "jacket": "maimai/1cb752563c0aaa9d.jpg",
       "folder": "maimai PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
@@ -2672,6 +2720,7 @@
           "style": "single",
           "diffClass": "remaster",
           "lvl": 14.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -5183,49 +5232,61 @@
       "bpm": "150",
       "jacket": "maimai/54d9be729151e423.jpg",
       "folder": "GreeN",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -5865,30 +5926,33 @@
       "bpm": "133",
       "jacket": "maimai/c2434fdb76299e19.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -5965,30 +6029,33 @@
       "bpm": "175",
       "jacket": "maimai/e50c39bed8f4d975.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -6065,30 +6132,33 @@
       "bpm": "162",
       "jacket": "maimai/307de9c3fbc7494f.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -6184,30 +6254,33 @@
       "bpm": "180",
       "jacket": "maimai/c1de7b4bbf76fcd8.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -7072,30 +7145,33 @@
       "bpm": "140",
       "jacket": "maimai/212dcc8c73d2fc43.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -7191,30 +7267,33 @@
       "bpm": "140",
       "jacket": "maimai/8447601f724531de.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -7297,30 +7376,33 @@
       "bpm": "172",
       "jacket": "maimai/d56dc89f76dbba33.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -7449,30 +7531,33 @@
       "bpm": "130",
       "jacket": "maimai/37a169cc1cb4aed1.jpg",
       "folder": "GreeN PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -7797,30 +7882,33 @@
       "bpm": "175",
       "jacket": "maimai/e8f0c0f81f6a4e8a.jpg",
       "folder": "ORANGE",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -9045,30 +9133,33 @@
       "bpm": "150",
       "jacket": "maimai/19e255052dee271e.jpg",
       "folder": "ORANGE PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -9079,30 +9170,33 @@
       "bpm": "134",
       "jacket": "maimai/0f654cf3227cd7e9.jpg",
       "folder": "ORANGE PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -9414,30 +9508,33 @@
       "bpm": "175",
       "jacket": "maimai/4dc45b9cd4796d4e.jpg",
       "folder": "ORANGE PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -9552,30 +9649,33 @@
       "bpm": "132",
       "jacket": "maimai/b21fbac0b3f7bb9a.jpg",
       "folder": "ORANGE PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.7,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -10086,30 +10186,33 @@
       "bpm": "156",
       "jacket": "maimai/97bcee55165daa06.jpg",
       "folder": "PiNK",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -10186,30 +10289,33 @@
       "bpm": "160",
       "jacket": "maimai/b9e7a37cc0f8c2c7.jpg",
       "folder": "PiNK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.7,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -10292,30 +10398,33 @@
       "bpm": "138",
       "jacket": "maimai/ab3dac28c71a002a.jpg",
       "folder": "PiNK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.7,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -10359,30 +10468,33 @@
       "bpm": "190",
       "jacket": "maimai/a8b3a09aa2ce4d4f.jpg",
       "folder": "PiNK",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -11263,30 +11375,33 @@
       "bpm": "156",
       "jacket": "maimai/1f617d599ada17e4.jpg",
       "folder": "PiNK PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.9,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -11619,30 +11734,33 @@
       "bpm": "174",
       "jacket": "maimai/5d42e5e648761003.jpg",
       "folder": "PiNK PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.9,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -11719,30 +11837,33 @@
       "bpm": "185",
       "jacket": "maimai/494f4f30f8cce098.jpg",
       "folder": "PiNK PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -12182,30 +12303,33 @@
       "bpm": "140",
       "jacket": "maimai/c388ac7580206d1c.jpg",
       "folder": "PiNK PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -12288,49 +12412,61 @@
       "bpm": "210",
       "jacket": "maimai/1c389ba08db6c6f4.jpg",
       "folder": "MURASAKi",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -12440,49 +12576,61 @@
       "bpm": "160",
       "jacket": "maimai/b20d370701258bd3.jpg",
       "folder": "MURASAKi",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -12696,30 +12844,33 @@
       "bpm": "221",
       "jacket": "maimai/5a6e3ac6fa418c08.jpg",
       "folder": "MURASAKi",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -13453,30 +13604,33 @@
       "bpm": "140",
       "jacket": "maimai/279a1fad56725f40.jpg",
       "folder": "MURASAKi",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -13875,30 +14029,33 @@
       "bpm": "165",
       "jacket": "maimai/efe6a2bdd71bf82d.jpg",
       "folder": "MURASAKi",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -13942,30 +14099,33 @@
       "bpm": "128",
       "jacket": "maimai/d471ee26083d3ca4.jpg",
       "folder": "MURASAKi",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -14207,30 +14367,33 @@
       "bpm": "190",
       "jacket": "maimai/d5d50489dcbcfd1f.jpg",
       "folder": "MURASAKi PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -14340,30 +14503,33 @@
       "bpm": "126",
       "jacket": "maimai/60f44695106794c9.jpg",
       "folder": "MURASAKi PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -14440,30 +14606,33 @@
       "bpm": "181",
       "jacket": "maimai/234bfeb1c7aff4d4.jpg",
       "folder": "MURASAKi PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -15310,30 +15479,33 @@
       "bpm": "138",
       "jacket": "maimai/22489a6a6859ac30.jpg",
       "folder": "MURASAKi PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -15495,55 +15667,68 @@
       "bpm": "170",
       "jacket": "maimai/ae75c7c94be11299.jpg",
       "folder": "MiLK",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 12.9,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -15705,30 +15890,33 @@
       "bpm": "181",
       "jacket": "maimai/0298532f0508465a.jpg",
       "folder": "MiLK",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -15904,30 +16092,33 @@
       "bpm": "200",
       "jacket": "maimai/59ed8f01d94a9ea5.jpg",
       "folder": "MiLK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.9,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -15938,30 +16129,33 @@
       "bpm": "167",
       "jacket": "maimai/3441d9d72badccd7.jpg",
       "folder": "MiLK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -15972,30 +16166,33 @@
       "bpm": "180",
       "jacket": "maimai/f83daefdc8e0794c.jpg",
       "folder": "MiLK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -16204,30 +16401,33 @@
       "bpm": "185",
       "jacket": "maimai/d47f5e72b2b0fb78.jpg",
       "folder": "MiLK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -16304,30 +16504,33 @@
       "bpm": "184",
       "jacket": "maimai/5f3e8e0ffeaf0312.jpg",
       "folder": "MiLK",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -16338,30 +16541,33 @@
       "bpm": "220",
       "jacket": "maimai/88185a61da17d947.jpg",
       "folder": "MiLK",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.1,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -16721,30 +16927,33 @@
       "bpm": "185",
       "jacket": "maimai/313094677ecdad73.jpg",
       "folder": "MiLK",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -17247,36 +17456,40 @@
       "bpm": "110",
       "jacket": "maimai/ba246e30c720cb39.jpg",
       "folder": "MiLK PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -17768,36 +17981,40 @@
       "bpm": "172",
       "jacket": "maimai/82671f95d0466cde.jpg",
       "folder": "MiLK PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -17946,30 +18163,33 @@
       "bpm": "150",
       "jacket": "maimai/555764fd6c1bc6a1.jpg",
       "folder": "MiLK PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -17980,30 +18200,33 @@
       "bpm": "215",
       "jacket": "maimai/b3726a84bdf79779.jpg",
       "folder": "MiLK PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -18593,30 +18816,33 @@
       "bpm": "152",
       "jacket": "maimai/efc95cd2b5d40759.jpg",
       "folder": "MiLK PLUS",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -18930,36 +19156,40 @@
       "bpm": "200",
       "jacket": "maimai/6e8acabbb209b93e.jpg",
       "folder": "FiNALE",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12,
+          "flags": ["usa"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["std"]
         }
       ]
@@ -19207,30 +19437,33 @@
       "bpm": "185",
       "jacket": "maimai/bb36b855eaa0662e.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19274,30 +19507,33 @@
       "bpm": "120",
       "jacket": "maimai/6d2d8af2a09b4d64.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19308,30 +19544,33 @@
       "bpm": "150",
       "jacket": "maimai/623b7aa1a96ec56d.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19381,30 +19620,33 @@
       "bpm": "210",
       "jacket": "maimai/f48719569780bec1.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19454,30 +19696,33 @@
       "bpm": "160",
       "jacket": "maimai/a2719927ea12703d.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19488,30 +19733,33 @@
       "bpm": "140",
       "jacket": "maimai/2410c6787283c560.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.1,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19522,30 +19770,33 @@
       "bpm": "185",
       "jacket": "maimai/a0426d8d73448e6a.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -19964,30 +20215,33 @@
       "bpm": "178",
       "jacket": "maimai/b0db1882c9a7188e.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -20031,36 +20285,40 @@
       "bpm": "178",
       "jacket": "maimai/5a0e4607f3215a7b.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 12.7,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -20071,36 +20329,40 @@
       "bpm": "150",
       "jacket": "maimai/83a4944cf2580f93.jpg",
       "folder": "FiNALE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -22573,31 +22835,40 @@
       "bpm": "140",
       "jacket": "maimai/1b3fd58d6ebade7c.jpg",
       "folder": "maimaiでらっくす PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 1, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 1,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 8,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 12.8,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -23650,25 +23921,33 @@
       "bpm": "181",
       "jacket": "maimai/1e8efa0824fe6e78.jpg",
       "folder": "maimaiでらっくす PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -23959,25 +24238,33 @@
       "bpm": "184",
       "jacket": "maimai/355595c991550e39.jpg",
       "folder": "maimaiでらっくす PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 8.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -24526,7 +24813,6 @@
       "bpm": "205",
       "jacket": "maimai/b2491c88e30e7d0b.jpg",
       "folder": "Splash",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
         {
@@ -24551,6 +24837,7 @@
           "style": "single",
           "diffClass": "remaster",
           "lvl": 14.1,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -24645,25 +24932,33 @@
       "bpm": "132",
       "jacket": "maimai/53ec6717a92b0dc1.jpg",
       "folder": "Splash",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 8.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -24876,25 +25171,33 @@
       "bpm": "152",
       "jacket": "maimai/1e33fe6ab1df56ea.jpg",
       "folder": "Splash",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.7,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -25303,25 +25606,33 @@
       "bpm": "120",
       "jacket": "maimai/49cc18d720e1c23d.jpg",
       "folder": "Splash",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 5,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -25752,7 +26063,6 @@
       "bpm": "180",
       "jacket": "maimai/68824ef167581ccf.jpg",
       "folder": "Splash PLUS",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
@@ -25777,6 +26087,7 @@
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -26947,25 +27258,33 @@
       "bpm": "145",
       "jacket": "maimai/28cccd5cc7276eb3.jpg",
       "folder": "Splash PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -27122,25 +27441,33 @@
       "bpm": "124",
       "jacket": "maimai/1ef2747493f2d184.jpg",
       "folder": "Splash PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -27773,25 +28100,33 @@
       "bpm": "170",
       "jacket": "maimai/b44613f0defc39bd.jpg",
       "folder": "UNiVERSE",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -27830,31 +28165,40 @@
       "bpm": "185",
       "jacket": "maimai/1407ac902ae55b0d.jpg",
       "folder": "UNiVERSE",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.5,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -27899,7 +28243,6 @@
       "bpm": "187",
       "jacket": "maimai/e63c3acfdf00c605.jpg",
       "folder": "UNiVERSE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
@@ -27924,6 +28267,7 @@
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -28834,25 +29178,33 @@
       "bpm": "150",
       "jacket": "maimai/2d6ba5616abef148.jpg",
       "folder": "UNiVERSE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.5,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -28863,25 +29215,33 @@
       "bpm": "128",
       "jacket": "maimai/57c8a97552b29815.jpg",
       "folder": "UNiVERSE",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -31652,25 +32012,33 @@
       "bpm": "168",
       "jacket": "maimai/57724b8d4a6c684a.jpg",
       "folder": "FESTiVAL",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 1, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 1,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.4,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -31709,25 +32077,33 @@
       "bpm": "160",
       "jacket": "maimai/8cbae5ed52eaffcd.jpg",
       "folder": "FESTiVAL",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -31878,25 +32254,33 @@
       "bpm": "180",
       "jacket": "maimai/d65e04a8a65075d9.jpg",
       "folder": "FESTiVAL",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -32155,25 +32539,33 @@
       "bpm": "160",
       "jacket": "maimai/89976945919325ac.jpg",
       "folder": "FESTiVAL",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -33478,31 +33870,40 @@
       "bpm": "177",
       "jacket": "maimai/5d77231ceab248b4.jpg",
       "folder": "FESTiVAL PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.7,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -33659,25 +34060,33 @@
       "bpm": "163",
       "jacket": "maimai/5108df88dd9a6896.jpg",
       "folder": "FESTiVAL PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -34612,25 +35021,33 @@
       "bpm": "124",
       "jacket": "maimai/4d9e0c3640c966c5.jpg",
       "folder": "FESTiVAL PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 1, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 1,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 8.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.9,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -35431,31 +35848,40 @@
       "bpm": "190",
       "jacket": "maimai/b3c2cfe1e41c7ee9.jpg",
       "folder": "BUDDiES",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -35556,12 +35982,12 @@
       "bpm": "???",
       "jacket": "maimai/daf6adeacb8fc300.jpg",
       "folder": "BUDDiES",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 12,
+          "flags": ["usa"],
           "extras": ["【協】"]
         }
       ]
@@ -35647,12 +36073,12 @@
       "bpm": "???",
       "jacket": "maimai/b3c2cfe1e41c7ee9.jpg",
       "folder": "BUDDiES",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 14.6,
+          "flags": ["jpn"],
           "extras": ["【協】"]
         }
       ]
@@ -35663,12 +36089,12 @@
       "bpm": "???",
       "jacket": "maimai/b3c2cfe1e41c7ee9.jpg",
       "folder": "BUDDiES",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 13,
+          "flags": ["jpn"],
           "extras": ["【協】"]
         }
       ]
@@ -36142,25 +36568,33 @@
       "bpm": "220",
       "jacket": "maimai/ebb6cd1f90816331.jpg",
       "folder": "BUDDiES",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.2,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -36199,25 +36633,33 @@
       "bpm": "210",
       "jacket": "maimai/1ca2b9f20e307c03.jpg",
       "folder": "BUDDiES",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.8,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -37487,31 +37929,40 @@
       "bpm": "185",
       "jacket": "maimai/e7c32e5c2d4300ee.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.8,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -37606,31 +38057,40 @@
       "bpm": "166",
       "jacket": "maimai/c7c5029b33c09561.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.1,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -38152,25 +38612,33 @@
       "bpm": "208",
       "jacket": "maimai/3595660bf2057942.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -38181,25 +38649,33 @@
       "bpm": "170",
       "jacket": "maimai/567cedcde11724e1.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -38490,25 +38966,33 @@
       "bpm": "121",
       "jacket": "maimai/8032e0a4e5be70bf.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 1, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 1,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.7,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -38549,25 +39033,33 @@
       "bpm": "133",
       "jacket": "maimai/c825fb9620d74576.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -38578,25 +39070,33 @@
       "bpm": "135",
       "jacket": "maimai/72e6a54b6da5262b.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -38607,25 +39107,33 @@
       "bpm": "190",
       "jacket": "maimai/0847c38d2a623e99.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 9,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.5,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.7,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -39237,12 +39745,12 @@
       "bpm": "???",
       "jacket": "maimai/4d9e0c3640c966c5.jpg",
       "folder": "BUDDiES PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 12,
+          "flags": ["usa"],
           "extras": ["【両】"]
         }
       ]
@@ -39505,25 +40013,33 @@
       "bpm": "178",
       "jacket": "maimai/a0307249aa05e567.jpg",
       "folder": "PRiSM",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -40075,25 +40591,33 @@
       "bpm": "160",
       "jacket": "maimai/2b79a2298828d8a7.jpg",
       "folder": "PRiSM",
-      "flags": ["usa"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -40244,25 +40768,33 @@
       "bpm": "205",
       "jacket": "maimai/b28c21f0d14c6e26.jpg",
       "folder": "PRiSM",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 7, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 9.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13.4,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -40849,25 +41381,33 @@
       "bpm": "190",
       "jacket": "maimai/2e4769fb4445584c.jpg",
       "folder": "PRiSM",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.4,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.4,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -41455,25 +41995,33 @@
       "bpm": "95",
       "jacket": "maimai/92fed24b2755bbb4.jpg",
       "folder": "PRiSM",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13.5,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.9,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -41484,25 +42032,33 @@
       "bpm": "221",
       "jacket": "maimai/ab757f2eed76db43.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.2,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -41513,25 +42069,33 @@
       "bpm": "164",
       "jacket": "maimai/180abf50bf90bb63.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -41542,25 +42106,33 @@
       "bpm": "155",
       "jacket": "maimai/0ad8bc668121b1cf.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -41571,25 +42143,33 @@
       "bpm": "242",
       "jacket": "maimai/b232e4ac452ac306.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 9,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -42025,12 +42605,12 @@
       "bpm": "???",
       "jacket": "maimai/1b3fd58d6ebade7c.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["usa"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["【回】"]
         }
       ]
@@ -42381,25 +42961,33 @@
       "bpm": "170",
       "jacket": "maimai/1a43fdb9edd49c1d.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -42410,25 +42998,33 @@
       "bpm": "185",
       "jacket": "maimai/6c00472275eba77d.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -42439,25 +43035,33 @@
       "bpm": "150",
       "jacket": "maimai/e27b4a41495e33d3.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.2,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -42468,25 +43072,33 @@
       "bpm": "174",
       "jacket": "maimai/cd7dc8b9ec80cf06.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.9,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -43114,25 +43726,33 @@
       "bpm": "176",
       "jacket": "maimai/51959395323a90a1.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.1,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -43143,25 +43763,33 @@
       "bpm": "180",
       "jacket": "maimai/64591d22ccbf08c8.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -43172,25 +43800,33 @@
       "bpm": "147",
       "jacket": "maimai/bd5acd48e3191743.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.5,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -43201,30 +43837,33 @@
       "bpm": "205",
       "jacket": "maimai/4f8dd5d9c721b249.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 7.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 10,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13.1,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.9,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -43315,30 +43954,33 @@
       "bpm": "85",
       "jacket": "maimai/337975e1e775a059.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["unlockable"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["unlockable"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["unlockable"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.5,
+          "flags": ["unlockable"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.2,
+          "flags": ["unlockable"],
           "extras": ["std"]
         }
       ]
@@ -43349,36 +43991,40 @@
       "bpm": "180",
       "jacket": "maimai/7bf12d9c7382a32c.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["long"],
       "charts": [
         {
           "style": "single",
           "diffClass": "basic",
           "lvl": 7.6,
+          "flags": ["long"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 11,
+          "flags": ["long"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13.7,
+          "flags": ["long"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.9,
+          "flags": ["long"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 15,
+          "flags": ["long"],
           "extras": ["dx"]
         }
       ]
@@ -43389,25 +44035,33 @@
       "bpm": "188",
       "jacket": "maimai/3012b0903feb6e15.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["long"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["long"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["long"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.5,
+          "flags": ["long"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14,
+          "flags": ["long"],
           "extras": ["dx"]
         }
       ]
@@ -43743,25 +44397,33 @@
       "bpm": "130",
       "jacket": "maimai/4ef4e7537385b42b.jpg",
       "folder": "PRiSM PLUS",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -43940,25 +44602,33 @@
       "bpm": "192",
       "jacket": "maimai/0ede230a97b6cb70.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -43969,25 +44639,33 @@
       "bpm": "200",
       "jacket": "maimai/8b1d4ada02babe00.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.7,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.2,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -44172,25 +44850,33 @@
       "bpm": "125",
       "jacket": "maimai/b95814169c410966.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -44568,7 +45254,6 @@
       "bpm": "180",
       "jacket": "maimai/3b49138ef5b78f8b.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
@@ -44597,7 +45282,6 @@
       "bpm": "240",
       "jacket": "maimai/7987d57d04e10116.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
@@ -44626,7 +45310,6 @@
       "bpm": "124",
       "jacket": "maimai/a7bd6ceaeb20ea10.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
@@ -44655,7 +45338,6 @@
       "bpm": "165",
       "jacket": "maimai/57a35acac52f9635.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
         {
@@ -44684,7 +45366,6 @@
       "bpm": "156",
       "jacket": "maimai/393de382185611be.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
@@ -44713,25 +45394,33 @@
       "bpm": "215",
       "jacket": "maimai/9de69d869392cae6.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -44742,25 +45431,33 @@
       "bpm": "292",
       "jacket": "maimai/9354ec1583e9ffbb.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 13,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.8,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -44771,25 +45468,33 @@
       "bpm": "156",
       "jacket": "maimai/0f8294359ea35f03.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -44800,25 +45505,33 @@
       "bpm": "137",
       "jacket": "maimai/c76c2dfb5e5ba4e5.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -44829,12 +45542,12 @@
       "bpm": "???",
       "jacket": "maimai/9fcfc39056f4c51e.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 13,
+          "flags": ["jpn"],
           "extras": ["【藍】"]
         }
       ]
@@ -44845,12 +45558,12 @@
       "bpm": "???",
       "jacket": "maimai/990f36f291344332.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 13.6,
+          "flags": ["jpn"],
           "extras": ["【音】"]
         }
       ]
@@ -44889,25 +45602,33 @@
       "bpm": "134",
       "jacket": "maimai/5dd0b04bc3c1a8d4.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -44918,25 +45639,33 @@
       "bpm": "185",
       "jacket": "maimai/9ba20e7aa22358c0.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -44947,25 +45676,33 @@
       "bpm": "180",
       "jacket": "maimai/57d2dacfaffc601f.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -44976,25 +45713,33 @@
       "bpm": "160",
       "jacket": "maimai/bb698510f3d02bac.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45005,25 +45750,33 @@
       "bpm": "205",
       "jacket": "maimai/6420ff4f7a622cd6.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.9,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.5,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45034,25 +45787,33 @@
       "bpm": "207",
       "jacket": "maimai/f599316cb38957bd.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45063,25 +45824,33 @@
       "bpm": "202",
       "jacket": "maimai/1485239e3d0e6582.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45092,25 +45861,33 @@
       "bpm": "170",
       "jacket": "maimai/379487e70854a466.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45121,25 +45898,33 @@
       "bpm": "268",
       "jacket": "maimai/18b626c9831f71dc.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45150,25 +45935,33 @@
       "bpm": "180",
       "jacket": "maimai/c0d254699da52834.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45179,7 +45972,6 @@
       "bpm": "192",
       "jacket": "maimai/249cc28f8f59539a.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
         {
@@ -45204,24 +45996,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -45232,25 +46028,33 @@
       "bpm": "280",
       "jacket": "maimai/632ba87daeb2ced1.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 7, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45261,25 +46065,33 @@
       "bpm": "310",
       "jacket": "maimai/c3401b26c76a2c53.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45290,25 +46102,33 @@
       "bpm": "239",
       "jacket": "maimai/08cbc4bd3390930d.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.4,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45319,25 +46139,33 @@
       "bpm": "174",
       "jacket": "maimai/a9ef3210029d3530.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45348,25 +46176,33 @@
       "bpm": "160",
       "jacket": "maimai/02dd6a5eb800fbbf.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.2,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45377,25 +46213,33 @@
       "bpm": "165",
       "jacket": "maimai/12e822396bbf7ca1.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.1,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45406,25 +46250,33 @@
       "bpm": "184",
       "jacket": "maimai/03e15327e6423545.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.5,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.4,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45435,25 +46287,33 @@
       "bpm": "127",
       "jacket": "maimai/67a6e0f8822e2d7a.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.1,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45464,25 +46324,33 @@
       "bpm": "222",
       "jacket": "maimai/c467dedfe621ce57.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.4,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.1,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45493,25 +46361,33 @@
       "bpm": "264",
       "jacket": "maimai/48b784c73d0cba6b.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable", "jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.6,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.5,
+          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -45522,12 +46398,12 @@
       "bpm": "???",
       "jacket": "maimai/0efa58724b907097.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 14.6,
+          "flags": ["jpn"],
           "extras": ["【一】"]
         }
       ]
@@ -45538,12 +46414,12 @@
       "bpm": "???",
       "jacket": "maimai/503b44d4dc8fff1c.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["【充】"]
         }
       ]
@@ -45554,25 +46430,33 @@
       "bpm": "126",
       "jacket": "maimai/3114baf324a8a372.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45583,25 +46467,33 @@
       "bpm": "180",
       "jacket": "maimai/67c30af72f7293e4.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45612,25 +46504,33 @@
       "bpm": "168",
       "jacket": "maimai/299dad20075dc4c4.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45641,25 +46541,33 @@
       "bpm": "176",
       "jacket": "maimai/ce26768f1271c875.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45670,25 +46578,33 @@
       "bpm": "116",
       "jacket": "maimai/fff8332aea8283cd.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.9,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45699,25 +46615,33 @@
       "bpm": "150",
       "jacket": "maimai/8e5cbe0e7b8a325b.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -45728,12 +46652,12 @@
       "bpm": "???",
       "jacket": "maimai/967e724b039ec9dc.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 12,
+          "flags": ["jpn"],
           "extras": ["【鏡】"]
         }
       ]
@@ -45744,12 +46668,12 @@
       "bpm": "???",
       "jacket": "maimai/3f2d512deca0579b.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         {
           "style": "single",
           "diffClass": "utage",
           "lvl": 13.6,
+          "flags": ["jpn"],
           "extras": ["【邪】"]
         }
       ]
@@ -45760,7 +46684,6 @@
       "bpm": "150",
       "jacket": "maimai/2bb6a69fa0e66cc6.jpg",
       "folder": "CiRCLE",
-      "flags": ["jpn"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
@@ -45785,24 +46708,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
+          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -45869,25 +46796,218 @@
       "bpm": "240",
       "jacket": "maimai/5013b0405bb25bc3.jpg",
       "folder": "CiRCLE",
-      "flags": ["unlockable"],
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.8,
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.6,
+          "flags": ["unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "スローグロー",
+      "artist": "nayuta",
+      "bpm": "0",
+      "jacket": "maimai/8b7dba12521d48c5.jpg",
+      "folder": "CiRCLE",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "ECHO,",
+      "artist": "棗いつき",
+      "bpm": "0",
+      "jacket": "maimai/5bc1a8f9ea8f0fbf.jpg",
+      "folder": "CiRCLE",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "Phase: Theatre",
+      "artist": "藍月なくる",
+      "bpm": "0",
+      "jacket": "maimai/59f62ef34ff1b4fc.jpg",
+      "folder": "CiRCLE",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 8,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "Sky Trails",
+      "artist": "La prière",
+      "bpm": "0",
+      "jacket": "maimai/17afc6f7c4af0a9e.jpg",
+      "folder": "CiRCLE",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 8,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 14.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "ラプラスショコラ",
+      "artist": "Kai",
+      "bpm": "0",
+      "jacket": "maimai/130694f9747295ff.jpg",
+      "folder": "CiRCLE",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 9.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 12.6,
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
