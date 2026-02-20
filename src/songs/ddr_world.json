@@ -59,7 +59,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1770476299886
+    "lastUpdated": 1771524252603
   },
   "defaults": {
     "style": "single",
@@ -27724,6 +27724,53 @@
       "jacket": "ddr_max-ext/HIGHER(next morning mix).png",
       "saHash": "8DQDq16PPlli6o9iDl11DqooqOPlOb08",
       "saIndex": "81"
+    },
+    {
+      "name": "Hit Show Heroes",
+      "artist": "TAN1CHU",
+      "saHash": "999ddlbi9lDdQ9di1iIodO9lP0IQDoq8",
+      "bpm": "170-190",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/Hit Show Heroes.jpg",
+      "remyLink": "https://remywiki.com/Hit_Show_Heroes"
     },
     {
       "name": "Hold Tight",
@@ -58511,7 +58558,8 @@
         }
       ],
       "jacket": "ddr_world/Superior MAXXX.jpg",
-      "flags": ["grandPrixPack"]
+      "flags": ["grandPrixPack"],
+      "remyLink": "https://remywiki.com/Superior_MAXXX"
     },
     {
       "name": "Surface",
