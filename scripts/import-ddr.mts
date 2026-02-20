@@ -143,9 +143,9 @@ try {
           existingData.songs.push({
             name: sanbaiSong.name,
             name_translation: sanbaiSong.name_translation,
-            artist: "???",
+            artist: sanbaiSong.artist || "???",
             saHash: sanbaiSong.saHash,
-            bpm: "???",
+            bpm: sanbaiSong.bpm || "???",
             folder: sanbaiSong.folder ?? existingData.meta.folders[0],
             charts: sanbaiSong.charts,
             flags: sanbaiSong.flags,
