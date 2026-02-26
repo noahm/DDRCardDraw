@@ -20,7 +20,11 @@ type SanbaiSong = {
   tiers: number[];
 };
 
-/** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
+/**
+ * Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags`
+ * @description
+ * Hidden songs/charts that were already locked as of 2025-10-21 also require the `euLocked` flag.
+ */
 const lockFlags: Map<number, Song["flags"]> = new Map([
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)

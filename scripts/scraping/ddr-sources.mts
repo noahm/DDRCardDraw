@@ -141,7 +141,7 @@ export const DDR_WORLD: DDRSourceMeta = {
   filename: "ddr_world.json",
   jacketPrefix: "ddr_world/",
   sortSongs: true,
-  unmanagedFlags: ["copyStrikes", "shock"],
+  unmanagedFlags: ["copyStrikes", "shock", "euLocked"],
   eagate: {
     songList:
       "https://p.eagate.573.jp/game/ddr/ddrworld/music/index.html?filter=7",
