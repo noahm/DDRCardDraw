@@ -39,6 +39,12 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
       ? ["unlock"]
       : ["tempUnlock"],
   ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
+  [
+    320,
+    new Date() < new Date("2026-03-22T23:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -108,6 +114,23 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
   // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
+  // #region pop'n & BEMANI Cheers × Cheers!!
+  [
+    "DqO9bl89lll1009obqQD9iiIIo9oQ16Q",
+    { lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0] },
+  ], // BILLION MONEY BAZOOKA
+  [
+    "qQ1DII6bDO61o81O86OibP6Pi1q1O0QQ",
+    {
+      ratings: [7, 10, 14, 17, 0, 10, 14, 18, 0],
+      lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0],
+    },
+  ], // Fragarach
+  [
+    "PDQl91OPbdo86qi0919Do6DOqQl80l8Q",
+    { lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0] },
+  ], // 僕の気持ちを描く
+  // #endregion pop'n & BEMANI Cheers × Cheers!!
 ]);
 
 type SanbaiSongData = Pick<
