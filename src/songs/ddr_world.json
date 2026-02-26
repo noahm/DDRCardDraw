@@ -56,15 +56,16 @@
       "grandPrixPack",
       "platinumMembers",
       "tempUnlock",
+      "euLocked",
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1771524252603
+    "lastUpdated": 1772079248942
   },
   "defaults": {
     "style": "single",
     "difficulties": ["difficult", "expert", "challenge"],
-    "flags": ["shock", "flareRank"],
+    "flags": ["shock", "flareRank", "euLocked"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
@@ -86,6 +87,7 @@
       "platinumMembers": "DDR Platinum Members Pass",
       "tempUnlock": "Formerly unlockable (KAC, BPL, etc.)",
       "shock": "Shock arrow charts",
+      "euLocked": "Absent from European cabinet",
       "copyStrikes": "Songs with streaming copyright issues",
       "$abbr": {
         "beginner": "Beg",
@@ -112,6 +114,7 @@
       "platinumMembers": "プラチナメンバーズパス先行プレー特典",
       "tempUnlock": "現在解禁できない楽曲/譜面",
       "shock": "ショックアロー譜面",
+      "euLocked": "ヨーロッパ版に収録されていない楽曲",
       "copyStrikes": "配信で使用できない楽曲",
       "$abbr": {
         "beginner": "Beg",
@@ -321,6 +324,7 @@
           "sanbaiTier": 18.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/1116",
       "jacket": "ddr_world/1116.jpg",
       "genre": "BREAKBEATS",
@@ -509,6 +513,7 @@
           "sanbaiTier": 8.55
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/30_Lives_(Up-Up-Down-Dance_Mix)",
       "jacket": "ddr_x/30 Lives (Up-Up-Down-Dance Mix).png",
       "saHash": "i9Pidb18b9O8bdqQ91QQP0oPdIdIODq1",
@@ -2323,6 +2328,7 @@
           "sanbaiTier": 14.3
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/ACROSS_WORLD",
       "jacket": "ddr_2013/ACROSS WORLD.png",
       "saHash": "o81iq91q6lI6OODP9Pb9OboDlQD9Q08d",
@@ -3231,7 +3237,7 @@
           "sanbaiTier": 14.15
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Akatsuki_(PRIDASK)",
       "jacket": "ddr_world/Akatsuki_(PRIDASK).jpg",
       "saHash": "0Q9b998QQ60806lqq8b8dOlbqqb18Pbb",
@@ -5225,6 +5231,7 @@
           "sanbaiTier": 10.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/B4U(B4_ZA_BEAT_MIX)",
       "jacket": "ddr_max-ext/B4U(B4 ZA BEAT MIX).png",
       "saHash": "POIDil00didIo98D10loIObibPOob88O",
@@ -5503,6 +5510,7 @@
           "sanbaiTier": 11.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Bad_Apple!!_feat._nomico",
       "jacket": "ddr_a/Bad Apple!! feat. nomico.png",
       "genre": "",
@@ -6142,6 +6150,7 @@
           "sanbaiTier": 18.1
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/Battle Against a True Hero.jpg",
       "remyLink": "https://remywiki.com/Battle_Against_a_True_Hero_/_Honmono_no_hero_to_no_tatakai",
       "search_hint": "Undertale ほんものひーろーとのたたかい/本物のヒーローとの戦い"
@@ -7420,6 +7429,7 @@
           "sanbaiTier": 15.45
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/blue anthem.jpg",
       "remyLink": "https://remywiki.com/Blue_anthem",
       "search_hint": "APINA VRAMeS/アピナ"
@@ -8447,6 +8457,7 @@
           "sanbaiTier": 15.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/BRILLIANT_2U_(AKBK_MIX)",
       "jacket": "ddr_x3/BRILLIANT 2U (AKBK MIX).png",
       "saHash": "6l0iQ18D0I00P89lIqI8bl9biIOi018O",
@@ -8471,6 +8482,7 @@
           "sanbaiTier": 9.8
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/BRILLIANT_2U(K.O.G_G3_MIX)",
       "jacket": "ddr_max-ext/BRILLIANT 2U(K.O.G G3 MIX).png",
       "saHash": "i18OPo6l8Q6bo9q0qP6889IDqoP8O0Qq",
@@ -11426,6 +11438,7 @@
           "sanbaiTier": 6.6
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/COME_BACK_TO_MY_HEART",
       "jacket": "ddr_x3/COME BACK TO MY HEART.png",
       "saHash": "ilqiIlDdiQQ0oOIP8bPobDQqP0O90Q08",
@@ -12457,6 +12470,7 @@
           "sanbaiTier": 13.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Crazy_Hot",
       "jacket": "ddr_a20plus/Crazy Hot.jpg",
       "saHash": "dq6b0b6OD9DbDPQOO608oDo8Q80ODIqO",
@@ -14985,6 +14999,7 @@
           "sanbaiTier": 17.35
         }
       ],
+      "flags": ["euLocked"],
       "search_hint": "Undertale かれいなるしとう/華麗なる死闘",
       "remyLink": "https://remywiki.com/Death_by_Glamour_/_Kareinaru_shitou",
       "jacket": "ddr_a3/Death by Glamour.jpg"
@@ -15654,6 +15669,7 @@
           "sanbaiTier": 14.75
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Determination",
       "jacket": "ddr_a/Determination.png",
       "saHash": "QPol19bIb009IDOPildbi1QPdPlO0dq9",
@@ -16231,6 +16247,7 @@
           "lvl": 16
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Din_Don_Dan_(Nijisanji_Dance-bu_ver.)",
       "jacket": "ddr_world/Din Don Dan (にじさんじダンス部 ver.).jpg",
       "saHash": "Ob8Q19QldDliP6qddP1o1ODP91bd1oQl"
@@ -17647,6 +17664,7 @@
           "sanbaiTier": 13.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/DROP_OUT(FROM_NONSTOP_MEGAMIX)",
       "jacket": "ddr_max-ext/DROP OUT(FROM NONSTOP MEGAMIX).png",
       "saHash": "d0P01d9q8oOd8OP1bQPoqlq96906PqPD",
@@ -19841,6 +19859,7 @@
           "sanbaiTier": 16.25
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ESPRIT ONE.jpg",
       "remyLink": "https://remywiki.com/ESPRIT_ONE",
       "search_hint": "ROUND1/ラウンドワン"
@@ -20875,6 +20894,7 @@
           "sanbaiTier": 10.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Feidie",
       "jacket": "ddr_a20plus/Feidie.jpg",
       "saHash": "DDPPI6IIi0i9looibDbiODoOPOl6ID8i",
@@ -21035,6 +21055,7 @@
           "sanbaiTier": 15.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Finale_(Toby_Fox)",
       "search_hint": "Undertale フィナーレ",
       "jacket": "ddr_a3/Finale.jpg"
@@ -23845,6 +23866,7 @@
           "sanbaiTier": 16.15
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Get Into The Groove feat.WaMi.jpg",
       "remyLink": "https://remywiki.com/Get_Into_The_Groove_feat.WaMi",
       "search_hint": "GiGO"
@@ -25778,6 +25800,7 @@
           "sanbaiTier": 16.15
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Grip_%26_Break_down_!!",
       "jacket": "ddr_a/Grip & Break down !!.png",
       "saHash": "I90bd6obO890P0d1iiPD0dol8o8QloQD",
@@ -25886,6 +25909,7 @@
           "sanbaiTier": 14.15
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/GUILTY_DIAMONDS",
       "jacket": "ddr_a20plus/GUILTY DIAMONDS.jpg",
       "saHash": "QbdQold98oq9lODoIloIbPiIqld6i0Qb",
@@ -26072,6 +26096,7 @@
           "sanbaiTier": 16.4
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/HANIPAGANDA.jpg",
       "remyLink": "https://remywiki.com/HANIPAGANDA"
     },
@@ -27397,7 +27422,7 @@
           "sanbaiTier": 12.5
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Help_me,_ERINNNNNN!!",
       "jacket": "ddr_a/Help me, ERINNNNNN!!.png",
       "saHash": "9dDOQo8bQ6blDdd989l1QIO8liDq9O0q",
@@ -29577,6 +29602,7 @@
           "sanbaiTier": 17.8
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Idola",
       "jacket": "ddr_2014/Idola.png",
       "genre": "REPLICANT CORE",
@@ -30397,6 +30423,7 @@
           "sanbaiTier": 14.2
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/INFINITE WORLD.jpg",
       "remyLink": "https://remywiki.com/INFINITE_WORLD"
     },
@@ -31659,6 +31686,7 @@
           "sanbaiTier": 14.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/JOKER",
       "jacket": "ddr_2013/JOKER.png",
       "saHash": "bQI1dIlIObIIQood96O9q9iO8li11OO9",
@@ -32036,6 +32064,7 @@
           "sanbaiTier": 14.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/KEEP_ON_MOVIN%27_(Y%26Co._DJ_BOSS_remix)",
       "jacket": "ddr_x3/KEEP ON MOVIN' (Y&Co. DJ BOSS remix).png",
       "saHash": "88o0qb8Ii1ldPlDQQdoq90dOd0PoO99d",
@@ -32240,6 +32269,7 @@
           "sanbaiTier": 16.2
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/Kill The Night.jpg",
       "remyLink": "https://remywiki.com/Kill_The_Night"
     },
@@ -32417,6 +32447,7 @@
           "sanbaiTier": 16.1
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/KING_(Kanaria)",
       "jacket": "ddr_a3/KING_(Kanaria).jpg",
       "saHash": "O8lq1l6qIi6I9l69IOPdoI6lbiodQOP6",
@@ -35141,6 +35172,7 @@
           "sanbaiTier": 15.3
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/LOVE EAST.jpg",
       "remyLink": "https://remywiki.com/LOVE_EAST"
     },
@@ -35930,6 +35962,7 @@
           "sanbaiTier": 13.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/M.A.Y.U.",
       "jacket": "ddr_2014/M.A.Y.U..png",
       "saHash": "o96i9P9iO9o0DdbPb9bbQ66DqDq88Db1",
@@ -37452,6 +37485,7 @@
           "sanbaiTier": 18.1
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/MEGALOVANIA",
       "jacket": "ddr_a3/MEGALOVANIA.jpg",
       "genre": "",
@@ -38150,6 +38184,7 @@
           "sanbaiTier": 15.3
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Mighty Beat Monsterz.jpg",
       "remyLink": "https://remywiki.com/Mighty_Beat_Monsterz",
       "search_hint": "TAITO STATION Tradz/タイトーステーション"
@@ -39050,7 +39085,7 @@
           "sanbaiTier": 14.1
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Murmur_twins_(guitar_pop_ver.)_(covered_by_Otonose_Kanade(ReGLOSS))",
       "jacket": "ddr_world/murmur twins (guitar pop ver.)_ReGLOSS.jpg",
       "saHash": "OlQbP19IPDDDqDDO1bd0DII8IoqDo1QP",
@@ -41130,6 +41165,7 @@
           "sanbaiTier": 14.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/No_Life_Queen_(DJ_Command_Remix)",
       "jacket": "ddr_a20plus/No Life Queen [DJ Command Remix].jpg",
       "saHash": "I9P1dbOqD1qIP8bd9O80Ooo869bldobD",
@@ -43135,6 +43171,7 @@
           "sanbaiTier": 17.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/PARANOiA_(kskst_mix)",
       "jacket": "ddr_x3/PARANOiA (kskst mix).png",
       "saHash": "dQPPd10QO9d8IiOiIi8iDD1Qdq8lQli0",
@@ -46322,6 +46359,7 @@
           "sanbaiTier": 15.3
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Pure_Rude",
       "jacket": "ddr_a3/Pure_Rude.jpg",
       "saHash": "IiiqDblQ8Oqlbo8OOiqI6IqO6P8I8I1d",
@@ -46521,6 +46559,7 @@
           "sanbaiTier": 13.6
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/PUT_YOUR_FAITH_IN_ME_(DA%27s_Twinkly_Disco_Remix)",
       "jacket": "ddr_x3/PUT YOUR FAITH IN ME (DA's Twinkly Disco Remix).png",
       "saHash": "bllQi9boq8qobOQDOD6QDio9lii8109i",
@@ -48403,6 +48442,7 @@
           "sanbaiTier": 11.45
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Resonance",
       "jacket": "ddr_x2/resonance.png",
       "saHash": "1Ob9Il9bOQdbOQbq00oi1qoo1o1dPoI0",
@@ -50259,6 +50299,7 @@
           "sanbaiTier": 15.2
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Sahara",
       "jacket": "ddr_world/Sahara.jpg",
       "saHash": "qlQbI6dQ8i1iOO1oPbOoQ9b6ODII08Qb"
@@ -51086,6 +51127,7 @@
           "sanbaiTier": 12.3
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Scarlet_Moon",
       "jacket": "ddr_2014/Scarlet Moon.png",
       "genre": "J-CORE",
@@ -52079,6 +52121,7 @@
           "sanbaiTier": 9.35
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/SEXY_PLANET(FROM_NONSTOP_MEGAMIX)",
       "jacket": "ddr_max-ext/SEXY PLANET(FROM NONSTOP MEGAMIX).png",
       "saHash": "O06Id8PIDbDblO109ddi1dldd0bqDdQ1",
@@ -52569,7 +52612,7 @@
           "sanbaiTier": 14.2
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "genre": "DANCE POP",
       "remyLink": "https://remywiki.com/Shooting_Star_(ReGLOSS)",
       "jacket": "ddr_world/Shooting Star.jpg",
@@ -54904,7 +54947,7 @@
           "sanbaiTier": 12.2
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/SOUVENIR",
       "saHash": "8o10d9O89d6DQOiDlbb160Id8IIO6b01",
       "saIndex": "1176",
@@ -56146,6 +56189,7 @@
           "sanbaiTier": 12.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Starry_HEAVEN",
       "jacket": "ddr_2013/Starry HEAVEN.png",
       "saHash": "oQPdiPPdQO1Ob6DqDi0l0q0PDP06QlO0",
@@ -57018,6 +57062,7 @@
           "sanbaiTier": 19.2
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Steps for Victory.jpg",
       "remyLink": "https://remywiki.com/Steps_for_Victory"
     },
@@ -57257,6 +57302,7 @@
           "sanbaiTier": 12.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/STILL_IN_MY_HEART(MOMO_MIX)",
       "jacket": "ddr_max-ext/STILL IN MY HEART(MOMO MIX).png",
       "saHash": "DOOb99dlP8PdIbDOQIqoqll60Iob9189",
@@ -57665,6 +57711,7 @@
           "sanbaiTier": 12.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Struggle",
       "jacket": "ddr_2014/Struggle.png",
       "genre": "",
@@ -58441,6 +58488,7 @@
           "sanbaiTier": 11.45
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/SUPER_STAR(FROM_NONSTOP_MEGAMIX)",
       "jacket": "ddr_max-ext/SUPER STAR(FROM NONSTOP MEGAMIX).png",
       "saHash": "0qQ1odlooiQO99DDP6bD9bOq89669PQb",
@@ -61131,6 +61179,7 @@
           "sanbaiTier": 12.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/The_Night_Away_(MK_Remix)",
       "jacket": "ddr_a/The Night Away (MK Remix).png",
       "saHash": "0Ob1601118Dii9Qdii9lPbioPP6qoi1I",
@@ -62004,6 +62053,7 @@
           "sanbaiTier": 16.35
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/THUNDERSTRIKE.jpg",
       "remyLink": "https://remywiki.com/THUNDERSTRIKE",
       "search_hint": "GAME PANIC/ゲームパニック"
@@ -62203,6 +62253,7 @@
           "sanbaiTier": 9.6
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Till_the_lonely%27s_gone",
       "jacket": "ddr_x/Till the lonely's gone.png",
       "saHash": "99oQO1b8d9qQdPq6O1I6bd1bo1D16DP0",
@@ -62514,6 +62565,7 @@
           "sanbaiTier": 13.15
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Together_Going_My_Way",
       "jacket": "ddr_a20plus/Together Going My Way.jpg",
       "saHash": "POdll6oPi1dd68q19q8ID6iQ6d08bl99",
@@ -63845,6 +63897,7 @@
           "sanbaiTier": 16.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_(xac_nanoglide_mix)",
       "jacket": "ddr_x3/TRIP MACHINE (xac nanoglide mix).png",
       "saHash": "l9OQPi0do19dQPO8ilq0QDbll8P8Ib6O",
@@ -64819,6 +64872,7 @@
           "sanbaiTier": 11.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Trust_-DanceDanceRevolution_mix-",
       "jacket": "ddr_sn-sn2/Trust -DanceDanceRevolution mix-.png",
       "saHash": "ddD8OPQoIiQi0IbDOIIdQ6dDDbPQ9bIO",
@@ -67355,6 +67409,7 @@
           "sanbaiTier": 17.65
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
       "jacket": "ddr_a3/WARNINGxWARNINGxWARNING.jpg",
       "saHash": "I0091lboOD1Dii10dQ0qbDqil69PQ0io",
@@ -67937,6 +67992,7 @@
           "sanbaiTier": 10.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/WILD_RUSH(FROM_NONSTOP_MEGAMIX)",
       "jacket": "ddr_max-ext/WILD RUSH(FROM NONSTOP MEGAMIX).png",
       "saHash": "ibOQ0QOdIPdIbIo0oPoDDI1DqPId00li",
@@ -68282,6 +68338,7 @@
           "sanbaiTier": 15.6
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Wizards!.jpg",
       "remyLink": "https://remywiki.com/Wizards!",
       "search_hint": "SILK HAT/シルクハット"
@@ -68498,6 +68555,7 @@
           "sanbaiTier": 12.3
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/WOW WAR TONIGHT ～時には起こせよムーヴメント.jpg",
       "remyLink": "https://remywiki.com/WOW_WAR_TONIGHT_~toki_ni_wa_okoseyo_movement",
       "saHash": "09lOI9Ii1OD9b9bi9q0q1DQi668bO8qb",
@@ -70350,6 +70408,7 @@
           "sanbaiTier": 14.75
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/あおばの足音.jpg",
       "remyLink": "https://remywiki.com/Aoba_no_ashioto"
     },
@@ -70418,6 +70477,7 @@
           "sanbaiTier": 12.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Yi-er_funclub",
       "jacket": "ddr_a/Yi-er fanclub.png",
       "genre": "",
@@ -70489,6 +70549,7 @@
           "sanbaiTier": 11.2
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/ONEgai_darlin%27",
       "jacket": "ddr_a/Onegai darling.png",
       "genre": "",
@@ -70799,6 +70860,7 @@
           "sanbaiTier": 13.5
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/きゅうくらりん.jpg",
       "remyLink": "https://remywiki.com/Kyu-kurarin",
       "genre": "VOCALOID"
@@ -70868,6 +70930,7 @@
           "sanbaiTier": 11.2
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Kyun_kyun_bakkyun_LOVE",
       "jacket": "ddr_a/Kyun x kyun bakkyun LOVE.png",
       "genre": "",
@@ -71299,6 +71362,7 @@
           "sanbaiTier": 14.25
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/しゅわスパ大作戦☆.jpg",
       "remyLink": "https://remywiki.com/Shuwa_spa_daisakusen",
       "name_translation": "Shuwa Spa Daisakusen",
@@ -71366,6 +71430,7 @@
           "sanbaiTier": 15.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Zutto_mitsumeteite_(Ryu_Remix)",
       "jacket": "ddr_2013/Zutto Mitsu Meteite (Ryu☆Remix).png",
       "saHash": "80d8obPdlobP9qlqiDb01999o01q6DdP",
@@ -71791,7 +71856,7 @@
           "sanbaiTier": 12.25
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Hanamaru_pippi_wa_yoiko_dake",
       "jacket": "ddr_2014/Hanamaru pippi hayo iko dake.png",
       "genre": "",
@@ -72242,6 +72307,7 @@
           "sanbaiTier": 13.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Ice_cream_magic",
       "jacket": "ddr_world/アイスクリームマジック.jpg",
       "genre": ""
@@ -72352,6 +72418,7 @@
           "sanbaiTier": 13.1
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Ayumi_magical_showtime",
       "jacket": "ddr_a3/Ayumi magical showtime.jpg",
       "saHash": "PDoiQoi9q08PQ96Pl6oD9IIi6iq0Q6D6",
@@ -72555,6 +72622,7 @@
           "sanbaiTier": 14.1
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/イガク.jpg",
       "remyLink": "https://remywiki.com/Igaku",
       "search_hint": "医学/Medicine",
@@ -72737,6 +72805,7 @@
           "sanbaiTier": 11.65
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/EDM_jumpers",
       "jacket": "ddr_a/EDM Jumpers.png",
       "saHash": "61oIP0QIlO90d18ObDP1Dii6PoIQoOD8",
@@ -72805,7 +72874,7 @@
           "sanbaiTier": 17.5
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Usatei",
       "jacket": "ddr_a3/Usatei.jpg",
       "saHash": "9oIO98IPOiq1idiIIbOOqdDQIOdQPPd6",
@@ -72933,6 +73002,7 @@
           "sanbaiTier": 12.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Alien_alien",
       "jacket": "ddr_a/Alien alien.png",
       "genre": "",
@@ -73062,6 +73132,7 @@
           "sanbaiTier": 15.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Explore",
       "jacket": "ddr_world/エクスプロウル.jpg",
       "genre": "VOCALOID"
@@ -73270,7 +73341,7 @@
           "sanbaiTier": 14.8
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Casino_fire_Kotomi-chan_(covered_by_Ichijou_Ririka(ReGLOSS))",
       "jacket": "ddr_world/カジノファイヤーことみちゃん_ReGLOSS.jpg",
       "saHash": "II1199iiDiido80Iq0Q199I1olq0l8i9"
@@ -73567,6 +73638,7 @@
           "sanbaiTier": 13.35
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ギャ・ギャ・ギャ・ギャラクシー！.jpg",
       "remyLink": "https://remywiki.com/Ga-ga-ga-galaxy!",
       "genre": "VOCALOID"
@@ -73829,7 +73901,7 @@
           "diffClass": "expert"
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Sign_wa_B_-New_Arrange_Ver.-",
       "jacket": "ddr_world/サインはB -New Arrange Ver.-.jpg"
     },
@@ -74137,6 +74209,7 @@
           "sanbaiTier": 14.35
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/S%27il_vous_president",
       "jacket": "ddr_a20plus/S'il vous president.jpg",
       "genre": "J-POP",
@@ -74264,7 +74337,7 @@
           "sanbaiTier": 18
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Scarlet_keisatsu_no_ghetto_patrol_24_ji",
       "jacket": "ddr_a3/Scarlet keisatsu no ghetto patrol 24 ji.jpg",
       "saHash": "1liPbq0890qqI0D8qDP9diOOPlDdi0Oi",
@@ -74415,6 +74488,7 @@
           "sanbaiTier": 17.35
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Setsuna_trip",
       "jacket": "ddr_2014/Setsuna Trip.png",
       "genre": "",
@@ -74673,7 +74747,7 @@
           "flags": ["shock"]
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/チルノのパーフェクトさんすう学園.jpg",
       "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_gakuen",
       "saHash": "8P1809bo8PoqQoqOQilPidOdobbo6iiO"
@@ -74758,7 +74832,7 @@
           "sanbaiTier": 15.3
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_kyoushitsu",
       "jacket": "ddr_a/Cirno's Perfect Math Class.png",
       "genre": "",
@@ -74828,7 +74902,7 @@
           "sanbaiTier": 13.7
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_kyoushitsu_(EDM_REMIX)",
       "jacket": "ddr_a/Cirno's Perfect Math Class (EDM REMIX).png",
       "saHash": "Q96Qo0qbQ81odQoqPOOQ98oDbo6Pb1IO",
@@ -74885,6 +74959,7 @@
           "sanbaiTier": 12.45
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Telecaster_B-boy",
       "jacket": "ddr_a20plus/Telecaster B-boy.jpg",
       "saHash": "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9",
@@ -75012,7 +75087,7 @@
           "sanbaiTier": 15.05
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/トラウマ催眠少女さとり！.jpg",
       "remyLink": "https://remywiki.com/Trauma_saimin_shoujo_Satori!",
       "search_hint": "とらうまさいみんしょうじょさとり"
@@ -75081,6 +75156,7 @@
           "sanbaiTier": 18.35
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/トランスダンスアナーキー.jpg",
       "remyLink": "https://remywiki.com/Trance_dance_anarcky"
     },
@@ -75372,7 +75448,7 @@
           "sanbaiTier": 17.3
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Night_of_knights",
       "jacket": "ddr_a/Night of Knights.png",
       "genre": "",
@@ -75429,6 +75505,7 @@
           "sanbaiTier": 16.35
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Night_of_knights_(Ryu_Remix)",
       "jacket": "ddr_a20/Night of knights (Ryu☆Remix).jpg",
       "saHash": "IlbI1QQOPI0o0IdoPI6QPldqQob16DOq",
@@ -75838,6 +75915,7 @@
           "sanbaiTier": 13.45
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Happy_synthesizer",
       "jacket": "ddr_a/Happy Synthesizer.png",
       "saHash": "l1bDOIlb6ddI6od0q1llI0I6blq9oP0l",
@@ -76169,6 +76247,7 @@
           "sanbaiTier": 17.65
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/BambooSword_Girl",
       "jacket": "ddr_2014/Bamboo Sword Girl.png",
       "genre": "J-SPEEDMETAL",
@@ -76741,6 +76820,7 @@
           "sanbaiTier": 12.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Buta_thunder",
       "jacket": "ddr_world/ブタサンダー.jpg"
     },
@@ -76806,6 +76886,7 @@
           "sanbaiTier": 17.05
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Plain_Asia_-PHQ_remix-",
       "jacket": "ddr_a/Plain Asia -PHQ remix-.png",
       "saHash": "dDlDPddq08iD8IOb9I1PbODP9696966D",
@@ -77003,6 +77084,7 @@
           "sanbaiTier": 13.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Homeneko_sensation",
       "jacket": "ddr_2014/Homeneko Sensation.png",
       "saHash": "DoQi6oPoD9DlO0898oo0ol0qoo6891Db",
@@ -77129,6 +77211,7 @@
           "sanbaiTier": 12.15
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Positive_dance_time",
       "jacket": "ddr_a3/Positive dance time.jpg",
       "saHash": "Q8P19lIP698I9Q8oolP98Qb6DIqQ10ql"
@@ -77241,6 +77324,7 @@
           "sanbaiTier": 14.1
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Poppin%27_candy_fever!",
       "jacket": "ddr_a3/Poppin' candy fever!.jpg",
       "saHash": "09PIO19oPoo09q0ioli6oO1di89o8Ilb"
@@ -77577,6 +77661,7 @@
           "sanbaiTier": 11.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Mirai_prism",
       "jacket": "ddr_2014/Mirai Prism.png",
       "saHash": "811o6o1QPP0lPiolI1ObiD99l08o1dQl",
@@ -77690,6 +77775,7 @@
           "sanbaiTier": 15.3
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/メズマライザー.jpg",
       "remyLink": "https://remywiki.com/Mesmerizer",
       "genre": "HAPPY HARDCORE"
@@ -77746,6 +77832,7 @@
           "sanbaiTier": 16.45
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/メテオラ-meteor-.jpg",
       "remyLink": "https://remywiki.com/Meteora-meteor-",
       "search_hint": "レジャーランド/LEISURE LAND"
@@ -78211,6 +78298,7 @@
           "sanbaiTier": 16.3
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Luckgakist",
       "jacket": "ddr_2014/Luckgakist.png",
       "saHash": "D08qoOdPd8iOO916bOPIIIdqPP6O00iP",
@@ -78272,6 +78360,7 @@
           "sanbaiTier": 15.15
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ラビットホール.jpg",
       "remyLink": "https://remywiki.com/Rabbit_hole",
       "genre": "J-POP"
@@ -78441,7 +78530,7 @@
           "sanbaiTier": 15.05
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Respec_fujin",
       "jacket": "ddr_a3/Respec fujin.jpg",
       "saHash": "OiQI998qPiooq60099bPdO886q9bd011",
@@ -78554,7 +78643,7 @@
           "sanbaiTier": 13.2
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Remember_remember_(covered_by_Todoroki_Hajime(ReGLOSS))",
       "jacket": "ddr_world/リメンバーリメンバー_ReGLOSS.jpg",
       "saHash": "8QoODoOldQ9Dodlb9I86liOb0lP010ql",
@@ -78754,6 +78843,7 @@
           "sanbaiTier": 12.25
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Roki_(mikitoP)",
       "jacket": "ddr_a20plus/Roki (Megumi Ogata).jpg",
       "saHash": "1qPbqd11l6b8ibq1ODQ6di90PIo0D618",
@@ -78829,6 +78919,7 @@
           "sanbaiTier": 15.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Lost_one_no_goukoku",
       "jacket": "ddr_a/Lost one no goukoku.png",
       "genre": "",
@@ -79039,6 +79130,7 @@
           "sanbaiTier": 14.1
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Role-playing_game",
       "jacket": "ddr_a/Role Playing Game.png",
       "genre": "",
@@ -79106,6 +79198,7 @@
           "sanbaiTier": 15.45
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ヴァンパイア.jpg",
       "remyLink": "https://remywiki.com/Vampire"
     },
@@ -79444,6 +79537,7 @@
           "sanbaiTier": 14.35
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Hito_mania",
       "jacket": "ddr_world/人マニア.jpg"
     },
@@ -79939,6 +80033,7 @@
           "sanbaiTier": 15.45
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Hatsune_Miku_no_shoushitsu",
       "jacket": "ddr_a/The Disappearance of Hatsune Miku.png",
       "saHash": "QlQ9Qb00bI0ob9oDIiPqO1QdQ0o6O0O6",
@@ -80152,7 +80247,7 @@
           "sanbaiTier": 15.25
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/勇者.jpg",
       "remyLink": "https://remywiki.com/Yuusha",
       "search_hint": "ゆうしゃ"
@@ -80209,6 +80304,7 @@
           "sanbaiTier": 13.2
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/匿名M.jpg",
       "remyLink": "https://remywiki.com/Tokumei_M"
     },
@@ -80388,6 +80484,7 @@
           "sanbaiTier": 12.2
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Sennen_no_kotowari",
       "jacket": "ddr_a/Sennen no kotowari.png",
       "genre": "WORLD/ELECTRONICA",
@@ -80500,6 +80597,7 @@
           "sanbaiTier": 11.05
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/可愛くてごめん.jpg",
       "remyLink": "https://remywiki.com/Kawaikute_gomen",
       "saHash": "O6ld8Oo6Dq6OO61dIl1iPqqPO8b0d9bd",
@@ -80570,7 +80668,7 @@
           "sanbaiTier": 13.5
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Himawari_sunset",
       "jacket": "ddr_a/Sunflower Sunset.png",
       "genre": "",
@@ -80713,7 +80811,7 @@
           "sanbaiTier": 15.5
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/唱.jpg",
       "remyLink": "https://remywiki.com/Show",
       "search_hint": "しょう"
@@ -81177,6 +81275,7 @@
           "sanbaiTier": 13.65
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Amanojaku",
       "jacket": "ddr_a/Ama no jyaku.png",
       "genre": "",
@@ -81454,6 +81553,7 @@
           "sanbaiTier": 15.2
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Ayakashi_kakushi",
       "jacket": "ddr_2014/Ayakashi kakushi.png",
       "genre": "DRUM'N'WALTZ",
@@ -81581,6 +81681,7 @@
           "sanbaiTier": 13.35
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/寝起きヤシの木.jpg",
       "remyLink": "https://remywiki.com/Neoki_yashi_no_ki"
     },
@@ -81649,6 +81750,7 @@
           "sanbaiTier": 13.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Shiawase_ni_nareru_kakushi_command_ga_arurashii",
       "jacket": "ddr_a/Apparently There's a Cheat Code to Happiness.png",
       "search_hint": "Apparently There's a Cheat Code to Happiness",
@@ -81718,6 +81820,7 @@
           "sanbaiTier": 13.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Gensoukei_sekaishuufuku_shoujo",
       "jacket": "ddr_2014/Gensoukei sekaishuufuku shoujo.png",
       "genre": "J-POP",
@@ -81776,6 +81879,7 @@
           "sanbaiTier": 12.55
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Kyoufuu_all_back",
       "jacket": "ddr_world/強風オールバック.jpg",
       "genre": ""
@@ -82282,6 +82386,7 @@
           "sanbaiTier": 15.6
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Koi_no_hyoketsu_otenba_yukemuri_Cirno_onsen",
       "jacket": "ddr_a3/Koi no hyoketsu otenba yukemuri Cirno onsen.jpg",
       "saHash": "6l99bqIQOQl0QQDIoiQ6PQPOoDPlD0O9",
@@ -82666,7 +82771,7 @@
           "lvl": 13
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Renkei_epilogue",
       "jacket": "ddr_world/恋繋エピローグ.jpg",
       "saHash": "PoO90Q6P0q9oOQ16i0P0l1iodOQP9o0O"
@@ -82821,7 +82926,7 @@
           "sanbaiTier": 18.15
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Kanbu_de_tomatte_sugu_tokeru_~_kyouki_no_Udongein",
       "jacket": "ddr_a3/Kanbu de tomatte sugu tokeru ~ kyouki no udongein.jpg",
       "saHash": "6OIoOPDb9iI8i1Do9qQ96Q0ddOdd6q9i",
@@ -82878,6 +82983,7 @@
           "sanbaiTier": 15.15
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/悲報！ワイ！ニート！.jpg",
       "remyLink": "https://remywiki.com/Hihou!_Wai!_Neet!",
       "genre": ""
@@ -83059,7 +83165,7 @@
           "sanbaiTier": 15.55
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/我ら完全無敵のアイドル!!.jpg",
       "remyLink": "https://remywiki.com/Warera_kanzen_muteki_no_idol!!",
       "genre": "J-POP",
@@ -83203,6 +83309,7 @@
           "lvl": 16
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Dadadadadadadadadada_(Nijisanji_Dance-bu_ver.)",
       "jacket": "ddr_world/打打打打打打打打打打 (にじさんじダンス部 ver.).jpg",
       "saHash": "Iq6olol00o1q66l61QIDdl6biq8OoIoQ"
@@ -83854,7 +83961,7 @@
           "sanbaiTier": 16.55
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Saishuu_kichiku_imouto_Flandre-S",
       "jacket": "ddr_a20/Saishuu kichiku imouto Flandre-S.jpg",
       "saHash": "i0P1O6lbP1oDd6q6b08iPPoq6iPdI818",
@@ -83923,7 +84030,7 @@
           "sanbaiTier": 18.45
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Saisoku_saikou_shutter_girl",
       "jacket": "ddr_a3/Saisoku saikou shutter girl.jpg",
       "saHash": "9bqO1dPbO1b89q9dO1iOP1ibiPdP01q9",
@@ -83992,6 +84099,7 @@
           "sanbaiTier": 15.05
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Tsuki_ni_murakumo_hana_ni_kaze",
       "jacket": "ddr_world/Tsuki ni murakumo hana ni kaze.jpg",
       "saHash": "QQ8IoPqdIb61D8o886oo8b6didDIPqql"
@@ -84203,6 +84311,7 @@
           "sanbaiTier": 13.6
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Asairo_no_kamihikouki",
       "jacket": "ddr_2014/Asairo no kamihikouki.png",
       "search_hint": "Asairo no kamihikouki",
@@ -84520,7 +84629,7 @@
           "sanbaiTier": 15.2
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage_(covered_by_Juufuutei_Raden(ReGLOSS))",
       "jacket": "ddr_world/朱と碧のランページ_ReGLOSS.jpg",
       "saHash": "8IQIld8DI9OPD00dqio1lDQ1bq6Q6P6D"
@@ -85580,6 +85689,7 @@
           "sanbaiTier": 12.3
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Roshin_yuukai",
       "jacket": "ddr_a/Roshin yuukai.png",
       "saHash": "1OQd9o01Oq6Q018POOdlqodQ6bqDPOob",
@@ -85660,6 +85770,7 @@
           "sanbaiTier": 15.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Buraikku_jikorizer",
       "jacket": "ddr_a/Buraikku jikorizer.png",
       "genre": "",
@@ -86289,7 +86400,7 @@
           "flags": ["shock"]
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/粛聖!! ロリ神レクイエム☆.jpg",
       "remyLink": "https://remywiki.com/Shukusei!!_Loli-kami_requiem"
     },
@@ -86792,6 +86903,7 @@
           "sanbaiTier": 11.4
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Iro_wa_nioedo_chirinuru_wo",
       "jacket": "ddr_a/Iro wa nioi e do chirinuruwo.png",
       "saHash": "16IqQ680IioldO69QD61liQod0DQ8boQ",
@@ -86983,6 +87095,7 @@
           "lvl": 14
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/華麗なる！音戯探偵ひなビタ♫.jpg",
       "remyLink": "https://remywiki.com/Kareinaru!_Otogi_tantei_HinaBitter_(song)",
       "genre": "OTOGITANTEI/オトギタンテイ"
@@ -87373,6 +87486,7 @@
           "sanbaiTier": 14.5
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Kakugoseyo!_Enternmeen_~yori_mi_no_kiriuri_jiboujiki_ban~",
       "jacket": "ddr_world/覚悟せよ！エンタンメ～ン ～より身の切り売り自暴自棄版～.jpg",
       "genre": "ビックリポップ"
@@ -88035,6 +88149,7 @@
           "sanbaiTier": 13.6
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Yoidore_shirazu",
       "jacket": "ddr_a3/Yoidore shirazu.jpg",
       "saHash": "IqibilD8QI9idP60P8o9ob0lqblQD89P",
@@ -88413,6 +88528,7 @@
           "sanbaiTier": 14.2
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Heisokuteki_flation",
       "jacket": "ddr_world/Heisoku-teki flation.jpg",
       "genre": "ROCK",
@@ -88690,6 +88806,7 @@
           "sanbaiTier": 13.45
         }
       ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/雑踏、僕らの街.jpg",
       "remyLink": "https://remywiki.com/Zattou,_bokura_no_machi",
       "saHash": "O91llDdDb1lbbPDbDoPQ09l0l68o9iQ1",
@@ -89314,7 +89431,7 @@
           "sanbaiTier": 12.4
         }
       ],
-      "flags": ["copyStrikes"],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Marisa_wa_taihen_na_mono_wo_nusunde_ikimashita",
       "jacket": "ddr_a/Marisa wa taihen na mono wo nusunde ikimashita.png",
       "genre": "",
