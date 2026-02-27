@@ -111,6 +111,19 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
         { lock_types: undefined },
       ])
     : []),
+  ...(new Date() >= new Date("2026-05-29T15:00:00+09:00")
+    ? [
+        // グランプリ譜面パック vol.1
+        "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
+        "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
+        "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
+        "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
+        "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
+      ].map<[string, Partial<SanbaiSong>]>((id) => [
+        id,
+        { lock_types: undefined },
+      ])
+    : []),
   // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
