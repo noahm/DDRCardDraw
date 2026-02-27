@@ -90,6 +90,7 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
         // スペシャル楽曲パック feat.REFLEC BEAT vol.3
         "0Ilqbl8q8Q6l6886Q9P9DOi69oIb1b1d", // Gale Rider
         "qdbod6lI0I8O118DPq80D8b0o00OodlI", // Hollywood Galaxy
+        "IidO8qlodqdoioodqqb9Dqiq991Ilo10", // リリーゼと炎龍レーヴァテイン
       ].map<[string, Partial<SanbaiSong>]>((id) => [
         id,
         { lock_types: undefined },
