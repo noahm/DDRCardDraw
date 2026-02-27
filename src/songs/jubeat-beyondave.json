@@ -8,7 +8,7 @@
       { "key": "advanced", "color": "#e28831" },
       { "key": "extreme", "color": "#e12a5a" }
     ],
-    "flags": ["licensed", "holds"],
+    "flags": ["licensed", "holds", "koreaLocked", "asiaLocked"],
     "folders": [
       "jubeat",
       "jubeat ripples",
@@ -28,7 +28,7 @@
   "defaults": {
     "style": "solo",
     "difficulties": ["basic", "advanced", "extreme"],
-    "flags": ["licensed", "holds"],
+    "flags": ["licensed", "holds", "koreaLocked", "asiaLocked"],
     "lowerLvlBound": 1,
     "upperLvlBound": 10.9
   },
@@ -41,6 +41,8 @@
       "extreme": "Extreme",
       "licensed": "Licensed",
       "holds": "Holds",
+      "koreaLocked": "Unplayable on Korea version",
+      "asiaLocked": "Unplayable on Asia version",
       "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
     },
     "ja": {
@@ -50,6 +52,8 @@
       "extreme": "Extreme",
       "licensed": "ライセンス楽曲",
       "holds": "ホールド譜面",
+      "koreaLocked": "韓国版でプレー不可",
+      "asiaLocked": "アジア版でプレー不可",
       "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
     }
   },
@@ -3701,7 +3705,7 @@
       ],
       "remyLink": "https://remywiki.com/Happiness_World",
       "jacket": "jubeat/ave/id25374290.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "Happy",
@@ -4684,7 +4688,7 @@
       ],
       "remyLink": "https://remywiki.com/KINGWORLD",
       "jacket": "jubeat/ave/id65664704.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "Knell",
@@ -7348,7 +7352,7 @@
       ],
       "remyLink": "https://remywiki.com/Say!Fanfare!",
       "jacket": "jubeat/ave/id59853258.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "Scarlet Moon",
@@ -9993,7 +9997,7 @@
       ],
       "remyLink": "https://remywiki.com/Onikemodance",
       "jacket": "jubeat/ave/id72738050.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "おーまい！らぶりー！すうぃーてぃ！だーりん！",
@@ -10681,7 +10685,7 @@
       ],
       "remyLink": "https://remywiki.com/Wakuwaku_everyday",
       "jacket": "jubeat/ave/id55317640.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "アイスクリームマジック",
@@ -13292,7 +13296,7 @@
       ],
       "remyLink": "https://remywiki.com/Rin_to_shite_saku_hana_no_gotoku_(Ookami_Mio_Cover)",
       "jacket": "jubeat/ave/id22318351.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "凛として咲く花の如く ～ひなビタ♪ edition～",
@@ -13410,7 +13414,7 @@
       ],
       "remyLink": "https://remywiki.com/Senbonzakura",
       "jacket": "jubeat/clan/id38991890.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "koreaLocked"]
     },
     {
       "name": "厳冬記",
@@ -15848,7 +15852,7 @@
       ],
       "remyLink": "https://remywiki.com/Susume_BAKATARATION",
       "jacket": "jubeat/ave/id76938721.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "運命",
