@@ -20,7 +20,11 @@ type SanbaiSong = {
   tiers: number[];
 };
 
-/** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
+/**
+ * Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags`
+ * @description
+ * Hidden songs/charts that were already locked as of 2025-10-21 also require the `euLocked` flag.
+ */
 const lockFlags: Map<number, Song["flags"]> = new Map([
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
@@ -35,6 +39,12 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
       ? ["unlock"]
       : ["tempUnlock"],
   ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
+  [
+    320,
+    new Date() < new Date("2026-03-22T23:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -80,6 +90,7 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
         // スペシャル楽曲パック feat.REFLEC BEAT vol.3
         "0Ilqbl8q8Q6l6886Q9P9DOi69oIb1b1d", // Gale Rider
         "qdbod6lI0I8O118DPq80D8b0o00OodlI", // Hollywood Galaxy
+        "IidO8qlodqdoioodqqb9Dqiq991Ilo10", // リリーゼと炎龍レーヴァテイン
       ].map<[string, Partial<SanbaiSong>]>((id) => [
         id,
         { lock_types: undefined },
@@ -100,10 +111,40 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
         { lock_types: undefined },
       ])
     : []),
+  ...(new Date() >= new Date("2026-05-29T15:00:00+09:00")
+    ? [
+        // グランプリ譜面パック vol.1
+        "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
+        "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
+        "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
+        "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
+        "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
+      ].map<[string, Partial<SanbaiSong>]>((id) => [
+        id,
+        { lock_types: undefined },
+      ])
+    : []),
   // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
   // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
+  // #region pop'n & BEMANI Cheers × Cheers!!
+  [
+    "DqO9bl89lll1009obqQD9iiIIo9oQ16Q",
+    { lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0] },
+  ], // BILLION MONEY BAZOOKA
+  [
+    "qQ1DII6bDO61o81O86OibP6Pi1q1O0QQ",
+    {
+      ratings: [7, 10, 14, 17, 0, 10, 14, 18, 0],
+      lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0],
+    },
+  ], // Fragarach
+  [
+    "PDQl91OPbdo86qi0919Do6DOqQl80l8Q",
+    { lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0] },
+  ], // 僕の気持ちを描く
+  // #endregion pop'n & BEMANI Cheers × Cheers!!
 ]);
 
 type SanbaiSongData = Pick<
