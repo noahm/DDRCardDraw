@@ -1,4 +1,3 @@
-import { DataConnection } from "peerjs";
 import { Song } from "./SongData";
 
 export interface EligibleChart {
@@ -15,6 +14,7 @@ export interface EligibleChart {
   drawGroup?: number;
   flags: string[];
   extras: string[];
+  cardVariant: string | undefined;
   dateAdded?: string;
   song: Song;
 }
@@ -39,20 +39,98 @@ export interface PlayerActionOnChart {
 
 export interface PocketPick extends PlayerActionOnChart {
   pick: EligibleChart;
-  targetType: typeof CHART_PLACEHOLDER | typeof CHART_DRAWN;
 }
+
+interface StartggMeta {
+  type: "startgg";
+  title: string;
+  phaseName: string;
+  entrants: Array<{ id: string; name: string }>;
+}
+
+export interface StartggVersusMeta extends StartggMeta {
+  subtype: "versus";
+  /** id of the set */
+  id: string;
+}
+
+export interface StartggGauntletMeta extends StartggMeta {
+  subtype: "gauntlet";
+  /** id of the phase */
+  id: string;
+  /** first index is entrant ID, second index is the drawn chart ID */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
+}
+
+export interface SimpleMeta {
+  type: "simple";
+  title: string;
+  /** plain player names */
+  players: string[];
+}
+
+export function playerCount(meta: Drawing["meta"]) {
+  switch (meta.type) {
+    case "simple":
+      return meta.players.length;
+    case "startgg":
+      return meta.entrants.length;
+  }
+}
+
+export function getAllPlayers(d: Pick<Drawing, "playerDisplayOrder" | "meta">) {
+  const ret = [] as string[];
+  for (let i = 1; i <= playerCount(d.meta); i++) {
+    ret.push(playerNameByDisplayPos(d, i));
+  }
+  return ret;
+}
+
+export function playerNameByDisplayPos(
+  d: Pick<Drawing, "playerDisplayOrder" | "meta">,
+  pos: number,
+) {
+  const playerIndex = d.playerDisplayOrder[pos - 1];
+  return playerNameByIndex(d.meta, playerIndex);
+}
+
+export function playerNameByIndex(
+  meta: Drawing["meta"],
+  idx: number,
+  fallback = `P${idx + 1}`,
+) {
+  switch (meta.type) {
+    case "simple":
+      return meta.players[idx] || fallback;
+    case "startgg":
+      return meta.entrants[idx].name || fallback;
+  }
+}
+
+/** used to reference a sub draw, or the charts in the parent draw by omitting the target */
+export type CompoundSetId = [parentId: string, targetId: string];
 
 export interface Drawing {
   id: string;
-  title?: string;
-  players: string[];
-  charts: Array<DrawnChart | PlayerPickPlaceholder>;
-  bans: Array<PlayerActionOnChart>;
-  protects: Array<PlayerActionOnChart>;
-  winners: Array<PlayerActionOnChart>;
-  pocketPicks: Array<PocketPick>;
+  configId: string;
+  meta: SimpleMeta | StartggVersusMeta | StartggGauntletMeta;
+  /** index of items of the players array, in the order they should be displayed */
+  playerDisplayOrder: number[];
+  /** map of song ID to player index */
+  winners: Record<string, number | null>;
+  /** @deprecated migrating to subDraws */
+  charts?: Array<DrawnChart | PlayerPickPlaceholder>;
+  bans: Record<string, PlayerActionOnChart | null>;
+  protects: Record<string, PlayerActionOnChart | null>;
+  pocketPicks: Record<string, PocketPick | null>;
   priorityPlayer?: number;
-  cardVariant: string | undefined;
-  /** __ prefix avoids serializing this field during sync */
-  __syncPeer?: DataConnection;
+  subDrawings: Record<string, SubDrawing>;
 }
+
+export interface SubDrawing {
+  compoundId: CompoundSetId;
+  configId: string;
+  charts: Array<DrawnChart | PlayerPickPlaceholder>;
+}
+
+export type MergedDrawing = Drawing & SubDrawing;

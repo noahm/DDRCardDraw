@@ -1,0 +1,9 @@
+:root {
+  --drawing-grad-lightness: 0.9;
+  --drawing-grad-chroma: 0.08;
+}
+
+body:global(.bp6-dark) {
+  --drawing-grad-lightness: 0.25;
+  --drawing-grad-chroma: 0.05;
+}
