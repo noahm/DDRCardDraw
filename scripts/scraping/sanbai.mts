@@ -81,21 +81,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ],
   // #endregion グランプリ譜面パック vol.6
   // #region PRE PRIVILEGE to playable default (about 1 year after release)
-  ...(new Date() >= new Date("2026-02-27T15:00:00+09:00")
-    ? [
-        // スペシャル楽曲パック feat.ひなビタ♪ vol.3
-        "6DibIbiiDlq1OiI6QOlPlO1loQOiDb1q", // カタルシスの月
-        "I1i6li9l091l6ooqPlP91OlODPbqqo9P", // ムラサキグルマ
-        "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi", // ロンロンへ ライライライ！
-        // スペシャル楽曲パック feat.REFLEC BEAT vol.3
-        "0Ilqbl8q8Q6l6886Q9P9DOi69oIb1b1d", // Gale Rider
-        "qdbod6lI0I8O118DPq80D8b0o00OodlI", // Hollywood Galaxy
-        "IidO8qlodqdoioodqqb9Dqiq991Ilo10", // リリーゼと炎龍レーヴァテイン
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
   ...(new Date() >= new Date("2026-03-31T15:00:00+09:00")
     ? [
         // BEMANI SELECTION楽曲パックvol.3
@@ -128,23 +113,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
   // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
-  // #region pop'n & BEMANI Cheers × Cheers!!
-  [
-    "DqO9bl89lll1009obqQD9iiIIo9oQ16Q",
-    { lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0] },
-  ], // BILLION MONEY BAZOOKA
-  [
-    "qQ1DII6bDO61o81O86OibP6Pi1q1O0QQ",
-    {
-      ratings: [7, 10, 14, 17, 0, 10, 14, 18, 0],
-      lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0],
-    },
-  ], // Fragarach
-  [
-    "PDQl91OPbdo86qi0919Do6DOqQl80l8Q",
-    { lock_types: [320, 320, 320, 320, 0, 320, 320, 320, 0] },
-  ], // 僕の気持ちを描く
-  // #endregion pop'n & BEMANI Cheers × Cheers!!
 ]);
 
 type SanbaiSongData = Pick<
