@@ -20,7 +20,11 @@ type SanbaiSong = {
   tiers: number[];
 };
 
-/** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
+/**
+ * Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags`
+ * @description
+ * Hidden songs/charts that were already locked as of 2025-10-21 also require the `euLocked` flag.
+ */
 const lockFlags: Map<number, Song["flags"]> = new Map([
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
@@ -35,6 +39,12 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
       ? ["unlock"]
       : ["tempUnlock"],
   ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
+  [
+    320,
+    new Date() < new Date("2026-03-22T23:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -71,20 +81,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ],
   // #endregion グランプリ譜面パック vol.6
   // #region PRE PRIVILEGE to playable default (about 1 year after release)
-  ...(new Date() >= new Date("2026-02-27T15:00:00+09:00")
-    ? [
-        // スペシャル楽曲パック feat.ひなビタ♪ vol.3
-        "6DibIbiiDlq1OiI6QOlPlO1loQOiDb1q", // カタルシスの月
-        "I1i6li9l091l6ooqPlP91OlODPbqqo9P", // ムラサキグルマ
-        "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi", // ロンロンへ ライライライ！
-        // スペシャル楽曲パック feat.REFLEC BEAT vol.3
-        "0Ilqbl8q8Q6l6886Q9P9DOi69oIb1b1d", // Gale Rider
-        "qdbod6lI0I8O118DPq80D8b0o00OodlI", // Hollywood Galaxy
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
   ...(new Date() >= new Date("2026-03-31T15:00:00+09:00")
     ? [
         // BEMANI SELECTION楽曲パックvol.3
@@ -95,6 +91,19 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
         "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
         "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
         "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
+      ].map<[string, Partial<SanbaiSong>]>((id) => [
+        id,
+        { lock_types: undefined },
+      ])
+    : []),
+  ...(new Date() >= new Date("2026-05-29T15:00:00+09:00")
+    ? [
+        // グランプリ譜面パック vol.1
+        "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
+        "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
+        "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
+        "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
+        "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
       ].map<[string, Partial<SanbaiSong>]>((id) => [
         id,
         { lock_types: undefined },
