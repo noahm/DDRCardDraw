@@ -8,7 +8,7 @@
       { "key": "advanced", "color": "#e28831" },
       { "key": "extreme", "color": "#e12a5a" }
     ],
-    "flags": ["licensed", "holds"],
+    "flags": ["licensed", "holds", "koreaLocked", "asiaLocked"],
     "folders": [
       "jubeat",
       "jubeat ripples",
@@ -23,12 +23,12 @@
       "jubeat Ave.",
       "jubeat beyond the Ave."
     ],
-    "lastUpdated": 1764637666381
+    "lastUpdated": 1772148751926
   },
   "defaults": {
     "style": "solo",
     "difficulties": ["basic", "advanced", "extreme"],
-    "flags": ["licensed", "holds"],
+    "flags": ["licensed", "holds", "koreaLocked", "asiaLocked"],
     "lowerLvlBound": 1,
     "upperLvlBound": 10.9
   },
@@ -41,6 +41,8 @@
       "extreme": "Extreme",
       "licensed": "Licensed",
       "holds": "Holds",
+      "koreaLocked": "Unplayable on Korea version",
+      "asiaLocked": "Unplayable on Asia version",
       "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
     },
     "ja": {
@@ -50,6 +52,8 @@
       "extreme": "Extreme",
       "licensed": "ライセンス楽曲",
       "holds": "ホールド譜面",
+      "koreaLocked": "韓国版でプレー不可",
+      "asiaLocked": "アジア版でプレー不可",
       "$abbr": { "basic": "BSC", "advanced": "ADV", "extreme": "EXT" }
     }
   },
@@ -577,7 +581,7 @@
       "artist": "TESSEI TOJO",
       "folder": "jubeat beyond the Ave.",
       "saHash": "id75460649",
-      "bpm": "170",
+      "bpm": "175",
       "charts": [
         { "style": "solo", "diffClass": "basic", "lvl": 2 },
         { "style": "solo", "diffClass": "advanced", "lvl": 6 },
@@ -927,6 +931,21 @@
       ],
       "remyLink": "https://remywiki.com/Bass_2_bass",
       "jacket": "jubeat/first/id13239494.jpg"
+    },
+    {
+      "name": "Bassline Crack",
+      "artist": "Getty",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id39918784",
+      "bpm": "175",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.7 }
+      ],
+      "remyLink": "https://remywiki.com/Bassline_Crack",
+      "jacket": "jubeat/beyond_the_ave/id39918784.jpg",
+      "flags": ["licensed"]
     },
     {
       "name": "Be a Hero!",
@@ -3686,7 +3705,7 @@
       ],
       "remyLink": "https://remywiki.com/Happiness_World",
       "jacket": "jubeat/ave/id25374290.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "Happy",
@@ -4669,7 +4688,7 @@
       ],
       "remyLink": "https://remywiki.com/KINGWORLD",
       "jacket": "jubeat/ave/id65664704.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "Knell",
@@ -7333,7 +7352,7 @@
       ],
       "remyLink": "https://remywiki.com/Say!Fanfare!",
       "jacket": "jubeat/ave/id59853258.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "Scarlet Moon",
@@ -7550,6 +7569,20 @@
       ],
       "remyLink": "https://remywiki.com/Show_up_!_-_short_ver_-",
       "jacket": "jubeat/saucer/id76012381.jpg"
+    },
+    {
+      "name": "Signs and Wonders",
+      "artist": "ネオン(CV:藤川茜)、芽兎めう(CV:五十嵐裕美)",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id72902522",
+      "bpm": "196",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 1 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 3 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 6 }
+      ],
+      "remyLink": "https://remywiki.com/Signs_and_Wonders",
+      "jacket": "jubeat/beyond_the_ave/id72902522.jpg"
     },
     {
       "name": "SigSig",
@@ -9964,7 +9997,7 @@
       ],
       "remyLink": "https://remywiki.com/Onikemodance",
       "jacket": "jubeat/ave/id72738050.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "おーまい！らぶりー！すうぃーてぃ！だーりん！",
@@ -10368,6 +10401,21 @@
       "flags": ["holds"]
     },
     {
+      "name": "てぇてぇアイデンティティ",
+      "artist": "そりっどびーつ",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id56394735",
+      "bpm": "165",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.2 }
+      ],
+      "remyLink": "https://remywiki.com/Tee_tee_identity",
+      "jacket": "jubeat/beyond_the_ave/id56394735.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "name": "とってもとっても、ありがとう。",
       "artist": "日向美ビタースイーツ♪",
       "folder": "jubeat saucer",
@@ -10637,7 +10685,7 @@
       ],
       "remyLink": "https://remywiki.com/Wakuwaku_everyday",
       "jacket": "jubeat/ave/id55317640.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "アイスクリームマジック",
@@ -11751,6 +11799,21 @@
       ],
       "remyLink": "https://remywiki.com/Deadball_de_homerun",
       "jacket": "jubeat/saucer/id44711214.jpg"
+    },
+    {
+      "name": "デビルGIRL",
+      "artist": "Somari",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id40812071",
+      "bpm": "180",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.7 }
+      ],
+      "remyLink": "https://remywiki.com/DEVILGIRL",
+      "jacket": "jubeat/beyond_the_ave/id40812071.jpg",
+      "flags": ["licensed"]
     },
     {
       "name": "デンノウス・キルズ",
@@ -13233,7 +13296,7 @@
       ],
       "remyLink": "https://remywiki.com/Rin_to_shite_saku_hana_no_gotoku_(Ookami_Mio_Cover)",
       "jacket": "jubeat/ave/id22318351.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "凛として咲く花の如く ～ひなビタ♪ edition～",
@@ -13351,7 +13414,7 @@
       ],
       "remyLink": "https://remywiki.com/Senbonzakura",
       "jacket": "jubeat/clan/id38991890.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "koreaLocked"]
     },
     {
       "name": "厳冬記",
@@ -15476,6 +15539,20 @@
       "jacket": "jubeat/saucer/id13641724.jpg"
     },
     {
+      "name": "華麗なる！音戯探偵ひなビタ♫",
+      "artist": "音戯探偵ひなビタ♫",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id73222753",
+      "bpm": "72-127",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.6 }
+      ],
+      "remyLink": "https://remywiki.com/Kareinaru!_Otogi_tantei_HinaBitter_(song)",
+      "jacket": "jubeat/beyond_the_ave/id73222753.jpg"
+    },
+    {
       "name": "蒼天",
       "artist": "Tatsh",
       "folder": "jubeat saucer",
@@ -15775,7 +15852,7 @@
       ],
       "remyLink": "https://remywiki.com/Susume_BAKATARATION",
       "jacket": "jubeat/ave/id76938721.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "asiaLocked"]
     },
     {
       "name": "運命",
