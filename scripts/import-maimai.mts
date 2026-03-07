@@ -37,6 +37,7 @@ function normalizeSong(song): Song {
   if (!song.artist) warnings.push("Missing artist");
   if (!song.imageName) warnings.push("Missing jacket URL");
   if (!song.version) warnings.push("Missing version/folder");
+  if (!song.releaseDate) warnings.push("Missing Release Date");
 
   if (song.bpm == null) {
     warnings.push("Missing BPM (null/undefined)");
@@ -129,6 +130,7 @@ function normalizeSong(song): Song {
       ? downloadJacket(song.imageName, localImageName(song.imageName))
       : null,
     folder: song.version,
+    date_added: song.releaseDate,
     charts,
   };
 }
