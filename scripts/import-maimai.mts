@@ -38,10 +38,7 @@ function normalizeSong(song): Song {
   if (!song.imageName) warnings.push("Missing jacket URL");
   if (!song.version) warnings.push("Missing version/folder");
   if (!song.releaseDate) warnings.push("Missing Release Date");
-
-  if (song.bpm == null) {
-    warnings.push("Missing BPM (null/undefined)");
-  }
+  if (!song.bpm && !hasUtage) warnings.push("Missing BPM (null/undefined)");
 
   const bpmValue = hasUtage
     ? "???"
