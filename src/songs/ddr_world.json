@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1772683874037
+    "lastUpdated": 1773310770529
   },
   "defaults": {
     "style": "single",
@@ -12076,6 +12076,12 @@
           "sanbaiTier": 16.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock", "grandPrixPack"]
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
@@ -12092,6 +12098,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock", "grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Continue_to_the_real_world%3F",
@@ -39474,6 +39486,12 @@
           "diffClass": "expert"
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 10,
           "style": "double",
           "diffClass": "basic"
@@ -39489,6 +39507,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.1
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["grandPrixPack"]
         }
       ],
       "jacket": "ddr_a3/My Drama.jpg",
@@ -66304,6 +66328,62 @@
       "remyLink": "https://remywiki.com/Urban_Life"
     },
     {
+      "name": "UИKNØWNZ",
+      "artist": "nora2r ＆ L.E.D.-G",
+      "saHash": "Odbo96qo6o8PqDob6qD0oqI80diQ8PQd",
+      "bpm": "116-232",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 14
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/UИKNØWNZ.jpg"
+    },
+    {
       "name": "V ～for EXTREME～",
       "artist": "TAKA",
       "bpm": "150",
@@ -68577,6 +68657,12 @@
           "sanbaiTier": 15.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
@@ -68593,6 +68679,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Worst_Plan",

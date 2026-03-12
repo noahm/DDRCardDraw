@@ -113,6 +113,26 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
   // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
+  // #region BEMANI SELECTION楽曲パック vol.5
+  [
+    "1Dd0b8lIQOd011qqOPiq1QDbDqod9Od8", // Continue to the real world?
+    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
+  ],
+  [
+    "DQqO696iPldD6olDOOdP09l08ll989l8", // My Drama
+    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
+  ],
+  [
+    "1lqii0IibdbPD19P6DiIl0Id9do6qqd1", // Worst Plan
+    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
+  ],
+  // #endregion BEMANI SELECTION楽曲パック vol.5
+  // #region GARAXY BRAVE (FORCE)
+  [
+    "Odbo96qo6o8PqDob6qD0oqI80diQ8PQd", // UИKNØWNZ
+    { lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290] },
+  ],
+  // #endregion GARAXY BRAVE (FORCE)
 ]);
 
 type SanbaiSongData = Pick<
