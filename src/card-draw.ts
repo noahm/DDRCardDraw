@@ -230,6 +230,23 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
 export type DrawingMeta = Pick<Drawing, "meta">;
 export type StartingPoint = DrawingMeta & { charts?: Drawing["charts"] };
 
+/** Produces a stable string key that uniquely identifies a chart within a game */
+export function chartKey(chart: {
+  name: string;
+  diffAbbr: string;
+  level: number;
+}): string {
+  return `${chart.name}|${chart.diffAbbr}|${chart.level}`;
+}
+
+export interface DrawResult {
+  charts: Array<DrawnChart | PlayerPickPlaceholder>;
+  /** keys of charts newly drawn in this call (for deck tracking) */
+  newlyUsedKeys: string[];
+  /** true if the deck ran out and was reshuffled during this draw */
+  deckWasReset: boolean;
+}
+
 const artistDrawBlocklist = new Set();
 
 /**
@@ -242,7 +259,7 @@ export function draw(
   gameData: GameData,
   configData: ConfigState,
   startPoint: StartingPoint,
-) {
+): DrawResult {
   const {
     chartCount: numChartsToRandom,
     useWeights,
@@ -250,9 +267,6 @@ export function draw(
     weights,
     useGranularLevels,
   } = configData;
-
-  /** all charts we will consider to be valid for this draw, mapped by bucket index */
-  const validCharts = new DefaultingMap<number, Array<EligibleChart>>(() => []);
 
   const availableLvls = getAvailableLevels(gameData, useGranularLevels);
   const buckets = Array.from(
@@ -265,11 +279,43 @@ export function draw(
       : 0; // outside of weights mode we just put all songs into one shared bucket
   }
 
-  for (const chart of eligibleCharts(configData, gameData)) {
-    if (artistDrawBlocklist.has(chart.artist)) continue;
-    const bucketIdx = bucketIndexForChart(chart);
-    if (bucketIdx === null) continue;
-    validCharts.get(bucketIdx).push(chart);
+  /** Collect all eligible charts into buckets */
+  function buildValidCharts() {
+    const result = new DefaultingMap<number, Array<EligibleChart>>(() => []);
+    for (const chart of eligibleCharts(configData, gameData)) {
+      if (artistDrawBlocklist.has(chart.artist)) continue;
+      const bucketIdx = bucketIndexForChart(chart);
+      if (bucketIdx === null) continue;
+      result.get(bucketIdx).push(chart);
+    }
+    return result;
+  }
+
+  /** all charts we will consider to be valid for this draw, mapped by bucket index */
+  const validCharts = buildValidCharts();
+
+  // noDuplicates: filter out previously used charts from the deck
+  let deckWasReset = false;
+  const usedKeySet =
+    configData.noDuplicates && configData.usedCharts?.length
+      ? new Set(configData.usedCharts)
+      : null;
+
+  if (usedKeySet) {
+    let totalRemaining = 0;
+    for (const [bucketIdx, charts] of validCharts) {
+      const filtered = charts.filter((c) => !usedKeySet.has(chartKey(c)));
+      validCharts.set(bucketIdx, filtered);
+      totalRemaining += filtered.length;
+    }
+    // If not enough charts remain for the requested draw, reset the deck
+    if (totalRemaining < numChartsToRandom) {
+      deckWasReset = true;
+      // Rebuild from full pool (no filtering)
+      for (const [bucketIdx, charts] of buildValidCharts()) {
+        validCharts.set(bucketIdx, charts);
+      }
+    }
   }
 
   /**
@@ -440,6 +486,9 @@ export function draw(
     }
   } while (redraw);
 
+  // Collect keys of all newly drawn charts for deck tracking
+  const newlyUsedKeys = drawnCharts.map((c) => chartKey(c));
+
   let charts: Drawing["charts"];
   if (configData.sortByLevel) {
     charts = drawnCharts.sort(
@@ -455,7 +504,7 @@ export function draw(
     charts.unshift(...times(configData.playerPicks, newPlaceholder));
   }
 
-  return charts;
+  return { charts, newlyUsedKeys, deckWasReset };
 }
 
 export function newPlaceholder(): PlayerPickPlaceholder {
