@@ -14,7 +14,9 @@ import { IntlProvider } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { Provider } from "react-redux";
 import { createClientStore, useAppState } from "./state/store";
-import { PartySocketManager } from "./party/client";
+// Jazz provider wraps the entire app (guest mode, no sign-in required)
+import { JazzProvider } from "./jazz/provider";
+import { JazzSyncManager } from "./jazz/sync-manager";
 
 import {
   createBrowserRouter,
@@ -228,12 +230,13 @@ function ObsSource() {
   }
   return (
     <Provider store={store}>
-      <PartySocketManager roomName={params.roomName}>
+      {/* Jazz sync for OBS overlay sources — same room, read-only view */}
+      <JazzSyncManager roomName={params.roomName}>
         <IntlProvider>
           <ObsStyles />
           <Outlet />
         </IntlProvider>
-      </PartySocketManager>
+      </JazzSyncManager>
     </Provider>
   );
 }
@@ -243,13 +246,18 @@ function ObsStyles() {
   return <style>{cssText}</style>;
 }
 
+// JazzProvider must wrap the entire app so that useAccount() and useCoState()
+// hooks work in any component, including JazzSyncManager inside tournament-mode
+// and OBS source routes.
 export function App() {
   return (
-    <IntlProvider>
-      <ThemeSyncWidget />
-      <UpdateManager />
-      <RouterProvider router={router} />
-      <ToasterHost />
-    </IntlProvider>
+    <JazzProvider>
+      <IntlProvider>
+        <ThemeSyncWidget />
+        <UpdateManager />
+        <RouterProvider router={router} />
+        <ToasterHost />
+      </IntlProvider>
+    </JazzProvider>
   );
 }

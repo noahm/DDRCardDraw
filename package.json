@@ -38,6 +38,9 @@
   ],
   "license": "BSD-2-Clause",
   "prettier": {},
+  "dependencies": {
+    "jazz-tools": "^0.20.14"
+  },
   "devDependencies": {
     "@babel/core": "7.28.5",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
