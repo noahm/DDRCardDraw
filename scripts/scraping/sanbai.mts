@@ -7,6 +7,8 @@ import { downloadJacket, exists, requestQueue } from "../utils.mts";
 import type { Chart, Song } from "../../src/models/SongData.ts";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 
+const _currentDate = new Date();
+
 type SanbaiSong = {
   song_id: string;
   song_name: string;
@@ -35,13 +37,13 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [300, ["platinumMembers"]], // DDR PLATINUM MEMBERS
   [
     310,
-    new Date() < new Date("2026-03-22T23:59:00+09:00")
+    _currentDate < new Date("2026-03-22T23:59:00+09:00")
       ? ["unlock"]
       : ["tempUnlock"],
   ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
   [
     320,
-    new Date() < new Date("2026-03-22T23:59:00+09:00")
+    _currentDate < new Date("2026-03-22T23:59:00+09:00")
       ? ["unlock"]
       : ["tempUnlock"],
   ], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
@@ -71,6 +73,45 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
   [20, "DanceDanceRevolution World"],
 ]);
 
+/**
+ * Correction data with effective time for future corrections (e.g. unlocks)
+ * - [0] Effective time
+ * - [1] Song ID
+ * - [2] Partial song data to apply after effective time
+ */
+const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
+  [
+    new Date("2026-03-17T05:00:00+09:00"),
+    "8o10d9O89d6DQOiDlbb160Id8IIO6b01",
+    { deleted: 1 },
+  ], // SOUVENIR
+  ...[
+    // BEMANI SELECTION楽曲パックvol.3
+    "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo", // Get Back Up!
+    "I9Oood9l9li0D08Q6d6DQPiIQiloidO6", // Riot of Color
+    "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI", // 勇猛無比
+    // グランプリ楽曲パックvol.35
+    "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
+    "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
+    "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-03-31T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
+  // グランプリ譜面パック vol.1
+  ...[
+    "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
+    "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
+    "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
+    "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
+    "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-05-29T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
+];
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ["IObPQb9QlP0iIiboObPoPqIqDo0O11Qi", { deleted: 1 }], // 春を告げる
@@ -80,59 +121,12 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ],
   // #endregion グランプリ譜面パック vol.6
-  // #region PRE PRIVILEGE to playable default (about 1 year after release)
-  ...(new Date() >= new Date("2026-03-31T15:00:00+09:00")
-    ? [
-        // BEMANI SELECTION楽曲パックvol.3
-        "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo", // Get Back Up!
-        "I9Oood9l9li0D08Q6d6DQPiIQiloidO6", // Riot of Color
-        "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI", // 勇猛無比
-        // グランプリ楽曲パックvol.35
-        "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
-        "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
-        "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
-  ...(new Date() >= new Date("2026-05-29T15:00:00+09:00")
-    ? [
-        // グランプリ譜面パック vol.1
-        "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
-        "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
-        "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
-        "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
-        "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
-  // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
   // #region EXTRA SAVIOR WORLD - The 1st GITADORA
   ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
   // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
-  // #region BEMANI SELECTION楽曲パック vol.5
-  [
-    "1Dd0b8lIQOd011qqOPiq1QDbDqod9Od8", // Continue to the real world?
-    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
-  ],
-  [
-    "DQqO696iPldD6olDOOdP09l08ll989l8", // My Drama
-    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
-  ],
-  [
-    "1lqii0IibdbPD19P6DiIl0Id9do6qqd1", // Worst Plan
-    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
-  ],
-  // #endregion BEMANI SELECTION楽曲パック vol.5
-  // #region GARAXY BRAVE (FORCE)
-  [
-    "Odbo96qo6o8PqDob6qD0oqI80diQ8PQd", // UИKNØWNZ
-    { lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290] },
-  ],
-  // #endregion GARAXY BRAVE (FORCE)
+  ...timedCorrections
+    .filter(([time]) => _currentDate >= time)
+    .map(([, id, data]) => [id, data] as const),
 ]);
 
 type SanbaiSongData = Pick<
