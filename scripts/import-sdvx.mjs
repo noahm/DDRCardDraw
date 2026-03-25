@@ -267,6 +267,19 @@ function buildSong(song, availableJackets) {
       continue;
     }
 
+    const radarValues = {};
+    for (const radarType of [
+      "notes",
+      "peak",
+      "tsumami",
+      "tricky",
+      "hand-trip",
+      "one-hand",
+    ]) {
+      radarValues[radarType] = parseInt(chartInfo.radar[0][radarType][0]._, 10);
+    }
+    console.log({ name, chartType, radarValues });
+
     const chartJacket = determineChartJacket(chartType, song, availableJackets);
     if (!chartJacket) {
       usesSharedJacket = true;
