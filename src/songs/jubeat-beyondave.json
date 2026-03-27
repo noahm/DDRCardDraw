@@ -23,7 +23,7 @@
       "jubeat Ave.",
       "jubeat beyond the Ave."
     ],
-    "lastUpdated": 1772148751926
+    "lastUpdated": 1774594397906
   },
   "defaults": {
     "style": "solo",
@@ -5901,6 +5901,21 @@
       "jacket": "jubeat/saucer/id11388842.jpg"
     },
     {
+      "name": "New Hero",
+      "artist": "Sakuzyo",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id29819660",
+      "bpm": "150",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.2 }
+      ],
+      "remyLink": "https://remywiki.com/New_Hero",
+      "jacket": "jubeat/beyond_the_ave/id29819660.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "name": "New World",
       "artist": "FELT",
       "folder": "jubeat Ave.",
@@ -7180,6 +7195,19 @@
       ],
       "remyLink": "https://remywiki.com/Romancing_Layer",
       "jacket": "jubeat/saucer/id24940201.jpg"
+    },
+    {
+      "name": "RUINA",
+      "artist": "Dustup VS MAX MAXIMIZER",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id29946212",
+      "bpm": "160",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 5 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 9.1 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.7 }
+      ],
+      "jacket": "jubeat/beyond_the_ave/id29946212.jpg"
     },
     {
       "name": "Runway Drive",
@@ -11471,6 +11499,20 @@
       "flags": ["licensed"]
     },
     {
+      "name": "シュボレアちゃん星の交信",
+      "artist": "工藤吉三（ベイシスケイプ）",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id42003685",
+      "bpm": "180",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 5 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.4 }
+      ],
+      "remyLink": "https://remywiki.com/Syuborea-chan_hoshi_no_koushin",
+      "jacket": "jubeat/beyond_the_ave/id42003685.jpg"
+    },
+    {
       "name": "シンクロフィッシュ",
       "artist": "Blanc Bunny Bandit",
       "folder": "jubeat festo",
@@ -12032,6 +12074,21 @@
       ],
       "remyLink": "https://remywiki.com/Neri_to_kohakutou",
       "jacket": "jubeat/festo/id70563135.jpg"
+    },
+    {
+      "name": "ハウトゥワープ",
+      "artist": "ナユタン星人",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id89817152",
+      "bpm": "155",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 5 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.1 }
+      ],
+      "remyLink": "https://remywiki.com/How_to_warp",
+      "jacket": "jubeat/beyond_the_ave/id89817152.jpg",
+      "flags": ["licensed"]
     },
     {
       "name": "ハウリング",
@@ -14717,6 +14774,20 @@
       "remyLink": "https://remywiki.com/Oboro_(BEMANI_SYMPHONY_Arr.)",
       "jacket": "jubeat/festo/id95324011.jpg",
       "flags": ["licensed"]
+    },
+    {
+      "name": "朧月覆う雲をも裂きぬ",
+      "artist": "かめりあ feat. 藍月なくる",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id47896490",
+      "bpm": "192",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 5 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 9.2 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.4 }
+      ],
+      "remyLink": "https://remywiki.com/Oborozuki_oou_kumo_wo_mo_sakinu",
+      "jacket": "jubeat/beyond_the_ave/id47896490.jpg"
     },
     {
       "name": "朱と碧のランページ",
