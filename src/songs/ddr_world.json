@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1774525428358
+    "lastUpdated": 1774588615027
   },
   "defaults": {
     "style": "single",
@@ -7278,6 +7278,52 @@
       "saHash": "PP9QDQ0IQQID00P61d8qdDdP09b19iiI",
       "saIndex": "230",
       "search_hint": "EPIC POETRY/エピックポエトリー"
+    },
+    {
+      "name": "Blinding Lights",
+      "artist": "The Weeknd",
+      "saHash": "8ol0OblD9I9oiPQd0Pd8Oii81O8lQqoo",
+      "bpm": "171",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Blinding Lights.jpg"
     },
     {
       "name": "Blizzard of Arrows",
@@ -21605,6 +21651,52 @@
       "saIndex": "919"
     },
     {
+      "name": "Firework",
+      "artist": "Katy Perry",
+      "saHash": "16l09Qb88lbdqQoPQqbI0QQbqb0q66bP",
+      "bpm": "124",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Firework.jpg"
+    },
+    {
       "name": "First Action",
       "artist": "setu-O",
       "bpm": "170",
@@ -26319,6 +26411,53 @@
       "flags": ["euLocked"],
       "jacket": "ddr_a3/HANIPAGANDA.jpg",
       "remyLink": "https://remywiki.com/HANIPAGANDA"
+    },
+    {
+      "name": "Happy",
+      "artist": "Pharrell Williams",
+      "saHash": "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "remyLink": "https://remywiki.com/Happy_(Pharrell_Williams)",
+      "jacket": "ddr_a/Happy.png"
     },
     {
       "name": "Happy Dance Day 2 U",
@@ -47523,6 +47662,52 @@
       "saIndex": "86"
     },
     {
+      "name": "Rain On Me",
+      "artist": "Lady Gaga & Ariana Grande",
+      "saHash": "q108b9iP1O6qi91IIPlobI6i6b6I91q9",
+      "bpm": "123",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Rain On Me.jpg"
+    },
+    {
       "name": "rainbow flyer",
       "artist": "dj TAKA",
       "bpm": "148",
@@ -49976,6 +50161,52 @@
       "jacket": "ddr_x2/roppongi EVOLVED ver.D.png",
       "saHash": "l8q6diIod06OdP11P6I8oIddiPo16DPd",
       "saIndex": "381"
+    },
+    {
+      "name": "RUINA",
+      "artist": "Dustup VS MAX MAXIMIZER",
+      "saHash": "Q6il000Q11liO16qIDi0i0IO6id6qibP",
+      "bpm": "160-320",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 16
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 18
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 18
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/RUINA.jpg"
     },
     {
       "name": "Run The Show",
@@ -53978,7 +54209,8 @@
       "remyLink": "https://remywiki.com/Skywalking",
       "jacket": "ddr_a20/Skywalking.png",
       "saHash": "Dqb08DI0Ii8ilD0lioi9o9D1dodl6dO0",
-      "saIndex": "842"
+      "saIndex": "842",
+      "genre": "TRANCECORE"
     },
     {
       "name": "Slip Out",
@@ -54840,6 +55072,52 @@
       "jacket": "ddr_x2/someday....png",
       "saHash": "0ol981b18biO0610IqPi9l6Db86PbIQ9",
       "saIndex": "391"
+    },
+    {
+      "name": "Somedays",
+      "artist": "Sonny Fodera ft. Jazzy & D.O.D",
+      "saHash": "P0OOoO1Pd16DdDP6Q0iIO68I0q60dD6O",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Somedays.jpg"
     },
     {
       "name": "Somehow You Found Me",
@@ -57668,6 +57946,54 @@
       "jacket": "ddr_max-ext/stoic (EXTREME version).png",
       "saHash": "OoIPPqIDbQ6qIb69q8dil0iq0l6q6DQD",
       "saIndex": "131"
+    },
+    {
+      "name": "STOIC HYPOTHESIS",
+      "artist": "BEMANI Sound Team \"Expander\"",
+      "saHash": "9DIIo619qoDqIOb1091b816dbl0IlllD",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/STOIC HYPOTHESIS.jpg",
+      "remyLink": "https://remywiki.com/STOIC_HYPOTHESIS",
+      "genre": "RIDDIM CORE"
     },
     {
       "name": "STOMP!!",
@@ -66651,6 +66977,53 @@
       "saHash": "Ilo6IboPOq8Q10qDOdDDoO6P989bPPi6",
       "saIndex": "138",
       "search_hint": "PROGRESSIVE/プログレッシブ"
+    },
+    {
+      "name": "V!LLA!N",
+      "artist": "Kaname",
+      "saHash": "diO61POQ9odliiqoq0ii0Q6OOid9oOIi",
+      "bpm": "210",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/V!LLA!N.jpg",
+      "remyLink": "https://remywiki.com/V!LLA!N"
     },
     {
       "name": "Valanga",
@@ -88398,6 +88771,62 @@
       "remyLink": "https://remywiki.com/Hashire_melonpan",
       "genre": "フォーエバーフレンズ",
       "search_hint": "FOREVER FRIENDS/フォーエバーフレンズ"
+    },
+    {
+      "name": "足神様ノ復活祭",
+      "artist": "U1 overground",
+      "saHash": "iD8qIio8d1QQblQ06iPDlo69D9bQI9b8",
+      "bpm": "146",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/足神様ノ復活祭.jpg"
     },
     {
       "name": "路男",
