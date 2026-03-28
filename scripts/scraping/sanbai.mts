@@ -7,6 +7,8 @@ import { downloadJacket, exists, requestQueue } from "../utils.mts";
 import type { Chart, Song } from "../../src/models/SongData.ts";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 
+const _currentDate = new Date();
+
 type SanbaiSong = {
   song_id: string;
   song_name: string;
@@ -20,7 +22,11 @@ type SanbaiSong = {
   tiers: number[];
 };
 
-/** Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags` */
+/**
+ * Mapping from 3icecream's `lock_types` to DDRCardDraw's `flags`
+ * @description
+ * Hidden songs/charts that were already locked as of 2025-10-21 also require the `euLocked` flag.
+ */
 const lockFlags: Map<number, Song["flags"]> = new Map([
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
@@ -29,12 +35,15 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [280, ["unlock"]], // EXTRA SAVIOR WORLD
   [290, ["unlock"]], // GALAXY BRAVE
   [300, ["platinumMembers"]], // DDR PLATINUM MEMBERS
+  [310, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
+  [320, ["tempUnlock"]], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
   [
-    310,
-    new Date() < new Date("2026-03-22T23:59:00+09:00")
+    330,
+    _currentDate < new Date("2026-04-26T23:59:00+09:00")
       ? ["unlock"]
       : ["tempUnlock"],
-  ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
+  ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append (2026-03-26 10:00~2026-04-26 23:59)
+  [350, ["unlock"]], // 段位認定(DAN RANK)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -61,49 +70,65 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
   [20, "DanceDanceRevolution World"],
 ]);
 
+/**
+ * Correction data with effective time for future corrections (e.g. unlocks)
+ * - [0] Effective time
+ * - [1] Song ID
+ * - [2] Partial song data to apply after effective time
+ */
+const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
+  ...[
+    // BEMANI SELECTION楽曲パックvol.3
+    "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo", // Get Back Up!
+    "I9Oood9l9li0D08Q6d6DQPiIQiloidO6", // Riot of Color
+    "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI", // 勇猛無比
+    // グランプリ楽曲パックvol.35
+    "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
+    "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
+    "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-03-31T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
+  // グランプリ譜面パック vol.1
+  ...[
+    "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
+    "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
+    "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
+    "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
+    "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-05-29T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
+];
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
-  ["IObPQb9QlP0iIiboObPoPqIqDo0O11Qi", { deleted: 1 }], // 春を告げる
+  ["8o10d9O89d6DQOiDlbb160Id8IIO6b01", { deleted: 1 }], // SOUVENIR
+  [
+    "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
+    { deleted: undefined, ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
+  ],
   // #region グランプリ譜面パック vol.6
   [
     "O8qii6oiooPd8lbPqDo9QQioIoQQOoq0", // INSIDE YOUR HEART
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ],
   // #endregion グランプリ譜面パック vol.6
-  // #region PRE PRIVILEGE to playable default (about 1 year after release)
-  ...(new Date() >= new Date("2026-02-27T15:00:00+09:00")
-    ? [
-        // スペシャル楽曲パック feat.ひなビタ♪ vol.3
-        "6DibIbiiDlq1OiI6QOlPlO1loQOiDb1q", // カタルシスの月
-        "I1i6li9l091l6ooqPlP91OlODPbqqo9P", // ムラサキグルマ
-        "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi", // ロンロンへ ライライライ！
-        // スペシャル楽曲パック feat.REFLEC BEAT vol.3
-        "0Ilqbl8q8Q6l6886Q9P9DOi69oIb1b1d", // Gale Rider
-        "qdbod6lI0I8O118DPq80D8b0o00OodlI", // Hollywood Galaxy
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
-  ...(new Date() >= new Date("2026-03-31T15:00:00+09:00")
-    ? [
-        // BEMANI SELECTION楽曲パックvol.3
-        "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo", // Get Back Up!
-        "I9Oood9l9li0D08Q6d6DQPiIQiloidO6", // Riot of Color
-        "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI", // 勇猛無比
-        // グランプリ楽曲パックvol.35
-        "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
-        "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
-        "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
-      ].map<[string, Partial<SanbaiSong>]>((id) => [
-        id,
-        { lock_types: undefined },
-      ])
-    : []),
-  // #endregion PRE PRIVILEGE to playable default (about 1 year after release)
-  // #region EXTRA SAVIOR WORLD - The 1st GITADORA
-  ["dI0q9QdPOI1lq6888qI980dqll6dbqib", { song_name: "羽根亡キ少女唄" }],
-  // #endregion EXTRA SAVIOR WORLD - The 1st GITADORA
+  // #region BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append
+  [
+    "Q6il000Q11liO16qIDi0i0IO6id6qibP", // RUINA
+    {
+      ratings: [7, 12, 16, 18, 0, 12, 15, 18, 0],
+      lock_types: [330, 330, 330, 330, 0, 330, 330, 330, 0],
+    },
+  ],
+  // #endregion BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append
+  ...timedCorrections
+    .filter(([time]) => _currentDate >= time)
+    .map(([, id, data]) => [id, data] as const),
 ]);
 
 type SanbaiSongData = Pick<
@@ -157,7 +182,7 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
               Array.isArray(currentValue) &&
               (value.length !== currentValue.length ||
                 value.some((v, i) => v !== currentValue[i]))) ||
-            !Array.isArray(currentValue)
+            (!Array.isArray(currentValue) && value !== currentValue)
           ) {
             console.log(
               `Fixing invalid ${key} for ${song.song_name} on 3ice : ${currentValue} -> ${value}`,
