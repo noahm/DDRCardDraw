@@ -1,6 +1,7 @@
+import { basename } from "node:path";
 import type { JSDOM } from "jsdom";
 
-import { getDom } from "../utils.mts";
+import { downloadJacket, getDom } from "../utils.mts";
 import type { Song } from "../../src/models/SongData.ts";
 
 /** Will try to return a jacket URL from the wiki page, if found
@@ -10,7 +11,7 @@ async function getMetaFromRemy(pageUrl: string) {
   const dom = await getDom(pageUrl);
   if (!dom) return null;
   const firstP = dom.window.document.querySelector("#mw-content-text p");
-  const artist = firstP?.innerHTML.match(/Artist: (.+)<br>/);
+  const artist = firstP?.innerHTML.match(/(?<!Original )Artist: (.+)<br>/);
   const bpm = firstP?.innerHTML.match(/BPM: (.+)<br>/);
   return {
     artist: artist?.[1],
@@ -78,10 +79,56 @@ export async function tryGetMetaFromRemy(
       song.bpm = meta.bpm;
       console.log(`Added "${song.name}" bpm from remyLink: ${meta.bpm}`);
     }
-    if (!song.artist && meta?.artist) {
+    if (!song.artist && meta?.artist && meta.artist !== "♪♪♪♪♪") {
       song.artist = meta.artist;
       console.log(`Added "${song.name}" artist from remyLink: ${meta.artist}`);
     }
   }
   return true;
+}
+
+/** Will try to return a jacket URL from the wiki page, if found */
+export async function getJacketFromRemySong(
+  pageUrl: string,
+  overrideSongName: string,
+  ...seriesList: string[]
+) {
+  const dom = await getDom(pageUrl);
+  const songName = overrideSongName || decodeURIComponent(basename(pageUrl));
+  // find images
+  const images = Array.from(
+    dom.window.document.querySelectorAll(".thumb.tright"),
+  );
+  if (!images.length) {
+    return;
+  }
+  if (images.length === 1) {
+    return getJacketFromThumb(images[0], songName);
+  }
+  // if multiple
+  for (const finder of [
+    ...seriesList.map(
+      (series) => (node: Element) => node.textContent.includes(series),
+    ),
+    // then look for "jacket"
+    (node: Element) => node.textContent.includes("jacket"),
+    // look for a square aspect ratio
+    (node: Element) => {
+      const img = node.querySelector("img");
+      return img.height === img.width;
+    },
+    // finally, fall back to first appearance
+    () => true,
+  ]) {
+    let candidate = images.find(finder);
+    if (candidate) {
+      return getJacketFromThumb(candidate, songName);
+    }
+  }
+}
+
+function getJacketFromThumb(node: Element, songName: string) {
+  const img = node.querySelector("img");
+  const url = new URL(img.src, "https://remywiki.com");
+  if (img && img.src) return downloadJacket(url.href, songName);
 }
