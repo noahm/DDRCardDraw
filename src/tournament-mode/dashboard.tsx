@@ -12,10 +12,10 @@ import {
   H4,
   InputGroup,
 } from "@blueprintjs/core";
-import { useAppDispatch, useAppState } from "../state/store";
+import { useRoomState } from "../jazz/app-state-context";
+import { useMutations } from "../jazz/use-mutations";
 import { Add, Duplicate, Edit, FloppyDisk } from "@blueprintjs/icons";
 import React, { useRef, useState } from "react";
-import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
 import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
 
@@ -26,7 +26,7 @@ import ReactCodeMirror from "@uiw/react-codemirror";
 
 export function Dashboard() {
   const [currentEdit, setCurrentEdit] = useState<string | null>(null);
-  const labels = useAppState((s) => s.event.obsLabels);
+  const labels = useRoomState((s) => s.event.obsLabels);
   const isObs = useInObs();
 
   return (
@@ -104,23 +104,17 @@ function EditDialog({
   sourceId: string | null;
   close(): void;
 }) {
-  const label = useAppState((s) =>
+  const label = useRoomState((s) =>
     sourceId ? s.event.obsLabels[sourceId] : null,
   ) || { label: "", value: "" };
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const nameInput = useRef<HTMLInputElement>(null);
   const valueInput = useRef<HTMLInputElement>(null);
   if (!label || !sourceId) {
     return null;
   }
   const submit = () => {
-    dispatch(
-      eventSlice.actions.updateLabel({
-        id: sourceId,
-        label: nameInput.current?.value || "",
-        value: valueInput.current?.value || "",
-      }),
-    );
+    mutations.updateLabel(sourceId, nameInput.current?.value || "", valueInput.current?.value || "");
     close();
   };
   const handleInputKeydown: React.KeyboardEventHandler<HTMLInputElement> = (
@@ -173,10 +167,10 @@ function EditDialog({
 import { css } from "@codemirror/lang-css";
 
 function CssEditor() {
-  const cleanDoc = useAppState((s) => s.event.obsCss);
+  const cleanDoc = useRoomState((s) => s.event.obsCss);
   const [isDirty, setIsDirty] = useState(false);
   const [localDoc, setLocalDoc] = useState(cleanDoc);
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const theme = useTheme();
 
   return (
@@ -188,7 +182,7 @@ function CssEditor() {
           disabled={!isDirty}
           intent={isDirty ? "primary" : undefined}
           onClick={() => {
-            dispatch(eventSlice.actions.updateObsCss(localDoc));
+            mutations.updateObsCss(localDoc);
             setIsDirty(false);
           }}
         />

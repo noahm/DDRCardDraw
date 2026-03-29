@@ -739,9 +739,9 @@ function applyMergeDraws(
 
   // Collect all charts from all existing sub-drawings
   const allCharts: unknown[] = [];
-  for (const v of Object.values(rawSubDrawings)) {
+  for (const v of Object.values(rawSubDrawings) as Array<JazzSubDrawingInstance | null>) {
     if (v != null) {
-      const charts = JSON.parse(v.chartsJson as string);
+      const charts = JSON.parse((v as unknown as { chartsJson: string }).chartsJson);
       allCharts.push(...charts);
     }
   }
@@ -768,16 +768,17 @@ function applyMergeDraws(
   const rawCabs = (
     room as unknown as { cabs: Record<string, JazzCabInstance | null> & CoRecordLike }
   ).cabs;
-  for (const [id, cab] of Object.entries(rawCabs)) {
+  for (const [, cab] of Object.entries(rawCabs) as Array<[string, JazzCabInstance | null]>) {
     if (cab == null) continue;
-    const activeMatch = cab.activeMatchJson
-      ? JSON.parse(cab.activeMatchJson as string)
+    const cabRaw = cab as unknown as { activeMatchJson: string | null };
+    const activeMatch = cabRaw.activeMatchJson
+      ? JSON.parse(cabRaw.activeMatchJson)
       : null;
     if (
       Array.isArray(activeMatch) &&
       activeMatch[0] === payload.drawingId
     ) {
-      jset(cab, "activeMatchJson", JSON.stringify([payload.drawingId, payload.newSubdrawId]));
+      jset(cab as unknown as { $jazz: { set(k: string, v: unknown): void } }, "activeMatchJson", JSON.stringify([payload.drawingId, payload.newSubdrawId]));
     }
   }
 }

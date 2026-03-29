@@ -9,9 +9,10 @@ import {
   Popover,
   Tooltip,
 } from "@blueprintjs/core";
-import { useAppDispatch, useAppState } from "../state/store";
+import { useRoomState } from "../jazz/app-state-context";
+import { useMutations } from "../jazz/use-mutations";
 import React, { ReactNode, useCallback, useState } from "react";
-import { CabInfo, eventSlice } from "../state/event.slice";
+import { CabInfo } from "../state/event.slice";
 import {
   Add,
   CaretLeft,
@@ -30,13 +31,12 @@ import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { playerNameByIndex } from "../models/Drawing";
-import { drawingsSlice } from "../state/drawings.slice";
 import { copyObsSource, routableCabSourcePath } from "./copy-obs-source";
 import { useHref } from "react-router-dom";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
-  const cabs = useAppState(eventSlice.selectors.allCabs);
+  const cabs = useRoomState((s) => Object.values(s.event.cabs));
 
   if (isCollapsed) {
     return (
@@ -72,11 +72,11 @@ export function CabManagement() {
 
 function AddCabControl(props: { children?: ReactNode }) {
   const [name, setName] = useState("");
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const addCab = useCallback(() => {
-    dispatch(eventSlice.actions.addCab(name));
+    mutations.addCab(name);
     setName("");
-  }, [dispatch, name]);
+  }, [mutations, name]);
   return (
     <form
       onSubmit={(e) => {
@@ -98,10 +98,10 @@ function AddCabControl(props: { children?: ReactNode }) {
 }
 
 function CabSummary({ cab }: { cab: CabInfo }) {
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const removeCab = useCallback(
-    () => dispatch(eventSlice.actions.removeCab(cab.id)),
-    [dispatch, cab.id],
+    () => mutations.removeCab(cab.id),
+    [mutations, cab.id],
   );
 
   const sourcesMenu = (
@@ -209,20 +209,21 @@ const listFormatter = new Intl.ListFormat(detectedLanguage, {
 });
 
 function CurrentMatch(props: { cab: CabInfo }) {
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const removeCab = useCallback(
-    () => dispatch(eventSlice.actions.clearCabAssignment(props.cab.id)),
-    [dispatch, props.cab.id],
+    () => mutations.clearCabAssignment(props.cab.id),
+    [mutations, props.cab.id],
   );
-  const drawing = useAppState((s) => {
+  const drawing = useRoomState((s) => {
     if (!props.cab.activeMatch) return null;
     if (typeof props.cab.activeMatch === "string") {
       return s.drawings.entities[props.cab.activeMatch];
     }
-    return drawingsSlice.selectors.selectMergedByCompoundId(
-      s,
-      props.cab.activeMatch,
-    );
+    const [mainId, subId] = props.cab.activeMatch as [string, string];
+    const d = s.drawings.entities[mainId];
+    if (!d) return null;
+    const sub = d.subDrawings?.[subId];
+    return sub ? { ...d, ...sub } : d;
   });
   const setMainTab = useSetAtom(mainTabAtom);
 

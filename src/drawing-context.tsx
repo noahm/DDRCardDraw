@@ -1,25 +1,20 @@
 import { createContext, ReactNode, useContext, useDebugValue } from "react";
 import { CompoundSetId, MergedDrawing } from "./models/Drawing";
-import { useAppState } from "./state/store";
-import { EqualityFn } from "react-redux";
 import { ConfigContextProvider } from "./state/hooks";
-import { drawingsSlice } from "./state/drawings.slice";
+import { useRoomState } from "./jazz/app-state-context";
 
 const context = createContext<CompoundSetId>(["", ""]);
 const RawDrawingProvider = context.Provider;
 
-export function useDrawing<T>(
-  selector: (d: MergedDrawing) => T,
-  equalityFn?: EqualityFn<T>,
-) {
+export function useDrawing<T>(selector: (d: MergedDrawing) => T): T {
   const drawingId = useContext(context);
-  const ret = useAppState((state) => {
-    const drawing = drawingsSlice.selectors.selectMergedByCompoundId(
-      state,
-      drawingId,
-    );
-    return selector(drawing);
-  }, equalityFn);
+  const ret = useRoomState((state) => {
+    const drawing = state.drawings.entities[drawingId[0]];
+    if (!drawing) return null as unknown as T;
+    const subDrawing = drawing.subDrawings?.[drawingId[1]];
+    const merged: MergedDrawing = { ...drawing, ...subDrawing };
+    return selector(merged);
+  });
   useDebugValue(ret);
   return ret;
 }

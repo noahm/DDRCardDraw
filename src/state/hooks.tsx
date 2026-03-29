@@ -1,8 +1,10 @@
-import { useAppDispatch, useAppState } from "./store";
-import { EqualityFn } from "react-redux";
 import { createContext, useCallback, useContext } from "react";
-import { configSlice, type ConfigState } from "./config.slice";
+import type { ConfigState } from "./config.slice";
 import { useStockGameData } from "./game-data.atoms";
+import { useRoomState } from "../jazz/app-state-context";
+import { useRoom } from "../jazz/room-context";
+import { useMutations } from "../jazz/use-mutations";
+import { findJazzConfig, jazzConfigToConfig } from "../jazz/converters";
 
 const configContext = createContext<string | null>(null);
 
@@ -18,14 +20,13 @@ export function useConfigId() {
 
 export function useConfigState<T = ConfigState>(
   selector?: (state: ConfigState) => T,
-  equalityFn?: EqualityFn<T>,
 ) {
   const configId = useConfigId();
-  return useAppState((state) => {
-    const configObj = configSlice.selectors.selectById(state, configId);
+  return useRoomState((state) => {
+    const configObj = state.config.entities[configId];
     if (!selector) return configObj as T;
     return selector(configObj);
-  }, equalityFn);
+  });
 }
 
 export function useGameData() {
@@ -35,23 +36,20 @@ export function useGameData() {
 
 export function useUpdateConfig() {
   const configId = useConfigId();
-  const dispatch = useAppDispatch();
+  const { room } = useRoom();
+  const mutations = useMutations();
   return useCallback(
     (
       patch:
         | Partial<ConfigState>
         | ((state: ConfigState) => Partial<ConfigState>),
     ) => {
-      dispatch((dispatch, getState) => {
-        if (typeof patch === "function") {
-          const state = configSlice.selectors.selectById(getState(), configId);
-          patch = patch(state);
-        }
-        dispatch(
-          configSlice.actions.updateOne({ id: configId, changes: patch }),
-        );
-      });
+      const updates =
+        typeof patch === "function"
+          ? patch(jazzConfigToConfig(findJazzConfig(room, configId)!))
+          : patch;
+      mutations.updateConfig(configId, updates);
     },
-    [dispatch, configId],
+    [room, mutations, configId],
   );
 }

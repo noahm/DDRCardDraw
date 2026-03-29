@@ -3,8 +3,7 @@ import styles from "./drawing-list.css";
 import { Callout, NonIdealState } from "@blueprintjs/core";
 import { WarningSign } from "@blueprintjs/icons";
 import logo from "./assets/ddr-tools-256.png";
-import { useAppState } from "./state/store";
-import { drawingsSlice } from "./state/drawings.slice";
+import { useRoomState } from "./jazz/app-state-context";
 import { DelayedSpinner } from "./common-components/delayed-spinner";
 import { useIntl } from "./hooks/useIntl";
 import { FormattedMessage } from "react-intl";
@@ -12,7 +11,7 @@ import { FormattedMessage } from "react-intl";
 const DrawnSetGroup = lazy(() => import("./drawn-set-group"));
 
 const ScrollableDrawings = memo(() => {
-  const drawingIds = useDeferredValue(useAppState((s) => s.drawings.ids));
+  const drawingIds = useDeferredValue(useRoomState((s) => s.drawings.ids));
   return (
     <div style={{ height: "100%", flex: "1 1 auto", overflowY: "auto" }}>
       {drawingIds
@@ -27,7 +26,7 @@ const ScrollableDrawings = memo(() => {
 export function DrawingList(props: { introString?: React.ReactNode }) {
   const { t } = useIntl();
   const hasDrawings = useDeferredValue(
-    useAppState(drawingsSlice.selectors.haveDrawings),
+    useRoomState((s) => !!s.drawings.ids.length),
   );
   if (!hasDrawings) {
     return (

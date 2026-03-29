@@ -1,4 +1,4 @@
-import { shallow } from "zustand/shallow";
+
 import styles from "./controls-weights.css";
 import { zeroPad } from "../utils";
 import { useMemo } from "react";
@@ -49,7 +49,6 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
       totalToDraw: cfg.chartCount,
       useGranularLevels: cfg.useGranularLevels,
     }),
-    shallow,
   );
   const gameData = useGameData();
   const groups = useMemo(() => {

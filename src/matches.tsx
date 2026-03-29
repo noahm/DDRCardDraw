@@ -1,6 +1,6 @@
 import { Button, Card, Classes, Spinner, Text } from "@blueprintjs/core";
 import { useStartggMatches, useStartggPhases } from "./startgg-gql";
-import { createAppSelector, useAppState } from "./state/store";
+import { useRoomState } from "./jazz/app-state-context";
 import { inferShortname } from "./controls/player-names";
 import { Refresh } from "@blueprintjs/icons";
 
@@ -12,19 +12,15 @@ export interface PickedMatch {
   phaseName: string;
 }
 
-const associatedMatchIds = createAppSelector(
-  [(s) => s.drawings.entities],
-  (entities) => {
+export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
+  const [resp, refetch] = useStartggMatches();
+  const existingMatches = useRoomState((s) => {
+    const entities = s.drawings.entities;
     return Object.values(entities).flatMap((drawing) => {
       if (drawing.meta.type === "startgg") return drawing.meta.id;
       return [];
     });
-  },
-);
-
-export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
-  const [resp, refetch] = useStartggMatches();
-  const existingMatches = useAppState(associatedMatchIds);
+  });
   const event = resp.data?.event;
   const matches = event?.sets?.nodes;
   const reloadButton = (
@@ -120,7 +116,13 @@ export function GauntletPicker(props: {
   onPickMatch?(match: PickedMatch): void;
 }) {
   const [resp, refetch] = useStartggPhases();
-  const existingMatches = useAppState(associatedMatchIds);
+  const existingMatches = useRoomState((s) => {
+    const entities = s.drawings.entities;
+    return Object.values(entities).flatMap((drawing) => {
+      if (drawing.meta.type === "startgg") return drawing.meta.id;
+      return [];
+    });
+  });
   const event = resp.data?.event;
   const phases = event?.phases?.filter(
     (p) => p?.bracketType === "CUSTOM_SCHEDULE",

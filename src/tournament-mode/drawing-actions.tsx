@@ -36,28 +36,13 @@ import {
   CHART_PLACEHOLDER,
   playerCount,
   StartggGauntletMeta,
+  type Drawing,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
   ReportSetMutationVariables as MutationVariables,
   useReportSetMutation,
 } from "../startgg-gql";
-import {
-  drawingsSlice,
-  getDrawingFromCompoundId,
-} from "../state/drawings.slice";
-import { eventSlice } from "../state/event.slice";
-import {
-  AppThunk,
-  useAppDispatch,
-  useAppState,
-  useAppStore,
-} from "../state/store";
-import {
-  createPlusOneChart,
-  createRedrawAll,
-  createSubdraw,
-} from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
 import { shareCharts, shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
@@ -66,61 +51,55 @@ import { useIntl } from "../hooks/useIntl";
 import { ConfigContextProvider, useConfigId } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
 import { times } from "../utils";
-import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
+import { useRoomState } from "../jazz/app-state-context";
+import { useMutations } from "../jazz/use-mutations";
 
 const GauntletEditor = lazy(() => import("./gauntlet-scores"));
 
-/** thunk that dispatches nothing, but calculates the result to be sent to startgg */
-function getMatchResult(
-  drawingId: string,
-): AppThunk<MutationVariables | undefined> {
-  return (_, getState): MutationVariables | undefined => {
-    const s = getState();
-    const gameData: Array<GDI> = [];
-    const parent = s.drawings.entities[drawingId];
-    if (parent.meta.type !== "startgg") {
-      return;
+/** Pure function that calculates the result to be sent to start.gg */
+function getMatchResult(drawing: Drawing): MutationVariables | undefined {
+  if (drawing.meta.type !== "startgg") {
+    return undefined;
+  }
+  const gameData: Array<GDI> = [];
+  const winsPerPlayer = new CountingSet<string>();
+  for (const [songId, pIdx] of Object.entries(drawing.winners)) {
+    if (pIdx === null) {
+      continue;
     }
-    const winsPerPlayer = new CountingSet<string>();
-    for (const [songId, pIdx] of Object.entries(parent.winners)) {
-      if (pIdx === null) {
-        continue;
-      }
-      try {
-        const entrant = parent.meta.entrants[pIdx];
-        gameData.push({ gameNum: gameData.length + 1, winnerId: entrant.id });
-        winsPerPlayer.add(entrant.id);
-      } catch (e) {
-        console.warn(`failed to add game data for song ${songId}`, e);
-      }
+    try {
+      const entrant = drawing.meta.entrants[pIdx];
+      gameData.push({ gameNum: gameData.length + 1, winnerId: entrant.id });
+      winsPerPlayer.add(entrant.id);
+    } catch (e) {
+      console.warn(`failed to add game data for song ${songId}`, e);
     }
-    let winnerId: string | undefined;
-    const orderedByWins = Array.from(winsPerPlayer.valuesWithCount()).sort(
-      (a, b) => b[1] - a[1],
-    );
-    if (
-      orderedByWins.length == 1 ||
-      orderedByWins[0][1] > orderedByWins[1][1]
-    ) {
-      // confirmed no tie for first place
-      winnerId = orderedByWins[0][0];
-    }
-    const ret: MutationVariables = { setId: parent.meta.id, winnerId };
-    if (gameData.length) {
-      ret.gameData = gameData;
-    }
-    return ret;
-  };
+  }
+  let winnerId: string | undefined;
+  const orderedByWins = Array.from(winsPerPlayer.valuesWithCount()).sort(
+    (a, b) => b[1] - a[1],
+  );
+  if (
+    orderedByWins.length == 1 ||
+    orderedByWins[0][1] > orderedByWins[1][1]
+  ) {
+    // confirmed no tie for first place
+    winnerId = orderedByWins[0][0];
+  }
+  const ret: MutationVariables = { setId: drawing.meta.id, winnerId };
+  if (gameData.length) {
+    ret.gameData = gameData;
+  }
+  return ret;
 }
 
 const DEFAULT_FILENAME = "card-draw.png";
 
 function SaveToStartggButton({ drawingId }: { drawingId: string }) {
-  const dispatch = useAppDispatch();
-  const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
+  const drawing = useRoomState((s) => s.drawings.entities[drawingId]);
   const [mutationData, reportSet] = useReportSetMutation();
-  if (drawingMeta.type !== "startgg" || drawingMeta.subtype !== "versus") {
+  if (!drawing || drawing.meta.type !== "startgg" || drawing.meta.subtype !== "versus") {
     return null;
   }
 
@@ -142,7 +121,7 @@ function SaveToStartggButton({ drawingId }: { drawingId: string }) {
         disabled={mutationData.fetching}
         icon={<TableSync />}
         onClick={() => {
-          const results = dispatch(getMatchResult(drawingId));
+          const results = getMatchResult(drawing);
           if (!results) {
             return;
           }
@@ -154,7 +133,7 @@ function SaveToStartggButton({ drawingId }: { drawingId: string }) {
 }
 
 function EditSetMenu() {
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const { t } = useIntl();
   const drawingId = useDrawing((s) => s.compoundId);
 
@@ -168,14 +147,14 @@ function EditSetMenu() {
                 icon={<NewLayer />}
                 text="Draw Another Chart"
                 onClick={() =>
-                  dispatch(createPlusOneChart(drawingId, CHART_DRAWN))
+                  mutations.plusOneChart(drawingId, CHART_DRAWN)
                 }
               />
               <MenuItem
                 icon={<Edit />}
                 text="Add New Player Pick"
                 onClick={() =>
-                  dispatch(createPlusOneChart(drawingId, CHART_PLACEHOLDER))
+                  mutations.plusOneChart(drawingId, CHART_PLACEHOLDER)
                 }
               />
               <MenuItem
@@ -188,7 +167,7 @@ function EditSetMenu() {
                       undefined,
                       "This will replace everything besides protects and picks!",
                     ),
-                  ) && dispatch(createRedrawAll(drawingId))
+                  ) && mutations.redrawAll(drawingId)
                 }
               />
               <MenuItem
@@ -197,7 +176,7 @@ function EditSetMenu() {
                 onClick={() =>
                   confirm(
                     "This draw will be permanently removed and cannot be recovered!",
-                  ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
+                  ) && mutations.removeDrawing(drawingId)
                 }
               />
             </Menu>
@@ -211,7 +190,7 @@ function EditSetMenu() {
 }
 
 function ConfigsAsMenuItems({ drawingId }: { drawingId: string }) {
-  const configs = useAppState((s) => s.config.ids);
+  const configs = useRoomState((s) => s.config.ids);
   return (
     <>
       {configs.map((cid) => (
@@ -222,25 +201,28 @@ function ConfigsAsMenuItems({ drawingId }: { drawingId: string }) {
 }
 
 function ConfigAsMenuItem(props: { configId: string; drawingId: string }) {
-  const config = useAppState((s) => s.config.entities[props.configId]);
-  const dispatch = useAppDispatch();
+  const config = useRoomState((s) => s.config.entities[props.configId]);
+  const mutations = useMutations();
   const currentConfigId = useConfigId();
   return (
     <MenuItem
       intent={currentConfigId === props.configId ? "primary" : undefined}
       text={`${config.name} (${config.chartCount}@${config.lowerBound}-${config.upperBound})`}
-      onClick={() => dispatch(createSubdraw(props.drawingId, props.configId))}
+      onClick={() => mutations.subdraw(props.drawingId, props.configId)}
     />
   );
 }
 
 export function DrawingActions() {
-  const dispatch = useAppDispatch();
-  const store = useAppStore();
+  const mutations = useMutations();
   const { t } = useIntl();
-  const cabs = useAppState(eventSlice.selectors.allCabs);
+  const cabs = useRoomState((s) => Object.values(s.event.cabs));
   const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
+  const subDrawingCharts = useRoomState((s) => {
+    const [mainId, subId] = drawingId;
+    return s.drawings.entities[mainId]?.subDrawings?.[subId]?.charts ?? [];
+  });
   const highlighAtRandom = useHighlightRandom();
   const isGauntlet =
     drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
@@ -256,12 +238,7 @@ export function DrawingActions() {
           key={cab.id}
           text={cab.name}
           onClick={() =>
-            dispatch(
-              eventSlice.actions.assignSetToCab({
-                cabId: cab.id,
-                matchId: drawingId,
-              }),
-            )
+            mutations.assignToCab(cab.id, drawingId)
           }
         />
       ))}
@@ -300,10 +277,7 @@ export function DrawingActions() {
           icon={<ThVirtual />}
           onClick={() =>
             shareCharts(
-              getDrawingFromCompoundId(
-                store.getState().drawings,
-                drawingId,
-              )[1].charts.filter((c) => c.type === "DRAWN"),
+              subDrawingCharts.filter((c) => c.type === "DRAWN"),
               "drawn",
             )
           }
@@ -356,8 +330,8 @@ export function DrawingActions() {
 }
 
 export function MatchActions({ drawingId }: { drawingId: string }) {
-  const dispatch = useAppDispatch();
-  const cabs = useAppState(eventSlice.selectors.allCabs);
+  const mutations = useMutations();
+  const cabs = useRoomState((s) => Object.values(s.event.cabs));
 
   const addToCabMenu = (
     <Menu>
@@ -366,12 +340,7 @@ export function MatchActions({ drawingId }: { drawingId: string }) {
           key={cab.id}
           text={cab.name}
           onClick={() =>
-            dispatch(
-              eventSlice.actions.assignMatchToCab({
-                cabId: cab.id,
-                matchId: drawingId,
-              }),
-            )
+            mutations.assignToCab(cab.id, drawingId)
           }
         />
       ))}
@@ -398,10 +367,10 @@ export function MatchActions({ drawingId }: { drawingId: string }) {
 }
 
 function EditMatchMenu({ drawingId }: { drawingId: string }) {
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const [metaEditorOpen, setMetaEditorOpen] = useState(false);
-  const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
-  const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
+  const drawingMeta = useRoomState((s) => s.drawings.entities[drawingId].meta);
+  const configId = useRoomState((s) => s.drawings.entities[drawingId].configId);
   const isTwoPlayers = playerCount(drawingMeta) === 2;
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
 
@@ -413,15 +382,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
           initialMeta={drawingMeta}
           submitText="Save"
           onSubmit={(meta) => {
-            dispatch(
-              drawingsSlice.actions.updateOne({
-                id: drawingId,
-                changes: {
-                  meta,
-                  playerDisplayOrder: times(meta.players.length, (n) => n - 1),
-                },
-              }),
-            );
+            mutations.updateDrawingMeta(drawingId, meta, times(meta.players.length, (n) => n - 1));
             setMetaEditorOpen(false);
           }}
         />
@@ -449,14 +410,14 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       <MenuItem
         icon={<DataLineage />}
         text="Merge All Sets"
-        onClick={() => dispatch(mergeDraws({ drawingId }))}
+        onClick={() => mutations.mergeDraws(drawingId)}
       />
       {showLabels && isTwoPlayers && (
         <MenuItem
           text="Swap Player Positions"
           icon={<Exchange />}
           onClick={() => {
-            dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
+            mutations.swapPlayerPositions(drawingId);
           }}
         />
       )}
@@ -466,7 +427,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
         onClick={() =>
           confirm(
             "This match will be permanently removed and cannot be recovered!",
-          ) && dispatch(drawingsSlice.actions.removeOne([drawingId, ""]))
+          ) && mutations.removeDrawing([drawingId, ""])
         }
       />
     </Menu>

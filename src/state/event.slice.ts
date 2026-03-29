@@ -10,7 +10,7 @@ export interface CabInfo {
   id: string;
 }
 
-interface EventState {
+export interface EventState {
   eventName: string;
   cabs: Record<string, CabInfo>;
   obsLabels: Record<string, { label: string; value: string }>;

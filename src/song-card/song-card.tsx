@@ -20,10 +20,8 @@ import { SongSearch } from "../song-search";
 import { CardLabel, LabelType } from "./card-label";
 import { FillPlaceholderList, ActionMenu } from "./acton-menu";
 import styles from "./song-card.css";
-import { useAppDispatch } from "../state/store";
-import { createPickBanPocket, createRedrawChart } from "../state/thunks";
+import { useMutations } from "../jazz/use-mutations";
 import { getJacketUrl } from "../utils/jackets";
-import { drawingsSlice } from "../state/drawings.slice";
 import { copyTextToClipboard } from "../utils/share";
 import { useChartRandomSelected } from "../tournament-mode/highlight-random";
 
@@ -56,7 +54,7 @@ type Props = SongCardProps & CardContentsProps;
 export { Props as SongCardBaseProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const drawingId = useDrawing((s) => s.compoundId);
 
   const handleBanPickPocket = useCallback(
@@ -64,8 +62,8 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       type: "ban" | "protect" | "pocket",
       player: number,
       pick?: EligibleChart,
-    ) => dispatch(createPickBanPocket(drawingId, chartId, type, player, pick)),
-    [drawingId, chartId, dispatch],
+    ) => mutations.pickBanPocket(drawingId, chartId, type, player, pick),
+    [drawingId, chartId, mutations],
   );
 
   return useMemo(
@@ -74,16 +72,14 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
       onProtect: handleBanPickPocket.bind(undefined, "protect"),
       onReplace: handleBanPickPocket.bind(undefined, "pocket"),
       onRedraw: () => {
-        dispatch(createRedrawChart(drawingId, chartId));
+        mutations.redrawChart(drawingId, chartId);
       },
       onReset: () =>
-        dispatch(drawingsSlice.actions.resetChart({ drawingId, chartId })),
+        mutations.resetChart(drawingId, chartId),
       onSetWinner: (player) =>
-        dispatch(
-          drawingsSlice.actions.setWinner({ drawingId, chartId, player }),
-        ),
+        mutations.setWinner(drawingId, chartId, player),
     }),
-    [handleBanPickPocket, drawingId, chartId, dispatch],
+    [handleBanPickPocket, drawingId, chartId, mutations],
   );
 }
 

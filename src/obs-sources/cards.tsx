@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ChartList } from "../drawn-set";
-import { useAppState } from "../state/store";
+import { useRoomState } from "../jazz/app-state-context";
 import { DrawingProvider } from "../drawing-context";
 import { PlainDrawnSetGroup } from "../drawn-set-group";
 /**
@@ -8,7 +8,7 @@ import { PlainDrawnSetGroup } from "../drawn-set-group";
  */
 export function CabCards() {
   const params = useParams<"roomName" | "cabId">();
-  const drawingId = useAppState((s) => s.event.cabs[params.cabId!].activeMatch);
+  const drawingId = useRoomState((s) => s.event.cabs[params.cabId!].activeMatch);
   if (!drawingId) {
     return null;
   }

@@ -5,8 +5,7 @@ import { Icon } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
 import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
-import { useAppDispatch } from "../state/store";
-import { drawingsSlice } from "../state/drawings.slice";
+import { useMutations } from "../jazz/use-mutations";
 import { getAllPlayers } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
 
@@ -63,11 +62,11 @@ export function MatchLabels() {
 }
 
 function Versus() {
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const parentId = useDrawing((s) => s.id);
   const ipp = useCallback(
-    () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(parentId)),
-    [dispatch, parentId],
+    () => mutations.incrementPriorityPlayer(parentId),
+    [mutations, parentId],
   );
   const priorityPlayer = useDrawing((s) => s.priorityPlayer);
   return (

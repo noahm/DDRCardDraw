@@ -12,11 +12,9 @@ FocusStyleManager.onlyShowFocusOnTabs();
 import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
-import { Provider } from "react-redux";
-import { createClientStore, useAppState } from "./state/store";
-// Jazz provider wraps the entire app (guest mode, no sign-in required)
 import { JazzProvider } from "./jazz/provider";
-import { JazzSyncManager } from "./jazz/sync-manager";
+import { RoomProvider } from "./jazz/room-context";
+import { useRoomState } from "./jazz/app-state-context";
 
 import {
   createBrowserRouter,
@@ -27,7 +25,6 @@ import {
 } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
-import { useMemo } from "react";
 import { ToasterHost } from "./toaster";
 
 const router = createBrowserRouter([
@@ -224,25 +221,21 @@ const router = createBrowserRouter([
 
 function ObsSource() {
   const params = useParams<"roomName" | "cabId">();
-  const store = useMemo(() => createClientStore(), []);
   if (!params.roomName) {
     return null;
   }
   return (
-    <Provider store={store}>
-      {/* Jazz sync for OBS overlay sources — same room, read-only view */}
-      <JazzSyncManager roomName={params.roomName}>
-        <IntlProvider>
-          <ObsStyles />
-          <Outlet />
-        </IntlProvider>
-      </JazzSyncManager>
-    </Provider>
+    <RoomProvider roomName={params.roomName}>
+      <IntlProvider>
+        <ObsStyles />
+        <Outlet />
+      </IntlProvider>
+    </RoomProvider>
   );
 }
 
 function ObsStyles() {
-  const cssText = useAppState((s) => s.event.obsCss);
+  const cssText = useRoomState((s) => s.event.obsCss);
   return <style>{cssText}</style>;
 }
 

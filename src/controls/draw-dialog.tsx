@@ -10,8 +10,7 @@ import {
 import { ConfigSelect } from ".";
 import { MatchPicker, GauntletPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
-import { createDraw } from "../state/thunks";
-import { useAppDispatch } from "../state/store";
+import { useMutations } from "../jazz/use-mutations";
 import { SimpleMeta } from "../models/Drawing";
 import { useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
@@ -27,7 +26,7 @@ export function DrawDialog(props: Props) {
   const [configId, setConfigId] = useState<string | null>(
     useLastConfigSelected() || null,
   );
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const appMode = useAppMode();
 
   function handleStartggDraw(match: PickedMatch) {
@@ -46,7 +45,7 @@ export function DrawDialog(props: Props) {
       return;
     }
     props.onClose();
-    dispatch(createDraw({ meta }, configId)).then((result) => {
+    mutations.draw({ meta }, configId).then((result) => {
       props.onDrawAttempt(result === "ok");
     });
   }

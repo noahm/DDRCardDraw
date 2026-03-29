@@ -1,14 +1,14 @@
 import { DrawingProvider } from "./drawing-context";
 import DrawnSet, { ChartList } from "./drawn-set";
 import { useRotatingGradientStyles } from "./hooks/useRotatingGradient";
-import { useAppState } from "./state/store";
+import { useRoomState } from "./jazz/app-state-context";
 import { MatchLabels } from "./tournament-mode/drawing-labels";
 import styles from "./drawn-set-group.css";
 import { MatchActions } from "./tournament-mode/drawing-actions";
 
 export default function DrawnSetGroup({ drawingId }: { drawingId: string }) {
   const gradient = useRotatingGradientStyles();
-  const drawing = useAppState((s) => s.drawings.entities[drawingId]);
+  const drawing = useRoomState((s) => s.drawings.entities[drawingId]);
   if (!drawing) return null;
   return (
     <div style={{ ...gradient }} className={styles.drawnSetGroup}>
@@ -28,7 +28,7 @@ export default function DrawnSetGroup({ drawingId }: { drawingId: string }) {
 }
 
 export function PlainDrawnSetGroup({ drawingId }: { drawingId: string }) {
-  const drawing = useAppState((s) => s.drawings.entities[drawingId]);
+  const drawing = useRoomState((s) => s.drawings.entities[drawingId]);
   if (!drawing) return null;
   return (
     <div>

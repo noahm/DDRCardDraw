@@ -10,8 +10,7 @@ import { useDrawing } from "../drawing-context";
 import { type DrawnChart, StartggGauntletMeta } from "../models/Drawing";
 import { ReactElement, useState } from "react";
 import { inferShortname } from "../controls/player-names";
-import { useDispatch } from "react-redux";
-import { drawingsSlice } from "../state/drawings.slice";
+import { useMutations } from "../jazz/use-mutations";
 import { ScoreSortableColumn } from "./sortable-columns";
 
 export default function GauntletScoreEditor({
@@ -25,7 +24,7 @@ export default function GauntletScoreEditor({
   const charts = useDrawing((d) => d.charts).filter(
     (c): c is DrawnChart => c.type === "DRAWN" && !bans[c.id],
   );
-  const dispatch = useDispatch();
+  const mutations = useMutations();
   const [playerOrderMap, setPlayerOrderMap] = useState(
     meta.entrants.map((_, idx) => idx),
   );
@@ -38,14 +37,7 @@ export default function GauntletScoreEditor({
     if (!Number.isSafeInteger(score)) {
       return;
     }
-    dispatch(
-      drawingsSlice.actions.addPlayerScore({
-        drawingId,
-        chartId,
-        playerId,
-        score,
-      }),
-    );
+    mutations.addPlayerScore(drawingId, chartId, playerId, score);
   }
 
   function playerCellRenderer(displayIdx: number) {

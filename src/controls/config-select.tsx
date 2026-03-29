@@ -17,12 +17,11 @@ import {
   More,
   DocumentShare,
 } from "@blueprintjs/icons";
-import { useAppDispatch, useAppState } from "../state/store";
+import { useRoomState } from "../jazz/app-state-context";
+import { useMutations } from "../jazz/use-mutations";
 import styles from "./config-select.css";
-import { createNewConfig } from "../state/thunks";
 import { useRoomName } from "../hooks/useRoomName";
 import { useSetLastConfigSelected } from "../state/config.atoms";
-import { configSlice } from "../state/config.slice";
 import { loadConfig, saveConfig } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
 import { useStockGameData } from "../state/game-data.atoms";
@@ -36,7 +35,7 @@ export function ConfigSelect(props: {
   selectedId: string | null;
   onChange(nextId: string): void;
 }) {
-  const configIds = useAppState((s) => s.config.ids);
+  const configIds = useRoomState((s) => s.config.ids);
   const isEmpty = !configIds.length;
 
   return (
@@ -56,9 +55,7 @@ export function ConfigSelect(props: {
 }
 
 function ConfigSelectEntry(props: { configId: string }) {
-  const config = useAppState((s) =>
-    configSlice.selectors.selectById(s, props.configId),
-  );
+  const config = useRoomState((s) => s.config.entities[props.configId]);
   return (
     <option value={config.id}>
       {config.name} ({config.gameKey}, {config.lowerBound}-{config.upperBound})
@@ -70,9 +67,8 @@ export function ConfigList(props: {
   selectedId: string | null;
   onChange(nextId: string | null): void;
 }) {
-  const configIds = useAppState((s) => s.config.ids);
-  const dispatch = useAppDispatch();
-  const roomName = useRoomName();
+  const configIds = useRoomState((s) => s.config.ids);
+  const mutations = useMutations();
   const setLastConfigSelected = useSetLastConfigSelected();
 
   const isEmpty = !configIds.length;
@@ -104,7 +100,7 @@ export function ConfigList(props: {
               icon={<Import />}
               onClick={() => {
                 loadConfig().then((c) => {
-                  dispatch(configSlice.actions.addOne(c));
+                  mutations.addConfig(c);
                   changeConfig(c.id);
                 });
               }}
@@ -114,7 +110,7 @@ export function ConfigList(props: {
             <Button
               icon={<ThAdd />}
               onClick={() =>
-                dispatch(createNewConfig(roomName)).then((c) =>
+                mutations.newConfig().then((c) =>
                   changeConfig(c.id),
                 )
               }
@@ -135,10 +131,8 @@ function ConfigListEntry(props: {
   selectConfig(configId: string | null): void;
 }) {
   const roomName = useRoomName();
-  const dispatch = useAppDispatch();
-  const config = useAppState((s) =>
-    configSlice.selectors.selectById(s, props.configId),
-  );
+  const mutations = useMutations();
+  const config = useRoomState((s) => s.config.entities[props.configId]);
   const gameData = useStockGameData(config.gameKey);
   const multiDraws = config.multiDraws?.configs.length
     ? `${config.multiDraws.configs.length} ${config.multiDraws.merge ? "draws" : "sets"}`
@@ -159,14 +153,10 @@ function ConfigListEntry(props: {
             copyTextToClipboard(url.href, "Preview URL copied to clipboard");
           }}
           onExport={() => {
-            saveConfig(
-              dispatch((_, gs) =>
-                configSlice.selectors.selectById(gs(), props.configId),
-              ),
-            );
+            saveConfig(config);
           }}
           onDuplicate={() => {
-            dispatch(createNewConfig(roomName, props.configId)).then((c) =>
+            mutations.newConfig(props.configId).then((c) =>
               props.selectConfig(c.id),
             );
           }}
@@ -174,7 +164,7 @@ function ConfigListEntry(props: {
             if (!confirm(`Are you sure you want to delete "${config.name}"?`))
               return;
             props.selectConfig(props.nextConfigId);
-            dispatch(configSlice.actions.removeOne(config.id));
+            mutations.removeConfig(config.id);
           }}
         />
       )}

@@ -6,11 +6,11 @@ import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import { CircleArrowLeft } from "@blueprintjs/icons";
 import { FormGroup, InputGroup } from "@blueprintjs/core";
-import { useAppDispatch, useAppState } from "../state/store";
-import { configSlice, ConfigState } from "../state/config.slice";
+import { useRoomState } from "../jazz/app-state-context";
+import { useMutations } from "../jazz/use-mutations";
+import type { ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { useLastConfigSelected } from "../state/config.atoms";
-import { changeGameKeyForConfig } from "../state/thunks";
 import { ConfigList } from "./config-select";
 
 export function ConfigPage() {
@@ -50,8 +50,8 @@ function ConfigIdGate({
   configId: string | null;
   children: React.ReactNode;
 }) {
-  const configExists = useAppState((s) =>
-    configId ? !!configSlice.selectors.selectById(s, configId) : false,
+  const configExists = useRoomState((s) =>
+    configId ? !!s.config.entities[configId] : false,
   );
   if (configExists) {
     return children;
@@ -60,21 +60,16 @@ function ConfigIdGate({
 }
 
 function ConfigCoreFields({ configId }: { configId: string | null }) {
-  const name = useAppState(
+  const name = useRoomState(
     (s) => configId && s.config.entities[configId]?.name,
   );
-  const gameKey = useAppState(
+  const gameKey = useRoomState(
     (s) => configId && s.config.entities[configId]?.gameKey,
   );
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   if (!configId) return null;
   const updateConfig = (changes: Partial<ConfigState>) => {
-    dispatch(
-      configSlice.actions.updateOne({
-        id: configId,
-        changes,
-      }),
-    );
+    mutations.updateConfig(configId, changes);
   };
   return (
     <div style={{ paddingInline: "1.5em" }}>
@@ -89,7 +84,7 @@ function ConfigCoreFields({ configId }: { configId: string | null }) {
           fill
           value={gameKey || undefined}
           onGameSelect={(newGame) =>
-            dispatch(changeGameKeyForConfig(configId, newGame))
+            mutations.changeGameKey(configId, newGame)
           }
         />
       </FormGroup>

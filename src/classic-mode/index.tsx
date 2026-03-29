@@ -1,21 +1,18 @@
-import { Provider as ReduxProvider } from "react-redux";
 import { Header } from "../header";
-import { createClientStore } from "../state/store";
 import { Outlet } from "react-router-dom";
 import { ClassicModeContext } from "../common-components/app-mode";
-import { LocalStorageManager } from "./localstorage-manager";
-import { useMemo } from "react";
-import { classicModeState } from "../state/localstorage";
+import { RoomProvider } from "../jazz/room-context";
 
+// Classic mode uses the fixed roomName "classic" — Jazz persists the room in
+// localStorage automatically (guestMode), so no explicit localStorage manager
+// is needed.  The room is created on first visit and reused thereafter.
 export function ClassicModeShell() {
-  const store = useMemo(() => createClientStore(classicModeState), []);
   return (
-    <ReduxProvider store={store}>
-      <LocalStorageManager />
+    <RoomProvider roomName="classic">
       <ClassicModeContext>
         <Header />
         <Outlet />
       </ClassicModeContext>
-    </ReduxProvider>
+    </RoomProvider>
   );
 }

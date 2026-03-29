@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
-import { drawingsSlice } from "../state/drawings.slice";
-import { useAppState } from "../state/store";
+import { useRoomState } from "../jazz/app-state-context";
 import { getAllPlayers, playerNameByIndex } from "../models/Drawing";
 
 export function GlobalLabel() {
   const params = useParams<"roomName" | "labelId">();
-  const text = useAppState((s) => {
+  const text = useRoomState((s) => {
     if (!params.labelId) return null;
     const label = s.event.obsLabels[params.labelId];
     if (!label) return null;
@@ -16,10 +15,10 @@ export function GlobalLabel() {
 
 export function CabTitle() {
   const params = useParams<"roomName" | "cabId">();
-  const text = useAppState((s) => {
+  const text = useRoomState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
+    const parent = typeof drawingId === "string" ? s.drawings.entities[drawingId] : s.drawings.entities[drawingId[0]];
     if (!parent) return null;
     return parent.meta.title;
   });
@@ -28,10 +27,10 @@ export function CabTitle() {
 
 export function CabPlayers() {
   const params = useParams<"roomName" | "cabId">();
-  const text = useAppState((s) => {
+  const text = useRoomState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
+    const parent = typeof drawingId === "string" ? s.drawings.entities[drawingId] : s.drawings.entities[drawingId[0]];
     if (!parent) return null;
     return getAllPlayers(parent).join(", ");
   });
@@ -44,10 +43,10 @@ export function CabPlayer(props: {
 }) {
   const { displayType = "NameAndScore " } = props;
   const params = useParams<"roomName" | "cabId">();
-  const text = useAppState((s) => {
+  const text = useRoomState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
+    const parent = typeof drawingId === "string" ? s.drawings.entities[drawingId] : s.drawings.entities[drawingId[0]];
     if (!parent) return null;
     const playerIndex = parent.playerDisplayOrder[props.p - 1];
     const name = playerNameByIndex(parent.meta, playerIndex, "");
@@ -73,10 +72,10 @@ export function CabPlayer(props: {
 
 export function PhaseName() {
   const params = useParams<"roomName" | "cabId">();
-  const text = useAppState((s) => {
+  const text = useRoomState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
-    const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
+    const parent = typeof drawingId === "string" ? s.drawings.entities[drawingId] : s.drawings.entities[drawingId[0]];
     if (!parent) return null;
     return parent.meta.type === "startgg" ? parent.meta.phaseName : null;
   });

@@ -1,34 +1,24 @@
-import { Outlet, useLoaderData } from "react-router-dom";
-import { Provider as ReduxProvider } from "react-redux";
-import { getPartykitState } from "../party/host";
-import { useMemo } from "react";
-import { createClientStore } from "../state/store";
+import { Outlet, useParams } from "react-router-dom";
 import { PreviewModeHeader } from "./header";
 import { DrawingList } from "../drawing-list";
 import { ClassicModeContext } from "../common-components/app-mode";
 import { useIntl } from "../hooks/useIntl";
+import { RoomProvider } from "../jazz/room-context";
 
-async function loader(roomName: string | undefined) {
-  if (!roomName) {
-    return;
-  }
-  const state = await getPartykitState(roomName);
-  state.drawings.entities = {};
-  state.drawings.ids = [];
-  return state;
-}
-
+// Preview mode loads the same Jazz room as tournament mode for the given
+// roomName (the room ID is stored in localStorage by the tournament operator).
 export function PreviewShell() {
-  const initialState = useLoaderData() as Awaited<ReturnType<typeof loader>>;
-  const store = useMemo(() => createClientStore(initialState), [initialState]);
+  const params = useParams<"roomName">();
+  if (!params.roomName) return null;
   return (
-    <ReduxProvider store={store}>
+    <RoomProvider roomName={params.roomName}>
       <Outlet />
-    </ReduxProvider>
+    </RoomProvider>
   );
 }
 
-PreviewShell.loader = loader;
+// No async loader needed — Jazz loads the room reactively.
+PreviewShell.loader = async (_roomName: string | undefined) => null;
 
 export function PreviewView() {
   const { t } = useIntl();

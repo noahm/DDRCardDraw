@@ -20,8 +20,8 @@ import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
 import { ThemeToggle, useInObs } from "./theme-toggle";
-import { useAppDispatch, useAppState } from "./state/store";
-import { drawingsSlice } from "./state/drawings.slice";
+import { useRoomState } from "./jazz/app-state-context";
+import { useMutations } from "./jazz/use-mutations";
 import { EventModeGated } from "./common-components/app-mode";
 import { useNavigate, useHref } from "react-router-dom";
 
@@ -68,14 +68,11 @@ export function Header({
 
 export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
-  const dispatch = useAppDispatch();
+  const mutations = useMutations();
   const navigate = useNavigate();
   const dashHref = useHref("dash", { relative: "route" });
-  const clearDrawings = useCallback(
-    () => dispatch(drawingsSlice.actions.clearDrawings()),
-    [dispatch],
-  );
-  const haveDrawings = useAppState(drawingsSlice.selectors.haveDrawings);
+  const clearDrawings = useCallback(() => mutations.clearDrawings(), [mutations]);
+  const haveDrawings = useRoomState((s) => !!s.drawings.ids.length);
   const { t } = useIntl();
 
   const menu = (
