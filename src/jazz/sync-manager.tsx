@@ -30,6 +30,9 @@ import {
   JazzRoom,
   JazzDrawingList,
   JazzConfigList,
+  JazzCab,
+  JazzCabRecord,
+  JazzObsLabelRecord,
 } from "./schema";
 import { jazzRoomToAppState, type JazzRoomInstance } from "./converters";
 import { applyActionToJazz } from "./room-mutations";
@@ -106,16 +109,27 @@ export function JazzSyncManager({
     const drawings = JazzDrawingList.create([], { owner: group });
     const configs = JazzConfigList.create([], { owner: group });
 
+    // Create the default cab CoRecord with a single "Primary Cab" entry
+    const defaultCab = JazzCab.create(
+      { id: "default", name: "Primary Cab", activeMatchJson: null },
+      { owner: group },
+    );
+    const cabs = JazzCabRecord.create({}, { owner: group });
+    (cabs as unknown as { $jazz: { set(k: string, v: unknown): void } }).$jazz.set(
+      "default",
+      defaultCab,
+    );
+
+    const obsLabels = JazzObsLabelRecord.create({}, { owner: group });
+
     const room = JazzRoom.create(
       {
         eventName: "",
-        cabsJson: JSON.stringify({
-          default: { id: "default", name: "Primary Cab", activeMatch: null },
-        }),
-        obsLabelsJson: JSON.stringify({}),
         obsCss: "h1 {\n  /* add text styles here */\n}",
         drawings,
         configs,
+        cabs,
+        obsLabels,
       },
       { owner: group },
     );
@@ -155,8 +169,21 @@ function RoomLoader({
 
   const room = useCoState(JazzRoom, roomId, {
     resolve: {
-      drawings: { $each: true },
+      drawings: {
+        $each: {
+          // Primitive CoRecord — just load the record itself
+          winners: true,
+          // CoRecords of CoMaps — load each nested CoMap
+          bans: { $each: true },
+          protects: { $each: true },
+          pocketPicks: { $each: true },
+          subDrawings: { $each: true },
+        },
+      },
       configs: { $each: true },
+      // Event-level CoRecords
+      cabs: { $each: true },
+      obsLabels: { $each: true },
     },
   });
 

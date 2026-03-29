@@ -1,73 +1,113 @@
 /**
  * Jazz DB Schema - DDR Card Draw
  *
- * This file defines the collaborative CoValue types that replace the combined
- * Redux state (drawings, configs, event) + PartyKit real-time sync layer.
- *
  * Design notes:
- * - Each Drawing is a CoMap, so concurrent edits from multiple clients
- *   (e.g. P1 marks a ban while P2 marks a protect) merge without conflicts.
- * - Complex union / array fields (charts, meta) are JSON-serialised strings
- *   because they are replaced atomically and don't need sub-field CRDT merging.
- *   A production version could replace these with nested CoLists/CoMaps for
- *   even finer-grained conflict resolution.
- * - The top-level JazzRoom owns everything; it lives in a Group with public
- *   writer access so any browser that knows the Jazz ID can collaborate.
+ * - Per-chart CRDT fields (winners, bans, protects, pocketPicks) are CoRecords
+ *   so concurrent updates from different clients merge at the chart-ID level.
+ * - subDrawings is a CoRecord of JazzSubDrawing CoMaps — adding/removing
+ *   sub-draws doesn't conflict even under concurrency.
+ * - chartsJson inside JazzSubDrawing stays as JSON: charts are replaced
+ *   atomically on redraw, never edited field-by-field.
+ * - Config scalar fields and complex union fields (meta, playerDisplayOrder,
+ *   weights, etc.) remain JSON strings — they are set atomically.
+ * - cabs and obsLabels are CoRecords so individual cab/label edits don't
+ *   conflict with each other.
  */
 
 import { co, z } from "jazz-tools";
 
 // ---------------------------------------------------------------------------
-// Drawings
+// Nested drawing types
 // ---------------------------------------------------------------------------
 
 /**
- * A single Drawing (match) in the tournament.
- *
- * Most fields that are mutable during a match (winners, bans, protects,
- * pocketPicks) are stored as separate top-level keys so that concurrent
- * writes from different clients can be merged field-by-field.
- *
- * `subDrawingsJson` contains the full Record<string, SubDrawing> including
- * the chart arrays; it is replaced wholesale on redraw operations.
+ * A ban or protect action tied to a chart.
+ * Stored as a CoMap so concurrent ban + protect on different charts never
+ * conflict (one CoMap per chart entry in the parent CoRecord).
+ */
+export const JazzPlayerAction = co.map({
+  player: z.number(),
+  chartId: z.string(),
+});
+
+/** Record<chartId, JazzPlayerAction> — used for both bans and protects. */
+export const JazzPlayerActionRecord = co.record(z.string(), JazzPlayerAction);
+
+/**
+ * Record<chartId, playerIndex> — absence of a key means no winner yet.
+ * Using a primitive CoRecord (number values) for maximum simplicity.
+ */
+export const JazzWinnersRecord = co.record(z.string(), z.number());
+
+/**
+ * A pocket pick: the picking player, the target chart, and the chosen chart
+ * (stored as JSON because EligibleChart is a large complex union type that is
+ * always set atomically).
+ */
+export const JazzPocketPick = co.map({
+  player: z.number(),
+  chartId: z.string(),
+  /** JSON-serialised EligibleChart */
+  pickJson: z.string(),
+});
+
+/** Record<chartId, JazzPocketPick> */
+export const JazzPocketPickRecord = co.record(z.string(), JazzPocketPick);
+
+/**
+ * A single sub-drawing (set) within a match.
+ * chartsJson is replaced atomically on redraw — there is no benefit to making
+ * the charts array a CoList because the whole array is always regenerated.
+ */
+export const JazzSubDrawing = co.map({
+  /** components of CompoundSetId */
+  parentId: z.string(),
+  subId: z.string(),
+  configId: z.string(),
+  /** JSON: Array<DrawnChart | PlayerPickPlaceholder> */
+  chartsJson: z.string(),
+});
+
+/** Record<subId, JazzSubDrawing> */
+export const JazzSubDrawingRecord = co.record(z.string(), JazzSubDrawing);
+
+// ---------------------------------------------------------------------------
+// Drawing
+// ---------------------------------------------------------------------------
+
+/**
+ * One Drawing (match).  The per-chart action records (winners, bans, protects,
+ * pocketPicks) and the subDrawings record are all CoValues so that concurrent
+ * edits from different browser clients (e.g. operator marking a ban while the
+ * bracket runner updates the protect) merge without conflicts.
  */
 export const JazzDrawing = co.map({
   /** Stable ID, mirrors Drawing.id */
   id: z.string(),
   configId: z.string(),
-  /** JSON: SimpleMeta | StartggVersusMeta | StartggGauntletMeta */
+  /** JSON: SimpleMeta | StartggVersusMeta | StartggGauntletMeta (set once) */
   metaJson: z.string(),
-  /** JSON: number[] — index order for player display */
+  /** JSON: number[] — player display order (rarely changed, set atomically) */
   playerDisplayOrderJson: z.string(),
-  /** JSON: Record<string, number | null> — chartId → winning player index */
-  winnersJson: z.string(),
-  /** JSON: Record<string, PlayerActionOnChart | null> */
-  bansJson: z.string(),
-  /** JSON: Record<string, PlayerActionOnChart | null> */
-  protectsJson: z.string(),
-  /** JSON: Record<string, PocketPick | null> */
-  pocketPicksJson: z.string(),
-  /** Optional priority player index */
   priorityPlayer: z.number().optional(),
-  /**
-   * JSON: Record<string, SubDrawing>
-   * Each SubDrawing contains { compoundId, configId, charts[] }.
-   * Charts are complex union objects (DrawnChart | PlayerPickPlaceholder)
-   * so we serialise the whole record.
-   */
-  subDrawingsJson: z.string(),
+  /** chartId → winning player index; absence = no winner */
+  winners: JazzWinnersRecord,
+  /** chartId → PlayerActionOnChart */
+  bans: JazzPlayerActionRecord,
+  /** chartId → PlayerActionOnChart */
+  protects: JazzPlayerActionRecord,
+  /** chartId → PocketPick */
+  pocketPicks: JazzPocketPickRecord,
+  /** subId → SubDrawing */
+  subDrawings: JazzSubDrawingRecord,
 });
 
 export const JazzDrawingList = co.list(JazzDrawing);
 
 // ---------------------------------------------------------------------------
-// Configs
+// Config (array fields kept as JSON — set atomically, not edited per-element)
 // ---------------------------------------------------------------------------
 
-/**
- * A draw configuration (game, chart count, difficulty range, etc.).
- * Array fields (weights, folders, difficulties, flags) are JSON-serialised.
- */
 export const JazzConfig = co.map({
   id: z.string(),
   name: z.string(),
@@ -95,48 +135,64 @@ export const JazzConfig = co.map({
   defaultPlayersPerDraw: z.number(),
   sortByLevel: z.boolean(),
   useGranularLevels: z.boolean(),
-  /** JSON: { merge: boolean; configs: string[] } | undefined — omitted when not set */
+  /** JSON: { merge: boolean; configs: string[] } | undefined */
   multiDrawsJson: z.string().optional(),
 });
 
 export const JazzConfigList = co.list(JazzConfig);
 
 // ---------------------------------------------------------------------------
+// Event-level nested types
+// ---------------------------------------------------------------------------
+
+/**
+ * One arcade cabinet / station.
+ * activeMatchJson stores a CompoundSetId tuple, a plain string match ID, or
+ * null as JSON (the union type makes a z.string().nullable() cleaner here).
+ */
+export const JazzCab = co.map({
+  id: z.string(),
+  name: z.string(),
+  /** JSON: CompoundSetId | string | null */
+  activeMatchJson: z.string().nullable(),
+});
+
+/** Record<cabId, JazzCab> */
+export const JazzCabRecord = co.record(z.string(), JazzCab);
+
+/** An OBS text overlay label: a human label string and its current value. */
+export const JazzObsLabel = co.map({
+  label: z.string(),
+  value: z.string(),
+});
+
+/** Record<labelId, JazzObsLabel> */
+export const JazzObsLabelRecord = co.record(z.string(), JazzObsLabel);
+
+// ---------------------------------------------------------------------------
 // Event Room
 // ---------------------------------------------------------------------------
 
 /**
- * The top-level collaborative room for a tournament event.
+ * Top-level collaborative room for a tournament event.
  *
  * Replaces both the Redux store (drawings + config + event slices) AND the
  * PartyKit server/client WebSocket layer.  Any client that loads this CoValue
- * by its ID gets live CRDT-synced updates from all other connected clients
- * automatically via Jazz Cloud.
- *
- * Cab management and OBS labels are low-cardinality records stored as JSON.
- * In production they could each be their own CoRecord for finer granularity.
+ * by its ID gets live CRDT-synced updates from all connected clients via Jazz.
  */
 export const JazzRoom = co.map({
   eventName: z.string(),
-  /** JSON: Record<string, CabInfo> — arcade-machine assignments */
-  cabsJson: z.string(),
-  /** JSON: Record<string, { label: string; value: string }> */
-  obsLabelsJson: z.string(),
   obsCss: z.string(),
   drawings: JazzDrawingList,
   configs: JazzConfigList,
+  cabs: JazzCabRecord,
+  obsLabels: JazzObsLabelRecord,
 });
 
 // ---------------------------------------------------------------------------
-// Account (minimal — we use guest / anonymous mode)
+// Account (minimal — guest / anonymous mode)
 // ---------------------------------------------------------------------------
 
-/**
- * Minimal account schema.  We don't require sign-in; the app runs in guest
- * mode so every browser session gets a persistent anonymous identity stored
- * in localStorage.  Room ownership is managed via a public Group so any
- * client with the Jazz room ID can read and write.
- */
 export const AppAccount = co.account({
   root: co.map({}),
   profile: co.profile(),

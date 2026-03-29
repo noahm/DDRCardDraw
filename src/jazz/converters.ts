@@ -8,10 +8,25 @@
  */
 
 import type { InstanceOfSchema } from "jazz-tools";
-import { type Drawing, type SubDrawing } from "../models/Drawing";
+import {
+  type Drawing,
+  type SubDrawing,
+  type PlayerActionOnChart,
+  type PocketPick,
+} from "../models/Drawing";
 import { type ConfigState } from "../state/config.slice";
+import { type CabInfo } from "../state/event.slice";
 import type { AppState } from "../state/store";
-import { JazzDrawing, JazzConfig, JazzRoom } from "./schema";
+import {
+  JazzDrawing,
+  JazzConfig,
+  JazzRoom,
+  JazzPlayerAction,
+  JazzPocketPick,
+  JazzSubDrawing,
+  JazzCab,
+  JazzObsLabel,
+} from "./schema";
 
 // ---------------------------------------------------------------------------
 // Instance types (loaded, non-null)
@@ -20,23 +35,77 @@ import { JazzDrawing, JazzConfig, JazzRoom } from "./schema";
 export type JazzRoomInstance = InstanceOfSchema<typeof JazzRoom>;
 export type JazzDrawingInstance = InstanceOfSchema<typeof JazzDrawing>;
 export type JazzConfigInstance = InstanceOfSchema<typeof JazzConfig>;
+export type JazzPlayerActionInstance = InstanceOfSchema<typeof JazzPlayerAction>;
+export type JazzPocketPickInstance = InstanceOfSchema<typeof JazzPocketPick>;
+export type JazzSubDrawingInstance = InstanceOfSchema<typeof JazzSubDrawing>;
+export type JazzCabInstance = InstanceOfSchema<typeof JazzCab>;
+export type JazzObsLabelInstance = InstanceOfSchema<typeof JazzObsLabel>;
 
 // ---------------------------------------------------------------------------
 // Jazz → Redux types
 // ---------------------------------------------------------------------------
 
 export function jazzDrawingToDrawing(jd: JazzDrawingInstance): Drawing {
+  // Cast to raw-access shapes for CoRecord iteration
+  const raw = jd as unknown as {
+    id: string;
+    configId: string;
+    metaJson: string;
+    playerDisplayOrderJson: string;
+    priorityPlayer?: number;
+    winners: Record<string, number | null>;
+    bans: Record<string, JazzPlayerActionInstance | null>;
+    protects: Record<string, JazzPlayerActionInstance | null>;
+    pocketPicks: Record<string, JazzPocketPickInstance | null>;
+    subDrawings: Record<string, JazzSubDrawingInstance | null>;
+  };
+
+  const winners: Record<string, number | null> = {};
+  for (const [k, v] of Object.entries(raw.winners ?? {})) {
+    if (v != null) winners[k] = v;
+  }
+
+  const bans: Record<string, PlayerActionOnChart | null> = {};
+  for (const [k, v] of Object.entries(raw.bans ?? {})) {
+    if (v != null) bans[k] = { player: v.player, chartId: v.chartId };
+  }
+
+  const protects: Record<string, PlayerActionOnChart | null> = {};
+  for (const [k, v] of Object.entries(raw.protects ?? {})) {
+    if (v != null) protects[k] = { player: v.player, chartId: v.chartId };
+  }
+
+  const pocketPicks: Record<string, PocketPick | null> = {};
+  for (const [k, v] of Object.entries(raw.pocketPicks ?? {})) {
+    if (v != null)
+      pocketPicks[k] = {
+        player: v.player,
+        chartId: v.chartId,
+        pick: JSON.parse(v.pickJson),
+      };
+  }
+
+  const subDrawings: Record<string, SubDrawing> = {};
+  for (const [k, v] of Object.entries(raw.subDrawings ?? {})) {
+    if (v != null)
+      subDrawings[k] = {
+        compoundId: [v.parentId, v.subId],
+        configId: v.configId,
+        charts: JSON.parse(v.chartsJson),
+      };
+  }
+
   return {
-    id: jd.id,
-    configId: jd.configId,
-    meta: JSON.parse(jd.metaJson),
-    playerDisplayOrder: JSON.parse(jd.playerDisplayOrderJson),
-    winners: JSON.parse(jd.winnersJson),
-    bans: JSON.parse(jd.bansJson),
-    protects: JSON.parse(jd.protectsJson),
-    pocketPicks: JSON.parse(jd.pocketPicksJson),
-    priorityPlayer: jd.priorityPlayer ?? undefined,
-    subDrawings: JSON.parse(jd.subDrawingsJson),
+    id: raw.id,
+    configId: raw.configId,
+    meta: JSON.parse(raw.metaJson),
+    playerDisplayOrder: JSON.parse(raw.playerDisplayOrderJson),
+    priorityPlayer: raw.priorityPlayer ?? undefined,
+    winners,
+    bans,
+    protects,
+    pocketPicks,
+    subDrawings,
   };
 }
 
@@ -68,10 +137,6 @@ export function jazzConfigToConfig(jc: JazzConfigInstance): ConfigState {
   };
 }
 
-const DEFAULT_CABS_JSON = JSON.stringify({
-  default: { id: "default", name: "Primary Cab", activeMatch: null },
-});
-
 const DEFAULT_OBS_CSS = `h1 {
   /* add text styles here */
 }`;
@@ -89,6 +154,35 @@ export function jazzRoomToAppState(room: JazzRoomInstance): Partial<AppState> {
     .filter(Boolean)
     .map(jazzConfigToConfig);
 
+  // cabs: CoRecord<string, JazzCab> → Record<string, CabInfo>
+  const cabsRec =
+    (room.cabs as unknown as Record<string, JazzCabInstance | null>) ?? {};
+  const cabs: Record<string, CabInfo> = {};
+  for (const [k, v] of Object.entries(cabsRec)) {
+    if (v != null) {
+      cabs[k] = {
+        id: v.id,
+        name: v.name,
+        activeMatch: v.activeMatchJson ? JSON.parse(v.activeMatchJson) : null,
+      };
+    }
+  }
+  // Guarantee at least the default cab when the room was just created
+  if (Object.keys(cabs).length === 0) {
+    cabs.default = { id: "default", name: "Primary Cab", activeMatch: null };
+  }
+
+  // obsLabels: CoRecord<string, JazzObsLabel> → Record<string, { label, value }>
+  const labelsRec =
+    (room.obsLabels as unknown as Record<
+      string,
+      JazzObsLabelInstance | null
+    >) ?? {};
+  const obsLabels: Record<string, { label: string; value: string }> = {};
+  for (const [k, v] of Object.entries(labelsRec)) {
+    if (v != null) obsLabels[k] = { label: v.label, value: v.value };
+  }
+
   return {
     drawings: {
       ids: drawings.map((d) => d.id),
@@ -100,29 +194,29 @@ export function jazzRoomToAppState(room: JazzRoomInstance): Partial<AppState> {
     },
     event: {
       eventName: room.eventName,
-      cabs: JSON.parse((room.cabsJson as string) || DEFAULT_CABS_JSON),
-      obsLabels: JSON.parse((room.obsLabelsJson as string) || "{}"),
+      cabs,
+      obsLabels,
       obsCss: (room.obsCss as string) || DEFAULT_OBS_CSS,
     },
   };
 }
 
 // ---------------------------------------------------------------------------
-// Redux types → Jazz init objects (used in JazzXxx.create() calls)
+// Redux types → Jazz init objects
 // ---------------------------------------------------------------------------
 
-export function drawingToJazzInit(drawing: Drawing) {
+/**
+ * Scalar / JSON fields only — CoRecord fields (winners, bans, protects,
+ * pocketPicks, subDrawings) must be created as separate CoValues and passed
+ * directly to JazzDrawing.create() in room-mutations.ts.
+ */
+export function drawingScalarInit(drawing: Drawing) {
   return {
     id: drawing.id,
     configId: drawing.configId,
     metaJson: JSON.stringify(drawing.meta),
     playerDisplayOrderJson: JSON.stringify(drawing.playerDisplayOrder),
-    winnersJson: JSON.stringify(drawing.winners),
-    bansJson: JSON.stringify(drawing.bans),
-    protectsJson: JSON.stringify(drawing.protects),
-    pocketPicksJson: JSON.stringify(drawing.pocketPicks),
     priorityPlayer: drawing.priorityPlayer,
-    subDrawingsJson: JSON.stringify(drawing.subDrawings),
   };
 }
 
@@ -174,39 +268,4 @@ export function findJazzConfig(
 ): JazzConfigInstance | undefined {
   const list = room.configs as unknown as JazzConfigInstance[];
   return list?.find((jc) => jc?.id === configId) ?? undefined;
-}
-
-// ---------------------------------------------------------------------------
-// JSON-field mutation helper
-// ---------------------------------------------------------------------------
-
-/**
- * Read → parse → mutate → stringify → write a JSON string field on a JazzDrawing.
- * Uses `$jazz.set()` which is the correct Jazz CoMap mutation API.
- */
-export function mutateDrawingJson(
-  jd: JazzDrawingInstance,
-  key: "winnersJson" | "bansJson" | "protectsJson" | "pocketPicksJson" | "subDrawingsJson" | "metaJson" | "playerDisplayOrderJson",
-  mutate: (value: ReturnType<typeof JSON.parse>) => unknown,
-) {
-  const current = JSON.parse((jd as unknown as Record<string, string>)[key] ?? "{}");
-  const next = mutate(current);
-  // $jazz.set() is the documented Jazz API for CoMap mutations
-  (jd.$jazz as { set(key: string, value: string): void }).set(
-    key,
-    JSON.stringify(next),
-  );
-}
-
-export function mutateRoomJson(
-  room: JazzRoomInstance,
-  key: "cabsJson" | "obsLabelsJson",
-  mutate: (value: ReturnType<typeof JSON.parse>) => unknown,
-) {
-  const current = JSON.parse((room as unknown as Record<string, string>)[key] ?? "{}");
-  const next = mutate(current);
-  (room.$jazz as { set(key: string, value: string): void }).set(
-    key,
-    JSON.stringify(next),
-  );
 }
