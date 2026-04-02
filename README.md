@@ -11,9 +11,9 @@ Read all about what the app can do [in the user manual](https://github.com/noahm
 
 ## Customizing / Contributing
 
-This app can be easily customized for novel formats a tournament might use. If you have feature requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
+This app can be easily customized for novel formats a tournament might use. If you have feature requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on Bluesky](https://bsky.app/profile/noahm.omg.lol).
 
-If you want to take a stab at developing on the app yourself, you will need have node.js >= 18.0.0 installed along with [yarn](https://yarnpkg.com/). Some familarity with React will also help.
+If you want to take a stab at developing on the app yourself, you will need have node.js >= 22.0.0 installed along with [yarn](https://yarnpkg.com/). Some familarity with React will also help.
 
 Fork this repo to your account and then clone the fork to your computer. Then the following commands will be useful:
 
