@@ -17,6 +17,7 @@ export interface EligibleChart {
   extras: string[];
   dateAdded?: string;
   song: Song;
+  folder?: string;
 }
 
 export const CHART_PLACEHOLDER = "PLACEHOLDER";

@@ -1,0 +1,2475 @@
+{
+  "meta": {
+    "menuParent": "more",
+    "cardVariant": "donkeykonga",
+    "styles": ["single"],
+    "difficulties": [
+      { "key": "monkey", "color": "#76fce1" },
+      { "key": "chimp", "color": "#ffee28" },
+      { "key": "gorilla", "color": "#fc97fa" },
+      { "key": "famicom", "color": "#ff0000" }
+    ],
+    "folders": [
+      "Donkey Konga (JP)",
+      "Donkey Konga (NA)",
+      "Donkey Konga (EU)",
+      "Donkey Konga 2 (JP)",
+      "Donkey Konga 2 (NA)",
+      "Donkey Konga 2 (EU)",
+      "Donkey Konga 3 (JP)"
+    ],
+    "flags": ["dupe-jp", "dupe-na"],
+    "lastUpdated": 1768702400603
+  },
+  "defaults": {
+    "style": "single",
+    "difficulties": ["chimp", "gorilla"],
+    "folders": ["Donkey Konga (NA)"],
+    "flags": ["dupe-jp"],
+    "lowerLvlBound": 5,
+    "upperLvlBound": 8
+  },
+  "i18n": {
+    "en": {
+      "name": "Donkey Konga (series)",
+      "monkey": "Monkey",
+      "chimp": "Chimp",
+      "gorilla": "Gorilla",
+      "famicom": "Famicom",
+      "single": "Single",
+      "dupe-jp": "NA/EU Duplicates of JP songs",
+      "dupe-na": "EU Duplicates of NA songs",
+      "$abbr": {
+        "monkey": "MONKEY",
+        "chimp": "CHIMP",
+        "gorilla": "GORILLA",
+        "famicom": "FAMICOM"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "Mori no Kumasan",
+      "saHash": "1-jp-1",
+      "artist": "Yoshihiro Baba",
+      "jacket": "donkeykonga/1-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Clarinet o Kowashichatta",
+      "saHash": "1-jp-2",
+      "artist": "Yoshiko Ishii",
+      "jacket": "donkeykonga/1-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Ōkina Furudokei",
+      "saHash": "1-jp-3",
+      "artist": "Tachikawa Sumito",
+      "jacket": "donkeykonga/1-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Hyokkori Hyōtanjima",
+      "saHash": "1-jp-4",
+      "artist": "Yoko Maekawa",
+      "jacket": "donkeykonga/1-jp-4.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "We are the ONE ~Bokura wa Hitotsu~",
+      "saHash": "1-jp-5",
+      "artist": "Akira Kushida",
+      "jacket": "donkeykonga/1-jp-5.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Hamtaro Tottoko Uta",
+      "saHash": "1-jp-6",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-jp-6.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Advance Adventure",
+      "saHash": "1-jp-7",
+      "artist": "GARDEN",
+      "jacket": "donkeykonga/1-jp-7.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Kirby!",
+      "saHash": "1-jp-8",
+      "artist": "Hiroko Asakawa",
+      "jacket": "donkeykonga/1-jp-8.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Densetsu no Starfy",
+      "saHash": "1-jp-9",
+      "artist": "Becky",
+      "jacket": "donkeykonga/1-jp-9.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Ai no Uta",
+      "saHash": "1-jp-10",
+      "artist": "Strawberry Flower",
+      "jacket": "donkeykonga/1-jp-10.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mata Aeru Hi Made",
+      "saHash": "1-jp-11",
+      "artist": "Yuzu",
+      "jacket": "donkeykonga/1-jp-11.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Kaze no La La La",
+      "saHash": "1-jp-12",
+      "artist": "Mai Kuraki",
+      "jacket": "donkeykonga/1-jp-12.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Momoiro Kataomoi",
+      "saHash": "1-jp-13",
+      "artist": "Aya Matsuura",
+      "jacket": "donkeykonga/1-jp-13.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mini-Moni. Jankenpyon!",
+      "saHash": "1-jp-14",
+      "artist": "Mini-Moni",
+      "jacket": "donkeykonga/1-jp-14.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Ashita ga Arusa",
+      "saHash": "1-jp-15",
+      "artist": "Re:Japan",
+      "jacket": "donkeykonga/1-jp-15.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Koi no Dance Site",
+      "saHash": "1-jp-16",
+      "artist": "Morning Musume",
+      "jacket": "donkeykonga/1-jp-16.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Fly High",
+      "saHash": "1-jp-17",
+      "artist": "Ayumi Hamasaki",
+      "jacket": "donkeykonga/1-jp-17.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Shake",
+      "saHash": "1-jp-18",
+      "artist": "SMAP",
+      "jacket": "donkeykonga/1-jp-18.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Desire -Jōnetsu-",
+      "saHash": "1-jp-19",
+      "artist": "Akina Nakamori",
+      "jacket": "donkeykonga/1-jp-19.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Colors",
+      "saHash": "1-jp-20",
+      "artist": "Hikaru Utada",
+      "jacket": "donkeykonga/1-jp-20.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Asu e no Tobira",
+      "saHash": "1-jp-21",
+      "artist": "I WiSH",
+      "jacket": "donkeykonga/1-jp-21.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Love Somebody",
+      "saHash": "1-jp-22",
+      "artist": "Maxi Priest and Yūji Oda",
+      "jacket": "donkeykonga/1-jp-22.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Galaxy Express 999",
+      "saHash": "1-jp-23",
+      "artist": "Godiego",
+      "jacket": "donkeykonga/1-jp-23.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mas que Nada",
+      "saHash": "1-jp-24",
+      "artist": "Sérgio Mendes",
+      "jacket": "donkeykonga/1-jp-24.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "La Bamba",
+      "saHash": "1-jp-25",
+      "artist": "Ritchie Valens",
+      "jacket": "donkeykonga/1-jp-25.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mambo No. 5",
+      "saHash": "1-jp-26",
+      "artist": "Pérez Prado",
+      "jacket": "donkeykonga/1-jp-26.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Oklahoma Mixer",
+      "saHash": "1-jp-27",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Turkish March",
+      "saHash": "1-jp-28",
+      "artist": "Wolfgang Amadeus Mozart",
+      "jacket": "donkeykonga/1-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Hungarian Dance No.5 in G Minor",
+      "saHash": "1-na-29",
+      "artist": "Johannes Brahms",
+      "jacket": "donkeykonga/1-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mario Bros. Theme",
+      "saHash": "1-jp-30",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-32.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "DK Rap",
+      "saHash": "1-jp-31",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-30.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Donkey Konga Theme",
+      "saHash": "1-jp-32",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Diddy's Ditties",
+      "saHash": "1-na-1",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Bingo",
+      "saHash": "1-na-2",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Campfire Medley",
+      "saHash": "1-na-3",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Pokémon Theme",
+      "saHash": "1-na-4",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-4.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Kirby: Right Back at Ya!",
+      "saHash": "1-na-5",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-5.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "We Will Rock You",
+      "saHash": "1-na-6",
+      "artist": "Queen",
+      "jacket": "donkeykonga/1-na-6.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Like Wow",
+      "saHash": "1-na-7",
+      "artist": "Leslie Carter",
+      "jacket": "donkeykonga/1-na-7.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Wild Thing",
+      "saHash": "1-na-8",
+      "artist": "The Troggs",
+      "jacket": "donkeykonga/1-na-8.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "I Think I Love You",
+      "saHash": "1-na-9",
+      "artist": "The Partridge Family",
+      "jacket": "donkeykonga/1-na-9.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Louie Louie",
+      "saHash": "1-na-10",
+      "artist": "Richard Berry",
+      "jacket": "donkeykonga/1-na-10.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Loco-Motion",
+      "saHash": "1-na-11",
+      "artist": "Little Eva",
+      "jacket": "donkeykonga/1-na-11.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Shining Star",
+      "saHash": "1-na-12",
+      "artist": "Earth, Wind, & Fire",
+      "jacket": "donkeykonga/1-na-12.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "All the Small Things",
+      "saHash": "1-na-13",
+      "artist": "Blink-182",
+      "jacket": "donkeykonga/1-na-13.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Rock This Town",
+      "saHash": "1-na-14",
+      "artist": "Stray Cats",
+      "jacket": "donkeykonga/1-na-14.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "You Can't Hurry Love",
+      "saHash": "1-na-15",
+      "artist": "The Supremes",
+      "jacket": "donkeykonga/1-na-15.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Right Here, Right Now",
+      "saHash": "1-na-16",
+      "artist": "Jesus Jones",
+      "jacket": "donkeykonga/1-na-16.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Dancing in the Street",
+      "saHash": "1-na-17",
+      "artist": "Martha and the Vandellas",
+      "jacket": "donkeykonga/1-na-17.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Rock Lobster",
+      "saHash": "1-na-18",
+      "artist": "The B-52's",
+      "jacket": "donkeykonga/1-na-18.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Stupid Cupid",
+      "saHash": "1-na-19",
+      "artist": "Connie Francis",
+      "jacket": "donkeykonga/1-na-19.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Impression That I Get",
+      "saHash": "1-na-20",
+      "artist": "The Mighty Mighty Bosstones",
+      "jacket": "donkeykonga/1-na-20.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "What I Like About You",
+      "saHash": "1-na-21",
+      "artist": "The Romantics",
+      "jacket": "donkeykonga/1-na-21.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Whip It",
+      "saHash": "1-na-22",
+      "artist": "Devo",
+      "jacket": "donkeykonga/1-na-22.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Busy Child",
+      "saHash": "1-na-23",
+      "artist": "The Crystal Method",
+      "jacket": "donkeykonga/1-na-23.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Para Los Rumberos",
+      "saHash": "1-na-24",
+      "artist": "Tito Puente",
+      "jacket": "donkeykonga/1-na-24.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Sing, Sing, Sing (With a Swing)",
+      "saHash": "1-na-25",
+      "artist": "Louis Prima",
+      "jacket": "donkeykonga/1-na-25.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Oye Como Va",
+      "saHash": "1-na-26",
+      "artist": "Tito Puente",
+      "jacket": "donkeykonga/1-na-26.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "On the Road Again",
+      "saHash": "1-na-27",
+      "artist": "Willie Nelson",
+      "jacket": "donkeykonga/1-na-27.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Hungarian Dance No.5 in G Minor",
+      "saHash": "1-na-28",
+      "artist": "Johannes Brahms",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "flags": ["dupe-jp"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Turkish March",
+      "saHash": "1-na-29",
+      "artist": "Wolfgang Amadeus Mozart",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "flags": ["dupe-jp"],
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "DK Rap",
+      "saHash": "1-na-30",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-30.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "flags": ["dupe-jp"],
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Legend of Zelda Theme",
+      "saHash": "1-na-31",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-31.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "flags": ["dupe-jp"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mario Bros. Theme",
+      "saHash": "1-na-32",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-32.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "flags": ["dupe-jp"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Donkey Konga Theme",
+      "saHash": "1-na-33",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (NA)",
+      "flags": ["dupe-jp"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Alright",
+      "saHash": "1-eu-1",
+      "artist": "Supergrass",
+      "jacket": "donkeykonga/1-eu-1.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Canned Heat",
+      "saHash": "1-eu-2",
+      "artist": "Jamiroquai",
+      "jacket": "donkeykonga/1-eu-2.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Don't Stop Me Now",
+      "saHash": "1-eu-3",
+      "artist": "Queen",
+      "jacket": "donkeykonga/1-eu-3.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Loco-Motion",
+      "saHash": "1-eu-4",
+      "artist": "Little Eva",
+      "jacket": "donkeykonga/1-na-11.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Dancing in the Street",
+      "saHash": "1-eu-5",
+      "artist": "Martha and the Vandellas",
+      "jacket": "donkeykonga/1-na-17.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Para Los Rumberos",
+      "saHash": "1-eu-6",
+      "artist": "Tito Puente",
+      "jacket": "donkeykonga/1-na-24.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Sing, Sing, Sing (With a Swing)",
+      "saHash": "1-eu-7",
+      "artist": "Louis Prima",
+      "jacket": "donkeykonga/1-na-25.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Tubthumping",
+      "saHash": "1-eu-8",
+      "artist": "Chumbawumba",
+      "jacket": "donkeykonga/1-eu-8.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "You Can't Hurry Love",
+      "saHash": "1-eu-9",
+      "artist": "The Supremes",
+      "jacket": "donkeykonga/1-na-15.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "All the Small Things",
+      "saHash": "1-eu-10",
+      "artist": "Blink-182",
+      "jacket": "donkeykonga/1-na-13.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Oye Como Va",
+      "saHash": "1-eu-11",
+      "artist": "Tito Puente",
+      "jacket": "donkeykonga/1-na-26.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Louie Louie",
+      "saHash": "1-eu-12",
+      "artist": "Richard Berry",
+      "jacket": "donkeykonga/1-na-10.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "99 Red Balloons",
+      "saHash": "1-eu-13",
+      "artist": "Nena",
+      "jacket": "donkeykonga/1-eu-13.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Impression That I Get",
+      "saHash": "1-eu-14",
+      "artist": "The Mighty Mighty Bosstones",
+      "jacket": "donkeykonga/1-na-20.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Busy Child",
+      "saHash": "1-eu-15",
+      "artist": "The Crystal Method",
+      "jacket": "donkeykonga/1-na-23.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "I Want You Back",
+      "saHash": "1-eu-16",
+      "artist": "The Jackson 5",
+      "jacket": "donkeykonga/1-eu-16.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Cosmic Girl",
+      "saHash": "1-eu-17",
+      "artist": "Jamiroquai",
+      "jacket": "donkeykonga/1-eu-17.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Richard III",
+      "saHash": "1-eu-18",
+      "artist": "Supergrass",
+      "jacket": "donkeykonga/1-eu-18.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Lady Marmalade",
+      "saHash": "1-eu-19",
+      "artist": "Christina Aguilera, Mýa, P!nk and Lil' Kim",
+      "jacket": "donkeykonga/1-eu-19.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Wild Thing",
+      "saHash": "1-eu-20",
+      "artist": "The Troggs",
+      "jacket": "donkeykonga/1-na-8.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-na"],
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "September",
+      "saHash": "1-eu-21",
+      "artist": "Earth, Wind & Fire",
+      "jacket": "donkeykonga/1-eu-21.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Back for Good",
+      "saHash": "1-eu-22",
+      "artist": "Take That",
+      "jacket": "donkeykonga/1-eu-22.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Hungarian Dance No.5 in G Minor",
+      "saHash": "1-eu-23",
+      "artist": "Johannes Brahms",
+      "jacket": "donkeykonga/1-eu-nojacket.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-jp", "dupe-na"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Turkish March",
+      "saHash": "1-eu-24",
+      "artist": "Wolfgang Amadeus Mozart",
+      "jacket": "donkeykonga/1-eu-nojacket.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-jp", "dupe-na"],
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Mario Bros. Theme",
+      "saHash": "1-eu-25",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-32.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-jp", "dupe-na"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Donkey Kong Country Theme",
+      "saHash": "1-eu-26",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-eu-26.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "The Legend of Zelda Theme",
+      "saHash": "1-eu-27",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-31.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-jp", "dupe-na"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Rainbow Cruise",
+      "saHash": "1-eu-28",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-eu-28.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Super Smash Bros. Melee Opening",
+      "saHash": "1-eu-29",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-eu-29.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Donkey Konga Theme",
+      "saHash": "1-eu-30",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-eu-nojacket.png",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-jp", "dupe-na"],
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "DK Rap",
+      "saHash": "1-eu-31",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-30.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga (EU)",
+      "flags": ["dupe-jp", "dupe-na"],
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    }
+  ]
+}
