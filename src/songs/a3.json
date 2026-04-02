@@ -45,7 +45,7 @@
       "babylonGalaxy"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1762744816215
+    "lastUpdated": 1774937709575
   },
   "defaults": {
     "style": "single",
@@ -786,7 +786,7 @@
       ],
       "remyLink": "https://remywiki.com/8000000",
       "jacket": "ddr_2014/8000000.png",
-      "genre": "",
+      "genre": "ヤオヨロズ/YAOYOROZ",
       "saHash": "Dd98lDdo8Ob698d9qbO9iD0PqO19oQbI",
       "saIndex": "666",
       "search_hint": "八百万/やおよろず/yaoyorozu"
@@ -9238,7 +9238,7 @@
       ],
       "remyLink": "https://remywiki.com/Cleopatrysm",
       "jacket": "ddr_2014/Cleopatrysm.png",
-      "genre": "PHARAO BEAM STEP",
+      "genre": "ファラオビームステップ/PHARAO BEAM STEP",
       "saHash": "d91lIllbboPd668QP88I06Q6QqooQiO1",
       "saIndex": "606"
     },
@@ -9917,7 +9917,6 @@
       ],
       "remyLink": "https://remywiki.com/Condor",
       "jacket": "ddr_2013/Condor.png",
-      "genre": "",
       "saHash": "1Ol1i86OQd61IlqPb9O1060l0OQDoDQI",
       "saIndex": "498"
     },
@@ -13297,7 +13296,6 @@
       ],
       "remyLink": "https://remywiki.com/Diamond_Night",
       "jacket": "ddr_2013/Diamond Night.png",
-      "genre": "",
       "saHash": "QD6b8i08P1IQloIPOPiqlIPoDlPi9DPI",
       "saIndex": "516"
     },
@@ -17540,7 +17538,7 @@
     },
     {
       "name": "Feidie",
-      "artist": "A-One feat. Napoleon",
+      "artist": "A-One feat.Napoleon",
       "bpm": "150",
       "folder": "DanceDanceRevolution A20 PLUS",
       "charts": [
@@ -19577,7 +19575,7 @@
       ],
       "remyLink": "https://remywiki.com/FUNKY_SUMMER_BEACH",
       "jacket": "ddr_2014/FUNKY SUMMER BEACH.png",
-      "genre": "",
+      "genre": "ハッピー琉球コア/HAPPY RYUKYU CORE",
       "saHash": "9i6dOd608qb0IlqoDIPb8q1o8q1ddQQd",
       "saIndex": "631"
     },
@@ -21373,7 +21371,7 @@
       ],
       "remyLink": "https://remywiki.com/Go_Go_Girls%26Boys!",
       "jacket": "ddr_2014/Go↓Go↑Girls&Boys!.png",
-      "genre": "",
+      "genre": "ガールミーツボーイ/GIRL MEETS BOY",
       "saHash": "DPo0bi8Dibli118P6D981oQIPPQI01lo",
       "saIndex": "627"
     },
@@ -24118,7 +24116,8 @@
       "remyLink": "https://remywiki.com/HyperTwist",
       "jacket": "ddr_a20plus/HyperTwist.jpg",
       "saHash": "0bq9qI9PoPIlQl89bDO60o9q8I1iIP66",
-      "saIndex": "938"
+      "saIndex": "938",
+      "genre": "YALDICORE"
     },
     {
       "name": "HYSTERIA",
@@ -24962,7 +24961,7 @@
       "flags": ["eAMUSEMENT"],
       "remyLink": "https://remywiki.com/Idola",
       "jacket": "ddr_2014/Idola.png",
-      "genre": "REPLICANT CORE",
+      "genre": "レプリカントコア/REPLICANT CORE",
       "saHash": "1I9ODbQ81qi1006QoQI6d6dbd9iiPD9O",
       "saIndex": "599"
     },
@@ -25524,7 +25523,7 @@
       ],
       "remyLink": "https://remywiki.com/In_The_Breeze",
       "jacket": "ddr_2014/In The Breeze.png",
-      "genre": "HYBRID",
+      "genre": "ハイブリッド/HYBRID",
       "saHash": "o1dbD61Qi98O60liQQ91d8O16I86dqDd",
       "saIndex": "662"
     },
@@ -27386,7 +27385,7 @@
       ],
       "remyLink": "https://remywiki.com/KHAMEN_BREAK",
       "jacket": "ddr_2014/KHAMEN BREAK.png",
-      "genre": "PROGRESSIVE GOSPEL",
+      "genre": "プログレッシブゴスペル/PROGRESSIVE GOSPEL",
       "saHash": "Qq8bbbqO6qQ1DPODd16oi1QDQoQ9b8DO",
       "saIndex": "608"
     },
@@ -28437,7 +28436,8 @@
       "remyLink": "https://remywiki.com/Last_Card",
       "jacket": "ddr_a20plus/Last Card.jpg",
       "saHash": "891iilD9Pq1lPQd6diqiP0dd611dOPPl",
-      "saIndex": "941"
+      "saIndex": "941",
+      "genre": "BEBOP CORE"
     },
     {
       "name": "Last Summer",
@@ -33694,7 +33694,7 @@
       "remyLink": "https://remywiki.com/Neko%2Aneko",
       "jacket": "ddr_2014/neko-neko.png",
       "saHash": "Po09DbIQ9QPoboQi0900lbbOqDoPbIod",
-      "genre": ""
+      "genre": "にゃんこスウィング/CAT SWING"
     },
     {
       "name": "NEPHILIM DELTA",
@@ -37826,7 +37826,7 @@
       "jacket": "ddr_a3/Perditus†paradisus.jpg",
       "saHash": "OPbd0ldd89Ddll690qiObDld9oDdPdOi",
       "saIndex": "1110",
-      "genre": "ANTHEM CORE"
+      "genre": "ANTHEM CORE/アンセムコア"
     },
     {
       "name": "PERSIAN LAND",
@@ -42686,6 +42686,7 @@
     },
     {
       "name": "S!ck",
+      "name_translation": "Sick",
       "artist": "Eagle",
       "bpm": "177",
       "folder": "DanceDanceRevolution A",
@@ -46030,7 +46031,8 @@
       "remyLink": "https://remywiki.com/Skywalking",
       "jacket": "ddr_a20/Skywalking.png",
       "saHash": "Dqb08DI0Ii8ilD0lioi9o9D1dodl6dO0",
-      "saIndex": "842"
+      "saIndex": "842",
+      "genre": "TRANCECORE"
     },
     {
       "name": "Slip Out",
@@ -49796,7 +49798,7 @@
       "flags": ["eAMUSEMENT"],
       "remyLink": "https://remywiki.com/Struggle",
       "jacket": "ddr_2014/Struggle.png",
-      "genre": "",
+      "genre": "J-ハードコア/J-HARDCORE",
       "saHash": "1idIoi66ll806D8ddldOQi8bdiDO0Oil",
       "saIndex": "654"
     },
@@ -60698,8 +60700,7 @@
       ],
       "remyLink": "https://remywiki.com/Ubertreffen",
       "jacket": "ddr_x/Übertreffen.png",
-      "genre": "PROGRESSIVE BAROQUE",
-      "search_hint": "Ubertreffen PROGRESSIVE BAROQUE/プログレッシブバロック",
+      "genre": "PROGRESSIVE BAROQUE/プログレッシブバロック",
       "saHash": "1oIo1DliQqPol00Q1l1bPODbdOilodod",
       "saIndex": "329"
     },
@@ -62486,7 +62487,7 @@
       "jacket": "ddr_a20plus/Hoshi no tsukurikata.jpg",
       "saHash": "IdlqO9DoOq0qPQdDbOb80dOPDlb98l0l",
       "saIndex": "1031",
-      "genre": ""
+      "genre": "スパークルキャロル/SPARKLE CAROL"
     },
     {
       "name": "みゅ、みゅ、Müllる",
@@ -64506,7 +64507,7 @@
       ],
       "remyLink": "https://remywiki.com/Chocolate_smile",
       "jacket": "ddr_2014/Chocolate Smile.png",
-      "genre": "",
+      "genre": "スウィートフレンドシップ/SWEET FRIENDSHIP",
       "saHash": "iQP6PI8oDQi1OPQObDQO1IIP9I8i0I1o",
       "saIndex": "657"
     },
@@ -65619,7 +65620,7 @@
       "flags": ["eAMUSEMENT"],
       "remyLink": "https://remywiki.com/BambooSword_Girl",
       "jacket": "ddr_2014/Bamboo Sword Girl.png",
-      "genre": "J-SPEEDMETAL",
+      "genre": "J-スピードメタル/J-SPEEDMETAL",
       "saHash": "160Oo1q8DolI6068lQi66OQbQ9Q8ODQI",
       "saIndex": "597"
     },
@@ -66831,7 +66832,8 @@
       "remyLink": "https://remywiki.com/Mirai_prism",
       "jacket": "ddr_2014/Mirai Prism.png",
       "saHash": "811o6o1QPP0lPiolI1ObiD99l08o1dQl",
-      "saIndex": "644"
+      "saIndex": "644",
+      "genre": "ガールミーツガール/GIRL MEETS GIRL"
     },
     {
       "name": "メンタンピンドラドラ",
@@ -68182,8 +68184,7 @@
       ],
       "remyLink": "https://remywiki.com/Otome_ryouran_mai_sakihokore",
       "jacket": "ddr_2014/Otome ryouran mai sakihokore.png",
-      "genre": "",
-      "search_hint": "Otome ryouran mai sakihokore",
+      "genre": "戦乙女ロック/戦乙女ROCK",
       "saHash": "i91q8l0bbi8qll000ob6qDiQP891iiql",
       "saIndex": "642"
     },
@@ -68958,7 +68959,7 @@
       "flags": ["eAMUSEMENT"],
       "remyLink": "https://remywiki.com/Sennen_no_kotowari",
       "jacket": "ddr_a/Sennen no kotowari.png",
-      "genre": "WORLD/ELECTRONICA",
+      "genre": "ワールドエレクトロニカ/WORLD/ELECTRONICA",
       "saHash": "D0Qb898oqblPoP68PPq1o9i9dI9o0D9i",
       "saIndex": "790"
     },
@@ -69387,7 +69388,8 @@
       "remyLink": "https://remywiki.com/Natsuiro_DIARY_-DDR_mix-",
       "jacket": "ddr_2014/Natsuiro DIARY -DDR mix-.png",
       "saHash": "iIPq9q8PQDDObo610oQoi0ob96PDi8li",
-      "saIndex": "668"
+      "saIndex": "668",
+      "genre": "バカンス/VACANCES"
     },
     {
       "name": "夢幻ノ光",
@@ -69890,7 +69892,7 @@
       "flags": ["eAMUSEMENT"],
       "remyLink": "https://remywiki.com/Ayakashi_kakushi",
       "jacket": "ddr_2014/Ayakashi kakushi.png",
-      "genre": "DRUM'N'WALTZ",
+      "genre": "ドラムンワルツ/DRUM'N'WALTZ",
       "saHash": "06O0ObdQobq86lPDo6P18dQ1QPdilIQO",
       "saIndex": "656"
     },
@@ -70102,8 +70104,7 @@
       "flags": ["eAMUSEMENT"],
       "remyLink": "https://remywiki.com/Gensoukei_sekaishuufuku_shoujo",
       "jacket": "ddr_2014/Gensoukei sekaishuufuku shoujo.png",
-      "genre": "J-POP",
-      "search_hint": "Gensoukei sekaishuufuku shoujo",
+      "genre": "J-ポップ/J-POP",
       "saHash": "QlID98Ddoi6O8lP8IQd6iid610011l60",
       "saIndex": "598"
     },
@@ -70282,7 +70283,7 @@
       ],
       "remyLink": "https://remywiki.com/Osenju_meditation",
       "jacket": "ddr_2014/Osenju Meditation.png",
-      "genre": "ニューエイジ合掌コア",
+      "genre": "ニューエイジ合掌コア/NEW AGE GASSHO CORE",
       "saHash": "ilD80b8QQl9Qo0PP0lQ00b8bO9Oqoobo",
       "saIndex": "607"
     },
@@ -71115,7 +71116,7 @@
       ],
       "remyLink": "https://remywiki.com/Dadadadadadadadadada",
       "jacket": "ddr_a/Dadadadadadadadadada.png",
-      "genre": "JAPANESE TRADITIONAL",
+      "genre": "ジャパニーズトラディショナル/JAPANESE TRADITIONAL",
       "saHash": "DDDiQOd1IQQ6QIIq09PDqdQdDIll6bQI",
       "saIndex": "693"
     },
@@ -71537,7 +71538,7 @@
       ],
       "remyLink": "https://remywiki.com/Shunpuu_blowing_wind",
       "jacket": "ddr_a/Shunpuu blowing wind.png",
-      "genre": "",
+      "genre": "スプリングドライブ/SPRING DRIVE",
       "saHash": "dlqPb1iqPo81qI89816QIoi01b1b0P06",
       "saIndex": "786"
     },
@@ -72479,7 +72480,7 @@
       ],
       "remyLink": "https://remywiki.com/Wadatsumi",
       "jacket": "ddr_2014/Wadatsumi.png",
-      "genre": "HYDRO CORE",
+      "genre": "ハイドロコア/HYDRO CORE",
       "saHash": "P0IoP69l6q08q8DoPD1Q8bqq099Pi1iP",
       "saIndex": "630"
     },
@@ -72550,7 +72551,7 @@
       ],
       "remyLink": "https://remywiki.com/Metsubou_tenshi_nikokyuppin",
       "jacket": "ddr_2014/Metsubou tenshi nikokyuppin.png",
-      "genre": "",
+      "genre": "エンジェリックスマイル/ANGELIC SMILE",
       "saHash": "Qq6D900bD60PddqqbdQb96Pd60918100",
       "saIndex": "643"
     },
@@ -74338,9 +74339,10 @@
     },
     {
       "name": "都会征服Girls☆",
-      "saHash": "88lIDIi1Pi0IObl8D9oblqQ9PPdI1DqI",
+      "name_translation": "Tokai Seifuku Girls",
       "artist": "日向美ビタースイーツ♪",
       "artist_translation": "Hinatabi Bitter Sweets",
+      "saHash": "88lIDIi1Pi0IObl8D9oblqQ9PPdI1DqI",
       "folder": "DanceDanceRevolution A3",
       "bpm": "140",
       "charts": [
@@ -74355,8 +74357,8 @@
       "jacket": "ddr_a3/都会征服Girls☆.jpg",
       "remyLink": "https://remywiki.com/Tokai_seifuku_Girls",
       "flags": ["eAMUSEMENT", "grandPrixPack"],
-      "name_translation": "Tokai Seifuku Girls",
-      "search_hint": "とかいせいふくGirls"
+      "search_hint": "とかいせいふくGirls",
+      "genre": "ハイテンションギャルラップ/HI-TENSION GAL RAP"
     },
     {
       "name": "酔いどれ知らず",

@@ -19,7 +19,7 @@ import {
 } from "./utils.mts";
 import {
   JsonDDRSongImporter,
-  DDR_GRAND_PRIX as MIX_META,
+  DDR_WORLD as MIX_META,
 } from "./scraping/ddr-sources.mts";
 import { EAGateSongImporter } from "./scraping/eagate-ddr.mts";
 import { getJacketFromRemySong, tryGetMetaFromRemy } from "./scraping/remy.mts";
