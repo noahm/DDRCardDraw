@@ -1088,8 +1088,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.5,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.5
         },
         {
           "style": "double",
@@ -1113,8 +1112,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.2,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.2
         }
       ],
       "flags": ["grandPrixPack"],
@@ -4194,7 +4192,7 @@
           "sanbaiTier": 13.2
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Arcadia.jpg",
       "remyLink": "https://remywiki.com/Arcadia_(OMOCHI_feat.Kanako_Hoshino)"
     },
@@ -6545,6 +6543,52 @@
       "genre": "DANCE MUSIC"
     },
     {
+      "name": "Black or Red?",
+      "artist": "コスモドライバー join. shully & Nimo",
+      "bpm": "157",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Black_or_Red%3F",
+      "jacket": "ddr_grand_prix/Black or Red.jpg"
+    },
+    {
       "name": "BLAKE",
       "artist": "A.T.park",
       "saHash": "b0dIdlPD6IDQ000l6lIoO9oD1IQiqQ6I",
@@ -8250,6 +8294,53 @@
       "remyLink": "https://remywiki.com/Burstix_Comet"
     },
     {
+      "name": "Butterfly Twist",
+      "artist": "Yooh",
+      "bpm": "160",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Butterfly_Twist",
+      "jacket": "ddr_grand_prix/Butterfly Twist.jpg",
+      "genre": "SPEED HOUSE"
+    },
+    {
       "name": "C-C-C-N-N-N",
       "artist": "RoughSkreamZ feat. Aikapin",
       "saHash": "odPq866q0QPOP9QOQ9QQIlIO60Oid16o",
@@ -8872,6 +8963,53 @@
       "jacket": "ddr_sn-sn2/CaptivAte～CHIKAI～.png",
       "remyLink": "https://remywiki.com/CaptivAte~chikai~",
       "genre": "NOSTALISH REQUIEM"
+    },
+    {
+      "name": "CARNIVOROUS",
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "bpm": "170",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/CARNIVOROUS",
+      "jacket": "ddr_grand_prix/CARNIVOROUS.jpg",
+      "genre": "GIRL'S EUROBEAT"
     },
     {
       "name": "Catch Our Fire!",
@@ -10981,6 +11119,12 @@
           "sanbaiTier": 16.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock", "prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -10997,9 +11141,15 @@
           "diffClass": "expert",
           "lvl": 16,
           "sanbaiTier": 16.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock", "prePrivilege"]
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Continue to the real world.jpg",
       "remyLink": "https://remywiki.com/Continue_to_the_real_world%3F"
     },
@@ -11295,7 +11445,7 @@
           "flags": ["shock"]
         }
       ],
-      "flags": ["grandPrixPack", "prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Couleur=Blanche.jpg",
       "remyLink": "https://remywiki.com/Couleur%3DBlanche"
     },
@@ -12281,6 +12431,53 @@
       "search_hint": "LUCKY HARDCORE/ラッキーハードコア"
     },
     {
+      "name": "Damage Per Second",
+      "artist": "Maozon",
+      "bpm": "89-177",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Damage_Per_Second",
+      "jacket": "ddr_grand_prix/Damage Per Second.jpg",
+      "genre": "CYBER DRUMSTEP"
+    },
+    {
       "name": "DANCE ALL NIGHT (DDR EDITION)",
       "artist": "Sota Fujimori",
       "saHash": "Oi1DI99DO6i6llQ8DDD6oDqOQqiP118d",
@@ -13197,7 +13394,7 @@
           "sanbaiTier": 12.35
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/DanRevoAthlon.jpg",
       "remyLink": "https://remywiki.com/DanRevoAthlon"
     },
@@ -13826,6 +14023,64 @@
       "flags": ["grandPrixPack", "prePrivilege"],
       "jacket": "ddr_world/Deadly Dolly Dance.jpg",
       "remyLink": "https://remywiki.com/Deadly_Dolly_Dance"
+    },
+    {
+      "name": "Dear Deer",
+      "artist": "Hylen",
+      "bpm": "185",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"]
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"]
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Dear_Deer",
+      "jacket": "ddr_grand_prix/Dear Deer.jpg"
     },
     {
       "name": "Death by Glamour",
@@ -15510,7 +15765,7 @@
           "sanbaiTier": 14.5
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Don't Stop The HYPERCORE.jpg",
       "remyLink": "https://remywiki.com/Don%27t_Stop_The_HYPERCORE"
     },
@@ -21537,7 +21792,7 @@
           "sanbaiTier": 17.35
         }
       ],
-      "flags": ["grandPrixPack", "prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Gale Rider.jpg",
       "remyLink": "https://remywiki.com/Gale_Rider"
     },
@@ -21841,8 +22096,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 15,
-          "sanbaiTier": 15.55,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 15.55
         },
         {
           "style": "double",
@@ -21872,8 +22126,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 15,
-          "sanbaiTier": 15.25,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 15.25
         }
       ],
       "flags": ["grandPrixPack"],
@@ -24144,7 +24397,7 @@
           "sanbaiTier": 14.25
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Happy Dance Day 2 U.jpg",
       "remyLink": "https://remywiki.com/Happy_Dance_Day_2_U"
     },
@@ -25895,7 +26148,7 @@
           "sanbaiTier": 16.15
         }
       ],
-      "flags": ["grandPrixPack", "prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Hollywood Galaxy.jpg",
       "remyLink": "https://remywiki.com/Hollywood_Galaxy",
       "genre": "DRUM'N'BASS"
@@ -29237,6 +29490,52 @@
       "genre": "GIRLY POP"
     },
     {
+      "name": "JOK3R",
+      "artist": "Yuta Imai",
+      "bpm": "150",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/JOK3R",
+      "jacket": "ddr_grand_prix/JOK3R.jpg"
+    },
+    {
       "name": "JOMANDA",
       "artist": "DJ YOSHITAKA",
       "saHash": "dDQqqIQlDQ9POd90OPl9Dd1i106odDl0",
@@ -31880,6 +32179,52 @@
       "remyLink": "https://remywiki.com/Little_steps"
     },
     {
+      "name": "Lo-Fi-M",
+      "artist": "yaseta",
+      "bpm": "140",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Lo-Fi-M",
+      "jacket": "ddr_grand_prix/Lo-Fi-M.jpg"
+    },
+    {
       "name": "LOGICAL DASH",
       "artist": "DJ TAKA",
       "saHash": "8O86IP9dqQ8818ld9od8Q0PiDId6666P",
@@ -32247,8 +32592,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.6,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.6
         },
         {
           "style": "double",
@@ -32272,8 +32616,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.4,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.4
         }
       ],
       "flags": ["grandPrixPack"],
@@ -35076,6 +35419,62 @@
       "remyLink": "https://remywiki.com/Midnight_Amaretto"
     },
     {
+      "name": "Midnight City Warfare",
+      "artist": "sky_delta",
+      "bpm": "180",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Midnight_City_Warfare",
+      "jacket": "ddr_grand_prix/Midnight City Warfare.jpg"
+    },
+    {
       "name": "MIDNIGHT SPECIAL",
       "artist": "Love machineguns",
       "saHash": "iI1iQD6Id0PiPDoo919doOooDib09I6b",
@@ -35721,7 +36120,7 @@
           "sanbaiTier": 15.15
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Move On.jpg",
       "remyLink": "https://remywiki.com/Move_On"
     },
@@ -36200,6 +36599,12 @@
           "lvl": 15
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 10
@@ -36215,9 +36620,15 @@
           "diffClass": "expert",
           "lvl": 14,
           "sanbaiTier": 14.1
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["prePrivilege"]
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/My Drama.jpg",
       "remyLink": "https://remywiki.com/My_Drama"
     },
@@ -37823,7 +38234,7 @@
           "sanbaiTier": 14.1
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Niji no Sekai.jpg",
       "remyLink": "https://remywiki.com/Niji_no_Sekai"
     },
@@ -39768,6 +40179,52 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/PARADISE.jpg",
       "remyLink": "https://remywiki.com/PARADISE"
+    },
+    {
+      "name": "Paradission",
+      "artist": "BlackY",
+      "bpm": "154",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Paradission",
+      "jacket": "ddr_grand_prix/Paradission.jpg"
     },
     {
       "name": "PARANOiA",
@@ -45270,7 +45727,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.65,
-          "flags": ["prePrivilege", "shock"]
+          "flags": ["shock"]
         },
         {
           "style": "double",
@@ -45295,7 +45752,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.65,
-          "flags": ["prePrivilege", "shock"]
+          "flags": ["shock"]
         }
       ],
       "flags": ["grandPrixPack"],
@@ -49612,7 +50069,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/Skywalking.png",
-      "remyLink": "https://remywiki.com/Skywalking"
+      "remyLink": "https://remywiki.com/Skywalking",
+      "genre": "TRANCECORE"
     },
     {
       "name": "Slip Out",
@@ -50145,7 +50603,7 @@
           "flags": ["shock"]
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/So_What_(PRIDASK).jpg",
       "remyLink": "https://remywiki.com/So_What_(PRIDASK)",
       "genre": "BASS HOUSE"
@@ -53184,6 +53642,52 @@
       "remyLink": "https://remywiki.com/Sucka_Luva"
     },
     {
+      "name": "Sulk",
+      "artist": "SYUNN",
+      "bpm": "150",
+      "folder": "DDR GRAND PRIX",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "remyLink": "https://remywiki.com/Sulk",
+      "jacket": "ddr_grand_prix/Sulk.jpg"
+    },
+    {
       "name": "Summer Fairytale",
       "artist": "Design-MAD crew",
       "saHash": "i90o9Q0D91bb0Q6qIQ1OiDqqiPPP98oI",
@@ -53809,8 +54313,9 @@
           "sanbaiTier": 19.6
         }
       ],
-      "flags": ["grandPrixPack", "prePrivilege"],
-      "jacket": "ddr_world/Superior MAXXX.jpg"
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Superior MAXXX.jpg",
+      "remyLink": "https://remywiki.com/Superior_MAXXX"
     },
     {
       "name": "Surface",
@@ -55541,7 +56046,7 @@
           "sanbaiTier": 13.2
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/The 88's Instigation.jpg",
       "remyLink": "https://remywiki.com/The_88%27s_Instigation"
     },
@@ -55649,7 +56154,7 @@
           "sanbaiTier": 13.75
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/The Ashes of Boreas.jpg",
       "remyLink": "https://remywiki.com/The_Ashes_of_Boreas"
     },
@@ -62999,6 +63504,12 @@
           "sanbaiTier": 15.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -63015,9 +63526,15 @@
           "diffClass": "expert",
           "lvl": 15,
           "sanbaiTier": 15.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "flags": ["prePrivilege"]
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Worst Plan.jpg",
       "remyLink": "https://remywiki.com/Worst_Plan"
     },
@@ -65103,7 +65620,7 @@
           "sanbaiTier": 15.3
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/きらきら☆ユニバース.jpg",
       "remyLink": "https://remywiki.com/Kirakira_universe"
     },
@@ -65503,6 +66020,61 @@
       "jacket": "ddr_grand_prix/すいみん不足.jpg",
       "remyLink": "https://remywiki.com/Suimin_busoku",
       "genre": "KITERETSU/キテレツ"
+    },
+    {
+      "name": "ちくたく2ちく2ぱ",
+      "artist": "音戯探偵ひなビタ♫",
+      "artist_translation": "Otogi Tantei HinaBitter",
+      "saHash": "P908I0O1PIodq1qOIO008bd16P0q8ql8",
+      "bpm": "190",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "sanbaiTier": 3.3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.1
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.35
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.35
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.15
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.3
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "sanbaiTier": 15.2
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/ちくたく2ちく2ぱ.jpg",
+      "remyLink": "https://remywiki.com/Tick-tack2_tick2_pa"
     },
     {
       "name": "ちくわパフェだよ☆ＣＫＰ",
@@ -65916,6 +66488,62 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/Dokodoki Valentine.jpg",
       "remyLink": "https://remywiki.com/Dokidoki_Valentine"
+    },
+    {
+      "name": "なんてシュペール",
+      "name_translation": "Nante super",
+      "artist": "音戯探偵ひなビタ♫",
+      "artist_translation": "Otogi Tantei HinaBitter",
+      "saHash": "oQq061q091Q16iOO9b8d9d0P9080qP6q",
+      "bpm": "107-195",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "sanbaiTier": 3.3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8,
+          "sanbaiTier": 8.3
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "sanbaiTier": 11.15
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "sanbaiTier": 13.15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8,
+          "sanbaiTier": 8.25
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.2
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "sanbaiTier": 13.3
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/なんてシュペール.jpg",
+      "remyLink": "https://remywiki.com/Nante_super"
     },
     {
       "name": "び",
@@ -66954,7 +67582,7 @@
           "sanbaiTier": 13.3
         }
       ],
-      "flags": ["grandPrixPack", "prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/カタルシスの月.jpg",
       "remyLink": "https://remywiki.com/Catharsis_no_tsuki",
       "genre": "EMOTIONAL DUO",
@@ -67820,6 +68448,62 @@
       "jacket": "ddr_a3/Scarlet keisatsu no ghetto patrol 24 ji.jpg",
       "remyLink": "https://remywiki.com/Scarlet_keisatsu_no_ghetto_patrol_24_ji",
       "search_hint": "scarlet police"
+    },
+    {
+      "name": "スペクター・チェイサー",
+      "name_translation": "Specter chaser",
+      "artist": "音戯探偵ひなビタ♫",
+      "artist_translation": "Otogi Tantei HinaBitter",
+      "saHash": "iidQ6i16lIQl96iq0Qd8lol1oo66loo8",
+      "bpm": "132",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "sanbaiTier": 2.45
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "sanbaiTier": 6.4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "sanbaiTier": 12.5
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "sanbaiTier": 16.7
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "sanbaiTier": 6.4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "sanbaiTier": 12.45
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "sanbaiTier": 16.8
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/スペクター・チェイサー.jpg",
+      "remyLink": "https://remywiki.com/Specter_chaser"
     },
     {
       "name": "スーパー戦湯ババンバーン",
@@ -69162,7 +69846,7 @@
           "sanbaiTier": 13.85
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/バッドユース・アウェイク.jpg",
       "remyLink": "https://remywiki.com/Bad_youth_awake"
     },
@@ -70556,7 +71240,7 @@
           "sanbaiTier": 15.6
         }
       ],
-      "flags": ["grandPrixPack", "prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/ムラサキグルマ.jpg",
       "remyLink": "https://remywiki.com/Murasaki_guruma"
     },
@@ -71363,8 +72047,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.75,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.75
         },
         {
           "style": "double",
@@ -71388,8 +72071,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.6,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.6
         }
       ],
       "flags": ["grandPrixPack"],
@@ -71513,6 +72195,63 @@
       "genre": ""
     },
     {
+      "name": "レシピのリドル",
+      "name_translation": "Recipe no riddle",
+      "artist": "音戯探偵ひなビタ♫",
+      "artist_translation": "Otogi Tantei HinaBitter",
+      "saHash": "QPIbbqb0OIq8dQ8IbiD1O1bI1PPOb1IQ",
+      "bpm": "245",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "sanbaiTier": 3.8
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8,
+          "sanbaiTier": 8.65
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.85
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.95
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8,
+          "sanbaiTier": 8.55
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.8
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.9
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/レシピのリドル.jpg",
+      "remyLink": "https://remywiki.com/Recipe_no_riddle",
+      "genre": "ガールズティーパーティー"
+    },
+    {
       "name": "ロマンシングエスケープ",
       "name_translation": "Romancing Escape",
       "artist": "ここなつ2.0",
@@ -71626,7 +72365,6 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.75
         },
         {
@@ -71657,7 +72395,6 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
           "sanbaiTier": 15.55
         }
       ],
@@ -72541,8 +73278,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.4,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.4
         },
         {
           "style": "double",
@@ -72566,8 +73302,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 18,
-          "sanbaiTier": 18.2,
-          "flags": ["prePrivilege"]
+          "sanbaiTier": 18.2
         }
       ],
       "flags": ["grandPrixPack"],
@@ -78595,6 +79330,75 @@
       "remyLink": "https://remywiki.com/Hana_ranman_-Flowers-"
     },
     {
+      "name": "華麗なる！音戯探偵ひなビタ♫",
+      "name_translation": "Kareinaru! Otogi tantei HinaBitter",
+      "artist": "音戯探偵ひなビタ♫",
+      "artist_translation": "Otogi Tantei HinaBitter",
+      "saHash": "iDDDD0OI8iPdPPo90l0Io8q80i9qdb9P",
+      "bpm": "82-127",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "sanbaiTier": 2.65
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "sanbaiTier": 5.45
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.55
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.95
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "sanbaiTier": 16.95
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "sanbaiTier": 5.7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.4
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.75
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "sanbaiTier": 16.9
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/華麗なる！音戯探偵ひなビタ♫.jpg",
+      "remyLink": "https://remywiki.com/Kareinaru!_Otogi_tantei_HinaBitter_(song)",
+      "genre": "オトギタンテイ"
+    },
+    {
       "name": "蒼い衝動 ～for EXTREME～",
       "name_translation": "BLUE IMPULSE(for EXTREME)",
       "artist": "NAOKI feat.YUKI",
@@ -78929,6 +79733,62 @@
       "search_hint": "かがち"
     },
     {
+      "name": "謎解き☆クイーン！",
+      "name_translation": "Nazotoki queen!",
+      "artist": "音戯探偵ひなビタ♫",
+      "artist_translation": "Otogi Tantei HinaBitter",
+      "saHash": "Qb006IP91qidb1PIPqilliP90qOqDD9d",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "sanbaiTier": 1.5
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "sanbaiTier": 5.35
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.65
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.5
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "sanbaiTier": 5.4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "sanbaiTier": 10.55
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "sanbaiTier": 14.6
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/謎解き☆クイーン！.jpg",
+      "remyLink": "https://remywiki.com/Nazotoki_queen!"
+    },
+    {
       "name": "走れメロンパン",
       "name_translation": "Hashire Melonpan",
       "artist": "日向美ビタースイーツ♪",
@@ -79096,7 +79956,7 @@
           "sanbaiTier": 15.15
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/踊れ！！バーチャルアニマル！！.jpg",
       "remyLink": "https://remywiki.com/Odore!!_Virtual_animal!!"
     },

@@ -15,6 +15,7 @@ const corrections = new Map<string, Partial<Pick<Song, "name" | "artist">>>([
     { name: "BURNIN' THE FLOOR(BLUE FIRE mix)" },
   ],
   ["ちくわパフェだよ☆CKP", { name: "ちくわパフェだよ☆ＣＫＰ" }],
+  ["Black or Red?", { artist: "コスモドライバー join. shully & Nimo" }],
   [
     "Blind Justice ～Torn souls, Hurt Faiths ～",
     { name: "Blind Justice ～Torn souls, Hurt Faiths～" },
