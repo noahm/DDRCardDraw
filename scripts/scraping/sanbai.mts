@@ -111,10 +111,9 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
 ];
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
-  ["8o10d9O89d6DQOiDlbb160Id8IIO6b01", { deleted: 1 }], // SOUVENIR
   [
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
-    { deleted: undefined, ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
+    { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
   // #region グランプリ譜面パック vol.6
   [

@@ -85,7 +85,7 @@ try {
               artist: worldSong.artist || "",
               saHash: worldSong.saHash,
               bpm: worldSong.bpm || "???",
-              folder: existingData.meta.folders[0],
+              folder: existingData.meta.folders?.[0],
               charts: worldSong.charts,
               remyLink: worldSong.remyLink,
               jacket: worldSong.jacket,
@@ -111,22 +111,23 @@ try {
           );
           if (existingSong) {
             await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
-            if (existingSong.remyLink && !existingSong.jacket) {
-              existingSong.jacket = await getJacketFromRemySong(
-                existingSong.remyLink,
-                existingSong.name,
-                "DanceDanceRevolution GRAND PRIX",
-                "DanceDanceRevolution",
-                "DDR",
-              );
+            if (existingSong.remyLink) {
+              existingSong.jacket ||=
+                (await getJacketFromRemySong(
+                  existingSong.remyLink,
+                  existingSong.name,
+                  "DanceDanceRevolution GRAND PRIX",
+                  "DanceDanceRevolution",
+                  "DDR",
+                )) || existingSong.jacket;
             }
             return;
           }
 
           // Try to get meta data from remyLink
           await tryGetMetaFromRemy(gpSong, "DanceDanceRevolution");
-          if (gpSong.remyLink && !gpSong.jacket) {
-            gpSong.jacket = await getJacketFromRemySong(
+          if (gpSong.remyLink) {
+            gpSong.jacket ||= await getJacketFromRemySong(
               gpSong.remyLink,
               gpSong.name,
               "DanceDanceRevolution GRAND PRIX",
@@ -137,10 +138,10 @@ try {
           const newSong: Song = {
             name: gpSong.name,
             artist: gpSong.artist,
-            bpm: gpSong.bpm,
-            folder: existingData.meta.folders[0],
+            bpm: gpSong.bpm!,
+            folder: existingData.meta.folders?.[0],
             charts: gpSong.charts ?? [],
-            jacket: gpSong.jacket,
+            jacket: gpSong.jacket!,
             remyLink: gpSong.remyLink,
           };
 
@@ -202,7 +203,7 @@ try {
             artist: sanbaiSong.artist || "???",
             saHash: sanbaiSong.saHash,
             bpm: sanbaiSong.bpm || "???",
-            folder: sanbaiSong.folder ?? existingData.meta.folders[0],
+            folder: sanbaiSong.folder ?? existingData.meta.folders?.[0],
             charts: sanbaiSong.charts,
             flags: sanbaiSong.flags,
             jacket: sanbaiSong.jacket,
