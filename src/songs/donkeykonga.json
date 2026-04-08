@@ -1,6 +1,6 @@
 {
   "meta": {
-    "menuParent": "other",
+    "menuParent": "more",
     "cardVariant": "donkeykonga",
     "styles": ["solo", "duet", "quartet", "battle", "share"],
     "difficulties": [
@@ -34,7 +34,7 @@
   "defaults": {
     "style": "battle",
     "difficulties": ["battle"],
-    "flags": ["na-dupeof-jp", "na-dupeof-eu"],
+    "flags": ["na-dupeof-jp", "na-dupeof-eu", "eu-dupeof-jp"],
     "lowerLvlBound": 4,
     "upperLvlBound": 8
   },
@@ -3060,17 +3060,17 @@
       "flags": ["jp-dupeof-na", "jp-dupeof-eu"],
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3091,17 +3091,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3122,17 +3122,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3153,17 +3153,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3184,17 +3184,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3215,17 +3215,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3246,17 +3246,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3276,17 +3276,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3307,17 +3307,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3337,17 +3337,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3368,17 +3368,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3399,17 +3399,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3430,17 +3430,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3461,17 +3461,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3492,17 +3492,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3523,17 +3523,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3554,17 +3554,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3585,17 +3585,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3615,17 +3615,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3646,17 +3646,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3677,17 +3677,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3708,17 +3708,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3739,17 +3739,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3770,17 +3770,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3800,17 +3800,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3831,17 +3831,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3862,17 +3862,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -3893,17 +3893,17 @@
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "solo",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
         },
@@ -6688,7 +6688,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "solo",
           "diffClass": "gorilla"
         },
