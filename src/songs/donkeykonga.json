@@ -2528,65 +2528,41 @@
       ]
     },
     {
-      "name": "愛のために。",
-      "name_translation": "Ai no Tame ni.",
-      "saHash": "2-jp-1",
-      "artist": "Aya Ueto",
-      "jacket": "donkeykonga/2-jp-1.jpg",
-      "bpm": "187",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "さくらんぼ",
-      "name_translation": "Sakuranbo",
-      "saHash": "2-jp-2",
-      "artist": "Ai Otsuka",
-      "jacket": "donkeykonga/2-jp-2.jpg",
-      "bpm": "170",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "secret base 〜君がくれたもの〜",
-      "name_translation": "secret base ~ Kimi ga Kureta Mono ~",
-      "saHash": "2-jp-3",
-      "artist": "Zone",
-      "jacket": "donkeykonga/2-jp-3.jpg",
+      "name": "Donkey Kong A Go Go!!",
+      "name_translation": "Donkey Konga 2 Theme",
+      "saHash": "2-jp-25",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/2-jp-nojacket.jpg",
       "bpm": "?",
       "folder": "Donkey Konga 2 (JP)",
+      "flags": ["jp-dupeof-na", "jp-dupeof-eu"],
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ゼルダの伝説 ラテンフユージヨン",
+      "name_translation": "The Legend of Zelda Theme",
+      "saHash": "2-jp-23",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/1-na-31.png",
+      "bpm": "120",
+      "folder": "Donkey Konga 2 (JP)",
+      "flags": ["jp-dupeof-na", "jp-dupeof-eu"],
       "charts": [
         {
           "lvl": 0,
@@ -2606,11 +2582,12 @@
       ]
     },
     {
-      "name": "WILD CHALLENGER",
-      "saHash": "2-jp-4",
-      "artist": "Jindou",
-      "jacket": "donkeykonga/3-jp-12.jpg",
-      "bpm": "140",
+      "name": "スーパードンキーコングのテーマ",
+      "name_translation": "Donkey Kong Country Theme",
+      "saHash": "2-jp-24",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/3-jp-44.jpg",
+      "bpm": "120",
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
@@ -2631,348 +2608,12 @@
       ]
     },
     {
-      "name": "Over Drive",
-      "saHash": "2-jp-5",
-      "artist": "Judy and Mary",
-      "jacket": "donkeykonga/2-jp-5.jpg",
-      "bpm": "146",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ダイナマイト",
-      "name_translation": "Dynamite",
-      "saHash": "2-jp-6",
-      "artist": "SMAP",
-      "jacket": "donkeykonga/2-jp-6.jpg",
-      "bpm": "125",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "全部だきしめて",
-      "name_translation": "Zenbu Dakishimete",
-      "saHash": "2-jp-7",
-      "artist": "KinKi Kids",
-      "jacket": "donkeykonga/2-jp-7.jpg",
-      "bpm": "128",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "Go Girl ～恋のヴィクトリー～",
-      "name_translation": "Go Girl ~ Koi no Victory ~ ",
-      "saHash": "2-jp-8",
-      "artist": "Morning Musume",
-      "jacket": "donkeykonga/2-jp-8.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "WAになっておどろう",
-      "name_translation": "WA ni Natte Odorō",
-      "saHash": "2-jp-9",
-      "artist": "V6",
-      "jacket": "donkeykonga/2-jp-9.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "モンキーマジック",
-      "name_translation": "Monkey Magic",
-      "saHash": "2-jp-10",
-      "artist": "Godiego",
-      "jacket": "donkeykonga/2-jp-10.jpg",
-      "bpm": "116",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "Yeah! めっちゃホリディ",
-      "name_translation": "Yeah! Metcha Holiday",
-      "saHash": "2-jp-11",
-      "artist": "Aya Matsuura",
-      "jacket": "donkeykonga/2-jp-11.jpg",
-      "bpm": "140",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "おどるポンポコリン",
-      "name_translation": "Odoru Ponpokorin",
-      "saHash": "2-jp-12",
-      "artist": "B.B.Queens",
-      "jacket": "donkeykonga/2-jp-12.jpg",
-      "bpm": "140",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ドラえもんのうた",
-      "name_translation": "Doraemon no Uta",
-      "saHash": "2-jp-13",
-      "artist": "Kumiko Ōsugi",
-      "jacket": "donkeykonga/1-jp-11.jpg",
-      "bpm": "123",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "チャレンジャー!!",
-      "name_translation": "Challenger!!",
-      "saHash": "2-jp-14",
-      "artist": "Rica Matsumoto",
-      "jacket": "donkeykonga/1-jp-7.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ハッスル",
-      "name_translation": "Hustle",
-      "saHash": "2-jp-15",
-      "artist": "Koichi Yamadera",
-      "jacket": "donkeykonga/2-jp-15.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "DANZEN! ふたりはプリキュア",
-      "name_translation": "DANZEN! Futari wa Pretty Cure ",
-      "saHash": "2-jp-16",
-      "artist": "Mayumi Gojo",
-      "jacket": "donkeykonga/2-jp-16.png",
-      "bpm": "167",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ビバ★ロック",
-      "name_translation": "Viva★Rock",
-      "saHash": "2-jp-17",
-      "artist": "Orange Range",
-      "jacket": "donkeykonga/2-jp-17.jpg",
-      "bpm": "140",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "Realize",
-      "saHash": "2-jp-18",
-      "artist": "Nami Tamaki",
-      "jacket": "donkeykonga/2-jp-18.jpg",
-      "bpm": "136",
+      "name": "アルプス一万尺",
+      "name_translation": "Alps Ichi Man Jaku",
+      "saHash": "2-jp-28",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/2-jp-nojacket.jpg",
+      "bpm": "82",
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
@@ -3045,11 +2686,191 @@
       ]
     },
     {
-      "name": "ラッキーチャチャチャ！",
-      "name_translation": "Lucky Cha Cha Cha!",
-      "saHash": "2-jp-21",
-      "artist": "Mini-Moni",
-      "jacket": "donkeykonga/2-jp-21.jpg",
+      "name": "ドラえもんのうた",
+      "name_translation": "Doraemon no Uta",
+      "saHash": "2-jp-13",
+      "artist": "Kumiko Ōsugi",
+      "jacket": "donkeykonga/1-jp-11.jpg",
+      "bpm": "123",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "おどるポンポコリン",
+      "name_translation": "Odoru Ponpokorin",
+      "saHash": "2-jp-12",
+      "artist": "B.B.Queens",
+      "jacket": "donkeykonga/2-jp-12.jpg",
+      "bpm": "140",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Realize",
+      "saHash": "2-jp-18",
+      "artist": "Nami Tamaki",
+      "jacket": "donkeykonga/2-jp-18.jpg",
+      "bpm": "136",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ビバ★ロック",
+      "name_translation": "Viva★Rock",
+      "saHash": "2-jp-17",
+      "artist": "Orange Range",
+      "jacket": "donkeykonga/2-jp-17.jpg",
+      "bpm": "140",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "WILD CHALLENGER",
+      "saHash": "2-jp-4",
+      "artist": "Jindou",
+      "jacket": "donkeykonga/3-jp-12.jpg",
+      "bpm": "140",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "DANZEN! ふたりはプリキュア",
+      "name_translation": "DANZEN! Futari wa Pretty Cure ",
+      "saHash": "2-jp-16",
+      "artist": "Mayumi Gojo",
+      "jacket": "donkeykonga/2-jp-16.png",
+      "bpm": "167",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ハッスル",
+      "name_translation": "Hustle",
+      "saHash": "2-jp-15",
+      "artist": "Koichi Yamadera",
+      "jacket": "donkeykonga/2-jp-15.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "チャレンジャー!!",
+      "name_translation": "Challenger!!",
+      "saHash": "2-jp-14",
+      "artist": "Rica Matsumoto",
+      "jacket": "donkeykonga/1-jp-7.jpg",
       "bpm": "?",
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
@@ -3072,116 +2893,11 @@
     },
     {
       "name": "特捜戦隊デカレンジャー",
-      "name_translation": "Tokusō Sentai Dekarenjā",
+      "name_translation": "Tokusō Sentai Dekaranger",
       "saHash": "2-jp-22",
       "artist": "Psychic Lover",
       "jacket": "donkeykonga/2-jp-22.png",
       "bpm": "170",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "???",
-      "name_translation": "The Legend of Zelda Theme",
-      "saHash": "2-jp-23",
-      "artist": "Uncredited",
-      "jacket": "donkeykonga/1-na-31.png",
-      "bpm": "120",
-      "folder": "Donkey Konga 2 (JP)",
-      "flags": ["jp-dupeof-na", "jp-dupeof-eu"],
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "Super Donkey Kong Theme",
-      "name_translation": "Donkey Kong Country Theme",
-      "saHash": "2-jp-24",
-      "artist": "Uncredited",
-      "jacket": "donkeykonga/3-jp-44.jpg",
-      "bpm": "120",
-      "folder": "Donkey Konga 2 (JP)",
-      "charts": [
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 0,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "Donkey Kong A Go Go!!",
-      "name_translation": "Donkey Konga 2 Theme",
-      "saHash": "2-jp-25",
-      "artist": "Uncredited",
-      "jacket": "donkeykonga/2-jp-nojacket.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 2 (JP)",
-      "flags": ["jp-dupeof-na", "jp-dupeof-eu"],
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "AMBITIOUS JAPAN!",
-      "saHash": "2-jp-26",
-      "artist": "Tokio",
-      "jacket": "donkeykonga/2-jp-26.jpg",
-      "bpm": "140",
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
@@ -3228,12 +2944,296 @@
       ]
     },
     {
-      "name": "アルプス一万尺",
-      "name_translation": "Alps Ichi Man Jaku",
-      "saHash": "2-jp-28",
-      "artist": "Uncredited",
-      "jacket": "donkeykonga/2-jp-nojacket.jpg",
-      "bpm": "82",
+      "name": "愛のために。",
+      "name_translation": "Ai no Tame ni.",
+      "saHash": "2-jp-1",
+      "artist": "Aya Ueto",
+      "jacket": "donkeykonga/2-jp-1.jpg",
+      "bpm": "187",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ラッキーチャチャチャ！",
+      "name_translation": "Lucky Cha Cha Cha!",
+      "saHash": "2-jp-21",
+      "artist": "Mini-Moni",
+      "jacket": "donkeykonga/2-jp-21.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "さくらんぼ",
+      "name_translation": "Sakuranbo",
+      "saHash": "2-jp-2",
+      "artist": "Ai Otsuka",
+      "jacket": "donkeykonga/2-jp-2.jpg",
+      "bpm": "170",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "AMBITIOUS JAPAN!",
+      "saHash": "2-jp-26",
+      "artist": "Tokio",
+      "jacket": "donkeykonga/2-jp-26.jpg",
+      "bpm": "140",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Go Girl ～恋のヴィクトリー～",
+      "name_translation": "Go Girl ~ Koi no Victory ~ ",
+      "saHash": "2-jp-8",
+      "artist": "Morning Musume",
+      "jacket": "donkeykonga/2-jp-8.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "WAになっておどろう",
+      "name_translation": "WA ni Natte Odorō",
+      "saHash": "2-jp-9",
+      "artist": "V6",
+      "jacket": "donkeykonga/2-jp-9.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "secret base 〜君がくれたもの〜",
+      "name_translation": "secret base ~ Kimi ga Kureta Mono ~",
+      "saHash": "2-jp-3",
+      "artist": "Zone",
+      "jacket": "donkeykonga/2-jp-3.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Yeah! めっちゃホリディ",
+      "name_translation": "Yeah! Metcha Holiday",
+      "saHash": "2-jp-11",
+      "artist": "Aya Matsuura",
+      "jacket": "donkeykonga/2-jp-11.jpg",
+      "bpm": "140",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "全部だきしめて",
+      "name_translation": "Zenbu Dakishimete",
+      "saHash": "2-jp-7",
+      "artist": "KinKi Kids",
+      "jacket": "donkeykonga/2-jp-7.jpg",
+      "bpm": "128",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "Over Drive",
+      "saHash": "2-jp-5",
+      "artist": "Judy and Mary",
+      "jacket": "donkeykonga/2-jp-5.jpg",
+      "bpm": "146",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ダイナマイト",
+      "name_translation": "Dynamite",
+      "saHash": "2-jp-6",
+      "artist": "SMAP",
+      "jacket": "donkeykonga/2-jp-6.jpg",
+      "bpm": "125",
+      "folder": "Donkey Konga 2 (JP)",
+      "charts": [
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 0,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "モンキーマジック",
+      "name_translation": "Monkey Magic",
+      "saHash": "2-jp-10",
+      "artist": "Godiego",
+      "jacket": "donkeykonga/2-jp-10.jpg",
+      "bpm": "116",
       "folder": "Donkey Konga 2 (JP)",
       "charts": [
         {
@@ -3370,7 +3370,7 @@
       "flags": ["na-dupeof-jp", "na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 3,
+          "lvl": 2,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -3380,7 +3380,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 6,
+          "lvl": 7,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3396,12 +3396,12 @@
       "flags": ["na-dupeof-jp", "na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 2,
+          "lvl": 1,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 3,
+          "lvl": 1,
           "style": "single",
           "diffClass": "chimp"
         },
@@ -3422,17 +3422,17 @@
       "flags": ["na-dupeof-jp", "na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 2,
+          "lvl": 1,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 2,
+          "lvl": 3,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 3,
+          "lvl": 2,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3448,17 +3448,17 @@
       "flags": ["na-dupeof-jp"],
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3484,7 +3484,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 5,
+          "lvl": 4,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3525,17 +3525,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3550,17 +3550,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3575,17 +3575,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3606,7 +3606,7 @@
           "diffClass": "monkey"
         },
         {
-          "lvl": 7,
+          "lvl": 8,
           "style": "single",
           "diffClass": "chimp"
         },
@@ -3626,17 +3626,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3651,17 +3651,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3676,17 +3676,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3701,17 +3701,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 1,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3726,17 +3726,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3751,17 +3751,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3776,17 +3776,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3801,17 +3801,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3826,17 +3826,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3851,17 +3851,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3876,17 +3876,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3902,7 +3902,7 @@
       "flags": ["na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 8,
+          "lvl": 7,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -3912,7 +3912,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 7,
+          "lvl": 6,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3927,17 +3927,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3958,12 +3958,12 @@
           "diffClass": "monkey"
         },
         {
-          "lvl": 5,
+          "lvl": 4,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 6,
+          "lvl": 5,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -3978,17 +3978,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 4,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 6,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 3,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -4014,7 +4014,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 5,
+          "lvl": 4,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -4029,17 +4029,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 5,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 2,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -4055,12 +4055,12 @@
       "flags": ["na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 7,
+          "lvl": 5,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 6,
+          "lvl": 5,
           "style": "single",
           "diffClass": "chimp"
         },
@@ -4081,12 +4081,12 @@
       "flags": ["na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 3,
+          "lvl": 2,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 3,
+          "lvl": 4,
           "style": "single",
           "diffClass": "chimp"
         },
@@ -4107,7 +4107,7 @@
       "flags": ["na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 6,
+          "lvl": 3,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -4133,7 +4133,7 @@
       "flags": ["na-dupeof-eu"],
       "charts": [
         {
-          "lvl": 2,
+          "lvl": 3,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -4143,7 +4143,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 2,
+          "lvl": 3,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -4158,17 +4158,17 @@
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "single",
           "diffClass": "monkey"
         },
         {
-          "lvl": 0,
+          "lvl": 8,
           "style": "single",
           "diffClass": "chimp"
         },
         {
-          "lvl": 0,
+          "lvl": 7,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -5016,12 +5016,193 @@
       ]
     },
     {
-      "name": "花",
-      "name_translation": "Hana",
-      "saHash": "3-jp-1",
-      "artist": "Orange Range",
-      "jacket": "donkeykonga/3-jp-1.jpg",
-      "bpm": "184",
+      "name": "バナナ天国",
+      "name_translation": "Banana Tengoku",
+      "saHash": "3-jp-20",
+      "artist": "Kōichi Yamadera and Megumi Hayashibara",
+      "jacket": "donkeykonga/3-jp-20.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "明日になったら…",
+      "name_translation": "Ashita ni Nattara...",
+      "saHash": "3-jp-19",
+      "artist": "Kōichi Yamadera and Megumi Hayashibara",
+      "jacket": "donkeykonga/3-jp-19.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "タッチ",
+      "name_translation": "Touch",
+      "saHash": "3-jp-18",
+      "artist": "Yoshimi Iwasaki",
+      "jacket": "donkeykonga/3-jp-18.jpg",
+      "bpm": "162",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "CHA-LA HEAD-CHA-LA",
+      "saHash": "3-jp-17",
+      "artist": "Hironobu Kageyama",
+      "jacket": "donkeykonga/3-jp-17.png",
+      "bpm": "156",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "オラはにんきもの",
+      "name_translation": "Ora wa Ninkimono",
+      "saHash": "3-jp-16",
+      "artist": "Akiko Yajima",
+      "jacket": "donkeykonga/3-jp-16.jpg",
+      "bpm": "164",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "めざせポケモンマスター",
+      "name_translation": "Mezase Pokémon Master",
+      "saHash": "3-jp-15",
+      "artist": "Rica Matsumoto",
+      "jacket": "donkeykonga/3-jp-15.jpg",
+      "bpm": "120",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "来て来てあたしンち",
+      "name_translation": "Kite Kite Atashinchi",
+      "saHash": "3-jp-10",
+      "artist": "Aya Hirayama",
+      "jacket": "donkeykonga/3-jp-10.jpg",
+      "bpm": "111",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ファイアーエムブレム",
+      "name_translation": "Fire Emblem",
+      "saHash": "3-jp-28",
+      "artist": "Uncredited",
+      "jacket": "donkeykonga/3-jp-28.png",
+      "bpm": "?",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
@@ -5042,16 +5223,42 @@
       ]
     },
     {
-      "name": "君にBUMP",
-      "name_translation": "Kimi ni BUMP",
-      "saHash": "3-jp-2",
-      "artist": "Ketsumeishi",
-      "jacket": "donkeykonga/3-jp-2.jpg",
-      "bpm": "96",
+      "name": "ドレミファだいじょーぶ",
+      "name_translation": "Do Re Mi Fa Daijōbu",
+      "saHash": "3-jp-21",
+      "artist": "B.B.Queens",
+      "jacket": "donkeykonga/3-jp-21.jpg",
+      "bpm": "166",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
           "lvl": 4,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "いい湯だな",
+      "name_translation": "Ii Yu Dana",
+      "saHash": "3-jp-25",
+      "artist": "Takashi Yanase",
+      "jacket": "donkeykonga/3-jp-25.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 3,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -5061,7 +5268,33 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 7,
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ヨーデル食べ放題",
+      "name_translation": "Yodel Tabehōdai",
+      "saHash": "3-jp-22",
+      "artist": "Katsura Jakusaburo and Manpuku Brothers",
+      "jacket": "donkeykonga/3-jp-22.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -5094,6 +5327,32 @@
       ]
     },
     {
+      "name": "花",
+      "name_translation": "Hana",
+      "saHash": "3-jp-1",
+      "artist": "Orange Range",
+      "jacket": "donkeykonga/3-jp-1.jpg",
+      "bpm": "184",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
       "name": "Happy Days",
       "saHash": "3-jp-4",
       "artist": "Ai Otsuka",
@@ -5113,6 +5372,109 @@
         },
         {
           "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "バカサバイバー",
+      "name_translation": "Baka Survivor",
+      "saHash": "3-jp-12",
+      "artist": "Ulfuls",
+      "jacket": "donkeykonga/3-jp-12.jpg",
+      "bpm": "131",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "START",
+      "saHash": "3-jp-11",
+      "artist": "Rina Aiuchi",
+      "jacket": "donkeykonga/3-jp-11.jpg",
+      "bpm": "115",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "青春狂騒曲",
+      "name_translation": "Seishun Kyōsō Kyoku",
+      "saHash": "3-jp-13",
+      "artist": "Sambomaster",
+      "jacket": "donkeykonga/3-jp-13.jpg",
+      "bpm": "137",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ignited -イグナイテッド-",
+      "name_translation": "ignited",
+      "saHash": "3-jp-8",
+      "artist": "T.M.Revolution",
+      "jacket": "donkeykonga/3-jp-8.jpg",
+      "bpm": "155",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -5139,6 +5501,83 @@
         },
         {
           "lvl": 2,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "リライト",
+      "name_translation": "Rewrite",
+      "saHash": "3-jp-9",
+      "artist": "Asian Kung-Fu Generation",
+      "jacket": "donkeykonga/3-jp-9.jpg",
+      "bpm": "89",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "君にBUMP",
+      "name_translation": "Kimi ni BUMP",
+      "saHash": "3-jp-2",
+      "artist": "Ketsumeishi",
+      "jacket": "donkeykonga/3-jp-2.jpg",
+      "bpm": "96",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "GO!!!",
+      "saHash": "3-jp-14",
+      "artist": "FLOW",
+      "jacket": "donkeykonga/3-jp-14.jpg",
+      "bpm": "133",
+      "folder": "Donkey Konga 3 (JP)",
+      "charts": [
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -5196,472 +5635,6 @@
       ]
     },
     {
-      "name": "ignited -イグナイテッド-",
-      "name_translation": "ignited",
-      "saHash": "3-jp-8",
-      "artist": "T.M.Revolution",
-      "jacket": "donkeykonga/3-jp-8.jpg",
-      "bpm": "155",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "リライト",
-      "name_translation": "Rewrite",
-      "saHash": "3-jp-9",
-      "artist": "Asian Kung-Fu Generation",
-      "jacket": "donkeykonga/3-jp-9.jpg",
-      "bpm": "89",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "来て来てあたしンち",
-      "name_translation": "Kite Kite Atashinchi",
-      "saHash": "3-jp-10",
-      "artist": "Aya Hirayama",
-      "jacket": "donkeykonga/3-jp-10.jpg",
-      "bpm": "111",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "START",
-      "saHash": "3-jp-11",
-      "artist": "Rina Aiuchi",
-      "jacket": "donkeykonga/3-jp-11.jpg",
-      "bpm": "115",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "バカサバイバー",
-      "name_translation": "Baka Survivor",
-      "saHash": "3-jp-12",
-      "artist": "Ulfuls",
-      "jacket": "donkeykonga/3-jp-12.jpg",
-      "bpm": "131",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "青春狂騒曲",
-      "name_translation": "Seishun Kyōsō Kyoku",
-      "saHash": "3-jp-13",
-      "artist": "Sambomaster",
-      "jacket": "donkeykonga/3-jp-13.jpg",
-      "bpm": "137",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "GO!!!",
-      "saHash": "3-jp-14",
-      "artist": "FLOW",
-      "jacket": "donkeykonga/3-jp-14.jpg",
-      "bpm": "133",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "めざせポケモンマスター",
-      "name_translation": "Mezase Pokémon Master",
-      "saHash": "3-jp-15",
-      "artist": "Rica Matsumoto",
-      "jacket": "donkeykonga/3-jp-15.jpg",
-      "bpm": "120",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "オラはにんきもの",
-      "name_translation": "Ora wa Ninkimono",
-      "saHash": "3-jp-16",
-      "artist": "Akiko Yajima",
-      "jacket": "donkeykonga/3-jp-16.jpg",
-      "bpm": "164",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 1,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "CHA-LA HEAD-CHA-LA",
-      "saHash": "3-jp-17",
-      "artist": "Hironobu Kageyama",
-      "jacket": "donkeykonga/3-jp-17.png",
-      "bpm": "156",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "タッチ",
-      "name_translation": "Touch",
-      "saHash": "3-jp-18",
-      "artist": "Yoshimi Iwasaki",
-      "jacket": "donkeykonga/3-jp-18.jpg",
-      "bpm": "162",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "明日になったら…",
-      "name_translation": "Ashita ni Nattara...",
-      "saHash": "3-jp-19",
-      "artist": "Kōichi Yamadera and Megumi Hayashibara",
-      "jacket": "donkeykonga/3-jp-19.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "バナナ天国",
-      "name_translation": "Banana Tengoku",
-      "saHash": "3-jp-20",
-      "artist": "Kōichi Yamadera and Megumi Hayashibara",
-      "jacket": "donkeykonga/3-jp-20.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ドレミファだいじょーぶ",
-      "name_translation": "Do Re Mi Fa Daijōbu",
-      "saHash": "3-jp-21",
-      "artist": "B.B.Queens",
-      "jacket": "donkeykonga/3-jp-21.jpg",
-      "bpm": "166",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ヨーデル食べ放題",
-      "name_translation": "Yodel Tabehōdai",
-      "saHash": "3-jp-22",
-      "artist": "Katsura Jakusaburo and Manpuku Brothers",
-      "jacket": "donkeykonga/3-jp-22.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "エンターテイナー",
-      "name_translation": "The Entertainer",
-      "saHash": "3-jp-23",
-      "artist": "Scott Joplin",
-      "jacket": "donkeykonga/3-jp-23.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 8,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "ラ・クカラーチャ",
-      "name_translation": "La Cucaracha",
-      "saHash": "3-jp-24",
-      "artist": "Uncredited",
-      "jacket": "donkeykonga/3-jp-nojacket.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 3 (JP)",
-      "flags": ["jp-dupeof-eu"],
-      "charts": [
-        {
-          "lvl": 7,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 6,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
-      "name": "いい湯だな",
-      "name_translation": "Ii Yu Dana",
-      "saHash": "3-jp-25",
-      "artist": "Takashi Yanase",
-      "jacket": "donkeykonga/3-jp-25.jpg",
-      "bpm": "?",
-      "folder": "Donkey Konga 3 (JP)",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "monkey"
-        },
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "chimp"
-        },
-        {
-          "lvl": 2,
-          "style": "single",
-          "diffClass": "gorilla"
-        }
-      ]
-    },
-    {
       "name": "手のひらを太陽に",
       "name_translation": "Tenohira o Taiyō ni",
       "saHash": "3-jp-26",
@@ -5713,17 +5686,17 @@
         }
       ]
     },
-    {
-      "name": "ファイアーエムブレム",
-      "name_translation": "Fire Emblem",
-      "saHash": "3-jp-28",
+    {"name": "ラ・クカラーチャ",
+      "name_translation": "La Cucaracha",
+      "saHash": "3-jp-24",
       "artist": "Uncredited",
-      "jacket": "donkeykonga/3-jp-28.png",
+      "jacket": "donkeykonga/3-jp-nojacket.jpg",
       "bpm": "?",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["jp-dupeof-eu"],
       "charts": [
         {
-          "lvl": 5,
+          "lvl": 7,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -5733,7 +5706,34 @@
           "diffClass": "chimp"
         },
         {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "gorilla"
+        }
+      ]
+    },
+    {
+      "name": "ウィリアム・テル",
+      "name_translation": "William Tell Overture",
+      "saHash": "3-jp-30",
+      "artist": "Gioachino Rossini",
+      "jacket": "donkeykonga/3-jp-nojacket.jpg",
+      "bpm": "?",
+      "folder": "Donkey Konga 3 (JP)",
+      "flags": ["jp-dupeof-eu"],
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "monkey"
+        },
+        {
           "lvl": 7,
+          "style": "single",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -5767,17 +5767,16 @@
       ]
     },
     {
-      "name": "ウィリアム・テル",
-      "name_translation": "William Tell Overture",
-      "saHash": "3-jp-30",
-      "artist": "Gioachino Rossini",
-      "jacket": "donkeykonga/3-jp-nojacket.jpg",
+      "name": "エンターテイナー",
+      "name_translation": "The Entertainer",
+      "saHash": "3-jp-23",
+      "artist": "Scott Joplin",
+      "jacket": "donkeykonga/3-jp-23.jpg",
       "bpm": "?",
       "folder": "Donkey Konga 3 (JP)",
-      "flags": ["jp-dupeof-eu"],
       "charts": [
         {
-          "lvl": 6,
+          "lvl": 8,
           "style": "single",
           "diffClass": "monkey"
         },
@@ -5787,7 +5786,7 @@
           "diffClass": "chimp"
         },
         {
-          "lvl": 8,
+          "lvl": 7,
           "style": "single",
           "diffClass": "gorilla"
         }
@@ -5847,7 +5846,7 @@
       ]
     },
     {
-      "name": "Janguru Bīto",
+      "name": "ジャングルビート",
       "name_translation": "Jungle Beat",
       "saHash": "3-jp-33",
       "artist": "Uncredited",
