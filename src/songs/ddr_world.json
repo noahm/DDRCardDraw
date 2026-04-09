@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1775182869276
+    "lastUpdated": 1775716156278
   },
   "defaults": {
     "style": "single",
@@ -7323,7 +7323,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Blinding Lights.jpg"
+      "jacket": "ddr_world/Blinding Lights.jpg",
+      "remyLink": "https://remywiki.com/Blinding_Lights"
     },
     {
       "name": "Blizzard of Arrows",
@@ -21694,7 +21695,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Firework.jpg"
+      "jacket": "ddr_world/Firework.jpg",
+      "remyLink": "https://remywiki.com/Firework"
     },
     {
       "name": "First Action",
@@ -28405,7 +28407,10 @@
           "lvl": 14
         }
       ],
-      "jacket": "ddr_world/Homesick Pt.2&3.jpg"
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/Homesick Pt.2&3.jpg",
+      "remyLink": "https://remywiki.com/Homesick_Pt.2%263_(covered_by_Shiranui_Flare)",
+      "genre": "ソフトロックLONG/SOFTLOCK LONG"
     },
     {
       "name": "Hopeful",
@@ -47760,7 +47765,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Rain On Me.jpg"
+      "jacket": "ddr_world/Rain On Me.jpg",
+      "remyLink": "https://remywiki.com/Rain_On_Me"
     },
     {
       "name": "rainbow flyer",
@@ -50262,7 +50268,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/RUINA.jpg",
-      "genre": "ハードサイスピードコア/HARD PSY/SPEEDCORE"
+      "genre": "ハードサイスピードコア/HARD PSY/SPEEDCORE",
+      "remyLink": "https://remywiki.com/RUINA"
     },
     {
       "name": "Run The Show",
@@ -55174,7 +55181,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Somedays.jpg"
+      "jacket": "ddr_world/Somedays.jpg",
+      "remyLink": "https://remywiki.com/Somedays"
     },
     {
       "name": "Somehow You Found Me",
@@ -80857,7 +80865,10 @@
           "lvl": 13
         }
       ],
-      "jacket": "ddr_world/僕の飛行機.jpg"
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/僕の飛行機.jpg",
+      "remyLink": "https://remywiki.com/Boku_no_hikouki_(covered_by_Shiranui_Flare)",
+      "genre": "ニューミュージック/NEW MUSIC"
     },
     {
       "name": "共犯ヘヴンズコード",
@@ -88931,7 +88942,8 @@
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/足神様ノ復活祭.jpg"
+      "jacket": "ddr_world/足神様ノ復活祭.jpg",
+      "remyLink": "https://remywiki.com/Ashikamisama_no_fukkatsusai"
     },
     {
       "name": "路男",
