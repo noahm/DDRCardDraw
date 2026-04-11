@@ -4955,11 +4955,47 @@
       ]
     },
     {
-      "name": "Contact (NA chart)",
+      "name": "Contact",
       "saHash": "2-na-32",
       "artist": "Roger Sanchez",
       "jacket": "donkeykonga/2-na-32.jpg",
-      "bpm": "?",
+      "bpm": "130",
+      "folder": "Donkey Konga 2 (NA)",
+      "flags": ["na-dupeof-eu"],
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "solo",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 8,
+          "style": "battle",
+          "diffClass": "battle"
+        }
+      ]
+    },
+    {
+      "name": "Contact (NA chart)",
+      "saHash": "2-na-32-excl",
+      "artist": "Roger Sanchez",
+      "jacket": "donkeykonga/2-na-32.jpg",
+      "bpm": "130",
       "folder": "Donkey Konga 2 (NA)",
       "charts": [
         {
@@ -4968,19 +5004,19 @@
           "diffClass": "monkey"
         },
         {
-          "lvl": 8,
-          "style": "solo",
-          "diffClass": "chimp"
-        },
-        {
           "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
         },
         {
           "lvl": 8,
-          "style": "battle",
-          "diffClass": "battle"
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
         }
       ]
     },
@@ -5778,11 +5814,47 @@
       ]
     },
     {
-      "name": "Contact (EU chart)",
+      "name": "Contact",
       "saHash": "2-eu-27",
       "artist": "Roger Sanchez",
       "jacket": "donkeykonga/2-na-32.jpg",
-      "bpm": "?",
+      "bpm": "130",
+      "folder": "Donkey Konga 2 (EU)",
+      "flags": ["eu-dupeof-na"],  
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "solo",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 8,
+          "style": "battle",
+          "diffClass": "battle"
+        }
+      ]
+    },
+    {
+      "name": "Contact (EU chart)",
+      "saHash": "2-eu-27-excl",
+      "artist": "Roger Sanchez",
+      "jacket": "donkeykonga/2-na-32.jpg",
+      "bpm": "130",
       "folder": "Donkey Konga 2 (EU)",
       "charts": [
         {
