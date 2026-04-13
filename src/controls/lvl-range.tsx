@@ -3,9 +3,9 @@ import { CaretLeft, CaretRight } from "@blueprintjs/icons";
 import { getAvailableLevels } from "../game-data-utils";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
-import { useDrawState } from "../draw-state";
-import { useConfigState } from "../config-state";
 import styles from "./controls.css";
+import { useConfigState, useUpdateConfig } from "../state/hooks";
+import { useStockGameData } from "../state/game-data.atoms";
 
 function getBounds(
   lowerIdx: number,
@@ -42,15 +42,13 @@ function getBounds(
 
 export function LvlRangeControls() {
   const { t } = useIntl();
-  const gameData = useDrawState((s) => s.gameData);
+  const updateState = useUpdateConfig();
+  const lowerBound = useConfigState((s) => s.lowerBound);
+  const upperBound = useConfigState((s) => s.upperBound);
+  const useGranularLevels = useConfigState((s) => s.useGranularLevels);
+  const gameKey = useConfigState((s) => s.gameKey);
+  const gameData = useStockGameData(gameKey);
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
-  const configState = useConfigState();
-  const {
-    lowerBound,
-    upperBound,
-    update: updateState,
-    useGranularLevels,
-  } = configState;
   const availableLevels = useMemo(
     () => getAvailableLevels(gameData, useGranularLevels),
     [gameData, useGranularLevels],

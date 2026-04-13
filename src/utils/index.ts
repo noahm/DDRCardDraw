@@ -68,7 +68,9 @@ interface GameDataParent {
 
 /** ordered list of all available game data files */
 export const availableGameData = (
-  process.env.DATA_FILES as Array<Omit<AvailableGameData, "type" | "index">>
+  (process.env.DATA_FILES as unknown as Array<
+    Omit<AvailableGameData, "type" | "index">
+  >) || []
 ).sort((a, b) => {
   const parentDiff = a.parent.localeCompare(b.parent);
   if (parentDiff) {
