@@ -9419,7 +9419,7 @@
       "saHash": "3-jp-27",
       "artist": "Uncredited",
       "jacket": "donkeykonga/3-jp-nojacket.jpg",
-      "bpm": "?",
+      "bpm": "110-140",
       "folder": "Donkey Konga 3 (JP)",
       "flags": ["jp-dupeof-eu"],
       "charts": [
@@ -9476,7 +9476,7 @@
       "saHash": "3-jp-28",
       "artist": "Gioachino Rossini",
       "jacket": "donkeykonga/3-jp-nojacket.jpg",
-      "bpm": "?",
+      "bpm": "152",
       "folder": "Donkey Konga 3 (JP)",
       "flags": ["jp-dupeof-eu"],
       "charts": [
@@ -9533,7 +9533,7 @@
       "saHash": "3-jp-29",
       "artist": "Gioachino Rossini",
       "jacket": "donkeykonga/3-jp-nojacket.jpg",
-      "bpm": "?",
+      "bpm": "135",
       "folder": "Donkey Konga 3 (JP)",
       "flags": ["jp-dupeof-eu"],
       "charts": [
@@ -9590,7 +9590,7 @@
       "saHash": "3-jp-30",
       "artist": "Scott Joplin",
       "jacket": "donkeykonga/3-jp-30.jpg",
-      "bpm": "?",
+      "bpm": "150-225",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
@@ -9759,7 +9759,7 @@
       "saHash": "3-jp-33",
       "artist": "Uncredited",
       "jacket": "donkeykonga/3-jp-33.jpg",
-      "bpm": "?",
+      "bpm": "160",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
@@ -9815,7 +9815,7 @@
       "saHash": "3-jp-34",
       "artist": "Uncredited",
       "jacket": "donkeykonga/3-jp-34.jpg",
-      "bpm": "?",
+      "bpm": "110",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
@@ -9870,7 +9870,7 @@
       "saHash": "3-jp-35",
       "artist": "Uncredited",
       "jacket": "donkeykonga/3-jp-nojacket.jpg",
-      "bpm": "?",
+      "bpm": "95-120",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
@@ -9926,12 +9926,17 @@
       "saHash": "3-jp-36",
       "artist": "Uncredited",
       "jacket": "donkeykonga/3-jp-nojacket.jpg",
-      "bpm": "?",
+      "bpm": "140",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 2,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -9941,12 +9946,17 @@
       "saHash": "3-jp-37",
       "artist": "Nobuyuki Ohnogi",
       "jacket": "donkeykonga/3-jp-37.jpg",
-      "bpm": "?",
+      "bpm": "113",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 4,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -9956,12 +9966,17 @@
       "saHash": "3-jp-38",
       "artist": "Shigeichi Ishimura and Toshio Kai",
       "jacket": "donkeykonga/3-jp-38.jpg",
-      "bpm": "?",
+      "bpm": "180-240",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 7,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -9972,12 +9987,17 @@
       "saHash": "3-jp-39",
       "artist": "Yuriko Keino",
       "jacket": "donkeykonga/3-jp-39.jpg",
-      "bpm": "?",
+      "bpm": "180-225",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 6,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -9988,12 +10008,17 @@
       "saHash": "3-jp-40",
       "artist": "Junko Ozawa",
       "jacket": "donkeykonga/3-jp-40.jpg",
-      "bpm": "?",
+      "bpm": "110-172",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 5,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10009,6 +10034,11 @@
         {
           "lvl": 6,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10026,6 +10056,11 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "famicom"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "famicom"
         }
       ]
     },
@@ -10041,6 +10076,11 @@
         {
           "lvl": 8,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10058,6 +10098,11 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "famicom"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "famicom"
         }
       ]
     },
@@ -10067,12 +10112,17 @@
       "saHash": "3-jp-45",
       "artist": "Hirokazu Tanaka",
       "jacket": "donkeykonga/3-jp-45.jpg",
-      "bpm": "?",
+      "bpm": "160",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 5,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10083,12 +10133,17 @@
       "saHash": "3-jp-46",
       "artist": "Hirokazu Tanaka",
       "jacket": "donkeykonga/3-jp-46.png",
-      "bpm": "?",
+      "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 6,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10099,12 +10154,17 @@
       "saHash": "3-jp-47",
       "artist": "Koji Kondo",
       "jacket": "donkeykonga/3-jp-47.jpg",
-      "bpm": "?",
+      "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 3,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10115,12 +10175,17 @@
       "saHash": "3-jp-48",
       "artist": "Jun Ishikawa and Hirokazu Ando",
       "jacket": "donkeykonga/3-jp-48.jpg",
-      "bpm": "?",
+      "bpm": "175-180",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 3,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10131,12 +10196,17 @@
       "saHash": "3-jp-49",
       "artist": "Koji Kondo",
       "jacket": "donkeykonga/3-jp-49.jpg",
-      "bpm": "?",
+      "bpm": "165",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
-          "lvl": 3,
+          "lvl": 7,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10147,12 +10217,17 @@
       "saHash": "3-jp-50",
       "artist": "Hirokazu Tanaka",
       "jacket": "donkeykonga/3-jp-50.png",
-      "bpm": "?",
+      "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 5,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10163,12 +10238,17 @@
       "saHash": "3-jp-51",
       "artist": "Yukio Kaneoka",
       "jacket": "donkeykonga/3-jp-51.png",
-      "bpm": "?",
+      "bpm": "165",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 4,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10178,12 +10258,17 @@
       "saHash": "3-jp-52",
       "artist": "Yuriko Keino",
       "jacket": "donkeykonga/3-jp-52.jpg",
-      "bpm": "?",
+      "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 1,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10194,12 +10279,17 @@
       "saHash": "3-jp-53",
       "artist": "Yukio Kaneoka",
       "jacket": "donkeykonga/3-jp-53.png",
-      "bpm": "?",
+      "bpm": "138",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 1,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10210,12 +10300,17 @@
       "saHash": "3-jp-54",
       "artist": "Yukio Kaneoka",
       "jacket": "donkeykonga/3-jp-54.png",
-      "bpm": "?",
+      "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 1,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10226,12 +10321,17 @@
       "saHash": "3-jp-55",
       "artist": "Akito Nakatsuka",
       "jacket": "donkeykonga/3-jp-55.png",
-      "bpm": "?",
+      "bpm": "220",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 2,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
@@ -10242,12 +10342,17 @@
       "saHash": "3-jp-56",
       "artist": "Akito Nakatsuka",
       "jacket": "donkeykonga/3-jp-56.jpg",
-      "bpm": "?",
+      "bpm": "182",
       "folder": "Donkey Konga 3 (JP)",
       "charts": [
         {
           "lvl": 2,
           "style": "solo",
+          "diffClass": "famicom"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
           "diffClass": "famicom"
         }
       ]
