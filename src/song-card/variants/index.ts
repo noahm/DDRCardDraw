@@ -5,6 +5,7 @@ import { BaseCardCenter, type CardContentsProps, BaseCardFooter } from "./base";
 import { DdrCardFooter } from "./ddr";
 import { ItgCardFooter } from "./itg";
 import { MaimaiCardFooter } from "./maimai";
+import { DonkeyKongaCardCenter } from "./donkeykonga";
 
 export function getContentVariants(
   cardType: string | undefined,
@@ -24,6 +25,11 @@ export function getContentVariants(
       return {
         CenterContent: BaseCardCenter,
         FooterContent: MaimaiCardFooter,
+      };
+    case "donkeykonga":
+      return {
+        CenterContent: DonkeyKongaCardCenter,
+        FooterContent: BaseCardFooter,
       };
     default:
       return {
