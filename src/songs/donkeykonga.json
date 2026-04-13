@@ -27,13 +27,14 @@
       "na-dupeof-jp",
       "na-dupeof-eu",
       "eu-dupeof-jp",
-      "eu-dupeof-na"
+      "eu-dupeof-na",
+      "short-jingle"
     ],
     "lastUpdated": 1768702400603
   },
   "defaults": {
-    "style": "battle",
-    "difficulties": ["battle"],
+    "style": "solo",
+    "difficulties": ["chimp", "gorilla"],
     "flags": ["na-dupeof-jp", "na-dupeof-eu", "eu-dupeof-jp"],
     "lowerLvlBound": 4,
     "upperLvlBound": 8
@@ -56,6 +57,7 @@
       "na-dupeof-eu": "(NA) Charts that also appear in EU releases",
       "eu-dupeof-jp": "(EU) Charts that also appear in JP releases",
       "eu-dupeof-na": "(EU) Charts that also appear in NA releases",
+      "short-jingle": "Short jingles",
       "$abbr": {
         "monkey": "MNK",
         "chimp": "CHM",
@@ -4943,6 +4945,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 1,
           "style": "battle",
           "diffClass": "battle"
@@ -4975,6 +5002,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -5004,6 +5056,31 @@
           "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 1,
@@ -5038,6 +5115,31 @@
         },
         {
           "lvl": 8,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 8,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 8,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 8,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5066,6 +5168,31 @@
           "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -5099,6 +5226,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
@@ -5128,6 +5280,31 @@
           "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 1,
@@ -5161,6 +5338,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -5189,6 +5391,31 @@
           "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -5222,6 +5449,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
@@ -5250,6 +5502,31 @@
           "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 6,
@@ -5283,6 +5560,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 1,
           "style": "battle",
           "diffClass": "battle"
@@ -5312,6 +5614,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 1,
@@ -5346,6 +5673,31 @@
         },
         {
           "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5374,6 +5726,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -5408,6 +5785,31 @@
         },
         {
           "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 1,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5436,6 +5838,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -5467,6 +5894,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -5501,6 +5953,31 @@
         },
         {
           "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5528,6 +6005,31 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -5561,6 +6063,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
@@ -5590,6 +6117,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -5623,6 +6175,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
@@ -5652,6 +6229,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -5686,6 +6288,31 @@
         },
         {
           "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5713,6 +6340,31 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 7,
@@ -5746,6 +6398,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
@@ -5775,6 +6452,31 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -5808,6 +6510,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
@@ -5838,6 +6565,31 @@
           "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -5873,6 +6625,31 @@
         },
         {
           "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5902,6 +6679,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -5936,6 +6738,31 @@
         },
         {
           "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 1,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -5964,6 +6791,31 @@
           "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 8,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -5997,6 +6849,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -6026,6 +6903,31 @@
           "lvl": 1,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -6059,6 +6961,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
@@ -6088,6 +7015,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -6120,6 +7072,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
@@ -6148,6 +7125,31 @@
           "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -6181,6 +7183,31 @@
         },
         {
           "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -6209,6 +7236,31 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 8,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 7,
@@ -6241,6 +7293,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
@@ -6271,6 +7348,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
@@ -6299,6 +7401,31 @@
           "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -6332,6 +7459,31 @@
         },
         {
           "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 8,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -6359,6 +7511,31 @@
           "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -6391,6 +7568,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 8,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 7,
           "style": "battle",
           "diffClass": "battle"
@@ -6419,6 +7621,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 8,
@@ -6451,6 +7678,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
@@ -6479,6 +7731,31 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -6511,6 +7788,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -6539,6 +7841,31 @@
           "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -6572,6 +7899,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 7,
           "style": "battle",
           "diffClass": "battle"
@@ -6600,6 +7952,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 7,
@@ -6633,6 +8010,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -6661,6 +8063,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 6,
@@ -6694,6 +8121,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
@@ -6722,6 +8174,31 @@
           "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 8,
@@ -6755,6 +8232,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
@@ -6784,6 +8286,31 @@
           "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -6818,6 +8345,31 @@
         },
         {
           "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -6846,6 +8398,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -6946,6 +8523,31 @@
         },
         {
           "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 3,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -6973,6 +8575,31 @@
           "lvl": 5,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -7006,6 +8633,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -7034,6 +8686,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -7068,6 +8745,31 @@
         },
         {
           "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 7,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -7096,6 +8798,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -7129,6 +8856,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
@@ -7158,6 +8910,31 @@
           "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -7190,6 +8967,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
@@ -7220,6 +9022,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 1,
           "style": "battle",
           "diffClass": "battle"
@@ -7248,6 +9075,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 1,
@@ -7281,6 +9133,31 @@
         },
         {
           "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -7308,6 +9185,31 @@
           "lvl": 3,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -7340,6 +9242,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -7369,6 +9296,31 @@
           "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 8,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 6,
@@ -7403,6 +9355,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 6,
           "style": "battle",
           "diffClass": "battle"
@@ -7432,6 +9409,31 @@
           "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 8,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 3,
@@ -7465,6 +9467,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 2,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -7493,6 +9520,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 4,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -7526,6 +9578,31 @@
         },
         {
           "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 6,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 7,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -7554,6 +9631,31 @@
           "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -7586,6 +9688,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 3,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 2,
           "style": "battle",
           "diffClass": "battle"
@@ -7614,6 +9741,31 @@
           "lvl": 7,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 4,
@@ -7647,6 +9799,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 4,
           "style": "battle",
           "diffClass": "battle"
@@ -7675,6 +9852,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 2,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 1,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -7706,6 +9908,31 @@
           "lvl": 4,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -7764,19 +9991,19 @@
           "diffClass": "monkey"
         },
         {
-          "lvl": 8,
-          "style": "solo",
-          "diffClass": "chimp"
-        },
-        {
           "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
         },
         {
-          "lvl": 8,
-          "style": "battle",
-          "diffClass": "battle"
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
         }
       ]
     },
@@ -7803,6 +10030,31 @@
           "lvl": 6,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 5,
@@ -7836,6 +10088,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 8,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 8,
           "style": "battle",
           "diffClass": "battle"
@@ -7867,6 +10144,31 @@
           "diffClass": "gorilla"
         },
         {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 5,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 4,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 6,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 7,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
           "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
@@ -7895,6 +10197,31 @@
           "lvl": 8,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 7,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 6,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 5,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 5,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 6,
@@ -7928,6 +10255,31 @@
         },
         {
           "lvl": 5,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
+        },
+        {
+          "lvl": 5,
           "style": "battle",
           "diffClass": "battle"
         }
@@ -7955,6 +10307,31 @@
           "lvl": 2,
           "style": "solo",
           "diffClass": "gorilla"
+        },
+        {
+          "lvl": 3,
+          "style": "duet",
+          "diffClass": "monkey"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "chimp"
+        },
+        {
+          "lvl": 1,
+          "style": "duet",
+          "diffClass": "gorilla"
+        },
+        {
+          "lvl": 4,
+          "style": "share",
+          "diffClass": "share"
+        },
+        {
+          "lvl": 2,
+          "style": "quartet",
+          "diffClass": "quartet"
         },
         {
           "lvl": 2,
@@ -10241,6 +12618,7 @@
       "jacket": "donkeykonga/3-jp-51.png",
       "bpm": "165",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["short-jingles"],
       "charts": [
         {
           "lvl": 4,
@@ -10261,6 +12639,7 @@
       "jacket": "donkeykonga/3-jp-52.jpg",
       "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["short-jingles"],
       "charts": [
         {
           "lvl": 1,
@@ -10282,6 +12661,7 @@
       "jacket": "donkeykonga/3-jp-53.png",
       "bpm": "138",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["short-jingles"],
       "charts": [
         {
           "lvl": 1,
@@ -10303,6 +12683,7 @@
       "jacket": "donkeykonga/3-jp-54.png",
       "bpm": "150",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["short-jingles"],
       "charts": [
         {
           "lvl": 1,
@@ -10324,6 +12705,7 @@
       "jacket": "donkeykonga/3-jp-55.png",
       "bpm": "220",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["short-jingles"],
       "charts": [
         {
           "lvl": 2,
@@ -10345,6 +12727,7 @@
       "jacket": "donkeykonga/3-jp-56.jpg",
       "bpm": "182",
       "folder": "Donkey Konga 3 (JP)",
+      "flags": ["short-jingles"],
       "charts": [
         {
           "lvl": 2,
