@@ -276,6 +276,8 @@ try {
     console.log(
       `Songs processed for property copy from ${MIX_META.copyFrom.file}: ${fetchedSongs.length}`,
     );
+
+    lastUpdated = await importer.fetchLastUpdated();
   }
 
   if (MIX_META.sortSongs)

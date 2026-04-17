@@ -109,6 +109,17 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
       return key.startsWith("charts.");
     }
   }
+
+  async fetchLastUpdated(): Promise<number> {
+    const filePath = path.join(
+      path.dirname(fileURLToPath(import.meta.url)),
+      `../../src/songs/${this.#jsonFileName}`,
+    );
+    const fileContent = await readFile(filePath, "utf-8");
+    const gameData: GameData = JSON.parse(fileContent);
+
+    return gameData.meta.lastUpdated;
+  }
 }
 
 interface ZIVSourceMeta {
