@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1775716156278
+    "lastUpdated": 1775785408201
   },
   "defaults": {
     "style": "single",
@@ -8669,6 +8669,56 @@
       ],
       "jacket": "ddr_sn-sn2/CAN'T STOP FALLIN' IN LOVE -super euro version-.png",
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_-super_euro_version-"
+    },
+    {
+      "name": "Can't Stop Running!!",
+      "artist": "seatrus",
+      "saHash": "101l06dOi16IlQI0qDqo6qD9DOP999Dd",
+      "bpm": "98-197",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "197",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "197",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "197",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Can't Stop Running!!.jpg",
+      "remyLink": "https://remywiki.com/Can%27t_Stop_Running!!"
     },
     {
       "name": "CANDY (UFO mix)",
@@ -20074,6 +20124,56 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/First Time.png",
       "remyLink": "https://remywiki.com/First_Time"
+    },
+    {
+      "name": "Fizzing Steps",
+      "artist": "Reku Mochizuki",
+      "saHash": "b6l0o09QQ0oIPql18I9QlQq0b6lQoldl",
+      "bpm": "87-175",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "175",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "175",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "175",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Fizzing Steps.jpg",
+      "remyLink": "https://remywiki.com/Fizzing_Steps"
     },
     {
       "name": "Fleur",
