@@ -213,6 +213,7 @@ function GeneralSettings() {
     chartCount,
     sortByLevel,
     useGranularLevels,
+    noDuplicates,
     playerPicks,
   } = configState;
   const availableDifficulties = useMemo(() => {
@@ -380,6 +381,15 @@ function GeneralSettings() {
             updateState({ sortByLevel });
           }}
           label={t("controls.sortByLevel")}
+        />
+        <Checkbox
+          id="noDuplicates"
+          checked={noDuplicates}
+          onChange={(e) => {
+            const noDuplicates = !!e.currentTarget.checked;
+            updateState({ noDuplicates });
+          }}
+          label={t("controls.noDuplicates")}
         />
         <Checkbox
           id="useGranularLevels"

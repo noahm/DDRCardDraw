@@ -1,5 +1,5 @@
 import { AppThunk } from "./store";
-import { draw, DrawingMeta, newPlaceholder } from "../card-draw";
+import { draw, DrawResult, DrawingMeta, newPlaceholder } from "../card-draw";
 import {
   getLastGameSelected,
   loadStockGamedataByName,
@@ -30,6 +30,24 @@ function trackDraw(count: number | null, game?: string) {
   umami.track("cards-drawn", results);
 }
 
+/** Update usedCharts on a config after a draw, if noDuplicates is enabled */
+function updateDeckState(
+  dispatch: (action: ReturnType<typeof configSlice.actions.updateOne>) => void,
+  config: ConfigState,
+  result: DrawResult,
+) {
+  if (!config.noDuplicates) return;
+  const usedCharts = result.deckWasReset
+    ? result.newlyUsedKeys
+    : (config.usedCharts || []).concat(result.newlyUsedKeys);
+  dispatch(
+    configSlice.actions.updateOne({
+      id: config.id,
+      changes: { usedCharts },
+    }),
+  );
+}
+
 /**
  * Thunk creator for performing a new draw
  * @returns false if draw was unsuccessful
@@ -52,12 +70,13 @@ export function createDraw(
       return "nok"; // no draw was possible
     }
 
-    const charts = draw(gameData, config, drawMeta);
-    if (!charts.length) {
+    const result = draw(gameData, config, drawMeta);
+    if (!result.charts.length) {
       showDrawErrorToast();
       trackDraw(null);
       return "nok"; // could not draw the requested number of charts
     }
+    updateDeckState(dispatch, config, result);
 
     const players =
       drawMeta.meta.type === "simple"
@@ -69,7 +88,7 @@ export function createDraw(
     const mainDraw: SubDrawing = {
       compoundId: [matchId, setId],
       configId,
-      charts,
+      charts: result.charts,
     };
     const drawing: Drawing = {
       id: matchId,
@@ -82,7 +101,7 @@ export function createDraw(
       configId,
       subDrawings: { [setId]: mainDraw },
     };
-    trackDraw(charts.length, gameData.i18n.en.name as string);
+    trackDraw(result.charts.length, gameData.i18n.en.name as string);
 
     if (config.multiDraws) {
       for (const otherConfigId of config.multiDraws.configs) {
@@ -101,20 +120,24 @@ export function createDraw(
           console.error("couldnt perform extra draw, no game data");
           continue;
         }
-        const otherCharts = draw(otherGameData, otherConfig, drawMeta);
-        if (!otherCharts.length) {
+        const otherResult = draw(otherGameData, otherConfig, drawMeta);
+        if (!otherResult.charts.length) {
           continue; // could not draw the requested number of charts
         }
+        updateDeckState(dispatch, otherConfig, otherResult);
 
-        trackDraw(otherCharts.length, otherGameData.i18n.en.name as string);
+        trackDraw(
+          otherResult.charts.length,
+          otherGameData.i18n.en.name as string,
+        );
         if (config.multiDraws.merge) {
-          mainDraw.charts = mainDraw.charts.concat(otherCharts);
+          mainDraw.charts = mainDraw.charts.concat(otherResult.charts);
         } else {
           const otherSetId = `set-${nanoid(12)}`;
           drawing.subDrawings[otherSetId] = {
             compoundId: [drawing.id, otherSetId],
             configId: otherConfigId,
-            charts: otherCharts,
+            charts: otherResult.charts,
           };
         }
       }
@@ -149,18 +172,23 @@ export function createSubdraw(
     }
     const existingDraw = state.drawings.entities[parentDrawId];
 
-    const charts = draw(gameData, config, { meta: existingDraw.meta });
-    trackDraw(charts.length, gameData.i18n.en.name as string);
-    if (!charts.length) {
+    const result = draw(gameData, config, { meta: existingDraw.meta });
+    trackDraw(result.charts.length, gameData.i18n.en.name as string);
+    if (!result.charts.length) {
       showDrawErrorToast();
       return "nok"; // could not draw the requested number of charts
     }
+    updateDeckState(dispatch, config, result);
 
     const setId = `set-${nanoid(12)}`;
     dispatch(
       drawingsSlice.actions.addSubdraw({
         existingDrawId: parentDrawId,
-        newSubdraw: { compoundId: [parentDrawId, setId], configId, charts },
+        newSubdraw: {
+          compoundId: [parentDrawId, setId],
+          configId,
+          charts: result.charts,
+        },
       }),
     );
     return "ok";
@@ -195,14 +223,15 @@ export function createRedrawAll(drawingId: CompoundSetId): AppThunk {
     };
     const gameData = await loadStockGamedataByName(originalConfig.gameKey);
 
-    const charts = draw(gameData!, drawConfig, {
+    const result = draw(gameData!, drawConfig, {
       meta: parent.meta,
       charts: chartsToKeep,
     });
+    updateDeckState(dispatch, originalConfig, result);
     dispatch(
       drawingsSlice.actions.updateCharts({
         drawId: drawingId,
-        newCharts: chartsToKeep.concat(charts),
+        newCharts: chartsToKeep.concat(result.charts),
       }),
     );
   };
@@ -227,11 +256,11 @@ export function createRedrawChart(
     const gameData = await loadStockGamedataByName(customConfig.gameKey);
     if (!gameData) return;
 
-    const charts = draw(gameData, customConfig, {
+    const result = draw(gameData, customConfig, {
       meta: parent.meta,
       charts: target.charts.filter((chart) => chart.id !== chartId),
     });
-    const chart = charts.pop();
+    const chart = result.charts.pop();
     if (
       !chart ||
       chart.type !== "DRAWN" ||
@@ -240,6 +269,7 @@ export function createRedrawChart(
       showDrawErrorToast();
       return; // result didn't include a new chart
     }
+    updateDeckState(dispatch, customConfig, result);
     dispatch(
       drawingsSlice.actions.updateOneChart({
         drawingId,
@@ -286,11 +316,11 @@ export function createPlusOneChart(
         ),
     };
 
-    const charts = draw(gameData, customConfig, {
+    const result = draw(gameData, customConfig, {
       meta: parent.meta,
       charts: target.charts,
     });
-    const chart = charts.pop();
+    const chart = result.charts.pop();
     if (
       !chart ||
       chart.type !== "DRAWN" ||
@@ -299,6 +329,7 @@ export function createPlusOneChart(
       showDrawErrorToast();
       return; // result didn't include a new chart
     }
+    updateDeckState(dispatch, originalConfig, result);
     return dispatch(drawingsSlice.actions.addOneChart({ drawingId, chart }));
   };
 }

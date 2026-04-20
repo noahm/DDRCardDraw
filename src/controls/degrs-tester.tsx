@@ -44,7 +44,7 @@ function* oneMillionDraws(
     yield [
       draw(gameData, configState!, {
         meta: { players: [], title: "", type: "simple" },
-      }),
+      }).charts,
       idx,
     ] as const;
   }

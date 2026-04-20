@@ -1,4 +1,9 @@
-import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createEntityAdapter,
+  type PayloadAction,
+  type Update,
+} from "@reduxjs/toolkit";
 
 export interface ConfigState {
   id: string;
@@ -23,6 +28,10 @@ export interface ConfigState {
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
+  /** when true, charts are not repeated between draws until all eligible charts have been seen */
+  noDuplicates: boolean;
+  /** chart keys already drawn from the deck (used when noDuplicates is enabled) */
+  usedCharts: Array<string>;
   /** if present, will draw an additional set of cards for each string id in `configs` */
   multiDraws?: {
     /** if true, auto-merge the resulting draws */
@@ -52,16 +61,47 @@ export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {
   sortByLevel: false,
   defaultPlayersPerDraw: 2,
   useGranularLevels: false,
+  noDuplicates: false,
+  usedCharts: [],
 };
 
 const adapter = createEntityAdapter<ConfigState>({});
+
+/** Config fields that affect which charts are eligible for drawing */
+const ELIGIBILITY_FIELDS = new Set([
+  "gameKey",
+  "style",
+  "difficulties",
+  "lowerBound",
+  "upperBound",
+  "useGranularLevels",
+  "folders",
+  "flags",
+  "useWeights",
+  "weights",
+  "probabilityBucketCount",
+  "cutoffDate",
+]);
 
 export const configSlice = createSlice({
   name: "config",
   initialState: adapter.getInitialState(),
   reducers: {
     addOne: adapter.addOne,
-    updateOne: adapter.updateOne,
+    updateOne(state, action: PayloadAction<Update<ConfigState, string>>) {
+      const { changes } = action.payload;
+      // Auto-clear usedCharts when eligibility-affecting fields change
+      if (
+        !("usedCharts" in changes) &&
+        Object.keys(changes).some((k) => ELIGIBILITY_FIELDS.has(k))
+      ) {
+        action.payload = {
+          ...action.payload,
+          changes: { ...changes, usedCharts: [] },
+        };
+      }
+      adapter.updateOne(state, action);
+    },
     removeOne: adapter.removeOne,
   },
   selectors: {
