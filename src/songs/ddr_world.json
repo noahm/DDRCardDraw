@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1775785408201
+    "lastUpdated": 1776906798787
   },
   "defaults": {
     "style": "single",
@@ -53630,6 +53630,53 @@
       "search_hint": "MAKINA/マキナ"
     },
     {
+      "name": "Silent Flame,Never Fade",
+      "artist": "不知火フレア",
+      "saHash": "qIPq0oqPOIiIboPodli101q10lDloqbd",
+      "bpm": "145",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["euLocked"],
+      "remyLink": "https://remywiki.com/Silent_Flame,Never_Fade",
+      "jacket": "ddr_world/Silent Flame,Never Fade.jpg"
+    },
+    {
       "name": "Silent Hill",
       "artist": "THOMAS HOWARD",
       "bpm": "125",
@@ -75798,7 +75845,7 @@
       "saIndex": "657"
     },
     {
-      "name": "チルノのパーフェクトさんすう学園",
+      "name": "チルノのパーフェクトさんすう学園【ビートまりお】",
       "artist": "ビートまりお",
       "bpm": "179",
       "folder": "DanceDanceRevolution World",
