@@ -4773,7 +4773,6 @@ __metadata:
     peerjs: "npm:2.0.0-beta.3"
     postcss: "npm:8.5.6"
     postcss-loader: "npm:8.2.0"
-    prettier: "npm:^3.6.2"
     react: "npm:19.2.3"
     react-dom: "npm:19.2.3"
     react-error-boundary: "npm:6.0.1"
@@ -8648,7 +8647,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.2.5, prettier@npm:^3.6.2":
+"prettier@npm:^3.2.5":
   version: 3.6.2
   resolution: "prettier@npm:3.6.2"
   bin:
