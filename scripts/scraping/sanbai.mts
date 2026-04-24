@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { format } from "prettier";
+import { format } from "oxfmt";
 
 import { downloadJacket, exists, requestQueue } from "../utils.mts";
 import type { Chart, Song } from "../../src/models/SongData.ts";
@@ -271,9 +271,9 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       "sanbai",
     );
     const filePath = path.join(folderPath, "songdata.mjs");
-    const formatted = await format(mjsText, { filepath: filePath });
+    const { code } = await format(filePath, mjsText);
     if (!(await exists(folderPath))) await mkdir(folderPath);
-    await writeFile(filePath, formatted);
+    await writeFile(filePath, code);
     return filePath;
   }
 

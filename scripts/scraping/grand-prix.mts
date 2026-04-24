@@ -54,9 +54,9 @@ const corrections = new Map<string, Partial<Pick<Song, "name" | "artist">>>([
   ["零 - ZERO -", { artist: "TЁЯRA" }],
 ]);
 
-export class GrandPrixSongImporter
-  implements DDRSongImporter<Pick<Song, "name" | "artist">>
-{
+export class GrandPrixSongImporter implements DDRSongImporter<
+  Pick<Song, "name" | "artist">
+> {
   /** URL to DDR song list page */
   readonly #songListUrl: string;
 

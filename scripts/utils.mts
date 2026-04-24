@@ -4,7 +4,7 @@ import { globalAgent as httpAgent } from "node:http";
 import { globalAgent as httpsAgent } from "node:https";
 import { resolve, basename, join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { format } from "prettier";
+import { format } from "oxfmt";
 import PQueue from "p-queue";
 import { Jimp, ResizeStrategy } from "jimp";
 import sanitize from "sanitize-filename";
@@ -92,15 +92,12 @@ export async function writeJsonData(
   space?: number,
 ) {
   data.meta.lastUpdated = lastUpdated ?? Date.now();
-  let formatted;
   try {
-    formatted = await format(JSON.stringify(data, null, space), {
-      filepath: filePath,
-    });
+    const { code } = await format(filePath, JSON.stringify(data, null, space));
+    return writeFile(filePath, code);
   } catch (e) {
     throw new Error("Formatting failed", { cause: e });
   }
-  return writeFile(filePath, formatted);
 }
 
 /** @type {PQueue} */
@@ -129,7 +126,7 @@ export function setJacketPrefix(prefix: string) {
  * @param localFilename known local filename, or song name
  * @returns absolute and relative paths
  */
-function getOutputPath(coverUrl: string, localFilename: string) {
+function getOutputPath(coverUrl: string, localFilename: string | undefined) {
   if (!localFilename) {
     localFilename = JACKET_PREFIX + basename(coverUrl);
   } else {
