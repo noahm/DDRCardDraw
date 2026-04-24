@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function hasToString(i: any): i is { toString(): string } {
-  return "toString" in i && typeof i["toString"] === "function";
+function hasToString(i: unknown): i is { toString(): string } {
+  return (
+    typeof i === "object" && i !== null && typeof i["toString"] === "function"
+  );
 }
 
 export function convertErrorToString(err: unknown, withStack = false): string {

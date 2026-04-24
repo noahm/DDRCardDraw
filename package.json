@@ -26,7 +26,7 @@
     "import:itg": "node scripts/import-itg.mjs",
     "import:eventList": "node scripts/event-filter.mjs",
     "validate": "npm run validate:json && npm run validate:ts && npm run validate:format && npm run validate:lint",
-    "validate:lint": "eslint",
+    "validate:lint": "oxlint",
     "validate:json": "node scripts/validate.mjs",
     "validate:format": "oxfmt --check",
     "validate:ts": "tsc --noemit"
