@@ -77,20 +77,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  ...[
-    // BEMANI SELECTION楽曲パックvol.3
-    "olIo8PdO8dq16QqDIQboQq6oPqDO9qoo", // Get Back Up!
-    "I9Oood9l9li0D08Q6d6DQPiIQiloidO6", // Riot of Color
-    "I1I0qd19DqIoI0qdqd6oPO68O8DDi6OI", // 勇猛無比
-    // グランプリ楽曲パックvol.35
-    "86q90PPqld0qili801IqDOD0Q6boblI1", // Couleur=Blanche
-    "Di0ODIlddo8d90oo09qqd98QObQP1llI", // [ ]DENTITY
-    "b1QllqO8oQdqo086QdIlIblDDbPodDoP", // Lose Your Sense
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-03-31T15:00:00+09:00"),
-    id,
-    { lock_types: undefined },
-  ]),
   // グランプリ譜面パック vol.1
   ...[
     "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
@@ -103,13 +89,31 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     id,
     { lock_types: undefined },
   ]),
+  ...[
+    // グランプリ楽曲パック vol.36
+    "98QDoo1I6dP8QoPiDQOdQ09Db80Il68q", // ARACHNE
+    "00o6QPq0Qdl8IQolO80q6dD86696O6ob", // EBONY & IVORY
+    "blq0Oq8q6oi89odoPOqIDDQIPO11IQ9O", // Liar×Girl
+    "i080lP1QqIiO998qPl888qboIiIDdiD1", // 絶対零度
+    // スペシャル楽曲パック feat.pop'n music vol.1
+    "IqPq866IQD0liq9lOl00qDqiPlq9bOD0", // BabeL ～Next Story～
+    "8909Q00li66qQ906I9QoldIqbiIP1QoQ", // ポチコの幸せな日常
+    "0Q6I1llb809bd8i1oo86PQdlo6IQ8DQd", // 明鏡止水
+    "0b96d606l9bdllQDi1Q89d1O0IPlIb69", // 路男
+    // プラチナメンバーズパス特典1
+    "0QI6ODo0bPq6Io8ibP16d6I81dbI6oDi", // Monsters Den
+    "Dqb69lDiP6diId6O8Q0I6bbQI88lPlb0", // Stand Alone Beat Masta
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-06-30T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
 ];
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
-  ["8o10d9O89d6DQOiDlbb160Id8IIO6b01", { deleted: 1 }], // SOUVENIR
   [
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
-    { deleted: undefined, ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
+    { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
   // #region グランプリ譜面パック vol.6
   [
@@ -117,15 +121,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
   ],
   // #endregion グランプリ譜面パック vol.6
-  // #region BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append
-  [
-    "Q6il000Q11liO16qIDi0i0IO6id6qibP", // RUINA
-    {
-      ratings: [7, 12, 16, 18, 0, 12, 15, 18, 0],
-      lock_types: [330, 330, 330, 330, 0, 330, 330, 330, 0],
-    },
-  ],
-  // #endregion BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
