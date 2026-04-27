@@ -31,10 +31,10 @@ interface DrawingProviderProps {
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   updateDrawing: StoreApi<Drawing>["setState"];
-  incrementPriorityPlayer(): void;
-  redrawAllCharts(): void;
-  redrawChart(chartId: string): void;
-  resetChart(chartId: string): void;
+  incrementPriorityPlayer(this: void): void;
+  redrawAllCharts(this: void): void;
+  redrawChart(this: void, chartId: string): void;
+  resetChart(this: void, chartId: string): void;
   /**
    * handles any of the protect/pocket-pick/ban actions a user may take on a drawn chart
    * @param action type of action being performed
@@ -43,12 +43,13 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
    * @param chart new chart being pocket picked, if this is a pocket pick action
    */
   handleBanProtectReplace(
+    this: void,
     action: "ban" | "protect" | "pocket",
     chartId: string,
     player: number,
     chart?: EligibleChart,
   ): void;
-  setWinner(chartId: string, p: number | null): void;
+  setWinner(this: void, chartId: string, p: number | null): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {

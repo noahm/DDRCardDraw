@@ -104,11 +104,11 @@ export function SongCardBase(props: Props) {
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
-  const handleCopy = useCallback(() => {
+  const handleCopy = useCallback(async () => {
     if (!diffAbbr) {
       return;
     }
-    copyTextToClipboard(
+    await copyTextToClipboard(
       `${name} [${diffAbbr.toUpperCase()}]`,
       "Copied name & difficulty",
     );

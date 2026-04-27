@@ -14,7 +14,7 @@ interface Props {
   disableInput?: boolean;
   disableButton?: boolean;
   /** called when the user clicks the button or presses the enter key */
-  onClick(value: string, element: HTMLInputElement): void;
+  onClick(this: void, value: string, element: HTMLInputElement): void;
   buttonLabel: ReactNode;
   enterKeyHint?: InputHTMLAttributes<unknown>["enterKeyHint"];
 }

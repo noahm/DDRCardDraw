@@ -37,7 +37,7 @@ export function createContextualStore<
       return () => {
         StoreIndex.delete(thisId);
       };
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // oxlint-disable-next-line react/exhaustive-deps
     }, []);
     return createElement(
       context.Provider,
@@ -58,7 +58,7 @@ export function createContextualStore<
     equalityFn?: (a: Slice, b: Slice) => boolean,
   ) {
     const store = useThisStore();
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // oxlint-disable-next-line react/rules-of-hooks
     return selector ? useStore(store, selector, equalityFn) : useStore(store);
   }
 

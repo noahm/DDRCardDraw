@@ -117,7 +117,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     (total, group, idx) => total + (weights[idx] || 0),
     0,
   );
-  const percentages = groups.map((group, idx) => {
+  const percentages = groups.map((_group, idx) => {
     const value = weights[idx] || 0;
     const pct = value / totalWeight;
     if (forceDistribution) {
@@ -177,7 +177,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
             type="number"
             inputMode="numeric"
             width={2}
-            name={`weight-${group}`}
+            name={`weight-${printGroup(group, useGranularLevels ? gameData?.meta.granularTierResolution : undefined)}`}
             value={weights[idx] || ""}
             min={0}
             onValueChange={(v) => setWeight(idx, v)}
