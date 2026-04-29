@@ -2823,14 +2823,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:27.0.0":
-  version: 27.0.0
-  resolution: "@types/jsdom@npm:27.0.0"
+"@types/jsdom@npm:28.0.1":
+  version: 28.0.1
+  resolution: "@types/jsdom@npm:28.0.1"
   dependencies:
     "@types/node": "npm:*"
     "@types/tough-cookie": "npm:*"
     parse5: "npm:^7.0.0"
-  checksum: 10/67dc284f74960e1ba0787599dfb0a46ca94ea4443242d3fc1e513b0c5313d2d4136176764acce2b03b8c66dec942ff4ab15322208ccc17b7c1dccc8cd01d4cc2
+    undici-types: "npm:^7.21.0"
+  checksum: 10/5761f89fb00567bce87ec81f9c926cff9a400e2989615368093a0eed81da122329710f39e13d8388cdde8f6a24d49cde4a94bd194e6d94c61727aeaae694f6bb
   languageName: node
   linkType: hard
 
@@ -4625,7 +4626,7 @@ __metadata:
     "@pmmmwh/react-refresh-webpack-plugin": "npm:0.6.2"
     "@types/better-sqlite3": "npm:7.6.13"
     "@types/fuzzy-search": "npm:2.1.5"
-    "@types/jsdom": "npm:27.0.0"
+    "@types/jsdom": "npm:28.0.1"
     "@types/node": "npm:24.10.4"
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch"
     "@types/react": "npm:^19.0.0"
@@ -9763,6 +9764,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/696e1b017bc2635f4e0c94eb4435357701008e2f272f553d06e35b494b8ddc60aa221145e286c28ace0c89ee32827a28c2040e3a69bdc108b1a5dc8fb40b72e3
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:^7.21.0":
+  version: 7.25.0
+  resolution: "undici-types@npm:7.25.0"
+  checksum: 10/66f3a460cbc9e83e73c11c3a1869c32eef6c92b32450cc9dc677c671d958b9d1bb8635ff36a421019e4b1114dfc79d187aecf4dc75cf167a85535e03559b9250
   languageName: node
   linkType: hard
 
