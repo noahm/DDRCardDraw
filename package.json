@@ -32,13 +32,13 @@
     "validate:ts": "tsc --noemit"
   },
   "devDependencies": {
-    "@babel/core": "7.28.5",
+    "@babel/core": "7.29.0",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/plugin-transform-class-properties": "7.27.1",
-    "@babel/plugin-transform-optional-chaining": "7.28.5",
-    "@babel/plugin-transform-react-jsx": "7.27.1",
+    "@babel/plugin-transform-class-properties": "7.28.6",
+    "@babel/plugin-transform-optional-chaining": "7.28.6",
+    "@babel/plugin-transform-react-jsx": "7.28.6",
     "@babel/plugin-transform-react-jsx-source": "7.27.1",
-    "@babel/preset-env": "7.28.5",
+    "@babel/preset-env": "7.29.3",
     "@babel/preset-typescript": "7.28.5",
     "@blueprintjs/core": "6.11.3",
     "@blueprintjs/datetime": "6.0.23",
