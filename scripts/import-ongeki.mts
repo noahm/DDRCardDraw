@@ -110,9 +110,7 @@ async function fetchInternalLevels(): Promise<Map<InternalLevelKey, number>> {
   const { window } = new JSDOM(html);
   const { document } = window;
 
-  const rows = document.querySelectorAll(
-    "#sort_table > table > tbody > tr",
-  );
+  const rows = document.querySelectorAll("#sort_table > table > tbody > tr");
 
   const levels = new Map<InternalLevelKey, number>();
 
