@@ -1,7 +1,7 @@
 {
   "$schema": "../../songs.schema.json",
   "meta": {
-    "lastUpdated": 1778340924460,
+    "lastUpdated": 1778341556877,
     "menuParent": "more",
     "styles": ["single"],
     "difficulties": [
@@ -20,9 +20,10 @@
       "R.E.D. PLUS",
       "bright",
       "bright MEMORY",
-      "Re:Fresh"
+      "Re:Fresh",
+      "LUNATIC"
     ],
-    "flags": ["lun_only"]
+    "flags": []
   },
   "defaults": {
     "style": "single",
@@ -145,7 +146,6 @@
       "jacket": "ongeki/e347e64f6a605eda.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -160,7 +160,6 @@
       "jacket": "ongeki/0eb6fd4b4e951e49.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -175,7 +174,6 @@
       "jacket": "ongeki/06f11e60a389216b.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -190,7 +188,6 @@
       "jacket": "ongeki/770a50661d417b8d.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 7.7 },
@@ -219,7 +216,6 @@
       "jacket": "ongeki/ab4ebdf01a8085a4.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 7.7 },
@@ -248,7 +244,6 @@
       "jacket": "ongeki/9bde43bc5b5bad9f.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -277,7 +272,6 @@
       "jacket": "ongeki/a91286290b678439.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -348,7 +342,6 @@
       "jacket": "ongeki/c316c73c72125bb6.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -363,7 +356,6 @@
       "jacket": "ongeki/278aa0df7cd921e0.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -378,7 +370,6 @@
       "jacket": "ongeki/465232f6ad513606.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -393,7 +384,6 @@
       "jacket": "ongeki/dea92a6670e4d018.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -408,7 +398,6 @@
       "jacket": "ongeki/26802b2899099456.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -423,7 +412,6 @@
       "jacket": "ongeki/358d6114137198eb.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 7.7 },
@@ -438,7 +426,6 @@
       "jacket": "ongeki/a9a44a09aa85b3be.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -481,7 +468,6 @@
       "jacket": "ongeki/c5fa59a6703f3e33.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -510,7 +496,6 @@
       "jacket": "ongeki/14b12542acce7db5.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-07-26",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -553,7 +538,6 @@
       "jacket": "ongeki/df4bf87db84a4d4e.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-08-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 7.7 },
@@ -568,7 +552,6 @@
       "jacket": "ongeki/7a16ebdb6ba59144.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-08-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -597,7 +580,6 @@
       "jacket": "ongeki/06c933cf66f11d42.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-08-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -696,7 +678,6 @@
       "jacket": "ongeki/6e6c0b88b2ca222d.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-08-09",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.2 }]
     },
     {
@@ -706,7 +687,6 @@
       "jacket": "ongeki/1a491468ec5f6e66.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-08-23",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -763,7 +743,6 @@
       "jacket": "ongeki/f0390cfc1c2e16d2.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-08-30",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -778,7 +757,6 @@
       "jacket": "ongeki/826fd0899d2b33e8.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-09-06",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -793,7 +771,6 @@
       "jacket": "ongeki/80d82f874b9ea713.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-09-06",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -920,7 +897,6 @@
       "jacket": "ongeki/d12a096909f24d37.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-10-04",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -1131,7 +1107,6 @@
       "jacket": "ongeki/7e589233d4d8d636.jpg",
       "folder": "オンゲキ",
       "date_added": "2018-11-22",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -1225,7 +1200,6 @@
       "jacket": "ongeki/3612214dccd6f3ba.jpg",
       "folder": "オンゲキ",
       "date_added": "2019-01-24",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -1310,7 +1284,6 @@
       "jacket": "ongeki/f19fcd891778d590.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-02-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -1325,7 +1298,6 @@
       "jacket": "ongeki/c0fff908e428febb.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-02-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -1354,7 +1326,6 @@
       "jacket": "ongeki/2bc00c8a15ee013d.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-02-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 8 },
@@ -1369,7 +1340,6 @@
       "jacket": "ongeki/151c8c9ab0a5e59d.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-02-21",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -1468,7 +1438,6 @@
       "jacket": "ongeki/fd3510f807b3bc05.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-03-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 1 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -1537,9 +1506,8 @@
       "artist": "Street",
       "bpm": "?",
       "jacket": "ongeki/c0e2c6dcbb805968.jpg",
-      "folder": "オンゲキ PLUS",
+      "folder": "LUNATIC",
       "date_added": "2019-03-21",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.7 }]
     },
     {
@@ -1563,7 +1531,6 @@
       "jacket": "ongeki/9593e5e960da172e.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-04-25",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -1578,7 +1545,6 @@
       "jacket": "ongeki/358b759131a7416f.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-05-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -1775,7 +1741,6 @@
       "jacket": "ongeki/431816e2b62dff4e.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-06-06",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.1 }]
     },
     {
@@ -1799,7 +1764,6 @@
       "jacket": "ongeki/54009ae8df5d07c9.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-06-20",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -1814,7 +1778,6 @@
       "jacket": "ongeki/8bd91315af996172.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-06-20",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -1829,7 +1792,6 @@
       "jacket": "ongeki/a2d80246efb36096.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-06-20",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 1 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -1900,7 +1862,6 @@
       "jacket": "ongeki/19087a064929d0d2.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-07-18",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -1943,7 +1904,6 @@
       "jacket": "ongeki/3b07d3f27ea98f55.jpg",
       "folder": "オンゲキ PLUS",
       "date_added": "2019-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 12.8 }]
     },
     {
@@ -2051,7 +2011,6 @@
       "jacket": "ongeki/36af5a9ec2be3f35.jpg",
       "folder": "SUMMER",
       "date_added": "2019-08-22",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -2066,7 +2025,6 @@
       "jacket": "ongeki/67a8f246309c5419.jpg",
       "folder": "SUMMER",
       "date_added": "2019-08-22",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -2109,7 +2067,6 @@
       "jacket": "ongeki/cf0e4ba44b84e9c3.jpg",
       "folder": "SUMMER",
       "date_added": "2019-08-22",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -2152,7 +2109,6 @@
       "jacket": "ongeki/2dfb6d5d0a411d0c.jpg",
       "folder": "SUMMER",
       "date_added": "2019-08-22",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -2265,7 +2221,6 @@
       "jacket": "ongeki/c0b5ebc6980d2e25.jpg",
       "folder": "SUMMER",
       "date_added": "2019-08-22",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.2 }]
     },
     {
@@ -2275,7 +2230,6 @@
       "jacket": "ongeki/9b0624f432e15353.jpg",
       "folder": "SUMMER",
       "date_added": "2019-09-19",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -2654,7 +2608,6 @@
       "jacket": "ongeki/212189f280e821ae.jpg",
       "folder": "SUMMER",
       "date_added": "2019-12-17",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -2669,7 +2622,6 @@
       "jacket": "ongeki/f45fb0a539361052.jpg",
       "folder": "SUMMER",
       "date_added": "2019-12-17",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -3209,9 +3161,8 @@
       "artist": "Hiro",
       "bpm": "?",
       "jacket": "ongeki/66ff51356171bd8e.jpg",
-      "folder": "SUMMER PLUS",
+      "folder": "LUNATIC",
       "date_added": "2020-06-11",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -3277,7 +3228,6 @@
       "jacket": "ongeki/01139f4345fbd92c.jpg",
       "folder": "SUMMER PLUS",
       "date_added": "2020-06-25",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -3446,7 +3396,6 @@
       "jacket": "ongeki/7672890a676ab1d2.jpg",
       "folder": "SUMMER PLUS",
       "date_added": "2020-07-23",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.6 }]
     },
     {
@@ -3580,9 +3529,8 @@
       "artist": "cubesato",
       "bpm": "?",
       "jacket": "ongeki/8dd04f0a34e08420.jpg",
-      "folder": "SUMMER PLUS",
+      "folder": "LUNATIC",
       "date_added": "2020-08-20",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.8 }]
     },
     {
@@ -3590,9 +3538,8 @@
       "artist": "WASi303",
       "bpm": "?",
       "jacket": "ongeki/0eb2e3089eacae90.jpg",
-      "folder": "SUMMER PLUS",
+      "folder": "LUNATIC",
       "date_added": "2020-08-20",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.6 }]
     },
     {
@@ -3784,7 +3731,6 @@
       "jacket": "ongeki/2d1d5599b8457aac.jpg",
       "folder": "R.E.D.",
       "date_added": "2020-09-30",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -3953,7 +3899,6 @@
       "jacket": "ongeki/59fb1dc1b106d17f.jpg",
       "folder": "R.E.D.",
       "date_added": "2020-10-08",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -4297,9 +4242,8 @@
       "artist": "fn(ArcaeaSoundTeam)「Arcaea」",
       "bpm": "?",
       "jacket": "ongeki/ed01ff977235996f.jpg",
-      "folder": "R.E.D.",
+      "folder": "LUNATIC",
       "date_added": "2020-12-24",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -4463,7 +4407,6 @@
       "jacket": "ongeki/9faeceb97c30b47d.jpg",
       "folder": "R.E.D.",
       "date_added": "2021-01-28",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14 }]
     },
     {
@@ -4473,7 +4416,6 @@
       "jacket": "ongeki/c3860cb11ba9092e.jpg",
       "folder": "R.E.D.",
       "date_added": "2021-02-04",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -4502,7 +4444,6 @@
       "jacket": "ongeki/cbb8bbc4616ef2af.jpg",
       "folder": "R.E.D.",
       "date_added": "2021-02-04",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -4596,7 +4537,6 @@
       "jacket": "ongeki/34a6ba2c0f0b7d71.jpg",
       "folder": "R.E.D.",
       "date_added": "2021-02-18",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -4816,7 +4756,6 @@
       "jacket": "ongeki/6e433cddbcaabab8.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-03-31",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -4845,7 +4784,6 @@
       "jacket": "ongeki/2fcfe2cb2fa41652.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-03-31",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 8 },
@@ -4900,9 +4838,8 @@
       "artist": "原曲：並木 学「バトルガレッガ(AC)」",
       "bpm": "?",
       "jacket": "ongeki/149b2547b9b4dd2a.jpg",
-      "folder": "R.E.D. PLUS",
+      "folder": "LUNATIC",
       "date_added": "2021-03-31",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14 }]
     },
     {
@@ -4924,9 +4861,8 @@
       "artist": "SEGA SOUND STAFF「セガNET麻雀 MJ」",
       "bpm": "?",
       "jacket": "ongeki/c97171aaaa29db57.jpg",
-      "folder": "R.E.D. PLUS",
+      "folder": "LUNATIC",
       "date_added": "2021-04-01",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.3 }]
     },
     {
@@ -5480,9 +5416,8 @@
       "artist": "LeaF",
       "bpm": "?",
       "jacket": "ongeki/4b4165c564c7e543.jpg",
-      "folder": "R.E.D. PLUS",
+      "folder": "LUNATIC",
       "date_added": "2021-07-08",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.9 }]
     },
     {
@@ -5534,7 +5469,6 @@
       "jacket": "ongeki/6ada0962cdfcadde.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14 }]
     },
     {
@@ -5572,7 +5506,6 @@
       "jacket": "ongeki/05b1588a94aa0acf.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-08-05",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.4 }]
     },
     {
@@ -5694,7 +5627,6 @@
       "jacket": "ongeki/7861c3491aaa4cd9.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-09-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 1 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -5737,7 +5669,6 @@
       "jacket": "ongeki/5f3a28db93176554.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-09-16",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 8.7 },
@@ -5794,7 +5725,6 @@
       "jacket": "ongeki/4e233c36ce5334fe.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-09-22",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -5851,7 +5781,6 @@
       "jacket": "ongeki/a31d3d5f1fa03290.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-09-30",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -5880,7 +5809,6 @@
       "jacket": "ongeki/77c744ee9d6e7cbc.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-10-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 8 },
@@ -5923,7 +5851,6 @@
       "jacket": "ongeki/bff790c36735c363.jpg",
       "folder": "R.E.D. PLUS",
       "date_added": "2021-10-07",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 11.2 }]
     },
     {
@@ -6045,7 +5972,6 @@
       "jacket": "ongeki/7db9e7de2253af54.jpg",
       "folder": "bright",
       "date_added": "2021-10-21",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -6158,7 +6084,6 @@
       "jacket": "ongeki/814897b7fd1ae918.jpg",
       "folder": "bright",
       "date_added": "2021-10-21",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.1 }]
     },
     {
@@ -6166,9 +6091,8 @@
       "artist": "ビートまりお（COOL&CREATE）",
       "bpm": "?",
       "jacket": "ongeki/6716be4af496102b.jpg",
-      "folder": "bright",
+      "folder": "LUNATIC",
       "date_added": "2021-10-21",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.3 }]
     },
     {
@@ -6416,7 +6340,6 @@
       "jacket": "ongeki/a0b4c4bdea32ea80.jpg",
       "folder": "bright",
       "date_added": "2021-11-25",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -6774,9 +6697,8 @@
       "artist": "土屋昇平(ZUNTATA)「ダライアスバースト」",
       "bpm": "?",
       "jacket": "ongeki/ab5cdf344abf6dd7.jpg",
-      "folder": "bright",
+      "folder": "LUNATIC",
       "date_added": "2022-01-27",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.8 }]
     },
     {
@@ -6856,7 +6778,6 @@
       "jacket": "ongeki/47a6075102855659.jpg",
       "folder": "bright",
       "date_added": "2022-02-17",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -7263,8 +7184,7 @@
       "jacket": "ongeki/63e35c7060d16a94.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-03-03",
-      "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }],
-      "flags": ["lun_only"]
+      "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
       "name": "So much loving you★ -DIVA Edit-",
@@ -7383,9 +7303,8 @@
       "artist": "編曲：SEGA SOUND STAFF",
       "bpm": "?",
       "jacket": "ongeki/459c1c8e88be4476.jpg",
-      "folder": "bright MEMORY",
+      "folder": "LUNATIC",
       "date_added": "2022-04-01",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -7829,7 +7748,6 @@
       "jacket": "ongeki/afa140b2a0e27684.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-05-19",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -7839,7 +7757,6 @@
       "jacket": "ongeki/9d102c9cd3387e9f.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-05-19",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -7849,7 +7766,6 @@
       "jacket": "ongeki/cc94c4b3013dc8ed.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-05-19",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -8167,7 +8083,6 @@
       "jacket": "ongeki/6de7e87e33088a57.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-06-23",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.7 }]
     },
     {
@@ -8175,9 +8090,8 @@
       "artist": "細江慎治",
       "bpm": "?",
       "jacket": "ongeki/495c250cdb3f272e.jpg",
-      "folder": "bright MEMORY",
+      "folder": "LUNATIC",
       "date_added": "2022-06-23",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 15 }]
     },
     {
@@ -8185,9 +8099,8 @@
       "artist": "細江慎治",
       "bpm": "?",
       "jacket": "ongeki/8bde82b9ccf2f790.jpg",
-      "folder": "bright MEMORY",
+      "folder": "LUNATIC",
       "date_added": "2022-06-23",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -8253,7 +8166,6 @@
       "jacket": "ongeki/019245d746cf23c8.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.8 }]
     },
     {
@@ -8263,7 +8175,6 @@
       "jacket": "ongeki/998cfc200cae6abc.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.6 }]
     },
     {
@@ -8273,7 +8184,6 @@
       "jacket": "ongeki/5c4c7fb388727cf3.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.7 }]
     },
     {
@@ -8283,7 +8193,6 @@
       "jacket": "ongeki/54d97ae71958a13a.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.2 }]
     },
     {
@@ -8293,7 +8202,6 @@
       "jacket": "ongeki/20a6638745f28c48.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.8 }]
     },
     {
@@ -8303,7 +8211,6 @@
       "jacket": "ongeki/e4ce2918b2f8df26.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -8313,7 +8220,6 @@
       "jacket": "ongeki/c61bd15dc937c86d.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.7 }]
     },
     {
@@ -8323,7 +8229,6 @@
       "jacket": "ongeki/56fb72abab9cab9b.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.8 }]
     },
     {
@@ -8333,7 +8238,6 @@
       "jacket": "ongeki/ba9cbf7cfe6aa87b.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.5 }]
     },
     {
@@ -8343,7 +8247,6 @@
       "jacket": "ongeki/4a240ed140dc742c.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -8353,7 +8256,6 @@
       "jacket": "ongeki/70872cb4ea570df7.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.1 }]
     },
     {
@@ -8363,7 +8265,6 @@
       "jacket": "ongeki/712f7384874cc082.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.9 }]
     },
     {
@@ -8373,7 +8274,6 @@
       "jacket": "ongeki/d9065d32fe889536.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.1 }]
     },
     {
@@ -8383,7 +8283,6 @@
       "jacket": "ongeki/ad122ea6500e8b5f.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.6 }]
     },
     {
@@ -8393,7 +8292,6 @@
       "jacket": "ongeki/eff01c9376824321.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.5 }]
     },
     {
@@ -8403,7 +8301,6 @@
       "jacket": "ongeki/ef2d214b5e453e44.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.3 }]
     },
     {
@@ -8413,7 +8310,6 @@
       "jacket": "ongeki/bae2ef70930014c7.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.4 }]
     },
     {
@@ -8423,7 +8319,6 @@
       "jacket": "ongeki/5b9676442d0cd056.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.9 }]
     },
     {
@@ -8433,7 +8328,6 @@
       "jacket": "ongeki/bacbd6ad4f2f6df4.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-08-04",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.8 }]
     },
     {
@@ -8443,7 +8337,6 @@
       "jacket": "ongeki/b0800d447afa0144.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-08-04",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -8453,7 +8346,6 @@
       "jacket": "ongeki/71d4575f848ac084.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-08-04",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -8575,7 +8467,6 @@
       "jacket": "ongeki/ce29d095b36cfbbd.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-09-29",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.8 }]
     },
     {
@@ -8683,7 +8574,6 @@
       "jacket": "ongeki/d68195e5281bdaa7.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-11-10",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.1 }]
     },
     {
@@ -8749,7 +8639,6 @@
       "jacket": "ongeki/1360a9e58f35cc01.jpg",
       "folder": "bright MEMORY",
       "date_added": "2022-12-08",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.3 }]
     },
     {
@@ -8815,7 +8704,6 @@
       "jacket": "ongeki/02a60be1dbe22a3c.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-01-12",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.6 }]
     },
     {
@@ -8867,7 +8755,6 @@
       "jacket": "ongeki/7714dafd7807aa2b.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-02-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 3 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -8896,7 +8783,6 @@
       "jacket": "ongeki/8b4a2f3d655a2642.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-02-09",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 13.6 }]
     },
     {
@@ -8990,7 +8876,6 @@
       "jacket": "ongeki/f427843ff0d23c7a.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-03-16",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 7 },
@@ -9215,7 +9100,6 @@
       "jacket": "ongeki/7cb2c09b62a7a509.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-06-08",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.5 }]
     },
     {
@@ -9365,7 +9249,6 @@
       "jacket": "ongeki/0207e9ca04ba9a85.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-08-10",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.9 }]
     },
     {
@@ -9543,7 +9426,6 @@
       "jacket": "ongeki/3f51431e44a6a80f.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-10-12",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 15 }]
     },
     {
@@ -9749,7 +9631,6 @@
       "jacket": "ongeki/8df17ed3fddca2b3.jpg",
       "folder": "bright MEMORY",
       "date_added": "2023-12-28",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.1 }]
     },
     {
@@ -9885,7 +9766,6 @@
       "jacket": "ongeki/bfa1d05603a89209.jpg",
       "folder": "bright MEMORY",
       "date_added": "2024-03-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 5 },
         { "style": "single", "diffClass": "advanced", "lvl": 9 },
@@ -9998,7 +9878,6 @@
       "jacket": "ongeki/c5e4a159db6da949.jpg",
       "folder": "bright MEMORY",
       "date_added": "2024-03-07",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 5 },
         { "style": "single", "diffClass": "advanced", "lvl": 8 },
@@ -10041,7 +9920,6 @@
       "jacket": "ongeki/e267bb3859139563.jpg",
       "folder": "bright MEMORY",
       "date_added": "2024-03-07",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.7 }]
     },
     {
@@ -10051,7 +9929,6 @@
       "jacket": "ongeki/cd1f8982067ac4e3.jpg",
       "folder": "bright MEMORY",
       "date_added": "2024-03-07",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -10089,7 +9966,6 @@
       "jacket": "ongeki/43c68d7763273b82.jpg",
       "folder": "bright MEMORY",
       "date_added": "2024-03-21",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.9 }]
     },
     {
@@ -10841,7 +10717,6 @@
       "jacket": "ongeki/ab99060aed1ba94e.jpg",
       "folder": "bright MEMORY",
       "date_added": "2024-12-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.2 }]
     },
     {
@@ -10963,7 +10838,6 @@
       "jacket": "ongeki/9650a6877763e5dc.jpg",
       "folder": "bright MEMORY",
       "date_added": "2025-02-06",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.2 }]
     },
     {
@@ -10973,7 +10847,6 @@
       "jacket": "ongeki/b902d0b0230a4535.jpg",
       "folder": "bright MEMORY",
       "date_added": "2025-02-20",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 6 },
         { "style": "single", "diffClass": "advanced", "lvl": 10 },
@@ -10988,7 +10861,6 @@
       "jacket": "ongeki/9fe2c8a515a47d88.jpg",
       "folder": "bright MEMORY",
       "date_added": "2025-02-20",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 7.7 },
@@ -11031,7 +10903,6 @@
       "jacket": "ongeki/14b0a08cbb278918.jpg",
       "folder": "bright MEMORY",
       "date_added": "2025-02-20",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -11041,7 +10912,6 @@
       "jacket": "ongeki/6e4457eb81f1051a.jpg",
       "folder": "bright MEMORY",
       "date_added": "2025-02-20",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -11107,7 +10977,6 @@
       "jacket": "ongeki/5db1f906b22a4493.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-03-27",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 2 },
         { "style": "single", "diffClass": "advanced", "lvl": 5 },
@@ -11346,7 +11215,6 @@
       "jacket": "ongeki/208058fa34707164.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-04-01",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -11622,7 +11490,6 @@
       "jacket": "ongeki/8c4a6bfba5bcfa96.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-06-19",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.8 }]
     },
     {
@@ -11632,7 +11499,6 @@
       "jacket": "ongeki/14a0e51e0adb2db2.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-07-03",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 6 },
@@ -11675,7 +11541,6 @@
       "jacket": "ongeki/d5612cf6277801e8.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-07-03",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.8 }]
     },
     {
@@ -11685,7 +11550,6 @@
       "jacket": "ongeki/32fb19e8d01b2f01.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-07-03",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.2 }]
     },
     {
@@ -11807,7 +11671,6 @@
       "jacket": "ongeki/fe128d898db56415.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-07-26",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.2 }]
     },
     {
@@ -12181,7 +12044,6 @@
       "jacket": "ongeki/a921972c10659938.jpg",
       "folder": "Re:Fresh",
       "date_added": "2025-11-13",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 14.7 }]
     },
     {
@@ -12609,9 +12471,8 @@
       "artist": "アルル(CV 園崎未恵)「ぷよぷよ」",
       "bpm": "?",
       "jacket": "ongeki/1945076320b6f2b3.jpg",
-      "folder": "Re:Fresh",
+      "folder": "LUNATIC",
       "date_added": "2026-04-01",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -12621,7 +12482,6 @@
       "jacket": "ongeki/5d3b3b579a91b282.jpg",
       "folder": "Re:Fresh",
       "date_added": "2026-04-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 6 },
         { "style": "single", "diffClass": "advanced", "lvl": 10.7 },
@@ -12636,7 +12496,6 @@
       "jacket": "ongeki/86a5abf55fb333c1.jpg",
       "folder": "Re:Fresh",
       "date_added": "2026-04-09",
-      "flags": ["lun_only"],
       "charts": [
         { "style": "single", "diffClass": "basic", "lvl": 4 },
         { "style": "single", "diffClass": "advanced", "lvl": 8.7 },
@@ -12679,7 +12538,6 @@
       "jacket": "ongeki/1a38ce6ca555cb17.jpg",
       "folder": "Re:Fresh",
       "date_added": "2026-04-09",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {
@@ -12689,7 +12547,6 @@
       "jacket": "ongeki/f5618dc0781b497d.jpg",
       "folder": "Re:Fresh",
       "date_added": "2026-04-09",
-      "flags": ["lun_only"],
       "charts": [{ "style": "single", "diffClass": "lunatic", "lvl": 0 }]
     },
     {

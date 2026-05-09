@@ -168,9 +168,10 @@ function extractSong(
   rawSong: Record<string, any>,
   existingSong: Song | undefined,
   internalLevels: Map<InternalLevelKey, number>,
+  regularTitles: Set<string>,
 ): Song {
-  const isLunaticOnly = !!rawSong.lunatic;
   const title: string = rawSong.title;
+  const isLunaticRemaster = !!rawSong.lunatic && regularTitles.has(title);
 
   const charts: Chart[] = (
     [
@@ -193,15 +194,22 @@ function extractSong(
     downloadJacket(`${IMAGE_BASE_URL}${rawSong.image_url}`, jacketFilename);
   }
 
+  // Lunatic-only songs (no regular version) go in the LUNATIC folder.
+  // Lunatic remaster songs share their folder with the regular version.
+  const folder =
+    rawSong.lunatic && !isLunaticRemaster
+      ? "LUNATIC"
+      : getVersionFolder(rawSong.date);
+
+  const { flags: _oldFlags, ...existingSongRest } = existingSong ?? {};
   return {
-    ...existingSong,
+    ...existingSongRest,
     name: title,
     artist: rawSong.artist,
     bpm: existingSong?.bpm ?? "?",
     jacket: jacketFilename,
-    folder: getVersionFolder(rawSong.date),
+    folder,
     date_added: `${rawSong.date.substring(0, 4)}-${rawSong.date.substring(4, 6)}-${rawSong.date.substring(6, 8)}`,
-    ...(isLunaticOnly ? { flags: ["lun_only"] } : {}),
     charts,
   };
 }
@@ -229,8 +237,9 @@ const baseGameData: GameData = {
       "bright",
       "bright MEMORY",
       "Re:Fresh",
+      "LUNATIC",
     ],
-    flags: ["lun_only"],
+    flags: [],
   },
   defaults: {
     style: "single",
@@ -248,7 +257,6 @@ const baseGameData: GameData = {
       expert: "EXPERT",
       master: "MASTER",
       lunatic: "LUNATIC",
-      lun_only: "Lunatic Mode Songs",
       $abbr: {
         basic: "BAS",
         advanced: "ADV",
@@ -265,7 +273,6 @@ const baseGameData: GameData = {
       expert: "EXPERT",
       master: "MASTER",
       lunatic: "LUNATIC",
-      lun_only: "ルナティックモード楽曲",
       $abbr: {
         basic: "BAS",
         advanced: "ADV",
@@ -311,10 +318,19 @@ task("Ongeki Import", async ({ setStatus, setError, task: subTask }) => {
       );
     }
 
+    const regularTitles = new Set(
+      rawSongs.filter((s) => !s.lunatic).map((s) => s.title),
+    );
+
     const songs: Song[] = rawSongs
       .filter((rawSong) => !rawSong.title.includes("ver.-"))
       .map((rawSong) =>
-        extractSong(rawSong, existingSongsById[rawSong.title], internalLevels),
+        extractSong(
+          rawSong,
+          existingSongsById[rawSong.title],
+          internalLevels,
+          regularTitles,
+        ),
       );
 
     const outputData: GameData = {
