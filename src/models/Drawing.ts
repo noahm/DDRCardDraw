@@ -12,6 +12,9 @@ export interface EligibleChart {
   diffColor: string;
   level: number;
   granularLevel?: number;
+  step?: number;
+  freeze?: number;
+  shock?: number;
   drawGroup?: number;
   flags: string[];
   extras: string[];
