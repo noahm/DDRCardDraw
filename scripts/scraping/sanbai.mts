@@ -37,12 +37,7 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [300, ["platinumMembers"]], // DDR PLATINUM MEMBERS
   [310, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe (2026-01-29 10:00~2026-03-22 23:59)
   [320, ["tempUnlock"]], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
-  [
-    330,
-    _currentDate < new Date("2026-04-26T23:59:00+09:00")
-      ? ["unlock"]
-      : ["tempUnlock"],
-  ], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append (2026-03-26 10:00~2026-04-26 23:59)
+  [330, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append (2026-03-26 10:00~2026-04-26 23:59)
   [350, ["unlock"]], // 段位認定(DAN RANK)
 ]);
 
@@ -77,6 +72,12 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
+  // WORLD LEAGUE 11th
+  [
+    new Date("2026-05-27T16:00:00+09:00"),
+    "q6o1id8doDb988l1o01P8dllQ0d6IP9P", // Time to HYPERDRIVE
+    { lock_types: undefined },
+  ],
   // グランプリ譜面パック vol.1
   ...[
     "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
@@ -105,6 +106,23 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     "Dqb69lDiP6diId6O8Q0I6bbQI88lPlb0", // Stand Alone Beat Masta
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-06-30T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
+  // グランプリ譜面パック vol.2
+  ...[
+    "Q96bO9D61lib19IiIi0i69P80bo6q69Q", // 321STARS
+    "0DDo1ilPDQoIoPd8ol9OPO1IPbi9ii6d", // AA
+    "dq190Il9iO1bD698ll6ddObIlqdIQ1O9", // AM-3P
+    "P8P1dlqi9D111iIDPOP0l9DIO1l6lqO9", // BABY BABY GIMME YOUR LOVE
+    "Q0OiPQQ8IbIDq08IO9Io0qDdoDPPdd1q", // DROP OUT
+    "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO", // exotic ethnic
+    "8Il6980di8P89lil1PDIqqIbiq1QO8lQ", // MAKE IT BETTER
+    "80bQi8IQ8o1iidqd6oQiDPQoPi909olq", // Silent Hill
+    "bi1Obd9i99P0O9PqQ1l1P6P6o1IOi11P", // Silver Platform - I wanna get your heart -
+    "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl", // 男々道
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-07-31T15:00:00+09:00"),
     id,
     { lock_types: undefined },
   ]),
