@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1775785408201
+    "lastUpdated": 1778121927820
   },
   "defaults": {
     "style": "single",
@@ -4174,6 +4174,11 @@
           "sanbaiTier": 13.25
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -4190,6 +4195,11 @@
           "diffClass": "expert",
           "lvl": 13,
           "sanbaiTier": 13.2
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
         }
       ],
       "flags": ["grandPrixPack"],
@@ -13426,6 +13436,11 @@
           "sanbaiTier": 12.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 4,
@@ -13442,6 +13457,11 @@
           "diffClass": "expert",
           "lvl": 12,
           "sanbaiTier": 12.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15
         }
       ],
       "flags": ["grandPrixPack"],
@@ -15797,6 +15817,11 @@
           "sanbaiTier": 14.45
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -15813,6 +15838,11 @@
           "diffClass": "expert",
           "lvl": 14,
           "sanbaiTier": 14.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
         }
       ],
       "flags": ["grandPrixPack"],
@@ -56294,6 +56324,11 @@
           "sanbaiTier": 13.85
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 4,
@@ -56310,6 +56345,11 @@
           "diffClass": "expert",
           "lvl": 13,
           "sanbaiTier": 13.75
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
         }
       ],
       "flags": ["grandPrixPack"],
@@ -69989,6 +70029,11 @@
           "sanbaiTier": 13.85
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 4,
@@ -70005,6 +70050,11 @@
           "diffClass": "expert",
           "lvl": 13,
           "sanbaiTier": 13.85
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15
         }
       ],
       "flags": ["grandPrixPack"],

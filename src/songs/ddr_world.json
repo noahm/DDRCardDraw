@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1776906798787
+    "lastUpdated": 1778121927820
   },
   "defaults": {
     "style": "single",
@@ -4494,6 +4494,12 @@
           "sanbaiTier": 13.25
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
@@ -4510,6 +4516,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.2
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Arcadia_(OMOCHI_feat.Kanako_Hoshino)",
@@ -14495,6 +14507,12 @@
           "sanbaiTier": 12.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 4,
           "style": "double",
           "diffClass": "basic",
@@ -14511,6 +14529,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
         }
       ],
       "jacket": "ddr_world/DanRevoAthlon.jpg",
@@ -16947,6 +16971,12 @@
           "sanbaiTier": 14.45
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
@@ -16963,6 +16993,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 14.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Don%27t_Stop_The_HYPERCORE",
@@ -61358,6 +61394,12 @@
           "sanbaiTier": 13.85
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 4,
           "style": "double",
           "diffClass": "basic",
@@ -61374,6 +61416,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.75
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "flags": ["unlock"]
         }
       ],
       "jacket": "ddr_world/The Ashes of Boreas.jpg",
@@ -77316,6 +77364,12 @@
           "sanbaiTier": 13.85
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 4,
           "style": "double",
           "diffClass": "basic",
@@ -77332,6 +77386,12 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.85
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "flags": ["unlock"]
         }
       ],
       "jacket": "ddr_world/バッドユース・アウェイク.jpg",
@@ -78562,6 +78622,53 @@
       "jacket": "ddr_a3/ポラリスノウタ.jpg",
       "remyLink": "https://remywiki.com/Polaris_no_uta",
       "genre": "FUTUREBASS"
+    },
+    {
+      "name": "ポルカドット・ダンス・ガール",
+      "artist": "KE!JU",
+      "saHash": "Dq6II6Q81DQIiP6l69b1id6D0QQO9Dld",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/ポルカドット・ダンス・ガール.jpg",
+      "remyLink": "https://remywiki.com/Polka_dot_dance_girl"
     },
     {
       "name": "マインド・ゲーム",
