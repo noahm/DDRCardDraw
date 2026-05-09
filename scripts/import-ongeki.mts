@@ -311,9 +311,11 @@ task("Ongeki Import", async ({ setStatus, setError, task: subTask }) => {
       );
     }
 
-    const songs: Song[] = rawSongs.map((rawSong) =>
-      extractSong(rawSong, existingSongsById[rawSong.title], internalLevels),
-    );
+    const songs: Song[] = rawSongs
+      .filter((rawSong) => !rawSong.title.includes("ver.-"))
+      .map((rawSong) =>
+        extractSong(rawSong, existingSongsById[rawSong.title], internalLevels),
+      );
 
     const outputData: GameData = {
       ...baseGameData,
