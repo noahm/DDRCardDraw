@@ -150,6 +150,7 @@ export interface Chart {
   step?: number;
   shock?: number;
   freeze?: number;
+  maxScore?: number;
   jacket?: string;
   author?: string;
   /**

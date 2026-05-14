@@ -5,9 +5,11 @@ import {
   PlayerPickPlaceholder,
   CHART_PLACEHOLDER,
 } from "../../models/Drawing";
+import { useIntl } from "../../hooks/useIntl";
 import { detectedLanguage } from "../../utils";
 import { ChartLevel } from "../chart-level";
 import styles from "../song-card.css";
+import { useConfigState } from "../../config-state";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -50,6 +52,37 @@ export function BaseCardCenter(props: CardSectionProps) {
       <div className={styles.dateAdded} title={dateAdded}>
         {dateAdded}
       </div>
+    </>
+  );
+}
+
+export function MaxScoreCardCenter(props: CardSectionProps) {
+  const { name, nameTranslation, artist, artistTranslation, maxScore } =
+    baseChartValues(props.chart);
+  const { t } = useIntl();
+  const showMaxScore = useConfigState((state) => state.showMaxScore);
+  const maxExScore = t(
+    "meta.maxScoreFormat",
+    { maxScore: maxScore ?? "no data" },
+    "MAX: {maxScore}",
+  );
+
+  return (
+    <>
+      <div className={styles.name} title={nameTranslation}>
+        {name}
+      </div>
+      {isJapanese ? null : (
+        <div className={styles.nameTranslation}>{nameTranslation}</div>
+      )}
+      <div className={styles.artist} title={artistTranslation}>
+        {artist}
+      </div>
+      {showMaxScore ? (
+        <div className={styles.maxScore} title={maxExScore}>
+          {maxExScore}
+        </div>
+      ) : null}
     </>
   );
 }

@@ -46,6 +46,7 @@ export function getDrawnChart(
     step: chart.step,
     freeze: chart.freeze,
     shock: chart.shock,
+    maxScore: chart.maxScore,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     extras: (chart.extras || []).concat(currentSong.extras || []),

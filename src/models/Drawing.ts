@@ -15,6 +15,7 @@ export interface EligibleChart {
   step?: number;
   freeze?: number;
   shock?: number;
+  maxScore?: number;
   drawGroup?: number;
   flags: string[];
   extras: string[];

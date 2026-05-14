@@ -211,6 +211,9 @@
         "freeze": {
           "type": "number"
         },
+        "maxScore": {
+          "type": "number"
+        },
         "jacket": {
           "type": "string"
         },
