@@ -147,9 +147,6 @@ export interface Chart {
    * tournament-specific grouping of charts (e.g. tier)
    */
   drawGroup?: number;
-  step?: number;
-  shock?: number;
-  freeze?: number;
   maxScore?: number;
   jacket?: string;
   author?: string;
