@@ -12,6 +12,7 @@ export interface EligibleChart {
   diffColor: string;
   level: number;
   granularLevel?: number;
+  maxScore?: number;
   drawGroup?: number;
   flags: string[];
   extras: string[];
