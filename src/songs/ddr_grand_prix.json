@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1778121927820
+    "lastUpdated": 1778771368024
   },
   "defaults": {
     "style": "single",
@@ -1825,6 +1825,13 @@
           "maxScore": 927
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1467,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 6,
@@ -1844,6 +1851,13 @@
           "lvl": 11,
           "sanbaiTier": 11.6,
           "maxScore": 927
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1455,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_1st-5th/Abyss.png",
@@ -12440,6 +12454,13 @@
           "maxScore": 768
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1101,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -12459,6 +12480,13 @@
           "lvl": 10,
           "sanbaiTier": 10.55,
           "maxScore": 762
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1092,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_1st-5th/CUTIE CHASER.png",
@@ -21498,6 +21526,13 @@
           "maxScore": 612
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 825,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 3,
@@ -21517,6 +21552,13 @@
           "lvl": 8,
           "sanbaiTier": 8.5,
           "maxScore": 597
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 840,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/Forever Sunshine.png",
@@ -30532,6 +30574,13 @@
           "maxScore": 549
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 786,
+          "flags": ["prePrivilege", "shock"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -30551,6 +30600,13 @@
           "lvl": 10,
           "sanbaiTier": 10.55,
           "maxScore": 492
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 777,
+          "flags": ["prePrivilege", "shock"]
         }
       ],
       "jacket": "ddr_1st-5th/KEEP ON MOVIN'.png",
@@ -36437,6 +36493,13 @@
           "maxScore": 1068
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1413,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -36456,6 +36519,13 @@
           "lvl": 10,
           "sanbaiTier": 10.25,
           "maxScore": 894
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1392,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/Mind Parasite.png",
@@ -57466,6 +57536,13 @@
           "maxScore": 1509
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2094,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 8,
@@ -57485,6 +57562,13 @@
           "lvl": 16,
           "sanbaiTier": 16.45,
           "maxScore": 1461
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1956,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_max-ext/The legend of MAX.png",
@@ -60970,6 +61054,13 @@
           "maxScore": 1122
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1455,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 6,
@@ -60989,6 +61080,13 @@
           "lvl": 13,
           "sanbaiTier": 13.55,
           "maxScore": 1089
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1443,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_max-ext/TSUGARU.png",
@@ -62919,6 +63017,13 @@
           "maxScore": 1362
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1623,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -62938,6 +63043,13 @@
           "lvl": 13,
           "sanbaiTier": 13.7,
           "maxScore": 1353
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1503,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/volcano.png",
@@ -69039,6 +69151,13 @@
           "maxScore": 882
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "maxScore": 1398,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -69058,6 +69177,13 @@
           "lvl": 12,
           "sanbaiTier": 12.5,
           "maxScore": 807
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1329,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_1st-5th/SANA MOLLETE NE ENTE.png",
@@ -76175,6 +76301,13 @@
           "maxScore": 1056
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1578,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 3,
@@ -76194,6 +76327,13 @@
           "lvl": 11,
           "sanbaiTier": 11.75,
           "maxScore": 1017
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1515,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/Tino's White Horse.png",
