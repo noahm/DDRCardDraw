@@ -46,7 +46,7 @@ export function DrawDialog(props: Props) {
       return;
     }
     props.onClose();
-    dispatch(createDraw({ meta }, configId)).then((result) => {
+    void dispatch(createDraw({ meta }, configId)).then((result) => {
       props.onDrawAttempt(result === "ok");
     });
   }

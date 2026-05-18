@@ -96,9 +96,7 @@ export async function getJacketFromRemySong(
   const dom = await getDom(pageUrl);
   const songName = overrideSongName || decodeURIComponent(basename(pageUrl));
   // find images
-  const images = Array.from(
-    dom.window.document.querySelectorAll(".thumb.tright"),
-  );
+  const images = Array.from(dom.window.document.querySelectorAll("figure"));
   if (!images.length) {
     return;
   }

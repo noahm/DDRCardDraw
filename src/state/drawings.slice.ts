@@ -1,3 +1,4 @@
+// oxlint-disable typescript/unbound-method
 import {
   PayloadAction,
   Slice,

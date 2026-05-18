@@ -202,13 +202,7 @@
           "type": "number",
           "description": "tournament-specific grouping of charts (e.g. tier)"
         },
-        "step": {
-          "type": "number"
-        },
-        "shock": {
-          "type": "number"
-        },
-        "freeze": {
+        "maxScore": {
           "type": "number"
         },
         "jacket": {

@@ -63,7 +63,7 @@ export function useStockGameData(name: string): GameData | null {
   const data = useAtomValue(stockDataByName(name));
   useEffect(() => {
     if (!data && name) {
-      loadStockGamedataByName(name);
+      void loadStockGamedataByName(name);
     }
   }, [data, name]);
   return data || null;

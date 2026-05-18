@@ -110,7 +110,7 @@ export default class Server implements Party.Server {
     this.store.dispatch(parsed.action);
     const nextState = this.store.getState();
     // persist to partykit storage
-    this.room.storage.put("currentState", nextState);
+    void this.room.storage.put("currentState", nextState);
     // persist the state to supabase
     try {
       if (supabase) {

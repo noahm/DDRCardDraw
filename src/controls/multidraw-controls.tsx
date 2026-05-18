@@ -55,7 +55,7 @@ export function MultidrawControls() {
   };
 
   const configs = multidrawState?.configs.map((configId, idx) => (
-    <div>
+    <div key={configId}>
       <ConfigSelect
         selectedId={configId}
         onChange={(newConfig) => changeConfigAtIdx(newConfig, idx)}

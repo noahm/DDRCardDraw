@@ -15,6 +15,7 @@ const corrections = new Map<string, Partial<Pick<Song, "name" | "artist">>>([
     { name: "BURNIN' THE FLOOR(BLUE FIRE mix)" },
   ],
   ["ちくわパフェだよ☆CKP", { name: "ちくわパフェだよ☆ＣＫＰ" }],
+  ["Black or Red?", { artist: "コスモドライバー join. shully & Nimo" }],
   [
     "Blind Justice ～Torn souls, Hurt Faiths ～",
     { name: "Blind Justice ～Torn souls, Hurt Faiths～" },
@@ -54,9 +55,9 @@ const corrections = new Map<string, Partial<Pick<Song, "name" | "artist">>>([
   ["零 - ZERO -", { artist: "TЁЯRA" }],
 ]);
 
-export class GrandPrixSongImporter
-  implements DDRSongImporter<Pick<Song, "name" | "artist">>
-{
+export class GrandPrixSongImporter implements DDRSongImporter<
+  Pick<Song, "name" | "artist">
+> {
   /** URL to DDR song list page */
   readonly #songListUrl: string;
 

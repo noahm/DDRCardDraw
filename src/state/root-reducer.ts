@@ -1,3 +1,4 @@
+// oxlint-disable typescript/unbound-method
 import { combineSlices } from "@reduxjs/toolkit";
 import { configSlice } from "./config.slice";
 import { drawingsSlice } from "./drawings.slice";

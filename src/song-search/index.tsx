@@ -10,8 +10,8 @@ import { useFuzzySearch } from "../hooks/useFuzzySearch";
 
 interface Props {
   isOpen: boolean;
-  onSongSelect(song: Song, chart?: EligibleChart): void;
-  onCancel(): void;
+  onSongSelect(this: void, song: Song, chart?: EligibleChart): void;
+  onCancel(this: void): void;
 }
 
 export function SongSearch(props: Props) {

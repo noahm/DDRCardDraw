@@ -213,6 +213,7 @@ function GeneralSettings() {
     chartCount,
     sortByLevel,
     useGranularLevels,
+    showMaxScore,
     playerPicks,
   } = configState;
   const availableDifficulties = useMemo(() => {
@@ -380,6 +381,15 @@ function GeneralSettings() {
             updateState({ sortByLevel });
           }}
           label={t("controls.sortByLevel")}
+        />
+        <Checkbox
+          id="showMaxScore"
+          checked={showMaxScore}
+          onChange={(e) => {
+            const showMaxScore = !!e.currentTarget.checked;
+            updateState({ showMaxScore });
+          }}
+          label={t("controls.showMaxScore")}
         />
         <Checkbox
           id="useGranularLevels"

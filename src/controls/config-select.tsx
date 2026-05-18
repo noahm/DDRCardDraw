@@ -103,7 +103,7 @@ export function ConfigList(props: {
             <Button
               icon={<Import />}
               onClick={() => {
-                loadConfig().then((c) => {
+                void loadConfig().then((c) => {
                   dispatch(configSlice.actions.addOne(c));
                   changeConfig(c.id);
                 });
@@ -156,17 +156,20 @@ function ConfigListEntry(props: {
             const url = new URL(document.location.href);
             url.pathname = `/preview/${roomName}`;
             url.search = "?configId=" + props.configId;
-            copyTextToClipboard(url.href, "Preview URL copied to clipboard");
+            void copyTextToClipboard(
+              url.href,
+              "Preview URL copied to clipboard",
+            );
           }}
           onExport={() => {
-            saveConfig(
+            void saveConfig(
               dispatch((_, gs) =>
                 configSlice.selectors.selectById(gs(), props.configId),
               ),
             );
           }}
           onDuplicate={() => {
-            dispatch(createNewConfig(roomName, props.configId)).then((c) =>
+            void dispatch(createNewConfig(roomName, props.configId)).then((c) =>
               props.selectConfig(c.id),
             );
           }}
@@ -191,8 +194,8 @@ function ConfigListEntry(props: {
 }
 
 function ConfigActionsMenu(props: {
-  onExport(): void;
-  onShareLink(): void;
+  onExport(this: void): void;
+  onShareLink(this: void): void;
   onDuplicate(): void;
   onDelete(): void;
 }) {

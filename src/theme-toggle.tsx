@@ -29,8 +29,8 @@ interface ThemeContext {
   setIsObsSource(next: boolean): void;
   userPref: Theme | undefined;
   resolved: Theme;
-  updateBrowserPref(t: Theme): void;
-  setTheme(t: Theme): void;
+  updateBrowserPref(this: void, t: Theme): void;
+  setTheme(this: void, t: Theme): void;
 }
 
 // we may be loaded into a browser source of OBS studio,
@@ -38,7 +38,7 @@ interface ThemeContext {
 // into the page. see more:
 // https://github.com/obsproject/obs-browser/blob/master/README.md
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
+  // oxlint-disable-next-line typescript/no-namespace
   namespace obsstudio {
     const pluginVersion: string;
     const getControlLevel: (cb: (level: number) => void) => void;

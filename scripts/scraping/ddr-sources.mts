@@ -109,6 +109,17 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
       return key.startsWith("charts.");
     }
   }
+
+  async fetchLastUpdated(): Promise<number> {
+    const filePath = path.join(
+      path.dirname(fileURLToPath(import.meta.url)),
+      `../../src/songs/${this.#jsonFileName}`,
+    );
+    const fileContent = await readFile(filePath, "utf-8");
+    const gameData: GameData = JSON.parse(fileContent);
+
+    return gameData.meta.lastUpdated;
+  }
 }
 
 interface ZIVSourceMeta {
@@ -511,6 +522,7 @@ export const DDR_A3: DDRSourceMeta = {
       "jacket",
       "saIndex",
       "remyLink",
+      "charts.maxScore",
     ],
   },
 };
@@ -613,9 +625,7 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
       "remyLink",
       "charts.lvl",
       "charts.sanbaiTier",
-      "charts.step",
-      "charts.freeze",
-      "charts.shock",
+      "charts.maxScore",
     ],
     // excepts `bpm` and `folder`
     // `bpm`: DDR GRAND PRIX is displayed BPM, but DDR WORLD is actual BPM
@@ -630,9 +640,7 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
       "remyLink",
       "charts.lvl",
       "charts.sanbaiTier",
-      "charts.step",
-      "charts.freeze",
-      "charts.shock",
+      "charts.maxScore",
     ],
   },
 };

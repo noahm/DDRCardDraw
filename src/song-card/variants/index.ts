@@ -1,7 +1,12 @@
 export type { CardSectionProps, CardContentsProps } from "./base";
 export { baseChartValues } from "./base";
 
-import { BaseCardCenter, type CardContentsProps, BaseCardFooter } from "./base";
+import {
+  BaseCardCenter,
+  BaseCardFooter,
+  type CardContentsProps,
+  MaxScoreCardCenter,
+} from "./base";
 import { DdrCardFooter } from "./ddr";
 import { ItgCardFooter } from "./itg";
 import { MaimaiCardFooter } from "./maimai";
@@ -13,7 +18,7 @@ export function getContentVariants(
   switch (cardType) {
     case "ddr":
       return {
-        CenterContent: BaseCardCenter,
+        CenterContent: MaxScoreCardCenter,
         FooterContent: DdrCardFooter,
       };
     case "itg":

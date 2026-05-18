@@ -73,7 +73,7 @@ function LabelCard(props: {
   id: string;
   label: string;
   value: string;
-  onEdit(): void;
+  onEdit(this: void): void;
 }) {
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
@@ -102,7 +102,7 @@ function EditDialog({
   close,
 }: {
   sourceId: string | null;
-  close(): void;
+  close(this: void): void;
 }) {
   const label = useAppState((s) =>
     sourceId ? s.event.obsLabels[sourceId] : null,

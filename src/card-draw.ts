@@ -44,6 +44,7 @@ export function getDrawnChart(
     bpm: chart.bpm || currentSong.bpm,
     level: chart.lvl,
     granularLevel: chart.sanbaiTier,
+    maxScore: chart.maxScore,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     extras: (chart.extras || []).concat(currentSong.extras || []),

@@ -146,7 +146,7 @@ function SaveToStartggButton({ drawingId }: { drawingId: string }) {
           if (!results) {
             return;
           }
-          reportSet(results);
+          void reportSet(results);
         }}
       />
     </Tooltip>
@@ -286,7 +286,7 @@ export function DrawingActions() {
               "#drawing-" + drawingId[1],
             );
             if (drawingElement) {
-              shareImage(
+              await shareImage(
                 await domToPng(drawingElement, { scale: 2 }),
                 DEFAULT_FILENAME,
               );

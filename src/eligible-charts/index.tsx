@@ -72,7 +72,7 @@ function EligibleChartsList() {
   }, [charts, isDisplayFiltered, currentTab]);
 
   const exportData = useCallback(async () => {
-    shareCharts(filteredCharts, "eligible");
+    await shareCharts(filteredCharts, "eligible");
   }, [filteredCharts]);
 
   if (!gameData) {

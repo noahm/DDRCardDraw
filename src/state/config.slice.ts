@@ -23,6 +23,7 @@ export interface ConfigState {
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
+  showMaxScore: boolean;
   /** if present, will draw an additional set of cards for each string id in `configs` */
   multiDraws?: {
     /** if true, auto-merge the resulting draws */
@@ -52,6 +53,7 @@ export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {
   sortByLevel: false,
   defaultPlayersPerDraw: 2,
   useGranularLevels: false,
+  showMaxScore: false,
 };
 
 const adapter = createEntityAdapter<ConfigState>({});
@@ -60,9 +62,11 @@ export const configSlice = createSlice({
   name: "config",
   initialState: adapter.getInitialState(),
   reducers: {
+    // oxlint-disable typescript/unbound-method
     addOne: adapter.addOne,
     updateOne: adapter.updateOne,
     removeOne: adapter.removeOne,
+    // oxlint-enable typescript/unbound-method
   },
   selectors: {
     ...adapter.getSelectors(),
