@@ -1,5 +1,6 @@
 import "normalize.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
+import "@blueprintjs/table/lib/css/table.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import "@blueprintjs/select/lib/css/blueprint-select.css";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
@@ -8,23 +9,247 @@ import { FocusStyleManager } from "@blueprintjs/core";
 
 FocusStyleManager.onlyShowFocusOnTabs();
 
-import { DrawingList } from "./drawing-list";
 import { UpdateManager } from "./update-manager";
-import { DrawStateManager } from "./draw-state";
-import { Header } from "./header";
+import { IntlProvider } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
-import { DropHandler } from "./drop-handler";
+import { Provider } from "react-redux";
+import { createClientStore, useAppState } from "./state/store";
+import { PartySocketManager } from "./party/client";
+
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  useParams,
+  Link,
+} from "react-router-dom";
+import { nanoid } from "nanoid";
+import { ClassicModeShell } from "./classic-mode";
+import { useMemo } from "react";
 import { ToasterHost } from "./toaster";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: () => {
+      return (
+        <div style={{ padding: "1em" }}>
+          <h1>DDR Tools Event Mode</h1>
+          <h2 style={{ fontStyle: "italic" }}>Alpha Preview</h2>
+          <p>
+            You need to pick an event first. Would you like to:{" "}
+            <Link to={`/e/${nanoid()}`}>Create New Event?</Link>
+          </p>
+          <p>
+            Or... perhaps just use the app in{" "}
+            <Link to="/classic">Classic Mode</Link>
+          </p>
+          <p>
+            No idea what this is?{" "}
+            <a href="https://youtu.be/4Gpj9jTNcfM">Here's a video</a> trying to
+            explain how to use it!
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    path: "classic",
+    Component: ClassicModeShell,
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const mod = await import("./drawing-list");
+          return { Component: mod.DrawingList };
+        },
+      },
+      {
+        path: "charts",
+        lazy: async () => {
+          const mod = await import("./eligible-charts");
+          return { Component: mod.default };
+        },
+      },
+      {
+        path: "config",
+        lazy: async () => {
+          const mod = await import("./controls/config-page");
+          return { Component: mod.ConfigPage };
+        },
+      },
+    ],
+  },
+  {
+    path: "preview/:roomName",
+    async loader(f) {
+      const { roomName } = f.params;
+      const mod = await import("./preview-mode/shell");
+      return mod.PreviewShell.loader(roomName);
+    },
+    lazy: async () => {
+      const mod = await import("./preview-mode/shell");
+      return { Component: mod.PreviewShell };
+    },
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const mod = await import("./preview-mode/shell");
+          return { Component: mod.PreviewView };
+        },
+      },
+    ],
+  },
+  {
+    path: "e/:roomName",
+    lazy: async () => ({
+      Component: (await import("./tournament-mode")).TournamentModeAppShell,
+    }),
+    children: [
+      {
+        index: true,
+        lazy: async () => ({
+          Component: (await import("./tournament-mode")).TournamentModeAppMain,
+        }),
+      },
+      {
+        path: "config",
+        lazy: async () => {
+          const { ConfigPage } = await import("./controls/config-page");
+          return { Component: ConfigPage };
+        },
+      },
+      {
+        path: "dash",
+        lazy: async () => {
+          const { Dashboard } = await import("./tournament-mode/dashboard");
+          return { Component: Dashboard };
+        },
+      },
+    ],
+  },
+  {
+    path: "e/:roomName/obs-globals/:labelId",
+    element: <ObsSource />,
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const { GlobalLabel } = await import("./obs-sources/text");
+          return { Component: GlobalLabel };
+        },
+      },
+    ],
+  },
+  {
+    path: "e/:roomName/cab/:cabId/source",
+    element: <ObsSource />,
+    children: [
+      {
+        path: "cards",
+        lazy: async () => {
+          const { CabCards } = await import("./obs-sources/cards");
+          return { Component: CabCards };
+        },
+      },
+      {
+        path: "phase",
+        lazy: async () => {
+          const { PhaseName } = await import("./obs-sources/text");
+          return { Component: PhaseName };
+        },
+      },
+      {
+        path: "title",
+        lazy: async () => {
+          const { CabTitle } = await import("./obs-sources/text");
+          return { Component: CabTitle };
+        },
+      },
+      {
+        path: "players",
+        lazy: async () => {
+          const { CabPlayers } = await import("./obs-sources/text");
+          return { Component: CabPlayers };
+        },
+      },
+      {
+        path: "p1",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={1} /> };
+        },
+      },
+      {
+        path: "p1-name",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={1} displayType="Name" /> };
+        },
+      },
+      {
+        path: "p1-score",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={1} displayType="Score" /> };
+        },
+      },
+      {
+        path: "p2",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={2} /> };
+        },
+      },
+      {
+        path: "p2-name",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={2} displayType="Name" /> };
+        },
+      },
+      {
+        path: "p2-score",
+        lazy: async () => {
+          const { CabPlayer } = await import("./obs-sources/text");
+          return { element: <CabPlayer p={2} displayType="Score" /> };
+        },
+      },
+    ],
+  },
+]);
+
+function ObsSource() {
+  const params = useParams<"roomName" | "cabId">();
+  const store = useMemo(() => createClientStore(), []);
+  if (!params.roomName) {
+    return null;
+  }
+  return (
+    <Provider store={store}>
+      <PartySocketManager roomName={params.roomName}>
+        <IntlProvider>
+          <ObsStyles />
+          <Outlet />
+        </IntlProvider>
+      </PartySocketManager>
+    </Provider>
+  );
+}
+
+function ObsStyles() {
+  const cssText = useAppState((s) => s.event.obsCss);
+  return <style>{cssText}</style>;
+}
 
 export function App() {
   return (
-    <DrawStateManager defaultDataSet="ddr_world">
+    <IntlProvider>
       <ThemeSyncWidget />
       <UpdateManager />
-      <Header />
-      <DrawingList />
-      <DropHandler />
+      <RouterProvider router={router} />
       <ToasterHost />
-    </DrawStateManager>
+    </IntlProvider>
   );
 }
