@@ -283,6 +283,13 @@ try {
   if (MIX_META.sortSongs)
     existingData.songs = sortSongs(existingData.songs, existingData.meta);
 
+  for (const song of existingData.songs) {
+    if (song.charts.find((c) => !c.maxScore)) {
+      console.log(
+        `[Info] ${song.name} (${song.saHash}) is missing maxScore in charts.`,
+      );
+    }
+  }
   await writeJsonData(existingData, targetFile, lastUpdated, 2);
 
   console.log(`Successfully updated ${MIX_META.filename}`);
