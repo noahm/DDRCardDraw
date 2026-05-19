@@ -262,7 +262,6 @@
       "name": "Party People",
       "artist": "Oscillator X",
       "genre": "Dance",
-      "flags": ["cappRecords"],
       "bpm": "125",
       "jacket": "smx/PartyPeople.jpg",
       "charts": [
@@ -2239,7 +2238,8 @@
         { "style": "solo", "lvl": 15, "diffClass": "hard" },
         { "style": "solo", "lvl": 20, "diffClass": "wild" },
         { "style": "solo", "lvl": 17, "diffClass": "dual" },
-        { "style": "solo", "lvl": 20, "diffClass": "full" }
+        { "style": "solo", "lvl": 20, "diffClass": "full" },
+        { "style": "team", "lvl": 22, "diffClass": "team" }
       ],
       "saIndex": "318"
     },
