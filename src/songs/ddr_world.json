@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1778771368024
+    "lastUpdated": 1779331502115
   },
   "defaults": {
     "style": "single",
@@ -73935,6 +73935,59 @@
       "saIndex": "672"
     },
     {
+      "name": "はるかぜリスタート！",
+      "artist": "qfeileadh feat.Risa Kodaka",
+      "saHash": "PiIdO0odOb1bQdPQD0QqdlP06IQiodQ0",
+      "bpm": "164",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 213
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 615
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1356
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1884
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 624
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1293
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1851
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/はるかぜリスタート！.jpg"
+    },
+    {
       "name": "び",
       "name_translation": "Bi",
       "artist": "立秋 feat.ちょこ",
@@ -84473,6 +84526,59 @@
       "search_hint": "Apparently There's a Cheat Code to Happiness",
       "saHash": "D11ldIqD8dQIi9oQQIIo86QOI8D9olP8",
       "saIndex": "758"
+    },
+    {
+      "name": "幸せのマ法は解けなイ.*・.+ ☆",
+      "artist": "Mono.",
+      "saHash": "ild9d0O9D09dlOP986089i9POPDoP6iD",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 303
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 618
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1179
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1488
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 618
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1122
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1431
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/幸せのマ法は解けなイ.jpg"
     },
     {
       "name": "幻想系世界修復少女",
