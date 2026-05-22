@@ -53,3 +53,20 @@ yarn import:itg path/to/pack/folder some-stub-name
 # https://github.com/AnyhowStep/pump-out-sqlite3-dump/
 yarn import:pump path/to/pumpout/db
 ```
+
+## Deployment
+
+As mentioned above, running `yarn build` will create a distribution of the application with static content that can be used in a production environment in a multitude of ways. The following are options for deployment
+
+### Local
+
+Running `yarn build:zip` produces a zip file that can be extracted anywhere on your PC. Simply open the included `index.html` to start using DDRCardDraw. That's it!
+
+### Docker/Containers
+
+For more advanced users, a Dockerfile has been included to produce a docker image that can be deployed in any container environment, whether it is using the docker engine directly or using an orchestration tool like docker-compose or kubernetes.
+
+```sh
+docker build -t ddrcarddraw .
+docker run ddrcarddraw
+```
