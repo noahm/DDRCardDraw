@@ -162,7 +162,7 @@ task("Import StepManiaX", async ({ setStatus, setError, task }) => {
     }
     setStatus("done!");
   } catch (e) {
-    setError(e);
+    setError(e as string | Error);
     process.exitCode = 1;
   } finally {
     cleanup();
