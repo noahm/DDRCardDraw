@@ -7796,6 +7796,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/blue anthem.jpg",
+      "genre": "TRIUMPHAL ANTHEM",
       "remyLink": "https://remywiki.com/Blue_anthem",
       "search_hint": "APINA VRAMeS/アピナ"
     },
@@ -20600,6 +20601,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/ESPRIT ONE.jpg",
+      "genre": "CYBER ROCK",
       "remyLink": "https://remywiki.com/ESPRIT_ONE",
       "search_hint": "ROUND1/ラウンドワン"
     },
@@ -24786,6 +24788,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/Get Into The Groove feat.WaMi.jpg",
+      "genre": "Nu-NRG / FUTUREDISCO",
       "remyLink": "https://remywiki.com/Get_Into_The_Groove_feat.WaMi",
       "search_hint": "GiGO"
     },
@@ -39518,6 +39521,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/Mighty Beat Monsterz.jpg",
+      "genre": "HYBRID METALCORE",
       "remyLink": "https://remywiki.com/Mighty_Beat_Monsterz",
       "search_hint": "TAITO STATION Tradz/タイトーステーション"
     },
@@ -58034,7 +58038,8 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 144
         },
         {
           "style": "single",
@@ -58044,7 +58049,8 @@
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 855
         },
         {
           "style": "single",
@@ -58060,7 +58066,8 @@
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 852
         },
         {
           "style": "double",
@@ -63989,6 +63996,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/THUNDERSTRIKE.jpg",
+      "genre": "LIGHTNING Hi-TECH",
       "remyLink": "https://remywiki.com/THUNDERSTRIKE",
       "search_hint": "GAME PANIC/ゲームパニック"
     },
@@ -70353,6 +70361,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/Wizards!.jpg",
+      "genre": "JAPANESE ALTERNATIVE ROCK",
       "remyLink": "https://remywiki.com/Wizards!",
       "search_hint": "SILK HAT/シルクハット"
     },
@@ -80520,6 +80529,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/メテオラ-meteor-.jpg",
+      "genre": "DANCE POP",
       "remyLink": "https://remywiki.com/Meteora-meteor-",
       "search_hint": "レジャーランド/LEISURE LAND"
     },
