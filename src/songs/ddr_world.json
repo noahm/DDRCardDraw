@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1779331502115
+    "lastUpdated": 1780035585309
   },
   "defaults": {
     "style": "single",
@@ -6376,7 +6376,7 @@
       ],
       "remyLink": "https://remywiki.com/Be_a_Hero!",
       "jacket": "ddr_a/Be a Hero!.png",
-      "genre": "DIGITAL THRASH PUNK",
+      "genre": "DIGITAL THRASH PUNK/デジタルスラッシュパンク",
       "saHash": "dOb880lOloIIod00PQ1iQOQqlOOQ0Ql0",
       "saIndex": "765"
     },
@@ -7048,6 +7048,7 @@
       ],
       "flags": ["tempUnlock"],
       "jacket": "ddr_world/BILLION MONEY BAZOOKA.jpg",
+      "genre": "バブリーレイヴ/BUBBLY RAVE",
       "remyLink": "https://remywiki.com/BILLION_MONEY_BAZOOKA"
     },
     {
@@ -7199,6 +7200,7 @@
       ],
       "remyLink": "https://remywiki.com/Black_Emperor",
       "jacket": "ddr_a3/Black Emperor.jpg",
+      "genre": "エグゾーストクライマックスコア/EXHAUST CLIMAX CORE",
       "saHash": "9dI8ilPi9bd9blI6Q8D6IPb1lblqDl1Q",
       "saIndex": "1077"
     },
@@ -7794,6 +7796,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/blue anthem.jpg",
+      "genre": "TRIUMPHAL ANTHEM",
       "remyLink": "https://remywiki.com/Blue_anthem",
       "search_hint": "APINA VRAMeS/アピナ"
     },
@@ -20598,6 +20601,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/ESPRIT ONE.jpg",
+      "genre": "CYBER ROCK",
       "remyLink": "https://remywiki.com/ESPRIT_ONE",
       "search_hint": "ROUND1/ラウンドワン"
     },
@@ -23328,7 +23332,7 @@
       ],
       "remyLink": "https://remywiki.com/Fly_far_bounce",
       "jacket": "ddr_a/Fly far bounce.png",
-      "genre": "",
+      "genre": "ワールドノスタルジア/WORLD/NOSTALGIA",
       "saHash": "Dq8b8DPD06Q8qob8OOiQIlOdD8QQD0q9",
       "saIndex": "750"
     },
@@ -24784,6 +24788,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/Get Into The Groove feat.WaMi.jpg",
+      "genre": "Nu-NRG / FUTUREDISCO",
       "remyLink": "https://remywiki.com/Get_Into_The_Groove_feat.WaMi",
       "search_hint": "GiGO"
     },
@@ -35541,7 +35546,7 @@
       ],
       "remyLink": "https://remywiki.com/Life_is_beautiful",
       "jacket": "ddr_a/Life is beautiful.png",
-      "genre": "",
+      "genre": "アルパカトロニカ/ALPACATRONICA",
       "saHash": "dqb09QD6o0O8PooiqbqQOdqQ1l80o691",
       "saIndex": "805"
     },
@@ -36731,7 +36736,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 17.8,
           "maxScore": 1722
         },
@@ -36760,7 +36765,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 17.75,
           "maxScore": 1710
         }
@@ -39516,8 +39521,57 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/Mighty Beat Monsterz.jpg",
+      "genre": "HYBRID METALCORE",
       "remyLink": "https://remywiki.com/Mighty_Beat_Monsterz",
       "search_hint": "TAITO STATION Tradz/タイトーステーション"
+    },
+    {
+      "name": "Miles on It",
+      "artist": "Marshmello & Kane Brown",
+      "saHash": "bDo8Pb6O1o8Oi0b1I1bI98Ib0QlD6I1l",
+      "bpm": "130",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "maxScore": 936
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 11,
+          "maxScore": 933
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Miles on It.jpg"
     },
     {
       "name": "Mind Parasite",
@@ -40352,7 +40406,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.45,
           "maxScore": 1776
         },
@@ -40381,7 +40435,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.35,
           "maxScore": 1731
         }
@@ -43730,7 +43784,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.7,
           "maxScore": 1200
         },
@@ -43759,7 +43813,7 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.45,
           "maxScore": 1188
         }
@@ -45969,7 +46023,7 @@
       ],
       "remyLink": "https://remywiki.com/Phlox",
       "jacket": "ddr_a3/Phlox.jpg",
-      "genre": "",
+      "genre": "フラワーストリーム/FLOWER STREAM",
       "saHash": "1088IDQiIDl6I888OQi60l66DP6D0qOl",
       "saIndex": "1168"
     },
@@ -47329,7 +47383,7 @@
       ],
       "remyLink": "https://remywiki.com/Prey",
       "jacket": "ddr_a/Prey.png",
-      "genre": "",
+      "genre": "プレデターコア/PREDATOR CORE",
       "saHash": "i916bDibPI9l869o9IIQb8DbO9bPDi6q",
       "saIndex": "809"
     },
@@ -47718,7 +47772,7 @@
       ],
       "remyLink": "https://remywiki.com/Puberty_Dysthymia",
       "jacket": "ddr_a/Puberty Dysthmia.png",
-      "genre": "",
+      "genre": "ディプレッシヴロック/DEPRESSIVE ROCK",
       "saHash": "99q8i8bPldDbio919ob0DPi0bqdIoobi",
       "saIndex": "806"
     },
@@ -48009,7 +48063,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.35,
           "maxScore": 1068
         },
@@ -48038,7 +48092,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.3,
           "maxScore": 999
         }
@@ -49880,7 +49934,7 @@
       ],
       "remyLink": "https://remywiki.com/Rejoin",
       "jacket": "ddr_a/Rejoin.png",
-      "genre": "",
+      "genre": "摩天楼ファンク/摩天楼FUNK",
       "saHash": "ll6iQl0PoiDob8Oi6dlOQ069061doqbq",
       "saIndex": "807"
     },
@@ -54596,6 +54650,13 @@
           "maxScore": 1698
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1356,
+          "flags": ["shock"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -54612,6 +54673,13 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1701
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1383,
+          "flags": ["shock"]
         }
       ],
       "flags": ["euLocked"],
@@ -57961,6 +58029,57 @@
       "saIndex": "833"
     },
     {
+      "name": "Stars In The Sky",
+      "artist": "Kid Cudi",
+      "saHash": "oD08b8PPIiOiOP66OIDiboilb9q0q9DP",
+      "bpm": "131",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 144
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 855
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1149
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 852
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1134
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Stars In The Sky.jpg"
+    },
+    {
       "name": "STARS☆☆☆(2nd NAOKI's style)",
       "artist": "TЁЯRA",
       "bpm": "140",
@@ -58879,7 +58998,7 @@
       ],
       "remyLink": "https://remywiki.com/STERLING_SILVER",
       "jacket": "ddr_a/STERLING SILVER.png",
-      "genre": "",
+      "genre": "セイクリッドコア/SACRED CORE",
       "saHash": "ooo6qID66I6191bQib1QQdlPoio6Iodl",
       "saIndex": "732"
     },
@@ -60280,7 +60399,7 @@
       ],
       "remyLink": "https://remywiki.com/SUPER_SUMMER_SALE",
       "jacket": "ddr_a/SUPER SUMMER SALE.png",
-      "genre": "",
+      "genre": "オービタリックバーゲン/ORBITALIC BARGAIN",
       "saHash": "Id8IPlqQodD01dPiq8oPPQoPQq6booi0",
       "saIndex": "808"
     },
@@ -63877,6 +63996,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/THUNDERSTRIKE.jpg",
+      "genre": "LIGHTNING Hi-TECH",
       "remyLink": "https://remywiki.com/THUNDERSTRIKE",
       "search_hint": "GAME PANIC/ゲームパニック"
     },
@@ -64181,7 +64301,7 @@
           "maxScore": 1860
         }
       ],
-      "flags": ["worldLeague"],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Time_to_HYPERDRIVE",
       "jacket": "ddr_world/Time_to_HYPERDRIVE.jpg",
       "saHash": "q6o1id8doDb988l1o01P8dllQ0d6IP9P"
@@ -66470,7 +66590,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "maxScore": 1611
         },
         {
@@ -66498,7 +66618,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "maxScore": 1563
         }
       ],
@@ -70241,6 +70361,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/Wizards!.jpg",
+      "genre": "JAPANESE ALTERNATIVE ROCK",
       "remyLink": "https://remywiki.com/Wizards!",
       "search_hint": "SILK HAT/シルクハット"
     },
@@ -73985,7 +74106,8 @@
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/はるかぜリスタート！.jpg"
+      "jacket": "ddr_world/はるかぜリスタート！.jpg",
+      "remyLink": "https://remywiki.com/Harukaze_restart!"
     },
     {
       "name": "び",
@@ -80407,6 +80529,7 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/メテオラ-meteor-.jpg",
+      "genre": "DANCE POP",
       "remyLink": "https://remywiki.com/Meteora-meteor-",
       "search_hint": "レジャーランド/LEISURE LAND"
     },
@@ -81346,7 +81469,7 @@
       ],
       "remyLink": "https://remywiki.com/Lilieze_to_enryuu_Laevateinn",
       "jacket": "ddr_a3/Ririze to honou ryuu revatein.jpg",
-      "genre": "OLDSTYLE GAMEMUSIC",
+      "genre": "OLDSTYLE GAMEMUSIC/オールドスタイルゲームミュージック",
       "saHash": "IidO8qlodqdoioodqqb9Dqiq991Ilo10",
       "saIndex": "1098"
     },
@@ -81410,7 +81533,7 @@
       ],
       "remyLink": "https://remywiki.com/Luminous_days",
       "jacket": "ddr_a/Luminous days.png",
-      "genre": "",
+      "genre": "ツインズクリスマスキャロル/TWINS Xmas CAROL",
       "saHash": "dqOoPll1qlDdo6Pd6O0DPPO6l16OIdD1",
       "saIndex": "772"
     },
@@ -81775,7 +81898,7 @@
       ],
       "remyLink": "https://remywiki.com/Ronron_e_rairairai!",
       "jacket": "ddr_a/Ronron e rairairai!.png",
-      "genre": "",
+      "genre": "热情美味又快乐的歌",
       "saHash": "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi",
       "saIndex": "754"
     },
@@ -84578,7 +84701,8 @@
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/幸せのマ法は解けなイ.jpg"
+      "jacket": "ddr_world/幸せのマ法は解けなイ.jpg",
+      "remyLink": "https://remywiki.com/Shiawase_no_mahou_wa_tokenai"
     },
     {
       "name": "幻想系世界修復少女",
@@ -86670,7 +86794,7 @@
       ],
       "remyLink": "https://remywiki.com/Seiza_ga_koishita_shunkan_wo.",
       "jacket": "ddr_a/Seiza ga koishita shunkan wo..png",
-      "genre": "",
+      "genre": "青春サマーロック",
       "search_hint": "Seiza ga koishita shunkan wo",
       "saHash": "ld8lOqloqD6lOl880ldDo819bDb9q1Qi",
       "saIndex": "803"
@@ -87520,6 +87644,7 @@
       ],
       "remyLink": "https://remywiki.com/Mikansei_no_jouki_kudou_otome",
       "jacket": "ddr_a20/Mikansei no jouki kudou otome (DDR Edition).jpg",
+      "genre": "オービタルスチームパンク/ORBITAL STEAMPUNK",
       "saHash": "96d9qiDD8l09DQq6O1DO6O6I1IdP8q0D",
       "saIndex": "898"
     },
@@ -88980,7 +89105,7 @@
       ],
       "remyLink": "https://remywiki.com/Bakunana_testroyer",
       "jacket": "ddr_2014/Bakunana testroyer.png",
-      "genre": "",
+      "genre": "試験☆電波",
       "saHash": "lO8O011qIqioPDi9d0oib09DDDPIbqOI",
       "saIndex": "660"
     },
@@ -89859,7 +89984,7 @@
       ],
       "remyLink": "https://remywiki.com/Youhishi_no_ue_no_ginga",
       "saHash": "qb9Od0IQI16b6D9PP0O6ilqoq0dDQO66",
-      "genre": "",
+      "genre": "ステラファンタジー/STELLA FANTASY",
       "saIndex": "1187",
       "jacket": "ddr_a3/Youhishi no ue no ginga.jpg"
     },
@@ -92748,9 +92873,79 @@
       ],
       "remyLink": "https://remywiki.com/Fuurin_hanabi",
       "jacket": "ddr_a/Fuurin hanabi.png",
-      "genre": "",
+      "genre": "夏恋歌謡",
       "saHash": "oOI18qilo91qPQl9Q0l9iliO96Pi6DIi",
       "saIndex": "804"
+    },
+    {
+      "name": "魄",
+      "name_translation": "Haku",
+      "artist": "あさき",
+      "artist_translation": "Asaki",
+      "saHash": "q1bb1QI8d08iq9OdIl9PO0ioDi6IQ9oD",
+      "bpm": "106-213",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "bpm": "213",
+          "maxScore": 279
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "bpm": "213",
+          "maxScore": 636
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1215
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1734
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2496
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "bpm": "213",
+          "maxScore": 609
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1206
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1716
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2415
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/魄.jpg"
     },
     {
       "name": "魔法のたまご ～心菜 ELECTRO POP edition～",
