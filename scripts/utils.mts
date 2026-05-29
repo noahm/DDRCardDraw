@@ -154,12 +154,11 @@ function createParentFolderIfNeeded(absoluteImgPath: string) {
 }
 
 /**
- * @param coverUrl url of image to fetch
- * @param localFilename override filename found in url
- *
- * queues a cover path for download into the imageQueue.
+ * Queues a cover path for download into the imageQueue.
  * Always skips if file already exists.
  * Immediately returns the relative path to the jacket where it will be saved
+ * @param coverUrl url of image to fetch
+ * @param localFilename override filename found in url
  */
 export function downloadJacket(
   coverUrl: string,

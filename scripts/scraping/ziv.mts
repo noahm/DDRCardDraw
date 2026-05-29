@@ -1,5 +1,5 @@
 import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
-import { getDom, downloadJacket } from "../utils.mts";
+import { downloadJacket, getDom } from "../utils.mts";
 import type { DDRSongImporter, DDRSourceMeta } from "./ddr-sources.mts";
 
 type ZivSongData = Pick<

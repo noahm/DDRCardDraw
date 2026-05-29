@@ -1,4 +1,4 @@
-import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import type { Chart, Song } from "../../src/models/SongData.ts";
 import { downloadJacket, getDom } from "../utils.mts";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 

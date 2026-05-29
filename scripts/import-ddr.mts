@@ -11,11 +11,11 @@ import { fileURLToPath } from "url";
 
 import type { GameData, Song } from "../src/models/SongData.ts";
 import {
-  writeJsonData,
+  downloadJacket,
   requestQueue,
   sortSongs,
   setJacketPrefix,
-  downloadJacket,
+  writeJsonData,
 } from "./utils.mts";
 import {
   JsonDDRSongImporter,
