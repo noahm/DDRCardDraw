@@ -82,7 +82,7 @@
       "challenge": "Challenge",
       "maxScoreFormat": "EX: {maxScore}",
       "shock": "Shock arrow charts",
-      "grandPrixPack": "Music packs (or in arcade modes)",
+      "grandPrixPack": "Music/Chart packs (or in arcade modes)",
       "withoutPrivilege": "Packs without pre privilege (or in arcade modes)",
       "controller": "Controller purchase privilege music packs (or in arcade modes)",
       "prePrivilege": "Pre privilege",
@@ -109,7 +109,7 @@
       "challenge": "Challenge",
       "maxScoreFormat": "EX: {maxScore}",
       "shock": "ショックアロー譜面",
-      "grandPrixPack": "楽曲パック (またはアーケードプレー)",
+      "grandPrixPack": "楽曲/譜面パック (またはアーケードプレー)",
       "withoutPrivilege": "先行プレー特典のないパック (またはアーケードプレー)",
       "controller": "コントローラ購入者特典楽曲パック (またはアーケードプレー)",
       "prePrivilege": "先行プレー特典",
@@ -33983,7 +33983,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.8,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1722
         },
         {
@@ -34012,7 +34012,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.75,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1710
         }
       ],
@@ -37183,7 +37183,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.45,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1776
         },
         {
@@ -37212,7 +37212,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1731
         }
       ],
@@ -40365,7 +40365,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.7,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1200
         },
         {
@@ -40394,7 +40394,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.45,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1188
         }
       ],
@@ -44472,7 +44472,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1068
         },
         {
@@ -44501,7 +44501,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.3,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 999
         }
       ],
@@ -60908,7 +60908,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 15,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1611
         },
         {
@@ -60936,7 +60936,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 15,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1563
         }
       ],
