@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync } from "node:fs";
-import { mkdir, stat, writeFile } from "node:fs/promises";
+import { stat, writeFile } from "node:fs/promises";
 import { globalAgent as httpAgent } from "node:http";
 import { globalAgent as httpsAgent } from "node:https";
 import { resolve, basename, join, dirname } from "node:path";
