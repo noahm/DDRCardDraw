@@ -20,11 +20,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * queues a cover path for download,
  * returns the filename that will eventually be used
  */
-async function fetchJacket(coverPath: string): Promise<string> {
+function fetchJacket(coverPath: string): string {
   coverPath = join(coverPath, "cover.png");
   const coverStub = coverPath.split("/")[2];
   const outPath = `smx/${coverStub}.jpg`;
-  await downloadJacket(`https://data.stepmaniax.com/${coverPath}`, outPath);
+  downloadJacket(`https://data.stepmaniax.com/${coverPath}`, outPath);
   return outPath;
 }
 
@@ -87,7 +87,7 @@ task("Import StepManiaX", async ({ setStatus, setError, task }) => {
               existingSong.bpm = song.bpm;
               existingSong.genre = song.genre;
               existingSong.charts = charts;
-              existingSong.jacket ||= await fetchJacket(song.cover_path);
+              existingSong.jacket ||= fetchJacket(song.cover_path);
               setStatus("Updated");
             },
           );

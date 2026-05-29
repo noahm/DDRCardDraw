@@ -74,7 +74,7 @@ try {
             await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
             // If still no jacket, try to get from e-amusement GATE
             if (!worldSong.jacket) {
-              worldSong.jacket = await downloadJacket(
+              worldSong.jacket = downloadJacket(
                 worldSong.getJacketUrl(),
                 worldSong.name,
               );
@@ -191,7 +191,7 @@ try {
 
           // If no jacket, try to get from 3icecream
           if (!sanbaiSong.jacket) {
-            sanbaiSong.jacket = await downloadJacket(
+            sanbaiSong.jacket = downloadJacket(
               sanbaiSong.getJacketUrl(),
               sanbaiSong.name,
             );

@@ -259,13 +259,12 @@ export class SongImporter {
     // Try to get jacket if missing
     if (!existingSong.jacket && fetchedSong.jacketUrl) {
       const jacketFilename = `jubeat/${fetchedSong.saHash}`;
-      downloadJacket(fetchedSong.jacketUrl, jacketFilename).then((jacket) => {
-        if (jacket) {
-          console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
-          existingSong.jacket = jacket;
-          hasUpdates = true;
-        }
-      });
+      const jacket = downloadJacket(fetchedSong.jacketUrl, jacketFilename);
+      if (jacket) {
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        existingSong.jacket = jacket;
+        hasUpdates = true;
+      }
     }
 
     return hasUpdates;

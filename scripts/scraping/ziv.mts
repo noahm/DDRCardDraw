@@ -279,13 +279,12 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
       if (!jacketUrl) {
         return hasUpdates;
       }
-      downloadJacket(jacketUrl, fetchedSong.name).then((jacket) => {
-        if (jacket) {
-          existingSong.jacket = jacket;
-          console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
-          hasUpdates = true;
-        }
-      });
+      const jacket = downloadJacket(jacketUrl, fetchedSong.name);
+      if (jacket) {
+        existingSong.jacket = jacket;
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        hasUpdates = true;
+      }
     }
 
     return hasUpdates;

@@ -56,7 +56,7 @@ if (!fs.existsSync(DATABASE_FILE)) {
 
 const GET_IMAGES = true;
 
-async function queueJacketDownload(jacketPath) {
+function queueJacketDownload(jacketPath) {
   const filename = path.basename(jacketPath, ".png");
   const outPath = `${JACKET_DIR}/${filename.replace(/^Phoenix_/, "")}.jpg`;
   if (GET_IMAGES) {
@@ -67,7 +67,7 @@ async function queueJacketDownload(jacketPath) {
     if (!fs.existsSync(imgLocation)) {
       imgLocation = `https://pumpout2020.anyhowstep.com${jacketPath}`;
     }
-    await downloadJacket(imgLocation, outPath);
+    downloadJacket(imgLocation, outPath);
   }
 
   return outPath;
@@ -325,7 +325,7 @@ ORDER BY
       if (!jacketPath) {
         console.error("missing jacket for song", song);
       } else {
-        song.jacket = await queueJacketDownload(jacketPath);
+        song.jacket = queueJacketDownload(jacketPath);
       }
       song.artist = getArtistForSong(song.saIndex);
       song.bpm = getBpmForSong(song.saIndex);

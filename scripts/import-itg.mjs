@@ -110,10 +110,7 @@ for (const parsedSong of pack.simfiles) {
   const { bg, banner, jacket, titleDir } = parsedSong.title;
   let finalJacket = getBestJacket([jacket, bg, banner], titleDir);
   if (finalJacket) {
-    finalJacket = await downloadJacket(
-      finalJacket,
-      getFinalJacketPath(titleDir),
-    );
+    finalJacket = downloadJacket(finalJacket, getFinalJacketPath(titleDir));
   }
 
   let bpm = parsedSong.displayBpm;

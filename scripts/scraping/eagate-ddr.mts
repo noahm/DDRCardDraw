@@ -357,15 +357,15 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
 
     // Try to get jacket from e-amusement GATE
     if (!existingSong.jacket && fetchedSong.saHash) {
-      downloadJacket(fetchedSong.getJacketUrl(), existingSong.name).then(
-        (jacket) => {
-          if (jacket) {
-            console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
-            existingSong.jacket = jacket;
-            hasUpdates = true;
-          }
-        },
+      const jacket = downloadJacket(
+        fetchedSong.getJacketUrl(),
+        existingSong.name,
       );
+      if (jacket) {
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        existingSong.jacket = jacket;
+        hasUpdates = true;
+      }
     }
 
     // Remove unlock-related flags (e-amusement GATE only lists playable songs by default)

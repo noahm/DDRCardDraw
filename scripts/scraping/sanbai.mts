@@ -401,13 +401,12 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       const jacket = downloadJacket(
         fetchedSong.getJacketUrl(),
         fetchedSong.name,
-      ).then((jacket) => {
-        if (jacket) {
-          existingSong.jacket = jacket;
-          console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
-          hasUpdates = true;
-        }
-      });
+      );
+      if (jacket) {
+        existingSong.jacket = jacket;
+        console.log(`Added "${existingSong.name}" jacket: ${jacket}`);
+        hasUpdates = true;
+      }
     }
 
     return hasUpdates;
