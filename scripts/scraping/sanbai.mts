@@ -72,12 +72,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // WORLD LEAGUE 11th
-  [
-    new Date("2026-05-27T16:00:00+09:00"),
-    "q6o1id8doDb988l1o01P8dllQ0d6IP9P", // Time to HYPERDRIVE
-    { lock_types: undefined },
-  ],
   ...[
     // グランプリ楽曲パック vol.36
     "98QDoo1I6dP8QoPiDQOdQ09Db80Il68q", // ARACHNE
@@ -111,6 +105,23 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl", // 男々道
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-07-31T15:00:00+09:00"),
+    id,
+    { lock_types: undefined },
+  ]),
+  // グランプリ譜面パック vol.3
+  ...[
+    "PP9QDQ0IQQID00P61d8qdDdP09b19iiI", // Blind Justice ～Torn souls, Hurt Faiths～
+    "ii6Oooool0IoOqi1qdDo96QIil6IoOq0", // BURNIN' THE FLOOR
+    "1diQi81loIodIdOlQ8Pd6Qd8b69Q1DP8", // Destiny lovers
+    "1PQdDiqOD6o1b61iiDOoiiblIQbI91Pb", // JET WORLD
+    "qIP6DPdbD9iO86i1DO9qDd8l6dPdbl0P", // LOVE♥SHINE
+    "i11d86DOOdOb8Pbb1QqIilQI9Idib8PP", // Music In The Rhythm
+    "60QoP9DoIo90D616989Q0D0iodOoOd91", // SEXY PLANET
+    "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0", // The Least 100sec
+    "9lob1d1QPd9qiPlQOQ6l0dbodOoDPq1d", // think ya better D
+    "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO", // TRIP MACHINE～luv mix～
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-08-31T15:00:00+09:00"),
     id,
     { lock_types: undefined },
   ]),
