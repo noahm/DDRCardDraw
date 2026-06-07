@@ -1,4 +1,4 @@
-/* generated with `npx supabase gen types typescript --project-id tawrleybdkxqrcnycmaa > src/party/database.types.ts` */
+/* generated with `npx supabase gen types typescript --project-id tawrleybdkxqrcnycmaa > server/database.types.ts` */
 
 export type Json =
   | string

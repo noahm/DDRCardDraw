@@ -200,6 +200,7 @@ module.exports = function (env = {}, argv = {}) {
           }),
         ),
         "process.env.STARTGG_TOKEN": JSON.stringify(process.env.STARTGG_TOKEN),
+        "process.env.REALTIME_HOST": JSON.stringify(process.env.REALTIME_HOST),
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[chunkhash:5].css",

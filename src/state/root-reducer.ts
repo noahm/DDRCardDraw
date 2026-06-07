@@ -2,7 +2,7 @@
 import { combineSlices } from "@reduxjs/toolkit";
 import { configSlice } from "./config.slice";
 import { drawingsSlice } from "./drawings.slice";
-import { receivePartyState } from "./central";
+import { receiveRoomState } from "./central";
 import { eventSlice } from "./event.slice";
 
 const combinedReducer = combineSlices(drawingsSlice, configSlice, eventSlice);
@@ -10,7 +10,7 @@ const combinedReducer = combineSlices(drawingsSlice, configSlice, eventSlice);
 export type AppState = ReturnType<typeof combinedReducer>;
 
 export const reducer: typeof combinedReducer = (state, action) => {
-  if (receivePartyState.match(action)) {
+  if (receiveRoomState.match(action)) {
     return Object.assign({}, state, action.payload);
   }
   return combinedReducer(state, action);

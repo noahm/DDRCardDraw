@@ -1,6 +1,6 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
-import { getPartykitState } from "../party/host";
+import { getRoomState } from "../realtime/host";
 import { useMemo } from "react";
 import { createClientStore } from "../state/store";
 import { PreviewModeHeader } from "./header";
@@ -12,7 +12,7 @@ async function loader(roomName: string | undefined) {
   if (!roomName) {
     return;
   }
-  const state = await getPartykitState(roomName);
+  const state = await getRoomState(roomName);
   state.drawings.entities = {};
   state.drawings.ids = [];
   return state;

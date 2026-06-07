@@ -3,8 +3,8 @@ import { withPayload } from "./util";
 import type { AppState } from "./store";
 import { nanoid } from "nanoid";
 
-export const receivePartyState = createAction(
-  "party/supplyState",
+export const receiveRoomState = createAction(
+  "realtime/supplyState",
   withPayload<AppState>(),
 );
 

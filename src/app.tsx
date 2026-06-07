@@ -14,7 +14,7 @@ import { IntlProvider } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { Provider } from "react-redux";
 import { createClientStore, useAppState } from "./state/store";
-import { PartySocketManager } from "./party/client";
+import { RoomSocketManager } from "./realtime/client";
 
 import {
   createBrowserRouter,
@@ -228,12 +228,12 @@ function ObsSource() {
   }
   return (
     <Provider store={store}>
-      <PartySocketManager roomName={params.roomName}>
+      <RoomSocketManager roomName={params.roomName}>
         <IntlProvider>
           <ObsStyles />
           <Outlet />
         </IntlProvider>
-      </PartySocketManager>
+      </RoomSocketManager>
     </Provider>
   );
 }

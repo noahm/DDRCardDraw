@@ -19,9 +19,9 @@
   },
   "ignorePatterns": [
     "scripts/",
+    "server/",
     "surge-redirect/",
-    "webpack.config.js",
-    "src/party/database.types.ts"
+    "webpack.config.js"
   ],
   "rules": {
     // #region typescript-eslint recommended (excepts correctness rules)

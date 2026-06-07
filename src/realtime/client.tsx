@@ -1,15 +1,15 @@
 import usePartySocket from "partysocket/react";
 import type { Broadcast, ReduxAction } from "./types";
 import { useAppDispatch } from "../state/store";
-import { receivePartyState } from "../state/central";
+import { receiveRoomState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import React, { useEffect, useState } from "react";
 import { Card, NonIdealState, Spinner } from "@blueprintjs/core";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
-import { PARTYKIT_HOST } from "./host";
+import { REALTIME_HOST } from "./host";
 
-export function PartySocketManager(props: {
+export function RoomSocketManager(props: {
   roomName?: string;
   children: React.ReactNode;
 }) {
@@ -18,26 +18,26 @@ export function PartySocketManager(props: {
   const [ready, setReady] = useState(false);
   const socket = usePartySocket({
     room: props.roomName,
-    host: PARTYKIT_HOST,
+    host: REALTIME_HOST,
     onMessage(evt) {
       try {
         const data: Broadcast = JSON.parse(evt.data);
         switch (data.type) {
           case "roomstate":
             applyMigrations(data.state);
-            dispatch(receivePartyState(data.state));
+            dispatch(receiveRoomState(data.state));
             setReady(true);
             break;
           case "action":
             const foreignAction = {
               ...data.action,
-              meta: { source: "partykit" },
+              meta: { source: "realtime" },
             };
             dispatch(foreignAction);
             break;
         }
       } catch (e) {
-        console.warn("failed to handle party socket message", e);
+        console.warn("failed to handle realtime socket message", e);
       }
     },
   });
@@ -46,11 +46,11 @@ export function PartySocketManager(props: {
     return startAppListening({
       predicate(action) {
         // @ts-expect-error i don't know how to type action meta properties yet
-        if (action.meta?.source === "partykit") {
+        if (action.meta?.source === "realtime") {
           return false;
         }
 
-        if (receivePartyState.match(action)) {
+        if (receiveRoomState.match(action)) {
           return false;
         }
 

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "moduleResolution": "Node16",
+    "module": "NodeNext",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "esModuleInterop": true
+  },
+  "include": ["./*.mjs", "./*.mts"]
+}

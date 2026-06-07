@@ -1,7 +1,7 @@
 .pnp.*
 .yarn/*
-.partykit/*
 .env
+.room-state/
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
@@ -10,6 +10,7 @@
 
 dist
 node_modules
+server/.build/
 /*.zip
 scripts/scraping/textage/**
 scripts/scraping/sanbai/**

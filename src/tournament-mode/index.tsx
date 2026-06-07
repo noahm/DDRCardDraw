@@ -2,7 +2,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { Outlet, useParams } from "react-router-dom";
 import { Provider as UrqlProvider } from "urql";
 import { Header } from "../header";
-import { PartySocketManager } from "../party/client";
+import { RoomSocketManager } from "../realtime/client";
 import { urqlClient } from "../startgg-gql";
 import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
@@ -17,12 +17,12 @@ export function TournamentModeAppShell() {
   }
   return (
     <ReduxProvider store={store}>
-      <PartySocketManager roomName={params.roomName}>
+      <RoomSocketManager roomName={params.roomName}>
         <UrqlProvider value={urqlClient}>
           <Header />
           <Outlet />
         </UrqlProvider>
-      </PartySocketManager>
+      </RoomSocketManager>
     </ReduxProvider>
   );
 }
