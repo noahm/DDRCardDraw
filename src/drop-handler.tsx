@@ -45,10 +45,10 @@ export function DropHandler() {
     }
   }, []);
 
-  const handleDragOver = useCallback((e: Event) => {
+  const handleDragOver = useCallback(async (e: Event) => {
     e.preventDefault();
     // preload parser as soon as a drag begins
-    loadParserModule();
+    await loadParserModule();
   }, []);
 
   useEffect(() => {
@@ -71,8 +71,8 @@ export function DropHandler() {
 
 interface DialogProps {
   droppedFolder: DataTransferItem | null;
-  onSave(): void;
-  onClose(): void;
+  onSave(this: void): void;
+  onClose(this: void): void;
 }
 
 function useDataParsing(
@@ -82,7 +82,7 @@ function useDataParsing(
   const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // oxlint-disable-next-line react-hooks-js/set-state-in-effect
     setParseError(null);
     if (!droppedFolder) {
       setParsedPack(null);
@@ -127,16 +127,15 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     return getDataFileFromPack(parsedPack, tiered);
   }, [parsedPack, tiered]);
 
-  const handleConfirm = useCallback(() => {
+  const handleConfirm = useCallback(async () => {
     if (!parsedPack || !derivedData) {
       return;
     }
     setSaving(true);
     loadGameData(parsedPack.name, derivedData);
-    pause(500).then(() => {
-      setSaving(false);
-      onSave();
-    });
+    await pause(500);
+    setSaving(false);
+    onSave();
   }, [parsedPack, derivedData, loadGameData, onSave]);
 
   const maybeSkeleton = derivedData ? "" : Classes.SKELETON;

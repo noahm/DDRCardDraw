@@ -1,4 +1,4 @@
-import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import type { Chart, Song } from "../../src/models/SongData.ts";
 import { downloadJacket, getDom } from "../utils.mts";
 import type { DDRSongImporter } from "./ddr-sources.mts";
 
@@ -44,7 +44,7 @@ const normalized: Map<
   ],
   [
     "DDPPI6IIi0i9looibDbiODoOPOl6ID8i",
-    { name: "Feidie", artist: "A-One feat. Napoleon" },
+    { name: "Feidie", artist: "A-One feat.Napoleon" },
   ],
   [
     "ob0P66Q8dqbI81qi6OQDPP6086iPoO1P",

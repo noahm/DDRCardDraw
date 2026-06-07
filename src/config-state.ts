@@ -25,6 +25,7 @@ export interface ConfigState {
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
+  showMaxScore: boolean;
   update: StoreApi<ConfigState>["setState"];
 }
 
@@ -61,6 +62,7 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     sortByLevel: false,
     defaultPlayersPerDraw: 2,
     useGranularLevels: false,
+    showMaxScore: false,
     update: set,
   }),
   Object.is,

@@ -3,7 +3,7 @@ import type { StoreApi } from "zustand";
 
 export interface SerializibleStore<ReducedState> {
   id: string;
-  serializeSyncFields(): ReducedState;
+  serializeSyncFields(this: void): ReducedState;
 }
 
 type SyncMessages<T> = InitSync<T> | StateUpdate<T> | { type: "other" };

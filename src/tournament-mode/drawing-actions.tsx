@@ -126,10 +126,8 @@ export function DrawingActions() {
               "#drawing-" + drawingId,
             );
             if (drawingElement) {
-              shareImage(
-                await domToPng(drawingElement, {
-                  scale: 2,
-                }),
+              await shareImage(
+                await domToPng(drawingElement, { scale: 2 }),
                 DEFAULT_FILENAME,
               );
             }

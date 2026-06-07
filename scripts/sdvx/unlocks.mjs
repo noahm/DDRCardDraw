@@ -13,7 +13,7 @@ export const UNPLAYABLE_IDS = [
 
 /**
  * @typedef ChartType
- * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"|"ultimate"}
+ * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"|"ultimate"|"nabla"}
  */
 
 /**
@@ -30,92 +30,6 @@ export const SDVX_UNLOCK_IDS = {
     // or, to flag only a particular chart, wrap in braces,
     // then specify the chart afterwards:
     // [1100, "exceed"],
-
-    [1025, "maximum"], // Make Magic MXM
-    [1027, "maximum"], // infinite:youniverse MXM
-    [1028, "maximum"], // HE4VEN ～天国へようこそ～ MXM
-    [1032, "maximum"], // Fin.ArcDeaR MXM
-    [1044, "maximum"], // Immortal Saga MXM
-
-    // Omega Dimension
-    1099, // FIN4LE ～終止線の彼方へ～
-    1100, // WHITEOUT
-    1101, // Deadly force
-    1102, // Staring at star
-    1103, // Dyscontrolled Galaxy
-    1104, // セイレーン 〜悲壮の竪琴〜
-    1105, // 神獄烙桜
-    1106, // Juggler's Maddness
-    1107, // ULTiMATE INFLATiON
-    1108, // Mirrorwall
-
-    1140, // BEAST BASS BOMB
-    1141, // Cy-Bird
-    1142, // Far Away
-    1143, // OPEN MY GATE
-    1144, // Hug!! Vs. Hug!!
-    1145, // #SpeedyCats
-    1146, // 闇夜に舞うは紅の華
-    1147, // All Clear!!
-    1148, // TWO-TORIAL
-
-    1177, // Last Resort
-    1178, // A Lasting Promise
-    1179, // Cloud 9
-    1180, // Sacrifice and Faith
-    1181, // 羅生門
-    1183, // 僕らの時間
-    1185, // I
-    1186, // 神話に芽吹く
-    1187, // CUTE-Reflection
-
-    1188, // Awakening
-    1189, // Xéroa
-    1191, // crossing blue
-    1196, // BlueMoon Princess
-    1202, // Яe's NoVǢ
-    1206, // Wings of Glory
-    1207, // メルヘン風紀委員会
-    1212, // プラネタジャーニー
-
-    1269, // Made In Love
-    1270, // Xronièr
-    1271, // Failnaught
-    1272, // Absolute Domination
-    1273, // Fly Like You
-    1274, // そして黄金郷へ
-    1275, // 光射す澪のユズリハ
-    1276, // サイコパスラビット
-    1277, // オニユリ
-    1278, // 水簾ノ調
-    1279, // Another Chapter
-    1280, // スラッシュ//シスターズ
-    1281, // コメット⇒スケイター
-
-    1361, // *Feels Seasickness...*
-    1362, // ΣmbryØ
-    1363, // Cross Fire
-    1364, // GODHEART
-    1365, // THE HEAVEN
-    1366, // 祝福の色彩は想い結ぶ君たち迄
-    1367, // ULTRAVELOCITY
-    1368, // Destiny
-
-    1462, // ΣgØ
-    1463, // 星の透る夏空に願う
-    1464, // Lancelot ～Flame of the Rebellion～
-    1465, // ΩVERFLOW
-    1466, // Sudden Visitor
-    1467, // Ghost Family Living In Graveyard
-    1468, // petit fours
-
-    1495, // * Erm, could it be a Spatiotemporal ShockWAVE Syndrome...?
-    1496, // OUTERHEΛVEN
-    1497, // Pulsar
-    1498, // θコトノハθカプセルθ
-    1499, // Butterfly Twist
-    1500, // pique
-    1501, // Teufel
 
     // Hexadiver
     1580, // 666
@@ -338,11 +252,6 @@ export const SDVX_UNLOCK_IDS = {
     [675, "exceed"], // BEAT-NEW-WORLD XCD
     [182, "exceed"], // 待チ人ハ来ズ。 XCD
 
-    // Arena Exclusive
-    2077, // ちくわパフェだよ☆ＣＫＰ (Yvya Remix)
-    2078, // めうめうぺったんたん！！ (ZAQUVA Remix)
-    2171, // BEMANI PRO LEAGUE -SEASON 2- SOUND VOLTEX ULTIMATE MEDLEY
-
     // Exceed Gear Arena Exclusive Exceed Charts
     [872, "exceed"], // Din Don Dan (Fusion Remix)
     [88, "exceed"], // Grip & Break down !! - SDVX Edit. -
@@ -399,18 +308,21 @@ export const SDVX_UNLOCK_IDS = {
     [475, "exceed"], // SkyDrive!
     [687, "exceed"], // Sounds Of Summer
 
-    // Cloud-Exclusive
-    1762, // ドゥサンコオデッセイ!!
-    1763, // Azalea
-    1764, // Bayonex
-    1765, // Reverenced Flower
-    1811, // Reminiscence
-
-    //BPL S5 Blaster GATE
+    // BPL S5 Blaster GATE
     2314, // Divine Ether
     2315, // #Evil_Signs_of_Bloodlines
     2316, // Blessed Horizon
     2317, // 双星の冒険録
+    2318, // ИEXTAGE
+    2319, // CAKE,Cake'n Cake!
+    2320, // 天鯨譚
+    2321, // 華麗なる一撃
+    2322, // Veins Resonance
+    2323, // ShowDawn
+    2324, // DANGER XLOZE
+    2325, // XELENOPHOEBEA
+    2326, // Down with your Love
+    2327, // Circumzenith Arc
   ],
 
   // Variant Gate
@@ -430,35 +342,22 @@ export const SDVX_UNLOCK_IDS = {
   ],
 
   otherEvents: [
-    //REFLEC BEAT Special Stamp!
-    2235, // Windy Fairy
-    2236, // 幻影ノ消失
-    2237, // Towards The Horizon
-    2238, // SCHWARZSCHILD FIELD
-    2239, // ビューティフル レシート
-
-    // BPL Season 4 Triple Tribe
-    2189, // Come to Life
-    2190, // SOLAR ECLIPSE
-    2191, // COSMIC V3LOCITY
-
-    // BPL Season 5 Triple Tribe
+    // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0
     2246, // EROICA
     2247, // Secret Rouge
     2249, // Snow Garland Fairy
     2250, // EYE OF THE HEAVEN
     2263, // Electronic Sports Complex
 
-    // PRECIOUS UNIVERSAL CELEBRATE Stamp
-    1969, // X1GNUS
-    1970, // Nebula Dysorder
-    1971, // For All The Challengers
-    1972, // Guinevere～白き妖精～
-    1973, // 細氷
-    1974, // while (screen is blue)
-    1975, // Never Forget Evergreen
-    1976, // ヴァルプルギスの夜
-    1977, // Little Red Riding Hood
+    // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe
+    2358, // 9th Outburst
+    2359, // Anti-Matter
+    2360, // Mermaid girl
+    2361, // Glitch N Ride
+    2362, // fixer
+    2378, // Thunderstorm
+    2380, // Roar of Chronos
+    2382, // RUINA
 
     // ぼる×りこ Cross Resonance
     2231, // Crossfade
@@ -477,12 +376,42 @@ export const SDVX_UNLOCK_IDS = {
     2340, // Temporal Veil
     2341, // 555 (Please call me “Go! Go! Go!”)
 
+    2370, //Moonlit Blue
+    2371, //シグナライズ
+    2372, //Baphomet
+
     // GITADORA Special Stamp!
     2342, // めた・メタ？ひまわり＊パンチ
     2338, // 天泣
 
-    //Seiryu Kai Stamp Bonus!
+    // Seiryu Kai Stamp Bonus!
     2170, // Blue Diamond
+
+    // BEMANI PRO LEAGUE -SEASON 5- Special Stamp
+    2328, // ASTRL GG
+    2329, // Masterstroke
+    2330, // KISKIL-LILLA
+    2331, // No→to
+    2363, // RIZING-GAMERS.
+    2364, // King of Tribe
+    2365, // SILKY BRAVE
+    2366, // GO!
+    2367, // Astra Blaze
+    2368, // HORIZON BEATZ
+    2369, // Meteor☆Shower
+    2383, // COLOR BURST
+
+    // pop'n & SDVX Cheers × Cheers!!
+    2355, // Zt!ri△
+    2356, // Votum stellarum -forest #25 RMX-
+    2357, // 紅焔
+
+    // NABLA Arena Exclusive Nabla Charts
+    [353, "nabla"], // BUBBLE RAVER
+    [152, "nabla"], // Earthquake Super Shock - SDVX Edit. -
+    [623, "nabla"], // False Cross
+    [770, "nabla"], // ハッピーシンセサイザ
+    [697, "nabla"], // 初音ミクの消失
   ],
 
   jpOnly: [

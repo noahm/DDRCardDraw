@@ -11,9 +11,9 @@ Read all about what the app can do [in the user manual](https://github.com/noahm
 
 ## Customizing / Contributing
 
-This app can be easily customized for novel formats a tournament might use. If you have feature requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on the fediverse](https://mastodon.content.town/@noahm).
+This app can be easily customized for novel formats a tournament might use. If you have feature requests or ideas, you're welcome reach out on our [Discord server](https://discord.gg/QPyEATsbP7), [Facebook messenger](https://m.me/noah.manneschmidt), or [on Bluesky](https://bsky.app/profile/noahm.omg.lol).
 
-If you want to take a stab at developing on the app yourself, you will need have node.js >= 18.0.0 installed along with [yarn](https://yarnpkg.com/). Some familarity with React will also help.
+If you want to take a stab at developing on the app yourself, you will need have node.js >= 22.0.0 installed along with [yarn](https://yarnpkg.com/). Some familarity with React will also help.
 
 Fork this repo to your account and then clone the fork to your computer. Then the following commands will be useful:
 
@@ -52,4 +52,21 @@ yarn import:itg path/to/pack/folder some-stub-name
 # import the latest Pump it Up data using a data dump found here:
 # https://github.com/AnyhowStep/pump-out-sqlite3-dump/
 yarn import:pump path/to/pumpout/db
+```
+
+## Deployment
+
+As mentioned above, running `yarn build` will create a distribution of the application with static content that can be used in a production environment in a multitude of ways. The following are options for deployment
+
+### Local
+
+Running `yarn build:zip` produces a zip file that can be extracted anywhere on your PC. Simply open the included `index.html` to start using DDRCardDraw. That's it!
+
+### Docker/Containers
+
+For more advanced users, a Dockerfile has been included to produce a docker image that can be deployed in any container environment, whether it is using the docker engine directly or using an orchestration tool like docker-compose or kubernetes.
+
+```sh
+docker build -t ddrcarddraw .
+docker run ddrcarddraw
 ```

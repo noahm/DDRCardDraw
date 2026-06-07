@@ -15,12 +15,20 @@ interface DrawState {
   drawings: Drawing[];
   dataSetName: string;
   confirmMessage: string;
-  addImportedData(dataSetName: string, gameData: GameData): void;
-  loadGameData(dataSetName: string, gameData?: GameData): Promise<GameData>;
+  addImportedData(this: void, dataSetName: string, gameData: GameData): void;
+  loadGameData(
+    this: void,
+    dataSetName: string,
+    gameData?: GameData,
+  ): Promise<GameData>;
   /** returns false if no songs could be drawn */
-  drawSongs(config: ConfigState): boolean;
-  clearDrawings(): void;
-  injectRemoteDrawing(d: Drawing, syncWithPeer?: DataConnection): void;
+  drawSongs(this: void, config: ConfigState): boolean;
+  clearDrawings(this: void): void;
+  injectRemoteDrawing(
+    this: void,
+    d: Drawing,
+    syncWithPeer?: DataConnection,
+  ): void;
 }
 
 function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
