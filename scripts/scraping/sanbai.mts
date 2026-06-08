@@ -78,18 +78,6 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     "q6o1id8doDb988l1o01P8dllQ0d6IP9P", // Time to HYPERDRIVE
     { lock_types: undefined },
   ],
-  // グランプリ譜面パック vol.1
-  ...[
-    "i8II16blIIbQQd196b616OPbPO910oi9", // LOVE THIS FEELIN'
-    "QQdIOi1Q81IqIoDqo80P0I1Q9qIdq1il", // murmur twins
-    "1d10660Dd0IOibDI890Ild80q6ddoQO8", // ORION.78(AMeuro-MIX)
-    "DQlQ1DlPbq900oqdOo8l0d6I1lIOl99l", // PUT YOUR FAITH IN ME
-    "oD6l698q0bQqoIOi0Dd66bqObII8QqDl", // TRUE♥LOVE
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-05-29T15:00:00+09:00"),
-    id,
-    { lock_types: undefined },
-  ]),
   ...[
     // グランプリ楽曲パック vol.36
     "98QDoo1I6dP8QoPiDQOdQ09Db80Il68q", // ARACHNE
@@ -133,12 +121,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // #region グランプリ譜面パック vol.6
-  [
-    "O8qii6oiooPd8lbPqDo9QQioIoQQOoq0", // INSIDE YOUR HEART
-    { lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190] },
-  ],
-  // #endregion グランプリ譜面パック vol.6
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),

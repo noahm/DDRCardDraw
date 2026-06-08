@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1778121927820
+    "lastUpdated": 1779976987429
   },
   "defaults": {
     "style": "single",
@@ -82,7 +82,7 @@
       "challenge": "Challenge",
       "maxScoreFormat": "EX: {maxScore}",
       "shock": "Shock arrow charts",
-      "grandPrixPack": "Music packs (or in arcade modes)",
+      "grandPrixPack": "Music/Chart packs (or in arcade modes)",
       "withoutPrivilege": "Packs without pre privilege (or in arcade modes)",
       "controller": "Controller purchase privilege music packs (or in arcade modes)",
       "prePrivilege": "Pre privilege",
@@ -109,7 +109,7 @@
       "challenge": "Challenge",
       "maxScoreFormat": "EX: {maxScore}",
       "shock": "ショックアロー譜面",
-      "grandPrixPack": "楽曲パック (またはアーケードプレー)",
+      "grandPrixPack": "楽曲/譜面パック (またはアーケードプレー)",
       "withoutPrivilege": "先行プレー特典のないパック (またはアーケードプレー)",
       "controller": "コントローラ購入者特典楽曲パック (またはアーケードプレー)",
       "prePrivilege": "先行プレー特典",
@@ -1825,6 +1825,13 @@
           "maxScore": 927
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1467,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 6,
@@ -1844,6 +1851,13 @@
           "lvl": 11,
           "sanbaiTier": 11.6,
           "maxScore": 927
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1455,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_1st-5th/Abyss.png",
@@ -5952,7 +5966,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Be a Hero!.png",
       "remyLink": "https://remywiki.com/Be_a_Hero!",
-      "genre": "DIGITAL THRASH PUNK"
+      "genre": "DIGITAL THRASH PUNK/デジタルスラッシュパンク"
     },
     {
       "name": "BE LOVIN",
@@ -6651,7 +6665,8 @@
       ],
       "flags": ["arcade"],
       "jacket": "ddr_a3/Black Emperor.jpg",
-      "remyLink": "https://remywiki.com/Black_Emperor"
+      "remyLink": "https://remywiki.com/Black_Emperor",
+      "genre": "エグゾーストクライマックスコア/EXHAUST CLIMAX CORE"
     },
     {
       "name": "BLACK JACKAL",
@@ -6724,37 +6739,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 201
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 618
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 972
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 14
+          "lvl": 14,
+          "maxScore": 1347
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 606
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 969
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 14
+          "lvl": 14,
+          "maxScore": 1359
         }
       ],
       "flags": ["prePrivilege"],
@@ -7161,7 +7183,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/blue anthem.jpg",
       "remyLink": "https://remywiki.com/Blue_anthem",
-      "search_hint": "APINA VRAMeS/アピナ"
+      "search_hint": "APINA VRAMeS/アピナ",
+      "genre": "TRIUMPHAL ANTHEM"
     },
     {
       "name": "BLUE FOG, SILVER BULLET.",
@@ -8597,12 +8620,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 633
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 927
         },
         {
           "style": "double",
@@ -9328,12 +9353,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 621
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1107
         },
         {
           "style": "double",
@@ -9345,7 +9372,7 @@
       "flags": ["prePrivilege"],
       "remyLink": "https://remywiki.com/CARNIVOROUS",
       "jacket": "ddr_grand_prix/CARNIVOROUS.jpg",
-      "genre": "GIRL'S EUROBEAT"
+      "genre": "GIRL'S EUROBEAT/ユーロストリーム/EURO STREAM"
     },
     {
       "name": "Catch Our Fire!",
@@ -12440,6 +12467,13 @@
           "maxScore": 768
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1101,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -12459,6 +12493,13 @@
           "lvl": 10,
           "sanbaiTier": 10.55,
           "maxScore": 762
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1092,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_1st-5th/CUTIE CHASER.png",
@@ -12860,12 +12901,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 768
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1179
         },
         {
           "style": "double",
@@ -18957,7 +19000,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/ESPRIT ONE.jpg",
       "remyLink": "https://remywiki.com/ESPRIT_ONE",
-      "search_hint": "ROUND1/ラウンドワン"
+      "search_hint": "ROUND1/ラウンドワン",
+      "genre": "CYBER ROCK"
     },
     {
       "name": "esrev:eR",
@@ -21309,7 +21353,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Fly far bounce.png",
       "remyLink": "https://remywiki.com/Fly_far_bounce",
-      "genre": ""
+      "genre": "ワールドノスタルジア/WORLD/NOSTALGIA"
     },
     {
       "name": "Fly Like You",
@@ -21498,6 +21542,13 @@
           "maxScore": 612
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 825,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 3,
@@ -21517,6 +21568,13 @@
           "lvl": 8,
           "sanbaiTier": 8.5,
           "maxScore": 597
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 840,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/Forever Sunshine.png",
@@ -22679,7 +22737,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Get Into The Groove feat.WaMi.jpg",
       "remyLink": "https://remywiki.com/Get_Into_The_Groove_feat.WaMi",
-      "search_hint": "GiGO"
+      "search_hint": "GiGO",
+      "genre": "Nu-NRG / FUTUREDISCO"
     },
     {
       "name": "Get it",
@@ -30199,37 +30258,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 243
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 543
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1128
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1680
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 555
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1137
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1536
         }
       ],
       "flags": ["prePrivilege"],
@@ -30532,6 +30598,13 @@
           "maxScore": 549
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 786,
+          "flags": ["prePrivilege", "shock"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -30551,6 +30624,13 @@
           "lvl": 10,
           "sanbaiTier": 10.55,
           "maxScore": 492
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 777,
+          "flags": ["prePrivilege", "shock"]
         }
       ],
       "jacket": "ddr_1st-5th/KEEP ON MOVIN'.png",
@@ -32673,7 +32753,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Life is beautiful.png",
       "remyLink": "https://remywiki.com/Life_is_beautiful",
-      "genre": ""
+      "genre": "アルパカトロニカ/ALPACATRONICA"
     },
     {
       "name": "Lift You Up",
@@ -33007,37 +33087,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 237
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 639
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 924
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 14
+          "lvl": 14,
+          "maxScore": 1575
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 627
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 915
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 14
+          "lvl": 14,
+          "maxScore": 1536
         }
       ],
       "flags": ["prePrivilege"],
@@ -33896,7 +33983,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.8,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1722
         },
         {
@@ -33925,7 +34012,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.75,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1710
         }
       ],
@@ -36399,7 +36486,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Mighty Beat Monsterz.jpg",
       "remyLink": "https://remywiki.com/Mighty_Beat_Monsterz",
-      "search_hint": "TAITO STATION Tradz/タイトーステーション"
+      "search_hint": "TAITO STATION Tradz/タイトーステーション",
+      "genre": "HYBRID METALCORE"
     },
     {
       "name": "Mind Parasite",
@@ -36437,6 +36525,13 @@
           "maxScore": 1068
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1413,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -36456,6 +36551,13 @@
           "lvl": 10,
           "sanbaiTier": 10.25,
           "maxScore": 894
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1392,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/Mind Parasite.png",
@@ -37081,7 +37183,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.45,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1776
         },
         {
@@ -37110,7 +37212,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1731
         }
       ],
@@ -40263,7 +40365,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.7,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1200
         },
         {
@@ -40292,7 +40394,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.45,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1188
         }
       ],
@@ -41086,37 +41188,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 276
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 657
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1134
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 1989
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 654
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1092
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 1950
         }
       ],
       "flags": ["prePrivilege"],
@@ -42413,7 +42522,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Phlox.jpg",
       "remyLink": "https://remywiki.com/Phlox",
-      "genre": ""
+      "genre": "フラワーストリーム/FLOWER STREAM"
     },
     {
       "name": "Pierce The Sky",
@@ -43751,7 +43860,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Prey.png",
       "remyLink": "https://remywiki.com/Prey",
-      "genre": ""
+      "genre": "プレデターコア/PREDATOR CORE"
     },
     {
       "name": "printemps",
@@ -44073,7 +44182,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Puberty Dysthmia.png",
       "remyLink": "https://remywiki.com/Puberty_Dysthymia",
-      "genre": ""
+      "genre": "ディプレッシヴロック/DEPRESSIVE ROCK"
     },
     {
       "name": "Pump Pump Pump",
@@ -44363,7 +44472,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1068
         },
         {
@@ -44392,7 +44501,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.3,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 999
         }
       ],
@@ -46111,7 +46220,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Rejoin.png",
       "remyLink": "https://remywiki.com/Rejoin",
-      "genre": ""
+      "genre": "摩天楼ファンク/摩天楼FUNK"
     },
     {
       "name": "Remain",
@@ -53895,7 +54004,7 @@
       "flags": ["grandPrixPack", "withoutPrivilege"],
       "jacket": "ddr_a/STERLING SILVER.png",
       "remyLink": "https://remywiki.com/STERLING_SILVER",
-      "genre": ""
+      "genre": "セイクリッドコア/SACRED CORE"
     },
     {
       "name": "STERLING SILVER (U1 overground mix)",
@@ -54474,37 +54583,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 201
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 555
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 948
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 14
+          "lvl": 14,
+          "maxScore": 1623
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 543
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 9
+          "lvl": 9,
+          "maxScore": 933
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 14
+          "lvl": 14,
+          "maxScore": 1530
         }
       ],
       "flags": ["prePrivilege"],
@@ -55041,7 +55157,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/SUPER SUMMER SALE.png",
       "remyLink": "https://remywiki.com/SUPER_SUMMER_SALE",
-      "genre": ""
+      "genre": "オービタリックバーゲン/ORBITALIC BARGAIN"
     },
     {
       "name": "Superior MAXXX",
@@ -57466,6 +57582,13 @@
           "maxScore": 1509
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2094,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 8,
@@ -57485,6 +57608,13 @@
           "lvl": 16,
           "sanbaiTier": 16.45,
           "maxScore": 1461
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1956,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_max-ext/The legend of MAX.png",
@@ -58336,7 +58466,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/THUNDERSTRIKE.jpg",
       "remyLink": "https://remywiki.com/THUNDERSTRIKE",
-      "search_hint": "GAME PANIC/ゲームパニック"
+      "search_hint": "GAME PANIC/ゲームパニック",
+      "genre": "LIGHTNING Hi-TECH"
     },
     {
       "name": "Ticket to Bombay",
@@ -58459,6 +58590,67 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_x3/TIME.png",
       "remyLink": "https://remywiki.com/TIME"
+    },
+    {
+      "name": "Time to HYPERDRIVE",
+      "artist": "Savage States",
+      "saHash": "q6o1id8doDb988l1o01P8dllQ0d6IP9P",
+      "bpm": "95-190",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 276,
+          "sanbaiTier": 2.25
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 774,
+          "sanbaiTier": 7.2
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1179,
+          "sanbaiTier": 12.45
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1875,
+          "sanbaiTier": 15.4
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 765,
+          "sanbaiTier": 7.2
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1131,
+          "sanbaiTier": 12.3
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1860,
+          "sanbaiTier": 15.5
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/Time_to_HYPERDRIVE.jpg",
+      "remyLink": "https://remywiki.com/Time_to_HYPERDRIVE"
     },
     {
       "name": "TimeHollow",
@@ -60716,7 +60908,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 15,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1611
         },
         {
@@ -60744,7 +60936,7 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 15,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1563
         }
       ],
@@ -60970,6 +61162,13 @@
           "maxScore": 1122
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1455,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 6,
@@ -60989,6 +61188,13 @@
           "lvl": 13,
           "sanbaiTier": 13.55,
           "maxScore": 1089
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1443,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_max-ext/TSUGARU.png",
@@ -62919,6 +63125,13 @@
           "maxScore": 1362
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1623,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -62938,6 +63151,13 @@
           "lvl": 13,
           "sanbaiTier": 13.7,
           "maxScore": 1353
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1503,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/volcano.png",
@@ -64170,7 +64390,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Wizards!.jpg",
       "remyLink": "https://remywiki.com/Wizards!",
-      "search_hint": "SILK HAT/シルクハット"
+      "search_hint": "SILK HAT/シルクハット",
+      "genre": "JAPANESE ALTERNATIVE ROCK"
     },
     {
       "name": "Wolf's Rain",
@@ -67442,6 +67663,60 @@
       "genre": "スウィートリドルポップ/SWEET RIDDLE POP"
     },
     {
+      "name": "はるかぜリスタート！",
+      "artist": "qfeileadh feat.Risa Kodaka",
+      "saHash": "PiIdO0odOb1bQdPQD0QqdlP06IQiodQ0",
+      "bpm": "164",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 213
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 615
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1356
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1884
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 624
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1293
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1851
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/はるかぜリスタート！.jpg",
+      "remyLink": "https://remywiki.com/Harukaze_restart!"
+    },
+    {
       "name": "び",
       "name_translation": "Bi",
       "artist": "立秋 feat.ちょこ",
@@ -69039,6 +69314,13 @@
           "maxScore": 882
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "maxScore": 1398,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -69058,6 +69340,13 @@
           "lvl": 12,
           "sanbaiTier": 12.5,
           "maxScore": 807
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1329,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_1st-5th/SANA MOLLETE NE ENTE.png",
@@ -72466,7 +72755,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/メテオラ-meteor-.jpg",
       "remyLink": "https://remywiki.com/Meteora-meteor-",
-      "search_hint": "レジャーランド/LEISURE LAND"
+      "search_hint": "レジャーランド/LEISURE LAND",
+      "genre": "DANCE POP"
     },
     {
       "name": "メンタンピンドラドラ",
@@ -73307,7 +73597,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Ririze to honou ryuu revatein.jpg",
       "remyLink": "https://remywiki.com/Lilieze_to_enryuu_Laevateinn",
-      "genre": "OLDSTYLE GAMEMUSIC"
+      "genre": "OLDSTYLE GAMEMUSIC/オールドスタイルゲームミュージック"
     },
     {
       "name": "ルカルカ★ナイトフィーバー",
@@ -73423,7 +73713,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Luminous days.png",
       "remyLink": "https://remywiki.com/Luminous_days",
-      "genre": ""
+      "genre": "ツインズクリスマスキャロル/TWINS Xmas CAROL"
     },
     {
       "name": "レシピのリドル",
@@ -73643,7 +73933,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Ronron e rairairai!.png",
       "remyLink": "https://remywiki.com/Ronron_e_rairairai!",
-      "genre": ""
+      "genre": "热情美味又快乐的歌"
     },
     {
       "name": "一途",
@@ -75896,6 +76186,60 @@
       "search_hint": "astronaut space helmet"
     },
     {
+      "name": "幸せのマ法は解けなイ.*・.+ ☆",
+      "artist": "Mono.",
+      "saHash": "ild9d0O9D09dlOP986089i9POPDoP6iD",
+      "bpm": "200",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 303
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 618
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1179
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1488
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 618
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1122
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1431
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/幸せのマ法は解けなイ.jpg",
+      "remyLink": "https://remywiki.com/Shiawase_no_mahou_wa_tokenai"
+    },
+    {
       "name": "廻廻奇譚",
       "artist": "",
       "bpm": "185",
@@ -76175,6 +76519,13 @@
           "maxScore": 1056
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1578,
+          "flags": ["prePrivilege"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 3,
@@ -76194,6 +76545,13 @@
           "lvl": 11,
           "sanbaiTier": 11.75,
           "maxScore": 1017
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1515,
+          "flags": ["prePrivilege"]
         }
       ],
       "jacket": "ddr_sn-sn2/Tino's White Horse.png",
@@ -77644,7 +78002,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Seiza ga koishita shunkan wo..png",
       "remyLink": "https://remywiki.com/Seiza_ga_koishita_shunkan_wo.",
-      "genre": "",
+      "genre": "青春サマーロック",
       "search_hint": "Seiza ga koishita shunkan wo"
     },
     {
@@ -78425,7 +78783,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/Mikansei no jouki kudou otome (DDR Edition).jpg",
-      "remyLink": "https://remywiki.com/Mikansei_no_jouki_kudou_otome"
+      "remyLink": "https://remywiki.com/Mikansei_no_jouki_kudou_otome",
+      "genre": "オービタルスチームパンク/ORBITAL STEAMPUNK"
     },
     {
       "name": "未来（ダ）FUTURE",
@@ -79739,7 +80098,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_2014/Bakunana testroyer.png",
       "remyLink": "https://remywiki.com/Bakunana_testroyer",
-      "genre": ""
+      "genre": "試験☆電波"
     },
     {
       "name": "狂水一華",
@@ -80626,7 +80985,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Youhishi no ue no ginga.jpg",
       "remyLink": "https://remywiki.com/Youhishi_no_ue_no_ginga",
-      "genre": ""
+      "genre": "ステラファンタジー/STELLA FANTASY"
     },
     {
       "name": "群青",
@@ -82979,7 +83338,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a/Fuurin hanabi.png",
       "remyLink": "https://remywiki.com/Fuurin_hanabi",
-      "genre": ""
+      "genre": "夏恋歌謡"
     },
     {
       "name": "魔法のたまご ～心菜 ELECTRO POP edition～",

@@ -11,11 +11,11 @@ import { fileURLToPath } from "url";
 
 import type { GameData, Song } from "../src/models/SongData.ts";
 import {
-  writeJsonData,
+  downloadJacket,
   requestQueue,
   sortSongs,
   setJacketPrefix,
-  downloadJacket,
+  writeJsonData,
 } from "./utils.mts";
 import {
   JsonDDRSongImporter,
@@ -284,10 +284,12 @@ try {
     existingData.songs = sortSongs(existingData.songs, existingData.meta);
 
   for (const song of existingData.songs) {
-    if (song.charts.find((c) => !c.maxScore)) {
-      console.log(
-        `[Info] ${song.name} (${song.saHash}) is missing maxScore in charts.`,
-      );
+    for (const chart of song.charts) {
+      if (!chart.maxScore) {
+        console.log(
+          `[Info] ${song.name} (${song.saHash}) [${chart.style}/${chart.diffClass}] is missing maxScore.`,
+        );
+      }
     }
   }
   await writeJsonData(existingData, targetFile, lastUpdated, 2);
