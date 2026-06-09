@@ -28,6 +28,21 @@ function typedKeys(object) {
 const OUTFILE = "src/songs/sdvx_nabla.json";
 const JACKETS_PATH = "src/assets/jackets/sdvx";
 
+const radarAxes = [
+  "notes",
+  "peak",
+  "tsumami",
+  "tricky",
+  "hand-trip",
+  "one-hand",
+];
+/**
+ * @param {string} radarAxis
+ */
+function radarAxisToFlag(radarAxis) {
+  return `radar-peak:${radarAxis}`;
+}
+
 async function main() {
   const sdvxFile = process.argv[2];
   if (!sdvxFile) {
@@ -81,7 +96,12 @@ async function main() {
         "nabla",
         "ultimate",
       ],
-      flags: ["omegaDimension", "hexadiver", "otherEvents"],
+      flags: [
+        "omegaDimension",
+        "hexadiver",
+        "otherEvents",
+        ...radarAxes.map(radarAxisToFlag),
+      ],
       lowerLvlBound: 16,
       upperLvlBound: 19,
     },
@@ -105,6 +125,10 @@ async function main() {
         variantgate: "Variant Gate",
         otherEvents: "Time-limited & Other Events",
         jpOnly: "J-Region Exclusive",
+        ...radarAxes.reduce((prev, curr) => {
+          prev[radarAxisToFlag(curr)] = `Radar Peak: ${curr}`;
+          return prev;
+        }, {}),
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -276,17 +300,15 @@ function buildSong(song, availableJackets) {
     }
 
     const radarValues = {};
-    for (const radarType of [
-      "notes",
-      "peak",
-      "tsumami",
-      "tricky",
-      "hand-trip",
-      "one-hand",
-    ]) {
+    for (const radarType of radarAxes) {
       radarValues[radarType] = parseInt(chartInfo.radar[0][radarType][0]._, 10);
     }
-    console.log({ name, chartType, radarValues });
+    // highest radar value of all six axes
+    const peakValue = Math.max(...Object.values(radarValues));
+    // all keys tied with radar value
+    const peakKeys = Object.keys(radarValues).filter(
+      (key) => radarValues[key] === peakValue,
+    );
 
     const chartJacket = determineChartJacket(chartType, song, availableJackets);
     if (!chartJacket) {
@@ -301,7 +323,7 @@ function buildSong(song, availableJackets) {
       jacket: chartJacket,
     };
     /** @type {string[]} */
-    const flags = [];
+    const flags = peakKeys.map(radarAxisToFlag);
     for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
       if (
         SDVX_UNLOCK_IDS[flag].some(
