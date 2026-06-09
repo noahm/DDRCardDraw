@@ -11,20 +11,21 @@ import { fileURLToPath } from "url";
 
 import type { GameData, Song } from "../src/models/SongData.ts";
 import {
-  writeJsonData,
+  downloadJacket,
   requestQueue,
   sortSongs,
   setJacketPrefix,
-  downloadJacket,
+  writeJsonData,
 } from "./utils.mts";
 import {
   JsonDDRSongImporter,
   DDR_WORLD as MIX_META,
 } from "./scraping/ddr-sources.mts";
 import { EAGateSongImporter } from "./scraping/eagate-ddr.mts";
-import { tryGetMetaFromRemy } from "./scraping/remy.mts";
+import { getJacketFromRemySong, tryGetMetaFromRemy } from "./scraping/remy.mts";
 import { SanbaiSongImporter } from "./scraping/sanbai.mts";
 import { ZivSongImporter } from "./scraping/ziv.mts";
+import { GrandPrixSongImporter } from "./scraping/grand-prix.mts";
 
 setJacketPrefix(MIX_META.jacketPrefix);
 
@@ -43,59 +44,115 @@ try {
 
   if (MIX_META.eagate) {
     console.log("Fetching songs from e-amusement GATE...");
-    const importer = new EAGateSongImporter(
-      MIX_META.eagate.songList,
-      MIX_META.eagate.jacket,
-      MIX_META.unmanagedFlags ?? [],
-    );
-    const fetchedSongs = await importer.fetchSongs();
+    if (MIX_META.eagate.jacket) {
+      // AC version
+      const importer = new EAGateSongImporter(
+        MIX_META.eagate.songList,
+        MIX_META.eagate.jacket,
+        MIX_META.unmanagedFlags ?? [],
+      );
+      const fetchedSongs = await importer.fetchSongs();
 
-    console.log(`Fetched ${fetchedSongs.length} songs from DDR World`);
+      console.log(`Fetched ${fetchedSongs.length} songs from DDR World`);
 
-    const tasks = fetchedSongs.map(
-      async (worldSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
-        // Find existing song by saHash
-        const existingSong = existingData.songs.find((s) =>
-          importer.songEquals(s, worldSong),
-        );
+      const tasks = fetchedSongs.map(
+        async (worldSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
+          // Find existing song by saHash
+          const existingSong = existingData.songs.find((s) =>
+            importer.songEquals(s, worldSong),
+          );
 
-        if (existingSong) {
-          // Get remyLink if missing
-          await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
+          if (existingSong) {
+            // Get remyLink if missing
+            await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
 
-          importer.merge(existingSong, worldSong);
-        } else {
-          console.log(`Adding new song: ${worldSong.name}`);
+            importer.merge(existingSong, worldSong);
+          } else {
+            console.log(`Adding new song: ${worldSong.name}`);
 
-          // Try to get meta data from remyLink
-          await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
-          // If still no jacket, try to get from e-amusement GATE
-          if (!worldSong.jacket) {
-            worldSong.jacket = downloadJacket(
-              worldSong.getJacketUrl(),
-              worldSong.name,
-            );
+            // Try to get meta data from remyLink
+            await tryGetMetaFromRemy(worldSong, "DanceDanceRevolution");
+            // If still no jacket, try to get from e-amusement GATE
+            if (!worldSong.jacket) {
+              worldSong.jacket = downloadJacket(
+                worldSong.getJacketUrl(),
+                worldSong.name,
+              );
+            }
+
+            const newSong: Song = {
+              name: worldSong.name,
+              artist: worldSong.artist || "",
+              saHash: worldSong.saHash,
+              bpm: worldSong.bpm || "???",
+              folder: existingData.meta.folders?.[0],
+              charts: worldSong.charts,
+              remyLink: worldSong.remyLink,
+              jacket: worldSong.jacket,
+            };
+
+            existingData.songs.push(newSong);
+          }
+        },
+      );
+      console.log("Processing all e-amusement GATE songs...");
+      await Promise.all(tasks);
+      await requestQueue.onIdle();
+      console.log(`Songs from e-amusement GATE: ${fetchedSongs.length}`);
+    } else {
+      // DDR GRAND PRIX
+      const importer = new GrandPrixSongImporter(MIX_META.eagate.songList);
+      const fetchedSongs = await importer.fetchSongs();
+
+      const tasks = fetchedSongs.map(
+        async (gpSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
+          const existingSong = existingData.songs.find((s) =>
+            importer.songEquals(s, gpSong),
+          );
+          if (existingSong) {
+            await tryGetMetaFromRemy(existingSong, "DanceDanceRevolution");
+            if (existingSong.remyLink) {
+              existingSong.jacket ||=
+                (await getJacketFromRemySong(
+                  existingSong.remyLink,
+                  existingSong.name,
+                  "DanceDanceRevolution GRAND PRIX",
+                  "DanceDanceRevolution",
+                  "DDR",
+                )) || existingSong.jacket;
+            }
+            return;
           }
 
+          // Try to get meta data from remyLink
+          await tryGetMetaFromRemy(gpSong, "DanceDanceRevolution");
+          if (gpSong.remyLink) {
+            gpSong.jacket ||= await getJacketFromRemySong(
+              gpSong.remyLink,
+              gpSong.name,
+              "DanceDanceRevolution GRAND PRIX",
+              "DanceDanceRevolution",
+              "DDR",
+            );
+          }
           const newSong: Song = {
-            name: worldSong.name,
-            artist: worldSong.artist || "",
-            saHash: worldSong.saHash,
-            bpm: worldSong.bpm || "???",
-            folder: existingData.meta.folders[0],
-            charts: worldSong.charts,
-            remyLink: worldSong.remyLink,
-            jacket: worldSong.jacket,
+            name: gpSong.name,
+            artist: gpSong.artist,
+            bpm: gpSong.bpm!,
+            folder: existingData.meta.folders?.[0],
+            charts: gpSong.charts ?? [],
+            jacket: gpSong.jacket!,
+            remyLink: gpSong.remyLink,
           };
 
           existingData.songs.push(newSong);
-        }
-      },
-    );
-    console.log("Processing all e-amusement GATE songs...");
-    await Promise.all(tasks);
-    await requestQueue.onIdle();
-    console.log(`Songs from e-amusement GATE: ${fetchedSongs.length}`);
+        },
+      );
+      console.log("Processing all Grand Prix songs...");
+      await Promise.all(tasks);
+      await requestQueue.onIdle();
+      console.log(`Songs from Grand Prix: ${fetchedSongs.length}`);
+    }
   }
 
   if (MIX_META.sanbai) {
@@ -143,10 +200,10 @@ try {
           existingData.songs.push({
             name: sanbaiSong.name,
             name_translation: sanbaiSong.name_translation,
-            artist: "???",
+            artist: sanbaiSong.artist || "???",
             saHash: sanbaiSong.saHash,
-            bpm: "???",
-            folder: sanbaiSong.folder ?? existingData.meta.folders[0],
+            bpm: sanbaiSong.bpm || "???",
+            folder: sanbaiSong.folder ?? existingData.meta.folders?.[0],
             charts: sanbaiSong.charts,
             flags: sanbaiSong.flags,
             jacket: sanbaiSong.jacket,
@@ -199,6 +256,7 @@ try {
     const importer = new JsonDDRSongImporter(
       MIX_META.copyFrom.file,
       MIX_META.copyFrom.keys,
+      MIX_META.copyFrom.overwriteKeys,
     );
     const fetchedSongs = await importer.fetchSongs();
 
@@ -218,11 +276,22 @@ try {
     console.log(
       `Songs processed for property copy from ${MIX_META.copyFrom.file}: ${fetchedSongs.length}`,
     );
+
+    lastUpdated = await importer.fetchLastUpdated();
   }
 
   if (MIX_META.sortSongs)
     existingData.songs = sortSongs(existingData.songs, existingData.meta);
 
+  for (const song of existingData.songs) {
+    for (const chart of song.charts) {
+      if (!chart.maxScore) {
+        console.log(
+          `[Info] ${song.name} (${song.saHash}) [${chart.style}/${chart.diffClass}] is missing maxScore.`,
+        );
+      }
+    }
+  }
   await writeJsonData(existingData, targetFile, lastUpdated, 2);
 
   console.log(`Successfully updated ${MIX_META.filename}`);

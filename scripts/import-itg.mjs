@@ -1,8 +1,8 @@
 import { parsePack } from "simfile-parser";
 import {
-  writeJsonData,
   downloadJacket,
   unlockRequestConcurrency,
+  writeJsonData,
 } from "./utils.mts";
 import { resolve, join, basename, extname, dirname } from "path";
 import { existsSync, readdirSync } from "fs";

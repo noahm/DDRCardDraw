@@ -487,7 +487,9 @@ async function main() {
     await fs.writeFile(
       path.resolve(path.join(jacketPath, `${folderFile}.svg`)),
       jacketSpecific,
-      { encoding: "utf-8" },
+      {
+        encoding: "utf-8",
+      },
     );
   }
   console.log(`Successfully built version folder SVG jackets`);

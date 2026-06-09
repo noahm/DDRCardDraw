@@ -1,5 +1,5 @@
 import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
-import { getDom, downloadJacket } from "../utils.mts";
+import { downloadJacket, getDom } from "../utils.mts";
 import type { DDRSongImporter, DDRSourceMeta } from "./ddr-sources.mts";
 
 type ZivSongData = Pick<
@@ -146,9 +146,14 @@ export class ZivSongImporter implements DDRSongImporter<ZivSongData> {
       const chart = {
         lvl: actualLv || lv,
         ...this.#difficulties[i],
-        ...(step > 0 ? { step } : {}),
-        ...(freeze > 0 ? { freeze } : {}),
-        ...(shock > 0 ? { shock, flags: ["shock"] } : {}),
+        ...(shock > 0 ? { flags: ["shock"] } : {}),
+        ...(step > 0
+          ? {
+              maxScore:
+                (step + (freeze > 0 ? freeze : 0) + (shock > 0 ? shock : 0)) *
+                3,
+            }
+          : {}),
       };
       charts.push(chart);
     }

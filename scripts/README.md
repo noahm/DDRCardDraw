@@ -13,6 +13,22 @@ ensures they match the specified schema for song data (from `songs.schema.json`)
 and finally does some code-gen to write an updated typescript interface for that
 song data into `src/models/SongData.ts`
 
+## Ongeki (import-ongeki.mts)
+
+Run with `yarn import:ongeki`. Fetches song data from SEGA's public API and downloads jacket images automatically.
+
+### Granular internal levels
+
+Decimal internal levels (e.g. 13.6, 14.3) are scraped from [ongeki-score.net](https://ongeki-score.net/music), a community-maintained site. That site is behind Cloudflare, so direct access is typically blocked with a 403. If that happens the script falls back to a rough heuristic (`13+` → `13.7`) for all levels.
+
+To get real internal levels, point the script at a [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) instance:
+
+```sh
+FLARESOLVERR_URL=http://<host>:8191 yarn import:ongeki
+```
+
+FlareSolverr handles the Cloudflare challenge and returns the solved page. Any charts that ongeki-score.net hasn't confirmed yet still fall back to the heuristic automatically.
+
 ## Sound Voltex (import-sdvx.js)
 
 ### 1. Getting chart jackets

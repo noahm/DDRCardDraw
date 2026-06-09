@@ -62,6 +62,7 @@ async function main() {
         { key: "heavenly", color: "#00ffff" },
         { key: "vivid", color: "#f52a6e" },
         { key: "exceed", color: "#0047AB" },
+        { key: "nabla", color: "#00ff00" },
         { key: "ultimate", color: "#efbf04" },
       ],
       flags: typedKeys(SDVX_UNLOCK_IDS),
@@ -77,6 +78,7 @@ async function main() {
         "heavenly",
         "vivid",
         "exceed",
+        "nabla",
         "ultimate",
       ],
       flags: ["omegaDimension", "hexadiver", "otherEvents"],
@@ -97,6 +99,7 @@ async function main() {
         ultimate: "Ultimate",
         vivid: "Vivid",
         exceed: "Exceed",
+        nabla: "Nabla",
         omegaDimension: "Blaster Gate/Omega Dimension",
         hexadiver: "Hexadiver",
         variantgate: "Variant Gate",
@@ -112,6 +115,7 @@ async function main() {
           heavenly: "HVN",
           vivid: "VVD",
           exceed: "XCD",
+          nabla: "NBL",
           ultimate: "ULT",
         },
       },
@@ -127,6 +131,7 @@ async function main() {
         heavenly: "Heavenly",
         vivid: "Vivid",
         exceed: "Exceed",
+        nabla: "Nabla",
         ultimate: "Ultimate",
         $abbr: {
           novice: "NOV",
@@ -138,6 +143,7 @@ async function main() {
           heavenly: "HVN",
           vivid: "VVD",
           exceed: "XCD",
+          nabla: "NBL",
           ultimate: "ULT",
         },
       },
@@ -168,6 +174,8 @@ function determineDiffClass(song, chartType) {
       return "vivid";
     case 6:
       return "exceed";
+    case 7:
+      return "nabla";
   }
 }
 

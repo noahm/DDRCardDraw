@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { chunkInPieces, pickRandomItem, rangeI, shuffle, times } from "./utils";
+import { chunkInPieces, pickRandomItem, shuffle, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { Fraction } from "./utils/fraction";
@@ -43,11 +43,13 @@ export function getDrawnChart(
     bpm: chart.bpm || currentSong.bpm,
     level: chart.lvl,
     granularLevel: chart.sanbaiTier,
+    maxScore: chart.maxScore,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     extras: (chart.extras || []).concat(currentSong.extras || []),
     song: currentSong,
     dateAdded: currentSong.date_added,
+    folder: currentSong.folder,
     // Fill in variant data per game
     diffAbbr: getDiffAbbr(gameData, chart.diffClass),
     diffColor: getDifficultyColor(gameData, chart.diffClass),
@@ -167,12 +169,12 @@ export function* getBuckets(
     }
     return;
   }
-  // TODO: create an array of available levels within range here (slice of availableLvls)
+  const levelsInRange = availableLvls.filter(
+    (lvl) => lvl >= lowerBound && lvl <= upperBound,
+  );
 
   if (!granularResolution || !cfg.useGranularLevels) {
-    // TODO: reuse that here
-    const levels = Array.from(rangeI(lowerBound, upperBound));
-    for (const chunk of chunkInPieces(probabilityBucketCount, levels)) {
+    for (const chunk of chunkInPieces(probabilityBucketCount, levelsInRange)) {
       yield [chunk[0], chunk[chunk.length - 1]];
     }
     return;

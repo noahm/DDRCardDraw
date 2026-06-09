@@ -26,11 +26,15 @@ interface RemotePeerStore {
   thisPeer: Peer | null;
   remotePeers: Map<string, DataConnection>;
   connect(peerId: string | null): Promise<void>;
-  setName(newName: string): Promise<void>;
+  setName(this: void, newName: string): Promise<void>;
   /** sends to the first peer if not specified */
-  sendDrawing(drawing: Drawing, peerId?: string): void;
+  sendDrawing(this: void, drawing: Drawing, peerId?: string): void;
   /** syncs with first peer if not specified */
-  beginSyncWithPeer(drawing: StoreApi<DrawingContext>, peerId?: string): void;
+  beginSyncWithPeer(
+    this: void,
+    drawing: StoreApi<DrawingContext>,
+    peerId?: string,
+  ): void;
 }
 
 function genPin() {

@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "options": {
+    "typeAware": true,
+    "reportUnusedDisableDirectives": "warn"
+  },
+  "plugins": ["typescript", "react", "unicorn"],
+  "jsPlugins": [
+    {
+      "name": "react-hooks-js",
+      "specifier": "eslint-plugin-react-hooks"
+    }
+  ],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "builtin": true
+  },
+  "ignorePatterns": ["scripts/", "surge-redirect/", "webpack.config.js"],
+  "rules": {
+    // #region typescript-eslint recommended (excepts correctness rules)
+    "no-array-constructor": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-namespace": "error",
+    "typescript/no-require-imports": "error",
+    "typescript/no-unnecessary-type-constraint": "error",
+    "typescript/no-unsafe-function-type": "error",
+    // #endregion typescript-eslint recommended (excepts correctness rules)
+    // #region eslint-plugin-react-hooks recommended (excepts correctness rules)
+    "react/rules-of-hooks": "error",
+    "react-hooks-js/component-hook-factories": "error",
+    "react-hooks-js/config": "error",
+    "react-hooks-js/error-boundaries": "error",
+    "react-hooks-js/gating": "error",
+    "react-hooks-js/globals": "error",
+    "react-hooks-js/immutability": "error",
+    "react-hooks-js/incompatible-library": "warn",
+    "react-hooks-js/preserve-manual-memoization": "error",
+    "react-hooks-js/purity": "error",
+    "react-hooks-js/refs": "error",
+    "react-hooks-js/set-state-in-effect": "error",
+    "react-hooks-js/set-state-in-render": "error",
+    "react-hooks-js/static-components": "error",
+    "react-hooks-js/unsupported-syntax": "error",
+    "react-hooks-js/use-memo": "error"
+    // #endregion eslint-plugin-react-hooks recommended (excepts correctness rules)
+  }
+}
