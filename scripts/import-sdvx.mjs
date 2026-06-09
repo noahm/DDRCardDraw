@@ -42,6 +42,7 @@ const radarAxes = [
 function radarAxisToFlag(radarAxis) {
   return `radar-peak:${radarAxis}`;
 }
+const allRadarFlags = radarAxes.map(radarAxisToFlag);
 
 async function main() {
   const sdvxFile = process.argv[2];
@@ -80,7 +81,7 @@ async function main() {
         { key: "nabla", color: "#00ff00" },
         { key: "ultimate", color: "#efbf04" },
       ],
-      flags: typedKeys(SDVX_UNLOCK_IDS),
+      flags: typedKeys(SDVX_UNLOCK_IDS).concat(allRadarFlags),
       lastUpdated: Date.now(),
     },
     defaults: {
@@ -96,12 +97,7 @@ async function main() {
         "nabla",
         "ultimate",
       ],
-      flags: [
-        "omegaDimension",
-        "hexadiver",
-        "otherEvents",
-        ...radarAxes.map(radarAxisToFlag),
-      ],
+      flags: ["omegaDimension", "hexadiver", "otherEvents", ...allRadarFlags],
       lowerLvlBound: 16,
       upperLvlBound: 19,
     },
