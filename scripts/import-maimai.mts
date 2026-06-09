@@ -93,6 +93,10 @@ function normalizeSong(song): Song {
       flags.push("long");
     }
 
+    if ("THE RHYTHM SENSE TEST".includes(song.title)) {
+      flags.push("test");
+    }
+
     let diffClass: string, type: string;
     if (sheet.type === "utage") {
       diffClass = sheet.type;
@@ -174,8 +178,9 @@ const baseGameData: GameData = {
       "PRiSM",
       "PRiSM PLUS",
       "CiRCLE",
+      "CiRCLE PLUS",
     ],
-    flags: ["unlockable", "long", "jpn", "usa"],
+    flags: ["unlockable", "long", "jpn", "usa", "test"],
   },
   defaults: {
     style: "single",
@@ -198,6 +203,7 @@ const baseGameData: GameData = {
       long: "Long Songs",
       jpn: "JPN Exclusive Songs",
       usa: "USA Ver. Hidden Songs",
+      test: "The Rhythm Sense Test",
       $abbr: {
         basic: "BAS",
         advanced: "ADV",
@@ -220,6 +226,7 @@ const baseGameData: GameData = {
       long: "Long Songs",
       jpn: "JPN Exclusive Songs",
       usa: "USA Ver. Hidden Songs",
+      test: "The Rhythm Sense Test",
       $abbr: {
         basic: "BAS",
         advanced: "ADV",
@@ -249,6 +256,43 @@ task("Import MaiMai Data", async function ({ setStatus, setTitle, task }) {
     return song;
   });
 
+  patchedSongs.push({
+    songId: "15003",
+    title: "THE RHYTHM SENSE TEST",
+    artist: "☆Tap the buttons to the beat and get a high “Achievement Rate”☆",
+    bpm: 120,
+    imageName:
+      "https://maimaidx-eng.com/maimai-mobile/img/Music/eabcf5ede00f256a.png",
+    version: "ORANGE PLUS",
+    releaseDate: "2015-04-01",
+    isLocked: false,
+    sheets: [
+      {
+        difficulty: "basic",
+        type: "std",
+        flags: "test",
+        internalLevelValue: 6,
+      },
+      {
+        difficulty: "advanced",
+        type: "std",
+        flags: "test",
+        internalLevelValue: 8,
+      },
+      {
+        difficulty: "expert",
+        type: "std",
+        flags: "test",
+        internalLevelValue: 10,
+      },
+      {
+        difficulty: "master",
+        type: "std",
+        flags: "test",
+        internalLevelValue: 12,
+      },
+    ],
+  });
   setStatus("Normalizing data...");
   baseGameData.songs = patchedSongs.map(normalizeSong);
 
