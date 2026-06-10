@@ -10400,7 +10400,6 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust",
-
           "flags": ["radar-peak:peak"]
         },
         { "lvl": 16, "style": "single", "diffClass": "exhaust" },
@@ -10883,7 +10882,6 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "exhaust",
-
           "flags": ["radar-peak:notes"]
         },
         { "lvl": 13, "style": "single", "diffClass": "exhaust" },
@@ -11258,7 +11256,6 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "exhaust",
-
           "flags": ["radar-peak:peak"]
         },
         { "lvl": 15, "style": "single", "diffClass": "exhaust" },
@@ -18936,7 +18933,7 @@
           "lvl": 19.2,
           "style": "single",
           "diffClass": "nabla",
-          "jacket": "sdvx/jk_0623_4_s.png",
+          "jacket": "sdvx/nabla/false_cross_blacky-nabla.png",
           "flags": ["radar-peak:notes", "otherEvents"]
         }
       ]
@@ -71936,7 +71933,7 @@
       "date_added": "2026-01-08",
       "saHash": "2170",
       "artist": "青龍改",
-      "jacket": "sdvx/jk_2170_1_s.png",
+      "jacket": "sdvx/nabla/bluediamond_seiryu.png",
       "bpm": "272",
       "charts": [
         {
@@ -73344,7 +73341,7 @@
       "date_added": "2025-12-24",
       "saHash": "2209",
       "artist": "ビートまりお",
-      "jacket": "sdvx/jk_2209_1_s.png",
+      "jacket": "sdvx/nabla/newerinnn_beatmario.png",
       "bpm": "185",
       "charts": [
         {
@@ -73800,7 +73797,7 @@
       "date_added": "2026-01-15",
       "saHash": "2222",
       "artist": "Ryu☆",
-      "jacket": "sdvx/jk_2222_1_s.png",
+      "jacket": "sdvx/nabla/plan8_ryu.png",
       "bpm": "212",
       "charts": [
         {
@@ -73835,7 +73832,7 @@
       "date_added": "2026-01-15",
       "saHash": "2223",
       "artist": "DJ TOTTO",
-      "jacket": "sdvx/jk_2223_1_s.png",
+      "jacket": "sdvx/nabla/chaplet_djtotto.png",
       "bpm": "200",
       "charts": [
         {
@@ -74226,7 +74223,7 @@
       "date_added": "2025-12-24",
       "saHash": "2234",
       "artist": "irom",
-      "jacket": "sdvx/jk_2234_1_s.png",
+      "jacket": "sdvx/nabla/deadlineskg_irom.png",
       "bpm": "151",
       "charts": [
         {
@@ -75391,7 +75388,7 @@
       "date_added": "2025-12-24",
       "saHash": "2270",
       "artist": "かめりあ",
-      "jacket": "sdvx/jk_2270_1_s.png",
+      "jacket": "sdvx/nabla/npororoca_kameria.png",
       "bpm": "160",
       "charts": [
         {
@@ -75500,7 +75497,7 @@
       "date_added": "2025-12-24",
       "saHash": "2275",
       "artist": "xi",
-      "jacket": "sdvx/jk_2275_1_s.png",
+      "jacket": "sdvx/nabla/celestialcounq_xi.png",
       "bpm": "108-222",
       "charts": [
         {
@@ -75569,8 +75566,8 @@
       "search_hint": "kushinadahimeni_lilyrock",
       "date_added": "2025-12-24",
       "saHash": "2277",
-      "artist": "りりぃろっくfeat.壥И1GM4&桃寝ちのい",
-      "jacket": "sdvx/jk_2277_1_s.png",
+      "artist": "りりぃろっくfeat.ЄИ1GM4&桃寝ちのい",
+      "jacket": "sdvx/nabla/kushinadahimeni_lilyrock.png",
       "bpm": "188",
       "charts": [
         {
@@ -75959,34 +75956,36 @@
       "date_added": "2026-04-30",
       "saHash": "2293",
       "artist": "庭師",
-      "jacket": "sdvx/jk_2293_1_s.png",
+      "jacket": "sdvx/nabla/leflector_niwashi-novice.png",
       "bpm": "199",
       "charts": [
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:peak"]
+          "flags": ["radar-peak:peak"],
+          "jacket": "sdvx/nabla/leflector_niwashi-novice.png"
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2293_2_s.png",
+          "jacket": "sdvx/nabla/leflector_niwashi-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2293_3_s.png",
+          "jacket": "sdvx/nabla/leflector_niwashi-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.5,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:peak"]
+          "flags": ["radar-peak:peak"],
+          "jacket": "sdvx/nabla/leflector_niwashi-maximum.png"
         }
       ]
     },
@@ -75995,8 +75994,8 @@
       "search_hint": "itsallright_lilyrock",
       "date_added": "2026-04-30",
       "saHash": "2294",
-      "artist": "りりぃろっくfeat.壥И1GM4",
-      "jacket": "sdvx/jk_2294_1_s.png",
+      "artist": "りりぃろっくfeat.ЄИ1GM4",
+      "jacket": "sdvx/nabla/itsallright_lilyrock.png",
       "bpm": "156",
       "charts": [
         {
@@ -76031,7 +76030,7 @@
       "date_added": "2025-12-24",
       "saHash": "2296",
       "artist": "Hommarju",
-      "jacket": "sdvx/jk_2296_1_s.png",
+      "jacket": "sdvx/nabla/blackout_hommarju.png",
       "bpm": "165",
       "charts": [
         {
@@ -76140,7 +76139,7 @@
       "date_added": "2025-12-24",
       "saHash": "2303",
       "artist": "Riz",
-      "jacket": "sdvx/jk_2303_1_s.png",
+      "jacket": "sdvx/nabla/massivestrength_riz.png",
       "bpm": "182",
       "charts": [
         {
@@ -76249,34 +76248,36 @@
       "date_added": "2026-04-30",
       "saHash": "2309",
       "artist": "影虎。",
-      "jacket": "sdvx/jk_2309_1_s.png",
+      "jacket": "sdvx/nabla/vanishmentfor_kagetora-novice.png",
       "bpm": "158",
       "charts": [
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"]
+          "flags": ["radar-peak:tsumami"],
+          "jacket": "sdvx/nabla/vanishmentfor_kagetora-novice.png"
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2309_2_s.png",
+          "jacket": "sdvx/nabla/vanishmentfor_kagetora-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2309_3_s.png",
+          "jacket": "sdvx/nabla/vanishmentfor_kagetora-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.5,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:peak"]
+          "flags": ["radar-peak:peak"],
+          "jacket": "sdvx/nabla/vanishmentfor_kagetora-maximum.png"
         }
       ]
     },
@@ -76286,7 +76287,7 @@
       "date_added": "2025-12-24",
       "saHash": "2310",
       "artist": "天束 vs. siromaru",
-      "jacket": "sdvx/jk_2310_1_s.png",
+      "jacket": "sdvx/nabla/zany_amatsukasiromaru.png",
       "bpm": "180",
       "charts": [
         {
@@ -76321,34 +76322,36 @@
       "date_added": "2026-04-30",
       "saHash": "2313",
       "artist": "NAMV",
-      "jacket": "sdvx/jk_2313_1_s.png",
+      "jacket": "sdvx/nabla/asuhamatataku_namv-novice.png",
       "bpm": "120-195",
       "charts": [
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"]
+          "flags": ["radar-peak:tsumami"],
+          "jacket": "sdvx/nabla/asuhamatataku_namv-novice.png"
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2313_2_s.png",
+          "jacket": "sdvx/nabla/asuhamatataku_namv-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2313_3_s.png",
+          "jacket": "sdvx/nabla/asuhamatataku_namv-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.2,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:notes"]
+          "flags": ["radar-peak:notes"],
+          "jacket": "sdvx/nabla/asuhamatataku_namv-maximum.png"
         }
       ]
     },
@@ -76506,33 +76509,35 @@
       "date_added": "2025-12-25",
       "saHash": "2318",
       "artist": "polysha&Ashrount",
-      "jacket": "sdvx/jk_2318_1_s.png",
+      "jacket": "sdvx/nabla/nextage_polyshaashrount-novice.png",
       "bpm": "190",
       "charts": [
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/nextage_polyshaashrount-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2318_2_s.png",
+          "jacket": "sdvx/nabla/nextage_polyshaashrount-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 16,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2318_3_s.png",
+          "jacket": "sdvx/nabla/nextage_polyshaashrount-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.8,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/nextage_polyshaashrount-maximum.png",
           "flags": ["radar-peak:hand-trip"]
         }
       ],
@@ -76544,33 +76549,35 @@
       "date_added": "2026-01-08",
       "saHash": "2319",
       "artist": "苺咲べりぃ",
-      "jacket": "sdvx/jk_2319_1_s.png",
+      "jacket": "sdvx/nabla/cakecakencake_maisaki-novice.png",
       "bpm": "186",
       "charts": [
         {
           "lvl": 4,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/cakecakencake_maisaki-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 12,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2319_2_s.png",
+          "jacket": "sdvx/nabla/cakecakencake_maisaki-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2319_3_s.png",
+          "jacket": "sdvx/nabla/cakecakencake_maisaki-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.2,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/cakecakencake_maisaki-maximum.png",
           "flags": ["radar-peak:peak"]
         }
       ],
@@ -76582,7 +76589,7 @@
       "date_added": "2026-01-15",
       "saHash": "2320",
       "artist": "テヅカ x otoshi.b",
-      "jacket": "sdvx/jk_2320_1_s.png",
+      "jacket": "sdvx/nabla/tengeitan_teduka.png",
       "bpm": "215",
       "charts": [
         {
@@ -76618,7 +76625,7 @@
       "date_added": "2026-01-22",
       "saHash": "2321",
       "artist": "TAKIO feat. 駄々子",
-      "jacket": "sdvx/jk_2321_1_s.png",
+      "jacket": "sdvx/nabla/kareinaruichigeki_takio.png",
       "bpm": "190",
       "charts": [
         {
@@ -76654,7 +76661,7 @@
       "date_added": "2026-01-29",
       "saHash": "2322",
       "artist": "めと（Metomate）",
-      "jacket": "sdvx/jk_2322_1_s.png",
+      "jacket": "sdvx/nabla/venisresonance_meto.png",
       "bpm": "207",
       "charts": [
         {
@@ -76690,33 +76697,35 @@
       "date_added": "2026-02-05",
       "saHash": "2323",
       "artist": "Capchii × Uzumaki",
-      "jacket": "sdvx/jk_2323_1_s.png",
+      "jacket": "sdvx/nabla/showdawn_capchii-novice.png",
       "bpm": "227",
       "charts": [
         {
           "lvl": 7,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/showdawn_capchii-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2323_2_s.png",
+          "jacket": "sdvx/nabla/showdawn_capchii-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 17,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2323_3_s.png",
+          "jacket": "sdvx/nabla/showdawn_capchii-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 19.4,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/showdawn_capchii-maximum.png",
           "flags": ["radar-peak:hand-trip"]
         }
       ],
@@ -76728,7 +76737,7 @@
       "date_added": "2026-02-12",
       "saHash": "2324",
       "artist": "EYEN(seatrus+kuro)",
-      "jacket": "sdvx/jk_2324_1_s.png",
+      "jacket": "sdvx/nabla/dangerxloze_eyen.png",
       "bpm": "184",
       "charts": [
         {
@@ -76764,33 +76773,35 @@
       "date_added": "2026-02-19",
       "saHash": "2325",
       "artist": "qfeileadh",
-      "jacket": "sdvx/jk_2325_1_s.png",
+      "jacket": "sdvx/nabla/xelonophobea_qfeileadh-novice.png",
       "bpm": "263",
       "charts": [
         {
           "lvl": 7,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/xelonophobea_qfeileadh-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2325_2_s.png",
+          "jacket": "sdvx/nabla/xelonophobea_qfeileadh-advanced.png",
           "flags": ["radar-peak:notes"]
         },
         {
           "lvl": 17,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2325_3_s.png",
+          "jacket": "sdvx/nabla/xelonophobea_qfeileadh-exhaust.png",
           "flags": ["radar-peak:notes"]
         },
         {
           "lvl": 19.5,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/xelonophobea_qfeileadh-maximum.png",
           "flags": ["radar-peak:notes"]
         }
       ],
@@ -76802,7 +76813,7 @@
       "date_added": "2026-02-26",
       "saHash": "2326",
       "artist": "Juggernaut.",
-      "jacket": "sdvx/jk_2326_1_s.png",
+      "jacket": "sdvx/nabla/downwithyourlove_juggernaut.png",
       "bpm": "220",
       "charts": [
         {
@@ -76838,33 +76849,35 @@
       "date_added": "2026-03-05",
       "saHash": "2327",
       "artist": "Aoi",
-      "jacket": "sdvx/jk_2327_1_s.png",
+      "jacket": "sdvx/nabla/circumzenith_aoi-novice.png",
       "bpm": "191",
       "charts": [
         {
           "lvl": 7,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/circumzenith_aoi-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2327_2_s.png",
+          "jacket": "sdvx/nabla/circumzenith_aoi-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 17.5,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2327_3_s.png",
+          "jacket": "sdvx/nabla/circumzenith_aoi-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 19.7,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/circumzenith_aoi-maximum.png",
           "flags": ["radar-peak:tricky"]
         }
       ],
@@ -76876,7 +76889,7 @@
       "date_added": "2026-03-26",
       "saHash": "2328",
       "artist": "天束 vs. siromaru",
-      "jacket": "sdvx/jk_2328_1_s.png",
+      "jacket": "sdvx/nabla/astrlgg_amatsukasiromaru.png",
       "bpm": "120-210",
       "charts": [
         {
@@ -76912,33 +76925,35 @@
       "date_added": "2026-03-26",
       "saHash": "2329",
       "artist": "xi",
-      "jacket": "sdvx/jk_2329_1_s.png",
+      "jacket": "sdvx/nabla/masterstroke_xi-novice.png",
       "bpm": "206",
       "charts": [
         {
           "lvl": 7,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/masterstroke_xi-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2329_2_s.png",
+          "jacket": "sdvx/nabla/masterstroke_xi-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 17.5,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2329_3_s.png",
+          "jacket": "sdvx/nabla/masterstroke_xi-exhaust.png",
           "flags": ["radar-peak:notes"]
         },
         {
           "lvl": 19.8,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/masterstroke_xi-maximum.png",
           "flags": ["radar-peak:notes"]
         }
       ],
@@ -76950,33 +76965,35 @@
       "date_added": "2026-03-26",
       "saHash": "2330",
       "artist": "Laur",
-      "jacket": "sdvx/jk_2330_1_s.png",
+      "jacket": "sdvx/nabla/kiskillilia_laur-novice.png",
       "bpm": "280",
       "charts": [
         {
           "lvl": 8,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/kiskillilia_laur-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2330_2_s.png",
+          "jacket": "sdvx/nabla/kiskillilia_laur-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.6,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2330_3_s.png",
+          "jacket": "sdvx/nabla/kiskillilia_laur-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 20.5,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/kiskillilia_laur-maximum.png",
           "flags": ["radar-peak:peak"]
         }
       ],
@@ -76988,7 +77005,7 @@
       "date_added": "2026-03-26",
       "saHash": "2331",
       "artist": "打打だいず feat. 月乃",
-      "jacket": "sdvx/jk_2331_1_s.png",
+      "jacket": "sdvx/nabla/noto_dadadaizu.png",
       "bpm": "213",
       "charts": [
         {
@@ -77019,12 +77036,12 @@
       "flags": ["otherEvents"]
     },
     {
-      "name": "華麗なる！音戯探偵ひなビタ鷸",
+      "name": "華麗なる！音戯探偵ひなビタ♫",
       "search_hint": "kareinaruhinabita_penoreri",
       "date_added": "2026-02-19",
       "saHash": "2332",
-      "artist": "音戯探偵ひなビタ鷸",
-      "jacket": "sdvx/jk_2332_1_s.png",
+      "artist": "音戯探偵ひなビタ♫",
+      "jacket": "sdvx/nabla/kareinaruhinabita_penoreri.png",
       "bpm": "72-127",
       "charts": [
         {
@@ -77058,8 +77075,8 @@
       "search_hint": "nanteshuberu_yvya",
       "date_added": "2026-05-21",
       "saHash": "2333",
-      "artist": "音戯探偵ひなビタ鷸",
-      "jacket": "sdvx/jk_2333_1_s.png",
+      "artist": "音戯探偵ひなビタ♫",
+      "jacket": "sdvx/nabla/nanteshuberu_yvya.png",
       "bpm": "195",
       "charts": [
         {
@@ -77093,8 +77110,8 @@
       "search_hint": "nazotokiqueen_keiju",
       "date_added": "2026-05-21",
       "saHash": "2334",
-      "artist": "音戯探偵ひなビタ鷸",
-      "jacket": "sdvx/jk_2334_1_s.png",
+      "artist": "音戯探偵ひなビタ♫",
+      "jacket": "sdvx/nabla/nazotokiqueen_keiju.png",
       "bpm": "128",
       "charts": [
         {
@@ -77128,8 +77145,8 @@
       "search_hint": "specterchaser_coyaan",
       "date_added": "2026-05-21",
       "saHash": "2335",
-      "artist": "音戯探偵ひなビタ鷸",
-      "jacket": "sdvx/jk_2335_1_s.png",
+      "artist": "音戯探偵ひなビタ♫",
+      "jacket": "sdvx/nabla/specterchaser_coyaan.png",
       "bpm": "132",
       "charts": [
         {
@@ -77163,8 +77180,8 @@
       "search_hint": "ticktackchikupa_risyuu",
       "date_added": "2026-05-21",
       "saHash": "2336",
-      "artist": "音戯探偵ひなビタ鷸",
-      "jacket": "sdvx/jk_2336_1_s.png",
+      "artist": "音戯探偵ひなビタ♫",
+      "jacket": "sdvx/nabla/ticktackchikupa_risyuu.png",
       "bpm": "190",
       "charts": [
         {
@@ -77198,8 +77215,8 @@
       "search_hint": "recipinoriddle_oster",
       "date_added": "2026-05-21",
       "saHash": "2337",
-      "artist": "音戯探偵ひなビタ鷸",
-      "jacket": "sdvx/jk_2337_1_s.png",
+      "artist": "音戯探偵ひなビタ♫",
+      "jacket": "sdvx/nabla/recipinoriddle_oster.png",
       "bpm": "245",
       "charts": [
         {
@@ -77414,7 +77431,7 @@
       "date_added": "2025-12-24",
       "saHash": "2343",
       "artist": "なきそ",
-      "jacket": "sdvx/jk_2343_1_s.png",
+      "jacket": "sdvx/nabla/imasugurinne_nakiso.png",
       "bpm": "145",
       "charts": [
         {
@@ -77449,7 +77466,7 @@
       "date_added": "2025-12-24",
       "saHash": "2344",
       "artist": "原口沙輔",
-      "jacket": "sdvx/jk_2344_1_s.png",
+      "jacket": "sdvx/nabla/igaku_haraguchisasuke.png",
       "bpm": "170",
       "charts": [
         {
@@ -77484,7 +77501,7 @@
       "date_added": "2025-12-24",
       "saHash": "2345",
       "artist": "wotaku feat. SHIKI",
-      "jacket": "sdvx/jk_2345_1_s.png",
+      "jacket": "sdvx/nabla/snooze_wotaku.png",
       "bpm": "150",
       "charts": [
         {
@@ -77519,7 +77536,7 @@
       "date_added": "2025-12-24",
       "saHash": "2346",
       "artist": "tn-shi",
-      "jacket": "sdvx/jk_2346_1_s.png",
+      "jacket": "sdvx/nabla/synthesis_tnshi.png",
       "bpm": "180",
       "charts": [
         {
@@ -77554,7 +77571,7 @@
       "date_added": "2025-12-24",
       "saHash": "2347",
       "artist": "RoughSketch feat.ななひら",
-      "jacket": "sdvx/jk_2347_1_s.png",
+      "jacket": "sdvx/nabla/777_roughsketch.png",
       "bpm": "777",
       "charts": [
         {
@@ -77589,7 +77606,7 @@
       "date_added": "2025-12-24",
       "saHash": "2348",
       "artist": "Ice",
-      "jacket": "sdvx/jk_2348_1_s.png",
+      "jacket": "sdvx/nabla/l_ice.png",
       "bpm": "155",
       "charts": [
         {
@@ -77624,7 +77641,7 @@
       "date_added": "2025-12-24",
       "saHash": "2349",
       "artist": "Ice",
-      "jacket": "sdvx/jk_2349_1_s.png",
+      "jacket": "sdvx/nabla/l2_ice.png",
       "bpm": "152",
       "charts": [
         {
@@ -77659,7 +77676,7 @@
       "date_added": "2025-12-24",
       "saHash": "2350",
       "artist": "森羅万象",
-      "jacket": "sdvx/jk_2350_1_s.png",
+      "jacket": "sdvx/nabla/heartinwonderland_sinrabansyou.png",
       "bpm": "181",
       "charts": [
         {
@@ -77694,7 +77711,7 @@
       "date_added": "2025-12-24",
       "saHash": "2351",
       "artist": "暁Records",
-      "jacket": "sdvx/jk_2351_1_s.png",
+      "jacket": "sdvx/nabla/necomantic_akatsuki.png",
       "bpm": "144-153",
       "charts": [
         {
@@ -77729,7 +77746,7 @@
       "date_added": "2025-12-24",
       "saHash": "2352",
       "artist": "MIMI",
-      "jacket": "sdvx/jk_2352_1_s.png",
+      "jacket": "sdvx/nabla/science_mimi.png",
       "bpm": "188",
       "charts": [
         {
@@ -77764,7 +77781,7 @@
       "date_added": "2025-12-24",
       "saHash": "2353",
       "artist": "吉本おじさん",
-      "jacket": "sdvx/jk_2353_1_s.png",
+      "jacket": "sdvx/nabla/ohenjimadakana_ojisan.png",
       "bpm": "225",
       "charts": [
         {
@@ -77799,7 +77816,7 @@
       "date_added": "2025-12-24",
       "saHash": "2354",
       "artist": "名取さな",
-      "jacket": "sdvx/jk_2354_1_s.png",
+      "jacket": "sdvx/nabla/mondainaitiripper_natorisana.png",
       "bpm": "160-180",
       "charts": [
         {
@@ -77834,7 +77851,7 @@
       "date_added": "2026-01-22",
       "saHash": "2355",
       "artist": "m@sumi vs RoughSketch",
-      "jacket": "sdvx/jk_2355_1_s.png",
+      "jacket": "sdvx/nabla/ztiria_masumiroughsketch.png",
       "bpm": "260",
       "charts": [
         {
@@ -77870,7 +77887,7 @@
       "date_added": "2026-01-22",
       "saHash": "2356",
       "artist": "iconoclasm",
-      "jacket": "sdvx/jk_2356_1_s.png",
+      "jacket": "sdvx/nabla/votumrmx_iconoclasm.png",
       "bpm": "140",
       "charts": [
         {
@@ -77906,7 +77923,7 @@
       "date_added": "2026-01-22",
       "saHash": "2357",
       "artist": "PON",
-      "jacket": "sdvx/jk_2357_1_s.png",
+      "jacket": "sdvx/nabla/kouen_pon.png",
       "bpm": "175",
       "charts": [
         {
@@ -77942,7 +77959,7 @@
       "date_added": "2026-01-29",
       "saHash": "2358",
       "artist": "Zekk",
-      "jacket": "sdvx/jk_2358_1_s.png",
+      "jacket": "sdvx/nabla/9thoutburst_zekk.png",
       "bpm": "163",
       "charts": [
         {
@@ -77982,7 +77999,7 @@
       "date_added": "2026-01-29",
       "saHash": "2359",
       "artist": "Orbit1 & Milo",
-      "jacket": "sdvx/jk_2359_1_s.png",
+      "jacket": "sdvx/nabla/antimatter_orbit1milo.png",
       "bpm": "200",
       "charts": [
         {
@@ -78018,7 +78035,7 @@
       "date_added": "2026-01-29",
       "saHash": "2360",
       "artist": "Cream puff",
-      "jacket": "sdvx/jk_2360_1_s.png",
+      "jacket": "sdvx/nabla/mermaidgirl_creampuff.png",
       "bpm": "140",
       "charts": [
         {
@@ -78054,33 +78071,35 @@
       "date_added": "2026-01-29",
       "saHash": "2361",
       "artist": "Eagle",
-      "jacket": "sdvx/jk_2361_1_s.png",
+      "jacket": "sdvx/nabla/glitchnride_eagle-novice.png",
       "bpm": "30-300",
       "charts": [
         {
           "lvl": 7,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/nabla/glitchnride_eagle-novice.png",
           "flags": ["radar-peak:tricky"]
         },
         {
           "lvl": 14,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2361_2_s.png",
+          "jacket": "sdvx/nabla/glitchnride_eagle-advanced.png",
           "flags": ["radar-peak:tricky"]
         },
         {
           "lvl": 17,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2361_3_s.png",
+          "jacket": "sdvx/nabla/glitchnride_eagle-exhaust.png",
           "flags": ["radar-peak:tricky"]
         },
         {
           "lvl": 19.2,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/nabla/glitchnride_eagle-exhaust.png",
           "flags": ["radar-peak:tricky"]
         }
       ],
@@ -78092,7 +78111,7 @@
       "date_added": "2026-01-29",
       "saHash": "2362",
       "artist": "PHQUASE vs. dj TAKA",
-      "jacket": "sdvx/jk_2362_1_s.png",
+      "jacket": "sdvx/nabla/fixer_phquasedjtaka.png",
       "bpm": "75-215",
       "charts": [
         {
@@ -78128,7 +78147,7 @@
       "date_added": "2026-03-26",
       "saHash": "2363",
       "artist": "BlackY",
-      "jacket": "sdvx/jk_2363_1_s.png",
+      "jacket": "sdvx/nabla/rizinggamers_blacky.png",
       "bpm": "165",
       "charts": [
         {
@@ -78164,7 +78183,7 @@
       "date_added": "2026-03-26",
       "saHash": "2364",
       "artist": "Numb'n'dub",
-      "jacket": "sdvx/jk_2364_1_s.png",
+      "jacket": "sdvx/nabla/kingoftribe_numbndub.png",
       "bpm": "200",
       "charts": [
         {
@@ -78200,7 +78219,7 @@
       "date_added": "2026-03-26",
       "saHash": "2365",
       "artist": "DJ Shimamura",
-      "jacket": "sdvx/jk_2365_1_s.png",
+      "jacket": "sdvx/nabla/silkybrave_djshimamura.png",
       "bpm": "178",
       "charts": [
         {
@@ -78236,7 +78255,7 @@
       "date_added": "2026-03-26",
       "saHash": "2366",
       "artist": "Juggernaut.",
-      "jacket": "sdvx/jk_2366_1_s.png",
+      "jacket": "sdvx/nabla/go_juggernaut.png",
       "bpm": "128",
       "charts": [
         {
@@ -78272,7 +78291,7 @@
       "date_added": "2026-03-26",
       "saHash": "2367",
       "artist": "MK",
-      "jacket": "sdvx/jk_2367_1_s.png",
+      "jacket": "sdvx/nabla/astrablaze_mk.png",
       "bpm": "168",
       "charts": [
         {
@@ -78308,7 +78327,7 @@
       "date_added": "2026-03-26",
       "saHash": "2368",
       "artist": "SOUND HOLIC feat. Nana Takahashi",
-      "jacket": "sdvx/jk_2368_1_s.png",
+      "jacket": "sdvx/nabla/horizonbeatz_soundholic.png",
       "bpm": "152",
       "charts": [
         {
@@ -78344,7 +78363,7 @@
       "date_added": "2026-03-26",
       "saHash": "2369",
       "artist": "Tatsunoshin",
-      "jacket": "sdvx/jk_2369_1_s.png",
+      "jacket": "sdvx/nabla/meteorshower_tatsunoshin.png",
       "bpm": "177",
       "charts": [
         {
@@ -78380,7 +78399,7 @@
       "date_added": "2026-02-19",
       "saHash": "2370",
       "artist": "Reku Mochizuki",
-      "jacket": "sdvx/jk_2370_1_s.png",
+      "jacket": "sdvx/nabla/moonlitblue_rekumochizuki.png",
       "bpm": "214",
       "charts": [
         {
@@ -78416,7 +78435,7 @@
       "date_added": "2026-02-19",
       "saHash": "2371",
       "artist": "muyu",
-      "jacket": "sdvx/jk_2371_1_s.png",
+      "jacket": "sdvx/nabla/signalize_muyu.png",
       "bpm": "170",
       "charts": [
         {
@@ -78452,7 +78471,7 @@
       "date_added": "2026-02-19",
       "saHash": "2372",
       "artist": "Laur",
-      "jacket": "sdvx/jk_2372_1_s.png",
+      "jacket": "sdvx/nabla/baphomet_laur.png",
       "bpm": "266",
       "charts": [
         {
@@ -78488,7 +78507,7 @@
       "date_added": "2026-02-05",
       "saHash": "2373",
       "artist": "cosMo＠暴走P feat. 初音ミク",
-      "jacket": "sdvx/jk_2373_1_s.png",
+      "jacket": "sdvx/nabla/mscrazyspeed_cosmo.png",
       "bpm": "220",
       "charts": [
         {
@@ -78523,7 +78542,7 @@
       "date_added": "2026-02-05",
       "saHash": "2374",
       "artist": "irucaice feat. 初音ミク",
-      "jacket": "sdvx/jk_2374_1_s.png",
+      "jacket": "sdvx/nabla/angeltest_irucaice.png",
       "bpm": "165",
       "charts": [
         {
@@ -78558,7 +78577,7 @@
       "date_added": "2026-02-05",
       "saHash": "2375",
       "artist": "Capchii feat. 初音ミク",
-      "jacket": "sdvx/jk_2375_1_s.png",
+      "jacket": "sdvx/nabla/pickupme_capchii.png",
       "bpm": "155-240",
       "charts": [
         {
@@ -78593,7 +78612,7 @@
       "date_added": "2026-03-12",
       "saHash": "2376",
       "artist": "Mameyudoufu feat. shully",
-      "jacket": "sdvx/jk_2376_1_s.png",
+      "jacket": "sdvx/nabla/dottodot_mameyudoufu.png",
       "bpm": "174",
       "charts": [
         {
@@ -78628,7 +78647,7 @@
       "date_added": "2026-03-12",
       "saHash": "2377",
       "artist": "AXURA × 星名はる",
-      "jacket": "sdvx/jk_2377_1_s.png",
+      "jacket": "sdvx/nabla/sugarymeltdown_axura.png",
       "bpm": "175",
       "charts": [
         {
@@ -78663,7 +78682,7 @@
       "date_added": "2026-03-26",
       "saHash": "2378",
       "artist": "nagomu tamaki",
-      "jacket": "sdvx/jk_2378_1_s.png",
+      "jacket": "sdvx/nabla/thunderstorm_nagomutamaki.png",
       "bpm": "165",
       "charts": [
         {
@@ -78699,34 +78718,36 @@
       "date_added": "2026-03-26",
       "saHash": "2380",
       "artist": "BEMANI Sound Team \"KE!JU\"",
-      "jacket": "sdvx/jk_2380_1_s.png",
+      "jacket": "sdvx/nabla/roarofchronos_keiju-novice.png",
       "bpm": "175",
       "charts": [
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"]
+          "flags": ["radar-peak:tsumami"],
+          "jacket": "sdvx/nabla/roarofchronos_keiju-novice.png"
         },
         {
           "lvl": 12,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/jk_2380_2_s.png",
+          "jacket": "sdvx/nabla/roarofchronos_keiju-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/jk_2380_3_s.png",
+          "jacket": "sdvx/nabla/roarofchronos_keiju-exhaust.png",
           "flags": ["radar-peak:notes"]
         },
         {
           "lvl": 18.7,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:notes"]
+          "flags": ["radar-peak:notes"],
+          "jacket": "sdvx/nabla/roarofchronos_keiju-maximum.png"
         }
       ],
       "flags": ["otherEvents"]
@@ -78737,7 +78758,7 @@
       "date_added": "2026-03-26",
       "saHash": "2382",
       "artist": "Dustup VS MAX MAXIMIZER",
-      "jacket": "sdvx/jk_2382_1_s.png",
+      "jacket": "sdvx/nabla/ruina_dustupmaxmaximizer.png",
       "bpm": "320",
       "charts": [
         {
@@ -78773,7 +78794,7 @@
       "date_added": "2026-03-26",
       "saHash": "2383",
       "artist": "Rainy。",
-      "jacket": "sdvx/jk_2383_1_s.png",
+      "jacket": "sdvx/nabla/colorburst_rainy.png",
       "bpm": "170",
       "charts": [
         {
@@ -78809,7 +78830,7 @@
       "date_added": "2026-04-01",
       "saHash": "2384",
       "artist": "Yuta Imai feat. 重音テト",
-      "jacket": "sdvx/jk_2384_1_s.png",
+      "jacket": "sdvx/nabla/glitch_yutaimai.png",
       "bpm": "195",
       "charts": [
         {
@@ -78844,7 +78865,7 @@
       "date_added": "2026-04-09",
       "saHash": "2385",
       "artist": "Synthion",
-      "jacket": "sdvx/jk_2385_1_s.png",
+      "jacket": "sdvx/nabla/cyanotype_synthion.png",
       "bpm": "175",
       "charts": [
         {
@@ -78879,7 +78900,7 @@
       "date_added": "2026-04-09",
       "saHash": "2386",
       "artist": "ak+q",
-      "jacket": "sdvx/jk_2386_1_s.png",
+      "jacket": "sdvx/nabla/excelsia_akq.png",
       "bpm": "188",
       "charts": [
         {
@@ -78914,7 +78935,7 @@
       "date_added": "2026-04-23",
       "saHash": "2388",
       "artist": "不知火フレア",
-      "jacket": "sdvx/jk_2388_1_s.png",
+      "jacket": "sdvx/nabla/silentflame_siranuiflare.png",
       "bpm": "145",
       "charts": [
         {
@@ -78949,7 +78970,7 @@
       "date_added": "2026-04-23",
       "saHash": "2389",
       "artist": "不知火フレア",
-      "jacket": "sdvx/jk_2389_1_s.png",
+      "jacket": "sdvx/nabla/smileandgo_siranuiflare.png",
       "bpm": "160",
       "charts": [
         {
@@ -78984,7 +79005,7 @@
       "date_added": "2026-04-23",
       "saHash": "2390",
       "artist": "不知火フレア",
-      "jacket": "sdvx/jk_2390_1_s.png",
+      "jacket": "sdvx/nabla/kakuutohontou_siranuiflare.png",
       "bpm": "130",
       "charts": [
         {
@@ -79019,7 +79040,7 @@
       "date_added": "2026-04-23",
       "saHash": "2391",
       "artist": "covered by 不知火フレア",
-      "jacket": "sdvx/jk_2391_1_s.png",
+      "jacket": "sdvx/nabla/homesickpt23_siranuiflare.png",
       "bpm": "178",
       "charts": [
         {
@@ -79054,7 +79075,7 @@
       "date_added": "2026-04-30",
       "saHash": "2392",
       "artist": "Cosmograph",
-      "jacket": "sdvx/jk_2392_1_s.png",
+      "jacket": "sdvx/nabla/dementafterlegend_cosmograph.png",
       "bpm": "210",
       "charts": [
         {
