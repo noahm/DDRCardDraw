@@ -1,15 +1,13 @@
 import classNames from "classnames";
-import React from "react";
-import { Intent, Tag } from "@blueprintjs/core";
+import { Badge, CloseButton } from "@mantine/core";
 import styles from "./card-label.css";
 import {
-  Inheritance,
-  BanCircle,
-  Lock,
-  Crown,
-  Draw,
-  SVGIconProps,
-} from "@blueprintjs/icons";
+  IconArrowsSplit,
+  IconBan,
+  IconLock,
+  IconCrown,
+  IconScribble,
+} from "@tabler/icons-react";
 import { usePlayerLabelForIndex } from "./use-player-label";
 
 export enum LabelType {
@@ -26,33 +24,33 @@ interface Props {
   onRemove?: () => void;
 }
 
-function getIntent(type: LabelType) {
+function getColor(type: LabelType) {
   switch (type) {
     case LabelType.Pocket:
-      return Intent.PRIMARY;
+      return "blue";
     case LabelType.Ban:
-      return Intent.DANGER;
+      return "red";
     case LabelType.Protect:
-      return Intent.SUCCESS;
+      return "green";
     case LabelType.Winner:
-      return Intent.WARNING;
+      return "yellow";
     case LabelType.FreePick:
-      return Intent.NONE;
+      return "gray";
   }
 }
 
-function LabelIcon({ type, ...props }: SVGIconProps & { type: LabelType }) {
+function LabelIcon({ type, ...props }: { type: LabelType; size?: number }) {
   switch (type) {
     case LabelType.Pocket:
-      return <Inheritance {...props} />;
+      return <IconArrowsSplit {...props} />;
     case LabelType.Ban:
-      return <BanCircle {...props} />;
+      return <IconBan {...props} />;
     case LabelType.Protect:
-      return <Lock {...props} />;
+      return <IconLock {...props} />;
     case LabelType.Winner:
-      return <Crown {...props} />;
+      return <IconCrown {...props} />;
     case LabelType.FreePick:
-      return <Draw {...props} />;
+      return <IconScribble {...props} />;
   }
 }
 
@@ -65,14 +63,29 @@ export function CardLabel({ playerIdx, type, onRemove }: Props) {
 
   return (
     <div className={rootClassname}>
-      <Tag
-        intent={getIntent(type)}
-        icon={<LabelIcon type={type} size={20} />}
-        size="large"
-        onRemove={onRemove}
+      <Badge
+        color={getColor(type)}
+        variant="filled"
+        size="lg"
+        radius="sm"
+        style={{ textTransform: "none" }}
+        leftSection={<LabelIcon type={type} size={16} />}
+        rightSection={
+          onRemove ? (
+            <CloseButton
+              size="xs"
+              variant="transparent"
+              style={{ color: "inherit" }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onRemove();
+              }}
+            />
+          ) : undefined
+        }
       >
         {label}
-      </Tag>
+      </Badge>
     </div>
   );
 }

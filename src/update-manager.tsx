@@ -1,9 +1,8 @@
 import * as OfflinePluginRuntime from "@lcdp/offline-plugin/runtime";
 import { useEffect } from "react";
 import { toaster } from "./toaster";
-import { Intent } from "@blueprintjs/core";
 import { useIntl } from "./hooks/useIntl";
-import { Outdated } from "@blueprintjs/icons";
+import { IconHistory } from "@tabler/icons-react";
 import { useInObs } from "./theme-toggle";
 
 export function UpdateManager() {
@@ -18,7 +17,7 @@ export function UpdateManager() {
           toaster.show(
             {
               message: t("updateLoading"),
-              intent: Intent.WARNING,
+              intent: "warning",
             },
             "UpdateManager",
           );
@@ -32,8 +31,8 @@ export function UpdateManager() {
           toaster.show(
             {
               message: t("updateReady"),
-              icon: <Outdated />,
-              intent: Intent.SUCCESS,
+              icon: <IconHistory />,
+              intent: "success",
               timeout: 0,
               action: {
                 text: t("applyUpdate"),

@@ -4,8 +4,8 @@ import ControlsDrawer from "./controls-drawer";
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
-import { CircleArrowLeft } from "@blueprintjs/icons";
-import { FormGroup, InputGroup } from "@blueprintjs/core";
+import { IconCircleArrowLeft } from "@tabler/icons-react";
+import { Input, TextInput } from "@mantine/core";
 import { useAppDispatch, useAppState } from "../state/store";
 import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
@@ -24,7 +24,7 @@ export function ConfigPage() {
     <div style={{ paddingInline: "1em" }}>
       <h1>
         <Link to="..">
-          <CircleArrowLeft size={20} style={{ verticalAlign: "middle" }} />
+          <IconCircleArrowLeft size={20} style={{ verticalAlign: "middle" }} />
         </Link>{" "}
         <FormattedMessage id="controls.drawerTitle" />
       </h1>
@@ -78,13 +78,13 @@ function ConfigCoreFields({ configId }: { configId: string | null }) {
   };
   return (
     <div style={{ paddingInline: "1.5em" }}>
-      <FormGroup label="Name">
-        <InputGroup
-          value={name || ""}
-          onChange={(e) => updateConfig({ name: e.currentTarget.value })}
-        />
-      </FormGroup>
-      <FormGroup label="Game Data">
+      <TextInput
+        label="Name"
+        mb="sm"
+        value={name || ""}
+        onChange={(e) => updateConfig({ name: e.currentTarget.value })}
+      />
+      <Input.Wrapper label="Game Data" mb="sm">
         <GameDataSelect
           fill
           value={gameKey || undefined}
@@ -92,7 +92,7 @@ function ConfigCoreFields({ configId }: { configId: string | null }) {
             dispatch(changeGameKeyForConfig(configId, newGame))
           }
         />
-      </FormGroup>
+      </Input.Wrapper>
     </div>
   );
 }

@@ -1,20 +1,20 @@
 import {
   Button,
-  ButtonGroup,
   Card,
   Checkbox,
   Collapse,
-  FormGroup,
-  HTMLSelect,
-  NumericInput,
-} from "@blueprintjs/core";
+  Group,
+  Input,
+  NativeSelect,
+  NumberInput,
+} from "@mantine/core";
 import {
-  CaretDown,
-  CaretRight,
-  Plus,
-  SmallTick,
-  SmallCross,
-} from "@blueprintjs/icons";
+  IconCaretDown,
+  IconCaretRight,
+  IconPlus,
+  IconCheck,
+  IconX,
+} from "@tabler/icons-react";
 import { useMemo, useState, lazy } from "react";
 import { useIntl } from "../hooks/useIntl";
 import { GameData } from "../models/SongData";
@@ -115,12 +115,13 @@ function FlagSettings() {
   const dataSetName = gameData.i18n.en.name as string;
 
   return (
-    <FormGroup label={t("controls.include")}>
+    <Input.Wrapper label={t("controls.include")} mb="md">
       {gameData?.meta.flags.map((key) => (
         <Checkbox
           key={`${dataSetName}:${key}`}
           label={getMetaString(key)}
           value={key}
+          my={4}
           checked={selectedFlags.includes(key)}
           onChange={() =>
             updateState((s) => {
@@ -135,7 +136,7 @@ function FlagSettings() {
           }
         />
       ))}
-    </FormGroup>
+    </Input.Wrapper>
   );
 }
 
@@ -153,31 +154,35 @@ function FolderSettings() {
   const dataSetName = gameData?.i18n.en.name as string;
 
   return (
-    <FormGroup
+    <Input.Wrapper
       label={t("controls.folders")}
+      mb="md"
       style={{ opacity: selectedFolders.length ? undefined : 0.8 }}
     >
-      <ButtonGroup className={styles.smallText}>
+      <Group gap={4} className={styles.smallText}>
         <Button
-          small
-          icon={<SmallTick />}
+          size="compact-xs"
+          variant="default"
+          leftSection={<IconCheck size={12} />}
           onClick={() => updateState({ folders: availableFolders })}
         >
           All
         </Button>
         <Button
-          small
-          icon={<SmallCross />}
+          size="compact-xs"
+          variant="default"
+          leftSection={<IconX size={12} />}
           onClick={() => updateState({ folders: [] })}
         >
           Ignore Folders
         </Button>
-      </ButtonGroup>
+      </Group>
       {availableFolders.map((folder, idx) => (
         <Checkbox
           key={`${dataSetName}:${idx}`}
           label={folder}
           value={folder}
+          my={4}
           checked={selectedFolders.includes(folder)}
           onChange={() =>
             updateState((s) => {
@@ -192,7 +197,7 @@ function FolderSettings() {
           }
         />
       ))}
-    </FormGroup>
+    </Input.Wrapper>
   );
 }
 
@@ -239,99 +244,104 @@ function GeneralSettings() {
   return (
     <>
       <div className={styles.inlineControls}>
-        <FormGroup
+        <NumberInput
           label={t("controls.chartCount")}
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            size="large"
-            fill
-            type="number"
-            inputMode="numeric"
-            value={chartCount}
-            min={playerPicks ? 0 : 1}
-            clampValueOnBlur
-            onValueChange={(chartCount) => {
-              if (!isNaN(chartCount)) {
-                updateState({ chartCount });
-              }
-            }}
-          />
-        </FormGroup>
-        <Plus className={styles.plus} size={20} />
-        <FormGroup
+          size="md"
+          className={styles.narrowInput}
+          inputMode="numeric"
+          value={chartCount}
+          min={playerPicks ? 0 : 1}
+          clampBehavior="blur"
+          hideControls
+          onChange={(next) => {
+            const chartCount = typeof next === "string" ? parseInt(next) : next;
+            if (!isNaN(chartCount)) {
+              updateState({ chartCount });
+            }
+          }}
+        />
+        <IconPlus className={styles.plus} size={20} />
+        <NumberInput
           label={t("controls.playerPicks")}
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            size="large"
-            fill
-            type="number"
-            inputMode="numeric"
-            value={playerPicks}
-            min={chartCount ? 0 : 1}
-            clampValueOnBlur
-            onValueChange={(playerPicks) => {
-              if (!isNaN(playerPicks)) {
-                updateState({ playerPicks });
-              }
-            }}
-          />
-        </FormGroup>
+          size="md"
+          className={styles.narrowInput}
+          inputMode="numeric"
+          value={playerPicks}
+          min={chartCount ? 0 : 1}
+          clampBehavior="blur"
+          hideControls
+          onChange={(next) => {
+            const playerPicks =
+              typeof next === "string" ? parseInt(next) : next;
+            if (!isNaN(playerPicks)) {
+              updateState({ playerPicks });
+            }
+          }}
+        />
       </div>
       <MultidrawControls key={configState.id} />
       <div className={styles.inlineControls}>
         <LvlRangeControls />
       </div>
       <Button
-        alignText="left"
-        endIcon={expandFilters ? <CaretDown /> : <CaretRight />}
+        variant="default"
+        fullWidth
+        justify="space-between"
+        rightSection={
+          expandFilters ? (
+            <IconCaretDown size={16} />
+          ) : (
+            <IconCaretRight size={16} />
+          )
+        }
         onClick={() => setExpandFilters((p) => !p)}
       >
         {t("controls.hideShowFilters")}
       </Button>
-      <Collapse isOpen={expandFilters}>
-        <Card style={{ paddingBottom: "1px" }}>
+      <Collapse expanded={expandFilters}>
+        <Card withBorder my="xs" style={{ paddingBottom: "1px" }}>
           {gameStyles.length > 1 && (
-            <FormGroup labelFor="style" label={t("controls.style")}>
-              <HTMLSelect
-                id="style"
-                large
-                value={selectedStyle}
-                onChange={(e) => {
-                  updateState((prev) => {
-                    const next = { ...prev, style: e.currentTarget.value };
-                    const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
-                      gameData,
-                      next.style,
-                    );
-                    if (diffs.length === 1) {
-                      next.difficulties = diffs.map((d) => d.key);
-                    }
-                    if (lvlRange.low > next.upperBound) {
-                      next.upperBound = lvlRange.low;
-                    }
-                    if (lvlRange.high < next.lowerBound) {
-                      next.lowerBound = lvlRange.high;
-                    }
-                    return next;
-                  });
-                }}
-              >
-                {gameStyles.map((style) => (
-                  <option key={style} value={style}>
-                    {getMetaString(style)}
-                  </option>
-                ))}
-              </HTMLSelect>
-            </FormGroup>
+            <NativeSelect
+              id="style"
+              label={t("controls.style")}
+              size="md"
+              mb="md"
+              value={selectedStyle}
+              onChange={(e) => {
+                const newStyle = e.currentTarget.value;
+                updateState((prev) => {
+                  const next = { ...prev, style: newStyle };
+                  const { diffs, lvlRange } = getDiffsAndRangeForNewStyle(
+                    gameData,
+                    next.style,
+                  );
+                  if (diffs.length === 1) {
+                    next.difficulties = diffs.map((d) => d.key);
+                  }
+                  if (lvlRange.low > next.upperBound) {
+                    next.upperBound = lvlRange.low;
+                  }
+                  if (lvlRange.high < next.lowerBound) {
+                    next.lowerBound = lvlRange.high;
+                  }
+                  return next;
+                });
+              }}
+            >
+              {gameStyles.map((style) => (
+                <option key={style} value={style}>
+                  {getMetaString(style)}
+                </option>
+              ))}
+            </NativeSelect>
           )}
-          <FormGroup label={t("controls.difficulties")}>
+          <Input.Wrapper label={t("controls.difficulties")} mb="md">
             {availableDifficulties.map((dif) => (
               <Checkbox
                 key={`${dif.key}`}
                 name="difficulties"
                 value={dif.key}
+                my={4}
                 checked={selectedDifficulties.includes(dif.key)}
                 onChange={(e) => {
                   const { checked, value } = e.currentTarget;
@@ -348,15 +358,16 @@ function GeneralSettings() {
                 label={getMetaString(dif.key)}
               />
             ))}
-          </FormGroup>
+          </Input.Wrapper>
           <ReleaseDateFilter />
           <FlagSettings />
           <FolderSettings />
         </Card>
       </Collapse>
-      <FormGroup>
+      <Input.Wrapper mt="md">
         <Checkbox
           id="orderByAction"
+          my={4}
           checked={orderByAction}
           onChange={(e) => {
             const reorder = !!e.currentTarget.checked;
@@ -366,6 +377,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="constrainPocketPicks"
+          my={4}
           checked={constrainPocketPicks}
           onChange={(e) => {
             const constrainPocketPicks = !!e.currentTarget.checked;
@@ -375,6 +387,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="sortByLevel"
+          my={4}
           checked={sortByLevel}
           onChange={(e) => {
             const sortByLevel = !!e.currentTarget.checked;
@@ -384,6 +397,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="showMaxScore"
+          my={4}
           checked={showMaxScore}
           onChange={(e) => {
             const showMaxScore = !!e.currentTarget.checked;
@@ -393,6 +407,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="useGranularLevels"
+          my={4}
           disabled={!gameData.meta.granularTierResolution}
           checked={useGranularLevels}
           onChange={(e) => {
@@ -413,6 +428,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="showVeto"
+          my={4}
           checked={hideVetos}
           onChange={(e) => {
             const next = !!e.currentTarget.checked;
@@ -422,6 +438,7 @@ function GeneralSettings() {
         />
         <Checkbox
           id="weighted"
+          my={4}
           checked={useWeights}
           onChange={(e) => {
             const useWeights = !!e.currentTarget.checked;
@@ -429,14 +446,14 @@ function GeneralSettings() {
           }}
           label={t("controls.useWeightedDistributions")}
         />
-        <Collapse isOpen={useWeights}>
+        <Collapse expanded={useWeights}>
           <WeightsControls
             usesTiers={usesDrawGroups}
             high={upperBound}
             low={lowerBound}
           />
         </Collapse>
-      </FormGroup>
+      </Input.Wrapper>
     </>
   );
 }

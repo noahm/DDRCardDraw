@@ -11,7 +11,7 @@
   bottom: 0.5em;
 }
 
-.cardLabel > span {
+.cardLabel > * {
   border: 2px solid white;
   border-radius: 0.5em;
 }

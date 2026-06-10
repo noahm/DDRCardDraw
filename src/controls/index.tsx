@@ -1,12 +1,5 @@
-import {
-  Button,
-  ButtonGroup,
-  Dialog,
-  Intent,
-  Position,
-  Tooltip,
-} from "@blueprintjs/core";
-import { NewLayers, Cog } from "@blueprintjs/icons";
+import { ActionIcon, Button, Group, Modal, Tooltip } from "@mantine/core";
+import { IconStack2, IconSettings } from "@tabler/icons-react";
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useAppState } from "../state/store";
@@ -23,8 +16,8 @@ export function HeaderControls() {
 
   return (
     <>
-      <Dialog
-        isOpen={matchPickerOpen}
+      <Modal
+        opened={matchPickerOpen}
         title="New Draw"
         onClose={() => setMatchPickerOpen(false)}
       >
@@ -32,33 +25,35 @@ export function HeaderControls() {
           onClose={() => setMatchPickerOpen(false)}
           onDrawAttempt={(success) => setLastDrawFailed(!success)}
         />
-      </Dialog>
-      <ButtonGroup>
+      </Modal>
+      <Group gap="xs" wrap="nowrap">
         <Tooltip
-          isOpen={lastDrawFailed}
-          content={<FormattedMessage id="controls.invalid" />}
-          intent={Intent.DANGER}
-          usePortal={false}
-          position={Position.BOTTOM_RIGHT}
+          label={
+            lastDrawFailed ? (
+              <FormattedMessage id="controls.invalid" />
+            ) : (
+              "Create a config before drawing"
+            )
+          }
+          color={lastDrawFailed ? "red" : undefined}
+          opened={lastDrawFailed || undefined}
+          disabled={!lastDrawFailed && hasAnyConfig}
+          position="bottom-end"
         >
-          <Tooltip
-            content="Create a config before drawing"
-            disabled={hasAnyConfig}
+          <Button
+            onClick={() => setMatchPickerOpen(true)}
+            leftSection={<IconStack2 size={18} />}
+            disabled={!hasAnyConfig}
           >
-            <Button
-              onClick={() => setMatchPickerOpen(true)}
-              icon={<NewLayers />}
-              intent={Intent.PRIMARY}
-              disabled={!hasAnyConfig}
-            >
-              <FormattedMessage id="draw" />
-            </Button>
-          </Tooltip>
+            <FormattedMessage id="draw" />
+          </Button>
         </Tooltip>
         <Link to="config" data-umami-event="settings-open">
-          <Button icon={<Cog />} />
+          <ActionIcon variant="default" size={36} aria-label="Settings">
+            <IconSettings size={20} />
+          </ActionIcon>
         </Link>
-      </ButtonGroup>
+      </Group>
     </>
   );
 }

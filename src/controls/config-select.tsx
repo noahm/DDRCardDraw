@@ -1,22 +1,20 @@
 import {
-  Button,
-  ButtonGroup,
+  ActionIcon,
   Card,
-  HTMLSelect,
+  Group,
   Menu,
-  MenuItem,
-  Popover,
+  NativeSelect,
   Tooltip,
-} from "@blueprintjs/core";
+} from "@mantine/core";
 import {
-  ThAdd,
-  Duplicate,
-  FloppyDisk,
-  Import,
-  Trash,
-  More,
-  DocumentShare,
-} from "@blueprintjs/icons";
+  IconTablePlus,
+  IconCopy,
+  IconDeviceFloppy,
+  IconFileImport,
+  IconTrash,
+  IconDots,
+  IconShare2,
+} from "@tabler/icons-react";
 import { useAppDispatch, useAppState } from "../state/store";
 import styles from "./config-select.css";
 import { createNewConfig } from "../state/thunks";
@@ -40,7 +38,7 @@ export function ConfigSelect(props: {
   const isEmpty = !configIds.length;
 
   return (
-    <HTMLSelect
+    <NativeSelect
       disabled={isEmpty}
       value={props.selectedId || ""}
       onChange={(e) => props.onChange(e.currentTarget.value)}
@@ -51,7 +49,7 @@ export function ConfigSelect(props: {
       {configIds.map((configId) => (
         <ConfigSelectEntry key={configId} configId={configId} />
       ))}
-    </HTMLSelect>
+    </NativeSelect>
   );
 }
 
@@ -97,30 +95,36 @@ export function ConfigList(props: {
           selected={props.selectedId === cid}
         />
       ))}
-      <Card compact style={{ opacity: 0.6 }}>
-        <ButtonGroup className={styles.actionButtons}>
-          <Tooltip content={"Import from JSON"} placement="top">
-            <Button
-              icon={<Import />}
+      <Card withBorder padding="sm" style={{ opacity: 0.6 }}>
+        <Group gap={4} className={styles.actionButtons}>
+          <Tooltip label="Import from JSON" position="top">
+            <ActionIcon
+              variant="default"
+              aria-label="Import from JSON"
               onClick={() => {
                 void loadConfig().then((c) => {
                   dispatch(configSlice.actions.addOne(c));
                   changeConfig(c.id);
                 });
               }}
-            />
+            >
+              <IconFileImport size={16} />
+            </ActionIcon>
           </Tooltip>
-          <Tooltip content={"New Config"} placement="top">
-            <Button
-              icon={<ThAdd />}
+          <Tooltip label="New Config" position="top">
+            <ActionIcon
+              variant="default"
+              aria-label="New Config"
               onClick={() =>
                 dispatch(createNewConfig(roomName)).then((c) =>
                   changeConfig(c.id),
                 )
               }
-            />
+            >
+              <IconTablePlus size={16} />
+            </ActionIcon>
           </Tooltip>
-        </ButtonGroup>
+        </Group>
         <h2>Create new</h2>
       </Card>
     </div>
@@ -145,10 +149,15 @@ function ConfigListEntry(props: {
     : null;
   return (
     <Card
-      interactive
+      withBorder
+      padding="sm"
       onClick={(e) => e.defaultPrevented || props.selectConfig(props.configId)}
-      selected={props.selected}
-      compact
+      style={{
+        cursor: "pointer",
+        borderColor: props.selected
+          ? "var(--mantine-primary-color-filled)"
+          : undefined,
+      }}
     >
       {props.selected && (
         <ConfigActionsMenu
@@ -199,39 +208,50 @@ function ConfigActionsMenu(props: {
   onDuplicate(): void;
   onDelete(): void;
 }) {
-  const menu = (
-    <Menu>
-      <MenuItem
-        icon={<FloppyDisk />}
-        text="Export to JSON"
-        onClick={props.onExport}
-      />
-      <MenuItem
-        icon={<DocumentShare />}
-        text="Share preview link"
-        onClick={props.onShareLink}
-      />
-      <MenuItem
-        icon={<Duplicate />}
-        text="Duplicate"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onDuplicate();
-        }}
-      />
-      <MenuItem
-        icon={<Trash />}
-        text="Delete"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onDelete();
-        }}
-      />
-    </Menu>
-  );
   return (
-    <Popover className={styles.actionButtons} content={menu}>
-      <Button icon={<More />} />
-    </Popover>
+    <Menu position="bottom-end">
+      <Menu.Target>
+        <ActionIcon
+          variant="default"
+          className={styles.actionButtons}
+          onClick={(e) => e.preventDefault()}
+          aria-label="Config actions"
+        >
+          <IconDots size={16} />
+        </ActionIcon>
+      </Menu.Target>
+      <Menu.Dropdown>
+        <Menu.Item
+          leftSection={<IconDeviceFloppy size={16} />}
+          onClick={props.onExport}
+        >
+          Export to JSON
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconShare2 size={16} />}
+          onClick={props.onShareLink}
+        >
+          Share preview link
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconCopy size={16} />}
+          onClick={(e) => {
+            e.preventDefault();
+            props.onDuplicate();
+          }}
+        >
+          Duplicate
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconTrash size={16} />}
+          onClick={(e) => {
+            e.preventDefault();
+            props.onDelete();
+          }}
+        >
+          Delete
+        </Menu.Item>
+      </Menu.Dropdown>
+    </Menu>
   );
 }

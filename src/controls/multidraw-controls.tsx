@@ -1,7 +1,15 @@
-import { Button, Card, Collapse, FormGroup, Switch } from "@blueprintjs/core";
+import {
+  ActionIcon,
+  Button,
+  Card,
+  Collapse,
+  Group,
+  Input,
+  Switch,
+} from "@mantine/core";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { ConfigSelect } from "./config-select";
-import { CaretDown, CaretRight, Trash } from "@blueprintjs/icons";
+import { IconCaretDown, IconCaretRight, IconTrash } from "@tabler/icons-react";
 import { useState } from "react";
 
 export function MultidrawControls() {
@@ -55,42 +63,58 @@ export function MultidrawControls() {
   };
 
   const configs = multidrawState?.configs.map((configId, idx) => (
-    <div key={configId}>
+    <Group key={configId} gap={4} my={4} wrap="nowrap">
       <ConfigSelect
         selectedId={configId}
         onChange={(newConfig) => changeConfigAtIdx(newConfig, idx)}
       />
-      <Button icon={<Trash />} onClick={() => rmConfigAtIdx(idx)} />
-    </div>
+      <ActionIcon
+        variant="default"
+        size={36}
+        onClick={() => rmConfigAtIdx(idx)}
+        aria-label="Remove extra draw"
+      >
+        <IconTrash size={16} />
+      </ActionIcon>
+    </Group>
   ));
 
   return (
     <div style={{ marginBottom: "1em" }}>
       <Button
+        variant="default"
         onClick={toggleCollapse}
-        endIcon={collapseOpen ? <CaretDown /> : <CaretRight />}
+        rightSection={
+          collapseOpen ? (
+            <IconCaretDown size={16} />
+          ) : (
+            <IconCaretRight size={16} />
+          )
+        }
       >
         {multidrawState?.configs.length
           ? `${multidrawState.configs.length} `
           : null}
         Extra Draws
       </Button>
-      <Collapse isOpen={collapseOpen}>
-        <Card>
+      <Collapse expanded={collapseOpen}>
+        <Card withBorder my="xs">
           <Switch
             label="Merge all draws into one set"
             checked={multidrawState?.merge}
             onChange={toggleMerge}
           />
-          <FormGroup
-            style={{ marginBottom: "0" }}
+          <Input.Wrapper
             label={multidrawState?.merge ? "Extra Draws" : "Extra Sets"}
+            mt="sm"
           >
             {configs}
-            <Button onClick={addExtraDraw}>
-              Add extra {multidrawState?.merge ? "Draw" : "Set"}
-            </Button>
-          </FormGroup>
+            <div>
+              <Button variant="default" mt={4} onClick={addExtraDraw}>
+                Add extra {multidrawState?.merge ? "Draw" : "Set"}
+              </Button>
+            </div>
+          </Input.Wrapper>
         </Card>
       </Collapse>
     </div>

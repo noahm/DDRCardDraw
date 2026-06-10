@@ -1,17 +1,13 @@
 import "normalize.css";
-import "@blueprintjs/core/lib/css/blueprint.css";
-import "@blueprintjs/table/lib/css/table.css";
-import "@blueprintjs/icons/lib/css/blueprint-icons.css";
-import "@blueprintjs/select/lib/css/blueprint-select.css";
-import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
+import "@mantine/core/styles.css";
+import "@mantine/dates/styles.css";
+import "@mantine/notifications/styles.css";
 
-import { FocusStyleManager } from "@blueprintjs/core";
-
-FocusStyleManager.onlyShowFocusOnTabs();
+import { MantineProvider } from "@mantine/core";
 
 import { UpdateManager } from "./update-manager";
 import { IntlProvider } from "./intl-provider";
-import { ThemeSyncWidget } from "./theme-toggle";
+import { ThemeSyncWidget, useTheme } from "./theme-toggle";
 import { Provider } from "react-redux";
 import { createClientStore, useAppState } from "./state/store";
 import { PartySocketManager } from "./party/client";
@@ -244,12 +240,15 @@ function ObsStyles() {
 }
 
 export function App() {
+  const theme = useTheme();
   return (
-    <IntlProvider>
-      <ThemeSyncWidget />
-      <UpdateManager />
-      <RouterProvider router={router} />
-      <ToasterHost />
-    </IntlProvider>
+    <MantineProvider forceColorScheme={theme}>
+      <IntlProvider>
+        <ThemeSyncWidget />
+        <UpdateManager />
+        <RouterProvider router={router} />
+        <ToasterHost />
+      </IntlProvider>
+    </MantineProvider>
   );
 }

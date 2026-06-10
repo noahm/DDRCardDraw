@@ -1,6 +1,10 @@
 import { FormattedMessage, useIntl } from "react-intl";
-import { ButtonGroup, AnchorButton, UL, Classes, H2 } from "@blueprintjs/core";
-import { Comment, GitBranch, Chat } from "@blueprintjs/icons";
+import { Button, List, Title } from "@mantine/core";
+import {
+  IconMessage,
+  IconGitBranch,
+  IconMessageCircle,
+} from "@tabler/icons-react";
 
 function injectPumpoutLink(str: string) {
   const pieces = str.split("PUMPOUT");
@@ -20,45 +24,54 @@ export function About() {
   const { formatMessage: t } = useIntl();
 
   return (
-    <div className={Classes.DIALOG_BODY}>
-      <H2>
+    <div>
+      <Title order={2}>
         <FormattedMessage id="about.credits" defaultMessage="Credits" />
-      </H2>
-      <UL>
+      </Title>
+      <List my="sm">
         {t({ id: "about.creditsDescription" })
           .split(" * ")
           .map((line, i) => (
-            <li key={i}>{injectPumpoutLink(line)}</li>
+            <List.Item key={i}>{injectPumpoutLink(line)}</List.Item>
           ))}
-      </UL>
-      <H2>
+      </List>
+      <Title order={2}>
         <FormattedMessage id="about.contribute" defaultMessage="Contribute" />
-      </H2>
+      </Title>
       <p>{t({ id: "about.contributeDescription" })}</p>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <ButtonGroup>
-          <AnchorButton
-            large
+        <Button.Group>
+          <Button
+            size="md"
+            variant="default"
+            component="a"
             href="https://discord.gg/QPyEATsbP7"
             target="_blank"
-            text={t({ id: "about.discord" })}
-            icon={<Comment size={20} />}
-          />
-          <AnchorButton
-            large
+            leftSection={<IconMessage size={20} />}
+          >
+            {t({ id: "about.discord" })}
+          </Button>
+          <Button
+            size="md"
+            variant="default"
+            component="a"
             href="https://github.com/noahm/DDRCardDraw"
             target="_blank"
-            text={t({ id: "about.github" })}
-            icon={<GitBranch size={20} />}
-          />
-          <AnchorButton
-            large
+            leftSection={<IconGitBranch size={20} />}
+          >
+            {t({ id: "about.github" })}
+          </Button>
+          <Button
+            size="md"
+            variant="default"
+            component="a"
             href="https://m.me/noah.manneschmidt"
             target="_blank"
-            text={t({ id: "about.facebook" })}
-            icon={<Chat size={20} />}
-          />
-        </ButtonGroup>
+            leftSection={<IconMessageCircle size={20} />}
+          >
+            {t({ id: "about.facebook" })}
+          </Button>
+        </Button.Group>
       </div>
     </div>
   );

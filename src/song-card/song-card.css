@@ -73,7 +73,7 @@
   transform: scale(1.05);
 }
 
-:global(.bp6-dark) .chart.randomSelected {
+:global([data-mantine-color-scheme="dark"]) .chart.randomSelected {
   box-shadow: 0px 0px 4px white;
 }
 

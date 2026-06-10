@@ -1,12 +1,4 @@
-import {
-  DialogBody,
-  FormGroup,
-  Tabs,
-  Tab,
-  InputGroup,
-  TagInput,
-  Button,
-} from "@blueprintjs/core";
+import { Button, Input, Tabs, TagsInput, TextInput } from "@mantine/core";
 import { ConfigSelect } from ".";
 import { MatchPicker, GauntletPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
@@ -52,45 +44,39 @@ export function DrawDialog(props: Props) {
   }
 
   return (
-    <DialogBody>
-      <FormGroup label="Config">
+    <div>
+      <Input.Wrapper label="Config" mb="sm">
         <ConfigSelect selectedId={configId} onChange={setConfigId} />
-      </FormGroup>
-      <Tabs id="new-draw">
-        <Tab
-          id="custom"
-          panel={
-            <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
-          }
-        >
-          custom draw
-        </Tab>
+      </Input.Wrapper>
+      <Tabs defaultValue="custom">
+        <Tabs.List mb="sm">
+          <Tabs.Tab value="custom">custom draw</Tabs.Tab>
+          {appMode === "event" && (
+            <Tabs.Tab value="startgg-versus">start.gg (h2h)</Tabs.Tab>
+          )}
+          {appMode === "event" && (
+            <Tabs.Tab value="startgg-group">start.gg (gauntlet)</Tabs.Tab>
+          )}
+        </Tabs.List>
+        <Tabs.Panel value="custom">
+          <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
+        </Tabs.Panel>
         {appMode === "event" && (
-          <Tab
-            id="startgg-versus"
-            panel={
-              <StartggApiKeyGated>
-                <MatchPicker onPickMatch={handleStartggDraw} />
-              </StartggApiKeyGated>
-            }
-          >
-            start.gg (h2h)
-          </Tab>
+          <Tabs.Panel value="startgg-versus">
+            <StartggApiKeyGated>
+              <MatchPicker onPickMatch={handleStartggDraw} />
+            </StartggApiKeyGated>
+          </Tabs.Panel>
         )}
         {appMode === "event" && (
-          <Tab
-            id="startgg-group"
-            panel={
-              <StartggApiKeyGated>
-                <GauntletPicker onPickMatch={handleStartggDraw} />
-              </StartggApiKeyGated>
-            }
-          >
-            start.gg (gauntlet)
-          </Tab>
+          <Tabs.Panel value="startgg-group">
+            <StartggApiKeyGated>
+              <GauntletPicker onPickMatch={handleStartggDraw} />
+            </StartggApiKeyGated>
+          </Tabs.Panel>
         )}
       </Tabs>
-    </DialogBody>
+    </div>
   );
 }
 
@@ -114,23 +100,19 @@ export function CustomDrawForm(props: {
   }
   return (
     <>
-      <FormGroup label="title">
-        <InputGroup
-          value={title}
-          onChange={(e) => setTitle(e.currentTarget.value)}
-        />
-      </FormGroup>
-      <FormGroup label="players">
-        <TagInput
-          onChange={(v) => setPlayers(v as string[])}
-          values={players}
-        />
-      </FormGroup>
-      <Button
-        intent="primary"
-        onClick={handleSubmit}
-        disabled={props.disableCreate}
-      >
+      <TextInput
+        label="title"
+        mb="sm"
+        value={title}
+        onChange={(e) => setTitle(e.currentTarget.value)}
+      />
+      <TagsInput
+        label="players"
+        mb="sm"
+        onChange={setPlayers}
+        value={players}
+      />
+      <Button onClick={handleSubmit} disabled={props.disableCreate}>
         {props.submitText || "Create"}
       </Button>
     </>

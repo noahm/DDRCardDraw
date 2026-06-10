@@ -1,8 +1,8 @@
-import { Button, Card, Classes, Spinner, Text } from "@blueprintjs/core";
+import { ActionIcon, Card, Loader, Skeleton, Text } from "@mantine/core";
 import { useStartggMatches, useStartggPhases } from "./startgg-gql";
 import { createAppSelector, useAppState } from "./state/store";
 import { inferShortname } from "./controls/player-names";
-import { Refresh } from "@blueprintjs/icons";
+import { IconRefresh } from "@tabler/icons-react";
 
 export interface PickedMatch {
   title: string;
@@ -22,16 +22,30 @@ const associatedMatchIds = createAppSelector(
   },
 );
 
+function LoadingCard({ children }: { children: string }) {
+  return (
+    <Card withBorder my="xs">
+      <Skeleton>
+        <p>{children}</p>
+      </Skeleton>
+    </Card>
+  );
+}
+
 export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
   const [resp, refetch] = useStartggMatches();
   const existingMatches = useAppState(associatedMatchIds);
   const event = resp.data?.event;
   const matches = event?.sets?.nodes;
   const reloadButton = (
-    <Button
-      icon={resp.fetching ? <Spinner size={20} /> : <Refresh size={20} />}
+    <ActionIcon
+      variant="default"
+      size={36}
+      aria-label="Refresh"
       onClick={() => refetch({ requestPolicy: "network-only" })}
-    />
+    >
+      {resp.fetching ? <Loader size={20} /> : <IconRefresh size={20} />}
+    </ActionIcon>
   );
   if (!event) {
     return (
@@ -45,15 +59,9 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
       return (
         <div>
           {reloadButton}
-          <Card>
-            <p className={Classes.SKELETON}>loading content for a match</p>
-          </Card>
-          <Card>
-            <p className={Classes.SKELETON}>loading content for a match</p>
-          </Card>
-          <Card>
-            <p className={Classes.SKELETON}>loading content for a match</p>
-          </Card>
+          <LoadingCard>loading content for a match</LoadingCard>
+          <LoadingCard>loading content for a match</LoadingCard>
+          <LoadingCard>loading content for a match</LoadingCard>
         </div>
       );
     } else {
@@ -84,11 +92,13 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
           return (
             <Card
               key={match.id!}
-              interactive={!matchUsed}
+              withBorder
+              my="xs"
+              padding="sm"
               style={{
                 opacity: matchUsed ? 0.5 : undefined,
+                cursor: matchUsed ? undefined : "pointer",
               }}
-              compact
               onClick={
                 matchUsed
                   ? undefined
@@ -105,7 +115,7 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
                       })
               }
             >
-              <Text tagName="p">
+              <Text component="p" my={0}>
                 <strong>{title}</strong> - {p1 || <em>TBD</em>} vs{" "}
                 {p2 || <em>TBD</em>}
               </Text>
@@ -126,10 +136,14 @@ export function GauntletPicker(props: {
     (p) => p?.bracketType === "CUSTOM_SCHEDULE",
   );
   const reloadButton = (
-    <Button
-      icon={resp.fetching ? <Spinner size={20} /> : <Refresh size={20} />}
+    <ActionIcon
+      variant="default"
+      size={36}
+      aria-label="Refresh"
       onClick={() => refetch({ requestPolicy: "network-only" })}
-    />
+    >
+      {resp.fetching ? <Loader size={20} /> : <IconRefresh size={20} />}
+    </ActionIcon>
   );
   if (!event) {
     return (
@@ -143,15 +157,9 @@ export function GauntletPicker(props: {
       return (
         <div>
           {reloadButton}
-          <Card>
-            <p className={Classes.SKELETON}>loading content for a gauntlet</p>
-          </Card>
-          <Card>
-            <p className={Classes.SKELETON}>loading content for a gauntlet</p>
-          </Card>
-          <Card>
-            <p className={Classes.SKELETON}>loading content for a gauntlet</p>
-          </Card>
+          <LoadingCard>loading content for a gauntlet</LoadingCard>
+          <LoadingCard>loading content for a gauntlet</LoadingCard>
+          <LoadingCard>loading content for a gauntlet</LoadingCard>
         </div>
       );
     } else {
@@ -187,11 +195,13 @@ export function GauntletPicker(props: {
           return (
             <Card
               key={phase.id!}
-              interactive={!matchUsed}
+              withBorder
+              my="xs"
+              padding="sm"
               style={{
                 opacity: matchUsed ? 0.5 : undefined,
+                cursor: matchUsed ? undefined : "pointer",
               }}
-              compact
               onClick={
                 matchUsed
                   ? undefined
@@ -205,7 +215,7 @@ export function GauntletPicker(props: {
                       })
               }
             >
-              <Text tagName="p">
+              <Text component="p" my={0}>
                 <strong>{title}</strong> (
                 {entrants.map((e) => e.name).join(", ")})
               </Text>

@@ -1,7 +1,7 @@
-import { Button, Intent, Navbar } from "@blueprintjs/core";
+import { Button, Group, Text } from "@mantine/core";
 import { Header } from "../header";
 import { FormattedMessage } from "react-intl";
-import { NewLayers } from "@blueprintjs/icons";
+import { IconStack2 } from "@tabler/icons-react";
 import { ConfigSelect } from "../controls";
 import { useState } from "react";
 import { createDraw } from "../state/thunks";
@@ -9,7 +9,11 @@ import { useAppDispatch } from "../state/store";
 import { useNavigate } from "react-router-dom";
 
 export function PreviewModeHeader() {
-  const heading = <Navbar.Heading>Event Preview</Navbar.Heading>;
+  const heading = (
+    <Text fw={600} component="span">
+      Event Preview
+    </Text>
+  );
   return <Header heading={heading} controls={<PreviewModeControls />} />;
 }
 
@@ -27,7 +31,7 @@ function PreviewModeControls() {
     navigate({ search: "?configId=" + nextId }, { replace: true });
   }
   return (
-    <>
+    <Group gap="xs" wrap="nowrap">
       <ConfigSelect selectedId={selected} onChange={handleChangeConfig} />
       <Button
         onClick={() =>
@@ -44,12 +48,11 @@ function PreviewModeControls() {
             ),
           )
         }
-        icon={<NewLayers />}
-        intent={Intent.PRIMARY}
+        leftSection={<IconStack2 size={18} />}
         disabled={!selected}
       >
         <FormattedMessage id="draw" />
       </Button>
-    </>
+    </Group>
   );
 }

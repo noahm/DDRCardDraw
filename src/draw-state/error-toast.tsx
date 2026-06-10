@@ -1,4 +1,3 @@
-import { Error } from "@blueprintjs/icons";
 import { useIntl } from "../hooks/useIntl";
 import { toaster } from "../toaster";
 
@@ -7,7 +6,7 @@ export function showDrawErrorToast() {
     {
       message: <DrawErrorMessage />,
       intent: "danger",
-      icon: <Error />,
+      icon: "error",
     },
     "fail-draw",
   );

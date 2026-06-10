@@ -1,31 +1,28 @@
 import {
-  Button,
+  ActionIcon,
   Card,
-  ControlGroup,
-  InputGroup,
+  Group,
   Menu,
-  MenuItem,
-  MenuItemProps,
-  Popover,
+  TextInput,
   Tooltip,
-} from "@blueprintjs/core";
+} from "@mantine/core";
 import { useAppDispatch, useAppState } from "../state/store";
 import React, { ReactNode, useCallback, useState } from "react";
 import { CabInfo, eventSlice } from "../state/event.slice";
 import {
-  Add,
-  CaretLeft,
-  CaretRight,
-  Cross,
-  DiagramTree,
-  Font,
-  Layers,
-  MobileVideo,
-  More,
-  People,
-  Person,
-  Remove,
-} from "@blueprintjs/icons";
+  IconPlus,
+  IconCaretLeft,
+  IconCaretRight,
+  IconX,
+  IconBinaryTree,
+  IconTypography,
+  IconStack2,
+  IconVideo,
+  IconDots,
+  IconUsers,
+  IconUser,
+  IconCircleMinus,
+} from "@tabler/icons-react";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
@@ -41,10 +38,15 @@ export function CabManagement() {
   if (isCollapsed) {
     return (
       <div style={{ width: "40px", paddingTop: "1em" }}>
-        <Tooltip content="Show cabs">
-          <Button minimal onClick={() => setCollapsed(false)}>
-            <CaretRight />
-          </Button>
+        <Tooltip label="Show cabs">
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            onClick={() => setCollapsed(false)}
+            aria-label="Show cabs"
+          >
+            <IconCaretRight size={18} />
+          </ActionIcon>
         </Tooltip>
       </div>
     );
@@ -54,10 +56,16 @@ export function CabManagement() {
     <div style={{ padding: "1em", overflow: "auto" }}>
       <div>
         <AddCabControl>
-          <Tooltip content="Hide cabs">
-            <Button minimal onClick={() => setCollapsed(true)}>
-              <CaretLeft />
-            </Button>
+          <Tooltip label="Hide cabs">
+            <ActionIcon
+              variant="subtle"
+              color="gray"
+              size={36}
+              onClick={() => setCollapsed(true)}
+              aria-label="Hide cabs"
+            >
+              <IconCaretLeft size={18} />
+            </ActionIcon>
           </Tooltip>
         </AddCabControl>
       </div>
@@ -84,15 +92,22 @@ function AddCabControl(props: { children?: ReactNode }) {
         addCab();
       }}
     >
-      <ControlGroup>
-        <InputGroup
+      <Group gap={4} wrap="nowrap">
+        <TextInput
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
           placeholder="Cab name"
         />
-        <Button onClick={addCab} icon={<Add />} />
+        <ActionIcon
+          variant="default"
+          size={36}
+          onClick={addCab}
+          aria-label="Add cab"
+        >
+          <IconPlus size={16} />
+        </ActionIcon>
         {props.children}
-      </ControlGroup>
+      </Group>
     </form>
   );
 }
@@ -104,102 +119,119 @@ function CabSummary({ cab }: { cab: CabInfo }) {
     [dispatch, cab.id],
   );
 
-  const sourcesMenu = (
-    <Menu>
-      <MenuItem icon={<MobileVideo />} text="OBS Sources">
-        <CopySourceMenuItem
-          icon={<Layers />}
-          text="Cards"
-          stub="cards"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Font />}
-          text="Title"
-          stub="title"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<DiagramTree />}
-          text="Current Phase"
-          stub="phase"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<People />}
-          text="All Players"
-          stub="players"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 1"
-          stub="p1"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 1 Name"
-          stub="p1-name"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 1 Score"
-          stub="p1-score"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 2"
-          stub="p2"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 2 Name"
-          stub="p2-name"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 2 Score"
-          stub="p2-score"
-          cabId={cab.id}
-        />
-      </MenuItem>
-
-      <MenuItem icon={<Remove />} text="Remove Cab" onClick={removeCab} />
-    </Menu>
-  );
-
   return (
     <div id={cab.id}>
       <h1>
         {cab.name}{" "}
-        <Popover content={sourcesMenu}>
-          <Button minimal icon={<More />} />
-        </Popover>{" "}
+        <Menu>
+          <Menu.Target>
+            <ActionIcon variant="subtle" color="gray" aria-label="Cab actions">
+              <IconDots size={16} />
+            </ActionIcon>
+          </Menu.Target>
+          <Menu.Dropdown>
+            <Menu.Sub>
+              <Menu.Sub.Target>
+                <Menu.Sub.Item leftSection={<IconVideo size={16} />}>
+                  OBS Sources
+                </Menu.Sub.Item>
+              </Menu.Sub.Target>
+              <Menu.Sub.Dropdown>
+                <CopySourceMenuItem
+                  icon={<IconStack2 size={16} />}
+                  text="Cards"
+                  stub="cards"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconTypography size={16} />}
+                  text="Title"
+                  stub="title"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconBinaryTree size={16} />}
+                  text="Current Phase"
+                  stub="phase"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUsers size={16} />}
+                  text="All Players"
+                  stub="players"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUser size={16} />}
+                  text="Player 1"
+                  stub="p1"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUser size={16} />}
+                  text="Player 1 Name"
+                  stub="p1-name"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUser size={16} />}
+                  text="Player 1 Score"
+                  stub="p1-score"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUser size={16} />}
+                  text="Player 2"
+                  stub="p2"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUser size={16} />}
+                  text="Player 2 Name"
+                  stub="p2-name"
+                  cabId={cab.id}
+                />
+                <CopySourceMenuItem
+                  icon={<IconUser size={16} />}
+                  text="Player 2 Score"
+                  stub="p2-score"
+                  cabId={cab.id}
+                />
+              </Menu.Sub.Dropdown>
+            </Menu.Sub>
+            <Menu.Item
+              leftSection={<IconCircleMinus size={16} />}
+              onClick={removeCab}
+            >
+              Remove Cab
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>{" "}
       </h1>
       <CurrentMatch cab={cab} />
     </div>
   );
 }
 
-function CopySourceMenuItem(
-  props: Pick<MenuItemProps, "icon" | "text"> & { stub: string; cabId: string },
-) {
+function CopySourceMenuItem(props: {
+  icon: ReactNode;
+  text: ReactNode;
+  stub: string;
+  cabId: string;
+}) {
   const href = useHref(routableCabSourcePath(props.cabId, props.stub));
   return (
-    <MenuItem
-      icon={props.icon}
-      text={props.text}
+    <Menu.Item
+      leftSection={props.icon}
+      component="a"
       onClick={(e) => {
         e.preventDefault();
         copyObsSource(e.currentTarget.href);
       }}
       href={href}
-    />
+    >
+      {props.text}
+    </Menu.Item>
   );
 }
 
@@ -255,19 +287,25 @@ function CurrentMatch(props: { cab: CabInfo }) {
     typeof props.cab.activeMatch === "string" ? "match" : "set";
   return (
     <Card
-      elevation={2}
-      style={{ position: "relative" }}
-      compact
-      interactive
+      withBorder
+      shadow="md"
+      padding="sm"
+      style={{ position: "relative", cursor: "pointer" }}
       onClick={scrollToDrawing}
     >
-      <Button
-        minimal
-        small
-        icon={<Cross />}
+      <ActionIcon
+        variant="subtle"
+        color="gray"
+        size="sm"
         style={{ position: "absolute", right: "0.5em", top: "0.5em" }}
-        onClick={removeCab}
-      />
+        onClick={(e) => {
+          e.stopPropagation();
+          removeCab();
+        }}
+        aria-label="Clear assignment"
+      >
+        <IconX size={14} />
+      </ActionIcon>
       <h3>
         {drawing.meta.title} ({assignmentType})
       </h3>

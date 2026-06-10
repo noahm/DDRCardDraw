@@ -1,4 +1,4 @@
-import { Popover } from "@blueprintjs/core";
+import { Menu, Popover } from "@mantine/core";
 import classNames from "classnames";
 import {
   type JSX,
@@ -225,49 +225,54 @@ export function SongCardBase(props: Props) {
 
   return (
     <Popover
-      isOpen={wasRandomlySelected}
-      onClose={clearRandomSelection}
-      content={<div style={{ padding: "0.5em" }}>This one!</div>}
-      targetTagName="div"
-      className={styles.popoverWrapper}
+      opened={wasRandomlySelected}
+      onDismiss={clearRandomSelection}
+      position="bottom"
+      withArrow
     >
-      <div
-        ref={rootRef}
-        className={rootClassname}
-        onClick={
-          showingContextMenu || pocketPickPendingForPlayer !== null
-            ? undefined
-            : handleCardClick
-        }
-        style={jacketBg}
-      >
-        <SongSearch
-          isOpen={pocketPickPendingForPlayer !== null}
-          onSongSelect={(song, chart) => {
-            if (actionsEnabled && chart) {
-              iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
-            }
-            setPocketPickPendingForPlayer(null);
-          }}
-          onCancel={() => setPocketPickPendingForPlayer(null)}
-        />
-        <div className={styles.cardCenter}>
-          {actionLabels}
-          <CenterContent chart={replacedWith || chart} />
-        </div>
-
-        <Popover
-          content={menuContent}
-          isOpen={showingContextMenu}
-          onClose={hideMenu}
-          placement="top"
-          modifiers={{
-            offset: { options: { offset: [0, 35] } },
-          }}
+      <Popover.Target>
+        <div
+          ref={rootRef}
+          className={rootClassname}
+          onClick={
+            showingContextMenu || pocketPickPendingForPlayer !== null
+              ? undefined
+              : handleCardClick
+          }
+          style={jacketBg}
         >
-          <FooterContent chart={replacedWith || chart} />
-        </Popover>
-      </div>
+          <SongSearch
+            isOpen={pocketPickPendingForPlayer !== null}
+            onSongSelect={(song, chart) => {
+              if (actionsEnabled && chart) {
+                iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
+              }
+              setPocketPickPendingForPlayer(null);
+            }}
+            onCancel={() => setPocketPickPendingForPlayer(null)}
+          />
+          <div className={styles.cardCenter}>
+            {actionLabels}
+            <CenterContent chart={replacedWith || chart} />
+          </div>
+
+          <Menu
+            opened={showingContextMenu}
+            onChange={(opened) => !opened && hideMenu()}
+            position="top"
+          >
+            <Menu.Target>
+              <div>
+                <FooterContent chart={replacedWith || chart} />
+              </div>
+            </Menu.Target>
+            {menuContent && <Menu.Dropdown>{menuContent}</Menu.Dropdown>}
+          </Menu>
+        </div>
+      </Popover.Target>
+      <Popover.Dropdown style={{ padding: "0.5em" }}>
+        This one!
+      </Popover.Dropdown>
     </Popover>
   );
 }

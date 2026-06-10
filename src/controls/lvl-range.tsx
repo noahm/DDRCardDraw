@@ -1,9 +1,8 @@
-import { Button, ControlGroup, FormGroup, InputGroup } from "@blueprintjs/core";
-import { CaretLeft, CaretRight } from "@blueprintjs/icons";
+import { ActionIcon, Group, Input, TextInput } from "@mantine/core";
+import { IconCaretLeft, IconCaretRight } from "@tabler/icons-react";
 import { getAvailableLevels } from "../game-data-utils";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
-import styles from "./controls.css";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
 import { useStockGameData } from "../state/game-data.atoms";
 
@@ -178,7 +177,6 @@ function NudgableRangeInput({
     (next: string) => {
       setLocalValue(next);
       const parsedValue = parseFloat(next);
-      console.log({ next, parsedValue });
       if (isNaN(parsedValue)) {
         setInvalidMessage("Must be a number");
         return;
@@ -196,19 +194,23 @@ function NudgableRangeInput({
   }, [isValid, setInvalidMessage]);
 
   return (
-    <FormGroup label={label} contentClassName={styles.narrowInput}>
-      <ControlGroup>
-        <Button
-          icon={<CaretLeft />}
+    <Input.Wrapper label={label} mb="md">
+      <Group gap={4} wrap="nowrap">
+        <ActionIcon
+          variant="default"
+          size={42}
           disabled={prevValue === undefined}
           onClick={() => stepTo(prevValue)}
-        />
-        <InputGroup
-          inputRef={inputRef}
+          aria-label="Lower"
+        >
+          <IconCaretLeft size={18} />
+        </ActionIcon>
+        <TextInput
+          ref={inputRef}
           value={displayValue}
-          intent={localValid ? undefined : "danger"}
-          size="large"
-          inputSize={4}
+          error={localValid ? undefined : true}
+          size="md"
+          style={{ width: "4.5em" }}
           inputMode="numeric"
           onChange={(e) => setNewValue(e.currentTarget.value)}
           onBlur={() => setLocalValue("")}
@@ -225,12 +227,16 @@ function NudgableRangeInput({
             }
           }}
         />
-        <Button
-          icon={<CaretRight />}
+        <ActionIcon
+          variant="default"
+          size={42}
           disabled={nextValue === undefined}
           onClick={() => stepTo(nextValue)}
-        />
-      </ControlGroup>
-    </FormGroup>
+          aria-label="Raise"
+        >
+          <IconCaretRight size={18} />
+        </ActionIcon>
+      </Group>
+    </Input.Wrapper>
   );
 }

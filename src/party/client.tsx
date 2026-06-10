@@ -4,7 +4,8 @@ import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import React, { useEffect, useState } from "react";
-import { Card, NonIdealState, Spinner } from "@blueprintjs/core";
+import { Card, Loader } from "@mantine/core";
+import { EmptyState } from "../common-components/empty-state";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
 import { PARTYKIT_HOST } from "./host";
@@ -72,8 +73,8 @@ export function PartySocketManager(props: {
         style={{ display: "flex", justifyContent: "center", marginTop: "15vh" }}
       >
         <DelayRender>
-          <Card elevation={2} style={{ maxWidth: "30rem" }}>
-            <NonIdealState icon={<Spinner />} title="Connecting..." />
+          <Card withBorder shadow="md" style={{ maxWidth: "30rem" }}>
+            <EmptyState icon={<Loader />} title="Connecting..." />
           </Card>
         </DelayRender>
       </section>

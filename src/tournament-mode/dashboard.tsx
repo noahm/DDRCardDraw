@@ -1,19 +1,20 @@
 import {
-  AnchorButton,
+  ActionIcon,
   Button,
-  ButtonGroup,
   Card,
-  CardList,
-  Dialog,
-  DialogBody,
-  DialogFooter,
-  FormGroup,
-  H3,
-  H4,
-  InputGroup,
-} from "@blueprintjs/core";
+  Group,
+  Modal,
+  Stack,
+  TextInput,
+  Title,
+} from "@mantine/core";
 import { useAppDispatch, useAppState } from "../state/store";
-import { Add, Duplicate, Edit, FloppyDisk } from "@blueprintjs/icons";
+import {
+  IconPlus,
+  IconCopy,
+  IconEdit,
+  IconDeviceFloppy,
+} from "@tabler/icons-react";
 import React, { useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
@@ -44,14 +45,17 @@ export function Dashboard() {
             sourceId={currentEdit}
             close={() => setCurrentEdit(null)}
           />
-          <H3>
+          <Title order={3} mb="xs">
             OBS Text Sources{" "}
-            <Button
-              icon={<Add />}
+            <ActionIcon
+              variant="default"
+              aria-label="Add OBS text source"
               onClick={() => setCurrentEdit(nanoid())}
-            ></Button>
-          </H3>
-          <CardList>
+            >
+              <IconPlus size={16} />
+            </ActionIcon>
+          </Title>
+          <Stack gap="xs">
             {Object.entries(labels).map(([id, { label, value }]) => (
               <LabelCard
                 key={id}
@@ -61,7 +65,7 @@ export function Dashboard() {
                 onEdit={() => setCurrentEdit(id)}
               />
             ))}
-          </CardList>
+          </Stack>
         </section>
         <CssEditor />
       </div>
@@ -77,22 +81,28 @@ function LabelCard(props: {
 }) {
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
-    <Card className={styles.textSourceCard}>
+    <Card withBorder padding="sm" className={styles.textSourceCard}>
       <div>
         <p>{props.label}</p>
-        <H4>{props.value}</H4>
+        <Title order={4}>{props.value}</Title>
       </div>
-      <ButtonGroup>
-        <Button icon={<Edit />} onClick={props.onEdit} />
-        <AnchorButton
-          icon={<Duplicate />}
+      <Group gap={4}>
+        <ActionIcon variant="default" aria-label="Edit" onClick={props.onEdit}>
+          <IconEdit size={16} />
+        </ActionIcon>
+        <ActionIcon
+          variant="default"
+          component="a"
+          aria-label="Copy OBS source"
           onClick={(e) => {
             e.preventDefault();
             copyObsSource(new URL(href, document.location.href).href);
           }}
           href={href}
-        />
-      </ButtonGroup>
+        >
+          <IconCopy size={16} />
+        </ActionIcon>
+      </Group>
     </Card>
   );
 }
@@ -137,36 +147,30 @@ function EditDialog({
     }
   };
   return (
-    <Dialog isOpen={!!sourceId} title="Edit Custom OBS label" onClose={close}>
-      <DialogBody>
-        <form action={submit}>
-          <FormGroup label="Label Name">
-            <InputGroup
-              inputRef={nameInput}
-              defaultValue={label.label}
-              onKeyDown={handleInputKeydown}
-            />
-          </FormGroup>
-          <FormGroup label="Value">
-            <InputGroup
-              inputRef={valueInput}
-              defaultValue={label.value}
-              onKeyDown={handleInputKeydown}
-            />
-          </FormGroup>
-        </form>
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button onClick={close}>Cancel</Button>
-            <Button intent="primary" onClick={submit}>
-              Save
-            </Button>
-          </>
-        }
-      />
-    </Dialog>
+    <Modal opened={!!sourceId} title="Edit Custom OBS label" onClose={close}>
+      <form action={submit}>
+        <TextInput
+          label="Label Name"
+          mb="sm"
+          ref={nameInput}
+          defaultValue={label.label}
+          onKeyDown={handleInputKeydown}
+        />
+        <TextInput
+          label="Value"
+          mb="sm"
+          ref={valueInput}
+          defaultValue={label.value}
+          onKeyDown={handleInputKeydown}
+        />
+      </form>
+      <Group justify="flex-end" gap="xs" mt="md">
+        <Button variant="default" onClick={close}>
+          Cancel
+        </Button>
+        <Button onClick={submit}>Save</Button>
+      </Group>
+    </Modal>
   );
 }
 
@@ -181,18 +185,20 @@ function CssEditor() {
 
   return (
     <section>
-      <H3>
+      <Title order={3} my="xs">
         Global OBS Source Styles{" "}
-        <Button
-          icon={<FloppyDisk />}
+        <ActionIcon
+          variant={isDirty ? "filled" : "default"}
+          aria-label="Save styles"
           disabled={!isDirty}
-          intent={isDirty ? "primary" : undefined}
           onClick={() => {
             dispatch(eventSlice.actions.updateObsCss(localDoc));
             setIsDirty(false);
           }}
-        />
-      </H3>
+        >
+          <IconDeviceFloppy size={16} />
+        </ActionIcon>
+      </Title>
       <ReactCodeMirror
         height="200"
         minHeight="5"
