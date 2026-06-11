@@ -132,6 +132,29 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
+  // #region EXTRA SAVIOR WORLD - The 6th MUSIC CREATOR AUDITION
+  [
+    "1l0i6b10D8dbD60QIbiqlidQo9d69qII", // 電幻圏
+    {
+      ratings: [2, 5, 10, 15, 0, 5, 10, 15, 0],
+      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+    },
+  ],
+  [
+    "i1QlPD8oooQ6lQq9Oo9qdi9q0Q0QqdoQ", // MYSTIC CUBE
+    {
+      ratings: [3, 8, 12, 15, 0, 8, 12, 15, 0],
+      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
+    },
+  ],
+  // #endregion EXTRA SAVIOR WORLD - The 6th MUSIC CREATOR AUDITION
+  [
+    "o9iQ96669qo618i6DobbdD8I1lPiq8oQ", // 少女、摩天楼へ
+    {
+      ratings: [3, 6, 11, 15, 0, 6, 11, 15, 0],
+      lock_types: [300, 300, 300, 300, 0, 300, 300, 300, 0],
+    },
+  ],
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
