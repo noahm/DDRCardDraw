@@ -2,11 +2,14 @@ import {
   Button,
   ButtonGroup,
   Card,
+  Checkbox,
+  Dialog,
+  DialogBody,
+  DialogFooter,
   HTMLSelect,
   Menu,
   MenuItem,
   Popover,
-  Tooltip,
 } from "@blueprintjs/core";
 import {
   ThAdd,
@@ -17,19 +20,39 @@ import {
   More,
   DocumentShare,
 } from "@blueprintjs/icons";
-import { useAppDispatch, useAppState } from "../state/store";
+import { useState } from "react";
+import { useAppDispatch, useAppState, useAppStore } from "../state/store";
 import styles from "./config-select.css";
 import { createNewConfig } from "../state/thunks";
 import { useRoomName } from "../hooks/useRoomName";
 import { useSetLastConfigSelected } from "../state/config.atoms";
 import { configSlice } from "../state/config.slice";
-import { loadConfig, saveConfig } from "../config-persistence";
+import { loadConfigs, saveConfig, saveConfigs } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
 import { useStockGameData } from "../state/game-data.atoms";
+import { toaster } from "../toaster";
 
 function getEmptyItemLabel(empty: boolean) {
   if (!empty) return "select a config";
   return "no configs created";
+}
+
+function pluralizeConfigs(count: number) {
+  return `${count} config${count === 1 ? "" : "s"}`;
+}
+
+/**
+ * @param total configs in the imported file
+ * @param updated how many of them replaced an existing config
+ **/
+function importToastMessage(total: number, updated: number) {
+  if (updated === total) {
+    return `Updated ${pluralizeConfigs(updated)}`;
+  }
+  if (updated > 0) {
+    return `Imported ${pluralizeConfigs(total)} (updated ${updated} existing)`;
+  }
+  return `Imported ${pluralizeConfigs(total)}`;
 }
 
 export function ConfigSelect(props: {
@@ -72,8 +95,10 @@ export function ConfigList(props: {
 }) {
   const configIds = useAppState((s) => s.config.ids);
   const dispatch = useAppDispatch();
+  const store = useAppStore();
   const roomName = useRoomName();
   const setLastConfigSelected = useSetLastConfigSelected();
+  const [exportOpen, setExportOpen] = useState(false);
 
   const isEmpty = !configIds.length;
 
@@ -85,9 +110,34 @@ export function ConfigList(props: {
     const nextIdx = idx < configIds.length - 1 ? idx + 1 : idx - 1;
     return nextIdx > -1 ? configIds[nextIdx] : null;
   }
+  function importConfigs() {
+    void loadConfigs().then((configs) => {
+      const existingIds = configSlice.selectors.selectIds(store.getState());
+      const updated = configs.filter((c) => existingIds.includes(c.id)).length;
+      dispatch(configSlice.actions.setMany(configs));
+      const last = configs[configs.length - 1];
+      if (last) {
+        changeConfig(last.id);
+      }
+      if (configs.length > 1 || updated) {
+        toaster.show({
+          message: importToastMessage(configs.length, updated),
+          icon: "import",
+          intent: "success",
+        });
+      }
+    });
+  }
   return (
     <div className={styles.listContainer}>
-      {isEmpty && getEmptyItemLabel(true)}
+      {!isEmpty && (
+        <Button
+          variant="minimal"
+          icon={<FloppyDisk />}
+          text="Export configs…"
+          onClick={() => setExportOpen(true)}
+        />
+      )}
       {configIds.map((cid, idx) => (
         <ConfigListEntry
           key={cid}
@@ -98,32 +148,125 @@ export function ConfigList(props: {
         />
       ))}
       <Card compact style={{ opacity: 0.6 }}>
-        <ButtonGroup className={styles.actionButtons}>
-          <Tooltip content={"Import from JSON"} placement="top">
-            <Button
-              icon={<Import />}
-              onClick={() => {
-                void loadConfig().then((c) => {
-                  dispatch(configSlice.actions.addOne(c));
-                  changeConfig(c.id);
-                });
-              }}
-            />
-          </Tooltip>
-          <Tooltip content={"New Config"} placement="top">
-            <Button
-              icon={<ThAdd />}
-              onClick={() =>
-                dispatch(createNewConfig(roomName)).then((c) =>
-                  changeConfig(c.id),
-                )
-              }
-            />
-          </Tooltip>
+        <h2>Create config…</h2>
+        <ButtonGroup fill>
+          <Button
+            icon={<Import />}
+            text="From JSON"
+            title="Import one or more configs from a file"
+            onClick={importConfigs}
+          />
+          <Button
+            icon={<ThAdd />}
+            text="From scratch"
+            onClick={() =>
+              dispatch(createNewConfig(roomName)).then((c) =>
+                changeConfig(c.id),
+              )
+            }
+          />
         </ButtonGroup>
-        <h2>Create new</h2>
       </Card>
+      <BatchExportDialog
+        isOpen={exportOpen}
+        onClose={() => setExportOpen(false)}
+      />
     </div>
+  );
+}
+
+function BatchExportDialog(props: { isOpen: boolean; onClose: () => void }) {
+  return (
+    <Dialog
+      isOpen={props.isOpen}
+      title="Export configs"
+      onClose={props.onClose}
+    >
+      {props.isOpen && <BatchExportForm onClose={props.onClose} />}
+    </Dialog>
+  );
+}
+
+function BatchExportForm(props: { onClose: () => void }) {
+  const configIds = useAppState((s) => s.config.ids);
+  const store = useAppStore();
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(
+    () => new Set(configIds as string[]),
+  );
+
+  function toggle(id: string) {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  }
+
+  const allSelected = selectedIds.size === configIds.length;
+  function toggleAll() {
+    setSelectedIds(allSelected ? new Set() : new Set(configIds as string[]));
+  }
+
+  function handleExport() {
+    const configs = configSlice.selectors
+      .selectAll(store.getState())
+      .filter((c) => selectedIds.has(c.id));
+    void saveConfigs(configs);
+    props.onClose();
+  }
+
+  return (
+    <>
+      <DialogBody>
+        <Checkbox
+          checked={allSelected}
+          indeterminate={!allSelected && selectedIds.size > 0}
+          onChange={toggleAll}
+          label="Select all"
+        />
+        {(configIds as string[]).map((cid) => (
+          <BatchExportRow
+            key={cid}
+            configId={cid}
+            checked={selectedIds.has(cid)}
+            onToggle={toggle}
+          />
+        ))}
+      </DialogBody>
+      <DialogFooter
+        actions={
+          <Button
+            intent="primary"
+            icon={<FloppyDisk />}
+            disabled={!selectedIds.size}
+            onClick={handleExport}
+          >
+            Export {selectedIds.size}
+          </Button>
+        }
+      />
+    </>
+  );
+}
+
+function BatchExportRow(props: {
+  configId: string;
+  checked: boolean;
+  onToggle(id: string): void;
+}) {
+  const config = useAppState((s) =>
+    configSlice.selectors.selectById(s, props.configId),
+  );
+  return (
+    <Checkbox
+      checked={props.checked}
+      onChange={() => props.onToggle(props.configId)}
+      label={`${config.name} (${config.gameKey}, ${config.lowerBound}-${config.upperBound})`}
+    />
   );
 }
 
@@ -222,6 +365,7 @@ function ConfigActionsMenu(props: {
       <MenuItem
         icon={<Trash />}
         text="Delete"
+        intent="danger"
         onClick={(e) => {
           e.preventDefault();
           props.onDelete();

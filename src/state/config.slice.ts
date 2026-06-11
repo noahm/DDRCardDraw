@@ -66,6 +66,8 @@ export const configSlice = createSlice({
     addOne: adapter.addOne,
     updateOne: adapter.updateOne,
     removeOne: adapter.removeOne,
+    /** insert or fully replace configs, keyed by id */
+    setMany: adapter.setMany,
     // oxlint-enable typescript/unbound-method
   },
   selectors: {
