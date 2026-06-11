@@ -69,6 +69,12 @@ function validateContents(dataFile) {
           `unrecognized diffClass "${chart.diffClass}" used by ${song.name}`,
         );
       }
+      if (chart.jacket) {
+        const jacketPath = join(jacketsDir, chart.jacket);
+        if (!existsSync(jacketPath)) {
+          errors.add(`missing jacket image ${chart.jacket}`);
+        }
+      }
       if (dataFile.meta.usesDrawGroups) {
         if (!chart.drawGroup) {
           errors.add(`${song.name} is missing a draw group`);
