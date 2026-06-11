@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1780035585309
+    "lastUpdated": 1781147073607
   },
   "defaults": {
     "style": "single",
@@ -39535,17 +39535,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 240
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 507
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 687
         },
         {
           "style": "single",
@@ -39556,12 +39559,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 507
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 663
         },
         {
           "style": "double",
@@ -39571,7 +39576,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Miles on It.jpg"
+      "jacket": "ddr_world/Miles on It.jpg",
+      "remyLink": "https://remywiki.com/Miles_on_It"
     },
     {
       "name": "Mind Parasite",
@@ -41005,6 +41011,52 @@
       "jacket": "ddr_max-ext/MY SUMMER LOVE(TOMMY'S SMILE MIX).png",
       "saHash": "d99P0I1i960QO0oolD6oQIO8OObO9Plb",
       "saIndex": "85"
+    },
+    {
+      "name": "MYSTIC CUBE",
+      "artist": "こふ",
+      "saHash": "i1QlPD8oooQ6lQq9Oo9qdi9q0Q0QqdoQ",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/MYSTIC CUBE.jpg"
     },
     {
       "name": "Mythomane",
@@ -58044,7 +58096,8 @@
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 543
         },
         {
           "style": "single",
@@ -58061,7 +58114,8 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 519
         },
         {
           "style": "double",
@@ -58077,7 +58131,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Stars In The Sky.jpg"
+      "jacket": "ddr_world/Stars In The Sky.jpg",
+      "remyLink": "https://remywiki.com/Stars_In_The_Sky"
     },
     {
       "name": "STARS☆☆☆(2nd NAOKI's style)",
@@ -84586,6 +84641,53 @@
       "remyLink": "https://remywiki.com/Neoki_yashi_no_ki"
     },
     {
+      "name": "少女、摩天楼へ",
+      "artist": "BEMANI Sound Team \"U1 overground\"",
+      "saHash": "o9iQ96669qo618i6DobbdD8I1lPiq8oQ",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["platinumMembers"],
+      "jacket": "ddr_world/少女、摩天楼へ.jpg",
+      "remyLink": "https://remywiki.com/Shoujo,_matenrou_e"
+    },
+    {
       "name": "幸せになれる隠しコマンドがあるらしい",
       "name_translation": "Shiawase ni nareru kakushi command ga arurashii",
       "artist": "うたたP feat. 結月ゆかり",
@@ -92570,6 +92672,52 @@
       "saIndex": "334"
     },
     {
+      "name": "電幻圏",
+      "artist": "Lamanya feat.ナースロボ＿タイプＴ",
+      "saHash": "1l0i6b10D8dbD60QIbiqlidQo9d69qII",
+      "bpm": "148",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/電幻圏.jpg"
+    },
+    {
       "name": "革命",
       "name_translation": "KAKUMEI",
       "artist": "dj TAKA with NAOKI",
@@ -92945,7 +93093,8 @@
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/魄.jpg"
+      "jacket": "ddr_world/魄.jpg",
+      "remyLink": "https://remywiki.com/Haku"
     },
     {
       "name": "魔法のたまご ～心菜 ELECTRO POP edition～",
