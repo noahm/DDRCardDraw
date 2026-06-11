@@ -26,7 +26,7 @@ function typedKeys(object) {
 }
 
 const OUTFILE = "src/songs/sdvx_nabla.json";
-const JACKETS_PATH = "src/assets/jackets/sdvx";
+const JACKETS_PATH = "src/assets/jackets/sdvx/nabla";
 
 const radarAxes = [
   "notes",
@@ -245,7 +245,17 @@ function buildSong(song, availableJackets) {
     驩: "Ø",
     齲: "♥",
     齶: "♡",
+    黻: "*",
+    釁: "🍄",
+    闃: "Ā",
+    蔕: "ῦ",
+    鑷: "ゔ",
+    饌: "²",
     趁: "Ǣ",
+    瀑: "À",
+    鹹: "Ĥ",
+    躔: "★",
+    壥: "Є",
     騫: "á",
     曦: "à",
     驫: "ā",
@@ -268,6 +278,8 @@ function buildSong(song, availableJackets) {
     盥: "⚙︎",
     疉: "Ö",
     鑒: "₩",
+    煢: "ø",
+    鷸: "♫",
   };
 
   let name = info.title_name[0];
