@@ -4,8 +4,14 @@ import { configSlice } from "./config.slice";
 import { drawingsSlice } from "./drawings.slice";
 import { receiveRoomState } from "./central";
 import { eventSlice } from "./event.slice";
+import { customGameDataSlice } from "./custom-game-data.slice";
 
-const combinedReducer = combineSlices(drawingsSlice, configSlice, eventSlice);
+const combinedReducer = combineSlices(
+  drawingsSlice,
+  configSlice,
+  eventSlice,
+  customGameDataSlice,
+);
 
 export type AppState = ReturnType<typeof combinedReducer>;
 

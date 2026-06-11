@@ -8,6 +8,7 @@ import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
 import { createClientStore } from "../state/store";
 import { useMemo } from "react";
+import { DropHandler } from "../drop-handler";
 
 export function TournamentModeAppShell() {
   const params = useParams<"roomName">();
@@ -20,6 +21,7 @@ export function TournamentModeAppShell() {
       <RoomSocketManager roomName={params.roomName}>
         <UrqlProvider value={urqlClient}>
           <Header />
+          <DropHandler />
           <Outlet />
         </UrqlProvider>
       </RoomSocketManager>

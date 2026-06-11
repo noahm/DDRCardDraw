@@ -1,10 +1,13 @@
 import type { PackWithSongs } from "simfile-parser/browser";
 import { GameData, Chart, Song } from "../models/SongData";
+import { resizeImage } from "./resize-image";
+import { uploadRoomAsset } from "../realtime/host";
 
-export function getDataFileFromPack(
+export async function getDataFileFromPack(
   pack: PackWithSongs,
+  roomName: string,
   useTiers = false,
-): GameData {
+): Promise<GameData> {
   const someColors: Record<string, string | undefined> = {
     beginner: "#98aafd",
     basic: "#2BC856",
@@ -74,10 +77,16 @@ export function getDataFileFromPack(
       }
     }
 
+    let jacketUrl = "";
+    if (finalJacket) {
+      const resized = await resizeImage(finalJacket);
+      jacketUrl = await uploadRoomAsset(roomName, resized);
+    }
+
     const song: Song = {
       name: parsedSong.title.titleName,
       name_translation: parsedSong.title.translitTitleName || "",
-      jacket: finalJacket ? URL.createObjectURL(finalJacket) : "",
+      jacket: jacketUrl,
       bpm,
       artist: parsedSong.artist,
       charts: [],

@@ -25,7 +25,7 @@ import { useSetLastConfigSelected } from "../state/config.atoms";
 import { configSlice } from "../state/config.slice";
 import { loadConfig, saveConfig } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
-import { useStockGameData } from "../state/game-data.atoms";
+import { useGameData } from "../state/game-data.atoms";
 
 function getEmptyItemLabel(empty: boolean) {
   if (!empty) return "select a config";
@@ -139,7 +139,7 @@ function ConfigListEntry(props: {
   const config = useAppState((s) =>
     configSlice.selectors.selectById(s, props.configId),
   );
-  const gameData = useStockGameData(config.gameKey);
+  const gameData = useGameData(config.gameKey);
   const multiDraws = config.multiDraws?.configs.length
     ? `${config.multiDraws.configs.length} ${config.multiDraws.merge ? "draws" : "sets"}`
     : null;

@@ -5,13 +5,19 @@ import translations from "./assets/i18n.json";
 import { I18NDict } from "./models/SongData";
 import { detectedLanguage, flattenedKeys } from "./utils";
 import { stockDataCache } from "./state/game-data.atoms";
+import { useAppState } from "./state/store";
 
 const FALLBACK_LOCALE = "en";
 
 const typedTranslations = translations as Record<string, I18NDict>;
 
 export function IntlProvider({ children }: { children: ReactNode }) {
-  const allLoadedData = useAtomValue(stockDataCache);
+  const stockData = useAtomValue(stockDataCache);
+  const customData = useAppState((s) => s.customGameData);
+  const allLoadedData = useMemo(
+    () => ({ ...stockData, ...customData }),
+    [stockData, customData],
+  );
 
   const messages = useMemo(() => {
     const ret: Record<string, string> = {};

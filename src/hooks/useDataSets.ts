@@ -1,10 +1,9 @@
 import { useMemo } from "react";
 import { availableGameData } from "../utils";
-import { customDataCache } from "../state/game-data.atoms";
-import { useAtomValue } from "jotai";
+import { useAppState } from "../state/store";
 
 export function useDataSets() {
-  const importedData = useAtomValue(customDataCache);
+  const importedData = useAppState((s) => s.customGameData);
 
   const available = useMemo(() => {
     return [

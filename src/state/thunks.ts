@@ -1,9 +1,6 @@
 import { AppThunk } from "./store";
 import { draw, DrawingMeta, newPlaceholder } from "../card-draw";
-import {
-  getLastGameSelected,
-  loadStockGamedataByName,
-} from "./game-data.atoms";
+import { getLastGameSelected, loadGameDataByKey } from "./game-data.atoms";
 import { drawingsSlice, getDrawingFromCompoundId } from "./drawings.slice";
 import {
   CHART_PLACEHOLDER,
@@ -45,7 +42,7 @@ export function createDraw(
       console.error("couldnt draw, no config");
       return "nok";
     }
-    const gameData = await loadStockGamedataByName(config.gameKey);
+    const gameData = await loadGameDataByKey(state, config.gameKey);
     if (!gameData) {
       console.error("couldnt draw, no game data");
       trackDraw(null);
@@ -94,7 +91,8 @@ export function createDraw(
           console.error("couldnt perform extra draw, no config");
           continue;
         }
-        const otherGameData = await loadStockGamedataByName(
+        const otherGameData = await loadGameDataByKey(
+          state,
           otherConfig.gameKey,
         );
         if (!otherGameData) {
@@ -141,7 +139,7 @@ export function createSubdraw(
       console.error("couldnt draw, no config");
       return "nok";
     }
-    const gameData = await loadStockGamedataByName(config.gameKey);
+    const gameData = await loadGameDataByKey(state, config.gameKey);
     if (!gameData) {
       console.error("couldnt draw, no game data");
       trackDraw(null);
@@ -193,7 +191,7 @@ export function createRedrawAll(drawingId: CompoundSetId): AppThunk {
       ...originalConfig,
       chartCount: target.charts.length - chartsToKeep.length,
     };
-    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
+    const gameData = await loadGameDataByKey(state, originalConfig.gameKey);
 
     const charts = draw(gameData!, drawConfig, {
       meta: parent.meta,
@@ -224,7 +222,7 @@ export function createRedrawChart(
     const customConfig: ConfigState = {
       ...state.config.entities[target.configId],
     };
-    const gameData = await loadStockGamedataByName(customConfig.gameKey);
+    const gameData = await loadGameDataByKey(state, customConfig.gameKey);
     if (!gameData) return;
 
     const charts = draw(gameData, customConfig, {
@@ -272,7 +270,7 @@ export function createPlusOneChart(
       drawingId,
     );
     const originalConfig = state.config.entities[target.configId];
-    const gameData = await loadStockGamedataByName(originalConfig.gameKey);
+    const gameData = await loadGameDataByKey(state, originalConfig.gameKey);
     if (!gameData) return;
 
     const customConfig: ConfigState = {
@@ -380,14 +378,15 @@ export function createNewConfig(
   basisConfigId?: string,
 ): AppThunk<Promise<ConfigState>> {
   return async (dispatch, getState) => {
+    const state = getState();
     const basisConfig: Partial<ConfigState> = basisConfigId
-      ? getState().config.entities[basisConfigId]
+      ? state.config.entities[basisConfigId]
       : {};
     const gameKey =
       basisConfig.gameKey ||
       getLastGameSelected(roomName) ||
       availableGameData[0].name;
-    const gameData = await loadStockGamedataByName(gameKey);
+    const gameData = await loadGameDataByKey(state, gameKey);
     const newConfig: ConfigState = {
       ...defaultConfig,
       ...getOverridesFromGameData(gameData),
@@ -407,9 +406,10 @@ export function createConfigFromInputs(
   basisConfigId?: string,
 ): AppThunk<Promise<ConfigState>> {
   return async (dispatch, getState) => {
-    const gameData = await loadStockGamedataByName(gameKey);
+    const state = getState();
+    const gameData = await loadGameDataByKey(state, gameKey);
     const basisConfig = basisConfigId
-      ? getState().config.entities[basisConfigId]
+      ? state.config.entities[basisConfigId]
       : {};
     const newConfig: ConfigState = {
       ...defaultConfig,
@@ -429,8 +429,8 @@ export function createConfigFromImport(
   gameKey: string,
   imported: ConfigState,
 ): AppThunk<Promise<ConfigState>> {
-  return async (dispatch) => {
-    const gameData = await loadStockGamedataByName(gameKey);
+  return async (dispatch, getState) => {
+    const gameData = await loadGameDataByKey(getState(), gameKey);
     const basisConfig = imported;
     const newConfig: ConfigState = {
       ...defaultConfig,
@@ -450,8 +450,9 @@ export function changeGameKeyForConfig(
   gameKey: string,
 ): AppThunk<Promise<void>> {
   return async (dispatch, getState) => {
-    const startingConfig = getState().config.entities[configId];
-    const gameData = await loadStockGamedataByName(gameKey);
+    const state = getState();
+    const startingConfig = state.config.entities[configId];
+    const gameData = await loadGameDataByKey(state, gameKey);
     if (!gameData) return;
     const changes: Partial<ConfigState> = { gameKey };
     if (!gameData.meta.styles.includes(startingConfig.style)) {

@@ -6,14 +6,15 @@ import {
   FormGroup,
   Switch,
 } from "@blueprintjs/core";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { PackWithSongs } from "simfile-parser/browser";
 import { getDataFileFromPack } from "./utils/itg-import";
-import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
 import { Import } from "@blueprintjs/icons";
-import { useSetAtom } from "jotai";
-import { customDataCache } from "./state/game-data.atoms";
+import { useAppDispatch } from "./state/store";
+import { customGameDataSlice } from "./state/custom-game-data.slice";
+import { useRoomName } from "./hooks/useRoomName";
+import { GameData } from "./models/SongData";
 
 function loadParserModule() {
   return import("simfile-parser/browser");
@@ -118,33 +119,43 @@ function useDataParsing(
 function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   const [tiered, setTiered] = useState(false);
   const [saving, setSaving] = useState(false);
-  const setCustomData = useSetAtom(customDataCache);
+  const [importError, setImportError] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+  const roomName = useRoomName();
 
   const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
-  const derivedData = useMemo(() => {
+
+  const chartCount = parsedPack
+    ? parsedPack.simfiles.reduce(
+        (total, song) => total + song.availableTypes.length,
+        0,
+      )
+    : undefined;
+
+  const handleConfirm = useCallback(async () => {
     if (!parsedPack) {
       return;
     }
-    return getDataFileFromPack(parsedPack, tiered);
-  }, [parsedPack, tiered]);
-
-  const handleConfirm = useCallback(async () => {
-    if (!parsedPack || !derivedData) {
-      return;
-    }
     setSaving(true);
-    setCustomData((prev) => {
-      return {
-        ...prev,
-        [parsedPack.name]: derivedData,
-      };
-    });
-    await pause(500);
-    setSaving(false);
-    onSave();
-  }, [parsedPack, derivedData, setCustomData, onSave]);
+    setImportError(null);
+    try {
+      const data: GameData = await getDataFileFromPack(
+        parsedPack,
+        roomName,
+        tiered,
+      );
+      dispatch(
+        customGameDataSlice.actions.add({ name: parsedPack.name, data }),
+      );
+      onSave();
+    } catch (e) {
+      setImportError(convertErrorToString(e));
+    } finally {
+      setSaving(false);
+    }
+  }, [parsedPack, roomName, tiered, dispatch, onSave]);
 
-  const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
+  const maybeSkeleton = parsedPack ? "" : Classes.SKELETON;
 
   let body = (
     <>
@@ -163,23 +174,18 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
         <dt>Total Songs</dt>
         <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
         <dt>Total Charts</dt>
-        <dd>
-          {derivedData
-            ? derivedData.songs.reduce(
-                (total, item) => total + item.charts.length,
-                0,
-              )
-            : "??"}
-        </dd>
+        <dd>{chartCount ?? "??"}</dd>
       </dl>
     </>
   );
 
-  if (parseError) {
+  if (parseError || importError) {
     body = (
       <>
         <h1>Error importing pack</h1>
-        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
+        <code style={{ whiteSpace: "pre-wrap" }}>
+          {parseError || importError}
+        </code>
       </>
     );
   }

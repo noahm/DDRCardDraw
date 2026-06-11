@@ -3,6 +3,8 @@ import { atomFamily, atomWithStorage } from "jotai/utils";
 import { GameData } from "../models/SongData";
 import { useEffect } from "react";
 import { useRoomName } from "../hooks/useRoomName";
+import { useAppState } from "./store";
+import type { AppState } from "./root-reducer";
 
 const lastGameSelectedByEvent = atomFamily((roomName: string) =>
   atomWithStorage<string | undefined>(
@@ -30,11 +32,18 @@ export function getLastGameSelected(roomName: string) {
 }
 
 export const stockDataCache = atom<Record<string, GameData>>({});
-export const customDataCache = atom<Record<string, GameData>>({});
 
 export const stockDataByName = atomFamily((name: string) =>
   atom((get) => get(stockDataCache)[name]),
 );
+
+/** looks up game data by key, checking room-synced custom data before falling back to bundled stock data */
+export async function loadGameDataByKey(
+  state: AppState,
+  name: string,
+): Promise<GameData | undefined> {
+  return state.customGameData[name] ?? (await loadStockGamedataByName(name));
+}
 
 export async function loadStockGamedataByName(name: string) {
   const jotaiStore = getDefaultStore();
@@ -67,4 +76,11 @@ export function useStockGameData(name: string): GameData | null {
     }
   }, [data, name]);
   return data || null;
+}
+
+/** looks up game data by key, preferring room-synced custom data over bundled stock data */
+export function useGameData(name: string): GameData | null {
+  const customData = useAppState((s) => s.customGameData[name]);
+  const stockData = useStockGameData(customData ? "" : name);
+  return customData || stockData;
 }

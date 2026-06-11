@@ -25,7 +25,24 @@ import type { Database, Json } from "./database.types.ts";
 
 const PORT = Number(process.env.PORT) || 1999;
 const ROOM_PATH = /^\/parties\/main\/([^/?]+)/;
+const ASSET_PATH = /^\/parties\/main\/([^/?]+)\/assets\/?([^/?]*)/;
+const ASSET_FILENAME = /^[A-Za-z0-9_-]+\.(?:jpg|png|webp|gif)$/;
 const STATE_DIR = join(process.cwd(), ".room-state");
+const MAX_ASSET_SIZE = 2 * 1024 * 1024; // 2MB
+
+const IMAGE_EXTENSIONS_BY_MIME: Record<string, string> = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+  "image/gif": "gif",
+};
+
+const IMAGE_MIME_BY_EXTENSION: Record<string, string> = {
+  jpg: "image/jpeg",
+  png: "image/png",
+  webp: "image/webp",
+  gif: "image/gif",
+};
 
 function getSupabase() {
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
@@ -147,6 +164,76 @@ function roomIdFromUrl(url: string | undefined): string | undefined {
   if (match) return decodeURIComponent(match[1]);
 }
 
+function assetRequestFromUrl(
+  url: string | undefined,
+): { roomId: string; filename: string } | undefined {
+  const match = url && ASSET_PATH.exec(url);
+  if (!match) return undefined;
+  return { roomId: decodeURIComponent(match[1]), filename: match[2] };
+}
+
+function assetDir(roomId: string) {
+  return join(STATE_DIR, encodeURIComponent(roomId), "assets");
+}
+
+async function handleAssetUpload(
+  req: import("node:http").IncomingMessage,
+  res: import("node:http").ServerResponse,
+  roomId: string,
+) {
+  const contentType = req.headers["content-type"] || "";
+  const ext = IMAGE_EXTENSIONS_BY_MIME[contentType];
+  if (!ext) {
+    res.writeHead(415);
+    res.end("unsupported content type");
+    return;
+  }
+
+  const chunks: Buffer[] = [];
+  let size = 0;
+  for await (const chunk of req as AsyncIterable<Buffer>) {
+    size += chunk.length;
+    if (size > MAX_ASSET_SIZE) {
+      res.writeHead(413);
+      res.end("asset too large");
+      return;
+    }
+    chunks.push(chunk);
+  }
+
+  const filename = `${nanoid()}.${ext}`;
+  await mkdir(assetDir(roomId), { recursive: true });
+  await writeFile(join(assetDir(roomId), filename), Buffer.concat(chunks));
+
+  const url = `/parties/main/${encodeURIComponent(roomId)}/assets/${filename}`;
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({ url }));
+}
+
+async function handleAssetGet(
+  res: import("node:http").ServerResponse,
+  roomId: string,
+  filename: string,
+) {
+  if (!ASSET_FILENAME.test(filename)) {
+    res.writeHead(400);
+    res.end();
+    return;
+  }
+  const ext = filename.slice(filename.lastIndexOf(".") + 1);
+  try {
+    const data = await readFile(join(assetDir(roomId), filename));
+    res.writeHead(200, {
+      "Content-Type": IMAGE_MIME_BY_EXTENSION[ext],
+      "Cache-Control": "public, max-age=31536000, immutable",
+    });
+    res.end(data);
+  } catch {
+    res.writeHead(404);
+    res.end();
+  }
+}
+
 function onConnect(ws: WebSocket, roomId: string, room: Room) {
   const connectionId = nanoid();
   room.connections.set(connectionId, ws);
@@ -188,6 +275,19 @@ function onConnect(ws: WebSocket, roomId: string, room: Room) {
 }
 
 const httpServer = createServer((req, res) => {
+  const asset = assetRequestFromUrl(req.url);
+  if (asset) {
+    if (req.method === "POST" && !asset.filename) {
+      void handleAssetUpload(req, res, asset.roomId);
+    } else if (req.method === "GET" && asset.filename) {
+      void handleAssetGet(res, asset.roomId, asset.filename);
+    } else {
+      res.writeHead(404);
+      res.end();
+    }
+    return;
+  }
+
   const roomId = req.method === "GET" ? roomIdFromUrl(req.url) : undefined;
   if (!roomId) {
     res.writeHead(404);

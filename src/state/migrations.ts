@@ -6,4 +6,5 @@ import type { AppState } from "./root-reducer";
 export function applyMigrations(state: AppState) {
   if (state.drawings) migrateToSubdraws(state.drawings);
   if (state.event) addObsLabels(state.event);
+  if (!state.customGameData) state.customGameData = {};
 }
