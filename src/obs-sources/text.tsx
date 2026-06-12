@@ -38,11 +38,15 @@ export function CabPlayers() {
   return <h1>{text}</h1>;
 }
 
+export function toDisplayType(input: string | undefined) {
+  return input as "name" | "score" | undefined;
+}
+
 export function CabPlayer(props: {
   p: number;
-  displayType?: "NameAndScore" | "Name" | "Score";
+  displayType?: "name" | "score";
 }) {
-  const { displayType = "NameAndScore " } = props;
+  const { displayType } = props;
   const params = useParams<"roomName" | "cabId">();
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
@@ -60,10 +64,10 @@ export function CabPlayer(props: {
       if (curr === playerIndex) return prev + 1;
       return prev;
     }, 0);
-    if (displayType === "Name") {
+    if (displayType === "name") {
       return name;
     }
-    if (displayType === "Score") {
+    if (displayType === "score") {
       return score;
     }
     return `${name} (${score})`;

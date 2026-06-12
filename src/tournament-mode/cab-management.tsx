@@ -25,6 +25,8 @@ import {
   People,
   Person,
   Remove,
+  Tag,
+  Numerical,
 } from "@blueprintjs/icons";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
@@ -125,48 +127,34 @@ function CabSummary({ cab }: { cab: CabInfo }) {
           stub="phase"
           cabId={cab.id}
         />
-        <CopySourceMenuItem
-          icon={<People />}
-          text="All Players"
-          stub="players"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 1"
-          stub="p1"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 1 Name"
-          stub="p1-name"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 1 Score"
-          stub="p1-score"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 2"
-          stub="p2"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 2 Name"
-          stub="p2-name"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Person />}
-          text="Player 2 Score"
-          stub="p2-score"
-          cabId={cab.id}
-        />
+        <MenuItem icon={<People />} text="Players">
+          <CopySourceMenuItem
+            icon={<People />}
+            text="All Players"
+            stub="players"
+            cabId={cab.id}
+          />
+          <MenuItem icon={<Person />} text="Single Player">
+            <CopySourceMenuItem
+              text="Name and Score"
+              stub="player/1"
+              cabId={cab.id}
+            />
+            <CopySourceMenuItem
+              icon={<Tag />}
+              text="Name"
+              stub="player/1/name"
+              cabId={cab.id}
+            />
+            <CopySourceMenuItem
+              icon={<Numerical />}
+              text="Score"
+              stub="player/1/score"
+              cabId={cab.id}
+            />
+          </MenuItem>
+          <MenuItem disabled text="(edit URL for players beyond 1)" />
+        </MenuItem>
       </MenuItem>
 
       <MenuItem icon={<Remove />} text="Remove Cab" onClick={removeCab} />
