@@ -1,5 +1,6 @@
 import { useDrawing } from "../drawing-context";
+import { playerNameByIndex } from "../models/Drawing";
 
-export function usePlayerLabel(n: number) {
-  return useDrawing((d) => d.players[n - 1] || `P${n}`);
+export function usePlayerLabelForIndex(pIdx: number) {
+  return useDrawing((d) => playerNameByIndex(d.meta, pIdx));
 }
