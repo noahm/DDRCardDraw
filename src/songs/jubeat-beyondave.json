@@ -23,7 +23,7 @@
       "jubeat Ave.",
       "jubeat beyond the Ave."
     ],
-    "lastUpdated": 1774594397906
+    "lastUpdated": 1781271627743
   },
   "defaults": {
     "style": "solo",
@@ -1047,6 +1047,21 @@
       ],
       "remyLink": "https://remywiki.com/BEYOND_THE_EARTH",
       "jacket": "jubeat/beyond_the_ave/id35446287.jpg"
+    },
+    {
+      "name": "Big Daddy",
+      "artist": "USAO",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id91000827",
+      "bpm": "190",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.8 }
+      ],
+      "remyLink": "https://remywiki.com/Big_Daddy",
+      "jacket": "jubeat/beyond_the_ave/id91000827.jpg",
+      "flags": ["licensed", "holds"]
     },
     {
       "name": "BILLION MONEY BAZOOKA",
@@ -4451,6 +4466,21 @@
       "jacket": "jubeat/ripples/id88336511.jpg"
     },
     {
+      "name": "IRIS OUT",
+      "artist": "米津玄師",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id38214956",
+      "bpm": "135",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 2 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 5 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
+      ],
+      "remyLink": "https://remywiki.com/IRIS_OUT",
+      "jacket": "jubeat/beyond_the_ave/id38214956.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "name": "It's my Miracle",
       "artist": "Another Infinity feat. Mayumi Morinaga",
       "folder": "jubeat beyond the Ave.",
@@ -5443,6 +5473,21 @@
       "flags": ["holds"]
     },
     {
+      "name": "MEGALOVANIA",
+      "artist": "Toby Fox",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id87892930",
+      "bpm": "240",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10 }
+      ],
+      "remyLink": "https://remywiki.com/MEGALOVANIA",
+      "jacket": "jubeat/beyond_the_ave/id87892930.jpg",
+      "flags": ["licensed", "holds"]
+    },
+    {
       "name": "Metamorphic",
       "artist": "BEMANI Sound Team \"Sota Fujimori\"",
       "folder": "jubeat Ave.",
@@ -5913,7 +5958,7 @@
       ],
       "remyLink": "https://remywiki.com/New_Hero",
       "jacket": "jubeat/beyond_the_ave/id29819660.jpg",
-      "flags": ["licensed"]
+      "flags": ["licensed", "holds"]
     },
     {
       "name": "New World",
@@ -6073,6 +6118,21 @@
       ],
       "remyLink": "https://remywiki.com/Nostos",
       "jacket": "jubeat/qubell/id71381078.jpg"
+    },
+    {
+      "name": "Nyan Cat",
+      "artist": "daniwellP feat. 桃音モモ",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id64860813",
+      "bpm": "142",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 6 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.4 }
+      ],
+      "remyLink": "https://remywiki.com/Nyan_Cat",
+      "jacket": "jubeat/beyond_the_ave/id64860813.jpg",
+      "flags": ["licensed"]
     },
     {
       "name": "O JIYA",
@@ -7207,7 +7267,9 @@
         { "style": "solo", "diffClass": "advanced", "lvl": 9.1 },
         { "style": "solo", "diffClass": "extreme", "lvl": 10.7 }
       ],
-      "jacket": "jubeat/beyond_the_ave/id29946212.jpg"
+      "jacket": "jubeat/beyond_the_ave/id29946212.jpg",
+      "remyLink": "https://remywiki.com/RUINA",
+      "flags": ["holds"]
     },
     {
       "name": "Runway Drive",
@@ -10873,6 +10935,21 @@
       "jacket": "jubeat/prop/id51647087.jpg"
     },
     {
+      "name": "イガク",
+      "artist": "原口沙輔",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id48892112",
+      "bpm": "170",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.6 }
+      ],
+      "remyLink": "https://remywiki.com/Igaku",
+      "jacket": "jubeat/beyond_the_ave/id48892112.jpg",
+      "flags": ["licensed"]
+    },
+    {
       "name": "イブの時代っ！",
       "artist": "日向美ビタースイーツ♪",
       "folder": "jubeat saucer",
@@ -10944,6 +11021,21 @@
       "remyLink": "https://remywiki.com/Igouzerogata",
       "jacket": "jubeat/clan/id73897193.jpg",
       "flags": ["holds"]
+    },
+    {
+      "name": "ウ”ィ”エ”",
+      "artist": "バーバパパ",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id49702414",
+      "bpm": "155",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.8 }
+      ],
+      "remyLink": "https://remywiki.com/V-E-A-H",
+      "jacket": "jubeat/beyond_the_ave/id49702414.jpg",
+      "flags": ["licensed"]
     },
     {
       "name": "ウィリアム・テル序曲",
@@ -11510,7 +11602,8 @@
         { "style": "solo", "diffClass": "extreme", "lvl": 10.4 }
       ],
       "remyLink": "https://remywiki.com/Syuborea-chan_hoshi_no_koushin",
-      "jacket": "jubeat/beyond_the_ave/id42003685.jpg"
+      "jacket": "jubeat/beyond_the_ave/id42003685.jpg",
+      "flags": ["holds"]
     },
     {
       "name": "シンクロフィッシュ",
@@ -11567,6 +11660,21 @@
       ],
       "remyLink": "https://remywiki.com/Sky_diver",
       "jacket": "jubeat/qubell/id57012516.jpg"
+    },
+    {
+      "name": "スカーレット警察のゲットーパトロール24時",
+      "artist": "七条レタスグループ",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id24315463",
+      "bpm": "160",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.7 }
+      ],
+      "remyLink": "https://remywiki.com/Scarlet_keisatsu_no_ghetto_patrol_24_ji",
+      "jacket": "jubeat/beyond_the_ave/id24315463.jpg",
+      "flags": ["licensed", "holds"]
     },
     {
       "name": "ススススペースハリネズミ",
@@ -14787,7 +14895,8 @@
         { "style": "solo", "diffClass": "extreme", "lvl": 10.4 }
       ],
       "remyLink": "https://remywiki.com/Oborozuki_oou_kumo_wo_mo_sakinu",
-      "jacket": "jubeat/beyond_the_ave/id47896490.jpg"
+      "jacket": "jubeat/beyond_the_ave/id47896490.jpg",
+      "flags": ["holds"]
     },
     {
       "name": "朱と碧のランページ",
@@ -16053,6 +16162,21 @@
       ],
       "remyLink": "https://remywiki.com/Itetsu_no_pride",
       "jacket": "jubeat/festo/id38492405.jpg"
+    },
+    {
+      "name": "鏡に恋して",
+      "artist": "礼賛",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id93734064",
+      "bpm": "133",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 1 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 5 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 8 }
+      ],
+      "remyLink": "https://remywiki.com/Kagami_ni_koishite",
+      "jacket": "jubeat/beyond_the_ave/id93734064.jpg",
+      "flags": ["licensed"]
     },
     {
       "name": "閉塞的フレーション",
