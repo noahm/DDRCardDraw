@@ -6956,7 +6956,12 @@
       "charts": [
         { "lvl": 5, "diffClass": "basic", "style": "solo", "flags": ["holds"] },
         { "lvl": 9.7, "diffClass": "advanced", "style": "solo" },
-        { "lvl": 10.7, "diffClass": "extreme", "style": "solo", "flags": ["holds"] }
+        {
+          "lvl": 10.7,
+          "diffClass": "extreme",
+          "style": "solo",
+          "flags": ["holds"]
+        }
       ],
       "remyLink": "https://remywiki.com/Pray_nightly",
       "jacket": "jubeat/beyond_the_ave/id24950642.jpg",
