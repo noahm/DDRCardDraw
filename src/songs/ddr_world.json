@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1781147073607
+    "lastUpdated": 1781182186472
   },
   "defaults": {
     "style": "single",
@@ -41022,41 +41022,49 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 285
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 645
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1083
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1977
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 639
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1038
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1878
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/MYSTIC CUBE.jpg"
+      "jacket": "ddr_world/MYSTIC CUBE.jpg",
+      "remyLink": "https://remywiki.com/MYSTIC_CUBE"
     },
     {
       "name": "Mythomane",
@@ -83567,6 +83575,7 @@
       "name": "可愛くてごめん",
       "name_translation": "Kawaikute Gomen",
       "artist": "Covered by ちょぴん",
+      "artist_translation": "Covered by CHOPIN",
       "folder": "DanceDanceRevolution World",
       "bpm": "160",
       "charts": [
@@ -84650,37 +84659,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 333
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 711
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1107
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1821
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 675
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1104
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1785
         }
       ],
       "flags": ["platinumMembers"],
@@ -92681,41 +92697,49 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 186
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 501
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 978
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1593
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 501
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 960
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1551
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/電幻圏.jpg"
+      "jacket": "ddr_world/電幻圏.jpg",
+      "remyLink": "https://remywiki.com/Dengenken"
     },
     {
       "name": "革命",
