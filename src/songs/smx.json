@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1777773546000
+    "lastUpdated": 1781838211000
   },
   "defaults": {
     "style": "solo",
@@ -2233,13 +2233,13 @@
       "bpm": "127",
       "jacket": "smx/Bad4MyHealth.jpg",
       "charts": [
-        { "style": "solo", "lvl": 3, "diffClass": "beginner" },
-        { "style": "solo", "lvl": 7, "diffClass": "easy" },
-        { "style": "solo", "lvl": 15, "diffClass": "hard" },
-        { "style": "solo", "lvl": 20, "diffClass": "wild" },
-        { "style": "solo", "lvl": 17, "diffClass": "dual" },
-        { "style": "solo", "lvl": 20, "diffClass": "full" },
-        { "style": "team", "lvl": 22, "diffClass": "team" }
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 7 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 17 },
+        { "style": "solo", "diffClass": "full", "lvl": 20 },
+        { "style": "team", "diffClass": "team", "lvl": 22 }
       ],
       "saIndex": "318"
     },
@@ -10266,6 +10266,90 @@
         { "style": "solo", "diffClass": "hard", "lvl": 17, "flags": ["plus"] },
         { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
         { "style": "solo", "diffClass": "full", "lvl": 23, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Amour Tragique Et Liberté",
+      "artist": "NAOKI underground × DE-SIRE",
+      "bpm": "140",
+      "genre": "Rave",
+      "saIndex": "744",
+      "jacket": "smx/AmourTragiqueEtLiberte.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 2 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 21 },
+        { "style": "solo", "diffClass": "dual", "lvl": 15 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 22 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 18, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Ghost In The Rave",
+      "artist": "NAOKI PH4NT0M",
+      "bpm": "175",
+      "genre": "Rave",
+      "saIndex": "745",
+      "jacket": "smx/GhostInTheRave.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 2 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 16 },
+        { "style": "solo", "diffClass": "wild", "lvl": 23 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 14 },
+        { "style": "team", "diffClass": "team", "lvl": 22 },
+        { "style": "solo", "diffClass": "easy", "lvl": 12, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 23, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Lucky Lucky",
+      "artist": "Lucky One",
+      "bpm": "125",
+      "genre": "Bubblegum Dance",
+      "saIndex": "746",
+      "jacket": "smx/LuckyLucky.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 1 },
+        { "style": "solo", "diffClass": "easy", "lvl": 4 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 11 },
+        { "style": "team", "diffClass": "team", "lvl": 14 },
+        { "style": "solo", "diffClass": "easy", "lvl": 9, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 21, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Tug Of War",
+      "artist": "Joe Bermudez feat. Dana Mckeon",
+      "bpm": "128",
+      "genre": "Dance",
+      "saIndex": "747",
+      "jacket": "smx/TugOfWar.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 1 },
+        { "style": "solo", "diffClass": "easy", "lvl": 4 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 19 },
+        { "style": "solo", "diffClass": "dual", "lvl": 11 },
+        { "style": "solo", "diffClass": "full", "lvl": 9 },
+        { "style": "team", "diffClass": "team", "lvl": 19 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 18, "flags": ["plus"] }
       ]
     }
   ]
