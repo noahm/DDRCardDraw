@@ -176,6 +176,15 @@ const currentEventsSongs = [
   "id31262242", // エイリアンエイリアン [ 2 ]
   "id16975111", // ケッペキショウ [ 2 ]
   // #endregion BONUS TUNE
+
+  // #region BEMANI納涼祭2026 (2026-06-18 10:00~2026-08-17 09:59)
+  "id20597284", // 不沈艦CANDY
+  "id16880225", // Seta Para Cima↑↑
+  "id42135581", // Cross Fire
+  "id23848733", // 断罪のミメシス
+  "id32986336", // Any%
+  "id68487703", // Smintheus
+  // #endregion BEMANI納涼祭2026 (2026-06-18 10:00~2026-08-17 09:59)
 ];
 /** Ended Event Songs (and also cannot be transmitted) */
 const endedEventSongs = [
@@ -1041,13 +1050,13 @@ const getFlagsFromSaHash = (saHash?: string): string[] => {
     .map(([flag]) => flag);
 };
 
-const updateSongFlags = (song: Song, baseFlags: string[] = []) => {
+const updateSongFlags = (song: Song, ...preserveFlags: string[]) => {
+  const preservedFlags = (song.flags || []).filter((flag) =>
+    preserveFlags.includes(flag),
+  );
+
   const mergedFlags = [
-    ...new Set([
-      ...baseFlags,
-      ...(song.flags || []),
-      ...getFlagsFromSaHash(song.saHash),
-    ]),
+    ...new Set([...preservedFlags, ...getFlagsFromSaHash(song.saHash)]),
   ];
 
   if (mergedFlags.length === 0) {
@@ -1087,7 +1096,13 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
           if (existingSong) {
             await tryGetMetaFromRemy(existingSong, "Jubeat");
             licensedImporter.merge(existingSong, fetchedSong);
-            updateSongFlags(existingSong, ["licensed"]);
+            updateSongFlags(
+              existingSong,
+              "licensed",
+              "asiaLocked",
+              "koreaLocked",
+              "holds",
+            );
           } else {
             console.log(`Adding new licensed song: ${fetchedSong.name}`);
             await tryGetMetaFromRemy(fetchedSong, "Jubeat");
@@ -1109,9 +1124,6 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
               jacket,
               flags: ["licensed"],
             };
-
-            updateSongFlags(newSong, ["licensed"]);
-
             existingData.songs.push(newSong);
           }
         }
@@ -1137,7 +1149,7 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
           if (existingSong) {
             await tryGetMetaFromRemy(existingSong, "Jubeat");
             originalImporter.merge(existingSong, fetchedSong);
-            updateSongFlags(existingSong);
+            updateSongFlags(existingSong, "holds");
           } else {
             console.log(`Adding new original song: ${fetchedSong.name}`);
             await tryGetMetaFromRemy(fetchedSong, "Jubeat");
@@ -1158,9 +1170,6 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
               remyLink: fetchedSong.remyLink,
               jacket,
             };
-
-            updateSongFlags(newSong);
-
             existingData.songs.push(newSong);
           }
         }

@@ -32,7 +32,7 @@
       "jubeat Ave.",
       "jubeat beyond the Ave."
     ],
-    "lastUpdated": 1781617352353
+    "lastUpdated": 1782024188443
   },
   "defaults": {
     "style": "solo",
@@ -740,6 +740,20 @@
       ],
       "remyLink": "https://remywiki.com/Anubis",
       "jacket": "jubeat/ave/id90760688.jpg",
+      "flags": ["holds", "unlock", "noTransmission"]
+    },
+    {
+      "name": "Any%",
+      "artist": "めめめ",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id32986336",
+      "bpm": "157-177",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 3 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 9.5 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.5 }
+      ],
+      "jacket": "jubeat/beyond_the_ave/id32986336.jpg",
       "flags": ["holds", "unlock", "noTransmission"]
     },
     {
@@ -2146,6 +2160,21 @@
       "remyLink": "https://remywiki.com/CroiX",
       "jacket": "jubeat/prop/id80861996.jpg",
       "flags": ["unlock"]
+    },
+    {
+      "name": "Cross Fire",
+      "artist": "Hommarju vs RoughSketch",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id42135581",
+      "bpm": "180",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.4 }
+      ],
+      "remyLink": "https://remywiki.com/Cross_Fire",
+      "jacket": "jubeat/beyond_the_ave/id42135581.jpg",
+      "flags": ["unlock", "noTransmission"]
     },
     {
       "name": "Crosswind",
@@ -7912,6 +7941,21 @@
       "flags": ["holds", "eAmusement"]
     },
     {
+      "name": "Seta Para Cima↑↑",
+      "artist": "BEMANI Sound Team “U1 overground”",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id16880225",
+      "bpm": "140",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.7 }
+      ],
+      "remyLink": "https://remywiki.com/Seta_Para_Cima",
+      "jacket": "jubeat/beyond_the_ave/id16880225.jpg",
+      "flags": ["unlock", "noTransmission"]
+    },
+    {
       "name": "Shine On Me",
       "artist": "kors k",
       "folder": "jubeat knit",
@@ -8177,6 +8221,20 @@
       "remyLink": "https://remywiki.com/Slluuddggee",
       "jacket": "jubeat/prop/id64509859.jpg",
       "flags": ["unlock"]
+    },
+    {
+      "name": "Smintheus",
+      "artist": "TAN1CHU",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id68487703",
+      "bpm": "228-250",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.6 }
+      ],
+      "jacket": "jubeat/beyond_the_ave/id68487703.jpg",
+      "flags": ["unlock", "noTransmission"]
     },
     {
       "name": "smooooch・∀・",
@@ -13787,6 +13845,21 @@
       "flags": ["holds", "unlock"]
     },
     {
+      "name": "不沈艦CANDY",
+      "artist": "Risk Junk",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id20597284",
+      "bpm": "188",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 4 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 7 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 9.5 }
+      ],
+      "remyLink": "https://remywiki.com/Fuchinkan_CANDY",
+      "jacket": "jubeat/beyond_the_ave/id20597284.jpg",
+      "flags": ["holds", "unlock", "noTransmission"]
+    },
+    {
       "name": "世界の果てに約束の凱歌を -jubeat edition-",
       "artist": "かめりあ",
       "folder": "jubeat festo",
@@ -15141,6 +15214,20 @@
       "remyLink": "https://remywiki.com/Murasakibana",
       "jacket": "jubeat/festo/id75640546.jpg",
       "flags": ["unlock"]
+    },
+    {
+      "name": "断罪のミメシス",
+      "artist": "KE!JU",
+      "folder": "jubeat beyond the Ave.",
+      "saHash": "id23848733",
+      "bpm": "250",
+      "charts": [
+        { "style": "solo", "diffClass": "basic", "lvl": 5 },
+        { "style": "solo", "diffClass": "advanced", "lvl": 8 },
+        { "style": "solo", "diffClass": "extreme", "lvl": 10.6 }
+      ],
+      "jacket": "jubeat/beyond_the_ave/id23848733.jpg",
+      "flags": ["unlock", "noTransmission"]
     },
     {
       "name": "新蛇姫",
