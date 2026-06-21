@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1781182186472
+    "lastUpdated": 1781996408142
   },
   "defaults": {
     "style": "single",
@@ -3909,6 +3909,61 @@
       "saIndex": "68"
     },
     {
+      "name": "Amabie",
+      "artist": "BEMANI Sound Team \"Coyaan\"",
+      "saHash": "86IOiO9PlqoQoPD1I811bb6PI80OQ601",
+      "bpm": "168",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 183
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 681
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1182
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1599
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 660
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1179
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1596
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Amabie.jpg",
+      "genre": "ORIENTAL FUTURE BASS",
+      "remyLink": "https://remywiki.com/Amabie"
+    },
+    {
       "name": "Amalgamation",
       "artist": "Mystic Moon",
       "bpm": "166",
@@ -4505,6 +4560,55 @@
       "jacket": "ddr_x2/Anti-Matter.png",
       "saHash": "D89QP18016o01qoOi60I6Q19dlOQPbdo",
       "saIndex": "341"
+    },
+    {
+      "name": "Any%",
+      "artist": "めめめ",
+      "saHash": "DDQ9q1dd0lob0iOo9iql1boPoIq8ioDo",
+      "bpm": "157-177",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1680
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1680
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Any%.jpg",
+      "genre": "DTMスピードラン/DTM SPEEDRUN"
     },
     {
       "name": "ARACHNE",
@@ -7611,6 +7715,55 @@
       "jacket": "ddr_world/Blizzard of Arrows.jpg",
       "remyLink": "https://remywiki.com/Blizzard_of_Arrows",
       "flags": ["unlock"]
+    },
+    {
+      "name": "Bloody Iron Maiden",
+      "artist": "BEMANI Sound Team \"Loz\"",
+      "saHash": "qb9Q8d8q6q8DQ61iDl1DP8iQO9oIqidI",
+      "bpm": "195",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1881
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1833
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Bloody Iron Maiden.jpg",
+      "remyLink": "https://remywiki.com/Bloody_Iron_Maiden"
     },
     {
       "name": "Bloody Tears(IIDX EDITION)",
@@ -52755,7 +52908,7 @@
       ],
       "remyLink": "https://remywiki.com/Saturn",
       "jacket": "ddr_sn-sn2/Saturn.png",
-      "genre": "PROGRESSIVE TRIBAL",
+      "genre": "PROGRESSIVE TRIBAL/プログレッシブトライバル",
       "saHash": "dDldd8OlbPQDoD80dO0DiDOiIoP1PQoD",
       "saIndex": "256"
     },
@@ -55821,6 +55974,57 @@
       "jacket": "ddr_a/Smiling Passion.png",
       "saHash": "odliP8d18DQi0b8lPbPI1PdoQ0PDd0IP",
       "saIndex": "801"
+    },
+    {
+      "name": "Smintheus",
+      "artist": "TAN1CHU",
+      "saHash": "8odoOQO89P8dq6iOlqddiDbd6ilQ19PP",
+      "bpm": "48-250",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1530
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2331
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1488
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2262
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Smintheus.jpg",
+      "genre": "ハムパラドックス/HAM PARADOX"
     },
     {
       "name": "smooooch･∀･",
@@ -86540,6 +86744,57 @@
       "saIndex": "1116"
     },
     {
+      "name": "断罪のミメシス",
+      "artist": "KE!JU",
+      "saHash": "Q0d16D8DDo1P8i086QOQI90i0d1oD9l8",
+      "bpm": "125-250",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1491
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2451
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1455
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2220
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/断罪のミメシス.jpg",
+      "genre": "ジャッジメントシンフォニックスピードコア/JUDGEMENT SYMPHONIC SPEEDCORE"
+    },
+    {
       "name": "新蛇姫",
       "name_translation": "Shin hebi hime",
       "artist": "BEMANI Sound Team \"U1-ASAMi\"",
@@ -92740,6 +92995,58 @@
       "flags": ["unlock"],
       "jacket": "ddr_world/電幻圏.jpg",
       "remyLink": "https://remywiki.com/Dengenken"
+    },
+    {
+      "name": "霖が哭く",
+      "artist": "Power Of Nature",
+      "saHash": "qdoPQQldIQo6QDdQllbIP91iiilio1O1",
+      "bpm": "154",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1218
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1764
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1197
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1677
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/霖が哭く.jpg",
+      "genre": "SAMIDARE/サミダレ",
+      "remyLink": "https://remywiki.com/Rin_ga_naku"
     },
     {
       "name": "革命",
