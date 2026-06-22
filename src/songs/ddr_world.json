@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1781996408142
+    "lastUpdated": 1782099895399
   },
   "defaults": {
     "style": "single",
@@ -4571,17 +4571,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 249
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 717
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1200
         },
         {
           "style": "single",
@@ -4592,12 +4595,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 717
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1200
         },
         {
           "style": "double",
@@ -4608,7 +4613,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/Any%.jpg",
-      "genre": "DTMスピードラン/DTM SPEEDRUN"
+      "genre": "DTMスピードラン/DTM SPEEDRUN",
+      "remyLink": "https://remywiki.com/Any_Percentage"
     },
     {
       "name": "ARACHNE",
@@ -7726,17 +7732,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 213
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 756
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1341
         },
         {
           "style": "single",
@@ -7747,12 +7756,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 744
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1314
         },
         {
           "style": "double",
@@ -55985,12 +55996,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 372
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 996
         },
         {
           "style": "single",
@@ -56007,7 +56020,8 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 924
         },
         {
           "style": "double",
@@ -56024,7 +56038,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/Smintheus.jpg",
-      "genre": "ハムパラドックス/HAM PARADOX"
+      "genre": "ハムパラドックス/HAM PARADOX",
+      "remyLink": "https://remywiki.com/Smintheus"
     },
     {
       "name": "smooooch･∀･",
@@ -86753,12 +86768,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 204
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 855
         },
         {
           "style": "single",
@@ -86775,7 +86792,8 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 798
         },
         {
           "style": "double",
@@ -86792,7 +86810,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/断罪のミメシス.jpg",
-      "genre": "ジャッジメントシンフォニックスピードコア/JUDGEMENT SYMPHONIC SPEEDCORE"
+      "genre": "ジャッジメントシンフォニックスピードコア/JUDGEMENT SYMPHONIC SPEEDCORE",
+      "remyLink": "https://remywiki.com/Danzai_no_mimesis"
     },
     {
       "name": "新蛇姫",
@@ -93006,12 +93025,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 174
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 9
+          "lvl": 9,
+          "maxScore": 570
         },
         {
           "style": "single",
@@ -93028,7 +93049,8 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 9
+          "lvl": 9,
+          "maxScore": 549
         },
         {
           "style": "double",

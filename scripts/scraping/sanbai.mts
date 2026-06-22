@@ -138,15 +138,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // #region BEMANI納涼祭2026
-  [
-    "DDQ9q1dd0lob0iOo9iql1boPoIq8ioDo", // Any%
-    {
-      ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
-      lock_types: [360, 360, 360, 360, 0, 360, 360, 360, 0],
-    },
-  ],
-  // #endregion BEMANI納涼祭2026
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
