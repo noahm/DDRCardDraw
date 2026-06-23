@@ -122,10 +122,13 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
+      // Note: the winner is intentionally left untouched here. A chart can
+      // have both an action (protect/pocket/ban) and a marked winner at the
+      // same time, and removing the action should not clear the winner. The
+      // winner is removed via its own control (setWinner with player: null).
       delete drawing.bans[chartId];
       delete drawing.protects[chartId];
       delete drawing.pocketPicks[chartId];
-      delete drawing.winners[chartId];
     },
     banProtectReplace(
       state,
