@@ -87,11 +87,14 @@ const {
       });
     },
     resetChart(chartId) {
+      // Note: winners are intentionally left untouched here. A chart can have
+      // both an action (protect/pocket/ban) and a marked winner at the same
+      // time, and removing the action should not clear the winner. Winners are
+      // removed via their own control (setWinner(chartId, null)).
       set((d) => ({
         bans: d.bans.filter((p) => p.chartId !== chartId),
         protects: d.protects.filter((p) => p.chartId !== chartId),
         pocketPicks: d.pocketPicks.filter((p) => p.chartId !== chartId),
-        winners: d.pocketPicks.filter((p) => p.chartId !== chartId),
       }));
     },
     redrawChart(chartId) {
