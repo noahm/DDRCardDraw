@@ -11,6 +11,7 @@ import { DdrCardFooter } from "./ddr";
 import { ItgCardFooter } from "./itg";
 import { MaimaiCardFooter } from "./maimai";
 import { DonkeyKongaCardCenter } from "./donkeykonga";
+import { SmxCardCenter } from "./smx";
 
 export function getContentVariants(
   cardType: string | undefined,
@@ -30,6 +31,11 @@ export function getContentVariants(
       return {
         CenterContent: BaseCardCenter,
         FooterContent: MaimaiCardFooter,
+      };
+    case "smx":
+      return {
+        CenterContent: SmxCardCenter,
+        FooterContent: BaseCardFooter,
       };
     case "donkeykonga":
       return {
