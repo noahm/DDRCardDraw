@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1782353887461
+    "lastUpdated": 1782399251765
   },
   "defaults": {
     "style": "single",
@@ -27916,37 +27916,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 186
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 609
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1059
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1548
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 591
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1047
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1539
         }
       ],
       "flags": ["prePrivilege"],
@@ -28677,37 +28684,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 309
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 741
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 13
+          "lvl": 13,
+          "maxScore": 1527
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 17
+          "lvl": 17,
+          "maxScore": 2559
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 696
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 13
+          "lvl": 13,
+          "maxScore": 1491
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 17
+          "lvl": 17,
+          "maxScore": 2490
         }
       ],
       "flags": ["prePrivilege"],
@@ -34525,37 +34539,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 165
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 744
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1233
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1821
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 729
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1209
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1803
         }
       ],
       "flags": ["prePrivilege"],
@@ -82067,37 +82088,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 381
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 876
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1473
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 2301
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 855
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1440
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 2217
         }
       ],
       "flags": ["prePrivilege"],
