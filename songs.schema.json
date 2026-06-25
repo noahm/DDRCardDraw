@@ -208,9 +208,6 @@
         "jacket": {
           "type": "string"
         },
-        "author": {
-          "type": "string"
-        },
         "bpm": {
           "type": "string",
           "description": "per-chart BPM range, if one applies"

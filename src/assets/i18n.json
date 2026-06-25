@@ -6,6 +6,19 @@
     },
     "clearDrawings": "Clear Draws",
     "clearDrawingsConfirm": "This will clear all songs drawn so far. Confirm?",
+    "dataImport": {
+      "title": "Data Import",
+      "smxEdits": "StepManiaX edits…",
+      "itgPack": "ITG / StepMania pack…"
+    },
+    "smxImport": {
+      "detected": "{count, plural, =0 {No codes detected yet} one {# unique code detected} other {# unique codes detected}}",
+      "lookingUp": "Looking them up now…",
+      "found": "{count, plural, one {Found info for # chart.} other {Found info for # charts.}}",
+      "importButton": "{count, plural, =0 {Import} one {Import # edit} other {Import # edits}}",
+      "imported": "{count, plural, one {Imported # edit chart.} other {Imported # edit charts.}}",
+      "skipped": "{count, plural, one { # edit was skipped because its song isn't in the StepManiaX data yet.} other { # edits were skipped because their songs aren't in the StepManiaX data yet.}}"
+    },
     "credits": "Credits",
     "help": "Help",
     "toggleTheme": "Toggle Theme",
@@ -119,6 +132,19 @@
     },
     "clearDrawings": "全消去",
     "clearDrawingsConfirm": "これまでに引いた譜面をすべて消去します。よろしいですか？",
+    "dataImport": {
+      "title": "データの取り込み",
+      "smxEdits": "StepManiaX エディット…",
+      "itgPack": "ITG / StepMania パック…"
+    },
+    "smxImport": {
+      "detected": "{count, plural, =0 {コードはまだ検出されていません} other {# 件のコードを検出しました}}",
+      "lookingUp": "照会中…",
+      "found": "{count, plural, other {# 件の譜面情報が見つかりました。}}",
+      "importButton": "{count, plural, =0 {取り込む} other {# 件のエディットを取り込む}}",
+      "imported": "{count, plural, other {# 件のエディット譜面を取り込みました。}}",
+      "skipped": "{count, plural, other { # 件のエディットは対象曲が StepManiaX データに未登録のためスキップされました。}}"
+    },
     "credits": "クレジット",
     "help": "使い方 (English)",
     "toggleTheme": "テーマを切り替える",

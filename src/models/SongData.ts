@@ -149,7 +149,6 @@ export interface Chart {
   drawGroup?: number;
   maxScore?: number;
   jacket?: string;
-  author?: string;
   /**
    * per-chart BPM range, if one applies
    */
