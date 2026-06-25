@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1781182186472
+    "lastUpdated": 1782353887461
   },
   "defaults": {
     "style": "single",
@@ -16519,7 +16519,7 @@
           "maxScore": 1392
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Dozen Flower.jpg",
       "remyLink": "https://remywiki.com/Dozen_Flower"
     },
@@ -20500,7 +20500,7 @@
           "maxScore": 1275
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/First_Action.jpg",
       "remyLink": "https://remywiki.com/First_Action"
     },
@@ -26212,7 +26212,7 @@
           "maxScore": 1395
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Heavy Rain.jpg",
       "remyLink": "https://remywiki.com/Heavy_Rain"
     },
@@ -27907,6 +27907,53 @@
       "genre": "TRANCE"
     },
     {
+      "name": "I LOVE SAKURA",
+      "artist": "CHERRY BLOSSOMS (ASAKI & wac)",
+      "saHash": "ilio9d6DlI9b1oQi6919oOO1di09P916",
+      "bpm": "212",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/I LOVE SAKURA.jpg",
+      "remyLink": "https://remywiki.com/I_LOVE_SAKURA"
+    },
+    {
       "name": "I Love You",
       "artist": "O/iviA",
       "saHash": "1900DdoIl00b88q6Qq9ob9D6lQ8IQiPb",
@@ -28619,6 +28666,54 @@
       ],
       "jacket": "ddr_sn-sn2/iFUTURELIST(DDR VERSION).png",
       "remyLink": "https://remywiki.com/IFUTURELIST(DDR_VERSION)"
+    },
+    {
+      "name": "Ignis†Iræ",
+      "artist": "BEMANI Sound Team \"神\"",
+      "saHash": "690bOP9iq6OboDDIbldbQD9PPill6IPb",
+      "bpm": "188-191",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Ignis_Irae.jpg",
+      "genre": "X",
+      "remyLink": "https://remywiki.com/Ignis_Irae"
     },
     {
       "name": "Illegal Function Call",
@@ -34419,6 +34514,54 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_x/LOVING YOU (Epidemik remix).png",
       "remyLink": "https://remywiki.com/LOVING_YOU_(Epidemik_remix)"
+    },
+    {
+      "name": "Lucy",
+      "artist": "ELE BLOCK",
+      "saHash": "iD9lOD90O1QD0D90Qi9dqQq6iq6IIIqq",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Lucy.jpg",
+      "genre": "DANCE POP",
+      "remyLink": "https://remywiki.com/Lucy"
     },
     {
       "name": "MAGIC PARADE",
@@ -40375,7 +40518,7 @@
           "maxScore": 1677
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Origin Pulsation.jpg",
       "remyLink": "https://remywiki.com/Origin_Pulsation"
     },
@@ -48643,7 +48786,7 @@
       ],
       "jacket": "ddr_sn-sn2/Saturn.png",
       "remyLink": "https://remywiki.com/Saturn",
-      "genre": "PROGRESSIVE TRIBAL"
+      "genre": "PROGRESSIVE TRIBAL/プログレッシブトライバル"
     },
     {
       "name": "SAY A PRAYER",
@@ -55858,7 +56001,7 @@
           "maxScore": 1506
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Sweetin' Fruity.jpg",
       "remyLink": "https://remywiki.com/Sweetin%27_Fruity"
     },
@@ -71138,7 +71281,7 @@
           "maxScore": 1029
         }
       ],
-      "flags": ["arcade"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Hajimari no aizu ft. Rintaru.jpg",
       "remyLink": "https://remywiki.com/Hajimari_no_aizu_ft._Rintaru"
     },
@@ -81913,6 +82056,54 @@
       "remyLink": "https://remywiki.com/Roman",
       "genre": "ヒップロック4",
       "search_hint": "ろまん HIP ROCK 4/ヒップロック4"
+    },
+    {
+      "name": "踊るフィーバーロボ　Eu-Robot mix",
+      "artist": "D&E&Y Rmx by kors k as disconation",
+      "saHash": "IDQb8bO8bq1qq1l6olilP11PddbIdi89",
+      "bpm": "163",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/踊るフィーバーロボ_Eu-Robot mix.jpg",
+      "genre": "FEVER ROBO REMIX/フィーバーロボREMIX",
+      "remyLink": "https://remywiki.com/Odoru_Fever_Robo_Eu-Robot_mix"
     },
     {
       "name": "踊れ！！バーチャルアニマル！！",
