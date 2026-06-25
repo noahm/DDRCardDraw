@@ -13,7 +13,6 @@ import {
 import { SongSearch } from "../song-search";
 import { CardLabel, LabelType } from "./card-label";
 import { IconMenu } from "./icon-menu";
-import { EditQrContent } from "./edit-qr-popover";
 import styles from "./song-card.css";
 import { copyTextToClipboard } from "../utils/share";
 import { baseChartValues, CardContentsProps } from "./variants";
@@ -79,6 +78,7 @@ export function SongCardBase(props: Props) {
     actionsEnabled,
     CenterContent,
     FooterContent,
+    getActions,
   } = props;
   const hideVetos = useConfigState((s) => s.hideVetos);
 
@@ -86,7 +86,8 @@ export function SongCardBase(props: Props) {
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
 
-  const [qrOpen, setQrOpen] = useState(false);
+  // key of the variant-supplied action whose popover is currently shown, if any
+  const [openActionKey, setOpenActionKey] = useState<string | null>(null);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
     useState<number>(0);
@@ -94,17 +95,25 @@ export function SongCardBase(props: Props) {
   const baseChartIsPlaceholder =
     "type" in chart && chart.type === CHART_PLACEHOLDER;
 
-  const { name, diffAbbr, jacket, editId } =
-    replacedWith || baseChartValues(chart);
+  const { name, diffAbbr, jacket } = replacedWith || baseChartValues(chart);
 
   const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
 
-  const onShowEditQr = editId
-    ? () => {
-        // hand off from the action menu to the QR popover on the same card
-        setContextMenuOpen(false);
-        setQrOpen(true);
-      }
+  // extra, game-specific info popovers contributed by the active card variant
+  const variantActions = getActions?.(replacedWith || chart) ?? [];
+  const openAction = variantActions.find((a) => a.key === openActionKey);
+  const infoActions = variantActions.length
+    ? variantActions.map((a) => ({
+        key: a.key,
+        labelKey: a.labelKey,
+        labelDefault: a.labelDefault,
+        icon: a.icon,
+        // hand off from the action menu to this action's popover on the same card
+        onClick: () => {
+          setContextMenuOpen(false);
+          setOpenActionKey(a.key);
+        },
+      }))
     : undefined;
 
   let jacketBg = {};
@@ -142,7 +151,7 @@ export function SongCardBase(props: Props) {
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
-          onShowEditQr={onShowEditQr}
+          infoActions={infoActions}
         />
       );
     } else if (!vetoedBy) {
@@ -150,16 +159,16 @@ export function SongCardBase(props: Props) {
         <IconMenu
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
-          onShowEditQr={onShowEditQr}
+          infoActions={infoActions}
         />
       );
     }
   }
-  // even without other actions, edit charts can still be bookmarked via QR
-  if (!menuContent && onShowEditQr) {
+  // even without other actions, variant info actions are still worth offering
+  if (!menuContent && infoActions) {
     menuContent = (
       <IconMenu
-        onShowEditQr={onShowEditQr}
+        infoActions={infoActions}
         onCopy={canCopy ? handleCopy : undefined}
       />
     );
@@ -213,7 +222,7 @@ export function SongCardBase(props: Props) {
     <div
       className={rootClassname}
       onClick={
-        showingContextMenu || qrOpen || pocketPickPendingForPlayer
+        showingContextMenu || openAction || pocketPickPendingForPlayer
           ? undefined
           : handleCardClick
       }
@@ -235,13 +244,11 @@ export function SongCardBase(props: Props) {
       </div>
 
       <Popover
-        content={
-          qrOpen && editId ? <EditQrContent editId={editId} /> : menuContent
-        }
-        isOpen={showingContextMenu || qrOpen}
+        content={openAction ? openAction.content : menuContent}
+        isOpen={showingContextMenu || !!openAction}
         onClose={() => {
           hideMenu();
-          setQrOpen(false);
+          setOpenActionKey(null);
         }}
         placement="top"
         modifiers={{

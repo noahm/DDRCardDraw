@@ -7,11 +7,21 @@ import {
   Person,
   Refresh,
   Clipboard,
-  Barcode,
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
 import { JSX } from "react";
+
+/** A game-specific info action contributed by a card variant. */
+export interface MenuInfoAction {
+  key: string;
+  /** i18n key for the menu item's label */
+  labelKey: string;
+  /** fallback label text if `labelKey` isn't found in the active translations */
+  labelDefault?: string;
+  icon?: JSX.Element;
+  onClick: () => void;
+}
 
 interface Props {
   onStartPocketPick?: (p: number) => void;
@@ -20,7 +30,7 @@ interface Props {
   onRedraw?: () => void;
   onSetWinner?: (p: number | null) => void;
   onCopy?: () => void;
-  onShowEditQr?: () => void;
+  infoActions?: MenuInfoAction[];
 }
 
 export function IconMenu(props: Props) {
@@ -31,7 +41,7 @@ export function IconMenu(props: Props) {
     onRedraw,
     onSetWinner,
     onCopy,
-    onShowEditQr,
+    infoActions,
   } = props;
 
   const { t } = useIntl();
@@ -73,15 +83,16 @@ export function IconMenu(props: Props) {
           onClick={onCopy}
         />
       )}
-      {onShowEditQr && (
+      {infoActions?.map((action) => (
         <MenuItem
-          text={t("songAction.bookmarkEdit", undefined, "Bookmark edit (QR)")}
-          icon={<Barcode />}
-          onClick={onShowEditQr}
-          // keep the popover open so it can swap to the QR view in place
+          key={action.key}
+          text={t(action.labelKey, undefined, action.labelDefault)}
+          icon={action.icon}
+          onClick={action.onClick}
+          // keep the popover open so it can swap to the action's content in place
           shouldDismissPopover={false}
         />
-      )}
+      ))}
       {onRedraw && (
         <>
           <MenuDivider />

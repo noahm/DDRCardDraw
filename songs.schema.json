@@ -208,13 +208,6 @@
         "jacket": {
           "type": "string"
         },
-        "author": {
-          "type": "string"
-        },
-        "editId": {
-          "type": "string",
-          "description": "share code for a StepManiaX edit chart (the slug in an edits.stepmaniax.com link)"
-        },
         "bpm": {
           "type": "string",
           "description": "per-chart BPM range, if one applies"

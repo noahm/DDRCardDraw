@@ -11,6 +11,15 @@ import { Chart, GameData } from "../models/SongData";
  */
 
 const API_URL = "https://api.smx.573.no/charts";
+
+/**
+ * Keys under which SMX edit-chart metadata is stashed in a chart's generic
+ * `extras` array (as `${key}:value`). The SMX card variant reads these back out
+ * via `readExtra`; keeping them out of the schema avoids embedding a
+ * game-specific concept into the otherwise game-agnostic chart model.
+ */
+export const EDIT_ID_KEY = "editId";
+export const EDIT_AUTHOR_KEY = "editAuthor";
 /**
  * How many edit codes to request per call. Capped at 100 for two reasons:
  * the API returns at most 100 results per request (`_take`), and batching keeps
@@ -112,6 +121,11 @@ export function buildEditDataFile(
   en.edit = "Edit";
   const abbr = (en.$abbr || (en.$abbr = {})) as Record<string, unknown>;
   abbr.edit = "Edit";
+  // label for the per-card "bookmark this edit" action (see the smx card variant).
+  // a partial `ja` dict is fine: other keys fall back to `en` in the provider.
+  en.bookmarkEdit = "QR code bookmark link";
+  const ja = (data.i18n.ja || (data.i18n.ja = {})) as Record<string, unknown>;
+  ja.bookmarkEdit = "QRコードのブックマークリンク";
 
   const songsByIndex = new Map(data.songs.map((s) => [s.saIndex, s]));
 
@@ -123,12 +137,15 @@ export function buildEditDataFile(
       unknownSongs.push(chart.edit_display_id);
       continue;
     }
+    const extras = [`${EDIT_ID_KEY}:${chart.edit_display_id}`];
+    if (chart.edit_author) {
+      extras.push(`${EDIT_AUTHOR_KEY}:${chart.edit_author}`);
+    }
     const newChart: Chart = {
       style: chart.edit_style === "team" ? "team" : "solo",
       diffClass: "edit",
       lvl: chart.meter ?? chart.difficulty,
-      author: chart.edit_author || undefined,
-      editId: chart.edit_display_id,
+      extras,
     };
     song.charts.push(newChart);
     matched++;

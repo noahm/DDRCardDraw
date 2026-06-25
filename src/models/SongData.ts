@@ -149,11 +149,6 @@ export interface Chart {
   drawGroup?: number;
   maxScore?: number;
   jacket?: string;
-  author?: string;
-  /**
-   * share code for a StepManiaX edit chart (the slug in an edits.stepmaniax.com link)
-   */
-  editId?: string;
   /**
    * per-chart BPM range, if one applies
    */
