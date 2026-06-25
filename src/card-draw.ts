@@ -51,6 +51,7 @@ export function getDrawnChart(
     dateAdded: currentSong.date_added,
     folder: currentSong.folder,
     author: chart.author,
+    editId: chart.editId,
     // Fill in variant data per game
     diffAbbr: getDiffAbbr(gameData, chart.diffClass),
     diffColor: getDifficultyColor(gameData, chart.diffClass),

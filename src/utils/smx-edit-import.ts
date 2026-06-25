@@ -128,7 +128,7 @@ export function buildEditDataFile(
       diffClass: "edit",
       lvl: chart.meter ?? chart.difficulty,
       author: chart.edit_author || undefined,
-      extras: [chart.edit_display_id],
+      editId: chart.edit_display_id,
     };
     song.charts.push(newChart);
     matched++;

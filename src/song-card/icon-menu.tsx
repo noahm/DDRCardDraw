@@ -7,6 +7,7 @@ import {
   Person,
   Refresh,
   Clipboard,
+  Barcode,
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
@@ -19,6 +20,7 @@ interface Props {
   onRedraw?: () => void;
   onSetWinner?: (p: number | null) => void;
   onCopy?: () => void;
+  onShowEditQr?: () => void;
 }
 
 export function IconMenu(props: Props) {
@@ -29,6 +31,7 @@ export function IconMenu(props: Props) {
     onRedraw,
     onSetWinner,
     onCopy,
+    onShowEditQr,
   } = props;
 
   const { t } = useIntl();
@@ -68,6 +71,15 @@ export function IconMenu(props: Props) {
           text={t("songAction.copy")}
           icon={<Clipboard />}
           onClick={onCopy}
+        />
+      )}
+      {onShowEditQr && (
+        <MenuItem
+          text={t("songAction.bookmarkEdit", undefined, "Bookmark edit (QR)")}
+          icon={<Barcode />}
+          onClick={onShowEditQr}
+          // keep the popover open so it can swap to the QR view in place
+          shouldDismissPopover={false}
         />
       )}
       {onRedraw && (

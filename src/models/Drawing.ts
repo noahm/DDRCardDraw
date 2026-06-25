@@ -20,6 +20,7 @@ export interface EligibleChart {
   song: Song;
   folder?: string;
   author?: string;
+  editId?: string;
 }
 
 export const CHART_PLACEHOLDER = "PLACEHOLDER";

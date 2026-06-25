@@ -13,6 +13,7 @@ import {
 import { SongSearch } from "../song-search";
 import { CardLabel, LabelType } from "./card-label";
 import { IconMenu } from "./icon-menu";
+import { EditQrContent } from "./edit-qr-popover";
 import styles from "./song-card.css";
 import { copyTextToClipboard } from "../utils/share";
 import { baseChartValues, CardContentsProps } from "./variants";
@@ -85,15 +86,26 @@ export function SongCardBase(props: Props) {
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
 
+  const [qrOpen, setQrOpen] = useState(false);
+
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
     useState<number>(0);
 
   const baseChartIsPlaceholder =
     "type" in chart && chart.type === CHART_PLACEHOLDER;
 
-  const { name, diffAbbr, jacket } = replacedWith || baseChartValues(chart);
+  const { name, diffAbbr, jacket, editId } =
+    replacedWith || baseChartValues(chart);
 
   const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
+
+  const onShowEditQr = editId
+    ? () => {
+        // hand off from the action menu to the QR popover on the same card
+        setContextMenuOpen(false);
+        setQrOpen(true);
+      }
+    : undefined;
 
   let jacketBg = {};
   if (jacket) {
@@ -130,13 +142,27 @@ export function SongCardBase(props: Props) {
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
+          onShowEditQr={onShowEditQr}
         />
       );
     } else if (!vetoedBy) {
       menuContent = (
-        <IconMenu onSetWinner={iconCallbacks.onSetWinner} onCopy={handleCopy} />
+        <IconMenu
+          onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={handleCopy}
+          onShowEditQr={onShowEditQr}
+        />
       );
     }
+  }
+  // even without other actions, edit charts can still be bookmarked via QR
+  if (!menuContent && onShowEditQr) {
+    menuContent = (
+      <IconMenu
+        onShowEditQr={onShowEditQr}
+        onCopy={canCopy ? handleCopy : undefined}
+      />
+    );
   }
 
   const rootClassname = classNames(styles.chart, {
@@ -187,7 +213,7 @@ export function SongCardBase(props: Props) {
     <div
       className={rootClassname}
       onClick={
-        showingContextMenu || pocketPickPendingForPlayer
+        showingContextMenu || qrOpen || pocketPickPendingForPlayer
           ? undefined
           : handleCardClick
       }
@@ -209,12 +235,17 @@ export function SongCardBase(props: Props) {
       </div>
 
       <Popover
-        content={menuContent}
-        isOpen={showingContextMenu}
-        onClose={hideMenu}
+        content={
+          qrOpen && editId ? <EditQrContent editId={editId} /> : menuContent
+        }
+        isOpen={showingContextMenu || qrOpen}
+        onClose={() => {
+          hideMenu();
+          setQrOpen(false);
+        }}
         placement="top"
         modifiers={{
-          offset: { options: { offset: [0, 35] } },
+          offset: { options: { offset: [0, 15] } },
         }}
       >
         <FooterContent chart={replacedWith || chart} />
