@@ -37,14 +37,14 @@ const styles = new Set();
 const data = {
   meta: {
     menuParent: "events",
-    flags: [],
+    flags: ["noCmod"],
     lastUpdated: Date.now(),
     usesDrawGroups: useTiers,
     styles: [],
     difficulties: [],
   },
   defaults: {
-    flags: [],
+    flags: ["noCmod"],
     lowerLvlBound: 1,
     difficulties: [],
     style: "",
@@ -61,6 +61,7 @@ const data = {
       expert: "Expert",
       challenge: "Challenge",
       edit: "Edit",
+      noCmod: "No CMOD",
       $abbr: {
         beginner: "Beg",
         basic: "Bas",
@@ -106,9 +107,18 @@ function getFinalJacketPath(titleDir) {
   return join("itg", stub, basename(titleDir) + ".jpg");
 }
 
+/**
+ * Get the name of the song directory (OS agnostic)
+ * @param {string} path
+ */
+function getSongDirName(path) {
+  return path.split(/[\\/]/).filter(Boolean).pop();
+}
+
 for (const parsedSong of pack.simfiles) {
   const { bg, banner, jacket, titleDir } = parsedSong.title;
-  let finalJacket = getBestJacket([jacket, bg, banner], titleDir);
+  // itg should prioritize the banner, then the background, then the jacket
+  let finalJacket = getBestJacket([banner, bg, jacket], titleDir);
   if (finalJacket) {
     finalJacket = downloadJacket(finalJacket, getFinalJacketPath(titleDir));
   }
@@ -128,13 +138,25 @@ for (const parsedSong of pack.simfiles) {
     jacket: finalJacket,
     bpm,
     artist: parsedSong.artist,
+    folder: getSongDirName(titleDir),
     charts: [],
   };
+
+  // add "noCmod" flag if any title fields contain "no cmod"
+  const titles = [
+    parsedSong.title.titleName,
+    parsedSong.title.translitTitleName,
+    parsedSong.subtitle.subtitleName,
+    parsedSong.subtitle.translitSubtitleName
+  ];
+  const isNoCmod = titles.some((title) => title?.toLowerCase().includes("no cmod"));
+
   for (const chart of parsedSong.availableTypes) {
     let chartData = {
       lvl: chart.feet,
       style: chart.mode,
       diffClass: chart.difficulty,
+      flags: isNoCmod ? ["noCmod"] : undefined,
     };
     if (useTiers) {
       let tierMatch = parsedSong.title.titleName.match(
