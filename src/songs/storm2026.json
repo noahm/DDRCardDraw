@@ -8,7 +8,7 @@
     "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
   },
   "defaults": {
-    "flags": ["noCmod", "Base"],
+    "flags": ["noCmod", "Base", "Lower", "Upper"],
     "lowerLvlBound": 9,
     "difficulties": ["challenge"],
     "style": "single",

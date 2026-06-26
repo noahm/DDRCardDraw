@@ -44,7 +44,7 @@ const data = {
     difficulties: [],
   },
   defaults: {
-    flags: ["noCmod"],
+    flags: ["noCmod", "Base", "Lower", "Upper"],
     lowerLvlBound: 1,
     difficulties: [],
     style: "",
