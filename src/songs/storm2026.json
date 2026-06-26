@@ -1,0 +1,806 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": ["noCmod"],
+    "lastUpdated": 1782464915971,
+    "usesDrawGroups": false,
+    "styles": ["single"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": ["noCmod"],
+    "lowerLvlBound": 9,
+    "difficulties": ["challenge"],
+    "style": "single",
+    "upperLvlBound": 14
+  },
+  "i18n": {
+    "en": {
+      "name": "Storm 2026",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "noCmod": "No CMOD",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[10] ちゃんプール！ ",
+      "name_translation": "[10] Champool!",
+      "jacket": "itg/storm2026/[10] Champool.jpg",
+      "bpm": "132",
+      "artist": "Tomggg & 北村蕗",
+      "folder": "[10] Champool",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Exquisite",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[10] Exquisite.jpg",
+      "bpm": "140",
+      "artist": "MrKoolTrix",
+      "folder": "[10] Exquisite",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] In the Museum",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[10] In the Museum (No CMOD).jpg",
+      "bpm": "110",
+      "artist": "Raphael Robatto",
+      "folder": "[10] In the Museum (No CMOD)",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[10] Mr. Electron",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[10] Mr. Electron.jpg",
+      "bpm": "128",
+      "artist": "The Brig x Michael White",
+      "folder": "[10] Mr. Electron",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Ultramarine",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[10] Ultramarine (No CMOD).jpg",
+      "bpm": "128",
+      "artist": "Yunosuke",
+      "folder": "[10] Ultramarine (No CMOD)",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[11] Alchemist",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Alchemist.jpg",
+      "bpm": "188",
+      "artist": "Savant feat. Gino Sydal",
+      "folder": "[11] Alchemist",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] All I Need VIP",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] All I Need VIP.jpg",
+      "bpm": "145",
+      "artist": "Slushii",
+      "folder": "[11] All I Need VIP",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] BADBOY",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] BADBOY.jpg",
+      "bpm": "165",
+      "artist": "CamaCon",
+      "folder": "[11] BADBOY",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Cat's Meow",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Cat's Meow.jpg",
+      "bpm": "146",
+      "artist": "黒鉄たま",
+      "folder": "[11] Cat's Meow",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Cerulean",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Cerulean.jpg",
+      "bpm": "150",
+      "artist": "Synthion",
+      "folder": "[11] Cerulean",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Clear the Way!",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Clear the Way!.jpg",
+      "bpm": "125",
+      "artist": "sincx",
+      "folder": "[11] Clear the Way!",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] CONTROL",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] CONTROL.jpg",
+      "bpm": "126",
+      "artist": ".NET RUN & bauti",
+      "folder": "[11] CONTROL",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Eyes On The Stars",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Eyes On The Stars.jpg",
+      "bpm": "175",
+      "artist": "mameyudoufu",
+      "folder": "[11] Eyes On The Stars",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Gorgetech",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Gorgetech (No CMOD).jpg",
+      "bpm": "160",
+      "artist": "Shiron",
+      "folder": "[11] Gorgetech (No CMOD)",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[11] Hagiasmos",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Hagiasmos (No CMOD).jpg",
+      "bpm": "150",
+      "artist": "Iris",
+      "folder": "[11] Hagiasmos (No CMOD)",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[11] Piano x Forte x Scandal",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Piano x Forte x Scandal.jpg",
+      "bpm": "135",
+      "artist": "OSTER Project",
+      "folder": "[11] Piano x Forte x Scandal",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Pocari Freakz",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Pocari Freakz (JAKAZiD Remix).jpg",
+      "bpm": "140",
+      "artist": "The Hair Kid",
+      "folder": "[11] Pocari Freakz (JAKAZiD Remix)",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Shakariki Hopping",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Shakariki Hopping.jpg",
+      "bpm": "128",
+      "artist": "MYUKKE.",
+      "folder": "[11] Shakariki Hopping",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Slamurai",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Slamurai (No CMOD).jpg",
+      "bpm": "132",
+      "artist": "kLL Bill",
+      "folder": "[11] Slamurai (No CMOD)",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[11] Speed Dating (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Speed Dating.jpg",
+      "bpm": "145",
+      "artist": "DJ Sugarush, Jai Piccone, Hotel Rubio",
+      "folder": "[11] Speed Dating",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Your Mind",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[11] Your Mind.jpg",
+      "bpm": "180",
+      "artist": "Roy Mikelate",
+      "folder": "[11] Your Mind",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Astray",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] Astray.jpg",
+      "bpm": "146",
+      "artist": "Cynax",
+      "folder": "[12] Astray",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Behemoth",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] Behemoth.jpg",
+      "bpm": "160-190",
+      "artist": "DJ Myosuke",
+      "folder": "[12] Behemoth",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Dodo (RED VERSION)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] Dodo (RED VERSION).jpg",
+      "bpm": "130",
+      "artist": "CHOMPO, meganeko",
+      "folder": "[12] Dodo (RED VERSION)",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Drinksu Drinksu Drinksu",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] Drinksu Drinksu Drinksu.jpg",
+      "bpm": "164",
+      "artist": "Rahul Sipligunj, Sri Vasanth, Chandra Bose",
+      "folder": "[12] Drinksu Drinksu Drinksu",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Hyper Bass With You",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] Hyper Bass With You.jpg",
+      "bpm": "160",
+      "artist": "Srezcat & Shinonome Interface",
+      "folder": "[12] Hyper Bass With You",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] IMPULSE",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] IMPULSE (No CMOD).jpg",
+      "bpm": "145",
+      "artist": "Riya",
+      "folder": "[12] IMPULSE (No CMOD)",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[12] Inner Spirit",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] Inner Spirit (GIGA HiTECH Mix) (No CMOD).jpg",
+      "bpm": "150",
+      "artist": "lapix (Remixed by Blacklolita)",
+      "folder": "[12] Inner Spirit (GIGA HiTECH Mix) (No CMOD)",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[12] N1ghtmare",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] N1ghtmare.jpg",
+      "bpm": "150",
+      "artist": "Dustvoxx",
+      "folder": "[12] N1ghtmare",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] TAK it",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] TAK it.jpg",
+      "bpm": "142",
+      "artist": "TAK",
+      "folder": "[12] TAK it",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] TRASH CLAN",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] TRASH CLAN.jpg",
+      "bpm": "164",
+      "artist": "METAROOM",
+      "folder": "[12] TRASH CLAN",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] TSLove",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[12] TSLove.jpg",
+      "bpm": "185",
+      "artist": "O2i3",
+      "folder": "[12] TSLove",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Decade",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[13] Decade.jpg",
+      "bpm": "175",
+      "artist": "Zekk",
+      "folder": "[13] Decade",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Nightfall",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[13] Nightfall.jpg",
+      "bpm": "150",
+      "artist": "Syncatto",
+      "folder": "[13] Nightfall",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] RED ZONE",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[13] RED ZONE (No CMOD).jpg",
+      "bpm": "165",
+      "artist": "Tatsh&NAOKI",
+      "folder": "[13] RED ZONE (No CMOD)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[L] [09] Automagic",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Automagic.jpg",
+      "bpm": "125",
+      "artist": "Televisor",
+      "folder": "[L] [09] Automagic",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] BOCA",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] BOCA.jpg",
+      "bpm": "200",
+      "artist": "Dreamcatcher",
+      "folder": "[L] [09] BOCA",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] FACE IT",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] FACE IT.jpg",
+      "bpm": "150",
+      "artist": "Aiden Williams",
+      "folder": "[L] [09] FACE IT",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] Fallin' Deep",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Fallin' Deep (No CMOD).jpg",
+      "bpm": "65-130",
+      "artist": "Nhato",
+      "folder": "[L] [09] Fallin' Deep (No CMOD)",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[L] [09] Honey (Classic Mix)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Honey (Classic Mix).jpg",
+      "bpm": "125",
+      "artist": "Mariah Carey",
+      "folder": "[L] [09] Honey (Classic Mix)",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] Immaterial",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Immaterial.jpg",
+      "bpm": "140",
+      "artist": "SOPHIE",
+      "folder": "[L] [09] Immaterial",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] Light Switch (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Light Switch (No CMOD).jpg",
+      "bpm": "79-184",
+      "artist": "Charlie Puth",
+      "folder": "[L] [09] Light Switch (No CMOD)",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[L] [09] Lines (Easy)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Lines.jpg",
+      "bpm": "140",
+      "artist": "Nhato",
+      "folder": "[L] [09] Lines",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] Love You Back",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Love You Back.jpg",
+      "bpm": "106",
+      "artist": "Madeon",
+      "folder": "[L] [09] Love You Back",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] Poplife",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] Poplife.jpg",
+      "bpm": "142",
+      "artist": "umru & underscores",
+      "folder": "[L] [09] Poplife",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [09] POP/STARS",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [09] POPSTARS.jpg",
+      "bpm": "170",
+      "artist": "K/DA",
+      "folder": "[L] [09] POPSTARS",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] a funk that never stops",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] a funk that never stops.jpg",
+      "bpm": "128",
+      "artist": "reallerr",
+      "folder": "[L] [10] a funk that never stops",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Chaos of Drum",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Chaos of Drum.jpg",
+      "bpm": "128",
+      "artist": "KO3",
+      "folder": "[L] [10] Chaos of Drum",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Crow's Eye (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Crow's Eye.jpg",
+      "bpm": "145",
+      "artist": "KSM",
+      "folder": "[L] [10] Crow's Eye",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Damager",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Damager.jpg",
+      "bpm": "130",
+      "artist": "JAWNS",
+      "folder": "[L] [10] Damager",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Desert Palace Zone",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Desert Palace Zone.jpg",
+      "bpm": "130",
+      "artist": "AshZone",
+      "folder": "[L] [10] Desert Palace Zone",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] EVERYTHING! (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] EVERYTHING!.jpg",
+      "bpm": "172",
+      "artist": "Ash Astral",
+      "folder": "[L] [10] EVERYTHING!",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Folded (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Folded.jpg",
+      "bpm": "136",
+      "artist": "Kehlani",
+      "folder": "[L] [10] Folded",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Hush hush",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Hush hush.jpg",
+      "bpm": "104",
+      "artist": "Meira Omar",
+      "folder": "[L] [10] Hush hush",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] Ire (Hard)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] Ire.jpg",
+      "bpm": "149",
+      "artist": "削除",
+      "folder": "[L] [10] Ire",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [10] PUMP THE STEREO (Medium)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [10] PUMP THE STEREO.jpg",
+      "bpm": "144",
+      "artist": "EUROCLUB",
+      "folder": "[L] [10] PUMP THE STEREO",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [11] charm♡you",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [11] Charm you.jpg",
+      "bpm": "147",
+      "artist": "U-ske feat.花柚",
+      "folder": "[L] [11] Charm you",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [11] Inner Circle",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [11] Inner Circle.jpg",
+      "bpm": "172",
+      "artist": "factal",
+      "folder": "[L] [11] Inner Circle",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [12] l'amour d'amour",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [12] l'amour d'amour.jpg",
+      "bpm": "159",
+      "artist": "orangentle",
+      "folder": "[L] [12] l'amour d'amour",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[L] [12] Roar of Chronos",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[L] [12] Roar of Chronos.jpg",
+      "bpm": "175",
+      "artist": "BEMANI Sound Team \"KE!JU\"",
+      "folder": "[L] [12] Roar of Chronos",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [12] Cajuput",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [12] Cajuput.jpg",
+      "bpm": "166",
+      "artist": "Yvya",
+      "folder": "[U] [12] Cajuput",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [12] CHAOTIC SUNBIRD",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [12] CHAOTIC SUNBIRD.jpg",
+      "bpm": "163",
+      "artist": "Tanchiky",
+      "folder": "[U] [12] CHAOTIC SUNBIRD",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [12] Hypnotize",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [12] Hypnotize.jpg",
+      "bpm": "160",
+      "artist": "rejection",
+      "folder": "[U] [12] Hypnotize",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [12] PURE SILVER",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [12] PURE SILVER.jpg",
+      "bpm": "140",
+      "artist": "かめりあ(Camellia)",
+      "folder": "[U] [12] PURE SILVER",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [12] STICKY",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [12] STICKY (Skybreak   splitter Remix).jpg",
+      "bpm": "160",
+      "artist": "Tyler, The Creator",
+      "folder": "[U] [12] STICKY (Skybreak + splitter Remix)",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [12] World War Rave",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [12] World War Rave.jpg",
+      "bpm": "130",
+      "artist": "Ray Volpe",
+      "folder": "[U] [12] World War Rave",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] ALERT",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] ALERT.jpg",
+      "bpm": "150",
+      "artist": "Juggernaut. & flatt",
+      "folder": "[U] [13] ALERT",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Antifront Gears",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Antifront Gears.jpg",
+      "bpm": "100-200",
+      "artist": "Getty vs. DJ DiA",
+      "folder": "[U] [13] Antifront Gears",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Coconut",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Coconut.jpg",
+      "bpm": "145",
+      "artist": "BeutNoise & SEED",
+      "folder": "[U] [13] Coconut",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] DARK LEGACY",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] DARK LEGACY.jpg",
+      "bpm": "196",
+      "artist": "BaSTeT",
+      "folder": "[U] [13] DARK LEGACY",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] 東",
+      "name_translation": "[U] [13] Higashi",
+      "jacket": "itg/storm2026/[U] [13] Higashi.jpg",
+      "bpm": "164",
+      "artist": "かたぎり",
+      "folder": "[U] [13] Higashi",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Lick It (TYNAN Remix)",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Lick It (TYNAN Remix).jpg",
+      "bpm": "150",
+      "artist": "Skrillex & Kaskade",
+      "folder": "[U] [13] Lick It (TYNAN Remix)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Ou Legends",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Ou Legends (No CMOD).jpg",
+      "bpm": "191",
+      "artist": "かめりあ",
+      "folder": "[U] [13] Ou Legends (No CMOD)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[U] [13] Paradial Resonator",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Paradial Resonator.jpg",
+      "bpm": "156",
+      "artist": "Reku Mochizuki",
+      "folder": "[U] [13] Paradial Resonator",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Reality\\:SHIFT",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] RealitySHIFT.jpg",
+      "bpm": "155",
+      "artist": "Drazically",
+      "folder": "[U] [13] RealitySHIFT",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Song of Truth",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Song of Truth (MEMODEMO U BilliumMoto Remix) (No CMOD).jpg",
+      "bpm": "145",
+      "artist": "Street feat. 杠葉えりか",
+      "folder": "[U] [13] Song of Truth (MEMODEMO U BilliumMoto Remix) (No CMOD)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+    },
+    {
+      "name": "[U] [13] SYNERGY",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] SYNERGY.jpg",
+      "bpm": "165",
+      "artist": "lapix",
+      "folder": "[U] [13] SYNERGY",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] Temporal Veil",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [13] Temporal Veil.jpg",
+      "bpm": "180",
+      "artist": "Gardens",
+      "folder": "[U] [13] Temporal Veil",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [13] ニルヴの心臓",
+      "name_translation": "[U] [13] Tower of Nirv",
+      "jacket": "itg/storm2026/[U] [13] Tower of Nirv.jpg",
+      "bpm": "128",
+      "artist": "TJ.hangneil + Atomic Sphere feat. Annabel",
+      "folder": "[U] [13] Tower of Nirv",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [14] Clinozoisite",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [14] Clinozoisite.jpg",
+      "bpm": "175",
+      "artist": "Ludicin",
+      "folder": "[U] [14] Clinozoisite",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [14] Deep Into The Vibe",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [14] Deep Into The Vibe.jpg",
+      "bpm": "175",
+      "artist": "rejection",
+      "folder": "[U] [14] Deep Into The Vibe",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [14] Duplication",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [14] Duplication.jpg",
+      "bpm": "202",
+      "artist": "Zekk",
+      "folder": "[U] [14] Duplication",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [14] Elusive Enforcer",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [14] Elusive Enforcer.jpg",
+      "bpm": "185",
+      "artist": "K-forest vs. Reku Mochizuki",
+      "folder": "[U] [14] Elusive Enforcer",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [14] MAXRAGE",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [14] MAXRAGE.jpg",
+      "bpm": "222",
+      "artist": "EBIMAYO",
+      "folder": "[U] [14] MAXRAGE",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[U] [14] Voice 2 Voice n Voice",
+      "name_translation": "",
+      "jacket": "itg/storm2026/[U] [14] Voice 2 Voice n Voice.jpg",
+      "bpm": "157",
+      "artist": "Acotto",
+      "folder": "[U] [14] Voice 2 Voice n Voice",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    }
+  ]
+}
