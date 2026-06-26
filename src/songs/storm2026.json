@@ -1,14 +1,14 @@
 {
   "meta": {
     "menuParent": "events",
-    "flags": ["noCmod"],
+    "flags": ["noCmod", "Base", "Lower", "Upper"],
     "lastUpdated": 1782464915971,
     "usesDrawGroups": false,
     "styles": ["single"],
     "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
   },
   "defaults": {
-    "flags": ["noCmod"],
+    "flags": ["noCmod", "Base"],
     "lowerLvlBound": 9,
     "difficulties": ["challenge"],
     "style": "single",
@@ -26,6 +26,9 @@
       "challenge": "Challenge",
       "edit": "Edit",
       "noCmod": "No CMOD",
+      "Base": "Base",
+      "Lower": "Lower",
+      "Upper": "Upper",
       "$abbr": {
         "beginner": "Beg",
         "basic": "Bas",
@@ -44,7 +47,14 @@
       "bpm": "132",
       "artist": "Tomggg & 北村蕗",
       "folder": "[10] Champool",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[10] Exquisite",
@@ -53,7 +63,14 @@
       "bpm": "140",
       "artist": "MrKoolTrix",
       "folder": "[10] Exquisite",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[10] In the Museum",
@@ -62,7 +79,14 @@
       "bpm": "110",
       "artist": "Raphael Robatto",
       "folder": "[10] In the Museum (No CMOD)",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[10] Mr. Electron",
@@ -71,7 +95,14 @@
       "bpm": "128",
       "artist": "The Brig x Michael White",
       "folder": "[10] Mr. Electron",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[10] Ultramarine",
@@ -80,7 +111,14 @@
       "bpm": "128",
       "artist": "Yunosuke",
       "folder": "[10] Ultramarine (No CMOD)",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[11] Alchemist",
@@ -89,7 +127,14 @@
       "bpm": "188",
       "artist": "Savant feat. Gino Sydal",
       "folder": "[11] Alchemist",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] All I Need VIP",
@@ -98,7 +143,14 @@
       "bpm": "145",
       "artist": "Slushii",
       "folder": "[11] All I Need VIP",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] BADBOY",
@@ -107,7 +159,14 @@
       "bpm": "165",
       "artist": "CamaCon",
       "folder": "[11] BADBOY",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Cat's Meow",
@@ -116,7 +175,14 @@
       "bpm": "146",
       "artist": "黒鉄たま",
       "folder": "[11] Cat's Meow",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Cerulean",
@@ -125,7 +191,14 @@
       "bpm": "150",
       "artist": "Synthion",
       "folder": "[11] Cerulean",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Clear the Way!",
@@ -134,7 +207,14 @@
       "bpm": "125",
       "artist": "sincx",
       "folder": "[11] Clear the Way!",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] CONTROL",
@@ -143,7 +223,14 @@
       "bpm": "126",
       "artist": ".NET RUN & bauti",
       "folder": "[11] CONTROL",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Eyes On The Stars",
@@ -152,7 +239,14 @@
       "bpm": "175",
       "artist": "mameyudoufu",
       "folder": "[11] Eyes On The Stars",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Gorgetech",
@@ -161,7 +255,14 @@
       "bpm": "160",
       "artist": "Shiron",
       "folder": "[11] Gorgetech (No CMOD)",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[11] Hagiasmos",
@@ -170,7 +271,14 @@
       "bpm": "150",
       "artist": "Iris",
       "folder": "[11] Hagiasmos (No CMOD)",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[11] Piano x Forte x Scandal",
@@ -179,7 +287,14 @@
       "bpm": "135",
       "artist": "OSTER Project",
       "folder": "[11] Piano x Forte x Scandal",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Pocari Freakz",
@@ -188,7 +303,14 @@
       "bpm": "140",
       "artist": "The Hair Kid",
       "folder": "[11] Pocari Freakz (JAKAZiD Remix)",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Shakariki Hopping",
@@ -197,7 +319,14 @@
       "bpm": "128",
       "artist": "MYUKKE.",
       "folder": "[11] Shakariki Hopping",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Slamurai",
@@ -206,7 +335,14 @@
       "bpm": "132",
       "artist": "kLL Bill",
       "folder": "[11] Slamurai (No CMOD)",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[11] Speed Dating (Hard)",
@@ -215,7 +351,14 @@
       "bpm": "145",
       "artist": "DJ Sugarush, Jai Piccone, Hotel Rubio",
       "folder": "[11] Speed Dating",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[11] Your Mind",
@@ -224,7 +367,14 @@
       "bpm": "180",
       "artist": "Roy Mikelate",
       "folder": "[11] Your Mind",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] Astray",
@@ -233,7 +383,14 @@
       "bpm": "146",
       "artist": "Cynax",
       "folder": "[12] Astray",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] Behemoth",
@@ -242,7 +399,14 @@
       "bpm": "160-190",
       "artist": "DJ Myosuke",
       "folder": "[12] Behemoth",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] Dodo (RED VERSION)",
@@ -251,7 +415,14 @@
       "bpm": "130",
       "artist": "CHOMPO, meganeko",
       "folder": "[12] Dodo (RED VERSION)",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] Drinksu Drinksu Drinksu",
@@ -260,7 +431,14 @@
       "bpm": "164",
       "artist": "Rahul Sipligunj, Sri Vasanth, Chandra Bose",
       "folder": "[12] Drinksu Drinksu Drinksu",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] Hyper Bass With You",
@@ -269,7 +447,14 @@
       "bpm": "160",
       "artist": "Srezcat & Shinonome Interface",
       "folder": "[12] Hyper Bass With You",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] IMPULSE",
@@ -278,7 +463,14 @@
       "bpm": "145",
       "artist": "Riya",
       "folder": "[12] IMPULSE (No CMOD)",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[12] Inner Spirit",
@@ -287,7 +479,14 @@
       "bpm": "150",
       "artist": "lapix (Remixed by Blacklolita)",
       "folder": "[12] Inner Spirit (GIGA HiTECH Mix) (No CMOD)",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[12] N1ghtmare",
@@ -296,7 +495,14 @@
       "bpm": "150",
       "artist": "Dustvoxx",
       "folder": "[12] N1ghtmare",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] TAK it",
@@ -305,7 +511,14 @@
       "bpm": "142",
       "artist": "TAK",
       "folder": "[12] TAK it",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] TRASH CLAN",
@@ -314,7 +527,14 @@
       "bpm": "164",
       "artist": "METAROOM",
       "folder": "[12] TRASH CLAN",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[12] TSLove",
@@ -323,7 +543,14 @@
       "bpm": "185",
       "artist": "O2i3",
       "folder": "[12] TSLove",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[13] Decade",
@@ -332,7 +559,14 @@
       "bpm": "175",
       "artist": "Zekk",
       "folder": "[13] Decade",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[13] Nightfall",
@@ -341,7 +575,14 @@
       "bpm": "150",
       "artist": "Syncatto",
       "folder": "[13] Nightfall",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Base"]
+        }
+      ]
     },
     {
       "name": "[13] RED ZONE",
@@ -350,7 +591,14 @@
       "bpm": "165",
       "artist": "Tatsh&NAOKI",
       "folder": "[13] RED ZONE (No CMOD)",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Base"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Automagic",
@@ -359,7 +607,14 @@
       "bpm": "125",
       "artist": "Televisor",
       "folder": "[L] [09] Automagic",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] BOCA",
@@ -368,7 +623,14 @@
       "bpm": "200",
       "artist": "Dreamcatcher",
       "folder": "[L] [09] BOCA",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] FACE IT",
@@ -377,7 +639,14 @@
       "bpm": "150",
       "artist": "Aiden Williams",
       "folder": "[L] [09] FACE IT",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Fallin' Deep",
@@ -386,7 +655,14 @@
       "bpm": "65-130",
       "artist": "Nhato",
       "folder": "[L] [09] Fallin' Deep (No CMOD)",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Honey (Classic Mix)",
@@ -395,7 +671,14 @@
       "bpm": "125",
       "artist": "Mariah Carey",
       "folder": "[L] [09] Honey (Classic Mix)",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Immaterial",
@@ -404,7 +687,14 @@
       "bpm": "140",
       "artist": "SOPHIE",
       "folder": "[L] [09] Immaterial",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Light Switch (Hard)",
@@ -413,7 +703,14 @@
       "bpm": "79-184",
       "artist": "Charlie Puth",
       "folder": "[L] [09] Light Switch (No CMOD)",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Lines (Easy)",
@@ -422,7 +719,14 @@
       "bpm": "140",
       "artist": "Nhato",
       "folder": "[L] [09] Lines",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Love You Back",
@@ -431,7 +735,14 @@
       "bpm": "106",
       "artist": "Madeon",
       "folder": "[L] [09] Love You Back",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] Poplife",
@@ -440,7 +751,14 @@
       "bpm": "142",
       "artist": "umru & underscores",
       "folder": "[L] [09] Poplife",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [09] POP/STARS",
@@ -449,7 +767,14 @@
       "bpm": "170",
       "artist": "K/DA",
       "folder": "[L] [09] POPSTARS",
-      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] a funk that never stops",
@@ -458,7 +783,14 @@
       "bpm": "128",
       "artist": "reallerr",
       "folder": "[L] [10] a funk that never stops",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Chaos of Drum",
@@ -467,7 +799,14 @@
       "bpm": "128",
       "artist": "KO3",
       "folder": "[L] [10] Chaos of Drum",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Crow's Eye (Hard)",
@@ -476,7 +815,14 @@
       "bpm": "145",
       "artist": "KSM",
       "folder": "[L] [10] Crow's Eye",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Damager",
@@ -485,7 +831,14 @@
       "bpm": "130",
       "artist": "JAWNS",
       "folder": "[L] [10] Damager",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Desert Palace Zone",
@@ -494,7 +847,14 @@
       "bpm": "130",
       "artist": "AshZone",
       "folder": "[L] [10] Desert Palace Zone",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] EVERYTHING! (Hard)",
@@ -503,7 +863,14 @@
       "bpm": "172",
       "artist": "Ash Astral",
       "folder": "[L] [10] EVERYTHING!",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Folded (Hard)",
@@ -512,7 +879,14 @@
       "bpm": "136",
       "artist": "Kehlani",
       "folder": "[L] [10] Folded",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Hush hush",
@@ -521,7 +895,14 @@
       "bpm": "104",
       "artist": "Meira Omar",
       "folder": "[L] [10] Hush hush",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] Ire (Hard)",
@@ -530,7 +911,14 @@
       "bpm": "149",
       "artist": "削除",
       "folder": "[L] [10] Ire",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [10] PUMP THE STEREO (Medium)",
@@ -539,7 +927,14 @@
       "bpm": "144",
       "artist": "EUROCLUB",
       "folder": "[L] [10] PUMP THE STEREO",
-      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [11] charm♡you",
@@ -548,7 +943,14 @@
       "bpm": "147",
       "artist": "U-ske feat.花柚",
       "folder": "[L] [11] Charm you",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [11] Inner Circle",
@@ -557,7 +959,14 @@
       "bpm": "172",
       "artist": "factal",
       "folder": "[L] [11] Inner Circle",
-      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [12] l'amour d'amour",
@@ -566,7 +975,14 @@
       "bpm": "159",
       "artist": "orangentle",
       "folder": "[L] [12] l'amour d'amour",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[L] [12] Roar of Chronos",
@@ -575,7 +991,14 @@
       "bpm": "175",
       "artist": "BEMANI Sound Team \"KE!JU\"",
       "folder": "[L] [12] Roar of Chronos",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Lower"]
+        }
+      ]
     },
     {
       "name": "[U] [12] Cajuput",
@@ -584,7 +1007,14 @@
       "bpm": "166",
       "artist": "Yvya",
       "folder": "[U] [12] Cajuput",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [12] CHAOTIC SUNBIRD",
@@ -593,7 +1023,14 @@
       "bpm": "163",
       "artist": "Tanchiky",
       "folder": "[U] [12] CHAOTIC SUNBIRD",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [12] Hypnotize",
@@ -602,7 +1039,14 @@
       "bpm": "160",
       "artist": "rejection",
       "folder": "[U] [12] Hypnotize",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [12] PURE SILVER",
@@ -611,7 +1055,14 @@
       "bpm": "140",
       "artist": "かめりあ(Camellia)",
       "folder": "[U] [12] PURE SILVER",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [12] STICKY",
@@ -620,7 +1071,14 @@
       "bpm": "160",
       "artist": "Tyler, The Creator",
       "folder": "[U] [12] STICKY (Skybreak + splitter Remix)",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [12] World War Rave",
@@ -629,7 +1087,14 @@
       "bpm": "130",
       "artist": "Ray Volpe",
       "folder": "[U] [12] World War Rave",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] ALERT",
@@ -638,7 +1103,14 @@
       "bpm": "150",
       "artist": "Juggernaut. & flatt",
       "folder": "[U] [13] ALERT",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Antifront Gears",
@@ -647,7 +1119,14 @@
       "bpm": "100-200",
       "artist": "Getty vs. DJ DiA",
       "folder": "[U] [13] Antifront Gears",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Coconut",
@@ -656,7 +1135,14 @@
       "bpm": "145",
       "artist": "BeutNoise & SEED",
       "folder": "[U] [13] Coconut",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] DARK LEGACY",
@@ -665,7 +1151,14 @@
       "bpm": "196",
       "artist": "BaSTeT",
       "folder": "[U] [13] DARK LEGACY",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] 東",
@@ -674,7 +1167,14 @@
       "bpm": "164",
       "artist": "かたぎり",
       "folder": "[U] [13] Higashi",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Lick It (TYNAN Remix)",
@@ -683,7 +1183,14 @@
       "bpm": "150",
       "artist": "Skrillex & Kaskade",
       "folder": "[U] [13] Lick It (TYNAN Remix)",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Ou Legends",
@@ -692,7 +1199,14 @@
       "bpm": "191",
       "artist": "かめりあ",
       "folder": "[U] [13] Ou Legends (No CMOD)",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Paradial Resonator",
@@ -701,7 +1215,14 @@
       "bpm": "156",
       "artist": "Reku Mochizuki",
       "folder": "[U] [13] Paradial Resonator",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Reality\\:SHIFT",
@@ -710,7 +1231,14 @@
       "bpm": "155",
       "artist": "Drazically",
       "folder": "[U] [13] RealitySHIFT",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Song of Truth",
@@ -719,7 +1247,14 @@
       "bpm": "145",
       "artist": "Street feat. 杠葉えりか",
       "folder": "[U] [13] Song of Truth (MEMODEMO U BilliumMoto Remix) (No CMOD)",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge", "flags": ["noCmod"] }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["noCmod", "Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] SYNERGY",
@@ -728,7 +1263,14 @@
       "bpm": "165",
       "artist": "lapix",
       "folder": "[U] [13] SYNERGY",
-      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] Temporal Veil",
@@ -737,7 +1279,14 @@
       "bpm": "180",
       "artist": "Gardens",
       "folder": "[U] [13] Temporal Veil",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [13] ニルヴの心臓",
@@ -746,7 +1295,14 @@
       "bpm": "128",
       "artist": "TJ.hangneil + Atomic Sphere feat. Annabel",
       "folder": "[U] [13] Tower of Nirv",
-      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [14] Clinozoisite",
@@ -755,7 +1311,14 @@
       "bpm": "175",
       "artist": "Ludicin",
       "folder": "[U] [14] Clinozoisite",
-      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [14] Deep Into The Vibe",
@@ -764,7 +1327,14 @@
       "bpm": "175",
       "artist": "rejection",
       "folder": "[U] [14] Deep Into The Vibe",
-      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [14] Duplication",
@@ -773,7 +1343,14 @@
       "bpm": "202",
       "artist": "Zekk",
       "folder": "[U] [14] Duplication",
-      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [14] Elusive Enforcer",
@@ -782,7 +1359,14 @@
       "bpm": "185",
       "artist": "K-forest vs. Reku Mochizuki",
       "folder": "[U] [14] Elusive Enforcer",
-      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [14] MAXRAGE",
@@ -791,7 +1375,14 @@
       "bpm": "222",
       "artist": "EBIMAYO",
       "folder": "[U] [14] MAXRAGE",
-      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     },
     {
       "name": "[U] [14] Voice 2 Voice n Voice",
@@ -800,7 +1391,14 @@
       "bpm": "157",
       "artist": "Acotto",
       "folder": "[U] [14] Voice 2 Voice n Voice",
-      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "flags": ["Upper"]
+        }
+      ]
     }
   ]
 }
