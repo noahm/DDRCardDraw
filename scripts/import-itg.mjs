@@ -147,9 +147,11 @@ for (const parsedSong of pack.simfiles) {
     parsedSong.title.titleName,
     parsedSong.title.translitTitleName,
     parsedSong.subtitle.subtitleName,
-    parsedSong.subtitle.translitSubtitleName
+    parsedSong.subtitle.translitSubtitleName,
   ];
-  const isNoCmod = titles.some((title) => title?.toLowerCase().includes("no cmod"));
+  const isNoCmod = titles.some((title) =>
+    title?.toLowerCase().includes("no cmod"),
+  );
 
   for (const chart of parsedSong.availableTypes) {
     let chartData = {
