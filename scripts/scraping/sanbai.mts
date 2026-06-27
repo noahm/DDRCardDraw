@@ -39,6 +39,12 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [320, ["tempUnlock"]], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
   [330, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append (2026-03-26 10:00~2026-04-26 23:59)
   [350, ["unlock"]], // 段位認定(DAN RANK)
+  [
+    360,
+    _currentDate <= new Date("2026-08-17T09:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // BEMANI納涼祭2026 (2026-06-18 10:00~2026-08-17 09:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -131,29 +137,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   [
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
-  ],
-  // #region EXTRA SAVIOR WORLD - The 6th MUSIC CREATOR AUDITION
-  [
-    "1l0i6b10D8dbD60QIbiqlidQo9d69qII", // 電幻圏
-    {
-      ratings: [2, 5, 10, 15, 0, 5, 10, 15, 0],
-      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
-    },
-  ],
-  [
-    "i1QlPD8oooQ6lQq9Oo9qdi9q0Q0QqdoQ", // MYSTIC CUBE
-    {
-      ratings: [3, 8, 12, 15, 0, 8, 12, 15, 0],
-      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
-    },
-  ],
-  // #endregion EXTRA SAVIOR WORLD - The 6th MUSIC CREATOR AUDITION
-  [
-    "o9iQ96669qo618i6DobbdD8I1lPiq8oQ", // 少女、摩天楼へ
-    {
-      ratings: [3, 6, 11, 15, 0, 6, 11, 15, 0],
-      lock_types: [300, 300, 300, 300, 0, 300, 300, 300, 0],
-    },
   ],
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
