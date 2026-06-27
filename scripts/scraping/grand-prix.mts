@@ -53,6 +53,10 @@ const corrections = new Map<string, Partial<Pick<Song, "name" | "artist">>>([
     { name: "野球の遊び方　そしてその歴史　～決定版～" },
   ],
   ["零 - ZERO -", { artist: "TЁЯRA" }],
+  [
+    "踊るフィーバーロボ Eu-Robot mix",
+    { name: "踊るフィーバーロボ　Eu-Robot mix" },
+  ],
 ]);
 
 export class GrandPrixSongImporter implements DDRSongImporter<
