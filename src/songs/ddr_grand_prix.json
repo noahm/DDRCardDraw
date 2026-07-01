@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1782399251765
+    "lastUpdated": 1782800796312
   },
   "defaults": {
     "style": "single",
@@ -4247,7 +4247,7 @@
           "maxScore": 1608
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/ARACHNE.jpg",
       "remyLink": "https://remywiki.com/ARACHNE"
     },
@@ -5143,7 +5143,7 @@
           "maxScore": 2073
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/BabeL ～Next Story～.jpg",
       "remyLink": "https://remywiki.com/BabeL_~Next_Story~",
       "genre": "スケールアウト",
@@ -17746,7 +17746,7 @@
           "maxScore": 1875
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/EBONY & IVORY.jpg",
       "remyLink": "https://remywiki.com/EBONY_%26_IVORY",
       "genre": "ラグタイムチップチューン/RAGTIME CHIPTUNE"
@@ -32733,7 +32733,7 @@
           "maxScore": 1482
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Liar×Girl.jpg",
       "remyLink": "https://remywiki.com/Liar_Girl",
       "genre": ""
@@ -37002,6 +37002,84 @@
       "jacket": "ddr_2013/Monkey Business.png",
       "remyLink": "https://remywiki.com/Monkey_Business",
       "genre": "HARD DANCE"
+    },
+    {
+      "name": "Monsters Den",
+      "artist": "kors k",
+      "saHash": "0QI6ODo0bPq6Io8ibP16d6I81dbI6oDi",
+      "bpm": "80-160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "160",
+          "sanbaiTier": 3.2,
+          "maxScore": 342
+        },
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "160",
+          "sanbaiTier": 5.2,
+          "maxScore": 615
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.35,
+          "maxScore": 1020
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5,
+          "maxScore": 1887
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.45,
+          "maxScore": 2394
+        },
+        {
+          "lvl": 5,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "160",
+          "sanbaiTier": 5.1,
+          "maxScore": 573
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 10.1,
+          "maxScore": 951
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.4,
+          "maxScore": 1854
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.35,
+          "maxScore": 2334
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/Monsters Den.jpg",
+      "remyLink": "https://remywiki.com/Monsters_Den"
     },
     {
       "name": "MOON",
@@ -52928,6 +53006,84 @@
       "remyLink": "https://remywiki.com/Squeeze",
       "genre": "WITHOUT YOU TONIGHT -VI-",
       "search_hint": "WITHOUT YOU TONIGHT -VI-/ウィザウチュナイ-ゼクス-"
+    },
+    {
+      "name": "Stand Alone Beat Masta",
+      "artist": "GUHROOVY",
+      "saHash": "Dqb69lDiP6diId6O8Q0I6bbQI88lPlb0",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "lvl": 4,
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "200",
+          "sanbaiTier": 4.4,
+          "maxScore": 336
+        },
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "200",
+          "sanbaiTier": 10.15,
+          "maxScore": 852
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.5,
+          "maxScore": 1404
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.5,
+          "maxScore": 1737
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.45,
+          "maxScore": 2082
+        },
+        {
+          "lvl": 10,
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "200",
+          "sanbaiTier": 10.05,
+          "maxScore": 843
+        },
+        {
+          "lvl": 13,
+          "style": "double",
+          "diffClass": "difficult",
+          "sanbaiTier": 13.25,
+          "maxScore": 1353
+        },
+        {
+          "lvl": 15,
+          "style": "double",
+          "diffClass": "expert",
+          "sanbaiTier": 15.25,
+          "maxScore": 1731
+        },
+        {
+          "lvl": 17,
+          "style": "double",
+          "diffClass": "challenge",
+          "sanbaiTier": 17.35,
+          "maxScore": 2061
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/Stand Alone Beat Masta.jpg",
+      "remyLink": "https://remywiki.com/Stand_Alone_Beat_Masta"
     },
     {
       "name": "Star Trail",
@@ -72364,11 +72520,11 @@
           "maxScore": 1599
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/ポチコの幸せな日常.jpg",
       "remyLink": "https://remywiki.com/Pochiko_no_shiawasena_nichijou",
-      "genre": "わんわんコア",
-      "search_hint": "ぽちこのしあわせなにちじょう PUPCORE/わんわんコア"
+      "genre": "PUPCORE/わんわんコア",
+      "search_hint": "ぽちこのしあわせなにちじょう"
     },
     {
       "name": "ポラリスノウタ",
@@ -77975,11 +78131,11 @@
           "maxScore": 2154
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/明鏡止水.jpg",
       "remyLink": "https://remywiki.com/Meikyoushisui",
-      "genre": "禅ジャズ",
-      "search_hint": "めいきょうしすい ZEN-JAZZ/禅ジャズ"
+      "genre": "ZEN-JAZZ/禅ジャズ",
+      "search_hint": "めいきょうしすい"
     },
     {
       "name": "星が泳ぐ",
@@ -81007,7 +81163,7 @@
           "maxScore": 2205
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/絶対零度.jpg",
       "remyLink": "https://remywiki.com/Zettaireido",
       "search_hint": "ぜったいれいど"
@@ -82072,11 +82228,11 @@
           "maxScore": 1851
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/路男.jpg",
       "remyLink": "https://remywiki.com/Roman",
-      "genre": "ヒップロック4",
-      "search_hint": "ろまん HIP ROCK 4/ヒップロック4"
+      "genre": "HIP ROCK 4/ヒップロック4",
+      "search_hint": "ろまん"
     },
     {
       "name": "踊るフィーバーロボ　Eu-Robot mix",

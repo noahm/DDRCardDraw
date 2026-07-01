@@ -78,25 +78,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  ...[
-    // グランプリ楽曲パック vol.36
-    "98QDoo1I6dP8QoPiDQOdQ09Db80Il68q", // ARACHNE
-    "00o6QPq0Qdl8IQolO80q6dD86696O6ob", // EBONY & IVORY
-    "blq0Oq8q6oi89odoPOqIDDQIPO11IQ9O", // Liar×Girl
-    "i080lP1QqIiO998qPl888qboIiIDdiD1", // 絶対零度
-    // スペシャル楽曲パック feat.pop'n music vol.1
-    "IqPq866IQD0liq9lOl00qDqiPlq9bOD0", // BabeL ～Next Story～
-    "8909Q00li66qQ906I9QoldIqbiIP1QoQ", // ポチコの幸せな日常
-    "0Q6I1llb809bd8i1oo86PQdlo6IQ8DQd", // 明鏡止水
-    "0b96d606l9bdllQDi1Q89d1O0IPlIb69", // 路男
-    // プラチナメンバーズパス特典1
-    "0QI6ODo0bPq6Io8ibP16d6I81dbI6oDi", // Monsters Den
-    "Dqb69lDiP6diId6O8Q0I6bbQI88lPlb0", // Stand Alone Beat Masta
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-06-30T15:00:00+09:00"),
-    id,
-    { lock_types: undefined },
-  ]),
   // グランプリ譜面パック vol.2
   ...[
     "Q96bO9D61lib19IiIi0i69P80bo6q69Q", // 321STARS
