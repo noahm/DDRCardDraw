@@ -16,7 +16,7 @@ import {
   setBlockedActionHandler,
   setPartyConnectionHealthy,
 } from "./connection-status";
-import { PendingActionTracker } from "./pending-actions";
+import { SyncManager } from "./sync-manager";
 
 const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
@@ -34,9 +34,9 @@ export function PartySocketManager(props: {
   // tracks if the user has been notified of a dead connection,
   // so we only announce a reconnect after announcing a disconnect
   const disconnectedRef = useRef(false);
-  const trackerRef = useRef<PendingActionTracker | null>(null);
-  // keeps the tracker's give-up toast bound to the current locale without
-  // recreating the tracker (which would drop pending actions)
+  const syncRef = useRef<SyncManager | null>(null);
+  // keeps the sync manager's give-up toast bound to the current locale
+  // without recreating it (which would drop pending actions)
   const sendFailedToast = useRef(() => {});
 
   const socket = usePartySocket({
@@ -48,10 +48,13 @@ export function PartySocketManager(props: {
         switch (data.type) {
           case "roomstate":
             applyMigrations(data.state);
-            dispatch(receivePartyState(data.state));
-            // replay anything that went unconfirmed before this (re)connect,
-            // now that the fresh server state has been applied locally
-            trackerRef.current?.handleRoomstate(data.recentActionIds ?? []);
+            // adopt the server state as confirmed, rebasing anything that
+            // went unconfirmed before this (re)connect on top of it
+            dispatch(
+              receivePartyState(
+                syncRef.current?.handleRoomstate(data) ?? data.state,
+              ),
+            );
             // dispatch stays blocked until the resync above is complete
             setPartyConnectionHealthy(true);
             if (disconnectedRef.current) {
@@ -70,14 +73,10 @@ export function PartySocketManager(props: {
             setReady(true);
             break;
           case "action":
-            const foreignAction = {
-              ...data.action,
-              meta: { source: "partykit" },
-            };
-            dispatch(foreignAction);
+            syncRef.current?.handleRemoteAction(data);
             break;
           case "ack":
-            trackerRef.current?.handleAck(data.id);
+            syncRef.current?.handleAck(data.id);
             break;
         }
       } catch (e) {
@@ -141,17 +140,22 @@ export function PartySocketManager(props: {
   }, []);
 
   useEffect(() => {
-    const tracker = new PendingActionTracker(socket, {
-      redispatch(action) {
-        // mirror the shape of relayed actions so the listener below
-        // doesn't send it to the server a second time
+    const sync = new SyncManager(socket, {
+      dispatchForeign(action) {
+        // mark the source so the listener below doesn't send it back out
         dispatch({ ...action, meta: { source: "partykit" } });
+      },
+      applyState(state) {
+        dispatch(receivePartyState(state));
+      },
+      resync() {
+        socket.reconnect();
       },
       onGiveUp() {
         sendFailedToast.current();
       },
     });
-    trackerRef.current = tracker;
+    syncRef.current = sync;
     const stopListening = startAppListening({
       predicate(action) {
         // @ts-expect-error i don't know how to type action meta properties yet
@@ -166,13 +170,13 @@ export function PartySocketManager(props: {
         return true;
       },
       effect(action) {
-        tracker.send(action);
+        sync.send(action);
       },
     });
     return () => {
       stopListening();
-      tracker.dispose();
-      trackerRef.current = null;
+      sync.dispose();
+      syncRef.current = null;
     };
   }, [socket, dispatch]);
 

@@ -9,6 +9,8 @@ export interface Roomstate {
    * pending re-sends whose effects are already baked into `state`
    */
   recentActionIds?: string[];
+  /** the seq of the last action baked into `state` */
+  seq?: number;
 }
 
 export interface ReduxAction {
@@ -16,6 +18,12 @@ export interface ReduxAction {
   action: Action;
   /** unique message id; when present the server confirms receipt with an ack */
   id?: string;
+  /**
+   * canonical order assigned by the server. Present on server broadcasts,
+   * never on client sends. The server echoes a stamped copy of each action
+   * back to its sender as the receipt confirmation.
+   */
+  seq?: number;
 }
 
 /** the server confirms it received and applied the action with this id */
