@@ -38,5 +38,10 @@ Useful flows in event mode:
 ## Gotchas
 
 - `pkill -f 'partykit dev'` matches its own wrapping shell — use `pkill -f '[p]artykit dev'`.
+- `partykit dev` spawns a `workerd` child that actually owns port 1999 and the
+  websockets. To simulate a stalled/dead server, signal `'[w]orkerd serve'`
+  (SIGSTOP freezes it without closing sockets — great for ack-timeout tests);
+  killing only the node wrapper leaves the server running. Playwright's
+  `page.on("websocket")` frame events give protocol-level evidence.
 - Dev `partykit dev` persists room state to disk, so room contents survive a backend restart.
 - In dev, the frontend targets `localhost:1999` automatically (`src/party/host.ts`).

@@ -1,5 +1,5 @@
 import type * as Party from "partykit/server";
-import type { ReduxAction, Roomstate } from "./types";
+import type { ActionAck, ReduxAction, Roomstate } from "./types";
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
@@ -30,9 +30,15 @@ function isAppState(state: unknown): state is AppState {
   return false;
 }
 
+/** upper bound on remembered action ids used to dedupe client re-sends */
+const MAX_REMEMBERED_ACTIONS = 1000;
+
 export default class Server implements Party.Server {
   // @ts-expect-error I assign this for sure
   private store: typeof appReduxStore;
+
+  /** ids of recently applied actions, oldest first */
+  private seenActionIds = new Set<string>();
 
   constructor(readonly room: Party.Room) {
     console.log("constructor start");
@@ -93,11 +99,21 @@ export default class Server implements Party.Server {
       JSON.stringify(<Roomstate>{
         type: "roomstate",
         state: this.store.getState(),
+        recentActionIds: Array.from(this.seenActionIds),
       }),
     );
   }
 
   async onMessage(message: string, sender: Party.Connection) {
+    const parsed = JSON.parse(message) as ReduxAction;
+
+    if (parsed.id && this.seenActionIds.has(parsed.id)) {
+      // a re-send of an action already applied: confirm receipt again
+      // (the original ack may have been lost) but don't apply it twice
+      this.sendAck(sender, parsed.id);
+      return;
+    }
+
     // broadcast it to all the other connections in the room...
     this.room.broadcast(
       message,
@@ -105,12 +121,16 @@ export default class Server implements Party.Server {
       [sender.id],
     );
 
-    const parsed = JSON.parse(message) as ReduxAction;
     // resolve the new state
     this.store.dispatch(parsed.action);
     const nextState = this.store.getState();
     // persist to partykit storage
     void this.room.storage.put("currentState", nextState);
+
+    if (parsed.id) {
+      this.rememberActionId(parsed.id);
+      this.sendAck(sender, parsed.id);
+    }
     // persist the state to supabase
     try {
       if (supabase) {
@@ -122,6 +142,20 @@ export default class Server implements Party.Server {
       }
     } catch (e) {
       console.warn("error with upsert", e);
+    }
+  }
+
+  private sendAck(conn: Party.Connection, id: string) {
+    conn.send(JSON.stringify(<ActionAck>{ type: "ack", id }));
+  }
+
+  private rememberActionId(id: string) {
+    this.seenActionIds.add(id);
+    if (this.seenActionIds.size > MAX_REMEMBERED_ACTIONS) {
+      for (const oldest of this.seenActionIds) {
+        this.seenActionIds.delete(oldest);
+        break;
+      }
     }
   }
 }
