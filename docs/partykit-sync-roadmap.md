@@ -4,6 +4,8 @@ This documents the design plan for evolving the partykit-based sync behind
 event mode (`/e/:roomName`) into something robust enough for flaky venue
 wifi and concurrent editing, **without abandoning redux**. It was written
 alongside PR #604 so the work can be picked up later from a fresh context.
+For a guided tour of the implementation as it exists today, see
+[partykit-sync-design.md](./partykit-sync-design.md).
 
 ## Where this is going, in one paragraph
 
