@@ -1,5 +1,5 @@
 import type * as Party from "partykit/server";
-import type { ReduxAction, Roomstate } from "./types";
+import type { ActionAck, ReduxAction, Roomstate } from "./types";
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
@@ -30,9 +30,18 @@ function isAppState(state: unknown): state is AppState {
   return false;
 }
 
+/** upper bound on remembered action ids used to dedupe client re-sends */
+const MAX_REMEMBERED_ACTIONS = 1000;
+
 export default class Server implements Party.Server {
   // @ts-expect-error I assign this for sure
   private store: typeof appReduxStore;
+
+  /** monotonic counter assigning the canonical order of applied actions */
+  private seq = 0;
+
+  /** recently applied action ids mapped to their seq, oldest first */
+  private seenActionIds = new Map<string, number>();
 
   constructor(readonly room: Party.Room) {
     console.log("constructor start");
@@ -93,24 +102,44 @@ export default class Server implements Party.Server {
       JSON.stringify(<Roomstate>{
         type: "roomstate",
         state: this.store.getState(),
+        recentActionIds: Array.from(this.seenActionIds.keys()),
+        seq: this.seq,
       }),
     );
   }
 
   async onMessage(message: string, sender: Party.Connection) {
-    // broadcast it to all the other connections in the room...
-    this.room.broadcast(
-      message,
-      // ...except for the connection it came from
-      [sender.id],
-    );
-
     const parsed = JSON.parse(message) as ReduxAction;
+
+    if (parsed.id && this.seenActionIds.has(parsed.id)) {
+      // a re-send of an action already applied: confirm receipt again
+      // (the original ack may have been lost) but don't apply it twice
+      this.sendAck(sender, parsed.id);
+      return;
+    }
+
+    if (parsed.id) {
+      // stamp the action with its canonical position and broadcast to
+      // everyone *including* the sender: the echo doubles as the receipt
+      // confirmation, and all replicas apply actions in seq order
+      this.seq += 1;
+      const stamped: ReduxAction = { ...parsed, seq: this.seq };
+      this.room.broadcast(JSON.stringify(stamped));
+    } else {
+      // legacy client that can't recognize its own echo: relay the
+      // unstamped action to everyone else only
+      this.room.broadcast(message, [sender.id]);
+    }
+
     // resolve the new state
     this.store.dispatch(parsed.action);
     const nextState = this.store.getState();
     // persist to partykit storage
     void this.room.storage.put("currentState", nextState);
+
+    if (parsed.id) {
+      this.rememberActionId(parsed.id);
+    }
     // persist the state to supabase
     try {
       if (supabase) {
@@ -122,6 +151,20 @@ export default class Server implements Party.Server {
       }
     } catch (e) {
       console.warn("error with upsert", e);
+    }
+  }
+
+  private sendAck(conn: Party.Connection, id: string) {
+    conn.send(JSON.stringify(<ActionAck>{ type: "ack", id }));
+  }
+
+  private rememberActionId(id: string) {
+    this.seenActionIds.set(id, this.seq);
+    if (this.seenActionIds.size > MAX_REMEMBERED_ACTIONS) {
+      for (const oldest of this.seenActionIds.keys()) {
+        this.seenActionIds.delete(oldest);
+        break;
+      }
     }
   }
 }
