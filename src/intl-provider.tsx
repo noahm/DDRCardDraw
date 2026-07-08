@@ -10,7 +10,7 @@ const FALLBACK_LOCALE = "en";
 
 const typedTranslations = translations as Record<string, I18NDict>;
 
-export function IntlProvider({ children }: { children: ReactNode }) {
+export function IntlProviderWrapper({ children }: { children: ReactNode }) {
   const allLoadedData = useAtomValue(stockDataCache);
 
   const messages = useMemo(() => {
