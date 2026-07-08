@@ -108,7 +108,7 @@
     "updateReady": "Update ready, refresh for the freshest code around!",
     "applyUpdate": "Apply",
     "party": {
-      "disconnected": "Lost connection to the event server. Changes are disabled until it reconnects.",
+      "disconnected": "Lost connection to the event server. Changes are disabled until reconnected.",
       "reconnected": "Reconnected to the event server!",
       "actionBlocked": "Still reconnecting to the event server. Your change was not applied.",
       "sendFailed": "A change could not be delivered to the event server after several attempts."
