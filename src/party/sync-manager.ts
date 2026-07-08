@@ -14,6 +14,7 @@ interface SocketLike {
   send(data: string): void;
 }
 
+/** An action taken locally that hasn't yet been confirmed by the server */
 interface PendingEntry {
   message: ReduxAction & { id: string };
   attempts: number;
@@ -169,6 +170,9 @@ export class SyncManager {
     return state;
   }
 
+  /**
+   * removes a pending action from our list of pending as the server has now confirmed it
+   */
   private settle(id: string) {
     const entry = this.pending.get(id);
     if (!entry) return;
