@@ -22,6 +22,11 @@ const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
 const SEND_FAILED_TOAST_KEY = "party-action-send-failed";
 
+/** how often to ping the server to prove the socket is really alive */
+const HEARTBEAT_INTERVAL_MS = 10000;
+/** consecutive unanswered pings that mean a stalled (half-open) connection */
+const MAX_MISSED_PONGS = 2;
+
 export function PartySocketManager(props: {
   roomName?: string;
   children: React.ReactNode;
@@ -35,6 +40,9 @@ export function PartySocketManager(props: {
   // so we only announce a reconnect after announcing a disconnect
   const disconnectedRef = useRef(false);
   const syncRef = useRef<SyncManager | null>(null);
+  // consecutive heartbeats sent without a pong back; a stalled-but-open
+  // socket (server frozen, half-open TCP) is otherwise invisible
+  const missedPongsRef = useRef(0);
   // keeps the sync manager's give-up toast bound to the current locale
   // without recreating it (which would drop pending actions)
   const sendFailedToast = useRef(() => {});
@@ -56,6 +64,7 @@ export function PartySocketManager(props: {
               ),
             );
             // dispatch stays blocked until the resync above is complete
+            missedPongsRef.current = 0;
             setPartyConnectionHealthy(true);
             if (disconnectedRef.current) {
               disconnectedRef.current = false;
@@ -75,8 +84,14 @@ export function PartySocketManager(props: {
           case "action":
             syncRef.current?.handleRemoteAction(data);
             break;
+          case "catchup":
+            syncRef.current?.handleCatchup(data.actions);
+            break;
           case "ack":
             syncRef.current?.handleAck(data.id);
+            break;
+          case "pong":
+            missedPongsRef.current = 0;
             break;
         }
       } catch (e) {
@@ -148,6 +163,9 @@ export function PartySocketManager(props: {
       applyState(state) {
         dispatch(receivePartyState(state));
       },
+      requestCatchup(since) {
+        socket.send(JSON.stringify({ type: "catchup", since }));
+      },
       resync() {
         socket.reconnect();
       },
@@ -179,6 +197,25 @@ export function PartySocketManager(props: {
       syncRef.current = null;
     };
   }, [socket, dispatch]);
+
+  // Application-level heartbeat: a websocket can stay OPEN while the server is
+  // frozen or the TCP link is half-open, in which case nothing surfaces the
+  // dead connection until an ack times out. Ping periodically and force a
+  // reconnect once too many pongs go unanswered.
+  useEffect(() => {
+    missedPongsRef.current = 0;
+    const interval = setInterval(() => {
+      if (socket.readyState !== WebSocket.OPEN) return;
+      if (missedPongsRef.current >= MAX_MISSED_PONGS) {
+        missedPongsRef.current = 0;
+        socket.reconnect();
+        return;
+      }
+      missedPongsRef.current += 1;
+      socket.send(JSON.stringify({ type: "ping" }));
+    }, HEARTBEAT_INTERVAL_MS);
+    return () => clearInterval(interval);
+  }, [socket]);
 
   if (!ready) {
     return (

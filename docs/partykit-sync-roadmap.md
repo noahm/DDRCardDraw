@@ -43,13 +43,17 @@ recentActionIds}`.
   - A foreign action arriving while pending actions exist triggers a rebase:
     recompute display = confirmed + pending, delivered via
     `receivePartyState` (wholesale state replacement in the root reducer).
-  - A `seq` gap means a missed broadcast; the only repair today is
-    `socket.reconnect()` → fresh roomstate (see step 2 for the cheaper fix).
+  - A `seq` gap means a missed broadcast; the repair is an incremental
+    catch-up (`{type:"catchup", since}` → the missing stamped actions),
+    falling back to `socket.reconnect()` → fresh roomstate only when the gap
+    predates the server's tail or catch-up goes unanswered (step 2).
   - On roomstate: pending ids listed in `recentActionIds` are dropped (their
     effects are baked into the snapshot); the rest are rebased and re-sent.
 - Connection health: dispatch is gated off (`partyGateMiddleware`) from
   socket-close until the post-reconnect roomstate is fully applied; users see
-  disconnect / blocked / reconnected toasts (suppressed in OBS sources).
+  disconnect / blocked / reconnected toasts (suppressed in OBS sources). An
+  application-level heartbeat (`ping`/`pong`) forces a reconnect when a socket
+  stalls while still open (step 2).
 
 ### Hard requirement: deterministic reducers
 
@@ -80,22 +84,30 @@ fixed in PR #604. Audit any new reducer for this.
 Described above. Kills the divergence class caused by clients applying
 concurrent actions in different orders.
 
-### Step 2 — incremental catch-up + heartbeat (next)
+### Step 2 — incremental catch-up + heartbeat ✅
 
-- Server keeps a tail of recent stamped actions (say 500) in room storage.
-  Client sends `{type: "catchup", since: seq}` on a detected gap; server
-  replies with the missing stamped actions (or a full roomstate if the tail
-  doesn't reach back far enough). Replaces reconnect-as-only-repair; makes
-  brief drops nearly free.
-- Application-level heartbeat: client pings every ~10s, treats N missed pongs
-  as a dead connection and forces the reconnect flow. Today a
-  stalled-but-open socket (server frozen, half-open TCP) isn't noticed until
-  an ack timeout — verified with SIGSTOP on workerd, see
+- Server keeps an in-memory tail of the last 500 stamped actions. The client
+  sends `{type: "catchup", since: seq}` on a detected gap; the server replies
+  with the missing stamped actions (or a full roomstate if the tail doesn't
+  reach back far enough). Replaces reconnect-as-only-repair; makes brief drops
+  nearly free. The client buffers live broadcasts while a catch-up is in
+  flight and drains them once the gap closes.
+  - **The tail is memory-only, not in room storage** (the original plan said
+    storage). A client can only observe a live-socket gap while the same actor
+    has been running the whole time, so the in-memory tail is always intact for
+    the case catch-up serves; a restart/hibernation drops every socket and
+    clients take a fresh roomstate anyway. Persisting the full action bodies on
+    every write would be the write-amplification step 3 is trying to _remove_.
+- Application-level heartbeat: the client pings every ~10s and treats 2 missed
+  pongs as a dead connection, forcing the reconnect flow. A stalled-but-open
+  socket (server frozen, half-open TCP) is otherwise not noticed until an ack
+  timeout — verified with SIGSTOP on workerd, see
   `.claude/skills/verify/SKILL.md`.
-- Move `seq` and the dedupe id set into room storage so PartyKit hibernation
-  or a server restart can't reset them (today: in-memory; safe only because a
-  restart drops all sockets, forcing full roomstate resyncs; the dedupe
-  window across hibernation is a known small hole).
+- `seq` and the dedupe id set now persist to room storage (the `syncMeta` key,
+  written alongside `currentState`) so PartyKit hibernation or a server restart
+  can't reset `seq` to 0 or forget applied ids — closing the
+  dedupe-across-hibernation hole. (The tail, being memory-only, is not part of
+  this blob.)
 
 ### Step 3 — event-sourcing lite
 
