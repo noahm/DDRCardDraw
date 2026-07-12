@@ -34,7 +34,7 @@ import { useDrawing } from "../drawing-context";
 import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
-  playerCount,
+  playerById,
   StartggGauntletMeta,
 } from "../models/Drawing";
 import {
@@ -65,7 +65,6 @@ import { EventModeGated } from "../common-components/app-mode";
 import { useIntl } from "../hooks/useIntl";
 import { ConfigContextProvider, useConfigId } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
-import { times } from "../utils";
 import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
@@ -83,25 +82,25 @@ function getMatchResult(
       return;
     }
     const winsPerPlayer = new CountingSet<string>();
-    for (const [songId, pIdx] of Object.entries(parent.winners)) {
-      if (pIdx === null) {
+    for (const [songId, playerId] of Object.entries(parent.winners)) {
+      if (playerId === null) {
         continue;
       }
-      try {
-        const entrant = parent.meta.entrants[pIdx];
-        gameData.push({ gameNum: gameData.length + 1, winnerId: entrant.id });
-        winsPerPlayer.add(entrant.id);
-      } catch (e) {
-        console.warn(`failed to add game data for song ${songId}`, e);
+      const entrant = playerById(parent.meta, playerId);
+      if (!entrant) {
+        console.warn(`failed to add game data for song ${songId}`);
+        continue;
       }
+      gameData.push({ gameNum: gameData.length + 1, winnerId: entrant.id });
+      winsPerPlayer.add(entrant.id);
     }
     let winnerId: string | undefined;
     const orderedByWins = Array.from(winsPerPlayer.valuesWithCount()).sort(
       (a, b) => b[1] - a[1],
     );
     if (
-      orderedByWins.length == 1 ||
-      orderedByWins[0][1] > orderedByWins[1][1]
+      orderedByWins.length === 1 ||
+      (orderedByWins.length > 1 && orderedByWins[0][1] > orderedByWins[1][1])
     ) {
       // confirmed no tie for first place
       winnerId = orderedByWins[0][0];
@@ -402,7 +401,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
   const [metaEditorOpen, setMetaEditorOpen] = useState(false);
   const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
   const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
-  const isTwoPlayers = playerCount(drawingMeta) === 2;
+  const isTwoPlayers = drawingMeta.players.length === 2;
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
 
   let editPlayersDialog: JSX.Element | null;
@@ -414,12 +413,10 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
           submitText="Save"
           onSubmit={(meta) => {
             dispatch(
-              drawingsSlice.actions.updateOne({
+              drawingsSlice.actions.updatePlayers({
                 id: drawingId,
-                changes: {
-                  meta,
-                  playerDisplayOrder: times(meta.players.length, (n) => n - 1),
-                },
+                title: meta.title,
+                players: meta.players,
               }),
             );
             setMetaEditorOpen(false);

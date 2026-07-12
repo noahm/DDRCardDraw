@@ -59,11 +59,6 @@ export function createDraw(
       return "nok"; // could not draw the requested number of charts
     }
 
-    const players =
-      drawMeta.meta.type === "simple"
-        ? drawMeta.meta.players
-        : drawMeta.meta.entrants;
-
     const matchId = `draw-${nanoid(10)}`;
     const setId = `set-${nanoid(12)}`;
     const mainDraw: SubDrawing = {
@@ -78,7 +73,6 @@ export function createDraw(
       protects: {},
       pocketPicks: {},
       meta: drawMeta.meta,
-      playerDisplayOrder: players.map((_, idx) => idx),
       configId,
       subDrawings: { [setId]: mainDraw },
     };
@@ -308,7 +302,7 @@ export function createPickBanPocket(
   drawingId: CompoundSetId,
   chartId: string,
   type: "ban" | "protect" | "pocket",
-  player: number,
+  player: string,
   pick?: EligibleChart,
 ): AppThunk {
   return (dispatch, getState) => {

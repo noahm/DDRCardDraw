@@ -6584,6 +6584,7 @@ __metadata:
     react-dom: "npm:19.2.3"
     react-error-boundary: "npm:6.0.1"
     react-intl: "npm:8.0.9"
+    react-movable: "npm:^3.4.1"
     react-redux: "npm:^9.2.0"
     react-refresh: "npm:0.18.0"
     react-router-dom: "npm:^6.24.1"
@@ -11926,6 +11927,16 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 10/5aa564a1cde7d391ac980bedee21202fc90bdea3b399952117f54fb71a932af1e5902020144fb354b4690b2414a0c7aafe798eb617b76a3d441d956db7726fdf
+  languageName: node
+  linkType: hard
+
+"react-movable@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "react-movable@npm:3.4.1"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 10/f9737f7a50e995a866ed015075a8ee36fb5234ea5ac10d9631f8817c41ec5627e8082188722e5f4c257e7f4e8e5a8bd92ffba2d8aed0eb9854ae6dc473f91b5b
   languageName: node
   linkType: hard
 

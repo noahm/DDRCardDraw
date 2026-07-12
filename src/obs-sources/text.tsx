@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { drawingsSlice } from "../state/drawings.slice";
 import { useAppState } from "../state/store";
-import { getAllPlayers, playerNameByIndex } from "../models/Drawing";
+import { getAllPlayers } from "../models/Drawing";
 
 export function GlobalLabel() {
   const params = useParams<"roomName" | "labelId">();
@@ -53,15 +53,16 @@ export function CabPlayer(props: {
     if (!drawingId) return null;
     const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
     if (!parent) return null;
-    const playerIndex = parent.playerDisplayOrder[props.p - 1];
-    const name = playerNameByIndex(parent.meta, playerIndex, "");
+    const player = parent.meta.players[props.p - 1];
+    const playerId = player?.id;
+    const name = player?.name || "";
     const hideWins =
       parent.meta.type === "startgg" && parent.meta.subtype === "gauntlet";
     if (hideWins) {
       return name;
     }
     const score = Object.values(parent.winners).reduce<number>((prev, curr) => {
-      if (curr === playerIndex) return prev + 1;
+      if (curr === playerId) return prev + 1;
       return prev;
     }, 0);
     if (displayType === "name") {

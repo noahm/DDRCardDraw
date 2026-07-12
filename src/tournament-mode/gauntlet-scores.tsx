@@ -27,10 +27,10 @@ export default function GauntletScoreEditor({
   );
   const dispatch = useDispatch();
   const [playerOrderMap, setPlayerOrderMap] = useState(
-    meta.entrants.map((_, idx) => idx),
+    meta.players.map((_, idx) => idx),
   );
 
-  const players = meta.entrants;
+  const players = meta.players;
 
   function updateScore(playerIdx: number, chartId: string, rawInput: string) {
     const playerId = players[playerIdx].id;
