@@ -80,8 +80,10 @@ export default class Server implements Party.Server {
 
   onRequest(req: Party.Request): Response | Promise<Response> {
     if (req.method === "GET") {
-      return new Response(JSON.stringify(this.store.getState()), {
-        headers: { "Content-Type": "application/json" },
+      return Response.json(this.store.getState(), {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
       });
     }
 
