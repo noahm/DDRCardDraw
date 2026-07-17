@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": [],
+    "lastUpdated": 1784330243960,
+    "usesDrawGroups": true,
+    "styles": ["single"],
+    "difficulties": [
+      { "key": "challenge", "color": "#0191F2" },
+      { "key": "difficult", "color": "#F2F52C" }
+    ]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 7,
+    "difficulties": ["challenge", "difficult"],
+    "style": "single",
+    "upperLvlBound": 12
+  },
+  "i18n": {
+    "en": {
+      "name": "BITE9 ITG (Women's NB)",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[T01] [07] Atmosphere (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [07] Atmosphere (Medium).jpg",
+      "bpm": "130",
+      "artist": "Sick Individuals",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [07] Attention (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [07] Attention (Medium).jpg",
+      "bpm": "135",
+      "artist": "Todrick Hall",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [07] Exquisite (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [07] Exquisite (Medium).jpg",
+      "bpm": "140",
+      "artist": "MrKoolTrix",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [07] FLY (Easy)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [07] FLY (Easy).jpg",
+      "bpm": "140",
+      "artist": "SPORTMODE",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [07] GALACTICAL (Medium) (NO CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [07] GALACTICAL (Medium) (NO CMOD).jpg",
+      "bpm": "128",
+      "artist": "Tokyo Machine",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [07] НУМЛ (Easy)",
+      "name_translation": "[T01] [07] HYMN (Easy)",
+      "jacket": "itg/bite9wnb/[T01] [07] HYMN (Easy).jpg",
+      "bpm": "79-200",
+      "artist": "ZUTT",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [07] Never Leave (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [07] Never Leave (Medium).jpg",
+      "bpm": "126",
+      "artist": "Synthtonix",
+      "charts": [{ "lvl": 7, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [08] Caramelldansen (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [08] Caramelldansen (Hard).jpg",
+      "bpm": "164",
+      "artist": "Caramell",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [08] Megalovania (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [08] Megalovania (Medium).jpg",
+      "bpm": "128",
+      "artist": "Chime",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T01] [08] Ravergirl (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T01] [08] Ravergirl (Medium).jpg",
+      "bpm": "155",
+      "artist": "Blümchen",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 1 }]
+    },
+    {
+      "name": "[T02] [08] Samba Do Brasil (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [08] Samba Do Brasil (Hard).jpg",
+      "bpm": "130",
+      "artist": "Bellini",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [08] Spot A Fake (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [08] Spot A Fake (Hard).jpg",
+      "bpm": "143",
+      "artist": "Ava Max",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [08] Tetoris (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [08] Tetoris (Medium).jpg",
+      "bpm": "170",
+      "artist": "Hiiragi Magnetite",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [08] Tetris - Theme A (Hard) (NO CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [08] Tetris - Theme A (Hard) (NO CMOD).jpg",
+      "bpm": "140",
+      "artist": "Doctor P",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [08] True Blue (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [08] True Blue (Medium).jpg",
+      "bpm": "164",
+      "artist": "dj TAKA",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [08] alien friend request (Medium)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [08] alien friend request (Medium).jpg",
+      "bpm": "200",
+      "artist": "alien3",
+      "charts": [{ "lvl": 8, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [09] Automagic",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [09] Automagic.jpg",
+      "bpm": "125",
+      "artist": "Televisor",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T03] [09] BOCA",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [09] BOCA.jpg",
+      "bpm": "200",
+      "artist": "Dreamcatcher",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T02] [09] Baddie",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [09] Baddie.jpg",
+      "bpm": "160",
+      "artist": "IVE",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [09] Cupid (NO CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [09] Cupid (NO CMOD).jpg",
+      "bpm": "128",
+      "artist": "FIFTY FIFTY",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [09] ECHO",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [09] ECHO (The Living Tombstone Remix).jpg",
+      "bpm": "150",
+      "artist": "Crusher-P",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T02] [09] Earthquake (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T02] [09] Earthquake (Hard).jpg",
+      "bpm": "103",
+      "artist": "Jorts",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 2 }]
+    },
+    {
+      "name": "[T03] [09] Discharge (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [09] Discharge (Hard).jpg",
+      "bpm": "126",
+      "artist": "Curbi",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [09] Light Switch (Hard) (NO CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [09] Light Switch (SH).jpg",
+      "bpm": "79-184",
+      "artist": "Charlie Puth",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [09] Under Arrest",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [09] Under Arrest.jpg",
+      "bpm": "128",
+      "artist": "Danzel",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [09] Worn Out Tapes (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [09] Worn Out Tapes (SH) [Valex].jpg",
+      "bpm": "149",
+      "artist": "Peak Divide feat. Rachel Lake",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [10] Hate",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [10] Hate.jpg",
+      "bpm": "64-128",
+      "artist": "Charisma.com",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [10] How It's Done (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [10] How It's Done (Hard).jpg",
+      "bpm": "160",
+      "artist": "HUNTRIX & EJAE & Audrey Nuna & REI AMI",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [10] In the Museum (NO CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [10] In the Museum (NO CMOD).jpg",
+      "bpm": "110",
+      "artist": "Raphael Robatto",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [10] Under The Bed",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [10] Under The Bed.jpg",
+      "bpm": "165",
+      "artist": "Macks Wolf X Tatsunoshin",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T03] [10] edamame (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T03] [10] edamame (Hard).jpg",
+      "bpm": "106",
+      "artist": "bbno$ & Rich Brian",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T04] [10] COTTON-EYE JOE",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [10] COTTON-EYE JOE.jpg",
+      "bpm": "132",
+      "artist": "REDNEX",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [10] CoMAAAAAAA",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [10] CoMAAAAAAA.jpg",
+      "bpm": "150",
+      "artist": "Ryu☆",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [10] Mantis (NO CMOD)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [10] Mantis (NO CMOD).jpg",
+      "bpm": "172",
+      "artist": "Magnetude",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T03] [10] Shotgun Senorita (Zardonic Remix)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [10] Shotgun Senorita (Zardonic Remix).jpg",
+      "bpm": "175",
+      "artist": "Blue Stahli",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 3 }]
+    },
+    {
+      "name": "[T04] [10] Ska Cha Cha",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [10] Ska Cha Cha.jpg",
+      "bpm": "152",
+      "artist": "Hideki Naganuma",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [11] 18 Mne Uzhe",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [11] 18 Mne Uzhe (Haiducii Remix).jpg",
+      "bpm": "190",
+      "artist": "Resource feat. Reflex",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [11] Bye Bye Baby Balloon",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [11] Bye Bye Baby Balloon.jpg",
+      "bpm": "145",
+      "artist": "Joga",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [11] Can't Find The Words (Hard)",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [11] Can't Find The Words (Hard).jpg",
+      "bpm": "143",
+      "artist": "IMANU & Louis Futon & Cherry Lena",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "Crossmythos Rhapsodia",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [11] Crossmythos Rhapsodia (Medium).jpg",
+      "bpm": "198",
+      "artist": "Acotto vs Potwi",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "difficult", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [11] Go Go Sing",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [11] Go Go Sing.jpg",
+      "bpm": "166",
+      "artist": "Outsider feat. Whale",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T04] [11] Kingdom",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T04] [11] Kingdom.jpg",
+      "bpm": "130",
+      "artist": "rejection, CHOMPO",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 4 }]
+    },
+    {
+      "name": "[T05] [10] A Friend Like Me",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [10] A Friend Like Me.jpg",
+      "bpm": "126",
+      "artist": "Sim Gretina",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [10] Unknown Civilization",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [10] Unknown Civilization.jpg",
+      "bpm": "128",
+      "artist": "Laur",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [11] All I Need VIP",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [11] All I Need VIP.jpg",
+      "bpm": "145",
+      "artist": "Slushii",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [11] Barracuda",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [11] Barracuda.jpg",
+      "bpm": "130",
+      "artist": "Noisestorm",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [11] GoodNES",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [11] GoodNES.jpg",
+      "bpm": "250",
+      "artist": "Black Ace",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [11] Pocari Freakz",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [11] Pocari Freakz (JAKAZiD Remix).jpg",
+      "bpm": "140",
+      "artist": "The Hair Kid",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [12] Junk Mania",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [12] Junk Mania.jpg",
+      "bpm": "165",
+      "artist": "udouddo&VALLEYSTONE",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    },
+    {
+      "name": "[T05] [12] Language",
+      "name_translation": "",
+      "jacket": "itg/bite9wnb/[T05] [12] Language [Kayzo & Gammer Remix].jpg",
+      "bpm": "160",
+      "artist": "Porter Robinson",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge", "drawGroup": 5 }]
+    }
+  ]
+}
