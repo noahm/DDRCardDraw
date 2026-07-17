@@ -65,9 +65,15 @@ All messages are JSON. The types live in `src/party/types.ts`.
 | `{type:"action", action, id, seq}`                | server → **all** clients | The same action, stamped with its canonical position. The copy sent back to the sender doubles as the receipt confirmation.                                                          |
 | `{type:"roomstate", state, seq, recentActionIds}` | server → one client      | Full state snapshot, sent on every (re)connect. `seq` is the last action baked into `state`; `recentActionIds` lets a reconnecting client drop pending re-sends that already landed. |
 | `{type:"ack", id}`                                | server → sender          | Sent instead of a re-apply when a duplicate re-send arrives for an already-applied `id`.                                                                                             |
+| `{type:"catchup", since}`                         | client → server          | "I saw a gap on a live socket; replay every stamped action after `since`." Sent instead of tearing down the socket for a fresh snapshot.                                             |
+| `{type:"catchup", actions}`                       | server → sender          | The stamped actions with `seq > since`, ascending. If the gap reaches back further than the server's retained tail, the server sends a `roomstate` instead and the client resyncs.   |
+| `{type:"ping"}` / `{type:"pong"}`                 | client ⇄ server          | Application-level heartbeat. The client pings every ~10s; two unanswered pings mean a stalled (half-open) socket and force a reconnect.                                              |
 
 `id` and `seq` are optional on the wire for compatibility with older
-deployments; see "Version interop" at the end.
+deployments; see "Version interop" at the end. The `catchup`, `ping`, and
+`pong` messages are additive: an older server never answers `catchup` (the
+catch-up timeout falls back to a reconnect) and never sends `pong` (the
+missed-pong counter forces a harmless reconnect that lands a fresh roomstate).
 
 ## The client state model
 
@@ -240,10 +246,55 @@ Two details worth knowing:
   action that actually landed just before the disconnect isn't applied a
   second time.
 
-If a client ever observes a **gap in `seq`** (a missed broadcast on a live
-socket), it can't trust its confirmed state anymore; the repair is to force
-a reconnect and take a fresh roomstate (`resync` handler wired to
-`socket.reconnect()` in `src/party/client.tsx`).
+### Incremental catch-up: repairing a gap without a reconnect
+
+If a client observes a **gap in `seq`** (a missed broadcast on a live
+socket) it can't trust its confirmed state anymore, but the socket itself is
+fine — only a frame or two went missing. Rather than tear the connection down
+for a full snapshot, the client asks the server to replay just the actions it
+missed:
+
+```mermaid
+sequenceDiagram
+    participant M as SyncManager
+    participant S as Server
+
+    Note over M: lastSeq = 40, receives seq:43 → gap
+    Note over M: resyncing = true; buffer live broadcasts (43, 44, ...)
+    M->>S: {type:"catchup", since:40}
+    Note over S: tail still holds 41, 42, 43, ...
+    S->>M: {type:"catchup", actions:[41, 42, 43, ...]}
+    Note over M: apply in order → confirmed advances to head of tail<br/>drain buffered 44, ... → resyncing = false
+```
+
+- The server keeps an in-memory **tail** of the last `MAX_TAIL` (500) stamped
+  actions (`src/party/server.ts`). `handleCatchup` returns every tail entry
+  with `seq > since`. This is safe to keep in memory only: a client can only
+  see a live-socket gap while _this same actor_ has been running continuously,
+  so the tail is intact. A restart or hibernation drops every socket, so
+  clients reconnect and take a fresh roomstate instead of ever catching up.
+- If the gap reaches back **further than the tail** (`since` older than the
+  oldest retained action), the server sends a `roomstate` instead and the
+  client resyncs wholesale — the same code path as a reconnect.
+- While a catch-up is in flight the client sets `resyncing` and **buffers**
+  every live broadcast (`SyncManager.buffer`); once the replayed actions fill
+  the gap it drains the buffer in `seq` order (`drainBuffer`). A gap that
+  reopens mid-drain simply starts another catch-up round.
+- Catch-up requests re-send on a 5s timeout and, after
+  `MAX_CATCHUP_ATTEMPTS` (3) unanswered rounds, fall back to
+  `socket.reconnect()` (the `resync` handler) — so a server that doesn't
+  understand `catchup` still recovers.
+
+### Heartbeat: noticing a stalled-but-open socket
+
+A websocket can stay `OPEN` while the server is frozen or the TCP link is
+half-open; nothing surfaces the dead connection until a send's ack times out.
+An application-level heartbeat closes that window: `PartySocketManager` pings
+every `HEARTBEAT_INTERVAL_MS` (~10s) and, after `MAX_MISSED_PONGS` (2)
+unanswered pings, calls `socket.reconnect()` to force the normal
+disconnect/reconnect flow. The pong counter resets whenever a `pong` or a
+fresh roomstate arrives. This is the failure mode exercised by SIGSTOP-ing
+`workerd` in `.claude/skills/verify/SKILL.md`.
 
 ## User-facing connection health
 
@@ -269,8 +320,13 @@ chrome.
 1. **In-memory redux store** — authoritative while the room actor is alive.
    Hydrated in `onStart` from room storage, falling back to Supabase, with
    `applyMigrations` (`src/state/migrations.ts`) run over whatever loads.
-2. **PartyKit room storage** — `currentState` key, rewritten after every
-   applied action. Survives room hibernation/restarts.
+2. **PartyKit room storage** — the `currentState` key, rewritten after every
+   applied action, plus a `syncMeta` key (`{seq, seenIds}`) written alongside
+   it. `syncMeta` lets a hibernated or restarted room resume the sequencer
+   where it left off instead of resetting `seq` to 0, and keeps the dedupe set
+   warm so a client's re-send that spans the hibernation isn't applied a second
+   time. Both survive room hibernation/restarts. (The catch-up `tail` is
+   deliberately _not_ persisted — see "Incremental catch-up" above.)
 3. **Supabase** (`event_state` table, typed in
    `src/party/database.types.ts`) — best-effort upsert after every action;
    disabled unless `SUPABASE_URL`/`SUPABASE_KEY` are present. Serves as
@@ -292,8 +348,13 @@ corrupting state:
   recognize their own echo and would double-apply it.
 - A roomstate **without `seq`** (older server) drops the client back to
   plain optimistic apply: pending tracking still works via `ack`s, but no
-  rebasing and no give-up rollback (guarded by `lastSeq == null` in
-  `src/party/sync-manager.ts`).
+  rebasing, no give-up rollback, and no catch-up (all guarded by
+  `lastSeq == null` in `src/party/sync-manager.ts`).
+- `catchup`, `ping`, and `pong` are additive messages an older server ignores.
+  A new client against such a server never gets a `catchup` reply (the 5s
+  catch-up timeout falls back to `socket.reconnect()`) and never gets a `pong`
+  (the missed-pong counter forces a reconnect on the same path). Both degrade
+  to the pre-step-2 behavior of reconnecting for a fresh roomstate.
 - Deploy order when the protocol grows: **server first, web app second.**
 
 ## Poking at it locally
@@ -302,5 +363,5 @@ Run `yarn start:backend` (PartyKit on `:1999`) and `yarn start:frontend`
 (webpack on `:8080`), then open `/e/any-room-name` in two tabs and watch the
 websocket frames in devtools. `.claude/skills/verify/SKILL.md` documents a
 scripted version of this, including how to freeze the server mid-flight
-(SIGSTOP the `workerd` process) to exercise the retry, rebase, and
-reconnect paths.
+(SIGSTOP the `workerd` process) to exercise the retry, rebase, catch-up,
+heartbeat, and reconnect paths.

@@ -2,12 +2,16 @@ import { nanoid } from "nanoid";
 import type { Action } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
-import type { ReduxAction, Roomstate } from "./types";
+import type { ReduxAction, Roomstate, StampedAction } from "./types";
 
 /** how long to wait for the server to confirm receipt before re-sending */
 const ACK_TIMEOUT_MS = 5000;
 /** total transmissions per action on a live connection before giving up */
 const MAX_SEND_ATTEMPTS = 4;
+/** how long to wait for a catch-up reply before re-asking */
+const CATCHUP_TIMEOUT_MS = 5000;
+/** catch-up requests before falling back to a full reconnect */
+const MAX_CATCHUP_ATTEMPTS = 3;
 
 interface SocketLike {
   readyState: number;
@@ -34,16 +38,26 @@ interface PendingEntry {
  *   sends re-transmit on a timeout (the server dedupes by id) and anything
  *   still pending across a reconnect is rebased onto the fresh roomstate.
  *
+ * When a gap in `seq` is observed on a live socket (a missed broadcast), the
+ * manager repairs incrementally: it asks the server to replay the missing
+ * stamped actions (catch-up) rather than tearing down the socket for a full
+ * snapshot. Broadcasts that arrive while the repair is in flight are buffered
+ * and replayed once the gap is filled.
+ *
  * Against a server that predates seq stamping (`lastSeq == null`), this
  * degrades to plain optimistic apply with ack-based pending tracking:
- * no rebasing, no give-up rollback.
+ * no rebasing, no give-up rollback, no catch-up.
  */
 export class SyncManager {
   private pending = new Map<string, PendingEntry>();
   private confirmed: AppState | null = null;
   private lastSeq: number | null = null;
-  /** true from detecting a missed broadcast until the repairing roomstate */
+  /** true from detecting a missed broadcast until the repair completes */
   private resyncing = false;
+  /** live broadcasts received while a catch-up repair is in flight */
+  private buffer: ReduxAction[] = [];
+  private catchupTimer?: ReturnType<typeof setTimeout>;
+  private catchupAttempts = 0;
 
   constructor(
     private socket: SocketLike,
@@ -52,7 +66,9 @@ export class SyncManager {
       dispatchForeign: (action: Action) => void;
       /** replace the display store state wholesale after a rebase */
       applyState: (state: AppState) => void;
-      /** a broadcast was missed; only a fresh roomstate can repair us */
+      /** ask the server to replay every stamped action after `since` */
+      requestCatchup: (since: number) => void;
+      /** repair could not proceed incrementally; force a fresh roomstate */
       resync: () => void;
       /** an action was abandoned after repeated unconfirmed sends */
       onGiveUp: (action: Action) => void;
@@ -70,13 +86,15 @@ export class SyncManager {
   }
 
   /**
-   * A fresh roomstate arrived (initial connect, reconnect, or repair).
-   * Adopts it as the confirmed state, drops pending actions the server
-   * already applied, and re-sends the rest. Returns the state the display
-   * store should show: confirmed with remaining pending rebased on top.
+   * A fresh roomstate arrived (initial connect, reconnect, or catch-up
+   * fallback). Adopts it as the confirmed state, drops pending actions the
+   * server already applied, and re-sends the rest. Returns the state the
+   * display store should show: confirmed with remaining pending rebased on top.
    */
   handleRoomstate(roomstate: Roomstate): AppState {
-    this.resyncing = false;
+    this.endCatchup();
+    // a full snapshot supersedes anything buffered mid-repair
+    this.buffer = [];
     this.confirmed = roomstate.state;
     this.lastSeq = roomstate.seq ?? null;
     const applied = new Set(roomstate.recentActionIds ?? []);
@@ -98,7 +116,6 @@ export class SyncManager {
    * Advances the confirmed state and keeps the display state consistent.
    */
   handleRemoteAction(message: ReduxAction) {
-    if (this.resyncing) return;
     if (!this.confirmed) {
       // roomstate always precedes broadcasts on a connection, so this is
       // unreachable; degrade gracefully if it somehow isn't
@@ -107,6 +124,53 @@ export class SyncManager {
       }
       return;
     }
+    if (this.resyncing) {
+      // hold live broadcasts until the in-flight catch-up fills the gap
+      if (message.seq != null) this.buffer.push(message);
+      return;
+    }
+    this.ingest(message);
+  }
+
+  /**
+   * The server replayed the stamped actions filling a detected gap. Apply
+   * them in order, then drain any live broadcasts buffered during the repair.
+   */
+  handleCatchup(actions: StampedAction[]) {
+    if (!this.confirmed) return;
+    this.endCatchup();
+    for (const message of actions) {
+      if (this.resyncing) {
+        // a further gap opened mid-replay; buffer the rest for the next round
+        this.buffer.push(message);
+        continue;
+      }
+      this.ingest(message);
+    }
+    if (!this.resyncing) this.drainBuffer();
+  }
+
+  /** the server says this id was applied earlier (duplicate re-send) */
+  handleAck(id: string) {
+    this.settle(id);
+  }
+
+  /** count of actions awaiting confirmation */
+  get pendingCount() {
+    return this.pending.size;
+  }
+
+  dispose() {
+    for (const entry of this.pending.values()) {
+      clearTimeout(entry.timer);
+    }
+    this.pending.clear();
+    this.endCatchup();
+    this.buffer = [];
+  }
+
+  /** apply a single stamped/foreign broadcast, maintaining the invariant */
+  private ingest(message: ReduxAction) {
     if (message.seq != null && this.lastSeq != null) {
       if (message.seq <= this.lastSeq) {
         // stale re-delivery of something already reflected in confirmed
@@ -114,15 +178,16 @@ export class SyncManager {
         return;
       }
       if (message.seq > this.lastSeq + 1) {
-        this.resyncing = true;
-        this.handlers.resync();
+        // a broadcast went missing: buffer this one and repair incrementally
+        this.buffer.push(message);
+        this.startCatchup();
         return;
       }
     }
     if (message.seq != null) {
       this.lastSeq = message.seq;
     }
-    this.confirmed = reducer(this.confirmed, message.action);
+    this.confirmed = reducer(this.confirmed!, message.action);
 
     const ownEntry = message.id ? this.pending.get(message.id) : undefined;
     if (ownEntry) {
@@ -144,21 +209,46 @@ export class SyncManager {
     }
   }
 
-  /** the server says this id was applied earlier (duplicate re-send) */
-  handleAck(id: string) {
-    this.settle(id);
+  /** begin (or continue) an incremental catch-up for the current gap */
+  private startCatchup() {
+    this.resyncing = true;
+    this.catchupAttempts = 0;
+    this.sendCatchup();
   }
 
-  /** count of actions awaiting confirmation */
-  get pendingCount() {
-    return this.pending.size;
+  private sendCatchup() {
+    this.catchupAttempts += 1;
+    this.handlers.requestCatchup(this.lastSeq!);
+    clearTimeout(this.catchupTimer);
+    this.catchupTimer = setTimeout(() => {
+      if (!this.resyncing) return;
+      if (this.catchupAttempts >= MAX_CATCHUP_ATTEMPTS) {
+        // catch-up isn't getting through; fall back to a full reconnect
+        this.endCatchup();
+        this.handlers.resync();
+        return;
+      }
+      this.sendCatchup();
+    }, CATCHUP_TIMEOUT_MS);
   }
 
-  dispose() {
-    for (const entry of this.pending.values()) {
-      clearTimeout(entry.timer);
+  private endCatchup() {
+    clearTimeout(this.catchupTimer);
+    this.catchupTimer = undefined;
+    this.resyncing = false;
+  }
+
+  /** replay live broadcasts buffered during a repair, in seq order */
+  private drainBuffer() {
+    const buffered = this.buffer.splice(0).sort((a, b) => a.seq! - b.seq!);
+    for (const message of buffered) {
+      if (this.resyncing) {
+        // ingest reopened a gap; hold the remainder for the next round
+        this.buffer.push(message);
+        continue;
+      }
+      this.ingest(message);
     }
-    this.pending.clear();
   }
 
   /** replay pending actions over the confirmed state */

@@ -1,5 +1,14 @@
 import type * as Party from "partykit/server";
-import type { ActionAck, ReduxAction, Roomstate } from "./types";
+import type {
+  ActionAck,
+  CatchupRequest,
+  CatchupResponse,
+  ClientMessage,
+  Pong,
+  ReduxAction,
+  Roomstate,
+  StampedAction,
+} from "./types";
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
@@ -32,6 +41,16 @@ function isAppState(state: unknown): state is AppState {
 
 /** upper bound on remembered action ids used to dedupe client re-sends */
 const MAX_REMEMBERED_ACTIONS = 1000;
+/** how many recent stamped actions to retain for incremental catch-up */
+const MAX_TAIL = 500;
+/** storage key holding the sequencer counter + dedupe set (survives hibernation) */
+const SYNC_META_KEY = "syncMeta";
+
+/** shape of the persisted sequencer metadata */
+interface SyncMeta {
+  seq: number;
+  seenIds: string[];
+}
 
 export default class Server implements Party.Server {
   // @ts-expect-error I assign this for sure
@@ -42,6 +61,15 @@ export default class Server implements Party.Server {
 
   /** recently applied action ids mapped to their seq, oldest first */
   private seenActionIds = new Map<string, number>();
+
+  /**
+   * tail of recently stamped actions (ascending seq) used to answer catch-up
+   * requests. In-memory only: a client only asks for catch-up after seeing a
+   * gap on a *live* socket, which means this actor has been running the whole
+   * time and the tail is intact. A restart/hibernation drops every socket, so
+   * clients reconnect and take a fresh roomstate instead of catching up.
+   */
+  private tail: StampedAction[] = [];
 
   constructor(readonly room: Party.Room) {
     console.log("constructor start");
@@ -59,6 +87,16 @@ export default class Server implements Party.Server {
     } else {
       this.store = configureStore({ reducer });
     }
+    // restore the sequencer counter + dedupe set so a hibernated/restarted
+    // room doesn't reset seq to 0 or forget which ids it already applied
+    // (which would let a client's re-send be applied a second time)
+    try {
+      const meta = await this.room.storage.get<SyncMeta>(SYNC_META_KEY);
+      if (meta) {
+        this.seq = meta.seq;
+        this.seenActionIds = new Map(meta.seenIds.map((id) => [id, meta.seq]));
+      }
+    } catch {}
   }
 
   private async getFromSupabase() {
@@ -100,19 +138,35 @@ export default class Server implements Party.Server {
     );
 
     // send the initial state to this client
-    conn.send(
-      JSON.stringify(<Roomstate>{
-        type: "roomstate",
-        state: this.store.getState(),
-        recentActionIds: Array.from(this.seenActionIds.keys()),
-        seq: this.seq,
-      }),
-    );
+    conn.send(JSON.stringify(this.roomstateMessage()));
   }
 
   async onMessage(message: string, sender: Party.Connection) {
-    const parsed = JSON.parse(message) as ReduxAction;
+    let parsed: ClientMessage;
+    try {
+      parsed = JSON.parse(message) as ClientMessage;
+    } catch {
+      return;
+    }
 
+    switch (parsed.type) {
+      case "ping":
+        sender.send(JSON.stringify(<Pong>{ type: "pong" }));
+        return;
+      case "catchup":
+        this.handleCatchup(parsed, sender);
+        return;
+      case "action":
+        await this.handleAction(parsed, sender, message);
+        return;
+    }
+  }
+
+  private async handleAction(
+    parsed: ReduxAction,
+    sender: Party.Connection,
+    rawMessage: string,
+  ) {
     if (parsed.id && this.seenActionIds.has(parsed.id)) {
       // a re-send of an action already applied: confirm receipt again
       // (the original ack may have been lost) but don't apply it twice
@@ -125,23 +179,32 @@ export default class Server implements Party.Server {
       // everyone *including* the sender: the echo doubles as the receipt
       // confirmation, and all replicas apply actions in seq order
       this.seq += 1;
-      const stamped: ReduxAction = { ...parsed, seq: this.seq };
+      const stamped: StampedAction = {
+        ...parsed,
+        id: parsed.id,
+        seq: this.seq,
+      };
+      this.rememberStampedAction(stamped);
       this.room.broadcast(JSON.stringify(stamped));
     } else {
       // legacy client that can't recognize its own echo: relay the
       // unstamped action to everyone else only
-      this.room.broadcast(message, [sender.id]);
+      this.room.broadcast(rawMessage, [sender.id]);
     }
 
     // resolve the new state
     this.store.dispatch(parsed.action);
     const nextState = this.store.getState();
-    // persist to partykit storage
+    // persist to partykit storage: the state itself, plus the sequencer
+    // metadata so dedupe/ordering survive a hibernation or restart
     void this.room.storage.put("currentState", nextState);
-
     if (parsed.id) {
-      this.rememberActionId(parsed.id);
+      void this.room.storage.put<SyncMeta>(SYNC_META_KEY, {
+        seq: this.seq,
+        seenIds: Array.from(this.seenActionIds.keys()),
+      });
     }
+
     // persist the state to supabase
     try {
       if (supabase) {
@@ -156,12 +219,50 @@ export default class Server implements Party.Server {
     }
   }
 
+  /**
+   * Serve a client's catch-up request: replay the stamped actions after
+   * `since`. If the gap reaches back further than our retained tail, fall
+   * back to a full roomstate so the client resyncs wholesale.
+   */
+  private handleCatchup(req: CatchupRequest, sender: Party.Connection) {
+    if (req.since >= this.seq) {
+      // client is already current (or ahead); nothing to replay
+      sender.send(
+        JSON.stringify(<CatchupResponse>{ type: "catchup", actions: [] }),
+      );
+      return;
+    }
+    const earliest = this.tail.length ? this.tail[0].seq : Infinity;
+    if (req.since >= earliest - 1) {
+      const actions = this.tail.filter((a) => a.seq > req.since);
+      sender.send(
+        JSON.stringify(<CatchupResponse>{ type: "catchup", actions }),
+      );
+    } else {
+      // the gap predates our tail; only a fresh snapshot can repair the client
+      sender.send(JSON.stringify(this.roomstateMessage()));
+    }
+  }
+
+  private roomstateMessage(): Roomstate {
+    return {
+      type: "roomstate",
+      state: this.store.getState(),
+      recentActionIds: Array.from(this.seenActionIds.keys()),
+      seq: this.seq,
+    };
+  }
+
   private sendAck(conn: Party.Connection, id: string) {
     conn.send(JSON.stringify(<ActionAck>{ type: "ack", id }));
   }
 
-  private rememberActionId(id: string) {
-    this.seenActionIds.set(id, this.seq);
+  private rememberStampedAction(stamped: StampedAction) {
+    this.tail.push(stamped);
+    if (this.tail.length > MAX_TAIL) {
+      this.tail.shift();
+    }
+    this.seenActionIds.set(stamped.id, stamped.seq);
     if (this.seenActionIds.size > MAX_REMEMBERED_ACTIONS) {
       for (const oldest of this.seenActionIds.keys()) {
         this.seenActionIds.delete(oldest);
