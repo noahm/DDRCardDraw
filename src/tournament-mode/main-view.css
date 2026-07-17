@@ -1,0 +1,18 @@
+.mainView {
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  overflow: hidden;
+}
+
+/* the tabs themselves */
+.mainView > div:first-child {
+  flex: 0 0 auto;
+}
+
+/* all the full page tab contents */
+.mainView > div:not(:first-child) {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}

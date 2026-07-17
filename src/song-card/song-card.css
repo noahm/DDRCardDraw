@@ -32,6 +32,11 @@
     U+FFFD;
 }
 
+.popoverWrapper {
+  display: flex !important;
+  flex: 1 0 0;
+}
+
 .chart {
   display: flex !important;
   flex: 1 0 0;
@@ -61,6 +66,15 @@
 
 .chart.clickable {
   cursor: pointer;
+}
+
+.chart.randomSelected {
+  box-shadow: 0px 0px 4px black;
+  transform: scale(1.05);
+}
+
+:global(.bp6-dark) .chart.randomSelected {
+  box-shadow: 0px 0px 4px white;
 }
 
 .clickTarget {
