@@ -166,6 +166,13 @@ for (const parsedSong of pack.simfiles) {
         // maybe followed by some number of digits
         /^\[([^\d\]]*)(\d*)\] /i,
       );
+      if (!tierMatch) {
+        tierMatch = basename(parsedSong.title.titleDir).match(
+          // tier marker maybe some number of non-digit characters,
+          // maybe followed by some number of digits
+          /^\[([^\d\]]*)(\d*)\] /i,
+        );
+      }
       if (tierMatch && tierMatch.length > 0) {
         if (tierMatch[2]) {
           const parsedTier = parseInt(tierMatch[2]);
