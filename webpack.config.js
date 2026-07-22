@@ -4,7 +4,6 @@ const { resolve, basename } = require("path");
 const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -41,6 +40,7 @@ module.exports = function (env = {}, argv = {}) {
     output: {
       filename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist"),
+      clean: true,
     },
     optimization: {
       minimize: isProd,
@@ -158,7 +158,6 @@ module.exports = function (env = {}, argv = {}) {
       ],
     },
     plugins: [
-      new CleanWebpackPlugin(),
       new ForkTsCheckerPlugin(),
       new CopyWebpackPlugin({
         patterns: [
