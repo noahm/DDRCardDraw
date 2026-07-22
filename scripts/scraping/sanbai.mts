@@ -28,7 +28,7 @@ type SanbaiSong = {
  * Hidden songs/charts that were already locked as of 2025-10-21 also require the `euLocked` flag.
  */
 const lockFlags: Map<number, Song["flags"]> = new Map([
-  [-1, ["euLocked"]], // For unlocked songs/charts
+  [1000, ["euLocked"]], // For unlocked songs/charts
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   [250, ["flareRank"]], // FLARE SKILL unlock
@@ -94,7 +94,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-07-31T15:00:00+09:00"),
     id,
-    { lock_types: [0, 0, 0, 0, -1, 0, 0, 0, -1] },
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
   // BEMANI×東方Project ～幻想郷音樂祭2024～
   ...[
@@ -104,7 +104,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-08-06T15:00:00+09:00"),
     id,
-    { lock_types: [-1, -1, -1, -1, 0, -1, -1, -1, 0] },
+    { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
   ]),
   // グランプリ譜面パック vol.3
   ...[
@@ -121,7 +121,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-08-31T15:00:00+09:00"),
     id,
-    { lock_types: [0, 0, 0, 0, -1, 0, 0, 0, -1] },
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
   // グランプリ譜面パック vol.4
   ...[
@@ -138,7 +138,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-09-30T15:00:00+09:00"),
     id,
-    { lock_types: [0, 0, 0, 0, -1, 0, 0, 0, -1] },
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
 ];
 /** Correction map for invalid data on 3icecream site */
