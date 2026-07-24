@@ -33,6 +33,29 @@ function isAppState(state: unknown): state is AppState {
 /** upper bound on remembered action ids used to dedupe client re-sends */
 const MAX_REMEMBERED_ACTIONS = 1000;
 
+/**
+ * greppable prefix shared by every diagnostic line this server emits. Filter
+ * production logs with this to trace a room's persisted-snapshot lifecycle.
+ */
+const LOG_PREFIX = "[party-diag]";
+
+/**
+ * Cheap, side-effect-free fingerprint of the shared state so log lines can be
+ * compared across events to see whether the persisted snapshot advanced. Uses
+ * the drawings entity count plus the serialized length as a poor-man's hash;
+ * this is for observability only and never feeds back into state.
+ */
+function stateFingerprint(state: AppState): string {
+  const drawings = state.drawings?.ids?.length ?? 0;
+  let stateLen = -1;
+  try {
+    stateLen = JSON.stringify(state).length;
+  } catch {
+    stateLen = -1;
+  }
+  return `drawings=${drawings} stateLen=${stateLen}`;
+}
+
 export default class Server implements Party.Server {
   // @ts-expect-error I assign this for sure
   private store: typeof appReduxStore;
@@ -47,18 +70,50 @@ export default class Server implements Party.Server {
     console.log("constructor start");
   }
 
+  /** emit a single greppable diagnostic line tagged with this room's id */
+  private log(event: string, details = "") {
+    console.log(
+      `${LOG_PREFIX} room=${this.room.id} ${event}${details ? ` ${details}` : ""}`,
+    );
+  }
+
+  /** current count of live connections, for correlating socket cycles */
+  private connectionCount(): number {
+    return [...this.room.getConnections()].length;
+  }
+
   async onStart() {
     let preloadedState: AppState | undefined;
+    let source = "fresh";
     try {
-      preloadedState =
-        (await this.getFromStorage()) || (await this.getFromSupabase());
+      // preserve the original `storage || supabase` short-circuit: supabase is
+      // only consulted when storage came back empty. Split apart only so the
+      // hydration source can be logged.
+      const fromStorage = await this.getFromStorage();
+      const fromSupabase = fromStorage
+        ? undefined
+        : await this.getFromSupabase();
+      preloadedState = fromStorage || fromSupabase;
+      if (fromStorage) source = "storage";
+      else if (fromSupabase) source = "supabase";
       if (preloadedState) applyMigrations(preloadedState);
-    } catch {}
+    } catch (e) {
+      // previously swallowed silently; surface it since a failed hydrate is a
+      // prime suspect for reverting a room to a stale checkpoint.
+      console.error(
+        `${LOG_PREFIX} room=${this.room.id} onStart:hydrate-error`,
+        e,
+      );
+    }
     if (preloadedState) {
       this.store = configureStore({ reducer, preloadedState });
     } else {
       this.store = configureStore({ reducer });
     }
+    this.log(
+      "onStart",
+      `source=${source} seq=${this.seq} ${stateFingerprint(this.store.getState())}`,
+    );
   }
 
   private async getFromSupabase() {
@@ -99,11 +154,17 @@ export default class Server implements Party.Server {
   url: ${new URL(ctx.request.url).pathname}`,
     );
 
+    const servedState = this.store.getState();
+    this.log(
+      "onConnect",
+      `conn=${conn.id} connections=${this.connectionCount()} serving roomstate seq=${this.seq} ${stateFingerprint(servedState)}`,
+    );
+
     // send the initial state to this client
     conn.send(
       JSON.stringify(<Roomstate>{
         type: "roomstate",
-        state: this.store.getState(),
+        state: servedState,
         recentActionIds: Array.from(this.seenActionIds.keys()),
         seq: this.seq,
       }),
@@ -136,8 +197,25 @@ export default class Server implements Party.Server {
     // resolve the new state
     this.store.dispatch(parsed.action);
     const nextState = this.store.getState();
-    // persist to partykit storage
-    void this.room.storage.put("currentState", nextState);
+    const fingerprint = stateFingerprint(nextState);
+    this.log(
+      "handleAction",
+      `type=${parsed.action?.type} id=${parsed.id ?? "none"} seq=${parsed.id ? this.seq : "n/a"} ${fingerprint}`,
+    );
+
+    // persist to partykit storage. Still fire-and-forget (unchanged behavior);
+    // wrapped only so we can observe whether the write actually resolves before
+    // the room is evicted/hibernated, or rejects.
+    this.log("storage.put:start", fingerprint);
+    void this.room.storage
+      .put("currentState", nextState)
+      .then(() => this.log("storage.put:ok", fingerprint))
+      .catch((e: unknown) =>
+        console.error(
+          `${LOG_PREFIX} room=${this.room.id} storage.put:error ${fingerprint}`,
+          e,
+        ),
+      );
 
     if (parsed.id) {
       this.rememberActionId(parsed.id);
@@ -145,15 +223,46 @@ export default class Server implements Party.Server {
     // persist the state to supabase
     try {
       if (supabase) {
-        await supabase.from("event_state").upsert({
+        // supabase returns errors in the result rather than throwing, so the
+        // existing catch never saw them: capture and log the returned error
+        // loudly, since a swallowed upsert failure would leave the served
+        // snapshot stale on the next reconnect.
+        const { error } = await supabase.from("event_state").upsert({
           id: this.room.id,
           state: nextState as unknown as Json,
           updated_at: new Date().toISOString(),
         });
+        if (error) {
+          console.error(
+            `${LOG_PREFIX} room=${this.room.id} supabase.upsert:error ${fingerprint}`,
+            error,
+          );
+        } else {
+          this.log("supabase.upsert:ok", fingerprint);
+        }
       }
     } catch (e) {
-      console.warn("error with upsert", e);
+      console.error(
+        `${LOG_PREFIX} room=${this.room.id} supabase.upsert:throw ${fingerprint}`,
+        e,
+      );
     }
+  }
+
+  onClose(conn: Party.Connection) {
+    // correlate socket cycles (flaky venue wifi) and potential hibernation with
+    // whichever snapshot was last served/persisted for this room.
+    this.log(
+      "onClose",
+      `conn=${conn.id} connections=${this.connectionCount()} seq=${this.seq} ${stateFingerprint(this.store.getState())}`,
+    );
+  }
+
+  onError(conn: Party.Connection, err: Error) {
+    console.error(
+      `${LOG_PREFIX} room=${this.room.id} onError conn=${conn.id} seq=${this.seq}`,
+      err,
+    );
   }
 
   private sendAck(conn: Party.Connection, id: string) {
