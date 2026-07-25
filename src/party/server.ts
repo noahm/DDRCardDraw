@@ -1,6 +1,7 @@
 import type * as Party from "partykit/server";
 import type {
   ActionAck,
+  ActionReject,
   CatchupRequest,
   CatchupResponse,
   ClientMessage,
@@ -172,6 +173,27 @@ export default class Server implements Party.Server {
       return;
     }
 
+    // Apply the action *before* ordering or broadcasting it. The echo doubles
+    // as the receipt confirmation, so anything broadcast is a promise that the
+    // server applied it; ordering first would let an action that the reducer
+    // refuses reach every peer (and, since step 2, enter the catch-up tail and
+    // recentActionIds) while the server's own store never took it — leaving
+    // the server silently behind every client until the next roomstate
+    // reverted them all.
+    try {
+      this.store.dispatch(parsed.action);
+    } catch (e) {
+      const reason = e instanceof Error ? e.message : String(e);
+      console.warn(
+        `rejecting action ${parsed.action?.type} in room ${this.room.id}:`,
+        e,
+      );
+      // seq is not consumed, the id is not remembered, nothing is broadcast:
+      // the room is exactly as it was before this message arrived
+      if (parsed.id) this.sendReject(sender, parsed.id, reason);
+      return;
+    }
+
     if (parsed.id) {
       // stamp the action with its canonical position and broadcast to
       // everyone *including* the sender: the echo doubles as the receipt
@@ -186,12 +208,11 @@ export default class Server implements Party.Server {
       this.room.broadcast(JSON.stringify(stamped));
     } else {
       // legacy client that can't recognize its own echo: relay the
-      // unstamped action to everyone else only
+      // unstamped action to everyone else only. It has no ack channel, so a
+      // rejection can only be silent for these.
       this.room.broadcast(rawMessage, [sender.id]);
     }
 
-    // resolve the new state
-    this.store.dispatch(parsed.action);
     const nextState = this.store.getState();
     // persist to partykit storage: the state itself, plus the sequencer
     // metadata so dedupe/ordering survive a hibernation or restart
@@ -253,6 +274,10 @@ export default class Server implements Party.Server {
 
   private sendAck(conn: Party.Connection, id: string) {
     conn.send(JSON.stringify(<ActionAck>{ type: "ack", id }));
+  }
+
+  private sendReject(conn: Party.Connection, id: string, reason: string) {
+    conn.send(JSON.stringify(<ActionReject>{ type: "reject", id, reason }));
   }
 
   private rememberStampedAction(stamped: StampedAction) {

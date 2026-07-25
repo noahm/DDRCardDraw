@@ -31,6 +31,11 @@ invariants. CRDTs are deliberately **not** on this path (see last section).
     monotonic `seq`. The echo doubles as the receipt confirmation (ack).
   - server → sender only: `{type: "ack", id, ...}` when a duplicate re-send
     arrives for an already-applied id.
+  - server → sender only: `{type: "reject", id, reason}` when the reducer
+    threw. The server applies an action _before_ stamping and broadcasting it,
+    so the echo only ever promises something that actually applied; a throwing
+    action consumes no seq, never enters the tail or `recentActionIds`, and is
+    rolled back on the sender instead of silently diverging the room.
   - server → client on connect: `{type: "roomstate", state, seq,
 recentActionIds}`.
 - Client-side `SyncManager` (`src/party/sync-manager.ts`) maintains the core
@@ -119,13 +124,24 @@ concurrent actions in different orders.
 - Unlocks: undo, audit ("who deleted that drawing"), time-travel debugging.
 - Add `{type: "hello", protocolVersion}` handshake; server can tell outdated
   clients to refresh via the existing update-manager flow.
+- **Durability signal (not yet implemented).** `reject` closes the gap for
+  actions the reducer refuses, but an action that applies cleanly and then
+  fails to _persist_ is still confirmed to the client with nothing to take it
+  back: `storage.put` is fire-and-forget and the Supabase upsert's error is
+  returned rather than thrown. A `{type:"persisted", seq}` emitted once a write
+  settles would let clients see how far the durable snapshot has actually
+  advanced and surface a warning when it stalls behind the applied seq — the
+  failure mode where edits look fine until a reconnect reverts everyone to an
+  old checkpoint. Worth folding into this step, since it reworks persistence
+  anyway.
 
 ### Step 4 — trust boundary
 
 - Server currently dispatches whatever clients send. Notably a forged
   `party/supplyState` action would overwrite the whole room via the root
   reducer's state-replacement branch. Whitelist allowed action types
-  server-side.
+  server-side. The `reject` message is already in place to carry the refusal
+  back to the sender, so this step only needs the policy, not new protocol.
 - Room secret / role tokens: organizer (write) vs viewer + OBS sources
   (read-only).
 

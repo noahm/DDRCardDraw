@@ -36,6 +36,21 @@ export interface ActionAck {
 }
 
 /**
+ * server → sender only: the action could not be applied, so it was never
+ * ordered or broadcast. The sender rolls it back out of its display state.
+ *
+ * Without this the sender has no way to learn about a failure: the echo that
+ * doubles as the ack is only sent for actions that applied, so a rejected
+ * action would otherwise sit pending until the ack timeout gives up on it.
+ */
+export interface ActionReject {
+  type: "reject";
+  id: string;
+  /** human-readable cause, for the toast and for logs */
+  reason: string;
+}
+
+/**
  * client → server: a gap in `seq` was observed on a live socket. Asks the
  * server to replay every stamped action after `since` so the client can
  * repair its confirmed state without taking a whole fresh snapshot.
@@ -75,5 +90,6 @@ export type Broadcast =
   | Roomstate
   | ReduxAction
   | ActionAck
+  | ActionReject
   | CatchupResponse
   | Pong;

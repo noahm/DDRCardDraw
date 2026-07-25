@@ -72,6 +72,8 @@ export class SyncManager {
       resync: () => void;
       /** an action was abandoned after repeated unconfirmed sends */
       onGiveUp: (action: Action) => void;
+      /** the server refused an action outright; it will never be applied */
+      onReject: (action: Action, reason: string) => void;
     },
   ) {}
 
@@ -153,6 +155,22 @@ export class SyncManager {
   /** the server says this id was applied earlier (duplicate re-send) */
   handleAck(id: string) {
     this.settle(id);
+  }
+
+  /**
+   * The server refused an action: it was never ordered, broadcast, or applied
+   * anywhere. Roll it back out of the display state, the same way an abandoned
+   * send is rolled back — the difference is that this is definitive, so there
+   * is no point waiting out the ack timeout or re-sending.
+   */
+  handleReject(id: string, reason: string) {
+    const entry = this.pending.get(id);
+    if (!entry) return;
+    this.settle(id);
+    if (this.lastSeq != null && this.confirmed) {
+      this.handlers.applyState(this.rebase());
+    }
+    this.handlers.onReject(entry.message.action, reason);
   }
 
   /** count of actions awaiting confirmation */

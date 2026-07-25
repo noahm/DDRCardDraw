@@ -59,21 +59,48 @@ factory but never connects a socket.
 
 All messages are JSON. The types live in `src/party/types.ts`.
 
-| Message                                           | Direction                | Meaning                                                                                                                                                                              |
-| ------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `{type:"action", action, id}`                     | client → server          | "Please apply this redux action." `id` is a unique message id (nanoid) used for receipt confirmation and dedupe.                                                                     |
-| `{type:"action", action, id, seq}`                | server → **all** clients | The same action, stamped with its canonical position. The copy sent back to the sender doubles as the receipt confirmation.                                                          |
-| `{type:"roomstate", state, seq, recentActionIds}` | server → one client      | Full state snapshot, sent on every (re)connect. `seq` is the last action baked into `state`; `recentActionIds` lets a reconnecting client drop pending re-sends that already landed. |
-| `{type:"ack", id}`                                | server → sender          | Sent instead of a re-apply when a duplicate re-send arrives for an already-applied `id`.                                                                                             |
-| `{type:"catchup", since}`                         | client → server          | "I saw a gap on a live socket; replay every stamped action after `since`." Sent instead of tearing down the socket for a fresh snapshot.                                             |
-| `{type:"catchup", actions}`                       | server → sender          | The stamped actions with `seq > since`, ascending. If the gap reaches back further than the server's retained tail, the server sends a `roomstate` instead and the client resyncs.   |
-| `{type:"ping"}` / `{type:"pong"}`                 | client ⇄ server          | Application-level heartbeat. The client pings every ~10s; two unanswered pings mean a stalled (half-open) socket and force a reconnect.                                              |
+| Message                                           | Direction                | Meaning                                                                                                                                                                                                                      |
+| ------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{type:"action", action, id}`                     | client → server          | "Please apply this redux action." `id` is a unique message id (nanoid) used for receipt confirmation and dedupe.                                                                                                             |
+| `{type:"action", action, id, seq}`                | server → **all** clients | The same action, stamped with its canonical position. The copy sent back to the sender doubles as the receipt confirmation. Only ever sent for an action the server **already applied** — see "apply before ordering" below. |
+| `{type:"roomstate", state, seq, recentActionIds}` | server → one client      | Full state snapshot, sent on every (re)connect. `seq` is the last action baked into `state`; `recentActionIds` lets a reconnecting client drop pending re-sends that already landed.                                         |
+| `{type:"ack", id}`                                | server → sender          | Sent instead of a re-apply when a duplicate re-send arrives for an already-applied `id`.                                                                                                                                     |
+| `{type:"reject", id, reason}`                     | server → sender          | The reducer threw on this action, so it was never ordered, broadcast, or applied. The sender rolls it back out of its display state immediately instead of waiting out the ack timeout.                                      |
+| `{type:"catchup", since}`                         | client → server          | "I saw a gap on a live socket; replay every stamped action after `since`." Sent instead of tearing down the socket for a fresh snapshot.                                                                                     |
+| `{type:"catchup", actions}`                       | server → sender          | The stamped actions with `seq > since`, ascending. If the gap reaches back further than the server's retained tail, the server sends a `roomstate` instead and the client resyncs.                                           |
+| `{type:"ping"}` / `{type:"pong"}`                 | client ⇄ server          | Application-level heartbeat. The client pings every ~10s; two unanswered pings mean a stalled (half-open) socket and force a reconnect.                                                                                      |
 
 `id` and `seq` are optional on the wire for compatibility with older
 deployments; see "Version interop" at the end. The `catchup`, `ping`, and
 `pong` messages are additive: an older server never answers `catchup` (the
 catch-up timeout falls back to a reconnect) and never sends `pong` (the
 missed-pong counter forces a harmless reconnect that lands a fresh roomstate).
+`reject` is likewise additive: an older server simply never sends one, and a
+rejected action falls back to being abandoned by the ack timeout.
+
+### Apply before ordering
+
+The server dispatches an action into its own store **before** stamping it with
+a `seq` and broadcasting it. This ordering is load-bearing, because the echo
+doubles as the receipt confirmation: anything broadcast is a promise that the
+server applied it.
+
+Ordering first would break that promise whenever the reducer throws. The
+action would reach every peer, take a `seq` the server's own store never
+advanced past, and — since the tail was introduced — enter both the catch-up
+replay tail and `recentActionIds`. The server would be silently behind every
+client, with no divergence signal, until the next `roomstate` reverted
+everyone at once. A client would have no way to notice: its pending entry is
+settled by the echo, and `recentActionIds` would tell a reconnecting client
+the effect was already baked into the snapshot when it never was.
+
+So a throwing action consumes no `seq`, is not remembered, is not broadcast,
+and never enters the tail. The room is left exactly as it was, and the sender
+gets a `reject` so it can roll the optimistic change back out immediately
+rather than waiting out four ack timeouts.
+
+A legacy client (no `id`) has no ack channel, so its rejections are silent —
+the action is still refused, it just cannot be told.
 
 ## The client state model
 
@@ -307,6 +334,7 @@ All the toasts live in `src/party/client.tsx` (strings in
 | Edit attempted while blocked          | warning toast, action dropped by the gate |
 | Roomstate applied after reconnect     | success toast, edits re-enabled           |
 | Action abandoned after repeated sends | danger toast + local rollback             |
+| Action rejected by the server         | danger toast + local rollback             |
 
 Toasts render through the app-root `OverlayToaster` (`src/toaster.tsx`) and
 are suppressed when running inside an OBS browser source (`useInObs` from

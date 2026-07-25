@@ -21,6 +21,7 @@ import { SyncManager } from "./sync-manager";
 const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
 const SEND_FAILED_TOAST_KEY = "party-action-send-failed";
+const REJECTED_TOAST_KEY = "party-action-rejected";
 
 /** how often to ping the server to prove the socket is really alive */
 const HEARTBEAT_INTERVAL_MS = 10000;
@@ -46,6 +47,8 @@ export function PartySocketManager(props: {
   // keeps the sync manager's give-up toast bound to the current locale
   // without recreating it (which would drop pending actions)
   const sendFailedToast = useRef(() => {});
+  // same, for an action the server refused outright
+  const rejectedToast = useRef((_reason: string) => {});
 
   const socket = usePartySocket({
     room: props.roomName,
@@ -89,6 +92,9 @@ export function PartySocketManager(props: {
             break;
           case "ack":
             syncRef.current?.handleAck(data.id);
+            break;
+          case "reject":
+            syncRef.current?.handleReject(data.id, data.reason);
             break;
           case "pong":
             missedPongsRef.current = 0;
@@ -139,6 +145,19 @@ export function PartySocketManager(props: {
         SEND_FAILED_TOAST_KEY,
       );
     };
+    rejectedToast.current = (reason: string) => {
+      // the reason is server-side detail; log it for debugging but keep the
+      // toast to something a tournament organizer can act on
+      console.warn("event server rejected an action:", reason);
+      if (inObs) return;
+      toaster.show(
+        {
+          message: t("party.actionRejected"),
+          intent: Intent.DANGER,
+        },
+        REJECTED_TOAST_KEY,
+      );
+    };
     return () => {
       setBlockedActionHandler(undefined);
     };
@@ -151,6 +170,7 @@ export function PartySocketManager(props: {
       toaster.dismiss(HEALTH_TOAST_KEY);
       toaster.dismiss(BLOCKED_TOAST_KEY);
       toaster.dismiss(SEND_FAILED_TOAST_KEY);
+      toaster.dismiss(REJECTED_TOAST_KEY);
     };
   }, []);
 
@@ -171,6 +191,9 @@ export function PartySocketManager(props: {
       },
       onGiveUp() {
         sendFailedToast.current();
+      },
+      onReject(_action, reason) {
+        rejectedToast.current(reason);
       },
     });
     syncRef.current = sync;
