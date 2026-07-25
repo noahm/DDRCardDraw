@@ -8,12 +8,13 @@ import {
   Intent,
   Tag,
 } from "@blueprintjs/core";
-import { Clipboard, Duplicate } from "@blueprintjs/icons";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { Clipboard, Document, Duplicate } from "@blueprintjs/icons";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useIntl } from "../hooks/useIntl";
 import {
   formatAge,
   formatDiagnosticsReport,
+  formatFullDiagnosticsReport,
   formatTime,
   getDiagnostics,
   getPendingActions,
@@ -38,7 +39,8 @@ export function DiagnosticsDialog(props: {
 }) {
   const { t } = useIntl();
   const entries = useSyncExternalStore(subscribeDiagnostics, getDiagnostics);
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<"trimmed" | "full" | null>(null);
+  const fallbackRef = useRef<HTMLTextAreaElement>(null);
   // pending ages tick on their own, so re-render on a timer while open
   const [now, setNow] = useState(() => Date.now());
 
@@ -50,26 +52,30 @@ export function DiagnosticsDialog(props: {
 
   useEffect(() => {
     if (!copied) return;
-    const id = setTimeout(() => setCopied(false), 2500);
+    const id = setTimeout(() => setCopied(null), 2500);
     return () => clearTimeout(id);
   }, [copied]);
 
   const pending = getPendingActions();
 
-  async function copyReport() {
-    const report = formatDiagnosticsReport(props.roomName);
+  async function copyReport(kind: "trimmed" | "full") {
+    const report =
+      kind === "trimmed"
+        ? formatDiagnosticsReport(props.roomName)
+        : formatFullDiagnosticsReport(props.roomName);
     try {
       await navigator.clipboard.writeText(report);
-      setCopied(true);
+      setCopied(kind);
     } catch {
       // clipboard can be unavailable (insecure context, denied permission):
-      // fall back to selecting the text so the user can copy it by hand
-      const area = document.getElementById(
-        "party-diagnostics-report",
-      ) as HTMLTextAreaElement | null;
+      // fall back to selecting the text so the user can copy it by hand. The
+      // value is set imperatively because a state update wouldn't have landed
+      // by the time we select.
+      const area = fallbackRef.current;
       if (area) {
+        area.value = report;
         area.select();
-        setCopied(document.execCommand("copy"));
+        setCopied(document.execCommand("copy") ? kind : null);
       }
     }
   }
@@ -142,9 +148,10 @@ export function DiagnosticsDialog(props: {
 
         {/* offscreen copy target for browsers without the async clipboard */}
         <textarea
-          id="party-diagnostics-report"
-          readOnly
-          value={formatDiagnosticsReport(props.roomName)}
+          ref={fallbackRef}
+          aria-hidden
+          tabIndex={-1}
+          defaultValue=""
           style={{
             position: "absolute",
             left: "-9999px",
@@ -155,17 +162,30 @@ export function DiagnosticsDialog(props: {
       </DialogBody>
       <DialogFooter
         actions={
-          <Button
-            icon={<Duplicate />}
-            intent={copied ? Intent.SUCCESS : Intent.PRIMARY}
-            onClick={copyReport}
-            text={
-              copied
-                ? t("party.diagnostics.copied")
-                : t("party.diagnostics.copy")
-            }
-            data-umami-event="party-diagnostics-copy"
-          />
+          <>
+            <Button
+              icon={<Document />}
+              intent={copied === "full" ? Intent.SUCCESS : Intent.NONE}
+              onClick={() => copyReport("full")}
+              text={
+                copied === "full"
+                  ? t("party.diagnostics.copied")
+                  : t("party.diagnostics.copyFull")
+              }
+              data-umami-event="party-diagnostics-copy-full"
+            />
+            <Button
+              icon={<Duplicate />}
+              intent={copied === "trimmed" ? Intent.SUCCESS : Intent.PRIMARY}
+              onClick={() => copyReport("trimmed")}
+              text={
+                copied === "trimmed"
+                  ? t("party.diagnostics.copied")
+                  : t("party.diagnostics.copy")
+              }
+              data-umami-event="party-diagnostics-copy"
+            />
+          </>
         }
       />
     </Dialog>
