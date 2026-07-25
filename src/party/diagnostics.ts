@@ -91,34 +91,65 @@ export function formatAge(since: number, now = Date.now()) {
   return `${Math.floor(seconds / 60)}m${pad(seconds % 60)}s`;
 }
 
+/** local UTC offset as "+02" / "-05:30", for reading timestamps back later */
+function utcOffset(d: Date) {
+  // getTimezoneOffset is minutes *behind* UTC, so the sign is inverted
+  const total = -d.getTimezoneOffset();
+  const sign = total < 0 ? "-" : "+";
+  const hours = pad(Math.floor(Math.abs(total) / 60));
+  const minutes = Math.abs(total) % 60;
+  return `${sign}${hours}${minutes ? `:${pad(minutes)}` : ""}`;
+}
+
 /**
- * The plain-text blob the copy button puts on the clipboard. Front-loads the
- * context we'd otherwise have to ask for (which room, when, which browser).
+ * A fenced block would end early if its own content contained a fence, so
+ * neutralise any backticks coming from a reducer's error message.
+ */
+function fenced(lines: string[]) {
+  return ["```", ...lines.map((l) => l.replaceAll("```", "'''")), "```"];
+}
+
+/**
+ * The blob the copy button puts on the clipboard. Front-loads the context we'd
+ * otherwise have to ask for (which room, when, which browser).
+ *
+ * Formatted as Discord-flavoured markdown, since the prompt next to the button
+ * asks people to paste it there: bold labels to make it skimmable, and fenced
+ * blocks for the two lists so they keep their column alignment and so action
+ * types and user-agent strings can't be eaten by markdown's own syntax.
  */
 export function formatDiagnosticsReport(roomName?: string): string {
   const now = new Date();
   const pending = getPendingActions();
-  const lines = [
-    "DDRCardDraw event connection diagnostics",
-    `room: ${roomName ?? "(unknown)"}`,
-    `generated: ${now.toISOString()} (local ${formatTime(now.getTime())}, UTC${
-      now.getTimezoneOffset() > 0 ? "-" : "+"
-    }${pad(Math.abs(now.getTimezoneOffset()) / 60)})`,
-    `user agent: ${
+  // pad the event column so details line up down the block
+  const eventWidth = entries.reduce((w, e) => Math.max(w, e.event.length), 0);
+
+  return [
+    "**DDRCardDraw event connection diagnostics**",
+    `**Room:** \`${roomName ?? "(unknown)"}\``,
+    `**Generated:** ${now.toISOString()} (local ${formatTime(now.getTime())}, UTC${utcOffset(now)})`,
+    `**Browser:** \`${
       typeof navigator === "undefined" ? "(unknown)" : navigator.userAgent
-    }`,
+    }\``,
     "",
-    `pending unsent changes: ${pending.length}`,
-    ...pending.map(
-      (p) =>
-        `  - ${p.type} (attempts: ${p.attempts}, waiting ${formatAge(p.since, now.getTime())})`,
-    ),
+    `**Changes not yet saved to the server:** ${pending.length}`,
+    ...(pending.length
+      ? fenced(
+          pending.map(
+            (p) =>
+              `${p.type} — waiting ${formatAge(p.since, now.getTime())}, ${p.attempts} attempt(s)`,
+          ),
+        )
+      : ["_none — the server confirmed every change_"]),
     "",
-    `log (${entries.length} event${entries.length === 1 ? "" : "s"}, oldest first):`,
-    ...entries.map(
-      (e) =>
-        `  ${formatTime(e.t)} ${e.event}${e.detail ? ` — ${e.detail}` : ""}`,
-    ),
-  ];
-  return lines.join("\n");
+    `**Connection log** (${entries.length} event${entries.length === 1 ? "" : "s"}, oldest first)`,
+    ...(entries.length
+      ? fenced(
+          entries.map(
+            (e) =>
+              `${formatTime(e.t)}  ${e.event.padEnd(eventWidth)}${e.detail ? `  ${e.detail}` : ""}`,
+          ),
+        )
+      : ["_nothing recorded_"]),
+  ].join("\n");
 }
