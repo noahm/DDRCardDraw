@@ -18,6 +18,7 @@
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "format": "oxfmt",
     "watch:room": "node scripts/watch-room.mjs",
+    "rehearse:migration": "node scripts/migration-rehearsal/rehearse.mjs",
     "import:ddr": "node --experimental-strip-types scripts/import-ddr.mts",
     "import:jubeat": "node --experimental-strip-types scripts/import-jubeat.mts",
     "import:pump": "node scripts/import-pump.mjs",

@@ -185,12 +185,46 @@ What that buys, mapped to the gap:
 4. It neither blocks nor overlaps step 4 — the trust boundary is pure
    application policy either way.
 
+**Rehearsed, with results** (`scripts/migration-rehearsal/`, `yarn
+rehearse:migration`). Two real deployments with separate `--persist` dirs
+against one shared backend, driven over real websockets. The core claim holds:
+a deployment with empty room storage recovers a room from the shared backend
+alone, `onStart source=supabase`, state byte-identical, and hydration is keyed
+by room id rather than wholesale. Three things the rehearsal turned up that
+this plan did not account for:
+
+1. **A failed hydrate silently destroys the room.** When the backend is
+   unreadable at startup, `onStart` catches the error, logs it, and continues
+   with an empty store — then the first action upserts that blank state over
+   the good row. Measured as real data loss in the rehearsal. It barely matters
+   in steady state (room storage answers first), but **at cutover every room
+   has empty storage by definition**, so every room hangs on that one read. A
+   blip during the cutover window doesn't fail to migrate a room, it deletes
+   it. This needs a guard before any real migration: if hydration was attempted
+   and _errored_, the room must refuse to persist rather than serve empty state.
+   Note `onStart` currently collapses "no row" and "couldn't reach the backend"
+   into the same `source: "fresh"`, and those need to diverge.
+2. **`syncMeta` doesn't travel.** `seq` and the dedupe set live only in room
+   storage, so the new deployment starts at `seq=0` with an empty
+   `recentActionIds`. `seq` restarting is harmless, but the empty dedupe set
+   means a client's pending re-send gets applied a second time on top of a
+   snapshot that already contains it. Confirmed in the rehearsal. Harmless for
+   payload-keyed reducers like `event/addCab`; `drawings/addOneChart` does an
+   unkeyed `charts.push()` and would duplicate. This is the concrete reason for
+   "migrate between events" below.
+3. **`--var` is not `process.env`.** PartyKit's `--var` populates `room.env`,
+   but `getSupabase()` reads `process.env` at module scope, so deployment
+   config has to arrive via `--define` (build-time substitution) or a `.env`.
+   Worth knowing before wiring up a second environment and wondering why
+   persistence silently disabled itself.
+
 **Caveats to plan around:**
 
 - Room storage in the managed account does **not** transfer. Supabase is the
   only carry-over, so anything newer than its last upsert — and any room where
   `SUPABASE_URL`/`SUPABASE_KEY` weren't configured — is lost. Migrate between
-  events, never during one, and confirm credentials are live first.
+  events, never during one, and confirm credentials are live first. Take a
+  backup of `event_state` before cutover regardless — see finding 1.
 - The host changes in `src/party/host.ts`, which is compiled into the client
   bundle, so a client running a stale cached bundle keeps talking to the old
   backend (see step 3.5). Keep the managed deployment serving through the
@@ -200,6 +234,40 @@ What that buys, mapped to the gap:
   `room=<id>` stamp on every diagnostic line already does.
 - Most of the above is Workers Paid, and retention/plan details move; re-check
   current limits before committing to a retention story.
+
+**What fits on the free plan.** Nearly all of it, including the part that
+motivated the step. Durable Objects run on the Workers Free plan (SQLite-backed
+only) with 100k requests/day and 13,000 GB-s/day; Workers Logs is included at
+roughly 6M events/month with **3-day** retention (paid: 20M, 7 days); Analytics
+Engine is included and keeps data **3 months**. Not free: Logpush and Tail
+Workers, both Paid-only.
+
+- The binding constraint is **duration, not requests**. 13,000 GB-s/day at
+  128 MB per DO is ~28 hours/day of resident room time summed across rooms —
+  about three concurrent 8-hour events. Incoming websocket messages bill 20:1,
+  so request count is not close to a limit.
+- **Hibernation is the lever, and we don't set it.** PartyKit exposes
+  `static options = { hibernate: true }`; `src/party/server.ts` doesn't. With it
+  on, duration accrues only while handling messages and the constraint
+  effectively disappears. Step 2's `syncMeta` persistence is what makes this
+  safe — `seq` and the dedupe set already restore in `onStart`.
+- **Enabling hibernation invalidates the stated reasoning for the memory-only
+  tail** (step 2). That argument is that a client can only see a live-socket gap
+  while the same actor ran continuously — which stops being true once sockets
+  survive hibernation. The behavior still degrades correctly (an empty tail
+  makes `earliest` infinite, so catch-up falls back to a full roomstate), but
+  the justification needs rewriting and the fallback becomes a normal
+  occurrence rather than a theoretical one.
+- Free-plan substitutions: instead of Tail Workers, `fetch()` a Discord webhook
+  straight from the error branches (every failure mode named above is already
+  caught in code); instead of Logpush, lean on Analytics Engine, whose 3-month
+  window outlives the 3-day log retention by 30×. Logs answer "what happened in
+  this room on Saturday"; AE answers "is this getting worse."
+- Worth measuring during the port: the free plan allows **10ms CPU per
+  invocation**, and each action currently does a reducer dispatch plus roughly
+  four passes over the full state tree (fingerprint, storage, broadcast,
+  upsert). The #611 fingerprint is the cheapest of those to make conditional if
+  it turns out to be tight.
 
 ### Step 3 — event-sourcing lite
 
@@ -376,5 +444,6 @@ running through its own channel), not the whole state. Queued-intent replay
 | Runtime verification recipe         | `.claude/skills/verify/SKILL.md`                               |
 | Client diagnostics report + panel   | `src/party/diagnostics.ts`, `src/party/diagnostics-dialog.tsx` |
 | Per-room log tailing                | `scripts/watch-room.mjs` (`yarn watch:room`)                   |
+| Migration rehearsal (step 2.5)      | `scripts/migration-rehearsal/` (`yarn rehearse:migration`)     |
 | Deployment config (step 2.5)        | `partykit.json`                                                |
 | Service worker + update flow        | `webpack.config.js` (OfflinePlugin), `src/update-manager.tsx`  |
