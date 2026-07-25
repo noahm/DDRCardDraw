@@ -17,6 +17,7 @@ import {
   setPartyConnectionHealthy,
 } from "./connection-status";
 import { SyncManager } from "./sync-manager";
+import { logDiagnostic, setPendingActionsProvider } from "./diagnostics";
 
 const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
@@ -59,6 +60,10 @@ export function PartySocketManager(props: {
         switch (data.type) {
           case "roomstate":
             applyMigrations(data.state);
+            logDiagnostic(
+              disconnectedRef.current ? "reconnected" : "connected",
+              `received room state (seq ${data.seq ?? "n/a"})`,
+            );
             // adopt the server state as confirmed, rebasing anything that
             // went unconfirmed before this (re)connect on top of it
             dispatch(
@@ -88,12 +93,17 @@ export function PartySocketManager(props: {
             syncRef.current?.handleRemoteAction(data);
             break;
           case "catchup":
+            logDiagnostic(
+              "catch-up",
+              `server replayed ${data.actions.length} missed change(s)`,
+            );
             syncRef.current?.handleCatchup(data.actions);
             break;
           case "ack":
             syncRef.current?.handleAck(data.id);
             break;
           case "reject":
+            logDiagnostic("action-rejected", `server refused: ${data.reason}`);
             syncRef.current?.handleReject(data.id, data.reason);
             break;
           case "pong":
@@ -106,6 +116,13 @@ export function PartySocketManager(props: {
     },
     onClose() {
       setPartyConnectionHealthy(false);
+      const stillPending = syncRef.current?.pendingCount ?? 0;
+      logDiagnostic(
+        "disconnected",
+        stillPending
+          ? `lost connection with ${stillPending} unsent change(s)`
+          : "lost connection",
+      );
       // before first sync the full-page "Connecting..." state covers this
       if (!ready || disconnectedRef.current) {
         return;
@@ -126,6 +143,7 @@ export function PartySocketManager(props: {
 
   useEffect(() => {
     setBlockedActionHandler(() => {
+      logDiagnostic("action-blocked", "change discarded while disconnected");
       if (inObs) return;
       toaster.show(
         {
@@ -187,16 +205,30 @@ export function PartySocketManager(props: {
         socket.send(JSON.stringify({ type: "catchup", since }));
       },
       resync() {
+        logDiagnostic(
+          "resync",
+          "missed changes could not be replayed in place",
+        );
         socket.reconnect();
       },
-      onGiveUp() {
+      onGiveUp(action) {
+        logDiagnostic(
+          "action-abandoned",
+          `gave up delivering ${String(action.type)} after repeated attempts`,
+        );
         sendFailedToast.current();
       },
-      onReject(_action, reason) {
+      onReject(action, reason) {
+        logDiagnostic(
+          "action-rolled-back",
+          `${String(action.type)} was undone (${reason})`,
+        );
         rejectedToast.current(reason);
       },
     });
     syncRef.current = sync;
+    // let the diagnostics panel read the live pending list without copying it
+    setPendingActionsProvider(() => sync.pendingActions);
     const stopListening = startAppListening({
       predicate(action) {
         // @ts-expect-error i don't know how to type action meta properties yet
@@ -218,8 +250,15 @@ export function PartySocketManager(props: {
       stopListening();
       sync.dispose();
       syncRef.current = null;
+      setPendingActionsProvider(undefined);
     };
   }, [socket, dispatch]);
+
+  // mark where a session begins, so a log covering several rooms or a page
+  // reload is readable
+  useEffect(() => {
+    logDiagnostic("session-started", `room ${props.roomName ?? "(none)"}`);
+  }, [props.roomName]);
 
   // Application-level heartbeat: a websocket can stay OPEN while the server is
   // frozen or the TCP link is half-open, in which case nothing surfaces the
@@ -231,6 +270,10 @@ export function PartySocketManager(props: {
       if (socket.readyState !== WebSocket.OPEN) return;
       if (missedPongsRef.current >= MAX_MISSED_PONGS) {
         missedPongsRef.current = 0;
+        logDiagnostic(
+          "heartbeat-lost",
+          `no reply to ${MAX_MISSED_PONGS} pings; forcing a reconnect`,
+        );
         socket.reconnect();
         return;
       }
