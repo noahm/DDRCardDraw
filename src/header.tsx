@@ -13,6 +13,7 @@ import {
   Menu as MenuIcon,
   Help,
   Control,
+  Pulse,
 } from "@blueprintjs/icons";
 import { JSX, useCallback, useState } from "react";
 import { About } from "./about";
@@ -24,6 +25,8 @@ import { useAppDispatch, useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
 import { EventModeGated } from "./common-components/app-mode";
 import { useNavigate, useHref } from "react-router-dom";
+import { DiagnosticsDialog } from "./party/diagnostics-dialog";
+import { useRoomName } from "./hooks/useRoomName";
 
 export function Header({
   heading,
@@ -68,6 +71,8 @@ export function Header({
 
 export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [diagnosticsOpen, setDiagnosticsOpen] = useState(false);
+  const roomName = useRoomName();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const dashHref = useHref("dash", { relative: "route" });
@@ -95,6 +100,14 @@ export function HamburgerMenu() {
         text={t("clearDrawings")}
         disabled={!haveDrawings}
       />
+      <EventModeGated>
+        <MenuItem
+          icon={<Pulse />}
+          onClick={() => setDiagnosticsOpen(true)}
+          text={t("party.diagnostics.menuItem")}
+          data-umami-event="party-diagnostics-open"
+        />
+      </EventModeGated>
       <MenuItem
         icon={<InfoSign />}
         onClick={() => setAboutOpen(true)}
@@ -116,6 +129,11 @@ export function HamburgerMenu() {
       <Dialog isOpen={aboutOpen} onClose={() => setAboutOpen(false)}>
         <About />
       </Dialog>
+      <DiagnosticsDialog
+        isOpen={diagnosticsOpen}
+        onClose={() => setDiagnosticsOpen(false)}
+        roomName={roomName}
+      />
       <Popover content={menu} placement="bottom-start">
         <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
       </Popover>

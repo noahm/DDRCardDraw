@@ -3,6 +3,7 @@ import type { Action } from "@reduxjs/toolkit";
 import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
 import type { ReduxAction, Roomstate, StampedAction } from "./types";
+import type { PendingActionInfo } from "./diagnostics";
 
 /** how long to wait for the server to confirm receipt before re-sending */
 const ACK_TIMEOUT_MS = 5000;
@@ -23,6 +24,8 @@ interface PendingEntry {
   message: ReduxAction & { id: string };
   attempts: number;
   timer?: ReturnType<typeof setTimeout>;
+  /** epoch ms of the first send attempt, for the diagnostics panel */
+  since: number;
 }
 
 /**
@@ -82,6 +85,7 @@ export class SyncManager {
     const entry: PendingEntry = {
       message: { type: "action", action, id: nanoid() },
       attempts: 0,
+      since: Date.now(),
     };
     this.pending.set(entry.message.id, entry);
     this.transmit(entry);
@@ -176,6 +180,15 @@ export class SyncManager {
   /** count of actions awaiting confirmation */
   get pendingCount() {
     return this.pending.size;
+  }
+
+  /** what is still unconfirmed, for the user-facing diagnostics panel */
+  get pendingActions(): PendingActionInfo[] {
+    return Array.from(this.pending.values(), (entry) => ({
+      type: String(entry.message.action.type),
+      attempts: entry.attempts,
+      since: entry.since,
+    }));
   }
 
   dispose() {
