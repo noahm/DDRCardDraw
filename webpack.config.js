@@ -10,7 +10,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OfflinePlugin = require("@lcdp/offline-plugin");
-const ZipPlugin = require("zip-webpack-plugin");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -24,8 +23,6 @@ const packageJson = require("./package.json");
 module.exports = function (env = {}, argv = {}) {
   const isProd = !env.dev;
   const serve = !!env.dev;
-  const version = env.version || "custom";
-  const zip = !!env.zip;
 
   return {
     target: "web",
@@ -243,24 +240,16 @@ module.exports = function (env = {}, argv = {}) {
     ].concat(
       !isProd
         ? [new ReactRefreshPlugin({ overlay: false })]
-        : zip
-          ? [
-              new ZipPlugin({
-                path: __dirname,
-                filename: `DDRCardDraw-${version}.zip`,
-                exclude: "__offline_serviceworker",
-              }),
-            ]
-          : [
-              new OfflinePlugin({
-                responseStrategy: "network-first",
-                autoUpdate: true,
-                ServiceWorker: {
-                  events: true,
-                },
-                excludes: ["../*.zip", "jackets/**/*", "favicons/*"],
-              }),
-            ],
+        : [
+            new OfflinePlugin({
+              responseStrategy: "network-first",
+              autoUpdate: true,
+              ServiceWorker: {
+                events: true,
+              },
+              excludes: ["jackets/**/*", "favicons/*"],
+            }),
+          ],
     ),
   };
 };

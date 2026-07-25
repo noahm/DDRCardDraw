@@ -29,10 +29,6 @@ yarn start
 # if you make changes to any game/song data in ./src/songs/ this will give
 # a basic sanity check on the format and contents of it
 yarn validate:json
-
-# build a zipped, standalone copy of the app that runs entirely offline,
-# jacket images and all! simply unzip somewhere and open index.html
-yarn build:zip
 ```
 
 ## Data imports
@@ -57,10 +53,6 @@ yarn import:pump path/to/pumpout/db
 ## Deployment
 
 As mentioned above, running `yarn build` will create a distribution of the application with static content that can be used in a production environment in a multitude of ways. The following are options for deployment
-
-### Local
-
-Running `yarn build:zip` produces a zip file that can be extracted anywhere on your PC. Simply open the included `index.html` to start using DDRCardDraw. That's it!
 
 ### Docker/Containers
 

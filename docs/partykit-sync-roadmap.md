@@ -9,8 +9,9 @@ For a guided tour of the implementation as it exists today, see
 
 Two steps here are not strictly about the sync protocol but sit on its
 critical path: **2.5** (where the server runs, and whether we can see what it
-did after the fact) and **3.5** (how new client builds get delivered, once the
-service worker is no longer earning its keep).
+did after the fact) and **3.5** (how the app reaches a venue at all — a
+single-process LAN mode, and retiring the service worker that no longer earns
+its keep).
 
 ## Where this is going, in one paragraph
 
@@ -223,20 +224,66 @@ What that buys, mapped to the gap:
   old checkpoint. Worth folding into this step, since it reworks persistence
   anyway.
 
-### Step 3.5 — retire the service worker
+### Step 3.5 — client delivery: LAN mode, and retiring the service worker
 
-Not a sync-protocol step, but it belongs on this timeline: the app has evolved
-toward being fully online, and the offline layer now costs more than it pays.
-Sequenced after step 3 because that step's `hello` handshake supplies half the
-replacement; it can move earlier if the maintenance burden bites first.
+Not sync-protocol work, but it belongs on this timeline: the app has evolved
+toward being fully online, and the local-first machinery built for an earlier
+shape of the app is now either broken or costing more than it pays. Two
+related pieces.
+
+#### LAN mode (replaces the deleted `build:zip`)
+
+`yarn build:zip` promised "a standalone copy that runs entirely offline,
+jacket images and all — unzip and open `index.html`." It had stopped working
+and was removed rather than repaired, because two independent structural
+changes had passed it by:
+
+- `output.publicPath` is `"/"`, so a bundle opened over `file://` resolves its
+  own chunks against the filesystem root and never loads.
+- routing is `createBrowserRouter` (`src/app.tsx`), which needs a server to
+  rewrite paths; there is none behind `file://`.
+
+Even repaired, it would only ever have served classic mode — `PARTYKIT_HOST`
+is baked to the production host in a production build, so event mode in the
+zip pointed at the internet regardless.
+
+The replacement is a **LAN mode**: one process, started on a laptop at the
+venue, serving the built frontend _and_ hosting the party rooms, with every
+other device on the local wifi pointed at `http://<laptop-ip>:<port>/`. This
+is strictly better than the zip ever was — it keeps event mode, OBS sources,
+and multi-device play working with no internet at all, where the zip was
+single-machine classic mode only.
+
+The machinery already mostly exists, which is why this sits next to step 2.5:
+
+- PartyKit config supports serving static assets alongside the room server, so
+  `partykit.json` plus the `dist/` build is a single-process LAN server today.
+  If step 2.5 lands the `partyserver` + wrangler port, the equivalent is
+  `wrangler dev` with an assets binding — either way, **LAN mode is the
+  deployment artifact run locally**, not a separate build target.
+- `src/party/host.ts` needs a third branch. It currently hardcodes
+  `localhost:1999` in development and the partykit.dev host in production; LAN
+  mode wants "same origin as the page," which also makes the CORS allowance on
+  `onRequest` moot for this case.
+- Supabase simply stays unconfigured, and rooms persist to local workerd
+  storage. Cross-deployment durability is not a thing anyone wants from a
+  laptop under a folding table.
+- Ergonomics worth doing: bind `0.0.0.0`, and print the reachable LAN URL (a
+  QR code costs almost nothing and saves typing an IP into six phones).
+
+Unresolved, and worth deciding before building: LAN mode is served over plain
+`http://` to a bare IP, which is **not a secure context**. Anything gated on
+one is unavailable there — including, notably, service worker registration.
+
+#### Retiring the service worker
 
 **What's actually there today.** `@lcdp/offline-plugin` 5.1.1 (a maintenance
 fork of the abandoned webpack-4-era `offline-plugin`) is configured in
 `webpack.config.js` for production builds only, with
 `responseStrategy: "network-first"`, `autoUpdate: true`, and
-`excludes: ["../*.zip", "jackets/**/*", "favicons/*"]`. Renovate already has
-it pinned with `"enabled": false` — we treat it as frozen. Being network-first,
-it is not a speed layer; it is a fallback cache plus an update transport.
+`excludes: ["jackets/**/*", "favicons/*"]`. Renovate already has it pinned
+with `"enabled": false` — we treat it as frozen. Being network-first, it is
+not a speed layer; it is a fallback cache plus an update transport.
 
 **Three separate things are bundled together here, and they should be
 untangled before anything is deleted:**
@@ -257,10 +304,10 @@ untangled before anything is deleted:**
    with a fetch handler — verify current Chrome and Safari criteria before
    committing, since this is the claim most likely to actually regress.
 
-**The offline story that survives regardless** is `yarn build:zip`: a
-standalone copy that runs entirely offline, jackets and all, from `index.html`
-— and it already excludes `__offline_serviceworker`. That, not the service
-worker, is the real answer for a venue with no wifi.
+**And the venue case belongs to LAN mode now.** The scenario the cache exists
+for — no wifi at the venue — is exactly the scenario LAN mode serves properly,
+and a LAN-served page can't register a service worker at all (no secure
+context). The offline layer is absent precisely where offline matters.
 
 **Retirement needs a tombstone, not a deletion.** A registered service worker
 keeps controlling the page until something replaces it, so dropping the plugin
@@ -276,12 +323,13 @@ Sketch of the order:
    handshake; classic mode needs a lightweight build-id poll (fetch a version
    file, compare against the bundled id, show the same toast).
    `UpdateManager`'s UI and OBS special-casing stay — only its transport
-   changes.
+   changes. **This is the only part that waits on step 3**; LAN mode has no
+   such dependency and can be pulled forward whenever.
 2. Ship the self-unregistering service worker in place of the generated one.
 3. Drop `@lcdp/offline-plugin` from `webpack.config.js`, `package.json`, and
    the `renovate.json` exception.
 4. Update `docs/readme.md`, which currently promises offline use and
-   installability, and point the offline use case at `build:zip`.
+   installability, and point the venue use case at LAN mode.
 
 ### Step 4 — trust boundary
 
