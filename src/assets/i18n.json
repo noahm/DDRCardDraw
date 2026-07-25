@@ -111,7 +111,8 @@
       "disconnected": "Lost connection to the event server. Changes are disabled until reconnected.",
       "reconnected": "Reconnected to the event server!",
       "actionBlocked": "Still reconnecting to the event server. Your change was not applied.",
-      "sendFailed": "A change could not be delivered to the event server after several attempts."
+      "sendFailed": "A change could not be delivered to the event server after several attempts.",
+      "actionRejected": "A change was rejected by the event server and has been undone."
     },
     "error": {
       "title": "Error Caught!",
@@ -226,7 +227,8 @@
       "disconnected": "イベントサーバーとの接続が切断されました。再接続するまで変更できません。",
       "reconnected": "イベントサーバーに再接続しました！",
       "actionBlocked": "イベントサーバーに再接続中のため、変更は適用されませんでした。",
-      "sendFailed": "複数回試みましたが、変更をイベントサーバーへ送信できませんでした。"
+      "sendFailed": "複数回試みましたが、変更をイベントサーバーへ送信できませんでした。",
+      "actionRejected": "イベントサーバーが変更を拒否したため、元に戻しました。"
     },
     "error": {
       "title": "エラーが発生しました！",
