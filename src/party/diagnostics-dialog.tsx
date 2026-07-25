@@ -19,14 +19,7 @@ import {
   getPendingActions,
   subscribeDiagnostics,
 } from "./diagnostics";
-
-/**
- * Invite link for the community Discord, used by the "share these logs"
- * prompt. Left empty until a real invite is configured — the prompt still
- * renders (and the copy button still works), just without a clickable link,
- * rather than shipping a URL that goes nowhere.
- */
-const DISCORD_INVITE_URL = "";
+import { DISCORD_INVITE_URL } from "../external-links";
 
 /** events that indicate something went wrong, highlighted in the list */
 const PROBLEM_EVENTS = new Set([
@@ -90,15 +83,10 @@ export function DiagnosticsDialog(props: {
     >
       <DialogBody>
         <Callout intent={Intent.PRIMARY} icon={<Clipboard />}>
-          {t("party.diagnostics.sharePrompt")}
-          {DISCORD_INVITE_URL ? (
-            <>
-              {" "}
-              <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer">
-                {t("party.diagnostics.openDiscord")}
-              </a>
-            </>
-          ) : null}
+          {t("party.diagnostics.sharePrompt")}{" "}
+          <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer">
+            {t("party.diagnostics.openDiscord")}
+          </a>
         </Callout>
 
         <h4 className={Classes.HEADING} style={{ marginTop: "1rem" }}>
