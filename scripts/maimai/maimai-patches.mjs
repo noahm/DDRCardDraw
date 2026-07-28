@@ -85,5 +85,19 @@ export const MAIMAI_PATCH = {
   },
   "エンジェル ドリーム": {
     bpm: 180,
+    releaseDate: "2025-09-26",
   },
+  "Bring it on": {
+    releaseDate: "2025-09-18",
+    /* temporary Release Date value */
+  },
+  "モニタリング": {
+    releaseDate: "2025-09-18",
+  },
+  "有頂天ドリーマーズ": {
+    releaseDate: "2025-09-18",
+  },
+  "サイエンス": {
+    releaseDate: "2025-09-18",
+  }
 };
