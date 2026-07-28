@@ -91,13 +91,13 @@ export const MAIMAI_PATCH = {
     releaseDate: "2025-09-18",
     /* temporary Release Date value */
   },
-  "モニタリング": {
+  モニタリング: {
     releaseDate: "2025-09-18",
   },
-  "有頂天ドリーマーズ": {
+  有頂天ドリーマーズ: {
     releaseDate: "2025-09-18",
   },
-  "サイエンス": {
+  サイエンス: {
     releaseDate: "2025-09-18",
-  }
+  },
 };
