@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1781838211000
+    "lastUpdated": 1784934322000
   },
   "defaults": {
     "style": "solo",
@@ -10350,6 +10350,69 @@
         { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
         { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
         { "style": "solo", "diffClass": "full", "lvl": 18, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Guess Who's Back",
+      "artist": "AWU",
+      "bpm": "134",
+      "genre": "K-Pop",
+      "saIndex": "748",
+      "jacket": "smx/GuessWho'sBack.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 4 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 16 },
+        { "style": "solo", "diffClass": "wild", "lvl": 23 },
+        { "style": "solo", "diffClass": "dual", "lvl": 11 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 21 },
+        { "style": "solo", "diffClass": "easy", "lvl": 12, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 23, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Oasis",
+      "artist": "KaW",
+      "bpm": "145",
+      "genre": "Techno",
+      "saIndex": "749",
+      "jacket": "smx/Oasis.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 1 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 21 },
+        { "style": "solo", "diffClass": "dual", "lvl": 12 },
+        { "style": "solo", "diffClass": "full", "lvl": 14 },
+        { "style": "team", "diffClass": "team", "lvl": 20 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 21, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "The Feeling",
+      "artist": "Calumny and DJ Furax",
+      "bpm": "142",
+      "genre": "Dance",
+      "saIndex": "750",
+      "jacket": "smx/TheFeelingBigOrgus.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 1 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 11 },
+        { "style": "solo", "diffClass": "full", "lvl": 11 },
+        { "style": "team", "diffClass": "team", "lvl": 18 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 19, "flags": ["plus"] }
       ]
     }
   ]
