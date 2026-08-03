@@ -213,6 +213,7 @@ export function SongCardBase(props: Props) {
         isOpen={showingContextMenu}
         onClose={hideMenu}
         placement="top"
+        matchTargetWidth={true}
         modifiers={{
           offset: { options: { offset: [0, 35] } },
         }}

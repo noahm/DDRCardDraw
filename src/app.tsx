@@ -5,6 +5,7 @@ import "@blueprintjs/select/lib/css/blueprint-select.css";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 
 import { FocusStyleManager } from "@blueprintjs/core";
+import { OverlaysProvider } from "@blueprintjs/core";
 
 FocusStyleManager.onlyShowFocusOnTabs();
 
@@ -18,13 +19,15 @@ import { ToasterHost } from "./toaster";
 
 export function App() {
   return (
-    <DrawStateManager defaultDataSet="ddr_world">
-      <ThemeSyncWidget />
-      <UpdateManager />
-      <Header />
-      <DrawingList />
-      <DropHandler />
-      <ToasterHost />
-    </DrawStateManager>
+    <OverlaysProvider>
+      <DrawStateManager defaultDataSet="ddr_world">
+        <ThemeSyncWidget />
+        <UpdateManager />
+        <Header />
+        <DrawingList />
+        <DropHandler />
+        <ToasterHost />
+      </DrawStateManager>
+    </OverlaysProvider>
   );
 }
