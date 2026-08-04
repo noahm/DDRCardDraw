@@ -1756,37 +1756,44 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 150
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 480
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 873
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1251
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 480
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 867
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1209
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
@@ -7033,47 +7040,56 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 123
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 327
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 846
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1293
         },
         {
           "style": "single",
           "diffClass": "challenge",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1836
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 306
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 816
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1227
         },
         {
           "style": "double",
           "diffClass": "challenge",
-          "lvl": 15
+          "lvl": 15,
+          "maxScore": 1737
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
@@ -35820,41 +35836,49 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 126
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 375
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 807
         },
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1062
         },
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 375
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 783
         },
         {
           "style": "double",
           "diffClass": "expert",
-          "lvl": 12
+          "lvl": 12,
+          "maxScore": 1044
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Levitating.jpg"
+      "jacket": "ddr_world/Levitating.jpg",
+      "remyLink": "https://remywiki.com/Levitating"
     },
     {
       "name": "Liar×Girl",
