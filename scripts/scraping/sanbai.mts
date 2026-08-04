@@ -79,23 +79,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // グランプリ譜面パック vol.2
-  ...[
-    "Q96bO9D61lib19IiIi0i69P80bo6q69Q", // 321STARS
-    "0DDo1ilPDQoIoPd8ol9OPO1IPbi9ii6d", // AA
-    "dq190Il9iO1bD698ll6ddObIlqdIQ1O9", // AM-3P
-    "P8P1dlqi9D111iIDPOP0l9DIO1l6lqO9", // BABY BABY GIMME YOUR LOVE
-    "Q0OiPQQ8IbIDq08IO9Io0qDdoDPPdd1q", // DROP OUT
-    "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO", // exotic ethnic
-    "8Il6980di8P89lil1PDIqqIbiq1QO8lQ", // MAKE IT BETTER
-    "80bQi8IQ8o1iidqd6oQiDPQoPi909olq", // Silent Hill
-    "bi1Obd9i99P0O9PqQ1l1P6P6o1IOi11P", // Silver Platform - I wanna get your heart -
-    "POoldOddQl9Dbq8b6iOP0iPoQd6IdOPl", // 男々道
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-07-31T15:00:00+09:00"),
-    id,
-    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
-  ]),
   // BEMANI×東方Project ～幻想郷音樂祭2024～
   ...[
     "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1", // 残像ニ繋ガレタ追憶ノHIDEAWAY
@@ -105,6 +88,16 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     new Date("2026-08-06T15:00:00+09:00"),
     id,
     { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
+  ]),
+  // BEMANI PRO LEAGUE -SEASON 3- Triple Tribe
+  ...[
+    "odPq866q0QPOP9QOQ9QQIlIO60Oid16o", // C-C-C-N-N-N
+    "QlQ10I6o1l88loioo6DIObi0P09PPdiD", // DIABLOSIS::Nāga
+    "Q88iD188IiqQbIoP9Oq818bPbOP1d1bQ", // suspicions
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-08-27T15:00:00+09:00"),
+    id,
+    { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
   ]),
   // グランプリ譜面パック vol.3
   ...[
@@ -139,6 +132,17 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     new Date("2026-09-30T15:00:00+09:00"),
     id,
     { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
+  ]),
+  // スペシャル楽曲パック feat.東方Project vol.7
+  ...[
+    "08QQ8iPldb6o96bl0ld61qb99Q0Q19Qd", // 4NT1 D34D
+    "D90qii9D6P0POQ69Iiblib00Po1DIoi8", // Deadly Dolly Dance
+    "bPI6QobOQl9Q161l8l68069QdO1QbO9b", // SkyDrive! (HASEKO EUROBEAT MIX)
+    "6IDll6i6d8iII686qq6DddiI00iD8o9d", // 東方妖々夢 ULTIMATE MEDLEY
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-09-30T15:00:00+09:00"),
+    id,
+    { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
   ]),
 ];
 /** Correction map for invalid data on 3icecream site */
