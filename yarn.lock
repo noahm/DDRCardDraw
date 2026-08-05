@@ -2200,6 +2200,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@msgpack/msgpack@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "@msgpack/msgpack@npm:2.8.0"
+  checksum: 10/d90ab780c2c96fa5af22f38e0b76871d7c77d06fcf40786b64ada4e0ae02e17b216b38a5505fb4b7d1c339d95caee0669f5ec9004a2b392ce0cbe16afdbd9333
+  languageName: node
+  linkType: hard
+
 "@noble/hashes@npm:1.4.0":
   version: 1.4.0
   resolution: "@noble/hashes@npm:1.4.0"
@@ -4736,7 +4743,7 @@ __metadata:
     oxlint-tsgolint: "npm:^0.21.1"
     p-queue: "npm:9.0.1"
     papaparse: "npm:5.5.3"
-    peerjs: "npm:2.0.0-beta.3"
+    peerjs: "npm:1.5.5"
     postcss: "npm:^8.5.19"
     postcss-loader: "npm:8.2.0"
     react: "npm:19.2.3"
@@ -5230,14 +5237,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "eventemitter3@npm:3.1.2"
-  checksum: 10/e2886001beb52cd2fe47d2470fd6266b7c70bd3ac356c0041a7e64336ed57bb1fc9b07bc9043d34b39913488a8d81bfcde62d3af597974980aa01b50844d869b
-  languageName: node
-  linkType: hard
-
-"eventemitter3@npm:^4.0.0":
+"eventemitter3@npm:^4.0.0, eventemitter3@npm:^4.0.7":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
   checksum: 10/8030029382404942c01d0037079f1b1bc8fed524b5849c237b80549b01e2fc49709e1d0c557fa65ca4498fc9e24cff1475ef7b855121fcc15f9d61f93e282346
@@ -7472,20 +7472,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"peerjs-js-binarypack@npm:1.0.1":
-  version: 1.0.1
-  resolution: "peerjs-js-binarypack@npm:1.0.1"
-  checksum: 10/a37f2e91f50be3ac651a4a037250c272cdd73bbc82a0ae702f65752907c366403c9a7395a1c25292b7d6a1d43eb945920d21e92f97402cc117d4d5e7cbca9eb0
+"peerjs-js-binarypack@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "peerjs-js-binarypack@npm:2.1.0"
+  checksum: 10/590e8796ffa1ac35a6a2c0d69cc8ad2173d3a720405fd5159c7801629af65cb70a9cb505fd4320c2cee4a1e485d42497cb26a82479a1300385a82406e8387a5a
   languageName: node
   linkType: hard
 
-"peerjs@npm:2.0.0-beta.3":
-  version: 2.0.0-beta.3
-  resolution: "peerjs@npm:2.0.0-beta.3"
+"peerjs@npm:1.5.5":
+  version: 1.5.5
+  resolution: "peerjs@npm:1.5.5"
   dependencies:
-    eventemitter3: "npm:^3.1.2"
-    peerjs-js-binarypack: "npm:1.0.1"
-  checksum: 10/e50b0cebc5bdbec9e31d6f05955d34115b0caaa4ccad31579110a5da2f1df73431a48c2c37a8514393c5ef5ba07b8da65c480999dadd7ce7fc8780ebf60edc7b
+    "@msgpack/msgpack": "npm:^2.8.0"
+    eventemitter3: "npm:^4.0.7"
+    peerjs-js-binarypack: "npm:^2.1.0"
+    webrtc-adapter: "npm:^9.0.0"
+  checksum: 10/e31de79580958752505b8f9a29c15a5c99b1a84010457ec98ba32680d804b11d765ec9f5a2415bf37571aee19a5dd4b4f863ebf82105c22ff3db4ddec599f469
   languageName: node
   linkType: hard
 
@@ -8517,6 +8519,13 @@ __metadata:
     ajv-formats: "npm:^2.1.1"
     ajv-keywords: "npm:^5.1.0"
   checksum: 10/dba77a46ad7ff0c906f7f09a1a61109e6cb56388f15a68070b93c47a691f516c6a3eb454f81a8cceb0a0e55b87f8b05770a02bfb1f4e0a3143b5887488b2f900
+  languageName: node
+  linkType: hard
+
+"sdp@npm:^3.2.0":
+  version: 3.2.2
+  resolution: "sdp@npm:3.2.2"
+  checksum: 10/34adf575d454777382b9a172909692f3f4a01af8bb8d8bc8f22e1a2a0249a4948e506f7f7a5d4a015ba7e51cc861dbabf491a7ea30c5148c0bad589247a757bc
   languageName: node
   linkType: hard
 
@@ -10098,6 +10107,15 @@ __metadata:
   bin:
     webpack: bin/webpack.js
   checksum: 10/c22b58fdf41d993971516154cb621d13b7b61dd744b7e2c6be972e9afcc9942694a8aaa322c07fba46448c69d663023ff53d0aeeb00eb0b125d83ace5ca8fa3c
+  languageName: node
+  linkType: hard
+
+"webrtc-adapter@npm:^9.0.0":
+  version: 9.0.6
+  resolution: "webrtc-adapter@npm:9.0.6"
+  dependencies:
+    sdp: "npm:^3.2.0"
+  checksum: 10/f9bbaf85122205a507e63e3bfb033029ff27440f1f17a82c9f476082cf180edc90756ba7a87668dcd5e5122a70110313da2b226b9c274a018e4dd3c1c65667a2
   languageName: node
   linkType: hard
 

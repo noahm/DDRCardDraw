@@ -8,6 +8,13 @@ export interface SerializibleStore<ReducedState> {
 
 type SyncMessages<T> = InitSync<T> | StateUpdate<T> | { type: "other" };
 
+/** peerjs hands us `unknown` off the wire, since a remote peer can send anything */
+function asSyncMessage<T>(data: unknown): SyncMessages<T> | undefined {
+  if (data && typeof data === "object" && "type" in data) {
+    return data as SyncMessages<T>;
+  }
+}
+
 interface InitSync<State> {
   type: "syncedStore.init";
   storeType: string;
@@ -28,8 +35,9 @@ export function acceptIncomingSyncedStores<SharedState>(
   peer: DataConnection,
   handleNewStore: (initialState: SharedState) => void,
 ) {
-  const handlePeerMessage = (evt: SyncMessages<SharedState>) => {
-    if (evt.type !== "syncedStore.init") {
+  const handlePeerMessage = (data: unknown) => {
+    const evt = asSyncMessage<SharedState>(data);
+    if (evt?.type !== "syncedStore.init") {
       return;
     }
     if (evt.storeType !== storeType) {
@@ -61,7 +69,10 @@ export function initShareWithPeer(
 }
 
 function sendMessage(peer: DataConnection, msg: SyncMessages<unknown>) {
-  peer.send(msg);
+  // send is fire-and-forget, but can reject once the connection drops
+  void Promise.resolve(peer.send(msg)).catch((reason: unknown) => {
+    console.error("failed to send message to peer", peer.peer, reason);
+  });
 }
 
 /**
@@ -89,8 +100,9 @@ export function syncStoreWithPeer<State extends SerializibleStore<unknown>>(
     externalUpdate = false;
   };
 
-  const handlePeerMessage = (evt: SyncMessages<State>) => {
-    switch (evt.type) {
+  const handlePeerMessage = (data: unknown) => {
+    const evt = asSyncMessage<State>(data);
+    switch (evt?.type) {
       case "syncedStore.stateUpdate":
         if (evt.storeId !== storeId) {
           return;

@@ -117,11 +117,16 @@ function bindPeerConn(conn: DataConnection) {
     removePeer();
   });
 
-  conn.on("data", (data: PeerMessages) => {
-    switch (data.type) {
+  conn.on("data", (data) => {
+    // peerjs types this as `unknown`, since a remote peer can send anything
+    const message =
+      data && typeof data === "object" && "type" in data
+        ? (data as PeerMessages)
+        : undefined;
+    switch (message?.type) {
       case "drawing":
-        console.log("received drawing from peer", data.body);
-        useDrawState.getState().injectRemoteDrawing(data.body);
+        console.log("received drawing from peer", message.body);
+        useDrawState.getState().injectRemoteDrawing(message.body);
         break;
       default:
         console.log("received unknown data from remote peer", data, conn.peer);
@@ -261,9 +266,17 @@ export const useRemotePeers = create<RemotePeerStore>((set, get) => ({
       }
       targetPeer = foundPeer;
     }
-    targetPeer.send(<SharedDrawingMessage>{
+    const sent = targetPeer.send(<SharedDrawingMessage>{
       type: "drawing",
       body: drawing,
+    });
+    // send is fire-and-forget, but can reject once the connection drops
+    void Promise.resolve(sent).catch((reason: unknown) => {
+      console.error("failed to send drawing to peer", targetPeer.peer, reason);
+      toaster.show({
+        message: `Failed to send drawing to ${displayFromPeerId(targetPeer.peer)}`,
+        intent: Intent.DANGER,
+      });
     });
   },
   beginSyncWithPeer(drawingStore, peerId) {
