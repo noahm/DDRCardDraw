@@ -25,6 +25,11 @@
     "noResults": "No results",
     "noMatchingCharts": "No chart matching filters",
     "drawing": {
+      "sendToOne": "Send to {peerId}",
+      "startSyncOne": "Start sync with {peerId}",
+      "sendToPeer": "Send to...",
+      "startSync": "Start sync with...",
+      "connect": "Connect to a peer to share",
       "saveImage": "Save Image",
       "redrawAll": "Redraw all charts",
       "redrawConfirm": "This will replace everything besides protects and picks!",
@@ -52,8 +57,8 @@
         "players": "Players"
       },
       "networking": {
-        "title": "Networking has moved",
-        "description": "Sharing draws between devices is no longer part of this app. Much more robust networking lives on in the alpha build:"
+        "title": "Networking is going away",
+        "description": "These features still work for now, but are planned for removal in a future update. Much more robust networking is available in the alpha build:"
       },
       "chartCount": "Number to draw",
       "playerPicks": "Free picks",
@@ -137,6 +142,11 @@
     "noResults": "検索結果がありません",
     "noMatchingCharts": "対象譜面なし",
     "drawing": {
+      "sendToOne": "{peerId}に送信",
+      "startSyncOne": "{peerId}と同期",
+      "sendToPeer": "送信",
+      "startSync": "同期",
+      "connect": "接続して共有",
       "saveImage": "画像として保存",
       "redrawAll": "すべてドローし直す",
       "redrawConfirm": "選択/拒否した譜面を除き、すべての譜面をドローし直します！",
@@ -164,8 +174,8 @@
         "players": "プレイヤー"
       },
       "networking": {
-        "title": "ネットワーク機能は移行しました",
-        "description": "端末間でドロー結果を共有する機能は、このアプリでは終了しました。より安定したネットワーク機能はアルファ版でご利用いただけます。"
+        "title": "ネットワーク機能は廃止予定です",
+        "description": "現時点ではご利用いただけますが、今後のアップデートで削除される予定です。より安定したネットワーク機能はアルファ版でご利用いただけます。"
       },
       "chartCount": "ドロー数",
       "playerPicks": "自由枠",

@@ -1,0 +1,49 @@
+import { ControlGroup, InputGroup, Button } from "@blueprintjs/core";
+import {
+  InputHTMLAttributes,
+  JSX,
+  ReactNode,
+  useCallback,
+  useRef,
+} from "react";
+
+interface Props {
+  placeholder?: string;
+  value?: string;
+  rightElement?: JSX.Element;
+  disableInput?: boolean;
+  disableButton?: boolean;
+  /** called when the user clicks the button or presses the enter key */
+  onClick(this: void, value: string, element: HTMLInputElement): void;
+  buttonLabel: ReactNode;
+  enterKeyHint?: InputHTMLAttributes<unknown>["enterKeyHint"];
+}
+
+export function InputButtonPair({ onClick, ...props }: Props) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const handleClick = useCallback(() => {
+    const el = inputRef.current!;
+    console.log(el);
+    return onClick(el.value, el);
+  }, [onClick]);
+  return (
+    <ControlGroup>
+      <InputGroup
+        readOnly={props.disableInput}
+        inputRef={inputRef}
+        placeholder={props.placeholder}
+        value={props.value}
+        rightElement={props.rightElement}
+        onKeyDown={(e) => {
+          if (e.code === "Enter") {
+            handleClick();
+          }
+        }}
+        enterKeyHint={props.enterKeyHint}
+      />
+      <Button disabled={props.disableButton} onClick={handleClick}>
+        {props.buttonLabel}
+      </Button>
+    </ControlGroup>
+  );
+}

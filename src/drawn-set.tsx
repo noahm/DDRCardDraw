@@ -6,6 +6,7 @@ import { Drawing } from "./models/Drawing";
 import { SetLabels } from "./tournament-mode/drawing-labels";
 import { DrawingProvider, useDrawing } from "./drawing-context";
 import { DrawingActions } from "./tournament-mode/drawing-actions";
+import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
 import { useConfigState } from "./config-state";
 import { ErrorFallback } from "./utils/error-fallback";
 
@@ -89,6 +90,7 @@ const DrawnSet = memo<Props>(function DrawnSet({ drawing }) {
           </div>
         }
       >
+        <SyncWithPeers />
         <div
           key={drawing.id}
           style={{ backgroundImage }}

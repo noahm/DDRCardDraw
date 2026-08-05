@@ -4736,6 +4736,7 @@ __metadata:
     oxlint-tsgolint: "npm:^0.21.1"
     p-queue: "npm:9.0.1"
     papaparse: "npm:5.5.3"
+    peerjs: "npm:2.0.0-beta.3"
     postcss: "npm:^8.5.19"
     postcss-loader: "npm:8.2.0"
     react: "npm:19.2.3"
@@ -5226,6 +5227,13 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: 10/571aeb3dbe0f2bbd4e4fadbdb44f325fc75335cd5f6f6b6a091e6a06a9f25ed5392f0863c5442acb0646787446e816f13cbfc6edce5b07658541dff573cab1ff
+  languageName: node
+  linkType: hard
+
+"eventemitter3@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "eventemitter3@npm:3.1.2"
+  checksum: 10/e2886001beb52cd2fe47d2470fd6266b7c70bd3ac356c0041a7e64336ed57bb1fc9b07bc9043d34b39913488a8d81bfcde62d3af597974980aa01b50844d869b
   languageName: node
   linkType: hard
 
@@ -7461,6 +7469,23 @@ __metadata:
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
   checksum: 10/5b1e2daa247062061325b8fdbfd1fb56dde0a448fb1455453276ea18c60685bdad23a445dc148cf87bc216be1573357509b7d4060494a6fd768c7efad833ee45
+  languageName: node
+  linkType: hard
+
+"peerjs-js-binarypack@npm:1.0.1":
+  version: 1.0.1
+  resolution: "peerjs-js-binarypack@npm:1.0.1"
+  checksum: 10/a37f2e91f50be3ac651a4a037250c272cdd73bbc82a0ae702f65752907c366403c9a7395a1c25292b7d6a1d43eb945920d21e92f97402cc117d4d5e7cbca9eb0
+  languageName: node
+  linkType: hard
+
+"peerjs@npm:2.0.0-beta.3":
+  version: 2.0.0-beta.3
+  resolution: "peerjs@npm:2.0.0-beta.3"
+  dependencies:
+    eventemitter3: "npm:^3.1.2"
+    peerjs-js-binarypack: "npm:1.0.1"
+  checksum: 10/e50b0cebc5bdbec9e31d6f05955d34115b0caaa4ccad31579110a5da2f1df73431a48c2c37a8514393c5ef5ba07b8da65c480999dadd7ce7fc8780ebf60edc7b
   languageName: node
   linkType: hard
 

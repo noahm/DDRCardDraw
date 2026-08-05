@@ -8,11 +8,13 @@ import {
   Divider,
   FormGroup,
   HTMLSelect,
+  Icon,
   NumericInput,
   Tab,
   Tabs,
 } from "@blueprintjs/core";
 import {
+  ThirdParty,
   GlobeNetwork,
   Settings,
   People,
@@ -30,6 +32,8 @@ import { EligibleChartsListFilter } from "../eligible-charts/filter";
 import { useIntl } from "../hooks/useIntl";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
+import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
+import { useRemotePeers } from "../tournament-mode/remote-peers";
 import { NetworkingNotice } from "./networking-notice";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
@@ -95,6 +99,8 @@ function getDiffsAndRangeForNewStyle(
 
 export default function ControlsDrawer() {
   const { t } = useIntl();
+  const isConnected = useRemotePeers((r) => !!r.thisPeer);
+  const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
   return (
     <div className={styles.drawer}>
       <Tabs id="settings" size="large">
@@ -107,8 +113,24 @@ export default function ControlsDrawer() {
         </Tab>
         <Tab
           id="network"
-          icon={<GlobeNetwork className={Classes.TAB_ICON} />}
-          panel={<NetworkingNotice />}
+          icon={
+            <Icon
+              icon={
+                hasPeers ? (
+                  <ThirdParty className={Classes.TAB_ICON} />
+                ) : (
+                  <GlobeNetwork className={Classes.TAB_ICON} />
+                )
+              }
+              intent={isConnected ? "success" : "none"}
+            />
+          }
+          panel={
+            <>
+              <NetworkingNotice />
+              <RemotePeerControls />
+            </>
+          }
         >
           {t("controls.tabs.networking")}
         </Tab>

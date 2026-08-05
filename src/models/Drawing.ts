@@ -1,3 +1,4 @@
+import { DataConnection } from "peerjs";
 import { Song } from "./SongData";
 
 export interface EligibleChart {
@@ -54,4 +55,6 @@ export interface Drawing {
   pocketPicks: Array<PocketPick>;
   priorityPlayer?: number;
   cardVariant: string | undefined;
+  /** __ prefix avoids serializing this field during sync */
+  __syncPeer?: DataConnection;
 }
