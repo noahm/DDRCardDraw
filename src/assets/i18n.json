@@ -2,7 +2,7 @@
   "en": {
     "hero": {
       "description": "Click 'Draw' above to draw some songs at random. Choose from other games in the top left menu.",
-      "callout": "Instant local pack imports are now available! Drag and drop a pack folder onto this page to get started."
+      "callout": "Running a tournament or live stream? Get robust networking and tournament features at <link>next.ddr.tools</link>"
     },
     "clearDrawings": "Clear Draws",
     "clearDrawingsConfirm": "This will clear all songs drawn so far. Confirm?",
@@ -55,6 +55,10 @@
         "flags": "Flags",
         "networking": "Networking",
         "players": "Players"
+      },
+      "networking": {
+        "title": "Networking is going away",
+        "description": "These features are planned for removal in a future update. If you need networking you should be using the alpha build:"
       },
       "chartCount": "Number to draw",
       "playerPicks": "Free picks",
@@ -115,7 +119,7 @@
   "ja": {
     "hero": {
       "description": "右上の「ドロー」をクリックすると、ランダムに曲が選ばれます。左上のメニューから他のゲームを選択できます。",
-      "callout": "ローカルパックの取り込み機能が利用可能になりました！開始するには、パックフォルダをこのページにドラッグ&ドロップしてください。"
+      "callout": "大会の運営や配信をお考えですか？ネットワーク機能と大会向け機能がさらに充実したアルファ版「<link>next.ddr.tools</link>」をお試しください。"
     },
     "clearDrawings": "全消去",
     "clearDrawingsConfirm": "これまでに引いた譜面をすべて消去します。よろしいですか？",
@@ -168,6 +172,10 @@
         "flags": "属性",
         "networking": "ネットワーク",
         "players": "プレイヤー"
+      },
+      "networking": {
+        "title": "ネットワーク機能は廃止予定です",
+        "description": "現時点ではご利用いただけますが、今後のアップデートで削除される予定です。より安定したネットワーク機能はアルファ版でご利用いただけます。"
       },
       "chartCount": "ドロー数",
       "playerPicks": "自由枠",

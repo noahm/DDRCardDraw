@@ -114,6 +114,8 @@ Some tournaments may also a "pocket pick" where a players freely picks a chart o
 
 Multiple copies of the app can connect over the internet to share drawn sets of cards between devices. This can be especially useful for larger events, sharing drawn cards with an audience of spectators, etc.
 
+These features much more robust in the alpha build at [next.ddr.tools](https://next.ddr.tools/). Anyone running tournaments and live streams with this tool should be looking there.
+
 See: [Networking](networking.md)
 
 # Other Features
