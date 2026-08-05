@@ -1,9 +1,9 @@
-.networkButtons {
+.actionButtons {
   position: absolute;
   top: 0;
   right: 5px;
 }
 
-:global(.obs-layer) .networkButtons {
+:global(.obs-layer) .actionButtons {
   display: none;
 }

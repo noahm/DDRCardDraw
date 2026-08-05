@@ -5,7 +5,6 @@ import { GameData, Song } from "../models/SongData";
 import { ConfigState } from "../config-state";
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
-import { DataConnection } from "peerjs";
 import { showDrawErrorToast } from "./error-toast";
 
 interface DrawState {
@@ -24,11 +23,6 @@ interface DrawState {
   /** returns false if no songs could be drawn */
   drawSongs(this: void, config: ConfigState): boolean;
   clearDrawings(this: void): void;
-  injectRemoteDrawing(
-    this: void,
-    d: Drawing,
-    syncWithPeer?: DataConnection,
-  ): void;
 }
 
 function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
@@ -140,26 +134,6 @@ export const useDrawState = createWithEqualityFn<DrawState>(
         };
       });
       return true;
-    },
-    injectRemoteDrawing(drawing, syncWithPeer) {
-      set((prevState) => {
-        const currentDrawing = prevState.drawings.find(
-          (d) => d.id === drawing.id,
-        );
-        const newDrawings = prevState.drawings.filter(
-          (d) => d.id !== drawing.id,
-        );
-        newDrawings.unshift(drawing);
-        if (currentDrawing) {
-          drawing.__syncPeer = currentDrawing.__syncPeer;
-        }
-        if (syncWithPeer) {
-          drawing.__syncPeer = syncWithPeer;
-        }
-        return {
-          drawings: newDrawings,
-        };
-      });
     },
   }),
   Object.is,

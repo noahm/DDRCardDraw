@@ -112,7 +112,7 @@ Some tournaments may also a "pocket pick" where a players freely picks a chart o
 
 # Networking
 
-Multiple copies of the app can connect over the internet to share drawn sets of cards between devices. This can be especially useful for larger events, sharing drawn cards with an audience of spectators, etc.
+Sharing drawn sets of cards between devices over the internet has been discontinued in this app. Much more robust networking is available in the alpha build at [next.ddr.tools](https://next.ddr.tools/), which is the place to be for running tournaments and live streams.
 
 See: [Networking](networking.md)
 
@@ -152,7 +152,7 @@ Buttons at the top of the settings drawer will allow you to save and load settin
 
 ## Use as OBS Layer
 
-The app is aware of when it is loaded into an OBS Browser Source and will automatically remove its own background elements to better blend into a stream layout. (I recommend cropping out the top toolbar.) DDR Tools is fully usable within the browser source "Interact" window, but real pros use the [networking features](networking.md) to remotly control their browser sources.
+The app is aware of when it is loaded into an OBS Browser Source and will automatically remove its own background elements to better blend into a stream layout. (I recommend cropping out the top toolbar.) DDR Tools is fully usable within the browser source "Interact" window, but real pros use the [alpha build](https://next.ddr.tools/) to remotly control their browser sources over the network.
 
 ## SM5/ITG imports
 

@@ -11,7 +11,6 @@ import {
   PlayerActionOnChart,
   PocketPick,
 } from "./models/Drawing";
-import { SerializibleStore } from "./zustand/shared-zustand";
 
 export const stubDrawing: Drawing = {
   id: "stub",
@@ -29,8 +28,10 @@ interface DrawingProviderProps {
   children?: ReactNode;
 }
 
-export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
+export interface DrawingContext extends Drawing {
   updateDrawing: StoreApi<Drawing>["setState"];
+  /** returns a plain data copy of this drawing, without any of its actions */
+  serializeDrawing(this: void): Drawing;
   incrementPriorityPlayer(this: void): void;
   redrawAllCharts(this: void): void;
   redrawChart(this: void, chartId: string): void;
@@ -180,12 +181,9 @@ const {
       }
       set({ [key]: arr });
     },
-    serializeSyncFields() {
+    serializeDrawing() {
       return Object.entries(get()).reduce((ret: Partial<Drawing>, [k, v]) => {
         if (typeof v === "function") {
-          return ret;
-        }
-        if (k.startsWith("__")) {
           return ret;
         }
         ret[k as keyof Drawing] = v;
