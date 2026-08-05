@@ -9,7 +9,7 @@ import { useIntl } from "../../hooks/useIntl";
 import { detectedLanguage } from "../../utils";
 import { ChartLevel } from "../chart-level";
 import styles from "../song-card.css";
-import { useConfigState } from "../../config-state";
+import { useConfigState } from "../../state/hooks";
 
 const isJapanese = detectedLanguage === "ja";
 
