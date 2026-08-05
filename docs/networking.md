@@ -3,7 +3,7 @@
 > [!WARNING]
 > **These features are planned for removal.** They still work today and are documented below, but the peer-to-peer design has known problems that can't be fixed without a rewrite (see [Known Issues](#known-issues)), so they will be removed from this app in a future update.
 >
-> That rewrite already exists in the alpha build at **<https://next.ddr.tools/>**, where networking is far more robust. If you run tournaments or live streams, that's where these features live on.
+> That rewrite already exists in the alpha build at **<https://next.ddr.tools/>**, where networking is far more robust. If you run tournaments or live streams, that's where you'll have the best experience.
 
 The DDR Tools app can connect with other devices over the internet to share card draw results. This can be especially useful for larger events, sharing drawn cards with an audience of spectators, etc.
 
