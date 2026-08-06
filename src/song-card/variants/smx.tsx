@@ -1,10 +1,13 @@
-import { Edit } from "@blueprintjs/icons";
-import { JSX } from "react";
+import { Barcode, Edit } from "@blueprintjs/icons";
+import { JSX, useMemo } from "react";
+import { renderSVG } from "uqr";
 import { readExtra } from "../../utils/extras";
+import { copyTextToClipboard } from "../../utils/share";
 import { EDIT_AUTHOR_KEY, EDIT_ID_KEY } from "../../utils/smx-edit-import";
 import {
   BaseCardCenter,
   BaseCardFooter,
+  CardAction,
   CardSectionProps,
   baseChartValues,
 } from "./base";
@@ -42,5 +45,63 @@ export function SmxCardFooter(props: CardSectionProps) {
       chart={props.chart}
       centerElement={editId && <div>{editId}</div>}
     />
+  );
+}
+
+/**
+ * For edit charts, offer a QR code linking to the edit's share page so players
+ * can open and bookmark it in-game.
+ */
+export function getSmxCardActions(
+  chart: CardSectionProps["chart"],
+): CardAction[] {
+  const editId = readExtra(baseChartValues(chart).extras, EDIT_ID_KEY);
+  if (!editId) {
+    return [];
+  }
+  return [
+    {
+      key: "edit-qr",
+      // resolved against the edit set's game-data i18n (set in buildEditDataFile)
+      labelKey: "bookmarkEdit",
+      icon: <Barcode />,
+      content: <EditQrContent editId={editId} />,
+    },
+  ];
+}
+
+/** Base url that an edit share code resolves to in-game. */
+const EDIT_BASE_URL = "https://edits.stepmaniax.com/";
+
+/**
+ * Popover body showing a QR code for an edit's share link, anchored to the
+ * card it came from so it's clear which chart is being shared.
+ */
+function EditQrContent({ editId }: { editId: string }) {
+  const url = EDIT_BASE_URL + editId;
+  const svg = useMemo(() => renderSVG(url), [url]);
+
+  return (
+    <div className={styles.editQr}>
+      <p className={styles.editQrCaption}>Scan to preview & bookmark:</p>
+      <div
+        className={styles.editQrCode}
+        // uqr returns a self-contained, trusted SVG string
+        dangerouslySetInnerHTML={{ __html: svg }}
+      />
+      <p className={styles.editQrLink}>
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            void copyTextToClipboard(url, "Copied edit link");
+          }}
+        >
+          edits.stepmaniax.com/{editId}
+        </a>
+      </p>
+    </div>
   );
 }
