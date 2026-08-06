@@ -6,6 +6,7 @@ import { ClassicModeContext } from "../common-components/app-mode";
 import { LocalStorageManager } from "./localstorage-manager";
 import { useMemo } from "react";
 import { classicModeState } from "../state/localstorage";
+import { CustomDataDialog } from "../smx-edit-import";
 
 export function ClassicModeShell() {
   const store = useMemo(() => createClientStore(classicModeState), []);
@@ -15,6 +16,7 @@ export function ClassicModeShell() {
       <ClassicModeContext>
         <Header />
         <Outlet />
+        <CustomDataDialog />
       </ClassicModeContext>
     </ReduxProvider>
   );

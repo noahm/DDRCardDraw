@@ -28,7 +28,6 @@ import {
   useGameData,
   useUpdateConfig,
 } from "../state/hooks";
-import { useStockGameData } from "../state/game-data.atoms";
 import { MultidrawControls } from "./multidraw-controls";
 import { LvlRangeControls } from "./lvl-range";
 
@@ -200,7 +199,7 @@ function GeneralSettings() {
   const { t } = useIntl();
   const updateState = useUpdateConfig();
   const configState = useConfigState();
-  const gameData = useStockGameData(configState.gameKey);
+  const gameData = useGameData();
   const {
     useWeights,
     constrainPocketPicks,
