@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1785519744944
+    "lastUpdated": 1785983962154
   },
   "defaults": {
     "style": "single",
@@ -995,6 +995,70 @@
       "genre": "ANNIVERSARY/アニバーサリー",
       "saHash": "l1ODQ1bO9POQ6d8O0Iobbio11qb6O6bd",
       "saIndex": "850"
+    },
+    {
+      "name": "7 Colors",
+      "artist": "kors k feat.吉河順央",
+      "saHash": "Pqdb6bI66o9896lDbDq1Pi1Dl9QqO6Pd",
+      "bpm": "156",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 243
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 504
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 990
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1464
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 471
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 993
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1359
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/7 Colors.jpg",
+      "remyLink": "https://remywiki.com/7_Colors"
     },
     {
       "name": "8000000",
@@ -27870,6 +27934,72 @@
       "saIndex": "639"
     },
     {
+      "name": "HAPPY☆PARADISE☆GALAXY",
+      "artist": "DJ(GW+ミラクル☆ストーン)÷2",
+      "saHash": "Oq8ii8id8ob90q6OiDoIl9Q0lQDd9DIO",
+      "bpm": "182",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 354
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8,
+          "maxScore": 858
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1281
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1713
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2178
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8,
+          "maxScore": 855
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1218
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1629
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2019
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/HAPPY☆PARADISE☆GALAXY.jpg",
+      "remyLink": "https://remywiki.com/HAPPY_PARADISE_GALAXY"
+    },
+    {
       "name": "HARD BRAIN",
       "artist": "AJURIKA",
       "bpm": "155",
@@ -27930,6 +28060,71 @@
       "genre": "HARD TECHNO",
       "saHash": "Qb8P9PODDo68lPqQ0o6d80bIqDOiPD9Q",
       "saIndex": "964"
+    },
+    {
+      "name": "Harmonia",
+      "artist": "ATSUMI UEDA",
+      "saHash": "DlQ190o8bqO8oOQ0Iqloql6lIlPP9qO9",
+      "bpm": "177",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 279
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 567
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 948
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1359
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 543
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 945
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1347
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Harmonia.jpg",
+      "remyLink": "https://remywiki.com/Harmonia",
+      "genre": "ニュープレリュード/NU PRELUDE"
     },
     {
       "name": "Haunted Rhapsody",
@@ -49516,6 +49711,73 @@
       "saIndex": "195"
     },
     {
+      "name": "QuoN",
+      "artist": "Power Of Nature",
+      "saHash": "d8l6ob1IPiQOlPI8i88oQqO10Ql6ibl6",
+      "bpm": "168",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 282
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 669
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1080
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1767
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2559
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 654
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1044
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1755
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2373
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/QuoN.jpg",
+      "remyLink": "https://remywiki.com/QuoN",
+      "genre": "エタニティ/ETERNITY"
+    },
+    {
       "name": "Qwerty",
       "artist": "BEMANI Sound Team \"Yvya\"",
       "bpm": "160",
@@ -66048,6 +66310,72 @@
       "saIndex": "519"
     },
     {
+      "name": "Touch My Body",
+      "artist": "anubasu-anubasu",
+      "saHash": "1loi6P66IOoPqD9I68odili18P8bPb9P",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 225
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 633
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1071
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1659
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["shock"]
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 612
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1074
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1629
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["shock"]
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Touch My Body.jpg",
+      "remyLink": "https://remywiki.com/Touch_My_Body"
+    },
+    {
       "name": "Towards The Horizon",
       "artist": "かめりあ",
       "artist_translation": "Camellia",
@@ -75629,6 +75957,61 @@
       "genre": ""
     },
     {
+      "name": "アキネイション",
+      "artist": "ビートまりお（COOL&CREATE）",
+      "saHash": "oDQb8b9Ii9960180IO989PqIqiP6dOoP",
+      "bpm": "185",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 261
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 822
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1533
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 2115
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8,
+          "maxScore": 840
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1419
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 2022
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/アキネイション.jpg",
+      "remyLink": "https://remywiki.com/Aki_nation",
+      "genre": "オータムビート/AUTUMN BEAT"
+    },
+    {
       "name": "アドレナリン",
       "name_translation": "Adrenaline",
       "artist": "U1 overground",
@@ -84756,6 +85139,70 @@
       "saIndex": "763"
     },
     {
+      "name": "和風インザ洋風",
+      "artist": "Super Momo Tarosans",
+      "saHash": "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b",
+      "bpm": "153",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 243
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8,
+          "maxScore": 633
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1008
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1461
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 612
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1008
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1437
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/和風インザ洋風.jpg",
+      "remyLink": "https://remywiki.com/Wafuu_in_the_youfuu"
+    },
+    {
       "name": "唱",
       "name_translation": "Show",
       "artist": "Covered by 滝沢玻琉",
@@ -85325,6 +85772,60 @@
       "saHash": "OQbPdOIo6dPPIq6d8qid6DbPP0q991i6",
       "saIndex": "452",
       "search_hint": "ハイパージャパネスク3/HYPER JAPANESQUE 3"
+    },
+    {
+      "name": "天弓ノ舞",
+      "artist": "龍",
+      "saHash": "Q098DQOP0b6q69lioP6lDoDP0o0066i8",
+      "bpm": "140",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 207
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 522
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1032
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1485
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 504
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1011
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1416
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/天弓ノ舞.jpg",
+      "remyLink": "https://remywiki.com/Tenkyuu_no_mai"
     },
     {
       "name": "天空の華",

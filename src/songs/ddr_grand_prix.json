@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1785519744944
+    "lastUpdated": 1785983962154
   },
   "defaults": {
     "style": "single",
@@ -871,6 +871,7 @@
     {
       "name": "7 Colors",
       "artist": "kors k feat.吉河順央",
+      "saHash": "Pqdb6bI66o9896lDbDq1Pi1Dl9QqO6Pd",
       "bpm": "156",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -899,6 +900,11 @@
           "maxScore": 1464
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -915,9 +921,14 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1359
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/7_Colors",
       "jacket": "ddr_world/7 Colors.jpg"
     },
@@ -25377,6 +25388,7 @@
     {
       "name": "HAPPY☆PARADISE☆GALAXY",
       "artist": "DJ（GW＋ミラクル☆ストーン）÷2",
+      "saHash": "Oq8ii8id8ob90q6OiDoIl9Q0lQDd9DIO",
       "bpm": "182",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -25435,7 +25447,7 @@
           "maxScore": 2019
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/HAPPY☆PARADISE☆GALAXY.jpg",
       "remyLink": "https://remywiki.com/HAPPY_PARADISE_GALAXY"
     },
@@ -25504,6 +25516,7 @@
     {
       "name": "Harmonia",
       "artist": "ATSUMI UEDA",
+      "saHash": "DlQ190o8bqO8oOQ0Iqloql6lIlPP9qO9",
       "bpm": "177",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -25532,6 +25545,11 @@
           "maxScore": 1359
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -25548,9 +25566,14 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1347
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "genre": "ニュープレリュード/NU PRELUDE",
       "jacket": "ddr_world/Harmonia.jpg",
       "remyLink": "https://remywiki.com/Harmonia"
@@ -45477,6 +45500,7 @@
     {
       "name": "QuoN",
       "artist": "Power Of Nature",
+      "saHash": "d8l6ob1IPiQOlPI8i88oQqO10Ql6ibl6",
       "bpm": "168",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -45535,7 +45559,7 @@
           "maxScore": 2373
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/QuoN.jpg",
       "remyLink": "https://remywiki.com/QuoN",
       "genre": "エタニティ/ETERNITY"
@@ -59980,6 +60004,7 @@
     {
       "name": "Touch My Body",
       "artist": "anubasu-anubasu",
+      "saHash": "1loi6P66IOoPqD9I68odili18P8bPb9P",
       "bpm": "150",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -60008,6 +60033,12 @@
           "maxScore": 1659
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["shock"]
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 6,
@@ -60024,9 +60055,15 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1629
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["shock"]
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Touch My Body.jpg",
       "remyLink": "https://remywiki.com/Touch_My_Body"
     },
@@ -68682,6 +68719,7 @@
     {
       "name": "アキネイション",
       "artist": "ビートまりお（COOL&CREATE）",
+      "saHash": "oDQb8b9Ii9960180IO989PqIqiP6dOoP",
       "bpm": "185",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -68728,6 +68766,7 @@
           "maxScore": 2022
         }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Aki_nation",
       "jacket": "ddr_world/アキネイション.jpg",
       "genre": "オータムビート/AUTUMN BEAT"
@@ -75905,6 +75944,7 @@
     {
       "name": "和風インザ洋風",
       "artist": "Super Momo Tarosans",
+      "saHash": "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b",
       "bpm": "153",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -75933,6 +75973,11 @@
           "maxScore": 1461
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -75949,9 +75994,14 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1437
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/和風インザ洋風.jpg",
       "remyLink": "https://remywiki.com/Wafuu_in_the_youfuu"
     },
@@ -76564,6 +76614,7 @@
     {
       "name": "天弓ノ舞",
       "artist": "龍",
+      "saHash": "Q098DQOP0b6q69lioP6lDoDP0o0066i8",
       "bpm": "140",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -76610,7 +76661,7 @@
           "maxScore": 1416
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/天弓ノ舞.jpg",
       "remyLink": "https://remywiki.com/Tenkyuu_no_mai"
     },
