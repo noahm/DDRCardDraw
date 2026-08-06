@@ -7,7 +7,15 @@ import {
   Navbar,
   Popover,
 } from "@blueprintjs/core";
-import { Trash, InfoSign, Menu as MenuIcon, Help } from "@blueprintjs/icons";
+import {
+  Trash,
+  InfoSign,
+  Menu as MenuIcon,
+  Help,
+  Database,
+  Import,
+  FolderOpen,
+} from "@blueprintjs/icons";
 import { useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
@@ -16,11 +24,14 @@ import { LastUpdate } from "./last-update";
 import { ThemeToggle } from "./theme-toggle";
 import { DataLoadingSpinner, VersionSelect } from "./version-select";
 import { useDrawState } from "./draw-state";
+import { useImportUi } from "./state/import-ui";
 
 export function Header() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const clearDrawings = useDrawState((d) => d.clearDrawings);
   const haveDrawings = useDrawState((d) => !!d.drawings.length);
+  const openItgInstructions = useImportUi((s) => s.openItgInstructions);
+  const openSmxEdits = useImportUi((s) => s.openSmxEdits);
   const { t } = useIntl();
 
   const menu = (
@@ -31,6 +42,21 @@ export function Header() {
         text={t("clearDrawings")}
         disabled={!haveDrawings}
       />
+      <MenuItem
+        icon={<Database />}
+        text={t("dataImport.title", undefined, "Data Import")}
+      >
+        <MenuItem
+          icon={<Import />}
+          onClick={openSmxEdits}
+          text={t("dataImport.smxEdits", undefined, "StepManiaX edits…")}
+        />
+        <MenuItem
+          icon={<FolderOpen />}
+          onClick={openItgInstructions}
+          text={t("dataImport.itgPack", undefined, "ITG / StepMania pack…")}
+        />
+      </MenuItem>
       <MenuItem
         icon={<InfoSign />}
         onClick={() => setAboutOpen(true)}
