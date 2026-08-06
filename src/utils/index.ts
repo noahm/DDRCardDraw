@@ -79,6 +79,9 @@ export const availableGameData = (
   return a.display.localeCompare(b.display);
 });
 
+/** `parent` bucket that all custom/imported data sets are grouped under. */
+export const CUSTOM_DATA_PARENT = "custom";
+
 export function groupGameData(gd: typeof availableGameData) {
   return gd.reduce<Array<AvailableGameData | GameDataParent>>(
     (acc, curr, index) => {

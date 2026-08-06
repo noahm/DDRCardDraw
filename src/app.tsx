@@ -27,6 +27,7 @@ import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
 import { useMemo } from "react";
 import { ToasterHost } from "./toaster";
+import { CustomDataDialog } from "./smx-edit-import";
 
 const router = createBrowserRouter([
   {
@@ -267,6 +268,7 @@ export function App() {
       <ThemeSyncWidget />
       <UpdateManager />
       <RouterProvider router={router} />
+      <CustomDataDialog />
       <ToasterHost />
     </IntlProvider>
   );
