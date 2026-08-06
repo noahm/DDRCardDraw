@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Classes, MenuItem } from "@blueprintjs/core";
-import { Flash, Moon } from "@blueprintjs/icons";
+import { Menu } from "@mantine/core";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 import { FormattedMessage } from "react-intl";
 import { create } from "zustand";
 import { useMediaQuery } from "./hooks/useMediaQuery";
@@ -16,8 +16,7 @@ export function useThemePref() {
   return useMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light";
 }
 
-function applyThemeBodyClass(theme: Theme, isOBSSource: boolean) {
-  document.body.classList.toggle(Classes.DARK, theme === "dark");
+function applyThemeBodyClass(isOBSSource: boolean) {
   document.body.classList.toggle("obs-layer", isOBSSource);
 }
 
@@ -82,15 +81,11 @@ export const useInObsSource = () => useThemeStore((s) => s.obsBrowserSource);
 export const useTheme = () => useThemeStore((s) => s.resolved);
 
 export function ThemeSyncWidget() {
-  const {
-    resolved: resolvedTheme,
-    obsBrowserSource: isOBSSource,
-    updateBrowserPref,
-  } = useThemeStore();
+  const { obsBrowserSource: isOBSSource, updateBrowserPref } = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
-    applyThemeBodyClass(resolvedTheme, isOBSSource);
-  }, [resolvedTheme, isOBSSource]);
+    applyThemeBodyClass(isOBSSource);
+  }, [isOBSSource]);
   useEffect(() => {
     updateBrowserPref(browserPref);
   }, [updateBrowserPref, browserPref]);
@@ -101,25 +96,14 @@ export function ThemeToggle() {
   const resolvedTheme = useThemeStore((t) => t.resolved);
   const setTheme = useThemeStore((t) => t.setTheme);
 
-  const ThemeIcon = resolvedTheme === "dark" ? Flash : Moon;
+  const ThemeIcon = resolvedTheme === "dark" ? IconSun : IconMoon;
 
   return (
-    <MenuItem
-      icon={<ThemeIcon />}
-      text={<FormattedMessage id="toggleTheme" defaultMessage="Toggle Theme" />}
+    <Menu.Item
+      leftSection={<ThemeIcon size={16} />}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-    />
+    >
+      <FormattedMessage id="toggleTheme" defaultMessage="Toggle Theme" />
+    </Menu.Item>
   );
 }
-
-// export function ObsToggle() {
-//   const set = useThemeStore((t) => t.setObsLayer);
-
-//   return (
-//     <MenuItem
-//       icon={<EyeOff />}
-//       text={<FormattedMessage id="toggle-obs-layer" defaultMessage="Hide UI" />}
-//       onClick={() => set(true)}
-//     />
-//   );
-// }

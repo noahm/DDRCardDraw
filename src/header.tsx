@@ -1,20 +1,12 @@
+import { ActionIcon, Divider, Menu, Modal, Text } from "@mantine/core";
 import {
-  Alignment,
-  Button,
-  Dialog,
-  Menu,
-  MenuItem,
-  Navbar,
-  Popover,
-} from "@blueprintjs/core";
-import {
-  Trash,
-  InfoSign,
-  Menu as MenuIcon,
-  Help,
-  Control,
-  Pulse,
-} from "@blueprintjs/icons";
+  IconTrash,
+  IconInfoCircle,
+  IconMenu2,
+  IconHelp,
+  IconAdjustments,
+  IconActivityHeartbeat,
+} from "@tabler/icons-react";
 import { JSX, useCallback, useState } from "react";
 import { About } from "./about";
 import { HeaderControls } from "./controls";
@@ -24,6 +16,7 @@ import { ThemeToggle, useInObs } from "./theme-toggle";
 import { useAppDispatch, useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
 import { EventModeGated } from "./common-components/app-mode";
+import { HeaderBar } from "./common-components/header-bar";
 import { useNavigate, useHref } from "react-router-dom";
 import { DiagnosticsDialog } from "./party/diagnostics-dialog";
 import { useRoomName } from "./hooks/useRoomName";
@@ -40,32 +33,31 @@ export function Header({
   if (inObs) return null;
 
   return (
-    <Navbar
+    <HeaderBar
       style={{
         position: "sticky",
         top: 0,
       }}
-    >
-      <Navbar.Group align={Alignment.LEFT}>
-        <HamburgerMenu />
-        <Navbar.Divider />
-        {heading || (
-          <Navbar.Heading>
-            Event Mode{" "}
-            <small>
-              <em>
-                <EventModeGated fallback="Classic Variant Alpha">
-                  Alpha Preview
-                </EventModeGated>
-              </em>
-            </small>
-          </Navbar.Heading>
-        )}
-      </Navbar.Group>
-      <Navbar.Group align={Alignment.RIGHT}>
-        {controls || <HeaderControls />}
-      </Navbar.Group>
-    </Navbar>
+      left={
+        <>
+          <HamburgerMenu />
+          <Divider orientation="vertical" />
+          {heading || (
+            <Text fw={600} component="span" style={{ whiteSpace: "nowrap" }}>
+              Event Mode{" "}
+              <small>
+                <em>
+                  <EventModeGated fallback="Classic Variant Alpha">
+                    Alpha Preview
+                  </EventModeGated>
+                </em>
+              </small>
+            </Text>
+          )}
+        </>
+      }
+      right={controls || <HeaderControls />}
+    />
   );
 }
 
@@ -83,60 +75,74 @@ export function HamburgerMenu() {
   const haveDrawings = useAppState(drawingsSlice.selectors.haveDrawings);
   const { t } = useIntl();
 
-  const menu = (
-    <Menu>
-      <MenuItem
-        icon={<Control />}
-        text="Stream Dashboard"
-        href={dashHref}
-        onClick={(e) => {
-          e.preventDefault();
-          navigate("dash");
-        }}
-      />
-      <MenuItem
-        icon={<Trash />}
-        onClick={clearDrawings}
-        text={t("clearDrawings")}
-        disabled={!haveDrawings}
-      />
-      <EventModeGated>
-        <MenuItem
-          icon={<Pulse />}
-          onClick={() => setDiagnosticsOpen(true)}
-          text={t("party.diagnostics.menuItem")}
-          data-umami-event="party-diagnostics-open"
-        />
-      </EventModeGated>
-      <MenuItem
-        icon={<InfoSign />}
-        onClick={() => setAboutOpen(true)}
-        text={t("credits")}
-        data-umami-event="about-open"
-      />
-      <MenuItem
-        icon={<Help />}
-        target="_blank"
-        href="https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md"
-        text={t("help")}
-      />
-      <ThemeToggle />
-      <LastUpdate />
-    </Menu>
-  );
   return (
     <>
-      <Dialog isOpen={aboutOpen} onClose={() => setAboutOpen(false)}>
+      <Modal opened={aboutOpen} onClose={() => setAboutOpen(false)}>
         <About />
-      </Dialog>
+      </Modal>
       <DiagnosticsDialog
         isOpen={diagnosticsOpen}
         onClose={() => setDiagnosticsOpen(false)}
         roomName={roomName}
       />
-      <Popover content={menu} placement="bottom-start">
-        <Button icon={<MenuIcon />} data-umami-event="hamburger-menu-open" />
-      </Popover>
+      <Menu position="bottom-start">
+        <Menu.Target>
+          <ActionIcon
+            variant="default"
+            size="lg"
+            aria-label="Menu"
+            data-umami-event="hamburger-menu-open"
+          >
+            <IconMenu2 size={20} />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Item
+            leftSection={<IconAdjustments size={16} />}
+            component="a"
+            href={dashHref}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("dash");
+            }}
+          >
+            Stream Dashboard
+          </Menu.Item>
+          <Menu.Item
+            leftSection={<IconTrash size={16} />}
+            onClick={clearDrawings}
+            disabled={!haveDrawings}
+          >
+            {t("clearDrawings")}
+          </Menu.Item>
+          <EventModeGated>
+            <Menu.Item
+              leftSection={<IconActivityHeartbeat size={16} />}
+              onClick={() => setDiagnosticsOpen(true)}
+              data-umami-event="party-diagnostics-open"
+            >
+              {t("party.diagnostics.menuItem")}
+            </Menu.Item>
+          </EventModeGated>
+          <Menu.Item
+            leftSection={<IconInfoCircle size={16} />}
+            onClick={() => setAboutOpen(true)}
+            data-umami-event="about-open"
+          >
+            {t("credits")}
+          </Menu.Item>
+          <Menu.Item
+            leftSection={<IconHelp size={16} />}
+            component="a"
+            target="_blank"
+            href="https://github.com/noahm/DDRCardDraw/blob/main/docs/readme.md"
+          >
+            {t("help")}
+          </Menu.Item>
+          <ThemeToggle />
+          <LastUpdate />
+        </Menu.Dropdown>
+      </Menu>
     </>
   );
 }

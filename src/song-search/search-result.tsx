@@ -1,10 +1,10 @@
 import { JSX } from "react";
+import { Group, Text, UnstyledButton } from "@mantine/core";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useIntl } from "../hooks/useIntl";
 import { Song, Chart } from "../models/SongData";
 import { SongJacket } from "../song-jacket";
 import styles from "./song-search.css";
-import { MenuItem } from "@blueprintjs/core";
 
 export interface SearchResultData {
   song: Song;
@@ -36,13 +36,30 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
   }
 
   return (
-    <MenuItem
-      selected={selected}
-      disabled={disabled}
-      icon={<SongJacket song={song} height={26} className={styles.img} />}
-      text={song.name_translation || song.name}
-      label={label as string}
-      onClick={handleClick}
-    />
+    <UnstyledButton
+      onClick={disabled ? undefined : handleClick}
+      w="100%"
+      px="sm"
+      py={6}
+      style={{
+        borderRadius: "var(--mantine-radius-sm)",
+        opacity: disabled ? 0.5 : undefined,
+        backgroundColor: selected
+          ? "var(--mantine-primary-color-light)"
+          : undefined,
+      }}
+    >
+      <Group justify="space-between" wrap="nowrap">
+        <Group gap="sm" wrap="nowrap">
+          <SongJacket song={song} height={26} className={styles.img} />
+          <Text size="sm" truncate>
+            {song.name_translation || song.name}
+          </Text>
+        </Group>
+        <Text size="sm" c="dimmed" style={{ whiteSpace: "nowrap" }}>
+          {label}
+        </Text>
+      </Group>
+    </UnstyledButton>
   );
 }

@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Modal, ScrollArea, TextInput } from "@mantine/core";
+import { IconSearch } from "@tabler/icons-react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
-import { Omnibar } from "@blueprintjs/select";
 import styles from "./song-search.css";
 import { useFuzzySearch } from "../hooks/useFuzzySearch";
 
@@ -17,12 +18,18 @@ interface Props {
 export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
   const config = useConfigState();
   const gameData = useGameData();
   const fuzzySearch = useFuzzySearch();
 
+  function resetSearch() {
+    updateSearchTerm("");
+    setActiveIndex(0);
+  }
+
   let items: SearchResultData[] = [];
-  if (fuzzySearch) {
+  if (fuzzySearch && isOpen) {
     const songs = fuzzySearch
       .search(searchTerm)
       .filter((song) => songIsValid(config, song, true))
@@ -41,35 +48,84 @@ export function SongSearch(props: Props) {
     items = items.slice(0, config.constrainPocketPicks ? 30 : 15);
   }
 
-  return (
-    <Omnibar
-      isOpen={isOpen}
-      onClose={onCancel}
-      query={searchTerm}
-      onQueryChange={updateSearchTerm}
-      onItemSelect={(item) =>
-        onSongSelect(
-          item.song,
-          item.chart === "none" || !item.chart
-            ? undefined
-            : getDrawnChart(gameData!, item.song, item.chart),
-        )
+  function selectItem(item: SearchResultData) {
+    resetSearch();
+    onSongSelect(
+      item.song,
+      item.chart === "none" || !item.chart
+        ? undefined
+        : getDrawnChart(gameData!, item.song, item.chart),
+    );
+  }
+
+  /** step from `start` in `direction` to the next selectable result */
+  function nextEnabledIndex(start: number, direction: 1 | -1) {
+    for (let i = start; i >= 0 && i < items.length; i += direction) {
+      if (items[i].chart !== "none") {
+        return i;
       }
-      items={items}
-      inputProps={{
-        placeholder: "Find a song...",
+    }
+    return start - direction;
+  }
+
+  return (
+    <Modal
+      opened={isOpen}
+      onClose={() => {
+        resetSearch();
+        onCancel();
       }}
+      withCloseButton={false}
+      padding="xs"
       className={styles.songSearch}
-      itemRenderer={(data, itemProps) => (
-        <SearchResult
-          key={`${data.song.saHash || data.song.name}-${
-            typeof data.chart === "string" ? data.chart : data.chart.diffClass
-          }`}
-          data={data}
-          selected={itemProps.modifiers.active}
-          handleClick={itemProps.handleClick}
-        />
-      )}
-    />
+    >
+      <TextInput
+        placeholder="Find a song..."
+        leftSection={<IconSearch size={16} />}
+        value={searchTerm}
+        data-autofocus
+        onClick={(e) => e.stopPropagation()}
+        onChange={(e) => {
+          updateSearchTerm(e.currentTarget.value);
+          setActiveIndex(0);
+        }}
+        onKeyDown={(e) => {
+          switch (e.key) {
+            case "ArrowDown":
+              e.preventDefault();
+              setActiveIndex((prev) =>
+                Math.min(nextEnabledIndex(prev + 1, 1), items.length - 1),
+              );
+              break;
+            case "ArrowUp":
+              e.preventDefault();
+              setActiveIndex((prev) =>
+                Math.max(nextEnabledIndex(prev - 1, -1), 0),
+              );
+              break;
+            case "Enter":
+              if (items[activeIndex] && items[activeIndex].chart !== "none") {
+                selectItem(items[activeIndex]);
+              }
+              break;
+          }
+        }}
+      />
+      <ScrollArea.Autosize mah="60vh" mt="xs">
+        {items.map((data, idx) => (
+          <SearchResult
+            key={`${data.song.saHash || data.song.name}-${
+              typeof data.chart === "string" ? data.chart : data.chart.diffClass
+            }`}
+            data={data}
+            selected={idx === activeIndex}
+            handleClick={(e) => {
+              e.stopPropagation();
+              selectItem(data);
+            }}
+          />
+        ))}
+      </ScrollArea.Autosize>
+    </Modal>
   );
 }

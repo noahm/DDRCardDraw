@@ -1,4 +1,4 @@
-import { Tabs, Tab } from "@blueprintjs/core";
+import { Tabs } from "@mantine/core";
 import { PlayerNamesControls } from "../controls/player-names";
 import { DrawingList } from "../drawing-list";
 import { atom, useAtom } from "jotai";
@@ -17,30 +17,29 @@ export function MainView() {
   const [currentTab, setCurrentTab] = useAtom(mainTabAtom);
   return (
     <Tabs
-      id="main-view"
       className={styles.mainView}
-      large
-      selectedTabId={currentTab}
-      onChange={(newTabId: MainTabId) => setCurrentTab(newTabId)}
+      value={currentTab}
+      onChange={(newTabId) => setCurrentTab(newTabId as MainTabId)}
+      keepMounted={false}
     >
-      <Tab id="drawings" panel={<DrawingList />}>
-        Drawings
-      </Tab>
-      <Tab
-        id="eligible"
-        panel={
-          <ErrorBoundary fallback={<ErrorFallback />}>
-            <Suspense fallback={<DelayedSpinner />}>
-              <EligibleChartsList />
-            </Suspense>
-          </ErrorBoundary>
-        }
-      >
-        Eligible Charts
-      </Tab>
-      <Tab id="players" panel={<PlayerNamesControls />}>
-        Start.gg Sync
-      </Tab>
+      <Tabs.List>
+        <Tabs.Tab value="drawings">Drawings</Tabs.Tab>
+        <Tabs.Tab value="eligible">Eligible Charts</Tabs.Tab>
+        <Tabs.Tab value="players">Start.gg Sync</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="drawings">
+        <DrawingList />
+      </Tabs.Panel>
+      <Tabs.Panel value="eligible">
+        <ErrorBoundary fallback={<ErrorFallback />}>
+          <Suspense fallback={<DelayedSpinner />}>
+            <EligibleChartsList />
+          </Suspense>
+        </ErrorBoundary>
+      </Tabs.Panel>
+      <Tabs.Panel value="players">
+        <PlayerNamesControls />
+      </Tabs.Panel>
     </Tabs>
   );
 }

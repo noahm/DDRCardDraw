@@ -1,15 +1,15 @@
 import { useIntl } from "../hooks/useIntl";
 import {
-  Inheritance,
-  BanCircle,
-  Lock,
-  Crown,
-  Person,
-  Refresh,
-  Clipboard,
-  Draw,
-} from "@blueprintjs/icons";
-import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
+  IconArrowsSplit,
+  IconBan,
+  IconLock,
+  IconCrown,
+  IconUser,
+  IconRefresh,
+  IconClipboard,
+  IconScribble,
+} from "@tabler/icons-react";
+import { Menu } from "@mantine/core";
 import { useDrawing } from "../drawing-context";
 import { JSX } from "react";
 
@@ -22,6 +22,7 @@ interface Props {
   onCopy?: () => void;
 }
 
+/** rendered inside a Menu.Dropdown */
 export function ActionMenu(props: Props) {
   const {
     onStartPocketPick,
@@ -35,71 +36,69 @@ export function ActionMenu(props: Props) {
   const { t } = useIntl();
 
   return (
-    <Menu>
+    <>
       {onProtect && (
         <PlayerList
-          icon={<Lock />}
+          icon={<IconLock size={16} />}
           text={t("songAction.lock")}
           onClick={onProtect}
         />
       )}
       {onStartPocketPick && (
         <PlayerList
-          icon={<Inheritance />}
+          icon={<IconArrowsSplit size={16} />}
           text={t("songAction.pocketPick")}
           onClick={onStartPocketPick}
         />
       )}
       {onVeto && (
         <PlayerList
-          icon={<BanCircle />}
+          icon={<IconBan size={16} />}
           text={t("songAction.ban")}
           onClick={onVeto}
         />
       )}
       {onSetWinner && (
         <PlayerList
-          icon={<Crown />}
+          icon={<IconCrown size={16} />}
           text={t("songAction.winner")}
           onClick={onSetWinner}
         />
       )}
       {onCopy && (
-        <MenuItem
-          text={t("songAction.copy")}
-          icon={<Clipboard />}
-          onClick={onCopy}
-        />
+        <Menu.Item leftSection={<IconClipboard size={16} />} onClick={onCopy}>
+          {t("songAction.copy")}
+        </Menu.Item>
       )}
       {onRedraw && (
         <>
-          <MenuDivider />
-          <MenuItem
-            text={t("songAction.redraw")}
-            icon={<Refresh />}
-            onClick={onRedraw}
-          />
+          <Menu.Divider />
+          <Menu.Item leftSection={<IconRefresh size={16} />} onClick={onRedraw}>
+            {t("songAction.redraw")}
+          </Menu.Item>
         </>
       )}
-    </Menu>
+    </>
   );
 }
 
+/** rendered inside a Menu.Dropdown */
 export function FillPlaceholderList(props: {
   onFillPlaceholder(p: string): void;
 }) {
   const players = useDrawing((d) => d.meta.players);
   return (
-    <Menu>
+    <>
       {players.map((player) => (
-        <MenuItem
+        <Menu.Item
           key={player.id}
-          text={`Pick as ${player.name}`}
           onClick={() => props.onFillPlaceholder(player.id)}
-          icon={<Draw />}
-        />
+          leftSection={<IconScribble size={16} />}
+        >
+          Pick as {player.name}
+        </Menu.Item>
       ))}
-    </Menu>
+    </>
   );
 }
 
@@ -112,15 +111,21 @@ interface IconRowProps {
 function PlayerList({ icon, text, onClick }: IconRowProps) {
   const players = useDrawing((d) => d.meta.players);
   return (
-    <MenuItem icon={icon} text={text}>
-      {players.map((player) => (
-        <MenuItem
-          key={player.id}
-          text={player.name}
-          onClick={() => onClick(player.id)}
-          icon={<Person />}
-        />
-      ))}
-    </MenuItem>
+    <Menu.Sub>
+      <Menu.Sub.Target>
+        <Menu.Sub.Item leftSection={icon}>{text}</Menu.Sub.Item>
+      </Menu.Sub.Target>
+      <Menu.Sub.Dropdown>
+        {players.map((player) => (
+          <Menu.Item
+            key={player.id}
+            onClick={() => onClick(player.id)}
+            leftSection={<IconUser size={16} />}
+          >
+            {player.name}
+          </Menu.Item>
+        ))}
+      </Menu.Sub.Dropdown>
+    </Menu.Sub>
   );
 }
