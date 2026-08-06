@@ -51,6 +51,8 @@ export interface BuildResult {
   matched: number;
   /** edit codes whose song isn't present in the stock SMX data */
   unknownSongs: string[];
+  /** edit codes seen more than once in the input and grafted only once */
+  duplicates: number;
 }
 
 /**
@@ -130,8 +132,17 @@ export function buildEditDataFile(
   const songsByIndex = new Map(data.songs.map((s) => [s.saIndex, s]));
 
   let matched = 0;
+  let duplicates = 0;
   const unknownSongs: string[] = [];
+  // A share code identifies a single edit, so process each at most once even if the
+  // API returns a code more than once or callers pass overlapping code lists.
+  const seen = new Set<string>();
   for (const chart of charts) {
+    if (seen.has(chart.edit_display_id)) {
+      duplicates++;
+      continue;
+    }
+    seen.add(chart.edit_display_id);
     const song = songsByIndex.get(String(chart.song_id));
     if (!song) {
       unknownSongs.push(chart.edit_display_id);
@@ -151,5 +162,5 @@ export function buildEditDataFile(
     matched++;
   }
 
-  return { data, matched, unknownSongs };
+  return { data, matched, unknownSongs, duplicates };
 }
