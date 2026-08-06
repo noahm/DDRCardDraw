@@ -12,6 +12,8 @@ import {
   DrawnChart,
   EligibleChart,
   MergedDrawing,
+  newPlayer,
+  Player,
   PlayerActionOnChart,
   SubDrawing,
   PlayerPickPlaceholder,
@@ -31,7 +33,7 @@ type PlayerActionOnChartPayload<extra extends object = {}> = PayloadAction<
   {
     drawingId: CompoundSetId;
     chartId: string;
-    player: number;
+    player: string;
     reorder: boolean;
   } & extra
 >;
@@ -91,13 +93,62 @@ export const drawingsSlice = createSlice({
       }
       Object.assign(chart, action.payload.changes);
     },
+    /**
+     * Persist edits from the "edit title & players" dialog (rename/reorder/
+     * add/remove). Because players carry stable ids, reordering and renaming
+     * need no fixup; removing a player just means dropping the card actions
+     * (winners, bans, protects, pocket picks) that still reference its
+     * now-absent id.
+     */
+    updatePlayers(
+      state,
+      action: PayloadAction<{
+        id: string;
+        title: string;
+        players: Player[];
+      }>,
+    ) {
+      const { id, title, players } = action.payload;
+      const drawing = state.entities[id];
+      if (!drawing) {
+        return;
+      }
+
+      const remainingIds = new Set(players.map((p) => p.id));
+
+      for (const [chartId, winner] of Object.entries(drawing.winners)) {
+        if (winner !== null && !remainingIds.has(winner)) {
+          delete drawing.winners[chartId];
+        }
+      }
+
+      for (const record of [
+        drawing.bans,
+        drawing.protects,
+        drawing.pocketPicks,
+      ]) {
+        for (const [chartId, entry] of Object.entries(record)) {
+          if (entry && !remainingIds.has(entry.player)) {
+            delete record[chartId];
+          }
+        }
+      }
+
+      // drop the priority player if they were removed from the roster
+      if (drawing.priorityPlayer && !remainingIds.has(drawing.priorityPlayer)) {
+        drawing.priorityPlayer = undefined;
+      }
+
+      drawing.meta.title = title;
+      drawing.meta.players = players;
+    },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
       const mainId = action.payload;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
       }
-      drawing.playerDisplayOrder = drawing.playerDisplayOrder.toReversed();
+      drawing.meta.players.reverse();
     },
     incrementPriorityPlayer(state, action: ActionOnSingleDrawing) {
       const mainId = action.payload;
@@ -105,16 +156,13 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      let priorityPlayer = drawing.priorityPlayer;
-      if (!priorityPlayer) {
-        priorityPlayer = 1;
-      } else {
-        priorityPlayer += 1;
-        if (priorityPlayer >= drawing.playerDisplayOrder.length + 1) {
-          priorityPlayer = undefined;
-        }
-      }
-      drawing.priorityPlayer = priorityPlayer;
+      // cycle: nobody -> first player -> ... -> last player -> nobody
+      const players = drawing.meta.players;
+      const currentIndex = drawing.priorityPlayer
+        ? players.findIndex((p) => p.id === drawing.priorityPlayer)
+        : -1;
+      const next = players[currentIndex + 1];
+      drawing.priorityPlayer = next?.id;
     },
     resetChart(state, action: ActionOnSingleChart) {
       const { chartId, drawingId } = action.payload;
@@ -178,7 +226,7 @@ export const drawingsSlice = createSlice({
         };
       }
     },
-    setWinner(state, action: ActionOnSingleChart<{ player: number | null }>) {
+    setWinner(state, action: ActionOnSingleChart<{ player: string | null }>) {
       const [drawing] = getDrawingFromCompoundId(
         state,
         action.payload.drawingId,
@@ -213,7 +261,7 @@ export const drawingsSlice = createSlice({
       }
       if (!drawing.meta.scoresByEntrant) {
         drawing.meta.scoresByEntrant = {};
-        for (const entrant of drawing.meta.entrants) {
+        for (const entrant of drawing.meta.players) {
           drawing.meta.scoresByEntrant[entrant.id] = {};
         }
       }
@@ -313,6 +361,114 @@ export function migrateToSubdraws(state: StateOfSlice<typeof drawingsSlice>) {
         charts: parent.charts,
       };
       delete parent.charts;
+    }
+  }
+}
+
+/**
+ * one-time migration from the old player model to the current one. The old
+ * model gave players plain string names (simple) or a `meta.entrants` array
+ * (startgg), kept display order in a separate `playerDisplayOrder` field, and
+ * referenced players by numeric index in `playerDisplayOrder`/`winners`/action
+ * `player`. The new model gives every player a stable id under `meta.players`,
+ * stores that array directly in display order, and references players by id.
+ *
+ * The presence of a `playerDisplayOrder` field marks a drawing still in an old
+ * shape, so this is idempotent (already-migrated drawings are skipped). mutates
+ * state.
+ */
+export function migratePlayersToIds(state: StateOfSlice<typeof drawingsSlice>) {
+  for (const id of state.ids) {
+    const drawing = state.entities[id];
+    if (!drawing) {
+      continue;
+    }
+    // `playerDisplayOrder` no longer exists on the model; its presence means
+    // the drawing predates this migration.
+    const legacyDrawing = drawing as unknown as {
+      playerDisplayOrder?: Array<number | string>;
+      priorityPlayer?: number | string;
+    };
+    const legacyOrder = legacyDrawing.playerDisplayOrder;
+    if (!legacyOrder) {
+      continue;
+    }
+
+    // startgg used to store players under `entrants`
+    const legacyMeta = drawing.meta as unknown as {
+      players?: Array<string | Player>;
+      entrants?: Player[];
+    };
+    const rawPlayers = legacyMeta.players ?? legacyMeta.entrants ?? [];
+
+    // ensure every player is an object carrying a stable id (simple drawings
+    // used to store plain name strings)
+    const players: Player[] = rawPlayers.map((p) =>
+      typeof p === "string" ? newPlayer(p) : p,
+    );
+
+    // legacy references were numeric indices into this (original-order) players
+    // array; normalize both those and any already-id references to a player id.
+    // A dangling index yields undefined, so its reference is dropped.
+    const idFor = (ref: number | string): string | undefined =>
+      typeof ref === "number" ? players[ref]?.id : ref;
+
+    // fold the separate display order into the players array order
+    const byId = new Map(players.map((p) => [p.id, p]));
+    const ordered: Player[] = [];
+    for (const ref of legacyOrder) {
+      const player = byId.get(idFor(ref)!);
+      if (player) {
+        ordered.push(player);
+        byId.delete(player.id);
+      }
+    }
+    // append any players not referenced by the display order (defensive)
+    ordered.push(...byId.values());
+
+    drawing.meta.players = ordered;
+    delete legacyMeta.entrants;
+    delete legacyDrawing.playerDisplayOrder;
+
+    const legacyWinners = drawing.winners as Record<
+      string,
+      number | string | null
+    >;
+    for (const [chartId, val] of Object.entries(legacyWinners)) {
+      if (val === null) {
+        continue;
+      }
+      const winnerId = idFor(val);
+      if (winnerId === undefined) {
+        delete drawing.winners[chartId];
+      } else {
+        drawing.winners[chartId] = winnerId;
+      }
+    }
+
+    for (const record of [
+      drawing.bans,
+      drawing.protects,
+      drawing.pocketPicks,
+    ]) {
+      for (const [chartId, entry] of Object.entries(record)) {
+        if (!entry) {
+          continue;
+        }
+        const action = entry as { player: number | string };
+        const playerId = idFor(action.player);
+        if (playerId === undefined) {
+          delete record[chartId];
+        } else {
+          action.player = playerId;
+        }
+      }
+    }
+
+    // priorityPlayer was a 1-based display position; resolve it to a player id
+    const priority = legacyDrawing.priorityPlayer;
+    if (typeof priority === "number") {
+      drawing.priorityPlayer = ordered[priority - 1]?.id;
     }
   }
 }

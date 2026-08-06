@@ -10,7 +10,7 @@ import { FocusStyleManager } from "@blueprintjs/core";
 FocusStyleManager.onlyShowFocusOnTabs();
 
 import { UpdateManager } from "./update-manager";
-import { IntlProvider } from "./intl-provider";
+import { IntlProviderWrapper } from "./intl-provider";
 import { ThemeSyncWidget } from "./theme-toggle";
 import { Provider } from "react-redux";
 import { createClientStore, useAppState } from "./state/store";
@@ -248,10 +248,8 @@ function ObsSource() {
   return (
     <Provider store={store}>
       <PartySocketManager roomName={params.roomName}>
-        <IntlProvider>
-          <ObsStyles />
-          <Outlet />
-        </IntlProvider>
+        <ObsStyles />
+        <Outlet />
       </PartySocketManager>
     </Provider>
   );
@@ -264,12 +262,12 @@ function ObsStyles() {
 
 export function App() {
   return (
-    <IntlProvider>
+    <IntlProviderWrapper>
       <ThemeSyncWidget />
       <UpdateManager />
       <RouterProvider router={router} />
       <CustomDataDialog />
       <ToasterHost />
-    </IntlProvider>
+    </IntlProviderWrapper>
   );
 }

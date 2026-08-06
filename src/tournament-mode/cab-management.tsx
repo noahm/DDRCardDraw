@@ -31,8 +31,8 @@ import {
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
-import { playerNameByIndex } from "../models/Drawing";
 import { drawingsSlice } from "../state/drawings.slice";
+import { playerDisplayName } from "../models/Drawing";
 import { copyObsSource, routableCabSourcePath } from "./copy-obs-source";
 import { useHref } from "react-router-dom";
 
@@ -236,9 +236,7 @@ function CurrentMatch(props: { cab: CabInfo }) {
   if (!drawing) {
     return <p>No match</p>;
   }
-  const filledPlayers = drawing.playerDisplayOrder.map((pIdx, idx) =>
-    playerNameByIndex(drawing.meta, pIdx, `Player ${idx + 1}`),
-  );
+  const filledPlayers = drawing.meta.players.map(playerDisplayName);
   const assignmentType =
     typeof props.cab.activeMatch === "string" ? "match" : "set";
   return (

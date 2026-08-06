@@ -29,24 +29,24 @@ import { useChartRandomSelected } from "../tournament-mode/highlight-random";
 
 import { baseChartValues, CardContentsProps } from "./variants";
 
-type PlayerIdx = number;
+type PlayerId = string;
 
 interface IconCallbacks {
-  onVeto: (p: PlayerIdx) => void;
-  onProtect: (p: PlayerIdx) => void;
-  onReplace: (p: PlayerIdx, chart: EligibleChart) => void;
+  onVeto: (p: PlayerId) => void;
+  onProtect: (p: PlayerId) => void;
+  onReplace: (p: PlayerId, chart: EligibleChart) => void;
   onRedraw: () => void;
   onReset: () => void;
-  onSetWinner: (p: PlayerIdx | null) => void;
+  onSetWinner: (p: PlayerId | null) => void;
 }
 
 export interface SongCardProps {
   onClick?: () => void;
   chart: DrawnChart | EligibleChart | PlayerPickPlaceholder;
-  vetoedBy?: PlayerIdx;
-  protectedBy?: PlayerIdx;
-  replacedBy?: PlayerIdx;
-  winner?: PlayerIdx | null;
+  vetoedBy?: PlayerId;
+  protectedBy?: PlayerId;
+  replacedBy?: PlayerId;
+  winner?: PlayerId | null;
   replacedWith?: EligibleChart;
   actionsEnabled?: boolean;
 }
@@ -62,7 +62,7 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
   const handleBanPickPocket = useCallback(
     (
       type: "ban" | "protect" | "pocket",
-      player: number,
+      player: string,
       pick?: EligibleChart,
     ) => dispatch(createPickBanPocket(drawingId, chartId, type, player, pick)),
     [drawingId, chartId, dispatch],
@@ -118,7 +118,7 @@ export function SongCardBase(props: Props) {
   const hideMenu = () => setContextMenuOpen(false);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
-    useState<PlayerIdx | null>(null);
+    useState<PlayerId | null>(null);
 
   const baseChartIsPlaceholder =
     "type" in chart && chart.type === CHART_PLACEHOLDER;
@@ -194,28 +194,28 @@ export function SongCardBase(props: Props) {
     <>
       {vetoedBy !== undefined && (
         <CardLabel
-          playerIdx={vetoedBy}
+          playerId={vetoedBy}
           type={LabelType.Ban}
           onRemove={iconCallbacks?.onReset}
         />
       )}
       {protectedBy !== undefined && (
         <CardLabel
-          playerIdx={protectedBy}
+          playerId={protectedBy}
           type={LabelType.Protect}
           onRemove={iconCallbacks?.onReset}
         />
       )}
       {replacedBy !== undefined && (
         <CardLabel
-          playerIdx={replacedBy}
+          playerId={replacedBy}
           type={baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket}
           onRemove={iconCallbacks?.onReset}
         />
       )}
       {winner !== undefined && winner !== null && (
         <CardLabel
-          playerIdx={winner}
+          playerId={winner}
           type={LabelType.Winner}
           onRemove={() => iconCallbacks?.onSetWinner(null)}
         />

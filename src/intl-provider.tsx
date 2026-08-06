@@ -10,7 +10,7 @@ const FALLBACK_LOCALE = "en";
 
 const typedTranslations = translations as Record<string, I18NDict>;
 
-export function IntlProvider({ children }: { children: ReactNode }) {
+export function IntlProviderWrapper({ children }: { children: ReactNode }) {
   const stockData = useAtomValue(stockDataCache);
   // Custom data is keyed by its bundle URL — the same value `config.gameKey` holds
   // for an attached set — so its prefix matches `useGetMetaString`'s `game.${gameKey}.`.

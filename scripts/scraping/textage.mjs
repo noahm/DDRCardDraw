@@ -1,10 +1,11 @@
 // @ts-check
-import { JSDOM } from "jsdom";
+import { createWriteStream } from "node:fs";
+import { mkdir, rm, stat } from "node:fs/promises";
+import * as path from "node:path";
+import { Readable } from "node:stream";
+import { fileURLToPath } from "node:url";
 import iconv from "iconv-lite";
-import { Axios } from "axios";
-import * as path from "path";
-import * as fs from "fs";
-import { fileURLToPath } from "url";
+import { JSDOM } from "jsdom";
 
 // textage JS files (c) textage.cc - don't distribute them after downloading!
 
@@ -25,7 +26,7 @@ console.log(textageDir);
 
 async function exists(f) {
   try {
-    await fs.promises.stat(f);
+    await stat(f);
     return true;
   } catch {
     return false;
@@ -39,11 +40,11 @@ export async function textageDL(force = false) {
   if (force || !textageScrapeReady) {
     console.log("Redownloading source JS from textage...");
     // Clear out the existing textage JS, if it exists.
-    if (exists(textageDir)) {
-      await fs.promises.rm(textageDir, { recursive: true, force: true });
+    if (await exists(textageDir)) {
+      await rm(textageDir, { recursive: true, force: true });
     }
     // Redownload all the necessary textage JS.
-    await fs.promises.mkdir(textageDir).catch(() => {});
+    await mkdir(textageDir).catch(() => {});
 
     for (let fn of textageFiles) {
       if (await exists(`${textageDir}/${fn}.js`)) {
@@ -52,26 +53,17 @@ export async function textageDL(force = false) {
       }
       console.log(`Downloading ${fn}...`);
 
-      let req = new Axios({
-        method: "get",
-        url: `https://textage.cc/score/${fn}.js`,
-        responseType: "stream",
+      const res = await fetch(`https://textage.cc/score/${fn}.js`);
+      const writer = createWriteStream(path.join(textageDir, `${fn}.js`));
+      const stream = Readable.fromWeb(res.body);
+      stream
+        .pipe(iconv.decodeStream("shift-jis"))
+        .pipe(iconv.encodeStream("utf-8"))
+        .pipe(writer);
+      return new Promise((resolve, reject) => {
+        writer.on("error", reject);
+        stream.on("end", resolve);
       });
-      await req
-        .get(`https://textage.cc/score/${fn}.js`)
-        .then(function (response) {
-          const writer = fs.createWriteStream(
-            path.join(textageDir, `${fn}.js`),
-          );
-          response.data
-            .pipe(iconv.decodeStream("shift-jis"))
-            .pipe(iconv.encodeStream("utf-8"))
-            .pipe(writer);
-          return new Promise((resolve, reject) => {
-            writer.on("error", reject);
-            response.data.on("end", resolve);
-          });
-        });
     }
 
     // Double-check that we got all of the textage JS.

@@ -7,12 +7,11 @@ import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useAppDispatch } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
-import { getAllPlayers } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
+import { playerDisplayName } from "../models/Drawing";
 
 export function MatchLabels() {
   const showLabels = useAtomValue(showPlayerAndRoundLabels);
-  const playerDisplayOrder = useDrawing((d) => d.playerDisplayOrder);
   const meta = useDrawing((d) => d.meta);
   const winners = useDrawing((d) => d.winners);
   if (!showLabels) {
@@ -20,34 +19,32 @@ export function MatchLabels() {
   }
 
   const hideWins = meta.type === "startgg" && meta.subtype === "gauntlet";
-  let winsPerPlayer: CountingSet<number> | undefined;
+  let winsPerPlayer: CountingSet<string> | undefined;
   if (!hideWins) {
-    winsPerPlayer = new CountingSet<number>();
-    for (const pIdx of Object.values(winners)) {
-      if (pIdx === null) {
+    winsPerPlayer = new CountingSet<string>();
+    for (const pId of Object.values(winners)) {
+      if (pId === null) {
         continue;
       }
-      winsPerPlayer.add(pIdx);
+      winsPerPlayer.add(pId);
     }
   }
-
-  const allPlayers = getAllPlayers({ meta, playerDisplayOrder });
 
   return (
     <div className={styles.headers}>
       <div className={styles.title}>{meta.title}</div>
       <div className={styles.players}>
-        {allPlayers.map((name, idx) => {
+        {meta.players.map((player, idx) => {
           const winCount = winsPerPlayer ? (
-            <> ({winsPerPlayer.get(playerDisplayOrder[idx])})</>
+            <> ({winsPerPlayer.get(player.id)})</>
           ) : null;
           const ret = (
             <span key={idx}>
-              {name}
+              {playerDisplayName(player, idx)}
               {winCount}
             </span>
           );
-          if (allPlayers.length === 2 && idx === 0) {
+          if (meta.players.length === 2 && idx === 0) {
             return (
               <Fragment key={idx}>
                 {ret}
@@ -70,13 +67,15 @@ function Versus() {
     [dispatch, parentId],
   );
   const priorityPlayer = useDrawing((s) => s.priorityPlayer);
+  const players = useDrawing((s) => s.meta.players);
   return (
     <div className={styles.versus} onClick={ipp}>
       <Icon
         icon={
           <CaretLeft
             style={{
-              visibility: priorityPlayer === 1 ? "visible" : "hidden",
+              visibility:
+                priorityPlayer === players[0]?.id ? "visible" : "hidden",
               verticalAlign: "middle",
             }}
           />
@@ -87,7 +86,8 @@ function Versus() {
         icon={
           <CaretRight
             style={{
-              visibility: priorityPlayer === 2 ? "visible" : "hidden",
+              visibility:
+                priorityPlayer === players[1]?.id ? "visible" : "hidden",
               verticalAlign: "middle",
             }}
           />

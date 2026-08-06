@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { Song } from "./SongData";
 
 export interface EligibleChart {
@@ -34,8 +35,19 @@ export interface DrawnChart extends EligibleChart {
   type: typeof CHART_DRAWN;
 }
 
+export interface Player {
+  id: string;
+  name: string;
+}
+
+/** create a new player with a freshly-generated unique id */
+export function newPlayer(name: string): Player {
+  return { id: nanoid(10), name };
+}
+
 export interface PlayerActionOnChart {
-  player: number;
+  /** id of the player who took the action */
+  player: string;
   chartId: string;
 }
 
@@ -43,11 +55,14 @@ export interface PocketPick extends PlayerActionOnChart {
   pick: EligibleChart;
 }
 
-interface StartggMeta {
-  type: "startgg";
+interface DrawMeta {
   title: string;
+  players: Player[];
+}
+
+interface StartggMeta extends DrawMeta {
+  type: "startgg";
   phaseName: string;
-  entrants: Array<{ id: string; name: string }>;
 }
 
 export interface StartggVersusMeta extends StartggMeta {
@@ -64,49 +79,37 @@ export interface StartggGauntletMeta extends StartggMeta {
   scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
-export interface SimpleMeta {
+export interface SimpleMeta extends DrawMeta {
   type: "simple";
-  title: string;
-  /** plain player names */
-  players: string[];
 }
 
-export function playerCount(meta: Drawing["meta"]) {
-  switch (meta.type) {
-    case "simple":
-      return meta.players.length;
-    case "startgg":
-      return meta.entrants.length;
-  }
+/** a player's name, falling back to a positional placeholder when unnamed */
+export function playerDisplayName(player: Player, index: number) {
+  return player.name || `P${index + 1}`;
 }
 
-export function getAllPlayers(d: Pick<Drawing, "playerDisplayOrder" | "meta">) {
-  const ret = [] as string[];
-  for (let i = 1; i <= playerCount(d.meta); i++) {
-    ret.push(playerNameByDisplayPos(d, i));
-  }
-  return ret;
+export function getAllPlayers(d: Pick<Drawing, "meta">) {
+  return d.meta.players.map(playerDisplayName);
 }
 
-export function playerNameByDisplayPos(
-  d: Pick<Drawing, "playerDisplayOrder" | "meta">,
-  pos: number,
-) {
-  const playerIndex = d.playerDisplayOrder[pos - 1];
-  return playerNameByIndex(d.meta, playerIndex);
+export function playerById(meta: Drawing["meta"], id: string) {
+  return meta.players.find((p) => p.id === id);
 }
 
-export function playerNameByIndex(
+/**
+ * Display name for a player id. A present-but-unnamed player falls back to its
+ * positional placeholder (`P1`, `P2`, …); an id matching no player yields the
+ * `fallback` (empty by default).
+ */
+export function playerNameById(
   meta: Drawing["meta"],
-  idx: number,
-  fallback = `P${idx + 1}`,
+  id: string,
+  fallback = "",
 ) {
-  switch (meta.type) {
-    case "simple":
-      return meta.players[idx] || fallback;
-    case "startgg":
-      return meta.entrants[idx].name || fallback;
-  }
+  const index = meta.players.findIndex((p) => p.id === id);
+  return index === -1
+    ? fallback
+    : playerDisplayName(meta.players[index], index);
 }
 
 /** used to reference a sub draw, or the charts in the parent draw by omitting the target */
@@ -116,16 +119,15 @@ export interface Drawing {
   id: string;
   configId: string;
   meta: SimpleMeta | StartggVersusMeta | StartggGauntletMeta;
-  /** index of items of the players array, in the order they should be displayed */
-  playerDisplayOrder: number[];
-  /** map of song ID to player index */
-  winners: Record<string, number | null>;
+  /** map of song ID to the id of the winning player */
+  winners: Record<string, string | null>;
   /** @deprecated migrating to subDraws */
   charts?: Array<DrawnChart | PlayerPickPlaceholder>;
   bans: Record<string, PlayerActionOnChart | null>;
   protects: Record<string, PlayerActionOnChart | null>;
   pocketPicks: Record<string, PocketPick | null>;
-  priorityPlayer?: number;
+  /** id of the player who currently has priority, if any */
+  priorityPlayer?: string;
   subDrawings: Record<string, SubDrawing>;
 }
 

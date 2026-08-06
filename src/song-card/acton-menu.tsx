@@ -11,15 +11,14 @@ import {
 } from "@blueprintjs/icons";
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
-import { playerNameByIndex } from "../models/Drawing";
 import { JSX } from "react";
 
 interface Props {
-  onStartPocketPick?: (p: number) => void;
-  onVeto?: (p: number) => void;
-  onProtect?: (p: number) => void;
+  onStartPocketPick?: (p: string) => void;
+  onVeto?: (p: string) => void;
+  onProtect?: (p: string) => void;
   onRedraw?: () => void;
-  onSetWinner?: (p: number | null) => void;
+  onSetWinner?: (p: string | null) => void;
   onCopy?: () => void;
 }
 
@@ -87,19 +86,16 @@ export function ActionMenu(props: Props) {
 }
 
 export function FillPlaceholderList(props: {
-  onFillPlaceholder(p: number): void;
+  onFillPlaceholder(p: string): void;
 }) {
-  const drawingMeta = useDrawing((d) => d.meta);
-  const players = useDrawing((d) => d.playerDisplayOrder).map(
-    (pIdx) => [playerNameByIndex(drawingMeta, pIdx), pIdx] as const,
-  );
+  const players = useDrawing((d) => d.meta.players);
   return (
     <Menu>
-      {players.map(([playerName, pIdx]) => (
+      {players.map((player) => (
         <MenuItem
-          key={pIdx}
-          text={`Pick as ${playerName}`}
-          onClick={() => props.onFillPlaceholder(pIdx)}
+          key={player.id}
+          text={`Pick as ${player.name}`}
+          onClick={() => props.onFillPlaceholder(player.id)}
           icon={<Draw />}
         />
       ))}
@@ -110,21 +106,18 @@ export function FillPlaceholderList(props: {
 interface IconRowProps {
   icon: JSX.Element;
   text: string;
-  onClick: (p: number) => void;
+  onClick: (p: string) => void;
 }
 
 function PlayerList({ icon, text, onClick }: IconRowProps) {
-  const drawingMeta = useDrawing((d) => d.meta);
-  const players = useDrawing((d) => d.playerDisplayOrder).map(
-    (pIdx) => [playerNameByIndex(drawingMeta, pIdx), pIdx] as const,
-  );
+  const players = useDrawing((d) => d.meta.players);
   return (
     <MenuItem icon={icon} text={text}>
-      {players.map(([playerName, pIdx]) => (
+      {players.map((player) => (
         <MenuItem
-          key={pIdx}
-          text={playerName}
-          onClick={() => onClick(pIdx)}
+          key={player.id}
+          text={player.name}
+          onClick={() => onClick(player.id)}
           icon={<Person />}
         />
       ))}

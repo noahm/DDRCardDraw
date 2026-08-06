@@ -108,6 +108,27 @@
     "updateLoading": "Installing an update...",
     "updateReady": "Update ready, refresh for the freshest code around!",
     "applyUpdate": "Apply",
+    "party": {
+      "disconnected": "Lost connection to the event server. Changes are disabled until reconnected.",
+      "reconnected": "Reconnected to the event server!",
+      "actionBlocked": "Still reconnecting to the event server. Your change was not applied.",
+      "sendFailed": "A change could not be delivered to the event server after several attempts.",
+      "actionRejected": "A change was rejected by the event server and has been undone.",
+      "diagnostics": {
+        "menuItem": "Connection diagnostics",
+        "title": "Connection diagnostics",
+        "sharePrompt": "Seeing sync problems? Copy this log and post it in a thread on the Discord server so it can be looked into.",
+        "openDiscord": "Open Discord",
+        "pending": "Changes not yet saved to the server",
+        "noPending": "None — the server has confirmed every change.",
+        "attempts": "{count} attempt(s)",
+        "logHeading": "Connection log",
+        "empty": "Nothing recorded yet.",
+        "copy": "Copy log",
+        "copyFull": "Copy full log",
+        "copied": "Copied!"
+      }
+    },
     "error": {
       "title": "Error Caught!",
       "description": "A deeply embarassing error just happened somewhere near here. If you're lucky, a reset will fix things up.",
@@ -218,6 +239,27 @@
     "updateLoading": "更新中...",
     "updateReady": "更新の準備ができました、このページをリロードしてください！",
     "applyUpdate": "更新を適用",
+    "party": {
+      "disconnected": "イベントサーバーとの接続が切断されました。再接続するまで変更できません。",
+      "reconnected": "イベントサーバーに再接続しました！",
+      "actionBlocked": "イベントサーバーに再接続中のため、変更は適用されませんでした。",
+      "sendFailed": "複数回試みましたが、変更をイベントサーバーへ送信できませんでした。",
+      "actionRejected": "イベントサーバーが変更を拒否したため、元に戻しました。",
+      "diagnostics": {
+        "menuItem": "接続診断",
+        "title": "接続診断",
+        "sharePrompt": "同期に問題がありますか？このログをコピーし、Discordサーバーのスレッドに投稿してください。",
+        "openDiscord": "Discordを開く",
+        "pending": "サーバーに未保存の変更",
+        "noPending": "なし — すべての変更がサーバーで確認されました。",
+        "attempts": "{count}回試行",
+        "logHeading": "接続ログ",
+        "empty": "まだ記録がありません。",
+        "copy": "ログをコピー",
+        "copyFull": "全ログをコピー",
+        "copied": "コピーしました！"
+      }
+    },
     "error": {
       "title": "エラーが発生しました！",
       "description": "恥ずかしながら、どこかでエラーが発生したようです。リセットすることで解決するかもしれません。",
