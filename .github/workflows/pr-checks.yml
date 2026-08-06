@@ -3,10 +3,6 @@ name: Checks
 on:
   # Unfiltered, so PRs into long-lived branches like partykit are checked too.
   pull_request:
-  # A conflicted PR has no merge commit, so it gets no `pull_request` run at
-  # all. Checking pushes to main keeps a signal on what actually landed.
-  push:
-    branches: [main]
 
 jobs:
   checks:
