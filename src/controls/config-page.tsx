@@ -1,9 +1,9 @@
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../utils/error-fallback";
 import ControlsDrawer from "./controls-drawer";
-import React, { useState } from "react";
+import React from "react";
 import { FormattedMessage } from "react-intl";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { CircleArrowLeft } from "@blueprintjs/icons";
 import { FormGroup, InputGroup } from "@blueprintjs/core";
 import { useAppDispatch, useAppState } from "../state/store";
@@ -14,10 +14,23 @@ import { changeGameKeyForConfig } from "../state/thunks";
 import { ConfigList } from "./config-select";
 
 export function ConfigPage() {
-  const initialState = useLastConfigSelected() || null;
-  const [configId, setConfigId] = useState<string | null>(initialState);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lastSelected = useLastConfigSelected() || null;
+  // The selected config lives in the URL (?configId=…) so it's linkable and survives
+  // remounts; fall back to the last-selected config when the param is absent.
+  const configId = searchParams.get("configId") || lastSelected;
   function setNextConfig(id: string | null) {
-    setConfigId(id);
+    setSearchParams(
+      (prev) => {
+        if (id) {
+          prev.set("configId", id);
+        } else {
+          prev.delete("configId");
+        }
+        return prev;
+      },
+      { replace: true },
+    );
   }
 
   return (

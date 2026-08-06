@@ -18,12 +18,16 @@ import {
   parseEditCodes,
   type FetchEditsResult,
 } from "./utils/smx-edit-import";
+import { useNavigate } from "react-router-dom";
 import { publishBundle } from "./utils/publish-bundle";
 import { TurnstileWidget, TURNSTILE_SITE_KEY } from "./utils/turnstile";
 import {
   customDataDialogOpen,
   loadCustomGamedataByUrl,
 } from "./state/game-data.atoms";
+import { useAppDispatch } from "./state/store";
+import { createConfigFromInputs } from "./state/thunks";
+import { useSetLastConfigSelected } from "./state/config.atoms";
 import type { GameData } from "./models/SongData";
 import { toaster } from "./toaster";
 
@@ -87,6 +91,9 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
   // `widgetKey` is bumped after a failed attempt to mint a fresh single-use token.
   const [token, setToken] = useState<string | null>(null);
   const [widgetKey, setWidgetKey] = useState(0);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const setLastConfigSelected = useSetLastConfigSelected();
 
   const codes = useMemo(() => parseEditCodes(text), [text]);
   // stable primitive so the lookup effect only re-runs when the set of codes
@@ -152,6 +159,14 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
         setError("Published, but the bundle didn't load back. Try again.");
         return;
       }
+      // Create a config pointed at the freshly published bundle (its `gameKey` is the
+      // immutable URL), select it, and open its config page.
+      const newConfig = await dispatch(
+        createConfigFromInputs(name.trim() || DEFAULT_SET_NAME, url),
+      );
+      // Remember it as the default selection for other entry points; the config page
+      // itself reads the id straight from the URL below.
+      setLastConfigSelected(newConfig.id);
       const skipped = result.unknownSongs.length
         ? ` ${result.unknownSongs.length} skipped — song not in the StepManiaX data yet.`
         : "";
@@ -160,9 +175,10 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
         icon: "import",
         message:
           `Published ${result.matched} edit${result.matched === 1 ? "" : "s"} — ` +
-          `now selectable in the game data picker.${skipped}`,
+          `opened a new config for it.${skipped}`,
       });
       onClose();
+      navigate("config?configId=" + newConfig.id);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       // The token may have been consumed server-side; remount for a fresh one so a
