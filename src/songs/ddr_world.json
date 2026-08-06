@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1785983962154
+    "lastUpdated": 1785988548996
   },
   "defaults": {
     "style": "single",
@@ -1030,7 +1030,8 @@
         {
           "style": "single",
           "diffClass": "challenge",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 1716
         },
         {
           "style": "double",
@@ -28095,7 +28096,8 @@
         {
           "style": "single",
           "diffClass": "challenge",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 1647
         },
         {
           "style": "double",
@@ -66344,7 +66346,8 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 14,
-          "flags": ["shock"]
+          "flags": ["shock"],
+          "maxScore": 1419
         },
         {
           "style": "double",
@@ -85172,7 +85175,8 @@
         {
           "style": "single",
           "diffClass": "challenge",
-          "lvl": 17
+          "lvl": 17,
+          "maxScore": 2097
         },
         {
           "style": "double",
