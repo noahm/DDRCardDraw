@@ -178,7 +178,7 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
           `opened a new config for it.${skipped}`,
       });
       onClose();
-      navigate("config?configId=" + newConfig.id);
+      navigate("config/" + newConfig.id);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       // The token may have been consumed server-side; remount for a fresh one so a
