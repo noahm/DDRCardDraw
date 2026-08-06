@@ -22,7 +22,7 @@ import {
 import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
 import { useMemo } from "react";
-import { ToasterHost } from "./toaster";
+import { NotificationHost } from "./notify";
 
 const router = createBrowserRouter([
   {
@@ -263,7 +263,7 @@ export function App() {
         <ThemeSyncWidget />
         <UpdateManager />
         <RouterProvider router={router} />
-        <ToasterHost />
+        <NotificationHost />
       </IntlProviderWrapper>
     </MantineProvider>
   );

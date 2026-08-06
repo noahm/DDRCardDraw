@@ -1,5 +1,6 @@
+import { IconExclamationCircle } from "@tabler/icons-react";
 import { ConfigState } from "./config-state";
-import { toaster } from "./toaster";
+import { notify } from "./notify";
 import { buildDataUri, dateForFilename, shareData } from "./utils/share";
 
 /** Mark specific fields in T optional, keeping others unchanged */
@@ -102,9 +103,10 @@ export function loadConfigs(): Promise<ConfigState[]> {
         }
       } catch (e) {
         reject();
-        toaster.show({
-          message: "Failed to load settings file",
-          icon: "error",
+        notify.show({
+          title: "Failed to load settings file",
+          message: (e as Error).message,
+          icon: <IconExclamationCircle />,
           intent: "danger",
         });
         console.error("Settings load message: ", (e as Error).message);

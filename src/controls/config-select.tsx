@@ -27,7 +27,7 @@ import { configSlice } from "../state/config.slice";
 import { loadConfigs, saveConfig, saveConfigs } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
 import { useStockGameData } from "../state/game-data.atoms";
-import { toaster } from "../toaster";
+import { notify } from "../notify";
 
 function getEmptyItemLabel(empty: boolean) {
   if (!empty) return "select a config";
@@ -117,9 +117,9 @@ export function ConfigList(props: {
         changeConfig(last.id);
       }
       if (configs.length > 1 || updated) {
-        toaster.show({
+        notify.show({
           message: importToastMessage(configs.length, updated),
-          icon: "import",
+          icon: <IconFileImport />,
           intent: "success",
         });
       }
