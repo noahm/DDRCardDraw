@@ -87,7 +87,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-08-06T15:00:00+09:00"),
     id,
-    { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
+    { lock_types: undefined },
   ]),
   // BEMANI PRO LEAGUE -SEASON 3- Triple Tribe
   ...[
@@ -174,17 +174,11 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   ],
   [
     "oDQb8b9Ii9960180IO989PqIqiP6dOoP", // アキネイション
-    {
-      ratings: [3, 7, 13, 16, 0, 8, 13, 16, 0],
-      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
-    },
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
   ],
   [
     "Q098DQOP0b6q69lioP6lDoDP0o0066i8", // 天弓ノ舞
-    {
-      ratings: [2, 6, 12, 14, 0, 6, 11, 14, 0],
-      lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0],
-    },
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
   ],
   [
     "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b", // 和風インザ洋風

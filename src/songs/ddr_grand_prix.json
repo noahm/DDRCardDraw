@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1785988548996
+    "lastUpdated": 1785996684349
   },
   "defaults": {
     "style": "single",
@@ -926,7 +926,8 @@
         {
           "style": "double",
           "diffClass": "challenge",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 1707
         }
       ],
       "flags": ["grandPrixPack"],
@@ -25572,7 +25573,8 @@
         {
           "style": "double",
           "diffClass": "challenge",
-          "lvl": 16
+          "lvl": 16,
+          "maxScore": 1569
         }
       ],
       "flags": ["grandPrixPack"],
@@ -55582,7 +55584,7 @@
           "maxScore": 1272
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_world/SUPER_HEROINE!!.jpg",
       "remyLink": "https://remywiki.com/SUPER_HEROINE!!",
       "genre": "GENSOU FULLON"
@@ -60063,7 +60065,8 @@
           "style": "double",
           "diffClass": "challenge",
           "lvl": 14,
-          "flags": ["shock"]
+          "flags": ["shock"],
+          "maxScore": 1365
         }
       ],
       "flags": ["grandPrixPack"],
@@ -76002,7 +76005,8 @@
         {
           "style": "double",
           "diffClass": "challenge",
-          "lvl": 17
+          "lvl": 17,
+          "maxScore": 1965
         }
       ],
       "flags": ["grandPrixPack"],
@@ -77029,7 +77033,7 @@
           "maxScore": 2001
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_world/Danmaku shinkou.jpg",
       "remyLink": "https://remywiki.com/Danmaku_shinkou",
       "genre": "HARD ORIENTAL"
@@ -80055,7 +80059,7 @@
           "maxScore": 1896
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_world/Zanzou ni tsunagareta tsuioku no HIDEAWAY.jpg",
       "remyLink": "https://remywiki.com/Zanzou_ni_tsunagareta_tsuioku_no_HIDEAWAY",
       "genre": "HYPER DIG!ROCK"
