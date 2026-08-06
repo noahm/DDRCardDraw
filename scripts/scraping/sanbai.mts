@@ -116,6 +116,12 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     id,
     { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
+  // WORLD LEAGUE
+  [
+    new Date("2026-09-02T16:00:00+09:00"),
+    "q0I018lPqbdi66qiiiQlqIb9O19O9061", // Is this dance a Hakken?
+    { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
+  ],
   // グランプリ譜面パック vol.4
   ...[
     "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D", // AFTER THE GAME OF LOVE
@@ -140,7 +146,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     "bPI6QobOQl9Q161l8l68069QdO1QbO9b", // SkyDrive! (HASEKO EUROBEAT MIX)
     "6IDll6i6d8iII686qq6DddiI00iD8o9d", // 東方妖々夢 ULTIMATE MEDLEY
   ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-09-30T15:00:00+09:00"),
+    new Date("2026-10-30T15:00:00+09:00"),
     id,
     { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
   ]),
