@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1784770035866
+    "lastUpdated": 1786031152222
   },
   "defaults": {
     "style": "single",
@@ -441,7 +441,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1200
         },
         {
@@ -470,7 +470,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "sanbaiTier": 15.2,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1137
         }
       ],
@@ -871,6 +871,7 @@
     {
       "name": "7 Colors",
       "artist": "kors k feat.吉河順央",
+      "saHash": "Pqdb6bI66o9896lDbDq1Pi1Dl9QqO6Pd",
       "bpm": "156",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -899,6 +900,12 @@
           "maxScore": 1464
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1716
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 5,
@@ -915,9 +922,15 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1359
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1707
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/7_Colors",
       "jacket": "ddr_world/7 Colors.jpg"
     },
@@ -1569,7 +1582,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.3,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1992
         },
         {
@@ -1598,7 +1611,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1815
         }
       ],
@@ -3448,7 +3461,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.6,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1131
         },
         {
@@ -3477,7 +3490,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.5,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1083
         }
       ],
@@ -5193,7 +5206,7 @@
           "diffClass": "challenge",
           "lvl": 12,
           "sanbaiTier": 12.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1179
         },
         {
@@ -5222,7 +5235,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.25,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1140
         }
       ],
@@ -8350,6 +8363,59 @@
       "jacket": "ddr_1st-5th/BROKEN MY HEART.png",
       "remyLink": "https://remywiki.com/BROKEN_MY_HEART",
       "genre": "HYPER EUROBEAT"
+    },
+    {
+      "name": "BUCHiAGE 祭 DANCE",
+      "artist": "Dragon_Klub",
+      "saHash": "bIqioQdiOOblbqD0P99P0liodP8i0880",
+      "bpm": "192",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 204
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 669
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1020
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1590
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 609
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1002
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1569
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg"
     },
     {
       "name": "BURNIN' THE FLOOR",
@@ -17113,7 +17179,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.75,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1749
         },
         {
@@ -17142,7 +17208,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "sanbaiTier": 17.85,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1755
         }
       ],
@@ -19491,7 +19557,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "sanbaiTier": 15.25,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1614
         },
         {
@@ -19520,7 +19586,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "sanbaiTier": 15.05,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1470
         }
       ],
@@ -25324,6 +25390,7 @@
     {
       "name": "HAPPY☆PARADISE☆GALAXY",
       "artist": "DJ（GW＋ミラクル☆ストーン）÷2",
+      "saHash": "Oq8ii8id8ob90q6OiDoIl9Q0lQDd9DIO",
       "bpm": "182",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -25382,7 +25449,7 @@
           "maxScore": 2019
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/HAPPY☆PARADISE☆GALAXY.jpg",
       "remyLink": "https://remywiki.com/HAPPY_PARADISE_GALAXY"
     },
@@ -25451,6 +25518,7 @@
     {
       "name": "Harmonia",
       "artist": "ATSUMI UEDA",
+      "saHash": "DlQ190o8bqO8oOQ0Iqloql6lIlPP9qO9",
       "bpm": "177",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -25479,6 +25547,12 @@
           "maxScore": 1359
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1647
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -25495,9 +25569,15 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1347
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1569
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "genre": "ニュープレリュード/NU PRELUDE",
       "jacket": "ddr_world/Harmonia.jpg",
       "remyLink": "https://remywiki.com/Harmonia"
@@ -34922,7 +35002,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.6,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1206
         },
         {
@@ -34951,7 +35031,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.5,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1167
         }
       ],
@@ -35033,6 +35113,59 @@
       ],
       "jacket": "ddr_1st-5th/MAKE IT BETTER (So-REAL Mix).png",
       "remyLink": "https://remywiki.com/MAKE_IT_BETTER_(So-REAL_Mix)"
+    },
+    {
+      "name": "Make Mi Make Mi",
+      "artist": "AMAZE",
+      "saHash": "DDDliPobI96dqo89i00qq1qD1qd9db1b",
+      "bpm": "138",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 294
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 660
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 948
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1473
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 630
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 987
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1425
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/Make Mi Make Mi.jpg"
     },
     {
       "name": "Malacca",
@@ -38989,6 +39122,59 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/New Millennium.jpg",
       "remyLink": "https://remywiki.com/New_Millennium"
+    },
+    {
+      "name": "New Nostalgy",
+      "artist": "CHUBAY",
+      "saHash": "0l1q80obiPPD1P0iid6OI188OdD8i1dD",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 204
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 510
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 966
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1725
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 510
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 960
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1713
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/New Nostalgy.jpg"
     },
     {
       "name": "New York EVOLVED (Type A)",
@@ -45318,6 +45504,7 @@
     {
       "name": "QuoN",
       "artist": "Power Of Nature",
+      "saHash": "d8l6ob1IPiQOlPI8i88oQqO10Ql6ibl6",
       "bpm": "168",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -45376,7 +45563,7 @@
           "maxScore": 2373
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/QuoN.jpg",
       "remyLink": "https://remywiki.com/QuoN",
       "genre": "エタニティ/ETERNITY"
@@ -50677,7 +50864,7 @@
           "lvl": 13,
           "sanbaiTier": 13.4,
           "maxScore": 1029,
-          "flags": ["shock", "prePrivilege"]
+          "flags": ["shock", "grandPrixPack"]
         },
         {
           "style": "double",
@@ -50706,7 +50893,7 @@
           "lvl": 12,
           "sanbaiTier": 12.7,
           "maxScore": 1074,
-          "flags": ["shock", "prePrivilege"]
+          "flags": ["shock", "grandPrixPack"]
         }
       ],
       "jacket": "ddr_1st-5th/Silent Hill.png",
@@ -50903,7 +51090,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.4,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1335
         },
         {
@@ -50932,7 +51119,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.25,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1281
         }
       ],
@@ -55397,7 +55584,7 @@
           "maxScore": 1272
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_world/SUPER_HEROINE!!.jpg",
       "remyLink": "https://remywiki.com/SUPER_HEROINE!!",
       "genre": "GENSOU FULLON"
@@ -59821,6 +60008,7 @@
     {
       "name": "Touch My Body",
       "artist": "anubasu-anubasu",
+      "saHash": "1loi6P66IOoPqD9I68odili18P8bPb9P",
       "bpm": "150",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -59849,6 +60037,13 @@
           "maxScore": 1659
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["shock"],
+          "maxScore": 1419
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 6,
@@ -59865,9 +60060,16 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1629
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "flags": ["shock"],
+          "maxScore": 1365
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/Touch My Body.jpg",
       "remyLink": "https://remywiki.com/Touch_My_Body"
     },
@@ -68523,6 +68725,7 @@
     {
       "name": "アキネイション",
       "artist": "ビートまりお（COOL&CREATE）",
+      "saHash": "oDQb8b9Ii9960180IO989PqIqiP6dOoP",
       "bpm": "185",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -68569,6 +68772,7 @@
           "maxScore": 2022
         }
       ],
+      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Aki_nation",
       "jacket": "ddr_world/アキネイション.jpg",
       "genre": "オータムビート/AUTUMN BEAT"
@@ -75746,6 +75950,7 @@
     {
       "name": "和風インザ洋風",
       "artist": "Super Momo Tarosans",
+      "saHash": "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b",
       "bpm": "153",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -75774,6 +75979,12 @@
           "maxScore": 1461
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2097
+        },
+        {
           "style": "double",
           "diffClass": "basic",
           "lvl": 7,
@@ -75790,9 +76001,15 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1437
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1965
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/和風インザ洋風.jpg",
       "remyLink": "https://remywiki.com/Wafuu_in_the_youfuu"
     },
@@ -76405,6 +76622,7 @@
     {
       "name": "天弓ノ舞",
       "artist": "龍",
+      "saHash": "Q098DQOP0b6q69lioP6lDoDP0o0066i8",
       "bpm": "140",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -76451,7 +76669,7 @@
           "maxScore": 1416
         }
       ],
-      "flags": ["prePrivilege"],
+      "flags": ["grandPrixPack"],
       "jacket": "ddr_world/天弓ノ舞.jpg",
       "remyLink": "https://remywiki.com/Tenkyuu_no_mai"
     },
@@ -76815,7 +77033,7 @@
           "maxScore": 2001
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_world/Danmaku shinkou.jpg",
       "remyLink": "https://remywiki.com/Danmaku_shinkou",
       "genre": "HARD ORIENTAL"
@@ -79841,7 +80059,7 @@
           "maxScore": 1896
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_world/Zanzou ni tsunagareta tsuioku no HIDEAWAY.jpg",
       "remyLink": "https://remywiki.com/Zanzou_ni_tsunagareta_tsuioku_no_HIDEAWAY",
       "genre": "HYPER DIG!ROCK"
@@ -80506,6 +80724,61 @@
       "genre": "フラメンコデュオ/FLAMENCO DUO"
     },
     {
+      "name": "燭",
+      "name_translation": "Tomoshibi",
+      "artist": "立秋 feat.ちょこ [Noir]",
+      "saHash": "I1ilo0odi6o8QI8Oblo8Dlb0odOb0qoD",
+      "bpm": "55-211",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 348
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 681
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1200
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1707
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 642
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1179
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1665
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/燭.jpg",
+      "search_hint": "ともしび"
+    },
+    {
       "name": "爆なな☆てすとロイヤー",
       "name_translation": "Bakunana testroyer",
       "artist": "ARM feat. ななひら",
@@ -80675,7 +80948,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.65,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1881
         },
         {
@@ -80704,7 +80977,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.15,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1767
         }
       ],
