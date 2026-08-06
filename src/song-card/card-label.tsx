@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Badge, CloseButton } from "@mantine/core";
+import { Pill } from "@mantine/core";
 import styles from "./card-label.css";
 import {
   IconArrowsSplit,
@@ -56,6 +56,7 @@ function LabelIcon({ type, ...props }: { type: LabelType; size?: number }) {
 
 export function CardLabel({ playerId, type, onRemove }: Props) {
   const label = usePlayerLabelForId(playerId);
+  const color = getColor(type);
 
   const rootClassname = classNames(styles.cardLabel, {
     [styles.winner]: type === LabelType.Winner,
@@ -63,29 +64,30 @@ export function CardLabel({ playerId, type, onRemove }: Props) {
 
   return (
     <div className={rootClassname}>
-      <Badge
-        color={getColor(type)}
-        variant="filled"
-        size="lg"
-        radius="sm"
-        style={{ textTransform: "none" }}
-        leftSection={<LabelIcon type={type} size={16} />}
-        rightSection={
-          onRemove ? (
-            <CloseButton
-              size="xs"
-              variant="transparent"
-              style={{ color: "inherit" }}
-              onClick={(e) => {
-                e.stopPropagation();
-                onRemove();
-              }}
-            />
-          ) : undefined
-        }
+      <Pill
+        size="md"
+        bg={`var(--mantine-color-${color}-filled)`}
+        c="var(--mantine-color-white)"
+        classNames={{
+          root: styles.pill,
+          label: styles.pillLabel,
+          remove: styles.pillRemove,
+        }}
+        withRemoveButton={!!onRemove}
+        onRemove={onRemove}
+        removeButtonProps={{
+          // Pill keeps its remove button out of the tab order and hides it from
+          // assistive tech, because inside a PillsInput the surrounding input
+          // owns both. Here the button is the only way to undo the action, so
+          // it has to be reachable and named on its own.
+          "aria-hidden": false,
+          tabIndex: 0,
+          "aria-label": `Remove ${label}`,
+        }}
       >
+        <LabelIcon type={type} size={14} />
         {label}
-      </Badge>
+      </Pill>
     </div>
   );
 }
