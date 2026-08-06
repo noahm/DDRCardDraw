@@ -12,7 +12,8 @@ import { useDrawState } from "./draw-state";
 import { useConfigState } from "./config-state";
 import { useIntl } from "./hooks/useIntl";
 import { Callout, NonIdealState, Spinner } from "@blueprintjs/core";
-import { Import } from "@blueprintjs/icons";
+import { GlobeNetwork } from "@blueprintjs/icons";
+import { NEXT_URL } from "./controls/networking-notice";
 import logo from "./assets/ddr-tools-256.png";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "./utils/error-fallback";
@@ -56,8 +57,21 @@ export function DrawingList() {
           title="DDR Tools"
           description={t("hero.description")}
           action={
-            <Callout intent="primary" icon={<Import />}>
-              <FormattedMessage id="hero.callout" />
+            <Callout intent="primary" icon={<GlobeNetwork />}>
+              <FormattedMessage
+                id="hero.callout"
+                values={{
+                  link: (chunks) => (
+                    <a
+                      href={NEXT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                }}
+              />
             </Callout>
           }
         />
