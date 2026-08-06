@@ -34,6 +34,7 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
 import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
 import { useRemotePeers } from "../tournament-mode/remote-peers";
+import { NetworkingNotice } from "./networking-notice";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
@@ -124,7 +125,12 @@ export default function ControlsDrawer() {
               intent={isConnected ? "success" : "none"}
             />
           }
-          panel={<RemotePeerControls />}
+          panel={
+            <>
+              <NetworkingNotice />
+              <RemotePeerControls />
+            </>
+          }
         >
           {t("controls.tabs.networking")}
         </Tab>
