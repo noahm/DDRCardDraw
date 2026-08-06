@@ -14,6 +14,10 @@ Paste the copied URL into the properties and click OK.
 
 If you have a match assigned to the chosen cab, then you should see the text appear immediately. If nothing is assigned to the cab, then the source will display nothing at all.
 
+The per-player sources (name, score, pronouns) each default to player 1. Edit the number in the copied URL — `.../source/player/2/name` — to point one at any other player in the match.
+
+The pronouns source shows whatever a player has published on their start.gg profile, so it only fills in for matches drawn from start.gg, and only for players who have set them. It's blank otherwise, same as an unassigned cab.
+
 ## Custom styles
 
 Adding custom CSS to text-based sources is a great way to help the info fit the graphic design of the rest of your stream graphics.
