@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1785996684349
+    "lastUpdated": 1786031152222
   },
   "defaults": {
     "style": "single",
@@ -46612,6 +46612,54 @@
       "jacket": "ddr_sn-sn2/PARANOiA-Respect-.png",
       "saHash": "IP00ID9bdlOoP9o9lo1qlO0D1Pdo9I8l",
       "saIndex": "190"
+    },
+    {
+      "name": "PARANOiA: STOMP, STOMP, STOMP",
+      "artist": "U180-ASAMi",
+      "saHash": "I91iOPbIbDOqI6iO6bPQ0d0q8Q8IlIid",
+      "bpm": "180",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1851
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1830
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/PARANOiA STOMP, STOMP, STOMP.jpg"
     },
     {
       "name": "PARTY ALL NIGHT(DJ KEN-BOW MIX)",

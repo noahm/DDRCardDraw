@@ -157,29 +157,7 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // #region EXTRA SAVIOR WORLD (BEMANI SELECTION vol.4)
-  [
-    "Pqdb6bI66o9896lDbDq1Pi1Dl9QqO6Pd", // 7 Colors
-    {
-      ratings: [2, 5, 11, 14, 16, 5, 11, 14, 16],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "DlQ190o8bqO8oOQ0Iqloql6lIlPP9qO9", // Harmonia
-    {
-      ratings: [4, 7, 11, 14, 16, 7, 11, 14, 16],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "oDQb8b9Ii9960180IO989PqIqiP6dOoP", // アキネイション
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
-  [
-    "Q098DQOP0b6q69lioP6lDoDP0o0066i8", // 天弓ノ舞
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ],
+  // EXTRA SAVIOR WORLD (BEMANI SELECTION vol.4)
   [
     "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b", // 和風インザ洋風
     {
@@ -187,28 +165,14 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
       lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
     },
   ],
+  // WORLD LEAGUE
   [
-    "Oq8ii8id8ob90q6OiDoIl9Q0lQDd9DIO", // HAPPY☆PARADISE☆GALAXY
+    "I91iOPbIbDOqI6iO6bPQ0d0q8Q8IlIid", // PARANOiA: STOMP, STOMP, STOMP
     {
-      ratings: [4, 8, 13, 15, 17, 8, 12, 15, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
+      ratings: [4, 8, 11, 14, 0, 8, 11, 14, 0],
+      lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
     },
   ],
-  [
-    "d8l6ob1IPiQOlPI8i88oQqO10Ql6ibl6", // QuoN
-    {
-      ratings: [3, 6, 10, 14, 17, 6, 10, 14, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  [
-    "1loi6P66IOoPqD9I68odili18P8bPb9P", // Touch My Body
-    {
-      ratings: [3, 6, 11, 15, 14, 6, 11, 15, 14],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  // #endregion EXTRA SAVIOR WORLD (BEMANI SELECTION vol.4)
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
