@@ -5,6 +5,7 @@ import { IconStack2 } from "@tabler/icons-react";
 import { ConfigSelect } from "../controls";
 import { useState } from "react";
 import { createDraw } from "../state/thunks";
+import { newPlayer } from "../models/Drawing";
 import { useAppDispatch } from "../state/store";
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +42,7 @@ function PreviewModeControls() {
                 meta: {
                   type: "simple",
                   title: "Sample Draw",
-                  players: ["P1", "P2"],
+                  players: [newPlayer("P1"), newPlayer("P2")],
                 },
               },
               selected!,

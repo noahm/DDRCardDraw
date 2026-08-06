@@ -3,12 +3,13 @@ import {
   IconAlertTriangle,
   IconClipboard,
   IconExclamationCircle,
+  IconFileImport,
   IconPaperclip,
 } from "@tabler/icons-react";
 import { Button } from "@mantine/core";
 import type { JSX, ReactNode } from "react";
 
-type IconName = "error" | "clipboard" | "paperclip" | "warning-sign";
+type IconName = "error" | "clipboard" | "paperclip" | "warning-sign" | "import";
 
 interface ToastProps {
   message: ReactNode;
@@ -39,6 +40,8 @@ function resolveIcon(icon: ToastProps["icon"]): ReactNode {
       return <IconPaperclip />;
     case "warning-sign":
       return <IconAlertTriangle />;
+    case "import":
+      return <IconFileImport />;
     default:
       return icon;
   }
@@ -69,6 +72,10 @@ export const toaster = {
       color: props.intent ? intentColors[props.intent] : undefined,
       autoClose: props.timeout === 0 ? false : props.timeout,
     });
+  },
+  /** hide a single toast previously shown under `key` */
+  dismiss(key: string) {
+    notifications.hide(key);
   },
   clear() {
     notifications.clean();

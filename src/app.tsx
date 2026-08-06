@@ -6,7 +6,7 @@ import "@mantine/notifications/styles.css";
 import { MantineProvider } from "@mantine/core";
 
 import { UpdateManager } from "./update-manager";
-import { IntlProvider } from "./intl-provider";
+import { IntlProviderWrapper } from "./intl-provider";
 import { ThemeSyncWidget, useTheme } from "./theme-toggle";
 import { Provider } from "react-redux";
 import { createClientStore, useAppState } from "./state/store";
@@ -171,6 +171,24 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "player/:playerIndex/:displayType?",
+        lazy: async () => {
+          const { CabPlayer, toDisplayType } =
+            await import("./obs-sources/text");
+          return {
+            Component: function PlayerSource() {
+              const { playerIndex, displayType } = useParams();
+              return (
+                <CabPlayer
+                  p={+playerIndex!}
+                  displayType={toDisplayType(displayType)}
+                />
+              );
+            },
+          };
+        },
+      },
+      {
         path: "p1",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
@@ -181,14 +199,14 @@ const router = createBrowserRouter([
         path: "p1-name",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={1} displayType="Name" /> };
+          return { element: <CabPlayer p={1} displayType="name" /> };
         },
       },
       {
         path: "p1-score",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={1} displayType="Score" /> };
+          return { element: <CabPlayer p={1} displayType="score" /> };
         },
       },
       {
@@ -202,14 +220,14 @@ const router = createBrowserRouter([
         path: "p2-name",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={2} displayType="Name" /> };
+          return { element: <CabPlayer p={2} displayType="name" /> };
         },
       },
       {
         path: "p2-score",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={2} displayType="Score" /> };
+          return { element: <CabPlayer p={2} displayType="score" /> };
         },
       },
     ],
@@ -225,10 +243,8 @@ function ObsSource() {
   return (
     <Provider store={store}>
       <PartySocketManager roomName={params.roomName}>
-        <IntlProvider>
-          <ObsStyles />
-          <Outlet />
-        </IntlProvider>
+        <ObsStyles />
+        <Outlet />
       </PartySocketManager>
     </Provider>
   );
@@ -243,12 +259,12 @@ export function App() {
   const theme = useTheme();
   return (
     <MantineProvider forceColorScheme={theme}>
-      <IntlProvider>
+      <IntlProviderWrapper>
         <ThemeSyncWidget />
         <UpdateManager />
         <RouterProvider router={router} />
         <ToasterHost />
-      </IntlProvider>
+      </IntlProviderWrapper>
     </MantineProvider>
   );
 }

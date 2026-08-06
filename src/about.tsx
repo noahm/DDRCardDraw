@@ -5,6 +5,7 @@ import {
   IconGitBranch,
   IconMessageCircle,
 } from "@tabler/icons-react";
+import { DISCORD_INVITE_URL } from "./external-links";
 
 function injectPumpoutLink(str: string) {
   const pieces = str.split("PUMPOUT");
@@ -45,7 +46,7 @@ export function About() {
             size="md"
             variant="default"
             component="a"
-            href="https://discord.gg/QPyEATsbP7"
+            href={DISCORD_INVITE_URL}
             target="_blank"
             leftSection={<IconMessage size={20} />}
           >

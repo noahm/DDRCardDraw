@@ -1,10 +1,11 @@
-import { Button, Input, Tabs, TagsInput, TextInput } from "@mantine/core";
+import { Button, Input, Tabs, TextInput } from "@mantine/core";
 import { ConfigSelect } from ".";
+import { PlayerListInput } from "./player-list-input";
 import { MatchPicker, GauntletPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
 import { createDraw } from "../state/thunks";
 import { useAppDispatch } from "../state/store";
-import { SimpleMeta } from "../models/Drawing";
+import { Player, SimpleMeta, newPlayer } from "../models/Drawing";
 import { useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
 import { DrawingMeta } from "../card-draw";
@@ -26,7 +27,7 @@ export function DrawDialog(props: Props) {
     return handleDraw({
       type: "startgg",
       subtype: match.subtype,
-      entrants: match.players,
+      players: match.players,
       title: match.title,
       id: match.id,
       phaseName: match.phaseName,
@@ -86,8 +87,9 @@ export function CustomDrawForm(props: {
   submitText?: string;
   onSubmit(meta: SimpleMeta): void;
 }) {
-  const [players, setPlayers] = useState<string[]>(
-    props.initialMeta?.players || ["P1", "P2"],
+  // meta.players is already in display order
+  const [players, setPlayers] = useState<Player[]>(
+    () => props.initialMeta?.players ?? [newPlayer("P1"), newPlayer("P2")],
   );
   const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
 
@@ -106,12 +108,9 @@ export function CustomDrawForm(props: {
         value={title}
         onChange={(e) => setTitle(e.currentTarget.value)}
       />
-      <TagsInput
-        label="players"
-        mb="sm"
-        onChange={setPlayers}
-        value={players}
-      />
+      <Input.Wrapper label="players" mb="sm">
+        <PlayerListInput value={players} onChange={setPlayers} />
+      </Input.Wrapper>
       <Button onClick={handleSubmit} disabled={props.disableCreate}>
         {props.submitText || "Create"}
       </Button>

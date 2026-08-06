@@ -37,13 +37,20 @@ export const eventSlice = createSlice({
   initialState,
   reducers: {
     /** add a cab with its name */
-    addCab(state, action: PayloadAction<string>) {
-      const newCab: CabInfo = {
-        id: nanoid(5),
-        name: action.payload,
-        activeMatch: null,
-      };
-      state.cabs[newCab.id] = newCab;
+    addCab: {
+      // the id must be minted here rather than in the reducer: actions
+      // replay on the party server and other clients, and every replica
+      // has to produce an identical cab
+      prepare(name: string) {
+        return { payload: { name, id: nanoid(5) } };
+      },
+      reducer(state, action: PayloadAction<{ name: string; id: string }>) {
+        state.cabs[action.payload.id] = {
+          id: action.payload.id,
+          name: action.payload.name,
+          activeMatch: null,
+        };
+      },
     },
     removeCab(state, action: PayloadAction<string>) {
       delete state.cabs[action.payload];

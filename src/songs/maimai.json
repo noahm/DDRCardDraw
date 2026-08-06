@@ -1,7 +1,7 @@
 {
   "$schema": "../../songs.schema.json",
   "meta": {
-    "lastUpdated": 1780871660122,
+    "lastUpdated": 1785203469040,
     "menuParent": "more",
     "cardVariant": "maimai",
     "styles": ["single"],
@@ -1157,7 +1157,7 @@
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 12.5,
+          "lvl": 12.3,
           "extras": ["std"]
         },
         {
@@ -1822,32 +1822,23 @@
       "folder": "maimai PLUS",
       "date_added": "2012-12-13",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
@@ -4810,32 +4801,23 @@
       "folder": "GreeN",
       "date_added": "2013-09-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
@@ -14814,6 +14796,34 @@
       "folder": "MURASAKi PLUS",
       "date_added": "2017-07-11",
       "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "basic",
@@ -47219,28 +47229,24 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
-          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
-          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -47253,32 +47259,23 @@
       "folder": "CiRCLE",
       "date_added": "2025-12-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 7,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 7, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47291,32 +47288,23 @@
       "folder": "CiRCLE",
       "date_added": "2025-12-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 6,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47329,32 +47317,23 @@
       "folder": "CiRCLE",
       "date_added": "2025-12-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 5,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.4,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47371,28 +47350,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -47409,28 +47388,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.2,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -47447,28 +47426,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.1,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -47485,28 +47464,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.4,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -47577,32 +47556,23 @@
       "folder": "CiRCLE",
       "date_added": "2025-12-24",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 6,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.5,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47647,32 +47617,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-01-09",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47685,32 +47646,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-01-09",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47723,32 +47675,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-01-09",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47761,32 +47704,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-01-09",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47799,32 +47733,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-01-09",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 2,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47837,32 +47762,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-01-16",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -47879,7 +47795,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 12,
-          "flags": ["jpn"],
           "extras": ["【鏡】"]
         }
       ]
@@ -47896,7 +47811,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 13.6,
-          "flags": ["jpn"],
           "extras": ["【邪】"]
         }
       ]
@@ -47932,28 +47846,24 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
-          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["std"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
-          "flags": ["jpn"],
           "extras": ["std"]
         }
       ]
@@ -48057,28 +47967,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48095,28 +48005,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48133,28 +48043,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48171,28 +48081,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.7,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48234,32 +48144,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-02-20",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48272,32 +48173,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-02-20",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 1,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 1, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 5,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 12.8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48310,32 +48202,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-02-20",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48348,32 +48231,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-03-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 6,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 6, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48386,32 +48260,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-03-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 2,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48424,32 +48289,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-03-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48462,32 +48318,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-03-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48500,32 +48347,23 @@
       "folder": "CiRCLE",
       "date_added": "2026-03-05",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 5,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.2,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48538,32 +48376,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48580,28 +48409,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48618,28 +48447,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 5,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48656,28 +48485,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 4,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.1,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48690,32 +48519,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn", "unlockable"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.8,
-          "flags": ["jpn", "unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48728,32 +48548,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 5,
-          "flags": ["unlockable"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["unlockable"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.3,
-          "flags": ["unlockable"],
           "extras": ["dx"]
         }
       ]
@@ -48811,32 +48622,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48849,32 +48651,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48887,32 +48680,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48925,39 +48709,29 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 2,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 2, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.5,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.4,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -48970,32 +48744,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49008,39 +48773,29 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 11.8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "remaster",
           "lvl": 13.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49053,32 +48808,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.3,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49091,32 +48837,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49129,32 +48866,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49167,32 +48895,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 4,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.9,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49205,32 +48924,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 5,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 5, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.4,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.4,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49247,7 +48957,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["【習】"]
         }
       ]
@@ -49264,7 +48973,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 13,
-          "flags": ["jpn"],
           "extras": ["【奏】"]
         }
       ]
@@ -49281,7 +48989,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 14,
-          "flags": ["jpn"],
           "extras": ["【破】"]
         }
       ]
@@ -49298,7 +49005,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 13.6,
-          "flags": ["jpn"],
           "extras": ["【音】"]
         }
       ]
@@ -49315,7 +49021,6 @@
           "style": "single",
           "diffClass": "utage",
           "lvl": 13,
-          "flags": ["jpn"],
           "extras": ["【音】"]
         }
       ]
@@ -49370,28 +49075,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 3,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49506,7 +49211,7 @@
         {
           "style": "single",
           "diffClass": "expert",
-          "lvl": 12.6,
+          "lvl": 12.9,
           "flags": ["unlockable"],
           "extras": ["dx"]
         },
@@ -49721,28 +49426,28 @@
           "style": "single",
           "diffClass": "basic",
           "lvl": 6,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 8,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 12.9,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 14.7,
-          "flags": ["jpn", "unlockable"],
+          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49755,32 +49460,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-05-01",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 11,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.4,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49793,32 +49489,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-05-01",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -49831,32 +49518,23 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-05-01",
       "charts": [
-        {
-          "style": "single",
-          "diffClass": "basic",
-          "lvl": 3,
-          "flags": ["jpn"],
-          "extras": ["dx"]
-        },
+        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
-          "flags": ["jpn"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
-          "flags": ["jpn"],
           "extras": ["dx"]
         }
       ]
@@ -50183,7 +49861,7 @@
         {
           "style": "single",
           "diffClass": "remaster",
-          "lvl": 13.3,
+          "lvl": 13.4,
           "flags": ["jpn"],
           "extras": ["dx"]
         }
@@ -50258,6 +49936,686 @@
           "lvl": 12,
           "flags": ["jpn"],
           "extras": ["【覚】"]
+        }
+      ]
+    },
+    {
+      "name": "TAKE CONTROL",
+      "artist": "ryhki",
+      "bpm": "162",
+      "jacket": "maimai/7cf6656cbbd95701.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-12",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.9,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "HyperdrivE",
+      "artist": "KARUT",
+      "bpm": "174",
+      "jacket": "maimai/9db4ea8b086f5765.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-12",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.8,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "Paradoxical Empress",
+      "artist": "polysha",
+      "bpm": "185",
+      "jacket": "maimai/d924d8b85c4655cc.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-12",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.9,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "RONDØ",
+      "artist": "Ashrount",
+      "bpm": "314",
+      "jacket": "maimai/ea4cd9df410fa1b0.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-12",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 8,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12.8,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 14.5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "純情アルメリア",
+      "artist": "森羅万象",
+      "bpm": "175",
+      "jacket": "maimai/9d139b8426001293.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-26",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "運命線上のアリア",
+      "artist": "森羅万象",
+      "bpm": "185",
+      "jacket": "maimai/26721fc25e2f9f91.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-26",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "デンデラパーティーナイト",
+      "artist": "森羅万象",
+      "bpm": "181",
+      "jacket": "maimai/d352008e0f49d5d9.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-26",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.4,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "Absolute Queen",
+      "artist": "Laur",
+      "bpm": "220",
+      "jacket": "maimai/3d2dcf5c55d4e855.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-26",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 8,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12.8,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 14.2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "[奏]悪戯センセーション",
+      "artist": "森羅万象",
+      "bpm": "???",
+      "jacket": "maimai/5c5ae698a3ca6825.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-26",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "utage",
+          "lvl": 13,
+          "flags": ["jpn"],
+          "extras": ["【奏】"]
+        }
+      ]
+    },
+    {
+      "name": "[招]Re:Unknown X",
+      "artist": "まらしぃ",
+      "bpm": "???",
+      "jacket": "maimai/0847c38d2a623e99.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-06-26",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "utage",
+          "lvl": 14.6,
+          "flags": ["jpn"],
+          "extras": ["【招】"]
+        }
+      ]
+    },
+    {
+      "name": "歌え踊れや桃源郷！",
+      "artist": "karato feat.yuno",
+      "bpm": "178",
+      "jacket": "maimai/0f7aff2eb3425949.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-02",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.4,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "私たちは、花になる",
+      "artist": "イロドリミドリ｜HaNaMiNa｜S.S.L.",
+      "bpm": "168",
+      "jacket": "maimai/7ca1e931100a97a7.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-02",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "Here the Our MIRAI!",
+      "artist": "イロドリミドリ",
+      "bpm": "190",
+      "jacket": "maimai/94961d3405db1230.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-02",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "色彩過剰のダイアリーミュージック",
+      "artist": "イロドリミドリ",
+      "bpm": "136",
+      "jacket": "maimai/e983556daa1209a7.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-02",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 8,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12.7,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 14.1,
+          "flags": ["jpn", "unlockable"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "イレギュラーマン",
+      "artist": "マサラダ",
+      "bpm": "201",
+      "jacket": "maimai/d696ede5d69835d1.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-17",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.9,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "ちっちゃな私",
+      "artist": "マサラダ",
+      "bpm": "143",
+      "jacket": "maimai/6c783c45faac031c.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-17",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 9.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 12.9,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "2代目閻魔",
+      "artist": "読谷あかね",
+      "bpm": "135",
+      "jacket": "maimai/a811403363de238f.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-17",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 2,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "シスターに懺悔を",
+      "artist": "廃原メモリ",
+      "bpm": "165",
+      "jacket": "maimai/a152c59b2154f085.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-17",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 7,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 10.6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        }
+      ]
+    },
+    {
+      "name": "Cryogenic",
+      "artist": "Camellia ft. Petra Gurin「In Falsus」",
+      "bpm": "145",
+      "jacket": "maimai/c4ec76bb151017b2.jpg",
+      "folder": "CiRCLE PLUS",
+      "date_added": "2026-07-17",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "advanced",
+          "lvl": 6,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 11,
+          "flags": ["jpn"],
+          "extras": ["dx"]
+        },
+        {
+          "style": "single",
+          "diffClass": "master",
+          "lvl": 13.8,
+          "flags": ["jpn"],
+          "extras": ["dx"]
         }
       ]
     },

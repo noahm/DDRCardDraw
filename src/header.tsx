@@ -5,6 +5,7 @@ import {
   IconMenu2,
   IconHelp,
   IconAdjustments,
+  IconActivityHeartbeat,
 } from "@tabler/icons-react";
 import { JSX, useCallback, useState } from "react";
 import { About } from "./about";
@@ -17,6 +18,8 @@ import { drawingsSlice } from "./state/drawings.slice";
 import { EventModeGated } from "./common-components/app-mode";
 import { HeaderBar } from "./common-components/header-bar";
 import { useNavigate, useHref } from "react-router-dom";
+import { DiagnosticsDialog } from "./party/diagnostics-dialog";
+import { useRoomName } from "./hooks/useRoomName";
 
 export function Header({
   heading,
@@ -60,6 +63,8 @@ export function Header({
 
 export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [diagnosticsOpen, setDiagnosticsOpen] = useState(false);
+  const roomName = useRoomName();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const dashHref = useHref("dash", { relative: "route" });
@@ -75,6 +80,11 @@ export function HamburgerMenu() {
       <Modal opened={aboutOpen} onClose={() => setAboutOpen(false)}>
         <About />
       </Modal>
+      <DiagnosticsDialog
+        isOpen={diagnosticsOpen}
+        onClose={() => setDiagnosticsOpen(false)}
+        roomName={roomName}
+      />
       <Menu position="bottom-start">
         <Menu.Target>
           <ActionIcon
@@ -105,6 +115,15 @@ export function HamburgerMenu() {
           >
             {t("clearDrawings")}
           </Menu.Item>
+          <EventModeGated>
+            <Menu.Item
+              leftSection={<IconActivityHeartbeat size={16} />}
+              onClick={() => setDiagnosticsOpen(true)}
+              data-umami-event="party-diagnostics-open"
+            >
+              {t("party.diagnostics.menuItem")}
+            </Menu.Item>
+          </EventModeGated>
           <Menu.Item
             leftSection={<IconInfoCircle size={16} />}
             onClick={() => setAboutOpen(true)}

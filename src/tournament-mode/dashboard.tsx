@@ -14,6 +14,7 @@ import {
   IconCopy,
   IconEdit,
   IconDeviceFloppy,
+  IconTrash,
 } from "@tabler/icons-react";
 import React, { useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
@@ -29,6 +30,7 @@ export function Dashboard() {
   const [currentEdit, setCurrentEdit] = useState<string | null>(null);
   const labels = useAppState((s) => s.event.obsLabels);
   const isObs = useInObs();
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -63,6 +65,9 @@ export function Dashboard() {
                 label={label}
                 value={value}
                 onEdit={() => setCurrentEdit(id)}
+                onDelete={() =>
+                  dispatch(eventSlice.actions.removeLabel({ id }))
+                }
               />
             ))}
           </Stack>
@@ -78,6 +83,7 @@ function LabelCard(props: {
   label: string;
   value: string;
   onEdit(this: void): void;
+  onDelete(this: void): void;
 }) {
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
@@ -101,6 +107,22 @@ function LabelCard(props: {
           href={href}
         >
           <IconCopy size={16} />
+        </ActionIcon>
+        <ActionIcon
+          variant="default"
+          color="red"
+          aria-label="Delete text source"
+          onClick={() => {
+            if (
+              confirm(
+                `Delete the "${props.label}" text source? This cannot be undone.`,
+              )
+            ) {
+              props.onDelete();
+            }
+          }}
+        >
+          <IconTrash size={16} />
         </ActionIcon>
       </Group>
     </Card>

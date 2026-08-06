@@ -22,12 +22,14 @@ import {
   IconUsers,
   IconUser,
   IconCircleMinus,
+  IconTag,
+  IconNumbers,
 } from "@tabler/icons-react";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
-import { playerNameByIndex } from "../models/Drawing";
 import { drawingsSlice } from "../state/drawings.slice";
+import { playerDisplayName } from "../models/Drawing";
 import { copyObsSource, routableCabSourcePath } from "./copy-obs-source";
 import { useHref } from "react-router-dom";
 
@@ -155,48 +157,50 @@ function CabSummary({ cab }: { cab: CabInfo }) {
                   stub="phase"
                   cabId={cab.id}
                 />
-                <CopySourceMenuItem
-                  icon={<IconUsers size={16} />}
-                  text="All Players"
-                  stub="players"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconUser size={16} />}
-                  text="Player 1"
-                  stub="p1"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconUser size={16} />}
-                  text="Player 1 Name"
-                  stub="p1-name"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconUser size={16} />}
-                  text="Player 1 Score"
-                  stub="p1-score"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconUser size={16} />}
-                  text="Player 2"
-                  stub="p2"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconUser size={16} />}
-                  text="Player 2 Name"
-                  stub="p2-name"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconUser size={16} />}
-                  text="Player 2 Score"
-                  stub="p2-score"
-                  cabId={cab.id}
-                />
+                <Menu.Sub>
+                  <Menu.Sub.Target>
+                    <Menu.Sub.Item leftSection={<IconUsers size={16} />}>
+                      Players
+                    </Menu.Sub.Item>
+                  </Menu.Sub.Target>
+                  <Menu.Sub.Dropdown>
+                    <CopySourceMenuItem
+                      icon={<IconUsers size={16} />}
+                      text="All Players"
+                      stub="players"
+                      cabId={cab.id}
+                    />
+                    <Menu.Sub>
+                      <Menu.Sub.Target>
+                        <Menu.Sub.Item leftSection={<IconUser size={16} />}>
+                          Single Player
+                        </Menu.Sub.Item>
+                      </Menu.Sub.Target>
+                      <Menu.Sub.Dropdown>
+                        <CopySourceMenuItem
+                          text="Name and Score"
+                          stub="player/1"
+                          cabId={cab.id}
+                        />
+                        <CopySourceMenuItem
+                          icon={<IconTag size={16} />}
+                          text="Name"
+                          stub="player/1/name"
+                          cabId={cab.id}
+                        />
+                        <CopySourceMenuItem
+                          icon={<IconNumbers size={16} />}
+                          text="Score"
+                          stub="player/1/score"
+                          cabId={cab.id}
+                        />
+                      </Menu.Sub.Dropdown>
+                    </Menu.Sub>
+                    <Menu.Item disabled>
+                      (edit URL for players beyond 1)
+                    </Menu.Item>
+                  </Menu.Sub.Dropdown>
+                </Menu.Sub>
               </Menu.Sub.Dropdown>
             </Menu.Sub>
             <Menu.Item
@@ -214,7 +218,7 @@ function CabSummary({ cab }: { cab: CabInfo }) {
 }
 
 function CopySourceMenuItem(props: {
-  icon: ReactNode;
+  icon?: ReactNode;
   text: ReactNode;
   stub: string;
   cabId: string;
@@ -280,9 +284,7 @@ function CurrentMatch(props: { cab: CabInfo }) {
   if (!drawing) {
     return <p>No match</p>;
   }
-  const filledPlayers = drawing.playerDisplayOrder.map((pIdx, idx) =>
-    playerNameByIndex(drawing.meta, pIdx, `Player ${idx + 1}`),
-  );
+  const filledPlayers = drawing.meta.players.map(playerDisplayName);
   const assignmentType =
     typeof props.cab.activeMatch === "string" ? "match" : "set";
   return (

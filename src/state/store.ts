@@ -7,11 +7,13 @@ import {
 import { useDispatch, useSelector, useStore } from "react-redux";
 import { reducer, type AppState } from "./root-reducer";
 import { middleware as listener } from "./listener-middleware";
+import { partyGateMiddleware } from "./party-gate-middleware";
 
 export function createClientStore(preloadedState?: AppState) {
   return configureStore({
     reducer,
-    middleware: (getDefaults) => getDefaults().concat(listener),
+    middleware: (getDefaults) =>
+      getDefaults().concat(partyGateMiddleware, listener),
     preloadedState,
   });
 }

@@ -28,6 +28,7 @@ type SanbaiSong = {
  * Hidden songs/charts that were already locked as of 2025-10-21 also require the `euLocked` flag.
  */
 const lockFlags: Map<number, Song["flags"]> = new Map([
+  [1000, ["euLocked"]], // For unlocked songs/charts
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
   [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   [250, ["flareRank"]], // FLARE SKILL unlock
@@ -39,6 +40,12 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [320, ["tempUnlock"]], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
   [330, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append (2026-03-26 10:00~2026-04-26 23:59)
   [350, ["unlock"]], // 段位認定(DAN RANK)
+  [
+    360,
+    _currentDate <= new Date("2026-08-17T09:59:00+09:00")
+      ? ["unlock"]
+      : ["tempUnlock"],
+  ], // BEMANI納涼祭2026 (2026-06-18 10:00~2026-08-17 09:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -72,31 +79,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // WORLD LEAGUE 11th
-  [
-    new Date("2026-05-27T16:00:00+09:00"),
-    "q6o1id8doDb988l1o01P8dllQ0d6IP9P", // Time to HYPERDRIVE
-    { lock_types: undefined },
-  ],
-  ...[
-    // グランプリ楽曲パック vol.36
-    "98QDoo1I6dP8QoPiDQOdQ09Db80Il68q", // ARACHNE
-    "00o6QPq0Qdl8IQolO80q6dD86696O6ob", // EBONY & IVORY
-    "blq0Oq8q6oi89odoPOqIDDQIPO11IQ9O", // Liar×Girl
-    "i080lP1QqIiO998qPl888qboIiIDdiD1", // 絶対零度
-    // スペシャル楽曲パック feat.pop'n music vol.1
-    "IqPq866IQD0liq9lOl00qDqiPlq9bOD0", // BabeL ～Next Story～
-    "8909Q00li66qQ906I9QoldIqbiIP1QoQ", // ポチコの幸せな日常
-    "0Q6I1llb809bd8i1oo86PQdlo6IQ8DQd", // 明鏡止水
-    "0b96d606l9bdllQDi1Q89d1O0IPlIb69", // 路男
-    // プラチナメンバーズパス特典1
-    "0QI6ODo0bPq6Io8ibP16d6I81dbI6oDi", // Monsters Den
-    "Dqb69lDiP6diId6O8Q0I6bbQI88lPlb0", // Stand Alone Beat Masta
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-06-30T15:00:00+09:00"),
-    id,
-    { lock_types: undefined },
-  ]),
   // グランプリ譜面パック vol.2
   ...[
     "Q96bO9D61lib19IiIi0i69P80bo6q69Q", // 321STARS
@@ -112,7 +94,51 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-07-31T15:00:00+09:00"),
     id,
-    { lock_types: undefined },
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
+  ]),
+  // BEMANI×東方Project ～幻想郷音樂祭2024～
+  ...[
+    "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1", // 残像ニ繋ガレタ追憶ノHIDEAWAY
+    "lDIO66Dqili0bD0Qo00iIlO6b100i8i0", // 弾幕信仰
+    "d1bdqOI8IPIO8i00Plq09d189lIbIo0I", // SUPER HEROINE!!
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-08-06T15:00:00+09:00"),
+    id,
+    { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
+  ]),
+  // グランプリ譜面パック vol.3
+  ...[
+    "PP9QDQ0IQQID00P61d8qdDdP09b19iiI", // Blind Justice ～Torn souls, Hurt Faiths～
+    "ii6Oooool0IoOqi1qdDo96QIil6IoOq0", // BURNIN' THE FLOOR
+    "1diQi81loIodIdOlQ8Pd6Qd8b69Q1DP8", // Destiny lovers
+    "1PQdDiqOD6o1b61iiDOoiiblIQbI91Pb", // JET WORLD
+    "qIP6DPdbD9iO86i1DO9qDd8l6dPdbl0P", // LOVE♥SHINE
+    "i11d86DOOdOb8Pbb1QqIilQI9Idib8PP", // Music In The Rhythm
+    "60QoP9DoIo90D616989Q0D0iodOoOd91", // SEXY PLANET
+    "lO68Q0iPIOiOIDDd8dOPoiql9OI81DQ0", // The Least 100sec
+    "9lob1d1QPd9qiPlQOQ6l0dbodOoDPq1d", // think ya better D
+    "qQ9Oo611P0dObD8q6O0Q968bbl8I91OO", // TRIP MACHINE～luv mix～
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-08-31T15:00:00+09:00"),
+    id,
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
+  ]),
+  // グランプリ譜面パック vol.4
+  ...[
+    "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D", // AFTER THE GAME OF LOVE
+    "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP", // BRE∀K DOWN！
+    "OPbqldiq0dQIo1011086IOl1qbOloOl9", // CANDY☆
+    "8liDbidQoI6Q01lO9iibIdboIiDl66Qo", // e-motion
+    "olQQ8QPPqqObDD9ooodOl9i9od8b06I9", // Healing Vision ～Angelic mix～
+    "8l808Do60DP0qDbD066QQqP1qOQdob90", // HYSTERIA
+    "D1D88PPI0PDQqOq00OI6QI1o6dPolqlI", // Tomorrow Perfume
+    "bDDd08iP8dlIlOo6iqd91dPiI1lQdOQq", // xenon
+    "OboID1PloIIoOOObQdQOP110I61Ddl9I", // 蒼い衝動 ～for EXTREME～
+    "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po", // 月光蝶
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-09-30T15:00:00+09:00"),
+    id,
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
 ];
 /** Correction map for invalid data on 3icecream site */

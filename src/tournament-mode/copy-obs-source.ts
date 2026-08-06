@@ -2,6 +2,7 @@ import { copyPlainTextToClipboard } from "../utils/share";
 
 export const routableGlobalSourcePath = (labelId: string) =>
   `../obs-globals/${labelId}`;
+
 export const routableCabSourcePath = (cabId: string, sourceName: string) =>
   `cab/${cabId}/source/${sourceName}`;
 
