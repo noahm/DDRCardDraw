@@ -79,16 +79,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // BEMANI×東方Project ～幻想郷音樂祭2024～
-  ...[
-    "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1", // 残像ニ繋ガレタ追憶ノHIDEAWAY
-    "lDIO66Dqili0bD0Qo00iIlO6b100i8i0", // 弾幕信仰
-    "d1bdqOI8IPIO8i00Plq09d189lIbIo0I", // SUPER HEROINE!!
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-08-06T15:00:00+09:00"),
-    id,
-    { lock_types: undefined },
-  ]),
   // BEMANI PRO LEAGUE -SEASON 3- Triple Tribe
   ...[
     "odPq866q0QPOP9QOQ9QQIlIO60Oid16o", // C-C-C-N-N-N
@@ -156,14 +146,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
   [
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
-  ],
-  // EXTRA SAVIOR WORLD (BEMANI SELECTION vol.4)
-  [
-    "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b", // 和風インザ洋風
-    {
-      ratings: [3, 8, 11, 15, 17, 7, 11, 15, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
   ],
   // WORLD LEAGUE
   [
