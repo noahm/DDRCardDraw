@@ -17,11 +17,34 @@ const isJapanese = detectedLanguage === "ja";
 export interface CardContentsProps {
   CenterContent: React.ComponentType<CardSectionProps>;
   FooterContent: React.ComponentType<CardSectionProps>;
+  /**
+   * Optionally surface extra, game-specific info popovers for a given chart
+   * (e.g. a QR code for an SMX edit). The card renders each returned action as a
+   * menu item that, when chosen, shows its `content` in a popover on the card.
+   */
+  getActions?: (chart: CardSectionProps["chart"]) => CardAction[];
 }
 
 /** Props passed to child components that get to customize card center and footer content */
 export interface CardSectionProps {
   chart: EligibleChart | DrawnChart | PlayerPickPlaceholder;
+}
+
+/**
+ * An extra, game-specific informational action a card variant can contribute to
+ * a card's menu. Selecting it opens `content` in a popover anchored to the card.
+ */
+export interface CardAction {
+  /** stable identifier, unique among a variant's actions for one chart */
+  key: string;
+  /** i18n key for the menu item's label (e.g. a `meta.*` key from the game data) */
+  labelKey: string;
+  /** fallback label text if `labelKey` isn't found in the active translations */
+  labelDefault?: string;
+  /** menu item icon */
+  icon?: React.JSX.Element;
+  /** content rendered in a popover anchored to the card when this action is chosen */
+  content: React.JSX.Element;
 }
 
 export function baseChartValues(
