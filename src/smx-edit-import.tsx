@@ -194,11 +194,6 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
   return (
     <>
       <DialogBody>
-        <Text tagName="p">
-          Edit charts are merged with a copy of the stock StepManiaX data and
-          added to the game data picker as a new game for this event. It
-          disappears once no longer used by any config.
-        </Text>
         <FormGroup
           label="Data set name"
           helperText="Shown in the game data picker."
@@ -208,7 +203,10 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
             onChange={(e) => setName(e.currentTarget.value)}
           />
         </FormGroup>
-        <FormGroup label="Paste edit links or codes">
+        <FormGroup
+          label="Paste edit links or codes"
+          helperText="Edit charts are merged with a copy of the stock StepManiaX data and added as new game data for this event. It will disappear when left unused by all configs."
+        >
           <TextArea
             fill
             style={{ height: "10em" }}
