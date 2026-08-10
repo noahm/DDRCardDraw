@@ -98,6 +98,7 @@ export function SongCardBase(props: Props) {
     actionsEnabled,
     CenterContent,
     FooterContent,
+    getActions,
   } = props;
   const hideVetos = useConfigState((s) => s.hideVetos);
 
@@ -116,6 +117,9 @@ export function SongCardBase(props: Props) {
   const [showingContextMenu, setContextMenuOpen] = useState(false);
   const showMenu = () => setContextMenuOpen(true);
   const hideMenu = () => setContextMenuOpen(false);
+
+  // key of the variant-supplied action whose popover is currently shown, if any
+  const [openActionKey, setOpenActionKey] = useState<string | null>(null);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
     useState<PlayerId | null>(null);
@@ -149,6 +153,22 @@ export function SongCardBase(props: Props) {
   }, [name, diffAbbr]);
   const canCopy = !!name && !!diffAbbr;
 
+  // extra, game-specific info popovers contributed by the active card variant
+  const variantActions = getActions?.(replacedWith || chart) ?? [];
+  const openAction = variantActions.find((a) => a.key === openActionKey);
+  const infoActions = variantActions.length
+    ? variantActions.map((a) => ({
+        key: a.key,
+        labelKey: a.labelKey,
+        icon: a.icon,
+        // hand off from the action menu to this action's popover on the same card
+        onClick: () => {
+          setContextMenuOpen(false);
+          setOpenActionKey(a.key);
+        },
+      }))
+    : undefined;
+
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !hasWinner) {
     if (replacedWith === undefined && baseChartIsPlaceholder) {
@@ -166,6 +186,7 @@ export function SongCardBase(props: Props) {
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
+          infoActions={infoActions}
         />
       );
     } else if (vetoedBy === undefined) {
@@ -173,9 +194,19 @@ export function SongCardBase(props: Props) {
         <ActionMenu
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
+          infoActions={infoActions}
         />
       );
     }
+  }
+  // even without other actions, variant info actions are still worth offering
+  if (!menuContent && infoActions) {
+    menuContent = (
+      <ActionMenu
+        infoActions={infoActions}
+        onCopy={canCopy ? handleCopy : undefined}
+      />
+    );
   }
 
   const rootClassname = classNames(styles.chart, {
@@ -235,7 +266,9 @@ export function SongCardBase(props: Props) {
           ref={rootRef}
           className={rootClassname}
           onClick={
-            showingContextMenu || pocketPickPendingForPlayer !== null
+            showingContextMenu ||
+            openAction ||
+            pocketPickPendingForPlayer !== null
               ? undefined
               : handleCardClick
           }
@@ -257,8 +290,13 @@ export function SongCardBase(props: Props) {
           </div>
 
           <Menu
-            opened={showingContextMenu}
-            onChange={(opened) => !opened && hideMenu()}
+            opened={showingContextMenu || !!openAction}
+            onChange={(opened) => {
+              if (!opened) {
+                hideMenu();
+                setOpenActionKey(null);
+              }
+            }}
             position="top"
           >
             <Menu.Target>
@@ -266,7 +304,11 @@ export function SongCardBase(props: Props) {
                 <FooterContent chart={replacedWith || chart} />
               </div>
             </Menu.Target>
-            {menuContent && <Menu.Dropdown>{menuContent}</Menu.Dropdown>}
+            {(openAction || menuContent) && (
+              <Menu.Dropdown>
+                {openAction ? openAction.content : menuContent}
+              </Menu.Dropdown>
+            )}
           </Menu>
         </div>
       </Popover.Target>

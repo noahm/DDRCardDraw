@@ -1,9 +1,22 @@
 import { Select } from "@mantine/core";
 import { useDataSets } from "./hooks/useDataSets";
-import { groupGameData } from "./utils";
+import { groupGameData, CUSTOM_DATA_PARENT } from "./utils";
 import { useIntl } from "./hooks/useIntl";
 import { useState } from "react";
-import { useSetLastGameSelected } from "./state/game-data.atoms";
+import { useSetAtom } from "jotai";
+import {
+  customDataDialogOpen,
+  useSetLastGameSelected,
+} from "./state/game-data.atoms";
+
+type Option = { value: string; label: string };
+type Group = { group: string; items: Option[] };
+
+/**
+ * Select has no notion of an action row, so the "create custom data" entry is a
+ * normal option carrying this sentinel value and is intercepted in onChange.
+ */
+const CREATE_CUSTOM_DATA = "__create-custom-data__";
 
 export function GameDataSelect(props: {
   /** if provided, a hidden input will be rendered with current value */
@@ -15,21 +28,38 @@ export function GameDataSelect(props: {
 }) {
   const { t } = useIntl();
   const setLastGameSelected = useSetLastGameSelected();
+  const openCustomDataDialog = useSetAtom(customDataDialogOpen);
   const { available } = useDataSets();
   const [innerValue, setInnerValue] = useState(props.defaultValue);
   const currentValue = props.value || innerValue;
 
-  const data = groupGameData(available).map<
-    | { value: string; label: string }
-    | { group: string; items: { value: string; label: string }[] }
-  >((item) => {
-    if (item.type === "game") {
-      return { value: item.name, label: item.display };
-    }
-    return {
-      group: t("gameMenu.parent." + item.name),
-      items: item.games.map((g) => ({ value: g.name, label: g.display })),
-    };
+  const grouped = groupGameData(available);
+  const customGroup = grouped.find(
+    (item) => item.type === "parent" && item.name === CUSTOM_DATA_PARENT,
+  );
+  const customGames = customGroup?.type === "parent" ? customGroup.games : [];
+
+  const data: Array<Option | Group> = grouped.flatMap<Option | Group>(
+    (item) => {
+      if (item.type === "game") {
+        return { value: item.name, label: item.display };
+      }
+      // the custom-data folder is always appended below, even when empty
+      if (item.name === CUSTOM_DATA_PARENT) {
+        return [];
+      }
+      return {
+        group: t("gameMenu.parent." + item.name),
+        items: item.games.map((g) => ({ value: g.name, label: g.display })),
+      };
+    },
+  );
+  data.push({
+    group: t("gameMenu.parent.custom"),
+    items: [
+      ...customGames.map((g) => ({ value: g.name, label: g.display })),
+      { value: CREATE_CUSTOM_DATA, label: t("createCustomData") },
+    ],
   });
 
   return (
@@ -47,6 +77,10 @@ export function GameDataSelect(props: {
         value={currentValue || null}
         onChange={(name) => {
           if (!name) return;
+          if (name === CREATE_CUSTOM_DATA) {
+            openCustomDataDialog(true);
+            return;
+          }
           props.onGameSelect?.(name);
           setLastGameSelected(name);
           setInnerValue(name);

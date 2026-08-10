@@ -4,7 +4,7 @@ import { getAvailableLevels } from "../game-data-utils";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
-import { useStockGameData } from "../state/game-data.atoms";
+import { useGameDataForKey } from "../state/game-data.atoms";
 
 function getBounds(
   lowerIdx: number,
@@ -46,7 +46,7 @@ export function LvlRangeControls() {
   const upperBound = useConfigState((s) => s.upperBound);
   const useGranularLevels = useConfigState((s) => s.useGranularLevels);
   const gameKey = useConfigState((s) => s.gameKey);
-  const gameData = useStockGameData(gameKey);
+  const gameData = useGameDataForKey(gameKey);
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
   const availableLevels = useMemo(
     () => getAvailableLevels(gameData, useGranularLevels),

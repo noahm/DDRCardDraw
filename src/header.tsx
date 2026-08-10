@@ -6,9 +6,12 @@ import {
   IconHelp,
   IconAdjustments,
   IconActivityHeartbeat,
+  IconFileImport,
 } from "@tabler/icons-react";
 import { JSX, useCallback, useState } from "react";
+import { useSetAtom } from "jotai";
 import { About } from "./about";
+import { customDataDialogOpen } from "./state/game-data.atoms";
 import { HeaderControls } from "./controls";
 import { useIntl } from "./hooks/useIntl";
 import { LastUpdate } from "./last-update";
@@ -63,6 +66,7 @@ export function Header({
 
 export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
+  const openCustomDataDialog = useSetAtom(customDataDialogOpen);
   const [diagnosticsOpen, setDiagnosticsOpen] = useState(false);
   const roomName = useRoomName();
   const dispatch = useAppDispatch();
@@ -124,6 +128,12 @@ export function HamburgerMenu() {
               {t("party.diagnostics.menuItem")}
             </Menu.Item>
           </EventModeGated>
+          <Menu.Item
+            leftSection={<IconFileImport size={16} />}
+            onClick={() => openCustomDataDialog(true)}
+          >
+            {t("createCustomData")}
+          </Menu.Item>
           <Menu.Item
             leftSection={<IconInfoCircle size={16} />}
             onClick={() => setAboutOpen(true)}

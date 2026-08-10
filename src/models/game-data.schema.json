@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://data.ddr.tools/schema/v1.json",
+  "type": "object",
+  "title": "Game Data",
+  "description": "Describes the shape of data that any individual game data file will conform to",
+  "additionalProperties": false,
+  "required": ["songs", "meta", "defaults", "i18n"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "description": "Describes unique configuration options for this game",
+      "required": ["lastUpdated", "styles", "difficulties", "flags"],
+      "additionalProperties": false,
+      "properties": {
+        "menuParent": {
+          "type": "string",
+          "description": "If supplied, the parent folder name in the game select menu"
+        },
+        "lastUpdated": {
+          "type": "integer",
+          "description": "Unix timestamp of last update to this data file"
+        },
+        "styles": {
+          "$ref": "#/definitions/uniqueStringArr",
+          "description": "List of all play styles available"
+        },
+        "difficulties": {
+          "type": "array",
+          "description": "List of all difficulty classes available",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "A unique string key to identify this difficulty class"
+              },
+              "color": {
+                "type": "string",
+                "description": "A css color to use to visually define this difficulty class"
+              }
+            },
+            "required": ["key", "color"],
+            "additionalProperties": false
+          }
+        },
+        "flags": {
+          "$ref": "#/definitions/uniqueStringArr",
+          "description": "List of all special flags one might filter songs by"
+        },
+        "folders": {
+          "$ref": "#/definitions/uniqueStringArr",
+          "description": "List of all possible folders, in order"
+        },
+        "usesDrawGroups": {
+          "type": "boolean"
+        },
+        "granularTierResolution": {
+          "type": "integer",
+          "description": "Number of steps from one level to the next when using the `sanbaiTier` granular levels"
+        },
+        "cardVariant": {
+          "type": "string",
+          "description": "Specifies a unique card type which can show info tailored to a specific game"
+        }
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "description": "Defines the default configuration for this game",
+      "required": [
+        "style",
+        "difficulties",
+        "lowerLvlBound",
+        "upperLvlBound",
+        "flags"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "style": { "type": "string" },
+        "difficulties": { "$ref": "#/definitions/uniqueStringArr" },
+        "flags": { "$ref": "#/definitions/uniqueStringArr" },
+        "folders": { "$ref": "#/definitions/uniqueStringArr" },
+        "lowerLvlBound": { "type": "number" },
+        "upperLvlBound": { "type": "number" }
+      }
+    },
+    "i18n": {
+      "type": "object",
+      "description": "Set of localized values for display of any styles, difficulties, or flags. `en` is the canonical dictionary and must be complete; every other locale is a partial overlay whose missing keys fall back to `en` at runtime.",
+      "required": ["en"],
+      "properties": {
+        "en": { "$ref": "#/definitions/i18nDictRoot" }
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/i18nDictPartial"
+      }
+    },
+    "songs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Song",
+        "properties": {
+          "flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Holds info about a song that may make it worth filtering out"
+          },
+          "name": {
+            "type": "string"
+          },
+          "artist": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string"
+          },
+          "artist_translation": {
+            "type": "string"
+          },
+          "bpm": {
+            "type": "string"
+          },
+          "name_translation": {
+            "type": "string"
+          },
+          "search_hint": {
+            "type": "string",
+            "description": "Extra text to make this easier to find by text entry"
+          },
+          "date_added": {
+            "type": "string"
+          },
+          "charts": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/chart" }
+          },
+          "jacket": {
+            "type": "string"
+          },
+          "folder": {
+            "type": "string"
+          },
+          "saHash": {
+            "type": "string",
+            "description": "a unique identifier for a song"
+          },
+          "saIndex": {
+            "type": "string"
+          },
+          "remyLink": {
+            "type": "string"
+          },
+          "extras": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Holds cosmetic only info about a song"
+          }
+        },
+        "required": ["name", "artist", "bpm", "jacket", "charts"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "definitions": {
+    "chart": {
+      "type": "object",
+      "title": "Chart",
+      "additionalProperties": false,
+      "properties": {
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Holds info about a chart that may make it worth filtering out"
+        },
+        "style": { "type": "string", "description": "e.g. single/double" },
+        "diffClass": {
+          "type": "string",
+          "description": "e.g. expert/challenge"
+        },
+        "lvl": {
+          "type": "number",
+          "description": "in-game numeric rating"
+        },
+        "sanbaiTier": {
+          "type": "number",
+          "description": "a more granular rating sourced from 3icecream, calculated based on community performance"
+        },
+        "drawGroup": {
+          "type": "number",
+          "description": "tournament-specific grouping of charts (e.g. tier)"
+        },
+        "maxScore": {
+          "type": "number"
+        },
+        "jacket": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "bpm": {
+          "type": "string",
+          "description": "per-chart BPM range, if one applies"
+        },
+        "extras": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Holds cosmetic only info about a chart"
+        }
+      },
+      "required": ["lvl", "diffClass", "style"]
+    },
+    "uniqueStringArr": {
+      "type": "array",
+      "description": "An array of strings without any duplicate values",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "i18nDictRoot": {
+      "type": "object",
+      "title": "I18nDict",
+      "description": "The canonical (`en`) dictionary of localized strings; must define `name` and `$abbr`",
+      "required": ["name", "$abbr"],
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string" },
+          { "$ref": "#/definitions/i18nDictBranch" }
+        ]
+      }
+    },
+    "i18nDictPartial": {
+      "type": "object",
+      "title": "I18nDictPartial",
+      "description": "A non-`en` locale dictionary; any missing keys (including `name`/`$abbr`) fall back to the `en` dictionary at runtime, so none are required",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string" },
+          { "$ref": "#/definitions/i18nDictBranch" }
+        ]
+      }
+    },
+    "i18nDictBranch": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string" },
+          { "$ref": "#/definitions/i18nDictBranch" }
+        ]
+      }
+    }
+  }
+}
