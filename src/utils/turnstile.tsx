@@ -25,6 +25,8 @@ interface TurnstileApi {
     el: HTMLElement,
     opts: {
       sitekey: string;
+      appearance?: "always" | "execute" | "interaction-only";
+      size?: "normal" | "flexible" | "compact";
       callback: (token: string) => void;
       "expired-callback"?: () => void;
       "error-callback"?: () => void;
@@ -89,6 +91,13 @@ export function TurnstileWidget({
         if (cancelled || !window.turnstile) return;
         widgetId = window.turnstile.render(el, {
           sitekey: TURNSTILE_SITE_KEY,
+          // Stay hidden unless Cloudflare actually needs an interactive challenge from
+          // this session (requires the site key's dashboard widget mode to be Managed,
+          // not Invisible, or there's no interactive check left to reveal).
+          appearance: "interaction-only",
+          // Fixed footprint (Cloudflare's documented "normal" size: 300x65) so the
+          // container below can cap its box exactly, instead of guessing.
+          size: "normal",
           callback: (token) => onTokenRef.current(token),
           "expired-callback": () => onTokenRef.current(null),
           "error-callback": () => onTokenRef.current(null),

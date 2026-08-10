@@ -230,8 +230,15 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
             <code style={{ whiteSpace: "pre-wrap" }}>{error}</code>
           </Callout>
         )}
-        {/* No-op unless a Turnstile site key is configured at build time. */}
-        <TurnstileWidget key={widgetKey} onToken={setToken} />
+        {/* No-op unless a site key is configured. With `interaction-only` appearance
+            Cloudflare renders nothing (0x0) for most visitors and only grows the
+            widget in when it actually needs a challenge from this session — no
+            min-height/min-width here, since reserving space up front would defeat
+            that. `maxWidth`/`maxHeight` are just a ceiling matching Cloudflare's
+            documented "normal" box (300x65), a backstop rather than a real limit. */}
+        <div style={{ maxWidth: 300, maxHeight: 65, overflow: "hidden" }}>
+          <TurnstileWidget key={widgetKey} onToken={setToken} />
+        </div>
       </DialogBody>
       <DialogFooter
         actions={
