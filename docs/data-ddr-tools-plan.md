@@ -80,7 +80,9 @@ later.
     (cross-origin; validate, limits)  │                      ▼
                                       ▼
         ┌──────────────── headless CF Worker writes R2 ───────────────┐
-        │  bundles/{id}/data.json (+ jackets for ITG/stock)           │
+        │  custom/{id}/data.json  (M1+)                               │
+        │  stock/{game}/{hash}/data.json  (M3)                        │
+        │  jackets/{sha256} — flat, content-addressed (M2/M3)         │
         │     immutable, Cache-Control: max-age=1y                    │
         │  [ index.json manifest — M3 only ]                          │
         │  D1 row (kind, provenance, counts)                          │
@@ -88,16 +90,30 @@ later.
                          │
    returns { id, url }   ▼
    main app: load bundle into customDataCache, list under "Custom Data",
-        select it ▶ config.gameKey = "https://cdn.data.ddr.tools/bundles/{id}/data.json"
+        select it ▶ config.gameKey = "https://cdn.data.ddr.tools/custom/{id}/data.json"
         syncs via PartyKit ▶ every peer fetches the same immutable bundle
 ```
 
 ## Data model & addressing
 
-- **Content-addressed immutable bundles (all milestones).** A published set is written once under
-  `bundles/{id}/` (`id = nanoid(10)` for custom; a content hash for managed stock versions later).
-  Bundles are never mutated; a new version = a new id. `Cache-Control: public, max-age=31536000,
-immutable`.
+- **Bucket layout is split by top-level prefix, not mixed in one namespace.** One `rgt-bundles`
+  bucket, three prefixes:
+  ```
+  custom/{id}/data.json      # id = nanoid(10); user-published sets (M1: SMX edits)
+  custom/{id}/meta.json
+  stock/{game}/{hash}/...    # managed catalogs (M3); hash = content hash of the catalog
+  jackets/{sha256hex}        # flat content-addressed image pool, shared by custom + stock (M2/M3)
+  ```
+  The split matters for GC: `custom/` and `stock/` need different, independent lifecycle rules
+  (custom bundles are reference-aware-GC'd per the note below; managed stock bundles are never
+  deleted), and `jackets/` is a shared pool referenced from *both*, so it needs its own
+  reference-count sweep across every bundle that could point at a given hash. A single mixed
+  `bundles/` prefix would force every GC pass to consult D1's `kind` column before touching
+  anything; the prefix split makes "never touch stock" and "only sweep custom" true by
+  construction.
+- **Content-addressed immutable bundles (all milestones).** A published set is written once
+  (`id = nanoid(10)` for custom; a content hash for managed stock versions later). Bundles are
+  never mutated; a new version = a new id. `Cache-Control: public, max-age=31536000, immutable`.
   - `data.json` — a full `GameData` document conforming to `songs.schema.json` / `models/SongData.ts`.
     For SMX this is the stock catalog + grafted edits, `meta.cardVariant: "smx"`, the `edit`
     difficulty registered and selected by default.
@@ -112,8 +128,44 @@ immutable`.
     paths in `data.json`; the main app resolves them via `getJacketUrl` → `/jackets/smx/...` exactly
     as today. **No images are uploaded to the CDN, and no `getJacketUrl` change is needed.** (The
     tool's own preview can prefix paths with `https://ddr.tools` to render.)
-  - _M2/M3 (ITG, stock):_ jackets move to the CDN as **absolute** `https://cdn.data.ddr.tools/...` URLs;
-    `getJacketUrl` gains an absolute-URL passthrough.
+  - _M2/M3 (ITG, stock):_ jackets move to the CDN as **absolute**
+    `https://cdn.data.ddr.tools/jackets/{sha256hex}` URLs (content-addressed, no extension — the
+    R2 object's `Content-Type` is set on `PUT` and served through as-is); `getJacketUrl` gains an
+    absolute-URL passthrough.
+  - **Content-addressing dedupes real overlap for free.** Stock catalog versions that ship the
+    same art (e.g. DDR World vs. A20 Plus share most jackets) converge on one object automatically
+    when the import script hashes each file and only uploads on a cache miss (`HEAD` before
+    `PUT`) — no manual song-to-song jacket linking needed, each song's entry just stores the
+    resolved hash URL. For ITG (M2), where uploads are presigned direct-to-R2 `PUT`s from the
+    browser, the same `HEAD`-before-issuing-a-presigned-URL check means a pack that overlaps
+    heavily with previously-uploaded packs skips re-uploading those files entirely, not just
+    re-storing them — real bandwidth savings, not just storage savings. This only dedupes
+    byte-identical files; two independently resized/re-encoded copies of the same source art won't
+    collide (perceptual hashing would, but that's out of scope).
+- **Local jacket validation survives the move to CDN URLs — and gets stronger.** Today
+  `scripts/validate.mjs` checks `existsSync(jacketsDir + song.jacket)`: a relative path against a
+  local directory, entirely offline, fast. Once `song.jacket`/`chart.jacket` become absolute
+  `.../jackets/{sha256hex}` URLs that local directory relationship still holds — it just changes
+  from a path-existence check to a content-hash-membership check, which is strictly stronger
+  (a corrupted or swapped-in image at the right path silently passes `existsSync` today; it fails
+  a hash check immediately, since the reference *is* the file's own checksum).
+  - Validator hashes every file once under the local jacket source tree into a `Map<hash, path>`,
+    pulls the trailing path segment (the hash) back out of each `jacket` URL, and checks
+    membership. Zero network calls, same speed as today.
+  - This is the **same hashing pass** the M3 publish pipeline already does for its R2-diff step
+    (see Stock publish pipeline) — one piece of shared logic, not duplicated tooling. It also
+    produces the same "everything actually referenced" set the reference-aware GC sweep needs
+    (see Open questions / risks) — worth sharing that code too when GC gets built.
+  - Must hash the same pipeline stage that gets published (the final, resized `processed_img`
+    output), not raw pre-resize sources — the CDN key is the hash of what's actually uploaded.
+  - Cheap belt-and-suspenders addition: a JSON-Schema `pattern` on the jacket field
+    (`^https://cdn\.data\.ddr\.tools/jackets/[0-9a-f]{64}$` for M2/M3 entries) catches a
+    malformed or wrong-environment URL before it even reaches the hash lookup.
+  - **This requires the local jacket source tree to stay a complete, always-present mirror in the
+    repo** — not a staging area pruned after each publish to R2 — since local validation has
+    nothing to check against otherwise. One-directional storage cost (repo only grows), but
+    jackets are individually small and this keeps the fast offline dev loop; revisit with
+    `git-lfs` if the repo ever balloons, not by giving up local validation.
 - **Manifest (M3 only).** A mutable `index.json` maps managed game names → their current immutable
   `bundleUrl`, so stock catalogs update in place without an app deploy while the bundles they point at
   stay immutable. Custom bundles are **never** in the manifest — they're referenced by direct URL.
@@ -132,14 +184,54 @@ immutable`.
    assignment, immutable R2 write, D1 insert, `{ id, url }` response. Called **cross-origin** from the
    app, so CORS must allow the app origins. Reads are served directly by R2 via `cdn.data.ddr.tools`
    (no Worker on the hot path).
-3. **R2 bucket** behind `cdn.data.ddr.tools`: `bundles/{id}/*` objects get `max-age=1y, immutable` and
-   permissive CORS (`ddr.tools` + `data.ddr.tools`, or `*`).
+3. **R2 bucket** behind `cdn.data.ddr.tools`: `custom/{id}/*` objects (later also `stock/` and
+   `jackets/`, see Data model & addressing) get `max-age=1y, immutable` and permissive CORS
+   (`ddr.tools` + `data.ddr.tools`, or `*`).
 4. **Metadata (D1 preferred over KV)** table `datasets(id, kind, title, base_game, schema_version,
 song_count, chart_count, size_bytes, created_at, source_json)` (`kind` ∈ {custom, managed}).
 
 **Added later:** a privileged `POST /api/managed` path + `index.json` manifest (M3 stock migration),
 and a stock import pipeline that runs `scripts/import-*.mts` to publish catalog bundles + jackets
 (M3). ITG image upload infra — presigned direct-to-R2 PUTs (M2).
+
+## Stock publish pipeline (M3)
+
+Import and publish are two independently-triggered phases — only the second is automatable.
+
+- **Import stays manual/local, unchanged.** Today's `scripts/import-*.mts` (moving from `ddr.tools`
+  into this repo per Shared code between repos) are run by hand as they are now — several are
+  inherently interactive (SDVX needs a local arcade `music_db.xml` path passed as an arg, Ongeki
+  needs a FlareSolverr instance for scraping, jacket collection is a manual copy step). CI has no
+  business trying to re-run scraping/arcade-data imports headlessly. The maintainer runs the
+  import, gets updated catalog JSON + jacket images as plain files, and commits/pushes them.
+- **That push triggers the publish job** (GitHub Actions, `paths:`-filtered to the data-source
+  directories so unrelated Worker code changes don't trigger it):
+  1. Walk the committed catalog + jacket source files, hash each candidate object (sha256; cheap —
+     seconds even over hundreds of MB of images).
+  2. Bulk-check which hashes **already exist** in R2 via `POST /api/managed/check` (`{ hashes[] }`
+     → `{ missing[] }`), one or a few D1 `SELECT hash FROM objects WHERE hash IN (...)` queries
+     (chunked to D1's bound-parameter limit) — not a `HEAD` per file. Mirrors the existing
+     `datasets` D1 table pattern; add a parallel `objects(hash, kind, size_bytes, content_type,
+     first_seen_at)` table covering `stock`/`jackets`.
+  3. Upload only the missing hashes via `POST /api/managed/objects` (one or small batches per
+     call); Worker writes R2 + inserts the D1 row.
+  4. Only once every object a new stock bundle references (its `data.json` + every jacket it
+     points at) is confirmed present does CI call `POST /api/managed/publish` (`{ game,
+     bundleHash }`); the Worker re-verifies presence, then atomically repoints `index.json` — the
+     one mutable pointer in the system, updated last so a partial-failure run never leaves the
+     picker pointing at incomplete data.
+- **Writes go through the Worker, not CI-direct-to-R2/D1.** Same reasoning as centralizing custom
+  writes behind `/api/datasets`: `index.json` is the highest-blast-radius mutable state here, so
+  exactly one server-validated code path should be able to touch it regardless of caller. All
+  three `/api/managed/*` endpoints are bearer-token-gated (a CI-only secret — trusted-CI auth, not
+  Turnstile's bot mitigation).
+- **Idempotent and self-healing by construction.** Because every key is a content hash, there's no
+  "last deployed sha" state to track or get out of sync — a retried/failed run just re-diffs the
+  current tree against current D1 state and uploads whatever's still missing.
+- **Rollback is just repointing.** Since bundles are immutable and `index.json` is the only mutable
+  piece, reverting a bad stock update never needs a re-upload — point the game back at the
+  previous bundle hash (worth having the Worker log prior values on each `publish` call so this is
+  a lookup, not a guess).
 
 ## Shared code between repos
 
@@ -243,7 +335,7 @@ object removed from R2 out-of-band. CORS limited to the two app origins where pr
 - **Service unit:** publish a known SMX set (codes incl. a bogus one) via `wrangler dev` against
   local R2/D1; assert `data.json` validates against `songs.schema.json`, `meta.json` counts are right,
   and a second publish yields a new id (immutability).
-- **CDN:** `curl cdn.data.ddr.tools/bundles/{id}/data.json` → 200, long `Cache-Control`, CORS present.
+- **CDN:** `curl cdn.data.ddr.tools/custom/{id}/data.json` → 200, long `Cache-Control`, CORS present.
 - **In-app authoring:** with bundled stock data still in place, open _Create custom data…_, paste codes
   (incl. a bogus one), publish, and draw from the result; confirm the cross-origin `POST` succeeds
   (CORS allows the app origin, incl. the local dev origin) and that stock games still load normally (the
