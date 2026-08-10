@@ -77,7 +77,11 @@ export function TurnstileWidget({
   const containerRef = useRef<HTMLDivElement>(null);
   // hold the latest callback so the render effect can stay mount-only
   const onTokenRef = useRef(onToken);
-  onTokenRef.current = onToken;
+  // assigned in an effect rather than during render: writing a ref while
+  // rendering is not safe under concurrent rendering, and lint rejects it
+  useEffect(() => {
+    onTokenRef.current = onToken;
+  }, [onToken]);
 
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY) return;
