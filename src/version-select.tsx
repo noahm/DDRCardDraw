@@ -78,7 +78,7 @@ export function GameDataSelect(props: {
                 {customGames.map((g) => listProps.renderItem(g, g.index))}
                 <MenuItem
                   icon={<Plus />}
-                  text="Create custom data…"
+                  text={t("createCustomData")}
                   onClick={() => openCustomDataDialog(true)}
                 />
               </MenuItem>

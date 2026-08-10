@@ -194,6 +194,11 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
   return (
     <>
       <DialogBody>
+        <Text tagName="p">
+          Edit charts are merged with a copy of the stock StepManiaX data and
+          added to the game data picker as a new game for this event. It
+          disappears once no longer used by any config.
+        </Text>
         <FormGroup
           label="Data set name"
           helperText="Shown in the game data picker."
@@ -248,7 +253,9 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
               icon={<Import />}
               onClick={publish}
               loading={publishing}
-              disabled={fetching || !foundCount || (!!TURNSTILE_SITE_KEY && !token)}
+              disabled={
+                fetching || !foundCount || (!!TURNSTILE_SITE_KEY && !token)
+              }
             >
               {`Publish${foundCount ? ` ${foundCount}` : ""}`}
             </Button>

@@ -115,7 +115,7 @@ export function HamburgerMenu() {
       <MenuItem
         icon={<Import />}
         onClick={() => openCustomDataDialog(true)}
-        text="Import StepManiaX edits…"
+        text={t("createCustomData")}
       />
       <MenuItem
         icon={<InfoSign />}
