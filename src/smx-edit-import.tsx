@@ -31,8 +31,6 @@ import { useSetLastConfigSelected } from "./state/config.atoms";
 import type { GameData } from "./models/SongData";
 import { toaster } from "./toaster";
 
-const DEFAULT_SET_NAME = "SMX with Edits!";
-
 /**
  * App-root host for the custom-data dialog, driven by the global
  * `customDataDialogOpen` atom so any entry point (hamburger menu, the game-data
@@ -81,7 +79,7 @@ export function SmxEditImport({
  * URL, a reference every synced peer resolves to the same immutable bytes.
  */
 function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
-  const [name, setName] = useState(DEFAULT_SET_NAME);
+  const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [fetching, setFetching] = useState(false);
   const [fetched, setFetched] = useState<FetchEditsResult | null>(null);
@@ -138,11 +136,7 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
     setError(null);
     try {
       const base = await loadBaseSmxData();
-      const result = buildEditDataFile(
-        base,
-        fetched.charts,
-        name.trim() || DEFAULT_SET_NAME,
-      );
+      const result = buildEditDataFile(base, fetched.charts, name.trim());
       const { url } = await publishBundle(
         result.data,
         {
@@ -162,7 +156,7 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
       // Create a config pointed at the freshly published bundle (its `gameKey` is the
       // immutable URL), select it, and open its config page.
       const newConfig = await dispatch(
-        createConfigFromInputs(name.trim() || DEFAULT_SET_NAME, url),
+        createConfigFromInputs(name.trim(), url),
       );
       // Remember it as the default selection for other entry points; the config page
       // itself reads the id straight from the URL below.
@@ -201,6 +195,7 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
           <InputGroup
             value={name}
             onChange={(e) => setName(e.currentTarget.value)}
+            placeholder="SMX with Edits!"
           />
         </FormGroup>
         <FormGroup
@@ -252,7 +247,10 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
               onClick={publish}
               loading={publishing}
               disabled={
-                fetching || !foundCount || (!!TURNSTILE_SITE_KEY && !token)
+                !name ||
+                fetching ||
+                !foundCount ||
+                (!!TURNSTILE_SITE_KEY && !token)
               }
             >
               {`Publish${foundCount ? ` ${foundCount}` : ""}`}
