@@ -7,6 +7,7 @@
     },
     "clearDrawings": "Clear Draws",
     "clearDrawingsConfirm": "This will clear all songs drawn so far. Confirm?",
+    "createCustomData": "Import StepManiaX edits…",
     "credits": "Credits",
     "help": "Help",
     "toggleTheme": "Toggle Theme",
@@ -16,7 +17,8 @@
       "parent": {
         "more": "More Games",
         "events": "Event Packs",
-        "imported": "Local Imports"
+        "imported": "Local Imports",
+        "custom": "Custom Data"
       }
     },
     "showSongPool": "Show eligible charts",
@@ -137,6 +139,7 @@
   "ja": {
     "clearDrawings": "全消去",
     "clearDrawingsConfirm": "これまでに引いた譜面をすべて消去します。よろしいですか？",
+    "createCustomData": "StepManiaXの編集をインポート…",
     "credits": "クレジット",
     "help": "使い方 (English)",
     "toggleTheme": "テーマを切り替える",
@@ -146,7 +149,8 @@
       "parent": {
         "more": "その他",
         "events": "イベント",
-        "imported": "ローカルインポート"
+        "imported": "ローカルインポート",
+        "custom": "カスタムデータ"
       }
     },
     "showSongPool": "ドロー対象となる譜面を表示",
