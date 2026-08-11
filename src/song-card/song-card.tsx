@@ -25,12 +25,14 @@ import { baseChartValues, CardContentsProps } from "./variants";
 
 /**
  * The song search omnibar is only reachable through a card's action menu, so it
- * loads on demand. Opening that menu warms the chunk, which means it's already
- * in flight by the time anyone picks a player.
+ * loads on demand. It gets mounted (closed) as soon as that menu opens rather
+ * than when a pocket pick starts, so that its own `isOpen` prop still drives
+ * the overlay's enter and exit transitions -- conditionally rendering it on
+ * `pocketPickPendingForPlayer` would tear the overlay out of the tree before it
+ * could animate closed.
  */
-const importSongSearch = () => import("../song-search");
 const SongSearch = lazy(() =>
-  importSongSearch().then((m) => ({ default: m.SongSearch })),
+  import("../song-search").then((m) => ({ default: m.SongSearch })),
 );
 
 type Player = number;
@@ -98,8 +100,9 @@ export function SongCardBase(props: Props) {
   const hideVetos = useConfigState((s) => s.hideVetos);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
+  const [songSearchMounted, setSongSearchMounted] = useState(false);
   const showMenu = () => {
-    void importSongSearch();
+    setSongSearchMounted(true);
     setContextMenuOpen(true);
   };
   const hideMenu = () => setContextMenuOpen(false);
@@ -212,10 +215,10 @@ export function SongCardBase(props: Props) {
       }
       style={jacketBg}
     >
-      {!!pocketPickPendingForPlayer && (
+      {songSearchMounted && (
         <Suspense fallback={null}>
           <SongSearch
-            isOpen
+            isOpen={!!pocketPickPendingForPlayer}
             onSongSelect={(song, chart) => {
               if (actionsEnabled && chart) {
                 iconCallbacks.onReplace(
