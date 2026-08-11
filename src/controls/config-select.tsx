@@ -1,25 +1,22 @@
 import {
+  ActionIcon,
   Button,
-  ButtonGroup,
   Card,
   Checkbox,
-  Dialog,
-  DialogBody,
-  DialogFooter,
-  HTMLSelect,
+  Group,
   Menu,
-  MenuItem,
-  Popover,
-} from "@blueprintjs/core";
+  Modal,
+  NativeSelect,
+} from "@mantine/core";
 import {
-  ThAdd,
-  Duplicate,
-  FloppyDisk,
-  Import,
-  Trash,
-  More,
-  DocumentShare,
-} from "@blueprintjs/icons";
+  IconTablePlus,
+  IconCopy,
+  IconDeviceFloppy,
+  IconFileImport,
+  IconTrash,
+  IconDots,
+  IconShare2,
+} from "@tabler/icons-react";
 import { useState } from "react";
 import { useAppDispatch, useAppState, useAppStore } from "../state/store";
 import styles from "./config-select.css";
@@ -30,7 +27,7 @@ import { configSlice } from "../state/config.slice";
 import { loadConfigs, saveConfig, saveConfigs } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
 import { useGameDataForKey } from "../state/game-data.atoms";
-import { toaster } from "../toaster";
+import { notify } from "../notify";
 
 function getEmptyItemLabel(empty: boolean) {
   if (!empty) return "select a config";
@@ -63,7 +60,7 @@ export function ConfigSelect(props: {
   const isEmpty = !configIds.length;
 
   return (
-    <HTMLSelect
+    <NativeSelect
       disabled={isEmpty}
       value={props.selectedId || ""}
       onChange={(e) => props.onChange(e.currentTarget.value)}
@@ -74,7 +71,7 @@ export function ConfigSelect(props: {
       {configIds.map((configId) => (
         <ConfigSelectEntry key={configId} configId={configId} />
       ))}
-    </HTMLSelect>
+    </NativeSelect>
   );
 }
 
@@ -122,9 +119,9 @@ export function ConfigList(props: {
         changeConfig(last.id);
       }
       if (configs.length > 1 || updated) {
-        toaster.show({
+        notify.show({
           message: importToastMessage(configs.length, updated),
-          icon: "import",
+          icon: <IconFileImport />,
           intent: "success",
         });
       }
@@ -134,11 +131,14 @@ export function ConfigList(props: {
     <div className={styles.listContainer}>
       {!isEmpty && (
         <Button
-          variant="minimal"
-          icon={<FloppyDisk />}
-          text="Export configs…"
+          variant="subtle"
+          color="gray"
+          justify="flex-start"
+          leftSection={<IconDeviceFloppy size={16} />}
           onClick={() => setExportOpen(true)}
-        />
+        >
+          Export configs…
+        </Button>
       )}
       {configIds.map((cid, idx) => (
         <ConfigListEntry
@@ -149,25 +149,31 @@ export function ConfigList(props: {
           selected={props.selectedId === cid}
         />
       ))}
-      <Card compact style={{ opacity: 0.6 }}>
+      <Card withBorder padding="sm" style={{ opacity: 0.6 }}>
         <h2>Create config…</h2>
-        <ButtonGroup fill>
+        <Button.Group orientation="vertical">
           <Button
-            icon={<Import />}
-            text="From JSON"
+            variant="default"
+            justify="flex-start"
+            leftSection={<IconFileImport size={16} />}
             title="Import one or more configs from a file"
             onClick={importConfigs}
-          />
+          >
+            From JSON
+          </Button>
           <Button
-            icon={<ThAdd />}
-            text="From scratch"
+            variant="default"
+            justify="flex-start"
+            leftSection={<IconTablePlus size={16} />}
             onClick={() =>
               dispatch(createNewConfig(roomName)).then((c) =>
                 changeConfig(c.id),
               )
             }
-          />
-        </ButtonGroup>
+          >
+            From scratch
+          </Button>
+        </Button.Group>
       </Card>
       <BatchExportDialog
         isOpen={exportOpen}
@@ -179,13 +185,9 @@ export function ConfigList(props: {
 
 function BatchExportDialog(props: { isOpen: boolean; onClose: () => void }) {
   return (
-    <Dialog
-      isOpen={props.isOpen}
-      title="Export configs"
-      onClose={props.onClose}
-    >
+    <Modal opened={props.isOpen} title="Export configs" onClose={props.onClose}>
       {props.isOpen && <BatchExportForm onClose={props.onClose} />}
-    </Dialog>
+    </Modal>
   );
 }
 
@@ -223,34 +225,30 @@ function BatchExportForm(props: { onClose: () => void }) {
 
   return (
     <>
-      <DialogBody>
-        <Checkbox
-          checked={allSelected}
-          indeterminate={!allSelected && selectedIds.size > 0}
-          onChange={toggleAll}
-          label="Select all"
-        />
-        {(configIds as string[]).map((cid) => (
-          <BatchExportRow
-            key={cid}
-            configId={cid}
-            checked={selectedIds.has(cid)}
-            onToggle={toggle}
-          />
-        ))}
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <Button
-            intent="primary"
-            icon={<FloppyDisk />}
-            disabled={!selectedIds.size}
-            onClick={handleExport}
-          >
-            Export {selectedIds.size}
-          </Button>
-        }
+      <Checkbox
+        checked={allSelected}
+        indeterminate={!allSelected && selectedIds.size > 0}
+        onChange={toggleAll}
+        my={4}
+        label="Select all"
       />
+      {(configIds as string[]).map((cid) => (
+        <BatchExportRow
+          key={cid}
+          configId={cid}
+          checked={selectedIds.has(cid)}
+          onToggle={toggle}
+        />
+      ))}
+      <Group justify="flex-end" mt="md">
+        <Button
+          leftSection={<IconDeviceFloppy size={16} />}
+          disabled={!selectedIds.size}
+          onClick={handleExport}
+        >
+          Export {selectedIds.size}
+        </Button>
+      </Group>
     </>
   );
 }
@@ -269,6 +267,7 @@ function BatchExportRow(props: {
     <Checkbox
       checked={props.checked}
       onChange={() => props.onToggle(props.configId)}
+      my={4}
       label={`${config.name} (${gameName}, ${config.lowerBound}-${config.upperBound})`}
     />
   );
@@ -292,10 +291,15 @@ function ConfigListEntry(props: {
     : null;
   return (
     <Card
-      interactive
+      withBorder
+      padding="sm"
       onClick={(e) => e.defaultPrevented || props.selectConfig(props.configId)}
-      selected={props.selected}
-      compact
+      style={{
+        cursor: "pointer",
+        borderColor: props.selected
+          ? "var(--mantine-primary-color-filled)"
+          : undefined,
+      }}
     >
       {props.selected && (
         <ConfigActionsMenu
@@ -347,40 +351,51 @@ function ConfigActionsMenu(props: {
   onDuplicate(): void;
   onDelete(): void;
 }) {
-  const menu = (
-    <Menu>
-      <MenuItem
-        icon={<FloppyDisk />}
-        text="Export to JSON"
-        onClick={props.onExport}
-      />
-      <MenuItem
-        icon={<DocumentShare />}
-        text="Share preview link"
-        onClick={props.onShareLink}
-      />
-      <MenuItem
-        icon={<Duplicate />}
-        text="Duplicate"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onDuplicate();
-        }}
-      />
-      <MenuItem
-        icon={<Trash />}
-        text="Delete"
-        intent="danger"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onDelete();
-        }}
-      />
-    </Menu>
-  );
   return (
-    <Popover className={styles.actionButtons} content={menu}>
-      <Button icon={<More />} />
-    </Popover>
+    <Menu position="bottom-end">
+      <Menu.Target>
+        <ActionIcon
+          variant="default"
+          className={styles.actionButtons}
+          onClick={(e) => e.preventDefault()}
+          aria-label="Config actions"
+        >
+          <IconDots size={16} />
+        </ActionIcon>
+      </Menu.Target>
+      <Menu.Dropdown>
+        <Menu.Item
+          leftSection={<IconDeviceFloppy size={16} />}
+          onClick={props.onExport}
+        >
+          Export to JSON
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconShare2 size={16} />}
+          onClick={props.onShareLink}
+        >
+          Share preview link
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconCopy size={16} />}
+          onClick={(e) => {
+            e.preventDefault();
+            props.onDuplicate();
+          }}
+        >
+          Duplicate
+        </Menu.Item>
+        <Menu.Item
+          color="red"
+          leftSection={<IconTrash size={16} />}
+          onClick={(e) => {
+            e.preventDefault();
+            props.onDelete();
+          }}
+        >
+          Delete
+        </Menu.Item>
+      </Menu.Dropdown>
+    </Menu>
   );
 }

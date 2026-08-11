@@ -1,15 +1,13 @@
 import {
+  Alert,
   Button,
-  Callout,
-  Dialog,
-  DialogBody,
-  DialogFooter,
-  FormGroup,
-  InputGroup,
-  TextArea,
+  Group,
+  Modal,
   Text,
-} from "@blueprintjs/core";
-import { Import } from "@blueprintjs/icons";
+  Textarea,
+  TextInput,
+} from "@mantine/core";
+import { IconFileImport } from "@tabler/icons-react";
 import { useEffect, useMemo, useState } from "react";
 import { useAtom } from "jotai";
 import {
@@ -29,7 +27,7 @@ import { useAppDispatch } from "./state/store";
 import { createConfigFromInputs } from "./state/thunks";
 import { useSetLastConfigSelected } from "./state/config.atoms";
 import type { GameData } from "./models/SongData";
-import { toaster } from "./toaster";
+import { notify } from "./notify";
 
 /**
  * App-root host for the custom-data dialog, driven by the global
@@ -61,14 +59,18 @@ export function SmxEditImport({
   onClose: (this: void) => void;
 }) {
   return (
-    <Dialog
-      isOpen={isOpen}
-      title="Import StepManiaX Edits"
-      icon={<Import />}
+    <Modal
+      opened={isOpen}
       onClose={onClose}
+      title={
+        <Group gap="xs">
+          <IconFileImport size={18} />
+          Import StepManiaX Edits
+        </Group>
+      }
     >
       {isOpen && <EditImportForm onClose={onClose} />}
-    </Dialog>
+    </Modal>
   );
 }
 
@@ -164,9 +166,9 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
       const skipped = result.unknownSongs.length
         ? ` ${result.unknownSongs.length} skipped — song not in the StepManiaX data yet.`
         : "";
-      toaster.show({
+      notify.show({
         intent: result.unknownSongs.length ? "warning" : "success",
-        icon: "import",
+        icon: <IconFileImport />,
         message:
           `Published ${result.matched} edit${result.matched === 1 ? "" : "s"} — ` +
           `opened a new config for it.${skipped}`,
@@ -187,78 +189,67 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
   const foundCount = fetched?.charts.length ?? 0;
   return (
     <>
-      <DialogBody>
-        <FormGroup
-          label="Data set name"
-          helperText="Shown in the game data picker."
-        >
-          <InputGroup
-            value={name}
-            onChange={(e) => setName(e.currentTarget.value)}
-            placeholder="SMX with Edits!"
-          />
-        </FormGroup>
-        <FormGroup
-          label="Paste edit links or codes"
-          helperText="Edit charts are merged with a copy of the stock StepManiaX data and added as new game data for this event. It will disappear when left unused by all configs."
-        >
-          <TextArea
-            fill
-            style={{ height: "10em" }}
-            value={text}
-            placeholder={"Z8Z-W77\nhttps://edits.stepmaniax.com/W15-W2P"}
-            onChange={(e) => setText(e.currentTarget.value)}
-          />
-        </FormGroup>
-        <Text tagName="p">
-          {codes.length
-            ? `${codes.length} unique code${codes.length === 1 ? "" : "s"} detected. `
-            : "No codes detected yet. "}
-          {fetching
-            ? "Looking them up…"
-            : fetched
-              ? `Found info for ${foundCount} chart${foundCount === 1 ? "" : "s"}.` +
-                (fetched.notFound.length
-                  ? ` ${fetched.notFound.length} not found.`
-                  : "")
-              : null}
-        </Text>
-        {error && (
-          <Callout intent="danger" title="Something went wrong">
-            <code style={{ whiteSpace: "pre-wrap" }}>{error}</code>
-          </Callout>
-        )}
-        {/* No-op unless a site key is configured. With `interaction-only` appearance
+      <TextInput
+        label="Data set name"
+        description="Shown in the game data picker."
+        mb="sm"
+        value={name}
+        onChange={(e) => setName(e.currentTarget.value)}
+        placeholder="SMX with Edits!"
+      />
+      <Textarea
+        label="Paste edit links or codes"
+        description="Edit charts are merged with a copy of the stock StepManiaX data and added as new game data for this event. It will disappear when left unused by all configs."
+        mb="sm"
+        autosize
+        minRows={6}
+        maxRows={10}
+        value={text}
+        placeholder={"Z8Z-W77\nhttps://edits.stepmaniax.com/W15-W2P"}
+        onChange={(e) => setText(e.currentTarget.value)}
+      />
+      <Text component="p">
+        {codes.length
+          ? `${codes.length} unique code${codes.length === 1 ? "" : "s"} detected. `
+          : "No codes detected yet. "}
+        {fetching
+          ? "Looking them up…"
+          : fetched
+            ? `Found info for ${foundCount} chart${foundCount === 1 ? "" : "s"}.` +
+              (fetched.notFound.length
+                ? ` ${fetched.notFound.length} not found.`
+                : "")
+            : null}
+      </Text>
+      {error && (
+        <Alert color="red" title="Something went wrong" mb="sm">
+          <code style={{ whiteSpace: "pre-wrap" }}>{error}</code>
+        </Alert>
+      )}
+      {/* No-op unless a site key is configured. With `interaction-only` appearance
             Cloudflare renders nothing (0x0) for most visitors and only grows the
             widget in when it actually needs a challenge from this session — no
             min-height/min-width here, since reserving space up front would defeat
             that. `maxWidth`/`maxHeight` are just a ceiling matching Cloudflare's
             documented "normal" box (300x65), a backstop rather than a real limit. */}
-        <div style={{ maxWidth: 300, maxHeight: 65, overflow: "hidden" }}>
-          <TurnstileWidget key={widgetKey} onToken={setToken} />
-        </div>
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              intent="primary"
-              icon={<Import />}
-              onClick={publish}
-              loading={publishing}
-              disabled={
-                !name ||
-                fetching ||
-                !foundCount ||
-                (!!TURNSTILE_SITE_KEY && !token)
-              }
-            >
-              {`Publish${foundCount ? ` ${foundCount}` : ""}`}
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
+      <div style={{ maxWidth: 300, maxHeight: 65, overflow: "hidden" }}>
+        <TurnstileWidget key={widgetKey} onToken={setToken} />
+      </div>
+      <Group justify="flex-end" gap="xs" mt="md">
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
+        <Button
+          leftSection={<IconFileImport size={16} />}
+          onClick={publish}
+          loading={publishing}
+          disabled={
+            !name || fetching || !foundCount || (!!TURNSTILE_SITE_KEY && !token)
+          }
+        >
+          {`Publish${foundCount ? ` ${foundCount}` : ""}`}
+        </Button>
+      </Group>
     </>
   );
 }

@@ -1,8 +1,7 @@
 import { useCallback, Fragment } from "react";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
-import { Icon } from "@blueprintjs/core";
-import { CaretLeft, CaretRight } from "@blueprintjs/icons";
+import { IconCaretLeft, IconCaretRight } from "@tabler/icons-react";
 import { useAtomValue } from "jotai";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useAppDispatch } from "../state/store";
@@ -70,28 +69,20 @@ function Versus() {
   const players = useDrawing((s) => s.meta.players);
   return (
     <div className={styles.versus} onClick={ipp}>
-      <Icon
-        icon={
-          <CaretLeft
-            style={{
-              visibility:
-                priorityPlayer === players[0]?.id ? "visible" : "hidden",
-              verticalAlign: "middle",
-            }}
-          />
-        }
+      <IconCaretLeft
+        size={16}
+        style={{
+          visibility: priorityPlayer === players[0]?.id ? "visible" : "hidden",
+          verticalAlign: "middle",
+        }}
       />
       {" vs "}
-      <Icon
-        icon={
-          <CaretRight
-            style={{
-              visibility:
-                priorityPlayer === players[1]?.id ? "visible" : "hidden",
-              verticalAlign: "middle",
-            }}
-          />
-        }
+      <IconCaretRight
+        size={16}
+        style={{
+          visibility: priorityPlayer === players[1]?.id ? "visible" : "hidden",
+          verticalAlign: "middle",
+        }}
       />
     </div>
   );

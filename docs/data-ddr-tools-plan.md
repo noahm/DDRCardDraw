@@ -106,7 +106,7 @@ later.
   ```
   The split matters for GC: `custom/` and `stock/` need different, independent lifecycle rules
   (custom bundles are reference-aware-GC'd per the note below; managed stock bundles are never
-  deleted), and `jackets/` is a shared pool referenced from *both*, so it needs its own
+  deleted), and `jackets/` is a shared pool referenced from _both_, so it needs its own
   reference-count sweep across every bundle that could point at a given hash. A single mixed
   `bundles/` prefix would force every GC pass to consult D1's `kind` column before touching
   anything; the prefix split makes "never touch stock" and "only sweep custom" true by
@@ -148,7 +148,7 @@ later.
   `.../jackets/{sha256hex}` URLs that local directory relationship still holds — it just changes
   from a path-existence check to a content-hash-membership check, which is strictly stronger
   (a corrupted or swapped-in image at the right path silently passes `existsSync` today; it fails
-  a hash check immediately, since the reference *is* the file's own checksum).
+  a hash check immediately, since the reference _is_ the file's own checksum).
   - Validator hashes every file once under the local jacket source tree into a `Map<hash, path>`,
     pulls the trailing path segment (the hash) back out of each `jacket` URL, and checks
     membership. Zero network calls, same speed as today.
@@ -212,12 +212,12 @@ Import and publish are two independently-triggered phases — only the second is
      → `{ missing[] }`), one or a few D1 `SELECT hash FROM objects WHERE hash IN (...)` queries
      (chunked to D1's bound-parameter limit) — not a `HEAD` per file. Mirrors the existing
      `datasets` D1 table pattern; add a parallel `objects(hash, kind, size_bytes, content_type,
-     first_seen_at)` table covering `stock`/`jackets`.
+first_seen_at)` table covering `stock`/`jackets`.
   3. Upload only the missing hashes via `POST /api/managed/objects` (one or small batches per
      call); Worker writes R2 + inserts the D1 row.
   4. Only once every object a new stock bundle references (its `data.json` + every jacket it
      points at) is confirmed present does CI call `POST /api/managed/publish` (`{ game,
-     bundleHash }`); the Worker re-verifies presence, then atomically repoints `index.json` — the
+bundleHash }`); the Worker re-verifies presence, then atomically repoints `index.json` — the
      one mutable pointer in the system, updated last so a partial-failure run never leaves the
      picker pointing at incomplete data.
 - **Writes go through the Worker, not CI-direct-to-R2/D1.** Same reasoning as centralizing custom

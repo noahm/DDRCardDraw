@@ -1,17 +1,10 @@
-import {
-  Button,
-  Classes,
-  Dialog,
-  DialogFooter,
-  FormGroup,
-  Switch,
-} from "@blueprintjs/core";
+import { Button, Group, Modal, Skeleton, Switch } from "@mantine/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { PackWithSongs } from "simfile-parser/browser";
 import { getDataFileFromPack } from "./utils/itg-import";
 import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
-import { Import } from "@blueprintjs/icons";
+import { IconFileImport } from "@tabler/icons-react";
 import { useSetAtom } from "jotai";
 import { customDataCache } from "./state/game-data.atoms";
 
@@ -144,34 +137,32 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     onSave();
   }, [parsedPack, derivedData, setCustomData, onSave]);
 
-  const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
+  const stillLoading = !derivedData;
 
   let body = (
     <>
-      <p className={maybeSkeleton}>
-        Pack name: {parsedPack ? parsedPack.name : "to be determined"}
-      </p>
-      <FormGroup>
+      <Skeleton visible={stillLoading}>
+        <p>Pack name: {parsedPack ? parsedPack.name : "to be determined"}</p>
         <Switch
-          className={maybeSkeleton}
           label="Pack uses tiers"
+          mb="sm"
           checked={tiered}
           onChange={() => setTiered((prev) => !prev)}
         />
-      </FormGroup>
-      <dl className={maybeSkeleton}>
-        <dt>Total Songs</dt>
-        <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
-        <dt>Total Charts</dt>
-        <dd>
-          {derivedData
-            ? derivedData.songs.reduce(
-                (total, item) => total + item.charts.length,
-                0,
-              )
-            : "??"}
-        </dd>
-      </dl>
+        <dl>
+          <dt>Total Songs</dt>
+          <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
+          <dt>Total Charts</dt>
+          <dd>
+            {derivedData
+              ? derivedData.songs.reduce(
+                  (total, item) => total + item.charts.length,
+                  0,
+                )
+              : "??"}
+          </dd>
+        </dl>
+      </Skeleton>
     </>
   );
 
@@ -185,28 +176,21 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   }
 
   return (
-    <Dialog
-      isOpen={!!droppedFolder}
-      title="Local Data Import"
-      onClose={onClose}
-    >
+    <Modal opened={!!droppedFolder} title="Local Data Import" onClose={onClose}>
       <div style={{ padding: "10px" }}>{body}</div>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              disabled={!!maybeSkeleton}
-              intent="primary"
-              onClick={handleConfirm}
-              loading={saving}
-              icon={<Import />}
-            >
-              Import
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
-    </Dialog>
+      <Group justify="flex-end" gap="xs">
+        <Button
+          disabled={stillLoading}
+          onClick={handleConfirm}
+          loading={saving}
+          leftSection={<IconFileImport size={16} />}
+        >
+          Import
+        </Button>
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
+      </Group>
+    </Modal>
   );
 }
