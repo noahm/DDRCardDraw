@@ -10,6 +10,7 @@ import {
   HTMLSelect,
   Icon,
   NumericInput,
+  SegmentedControl,
   Tab,
   Tabs,
 } from "@blueprintjs/core";
@@ -36,11 +37,13 @@ import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
 import { useRemotePeers } from "../tournament-mode/remote-peers";
 import { NetworkingNotice } from "./networking-notice";
 import { WeightsControls } from "./controls-weights";
+import { ManualBucketControls } from "./controls-buckets";
 import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { LvlRangeControls } from "./lvl-range";
+import { BucketMode, seedManualBuckets } from "../draw-buckets";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -250,12 +253,10 @@ function GeneralSettings() {
   const gameData = useDrawState((s) => s.gameData);
   const configState = useConfigState();
   const {
-    useWeights,
+    bucketMode,
     constrainPocketPicks,
     orderByAction,
     hideVetos,
-    lowerBound,
-    upperBound,
     update: updateState,
     difficulties: selectedDifficulties,
     style: selectedStyle,
@@ -284,6 +285,17 @@ function GeneralSettings() {
   const { styles: gameStyles } = gameData.meta;
 
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
+
+  function setBucketMode(bucketMode: BucketMode) {
+    updateState((prev) => {
+      if (bucketMode !== "manual" || prev.manualBuckets.length) {
+        return { bucketMode };
+      }
+      // carry whatever layout they already had into the manual editor, rather
+      // than dropping them into an empty list
+      return { bucketMode, manualBuckets: seedManualBuckets(prev, gameData) };
+    });
+  }
 
   return (
     <>
@@ -347,9 +359,12 @@ function GeneralSettings() {
           />
         </FormGroup>
       </div>
-      <div className={styles.inlineControls}>
-        <LvlRangeControls />
-      </div>
+      {/* manual buckets carry their own bounds, so the shared range is moot */}
+      {bucketMode !== "manual" && (
+        <div className={styles.inlineControls}>
+          <LvlRangeControls />
+        </div>
+      )}
       <Button
         alignText="left"
         rightIcon={expandFilters ? <CaretDown /> : <CaretRight />}
@@ -487,21 +502,23 @@ function GeneralSettings() {
           }}
           label={t("controls.hideVetos")}
         />
-        <Checkbox
-          id="weighted"
-          checked={useWeights}
-          onChange={(e) => {
-            const useWeights = !!e.currentTarget.checked;
-            updateState({ useWeights });
-          }}
-          label={t("controls.useWeightedDistributions")}
+      </FormGroup>
+      <FormGroup label={t("controls.bucketMode.label")}>
+        <SegmentedControl
+          fill
+          value={bucketMode}
+          options={[
+            { label: t("controls.bucketMode.none"), value: "none" },
+            { label: t("controls.bucketMode.auto"), value: "auto" },
+            { label: t("controls.bucketMode.manual"), value: "manual" },
+          ]}
+          onValueChange={(value) => setBucketMode(value as BucketMode)}
         />
-        <Collapse isOpen={useWeights}>
-          <WeightsControls
-            usesTiers={usesDrawGroups}
-            high={upperBound}
-            low={lowerBound}
-          />
+        <Collapse isOpen={bucketMode === "auto"}>
+          <WeightsControls usesTiers={usesDrawGroups} />
+        </Collapse>
+        <Collapse isOpen={bucketMode === "manual"}>
+          <ManualBucketControls usesTiers={usesDrawGroups} />
         </Collapse>
       </FormGroup>
     </>
