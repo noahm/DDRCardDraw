@@ -36,7 +36,9 @@ export function SongSearch(props: Props) {
   );
 
   let items: SearchResultData[] = [];
-  if (songSearchIndex) {
+  // An empty query matches every song, so skip it entirely rather than ranking
+  // and filtering the whole list for a result set the omnibar won't render.
+  if (songSearchIndex && searchTerm) {
     const songs = fuzzysort
       // threshold 0 keeps every subsequence match, ranked best-first
       .go(searchTerm, songSearchIndex, { limit: 0, threshold: 0 })
