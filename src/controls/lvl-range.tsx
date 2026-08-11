@@ -1,104 +1,71 @@
 import { Button, ControlGroup, FormGroup, InputGroup } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
-import { getAvailableLevels } from "../game-data-utils";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
 import { useDrawState } from "../draw-state";
 import { useConfigState } from "../config-state";
+import { LvlBand, formatLvl, getLvlBands, parseLvl } from "../lvl-display";
 import styles from "./controls.css";
 
-function getBounds(
-  lowerIdx: number,
-  upperIdx: number,
-  availableLvls: number[],
-) {
-  const lowerPrevIdx = lowerIdx - 1;
-  const lowerNextIdx = lowerIdx + 1;
-  const upperPrevIdx = upperIdx - 1;
-  const upperNextIdx = upperIdx + 1;
-
-  const lowerPrev = lowerPrevIdx >= 0 ? availableLvls[lowerPrevIdx] : undefined;
+function getNeighbors(lowerIdx: number, upperIdx: number, bands: LvlBand[]) {
+  const lowerPrev = lowerIdx > 0 ? bands[lowerIdx - 1] : undefined;
   const upperNext =
-    upperNextIdx < availableLvls.length
-      ? availableLvls[upperNextIdx]
+    upperIdx >= 0 && upperIdx < bands.length - 1
+      ? bands[upperIdx + 1]
       : undefined;
 
-  let lowerNext: number | undefined;
-  let upperPrev: number | undefined;
+  let lowerNext: LvlBand | undefined;
+  let upperPrev: LvlBand | undefined;
 
   // make sure we're not using the same value for upper/lower
   if (lowerIdx !== upperIdx) {
-    lowerNext = availableLvls[lowerNextIdx];
-    upperPrev = availableLvls[upperPrevIdx];
+    lowerNext = bands[lowerIdx + 1];
+    upperPrev = bands[upperIdx - 1];
   }
 
-  return {
-    lowerPrev,
-    lowerNext,
-    upperPrev,
-    upperNext,
-  };
+  return { lowerPrev, lowerNext, upperPrev, upperNext };
 }
 
 export function LvlRangeControls() {
   const { t } = useIntl();
   const gameData = useDrawState((s) => s.gameData);
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
-  const configState = useConfigState();
   const {
     lowerBound,
     upperBound,
     update: updateState,
     useGranularLevels,
-  } = configState;
-  const availableLevels = useMemo(
-    () => getAvailableLevels(gameData, useGranularLevels),
+  } = useConfigState();
+  const bands = useMemo(
+    () => getLvlBands(gameData, useGranularLevels),
     [gameData, useGranularLevels],
   );
 
-  /**
-   * attempts to step to the next value of available levels for either bounds field
-   */
-  function setNextStateStep(
-    stateKey: "upperBound" | "lowerBound",
-    newValue: number,
-  ) {
-    updateState((prev) => {
-      // re-calc with current state of granular levels. the one in scope above may be stale
-      const availableLevels = getAvailableLevels(
-        gameData,
-        prev.useGranularLevels,
-      );
-      if (availableLevels.includes(newValue)) {
-        return { [stateKey]: newValue };
-      }
-      return {};
-    });
-  }
+  // a bound sits at one end of its band: the low bound opens its band and the
+  // high bound closes it, so a 13 to 13+ range covers all of 13.0 through 13.9
+  const lowerIdx = bands.findIndex((b) => b.low === lowerBound);
+  const upperIdx = bands.findIndex((b) => b.high === upperBound);
+  const { lowerPrev, lowerNext, upperPrev, upperNext } = getNeighbors(
+    lowerIdx,
+    upperIdx,
+    bands,
+  );
 
-  const handleLowerBoundChange = (newLow: number) => {
-    if (newLow !== lowerBound) {
-      if (newLow > upperBound) {
-        newLow = upperBound;
-      }
-      setNextStateStep("lowerBound", newLow);
-    }
-  };
-
-  const handleUpperBoundChange = (newHigh: number) => {
-    if (newHigh !== upperBound) {
-      if (newHigh < lowerBound) {
-        newHigh = upperBound;
-      }
-      setNextStateStep("upperBound", newHigh);
-    }
-  };
-  const lowerBoundIdx = availableLevels.indexOf(lowerBound);
-  const upperBoundIdx = availableLevels.indexOf(upperBound);
-  const { lowerPrev, lowerNext, upperPrev, upperNext } = getBounds(
-    lowerBoundIdx,
-    upperBoundIdx,
-    availableLevels,
+  const setLowerBound = useCallback(
+    (band: LvlBand) => {
+      updateState((prev) => ({
+        lowerBound: Math.min(band.low, prev.upperBound),
+      }));
+    },
+    [updateState],
+  );
+  const setUpperBound = useCallback(
+    (band: LvlBand) => {
+      updateState((prev) => ({
+        upperBound: Math.max(band.high, prev.lowerBound),
+      }));
+    },
+    [updateState],
   );
 
   return (
@@ -109,9 +76,10 @@ export function LvlRangeControls() {
             ? t("controls.lowerBoundTier")
             : t("controls.lowerBoundLvl")
         }
+        bands={bands}
         value={lowerBound}
-        onChange={handleLowerBoundChange}
-        isValid={lowerBoundIdx !== -1}
+        onChange={setLowerBound}
+        isValid={lowerIdx !== -1}
         prevValue={lowerPrev}
         nextValue={lowerNext}
       />
@@ -121,9 +89,10 @@ export function LvlRangeControls() {
             ? t("controls.upperBoundTier")
             : t("controls.upperBoundLvl")
         }
+        bands={bands}
         value={upperBound}
-        onChange={handleUpperBoundChange}
-        isValid={upperBoundIdx !== -1}
+        onChange={setUpperBound}
+        isValid={upperIdx !== -1}
         prevValue={upperPrev}
         nextValue={upperNext}
       />
@@ -133,69 +102,40 @@ export function LvlRangeControls() {
 
 interface Props {
   label: string;
+  bands: LvlBand[];
   value: number;
-  onChange: (valueAsNumber: number) => void;
+  onChange: (band: LvlBand) => void;
   isValid: boolean;
-  prevValue: number | undefined;
-  nextValue: number | undefined;
-  // Force INT/Float format somehow?
+  prevValue: LvlBand | undefined;
+  nextValue: LvlBand | undefined;
 }
 
 function NudgableRangeInput({
   label,
+  bands,
   value,
   prevValue,
   nextValue,
   isValid,
   onChange,
 }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
   // localValue is empty string when input is clean
   // but picks up non-empty value when dirty (out of sync with root state)
-  const [localValue, setLocalValue] = useState(value.toString());
-  const displayValue = localValue || value.toString();
-  let localValid = isValid;
-  // collapse back to clean state when possible
-  if (localValue === value.toString()) {
-    setLocalValue("");
-  } else if (localValue) {
-    localValid = false;
-  }
+  const [localValue, setLocalValue] = useState("");
+  const committed = formatLvl(bands, value);
+  const displayValue = localValue || committed;
+  const parsed = localValue ? parseLvl(bands, localValue) : undefined;
+  const localValid = localValue ? !!parsed : isValid;
 
-  const setInvalidMessage = useCallback((invalidMessage: string) => {
-    if (!inputRef.current) return;
-    inputRef.current.setCustomValidity(invalidMessage);
-    inputRef.current.reportValidity();
-  }, []);
-  // always used with pre-validated values
-  const stepTo = useCallback(
-    (next: number | undefined) => {
-      if (next === undefined) return;
-      onChange(next);
+  const commit = useCallback(
+    (band: LvlBand | undefined) => {
       setLocalValue("");
+      if (band) {
+        onChange(band);
+      }
     },
     [onChange],
   );
-  const setNewValue = useCallback(
-    (next: string) => {
-      setLocalValue(next);
-      const parsedValue = parseFloat(next);
-      console.log({ next, parsedValue });
-      if (isNaN(parsedValue)) {
-        setInvalidMessage("Must be a number");
-        return;
-      }
-      // only pass fully validated number values to parent
-      onChange(parsedValue);
-    },
-    [setInvalidMessage, onChange],
-  );
-
-  useEffect(() => {
-    if (!isValid) {
-      setInvalidMessage("Not a valid lvl");
-    }
-  }, [isValid, setInvalidMessage]);
 
   return (
     <FormGroup label={label} contentClassName={styles.narrowInput}>
@@ -203,26 +143,36 @@ function NudgableRangeInput({
         <Button
           icon={<CaretLeft />}
           disabled={prevValue === undefined}
-          onClick={() => stepTo(prevValue)}
+          onClick={() => commit(prevValue)}
         />
         <InputGroup
-          inputRef={inputRef}
           value={displayValue}
           intent={localValid ? undefined : "danger"}
           size="large"
           inputSize={4}
-          inputMode="numeric"
-          onChange={(e) => setNewValue(e.currentTarget.value)}
-          onBlur={() => setLocalValue("")}
+          inputMode="decimal"
+          onValueChange={setLocalValue}
+          onBlur={() => commit(parsed)}
           onKeyDown={(e) => {
             switch (e.key) {
+              case "Enter":
+                e.preventDefault();
+                commit(parsed);
+                break;
+              case "Escape":
+                // the settings drawer closes on Escape, so keep a cancelled
+                // edit from taking the whole drawer with it
+                e.preventDefault();
+                e.stopPropagation();
+                setLocalValue("");
+                break;
               case "ArrowUp":
                 e.preventDefault();
-                stepTo(nextValue);
+                commit(nextValue);
                 break;
               case "ArrowDown":
                 e.preventDefault();
-                stepTo(prevValue);
+                commit(prevValue);
                 break;
             }
           }}
@@ -230,7 +180,7 @@ function NudgableRangeInput({
         <Button
           icon={<CaretRight />}
           disabled={nextValue === undefined}
-          onClick={() => stepTo(nextValue)}
+          onClick={() => commit(nextValue)}
         />
       </ControlGroup>
     </FormGroup>

@@ -17,16 +17,13 @@ import {
   planDraw,
 } from "../draw-buckets";
 import { useDrawState } from "../draw-state";
-import { getAvailableLevels } from "../game-data-utils";
 import { useIntl } from "../hooks/useIntl";
-import { printBucketRange, printBucketShare } from "./bucket-common";
+import { formatLvl, getLvlBands, stepLvl } from "../lvl-display";
+import { printBucketShare } from "./bucket-common";
+import { LvlBoundInput } from "./lvl-bound-input";
 import styles from "./controls-buckets.css";
 
-interface Props {
-  usesTiers: boolean;
-}
-
-export function ManualBucketControls({ usesTiers }: Props) {
+export function ManualBucketControls() {
   const { t } = useIntl();
   const config = useConfigState();
   const {
@@ -38,8 +35,8 @@ export function ManualBucketControls({ usesTiers }: Props) {
   } = config;
   const gameData = useDrawState((s) => s.gameData);
 
-  const availableLvls = useMemo(
-    () => getAvailableLevels(gameData, useGranularLevels),
+  const bands = useMemo(
+    () => getLvlBands(gameData, useGranularLevels),
     [gameData, useGranularLevels],
   );
   const buckets = useMemo(
@@ -62,43 +59,13 @@ export function ManualBucketControls({ usesTiers }: Props) {
     [manualBuckets],
   );
 
-  const minLvl = availableLvls[0] ?? 1;
-  const maxLvl = availableLvls[availableLvls.length - 1] ?? 20;
-  // read the increment off the data rather than off `granularTierResolution`:
-  // some games (eg SDVX) have inherently fractional lvls with no granular
-  // toggle, and stepping those by a whole lvl skips most of the usable range
-  const stepSize = useMemo(() => {
-    let smallest = 1;
-    for (let i = 1; i < availableLvls.length; i++) {
-      const gap = availableLvls[i] - availableLvls[i - 1];
-      if (gap > 0 && gap < smallest) {
-        smallest = gap;
-      }
-    }
-    // guard against float noise in the source data (18.1 - 18 !== 0.1)
-    return Math.round(smallest * 1000) / 1000;
-  }, [availableLvls]);
-  const precisionRange = useGranularLevels
-    ? gameData?.meta.granularTierResolution
-    : undefined;
   const totalWeight = buckets.reduce((sum, b) => sum + b.weight, 0);
 
-  /**
-   * Pulls a bound onto a lvl the game actually has. Buckets match on a plain
-   * range, so an off-lvl bound isn't wrong, but it makes the bucket's real
-   * extent hard to read and accumulates float noise as you step through.
-   */
-  function snapToAvailableLvl(value: number) {
-    let closest = value;
-    let closestDistance = Infinity;
-    for (const lvl of availableLvls) {
-      const distance = Math.abs(lvl - value);
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closest = lvl;
-      }
-    }
-    return closest;
+  /** a bucket's span in the game's own lvl notation, eg "13 - 13+" */
+  function describeRange(bucket: { low: number; high: number }) {
+    const low = formatLvl(bands, bucket.low);
+    const high = formatLvl(bands, bucket.high);
+    return low === high ? low : `${low} - ${high}`;
   }
 
   function patchBucket(key: string, patch: Partial<ManualBucket>) {
@@ -118,14 +85,17 @@ export function ManualBucketControls({ usesTiers }: Props) {
   function addBucket() {
     updateConfig((state) => {
       const last = state.manualBuckets[state.manualBuckets.length - 1];
-      // start the new bucket just past wherever the last one left off
-      const nextLvlIdx = last ? availableLvls.indexOf(last.high) + 1 : 0;
-      const low =
-        nextLvlIdx > 0 && nextLvlIdx < availableLvls.length
-          ? availableLvls[nextLvlIdx]
-          : Math.min(last ? last.high : minLvl, maxLvl);
+      // open the new bucket on the lvl just past wherever the last one ended,
+      // falling back to the bottom of the range when there's nowhere left to go
+      const next = last ? stepLvl(bands, last.high, 1) : bands[0];
+      const band = next || bands[bands.length - 1];
+      if (!band) {
+        return {};
+      }
       return {
-        manualBuckets: state.manualBuckets.concat(makeManualBucket(low, low)),
+        manualBuckets: state.manualBuckets.concat(
+          makeManualBucket(band.low, band.high),
+        ),
       };
     });
   }
@@ -158,46 +128,22 @@ export function ManualBucketControls({ usesTiers }: Props) {
         const invalid = bucket.low > bucket.high;
         return (
           <div className={styles.bucketRow} key={bucket.key}>
-            <NumericInput
-              type="number"
-              inputMode="decimal"
-              fill
-              buttonPosition="none"
+            <LvlBoundInput
+              bands={bands}
               value={bucket.low}
-              min={minLvl}
-              max={maxLvl}
-              stepSize={stepSize}
-              minorStepSize={null}
+              edge="low"
+              aria-label={t("buckets.from")}
               intent={invalid ? "danger" : undefined}
-              onValueChange={(low) =>
-                !isNaN(low) && patchBucket(bucket.key, { low })
-              }
-              onBlur={() =>
-                patchBucket(bucket.key, {
-                  low: snapToAvailableLvl(bucket.low),
-                })
-              }
+              onChange={(low) => patchBucket(bucket.key, { low })}
             />
             <div className={styles.separator}>–</div>
-            <NumericInput
-              type="number"
-              inputMode="decimal"
-              fill
-              buttonPosition="none"
+            <LvlBoundInput
+              bands={bands}
               value={bucket.high}
-              min={minLvl}
-              max={maxLvl}
-              stepSize={stepSize}
-              minorStepSize={null}
+              edge="high"
+              aria-label={t("buckets.to")}
               intent={invalid ? "danger" : undefined}
-              onValueChange={(high) =>
-                !isNaN(high) && patchBucket(bucket.key, { high })
-              }
-              onBlur={() =>
-                patchBucket(bucket.key, {
-                  high: snapToAvailableLvl(bucket.high),
-                })
-              }
+              onChange={(high) => patchBucket(bucket.key, { high })}
             />
             <NumericInput
               type="number"
@@ -213,7 +159,7 @@ export function ManualBucketControls({ usesTiers }: Props) {
             />
             <div
               className={`${styles.summary} ${poolSize ? "" : styles.emptyBucket}`}
-              title={printBucketRange(bucket, precisionRange, usesTiers)}
+              title={describeRange(bucket)}
             >
               <span className={styles.share}>
                 {printBucketShare(
@@ -247,10 +193,7 @@ export function ManualBucketControls({ usesTiers }: Props) {
         <Callout intent="warning" style={{ marginTop: "0.5em" }}>
           {t("buckets.overlapWarning", {
             ranges: overlaps
-              .map(
-                ([a, b]) =>
-                  `${printBucketRange(a, precisionRange, usesTiers)} / ${printBucketRange(b, precisionRange, usesTiers)}`,
-              )
+              .map(([a, b]) => `${describeRange(a)} / ${describeRange(b)}`)
               .join(", "),
           })}
         </Callout>
