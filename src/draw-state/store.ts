@@ -1,7 +1,6 @@
 import { draw } from "../card-draw";
 import { Drawing } from "../models/Drawing";
-import fuzzysort, { type SnapshotKeys } from "fuzzysort";
-import { GameData, Song } from "../models/SongData";
+import { GameData } from "../models/SongData";
 import { ConfigState } from "../config-state";
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
@@ -11,7 +10,6 @@ import { showDrawErrorToast } from "./error-toast";
 interface DrawState {
   importedData: Map<string, GameData>;
   gameData: GameData | null;
-  songSearchIndex: SnapshotKeys<Song> | null;
   drawings: Drawing[];
   dataSetName: string;
   confirmMessage: string;
@@ -35,15 +33,6 @@ function applyNewData(data: GameData, set: StoreApi<DrawState>["setState"]) {
   set({
     gameData: data,
     drawings: [],
-    songSearchIndex: fuzzysort.snapshot(data.songs, {
-      keys: [
-        "name",
-        "name_translation",
-        "search_hint",
-        "artist",
-        "artist_translation",
-      ],
-    }),
   });
 }
 
@@ -67,7 +56,6 @@ export const useDrawState = createWithEqualityFn<DrawState>(
   (set, get) => ({
     importedData: new Map(),
     gameData: null,
-    songSearchIndex: null,
     drawings: [],
     dataSetName: "",
     confirmMessage: "This will clear all songs drawn so far. Confirm?",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
@@ -7,6 +7,7 @@ import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import fuzzysort from "fuzzysort";
+import { getSongSearchIndex } from "./search-index";
 import styles from "./song-search.css";
 
 interface Props {
@@ -19,7 +20,11 @@ export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
-  const songSearchIndex = useDrawState((s) => s.songSearchIndex);
+  const gameData = useDrawState((s) => s.gameData);
+  const songSearchIndex = useMemo(
+    () => (gameData ? getSongSearchIndex(gameData) : null),
+    [gameData],
+  );
 
   let items: SearchResultData[] = [];
   if (songSearchIndex) {
