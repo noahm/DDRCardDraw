@@ -6,6 +6,7 @@ import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
+import fuzzysort from "fuzzysort";
 import styles from "./song-search.css";
 
 interface Props {
@@ -18,12 +19,14 @@ export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
-  const fuzzySearch = useDrawState((s) => s.fuzzySearch);
+  const songSearchIndex = useDrawState((s) => s.songSearchIndex);
 
   let items: SearchResultData[] = [];
-  if (fuzzySearch) {
-    const songs = fuzzySearch
-      .search(searchTerm)
+  if (songSearchIndex) {
+    const songs = fuzzysort
+      // threshold 0 keeps every subsequence match, ranked best-first
+      .go(searchTerm, songSearchIndex, { limit: 0, threshold: 0 })
+      .map((result) => result.obj)
       .filter((song) => songIsValid(config, song, true))
       .slice(0, 30);
     for (const song of songs) {
