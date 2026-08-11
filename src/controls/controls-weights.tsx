@@ -6,7 +6,11 @@ import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { useDrawState } from "../draw-state";
 import { getDrawBuckets, planDraw } from "../draw-buckets";
-import { printBucketRange, printBucketShare } from "./bucket-common";
+import {
+  printBucketBounds,
+  printBucketRange,
+  printBucketShare,
+} from "./bucket-common";
 
 interface Props {
   usesTiers: boolean;
@@ -136,8 +140,13 @@ export function WeightsControls({ usesTiers }: Props) {
       />
       {buckets.map((bucket, idx) => {
         const label = printBucketRange(bucket, precisionRange, usesTiers);
+        const bounds = printBucketBounds(bucket, precisionRange);
         return (
-          <div className={styles.level} key={bucket.key}>
+          <div
+            className={styles.level}
+            key={bucket.key}
+            title={bounds === label ? undefined : `lvl ${bounds}`}
+          >
             <NumericInput
               type="number"
               inputMode="numeric"

@@ -37,6 +37,21 @@ export function printBucketRange(
 }
 
 /**
+ * The literal bounds of a bucket, ignoring the whole-lvl shorthand. A bucket
+ * labelled "18" covers 18.0-18.9 on a game with fractional lvls, which is worth
+ * spelling out somewhere even when the compact label is what gets rendered.
+ */
+export function printBucketBounds(
+  bucket: Pick<DrawBucket, "low" | "high">,
+  precisionRange: number | undefined,
+) {
+  return printBucketRange(
+    { low: bucket.low, high: bucket.high },
+    precisionRange,
+  );
+}
+
+/**
  * Describes what a bucket contributes to a drawing. Reads straight off the
  * allocation the draw itself will run, so the preview can't drift from the
  * actual behavior.

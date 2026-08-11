@@ -64,14 +64,42 @@ export function ManualBucketControls({ usesTiers }: Props) {
 
   const minLvl = availableLvls[0] ?? 1;
   const maxLvl = availableLvls[availableLvls.length - 1] ?? 20;
-  const stepSize =
-    useGranularLevels && gameData?.meta.granularTierResolution
-      ? 1 / gameData.meta.granularTierResolution
-      : 1;
+  // read the increment off the data rather than off `granularTierResolution`:
+  // some games (eg SDVX) have inherently fractional lvls with no granular
+  // toggle, and stepping those by a whole lvl skips most of the usable range
+  const stepSize = useMemo(() => {
+    let smallest = 1;
+    for (let i = 1; i < availableLvls.length; i++) {
+      const gap = availableLvls[i] - availableLvls[i - 1];
+      if (gap > 0 && gap < smallest) {
+        smallest = gap;
+      }
+    }
+    // guard against float noise in the source data (18.1 - 18 !== 0.1)
+    return Math.round(smallest * 1000) / 1000;
+  }, [availableLvls]);
   const precisionRange = useGranularLevels
     ? gameData?.meta.granularTierResolution
     : undefined;
   const totalWeight = buckets.reduce((sum, b) => sum + b.weight, 0);
+
+  /**
+   * Pulls a bound onto a lvl the game actually has. Buckets match on a plain
+   * range, so an off-lvl bound isn't wrong, but it makes the bucket's real
+   * extent hard to read and accumulates float noise as you step through.
+   */
+  function snapToAvailableLvl(value: number) {
+    let closest = value;
+    let closestDistance = Infinity;
+    for (const lvl of availableLvls) {
+      const distance = Math.abs(lvl - value);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = lvl;
+      }
+    }
+    return closest;
+  }
 
   function patchBucket(key: string, patch: Partial<ManualBucket>) {
     updateConfig((state) => ({
@@ -140,10 +168,14 @@ export function ManualBucketControls({ usesTiers }: Props) {
               max={maxLvl}
               stepSize={stepSize}
               minorStepSize={null}
-              clampValueOnBlur
               intent={invalid ? "danger" : undefined}
               onValueChange={(low) =>
                 !isNaN(low) && patchBucket(bucket.key, { low })
+              }
+              onBlur={() =>
+                patchBucket(bucket.key, {
+                  low: snapToAvailableLvl(bucket.low),
+                })
               }
             />
             <div className={styles.separator}>–</div>
@@ -157,10 +189,14 @@ export function ManualBucketControls({ usesTiers }: Props) {
               max={maxLvl}
               stepSize={stepSize}
               minorStepSize={null}
-              clampValueOnBlur
               intent={invalid ? "danger" : undefined}
               onValueChange={(high) =>
                 !isNaN(high) && patchBucket(bucket.key, { high })
+              }
+              onBlur={() =>
+                patchBucket(bucket.key, {
+                  high: snapToAvailableLvl(bucket.high),
+                })
               }
             />
             <NumericInput
