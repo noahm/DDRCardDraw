@@ -25,6 +25,15 @@ export function SongSearch(props: Props) {
     () => (gameData ? getSongSearchIndex(gameData) : null),
     [gameData],
   );
+  const overlayProps = useMemo(
+    () => ({
+      // Reset once the overlay has finished fading out. Clearing as soon as it
+      // starts to close would refill the list with unfiltered results behind
+      // the fade, since an empty query matches every song.
+      onClosed: () => updateSearchTerm(""),
+    }),
+    [],
+  );
 
   let items: SearchResultData[] = [];
   if (songSearchIndex) {
@@ -67,6 +76,7 @@ export function SongSearch(props: Props) {
         )
       }
       items={items}
+      overlayProps={overlayProps}
       inputProps={{
         placeholder: "Find a song...",
       }}
