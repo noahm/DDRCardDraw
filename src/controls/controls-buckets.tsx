@@ -15,6 +15,7 @@ import {
   getDrawBuckets,
   makeManualBucket,
   planDraw,
+  topOfWholeLvl,
 } from "../draw-buckets";
 import { useDrawState } from "../draw-state";
 import { getAvailableLevels } from "../game-data-utils";
@@ -124,8 +125,12 @@ export function ManualBucketControls({ usesTiers }: Props) {
         nextLvlIdx > 0 && nextLvlIdx < availableLvls.length
           ? availableLvls[nextLvlIdx]
           : Math.min(last ? last.high : minLvl, maxLvl);
+      // span the rest of whatever whole lvl we landed on, so a fresh bucket
+      // holds a useful number of charts in granular mode too
       return {
-        manualBuckets: state.manualBuckets.concat(makeManualBucket(low, low)),
+        manualBuckets: state.manualBuckets.concat(
+          makeManualBucket(low, topOfWholeLvl(Math.floor(low), availableLvls)),
+        ),
       };
     });
   }

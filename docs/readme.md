@@ -47,7 +47,7 @@ Some of the less self-explanatory settings are described below.
 <dd>Sorts the drawn charts by difficulty level, from lowest on the left, to highest on the right. When not enabled the chart order is randomized.
 
 <dt>Use granular levels
-<dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Weighted Distribution settings.
+<dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Difficulty Bucket settings. Toggling this restates any existing bucket bounds against the new scale, so a bucket covering lvl 13 becomes 13.00-13.95 rather than matching only charts sitting exactly on 13.
 
 <dt>Hide vetoed charts
 <dd>When players take a veto action on a chart, hide from view it completely, rather than simply marking it as vetoed.

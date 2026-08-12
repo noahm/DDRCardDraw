@@ -201,6 +201,35 @@ export function seedManualBuckets(
   return seeds;
 }
 
+/**
+ * Restates manual bucket bounds against the lvl metric that's about to become
+ * active, so toggling granular lvls doesn't silently shrink every bucket down
+ * to the handful of charts sitting exactly on a whole lvl.
+ *
+ * Buckets end up covering the same whole lvls either way, matching how the
+ * by-lvl-range layout redraws itself across the same toggle.
+ */
+export function rescaleManualBuckets(
+  buckets: ReadonlyArray<ManualBucket>,
+  toGranular: boolean,
+  gameData: GameData | null,
+): Array<ManualBucket> {
+  if (!toGranular) {
+    // collapse back onto whole lvls
+    return buckets.map((bucket) => ({
+      ...bucket,
+      low: Math.floor(bucket.low),
+      high: Math.floor(bucket.high),
+    }));
+  }
+  const granularLvls = getAvailableLevels(gameData, true);
+  return buckets.map((bucket) => ({
+    ...bucket,
+    low: Math.floor(bucket.low),
+    high: topOfWholeLvl(Math.floor(bucket.high), granularLvls),
+  }));
+}
+
 /** pairs of manual buckets whose lvl ranges collide */
 export function findOverlappingBuckets(
   buckets: ReadonlyArray<ManualBucket>,
@@ -279,6 +308,21 @@ function* autoBucketRanges(
 }
 
 /**
+ * The highest lvl still inside the whole lvl `lvl`. With granular lvls on this
+ * is the topmost tier that floors to it (13 -> 13.95), and with them off it's
+ * just the lvl itself, so callers get the full span of a whole lvl either way.
+ */
+export function topOfWholeLvl(lvl: number, availableLvls: Array<number>) {
+  let high = lvl;
+  for (const available of availableLvls) {
+    if (Math.floor(available) === lvl && available > high) {
+      high = available;
+    }
+  }
+  return high;
+}
+
+/**
  * The range covering a single whole lvl, clipped to the configured bounds. In
  * granular mode a whole lvl spans every tier that floors to it, so this has to
  * consult the available lvls rather than assume a width.
@@ -289,14 +333,8 @@ function wholeLvlRange(
   lowerBound: number,
   upperBound: number,
 ): Omit<DrawBucket, "key" | "weight"> | undefined {
-  let high = lvl;
-  for (const available of availableLvls) {
-    if (Math.floor(available) === lvl && available > high) {
-      high = available;
-    }
-  }
   const low = Math.max(lvl, lowerBound);
-  high = Math.min(high, upperBound);
+  const high = Math.min(topOfWholeLvl(lvl, availableLvls), upperBound);
   if (low > high) {
     return undefined;
   }

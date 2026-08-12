@@ -43,7 +43,11 @@ import { PlayerNamesControls } from "./player-names";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { LvlRangeControls } from "./lvl-range";
-import { BucketMode, seedManualBuckets } from "../draw-buckets";
+import {
+  BucketMode,
+  rescaleManualBuckets,
+  seedManualBuckets,
+} from "../draw-buckets";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -488,7 +492,18 @@ function GeneralSettings() {
               if (nextUpperBound < prev.lowerBound) {
                 nextUpperBound = prev.lowerBound + 1;
               }
-              return { useGranularLevels, upperBound: nextUpperBound };
+              return {
+                useGranularLevels,
+                upperBound: nextUpperBound,
+                // hand-authored buckets need the same restating the lvl range
+                // above is getting, or they'd keep whole-lvl bounds and match
+                // only the charts sitting exactly on them
+                manualBuckets: rescaleManualBuckets(
+                  prev.manualBuckets,
+                  useGranularLevels,
+                  gameData,
+                ),
+              };
             });
           }}
           label={t("controls.useGranularLevels")}
