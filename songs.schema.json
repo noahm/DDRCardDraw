@@ -65,10 +65,6 @@
         "cardVariant": {
           "type": "string",
           "description": "Specifies a unique card type which can show info tailored to a specific game"
-        },
-        "lvlPlusThreshold": {
-          "type": "number",
-          "description": "Fractional part at or above which a lvl is displayed with a trailing \"+\" (e.g. with 0.6, an internal lvl of 13.7 displays as \"13+\"). Games whose lvls have no plus variants omit this."
         }
       }
     },

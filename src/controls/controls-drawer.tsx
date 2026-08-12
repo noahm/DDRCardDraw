@@ -518,7 +518,7 @@ function GeneralSettings() {
           <WeightsControls usesTiers={usesDrawGroups} />
         </Collapse>
         <Collapse isOpen={bucketMode === "manual"}>
-          <ManualBucketControls />
+          <ManualBucketControls usesTiers={usesDrawGroups} />
         </Collapse>
       </FormGroup>
     </>

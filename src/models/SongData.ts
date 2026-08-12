@@ -63,10 +63,6 @@ export interface GameData {
      * Specifies a unique card type which can show info tailored to a specific game
      */
     cardVariant?: string;
-    /**
-     * Fractional part at or above which a lvl is displayed with a trailing "+" (e.g. with 0.6, an internal lvl of 13.7 displays as "13+"). Games whose lvls have no plus variants omit this.
-     */
-    lvlPlusThreshold?: number;
   };
   /**
    * Defines the default configuration for this game

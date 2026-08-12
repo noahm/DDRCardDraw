@@ -142,10 +142,6 @@ const baseGameData: GameData = {
     lastUpdated: 0,
     menuParent: "more",
     cardVariant: "maimai",
-    // internal lvl values are chart constants; anything at or above X.6
-    // displays as "X+". Charts below lvl 12 have no published constant, and the
-    // upstream data represents their "+" variants with exactly X.6.
-    lvlPlusThreshold: 0.6,
     styles: ["single"],
     difficulties: [
       { key: "basic", color: "#22bb5b" },

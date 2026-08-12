@@ -68,8 +68,6 @@ The difficulty bucket options allow manual control over the probabilities for ch
 <dd>Replaces the "Lvl Min"/"Lvl Max" controls entirely. You define each bucket's start and end point by hand, along with its weight. Buckets need not be contiguous, and a level covered by no bucket is simply never drawn. A chart is only ever drawn from the first bucket its difficulty falls into, so overlapping buckets are flagged with a warning. Each row shows how many charts are actually in the bucket, so an empty or over-subscribed bucket is visible before you draw.
 </dl>
 
-Bounds are entered in whatever notation the game itself uses. On maimai that means typing "13+" rather than an internal chart constant, and a bucket running from "13" to "13+" covers everything a player would call a 13 or a 13+. On games that draw by tier, bounds are tiers ("T07").
-
 Without bucketing enabled, each individual chart matching the level range and filters has an equal chance of being drawn. In other words, it is equivalent to configuring the "weight" of each difficulty level to the number of possible charts contained within it.
 
 > Consider a hypothetical scenario: The configured settings allow for charts to be drawn with the following counts by difficulty level.

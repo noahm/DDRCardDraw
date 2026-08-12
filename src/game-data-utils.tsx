@@ -114,3 +114,11 @@ export function chartLevelOrTier(
     return coreLevel;
   }
 }
+
+export function formatLevel(chart: EligibleChart, useGranular: boolean) {
+  if (useGranular) {
+    return (chart.granularLevel || chart.level).toFixed(2);
+  } else {
+    return chart.level;
+  }
+}
