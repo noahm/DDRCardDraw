@@ -1,0 +1,40 @@
+.buckets {
+  margin: 0 1em;
+}
+
+.bucketRow {
+  display: grid;
+  grid-template-columns: 4.5em 1em 4.5em 4em 1fr auto;
+  align-items: center;
+  gap: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.bucketRow .separator {
+  text-align: center;
+  opacity: 0.6;
+}
+
+.headerRow {
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  margin-bottom: 0.2em;
+}
+
+.summary {
+  font-size: 85%;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary .share {
+  font-weight: 600;
+}
+
+.emptyBucket {
+  opacity: 0.6;
+}
