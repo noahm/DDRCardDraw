@@ -1,12 +1,20 @@
 import {
   Button,
-  Classes,
+  Callout,
   Dialog,
   DialogFooter,
   FormGroup,
+  NonIdealState,
+  Spinner,
   Switch,
 } from "@blueprintjs/core";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import type { PackWithSongs } from "simfile-parser/browser";
 import { useDrawState } from "./draw-state";
 import { getDataFileFromPack } from "./utils/itg-import";
@@ -120,12 +128,22 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   const loadGameData = useDrawState((s) => s.addImportedData);
 
   const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
-  const derivedData = useMemo(() => {
+  const derived = useMemo(() => {
     if (!parsedPack) {
-      return;
+      return null;
     }
-    return getDataFileFromPack(parsedPack, tiered);
+    try {
+      return { data: getDataFileFromPack(parsedPack, tiered), error: null };
+    } catch (e) {
+      // usually a pack that doesn't actually use tiers. The pack itself parsed
+      // fine, so keep it around and let the user flip the switch back off
+      // rather than making them drop the whole thing again.
+      console.error(e);
+      return { data: null, error: convertErrorToString(e) };
+    }
   }, [parsedPack, tiered]);
+  const derivedData = derived?.data ?? null;
+  const deriveError = derived?.error ?? null;
 
   const handleConfirm = useCallback(async () => {
     if (!parsedPack || !derivedData) {
@@ -138,42 +156,50 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     onSave();
   }, [parsedPack, derivedData, loadGameData, onSave]);
 
-  const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
-
-  let body = (
-    <>
-      <p className={maybeSkeleton}>
-        Pack name: {parsedPack ? parsedPack.name : "to be determined"}
-      </p>
-      <FormGroup>
-        <Switch
-          className={maybeSkeleton}
-          label="Pack uses tiers"
-          checked={tiered}
-          onChange={() => setTiered((prev) => !prev)}
-        />
-      </FormGroup>
-      <dl className={maybeSkeleton}>
-        <dt>Total Songs</dt>
-        <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
-        <dt>Total Charts</dt>
-        <dd>
-          {derivedData
-            ? derivedData.songs.reduce(
-                (total, item) => total + item.charts.length,
-                0,
-              )
-            : "??"}
-        </dd>
-      </dl>
-    </>
-  );
-
+  let body: ReactNode;
   if (parseError) {
+    // nothing usable came back, so there's nothing to recover to
+    body = (
+      <Callout intent="danger" title="Error importing pack">
+        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
+      </Callout>
+    );
+  } else if (!parsedPack) {
+    body = (
+      <NonIdealState
+        icon={<Spinner />}
+        title="Parsing pack data"
+        description="Large packs can take a moment to read."
+      />
+    );
+  } else {
     body = (
       <>
-        <h1>Error importing pack</h1>
-        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
+        <p>Pack name: {parsedPack.name}</p>
+        <FormGroup>
+          <Switch
+            label="Pack uses tiers"
+            checked={tiered}
+            onChange={() => setTiered((prev) => !prev)}
+          />
+        </FormGroup>
+        {derivedData ? (
+          <dl>
+            <dt>Total Songs</dt>
+            <dd>{parsedPack.songCount}</dd>
+            <dt>Total Charts</dt>
+            <dd>
+              {derivedData.songs.reduce(
+                (total, item) => total + item.charts.length,
+                0,
+              )}
+            </dd>
+          </dl>
+        ) : (
+          <Callout intent="danger" title="Couldn't read tiers from this pack">
+            <code style={{ whiteSpace: "pre-wrap" }}>{deriveError}</code>
+          </Callout>
+        )}
       </>
     );
   }
@@ -189,7 +215,7 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
         actions={
           <>
             <Button
-              disabled={!!maybeSkeleton}
+              disabled={!derivedData}
               intent="primary"
               onClick={handleConfirm}
               loading={saving}
