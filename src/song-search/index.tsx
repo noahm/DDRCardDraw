@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
 import { Song, Chart } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
+import fuzzysort from "fuzzysort";
+import { getSongSearchIndex, scoreSongMatch } from "./search-index";
 import styles from "./song-search.css";
-import { useFuzzySearch } from "../hooks/useFuzzySearch";
 import { readExtra } from "../utils/extras";
 import { EDIT_ID_KEY } from "../utils/smx-edit-import";
 
@@ -36,13 +37,32 @@ export function SongSearch(props: Props) {
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
   const gameData = useGameData();
-  const fuzzySearch = useFuzzySearch();
+  const songSearchIndex = useMemo(
+    () => (gameData ? getSongSearchIndex(gameData) : null),
+    [gameData],
+  );
+  const overlayProps = useMemo(
+    () => ({
+      // Reset once the overlay has finished fading out. Clearing as soon as it
+      // starts to close would refill the list with unfiltered results behind
+      // the fade, since an empty query matches every song.
+      onClosed: () => updateSearchTerm(""),
+    }),
+    [],
+  );
 
   let items: SearchResultData[] = [];
-  if (fuzzySearch) {
-    const songs = fuzzySearch
-      .search(searchTerm)
-      .map((entry) => entry.song)
+  // An empty query matches every song, so skip it entirely rather than ranking
+  // and filtering the whole list for a result set the omnibar won't render.
+  if (songSearchIndex && searchTerm) {
+    const songs = fuzzysort
+      // threshold 0 keeps every subsequence match, ranked best-first
+      .go(searchTerm, songSearchIndex, {
+        limit: 0,
+        threshold: 0,
+        scoreFn: scoreSongMatch,
+      })
+      .map((result) => result.obj)
       .filter((song) => songIsValid(config, song, true))
       .slice(0, 30);
     for (const song of songs) {
@@ -79,6 +99,7 @@ export function SongSearch(props: Props) {
         )
       }
       items={items}
+      overlayProps={overlayProps}
       inputProps={{
         placeholder: "Find a song...",
       }}
