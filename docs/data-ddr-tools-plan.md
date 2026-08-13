@@ -37,18 +37,22 @@ later.
 
 ## Milestones
 
-- **M1 — SMX testbed (ship first).** In-app SMX-edit authoring in the main app (paste codes → build →
-  publish → draw), backed by a _headless_ anonymous publish API + CDN on `data.ddr.tools` that returns
-  an immutable bundle URL. **Bundled stock data is left completely untouched**, and **end users never
-  visit `data.ddr.tools`** (a standalone authoring SPA there is coded but deferred — see below). This
-  is the customer-facing testbed.
-- **M2 / M3 — ITG and stock migration (order TBD).** Independent follow-ups; pick order later:
-  - _ITG authoring:_ in-browser pack parse, image resize + upload to the CDN.
-  - _Stock migration:_ move schema/import scripts/catalogs into the data project, publish stock +
-    jackets to the CDN behind a manifest, make the main app manifest-driven.
-  - Shared dependency both introduce: **jackets served from the CDN** (absolute URLs +
-    `getJacketUrl` passthrough). Order tradeoff — stock-first establishes the manifest + jacket-on-CDN
-    pattern that ITG reuses; ITG-first proves the image pipeline on a smaller surface.
+- **M1 — SMX testbed. ✅ Shipped 2026-08-10.** In-app SMX-edit authoring in the main app (paste codes →
+  build → publish → draw), backed by a _headless_ anonymous publish API + CDN on `data.ddr.tools` that
+  returns an immutable bundle URL. **Bundled stock data is left completely untouched**, and **end users
+  never visit `data.ddr.tools`** (an early standalone authoring SPA prototype was backed out — see
+  Service components below).
+  `rgt-data` merged to `main` and deployed; the app change merged to `partykit` (`next.ddr.tools`'s
+  production branch). See Verification below for what's been confirmed live.
+- **M2 — ITG pack authoring. In progress.** In-browser pack parse, image resize, and jacket upload
+  to the CDN, reached from a generalized "create custom data" chooser (SMX edits vs. pack import)
+  plus the drag-and-drop folder entry point ported from `main`. Also lands the shared
+  jackets-on-CDN dependency M3 needs: absolute jacket URLs + the `getJacketUrl` passthrough.
+  See _ITG pack authoring_ below for the implemented design.
+- **M3 — stock migration (not started).** Move schema/import scripts/catalogs into the data
+  project, publish stock + jackets to the CDN behind a manifest, make the main app
+  manifest-driven. Now strictly easier than it was: M2 establishes the jacket pool, its
+  content-addressing, and the absolute-URL passthrough that M3 reuses.
 
 ## Locked decisions
 
@@ -130,8 +134,10 @@ later.
     tool's own preview can prefix paths with `https://ddr.tools` to render.)
   - _M2/M3 (ITG, stock):_ jackets move to the CDN as **absolute**
     `https://cdn.data.ddr.tools/jackets/{sha256hex}` URLs (content-addressed, no extension — the
-    R2 object's `Content-Type` is set on `PUT` and served through as-is); `getJacketUrl` gains an
-    absolute-URL passthrough.
+    R2 object's `Content-Type` is sniffed from magic bytes on upload, set on `PUT`, and served
+    through as-is); `getJacketUrl` gains an absolute-URL passthrough. **Done in M2.**
+    The base URL is injected at build (`CDN_BASE`) exactly like `DATA_API_BASE`, so a dev build
+    publishes bundles whose art points back at the local wrangler server.
   - **Content-addressing dedupes real overlap for free.** Stock catalog versions that ship the
     same art (e.g. DDR World vs. A20 Plus share most jackets) converge on one object automatically
     when the import script hashes each file and only uploads on a cache miss (`HEAD` before
@@ -176,9 +182,10 @@ later.
 
 1. **Authoring UI lives in the main app, not here.** The SMX-edit _Create_ flow (paste codes → live
    validation against the 573.no API → Publish) is ported into the main app (see integration changes
-   below). A standalone Vite + React + Mantine authoring SPA on `data.ddr.tools` is **coded but
-   deferred** from the M1 user path; revisit if/when `data.ddr.tools` should grow its own
-   browse/authoring surface. This keeps M1 to a single place users interact with.
+   below). An early Vite + React + Mantine authoring SPA prototype on `data.ddr.tools` was **backed
+   out** before shipping — `rgt-data` as merged is headless-only (Worker + static schema asset, no
+   `src/app/`); revisit a standalone browse/authoring surface only if `data.ddr.tools` should grow
+   one later. This keeps M1 to a single place users interact with.
 2. **Worker API — `POST /api/datasets`** (anonymous): schema validation against a vendored
    `songs.schema.json`, size cap (≤~2 MB for SMX), per-IP rate limiting, optional **Turnstile**, id
    assignment, immutable R2 write, D1 insert, `{ id, url }` response. Called **cross-origin** from the
@@ -190,9 +197,10 @@ later.
 4. **Metadata (D1 preferred over KV)** table `datasets(id, kind, title, base_game, schema_version,
 song_count, chart_count, size_bytes, created_at, source_json)` (`kind` ∈ {custom, managed}).
 
-**Added later:** a privileged `POST /api/managed` path + `index.json` manifest (M3 stock migration),
-and a stock import pipeline that runs `scripts/import-*.mts` to publish catalog bundles + jackets
-(M3). ITG image upload infra — presigned direct-to-R2 PUTs (M2).
+**Added in M2:** `POST /api/datasets` also accepts `multipart/form-data` (`data` + one `jackets`
+part per image), storing art in `jackets/{sha256hex}`. **Added later:** a privileged `POST /api/managed`
+path + `index.json` manifest, and a stock import pipeline that runs `scripts/import-*.mts` to
+publish catalog bundles + jackets (M3).
 
 ## Stock publish pipeline (M3)
 
@@ -252,7 +260,7 @@ Import and publish are two independently-triggered phases — only the second is
 
 ## Main app (`ddr.tools`) integration changes
 
-### M1 — in-app authoring, ships as one app change
+### M1 — in-app authoring, ships as one app change. ✅ Done (merged to `partykit` 2026-08-10)
 
 - **Loader gains a URL branch.** In `src/state/game-data.atoms.ts`, generalize resolution so a
   `gameKey` that is an `http(s)` URL is fetched from the CDN, schema-checked, and cached in
@@ -266,8 +274,9 @@ Import and publish are two independently-triggered phases — only the second is
   lookup against 573.no → Publish) builds the bundle in-browser, `POST`s it cross-origin to
   `data.ddr.tools/api/datasets` (base injected at build via `DATA_API_BASE`; prod `data.ddr.tools`, dev
   the local wrangler server), then loads the returned immutable URL into `customDataCache`. It opens
-  from two entry points sharing one global atom: the hamburger menu and the game-data picker's **"Create
-  custom data…"** item. Published sets list under an always-present **"Custom Data"** folder in the
+  from two entry points sharing one global atom, both localized (`i18n.json`'s `createCustomData` key,
+  en + ja) with matching SMX-specific copy — the hamburger menu and the game-data picker's custom-data
+  folder. Published sets list under an always-present **"Custom Data"** folder in the
   picker (`src/hooks/useDataSets.ts`); selecting one sets `config.gameKey` to the URL — which syncs to
   peers, who resolve the same immutable bundle. Pinning is automatic (the URL _is_ the immutable
   bundle); only the short ref touches Redux/PartyKit/Supabase.
@@ -275,6 +284,63 @@ Import and publish are two independently-triggered phases — only the second is
   drawn edit charts render correctly; `extras` carries the edit metadata. The QR-bookmark card action
   from `smx-edits` is dropped for now (partykit has no per-variant card-actions slot) — a later add.
 - No `getJacketUrl` change (SMX edit bundles use relative jacket paths that already resolve).
+
+### M2 — ITG pack authoring (in progress)
+
+Same shape as M1 — build the bundle in-browser, publish, draw — plus the art, which is the part
+M1 never had to solve.
+
+- **One dialog, two importers.** `src/smx-edit-import.tsx` became `src/custom-data-import.tsx`: a
+  chooser (StepManiaX edits / StepMania pack) hosting the unchanged SMX form and a new pack form.
+  Both existing entry points already share the `createCustomData` i18n key, so they just open the
+  chooser now. **Dropping a folder skips the chooser** — that's unambiguous — so `drop-handler.tsx`
+  shrank to a listener that parks the item in a `pendingPackDrop` atom and opens the dialog. (It
+  was dead code before this: present in the tree but mounted nowhere, and it wrote packs straight
+  into `customDataCache` with session-local `blob:` urls, so nothing survived a reload or reached
+  a peer.)
+- **The folder picker needs a shim** (`src/utils/picked-folder.ts`). `parsePack` reads
+  `input.webkitEntries`, which browsers only populate for files *dropped* onto an input — never
+  from the picker dialog. The picker gives a flat `FileList` whose entries carry
+  `webkitRelativePath`, so we rebuild the tree from those paths and expose it through the File
+  System Access shape (`kind`/`values()`/`getFile()`) the parser already accepts. Using
+  `showDirectoryPicker()` would hand back a real handle and avoid this, but it's Chromium-only;
+  `webkitdirectory` works everywhere.
+- **Jackets: resize in the browser, upload through the Worker as multipart parts.**
+  `jacket-resize.ts` matches `scripts/utils.mts` exactly (128px wide, JPEG q80) so pack art lands
+  at the same weight as bundled stock art — measured on a real 7-song pack: **8.6 MB of source art
+  → 36 KB**. Each resized image is hashed client-side to build its CDN url, then posted as its own
+  part of one `multipart/form-data` request.
+  - **No archive format, and no dependency for one.** An earlier pass zipped the images first;
+    that was redundant. The web platform has no built-in ZIP (`CompressionStream` is gzip/deflate
+    *streams*, not the archive container — you'd hand-write local headers, a central directory,
+    and CRC-32, which is what `fflate` was pulled in for), and a multipart request *is* already a
+    container for many named files, with `FormData` and `request.formData()` built into both ends.
+    Since the payload is finished JPEGs that don't recompress, the zip was doing no compression
+    either — it was packaging inside packaging. Dropping it removed a dependency from both repos,
+    a parse step and its failure mode from the Worker, and a progress phase from the UI.
+  - **Why not presigned direct-to-R2 PUTs, as this doc originally called for?** They'd need an R2
+    API token stored as a Worker secret, `aws4fetch`, and a *write* CORS policy on the bucket —
+    and the bucket policy can't express the Vercel-preview origin pattern the Worker's allowlist
+    already handles. Uploading through the API keeps every write behind the single
+    origin-checked, Turnstile-gated, rate-limited path that already exists, and adds no new infra
+    at all. The thing the Worker genuinely can't do — *decoding* images — still doesn't happen
+    there; it only hashes pre-resized bytes and writes them.
+  - **The Worker recomputes every hash from the uploaded bytes** rather than trusting the part's
+    filename, so a caller can't overwrite existing art with different content by claiming someone
+    else's hash. It sniffs content types from magic bytes (PNG/JPEG/WebP only) and **refuses the
+    whole publish if the bundle references a hash that isn't in R2** — a dangling reference would
+    otherwise be baked into an immutable, permanently-pinned URL. Caps: 500 images per publish,
+    200 KB each, 20 MB total.
+  - **Writes are unconditional, not checked-first.** Dedup still happens — identical art from any
+    pack lands on the same key — but skipping a `HEAD` per image halves the request's subrequest
+    count, which is what keeps a 500-image publish (sized for event packs like ITL plus unlocks,
+    ~400) clear of the 1,000 internal-subrequest floor Cloudflare applies even on the free plan.
+    Re-writing an existing object is a no-op given content addressing, and what a `HEAD` would
+    save is fractions of a cent. Scaling much past this wants the D1-backed bulk existence check
+    designed for stock publishing above, rather than a bigger cap.
+- **Progress reporting.** Unlike SMX, publishing a pack is slow enough that a button spinner isn't
+  honest feedback, so the form reports `resizing` (determinate, per-image) → `uploading` →
+  `loading`.
 
 ### M3 — manifest-driven (later, with stock migration)
 
@@ -291,6 +357,15 @@ strict schema validation (reject anything not matching `GameData`), byte-size ca
 limiting, Turnstile, and a stored `source_json`/D1 row so any reported bundle can be traced and the
 object removed from R2 out-of-band. CORS limited to the two app origins where practical.
 
+**Turnstile widget config (decided, M1):** dashboard widget type **Managed** (not Invisible — keeps
+the interactive-challenge fallback for ambiguous sessions, e.g. VPN/privacy-browser users, which an
+anonymous community-facing flow is more likely to hit than an admin tool; Invisible also carries a
+mandatory privacy-policy addendum obligation per Cloudflare's ToS). Client `appearance: "interaction-
+only"` + `size: "normal"` (`src/utils/turnstile.tsx`) so the widget stays 0×0 for the common case and
+only grows in (capped at Cloudflare's documented 300×65 "normal" box) for the subset actually
+challenged — both are documented Turnstile options, see [client-side rendering
+docs](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/).
+
 ## Open questions / risks
 
 - **(M2+) Schema/version coupling — low priority.** The `GameData` schema has been stable for years
@@ -298,16 +373,15 @@ object removed from R2 out-of-band. CORS limited to the two app origins where pr
   simply share the current schema/types (vendored or via `@ddr-tools/data-format`). Revisit only if a
   breaking change ever becomes necessary — at which point stamp a `schemaVersion` in each bundle so
   the app can tolerate older bundles pinned by long-lived rooms.
-- **(M2 — ITG) Image weight & Worker limits.** ITG packs carry real art (jackets, banners, full-res
-  backgrounds) — a publish can be tens-to-hundreds of MB across hundreds of files, while the card UI
-  needs only ~64–128px jackets. Two problems: (a) downscale to small jackets (as `scripts/utils.mts`
-  jimp resize already does) or clients pull megabytes per postage-stamp image; (b) **do not route
-  image processing through the Worker** — Workers are ~128 MB memory, CPU-bounded, can't run native
-  `sharp`/libvips (only slow pure-JS jimp), and cap subrequests (~50 free / ~1000 paid), so a pack's
-  worth of decode+resize+R2-writes blows those limits. **Fix:** resize in the browser
-  (`createImageBitmap` + canvas; the pack is already parsed client-side via `simfile-parser/browser`)
-  and upload finished jackets **direct to R2 via presigned PUT URLs**, leaving the Worker to handle
-  only small JSON. Extra thumbnail sizes go async (Cloudflare Queues) or via Cloudflare Images.
+- **(M2 — ITG) Image weight & Worker limits. Resolved — see _ITG pack authoring_ below.** ITG packs
+  carry real art (jackets, banners, full-res backgrounds) — a publish can be tens-to-hundreds of MB
+  across hundreds of files, while the card UI needs only ~64–128px jackets. Two problems: (a)
+  downscale to small jackets (as `scripts/utils.mts` jimp resize already does) or clients pull
+  megabytes per postage-stamp image; (b) **do not route image _processing_ through the Worker** —
+  Workers are ~128 MB memory, CPU-bounded, and can't run native `sharp`/libvips (only slow pure-JS
+  jimp), so a pack's worth of decode+resize blows those limits. Resizing therefore happens in the
+  browser. Extra thumbnail sizes, if ever wanted, go async (Cloudflare Queues) or via Cloudflare
+  Images.
 - **(M2+) Garbage/orphan bundles.** A plain R2 lifecycle rule expires by **age since creation, not
   last access** (no "delete if unrequested" primitive), and `immutable, max-age=1y` caching means
   active bundles rarely hit the R2 origin — so request-frequency would flag the _most-used_ bundles as
@@ -330,22 +404,48 @@ object removed from R2 out-of-band. CORS limited to the two app origins where pr
 
 ## Verification
 
-**M1 (the shippable testbed):**
+**M1 — done, confirmed live 2026-08-10 – 2026-08-12:**
 
-- **Service unit:** publish a known SMX set (codes incl. a bogus one) via `wrangler dev` against
-  local R2/D1; assert `data.json` validates against `songs.schema.json`, `meta.json` counts are right,
-  and a second publish yields a new id (immutability).
-- **CDN:** `curl cdn.data.ddr.tools/custom/{id}/data.json` → 200, long `Cache-Control`, CORS present.
-- **In-app authoring:** with bundled stock data still in place, open _Create custom data…_, paste codes
-  (incl. a bogus one), publish, and draw from the result; confirm the cross-origin `POST` succeeds
-  (CORS allows the app origin, incl. the local dev origin) and that stock games still load normally (the
-  loader's stock branch is untouched).
-- **Sync + pinning:** run the app + PartyKit locally; in browser A author + publish + draw; join the
-  same room in browser B and confirm it resolves the same immutable bundle and draws identically.
-  Inspect the PartyKit/Redux payload to confirm **only the URL** (not the catalog) crosses the wire.
-- **Regression:** the SMX edit set shows the `edit` difficulty selected by default with author lines
+- **Service unit:** ✅ publish a known SMX set (codes incl. a bogus one) via `wrangler dev` against
+  local R2/D1; `data.json` validates against `songs.schema.json`, `meta.json` counts are right, and a
+  second publish yields a new id (immutability).
+- **CDN:** ✅ `curl cdn.data.ddr.tools/custom/{id}/data.json` → 200, long `Cache-Control`, CORS present
+  (confirmed against a real published bundle, not just a synthetic check).
+- **In-app authoring:** ✅ with bundled stock data still in place, _Import StepManiaX edits…_ (hamburger
+  menu and the picker's matching entry) — paste codes (incl. a bogus one), publish, draw from the
+  result; cross-origin `POST` succeeds (CORS allows the app origin, incl. local dev), stock games still
+  load normally.
+- **Sync + pinning:** ✅ confirmed locally (two-browser PartyKit room test, pre-merge) — every peer
+  resolves the same immutable bundle; only the URL (not the catalog) crosses the wire.
+- **Regression:** ✅ the SMX edit set shows the `edit` difficulty selected by default with author lines
   on cards; SMX jackets render via the existing `/jackets/smx/...` paths.
+- **Abuse guardrails:** ✅ 405/preflight/origin-reject/Turnstile-403/CDN-404 smoke, plus a full positive
+  publish flow, verified against the deployed prod Worker from a Vercel preview build before merge.
+- **Shipped:** `rgt-data` PR [#2](https://github.com/RhythmGameTools/rgt-data/pull/2) merged to `main`
+  2026-08-10 and deployed (`yarn deploy`, manual — no CI/CD yet, see Stock publish pipeline for the
+  planned M3 automation); `next.ddr.tools` PR [#620](https://github.com/noahm/DDRCardDraw/pull/620)
+  merged to `partykit` 2026-08-10 (that branch is what's live at `next.ddr.tools`, so this ships with
+  its normal deploy — not independently re-verified in this session beyond confirming the site responds).
 
-**Later milestones:** stock import publishes a bundle + repoints `index.json` and the app picks it up
-with no deploy (M3); ITG pack parse → browser resize → presigned R2 upload → absolute CDN jacket URLs
-render (M2); CDN-blocked resilience via service worker / bootstrap fallback (M3).
+**M2 — automated coverage passing, browser pass still owed:**
+
+- ✅ **Worker multipart path**, against `wrangler dev` with real R2/D1: publish with jackets → 201;
+  art readable at `/jackets/{hash}` as `image/jpeg` with immutable caching; bundle round-trips with
+  its CDN urls intact; republishing the same art converges on the same keys; referencing an
+  un-uploaded jacket → 422; a non-image upload → 415; **the JSON/SMX path still 201s
+  unchanged**. Plus a part-count stress test at the cap: 500 images publish, 501 → 413.
+- ✅ **Folder-picker shim** against a real 7-song pack (`simfile-parser/packs/Dance! @ Anime Destiny
+  2022`) driving the actual `parsePack`: pack name, song count, charts, artists, BPMs, and image
+  `File`s all resolve.
+- ✅ **Full pipeline** on that same pack — picker → parse → resize → publish → read back:
+  8.6 MB art → 36 KB uploaded, every cap has orders of magnitude of headroom (biggest jacket 6.5 KB vs.
+  the 200 KB cap; bundle 2.5 KB vs. 2 MB), all 7 jacket urls serve images, `meta.json` records the
+  pack provenance.
+- ✅ `yarn validate` (both repos) and a full production webpack build.
+- ⬜ **Still to verify in a browser** (can't be exercised outside one): `createImageBitmap` +
+  `canvas.toBlob` output on real pack art, the folder-picker dialog itself, drag-and-drop opening
+  the dialog, the progress readout, cards rendering CDN jackets, and a two-peer PartyKit room
+  seeing the same pack.
+
+**M3 (not started):** stock import publishes a bundle + repoints `index.json` and the app picks it
+up with no deploy; CDN-blocked resilience via service worker / bootstrap fallback.

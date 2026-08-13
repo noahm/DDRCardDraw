@@ -7,7 +7,23 @@
     },
     "clearDrawings": "Clear Draws",
     "clearDrawingsConfirm": "This will clear all songs drawn so far. Confirm?",
-    "createCustomData": "Import StepManiaX edits…",
+    "createCustomData": "Create custom data…",
+    "customData": {
+      "chooseTitle": "Create Custom Data",
+      "chooseSmx": "Import StepManiaX edits",
+      "chooseItg": "Import a StepMania song pack",
+      "dropHint": "You can also drop a pack folder anywhere on this page.",
+      "smxTitle": "Import StepManiaX Edits",
+      "itgTitle": "Import Song Pack",
+      "itgExplainer": "Songs and charts are read from the pack folder, and its artwork is resized and published alongside them as a new custom data set — so everyone in the event sees the same thing.",
+      "chooseFolder": "Choose folder…",
+      "usesTiers": "Pack uses tiers",
+      "progress": {
+        "resizing": "Resizing artwork…",
+        "uploading": "Uploading…",
+        "loading": "Setting up the new data set…"
+      }
+    },
     "credits": "Credits",
     "help": "Help",
     "toggleTheme": "Toggle Theme",
@@ -139,7 +155,23 @@
   "ja": {
     "clearDrawings": "全消去",
     "clearDrawingsConfirm": "これまでに引いた譜面をすべて消去します。よろしいですか？",
-    "createCustomData": "StepManiaXの編集をインポート…",
+    "createCustomData": "カスタムデータを作成…",
+    "customData": {
+      "chooseTitle": "カスタムデータを作成",
+      "chooseSmx": "StepManiaXの編集をインポート",
+      "chooseItg": "StepManiaの曲パックをインポート",
+      "dropHint": "パックのフォルダーをこのページにドロップすることもできます。",
+      "smxTitle": "StepManiaXの編集をインポート",
+      "itgTitle": "曲パックをインポート",
+      "itgExplainer": "曲と譜面はパックのフォルダーから読み込まれ、画像はリサイズされて新しいカスタムデータとして一緒に公開されます。イベントの参加者全員が同じデータを見られます。",
+      "chooseFolder": "フォルダーを選択…",
+      "usesTiers": "パックはティア制",
+      "progress": {
+        "resizing": "画像をリサイズ中…",
+        "uploading": "アップロード中…",
+        "loading": "新しいデータを準備中…"
+      }
+    },
     "credits": "クレジット",
     "help": "使い方 (English)",
     "toggleTheme": "テーマを切り替える",

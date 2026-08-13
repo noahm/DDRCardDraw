@@ -1,50 +1,31 @@
-import {
-  Button,
-  Classes,
-  Dialog,
-  DialogFooter,
-  FormGroup,
-  Switch,
-} from "@blueprintjs/core";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import type { PackWithSongs } from "simfile-parser/browser";
-import { getDataFileFromPack } from "./utils/itg-import";
-import { pause } from "./utils/pause";
-import { convertErrorToString } from "./utils/error-to-string";
-import { Import } from "@blueprintjs/icons";
+import { useCallback, useEffect } from "react";
 import { useSetAtom } from "jotai";
-import { customDataCache } from "./state/game-data.atoms";
+import { customDataDialogOpen, pendingPackDrop } from "./state/game-data.atoms";
 
 function loadParserModule() {
   return import("simfile-parser/browser");
 }
 
+/**
+ * Listens for a song pack folder dropped anywhere on the window and hands it to
+ * the custom-data dialog, which opens straight into the ITG import form. Renders
+ * nothing itself — mount it once per app mode, next to `CustomDataDialog`.
+ */
 export function DropHandler() {
-  const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
-    null,
+  const setOpen = useSetAtom(customDataDialogOpen);
+  const setPendingDrop = useSetAtom(pendingPackDrop);
+
+  const handleDrop = useCallback(
+    (evt: DragEvent) => {
+      evt.preventDefault();
+      if (evt.dataTransfer?.items.length !== 1) {
+        return;
+      }
+      setPendingDrop(evt.dataTransfer.items[0]);
+      setOpen(true);
+    },
+    [setOpen, setPendingDrop],
   );
-
-  const handleClose = useCallback(() => {
-    setDroppedFolder(null);
-  }, []);
-
-  const handleDrop = useCallback(async (evt: DragEvent) => {
-    console.log("handle drop");
-    evt.preventDefault();
-    if (!evt.dataTransfer) {
-      return;
-    }
-
-    if (evt.dataTransfer.items.length !== 1) {
-      console.error("too many items dropped");
-      return;
-    }
-    try {
-      setDroppedFolder(evt.dataTransfer.items[0]);
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
 
   const handleDragOver = useCallback(async (e: Event) => {
     e.preventDefault();
@@ -59,154 +40,7 @@ export function DropHandler() {
       document.body.removeEventListener("drop", handleDrop);
       document.body.removeEventListener("dragover", handleDragOver);
     };
-  });
+  }, [handleDrop, handleDragOver]);
 
-  return (
-    <ConfirmPackDialog
-      droppedFolder={droppedFolder}
-      onClose={handleClose}
-      onSave={handleClose}
-    />
-  );
-}
-
-interface DialogProps {
-  droppedFolder: DataTransferItem | null;
-  onSave(this: void): void;
-  onClose(this: void): void;
-}
-
-function useDataParsing(
-  droppedFolder: DataTransferItem | null,
-  setTiered: (next: boolean) => void,
-) {
-  const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
-  const [parseError, setParseError] = useState<string | null>(null);
-  useEffect(() => {
-    // oxlint-disable-next-line react-hooks-js/set-state-in-effect
-    setParseError(null);
-    if (!droppedFolder) {
-      setParsedPack(null);
-      return;
-    }
-    loadParserModule()
-      .then(({ parsePack }) => parsePack(droppedFolder))
-      .then((pack) => {
-        setParsedPack(pack);
-        if (
-          pack.simfiles.every((song) =>
-            song.title.titleName.match(/^\[T\d\d\] /),
-          )
-        ) {
-          setTiered(true);
-        } else {
-          setTiered(false);
-        }
-      })
-      .catch((rejection) => {
-        setParsedPack(null);
-        console.error(rejection);
-        setParseError(convertErrorToString(rejection));
-      });
-  }, [droppedFolder, setTiered]);
-  return {
-    parsedPack,
-    parseError,
-  };
-}
-
-function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
-  const [tiered, setTiered] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const setCustomData = useSetAtom(customDataCache);
-
-  const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
-  const derivedData = useMemo(() => {
-    if (!parsedPack) {
-      return;
-    }
-    return getDataFileFromPack(parsedPack, tiered);
-  }, [parsedPack, tiered]);
-
-  const handleConfirm = useCallback(async () => {
-    if (!parsedPack || !derivedData) {
-      return;
-    }
-    setSaving(true);
-    setCustomData((prev) => {
-      return {
-        ...prev,
-        [parsedPack.name]: derivedData,
-      };
-    });
-    await pause(500);
-    setSaving(false);
-    onSave();
-  }, [parsedPack, derivedData, setCustomData, onSave]);
-
-  const maybeSkeleton = derivedData ? "" : Classes.SKELETON;
-
-  let body = (
-    <>
-      <p className={maybeSkeleton}>
-        Pack name: {parsedPack ? parsedPack.name : "to be determined"}
-      </p>
-      <FormGroup>
-        <Switch
-          className={maybeSkeleton}
-          label="Pack uses tiers"
-          checked={tiered}
-          onChange={() => setTiered((prev) => !prev)}
-        />
-      </FormGroup>
-      <dl className={maybeSkeleton}>
-        <dt>Total Songs</dt>
-        <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
-        <dt>Total Charts</dt>
-        <dd>
-          {derivedData
-            ? derivedData.songs.reduce(
-                (total, item) => total + item.charts.length,
-                0,
-              )
-            : "??"}
-        </dd>
-      </dl>
-    </>
-  );
-
-  if (parseError) {
-    body = (
-      <>
-        <h1>Error importing pack</h1>
-        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
-      </>
-    );
-  }
-
-  return (
-    <Dialog
-      isOpen={!!droppedFolder}
-      title="Local Data Import"
-      onClose={onClose}
-    >
-      <div style={{ padding: "10px" }}>{body}</div>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              disabled={!!maybeSkeleton}
-              intent="primary"
-              onClick={handleConfirm}
-              loading={saving}
-              icon={<Import />}
-            >
-              Import
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
-    </Dialog>
-  );
+  return null;
 }

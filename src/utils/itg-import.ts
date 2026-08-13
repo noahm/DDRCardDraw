@@ -1,9 +1,16 @@
 import type { PackWithSongs } from "simfile-parser/browser";
 import { GameData, Chart, Song } from "../models/SongData";
 
+/**
+ * @param jacketUrlFor resolves a pack image to the url it will be served from.
+ *   Callers publishing a pack pass the uploaded, content-addressed CDN url;
+ *   the default keeps images local to this browser session.
+ */
 export function getDataFileFromPack(
   pack: PackWithSongs,
   useTiers = false,
+  jacketUrlFor: (this: void, file: File) => string = (file) =>
+    URL.createObjectURL(file),
 ): GameData {
   const someColors: Record<string, string | undefined> = {
     beginner: "#98aafd",
@@ -19,6 +26,7 @@ export function getDataFileFromPack(
   const data: GameData = {
     meta: {
       menuParent: "imported",
+      cardVariant: "itg",
       flags: [],
       lastUpdated: Date.now(),
       usesDrawGroups: useTiers,
@@ -77,7 +85,7 @@ export function getDataFileFromPack(
     const song: Song = {
       name: parsedSong.title.titleName,
       name_translation: parsedSong.title.translitTitleName || "",
-      jacket: finalJacket ? URL.createObjectURL(finalJacket) : "",
+      jacket: finalJacket ? jacketUrlFor(finalJacket) : "",
       bpm,
       artist: parsedSong.artist,
       charts: [],
