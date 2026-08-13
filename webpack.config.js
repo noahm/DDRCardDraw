@@ -206,6 +206,13 @@ module.exports = function (env = {}, argv = {}) {
           process.env.DATA_API_BASE ||
             (isProd ? "https://data.ddr.tools" : "http://localhost:8787"),
         ),
+        // Where published jackets are read from. Baked into the jacket urls of
+        // any bundle this build publishes, so dev bundles point back at the
+        // local wrangler dev server that actually holds the uploaded images.
+        "process.env.CDN_BASE": JSON.stringify(
+          process.env.CDN_BASE ||
+            (isProd ? "https://cdn.data.ddr.tools" : "http://localhost:8787"),
+        ),
         // Public Cloudflare Turnstile site key for the SMX publish widget. Empty =
         // widget disabled / no token sent (current prod default). Dev uses Cloudflare's
         // always-passing test key so the flow is exercised locally. Set a real key here

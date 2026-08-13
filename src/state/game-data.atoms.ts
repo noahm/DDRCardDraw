@@ -35,11 +35,18 @@ export const stockDataCache = atom<Record<string, GameData>>({});
 export const customDataCache = atom<Record<string, GameData>>({});
 
 /**
- * Whether the "create custom data" dialog is open (SMX edit import for now;
- * a more general import flow later). Global so it can be opened from anywhere —
- * the hamburger menu and the game-data picker's "Create custom data…" item.
+ * Whether the "create custom data" dialog is open. Global so it can be opened
+ * from anywhere — the hamburger menu, the game-data picker's "Create custom
+ * data…" item, or a folder drop.
  */
 export const customDataDialogOpen = atom(false);
+
+/**
+ * A folder dropped onto the window, waiting to be picked up by the custom-data
+ * dialog. Dropping a folder is unambiguous, so it skips the dialog's source
+ * chooser and opens the ITG pack form directly on this item.
+ */
+export const pendingPackDrop = atom<DataTransferItem | null>(null);
 
 export const stockDataByName = atomFamily((name: string) =>
   atom((get) => get(stockDataCache)[name]),
