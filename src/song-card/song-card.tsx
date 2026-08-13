@@ -266,7 +266,9 @@ export function SongCardBase(props: Props) {
         ref={rootRef}
         className={rootClassname}
         onClick={
-          showingContextMenu || openAction || pocketPickPendingForPlayer !== null
+          showingContextMenu ||
+          openAction ||
+          pocketPickPendingForPlayer !== null
             ? undefined
             : handleCardClick
         }

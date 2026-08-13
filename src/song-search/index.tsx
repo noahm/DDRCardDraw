@@ -86,7 +86,9 @@ export function SongSearch(props: Props) {
       itemRenderer={(data, itemProps) => (
         <SearchResult
           key={`${data.song.saHash || data.song.name}-${
-            typeof data.chart === "string" ? data.chart : chartIdentity(data.chart)
+            typeof data.chart === "string"
+              ? data.chart
+              : chartIdentity(data.chart)
           }`}
           data={data}
           selected={itemProps.modifiers.active}
