@@ -38,6 +38,8 @@ export interface DrawnChart extends EligibleChart {
 export interface Player {
   id: string;
   name: string;
+  /** free-form, as published by the player (e.g. from their start.gg profile) */
+  pronouns?: string;
 }
 
 /** create a new player with a freshly-generated unique id */
