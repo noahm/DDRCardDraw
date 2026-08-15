@@ -9,30 +9,29 @@ import {
 } from "victory";
 import { useMemo } from "react";
 import { CountingSet } from "../utils/counting-set";
-import { useDrawState } from "../draw-state";
-import { useIntl } from "../hooks/useIntl";
 import {
   chartLevelOrTier,
   getAvailableLevels,
-  getDiffClass,
-  getMetaString,
+  useGetDiffClass,
+  useGetMetaString,
 } from "../game-data-utils";
-import { Theme, useTheme } from "../theme-toggle";
+import { useTheme } from "../theme-toggle";
 import { useIsNarrow } from "../hooks/useMediaQuery";
-import { useConfigState } from "../config-state";
+import { useConfigState, useGameData } from "../state/hooks";
 
 interface Props {
   charts: EligibleChart[];
 }
 
 export function DiffHistogram({ charts }: Props) {
-  const { t } = useIntl();
-  const fgColor = useTheme() === Theme.Dark ? "white" : undefined;
+  const fgColor = useTheme() === "dark" ? "white" : undefined;
   const isNarrow = useIsNarrow();
-  const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useGameData();
+  const allDiffs = gameData?.meta.difficulties;
   const useGranularLevels = useConfigState((s) => s.useGranularLevels);
   const availableLevels = getAvailableLevels(gameData, useGranularLevels, true);
+  const getDiffClass = useGetDiffClass();
+  const getMetaString = useGetMetaString();
   function formatLabel(idx: number) {
     const n = availableLevels[idx];
     if (!n) return "";
@@ -56,16 +55,16 @@ export function DiffHistogram({ charts }: Props) {
     }
     const orderedLevels = Array.from(allLevels.values()).sort((a, b) => a - b);
     const difficulties = (allDiffs || [])
-      .filter((d) => !!countByClassAndLvl[getDiffClass(t, d.key)])
+      .filter((d) => !!countByClassAndLvl[getDiffClass(d.key)])
       .reverse();
     const dataPerDiff = difficulties.map((diff) => ({
       color: diff.color,
       key: diff.key,
-      label: getMetaString(t, diff.key),
+      label: getMetaString(diff.key),
       data: orderedLevels.map((lvl) => ({
         xPlacement: availableLevels.indexOf(lvl),
         level: lvl,
-        count: countByClassAndLvl[getDiffClass(t, diff.key)].get(lvl) || 0,
+        count: countByClassAndLvl[getDiffClass(diff.key)].get(lvl) || 0,
       })),
     }));
     return [
@@ -76,7 +75,14 @@ export function DiffHistogram({ charts }: Props) {
         .sort((a, b) => a[0] - b[0])
         .map(([, count]) => count),
     ];
-  }, [allDiffs, charts, useGranularLevels, t, availableLevels]);
+  }, [
+    allDiffs,
+    charts,
+    useGranularLevels,
+    getDiffClass,
+    getMetaString,
+    availableLevels,
+  ]);
 
   return (
     <VictoryChart
