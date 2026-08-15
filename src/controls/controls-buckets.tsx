@@ -21,6 +21,7 @@ import { useDrawState } from "../draw-state";
 import { getAvailableLevels } from "../game-data-utils";
 import { useIntl } from "../hooks/useIntl";
 import { printBucketRange, printBucketShare } from "./bucket-common";
+import { NudgableLvlInput } from "./nudgable-lvl-input";
 import styles from "./controls-buckets.css";
 
 interface Props {
@@ -63,43 +64,47 @@ export function ManualBucketControls({ usesTiers }: Props) {
     [manualBuckets],
   );
 
-  const minLvl = availableLvls[0] ?? 1;
-  const maxLvl = availableLvls[availableLvls.length - 1] ?? 20;
-  // read the increment off the data rather than off `granularTierResolution`:
-  // some games (eg SDVX) have inherently fractional lvls with no granular
-  // toggle, and stepping those by a whole lvl skips most of the usable range
-  const stepSize = useMemo(() => {
-    let smallest = 1;
-    for (let i = 1; i < availableLvls.length; i++) {
-      const gap = availableLvls[i] - availableLvls[i - 1];
-      if (gap > 0 && gap < smallest) {
-        smallest = gap;
-      }
-    }
-    // guard against float noise in the source data (18.1 - 18 !== 0.1)
-    return Math.round(smallest * 1000) / 1000;
-  }, [availableLvls]);
   const precisionRange = useGranularLevels
     ? gameData?.meta.granularTierResolution
     : undefined;
   const totalWeight = buckets.reduce((sum, b) => sum + b.weight, 0);
 
   /**
-   * Pulls a bound onto a lvl the game actually has. Buckets match on a plain
-   * range, so an off-lvl bound isn't wrong, but it makes the bucket's real
-   * extent hard to read and accumulates float noise as you step through.
+   * The lvls each end of a bucket can step to. Stepping stays inside the
+   * bucket, so the buttons can never invert it — typing still can, and that
+   * shows up as an invalid row.
    */
-  function snapToAvailableLvl(value: number) {
-    let closest = value;
-    let closestDistance = Infinity;
-    for (const lvl of availableLvls) {
-      const distance = Math.abs(lvl - value);
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closest = lvl;
-      }
+  function neighborsFor(bucket: ManualBucket) {
+    const lowIdx = availableLvls.indexOf(bucket.low);
+    const highIdx = availableLvls.indexOf(bucket.high);
+    const after = (idx: number) =>
+      idx === -1 ? undefined : availableLvls[idx + 1];
+    const before = (idx: number) =>
+      idx <= 0 ? undefined : availableLvls[idx - 1];
+    const lowNext = after(lowIdx);
+    const highPrev = before(highIdx);
+    return {
+      lowValid: lowIdx !== -1,
+      highValid: highIdx !== -1,
+      lowPrev: before(lowIdx),
+      lowNext:
+        lowNext !== undefined && lowNext <= bucket.high ? lowNext : undefined,
+      highPrev:
+        highPrev !== undefined && highPrev >= bucket.low ? highPrev : undefined,
+      highNext: after(highIdx),
+    };
+  }
+
+  /** mirrors the main lvl range: only lvls the game actually has get committed */
+  function setBound(bucket: ManualBucket, edge: "low" | "high", value: number) {
+    if (!availableLvls.includes(value)) {
+      return;
     }
-    return closest;
+    const clamped =
+      edge === "low"
+        ? Math.min(value, bucket.high)
+        : Math.max(value, bucket.low);
+    patchBucket(bucket.key, { [edge]: clamped });
   }
 
   function patchBucket(key: string, patch: Partial<ManualBucket>) {
@@ -124,7 +129,10 @@ export function ManualBucketControls({ usesTiers }: Props) {
       const low =
         nextLvlIdx > 0 && nextLvlIdx < availableLvls.length
           ? availableLvls[nextLvlIdx]
-          : Math.min(last ? last.high : minLvl, maxLvl);
+          : (last?.high ?? availableLvls[0]);
+      if (low === undefined) {
+        return {};
+      }
       // span the rest of whatever whole lvl we landed on, so a fresh bucket
       // holds a useful number of charts in granular mode too
       return {
@@ -148,98 +156,83 @@ export function ManualBucketControls({ usesTiers }: Props) {
           }))
         }
       />
-      {!!manualBuckets.length && (
-        <div className={`${styles.bucketRow} ${styles.headerRow}`}>
-          <div>{t("buckets.from")}</div>
-          <div />
-          <div>{t("buckets.to")}</div>
-          <div>{t("buckets.weight")}</div>
-          <div />
-          <div />
-        </div>
-      )}
-      {buckets.map((bucket) => {
-        const poolSize = chartCounts.get(bucket.key) || 0;
-        const invalid = bucket.low > bucket.high;
-        return (
-          <div className={styles.bucketRow} key={bucket.key}>
-            <NumericInput
-              type="number"
-              inputMode="decimal"
-              fill
-              buttonPosition="none"
-              value={bucket.low}
-              min={minLvl}
-              max={maxLvl}
-              stepSize={stepSize}
-              minorStepSize={null}
-              intent={invalid ? "danger" : undefined}
-              onValueChange={(low) =>
-                !isNaN(low) && patchBucket(bucket.key, { low })
-              }
-              onBlur={() =>
-                patchBucket(bucket.key, {
-                  low: snapToAvailableLvl(bucket.low),
-                })
-              }
-            />
-            <div className={styles.separator}>–</div>
-            <NumericInput
-              type="number"
-              inputMode="decimal"
-              fill
-              buttonPosition="none"
-              value={bucket.high}
-              min={minLvl}
-              max={maxLvl}
-              stepSize={stepSize}
-              minorStepSize={null}
-              intent={invalid ? "danger" : undefined}
-              onValueChange={(high) =>
-                !isNaN(high) && patchBucket(bucket.key, { high })
-              }
-              onBlur={() =>
-                patchBucket(bucket.key, {
-                  high: snapToAvailableLvl(bucket.high),
-                })
-              }
-            />
-            <NumericInput
-              type="number"
-              inputMode="numeric"
-              fill
-              buttonPosition="none"
-              value={bucket.weight}
-              min={0}
-              placeholder="0"
-              onValueChange={(weight) =>
-                !isNaN(weight) && patchBucket(bucket.key, { weight })
-              }
-            />
-            <div
-              className={`${styles.summary} ${poolSize ? "" : styles.emptyBucket}`}
-              title={printBucketRange(bucket, precisionRange, usesTiers)}
-            >
-              <span className={styles.share}>
-                {printBucketShare(
-                  bucket,
-                  plan.allocations.get(bucket.key),
-                  totalWeight,
-                  forceDistribution,
-                )}
-              </span>{" "}
-              {t("buckets.poolSize", { count: poolSize })}
-            </div>
-            <Button
-              variant="minimal"
-              icon={<Cross />}
-              aria-label={t("buckets.remove")}
-              title={t("buckets.remove")}
-              onClick={() => removeBucket(bucket.key)}
-            />
+      <div className={styles.bucketTable}>
+        {!!manualBuckets.length && (
+          <div className={`${styles.bucketRow} ${styles.headerRow}`}>
+            <div>{t("buckets.from")}</div>
+            <div />
+            <div>{t("buckets.to")}</div>
+            <div>{t("buckets.weight")}</div>
+            <div />
+            <div />
           </div>
-        );
-      })}
+        )}
+        {buckets.map((bucket) => {
+          const poolSize = chartCounts.get(bucket.key) || 0;
+          const invalid = bucket.low > bucket.high;
+          const neighbors = neighborsFor(bucket);
+          return (
+            <div className={styles.bucketRow} key={bucket.key}>
+              <NudgableLvlInput
+                value={bucket.low}
+                isValid={neighbors.lowValid && !invalid}
+                prevValue={neighbors.lowPrev}
+                nextValue={neighbors.lowNext}
+                aria-label={t("buckets.from")}
+                size="small"
+                inputSize={5}
+                onChange={(next) => setBound(bucket, "low", next)}
+              />
+              <div className={styles.separator}>–</div>
+              <NudgableLvlInput
+                value={bucket.high}
+                isValid={neighbors.highValid && !invalid}
+                prevValue={neighbors.highPrev}
+                nextValue={neighbors.highNext}
+                aria-label={t("buckets.to")}
+                size="small"
+                inputSize={5}
+                onChange={(next) => setBound(bucket, "high", next)}
+              />
+              <NumericInput
+                type="number"
+                inputMode="numeric"
+                fill
+                size="small"
+                buttonPosition="none"
+                aria-label={t("buckets.weight")}
+                value={bucket.weight}
+                min={0}
+                placeholder="0"
+                onValueChange={(weight) =>
+                  !isNaN(weight) && patchBucket(bucket.key, { weight })
+                }
+              />
+              <div
+                className={`${styles.summary} ${poolSize ? "" : styles.emptyBucket}`}
+                title={printBucketRange(bucket, precisionRange, usesTiers)}
+              >
+                <span className={styles.share}>
+                  {printBucketShare(
+                    bucket,
+                    plan.allocations.get(bucket.key),
+                    totalWeight,
+                    forceDistribution,
+                  )}
+                </span>{" "}
+                {t("buckets.poolSize", { count: poolSize })}
+              </div>
+              <Button
+                variant="minimal"
+                icon={<Cross />}
+                aria-label={t("buckets.remove")}
+                title={t("buckets.remove")}
+                onClick={() => removeBucket(bucket.key)}
+              />
+            </div>
+          );
+        })}
+      </div>
       <Button icon={<Plus />} onClick={addBucket}>
         {t("buckets.add")}
       </Button>

@@ -2,12 +2,18 @@
   margin: 0 1em;
 }
 
-.bucketRow {
+/* one grid for every row, so the headers stay lined up with the controls
+   beneath them even though the lvl steppers size themselves */
+.bucketTable {
   display: grid;
-  grid-template-columns: 4.5em 1em 4.5em 4em 1fr auto;
+  grid-template-columns: auto 0.6em auto 3.2em 1fr auto;
   align-items: center;
-  gap: 0.4em;
-  margin-bottom: 0.4em;
+  gap: 0.4em 0.3em;
+  margin-bottom: 0.6em;
+}
+
+.bucketRow {
+  display: contents;
 }
 
 .bucketRow .separator {

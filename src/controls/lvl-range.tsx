@@ -1,10 +1,10 @@
-import { Button, ControlGroup, FormGroup, InputGroup } from "@blueprintjs/core";
-import { CaretLeft, CaretRight } from "@blueprintjs/icons";
+import { FormGroup } from "@blueprintjs/core";
 import { getAvailableLevels } from "../game-data-utils";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import { useIntl } from "../hooks/useIntl";
 import { useDrawState } from "../draw-state";
 import { useConfigState } from "../config-state";
+import { NudgableLvlInput } from "./nudgable-lvl-input";
 import styles from "./controls.css";
 
 function getBounds(
@@ -141,98 +141,10 @@ interface Props {
   // Force INT/Float format somehow?
 }
 
-function NudgableRangeInput({
-  label,
-  value,
-  prevValue,
-  nextValue,
-  isValid,
-  onChange,
-}: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  // localValue is empty string when input is clean
-  // but picks up non-empty value when dirty (out of sync with root state)
-  const [localValue, setLocalValue] = useState(value.toString());
-  const displayValue = localValue || value.toString();
-  let localValid = isValid;
-  // collapse back to clean state when possible
-  if (localValue === value.toString()) {
-    setLocalValue("");
-  } else if (localValue) {
-    localValid = false;
-  }
-
-  const setInvalidMessage = useCallback((invalidMessage: string) => {
-    if (!inputRef.current) return;
-    inputRef.current.setCustomValidity(invalidMessage);
-    inputRef.current.reportValidity();
-  }, []);
-  // always used with pre-validated values
-  const stepTo = useCallback(
-    (next: number | undefined) => {
-      if (next === undefined) return;
-      onChange(next);
-      setLocalValue("");
-    },
-    [onChange],
-  );
-  const setNewValue = useCallback(
-    (next: string) => {
-      setLocalValue(next);
-      const parsedValue = parseFloat(next);
-      console.log({ next, parsedValue });
-      if (isNaN(parsedValue)) {
-        setInvalidMessage("Must be a number");
-        return;
-      }
-      // only pass fully validated number values to parent
-      onChange(parsedValue);
-    },
-    [setInvalidMessage, onChange],
-  );
-
-  useEffect(() => {
-    if (!isValid) {
-      setInvalidMessage("Not a valid lvl");
-    }
-  }, [isValid, setInvalidMessage]);
-
+function NudgableRangeInput({ label, ...inputProps }: Props) {
   return (
     <FormGroup label={label} contentClassName={styles.narrowInput}>
-      <ControlGroup>
-        <Button
-          icon={<CaretLeft />}
-          disabled={prevValue === undefined}
-          onClick={() => stepTo(prevValue)}
-        />
-        <InputGroup
-          inputRef={inputRef}
-          value={displayValue}
-          intent={localValid ? undefined : "danger"}
-          size="large"
-          inputSize={4}
-          inputMode="numeric"
-          onChange={(e) => setNewValue(e.currentTarget.value)}
-          onBlur={() => setLocalValue("")}
-          onKeyDown={(e) => {
-            switch (e.key) {
-              case "ArrowUp":
-                e.preventDefault();
-                stepTo(nextValue);
-                break;
-              case "ArrowDown":
-                e.preventDefault();
-                stepTo(prevValue);
-                break;
-            }
-          }}
-        />
-        <Button
-          icon={<CaretRight />}
-          disabled={nextValue === undefined}
-          onClick={() => stepTo(nextValue)}
-        />
-      </ControlGroup>
+      <NudgableLvlInput {...inputProps} size="large" inputSize={4} />
     </FormGroup>
   );
 }
