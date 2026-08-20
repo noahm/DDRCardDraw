@@ -25,8 +25,6 @@ const textageFiles = [
 ] as const;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const textageDir = path.join(__dirname, "textage");
-const textageMetaPath = path.join(textageDir, "textage-meta.json");
-console.log(textageDir);
 
 const chartSlot = [
   { style: "", diffClass: "" },
@@ -81,56 +79,103 @@ const folderNames = [
   "substream",
 ] as const;
 
-const timelockTags = new Set<SongTag>(["a_minstr", "advanc32"]);
-
-const timelockLegs = new Set<SongTag>([
-  "smooooch",
-  "script_n",
-  "script_h",
-  "alba",
-  "bitchoco",
-  "_casino",
-  "lightstr",
-  "overtime",
-  "selfishs",
-  "lab",
-  "plkmania",
-  "_3plus3",
-  "a_minstr",
-  "cuerscue",
-  "high",
-  "_kagachi",
-  "hyena",
-  "call",
-  "bowshock",
-  "_ope_143",
-  "_therele",
-  "punch_lv",
-  "chaserxx",
-  "braveout",
-  "inazuma",
-  "_seijin",
-  "nbtheory",
-  "_hrenten",
-  "implant",
-]);
-
-const eventReleases = new Set<SongTag>([
-  "ccrimson",
-  "max_360",
-  "suspcion",
-  "psychint",
-]);
-
+/**
+ * Event name (from textage) to flag(s) mapping
+ */
 const eventFlagMap = new Map<string, string[]>([
-  ["ピンキージャンプアップ！", ["pinkyJumpUp"]],
-  ["PINKY EXTRA CHALLENGE", ["pinkyExtraChallenge"]],
-  ["ピンキーアンダーグラウンド", ["pinkyUnderground"]],
-  ["Triple Tribe", ["tripleTribe"]],
   ["ULTIMATE MOBILE アーケード連動", ["ultimateMobile"]],
-  ["WORLD TOURISM", ["worldTourism"]],
+  ["Sparkle Fruit Lab.", ["sparkleFruitLab"]],
+  ["WORLD TOURISM(Sparkle Shower)", ["worldTourism"]],
+  ["CYBER LOADER", ["cyberLoader"]],
+  ["EXTRA CHALLENGE", ["extraChallenge"]],
+  ["The 4th 25周年記念イベント", ["the4th"]],
+  ["秘蔵のレコード", ["shopUnlock"]],
+  [
+    "<span style='font-size:6pt'>BEMANI PRO LEAGUE -SEASON 4- </span>Triple Tribe",
+    ["lightningModel", "tempUnlock"],
+  ],
+  ["BPLプロ選手サポーターズ -SEASON 5-", ["tempUnlock"]],
+  [
+    "<span style='font-size:6pt'>BEMANI PRO LEAGUE -SEASON 5- </span>Triple Tribe 0",
+    ["tempUnlock"],
+  ],
+  [
+    "<span style='font-size:6pt'>BEMANI PRO LEAGUE -SEASON 5- </span>Triple Tribe",
+    ["tempUnlock"],
+  ],
+  ["Triple Tribe Append", ["tempUnlock"]],
+  ["pop'n&IIDX Cheers×Cheers!!", ["tempUnlock"]],
+  ["BEMANI納涼祭2026", ["tempUnlock"]],
 ]);
-
+/** Battle arena unlock songs (not shown on textage) */
+const battleArenaUnlocks = new Set<string>([
+  "evrgreen", // evergreen
+  "kyamsama", // KYAMISAMA ONEGAI!
+  "acidvis", // ACID VISION
+]);
+/**
+ * Locked [LEGGENDARIA] charts mapping
+ */
+const lockedLeggendaria = new Map<SongTag, string[]>([
+  ...[
+    "overtime", // OVER TIME
+    "selfishs", // Selfish Sweet
+    "lab", // LAB
+    "plkmania", // POLꓘAMAИIA
+    "_3plus3", // ≡＋≡
+  ].map((tag) => [tag, ["hiddenLeggendaria"]] as [string, string[]]),
+  ...[
+    "_mschour", // ミュージック・アワー
+    "comaaaaa", // CoMAAAAAAA
+    "gene", // GENE
+    "_zero", // 零 - ZERO -
+    "risen", // Rise'n Beauty
+    "alphratz", // Alpheratz
+    "urbancon", // Urban Constellations
+    "proprops", // Prohibited Props
+    "27thstyl", // 27th style
+    "raison", // Raison d'être ～交差する宿命～
+  ].map((tag) => [tag, ["battleArena"]] as [string, string[]]),
+  ...[
+    "idolsynd", // IDOL syndrome.
+    "caldwl99", // Caldwell 99
+    "cuerscue", // CUE CUE RESCUE
+    "high", // HIGH
+    "_kagachi", // 蛇神
+    "hyena", // HYENA
+    "call", // CALL
+    "bowshock", // Bow shock!!
+    "_ope_143", // ここからよろしく大作戦143
+    "_therele", // #The_Relentless
+    "punch_lv", // Punch Love ♥ 仮面
+    "chaserxx", // ChaserXX
+    "braveout", // BRAVE OUT
+    "inazuma", // INAZUMA
+    "_seijin", // 聖人の塔
+    "nbtheory", // Nothing but Theory
+    "_hrenten", // 烽火連天の刃
+    "implant", // IMPLANTATION
+    "captive", // CaptivAte～浄化～
+    "gardenhs", // garden
+  ].map((tag) => [tag, eventFlagMap.get("秘蔵のレコード")!] as const),
+  ...[
+    "lisa_ric", // Lisa-RICCIA
+    "catchme", // Catch Me
+    "ooo", // OOO
+    "superdup", // Super Duper Racers
+    "wakeupnw", // WAKE UP NOW
+    "emberlts", // Ember Lights
+    "_jdesire", // 純真可憐デザイア
+    "flashes", // Flashes
+    "mel", // Mel
+    "xanadu_2", // XANADU OF TWO
+    "_sheaven", // サヨナラ・ヘヴン
+    "inherita", // INHERITANCE
+    "time2emp", // Time To Empress
+  ].map(
+    (tag) => [tag, eventFlagMap.get("WORLD TOURISM(Sparkle Shower)")!] as const,
+  ),
+]);
 type SongTag = string;
 
 /** Schema for titletbl on titletbl.js */
@@ -208,37 +253,6 @@ type TextageContext = {
   getCellData: (tag: SongTag, type: number) => string;
 };
 
-function getChartStatusFlags(
-  songTag: SongTag,
-  type: number,
-  getLevel: (tag: SongTag, type: number, num: number) => number,
-): string[] {
-  // Status bits (from get_level):
-  // 0x02: Level rate is 1 to 12
-  // 0x04: Includes arcade version
-  // 0x08: Has CN or BSS (includes HELL-CHARGE)
-  const status = getLevel(songTag, type, 2);
-  const flags: string[] = [];
-
-  if (!(status & 0x08)) {
-    return flags;
-  }
-
-  const textageGlobal = globalThis as typeof globalThis & {
-    get_sdata?: (tag: SongTag, type: number) => string;
-  };
-  const renderedCell = textageGlobal.get_sdata?.(songTag, type) ?? "";
-
-  if (/border:\s*1px\s*red\s*solid/i.test(renderedCell)) {
-    // HELL-CHARGE
-    flags.push("hellCharge");
-  } else if (/border:\s*1px\s*gray\s*solid/i.test(renderedCell)) {
-    // NORMAL CN or BSS
-  }
-
-  return flags;
-}
-
 type TextageSong = {
   name: string;
   artist: string;
@@ -264,6 +278,36 @@ export class TextageSongImporter implements SongImporter<TextageSong> {
   #force: boolean;
   #prepared: boolean | null = null;
   #lastUpdated: number | null = null;
+
+  #getChartStatusFlags(
+    songTag: SongTag,
+    type: number,
+    getLevel: TextageContext["getLevel"],
+    getCellData: TextageContext["getCellData"],
+  ): { flags: string[]; includesArcade: boolean } {
+    // Status bits (from get_level):
+    // 0x02: Level rate is 1 to 12
+    // 0x04: Includes arcade version
+    // 0x08: Has CN or BSS (includes HELL-CHARGE)
+    const status = getLevel(songTag, type, 2);
+    let includesArcade = (status & 0x04) !== 0;
+    const flags: string[] = [];
+
+    if (!(status & 0x08)) {
+      return { flags, includesArcade };
+    }
+
+    const renderedCell = getCellData(songTag, type) ?? "";
+    // textage marks non-AC cells with class="x" in get_sdata.
+    if (/class\s*=\s*x\b/i.test(renderedCell)) {
+      includesArcade = false;
+    }
+    if (/border:\s*1px\s*red\s*solid/i.test(renderedCell)) {
+      flags.push("hellCharge");
+    }
+
+    return { flags, includesArcade };
+  }
 
   static #textageJsPath(fn: (typeof textageFiles)[number]) {
     return path.join(textageDir, `${fn}.js`);
@@ -571,6 +615,15 @@ export default globalThis;
         for (const [i, slot] of chartSlot.entries()) {
           const chartLevel = getLevel(songTag, i, 1);
           if (slot.diffClass !== "" && chartLevel !== 0) {
+            const { flags, includesArcade } = this.#getChartStatusFlags(
+              songTag,
+              i,
+              getLevel,
+              getCellData,
+            );
+            if (!includesArcade) {
+              continue;
+            }
             const noteCount = (datatbl[songTag][i] as number) ?? 0;
             const chartInfo: TextageSongChart = { ...slot, lvl: chartLevel };
             if (noteCount > 0) {
@@ -580,12 +633,11 @@ export default globalThis;
             if (chartBPM !== songBPM) {
               chartInfo.bpm = chartBPM;
             }
-            const chartStatusFlags = getChartStatusFlags(songTag, i, getLevel);
-            if (chartStatusFlags.length) {
-              chartInfo.flags = [...chartStatusFlags];
+            if (slot.diffClass === "leggendaria") {
+              flags.push(...(lockedLeggendaria.get(songTag) ?? []));
             }
-            if (slot.diffClass === "leggendaria" && timelockLegs.has(songTag)) {
-              chartInfo.flags = [...(chartInfo.flags ?? []), "timelock"];
+            if (flags.length) {
+              chartInfo.flags = flags;
             }
             chartData.push(chartInfo);
           }
@@ -593,15 +645,10 @@ export default globalThis;
 
         const songFlags: string[] = [];
         for (const [eventName, songTags] of eventMap) {
-          if (songTags.includes(songTag) && !eventReleases.has(songTag)) {
-            const relatedFlags = Array.from(eventFlagMap.entries()).filter(
-              (v) => eventName.includes(v[0]),
-            );
-            if (relatedFlags.length === 1) {
-              console.warn(
-                `c[] ${songTag} (${songName}) is locked behind the ${relatedFlags[0][0]} event`,
-              );
-              songFlags.push(...relatedFlags[0][1]);
+          if (songTags.includes(songTag)) {
+            const relatedFlags = eventFlagMap.get(eventName);
+            if (relatedFlags?.length) {
+              songFlags.push(...relatedFlags);
             } else {
               console.warn(
                 `c[] ${songTag} (${songName}) is locked behind unknown event ${eventName}`,
@@ -609,8 +656,8 @@ export default globalThis;
             }
           }
         }
-        if (timelockTags.has(songTag)) {
-          songFlags.push("timelock");
+        if (battleArenaUnlocks.has(songTag)) {
+          songFlags.push("battleArena");
         }
 
         const folderName = folderNames[folder] ?? "---";
@@ -665,6 +712,17 @@ export default globalThis;
       updated = true;
     }
 
+    // Remove any charts that are no longer present in the fetched data
+    const beforeChartCount = existingSong.charts.length;
+    existingSong.charts = existingSong.charts.filter((chart) =>
+      fetchedSong.charts.find(
+        (c) => c.style === chart.style && c.diffClass === chart.diffClass,
+      ),
+    );
+    if (existingSong.charts.length !== beforeChartCount) {
+      updated = true;
+    }
+
     for (const fetchedChart of fetchedSong.charts) {
       const existingChart = existingSong.charts.find(
         (c) =>
@@ -688,8 +746,6 @@ export default globalThis;
         existingChart.bpm = fetchedChart.bpm;
         if (fetchedChart.maxScore !== undefined) {
           existingChart.maxScore = fetchedChart.maxScore;
-        } else {
-          delete existingChart.maxScore;
         }
         if (fetchedChart.flags?.length) {
           existingChart.flags = [...fetchedChart.flags];
@@ -697,6 +753,14 @@ export default globalThis;
           delete existingChart.flags;
         }
         updated = true;
+      }
+
+      if (!existingChart.maxScore) {
+        const chartName =
+          `[${existingChart.style}/${existingChart.diffClass}]`.toUpperCase();
+        console.warn(
+          `c[] ${existingSong.name} (${existingSong.saHash}) ${chartName}: no notes info`,
+        );
       }
     }
 

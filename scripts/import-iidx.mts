@@ -258,7 +258,7 @@ try {
   }
 
   const lastUpdated = (await importer.fetchLastUpdated()) || Date.now();
-  writeJsonData(existingData, targetFile, lastUpdated);
+  writeJsonData(existingData, targetFile, lastUpdated, 2);
   console.log(`Successfully imported data, writing data to ${targetFile}`);
   console.log(
     `Complete. Make sure new arena and time-locked/shop-bought exclusives are indicated manually!`,
