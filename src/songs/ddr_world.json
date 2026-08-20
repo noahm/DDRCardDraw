@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1786031152222
+    "lastUpdated": 1787198720174
   },
   "defaults": {
     "style": "single",
@@ -1863,7 +1863,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/About Damn Time.jpg"
+      "jacket": "ddr_world/About Damn Time.jpg",
+      "remyLink": "https://remywiki.com/About_Damn_Time"
     },
     {
       "name": "Abrupt Madness",
@@ -3041,7 +3042,7 @@
       ],
       "remyLink": "https://remywiki.com/Aftermath",
       "jacket": "ddr_a20plus/Aftermath.jpg",
-      "genre": "ROCK",
+      "genre": "ROCK/ロック",
       "saHash": "9IQoPbOidod8I0qQ989Ql60D09I99q1Q",
       "saIndex": "1037"
     },
@@ -4086,9 +4087,9 @@
           "sanbaiTier": 15.7
         }
       ],
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/Amabie.jpg",
-      "genre": "ORIENTAL FUTURE BASS",
+      "genre": "ORIENTAL FUTURE BASS/オリエンタルフューチャーベース",
       "remyLink": "https://remywiki.com/Amabie"
     },
     {
@@ -4746,7 +4747,7 @@
           "sanbaiTier": 15.2
         }
       ],
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/Any%.jpg",
       "genre": "DTMスピードラン/DTM SPEEDRUN",
       "remyLink": "https://remywiki.com/Any_Percentage"
@@ -7159,7 +7160,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Better When I'm Dancin'.jpg"
+      "jacket": "ddr_world/Better When I'm Dancin'.jpg",
+      "remyLink": "https://remywiki.com/Better_When_I%27m_Dancin%27"
     },
     {
       "name": "Beyond The Earth",
@@ -7987,7 +7989,7 @@
           "sanbaiTier": 15.5
         }
       ],
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/Bloody Iron Maiden.jpg",
       "remyLink": "https://remywiki.com/Bloody_Iron_Maiden"
     },
@@ -9555,7 +9557,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg"
+      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg",
+      "remyLink": "https://remywiki.com/BUCHiAGE_matsuri_DANCE"
     },
     {
       "name": "BURNIN' THE FLOOR",
@@ -19094,7 +19097,7 @@
       ],
       "remyLink": "https://remywiki.com/DUAL_STRIKER",
       "jacket": "ddr_a3/DUAL_STRIKER.jpg",
-      "genre": "IIDX SOUNDS",
+      "genre": "IIDX SOUNDS/IIDXサウンド",
       "saHash": "9b60DI1OQddDI6D9D1qPoDPODD19Db8d",
       "saIndex": "1117"
     },
@@ -25955,7 +25958,7 @@
       ],
       "remyLink": "https://remywiki.com/Globe_Glitter",
       "jacket": "ddr_a20plus/Globe Glitter.jpg",
-      "genre": "RAVE STEP",
+      "genre": "RAVE STEP/レイヴステップ",
       "saHash": "lilO9P0i1dlOl1PI6dQbiob1iP0dliOQ",
       "saIndex": "1023"
     },
@@ -36579,7 +36582,7 @@
       ],
       "remyLink": "https://remywiki.com/LIKE_A_VAMPIRE",
       "jacket": "ddr_a20plus/LIKE A VAMPIRE.jpg",
-      "genre": "HEAVY METAL",
+      "genre": "HEAVY METAL/ヘビーメタル",
       "saHash": "ooiqoi6Q0dil6b10QOq8DiOIiq9iQb10",
       "saIndex": "1020"
     },
@@ -38657,7 +38660,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/Make Mi Make Mi.jpg"
+      "jacket": "ddr_world/Make Mi Make Mi.jpg",
+      "remyLink": "https://remywiki.com/Make_Mi_Make_Mi"
     },
     {
       "name": "Malacca",
@@ -40671,6 +40675,74 @@
       "saHash": "i9DPi1Do9qoIQid09o1oilodPlDP6doO",
       "saIndex": "125",
       "search_hint": "J-GARAGE POP REMIX/JガラージポップREMIX"
+    },
+    {
+      "name": "miserable life and worthless thoughts",
+      "artist": "めめめ",
+      "saHash": "8bbqoo1OQdId00Oi60d8qoldb9iPb0P6",
+      "bpm": "79-314",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "157",
+          "lvl": 3,
+          "maxScore": 267
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "157",
+          "lvl": 7,
+          "maxScore": 762
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1155
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1761
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2280
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "157",
+          "lvl": 7,
+          "maxScore": 717
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1152
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1734
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2214
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/miserable life and worthless thoughts.jpg"
     },
     {
       "name": "MITOれて！いばらきっしゅだ～りん",
@@ -43081,7 +43153,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/New Nostalgy.jpg"
+      "jacket": "ddr_world/New Nostalgy.jpg",
+      "remyLink": "https://remywiki.com/New_Nostalgy"
     },
     {
       "name": "New Rules",
@@ -45613,7 +45686,7 @@
       ],
       "remyLink": "https://remywiki.com/Paparazzi",
       "jacket": "ddr_a20plus/paparazzi.jpg",
-      "genre": "",
+      "genre": "スキャンダラス/SCANDALOUS",
       "saHash": "lb01Qb1iOOIIobPO06Oob9ODilIDOQ6Q",
       "saIndex": "1018"
     },
@@ -46623,17 +46696,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 348
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 918
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1245
         },
         {
           "style": "single",
@@ -46644,12 +46720,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 906
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1245
         },
         {
           "style": "double",
@@ -46659,7 +46737,8 @@
         }
       ],
       "flags": ["worldLeague"],
-      "jacket": "ddr_world/PARANOiA STOMP, STOMP, STOMP.jpg"
+      "jacket": "ddr_world/PARANOiA STOMP, STOMP, STOMP.jpg",
+      "remyLink": "https://remywiki.com/PARANOiA:_STOMP,_STOMP,_STOMP"
     },
     {
       "name": "PARTY ALL NIGHT(DJ KEN-BOW MIX)",
@@ -47898,7 +47977,7 @@
       ],
       "remyLink": "https://remywiki.com/Poppin%27_Soda",
       "jacket": "ddr_a20plus/Poppin' Soda.jpg",
-      "genre": "KAWAII FUTURE BASS",
+      "genre": "KAWAII FUTURE BASS/カワイイフューチャーベース",
       "saHash": "Q0dQDqillPqIId0Q81q01ooObQIlO1QI",
       "saIndex": "1007"
     },
@@ -50865,7 +50944,7 @@
       ],
       "remyLink": "https://remywiki.com/Red_Cape_Theorem",
       "jacket": "ddr_a20plus/Red Cape Theorem.jpg",
-      "genre": "",
+      "genre": "メルヘンコンテンポラリー/MARCHEN CONTEMPORARY",
       "saHash": "Qi1Q6I80b09Oq91OPldbO19080q0dd0b",
       "saIndex": "977"
     },
@@ -57045,7 +57124,7 @@
           "sanbaiTier": 17.4
         }
       ],
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/Smintheus.jpg",
       "genre": "ハムパラドックス/HAM PARADOX",
       "remyLink": "https://remywiki.com/Smintheus"
@@ -67718,7 +67797,7 @@
       ],
       "remyLink": "https://remywiki.com/Triple_Cross",
       "jacket": "ddr_a20plus/Triple Cross.jpg",
-      "genre": "MUSIC GAME TRADITIONAL",
+      "genre": "MUSIC GAME TRADITIONAL/ミュージックゲームトラディショナル",
       "saHash": "IQqi9Q9qD0DDQIqQOb868QIOioqDqI01",
       "saIndex": "1032"
     },
@@ -74514,7 +74593,7 @@
       ],
       "remyLink": "https://remywiki.com/Koko_kara_yoroshiku_daisakusen_143",
       "jacket": "ddr_a20plus/Koko kara yoroshiku daisakusen 143.jpg",
-      "genre": "ROCK",
+      "genre": "ROCK/ロック",
       "saHash": "DdQ1lQ1Qb1P1oPl1QOd0Q0O9qqidiI9q",
       "saIndex": "987"
     },
@@ -76457,7 +76536,7 @@
       ],
       "remyLink": "https://remywiki.com/Innocent_bible",
       "jacket": "ddr_a20plus/Innocent bible.jpg",
-      "genre": "",
+      "genre": "ホーリーサルベーション/HOLY SALVATION",
       "saHash": "DQ1dqP1IoiD11QOPiI0Q8PqO0Qddo6q6",
       "saIndex": "974"
     },
@@ -76726,7 +76805,7 @@
       ],
       "remyLink": "https://remywiki.com/Usotsuki_yokochou_wa_amemoyou",
       "jacket": "ddr_a20plus/Usotsuki yokochou wa amemoyou.jpg",
-      "genre": "",
+      "genre": "昭和メランコ",
       "saHash": "q8iPi1DP6Do6D110OQiQDdPq06q80Qb0",
       "saIndex": "975"
     },
@@ -78583,7 +78662,7 @@
       ],
       "remyLink": "https://remywiki.com/Chucchu_Machu_Picchu",
       "jacket": "ddr_a3/Chucchu Machu Picchu.jpg",
-      "genre": "",
+      "genre": "アンデスダンシング/ANDES DANCING",
       "saHash": "OoQiq8OiPbIPI80OqOlliP661bOIDd9o",
       "saIndex": "1115"
     },
@@ -80058,7 +80137,7 @@
       ],
       "remyLink": "https://remywiki.com/Khorosho!_Onigiri_circus_dan",
       "jacket": "ddr_a20plus/Khorosho! Onigiri circus dan.jpg",
-      "genre": "",
+      "genre": "おにぎりプログレッシヴ/RICE BALL PROGRESSIVE",
       "saHash": "16b91IPI881lPIo8Qq9Pl1IPiD8Ddodl",
       "saIndex": "976"
     },
@@ -88162,7 +88241,7 @@
           "sanbaiTier": 17.15
         }
       ],
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/断罪のミメシス.jpg",
       "genre": "ジャッジメントシンフォニックスピードコア/JUDGEMENT SYMPHONIC SPEEDCORE",
       "remyLink": "https://remywiki.com/Danzai_no_mimesis"
@@ -90846,7 +90925,8 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/燭.jpg",
-      "search_hint": "ともしび"
+      "search_hint": "ともしび",
+      "remyLink": "https://remywiki.com/Tomoshibi_(Rish_feat.Choko_(Noir))"
     },
     {
       "name": "爆なな☆てすとロイヤー",
@@ -93838,7 +93918,8 @@
       "jacket": "ddr_a20plus/Itetsu no pride.jpg",
       "saHash": "Odb0b0ld6P80b8b6QD0IIO866iq8OQ0b",
       "saIndex": "1014",
-      "search_hint": "いてつのプライド"
+      "search_hint": "いてつのプライド",
+      "genre": "アイアンハート/IRON HEART"
     },
     {
       "name": "鏡花水月楼 (DDR EDITION)",
@@ -94558,7 +94639,7 @@
           "sanbaiTier": 16.35
         }
       ],
-      "flags": ["unlock"],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/霖が哭く.jpg",
       "genre": "SAMIDARE/サミダレ",
       "remyLink": "https://remywiki.com/Rin_ga_naku"
