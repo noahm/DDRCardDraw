@@ -123,6 +123,7 @@ const lockedLeggendaria = new Map<SongTag, string[]>([
     "lab", // LAB
     "plkmania", // POLꓘAMAИIA
     "_3plus3", // ≡＋≡
+    "medilove", // Medicine of love (辻斬り隠れキャラ event)
   ].map((tag) => [tag, ["hiddenLeggendaria"]] as [string, string[]]),
   ...[
     "_mschour", // ミュージック・アワー
@@ -730,25 +731,60 @@ export default globalThis;
           c.diffClass === fetchedChart.diffClass,
       );
       if (!existingChart) {
+        console.log(
+          `Added "${existingSong.name}": [${fetchedChart.style}/${fetchedChart.diffClass}] (Lv.${fetchedChart.lvl})`,
+        );
         existingSong.charts.push({ ...fetchedChart });
         updated = true;
         continue;
       }
 
-      if (
-        existingChart.lvl !== fetchedChart.lvl ||
-        existingChart.bpm !== fetchedChart.bpm ||
-        existingChart.maxScore !== fetchedChart.maxScore ||
-        existingChart.flags?.join("\u0000") !==
-          fetchedChart.flags?.join("\u0000")
-      ) {
+      // Update level if different
+      if (existingChart.lvl !== fetchedChart.lvl) {
+        console.log(
+          `Updated "${existingSong.name}" [${fetchedChart.style}/${fetchedChart.diffClass}] level: ${existingChart.lvl} -> ${fetchedChart.lvl}`,
+        );
         existingChart.lvl = fetchedChart.lvl;
+        updated = true;
+      }
+      // Update BPM if different
+      if (existingChart.bpm !== fetchedChart.bpm) {
+        console.log(
+          `Updated "${existingSong.name}" [${fetchedChart.style}/${fetchedChart.diffClass}] BPM: ${existingChart.bpm} -> ${fetchedChart.bpm}`,
+        );
         existingChart.bpm = fetchedChart.bpm;
-        if (fetchedChart.maxScore !== undefined) {
-          existingChart.maxScore = fetchedChart.maxScore;
-        }
+        updated = true;
+      }
+      // Update MAX if different
+      if (
+        existingChart.maxScore !== fetchedChart.maxScore &&
+        fetchedChart.maxScore !== undefined
+      ) {
+        console.log(
+          `Updated "${existingSong.name}" [${fetchedChart.style}/${fetchedChart.diffClass}] MAX: ${existingChart.maxScore} -> ${fetchedChart.maxScore}`,
+        );
+        existingChart.maxScore = fetchedChart.maxScore;
+        updated = true;
+      }
+
+      // Update flags if different
+      if (
+        !fetchedChart.maxScore &&
+        existingChart.flags?.includes("hellCharge") &&
+        !fetchedChart.flags?.includes("hellCharge")
+      ) {
+        // Keep manual hellCharge when textage has no chart detail to confirm status.
+        fetchedChart.flags = [...(fetchedChart.flags ?? []), "hellCharge"];
+      }
+      if (
+        existingChart.flags?.join("\u0000") !==
+        fetchedChart.flags?.join("\u0000")
+      ) {
+        console.log(
+          `Updated "${existingSong.name}" [${fetchedChart.style}/${fetchedChart.diffClass}] flags: ${existingChart.flags} -> ${fetchedChart.flags}`,
+        );
         if (fetchedChart.flags?.length) {
-          existingChart.flags = [...fetchedChart.flags];
+          existingChart.flags = fetchedChart.flags;
         } else {
           delete existingChart.flags;
         }

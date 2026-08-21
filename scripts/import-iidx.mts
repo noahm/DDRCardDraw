@@ -6,7 +6,7 @@ import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import { JSDOM } from "jsdom";
 
-import { exists, writeJsonData } from "./utils.mts";
+import { exists, sortSongs, writeJsonData } from "./utils.mts";
 import { TextageSongImporter } from "./scraping/textage.mts";
 import type { GameData } from "../src/models/SongData.ts";
 
@@ -237,6 +237,7 @@ try {
     if (existingSong) {
       importer.merge(existingSong, fetchedSong);
     } else {
+      console.info(`Adding new song: ${fetchedSong.name}`);
       songList.push(fetchedSong);
     }
   }
@@ -257,6 +258,7 @@ try {
     }
   }
 
+  sortSongs(existingData.songs, existingData.meta, (_l, _r) => 0);
   const lastUpdated = (await importer.fetchLastUpdated()) || Date.now();
   writeJsonData(existingData, targetFile, lastUpdated, 2);
   console.log(`Successfully imported data, writing data to ${targetFile}`);

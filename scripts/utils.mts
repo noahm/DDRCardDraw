@@ -39,9 +39,24 @@ export async function exists(path: string): Promise<boolean> {
 
 /**
  * sorts songs in-place, and charts within each song
- * @param songs
+ * @param songs array of songs to sort
+ * @param meta game metadata for sorting charts
+ * @param compareFn Optional comparison function for sorting songs (defaults to case-insensitive name sort)
  */
-export function sortSongs(songs: Song[], meta: GameData["meta"]) {
+export function sortSongs(
+  songs: Song[],
+  meta: GameData["meta"],
+  compareFn?: (left: Song, right: Song) => number,
+): Song[] {
+  compareFn ??= (left, right) => {
+    const leftLowerName = left.name.toLowerCase();
+    const rightLowerName = right.name.toLowerCase();
+
+    if (leftLowerName === rightLowerName) {
+      return left.name == right.name ? 0 : left.name > right.name ? 1 : -1;
+    }
+    return leftLowerName > rightLowerName ? 1 : -1;
+  };
   for (const song of songs) {
     song.charts.sort((left, right) => {
       if (left.style !== right.style) {
@@ -58,15 +73,7 @@ export function sortSongs(songs: Song[], meta: GameData["meta"]) {
       return left.lvl - right.lvl;
     });
   }
-  return songs.sort((left, right) => {
-    const leftLowerName = left.name.toLowerCase();
-    const rightLowerName = right.name.toLowerCase();
-
-    if (leftLowerName === rightLowerName) {
-      return left.name == right.name ? 0 : left.name > right.name ? 1 : -1;
-    }
-    return leftLowerName > rightLowerName ? 1 : -1;
-  });
+  return songs.sort(compareFn);
 }
 
 /**

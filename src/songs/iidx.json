@@ -73,7 +73,7 @@
       "Pinky Crush",
       "Sparkle Shower"
     ],
-    "lastUpdated": 1787147820000
+    "lastUpdated": 1787241300000
   },
   "defaults": {
     "style": "single",
@@ -26884,6 +26884,13 @@
           "maxScore": 2778
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 4872,
+          "flags": ["battleArena"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 6,
@@ -26900,6 +26907,13 @@
           "diffClass": "another",
           "lvl": 12,
           "maxScore": 3672
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 4790,
+          "flags": ["battleArena"]
         }
       ],
       "jacket": "iidx/SIRIUS.svg"
@@ -28870,6 +28884,13 @@
           "maxScore": 1732
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 11,
+          "maxScore": 2546,
+          "flags": ["hiddenLeggendaria"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 4,
@@ -28886,6 +28907,13 @@
           "diffClass": "another",
           "lvl": 9,
           "maxScore": 1714
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 11,
+          "maxScore": 2180,
+          "flags": ["hiddenLeggendaria"]
         }
       ],
       "jacket": "iidx/Resort-Anthem.svg"
@@ -62521,6 +62549,13 @@
           "maxScore": 2598
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 3530,
+          "flags": ["battleArena"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 5,
@@ -62537,6 +62572,13 @@
           "diffClass": "another",
           "lvl": 11,
           "maxScore": 2514
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 3446,
+          "flags": ["battleArena"]
         }
       ],
       "jacket": "iidx/HEROIC-VERSE.svg"
@@ -70724,6 +70766,13 @@
           "maxScore": 2284
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 11,
+          "maxScore": 3032,
+          "flags": ["battleArena"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 5,
@@ -70740,6 +70789,13 @@
           "diffClass": "another",
           "lvl": 10,
           "maxScore": 2358
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 11,
+          "maxScore": 3338,
+          "flags": ["battleArena"]
         }
       ],
       "jacket": "iidx/CastHour.svg"
