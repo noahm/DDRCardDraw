@@ -1,4 +1,5 @@
 {
+  "$schema": "../../songs.schema.json",
   "meta": {
     "styles": ["single", "double"],
     "difficulties": [
@@ -80886,7 +80887,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1062
         },
         {
           "style": "double",
@@ -88732,7 +88734,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1024
         },
         {
           "style": "double",
@@ -88778,7 +88781,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 856
         },
         {
           "style": "double",
@@ -88806,12 +88810,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 236
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 650
         },
         {
           "style": "single",
@@ -88828,7 +88834,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 740
         },
         {
           "style": "double",
@@ -88874,7 +88881,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1002
         },
         {
           "style": "double",
@@ -89090,7 +89098,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 756
         },
         {
           "style": "single",
@@ -89107,7 +89116,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 842
         },
         {
           "style": "double",
@@ -89135,12 +89145,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 370
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 818
         },
         {
           "style": "single",
@@ -89157,7 +89169,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 852
         },
         {
           "style": "double",
@@ -89279,7 +89292,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1142
         },
         {
           "style": "single",
@@ -89296,7 +89310,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1122
         },
         {
           "style": "double",
@@ -89324,7 +89339,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 942
         },
         {
           "style": "single",
@@ -89341,7 +89357,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 944
         },
         {
           "style": "double",
@@ -89369,12 +89386,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 368
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 884
         },
         {
           "style": "single",
@@ -89391,7 +89410,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 880
         },
         {
           "style": "double",
@@ -89513,7 +89533,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 874
         },
         {
           "style": "single",
@@ -89530,7 +89551,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 890
         },
         {
           "style": "double",
@@ -89558,7 +89580,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1088
         },
         {
           "style": "single",
@@ -89575,7 +89598,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1116
         },
         {
           "style": "double",
@@ -89650,7 +89674,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 920
         },
         {
           "style": "single",
@@ -89667,7 +89692,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1066
         },
         {
           "style": "double",
@@ -89695,7 +89721,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1218
         },
         {
           "style": "single",
@@ -89712,7 +89739,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1192
         },
         {
           "style": "double",
@@ -89787,7 +89815,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1056
         },
         {
           "style": "single",
@@ -89804,7 +89833,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1102
         },
         {
           "style": "double",
@@ -89879,12 +89909,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 220
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 938
         },
         {
           "style": "single",
@@ -89907,7 +89939,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 932
         },
         {
           "style": "double",
@@ -89941,7 +89974,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 840
         },
         {
           "style": "single",
@@ -89958,7 +89992,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 884
         },
         {
           "style": "double",
@@ -89986,7 +90021,9 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 908,
+          "flags": ["hellCharge"]
         },
         {
           "style": "single",
@@ -90005,7 +90042,9 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 904,
+          "flags": ["hellCharge"]
         },
         {
           "style": "double",
@@ -90035,7 +90074,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 912
         },
         {
           "style": "single",
@@ -90054,7 +90094,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 924
         },
         {
           "style": "double",
@@ -90084,7 +90125,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 748
         },
         {
           "style": "single",
@@ -90101,7 +90143,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 726
         },
         {
           "style": "double",
@@ -90129,7 +90172,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 830
         },
         {
           "style": "single",
@@ -90146,7 +90190,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 844
         },
         {
           "style": "double",
@@ -90174,12 +90219,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 290
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1196
         },
         {
           "style": "single",
@@ -90196,7 +90243,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1184
         },
         {
           "style": "double",
@@ -90224,7 +90272,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 886
         },
         {
           "style": "single",
@@ -90241,7 +90290,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 960
         },
         {
           "style": "double",
@@ -90269,12 +90319,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 274
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 1168
         },
         {
           "style": "single",
@@ -90291,7 +90343,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 1134
         },
         {
           "style": "double",
@@ -90319,7 +90372,8 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 544
         },
         {
           "style": "single",
@@ -90371,7 +90425,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 744
         },
         {
           "style": "single",
@@ -90388,7 +90443,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 782
         },
         {
           "style": "double",
@@ -90463,12 +90519,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 220
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 858
         },
         {
           "style": "single",
@@ -90485,7 +90543,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 846
         },
         {
           "style": "double",
@@ -90513,7 +90572,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1032
         },
         {
           "style": "single",
@@ -90530,7 +90590,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1022
         },
         {
           "style": "double",
@@ -90558,12 +90619,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 238
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 840
         },
         {
           "style": "single",
@@ -90580,7 +90643,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 850
         },
         {
           "style": "double",
@@ -90608,7 +90672,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 892
         },
         {
           "style": "single",
@@ -90625,7 +90690,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 868
         },
         {
           "style": "double",
@@ -90798,7 +90864,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 990
         },
         {
           "style": "single",
@@ -90815,7 +90882,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 992
         },
         {
           "style": "double",
@@ -90844,7 +90912,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 824
         },
         {
           "style": "single",
@@ -90861,7 +90930,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 828
         },
         {
           "style": "double",
@@ -90938,7 +91008,8 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 522
         },
         {
           "style": "single",
@@ -91004,12 +91075,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 206
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 792
         },
         {
           "style": "single",
@@ -91026,7 +91099,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 804
         },
         {
           "style": "double",
@@ -91121,7 +91195,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1112
         },
         {
           "style": "double",
@@ -91150,7 +91225,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 780
         },
         {
           "style": "single",
@@ -91167,7 +91243,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 778
         },
         {
           "style": "double",
@@ -91244,7 +91321,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 972
         },
         {
           "style": "single",
@@ -91261,7 +91339,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1070
         },
         {
           "style": "double",
@@ -91290,7 +91369,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1052
         },
         {
           "style": "single",
@@ -91307,7 +91387,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1076
         },
         {
           "style": "double",
@@ -91336,7 +91417,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 934
         },
         {
           "style": "single",
@@ -91353,7 +91435,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 928
         },
         {
           "style": "double",
@@ -91382,7 +91465,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 770
         },
         {
           "style": "single",
@@ -91399,7 +91483,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 772
         },
         {
           "style": "double",
@@ -91428,7 +91513,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 596
         },
         {
           "style": "single",
@@ -91445,7 +91531,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 586
         },
         {
           "style": "double",
@@ -91474,7 +91561,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1076
         },
         {
           "style": "single",
@@ -91491,7 +91579,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1070
         },
         {
           "style": "double",
@@ -91520,7 +91609,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1116
         },
         {
           "style": "single",
@@ -91537,7 +91627,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1118
         },
         {
           "style": "double",
@@ -91716,7 +91807,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 938
         },
         {
           "style": "single",
@@ -91733,7 +91825,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1012
         },
         {
           "style": "double",
@@ -91762,7 +91855,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1318
         },
         {
           "style": "single",
@@ -91905,7 +91999,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 718
         },
         {
           "style": "single",
@@ -91922,7 +92017,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 850
         },
         {
           "style": "double",
@@ -91950,7 +92046,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 654
         },
         {
           "style": "single",
@@ -91967,7 +92064,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 796
         },
         {
           "style": "double",
@@ -91995,7 +92093,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 676
         },
         {
           "style": "single",
@@ -92012,7 +92111,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 664
         },
         {
           "style": "double",
@@ -92040,7 +92140,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 858
         },
         {
           "style": "single",
@@ -92057,7 +92158,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 884
         },
         {
           "style": "double",
@@ -92086,7 +92188,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1054
         },
         {
           "style": "single",
@@ -92103,7 +92206,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1062
         },
         {
           "style": "double",
@@ -92132,7 +92236,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1052
         },
         {
           "style": "single",
@@ -92149,7 +92254,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1084
         },
         {
           "style": "double",
@@ -92418,12 +92524,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 480
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1218
         },
         {
           "style": "single",
@@ -92440,7 +92548,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1200
         },
         {
           "style": "double",
@@ -92468,12 +92577,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 268
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 964
         },
         {
           "style": "single",
@@ -92490,7 +92601,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 952
         },
         {
           "style": "double",
@@ -92518,7 +92630,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 916
         },
         {
           "style": "single",
@@ -92535,7 +92648,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 916
         },
         {
           "style": "double",
@@ -92564,7 +92678,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1144
         },
         {
           "style": "single",
@@ -92581,7 +92696,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1140
         },
         {
           "style": "double",
@@ -92658,7 +92774,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 702
         },
         {
           "style": "single",
@@ -92675,7 +92792,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 782
         },
         {
           "style": "double",
@@ -92704,7 +92822,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1068
         },
         {
           "style": "single",
@@ -92721,7 +92840,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1068
         },
         {
           "style": "double",
@@ -92798,7 +92918,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 696
         },
         {
           "style": "single",
@@ -92815,7 +92936,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 698
         },
         {
           "style": "double",
@@ -92844,7 +92966,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1072
         },
         {
           "style": "single",
@@ -92861,7 +92984,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1076
         },
         {
           "style": "double",
@@ -92890,7 +93014,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 942
         },
         {
           "style": "single",
@@ -92907,7 +93032,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 972
         },
         {
           "style": "double",
@@ -92936,7 +93062,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 734
         },
         {
           "style": "single",
@@ -92953,7 +93080,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 726
         },
         {
           "style": "double",
@@ -92982,7 +93110,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1110
         },
         {
           "style": "single",
@@ -92999,7 +93128,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1120
         },
         {
           "style": "double",
@@ -93028,7 +93158,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1090
         },
         {
           "style": "single",
@@ -93045,7 +93176,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1090
         },
         {
           "style": "double",
@@ -93091,7 +93223,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1160
         },
         {
           "style": "double",
@@ -93166,7 +93299,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1004
         },
         {
           "style": "single",
@@ -93183,7 +93317,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1002
         },
         {
           "style": "double",
@@ -93305,7 +93440,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 808
         },
         {
           "style": "single",
@@ -93322,7 +93458,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 808
         },
         {
           "style": "double",
@@ -93350,7 +93487,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1158
         },
         {
           "style": "single",
@@ -93367,7 +93505,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1132
         },
         {
           "style": "double",
@@ -93444,7 +93583,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 934
         },
         {
           "style": "single",
@@ -93461,7 +93601,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 920
         },
         {
           "style": "double",
@@ -93634,7 +93775,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 920
         },
         {
           "style": "single",
@@ -93651,7 +93793,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 978
         },
         {
           "style": "double",
@@ -93728,7 +93871,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 750
         },
         {
           "style": "single",
@@ -93745,7 +93889,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 978
         },
         {
           "style": "double",
@@ -93774,7 +93919,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 860
         },
         {
           "style": "single",
@@ -93791,7 +93937,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 852
         },
         {
           "style": "double",
@@ -93820,7 +93967,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1054
         },
         {
           "style": "single",
@@ -93837,7 +93985,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 1072
         },
         {
           "style": "double",
@@ -93962,12 +94111,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 174
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 468
         },
         {
           "style": "single",
@@ -93984,7 +94135,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 452
         },
         {
           "style": "double",
@@ -94012,12 +94164,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 478
         },
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 878
         },
         {
           "style": "single",
@@ -94034,7 +94188,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 878
         },
         {
           "style": "double",
@@ -94158,7 +94313,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 1510
         },
         {
           "style": "single",
@@ -94175,12 +94331,14 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 1400
         },
         {
           "style": "double",
           "diffClass": "hyper",
-          "lvl": 9
+          "lvl": 9,
+          "maxScore": 2092
         },
         {
           "style": "double",
@@ -94202,7 +94360,8 @@
         {
           "style": "single",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 732
         },
         {
           "style": "single",
@@ -94221,7 +94380,8 @@
         {
           "style": "double",
           "diffClass": "normal",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 748
         },
         {
           "style": "double",
