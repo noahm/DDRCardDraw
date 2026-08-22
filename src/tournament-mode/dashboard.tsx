@@ -18,6 +18,7 @@ import React, { useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
 import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
+import { CabObsSources } from "./cab-obs-sources";
 
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
@@ -66,6 +67,9 @@ export function Dashboard() {
               />
             ))}
           </CardList>
+        </section>
+        <section>
+          <CabObsSources />
         </section>
         <CssEditor />
       </div>

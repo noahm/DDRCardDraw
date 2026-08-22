@@ -5,7 +5,6 @@ import {
   InputGroup,
   Menu,
   MenuItem,
-  MenuItemProps,
   Popover,
   Tooltip,
 } from "@blueprintjs/core";
@@ -17,24 +16,16 @@ import {
   CaretLeft,
   CaretRight,
   Cross,
-  DiagramTree,
-  Font,
-  Layers,
   MobileVideo,
   More,
-  People,
-  Person,
   Remove,
-  Tag,
-  Numerical,
 } from "@blueprintjs/icons";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { drawingsSlice } from "../state/drawings.slice";
 import { playerDisplayName } from "../models/Drawing";
-import { copyObsSource, routableCabSourcePath } from "./copy-obs-source";
-import { useHref } from "react-router-dom";
+import { useHref, useNavigate } from "react-router-dom";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
@@ -101,62 +92,25 @@ function AddCabControl(props: { children?: ReactNode }) {
 
 function CabSummary({ cab }: { cab: CabInfo }) {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const dashHref = useHref("dash", { relative: "route" });
   const removeCab = useCallback(
     () => dispatch(eventSlice.actions.removeCab(cab.id)),
     [dispatch, cab.id],
   );
 
-  const sourcesMenu = (
+  const cabMenu = (
     <Menu>
-      <MenuItem icon={<MobileVideo />} text="OBS Sources">
-        <CopySourceMenuItem
-          icon={<Layers />}
-          text="Cards"
-          stub="cards"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<Font />}
-          text="Title"
-          stub="title"
-          cabId={cab.id}
-        />
-        <CopySourceMenuItem
-          icon={<DiagramTree />}
-          text="Current Phase"
-          stub="phase"
-          cabId={cab.id}
-        />
-        <MenuItem icon={<People />} text="Players">
-          <CopySourceMenuItem
-            icon={<People />}
-            text="All Players"
-            stub="players"
-            cabId={cab.id}
-          />
-          <MenuItem icon={<Person />} text="Single Player">
-            <CopySourceMenuItem
-              text="Name and Score"
-              stub="player/1"
-              cabId={cab.id}
-            />
-            <CopySourceMenuItem
-              icon={<Tag />}
-              text="Name"
-              stub="player/1/name"
-              cabId={cab.id}
-            />
-            <CopySourceMenuItem
-              icon={<Numerical />}
-              text="Score"
-              stub="player/1/score"
-              cabId={cab.id}
-            />
-          </MenuItem>
-          <MenuItem disabled text="(edit URL for players beyond 1)" />
-        </MenuItem>
-      </MenuItem>
-
+      <MenuItem
+        icon={<MobileVideo />}
+        text="OBS Sources"
+        label="dashboard"
+        href={dashHref}
+        onClick={(e) => {
+          e.preventDefault();
+          navigate("dash");
+        }}
+      />
       <MenuItem icon={<Remove />} text="Remove Cab" onClick={removeCab} />
     </Menu>
   );
@@ -165,29 +119,12 @@ function CabSummary({ cab }: { cab: CabInfo }) {
     <div id={cab.id}>
       <h1>
         {cab.name}{" "}
-        <Popover content={sourcesMenu}>
+        <Popover content={cabMenu}>
           <Button minimal icon={<More />} />
         </Popover>{" "}
       </h1>
       <CurrentMatch cab={cab} />
     </div>
-  );
-}
-
-function CopySourceMenuItem(
-  props: Pick<MenuItemProps, "icon" | "text"> & { stub: string; cabId: string },
-) {
-  const href = useHref(routableCabSourcePath(props.cabId, props.stub));
-  return (
-    <MenuItem
-      icon={props.icon}
-      text={props.text}
-      onClick={(e) => {
-        e.preventDefault();
-        copyObsSource(e.currentTarget.href);
-      }}
-      href={href}
-    />
   );
 }
 

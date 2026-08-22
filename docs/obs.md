@@ -2,9 +2,15 @@
 
 The app provides a number of single-purpose URLs for use within OBS as browser type source. Each individual cab has its own set of sources, which will update as the match assigned to that cab changes.
 
+They all live on the stream dashboard, which you can reach from the hamburger menu or from any cab's menu in the sidebar.
+
 ![alt text](images/obs/source-menu.png)
 
-After clicking on one, the URL will be put on your clipboard. In OBS you can add that info to your stream layout by adding a new browser source.
+Expand the "Cab OBS Sources" section, pick which cab you're setting up, and click the copy button on any row to put that URL on your clipboard. Raise the player count if you need sources for more than two players on a cab.
+
+![a list of every OBS source URL available for the selected cab](images/obs/cab-source-list.png)
+
+In OBS you can add the copied URL to your stream layout by adding a new browser source.
 
 ![alt text](images/obs/obs-source-add.png)
 
