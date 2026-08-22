@@ -26,6 +26,7 @@ import { mainTabAtom } from "./main-view";
 import { drawingsSlice } from "../state/drawings.slice";
 import { playerDisplayName } from "../models/Drawing";
 import { useHref, useNavigate } from "react-router-dom";
+import { routableCabDashboardPath } from "./copy-obs-source";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
@@ -93,7 +94,8 @@ function AddCabControl(props: { children?: ReactNode }) {
 function CabSummary({ cab }: { cab: CabInfo }) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const dashHref = useHref("dash", { relative: "route" });
+  const dashPath = routableCabDashboardPath(cab.id);
+  const dashHref = useHref(dashPath, { relative: "route" });
   const removeCab = useCallback(
     () => dispatch(eventSlice.actions.removeCab(cab.id)),
     [dispatch, cab.id],
@@ -108,7 +110,7 @@ function CabSummary({ cab }: { cab: CabInfo }) {
         href={dashHref}
         onClick={(e) => {
           e.preventDefault();
-          navigate("dash");
+          navigate(dashPath);
         }}
       />
       <MenuItem icon={<Remove />} text="Remove Cab" onClick={removeCab} />
