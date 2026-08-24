@@ -278,6 +278,13 @@ function GeneralSettings() {
   }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
+  // which editor the collapse should hold. it outlives `bucketMode` going
+  // "none" so the panel doesn't swap to the other editor for the length of the
+  // closing animation
+  const [lastEditor, setLastEditor] = useState<Exclude<BucketMode, "none">>(
+    bucketMode === "manual" ? "manual" : "auto",
+  );
+  const shownEditor = bucketMode === "none" ? lastEditor : bucketMode;
 
   if (!gameData) {
     return null;
@@ -291,6 +298,9 @@ function GeneralSettings() {
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   function setBucketMode(bucketMode: BucketMode) {
+    if (bucketMode !== "none") {
+      setLastEditor(bucketMode);
+    }
     updateState((prev) => {
       if (bucketMode !== "manual" || prev.manualBuckets.length) {
         return { bucketMode };
@@ -529,11 +539,16 @@ function GeneralSettings() {
           ]}
           onValueChange={(value) => setBucketMode(value as BucketMode)}
         />
-        <Collapse isOpen={bucketMode === "auto"}>
-          <WeightsControls usesTiers={usesDrawGroups} />
-        </Collapse>
-        <Collapse isOpen={bucketMode === "manual"}>
-          <ManualBucketControls usesTiers={usesDrawGroups} />
+        {/* one Collapse holding whichever editor is active, rather than one
+            per editor: two of them animate in opposite directions at once when
+            switching modes, and Collapse slides its body as well as resizing
+            it, so the swap reads as a lurch rather than a reveal */}
+        <Collapse isOpen={bucketMode !== "none"}>
+          {shownEditor === "manual" ? (
+            <ManualBucketControls usesTiers={usesDrawGroups} />
+          ) : (
+            <WeightsControls usesTiers={usesDrawGroups} />
+          )}
         </Collapse>
       </FormGroup>
     </>
