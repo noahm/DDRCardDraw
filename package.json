@@ -48,7 +48,6 @@
     "@lcdp/offline-plugin": "5.1.1",
     "@pmmmwh/react-refresh-webpack-plugin": "0.6.2",
     "@types/better-sqlite3": "7.6.13",
-    "@types/fuzzy-search": "2.1.5",
     "@types/jsdom": "27.0.0",
     "@types/node": "24.10.4",
     "@types/papaparse": "patch:@types/papaparse@npm%3A5.3.14#~/.yarn/patches/@types-papaparse-npm-5.3.14-864eddd3a0.patch",
@@ -69,7 +68,7 @@
     "favicons": "7.2.0",
     "favicons-webpack-plugin": "6.0.1",
     "fork-ts-checker-webpack-plugin": "9.1.0",
-    "fuzzy-search": "3.2.1",
+    "fuzzysort": "^4.0.1",
     "html-entities": "2.6.0",
     "html-loader": "5.1.0",
     "html-webpack-plugin": "5.6.5",
@@ -97,7 +96,7 @@
     "react-intl": "8.0.9",
     "react-refresh": "0.18.0",
     "sanitize-filename": "1.6.3",
-    "simfile-parser": "0.9.0",
+    "simfile-parser": "1.0.0-beta.0",
     "style-loader": "4.0.0",
     "tasuku": "^2.0.4",
     "typescript": "5.9.3",
@@ -118,5 +117,5 @@
   "engines": {
     "node": "^24.0.0"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.18.0"
 }
