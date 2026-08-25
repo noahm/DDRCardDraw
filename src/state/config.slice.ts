@@ -1,4 +1,4 @@
-import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter, type Slice } from "@reduxjs/toolkit";
 import type { BucketMode, ManualBucket } from "../draw-buckets";
 
 export interface ConfigState {
@@ -82,3 +82,39 @@ export const configSlice = createSlice({
     ...adapter.getSelectors(),
   },
 });
+
+type StateOfSlice<S> = S extends Slice<infer State> ? State : never;
+
+/** fields a config carried before difficulty buckets replaced the toggle */
+interface LegacyBucketFields {
+  /** replaced by `bucketMode` */
+  useWeights?: boolean;
+}
+
+/**
+ * Brings one config up to the bucket fields. Configs persist, and a saved one
+ * has no `bucketMode` at all — which reads as neither "none", "auto" nor
+ * "manual", so the draw ends up with no buckets and throws rather than
+ * degrading.
+ */
+export function migrateConfigToBuckets<T extends ConfigState>(config: T): T {
+  const legacy = config as T & LegacyBucketFields;
+  if (config.bucketMode === undefined) {
+    config.bucketMode = legacy.useWeights ? "auto" : "none";
+  }
+  delete legacy.useWeights;
+  if (!config.manualBuckets) {
+    config.manualBuckets = [];
+  }
+  return config;
+}
+
+/** mutates every stored config to have the bucket fields */
+export function migrateConfigsToBuckets(
+  state: StateOfSlice<typeof configSlice>,
+) {
+  for (const id of state.ids) {
+    const config = state.entities[id];
+    if (config) migrateConfigToBuckets(config);
+  }
+}
