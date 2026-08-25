@@ -373,12 +373,39 @@ function GeneralSettings() {
           />
         </FormGroup>
       </div>
-      {/* manual buckets carry their own bounds, so the shared range is moot */}
-      {bucketMode !== "manual" && (
-        <div className={styles.inlineControls}>
-          <LvlRangeControls />
-        </div>
-      )}
+      <FormGroup
+        label={t("controls.bucketMode.label")}
+        className={styles.bucketSection}
+      >
+        <SegmentedControl
+          fill
+          value={bucketMode}
+          options={[
+            { label: t("controls.bucketMode.none"), value: "none" },
+            { label: t("controls.bucketMode.auto"), value: "auto" },
+            { label: t("controls.bucketMode.manual"), value: "manual" },
+          ]}
+          onValueChange={(value) => setBucketMode(value as BucketMode)}
+        />
+        {/* the lvl range lives in here because it only defines the pool for
+            two of the three modes — manual buckets carry their own bounds */}
+        <Collapse isOpen={bucketMode !== "manual"}>
+          <div className={styles.inlineControls}>
+            <LvlRangeControls />
+          </div>
+        </Collapse>
+        {/* one Collapse holding whichever editor is active, rather than one
+            per editor: two of them animate in opposite directions at once when
+            switching modes, and Collapse slides its body as well as resizing
+            it, so the swap reads as a lurch rather than a reveal */}
+        <Collapse isOpen={bucketMode !== "none"}>
+          {shownEditor === "manual" ? (
+            <ManualBucketControls usesTiers={usesDrawGroups} />
+          ) : (
+            <WeightsControls usesTiers={usesDrawGroups} />
+          )}
+        </Collapse>
+      </FormGroup>
       <Button
         alignText="left"
         rightIcon={expandFilters ? <CaretDown /> : <CaretRight />}
@@ -527,29 +554,6 @@ function GeneralSettings() {
           }}
           label={t("controls.hideVetos")}
         />
-      </FormGroup>
-      <FormGroup label={t("controls.bucketMode.label")}>
-        <SegmentedControl
-          fill
-          value={bucketMode}
-          options={[
-            { label: t("controls.bucketMode.none"), value: "none" },
-            { label: t("controls.bucketMode.auto"), value: "auto" },
-            { label: t("controls.bucketMode.manual"), value: "manual" },
-          ]}
-          onValueChange={(value) => setBucketMode(value as BucketMode)}
-        />
-        {/* one Collapse holding whichever editor is active, rather than one
-            per editor: two of them animate in opposite directions at once when
-            switching modes, and Collapse slides its body as well as resizing
-            it, so the swap reads as a lurch rather than a reveal */}
-        <Collapse isOpen={bucketMode !== "none"}>
-          {shownEditor === "manual" ? (
-            <ManualBucketControls usesTiers={usesDrawGroups} />
-          ) : (
-            <WeightsControls usesTiers={usesDrawGroups} />
-          )}
-        </Collapse>
       </FormGroup>
     </>
   );
