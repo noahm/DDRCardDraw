@@ -1,4 +1,5 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import type { BucketMode, ManualBucket } from "../draw-buckets";
 
 export interface ConfigState {
   id: string;
@@ -6,13 +7,19 @@ export interface ConfigState {
   gameKey: string;
   chartCount: number;
   playerPicks: number;
+  /** ignored while `bucketMode` is "manual" */
   upperBound: number;
+  /** ignored while `bucketMode` is "manual" */
   lowerBound: number;
-  useWeights: boolean;
+  bucketMode: BucketMode;
   orderByAction: boolean;
   hideVetos: boolean;
+  /** "auto" mode only, indexed positionally against the derived bucket layout */
   weights: Array<number | undefined>;
+  /** "auto" mode only. null means one bucket per whole lvl */
   probabilityBucketCount: number | null;
+  /** "manual" mode only */
+  manualBuckets: Array<ManualBucket>;
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
   style: string;
@@ -38,11 +45,12 @@ export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {
   playerPicks: 0,
   upperBound: 0,
   lowerBound: 0,
-  useWeights: false,
+  bucketMode: "none",
   hideVetos: false,
   orderByAction: true,
   weights: [],
   probabilityBucketCount: null,
+  manualBuckets: [],
   forceDistribution: true,
   constrainPocketPicks: true,
   style: "",
