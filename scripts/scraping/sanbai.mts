@@ -82,7 +82,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-08-27T15:00:00+09:00"),
     id,
-    { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
+    { lock_types: undefined },
   ]),
   // グランプリ譜面パック vol.3
   ...[
@@ -142,6 +142,30 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
+  // #region スペシャル楽曲パック feat.DANCERUSH STARDOM vol.3
+  [
+    "180DD1dl8dq1lOioPqPOo6b6d9QbbbdD", // Bring Me Back
+    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
+  ],
+  [
+    "6od8bQb9i8li018bQoo8q1lddIQiqiql", // Dual Bladez
+    { lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0] },
+  ],
+  [
+    "I0qq8i9i68DoOQDd1q6iPqO6P9l10IQD", // neu (STARDOM Remix)
+    {
+      ratings: [2, 4, 9, 14, 17, 4, 9, 14, 17],
+      lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
+    },
+  ],
+  [
+    "oQP6D9PlDbDlPPPPPqd8QI61o1Q0PO81", // †渚の小悪魔ラヴリィ～レイディオ† (STARDOM Remix)
+    {
+      ratings: [2, 7, 12, 15, 0, 7, 12, 15, 0],
+      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
+    },
+  ],
+  // #endregion スペシャル楽曲パック feat.DANCERUSH STARDOM vol.3
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),

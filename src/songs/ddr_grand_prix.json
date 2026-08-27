@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1787198720174
+    "lastUpdated": 1787837605188
   },
   "defaults": {
     "style": "single",
@@ -8226,6 +8226,60 @@
       "remyLink": "https://remywiki.com/BRILLIANT_2U(Orchestra_Groove)"
     },
     {
+      "name": "Bring Me Back",
+      "artist": "9W3R7Y",
+      "saHash": "180DD1dl8dq1lOioPqPOo6b6d9QbbbdD",
+      "bpm": "132",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 198
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 567
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 996
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1419
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 546
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 993
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1359
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Bring Me Back.jpg",
+      "remyLink": "https://remywiki.com/Bring_Me_Back"
+    },
+    {
       "name": "Broken",
       "artist": "dj TAKA feat.AiMEE",
       "saHash": "6qPlI8DQPoDIo6D819boPioIPPDIPblq",
@@ -8783,7 +8837,7 @@
           "maxScore": 2091
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_a3/C-C-C-N-N-N.jpg",
       "remyLink": "https://remywiki.com/C-C-C-N-N-N",
       "genre": "ELECTRONICORE"
@@ -15355,7 +15409,7 @@
           "maxScore": 2520
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_a3/DIABLOSISNaga.jpg",
       "remyLink": "https://remywiki.com/DIABLOSIS::Naga",
       "search_hint": "diablosis naga"
@@ -17411,6 +17465,61 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/Drop The Bounce.png",
       "remyLink": "https://remywiki.com/Drop_The_Bounce"
+    },
+    {
+      "name": "Dual Bladez",
+      "artist": "おもしろ三国志",
+      "artist_translation": "Omoshiro sangokushi",
+      "saHash": "6od8bQb9i8li018bQoo8q1lddIQiqiql",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 237
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 615
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 957
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1587
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 615
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 945
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1551
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Dual Bladez.jpg",
+      "remyLink": "https://remywiki.com/Dual_Bladez"
     },
     {
       "name": "DUAL STRIKER",
@@ -38398,6 +38507,72 @@
       "remyLink": "https://remywiki.com/NEPHILIM_DELTA"
     },
     {
+      "name": "neu (STARDOM Remix)",
+      "artist": "少年ラジオ arranged by BEMANI Sound Team \"PON\"",
+      "saHash": "I0qq8i9i68DoOQDd1q6iPqO6P9l10IQD",
+      "bpm": "133",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 156
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 402
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9,
+          "maxScore": 798
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1314
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1950
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 372
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9,
+          "maxScore": 801
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1302
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1917
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/neu (STARDOM Remix).jpg",
+      "remyLink": "https://remywiki.com/Neu_(STARDOM_Remix)"
+    },
+    {
       "name": "Neutrino",
       "artist": "HuΣeR",
       "saHash": "lO91bIQ0Q990PqPbPIq88b9I9PI6ID0Q",
@@ -56112,7 +56287,7 @@
           "maxScore": 2448
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_a3/Suspicions.jpg",
       "remyLink": "https://remywiki.com/Suspicions",
       "genre": "JAZZ CORE"
@@ -66696,6 +66871,60 @@
       "remyLink": "https://remywiki.com/Nagisa_no_koakuma_lovely~radio",
       "genre": "Hi-CORE",
       "search_hint": "Hi-CORE/ハイコア"
+    },
+    {
+      "name": "†渚の小悪魔ラヴリィ～レイディオ† (STARDOM Remix)",
+      "artist": "kors k",
+      "saHash": "oQP6D9PlDbDlPPPPPqd8QI61o1Q0PO81",
+      "bpm": "107",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 180
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 648
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1146
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1611
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 615
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1137
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1578
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/†渚の小悪魔ラヴリィ～レイディオ† (STARDOM Remix).jpg",
+      "remyLink": "https://remywiki.com/Nagisa_no_koakuma_lovely_radio_(STARDOM_Remix)"
     },
     {
       "name": "↑↑↓↓←→←→BA",
