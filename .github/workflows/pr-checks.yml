@@ -1,8 +1,8 @@
 name: Checks
 
 on:
+  # Unfiltered, so PRs into long-lived branches like partykit are checked too.
   pull_request:
-    branches: [main]
 
 jobs:
   checks:
@@ -21,10 +21,10 @@ jobs:
           - check: webpack
             name: Build
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
-          node-version: 22
+          node-version: 24
           cache: "yarn"
       - run: yarn --immutable
       - name: ${{ matrix.name }}

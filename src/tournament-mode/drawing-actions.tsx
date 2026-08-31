@@ -12,23 +12,27 @@ import {
   Share,
   Camera,
   Refresh,
+  FloppyDisk,
   NewPerson,
   BlockedPerson,
-  Error,
+  Error as ErrorIcon,
 } from "@blueprintjs/icons";
 import { useDrawing, useDrawingStore } from "../drawing-context";
 import styles from "./drawing-actions.css";
 import { CurrentPeersMenu } from "./remote-peer-menu";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
 import { domToPng } from "modern-screenshot";
-import { shareImage } from "../utils/share";
+import { shareImage, shareCharts } from "../utils/share";
 import { firstOf } from "../utils";
 import { useConfigState } from "../config-state";
 import { useErrorBoundary } from "react-error-boundary";
+import { useIntl } from "../hooks/useIntl";
+import { JSX } from "react";
 
 const DEFAULT_FILENAME = "card-draw.png";
 
 export function DrawingActions() {
+  const { t } = useIntl();
   const getDrawing = useDrawing((s) => s.serializeSyncFields);
   const updateDrawing = useDrawing((s) => s.updateDrawing);
   const redrawAllCharts = useDrawing((s) => s.redrawAllCharts);
@@ -51,12 +55,16 @@ export function DrawingActions() {
       <Menu>
         <MenuItem
           icon={<SendMessage />}
-          text={`Send to ${peerId}`}
+          text={t("drawing.sendToOne", { peerId }, "Send to {peerId}")}
           onClick={() => sendDrawing(getDrawing())}
         />
         <MenuItem
           icon={<Changes />}
-          text={`Start sync with ${peerId}`}
+          text={t(
+            "drawing.startSyncOne",
+            { peerId },
+            "Start sync with {peerId}",
+          )}
           onClick={() => syncDrawing(drawingStore)}
         />
       </Menu>
@@ -64,13 +72,19 @@ export function DrawingActions() {
   } else if (remotePeers.size > 1) {
     remoteActions = (
       <Menu>
-        <MenuItem icon={<SendMessage />} text="Send to...">
+        <MenuItem
+          icon={<SendMessage />}
+          text={t("drawing.sendToPeer", undefined, "Send to...")}
+        >
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => sendDrawing(getDrawing(), peerId)}
           />
         </MenuItem>
-        <MenuItem icon={<Changes />} text="Start sync with...">
+        <MenuItem
+          icon={<Changes />}
+          text={t("drawing.startSync", undefined, "Start sync with...")}
+        >
           <CurrentPeersMenu
             disabled={syncPeer ? [syncPeer.peer] : false}
             onClickPeer={(peerId) => syncDrawing(drawingStore, peerId)}
@@ -81,7 +95,7 @@ export function DrawingActions() {
   }
 
   const button = (
-    <Button minimal text={<Share />} disabled={!remotePeers.size} />
+    <Button variant="minimal" text={<Share />} disabled={!remotePeers.size} />
   );
 
   return (
@@ -91,12 +105,20 @@ export function DrawingActions() {
         remotePeers.size ? (
           <Popover content={remoteActions}>{button}</Popover>
         ) : (
-          <Tooltip content="Connect to a peer to share">{button}</Tooltip>
+          <Tooltip
+            content={t(
+              "drawing.connect",
+              undefined,
+              "Connect to a peer to share",
+            )}
+          >
+            {button}
+          </Tooltip>
         )
       ) : null}
-      <Tooltip content="Save Image">
+      <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
         <Button
-          minimal
+          variant="minimal"
           icon={<Camera />}
           onClick={async () => {
             const drawingId = getDrawing().id;
@@ -104,37 +126,55 @@ export function DrawingActions() {
               "#drawing-" + drawingId,
             );
             if (drawingElement) {
-              shareImage(
-                await domToPng(drawingElement, {
-                  scale: 2,
-                }),
+              await shareImage(
+                await domToPng(drawingElement, { scale: 2 }),
                 DEFAULT_FILENAME,
               );
             }
           }}
         />
       </Tooltip>
-      <Tooltip content="Redraw all charts">
+      <Tooltip content={t("drawing.redrawAll", undefined, "Redraw all charts")}>
         <Button
-          minimal
+          variant="minimal"
           icon={<Refresh />}
           onClick={() =>
             confirm(
-              "This will replace everything besides protects and picks!",
+              t(
+                "drawing.redrawConfirm",
+                undefined,
+                "This will replace everything besides protects and picks!",
+              ),
             ) && redrawAllCharts()
+          }
+        />
+      </Tooltip>
+      <Tooltip content={t("drawing.copyCards", undefined, "Save as CSV")}>
+        <Button
+          variant="minimal"
+          icon={<FloppyDisk />}
+          onClick={() =>
+            shareCharts(
+              getDrawing().charts.filter((c) => c.type === "DRAWN"),
+              "drawn",
+            )
           }
         />
       </Tooltip>
       {process.env.NODE_ENV === "production" ? null : (
         <Tooltip content="Cause Error">
-          <Button minimal icon={<Error />} onClick={showBoundary} />
+          <Button
+            variant="minimal"
+            icon={<ErrorIcon />}
+            onClick={() => showBoundary(new Error("synthetic error"))}
+          />
         </Tooltip>
       )}
       {showLabels && (
         <>
-          <Tooltip content="Add Player">
+          <Tooltip content={t("drawing.addPlayer", undefined, "Add Player")}>
             <Button
-              minimal
+              variant="minimal"
               icon={<NewPerson />}
               onClick={() => {
                 updateDrawing((drawing) => {
@@ -145,9 +185,12 @@ export function DrawingActions() {
               }}
             />
           </Tooltip>
-          <Tooltip content="Remove Player" disabled={!hasPlayers}>
+          <Tooltip
+            content={t("drawing.removePlayer", undefined, "Remove Player")}
+            disabled={!hasPlayers}
+          >
             <Button
-              minimal
+              variant="minimal"
               icon={<BlockedPerson />}
               disabled={!hasPlayers}
               onClick={() => {

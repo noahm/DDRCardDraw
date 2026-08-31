@@ -1,6 +1,13 @@
 import { Popover } from "@blueprintjs/core";
 import classNames from "classnames";
-import { useMemo, useState } from "react";
+import React, {
+  JSX,
+  lazy,
+  Suspense,
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawing } from "../drawing-context";
@@ -10,15 +17,23 @@ import {
   EligibleChart,
   PlayerPickPlaceholder,
 } from "../models/Drawing";
-import { SongSearch } from "../song-search";
-import { detectedLanguage } from "../utils";
 import { CardLabel, LabelType } from "./card-label";
 import { IconMenu } from "./icon-menu";
-import { ShockBadge } from "./shock-badge";
 import styles from "./song-card.css";
-import { ChartLevel } from "./chart-level";
+import { copyTextToClipboard } from "../utils/share";
+import { baseChartValues, CardContentsProps } from "./variants";
 
-const isJapanese = detectedLanguage === "ja";
+/**
+ * The song search omnibar is only reachable through a card's action menu, so it
+ * loads on demand. It gets mounted (closed) as soon as that menu opens rather
+ * than when a pocket pick starts, so that its own `isOpen` prop still drives
+ * the overlay's enter and exit transitions -- conditionally rendering it on
+ * `pocketPickPendingForPlayer` would tear the overlay out of the tree before it
+ * could animate closed.
+ */
+const SongSearch = lazy(() =>
+  import("../song-search").then((m) => ({ default: m.SongSearch })),
+);
 
 type Player = number;
 
@@ -31,7 +46,7 @@ interface IconCallbacks {
   onSetWinner: (p: Player | null) => void;
 }
 
-interface Props {
+export interface SongCardProps {
   onClick?: () => void;
   chart: DrawnChart | EligibleChart | PlayerPickPlaceholder;
   vetoedBy?: Player;
@@ -42,7 +57,9 @@ interface Props {
   actionsEnabled?: boolean;
 }
 
-export { Props as SongCardProps };
+type Props = SongCardProps & CardContentsProps;
+
+export { Props as SongCardBaseProps };
 
 function useIconCallbacksForChart(chartId: string): IconCallbacks {
   const [handleBanPickPocket, redrawChart, resetChart, setWinner] = useDrawing(
@@ -68,18 +85,7 @@ function useIconCallbacksForChart(chartId: string): IconCallbacks {
   );
 }
 
-function baseChartValues(
-  chart: EligibleChart | DrawnChart | PlayerPickPlaceholder,
-): Partial<EligibleChart> & { name: string } {
-  if ("type" in chart && chart.type === CHART_PLACEHOLDER) {
-    return {
-      name: "Your Pick Here",
-    };
-  }
-  return chart;
-}
-
-export function SongCard(props: Props) {
+export function SongCardBase(props: Props) {
   const {
     chart,
     vetoedBy,
@@ -88,11 +94,17 @@ export function SongCard(props: Props) {
     replacedWith,
     winner,
     actionsEnabled,
+    CenterContent,
+    FooterContent,
   } = props;
   const hideVetos = useConfigState((s) => s.hideVetos);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
-  const showMenu = () => setContextMenuOpen(true);
+  const [songSearchMounted, setSongSearchMounted] = useState(false);
+  const showMenu = () => {
+    setSongSearchMounted(true);
+    setContextMenuOpen(true);
+  };
   const hideMenu = () => setContextMenuOpen(false);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
@@ -101,18 +113,7 @@ export function SongCard(props: Props) {
   const baseChartIsPlaceholder =
     "type" in chart && chart.type === CHART_PLACEHOLDER;
 
-  const {
-    name,
-    nameTranslation,
-    artist,
-    artistTranslation,
-    bpm,
-    diffAbbr,
-    diffColor,
-    jacket,
-    flags,
-    dateAdded,
-  } = replacedWith || baseChartValues(chart);
+  const { name, diffAbbr, jacket } = replacedWith || baseChartValues(chart);
 
   const hasLabel = !!(vetoedBy || protectedBy || replacedBy);
 
@@ -125,6 +126,16 @@ export function SongCard(props: Props) {
   }
 
   const iconCallbacks = useIconCallbacksForChart((chart as DrawnChart).id);
+  const handleCopy = useCallback(async () => {
+    if (!diffAbbr) {
+      return;
+    }
+    await copyTextToClipboard(
+      `${name} [${diffAbbr.toUpperCase()}]`,
+      "Copied name & difficulty",
+    );
+  }, [name, diffAbbr]);
+  const canCopy = !!name && !!diffAbbr;
 
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !winner) {
@@ -140,10 +151,13 @@ export function SongCard(props: Props) {
           onVeto={iconCallbacks.onVeto}
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
+          onCopy={handleCopy}
         />
       );
     } else if (!vetoedBy) {
-      menuContent = <IconMenu onSetWinner={iconCallbacks.onSetWinner} />;
+      menuContent = (
+        <IconMenu onSetWinner={iconCallbacks.onSetWinner} onCopy={handleCopy} />
+      );
     }
   }
 
@@ -152,73 +166,75 @@ export function SongCard(props: Props) {
     [styles.protected]: protectedBy,
     [styles.replaced]: replacedBy && !baseChartIsPlaceholder,
     [styles.picked]: replacedBy && baseChartIsPlaceholder,
-    [styles.clickable]: !!menuContent || !!props.onClick,
+    [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
     [styles.hideVeto]: hideVetos,
   });
+
+  const handleCardClick = menuContent ? showMenu : props.onClick || handleCopy;
+
+  const actionLabels = (
+    <>
+      {vetoedBy && (
+        <CardLabel
+          player={vetoedBy}
+          type={LabelType.Ban}
+          onRemove={iconCallbacks?.onReset}
+        />
+      )}
+      {protectedBy && (
+        <CardLabel
+          player={protectedBy}
+          type={LabelType.Protect}
+          onRemove={iconCallbacks?.onReset}
+        />
+      )}
+      {replacedBy && (
+        <CardLabel
+          player={replacedBy}
+          type={baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket}
+          onRemove={iconCallbacks?.onReset}
+        />
+      )}
+      {winner && (
+        <CardLabel
+          player={winner}
+          type={LabelType.Winner}
+          onRemove={() => iconCallbacks?.onSetWinner(null)}
+        />
+      )}
+    </>
+  );
 
   return (
     <div
       className={rootClassname}
       onClick={
-        !menuContent || showingContextMenu || pocketPickPendingForPlayer
-          ? props.onClick
-          : showMenu
+        showingContextMenu || pocketPickPendingForPlayer
+          ? undefined
+          : handleCardClick
       }
       style={jacketBg}
     >
-      <SongSearch
-        isOpen={!!pocketPickPendingForPlayer}
-        onSongSelect={(song, chart) => {
-          if (actionsEnabled && chart) {
-            iconCallbacks.onReplace(pocketPickPendingForPlayer as 1 | 2, chart);
-          }
-          setPocketPickPendingForPlayer(0);
-        }}
-        onCancel={() => setPocketPickPendingForPlayer(0)}
-      />
+      {songSearchMounted && (
+        <Suspense fallback={null}>
+          <SongSearch
+            isOpen={!!pocketPickPendingForPlayer}
+            onSongSelect={(song, chart) => {
+              if (actionsEnabled && chart) {
+                iconCallbacks.onReplace(
+                  pocketPickPendingForPlayer as 1 | 2,
+                  chart,
+                );
+              }
+              setPocketPickPendingForPlayer(0);
+            }}
+            onCancel={() => setPocketPickPendingForPlayer(0)}
+          />
+        </Suspense>
+      )}
       <div className={styles.cardCenter}>
-        {vetoedBy && (
-          <CardLabel
-            player={vetoedBy}
-            type={LabelType.Ban}
-            onRemove={iconCallbacks?.onReset}
-          />
-        )}
-        {protectedBy && (
-          <CardLabel
-            player={protectedBy}
-            type={LabelType.Protect}
-            onRemove={iconCallbacks?.onReset}
-          />
-        )}
-        {replacedBy && (
-          <CardLabel
-            player={replacedBy}
-            type={
-              baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket
-            }
-            onRemove={iconCallbacks?.onReset}
-          />
-        )}
-        {winner && (
-          <CardLabel
-            player={winner}
-            type={LabelType.Winner}
-            onRemove={() => iconCallbacks?.onSetWinner(null)}
-          />
-        )}
-        <div className={styles.name} title={nameTranslation}>
-          {name}
-        </div>
-        {isJapanese ? null : (
-          <div className={styles.nameTranslation}>{nameTranslation}</div>
-        )}
-        <div className={styles.artist} title={artistTranslation}>
-          {artist}
-        </div>
-        <div className={styles.dateAdded} title={dateAdded}>
-          {dateAdded}
-        </div>
+        {actionLabels}
+        <CenterContent chart={replacedWith || chart} />
       </div>
 
       <Popover
@@ -230,16 +246,7 @@ export function SongCard(props: Props) {
           offset: { options: { offset: [0, 35] } },
         }}
       >
-        <div
-          className={styles.cardFooter}
-          style={{ backgroundColor: diffColor }}
-        >
-          {bpm ? <div className={styles.bpm}>{bpm} BPM</div> : <div />}
-          {flags?.includes("shock") && <ShockBadge />}
-          <div className={styles.difficulty}>
-            {diffAbbr} <ChartLevel chart={replacedWith || chart} />
-          </div>
-        </div>
+        <FooterContent chart={replacedWith || chart} />
       </Popover>
     </div>
   );

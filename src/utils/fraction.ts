@@ -16,7 +16,7 @@ function gcd(a: number, b: number) {
  * typescript happy when in pure ESM mode.
  *
  * This file and the original implementation are available under the MIT license.
- * See: https://github.com/infusion/Fraction.js/blob/master/fraction.js
+ * See: https://github.com/rawify/Fraction.js/blob/main/src/fraction.js
  *********/
 export class Fraction {
   constructor(

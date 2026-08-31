@@ -16,6 +16,12 @@ interface Props {
 }
 const pctFmt = new Intl.NumberFormat(undefined, { style: "percent" });
 
+/** number of digits after the decimal point in a number's string form */
+function decimalDigits(n: number) {
+  const decimalIndex = n.toString().indexOf(".");
+  return decimalIndex === -1 ? 0 : n.toString().length - decimalIndex - 1;
+}
+
 function printGroup(
   group: LevelRangeBucket | number,
   precisionRange: number | undefined,
@@ -23,7 +29,13 @@ function printGroup(
   if (typeof group === "number") {
     return group.toString();
   } else {
-    const digits = precisionRange && (1 / precisionRange).toString().length - 2;
+    // games with a configured granular tier resolution use that to determine
+    // display precision, but some games (eg SDVX) have inherently fractional
+    // levels with no granular toggle, so fall back to the precision actually
+    // present in the bucket bounds
+    const digits = precisionRange
+      ? (1 / precisionRange).toString().length - 2
+      : Math.max(decimalDigits(group[0]), decimalDigits(group[1]));
     if (group[0] === group[1]) {
       return group[0].toFixed(digits);
     }
@@ -117,7 +129,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     (total, group, idx) => total + (weights[idx] || 0),
     0,
   );
-  const percentages = groups.map((group, idx) => {
+  const percentages = groups.map((_group, idx) => {
     const value = weights[idx] || 0;
     const pct = value / totalWeight;
     if (forceDistribution) {
@@ -177,7 +189,7 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
             type="number"
             inputMode="numeric"
             width={2}
-            name={`weight-${group}`}
+            name={`weight-${printGroup(group, useGranularLevels ? gameData?.meta.granularTierResolution : undefined)}`}
             value={weights[idx] || ""}
             min={0}
             onValueChange={(v) => setWeight(idx, v)}

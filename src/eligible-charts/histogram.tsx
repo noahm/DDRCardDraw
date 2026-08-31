@@ -32,7 +32,7 @@ export function DiffHistogram({ charts }: Props) {
   const allDiffs = useDrawState((s) => s.gameData?.meta.difficulties);
   const gameData = useDrawState((s) => s.gameData);
   const useGranularLevels = useConfigState((s) => s.useGranularLevels);
-  const availableLevels = getAvailableLevels(gameData, useGranularLevels);
+  const availableLevels = getAvailableLevels(gameData, useGranularLevels, true);
   function formatLabel(idx: number) {
     const n = availableLevels[idx];
     if (!n) return "";

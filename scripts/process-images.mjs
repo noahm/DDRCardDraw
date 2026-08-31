@@ -3,13 +3,15 @@
  * and run this to downscale and post-proccess names
  **/
 import { Jimp, ResizeStrategy } from "jimp";
-import { statSync, readdirSync } from "fs";
+import { statSync, readdirSync, mkdirSync } from "fs";
 import { resolve, join, dirname } from "path";
 
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const IN_DIR = resolve(__dirname, "../new-jackets");
-const OUT_DIR = resolve(__dirname, "../processed-jackets");
+const IN_DIR = resolve(__dirname, "../new_img");
+const OUT_DIR = resolve(__dirname, "../processed_img");
+
+mkdirSync(OUT_DIR, { recursive: true });
 
 function transformFilename(f) {
   return f;

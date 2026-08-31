@@ -13,8 +13,9 @@ import {
 } from "./models/Drawing";
 import { SerializibleStore } from "./zustand/shared-zustand";
 
-const stubDrawing: Drawing = {
+export const stubDrawing: Drawing = {
   id: "stub",
+  cardVariant: undefined,
   players: [],
   charts: [],
   bans: [],
@@ -30,10 +31,10 @@ interface DrawingProviderProps {
 
 export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
   updateDrawing: StoreApi<Drawing>["setState"];
-  incrementPriorityPlayer(): void;
-  redrawAllCharts(): void;
-  redrawChart(chartId: string): void;
-  resetChart(chartId: string): void;
+  incrementPriorityPlayer(this: void): void;
+  redrawAllCharts(this: void): void;
+  redrawChart(this: void, chartId: string): void;
+  resetChart(this: void, chartId: string): void;
   /**
    * handles any of the protect/pocket-pick/ban actions a user may take on a drawn chart
    * @param action type of action being performed
@@ -42,12 +43,13 @@ export interface DrawingContext extends Drawing, SerializibleStore<Drawing> {
    * @param chart new chart being pocket picked, if this is a pocket pick action
    */
   handleBanProtectReplace(
+    this: void,
     action: "ban" | "protect" | "pocket",
     chartId: string,
     player: number,
     chart?: EligibleChart,
   ): void;
-  setWinner(chartId: string, p: number | null): void;
+  setWinner(this: void, chartId: string, p: number | null): void;
 }
 
 function keyFromAction(action: "ban" | "protect" | "pocket") {
@@ -81,23 +83,25 @@ const {
             priorityPlayer = undefined;
           }
         }
-        return {
-          priorityPlayer,
-        };
+        return { priorityPlayer };
       });
     },
     resetChart(chartId) {
+      // Note: winners are intentionally left untouched here. A chart can have
+      // both an action (protect/pocket/ban) and a marked winner at the same
+      // time, and removing the action should not clear the winner. Winners are
+      // removed via their own control (setWinner(chartId, null)).
       set((d) => ({
         bans: d.bans.filter((p) => p.chartId !== chartId),
         protects: d.protects.filter((p) => p.chartId !== chartId),
         pocketPicks: d.pocketPicks.filter((p) => p.chartId !== chartId),
-        winners: d.pocketPicks.filter((p) => p.chartId !== chartId),
       }));
     },
     redrawChart(chartId) {
       const newChart = draw(useDrawState.getState().gameData!, {
         ...useConfigState.getState(),
         chartCount: 1,
+        playerPicks: 0,
       }).charts[0];
       set((d) => ({
         charts: d.charts.map((chart) => {
@@ -121,11 +125,9 @@ const {
       const newCharts = draw(useDrawState.getState().gameData!, {
         ...useConfigState.getState(),
         chartCount: get().charts.length - keepCharts.length,
+        playerPicks: 0,
       });
-      set(() => ({
-        charts: [...keepCharts, ...newCharts.charts],
-        bans: [],
-      }));
+      set(() => ({ charts: [...keepCharts, ...newCharts.charts], bans: [] }));
     },
     handleBanProtectReplace(action, chartId, player, newChart) {
       const drawing = get();
@@ -162,9 +164,7 @@ const {
           // insert at head of list, behind other picks/placeholders
           charts.splice(frontLockedCardCount, 0, targetChart);
         }
-        set({
-          charts,
-        });
+        set({ charts });
       }
 
       const existingIndex = arr.findIndex((b) => b.chartId === chartId);
@@ -178,9 +178,7 @@ const {
           targetType: targetChart.type,
         });
       }
-      set({
-        [key]: arr,
-      });
+      set({ [key]: arr });
     },
     serializeSyncFields() {
       return Object.entries(get()).reduce((ret: Partial<Drawing>, [k, v]) => {
@@ -203,9 +201,7 @@ const {
       if (player) {
         arr.push({ player, chartId });
       }
-      set({
-        winners: arr,
-      });
+      set({ winners: arr });
     },
   }),
   (p) => p.initialDrawing.id,

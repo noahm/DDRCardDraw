@@ -10,6 +10,7 @@ import { Clipboard, Duplicate, HeartBroken } from "@blueprintjs/icons";
 import { InputButtonPair } from "../controls/input-button-pair";
 import { toaster } from "../toaster";
 import { displayFromPeerId, useRemotePeers } from "./remote-peers";
+import { JSX } from "react";
 
 export function RemotePeerControls() {
   const peers = useRemotePeers();
@@ -21,8 +22,8 @@ export function RemotePeerControls() {
 
   let coreControl: JSX.Element;
   // Copied to keyboard success toaster
-  function copyToaster() {
-    navigator.clipboard.writeText(displayName);
+  async function copyToaster() {
+    await navigator.clipboard.writeText(displayName);
     toaster.show({
       message: "Hostname copied to clipboard",
       intent: Intent.SUCCESS,
@@ -34,8 +35,8 @@ export function RemotePeerControls() {
     <Button
       minimal
       icon={<Duplicate />}
-      onClick={() => {
-        copyToaster();
+      onClick={async () => {
+        await copyToaster();
       }}
     />
   );
@@ -76,8 +77,8 @@ export function RemotePeerControls() {
             placeholder="enter host name"
             buttonLabel="Connect"
             enterKeyHint="go"
-            onClick={(v, input) => {
-              peers.connect(v);
+            onClick={async (v, input) => {
+              await peers.connect(v);
               input.value = "";
               input.blur();
             }}
@@ -91,7 +92,7 @@ export function RemotePeerControls() {
               </Tag>
             ))
           ) : (
-            <span className="bp5-text-disabled">
+            <span className="bp6-text-disabled">
               <HeartBroken /> No connections
             </span>
           )}
@@ -104,7 +105,7 @@ export function RemotePeerControls() {
 interface PeerMenuProps {
   header?: string;
   disabled?: boolean | Array<string>;
-  onClickPeer?(peerId: string): void;
+  onClickPeer?(this: void, peerId: string): void;
   emptyState?: JSX.Element;
 }
 

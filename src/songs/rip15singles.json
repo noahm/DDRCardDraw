@@ -1,0 +1,1840 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": [],
+    "lastUpdated": 1770928989747,
+    "usesDrawGroups": true,
+    "styles": ["single"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 1,
+    "difficulties": ["challenge"],
+    "style": "single",
+    "upperLvlBound": 5
+  },
+  "i18n": {
+    "en": {
+      "name": "RIP 15 Singles",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[T01] ANIMAL CROSSING (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] ANIMAL CROSSING (SH).jpg",
+      "bpm": "103",
+      "artist": "Shawn Wasabi (feat. Sophia Black)",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Ain't Nobody Else (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Aint Nobody Else (SH).jpg",
+      "bpm": "126",
+      "artist": "Holl & Rush, Dwight Steven",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Body Talk (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Body Talk (SM).jpg",
+      "bpm": "126",
+      "artist": "Elley Duhe",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Boom Clap (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Boom Clap (SM).jpg",
+      "bpm": "92",
+      "artist": "Charli XCX",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] CUE CUE RESCUE (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] CUE CUE RESCUE (SM).jpg",
+      "bpm": "160",
+      "artist": "TORIENA",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Chase the Light (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Chase the Light (SH).jpg",
+      "bpm": "174",
+      "artist": "litmus*",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] アカツキノソラ (Hard)",
+      "name_translation": "[T01] Dawning Sky (Hard)",
+      "jacket": "itg/rip15singles/[T01] Dawning Sky (SH).jpg",
+      "bpm": "181",
+      "artist": "REDALiCE feat. DELUTAYA",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Deep Down (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Deep Down (SH).jpg",
+      "bpm": "126",
+      "artist": "Alok, Ella Eyre, Kenny Dope, Never Dull",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Fork Funeral (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Fork Funeral (SM).jpg",
+      "bpm": "128",
+      "artist": "Virtual Riot",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] 神っぽいな (Hard)",
+      "name_translation": "[T01] God-ish (Hard)",
+      "jacket": "itg/rip15singles/[T01] God-ish (SH).jpg",
+      "bpm": "103-142",
+      "artist": "Nerissa Ravencroft",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Stay With Me (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Stay With Me (SM).jpg",
+      "bpm": "107",
+      "artist": "Haywyre (feat. Sixten)",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T01] Travel to Future (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T01] Travel to Future (SM).jpg",
+      "bpm": "80-160",
+      "artist": "Neutral Moon",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 1
+        }
+      ]
+    },
+    {
+      "name": "[T02] All Hail (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] All Hail (SM).jpg",
+      "bpm": "145",
+      "artist": "Dyatic x Dr. Ozi",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Brain Para-dicing! (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] Brain Para-dicing! (SH).jpg",
+      "bpm": "180",
+      "artist": "Xe",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] 燃ゆる白狐、匍う大蛇 (Medium)",
+      "name_translation": "[T02] Burning Byakko, Slithering Orochi (Medium)",
+      "jacket": "itg/rip15singles/[T02] Burning Byakko Slithering Orochi (SM).jpg",
+      "bpm": "170",
+      "artist": "Exsy",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Co1ossus",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] Co1ossus.jpg",
+      "bpm": "150",
+      "artist": "Zekk",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Cockroach Cooking (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] Cockroach Cooking (SM).jpg",
+      "bpm": "185",
+      "artist": "Yosk!",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] I HATE MY PUTER (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] I HATE MY PUTER (SM).jpg",
+      "bpm": "128",
+      "artist": "Mameyudoufu",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] キミの記憶",
+      "name_translation": "[T02] Memories of You",
+      "jacket": "itg/rip15singles/[T02] Memories of You.jpg",
+      "bpm": "112",
+      "artist": "川村ゆみ",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Pleasure Seeker VIP (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] Pleasure Seeker VIP (SM).jpg",
+      "bpm": "136",
+      "artist": "Mr. Bill",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] SOS (Easy)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] SOS (SE).jpg",
+      "bpm": "196",
+      "artist": "CaronzBekaluz",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] Tides (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] Tides (SM).jpg",
+      "bpm": "104",
+      "artist": "Cargo",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] absolute rightness (Easy)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] absolute rightness (SE).jpg",
+      "bpm": "194",
+      "artist": "Acotto",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T02] drop pop candy",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T02] drop pop candy.jpg",
+      "bpm": "130",
+      "artist": "Giga-P & れをる",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 2
+        }
+      ]
+    },
+    {
+      "name": "[T03] A-ra (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] A-ra (SH).jpg",
+      "bpm": "105",
+      "artist": "PODA",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Addicted (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Addicted (SH).jpg",
+      "bpm": "132",
+      "artist": "Redsign",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Doggy god's street",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Doggy gods street.jpg",
+      "bpm": "128",
+      "artist": "Inugami Korone",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Fear Grows",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Fear Grows.jpg",
+      "bpm": "104",
+      "artist": "Linky",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] イガク (Medium)",
+      "name_translation": "[T03] Igaku (Medium)",
+      "jacket": "itg/rip15singles/[T03] Igaku (SM).jpg",
+      "bpm": "170",
+      "artist": "原口沙輔",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] JUGGLE (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] JUGGLE (SH).jpg",
+      "bpm": "145",
+      "artist": "Ras",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] One Step Closer",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] One Step Closer.jpg",
+      "bpm": "123",
+      "artist": "Mameyudoufu",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Peacock (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Peacock (Remix) (SH).jpg",
+      "bpm": "105",
+      "artist": "7 Minutes Dead",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Sakuramichi Overdrive (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Sakuramichi Overdrive (SM).jpg",
+      "bpm": "110",
+      "artist": "t+pazolite ft. Rizna",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Sweet* Witch* Girl* (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Sweet Witch Girl (SM).jpg",
+      "bpm": "180",
+      "artist": "モリモリあつし vs. uma",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] 時守唄",
+      "name_translation": "[T03] Timekeeper's Song",
+      "jacket": "itg/rip15singles/[T03] Timekeeper's Song.jpg",
+      "bpm": "60-120",
+      "artist": "felys feat. Aki Misawa",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T03] Wander",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T03] Wander.jpg",
+      "bpm": "100",
+      "artist": "Nokae",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 3
+        }
+      ]
+    },
+    {
+      "name": "[T04] 2015",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] 2015.jpg",
+      "bpm": "128",
+      "artist": "Habstrakt & Elmyx",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Chatterbox",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] Chatterbox.jpg",
+      "bpm": "110",
+      "artist": "Complexive",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Damager",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] Damager.jpg",
+      "bpm": "130",
+      "artist": "JAWNS",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Dazzlin' Darlin",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] Dazzlin Darlin.jpg",
+      "bpm": "149",
+      "artist": "HHH",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Get Down (Medium)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] Get Down (SM).jpg",
+      "bpm": "150",
+      "artist": "Aire",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] LALA (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] LALA (SH).jpg",
+      "bpm": "182",
+      "artist": "黒魔",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] Metamorphosis (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] Metamorphosis (SH).jpg",
+      "bpm": "125-155",
+      "artist": "Darby",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] オーバーライド (Hard)",
+      "name_translation": "[T04] Override (Hard)",
+      "jacket": "itg/rip15singles/[T04] Override (SH).jpg",
+      "bpm": "204",
+      "artist": "吉田夜世",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] パチュリコ",
+      "name_translation": "[T04] Pachuriko",
+      "jacket": "itg/rip15singles/[T04] Pachuriko.jpg",
+      "bpm": "131",
+      "artist": "DiGiTAL WiNG",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] 宇宙遊泳 (Hard)",
+      "name_translation": "[T04] Uchuu Yuuei (Hard)",
+      "jacket": "itg/rip15singles/[T04] Uchuu Yuuei (SH).jpg",
+      "bpm": "140",
+      "artist": "lapix feat. 中村さんそ",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] 夜に駆ける",
+      "name_translation": "[T04] Yoru ni Kakeru",
+      "jacket": "itg/rip15singles/[T04] Yoru ni Kakeru.jpg",
+      "bpm": "130",
+      "artist": "YOASOBI",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T04] we've never met but, can we have some coffee or something?",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T04] we_ve never met before but can we have some coffee or something.jpg",
+      "bpm": "101",
+      "artist": "in love with a ghost",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 4
+        }
+      ]
+    },
+    {
+      "name": "[T05] Caring Dance",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] Caring Dance.jpg",
+      "bpm": "101",
+      "artist": "猫又Master",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Freezing Hot",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] Freezing Hot.jpg",
+      "bpm": "128",
+      "artist": "M2U feat.ろめろん",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] 華爛漫 -Flowers-",
+      "name_translation": "[T05] Hana ranman -Flowers-",
+      "jacket": "itg/rip15singles/[T05] Hana ranman -Flowers-.jpg",
+      "bpm": "160",
+      "artist": "TËЯRA",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Hasse Mich (Hard)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] Hasse Mich (SH).jpg",
+      "bpm": "140",
+      "artist": "Onyx",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] I Hold Still",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] I Hold Still (Remix).jpg",
+      "bpm": "64-127",
+      "artist": "Jauz x Crankdat (feat. Slushii)",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] IOR",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] IOR.jpg",
+      "bpm": "169",
+      "artist": "ariiol",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] ?",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] Question Mark.jpg",
+      "bpm": "128",
+      "artist": "Emplexx, Sunnexo & Wherefore",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] Stargate",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] Stargate.jpg",
+      "bpm": "128",
+      "artist": "Benix & Milos Loren",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] UFO-mie",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] UFO-mie.jpg",
+      "bpm": "130",
+      "artist": "パソコン音楽クラブ feat. The Hair Kid",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] 宇宙SAMURAI",
+      "name_translation": "[T05] Uchuu SAMURAI",
+      "jacket": "itg/rip15singles/[T05] Uchuu SAMURAI.jpg",
+      "bpm": "140",
+      "artist": "taichi hiyama",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] We Got That Cool",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] We Got That Cool.jpg",
+      "bpm": "124",
+      "artist": "Yves V (feat. Afrojack & Icona Pop)",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T05] reiji no machi",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T05] reiji no machi.jpg",
+      "bpm": "128",
+      "artist": "パソコン音楽クラブ feat. イノウエワラビ",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 5
+        }
+      ]
+    },
+    {
+      "name": "[T06] BREAK LAW",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] BREAK LAW.jpg",
+      "bpm": "108",
+      "artist": "Dog Blood",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Dodo (RED VERSION)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Dodo (RED VERSION).jpg",
+      "bpm": "130",
+      "artist": "CHOMPO, meganeko",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Give (Me) Your Love",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Give (Me) Your Love.jpg",
+      "bpm": "170",
+      "artist": "JAKAZiD",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Ideology",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Ideology.jpg",
+      "bpm": "126",
+      "artist": "aran",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Inner Circle",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Inner Circle.jpg",
+      "bpm": "172",
+      "artist": "factal",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Lurke",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Lurke.jpg",
+      "bpm": "128",
+      "artist": "M2U",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Melt",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Melt.jpg",
+      "bpm": "145",
+      "artist": "Au5, Jeto, Cristina Soto",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Midnight Hour",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Midnight Hour.jpg",
+      "bpm": "126",
+      "artist": "Skrillex, Boys Noize, Ty Dolla $ign",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Surface",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Surface.jpg",
+      "bpm": "150",
+      "artist": "Stessie",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] The Clockwork Rose",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] The Clockwork Rose.jpg",
+      "bpm": "135",
+      "artist": "Drop feat. Hatsuki Yura",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] Ugoki",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] Ugoki.jpg",
+      "bpm": "128",
+      "artist": "Lit Lords",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T06] pn35a",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T06] pn35a.jpg",
+      "bpm": "100",
+      "artist": "Virtual Riot",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 6
+        }
+      ]
+    },
+    {
+      "name": "[T07] Beach Episode",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Beach Episode.jpg",
+      "bpm": "80-160",
+      "artist": "Aika",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Bitter Juicy",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Bitter Juicy.jpg",
+      "bpm": "135",
+      "artist": "mommy",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Blackbird",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Blackbird (Remix).jpg",
+      "bpm": "110",
+      "artist": "Kobaryo",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Bunny Hopper",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Bunny Hopper Nightmare Version.jpg",
+      "bpm": "105",
+      "artist": "Tare",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Cauliflower",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Cauliflower.jpg",
+      "bpm": "138",
+      "artist": "HiTECH NINJA",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Colours",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Colours.jpg",
+      "bpm": "128",
+      "artist": "Mo Falk",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] DIABLOSIS∷Nāga",
+      "name_translation": "[T07] DIABLOSIS--Naga",
+      "jacket": "itg/rip15singles/[T07] DIABLOSIS--Naga.jpg",
+      "bpm": "100-200",
+      "artist": "sky_delta",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Neon Kingdom",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Neon Kingdom.jpg",
+      "bpm": "130",
+      "artist": "litmus*",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Rebellion",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Rebellion.jpg",
+      "bpm": "170",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] Unreality",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Unreality.jpg",
+      "bpm": "174",
+      "artist": "sky_delta",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] You're Beautiful",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] Youre Beautiful.jpg",
+      "bpm": "150",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T07] break it down!",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T07] break it down!.jpg",
+      "bpm": "110",
+      "artist": "Ruxxi",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 7
+        }
+      ]
+    },
+    {
+      "name": "[T08] Emma",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Emma.jpg",
+      "bpm": "166",
+      "artist": "BlackY feat. Risa Yuzuki",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Escape",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Escape.jpg",
+      "bpm": "141",
+      "artist": "Sanaas",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Fuego",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Fuego (Remix).jpg",
+      "bpm": "100",
+      "artist": "KOAN Sound & Asa",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] 紅のpanselinos",
+      "name_translation": "[T08] Kurenai no panselinos",
+      "jacket": "itg/rip15singles/[T08] Kurenai no panselinos.jpg",
+      "bpm": "137",
+      "artist": "Noah",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Reality\\:SHIFT",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] RealitySHIFT.jpg",
+      "bpm": "155",
+      "artist": "Drazically",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] STICKY",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] STICKY (Remix).jpg",
+      "bpm": "160",
+      "artist": "Tyler, The Creator",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] STRUT",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] STRUT.jpg",
+      "bpm": "128",
+      "artist": "KURORAK",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Shamshir",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Shamshir.jpg",
+      "bpm": "135",
+      "artist": "Blacklolita",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Submerge Serenade",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Submerge Serenade.jpg",
+      "bpm": "157",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Timelock",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Timelock.jpg",
+      "bpm": "170",
+      "artist": "T2Kazuya",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Voice 2 Voice n Voice",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Voice 2 Voice n Voice.jpg",
+      "bpm": "157",
+      "artist": "Acotto",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T08] Whiteout",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T08] Whiteout.jpg",
+      "bpm": "110-138",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[T09] Arcology On Permafrost",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Arcology on Permafrost.jpg",
+      "bpm": "136",
+      "artist": "かめりあ",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Celestial Levels",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Celestial Levels.jpg",
+      "bpm": "104",
+      "artist": "Machinedrum feat. Jesse Boykins III",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Chromatic Burst",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Chromatic Burst.jpg",
+      "bpm": "170",
+      "artist": "JAKAZiD",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] FUNKYTECH",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] FUNKYTECH.jpg",
+      "bpm": "160",
+      "artist": "Infowler, Eccentric, Marcix, voka, and Azure Spark",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Headspace",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Headspace FB 172.jpg",
+      "bpm": "172",
+      "artist": "Ash Astral",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] LEFT2RIGHT",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] LEFT2RIGHT.jpg",
+      "bpm": "126",
+      "artist": "Godlands & SPORTMODE",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Mazy Metroplex",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Mazy Metroplex.jpg",
+      "bpm": "155",
+      "artist": "aran",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Neutrino",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Neutrino.jpg",
+      "bpm": "150-205",
+      "artist": "HuΣeR",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Our Styles",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Our Styles.jpg",
+      "bpm": "174",
+      "artist": "Hommarju & Zekk",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Palette Lab",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Palette Lab.jpg",
+      "bpm": "130",
+      "artist": "かんざきしおん",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] Reality Distortion",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] Reality Distortion.jpg",
+      "bpm": "200",
+      "artist": "かめりあ vs Akira Complex",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T09] The Virus",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T09] The Virus.jpg",
+      "bpm": "140",
+      "artist": "AKOV",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[T10] 9876734123",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] 9876734123.jpg",
+      "bpm": "157",
+      "artist": "Silentroom",
+      "charts": [
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Clinozoisite",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Clinozoisite.jpg",
+      "bpm": "175",
+      "artist": "Ludicin",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Elusive Enforcer",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Elusive Enforcer.jpg",
+      "bpm": "185",
+      "artist": "K-forest vs. Reku Mochizuki",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Flying Castle",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Flying Castle.jpg",
+      "bpm": "174",
+      "artist": "lapix",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Godslain",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Godslain.jpg",
+      "bpm": "130",
+      "artist": "Juggernaut.",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Pon-Pon-Pompoko Dai-Sen-Saw!!",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Pon-Pon-Pompoko.jpg",
+      "bpm": "92-183",
+      "artist": "Chroma",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Rainbow Rave Parade",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Rainbow Rave Parade.jpg",
+      "bpm": "150",
+      "artist": "Chime",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Rumble",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Rumble (telemist bootleg).jpg",
+      "bpm": "145",
+      "artist": "Skrillex, Fred again.. & Flowdan",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Satellite Transmission (Edit)",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Satellite Transmission (Edit).jpg",
+      "bpm": "150",
+      "artist": "siqlo",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] ニルヴの心臓",
+      "name_translation": "[T10] Tower of Nirv",
+      "jacket": "itg/rip15singles/[T10] Tower of Nirv.jpg",
+      "bpm": "128",
+      "artist": "TJ.hangneil + Atomic Sphere feat. Annabel",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] Upshift",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] Upshift.jpg",
+      "bpm": "155",
+      "artist": "Iriss",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[T10] VICIOUS",
+      "name_translation": "",
+      "jacket": "itg/rip15singles/[T10] VICIOUS.jpg",
+      "bpm": "142",
+      "artist": "MEMODEMO",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    }
+  ]
+}

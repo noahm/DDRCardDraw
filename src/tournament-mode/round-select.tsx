@@ -35,7 +35,7 @@ interface Props {
   itemList: Array<string>;
   placeholder: string;
   value: string | null;
-  onSelect(item: string): void;
+  onSelect(this: void, item: string): void;
 }
 
 export function AutoCompleteSelect(props: Props) {

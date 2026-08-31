@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { chunkInPieces, pickRandomItem, rangeI, shuffle, times } from "./utils";
+import { chunkInPieces, pickRandomItem, shuffle, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { Fraction } from "./utils/fraction";
@@ -43,10 +43,13 @@ export function getDrawnChart(
     bpm: chart.bpm || currentSong.bpm,
     level: chart.lvl,
     granularLevel: chart.sanbaiTier,
+    maxScore: chart.maxScore,
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
+    extras: (chart.extras || []).concat(currentSong.extras || []),
     song: currentSong,
     dateAdded: currentSong.date_added,
+    folder: currentSong.folder,
     // Fill in variant data per game
     diffAbbr: getDiffAbbr(gameData, chart.diffClass),
     diffColor: getDifficultyColor(gameData, chart.diffClass),
@@ -166,12 +169,12 @@ export function* getBuckets(
     }
     return;
   }
-  // TODO: create an array of available levels within range here (slice of availableLvls)
+  const levelsInRange = availableLvls.filter(
+    (lvl) => lvl >= lowerBound && lvl <= upperBound,
+  );
 
   if (!granularResolution || !cfg.useGranularLevels) {
-    // TODO: reuse that here
-    const levels = Array.from(rangeI(lowerBound, upperBound));
-    for (const chunk of chunkInPieces(probabilityBucketCount, levels)) {
+    for (const chunk of chunkInPieces(probabilityBucketCount, levelsInRange)) {
       yield [chunk[0], chunk[chunk.length - 1]];
     }
     return;
@@ -270,12 +273,18 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
    * List of bucket indexes that must be picked, to meet minimums. Only used with `forceDistribution`
    */
   const requiredDrawIndexes: number[] = [];
+  /**
+   * Total amount of weight used, so we can determine expected outcomes
+   * for the `forceDistribution` setting.
+   */
+  let totalWeightUsed = 0;
 
   if (useWeights) {
     // build a distribution based on the weights used for each bucket
     bucketDistribution = [];
     for (const bucketIndex of validCharts.keys()) {
       const weightAmount = weights[bucketIndex] || 0;
+      totalWeightUsed += weightAmount;
       // add the appropriate amount of "cards" representing this bucket to the overall distro
       times(weightAmount, () => bucketDistribution.push(bucketIndex));
     }
@@ -286,13 +295,6 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
     // so a level with a weight of 15% can only show up on at most 1 card, a level with
     // a weight of 30% can only show up on at most 2 cards, etc.
     if (forceDistribution) {
-      /**
-       * Total amount of weight used, so we can determine expected outcomes
-       */
-      const totalWeightUsed = weights.reduce<number>(
-        (sum, current) => sum + (current || 0),
-        0,
-      );
       for (const bucketIdx of validCharts.keys()) {
         const normalizedWeight = (weights[bucketIdx] || 0) / totalWeightUsed;
         const maxForThisBucket = Math.ceil(
@@ -349,19 +351,21 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
         break;
       }
       const [randomIndex, randomChart] = pickRandomItem(selectableCharts);
-
-      if (randomChart) {
-        // Save it in our list of drawn charts
-        drawnCharts.push({
-          ...randomChart,
-          // Give this random chart a unique id within this drawing
-          id: `drawn_chart-${nanoid(5)}`,
-          type: CHART_DRAWN,
-        });
-        // remove drawn chart from deck so it cannot be re-drawn
-        selectableCharts.splice(randomIndex, 1);
-        difficultyCounts.add(chosenBucketIdx);
+      if (!randomChart) {
+        // no charts left in selectable set
+        break;
       }
+
+      // Save it in our list of drawn charts
+      drawnCharts.push({
+        ...randomChart,
+        // Give this random chart a unique id within this drawing
+        id: `drawn_chart-${nanoid(5)}`,
+        type: CHART_DRAWN,
+      });
+      // remove drawn chart from deck so it cannot be re-drawn
+      selectableCharts.splice(randomIndex, 1);
+      difficultyCounts.add(chosenBucketIdx);
     }
 
     if (useWeights && forceDistribution) {
@@ -414,6 +418,7 @@ export function draw(gameData: GameData, configData: ConfigState): Drawing {
 
   return {
     id: `draw-${nanoid(10)}`,
+    cardVariant: gameData.meta.cardVariant,
     charts,
     players: times(defaultPlayersPerDraw, () => ""),
     bans: [],

@@ -6,5 +6,21 @@
     "group:allNonMajor",
     "group:linters",
     "group:react"
+  ],
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "packageRules": [
+    {
+      "matchPackageNames": ["@blueprintjs/**"],
+      "groupName": "blueprint"
+    },
+    {
+      "matchPackageNames": ["@babel/**"],
+      "groupName": "babel"
+    },
+    {
+      "matchPackageNames": ["@lcdp/offline-plugin"],
+      "enabled": false
+    }
   ]
 }

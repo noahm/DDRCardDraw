@@ -7,7 +7,7 @@ import { resolve, join, dirname } from "path";
 import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
-import { writeJsonData } from "./utils.mjs";
+import { writeJsonData } from "./utils.mts";
 import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -25,8 +25,24 @@ function typedKeys(object) {
   return Object.keys(object);
 }
 
-const OUTFILE = "src/songs/sdvx.json";
-const JACKETS_PATH = "src/assets/jackets/sdvx";
+const OUTFILE = "src/songs/sdvx_nabla.json";
+const JACKETS_PATH = "src/assets/jackets/sdvx/nabla";
+
+const radarAxes = [
+  "notes",
+  "peak",
+  "tsumami",
+  "tricky",
+  "hand-trip",
+  "one-hand",
+];
+/**
+ * @param {string} radarAxis
+ */
+function radarAxisToFlag(radarAxis) {
+  return `radar-peak:${radarAxis}`;
+}
+const allRadarFlags = radarAxes.map(radarAxisToFlag);
 
 async function main() {
   const sdvxFile = process.argv[2];
@@ -62,8 +78,10 @@ async function main() {
         { key: "heavenly", color: "#00ffff" },
         { key: "vivid", color: "#f52a6e" },
         { key: "exceed", color: "#0047AB" },
+        { key: "nabla", color: "#00ff00" },
+        { key: "ultimate", color: "#efbf04" },
       ],
-      flags: typedKeys(SDVX_UNLOCK_IDS),
+      flags: typedKeys(SDVX_UNLOCK_IDS).concat(allRadarFlags),
       lastUpdated: Date.now(),
     },
     defaults: {
@@ -76,14 +94,16 @@ async function main() {
         "heavenly",
         "vivid",
         "exceed",
+        "nabla",
+        "ultimate",
       ],
-      flags: ["omegaDimension", "hexadiver", "otherEvents"],
+      flags: ["omegaDimension", "hexadiver", "otherEvents", ...allRadarFlags],
       lowerLvlBound: 16,
       upperLvlBound: 19,
     },
     i18n: {
       en: {
-        name: "SDVX: EG",
+        name: "SDVX: ∇",
         single: "Single",
         novice: "Novice",
         advanced: "Advanced",
@@ -92,12 +112,19 @@ async function main() {
         infinite: "Infinite",
         gravity: "Gravity",
         heavenly: "Heavenly",
+        ultimate: "Ultimate",
         vivid: "Vivid",
         exceed: "Exceed",
+        nabla: "Nabla",
         omegaDimension: "Blaster Gate/Omega Dimension",
         hexadiver: "Hexadiver",
+        variantgate: "Variant Gate",
         otherEvents: "Time-limited & Other Events",
         jpOnly: "J-Region Exclusive",
+        ...radarAxes.reduce((prev, curr) => {
+          prev[radarAxisToFlag(curr)] = `Radar Peak: ${curr}`;
+          return prev;
+        }, {}),
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -108,10 +135,12 @@ async function main() {
           heavenly: "HVN",
           vivid: "VVD",
           exceed: "XCD",
+          nabla: "NBL",
+          ultimate: "ULT",
         },
       },
       ja: {
-        name: "SDVX: EG",
+        name: "SDVX: ∇",
         single: "Single",
         novice: "Novice",
         advanced: "Advanced",
@@ -122,6 +151,8 @@ async function main() {
         heavenly: "Heavenly",
         vivid: "Vivid",
         exceed: "Exceed",
+        nabla: "Nabla",
+        ultimate: "Ultimate",
         $abbr: {
           novice: "NOV",
           advanced: "ADV",
@@ -132,6 +163,8 @@ async function main() {
           heavenly: "HVN",
           vivid: "VVD",
           exceed: "XCD",
+          nabla: "NBL",
+          ultimate: "ULT",
         },
       },
     },
@@ -141,7 +174,7 @@ async function main() {
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
-  const outfilePath = resolve(join(__dirname, "../src/songs/sdvx.json"));
+  const outfilePath = resolve(join(__dirname, "../src/songs/sdvx_nabla.json"));
   writeJsonData(data, outfilePath);
 }
 
@@ -161,6 +194,8 @@ function determineDiffClass(song, chartType) {
       return "vivid";
     case 6:
       return "exceed";
+    case 7:
+      return "nabla";
   }
 }
 
@@ -177,6 +212,7 @@ function determineChartJacket(chartType, song, availableJackets) {
     exhaust: 3,
     infinite: 4,
     maximimum: 5,
+    ultimate: 6,
   };
   // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
   let jacketName = `jk_${songId}_${chartTypeToNumber[chartType]}_s.png`;
@@ -209,7 +245,17 @@ function buildSong(song, availableJackets) {
     驩: "Ø",
     齲: "♥",
     齶: "♡",
+    黻: "*",
+    釁: "🍄",
+    闃: "Ā",
+    蔕: "ῦ",
+    鑷: "ゔ",
+    饌: "²",
     趁: "Ǣ",
+    瀑: "À",
+    鹹: "Ĥ",
+    躔: "★",
+    壥: "Є",
     騫: "á",
     曦: "à",
     驫: "ā",
@@ -230,6 +276,10 @@ function buildSong(song, availableJackets) {
     餮: "Ƶ",
     墸: "\u035f\u035f\u035e\u0020",
     盥: "⚙︎",
+    疉: "Ö",
+    鑒: "₩",
+    煢: "ø",
+    鷸: "♫",
   };
 
   let name = info.title_name[0];
@@ -252,28 +302,60 @@ function buildSong(song, availableJackets) {
   for (const chartType of Object.keys(song.difficulty[0])) {
     const chartInfo = song.difficulty[0][chartType][0];
 
-    const lvl = parseInt(chartInfo.difnum[0]._, 10);
+    const lvl = parseInt(chartInfo.difnum[0]._, 10) / 10;
     if (lvl < 1) {
       continue;
     }
+
+    const radarValues = {};
+    for (const radarType of radarAxes) {
+      radarValues[radarType] = parseInt(chartInfo.radar[0][radarType][0]._, 10);
+    }
+    // highest radar value of all six axes
+    const peakValue = Math.max(...Object.values(radarValues));
+    // all keys tied with radar value
+    const peakKeys = Object.keys(radarValues).filter(
+      (key) => radarValues[key] === peakValue,
+    );
 
     const chartJacket = determineChartJacket(chartType, song, availableJackets);
     if (!chartJacket) {
       usesSharedJacket = true;
     }
 
-    charts.push({
+    /** @type {Chart} */
+    const chart = {
       lvl,
       style: "single",
       diffClass: determineDiffClass(song, chartType),
       jacket: chartJacket,
-    });
+    };
+    /** @type {string[]} */
+    const flags = peakKeys.map(radarAxisToFlag);
+    for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
+      if (
+        SDVX_UNLOCK_IDS[flag].some(
+          (item) =>
+            typeof item !== "number" &&
+            item[0] === numericId &&
+            item[1] === chart.diffClass,
+        )
+      ) {
+        flags.push(flag);
+      }
+    }
+    if (flags.length) {
+      chart.flags = flags;
+    }
+
+    charts.push(chart);
   }
 
   if (usesSharedJacket) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
 
+  /** @type {string[]} */
   const flags = [];
   for (const flag of typedKeys(SDVX_UNLOCK_IDS)) {
     if (SDVX_UNLOCK_IDS[flag].includes(numericId)) {

@@ -24,10 +24,7 @@ import {
   SmallTick,
   SmallCross,
 } from "@blueprintjs/icons";
-import { DateInput3 } from "@blueprintjs/datetime2";
-import parse from "date-fns/parse";
-import format from "date-fns/format";
-import { useMemo, useState } from "react";
+import { useMemo, useState, lazy } from "react";
 import { shallow } from "zustand/shallow";
 import { useConfigState } from "../config-state";
 import { useDrawState } from "../draw-state";
@@ -37,13 +34,31 @@ import { useIsNarrow } from "../hooks/useMediaQuery";
 import { GameData } from "../models/SongData";
 import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
 import { useRemotePeers } from "../tournament-mode/remote-peers";
+import { NetworkingNotice } from "./networking-notice";
 import { WeightsControls } from "./controls-weights";
 import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
-import { getAvailableLevels } from "../game-data-utils";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
-import { detectedLanguage } from "../utils";
+import { LvlRangeControls } from "./lvl-range";
+
+const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
+function ReleaseDateFilter() {
+  const gameData = useDrawState((s) => s.gameData);
+  const mostRecentRelease = useMemo(
+    () =>
+      gameData?.songs.reduce<string>((prev, song) => {
+        if (song.date_added && song.date_added > prev) return song.date_added;
+        return prev;
+      }, ""),
+    [gameData],
+  );
+
+  if (!mostRecentRelease) {
+    return null;
+  }
+  return <ReleaseDateFilterControl mostRecentRelease={mostRecentRelease} />;
+}
 
 function getAvailableDifficulties(gameData: GameData, selectedStyle: string) {
   const s = new Set<string>();
@@ -88,7 +103,7 @@ export default function ControlsDrawer() {
   const hasPeers = useRemotePeers((r) => !!r.remotePeers.size);
   return (
     <div className={styles.drawer}>
-      <Tabs id="settings" large>
+      <Tabs id="settings" size="large">
         <Tab
           id="general"
           icon={<Settings className={Classes.TAB_ICON} />}
@@ -110,7 +125,12 @@ export default function ControlsDrawer() {
               intent={isConnected ? "success" : "none"}
             />
           }
-          panel={<RemotePeerControls />}
+          panel={
+            <>
+              <NetworkingNotice />
+              <RemotePeerControls />
+            </>
+          }
         >
           {t("controls.tabs.networking")}
         </Tab>
@@ -123,55 +143,6 @@ export default function ControlsDrawer() {
         </Tab>
       </Tabs>
     </div>
-  );
-}
-
-const dateFormat = "yyyy-MM-dd";
-function ReleaseDateFilter() {
-  const { t } = useIntl();
-  const gameData = useDrawState((s) => s.gameData);
-  const [updateState, cutoffDate] = useConfigState(
-    (s) => [s.update, s.cutoffDate],
-    shallow,
-  );
-  const mostRecentRelease = useMemo(
-    () =>
-      gameData?.songs.reduce<string>((prev, song) => {
-        if (song.date_added && song.date_added > prev) return song.date_added;
-        return prev;
-      }, ""),
-    [gameData],
-  );
-
-  if (!mostRecentRelease) {
-    return null;
-  }
-
-  const reference = new Date();
-  const maxDate = parse(mostRecentRelease, dateFormat, reference);
-  const minDate = parse("2000-01-01", dateFormat, reference);
-
-  return (
-    <FormGroup label={t("controls.releaseHeader")}>
-      <DateInput3
-        dateFnsFormat={dateFormat}
-        locale={detectedLanguage}
-        value={cutoffDate || mostRecentRelease}
-        onChange={(newDate, isUserChange) => {
-          if (!isUserChange) {
-            return;
-          }
-          if (!newDate) {
-            updateState({ cutoffDate: "" });
-            return;
-          }
-          updateState({ cutoffDate: format(new Date(newDate), dateFormat) });
-        }}
-        placeholder={t("controls.releaseInputPlaceholder", { dateFormat })}
-        maxDate={maxDate}
-        minDate={minDate}
-      />
-    </FormGroup>
   );
 }
 
@@ -291,6 +262,7 @@ function GeneralSettings() {
     chartCount,
     sortByLevel,
     useGranularLevels,
+    showMaxScore,
     playerPicks,
   } = configState;
   const availableDifficulties = useMemo(() => {
@@ -301,10 +273,6 @@ function GeneralSettings() {
   }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
-  const availableLevels = useMemo(
-    () => getAvailableLevels(gameData, useGranularLevels),
-    [gameData, useGranularLevels],
-  );
 
   if (!gameData) {
     return null;
@@ -315,48 +283,6 @@ function GeneralSettings() {
   );
   const { styles: gameStyles } = gameData.meta;
 
-  /**
-   * attempts to step to the next value of available levels for either bounds field
-   */
-  function setNextStateStep(
-    stateKey: "upperBound" | "lowerBound",
-    newValue: number,
-  ) {
-    updateState((prev) => {
-      // re-calc with current state of granular levels. the one in scope above may be stale
-      const availableLevels = getAvailableLevels(
-        gameData,
-        prev.useGranularLevels,
-      );
-      if (availableLevels.includes(newValue)) {
-        return { [stateKey]: newValue };
-      }
-      const currentValue = configState[stateKey];
-      const currentIndex = availableLevels.indexOf(currentValue);
-      const direction = newValue > currentValue ? 1 : -1;
-      const newIndex = currentIndex + direction;
-      if (newIndex < 0 || newIndex >= availableLevels.length) {
-        console.error("cannot go outside of available levels");
-        return {};
-      }
-      return { [stateKey]: availableLevels[newIndex] };
-    });
-  }
-
-  const handleLowerBoundChange = (newLow: number) => {
-    if (newLow !== lowerBound && !isNaN(newLow)) {
-      if (newLow > upperBound) {
-        newLow = upperBound;
-      }
-      setNextStateStep("lowerBound", newLow);
-    }
-  };
-
-  const handleUpperBoundChange = (newHigh: number) => {
-    if (newHigh !== upperBound && !isNaN(newHigh)) {
-      setNextStateStep("upperBound", newHigh);
-    }
-  };
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
 
   return (
@@ -382,12 +308,12 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
             value={chartCount}
-            min={1}
+            min={playerPicks ? 0 : 1}
             clampValueOnBlur
             onValueChange={(chartCount) => {
               if (!isNaN(chartCount)) {
@@ -404,12 +330,12 @@ function GeneralSettings() {
           contentClassName={styles.narrowInput}
         >
           <NumericInput
-            large
+            size="large"
             fill
             type="number"
             inputMode="numeric"
             value={playerPicks}
-            min={0}
+            min={chartCount ? 0 : 1}
             clampValueOnBlur
             onValueChange={(playerPicks) => {
               if (!isNaN(playerPicks)) {
@@ -422,50 +348,7 @@ function GeneralSettings() {
         </FormGroup>
       </div>
       <div className={styles.inlineControls}>
-        <FormGroup
-          label={
-            usesDrawGroups
-              ? t("controls.lowerBoundTier")
-              : t("controls.lowerBoundLvl")
-          }
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            large
-            fill
-            type="number"
-            inputMode="numeric"
-            value={useGranularLevels ? lowerBound.toFixed(2) : lowerBound}
-            min={availableLevels[0]}
-            max={Math.max(upperBound, lowerBound, 1)}
-            stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            minorStepSize={null}
-            majorStepSize={useGranularLevels ? 1 : null}
-            onValueChange={handleLowerBoundChange}
-          />
-        </FormGroup>
-        <FormGroup
-          label={
-            usesDrawGroups
-              ? t("controls.upperBoundTier")
-              : t("controls.upperBoundLvl")
-          }
-          contentClassName={styles.narrowInput}
-        >
-          <NumericInput
-            large
-            fill
-            type="number"
-            inputMode="numeric"
-            value={useGranularLevels ? upperBound.toFixed(2) : upperBound}
-            min={lowerBound}
-            max={availableLevels[availableLevels.length - 1]}
-            stepSize={useGranularLevels ? granularIncrement.valueOf() : 1}
-            minorStepSize={null}
-            majorStepSize={useGranularLevels ? 1 : null}
-            onValueChange={handleUpperBoundChange}
-          />
-        </FormGroup>
+        <LvlRangeControls />
       </div>
       <Button
         alignText="left"
@@ -567,6 +450,15 @@ function GeneralSettings() {
           label={t("controls.sortByLevel")}
         />
         <Checkbox
+          id="showMaxScore"
+          checked={showMaxScore}
+          onChange={(e) => {
+            const showMaxScore = !!e.currentTarget.checked;
+            updateState({ showMaxScore });
+          }}
+          label={t("controls.showMaxScore")}
+        />
+        <Checkbox
           id="useGranularLevels"
           disabled={!gameData.meta.granularTierResolution}
           checked={useGranularLevels}
@@ -581,10 +473,7 @@ function GeneralSettings() {
               if (nextUpperBound < prev.lowerBound) {
                 nextUpperBound = prev.lowerBound + 1;
               }
-              return {
-                useGranularLevels,
-                upperBound: nextUpperBound,
-              };
+              return { useGranularLevels, upperBound: nextUpperBound };
             });
           }}
           label={t("controls.useGranularLevels")}

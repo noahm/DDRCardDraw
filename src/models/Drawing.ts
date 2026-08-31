@@ -12,10 +12,13 @@ export interface EligibleChart {
   diffColor: string;
   level: number;
   granularLevel?: number;
+  maxScore?: number;
   drawGroup?: number;
   flags: string[];
+  extras: string[];
   dateAdded?: string;
   song: Song;
+  folder?: string;
 }
 
 export const CHART_PLACEHOLDER = "PLACEHOLDER";
@@ -51,6 +54,7 @@ export interface Drawing {
   winners: Array<PlayerActionOnChart>;
   pocketPicks: Array<PocketPick>;
   priorityPlayer?: number;
+  cardVariant: string | undefined;
   /** __ prefix avoids serializing this field during sync */
   __syncPeer?: DataConnection;
 }
