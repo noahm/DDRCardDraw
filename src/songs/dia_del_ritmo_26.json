@@ -3,9 +3,7 @@
   "meta": {
     "cardVariant": "ddr",
     "menuParent": "events",
-    "styles": [
-      "single"
-    ],
+    "styles": ["single"],
     "difficulties": [
       {
         "key": "beginner",
@@ -67,15 +65,8 @@
   },
   "defaults": {
     "style": "single",
-    "difficulties": [
-      "difficult",
-      "expert",
-      "challenge"
-    ],
-    "flags": [
-      "shock",
-      "euLocked"
-    ],
+    "difficulties": ["difficult", "expert", "challenge"],
+    "flags": ["shock", "euLocked"],
     "lowerLvlBound": 12,
     "upperLvlBound": 19
   },
@@ -156,15 +147,11 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 2145,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.5
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/1116",
       "jacket": "ddr_world/1116.jpg",
       "genre": "BREAKBEATS",
@@ -180,9 +167,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.35,
           "maxScore": 1200
         }
@@ -213,9 +198,7 @@
       "jacket": "ddr_a3/3y3s.jpg",
       "remyLink": "https://remywiki.com/3y3s",
       "genre": "DANCE SPEED",
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "search_hint": "Eyes"
     },
     {
@@ -316,9 +299,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 18.5,
           "maxScore": 2595
         }
@@ -400,10 +381,7 @@
           "maxScore": 1251
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/About Damn Time.jpg"
     },
     {
@@ -654,9 +632,7 @@
       ],
       "jacket": "ddr_a3/Ambivalent Vermilia.jpg",
       "remyLink": "https://remywiki.com/Ambivalent_Vermilia",
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "genre": "HARD RENAISSANCE"
     },
     {
@@ -739,9 +715,7 @@
           "maxScore": 1620
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ARACHNE.jpg",
       "remyLink": "https://remywiki.com/ARACHNE"
     },
@@ -906,9 +880,7 @@
           "maxScore": 1569
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/BabeL ～Next Story～.jpg",
       "remyLink": "https://remywiki.com/BabeL_~Next_Story~",
       "genre": "SCALE OUT/スケールアウト"
@@ -923,9 +895,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.35,
           "maxScore": 1179
         }
@@ -949,9 +919,7 @@
           "sanbaiTier": 12.3
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Bad_Apple!!_feat._nomico",
       "jacket": "ddr_a/Bad Apple!! feat. nomico.png",
       "genre": "",
@@ -972,9 +940,7 @@
           "maxScore": 2196
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Bad_Maniacs",
       "genre": "INDUSTRIAL",
       "saHash": "6O9O0ooOb8O8Q6D0ldqi1O8o6891Iq86",
@@ -1038,15 +1004,11 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 2157,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.3
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/Battle Against a True Hero.jpg",
       "remyLink": "https://remywiki.com/Battle_Against_a_True_Hero_/_Honmono_no_hero_to_no_tatakai",
       "search_hint": "Undertale ほんものひーろーとのたたかい/本物のヒーローとの戦い"
@@ -1104,10 +1066,7 @@
           "maxScore": 1836
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/Better When I'm Dancin'.jpg"
     },
     {
@@ -1126,9 +1085,7 @@
           "maxScore": 1653
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/Beyond The Earth.jpg",
       "remyLink": "https://remywiki.com/BEYOND_THE_EARTH",
       "genre": "CONTEMPORARY NATION"
@@ -1224,9 +1181,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.45
         }
       ],
@@ -1250,10 +1205,7 @@
           "sanbaiTier": 12.1
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/Blinding Lights.jpg",
       "remyLink": "https://remywiki.com/Blinding_Lights"
     },
@@ -1497,9 +1449,7 @@
           "maxScore": 1653
         }
       ],
-      "flags": [
-        "copyStrikes"
-      ],
+      "flags": ["copyStrikes"],
       "remyLink": "https://remywiki.com/Cheerleader",
       "saHash": "8Q08qIiIOq0P66q90b0lI0PbP6lb9bOI",
       "jacket": "ddr_world/Cheerleader.jpg"
@@ -1813,9 +1763,7 @@
           "maxScore": 2430
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/COSMIC_V3LOCITY",
       "jacket": "ddr_world/COSMIC_V3LOCITY.jpg",
       "genre": "UCHIAGE CORE",
@@ -2098,15 +2046,11 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 2577,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 17.65
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "search_hint": "Undertale かれいなるしとう/華麗なる死闘",
       "remyLink": "https://remywiki.com/Death_by_Glamour_/_Kareinaru_shitou",
       "jacket": "ddr_a3/Death by Glamour.jpg"
@@ -2164,9 +2108,7 @@
         }
       ],
       "remyLink": "https://remywiki.com/DIABLOSIS::Naga",
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_a3/DIABLOSISNaga.jpg",
       "saHash": "QlQ10I6o1l88loioo6DIObi0P09PPdiD"
     },
@@ -2189,9 +2131,7 @@
       "jacket": "ddr_world/DIAVOLO.jpg",
       "remyLink": "https://remywiki.com/DIAVOLO",
       "genre": "トランセンデンタルエチュード/TRANSCENDENTAL ETUDES",
-      "flags": [
-        "unlock"
-      ]
+      "flags": ["unlock"]
     },
     {
       "name": "DIGITALIZER",
@@ -2205,9 +2145,7 @@
           "diffClass": "challenge",
           "maxScore": 2241,
           "sanbaiTier": 18.65,
-          "flags": [
-            "shock"
-          ]
+          "flags": ["shock"]
         }
       ],
       "remyLink": "https://remywiki.com/DIGITALIZER",
@@ -2281,9 +2219,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "flags": [
-            "grandPrixPack"
-          ],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.55,
           "maxScore": 1800
         }
@@ -2366,9 +2302,7 @@
           "maxScore": 1896
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/EBONY & IVORY.jpg",
       "remyLink": "https://remywiki.com/EBONY_%26_IVORY",
       "genre": "ラグタイムチップチューン/RAGTIME CHIPTUNE"
@@ -2532,9 +2466,7 @@
           "maxScore": 1983
         }
       ],
-      "flags": [
-        "copyStrikes"
-      ],
+      "flags": ["copyStrikes"],
       "remyLink": "https://remywiki.com/Eon_Break",
       "jacket": "ddr_a3/Eon_Break.jpg",
       "saHash": "QD8l9QQd89PO9ql1iOD0dO69OQ1DldbP",
@@ -2555,9 +2487,7 @@
           "maxScore": 2448
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ESPRIT ONE.jpg",
       "genre": "CYBER ROCK",
       "remyLink": "https://remywiki.com/ESPRIT_ONE",
@@ -2598,9 +2528,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.25,
           "maxScore": 1614
         }
@@ -2627,9 +2555,7 @@
       ],
       "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
       "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
-      "flags": [
-        "tempUnlock"
-      ],
+      "flags": ["tempUnlock"],
       "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
@@ -2744,15 +2670,11 @@
           "diffClass": "challenge",
           "bpm": "24-190",
           "maxScore": 1794,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 15.25
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Finale_(Toby_Fox)",
       "search_hint": "Undertale フィナーレ",
       "jacket": "ddr_a3/Finale.jpg"
@@ -2825,9 +2747,7 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 1683,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 16.5
         }
       ],
@@ -2880,9 +2800,7 @@
       "jacket": "ddr_world/fixer.jpg",
       "remyLink": "https://remywiki.com/Fixer_(PHQUASE_vs._dj_TAKA)",
       "genre": "DOUBLE DRIVE",
-      "flags": [
-        "tempUnlock"
-      ]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Flow (True Style)",
@@ -2922,9 +2840,7 @@
       ],
       "jacket": "ddr_world/Fly Like You.jpg",
       "remyLink": "https://remywiki.com/Fly_Like_You",
-      "flags": [
-        "unlock"
-      ]
+      "flags": ["unlock"]
     },
     {
       "name": "Freeway Shuffle",
@@ -2957,9 +2873,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 13.65
         }
       ],
@@ -3021,9 +2935,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.45,
           "maxScore": 1470
         }
@@ -3048,9 +2960,7 @@
           "maxScore": 1941
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Get Into The Groove feat.WaMi.jpg",
       "genre": "Nu-NRG / FUTUREDISCO",
       "remyLink": "https://remywiki.com/Get_Into_The_Groove_feat.WaMi",
@@ -3325,9 +3235,7 @@
           "maxScore": 1875
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/HANIPAGANDA.jpg",
       "remyLink": "https://remywiki.com/HANIPAGANDA"
     },
@@ -3525,9 +3433,7 @@
       ],
       "jacket": "ddr_world/Hollywood Galaxy.jpg",
       "remyLink": "https://remywiki.com/Hollywood_Galaxy",
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "genre": "DRUM'N'BASS"
     },
     {
@@ -3548,9 +3454,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 15.8
         }
       ],
@@ -3794,9 +3698,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 16.45
         }
       ],
@@ -3860,9 +3762,7 @@
           "maxScore": 1947
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/KING_(Kanaria)",
       "jacket": "ddr_a3/KING_(Kanaria).jpg",
       "saHash": "O8lq1l6qIi6I9l69IOPdoI6lbiodQOP6",
@@ -4096,9 +3996,7 @@
           "maxScore": 2499
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/Lisa-RICCIA.jpg",
       "genre": "HARD RENAISSANCE",
       "remyLink": "https://remywiki.com/Lisa-RICCIA"
@@ -4170,9 +4068,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 18.55,
           "maxScore": 2418
         }
@@ -4192,9 +4088,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 17.75,
           "maxScore": 1722
         }
@@ -4237,9 +4131,7 @@
           "sanbaiTier": 13.6
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/M.A.Y.U.",
       "jacket": "ddr_2014/M.A.Y.U..png",
       "saHash": "o96i9P9iO9o0DdbPb9bbQ66DqDq88Db1",
@@ -4274,9 +4166,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.6,
           "maxScore": 1206
         }
@@ -4300,9 +4190,7 @@
           "maxScore": 1473
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Make Mi Make Mi.jpg"
     },
     {
@@ -4600,15 +4488,11 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 2436,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.1
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/MEGALOVANIA",
       "jacket": "ddr_a3/MEGALOVANIA.jpg",
       "genre": "",
@@ -4669,9 +4553,7 @@
       ],
       "jacket": "ddr_world/Meteor.jpg",
       "remyLink": "https://remywiki.com/Meteor",
-      "flags": [
-        "unlock"
-      ]
+      "flags": ["unlock"]
     },
     {
       "name": "Midnight Amaretto",
@@ -4727,9 +4609,7 @@
           "maxScore": 2163
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/MODEL FT2 Miracle Version.jpg",
       "remyLink": "https://remywiki.com/MODEL_FT2_Miracle_Version"
     },
@@ -4782,9 +4662,7 @@
           "maxScore": 2394
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Monsters Den.jpg",
       "remyLink": "https://remywiki.com/Monsters_Den"
     },
@@ -4843,10 +4721,7 @@
           "maxScore": 1560
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Murmur_twins_(guitar_pop_ver.)_(covered_by_Otonose_Kanade(ReGLOSS))",
       "jacket": "ddr_world/murmur twins (guitar pop ver.)_ReGLOSS.jpg",
       "genre": "CUDDLECORE/カドルコア"
@@ -5014,9 +4889,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.55
         }
       ],
@@ -5162,9 +5035,7 @@
           "maxScore": 1725
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/New Nostalgy.jpg"
     },
     {
@@ -5389,9 +5260,7 @@
           "sanbaiTier": 17.2
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/PARANOiA_(kskst_mix)",
       "jacket": "ddr_x3/PARANOiA (kskst mix).png",
       "saHash": "dQPPd10QO9d8IiOiIi8iDD1Qdq8lQli0",
@@ -5434,9 +5303,7 @@
           "style": "single",
           "diffClass": "challenge",
           "sanbaiTier": 18.95,
-          "flags": [
-            "unlock"
-          ],
+          "flags": ["unlock"],
           "maxScore": 1863
         }
       ],
@@ -5641,9 +5508,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.65
         }
       ],
@@ -5716,9 +5581,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.7
         }
       ],
@@ -5969,9 +5832,7 @@
           "maxScore": 2784
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Re:RHYZE",
       "jacket": "ddr_world/ReRHYZE.jpg",
       "saHash": "l1b8iDqOdQl6PbIIdb966qQ8d9i9dOPQ"
@@ -6037,9 +5898,7 @@
           "maxScore": 2244
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/REINCARNATION_(P*Light)",
       "jacket": "ddr_world/REINCARNATION_(PLight).jpg",
       "saHash": "DqIO9PI98blQlid88dQiO0ldoiobOqdb"
@@ -6054,9 +5913,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "unlock"
-          ],
+          "flags": ["unlock"],
           "sanbaiTier": 18.95,
           "maxScore": 1686
         }
@@ -6097,10 +5954,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked",
-            "shock"
-          ],
+          "flags": ["euLocked", "shock"],
           "sanbaiTier": 17.6,
           "maxScore": 1914
         }
@@ -6248,9 +6102,7 @@
           "sanbaiTier": 18.55
         }
       ],
-      "flags": [
-        "tempUnlock"
-      ],
+      "flags": ["tempUnlock"],
       "jacket": "ddr_world/RUINA.jpg",
       "genre": "ハードサイスピードコア/HARD PSY/SPEEDCORE",
       "remyLink": "https://remywiki.com/RUINA"
@@ -6266,9 +6118,7 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 1698,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 16.65
         }
       ],
@@ -6288,9 +6138,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 13.85
         }
       ],
@@ -6333,9 +6181,7 @@
           "maxScore": 1761
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Sahara",
       "jacket": "ddr_world/Sahara.jpg",
       "saHash": "qlQbI6dQ8i1iOO1oPbOoQ9b6ODII08Qb"
@@ -6353,9 +6199,7 @@
           "maxScore": 3105
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/Saiph.jpg",
       "remyLink": "https://remywiki.com/Saiph",
       "saHash": "i09oqb0o1boQdi1blIb1D08PlDI1o6lo"
@@ -6413,9 +6257,7 @@
           "sanbaiTier": 12.05
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Scarlet_Moon",
       "jacket": "ddr_2014/Scarlet Moon.png",
       "genre": "J-CORE",
@@ -6534,10 +6376,7 @@
           "maxScore": 1647
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "genre": "DANCE POP",
       "remyLink": "https://remywiki.com/Shooting_Star_(ReGLOSS)",
       "jacket": "ddr_world/Shooting Star.jpg",
@@ -6574,9 +6413,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.4,
           "maxScore": 1335
         }
@@ -6932,9 +6769,7 @@
           "maxScore": 2817
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Steps for Victory.jpg",
       "remyLink": "https://remywiki.com/Steps_for_Victory"
     },
@@ -6992,9 +6827,7 @@
         }
       ],
       "jacket": "ddr_world/Superior MAXXX.jpg",
-      "flags": [
-        "grandPrixPack"
-      ],
+      "flags": ["grandPrixPack"],
       "remyLink": "https://remywiki.com/Superior_MAXXX"
     },
     {
@@ -7050,9 +6883,7 @@
         }
       ],
       "remyLink": "https://remywiki.com/Suspicions",
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_a3/Suspicions.jpg",
       "genre": "JAZZ CORE",
       "saHash": "Q88iD188IiqQbIoP9Oq818bPbOP1d1bQ"
@@ -7257,9 +7088,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "grandPrixPack"
-          ],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.85,
           "maxScore": 2016
         }
@@ -7282,9 +7111,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2094,
-          "flags": [
-            "grandPrixPack"
-          ],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 18.6
         }
       ],
@@ -7422,9 +7249,7 @@
           "maxScore": 2202
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Timepiece_phase_II",
       "genre": "PROGRESSIVE ROCK/プログレッシブロック",
       "saHash": "oIOq6lQQPoD1q11Qiq6dDI6l8DdoQ169",
@@ -7554,9 +7379,7 @@
           "maxScore": 1962
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/TRIP_MACHINE_(xac_nanoglide_mix)",
       "jacket": "ddr_x3/TRIP MACHINE (xac nanoglide mix).png",
       "saHash": "l9OQPi0do19dQPO8ilq0QDbll8P8Ib6O",
@@ -7713,9 +7536,7 @@
           "sanbaiTier": 18.75
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/UИKNØWNZ.jpg",
       "remyLink": "https://remywiki.com/UNKNOWNZ"
     },
@@ -7943,15 +7764,11 @@
           "style": "single",
           "diffClass": "challenge",
           "maxScore": 1818,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 17.2
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/WARNINGxWARNINGxWARNING",
       "jacket": "ddr_a3/WARNINGxWARNINGxWARNING.jpg",
       "saHash": "I0091lboOD1Dii10dQ0qbDqil69PQ0io",
@@ -7993,9 +7810,7 @@
           "maxScore": 1422
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/Wizards!.jpg",
       "genre": "JAPANESE ALTERNATIVE ROCK",
       "remyLink": "https://remywiki.com/Wizards!",
@@ -8037,9 +7852,7 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "flags": [
-            "grandPrixPack"
-          ],
+          "flags": ["grandPrixPack"],
           "maxScore": 2472
         }
       ],
@@ -8146,9 +7959,7 @@
       ],
       "jacket": "ddr_world/ZENDEGI DANCE.jpg",
       "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
-      "flags": [
-        "tempUnlock"
-      ],
+      "flags": ["tempUnlock"],
       "genre": "ORBITALIC ORIENTAL ELECTRO"
     },
     {
@@ -8207,9 +8018,7 @@
           "style": "single",
           "diffClass": "challenge",
           "sanbaiTier": 18.45,
-          "flags": [
-            "unlock"
-          ],
+          "flags": ["unlock"],
           "maxScore": 1905
         }
       ],
@@ -8361,10 +8170,7 @@
           "sanbaiTier": 12.05
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Hanamaru_pippi_wa_yoiko_dake",
       "jacket": "ddr_2014/Hanamaru pippi hayo iko dake.png",
       "genre": "",
@@ -8435,9 +8241,7 @@
           "maxScore": 1395
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Ayumi_magical_showtime",
       "jacket": "ddr_a3/Ayumi magical showtime.jpg",
       "saHash": "PDoiQoi9q08PQ96Pl6oD9IIi6iq0Q6D6",
@@ -8459,10 +8263,7 @@
           "maxScore": 2004
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Usatei",
       "jacket": "ddr_a3/Usatei.jpg",
       "saHash": "9oIO98IPOiq1idiIIbOOqdDQIOdQPPd6",
@@ -8537,10 +8338,7 @@
           "maxScore": 2415
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Scarlet_keisatsu_no_ghetto_patrol_24_ji",
       "jacket": "ddr_a3/Scarlet keisatsu no ghetto patrol 24 ji.jpg",
       "saHash": "1liPbq0890qqI0D8qDP9diOOPlDdi0Oi",
@@ -8568,9 +8366,7 @@
           "maxScore": 2112
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Setsuna_trip",
       "jacket": "ddr_2014/Setsuna Trip.png",
       "genre": "",
@@ -8614,10 +8410,7 @@
           "sanbaiTier": 15.35
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_kyoushitsu",
       "jacket": "ddr_a/Cirno's Perfect Math Class.png",
       "genre": "",
@@ -8671,9 +8464,7 @@
           "maxScore": 2931
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/トランスダンスアナーキー.jpg",
       "remyLink": "https://remywiki.com/Trance_dance_anarcky"
     },
@@ -8713,10 +8504,7 @@
           "sanbaiTier": 16.4
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Night_of_knights",
       "jacket": "ddr_a/Night of Knights.png",
       "genre": "",
@@ -8779,9 +8567,7 @@
           "maxScore": 2565
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Hi-tech_Tokio",
       "jacket": "ddr_world/Hi-tech Tokio.jpg",
       "genre": "ハイテックトキオ",
@@ -8803,9 +8589,7 @@
           "maxScore": 2190
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/BambooSword_Girl",
       "jacket": "ddr_2014/Bamboo Sword Girl.png",
       "genre": "J-スピードメタル/J-SPEEDMETAL",
@@ -8888,9 +8672,7 @@
           "maxScore": 2166
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Plain_Asia_-PHQ_remix-",
       "jacket": "ddr_a/Plain Asia -PHQ remix-.png",
       "saHash": "dDlDPddq08iD8IOb9I1PbODP9696966D",
@@ -8934,9 +8716,7 @@
           "maxScore": 2598
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/ミカヅキコネクト.jpg",
       "remyLink": "https://remywiki.com/Mikazuki:connect"
     },
@@ -8957,9 +8737,7 @@
           "maxScore": 1881
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/メズマライザー.jpg",
       "remyLink": "https://remywiki.com/Mesmerizer",
       "genre": "HAPPY HARDCORE"
@@ -9020,9 +8798,7 @@
           "maxScore": 2121
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/ラビットホール.jpg",
       "remyLink": "https://remywiki.com/Rabbit_hole",
       "genre": "J-POP"
@@ -9065,10 +8841,7 @@
           "maxScore": 1836
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Respec_fujin",
       "jacket": "ddr_a3/Respec fujin.jpg",
       "saHash": "OiQI998qPiooq60099bPdO886q9bd011",
@@ -9094,9 +8867,7 @@
           "style": "single",
           "diffClass": "challenge",
           "bpm": "100-200",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 18.7,
           "maxScore": 2532
         }
@@ -9122,9 +8893,7 @@
           "maxScore": 2214
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Lost_one_no_goukoku",
       "jacket": "ddr_a/Lost one no goukoku.png",
       "genre": "",
@@ -9143,9 +8912,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.75,
           "maxScore": 1650
         }
@@ -9172,9 +8939,7 @@
           "maxScore": 1623
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Role-playing_game",
       "jacket": "ddr_a/Role Playing Game.png",
       "genre": "",
@@ -9239,15 +9004,11 @@
           "style": "single",
           "diffClass": "expert",
           "maxScore": 1737,
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 14.35
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Hito_mania",
       "jacket": "ddr_world/人マニア.jpg"
     },
@@ -9319,9 +9080,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "euLocked"
-          ],
+          "flags": ["euLocked"],
           "sanbaiTier": 18.4,
           "maxScore": 2124
         }
@@ -9349,10 +9108,7 @@
           "maxScore": 1290
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/勇者.jpg",
       "remyLink": "https://remywiki.com/Yuusha",
       "search_hint": "ゆうしゃ"
@@ -9457,9 +9213,7 @@
           "maxScore": 1473
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Kyoufuu_all_back",
       "jacket": "ddr_world/強風オールバック.jpg",
       "genre": ""
@@ -9480,9 +9234,7 @@
           "maxScore": 1635
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Koi_no_hyoketsu_otenba_yukemuri_Cirno_onsen",
       "jacket": "ddr_a3/Koi no hyoketsu otenba yukemuri Cirno onsen.jpg",
       "saHash": "6l99bqIQOQl0QQDIoiQ6PQPOoDPlD0O9",
@@ -9525,10 +9277,7 @@
           "maxScore": 1581
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Renkei_epilogue",
       "jacket": "ddr_world/恋繋エピローグ.jpg",
       "saHash": "PoO90Q6P0q9oOQ16i0P0l1iodOQP9o0O"
@@ -9549,9 +9298,7 @@
           "maxScore": 2016
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/悲報！ワイ！ニート！.jpg",
       "remyLink": "https://remywiki.com/Hihou!_Wai!_Neet!",
       "genre": ""
@@ -9573,10 +9320,7 @@
           "maxScore": 1710
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/我ら完全無敵のアイドル!!.jpg",
       "remyLink": "https://remywiki.com/Warera_kanzen_muteki_no_idol!!",
       "genre": "J-POP",
@@ -9640,10 +9384,7 @@
           "maxScore": 2259
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Saisoku_saikou_shutter_girl",
       "jacket": "ddr_a3/Saisoku saikou shutter girl.jpg",
       "saHash": "9bqO1dPbO1b89q9dO1iOP1ibiPdP01q9",
@@ -9665,9 +9406,7 @@
           "maxScore": 2484
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/月光乱舞.jpg",
       "remyLink": "https://remywiki.com/Gekkou_ranbu",
       "search_hint": "げっこうらんぶ"
@@ -9734,9 +9473,7 @@
       "remyLink": "https://remywiki.com/Touhouyouyoumu_ULTIMATE_MEDLEY",
       "saHash": "6IDll6i6d8iII686qq6DddiI00iD8o9d",
       "search_hint": "とうほうようようむ ULTIMATE MEDLEY",
-      "flags": [
-        "grandPrixPack"
-      ]
+      "flags": ["grandPrixPack"]
     },
     {
       "name": "桜",
@@ -9793,16 +9530,12 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": [
-            "shock"
-          ],
+          "flags": ["shock"],
           "sanbaiTier": 18.8,
           "maxScore": 2394
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "remyLink": "https://remywiki.com/Konran_shoujo_Soflan-chan!!",
       "jacket": "ddr_world/Konran shoujo Soflan-chan!!.jpg",
       "saHash": "Q9iiOo800blDqO0DDDPI1PIbl1lIidI1",
@@ -9866,9 +9599,7 @@
           "maxScore": 1233
         }
       ],
-      "flags": [
-        "euLocked"
-      ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Roshin_yuukai",
       "jacket": "ddr_a/Roshin yuukai.png",
       "saHash": "1OQd9o01Oq6Q018POOdlqodQ6bqDPOob",
@@ -9955,10 +9686,7 @@
           "maxScore": 1413
         }
       ],
-      "flags": [
-        "copyStrikes",
-        "euLocked"
-      ],
+      "flags": ["copyStrikes", "euLocked"],
       "jacket": "ddr_world/粛聖!! ロリ神レクイエム☆.jpg",
       "remyLink": "https://remywiki.com/Shukusei!!_Loli-kami_requiem"
     },
@@ -9980,9 +9708,7 @@
       ],
       "jacket": "ddr_world/迷宮のロンド.jpg",
       "remyLink": "https://remywiki.com/Meikyuu_no_rondo",
-      "flags": [
-        "unlock"
-      ]
+      "flags": ["unlock"]
     },
     {
       "name": "逆月",
@@ -10004,9 +9730,7 @@
       "remyLink": "https://remywiki.com/Sakazuki",
       "genre": "JAPANESQUE",
       "search_hint": "さかづき",
-      "flags": [
-        "unlock"
-      ]
+      "flags": ["unlock"]
     },
     {
       "name": "都会征服Girls☆",
@@ -10135,9 +9859,7 @@
           "sanbaiTier": 18.5
         }
       ],
-      "flags": [
-        "unlock"
-      ],
+      "flags": ["unlock"],
       "jacket": "ddr_world/魄.jpg",
       "remyLink": "https://remywiki.com/Haku"
     },
@@ -10193,9 +9915,7 @@
       "jacket": "ddr_world/鳳 (Five Flares Mix).jpg",
       "remyLink": "https://remywiki.com/Hou_(Five_Flares_Mix)",
       "saHash": "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
-      "flags": [
-        "unlock"
-      ]
+      "flags": ["unlock"]
     },
     {
       "name": "黒髪乱れし修羅となりて～凛 edition～",
