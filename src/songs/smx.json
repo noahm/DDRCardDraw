@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1784934322000
+    "lastUpdated": 1788136603000
   },
   "defaults": {
     "style": "solo",
@@ -10413,6 +10413,216 @@
         { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
         { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
         { "style": "solo", "diffClass": "full", "lvl": 19, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Flow Of Oblivion",
+      "artist": "N.M.R",
+      "bpm": "130",
+      "genre": "Electro House",
+      "saIndex": "751",
+      "jacket": "smx/FlowOfOblivion.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 16 },
+        { "style": "solo", "diffClass": "wild", "lvl": 23 },
+        { "style": "solo", "diffClass": "dual", "lvl": 15 },
+        { "style": "solo", "diffClass": "full", "lvl": 17 },
+        { "style": "team", "diffClass": "team", "lvl": 24 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 24, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Moshi Moshi",
+      "artist": "Smile.dk",
+      "bpm": "136",
+      "genre": "Bubblegum Dance",
+      "saIndex": "752",
+      "jacket": "smx/MoshiMoshi.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 1 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 14 },
+        { "style": "solo", "diffClass": "wild", "lvl": 21 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 13 },
+        { "style": "team", "diffClass": "team", "lvl": 20 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 18, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 21, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Ultrasound",
+      "artist": "Pirapus & Arcando",
+      "bpm": "175",
+      "genre": "Drum & Bass",
+      "saIndex": "753",
+      "jacket": "smx/Ultrasound.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 22 },
+        { "style": "solo", "diffClass": "dual", "lvl": 15 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 16 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 23, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Kingdom",
+      "artist": "rejection",
+      "bpm": "132",
+      "genre": "Bass House",
+      "saIndex": "754",
+      "jacket": "smx/Kingdom.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 2 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 14 },
+        { "style": "solo", "diffClass": "wild", "lvl": 24 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 22 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 18, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 22, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Mother's Echo",
+      "artist": "NAOKI underground",
+      "bpm": "172",
+      "genre": "Drum & Bass",
+      "saIndex": "755",
+      "jacket": "smx/MothersEcho.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 7 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 23 },
+        { "style": "solo", "diffClass": "dual", "lvl": 15 },
+        { "style": "solo", "diffClass": "full", "lvl": 16 },
+        { "style": "team", "diffClass": "team", "lvl": 23 },
+        { "style": "solo", "diffClass": "easy", "lvl": 12, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 18, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 22, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Talk",
+      "artist": "BHAVIOR",
+      "bpm": "127",
+      "genre": "Funky House",
+      "saIndex": "756",
+      "jacket": "smx/Talk.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 21 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 12 },
+        { "style": "team", "diffClass": "team", "lvl": 20 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 17, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 19, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "HEART",
+      "artist": "Tokyo Machine",
+      "bpm": "140",
+      "genre": "Dubstep",
+      "saIndex": "757",
+      "jacket": "smx/Heart.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 2 },
+        { "style": "solo", "diffClass": "easy", "lvl": 4 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 14 },
+        { "style": "team", "diffClass": "team", "lvl": 18 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "The Thing You Call Love 2026",
+      "artist": "Fiddesan feat. Tlyyysa",
+      "bpm": "130",
+      "genre": "Progressive Trance",
+      "saIndex": "758",
+      "jacket": "smx/TheThingYouCallLove2026.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 1 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 13 },
+        { "style": "team", "diffClass": "team", "lvl": 21 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "This is Revolution",
+      "artist": "Chris Accardo",
+      "bpm": "62-250",
+      "genre": "Epic House",
+      "saIndex": "759",
+      "jacket": "smx/ThisIsRevolution.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 14 },
+        { "style": "solo", "diffClass": "wild", "lvl": 22 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 16 },
+        { "style": "team", "diffClass": "team", "lvl": 22 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 17, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 21, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "You Gotta Go Go",
+      "artist": "Synatrick & Anita Doth",
+      "bpm": "147",
+      "genre": "Eurodance",
+      "saIndex": "760",
+      "jacket": "smx/YouGottaGoGo.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 2 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 21 },
+        { "style": "solo", "diffClass": "dual", "lvl": 15 },
+        { "style": "solo", "diffClass": "full", "lvl": 10 },
+        { "style": "team", "diffClass": "team", "lvl": 17 },
+        { "style": "solo", "diffClass": "easy", "lvl": 12, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 18, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
       ]
     }
   ]
