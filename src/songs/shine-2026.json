@@ -1,0 +1,437 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": ["noCmod"],
+    "lastUpdated": 1788299666968,
+    "usesDrawGroups": false,
+    "styles": ["single"],
+    "difficulties": [{ "key": "challenge", "color": "#0191F2" }]
+  },
+  "defaults": {
+    "flags": ["noCmod", "Base", "Lower", "Upper"],
+    "lowerLvlBound": 10,
+    "difficulties": ["challenge"],
+    "style": "single",
+    "upperLvlBound": 14
+  },
+  "i18n": {
+    "en": {
+      "name": "SHINE Invitational 2026",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "noCmod": "No CMOD",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "$1.78",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/$1.78.jpg",
+      "bpm": "200",
+      "artist": "Schwank",
+      "folder": "$1.78",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "All Yours",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/All Yours.jpg",
+      "bpm": "95",
+      "artist": "Tennyson",
+      "folder": "All Yours",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Azalea",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Azalea.jpg",
+      "bpm": "130",
+      "artist": "Memme & M2U",
+      "folder": "Azalea",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Back to the Dance Floor",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Back to the Dance Floor.jpg",
+      "bpm": "126",
+      "artist": "DJ SIMON",
+      "folder": "Back to the Dance Floor",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "CHAOTIC SUNBIRD",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/CHAOTIC SUNBIRD.jpg",
+      "bpm": "163",
+      "artist": "Tanchiky",
+      "folder": "CHAOTIC SUNBIRD",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Cryptarithm",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Cryptarithm.jpg",
+      "bpm": "175",
+      "artist": "Sakuzyo",
+      "folder": "Cryptarithm",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Deep Down Low",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Deep Down Low (Gillepsy Remix).jpg",
+      "bpm": "130",
+      "artist": "Valentino Khan",
+      "folder": "Deep Down Low (Gillepsy Remix)",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Deep Into The Vibe",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Deep Into The Vibe.jpg",
+      "bpm": "175",
+      "artist": "rejection",
+      "folder": "Deep Into The Vibe",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "DOG BUS",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/DOG BUS.jpg",
+      "bpm": "155",
+      "artist": "METAROOM & TELEMIST",
+      "folder": "DOG BUS",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Drinksu Drinksu Drinksu",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Drinksu Drinksu Drinksu.jpg",
+      "bpm": "164",
+      "artist": "Rahul Sipligunj, Sri Vasanth, Chandra Bose",
+      "folder": "Drinksu Drinksu Drinksu",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Egodeath",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Egodeath.jpg",
+      "bpm": "120",
+      "artist": "Juggernaut.",
+      "folder": "Egodeath",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Espada (Hard)",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Espada.jpg",
+      "bpm": "122-165",
+      "artist": "Clayton King",
+      "folder": "Espada",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Express Yourself",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Express Yourself.jpg",
+      "bpm": "123",
+      "artist": "Diplo ft. Nicky Da B",
+      "folder": "Express Yourself",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "First Rendezvous",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/First Rendezvous.jpg",
+      "bpm": "170",
+      "artist": "t+pazolite",
+      "folder": "First Rendezvous",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Gemini in Clockland",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Gemini in Clockland.jpg",
+      "bpm": "180",
+      "artist": "Chroma",
+      "folder": "Gemini in Clockland",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Great Devil of the Sixth Heaven",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Great Devil of the Sixth Heaven.jpg",
+      "bpm": "150",
+      "artist": "Daisuke Kurosawa x Masahiro \"Godspeed\" Aoki",
+      "folder": "Great Devil of the Sixth Heaven",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Hagiasmos",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Hagiasmos.jpg",
+      "bpm": "150",
+      "artist": "Iris",
+      "folder": "Hagiasmos",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "HEAD REARRANGER",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/HEAD REARRANGER.jpg",
+      "bpm": "186",
+      "artist": "Sample Bandit",
+      "folder": "HEAD REARRANGER",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Hypnotize",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Hypnotize.jpg",
+      "bpm": "160",
+      "artist": "rejection",
+      "folder": "Hypnotize",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "I GOT THE FEELIN",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/I GOT THE FEELIN.jpg",
+      "bpm": "130",
+      "artist": "Houseplan",
+      "folder": "I GOT THE FEELIN",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Jungle Eater",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Jungle Eater.jpg",
+      "bpm": "184",
+      "artist": "Hommarju",
+      "folder": "Jungle Eater",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Lament Configuration",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Lament Configuration.jpg",
+      "bpm": "140",
+      "artist": "Rephaim",
+      "folder": "Lament Configuration",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "life flashes before weeb eyes",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/life flashes before weeb eyes.jpg",
+      "bpm": "227",
+      "artist": "BilliumMoto",
+      "folder": "life flashes before weeb eyes",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Memento Mori",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Memento Mori.jpg",
+      "bpm": "117",
+      "artist": "Polyphia ft. Killstation",
+      "folder": "Memento Mori",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Metaphor",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Metaphor.jpg",
+      "bpm": "170",
+      "artist": "Ichika Nito (feat. Feryquitous)",
+      "folder": "Metaphor",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "NITE 2 STAR",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/NITE 2 STAR.jpg",
+      "bpm": "115-135",
+      "artist": "icesawder x moyu",
+      "folder": "NITE 2 STAR",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Ou Legends",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Ou Legends.jpg",
+      "bpm": "191",
+      "artist": "かめりあ",
+      "folder": "Ou Legends",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Pedi",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Pedi (Schwank Moment).jpg",
+      "bpm": "140",
+      "artist": "Baby Tate",
+      "folder": "Pedi (Schwank Moment)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Pinwheel",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Pinwheel.jpg",
+      "bpm": "92",
+      "artist": "Skybreak, Atura & THREESIXTY",
+      "folder": "Pinwheel",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Rainshower",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Rainshower.jpg",
+      "bpm": "174",
+      "artist": "Silentroom x Shun",
+      "folder": "Rainshower",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Rapid Fire",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Rapid Fire.jpg",
+      "bpm": "128",
+      "artist": "Auvic & Rob Gasser",
+      "folder": "Rapid Fire",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Scualee",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Scualee.jpg",
+      "bpm": "150",
+      "artist": "Aoi",
+      "folder": "Scualee",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Show",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Show.jpg",
+      "bpm": "132",
+      "artist": "Ado",
+      "folder": "Show",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "THE CREATURE",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/THE CREATURE.jpg",
+      "bpm": "144",
+      "artist": "euphee",
+      "folder": "THE CREATURE",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "The Master",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/The Master.jpg",
+      "bpm": "135",
+      "artist": "Teminite, Boom Kitty",
+      "folder": "The Master",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "The Virus",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/The Virus.jpg",
+      "bpm": "140",
+      "artist": "AKOV",
+      "folder": "The Virus",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Tower of Nirv",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Tower of Nirv.jpg",
+      "bpm": "128",
+      "artist": "TJ.hangneil + Atomic Sphere feat. Annabel",
+      "folder": "Tower of Nirv",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Turning Point",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Turning Point.jpg",
+      "bpm": "150",
+      "artist": "M2U",
+      "folder": "Turning Point",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Undefeated",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Undefeated.jpg",
+      "bpm": "180",
+      "artist": "awfuless meets PODA",
+      "folder": "Undefeated",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "VIDEODRONE",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Videodrone (censored).jpg",
+      "bpm": "162.0",
+      "artist": "d***soak",
+      "folder": "Videodrone (censored)",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Voice 2 Voice n Voice",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Voice 2 Voice n Voice.jpg",
+      "bpm": "157",
+      "artist": "Acotto",
+      "folder": "Voice 2 Voice n Voice",
+      "charts": [{ "lvl": 14, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "Waterfall",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/Waterfall.jpg",
+      "bpm": "174",
+      "artist": "awfulness meets Zekk",
+      "folder": "Waterfall",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "WORM RAVE",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/WORM RAVE.jpg",
+      "bpm": "160",
+      "artist": "METAROOM",
+      "folder": "WORM RAVE",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "yonα yonα jδurney",
+      "name_translation": "",
+      "jacket": "itg/shine-2026/yona yona journey.jpg",
+      "bpm": "128",
+      "artist": "Natsu",
+      "folder": "yona yona journey",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    }
+  ]
+}
