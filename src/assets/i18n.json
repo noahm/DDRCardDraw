@@ -77,13 +77,18 @@
       "showMaxScore": "Show max score on charts",
       "useGranularLevels": "Use granular levels (shift+interact level filter for whole number)",
       "hideVetos": "Hide vetoed charts",
-      "useWeightedDistributions": "Use Weighted Distributions",
       "playerLabels": "Show player & round labels on draws",
       "playersPerDraw": "Players per draw",
       "addPlayerLabel": "Manage Player Names",
       "tournamentLabelEdit": "Tournament round labels",
       "shockArrows": "Shock Arrows",
-      "invalid": "Couldn't draw enough charts with current settings!"
+      "invalid": "Couldn't draw enough charts with current settings!",
+      "bucketMode": {
+        "label": "Difficulty buckets",
+        "none": "Off",
+        "auto": "By lvl range",
+        "manual": "Manual"
+      }
     },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
@@ -134,6 +139,17 @@
       "title": "Error Caught!",
       "description": "A deeply embarassing error just happened somewhere near here. If you're lucky, a reset will fix things up.",
       "reset": "Reset"
+    },
+    "buckets": {
+      "explanation": "Define each bucket by hand. Charts are drawn from the first bucket their difficulty falls into, in proportion to its weight. Buckets with no weight are ignored.",
+      "from": "From",
+      "to": "To",
+      "weight": "Weight",
+      "add": "Add bucket",
+      "remove": "Remove this bucket",
+      "poolSize": "of {count} charts",
+      "emptyWarning": "Add at least one bucket, or nothing can be drawn.",
+      "overlapWarning": "These buckets overlap ({ranges}). A chart is only ever drawn from the first bucket it fits."
     }
   },
   "ja": {
@@ -209,13 +225,18 @@
       "showMaxScore": "譜面の理論値を表示する",
       "useGranularLevels": "\"厳密な\"レベルを使用 (シフトキーを押しながら操作すると、整数値のレベルフィルターが適用されます。)",
       "hideVetos": "拒否した譜面を非表示にする",
-      "useWeightedDistributions": "レベル別に確率を設定する",
       "playerLabels": "プレイヤー名と大会のラウンドをトップに表示する",
       "playersPerDraw": "プレー人数",
       "addPlayerLabel": "プレイヤー名の管理",
       "tournamentLabelEdit": "大会ラウンドの管理",
       "shockArrows": "ショックアローを含む",
-      "invalid": "対象譜面が足りません！"
+      "invalid": "対象譜面が足りません！",
+      "bucketMode": {
+        "label": "難易度バケット",
+        "none": "オフ",
+        "auto": "レベル帯から",
+        "manual": "手動"
+      }
     },
     "weights": {
       "explanation": "各レベルの譜面がドローされる確率を、割合で設定します。",
@@ -266,6 +287,13 @@
       "title": "エラーが発生しました！",
       "description": "恥ずかしながら、どこかでエラーが発生したようです。リセットすることで解決するかもしれません。",
       "reset": "リセット"
+    },
+    "buckets": {
+      "from": "下限",
+      "to": "上限",
+      "weight": "重み",
+      "add": "バケットを追加",
+      "remove": "このバケットを削除"
     }
   }
 }

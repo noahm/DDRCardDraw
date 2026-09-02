@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
+import { getDrawBuckets } from "../draw-buckets";
 import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
 import { Song, Chart } from "../models/SongData";
@@ -37,6 +38,10 @@ export function SongSearch(props: Props) {
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
   const gameData = useGameData();
+  const buckets = useMemo(
+    () => getDrawBuckets(config, gameData),
+    [config, gameData],
+  );
   const songSearchIndex = useMemo(
     () => (gameData ? getSongSearchIndex(gameData) : null),
     [gameData],
@@ -68,7 +73,7 @@ export function SongSearch(props: Props) {
     for (const song of songs) {
       const seen = new Set<string>();
       const validCharts = song.charts.filter((chart) => {
-        if (!chartIsValid(config, chart, true)) return false;
+        if (!chartIsValid(config, buckets, chart, true)) return false;
         const identity = chartIdentity(chart);
         if (seen.has(identity)) return false;
         seen.add(identity);

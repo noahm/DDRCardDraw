@@ -1,0 +1,86 @@
+.buckets {
+  margin: 0 1em;
+  container-type: inline-size;
+}
+
+/* one grid for every row, so the headers stay lined up with the controls
+   beneath them even though the lvl steppers size themselves */
+.bucketTable {
+  display: grid;
+  grid-template-columns: auto 0.6em auto 3.2em 1fr auto;
+  align-items: center;
+  gap: 0.4em 0.3em;
+  margin-bottom: 0.6em;
+}
+
+.bucketRow {
+  display: contents;
+}
+
+.bucketRow .separator {
+  text-align: center;
+  opacity: 0.6;
+}
+
+.headerRow {
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  margin-bottom: 0.2em;
+}
+
+.summary {
+  font-size: 85%;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary .share {
+  font-weight: 600;
+}
+
+.emptyBucket {
+  opacity: 0.6;
+}
+
+/* the settings pane is a narrow column in some layouts, where the row can't
+   hold the steppers, the weight and the summary side by side. spanning a grid
+   cell mid-row shunts every later cell out of alignment, so drop the shared
+   grid entirely and let each row wrap on its own */
+@container (max-width: 430px) {
+  .bucketTable {
+    display: block;
+  }
+
+  .bucketRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  /* after .bucketRow, so the shared row styling doesn't revive the header */
+  .bucketRow.headerRow {
+    display: none;
+  }
+
+  /* the weight field is the row's only numeric input, and blueprint doesn't
+     forward a className onto it, so pin it structurally — left filling, it
+     takes the whole line and pushes everything else onto its own row */
+  .bucketRow :global(.bp6-numeric-input) {
+    flex: 0 0 3.4em;
+    width: 3.4em;
+  }
+
+  /* the summary reads as a caption under the row it describes, so send it past
+     the remove button rather than reordering the markup */
+  .bucketRow .summary {
+    order: 1;
+    flex-basis: 100%;
+    white-space: normal;
+  }
+}

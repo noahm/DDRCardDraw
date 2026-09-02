@@ -28,6 +28,7 @@ import { useRoomName } from "../hooks/useRoomName";
 import { useSetLastConfigSelected } from "../state/config.atoms";
 import { configSlice } from "../state/config.slice";
 import { loadConfigs, saveConfig, saveConfigs } from "../config-persistence";
+import { migrateConfigToBuckets } from "../state/config.slice";
 import { copyTextToClipboard } from "../utils/share";
 import { useGameDataForKey } from "../state/game-data.atoms";
 import { toaster } from "../toaster";
@@ -116,7 +117,11 @@ export function ConfigList(props: {
     void loadConfigs().then((configs) => {
       const existingIds = configSlice.selectors.selectIds(store.getState());
       const updated = configs.filter((c) => existingIds.includes(c.id)).length;
-      dispatch(configSlice.actions.setMany(configs));
+      // a config file exported before difficulty buckets existed needs the same
+      // bringing forward that rehydrated state gets
+      dispatch(
+        configSlice.actions.setMany(configs.map(migrateConfigToBuckets)),
+      );
       const last = configs[configs.length - 1];
       if (last) {
         changeConfig(last.id);
