@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1788398706462
+    "lastUpdated": 1788406763492
   },
   "defaults": {
     "style": "single",
@@ -14862,6 +14862,53 @@
       "remyLink": "https://remywiki.com/Debug_Dance"
     },
     {
+      "name": "Decryption",
+      "artist": "Felysrator",
+      "saHash": "i9olPli6l8iDi88DPIbiDibPbIibb9l0",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1737
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Decryption.jpg"
+    },
+    {
       "name": "Deep tenDon Reflex",
       "artist": "BEMANI Sound Team \"Coyaan\"",
       "saHash": "1IQ16dPQPQ0Q1qdidld6lO1o86q98o69",
@@ -19702,6 +19749,54 @@
       ],
       "jacket": "ddr_max-ext/exotic ethnic.png",
       "remyLink": "https://remywiki.com/Exotic_ethnic"
+    },
+    {
+      "name": "eyesight",
+      "artist": "タバサリサ",
+      "saHash": "OQliD1io08dq96q9QO6dd1iq0dObl1QQ",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1440
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1395
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/eyesight.jpg"
     },
     {
       "name": "F4SH10N",
@@ -28429,6 +28524,53 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/I WANT YOUR LOVE (Darwin remix).jpg",
       "remyLink": "https://remywiki.com/I_WANT_YOUR_LOVE_(Darwin_remix)"
+    },
+    {
+      "name": "I'll Be With You",
+      "artist": "ゆんゆん",
+      "saHash": "lIPQl8P18I99b90iD86OI1Qq0OI1OPDb",
+      "bpm": "143",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1491
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/I'll Be With You.jpg"
     },
     {
       "name": "I'm Flying Away",

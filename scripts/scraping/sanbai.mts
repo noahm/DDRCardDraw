@@ -108,6 +108,23 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     id,
     { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
   ]),
+  // グランプリ譜面パック vol.5
+  ...[
+    "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
+    "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO", // D2R
+    "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl", // Dragon Blade
+    "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8", // Funk Boogie
+    "69qoD0l6olQqqbl09b069q898b600I6o", // Gamelan de Couple
+    "901q61iP6lPiDqIQoQod9PDqlOPq1bb9", // La Señorita
+    "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb", // No.13
+    "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP", // Quick Master
+    "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP", // WILD RUSH
+    "ql1Q8P100IIlbl0Pdi08I8qD900idqQq", // カゲロウ
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-11-30T15:00:00+09:00"),
+    id,
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
+  ]),
 ];
 /** Correction map for invalid data on 3icecream site */
 const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
@@ -115,6 +132,16 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
+  // #region EXTRA SAVIOR WORLD (The 7th MUSIC CREATOR AUDITION)
+  ...[
+    "i9olPli6l8iDi88DPIbiDibPbIibb9l0", // Decryption
+    "OQliD1io08dq96q9QO6dd1iq0dObl1QQ", // eyesight
+    "lIPQl8P18I99b90iD86OI1Qq0OI1OPDb", // I'll Be With You
+  ].map<[string, Partial<SanbaiSong>]>((id) => [
+    id,
+    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
+  ]),
+  // #endregion EXTRA SAVIOR WORLD (The 7th MUSIC CREATOR AUDITION)
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
