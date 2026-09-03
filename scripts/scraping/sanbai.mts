@@ -74,12 +74,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // WORLD LEAGUE
-  [
-    new Date("2026-09-02T16:00:00+09:00"),
-    "q0I018lPqbdi66qiiiQlqIb9O19O9061", // Is this dance a Hakken?
-    { lock_types: undefined },
-  ],
   // グランプリ譜面パック vol.4
   ...[
     "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D", // AFTER THE GAME OF LOVE
@@ -132,16 +126,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // #region EXTRA SAVIOR WORLD (The 7th MUSIC CREATOR AUDITION)
-  ...[
-    "i9olPli6l8iDi88DPIbiDibPbIibb9l0", // Decryption
-    "OQliD1io08dq96q9QO6dd1iq0dObl1QQ", // eyesight
-    "lIPQl8P18I99b90iD86OI1Qq0OI1OPDb", // I'll Be With You
-  ].map<[string, Partial<SanbaiSong>]>((id) => [
-    id,
-    { lock_types: [280, 280, 280, 280, 0, 280, 280, 280, 0] },
-  ]),
-  // #endregion EXTRA SAVIOR WORLD (The 7th MUSIC CREATOR AUDITION)
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),

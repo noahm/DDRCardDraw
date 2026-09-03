@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1788406763492
+    "lastUpdated": 1788418278526
   },
   "defaults": {
     "style": "single",
@@ -16336,17 +16336,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 240
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 633
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1185
         },
         {
           "style": "single",
@@ -16357,12 +16360,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 612
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1137
         },
         {
           "style": "double",
@@ -21793,17 +21798,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 3
+          "lvl": 3,
+          "maxScore": 234
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 567
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 957
         },
         {
           "style": "single",
@@ -21814,12 +21822,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 6
+          "lvl": 6,
+          "maxScore": 552
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 891
         },
         {
           "style": "double",
@@ -31170,7 +31180,8 @@
       "remyLink": "https://remywiki.com/I_Want_To_Do_This_Keep",
       "jacket": "ddr_a20plus/I Want To Do This Keep.jpg",
       "saHash": "dIbPlPdo09i8oOlOQ1OOq166Q8iP8Oqi",
-      "saIndex": "949"
+      "saIndex": "949",
+      "genre": "HYBRID RHYTHM BASS"
     },
     {
       "name": "I WANT YOUR LOVE (Darwin remix)",
@@ -31243,17 +31254,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 1
+          "lvl": 1,
+          "maxScore": 183
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 597
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 1152
         },
         {
           "style": "single",
@@ -31264,12 +31278,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 5
+          "lvl": 5,
+          "maxScore": 603
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 10
+          "lvl": 10,
+          "maxScore": 1140
         },
         {
           "style": "double",
@@ -64102,7 +64118,8 @@
       "remyLink": "https://remywiki.com/THE_ANCIENT_KING_IS_BACK",
       "jacket": "ddr_a3/THE_ANCIENT_KING_IS_BACK.jpg",
       "saHash": "IlP88I0bbl91iOD6OQ6o6PPb9o6dlDb8",
-      "saIndex": "1126"
+      "saIndex": "1126",
+      "genre": "HARD STYLE"
     },
     {
       "name": "The Ashes of Boreas",
