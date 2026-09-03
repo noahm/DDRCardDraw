@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1788157878928
+    "lastUpdated": 1788398706462
   },
   "defaults": {
     "style": "single",
@@ -30101,6 +30101,67 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/IRON HEART.png",
       "remyLink": "https://remywiki.com/IRON_HEART"
+    },
+    {
+      "name": "Is this dance a Hakken?",
+      "artist": "RoughSketch",
+      "saHash": "q0I018lPqbdi66qiiiQlqIb9O19O9061",
+      "bpm": "68-205",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "sanbaiTier": 3.6,
+          "maxScore": 225
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.45,
+          "maxScore": 675
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "sanbaiTier": 12.75,
+          "maxScore": 1185
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "sanbaiTier": 16.55,
+          "maxScore": 1740
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.5,
+          "maxScore": 669
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "sanbaiTier": 12.6,
+          "maxScore": 1191
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "sanbaiTier": 16.45,
+          "maxScore": 1752
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/Is this dance a Hakken.jpg",
+      "remyLink": "https://remywiki.com/Is_this_dance_a_Hakken%3F"
     },
     {
       "name": "Ishtar",

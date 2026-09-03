@@ -78,7 +78,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   [
     new Date("2026-09-02T16:00:00+09:00"),
     "q0I018lPqbdi66qiiiQlqIb9O19O9061", // Is this dance a Hakken?
-    { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
+    { lock_types: undefined },
   ],
   // グランプリ譜面パック vol.4
   ...[
