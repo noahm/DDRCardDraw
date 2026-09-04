@@ -73,7 +73,7 @@
       "Pinky Crush",
       "Sparkle Shower"
     ],
-    "lastUpdated": 1787241300000
+    "lastUpdated": 1788470640000
   },
   "defaults": {
     "style": "single",
@@ -90133,7 +90133,8 @@
           "style": "single",
           "diffClass": "normal",
           "lvl": 5,
-          "maxScore": 912
+          "maxScore": 912,
+          "flags": ["hellCharge"]
         },
         {
           "style": "single",
@@ -90153,7 +90154,8 @@
           "style": "double",
           "diffClass": "normal",
           "lvl": 5,
-          "maxScore": 924
+          "maxScore": 924,
+          "flags": ["hellCharge"]
         },
         {
           "style": "double",
@@ -94649,6 +94651,58 @@
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
       "flags": ["battleArena"]
+    },
+    {
+      "name": "夢色ワンダー",
+      "artist": "hololive IDOL PROJECT",
+      "genre": "J-POP",
+      "saHash": "_yumeiro",
+      "bpm": "135～208",
+      "folder": "Sparkle Shower",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1574
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 2230
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 3282
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1520
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 2272
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 3208
+        }
+      ],
+      "jacket": "iidx/Sparkle-Shower.svg"
     }
   ]
 }
