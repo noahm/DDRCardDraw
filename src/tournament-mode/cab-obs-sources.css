@@ -1,0 +1,44 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.sourceCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sourceLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  min-width: 14em;
+}
+
+.sourceUrl {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.85em;
+}
+
+/* below roughly this width the url gets cut off before the part that tells
+   sources apart, so it's just noise. this page is often docked narrow inside
+   OBS. the copy button still works. */
+@media (max-width: 900px) {
+  .sourceUrl {
+    display: none;
+  }
+
+  .sourceLabel {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
