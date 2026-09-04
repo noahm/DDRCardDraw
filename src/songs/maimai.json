@@ -46176,23 +46176,32 @@
       "folder": "CiRCLE",
       "date_added": "2025-09-18",
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 1, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 1,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 9.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -48622,23 +48631,32 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.2,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -48651,23 +48669,32 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 4, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10.6,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13.7,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
@@ -48680,23 +48707,32 @@
       "folder": "CiRCLE PLUS",
       "date_added": "2026-03-19",
       "charts": [
-        { "style": "single", "diffClass": "basic", "lvl": 3, "extras": ["dx"] },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 3,
+          "flags": ["usa"],
+          "extras": ["dx"]
+        },
         {
           "style": "single",
           "diffClass": "advanced",
           "lvl": 7,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "expert",
           "lvl": 10,
+          "flags": ["usa"],
           "extras": ["dx"]
         },
         {
           "style": "single",
           "diffClass": "master",
           "lvl": 13,
+          "flags": ["usa"],
           "extras": ["dx"]
         }
       ]
