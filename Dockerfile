@@ -3,6 +3,6 @@ WORKDIR /app
 COPY . /app/
 RUN yarn install && yarn build
 
-FROM nginx:1.31.0-alpine
+FROM nginx:1.31.4-alpine@sha256:db35bfc6b2951e7f8a72db5db120288c127ffaeeb4a6d4b95a26fead017d5913
 WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/dist /usr/share/nginx/html/
