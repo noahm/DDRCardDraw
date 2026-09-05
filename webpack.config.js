@@ -1,3 +1,4 @@
+require("dotenv/config");
 const fs = require("fs");
 const { resolve, basename } = require("path");
 
@@ -27,6 +28,9 @@ module.exports = function (env = {}, argv = {}) {
 
   return {
     target: "web",
+    cache: {
+      type: "filesystem",
+    },
     mode: isProd ? "production" : "development",
     devtool: isProd ? "source-map" : "inline-cheap-module-source-map",
     devServer: !serve
@@ -35,11 +39,13 @@ module.exports = function (env = {}, argv = {}) {
           static: "./dist",
           hot: true,
           host: "0.0.0.0",
+          historyApiFallback: true,
         },
     entry: "./src/index.tsx",
     output: {
       filename: "[name].[chunkhash:5].js",
       path: resolve(__dirname, "./dist"),
+      publicPath: "/",
       clean: true,
     },
     optimization: {
@@ -58,9 +64,6 @@ module.exports = function (env = {}, argv = {}) {
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".json"],
-      alias: {
-        peerjs$: resolve(__dirname, "node_modules/peerjs/dist/peerjs.esm.js"),
-      },
     },
     module: {
       rules: [
@@ -195,6 +198,22 @@ module.exports = function (env = {}, argv = {}) {
             };
           }),
         ),
+        "process.env.STARTGG_TOKEN": JSON.stringify(process.env.STARTGG_TOKEN),
+        // Origin of the data.ddr.tools publish Worker the in-app SMX authoring UI
+        // POSTs to. Prod hits the real domain; dev hits the local wrangler dev server
+        // (rgt-data `yarn dev` on :8787). Override with a DATA_API_BASE env var.
+        "process.env.DATA_API_BASE": JSON.stringify(
+          process.env.DATA_API_BASE ||
+            (isProd ? "https://data.ddr.tools" : "http://localhost:8787"),
+        ),
+        // Public Cloudflare Turnstile site key for the SMX publish widget. Empty =
+        // widget disabled / no token sent (current prod default). Dev uses Cloudflare's
+        // always-passing test key so the flow is exercised locally. Set a real key here
+        // only together with the Worker's TURNSTILE_SECRET (see rgt-data infra docs).
+        "process.env.TURNSTILE_SITE_KEY": JSON.stringify(
+          process.env.TURNSTILE_SITE_KEY ||
+            (isProd ? "" : "1x00000000000000000000AA"),
+        ),
       }),
       new MiniCssExtractPlugin({
         filename: "[name].[chunkhash:5].css",
@@ -248,6 +267,8 @@ module.exports = function (env = {}, argv = {}) {
             ]
           : [
               new OfflinePlugin({
+                responseStrategy: "network-first",
+                autoUpdate: true,
                 ServiceWorker: {
                   events: true,
                 },

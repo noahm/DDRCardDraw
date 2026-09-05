@@ -1,14 +1,15 @@
 import { useMemo, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
-import { useConfigState } from "../config-state";
-import { useDrawState } from "../draw-state";
+import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
-import { Song } from "../models/SongData";
+import { Song, Chart } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import fuzzysort from "fuzzysort";
 import { getSongSearchIndex, scoreSongMatch } from "./search-index";
 import styles from "./song-search.css";
+import { readExtra } from "../utils/extras";
+import { EDIT_ID_KEY } from "../utils/smx-edit-import";
 
 interface Props {
   isOpen: boolean;
@@ -16,11 +17,26 @@ interface Props {
   onCancel(this: void): void;
 }
 
+/**
+ * A stable identity for a chart within one song. Normal charts are unique by
+ * style+diffClass, but edit charts all share `diffClass: "edit"`, so we also key
+ * on level and the edit's share id. This both distinguishes genuinely different
+ * edits and lets us collapse the same edit grafted onto a song more than once.
+ */
+function chartIdentity(chart: Chart): string {
+  return [
+    chart.style,
+    chart.diffClass,
+    chart.lvl,
+    readExtra(chart.extras, EDIT_ID_KEY) ?? "",
+  ].join("\0");
+}
+
 export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
   const config = useConfigState();
-  const gameData = useDrawState((s) => s.gameData);
+  const gameData = useGameData();
   const songSearchIndex = useMemo(
     () => (gameData ? getSongSearchIndex(gameData) : null),
     [gameData],
@@ -50,9 +66,14 @@ export function SongSearch(props: Props) {
       .filter((song) => songIsValid(config, song, true))
       .slice(0, 30);
     for (const song of songs) {
-      const validCharts = song.charts.filter((chart) =>
-        chartIsValid(config, chart, true),
-      );
+      const seen = new Set<string>();
+      const validCharts = song.charts.filter((chart) => {
+        if (!chartIsValid(config, chart, true)) return false;
+        const identity = chartIdentity(chart);
+        if (seen.has(identity)) return false;
+        seen.add(identity);
+        return true;
+      });
       for (const chart of validCharts) {
         items.push({ song, chart });
       }
@@ -74,11 +95,7 @@ export function SongSearch(props: Props) {
           item.song,
           item.chart === "none" || !item.chart
             ? undefined
-            : getDrawnChart(
-                useDrawState.getState().gameData!,
-                item.song,
-                item.chart,
-              ),
+            : getDrawnChart(gameData!, item.song, item.chart),
         )
       }
       items={items}
@@ -90,7 +107,9 @@ export function SongSearch(props: Props) {
       itemRenderer={(data, itemProps) => (
         <SearchResult
           key={`${data.song.saHash || data.song.name}-${
-            typeof data.chart === "string" ? data.chart : data.chart.diffClass
+            typeof data.chart === "string"
+              ? data.chart
+              : chartIdentity(data.chart)
           }`}
           data={data}
           selected={itemProps.modifiers.active}
