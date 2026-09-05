@@ -1,13 +1,4 @@
-import {
-  Button,
-  Callout,
-  Dialog,
-  DialogFooter,
-  FormGroup,
-  NonIdealState,
-  Spinner,
-  Switch,
-} from "@blueprintjs/core";
+import { Alert, Button, Group, Loader, Modal, Switch } from "@mantine/core";
 import {
   useCallback,
   useEffect,
@@ -19,7 +10,8 @@ import type { PackWithSongs, Simfile } from "simfile-parser/browser";
 import { getDataFileFromPack, resolveJackets } from "./utils/itg-import";
 import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
-import { Import } from "@blueprintjs/icons";
+import { IconFileImport } from "@tabler/icons-react";
+import { EmptyState } from "./common-components/empty-state";
 import { useSetAtom } from "jotai";
 import { customDataCache } from "./state/game-data.atoms";
 
@@ -179,14 +171,14 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   if (parseError) {
     // nothing usable came back, so there's nothing to recover to
     body = (
-      <Callout intent="danger" title="Error importing pack">
+      <Alert color="red" title="Error importing pack">
         <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
-      </Callout>
+      </Alert>
     );
   } else if (!parsedPack) {
     body = (
-      <NonIdealState
-        icon={<Spinner />}
+      <EmptyState
+        icon={<Loader />}
         title="Parsing pack data"
         description="Large packs can take a moment to read."
       />
@@ -195,13 +187,12 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     body = (
       <>
         <p>Pack name: {parsedPack.pack.name}</p>
-        <FormGroup>
-          <Switch
-            label="Pack uses tiers"
-            checked={tiered}
-            onChange={() => setTiered((prev) => !prev)}
-          />
-        </FormGroup>
+        <Switch
+          label="Pack uses tiers"
+          mb="sm"
+          checked={tiered}
+          onChange={() => setTiered((prev) => !prev)}
+        />
         {derivedData ? (
           <dl>
             <dt>Total Songs</dt>
@@ -215,37 +206,30 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
             </dd>
           </dl>
         ) : (
-          <Callout intent="danger" title="Couldn't read tiers from this pack">
+          <Alert color="red" title="Couldn't read tiers from this pack">
             <code style={{ whiteSpace: "pre-wrap" }}>{deriveError}</code>
-          </Callout>
+          </Alert>
         )}
       </>
     );
   }
 
   return (
-    <Dialog
-      isOpen={!!droppedFolder}
-      title="Local Data Import"
-      onClose={onClose}
-    >
+    <Modal opened={!!droppedFolder} title="Local Data Import" onClose={onClose}>
       <div style={{ padding: "10px" }}>{body}</div>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              disabled={!derivedData}
-              intent="primary"
-              onClick={handleConfirm}
-              loading={saving}
-              icon={<Import />}
-            >
-              Import
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
-    </Dialog>
+      <Group justify="flex-end" gap="xs">
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
+        <Button
+          disabled={!derivedData}
+          onClick={handleConfirm}
+          loading={saving}
+          leftSection={<IconFileImport size={16} />}
+        >
+          Import
+        </Button>
+      </Group>
+    </Modal>
   );
 }

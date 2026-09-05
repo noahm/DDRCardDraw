@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 200%;
+  /* 200% back when the app base was 14px; scaled by 14/16 for the 16px base */
+  font-size: 175%;
   padding-top: 8px;
   position: relative;
   min-height: 1.8rem;

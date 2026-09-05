@@ -1,5 +1,6 @@
 .editAuthor {
-  font-size: 115%;
+  /* 115% against the old 14px base; scaled by 14/16 like the other card text */
+  font-size: 100.625%;
   font-style: italic;
 }
 

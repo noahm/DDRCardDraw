@@ -7,22 +7,17 @@ import {
 import { SongCard } from "../song-card";
 import styles from "../drawing-list.css";
 import { EligibleChart } from "../models/Drawing";
-import {
-  Navbar,
-  NavbarGroup,
-  NavbarDivider,
-  Spinner,
-  Button,
-} from "@blueprintjs/core";
+import { Button, Divider, Loader } from "@mantine/core";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useAtom } from "jotai";
 import { useCallback, useDeferredValue, useMemo, useState } from "react";
 import { currentTabAtom, EligibleChartsListFilter } from "./filter";
 import { DiffHistogram } from "./histogram";
 import { isDegrs, TesterCard } from "../controls/degrs-tester";
-import { Export } from "@blueprintjs/icons";
+import { IconFileExport } from "@tabler/icons-react";
 import { shareCharts } from "../utils/share";
 import { ConfigSelect } from "../controls";
+import { HeaderBar } from "../common-components/header-bar";
 
 function songKeyFromChart(chart: EligibleChart) {
   return `${chart.name}:${chart.artist}`;
@@ -76,38 +71,42 @@ function EligibleChartsList() {
   }, [filteredCharts]);
 
   if (!gameData) {
-    return <Spinner />;
+    return <Loader />;
   }
 
   return (
     <>
-      <Navbar
+      <HeaderBar
         style={{
           position: "sticky",
           top: "50px",
         }}
-      >
-        <NavbarGroup>
-          {charts.length} eligible charts from {songs.size} songs (of{" "}
-          {gameData.songs.length} total)
-        </NavbarGroup>
-        {configState.flags.length > 0 && !isNarrow && (
-          <NavbarGroup>
-            <NavbarDivider />
-            <EligibleChartsListFilter />
-          </NavbarGroup>
-        )}
-        <NavbarGroup align="right">
+        left={
+          <>
+            <span>
+              {charts.length} eligible charts from {songs.size} songs (of{" "}
+              {gameData.songs.length} total)
+            </span>
+            {configState.flags.length > 0 && !isNarrow && (
+              <>
+                <Divider orientation="vertical" />
+                <EligibleChartsListFilter />
+              </>
+            )}
+          </>
+        }
+        right={
           <Button
+            variant="default"
             aria-label={isNarrow ? "Export Chart Data" : undefined}
             title="Export current chart data as a CSV file"
-            icon={<Export />}
+            leftSection={<IconFileExport size={16} />}
             onClick={exportData}
           >
             {isNarrow ? "" : "Export Chart Data"}
           </Button>
-        </NavbarGroup>
-      </Navbar>
+        }
+      />
       <DiffHistogram charts={filteredCharts} />
       <div className={styles.chartList}>
         {filteredCharts.map((chart, idx) =>

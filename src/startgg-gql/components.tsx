@@ -1,4 +1,4 @@
-import { Button, Classes, InputGroup, Label, Text } from "@blueprintjs/core";
+import { Button, Input, List, Text, TextInput } from "@mantine/core";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import React, { ReactNode, useRef, useCallback } from "react";
 import { startggKeyAtom, startggEventSlug, useCurrentUserEvents } from ".";
@@ -30,35 +30,47 @@ export function StartggCredsManager() {
   );
   return (
     <form onSubmit={saveKey}>
-      <Text tagName="p">
+      <Text component="p">
         Start.gg credentials are saved locally on this device and never synced
         with other devices
       </Text>
-      <Label>
+      <Input.Label>
         start.gg api key (
         <a target="_blank" href="https://start.gg/admin/profile/developer">
           create a personal token here
         </a>
         ){" "}
-        <InputGroup
+        <TextInput
           defaultValue={apiKey || undefined}
-          inputRef={apikeyRef}
-          rightElement={<Button type="submit">Save</Button>}
+          ref={apikeyRef}
+          mb="sm"
+          rightSectionWidth={70}
+          rightSection={
+            <Button type="submit" size="compact-sm" variant="light">
+              Save
+            </Button>
+          }
         />
-      </Label>
-      <Label>
+      </Input.Label>
+      <Input.Label>
         event url slug (in the form of:{" "}
         <pre style={{ display: "inline" }}>
           tournament/SOMETHING/event/SOMETHING
         </pre>
         )
-        <InputGroup
+        <TextInput
           disabled={!apiKey}
           defaultValue={eventSlug || undefined}
-          inputRef={slugRef}
-          rightElement={<Button type="submit">Save</Button>}
+          ref={slugRef}
+          mb="sm"
+          rightSectionWidth={70}
+          rightSection={
+            <Button type="submit" size="compact-sm" variant="light">
+              Save
+            </Button>
+          }
         />
-      </Label>
+      </Input.Label>
       {!!apiKey && (
         <EventPicker
           onSelected={(slug) => {
@@ -92,12 +104,12 @@ function EventPicker(props: { onSelected(slug: string): void }) {
   return (
     <>
       <p>Try the easy way and pick from your tournaments:</p>
-      <ul className={Classes.LIST}>
+      <List>
         {tournaments.map((t) => {
           if (!t) return null;
           const events = t.events;
           return (
-            <li key={t.id!}>
+            <List.Item key={t.id!}>
               {t.name}
               {events?.length ? (
                 <ul>
@@ -115,10 +127,10 @@ function EventPicker(props: { onSelected(slug: string): void }) {
               ) : (
                 " (no events)"
               )}
-            </li>
+            </List.Item>
           );
         })}
-      </ul>
+      </List>
     </>
   );
 }

@@ -1,8 +1,6 @@
-import { FormGroup } from "@blueprintjs/core";
-import { DateInput } from "@blueprintjs/datetime";
+import { DateInput } from "@mantine/dates";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
-import { detectedLanguage } from "../utils";
 import { useIntl } from "../hooks/useIntl";
 import { useConfigState, useUpdateConfig } from "../state/hooks";
 
@@ -19,25 +17,21 @@ export default function ReleaseDateFilterControl(props: {
   const minDate = parse("2000-01-01", dateFormat, reference);
 
   return (
-    <FormGroup label={t("controls.releaseHeader")}>
-      <DateInput
-        dateFnsFormat={dateFormat}
-        locale={detectedLanguage}
-        value={cutoffDate || props.mostRecentRelease}
-        onChange={(newDate, isUserChange) => {
-          if (!isUserChange) {
-            return;
-          }
-          if (!newDate) {
-            updateState({ cutoffDate: "" });
-            return;
-          }
-          updateState({ cutoffDate: format(new Date(newDate), dateFormat) });
-        }}
-        placeholder={t("controls.releaseInputPlaceholder", { dateFormat })}
-        maxDate={maxDate}
-        minDate={minDate}
-      />
-    </FormGroup>
+    <DateInput
+      label={t("controls.releaseHeader")}
+      mb="md"
+      valueFormat="YYYY-MM-DD"
+      value={cutoffDate || props.mostRecentRelease}
+      onChange={(newDate) => {
+        if (!newDate) {
+          updateState({ cutoffDate: "" });
+          return;
+        }
+        updateState({ cutoffDate: format(new Date(newDate), dateFormat) });
+      }}
+      placeholder={t("controls.releaseInputPlaceholder", { dateFormat })}
+      maxDate={maxDate}
+      minDate={minDate}
+    />
   );
 }

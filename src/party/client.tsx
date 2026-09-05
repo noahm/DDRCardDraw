@@ -4,12 +4,13 @@ import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import React, { useEffect, useRef, useState } from "react";
-import { Card, Intent, NonIdealState, Spinner } from "@blueprintjs/core";
-import { Offline } from "@blueprintjs/icons";
+import { Card, Loader } from "@mantine/core";
+import { IconWifiOff } from "@tabler/icons-react";
+import { EmptyState } from "../common-components/empty-state";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
 import { PARTYKIT_HOST } from "./host";
-import { toaster } from "../toaster";
+import { notify } from "../notify";
 import { useIntl } from "../hooks/useIntl";
 import { useInObs } from "../theme-toggle";
 import {
@@ -77,14 +78,12 @@ export function PartySocketManager(props: {
             if (disconnectedRef.current) {
               disconnectedRef.current = false;
               if (!inObs) {
-                toaster.dismiss(BLOCKED_TOAST_KEY);
-                toaster.show(
-                  {
-                    message: t("party.reconnected"),
-                    intent: Intent.SUCCESS,
-                  },
-                  HEALTH_TOAST_KEY,
-                );
+                notify.hide(BLOCKED_TOAST_KEY);
+                notify.show({
+                  id: HEALTH_TOAST_KEY,
+                  message: t("party.reconnected"),
+                  intent: "success",
+                });
               }
             }
             setReady(true);
@@ -129,15 +128,13 @@ export function PartySocketManager(props: {
       }
       disconnectedRef.current = true;
       if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.disconnected"),
-          icon: <Offline />,
-          intent: Intent.DANGER,
-          timeout: 0,
-        },
-        HEALTH_TOAST_KEY,
-      );
+      notify.show({
+        id: HEALTH_TOAST_KEY,
+        message: t("party.disconnected"),
+        icon: <IconWifiOff />,
+        intent: "danger",
+        autoClose: false,
+      });
     },
   });
 
@@ -145,36 +142,30 @@ export function PartySocketManager(props: {
     setBlockedActionHandler(() => {
       logDiagnostic("action-blocked", "change discarded while disconnected");
       if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.actionBlocked"),
-          intent: Intent.WARNING,
-        },
-        BLOCKED_TOAST_KEY,
-      );
+      notify.show({
+        id: BLOCKED_TOAST_KEY,
+        message: t("party.actionBlocked"),
+        intent: "warning",
+      });
     });
     sendFailedToast.current = () => {
       if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.sendFailed"),
-          intent: Intent.DANGER,
-        },
-        SEND_FAILED_TOAST_KEY,
-      );
+      notify.show({
+        id: SEND_FAILED_TOAST_KEY,
+        message: t("party.sendFailed"),
+        intent: "danger",
+      });
     };
     rejectedToast.current = (reason: string) => {
       // the reason is server-side detail; log it for debugging but keep the
       // toast to something a tournament organizer can act on
       console.warn("event server rejected an action:", reason);
       if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.actionRejected"),
-          intent: Intent.DANGER,
-        },
-        REJECTED_TOAST_KEY,
-      );
+      notify.show({
+        id: REJECTED_TOAST_KEY,
+        message: t("party.actionRejected"),
+        intent: "danger",
+      });
     };
     return () => {
       setBlockedActionHandler(undefined);
@@ -185,10 +176,10 @@ export function PartySocketManager(props: {
     // when leaving a party session, unblock dispatch for other app modes
     return () => {
       setPartyConnectionHealthy(true);
-      toaster.dismiss(HEALTH_TOAST_KEY);
-      toaster.dismiss(BLOCKED_TOAST_KEY);
-      toaster.dismiss(SEND_FAILED_TOAST_KEY);
-      toaster.dismiss(REJECTED_TOAST_KEY);
+      notify.hide(HEALTH_TOAST_KEY);
+      notify.hide(BLOCKED_TOAST_KEY);
+      notify.hide(SEND_FAILED_TOAST_KEY);
+      notify.hide(REJECTED_TOAST_KEY);
     };
   }, []);
 
@@ -289,8 +280,8 @@ export function PartySocketManager(props: {
         style={{ display: "flex", justifyContent: "center", marginTop: "15vh" }}
       >
         <DelayRender>
-          <Card elevation={2} style={{ maxWidth: "30rem" }}>
-            <NonIdealState icon={<Spinner />} title="Connecting..." />
+          <Card withBorder shadow="md" style={{ maxWidth: "30rem" }}>
+            <EmptyState icon={<Loader />} title="Connecting..." />
           </Card>
         </DelayRender>
       </section>
