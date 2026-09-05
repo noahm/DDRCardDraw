@@ -8,12 +8,20 @@ import { useDispatch, useSelector, useStore } from "react-redux";
 import { reducer, type AppState } from "./root-reducer";
 import { middleware as listener } from "./listener-middleware";
 import { partyGateMiddleware } from "./party-gate-middleware";
+import { invariantGuardMiddleware } from "./invariant-guard-middleware";
 
 export function createClientStore(preloadedState?: AppState) {
   return configureStore({
     reducer,
+    // the invariant guard sits inside the party gate but outside the listener,
+    // so an action the reducer refuses is reported to the user and never
+    // shipped to the party server
     middleware: (getDefaults) =>
-      getDefaults().concat(partyGateMiddleware, listener),
+      getDefaults().concat(
+        partyGateMiddleware,
+        invariantGuardMiddleware,
+        listener,
+      ),
     preloadedState,
   });
 }

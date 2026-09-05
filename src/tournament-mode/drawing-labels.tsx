@@ -3,15 +3,14 @@ import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 import { Icon } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
-import { useAtomValue } from "jotai";
-import { showPlayerAndRoundLabels } from "../config-state";
+import { useEventSettings } from "../state/hooks";
 import { useAppDispatch } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
 import { CountingSet } from "../utils/counting-set";
 import { playerDisplayName } from "../models/Drawing";
 
 export function MatchLabels() {
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+  const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
   const meta = useDrawing((d) => d.meta);
   const winners = useDrawing((d) => d.winners);
   if (!showLabels) {

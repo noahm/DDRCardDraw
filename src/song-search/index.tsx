@@ -2,34 +2,18 @@ import { useMemo, useState } from "react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
-import { Song, Chart } from "../models/SongData";
+import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
 import { Omnibar } from "@blueprintjs/select";
 import fuzzysort from "fuzzysort";
 import { getSongSearchIndex, scoreSongMatch } from "./search-index";
 import styles from "./song-search.css";
-import { readExtra } from "../utils/extras";
-import { EDIT_ID_KEY } from "../utils/smx-edit-import";
+import { chartIdentity } from "../chart-id";
 
 interface Props {
   isOpen: boolean;
   onSongSelect(this: void, song: Song, chart?: EligibleChart): void;
   onCancel(this: void): void;
-}
-
-/**
- * A stable identity for a chart within one song. Normal charts are unique by
- * style+diffClass, but edit charts all share `diffClass: "edit"`, so we also key
- * on level and the edit's share id. This both distinguishes genuinely different
- * edits and lets us collapse the same edit grafted onto a song more than once.
- */
-function chartIdentity(chart: Chart): string {
-  return [
-    chart.style,
-    chart.diffClass,
-    chart.lvl,
-    readExtra(chart.extras, EDIT_ID_KEY) ?? "",
-  ].join("\0");
 }
 
 export function SongSearch(props: Props) {
@@ -95,7 +79,7 @@ export function SongSearch(props: Props) {
           item.song,
           item.chart === "none" || !item.chart
             ? undefined
-            : getDrawnChart(gameData!, item.song, item.chart),
+            : getDrawnChart(gameData!, item.song, item.chart, config.gameKey),
         )
       }
       items={items}

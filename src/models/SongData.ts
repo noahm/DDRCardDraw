@@ -124,6 +124,10 @@ export interface Song {
 }
 export interface Chart {
   /**
+   * an identifier for this chart, unique within this file. Optional: when absent one is derived from the song and chart's own fields. Supply it when those fields are expected to change over time and the chart must still be recognized as the same chart across data updates.
+   */
+  id?: string;
+  /**
    * Holds info about a chart that may make it worth filtering out
    */
   flags?: string[];

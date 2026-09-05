@@ -18,6 +18,7 @@ import {
 } from "./connection-status";
 import { SyncManager } from "./sync-manager";
 import { logDiagnostic, setPendingActionsProvider } from "./diagnostics";
+import { isReuseRejection } from "../state/reuse-invariant";
 
 const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
@@ -170,7 +171,13 @@ export function PartySocketManager(props: {
       if (inObs) return;
       toaster.show(
         {
-          message: t("party.actionRejected"),
+          message: t(
+            // losing a race for a chart is a normal thing to happen mid-event,
+            // not a sync fault, so name it rather than calling it a rejection
+            isReuseRejection(reason)
+              ? "party.chartAlreadyDrawn"
+              : "party.actionRejected",
+          ),
           intent: Intent.DANGER,
         },
         REJECTED_TOAST_KEY,

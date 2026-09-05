@@ -1,14 +1,20 @@
-import { AppThunk } from "./store";
+import { AppThunk, AppState } from "./store";
 import { draw, DrawingMeta, newPlaceholder } from "../card-draw";
 import { getLastGameSelected, loadGamedataByKey } from "./game-data.atoms";
-import { drawingsSlice, getDrawingFromCompoundId } from "./drawings.slice";
 import {
+  drawingsSlice,
+  getDrawingFromCompoundId,
+  selectChartUsage,
+} from "./drawings.slice";
+import {
+  CHART_DRAWN,
   CHART_PLACEHOLDER,
   CompoundSetId,
   Drawing,
   EligibleChart,
   SubDrawing,
 } from "../models/Drawing";
+import { reuseKeysForChart } from "../chart-id";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 
 declare const umami: {
@@ -25,6 +31,63 @@ function trackDraw(count: number | null, game?: string) {
   const results =
     count === null ? { result: "failed" } : { result: "success", count, game };
   umami.track("cards-drawn", results);
+}
+
+/**
+ * The charts this draw may not produce, or undefined when reuse is allowed and
+ * every draw stands on its own as it always has.
+ *
+ * The set covers the *whole* history, which settles the awkward case of going
+ * back to redraw an older set: draws made after it still count, because the
+ * question a reuse rule answers is "has this chart been seen in this event",
+ * and where in the history it was seen doesn't change the answer. It also
+ * covers the charts currently in the set being redrawn, so a redraw can't hand
+ * back the chart that was just rejected.
+ */
+function excludedKeysFor(state: AppState): Set<string> | undefined {
+  if (!state.event?.settings?.preventChartReuse) return undefined;
+  return selectChartUsage(state).keys;
+}
+
+/** add every key of every drawn chart in `charts` to `spentKeys`, if tracking */
+function noteChartsSpent(
+  spentKeys: Set<string> | undefined,
+  charts: Drawing["charts"] = [],
+) {
+  if (!spentKeys) return;
+  for (const chart of charts) {
+    if (chart.type !== CHART_DRAWN) continue;
+    for (const key of reuseKeysForChart(chart)) {
+      spentKeys.add(key);
+    }
+  }
+}
+
+/** how many real charts are in a result, ignoring any player-pick placeholders */
+function countDrawn(charts: Drawing["charts"] = []) {
+  return charts.reduce(
+    (count, c) => (c.type === CHART_DRAWN ? count + 1 : count),
+    0,
+  );
+}
+
+/**
+ * Warn when a draw comes up short. With the reuse rule on this stops being an
+ * error case and starts being the normal end of an event's pool, so it needs
+ * to be visible rather than silently handing back fewer cards than asked for.
+ */
+function reportDrawShortfall(
+  charts: Drawing["charts"],
+  requested: number,
+  reuseEnforced: boolean,
+) {
+  const drawn = countDrawn(charts);
+  if (drawn >= requested) return;
+  if (!drawn) {
+    showDrawErrorToast(reuseEnforced);
+  } else {
+    showPartialDrawToast(drawn, requested);
+  }
 }
 
 /**
@@ -49,12 +112,14 @@ export function createDraw(
       return "nok"; // no draw was possible
     }
 
-    const charts = draw(gameData, config, drawMeta);
+    const excludedKeys = excludedKeysFor(state);
+    const charts = draw(gameData, config, { ...drawMeta, excludedKeys });
     if (!charts.length) {
-      showDrawErrorToast();
+      showDrawErrorToast(!!excludedKeys);
       trackDraw(null);
       return "nok"; // could not draw the requested number of charts
     }
+    reportDrawShortfall(charts, config.chartCount, !!excludedKeys);
 
     const matchId = `draw-${nanoid(10)}`;
     const setId = `set-${nanoid(12)}`;
@@ -76,6 +141,13 @@ export function createDraw(
     trackDraw(charts.length, gameData.i18n.en.name as string);
 
     if (config.multiDraws) {
+      // the extra draws are part of the same action, so nothing has been
+      // committed to history yet that they could exclude themselves against.
+      // Grow a local copy as we go instead, or a merged multi-draw would
+      // happily deal the same chart twice into one set.
+      const spentKeys = excludedKeys && new Set(excludedKeys);
+      noteChartsSpent(spentKeys, charts);
+
       for (const otherConfigId of config.multiDraws.configs) {
         const otherConfig = configSlice.selectors.selectById(
           state,
@@ -90,10 +162,14 @@ export function createDraw(
           console.error("couldnt perform extra draw, no game data");
           continue;
         }
-        const otherCharts = draw(otherGameData, otherConfig, drawMeta);
+        const otherCharts = draw(otherGameData, otherConfig, {
+          ...drawMeta,
+          excludedKeys: spentKeys,
+        });
         if (!otherCharts.length) {
           continue; // could not draw the requested number of charts
         }
+        noteChartsSpent(spentKeys, otherCharts);
 
         trackDraw(otherCharts.length, otherGameData.i18n.en.name as string);
         if (config.multiDraws.merge) {
@@ -138,12 +214,17 @@ export function createSubdraw(
     }
     const existingDraw = state.drawings.entities[parentDrawId];
 
-    const charts = draw(gameData, config, { meta: existingDraw.meta });
+    const excludedKeys = excludedKeysFor(state);
+    const charts = draw(gameData, config, {
+      meta: existingDraw.meta,
+      excludedKeys,
+    });
     trackDraw(charts.length, gameData.i18n.en.name as string);
     if (!charts.length) {
-      showDrawErrorToast();
+      showDrawErrorToast(!!excludedKeys);
       return "nok"; // could not draw the requested number of charts
     }
+    reportDrawShortfall(charts, config.chartCount, !!excludedKeys);
 
     const setId = `set-${nanoid(12)}`;
     dispatch(
@@ -184,10 +265,13 @@ export function createRedrawAll(drawingId: CompoundSetId): AppThunk {
     };
     const gameData = await loadGamedataByKey(originalConfig.gameKey);
 
+    const excludedKeys = excludedKeysFor(state);
     const charts = draw(gameData!, drawConfig, {
       meta: parent.meta,
       charts: chartsToKeep,
+      excludedKeys,
     });
+    reportDrawShortfall(charts, drawConfig.chartCount, !!excludedKeys);
     dispatch(
       drawingsSlice.actions.updateCharts({
         drawId: drawingId,
@@ -216,9 +300,11 @@ export function createRedrawChart(
     const gameData = await loadGamedataByKey(customConfig.gameKey);
     if (!gameData) return;
 
+    const excludedKeys = excludedKeysFor(state);
     const charts = draw(gameData, customConfig, {
       meta: parent.meta,
       charts: target.charts.filter((chart) => chart.id !== chartId),
+      excludedKeys,
     });
     const chart = charts.pop();
     if (
@@ -226,7 +312,7 @@ export function createRedrawChart(
       chart.type !== "DRAWN" ||
       target.charts.some((c) => c.id === chart.id)
     ) {
-      showDrawErrorToast();
+      showDrawErrorToast(!!excludedKeys);
       return; // result didn't include a new chart
     }
     dispatch(
@@ -267,17 +353,14 @@ export function createPlusOneChart(
     const customConfig: ConfigState = {
       ...originalConfig,
       // force drawing one more chart than already exists
-      chartCount:
-        1 +
-        target.charts.reduce<number>(
-          (acc, curr) => (curr.type === "DRAWN" ? acc + 1 : acc),
-          0,
-        ),
+      chartCount: 1 + countDrawn(target.charts),
     };
 
+    const excludedKeys = excludedKeysFor(state);
     const charts = draw(gameData, customConfig, {
       meta: parent.meta,
       charts: target.charts,
+      excludedKeys,
     });
     const chart = charts.pop();
     if (
@@ -285,7 +368,7 @@ export function createPlusOneChart(
       chart.type !== "DRAWN" ||
       target.charts.some((c) => c.id === chart.id)
     ) {
-      showDrawErrorToast();
+      showDrawErrorToast(!!excludedKeys);
       return; // result didn't include a new chart
     }
     return dispatch(drawingsSlice.actions.addOneChart({ drawingId, chart }));
@@ -335,7 +418,10 @@ export function createPickBanPocket(
 import { GameData } from "../models/SongData";
 import { nanoid } from "nanoid";
 import { availableGameData } from "../utils";
-import { showDrawErrorToast } from "../draw-state/error-toast";
+import {
+  showDrawErrorToast,
+  showPartialDrawToast,
+} from "../draw-state/error-toast";
 
 function getOverridesFromGameData(gameData?: GameData): Partial<ConfigState> {
   if (!gameData) return {};

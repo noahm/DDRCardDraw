@@ -21,3 +21,13 @@
 .sectionLabel {
   text-indent: 10px;
 }
+
+/*
+ * A chart the event has already drawn, in the eligible charts view. Dimmed
+ * rather than hidden: seeing what's been spent is the point, and a list that
+ * silently shrinks makes the pool harder to reason about, not easier.
+ */
+.usedChart {
+  opacity: 0.35;
+  filter: grayscale(1);
+}

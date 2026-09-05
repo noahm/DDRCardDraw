@@ -13,6 +13,7 @@ import {
   CHART_DRAWN,
 } from "./models/Drawing";
 import { ConfigState } from "./config-state";
+import { chartIsUsed, chartKeyFor, reuseKeysForChart } from "./chart-id";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
 import {
   chartLevelOrTier,
@@ -33,8 +34,10 @@ export function getDrawnChart(
   gameData: GameData,
   currentSong: Song,
   chart: Chart,
+  gameKey: string,
 ): EligibleChart {
   return {
+    chartKey: chartKeyFor(gameData, gameKey, chart),
     cardVariant: gameData.meta.cardVariant,
     name: currentSong.name,
     jacket: chart.jacket || currentSong.jacket,
@@ -138,7 +141,7 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
       }
 
       // add chart to deck
-      yield getDrawnChart(gameData, currentSong, chart);
+      yield getDrawnChart(gameData, currentSong, chart, config.gameKey);
     }
   }
 }
@@ -230,7 +233,15 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
 }
 
 export type DrawingMeta = Pick<Drawing, "meta">;
-export type StartingPoint = DrawingMeta & { charts?: Drawing["charts"] };
+export type StartingPoint = DrawingMeta & {
+  charts?: Drawing["charts"];
+  /**
+   * Reuse keys already spent in this event's draw history, which this draw may
+   * not draw again. Supplied by the caller — `draw` stays pure and has no view
+   * of the store. See `src/chart-id.ts`.
+   */
+  excludedKeys?: ReadonlySet<string>;
+};
 
 const artistDrawBlocklist = new Set();
 
@@ -269,6 +280,12 @@ export function draw(
 
   for (const chart of eligibleCharts(configData, gameData)) {
     if (artistDrawBlocklist.has(chart.artist)) continue;
+    if (
+      startPoint.excludedKeys &&
+      chartIsUsed(chart, startPoint.excludedKeys)
+    ) {
+      continue;
+    }
     const bucketIdx = bucketIndexForChart(chart);
     if (bucketIdx === null) continue;
     validCharts.get(bucketIdx).push(chart);
@@ -348,13 +365,16 @@ export function draw(
     }
     // remove this existing chart from eligible pool to prevent dupes
     const bucket = validCharts.get(bucketIdx);
-    const idxInBucket = bucket.findIndex(
-      (eligibleChart) =>
-        eligibleChart.name === chart.name &&
-        chart.diffAbbr === eligibleChart.diffAbbr &&
-        chart.level === eligibleChart.level,
+    const chartKeys = new Set(reuseKeysForChart(chart));
+    const idxInBucket = bucket.findIndex((eligibleChart) =>
+      chartIsUsed(eligibleChart, chartKeys),
     );
-    bucket.splice(idxInBucket, 1);
+    // a pre-seeded chart the current config wouldn't draw (a pocket pick from
+    // outside the pool, say) simply isn't in the bucket. splicing at -1 would
+    // drop an unrelated chart off the end of it.
+    if (idxInBucket >= 0) {
+      bucket.splice(idxInBucket, 1);
+    }
   }
 
   do {

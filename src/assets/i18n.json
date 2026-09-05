@@ -83,7 +83,14 @@
       "addPlayerLabel": "Manage Player Names",
       "tournamentLabelEdit": "Tournament round labels",
       "shockArrows": "Shock Arrows",
-      "invalid": "Couldn't draw enough charts with current settings!"
+      "invalid": "Couldn't draw enough charts with current settings!",
+      "eventSettings": "Global Settings",
+      "eventSettingsHint": "These apply to the whole event, whichever config a draw used, and everyone connected sees the same values.",
+      "preventChartReuse": "Never draw the same chart twice in this event",
+      "chartsUsedSoFar": "{count, plural, =0 {No charts drawn yet} one {# chart drawn so far and no longer available} other {# charts drawn so far and no longer available}}",
+      "invalidAllUsed": "Every chart matching these settings has already been drawn this event!",
+      "partialDraw": "Only drew {drawn} of {requested} — nothing else matching these settings is left undrawn.",
+      "chartAlreadyUsed": "That chart has already been drawn in this event, and this event doesn't allow reuse."
     },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",
@@ -115,6 +122,7 @@
       "actionBlocked": "Still reconnecting to the event server. Your change was not applied.",
       "sendFailed": "A change could not be delivered to the event server after several attempts.",
       "actionRejected": "A change was rejected by the event server and has been undone.",
+      "chartAlreadyDrawn": "Another device drew one of those charts first, so this draw was undone. Draw again.",
       "diagnostics": {
         "menuItem": "Connection diagnostics",
         "title": "Connection diagnostics",
@@ -215,7 +223,14 @@
       "addPlayerLabel": "プレイヤー名の管理",
       "tournamentLabelEdit": "大会ラウンドの管理",
       "shockArrows": "ショックアローを含む",
-      "invalid": "対象譜面が足りません！"
+      "invalid": "対象譜面が足りません！",
+      "eventSettings": "全体設定",
+      "eventSettingsHint": "この設定はイベント全体に適用され、どの設定で引いた場合も、接続中の全員に共有されます。",
+      "preventChartReuse": "同じ譜面をイベント中に二度引かない",
+      "chartsUsedSoFar": "{count, plural, other {既に # 譜面を使用済み（再抽選対象外）}}",
+      "invalidAllUsed": "条件に合う譜面は全て抽選済みです！",
+      "partialDraw": "{requested} 譜面中 {drawn} 譜面のみ抽選しました。条件に合う未使用の譜面が残っていません。",
+      "chartAlreadyUsed": "この譜面は既にこのイベントで抽選済みです。このイベントでは再使用できません。"
     },
     "weights": {
       "explanation": "各レベルの譜面がドローされる確率を、割合で設定します。",
@@ -247,6 +262,7 @@
       "actionBlocked": "イベントサーバーに再接続中のため、変更は適用されませんでした。",
       "sendFailed": "複数回試みましたが、変更をイベントサーバーへ送信できませんでした。",
       "actionRejected": "イベントサーバーが変更を拒否したため、元に戻しました。",
+      "chartAlreadyDrawn": "他の端末が先に同じ譜面を引いたため、この抽選は取り消されました。もう一度引いてください。",
       "diagnostics": {
         "menuItem": "接続診断",
         "title": "接続診断",

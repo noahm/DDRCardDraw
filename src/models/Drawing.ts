@@ -2,6 +2,13 @@ import { nanoid } from "nanoid";
 import { Song } from "./SongData";
 
 export interface EligibleChart {
+  /**
+   * Stable identity for this chart in the game data it came from, unlike
+   * `DrawnChart.id` which is unique to a single drawn copy. Optional only
+   * because charts drawn before this existed are still in people's saved
+   * history; see `src/chart-id.ts`.
+   */
+  chartKey?: string;
   name: string;
   jacket: string;
   nameTranslation?: string;

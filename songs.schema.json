@@ -177,6 +177,10 @@
       "title": "Chart",
       "additionalProperties": false,
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "an identifier for this chart, unique within this file. Optional: when absent one is derived from the song and chart's own fields. Supply it when those fields are expected to change over time and the chart must still be recognized as the same chart across data updates."
+        },
         "flags": {
           "type": "array",
           "items": {

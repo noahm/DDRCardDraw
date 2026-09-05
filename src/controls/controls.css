@@ -35,6 +35,30 @@
   width: 110px;
 }
 
+.eventSettings {
+  margin-bottom: 1em;
+}
+
+.eventSettings h2 {
+  margin: 0 0 0.25em;
+  font-size: 1.1em;
+}
+
+.eventSettings label {
+  user-select: none;
+}
+
+.eventSettingsHint {
+  margin-bottom: 1em;
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+/* the running "N charts used" count sits under the toggle it explains */
+.eventSettings :global(.bp6-callout) {
+  margin: -0.25em 0 0.75em 1.6em;
+}
+
 /* remove native styling on number type inputs */
 input[type="number"] {
   appearance: textfield;

@@ -12,6 +12,7 @@ import { GameDataSelect } from "../version-select";
 import { useLastConfigSelected } from "../state/config.atoms";
 import { changeGameKeyForConfig } from "../state/thunks";
 import { ConfigList } from "./config-select";
+import { EventSettings } from "./event-settings";
 
 export function ConfigPage() {
   const navigate = useNavigate();
@@ -47,7 +48,12 @@ export function ConfigPage() {
         <FormattedMessage id="controls.drawerTitle" />
       </h1>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 5fr" }}>
-        <ConfigList selectedId={configId} onChange={setNextConfig} />
+        <div>
+          <ErrorBoundary fallback={<ErrorFallback />}>
+            <EventSettings />
+          </ErrorBoundary>
+          <ConfigList selectedId={configId} onChange={setNextConfig} />
+        </div>
         <ConfigIdGate configId={configId}>
           <div style={{ maxWidth: "30em" }}>
             <ConfigCoreFields configId={configId} />
