@@ -153,24 +153,37 @@ function createParentFolderIfNeeded(absoluteImgPath: string) {
   }
 }
 
+/** an image that reads its own bytes, e.g. one inside a zip archive */
+interface ImageSource {
+  /** the image's own filename, used only for logging */
+  name: string;
+  file(): Promise<File>;
+}
+
 /**
- * Queues a cover path for download into the imageQueue.
+ * Queues a cover image for download into the imageQueue.
  * Always skips if file already exists.
  * Immediately returns the relative path to the jacket where it will be saved
- * @param coverUrl url of image to fetch
+ * @param source url/path of image to fetch, or an image that reads its own
+ * bytes, such as one inside a zip archive
  * @param localFilename override filename found in url
  */
 export function downloadJacket(
-  coverUrl: string,
+  source: string | ImageSource,
   localFilename: string | undefined = undefined,
 ) {
-  const { absolute, relative } = getOutputPath(coverUrl, localFilename);
+  const label = typeof source === "string" ? source : source.name;
+  const { absolute, relative } = getOutputPath(label, localFilename);
   if (!existsSync(absolute)) {
     createParentFolderIfNeeded(absolute);
     requestQueue
-      .add(() => {
-        console.log("fetching", coverUrl);
-        return Jimp.read(coverUrl);
+      .add(async () => {
+        if (typeof source === "string") {
+          console.log("fetching", source);
+          return Jimp.read(source);
+        }
+        // already local, so read it straight out of the folder or archive
+        return Jimp.fromBuffer(await (await source.file()).arrayBuffer());
       })
       .then((img) =>
         img
@@ -178,7 +191,7 @@ export function downloadJacket(
           .write(absolute, { quality: 80 }),
       )
       .catch((e) => {
-        console.error("image download failure for", coverUrl);
+        console.error("image download failure for", label);
         e.cause ? console.error(e.cause) : console.error(e);
       });
   }

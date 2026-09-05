@@ -2,6 +2,8 @@ import { Menu, Popover } from "@mantine/core";
 import classNames from "classnames";
 import {
   type JSX,
+  lazy,
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
@@ -16,7 +18,6 @@ import {
   EligibleChart,
   PlayerPickPlaceholder,
 } from "../models/Drawing";
-import { SongSearch } from "../song-search";
 import { CardLabel, LabelType } from "./card-label";
 import { FillPlaceholderList, ActionMenu } from "./acton-menu";
 import styles from "./song-card.css";
@@ -28,6 +29,18 @@ import { copyTextToClipboard } from "../utils/share";
 import { useChartRandomSelected } from "../tournament-mode/highlight-random";
 
 import { baseChartValues, CardContentsProps } from "./variants";
+
+/**
+ * The song search omnibar is only reachable through a card's action menu, so it
+ * loads on demand. It gets mounted (closed) as soon as that menu opens rather
+ * than when a pocket pick starts, so that its own `isOpen` prop still drives
+ * the overlay's enter and exit transitions -- conditionally rendering it on
+ * `pocketPickPendingForPlayer` would tear the overlay out of the tree before it
+ * could animate closed.
+ */
+const SongSearch = lazy(() =>
+  import("../song-search").then((m) => ({ default: m.SongSearch })),
+);
 
 type PlayerId = string;
 
@@ -115,7 +128,11 @@ export function SongCardBase(props: Props) {
   }, [wasRandomlySelected]);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
-  const showMenu = () => setContextMenuOpen(true);
+  const [songSearchMounted, setSongSearchMounted] = useState(false);
+  const showMenu = () => {
+    setSongSearchMounted(true);
+    setContextMenuOpen(true);
+  };
   const hideMenu = () => setContextMenuOpen(false);
 
   // key of the variant-supplied action whose popover is currently shown, if any
@@ -274,16 +291,20 @@ export function SongCardBase(props: Props) {
           }
           style={jacketBg}
         >
-          <SongSearch
-            isOpen={pocketPickPendingForPlayer !== null}
-            onSongSelect={(song, chart) => {
-              if (actionsEnabled && chart) {
-                iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
-              }
-              setPocketPickPendingForPlayer(null);
-            }}
-            onCancel={() => setPocketPickPendingForPlayer(null)}
-          />
+          {songSearchMounted && (
+            <Suspense fallback={null}>
+              <SongSearch
+                isOpen={pocketPickPendingForPlayer !== null}
+                onSongSelect={(song, chart) => {
+                  if (actionsEnabled && chart) {
+                    iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
+                  }
+                  setPocketPickPendingForPlayer(null);
+                }}
+                onCancel={() => setPocketPickPendingForPlayer(null)}
+              />
+            </Suspense>
+          )}
           <div className={styles.cardCenter}>
             {actionLabels}
             <CenterContent chart={replacedWith || chart} />

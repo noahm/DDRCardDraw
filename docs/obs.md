@@ -14,6 +14,8 @@ Paste the copied URL into the properties and click OK.
 
 If you have a match assigned to the chosen cab, then you should see the text appear immediately. If nothing is assigned to the cab, then the source will display nothing at all.
 
+Inside OBS, sources always render in dark mode, so text is white by default. If you want dark text instead, set a `color` rule in your custom CSS as described below.
+
 ## Custom styles
 
 Adding custom CSS to text-based sources is a great way to help the info fit the graphic design of the rest of your stream graphics.
