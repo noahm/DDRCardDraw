@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1786031152222
+    "lastUpdated": 1788418278526
   },
   "defaults": {
     "style": "single",
@@ -2688,7 +2688,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Aftermath.jpg",
       "remyLink": "https://remywiki.com/Aftermath",
-      "genre": "ROCK"
+      "genre": "ROCK/ロック"
     },
     {
       "name": "aftershock!!",
@@ -6977,7 +6977,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["prePrigvilege"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.1,
           "maxScore": 1956
         },
@@ -7006,7 +7006,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["prePrigvilege"],
+          "flags": ["grandPrixPack"],
           "sanbaiTier": 17.05,
           "maxScore": 1890
         }
@@ -8226,6 +8226,60 @@
       "remyLink": "https://remywiki.com/BRILLIANT_2U(Orchestra_Groove)"
     },
     {
+      "name": "Bring Me Back",
+      "artist": "9W3R7Y",
+      "saHash": "180DD1dl8dq1lOioPqPOo6b6d9QbbbdD",
+      "bpm": "132",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 198
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 567
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 996
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1419
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 546
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 993
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1359
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Bring Me Back.jpg",
+      "remyLink": "https://remywiki.com/Bring_Me_Back"
+    },
+    {
       "name": "Broken",
       "artist": "dj TAKA feat.AiMEE",
       "saHash": "6qPlI8DQPoDIo6D819boPioIPPDIPblq",
@@ -8415,7 +8469,8 @@
         }
       ],
       "flags": ["arcade"],
-      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg"
+      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg",
+      "remyLink": "https://remywiki.com/BUCHiAGE_matsuri_DANCE"
     },
     {
       "name": "BURNIN' THE FLOOR",
@@ -8457,7 +8512,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.4,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1182
         },
         {
@@ -8486,7 +8541,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1173
         }
       ],
@@ -8782,7 +8837,7 @@
           "maxScore": 2091
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_a3/C-C-C-N-N-N.jpg",
       "remyLink": "https://remywiki.com/C-C-C-N-N-N",
       "genre": "ELECTRONICORE"
@@ -14807,6 +14862,59 @@
       "remyLink": "https://remywiki.com/Debug_Dance"
     },
     {
+      "name": "Decryption",
+      "artist": "Felysrator",
+      "saHash": "i9olPli6l8iDi88DPIbiDibPbIibb9l0",
+      "bpm": "160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 240
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 633
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1185
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1737
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 612
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1137
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1686
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Decryption.jpg"
+    },
+    {
       "name": "Deep tenDon Reflex",
       "artist": "BEMANI Sound Team \"Coyaan\"",
       "saHash": "1IQ16dPQPQ0Q1qdidld6lO1o86q98o69",
@@ -15184,7 +15292,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.1,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1587
         },
         {
@@ -15213,7 +15321,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "sanbaiTier": 16.15,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1575
         }
       ],
@@ -15354,7 +15462,7 @@
           "maxScore": 2520
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_a3/DIABLOSISNaga.jpg",
       "remyLink": "https://remywiki.com/DIABLOSIS::Naga",
       "search_hint": "diablosis naga"
@@ -17412,6 +17520,61 @@
       "remyLink": "https://remywiki.com/Drop_The_Bounce"
     },
     {
+      "name": "Dual Bladez",
+      "artist": "おもしろ三国志",
+      "artist_translation": "Omoshiro sangokushi",
+      "saHash": "6od8bQb9i8li018bQoo8q1lddIQiqiql",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 237
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 615
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 957
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1587
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 615
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 945
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1551
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/Dual Bladez.jpg",
+      "remyLink": "https://remywiki.com/Dual_Bladez"
+    },
+    {
       "name": "DUAL STRIKER",
       "artist": "Mayumi Morinaga,Fernweh by BEMANI Sound Team \"L.E.D. & HuΣeR\"",
       "saHash": "9b60DI1OQddDI6D9D1qPoDPODD19Db8d",
@@ -17471,7 +17634,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/DUAL_STRIKER.jpg",
       "remyLink": "https://remywiki.com/DUAL_STRIKER",
-      "genre": "IIDX SOUNDS"
+      "genre": "IIDX SOUNDS/IIDXサウンド"
     },
     {
       "name": "Dummy",
@@ -19592,6 +19755,59 @@
       ],
       "jacket": "ddr_max-ext/exotic ethnic.png",
       "remyLink": "https://remywiki.com/Exotic_ethnic"
+    },
+    {
+      "name": "eyesight",
+      "artist": "タバサリサ",
+      "saHash": "OQliD1io08dq96q9QO6dd1iq0dObl1QQ",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 234
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 567
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 957
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1440
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 552
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 891
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1395
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/eyesight.jpg"
     },
     {
       "name": "F4SH10N",
@@ -23535,7 +23751,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Globe Glitter.jpg",
       "remyLink": "https://remywiki.com/Globe_Glitter",
-      "genre": "RAVE STEP"
+      "genre": "RAVE STEP/レイヴステップ"
     },
     {
       "name": "GLOW THE CROWN",
@@ -28257,7 +28473,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/I Want To Do This Keep.jpg",
-      "remyLink": "https://remywiki.com/I_Want_To_Do_This_Keep"
+      "remyLink": "https://remywiki.com/I_Want_To_Do_This_Keep",
+      "genre": "HYBRID RHYTHM BASS"
     },
     {
       "name": "I WANT YOUR LOVE (Darwin remix)",
@@ -28319,6 +28536,59 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/I WANT YOUR LOVE (Darwin remix).jpg",
       "remyLink": "https://remywiki.com/I_WANT_YOUR_LOVE_(Darwin_remix)"
+    },
+    {
+      "name": "I'll Be With You",
+      "artist": "ゆんゆん",
+      "saHash": "lIPQl8P18I99b90iD86OI1Qq0OI1OPDb",
+      "bpm": "143",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 183
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 597
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1152
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1491
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 603
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1140
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1458
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/I'll Be With You.jpg"
     },
     {
       "name": "I'm Flying Away",
@@ -29993,6 +30263,67 @@
       "remyLink": "https://remywiki.com/IRON_HEART"
     },
     {
+      "name": "Is this dance a Hakken?",
+      "artist": "RoughSketch",
+      "saHash": "q0I018lPqbdi66qiiiQlqIb9O19O9061",
+      "bpm": "68-205",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "sanbaiTier": 3.6,
+          "maxScore": 225
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.45,
+          "maxScore": 675
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "sanbaiTier": 12.75,
+          "maxScore": 1185
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "sanbaiTier": 16.55,
+          "maxScore": 1740
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "sanbaiTier": 7.5,
+          "maxScore": 669
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "sanbaiTier": 12.6,
+          "maxScore": 1191
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "sanbaiTier": 16.45,
+          "maxScore": 1752
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/Is this dance a Hakken.jpg",
+      "remyLink": "https://remywiki.com/Is_this_dance_a_Hakken%3F"
+    },
+    {
       "name": "Ishtar",
       "artist": "劇団レコード",
       "artist_translation": "Gekidan Record",
@@ -30373,7 +30704,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.45,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1152
         },
         {
@@ -30402,7 +30733,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.05,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1110
         }
       ],
@@ -33244,7 +33575,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/LIKE A VAMPIRE.jpg",
       "remyLink": "https://remywiki.com/LIKE_A_VAMPIRE",
-      "genre": "HEAVY METAL"
+      "genre": "HEAVY METAL/ヘビーメタル"
     },
     {
       "name": "little steps",
@@ -34551,7 +34882,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1362
         },
         {
@@ -34580,7 +34911,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.4,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1338
         }
       ],
@@ -35165,7 +35496,8 @@
         }
       ],
       "flags": ["arcade"],
-      "jacket": "ddr_world/Make Mi Make Mi.jpg"
+      "jacket": "ddr_world/Make Mi Make Mi.jpg",
+      "remyLink": "https://remywiki.com/Make_Mi_Make_Mi"
     },
     {
       "name": "Malacca",
@@ -37741,7 +38073,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.65,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1542
         },
         {
@@ -37770,7 +38102,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.6,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1515
         }
       ],
@@ -38394,6 +38726,72 @@
       "flags": ["grandPrixPack", "withoutPrivilege"],
       "jacket": "ddr_x3/NEPHILIM DELTA.png",
       "remyLink": "https://remywiki.com/NEPHILIM_DELTA"
+    },
+    {
+      "name": "neu (STARDOM Remix)",
+      "artist": "少年ラジオ arranged by BEMANI Sound Team \"PON\"",
+      "saHash": "I0qq8i9i68DoOQDd1q6iPqO6P9l10IQD",
+      "bpm": "133",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 156
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 402
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9,
+          "maxScore": 798
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1314
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1950
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 372
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9,
+          "maxScore": 801
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1302
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1917
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/neu (STARDOM Remix).jpg",
+      "remyLink": "https://remywiki.com/Neu_(STARDOM_Remix)"
     },
     {
       "name": "Neutrino",
@@ -39174,7 +39572,8 @@
         }
       ],
       "flags": ["arcade"],
-      "jacket": "ddr_world/New Nostalgy.jpg"
+      "jacket": "ddr_world/New Nostalgy.jpg",
+      "remyLink": "https://remywiki.com/New_Nostalgy"
     },
     {
       "name": "New York EVOLVED (Type A)",
@@ -41649,7 +42048,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/paparazzi.jpg",
       "remyLink": "https://remywiki.com/Paparazzi",
-      "genre": ""
+      "genre": "スキャンダラス/SCANDALOUS"
     },
     {
       "name": "PARADISE",
@@ -43792,7 +44191,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Poppin' Soda.jpg",
       "remyLink": "https://remywiki.com/Poppin%27_Soda",
-      "genre": "KAWAII FUTURE BASS"
+      "genre": "KAWAII FUTURE BASS/カワイイフューチャーベース"
     },
     {
       "name": "Poseidon",
@@ -50051,7 +50450,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.45,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1206
         },
         {
@@ -50080,7 +50479,7 @@
           "diffClass": "challenge",
           "lvl": 13,
           "sanbaiTier": 13.4,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1146
         }
       ],
@@ -56109,7 +56508,7 @@
           "maxScore": 2448
         }
       ],
-      "flags": ["arcade", "extraOnly"],
+      "flags": ["arcade"],
       "jacket": "ddr_a3/Suspicions.jpg",
       "remyLink": "https://remywiki.com/Suspicions",
       "genre": "JAZZ CORE"
@@ -57688,7 +58087,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/THE_ANCIENT_KING_IS_BACK.jpg",
-      "remyLink": "https://remywiki.com/THE_ANCIENT_KING_IS_BACK"
+      "remyLink": "https://remywiki.com/THE_ANCIENT_KING_IS_BACK",
+      "genre": "HARD STYLE"
     },
     {
       "name": "The Ashes of Boreas",
@@ -58125,7 +58525,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "sanbaiTier": 18.85,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 2016
         },
         {
@@ -58154,7 +58554,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "sanbaiTier": 18.75,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1956
         }
       ],
@@ -58731,7 +59131,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.3,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1392
         },
         {
@@ -58760,7 +59160,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "sanbaiTier": 14.2,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1374
         }
       ],
@@ -61129,7 +61529,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "sanbaiTier": 15.35,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1185
         },
         {
@@ -61158,7 +61558,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "sanbaiTier": 15.3,
-          "flags": ["prePrivilege"],
+          "flags": ["grandPrixPack"],
           "maxScore": 1089
         }
       ],
@@ -61287,7 +61687,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Triple Cross.jpg",
       "remyLink": "https://remywiki.com/Triple_Cross",
-      "genre": "MUSIC GAME TRADITIONAL"
+      "genre": "MUSIC GAME TRADITIONAL/ミュージックゲームトラディショナル"
     },
     {
       "name": "Triple Journey -TAG EDITION-",
@@ -66695,6 +67095,60 @@
       "search_hint": "Hi-CORE/ハイコア"
     },
     {
+      "name": "†渚の小悪魔ラヴリィ～レイディオ† (STARDOM Remix)",
+      "artist": "kors k",
+      "saHash": "oQP6D9PlDbDlPPPPPqd8QI61o1Q0PO81",
+      "bpm": "107",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 180
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 648
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1146
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1611
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 615
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1137
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1578
+        }
+      ],
+      "flags": ["prePrivilege"],
+      "jacket": "ddr_world/†渚の小悪魔ラヴリィ～レイディオ† (STARDOM Remix).jpg",
+      "remyLink": "https://remywiki.com/Nagisa_no_koakuma_lovely_radio_(STARDOM_Remix)"
+    },
+    {
       "name": "↑↑↓↓←→←→BA",
       "name_translation": "Ue ue shita shita hidari migi hidari migi BA",
       "artist": "meiyo",
@@ -67389,7 +67843,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Koko kara yoroshiku daisakusen 143.jpg",
       "remyLink": "https://remywiki.com/Koko_kara_yoroshiku_daisakusen_143",
-      "genre": "ROCK"
+      "genre": "ROCK/ロック"
     },
     {
       "name": "この子の七つのお祝いに",
@@ -70676,7 +71130,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Chucchu Machu Picchu.jpg",
       "remyLink": "https://remywiki.com/Chucchu_Machu_Picchu",
-      "genre": ""
+      "genre": "アンデスダンシング/ANDES DANCING"
     },
     {
       "name": "チョコレートスマイル",
@@ -80776,7 +81230,8 @@
       ],
       "flags": ["arcade"],
       "jacket": "ddr_world/燭.jpg",
-      "search_hint": "ともしび"
+      "search_hint": "ともしび",
+      "remyLink": "https://remywiki.com/Tomoshibi_(Rish_feat.Choko_(Noir))"
     },
     {
       "name": "爆なな☆てすとロイヤー",
@@ -83292,7 +83747,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Itetsu no pride.jpg",
       "remyLink": "https://remywiki.com/Itetsu_no_pride",
-      "search_hint": "いてつのプライド"
+      "search_hint": "いてつのプライド",
+      "genre": "アイアンハート/IRON HEART"
     },
     {
       "name": "鏡花水月楼 (DDR EDITION)",
