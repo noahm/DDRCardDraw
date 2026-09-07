@@ -34,10 +34,9 @@ export function getDrawnChart(
   gameData: GameData,
   currentSong: Song,
   chart: Chart,
-  gameKey: string,
 ): EligibleChart {
   return {
-    chartKey: chartKeyFor(gameData, gameKey, chart),
+    chartKey: chartKeyFor(gameData, currentSong, chart),
     cardVariant: gameData.meta.cardVariant,
     name: currentSong.name,
     jacket: chart.jacket || currentSong.jacket,
@@ -141,7 +140,7 @@ export function* eligibleCharts(config: ConfigState, gameData: GameData) {
       }
 
       // add chart to deck
-      yield getDrawnChart(gameData, currentSong, chart, config.gameKey);
+      yield getDrawnChart(gameData, currentSong, chart);
     }
   }
 }

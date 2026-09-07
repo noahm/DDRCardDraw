@@ -96,6 +96,11 @@ function validateContents(dataFile) {
  * fields (see `src/chart-id.ts`), and chart identity is what the event-wide
  * "never draw the same chart twice" rule is built on. Two charts sharing an id
  * would silently make one of them undrawable once the other had been drawn.
+ *
+ * Ids are compared across files as well, so an id reused for a different chart
+ * in another file has the same effect between them. That can't be checked from
+ * one file alone, but giving the same chart the same id in two files is the
+ * intended way to say they are the same chart.
  */
 function findDuplicateChartIds(dataFile) {
   const errors = [];

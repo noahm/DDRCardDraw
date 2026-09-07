@@ -79,7 +79,7 @@ export function SongSearch(props: Props) {
           item.song,
           item.chart === "none" || !item.chart
             ? undefined
-            : getDrawnChart(gameData!, item.song, item.chart, config.gameKey),
+            : getDrawnChart(gameData!, item.song, item.chart),
         )
       }
       items={items}
