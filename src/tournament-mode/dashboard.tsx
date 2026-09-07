@@ -17,7 +17,13 @@ import { Add, Duplicate, Edit, FloppyDisk, Trash } from "@blueprintjs/icons";
 import React, { useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
-import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
+import {
+  copyObsSource,
+  drawnChartsLayouts,
+  routableDrawnChartsSourcePath,
+  routableGlobalSourcePath,
+  type DrawnChartsLayout,
+} from "./copy-obs-source";
 
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
@@ -67,9 +73,68 @@ export function Dashboard() {
             ))}
           </CardList>
         </section>
+        <DrawnChartsSources />
         <CssEditor />
       </div>
     </>
+  );
+}
+
+const drawnChartsLayoutInfo: Record<
+  DrawnChartsLayout,
+  { title: string; detail: string }
+> = {
+  grid: {
+    title: "Grid",
+    detail: "A mini jacket, song name and level for each chart.",
+  },
+  list: {
+    title: "List",
+    detail:
+      "Text rows grouped by level, no jackets. Fits several times as many charts in the same space.",
+  },
+};
+
+function DrawnChartsSources() {
+  return (
+    <section style={{ maxWidth: "600px" }}>
+      <H3>OBS Drawn Chart Sources</H3>
+      <p>
+        Every chart this event has already drawn, so viewers can see what has
+        come out of the pool. Filtered by default to the level range of the
+        config behind the most recent draw, which keeps it current on its own as
+        the bracket climbs. Add <code>?config=&lt;config id&gt;</code>,{" "}
+        <code>?min=15&amp;max=17</code> or <code>?all</code> to a source URL to
+        say otherwise.
+      </p>
+      <CardList>
+        {drawnChartsLayouts.map((layout) => (
+          <DrawnChartsCard key={layout} layout={layout} />
+        ))}
+      </CardList>
+    </section>
+  );
+}
+
+function DrawnChartsCard(props: { layout: DrawnChartsLayout }) {
+  const href = useHref(routableDrawnChartsSourcePath(props.layout));
+  const { title, detail } = drawnChartsLayoutInfo[props.layout];
+  return (
+    <Card className={styles.textSourceCard}>
+      <div>
+        <H4>{title}</H4>
+        <p>{detail}</p>
+      </div>
+      <AnchorButton
+        icon={<Duplicate />}
+        title="Copy this source's URL to the clipboard"
+        onClick={(e) => {
+          e.preventDefault();
+          copyObsSource(new URL(href, document.location.href).href);
+        }}
+        href={href}
+      />
+    </Card>
   );
 }
 

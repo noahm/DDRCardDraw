@@ -120,6 +120,16 @@ export function reuseKeysForChart(chart: EligibleChart): string[] {
   return chart.chartKey ? [chart.chartKey, legacy] : [legacy];
 }
 
+/**
+ * The most precise key `chart` can be recognized by: its own `chartKey` where
+ * it has one, and the coarse legacy key where it predates them. Use this to
+ * count or dedupe distinct charts, where {@link reuseKeysForChart} would hand
+ * back several keys for the same one.
+ */
+export function primaryReuseKey(chart: EligibleChart): string {
+  return reuseKeysForChart(chart)[0];
+}
+
 /** true if any key identifying `chart` is present in `used` */
 export function chartIsUsed(
   chart: EligibleChart,
