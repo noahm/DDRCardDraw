@@ -11,7 +11,7 @@ import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { useLastConfigSelected } from "../state/config.atoms";
 import { changeGameKeyForConfig } from "../state/thunks";
-import { ConfigList } from "./config-select";
+import { ConfigList, GLOBAL_SETTINGS_ID } from "./config-select";
 import { EventSettings } from "./event-settings";
 
 export function ConfigPage() {
@@ -49,19 +49,24 @@ export function ConfigPage() {
       </h1>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 5fr" }}>
         <div>
-          <ErrorBoundary fallback={<ErrorFallback />}>
-            <EventSettings />
-          </ErrorBoundary>
           <ConfigList selectedId={configId} onChange={setNextConfig} />
         </div>
-        <ConfigIdGate configId={configId}>
+        {configId === GLOBAL_SETTINGS_ID ? (
           <div style={{ maxWidth: "30em" }}>
-            <ConfigCoreFields configId={configId} />
             <ErrorBoundary fallback={<ErrorFallback />}>
-              <ControlsDrawer configId={configId} />
+              <EventSettings />
             </ErrorBoundary>
           </div>
-        </ConfigIdGate>
+        ) : (
+          <ConfigIdGate configId={configId}>
+            <div style={{ maxWidth: "30em" }}>
+              <ConfigCoreFields configId={configId} />
+              <ErrorBoundary fallback={<ErrorFallback />}>
+                <ControlsDrawer configId={configId} />
+              </ErrorBoundary>
+            </div>
+          </ConfigIdGate>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Callout, Card, Checkbox } from "@blueprintjs/core";
+import { Callout, Checkbox } from "@blueprintjs/core";
 import { useIntl } from "../hooks/useIntl";
 import { selectChartUsage } from "../state/drawings.slice";
 import { useEventSettings, useUpdateEventSettings } from "../state/hooks";
@@ -20,7 +20,7 @@ export function EventSettings() {
   const usedChartCount = useAppState((s) => selectChartUsage(s).count);
 
   return (
-    <Card compact className={styles.eventSettings}>
+    <div className={styles.eventSettings}>
       <h2>{t("controls.eventSettings")}</h2>
       <p className={styles.eventSettingsHint}>
         {t("controls.eventSettingsHint")}
@@ -64,6 +64,6 @@ export function EventSettings() {
         }
         label={t("controls.playerLabels")}
       />
-    </Card>
+    </div>
   );
 }

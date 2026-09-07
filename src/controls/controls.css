@@ -35,8 +35,10 @@
   width: 110px;
 }
 
+/* matches `.drawer`, so switching between this pane and a config's doesn't
+   shift the content under the cursor */
 .eventSettings {
-  margin-bottom: 1em;
+  padding: 1em 1.5em;
 }
 
 .eventSettings h2 {
