@@ -339,6 +339,13 @@ export const SDVX_UNLOCK_IDS = {
     [699, "exceed"], // ΕΛΠΙΣ XCD
     [271, "exceed"], // VALLIS-NERIA XCD
     [636, "ultimate"], // Everlasting Message ULT
+
+    //Variant Gate 3
+    2393, // ΔLI∇E
+    2394, // ΛVYXXIRENIΛ
+    2395, // 凌天滅狐
+    2396, // Solitary Poison
+    2397, // ULTRACHARGE
   ],
 
   otherEvents: [
@@ -358,6 +365,14 @@ export const SDVX_UNLOCK_IDS = {
     2378, // Thunderstorm
     2380, // Roar of Chronos
     2382, // RUINA
+
+    // BEMANI納涼祭2026
+    2398, // 断罪のミメシス
+    2399, // Smintheus
+    2400, // Any%
+    2401, // Lava Flow
+    2402, // Secret Raid
+    2403, // Esperanza
 
     // ぼる×りこ Cross Resonance
     2231, // Crossfade
@@ -401,6 +416,18 @@ export const SDVX_UNLOCK_IDS = {
     2369, // Meteor☆Shower
     2383, // COLOR BURST
 
+    // THE VOLTENIZER 2026 Special Stamp
+    2406, // サイハテ
+    2407, // 覚帝神刻
+    2408, // Sci-Φ-nder
+    2409, // Raise the flag of victory!
+    2410, // Sakura Eyelen
+    2411, // VIIIX
+    2412, // Stellar Pilgrim
+
+    // NABLA Hidden Songs
+    2414, // KAC PERFECT ULTIMATE CHRONICLE -Lord of the SOUND VOLTEX-
+
     // pop'n & SDVX Cheers × Cheers!!
     2355, // Zt!ri△
     2356, // Votum stellarum -forest #25 RMX-
@@ -412,6 +439,9 @@ export const SDVX_UNLOCK_IDS = {
     [623, "nabla"], // False Cross
     [770, "nabla"], // ハッピーシンセサイザ
     [697, "nabla"], // 初音ミクの消失
+    [317, "nabla"], // ありふれたせかいせいふく
+    [220, "nabla"], // 音楽 -壊音楽 mix-
+    [683, "nabla"], // 無双
   ],
 
   jpOnly: [

@@ -27,7 +27,7 @@
       "radar-peak:hand-trip",
       "radar-peak:one-hand"
     ],
-    "lastUpdated": 1788831523254
+    "lastUpdated": 1788833459681
   },
   "defaults": {
     "style": "single",
@@ -4297,7 +4297,12 @@
         { "lvl": 5, "style": "single", "diffClass": "novice", "flags": ["radar-peak:tricky"] },
         { "lvl": 11, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:tricky"] },
         { "lvl": 17.5, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
-        { "lvl": 19.5, "style": "single", "diffClass": "nabla", "flags": ["radar-peak:notes"] }
+        {
+          "lvl": 19.5,
+          "style": "single",
+          "diffClass": "nabla",
+          "flags": ["radar-peak:notes", "otherEvents"]
+        }
       ]
     },
     {
@@ -6046,7 +6051,12 @@
         { "lvl": 4, "style": "single", "diffClass": "novice", "flags": ["radar-peak:tsumami"] },
         { "lvl": 9, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:tsumami"] },
         { "lvl": 13, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
-        { "lvl": 17, "style": "single", "diffClass": "nabla", "flags": ["radar-peak:peak"] }
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "nabla",
+          "flags": ["radar-peak:peak", "otherEvents"]
+        }
       ]
     },
     {
@@ -13574,7 +13584,12 @@
         { "lvl": 5, "style": "single", "diffClass": "novice", "flags": ["radar-peak:peak"] },
         { "lvl": 11, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 17, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
-        { "lvl": 18.4, "style": "single", "diffClass": "nabla", "flags": ["radar-peak:peak"] }
+        {
+          "lvl": 18.4,
+          "style": "single",
+          "diffClass": "nabla",
+          "flags": ["radar-peak:peak", "otherEvents"]
+        }
       ]
     },
     {
@@ -51658,7 +51673,8 @@
           "jacket": "sdvx/nabla/alive_dadadaizu-maximum.png",
           "flags": ["radar-peak:notes"]
         }
-      ]
+      ],
+      "flags": ["variantgate"]
     },
     {
       "name": "ΛVYXXIRENIΛ",
@@ -51697,7 +51713,8 @@
           "jacket": "sdvx/nabla/avyxxirenia_qfeileadh-maximum.png",
           "flags": ["radar-peak:notes"]
         }
-      ]
+      ],
+      "flags": ["variantgate"]
     },
     {
       "name": "凌天滅狐",
@@ -51736,7 +51753,8 @@
           "jacket": "sdvx/nabla/ryotenmekko_kagetora-maximum.png",
           "flags": ["radar-peak:notes"]
         }
-      ]
+      ],
+      "flags": ["variantgate"]
     },
     {
       "name": "Solitary Poison",
@@ -51775,7 +51793,8 @@
           "jacket": "sdvx/nabla/solitarypoison_alkome-maximum.png",
           "flags": ["radar-peak:tsumami"]
         }
-      ]
+      ],
+      "flags": ["variantgate"]
     },
     {
       "name": "ULTRACHARGE",
@@ -51814,7 +51833,8 @@
           "jacket": "sdvx/nabla/ultracharge_yutaimai-maximum.png",
           "flags": ["radar-peak:hand-trip"]
         }
-      ]
+      ],
+      "flags": ["variantgate"]
     },
     {
       "name": "断罪のミメシス",
@@ -51829,7 +51849,8 @@
         { "lvl": 14, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 17, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 19.6, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:notes"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Smintheus",
@@ -51844,7 +51865,8 @@
         { "lvl": 14, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 17, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 19.5, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:peak"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Any％",
@@ -51859,7 +51881,8 @@
         { "lvl": 14, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 17, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 19.3, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:peak"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Lava Flow",
@@ -51874,7 +51897,8 @@
         { "lvl": 12, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 15, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 17, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:peak"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Secret Raid",
@@ -51889,7 +51913,8 @@
         { "lvl": 13, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 16, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 18.4, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:notes"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Esperanza",
@@ -51904,7 +51929,8 @@
         { "lvl": 12, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:tsumami"] },
         { "lvl": 16, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 18.6, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:notes"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "夢色ワンダー",
@@ -51958,7 +51984,8 @@
           "jacket": "sdvx/nabla/saihate_namv-maximum.png",
           "flags": ["radar-peak:notes"]
         }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "覚帝神刻",
@@ -51997,7 +52024,8 @@
           "jacket": "sdvx/nabla/kakuteishinkoku_technoplanet-maximum.png",
           "flags": ["radar-peak:tricky"]
         }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Sci-Φ-nder",
@@ -52012,7 +52040,8 @@
         { "lvl": 14, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 17.5, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:notes"] },
         { "lvl": 19.6, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:notes"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Raise the flag of victory!",
@@ -52027,7 +52056,8 @@
         { "lvl": 14, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 17, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 19.5, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:peak"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Sakura Eyelen",
@@ -52047,7 +52077,8 @@
         { "lvl": 13, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:notes"] },
         { "lvl": 16, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:notes"] },
         { "lvl": 18.4, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:notes"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "VIIIΧ",
@@ -52086,7 +52117,8 @@
           "jacket": "sdvx/nabla/viiix_tanchiky-exhaust.png",
           "flags": ["radar-peak:notes"]
         }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "Stellar Pilgrim",
@@ -52101,7 +52133,8 @@
         { "lvl": 13, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 16, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 18.6, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:notes"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     },
     {
       "name": "KAC PERFECT ULTIMATE CHRONICLE -Lord of the SOUND VOLTEX-",
@@ -52116,7 +52149,8 @@
         { "lvl": 15, "style": "single", "diffClass": "advanced", "flags": ["radar-peak:peak"] },
         { "lvl": 18.7, "style": "single", "diffClass": "exhaust", "flags": ["radar-peak:peak"] },
         { "lvl": 20.8, "style": "single", "diffClass": "maximum", "flags": ["radar-peak:peak"] }
-      ]
+      ],
+      "flags": ["otherEvents"]
     }
   ]
 }
