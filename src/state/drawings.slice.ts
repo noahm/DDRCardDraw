@@ -11,7 +11,7 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
-  isGauntletMeta,
+  isExternalMeta,
   MergedDrawing,
   newPlayer,
   Player,
@@ -254,16 +254,30 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      if (!isGauntletMeta(drawing.meta)) {
+      if (!isExternalMeta(drawing.meta)) {
         return;
       }
-      if (!drawing.meta.scoresByEntrant) {
-        drawing.meta.scoresByEntrant = {};
-        for (const entrant of drawing.meta.players) {
-          drawing.meta.scoresByEntrant[entrant.id] = {};
-        }
+      const scores = (drawing.meta.scoresByEntrant ??= {});
+      // a player added after the first score was entered has no bucket yet
+      (scores[playerId] ??= {})[chartId] = score;
+
+      // Head to head draws show per-chart win counts, so a typed score has to
+      // settle the chart too or the labels sit at zero while scores pile up.
+      // Gauntlets rank on totals and hide win counts, so they're left alone.
+      if (drawing.meta.subtype === "gauntlet") {
+        return;
       }
-      drawing.meta.scoresByEntrant[playerId][chartId] = score;
+      const ranked = drawing.meta.players
+        .map((p) => ({ id: p.id, score: scores[p.id]?.[chartId] }))
+        .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+      const everyoneScored = ranked.every((r) => typeof r.score === "number");
+      const outright = ranked.length > 1 && ranked[0].score !== ranked[1].score;
+      if (everyoneScored && outright) {
+        drawing.winners[chartId] = ranked[0].id;
+      } else {
+        // an incomplete chart or a tie has no winner to show yet
+        delete drawing.winners[chartId];
+      }
     },
     addSubdraw(
       state,

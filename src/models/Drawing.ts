@@ -60,9 +60,20 @@ interface DrawMeta {
   players: Player[];
 }
 
-interface StartggMeta extends DrawMeta {
-  type: "startgg";
+/**
+ * Shared by every draw sourced from an external bracket, head to head or not.
+ * Scores live here rather than on the gauntlet metas alone because head to head
+ * matches record them too — a bracket that ranks by score (piu-tourney-maker
+ * does) can't advance on win counts.
+ */
+interface ExternalMetaBase extends DrawMeta {
   phaseName: string;
+  /** first index is player ID, second index is the drawn chart ID */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
+}
+
+interface StartggMeta extends ExternalMetaBase {
+  type: "startgg";
 }
 
 export interface StartggVersusMeta extends StartggMeta {
@@ -75,13 +86,10 @@ export interface StartggGauntletMeta extends StartggMeta {
   subtype: "gauntlet";
   /** id of the phase */
   id: string;
-  /** first index is entrant ID, second index is the drawn chart ID */
-  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
-interface PiuMeta extends DrawMeta {
+interface PiuMeta extends ExternalMetaBase {
   type: "piu";
-  phaseName: string;
   /** id of the piu-tourney-maker tourney, for linking back */
   tourneyId: string;
 }
@@ -96,8 +104,6 @@ export interface PiuGauntletMeta extends PiuMeta {
   subtype: "gauntlet";
   /** id of the tourney-maker round holding every entrant */
   id: string;
-  /** first index is player ID, second index is the drawn chart ID */
-  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
 export interface SimpleMeta extends DrawMeta {

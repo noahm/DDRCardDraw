@@ -35,8 +35,8 @@ import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  GauntletMeta,
-  isGauntletMeta,
+  ExternalMeta,
+  isExternalMeta,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -69,7 +69,7 @@ import { CustomDrawForm } from "../controls/draw-dialog";
 import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
-const GauntletEditor = lazy(() => import("./gauntlet-scores"));
+const ScoreEditor = lazy(() => import("./score-editor"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
 function getMatchResult(
@@ -242,10 +242,11 @@ export function DrawingActions() {
   const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const highlighAtRandom = useHighlightRandom();
-  const isGauntlet = isGauntletMeta(drawingMeta);
+  // scores are recorded for every externally sourced match, h2h included
+  const canScore = isExternalMeta(drawingMeta);
   const { showBoundary } = useErrorBoundary();
-  const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
-    GauntletMeta | undefined
+  const [scoreEditorMeta, setScoreEditorMeta] = useState<
+    ExternalMeta | undefined
   >(undefined);
 
   const addToCabMenu = (
@@ -326,25 +327,25 @@ export function DrawingActions() {
           </Tooltip>
         )}
       </EventModeGated>
-      {isGauntlet && (
+      {canScore && (
         <>
-          <Tooltip content="Edit Gauntlet Scores">
+          <Tooltip content="Edit Scores">
             <Button
               variant="minimal"
               icon={<Th />}
               onClick={() => {
-                setGauntletEditorMeta(drawingMeta);
+                setScoreEditorMeta(drawingMeta);
               }}
             />
           </Tooltip>
           <Dialog
-            onClose={() => setGauntletEditorMeta(undefined)}
-            isOpen={!!gauntletEditorMeta}
-            title="Gauntlet Scores Editor"
+            onClose={() => setScoreEditorMeta(undefined)}
+            isOpen={!!scoreEditorMeta}
+            title="Score Editor"
             style={{ width: "auto" }}
           >
             <DialogBody>
-              <GauntletEditor meta={gauntletEditorMeta!} />
+              <ScoreEditor meta={scoreEditorMeta!} />
             </DialogBody>
           </Dialog>
         </>
