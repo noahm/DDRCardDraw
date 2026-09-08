@@ -7,18 +7,14 @@ import {
   Cell,
 } from "@blueprintjs/table";
 import { useDrawing } from "../drawing-context";
-import { type DrawnChart, StartggGauntletMeta } from "../models/Drawing";
+import { type DrawnChart, type GauntletMeta } from "../models/Drawing";
 import { ReactElement, useState } from "react";
 import { inferShortname } from "../controls/player-names";
 import { useDispatch } from "react-redux";
 import { drawingsSlice } from "../state/drawings.slice";
 import { ScoreSortableColumn } from "./sortable-columns";
 
-export default function GauntletScoreEditor({
-  meta,
-}: {
-  meta: StartggGauntletMeta;
-}) {
+export default function GauntletScoreEditor({ meta }: { meta: GauntletMeta }) {
   const drawingId = useDrawing((d) => d.compoundId);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);

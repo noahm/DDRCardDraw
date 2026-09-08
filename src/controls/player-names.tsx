@@ -6,10 +6,14 @@ import { useAtomValue } from "jotai";
 // import { useAppState } from "../state/store";
 import { startggEventSlug, startggKeyAtom } from "../startgg-gql";
 import { StartggCredsManager } from "../startgg-gql/components";
+import { piuTourneyIdAtom } from "../piu-tourney";
+import { PiuTourneyPicker } from "../piu-tourney/components";
+import { piuTourneyEnabled } from "../piu-tourney/client";
 
 export function PlayerNamesControls() {
   const apiKey = useAtomValue(startggKeyAtom);
   const eventSlug = useAtomValue(startggEventSlug);
+  const piuTourneyId = useAtomValue(piuTourneyIdAtom);
   return (
     <>
       <Section
@@ -22,6 +26,18 @@ export function PlayerNamesControls() {
           <StartggCredsManager />
         </SectionCard>
       </Section>
+      {piuTourneyEnabled && (
+        <Section
+          title="Tourney Maker Source"
+          collapsible
+          collapseProps={{ defaultIsOpen: !piuTourneyId }}
+          style={{ maxWidth: "50em" }}
+        >
+          <SectionCard>
+            <PiuTourneyPicker />
+          </SectionCard>
+        </Section>
+      )}
     </>
   );
 }

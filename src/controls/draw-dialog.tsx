@@ -10,6 +10,9 @@ import { ConfigSelect } from ".";
 import { PlayerListInput } from "./player-list-input";
 import { MatchPicker, GauntletPicker, PickedMatch } from "../matches";
 import { StartggApiKeyGated } from "../startgg-gql/components";
+import { PiuTourneyGated } from "../piu-tourney/components";
+import { PiuMatchPicker } from "../piu-tourney/matches";
+import { piuTourneyEnabled } from "../piu-tourney/client";
 import { createDraw } from "../state/thunks";
 import { useAppDispatch } from "../state/store";
 import { Player, SimpleMeta, newPlayer } from "../models/Drawing";
@@ -30,7 +33,18 @@ export function DrawDialog(props: Props) {
   const dispatch = useAppDispatch();
   const appMode = useAppMode();
 
-  function handleStartggDraw(match: PickedMatch) {
+  function handleExternalDraw(match: PickedMatch) {
+    if (match.provider === "piu") {
+      return handleDraw({
+        type: "piu",
+        subtype: match.subtype,
+        players: match.players,
+        title: match.title,
+        id: match.id,
+        phaseName: match.phaseName,
+        tourneyId: match.tourneyId!,
+      });
+    }
     return handleDraw({
       type: "startgg",
       subtype: match.subtype,
@@ -70,7 +84,7 @@ export function DrawDialog(props: Props) {
             id="startgg-versus"
             panel={
               <StartggApiKeyGated>
-                <MatchPicker onPickMatch={handleStartggDraw} />
+                <MatchPicker onPickMatch={handleExternalDraw} />
               </StartggApiKeyGated>
             }
           >
@@ -82,11 +96,23 @@ export function DrawDialog(props: Props) {
             id="startgg-group"
             panel={
               <StartggApiKeyGated>
-                <GauntletPicker onPickMatch={handleStartggDraw} />
+                <GauntletPicker onPickMatch={handleExternalDraw} />
               </StartggApiKeyGated>
             }
           >
             start.gg (gauntlet)
+          </Tab>
+        )}
+        {appMode === "event" && piuTourneyEnabled && (
+          <Tab
+            id="piu-tourney"
+            panel={
+              <PiuTourneyGated>
+                <PiuMatchPicker onPickMatch={handleExternalDraw} />
+              </PiuTourneyGated>
+            }
+          >
+            tourney maker
           </Tab>
         )}
       </Tabs>

@@ -35,7 +35,8 @@ import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  StartggGauntletMeta,
+  GauntletMeta,
+  isGauntletMeta,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -241,11 +242,10 @@ export function DrawingActions() {
   const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const highlighAtRandom = useHighlightRandom();
-  const isGauntlet =
-    drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
+  const isGauntlet = isGauntletMeta(drawingMeta);
   const { showBoundary } = useErrorBoundary();
   const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
-    StartggGauntletMeta | undefined
+    GauntletMeta | undefined
   >(undefined);
 
   const addToCabMenu = (
@@ -425,7 +425,8 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       );
       break;
     case "startgg":
-      // @todo figure out what edit looks like for startgg?
+    case "piu":
+      // @todo figure out what edit looks like for an externally sourced match?
       editPlayersDialog = null;
   }
 

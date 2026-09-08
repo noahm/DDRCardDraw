@@ -11,6 +11,7 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
+  isGauntletMeta,
   MergedDrawing,
   newPlayer,
   Player,
@@ -253,10 +254,7 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      if (
-        drawing.meta.type !== "startgg" ||
-        drawing.meta.subtype !== "gauntlet"
-      ) {
+      if (!isGauntletMeta(drawing.meta)) {
         return;
       }
       if (!drawing.meta.scoresByEntrant) {
