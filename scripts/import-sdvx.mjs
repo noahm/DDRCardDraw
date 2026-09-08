@@ -26,7 +26,7 @@ function typedKeys(object) {
 }
 
 const OUTFILE = "src/songs/sdvx_nabla.json";
-const JACKETS_PATH = "src/assets/jackets/sdvx/nabla";
+const JACKETS_PATH = "src/assets/jackets/sdvx";
 
 const radarAxes = [
   "notes",
@@ -36,6 +36,14 @@ const radarAxes = [
   "hand-trip",
   "one-hand",
 ];
+const chartTypes = [
+    "novice",
+    "advanced",
+    "exhaust",
+    "infinite",
+    "maximum",
+    "ultimate"
+  ];
 /**
  * @param {string} radarAxis
  */
@@ -44,14 +52,44 @@ function radarAxisToFlag(radarAxis) {
 }
 const allRadarFlags = radarAxes.map(radarAxisToFlag);
 
+function versionNumToString(version) {
+  switch(parseInt(version)) {
+    case(1): return "booth"
+    case(2): return "infinite"
+    case(3): return "gravity"
+    case(4): return "heavenly"
+    case(5): return "vivid"
+    case(6): return "exceed"
+    case(7): return "nabla"
+  };
+};
+
+async function getJackets() {
+  const jacketDirs = await fs.readdir(JACKETS_PATH);
+  const availableJackets = [];
+  for (const dir of jacketDirs) {
+    const verJackets = await fs.readdir(`${JACKETS_PATH}/${dir}`)
+    availableJackets.push(...verJackets)
+  };
+  return availableJackets;
+};
+
 async function main() {
-  const sdvxFile = process.argv[2];
-  if (!sdvxFile) {
+  let sdvxDirectory = process.argv[2];
+  if (!sdvxDirectory) {
     console.log(
-      `No data file provided. Invoke like 'yarn import:sdvx path/to/music_db.xml'`,
+      `No data directory provided. Invoke like 'yarn import:sdvx path/to/data'`,
     );
     return;
   }
+
+  // remove ending slash
+  if (sdvxDirectory.slice(-1) == "/" || sdvxDirectory.slice(-1) == "\\") {
+    sdvxDirectory = sdvxDirectory.slice(0, -1);
+  }
+
+  const sdvxFile = `${sdvxDirectory}/others/music_db.xml`;
+  const musicDir = `${sdvxDirectory}/music`;
 
   console.log(`opening ${sdvxFile} for import...`);
 
@@ -60,8 +98,8 @@ async function main() {
 
   console.log(`successfully parsed ${sdvxFile}, importing data...`);
 
-  console.log(`getting list of song jackets from ${JACKETS_PATH}`);
-  const availableJackets = new Set(await fs.readdir(JACKETS_PATH));
+  console.log(`getting list of existing song jackets from ${JACKETS_PATH}`);
+  const availableJackets = new Set(await getJackets()); 
 
   /** @type {GameData} */
   const data = {
@@ -168,9 +206,9 @@ async function main() {
         },
       },
     },
-    songs: fileData.mdb.music
+    songs: await Promise.all(fileData.mdb.music
       .filter(filterUnplayableSongs)
-      .map((song) => buildSong(song, availableJackets)),
+      .map((song) => buildSong(song, availableJackets, musicDir))),
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
@@ -183,20 +221,7 @@ function determineDiffClass(song, chartType) {
     return chartType;
   }
   const infVersion = parseInt(song.info[0].inf_ver[0]._);
-  switch (infVersion) {
-    case 2:
-      return "infinite";
-    case 3:
-      return "gravity";
-    case 4:
-      return "heavenly";
-    case 5:
-      return "vivid";
-    case 6:
-      return "exceed";
-    case 7:
-      return "nabla";
-  }
+  return versionNumToString(infVersion);
 }
 
 const songIdsToSkip = new Set(UNPLAYABLE_IDS);
@@ -204,22 +229,31 @@ function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
 }
 
+async function songToJacketNames(song, musicDir) {
+  const info = song.info[0];
+  const dirName = `${musicDir}/${song.$.id.padStart(4, "0")}_${info.ascii[0]}`
+  const songFolder = await fs.readdir(dirName);
+  return songFolder
+    .filter((fileName) => fileName.slice(-6) == "_s.png")
+    .map((fileName) => `${dirName}/${fileName}`);
+}
+
 function determineChartJacket(chartType, song, availableJackets) {
-  const songId = ("000" + parseInt(song.$.id)).slice(-4);
-  const chartTypeToNumber = {
-    novice: 1,
-    advanced: 2,
-    exhaust: 3,
-    infinite: 4,
-    maximimum: 5,
-    ultimate: 6,
-  };
-  // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
-  let jacketName = `jk_${songId}_${chartTypeToNumber[chartType]}_s.png`;
-  if (!availableJackets.has(jacketName)) {
-    return undefined;
+  let chartTypeIdx = chartTypes.findIndex((e) => e == chartType);
+  // Convert infinite charts to use correct version name for lookup
+  if (chartType == "infinite") {
+    chartType = versionNumToString(song.info[0].inf_ver[0]._);
   }
-  return `sdvx/${jacketName}`;
+  // if a chart does not have difficulty-specific song jackets, then they share the "novice" jacket
+  let jacketName = `${song.info[0].ascii[0]}-${chartType}.png`;
+  if (!availableJackets.has(jacketName)) {
+    if (availableJackets.has(`${song.info[0].ascii[0]}.png`) || chartTypeIdx == 0) {
+      return undefined;
+    }
+    // fallback to the highest named jacket
+    return determineChartJacket(chartTypes[chartTypeIdx-1], song, availableJackets);
+  }
+  return `sdvx/${versionNumToString(song.info[0].version[0]._)}/${jacketName}`;
 }
 
 /**
@@ -237,7 +271,7 @@ function reformatDate(input) {
  * @param {*} availableJackets
  * @returns {Song}
  */
-function buildSong(song, availableJackets) {
+async function buildSong(song, availableJackets, musicDir) {
   const numericId = Number.parseInt(song.$.id, 10);
   const info = song.info[0];
   // Fix accent issues with title/artist
@@ -298,6 +332,7 @@ function buildSong(song, availableJackets) {
 
   /** @type {Array<Chart>} */
   const charts = [];
+  let hasJacket = false;
   let usesSharedJacket = false;
   for (const chartType of Object.keys(song.difficulty[0])) {
     const chartInfo = song.difficulty[0][chartType][0];
@@ -319,8 +354,12 @@ function buildSong(song, availableJackets) {
     );
 
     const chartJacket = determineChartJacket(chartType, song, availableJackets);
-    if (!chartJacket) {
+    if (!chartJacket && availableJackets.has(`${info.ascii[0]}.png`)) {
       usesSharedJacket = true;
+    }
+
+    if (chartJacket || usesSharedJacket) {
+      hasJacket = true;
     }
 
     /** @type {Chart} */
@@ -351,6 +390,36 @@ function buildSong(song, availableJackets) {
     charts.push(chart);
   }
 
+   // if no jackets, import from data
+  if (!hasJacket) {
+    const jacketNames = await songToJacketNames(song, musicDir);
+    const verString = versionNumToString(info.version[0]._);
+    if (jacketNames.length == 1) {
+      fs.copyFile(jacketNames[0], `${JACKETS_PATH}/${verString}/${info.ascii[0]}.png`);
+      usesSharedJacket = true;
+    } else {
+      jacketNames.forEach((name) => {
+        const diffNumber = parseInt(name.split("_")
+          .findLast((e) => parseInt(e) <= 6))-1;
+        let diffName = chartTypes[diffNumber];
+        if (diffName == "infinite") {
+          diffName = versionNumToString(info.inf_ver[0]._);
+        }
+        const jacketName = `${verString}/${info.ascii[0]}-${diffName}`;
+        fs.copyFile(name, `${JACKETS_PATH}/${jacketName}.png`);
+        // need to add jacket to chart data
+        charts.find((c) => c.diffClass == diffName).jacket = `sdvx/${jacketName}.png`;
+      });
+      // add jacket for other charts
+      charts.filter((c) => c.jacket == undefined)
+        .forEach((c) => {
+          const prev = charts[charts.indexOf(c)-1];
+          c.jacket = prev.jacket;
+        });
+      
+    }
+  }
+
   if (usesSharedJacket) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
@@ -371,7 +440,7 @@ function buildSong(song, availableJackets) {
     saHash: song.$.id,
     artist: artist,
     jacket: usesSharedJacket
-      ? `sdvx/jk_${("000" + parseInt(song.$.id)).slice(-4)}_1_s.png`
+      ? `sdvx/${versionNumToString(info.version[0]._)}/${info.ascii[0]}.png`
       : "sdvx6.png",
     bpm,
     charts,
