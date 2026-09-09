@@ -1,7 +1,11 @@
 import { useParams } from "react-router-dom";
 import { drawingsSlice } from "../state/drawings.slice";
 import { useAppState } from "../state/store";
-import { getAllPlayers } from "../models/Drawing";
+import {
+  getAllPlayers,
+  isExternalMeta,
+  isGauntletMeta,
+} from "../models/Drawing";
 
 export function GlobalLabel() {
   const params = useParams<"roomName" | "labelId">();
@@ -61,8 +65,7 @@ export function CabPlayer(props: {
     if (displayType === "pronouns") {
       return player?.pronouns || "";
     }
-    const hideWins =
-      parent.meta.type === "startgg" && parent.meta.subtype === "gauntlet";
+    const hideWins = isGauntletMeta(parent.meta);
     if (hideWins) {
       return name;
     }
@@ -88,7 +91,7 @@ export function PhaseName() {
     if (!drawingId) return null;
     const [parent] = drawingsSlice.selectors.byCompoundOrPlainId(s, drawingId);
     if (!parent) return null;
-    return parent.meta.type === "startgg" ? parent.meta.phaseName : null;
+    return isExternalMeta(parent.meta) ? parent.meta.phaseName : null;
   });
 
   return <h1>{text}</h1>;

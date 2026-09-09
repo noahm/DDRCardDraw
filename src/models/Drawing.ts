@@ -62,9 +62,20 @@ interface DrawMeta {
   players: Player[];
 }
 
-interface StartggMeta extends DrawMeta {
-  type: "startgg";
+/**
+ * Shared by every draw sourced from an external bracket, head to head or not.
+ * Scores live here rather than on the gauntlet metas alone because head to head
+ * matches record them too — a bracket that ranks by score (piu-tourney-maker
+ * does) can't advance on win counts.
+ */
+interface ExternalMetaBase extends DrawMeta {
   phaseName: string;
+  /** first index is player ID, second index is the drawn chart ID */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
+}
+
+interface StartggMeta extends ExternalMetaBase {
+  type: "startgg";
 }
 
 export interface StartggVersusMeta extends StartggMeta {
@@ -77,12 +88,54 @@ export interface StartggGauntletMeta extends StartggMeta {
   subtype: "gauntlet";
   /** id of the phase */
   id: string;
-  /** first index is entrant ID, second index is the drawn chart ID */
-  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
+}
+
+interface PiuMeta extends ExternalMetaBase {
+  type: "piu";
+  /** id of the piu-tourney-maker tourney, for linking back */
+  tourneyId: string;
+}
+
+export interface PiuVersusMeta extends PiuMeta {
+  subtype: "versus";
+  /** id of the tourney-maker round — one round is one match */
+  id: string;
+}
+
+export interface PiuGauntletMeta extends PiuMeta {
+  subtype: "gauntlet";
+  /** id of the tourney-maker round holding every entrant */
+  id: string;
 }
 
 export interface SimpleMeta extends DrawMeta {
   type: "simple";
+}
+
+/** any draw sourced from an external bracket, as opposed to a custom draw */
+export type ExternalMeta =
+  | StartggVersusMeta
+  | StartggGauntletMeta
+  | PiuVersusMeta
+  | PiuGauntletMeta;
+
+/**
+ * A draw covering a whole group of players at once rather than a head to head
+ * match. These score by total points instead of per-chart wins.
+ */
+export type GauntletMeta = StartggGauntletMeta | PiuGauntletMeta;
+
+export function isExternalMeta(meta: Drawing["meta"]): meta is ExternalMeta {
+  return meta.type === "startgg" || meta.type === "piu";
+}
+
+export function isGauntletMeta(meta: Drawing["meta"]): meta is GauntletMeta {
+  return isExternalMeta(meta) && meta.subtype === "gauntlet";
+}
+
+/** Identifies an external match across providers, for de-duping draws. */
+export function externalMatchKey(meta: ExternalMeta) {
+  return `${meta.type}:${meta.id}`;
 }
 
 /** a player's name, falling back to a positional placeholder when unnamed */
@@ -120,7 +173,7 @@ export type CompoundSetId = [parentId: string, targetId: string];
 export interface Drawing {
   id: string;
   configId: string;
-  meta: SimpleMeta | StartggVersusMeta | StartggGauntletMeta;
+  meta: SimpleMeta | ExternalMeta;
   /** map of song ID to the id of the winning player */
   winners: Record<string, string | null>;
   /** @deprecated migrating to subDraws */

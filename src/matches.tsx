@@ -3,14 +3,18 @@ import { useStartggMatches, useStartggPhases } from "./startgg-gql";
 import { createAppSelector, useAppState } from "./state/store";
 import { inferShortname } from "./controls/player-names";
 import { Refresh } from "@blueprintjs/icons";
-import { Player } from "./models/Drawing";
+import { externalMatchKey, isExternalMeta, Player } from "./models/Drawing";
 
 export interface PickedMatch {
+  /** which bracket service this match came from */
+  provider: "startgg" | "piu";
   title: string;
   players: Player[];
   id: string;
   subtype: "versus" | "gauntlet";
   phaseName: string;
+  /** piu only: the tourney-maker tournament this match belongs to */
+  tourneyId?: string;
 }
 
 /**
@@ -28,11 +32,15 @@ function inferPronouns(entrant: {
   );
 }
 
-const associatedMatchIds = createAppSelector(
+/**
+ * Keys of every match already drawn for, so pickers can dim them. Namespaced by
+ * provider because ids are only unique within one service.
+ */
+export const associatedMatchIds = createAppSelector(
   [(s) => s.drawings.entities],
   (entities) => {
     return Object.values(entities).flatMap((drawing) => {
-      if (drawing.meta.type === "startgg") return drawing.meta.id;
+      if (isExternalMeta(drawing.meta)) return externalMatchKey(drawing.meta);
       return [];
     });
   },
@@ -96,7 +104,7 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
 
           const p1 = inferShortname(match.slots![0]?.entrant?.name);
           const p2 = inferShortname(match.slots![1]?.entrant?.name);
-          const matchUsed = existingMatches.includes(match.id!);
+          const matchUsed = existingMatches.includes(`startgg:${match.id!}`);
           return (
             <Card
               key={match.id!}
@@ -110,6 +118,7 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
                   ? undefined
                   : () =>
                       props.onPickMatch?.({
+                        provider: "startgg",
                         title,
                         players: match.slots!.map((slot) => ({
                           id: slot!.entrant!.id!,
@@ -201,7 +210,7 @@ export function GauntletPicker(props: {
                 pronouns: inferPronouns(seed.entrant),
               };
             }) || [];
-          const matchUsed = existingMatches.includes(phase.id!);
+          const matchUsed = existingMatches.includes(`startgg:${phase.id!}`);
           return (
             <Card
               key={phase.id!}
@@ -215,6 +224,7 @@ export function GauntletPicker(props: {
                   ? undefined
                   : () =>
                       props.onPickMatch?.({
+                        provider: "startgg",
                         title,
                         players: entrants,
                         id: phase.id!,

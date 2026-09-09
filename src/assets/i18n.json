@@ -134,6 +134,19 @@
       "title": "Error Caught!",
       "description": "A deeply embarassing error just happened somewhere near here. If you're lucky, a reset will fix things up.",
       "reset": "Reset"
+    },
+    "piuTourney": {
+      "explainer": "Pick a tournament from piu-tourney-maker to draw its upcoming matches. Read only — nothing is reported back.",
+      "idLabel": "tournament link or id (in the form of: /tourney/123)",
+      "save": "Save",
+      "change": "change",
+      "badId": "Expected a tournament link or a numeric id",
+      "loadFailed": "Couldn't load that tournament",
+      "noMatches": "no unfinished matches found in this tournament",
+      "noSeededMatches": "no unfinished matches have entrants yet",
+      "headToHead": "Head to head",
+      "gauntlet": "Gauntlet",
+      "notConfigured": "This build has no tourney maker credentials. Set PIU_TOURNEY_SUPABASE_URL and PIU_TOURNEY_SUPABASE_ANON_KEY and rebuild."
     }
   },
   "ja": {
