@@ -192,6 +192,7 @@ export const DDR_WORLD: DDRSourceMeta = {
       ["Ganymede -re:born-", { artist_translation: undefined }], // Broken HTML
       ["Timepiece phase II", { name: "Timepiece phase Ⅱ" }],
       ["Liar×Girl", { artist_translation: undefined }], // Broken HTML
+      ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
       // #endregion DDR WORLD
       // #region DDR A3
       ["Ambivalent Vermilia", { artist_translation: undefined }], // Broken HTML

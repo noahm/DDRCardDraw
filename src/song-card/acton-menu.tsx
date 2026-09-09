@@ -12,6 +12,16 @@ import {
 import { Menu, MenuItem, MenuDivider } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
 import { JSX } from "react";
+import { useGetMetaString } from "../game-data-utils";
+
+/** A game-specific info action contributed by a card variant. */
+export interface MenuInfoAction {
+  key: string;
+  /** a bare game-data i18n key, resolved against the active game's strings */
+  labelKey: string;
+  icon?: JSX.Element;
+  onClick: () => void;
+}
 
 interface Props {
   onStartPocketPick?: (p: string) => void;
@@ -20,6 +30,7 @@ interface Props {
   onRedraw?: () => void;
   onSetWinner?: (p: string | null) => void;
   onCopy?: () => void;
+  infoActions?: MenuInfoAction[];
 }
 
 export function ActionMenu(props: Props) {
@@ -30,9 +41,11 @@ export function ActionMenu(props: Props) {
     onRedraw,
     onSetWinner,
     onCopy,
+    infoActions,
   } = props;
 
   const { t } = useIntl();
+  const getMetaString = useGetMetaString();
 
   return (
     <Menu>
@@ -71,6 +84,16 @@ export function ActionMenu(props: Props) {
           onClick={onCopy}
         />
       )}
+      {infoActions?.map((action) => (
+        <MenuItem
+          key={action.key}
+          text={getMetaString(action.labelKey)}
+          icon={action.icon}
+          onClick={action.onClick}
+          // keep the popover open so it can swap to the action's content in place
+          shouldDismissPopover={false}
+        />
+      ))}
       {onRedraw && (
         <>
           <MenuDivider />

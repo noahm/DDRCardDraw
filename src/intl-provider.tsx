@@ -4,14 +4,17 @@ import { IntlProvider as UpstreamProvider } from "react-intl";
 import translations from "./assets/i18n.json";
 import { I18NDict } from "./models/SongData";
 import { detectedLanguage, flattenedKeys } from "./utils";
-import { stockDataCache } from "./state/game-data.atoms";
+import { customDataCache, stockDataCache } from "./state/game-data.atoms";
 
 const FALLBACK_LOCALE = "en";
 
 const typedTranslations = translations as Record<string, I18NDict>;
 
 export function IntlProviderWrapper({ children }: { children: ReactNode }) {
-  const allLoadedData = useAtomValue(stockDataCache);
+  const stockData = useAtomValue(stockDataCache);
+  // Custom data is keyed by its bundle URL — the same value `config.gameKey` holds
+  // for an attached set — so its prefix matches `useGetMetaString`'s `game.${gameKey}.`.
+  const customData = useAtomValue(customDataCache);
 
   const messages = useMemo(() => {
     const ret: Record<string, string> = {};
@@ -21,7 +24,10 @@ export function IntlProviderWrapper({ children }: { children: ReactNode }) {
     for (const [k, v] of flattenedKeys(typedTranslations[detectedLanguage])) {
       ret[k] = v;
     }
-    for (const [gameKey, data] of Object.entries(allLoadedData)) {
+    for (const [gameKey, data] of [
+      ...Object.entries(stockData),
+      ...Object.entries(customData),
+    ]) {
       const gameSpecificTranslations = data.i18n;
       if (gameSpecificTranslations) {
         const keyPrefix = `game.${gameKey}.`;
@@ -38,7 +44,7 @@ export function IntlProviderWrapper({ children }: { children: ReactNode }) {
       }
     }
     return ret;
-  }, [allLoadedData]);
+  }, [stockData, customData]);
 
   return (
     <UpstreamProvider locale={detectedLanguage} messages={messages}>

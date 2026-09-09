@@ -29,7 +29,7 @@ import { useSetLastConfigSelected } from "../state/config.atoms";
 import { configSlice } from "../state/config.slice";
 import { loadConfigs, saveConfig, saveConfigs } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
-import { useStockGameData } from "../state/game-data.atoms";
+import { useGameDataForKey } from "../state/game-data.atoms";
 import { toaster } from "../toaster";
 
 function getEmptyItemLabel(empty: boolean) {
@@ -82,9 +82,11 @@ function ConfigSelectEntry(props: { configId: string }) {
   const config = useAppState((s) =>
     configSlice.selectors.selectById(s, props.configId),
   );
+  const gameData = useGameDataForKey(config.gameKey);
+  const gameName = (gameData?.i18n.en.name as string) || config.gameKey;
   return (
     <option value={config.id}>
-      {config.name} ({config.gameKey}, {config.lowerBound}-{config.upperBound})
+      {config.name} ({gameName}, {config.lowerBound}-{config.upperBound})
     </option>
   );
 }
@@ -261,11 +263,13 @@ function BatchExportRow(props: {
   const config = useAppState((s) =>
     configSlice.selectors.selectById(s, props.configId),
   );
+  const gameData = useGameDataForKey(config.gameKey);
+  const gameName = (gameData?.i18n.en.name as string) || config.gameKey;
   return (
     <Checkbox
       checked={props.checked}
       onChange={() => props.onToggle(props.configId)}
-      label={`${config.name} (${config.gameKey}, ${config.lowerBound}-${config.upperBound})`}
+      label={`${config.name} (${gameName}, ${config.lowerBound}-${config.upperBound})`}
     />
   );
 }
@@ -282,7 +286,7 @@ function ConfigListEntry(props: {
   const config = useAppState((s) =>
     configSlice.selectors.selectById(s, props.configId),
   );
-  const gameData = useStockGameData(config.gameKey);
+  const gameData = useGameDataForKey(config.gameKey);
   const multiDraws = config.multiDraws?.configs.length
     ? `${config.multiDraws.configs.length} ${config.multiDraws.merge ? "draws" : "sets"}`
     : null;
@@ -326,8 +330,9 @@ function ConfigListEntry(props: {
       )}
       <h2>{config.name}</h2>
       <p>
-        {config.gameKey}, draw {config.chartCount},{" "}
-        {gameData?.meta.usesDrawGroups ? "tier" : "lvl"} {config.lowerBound}
+        {(gameData?.i18n.en.name as string) || config.gameKey}, draw{" "}
+        {config.chartCount}, {gameData?.meta.usesDrawGroups ? "tier" : "lvl"}{" "}
+        {config.lowerBound}
         &ndash;{config.upperBound}
         <br />
         {multiDraws && ` (+${multiDraws})`}

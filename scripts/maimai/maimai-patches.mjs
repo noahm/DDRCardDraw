@@ -1,7 +1,8 @@
 /**
  * @file maimai-patch.mjs
  * Fields here will override/fill missing song info or chart info.
- * Overriding info for individual sheets is not supported currently.
+ * Overriding info for individual sheets is not supported currently, with the
+ * exception of `regions`, which is applied to every sheet of the song.
  */
 
 import { release } from "node:process";
@@ -85,5 +86,35 @@ export const MAIMAI_PATCH = {
   },
   "エンジェル ドリーム": {
     bpm: 180,
+    releaseDate: "2025-09-26",
+  },
+  "Bring it on": {
+    releaseDate: "2025-09-18",
+    /* temporary Release Date value */
+  },
+  モニタリング: {
+    releaseDate: "2025-09-18",
+  },
+  有頂天ドリーマーズ: {
+    releaseDate: "2025-09-18",
+  },
+  サイエンス: {
+    releaseDate: "2025-09-18",
+  },
+
+  // Songs present in the Asia release but hidden in the North American one.
+  // https://silentblue.remywiki.com/maimai_DX:CiRCLE_(Asia)
+  // https://silentblue.remywiki.com/maimai_DX:CiRCLE_PLUS_(Asia)
+  Overdose: {
+    regions: { jp: true, intl: true, usa: false },
+  },
+  "Colorful Starting Line": {
+    regions: { jp: true, intl: true, usa: false },
+  },
+  "Chasing destiny": {
+    regions: { jp: true, intl: true, usa: false },
+  },
+  "無敵的ハピネス！(SOS団5人Ver.)": {
+    regions: { jp: true, intl: true, usa: false },
   },
 };

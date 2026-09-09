@@ -72,7 +72,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "config",
+        path: "config/:configId?",
         lazy: async () => {
           const mod = await import("./controls/config-page");
           return { Component: mod.ConfigPage };
@@ -114,7 +114,7 @@ const router = createBrowserRouter([
         }),
       },
       {
-        path: "config",
+        path: "config/:configId?",
         lazy: async () => {
           const { ConfigPage } = await import("./controls/config-page");
           return { Component: ConfigPage };

@@ -16,8 +16,12 @@ export function useThemePref() {
   return useMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light";
 }
 
+/**
+ * @param theme the theme to apply
+ * @param isOBSSource if true, ignores theme, applies dark and an extra obs-layer classname
+ */
 function applyThemeBodyClass(theme: Theme, isOBSSource: boolean) {
-  document.body.classList.toggle(Classes.DARK, theme === "dark");
+  document.body.classList.toggle(Classes.DARK, isOBSSource || theme === "dark");
   document.body.classList.toggle("obs-layer", isOBSSource);
 }
 

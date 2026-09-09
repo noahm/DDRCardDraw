@@ -1,5 +1,10 @@
 # DDR Tools Network Features
 
+> [!WARNING]
+> **These features are planned for removal.** They still work today and are documented below, but the peer-to-peer design has known problems that can't be fixed without a rewrite (see [Known Issues](#known-issues)), so they will be removed from this app in a future update.
+>
+> That rewrite already exists in the alpha build at **<https://next.ddr.tools/>**, where networking is far more robust. If you run tournaments or live streams, that's where you'll have the best experience.
+
 The DDR Tools app can connect with other devices over the internet to share card draw results. This can be especially useful for larger events, sharing drawn cards with an audience of spectators, etc.
 
 ## Connecting
@@ -50,7 +55,7 @@ If you use these features in a tournament setting, try to mitigate this as best 
 - are set to never go to sleep, nobody closes any laptop lid, or presses the lock button on any iPad
 - are on a _reliable_ internet connection
 
-Most of the above is unavoidable with the current networking design, but in the future the app may be able to remember peer hostnames to allow for more covenient reconnects.
+All of the above is unavoidable with the current networking design, which is why these features are being retired rather than patched. The [alpha build](https://next.ddr.tools/) handles reconnects far more gracefully.
 
 ### Missed updates
 

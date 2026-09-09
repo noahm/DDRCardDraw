@@ -18,6 +18,8 @@ The per-player sources (name, score, pronouns) each default to player 1. Edit th
 
 The pronouns source shows whatever a player has published on their start.gg profile, so it only fills in for matches drawn from start.gg, and only for players who have set them. It's blank otherwise, same as an unassigned cab.
 
+Inside OBS, sources always render in dark mode, so text is white by default. If you want dark text instead, set a `color` rule in your custom CSS as described below.
+
 ## Custom styles
 
 Adding custom CSS to text-based sources is a great way to help the info fit the graphic design of the rest of your stream graphics.

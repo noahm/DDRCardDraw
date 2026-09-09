@@ -1,8 +1,8 @@
 import { useAppDispatch, useAppState } from "./store";
 import { EqualityFn } from "react-redux";
 import { createContext, useCallback, useContext } from "react";
-import { configSlice, type ConfigState } from "./config.slice";
-import { useStockGameData } from "./game-data.atoms";
+import { configSlice, type ConfigState, defaultConfig } from "./config.slice";
+import { useGameDataForKey } from "./game-data.atoms";
 
 const configContext = createContext<string | null>(null);
 
@@ -22,7 +22,8 @@ export function useConfigState<T = ConfigState>(
 ) {
   const configId = useConfigId();
   return useAppState((state) => {
-    const configObj = configSlice.selectors.selectById(state, configId);
+    const configObj =
+      configSlice.selectors.selectById(state, configId) || defaultConfig;
     if (!selector) return configObj as T;
     return selector(configObj);
   }, equalityFn);
@@ -30,7 +31,7 @@ export function useConfigState<T = ConfigState>(
 
 export function useGameData() {
   const gameKey = useConfigState((c) => c.gameKey);
-  return useStockGameData(gameKey);
+  return useGameDataForKey(gameKey);
 }
 
 export function useUpdateConfig() {

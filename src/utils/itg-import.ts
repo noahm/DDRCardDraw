@@ -1,9 +1,40 @@
-import type { PackWithSongs } from "simfile-parser/browser";
+import type { PackWithSongs, Simfile } from "simfile-parser/browser";
 import { GameData, Chart, Song } from "../models/SongData";
+
+/**
+ * Reads each song's cover image and wraps it in an object URL. Cover images are
+ * only read on demand now, so this is done once per pack rather than every time
+ * the derived data is rebuilt.
+ *
+ * The URLs deliberately outlive this call: they end up in imported game data
+ * that stays in app state, so revoking them would blank out every cover.
+ * @param pack a parsed pack
+ * @returns an object URL for each song that ships a usable image
+ */
+export async function resolveJackets(
+  pack: PackWithSongs,
+): Promise<Map<Simfile, string>> {
+  const jackets = new Map<Simfile, string>();
+  for (const song of pack.simfiles) {
+    const { bg, banner, jacket } = song.title;
+    const image = jacket || bg || banner;
+    if (!image) {
+      continue;
+    }
+    try {
+      jackets.set(song, URL.createObjectURL(await image.file()));
+    } catch (e) {
+      // one unreadable image shouldn't sink the whole import
+      console.error(`could not read cover for '${song.title.titleName}'`, e);
+    }
+  }
+  return jackets;
+}
 
 export function getDataFileFromPack(
   pack: PackWithSongs,
   useTiers = false,
+  jackets?: ReadonlyMap<Simfile, string>,
 ): GameData {
   const someColors: Record<string, string | undefined> = {
     beginner: "#98aafd",
@@ -57,9 +88,6 @@ export function getDataFileFromPack(
   };
 
   for (const parsedSong of pack.simfiles) {
-    const { bg, banner, jacket } = parsedSong.title;
-    const finalJacket = jacket || bg || banner;
-
     let bpm = parsedSong.displayBpm;
     if (bpm === "NaN") {
       if (parsedSong.minBpm === parsedSong.maxBpm) {
@@ -77,7 +105,7 @@ export function getDataFileFromPack(
     const song: Song = {
       name: parsedSong.title.titleName,
       name_translation: parsedSong.title.translitTitleName || "",
-      jacket: finalJacket ? URL.createObjectURL(finalJacket) : "",
+      jacket: jackets?.get(parsedSong) ?? "",
       bpm,
       artist: parsedSong.artist,
       charts: [],
