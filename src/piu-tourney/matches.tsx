@@ -17,13 +17,25 @@ function isGauntlet(match: PiuMatch, tourneyType: TourneyType | null) {
 }
 
 /**
- * `formatRoundName` in tourney-maker writes round names as
- * "<label>: <p1> vs. <p2>". Player names render separately from meta.players,
- * so we keep just the label and pair it with the phase, matching how the
- * start.gg picker uses fullRoundText.
+ * Round names come in two shapes. Bracket rounds are named by
+ * `formatRoundName` as "<label>: <p1> vs. <p2>", where the tail repeats player
+ * names we already render separately. Tournaments that name their own rounds
+ * use the colon differently — "Round 2: Losers B (Purple)" — and there the tail
+ * is the only thing telling two rounds apart.
+ *
+ * So the tail is dropped only when it actually looks like the player names
+ * `formatRoundName` appends; otherwise the name is kept whole.
  */
+function matchLabel(name: string) {
+  const split = name.indexOf(": ");
+  if (split === -1) return name;
+  const tail = name.slice(split + 2);
+  const isPlayerList = tail.includes(" vs. ") || tail.endsWith(" (Bye)");
+  return isPlayerList ? name.slice(0, split) : name;
+}
+
 function matchTitle(match: PiuMatch) {
-  const label = match.name.split(": ")[0];
+  const label = matchLabel(match.name);
   const phase = match.round_pools?.name;
   return [phase, label]
     .filter((piece, i, all) => !!piece && all.indexOf(piece) === i)
