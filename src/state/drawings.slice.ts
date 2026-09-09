@@ -23,6 +23,27 @@ import { mergeDraws } from "./central";
 
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
 
+/**
+ * The outright winner the recorded scores name for a chart, if any. Undefined
+ * while a score is missing or the top two are level, since neither settles it.
+ */
+function impliedWinner(
+  players: Player[],
+  scores: Record<string, Record<string, number | undefined>>,
+  chartId: string,
+) {
+  const ranked = players
+    .map((p) => ({ id: p.id, score: scores[p.id]?.[chartId] }))
+    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+  if (!ranked.every((r) => typeof r.score === "number")) {
+    return undefined;
+  }
+  if (ranked.length < 2 || ranked[0].score === ranked[1].score) {
+    return undefined;
+  }
+  return ranked[0].id;
+}
+
 /** payload is the drawing id */
 type ActionOnSingleDrawing = PayloadAction<string>;
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
@@ -258,6 +279,14 @@ export const drawingsSlice = createSlice({
         return;
       }
       const scores = (drawing.meta.scoresByEntrant ??= {});
+      // what the scores said before this edit, so a winner set by clicking the
+      // card is never cleared by a half-filled score grid
+      const impliedBefore = impliedWinner(
+        drawing.meta.players,
+        scores,
+        chartId,
+      );
+
       // a player added after the first score was entered has no bucket yet
       (scores[playerId] ??= {})[chartId] = score;
 
@@ -267,15 +296,11 @@ export const drawingsSlice = createSlice({
       if (drawing.meta.subtype === "gauntlet") {
         return;
       }
-      const ranked = drawing.meta.players
-        .map((p) => ({ id: p.id, score: scores[p.id]?.[chartId] }))
-        .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
-      const everyoneScored = ranked.every((r) => typeof r.score === "number");
-      const outright = ranked.length > 1 && ranked[0].score !== ranked[1].score;
-      if (everyoneScored && outright) {
-        drawing.winners[chartId] = ranked[0].id;
-      } else {
-        // an incomplete chart or a tie has no winner to show yet
+      const implied = impliedWinner(drawing.meta.players, scores, chartId);
+      if (implied) {
+        drawing.winners[chartId] = implied;
+      } else if (drawing.winners[chartId] === impliedBefore) {
+        // the winner on file came from this grid and no longer holds
         delete drawing.winners[chartId];
       }
     },
