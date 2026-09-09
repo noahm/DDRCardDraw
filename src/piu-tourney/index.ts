@@ -1,33 +1,15 @@
-import { atomWithStorage } from "jotai/utils";
 import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useState } from "react";
 import { piuClient } from "./client";
+import { piuTourneyIdAtom } from "./atoms";
 import type { Database, RoundStatus, TourneyType } from "./database.types";
 import { COMPLETE } from "./database.types";
 
 type Tables = Database["public"]["Tables"];
 
-/**
- * Which tourney-maker tournament this device draws from. Stored per-device
- * like the start.gg slug, not synced through partykit.
- *
- * tourney-maker addresses everything by bare bigint id — no slugs, no uuids.
- */
-export const piuTourneyIdAtom = atomWithStorage<number | null>(
-  "ddrtools.event.piutourneyid",
-  null,
-  undefined,
-  { getOnInit: true },
-);
-
-/** Accepts a tourney-maker URL (…/tourney/123/whatever) or a bare id. */
-export function parseTourneyId(raw: string): number | null {
-  const trimmed = raw.trim();
-  if (!trimmed) return null;
-  const fromUrl = trimmed.match(/\/tourney\/(\d+)/);
-  const id = Number(fromUrl ? fromUrl[1] : trimmed);
-  return Number.isInteger(id) && id > 0 ? id : null;
-}
+// piuTourneyIdAtom and parseTourneyId live in ./atoms so the settings tab can
+// reach them without loading the Supabase client.
+export { piuTourneyIdAtom, parseTourneyId } from "./atoms";
 
 export interface QueryResult<T> {
   data: T | undefined;
