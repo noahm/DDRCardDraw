@@ -99,41 +99,50 @@ export function PiuMatchPicker(props: {
       </div>
     );
   }
-  if (!resp.data.length) {
+  // A round with fewer than two entrants is a bye, or a slot the bracket hasn't
+  // decided yet. Drawing for one produces a set nobody can play, so it's left
+  // out entirely rather than listed as an option that can't be taken.
+  const drawable = resp.data.filter((m) => m.player_rounds.length >= 2);
+
+  if (!drawable.length) {
     return (
       <div>
         {header}{" "}
-        {t(
-          "piuTourney.noMatches",
-          undefined,
-          "no unfinished matches found in this tournament",
-        )}
+        {resp.data.length
+          ? t(
+              "piuTourney.noSeededMatches",
+              undefined,
+              "no unfinished matches have entrants yet",
+            )
+          : t(
+              "piuTourney.noMatches",
+              undefined,
+              "no unfinished matches found in this tournament",
+            )}
       </div>
     );
   }
 
   const tourneyType = tourney.data?.type ?? null;
-  const headToHead = resp.data.filter((m) => !isGauntlet(m, tourneyType));
-  const gauntlets = resp.data.filter((m) => isGauntlet(m, tourneyType));
+  const headToHead = drawable.filter((m) => !isGauntlet(m, tourneyType));
+  const gauntlets = drawable.filter((m) => isGauntlet(m, tourneyType));
 
   function renderMatch(match: PiuMatch) {
     const title = matchTitle(match);
     const players = matchPlayers(match);
     const subtype = isGauntlet(match, tourneyType) ? "gauntlet" : "versus";
     const matchUsed = existingMatches.includes(`piu:${match.id}`);
-    // byes and not-yet-decided matches are normal here, and drawing for them
-    // would produce a set nobody can play
-    const pickable = !matchUsed && players.length > 1;
 
     return (
       <Card
         key={match.id}
-        interactive={pickable}
-        style={{ opacity: pickable ? undefined : 0.5 }}
+        interactive={!matchUsed}
+        style={{ opacity: matchUsed ? 0.5 : undefined }}
         compact
         onClick={
-          pickable
-            ? () =>
+          matchUsed
+            ? undefined
+            : () =>
                 props.onPickMatch?.({
                   provider: "piu",
                   title,
@@ -143,19 +152,14 @@ export function PiuMatchPicker(props: {
                   phaseName: match.round_pools?.name || "",
                   tourneyId: String(tourneyId),
                 })
-            : undefined
         }
       >
         <Text tagName="p">
           <strong>{title}</strong>
           {" - "}
-          {players.length ? (
-            players
-              .map((p) => p.name)
-              .join(subtype === "versus" ? " vs " : ", ")
-          ) : (
-            <em>TBD</em>
-          )}
+          {players
+            .map((p) => p.name)
+            .join(subtype === "versus" ? " vs " : ", ")}
         </Text>
       </Card>
     );
