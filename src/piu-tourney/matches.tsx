@@ -73,12 +73,7 @@ export function PiuMatchPicker(props: {
     />
   );
 
-  const header = (
-    <>
-      <PiuTourneyHeader />
-      {reloadButton}
-    </>
-  );
+  const header = <PiuTourneyHeader rightElement={reloadButton} />;
 
   if (resp.error) {
     return (

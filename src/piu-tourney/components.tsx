@@ -1,4 +1,5 @@
 import { Button, Callout, InputGroup, Label, Text } from "@blueprintjs/core";
+import { Edit } from "@blueprintjs/icons";
 import { useAtom } from "jotai";
 import React, { ReactNode, useCallback, useRef, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
@@ -113,18 +114,41 @@ export function PiuTourneyPicker() {
   );
 }
 
-/** Compact "drawing from X — change" line shown above the match list. */
-export function PiuTourneyHeader() {
+/**
+ * Compact "drawing from X" line shown above the match list, with a pencil to
+ * pick a different tournament. `rightElement` is pushed to the far edge of the
+ * same row, so a caller's own control shares this line rather than taking
+ * another one.
+ */
+export function PiuTourneyHeader(props: { rightElement?: ReactNode }) {
   const { t } = useIntl();
   const [tourneyId, setTourneyId] = useAtom(piuTourneyIdAtom);
   const [tourney] = usePiuTourney(tourneyId);
   if (!tourneyId) return null;
+  // the pencil replaces what used to be a "change" text button, so the label it
+  // carried has to survive as the icon's accessible name
+  const changeLabel = t("piuTourney.change", undefined, "change");
   return (
-    <Text tagName="p">
-      <strong>{tourney.data?.name || `#${tourneyId}`}</strong>{" "}
-      <Button variant="minimal" size="small" onClick={() => setTourneyId(null)}>
-        {t("piuTourney.change", undefined, "change")}
-      </Button>
-    </Text>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "4px",
+        marginBottom: "10px",
+      }}
+    >
+      <strong>{tourney.data?.name || `#${tourneyId}`}</strong>
+      <Button
+        variant="minimal"
+        size="small"
+        icon={<Edit />}
+        aria-label={changeLabel}
+        title={changeLabel}
+        onClick={() => setTourneyId(null)}
+      />
+      {props.rightElement && (
+        <div style={{ marginLeft: "auto" }}>{props.rightElement}</div>
+      )}
+    </div>
   );
 }
