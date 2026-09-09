@@ -43,12 +43,12 @@ export function CabPlayers() {
 }
 
 export function toDisplayType(input: string | undefined) {
-  return input as "name" | "score" | undefined;
+  return input as "name" | "score" | "pronouns" | undefined;
 }
 
 export function CabPlayer(props: {
   p: number;
-  displayType?: "name" | "score";
+  displayType?: "name" | "score" | "pronouns";
 }) {
   const { displayType } = props;
   const params = useParams<"roomName" | "cabId">();
@@ -60,6 +60,11 @@ export function CabPlayer(props: {
     const player = parent.meta.players[props.p - 1];
     const playerId = player?.id;
     const name = player?.name || "";
+    // only players drawn from start.gg carry pronouns, and only when they've
+    // published them, so this source is often intentionally empty
+    if (displayType === "pronouns") {
+      return player?.pronouns || "";
+    }
     const hideWins = isGauntletMeta(parent.meta);
     if (hideWins) {
       return name;

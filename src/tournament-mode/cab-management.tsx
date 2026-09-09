@@ -19,6 +19,7 @@ import {
   Cross,
   DiagramTree,
   Font,
+  Label,
   Layers,
   MobileVideo,
   More,
@@ -150,6 +151,12 @@ function CabSummary({ cab }: { cab: CabInfo }) {
               icon={<Numerical />}
               text="Score"
               stub="player/1/score"
+              cabId={cab.id}
+            />
+            <CopySourceMenuItem
+              icon={<Label />}
+              text="Pronouns"
+              stub="player/1/pronouns"
               cabId={cab.id}
             />
           </MenuItem>

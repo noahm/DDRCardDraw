@@ -3,18 +3,33 @@ import { useStartggMatches, useStartggPhases } from "./startgg-gql";
 import { createAppSelector, useAppState } from "./state/store";
 import { inferShortname } from "./controls/player-names";
 import { Refresh } from "@blueprintjs/icons";
-import { externalMatchKey, isExternalMeta } from "./models/Drawing";
+import { externalMatchKey, isExternalMeta, Player } from "./models/Drawing";
 
 export interface PickedMatch {
   /** which bracket service this match came from */
   provider: "startgg" | "piu";
   title: string;
-  players: Array<{ id: string; name: string }>;
+  players: Player[];
   id: string;
   subtype: "versus" | "gauntlet";
   phaseName: string;
   /** piu only: the tourney-maker tournament this match belongs to */
   tourneyId?: string;
+}
+
+/**
+ * start.gg publishes pronouns per-user, so a team entrant can carry more than
+ * one. Use the first pronoun anybody on the entrant has set, if any.
+ */
+function inferPronouns(entrant: {
+  participants?: Array<{
+    user?: { genderPronoun?: string | null } | null;
+  } | null> | null;
+}) {
+  return (
+    entrant.participants?.find((p) => p?.user?.genderPronoun)?.user
+      ?.genderPronoun || undefined
+  );
 }
 
 /**
@@ -108,6 +123,7 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
                         players: match.slots!.map((slot) => ({
                           id: slot!.entrant!.id!,
                           name: inferShortname(slot!.entrant!.name)!,
+                          pronouns: inferPronouns(slot!.entrant!),
                         })),
                         id: match.id!,
                         subtype: "versus",
@@ -191,6 +207,7 @@ export function GauntletPicker(props: {
               return {
                 name: inferShortname(seed.entrant.name),
                 id: seed.entrant.id,
+                pronouns: inferPronouns(seed.entrant),
               };
             }) || [];
           const matchUsed = existingMatches.includes(`startgg:${phase.id!}`);

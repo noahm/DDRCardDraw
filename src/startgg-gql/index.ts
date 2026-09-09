@@ -110,6 +110,13 @@ const GauntletDivisions: typeof GauntletDivisionsDocument = gql`
             entrant {
               id
               name
+              participants {
+                id
+                user {
+                  id
+                  genderPronoun
+                }
+              }
             }
           }
         }
@@ -139,6 +146,13 @@ const EventSetsDoc: typeof EventSetsDocument = gql`
             entrant {
               id
               name
+              participants {
+                id
+                user {
+                  id
+                  genderPronoun
+                }
+              }
             }
           }
           phaseGroup {
