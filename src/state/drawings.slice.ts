@@ -304,6 +304,27 @@ export const drawingsSlice = createSlice({
         delete drawing.winners[chartId];
       }
     },
+    /**
+     * Remembers an entrant's StepManiaX gamer tag, learned when an operator
+     * confirms which entrant a play from the global score feed belongs to.
+     * Later imports match on it rather than guessing from the display name.
+     */
+    linkSmxUsername(
+      state,
+      action: PayloadAction<{
+        drawingId: CompoundSetId;
+        playerId: string;
+        smxUsername: string;
+      }>,
+    ) {
+      const { drawingId, playerId, smxUsername } = action.payload;
+      const player = state.entities[drawingId[0]]?.meta.players.find(
+        (p) => p.id === playerId,
+      );
+      if (player) {
+        player.smxUsername = smxUsername;
+      }
+    },
     addSubdraw(
       state,
       action: PayloadAction<{ newSubdraw: SubDrawing; existingDrawId: string }>,
