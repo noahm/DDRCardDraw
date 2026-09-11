@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1787837605188
+    "lastUpdated": 1788157878928
   },
   "defaults": {
     "style": "single",
@@ -7755,7 +7755,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 17.1,
           "maxScore": 1956
         },
@@ -7784,7 +7784,7 @@
           "lvl": 17,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 17.05,
           "maxScore": 1890
         }
@@ -9652,7 +9652,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.4,
           "maxScore": 1182
         },
@@ -9681,7 +9681,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.35,
           "maxScore": 1173
         }
@@ -9988,7 +9988,7 @@
         }
       ],
       "remyLink": "https://remywiki.com/C-C-C-N-N-N",
-      "flags": ["unlock"],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/C-C-C-N-N-N.jpg",
       "saHash": "odPq866q0QPOP9QOQ9QQIlIO60Oid16o",
       "genre": "ELECTRONICORE"
@@ -10257,6 +10257,7 @@
     {
       "name": "CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～",
       "artist": "NAOKI",
+      "saHash": "DOqPd1Iid6oObd8i96I9oo8obbODb96o",
       "bpm": "170",
       "folder": "DanceDanceRevolution 5th Mix",
       "charts": [
@@ -10310,9 +10311,9 @@
           "maxScore": 1296
         }
       ],
+      "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/CAN%27T_STOP_FALLIN%27_IN_LOVE_~SPEED_MIX~",
       "jacket": "ddr_1st-5th/CAN'T STOP FALLIN' IN LOVE ～SPEED MIX～.png",
-      "saHash": "DOqPd1Iid6oObd8i96I9oo8obbODb96o",
       "saIndex": "52"
     },
     {
@@ -16702,7 +16703,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.1,
           "maxScore": 1587
         },
@@ -16731,7 +16732,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.15,
           "maxScore": 1575
         }
@@ -16939,7 +16940,7 @@
         }
       ],
       "remyLink": "https://remywiki.com/DIABLOSIS::Naga",
-      "flags": ["unlock"],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/DIABLOSISNaga.jpg",
       "saHash": "QlQ10I6o1l88loioo6DIObi0P09PPdiD"
     },
@@ -33459,7 +33460,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.45,
           "maxScore": 1152
         },
@@ -33488,7 +33489,7 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.05,
           "maxScore": 1110
         }
@@ -38027,7 +38028,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.35,
           "maxScore": 1362
         },
@@ -38056,7 +38057,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.4,
           "maxScore": 1338
         }
@@ -41693,7 +41694,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.65,
           "maxScore": 1542
         },
@@ -41722,7 +41723,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.6,
           "maxScore": 1515
         }
@@ -55285,7 +55286,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.45,
           "maxScore": 1206
         },
@@ -55314,7 +55315,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.4,
           "maxScore": 1146
         }
@@ -62305,7 +62306,7 @@
         }
       ],
       "remyLink": "https://remywiki.com/Suspicions",
-      "flags": ["unlock"],
+      "flags": ["euLocked"],
       "jacket": "ddr_a3/Suspicions.jpg",
       "genre": "JAZZ CORE",
       "saHash": "Q88iD188IiqQbIoP9Oq818bPbOP1d1bQ"
@@ -64397,7 +64398,7 @@
           "lvl": 18,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 18.85,
           "maxScore": 2016
         },
@@ -64426,7 +64427,7 @@
           "lvl": 18,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 18.75,
           "maxScore": 1956
         }
@@ -65142,7 +65143,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.3,
           "maxScore": 1392
         },
@@ -65171,7 +65172,7 @@
           "lvl": 14,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.2,
           "maxScore": 1374
         }
@@ -67817,7 +67818,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.35,
           "maxScore": 1185
         },
@@ -67846,7 +67847,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.3,
           "maxScore": 1089
         }
