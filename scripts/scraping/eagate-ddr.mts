@@ -66,7 +66,9 @@ type EAGateSongData = Required<
   getJacketUrl: () => string;
 };
 
-/** Song importer from KONAMI e-amusement GATE */
+/**
+ * DDR WORLD Song importer from KONAMI e-amusement GATE
+ */
 export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
   /** URL to DDR song list page */
   readonly #songListUrl: string;
@@ -104,6 +106,7 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
     const maxEmptyPages = 3; // Stop after 3 consecutive empty pages
 
     while (emptyPageCount < maxEmptyPages) {
+      // DDR WORLD paging is 0-based and uses `offset` in query params.
       const offset = currentPage;
 
       // Construct URL with offset parameter
@@ -185,30 +188,20 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
 
       const songs = [];
 
-      // Scrape based on DDR site table structure
-      const table = dom.window.document.querySelector("table");
-      if (!table) {
-        console.warn("Song table not found");
+      // DDR WORLD (new layout): each song is rendered in `.music-container`.
+      const musicContainers = dom.window.document.querySelectorAll(
+        "tr.data td.chart div.music-container",
+      );
+      if (musicContainers.length === 0) {
+        console.warn("No song entries found in DDR WORLD page");
         return [];
       }
 
-      const rows = table.querySelectorAll("tr");
-      if (rows.length < 3) {
-        console.warn("Insufficient number of rows");
-        return [];
-      }
-
-      // Rows from the 3rd onward contain song data (1st row is header, 2nd row is subheader)
-      for (let i = 2; i < rows.length; i++) {
-        const row = rows[i];
-        const cells = row.querySelectorAll("td");
-
-        if (cells.length < 4) continue;
-
+      for (const musicContainer of musicContainers) {
         try {
-          // Get hash value (extracted from jacket image filename)
+          // `saHash` is embedded in jacket image URL query (`img=...`).
           const jacketImg: HTMLImageElement | null =
-            cells[0].querySelector("img");
+            musicContainer.querySelector("img.left-image");
           let saHash = "";
 
           if (jacketImg?.src) {
@@ -217,39 +210,55 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
             saHash = imgMatch ? imgMatch[1] : "";
           }
 
-          // Get song name (2nd cell)
-          const name = cells[1]?.textContent?.trim() || "";
-
-          // Get artist name (3rd cell) - can be empty for cover songs
-          const artist = cells[2]?.textContent?.trim() || "";
+          const name =
+            musicContainer.querySelector(".music-title")?.textContent?.trim() ||
+            "";
+          const artist =
+            musicContainer.querySelector(".artist")?.textContent?.trim() || "";
 
           if (!name) continue; // Only require name, artist can be empty for cover songs
 
           // Get chart difficulties
           const charts = [];
 
-          /**
-           * Chart difficulties
-           * (cells 4-8: Single BE, BA, DI, EX, CH)
-           * (cells 9-12: Double BA, DI, EX, CH)
-           */
-          const difficulties: Pick<Chart, "style" | "diffClass">[] = [
-            { style: "single", diffClass: "beginner" },
-            { style: "single", diffClass: "basic" },
-            { style: "single", diffClass: "difficult" },
-            { style: "single", diffClass: "expert" },
-            { style: "single", diffClass: "challenge" },
-            { style: "double", diffClass: "basic" },
-            { style: "double", diffClass: "difficult" },
-            { style: "double", diffClass: "expert" },
-            { style: "double", diffClass: "challenge" },
+          // CSS classes map to chart difficulty labels on eagate.
+          const difficulties: {
+            cssClass: string;
+            diffClass: Chart["diffClass"];
+          }[] = [
+            { cssClass: "BEGINNER", diffClass: "beginner" },
+            { cssClass: "BASIC", diffClass: "basic" },
+            { cssClass: "DIFFICULT", diffClass: "difficult" },
+            { cssClass: "EXPERT", diffClass: "expert" },
+            { cssClass: "CHALLENGE", diffClass: "challenge" },
           ];
-          for (let j = 0; j < difficulties.length; j++) {
-            const cellIndex = 3 + j; // Starting from 4th cell
-            if (cellIndex < cells.length) {
-              const level = cells[cellIndex]?.textContent?.trim();
-              if (level && !isNaN(parseInt(level)) && parseInt(level) > 0) {
-                charts.push({ ...difficulties[j], lvl: parseInt(level) });
+
+          // `.diff-style-container` is split by SP / DP.
+          const diffStyleContainers = musicContainer.querySelectorAll(
+            ".diff-style-container",
+          );
+          for (const diffStyleContainer of diffStyleContainers) {
+            const styleLabel =
+              diffStyleContainer
+                .querySelector(".label")
+                ?.textContent?.trim()
+                .toUpperCase() || "";
+            const style =
+              styleLabel === "SP"
+                ? "single"
+                : styleLabel === "DP"
+                  ? "double"
+                  : undefined;
+            if (!style) continue;
+
+            for (const { cssClass, diffClass } of difficulties) {
+              const levelText = diffStyleContainer
+                .querySelector(`.diff.${cssClass} .level`)
+                ?.textContent?.trim();
+              const lvl = Number.parseInt(levelText ?? "", 10);
+              // Missing charts are represented as "-", so only keep positive ints.
+              if (Number.isFinite(lvl) && lvl > 0) {
+                charts.push({ style, diffClass, lvl });
               }
             }
           }
@@ -263,7 +272,7 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
             getJacketUrl: () => `${jacketUrl}&img=${saHash}`,
           });
         } catch (error) {
-          console.error(`Failed to parse song data (row ${i + 1}):`, error);
+          console.error("Failed to parse song data:", error);
         }
       }
 
