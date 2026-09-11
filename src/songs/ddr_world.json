@@ -60,7 +60,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1786031152222
+    "lastUpdated": 1786118368532
   },
   "defaults": {
     "style": "single",
@@ -1863,7 +1863,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/About Damn Time.jpg"
+      "jacket": "ddr_world/About Damn Time.jpg",
+      "remyLink": "https://remywiki.com/About_Damn_Time"
     },
     {
       "name": "Abrupt Madness",
@@ -7159,7 +7160,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Better When I'm Dancin'.jpg"
+      "jacket": "ddr_world/Better When I'm Dancin'.jpg",
+      "remyLink": "https://remywiki.com/Better_When_I%27m_Dancin%27"
     },
     {
       "name": "Beyond The Earth",
@@ -9555,7 +9557,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg"
+      "jacket": "ddr_world/BUCHiAGE 祭 DANCE.jpg",
+      "remyLink": "https://remywiki.com/BUCHiAGE_matsuri_DANCE"
     },
     {
       "name": "BURNIN' THE FLOOR",
@@ -38657,7 +38660,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/Make Mi Make Mi.jpg"
+      "jacket": "ddr_world/Make Mi Make Mi.jpg",
+      "remyLink": "https://remywiki.com/Make_Mi_Make_Mi"
     },
     {
       "name": "Malacca",
@@ -43081,7 +43085,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/New Nostalgy.jpg"
+      "jacket": "ddr_world/New Nostalgy.jpg",
+      "remyLink": "https://remywiki.com/New_Nostalgy"
     },
     {
       "name": "New Rules",
@@ -46623,17 +46628,20 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 348
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 918
         },
         {
           "style": "single",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1245
         },
         {
           "style": "single",
@@ -46644,12 +46652,14 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 8
+          "lvl": 8,
+          "maxScore": 906
         },
         {
           "style": "double",
           "diffClass": "difficult",
-          "lvl": 11
+          "lvl": 11,
+          "maxScore": 1245
         },
         {
           "style": "double",
@@ -46659,7 +46669,8 @@
         }
       ],
       "flags": ["worldLeague"],
-      "jacket": "ddr_world/PARANOiA STOMP, STOMP, STOMP.jpg"
+      "jacket": "ddr_world/PARANOiA STOMP, STOMP, STOMP.jpg",
+      "remyLink": "https://remywiki.com/PARANOiA:_STOMP,_STOMP,_STOMP"
     },
     {
       "name": "PARTY ALL NIGHT(DJ KEN-BOW MIX)",
@@ -90846,7 +90857,8 @@
       ],
       "flags": ["euLocked"],
       "jacket": "ddr_world/燭.jpg",
-      "search_hint": "ともしび"
+      "search_hint": "ともしび",
+      "remyLink": "https://remywiki.com/Tomoshibi_(Rish_feat.Choko_(Noir))"
     },
     {
       "name": "爆なな☆てすとロイヤー",

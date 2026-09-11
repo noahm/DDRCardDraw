@@ -157,22 +157,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // EXTRA SAVIOR WORLD (BEMANI SELECTION vol.4)
-  [
-    "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b", // 和風インザ洋風
-    {
-      ratings: [3, 8, 11, 15, 17, 7, 11, 15, 17],
-      lock_types: [280, 280, 280, 280, 280, 280, 280, 280, 280],
-    },
-  ],
-  // WORLD LEAGUE
-  [
-    "I91iOPbIbDOqI6iO6bPQ0d0q8Q8IlIid", // PARANOiA: STOMP, STOMP, STOMP
-    {
-      ratings: [4, 8, 11, 14, 0, 8, 11, 14, 0],
-      lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
-    },
-  ],
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
