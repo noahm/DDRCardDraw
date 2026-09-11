@@ -40,12 +40,7 @@ const lockFlags: Map<number, Song["flags"]> = new Map([
   [320, ["tempUnlock"]], // pop'n & BEMANI Cheers × Cheers!! (2026-02-26 10:00~2026-03-22 23:59)
   [330, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe Append (2026-03-26 10:00~2026-04-26 23:59)
   [350, ["unlock"]], // 段位認定(DAN RANK)
-  [
-    360,
-    _currentDate <= new Date("2026-08-17T09:59:00+09:00")
-      ? ["unlock"]
-      : ["tempUnlock"],
-  ], // BEMANI納涼祭2026 (2026-06-18 10:00~2026-08-17 09:59)
+  [360, ["tempUnlock"]], // BEMANI納涼祭2026 (2026-06-18 10:00~2026-08-17 09:59)
 ]);
 
 /** Mapping from 3icecream's `version_num` to DDR folder name */
@@ -79,16 +74,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // BEMANI×東方Project ～幻想郷音樂祭2024～
-  ...[
-    "16Qb0Oib60oQ1Oql8P806dDd8D0boDi1", // 残像ニ繋ガレタ追憶ノHIDEAWAY
-    "lDIO66Dqili0bD0Qo00iIlO6b100i8i0", // 弾幕信仰
-    "d1bdqOI8IPIO8i00Plq09d189lIbIo0I", // SUPER HEROINE!!
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-08-06T15:00:00+09:00"),
-    id,
-    { lock_types: undefined },
-  ]),
   // BEMANI PRO LEAGUE -SEASON 3- Triple Tribe
   ...[
     "odPq866q0QPOP9QOQ9QQIlIO60Oid16o", // C-C-C-N-N-N
