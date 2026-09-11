@@ -57,15 +57,16 @@
       "platinumMembers",
       "tempUnlock",
       "euLocked",
+      "jpOnly",
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1788406763492
+    "lastUpdated": 1789030156243
   },
   "defaults": {
     "style": "single",
     "difficulties": ["difficult", "expert", "challenge"],
-    "flags": ["shock", "euLocked"],
+    "flags": ["shock", "euLocked", "jpOnly"],
     "lowerLvlBound": 13,
     "upperLvlBound": 16
   },
@@ -89,6 +90,7 @@
       "tempUnlock": "Formerly unlockable (KAC, BPL, etc.)",
       "shock": "Shock arrow charts",
       "euLocked": "Absent from European cabinet",
+      "jpOnly": "Japan-Region Exclusive",
       "copyStrikes": "Songs with streaming copyright issues",
       "$abbr": {
         "beginner": "Beg",
@@ -117,6 +119,7 @@
       "tempUnlock": "現在解禁できない楽曲/譜面",
       "shock": "ショックアロー譜面",
       "euLocked": "ヨーロッパ版に収録されていない楽曲",
+      "jpOnly": "日本地域限定楽曲",
       "copyStrikes": "配信で使用できない楽曲",
       "$abbr": {
         "beginner": "Beg",
@@ -77456,6 +77459,66 @@
       "saIndex": "626"
     },
     {
+      "name": "オーバーライド",
+      "name_translation": "Override",
+      "artist": "吉田夜世 feat.重音テト",
+      "artist_translation": "Yoshida Yasei feat. Kasane Teto SV",
+      "saHash": "Q96ld98IPIld98Iq18bqblldOoP91d69",
+      "bpm": "204",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 354
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 909
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1650,
+          "flags": ["shock"]
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 2529,
+          "flags": ["shock"]
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 861
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1575,
+          "flags": ["shock"]
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2481,
+          "flags": ["shock"]
+        }
+      ],
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/オーバーライド.jpg",
+      "remyLink": "https://remywiki.com/Override_(Yoshida_Yasei)"
+    },
+    {
       "name": "カゲロウ",
       "name_translation": "KAGEROW (Dragonfly)",
       "artist": "Des-ROW・組スペシアルr",
@@ -79342,6 +79405,62 @@
       "jacket": "ddr_a/Cirno's Perfect Math Class (EDM REMIX).png",
       "saHash": "Q96Qo0qbQ81odQoqPOOQ98oDbo6Pb1IO",
       "saIndex": "676"
+    },
+    {
+      "name": "テトリス",
+      "name_translation": "Tetoris",
+      "artist": "柊マグネタイト",
+      "artist_translation": "Hiiragi Magnetite",
+      "saHash": "dodDld060D0QDioqiI0d8Dl111DIDbio",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 213
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 933
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1752
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2322
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 927
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1752
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2307
+        }
+      ],
+      "flags": ["euLocked", "jpOnly"],
+      "jacket": "ddr_world/テトリス.jpg",
+      "remyLink": "https://remywiki.com/Tetoris"
     },
     {
       "name": "テレキャスタービーボーイ",
@@ -82814,6 +82933,62 @@
       "genre": "",
       "saHash": "IPid909iDid06d68IDo816OqbdQq8O0O",
       "saIndex": "1024"
+    },
+    {
+      "name": "ライアーダンサー",
+      "name_translation": "Liar dancer",
+      "artist": "マサラダ",
+      "artist_translation": "masarada",
+      "saHash": "P8bQol68qoDbi90D06lQloiP9b09ddDQ",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 267
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 858
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1545
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 2076
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 816
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1506
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 2091
+        }
+      ],
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/ライアーダンサー.jpg",
+      "remyLink": "https://remywiki.com/Liar_dancer"
     },
     {
       "name": "ラキラキ",
