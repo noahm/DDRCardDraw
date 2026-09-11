@@ -74,12 +74,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // WORLD LEAGUE
-  [
-    new Date("2026-09-02T16:00:00+09:00"),
-    "q0I018lPqbdi66qiiiQlqIb9O19O9061", // Is this dance a Hakken?
-    { lock_types: [1000, 1000, 1000, 1000, 0, 1000, 1000, 1000, 0] },
-  ],
   // グランプリ譜面パック vol.4
   ...[
     "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D", // AFTER THE GAME OF LOVE
@@ -107,6 +101,23 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     new Date("2026-10-30T15:00:00+09:00"),
     id,
     { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
+  ]),
+  // グランプリ譜面パック vol.5
+  ...[
+    "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
+    "iQo0QOoI6bOPQlbb9ldOo9lbdD1idiOO", // D2R
+    "PD9lP16dllbPqbdIO0Ii0I8D1I90QIIl", // Dragon Blade
+    "i6Q00D16PbbQPl19oibiiQ6qQD01D6o8", // Funk Boogie
+    "69qoD0l6olQqqbl09b069q898b600I6o", // Gamelan de Couple
+    "901q61iP6lPiDqIQoQod9PDqlOPq1bb9", // La Señorita
+    "81qibDQqq8idiD1lQqq0qdqD6i6q1QDb", // No.13
+    "D01oOb0IOQ1bbIIdi88O0d80Qo9dblqP", // Quick Master
+    "01808Q1Q6lQQ1lP0qd80I0b0qqDd1OOP", // WILD RUSH
+    "ql1Q8P100IIlbl0Pdi08I8qD900idqQq", // カゲロウ
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-11-30T15:00:00+09:00"),
+    id,
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
 ];
 /** Correction map for invalid data on 3icecream site */
