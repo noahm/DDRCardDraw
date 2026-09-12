@@ -23,11 +23,21 @@ const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
 const SEND_FAILED_TOAST_KEY = "party-action-send-failed";
 const REJECTED_TOAST_KEY = "party-action-rejected";
+const NOT_SAVING_TOAST_KEY = "party-not-saving";
 
 /** how often to ping the server to prove the socket is really alive */
 const HEARTBEAT_INTERVAL_MS = 10000;
 /** consecutive unanswered pings that mean a stalled (half-open) connection */
 const MAX_MISSED_PONGS = 2;
+/** how often to re-check whether the server's durable snapshot is keeping up */
+const DURABILITY_POLL_MS = 5000;
+/**
+ * Consecutive polls that must agree before the durability warning shows.
+ * Remote snapshot writes coalesce, so a burst of actions can briefly sit ahead
+ * of the durable copy on a perfectly healthy room; requiring the lag to still
+ * be there a poll later keeps that from raising a scary toast for two seconds.
+ */
+const DURABILITY_STALL_POLLS = 2;
 
 export function PartySocketManager(props: {
   roomName?: string;
@@ -109,6 +119,9 @@ export function PartySocketManager(props: {
           case "pong":
             missedPongsRef.current = 0;
             break;
+          case "persisted":
+            syncRef.current?.handlePersisted(data.seq);
+            break;
         }
       } catch (e) {
         console.warn("failed to handle party socket message", e);
@@ -189,8 +202,51 @@ export function PartySocketManager(props: {
       toaster.dismiss(BLOCKED_TOAST_KEY);
       toaster.dismiss(SEND_FAILED_TOAST_KEY);
       toaster.dismiss(REJECTED_TOAST_KEY);
+      toaster.dismiss(NOT_SAVING_TOAST_KEY);
     };
   }, []);
+
+  // Durability watchdog.
+  //
+  // The server reports how far its durable snapshot has advanced, throttled —
+  // so the signal that matters is the *absence* of progress while actions keep
+  // flowing, which only a timer can notice. Without this an organizer has no
+  // way to learn the room stopped saving until a restart reverts everyone to
+  // an old checkpoint, which is exactly how an event lost a dozen draws.
+  useEffect(() => {
+    if (!ready) return;
+    let warned = false;
+    let stalledPolls = 0;
+    const timer = setInterval(() => {
+      const sync = syncRef.current;
+      if (!sync) return;
+      // a dead socket has its own, louder toast; the lag is frozen anyway
+      if (socket.readyState !== WebSocket.OPEN) return;
+      stalledPolls = sync.durabilityStalled ? stalledPolls + 1 : 0;
+      const stalled = stalledPolls >= DURABILITY_STALL_POLLS;
+      if (stalled === warned) return;
+      warned = stalled;
+      if (stalled) {
+        logDiagnostic(
+          "not-saving",
+          `${sync.durabilityLag} change(s) applied but not saved on the server`,
+        );
+        if (inObs) return;
+        toaster.show(
+          {
+            message: t("party.notSaving"),
+            intent: Intent.DANGER,
+            timeout: 0,
+          },
+          NOT_SAVING_TOAST_KEY,
+        );
+      } else {
+        logDiagnostic("saving-recovered", "the server is saving changes again");
+        toaster.dismiss(NOT_SAVING_TOAST_KEY);
+      }
+    }, DURABILITY_POLL_MS);
+    return () => clearInterval(timer);
+  }, [ready, socket, t, inObs]);
 
   useEffect(() => {
     const sync = new SyncManager(socket, {

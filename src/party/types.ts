@@ -11,6 +11,12 @@ export interface Roomstate {
   recentActionIds?: string[];
   /** the seq of the last action baked into `state` */
   seq?: number;
+  /**
+   * how far the *durable* snapshot has advanced, which can trail `seq` when a
+   * write is failing. Sent with the initial state so a fresh client starts
+   * with the real lag rather than assuming zero.
+   */
+  persistedSeq?: number;
 }
 
 export interface ReduxAction {
@@ -82,6 +88,29 @@ export interface Pong {
   type: "pong";
 }
 
+/**
+ * server → everyone: how far the durable snapshot has actually advanced.
+ *
+ * The action echo confirms only that the server *applied* an action. An action
+ * that applies cleanly and then fails to persist is still confirmed to the
+ * client with nothing to take it back, which is how a room can look healthy
+ * for hours and then revert everyone to an old checkpoint on the next restart.
+ * This closes that gap: clients compare `seq` against the actions they have
+ * confirmed and can warn when the durable copy stops keeping up.
+ *
+ * Throttled server-side, so its absence is as meaningful as its arrival — a
+ * client that stops hearing it while actions keep flowing is watching writes
+ * fail. Clients must therefore evaluate the lag on their own timer rather than
+ * only when a message lands.
+ */
+export interface Persisted {
+  type: "persisted";
+  /** highest seq confirmed written to at least one durable store */
+  seq: number;
+  /** the applied seq at the time, so the lag reads directly off one message */
+  appliedSeq: number;
+}
+
 /** All messages a client may send to the server */
 export type ClientMessage = ReduxAction | CatchupRequest | Ping;
 
@@ -92,4 +121,5 @@ export type Broadcast =
   | ActionAck
   | ActionReject
   | CatchupResponse
-  | Pong;
+  | Pong
+  | Persisted;
