@@ -25,6 +25,31 @@ export const startggEventSlug = atomWithStorage<string | null>(
   { getOnInit: true },
 );
 
+/**
+ * Accepts a start.gg event URL or a bare `tournament/x/event/y` slug and
+ * returns just the two-segment pair the API takes as an event slug.
+ *
+ * Everything past the event is dropped, since the address bar is where these
+ * get copied from and it's rarely sitting on the bare event page —
+ * `…/event/singles/brackets/1234/5678` and `…/event/singles/overview` both
+ * come back as `tournament/foo/event/singles`. Returns null when there's no
+ * event slug in there to find, so the caller can say so rather than saving a
+ * slug every query will 404 on.
+ */
+export function parseEventSlug(raw: string): string | null {
+  const match = raw
+    .trim()
+    // an origin, if pasted as a full URL. The scheme is optional because
+    // copying a link out of running text tends to lose it.
+    .replace(/^(?:https?:)?\/\//i, "")
+    .replace(/^(?:www\.)?(?:start|smash)\.gg/i, "")
+    // neither a query string nor a fragment is ever part of the slug
+    .replace(/[?#].*$/, "")
+    .match(/^\/?tournament\/([\w-]+)\/event\/([\w-]+)(?:\/|$)/i);
+  if (!match) return null;
+  return `tournament/${match[1]}/event/${match[2]}`;
+}
+
 export const urqlClient = new Client({
   url: "https://api.start.gg/gql/alpha",
   fetchOptions: () => ({

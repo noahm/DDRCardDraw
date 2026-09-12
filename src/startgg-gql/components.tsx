@@ -1,7 +1,19 @@
-import { Button, Classes, InputGroup, Label, Text } from "@blueprintjs/core";
+import {
+  Button,
+  Callout,
+  Classes,
+  InputGroup,
+  Label,
+  Text,
+} from "@blueprintjs/core";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
-import React, { ReactNode, useRef, useCallback } from "react";
-import { startggKeyAtom, startggEventSlug, useCurrentUserEvents } from ".";
+import React, { ReactNode, useRef, useState, useCallback } from "react";
+import {
+  startggKeyAtom,
+  startggEventSlug,
+  parseEventSlug,
+  useCurrentUserEvents,
+} from ".";
 
 export function StartggApiKeyGated(props: { children: ReactNode }) {
   const apiKey = useAtomValue(startggKeyAtom);
@@ -16,15 +28,36 @@ export function StartggApiKeyGated(props: { children: ReactNode }) {
 export function StartggCredsManager() {
   const [apiKey, setApiKey] = useAtom(startggKeyAtom);
   const [eventSlug, setEventSlug] = useAtom(startggEventSlug);
+  const [slugError, setSlugError] = useState<string | null>(null);
   const apikeyRef = useRef<HTMLInputElement>(null);
   const slugRef = useRef<HTMLInputElement>(null);
   const saveKey = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (!apikeyRef.current) return;
-      setApiKey(apikeyRef.current.value);
+      // tokens get pasted, and a stray newline makes every request 401
+      setApiKey(apikeyRef.current.value.trim());
       if (!slugRef.current) return;
-      setEventSlug(slugRef.current.value);
+      const raw = slugRef.current.value;
+      if (!raw.trim()) {
+        // the field is disabled until a key is saved, so a blank slug on the
+        // first save is the normal path, not a mistake worth shouting about
+        setSlugError(null);
+        setEventSlug(null);
+        return;
+      }
+      const slug = parseEventSlug(raw);
+      if (!slug) {
+        setSlugError(
+          "Expected an event address like tournament/SOMETHING/event/SOMETHING",
+        );
+        return;
+      }
+      setSlugError(null);
+      // show what actually got saved, since a pasted URL loses its origin and
+      // any trailing path here
+      slugRef.current.value = slug;
+      setEventSlug(slug);
     },
     [setApiKey, setEventSlug],
   );
@@ -51,17 +84,22 @@ export function StartggCredsManager() {
         <pre style={{ display: "inline" }}>
           tournament/SOMETHING/event/SOMETHING
         </pre>
-        )
+        ) — pasting the whole event page address works too
         <InputGroup
           disabled={!apiKey}
           defaultValue={eventSlug || undefined}
           inputRef={slugRef}
+          intent={slugError ? "danger" : "none"}
+          placeholder="https://start.gg/tournament/SOMETHING/event/SOMETHING"
+          onChange={() => setSlugError(null)}
           rightElement={<Button type="submit">Save</Button>}
         />
       </Label>
+      {slugError && <Callout intent="danger">{slugError}</Callout>}
       {!!apiKey && (
         <EventPicker
           onSelected={(slug) => {
+            setSlugError(null);
             if (slugRef.current) {
               slugRef.current.value = slug;
             }
