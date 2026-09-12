@@ -16,6 +16,7 @@ import {
 } from "../models/Drawing";
 import { reuseKeysForChart } from "../chart-id";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
+import { eventSlice } from "./event.slice";
 
 declare const umami: {
   track(
@@ -92,11 +93,13 @@ function reportDrawShortfall(
 
 /**
  * Thunk creator for performing a new draw
+ * @param assignToCabId if given, the finished draw is put up on that cab
  * @returns false if draw was unsuccessful
  */
 export function createDraw(
   drawMeta: DrawingMeta,
   configId: string,
+  assignToCabId?: string,
 ): AppThunk<Promise<"nok" | "ok">> {
   return async (dispatch, getState) => {
     const state = getState();
@@ -186,6 +189,18 @@ export function createDraw(
     }
 
     dispatch(drawingsSlice.actions.addDrawing(drawing));
+    // the whole match rather than the set it starts with, so the cab keeps
+    // following it through an extra draw or a merge. Re-read state here
+    // because the draw above is async and any client in the room could have
+    // removed the cab in the meantime.
+    if (assignToCabId && getState().event.cabs[assignToCabId]) {
+      dispatch(
+        eventSlice.actions.assignMatchToCab({
+          cabId: assignToCabId,
+          matchId: drawing.id,
+        }),
+      );
+    }
     return "ok";
   };
 }

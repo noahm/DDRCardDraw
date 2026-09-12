@@ -7,7 +7,7 @@ import { useEventSettings } from "../state/hooks";
 import { useAppDispatch } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
 import { CountingSet } from "../utils/counting-set";
-import { playerDisplayName } from "../models/Drawing";
+import { isGauntletMeta, playerDisplayName } from "../models/Drawing";
 
 export function MatchLabels() {
   const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
@@ -17,7 +17,7 @@ export function MatchLabels() {
     return null;
   }
 
-  const hideWins = meta.type === "startgg" && meta.subtype === "gauntlet";
+  const hideWins = isGauntletMeta(meta);
   let winsPerPlayer: CountingSet<string> | undefined;
   if (!hideWins) {
     winsPerPlayer = new CountingSet<string>();

@@ -9,6 +9,7 @@ import {
 } from "@blueprintjs/core";
 import {
   Camera,
+  CloudDownload,
   DataLineage,
   DocumentShare,
   Random,
@@ -26,14 +27,15 @@ import {
   Trash,
 } from "@blueprintjs/icons";
 import { domToPng } from "modern-screenshot";
-import { useState, lazy, JSX } from "react";
+import { useState, lazy, JSX, Suspense } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  StartggGauntletMeta,
+  ExternalMeta,
+  isExternalMeta,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -60,17 +62,22 @@ import { CountingSet } from "../utils/counting-set";
 import { shareCharts, shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
 import { EventModeGated } from "../common-components/app-mode";
+import { DelayedSpinner } from "../common-components/delayed-spinner";
+import { isSmxGameData } from "../utils/smx-scores";
 import { useIntl } from "../hooks/useIntl";
 import {
   ConfigContextProvider,
   useConfigId,
+  useConfigState,
   useEventSettings,
+  useGameData,
 } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
 import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
-const GauntletEditor = lazy(() => import("./gauntlet-scores"));
+const ScoreEditor = lazy(() => import("./score-editor"));
+const SmxScoreImport = lazy(() => import("./smx-score-import"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
 function getMatchResult(
@@ -243,12 +250,19 @@ export function DrawingActions() {
   const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const highlighAtRandom = useHighlightRandom();
-  const isGauntlet =
-    drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
+  const gameKey = useConfigState((c) => c.gameKey);
+  const gameData = useGameData();
+  // scores are recorded for every externally sourced match, h2h included
+  const canScore = isExternalMeta(drawingMeta);
+  // ...and the SMX score feed can fill them in, when that's the game in play
+  const canImportSmxScores = canScore && isSmxGameData(gameKey, gameData);
   const { showBoundary } = useErrorBoundary();
-  const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
-    StartggGauntletMeta | undefined
+  const [scoreEditorMeta, setScoreEditorMeta] = useState<
+    ExternalMeta | undefined
   >(undefined);
+  const [smxImportMeta, setSmxImportMeta] = useState<ExternalMeta | undefined>(
+    undefined,
+  );
 
   const addToCabMenu = (
     <Menu>
@@ -328,26 +342,50 @@ export function DrawingActions() {
           </Tooltip>
         )}
       </EventModeGated>
-      {isGauntlet && (
+      {canScore && (
         <>
-          <Tooltip content="Edit Gauntlet Scores">
+          <Tooltip content="Edit Scores">
             <Button
               variant="minimal"
               icon={<Th />}
               onClick={() => {
-                setGauntletEditorMeta(drawingMeta);
+                setScoreEditorMeta(drawingMeta);
               }}
             />
           </Tooltip>
           <Dialog
-            onClose={() => setGauntletEditorMeta(undefined)}
-            isOpen={!!gauntletEditorMeta}
-            title="Gauntlet Scores Editor"
+            onClose={() => setScoreEditorMeta(undefined)}
+            isOpen={!!scoreEditorMeta}
+            title="Score Editor"
             style={{ width: "auto" }}
           >
             <DialogBody>
-              <GauntletEditor meta={gauntletEditorMeta!} />
+              <ScoreEditor meta={scoreEditorMeta!} />
             </DialogBody>
+          </Dialog>
+        </>
+      )}
+      {canImportSmxScores && (
+        <>
+          <Tooltip content="Import Scores from SMX">
+            <Button
+              variant="minimal"
+              icon={<CloudDownload />}
+              onClick={() => setSmxImportMeta(drawingMeta)}
+            />
+          </Tooltip>
+          <Dialog
+            onClose={() => setSmxImportMeta(undefined)}
+            isOpen={!!smxImportMeta}
+            title="Import Scores from SMX"
+            style={{ width: "auto", minWidth: "40em" }}
+          >
+            <Suspense fallback={<DelayedSpinner />}>
+              <SmxScoreImport
+                meta={smxImportMeta!}
+                onClose={() => setSmxImportMeta(undefined)}
+              />
+            </Suspense>
           </Dialog>
         </>
       )}
@@ -427,7 +465,8 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       );
       break;
     case "startgg":
-      // @todo figure out what edit looks like for startgg?
+    case "piu":
+      // @todo figure out what edit looks like for an externally sourced match?
       editPlayersDialog = null;
   }
 

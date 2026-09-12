@@ -13,6 +13,7 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
+  isExternalMeta,
   MergedDrawing,
   newPlayer,
   Player,
@@ -23,6 +24,27 @@ import {
 import { mergeDraws } from "./central";
 
 export const drawingsAdapter = createEntityAdapter<Drawing>({});
+
+/**
+ * The outright winner the recorded scores name for a chart, if any. Undefined
+ * while a score is missing or the top two are level, since neither settles it.
+ */
+function impliedWinner(
+  players: Player[],
+  scores: Record<string, Record<string, number | undefined>>,
+  chartId: string,
+) {
+  const ranked = players
+    .map((p) => ({ id: p.id, score: scores[p.id]?.[chartId] }))
+    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+  if (!ranked.every((r) => typeof r.score === "number")) {
+    return undefined;
+  }
+  if (ranked.length < 2 || ranked[0].score === ranked[1].score) {
+    return undefined;
+  }
+  return ranked[0].id;
+}
 
 /** payload is the drawing id */
 type ActionOnSingleDrawing = PayloadAction<string>;
@@ -255,19 +277,34 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      if (
-        drawing.meta.type !== "startgg" ||
-        drawing.meta.subtype !== "gauntlet"
-      ) {
+      if (!isExternalMeta(drawing.meta)) {
         return;
       }
-      if (!drawing.meta.scoresByEntrant) {
-        drawing.meta.scoresByEntrant = {};
-        for (const entrant of drawing.meta.players) {
-          drawing.meta.scoresByEntrant[entrant.id] = {};
-        }
+      const scores = (drawing.meta.scoresByEntrant ??= {});
+      // what the scores said before this edit, so a winner set by clicking the
+      // card is never cleared by a half-filled score grid
+      const impliedBefore = impliedWinner(
+        drawing.meta.players,
+        scores,
+        chartId,
+      );
+
+      // a player added after the first score was entered has no bucket yet
+      (scores[playerId] ??= {})[chartId] = score;
+
+      // Head to head draws show per-chart win counts, so a typed score has to
+      // settle the chart too or the labels sit at zero while scores pile up.
+      // Gauntlets rank on totals and hide win counts, so they're left alone.
+      if (drawing.meta.subtype === "gauntlet") {
+        return;
       }
-      drawing.meta.scoresByEntrant[playerId][chartId] = score;
+      const implied = impliedWinner(drawing.meta.players, scores, chartId);
+      if (implied) {
+        drawing.winners[chartId] = implied;
+      } else if (drawing.winners[chartId] === impliedBefore) {
+        // the winner on file came from this grid and no longer holds
+        delete drawing.winners[chartId];
+      }
     },
     addSubdraw(
       state,

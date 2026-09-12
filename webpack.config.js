@@ -199,6 +199,17 @@ module.exports = function (env = {}, argv = {}) {
           }),
         ),
         "process.env.STARTGG_TOKEN": JSON.stringify(process.env.STARTGG_TOKEN),
+        // Read-only access to the piu-tourney-maker Supabase project, used to
+        // offer its upcoming matches as a draw source. Distinct from
+        // SUPABASE_URL/SUPABASE_KEY, which are this app's own partykit
+        // persistence project. An anon key is public by design; RLS on that
+        // project is what decides what an anonymous caller may read.
+        "process.env.PIU_TOURNEY_SUPABASE_URL": JSON.stringify(
+          process.env.PIU_TOURNEY_SUPABASE_URL,
+        ),
+        "process.env.PIU_TOURNEY_SUPABASE_ANON_KEY": JSON.stringify(
+          process.env.PIU_TOURNEY_SUPABASE_ANON_KEY,
+        ),
         // Origin of the data.ddr.tools publish Worker the in-app SMX authoring UI
         // POSTs to. Prod hits the real domain; dev hits the local wrangler dev server
         // (rgt-data `yarn dev` on :8787). Override with a DATA_API_BASE env var.
