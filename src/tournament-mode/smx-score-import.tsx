@@ -19,12 +19,15 @@ import {
 } from "../models/Drawing";
 import { drawingsSlice } from "../state/drawings.slice";
 import { useGameData } from "../state/hooks";
-import { createAppSelector, useAppDispatch, useAppState } from "../state/store";
+import {
+  useLinkSmxUsername,
+  useSmxUsernames,
+} from "../state/smx-usernames.atoms";
+import { useAppDispatch } from "../state/store";
 import { convertErrorToString } from "../utils/error-to-string";
 import {
   fetchRecentPlays,
   matchUsernameToPlayer,
-  normalizeHandle,
   type RecentPlay,
   resolveSmxCharts,
   type SmxChartTarget,
@@ -43,22 +46,6 @@ const DEFAULT_WINDOW = 15;
  * to a free community API.
  */
 const REFRESH_INTERVAL = 20_000;
-
-/** the gamer tag confirmed for each player id, across every drawing on file */
-const selectLinkedUsernames = createAppSelector(
-  [(state) => state.drawings.entities],
-  (entities) => {
-    const byPlayerId = new Map<string, string>();
-    for (const drawing of Object.values(entities)) {
-      for (const player of drawing.meta.players) {
-        if (player.smxUsername) {
-          byPlayerId.set(player.id, player.smxUsername);
-        }
-      }
-    }
-    return byPlayerId;
-  },
-);
 
 /** "no entrant", as the value of an unassigned row's select */
 const UNASSIGNED = "";
@@ -81,7 +68,8 @@ export default function SmxScoreImport({
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);
   const gameData = useGameData();
-  const linkedUsernames = useAppState(selectLinkedUsernames);
+  const linkedUsernames = useSmxUsernames();
+  const linkSmxUsername = useLinkSmxUsername();
   const dispatch = useAppDispatch();
 
   const [windowMinutes, setWindowMinutes] = useState(DEFAULT_WINDOW);
@@ -230,20 +218,10 @@ export default function SmxScoreImport({
           score: play.score,
         }),
       );
+      // the operator just told us whose tag this is — remember it for next time
       const player = meta.players.find((p) => p.id === playerId);
-      const known = player?.smxUsername;
-      if (
-        play.username &&
-        normalizeHandle(known || "") !== normalizeHandle(play.username)
-      ) {
-        // the operator just told us whose tag this is — remember it
-        dispatch(
-          drawingsSlice.actions.linkSmxUsername({
-            drawingId,
-            playerId,
-            smxUsername: play.username,
-          }),
-        );
+      if (player && play.username) {
+        linkSmxUsername(player.name, play.username);
       }
     }
     onClose();

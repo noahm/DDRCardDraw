@@ -40,12 +40,6 @@ export interface Player {
   name: string;
   /** free-form, as published by the player (e.g. from their start.gg profile) */
   pronouns?: string;
-  /**
-   * this player's StepManiaX gamer tag, learned when an operator confirms which
-   * entrant a play from the global score feed belongs to. Later imports match
-   * on it instead of guessing from the display name.
-   */
-  smxUsername?: string;
 }
 
 /** create a new player with a freshly-generated unique id */

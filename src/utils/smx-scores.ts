@@ -378,13 +378,14 @@ export function normalizeHandle(name: string) {
 
 /**
  * The entrant a feed username most likely belongs to, or undefined when
- * nothing answers or more than one does. `linkedUsernames` holds usernames
- * confirmed for a player id in an earlier import, which beat any guess.
+ * nothing answers or more than one does. `linkedUsernames` maps a normalized
+ * player name to the tag confirmed for them in an earlier import, which beats
+ * any guess made from the name itself.
  */
 export function matchUsernameToPlayer(
   username: string,
   players: Player[],
-  linkedUsernames: ReadonlyMap<string, string>,
+  linkedUsernames: Readonly<Record<string, string>>,
 ): string | undefined {
   const handle = normalizeHandle(username);
   if (!handle) {
@@ -392,7 +393,7 @@ export function matchUsernameToPlayer(
   }
 
   const linked = players.filter((p) => {
-    const known = p.smxUsername || linkedUsernames.get(p.id);
+    const known = linkedUsernames[normalizeHandle(p.name)];
     return known && normalizeHandle(known) === handle;
   });
   if (linked.length === 1) {
