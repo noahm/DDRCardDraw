@@ -3,26 +3,50 @@ import { useStartggMatches, useStartggPhases } from "./startgg-gql";
 import { createAppSelector, useAppState } from "./state/store";
 import { inferShortname } from "./controls/player-names";
 import { IconRefresh } from "@tabler/icons-react";
+import { externalMatchKey, isExternalMeta, Player } from "./models/Drawing";
 
 export interface PickedMatch {
+  /** which bracket service this match came from */
+  provider: "startgg" | "piu";
   title: string;
-  players: Array<{ id: string; name: string }>;
+  players: Player[];
   id: string;
   subtype: "versus" | "gauntlet";
   phaseName: string;
+  /** piu only: the tourney-maker tournament this match belongs to */
+  tourneyId?: string;
 }
 
-const associatedMatchIds = createAppSelector(
+/**
+ * start.gg publishes pronouns per-user, so a team entrant can carry more than
+ * one. Use the first pronoun anybody on the entrant has set, if any.
+ */
+function inferPronouns(entrant: {
+  participants?: Array<{
+    user?: { genderPronoun?: string | null } | null;
+  } | null> | null;
+}) {
+  return (
+    entrant.participants?.find((p) => p?.user?.genderPronoun)?.user
+      ?.genderPronoun || undefined
+  );
+}
+
+/**
+ * Keys of every match already drawn for, so pickers can dim them. Namespaced by
+ * provider because ids are only unique within one service.
+ */
+export const associatedMatchIds = createAppSelector(
   [(s) => s.drawings.entities],
   (entities) => {
     return Object.values(entities).flatMap((drawing) => {
-      if (drawing.meta.type === "startgg") return drawing.meta.id;
+      if (isExternalMeta(drawing.meta)) return externalMatchKey(drawing.meta);
       return [];
     });
   },
 );
 
-function LoadingCard({ children }: { children: string }) {
+export function LoadingCard({ children }: { children: string }) {
   return (
     <Card withBorder my="xs">
       <Skeleton>
@@ -88,7 +112,7 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
 
           const p1 = inferShortname(match.slots![0]?.entrant?.name);
           const p2 = inferShortname(match.slots![1]?.entrant?.name);
-          const matchUsed = existingMatches.includes(match.id!);
+          const matchUsed = existingMatches.includes(`startgg:${match.id!}`);
           return (
             <Card
               key={match.id!}
@@ -104,10 +128,12 @@ export function MatchPicker(props: { onPickMatch?(match: PickedMatch): void }) {
                   ? undefined
                   : () =>
                       props.onPickMatch?.({
+                        provider: "startgg",
                         title,
                         players: match.slots!.map((slot) => ({
                           id: slot!.entrant!.id!,
                           name: inferShortname(slot!.entrant!.name)!,
+                          pronouns: inferPronouns(slot!.entrant!),
                         })),
                         id: match.id!,
                         subtype: "versus",
@@ -189,9 +215,10 @@ export function GauntletPicker(props: {
               return {
                 name: inferShortname(seed.entrant.name),
                 id: seed.entrant.id,
+                pronouns: inferPronouns(seed.entrant),
               };
             }) || [];
-          const matchUsed = existingMatches.includes(phase.id!);
+          const matchUsed = existingMatches.includes(`startgg:${phase.id!}`);
           return (
             <Card
               key={phase.id!}
@@ -207,6 +234,7 @@ export function GauntletPicker(props: {
                   ? undefined
                   : () =>
                       props.onPickMatch?.({
+                        provider: "startgg",
                         title,
                         players: entrants,
                         id: phase.id!,

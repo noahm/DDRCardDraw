@@ -17,10 +17,11 @@ import {
   IconTableOptions,
   IconTrash,
   IconScribble,
+  IconCloudDownload,
 } from "@tabler/icons-react";
 import { useAtomValue } from "jotai";
 import { domToPng } from "modern-screenshot";
-import { useState, lazy, JSX, ReactNode } from "react";
+import { useState, lazy, JSX, ReactNode, Suspense } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";
@@ -28,7 +29,8 @@ import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  StartggGauntletMeta,
+  ExternalMeta,
+  isExternalMeta,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -55,13 +57,21 @@ import { CountingSet } from "../utils/counting-set";
 import { shareCharts, shareImage } from "../utils/share";
 import styles from "./drawing-actions.css";
 import { EventModeGated } from "../common-components/app-mode";
+import { DelayedSpinner } from "../common-components/delayed-spinner";
+import { isSmxGameData } from "../utils/smx-scores";
 import { useIntl } from "../hooks/useIntl";
-import { ConfigContextProvider, useConfigId } from "../state/hooks";
+import {
+  ConfigContextProvider,
+  useConfigId,
+  useConfigState,
+  useGameData,
+} from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
 import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
-const GauntletEditor = lazy(() => import("./gauntlet-scores"));
+const ScoreEditor = lazy(() => import("./score-editor"));
+const SmxScoreImport = lazy(() => import("./smx-score-import"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
 function getMatchResult(
@@ -120,6 +130,9 @@ function ToolbarButton(props: {
       <ActionIcon
         variant="subtle"
         color="gray"
+        // the tooltip is the only text on these, and it isn't an accessible
+        // name; a translated label can't serve as one, so it stays unnamed
+        aria-label={typeof props.label === "string" ? props.label : undefined}
         disabled={props.disabled}
         onClick={props.onClick}
       >
@@ -251,12 +264,19 @@ export function DrawingActions() {
   const drawingId = useDrawing((s) => s.compoundId);
   const drawingMeta = useDrawing((s) => s.meta);
   const highlighAtRandom = useHighlightRandom();
-  const isGauntlet =
-    drawingMeta.type === "startgg" && drawingMeta.subtype === "gauntlet";
+  const gameKey = useConfigState((c) => c.gameKey);
+  const gameData = useGameData();
+  // scores are recorded for every externally sourced match, h2h included
+  const canScore = isExternalMeta(drawingMeta);
+  // ...and the SMX score feed can fill them in, when that's the game in play
+  const canImportSmxScores = canScore && isSmxGameData(gameKey, gameData);
   const { showBoundary } = useErrorBoundary();
-  const [gauntletEditorMeta, setGauntletEditorMeta] = useState<
-    StartggGauntletMeta | undefined
+  const [scoreEditorMeta, setScoreEditorMeta] = useState<
+    ExternalMeta | undefined
   >(undefined);
+  const [smxImportMeta, setSmxImportMeta] = useState<ExternalMeta | undefined>(
+    undefined,
+  );
 
   return (
     <div className={styles.networkButtons}>
@@ -333,22 +353,53 @@ export function DrawingActions() {
           </Menu>
         )}
       </EventModeGated>
-      {isGauntlet && (
+      {canScore && (
         <>
           <ToolbarButton
-            label="Edit Gauntlet Scores"
+            label="Edit Scores"
             icon={<IconTable size={18} />}
             onClick={() => {
-              setGauntletEditorMeta(drawingMeta);
+              setScoreEditorMeta(drawingMeta);
             }}
           />
           <Modal
-            onClose={() => setGauntletEditorMeta(undefined)}
-            opened={!!gauntletEditorMeta}
-            title="Gauntlet Scores Editor"
+            onClose={() => setScoreEditorMeta(undefined)}
+            opened={!!scoreEditorMeta}
+            title="Score Editor"
             size="auto"
           >
-            <GauntletEditor meta={gauntletEditorMeta!} />
+            {/* Modal keeps its children mounted through the closing
+                transition, so the meta has to be guarded rather than asserted */}
+            {scoreEditorMeta && (
+              <Suspense fallback={<DelayedSpinner />}>
+                <ScoreEditor meta={scoreEditorMeta} />
+              </Suspense>
+            )}
+          </Modal>
+        </>
+      )}
+      {canImportSmxScores && (
+        <>
+          <ToolbarButton
+            label="Import Scores from SMX"
+            icon={<IconCloudDownload size={18} />}
+            onClick={() => setSmxImportMeta(drawingMeta)}
+          />
+          <Modal
+            onClose={() => setSmxImportMeta(undefined)}
+            opened={!!smxImportMeta}
+            title="Import Scores from SMX"
+            size="auto"
+            styles={{ content: { minWidth: "40em" } }}
+          >
+            {smxImportMeta && (
+              <Suspense fallback={<DelayedSpinner />}>
+                <SmxScoreImport
+                  meta={smxImportMeta}
+                  onClose={() => setSmxImportMeta(undefined)}
+                />
+              </Suspense>
+            )}
           </Modal>
         </>
       )}
@@ -433,7 +484,8 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       );
       break;
     case "startgg":
-      // @todo figure out what edit looks like for startgg?
+    case "piu":
+      // @todo figure out what edit looks like for an externally sourced match?
       editPlayersDialog = null;
   }
 

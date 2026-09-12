@@ -24,6 +24,7 @@ import {
   IconCircleMinus,
   IconTag,
   IconNumbers,
+  IconLabel,
 } from "@tabler/icons-react";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
@@ -192,6 +193,12 @@ function CabSummary({ cab }: { cab: CabInfo }) {
                           icon={<IconNumbers size={16} />}
                           text="Score"
                           stub="player/1/score"
+                          cabId={cab.id}
+                        />
+                        <CopySourceMenuItem
+                          icon={<IconLabel size={16} />}
+                          text="Pronouns"
+                          stub="player/1/pronouns"
                           cabId={cab.id}
                         />
                       </Menu.Sub.Dropdown>
