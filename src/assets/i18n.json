@@ -136,8 +136,8 @@
       "reset": "Reset"
     },
     "piuTourney": {
-      "explainer": "Pick a tournament from piu-tourney-maker to draw its upcoming matches. Read only — nothing is reported back.",
-      "idLabel": "tournament link or id (in the form of: /tourney/123)",
+      "explainer": "Link a tournament from {piuTmLink} to draw for upcoming matches. (Read only, cannot report back.)",
+      "idLabel": "tournament link or id",
       "save": "Save",
       "change": "change",
       "badId": "Expected a tournament link or a numeric id",

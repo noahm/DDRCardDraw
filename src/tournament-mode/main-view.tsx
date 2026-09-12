@@ -39,7 +39,7 @@ export function MainView() {
         Eligible Charts
       </Tab>
       <Tab id="players" panel={<PlayerNamesControls />}>
-        Start.gg Sync
+        3rd Party Sync
       </Tab>
     </Tabs>
   );
