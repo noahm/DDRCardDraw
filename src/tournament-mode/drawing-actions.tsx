@@ -9,9 +9,9 @@ import {
 } from "@blueprintjs/core";
 import {
   Camera,
+  CloudDownload,
   DataLineage,
   DocumentShare,
-  Import,
   Random,
   Edit,
   Error as ErrorIcon,
@@ -371,7 +371,7 @@ export function DrawingActions() {
           <Tooltip content="Import Scores from SMX">
             <Button
               variant="minimal"
-              icon={<Import />}
+              icon={<CloudDownload />}
               onClick={() => setSmxImportMeta(drawingMeta)}
             />
           </Tooltip>
