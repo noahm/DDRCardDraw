@@ -6,7 +6,9 @@ import {
   createSelector,
   createSlice,
 } from "@reduxjs/toolkit";
+import { primaryReuseKey, reuseKeysForChart } from "../chart-id";
 import {
+  CHART_DRAWN,
   CompoundSetId,
   Drawing,
   DrawnChart,
@@ -367,12 +369,99 @@ export const drawingsSlice = createSlice({
     selectMergedByCompoundId(state, compoundId: CompoundSetId) {
       return selectMergedByCompoundId(state, compoundId);
     },
+    /**
+     * The config behind the most recent drawing, or undefined before anything
+     * has been drawn. Entity ids stay in insertion order, so the last one is
+     * the newest draw. This is the closest thing to "the config this event is
+     * currently running on" that is actually shared with the room -- the
+     * config a person last *clicked* lives in their own localStorage, which a
+     * second device (an OBS browser source, say) can never see.
+     */
+    newestDrawConfigId(state) {
+      for (let i = state.ids.length - 1; i >= 0; i--) {
+        const drawing = state.entities[state.ids[i]];
+        if (drawing) return drawing.configId;
+      }
+      return undefined;
+    },
   },
 });
 
 export const drawingSelectors = drawingsAdapter.getSelectors(
   drawingsSlice.selectSlice,
 );
+
+/**
+ * Which charts this event has already spent, derived from the draw history and
+ * nothing else. The history on display is canonically the list of charts that
+ * have been drawn, so there is no separate deck state that could drift from it.
+ *
+ * Both halves of a pocket pick count as used: the chart that was replaced and
+ * the one that replaced it. Returning the original to the pool would mean
+ * un-doing a pocket pick has to take a chart back *out* of the pool, and that
+ * chart may already have been drawn somewhere else by then.
+ *
+ * `keys` holds every key a chart can be recognized by (see `chart-id.ts`), so
+ * it is not one entry per chart — `count` is the number of distinct charts.
+ */
+export const selectChartUsage = createSelector(
+  [drawingsSlice.selectSlice],
+  (state) => {
+    const keys = new Set<string>();
+    const distinctCharts = new Set<string>();
+
+    for (const chart of spentCharts(state)) {
+      distinctCharts.add(primaryReuseKey(chart));
+      for (const key of reuseKeysForChart(chart)) {
+        keys.add(key);
+      }
+    }
+
+    return { keys, count: distinctCharts.size };
+  },
+);
+
+/**
+ * The distinct charts this event has spent, oldest first. Reads the same
+ * history `selectChartUsage` does, but keeps the charts themselves rather than
+ * just their keys, so a view can show *what* was taken rather than only how
+ * much. Where a chart was drawn more than once -- possible for history made
+ * before the reuse rule was switched on -- the first copy drawn is the one
+ * kept.
+ */
+export const selectSpentCharts = createSelector(
+  [drawingsSlice.selectSlice],
+  (state) => {
+    const byKey = new Map<string, EligibleChart>();
+    for (const chart of spentCharts(state)) {
+      const key = primaryReuseKey(chart);
+      if (!byKey.has(key)) {
+        byKey.set(key, chart);
+      }
+    }
+    return Array.from(byKey.values());
+  },
+);
+
+/**
+ * Every chart this event has spent, in the order the history holds them, and
+ * with duplicates: a chart drawn twice is yielded twice. Both halves of a
+ * pocket pick count, matching the reuse rule -- see `selectChartUsage`.
+ */
+function* spentCharts(state: StateOfSlice<typeof drawingsSlice>) {
+  for (const id of state.ids) {
+    const drawing = state.entities[id];
+    if (!drawing) continue;
+    for (const subDrawing of Object.values(drawing.subDrawings)) {
+      for (const chart of subDrawing.charts) {
+        if (chart.type === CHART_DRAWN) yield chart;
+      }
+    }
+    for (const pick of Object.values(drawing.pocketPicks)) {
+      if (pick) yield pick.pick;
+    }
+  }
+}
 
 type StateOfSlice<S> = S extends Slice<infer State> ? State : never;
 

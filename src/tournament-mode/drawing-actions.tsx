@@ -26,11 +26,9 @@ import {
   ThVirtual,
   Trash,
 } from "@blueprintjs/icons";
-import { useAtomValue } from "jotai";
 import { domToPng } from "modern-screenshot";
 import { useState, lazy, JSX, Suspense } from "react";
 import { useErrorBoundary } from "react-error-boundary";
-import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_DRAWN,
@@ -71,6 +69,7 @@ import {
   ConfigContextProvider,
   useConfigId,
   useConfigState,
+  useEventSettings,
   useGameData,
 } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
@@ -443,7 +442,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
   const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
   const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
   const isTwoPlayers = drawingMeta.players.length === 2;
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+  const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
 
   let editPlayersDialog: JSX.Element | null;
   switch (drawingMeta.type) {

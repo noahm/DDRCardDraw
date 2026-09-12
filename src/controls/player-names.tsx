@@ -4,7 +4,6 @@ import { DelayedSpinner } from "../common-components/delayed-spinner";
 // import { useConfigState, useUpdateConfig } from "../state/hooks";
 // import { useIntl } from "../hooks/useIntl";
 import { useAtomValue } from "jotai";
-// import { showPlayerAndRoundLabels } from "../config-state";
 // import { useAppState } from "../state/store";
 import { startggEventSlug, startggKeyAtom } from "../startgg-gql";
 import { StartggCredsManager } from "../startgg-gql/components";
@@ -80,19 +79,6 @@ export function inferShortname(name: string | null | undefined) {
 //         value={inferShortname(props.entrant.startggTag)}
 //       />
 //     </Label>
-//   );
-// }
-
-// function ShowLabelsToggle() {
-//   const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
-//   const { t } = useIntl();
-
-//   return (
-//     <Checkbox
-//       checked={enabled}
-//       onChange={(e) => updateShowLabels(e.currentTarget.checked)}
-//       label={t("controls.playerLabels")}
-//     />
 //   );
 // }
 

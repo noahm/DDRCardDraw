@@ -218,7 +218,20 @@ export class SyncManager {
     if (message.seq != null) {
       this.lastSeq = message.seq;
     }
-    this.confirmed = reducer(this.confirmed!, message.action);
+    try {
+      this.confirmed = reducer(this.confirmed!, message.action);
+    } catch (e) {
+      // The server applied this action before broadcasting it, so reaching here
+      // means our confirmed state disagrees with the server's. Leaving it out
+      // keeps us usable but divergent, so ask for a fresh snapshot rather than
+      // carrying on from a state the server doesn't share.
+      console.error(
+        `confirmed state rejected ${String(message.action.type)}; resyncing`,
+        e,
+      );
+      this.handlers.resync();
+      return;
+    }
 
     const ownEntry = message.id ? this.pending.get(message.id) : undefined;
     if (ownEntry) {
@@ -282,11 +295,28 @@ export class SyncManager {
     }
   }
 
-  /** replay pending actions over the confirmed state */
+  /**
+   * Replay pending actions over the confirmed state.
+   *
+   * A pending action can become invalid once a foreign action lands underneath
+   * it — someone else drew the chart we were about to draw, say — and the
+   * reducer signals that by throwing. Skip it here rather than letting it take
+   * the client down: this only builds display state, and the entry stays
+   * pending, so the server's verdict still settles it. If the server refuses
+   * it too, `handleReject` rolls it back for good; if the server's ordering
+   * makes it valid after all, its echo applies it to `confirmed` as usual.
+   */
   private rebase(): AppState {
     let state = this.confirmed!;
     for (const entry of this.pending.values()) {
-      state = reducer(state, entry.message.action);
+      try {
+        state = reducer(state, entry.message.action);
+      } catch (e) {
+        console.warn(
+          `skipping pending ${String(entry.message.action.type)} in rebase:`,
+          e,
+        );
+      }
     }
     return state;
   }

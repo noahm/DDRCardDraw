@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { useConfigState } from "../state/hooks";
+import { useEventSettings } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_PLACEHOLDER,
@@ -113,7 +113,7 @@ export function SongCardBase(props: Props) {
     FooterContent,
     getActions,
   } = props;
-  const hideVetos = useConfigState((s) => s.hideVetos);
+  const hideVetos = useEventSettings((s) => s.hideVetos);
 
   const [wasRandomlySelected, clearRandomSelection] =
     useChartRandomSelected(chart);
