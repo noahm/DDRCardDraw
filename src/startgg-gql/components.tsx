@@ -8,6 +8,7 @@ import {
 } from "@blueprintjs/core";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import React, { ReactNode, useRef, useState, useCallback } from "react";
+import { DelayedSpinner } from "../common-components/delayed-spinner";
 import {
   startggKeyAtom,
   startggEventSlug,
@@ -114,6 +115,7 @@ function EventPicker(props: { onSelected(slug: string): void }) {
   const [result] = useCurrentUserEvents();
   const setEventSlug = useSetAtom(startggEventSlug);
   const tournaments = result.data?.currentUser?.tournaments?.nodes;
+  const pageInfo = result.data?.currentUser?.tournaments?.pageInfo;
 
   function handleSelect(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
@@ -124,12 +126,36 @@ function EventPicker(props: { onSelected(slug: string): void }) {
     }
   }
 
-  if (!tournaments) {
+  if (result.error) {
+    // an expired or mistyped token lands here, and rendering nothing for it
+    // left the picker simply absent with no hint as to why
+    return (
+      <Callout intent="danger">
+        Couldn't load your tournaments: {result.error.message}
+      </Callout>
+    );
+  }
+  if (result.fetching && !tournaments) {
+    return <DelayedSpinner />;
+  }
+  if (!tournaments?.length) {
     return null;
   }
+  const total = pageInfo?.total ?? tournaments.length;
   return (
     <>
-      <p>Try the easy way and pick from your tournaments:</p>
+      <p>
+        Try the easy way and pick from your tournaments:
+        {total > tournaments.length && (
+          <>
+            {" "}
+            <span className={Classes.TEXT_MUTED}>
+              newest {tournaments.length} of {total} — paste the slug above for
+              an older one
+            </span>
+          </>
+        )}
+      </p>
       <ul className={Classes.LIST}>
         {tournaments.map((t) => {
           if (!t) return null;

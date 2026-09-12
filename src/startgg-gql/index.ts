@@ -227,6 +227,11 @@ const EventListQuery: typeof EventListDocument = gql`
           page: $page
           perPage: $perPage
           filter: { tournamentView: "admin" }
+          # only the first page is ever fetched, so the sort decides which
+          # tournaments are reachable at all. Default order buries a TO with
+          # a long history under events from years ago, hiding the one they
+          # are running this weekend.
+          sortBy: "startAt desc"
         }
       ) {
         nodes {
