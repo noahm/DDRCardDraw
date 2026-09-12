@@ -4721,7 +4721,7 @@ __metadata:
     jsonschema: "npm:1.5.0"
     mini-css-extract-plugin: "npm:2.9.4"
     modern-screenshot: "npm:4.6.7"
-    nanoid: "npm:5.1.6"
+    nanoid: "npm:5.1.11"
     normalize.css: "npm:8.0.1"
     oxfmt: "npm:^0.46.0"
     oxlint: "npm:^1.61.0"
@@ -6857,12 +6857,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:5.1.6":
-  version: 5.1.6
-  resolution: "nanoid@npm:5.1.6"
+"nanoid@npm:5.1.11":
+  version: 5.1.11
+  resolution: "nanoid@npm:5.1.11"
   bin:
     nanoid: bin/nanoid.js
-  checksum: 10/4109dbcf596d7f297a9b42f459b8f01694a03ebbdd2f41408d963ad54e5ec7234cbe7b4acad137751f31add11bb4fb3415a3e688082516745812811f05570014
+  checksum: 10/d5971a1d39f68bd9845565c70a27733c832ba1bd73caad3c7b999a366c0355b6fcc65064f3b0179bca6cd36b50cacd5747d4482c303f026b58d62ebe31df9868
   languageName: node
   linkType: hard
 
