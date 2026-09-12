@@ -1,4 +1,4 @@
-import { Spinner } from "@blueprintjs/core";
+import { Loader } from "@mantine/core";
 import { useState, useEffect } from "react";
 
 export function DelayedSpinner(props: { timeout?: number }) {
@@ -12,7 +12,7 @@ export function DelayedSpinner(props: { timeout?: number }) {
     return () => clearTimeout(timeout);
   }, [props.timeout, show]);
   if (show) {
-    return <Spinner style={{ marginTop: "15px" }} />;
+    return <Loader style={{ marginTop: "15px" }} />;
   }
   return null;
 }

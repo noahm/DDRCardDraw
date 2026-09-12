@@ -3,7 +3,7 @@
   --drawing-grad-chroma: 0.08;
 }
 
-body:global(.bp6-dark) {
+:global([data-mantine-color-scheme="dark"]) body {
   --drawing-grad-lightness: 0.25;
   --drawing-grad-chroma: 0.05;
 }

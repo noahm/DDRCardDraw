@@ -1,7 +1,7 @@
-import { Button, Card, Classes, Spinner, Text } from "@blueprintjs/core";
-import { Refresh } from "@blueprintjs/icons";
+import { ActionIcon, Card, Loader, Text } from "@mantine/core";
+import { IconRefresh } from "@tabler/icons-react";
 import { useIntl } from "../hooks/useIntl";
-import { associatedMatchIds, PickedMatch } from "../matches";
+import { associatedMatchIds, LoadingCard, PickedMatch } from "../matches";
 import { useAppState } from "../state/store";
 import { PiuTourneyHeader } from "./components";
 import { PiuMatch, usePiuMatches, usePiuTourney, usePiuTourneyId } from ".";
@@ -67,10 +67,14 @@ export function PiuMatchPicker(props: {
   const existingMatches = useAppState(associatedMatchIds);
 
   const reloadButton = (
-    <Button
-      icon={resp.fetching ? <Spinner size={20} /> : <Refresh size={20} />}
+    <ActionIcon
+      variant="default"
+      size={36}
+      aria-label="Refresh"
       onClick={refetch}
-    />
+    >
+      {resp.fetching ? <Loader size={20} /> : <IconRefresh size={20} />}
+    </ActionIcon>
   );
 
   const header = <PiuTourneyHeader rightElement={reloadButton} />;
@@ -87,9 +91,7 @@ export function PiuMatchPicker(props: {
       <div>
         {header}
         {[0, 1, 2].map((i) => (
-          <Card key={i}>
-            <p className={Classes.SKELETON}>loading content for a match</p>
-          </Card>
+          <LoadingCard key={i}>loading content for a match</LoadingCard>
         ))}
       </div>
     );
@@ -131,9 +133,13 @@ export function PiuMatchPicker(props: {
     return (
       <Card
         key={match.id}
-        interactive={!matchUsed}
-        style={{ opacity: matchUsed ? 0.5 : undefined }}
-        compact
+        withBorder
+        my="xs"
+        padding="sm"
+        style={{
+          opacity: matchUsed ? 0.5 : undefined,
+          cursor: matchUsed ? undefined : "pointer",
+        }}
         onClick={
           matchUsed
             ? undefined
@@ -149,7 +155,7 @@ export function PiuMatchPicker(props: {
                 })
         }
       >
-        <Text tagName="p">
+        <Text component="p" my={0}>
           <strong>{title}</strong>
           {" - "}
           {players
@@ -164,13 +170,13 @@ export function PiuMatchPicker(props: {
     <div>
       {header}
       {!!headToHead.length && !!gauntlets.length && (
-        <Text tagName="h4">
+        <Text component="h4">
           {t("piuTourney.headToHead", undefined, "Head to head")}
         </Text>
       )}
       {headToHead.map(renderMatch)}
       {!!headToHead.length && !!gauntlets.length && (
-        <Text tagName="h4">
+        <Text component="h4">
           {t("piuTourney.gauntlet", undefined, "Gauntlet")}
         </Text>
       )}

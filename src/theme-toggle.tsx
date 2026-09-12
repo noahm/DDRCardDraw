@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Classes, MenuItem } from "@blueprintjs/core";
-import { Flash, Moon } from "@blueprintjs/icons";
+import { Menu } from "@mantine/core";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 import { FormattedMessage } from "react-intl";
 import { create } from "zustand";
 import { useMediaQuery } from "./hooks/useMediaQuery";
@@ -17,11 +17,10 @@ export function useThemePref() {
 }
 
 /**
- * @param theme the theme to apply
- * @param isOBSSource if true, ignores theme, applies dark and an extra obs-layer classname
+ * The colour scheme itself is applied by MantineProvider (see useTheme); this
+ * only marks the body as an OBS layer so the transparent background applies.
  */
-function applyThemeBodyClass(theme: Theme, isOBSSource: boolean) {
-  document.body.classList.toggle(Classes.DARK, isOBSSource || theme === "dark");
+function applyThemeBodyClass(isOBSSource: boolean) {
   document.body.classList.toggle("obs-layer", isOBSSource);
 }
 
@@ -82,19 +81,19 @@ if (window.obsstudio) {
 export const useInObs = () => useThemeStore((s) => s.inObs);
 export const useInObsSource = () => useThemeStore((s) => s.obsBrowserSource);
 
-/** hook to get current app theme */
-export const useTheme = () => useThemeStore((s) => s.resolved);
+/**
+ * Current app theme. A browser source in OBS is always dark regardless of the
+ * user's preference, so it composites correctly over a stream.
+ */
+export const useTheme = () =>
+  useThemeStore((s) => (s.obsBrowserSource ? "dark" : s.resolved));
 
 export function ThemeSyncWidget() {
-  const {
-    resolved: resolvedTheme,
-    obsBrowserSource: isOBSSource,
-    updateBrowserPref,
-  } = useThemeStore();
+  const { obsBrowserSource: isOBSSource, updateBrowserPref } = useThemeStore();
   const browserPref = useThemePref();
   useEffect(() => {
-    applyThemeBodyClass(resolvedTheme, isOBSSource);
-  }, [resolvedTheme, isOBSSource]);
+    applyThemeBodyClass(isOBSSource);
+  }, [isOBSSource]);
   useEffect(() => {
     updateBrowserPref(browserPref);
   }, [updateBrowserPref, browserPref]);
@@ -105,25 +104,14 @@ export function ThemeToggle() {
   const resolvedTheme = useThemeStore((t) => t.resolved);
   const setTheme = useThemeStore((t) => t.setTheme);
 
-  const ThemeIcon = resolvedTheme === "dark" ? Flash : Moon;
+  const ThemeIcon = resolvedTheme === "dark" ? IconSun : IconMoon;
 
   return (
-    <MenuItem
-      icon={<ThemeIcon />}
-      text={<FormattedMessage id="toggleTheme" defaultMessage="Toggle Theme" />}
+    <Menu.Item
+      leftSection={<ThemeIcon size={16} />}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-    />
+    >
+      <FormattedMessage id="toggleTheme" defaultMessage="Toggle Theme" />
+    </Menu.Item>
   );
 }
-
-// export function ObsToggle() {
-//   const set = useThemeStore((t) => t.setObsLayer);
-
-//   return (
-//     <MenuItem
-//       icon={<EyeOff />}
-//       text={<FormattedMessage id="toggle-obs-layer" defaultMessage="Hide UI" />}
-//       onClick={() => set(true)}
-//     />
-//   );
-// }

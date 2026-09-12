@@ -73,7 +73,7 @@
   transform: scale(1.05);
 }
 
-:global(.bp6-dark) .chart.randomSelected {
+:global([data-mantine-color-scheme="dark"]) .chart.randomSelected {
   box-shadow: 0px 0px 4px white;
 }
 
@@ -97,20 +97,27 @@
   );
 }
 
+/*
+ * Card text stays proportional to whatever font-size the card inherits, so a
+ * custom OBS stylesheet can scale a whole card by setting one font-size on it.
+ * The percentages are tuned against the app's 16px base; they were 140/75/110
+ * back when the base was 14px, and were scaled by 14/16 to keep cards reading
+ * at the same size after the base grew.
+ */
 .name {
-  font-size: 140%;
+  font-size: 122.5%;
 }
 .nameTranslation {
-  font-size: 75%;
+  font-size: 65.625%;
 }
 .dateAdded {
-  font-size: 110%;
+  font-size: 96.25%;
 }
 .maxScore {
-  font-size: 110%;
+  font-size: 96.25%;
 }
 .folder {
-  font-size: 75%;
+  font-size: 65.625%;
 }
 
 .cardFooter {

@@ -1,34 +1,27 @@
+import { ActionIcon, Menu, Modal, Tooltip } from "@mantine/core";
 import {
-  Button,
-  Dialog,
-  DialogBody,
-  Menu,
-  MenuItem,
-  Popover,
-  Tooltip,
-} from "@blueprintjs/core";
-import {
-  Camera,
-  CloudDownload,
-  DataLineage,
-  DocumentShare,
-  Random,
-  Edit,
-  Error as ErrorIcon,
-  Exchange,
-  Label,
-  NewLayer,
-  NewLayers,
-  Refresh,
-  SendTo,
-  TableSync,
-  Th,
-  ThVirtual,
-  Trash,
-} from "@blueprintjs/icons";
+  IconCamera,
+  IconSitemap,
+  IconShare2,
+  IconArrowsShuffle,
+  IconEdit,
+  IconExclamationCircle,
+  IconArrowsExchange,
+  IconTag,
+  IconStack,
+  IconStack2,
+  IconRefresh,
+  IconSend,
+  IconTableExport,
+  IconTable,
+  IconTableOptions,
+  IconTrash,
+  IconScribble,
+  IconCloudDownload,
+} from "@tabler/icons-react";
 import { useAtomValue } from "jotai";
 import { domToPng } from "modern-screenshot";
-import { useState, lazy, JSX, Suspense } from "react";
+import { useState, lazy, JSX, ReactNode, Suspense } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";
@@ -125,6 +118,30 @@ function getMatchResult(
 
 const DEFAULT_FILENAME = "card-draw.png";
 
+function ToolbarButton(props: {
+  label: ReactNode;
+  icon: ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+  tooltipColor?: string;
+}) {
+  return (
+    <Tooltip label={props.label} color={props.tooltipColor}>
+      <ActionIcon
+        variant="subtle"
+        color="gray"
+        // the tooltip is the only text on these, and it isn't an accessible
+        // name; a translated label can't serve as one, so it stays unnamed
+        aria-label={typeof props.label === "string" ? props.label : undefined}
+        disabled={props.disabled}
+        onClick={props.onClick}
+      >
+        {props.icon}
+      </ActionIcon>
+    </Tooltip>
+  );
+}
+
 function SaveToStartggButton({ drawingId }: { drawingId: string }) {
   const dispatch = useAppDispatch();
   const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
@@ -142,23 +159,19 @@ function SaveToStartggButton({ drawingId }: { drawingId: string }) {
   }
 
   return (
-    <Tooltip
-      intent={mutationData.error ? "danger" : "none"}
-      content={tooltipContent}
-    >
-      <Button
-        variant="minimal"
-        disabled={mutationData.fetching}
-        icon={<TableSync />}
-        onClick={() => {
-          const results = dispatch(getMatchResult(drawingId));
-          if (!results) {
-            return;
-          }
-          void reportSet(results);
-        }}
-      />
-    </Tooltip>
+    <ToolbarButton
+      label={tooltipContent}
+      tooltipColor={mutationData.error ? "red" : undefined}
+      disabled={mutationData.fetching}
+      icon={<IconTableExport size={18} />}
+      onClick={() => {
+        const results = dispatch(getMatchResult(drawingId));
+        if (!results) {
+          return;
+        }
+        void reportSet(results);
+      }}
+    />
   );
 }
 
@@ -168,54 +181,53 @@ function EditSetMenu() {
   const drawingId = useDrawing((s) => s.compoundId);
 
   return (
-    <>
-      <Tooltip content="Alter Set">
-        <Popover
-          content={
-            <Menu>
-              <MenuItem
-                icon={<NewLayer />}
-                text="Draw Another Chart"
-                onClick={() =>
-                  dispatch(createPlusOneChart(drawingId, CHART_DRAWN))
-                }
-              />
-              <MenuItem
-                icon={<Edit />}
-                text="Add New Player Pick"
-                onClick={() =>
-                  dispatch(createPlusOneChart(drawingId, CHART_PLACEHOLDER))
-                }
-              />
-              <MenuItem
-                text={t("drawing.redrawAll", undefined, "Redraw set")}
-                icon={<Refresh />}
-                onClick={() =>
-                  confirm(
-                    t(
-                      "drawing.redrawConfirm",
-                      undefined,
-                      "This will replace everything besides protects and picks!",
-                    ),
-                  ) && dispatch(createRedrawAll(drawingId))
-                }
-              />
-              <MenuItem
-                text="Delete this set"
-                icon={<Trash />}
-                onClick={() =>
-                  confirm(
-                    "This draw will be permanently removed and cannot be recovered!",
-                  ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
-                }
-              />
-            </Menu>
+    <Menu>
+      <Menu.Target>
+        <ActionIcon variant="subtle" color="gray" aria-label="Alter Set">
+          <IconEdit size={18} />
+        </ActionIcon>
+      </Menu.Target>
+      <Menu.Dropdown>
+        <Menu.Item
+          leftSection={<IconStack size={16} />}
+          onClick={() => dispatch(createPlusOneChart(drawingId, CHART_DRAWN))}
+        >
+          Draw Another Chart
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconScribble size={16} />}
+          onClick={() =>
+            dispatch(createPlusOneChart(drawingId, CHART_PLACEHOLDER))
           }
         >
-          <Button variant="minimal" icon={<Edit />} />
-        </Popover>
-      </Tooltip>
-    </>
+          Add New Player Pick
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconRefresh size={16} />}
+          onClick={() =>
+            confirm(
+              t(
+                "drawing.redrawConfirm",
+                undefined,
+                "This will replace everything besides protects and picks!",
+              ),
+            ) && dispatch(createRedrawAll(drawingId))
+          }
+        >
+          {t("drawing.redrawAll", undefined, "Redraw set")}
+        </Menu.Item>
+        <Menu.Item
+          leftSection={<IconTrash size={16} />}
+          onClick={() =>
+            confirm(
+              "This draw will be permanently removed and cannot be recovered!",
+            ) && dispatch(drawingsSlice.actions.removeOne(drawingId))
+          }
+        >
+          Delete this set
+        </Menu.Item>
+      </Menu.Dropdown>
+    </Menu>
   );
 }
 
@@ -235,11 +247,12 @@ function ConfigAsMenuItem(props: { configId: string; drawingId: string }) {
   const dispatch = useAppDispatch();
   const currentConfigId = useConfigId();
   return (
-    <MenuItem
-      intent={currentConfigId === props.configId ? "primary" : undefined}
-      text={`${config.name} (${config.chartCount}@${config.lowerBound}-${config.upperBound})`}
+    <Menu.Item
+      color={currentConfigId === props.configId ? "blue" : undefined}
       onClick={() => dispatch(createSubdraw(props.drawingId, props.configId))}
-    />
+    >
+      {`${config.name} (${config.chartCount}@${config.lowerBound}-${config.upperBound})`}
+    </Menu.Item>
   );
 }
 
@@ -265,129 +278,129 @@ export function DrawingActions() {
     undefined,
   );
 
-  const addToCabMenu = (
-    <Menu>
-      {cabs.map((cab) => (
-        <MenuItem
-          key={cab.id}
-          text={cab.name}
-          onClick={() =>
-            dispatch(
-              eventSlice.actions.assignSetToCab({
-                cabId: cab.id,
-                matchId: drawingId,
-              }),
-            )
-          }
-        />
-      ))}
-    </Menu>
-  );
-
   return (
     <div className={styles.networkButtons}>
-      <Tooltip content={t("drawing.pickRandom", undefined, "Pick Random")}>
-        <Button
-          variant="minimal"
-          icon={<Random />}
-          onClick={highlighAtRandom}
-        />
-      </Tooltip>
-      <Tooltip content={t("drawing.saveImage", undefined, "Save image")}>
-        <Button
-          variant="minimal"
-          icon={<Camera />}
-          onClick={async () => {
-            const drawingElement = document.querySelector(
-              "#drawing-" + drawingId[1],
+      <ToolbarButton
+        label={t("drawing.pickRandom", undefined, "Pick Random")}
+        icon={<IconArrowsShuffle size={18} />}
+        onClick={highlighAtRandom}
+      />
+      <ToolbarButton
+        label={t("drawing.saveImage", undefined, "Save image")}
+        icon={<IconCamera size={18} />}
+        onClick={async () => {
+          const drawingElement = document.querySelector(
+            "#drawing-" + drawingId[1],
+          );
+          if (drawingElement) {
+            await shareImage(
+              await domToPng(drawingElement, { scale: 2 }),
+              DEFAULT_FILENAME,
             );
-            if (drawingElement) {
-              await shareImage(
-                await domToPng(drawingElement, { scale: 2 }),
-                DEFAULT_FILENAME,
-              );
-            }
-          }}
-        />
-      </Tooltip>
-      <Tooltip content={t("drawing.copyCards", undefined, "Save as CSV")}>
-        <Button
-          variant="minimal"
-          icon={<ThVirtual />}
-          onClick={() =>
-            shareCharts(
-              getDrawingFromCompoundId(
-                store.getState().drawings,
-                drawingId,
-              )[1].charts.filter((c) => c.type === "DRAWN"),
-              "drawn",
-            )
           }
-        />
-      </Tooltip>
+        }}
+      />
+      <ToolbarButton
+        label={t("drawing.copyCards", undefined, "Save as CSV")}
+        icon={<IconTableOptions size={18} />}
+        onClick={() =>
+          shareCharts(
+            getDrawingFromCompoundId(
+              store.getState().drawings,
+              drawingId,
+            )[1].charts.filter((c) => c.type === "DRAWN"),
+            "drawn",
+          )
+        }
+      />
       {process.env.NODE_ENV === "production" ? null : (
-        <Tooltip content="Cause Error">
-          <Button
-            variant="minimal"
-            icon={<ErrorIcon />}
-            onClick={() => showBoundary(new Error("synthetic error"))}
-          />
-        </Tooltip>
+        <ToolbarButton
+          label="Cause Error"
+          icon={<IconExclamationCircle size={18} />}
+          onClick={() => showBoundary(new Error("synthetic error"))}
+        />
       )}
       <EventModeGated>
         {!!cabs.length && (
-          <Tooltip content="Assign Set to Cab">
-            <Popover content={addToCabMenu} placement="bottom">
-              <Button variant="minimal" icon={<SendTo />} />
-            </Popover>
-          </Tooltip>
+          <Menu position="bottom">
+            <Menu.Target>
+              <ActionIcon
+                variant="subtle"
+                color="gray"
+                aria-label="Assign Set to Cab"
+                title="Assign Set to Cab"
+              >
+                <IconSend size={18} />
+              </ActionIcon>
+            </Menu.Target>
+            <Menu.Dropdown>
+              {cabs.map((cab) => (
+                <Menu.Item
+                  key={cab.id}
+                  onClick={() =>
+                    dispatch(
+                      eventSlice.actions.assignSetToCab({
+                        cabId: cab.id,
+                        matchId: drawingId,
+                      }),
+                    )
+                  }
+                >
+                  {cab.name}
+                </Menu.Item>
+              ))}
+            </Menu.Dropdown>
+          </Menu>
         )}
       </EventModeGated>
       {canScore && (
         <>
-          <Tooltip content="Edit Scores">
-            <Button
-              variant="minimal"
-              icon={<Th />}
-              onClick={() => {
-                setScoreEditorMeta(drawingMeta);
-              }}
-            />
-          </Tooltip>
-          <Dialog
+          <ToolbarButton
+            label="Edit Scores"
+            icon={<IconTable size={18} />}
+            onClick={() => {
+              setScoreEditorMeta(drawingMeta);
+            }}
+          />
+          <Modal
             onClose={() => setScoreEditorMeta(undefined)}
-            isOpen={!!scoreEditorMeta}
+            opened={!!scoreEditorMeta}
             title="Score Editor"
-            style={{ width: "auto" }}
+            size="auto"
           >
-            <DialogBody>
-              <ScoreEditor meta={scoreEditorMeta!} />
-            </DialogBody>
-          </Dialog>
+            {/* Modal keeps its children mounted through the closing
+                transition, so the meta has to be guarded rather than asserted */}
+            {scoreEditorMeta && (
+              <Suspense fallback={<DelayedSpinner />}>
+                <ScoreEditor meta={scoreEditorMeta} />
+              </Suspense>
+            )}
+          </Modal>
         </>
       )}
       {canImportSmxScores && (
         <>
-          <Tooltip content="Import Scores from SMX">
-            <Button
-              variant="minimal"
-              icon={<CloudDownload />}
-              onClick={() => setSmxImportMeta(drawingMeta)}
-            />
-          </Tooltip>
-          <Dialog
+          <ToolbarButton
+            label="Import Scores from SMX"
+            icon={<IconCloudDownload size={18} />}
+            onClick={() => setSmxImportMeta(drawingMeta)}
+          />
+          <Modal
             onClose={() => setSmxImportMeta(undefined)}
-            isOpen={!!smxImportMeta}
+            opened={!!smxImportMeta}
             title="Import Scores from SMX"
-            style={{ width: "auto", minWidth: "40em" }}
+            size="auto"
+            styles={{ content: { minWidth: "40em" } }}
           >
-            <Suspense fallback={<DelayedSpinner />}>
-              <SmxScoreImport
-                meta={smxImportMeta!}
-                onClose={() => setSmxImportMeta(undefined)}
-              />
-            </Suspense>
-          </Dialog>
+            {smxImportMeta && (
+              <Suspense fallback={<DelayedSpinner />}>
+                <SmxScoreImport
+                  meta={smxImportMeta}
+                  onClose={() => setSmxImportMeta(undefined)}
+                />
+              </Suspense>
+            )}
+          </Modal>
         </>
       )}
       <EditSetMenu />
@@ -399,34 +412,39 @@ export function MatchActions({ drawingId }: { drawingId: string }) {
   const dispatch = useAppDispatch();
   const cabs = useAppState(eventSlice.selectors.allCabs);
 
-  const addToCabMenu = (
-    <Menu>
-      {cabs.map((cab) => (
-        <MenuItem
-          key={cab.id}
-          text={cab.name}
-          onClick={() =>
-            dispatch(
-              eventSlice.actions.assignMatchToCab({
-                cabId: cab.id,
-                matchId: drawingId,
-              }),
-            )
-          }
-        />
-      ))}
-    </Menu>
-  );
-
   return (
     <div className={styles.networkButtons}>
       <EventModeGated>
         {!!cabs.length && (
-          <Tooltip content="Assign Match to Cab">
-            <Popover content={addToCabMenu} placement="bottom">
-              <Button variant="minimal" icon={<DocumentShare />} />
-            </Popover>
-          </Tooltip>
+          <Menu position="bottom">
+            <Menu.Target>
+              <ActionIcon
+                variant="subtle"
+                color="gray"
+                aria-label="Assign Match to Cab"
+                title="Assign Match to Cab"
+              >
+                <IconShare2 size={18} />
+              </ActionIcon>
+            </Menu.Target>
+            <Menu.Dropdown>
+              {cabs.map((cab) => (
+                <Menu.Item
+                  key={cab.id}
+                  onClick={() =>
+                    dispatch(
+                      eventSlice.actions.assignMatchToCab({
+                        cabId: cab.id,
+                        matchId: drawingId,
+                      }),
+                    )
+                  }
+                >
+                  {cab.name}
+                </Menu.Item>
+              ))}
+            </Menu.Dropdown>
+          </Menu>
         )}
       </EventModeGated>
       <EventModeGated>
@@ -471,60 +489,75 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       editPlayersDialog = null;
   }
 
-  const menu = (
-    <Menu>
-      {editPlayersDialog && (
-        <MenuItem
-          icon={<Label />}
-          text="Edit Title & Players"
-          onClick={() => setMetaEditorOpen(true)}
-        />
-      )}
-      <MenuItem icon={<NewLayers />} text="Draw Extra Set">
-        <ConfigContextProvider value={configId}>
-          <ConfigsAsMenuItems drawingId={drawingId} />
-        </ConfigContextProvider>
-      </MenuItem>
-      <MenuItem
-        icon={<DataLineage />}
-        text="Merge All Sets"
-        onClick={() => dispatch(mergeDraws({ drawingId }))}
-      />
-      {showLabels && isTwoPlayers && (
-        <MenuItem
-          text="Swap Player Positions"
-          icon={<Exchange />}
-          onClick={() => {
-            dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
-          }}
-        />
-      )}
-      <MenuItem
-        text="Delete this match"
-        icon={<Trash />}
-        onClick={() =>
-          confirm(
-            "This match will be permanently removed and cannot be recovered!",
-          ) && dispatch(drawingsSlice.actions.removeOne([drawingId, ""]))
-        }
-      />
-    </Menu>
-  );
-
   return (
     <>
-      <Dialog
-        isOpen={metaEditorOpen}
+      <Modal
+        opened={metaEditorOpen}
         title="Edit Match"
         onClose={() => setMetaEditorOpen(false)}
       >
-        <DialogBody>{editPlayersDialog}</DialogBody>
-      </Dialog>
-      <Tooltip content="Alter Match">
-        <Popover content={menu}>
-          <Button variant="minimal" icon={<Edit />} />
-        </Popover>
-      </Tooltip>
+        {editPlayersDialog}
+      </Modal>
+      <Menu>
+        <Menu.Target>
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            aria-label="Alter Match"
+            title="Alter Match"
+          >
+            <IconEdit size={18} />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          {editPlayersDialog && (
+            <Menu.Item
+              leftSection={<IconTag size={16} />}
+              onClick={() => setMetaEditorOpen(true)}
+            >
+              Edit Title & Players
+            </Menu.Item>
+          )}
+          <Menu.Sub>
+            <Menu.Sub.Target>
+              <Menu.Sub.Item leftSection={<IconStack2 size={16} />}>
+                Draw Extra Set
+              </Menu.Sub.Item>
+            </Menu.Sub.Target>
+            <Menu.Sub.Dropdown>
+              <ConfigContextProvider value={configId}>
+                <ConfigsAsMenuItems drawingId={drawingId} />
+              </ConfigContextProvider>
+            </Menu.Sub.Dropdown>
+          </Menu.Sub>
+          <Menu.Item
+            leftSection={<IconSitemap size={16} />}
+            onClick={() => dispatch(mergeDraws({ drawingId }))}
+          >
+            Merge All Sets
+          </Menu.Item>
+          {showLabels && isTwoPlayers && (
+            <Menu.Item
+              leftSection={<IconArrowsExchange size={16} />}
+              onClick={() => {
+                dispatch(drawingsSlice.actions.swapPlayerPositions(drawingId));
+              }}
+            >
+              Swap Player Positions
+            </Menu.Item>
+          )}
+          <Menu.Item
+            leftSection={<IconTrash size={16} />}
+            onClick={() =>
+              confirm(
+                "This match will be permanently removed and cannot be recovered!",
+              ) && dispatch(drawingsSlice.actions.removeOne([drawingId, ""]))
+            }
+          >
+            Delete this match
+          </Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
     </>
   );
 }

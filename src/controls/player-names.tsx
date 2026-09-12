@@ -1,11 +1,7 @@
-import { Section, SectionCard } from "@blueprintjs/core";
+import { Accordion } from "@mantine/core";
 import { lazy, Suspense, useState } from "react";
 import { DelayedSpinner } from "../common-components/delayed-spinner";
-// import { useConfigState, useUpdateConfig } from "../state/hooks";
-// import { useIntl } from "../hooks/useIntl";
 import { useAtomValue } from "jotai";
-// import { showPlayerAndRoundLabels } from "../config-state";
-// import { useAppState } from "../state/store";
 import { startggEventSlug, startggKeyAtom } from "../startgg-gql";
 import { StartggCredsManager } from "../startgg-gql/components";
 import { piuTourneyEnabled } from "../piu-tourney/config";
@@ -21,42 +17,39 @@ const PiuTourneyPicker = lazy(() =>
 export function PlayerNamesControls() {
   const apiKey = useAtomValue(startggKeyAtom);
   const eventSlug = useAtomValue(startggEventSlug);
-  // Blueprint renders every tab panel, so this component mounts on app load
-  // even when another tab is showing. Keeping the section closed until asked
-  // for is what stops that from pulling down the tourney maker chunk.
-  const [sourceOpen, setSourceOpen] = useState(false);
+  // Accordion.Panel keeps its children mounted once rendered, so gate the
+  // tourney maker on the section actually being opened rather than let it
+  // pull down the supabase chunk for anyone who visits this tab.
+  const [openSection, setOpenSection] = useState<string | null>(
+    !apiKey || !eventSlug ? "creds" : null,
+  );
   return (
-    <>
-      <Section
-        title="Start.gg Credentials"
-        collapsible
-        collapseProps={{ defaultIsOpen: !apiKey || !eventSlug }}
-        style={{ maxWidth: "50em" }}
-      >
-        <SectionCard>
+    <Accordion
+      variant="contained"
+      m="md"
+      value={openSection}
+      onChange={setOpenSection}
+      style={{ maxWidth: "50em" }}
+    >
+      <Accordion.Item value="creds">
+        <Accordion.Control>Start.gg Credentials</Accordion.Control>
+        <Accordion.Panel>
           <StartggCredsManager />
-        </SectionCard>
-      </Section>
+        </Accordion.Panel>
+      </Accordion.Item>
       {piuTourneyEnabled && (
-        <Section
-          title="Tourney Maker Source"
-          collapsible
-          collapseProps={{
-            isOpen: sourceOpen,
-            onToggle: () => setSourceOpen((open) => !open),
-          }}
-          style={{ maxWidth: "50em" }}
-        >
-          <SectionCard>
-            {sourceOpen && (
+        <Accordion.Item value="tourney-maker">
+          <Accordion.Control>Tourney Maker Source</Accordion.Control>
+          <Accordion.Panel>
+            {openSection === "tourney-maker" && (
               <Suspense fallback={<DelayedSpinner />}>
                 <PiuTourneyPicker />
               </Suspense>
             )}
-          </SectionCard>
-        </Section>
+          </Accordion.Panel>
+        </Accordion.Item>
       )}
-    </>
+    </Accordion>
   );
 }
 
@@ -69,49 +62,3 @@ export function inferShortname(name: string | null | undefined) {
   const namePieces = name.split(" | ");
   return namePieces.length >= 1 ? namePieces[namePieces.length - 1] : undefined;
 }
-
-// function EntrantNameForm(props: { entrant: Entrant }) {
-//   return (
-//     <Label>
-//       {props.entrant.startggTag}{" "}
-//       <input
-//         className={Classes.INPUT}
-//         placeholder="Leaderboard name"
-//         value={inferShortname(props.entrant.startggTag)}
-//       />
-//     </Label>
-//   );
-// }
-
-// function ShowLabelsToggle() {
-//   const [enabled, updateShowLabels] = useAtom(showPlayerAndRoundLabels);
-//   const { t } = useIntl();
-
-//   return (
-//     <Checkbox
-//       checked={enabled}
-//       onChange={(e) => updateShowLabels(e.currentTarget.checked)}
-//       label={t("controls.playerLabels")}
-//     />
-//   );
-// }
-
-// function PlayersPerDraw() {
-//   const update = useUpdateConfig();
-//   const ppd = useConfigState((s) => s.defaultPlayersPerDraw);
-//   const { t } = useIntl();
-
-//   return (
-//     <FormGroup label={t("controls.playersPerDraw")}>
-//       <NumericInput
-//         type="number"
-//         inputMode="numeric"
-//         value={ppd}
-//         large
-//         min={0}
-//         style={{ width: "58px" }}
-//         onValueChange={(next) => update({ defaultPlayersPerDraw: next })}
-//       />
-//     </FormGroup>
-//   );
-// }

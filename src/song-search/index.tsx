@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
+import { Modal, ScrollArea, TextInput } from "@mantine/core";
+import { IconSearch } from "@tabler/icons-react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
 import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
 import { Song, Chart } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
-import { Omnibar } from "@blueprintjs/select";
 import fuzzysort from "fuzzysort";
 import { getSongSearchIndex, scoreSongMatch } from "./search-index";
 import styles from "./song-search.css";
@@ -35,26 +36,22 @@ function chartIdentity(chart: Chart): string {
 export function SongSearch(props: Props) {
   const { isOpen, onSongSelect, onCancel } = props;
   const [searchTerm, updateSearchTerm] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
   const config = useConfigState();
   const gameData = useGameData();
   const songSearchIndex = useMemo(
     () => (gameData ? getSongSearchIndex(gameData) : null),
     [gameData],
   );
-  const overlayProps = useMemo(
-    () => ({
-      // Reset once the overlay has finished fading out. Clearing as soon as it
-      // starts to close would refill the list with unfiltered results behind
-      // the fade, since an empty query matches every song.
-      onClosed: () => updateSearchTerm(""),
-    }),
-    [],
-  );
+  function resetSearch() {
+    updateSearchTerm("");
+    setActiveIndex(0);
+  }
 
   let items: SearchResultData[] = [];
   // An empty query matches every song, so skip it entirely rather than ranking
-  // and filtering the whole list for a result set the omnibar won't render.
-  if (songSearchIndex && searchTerm) {
+  // and filtering the whole list for a result set we wouldn't want to show.
+  if (songSearchIndex && isOpen && searchTerm) {
     const songs = fuzzysort
       // threshold 0 keeps every subsequence match, ranked best-first
       .go(searchTerm, songSearchIndex, {
@@ -84,38 +81,99 @@ export function SongSearch(props: Props) {
     items = items.slice(0, config.constrainPocketPicks ? 30 : 15);
   }
 
-  return (
-    <Omnibar
-      isOpen={isOpen}
-      onClose={onCancel}
-      query={searchTerm}
-      onQueryChange={updateSearchTerm}
-      onItemSelect={(item) =>
-        onSongSelect(
-          item.song,
-          item.chart === "none" || !item.chart
-            ? undefined
-            : getDrawnChart(gameData!, item.song, item.chart),
-        )
+  function selectItem(item: SearchResultData) {
+    resetSearch();
+    onSongSelect(
+      item.song,
+      item.chart === "none" || !item.chart
+        ? undefined
+        : getDrawnChart(gameData!, item.song, item.chart),
+    );
+  }
+
+  /**
+   * The row the keyboard acts on. A song whose charts are all filtered out
+   * still shows (greyed, as an explanation), and the top-ranked match is often
+   * one of those, so fall forward to the first row Enter can actually pick.
+   */
+  const effectiveIndex =
+    items[activeIndex] && items[activeIndex].chart === "none"
+      ? nextEnabledIndex(activeIndex, 1)
+      : activeIndex;
+
+  /** step from `start` in `direction` to the next selectable result */
+  function nextEnabledIndex(start: number, direction: 1 | -1) {
+    for (let i = start; i >= 0 && i < items.length; i += direction) {
+      if (items[i].chart !== "none") {
+        return i;
       }
-      items={items}
-      overlayProps={overlayProps}
-      inputProps={{
-        placeholder: "Find a song...",
+    }
+    return start - direction;
+  }
+
+  return (
+    <Modal
+      opened={isOpen}
+      onClose={() => {
+        resetSearch();
+        onCancel();
       }}
+      withCloseButton={false}
+      padding="xs"
       className={styles.songSearch}
-      itemRenderer={(data, itemProps) => (
-        <SearchResult
-          key={`${data.song.saHash || data.song.name}-${
-            typeof data.chart === "string"
-              ? data.chart
-              : chartIdentity(data.chart)
-          }`}
-          data={data}
-          selected={itemProps.modifiers.active}
-          handleClick={itemProps.handleClick}
-        />
-      )}
-    />
+    >
+      <TextInput
+        placeholder="Find a song..."
+        leftSection={<IconSearch size={16} />}
+        value={searchTerm}
+        data-autofocus
+        onClick={(e) => e.stopPropagation()}
+        onChange={(e) => {
+          updateSearchTerm(e.currentTarget.value);
+          setActiveIndex(0);
+        }}
+        onKeyDown={(e) => {
+          switch (e.key) {
+            case "ArrowDown":
+              e.preventDefault();
+              setActiveIndex((prev) =>
+                Math.min(nextEnabledIndex(prev + 1, 1), items.length - 1),
+              );
+              break;
+            case "ArrowUp":
+              e.preventDefault();
+              setActiveIndex((prev) =>
+                Math.max(nextEnabledIndex(prev - 1, -1), 0),
+              );
+              break;
+            case "Enter":
+              if (
+                items[effectiveIndex] &&
+                items[effectiveIndex].chart !== "none"
+              ) {
+                selectItem(items[effectiveIndex]);
+              }
+              break;
+          }
+        }}
+      />
+      <ScrollArea.Autosize mah="60vh" mt="xs">
+        {items.map((data, idx) => (
+          <SearchResult
+            key={`${data.song.saHash || data.song.name}-${
+              typeof data.chart === "string"
+                ? data.chart
+                : chartIdentity(data.chart)
+            }`}
+            data={data}
+            selected={idx === effectiveIndex}
+            handleClick={(e) => {
+              e.stopPropagation();
+              selectItem(data);
+            }}
+          />
+        ))}
+      </ScrollArea.Autosize>
+    </Modal>
   );
 }

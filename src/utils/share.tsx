@@ -1,6 +1,14 @@
+import {
+  IconAlertTriangle,
+  IconClipboard,
+  IconPaperclip,
+} from "@tabler/icons-react";
 import { zeroPad } from ".";
 import { EligibleChart } from "../models/Drawing";
-import { toaster } from "../toaster";
+import { notify } from "../notify";
+
+/** copy/share results all reuse one slot so repeat copies replace each other */
+const COPY_NOTIFICATION = "copied-data";
 
 interface NativeShare {
   type: "nativeShare";
@@ -125,14 +133,12 @@ export async function shareData(
         }
         try {
           await copyToClipboard(blob);
-          toaster.show(
-            {
-              message: method.toastMessage,
-              icon: "paperclip",
-              intent: "success",
-            },
-            "copied-data",
-          );
+          notify.show({
+            id: COPY_NOTIFICATION,
+            message: method.toastMessage,
+            icon: <IconPaperclip />,
+            intent: "success",
+          });
           return;
         } catch (e) {
           console.warn("clipboard share failed", e);
@@ -183,25 +189,21 @@ export function downloadDataUrl(dataUrl: string, filename: string) {
 export async function copyTextToClipboard(text: string, toastSuccess?: string) {
   try {
     await navigator.clipboard.writeText(text);
-    toaster.show(
-      {
-        message: toastSuccess || "Copied to clipboard",
-        icon: "clipboard",
-        intent: "success",
-      },
-      "copied-data",
-    );
+    notify.show({
+      id: COPY_NOTIFICATION,
+      message: toastSuccess || "Copied to clipboard",
+      icon: <IconClipboard />,
+      intent: "success",
+    });
     return;
   } catch (e) {
     console.warn("clipboard share failed", e);
-    toaster.show(
-      {
-        message: "Copy failed",
-        icon: "warning-sign",
-        intent: "danger",
-      },
-      "copied-data",
-    );
+    notify.show({
+      id: COPY_NOTIFICATION,
+      message: "Copy failed",
+      icon: <IconAlertTriangle />,
+      intent: "danger",
+    });
   }
 }
 
@@ -219,13 +221,11 @@ export async function copyPlainTextToClipboard(
 ) {
   await navigator.clipboard.writeText(text);
   if (toastMessage) {
-    toaster.show(
-      {
-        message: toastMessage,
-        icon: "paperclip",
-      },
-      "copied-data",
-    );
+    notify.show({
+      id: COPY_NOTIFICATION,
+      message: toastMessage,
+      icon: <IconPaperclip />,
+    });
   }
 }
 

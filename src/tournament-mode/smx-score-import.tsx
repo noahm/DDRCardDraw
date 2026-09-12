@@ -1,15 +1,13 @@
 import {
+  Alert,
+  Badge,
   Button,
-  Callout,
-  DialogBody,
-  DialogFooter,
-  HTMLSelect,
-  HTMLTable,
-  Spinner,
-  SpinnerSize,
-  Tag,
-} from "@blueprintjs/core";
-import { Refresh } from "@blueprintjs/icons";
+  Group,
+  Loader,
+  NativeSelect,
+  Table,
+} from "@mantine/core";
+import { IconRefresh } from "@tabler/icons-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDrawing } from "../drawing-context";
 import {
@@ -231,111 +229,108 @@ export default function SmxScoreImport({
 
   return (
     <>
-      <DialogBody>
-        <div className={styles.toolbar}>
-          <label className={styles.windowPicker}>
-            Plays from the last
-            <HTMLSelect
-              value={windowMinutes}
-              onChange={(e) => setWindowMinutes(Number(e.currentTarget.value))}
-            >
-              {WINDOW_OPTIONS.map((mins) => (
-                <option key={mins} value={mins}>
-                  {mins} minutes
-                </option>
-              ))}
-            </HTMLSelect>
-          </label>
-          <span className={styles.status}>
-            {loading ? (
-              <Spinner size={SpinnerSize.SMALL} />
-            ) : (
-              loadedAt && `updated ${timeAgo(loadedAt)}`
-            )}
-          </span>
-          <Button
-            variant="minimal"
-            icon={<Refresh />}
-            disabled={loading}
-            onClick={() => void load(new AbortController().signal)}
-            text="Refresh"
+      <div className={styles.toolbar}>
+        <label className={styles.windowPicker}>
+          Plays from the last
+          <NativeSelect
+            size="xs"
+            value={windowMinutes}
+            onChange={(e) => setWindowMinutes(Number(e.currentTarget.value))}
+            data={WINDOW_OPTIONS.map((mins) => ({
+              value: String(mins),
+              label: `${mins} minutes`,
+            }))}
           />
-        </div>
+        </label>
+        <span className={styles.status}>
+          {loading ? (
+            <Loader size="xs" />
+          ) : (
+            loadedAt && `updated ${timeAgo(loadedAt)}`
+          )}
+        </span>
+        <Button
+          variant="subtle"
+          color="gray"
+          size="compact-sm"
+          leftSection={<IconRefresh size={16} />}
+          disabled={loading}
+          onClick={() => void load(new AbortController().signal)}
+        >
+          Refresh
+        </Button>
+      </div>
 
-        {error && (
-          <Callout intent="danger" title="Couldn't read the SMX score feed">
-            {error}
-          </Callout>
-        )}
-        {noSmxCharts && (
-          <Callout intent="warning" title="Nothing to look up">
-            None of the charts in this set carry an SMX song id, so there's
-            nothing to match plays against.
-          </Callout>
-        )}
-        {!!unresolved.length && (
-          <Callout intent="warning" title="Some charts can't be matched">
-            The score feed carries nothing for{" "}
-            {unresolved
-              .map((t) => `${t.chart.name} (${t.chart.diffAbbr})`)
-              .join(", ")}
-            , so plays on those have to be entered by hand. Team charts are
-            never in the feed.
-          </Callout>
-        )}
+      {error && (
+        <Alert color="red" title="Couldn't read the SMX score feed" mb="sm">
+          {error}
+        </Alert>
+      )}
+      {noSmxCharts && (
+        <Alert color="yellow" title="Nothing to look up" mb="sm">
+          None of the charts in this set carry an SMX song id, so there's
+          nothing to match plays against.
+        </Alert>
+      )}
+      {!!unresolved.length && (
+        <Alert color="yellow" title="Some charts can't be matched" mb="sm">
+          The score feed carries nothing for{" "}
+          {unresolved
+            .map((t) => `${t.chart.name} (${t.chart.diffAbbr})`)
+            .join(", ")}
+          , so plays on those have to be entered by hand. Team charts are never
+          in the feed.
+        </Alert>
+      )}
 
-        {!!plays.length && (
-          <HTMLTable compact striped className={styles.playTable}>
-            <thead>
-              <tr>
-                <th>Record as</th>
-                <th>SMX player</th>
-                <th className={styles.numeric}>Score</th>
-                <th>Chart</th>
-                <th>When</th>
-              </tr>
-            </thead>
-            <tbody>
-              {plays.map((play) => (
-                <PlayRow
-                  key={play.id}
-                  play={play}
-                  meta={meta}
-                  assignedTo={assignmentFor(play)}
-                  isOverwritten={overwritten.has(play.id)}
-                  onAssign={(playerId) =>
-                    setOverrides((prev) => ({ ...prev, [play.id]: playerId }))
-                  }
-                />
-              ))}
-            </tbody>
-          </HTMLTable>
-        )}
-        {!plays.length && !loading && !error && !noSmxCharts && (
-          <p className={styles.empty}>
-            No plays on this set's charts in the last {windowMinutes} minutes.
-            The dialog keeps checking, so leave it open while the match is
-            played.
-          </p>
-        )}
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button text="Cancel" onClick={onClose} />
-            <Button
-              intent="primary"
-              disabled={!assigned.length}
-              onClick={applyScores}
-              text={
-                assigned.length === 1
-                  ? "Record 1 score"
-                  : `Record ${assigned.length} scores`
-              }
-            />
-          </>
-        }
-      />
+      {!!plays.length && (
+        <Table
+          striped
+          horizontalSpacing="xs"
+          verticalSpacing="xs"
+          className={styles.playTable}
+        >
+          <Table.Thead>
+            <Table.Tr>
+              <Table.Th>Record as</Table.Th>
+              <Table.Th>SMX player</Table.Th>
+              <Table.Th className={styles.numeric}>Score</Table.Th>
+              <Table.Th>Chart</Table.Th>
+              <Table.Th>When</Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>
+            {plays.map((play) => (
+              <PlayRow
+                key={play.id}
+                play={play}
+                meta={meta}
+                assignedTo={assignmentFor(play)}
+                isOverwritten={overwritten.has(play.id)}
+                onAssign={(playerId) =>
+                  setOverrides((prev) => ({ ...prev, [play.id]: playerId }))
+                }
+              />
+            ))}
+          </Table.Tbody>
+        </Table>
+      )}
+      {!plays.length && !loading && !error && !noSmxCharts && (
+        <p className={styles.empty}>
+          No plays on this set's charts in the last {windowMinutes} minutes. The
+          dialog keeps checking, so leave it open while the match is played.
+        </p>
+      )}
+      <Group justify="flex-end" mt="md">
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
+        <Button disabled={!assigned.length} onClick={applyScores}>
+          {assigned.length === 1
+            ? "Record 1 score"
+            : `Record ${assigned.length} scores`}
+        </Button>
+      </Group>
     </>
   );
 }
@@ -359,31 +354,34 @@ function PlayRow({
       : meta.scoresByEntrant?.[assignedTo]?.[play.target.chartId];
   const chart = play.target.chart;
   return (
-    <tr className={assignedTo === UNASSIGNED ? styles.unassigned : undefined}>
-      <td>
-        <HTMLSelect
+    <Table.Tr
+      className={assignedTo === UNASSIGNED ? styles.unassigned : undefined}
+    >
+      <Table.Td>
+        <NativeSelect
+          size="xs"
           value={assignedTo}
           onChange={(e) => onAssign(e.currentTarget.value)}
-        >
-          <option value={UNASSIGNED}>—</option>
-          {meta.players.map((player, idx) => (
-            <option key={player.id} value={player.id}>
-              {playerDisplayName(player, idx)}
-            </option>
-          ))}
-        </HTMLSelect>
-      </td>
-      <td>
+          data={[
+            { value: UNASSIGNED, label: "—" },
+            ...meta.players.map((player, idx) => ({
+              value: player.id,
+              label: playerDisplayName(player, idx),
+            })),
+          ]}
+        />
+      </Table.Td>
+      <Table.Td>
         {play.username || (
           <em>{play.gamerId ? `gamer #${play.gamerId}` : "unknown player"}</em>
         )}
-      </td>
-      <td className={styles.numeric}>
+      </Table.Td>
+      <Table.Td className={styles.numeric}>
         {play.score.toLocaleString()}
         {play.fullCombo && (
-          <Tag minimal intent="success" className={styles.fcTag}>
+          <Badge variant="light" color="green" className={styles.fcTag}>
             FC
-          </Tag>
+          </Badge>
         )}
         {typeof existingScore === "number" &&
           existingScore !== play.score &&
@@ -392,25 +390,26 @@ function PlayRow({
               was {existingScore.toLocaleString()}
             </span>
           )}
-      </td>
-      <td>
+      </Table.Td>
+      <Table.Td>
         {chart.nameTranslation || chart.name}{" "}
-        <Tag
-          minimal
-          style={{ backgroundColor: chart.diffColor, color: "#fff" }}
-        >
+        <Badge style={{ backgroundColor: chart.diffColor, color: "#fff" }}>
           {chart.diffAbbr} {chart.level}
-        </Tag>
-      </td>
-      <td>
+        </Badge>
+      </Table.Td>
+      <Table.Td>
         {timeAgo(play.playedAt)}
         {isOverwritten && (
-          <Tag minimal intent="warning" className={styles.supersededTag}>
+          <Badge
+            variant="light"
+            color="yellow"
+            className={styles.supersededTag}
+          >
             superseded
-          </Tag>
+          </Badge>
         )}
-      </td>
-    </tr>
+      </Table.Td>
+    </Table.Tr>
   );
 }
 

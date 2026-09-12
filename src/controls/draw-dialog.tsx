@@ -1,12 +1,4 @@
-import {
-  DialogBody,
-  FormGroup,
-  HTMLSelect,
-  Tabs,
-  Tab,
-  InputGroup,
-  Button,
-} from "@blueprintjs/core";
+import { Button, Input, NativeSelect, Tabs, TextInput } from "@mantine/core";
 import { ConfigSelect } from ".";
 import { PlayerListInput } from "./player-list-input";
 import { MatchPicker, GauntletPicker, PickedMatch } from "../matches";
@@ -38,7 +30,6 @@ export function DrawDialog(props: Props) {
   );
   const dispatch = useAppDispatch();
   const appMode = useAppMode();
-  const [selectedTab, setSelectedTab] = useState<string | number>("custom");
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const rememberedCab = useLastCabSelected();
   const setRememberedCab = useSetLastCabSelected();
@@ -83,82 +74,66 @@ export function DrawDialog(props: Props) {
   }
 
   return (
-    <DialogBody>
-      <FormGroup label="Config">
+    <div>
+      <Input.Wrapper label="Config" mb="sm">
         <ConfigSelect selectedId={configId} onChange={setConfigId} />
-      </FormGroup>
+      </Input.Wrapper>
       {showCabPicker && (
-        <FormGroup label="Assign to cab">
-          <HTMLSelect
-            value={cabId || ""}
-            onChange={(e) =>
-              setRememberedCab(e.currentTarget.value || undefined)
-            }
-          >
-            <option value="">don't assign</option>
-            {cabs.map((cab) => (
-              <option key={cab.id} value={cab.id}>
-                {cab.name}
-              </option>
-            ))}
-          </HTMLSelect>
-        </FormGroup>
-      )}
-      <Tabs
-        id="new-draw"
-        selectedTabId={selectedTab}
-        onChange={(next) => setSelectedTab(next)}
-      >
-        <Tab
-          id="custom"
-          panel={
-            <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
-          }
+        <NativeSelect
+          label="Assign to cab"
+          mb="sm"
+          value={cabId || ""}
+          onChange={(e) => setRememberedCab(e.currentTarget.value || undefined)}
         >
-          custom draw
-        </Tab>
+          <option value="">don't assign</option>
+          {cabs.map((cab) => (
+            <option key={cab.id} value={cab.id}>
+              {cab.name}
+            </option>
+          ))}
+        </NativeSelect>
+      )}
+      {/* keepMounted={false} is what keeps the tourney maker chunk from being
+          fetched just for having the dialog on screen */}
+      <Tabs defaultValue="custom" keepMounted={false}>
+        <Tabs.List mb="sm">
+          <Tabs.Tab value="custom">custom draw</Tabs.Tab>
+          {appMode === "event" && (
+            <Tabs.Tab value="startgg-versus">start.gg (h2h)</Tabs.Tab>
+          )}
+          {appMode === "event" && (
+            <Tabs.Tab value="startgg-group">start.gg (gauntlet)</Tabs.Tab>
+          )}
+          {appMode === "event" && piuTourneyEnabled && (
+            <Tabs.Tab value="piu-tourney">tourney maker</Tabs.Tab>
+          )}
+        </Tabs.List>
+        <Tabs.Panel value="custom">
+          <CustomDrawForm disableCreate={!configId} onSubmit={handleDraw} />
+        </Tabs.Panel>
         {appMode === "event" && (
-          <Tab
-            id="startgg-versus"
-            panel={
-              <StartggApiKeyGated>
-                <MatchPicker onPickMatch={handleExternalDraw} />
-              </StartggApiKeyGated>
-            }
-          >
-            start.gg (h2h)
-          </Tab>
+          <Tabs.Panel value="startgg-versus">
+            <StartggApiKeyGated>
+              <MatchPicker onPickMatch={handleExternalDraw} />
+            </StartggApiKeyGated>
+          </Tabs.Panel>
         )}
         {appMode === "event" && (
-          <Tab
-            id="startgg-group"
-            panel={
-              <StartggApiKeyGated>
-                <GauntletPicker onPickMatch={handleExternalDraw} />
-              </StartggApiKeyGated>
-            }
-          >
-            start.gg (gauntlet)
-          </Tab>
+          <Tabs.Panel value="startgg-group">
+            <StartggApiKeyGated>
+              <GauntletPicker onPickMatch={handleExternalDraw} />
+            </StartggApiKeyGated>
+          </Tabs.Panel>
         )}
         {appMode === "event" && piuTourneyEnabled && (
-          <Tab
-            id="piu-tourney"
-            panel={
-              // only reached once the tab is opened, so the chunk isn't
-              // fetched just for having the dialog on screen
-              selectedTab === "piu-tourney" ? (
-                <Suspense fallback={<DelayedSpinner />}>
-                  <PiuTourneyTab onPickMatch={handleExternalDraw} />
-                </Suspense>
-              ) : undefined
-            }
-          >
-            tourney maker
-          </Tab>
+          <Tabs.Panel value="piu-tourney">
+            <Suspense fallback={<DelayedSpinner />}>
+              <PiuTourneyTab onPickMatch={handleExternalDraw} />
+            </Suspense>
+          </Tabs.Panel>
         )}
       </Tabs>
-    </DialogBody>
+    </div>
   );
 }
 
@@ -183,20 +158,16 @@ export function CustomDrawForm(props: {
   }
   return (
     <>
-      <FormGroup label="title">
-        <InputGroup
-          value={title}
-          onChange={(e) => setTitle(e.currentTarget.value)}
-        />
-      </FormGroup>
-      <FormGroup label="players">
+      <TextInput
+        label="title"
+        mb="sm"
+        value={title}
+        onChange={(e) => setTitle(e.currentTarget.value)}
+      />
+      <Input.Wrapper label="players" mb="sm">
         <PlayerListInput value={players} onChange={setPlayers} />
-      </FormGroup>
-      <Button
-        intent="primary"
-        onClick={handleSubmit}
-        disabled={props.disableCreate}
-      >
+      </Input.Wrapper>
+      <Button onClick={handleSubmit} disabled={props.disableCreate}>
         {props.submitText || "Create"}
       </Button>
     </>

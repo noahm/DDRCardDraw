@@ -1,15 +1,28 @@
-import { Button, Menu, MenuItem } from "@blueprintjs/core";
-import { Select } from "@blueprintjs/select";
+import {
+  Combobox,
+  Group,
+  Input,
+  InputBase,
+  ScrollArea,
+  useCombobox,
+} from "@mantine/core";
+import { IconFileImport, IconFolder } from "@tabler/icons-react";
 import { useDataSets } from "./hooks/useDataSets";
 import { groupGameData, CUSTOM_DATA_PARENT } from "./utils";
 import { useIntl } from "./hooks/useIntl";
-import { DoubleCaretVertical, FolderOpen, Plus } from "@blueprintjs/icons";
 import { useState } from "react";
 import { useSetAtom } from "jotai";
 import {
   customDataDialogOpen,
   useSetLastGameSelected,
 } from "./state/game-data.atoms";
+
+/**
+ * Selecting this doesn't pick game data — it opens the custom-data dialog. It's
+ * still an Option so it stays in the arrow-key flow, but it lives in the footer
+ * and is intercepted in onOptionSubmit rather than ever becoming a value.
+ */
+const CREATE_CUSTOM_DATA = "__create-custom-data__";
 
 export function GameDataSelect(props: {
   /** if provided, a hidden input will be rendered with current value */
@@ -24,118 +37,127 @@ export function GameDataSelect(props: {
   const openCustomDataDialog = useSetAtom(customDataDialogOpen);
   const { available } = useDataSets();
   const [innerValue, setInnerValue] = useState(props.defaultValue);
+  const [search, setSearch] = useState("");
+  const currentValue = props.value || innerValue;
   const currentDisplay = available.find(
-    (d) => d.name === (props.value || innerValue),
+    (d) => d.name === currentValue,
   )?.display;
+
+  const combobox = useCombobox({
+    onDropdownClose: () => {
+      combobox.resetSelectedOption();
+      setSearch("");
+    },
+    onDropdownOpen: () => combobox.focusSearchInput(),
+  });
+
+  const matches = (label: string) =>
+    label.toLowerCase().includes(search.trim().toLowerCase());
+
+  // groups render in catalog order; the custom-data folder is folded in with the
+  // rest rather than pinned, since its contents are ordinary selectable games
+  const groups = groupGameData(available).flatMap((item) => {
+    if (item.type === "game") {
+      return matches(item.display)
+        ? [
+            <Combobox.Option value={item.name} key={item.name}>
+              {item.display}
+            </Combobox.Option>,
+          ]
+        : [];
+    }
+    const label =
+      item.name === CUSTOM_DATA_PARENT
+        ? t("gameMenu.parent.custom")
+        : t("gameMenu.parent." + item.name);
+    const options = item.games
+      .filter((g) => matches(g.display))
+      .map((g) => (
+        <Combobox.Option value={g.name} key={g.name}>
+          {g.display}
+        </Combobox.Option>
+      ));
+    if (!options.length) {
+      return [];
+    }
+    return [
+      <Combobox.Group
+        key={item.name}
+        label={
+          <Group gap={6} wrap="nowrap">
+            <IconFolder size={14} />
+            {label}
+          </Group>
+        }
+      >
+        {options}
+      </Combobox.Group>,
+    ];
+  });
 
   return (
     <>
       {props.name ? (
-        <input
-          type="hidden"
-          value={props.value || innerValue}
-          name={props.name}
-        />
+        <input type="hidden" value={currentValue} name={props.name} />
       ) : null}
-      <Select
-        fill={props.fill}
-        items={available}
-        filterable={false}
-        itemListRenderer={(listProps) => {
-          const groupedItems = groupGameData(listProps.filteredItems);
-          const customGroup = groupedItems.find(
-            (item) =>
-              item.type === "parent" && item.name === CUSTOM_DATA_PARENT,
-          );
-          const customGames =
-            customGroup?.type === "parent" ? customGroup.games : [];
-          return (
-            <Menu role="listbox" ulRef={listProps.itemsParentRef}>
-              <MenuItem disabled text={t("gameMenu.title")} />
-              {groupedItems.map((item) => {
-                if (item.type === "game") {
-                  return listProps.renderItem(item, item.index);
-                }
-                // the custom-data folder is always rendered below, even when empty
-                if (item.name === CUSTOM_DATA_PARENT) {
-                  return null;
-                }
-                return (
-                  <MenuItem
-                    key={item.name}
-                    icon={<FolderOpen />}
-                    text={t("gameMenu.parent." + item.name)}
-                  >
-                    {item.games.map((g) => listProps.renderItem(g, g.index))}
-                  </MenuItem>
-                );
-              })}
-              <MenuItem
-                key={CUSTOM_DATA_PARENT}
-                icon={<FolderOpen />}
-                text={t("gameMenu.parent.custom")}
-              >
-                {customGames.map((g) => listProps.renderItem(g, g.index))}
-                <MenuItem
-                  icon={<Plus />}
-                  text={t("createCustomData")}
-                  onClick={() => openCustomDataDialog(true)}
-                />
-              </MenuItem>
-            </Menu>
-          );
-        }}
-        itemRenderer={(
-          item,
-          {
-            handleClick: onClick,
-            handleFocus: onFocus,
-            modifiers: { active, disabled, matchesPredicate },
-          },
-        ) =>
-          matchesPredicate ? null : (
-            <MenuItem
-              role="listitem"
-              // icon="document"
-              key={item.name}
-              text={item.display}
-              {...{ onClick, onFocus, active, disabled }}
-              selected={(props.value || innerValue) === item.name}
-            />
-          )
-        }
-        onItemSelect={(item) => {
-          props.onGameSelect?.(item.name);
-          setLastGameSelected(item.name);
-          setInnerValue(item.name);
+      <Combobox
+        store={combobox}
+        withinPortal
+        onOptionSubmit={(name) => {
+          if (name === CREATE_CUSTOM_DATA) {
+            combobox.closeDropdown();
+            openCustomDataDialog(true);
+            return;
+          }
+          props.onGameSelect?.(name);
+          setLastGameSelected(name);
+          setInnerValue(name);
+          combobox.closeDropdown();
         }}
       >
-        <Button
-          fill={props.fill}
-          style={{ justifyContent: "space-between" }}
-          text={currentDisplay || "Select a game"}
-          endIcon={<DoubleCaretVertical />}
-        />
-      </Select>
+        <Combobox.Target>
+          <InputBase
+            component="button"
+            type="button"
+            pointer
+            style={props.fill ? undefined : { display: "inline-block" }}
+            rightSection={<Combobox.Chevron />}
+            rightSectionPointerEvents="none"
+            onClick={() => combobox.toggleDropdown()}
+          >
+            {currentDisplay || (
+              <Input.Placeholder>Select a game</Input.Placeholder>
+            )}
+          </InputBase>
+        </Combobox.Target>
+
+        <Combobox.Dropdown>
+          <Combobox.Search
+            value={search}
+            onChange={(e) => setSearch(e.currentTarget.value)}
+            placeholder={t("gameMenu.title")}
+          />
+          <Combobox.Options>
+            <ScrollArea.Autosize mah={280} type="scroll">
+              {groups.length ? (
+                groups
+              ) : (
+                <Combobox.Empty>No matching game data</Combobox.Empty>
+              )}
+            </ScrollArea.Autosize>
+          </Combobox.Options>
+          {/* a real action, not an option: stays pinned and visible instead of
+              scrolling away at the bottom of ~40 games */}
+          <Combobox.Footer>
+            <Combobox.Option value={CREATE_CUSTOM_DATA}>
+              <Group gap={6} wrap="nowrap">
+                <IconFileImport size={14} />
+                {t("createCustomData")}
+              </Group>
+            </Combobox.Option>
+          </Combobox.Footer>
+        </Combobox.Dropdown>
+      </Combobox>
     </>
   );
 }
-
-// export function DataLoadingSpinner() {
-//   const loadingStatus = useAtomValue(gameDataLoadingStatus);
-//   if (loadingStatus === "failed") {
-//     return (
-//       <>
-//         <Error /> Couldn't load game!
-//       </>
-//     );
-//   }
-//   if (loadingStatus === "loading") {
-//     return (
-//       <DelayRender>
-//         <Spinner size={SpinnerSize.SMALL} /> Loading game...
-//       </DelayRender>
-//     );
-//   }
-//   return null;
-// }

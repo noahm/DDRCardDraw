@@ -1,4 +1,4 @@
-import { HTMLSelect } from "@blueprintjs/core";
+import { NativeSelect } from "@mantine/core";
 import { atom, useAtom } from "jotai";
 import { useConfigState } from "../state/hooks";
 import { useGetMetaString } from "../game-data-utils";
@@ -17,10 +17,10 @@ export function EligibleChartsListFilter() {
   selectedFlags.unshift("all");
 
   return (
-    <HTMLSelect
+    <NativeSelect
       value={currentTab}
       onChange={(e) => setCurrentTab(e.currentTarget.value)}
-      options={Array.from(selectedFlags).map((flag) => ({
+      data={Array.from(selectedFlags).map((flag) => ({
         value: flag,
         label: flag === "all" ? "All charts" : getMetaString(flag),
       }))}

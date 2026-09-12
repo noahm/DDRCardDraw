@@ -1,14 +1,5 @@
-import {
-  Button,
-  Callout,
-  Classes,
-  Dialog,
-  DialogBody,
-  DialogFooter,
-  Intent,
-  Tag,
-} from "@blueprintjs/core";
-import { Clipboard, Document, Duplicate } from "@blueprintjs/icons";
+import { Alert, Badge, Button, Group, Modal, Text, Title } from "@mantine/core";
+import { IconClipboard, IconCopy, IconFileText } from "@tabler/icons-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useIntl } from "../hooks/useIntl";
 import {
@@ -81,113 +72,107 @@ export function DiagnosticsDialog(props: {
   }
 
   return (
-    <Dialog
-      isOpen={props.isOpen}
+    <Modal
+      opened={props.isOpen}
       onClose={props.onClose}
       title={t("party.diagnostics.title")}
-      style={{ width: "min(46rem, 92vw)" }}
+      size="min(46rem, 92vw)"
     >
-      <DialogBody>
-        <Callout intent={Intent.PRIMARY} icon={<Clipboard />}>
-          {t("party.diagnostics.sharePrompt")}{" "}
-          <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer">
-            {t("party.diagnostics.openDiscord")}
-          </a>
-        </Callout>
+      <Alert color="blue" icon={<IconClipboard />}>
+        {t("party.diagnostics.sharePrompt")}{" "}
+        <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer">
+          {t("party.diagnostics.openDiscord")}
+        </a>
+      </Alert>
 
-        <h4 className={Classes.HEADING} style={{ marginTop: "1rem" }}>
-          {t("party.diagnostics.pending")}{" "}
-          <Tag intent={pending.length ? Intent.WARNING : Intent.SUCCESS} round>
-            {pending.length}
-          </Tag>
-        </h4>
-        {pending.length ? (
-          <ul style={{ margin: 0, paddingLeft: "1.25rem" }}>
-            {pending.map((p, i) => (
-              <li key={`${p.type}-${p.since}-${i}`}>
-                <code>{p.type}</code> — {formatAge(p.since, now)},{" "}
-                {t("party.diagnostics.attempts", { count: p.attempts })}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className={Classes.TEXT_MUTED}>
-            {t("party.diagnostics.noPending")}
-          </p>
-        )}
+      <Group gap="xs" mt="md">
+        <Title order={4}>{t("party.diagnostics.pending")}</Title>
+        <Badge color={pending.length ? "yellow" : "green"} circle>
+          {pending.length}
+        </Badge>
+      </Group>
+      {pending.length ? (
+        <ul style={{ margin: 0, paddingLeft: "1.25rem" }}>
+          {pending.map((p, i) => (
+            <li key={`${p.type}-${p.since}-${i}`}>
+              <code>{p.type}</code> — {formatAge(p.since, now)},{" "}
+              {t("party.diagnostics.attempts", { count: p.attempts })}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <Text c="dimmed">{t("party.diagnostics.noPending")}</Text>
+      )}
 
-        <h4 className={Classes.HEADING} style={{ marginTop: "1rem" }}>
-          {t("party.diagnostics.logHeading")}
-        </h4>
-        {entries.length ? (
-          <div
-            style={{
-              maxHeight: "18rem",
-              overflowY: "auto",
-              fontFamily: "monospace",
-              fontSize: "0.85em",
-              lineHeight: 1.6,
-            }}
-          >
-            {entries.map((e, i) => (
-              <div
-                key={`${e.t}-${i}`}
-                style={{
-                  color: PROBLEM_EVENTS.has(e.event) ? "#c87619" : undefined,
-                }}
-              >
-                <span className={Classes.TEXT_MUTED}>{formatTime(e.t)}</span>{" "}
-                {e.event}
-                {e.detail ? ` — ${e.detail}` : ""}
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className={Classes.TEXT_MUTED}>{t("party.diagnostics.empty")}</p>
-        )}
-
-        {/* offscreen copy target for browsers without the async clipboard */}
-        <textarea
-          ref={fallbackRef}
-          aria-hidden
-          tabIndex={-1}
-          defaultValue=""
+      <Title order={4} mt="md">
+        {t("party.diagnostics.logHeading")}
+      </Title>
+      {entries.length ? (
+        <div
           style={{
-            position: "absolute",
-            left: "-9999px",
-            width: "1px",
-            height: "1px",
+            maxHeight: "18rem",
+            overflowY: "auto",
+            fontFamily: "monospace",
+            fontSize: "0.85em",
+            lineHeight: 1.6,
           }}
-        />
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              icon={<Document />}
-              intent={copied === "full" ? Intent.SUCCESS : Intent.NONE}
-              onClick={() => copyReport("full")}
-              text={
-                copied === "full"
-                  ? t("party.diagnostics.copied")
-                  : t("party.diagnostics.copyFull")
-              }
-              data-umami-event="party-diagnostics-copy-full"
-            />
-            <Button
-              icon={<Duplicate />}
-              intent={copied === "trimmed" ? Intent.SUCCESS : Intent.PRIMARY}
-              onClick={() => copyReport("trimmed")}
-              text={
-                copied === "trimmed"
-                  ? t("party.diagnostics.copied")
-                  : t("party.diagnostics.copy")
-              }
-              data-umami-event="party-diagnostics-copy"
-            />
-          </>
-        }
+        >
+          {entries.map((e, i) => (
+            <div
+              key={`${e.t}-${i}`}
+              style={{
+                color: PROBLEM_EVENTS.has(e.event) ? "#c87619" : undefined,
+              }}
+            >
+              <Text span c="dimmed" inherit>
+                {formatTime(e.t)}
+              </Text>{" "}
+              {e.event}
+              {e.detail ? ` — ${e.detail}` : ""}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Text c="dimmed">{t("party.diagnostics.empty")}</Text>
+      )}
+
+      {/* offscreen copy target for browsers without the async clipboard */}
+      <textarea
+        ref={fallbackRef}
+        aria-hidden
+        tabIndex={-1}
+        defaultValue=""
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+        }}
       />
-    </Dialog>
+
+      <Group justify="flex-end" gap="xs" mt="md">
+        <Button
+          variant="default"
+          color={copied === "full" ? "green" : undefined}
+          leftSection={<IconFileText size={16} />}
+          onClick={() => copyReport("full")}
+          data-umami-event="party-diagnostics-copy-full"
+        >
+          {copied === "full"
+            ? t("party.diagnostics.copied")
+            : t("party.diagnostics.copyFull")}
+        </Button>
+        <Button
+          color={copied === "trimmed" ? "green" : undefined}
+          leftSection={<IconCopy size={16} />}
+          onClick={() => copyReport("trimmed")}
+          data-umami-event="party-diagnostics-copy"
+        >
+          {copied === "trimmed"
+            ? t("party.diagnostics.copied")
+            : t("party.diagnostics.copy")}
+        </Button>
+      </Group>
+    </Modal>
   );
 }

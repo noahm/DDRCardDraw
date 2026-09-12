@@ -4,7 +4,7 @@ import { zeroPad } from "../utils";
 import { useMemo } from "react";
 import { useConfigState, useGameData, useUpdateConfig } from "../state/hooks";
 import { useIntl } from "../hooks/useIntl";
-import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
+import { Checkbox, NumberInput, Text } from "@mantine/core";
 import { getAvailableLevels } from "../game-data-utils";
 import { LevelRangeBucket, getBuckets } from "../card-draw";
 
@@ -101,21 +101,23 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     });
   }
 
-  function handleBucketCountChange(next: number) {
-    if (isNaN(next)) {
+  function handleBucketCountChange(next: number | string) {
+    const parsed = typeof next === "string" ? parseInt(next) : next;
+    if (isNaN(parsed)) {
       return;
     }
     if (!bucketCount) {
       return;
     }
-    updateConfig({ probabilityBucketCount: next });
+    updateConfig({ probabilityBucketCount: parsed });
   }
 
-  function setWeight(groupIndex: number, value: number) {
+  function setWeight(groupIndex: number, value: number | string) {
+    const parsed = typeof value === "string" ? parseInt(value) : value;
     updateConfig((state) => {
       const newWeights = state.weights.slice();
-      if (Number.isInteger(value)) {
-        newWeights[groupIndex] = value;
+      if (Number.isInteger(parsed)) {
+        newWeights[groupIndex] = parsed;
       } else {
         newWeights[groupIndex] = undefined;
       }
@@ -146,32 +148,33 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
 
   return (
     <section className={styles.weights}>
-      <p className={Classes.TEXT_MUTED}>
+      <Text c="dimmed" component="p">
         {forceDistribution
           ? t("weights.forcedExplanation")
           : t("weights.explanation")}
-      </p>
+      </Text>
       <Checkbox
         label={t("weights.check.label")}
         title={t("weights.check.title")}
+        my={4}
         checked={forceDistribution}
         onChange={toggleForceDistribution}
       />
       <Checkbox
         label={t("weights.group.label")}
         title={t("weights.group.title")}
+        my={4}
         checked={!!bucketCount}
         onChange={toggleBucketCount}
       />
-      <NumericInput
+      <NumberInput
         className={styles.narrow}
-        type="number"
         inputMode="numeric"
-        width={2}
+        hideControls
         disabled={!bucketCount}
         value={bucketCount || Math.floor(high - low + 1)}
         min={2}
-        onValueChange={handleBucketCountChange}
+        onChange={handleBucketCountChange}
       />
       {groups.map((group, idx) => (
         <div
@@ -183,18 +186,15 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
               : undefined,
           )}
         >
-          <NumericInput
-            type="number"
+          <NumberInput
             inputMode="numeric"
-            width={2}
+            hideControls
             name={`weight-${printGroup(group, useGranularLevels ? gameData?.meta.granularTierResolution : undefined)}`}
             value={weights[idx] || ""}
             min={0}
-            onValueChange={(v) => setWeight(idx, v)}
+            onChange={(v) => setWeight(idx, v)}
             placeholder="0"
-            fill
           />
-          {/* {groupSongsAt === group && ">="} */}
           {usesTiers && typeof group === "number"
             ? `T${zeroPad(group, 2)}`
             : printGroup(
