@@ -205,10 +205,15 @@ practical budget is around 138,400 `stateLen`, not 131,072.
 
 #### Part 1 — done
 
+- **gzip on room storage**, shipped first and on its own as the stop-gap: ~5.5x
+  headroom for the price of `CompressionStream`, which the runtime provides. R2
+  deliberately stays plain JSON, since it has no ceiling to relieve and a
+  readable off-box copy is worth more during an incident.
 - **One atomic snapshot.** State, `seq` and `seenIds` are a single
   `RoomSnapshot` under one storage key, so they can no longer disagree. A
   legacy `currentState` + `syncMeta` pair is read once and converted on the
-  next write.
+  next write — in either shape, since the gzip change landed before this one
+  and rooms upgrading from it have a compressed value under the old key.
 - **Hydrate by `seq`, not by precedence.** `onStart` reads every durable copy
   and takes whichever is furthest along, rather than short-circuiting on the
   first that answers.
@@ -266,8 +271,12 @@ landing on its own.
   persistence target reports through `persisted` or it does not ship.
 - State and sequencer metadata are written together or not at all.
 - Never hydrate by source precedence. Compare `seq` and take the newest.
-- Watch `stateLen` in `?debug`. Under the current data model, room size grows
-  without bound and every backend has _some_ ceiling.
+- Watch `storedBytes` in `?debug`, not `stateLen`: the limit applies to the
+  bytes actually stored. Room size grows without bound and every backend has
+  _some_ ceiling.
+- Anything that inserts an `await` before a durable write has to serialize
+  those writes, or two actions can land out of order and leave the older state
+  durable. Both the local and remote write paths drain through one loop.
 
 ## File map
 

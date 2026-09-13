@@ -8,10 +8,11 @@ it's going, [`docs/partykit-sync-roadmap.md`](../../docs/partykit-sync-roadmap.m
 
 ### Durability
 
-Every applied action writes a `RoomSnapshot` to partykit room storage and, when
-configured, to R2. **Room storage rejects any value over 131072 bytes**, and a
-real 5-chart draw costs about 9.4KB, so a room passing roughly 15 draws stops
-saving locally. R2 has no such limit and is what keeps a long event durable.
+Every applied action writes a `RoomSnapshot` to partykit room storage, gzipped,
+and — when configured — to R2 as plain JSON. **Room storage rejects any value
+over 131072 bytes**; compression buys roughly 5.5x headroom against that, and
+R2 has no such limit at all. Watch `storedBytes` in `?debug` rather than
+`stateLen`: the limit applies to the compressed bytes.
 
 Set the credentials once, then deploy — `partykit env` changes only take effect
 on the next deploy:
