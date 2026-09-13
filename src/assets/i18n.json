@@ -115,6 +115,7 @@
       "actionBlocked": "Still reconnecting to the event server. Your change was not applied.",
       "sendFailed": "A change could not be delivered to the event server after several attempts.",
       "actionRejected": "A change was rejected by the event server and has been undone.",
+      "notSaving": "The event server has stopped saving changes. Recent draws are not backed up — avoid restarting or redeploying until this clears.",
       "diagnostics": {
         "menuItem": "Connection diagnostics",
         "title": "Connection diagnostics",
@@ -260,6 +261,7 @@
       "actionBlocked": "イベントサーバーに再接続中のため、変更は適用されませんでした。",
       "sendFailed": "複数回試みましたが、変更をイベントサーバーへ送信できませんでした。",
       "actionRejected": "イベントサーバーが変更を拒否したため、元に戻しました。",
+      "notSaving": "イベントサーバーが変更を保存できなくなりました。最近のドローはバックアップされていません。復旧するまで再起動やデプロイは避けてください。",
       "diagnostics": {
         "menuItem": "接続診断",
         "title": "接続診断",
