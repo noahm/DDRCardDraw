@@ -17,6 +17,7 @@ import type { AppState } from "../state/store";
 import { createClient } from "@supabase/supabase-js";
 import type { Database, Json } from "./database.types";
 import { applyMigrations } from "../state/migrations";
+import { gunzipJson, gzipJson } from "./compression";
 
 function getSupabase() {
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
@@ -46,6 +47,12 @@ const MAX_REMEMBERED_ACTIONS = 1000;
 const MAX_TAIL = 500;
 /** storage key holding the sequencer counter + dedupe set (survives hibernation) */
 const SYNC_META_KEY = "syncMeta";
+/** storage key holding the room state, gzipped since this change */
+const STATE_KEY = "currentState";
+/** partykit room storage refuses any value larger than this */
+const STORAGE_VALUE_LIMIT = 131072;
+/** fraction of the limit a stored snapshot may reach before `?debug` complains */
+const STORAGE_WARN_AT = 0.8;
 
 /** shape of the persisted sequencer metadata */
 interface SyncMeta {
@@ -90,6 +97,9 @@ interface SnapshotInfo {
   fingerprint?: string;
   drawings?: number;
   stateLen?: number;
+  /** bytes actually occupied in storage — what the 131072 limit measures */
+  storedBytes?: number;
+  compressed?: boolean;
   updatedAt?: string;
   matchesMemory?: boolean;
   error?: string;
@@ -154,6 +164,12 @@ export default class Server implements Party.Server {
     lastOkAt: null as string | null,
     lastErrorAt: null as string | null,
   };
+
+  /** latest state awaiting a storage write, replaced rather than queued */
+  private statePending: AppState | null = null;
+  private stateFlushing = false;
+  /** compressed size of the last state written, the number the limit applies to */
+  private storedBytes: number | null = null;
 
   private lastAction: { type: string; seq: number; at: string } | null = null;
 
@@ -261,8 +277,19 @@ export default class Server implements Party.Server {
     if (data && isAppState(data.state)) return data.state;
   }
 
-  private getFromStorage() {
-    return this.room.storage.get<AppState>("currentState");
+  /**
+   * Read the stored state, which is gzipped since this change but may still be
+   * a plain object in a room last written by an older server. Discriminating on
+   * the value's own type avoids a second key and a format flag; the compressed
+   * branch simply didn't exist before.
+   */
+  private async getFromStorage(): Promise<AppState | undefined> {
+    const stored = await this.room.storage.get<unknown>(STATE_KEY);
+    if (stored instanceof Uint8Array) {
+      const parsed = await gunzipJson(stored);
+      return isAppState(parsed) ? parsed : undefined;
+    }
+    return isAppState(stored) ? stored : undefined;
   }
 
   onRequest(req: Party.Request): Response | Promise<Response> {
@@ -332,6 +359,14 @@ export default class Server implements Party.Server {
     if (this.storageWrites.failed > 0) {
       warnings.push(`${this.storageWrites.failed} storage write(s) failed`);
     }
+    if (
+      storage.storedBytes &&
+      storage.storedBytes > STORAGE_VALUE_LIMIT * STORAGE_WARN_AT
+    ) {
+      warnings.push(
+        `stored snapshot is ${storage.storedBytes} bytes, within ${Math.round((1 - STORAGE_WARN_AT) * 100)}% of the ${STORAGE_VALUE_LIMIT}-byte storage limit — split the event across rooms before it stops saving`,
+      );
+    }
     if (this.supabaseWrites.failed > 0) {
       warnings.push(`${this.supabaseWrites.failed} supabase upsert(s) failed`);
     }
@@ -348,6 +383,8 @@ export default class Server implements Party.Server {
           uptimeMs: Date.now() - this.instanceStartedAt,
         },
         seq: this.seq,
+        storedBytes: this.storedBytes,
+        storageValueLimit: STORAGE_VALUE_LIMIT,
         connections: this.connectionCount(),
         rememberedActionIds: this.seenActionIds.size,
         memory: { ...memory, fingerprint: memoryFingerprint },
@@ -372,14 +409,20 @@ export default class Server implements Party.Server {
     memoryFingerprint: string,
   ): Promise<SnapshotInfo> {
     try {
+      const raw = await this.room.storage.get<unknown>(STATE_KEY);
+      const compressed = raw instanceof Uint8Array;
       const stored = await this.getFromStorage();
-      if (!stored) return { present: false };
+      if (!stored) return { present: false, compressed };
       const parts = fingerprintParts(stored);
       const fingerprint = formatFingerprint(parts);
       return {
         present: true,
         ...parts,
         fingerprint,
+        compressed,
+        // the limit applies to what is stored, not to the JSON length; for an
+        // uncompressed room the two differ only by structured-clone overhead
+        storedBytes: compressed ? raw.byteLength : undefined,
         matchesMemory: fingerprint === memoryFingerprint,
       };
     } catch (e) {
@@ -526,27 +569,9 @@ export default class Server implements Party.Server {
 
     // persist to partykit storage: the state itself, plus the sequencer
     // metadata so dedupe/ordering survive a hibernation or restart. Both stay
-    // fire-and-forget (unchanged behavior); wrapped only so we can observe
-    // whether the write actually resolves before the room is evicted, or
-    // rejects.
-    this.storageWrites.started += 1;
-    this.log("storage.put:start", fingerprint);
-    void this.room.storage
-      .put("currentState", nextState)
-      .then(() => {
-        this.storageWrites.ok += 1;
-        this.storageWrites.lastOkAt = new Date().toISOString();
-        this.log("storage.put:ok", fingerprint);
-      })
-      .catch((e: unknown) => {
-        this.storageWrites.failed += 1;
-        this.storageWrites.lastErrorAt = new Date().toISOString();
-        this.recordError("storage.put", e);
-        console.error(
-          `${LOG_PREFIX} room=${this.room.id} storage.put:error ${fingerprint}`,
-          e,
-        );
-      });
+    // fire-and-forget; wrapped only so we can observe whether the write
+    // actually resolves before the room is evicted, or rejects.
+    this.queueStateWrite(nextState);
 
     if (parsed.id) {
       void this.room.storage
@@ -597,6 +622,54 @@ export default class Server implements Party.Server {
         `${LOG_PREFIX} room=${this.room.id} supabase.upsert:throw ${fingerprint}`,
         e,
       );
+    }
+  }
+
+  /**
+   * Queue the state for writing, newest wins.
+   *
+   * Compressing inserts an `await` before `storage.put`, so writes issued from
+   * separate actions could otherwise reach storage out of order and leave an
+   * older state as the durable one. Draining through a single loop keeps the
+   * last write the newest, and coalesces a burst into one compression.
+   */
+  private queueStateWrite(state: AppState) {
+    this.statePending = state;
+    void this.flushState();
+  }
+
+  private async flushState() {
+    if (this.stateFlushing) return;
+    this.stateFlushing = true;
+    try {
+      while (this.statePending) {
+        const state = this.statePending;
+        this.statePending = null;
+        const fingerprint = stateFingerprint(state);
+        this.storageWrites.started += 1;
+        this.log("storage.put:start", fingerprint);
+        try {
+          const bytes = await gzipJson(state);
+          await this.room.storage.put(STATE_KEY, bytes);
+          this.storedBytes = bytes.byteLength;
+          this.storageWrites.ok += 1;
+          this.storageWrites.lastOkAt = new Date().toISOString();
+          this.log(
+            "storage.put:ok",
+            `${fingerprint} gzip=${bytes.byteLength}B`,
+          );
+        } catch (e) {
+          this.storageWrites.failed += 1;
+          this.storageWrites.lastErrorAt = new Date().toISOString();
+          this.recordError("storage.put", e);
+          console.error(
+            `${LOG_PREFIX} room=${this.room.id} storage.put:error ${fingerprint}`,
+            e,
+          );
+        }
+      }
+    } finally {
+      this.stateFlushing = false;
     }
   }
 
