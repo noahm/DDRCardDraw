@@ -1,5 +1,4 @@
 import { nanoid } from "nanoid";
-import { Song } from "./SongData";
 
 export interface EligibleChart {
   name: string;
@@ -18,7 +17,7 @@ export interface EligibleChart {
   extras: string[];
   cardVariant: string | undefined;
   dateAdded?: string;
-  song: Song;
+  songId?: string;
   folder?: string;
 }
 

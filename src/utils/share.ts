@@ -36,8 +36,9 @@ export async function shareCharts(
         chart.granularLevel,
         chart.bpm,
         chart.artist,
-        chart.song.saHash?.length === 32
-          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.song.saHash)}`
+        // just assuming here that a 32 char song ID means it's a ddr song hash
+        chart.songId?.length === 32
+          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.songId)}`
           : undefined,
       ];
     }),
