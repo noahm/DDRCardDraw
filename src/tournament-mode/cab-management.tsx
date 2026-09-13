@@ -28,6 +28,7 @@ import {
   Remove,
   Tag,
   Numerical,
+  Th,
 } from "@blueprintjs/icons";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
@@ -126,6 +127,12 @@ function CabSummary({ cab }: { cab: CabInfo }) {
           icon={<DiagramTree />}
           text="Current Phase"
           stub="phase"
+          cabId={cab.id}
+        />
+        <CopySourceMenuItem
+          icon={<Th />}
+          text="Gauntlet Standings"
+          stub="standings"
           cabId={cab.id}
         />
         <MenuItem icon={<People />} text="Players">
