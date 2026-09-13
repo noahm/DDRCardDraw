@@ -3,9 +3,10 @@ import type { Broadcast } from "./types";
 import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useAtomValue } from "jotai";
 import { Card, Intent, NonIdealState, Spinner } from "@blueprintjs/core";
-import { Offline } from "@blueprintjs/icons";
+import { Offline, Pulse } from "@blueprintjs/icons";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
 import { PARTYKIT_HOST } from "./host";
@@ -18,6 +19,10 @@ import {
 } from "./connection-status";
 import { SyncManager } from "./sync-manager";
 import { logDiagnostic, setPendingActionsProvider } from "./diagnostics";
+import {
+  diagnosticsDialogOpen,
+  openDiagnosticsDialog,
+} from "./diagnostics.atoms";
 
 const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
@@ -60,6 +65,65 @@ export function PartySocketManager(props: {
   const sendFailedToast = useRef(() => {});
   // same, for an action the server refused outright
   const rejectedToast = useRef((_reason: string) => {});
+  // whether the server is currently failing to save; kept in a ref so the
+  // toast can be put back after a trip through the diagnostics dialog
+  const notSavingRef = useRef(false);
+  // re-show callbacks for toasts that were dismissed on their way into the
+  // diagnostics dialog but describe a problem that is still happening
+  const restoreOnClose = useRef(new Map<string, () => void>());
+
+  /** dismiss a toast for good, cancelling any pending re-show */
+  const clearToast = useCallback((key: string) => {
+    restoreOnClose.current.delete(key);
+    toaster.dismiss(key);
+  }, []);
+
+  /**
+   * Show a toast about a sync problem. Every one of them offers a way into the
+   * diagnostics dialog, since "something is wrong with the connection" is only
+   * actionable once you can see what the connection has been doing.
+   *
+   * Blueprint dismisses a toast whenever its action is clicked, which is right
+   * for a one-off notice but wrong for an `ongoing` problem — those toasts are
+   * put back once the dialog is closed.
+   */
+  const showProblemToast = useCallback(
+    (
+      key: string,
+      message: string,
+      opts: {
+        icon?: React.JSX.Element;
+        intent?: Intent;
+        ongoing?: boolean;
+      } = {},
+    ) => {
+      if (inObs) return;
+      function show() {
+        toaster.show(
+          {
+            message,
+            icon: opts.icon,
+            intent: opts.intent ?? Intent.DANGER,
+            // an unresolved problem shouldn't time out from under the organizer
+            timeout: opts.ongoing ? 0 : undefined,
+            action: {
+              text: t("party.diagnostics.toastAction"),
+              icon: <Pulse />,
+              onClick: () => {
+                if (opts.ongoing) {
+                  restoreOnClose.current.set(key, show);
+                }
+                openDiagnosticsDialog();
+              },
+            },
+          },
+          key,
+        );
+      }
+      show();
+    },
+    [t, inObs],
+  );
 
   const socket = usePartySocket({
     room: props.roomName,
@@ -86,8 +150,11 @@ export function PartySocketManager(props: {
             setPartyConnectionHealthy(true);
             if (disconnectedRef.current) {
               disconnectedRef.current = false;
+              // the problems these stood for are over, so cancel any re-show
+              // waiting on the diagnostics dialog before replacing them
+              clearToast(BLOCKED_TOAST_KEY);
+              clearToast(HEALTH_TOAST_KEY);
               if (!inObs) {
-                toaster.dismiss(BLOCKED_TOAST_KEY);
                 toaster.show(
                   {
                     message: t("party.reconnected"),
@@ -141,58 +208,45 @@ export function PartySocketManager(props: {
         return;
       }
       disconnectedRef.current = true;
-      if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.disconnected"),
-          icon: <Offline />,
-          intent: Intent.DANGER,
-          timeout: 0,
-        },
-        HEALTH_TOAST_KEY,
-      );
+      showProblemToast(HEALTH_TOAST_KEY, t("party.disconnected"), {
+        icon: <Offline />,
+        ongoing: true,
+      });
     },
   });
 
   useEffect(() => {
     setBlockedActionHandler(() => {
       logDiagnostic("action-blocked", "change discarded while disconnected");
-      if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.actionBlocked"),
-          intent: Intent.WARNING,
-        },
-        BLOCKED_TOAST_KEY,
-      );
+      showProblemToast(BLOCKED_TOAST_KEY, t("party.actionBlocked"), {
+        intent: Intent.WARNING,
+      });
     });
     sendFailedToast.current = () => {
-      if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.sendFailed"),
-          intent: Intent.DANGER,
-        },
-        SEND_FAILED_TOAST_KEY,
-      );
+      showProblemToast(SEND_FAILED_TOAST_KEY, t("party.sendFailed"));
     };
     rejectedToast.current = (reason: string) => {
       // the reason is server-side detail; log it for debugging but keep the
       // toast to something a tournament organizer can act on
       console.warn("event server rejected an action:", reason);
-      if (inObs) return;
-      toaster.show(
-        {
-          message: t("party.actionRejected"),
-          intent: Intent.DANGER,
-        },
-        REJECTED_TOAST_KEY,
-      );
+      showProblemToast(REJECTED_TOAST_KEY, t("party.actionRejected"));
     };
     return () => {
       setBlockedActionHandler(undefined);
     };
-  }, [t, inObs]);
+  }, [t, inObs, showProblemToast]);
+
+  // Opening the diagnostics dialog from a toast's action dismisses that toast,
+  // so put back the ones that describe a problem which is still happening once
+  // the dialog is closed again.
+  const diagnosticsOpen = useAtomValue(diagnosticsDialogOpen);
+  useEffect(() => {
+    if (diagnosticsOpen) return;
+    const restores = restoreOnClose.current;
+    if (!restores.size) return;
+    for (const restore of restores.values()) restore();
+    restores.clear();
+  }, [diagnosticsOpen]);
 
   useEffect(() => {
     // when leaving a party session, unblock dispatch for other app modes
@@ -215,7 +269,6 @@ export function PartySocketManager(props: {
   // an old checkpoint, which is exactly how an event lost a dozen draws.
   useEffect(() => {
     if (!ready) return;
-    let warned = false;
     let stalledPolls = 0;
     const timer = setInterval(() => {
       const sync = syncRef.current;
@@ -224,29 +277,23 @@ export function PartySocketManager(props: {
       if (socket.readyState !== WebSocket.OPEN) return;
       stalledPolls = sync.durabilityStalled ? stalledPolls + 1 : 0;
       const stalled = stalledPolls >= DURABILITY_STALL_POLLS;
-      if (stalled === warned) return;
-      warned = stalled;
+      if (stalled === notSavingRef.current) return;
+      notSavingRef.current = stalled;
       if (stalled) {
         logDiagnostic(
           "not-saving",
           `${sync.durabilityLag} change(s) applied but not saved on the server`,
         );
-        if (inObs) return;
-        toaster.show(
-          {
-            message: t("party.notSaving"),
-            intent: Intent.DANGER,
-            timeout: 0,
-          },
-          NOT_SAVING_TOAST_KEY,
-        );
+        showProblemToast(NOT_SAVING_TOAST_KEY, t("party.notSaving"), {
+          ongoing: true,
+        });
       } else {
         logDiagnostic("saving-recovered", "the server is saving changes again");
-        toaster.dismiss(NOT_SAVING_TOAST_KEY);
+        clearToast(NOT_SAVING_TOAST_KEY);
       }
     }, DURABILITY_POLL_MS);
     return () => clearInterval(timer);
-  }, [ready, socket, t, inObs]);
+  }, [ready, socket, t, showProblemToast, clearToast]);
 
   useEffect(() => {
     const sync = new SyncManager(socket, {
