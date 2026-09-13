@@ -1,4 +1,11 @@
-import { Button, Callout, InputGroup, Label, Text } from "@blueprintjs/core";
+import {
+  Button,
+  Callout,
+  InputGroup,
+  Label,
+  Link,
+  Text,
+} from "@blueprintjs/core";
 import { Edit } from "@blueprintjs/icons";
 import { useAtom } from "jotai";
 import React, { ReactNode, useCallback, useRef, useState } from "react";
@@ -37,7 +44,7 @@ export function PiuTourneyGated(props: { children: ReactNode }) {
  * tournament, and remembers it for this device.
  */
 export function PiuTourneyPicker() {
-  const { t } = useIntl();
+  const { t, formatMessage } = useIntl();
   const [tourneyId, setTourneyId] = useAtom(piuTourneyIdAtom);
   const [parseError, setParseError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -86,22 +93,25 @@ export function PiuTourneyPicker() {
   return (
     <form onSubmit={save}>
       <Text tagName="p">
-        {t(
-          "piuTourney.explainer",
-          undefined,
-          "Pick a tournament from piu-tourney-maker to draw its upcoming matches. Read only — nothing is reported back.",
+        {formatMessage(
+          {
+            id: "piuTourney.explainer",
+          },
+          {
+            piuTmLink: (
+              <Link href="https://piu-tourney-maker.vercel.app/">
+                piu-tourney-maker
+              </Link>
+            ),
+          },
         )}
       </Text>
       <Label>
-        {t(
-          "piuTourney.idLabel",
-          undefined,
-          "tournament link or id (in the form of: /tourney/123)",
-        )}
+        {t("piuTourney.idLabel")}
         <InputGroup
           defaultValue={tourneyId ? String(tourneyId) : undefined}
           inputRef={inputRef}
-          placeholder="https://…/tourney/123"
+          placeholder="https://piu-tourney-maker.vercel.app/tourney/123"
           rightElement={
             <Button type="submit">
               {t("piuTourney.save", undefined, "Save")}

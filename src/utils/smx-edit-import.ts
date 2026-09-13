@@ -31,6 +31,8 @@ const MAX_BATCH = 100;
 
 /** shape of the chart objects returned by the smx.573.no charts endpoint */
 interface ApiEditChart {
+  /** the chart's own id, which scores reference as `song_chart_id` */
+  id: number;
   edit_display_id: string;
   edit_author: string | null;
   edit_style: string;
