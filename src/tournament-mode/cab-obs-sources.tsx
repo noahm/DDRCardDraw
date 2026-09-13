@@ -1,5 +1,6 @@
 import {
   AnchorButton,
+  Button,
   Card,
   CardList,
   FormGroup,
@@ -7,21 +8,34 @@ import {
   NumericInput,
   Section,
   SectionCard,
+  Tooltip,
 } from "@blueprintjs/core";
 import {
   DiagramTree,
   Duplicate,
   Font,
-  Label,
   Layers,
   MobileVideo,
-  Numerical,
   People,
   Person,
-  Tag,
 } from "@blueprintjs/icons";
-import { JSX, useCallback, useEffect, useRef, useState } from "react";
+import classNames from "classnames";
+import {
+  JSX,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useHref, useSearchParams } from "react-router-dom";
+import {
+  defaultPlayerFields,
+  inRenderOrder,
+  PlayerField,
+  playerFields,
+  playerSourceStub,
+} from "../obs-sources/player-fields";
 import { eventSlice } from "../state/event.slice";
 import { useAppState } from "../state/store";
 import {
@@ -47,21 +61,10 @@ const perCabSources: CabSource[] = [
   { stub: "players", label: "All Players", icon: <People /> },
 ];
 
-/** sources which exist once per player of whatever match a cab is running */
-function perPlayerSources(player: number): CabSource[] {
-  return [
-    { stub: `player/${player}`, label: "Name and Score", icon: <Person /> },
-    { stub: `player/${player}/name`, label: "Name", icon: <Tag /> },
-    { stub: `player/${player}/score`, label: "Score", icon: <Numerical /> },
-    { stub: `player/${player}/pronouns`, label: "Pronouns", icon: <Label /> },
-  ];
-}
-
 const MAX_PLAYERS = 8;
 
 export function CabObsSources() {
   const cabs = useAppState(eventSlice.selectors.allCabs);
-  const [playerCount, setPlayerCount] = useState(2);
   const [searchParams, setSearchParams] = useSearchParams();
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -133,34 +136,12 @@ export function CabObsSources() {
                   options={cabs.map((c) => ({ value: c.id, label: c.name }))}
                 />
               </FormGroup>
-              <FormGroup label="Players" inline>
-                <NumericInput
-                  value={playerCount}
-                  onValueChange={(value) => {
-                    if (Number.isNaN(value)) return;
-                    setPlayerCount(Math.min(Math.max(value, 1), MAX_PLAYERS));
-                  }}
-                  min={1}
-                  max={MAX_PLAYERS}
-                  clampValueOnBlur
-                  style={{ width: "4em" }}
-                />
-              </FormGroup>
             </div>
             <CardList compact>
               {perCabSources.map((source) => (
                 <SourceCard key={source.stub} cabId={cab.id} source={source} />
               ))}
-              {Array.from({ length: playerCount }, (_, i) =>
-                perPlayerSources(i + 1).map((source) => (
-                  <SourceCard
-                    key={source.stub}
-                    cabId={cab.id}
-                    source={source}
-                    group={`Player ${i + 1}`}
-                  />
-                )),
-              )}
+              <PlayerSourceCard cabId={cab.id} />
             </CardList>
           </>
         )}
@@ -169,29 +150,112 @@ export function CabObsSources() {
   );
 }
 
-function SourceCard({
+/**
+ * One row covering every per-player source: pick the player and tick whichever
+ * pieces of their info should appear, and the URL follows along.
+ */
+function PlayerSourceCard({ cabId }: { cabId: string }) {
+  const [player, setPlayer] = useState(1);
+  const [fields, setFields] = useState<PlayerField[]>(defaultPlayerFields);
+
+  const toggleField = (key: PlayerField) =>
+    setFields((prev) =>
+      prev.includes(key)
+        ? prev.filter((field) => field !== key)
+        : inRenderOrder([...prev, key]),
+    );
+
+  return (
+    <SourceRow
+      cabId={cabId}
+      stub={playerSourceStub(player, fields)}
+      label={
+        <>
+          <Person />
+          <span>Player</span>
+          <NumericInput
+            value={player}
+            onValueChange={(value) => {
+              if (Number.isNaN(value)) return;
+              setPlayer(Math.min(Math.max(value, 1), MAX_PLAYERS));
+            }}
+            min={1}
+            max={MAX_PLAYERS}
+            clampValueOnBlur
+            style={{ width: "3.5em" }}
+            aria-label="Player number"
+          />
+        </>
+      }
+      above={playerFields.map(({ key, label }) => {
+        const active = fields.includes(key);
+        // something has to be shown, so the last one standing is held down
+        const isLastActive = active && fields.length === 1;
+        const button = (
+          <Button
+            key={key}
+            text={label}
+            active={active}
+            intent={active ? "primary" : undefined}
+            disabled={isLastActive}
+            aria-pressed={active}
+            onClick={() => toggleField(key)}
+          />
+        );
+        return isLastActive ? (
+          <Tooltip key={key} content="Include at least one">
+            {button}
+          </Tooltip>
+        ) : (
+          button
+        );
+      })}
+    />
+  );
+}
+
+function SourceCard({ cabId, source }: { cabId: string; source: CabSource }) {
+  return (
+    <SourceRow
+      cabId={cabId}
+      stub={source.stub}
+      label={
+        <>
+          {source.icon}
+          <span>{source.label}</span>
+        </>
+      }
+    />
+  );
+}
+
+function SourceRow({
   cabId,
-  source,
-  group,
+  stub,
+  label,
+  above,
 }: {
   cabId: string;
-  source: CabSource;
-  group?: string;
+  stub: string;
+  label: ReactNode;
+  /** controls to show over the url, for a source that's configurable */
+  above?: ReactNode;
 }) {
-  const href = useHref(routableCabSourcePath(cabId, source.stub));
+  const href = useHref(routableCabSourcePath(cabId, stub));
   const fullUrl = new URL(href, document.location.href).href;
   return (
-    <Card className={styles.sourceCard}>
-      <span className={styles.sourceLabel}>
-        {source.icon}
-        <span>
-          {group ? `${group}: ` : ""}
-          {source.label}
-        </span>
+    <Card
+      className={classNames(styles.sourceCard, {
+        [styles.hasControls]: !!above,
+      })}
+    >
+      <span className={styles.sourceLabel}>{label}</span>
+      <span className={styles.sourceDetail}>
+        {above && <span className={styles.sourceControls}>{above}</span>}
+        <code className={styles.sourceUrl} title={fullUrl}>
+          {fullUrl}
+        </code>
       </span>
-      <code className={styles.sourceUrl} title={fullUrl}>
-        {fullUrl}
-      </code>
       <AnchorButton
         icon={<Duplicate />}
         title="Copy source URL"

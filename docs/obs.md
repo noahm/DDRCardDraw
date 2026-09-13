@@ -6,9 +6,11 @@ They all live on the stream dashboard, which you can reach from the hamburger me
 
 ![alt text](images/obs/source-menu.png)
 
-Expand the "Cab OBS Sources" section, pick which cab you're setting up, and click the copy button on any row to put that URL on your clipboard. Raise the player count if you need sources for more than two players on a cab.
+Expand the "Cab OBS Sources" section, pick which cab you're setting up, and click the copy button on any row to put that URL on your clipboard.
 
 ![a list of every OBS source URL available for the selected cab](images/obs/cab-source-list.png)
+
+The **Player** row builds one source out of whichever pieces of a player's info you want together. Set the player number, then toggle the parts to include — the URL updates as you go, and one source can carry any mix of them. The first part shows on its own and the rest follow in parentheses, so name and score reads `Alice (3)` while name and pronouns reads `Alice (she/her)`. Copy it, change the toggles, and copy again for a second source.
 
 In OBS you can add the copied URL to your stream layout by adding a new browser source.
 
@@ -20,7 +22,7 @@ Paste the copied URL into the properties and click OK.
 
 If you have a match assigned to the chosen cab, then you should see the text appear immediately. If nothing is assigned to the cab, then the source will display nothing at all.
 
-The pronouns source shows whatever a player has published on their start.gg profile, so it only fills in for matches drawn from start.gg, and only for players who have set them. It's blank otherwise, same as an unassigned cab.
+Pronouns come from whatever a player has published on their start.gg profile, so they only fill in for matches drawn from start.gg, and only for players who have set them. A part with nothing behind it is left out entirely rather than showing empty parentheses, so a player with no pronouns still reads `Alice (3)`.
 
 Inside OBS, sources always render in dark mode, so text is white by default. If you want dark text instead, set a `color` rule in your custom CSS as described below.
 

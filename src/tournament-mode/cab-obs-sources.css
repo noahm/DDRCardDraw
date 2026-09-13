@@ -20,9 +20,22 @@
   min-width: 14em;
 }
 
-.sourceUrl {
+.sourceDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
   flex: 1 1 auto;
   min-width: 0;
+}
+
+.sourceControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sourceUrl {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -37,8 +50,23 @@
     display: none;
   }
 
+  /* the detail column keeps growing so the copy button stays pinned right */
   .sourceLabel {
-    flex: 1 1 auto;
     min-width: 0;
+  }
+
+  /* a configurable row runs out of room first, so its controls drop to their
+     own line and the label takes over pinning the copy button right */
+  .hasControls {
+    flex-wrap: wrap;
+  }
+
+  .hasControls .sourceLabel {
+    flex: 1 1 auto;
+  }
+
+  .hasControls .sourceDetail {
+    order: 1;
+    flex-basis: 100%;
   }
 }
