@@ -18,6 +18,7 @@ import {
   MobileVideo,
   People,
   Person,
+  Th,
 } from "@blueprintjs/icons";
 import classNames from "classnames";
 import {
@@ -58,6 +59,7 @@ const perCabSources: CabSource[] = [
   { stub: "cards", label: "Cards", icon: <Layers /> },
   { stub: "title", label: "Title", icon: <Font /> },
   { stub: "phase", label: "Current Phase", icon: <DiagramTree /> },
+  { stub: "standings", label: "Gauntlet Standings", icon: <Th /> },
   { stub: "players", label: "All Players", icon: <People /> },
 ];
 

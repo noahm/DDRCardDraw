@@ -4,7 +4,13 @@ import { useIntl } from "../hooks/useIntl";
 import { associatedMatchIds, PickedMatch } from "../matches";
 import { useAppState } from "../state/store";
 import { PiuTourneyHeader } from "./components";
-import { PiuMatch, usePiuMatches, usePiuTourney, usePiuTourneyId } from ".";
+import {
+  parsePointsPerPlace,
+  PiuMatch,
+  usePiuMatches,
+  usePiuTourney,
+  usePiuTourneyId,
+} from ".";
 import type { TourneyType } from "./database.types";
 
 /**
@@ -146,6 +152,10 @@ export function PiuMatchPicker(props: {
                   subtype,
                   phaseName: match.round_pools?.name || "",
                   tourneyId: String(tourneyId),
+                  pointsPerPlace:
+                    subtype === "gauntlet"
+                      ? parsePointsPerPlace(match.points_per_stage)
+                      : undefined,
                 })
         }
       >

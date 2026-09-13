@@ -105,6 +105,16 @@ export interface PiuGauntletMeta extends PiuMeta {
   subtype: "gauntlet";
   /** id of the tourney-maker round holding every entrant */
   id: string;
+  /**
+   * Points each finishing place earns on one chart, highest place first, as
+   * configured on the tourney-maker round. Snapshotted at draw time so a draw
+   * keeps paying out the way it did when it was taken, even if the organizer
+   * edits the round afterward.
+   *
+   * Places past the end of the table earn nothing. Absent on draws taken
+   * before this was recorded.
+   */
+  pointsPerPlace?: number[];
 }
 
 export interface SimpleMeta extends DrawMeta {
