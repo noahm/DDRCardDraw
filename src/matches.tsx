@@ -15,6 +15,11 @@ export interface PickedMatch {
   phaseName: string;
   /** piu only: the tourney-maker tournament this match belongs to */
   tourneyId?: string;
+  /**
+   * piu gauntlets only: points per finishing place, read off the round. Absent
+   * for head to head matches, which score by per-chart wins instead.
+   */
+  pointsPerPlace?: number[];
 }
 
 /**

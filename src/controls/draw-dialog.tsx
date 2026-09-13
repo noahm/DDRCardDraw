@@ -52,9 +52,21 @@ export function DrawDialog(props: Props) {
 
   function handleExternalDraw(match: PickedMatch) {
     if (match.provider === "piu") {
+      if (match.subtype === "gauntlet") {
+        return handleDraw({
+          type: "piu",
+          subtype: "gauntlet",
+          players: match.players,
+          title: match.title,
+          id: match.id,
+          phaseName: match.phaseName,
+          tourneyId: match.tourneyId!,
+          pointsPerPlace: match.pointsPerPlace,
+        });
+      }
       return handleDraw({
         type: "piu",
-        subtype: match.subtype,
+        subtype: "versus",
         players: match.players,
         title: match.title,
         id: match.id,
