@@ -36,6 +36,9 @@
     "validate:types:data": "node scripts/validate.mjs",
     "validate:types:ts": "tsc --noemit"
   },
+  "dependencies": {
+    "aws4fetch": "^1.0.20"
+  },
   "devDependencies": {
     "@babel/core": "^7.29.7",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
