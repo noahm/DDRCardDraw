@@ -5712,6 +5712,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aws4fetch@npm:^1.0.20":
+  version: 1.0.20
+  resolution: "aws4fetch@npm:1.0.20"
+  checksum: 10/1329dd5913224c9a4fcb276633a2677baafe8224c3e4b99083309b30af4b114b33a73b6674369419f1978b83e905c4fff61d4af175c24450707c3cf027bb86da
+  languageName: node
+  linkType: hard
+
 "babel-loader@npm:10.0.0":
   version: 10.0.0
   resolution: "babel-loader@npm:10.0.0"
@@ -7180,6 +7187,7 @@ __metadata:
     "@urql/core": "npm:^5.1.1"
     "@urql/exchange-graphcache": "npm:^7.2.3"
     autoprefixer: "npm:10.4.23"
+    aws4fetch: "npm:^1.0.20"
     babel-loader: "npm:10.0.0"
     better-sqlite3: "npm:12.5.0"
     cacheable-lookup: "npm:7.0.0"

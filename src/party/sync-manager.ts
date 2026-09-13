@@ -13,6 +13,13 @@ const MAX_SEND_ATTEMPTS = 4;
 const CATCHUP_TIMEOUT_MS = 5000;
 /** catch-up requests before falling back to a full reconnect */
 const MAX_CATCHUP_ATTEMPTS = 3;
+/**
+ * Confirmed actions allowed to sit ahead of the durable snapshot before the
+ * room is treated as not saving. One or two is just a write in flight; a
+ * standing gap means writes are failing and a restart would lose the
+ * difference.
+ */
+const DURABILITY_LAG_THRESHOLD = 3;
 
 interface SocketLike {
   readyState: number;
@@ -61,6 +68,8 @@ export class SyncManager {
   private buffer: ReduxAction[] = [];
   private catchupTimer?: ReturnType<typeof setTimeout>;
   private catchupAttempts = 0;
+  /** highest seq the server has confirmed is durably stored, if it says */
+  private lastPersistedSeq: number | null = null;
 
   constructor(
     private socket: SocketLike,
@@ -79,6 +88,36 @@ export class SyncManager {
       onReject: (action: Action, reason: string) => void;
     },
   ) {}
+
+  /**
+   * The server reported how far its durable snapshot has advanced.
+   *
+   * This is deliberately only recorded, never acted on here: the signal's
+   * *absence* is what matters most (writes failing means no further reports),
+   * so the caller polls {@link durabilityLag} on a timer instead of reacting
+   * to arrivals.
+   */
+  handlePersisted(seq: number) {
+    if (this.lastPersistedSeq === null || seq > this.lastPersistedSeq) {
+      this.lastPersistedSeq = seq;
+    }
+  }
+
+  /**
+   * How many confirmed actions are not yet in the server's durable snapshot,
+   * or null when this server doesn't report durability at all (an older
+   * deployment, where the honest answer is "unknown" rather than "zero").
+   */
+  get durabilityLag(): number | null {
+    if (this.lastPersistedSeq === null || this.lastSeq === null) return null;
+    return Math.max(0, this.lastSeq - this.lastPersistedSeq);
+  }
+
+  /** true when the room has stopped saving changes for long enough to matter */
+  get durabilityStalled(): boolean {
+    const lag = this.durabilityLag;
+    return lag !== null && lag > DURABILITY_LAG_THRESHOLD;
+  }
 
   /** send a locally-dispatched action (already applied to the display store) */
   send(action: Action) {
@@ -103,6 +142,9 @@ export class SyncManager {
     this.buffer = [];
     this.confirmed = roomstate.state;
     this.lastSeq = roomstate.seq ?? null;
+    if (roomstate.persistedSeq != null) {
+      this.lastPersistedSeq = roomstate.persistedSeq;
+    }
     const applied = new Set(roomstate.recentActionIds ?? []);
     for (const entry of Array.from(this.pending.values())) {
       clearTimeout(entry.timer);

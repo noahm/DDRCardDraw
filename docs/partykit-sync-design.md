@@ -346,19 +346,37 @@ chrome.
 `src/party/server.ts` keeps three copies of truth in sync:
 
 1. **In-memory redux store** — authoritative while the room actor is alive.
-   Hydrated in `onStart` from room storage, falling back to Supabase, with
-   `applyMigrations` (`src/state/migrations.ts`) run over whatever loads.
-2. **PartyKit room storage** — the `currentState` key, rewritten after every
-   applied action, plus a `syncMeta` key (`{seq, seenIds}`) written alongside
-   it. `syncMeta` lets a hibernated or restarted room resume the sequencer
-   where it left off instead of resetting `seq` to 0, and keeps the dedupe set
-   warm so a client's re-send that spans the hibernation isn't applied a second
-   time. Both survive room hibernation/restarts. (The catch-up `tail` is
-   deliberately _not_ persisted — see "Incremental catch-up" above.)
-3. **Supabase** (`event_state` table, typed in
-   `src/party/database.types.ts`) — best-effort upsert after every action;
-   disabled unless `SUPABASE_URL`/`SUPABASE_KEY` are present. Serves as
-   cross-deployment durability.
+   Hydrated in `onStart` with `applyMigrations` (`src/state/migrations.ts`) run
+   over whatever loads.
+2. **PartyKit room storage** — one `snapshot` key holding a `RoomSnapshot`
+   (`{seq, seenIds, state, savedAt}`, defined in `src/party/snapshot-store.ts`),
+   rewritten after every applied action. State and sequencer metadata are one
+   value on purpose: as two keys of very different sizes the small one kept
+   landing after the large one started failing, leaving a restarted room
+   remembering the `seq` and dedupe ids of actions whose effects it had lost.
+   A pre-snapshot `currentState` + `syncMeta` pair is still read once and
+   converted on the next write. (The catch-up `tail` is deliberately _not_
+   persisted — see "Incremental catch-up" above.)
+3. **Remote snapshot store** — the same `RoomSnapshot` written to R2 at
+   `rooms/<roomId>/snapshot.json`, via the S3-compatible endpoint signed with
+   `aws4fetch` (PartyKit's runtime cannot bind Cloudflare resources). Writes
+   coalesce on a short interval rather than firing per action. Disabled unless
+   all of `R2_ACCOUNT_ID` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` /
+   `R2_SECRET_ACCESS_KEY` are present; the room then runs on room storage
+   alone, which `?debug` warns about because room storage rejects any value
+   over 131072 bytes.
+
+**Hydration compares, it does not prefer.** `onStart` reads both durable copies
+and adopts whichever carries the higher `seq`. The earlier `storage || remote`
+short-circuit meant a stale-but-present local value pinned a room to an old
+checkpoint while the copy that was still advancing went unread — the exact
+shape of the incident in step 6 of the roadmap.
+
+**Durability is reported, not assumed.** Once a write settles, the server
+broadcasts `{type: "persisted", seq, appliedSeq}` (throttled). `SyncManager`
+records it and exposes `durabilityLag`; the client polls that on a timer rather
+than reacting to arrivals, because a room that has stopped saving stops sending
+the message entirely. A standing lag raises a danger toast.
 
 The room also answers plain HTTP `GET` with its current state JSON
 (`onRequest`), which preview mode and debugging tools use via

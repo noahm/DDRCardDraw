@@ -17,7 +17,7 @@ import {
   Pulse,
 } from "@blueprintjs/icons";
 import { JSX, useCallback, useState } from "react";
-import { useSetAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { About } from "./about";
 import { customDataDialogOpen } from "./state/game-data.atoms";
 import { HeaderControls } from "./controls";
@@ -29,6 +29,7 @@ import { drawingsSlice } from "./state/drawings.slice";
 import { EventModeGated } from "./common-components/app-mode";
 import { useNavigate, useHref } from "react-router-dom";
 import { DiagnosticsDialog } from "./party/diagnostics-dialog";
+import { diagnosticsDialogOpen } from "./party/diagnostics.atoms";
 import { useRoomName } from "./hooks/useRoomName";
 
 export function Header({
@@ -75,7 +76,7 @@ export function Header({
 export function HamburgerMenu() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const openCustomDataDialog = useSetAtom(customDataDialogOpen);
-  const [diagnosticsOpen, setDiagnosticsOpen] = useState(false);
+  const [diagnosticsOpen, setDiagnosticsOpen] = useAtom(diagnosticsDialogOpen);
   const roomName = useRoomName();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
