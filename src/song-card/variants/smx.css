@@ -1,0 +1,23 @@
+.editAuthor {
+  font-size: 115%;
+  font-style: italic;
+}
+
+.editQr {
+  padding: 12px;
+  max-width: 240px;
+  text-align: center;
+}
+.editQrCaption {
+  margin-top: 0;
+}
+.editQrCode {
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
+}
+.editQrLink {
+  margin-bottom: 0;
+  margin-top: 12px;
+  word-break: break-all;
+}

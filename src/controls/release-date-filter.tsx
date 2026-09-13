@@ -4,15 +4,15 @@ import parse from "date-fns/parse";
 import format from "date-fns/format";
 import { detectedLanguage } from "../utils";
 import { useIntl } from "../hooks/useIntl";
-import { useConfigState } from "../config-state";
+import { useConfigState, useUpdateConfig } from "../state/hooks";
 
 const dateFormat = "yyyy-MM-dd";
 export default function ReleaseDateFilterControl(props: {
   mostRecentRelease: string;
 }) {
   const { t } = useIntl();
-  const updateState = useConfigState((s) => s.update);
   const cutoffDate = useConfigState((s) => s.cutoffDate);
+  const updateState = useUpdateConfig();
 
   const reference = new Date();
   const maxDate = parse(props.mostRecentRelease, dateFormat, reference);

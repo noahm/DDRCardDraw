@@ -1,0 +1,180 @@
+# Event-mode sync: architecture roadmap
+
+This documents the design plan for evolving the partykit-based sync behind
+event mode (`/e/:roomName`) into something robust enough for flaky venue
+wifi and concurrent editing, **without abandoning redux**. It was written
+alongside PR #604 so the work can be picked up later from a fresh context.
+For a guided tour of the implementation as it exists today, see
+[partykit-sync-design.md](./partykit-sync-design.md).
+
+## Where this is going, in one paragraph
+
+Redux is a state machine, and PartyKit gives every room a single always-online
+actor. That combination is the textbook setup for a **replicated state machine
+with a central sequencer**: clients send actions as _proposals_, the server
+orders them (assigning a monotonic `seq`), and every replica — including the
+proposer — builds its confirmed state exclusively from server-ordered actions.
+Local responsiveness comes from an optimistic "pending" layer rebased on top.
+This gets convergence, offline detection, and incremental recovery while
+keeping plain-JSON state, ordinary reducers, and centrally-enforced
+invariants. CRDTs are deliberately **not** on this path (see last section).
+
+## Current architecture (as of PR #604)
+
+- Client and server run the same reducer bundle (`src/state/root-reducer.ts`).
+  The server's store is authoritative; full snapshots persist to room storage
+  and Supabase.
+- Wire protocol (`src/party/types.ts`):
+  - client → server: `{type: "action", action, id}` — `id` is a unique
+    message id (nanoid).
+  - server → everyone (including sender): the same action stamped with a
+    monotonic `seq`. The echo doubles as the receipt confirmation (ack).
+  - server → sender only: `{type: "ack", id, ...}` when a duplicate re-send
+    arrives for an already-applied id.
+  - server → sender only: `{type: "reject", id, reason}` when the reducer
+    threw. The server applies an action _before_ stamping and broadcasting it,
+    so the echo only ever promises something that actually applied; a throwing
+    action consumes no seq, never enters the tail or `recentActionIds`, and is
+    rolled back on the sender instead of silently diverging the room.
+  - server → client on connect: `{type: "roomstate", state, seq,
+recentActionIds}`.
+- Client-side `SyncManager` (`src/party/sync-manager.ts`) maintains the core
+  invariant: **display state == confirmed state + pending actions replayed in
+  order**.
+  - _confirmed_: built only from seq-stamped actions, applied in seq order.
+  - _pending_: locally-dispatched actions not yet confirmed; re-sent every 5s
+    (server dedupes by id), abandoned after 4 attempts with a toast + local
+    rollback (rebase without the abandoned action).
+  - A foreign action arriving while pending actions exist triggers a rebase:
+    recompute display = confirmed + pending, delivered via
+    `receivePartyState` (wholesale state replacement in the root reducer).
+  - A `seq` gap means a missed broadcast; the repair is an incremental
+    catch-up (`{type:"catchup", since}` → the missing stamped actions),
+    falling back to `socket.reconnect()` → fresh roomstate only when the gap
+    predates the server's tail or catch-up goes unanswered (step 2).
+  - On roomstate: pending ids listed in `recentActionIds` are dropped (their
+    effects are baked into the snapshot); the rest are rebased and re-sent.
+- Connection health: dispatch is gated off (`partyGateMiddleware`) from
+  socket-close until the post-reconnect roomstate is fully applied; users see
+  disconnect / blocked / reconnected toasts (suppressed in OBS sources). An
+  application-level heartbeat (`ping`/`pong`) forces a reconnect when a socket
+  stalls while still open (step 2).
+
+### Hard requirement: deterministic reducers
+
+Replication by action replay only converges if the same action produces the
+same state everywhere. **No `nanoid()`, `Math.random()`, or `Date.now()`
+inside reducers** — generate ids/timestamps in `prepare` callbacks or thunks
+so they ride in the action payload. `event/addCab` violated this (id minted
+in the reducer, so the sender's cab id never matched the server's) and was
+fixed in PR #604. Audit any new reducer for this.
+
+### Version compatibility rules
+
+- Old (pre-#604) clients send actions without `id`. The server relays those
+  the old way (broadcast excluding sender, no echo, no stamp) so they don't
+  double-apply their own actions. New clients apply un-stamped foreign
+  actions to both confirmed and display (server broadcast order is still
+  canonical), skipping seq checks.
+- A new client on an old server (no `seq` in roomstate) degrades to the
+  pre-#604 behavior: optimistic apply + ack-based pending tracking, no
+  rebasing, no give-up rollback (`lastSeq == null` guards these).
+- **Deploy the partykit server before the web app** whenever the protocol
+  grows.
+
+## Roadmap
+
+### Step 1 — server sequencing + confirmed/pending split ✅ (PR #604)
+
+Described above. Kills the divergence class caused by clients applying
+concurrent actions in different orders.
+
+### Step 2 — incremental catch-up + heartbeat ✅
+
+- Server keeps an in-memory tail of the last 500 stamped actions. The client
+  sends `{type: "catchup", since: seq}` on a detected gap; the server replies
+  with the missing stamped actions (or a full roomstate if the tail doesn't
+  reach back far enough). Replaces reconnect-as-only-repair; makes brief drops
+  nearly free. The client buffers live broadcasts while a catch-up is in
+  flight and drains them once the gap closes.
+  - **The tail is memory-only, not in room storage** (the original plan said
+    storage). A client can only observe a live-socket gap while the same actor
+    has been running the whole time, so the in-memory tail is always intact for
+    the case catch-up serves; a restart/hibernation drops every socket and
+    clients take a fresh roomstate anyway. Persisting the full action bodies on
+    every write would be the write-amplification step 3 is trying to _remove_.
+- Application-level heartbeat: the client pings every ~10s and treats 2 missed
+  pongs as a dead connection, forcing the reconnect flow. A stalled-but-open
+  socket (server frozen, half-open TCP) is otherwise not noticed until an ack
+  timeout — verified with SIGSTOP on workerd, see
+  `.claude/skills/verify/SKILL.md`.
+- `seq` and the dedupe id set now persist to room storage (the `syncMeta` key,
+  written alongside `currentState`) so PartyKit hibernation or a server restart
+  can't reset `seq` to 0 or forget applied ids — closing the
+  dedupe-across-hibernation hole. (The tail, being memory-only, is not part of
+  this blob.)
+
+### Step 3 — event-sourcing lite
+
+- Persist the stamped action log + periodic snapshots as the durable format.
+  Supabase gets snapshot + tail instead of a full-state upsert on every
+  action (current write amplification is significant).
+- Tag log entries with app version; snapshot on version bump so old actions
+  never replay through new reducers (`applyMigrations` stays snapshot-only).
+- Unlocks: undo, audit ("who deleted that drawing"), time-travel debugging.
+- Add `{type: "hello", protocolVersion}` handshake; server can tell outdated
+  clients to refresh via the existing update-manager flow.
+- **Durability signal (not yet implemented).** `reject` closes the gap for
+  actions the reducer refuses, but an action that applies cleanly and then
+  fails to _persist_ is still confirmed to the client with nothing to take it
+  back: `storage.put` is fire-and-forget and the Supabase upsert's error is
+  returned rather than thrown. A `{type:"persisted", seq}` emitted once a write
+  settles would let clients see how far the durable snapshot has actually
+  advanced and surface a warning when it stalls behind the applied seq — the
+  failure mode where edits look fine until a reconnect reverts everyone to an
+  old checkpoint. Worth folding into this step, since it reworks persistence
+  anyway.
+
+### Step 4 — trust boundary
+
+- Server currently dispatches whatever clients send. Notably a forged
+  `party/supplyState` action would overwrite the whole room via the root
+  reducer's state-replacement branch. Whitelist allowed action types
+  server-side. The `reject` message is already in place to carry the refusal
+  back to the sender, so this step only needs the policy, not new protocol.
+- Room secret / role tokens: organizer (write) vs viewer + OBS sources
+  (read-only).
+
+### Step 5 (only if requirements change) — scoped CRDTs
+
+Full-CRDT (automerge/yjs for the whole state) is deliberately rejected:
+
+- PartyKit already provides the central authority CRDTs exist to avoid
+  needing; the sequencer gets convergence with none of the CRDT costs.
+- Costs avoided: rewriting redux slices as CRDT docs, tombstone growth,
+  losing plain-JSON state, and — decisive — invariants like "one active
+  match per cab" being unenforceable under merge semantics. The reducer
+  stays the single place business rules live.
+- MQTT for comparison: its useful ideas are already absorbed — the ack/dedupe
+  work is QoS-1 + idempotency (effectively exactly-once application),
+  roomstate-on-connect is a retained message, step 2's catch-up is session
+  resumption. An external broker would add ops burden without solving
+  ordering or merge.
+
+If true offline editing ever becomes a requirement, scope a CRDT to the one
+subtree that wants it (e.g. collaborative text editing of `obsCss` via yjs
+running through its own channel), not the whole state. Queued-intent replay
+(the pending layer) already covers short offline windows.
+
+## File map
+
+| Concern                             | File                                                         |
+| ----------------------------------- | ------------------------------------------------------------ |
+| Wire protocol types                 | `src/party/types.ts`                                         |
+| Server (room actor)                 | `src/party/server.ts`                                        |
+| Client socket manager (react)       | `src/party/client.tsx`                                       |
+| Confirmed/pending sync manager      | `src/party/sync-manager.ts`                                  |
+| Dispatch gate while disconnected    | `src/state/party-gate-middleware.ts`                         |
+| Connection health flag (non-synced) | `src/party/connection-status.ts`                             |
+| Full-state replacement action       | `receivePartyState` in `src/state/central.ts` + root reducer |
+| Runtime verification recipe         | `.claude/skills/verify/SKILL.md`                             |

@@ -1,13 +1,3 @@
-:root {
-  --drawing-grad-saturation: 40%;
-  --drawing-grad-lightness: 85%;
-}
-
-body:global(.bp6-dark) {
-  --drawing-grad-saturation: 25%;
-  --drawing-grad-lightness: 15%;
-}
-
 .chartList {
   display: flex;
   padding: 10px;
@@ -17,6 +7,11 @@ body:global(.bp6-dark) {
 
 .drawing {
   position: relative;
+}
+
+.drawing[data-focused] {
+  outline: 2px inset red;
+  outline-offset: -2px;
 }
 
 body:global(.obs-layer) .drawing {
