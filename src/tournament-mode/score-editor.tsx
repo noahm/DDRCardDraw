@@ -7,18 +7,14 @@ import {
   Cell,
 } from "@blueprintjs/table";
 import { useDrawing } from "../drawing-context";
-import { type DrawnChart, StartggGauntletMeta } from "../models/Drawing";
+import { type DrawnChart, type ExternalMeta } from "../models/Drawing";
 import { ReactElement, useState } from "react";
 import { inferShortname } from "../controls/player-names";
 import { useDispatch } from "react-redux";
 import { drawingsSlice } from "../state/drawings.slice";
 import { ScoreSortableColumn } from "./sortable-columns";
 
-export default function GauntletScoreEditor({
-  meta,
-}: {
-  meta: StartggGauntletMeta;
-}) {
+export default function ScoreEditor({ meta }: { meta: ExternalMeta }) {
   const drawingId = useDrawing((d) => d.compoundId);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);
@@ -54,12 +50,11 @@ export default function GauntletScoreEditor({
   }
   function getPlayerScore(displayIdx: number, chartId: string) {
     const playerIdx = playerOrderMap[displayIdx];
-    if (meta.scoresByEntrant) {
-      const playerId = players[playerIdx].id;
-      const scoreNum = meta.scoresByEntrant[playerId][chartId];
-      if (typeof scoreNum === "number") {
-        return scoreNum;
-      }
+    const playerId = players[playerIdx].id;
+    // a player added after scores were first entered has no bucket yet
+    const scoreNum = meta.scoresByEntrant?.[playerId]?.[chartId];
+    if (typeof scoreNum === "number") {
+      return scoreNum;
     }
   }
 

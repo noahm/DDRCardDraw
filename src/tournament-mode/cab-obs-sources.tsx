@@ -12,6 +12,7 @@ import {
   DiagramTree,
   Duplicate,
   Font,
+  Label,
   Layers,
   MobileVideo,
   Numerical,
@@ -52,6 +53,7 @@ function perPlayerSources(player: number): CabSource[] {
     { stub: `player/${player}`, label: "Name and Score", icon: <Person /> },
     { stub: `player/${player}/name`, label: "Name", icon: <Tag /> },
     { stub: `player/${player}/score`, label: "Score", icon: <Numerical /> },
+    { stub: `player/${player}/pronouns`, label: "Pronouns", icon: <Label /> },
   ];
 }
 

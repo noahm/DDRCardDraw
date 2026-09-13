@@ -37,7 +37,7 @@ export function DiagnosticsDialog(props: {
   onClose: () => void;
   roomName?: string;
 }) {
-  const { t } = useIntl();
+  const { t, formatMessage } = useIntl();
   const entries = useSyncExternalStore(subscribeDiagnostics, getDiagnostics);
   const [copied, setCopied] = useState<"trimmed" | "full" | null>(null);
   const fallbackRef = useRef<HTMLTextAreaElement>(null);
@@ -89,10 +89,16 @@ export function DiagnosticsDialog(props: {
     >
       <DialogBody>
         <Callout intent={Intent.PRIMARY} icon={<Clipboard />}>
-          {t("party.diagnostics.sharePrompt")}{" "}
-          <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer">
-            {t("party.diagnostics.openDiscord")}
-          </a>
+          {formatMessage(
+            { id: "party.diagnostics.sharePrompt" },
+            {
+              discordLink: (text) => (
+                <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer">
+                  {text}
+                </a>
+              ),
+            },
+          )}
         </Callout>
 
         <h4 className={Classes.HEADING} style={{ marginTop: "1rem" }}>
