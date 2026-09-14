@@ -439,10 +439,10 @@ async function buildSong(song, availableJackets, musicDir) {
         });
     }
   }
-
   if (usesSharedJacket) {
     charts.find((c) => c.diffClass === "novice").jacket = undefined;
   }
+  const novJacket = charts.find((c) => c.diffClass === "novice").jacket;
 
   /** @type {string[]} */
   const flags = [];
@@ -461,7 +461,9 @@ async function buildSong(song, availableJackets, musicDir) {
     artist: artist,
     jacket: usesSharedJacket
       ? `sdvx/${versionNumToString(info.version[0]._)}/${info.ascii[0]}.png`
-      : "sdvx6.png",
+      : novJacket != undefined
+        ? novJacket
+        : "sdvx6.png",
     bpm,
     charts,
   };
