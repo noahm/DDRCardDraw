@@ -222,6 +222,11 @@ practical budget is around 138,400 `stateLen`, not 131,072.
   bind Cloudflare resources. Writes coalesce (`REMOTE_WRITE_INTERVAL_MS`) so a
   burst of actions costs one round trip. Unconfigured is a supported state:
   the room runs on storage alone and `?debug` says so.
+- **A local implementation of the same interface**, so the durability path is
+  developed against rather than around. `LOCAL_SNAPSHOT_URL` points the store
+  at `scripts/local-snapshot-store.mjs`, which keeps the same objects in a
+  gitignored folder. It is a second process only because workerd has no
+  filesystem; R2 wins whenever its credentials are present.
 - **The durability signal from step 3.** `{type: "persisted", seq, appliedSeq}`,
   throttled. Clients poll `SyncManager.durabilityLag` rather than reacting to
   arrivals, because the meaningful signal is the message that _stops coming_.

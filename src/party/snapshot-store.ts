@@ -51,6 +51,19 @@ const R2_ENV = [
   "R2_SECRET_ACCESS_KEY",
 ] as const;
 
+/** origin of a local snapshot server, which enables the local store when set */
+const LOCAL_ENV = "LOCAL_SNAPSHOT_URL";
+
+/** which of {@link R2_ENV} are absent, so logs can name what to go set */
+function missingR2Env(): string[] {
+  return R2_ENV.filter((name) => !process.env[name]);
+}
+
+/**
+ * Where one room's snapshot lives, shared by both stores on purpose: the local
+ * folder mirrors the bucket layout, so a snapshot can be moved between them by
+ * copying a file and the two stores stay one implementation apart.
+ */
 function objectKey(roomId: string) {
   return `rooms/${encodeURIComponent(roomId)}/snapshot.json`;
 }
@@ -68,16 +81,10 @@ function objectKey(roomId: string) {
  *
  * Returns undefined when the credentials aren't configured, which is the
  * normal state in development and before the secrets are set in production.
- * The room then runs on room storage alone, exactly as it does today.
+ * {@link getSnapshotStore} decides what happens then.
  */
 export function getR2SnapshotStore(): SnapshotStore | undefined {
-  const missing = R2_ENV.filter((name) => !process.env[name]);
-  if (missing.length) {
-    console.log(
-      `R2 snapshot store disabled; missing env: ${missing.join(", ")}`,
-    );
-    return;
-  }
+  if (missingR2Env().length) return;
 
   const accountId = process.env.R2_ACCOUNT_ID as string;
   const bucket = process.env.R2_BUCKET as string;
@@ -127,4 +134,107 @@ export function getR2SnapshotStore(): SnapshotStore | undefined {
       return parsed;
     },
   };
+}
+
+/**
+ * The same object layout kept on the developer's own disk, reached through
+ * `scripts/local-snapshot-store.mjs`.
+ *
+ * It is an HTTP hop rather than a file write because `partykit dev` runs this
+ * code inside workerd, which has no filesystem — so a local store has to live
+ * in a process that does, and the only way to reach it is the same `fetch`
+ * that reaches R2. What that buys is the point: the two-target durability
+ * path, the coalescing, the hydration comparison and the `?debug` reporting
+ * all run locally, against a folder you can `cat`, with no Cloudflare account
+ * and no credentials anywhere.
+ *
+ * Returns undefined unless `LOCAL_SNAPSHOT_URL` is set, so it can never be
+ * reached by a deploy that didn't ask for it.
+ */
+export function getLocalSnapshotStore(): SnapshotStore | undefined {
+  const configured = process.env[LOCAL_ENV];
+  if (!configured) return;
+
+  let url: URL;
+  try {
+    url = new URL(configured);
+  } catch {
+    console.log(`${LOCAL_ENV} is not a URL, ignoring it: ${configured}`);
+    return;
+  }
+  // normalized so a trailing slash in `.env` can't produce a `//` path
+  const origin = url.origin;
+
+  async function failure(res: Response, what: string): Promise<Error> {
+    let detail = "";
+    try {
+      detail = (await res.text()).slice(0, 200);
+    } catch {
+      detail = "<unreadable body>";
+    }
+    return new Error(`local snapshot ${what} failed: ${res.status} ${detail}`);
+  }
+
+  return {
+    describe: `local://${url.host}`,
+
+    async put(roomId, snapshot) {
+      const res = await fetch(`${origin}/${objectKey(roomId)}`, {
+        method: "PUT",
+        body: JSON.stringify(snapshot),
+        headers: { "content-type": "application/json" },
+      });
+      if (!res.ok) throw await failure(res, "put");
+      await res.arrayBuffer();
+    },
+
+    async get(roomId) {
+      const res = await fetch(`${origin}/${objectKey(roomId)}`);
+      if (res.status === 404) {
+        // drain the explanatory body; a fresh room has no snapshot yet
+        await res.arrayBuffer();
+        return undefined;
+      }
+      if (!res.ok) throw await failure(res, "get");
+      const parsed: unknown = await res.json();
+      if (!isRoomSnapshot(parsed)) {
+        throw new Error(
+          "local snapshot file is not a recognizable RoomSnapshot",
+        );
+      }
+      return parsed;
+    },
+  };
+}
+
+/**
+ * The off-storage snapshot target this server should use, or undefined to run
+ * on partykit room storage alone.
+ *
+ * R2 wins when it is fully configured, so a deploy that has credentials can
+ * never be quietly downgraded to a developer's laptop by a stray variable.
+ * Everything downstream — writes, hydration, `?debug` — only knows it has a
+ * `SnapshotStore`, which is what lets local mode exercise the real code path
+ * rather than a bypass of it.
+ */
+export function getSnapshotStore(): SnapshotStore | undefined {
+  const r2 = getR2SnapshotStore();
+  if (r2) {
+    console.log(`snapshot store: ${r2.describe}`);
+    return r2;
+  }
+
+  const missing = missingR2Env().join(", ");
+  const local = getLocalSnapshotStore();
+  if (local) {
+    console.log(
+      `snapshot store: ${local.describe} (R2 env missing: ${missing})`,
+    );
+    return local;
+  }
+
+  console.log(
+    `no snapshot store; missing env: ${missing}. Set ${LOCAL_ENV} to keep snapshots on disk instead — see .env.template.`,
+  );
+  return;
 }

@@ -357,14 +357,24 @@ chrome.
    A pre-snapshot `currentState` + `syncMeta` pair is still read once and
    converted on the next write. (The catch-up `tail` is deliberately _not_
    persisted — see "Incremental catch-up" above.)
-3. **Remote snapshot store** — the same `RoomSnapshot` written to R2 at
-   `rooms/<roomId>/snapshot.json`, via the S3-compatible endpoint signed with
-   `aws4fetch` (PartyKit's runtime cannot bind Cloudflare resources). Writes
-   coalesce on a short interval rather than firing per action. Disabled unless
-   all of `R2_ACCOUNT_ID` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` /
-   `R2_SECRET_ACCESS_KEY` are present; the room then runs on room storage
-   alone, which `?debug` warns about because room storage rejects any value
-   over 131072 bytes.
+3. **Remote snapshot store** — the same `RoomSnapshot` written at
+   `rooms/<roomId>/snapshot.json`, behind the `SnapshotStore` interface in
+   `src/party/snapshot-store.ts`. Writes coalesce on a short interval rather
+   than firing per action. Two implementations, chosen by environment:
+   - **R2**, via the S3-compatible endpoint signed with `aws4fetch` (PartyKit's
+     runtime cannot bind Cloudflare resources). Used whenever all of
+     `R2_ACCOUNT_ID` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` /
+     `R2_SECRET_ACCESS_KEY` are present, so credentials always win.
+   - **A local folder**, used when only `LOCAL_SNAPSHOT_URL` is set. Also an
+     HTTP hop, because `partykit dev` runs the server inside workerd and
+     workerd has no filesystem: `scripts/local-snapshot-store.mjs` is the
+     process that holds the disk, writing the same objects under `.snapshots/`.
+     It exists so the two-target path can be developed against without a
+     Cloudflare account, and it is never reachable from a deploy that doesn't
+     set the variable.
+
+   With neither configured the room runs on room storage alone, which `?debug`
+   warns about because room storage rejects any value over 131072 bytes.
 
 **Hydration compares, it does not prefer.** `onStart` reads both durable copies
 and adopts whichever carries the higher `seq`. The earlier `storage || remote`
