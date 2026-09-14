@@ -9,10 +9,10 @@ it's going, [`docs/partykit-sync-roadmap.md`](../../docs/partykit-sync-roadmap.m
 ### Durability
 
 Every applied action writes a `RoomSnapshot` to partykit room storage, gzipped,
-and — when configured — to R2 as plain JSON. **Room storage rejects any value
-over 131072 bytes**; compression buys roughly 5.5x headroom against that, and
-R2 has no such limit at all. Watch `storedBytes` in `?debug` rather than
-`stateLen`: the limit applies to the compressed bytes.
+and — when configured — to a second store as plain JSON. **Room storage rejects
+any value over 131072 bytes**; compression buys roughly 5.5x headroom against
+that, and the second store has no such limit at all. Watch `storedBytes` in
+`?debug` rather than `stateLen`: the limit applies to the compressed bytes.
 
 Set the credentials once, then deploy — `partykit env` changes only take effect
 on the next deploy:
@@ -27,6 +27,38 @@ npx partykit deploy
 
 Use an R2 API token scoped to that one bucket. With any of them missing the
 server logs which, runs on room storage alone, and reports it in `?debug`.
+
+### Local mode: the same durability without R2
+
+Snapshots can go to a folder on your own machine instead, so the two-target
+path can be developed and debugged with no Cloudflare account. Put one line in
+`.env` (copy `.env.template`) and leave the `R2_*` block commented out:
+
+```
+LOCAL_SNAPSHOT_URL=http://127.0.0.1:1998
+```
+
+`yarn start:backend` already runs `scripts/local-snapshot-store.mjs` next to
+`partykit dev`; that process is what actually touches the disk, because
+`partykit dev` runs this server inside workerd, which has no filesystem. It
+writes to `./.snapshots` (gitignored), mirroring the bucket layout:
+
+```bash
+curl -s localhost:1998 | jq                    # rooms, sizes, seq, savedAt
+jq .seq .snapshots/rooms/<room>/snapshot.json
+rm -rf .snapshots/rooms/<room>                 # start that room over
+```
+
+The server picks R2 whenever all four `R2_*` variables are set, so a deploy
+with credentials can't be downgraded to this by a stray variable. `?debug`
+names whichever it chose as `remote.target` (`r2://<bucket>` or
+`local://127.0.0.1:1998`).
+
+Nothing else changes: the same `SnapshotStore` interface, the same coalesced
+writes, the same hydration-by-`seq` comparison. Deleting `.partykit/` while
+keeping `.snapshots/` is a one-command rehearsal of a room coming back from the
+off-box copy, and killing the snapshot process mid-event is how you see what a
+failing remote target looks like in `?debug`.
 
 ### Checking on a live room
 
