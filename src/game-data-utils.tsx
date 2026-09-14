@@ -1,18 +1,30 @@
+import { useCallback } from "react";
 import { useIntl } from "./hooks/useIntl";
 import { EligibleChart } from "./models/Drawing";
 import { Chart, GameData, I18NDict } from "./models/SongData";
+import { useConfigState } from "./state/hooks";
 
-export function getMetaString(t: (key: string) => string, key: string) {
-  return t("meta." + key);
+export function useGetMetaString() {
+  const { t } = useIntl();
+  const gameKey = useConfigState((c) => c.gameKey);
+  return useCallback(
+    (key: string) => t(`game.${gameKey}.${key}`),
+    [gameKey, t],
+  );
 }
 
 export function MetaString({ key }: { key: string }) {
-  const { t } = useIntl();
-  return <>{getMetaString(t, key)}</>;
+  const getMetaString = useGetMetaString();
+  return <>{getMetaString(key)}</>;
 }
 
-export function getDiffClass(t: (key: string) => string, diffClassKey: string) {
-  return t("meta.$abbr." + diffClassKey);
+export function useGetDiffClass() {
+  const { t } = useIntl();
+  const gameKey = useConfigState((c) => c.gameKey);
+  return useCallback(
+    (diffClassKey: string) => t(`game.${gameKey}.$abbr.${diffClassKey}`),
+    [gameKey, t],
+  );
 }
 
 interface AbbrProps {
@@ -20,8 +32,8 @@ interface AbbrProps {
 }
 
 export function AbbrDifficulty({ diffClass }: AbbrProps) {
-  const { t } = useIntl();
-  return <>{getDiffClass(t, diffClass)}</>;
+  const getDiffClass = useGetDiffClass();
+  return <>{getDiffClass(diffClass)}</>;
 }
 
 /**
