@@ -10,7 +10,6 @@ export interface ConfigState {
   lowerBound: number;
   useWeights: boolean;
   orderByAction: boolean;
-  hideVetos: boolean;
   weights: Array<number | undefined>;
   probabilityBucketCount: number | null;
   forceDistribution: boolean;
@@ -23,7 +22,6 @@ export interface ConfigState {
   defaultPlayersPerDraw: number;
   sortByLevel: boolean;
   useGranularLevels: boolean;
-  showMaxScore: boolean;
   /** if present, will draw an additional set of cards for each string id in `configs` */
   multiDraws?: {
     /** if true, auto-merge the resulting draws */
@@ -39,7 +37,6 @@ export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {
   upperBound: 0,
   lowerBound: 0,
   useWeights: false,
-  hideVetos: false,
   orderByAction: true,
   weights: [],
   probabilityBucketCount: null,
@@ -53,7 +50,6 @@ export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {
   sortByLevel: false,
   defaultPlayersPerDraw: 2,
   useGranularLevels: false,
-  showMaxScore: false,
 };
 
 const adapter = createEntityAdapter<ConfigState>({});

@@ -9,7 +9,7 @@ import { useIntl } from "../../hooks/useIntl";
 import { detectedLanguage } from "../../utils";
 import { ChartLevel } from "../chart-level";
 import styles from "../song-card.css";
-import { useConfigState } from "../../state/hooks";
+import { useEventSettings } from "../../state/hooks";
 
 const isJapanese = detectedLanguage === "ja";
 
@@ -81,7 +81,7 @@ export function MaxScoreCardCenter(props: CardSectionProps) {
   const { name, nameTranslation, artist, artistTranslation, maxScore } =
     baseChartValues(props.chart);
   const { t } = useIntl();
-  const showMaxScore = useConfigState((state) => state.showMaxScore);
+  const showMaxScore = useEventSettings((settings) => settings.showMaxScore);
   const maxExScore = t(
     "meta.maxScoreFormat",
     { maxScore: maxScore ?? "no data" },

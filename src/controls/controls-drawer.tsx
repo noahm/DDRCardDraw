@@ -204,7 +204,6 @@ function GeneralSettings() {
     useWeights,
     constrainPocketPicks,
     orderByAction,
-    hideVetos,
     lowerBound,
     upperBound,
     difficulties: selectedDifficulties,
@@ -212,7 +211,6 @@ function GeneralSettings() {
     chartCount,
     sortByLevel,
     useGranularLevels,
-    showMaxScore,
     playerPicks,
   } = configState;
   const availableDifficulties = useMemo(() => {
@@ -382,15 +380,6 @@ function GeneralSettings() {
           label={t("controls.sortByLevel")}
         />
         <Checkbox
-          id="showMaxScore"
-          checked={showMaxScore}
-          onChange={(e) => {
-            const showMaxScore = !!e.currentTarget.checked;
-            updateState({ showMaxScore });
-          }}
-          label={t("controls.showMaxScore")}
-        />
-        <Checkbox
           id="useGranularLevels"
           disabled={!gameData.meta.granularTierResolution}
           checked={useGranularLevels}
@@ -409,15 +398,6 @@ function GeneralSettings() {
             });
           }}
           label={t("controls.useGranularLevels")}
-        />
-        <Checkbox
-          id="showVeto"
-          checked={hideVetos}
-          onChange={(e) => {
-            const next = !!e.currentTarget.checked;
-            updateState({ hideVetos: next });
-          }}
-          label={t("controls.hideVetos")}
         />
         <Checkbox
           id="weighted"

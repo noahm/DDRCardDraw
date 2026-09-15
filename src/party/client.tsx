@@ -19,6 +19,7 @@ import {
 } from "./connection-status";
 import { SyncManager } from "./sync-manager";
 import { logDiagnostic, setPendingActionsProvider } from "./diagnostics";
+import { isReuseRejection } from "../state/reuse-invariant";
 import {
   diagnosticsDialogOpen,
   openDiagnosticsDialog,
@@ -229,6 +230,21 @@ export function PartySocketManager(props: {
       // the reason is server-side detail; log it for debugging but keep the
       // toast to something a tournament organizer can act on
       console.warn("event server rejected an action:", reason);
+      if (isReuseRejection(reason)) {
+        // losing a race for a chart is a normal thing to happen mid-event, not
+        // a sync fault: name it as such, and offer no diagnostics link, which
+        // would only send an organizer looking for a connection problem that
+        // isn't there
+        if (inObs) return;
+        toaster.show(
+          {
+            message: t("party.chartAlreadyDrawn"),
+            intent: Intent.DANGER,
+          },
+          REJECTED_TOAST_KEY,
+        );
+        return;
+      }
       showProblemToast(REJECTED_TOAST_KEY, t("party.actionRejected"));
     };
     return () => {

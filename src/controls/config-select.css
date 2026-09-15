@@ -16,3 +16,9 @@
 .listContainer p {
   margin-bottom: 0;
 }
+
+/* extra breathing room under the global settings entry, so the cards below it
+   read as the list of configs rather than as more of the same */
+.globalEntry {
+  margin-bottom: 0.5rem;
+}
