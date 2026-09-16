@@ -66,18 +66,21 @@ export interface PocketPick extends PlayerActionOnChart {
 interface DrawMeta {
   title: string;
   players: Player[];
+  /**
+   * What everyone scored: first index is player ID, second index is the id of
+   * the card it was scored on (see `ScoreableChart`).
+   *
+   * Every kind of draw records these rather than the gauntlet metas alone:
+   * head to head matches need them because a bracket that ranks by score
+   * (piu-tourney-maker does) can't advance on win counts, and a custom draw
+   * run outside any bracket still wants somewhere to keep them.
+   */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
-/**
- * Shared by every draw sourced from an external bracket, head to head or not.
- * Scores live here rather than on the gauntlet metas alone because head to head
- * matches record them too — a bracket that ranks by score (piu-tourney-maker
- * does) can't advance on win counts.
- */
+/** Shared by every draw sourced from an external bracket, head to head or not. */
 interface ExternalMetaBase extends DrawMeta {
   phaseName: string;
-  /** first index is player ID, second index is the drawn chart ID */
-  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
 interface StartggMeta extends ExternalMetaBase {

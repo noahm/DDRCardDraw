@@ -7,14 +7,14 @@ import {
   Cell,
 } from "@blueprintjs/table";
 import { useDrawing } from "../drawing-context";
-import { type ExternalMeta, scoreableCharts } from "../models/Drawing";
+import { type Drawing, scoreableCharts } from "../models/Drawing";
 import { ReactElement, useState } from "react";
 import { inferShortname } from "../controls/player-names";
 import { useDispatch } from "react-redux";
 import { drawingsSlice } from "../state/drawings.slice";
 import { ScoreSortableColumn } from "./sortable-columns";
 
-export default function ScoreEditor({ meta }: { meta: ExternalMeta }) {
+export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
   const drawingId = useDrawing((d) => d.compoundId);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);

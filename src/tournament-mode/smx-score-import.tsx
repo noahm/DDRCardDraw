@@ -13,7 +13,7 @@ import { Refresh } from "@blueprintjs/icons";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDrawing } from "../drawing-context";
 import {
-  type ExternalMeta,
+  type Drawing,
   playerDisplayName,
   scoreableCharts,
 } from "../models/Drawing";
@@ -60,7 +60,7 @@ export default function SmxScoreImport({
   meta,
   onClose,
 }: {
-  meta: ExternalMeta;
+  meta: Drawing["meta"];
   onClose: () => void;
 }) {
   const drawingId = useDrawing((d) => d.compoundId);
@@ -342,7 +342,7 @@ function PlayRow({
   onAssign,
 }: {
   play: RecentPlay;
-  meta: ExternalMeta;
+  meta: Drawing["meta"];
   assignedTo: string;
   isOverwritten: boolean;
   onAssign: (playerId: string) => void;

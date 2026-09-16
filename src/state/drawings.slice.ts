@@ -13,7 +13,7 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
-  isExternalMeta,
+  isGauntletMeta,
   MergedDrawing,
   newPlayer,
   Player,
@@ -277,9 +277,6 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      if (!isExternalMeta(drawing.meta)) {
-        return;
-      }
       const scores = (drawing.meta.scoresByEntrant ??= {});
       // what the scores said before this edit, so a winner set by clicking the
       // card is never cleared by a half-filled score grid
@@ -292,10 +289,11 @@ export const drawingsSlice = createSlice({
       // a player added after the first score was entered has no bucket yet
       (scores[playerId] ??= {})[chartId] = score;
 
-      // Head to head draws show per-chart win counts, so a typed score has to
-      // settle the chart too or the labels sit at zero while scores pile up.
-      // Gauntlets rank on totals and hide win counts, so they're left alone.
-      if (drawing.meta.subtype === "gauntlet") {
+      // Head to head matches and custom draws show per-chart win counts, so a
+      // typed score has to settle the chart too or the labels sit at zero while
+      // scores pile up. Gauntlets rank on totals and hide win counts, so
+      // they're left alone.
+      if (isGauntletMeta(drawing.meta)) {
         return;
       }
       const implied = impliedWinner(drawing.meta.players, scores, chartId);

@@ -34,8 +34,7 @@ import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  ExternalMeta,
-  isExternalMeta,
+  type Drawing,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -252,17 +251,18 @@ export function DrawingActions() {
   const highlighAtRandom = useHighlightRandom();
   const gameKey = useConfigState((c) => c.gameKey);
   const gameData = useGameData();
-  // scores are recorded for every externally sourced match, h2h included
-  const canScore = isExternalMeta(drawingMeta);
+  // any draw can hold scores — an externally sourced match, h2h or gauntlet,
+  // or a custom draw — but there has to be somebody to attribute them to
+  const canScore = !!drawingMeta.players.length;
   // ...and the SMX score feed can fill them in, when that's the game in play
   const canImportSmxScores = canScore && isSmxGameData(gameKey, gameData);
   const { showBoundary } = useErrorBoundary();
   const [scoreEditorMeta, setScoreEditorMeta] = useState<
-    ExternalMeta | undefined
+    Drawing["meta"] | undefined
   >(undefined);
-  const [smxImportMeta, setSmxImportMeta] = useState<ExternalMeta | undefined>(
-    undefined,
-  );
+  const [smxImportMeta, setSmxImportMeta] = useState<
+    Drawing["meta"] | undefined
+  >(undefined);
 
   const addToCabMenu = (
     <Menu>
