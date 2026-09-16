@@ -18,7 +18,6 @@ import { useAppDispatch, useAppState } from "../state/store";
 import {
   Add,
   Duplicate,
-  Edit,
   FloppyDisk,
   GridView,
   History,
@@ -154,15 +153,34 @@ function LabelCard(props: {
 }) {
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
-    <Card className={styles.textSourceCard}>
+    <Card
+      interactive
+      className={styles.textSourceCard}
+      title={`Edit "${props.label}"`}
+      // a Blueprint card is a div, so editing by clicking the row costs the
+      // keyboard access the edit button used to provide unless we put it back
+      role="button"
+      tabIndex={0}
+      // the buttons inside mark their own clicks handled, so copying or
+      // deleting doesn't also open the editor
+      onClick={(e) => e.defaultPrevented || props.onEdit()}
+      onKeyDown={(e) => {
+        // a button inside the row answers its own Enter/Space first
+        if (e.target !== e.currentTarget) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          props.onEdit();
+        }
+      }}
+    >
       <div>
         <p>{props.label}</p>
         <H4>{props.value}</H4>
       </div>
       <ButtonGroup>
-        <Button icon={<Edit />} onClick={props.onEdit} />
         <AnchorButton
           icon={<Duplicate />}
+          title="Copy this source's URL"
           onClick={(e) => {
             e.preventDefault();
             copyObsSource(new URL(href, document.location.href).href);
@@ -172,7 +190,9 @@ function LabelCard(props: {
         <Button
           icon={<Trash />}
           intent="danger"
-          onClick={() => {
+          title="Delete this text source"
+          onClick={(e) => {
+            e.preventDefault();
             if (
               confirm(
                 `Delete the "${props.label}" text source? This cannot be undone.`,
