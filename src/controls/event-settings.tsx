@@ -5,6 +5,7 @@ import { useEventSettings, useUpdateEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
 import { isGauntletScored } from "../models/Drawing";
 import { DEFAULT_PAYOUT_SCHEME } from "../models/payout-scheme";
+import { piuTourneyEnabled } from "../piu-tourney/config";
 import { PayoutSchemeInput } from "./payout-scheme-input";
 import styles from "./controls.css";
 
@@ -82,7 +83,18 @@ export function EventSettings() {
       />
       <FormGroup
         label={t("controls.gauntletPayout")}
-        helperText={t("controls.gauntletPayoutHint")}
+        helperText={
+          <>
+            <div>{t("controls.gauntletPayoutHint")}</div>
+            {/* a tourney maker round brings its own payout, so saying so here
+                saves an organizer wondering why theirs didn't take */}
+            {piuTourneyEnabled && (
+              <div className={styles.settingNote}>
+                {t("controls.gauntletPayoutPiuNote")}
+              </div>
+            )}
+          </>
+        }
       >
         <PayoutSchemeInput
           value={settings.gauntletPayout ?? DEFAULT_PAYOUT_SCHEME}
