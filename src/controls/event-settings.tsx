@@ -98,6 +98,8 @@ export function EventSettings() {
       >
         <PayoutSchemeInput
           value={settings.gauntletPayout ?? DEFAULT_PAYOUT_SCHEME}
+          // everyone in the room sees this one, so it waits to be applied
+          commit="on-confirm"
           onCommit={(gauntletPayout) => updateSettings({ gauntletPayout })}
           playerCount={largestHeat > 2 ? largestHeat : undefined}
         />

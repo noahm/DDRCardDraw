@@ -130,9 +130,11 @@ export const drawingsSlice = createSlice({
         id: string;
         title: string;
         players: Player[];
+        /** undefined puts the draw back on whatever the event pays out */
+        payoutScheme?: string;
       }>,
     ) {
-      const { id, title, players } = action.payload;
+      const { id, title, players, payoutScheme } = action.payload;
       const drawing = state.entities[id];
       if (!drawing) {
         return;
@@ -165,6 +167,7 @@ export const drawingsSlice = createSlice({
 
       drawing.meta.title = title;
       drawing.meta.players = players;
+      drawing.meta.payoutScheme = payoutScheme;
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
       const mainId = action.payload;

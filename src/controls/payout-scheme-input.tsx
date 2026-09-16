@@ -16,28 +16,42 @@ import {
 import styles from "./payout-scheme-input.css";
 
 interface Props {
-  /** the scheme in use, empty to fall back to the built-in default */
+  /** the scheme in use, empty to fall back to `inheritedScheme` */
   value: string;
-  /** called on Apply or Enter, never per keystroke */
   onCommit: (next: string) => void;
+  /**
+   * When a keystroke counts as an edit. A dialog's own submit button is
+   * confirmation enough where nothing leaves React state until it's pressed.
+   * The event setting has no submit of its own and every commit is an action
+   * the whole room sees, so it keeps a draft until somebody confirms it rather
+   * than dispatching a scheme per keystroke.
+   */
+  commit: "with-form" | "on-confirm";
   /**
    * Size of the heat to preview a payout for. Leave it off where nothing has
    * settled that yet and the preview grows a stepper of its own.
    */
   playerCount?: number;
+  /** what an empty field falls back to; the built-in default when unset */
+  inheritedScheme?: string;
 }
 
 /**
- * Editor for the event's gauntlet payout scheme, with the table it works out to
- * sitting right under it. The notation earns its keep by covering a heat of any
- * size, which also means nobody can read a payout straight off the text -- so
- * the preview isn't decoration here, it's how the field is checked.
+ * Editor for a gauntlet payout scheme, with the table it works out to sitting
+ * right under it. The notation earns its keep by covering a heat of any size,
+ * which also means nobody can read a payout straight off the text -- so the
+ * preview isn't decoration here, it's how the field is checked.
  *
- * The preview follows every keystroke, but an edit isn't committed until it's
- * confirmed: everyone in the room shares this setting, and half a scheme is not
- * something to score a round on.
+ * The preview follows what's being typed either way; what `commit` decides is
+ * when that typing becomes an edit other people see.
  */
-export function PayoutSchemeInput({ value, onCommit, playerCount }: Props) {
+export function PayoutSchemeInput({
+  value,
+  onCommit,
+  commit,
+  playerCount,
+  inheritedScheme,
+}: Props) {
   // only used when the caller has no player count of its own to preview
   const [previewCount, setPreviewCount] = useState(4);
   const [draft, setDraft] = useState(value);
@@ -52,10 +66,17 @@ export function PayoutSchemeInput({ value, onCommit, playerCount }: Props) {
   }
 
   const count = playerCount ?? previewCount;
-  const effective = draft.trim() || DEFAULT_PAYOUT_SCHEME;
+  const effective = draft.trim() || inheritedScheme || DEFAULT_PAYOUT_SCHEME;
   const parsed = parsePayoutScheme(effective);
   const table = parsed.ok ? evaluatePayoutScheme(parsed.scheme, count) : [];
-  const unsent = draft !== value;
+  const unsent = commit === "on-confirm" && draft !== value;
+
+  function handleChange(next: string) {
+    setDraft(next);
+    if (commit === "with-form") {
+      onCommit(next);
+    }
+  }
 
   function confirm() {
     if (parsed.ok) {
@@ -63,31 +84,39 @@ export function PayoutSchemeInput({ value, onCommit, playerCount }: Props) {
     }
   }
 
+  const field = (
+    <InputGroup
+      value={draft}
+      onChange={(e) => handleChange(e.currentTarget.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          confirm();
+        } else if (e.key === "Escape") {
+          setDraft(value);
+        }
+      }}
+      placeholder={inheritedScheme || DEFAULT_PAYOUT_SCHEME}
+      intent={parsed.ok ? "none" : "danger"}
+      enterKeyHint="done"
+      fill
+    />
+  );
+
   return (
     <div className={styles.payoutScheme}>
-      <ControlGroup fill>
-        <InputGroup
-          value={draft}
-          onChange={(e) => setDraft(e.currentTarget.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              confirm();
-            } else if (e.key === "Escape") {
-              setDraft(value);
-            }
-          }}
-          placeholder={DEFAULT_PAYOUT_SCHEME}
-          intent={parsed.ok ? "none" : "danger"}
-          enterKeyHint="done"
-          fill
-        />
-        <Button
-          intent={unsent ? "primary" : "none"}
-          disabled={!unsent || !parsed.ok}
-          onClick={confirm}
-          text="Apply"
-        />
-      </ControlGroup>
+      {commit === "on-confirm" ? (
+        <ControlGroup fill>
+          {field}
+          <Button
+            intent={unsent ? "primary" : "none"}
+            disabled={!unsent || !parsed.ok}
+            onClick={confirm}
+            text="Apply"
+          />
+        </ControlGroup>
+      ) : (
+        field
+      )}
       {parsed.ok ? (
         <>
           <div className={styles.previewHeader}>
@@ -134,7 +163,9 @@ export function PayoutSchemeInput({ value, onCommit, playerCount }: Props) {
         </div>
       ) : (
         !draft.trim() && (
-          <div className={styles.inherited}>using the default {effective}</div>
+          <div className={styles.inherited}>
+            using {inheritedScheme ? "the event's" : "the default"} {effective}
+          </div>
         )
       )}
     </div>
