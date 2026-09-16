@@ -143,6 +143,20 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "e/:roomName/source",
+    element: <ObsSource />,
+    children: [
+      {
+        // the layout segment is optional; `drawn-charts` alone is the grid
+        path: "drawn-charts/:layout?",
+        lazy: async () => {
+          const { DrawnCharts } = await import("./obs-sources/drawn-charts");
+          return { Component: DrawnCharts };
+        },
+      },
+    ],
+  },
+  {
     path: "e/:roomName/cab/:cabId/source",
     element: <ObsSource />,
     children: [

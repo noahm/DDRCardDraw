@@ -11,14 +11,31 @@ import {
   H3,
   H4,
   InputGroup,
+  Section,
+  SectionCard,
 } from "@blueprintjs/core";
 import { useAppDispatch, useAppState } from "../state/store";
-import { Add, Duplicate, Edit, FloppyDisk, Trash } from "@blueprintjs/icons";
-import React, { useRef, useState } from "react";
+import {
+  Add,
+  Duplicate,
+  FloppyDisk,
+  GridView,
+  History,
+  List,
+  Trash,
+} from "@blueprintjs/icons";
+import React, { JSX, useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
-import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
+import {
+  copyObsSource,
+  drawnChartsLayouts,
+  routableDrawnChartsSourcePath,
+  routableGlobalSourcePath,
+  type DrawnChartsLayout,
+} from "./copy-obs-source";
 import { CabObsSources } from "./cab-obs-sources";
+import { SourceRow } from "./obs-source-row";
 
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
@@ -71,9 +88,59 @@ export function Dashboard() {
         <section>
           <CabObsSources />
         </section>
+        <DrawnChartsSources />
         <CssEditor />
       </div>
     </>
+  );
+}
+
+const drawnChartsLayoutInfo: Record<
+  DrawnChartsLayout,
+  { label: string; icon: JSX.Element }
+> = {
+  grid: { label: "Grid (jackets)", icon: <GridView /> },
+  list: { label: "List (text by level)", icon: <List /> },
+};
+
+function DrawnChartsSources() {
+  return (
+    <Section
+      icon={<History />}
+      title="Drawn Chart Sources"
+      subtitle="What the event has already spent, so viewers can see what's left in the pool"
+    >
+      <SectionCard>
+        <p className={styles.sourceHint}>
+          Filtered to the level range of the config behind the most recent draw,
+          which keeps it current on its own as the bracket climbs. Add{" "}
+          <code>?config=&lt;config id&gt;</code>,{" "}
+          <code>?min=15&amp;max=17</code> or <code>?all</code> to a source URL
+          to say otherwise.
+        </p>
+        <CardList compact>
+          {drawnChartsLayouts.map((layout) => (
+            <DrawnChartsRow key={layout} layout={layout} />
+          ))}
+        </CardList>
+      </SectionCard>
+    </Section>
+  );
+}
+
+function DrawnChartsRow({ layout }: { layout: DrawnChartsLayout }) {
+  const href = useHref(routableDrawnChartsSourcePath(layout));
+  const { label, icon } = drawnChartsLayoutInfo[layout];
+  return (
+    <SourceRow
+      href={href}
+      label={
+        <>
+          {icon}
+          <span>{label}</span>
+        </>
+      }
+    />
   );
 }
 
@@ -86,15 +153,34 @@ function LabelCard(props: {
 }) {
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
-    <Card className={styles.textSourceCard}>
+    <Card
+      interactive
+      className={styles.textSourceCard}
+      title={`Edit "${props.label}"`}
+      // a Blueprint card is a div, so editing by clicking the row costs the
+      // keyboard access the edit button used to provide unless we put it back
+      role="button"
+      tabIndex={0}
+      // the buttons inside mark their own clicks handled, so copying or
+      // deleting doesn't also open the editor
+      onClick={(e) => e.defaultPrevented || props.onEdit()}
+      onKeyDown={(e) => {
+        // a button inside the row answers its own Enter/Space first
+        if (e.target !== e.currentTarget) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          props.onEdit();
+        }
+      }}
+    >
       <div>
         <p>{props.label}</p>
         <H4>{props.value}</H4>
       </div>
       <ButtonGroup>
-        <Button icon={<Edit />} onClick={props.onEdit} />
         <AnchorButton
           icon={<Duplicate />}
+          title="Copy this source's URL"
           onClick={(e) => {
             e.preventDefault();
             copyObsSource(new URL(href, document.location.href).href);
@@ -104,7 +190,9 @@ function LabelCard(props: {
         <Button
           icon={<Trash />}
           intent="danger"
-          onClick={() => {
+          title="Delete this text source"
+          onClick={(e) => {
+            e.preventDefault();
             if (
               confirm(
                 `Delete the "${props.label}" text source? This cannot be undone.`,

@@ -16,6 +16,14 @@ export const CAB_SOURCES_PARAM = "cab";
 export const routableCabDashboardPath = (cabId: string) =>
   `dash?${new URLSearchParams({ [CAB_SOURCES_PARAM]: cabId })}`;
 
+/** layouts the drawn-charts source can be asked for, in the order they're offered */
+export const drawnChartsLayouts = ["grid", "list"] as const;
+
+export type DrawnChartsLayout = (typeof drawnChartsLayouts)[number];
+
+export const routableDrawnChartsSourcePath = (layout: DrawnChartsLayout) =>
+  `../source/drawn-charts/${layout}`;
+
 export function copyObsSource(href: string) {
   void copyPlainTextToClipboard(href, "Copied OBS source URL to clipboard");
 }

@@ -21,6 +21,7 @@ import {
   DocumentShare,
 } from "@blueprintjs/icons";
 import { useState } from "react";
+import { useIntl } from "../hooks/useIntl";
 import { useAppDispatch, useAppState, useAppStore } from "../state/store";
 import styles from "./config-select.css";
 import { createNewConfig } from "../state/thunks";
@@ -31,6 +32,17 @@ import { loadConfigs, saveConfig, saveConfigs } from "../config-persistence";
 import { copyTextToClipboard } from "../utils/share";
 import { useGameDataForKey } from "../state/game-data.atoms";
 import { toaster } from "../toaster";
+
+/**
+ * Stands in for a config id in the `config/:configId` route while the event's
+ * global settings are showing. They aren't a config, but they are a pane of
+ * this page like any other, and putting them in the path keeps them linkable
+ * and lets them survive a remount the same way a config selection does.
+ *
+ * Nothing in the config store answers to it: a config id is a 10-character
+ * nanoid, and readers check for this before they look a config up regardless.
+ */
+export const GLOBAL_SETTINGS_ID = "global";
 
 function getEmptyItemLabel(empty: boolean) {
   if (!empty) return "select a config";
@@ -132,6 +144,14 @@ export function ConfigList(props: {
   }
   return (
     <div className={styles.listContainer}>
+      <GlobalSettingsEntry
+        selected={props.selectedId === GLOBAL_SETTINGS_ID}
+        // deliberately not routed through `changeConfig`: these aren't a
+        // config, so remembering them as the last one selected would mean
+        // coming back to this page never returns you to the config you were
+        // actually working on
+        onSelect={() => props.onChange(GLOBAL_SETTINGS_ID)}
+      />
       {!isEmpty && (
         <Button
           variant="minimal"
@@ -271,6 +291,26 @@ function BatchExportRow(props: {
       onChange={() => props.onToggle(props.configId)}
       label={`${config.name} (${gameName}, ${config.lowerBound}-${config.upperBound})`}
     />
+  );
+}
+
+/** the one entry in this list that selects something other than a config */
+function GlobalSettingsEntry(props: {
+  selected: boolean;
+  onSelect(this: void): void;
+}) {
+  const { t } = useIntl();
+  return (
+    <Card
+      interactive
+      compact
+      selected={props.selected}
+      className={styles.globalEntry}
+      onClick={(e) => e.defaultPrevented || props.onSelect()}
+    >
+      <h2>{t("controls.eventSettings")}</h2>
+      <p>{t("controls.eventSettingsSummary")}</p>
+    </Card>
   );
 }
 
