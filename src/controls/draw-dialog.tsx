@@ -221,7 +221,8 @@ export function CustomDrawForm(props: {
         >
           <PayoutSchemeInput
             value={payoutScheme}
-            onChange={setPayoutScheme}
+            commit="with-form"
+            onCommit={setPayoutScheme}
             playerCount={players.length}
             inheritedScheme={eventScheme}
           />

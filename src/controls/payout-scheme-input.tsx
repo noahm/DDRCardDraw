@@ -1,4 +1,10 @@
-import { Button, ButtonGroup, InputGroup, Tag } from "@blueprintjs/core";
+import {
+  Button,
+  ButtonGroup,
+  ControlGroup,
+  InputGroup,
+  Tag,
+} from "@blueprintjs/core";
 import { Minus, Plus } from "@blueprintjs/icons";
 import { useState } from "react";
 import {
@@ -10,9 +16,17 @@ import {
 import styles from "./payout-scheme-input.css";
 
 interface Props {
-  /** the scheme as typed, empty when the draw or room inherits one */
+  /** the scheme as committed, empty when the draw or room inherits one */
   value: string;
-  onChange: (next: string) => void;
+  onCommit: (next: string) => void;
+  /**
+   * When a keystroke counts as an edit. A form's own submit button is
+   * confirmation enough for the draw dialog, where nothing leaves React state
+   * until it's pressed. Settings have no submit of their own and every commit
+   * is an action the whole room sees, so those keep a draft until it's
+   * confirmed rather than dispatching a scheme per keystroke.
+   */
+  commit: "with-form" | "on-confirm";
   /**
    * Size of the heat the preview pays out. Where that's already settled -- a
    * draw's own player list -- pass it and the preview follows it; leave it off
@@ -28,31 +42,83 @@ interface Props {
  * Editor for a gauntlet payout scheme, with the table it works out to sitting
  * right under it. The notation earns its keep by covering a heat of any size,
  * which also means nobody can read a payout straight off the text -- so the
- * preview isn't decoration here, it's how the field is checked.
+ * preview isn't decoration here, it's how the field is checked. It follows
+ * what's being typed either way; what `commit` decides is when that typing
+ * becomes an edit everyone else sees.
  */
 export function PayoutSchemeInput({
   value,
-  onChange,
+  onCommit,
+  commit,
   playerCount,
   inheritedScheme,
   placeholder,
 }: Props) {
   // only used when the caller has no player count of its own to preview
   const [previewCount, setPreviewCount] = useState(4);
+  const [draft, setDraft] = useState(value);
+  // follow a value committed elsewhere -- by another client in the room, or by
+  // a reset -- unless something has been typed here that hasn't been sent yet
+  const [lastSeen, setLastSeen] = useState(value);
+  if (value !== lastSeen) {
+    setLastSeen(value);
+    if (draft === lastSeen) {
+      setDraft(value);
+    }
+  }
+
   const count = playerCount ?? previewCount;
-  const effective = value.trim() || inheritedScheme || DEFAULT_PAYOUT_SCHEME;
+  const effective = draft.trim() || inheritedScheme || DEFAULT_PAYOUT_SCHEME;
   const parsed = parsePayoutScheme(effective);
   const table = parsed.ok ? evaluatePayoutScheme(parsed.scheme, count) : [];
+  const unsent = commit === "on-confirm" && draft !== value;
+
+  function handleChange(next: string) {
+    setDraft(next);
+    if (commit === "with-form") {
+      onCommit(next);
+    }
+  }
+
+  function confirm() {
+    if (parsed.ok) {
+      onCommit(draft);
+    }
+  }
+
+  const field = (
+    <InputGroup
+      value={draft}
+      onChange={(e) => handleChange(e.currentTarget.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          confirm();
+        } else if (e.key === "Escape") {
+          setDraft(value);
+        }
+      }}
+      placeholder={placeholder || DEFAULT_PAYOUT_SCHEME}
+      intent={parsed.ok ? "none" : "danger"}
+      enterKeyHint="done"
+      fill
+    />
+  );
 
   return (
     <div className={styles.payoutScheme}>
-      <InputGroup
-        value={value}
-        onChange={(e) => onChange(e.currentTarget.value)}
-        placeholder={placeholder || DEFAULT_PAYOUT_SCHEME}
-        intent={parsed.ok ? "none" : "danger"}
-        fill
-      />
+      {commit === "on-confirm" ? (
+        <ControlGroup fill>
+          {field}
+          <Button
+            intent={unsent ? "primary" : "none"}
+            disabled={!unsent || !parsed.ok}
+            onClick={confirm}
+            text="Apply"
+          />
+        </ControlGroup>
+      ) : (
+        field
+      )}
       {parsed.ok ? (
         <>
           <div className={styles.previewHeader}>
@@ -91,10 +157,18 @@ export function PayoutSchemeInput({
       ) : (
         <div className={styles.error}>{parsed.error}</div>
       )}
-      {!value.trim() && (
-        <div className={styles.inherited}>
-          using {inheritedScheme ? "the event's" : "the default"} {effective}
+      {unsent ? (
+        <div className={styles.unsent}>
+          {parsed.ok
+            ? "not in use yet — apply to pay it out this way"
+            : "fix the payout before applying it"}
         </div>
+      ) : (
+        !draft.trim() && (
+          <div className={styles.inherited}>
+            using {inheritedScheme ? "the event's" : "the default"} {effective}
+          </div>
+        )
       )}
     </div>
   );

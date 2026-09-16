@@ -31,6 +31,13 @@
   color: #cd4246;
 }
 
+.unsent {
+  margin-top: 0.4em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #935610;
+}
+
 .inherited {
   margin-top: 0.4em;
   opacity: 0.6;
