@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import {
-  CHART_DRAWN,
   type Drawing,
-  type DrawnChart,
   type EligibleChart,
   isGauntletMeta,
+  type ScoreableChart,
+  scoreableCharts,
 } from "../models/Drawing";
 import {
   computeGauntletStandings,
@@ -41,7 +41,7 @@ export function CabStandings() {
     if (!drawing || !isGauntletMeta(drawing.meta)) {
       return null;
     }
-    return computeGauntletStandings(drawing.meta, drawnCharts(drawing));
+    return computeGauntletStandings(drawing.meta, playableCharts(drawing));
   }, [drawing]);
 
   if (!drawing || !standings?.rows.length) {
@@ -54,11 +54,8 @@ export function CabStandings() {
       <thead>
         <tr>
           <th className={styles.corner} colSpan={2} />
-          {playedCharts.map((chart) => (
-            <SongHeading
-              key={chart.id}
-              chart={drawing.pocketPicks[chart.id]?.pick ?? chart}
-            />
+          {playedCharts.map(({ id, chart }) => (
+            <SongHeading key={id} chart={chart} />
           ))}
           <th className={styles.totalHeading} data-field="total-heading">
             Points
@@ -83,8 +80,8 @@ export function CabStandings() {
             <td className={styles.player} data-field="player">
               <span className={styles.playerName}>{row.name}</span>
             </td>
-            {playedCharts.map((chart) => (
-              <ResultCell key={chart.id} result={row.results[chart.id]} />
+            {playedCharts.map(({ id }) => (
+              <ResultCell key={id} result={row.results[id]} />
             ))}
             <td className={styles.total} data-field="total">
               {row.totalPoints}
@@ -96,11 +93,15 @@ export function CabStandings() {
   );
 }
 
-/** every chart drawn for a match, across all of its sub-draws */
-function drawnCharts(drawing: Drawing): DrawnChart[] {
-  return Object.values(drawing.subDrawings ?? {})
-    .flatMap((subDraw) => subDraw.charts)
-    .filter((chart): chart is DrawnChart => chart.type === CHART_DRAWN);
+/**
+ * Every chart a match can be scored on, across all of its sub-draws. Pocket
+ * picks and free picks show up as the chart that was actually played, so points
+ * are paid out on them the same as on anything else drawn.
+ */
+function playableCharts(drawing: Drawing): ScoreableChart[] {
+  return Object.values(drawing.subDrawings ?? {}).flatMap((subDraw) =>
+    scoreableCharts(subDraw.charts, drawing),
+  );
 }
 
 function SongHeading({ chart }: { chart: EligibleChart }) {

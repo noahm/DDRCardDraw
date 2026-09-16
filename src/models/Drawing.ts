@@ -209,3 +209,37 @@ export interface SubDrawing {
 }
 
 export type MergedDrawing = Drawing & SubDrawing;
+
+/**
+ * A card a score can be recorded against: the id scores are keyed by, plus the
+ * chart actually played on it. The two differ whenever somebody's own pick
+ * stands in — a pocket pick replacing a drawn chart, or a free pick filling a
+ * placeholder — since scores stay keyed by the card that was drawn.
+ */
+export interface ScoreableChart {
+  id: string;
+  chart: EligibleChart;
+}
+
+/**
+ * Every card of a draw somebody can post a score on, in the order they were
+ * drawn. Banned cards drop out, and so do player picks nobody has filled in
+ * yet; everything else carries the chart that actually gets played on it.
+ */
+export function scoreableCharts(
+  charts: Array<DrawnChart | PlayerPickPlaceholder>,
+  { bans, pocketPicks }: Pick<Drawing, "bans" | "pocketPicks">,
+): ScoreableChart[] {
+  return charts.flatMap((card) => {
+    if (bans[card.id]) {
+      return [];
+    }
+    const chart =
+      pocketPicks[card.id]?.pick ||
+      (card.type === CHART_DRAWN ? card : undefined);
+    if (!chart) {
+      return [];
+    }
+    return [{ id: card.id, chart }];
+  });
+}

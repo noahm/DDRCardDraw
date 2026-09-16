@@ -3,9 +3,9 @@ import {
   pointsForPlace,
 } from "../piu-tourney/points";
 import {
-  type DrawnChart,
   type GauntletMeta,
   type Player,
+  type ScoreableChart,
   playerDisplayName,
 } from "./Drawing";
 
@@ -33,8 +33,8 @@ export interface StandingsRow {
 export interface GauntletStandings {
   /** the payout table these standings were scored against */
   pointsPerPlace: readonly number[];
-  /** drawn charts somebody has a score on, in the order they were drawn */
-  playedCharts: DrawnChart[];
+  /** cards somebody has a score on, in the order they were drawn */
+  playedCharts: ScoreableChart[];
   /** every player in the gauntlet, best total first */
   rows: StandingsRow[];
 }
@@ -65,7 +65,7 @@ export function payoutTableFor(meta: GauntletMeta): readonly number[] {
  */
 export function computeGauntletStandings(
   meta: GauntletMeta,
-  charts: DrawnChart[],
+  charts: ScoreableChart[],
 ): GauntletStandings {
   const pointsPerPlace = payoutTableFor(meta);
   const scores = meta.scoresByEntrant ?? {};
