@@ -1,7 +1,5 @@
 import {
-  AnchorButton,
   Button,
-  Card,
   CardList,
   FormGroup,
   HTMLSelect,
@@ -12,7 +10,6 @@ import {
 } from "@blueprintjs/core";
 import {
   DiagramTree,
-  Duplicate,
   Font,
   Layers,
   MobileVideo,
@@ -20,15 +17,7 @@ import {
   Person,
   Th,
 } from "@blueprintjs/icons";
-import classNames from "classnames";
-import {
-  JSX,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { JSX, useCallback, useEffect, useRef, useState } from "react";
 import { useHref, useSearchParams } from "react-router-dom";
 import {
   defaultPlayerFields,
@@ -39,11 +28,8 @@ import {
 } from "../obs-sources/player-fields";
 import { eventSlice } from "../state/event.slice";
 import { useAppState } from "../state/store";
-import {
-  CAB_SOURCES_PARAM,
-  copyObsSource,
-  routableCabSourcePath,
-} from "./copy-obs-source";
+import { CAB_SOURCES_PARAM, routableCabSourcePath } from "./copy-obs-source";
+import { SourceRow } from "./obs-source-row";
 
 import styles from "./cab-obs-sources.css";
 
@@ -167,10 +153,13 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
         : inRenderOrder([...prev, key]),
     );
 
+  const href = useHref(
+    routableCabSourcePath(cabId, playerSourceStub(player, fields)),
+  );
+
   return (
     <SourceRow
-      cabId={cabId}
-      stub={playerSourceStub(player, fields)}
+      href={href}
       label={
         <>
           <Person />
@@ -217,10 +206,10 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
 }
 
 function SourceCard({ cabId, source }: { cabId: string; source: CabSource }) {
+  const href = useHref(routableCabSourcePath(cabId, source.stub));
   return (
     <SourceRow
-      cabId={cabId}
-      stub={source.stub}
+      href={href}
       label={
         <>
           {source.icon}
@@ -228,45 +217,5 @@ function SourceCard({ cabId, source }: { cabId: string; source: CabSource }) {
         </>
       }
     />
-  );
-}
-
-function SourceRow({
-  cabId,
-  stub,
-  label,
-  above,
-}: {
-  cabId: string;
-  stub: string;
-  label: ReactNode;
-  /** controls to show over the url, for a source that's configurable */
-  above?: ReactNode;
-}) {
-  const href = useHref(routableCabSourcePath(cabId, stub));
-  const fullUrl = new URL(href, document.location.href).href;
-  return (
-    <Card
-      className={classNames(styles.sourceCard, {
-        [styles.hasControls]: !!above,
-      })}
-    >
-      <span className={styles.sourceLabel}>{label}</span>
-      <span className={styles.sourceDetail}>
-        {above && <span className={styles.sourceControls}>{above}</span>}
-        <code className={styles.sourceUrl} title={fullUrl}>
-          {fullUrl}
-        </code>
-      </span>
-      <AnchorButton
-        icon={<Duplicate />}
-        title="Copy source URL"
-        onClick={(e) => {
-          e.preventDefault();
-          copyObsSource(fullUrl);
-        }}
-        href={href}
-      />
-    </Card>
   );
 }

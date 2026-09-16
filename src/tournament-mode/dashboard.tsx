@@ -11,10 +11,21 @@ import {
   H3,
   H4,
   InputGroup,
+  Section,
+  SectionCard,
 } from "@blueprintjs/core";
 import { useAppDispatch, useAppState } from "../state/store";
-import { Add, Duplicate, Edit, FloppyDisk, Trash } from "@blueprintjs/icons";
-import React, { useRef, useState } from "react";
+import {
+  Add,
+  Duplicate,
+  Edit,
+  FloppyDisk,
+  GridView,
+  History,
+  List,
+  Trash,
+} from "@blueprintjs/icons";
+import React, { JSX, useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
 import {
@@ -25,6 +36,7 @@ import {
   type DrawnChartsLayout,
 } from "./copy-obs-source";
 import { CabObsSources } from "./cab-obs-sources";
+import { SourceRow } from "./obs-source-row";
 
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
@@ -86,59 +98,50 @@ export function Dashboard() {
 
 const drawnChartsLayoutInfo: Record<
   DrawnChartsLayout,
-  { title: string; detail: string }
+  { label: string; icon: JSX.Element }
 > = {
-  grid: {
-    title: "Grid",
-    detail: "A mini jacket, song name and level for each chart.",
-  },
-  list: {
-    title: "List",
-    detail:
-      "Text rows grouped by level, no jackets. Fits several times as many charts in the same space.",
-  },
+  grid: { label: "Grid (jackets)", icon: <GridView /> },
+  list: { label: "List (text by level)", icon: <List /> },
 };
 
 function DrawnChartsSources() {
   return (
-    <section style={{ maxWidth: "600px" }}>
-      <H3>OBS Drawn Chart Sources</H3>
-      <p>
-        Every chart this event has already drawn, so viewers can see what has
-        come out of the pool. Filtered by default to the level range of the
-        config behind the most recent draw, which keeps it current on its own as
-        the bracket climbs. Add <code>?config=&lt;config id&gt;</code>,{" "}
-        <code>?min=15&amp;max=17</code> or <code>?all</code> to a source URL to
-        say otherwise.
-      </p>
-      <CardList>
-        {drawnChartsLayouts.map((layout) => (
-          <DrawnChartsCard key={layout} layout={layout} />
-        ))}
-      </CardList>
-    </section>
+    <Section
+      icon={<History />}
+      title="Drawn Chart Sources"
+      subtitle="What the event has already spent, so viewers can see what's left in the pool"
+    >
+      <SectionCard>
+        <p className={styles.sourceHint}>
+          Filtered to the level range of the config behind the most recent draw,
+          which keeps it current on its own as the bracket climbs. Add{" "}
+          <code>?config=&lt;config id&gt;</code>,{" "}
+          <code>?min=15&amp;max=17</code> or <code>?all</code> to a source URL
+          to say otherwise.
+        </p>
+        <CardList compact>
+          {drawnChartsLayouts.map((layout) => (
+            <DrawnChartsRow key={layout} layout={layout} />
+          ))}
+        </CardList>
+      </SectionCard>
+    </Section>
   );
 }
 
-function DrawnChartsCard(props: { layout: DrawnChartsLayout }) {
-  const href = useHref(routableDrawnChartsSourcePath(props.layout));
-  const { title, detail } = drawnChartsLayoutInfo[props.layout];
+function DrawnChartsRow({ layout }: { layout: DrawnChartsLayout }) {
+  const href = useHref(routableDrawnChartsSourcePath(layout));
+  const { label, icon } = drawnChartsLayoutInfo[layout];
   return (
-    <Card className={styles.textSourceCard}>
-      <div>
-        <H4>{title}</H4>
-        <p>{detail}</p>
-      </div>
-      <AnchorButton
-        icon={<Duplicate />}
-        title="Copy this source's URL to the clipboard"
-        onClick={(e) => {
-          e.preventDefault();
-          copyObsSource(new URL(href, document.location.href).href);
-        }}
-        href={href}
-      />
-    </Card>
+    <SourceRow
+      href={href}
+      label={
+        <>
+          {icon}
+          <span>{label}</span>
+        </>
+      }
+    />
   );
 }
 
