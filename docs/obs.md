@@ -1,6 +1,6 @@
 # OBS Sources
 
-The app provides a number of single-purpose URLs for use within OBS as browser type source. Each individual cab has its own set of sources, which will update as the match assigned to that cab changes.
+The app provides a number of single-purpose URLs for use within OBS as browser type source. Each individual cab has its own set of sources, which will update as the match assigned to that cab changes. A few sources cover the whole event rather than one cab — see [drawn chart sources](#drawn-chart-sources) below.
 
 They all live on the stream dashboard, which you can reach from the hamburger menu or from any cab's menu in the sidebar.
 
@@ -26,6 +26,23 @@ Pronouns come from whatever a player has published on their start.gg profile, so
 
 Inside OBS, sources always render in dark mode, so text is white by default. If you want dark text instead, set a `color` rule in your custom CSS as described below.
 
+## Drawn chart sources
+
+These show every chart the event has already drawn, so viewers can see what has come out of the pool. They belong to the event rather than to a cab, so they live in their own "Drawn Chart Sources" section on the dashboard and keep working no matter which match is up.
+
+Two layouts are offered, and which one to use is a question of how much room your layout has:
+
+- **Grid** gives each chart a small jacket, its name and its level. Easier to recognize at a glance.
+- **List** drops the art for text rows grouped by level, and fits several times as many charts in the same space.
+
+A long event spends hundreds of charts, most of them at levels the bracket has already climbed past, so the list is filtered to a level range. By default that range comes from the config behind the **most recent draw**, which keeps the source current on its own as rounds get harder — no editing mid-stream. Where that isn't what you want, say so in the URL:
+
+- `?config=<config id>` pins the range to one config, whatever gets drawn next
+- `?min=15&max=17` states a range outright; either end can be left off, so `?max=14` reads as "14 and below"
+- `?all` turns filtering off and shows the event's whole history
+
+Both halves of a pocket pick appear here, since replacing a chart spends both it and the one it replaced.
+
 ## Custom styles
 
 Adding custom CSS to text-based sources is a great way to help the info fit the graphic design of the rest of your stream graphics.
@@ -49,6 +66,30 @@ h1 {
 ![alt text](images/obs/simple-css.png)
 
 For more info on styling text with CSS, refer to [MDN documentation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling).
+
+The drawn chart sources are the exception to the single `h1`: they render a list, so they carry class names you can target instead. These names are stable — style against them the same way you would any other selector.
+
+| class                  | what it is                                                |
+| ---------------------- | --------------------------------------------------------- |
+| `.drawn-charts`        | the whole source; set fonts and text color here           |
+| `.drawn-charts-header` | the "N charts drawn · Lv 15–17" line, if you want it gone |
+| `.drawn-chart`         | one chart in the grid layout                              |
+| `.drawn-chart-jacket`  | the jacket image in a grid row                            |
+| `.drawn-chart-name`    | a song name, in either layout                             |
+| `.drawn-chart-diff`    | the difficulty and level, colored per difficulty          |
+| `.drawn-charts-level`  | one level's group in the list layout                      |
+
+Every piece of text sits on a translucent plate so it stays readable over video. To drop the plates and the count line, for a layout that already has its own background:
+
+```css
+.drawn-charts-header {
+  display: none;
+}
+.drawn-chart,
+.drawn-charts-level {
+  background-color: transparent;
+}
+```
 
 Some common CSS style rules that will likely be useful for a stream layout:
 
