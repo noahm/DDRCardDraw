@@ -66,18 +66,32 @@ export interface PocketPick extends PlayerActionOnChart {
 interface DrawMeta {
   title: string;
   players: Player[];
+  /**
+   * What everyone scored: first index is player ID, second index is the id of
+   * the card it was scored on (see `ScoreableChart`).
+   *
+   * Every kind of draw records these rather than the gauntlet metas alone:
+   * head to head matches need them because a bracket that ranks by score
+   * (piu-tourney-maker does) can't advance on win counts, and a custom draw
+   * run outside any bracket still wants somewhere to keep them.
+   */
+  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
+  /**
+   * The payout scheme this draw was taken under, copied off the event when it
+   * was created, in the notation `src/models/payout-scheme.ts` describes.
+   *
+   * It's a copy rather than a live read so that changing what the event pays
+   * out settles how the next round scores without quietly rewriting a round
+   * already on the board. Still a scheme and not a table, so a heat that gains
+   * a player after the draw pays that player out too. Absent on draws taken
+   * before this was recorded, which fall back to the event's.
+   */
+  payoutScheme?: string;
 }
 
-/**
- * Shared by every draw sourced from an external bracket, head to head or not.
- * Scores live here rather than on the gauntlet metas alone because head to head
- * matches record them too — a bracket that ranks by score (piu-tourney-maker
- * does) can't advance on win counts.
- */
+/** Shared by every draw sourced from an external bracket, head to head or not. */
 interface ExternalMetaBase extends DrawMeta {
   phaseName: string;
-  /** first index is player ID, second index is the drawn chart ID */
-  scoresByEntrant?: Record<string, Record<string, number | undefined>>;
 }
 
 interface StartggMeta extends ExternalMetaBase {
@@ -141,12 +155,29 @@ export type ExternalMeta =
  */
 export type GauntletMeta = StartggGauntletMeta | PiuGauntletMeta;
 
+/** any draw that ranks a group on total points: a gauntlet by another name */
+export type GauntletScoredMeta = GauntletMeta | SimpleMeta;
+
 export function isExternalMeta(meta: Drawing["meta"]): meta is ExternalMeta {
   return meta.type === "startgg" || meta.type === "piu";
 }
 
 export function isGauntletMeta(meta: Drawing["meta"]): meta is GauntletMeta {
   return isExternalMeta(meta) && meta.subtype === "gauntlet";
+}
+
+/**
+ * Whether a draw is scored as a gauntlet — ranked on total points rather than
+ * settled chart by chart. A bracket says outright which of its matches is one;
+ * a custom draw becomes one as soon as it holds more than a head to head pair,
+ * since past two players there's no "the other player" to win against.
+ */
+export function isGauntletScored(
+  meta: Drawing["meta"],
+): meta is GauntletScoredMeta {
+  return (
+    isGauntletMeta(meta) || (meta.type === "simple" && meta.players.length > 2)
+  );
 }
 
 /** Identifies an external match across providers, for de-duping draws. */
@@ -209,3 +240,37 @@ export interface SubDrawing {
 }
 
 export type MergedDrawing = Drawing & SubDrawing;
+
+/**
+ * A card a score can be recorded against: the id scores are keyed by, plus the
+ * chart actually played on it. The two differ whenever somebody's own pick
+ * stands in — a pocket pick replacing a drawn chart, or a free pick filling a
+ * placeholder — since scores stay keyed by the card that was drawn.
+ */
+export interface ScoreableChart {
+  id: string;
+  chart: EligibleChart;
+}
+
+/**
+ * Every card of a draw somebody can post a score on, in the order they were
+ * drawn. Banned cards drop out, and so do player picks nobody has filled in
+ * yet; everything else carries the chart that actually gets played on it.
+ */
+export function scoreableCharts(
+  charts: Array<DrawnChart | PlayerPickPlaceholder>,
+  { bans, pocketPicks }: Pick<Drawing, "bans" | "pocketPicks">,
+): ScoreableChart[] {
+  return charts.flatMap((card) => {
+    if (bans[card.id]) {
+      return [];
+    }
+    const chart =
+      pocketPicks[card.id]?.pick ||
+      (card.type === CHART_DRAWN ? card : undefined);
+    if (!chart) {
+      return [];
+    }
+    return [{ id: card.id, chart }];
+  });
+}

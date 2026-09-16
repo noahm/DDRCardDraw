@@ -65,6 +65,11 @@
 }
 
 .totalHeading {
+  /* sits on the same line as the difficulty labels rather than floating
+     halfway up a header the jackets made tall. The padding is in this cell's
+     own smaller em, so it matches .songHeading's 0.4em of the table's */
+  vertical-align: bottom !important;
+  padding-bottom: 0.67em !important;
   font-size: 0.6em;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -114,14 +119,25 @@
   line-height: 1.2;
 }
 
-.points {
+.placing {
   display: block;
   font-size: 0.6em;
   font-weight: bold;
   line-height: 1.2;
+}
+
+/* winning a song is the one placing worth picking out of the column */
+.won {
+  color: #f5cf6a;
+}
+
+/* points read as points wherever they were earned, so the eye can add up a
+   column without reading the places alongside them */
+.points {
   color: #7fd77f;
 }
 
+/* a place the payout table doesn't reach earned nothing, so it recedes */
 .noPoints {
   color: rgb(255 255 255 / 45%);
 }

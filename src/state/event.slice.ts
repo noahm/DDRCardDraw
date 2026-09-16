@@ -1,6 +1,7 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 import { CompoundSetId } from "../models/Drawing";
+import { DEFAULT_PAYOUT_SCHEME } from "../models/payout-scheme";
 import { mergeDraws } from "./central";
 
 export interface CabInfo {
@@ -28,6 +29,12 @@ export interface EventSettings {
   hideVetos: boolean;
   showMaxScore: boolean;
   showPlayerAndRoundLabels: boolean;
+  /**
+   * What every gauntlet scored draw in this room pays out, in the notation
+   * `src/models/payout-scheme.ts` describes. A single draw can say otherwise,
+   * and a round drawn from a bracket that carries its own table keeps that.
+   */
+  gauntletPayout: string;
 }
 
 export const defaultEventSettings: EventSettings = {
@@ -35,6 +42,7 @@ export const defaultEventSettings: EventSettings = {
   hideVetos: false,
   showMaxScore: false,
   showPlayerAndRoundLabels: true,
+  gauntletPayout: DEFAULT_PAYOUT_SCHEME,
 };
 
 interface EventState {

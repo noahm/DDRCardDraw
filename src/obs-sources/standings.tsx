@@ -1,16 +1,19 @@
+import classNames from "classnames";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import {
-  CHART_DRAWN,
   type Drawing,
-  type DrawnChart,
   type EligibleChart,
-  isGauntletMeta,
+  isGauntletScored,
+  type ScoreableChart,
+  scoreableCharts,
 } from "../models/Drawing";
 import {
   computeGauntletStandings,
   type ChartResult,
 } from "../models/gauntlet-standings";
+import { ordinalPlace } from "../models/payout-scheme";
+import { useEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
 import styles from "./standings.css";
@@ -22,7 +25,8 @@ import styles from "./standings.css";
  *
  * Renders nothing for a cab with no match, or one holding a head to head draw,
  * which scores by per-chart wins rather than points and so has no standings to
- * show.
+ * show. A custom draw of more than two players is a gauntlet in all but name
+ * and gets the same table.
  */
 export function CabStandings() {
   const params = useParams<"roomName" | "cabId">();
@@ -37,12 +41,18 @@ export function CabStandings() {
     drawingId ? s.drawings.entities[drawingId] : undefined,
   );
 
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
+
   const standings = useMemo(() => {
-    if (!drawing || !isGauntletMeta(drawing.meta)) {
+    if (!drawing || !isGauntletScored(drawing.meta)) {
       return null;
     }
-    return computeGauntletStandings(drawing.meta, drawnCharts(drawing));
-  }, [drawing]);
+    return computeGauntletStandings(
+      drawing.meta,
+      playableCharts(drawing),
+      eventScheme,
+    );
+  }, [drawing, eventScheme]);
 
   if (!drawing || !standings?.rows.length) {
     return null;
@@ -54,11 +64,8 @@ export function CabStandings() {
       <thead>
         <tr>
           <th className={styles.corner} colSpan={2} />
-          {playedCharts.map((chart) => (
-            <SongHeading
-              key={chart.id}
-              chart={drawing.pocketPicks[chart.id]?.pick ?? chart}
-            />
+          {playedCharts.map(({ id, chart }) => (
+            <SongHeading key={id} chart={chart} />
           ))}
           <th className={styles.totalHeading} data-field="total-heading">
             Points
@@ -83,8 +90,8 @@ export function CabStandings() {
             <td className={styles.player} data-field="player">
               <span className={styles.playerName}>{row.name}</span>
             </td>
-            {playedCharts.map((chart) => (
-              <ResultCell key={chart.id} result={row.results[chart.id]} />
+            {playedCharts.map(({ id }) => (
+              <ResultCell key={id} result={row.results[id]} />
             ))}
             <td className={styles.total} data-field="total">
               {row.totalPoints}
@@ -96,11 +103,15 @@ export function CabStandings() {
   );
 }
 
-/** every chart drawn for a match, across all of its sub-draws */
-function drawnCharts(drawing: Drawing): DrawnChart[] {
-  return Object.values(drawing.subDrawings ?? {})
-    .flatMap((subDraw) => subDraw.charts)
-    .filter((chart): chart is DrawnChart => chart.type === CHART_DRAWN);
+/**
+ * Every chart a match can be scored on, across all of its sub-draws. Pocket
+ * picks and free picks show up as the chart that was actually played, so points
+ * are paid out on them the same as on anything else drawn.
+ */
+function playableCharts(drawing: Drawing): ScoreableChart[] {
+  return Object.values(drawing.subDrawings ?? {}).flatMap((subDraw) =>
+    scoreableCharts(subDraw.charts, drawing),
+  );
 }
 
 function SongHeading({ chart }: { chart: EligibleChart }) {
@@ -143,13 +154,20 @@ function ResultCell({ result }: { result: ChartResult | undefined }) {
       <span className={styles.score} data-field="score">
         {result.score.toLocaleString()}
       </span>
+      {/* where a player came on this song and what that paid, on one line:
+          the pair is what makes a total add up on screen */}
       <span
-        className={
-          result.points ? styles.points : `${styles.points} ${styles.noPoints}`
-        }
-        data-field="points"
+        className={classNames(styles.placing, {
+          [styles.won]: result.place === 1,
+        })}
+        data-field="placing"
       >
-        {result.points ? `+${result.points}` : "0"}
+        <span data-field="place">{ordinalPlace(result.place)}</span>
+        {", "}
+        <span
+          className={result.points ? styles.points : styles.noPoints}
+          data-field="points"
+        >{`+${result.points}`}</span>
       </span>
     </td>
   );

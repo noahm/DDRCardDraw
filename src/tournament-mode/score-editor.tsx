@@ -7,20 +7,21 @@ import {
   Cell,
 } from "@blueprintjs/table";
 import { useDrawing } from "../drawing-context";
-import { type DrawnChart, type ExternalMeta } from "../models/Drawing";
+import { type Drawing, scoreableCharts } from "../models/Drawing";
 import { ReactElement, useState } from "react";
 import { inferShortname } from "../controls/player-names";
 import { useDispatch } from "react-redux";
 import { drawingsSlice } from "../state/drawings.slice";
 import { ScoreSortableColumn } from "./sortable-columns";
 
-export default function ScoreEditor({ meta }: { meta: ExternalMeta }) {
+export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
   const drawingId = useDrawing((d) => d.compoundId);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);
-  const charts = useDrawing((d) => d.charts).filter(
-    (c): c is DrawnChart => c.type === "DRAWN" && !bans[c.id],
-  );
+  const drawnCards = useDrawing((d) => d.charts);
+  // free picks get a column of their own once filled, the same as any other
+  // card — scores on them key off the placeholder that was drawn
+  const charts = scoreableCharts(drawnCards, { bans, pocketPicks });
   const dispatch = useDispatch();
   const [playerOrderMap, setPlayerOrderMap] = useState(
     meta.players.map((_, idx) => idx),
@@ -70,15 +71,11 @@ export default function ScoreEditor({ meta }: { meta: ExternalMeta }) {
     );
   }
 
-  const chartCols = charts.map<ReactElement<ColumnProps>>((c) => {
-    const maybeReplacedBy = pocketPicks[c.id]?.pick;
-    let songName = c.nameTranslation || c.name;
-    if (maybeReplacedBy) {
-      songName = maybeReplacedBy.nameTranslation || maybeReplacedBy.name;
-    }
-    const sortableColumn = new ScoreSortableColumn(songName, c.id);
+  const chartCols = charts.map<ReactElement<ColumnProps>>(({ id, chart }) => {
+    const songName = chart.nameTranslation || chart.name;
+    const sortableColumn = new ScoreSortableColumn(songName, id);
     return sortableColumn.getColumn(
-      (rowIdx) => playerScoreRenderer(rowIdx, c.id),
+      (rowIdx) => playerScoreRenderer(rowIdx, id),
       (chartId, comparator) => {
         setPlayerOrderMap((prev) => {
           const next = prev.slice();

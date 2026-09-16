@@ -1,13 +1,11 @@
+import { pointsForPlace } from "../piu-tourney/points";
 import {
-  DEFAULT_POINTS_PER_PLACE,
-  pointsForPlace,
-} from "../piu-tourney/points";
-import {
-  type DrawnChart,
-  type GauntletMeta,
+  type GauntletScoredMeta,
   type Player,
+  type ScoreableChart,
   playerDisplayName,
 } from "./Drawing";
+import { payoutTableFromScheme } from "./payout-scheme";
 
 /** What one player earned on one played chart. */
 export interface ChartResult {
@@ -33,22 +31,35 @@ export interface StandingsRow {
 export interface GauntletStandings {
   /** the payout table these standings were scored against */
   pointsPerPlace: readonly number[];
-  /** drawn charts somebody has a score on, in the order they were drawn */
-  playedCharts: DrawnChart[];
+  /** cards somebody has a score on, in the order they were drawn */
+  playedCharts: ScoreableChart[];
   /** every player in the gauntlet, best total first */
   rows: StandingsRow[];
 }
 
 /**
- * The points table a gauntlet pays out on. Only piu draws carry one, and only
- * those taken since it was first recorded, so everything else falls back to
- * what tourney-maker itself defaults to.
+ * The points table a gauntlet pays out on, most specific source first:
+ *
+ * 1. the table a piu round was drawn against, snapshotted at draw time, which
+ *    is its organizer's own and not ours to reinterpret;
+ * 2. the scheme this draw was taken under, likewise snapshotted;
+ * 3. the event's scheme, for draws taken before that was recorded;
+ * 4. the built-in default.
+ *
+ * Everything below the table is resolved against the size of the heat right
+ * now, so a late entrant is paid out for rather than ignored.
  */
-export function payoutTableFor(meta: GauntletMeta): readonly number[] {
+export function payoutTableFor(
+  meta: GauntletScoredMeta,
+  eventScheme?: string,
+): readonly number[] {
   if ("pointsPerPlace" in meta && meta.pointsPerPlace?.length) {
     return meta.pointsPerPlace;
   }
-  return DEFAULT_POINTS_PER_PLACE;
+  return payoutTableFromScheme(
+    meta.payoutScheme || eventScheme,
+    meta.players.length,
+  );
 }
 
 /**
@@ -64,10 +75,11 @@ export function payoutTableFor(meta: GauntletMeta): readonly number[] {
  * its author meant it to.
  */
 export function computeGauntletStandings(
-  meta: GauntletMeta,
-  charts: DrawnChart[],
+  meta: GauntletScoredMeta,
+  charts: ScoreableChart[],
+  eventScheme?: string,
 ): GauntletStandings {
-  const pointsPerPlace = payoutTableFor(meta);
+  const pointsPerPlace = payoutTableFor(meta, eventScheme);
   const scores = meta.scoresByEntrant ?? {};
   const scoreOf = (playerId: string, chartId: string) => {
     const score = scores[playerId]?.[chartId];

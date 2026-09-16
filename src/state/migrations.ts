@@ -16,8 +16,15 @@ export function applyMigrations(state: AppState) {
   liftDisplaySettingsToEvent(state);
 }
 
-/** display settings that used to live on every config, before they were promoted */
-const PROMOTED_KEYS: Array<keyof EventSettings> = ["hideVetos", "showMaxScore"];
+/**
+ * Display settings that used to live on every config, before they were
+ * promoted. Spelled out rather than typed as `keyof EventSettings` so the
+ * boolean write below stays sound now that not every setting is a boolean.
+ */
+const PROMOTED_KEYS = [
+  "hideVetos",
+  "showMaxScore",
+] as const satisfies ReadonlyArray<keyof EventSettings>;
 
 /**
  * `hideVetos` and `showMaxScore` were per-config until they were promoted to

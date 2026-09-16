@@ -16,6 +16,8 @@ import { createDraw } from "../state/thunks";
 import { useAppDispatch, useAppState } from "../state/store";
 import { eventSlice } from "../state/event.slice";
 import { Player, SimpleMeta, newPlayer } from "../models/Drawing";
+import { PayoutSchemeInput } from "./payout-scheme-input";
+import { useEventSettings } from "../state/hooks";
 import { lazy, Suspense, useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
 import { DrawingMeta } from "../card-draw";
@@ -185,12 +187,26 @@ export function CustomDrawForm(props: {
     () => props.initialMeta?.players ?? [newPlayer("P1"), newPlayer("P2")],
   );
   const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
+  const [payoutScheme, setPayoutScheme] = useState<string>(
+    props.initialMeta?.payoutScheme || "",
+  );
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
+  /*
+   * A draw takes its payout from the event as it's drawn, so there's nothing
+   * to choose on the way in -- but afterwards this is the only place to put
+   * right a heat that was drawn under the wrong one. Past a head to head pair,
+   * where the draw is ranked on points at all.
+   */
+  const editingExistingDraw = !!props.initialMeta;
+  const scoresOnPoints = players.length > 2;
 
   function handleSubmit() {
     props.onSubmit({
       type: "simple",
       players,
       title,
+      // carried through untouched where the field wasn't offered
+      payoutScheme: payoutScheme.trim() || undefined,
     });
   }
   return (
@@ -204,6 +220,20 @@ export function CustomDrawForm(props: {
       <FormGroup label="players">
         <PlayerListInput value={players} onChange={setPlayers} />
       </FormGroup>
+      {editingExistingDraw && scoresOnPoints && (
+        <FormGroup
+          label="payout"
+          helperText="points each place earns per chart, this draw only"
+        >
+          <PayoutSchemeInput
+            value={payoutScheme}
+            commit="with-form"
+            onCommit={setPayoutScheme}
+            playerCount={players.length}
+            inheritedScheme={eventScheme}
+          />
+        </FormGroup>
+      )}
       <Button
         intent="primary"
         onClick={handleSubmit}

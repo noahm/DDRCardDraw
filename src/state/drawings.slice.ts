@@ -13,7 +13,7 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
-  isExternalMeta,
+  isGauntletScored,
   MergedDrawing,
   newPlayer,
   Player,
@@ -130,9 +130,11 @@ export const drawingsSlice = createSlice({
         id: string;
         title: string;
         players: Player[];
+        /** undefined puts the draw back on whatever the event pays out */
+        payoutScheme?: string;
       }>,
     ) {
-      const { id, title, players } = action.payload;
+      const { id, title, players, payoutScheme } = action.payload;
       const drawing = state.entities[id];
       if (!drawing) {
         return;
@@ -165,6 +167,7 @@ export const drawingsSlice = createSlice({
 
       drawing.meta.title = title;
       drawing.meta.players = players;
+      drawing.meta.payoutScheme = payoutScheme;
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
       const mainId = action.payload;
@@ -277,9 +280,6 @@ export const drawingsSlice = createSlice({
       if (!drawing) {
         return;
       }
-      if (!isExternalMeta(drawing.meta)) {
-        return;
-      }
       const scores = (drawing.meta.scoresByEntrant ??= {});
       // what the scores said before this edit, so a winner set by clicking the
       // card is never cleared by a half-filled score grid
@@ -294,8 +294,9 @@ export const drawingsSlice = createSlice({
 
       // Head to head draws show per-chart win counts, so a typed score has to
       // settle the chart too or the labels sit at zero while scores pile up.
-      // Gauntlets rank on totals and hide win counts, so they're left alone.
-      if (drawing.meta.subtype === "gauntlet") {
+      // Anything scored as a gauntlet ranks on totals and hides win counts --
+      // custom draws past a pair included -- so those are left alone.
+      if (isGauntletScored(drawing.meta)) {
         return;
       }
       const implied = impliedWinner(drawing.meta.players, scores, chartId);

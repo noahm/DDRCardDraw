@@ -5,6 +5,8 @@ import {
   Menu,
   MenuItem,
   Popover,
+  Tab,
+  Tabs,
   Tooltip,
 } from "@blueprintjs/core";
 import {
@@ -34,8 +36,7 @@ import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  ExternalMeta,
-  isExternalMeta,
+  isGauntletScored,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -77,6 +78,9 @@ import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
 const ScoreEditor = lazy(() => import("./score-editor"));
+const StandingsTable = lazy(() =>
+  import("./standings-table").then((m) => ({ default: m.StandingsTable })),
+);
 const SmxScoreImport = lazy(() => import("./smx-score-import"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
@@ -252,17 +256,16 @@ export function DrawingActions() {
   const highlighAtRandom = useHighlightRandom();
   const gameKey = useConfigState((c) => c.gameKey);
   const gameData = useGameData();
-  // scores are recorded for every externally sourced match, h2h included
-  const canScore = isExternalMeta(drawingMeta);
+  // any draw can hold scores — an externally sourced match, h2h or gauntlet,
+  // or a custom draw — but there has to be somebody to attribute them to
+  const canScore = !!drawingMeta.players.length;
   // ...and the SMX score feed can fill them in, when that's the game in play
   const canImportSmxScores = canScore && isSmxGameData(gameKey, gameData);
   const { showBoundary } = useErrorBoundary();
-  const [scoreEditorMeta, setScoreEditorMeta] = useState<
-    ExternalMeta | undefined
-  >(undefined);
-  const [smxImportMeta, setSmxImportMeta] = useState<ExternalMeta | undefined>(
-    undefined,
-  );
+  // both dialogs read the meta straight off the draw rather than a copy taken
+  // when they opened, so a score typed into one shows up in the other
+  const [scoringOpen, setScoringOpen] = useState(false);
+  const [smxImportOpen, setSmxImportOpen] = useState(false);
 
   const addToCabMenu = (
     <Menu>
@@ -348,19 +351,37 @@ export function DrawingActions() {
             <Button
               variant="minimal"
               icon={<Th />}
-              onClick={() => {
-                setScoreEditorMeta(drawingMeta);
-              }}
+              onClick={() => setScoringOpen(true)}
             />
           </Tooltip>
           <Dialog
-            onClose={() => setScoreEditorMeta(undefined)}
-            isOpen={!!scoreEditorMeta}
+            onClose={() => setScoringOpen(false)}
+            isOpen={scoringOpen}
             title="Score Editor"
             style={{ width: "auto" }}
           >
             <DialogBody>
-              <ScoreEditor meta={scoreEditorMeta!} />
+              <Suspense fallback={<DelayedSpinner />}>
+                {isGauntletScored(drawingMeta) ? (
+                  // a gauntlet ranks on points rather than per-chart wins, so
+                  // the table it adds up to belongs next to the grid it's typed
+                  // into
+                  <Tabs id="score-editor" defaultSelectedTabId="scores">
+                    <Tab
+                      id="scores"
+                      title="Scores"
+                      panel={<ScoreEditor meta={drawingMeta} />}
+                    />
+                    <Tab
+                      id="standings"
+                      title="Standings"
+                      panel={<StandingsTable meta={drawingMeta} />}
+                    />
+                  </Tabs>
+                ) : (
+                  <ScoreEditor meta={drawingMeta} />
+                )}
+              </Suspense>
             </DialogBody>
           </Dialog>
         </>
@@ -371,19 +392,19 @@ export function DrawingActions() {
             <Button
               variant="minimal"
               icon={<CloudDownload />}
-              onClick={() => setSmxImportMeta(drawingMeta)}
+              onClick={() => setSmxImportOpen(true)}
             />
           </Tooltip>
           <Dialog
-            onClose={() => setSmxImportMeta(undefined)}
-            isOpen={!!smxImportMeta}
+            onClose={() => setSmxImportOpen(false)}
+            isOpen={smxImportOpen}
             title="Import Scores from SMX"
             style={{ width: "auto", minWidth: "40em" }}
           >
             <Suspense fallback={<DelayedSpinner />}>
               <SmxScoreImport
-                meta={smxImportMeta!}
-                onClose={() => setSmxImportMeta(undefined)}
+                meta={drawingMeta}
+                onClose={() => setSmxImportOpen(false)}
               />
             </Suspense>
           </Dialog>
@@ -457,6 +478,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
                 id: drawingId,
                 title: meta.title,
                 players: meta.players,
+                payoutScheme: meta.payoutScheme,
               }),
             );
             setMetaEditorOpen(false);
