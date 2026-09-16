@@ -16,14 +16,20 @@ import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
 
 import {
-  getR2SnapshotStore,
+  getSnapshotStore,
   isRoomSnapshot,
   type RoomSnapshot,
 } from "./snapshot-store";
 import { applyMigrations } from "../state/migrations";
 import { gunzipJson, gzipJson } from "./compression";
 
-const remoteStore = getR2SnapshotStore();
+/**
+ * The durable copy kept outside partykit room storage: R2 in production, a
+ * folder on this machine in local mode, nothing at all when neither is
+ * configured. Everything below is written against the interface, so the two
+ * configured cases are the same code path.
+ */
+const remoteStore = getSnapshotStore();
 
 function isAppState(state: unknown): state is AppState {
   if (state && !Array.isArray(state) && typeof state === "object") {
@@ -54,10 +60,10 @@ interface LegacySyncMeta {
 }
 
 /**
- * Minimum spacing between remote snapshot writes. Room storage is local and
- * cheap enough to write on every action; the remote store is a signed HTTPS
- * round trip, so writes coalesce and always carry the latest snapshot rather
- * than queueing one per action.
+ * Minimum spacing between remote snapshot writes. Room storage is in-process
+ * and cheap enough to write on every action; the remote store is an HTTP round
+ * trip either way, so writes coalesce and always carry the latest snapshot
+ * rather than queueing one per action.
  */
 const REMOTE_WRITE_INTERVAL_MS = 2000;
 

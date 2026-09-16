@@ -1,0 +1,137 @@
+/**
+ * Sized in em throughout, so an event's custom OBS css can scale the whole
+ * table by setting a single font-size on `.standings`. Every cell also carries
+ * a stable `data-field`, since css module class names are hashed and can't be
+ * targeted from that same css.
+ */
+.standings {
+  /* shrink to fit the content instead of filling the browser source's width,
+     so the table can be positioned and scaled as one block in OBS */
+  width: max-content;
+  font-size: 24px;
+  color: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-shadow: 0 0.06em 0.12em rgb(0 0 0 / 80%);
+}
+
+.standings th,
+.standings td {
+  padding: 0.25em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* headings */
+
+.corner {
+  /* holds nothing but the width of the rank + player columns */
+  background: none;
+}
+
+.songHeading {
+  width: 4em;
+  padding-bottom: 0.4em !important;
+}
+
+.jacket {
+  display: block;
+  width: 3.2em;
+  height: 3.2em;
+  margin: 0 auto 0.15em;
+  border-radius: 0.15em;
+  box-shadow: 0 0.08em 0.25em rgb(0 0 0 / 60%);
+  object-fit: cover;
+}
+
+.songName {
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: 6em;
+  margin: 0 auto;
+  font-size: 0.55em;
+  font-weight: normal;
+  line-height: 1.15;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.difficulty {
+  display: block;
+  font-size: 0.5em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.totalHeading {
+  font-size: 0.6em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* rows */
+
+.row td {
+  background: rgb(0 0 0 / 55%);
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.row:nth-child(even) td {
+  background: rgb(0 0 0 / 40%);
+}
+
+.leader td {
+  background: rgb(212 160 23 / 45%);
+}
+
+.rank {
+  width: 1.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: rgb(255 255 255 / 65%);
+}
+
+.player {
+  font-weight: bold;
+  text-align: left !important;
+}
+
+/* the clamp lives on an inner block: max-width on a table cell is only a
+   suggestion to the table layout algorithm, and a long name would ignore it */
+.playerName {
+  display: block;
+  max-width: 9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score {
+  display: block;
+  font-size: 0.7em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.points {
+  display: block;
+  font-size: 0.6em;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #7fd77f;
+}
+
+.noPoints {
+  color: rgb(255 255 255 / 45%);
+}
+
+.unplayed {
+  color: rgb(255 255 255 / 30%);
+}
+
+.total {
+  font-size: 1.1em;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}

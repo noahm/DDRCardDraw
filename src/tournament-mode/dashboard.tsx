@@ -24,6 +24,7 @@ import {
   routableGlobalSourcePath,
   type DrawnChartsLayout,
 } from "./copy-obs-source";
+import { CabObsSources } from "./cab-obs-sources";
 
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
@@ -72,6 +73,9 @@ export function Dashboard() {
               />
             ))}
           </CardList>
+        </section>
+        <section>
+          <CabObsSources />
         </section>
         <DrawnChartsSources />
         <CssEditor />

@@ -168,6 +168,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "standings",
+        lazy: async () => {
+          const { CabStandings } = await import("./obs-sources/standings");
+          return { Component: CabStandings };
+        },
+      },
+      {
         path: "phase",
         lazy: async () => {
           const { PhaseName } = await import("./obs-sources/text");
@@ -189,18 +196,18 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "player/:playerIndex/:displayType?",
+        // the trailing segment is a comma separated field list, so a single
+        // source can carry any mix of a player's info
+        path: "player/:playerIndex/:fields?",
         lazy: async () => {
-          const { CabPlayer, toDisplayType } =
-            await import("./obs-sources/text");
+          const { CabPlayer } = await import("./obs-sources/text");
+          const { toPlayerFields } =
+            await import("./obs-sources/player-fields");
           return {
             Component: function PlayerSource() {
-              const { playerIndex, displayType } = useParams();
+              const { playerIndex, fields } = useParams();
               return (
-                <CabPlayer
-                  p={+playerIndex!}
-                  displayType={toDisplayType(displayType)}
-                />
+                <CabPlayer p={+playerIndex!} fields={toPlayerFields(fields)} />
               );
             },
           };
@@ -217,14 +224,14 @@ const router = createBrowserRouter([
         path: "p1-name",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={1} displayType="name" /> };
+          return { element: <CabPlayer p={1} fields={["name"]} /> };
         },
       },
       {
         path: "p1-score",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={1} displayType="score" /> };
+          return { element: <CabPlayer p={1} fields={["score"]} /> };
         },
       },
       {
@@ -238,14 +245,14 @@ const router = createBrowserRouter([
         path: "p2-name",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={2} displayType="name" /> };
+          return { element: <CabPlayer p={2} fields={["name"]} /> };
         },
       },
       {
         path: "p2-score",
         lazy: async () => {
           const { CabPlayer } = await import("./obs-sources/text");
-          return { element: <CabPlayer p={2} displayType="score" /> };
+          return { element: <CabPlayer p={2} fields={["score"]} /> };
         },
       },
     ],

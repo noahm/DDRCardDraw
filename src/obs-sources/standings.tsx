@@ -1,0 +1,156 @@
+import { useMemo } from "react";
+import { useParams } from "react-router-dom";
+import {
+  CHART_DRAWN,
+  type Drawing,
+  type DrawnChart,
+  type EligibleChart,
+  isGauntletMeta,
+} from "../models/Drawing";
+import {
+  computeGauntletStandings,
+  type ChartResult,
+} from "../models/gauntlet-standings";
+import { useAppState } from "../state/store";
+import { getJacketUrl } from "../utils/jackets";
+import styles from "./standings.css";
+
+/**
+ * Live standings for the gauntlet on a cab: players down the left sorted by
+ * points, one column per song that's been played, and running totals on the
+ * right.
+ *
+ * Renders nothing for a cab with no match, or one holding a head to head draw,
+ * which scores by per-chart wins rather than points and so has no standings to
+ * show.
+ */
+export function CabStandings() {
+  const params = useParams<"roomName" | "cabId">();
+  // the cab can hold a whole draw or one sub-draw of it; standings always cover
+  // the whole round, so only the parent id matters here
+  const drawingId = useAppState((s) => {
+    const activeMatch = s.event.cabs[params.cabId!]?.activeMatch;
+    if (!activeMatch) return null;
+    return typeof activeMatch === "string" ? activeMatch : activeMatch[0];
+  });
+  const drawing = useAppState((s) =>
+    drawingId ? s.drawings.entities[drawingId] : undefined,
+  );
+
+  const standings = useMemo(() => {
+    if (!drawing || !isGauntletMeta(drawing.meta)) {
+      return null;
+    }
+    return computeGauntletStandings(drawing.meta, drawnCharts(drawing));
+  }, [drawing]);
+
+  if (!drawing || !standings?.rows.length) {
+    return null;
+  }
+  const { playedCharts, rows } = standings;
+
+  return (
+    <table className={styles.standings}>
+      <thead>
+        <tr>
+          <th className={styles.corner} colSpan={2} />
+          {playedCharts.map((chart) => (
+            <SongHeading
+              key={chart.id}
+              chart={drawing.pocketPicks[chart.id]?.pick ?? chart}
+            />
+          ))}
+          <th className={styles.totalHeading} data-field="total-heading">
+            Points
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr
+            key={row.player.id}
+            className={
+              // before a single score lands everybody is level on nothing, and
+              // highlighting the whole field as joint leaders reads as a bug
+              row.place === 1 && row.totalPoints > 0
+                ? `${styles.row} ${styles.leader}`
+                : styles.row
+            }
+          >
+            <td className={styles.rank} data-field="rank">
+              {row.place}
+            </td>
+            <td className={styles.player} data-field="player">
+              <span className={styles.playerName}>{row.name}</span>
+            </td>
+            {playedCharts.map((chart) => (
+              <ResultCell key={chart.id} result={row.results[chart.id]} />
+            ))}
+            <td className={styles.total} data-field="total">
+              {row.totalPoints}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+/** every chart drawn for a match, across all of its sub-draws */
+function drawnCharts(drawing: Drawing): DrawnChart[] {
+  return Object.values(drawing.subDrawings ?? {})
+    .flatMap((subDraw) => subDraw.charts)
+    .filter((chart): chart is DrawnChart => chart.type === CHART_DRAWN);
+}
+
+function SongHeading({ chart }: { chart: EligibleChart }) {
+  return (
+    <th className={styles.songHeading} data-field="song">
+      {chart.jacket ? (
+        <img
+          className={styles.jacket}
+          src={getJacketUrl(chart.jacket)}
+          alt=""
+        />
+      ) : (
+        <div className={styles.jacket} />
+      )}
+      <span className={styles.songName} data-field="song-name">
+        {chart.nameTranslation || chart.name}
+      </span>
+      <span
+        className={styles.difficulty}
+        data-field="difficulty"
+        style={{ color: chart.diffColor }}
+      >
+        {chart.diffAbbr} {chart.level}
+      </span>
+    </th>
+  );
+}
+
+function ResultCell({ result }: { result: ChartResult | undefined }) {
+  if (!result) {
+    // this player hasn't been scored on a song others already have
+    return (
+      <td className={styles.unplayed} data-field="result">
+        —
+      </td>
+    );
+  }
+  return (
+    <td data-field="result">
+      <span className={styles.score} data-field="score">
+        {result.score.toLocaleString()}
+      </span>
+      <span
+        className={
+          result.points ? styles.points : `${styles.points} ${styles.noPoints}`
+        }
+        data-field="points"
+      >
+        {result.points ? `+${result.points}` : "0"}
+      </span>
+    </td>
+  );
+}
