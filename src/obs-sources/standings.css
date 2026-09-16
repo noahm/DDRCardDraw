@@ -114,14 +114,20 @@
   line-height: 1.2;
 }
 
-.points {
+.placing {
   display: block;
   font-size: 0.6em;
   font-weight: bold;
   line-height: 1.2;
-  color: #7fd77f;
 }
 
+/* winning a song is the one placing worth picking out of the column */
+.won {
+  color: #f5cf6a;
+}
+
+/* a place the payout table doesn't reach earned nothing, so it recedes --
+   after .won, so it still reads that way on a scheme paying first nothing */
 .noPoints {
   color: rgb(255 255 255 / 45%);
 }

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import {
@@ -11,6 +12,7 @@ import {
   computeGauntletStandings,
   type ChartResult,
 } from "../models/gauntlet-standings";
+import { ordinalPlace } from "../models/payout-scheme";
 import { useEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
@@ -152,13 +154,18 @@ function ResultCell({ result }: { result: ChartResult | undefined }) {
       <span className={styles.score} data-field="score">
         {result.score.toLocaleString()}
       </span>
+      {/* where a player came on this song and what that paid, on one line:
+          the pair is what makes a total add up on screen */}
       <span
-        className={
-          result.points ? styles.points : `${styles.points} ${styles.noPoints}`
-        }
-        data-field="points"
+        className={classNames(styles.placing, {
+          [styles.won]: result.place === 1,
+          [styles.noPoints]: !result.points,
+        })}
+        data-field="placing"
       >
-        {result.points ? `+${result.points}` : "0"}
+        <span data-field="place">{ordinalPlace(result.place)}</span>
+        {", "}
+        <span data-field="points">{`+${result.points}`}</span>
       </span>
     </td>
   );

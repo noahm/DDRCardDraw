@@ -148,7 +148,7 @@ export function payoutTableFromScheme(
   return evaluatePayoutScheme(scheme, playerCount);
 }
 
-/** "1st", "2nd", … for labelling a place in the payout preview */
+/** "1st", "2nd", … for labelling a finishing place */
 export function ordinalPlace(place: number) {
   const tens = place % 100;
   if (tens >= 11 && tens <= 13) {
