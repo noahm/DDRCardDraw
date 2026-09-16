@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import {
   type Drawing,
   type EligibleChart,
-  isGauntletMeta,
+  isGauntletScored,
   type ScoreableChart,
   scoreableCharts,
 } from "../models/Drawing";
@@ -11,6 +11,7 @@ import {
   computeGauntletStandings,
   type ChartResult,
 } from "../models/gauntlet-standings";
+import { useEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
 import styles from "./standings.css";
@@ -22,7 +23,8 @@ import styles from "./standings.css";
  *
  * Renders nothing for a cab with no match, or one holding a head to head draw,
  * which scores by per-chart wins rather than points and so has no standings to
- * show.
+ * show. A custom draw of more than two players is a gauntlet in all but name
+ * and gets the same table.
  */
 export function CabStandings() {
   const params = useParams<"roomName" | "cabId">();
@@ -37,12 +39,18 @@ export function CabStandings() {
     drawingId ? s.drawings.entities[drawingId] : undefined,
   );
 
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
+
   const standings = useMemo(() => {
-    if (!drawing || !isGauntletMeta(drawing.meta)) {
+    if (!drawing || !isGauntletScored(drawing.meta)) {
       return null;
     }
-    return computeGauntletStandings(drawing.meta, playableCharts(drawing));
-  }, [drawing]);
+    return computeGauntletStandings(
+      drawing.meta,
+      playableCharts(drawing),
+      eventScheme,
+    );
+  }, [drawing, eventScheme]);
 
   if (!drawing || !standings?.rows.length) {
     return null;

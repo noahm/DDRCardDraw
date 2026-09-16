@@ -1,8 +1,11 @@
-import { Callout, Checkbox } from "@blueprintjs/core";
+import { Callout, Checkbox, FormGroup } from "@blueprintjs/core";
 import { useIntl } from "../hooks/useIntl";
-import { selectChartUsage } from "../state/drawings.slice";
+import { drawingSelectors, selectChartUsage } from "../state/drawings.slice";
 import { useEventSettings, useUpdateEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
+import { isGauntletScored } from "../models/Drawing";
+import { DEFAULT_PAYOUT_SCHEME } from "../models/payout-scheme";
+import { PayoutSchemeInput } from "./payout-scheme-input";
 import styles from "./controls.css";
 
 /**
@@ -18,6 +21,19 @@ export function EventSettings() {
   const settings = useEventSettings();
   const updateSettings = useUpdateEventSettings();
   const usedChartCount = useAppState((s) => selectChartUsage(s).count);
+  // preview the payout against the biggest heat this room has actually drawn,
+  // so an organizer sees the table their own event pays rather than an example
+  const largestHeat = useAppState((s) =>
+    drawingSelectors
+      .selectAll(s)
+      .reduce(
+        (largest, drawing) =>
+          isGauntletScored(drawing.meta)
+            ? Math.max(largest, drawing.meta.players.length)
+            : largest,
+        0,
+      ),
+  );
 
   return (
     <div className={styles.eventSettings}>
@@ -64,6 +80,16 @@ export function EventSettings() {
         }
         label={t("controls.playerLabels")}
       />
+      <FormGroup
+        label={t("controls.gauntletPayout")}
+        helperText={t("controls.gauntletPayoutHint")}
+      >
+        <PayoutSchemeInput
+          value={settings.gauntletPayout ?? DEFAULT_PAYOUT_SCHEME}
+          onChange={(gauntletPayout) => updateSettings({ gauntletPayout })}
+          playerCount={largestHeat > 2 ? largestHeat : undefined}
+        />
+      </FormGroup>
     </div>
   );
 }

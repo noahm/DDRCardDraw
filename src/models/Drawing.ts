@@ -129,6 +129,12 @@ export interface PiuGauntletMeta extends PiuMeta {
 
 export interface SimpleMeta extends DrawMeta {
   type: "simple";
+  /**
+   * Payout scheme for this one draw, overriding the event's, in the notation
+   * `src/models/payout-scheme.ts` describes. Absent on the draws that just take
+   * whatever the event pays out, which is most of them.
+   */
+  payoutScheme?: string;
 }
 
 /** any draw sourced from an external bracket, as opposed to a custom draw */
@@ -144,12 +150,29 @@ export type ExternalMeta =
  */
 export type GauntletMeta = StartggGauntletMeta | PiuGauntletMeta;
 
+/** any draw that ranks a group on total points: a gauntlet by another name */
+export type GauntletScoredMeta = GauntletMeta | SimpleMeta;
+
 export function isExternalMeta(meta: Drawing["meta"]): meta is ExternalMeta {
   return meta.type === "startgg" || meta.type === "piu";
 }
 
 export function isGauntletMeta(meta: Drawing["meta"]): meta is GauntletMeta {
   return isExternalMeta(meta) && meta.subtype === "gauntlet";
+}
+
+/**
+ * Whether a draw is scored as a gauntlet — ranked on total points rather than
+ * settled chart by chart. A bracket says outright which of its matches is one;
+ * a custom draw becomes one as soon as it holds more than a head to head pair,
+ * since past two players there's no "the other player" to win against.
+ */
+export function isGauntletScored(
+  meta: Drawing["meta"],
+): meta is GauntletScoredMeta {
+  return (
+    isGauntletMeta(meta) || (meta.type === "simple" && meta.players.length > 2)
+  );
 }
 
 /** Identifies an external match across providers, for de-duping draws. */

@@ -4,7 +4,7 @@ import { useAppState } from "../state/store";
 import {
   getAllPlayers,
   isExternalMeta,
-  isGauntletMeta,
+  isGauntletScored,
 } from "../models/Drawing";
 import { defaultPlayerFields, PlayerField } from "./player-fields";
 
@@ -66,7 +66,7 @@ export function CabPlayer(props: { p: number; fields?: PlayerField[] }) {
             return player.pronouns || "";
           case "score": {
             // a gauntlet doesn't show wins at all
-            if (isGauntletMeta(parent.meta)) return "";
+            if (isGauntletScored(parent.meta)) return "";
             const wins = Object.values(parent.winners).reduce<number>(
               (total, winner) => (winner === player.id ? total + 1 : total),
               0,

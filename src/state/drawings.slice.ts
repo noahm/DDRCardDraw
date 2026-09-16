@@ -13,7 +13,7 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
-  isGauntletMeta,
+  isGauntletScored,
   MergedDrawing,
   newPlayer,
   Player,
@@ -130,9 +130,11 @@ export const drawingsSlice = createSlice({
         id: string;
         title: string;
         players: Player[];
+        /** custom draws only; undefined goes back to the event's scheme */
+        payoutScheme?: string;
       }>,
     ) {
-      const { id, title, players } = action.payload;
+      const { id, title, players, payoutScheme } = action.payload;
       const drawing = state.entities[id];
       if (!drawing) {
         return;
@@ -165,6 +167,9 @@ export const drawingsSlice = createSlice({
 
       drawing.meta.title = title;
       drawing.meta.players = players;
+      if (drawing.meta.type === "simple") {
+        drawing.meta.payoutScheme = payoutScheme;
+      }
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
       const mainId = action.payload;
@@ -289,11 +294,11 @@ export const drawingsSlice = createSlice({
       // a player added after the first score was entered has no bucket yet
       (scores[playerId] ??= {})[chartId] = score;
 
-      // Head to head matches and custom draws show per-chart win counts, so a
-      // typed score has to settle the chart too or the labels sit at zero while
-      // scores pile up. Gauntlets rank on totals and hide win counts, so
-      // they're left alone.
-      if (isGauntletMeta(drawing.meta)) {
+      // Head to head draws show per-chart win counts, so a typed score has to
+      // settle the chart too or the labels sit at zero while scores pile up.
+      // Anything scored as a gauntlet ranks on totals and hides win counts --
+      // custom draws past a pair included -- so those are left alone.
+      if (isGauntletScored(drawing.meta)) {
         return;
       }
       const implied = impliedWinner(drawing.meta.players, scores, chartId);
