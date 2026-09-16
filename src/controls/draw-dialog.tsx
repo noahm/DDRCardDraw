@@ -16,8 +16,6 @@ import { createDraw } from "../state/thunks";
 import { useAppDispatch, useAppState } from "../state/store";
 import { eventSlice } from "../state/event.slice";
 import { Player, SimpleMeta, newPlayer } from "../models/Drawing";
-import { PayoutSchemeInput } from "./payout-scheme-input";
-import { useEventSettings } from "../state/hooks";
 import { lazy, Suspense, useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
 import { DrawingMeta } from "../card-draw";
@@ -187,20 +185,12 @@ export function CustomDrawForm(props: {
     () => props.initialMeta?.players ?? [newPlayer("P1"), newPlayer("P2")],
   );
   const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
-  const [payoutScheme, setPayoutScheme] = useState<string>(
-    props.initialMeta?.payoutScheme || "",
-  );
-  const eventScheme = useEventSettings((s) => s.gauntletPayout);
-  // past a head to head pair the draw is ranked on points, so it has a payout
-  const scoresOnPoints = players.length > 2;
 
   function handleSubmit() {
     props.onSubmit({
       type: "simple",
       players,
       title,
-      // an unset scheme follows the event's, including when it changes later
-      payoutScheme: (scoresOnPoints && payoutScheme.trim()) || undefined,
     });
   }
   return (
@@ -214,20 +204,6 @@ export function CustomDrawForm(props: {
       <FormGroup label="players">
         <PlayerListInput value={players} onChange={setPlayers} />
       </FormGroup>
-      {scoresOnPoints && (
-        <FormGroup
-          label="payout"
-          helperText="points each place earns per chart, this draw only"
-        >
-          <PayoutSchemeInput
-            value={payoutScheme}
-            commit="with-form"
-            onCommit={setPayoutScheme}
-            playerCount={players.length}
-            inheritedScheme={eventScheme}
-          />
-        </FormGroup>
-      )}
       <Button
         intent="primary"
         onClick={handleSubmit}

@@ -16,7 +16,8 @@ import {
 } from "../models/Drawing";
 import { reuseKeysForChart } from "../chart-id";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
-import { eventSlice } from "./event.slice";
+import { defaultEventSettings, eventSlice } from "./event.slice";
+import { DEFAULT_PAYOUT_SCHEME } from "../models/payout-scheme";
 
 declare const umami: {
   track(
@@ -137,7 +138,14 @@ export function createDraw(
       bans: {},
       protects: {},
       pocketPicks: {},
-      meta: drawMeta.meta,
+      meta: {
+        ...drawMeta.meta,
+        // a copy, so that editing what the event pays out settles the next
+        // round rather than rescoring this one after the fact
+        payoutScheme:
+          (state.event?.settings || defaultEventSettings).gauntletPayout ||
+          DEFAULT_PAYOUT_SCHEME,
+      },
       configId,
       subDrawings: { [setId]: mainDraw },
     };

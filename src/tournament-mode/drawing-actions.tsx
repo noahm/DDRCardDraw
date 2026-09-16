@@ -478,7 +478,6 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
                 id: drawingId,
                 title: meta.title,
                 players: meta.players,
-                payoutScheme: meta.payoutScheme,
               }),
             );
             setMetaEditorOpen(false);

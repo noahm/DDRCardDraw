@@ -130,11 +130,9 @@ export const drawingsSlice = createSlice({
         id: string;
         title: string;
         players: Player[];
-        /** custom draws only; undefined goes back to the event's scheme */
-        payoutScheme?: string;
       }>,
     ) {
-      const { id, title, players, payoutScheme } = action.payload;
+      const { id, title, players } = action.payload;
       const drawing = state.entities[id];
       if (!drawing) {
         return;
@@ -167,9 +165,6 @@ export const drawingsSlice = createSlice({
 
       drawing.meta.title = title;
       drawing.meta.players = players;
-      if (drawing.meta.type === "simple") {
-        drawing.meta.payoutScheme = payoutScheme;
-      }
     },
     swapPlayerPositions(state, action: ActionOnSingleDrawing) {
       const mainId = action.payload;

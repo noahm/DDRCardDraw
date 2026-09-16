@@ -42,11 +42,11 @@ export interface GauntletStandings {
  *
  * 1. the table a piu round was drawn against, snapshotted at draw time, which
  *    is its organizer's own and not ours to reinterpret;
- * 2. a scheme written on this one draw;
- * 3. the event's scheme, which is where most draws get theirs;
+ * 2. the scheme this draw was taken under, likewise snapshotted;
+ * 3. the event's scheme, for draws taken before that was recorded;
  * 4. the built-in default.
  *
- * Everything below the snapshot is resolved against the size of the heat right
+ * Everything below the table is resolved against the size of the heat right
  * now, so a late entrant is paid out for rather than ignored.
  */
 export function payoutTableFor(
@@ -56,9 +56,10 @@ export function payoutTableFor(
   if ("pointsPerPlace" in meta && meta.pointsPerPlace?.length) {
     return meta.pointsPerPlace;
   }
-  const scheme =
-    ("payoutScheme" in meta ? meta.payoutScheme : undefined) || eventScheme;
-  return payoutTableFromScheme(scheme, meta.players.length);
+  return payoutTableFromScheme(
+    meta.payoutScheme || eventScheme,
+    meta.players.length,
+  );
 }
 
 /**

@@ -76,6 +76,17 @@ interface DrawMeta {
    * run outside any bracket still wants somewhere to keep them.
    */
   scoresByEntrant?: Record<string, Record<string, number | undefined>>;
+  /**
+   * The payout scheme this draw was taken under, copied off the event when it
+   * was created, in the notation `src/models/payout-scheme.ts` describes.
+   *
+   * It's a copy rather than a live read so that changing what the event pays
+   * out settles how the next round scores without quietly rewriting a round
+   * already on the board. Still a scheme and not a table, so a heat that gains
+   * a player after the draw pays that player out too. Absent on draws taken
+   * before this was recorded, which fall back to the event's.
+   */
+  payoutScheme?: string;
 }
 
 /** Shared by every draw sourced from an external bracket, head to head or not. */
@@ -129,12 +140,6 @@ export interface PiuGauntletMeta extends PiuMeta {
 
 export interface SimpleMeta extends DrawMeta {
   type: "simple";
-  /**
-   * Payout scheme for this one draw, overriding the event's, in the notation
-   * `src/models/payout-scheme.ts` describes. Absent on the draws that just take
-   * whatever the event pays out, which is most of them.
-   */
-  payoutScheme?: string;
 }
 
 /** any draw sourced from an external bracket, as opposed to a custom draw */
