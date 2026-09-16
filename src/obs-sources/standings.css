@@ -131,8 +131,13 @@
   color: #f5cf6a;
 }
 
-/* a place the payout table doesn't reach earned nothing, so it recedes --
-   after .won, so it still reads that way on a scheme paying first nothing */
+/* points read as points wherever they were earned, so the eye can add up a
+   column without reading the places alongside them */
+.points {
+  color: #7fd77f;
+}
+
+/* a place the payout table doesn't reach earned nothing, so it recedes */
 .noPoints {
   color: rgb(255 255 255 / 45%);
 }

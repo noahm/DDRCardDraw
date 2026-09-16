@@ -159,13 +159,15 @@ function ResultCell({ result }: { result: ChartResult | undefined }) {
       <span
         className={classNames(styles.placing, {
           [styles.won]: result.place === 1,
-          [styles.noPoints]: !result.points,
         })}
         data-field="placing"
       >
         <span data-field="place">{ordinalPlace(result.place)}</span>
         {", "}
-        <span data-field="points">{`+${result.points}`}</span>
+        <span
+          className={result.points ? styles.points : styles.noPoints}
+          data-field="points"
+        >{`+${result.points}`}</span>
       </span>
     </td>
   );
