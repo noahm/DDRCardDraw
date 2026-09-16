@@ -53,6 +53,7 @@
   transition: transform ease 0.3s;
   position: relative;
   min-width: 165px;
+  max-width: 48%;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -70,6 +71,7 @@
 }
 
 .cardCenter {
+  aspect-ratio: 1 / 1;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
