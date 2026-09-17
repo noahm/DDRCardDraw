@@ -22,7 +22,7 @@
     "import:maimai": "node --experimental-strip-types scripts/import-maimai.mts",
     "import:ongeki": "node --experimental-strip-types scripts/import-ongeki.mts",
     "import:sdvx": "node scripts/import-sdvx.mjs",
-    "import:iidx": "node scripts/import-iidx.mjs",
+    "import:iidx": "node --experimental-strip-types scripts/import-iidx.mts",
     "import:smx": "node --experimental-strip-types scripts/import-smx.mts",
     "import:itg": "node scripts/import-itg.mjs",
     "import:eventList": "node scripts/event-filter.mjs",
