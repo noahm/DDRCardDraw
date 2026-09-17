@@ -1,87 +1,66 @@
 import { shallow } from "zustand/shallow";
 import styles from "./controls-weights.css";
-import { zeroPad } from "../utils";
 import { useMemo } from "react";
 import { useConfigState } from "../config-state";
 import { useIntl } from "../hooks/useIntl";
 import { NumericInput, Checkbox, Classes } from "@blueprintjs/core";
 import { useDrawState } from "../draw-state";
-import { getAvailableLevels } from "../game-data-utils";
-import { LevelRangeBucket, getBuckets } from "../card-draw";
+import { getDrawBuckets, planDraw } from "../draw-buckets";
+import {
+  printBucketBounds,
+  printBucketRange,
+  printBucketShare,
+} from "./bucket-common";
 
 interface Props {
   usesTiers: boolean;
-  high: number;
-  low: number;
-}
-const pctFmt = new Intl.NumberFormat(undefined, { style: "percent" });
-
-/** number of digits after the decimal point in a number's string form */
-function decimalDigits(n: number) {
-  const decimalIndex = n.toString().indexOf(".");
-  return decimalIndex === -1 ? 0 : n.toString().length - decimalIndex - 1;
 }
 
-function printGroup(
-  group: LevelRangeBucket | number,
-  precisionRange: number | undefined,
-) {
-  if (typeof group === "number") {
-    return group.toString();
-  } else {
-    // games with a configured granular tier resolution use that to determine
-    // display precision, but some games (eg SDVX) have inherently fractional
-    // levels with no granular toggle, so fall back to the precision actually
-    // present in the bucket bounds
-    const digits = precisionRange
-      ? (1 / precisionRange).toString().length - 2
-      : Math.max(decimalDigits(group[0]), decimalDigits(group[1]));
-    if (group[0] === group[1]) {
-      return group[0].toFixed(digits);
-    }
-    return `${group[0].toFixed(digits)}-${group[1].toFixed(digits)}`;
-  }
-}
-
-export function WeightsControls({ usesTiers, high, low }: Props) {
+export function WeightsControls({ usesTiers }: Props) {
   const { t } = useIntl();
   const {
     weights,
-    useWeights,
     forceDistribution,
     bucketCount,
     updateConfig,
     totalToDraw,
     useGranularLevels,
+    lowerBound,
+    upperBound,
   } = useConfigState(
     (cfg) => ({
-      useWeights: cfg.useWeights,
       weights: cfg.weights,
       forceDistribution: cfg.forceDistribution,
       bucketCount: cfg.probabilityBucketCount,
       updateConfig: cfg.update,
       totalToDraw: cfg.chartCount,
       useGranularLevels: cfg.useGranularLevels,
+      lowerBound: cfg.lowerBound,
+      upperBound: cfg.upperBound,
     }),
     shallow,
   );
   const gameData = useDrawState((s) => s.gameData);
-  const groups = useMemo(() => {
-    const availableLevels = getAvailableLevels(gameData, useGranularLevels);
-    return Array.from(
-      getBuckets(
+  const buckets = useMemo(
+    () =>
+      getDrawBuckets(
         {
-          lowerBound: low,
-          upperBound: high,
-          useWeights,
+          bucketMode: "auto",
+          lowerBound,
+          upperBound,
           probabilityBucketCount: bucketCount,
+          weights,
+          manualBuckets: [],
           useGranularLevels,
         },
-        availableLevels,
-        gameData?.meta.granularTierResolution,
+        gameData,
       ),
-    );
-  }, [gameData, useGranularLevels, low, high, useWeights, bucketCount]);
+    [gameData, useGranularLevels, lowerBound, upperBound, bucketCount, weights],
+  );
+  const plan = useMemo(
+    () => planDraw(buckets, { chartCount: totalToDraw, forceDistribution }),
+    [buckets, totalToDraw, forceDistribution],
+  );
 
   function toggleForceDistribution() {
     updateConfig((state) => ({
@@ -125,26 +104,10 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
     });
   }
 
-  const totalWeight = groups.reduce<number>(
-    (total, group, idx) => total + (weights[idx] || 0),
-    0,
-  );
-  const percentages = groups.map((_group, idx) => {
-    const value = weights[idx] || 0;
-    const pct = value / totalWeight;
-    if (forceDistribution) {
-      if (pct === 1) {
-        return totalToDraw;
-      }
-      const max = Math.ceil(totalToDraw * pct);
-      if (!max) {
-        return 0;
-      }
-      return `${max - 1}-${max}`;
-    } else {
-      return pctFmt.format(isNaN(pct) ? 0 : pct);
-    }
-  });
+  const totalWeight = buckets.reduce((total, b) => total + b.weight, 0);
+  const precisionRange = useGranularLevels
+    ? gameData?.meta.granularTierResolution
+    : undefined;
 
   return (
     <section className={styles.weights}>
@@ -171,43 +134,42 @@ export function WeightsControls({ usesTiers, high, low }: Props) {
         inputMode="numeric"
         width={2}
         disabled={!bucketCount}
-        value={bucketCount || Math.floor(high - low + 1)}
+        value={bucketCount || Math.floor(upperBound - lowerBound + 1)}
         min={2}
         onValueChange={handleBucketCountChange}
       />
-      {groups.map((group, idx) => (
-        <div
-          className={styles.level}
-          key={printGroup(
-            group,
-            useGranularLevels
-              ? gameData?.meta.granularTierResolution
-              : undefined,
-          )}
-        >
-          <NumericInput
-            type="number"
-            inputMode="numeric"
-            width={2}
-            name={`weight-${printGroup(group, useGranularLevels ? gameData?.meta.granularTierResolution : undefined)}`}
-            value={weights[idx] || ""}
-            min={0}
-            onValueChange={(v) => setWeight(idx, v)}
-            placeholder="0"
-            fill
-          />
-          {/* {groupSongsAt === group && ">="} */}
-          {usesTiers && typeof group === "number"
-            ? `T${zeroPad(group, 2)}`
-            : printGroup(
-                group,
-                useGranularLevels
-                  ? gameData?.meta.granularTierResolution
-                  : undefined,
-              )}{" "}
-          <sub>{percentages[idx]}</sub>
-        </div>
-      ))}
+      {buckets.map((bucket, idx) => {
+        const label = printBucketRange(bucket, precisionRange, usesTiers);
+        const bounds = printBucketBounds(bucket, precisionRange);
+        return (
+          <div
+            className={styles.level}
+            key={bucket.key}
+            title={bounds === label ? undefined : `lvl ${bounds}`}
+          >
+            <NumericInput
+              type="number"
+              inputMode="numeric"
+              width={2}
+              name={`weight-${label}`}
+              value={weights[idx] || ""}
+              min={0}
+              onValueChange={(v) => setWeight(idx, v)}
+              placeholder="0"
+              fill
+            />
+            {label}{" "}
+            <sub>
+              {printBucketShare(
+                bucket,
+                plan.allocations.get(bucket.key),
+                totalWeight,
+                forceDistribution,
+              )}
+            </sub>
+          </div>
+        );
+      })}
     </section>
   );
 }
