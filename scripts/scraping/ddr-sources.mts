@@ -175,7 +175,7 @@ export const DDR_WORLD: DDRSourceMeta = {
   filename: "ddr_world.json",
   jacketPrefix: "ddr_world/",
   sortSongs: true,
-  unmanagedFlags: ["copyStrikes", "shock", "euLocked"],
+  unmanagedFlags: ["copyStrikes", "shock", "euLocked", "jpOnly"],
   eagate: {
     songList:
       "https://p.eagate.573.jp/game/ddr/ddrworld/music/index.html?filter=7",
@@ -503,11 +503,6 @@ export const DDR_A3: DDRSourceMeta = {
   jacketPrefix: "ddr_a3/",
   sortSongs: true,
   unmanagedFlags: ["shock", "eAMUSEMENT", "eventMode"],
-  eagate: {
-    songList: "https://p.eagate.573.jp/game/ddr/ddra3/p/music/index.html",
-    jacket:
-      "https://p.eagate.573.jp/game/ddr/ddra3/p/images/binary_jk.html?kind=1",
-  },
   ziv: {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5518&show_notecounts=1&sort=&sort_order=asc",
     correctionMap: DDR_WORLD.ziv?.correctionMap,
@@ -539,11 +534,6 @@ export const DDR_A20_PLUS: DDRSourceMeta = {
     "removedOnA20plus",
     "euLocked",
   ],
-  eagate: {
-    songList: "https://p.eagate.573.jp/game/ddr/ddra20/p/music/index.html",
-    jacket:
-      "https://p.eagate.573.jp/game/ddr/ddra20/p/images/binary_jk.html?kind=1",
-  },
   ziv: {
     url: "https://zenius-i-vanisher.com/v5.2/gamedb.php?gameid=5156&show_notecounts=1&sort=&sort_order=asc",
     correctionMap: DDR_WORLD.ziv?.correctionMap,
