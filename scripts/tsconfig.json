@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "checkJs": false,
+    "checkJs": true,
     "moduleResolution": "Node16",
     "module": "NodeNext",
     "noEmit": true,

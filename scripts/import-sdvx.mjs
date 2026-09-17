@@ -238,6 +238,10 @@ function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
 }
 
+/**
+ * @param {*} song
+ * @param {string} musicDir
+ */
 async function songToJacketNames(song, musicDir) {
   const info = song.info[0];
   const dirName = `${musicDir}/${song.$.id.padStart(4, "0")}_${info.ascii[0]}`;
@@ -284,8 +288,9 @@ function reformatDate(input) {
 /**
  *
  * @param {*} song
- * @param {*} availableJackets
- * @returns {Song}
+ * @param {Set<string>} availableJackets
+ * @param {string} musicDir
+ * @returns {Promise<Song>}
  */
 async function buildSong(song, availableJackets, musicDir) {
   const numericId = Number.parseInt(song.$.id, 10);
