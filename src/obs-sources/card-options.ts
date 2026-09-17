@@ -11,10 +11,14 @@
  * A url with no `?vetos=` at all shows them, which is what an unconfigured
  * room did back when this was the room's call, so a source pasted into OBS
  * before this existed keeps doing what it was doing.
+ *
+ * Each mode carries the key of its label rather than the label, so this stays
+ * a plain module the OBS route can import without dragging react-intl in with
+ * it. Only the dashboard ever renders one, and it has an intl context.
  */
 export const vetoModes = [
-  { key: "show", label: "Show vetos" },
-  { key: "hide", label: "Hide vetos" },
+  { key: "show", labelKey: "controls.vetosShow" },
+  { key: "hide", labelKey: "controls.vetosHide" },
 ] as const;
 
 export type VetoMode = (typeof vetoModes)[number]["key"];

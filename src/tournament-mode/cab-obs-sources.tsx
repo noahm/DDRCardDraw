@@ -18,6 +18,7 @@ import {
   Th,
 } from "@blueprintjs/icons";
 import { JSX, useCallback, useEffect, useRef, useState } from "react";
+import { useIntl } from "../hooks/useIntl";
 import { useHref, useSearchParams } from "react-router-dom";
 import {
   cardsSourceStub,
@@ -151,6 +152,7 @@ export function CabObsSources() {
  * differ.
  */
 function CardsSourceCard({ cabId }: { cabId: string }) {
+  const { t } = useIntl();
   const [mode, setMode] = useState<VetoMode>(defaultVetoMode);
   const href = useHref(routableCabSourcePath(cabId, cardsSourceStub(mode)));
 
@@ -163,10 +165,10 @@ function CardsSourceCard({ cabId }: { cabId: string }) {
           <span>Cards</span>
         </>
       }
-      above={vetoModes.map(({ key, label }) => (
+      above={vetoModes.map(({ key, labelKey }) => (
         <Button
           key={key}
-          text={label}
+          text={t(labelKey)}
           active={key === mode}
           intent={key === mode ? "primary" : undefined}
           aria-pressed={key === mode}
