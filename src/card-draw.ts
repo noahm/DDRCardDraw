@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { chunkInPieces, pickRandomItem, shuffle, times } from "./utils";
+import { chunkInPieces, pickRandomItem, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { Fraction } from "./utils/fraction";
@@ -14,12 +14,10 @@ import {
 } from "./models/Drawing";
 import { ConfigState } from "./config-state";
 import { chartIsUsed, chartKeyFor, reuseKeysForChart } from "./chart-id";
+import { chartSortOf, sortCharts } from "./chart-sort";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
-import {
-  chartLevelOrTier,
-  getAvailableLevels,
-  getDiffAbbr,
-} from "./game-data-utils";
+import { getAvailableLevels, getDiffAbbr } from "./game-data-utils";
+import { chartLevelOrTier } from "./utils/chart-level";
 
 function clampToNearest(incr: number, n: number, clamp: (n: number) => number) {
   const multor = Math.round(1 / incr);
@@ -461,16 +459,11 @@ export function draw(
     }
   } while (redraw);
 
-  let charts: Drawing["charts"];
-  if (configData.sortByLevel) {
-    charts = drawnCharts.sort(
-      (a, b) =>
-        chartLevelOrTier(a, useGranularLevels, false) -
-        chartLevelOrTier(b, useGranularLevels, false),
-    );
-  } else {
-    charts = shuffle(drawnCharts);
-  }
+  const charts: NonNullable<Drawing["charts"]> = sortCharts(
+    drawnCharts,
+    chartSortOf(configData),
+    useGranularLevels,
+  );
 
   if (!startPoint.charts && configData.playerPicks) {
     charts.unshift(...times(configData.playerPicks, newPlaceholder));

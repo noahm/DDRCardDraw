@@ -1,7 +1,8 @@
 import { useCallback } from "react";
 import { useIntl } from "./hooks/useIntl";
 import { EligibleChart } from "./models/Drawing";
-import { Chart, GameData, I18NDict } from "./models/SongData";
+import { GameData, I18NDict } from "./models/SongData";
+import { chartLevelOrTier } from "./utils/chart-level";
 import { useConfigState } from "./state/hooks";
 
 export function useGetMetaString() {
@@ -82,30 +83,6 @@ export function getDiffAbbr(gameData: GameData, diffClass: string) {
   return ((gameData.i18n.en as I18NDict)["$abbr"] as I18NDict)[
     diffClass
   ] as string;
-}
-
-/**
- *
- * @param chart
- * @param useGranularLevels
- * @param includeTier default: `true`
- * @returns the effective level or tier
- */
-export function chartLevelOrTier(
-  chart: Pick<Chart, "lvl" | "sanbaiTier" | "drawGroup"> | EligibleChart,
-  useGranularLevels: boolean,
-  includeTier = true,
-): number {
-  if (includeTier && typeof chart.drawGroup === "number") {
-    return chart.drawGroup;
-  }
-  const coreLevel = "lvl" in chart ? chart.lvl : chart.level;
-  const granularLevel = "lvl" in chart ? chart.sanbaiTier : chart.granularLevel;
-  if (useGranularLevels) {
-    return granularLevel || coreLevel;
-  } else {
-    return coreLevel;
-  }
 }
 
 export function formatLevel(chart: EligibleChart, useGranular: boolean) {

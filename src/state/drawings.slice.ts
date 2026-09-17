@@ -343,7 +343,7 @@ export const drawingsSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(
       mergeDraws,
-      (state, { payload: { drawingId, newSubdrawId } }) => {
+      (state, { payload: { drawingId, newSubdrawId, charts } }) => {
         const draw = state.entities[drawingId];
         if (!draw) return;
         const oldDraws = draw.subDrawings;
@@ -351,9 +351,11 @@ export const drawingsSlice = createSlice({
           [newSubdrawId]: {
             compoundId: [drawingId, newSubdrawId],
             configId: draw.configId,
-            charts: Object.values(oldDraws).flatMap(
-              (subDraw) => subDraw.charts,
-            ),
+            // the sorted order the action carries, or plain concatenation when
+            // it carries none (an action from a client that predates the sort)
+            charts:
+              charts ||
+              Object.values(oldDraws).flatMap((subDraw) => subDraw.charts),
           },
         };
       },
