@@ -1,9 +1,12 @@
 import { pointsForPlace } from "../piu-tourney/points";
 import {
+  type Drawing,
   type GauntletScoredMeta,
   type Player,
   type ScoreableChart,
+  isGauntletScored,
   playerDisplayName,
+  scoreableCharts,
 } from "./Drawing";
 import { payoutTableFromScheme } from "./payout-scheme";
 
@@ -141,4 +144,60 @@ export function computeGauntletStandings(
   });
 
   return { pointsPerPlace, playedCharts, rows };
+}
+
+/**
+ * Every card of a whole match somebody can post a score on, across all of its
+ * sub-draws. Pocket picks and free picks come through as the chart actually
+ * played on them, so points are paid out on those the same as on anything else
+ * drawn.
+ */
+export function playableCharts(
+  drawing: Pick<Drawing, "subDrawings" | "bans" | "pocketPicks">,
+): ScoreableChart[] {
+  return Object.values(drawing.subDrawings ?? {}).flatMap((subDraw) =>
+    scoreableCharts(subDraw.charts, drawing),
+  );
+}
+
+/**
+ * The number that belongs beside each player's name, keyed by player id.
+ *
+ * A head to head match counts the cards a player is marked the winner of. A
+ * gauntlet has no "the other player" to win a card against, so it counts what
+ * the payout scheme has paid that player so far — the same totals the standings
+ * table adds up, taken over every sub-draw of the match.
+ *
+ * Undefined when there's nothing to show yet: a gauntlet nobody has scored
+ * would badge the entire field with a zero, which reads as a result rather than
+ * an empty scoreboard.
+ */
+export function playerScores(
+  drawing: Pick<
+    Drawing,
+    "meta" | "winners" | "subDrawings" | "bans" | "pocketPicks"
+  >,
+  eventScheme?: string,
+): ReadonlyMap<string, number> | undefined {
+  if (isGauntletScored(drawing.meta)) {
+    const { playedCharts, rows } = computeGauntletStandings(
+      drawing.meta,
+      playableCharts(drawing),
+      eventScheme,
+    );
+    if (!playedCharts.length) {
+      return undefined;
+    }
+    return new Map(rows.map((row) => [row.player.id, row.totalPoints]));
+  }
+
+  // a player with no wins still reads 0 rather than dropping their badge
+  const wins = new Map(drawing.meta.players.map((player) => [player.id, 0]));
+  for (const winner of Object.values(drawing.winners)) {
+    if (winner === null) {
+      continue;
+    }
+    wins.set(winner, (wins.get(winner) ?? 0) + 1);
+  }
+  return wins;
 }

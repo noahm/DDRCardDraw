@@ -1,15 +1,10 @@
 import classNames from "classnames";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
-import {
-  type Drawing,
-  type EligibleChart,
-  isGauntletScored,
-  type ScoreableChart,
-  scoreableCharts,
-} from "../models/Drawing";
+import { type EligibleChart, isGauntletScored } from "../models/Drawing";
 import {
   computeGauntletStandings,
+  playableCharts,
   type ChartResult,
 } from "../models/gauntlet-standings";
 import { ordinalPlace } from "../models/payout-scheme";
@@ -100,17 +95,6 @@ export function CabStandings() {
         ))}
       </tbody>
     </table>
-  );
-}
-
-/**
- * Every chart a match can be scored on, across all of its sub-draws. Pocket
- * picks and free picks show up as the chart that was actually played, so points
- * are paid out on them the same as on anything else drawn.
- */
-function playableCharts(drawing: Drawing): ScoreableChart[] {
-  return Object.values(drawing.subDrawings ?? {}).flatMap((subDraw) =>
-    scoreableCharts(subDraw.charts, drawing),
   );
 }
 

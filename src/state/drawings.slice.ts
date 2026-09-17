@@ -294,8 +294,9 @@ export const drawingsSlice = createSlice({
 
       // Head to head draws show per-chart win counts, so a typed score has to
       // settle the chart too or the labels sit at zero while scores pile up.
-      // Anything scored as a gauntlet ranks on totals and hides win counts --
-      // custom draws past a pair included -- so those are left alone.
+      // Anything scored as a gauntlet badges players with the points these
+      // scores pay out -- custom draws past a pair included -- and never needs
+      // a winner marked, so those are left alone.
       if (isGauntletScored(drawing.meta)) {
         return;
       }

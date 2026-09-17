@@ -1,11 +1,9 @@
 import { useParams } from "react-router-dom";
 import { drawingsSlice } from "../state/drawings.slice";
 import { useAppState } from "../state/store";
-import {
-  getAllPlayers,
-  isExternalMeta,
-  isGauntletScored,
-} from "../models/Drawing";
+import { getAllPlayers, isExternalMeta } from "../models/Drawing";
+import { playerScores } from "../models/gauntlet-standings";
+import { useEventSettings } from "../state/hooks";
 import { defaultPlayerFields, PlayerField } from "./player-fields";
 
 export function GlobalLabel() {
@@ -46,6 +44,7 @@ export function CabPlayers() {
 export function CabPlayer(props: { p: number; fields?: PlayerField[] }) {
   const fields = props.fields || defaultPlayerFields;
   const params = useParams<"roomName" | "cabId">();
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
   const text = useAppState((s) => {
     const drawingId = s.event.cabs[params.cabId!].activeMatch;
     if (!drawingId) return null;
@@ -64,14 +63,11 @@ export function CabPlayer(props: { p: number; fields?: PlayerField[] }) {
           // they've published them, so this one is often meant to be empty
           case "pronouns":
             return player.pronouns || "";
+          // per-chart wins in a head to head match, points earned so far in a
+          // gauntlet, and nothing at all in a gauntlet nobody has scored yet
           case "score": {
-            // a gauntlet doesn't show wins at all
-            if (isGauntletScored(parent.meta)) return "";
-            const wins = Object.values(parent.winners).reduce<number>(
-              (total, winner) => (winner === player.id ? total + 1 : total),
-              0,
-            );
-            return wins.toString();
+            const score = playerScores(parent, eventScheme)?.get(player.id);
+            return score === undefined ? "" : score.toString();
           }
         }
       })

@@ -1,7 +1,10 @@
 import { HTMLTable, Tag } from "@blueprintjs/core";
 import { useDrawing } from "../drawing-context";
-import { type GauntletScoredMeta, scoreableCharts } from "../models/Drawing";
-import { computeGauntletStandings } from "../models/gauntlet-standings";
+import { type GauntletScoredMeta } from "../models/Drawing";
+import {
+  computeGauntletStandings,
+  playableCharts,
+} from "../models/gauntlet-standings";
 import { useEventSettings } from "../state/hooks";
 import styles from "./standings-table.css";
 
@@ -12,14 +15,16 @@ import styles from "./standings-table.css";
  * next to the grid the scores were typed into.
  */
 export function StandingsTable({ meta }: { meta: GauntletScoredMeta }) {
-  const charts = useDrawing((d) => d.charts);
+  // standings cover the whole round, not just the sub-draw this dialog was
+  // opened from, so they agree with the match labels and the OBS overlay
+  const subDrawings = useDrawing((d) => d.subDrawings);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);
   const eventScheme = useEventSettings((s) => s.gauntletPayout);
 
   const standings = computeGauntletStandings(
     meta,
-    scoreableCharts(charts, { bans, pocketPicks }),
+    playableCharts({ subDrawings, bans, pocketPicks }),
     eventScheme,
   );
   const { playedCharts, pointsPerPlace, rows } = standings;
