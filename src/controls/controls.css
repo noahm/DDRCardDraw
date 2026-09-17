@@ -54,6 +54,33 @@
   margin-top: 0.4em;
 }
 
+/* the browser's own settings, fenced off from the room's above them: the line
+   is the whole point of the section, so it carries the separation rather than
+   spacing alone. sits inside the same padded pane, so the rule runs the width
+   of the content instead of stopping short of it. */
+.localSettings {
+  margin: 0.5em 1.5em 0;
+  padding: 1em 0;
+  border-top: 1px solid rgba(143, 153, 168, 0.4);
+}
+
+.localSettings h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0 0 0.25em;
+  font-size: 1.1em;
+}
+
+.localSettings label {
+  user-select: none;
+}
+
+/* dimmed so the heading still reads as text first, the icon as a marker */
+.localSettingsIcon {
+  opacity: 0.7;
+}
+
 .eventSettingsHint {
   margin-bottom: 1em;
   opacity: 0.7;

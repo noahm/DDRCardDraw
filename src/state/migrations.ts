@@ -13,7 +13,7 @@ export function applyMigrations(state: AppState) {
     migratePlayersToIds(state.drawings);
   }
   if (state.event) addObsLabels(state.event);
-  liftDisplaySettingsToEvent(state);
+  migrateDisplaySettings(state);
 }
 
 /**
@@ -21,22 +21,34 @@ export function applyMigrations(state: AppState) {
  * promoted. Spelled out rather than typed as `keyof EventSettings` so the
  * boolean write below stays sound now that not every setting is a boolean.
  */
-const PROMOTED_KEYS = [
-  "hideVetos",
-  "showMaxScore",
-] as const satisfies ReadonlyArray<keyof EventSettings>;
+const PROMOTED_KEYS = ["showMaxScore"] as const satisfies ReadonlyArray<
+  keyof EventSettings
+>;
 
 /**
- * `hideVetos` and `showMaxScore` were per-config until they were promoted to
- * the event, so lift whichever values a saved room already had rather than
- * silently resetting them, then strip the dead keys so they can't ride along
- * in an exported config and come back later.
+ * `hideVetos` went the other way. It was per-config, then briefly the room's,
+ * and is now each browser's own (`state/local-settings.atoms.ts`) — because
+ * the stream and the person at the cab want opposite answers, and one shared
+ * value can't give both. A saved room still carries whatever it was set to,
+ * which nothing reads any more, so drop it wherever one turns up rather than
+ * leave a value that looks live.
  *
- * A room with several configs can only have disagreed with itself here, and
- * neither answer is more correct than the other, so a setting any config had
- * turned on stays on — better to keep a deliberate choice than to lose it.
+ * Nothing worth keeping is lost: the room's old answer isn't any client's, and
+ * whoever wants it back is one checkbox away from it.
  */
-function liftDisplaySettingsToEvent(state: AppState) {
+const NOW_PER_BROWSER_KEYS = ["hideVetos"] as const;
+
+/**
+ * Carries a saved room's display settings to wherever they live now: lifts the
+ * promoted ones off its configs onto the event, and clears out the ones that
+ * have since become each browser's own.
+ *
+ * A room with several configs can only have disagreed with itself about a
+ * promoted setting, and neither answer is more correct than the other, so one
+ * any config had turned on stays on — better to keep a deliberate choice than
+ * to lose it.
+ */
+function migrateDisplaySettings(state: AppState) {
   if (!state.event) return;
   const alreadyLifted = !!state.event.settings;
   const settings = { ...defaultEventSettings, ...state.event.settings };
@@ -53,6 +65,15 @@ function liftDisplaySettingsToEvent(state: AppState) {
       if (!alreadyLifted && legacyValue) settings[key] = true;
       delete config[key];
     }
+    for (const key of NOW_PER_BROWSER_KEYS) {
+      delete config[key];
+    }
+  }
+
+  // likewise for a room that saved one while it was still the event's
+  const looseSettings = settings as unknown as Record<string, unknown>;
+  for (const key of NOW_PER_BROWSER_KEYS) {
+    delete looseSettings[key];
   }
 
   state.event.settings = settings;

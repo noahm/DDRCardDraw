@@ -8,6 +8,7 @@ import {
   type EventSettings,
 } from "./event.slice";
 import { useGameDataForKey } from "./game-data.atoms";
+import { useLocalSettings } from "./local-settings.atoms";
 
 const configContext = createContext<string | null>(null);
 
@@ -58,19 +59,19 @@ export function useEventSettings<T = EventSettings>(
 const hideVetosContext = createContext<boolean | null>(null);
 
 /**
- * Overrides the room's "hide vetos" setting for the cards rendered inside it.
- * OBS sources are why: the setting is shared by everyone in the room, so it
- * can't answer a stream that wants the bans on screen and an operator's dock
- * that doesn't. `null` -- the default, and what the app itself provides --
- * means follow the room.
+ * States "hide vetos" outright for the cards rendered inside, in place of this
+ * browser's own setting. An OBS source is the one client that needs it: it's a
+ * browser in a scene nobody ever opens settings in, so the stub that renders
+ * it reads the answer off the url instead. `null` -- the default, and what the
+ * app itself provides -- means use the local setting.
  */
 export const HideVetosOverrideProvider = hideVetosContext.Provider;
 
-/** whether banned charts should be hidden here: an override if one is in scope, else the room's setting */
+/** whether banned charts should be hidden here: an override if one is in scope, else this browser's own setting */
 export function useHideVetos() {
   const override = useContext(hideVetosContext);
-  const roomSetting = useEventSettings((s) => s.hideVetos);
-  return override ?? roomSetting;
+  const { hideVetos } = useLocalSettings();
+  return override ?? hideVetos;
 }
 
 export function useUpdateEventSettings() {

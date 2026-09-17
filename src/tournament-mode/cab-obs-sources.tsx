@@ -145,9 +145,10 @@ export function CabObsSources() {
 }
 
 /**
- * The cards row, with a say over whether it shows a match's bans. Following the
- * room's own setting is the default and what this url meant before it could be
- * configured, so a source already pasted into OBS keeps behaving as it did.
+ * The cards row, which says on its own whether it shows a match's bans. There
+ * is no room-wide setting behind it any more -- every other client answers that
+ * for itself -- so the url is the whole answer, and two scenes off one cab can
+ * differ.
  */
 function CardsSourceCard({ cabId }: { cabId: string }) {
   const [mode, setMode] = useState<VetoMode>(defaultVetoMode);

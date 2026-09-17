@@ -8,9 +8,10 @@ import { hidesVetos, toVetoMode, VETOS_PARAM } from "./card-options";
 /**
  * The cards of whichever match a cab is running.
  *
- * `?vetos=show` or `?vetos=hide` settles whether banned charts appear here
- * regardless of what the room's own setting says; without it the room decides,
- * as it always has. `src/obs-sources/card-options.ts` covers why.
+ * `?vetos=show` or `?vetos=hide` is the whole of what decides whether banned
+ * charts appear here — every other client reads its own local setting, and an
+ * OBS browser has nobody to set one. Without the param they show.
+ * `src/obs-sources/card-options.ts` covers why.
  *
  * @todo figure out how/if we can assign/view sub-draws here?
  */

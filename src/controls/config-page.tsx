@@ -13,6 +13,7 @@ import { useLastConfigSelected } from "../state/config.atoms";
 import { changeGameKeyForConfig } from "../state/thunks";
 import { ConfigList, GLOBAL_SETTINGS_ID } from "./config-select";
 import { EventSettings } from "./event-settings";
+import { LocalSettings } from "./local-settings";
 
 export function ConfigPage() {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ export function ConfigPage() {
           <div style={{ maxWidth: "30em" }}>
             <ErrorBoundary fallback={<ErrorFallback />}>
               <EventSettings />
+              <LocalSettings />
             </ErrorBoundary>
           </div>
         ) : (
