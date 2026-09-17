@@ -30,7 +30,6 @@ type SanbaiSong = {
 const lockFlags: Map<number, Song["flags"]> = new Map([
   [1000, ["euLocked"]], // For unlocked songs/charts
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
-  [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   [250, ["flareRank"]], // FLARE SKILL unlock
   [270, ["worldLeague"]], // WORLD LEAGUE
   [280, ["unlock"]], // EXTRA SAVIOR WORLD
