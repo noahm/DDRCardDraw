@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1789030156243
+    "lastUpdated": 1789866987353
   },
   "defaults": {
     "style": "single",
@@ -9895,6 +9895,12 @@
           "maxScore": 1659
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1887
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -9914,11 +9920,17 @@
           "diffClass": "expert",
           "sanbaiTier": 15.05,
           "maxScore": 1608
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1824
         }
       ],
       "jacket": "ddr_world/Bye_or_not.png",
       "remyLink": "https://remywiki.com/Bye_or_not",
-      "flags": ["tempUnlock"]
+      "flags": ["unlock"]
     },
     {
       "name": "C-C-C-N-N-N",
@@ -14509,6 +14521,13 @@
           "maxScore": 2031
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"],
+          "maxScore": 2070
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -14528,11 +14547,18 @@
           "diffClass": "expert",
           "sanbaiTier": 17.2,
           "maxScore": 2040
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"],
+          "maxScore": 2088
         }
       ],
       "jacket": "ddr_world/Daisycutter.png",
       "remyLink": "https://remywiki.com/Daisycutter",
-      "flags": ["tempUnlock"]
+      "flags": ["unlock"]
     },
     {
       "name": "DANCE ALL NIGHT (DDR EDITION)",
@@ -21789,7 +21815,7 @@
       ],
       "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
       "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
@@ -73364,6 +73390,12 @@
           "maxScore": 1878
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2277
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -73384,11 +73416,17 @@
           "diffClass": "expert",
           "sanbaiTier": 15.4,
           "maxScore": 1764
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2232
         }
       ],
       "jacket": "ddr_world/ZENDEGI DANCE.jpg",
       "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "genre": "ORBITALIC ORIENTAL ELECTRO"
     },
     {
@@ -91811,6 +91849,12 @@
           "maxScore": 2106
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2475
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -91831,11 +91875,17 @@
           "diffClass": "expert",
           "sanbaiTier": 17.45,
           "maxScore": 2043
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2400
         }
       ],
       "jacket": "ddr_world/疾風迅雷.jpg",
       "remyLink": "https://remywiki.com/Shippuujinrai",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "genre": "ORIENTAL CORE",
       "search_hint": "しっぷうじんらい"
     },

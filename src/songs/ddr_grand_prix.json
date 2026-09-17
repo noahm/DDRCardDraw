@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1789030156243
+    "lastUpdated": 1789866987353
   },
   "defaults": {
     "style": "single",
@@ -8767,6 +8767,79 @@
       "genre": "SPEED HOUSE"
     },
     {
+      "name": "Bye or not",
+      "artist": "PSYQUI feat. mikanzil",
+      "saHash": "0P6PI0QP9b91QOlIibodd9IO90PbQO6I",
+      "bpm": "170",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 309,
+          "sanbaiTier": 4.15
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 8,
+          "maxScore": 801,
+          "sanbaiTier": 8.15
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1209,
+          "sanbaiTier": 12.15
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1659,
+          "sanbaiTier": 14.4
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1887
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 8,
+          "maxScore": 789,
+          "sanbaiTier": 8.05
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1188,
+          "sanbaiTier": 12.1
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1608,
+          "sanbaiTier": 15.05
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1824
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Bye_or_not.png",
+      "remyLink": "https://remywiki.com/Bye_or_not"
+    },
+    {
       "name": "C-C-C-N-N-N",
       "artist": "RoughSkreamZ feat. Aikapin",
       "saHash": "odPq866q0QPOP9QOQ9QQIlIO60Oid16o",
@@ -13002,6 +13075,81 @@
       "remyLink": "https://remywiki.com/Daily_Lunch_Special",
       "genre": "ラッキーハードコア",
       "search_hint": "LUCKY HARDCORE/ラッキーハードコア"
+    },
+    {
+      "name": "Daisycutter",
+      "artist": "ETIA.",
+      "saHash": "o1biqbO9i1IiObD0d1D8d8iqb6q86Qqi",
+      "bpm": "191",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 5,
+          "maxScore": 426,
+          "sanbaiTier": 5.1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 10,
+          "maxScore": 855,
+          "sanbaiTier": 10.3
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1455,
+          "sanbaiTier": 13.55
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2031,
+          "sanbaiTier": 17.15
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"],
+          "maxScore": 2070
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 9,
+          "maxScore": 861,
+          "sanbaiTier": 9.2
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1443,
+          "sanbaiTier": 13.55
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2040,
+          "sanbaiTier": 17.2
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"],
+          "maxScore": 2088
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Daisycutter.png",
+      "remyLink": "https://remywiki.com/Daisycutter"
     },
     {
       "name": "Damage Per Second",
@@ -19755,6 +19903,71 @@
       ],
       "jacket": "ddr_max-ext/exotic ethnic.png",
       "remyLink": "https://remywiki.com/Exotic_ethnic"
+    },
+    {
+      "name": "EYE OF THE HEAVEN",
+      "artist": "U1-ASAMi",
+      "saHash": "dDIbQIPo0PIoIP6lbbl8q9Q1Q8ib9P18",
+      "bpm": "154-308",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "308",
+          "lvl": 4,
+          "maxScore": 288,
+          "sanbaiTier": 4.3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "308",
+          "lvl": 9,
+          "maxScore": 786,
+          "sanbaiTier": 9.3
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1701,
+          "sanbaiTier": 14.65
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 18,
+          "maxScore": 2505,
+          "sanbaiTier": 18.8
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "308",
+          "lvl": 9,
+          "maxScore": 774,
+          "sanbaiTier": 9.1
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1683,
+          "sanbaiTier": 14.45
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 18,
+          "maxScore": 2487,
+          "sanbaiTier": 18.4
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
+      "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
+      "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
       "name": "eyesight",
@@ -66504,6 +66717,83 @@
       "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days"
     },
     {
+      "name": "ZENDEGI DANCE",
+      "artist": "ARM × BEMANI Sound Team \"U1 overground\"",
+      "saHash": "0QOP6QqdlobOo9i8O6dOl8IdQl89P6PP",
+      "bpm": "80-160",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "160",
+          "lvl": 4,
+          "maxScore": 360,
+          "sanbaiTier": 4.25
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "160",
+          "lvl": 9,
+          "maxScore": 858,
+          "sanbaiTier": 9.1
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1218,
+          "sanbaiTier": 12.45
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1878,
+          "sanbaiTier": 15.45
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2277
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "160",
+          "lvl": 8,
+          "maxScore": 837,
+          "sanbaiTier": 8.1
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1161,
+          "sanbaiTier": 12.35
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1764,
+          "sanbaiTier": 15.4
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2232
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/ZENDEGI DANCE.jpg",
+      "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
+      "genre": "ORBITALIC ORIENTAL ELECTRO"
+    },
+    {
       "name": "ZEPHYRANTHES",
       "artist": "TAG",
       "saHash": "I61ioI01IOPDPbP1OO0l98PD0iDbid0D",
@@ -81440,6 +81730,85 @@
       "remyLink": "https://remywiki.com/Dandandou",
       "genre": "HIP ROCK 2",
       "search_hint": "HIP ROCK 2/ヒップロック2"
+    },
+    {
+      "name": "疾風迅雷",
+      "name_translation": "Shippuujinrai",
+      "artist": "KUMOKIRI",
+      "saHash": "PdD1dlq1q00q8o9Il6IIqi61Il9DIo61",
+      "bpm": "90-180",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "180",
+          "lvl": 4,
+          "maxScore": 348,
+          "sanbaiTier": 4.25
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "180",
+          "lvl": 9,
+          "maxScore": 879,
+          "sanbaiTier": 9.4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 13,
+          "maxScore": 1491,
+          "sanbaiTier": 13.7
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2106,
+          "sanbaiTier": 17.25
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2475
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "180",
+          "lvl": 9,
+          "maxScore": 876,
+          "sanbaiTier": 9.25
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1473,
+          "sanbaiTier": 14.4
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 17,
+          "maxScore": 2043,
+          "sanbaiTier": 17.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2400
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/疾風迅雷.jpg",
+      "remyLink": "https://remywiki.com/Shippuujinrai",
+      "search_hint": "しっぷうじんらい",
+      "genre": "ORIENTAL CORE"
     },
     {
       "name": "白日と幻月",
