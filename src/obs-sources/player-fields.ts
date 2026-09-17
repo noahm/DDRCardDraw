@@ -2,11 +2,14 @@
  * The player-specific values a `player/<n>` source can show, in the order they
  * render. Adding an entry here lists it in the dashboard's source picker on its
  * own; the matching case in `CabPlayer` is a type error until it's written.
+ *
+ * Each carries the key of its label rather than the label, so this stays a
+ * plain module the source routes import without an intl context in hand.
  */
 export const playerFields = [
-  { key: "name", label: "Name" },
-  { key: "pronouns", label: "Pronouns" },
-  { key: "score", label: "Score" },
+  { key: "name", labelKey: "obsDashboard.fieldName" },
+  { key: "pronouns", labelKey: "obsDashboard.fieldPronouns" },
+  { key: "score", labelKey: "obsDashboard.fieldScore" },
 ] as const;
 
 export type PlayerField = (typeof playerFields)[number]["key"];

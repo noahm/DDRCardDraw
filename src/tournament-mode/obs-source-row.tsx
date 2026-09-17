@@ -3,6 +3,7 @@ import { Duplicate } from "@blueprintjs/icons";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import { copyObsSource } from "./copy-obs-source";
+import { useIntl } from "../hooks/useIntl";
 
 import styles from "./obs-source-row.css";
 
@@ -25,6 +26,7 @@ export function SourceRow({
   /** controls to show over the url, for a source that's configurable */
   above?: ReactNode;
 }) {
+  const { t } = useIntl();
   const fullUrl = new URL(href, document.location.href).href;
   return (
     <Card
@@ -41,10 +43,10 @@ export function SourceRow({
       </span>
       <AnchorButton
         icon={<Duplicate />}
-        title="Copy source URL"
+        title={t("obsDashboard.copySourceUrl")}
         onClick={(e) => {
           e.preventDefault();
-          copyObsSource(fullUrl);
+          copyObsSource(fullUrl, t("obsDashboard.copiedToClipboard"));
         }}
         href={href}
       />
