@@ -26,7 +26,6 @@ export interface EventSettings {
    * the same chart before either has seen the other's draw.
    */
   preventChartReuse: boolean;
-  hideVetos: boolean;
   showMaxScore: boolean;
   showPlayerAndRoundLabels: boolean;
   /**
@@ -39,7 +38,6 @@ export interface EventSettings {
 
 export const defaultEventSettings: EventSettings = {
   preventChartReuse: false,
-  hideVetos: false,
   showMaxScore: false,
   showPlayerAndRoundLabels: true,
   gauntletPayout: DEFAULT_PAYOUT_SCHEME,

@@ -40,9 +40,11 @@ import { SourceRow } from "./obs-source-row";
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
 import { useHref } from "react-router-dom";
+import { useIntl } from "../hooks/useIntl";
 import ReactCodeMirror from "@uiw/react-codemirror";
 
 export function Dashboard() {
+  const { t, formatMessage } = useIntl();
   const [currentEdit, setCurrentEdit] = useState<string | null>(null);
   const labels = useAppState((s) => s.event.obsLabels);
   const isObs = useInObs();
@@ -54,7 +56,10 @@ export function Dashboard() {
         {!isObs && (
           <p>
             <em>
-              <b>HINT:</b> add this page as a custom browser dock in OBS!
+              {formatMessage(
+                { id: "obsDashboard.dockHint" },
+                { b: (text) => <b>{text}</b> },
+              )}
             </em>
           </p>
         )}
@@ -64,7 +69,7 @@ export function Dashboard() {
             close={() => setCurrentEdit(null)}
           />
           <H3>
-            OBS Text Sources{" "}
+            {t("obsDashboard.textSources")}{" "}
             <Button
               icon={<Add />}
               onClick={() => setCurrentEdit(nanoid())}
@@ -97,26 +102,32 @@ export function Dashboard() {
 
 const drawnChartsLayoutInfo: Record<
   DrawnChartsLayout,
-  { label: string; icon: JSX.Element }
+  { labelKey: string; icon: JSX.Element }
 > = {
-  grid: { label: "Grid (jackets)", icon: <GridView /> },
-  list: { label: "List (text by level)", icon: <List /> },
+  grid: { labelKey: "obsDashboard.layoutGrid", icon: <GridView /> },
+  list: { labelKey: "obsDashboard.layoutList", icon: <List /> },
 };
 
 function DrawnChartsSources() {
+  const { t, formatMessage } = useIntl();
   return (
     <Section
       icon={<History />}
-      title="Drawn Chart Sources"
-      subtitle="What the event has already spent, so viewers can see what's left in the pool"
+      title={t("obsDashboard.drawnChartSources")}
+      subtitle={t("obsDashboard.drawnChartSourcesHint")}
     >
       <SectionCard>
+        {/* the params are syntax rather than language, so they stay out of the
+            translated sentence and go in as fixed pieces around it */}
         <p className={styles.sourceHint}>
-          Filtered to the level range of the config behind the most recent draw,
-          which keeps it current on its own as the bracket climbs. Add{" "}
-          <code>?config=&lt;config id&gt;</code>,{" "}
-          <code>?min=15&amp;max=17</code> or <code>?all</code> to a source URL
-          to say otherwise.
+          {formatMessage(
+            { id: "obsDashboard.drawnChartsParamHint" },
+            {
+              configParam: <code>?config=&lt;config id&gt;</code>,
+              rangeParam: <code>?min=15&amp;max=17</code>,
+              allParam: <code>?all</code>,
+            },
+          )}
         </p>
         <CardList compact>
           {drawnChartsLayouts.map((layout) => (
@@ -129,15 +140,16 @@ function DrawnChartsSources() {
 }
 
 function DrawnChartsRow({ layout }: { layout: DrawnChartsLayout }) {
+  const { t } = useIntl();
   const href = useHref(routableDrawnChartsSourcePath(layout));
-  const { label, icon } = drawnChartsLayoutInfo[layout];
+  const { labelKey, icon } = drawnChartsLayoutInfo[layout];
   return (
     <SourceRow
       href={href}
       label={
         <>
           {icon}
-          <span>{label}</span>
+          <span>{t(labelKey)}</span>
         </>
       }
     />
@@ -151,12 +163,13 @@ function LabelCard(props: {
   onEdit(this: void): void;
   onDelete(this: void): void;
 }) {
+  const { t } = useIntl();
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
     <Card
       interactive
       className={styles.textSourceCard}
-      title={`Edit "${props.label}"`}
+      title={t("obsDashboard.editLabel", { label: props.label })}
       // a Blueprint card is a div, so editing by clicking the row costs the
       // keyboard access the edit button used to provide unless we put it back
       role="button"
@@ -180,22 +193,25 @@ function LabelCard(props: {
       <ButtonGroup>
         <AnchorButton
           icon={<Duplicate />}
-          title="Copy this source's URL"
+          title={t("obsDashboard.copyLabelUrl")}
           onClick={(e) => {
             e.preventDefault();
-            copyObsSource(new URL(href, document.location.href).href);
+            copyObsSource(
+              new URL(href, document.location.href).href,
+              t("obsDashboard.copiedToClipboard"),
+            );
           }}
           href={href}
         />
         <Button
           icon={<Trash />}
           intent="danger"
-          title="Delete this text source"
+          title={t("obsDashboard.deleteLabel")}
           onClick={(e) => {
             e.preventDefault();
             if (
               confirm(
-                `Delete the "${props.label}" text source? This cannot be undone.`,
+                t("obsDashboard.deleteLabelConfirm", { label: props.label }),
               )
             ) {
               props.onDelete();
@@ -214,6 +230,7 @@ function EditDialog({
   sourceId: string | null;
   close(this: void): void;
 }) {
+  const { t } = useIntl();
   const label = useAppState((s) =>
     sourceId ? s.event.obsLabels[sourceId] : null,
   ) || { label: "", value: "" };
@@ -247,17 +264,21 @@ function EditDialog({
     }
   };
   return (
-    <Dialog isOpen={!!sourceId} title="Edit Custom OBS label" onClose={close}>
+    <Dialog
+      isOpen={!!sourceId}
+      title={t("obsDashboard.editLabelTitle")}
+      onClose={close}
+    >
       <DialogBody>
         <form action={submit}>
-          <FormGroup label="Label Name">
+          <FormGroup label={t("obsDashboard.labelName")}>
             <InputGroup
               inputRef={nameInput}
               defaultValue={label.label}
               onKeyDown={handleInputKeydown}
             />
           </FormGroup>
-          <FormGroup label="Value">
+          <FormGroup label={t("obsDashboard.labelValue")}>
             <InputGroup
               inputRef={valueInput}
               defaultValue={label.value}
@@ -269,9 +290,9 @@ function EditDialog({
       <DialogFooter
         actions={
           <>
-            <Button onClick={close}>Cancel</Button>
+            <Button onClick={close}>{t("obsDashboard.cancel")}</Button>
             <Button intent="primary" onClick={submit}>
-              Save
+              {t("obsDashboard.save")}
             </Button>
           </>
         }
@@ -283,6 +304,7 @@ function EditDialog({
 import { css } from "@codemirror/lang-css";
 
 function CssEditor() {
+  const { t } = useIntl();
   const cleanDoc = useAppState((s) => s.event.obsCss);
   const [isDirty, setIsDirty] = useState(false);
   const [localDoc, setLocalDoc] = useState(cleanDoc);
@@ -292,7 +314,7 @@ function CssEditor() {
   return (
     <section>
       <H3>
-        Global OBS Source Styles{" "}
+        {t("obsDashboard.globalStyles")}{" "}
         <Button
           icon={<FloppyDisk />}
           disabled={!isDirty}

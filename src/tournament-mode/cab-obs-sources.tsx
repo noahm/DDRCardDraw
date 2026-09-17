@@ -18,7 +18,14 @@ import {
   Th,
 } from "@blueprintjs/icons";
 import { JSX, useCallback, useEffect, useRef, useState } from "react";
+import { useIntl } from "../hooks/useIntl";
 import { useHref, useSearchParams } from "react-router-dom";
+import {
+  cardsSourceStub,
+  defaultVetoMode,
+  VetoMode,
+  vetoModes,
+} from "../obs-sources/card-options";
 import {
   defaultPlayerFields,
   inRenderOrder,
@@ -36,22 +43,30 @@ import styles from "./cab-obs-sources.css";
 interface CabSource {
   /** path stub which follows `source/` in the url */
   stub: string;
-  label: string;
+  labelKey: string;
   icon: JSX.Element;
 }
 
-/** sources which exist exactly once per cab */
+/** sources which exist exactly once per cab and take no options */
 const perCabSources: CabSource[] = [
-  { stub: "cards", label: "Cards", icon: <Layers /> },
-  { stub: "title", label: "Title", icon: <Font /> },
-  { stub: "phase", label: "Current Phase", icon: <DiagramTree /> },
-  { stub: "standings", label: "Gauntlet Standings", icon: <Th /> },
-  { stub: "players", label: "All Players", icon: <People /> },
+  { stub: "title", labelKey: "obsDashboard.sourceTitle", icon: <Font /> },
+  {
+    stub: "phase",
+    labelKey: "obsDashboard.sourcePhase",
+    icon: <DiagramTree />,
+  },
+  {
+    stub: "standings",
+    labelKey: "obsDashboard.sourceStandings",
+    icon: <Th />,
+  },
+  { stub: "players", labelKey: "obsDashboard.sourcePlayers", icon: <People /> },
 ];
 
 const MAX_PLAYERS = 8;
 
 export function CabObsSources() {
+  const { t } = useIntl();
   const cabs = useAppState(eventSlice.selectors.allCabs);
   const [searchParams, setSearchParams] = useSearchParams();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -108,16 +123,16 @@ export function CabObsSources() {
       collapsible
       collapseProps={{ isOpen, onToggle: toggleOpen }}
       icon={<MobileVideo />}
-      title="Cab OBS Sources"
-      subtitle="Follow along with whichever match is assigned to a cab"
+      title={t("obsDashboard.cabSources")}
+      subtitle={t("obsDashboard.cabSourcesHint")}
     >
       <SectionCard>
         {!cab ? (
-          <p>Add a cab first to get source URLs for it.</p>
+          <p>{t("obsDashboard.addCabFirst")}</p>
         ) : (
           <>
             <div className={styles.controls}>
-              <FormGroup label="Cab" inline>
+              <FormGroup label={t("obsDashboard.cab")} inline>
                 <HTMLSelect
                   value={cab.id}
                   onChange={(e) => showCab(e.currentTarget.value)}
@@ -126,6 +141,7 @@ export function CabObsSources() {
               </FormGroup>
             </div>
             <CardList compact>
+              <CardsSourceCard cabId={cab.id} />
               {perCabSources.map((source) => (
                 <SourceCard key={source.stub} cabId={cab.id} source={source} />
               ))}
@@ -139,10 +155,45 @@ export function CabObsSources() {
 }
 
 /**
+ * The cards row, which says on its own whether it shows a match's bans. There
+ * is no room-wide setting behind it any more -- every other client answers that
+ * for itself -- so the url is the whole answer, and two scenes off one cab can
+ * differ.
+ */
+function CardsSourceCard({ cabId }: { cabId: string }) {
+  const { t } = useIntl();
+  const [mode, setMode] = useState<VetoMode>(defaultVetoMode);
+  const href = useHref(routableCabSourcePath(cabId, cardsSourceStub(mode)));
+
+  return (
+    <SourceRow
+      href={href}
+      label={
+        <>
+          <Layers />
+          <span>{t("obsDashboard.sourceCards")}</span>
+        </>
+      }
+      above={vetoModes.map(({ key, labelKey }) => (
+        <Button
+          key={key}
+          text={t(labelKey)}
+          active={key === mode}
+          intent={key === mode ? "primary" : undefined}
+          aria-pressed={key === mode}
+          onClick={() => setMode(key)}
+        />
+      ))}
+    />
+  );
+}
+
+/**
  * One row covering every per-player source: pick the player and tick whichever
  * pieces of their info should appear, and the URL follows along.
  */
 function PlayerSourceCard({ cabId }: { cabId: string }) {
+  const { t } = useIntl();
   const [player, setPlayer] = useState(1);
   const [fields, setFields] = useState<PlayerField[]>(defaultPlayerFields);
 
@@ -163,7 +214,7 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
       label={
         <>
           <Person />
-          <span>Player</span>
+          <span>{t("obsDashboard.sourcePlayer")}</span>
           <NumericInput
             value={player}
             onValueChange={(value) => {
@@ -174,18 +225,18 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
             max={MAX_PLAYERS}
             clampValueOnBlur
             style={{ width: "3.5em" }}
-            aria-label="Player number"
+            aria-label={t("obsDashboard.playerNumber")}
           />
         </>
       }
-      above={playerFields.map(({ key, label }) => {
+      above={playerFields.map(({ key, labelKey }) => {
         const active = fields.includes(key);
         // something has to be shown, so the last one standing is held down
         const isLastActive = active && fields.length === 1;
         const button = (
           <Button
             key={key}
-            text={label}
+            text={t(labelKey)}
             active={active}
             intent={active ? "primary" : undefined}
             disabled={isLastActive}
@@ -194,7 +245,7 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
           />
         );
         return isLastActive ? (
-          <Tooltip key={key} content="Include at least one">
+          <Tooltip key={key} content={t("obsDashboard.includeAtLeastOne")}>
             {button}
           </Tooltip>
         ) : (
@@ -206,6 +257,7 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
 }
 
 function SourceCard({ cabId, source }: { cabId: string; source: CabSource }) {
+  const { t } = useIntl();
   const href = useHref(routableCabSourcePath(cabId, source.stub));
   return (
     <SourceRow
@@ -213,7 +265,7 @@ function SourceCard({ cabId, source }: { cabId: string; source: CabSource }) {
       label={
         <>
           {source.icon}
-          <span>{source.label}</span>
+          <span>{t(source.labelKey)}</span>
         </>
       }
     />

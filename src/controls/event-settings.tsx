@@ -56,14 +56,6 @@ export function EventSettings() {
         </Callout>
       )}
       <Checkbox
-        id="hideVetos"
-        checked={settings.hideVetos}
-        onChange={(e) =>
-          updateSettings({ hideVetos: !!e.currentTarget.checked })
-        }
-        label={t("controls.hideVetos")}
-      />
-      <Checkbox
         id="showMaxScore"
         checked={settings.showMaxScore}
         onChange={(e) =>

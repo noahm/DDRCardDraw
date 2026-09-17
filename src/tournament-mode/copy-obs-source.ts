@@ -24,6 +24,11 @@ export type DrawnChartsLayout = (typeof drawnChartsLayouts)[number];
 export const routableDrawnChartsSourcePath = (layout: DrawnChartsLayout) =>
   `../source/drawn-charts/${layout}`;
 
-export function copyObsSource(href: string) {
-  void copyPlainTextToClipboard(href, "Copied OBS source URL to clipboard");
+/**
+ * Takes the toast's wording rather than holding it, so the string can live in
+ * the message catalog with the rest of the dashboard's. Callers are components
+ * and have an intl context; this module is imported by things that don't.
+ */
+export function copyObsSource(href: string, copiedMessage: string) {
+  void copyPlainTextToClipboard(href, copiedMessage);
 }

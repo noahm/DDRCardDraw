@@ -63,17 +63,19 @@ export function saveConfigs(configs: ConfigState[]) {
 }
 
 /**
- * Settings that used to be per-config and are now the event's. A file exported
+ * Settings that used to be per-config and have since moved off it -- to the
+ * event for `showMaxScore`, to the browser for `hideVetos`. A file exported
  * before they moved still carries them, and they'd otherwise be stored on the
  * config verbatim and quietly resurface. Dropping them here means an imported
- * config can't reach across and change how the whole event is run.
+ * config can't reach across and change how the whole event is run, or what the
+ * person importing it is looking at.
  */
-const PROMOTED_TO_EVENT = ["hideVetos", "showMaxScore"] as const;
+const MOVED_OFF_CONFIG = ["hideVetos", "showMaxScore"] as const;
 
-function stripPromotedSettings(config: ConfigState): ConfigState {
+function stripMovedSettings(config: ConfigState): ConfigState {
   // the keys are gone from ConfigState, so reach them as plain object entries
   const loose = config as unknown as Record<string, unknown>;
-  for (const key of PROMOTED_TO_EVENT) {
+  for (const key of MOVED_OFF_CONFIG) {
     delete loose[key];
   }
   return config;
@@ -111,9 +113,9 @@ export function loadConfigs(): Promise<ConfigState[]> {
           "configStates" in contents &&
           Array.isArray(contents.configStates)
         ) {
-          resolve(contents.configStates.map(stripPromotedSettings));
+          resolve(contents.configStates.map(stripMovedSettings));
         } else if ("configState" in contents && contents.configState) {
-          resolve([stripPromotedSettings(contents.configState)]);
+          resolve([stripMovedSettings(contents.configState)]);
         } else {
           throw new Error("no config data found in file");
         }
