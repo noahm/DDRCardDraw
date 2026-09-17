@@ -57,35 +57,20 @@ export function baseChartValues(
 }
 
 export function BaseCardCenter(props: CardSectionProps) {
-  const { name, nameTranslation, artist, artistTranslation, dateAdded } =
-    baseChartValues(props.chart);
-  return (
-    <>
-      <div className={styles.name} title={nameTranslation}>
-        {name}
-      </div>
-      {isJapanese ? null : (
-        <div className={styles.nameTranslation}>{nameTranslation}</div>
-      )}
-      <div className={styles.artist} title={artistTranslation}>
-        {artist}
-      </div>
-      <div className={styles.dateAdded} title={dateAdded}>
-        {dateAdded}
-      </div>
-    </>
-  );
-}
-
-export function MaxScoreCardCenter(props: CardSectionProps) {
-  const { name, nameTranslation, artist, artistTranslation, maxScore } =
-    baseChartValues(props.chart);
+  const {
+    name,
+    nameTranslation,
+    artist,
+    artistTranslation,
+    maxScore,
+    dateAdded,
+  } = baseChartValues(props.chart);
   const { t } = useIntl();
   const showMaxScore = useEventSettings((settings) => settings.showMaxScore);
-  const maxExScore = t(
+  const maxScoreString = t(
     "meta.maxScoreFormat",
     { maxScore: maxScore ?? "no data" },
-    "MAX: {maxScore}",
+    "",
   );
 
   return (
@@ -99,11 +84,15 @@ export function MaxScoreCardCenter(props: CardSectionProps) {
       <div className={styles.artist} title={artistTranslation}>
         {artist}
       </div>
-      {showMaxScore ? (
-        <div className={styles.maxScore} title={maxExScore}>
-          {maxExScore}
+      {showMaxScore && maxScoreString ? (
+        <div className={styles.maxScore} title={maxScoreString}>
+          {maxScoreString}
         </div>
-      ) : null}
+      ) : (
+        <div className={styles.dateAdded} title={dateAdded}>
+          {dateAdded}
+        </div>
+      )}
     </>
   );
 }
