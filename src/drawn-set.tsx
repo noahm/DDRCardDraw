@@ -3,6 +3,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import { useDrawing } from "./drawing-context";
+import { useEventSettings } from "./state/hooks";
 import { DrawingActions } from "./tournament-mode/drawing-actions";
 import { ErrorFallback } from "./utils/error-fallback";
 
@@ -29,7 +30,20 @@ function ChartFromContext({ chartId }: { chartId: string }) {
   const protect = useDrawing((d) => d.protects[chartId]);
   const pocketPick = useDrawing((d) => d.pocketPicks[chartId]);
   const winner = useDrawing((d) => d.winners[chartId]);
+  const hideVetos = useEventSettings((s) => s.hideVetos);
   if (!chart) {
+    return null;
+  }
+  /*
+   * A hidden veto has to leave the tree rather than be styled out of sight.
+   * Every card sits in a popover target wrapper of its own, and that wrapper is
+   * a `flex: 1 0 0` child of the chart list. Hiding just the card leaves the
+   * wrapper behind as an empty flex item that still claims its share of the
+   * row: a hole in the layout, and narrower cards on whichever rows hold one.
+   * A merged multi-set draw shows it worst, since every sub-draw's cards share
+   * one wrapping list and re-ordering piles the bans up at the end of it.
+   */
+  if (hideVetos && veto) {
     return null;
   }
   return (
