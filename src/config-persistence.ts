@@ -1,3 +1,4 @@
+import { adoptLegacyChartSort } from "./chart-sort";
 import { ConfigState } from "./config-state";
 import { toaster } from "./toaster";
 import { buildDataUri, dateForFilename, shareData } from "./utils/share";
@@ -72,12 +73,18 @@ export function saveConfigs(configs: ConfigState[]) {
  */
 const MOVED_OFF_CONFIG = ["hideVetos", "showMaxScore"] as const;
 
-function stripMovedSettings(config: ConfigState): ConfigState {
+/**
+ * Make an imported config fit the shape configs have now: drop the settings
+ * that have moved off it, and carry a file's old `sortByLevel` answer over to
+ * the card order that replaced it.
+ */
+function normalizeImportedConfig(config: ConfigState): ConfigState {
   // the keys are gone from ConfigState, so reach them as plain object entries
   const loose = config as unknown as Record<string, unknown>;
   for (const key of MOVED_OFF_CONFIG) {
     delete loose[key];
   }
+  adoptLegacyChartSort(config);
   return config;
 }
 
@@ -113,9 +120,9 @@ export function loadConfigs(): Promise<ConfigState[]> {
           "configStates" in contents &&
           Array.isArray(contents.configStates)
         ) {
-          resolve(contents.configStates.map(stripMovedSettings));
+          resolve(contents.configStates.map(normalizeImportedConfig));
         } else if ("configState" in contents && contents.configState) {
-          resolve([stripMovedSettings(contents.configState)]);
+          resolve([normalizeImportedConfig(contents.configState)]);
         } else {
           throw new Error("no config data found in file");
         }

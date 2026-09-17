@@ -58,6 +58,7 @@ import {
   createPlusOneChart,
   createRedrawAll,
   createSubdraw,
+  mergeSubdraws,
 } from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
 import { shareCharts, shareImage } from "../utils/share";
@@ -74,7 +75,6 @@ import {
   useGameData,
 } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
-import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
 const ScoreEditor = lazy(() => import("./score-editor"));
@@ -509,7 +509,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
       <MenuItem
         icon={<DataLineage />}
         text="Merge All Sets"
-        onClick={() => dispatch(mergeDraws({ drawingId }))}
+        onClick={() => dispatch(mergeSubdraws(drawingId))}
       />
       {showLabels && isTwoPlayers && (
         <MenuItem

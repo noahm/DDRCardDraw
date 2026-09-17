@@ -30,6 +30,7 @@ import {
 } from "../state/hooks";
 import { MultidrawControls } from "./multidraw-controls";
 import { LvlRangeControls } from "./lvl-range";
+import { CHART_SORTS, isChartSort } from "../chart-sort";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -209,7 +210,7 @@ function GeneralSettings() {
     difficulties: selectedDifficulties,
     style: selectedStyle,
     chartCount,
-    sortByLevel,
+    chartSort,
     useGranularLevels,
     playerPicks,
   } = configState;
@@ -351,6 +352,24 @@ function GeneralSettings() {
           <FolderSettings />
         </Card>
       </Collapse>
+      <FormGroup labelFor="chartSort" label={t("controls.chartSort")}>
+        <HTMLSelect
+          id="chartSort"
+          value={chartSort}
+          onChange={(e) => {
+            const nextSort = e.currentTarget.value;
+            if (isChartSort(nextSort)) {
+              updateState({ chartSort: nextSort });
+            }
+          }}
+        >
+          {CHART_SORTS.map((sort) => (
+            <option key={sort} value={sort}>
+              {t(`controls.chartSortOptions.${sort}`)}
+            </option>
+          ))}
+        </HTMLSelect>
+      </FormGroup>
       <FormGroup>
         <Checkbox
           id="orderByAction"
@@ -369,15 +388,6 @@ function GeneralSettings() {
             updateState({ constrainPocketPicks });
           }}
           label={t("controls.constrainPocketPicks")}
-        />
-        <Checkbox
-          id="sortByLevel"
-          checked={sortByLevel}
-          onChange={(e) => {
-            const sortByLevel = !!e.currentTarget.checked;
-            updateState({ sortByLevel });
-          }}
-          label={t("controls.sortByLevel")}
         />
         <Checkbox
           id="useGranularLevels"

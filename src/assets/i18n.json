@@ -73,7 +73,12 @@
       "folders": "Folders",
       "orderByAction": "Re-order by pick/ban",
       "constrainPocketPicks": "Picks must match draw options",
-      "sortByLevel": "Sort by chart level",
+      "chartSort": "Card order",
+      "chartSortOptions": {
+        "drawn": "In drawn order",
+        "level": "By chart level",
+        "shuffle": "Shuffled"
+      },
       "showMaxScore": "Show max score on charts",
       "useGranularLevels": "Use granular levels (shift+interact level filter for whole number)",
       "hideVetos": "Hide vetoed charts",
@@ -271,7 +276,12 @@
       "folders": "フォルダー",
       "orderByAction": "選択/拒否した譜面を並べ替える",
       "constrainPocketPicks": "自由選曲にも制限を適用する",
-      "sortByLevel": "譜面をレベル順にソート",
+      "chartSort": "カードの並び順",
+      "chartSortOptions": {
+        "drawn": "抽選順",
+        "level": "レベル順",
+        "shuffle": "シャッフル"
+      },
       "showMaxScore": "譜面の理論値を表示する",
       "useGranularLevels": "\"厳密な\"レベルを使用 (シフトキーを押しながら操作すると、整数値のレベルフィルターが適用されます。)",
       "hideVetos": "拒否した譜面を非表示にする",

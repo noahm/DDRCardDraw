@@ -15,8 +15,10 @@ import {
   SubDrawing,
 } from "../models/Drawing";
 import { reuseKeysForChart } from "../chart-id";
+import { chartSortOf, sortCharts } from "../chart-sort";
 import { configSlice, ConfigState, defaultConfig } from "./config.slice";
 import { defaultEventSettings, eventSlice } from "./event.slice";
+import { mergeDraws } from "./central";
 import { DEFAULT_PAYOUT_SCHEME } from "../models/payout-scheme";
 
 declare const umami: {
@@ -158,6 +160,8 @@ export function createDraw(
       // happily deal the same chart twice into one set.
       const spentKeys = excludedKeys && new Set(excludedKeys);
       noteChartsSpent(spentKeys, charts);
+      /** true once an extra draw has been folded into the main set */
+      let merged = false;
 
       for (const otherConfigId of config.multiDraws.configs) {
         const otherConfig = configSlice.selectors.selectById(
@@ -185,6 +189,7 @@ export function createDraw(
         trackDraw(otherCharts.length, otherGameData.i18n.en.name as string);
         if (config.multiDraws.merge) {
           mainDraw.charts = mainDraw.charts.concat(otherCharts);
+          merged = true;
         } else {
           const otherSetId = `set-${nanoid(12)}`;
           drawing.subDrawings[otherSetId] = {
@@ -193,6 +198,18 @@ export function createDraw(
             charts: otherCharts,
           };
         }
+      }
+
+      // Each extra draw sorted itself under its own config, so concatenating
+      // them leaves one set carrying several separately-sorted runs. The
+      // merged set is one set and is sorted like one, by the config that
+      // asked for the merge.
+      if (merged) {
+        mainDraw.charts = sortCharts(
+          mainDraw.charts,
+          chartSortOf(config),
+          config.useGranularLevels,
+        );
       }
     }
 
@@ -257,6 +274,32 @@ export function createSubdraw(
       }),
     );
     return "ok";
+  };
+}
+
+/**
+ * Thunk creator for folding every set of a draw into one.
+ *
+ * The merged set is sorted here rather than in the reducer, for two reasons:
+ * a shuffle has to be decided once and shipped to the room, or every client
+ * would land on a different order, and the sort a config asks for isn't
+ * reachable from the drawings slice in the first place. The config that
+ * settles it is the draw's own -- the one the merged set inherits.
+ */
+export function mergeSubdraws(drawingId: string): AppThunk {
+  return (dispatch, getState) => {
+    const state = getState();
+    const drawing = state.drawings.entities[drawingId];
+    if (!drawing) return;
+    const config = configSlice.selectors.selectById(state, drawing.configId);
+    const charts = sortCharts(
+      Object.values(drawing.subDrawings).flatMap((subDraw) => subDraw.charts),
+      // a draw whose config has since been deleted keeps the order it is
+      // already showing, rather than being reshuffled on its way into one set
+      config ? chartSortOf(config) : "drawn",
+      !!config?.useGranularLevels,
+    );
+    dispatch(mergeDraws({ drawingId, charts }));
   };
 }
 

@@ -5,6 +5,7 @@ import {
   EventSettings,
 } from "./event.slice";
 import type { AppState } from "./root-reducer";
+import { adoptLegacyChartSort } from "../chart-sort";
 
 /** mutates `state` to apply any necessary migrations */
 export function applyMigrations(state: AppState) {
@@ -14,6 +15,7 @@ export function applyMigrations(state: AppState) {
   }
   if (state.event) addObsLabels(state.event);
   migrateDisplaySettings(state);
+  migrateChartSort(state);
 }
 
 /**
@@ -77,4 +79,17 @@ function migrateDisplaySettings(state: AppState) {
   }
 
   state.event.settings = settings;
+}
+
+/**
+ * Every config names the order its draws come out in, where it used to hold a
+ * single "sort by chart level" checkbox. A saved room carries whichever answer
+ * it was set to, so carry it across rather than resetting everyone's draws to
+ * the default order.
+ */
+function migrateChartSort(state: AppState) {
+  for (const id of state.config?.ids || []) {
+    const config = state.config.entities[id];
+    if (config) adoptLegacyChartSort(config);
+  }
 }

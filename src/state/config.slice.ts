@@ -1,4 +1,5 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import { ChartSort, DEFAULT_CHART_SORT } from "../chart-sort";
 
 export interface ConfigState {
   id: string;
@@ -20,7 +21,8 @@ export interface ConfigState {
   flags: Array<string>;
   cutoffDate: string;
   defaultPlayersPerDraw: number;
-  sortByLevel: boolean;
+  /** how a finished draw arranges its cards */
+  chartSort: ChartSort;
   useGranularLevels: boolean;
   /** if present, will draw an additional set of cards for each string id in `configs` */
   multiDraws?: {
@@ -47,7 +49,7 @@ export const defaultConfig: Omit<ConfigState, "id" | "name" | "gameKey"> = {
   folders: [],
   difficulties: [],
   flags: [],
-  sortByLevel: false,
+  chartSort: DEFAULT_CHART_SORT,
   defaultPlayersPerDraw: 2,
   useGranularLevels: false,
 };
