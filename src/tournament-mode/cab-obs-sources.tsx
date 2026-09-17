@@ -20,6 +20,12 @@ import {
 import { JSX, useCallback, useEffect, useRef, useState } from "react";
 import { useHref, useSearchParams } from "react-router-dom";
 import {
+  cardsSourceStub,
+  defaultVetoMode,
+  VetoMode,
+  vetoModes,
+} from "../obs-sources/card-options";
+import {
   defaultPlayerFields,
   inRenderOrder,
   PlayerField,
@@ -40,9 +46,8 @@ interface CabSource {
   icon: JSX.Element;
 }
 
-/** sources which exist exactly once per cab */
+/** sources which exist exactly once per cab and take no options */
 const perCabSources: CabSource[] = [
-  { stub: "cards", label: "Cards", icon: <Layers /> },
   { stub: "title", label: "Title", icon: <Font /> },
   { stub: "phase", label: "Current Phase", icon: <DiagramTree /> },
   { stub: "standings", label: "Gauntlet Standings", icon: <Th /> },
@@ -126,6 +131,7 @@ export function CabObsSources() {
               </FormGroup>
             </div>
             <CardList compact>
+              <CardsSourceCard cabId={cab.id} />
               {perCabSources.map((source) => (
                 <SourceCard key={source.stub} cabId={cab.id} source={source} />
               ))}
@@ -135,6 +141,38 @@ export function CabObsSources() {
         )}
       </SectionCard>
     </Section>
+  );
+}
+
+/**
+ * The cards row, with a say over whether it shows a match's bans. Following the
+ * room's own setting is the default and what this url meant before it could be
+ * configured, so a source already pasted into OBS keeps behaving as it did.
+ */
+function CardsSourceCard({ cabId }: { cabId: string }) {
+  const [mode, setMode] = useState<VetoMode>(defaultVetoMode);
+  const href = useHref(routableCabSourcePath(cabId, cardsSourceStub(mode)));
+
+  return (
+    <SourceRow
+      href={href}
+      label={
+        <>
+          <Layers />
+          <span>Cards</span>
+        </>
+      }
+      above={vetoModes.map(({ key, label }) => (
+        <Button
+          key={key}
+          text={label}
+          active={key === mode}
+          intent={key === mode ? "primary" : undefined}
+          aria-pressed={key === mode}
+          onClick={() => setMode(key)}
+        />
+      ))}
+    />
   );
 }
 

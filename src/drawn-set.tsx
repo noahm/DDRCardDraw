@@ -3,7 +3,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
 import { useDrawing } from "./drawing-context";
-import { useEventSettings } from "./state/hooks";
+import { useHideVetos } from "./state/hooks";
 import { DrawingActions } from "./tournament-mode/drawing-actions";
 import { ErrorFallback } from "./utils/error-fallback";
 
@@ -30,7 +30,7 @@ function ChartFromContext({ chartId }: { chartId: string }) {
   const protect = useDrawing((d) => d.protects[chartId]);
   const pocketPick = useDrawing((d) => d.pocketPicks[chartId]);
   const winner = useDrawing((d) => d.winners[chartId]);
-  const hideVetos = useEventSettings((s) => s.hideVetos);
+  const hideVetos = useHideVetos();
   if (!chart) {
     return null;
   }

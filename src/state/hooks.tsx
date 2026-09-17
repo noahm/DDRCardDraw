@@ -55,6 +55,24 @@ export function useEventSettings<T = EventSettings>(
   }, equalityFn);
 }
 
+const hideVetosContext = createContext<boolean | null>(null);
+
+/**
+ * Overrides the room's "hide vetos" setting for the cards rendered inside it.
+ * OBS sources are why: the setting is shared by everyone in the room, so it
+ * can't answer a stream that wants the bans on screen and an operator's dock
+ * that doesn't. `null` -- the default, and what the app itself provides --
+ * means follow the room.
+ */
+export const HideVetosOverrideProvider = hideVetosContext.Provider;
+
+/** whether banned charts should be hidden here: an override if one is in scope, else the room's setting */
+export function useHideVetos() {
+  const override = useContext(hideVetosContext);
+  const roomSetting = useEventSettings((s) => s.hideVetos);
+  return override ?? roomSetting;
+}
+
 export function useUpdateEventSettings() {
   const dispatch = useAppDispatch();
   return useCallback(
