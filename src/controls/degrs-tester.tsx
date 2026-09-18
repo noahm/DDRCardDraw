@@ -3,12 +3,12 @@ import {
   Callout,
   Dialog,
   DialogBody,
+  FormGroup,
   ProgressBar,
 } from "@blueprintjs/core";
 import { draw } from "../card-draw";
-import { useDrawState } from "../draw-state";
 import { useAtom } from "jotai";
-import { useConfigState } from "../config-state";
+import { configSlice } from "../state/config.slice";
 import { requestIdleCallback } from "../utils/idle-callback";
 import {
   TEST_SIZE,
@@ -21,17 +21,32 @@ import { SongCard, SongCardProps } from "../song-card";
 import { useState } from "react";
 import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
+import { useAppStore, type StoreType } from "../state/store";
+import { GameData } from "../models/SongData";
+import { useGameData } from "../state/hooks";
+import { ConfigSelect } from ".";
 
 export function isDegrs(thing: EligibleChart | PlayerPickPlaceholder) {
   return "name" in thing && thing.name.startsWith('DEAD END("GROOVE');
 }
 
-function* oneMillionDraws() {
-  const gameData = useDrawState.getState().gameData!;
-  const configState = useConfigState.getState();
+function* oneMillionDraws(
+  store: StoreType,
+  gameData: GameData,
+  configId: string,
+) {
+  const configState = configSlice.selectors.selectById(
+    store.getState(),
+    configId,
+  );
 
   for (let idx = 0; idx < TEST_SIZE; idx++) {
-    yield [draw(gameData, configState), idx] as const;
+    yield [
+      draw(gameData, configState!, {
+        meta: { players: [], title: "", type: "simple" },
+      }),
+      idx,
+    ] as const;
   }
 }
 
@@ -40,10 +55,14 @@ function* oneMillionDraws() {
  * yields current progress every 1000 loops to allow passing back
  * the event loop
  **/
-export function* degrsTester() {
+export function* degrsTester(
+  store: StoreType,
+  gameData: GameData,
+  configId: string,
+) {
   let totalDegrs = 0;
-  for (const [set, idx] of oneMillionDraws()) {
-    if (set.charts.some(isDegrs)) {
+  for (const [charts, idx] of oneMillionDraws(store, gameData, configId)) {
+    if (charts.some(isDegrs)) {
       totalDegrs++;
     }
     if (idx % REPORT_FREQUENCY === 0) {
@@ -59,17 +78,19 @@ function nextIdleCycle() {
   });
 }
 
-export function DegrsTestButton() {
+export function DegrsTestButton(props: { configId: string | null }) {
   const [isTesting, setIsTesting] = useAtom(degrsIsTesting);
   const [progress, setProgress] = useAtom(degrsTestProgress);
   const [results, setResults] = useAtom(degrsTestResults);
+  const gameData = useGameData();
+  const store = useAppStore();
 
   async function startTest() {
     setIsTesting(true);
     setProgress(0);
     setResults(undefined);
     await nextIdleCycle();
-    const tester = degrsTester();
+    const tester = degrsTester(store, gameData!, props.configId!);
     let report = tester.next();
     while (!report.done) {
       setProgress(report.value);
@@ -88,6 +109,7 @@ export function DegrsTestButton() {
       {!isTesting && (
         <Button
           onClick={startTest}
+          disabled={!props.configId}
           intent="danger"
           icon={hasResults ? <Repeat /> : <WarningSign />}
         >
@@ -111,6 +133,7 @@ export function DegrsTestButton() {
 
 export function TesterCard(props: SongCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [configId, setConfigId] = useState<string | null>(null);
   return (
     <>
       <Dialog
@@ -120,7 +143,10 @@ export function TesterCard(props: SongCardProps) {
         icon={<WarningSign />}
       >
         <DialogBody>
-          <DegrsTestButton />
+          <FormGroup>
+            <ConfigSelect selectedId={configId} onChange={setConfigId} />
+          </FormGroup>
+          <DegrsTestButton configId={configId} />
         </DialogBody>
       </Dialog>
       <SongCard {...props} onClick={() => setIsOpen(true)} />
