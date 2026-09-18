@@ -29,7 +29,7 @@ import {
   Trash,
 } from "@blueprintjs/icons";
 import { domToPng } from "modern-screenshot";
-import { useState, lazy, JSX, Suspense } from "react";
+import { useState, lazy, Suspense } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { useDrawing } from "../drawing-context";
 import {
@@ -465,32 +465,23 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
   const isTwoPlayers = drawingMeta.players.length === 2;
   const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
 
-  let editPlayersDialog: JSX.Element | null;
-  switch (drawingMeta.type) {
-    case "simple":
-      editPlayersDialog = (
-        <CustomDrawForm
-          initialMeta={drawingMeta}
-          submitText="Save"
-          onSubmit={(meta) => {
-            dispatch(
-              drawingsSlice.actions.updatePlayers({
-                id: drawingId,
-                title: meta.title,
-                players: meta.players,
-                payoutScheme: meta.payoutScheme,
-              }),
-            );
-            setMetaEditorOpen(false);
-          }}
-        />
-      );
-      break;
-    case "startgg":
-    case "piu":
-      // @todo figure out what edit looks like for an externally sourced match?
-      editPlayersDialog = null;
-  }
+  const editPlayersDialog = (
+    <CustomDrawForm
+      initialMeta={drawingMeta}
+      submitText="Save"
+      onSubmit={(meta) => {
+        dispatch(
+          drawingsSlice.actions.updatePlayers({
+            id: drawingId,
+            title: meta.title,
+            players: meta.players,
+            payoutScheme: meta.payoutScheme,
+          }),
+        );
+        setMetaEditorOpen(false);
+      }}
+    />
+  );
 
   const menu = (
     <Menu>

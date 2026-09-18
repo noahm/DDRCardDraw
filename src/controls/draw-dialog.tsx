@@ -15,7 +15,7 @@ import { piuTourneyEnabled } from "../piu-tourney/config";
 import { createDraw } from "../state/thunks";
 import { useAppDispatch, useAppState } from "../state/store";
 import { eventSlice } from "../state/event.slice";
-import { Player, SimpleMeta, newPlayer } from "../models/Drawing";
+import { ExternalMeta, Player, SimpleMeta, newPlayer } from "../models/Drawing";
 import { PayoutSchemeInput } from "./payout-scheme-input";
 import { useEventSettings } from "../state/hooks";
 import { lazy, Suspense, useState } from "react";
@@ -176,11 +176,16 @@ export function DrawDialog(props: Props) {
   );
 }
 
-export function CustomDrawForm(props: {
-  initialMeta?: SimpleMeta;
+/**
+ * Simple form to edit some basic info about a draw including its players
+ */
+export function CustomDrawForm<
+  T extends SimpleMeta | ExternalMeta = SimpleMeta,
+>(props: {
+  initialMeta?: T;
   disableCreate?: boolean;
   submitText?: string;
-  onSubmit(meta: SimpleMeta): void;
+  onSubmit(meta: T): void;
 }) {
   // meta.players is already in display order
   const [players, setPlayers] = useState<Player[]>(
@@ -202,7 +207,7 @@ export function CustomDrawForm(props: {
 
   function handleSubmit() {
     props.onSubmit({
-      type: "simple",
+      ...((props.initialMeta || { type: "simple" }) as T),
       players,
       title,
       // carried through untouched where the field wasn't offered
