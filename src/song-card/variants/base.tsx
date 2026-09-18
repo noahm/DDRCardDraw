@@ -65,13 +65,11 @@ export function BaseCardCenter(props: CardSectionProps) {
     maxScore,
     dateAdded,
   } = baseChartValues(props.chart);
-  const { t } = useIntl();
+  const { messageExists, t } = useIntl();
   const showMaxScore = useEventSettings((settings) => settings.showMaxScore);
-  const maxScoreString = t(
-    "meta.maxScoreFormat",
-    { maxScore: maxScore ?? "no data" },
-    "",
-  );
+  const maxScoreString =
+    messageExists("meta.maxScoreFormat") &&
+    t("meta.maxScoreFormat", { maxScore: maxScore ?? "no data" }, "");
 
   return (
     <>
