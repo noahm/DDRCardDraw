@@ -75,7 +75,7 @@ const folderNames = [
   "EPOLIS",
   "Pinky Crush",
   "Sparkle Shower",
-  "---",
+  "ZINRAI",
   "substream",
 ] as const;
 
@@ -83,16 +83,16 @@ const folderNames = [
  * Event name (from textage) to flag(s) mapping
  */
 const eventFlagMap = new Map<string, string[]>([
-  ["ULTIMATE MOBILE アーケード連動", ["ultimateMobile"]],
-  ["Sparkle Fruit Lab.", ["sparkleFruitLab"]],
-  ["WORLD TOURISM(Sparkle Shower)", ["worldTourism"]],
-  ["CYBER LOADER", ["cyberLoader"]],
-  ["EXTRA CHALLENGE", ["extraChallenge"]],
-  ["The 4th 25周年記念イベント", ["the4th"]],
-  ["秘蔵のレコード", ["shopUnlock"]],
+  ["ULTIMATE MOBILE アーケード連動", []],
+  ["Sparkle Fruit Lab.", ["tempUnlock"]],
+  ["WORLD TOURISM(Sparkle Shower)", ["tempUnlock"]],
+  ["CYBER LOADER", ["tempUnlock"]],
+  ["EXTRA CHALLENGE", ["tempUnlock"]],
+  ["The 4th 25周年記念イベント", ["tempUnlock"]], // 段位認定 -極- (Sparkle Shower)
+  ["秘蔵のレコード", []],
   [
     "<span style='font-size:6pt'>BEMANI PRO LEAGUE -SEASON 4- </span>Triple Tribe",
-    ["lightningModel", "tempUnlock"],
+    ["tempUnlock"],
   ],
   ["BPLプロ選手サポーターズ -SEASON 5-", ["tempUnlock"]],
   [
@@ -107,58 +107,19 @@ const eventFlagMap = new Map<string, string[]>([
   ["pop'n&IIDX Cheers×Cheers!!", ["tempUnlock"]],
   ["BEMANI納涼祭2026", ["tempUnlock"]],
 ]);
-/** Battle arena unlock songs (not shown on textage) */
-const battleArenaUnlocks = new Set<string>([
-  "evrgreen", // evergreen
-  "kyamsama", // KYAMISAMA ONEGAI!
-  "acidvis", // ACID VISION
+/** Other unlock songs (not shown on textage) */
+const otherUnlocks = new Map<string, string[]>([
+  ...[
+    "evrgreen", // evergreen
+    "kyamsama", // KYAMISAMA ONEGAI!
+    "acidvis", // ACID VISION
+  ].map((tag) => [tag, ["tempUnlock"]] as [string, string[]]), // BATTLE ARENA (Sparkle Shower)
 ]);
 /**
  * Locked [LEGGENDARIA] charts mapping
  */
 const lockedLeggendaria = new Map<SongTag, string[]>([
-  ...[
-    "overtime", // OVER TIME
-    "selfishs", // Selfish Sweet
-    "lab", // LAB
-    "plkmania", // POLꓘAMAИIA
-    "_3plus3", // ≡＋≡
-    "medilove", // Medicine of love (辻斬り隠れキャラ event)
-  ].map((tag) => [tag, ["hiddenLeggendaria"]] as [string, string[]]),
-  ...[
-    "_mschour", // ミュージック・アワー
-    "comaaaaa", // CoMAAAAAAA
-    "gene", // GENE
-    "_zero", // 零 - ZERO -
-    "risen", // Rise'n Beauty
-    "alphratz", // Alpheratz
-    "urbancon", // Urban Constellations
-    "proprops", // Prohibited Props
-    "27thstyl", // 27th style
-    "raison", // Raison d'être ～交差する宿命～
-  ].map((tag) => [tag, ["battleArena"]] as [string, string[]]),
-  ...[
-    "idolsynd", // IDOL syndrome.
-    "caldwl99", // Caldwell 99
-    "cuerscue", // CUE CUE RESCUE
-    "high", // HIGH
-    "_kagachi", // 蛇神
-    "hyena", // HYENA
-    "call", // CALL
-    "bowshock", // Bow shock!!
-    "_ope_143", // ここからよろしく大作戦143
-    "_therele", // #The_Relentless
-    "punch_lv", // Punch Love ♥ 仮面
-    "chaserxx", // ChaserXX
-    "braveout", // BRAVE OUT
-    "inazuma", // INAZUMA
-    "_seijin", // 聖人の塔
-    "nbtheory", // Nothing but Theory
-    "_hrenten", // 烽火連天の刃
-    "implant", // IMPLANTATION
-    "captive", // CaptivAte～浄化～
-    "gardenhs", // garden
-  ].map((tag) => [tag, eventFlagMap.get("秘蔵のレコード")!] as const),
+  // #region Sparkle Shower unlocks
   ...[
     "lisa_ric", // Lisa-RICCIA
     "catchme", // Catch Me
@@ -176,6 +137,38 @@ const lockedLeggendaria = new Map<SongTag, string[]>([
   ].map(
     (tag) => [tag, eventFlagMap.get("WORLD TOURISM(Sparkle Shower)")!] as const,
   ),
+  ...[
+    "_mschour", // ミュージック・アワー
+    "comaaaaa", // CoMAAAAAAA
+    "gene", // GENE
+    "_zero", // 零 - ZERO -
+    "risen", // Rise'n Beauty
+    "alphratz", // Alpheratz
+    "urbancon", // Urban Constellations
+    "proprops", // Prohibited Props
+    "27thstyl", // 27th style
+    "raison", // Raison d'être ～交差する宿命～
+  ].map((tag) => [tag, ["tempUnlock"]] as [string, string[]]), // BATTLE ARENA
+  [
+    "_choe", // ちょえちょえまぎか
+    eventFlagMap.get("The 4th 25周年記念イベント")!,
+  ], // 段位認定 -極-
+  ...[
+    "submerge", // Submerge Serenade
+    "doit_emp", // Do it!! Do it!!
+    "zed", // ZED
+    "tbknight", // THE BLACK KNIGHT
+  ].map((tag) => [tag, ["tempUnlock"]] as [string, string[]]), // 皆伝ランク
+  [
+    "medilove", // Medicine of love
+    ["tempUnlock"],
+  ], // 辻斬り隠れキャラ
+  // #endregion Sparkle Shower unlocks
+  ...[
+    "_jiyou", // 次葉 -turn the page-
+    "togakusi", // TOGAKUSHI
+    "calvados", // Calvados Queen
+  ].map((tag) => [tag, ["hiddenLeggendaria"]] as [string, string[]]), // Hidden LEGGENDARIA (ZINRAI)
 ]);
 type SongTag = string;
 
@@ -599,7 +592,7 @@ export default globalThis;
           continue;
         }
 
-        const songBPM = datatbl[songTag][11] || "[BPM N/A]";
+        const songBPM = datatbl[songTag][11];
 
         let songName = decodeHTML(await this.#unwrapHTML(title), {
           scope: "strict",
@@ -650,15 +643,16 @@ export default globalThis;
             const relatedFlags = eventFlagMap.get(eventName);
             if (relatedFlags?.length) {
               songFlags.push(...relatedFlags);
-            } else {
+            } else if (relatedFlags === undefined) {
               console.warn(
                 `c[] ${songTag} (${songName}) is locked behind unknown event ${eventName}`,
               );
             }
           }
         }
-        if (battleArenaUnlocks.has(songTag)) {
-          songFlags.push("battleArena");
+        const otherUnlock = otherUnlocks.get(songTag);
+        if (otherUnlock?.length) {
+          songFlags.push(...otherUnlock);
         }
 
         const folderName = folderNames[folder] ?? "---";
@@ -669,7 +663,7 @@ export default globalThis;
           artist: decodeHTML(artist || "[artist N/A]", { scope: "strict" }),
           genre: decodeHTML(genre || "[genre N/A]", { scope: "strict" }),
           saHash: songTag,
-          bpm: songBPM,
+          bpm: (songBPM === "0" ? undefined : songBPM) as string,
           folder: folderName,
           charts: chartData,
           flags: songFlags.length ? songFlags : undefined,
