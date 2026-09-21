@@ -24,19 +24,7 @@
         "color": "#980053"
       }
     ],
-    "flags": [
-      "sparkleFruitLab",
-      "worldTourism",
-      "cyberLoader",
-      "the4th",
-      "battleArena",
-      "extraChallenge",
-      "ultimateMobile",
-      "lightningModel",
-      "tempUnlock",
-      "shopUnlock",
-      "hellCharge"
-    ],
+    "flags": ["hiddenLeggendaria", "tempUnlock", "hellCharge"],
     "folders": [
       "1st style",
       "substream",
@@ -71,9 +59,10 @@
       "RESIDENT",
       "EPOLIS",
       "Pinky Crush",
-      "Sparkle Shower"
+      "Sparkle Shower",
+      "ZINRAI"
     ],
-    "lastUpdated": 1788470640000
+    "lastUpdated": 1789943160000
   },
   "defaults": {
     "style": "single",
@@ -84,7 +73,7 @@
   },
   "i18n": {
     "en": {
-      "name": "IIDX AC (Sparkle Shower)",
+      "name": "IIDX AC (ZINRAI)",
       "single": "SP",
       "double": "DP",
       "beginner": "BEGINNER",
@@ -94,16 +83,7 @@
       "leggendaria": "LEGGENDARIA",
       "maxScoreFormat": "MAX: {maxScore}",
       "hiddenLeggendaria": "LEGGENDARIA chart that needs unlock",
-      "sparkleFruitLab": "Sparkle Fruit Lab.",
-      "worldTourism": "WORLD TOURISM",
-      "cyberLoader": "CYBER LOADER",
-      "the4th": "The 4th 25th Anniversary Event",
-      "battleArena": "BATTLE ARENA unlocks",
-      "extraChallenge": "EXTRA CHALLENGE",
-      "ultimateMobile": "ULTIMATE MOBILE ARCADE CONNECT",
-      "lightningModel": "LIGHTNING MODEL exclusive",
       "tempUnlock": "Formerly unlockable (KAC, BPL, etc.)",
-      "shopUnlock": "Unlock on shop in e-amusement site (past event)",
       "hellCharge": "HELL-CHARGE",
       "$abbr": {
         "beginner": "[B]",
@@ -114,7 +94,7 @@
       }
     },
     "ja": {
-      "name": "IIDX AC (Sparkle Shower)",
+      "name": "IIDX AC (ZINRAI)",
       "single": "SP",
       "double": "DP",
       "beginner": "BEGINNER",
@@ -124,16 +104,7 @@
       "leggendaria": "LEGGENDARIA",
       "maxScoreFormat": "MAX: {maxScore}",
       "hiddenLeggendaria": "解禁が必要なLEGGENDARIA譜面",
-      "sparkleFruitLab": "Sparkle Fruit Lab.",
-      "worldTourism": "WORLD TOURISM",
-      "cyberLoader": "CYBER LOADER",
-      "the4th": "The 4th 25周年記念イベント",
-      "battleArena": "BATTLE ARENA解禁楽曲/譜面",
-      "extraChallenge": "EXTRA CHALLENGE",
-      "ultimateMobile": "ULTIMATE MOBILE アーケード連動",
-      "lightningModel": "LIGHTNING MODEL専用",
       "tempUnlock": "現在解禁できない楽曲/譜面",
-      "shopUnlock": "e-amusementサイトのショップで購入 (過去のイベント楽曲)",
       "hellCharge": "HELL-CHARGE",
       "$abbr": {
         "beginner": "[B]",
@@ -722,8 +693,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3156,
-          "flags": ["shopUnlock"]
+          "maxScore": 3156
         }
       ],
       "jacket": "iidx/PENDUAL.svg"
@@ -1288,7 +1258,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3200,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -1313,7 +1283,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3288,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/tricoro.svg"
@@ -1894,8 +1864,7 @@
           "maxScore": 2628
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "雪上断火",
@@ -2130,8 +2099,7 @@
           "maxScore": 3030
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "少年リップルズ",
@@ -2366,8 +2334,7 @@
           "maxScore": 2116
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "uәn",
@@ -2414,8 +2381,7 @@
           "maxScore": 3100
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "リメンバーリメンバー",
@@ -2556,8 +2522,7 @@
           "maxScore": 2758
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Cross Fire",
@@ -2604,8 +2569,7 @@
           "maxScore": 3462
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Ignited Night",
@@ -2653,7 +2617,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "タンポポ",
@@ -2701,7 +2665,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "5.1.1.",
@@ -8379,8 +8343,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2760,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 2760
         },
         {
           "style": "double",
@@ -8404,8 +8367,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3188,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 3188
         }
       ],
       "jacket": "iidx/8th-style.svg"
@@ -10820,7 +10782,6 @@
           "maxScore": 1600
         }
       ],
-      "flags": ["shopUnlock"],
       "jacket": "iidx/9th-style.svg"
     },
     {
@@ -11652,8 +11613,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2886,
-          "flags": ["shopUnlock"]
+          "maxScore": 2886
         },
         {
           "style": "double",
@@ -11677,8 +11637,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 3002,
-          "flags": ["shopUnlock"]
+          "maxScore": 3002
         }
       ],
       "jacket": "iidx/10th-style.svg"
@@ -12084,7 +12043,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4046,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -12109,7 +12068,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3978,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/10th-style.svg"
@@ -14089,8 +14048,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3476,
-          "flags": ["shopUnlock"]
+          "maxScore": 3476
         },
         {
           "style": "double",
@@ -14114,8 +14072,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3382,
-          "flags": ["shopUnlock"]
+          "maxScore": 3382
         }
       ],
       "jacket": "iidx/HAPPY-SKY.svg"
@@ -14151,7 +14108,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2212,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -14176,7 +14133,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2378,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/HAPPY-SKY.svg"
@@ -14405,8 +14362,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3166,
-          "flags": ["shopUnlock"]
+          "maxScore": 3166
         },
         {
           "style": "double",
@@ -14430,8 +14386,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3516,
-          "flags": ["shopUnlock"]
+          "maxScore": 3516
         }
       ],
       "jacket": "iidx/HAPPY-SKY.svg"
@@ -14695,8 +14650,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4084,
-          "flags": ["shopUnlock"]
+          "maxScore": 4084
         },
         {
           "style": "double",
@@ -14720,8 +14674,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3804,
-          "flags": ["shopUnlock"]
+          "maxScore": 3804
         }
       ],
       "jacket": "iidx/HAPPY-SKY.svg"
@@ -20015,7 +19968,7 @@
           "diffClass": "leggendaria",
           "lvl": 10,
           "maxScore": 2760,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -20040,7 +19993,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2842,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/GOLD.svg"
@@ -20652,7 +20605,8 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 2634
+          "maxScore": 2634,
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -20676,7 +20630,8 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 2624
+          "maxScore": 2624,
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/DJ-TROOPERS.svg"
@@ -20774,7 +20729,7 @@
         }
       ],
       "jacket": "iidx/DJ-TROOPERS.svg",
-      "flags": ["battleArena"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "four pieces of heaven",
@@ -23272,8 +23227,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 3272,
-          "flags": ["shopUnlock"]
+          "maxScore": 3272
         },
         {
           "style": "double",
@@ -23297,8 +23251,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3542,
-          "flags": ["shopUnlock"]
+          "maxScore": 3542
         }
       ],
       "jacket": "iidx/EMPRESS.svg"
@@ -26890,7 +26843,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4872,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -26915,7 +26868,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4790,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/SIRIUS.svg"
@@ -27494,7 +27447,7 @@
           "diffClass": "leggendaria",
           "lvl": 10,
           "maxScore": 2234,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -27519,7 +27472,7 @@
           "diffClass": "leggendaria",
           "lvl": 10,
           "maxScore": 2190,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/SIRIUS.svg"
@@ -28890,7 +28843,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2546,
-          "flags": ["hiddenLeggendaria"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -28915,7 +28868,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2180,
-          "flags": ["hiddenLeggendaria"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/Resort-Anthem.svg"
@@ -29626,7 +29579,8 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4650
+          "maxScore": 4650,
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -29650,7 +29604,8 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4808
+          "maxScore": 4808,
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/Resort-Anthem.svg"
@@ -29939,7 +29894,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3458,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -29964,7 +29919,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3634,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/Resort-Anthem.svg"
@@ -30714,7 +30669,6 @@
           "maxScore": 3930
         }
       ],
-      "flags": ["shopUnlock"],
       "jacket": "iidx/Lincle.svg"
     },
     {
@@ -30888,8 +30842,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2742,
-          "flags": ["shopUnlock"]
+          "maxScore": 2742
         },
         {
           "style": "double",
@@ -30913,8 +30866,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2852,
-          "flags": ["shopUnlock"]
+          "maxScore": 2852
         }
       ],
       "jacket": "iidx/Lincle.svg"
@@ -31377,7 +31329,7 @@
         }
       ],
       "jacket": "iidx/Lincle.svg",
-      "flags": ["battleArena"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "LAX5 feat.Ryota Yoshinari",
@@ -32292,7 +32244,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3808,
-          "flags": ["hellCharge", "shopUnlock"]
+          "flags": ["hellCharge"]
         },
         {
           "style": "double",
@@ -32317,7 +32269,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3676,
-          "flags": ["hellCharge", "shopUnlock"]
+          "flags": ["hellCharge"]
         }
       ],
       "jacket": "iidx/Lincle.svg"
@@ -33756,8 +33708,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4580,
-          "flags": ["shopUnlock"]
+          "maxScore": 4580
         },
         {
           "style": "double",
@@ -33781,8 +33732,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4534,
-          "flags": ["shopUnlock"]
+          "maxScore": 4534
         }
       ],
       "jacket": "iidx/Lincle.svg"
@@ -35146,7 +35096,8 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3556
+          "maxScore": 3556,
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -35170,7 +35121,8 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3562
+          "maxScore": 3562,
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/tricoro.svg"
@@ -39315,8 +39267,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3788,
-          "flags": ["shopUnlock"]
+          "maxScore": 3788
         },
         {
           "style": "double",
@@ -39340,8 +39291,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3868,
-          "flags": ["shopUnlock"]
+          "maxScore": 3868
         }
       ],
       "jacket": "iidx/SPADA.svg"
@@ -40390,8 +40340,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2826,
-          "flags": ["shopUnlock"]
+          "maxScore": 2826
         },
         {
           "style": "double",
@@ -40415,8 +40364,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3618,
-          "flags": ["shopUnlock"]
+          "maxScore": 3618
         }
       ],
       "jacket": "iidx/SPADA.svg"
@@ -42316,8 +42264,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4546,
-          "flags": ["shopUnlock"]
+          "maxScore": 4546
         },
         {
           "style": "double",
@@ -42341,8 +42288,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4530,
-          "flags": ["shopUnlock"]
+          "maxScore": 4530
         }
       ],
       "jacket": "iidx/PENDUAL.svg"
@@ -43401,7 +43347,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4180,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -43426,7 +43372,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3654,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/PENDUAL.svg"
@@ -47253,7 +47199,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3714,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -47278,7 +47224,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3700,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/copula.svg"
@@ -48934,7 +48880,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2672,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -48959,7 +48905,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3060,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/SINOBUZ.svg"
@@ -49329,8 +49275,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2790,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 2790
         },
         {
           "style": "double",
@@ -49354,8 +49299,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 2614,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 2614
         }
       ],
       "jacket": "iidx/SINOBUZ.svg"
@@ -49625,6 +49569,13 @@
           "flags": ["hellCharge"]
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 3714,
+          "flags": ["hellCharge", "hiddenLeggendaria"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 5,
@@ -49644,6 +49595,13 @@
           "lvl": 12,
           "maxScore": 2666,
           "flags": ["hellCharge"]
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 3504,
+          "flags": ["hellCharge", "hiddenLeggendaria"]
         }
       ],
       "jacket": "iidx/SINOBUZ.svg"
@@ -49942,6 +49900,13 @@
           "maxScore": 2006
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 11,
+          "maxScore": 2776,
+          "flags": ["hiddenLeggendaria"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 4,
@@ -49958,6 +49923,13 @@
           "diffClass": "another",
           "lvl": 10,
           "maxScore": 2146
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 11,
+          "maxScore": 2784,
+          "flags": ["hiddenLeggendaria"]
         }
       ],
       "jacket": "iidx/SINOBUZ.svg"
@@ -52803,7 +52775,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2940,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -52828,7 +52800,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2828,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/CANNON-BALLERS.svg"
@@ -53151,8 +53123,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4000,
-          "flags": ["shopUnlock"]
+          "maxScore": 4000
         },
         {
           "style": "double",
@@ -53176,8 +53147,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3914,
-          "flags": ["shopUnlock"]
+          "maxScore": 3914
         }
       ],
       "jacket": "iidx/CANNON-BALLERS.svg"
@@ -53825,8 +53795,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3780,
-          "flags": ["shopUnlock"]
+          "maxScore": 3780
         },
         {
           "style": "double",
@@ -54480,7 +54449,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2996,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -54505,7 +54474,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3016,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/CANNON-BALLERS.svg"
@@ -56601,7 +56570,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3914,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -56626,7 +56595,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3944,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/Rootage.svg"
@@ -56803,7 +56772,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3164,
-          "flags": ["hellCharge", "worldTourism"]
+          "flags": ["hellCharge", "tempUnlock"]
         },
         {
           "style": "double",
@@ -56828,7 +56797,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3200,
-          "flags": ["hellCharge", "worldTourism"]
+          "flags": ["hellCharge", "tempUnlock"]
         }
       ],
       "jacket": "iidx/Rootage.svg"
@@ -57057,8 +57026,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 3066,
-          "flags": ["shopUnlock"]
+          "maxScore": 3066
         },
         {
           "style": "double",
@@ -57082,8 +57050,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 3134,
-          "flags": ["shopUnlock"]
+          "maxScore": 3134
         }
       ],
       "jacket": "iidx/Rootage.svg"
@@ -57259,8 +57226,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 10,
-          "maxScore": 2026,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 2026
         },
         {
           "style": "double",
@@ -57284,8 +57250,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 10,
-          "maxScore": 2064,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 2064
         }
       ],
       "jacket": "iidx/Rootage.svg"
@@ -57715,7 +57680,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3530,
-          "flags": ["hellCharge", "battleArena"]
+          "flags": ["hellCharge", "tempUnlock"]
         },
         {
           "style": "double",
@@ -57740,7 +57705,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3426,
-          "flags": ["hellCharge", "battleArena"]
+          "flags": ["hellCharge", "tempUnlock"]
         }
       ],
       "jacket": "iidx/Rootage.svg"
@@ -60282,7 +60247,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3644,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -60307,7 +60272,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3624,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/Rootage.svg"
@@ -61044,6 +61009,13 @@
           "maxScore": 2490
         },
         {
+          "style": "single",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 3502,
+          "flags": ["hiddenLeggendaria"]
+        },
+        {
           "style": "double",
           "diffClass": "normal",
           "lvl": 5,
@@ -61060,6 +61032,13 @@
           "diffClass": "another",
           "lvl": 10,
           "maxScore": 2488
+        },
+        {
+          "style": "double",
+          "diffClass": "leggendaria",
+          "lvl": 12,
+          "maxScore": 3374,
+          "flags": ["hiddenLeggendaria"]
         }
       ],
       "jacket": "iidx/HEROIC-VERSE.svg"
@@ -61383,7 +61362,7 @@
           "diffClass": "leggendaria",
           "lvl": 10,
           "maxScore": 2746,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -61408,7 +61387,7 @@
           "diffClass": "leggendaria",
           "lvl": 10,
           "maxScore": 2706,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/HEROIC-VERSE.svg"
@@ -62555,7 +62534,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3530,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -62580,7 +62559,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3446,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/HEROIC-VERSE.svg"
@@ -63350,8 +63329,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4352,
-          "flags": ["shopUnlock"]
+          "maxScore": 4352
         },
         {
           "style": "double",
@@ -63375,8 +63353,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4340,
-          "flags": ["shopUnlock"]
+          "maxScore": 4340
         }
       ],
       "jacket": "iidx/HEROIC-VERSE.svg"
@@ -65966,8 +65943,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3920,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 3920
         },
         {
           "style": "double",
@@ -65991,8 +65967,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3596,
-          "flags": ["hiddenLeggendaria"]
+          "maxScore": 3596
         }
       ],
       "jacket": "iidx/BISTROVER.svg"
@@ -67151,7 +67126,7 @@
           "diffClass": "leggendaria",
           "lvl": 10,
           "maxScore": 2498,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -67176,7 +67151,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 2830,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/BISTROVER.svg"
@@ -67499,8 +67474,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 3196,
-          "flags": ["shopUnlock"]
+          "maxScore": 3196
         },
         {
           "style": "double",
@@ -67524,8 +67498,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 11,
-          "maxScore": 3274,
-          "flags": ["shopUnlock"]
+          "maxScore": 3274
         }
       ],
       "jacket": "iidx/BISTROVER.svg"
@@ -70772,7 +70745,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3032,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -70797,7 +70770,7 @@
           "diffClass": "leggendaria",
           "lvl": 11,
           "maxScore": 3338,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/CastHour.svg"
@@ -72433,7 +72406,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4188,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -72458,7 +72431,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4130,
-          "flags": ["battleArena"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/CastHour.svg"
@@ -73175,8 +73148,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4558,
-          "flags": ["shopUnlock"]
+          "maxScore": 4558
         },
         {
           "style": "double",
@@ -74313,8 +74285,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3098,
-          "flags": ["shopUnlock"]
+          "maxScore": 3098
         },
         {
           "style": "double",
@@ -74338,8 +74309,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3130,
-          "flags": ["shopUnlock"]
+          "maxScore": 3130
         }
       ],
       "jacket": "iidx/RESIDENT.svg"
@@ -75233,7 +75203,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4666,
-          "flags": ["hellCharge", "hiddenLeggendaria"]
+          "flags": ["hellCharge"]
         },
         {
           "style": "double",
@@ -75258,7 +75228,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4466,
-          "flags": ["hellCharge", "hiddenLeggendaria"]
+          "flags": ["hellCharge"]
         }
       ],
       "jacket": "iidx/RESIDENT.svg"
@@ -76628,7 +76598,8 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4196
+          "maxScore": 4196,
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -76652,7 +76623,8 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4088
+          "maxScore": 4088,
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/RESIDENT.svg"
@@ -78057,8 +78029,7 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3486,
-          "flags": ["shopUnlock"]
+          "maxScore": 3486
         },
         {
           "style": "double",
@@ -78082,8 +78053,7 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 3532,
-          "flags": ["shopUnlock"]
+          "maxScore": 3532
         }
       ],
       "jacket": "iidx/RESIDENT.svg"
@@ -79734,7 +79704,8 @@
           "style": "single",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4208
+          "maxScore": 4208,
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -79758,7 +79729,8 @@
           "style": "double",
           "diffClass": "leggendaria",
           "lvl": 12,
-          "maxScore": 4252
+          "maxScore": 4252,
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/EPOLIS.svg"
@@ -80159,71 +80131,6 @@
           "diffClass": "another",
           "lvl": 9,
           "maxScore": 2056
-        }
-      ],
-      "jacket": "iidx/EPOLIS.svg"
-    },
-    {
-      "name": "ちゅ、多様性。",
-      "artist": "ano",
-      "genre": "J-POP",
-      "saHash": "_chutayo",
-      "bpm": "153",
-      "folder": "EPOLIS",
-      "charts": [
-        {
-          "style": "single",
-          "diffClass": "beginner",
-          "lvl": 1,
-          "maxScore": 220
-        },
-        {
-          "style": "single",
-          "diffClass": "normal",
-          "lvl": 3,
-          "maxScore": 528
-        },
-        {
-          "style": "single",
-          "diffClass": "hyper",
-          "lvl": 6,
-          "maxScore": 1152
-        },
-        {
-          "style": "single",
-          "diffClass": "another",
-          "lvl": 9,
-          "maxScore": 1926
-        },
-        {
-          "style": "single",
-          "diffClass": "leggendaria",
-          "lvl": 10,
-          "maxScore": 2280
-        },
-        {
-          "style": "double",
-          "diffClass": "normal",
-          "lvl": 3,
-          "maxScore": 584
-        },
-        {
-          "style": "double",
-          "diffClass": "hyper",
-          "lvl": 6,
-          "maxScore": 1166
-        },
-        {
-          "style": "double",
-          "diffClass": "another",
-          "lvl": 9,
-          "maxScore": 1902
-        },
-        {
-          "style": "double",
-          "diffClass": "leggendaria",
-          "lvl": 10,
-          "maxScore": 2494
         }
       ],
       "jacket": "iidx/EPOLIS.svg"
@@ -81332,8 +81239,7 @@
           "maxScore": 2900
         }
       ],
-      "jacket": "iidx/EPOLIS.svg",
-      "flags": ["ultimateMobile"]
+      "jacket": "iidx/EPOLIS.svg"
     },
     {
       "name": "ZEROIN ON THE LIGHT",
@@ -81413,7 +81319,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3654,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -81438,7 +81344,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 3738,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/EPOLIS.svg"
@@ -81964,8 +81870,7 @@
           "maxScore": 2580
         }
       ],
-      "jacket": "iidx/EPOLIS.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/EPOLIS.svg"
     },
     {
       "name": "Xb10r",
@@ -82012,8 +81917,7 @@
           "maxScore": 3602
         }
       ],
-      "jacket": "iidx/EPOLIS.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/EPOLIS.svg"
     },
     {
       "name": "Ambivalent Vermilia",
@@ -82060,8 +81964,7 @@
           "maxScore": 4210
         }
       ],
-      "jacket": "iidx/EPOLIS.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/EPOLIS.svg"
     },
     {
       "name": "COUNTING SHEEP ft. Kanae Asaba",
@@ -85870,7 +85773,7 @@
         }
       ],
       "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["lightningModel", "tempUnlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Lightspeed",
@@ -85918,7 +85821,7 @@
         }
       ],
       "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["lightningModel", "tempUnlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "COSMIC V3LOCITY",
@@ -85966,7 +85869,7 @@
         }
       ],
       "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["lightningModel", "tempUnlock"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "無双",
@@ -86013,8 +85916,7 @@
           "maxScore": 3288
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "EX-MASSIVE FIGHTER",
@@ -86061,8 +85963,7 @@
           "maxScore": 3406
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Arcanos",
@@ -86115,8 +86016,7 @@
           "flags": ["hellCharge"]
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Bang-Boo Bumble",
@@ -86163,8 +86063,7 @@
           "maxScore": 2960
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "DIVINE JUDGEMENT",
@@ -86211,8 +86110,7 @@
           "maxScore": 2852
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "爆ぜりゃんせ",
@@ -86259,8 +86157,7 @@
           "maxScore": 3170
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "消極的セツナイズム",
@@ -86307,8 +86204,7 @@
           "maxScore": 2420
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Roar of Chronos",
@@ -86355,8 +86251,7 @@
           "maxScore": 3920
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "我ら完全無敵のアイドル!!",
@@ -86509,8 +86404,7 @@
           "maxScore": 2652
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Slumber☆Party",
@@ -86557,8 +86451,7 @@
           "maxScore": 2436
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Show Me All Your Love",
@@ -86605,8 +86498,7 @@
           "maxScore": 2852
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Mid-Corner (Magic Maker)",
@@ -86653,8 +86545,7 @@
           "maxScore": 3080
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "天使のカンタータ -Cantata of Angels-",
@@ -86701,8 +86592,7 @@
           "maxScore": 4444
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "オブソミート",
@@ -86902,8 +86792,7 @@
           "maxScore": 2620
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "FlyAway",
@@ -86950,8 +86839,7 @@
           "maxScore": 3366
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "hora de verdad",
@@ -86998,8 +86886,7 @@
           "maxScore": 3148
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "ハルイロメロディー",
@@ -87046,8 +86933,7 @@
           "maxScore": 2138
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "きみのせかい",
@@ -87094,8 +86980,7 @@
           "maxScore": 3200
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Without Heaven",
@@ -87142,8 +87027,7 @@
           "maxScore": 3588
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "God Mind",
@@ -87196,8 +87080,7 @@
           "flags": ["hellCharge"]
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "SμG@R RU$#",
@@ -87244,8 +87127,7 @@
           "maxScore": 4278
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "弾幕信仰",
@@ -87292,8 +87174,7 @@
           "maxScore": 2548
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "SUPER HEROINE!!",
@@ -87340,8 +87221,7 @@
           "maxScore": 2398
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "きゅうくらりん",
@@ -87494,8 +87374,7 @@
           "maxScore": 3590
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Mighty Cutie",
@@ -87542,8 +87421,7 @@
           "maxScore": 2802
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "ＰＡＳＴＥＬＩＳＭ",
@@ -87590,8 +87468,7 @@
           "maxScore": 2190
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Stargazing Trip ～星 探す旅～ ft. 小林マナ",
@@ -87638,8 +87515,7 @@
           "maxScore": 2562
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "スキッテイエェエエェ!!!!",
@@ -87686,8 +87562,7 @@
           "maxScore": 4272
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Aqvion",
@@ -87734,8 +87609,7 @@
           "maxScore": 3548
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Skratch Education Lv-1",
@@ -87782,8 +87656,7 @@
           "maxScore": 3132
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "エクスプロウル",
@@ -87897,7 +87770,7 @@
           "style": "single",
           "diffClass": "hyper",
           "lvl": 8,
-          "maxScore": 1680
+          "maxScore": 1660
         },
         {
           "style": "single",
@@ -88089,8 +87962,7 @@
           "maxScore": 1970
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Good Looking",
@@ -88137,8 +88009,7 @@
           "maxScore": 2050
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "everlastingeuphoria:",
@@ -88185,8 +88056,7 @@
           "maxScore": 2440
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "アラビアン ハイパー ナイト",
@@ -88233,8 +88103,7 @@
           "maxScore": 3380
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Uaigh Gealaí",
@@ -88281,8 +88150,7 @@
           "maxScore": 3988
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Butterfly Twist",
@@ -88569,8 +88437,7 @@
           "maxScore": 2272
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "TECHNO RUMBLE",
@@ -88617,8 +88484,7 @@
           "maxScore": 3106
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Flämingo",
@@ -88665,8 +88531,7 @@
           "maxScore": 3620
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "Pinky Happy Crazy",
@@ -88713,8 +88578,7 @@
           "maxScore": 3818
         }
       ],
-      "jacket": "iidx/Pinky-Crush.svg",
-      "flags": ["shopUnlock"]
+      "jacket": "iidx/Pinky-Crush.svg"
     },
     {
       "name": "A Certified Rave Moment",
@@ -90767,7 +90631,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["worldTourism"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "chaplet -IIDX re:build-",
@@ -90815,7 +90679,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["worldTourism"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "BattleRoyal",
@@ -90863,7 +90727,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Begin",
@@ -90911,7 +90775,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "kors k's Let's make an Image Song!",
@@ -90959,7 +90823,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "好吃来世deエレクトリック",
@@ -91007,7 +90871,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "⁽⁽ଘ( ˙꒳˙ )ଓ⁾⁾ beyond reason",
@@ -91055,7 +90919,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Lisa-RICCIA",
@@ -91094,7 +90958,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4788,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         },
         {
           "style": "double",
@@ -91119,7 +90983,7 @@
           "diffClass": "leggendaria",
           "lvl": 12,
           "maxScore": 4786,
-          "flags": ["worldTourism"]
+          "flags": ["tempUnlock"]
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg"
@@ -91176,7 +91040,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["worldTourism"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Astra Blaze",
@@ -91560,7 +91424,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "REcorrection",
@@ -91608,7 +91472,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Hallucination",
@@ -91656,7 +91520,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "voice of echo.",
@@ -91704,7 +91568,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "クレッシェンド",
@@ -91752,7 +91616,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "FiZZλ_PØT!OИ",
@@ -91800,7 +91664,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Last Card",
@@ -92235,7 +92099,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Nemophila",
@@ -92283,7 +92147,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "UNDO THE NIGHT",
@@ -92331,7 +92195,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "PERFECT GREAT!!",
@@ -92379,7 +92243,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Amor∞Fati",
@@ -92427,7 +92291,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "HEROES",
@@ -92475,7 +92339,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["worldTourism"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "ベンガル vs. アムール Battle",
@@ -92523,7 +92387,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["cyberLoader"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "ラブコメトキドキシリアス",
@@ -92571,7 +92435,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["cyberLoader"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "オーバーライド",
@@ -93013,7 +92877,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Dusk Endir",
@@ -93061,7 +92925,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Funky Quirky",
@@ -93109,7 +92973,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "X-Plan",
@@ -93157,7 +93021,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "OMEGA",
@@ -93205,7 +93069,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "メテオラ -meteor-",
@@ -93582,7 +93446,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["the4th"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Gimme a Big Beat (青龍 Remix)",
@@ -93630,7 +93494,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["the4th"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Second Heaven (Mamonis Remix)",
@@ -93678,7 +93542,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["the4th"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "断罪のミメシス",
@@ -94014,7 +93878,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "D.K.N. ON",
@@ -94062,7 +93926,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Limelight",
@@ -94110,7 +93974,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Dolphin Kick",
@@ -94158,7 +94022,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Ex-Otogibanashi",
@@ -94166,7 +94030,7 @@
       "genre": "アニメ",
       "saHash": "ex_otogi",
       "bpm": "190",
-      "folder": "Sparkle Shower",
+      "folder": "ZINRAI",
       "charts": [
         {
           "style": "single",
@@ -94211,7 +94075,7 @@
           "maxScore": 1600
         }
       ],
-      "jacket": "iidx/Sparkle-Shower.svg"
+      "jacket": "iidx/ZINRAI.svg"
     },
     {
       "name": "メルト CPK! Remix (初音ミク ver.)",
@@ -94219,7 +94083,7 @@
       "genre": "アニメ／ボーカロイド／J-POP",
       "saHash": "_meltcpk",
       "bpm": "185",
-      "folder": "Sparkle Shower",
+      "folder": "ZINRAI",
       "charts": [
         {
           "style": "single",
@@ -94264,7 +94128,7 @@
           "maxScore": 2878
         }
       ],
-      "jacket": "iidx/Sparkle-Shower.svg"
+      "jacket": "iidx/ZINRAI.svg"
     },
     {
       "name": "Digitized Ocean",
@@ -94312,7 +94176,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["extraChallenge"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "super double play sessions",
@@ -94360,7 +94224,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["extraChallenge"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "9-1",
@@ -94368,7 +94232,7 @@
       "genre": "HARD DANCE",
       "saHash": "9_1",
       "bpm": "160",
-      "folder": "Sparkle Shower",
+      "folder": "ZINRAI",
       "charts": [
         {
           "style": "single",
@@ -94407,7 +94271,7 @@
           "maxScore": 3224
         }
       ],
-      "jacket": "iidx/Sparkle-Shower.svg"
+      "jacket": "iidx/ZINRAI.svg"
     },
     {
       "name": "霹靂",
@@ -94415,13 +94279,14 @@
       "genre": "EUPHORIC HARDSTYLE",
       "saHash": "_hekirek",
       "bpm": "160",
-      "folder": "Sparkle Shower",
+      "folder": "ZINRAI",
       "charts": [
         {
           "style": "single",
           "diffClass": "normal",
           "lvl": 4,
-          "maxScore": 732
+          "maxScore": 732,
+          "flags": ["hellCharge"]
         },
         {
           "style": "single",
@@ -94441,7 +94306,8 @@
           "style": "double",
           "diffClass": "normal",
           "lvl": 4,
-          "maxScore": 748
+          "maxScore": 748,
+          "flags": ["hellCharge"]
         },
         {
           "style": "double",
@@ -94458,7 +94324,7 @@
           "flags": ["hellCharge"]
         }
       ],
-      "jacket": "iidx/Sparkle-Shower.svg"
+      "jacket": "iidx/ZINRAI.svg"
     },
     {
       "name": "じぇりー じゅえる ジャングル",
@@ -94506,7 +94372,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "Iridescent Memories",
@@ -94554,7 +94420,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "サタデーナイト☆ギャロップ",
@@ -94602,7 +94468,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["sparkleFruitLab"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "ACID VISION",
@@ -94650,7 +94516,7 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg",
-      "flags": ["battleArena"]
+      "flags": ["tempUnlock"]
     },
     {
       "name": "夢色ワンダー",
@@ -94663,7 +94529,8 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 2
+          "lvl": 2,
+          "maxScore": 550
         },
         {
           "style": "single",
@@ -94703,6 +94570,1545 @@
         }
       ],
       "jacket": "iidx/Sparkle-Shower.svg"
+    },
+    {
+      "name": "Τέλος",
+      "artist": "BEMANI Sound Team \"HuΣeR\" feat.ゆきまめ",
+      "genre": "幻想音樂",
+      "saHash": "_telos",
+      "bpm": "202",
+      "folder": "Sparkle Shower",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1068
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1794
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2692
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1068
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1774
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2790
+        }
+      ],
+      "flags": ["tempUnlock"],
+      "jacket": "iidx/Sparkle-Shower.svg"
+    },
+    {
+      "name": "BENiZAKURA",
+      "artist": "BlackY",
+      "genre": "ENERGETIC JAPANESQUE",
+      "saHash": "benizakr",
+      "bpm": "172",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1050
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1856
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2810
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1054
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1852
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2768
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Citroforte",
+      "artist": "REMO-CON",
+      "genre": "HYPERTRANCE",
+      "saHash": "citrofrt",
+      "bpm": "175",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1076
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2044
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1092
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2092
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "DEADRABBIT!!",
+      "artist": "Hylen feat.DJ14 (SCRATCHING)",
+      "genre": "DJENTLE ZAAGBREAKSTEP",
+      "saHash": "deadrabt",
+      "bpm": "132",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1070
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2084
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1116
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2192
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Deathstalker",
+      "artist": "Zekk",
+      "genre": "BREAKCORE",
+      "saHash": "dstalker",
+      "bpm": "220",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1272
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2066
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1282
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2082
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Dying 4 U",
+      "artist": "EmoCosine",
+      "genre": "JERSEY FUTURE CORE",
+      "saHash": "dying4u",
+      "bpm": "179",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1042
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1808
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2702
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1042
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1790
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2640
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "GENERATED GRID",
+      "artist": "Sota Fujimori",
+      "genre": "TECH CORE",
+      "saHash": "genegrid",
+      "bpm": "175",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1126
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1978
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 3046
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1124
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1978
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2908
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Mellow Diary",
+      "artist": "YUC'e",
+      "genre": "IVORY BASS",
+      "saHash": "mlwdiary",
+      "bpm": "160",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 750
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1404
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2124
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 750
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1426
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2048
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Memorylust",
+      "artist": "nora2r",
+      "genre": "HARDCORE",
+      "saHash": "memolust",
+      "bpm": "185",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1138
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1802
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2906
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1070
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1822
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2762
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "NOMAD (feat.らっぷぴと)",
+      "artist": "魂音泉",
+      "genre": "HIPHOP",
+      "saHash": "nomad",
+      "bpm": "115",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 824
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1698
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 1152
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 928
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1774
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2304
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "OTOROSHI",
+      "artist": "影虎。",
+      "genre": "ORIENTAL HARDPSY",
+      "saHash": "otoroshi",
+      "bpm": "160",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 998
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1876
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1046
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1892
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "PISTOL SWORD",
+      "artist": "KARUT",
+      "genre": "HYBRID BREAKS",
+      "saHash": "pistolsw",
+      "bpm": "148",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1090
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1704
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2850
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1082
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1692
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2672
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Rise Beyond",
+      "artist": "Taishi",
+      "genre": "TRANCE",
+      "saHash": "risebynd",
+      "bpm": "145",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 912
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1586
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2222
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 912
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1658
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2324
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Samurai Sword",
+      "artist": "Dubscribe",
+      "genre": "DUBSTEP",
+      "saHash": "samsword",
+      "bpm": "150",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 818
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1610
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2046
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 818
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1556
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2038
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Shogun's Last Dawn feat. Kanae Asaba",
+      "artist": "Xceon",
+      "genre": "HYPER ENKA POP",
+      "saHash": "shogunld",
+      "bpm": "156",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1066
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1910
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2840
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1046
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1866
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2824
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Singularity Girl",
+      "artist": "HuΣeR",
+      "genre": "STYLISH FUTURE",
+      "saHash": "snglgirl",
+      "bpm": "174",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1032
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1710
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2644
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1038
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1736
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2802
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "Spark Rush",
+      "artist": "Nhato",
+      "genre": "TECH TRANCE",
+      "saHash": "sparkrsh",
+      "bpm": "155",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1004
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1826
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2902
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1002
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1814
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2528
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "TEKNO KEISER",
+      "artist": "STEVIE(Trymatic)/Nana Takahashi Prod. by L.E.D.",
+      "genre": "DEATH TEKNO",
+      "saHash": "tenkoksr",
+      "bpm": "168",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1214
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2016
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1336
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2388
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "ΛИ0MΛLY",
+      "artist": "Yvya",
+      "genre": "PROGRESSIVE METAL",
+      "saHash": "_anomaly",
+      "bpm": "150",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1316
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2290
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1314
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2386
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "悪ジ狂キ",
+      "artist": "RoughSkreamZ feat. Fra",
+      "genre": "DJENT/UK INDUSTRIAL/RAP",
+      "saHash": "_akujikk",
+      "bpm": "113",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1038
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1838
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2692
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1026
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1774
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2724
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "泡沫と月",
+      "artist": "xi feat. Risa Yuzuki",
+      "genre": "JAPANESE PIANO ROCK",
+      "saHash": "_utatuki",
+      "bpm": "174",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1006
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1662
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2598
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1032
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1644
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2450
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "映夢雪花抄",
+      "artist": "めと (Metomate)",
+      "genre": "EPHEMERAL ROCK",
+      "saHash": "_eimuyuk",
+      "bpm": "164",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 816
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1562
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2360
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 816
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1516
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2202
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "月下散刃",
+      "artist": "U1 overground",
+      "genre": "ORBITALIC MOON REQUIEM",
+      "saHash": "_gekkasj",
+      "bpm": "160",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 7,
+          "maxScore": 1254
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 1846
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 7,
+          "maxScore": 1242
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 1868
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "斎戒",
+      "artist": "satella",
+      "genre": "ORIENTAL",
+      "saHash": "_saikai",
+      "bpm": "172",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1182
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 2028
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1194
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 10,
+          "maxScore": 1974
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "ダダダダダル",
+      "artist": "雨良 Amala feat.初音ミク、重音テト",
+      "genre": "エレクトロ",
+      "saHash": "_dddddru",
+      "bpm": "124",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 236
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 3,
+          "maxScore": 488
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 6,
+          "maxScore": 1140
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 9,
+          "maxScore": 1816
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 3,
+          "maxScore": 494
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 6,
+          "maxScore": 1088
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 9,
+          "maxScore": 1758
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "九十九ノ恋結ビ",
+      "artist": "irucaice feat. あやぽんず＊(森羅万象)",
+      "genre": "和風歌謡電子恋歌",
+      "saHash": "_tsukumo",
+      "bpm": "163",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1038
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1980
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2644
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1034
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1996
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2642
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "でぃすこみゅーたんと！",
+      "artist": "ナユタン星人",
+      "genre": "ボカロ",
+      "saHash": "_dmutant",
+      "bpm": "176",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 258
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 784
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1560
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2284
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 820
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1570
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2280
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "デラむぅのでらっくす☆かるた ～NOTES・CHORD・PEAK編～",
+      "artist": "デラむぅとのらつーあーる",
+      "genre": "ぽっぷむぅ～じっく",
+      "saHash": "_derakrt",
+      "bpm": "140",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 912
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1726
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2260
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 970
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1800
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2384
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "倍倍FIGHT!",
+      "artist": "Remixed by L.E.D.-G feat.佐伯伊織",
+      "genre": "IIDX EDITION",
+      "saHash": "_bbfight",
+      "bpm": "176",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 200
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 622
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 7,
+          "maxScore": 1248
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2168
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 744
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 7,
+          "maxScore": 1490
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2192
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "フランケンシュタインの怪物",
+      "artist": "HIMEHINA",
+      "genre": "J-POP",
+      "saHash": "_franken",
+      "bpm": "0",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 226
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 714
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 7,
+          "maxScore": 1128
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 9,
+          "maxScore": 1766
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 836
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1372
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 1990
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "雷霆の如し",
+      "artist": "dj TAKA",
+      "genre": "TECH SPEED",
+      "saHash": "_raitei",
+      "bpm": "162",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1066
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1806
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 3094
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1128
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1826
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2976
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "ラブパラ",
+      "artist": "DECO*27",
+      "genre": "J-POP・VOCALOID",
+      "saHash": "_lovpara",
+      "bpm": "158",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 304
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 878
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1550
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2374
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 4,
+          "maxScore": 874
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 8,
+          "maxScore": 1554
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2424
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "夜叉ノ魂",
+      "artist": "劇団レコード feat.T4K",
+      "genre": "BATTLE SWORD",
+      "saHash": "_yashano",
+      "bpm": "170",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1110
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1932
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2712
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 6,
+          "maxScore": 1082
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 9,
+          "maxScore": 1994
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 11,
+          "maxScore": 2696
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
+    },
+    {
+      "name": "ギミギミエンターテイメント",
+      "artist": "hololive IDOL PROJECT",
+      "genre": "J-POP",
+      "saHash": "_gimentr",
+      "bpm": "138～200",
+      "folder": "ZINRAI",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 526
+        },
+        {
+          "style": "single",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1028
+        },
+        {
+          "style": "single",
+          "diffClass": "hyper",
+          "lvl": 7,
+          "maxScore": 1804
+        },
+        {
+          "style": "single",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 3106
+        },
+        {
+          "style": "double",
+          "diffClass": "normal",
+          "lvl": 5,
+          "maxScore": 1014
+        },
+        {
+          "style": "double",
+          "diffClass": "hyper",
+          "lvl": 7,
+          "maxScore": 1788
+        },
+        {
+          "style": "double",
+          "diffClass": "another",
+          "lvl": 10,
+          "maxScore": 2914
+        }
+      ],
+      "jacket": "iidx/ZINRAI.svg"
     }
   ]
 }
