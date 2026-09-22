@@ -1,3 +1,6 @@
+// only the eligible charts view draws a chart, so its styles ride along in
+// that lazy chunk instead of the main stylesheet
+import "@mantine/charts/styles.css";
 import { BarChart, type BarChartSeries, ChartTooltip } from "@mantine/charts";
 import { useMemo } from "react";
 import { EligibleChart } from "../models/Drawing";
