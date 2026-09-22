@@ -1,4 +1,4 @@
-import { Callout, Checkbox, FormGroup } from "@blueprintjs/core";
+import { Alert, Checkbox, Input } from "@mantine/core";
 import { useIntl } from "../hooks/useIntl";
 import { drawingSelectors, selectChartUsage } from "../state/drawings.slice";
 import { useEventSettings, useUpdateEventSettings } from "../state/hooks";
@@ -44,6 +44,7 @@ export function EventSettings() {
       </p>
       <Checkbox
         id="preventChartReuse"
+        my={4}
         checked={settings.preventChartReuse}
         onChange={(e) =>
           updateSettings({ preventChartReuse: !!e.currentTarget.checked })
@@ -51,12 +52,13 @@ export function EventSettings() {
         label={t("controls.preventChartReuse")}
       />
       {settings.preventChartReuse && (
-        <Callout compact intent="primary" icon={null}>
+        <Alert color="blue" p="xs" className={styles.usedCount}>
           {t("controls.chartsUsedSoFar", { count: usedChartCount })}
-        </Callout>
+        </Alert>
       )}
       <Checkbox
         id="showMaxScore"
+        my={4}
         checked={settings.showMaxScore}
         onChange={(e) =>
           updateSettings({ showMaxScore: !!e.currentTarget.checked })
@@ -65,6 +67,7 @@ export function EventSettings() {
       />
       <Checkbox
         id="showPlayerAndRoundLabels"
+        my={4}
         checked={settings.showPlayerAndRoundLabels}
         onChange={(e) =>
           updateSettings({
@@ -73,17 +76,18 @@ export function EventSettings() {
         }
         label={t("controls.playerLabels")}
       />
-      <FormGroup
+      <Input.Wrapper
+        mt="md"
         label={t("controls.gauntletPayout")}
-        helperText={
+        description={
           <>
-            <div>{t("controls.gauntletPayoutHint")}</div>
+            {t("controls.gauntletPayoutHint")}
             {/* a tourney maker round brings its own payout, so saying so here
                 saves an organizer wondering why theirs didn't take */}
             {piuTourneyEnabled && (
-              <div className={styles.settingNote}>
+              <span className={styles.settingNote}>
                 {t("controls.gauntletPayoutPiuNote")}
-              </div>
+              </span>
             )}
           </>
         }
@@ -95,7 +99,7 @@ export function EventSettings() {
           onCommit={(gauntletPayout) => updateSettings({ gauntletPayout })}
           playerCount={largestHeat > 2 ? largestHeat : undefined}
         />
-      </FormGroup>
+      </Input.Wrapper>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React, { Suspense, lazy, memo, useDeferredValue } from "react";
 import styles from "./drawing-list.css";
-import { Callout, NonIdealState } from "@blueprintjs/core";
-import { WarningSign } from "@blueprintjs/icons";
+import { Alert } from "@mantine/core";
+import { IconAlertTriangle } from "@tabler/icons-react";
 import logo from "./assets/ddr-tools-256.png";
 import { useAppState } from "./state/store";
 import { drawingsSlice } from "./state/drawings.slice";
 import { DelayedSpinner } from "./common-components/delayed-spinner";
+import { EmptyState } from "./common-components/empty-state";
 import { useIntl } from "./hooks/useIntl";
 import { FormattedMessage } from "react-intl";
 
@@ -32,14 +33,14 @@ export function DrawingList(props: { introString?: React.ReactNode }) {
   if (!hasDrawings) {
     return (
       <div className={styles.empty}>
-        <NonIdealState
+        <EmptyState
           icon={<img src={logo} height={128} width={128} alt="" />}
           title="DDR Tools"
           description={props.introString || t("hero.description")}
           action={
-            <Callout intent="warning" icon={<WarningSign />}>
+            <Alert color="yellow" icon={<IconAlertTriangle />}>
               <FormattedMessage id="hero.callout" />
-            </Callout>
+            </Alert>
           }
         />
       </div>

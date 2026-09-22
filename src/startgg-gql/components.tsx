@@ -1,11 +1,4 @@
-import {
-  Button,
-  Callout,
-  Classes,
-  InputGroup,
-  Label,
-  Text,
-} from "@blueprintjs/core";
+import { Alert, Button, List, Text, TextInput } from "@mantine/core";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import React, { ReactNode, useRef, useState, useCallback } from "react";
 import { DelayedSpinner } from "../common-components/delayed-spinner";
@@ -64,39 +57,54 @@ export function StartggCredsManager() {
   );
   return (
     <form onSubmit={saveKey}>
-      <Text tagName="p">
+      <Text component="p">
         Start.gg credentials are saved locally on this device and never synced
         with other devices
       </Text>
-      <Label>
-        start.gg api key (
-        <a target="_blank" href="https://start.gg/admin/profile/developer">
-          create a personal token here
-        </a>
-        ){" "}
-        <InputGroup
-          defaultValue={apiKey || undefined}
-          inputRef={apikeyRef}
-          rightElement={<Button type="submit">Save</Button>}
-        />
-      </Label>
-      <Label>
-        event url slug (in the form of:{" "}
-        <pre style={{ display: "inline" }}>
-          tournament/SOMETHING/event/SOMETHING
-        </pre>
-        ) — pasting the whole event page address works too
-        <InputGroup
-          disabled={!apiKey}
-          defaultValue={eventSlug || undefined}
-          inputRef={slugRef}
-          intent={slugError ? "danger" : "none"}
-          placeholder="https://start.gg/tournament/SOMETHING/event/SOMETHING"
-          onChange={() => setSlugError(null)}
-          rightElement={<Button type="submit">Save</Button>}
-        />
-      </Label>
-      {slugError && <Callout intent="danger">{slugError}</Callout>}
+      <TextInput
+        label={
+          <>
+            start.gg api key (
+            <a target="_blank" href="https://start.gg/admin/profile/developer">
+              create a personal token here
+            </a>
+            )
+          </>
+        }
+        defaultValue={apiKey || undefined}
+        ref={apikeyRef}
+        mb="sm"
+        rightSectionWidth={70}
+        rightSection={
+          <Button type="submit" size="compact-sm" variant="light">
+            Save
+          </Button>
+        }
+      />
+      <TextInput
+        label={
+          <>
+            event url slug (in the form of:{" "}
+            <pre style={{ display: "inline" }}>
+              tournament/SOMETHING/event/SOMETHING
+            </pre>
+            ) — pasting the whole event page address works too
+          </>
+        }
+        disabled={!apiKey}
+        defaultValue={eventSlug || undefined}
+        ref={slugRef}
+        mb="sm"
+        error={slugError}
+        placeholder="https://start.gg/tournament/SOMETHING/event/SOMETHING"
+        onChange={() => setSlugError(null)}
+        rightSectionWidth={70}
+        rightSection={
+          <Button type="submit" size="compact-sm" variant="light">
+            Save
+          </Button>
+        }
+      />
       {!!apiKey && (
         <EventPicker
           onSelected={(slug) => {
@@ -130,9 +138,9 @@ function EventPicker(props: { onSelected(slug: string): void }) {
     // an expired or mistyped token lands here, and rendering nothing for it
     // left the picker simply absent with no hint as to why
     return (
-      <Callout intent="danger">
+      <Alert color="red">
         Couldn't load your tournaments: {result.error.message}
-      </Callout>
+      </Alert>
     );
   }
   if (result.fetching && !tournaments) {
@@ -144,24 +152,24 @@ function EventPicker(props: { onSelected(slug: string): void }) {
   const total = pageInfo?.total ?? tournaments.length;
   return (
     <>
-      <p>
+      <Text component="p">
         Try the easy way and pick from your tournaments:
         {total > tournaments.length && (
           <>
             {" "}
-            <span className={Classes.TEXT_MUTED}>
+            <Text span c="dimmed" inherit>
               newest {tournaments.length} of {total} — paste the slug above for
               an older one
-            </span>
+            </Text>
           </>
         )}
-      </p>
-      <ul className={Classes.LIST}>
+      </Text>
+      <List>
         {tournaments.map((t) => {
           if (!t) return null;
           const events = t.events;
           return (
-            <li key={t.id!}>
+            <List.Item key={t.id!}>
               {t.name}
               {events?.length ? (
                 <ul>
@@ -179,10 +187,10 @@ function EventPicker(props: { onSelected(slug: string): void }) {
               ) : (
                 " (no events)"
               )}
-            </li>
+            </List.Item>
           );
         })}
-      </ul>
+      </List>
     </>
   );
 }

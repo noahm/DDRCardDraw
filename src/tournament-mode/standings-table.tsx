@@ -1,4 +1,4 @@
-import { HTMLTable, Tag } from "@blueprintjs/core";
+import { Badge, Table } from "@mantine/core";
 import { useDrawing } from "../drawing-context";
 import { type GauntletScoredMeta } from "../models/Drawing";
 import {
@@ -39,7 +39,7 @@ export function StandingsTable({ meta }: { meta: GauntletScoredMeta }) {
 
   return (
     <div className={styles.standings}>
-      <HTMLTable compact striped>
+      <Table striped verticalSpacing={4}>
         <thead>
           <tr>
             <th>#</th>
@@ -66,12 +66,12 @@ export function StandingsTable({ meta }: { meta: GauntletScoredMeta }) {
                         <span className={styles.score}>
                           {result.score.toLocaleString()}
                         </span>
-                        <Tag
-                          minimal
-                          intent={result.points ? "success" : "none"}
+                        <Badge
+                          variant="light"
+                          color={result.points ? "green" : "gray"}
                         >
                           {result.points}
-                        </Tag>
+                        </Badge>
                       </>
                     ) : (
                       <span className={styles.unplayed}>—</span>
@@ -85,7 +85,7 @@ export function StandingsTable({ meta }: { meta: GauntletScoredMeta }) {
             </tr>
           ))}
         </tbody>
-      </HTMLTable>
+      </Table>
       <p className={styles.payout}>
         paying {pointsPerPlace.join(", ")} by place
       </p>

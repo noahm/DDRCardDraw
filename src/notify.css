@@ -1,0 +1,50 @@
+/*
+ * Mantine tints only the icon (or the little left-hand line) with the
+ * notification's color. The toasts this app replaced filled the whole surface
+ * with the intent color, which reads much faster from across a room during an
+ * event, so these classes restore that.
+ *
+ * `--notification-color` is set by Mantine from the `color` prop, so every
+ * intent gets its fill from one rule. Class names are doubled to out-specify
+ * Mantine's own `.mantine-Notification-*` rules regardless of stylesheet order.
+ */
+
+.filledRoot.filledRoot {
+  background-color: var(--notification-color);
+}
+
+/* the accent line is only drawn when there is no icon; against a filled
+   background it has to be light rather than the (now identical) accent color */
+.filledRoot.filledRoot::before {
+  background-color: var(--mantine-color-white);
+}
+
+/* the icon normally sits in a colored bubble. On a filled toast that bubble is
+   the same color as the surface, so drop it and just show the glyph */
+.filledIcon.filledIcon {
+  background-color: transparent;
+  color: var(--mantine-color-white);
+  width: auto;
+  height: auto;
+  margin-inline-end: var(--mantine-spacing-sm);
+}
+
+.filledTitle.filledTitle,
+.filledDescription.filledDescription {
+  color: var(--mantine-color-white);
+}
+
+.filledCloseButton.filledCloseButton {
+  color: var(--mantine-color-white);
+}
+
+.filledCloseButton.filledCloseButton:hover,
+.filledCloseButton.filledCloseButton:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* the loader is drawn in the notification color, which is invisible once that
+   color fills the surface */
+.filledLoader.filledLoader {
+  --loader-color: var(--mantine-color-white);
+}

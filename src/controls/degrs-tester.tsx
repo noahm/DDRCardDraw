@@ -1,11 +1,4 @@
-import {
-  Button,
-  Callout,
-  Dialog,
-  DialogBody,
-  FormGroup,
-  ProgressBar,
-} from "@blueprintjs/core";
+import { Alert, Button, Input, Modal, Progress } from "@mantine/core";
 import { draw } from "../card-draw";
 import { useAtom } from "jotai";
 import { configSlice } from "../state/config.slice";
@@ -19,7 +12,11 @@ import {
 } from "./degrs-state";
 import { SongCard, SongCardProps } from "../song-card";
 import { useState } from "react";
-import { Rain, Repeat, WarningSign } from "@blueprintjs/icons";
+import {
+  IconCloudRain,
+  IconRepeat,
+  IconAlertTriangle,
+} from "@tabler/icons-react";
 import { EligibleChart, PlayerPickPlaceholder } from "../models/Drawing";
 import { useAppStore, type StoreType } from "../state/store";
 import { GameData } from "../models/SongData";
@@ -110,8 +107,14 @@ export function DegrsTestButton(props: { configId: string | null }) {
         <Button
           onClick={startTest}
           disabled={!props.configId}
-          intent="danger"
-          icon={hasResults ? <Repeat /> : <WarningSign />}
+          color="red"
+          leftSection={
+            hasResults ? (
+              <IconRepeat size={16} />
+            ) : (
+              <IconAlertTriangle size={16} />
+            )
+          }
         >
           {hasResults ? "Recompute" : "Compute"} DEGRS Forecast
         </Button>
@@ -119,13 +122,13 @@ export function DegrsTestButton(props: { configId: string | null }) {
       {isTesting && (
         <p>
           Calculating DEGRS ratio...{" "}
-          <ProgressBar value={progress} intent="danger" />
+          <Progress value={progress * 100} color="red" />
         </p>
       )}
       {hasResults && (
-        <Callout icon={<Rain />}>
+        <Alert icon={<IconCloudRain />} mt="sm">
           Today's risk of DEGRS is {(results * 100).toFixed(1)}%
-        </Callout>
+        </Alert>
       )}
     </>
   );
@@ -136,19 +139,24 @@ export function TesterCard(props: SongCardProps) {
   const [configId, setConfigId] = useState<string | null>(null);
   return (
     <>
-      <Dialog
-        isOpen={isOpen}
+      <Modal
+        opened={isOpen}
         onClose={() => setIsOpen(false)}
-        title="DEGRS Emergency Response System"
-        icon={<WarningSign />}
+        title={
+          <>
+            <IconAlertTriangle
+              size={18}
+              style={{ verticalAlign: "text-bottom" }}
+            />{" "}
+            DEGRS Emergency Response System
+          </>
+        }
       >
-        <DialogBody>
-          <FormGroup>
-            <ConfigSelect selectedId={configId} onChange={setConfigId} />
-          </FormGroup>
-          <DegrsTestButton configId={configId} />
-        </DialogBody>
-      </Dialog>
+        <Input.Wrapper mb="sm">
+          <ConfigSelect selectedId={configId} onChange={setConfigId} />
+        </Input.Wrapper>
+        <DegrsTestButton configId={configId} />
+      </Modal>
       <SongCard {...props} onClick={() => setIsOpen(true)} />
     </>
   );

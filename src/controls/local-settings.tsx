@@ -1,5 +1,5 @@
-import { Checkbox } from "@blueprintjs/core";
-import { Desktop } from "@blueprintjs/icons";
+import { Checkbox } from "@mantine/core";
+import { IconDeviceDesktop } from "@tabler/icons-react";
 import { useIntl } from "../hooks/useIntl";
 import {
   useLocalSettings,
@@ -25,7 +25,7 @@ export function LocalSettings() {
   return (
     <div className={styles.localSettings}>
       <h2>
-        <Desktop className={styles.localSettingsIcon} />
+        <IconDeviceDesktop size={20} className={styles.localSettingsIcon} />
         {t("controls.localSettings")}
       </h2>
       <p className={styles.eventSettingsHint}>
@@ -33,6 +33,7 @@ export function LocalSettings() {
       </p>
       <Checkbox
         id="hideVetos"
+        my={4}
         checked={settings.hideVetos}
         onChange={(e) =>
           updateSettings({ hideVetos: !!e.currentTarget.checked })

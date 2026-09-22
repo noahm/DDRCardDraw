@@ -1,29 +1,23 @@
 import {
-  AnchorButton,
+  ActionIcon,
   Button,
-  ButtonGroup,
   Card,
-  CardList,
-  Dialog,
-  DialogBody,
-  DialogFooter,
-  FormGroup,
-  H3,
-  H4,
-  InputGroup,
-  Section,
-  SectionCard,
-} from "@blueprintjs/core";
+  Group,
+  Modal,
+  Stack,
+  TextInput,
+  Title,
+} from "@mantine/core";
 import { useAppDispatch, useAppState } from "../state/store";
 import {
-  Add,
-  Duplicate,
-  FloppyDisk,
-  GridView,
-  History,
-  List,
-  Trash,
-} from "@blueprintjs/icons";
+  IconPlus,
+  IconCopy,
+  IconDeviceFloppy,
+  IconHistory,
+  IconLayoutGrid,
+  IconList,
+  IconTrash,
+} from "@tabler/icons-react";
 import React, { JSX, useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
@@ -37,6 +31,7 @@ import {
 import { CabObsSources } from "./cab-obs-sources";
 import { SourceRow } from "./obs-source-row";
 
+import { Section } from "../common-components/section";
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
 import { useHref } from "react-router-dom";
@@ -68,14 +63,17 @@ export function Dashboard() {
             sourceId={currentEdit}
             close={() => setCurrentEdit(null)}
           />
-          <H3>
+          <Title order={3} mb="xs">
             {t("obsDashboard.textSources")}{" "}
-            <Button
-              icon={<Add />}
+            <ActionIcon
+              variant="default"
+              aria-label="Add OBS text source"
               onClick={() => setCurrentEdit(nanoid())}
-            ></Button>
-          </H3>
-          <CardList>
+            >
+              <IconPlus size={16} />
+            </ActionIcon>
+          </Title>
+          <Stack gap="xs">
             {Object.entries(labels).map(([id, { label, value }]) => (
               <LabelCard
                 key={id}
@@ -88,7 +86,7 @@ export function Dashboard() {
                 }
               />
             ))}
-          </CardList>
+          </Stack>
         </section>
         <section>
           <CabObsSources />
@@ -104,37 +102,38 @@ const drawnChartsLayoutInfo: Record<
   DrawnChartsLayout,
   { labelKey: string; icon: JSX.Element }
 > = {
-  grid: { labelKey: "obsDashboard.layoutGrid", icon: <GridView /> },
-  list: { labelKey: "obsDashboard.layoutList", icon: <List /> },
+  grid: {
+    labelKey: "obsDashboard.layoutGrid",
+    icon: <IconLayoutGrid size={16} />,
+  },
+  list: { labelKey: "obsDashboard.layoutList", icon: <IconList size={16} /> },
 };
 
 function DrawnChartsSources() {
   const { t, formatMessage } = useIntl();
   return (
     <Section
-      icon={<History />}
+      icon={<IconHistory size={20} />}
       title={t("obsDashboard.drawnChartSources")}
       subtitle={t("obsDashboard.drawnChartSourcesHint")}
     >
-      <SectionCard>
-        {/* the params are syntax rather than language, so they stay out of the
+      {/* the params are syntax rather than language, so they stay out of the
             translated sentence and go in as fixed pieces around it */}
-        <p className={styles.sourceHint}>
-          {formatMessage(
-            { id: "obsDashboard.drawnChartsParamHint" },
-            {
-              configParam: <code>?config=&lt;config id&gt;</code>,
-              rangeParam: <code>?min=15&amp;max=17</code>,
-              allParam: <code>?all</code>,
-            },
-          )}
-        </p>
-        <CardList compact>
-          {drawnChartsLayouts.map((layout) => (
-            <DrawnChartsRow key={layout} layout={layout} />
-          ))}
-        </CardList>
-      </SectionCard>
+      <p className={styles.sourceHint}>
+        {formatMessage(
+          { id: "obsDashboard.drawnChartsParamHint" },
+          {
+            configParam: <code>?config=&lt;config id&gt;</code>,
+            rangeParam: <code>?min=15&amp;max=17</code>,
+            allParam: <code>?all</code>,
+          },
+        )}
+      </p>
+      <Stack gap="xs">
+        {drawnChartsLayouts.map((layout) => (
+          <DrawnChartsRow key={layout} layout={layout} />
+        ))}
+      </Stack>
     </Section>
   );
 }
@@ -167,13 +166,15 @@ function LabelCard(props: {
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
     <Card
-      interactive
+      withBorder
+      padding="sm"
       className={styles.textSourceCard}
       title={t("obsDashboard.editLabel", { label: props.label })}
-      // a Blueprint card is a div, so editing by clicking the row costs the
-      // keyboard access the edit button used to provide unless we put it back
+      // editing by clicking the row costs the keyboard access the edit button
+      // used to provide unless we put it back
       role="button"
       tabIndex={0}
+      style={{ cursor: "pointer" }}
       // the buttons inside mark their own clicks handled, so copying or
       // deleting doesn't also open the editor
       onClick={(e) => e.defaultPrevented || props.onEdit()}
@@ -188,11 +189,13 @@ function LabelCard(props: {
     >
       <div>
         <p>{props.label}</p>
-        <H4>{props.value}</H4>
+        <Title order={4}>{props.value}</Title>
       </div>
-      <ButtonGroup>
-        <AnchorButton
-          icon={<Duplicate />}
+      <Group gap={4}>
+        <ActionIcon
+          variant="default"
+          component="a"
+          aria-label={t("obsDashboard.copyLabelUrl")}
           title={t("obsDashboard.copyLabelUrl")}
           onClick={(e) => {
             e.preventDefault();
@@ -202,10 +205,13 @@ function LabelCard(props: {
             );
           }}
           href={href}
-        />
-        <Button
-          icon={<Trash />}
-          intent="danger"
+        >
+          <IconCopy size={16} />
+        </ActionIcon>
+        <ActionIcon
+          variant="default"
+          color="red"
+          aria-label={t("obsDashboard.deleteLabel")}
           title={t("obsDashboard.deleteLabel")}
           onClick={(e) => {
             e.preventDefault();
@@ -217,8 +223,10 @@ function LabelCard(props: {
               props.onDelete();
             }
           }}
-        />
-      </ButtonGroup>
+        >
+          <IconTrash size={16} />
+        </ActionIcon>
+      </Group>
     </Card>
   );
 }
@@ -264,40 +272,34 @@ function EditDialog({
     }
   };
   return (
-    <Dialog
-      isOpen={!!sourceId}
+    <Modal
+      opened={!!sourceId}
       title={t("obsDashboard.editLabelTitle")}
       onClose={close}
     >
-      <DialogBody>
-        <form action={submit}>
-          <FormGroup label={t("obsDashboard.labelName")}>
-            <InputGroup
-              inputRef={nameInput}
-              defaultValue={label.label}
-              onKeyDown={handleInputKeydown}
-            />
-          </FormGroup>
-          <FormGroup label={t("obsDashboard.labelValue")}>
-            <InputGroup
-              inputRef={valueInput}
-              defaultValue={label.value}
-              onKeyDown={handleInputKeydown}
-            />
-          </FormGroup>
-        </form>
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button onClick={close}>{t("obsDashboard.cancel")}</Button>
-            <Button intent="primary" onClick={submit}>
-              {t("obsDashboard.save")}
-            </Button>
-          </>
-        }
-      />
-    </Dialog>
+      <form action={submit}>
+        <TextInput
+          label={t("obsDashboard.labelName")}
+          mb="sm"
+          ref={nameInput}
+          defaultValue={label.label}
+          onKeyDown={handleInputKeydown}
+        />
+        <TextInput
+          label={t("obsDashboard.labelValue")}
+          mb="sm"
+          ref={valueInput}
+          defaultValue={label.value}
+          onKeyDown={handleInputKeydown}
+        />
+      </form>
+      <Group justify="flex-end" gap="xs" mt="md">
+        <Button variant="default" onClick={close}>
+          {t("obsDashboard.cancel")}
+        </Button>
+        <Button onClick={submit}>{t("obsDashboard.save")}</Button>
+      </Group>
+    </Modal>
   );
 }
 
@@ -313,18 +315,20 @@ function CssEditor() {
 
   return (
     <section>
-      <H3>
+      <Title order={3} my="xs">
         {t("obsDashboard.globalStyles")}{" "}
-        <Button
-          icon={<FloppyDisk />}
+        <ActionIcon
+          variant={isDirty ? "filled" : "default"}
+          aria-label="Save styles"
           disabled={!isDirty}
-          intent={isDirty ? "primary" : undefined}
           onClick={() => {
             dispatch(eventSlice.actions.updateObsCss(localDoc));
             setIsDirty(false);
           }}
-        />
-      </H3>
+        >
+          <IconDeviceFloppy size={16} />
+        </ActionIcon>
+      </Title>
       <ReactCodeMirror
         height="200"
         minHeight="5"

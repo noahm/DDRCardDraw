@@ -1,4 +1,4 @@
-import { Offline } from "@blueprintjs/icons";
+import { IconWifiOff } from "@tabler/icons-react";
 import { useIntl } from "../../hooks/useIntl";
 import { BaseCardFooter, CardSectionProps, baseChartValues } from "./base";
 import ddrStyles from "./ddr.css";
@@ -12,7 +12,7 @@ export function DdrCardFooter(props: CardSectionProps) {
       centerElement={
         flags?.includes("shock") && (
           <div className={ddrStyles.shockBadge}>
-            <Offline title={t("controls.shockArrows")} size={14} />
+            <IconWifiOff title={t("controls.shockArrows")} size={14} />
           </div>
         )
       }

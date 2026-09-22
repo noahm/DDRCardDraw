@@ -1,18 +1,86 @@
-import { HotkeysProvider } from "@blueprintjs/core";
+import { ActionIcon, Group, Menu, Table, TextInput } from "@mantine/core";
 import {
-  Column,
-  Table2,
-  EditableCell2,
-  ColumnProps,
-  Cell,
-} from "@blueprintjs/table";
+  IconSortAscending,
+  IconSortDescending,
+  IconCaretDown,
+} from "@tabler/icons-react";
 import { useDrawing } from "../drawing-context";
 import { type Drawing, scoreableCharts } from "../models/Drawing";
-import { ReactElement, useState } from "react";
+import { useState } from "react";
 import { inferShortname } from "../controls/player-names";
 import { useDispatch } from "react-redux";
 import { drawingsSlice } from "../state/drawings.slice";
-import { ScoreSortableColumn } from "./sortable-columns";
+
+type Comparator = (a: number | undefined, b: number | undefined) => number;
+
+function compareScores(a: number | undefined, b: number | undefined) {
+  return (a ?? -1) < (b ?? -1) ? 1 : -1;
+}
+
+function SortableColumnHeader(props: {
+  name: string;
+  onSort(comparator: Comparator): void;
+}) {
+  return (
+    <Group gap={4} wrap="nowrap" justify="space-between">
+      <span>{props.name}</span>
+      <Menu position="bottom-end">
+        <Menu.Target>
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            size="xs"
+            aria-label={`Sort by ${props.name}`}
+          >
+            <IconCaretDown size={14} />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Item
+            leftSection={<IconSortAscending size={16} />}
+            onClick={() => props.onSort((a, b) => compareScores(a, b))}
+          >
+            Sort Asc
+          </Menu.Item>
+          <Menu.Item
+            leftSection={<IconSortDescending size={16} />}
+            onClick={() => props.onSort((a, b) => compareScores(b, a))}
+          >
+            Sort Desc
+          </Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
+    </Group>
+  );
+}
+
+function EditableScoreCell(props: {
+  value: string | undefined;
+  onConfirm(value: string): void;
+}) {
+  const [draft, setDraft] = useState<string | null>(null);
+  return (
+    <TextInput
+      variant="unstyled"
+      size="xs"
+      styles={{ input: { textAlign: "right" } }}
+      value={draft ?? props.value ?? ""}
+      inputMode="numeric"
+      onChange={(e) => setDraft(e.currentTarget.value)}
+      onBlur={() => {
+        if (draft !== null) {
+          props.onConfirm(draft);
+          setDraft(null);
+        }
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          e.currentTarget.blur();
+        }
+      }}
+    />
+  );
+}
 
 export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
   const drawingId = useDrawing((d) => d.compoundId);
@@ -31,7 +99,7 @@ export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
 
   function updateScore(playerIdx: number, chartId: string, rawInput: string) {
     const playerId = players[playerIdx].id;
-    const score = Number.parseInt(rawInput, 10);
+    const score = Number.parseInt(rawInput.replace(/[^\d-]/g, ""), 10);
     if (!Number.isSafeInteger(score)) {
       return;
     }
@@ -45,12 +113,7 @@ export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
     );
   }
 
-  function playerCellRenderer(displayIdx: number) {
-    const playerIdx = playerOrderMap[displayIdx];
-    return <Cell>{inferShortname(players[playerIdx].name)}</Cell>;
-  }
-  function getPlayerScore(displayIdx: number, chartId: string) {
-    const playerIdx = playerOrderMap[displayIdx];
+  function getPlayerScore(playerIdx: number, chartId: string) {
     const playerId = players[playerIdx].id;
     // a player added after scores were first entered has no bucket yet
     const scoreNum = meta.scoresByEntrant?.[playerId]?.[chartId];
@@ -59,58 +122,58 @@ export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
     }
   }
 
-  function playerScoreRenderer(displayIdx: number, chartId: string) {
-    const playerIdx = playerOrderMap[displayIdx];
-    const score = getPlayerScore(displayIdx, chartId)?.toLocaleString();
-    return (
-      <EditableCell2
-        style={{ textAlign: "right" }}
-        value={score}
-        onConfirm={(value) => updateScore(playerIdx, chartId, value)}
-      />
-    );
+  function sortPlayers(chartId: string, comparator: Comparator) {
+    setPlayerOrderMap((prev) => {
+      const next = prev.slice();
+      next.sort((aIdx, bIdx) => {
+        const aScore = getPlayerScore(aIdx, chartId);
+        const bScore = getPlayerScore(bIdx, chartId);
+        return comparator(aScore, bScore);
+      });
+      return next;
+    });
   }
 
-  const chartCols = charts.map<ReactElement<ColumnProps>>(({ id, chart }) => {
+  const chartColumns = charts.map(({ id, chart }) => {
     const songName = chart.nameTranslation || chart.name;
-    const sortableColumn = new ScoreSortableColumn(songName, id);
-    return sortableColumn.getColumn(
-      (rowIdx) => playerScoreRenderer(rowIdx, id),
-      (chartId, comparator) => {
-        setPlayerOrderMap((prev) => {
-          const next = prev.slice();
-          next.sort((aIdx, bIdx) => {
-            const aScore = getPlayerScore(aIdx, chartId);
-            const bScore = getPlayerScore(bIdx, chartId);
-            return comparator(aScore, bScore);
-          });
-          return next;
-        });
-      },
-    );
+    return { chartId: id, songName };
   });
 
-  chartCols.unshift(
-    <Column key="players" name="Player" cellRenderer={playerCellRenderer} />,
-  );
-
   return (
-    <HotkeysProvider>
-      <Table2
-        numRows={players.length}
-        enableFocusedCell
-        defaultColumnWidth={80}
-        cellRendererDependencies={[
-          playerOrderMap,
-          players,
-          charts,
-          bans,
-          pocketPicks,
-          meta.scoresByEntrant,
-        ]}
-      >
-        {chartCols}
-      </Table2>
-    </HotkeysProvider>
+    <Table withTableBorder withColumnBorders>
+      <Table.Thead>
+        <Table.Tr>
+          <Table.Th>Player</Table.Th>
+          {chartColumns.map((col) => (
+            <Table.Th key={col.chartId} miw={100}>
+              <SortableColumnHeader
+                name={col.songName}
+                onSort={(comparator) => sortPlayers(col.chartId, comparator)}
+              />
+            </Table.Th>
+          ))}
+        </Table.Tr>
+      </Table.Thead>
+      <Table.Tbody>
+        {playerOrderMap.map((playerIdx) => (
+          <Table.Tr key={players[playerIdx].id}>
+            <Table.Td>{inferShortname(players[playerIdx].name)}</Table.Td>
+            {chartColumns.map((col) => (
+              <Table.Td key={col.chartId} p={0}>
+                <EditableScoreCell
+                  value={getPlayerScore(
+                    playerIdx,
+                    col.chartId,
+                  )?.toLocaleString()}
+                  onConfirm={(value) =>
+                    updateScore(playerIdx, col.chartId, value)
+                  }
+                />
+              </Table.Td>
+            ))}
+          </Table.Tr>
+        ))}
+      </Table.Tbody>
+    </Table>
   );
 }

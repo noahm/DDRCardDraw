@@ -1,4 +1,4 @@
-import { Barcode, Edit } from "@blueprintjs/icons";
+import { IconEdit, IconQrcode } from "@tabler/icons-react";
 import { JSX, useMemo } from "react";
 import { renderSVG } from "uqr";
 import { readExtra } from "../../utils/extras";
@@ -22,14 +22,14 @@ export function SmxCardCenter(props: CardSectionProps) {
   const author = readExtra(extras, EDIT_AUTHOR_KEY);
   let boss: JSX.Element | null = null;
   if (name === "Big Boss") {
-    boss = <div style={{ fontSize: "300%" }}>{name}</div>;
+    boss = <div style={{ fontSize: "262.5%" }}>{name}</div>;
   }
   return (
     <>
       {boss || <BaseCardCenter chart={props.chart} />}
       {author && (
         <div className={styles.editAuthor}>
-          <Edit size={20} />
+          <IconEdit size={20} />
           {author}
         </div>
       )}
@@ -64,7 +64,7 @@ export function getSmxCardActions(
       key: "edit-qr",
       // resolved against the edit set's game-data i18n (set in buildEditDataFile)
       labelKey: "bookmarkEdit",
-      icon: <Barcode />,
+      icon: <IconQrcode />,
       content: <EditQrContent editId={editId} />,
     },
   ];
