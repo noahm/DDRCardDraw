@@ -1,10 +1,17 @@
-import { Button, Group, Modal, Skeleton, Switch } from "@mantine/core";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import type { PackWithSongs } from "simfile-parser/browser";
-import { getDataFileFromPack } from "./utils/itg-import";
+import { Alert, Button, Group, Loader, Modal, Switch } from "@mantine/core";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
+import type { PackWithSongs, Simfile } from "simfile-parser/browser";
+import { getDataFileFromPack, resolveJackets } from "./utils/itg-import";
 import { pause } from "./utils/pause";
 import { convertErrorToString } from "./utils/error-to-string";
 import { IconFileImport } from "@tabler/icons-react";
+import { EmptyState } from "./common-components/empty-state";
 import { useSetAtom } from "jotai";
 import { customDataCache } from "./state/game-data.atoms";
 
@@ -69,11 +76,17 @@ interface DialogProps {
   onClose(this: void): void;
 }
 
+/** a parsed pack, paired with the cover images already read out of it */
+interface ParsedPack {
+  pack: PackWithSongs;
+  jackets: ReadonlyMap<Simfile, string>;
+}
+
 function useDataParsing(
   droppedFolder: DataTransferItem | null,
   setTiered: (next: boolean) => void,
 ) {
-  const [parsedPack, setParsedPack] = useState<PackWithSongs | null>(null);
+  const [parsedPack, setParsedPack] = useState<ParsedPack | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
   useEffect(() => {
     // oxlint-disable-next-line react-hooks-js/set-state-in-effect
@@ -84,8 +97,10 @@ function useDataParsing(
     }
     loadParserModule()
       .then(({ parsePack }) => parsePack(droppedFolder))
-      .then((pack) => {
-        setParsedPack(pack);
+      .then(async (pack) => {
+        // cover images are read lazily by the parser, so pull them in now while
+        // the spinner is up rather than on every tier toggle
+        setParsedPack({ pack, jackets: await resolveJackets(pack) });
         if (
           pack.simfiles.every((song) =>
             song.title.titleName.match(/^\[T\d\d\] /),
@@ -114,12 +129,27 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
   const setCustomData = useSetAtom(customDataCache);
 
   const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
-  const derivedData = useMemo(() => {
+  const derived = useMemo(() => {
     if (!parsedPack) {
-      return;
+      return null;
     }
-    return getDataFileFromPack(parsedPack, tiered);
+    try {
+      const data = getDataFileFromPack(
+        parsedPack.pack,
+        tiered,
+        parsedPack.jackets,
+      );
+      return { data, error: null };
+    } catch (e) {
+      // usually a pack that doesn't actually use tiers. The pack itself parsed
+      // fine, so keep it around and let the user flip the switch back off
+      // rather than making them drop the whole thing again.
+      console.error(e);
+      return { data: null, error: convertErrorToString(e) };
+    }
   }, [parsedPack, tiered]);
+  const derivedData = derived?.data ?? null;
+  const deriveError = derived?.error ?? null;
 
   const handleConfirm = useCallback(async () => {
     if (!parsedPack || !derivedData) {
@@ -129,7 +159,7 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     setCustomData((prev) => {
       return {
         ...prev,
-        [parsedPack.name]: derivedData,
+        [parsedPack.pack.name]: derivedData,
       };
     });
     await pause(500);
@@ -137,40 +167,49 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     onSave();
   }, [parsedPack, derivedData, setCustomData, onSave]);
 
-  const stillLoading = !derivedData;
-
-  let body = (
-    <>
-      <Skeleton visible={stillLoading}>
-        <p>Pack name: {parsedPack ? parsedPack.name : "to be determined"}</p>
+  let body: ReactNode;
+  if (parseError) {
+    // nothing usable came back, so there's nothing to recover to
+    body = (
+      <Alert color="red" title="Error importing pack">
+        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
+      </Alert>
+    );
+  } else if (!parsedPack) {
+    body = (
+      <EmptyState
+        icon={<Loader />}
+        title="Parsing pack data"
+        description="Large packs can take a moment to read."
+      />
+    );
+  } else {
+    body = (
+      <>
+        <p>Pack name: {parsedPack.pack.name}</p>
         <Switch
           label="Pack uses tiers"
           mb="sm"
           checked={tiered}
           onChange={() => setTiered((prev) => !prev)}
         />
-        <dl>
-          <dt>Total Songs</dt>
-          <dd>{parsedPack ? parsedPack.songCount : "??"}</dd>
-          <dt>Total Charts</dt>
-          <dd>
-            {derivedData
-              ? derivedData.songs.reduce(
-                  (total, item) => total + item.charts.length,
-                  0,
-                )
-              : "??"}
-          </dd>
-        </dl>
-      </Skeleton>
-    </>
-  );
-
-  if (parseError) {
-    body = (
-      <>
-        <h1>Error importing pack</h1>
-        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
+        {derivedData ? (
+          <dl>
+            <dt>Total Songs</dt>
+            <dd>{parsedPack.pack.songCount}</dd>
+            <dt>Total Charts</dt>
+            <dd>
+              {derivedData.songs.reduce(
+                (total, item) => total + item.charts.length,
+                0,
+              )}
+            </dd>
+          </dl>
+        ) : (
+          <Alert color="red" title="Couldn't read tiers from this pack">
+            <code style={{ whiteSpace: "pre-wrap" }}>{deriveError}</code>
+          </Alert>
+        )}
       </>
     );
   }
@@ -179,16 +218,16 @@ function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
     <Modal opened={!!droppedFolder} title="Local Data Import" onClose={onClose}>
       <div style={{ padding: "10px" }}>{body}</div>
       <Group justify="flex-end" gap="xs">
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
         <Button
-          disabled={stillLoading}
+          disabled={!derivedData}
           onClick={handleConfirm}
           loading={saving}
           leftSection={<IconFileImport size={16} />}
         >
           Import
-        </Button>
-        <Button variant="default" onClick={onClose}>
-          Cancel
         </Button>
       </Group>
     </Modal>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Modal, ScrollArea, TextInput } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { chartIsValid, getDrawnChart, songIsValid } from "../card-draw";
@@ -6,8 +6,10 @@ import { useConfigState, useGameData } from "../state/hooks";
 import { EligibleChart } from "../models/Drawing";
 import { Song } from "../models/SongData";
 import { SearchResult, SearchResultData } from "./search-result";
+import fuzzysort from "fuzzysort";
+import { getSongSearchIndex, scoreSongMatch } from "./search-index";
 import styles from "./song-search.css";
-import { useFuzzySearch } from "../hooks/useFuzzySearch";
+import { chartIdentity } from "../chart-id";
 
 interface Props {
   isOpen: boolean;
@@ -21,23 +23,38 @@ export function SongSearch(props: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const config = useConfigState();
   const gameData = useGameData();
-  const fuzzySearch = useFuzzySearch();
-
+  const songSearchIndex = useMemo(
+    () => (gameData ? getSongSearchIndex(gameData) : null),
+    [gameData],
+  );
   function resetSearch() {
     updateSearchTerm("");
     setActiveIndex(0);
   }
 
   let items: SearchResultData[] = [];
-  if (fuzzySearch && isOpen) {
-    const songs = fuzzySearch
-      .search(searchTerm)
+  // An empty query matches every song, so skip it entirely rather than ranking
+  // and filtering the whole list for a result set we wouldn't want to show.
+  if (songSearchIndex && isOpen && searchTerm) {
+    const songs = fuzzysort
+      // threshold 0 keeps every subsequence match, ranked best-first
+      .go(searchTerm, songSearchIndex, {
+        limit: 0,
+        threshold: 0,
+        scoreFn: scoreSongMatch,
+      })
+      .map((result) => result.obj)
       .filter((song) => songIsValid(config, song, true))
       .slice(0, 30);
     for (const song of songs) {
-      const validCharts = song.charts.filter((chart) =>
-        chartIsValid(config, chart, true),
-      );
+      const seen = new Set<string>();
+      const validCharts = song.charts.filter((chart) => {
+        if (!chartIsValid(config, chart, true)) return false;
+        const identity = chartIdentity(chart);
+        if (seen.has(identity)) return false;
+        seen.add(identity);
+        return true;
+      });
       for (const chart of validCharts) {
         items.push({ song, chart });
       }
@@ -57,6 +74,16 @@ export function SongSearch(props: Props) {
         : getDrawnChart(gameData!, item.song, item.chart),
     );
   }
+
+  /**
+   * The row the keyboard acts on. A song whose charts are all filtered out
+   * still shows (greyed, as an explanation), and the top-ranked match is often
+   * one of those, so fall forward to the first row Enter can actually pick.
+   */
+  const effectiveIndex =
+    items[activeIndex] && items[activeIndex].chart === "none"
+      ? nextEnabledIndex(activeIndex, 1)
+      : activeIndex;
 
   /** step from `start` in `direction` to the next selectable result */
   function nextEnabledIndex(start: number, direction: 1 | -1) {
@@ -104,8 +131,11 @@ export function SongSearch(props: Props) {
               );
               break;
             case "Enter":
-              if (items[activeIndex] && items[activeIndex].chart !== "none") {
-                selectItem(items[activeIndex]);
+              if (
+                items[effectiveIndex] &&
+                items[effectiveIndex].chart !== "none"
+              ) {
+                selectItem(items[effectiveIndex]);
               }
               break;
           }
@@ -115,10 +145,12 @@ export function SongSearch(props: Props) {
         {items.map((data, idx) => (
           <SearchResult
             key={`${data.song.saHash || data.song.name}-${
-              typeof data.chart === "string" ? data.chart : data.chart.diffClass
+              typeof data.chart === "string"
+                ? data.chart
+                : chartIdentity(data.chart)
             }`}
             data={data}
-            selected={idx === activeIndex}
+            selected={idx === effectiveIndex}
             handleClick={(e) => {
               e.stopPropagation();
               selectItem(data);

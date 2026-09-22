@@ -1,9 +1,12 @@
 import { JSX } from "react";
 import { Group, Text, UnstyledButton } from "@mantine/core";
+import { IconEdit } from "@tabler/icons-react";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useIntl } from "../hooks/useIntl";
 import { Song, Chart } from "../models/SongData";
 import { SongJacket } from "../song-jacket";
+import { readExtra } from "../utils/extras";
+import { EDIT_AUTHOR_KEY } from "../utils/smx-edit-import";
 import styles from "./song-search.css";
 
 export interface SearchResultData {
@@ -22,7 +25,9 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
   const { t } = useIntl();
   let label: string | JSX.Element;
   let disabled = false;
+  let editAuthor: string | undefined;
   if (typeof data.chart === "object") {
+    editAuthor = readExtra(data.chart.extras, EDIT_AUTHOR_KEY);
     label = (
       <>
         <AbbrDifficulty diffClass={data.chart.diffClass} /> {data.chart.lvl}
@@ -34,6 +39,18 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
   } else {
     label = song.artist_translation || song.artist;
   }
+
+  const title = song.name_translation || song.name;
+  const text = editAuthor ? (
+    <>
+      {title}
+      <span className={styles.editAuthor}>
+        <IconEdit size={12} /> {editAuthor}
+      </span>
+    </>
+  ) : (
+    title
+  );
 
   return (
     <UnstyledButton
@@ -53,7 +70,7 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
         <Group gap="sm" wrap="nowrap">
           <SongJacket song={song} height={26} className={styles.img} />
           <Text size="sm" truncate>
-            {song.name_translation || song.name}
+            {text}
           </Text>
         </Group>
         <Text size="sm" c="dimmed" style={{ whiteSpace: "nowrap" }}>

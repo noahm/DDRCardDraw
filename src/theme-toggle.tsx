@@ -16,6 +16,10 @@ export function useThemePref() {
   return useMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light";
 }
 
+/**
+ * The colour scheme itself is applied by MantineProvider (see useTheme); this
+ * only marks the body as an OBS layer so the transparent background applies.
+ */
 function applyThemeBodyClass(isOBSSource: boolean) {
   document.body.classList.toggle("obs-layer", isOBSSource);
 }
@@ -77,8 +81,12 @@ if (window.obsstudio) {
 export const useInObs = () => useThemeStore((s) => s.inObs);
 export const useInObsSource = () => useThemeStore((s) => s.obsBrowserSource);
 
-/** hook to get current app theme */
-export const useTheme = () => useThemeStore((s) => s.resolved);
+/**
+ * Current app theme. A browser source in OBS is always dark regardless of the
+ * user's preference, so it composites correctly over a stream.
+ */
+export const useTheme = () =>
+  useThemeStore((s) => (s.obsBrowserSource ? "dark" : s.resolved));
 
 export function ThemeSyncWidget() {
   const { obsBrowserSource: isOBSSource, updateBrowserPref } = useThemeStore();

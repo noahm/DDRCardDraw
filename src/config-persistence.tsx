@@ -1,4 +1,5 @@
 import { IconExclamationCircle } from "@tabler/icons-react";
+import { adoptLegacyChartSort } from "./chart-sort";
 import { ConfigState } from "./config-state";
 import { notify } from "./notify";
 import { buildDataUri, dateForFilename, shareData } from "./utils/share";
@@ -63,6 +64,31 @@ export function saveConfigs(configs: ConfigState[]) {
   });
 }
 
+/**
+ * Settings that used to be per-config and have since moved off it -- to the
+ * event for `showMaxScore`, to the browser for `hideVetos`. A file exported
+ * before they moved still carries them, and they'd otherwise be stored on the
+ * config verbatim and quietly resurface. Dropping them here means an imported
+ * config can't reach across and change how the whole event is run, or what the
+ * person importing it is looking at.
+ */
+const MOVED_OFF_CONFIG = ["hideVetos", "showMaxScore"] as const;
+
+/**
+ * Make an imported config fit the shape configs have now: drop the settings
+ * that have moved off it, and carry a file's old `sortByLevel` answer over to
+ * the card order that replaced it.
+ */
+function normalizeImportedConfig(config: ConfigState): ConfigState {
+  // the keys are gone from ConfigState, so reach them as plain object entries
+  const loose = config as unknown as Record<string, unknown>;
+  for (const key of MOVED_OFF_CONFIG) {
+    delete loose[key];
+  }
+  adoptLegacyChartSort(config);
+  return config;
+}
+
 /** Load one or more configs from a file. Accepts both the single-config and
  * multi-config file formats, always resolving to an array. */
 export function loadConfigs(): Promise<ConfigState[]> {
@@ -95,9 +121,9 @@ export function loadConfigs(): Promise<ConfigState[]> {
           "configStates" in contents &&
           Array.isArray(contents.configStates)
         ) {
-          resolve(contents.configStates);
+          resolve(contents.configStates.map(normalizeImportedConfig));
         } else if ("configState" in contents && contents.configState) {
-          resolve([contents.configState]);
+          resolve([normalizeImportedConfig(contents.configState)]);
         } else {
           throw new Error("no config data found in file");
         }

@@ -1,46 +1,39 @@
-import { useCallback, Fragment } from "react";
+import { useCallback, useMemo, Fragment } from "react";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
 import { IconCaretLeft, IconCaretRight } from "@tabler/icons-react";
-import { useAtomValue } from "jotai";
-import { showPlayerAndRoundLabels } from "../config-state";
-import { useAppDispatch } from "../state/store";
+import { useEventSettings } from "../state/hooks";
+import { useAppDispatch, useAppState } from "../state/store";
 import { drawingsSlice } from "../state/drawings.slice";
-import { CountingSet } from "../utils/counting-set";
 import { playerDisplayName } from "../models/Drawing";
+import { playerScores } from "../models/gauntlet-standings";
 
 export function MatchLabels() {
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
-  const meta = useDrawing((d) => d.meta);
-  const winners = useDrawing((d) => d.winners);
+  const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
+  // the labels head the whole match rather than the sub-draw they render
+  // inside, and a gauntlet's points are earned across all of its sub-draws
+  const matchId = useDrawing((d) => d.id);
+  const drawing = useAppState((s) => s.drawings.entities[matchId]);
+  const scores = useMemo(
+    () => playerScores(drawing, eventScheme),
+    [drawing, eventScheme],
+  );
   if (!showLabels) {
     return null;
   }
-
-  const hideWins = meta.type === "startgg" && meta.subtype === "gauntlet";
-  let winsPerPlayer: CountingSet<string> | undefined;
-  if (!hideWins) {
-    winsPerPlayer = new CountingSet<string>();
-    for (const pId of Object.values(winners)) {
-      if (pId === null) {
-        continue;
-      }
-      winsPerPlayer.add(pId);
-    }
-  }
+  const meta = drawing.meta;
 
   return (
     <div className={styles.headers}>
       <div className={styles.title}>{meta.title}</div>
       <div className={styles.players}>
         {meta.players.map((player, idx) => {
-          const winCount = winsPerPlayer ? (
-            <> ({winsPerPlayer.get(player.id)})</>
-          ) : null;
+          const score = scores?.get(player.id);
           const ret = (
             <span key={idx}>
               {playerDisplayName(player, idx)}
-              {winCount}
+              {score === undefined ? null : <> ({score})</>}
             </span>
           );
           if (meta.players.length === 2 && idx === 0) {

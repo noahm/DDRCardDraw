@@ -12,6 +12,16 @@ import {
 import { Menu } from "@mantine/core";
 import { useDrawing } from "../drawing-context";
 import { JSX } from "react";
+import { useGetMetaString } from "../game-data-utils";
+
+/** A game-specific info action contributed by a card variant. */
+export interface MenuInfoAction {
+  key: string;
+  /** a bare game-data i18n key, resolved against the active game's strings */
+  labelKey: string;
+  icon?: JSX.Element;
+  onClick: () => void;
+}
 
 interface Props {
   onStartPocketPick?: (p: string) => void;
@@ -20,6 +30,7 @@ interface Props {
   onRedraw?: () => void;
   onSetWinner?: (p: string | null) => void;
   onCopy?: () => void;
+  infoActions?: MenuInfoAction[];
 }
 
 /** rendered inside a Menu.Dropdown */
@@ -31,9 +42,11 @@ export function ActionMenu(props: Props) {
     onRedraw,
     onSetWinner,
     onCopy,
+    infoActions,
   } = props;
 
   const { t } = useIntl();
+  const getMetaString = useGetMetaString();
 
   return (
     <>
@@ -70,6 +83,17 @@ export function ActionMenu(props: Props) {
           {t("songAction.copy")}
         </Menu.Item>
       )}
+      {infoActions?.map((action) => (
+        <Menu.Item
+          key={action.key}
+          leftSection={action.icon}
+          onClick={action.onClick}
+          // keep the dropdown open so it can swap to the action's content in place
+          closeMenuOnClick={false}
+        >
+          {getMetaString(action.labelKey)}
+        </Menu.Item>
+      ))}
       {onRedraw && (
         <>
           <Menu.Divider />

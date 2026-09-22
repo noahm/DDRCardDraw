@@ -250,7 +250,17 @@ task("Import MaiMai Data", async function ({ setStatus, setTitle, task }) {
     const patch = MAIMAI_PATCH[song.songId] || MAIMAI_PATCH[song.title];
     if (!patch) return song;
 
-    Object.assign(song, patch);
+    const { regions, ...songPatch } = patch;
+    Object.assign(song, songPatch);
+
+    // region availability lives on each sheet, so a patched value is applied
+    // to every sheet of the song
+    if (regions) {
+      song.sheets = (song.sheets as Array<any>).map((sheet) => ({
+        ...sheet,
+        regions: { ...sheet.regions, ...regions },
+      }));
+    }
 
     setStatus(`Applied patch for song: ${song.title ?? song.songId}`);
     return song;

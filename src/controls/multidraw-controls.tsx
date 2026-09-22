@@ -62,8 +62,15 @@ export function MultidrawControls() {
     }));
   };
 
+  /*
+   * Keyed by position, not by config id: drawing three sets off one config is
+   * the ordinary case, so the ids repeat and can't identify a row. A row is
+   * its index -- that's what every edit below addresses it by -- and it holds
+   * nothing that renumbering could strand, since the select is controlled by
+   * the id passed to it and keeps no state of its own.
+   */
   const configs = multidrawState?.configs.map((configId, idx) => (
-    <Group key={configId} gap={4} my={4} wrap="nowrap">
+    <Group key={idx} gap={4} my={4} wrap="nowrap">
       <ConfigSelect
         selectedId={configId}
         onChange={(newConfig) => changeConfigAtIdx(newConfig, idx)}
@@ -101,7 +108,7 @@ export function MultidrawControls() {
         <Card withBorder my="xs">
           <Switch
             label="Merge all draws into one set"
-            checked={multidrawState?.merge}
+            checked={!!multidrawState?.merge}
             onChange={toggleMerge}
           />
           <Input.Wrapper

@@ -39,9 +39,24 @@ export async function exists(path: string): Promise<boolean> {
 
 /**
  * sorts songs in-place, and charts within each song
- * @param songs
+ * @param songs array of songs to sort
+ * @param meta game metadata for sorting charts
+ * @param compareFn Optional comparison function for sorting songs (defaults to case-insensitive name sort)
  */
-export function sortSongs(songs: Song[], meta: GameData["meta"]) {
+export function sortSongs(
+  songs: Song[],
+  meta: GameData["meta"],
+  compareFn?: (left: Song, right: Song) => number,
+): Song[] {
+  compareFn ??= (left, right) => {
+    const leftLowerName = left.name.toLowerCase();
+    const rightLowerName = right.name.toLowerCase();
+
+    if (leftLowerName === rightLowerName) {
+      return left.name == right.name ? 0 : left.name > right.name ? 1 : -1;
+    }
+    return leftLowerName > rightLowerName ? 1 : -1;
+  };
   for (const song of songs) {
     song.charts.sort((left, right) => {
       if (left.style !== right.style) {
@@ -58,15 +73,7 @@ export function sortSongs(songs: Song[], meta: GameData["meta"]) {
       return left.lvl - right.lvl;
     });
   }
-  return songs.sort((left, right) => {
-    const leftLowerName = left.name.toLowerCase();
-    const rightLowerName = right.name.toLowerCase();
-
-    if (leftLowerName === rightLowerName) {
-      return left.name == right.name ? 0 : left.name > right.name ? 1 : -1;
-    }
-    return leftLowerName > rightLowerName ? 1 : -1;
-  });
+  return songs.sort(compareFn);
 }
 
 /**
@@ -153,24 +160,37 @@ function createParentFolderIfNeeded(absoluteImgPath: string) {
   }
 }
 
+/** an image that reads its own bytes, e.g. one inside a zip archive */
+interface ImageSource {
+  /** the image's own filename, used only for logging */
+  name: string;
+  file(): Promise<File>;
+}
+
 /**
- * Queues a cover path for download into the imageQueue.
+ * Queues a cover image for download into the imageQueue.
  * Always skips if file already exists.
  * Immediately returns the relative path to the jacket where it will be saved
- * @param coverUrl url of image to fetch
+ * @param source url/path of image to fetch, or an image that reads its own
+ * bytes, such as one inside a zip archive
  * @param localFilename override filename found in url
  */
 export function downloadJacket(
-  coverUrl: string,
+  source: string | ImageSource,
   localFilename: string | undefined = undefined,
 ) {
-  const { absolute, relative } = getOutputPath(coverUrl, localFilename);
+  const label = typeof source === "string" ? source : source.name;
+  const { absolute, relative } = getOutputPath(label, localFilename);
   if (!existsSync(absolute)) {
     createParentFolderIfNeeded(absolute);
     requestQueue
-      .add(() => {
-        console.log("fetching", coverUrl);
-        return Jimp.read(coverUrl);
+      .add(async () => {
+        if (typeof source === "string") {
+          console.log("fetching", source);
+          return Jimp.read(source);
+        }
+        // already local, so read it straight out of the folder or archive
+        return Jimp.fromBuffer(await (await source.file()).arrayBuffer());
       })
       .then((img) =>
         img
@@ -178,7 +198,7 @@ export function downloadJacket(
           .write(absolute, { quality: 80 }),
       )
       .catch((e) => {
-        console.error("image download failure for", coverUrl);
+        console.error("image download failure for", label);
         e.cause ? console.error(e.cause) : console.error(e);
       });
   }
@@ -239,4 +259,27 @@ export function reportQueueStatusLive(task: Task) {
 
 function queueStatus() {
   return `Requests in flight: ${requestQueue.pending} Requests Waiting: ${requestQueue.size} Jobs done: ${jobCount}`;
+}
+
+/** Interface for importing songs from a source */
+export interface SongImporter<T extends Partial<Song>> {
+  /** Fetches songs from the source */
+  fetchSongs(): Promise<T[]>;
+
+  /**
+   * Compares two song objects for equality
+   * @param existingSong Existing song in the database
+   * @param fetchedSong Newly fetched song from the source
+   * @returns True if songs are considered equal
+   */
+  songEquals(existingSong: Song, fetchedSong: T): boolean;
+
+  /**
+   * Merges data from an `fetchedSong` into `existingSong` object.
+   * @summary This function with side effects that change `existingSong` object
+   * @param existingSong Existing song object to update
+   * @param fetchedSong Newly fetched song from the source
+   * @returns True if the merge resulted in any updates
+   */
+  merge(existingSong: Song, fetchedSong: T): boolean | Promise<boolean>;
 }

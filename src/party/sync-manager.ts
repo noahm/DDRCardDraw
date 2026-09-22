@@ -13,6 +13,13 @@ const MAX_SEND_ATTEMPTS = 4;
 const CATCHUP_TIMEOUT_MS = 5000;
 /** catch-up requests before falling back to a full reconnect */
 const MAX_CATCHUP_ATTEMPTS = 3;
+/**
+ * Confirmed actions allowed to sit ahead of the durable snapshot before the
+ * room is treated as not saving. One or two is just a write in flight; a
+ * standing gap means writes are failing and a restart would lose the
+ * difference.
+ */
+const DURABILITY_LAG_THRESHOLD = 3;
 
 interface SocketLike {
   readyState: number;
@@ -61,6 +68,8 @@ export class SyncManager {
   private buffer: ReduxAction[] = [];
   private catchupTimer?: ReturnType<typeof setTimeout>;
   private catchupAttempts = 0;
+  /** highest seq the server has confirmed is durably stored, if it says */
+  private lastPersistedSeq: number | null = null;
 
   constructor(
     private socket: SocketLike,
@@ -79,6 +88,36 @@ export class SyncManager {
       onReject: (action: Action, reason: string) => void;
     },
   ) {}
+
+  /**
+   * The server reported how far its durable snapshot has advanced.
+   *
+   * This is deliberately only recorded, never acted on here: the signal's
+   * *absence* is what matters most (writes failing means no further reports),
+   * so the caller polls {@link durabilityLag} on a timer instead of reacting
+   * to arrivals.
+   */
+  handlePersisted(seq: number) {
+    if (this.lastPersistedSeq === null || seq > this.lastPersistedSeq) {
+      this.lastPersistedSeq = seq;
+    }
+  }
+
+  /**
+   * How many confirmed actions are not yet in the server's durable snapshot,
+   * or null when this server doesn't report durability at all (an older
+   * deployment, where the honest answer is "unknown" rather than "zero").
+   */
+  get durabilityLag(): number | null {
+    if (this.lastPersistedSeq === null || this.lastSeq === null) return null;
+    return Math.max(0, this.lastSeq - this.lastPersistedSeq);
+  }
+
+  /** true when the room has stopped saving changes for long enough to matter */
+  get durabilityStalled(): boolean {
+    const lag = this.durabilityLag;
+    return lag !== null && lag > DURABILITY_LAG_THRESHOLD;
+  }
 
   /** send a locally-dispatched action (already applied to the display store) */
   send(action: Action) {
@@ -103,6 +142,9 @@ export class SyncManager {
     this.buffer = [];
     this.confirmed = roomstate.state;
     this.lastSeq = roomstate.seq ?? null;
+    if (roomstate.persistedSeq != null) {
+      this.lastPersistedSeq = roomstate.persistedSeq;
+    }
     const applied = new Set(roomstate.recentActionIds ?? []);
     for (const entry of Array.from(this.pending.values())) {
       clearTimeout(entry.timer);
@@ -218,7 +260,20 @@ export class SyncManager {
     if (message.seq != null) {
       this.lastSeq = message.seq;
     }
-    this.confirmed = reducer(this.confirmed!, message.action);
+    try {
+      this.confirmed = reducer(this.confirmed!, message.action);
+    } catch (e) {
+      // The server applied this action before broadcasting it, so reaching here
+      // means our confirmed state disagrees with the server's. Leaving it out
+      // keeps us usable but divergent, so ask for a fresh snapshot rather than
+      // carrying on from a state the server doesn't share.
+      console.error(
+        `confirmed state rejected ${String(message.action.type)}; resyncing`,
+        e,
+      );
+      this.handlers.resync();
+      return;
+    }
 
     const ownEntry = message.id ? this.pending.get(message.id) : undefined;
     if (ownEntry) {
@@ -282,11 +337,28 @@ export class SyncManager {
     }
   }
 
-  /** replay pending actions over the confirmed state */
+  /**
+   * Replay pending actions over the confirmed state.
+   *
+   * A pending action can become invalid once a foreign action lands underneath
+   * it — someone else drew the chart we were about to draw, say — and the
+   * reducer signals that by throwing. Skip it here rather than letting it take
+   * the client down: this only builds display state, and the entry stays
+   * pending, so the server's verdict still settles it. If the server refuses
+   * it too, `handleReject` rolls it back for good; if the server's ordering
+   * makes it valid after all, its echo applies it to `confirmed` as usual.
+   */
   private rebase(): AppState {
     let state = this.confirmed!;
     for (const entry of this.pending.values()) {
-      state = reducer(state, entry.message.action);
+      try {
+        state = reducer(state, entry.message.action);
+      } catch (e) {
+        console.warn(
+          `skipping pending ${String(entry.message.action.type)} in rebase:`,
+          e,
+        );
+      }
     }
     return state;
   }

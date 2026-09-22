@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { GameData, Song, Chart } from "./models/SongData";
-import { chunkInPieces, pickRandomItem, shuffle, times } from "./utils";
+import { chunkInPieces, pickRandomItem, times } from "./utils";
 import { CountingSet } from "./utils/counting-set";
 import { DefaultingMap } from "./utils/defaulting-set";
 import { Fraction } from "./utils/fraction";
@@ -13,12 +13,11 @@ import {
   CHART_DRAWN,
 } from "./models/Drawing";
 import { ConfigState } from "./config-state";
+import { chartIsUsed, chartKeyFor, reuseKeysForChart } from "./chart-id";
+import { chartSortOf, sortCharts } from "./chart-sort";
 import { getDifficultyColor } from "./hooks/useDifficultyColor";
-import {
-  chartLevelOrTier,
-  getAvailableLevels,
-  getDiffAbbr,
-} from "./game-data-utils";
+import { getAvailableLevels, getDiffAbbr } from "./game-data-utils";
+import { chartLevelOrTier } from "./utils/chart-level";
 
 function clampToNearest(incr: number, n: number, clamp: (n: number) => number) {
   const multor = Math.round(1 / incr);
@@ -35,6 +34,7 @@ export function getDrawnChart(
   chart: Chart,
 ): EligibleChart {
   return {
+    chartKey: chartKeyFor(gameData, currentSong, chart),
     cardVariant: gameData.meta.cardVariant,
     name: currentSong.name,
     jacket: chart.jacket || currentSong.jacket,
@@ -48,7 +48,7 @@ export function getDrawnChart(
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     extras: (chart.extras || []).concat(currentSong.extras || []),
-    song: currentSong,
+    songId: currentSong.saHash || currentSong.saIndex,
     dateAdded: currentSong.date_added,
     folder: currentSong.folder,
     // Fill in variant data per game
@@ -230,7 +230,15 @@ function bucketIndexForLvl(lvl: number, buckets: LvlRanges): number | null {
 }
 
 export type DrawingMeta = Pick<Drawing, "meta">;
-export type StartingPoint = DrawingMeta & { charts?: Drawing["charts"] };
+export type StartingPoint = DrawingMeta & {
+  charts?: Drawing["charts"];
+  /**
+   * Reuse keys already spent in this event's draw history, which this draw may
+   * not draw again. Supplied by the caller — `draw` stays pure and has no view
+   * of the store. See `src/chart-id.ts`.
+   */
+  excludedKeys?: ReadonlySet<string>;
+};
 
 const artistDrawBlocklist = new Set();
 
@@ -269,6 +277,12 @@ export function draw(
 
   for (const chart of eligibleCharts(configData, gameData)) {
     if (artistDrawBlocklist.has(chart.artist)) continue;
+    if (
+      startPoint.excludedKeys &&
+      chartIsUsed(chart, startPoint.excludedKeys)
+    ) {
+      continue;
+    }
     const bucketIdx = bucketIndexForChart(chart);
     if (bucketIdx === null) continue;
     validCharts.get(bucketIdx).push(chart);
@@ -348,13 +362,16 @@ export function draw(
     }
     // remove this existing chart from eligible pool to prevent dupes
     const bucket = validCharts.get(bucketIdx);
-    const idxInBucket = bucket.findIndex(
-      (eligibleChart) =>
-        eligibleChart.name === chart.name &&
-        chart.diffAbbr === eligibleChart.diffAbbr &&
-        chart.level === eligibleChart.level,
+    const chartKeys = new Set(reuseKeysForChart(chart));
+    const idxInBucket = bucket.findIndex((eligibleChart) =>
+      chartIsUsed(eligibleChart, chartKeys),
     );
-    bucket.splice(idxInBucket, 1);
+    // a pre-seeded chart the current config wouldn't draw (a pocket pick from
+    // outside the pool, say) simply isn't in the bucket. splicing at -1 would
+    // drop an unrelated chart off the end of it.
+    if (idxInBucket >= 0) {
+      bucket.splice(idxInBucket, 1);
+    }
   }
 
   do {
@@ -442,16 +459,11 @@ export function draw(
     }
   } while (redraw);
 
-  let charts: Drawing["charts"];
-  if (configData.sortByLevel) {
-    charts = drawnCharts.sort(
-      (a, b) =>
-        chartLevelOrTier(a, useGranularLevels, false) -
-        chartLevelOrTier(b, useGranularLevels, false),
-    );
-  } else {
-    charts = shuffle(drawnCharts);
-  }
+  const charts: NonNullable<Drawing["charts"]> = sortCharts(
+    drawnCharts,
+    chartSortOf(configData),
+    useGranularLevels,
+  );
 
   if (!startPoint.charts && configData.playerPicks) {
     charts.unshift(...times(configData.playerPicks, newPlaceholder));

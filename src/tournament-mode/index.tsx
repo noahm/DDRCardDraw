@@ -8,6 +8,7 @@ import { CabManagement } from "./cab-management";
 import { MainView } from "./main-view";
 import { createClientStore } from "../state/store";
 import { useMemo } from "react";
+import { CustomDataDialog } from "../smx-edit-import";
 
 export function TournamentModeAppShell() {
   const params = useParams<"roomName">();
@@ -21,6 +22,7 @@ export function TournamentModeAppShell() {
         <UrqlProvider value={urqlClient}>
           <Header />
           <Outlet />
+          <CustomDataDialog />
         </UrqlProvider>
       </PartySocketManager>
     </ReduxProvider>

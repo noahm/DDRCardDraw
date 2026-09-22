@@ -1,8 +1,8 @@
 name: Checks
 
 on:
+  # Unfiltered, so PRs into long-lived branches like partykit are checked too.
   pull_request:
-    branches: [main]
 
 jobs:
   checks:

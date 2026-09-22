@@ -19,6 +19,8 @@ export function HeaderControls() {
       <Modal
         opened={matchPickerOpen}
         title="New Draw"
+        // wide enough that the draw source tabs stay on one row
+        size="lg"
         onClose={() => setMatchPickerOpen(false)}
       >
         <DrawDialog

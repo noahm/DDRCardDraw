@@ -3,11 +3,11 @@ import { useMemo } from "react";
 import { EligibleChart } from "../models/Drawing";
 import { CountingSet } from "../utils/counting-set";
 import {
-  chartLevelOrTier,
   getAvailableLevels,
   useGetDiffClass,
   useGetMetaString,
 } from "../game-data-utils";
+import { chartLevelOrTier } from "../utils/chart-level";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useConfigState, useGameData } from "../state/hooks";
 

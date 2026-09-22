@@ -2,13 +2,14 @@ import { Menu, Popover } from "@mantine/core";
 import classNames from "classnames";
 import {
   type JSX,
+  lazy,
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
-import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_PLACEHOLDER,
@@ -16,7 +17,6 @@ import {
   EligibleChart,
   PlayerPickPlaceholder,
 } from "../models/Drawing";
-import { SongSearch } from "../song-search";
 import { CardLabel, LabelType } from "./card-label";
 import { FillPlaceholderList, ActionMenu } from "./acton-menu";
 import styles from "./song-card.css";
@@ -28,6 +28,18 @@ import { copyTextToClipboard } from "../utils/share";
 import { useChartRandomSelected } from "../tournament-mode/highlight-random";
 
 import { baseChartValues, CardContentsProps } from "./variants";
+
+/**
+ * The song search omnibar is only reachable through a card's action menu, so it
+ * loads on demand. It gets mounted (closed) as soon as that menu opens rather
+ * than when a pocket pick starts, so that its own `isOpen` prop still drives
+ * the overlay's enter and exit transitions -- conditionally rendering it on
+ * `pocketPickPendingForPlayer` would tear the overlay out of the tree before it
+ * could animate closed.
+ */
+const SongSearch = lazy(() =>
+  import("../song-search").then((m) => ({ default: m.SongSearch })),
+);
 
 type PlayerId = string;
 
@@ -98,9 +110,8 @@ export function SongCardBase(props: Props) {
     actionsEnabled,
     CenterContent,
     FooterContent,
+    getActions,
   } = props;
-  const hideVetos = useConfigState((s) => s.hideVetos);
-
   const [wasRandomlySelected, clearRandomSelection] =
     useChartRandomSelected(chart);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -114,8 +125,15 @@ export function SongCardBase(props: Props) {
   }, [wasRandomlySelected]);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
-  const showMenu = () => setContextMenuOpen(true);
+  const [songSearchMounted, setSongSearchMounted] = useState(false);
+  const showMenu = () => {
+    setSongSearchMounted(true);
+    setContextMenuOpen(true);
+  };
   const hideMenu = () => setContextMenuOpen(false);
+
+  // key of the variant-supplied action whose popover is currently shown, if any
+  const [openActionKey, setOpenActionKey] = useState<string | null>(null);
 
   const [pocketPickPendingForPlayer, setPocketPickPendingForPlayer] =
     useState<PlayerId | null>(null);
@@ -149,6 +167,22 @@ export function SongCardBase(props: Props) {
   }, [name, diffAbbr]);
   const canCopy = !!name && !!diffAbbr;
 
+  // extra, game-specific info popovers contributed by the active card variant
+  const variantActions = getActions?.(replacedWith || chart) ?? [];
+  const openAction = variantActions.find((a) => a.key === openActionKey);
+  const infoActions = variantActions.length
+    ? variantActions.map((a) => ({
+        key: a.key,
+        labelKey: a.labelKey,
+        icon: a.icon,
+        // hand off from the action menu to this action's popover on the same card
+        onClick: () => {
+          setContextMenuOpen(false);
+          setOpenActionKey(a.key);
+        },
+      }))
+    : undefined;
+
   let menuContent: undefined | JSX.Element;
   if (actionsEnabled && !hasWinner) {
     if (replacedWith === undefined && baseChartIsPlaceholder) {
@@ -166,6 +200,7 @@ export function SongCardBase(props: Props) {
           onRedraw={iconCallbacks.onRedraw}
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
+          infoActions={infoActions}
         />
       );
     } else if (vetoedBy === undefined) {
@@ -173,9 +208,19 @@ export function SongCardBase(props: Props) {
         <ActionMenu
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
+          infoActions={infoActions}
         />
       );
     }
+  }
+  // even without other actions, variant info actions are still worth offering
+  if (!menuContent && infoActions) {
+    menuContent = (
+      <ActionMenu
+        infoActions={infoActions}
+        onCopy={canCopy ? handleCopy : undefined}
+      />
+    );
   }
 
   const rootClassname = classNames(styles.chart, {
@@ -184,7 +229,6 @@ export function SongCardBase(props: Props) {
     [styles.replaced]: replacedBy !== undefined && !baseChartIsPlaceholder,
     [styles.picked]: replacedBy !== undefined && baseChartIsPlaceholder,
     [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
-    [styles.hideVeto]: hideVetos,
     [styles.randomSelected]: wasRandomlySelected,
   });
 
@@ -235,30 +279,41 @@ export function SongCardBase(props: Props) {
           ref={rootRef}
           className={rootClassname}
           onClick={
-            showingContextMenu || pocketPickPendingForPlayer !== null
+            showingContextMenu ||
+            openAction ||
+            pocketPickPendingForPlayer !== null
               ? undefined
               : handleCardClick
           }
           style={jacketBg}
         >
-          <SongSearch
-            isOpen={pocketPickPendingForPlayer !== null}
-            onSongSelect={(song, chart) => {
-              if (actionsEnabled && chart) {
-                iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
-              }
-              setPocketPickPendingForPlayer(null);
-            }}
-            onCancel={() => setPocketPickPendingForPlayer(null)}
-          />
+          {songSearchMounted && (
+            <Suspense fallback={null}>
+              <SongSearch
+                isOpen={pocketPickPendingForPlayer !== null}
+                onSongSelect={(song, chart) => {
+                  if (actionsEnabled && chart) {
+                    iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
+                  }
+                  setPocketPickPendingForPlayer(null);
+                }}
+                onCancel={() => setPocketPickPendingForPlayer(null)}
+              />
+            </Suspense>
+          )}
           <div className={styles.cardCenter}>
             {actionLabels}
             <CenterContent chart={replacedWith || chart} />
           </div>
 
           <Menu
-            opened={showingContextMenu}
-            onChange={(opened) => !opened && hideMenu()}
+            opened={showingContextMenu || !!openAction}
+            onChange={(opened) => {
+              if (!opened) {
+                hideMenu();
+                setOpenActionKey(null);
+              }
+            }}
             position="top"
           >
             <Menu.Target>
@@ -266,7 +321,11 @@ export function SongCardBase(props: Props) {
                 <FooterContent chart={replacedWith || chart} />
               </div>
             </Menu.Target>
-            {menuContent && <Menu.Dropdown>{menuContent}</Menu.Dropdown>}
+            {(openAction || menuContent) && (
+              <Menu.Dropdown>
+                {openAction ? openAction.content : menuContent}
+              </Menu.Dropdown>
+            )}
           </Menu>
         </div>
       </Popover.Target>
