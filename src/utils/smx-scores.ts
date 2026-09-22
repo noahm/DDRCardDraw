@@ -132,7 +132,7 @@ export function smxChartKey(
   chart: EligibleChart,
   gameData: GameData,
 ): SmxChartKey | undefined {
-  const songId = chart.song.saIndex;
+  const songId = chart.songId;
   if (!songId) {
     return undefined;
   }

@@ -7,7 +7,9 @@ import { piuTourneyEnabled } from "../piu-tourney/config";
 import { createDraw } from "../state/thunks";
 import { useAppDispatch, useAppState } from "../state/store";
 import { eventSlice } from "../state/event.slice";
-import { Player, SimpleMeta, newPlayer } from "../models/Drawing";
+import { ExternalMeta, Player, SimpleMeta, newPlayer } from "../models/Drawing";
+import { PayoutSchemeInput } from "./payout-scheme-input";
+import { useEventSettings } from "../state/hooks";
 import { lazy, Suspense, useState } from "react";
 import { useAppMode } from "../common-components/app-mode";
 import { DrawingMeta } from "../card-draw";
@@ -43,9 +45,21 @@ export function DrawDialog(props: Props) {
 
   function handleExternalDraw(match: PickedMatch) {
     if (match.provider === "piu") {
+      if (match.subtype === "gauntlet") {
+        return handleDraw({
+          type: "piu",
+          subtype: "gauntlet",
+          players: match.players,
+          title: match.title,
+          id: match.id,
+          phaseName: match.phaseName,
+          tourneyId: match.tourneyId!,
+          pointsPerPlace: match.pointsPerPlace,
+        });
+      }
       return handleDraw({
         type: "piu",
-        subtype: match.subtype,
+        subtype: "versus",
         players: match.players,
         title: match.title,
         id: match.id,
@@ -137,23 +151,42 @@ export function DrawDialog(props: Props) {
   );
 }
 
-export function CustomDrawForm(props: {
-  initialMeta?: SimpleMeta;
+/**
+ * Simple form to edit some basic info about a draw including its players
+ */
+export function CustomDrawForm<
+  T extends SimpleMeta | ExternalMeta = SimpleMeta,
+>(props: {
+  initialMeta?: T;
   disableCreate?: boolean;
   submitText?: string;
-  onSubmit(meta: SimpleMeta): void;
+  onSubmit(meta: T): void;
 }) {
   // meta.players is already in display order
   const [players, setPlayers] = useState<Player[]>(
     () => props.initialMeta?.players ?? [newPlayer("P1"), newPlayer("P2")],
   );
   const [title, setTitle] = useState<string>(props.initialMeta?.title || "");
+  const [payoutScheme, setPayoutScheme] = useState<string>(
+    props.initialMeta?.payoutScheme || "",
+  );
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
+  /*
+   * A draw takes its payout from the event as it's drawn, so there's nothing
+   * to choose on the way in -- but afterwards this is the only place to put
+   * right a heat that was drawn under the wrong one. Past a head to head pair,
+   * where the draw is ranked on points at all.
+   */
+  const editingExistingDraw = !!props.initialMeta;
+  const scoresOnPoints = players.length > 2;
 
   function handleSubmit() {
     props.onSubmit({
-      type: "simple",
+      ...((props.initialMeta || { type: "simple" }) as T),
       players,
       title,
+      // carried through untouched where the field wasn't offered
+      payoutScheme: payoutScheme.trim() || undefined,
     });
   }
   return (
@@ -167,6 +200,21 @@ export function CustomDrawForm(props: {
       <Input.Wrapper label="players" mb="sm">
         <PlayerListInput value={players} onChange={setPlayers} />
       </Input.Wrapper>
+      {editingExistingDraw && scoresOnPoints && (
+        <Input.Wrapper
+          label="payout"
+          description="points each place earns per chart, this draw only"
+          mb="sm"
+        >
+          <PayoutSchemeInput
+            value={payoutScheme}
+            commit="with-form"
+            onCommit={setPayoutScheme}
+            playerCount={players.length}
+            inheritedScheme={eventScheme}
+          />
+        </Input.Wrapper>
+      )}
       <Button onClick={handleSubmit} disabled={props.disableCreate}>
         {props.submitText || "Create"}
       </Button>

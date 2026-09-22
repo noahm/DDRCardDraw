@@ -111,6 +111,7 @@ export type Database = {
           parent_round_id: number | null;
           round_pool_id: number | null;
           chartdraw_config_id: number | null;
+          /** comma separated payout table; parse with parsePointsPerPlace */
           points_per_stage: string | null;
           active_stream_state: unknown;
           created_at: string;

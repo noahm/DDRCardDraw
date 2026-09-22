@@ -10,6 +10,13 @@ type Tables = Database["public"]["Tables"];
 // piuTourneyIdAtom and parseTourneyId live in ./atoms so the settings tab can
 // reach them without loading the Supabase client.
 export { piuTourneyIdAtom, parseTourneyId } from "./atoms";
+// likewise, the payout math lives in ./points so OBS sources can score a
+// gauntlet without loading the Supabase client.
+export {
+  DEFAULT_POINTS_PER_PLACE,
+  parsePointsPerPlace,
+  pointsForPlace,
+} from "./points";
 
 export interface QueryResult<T> {
   data: T | undefined;
@@ -106,6 +113,8 @@ export interface PiuMatch {
   id: number;
   name: string;
   status: RoundStatus | null;
+  /** raw payout table; see parsePointsPerPlace */
+  points_per_stage: string | null;
   round_pools: { id: number; name: string; sort_order: number | null } | null;
   player_rounds: PiuEntrant[];
 }
@@ -127,7 +136,7 @@ export function usePiuMatches(tourneyId: number | null) {
           const { data, error } = await client
             .from("rounds")
             .select(
-              `id, name, status, round_pool_id,
+              `id, name, status, round_pool_id, points_per_stage,
                round_pools ( id, name, sort_order ),
                player_rounds (
                  id, sort_order, player_tourney_id,

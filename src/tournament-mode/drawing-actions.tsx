@@ -1,4 +1,4 @@
-import { ActionIcon, Menu, Modal, Tooltip } from "@mantine/core";
+import { ActionIcon, Menu, Modal, Tabs, Tooltip } from "@mantine/core";
 import {
   IconCamera,
   IconSitemap,
@@ -19,18 +19,15 @@ import {
   IconScribble,
   IconCloudDownload,
 } from "@tabler/icons-react";
-import { useAtomValue } from "jotai";
 import { domToPng } from "modern-screenshot";
-import { useState, lazy, JSX, ReactNode, Suspense } from "react";
+import { useState, lazy, ReactNode, Suspense } from "react";
 import { useErrorBoundary } from "react-error-boundary";
-import { showPlayerAndRoundLabels } from "../config-state";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_DRAWN,
   CHART_PLACEHOLDER,
   playerById,
-  ExternalMeta,
-  isExternalMeta,
+  isGauntletScored,
 } from "../models/Drawing";
 import {
   BracketSetGameDataInput as GDI,
@@ -52,6 +49,7 @@ import {
   createPlusOneChart,
   createRedrawAll,
   createSubdraw,
+  mergeSubdraws,
 } from "../state/thunks";
 import { CountingSet } from "../utils/counting-set";
 import { shareCharts, shareImage } from "../utils/share";
@@ -64,13 +62,16 @@ import {
   ConfigContextProvider,
   useConfigId,
   useConfigState,
+  useEventSettings,
   useGameData,
 } from "../state/hooks";
 import { CustomDrawForm } from "../controls/draw-dialog";
-import { mergeDraws } from "../state/central";
 import { useHighlightRandom } from "./highlight-random";
 
 const ScoreEditor = lazy(() => import("./score-editor"));
+const StandingsTable = lazy(() =>
+  import("./standings-table").then((m) => ({ default: m.StandingsTable })),
+);
 const SmxScoreImport = lazy(() => import("./smx-score-import"));
 
 /** thunk that dispatches nothing, but calculates the result to be sent to startgg */
@@ -266,17 +267,16 @@ export function DrawingActions() {
   const highlighAtRandom = useHighlightRandom();
   const gameKey = useConfigState((c) => c.gameKey);
   const gameData = useGameData();
-  // scores are recorded for every externally sourced match, h2h included
-  const canScore = isExternalMeta(drawingMeta);
+  // any draw can hold scores — an externally sourced match, h2h or gauntlet,
+  // or a custom draw — but there has to be somebody to attribute them to
+  const canScore = !!drawingMeta.players.length;
   // ...and the SMX score feed can fill them in, when that's the game in play
   const canImportSmxScores = canScore && isSmxGameData(gameKey, gameData);
   const { showBoundary } = useErrorBoundary();
-  const [scoreEditorMeta, setScoreEditorMeta] = useState<
-    ExternalMeta | undefined
-  >(undefined);
-  const [smxImportMeta, setSmxImportMeta] = useState<ExternalMeta | undefined>(
-    undefined,
-  );
+  // both dialogs read the meta straight off the draw rather than a copy taken
+  // when they opened, so a score typed into one shows up in the other
+  const [scoringOpen, setScoringOpen] = useState(false);
+  const [smxImportOpen, setSmxImportOpen] = useState(false);
 
   return (
     <div className={styles.networkButtons}>
@@ -358,23 +358,35 @@ export function DrawingActions() {
           <ToolbarButton
             label="Edit Scores"
             icon={<IconTable size={18} />}
-            onClick={() => {
-              setScoreEditorMeta(drawingMeta);
-            }}
+            onClick={() => setScoringOpen(true)}
           />
           <Modal
-            onClose={() => setScoreEditorMeta(undefined)}
-            opened={!!scoreEditorMeta}
+            onClose={() => setScoringOpen(false)}
+            opened={scoringOpen}
             title="Score Editor"
             size="auto"
           >
-            {/* Modal keeps its children mounted through the closing
-                transition, so the meta has to be guarded rather than asserted */}
-            {scoreEditorMeta && (
-              <Suspense fallback={<DelayedSpinner />}>
-                <ScoreEditor meta={scoreEditorMeta} />
-              </Suspense>
-            )}
+            <Suspense fallback={<DelayedSpinner />}>
+              {isGauntletScored(drawingMeta) ? (
+                // a gauntlet ranks on points rather than per-chart wins, so
+                // the table it adds up to belongs next to the grid it's typed
+                // into
+                <Tabs defaultValue="scores">
+                  <Tabs.List>
+                    <Tabs.Tab value="scores">Scores</Tabs.Tab>
+                    <Tabs.Tab value="standings">Standings</Tabs.Tab>
+                  </Tabs.List>
+                  <Tabs.Panel value="scores" pt="sm">
+                    <ScoreEditor meta={drawingMeta} />
+                  </Tabs.Panel>
+                  <Tabs.Panel value="standings" pt="sm">
+                    <StandingsTable meta={drawingMeta} />
+                  </Tabs.Panel>
+                </Tabs>
+              ) : (
+                <ScoreEditor meta={drawingMeta} />
+              )}
+            </Suspense>
           </Modal>
         </>
       )}
@@ -383,23 +395,21 @@ export function DrawingActions() {
           <ToolbarButton
             label="Import Scores from SMX"
             icon={<IconCloudDownload size={18} />}
-            onClick={() => setSmxImportMeta(drawingMeta)}
+            onClick={() => setSmxImportOpen(true)}
           />
           <Modal
-            onClose={() => setSmxImportMeta(undefined)}
-            opened={!!smxImportMeta}
+            onClose={() => setSmxImportOpen(false)}
+            opened={smxImportOpen}
             title="Import Scores from SMX"
             size="auto"
             styles={{ content: { minWidth: "40em" } }}
           >
-            {smxImportMeta && (
-              <Suspense fallback={<DelayedSpinner />}>
-                <SmxScoreImport
-                  meta={smxImportMeta}
-                  onClose={() => setSmxImportMeta(undefined)}
-                />
-              </Suspense>
-            )}
+            <Suspense fallback={<DelayedSpinner />}>
+              <SmxScoreImport
+                meta={drawingMeta}
+                onClose={() => setSmxImportOpen(false)}
+              />
+            </Suspense>
           </Modal>
         </>
       )}
@@ -461,33 +471,25 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
   const drawingMeta = useAppState((s) => s.drawings.entities[drawingId].meta);
   const configId = useAppState((s) => s.drawings.entities[drawingId].configId);
   const isTwoPlayers = drawingMeta.players.length === 2;
-  const showLabels = useAtomValue(showPlayerAndRoundLabels);
+  const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
 
-  let editPlayersDialog: JSX.Element | null;
-  switch (drawingMeta.type) {
-    case "simple":
-      editPlayersDialog = (
-        <CustomDrawForm
-          initialMeta={drawingMeta}
-          submitText="Save"
-          onSubmit={(meta) => {
-            dispatch(
-              drawingsSlice.actions.updatePlayers({
-                id: drawingId,
-                title: meta.title,
-                players: meta.players,
-              }),
-            );
-            setMetaEditorOpen(false);
-          }}
-        />
-      );
-      break;
-    case "startgg":
-    case "piu":
-      // @todo figure out what edit looks like for an externally sourced match?
-      editPlayersDialog = null;
-  }
+  const editPlayersDialog = (
+    <CustomDrawForm
+      initialMeta={drawingMeta}
+      submitText="Save"
+      onSubmit={(meta) => {
+        dispatch(
+          drawingsSlice.actions.updatePlayers({
+            id: drawingId,
+            title: meta.title,
+            players: meta.players,
+            payoutScheme: meta.payoutScheme,
+          }),
+        );
+        setMetaEditorOpen(false);
+      }}
+    />
+  );
 
   return (
     <>
@@ -532,7 +534,7 @@ function EditMatchMenu({ drawingId }: { drawingId: string }) {
           </Menu.Sub>
           <Menu.Item
             leftSection={<IconSitemap size={16} />}
-            onClick={() => dispatch(mergeDraws({ drawingId }))}
+            onClick={() => dispatch(mergeSubdraws(drawingId))}
           >
             Merge All Sets
           </Menu.Item>

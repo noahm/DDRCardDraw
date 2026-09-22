@@ -12,21 +12,34 @@ import { useAppDispatch, useAppState } from "../state/store";
 import {
   IconPlus,
   IconCopy,
-  IconEdit,
   IconDeviceFloppy,
+  IconHistory,
+  IconLayoutGrid,
+  IconList,
   IconTrash,
 } from "@tabler/icons-react";
-import React, { useRef, useState } from "react";
+import React, { JSX, useRef, useState } from "react";
 import { eventSlice } from "../state/event.slice";
 import { nanoid } from "nanoid";
-import { copyObsSource, routableGlobalSourcePath } from "./copy-obs-source";
+import {
+  copyObsSource,
+  drawnChartsLayouts,
+  routableDrawnChartsSourcePath,
+  routableGlobalSourcePath,
+  type DrawnChartsLayout,
+} from "./copy-obs-source";
+import { CabObsSources } from "./cab-obs-sources";
+import { SourceRow } from "./obs-source-row";
 
+import { Section } from "../common-components/section";
 import styles from "./dashboard.css";
 import { useInObs, useTheme } from "../theme-toggle";
 import { useHref } from "react-router-dom";
+import { useIntl } from "../hooks/useIntl";
 import ReactCodeMirror from "@uiw/react-codemirror";
 
 export function Dashboard() {
+  const { t, formatMessage } = useIntl();
   const [currentEdit, setCurrentEdit] = useState<string | null>(null);
   const labels = useAppState((s) => s.event.obsLabels);
   const isObs = useInObs();
@@ -38,7 +51,10 @@ export function Dashboard() {
         {!isObs && (
           <p>
             <em>
-              <b>HINT:</b> add this page as a custom browser dock in OBS!
+              {formatMessage(
+                { id: "obsDashboard.dockHint" },
+                { b: (text) => <b>{text}</b> },
+              )}
             </em>
           </p>
         )}
@@ -48,7 +64,7 @@ export function Dashboard() {
             close={() => setCurrentEdit(null)}
           />
           <Title order={3} mb="xs">
-            OBS Text Sources{" "}
+            {t("obsDashboard.textSources")}{" "}
             <ActionIcon
               variant="default"
               aria-label="Add OBS text source"
@@ -72,9 +88,70 @@ export function Dashboard() {
             ))}
           </Stack>
         </section>
+        <section>
+          <CabObsSources />
+        </section>
+        <DrawnChartsSources />
         <CssEditor />
       </div>
     </>
+  );
+}
+
+const drawnChartsLayoutInfo: Record<
+  DrawnChartsLayout,
+  { labelKey: string; icon: JSX.Element }
+> = {
+  grid: {
+    labelKey: "obsDashboard.layoutGrid",
+    icon: <IconLayoutGrid size={16} />,
+  },
+  list: { labelKey: "obsDashboard.layoutList", icon: <IconList size={16} /> },
+};
+
+function DrawnChartsSources() {
+  const { t, formatMessage } = useIntl();
+  return (
+    <Section
+      icon={<IconHistory size={20} />}
+      title={t("obsDashboard.drawnChartSources")}
+      subtitle={t("obsDashboard.drawnChartSourcesHint")}
+    >
+      {/* the params are syntax rather than language, so they stay out of the
+            translated sentence and go in as fixed pieces around it */}
+      <p className={styles.sourceHint}>
+        {formatMessage(
+          { id: "obsDashboard.drawnChartsParamHint" },
+          {
+            configParam: <code>?config=&lt;config id&gt;</code>,
+            rangeParam: <code>?min=15&amp;max=17</code>,
+            allParam: <code>?all</code>,
+          },
+        )}
+      </p>
+      <Stack gap="xs">
+        {drawnChartsLayouts.map((layout) => (
+          <DrawnChartsRow key={layout} layout={layout} />
+        ))}
+      </Stack>
+    </Section>
+  );
+}
+
+function DrawnChartsRow({ layout }: { layout: DrawnChartsLayout }) {
+  const { t } = useIntl();
+  const href = useHref(routableDrawnChartsSourcePath(layout));
+  const { labelKey, icon } = drawnChartsLayoutInfo[layout];
+  return (
+    <SourceRow
+      href={href}
+      label={
+        <>
+          {icon}
+          <span>{t(labelKey)}</span>
+        </>
+      }
+    />
   );
 }
 
@@ -85,24 +162,47 @@ function LabelCard(props: {
   onEdit(this: void): void;
   onDelete(this: void): void;
 }) {
+  const { t } = useIntl();
   const href = useHref(routableGlobalSourcePath(props.id));
   return (
-    <Card withBorder padding="sm" className={styles.textSourceCard}>
+    <Card
+      withBorder
+      padding="sm"
+      className={styles.textSourceCard}
+      title={t("obsDashboard.editLabel", { label: props.label })}
+      // editing by clicking the row costs the keyboard access the edit button
+      // used to provide unless we put it back
+      role="button"
+      tabIndex={0}
+      style={{ cursor: "pointer" }}
+      // the buttons inside mark their own clicks handled, so copying or
+      // deleting doesn't also open the editor
+      onClick={(e) => e.defaultPrevented || props.onEdit()}
+      onKeyDown={(e) => {
+        // a button inside the row answers its own Enter/Space first
+        if (e.target !== e.currentTarget) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          props.onEdit();
+        }
+      }}
+    >
       <div>
         <p>{props.label}</p>
         <Title order={4}>{props.value}</Title>
       </div>
       <Group gap={4}>
-        <ActionIcon variant="default" aria-label="Edit" onClick={props.onEdit}>
-          <IconEdit size={16} />
-        </ActionIcon>
         <ActionIcon
           variant="default"
           component="a"
-          aria-label="Copy OBS source"
+          aria-label={t("obsDashboard.copyLabelUrl")}
+          title={t("obsDashboard.copyLabelUrl")}
           onClick={(e) => {
             e.preventDefault();
-            copyObsSource(new URL(href, document.location.href).href);
+            copyObsSource(
+              new URL(href, document.location.href).href,
+              t("obsDashboard.copiedToClipboard"),
+            );
           }}
           href={href}
         >
@@ -111,11 +211,13 @@ function LabelCard(props: {
         <ActionIcon
           variant="default"
           color="red"
-          aria-label="Delete text source"
-          onClick={() => {
+          aria-label={t("obsDashboard.deleteLabel")}
+          title={t("obsDashboard.deleteLabel")}
+          onClick={(e) => {
+            e.preventDefault();
             if (
               confirm(
-                `Delete the "${props.label}" text source? This cannot be undone.`,
+                t("obsDashboard.deleteLabelConfirm", { label: props.label }),
               )
             ) {
               props.onDelete();
@@ -136,6 +238,7 @@ function EditDialog({
   sourceId: string | null;
   close(this: void): void;
 }) {
+  const { t } = useIntl();
   const label = useAppState((s) =>
     sourceId ? s.event.obsLabels[sourceId] : null,
   ) || { label: "", value: "" };
@@ -169,17 +272,21 @@ function EditDialog({
     }
   };
   return (
-    <Modal opened={!!sourceId} title="Edit Custom OBS label" onClose={close}>
+    <Modal
+      opened={!!sourceId}
+      title={t("obsDashboard.editLabelTitle")}
+      onClose={close}
+    >
       <form action={submit}>
         <TextInput
-          label="Label Name"
+          label={t("obsDashboard.labelName")}
           mb="sm"
           ref={nameInput}
           defaultValue={label.label}
           onKeyDown={handleInputKeydown}
         />
         <TextInput
-          label="Value"
+          label={t("obsDashboard.labelValue")}
           mb="sm"
           ref={valueInput}
           defaultValue={label.value}
@@ -188,9 +295,9 @@ function EditDialog({
       </form>
       <Group justify="flex-end" gap="xs" mt="md">
         <Button variant="default" onClick={close}>
-          Cancel
+          {t("obsDashboard.cancel")}
         </Button>
-        <Button onClick={submit}>Save</Button>
+        <Button onClick={submit}>{t("obsDashboard.save")}</Button>
       </Group>
     </Modal>
   );
@@ -199,6 +306,7 @@ function EditDialog({
 import { css } from "@codemirror/lang-css";
 
 function CssEditor() {
+  const { t } = useIntl();
   const cleanDoc = useAppState((s) => s.event.obsCss);
   const [isDirty, setIsDirty] = useState(false);
   const [localDoc, setLocalDoc] = useState(cleanDoc);
@@ -208,7 +316,7 @@ function CssEditor() {
   return (
     <section>
       <Title order={3} my="xs">
-        Global OBS Source Styles{" "}
+        {t("obsDashboard.globalStyles")}{" "}
         <ActionIcon
           variant={isDirty ? "filled" : "default"}
           aria-label="Save styles"

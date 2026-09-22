@@ -1,6 +1,7 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 import { CompoundSetId } from "../models/Drawing";
+import { DEFAULT_PAYOUT_SCHEME } from "../models/payout-scheme";
 import { mergeDraws } from "./central";
 
 export interface CabInfo {
@@ -10,8 +11,41 @@ export interface CabInfo {
   id: string;
 }
 
+/**
+ * Settings that belong to the event as a whole rather than to any one draw
+ * config: either because they state a rule the whole event plays by, or
+ * because letting two configs disagree about them just produces an
+ * inconsistent screen. Unlike configs, there is exactly one of these per room,
+ * and it is shared with everyone connected to it.
+ */
+export interface EventSettings {
+  /**
+   * A chart drawn anywhere in this event's history can never be drawn again.
+   * Enforced twice over: draws exclude used charts up front, and the reducer
+   * refuses a draw that would reuse one — which is what stops two cabs drawing
+   * the same chart before either has seen the other's draw.
+   */
+  preventChartReuse: boolean;
+  showMaxScore: boolean;
+  showPlayerAndRoundLabels: boolean;
+  /**
+   * What every gauntlet scored draw in this room pays out, in the notation
+   * `src/models/payout-scheme.ts` describes. A single draw can say otherwise,
+   * and a round drawn from a bracket that carries its own table keeps that.
+   */
+  gauntletPayout: string;
+}
+
+export const defaultEventSettings: EventSettings = {
+  preventChartReuse: false,
+  showMaxScore: false,
+  showPlayerAndRoundLabels: true,
+  gauntletPayout: DEFAULT_PAYOUT_SCHEME,
+};
+
 interface EventState {
   eventName: string;
+  settings: EventSettings;
   cabs: Record<string, CabInfo>;
   obsLabels: Record<string, { label: string; value: string }>;
   obsCss: string;
@@ -19,6 +53,7 @@ interface EventState {
 
 const initialState: EventState = {
   eventName: "",
+  settings: defaultEventSettings,
   cabs: {
     default: {
       id: "default",
@@ -90,6 +125,9 @@ export const eventSlice = createSlice({
     },
     updateObsCss(state, action: PayloadAction<string>) {
       state.obsCss = action.payload;
+    },
+    updateSettings(state, action: PayloadAction<Partial<EventSettings>>) {
+      Object.assign(state.settings, action.payload);
     },
   },
   extraReducers(builder) {

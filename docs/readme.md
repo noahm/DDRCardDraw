@@ -45,8 +45,8 @@ Some of the less self-explanatory settings are described below.
 <dt>Picks must match draw options
 <dd>Limits charts selected in a free/pocket pick action to those that match current draw settings.
 
-<dt>Sort by chart level
-<dd>Sorts the drawn charts by difficulty level, from lowest on the left, to highest on the right. When not enabled the chart order is randomized.
+<dt>Card order
+<dd>How a finished draw arranges its cards: "In drawn order" leaves them as the draw produced them, "By chart level" sorts by difficulty level from lowest on the left to highest on the right, and "Shuffled" randomizes them. Free pick placeholders lead the set whichever order is chosen, and a draw that merges several sets into one is arranged as a single set.
 
 <dt>Use granular levels
 <dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Weighted Distribution settings.

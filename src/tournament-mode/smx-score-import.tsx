@@ -11,9 +11,9 @@ import { IconRefresh } from "@tabler/icons-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDrawing } from "../drawing-context";
 import {
-  CHART_DRAWN,
-  type ExternalMeta,
+  type Drawing,
   playerDisplayName,
+  scoreableCharts,
 } from "../models/Drawing";
 import { drawingsSlice } from "../state/drawings.slice";
 import { useGameData } from "../state/hooks";
@@ -58,7 +58,7 @@ export default function SmxScoreImport({
   meta,
   onClose,
 }: {
-  meta: ExternalMeta;
+  meta: Drawing["meta"];
   onClose: () => void;
 }) {
   const drawingId = useDrawing((d) => d.compoundId);
@@ -80,28 +80,22 @@ export default function SmxScoreImport({
   const [overrides, setOverrides] = useState<Record<number, string>>({});
 
   /**
-   * The charts to watch the feed for: everything drawn and not banned, with a
-   * pocket pick standing in for the chart it replaced (that's what got played).
+   * The charts to watch the feed for: every card that can be scored, with a
+   * pocket pick or free pick standing in where one was made (that's what got
+   * played).
    */
   const targets = useMemo(() => {
     if (!gameData) {
       return [];
     }
     const found: SmxChartTarget[] = [];
-    for (const drawn of charts) {
-      if (bans[drawn.id]) {
-        continue;
-      }
-      const played =
-        pocketPicks[drawn.id]?.pick ||
-        (drawn.type === CHART_DRAWN ? drawn : undefined);
-      if (!played) {
-        // a player pick nobody has filled in yet
-        continue;
-      }
-      const key = smxChartKey(played, gameData);
+    for (const { id, chart } of scoreableCharts(charts, {
+      bans,
+      pocketPicks,
+    })) {
+      const key = smxChartKey(chart, gameData);
       if (key) {
-        found.push({ chartId: drawn.id, chart: played, key });
+        found.push({ chartId: id, chart, key });
       }
     }
     return found;
@@ -343,7 +337,7 @@ function PlayRow({
   onAssign,
 }: {
   play: RecentPlay;
-  meta: ExternalMeta;
+  meta: Drawing["meta"];
   assignedTo: string;
   isOverwritten: boolean;
   onAssign: (playerId: string) => void;

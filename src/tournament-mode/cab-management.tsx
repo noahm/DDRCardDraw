@@ -3,6 +3,7 @@ import {
   Card,
   Group,
   Menu,
+  Text,
   TextInput,
   Tooltip,
 } from "@mantine/core";
@@ -14,25 +15,17 @@ import {
   IconCaretLeft,
   IconCaretRight,
   IconX,
-  IconBinaryTree,
-  IconTypography,
-  IconStack2,
   IconVideo,
   IconDots,
-  IconUsers,
-  IconUser,
   IconCircleMinus,
-  IconTag,
-  IconNumbers,
-  IconLabel,
 } from "@tabler/icons-react";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
 import { drawingsSlice } from "../state/drawings.slice";
 import { playerDisplayName } from "../models/Drawing";
-import { copyObsSource, routableCabSourcePath } from "./copy-obs-source";
-import { useHref } from "react-router-dom";
+import { useHref, useNavigate } from "react-router-dom";
+import { routableCabDashboardPath } from "./copy-obs-source";
 
 export function CabManagement() {
   const [isCollapsed, setCollapsed] = useState(true);
@@ -117,6 +110,9 @@ function AddCabControl(props: { children?: ReactNode }) {
 
 function CabSummary({ cab }: { cab: CabInfo }) {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const dashPath = routableCabDashboardPath(cab.id);
+  const dashHref = useHref(dashPath, { relative: "route" });
   const removeCab = useCallback(
     () => dispatch(eventSlice.actions.removeCab(cab.id)),
     [dispatch, cab.id],
@@ -133,83 +129,22 @@ function CabSummary({ cab }: { cab: CabInfo }) {
             </ActionIcon>
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Sub>
-              <Menu.Sub.Target>
-                <Menu.Sub.Item leftSection={<IconVideo size={16} />}>
-                  OBS Sources
-                </Menu.Sub.Item>
-              </Menu.Sub.Target>
-              <Menu.Sub.Dropdown>
-                <CopySourceMenuItem
-                  icon={<IconStack2 size={16} />}
-                  text="Cards"
-                  stub="cards"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconTypography size={16} />}
-                  text="Title"
-                  stub="title"
-                  cabId={cab.id}
-                />
-                <CopySourceMenuItem
-                  icon={<IconBinaryTree size={16} />}
-                  text="Current Phase"
-                  stub="phase"
-                  cabId={cab.id}
-                />
-                <Menu.Sub>
-                  <Menu.Sub.Target>
-                    <Menu.Sub.Item leftSection={<IconUsers size={16} />}>
-                      Players
-                    </Menu.Sub.Item>
-                  </Menu.Sub.Target>
-                  <Menu.Sub.Dropdown>
-                    <CopySourceMenuItem
-                      icon={<IconUsers size={16} />}
-                      text="All Players"
-                      stub="players"
-                      cabId={cab.id}
-                    />
-                    <Menu.Sub>
-                      <Menu.Sub.Target>
-                        <Menu.Sub.Item leftSection={<IconUser size={16} />}>
-                          Single Player
-                        </Menu.Sub.Item>
-                      </Menu.Sub.Target>
-                      <Menu.Sub.Dropdown>
-                        <CopySourceMenuItem
-                          text="Name and Score"
-                          stub="player/1"
-                          cabId={cab.id}
-                        />
-                        <CopySourceMenuItem
-                          icon={<IconTag size={16} />}
-                          text="Name"
-                          stub="player/1/name"
-                          cabId={cab.id}
-                        />
-                        <CopySourceMenuItem
-                          icon={<IconNumbers size={16} />}
-                          text="Score"
-                          stub="player/1/score"
-                          cabId={cab.id}
-                        />
-                        <CopySourceMenuItem
-                          icon={<IconLabel size={16} />}
-                          text="Pronouns"
-                          stub="player/1/pronouns"
-                          cabId={cab.id}
-                        />
-                      </Menu.Sub.Dropdown>
-                    </Menu.Sub>
-                    <Menu.Item disabled>
-                      (edit URL for players beyond 1)
-                    </Menu.Item>
-                  </Menu.Sub.Dropdown>
-                </Menu.Sub>
-              </Menu.Sub.Dropdown>
-            </Menu.Sub>
+            <Menu.Item
+              leftSection={<IconVideo size={16} />}
+              rightSection={
+                <Text size="xs" c="dimmed">
+                  dashboard
+                </Text>
+              }
+              component="a"
+              href={dashHref}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(dashPath);
+              }}
+            >
+              OBS Sources
+            </Menu.Item>
             <Menu.Item
               leftSection={<IconCircleMinus size={16} />}
               onClick={removeCab}
@@ -221,28 +156,6 @@ function CabSummary({ cab }: { cab: CabInfo }) {
       </h1>
       <CurrentMatch cab={cab} />
     </div>
-  );
-}
-
-function CopySourceMenuItem(props: {
-  icon?: ReactNode;
-  text: ReactNode;
-  stub: string;
-  cabId: string;
-}) {
-  const href = useHref(routableCabSourcePath(props.cabId, props.stub));
-  return (
-    <Menu.Item
-      leftSection={props.icon}
-      component="a"
-      onClick={(e) => {
-        e.preventDefault();
-        copyObsSource(e.currentTarget.href);
-      }}
-      href={href}
-    >
-      {props.text}
-    </Menu.Item>
   );
 }
 

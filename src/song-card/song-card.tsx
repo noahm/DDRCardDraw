@@ -10,7 +10,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { useConfigState } from "../state/hooks";
 import { useDrawing } from "../drawing-context";
 import {
   CHART_PLACEHOLDER,
@@ -113,8 +112,6 @@ export function SongCardBase(props: Props) {
     FooterContent,
     getActions,
   } = props;
-  const hideVetos = useConfigState((s) => s.hideVetos);
-
   const [wasRandomlySelected, clearRandomSelection] =
     useChartRandomSelected(chart);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -232,7 +229,6 @@ export function SongCardBase(props: Props) {
     [styles.replaced]: replacedBy !== undefined && !baseChartIsPlaceholder,
     [styles.picked]: replacedBy !== undefined && baseChartIsPlaceholder,
     [styles.clickable]: !!menuContent || !!props.onClick || canCopy,
-    [styles.hideVeto]: hideVetos,
     [styles.randomSelected]: wasRandomlySelected,
   });
 

@@ -11,7 +11,9 @@ import { configSlice, ConfigState } from "../state/config.slice";
 import { GameDataSelect } from "../version-select";
 import { useLastConfigSelected } from "../state/config.atoms";
 import { changeGameKeyForConfig } from "../state/thunks";
-import { ConfigList } from "./config-select";
+import { ConfigList, GLOBAL_SETTINGS_ID } from "./config-select";
+import { EventSettings } from "./event-settings";
+import { LocalSettings } from "./local-settings";
 
 export function ConfigPage() {
   const navigate = useNavigate();
@@ -47,15 +49,26 @@ export function ConfigPage() {
         <FormattedMessage id="controls.drawerTitle" />
       </h1>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 5fr" }}>
-        <ConfigList selectedId={configId} onChange={setNextConfig} />
-        <ConfigIdGate configId={configId}>
+        <div>
+          <ConfigList selectedId={configId} onChange={setNextConfig} />
+        </div>
+        {configId === GLOBAL_SETTINGS_ID ? (
           <div style={{ maxWidth: "30em" }}>
-            <ConfigCoreFields configId={configId} />
             <ErrorBoundary fallback={<ErrorFallback />}>
-              <ControlsDrawer configId={configId} />
+              <EventSettings />
+              <LocalSettings />
             </ErrorBoundary>
           </div>
-        </ConfigIdGate>
+        ) : (
+          <ConfigIdGate configId={configId}>
+            <div style={{ maxWidth: "30em" }}>
+              <ConfigCoreFields configId={configId} />
+              <ErrorBoundary fallback={<ErrorFallback />}>
+                <ControlsDrawer configId={configId} />
+              </ErrorBoundary>
+            </div>
+          </ConfigIdGate>
+        )}
       </div>
     </div>
   );

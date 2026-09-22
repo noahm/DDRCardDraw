@@ -27,7 +27,7 @@
       "radar-peak:hand-trip",
       "radar-peak:one-hand"
     ],
-    "lastUpdated": 1781044214983
+    "lastUpdated": 1789350208265
   },
   "defaults": {
     "style": "single",
@@ -1837,28 +1837,28 @@
       "date_added": "2012-06-27",
       "saHash": "55",
       "artist": "D.watt(IOSYS)",
-      "jacket": "sdvx/booth/glass_no_kneeso_dwatt-novice.png",
+      "jacket": "sdvx/booth/garasuno_kneeso_dwatt-novice.png",
       "bpm": "185",
       "charts": [
         {
           "lvl": 5,
           "style": "single",
           "diffClass": "novice",
-          "jacket": "sdvx/booth/glass_no_kneeso_dwatt-novice.png",
+          "jacket": "sdvx/booth/garasuno_kneeso_dwatt-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 10,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/booth/glass_no_kneeso_dwatt-advanced.png",
+          "jacket": "sdvx/booth/garasuno_kneeso_dwatt-advanced.png",
           "flags": ["radar-peak:notes"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/booth/glass_no_kneeso_dwatt-exhaust.png",
+          "jacket": "sdvx/booth/garasuno_kneeso_dwatt-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ]
@@ -1879,7 +1879,7 @@
           "flags": ["radar-peak:tsumami"]
         },
         {
-          "lvl": 3,
+          "lvl": 9,
           "style": "single",
           "diffClass": "advanced",
           "flags": ["radar-peak:peak"]
@@ -2029,7 +2029,7 @@
           "flags": ["radar-peak:notes"]
         },
         {
-          "lvl": 17,
+          "lvl": 18.2,
           "style": "single",
           "diffClass": "gravity",
           "jacket": "sdvx/booth/hongkong_ohnuma-gravity.png",
@@ -2101,7 +2101,6 @@
           "diffClass": "exhaust",
           "flags": ["radar-peak:peak"]
         },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
         {
           "lvl": 17.5,
           "style": "single",
@@ -3731,7 +3730,7 @@
       "date_added": "2012-11-16",
       "saHash": "112",
       "artist": "Last Note. feat. GUMI",
-      "jacket": "sdvx/booth/noisy_lastnote.png",
+      "jacket": "sdvx/booth/noijila_lastnote.png",
       "bpm": "190",
       "charts": [
         {
@@ -6331,7 +6330,7 @@
       "date_added": "2013-06-05",
       "saHash": "205",
       "artist": "kamome sano",
-      "jacket": "sdvx/infinite/concon_kamome.png",
+      "jacket": "sdvx/infinite/concon_scu.png",
       "bpm": "194",
       "charts": [
         {
@@ -6817,6 +6816,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.5,
+          "style": "single",
+          "diffClass": "nabla",
+          "flags": ["radar-peak:notes", "otherEvents"]
         }
       ]
     },
@@ -9655,6 +9660,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "nabla",
+          "flags": ["radar-peak:peak", "otherEvents"]
         }
       ]
     },
@@ -10402,7 +10413,6 @@
           "diffClass": "exhaust",
           "flags": ["radar-peak:peak"]
         },
-        { "lvl": 16, "style": "single", "diffClass": "exhaust" },
         {
           "lvl": 17.5,
           "style": "single",
@@ -10672,28 +10682,28 @@
       "date_added": "2014-04-11",
       "saHash": "350",
       "artist": "かぼちゃ「黒幕はあやつぐ」と供述しており",
-      "jacket": "sdvx/infinite/sinshoku_kabocha-novice.png",
+      "jacket": "sdvx/infinite/sinryaku_kabocha-novice.png",
       "bpm": "138-276",
       "charts": [
         {
           "lvl": 4,
           "style": "single",
           "diffClass": "novice",
-          "jacket": "sdvx/infinite/sinshoku_kabocha-novice.png",
+          "jacket": "sdvx/infinite/sinryaku_kabocha-novice.png",
           "flags": ["radar-peak:tricky"]
         },
         {
           "lvl": 10,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/infinite/sinshoku_kabocha-advanced.png",
+          "jacket": "sdvx/infinite/sinryaku_kabocha-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 15,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/infinite/sinshoku_kabocha-exhaust.png",
+          "jacket": "sdvx/infinite/sinryaku_kabocha-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ]
@@ -10884,7 +10894,6 @@
           "diffClass": "exhaust",
           "flags": ["radar-peak:notes"]
         },
-        { "lvl": 13, "style": "single", "diffClass": "exhaust" },
         {
           "lvl": 16,
           "style": "single",
@@ -11147,7 +11156,6 @@
           "lvl": 18.8,
           "style": "single",
           "diffClass": "heavenly",
-          "jacket": "sdvx/infinite/chouetsu_ayatsugu_otowa-gravity.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -11258,7 +11266,6 @@
           "diffClass": "exhaust",
           "flags": ["radar-peak:peak"]
         },
-        { "lvl": 15, "style": "single", "diffClass": "exhaust" },
         {
           "lvl": 17,
           "style": "single",
@@ -16443,39 +16450,39 @@
     },
     {
       "name": "Wish upon Twin Stars",
-      "search_hint": "wish_upon_xi",
+      "search_hint": "milkyway_xi",
       "date_added": "2014-08-14",
       "saHash": "540",
       "artist": "xi",
-      "jacket": "sdvx/infinite/wish_upon_xi-novice.png",
+      "jacket": "sdvx/infinite/milkyway_xi-novice.png",
       "bpm": "200",
       "charts": [
         {
           "lvl": 5,
           "style": "single",
           "diffClass": "novice",
-          "jacket": "sdvx/infinite/wish_upon_xi-novice.png",
+          "jacket": "sdvx/infinite/milkyway_xi-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 11,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/infinite/wish_upon_xi-advanced.png",
+          "jacket": "sdvx/infinite/milkyway_xi-advanced.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 17.5,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/infinite/wish_upon_xi-exhaust.png",
+          "jacket": "sdvx/infinite/milkyway_xi-exhaust.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 18.7,
           "style": "single",
           "diffClass": "gravity",
-          "jacket": "sdvx/infinite/wish_upon_xi-gravity.png",
+          "jacket": "sdvx/infinite/milkyway_xi-gravity.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -16812,28 +16819,28 @@
       "date_added": "2015-09-17",
       "saHash": "551",
       "artist": "ETIA.",
-      "jacket": "sdvx/gravity/firestorm_etia-novice.png",
+      "jacket": "sdvx/gravity/frestorm_etia-novice.png",
       "bpm": "177",
       "charts": [
         {
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "jacket": "sdvx/gravity/firestorm_etia-novice.png",
+          "jacket": "sdvx/gravity/frestorm_etia-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 12,
           "style": "single",
           "diffClass": "advanced",
-          "jacket": "sdvx/gravity/firestorm_etia-advanced.png",
+          "jacket": "sdvx/gravity/frestorm_etia-advanced.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 18.5,
           "style": "single",
           "diffClass": "exhaust",
-          "jacket": "sdvx/gravity/firestorm_etia-exhaust.png",
+          "jacket": "sdvx/gravity/frestorm_etia-exhaust.png",
           "flags": ["radar-peak:tsumami"]
         }
       ]
@@ -18933,7 +18940,7 @@
           "lvl": 19.2,
           "style": "single",
           "diffClass": "nabla",
-          "jacket": "sdvx/nabla/false_cross_blacky-nabla.png",
+          "jacket": "sdvx/gravity/false_cross_blacky-nabla.png",
           "flags": ["radar-peak:notes", "otherEvents"]
         }
       ]
@@ -20831,6 +20838,12 @@
           "style": "single",
           "diffClass": "exhaust",
           "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.4,
+          "style": "single",
+          "diffClass": "nabla",
+          "flags": ["radar-peak:peak", "otherEvents"]
         }
       ]
     },
@@ -22555,7 +22568,7 @@
       "date_added": "2016-09-01",
       "saHash": "738",
       "artist": "unatra",
-      "jacket": "sdvx/gravity/fabulanova_unatra.png",
+      "jacket": "sdvx/gravity/fabulanova_unatora.png",
       "bpm": "128",
       "charts": [
         {
@@ -30763,6 +30776,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/heavenly/so_fly_me_roselite-exhaust.png",
           "flags": ["radar-peak:tsumami"]
         }
       ]
@@ -35748,6 +35762,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/heavenly/kyousou_akhuta-exhaust.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -35864,6 +35879,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/heavenly/enkanone_koezuka-exhaust.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -37148,6 +37164,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/heavenly/carnivorous_soundholic-exhaust.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -42298,12 +42315,14 @@
           "lvl": 4,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/vivid/flowernation_yuuyu-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 10,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/vivid/flowernation_yuuyu-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
@@ -42317,6 +42336,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/vivid/flowernation_yuuyu-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ]
@@ -46969,111 +46989,6 @@
           "style": "single",
           "diffClass": "maximum",
           "flags": ["radar-peak:peak"]
-        }
-      ]
-    },
-    {
-      "name": "ユニバーページ（i-world Mix）",
-      "search_hint": "univerpage_yvya",
-      "date_added": "2020-07-02",
-      "saHash": "1450",
-      "artist": "Remixed by BEMANI Sound Team \"Yvya\" feat. かなたん",
-      "jacket": "sdvx/vivid/univerpage_yvya.png",
-      "bpm": "192",
-      "charts": [
-        {
-          "lvl": 5,
-          "style": "single",
-          "diffClass": "novice",
-          "flags": ["radar-peak:peak"]
-        },
-        {
-          "lvl": 10,
-          "style": "single",
-          "diffClass": "advanced",
-          "flags": ["radar-peak:peak"]
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "exhaust",
-          "flags": ["radar-peak:notes"]
-        },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "maximum",
-          "flags": ["radar-peak:notes"]
-        }
-      ]
-    },
-    {
-      "name": "ふ・れ・ん・ど・し・た・い（WEREHEREMIX)",
-      "search_hint": "friendshitai_voltegakuen",
-      "date_added": "2020-07-02",
-      "saHash": "1457",
-      "artist": "Remixed by ボルテ学園生活部",
-      "jacket": "sdvx/vivid/friendshitai_voltegakuen.png",
-      "bpm": "170",
-      "charts": [
-        {
-          "lvl": 4,
-          "style": "single",
-          "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"]
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "advanced",
-          "flags": ["radar-peak:peak"]
-        },
-        {
-          "lvl": 15,
-          "style": "single",
-          "diffClass": "exhaust",
-          "flags": ["radar-peak:peak"]
-        },
-        {
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "maximum",
-          "flags": ["radar-peak:notes"]
-        }
-      ]
-    },
-    {
-      "name": "Daydream café (Euro Hopping Mix)",
-      "search_hint": "daydreamcafe_tag",
-      "date_added": "2020-07-02",
-      "saHash": "1458",
-      "artist": "Remixed by BEMANI Sound Team \"TAG\" feat. ななひら",
-      "jacket": "sdvx/vivid/daydreamcafe_tag.png",
-      "bpm": "154",
-      "charts": [
-        {
-          "lvl": 3,
-          "style": "single",
-          "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"]
-        },
-        {
-          "lvl": 11,
-          "style": "single",
-          "diffClass": "advanced",
-          "flags": ["radar-peak:peak"]
-        },
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "exhaust",
-          "flags": ["radar-peak:peak"]
-        },
-        {
-          "lvl": 16,
-          "style": "single",
-          "diffClass": "maximum",
-          "flags": ["radar-peak:one-hand"]
         }
       ]
     },
@@ -54667,6 +54582,7 @@
           "lvl": 18.1,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/vallasotiena_rohi-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ]
@@ -58514,12 +58430,14 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/exceed/notyouridolyutaimai-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/exceed/notyouridolyutaimai-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
@@ -58533,6 +58451,7 @@
           "lvl": 18.5,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/notyouridolyutaimai-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ]
@@ -62875,6 +62794,7 @@
           "lvl": 18.2,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/startarpistol_mono-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ],
@@ -65039,12 +64959,14 @@
           "lvl": 5,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/exceed/hakanakikoi_maron-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 12,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/exceed/hakanakikoi_maron-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
@@ -68848,7 +68770,7 @@
       "search_hint": "dontyoudare_technoplanet",
       "date_added": "2024-10-10",
       "saHash": "2087",
-      "artist": "technoplanet feat. Tamako Kinoshita",
+      "artist": "technoplanet feat. 木下珠子",
       "jacket": "sdvx/exceed/dontyoudare_technoplanet-novice.png",
       "bpm": "240-500",
       "charts": [
@@ -69321,12 +69243,14 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/exceed/heavenknows_uske-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 12,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/exceed/heavenknows_uske-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
@@ -69340,6 +69264,7 @@
           "lvl": 18.6,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/heavenknows_uske-exhaust.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -69357,12 +69282,14 @@
           "lvl": 5,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/exceed/hououseika_ryuseino-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 11,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/exceed/hououseika_ryuseino-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
@@ -69376,6 +69303,7 @@
           "lvl": 17,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/hououseika_ryuseino-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ],
@@ -71523,7 +71451,7 @@
       "search_hint": "twoofwonder_technoplanet",
       "date_added": "2024-07-11",
       "saHash": "2159",
-      "artist": "technoplanet feat. Tamako Kinoshita",
+      "artist": "technoplanet feat. 木下珠子",
       "jacket": "sdvx/exceed/twoofwonder_technoplanet-novice.png",
       "bpm": "264",
       "charts": [
@@ -71531,12 +71459,14 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/exceed/twoofwonder_technoplanet-novice.png",
           "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/exceed/twoofwonder_technoplanet-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
@@ -71550,6 +71480,7 @@
           "lvl": 18.4,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/twoofwonder_technoplanet-exhaust.png",
           "flags": ["radar-peak:peak"]
         }
       ],
@@ -73124,7 +73055,7 @@
       "search_hint": "jupiter_technoplanet",
       "date_added": "2025-03-19",
       "saHash": "2203",
-      "artist": "technoplanet feat. Tamako Kinoshita",
+      "artist": "technoplanet feat. 木下珠子",
       "jacket": "sdvx/exceed/jupiter_technoplanet.png",
       "bpm": "102-224",
       "charts": [
@@ -75072,12 +75003,14 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
+          "jacket": "sdvx/exceed/kamitsurenonarikata_teduka-novice.png",
           "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 13,
           "style": "single",
           "diffClass": "advanced",
+          "jacket": "sdvx/exceed/kamitsurenonarikata_teduka-novice.png",
           "flags": ["radar-peak:notes"]
         },
         {
@@ -75091,6 +75024,7 @@
           "lvl": 18.3,
           "style": "single",
           "diffClass": "maximum",
+          "jacket": "sdvx/exceed/kamitsurenonarikata_teduka-exhaust.png",
           "flags": ["radar-peak:notes"]
         }
       ],
@@ -75383,6 +75317,41 @@
       ]
     },
     {
+      "name": "Little Prana",
+      "search_hint": "littleprana_amamihinami",
+      "date_added": "2026-07-16",
+      "saHash": "2268",
+      "artist": "あまみ×ひなみ",
+      "jacket": "sdvx/nabla/littleprana_amamihinami.png",
+      "bpm": "160",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.2,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:one-hand"]
+        }
+      ]
+    },
+    {
       "name": "ンポロロッカ",
       "search_hint": "npororoca_kameria",
       "date_added": "2025-12-24",
@@ -75414,6 +75383,41 @@
           "style": "single",
           "diffClass": "maximum",
           "flags": ["radar-peak:peak"]
+        }
+      ]
+    },
+    {
+      "name": "モノノケ狂想曲",
+      "search_hint": "mononokekyousou_namv",
+      "date_added": "2026-07-16",
+      "saHash": "2271",
+      "artist": "NAMV",
+      "jacket": "sdvx/nabla/mononokekyousou_namv.png",
+      "bpm": "83-249",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:tricky"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:tricky"]
+        },
+        {
+          "lvl": 18.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak", "radar-peak:tricky"]
         }
       ]
     },
@@ -75628,6 +75632,45 @@
           "style": "single",
           "diffClass": "maximum",
           "flags": ["radar-peak:peak"]
+        }
+      ]
+    },
+    {
+      "name": "Faith of Frenzy",
+      "search_hint": "faithoffrenzy_juggernaut",
+      "date_added": "2026-07-16",
+      "saHash": "2281",
+      "artist": "Juggernaut.",
+      "jacket": "sdvx/nabla/faithoffrenzy_juggernaut-novice.png",
+      "bpm": "222",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/faithoffrenzy_juggernaut-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/faithoffrenzy_juggernaut-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/faithoffrenzy_juggernaut-exhaust.png",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 18.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/faithoffrenzy_juggernaut-maximum.png",
+          "flags": ["radar-peak:notes"]
         }
       ]
     },
@@ -75963,8 +76006,8 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:peak"],
-          "jacket": "sdvx/nabla/leflector_niwashi-novice.png"
+          "jacket": "sdvx/nabla/leflector_niwashi-novice.png",
+          "flags": ["radar-peak:peak"]
         },
         {
           "lvl": 13,
@@ -75984,8 +76027,8 @@
           "lvl": 18.5,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:peak"],
-          "jacket": "sdvx/nabla/leflector_niwashi-maximum.png"
+          "jacket": "sdvx/nabla/leflector_niwashi-maximum.png",
+          "flags": ["radar-peak:peak"]
         }
       ]
     },
@@ -76025,6 +76068,45 @@
       ]
     },
     {
+      "name": "LR",
+      "search_hint": "lr_tedukakagurazaka",
+      "date_added": "2026-09-03",
+      "saHash": "2295",
+      "artist": "テヅカ x 神楽坂ヨシキ",
+      "jacket": "sdvx/nabla/lr_tedukakagurazaka-novice.png",
+      "bpm": "190",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/lr_tedukakagurazaka-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/lr_tedukakagurazaka-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/lr_tedukakagurazaka-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.3,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/lr_tedukakagurazaka-maximum.png",
+          "flags": ["radar-peak:notes"]
+        }
+      ]
+    },
+    {
       "name": "Black Out",
       "search_hint": "blackout_hommarju",
       "date_added": "2025-12-24",
@@ -76055,6 +76137,45 @@
           "lvl": 18.6,
           "style": "single",
           "diffClass": "maximum",
+          "flags": ["radar-peak:one-hand"]
+        }
+      ]
+    },
+    {
+      "name": "Dizzy Echoes",
+      "search_hint": "dizzyechoes_laur",
+      "date_added": "2026-07-02",
+      "saHash": "2298",
+      "artist": "Laur",
+      "jacket": "sdvx/nabla/dizzyechoes_laur-novice.png",
+      "bpm": "174-200",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/dizzyechoes_laur-novice.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/dizzyechoes_laur-advanced.png",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/dizzyechoes_laur-exhaust.png",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 18.2,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/dizzyechoes_laur-maximum.png",
           "flags": ["radar-peak:one-hand"]
         }
       ]
@@ -76134,6 +76255,45 @@
       ]
     },
     {
+      "name": "ありがとうのマホウ",
+      "search_hint": "arigatouno_lapin5",
+      "date_added": "2026-09-03",
+      "saHash": "2302",
+      "artist": "lapin 5",
+      "jacket": "sdvx/nabla/arigatouno_lapin5-novice.png",
+      "bpm": "130",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/arigatouno_lapin5-novice.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/arigatouno_lapin5-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/arigatouno_lapin5-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/arigatouno_lapin5-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        }
+      ]
+    },
+    {
       "name": "Massive Strength",
       "search_hint": "massivestrength_riz",
       "date_added": "2025-12-24",
@@ -76165,6 +76325,41 @@
           "style": "single",
           "diffClass": "maximum",
           "flags": ["radar-peak:notes"]
+        }
+      ]
+    },
+    {
+      "name": "ユニゾンなデイズ♪",
+      "search_hint": "unisonnadays_miini",
+      "date_added": "2026-07-02",
+      "saHash": "2304",
+      "artist": "みーに feat. 春瀬愛羅＆味醂いろは",
+      "jacket": "sdvx/nabla/unisonnadays_miini.png",
+      "bpm": "152",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
         }
       ]
     },
@@ -76243,6 +76438,76 @@
       ]
     },
     {
+      "name": "Melted Energy",
+      "search_hint": "meltedenergy_reinjackmernon",
+      "date_added": "2026-07-02",
+      "saHash": "2307",
+      "artist": "rein jack x mernon",
+      "jacket": "sdvx/nabla/meltedenergy_reinjackmernon.png",
+      "bpm": "222",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.7,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ]
+    },
+    {
+      "name": "dilucurum",
+      "search_hint": "diliucurum_seatruskuro",
+      "date_added": "2026-09-03",
+      "saHash": "2308",
+      "artist": "EYEN(seatrus+kuro)",
+      "jacket": "sdvx/nabla/diliucurum_seatruskuro.png",
+      "bpm": "195",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ]
+    },
+    {
       "name": "Vanishment for reconstruction",
       "search_hint": "vanishmentfor_kagetora",
       "date_added": "2026-04-30",
@@ -76255,8 +76520,8 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"],
-          "jacket": "sdvx/nabla/vanishmentfor_kagetora-novice.png"
+          "jacket": "sdvx/nabla/vanishmentfor_kagetora-novice.png",
+          "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 13,
@@ -76276,8 +76541,8 @@
           "lvl": 18.5,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:peak"],
-          "jacket": "sdvx/nabla/vanishmentfor_kagetora-maximum.png"
+          "jacket": "sdvx/nabla/vanishmentfor_kagetora-maximum.png",
+          "flags": ["radar-peak:peak"]
         }
       ]
     },
@@ -76317,6 +76582,41 @@
       ]
     },
     {
+      "name": "Track Laundering",
+      "search_hint": "tracklaundering_genbokuaoi",
+      "date_added": "2026-07-02",
+      "saHash": "2311",
+      "artist": "原木シィタケ＋Aoi",
+      "jacket": "sdvx/nabla/tracklaundering_genbokuaoi.png",
+      "bpm": "160",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:one-hand"]
+        }
+      ]
+    },
+    {
       "name": "あすはまたたくほしのように",
       "search_hint": "asuhamatataku_namv",
       "date_added": "2026-04-30",
@@ -76329,8 +76629,8 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"],
-          "jacket": "sdvx/nabla/asuhamatataku_namv-novice.png"
+          "jacket": "sdvx/nabla/asuhamatataku_namv-novice.png",
+          "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 13,
@@ -76350,8 +76650,8 @@
           "lvl": 18.2,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:notes"],
-          "jacket": "sdvx/nabla/asuhamatataku_namv-maximum.png"
+          "jacket": "sdvx/nabla/asuhamatataku_namv-maximum.png",
+          "flags": ["radar-peak:notes"]
         }
       ]
     },
@@ -78725,8 +79025,8 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "novice",
-          "flags": ["radar-peak:tsumami"],
-          "jacket": "sdvx/nabla/roarofchronos_keiju-novice.png"
+          "jacket": "sdvx/nabla/roarofchronos_keiju-novice.png",
+          "flags": ["radar-peak:tsumami"]
         },
         {
           "lvl": 12,
@@ -78746,8 +79046,8 @@
           "lvl": 18.7,
           "style": "single",
           "diffClass": "maximum",
-          "flags": ["radar-peak:notes"],
-          "jacket": "sdvx/nabla/roarofchronos_keiju-maximum.png"
+          "jacket": "sdvx/nabla/roarofchronos_keiju-maximum.png",
+          "flags": ["radar-peak:notes"]
         }
       ],
       "flags": ["otherEvents"]
@@ -78930,6 +79230,41 @@
       ]
     },
     {
+      "name": "ZILLION RAY",
+      "search_hint": "zillionray_soundholic",
+      "date_added": "2026-07-23",
+      "saHash": "2387",
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "jacket": "sdvx/nabla/zillionray_soundholic.png",
+      "bpm": "167",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ]
+    },
+    {
       "name": "Silent Flame,Never Fade",
       "search_hint": "silentflame_siranuiflare",
       "date_added": "2026-04-23",
@@ -79103,6 +79438,757 @@
           "flags": ["radar-peak:peak"]
         }
       ]
+    },
+    {
+      "name": "ΔLI∇E",
+      "search_hint": "alive_dadadaizu",
+      "date_added": "2026-06-04",
+      "saHash": "2393",
+      "artist": "打打だいず",
+      "jacket": "sdvx/nabla/alive_dadadaizu-novice.png",
+      "bpm": "214",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/alive_dadadaizu-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/alive_dadadaizu-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.5,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/alive_dadadaizu-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 20.7,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/alive_dadadaizu-maximum.png",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["variantgate"]
+    },
+    {
+      "name": "ΛVYXXIRENIΛ",
+      "search_hint": "avyxxirenia_qfeileadh",
+      "date_added": "2026-06-04",
+      "saHash": "2394",
+      "artist": "qfeileadh",
+      "jacket": "sdvx/nabla/avyxxirenia_qfeileadh-novice.png",
+      "bpm": "270",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/avyxxirenia_qfeileadh-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/avyxxirenia_qfeileadh-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17.5,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/avyxxirenia_qfeileadh-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/avyxxirenia_qfeileadh-maximum.png",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["variantgate"]
+    },
+    {
+      "name": "凌天滅狐",
+      "search_hint": "ryotenmekko_kagetora",
+      "date_added": "2026-06-04",
+      "saHash": "2395",
+      "artist": "影虎。",
+      "jacket": "sdvx/nabla/ryotenmekko_kagetora-novice.png",
+      "bpm": "190",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/ryotenmekko_kagetora-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/ryotenmekko_kagetora-advanced.png",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/ryotenmekko_kagetora-exhaust.png",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 19.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/ryotenmekko_kagetora-maximum.png",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["variantgate"]
+    },
+    {
+      "name": "Solitary Poison",
+      "search_hint": "solitarypoison_alkome",
+      "date_added": "2026-06-04",
+      "saHash": "2396",
+      "artist": "Alkome",
+      "jacket": "sdvx/nabla/solitarypoison_alkome-novice.png",
+      "bpm": "170",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/solitarypoison_alkome-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/solitarypoison_alkome-advanced.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 17.5,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/solitarypoison_alkome-exhaust.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 19.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/solitarypoison_alkome-maximum.png",
+          "flags": ["radar-peak:tsumami"]
+        }
+      ],
+      "flags": ["variantgate"]
+    },
+    {
+      "name": "ULTRACHARGE",
+      "search_hint": "ultracharge_yutaimai",
+      "date_added": "2026-06-04",
+      "saHash": "2397",
+      "artist": "Yuta Imai",
+      "jacket": "sdvx/nabla/ultracharge_yutaimai-novice.png",
+      "bpm": "55-220",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/ultracharge_yutaimai-novice.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/ultracharge_yutaimai-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17.5,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/ultracharge_yutaimai-exhaust.png",
+          "flags": ["radar-peak:peak", "radar-peak:one-hand"]
+        },
+        {
+          "lvl": 19.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/ultracharge_yutaimai-maximum.png",
+          "flags": ["radar-peak:hand-trip"]
+        }
+      ],
+      "flags": ["variantgate"]
+    },
+    {
+      "name": "断罪のミメシス",
+      "search_hint": "danzainomimesis_keiju",
+      "date_added": "2026-06-18",
+      "saHash": "2398",
+      "artist": "KE!JU",
+      "jacket": "sdvx/nabla/danzainomimesis_keiju.png",
+      "bpm": "250",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Smintheus",
+      "search_hint": "smintheus_tan1chu",
+      "date_added": "2026-06-18",
+      "saHash": "2399",
+      "artist": "TAN1CHU",
+      "jacket": "sdvx/nabla/smintheus_tan1chu.png",
+      "bpm": "228-250",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Any％",
+      "search_hint": "anypercent_mememe",
+      "date_added": "2026-06-18",
+      "saHash": "2400",
+      "artist": "めめめ",
+      "jacket": "sdvx/nabla/anypercent_mememe.png",
+      "bpm": "157-177",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.3,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Lava Flow",
+      "search_hint": "lavaflow_scusyunn",
+      "date_added": "2026-06-18",
+      "saHash": "2401",
+      "artist": "BEMANI Sound Team \"S-C-U & SYUNN\"",
+      "jacket": "sdvx/nabla/lavaflow_scusyunn.png",
+      "bpm": "190",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Secret Raid",
+      "search_hint": "secretraid_yvya",
+      "date_added": "2026-06-18",
+      "saHash": "2402",
+      "artist": "BEMANI Sound Team \"Yvya\" feat. 吾龍",
+      "jacket": "sdvx/nabla/secretraid_yvya.png",
+      "bpm": "200",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.4,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Esperanza",
+      "search_hint": "esperanza_nekomatagekidan",
+      "date_added": "2026-06-18",
+      "saHash": "2403",
+      "artist": "猫叉劇団",
+      "jacket": "sdvx/nabla/esperanza_nekomatagekidan.png",
+      "bpm": "135",
+      "charts": [
+        {
+          "lvl": 5,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "夢色ワンダー",
+      "search_hint": "yumeirowonder_holodreams",
+      "date_added": "2026-08-27",
+      "saHash": "2405",
+      "artist": "hololive IDOL PROJECT",
+      "jacket": "sdvx/nabla/yumeirowonder_holodreams.png",
+      "bpm": "135-208",
+      "charts": [
+        {
+          "lvl": 3,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.4,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:one-hand"]
+        }
+      ]
+    },
+    {
+      "name": "サイハテ",
+      "search_hint": "saihate_namv",
+      "date_added": "2026-08-06",
+      "saHash": "2406",
+      "artist": "NAMV feat. あかつき るき",
+      "jacket": "sdvx/nabla/saihate_namv-novice.png",
+      "bpm": "222",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/saihate_namv-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/saihate_namv-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.4,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/saihate_namv-exhaust.png",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 20.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/saihate_namv-maximum.png",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "覚帝神刻",
+      "search_hint": "kakuteishinkoku_technoplanet",
+      "date_added": "2026-08-06",
+      "saHash": "2407",
+      "artist": "technoplanet feat. 木下珠子",
+      "jacket": "sdvx/nabla/kakuteishinkoku_technoplanet-novice.png",
+      "bpm": "240",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/kakuteishinkoku_technoplanet-novice.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/kakuteishinkoku_technoplanet-advanced.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.1,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/kakuteishinkoku_technoplanet-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.8,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/kakuteishinkoku_technoplanet-maximum.png",
+          "flags": ["radar-peak:tricky"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Sci-Φ-nder",
+      "search_hint": "scifinder_niwashi",
+      "date_added": "2026-08-06",
+      "saHash": "2408",
+      "artist": "庭師",
+      "jacket": "sdvx/nabla/scifinder_niwashi.png",
+      "bpm": "206",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17.5,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 19.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Raise the flag of victory!",
+      "search_hint": "raisetheflagvictory_keji",
+      "date_added": "2026-08-06",
+      "saHash": "2409",
+      "artist": "ke-ji",
+      "jacket": "sdvx/nabla/raisetheflagvictory_keji.png",
+      "bpm": "170-198",
+      "charts": [
+        {
+          "lvl": 7,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 19.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Sakura Eyelen",
+      "search_hint": "sakuraeyelen_amamihinami",
+      "date_added": "2026-08-06",
+      "saHash": "2410",
+      "artist": "あまみ×ひなみ",
+      "jacket": "sdvx/nabla/sakuraeyelen_amamihinami.png",
+      "bpm": "205",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:notes", "radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:notes"]
+        },
+        {
+          "lvl": 18.4,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "VIIIΧ",
+      "search_hint": "viiix_tanchiky",
+      "date_added": "2026-08-06",
+      "saHash": "2411",
+      "artist": "Tanchiky",
+      "jacket": "sdvx/nabla/viiix_tanchiky-novice.png",
+      "bpm": "201",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "jacket": "sdvx/nabla/viiix_tanchiky-novice.png",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "jacket": "sdvx/nabla/viiix_tanchiky-novice.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "jacket": "sdvx/nabla/viiix_tanchiky-exhaust.png",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.5,
+          "style": "single",
+          "diffClass": "maximum",
+          "jacket": "sdvx/nabla/viiix_tanchiky-exhaust.png",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "Stellar Pilgrim",
+      "search_hint": "stellarpilgrim_tezuka",
+      "date_added": "2026-08-06",
+      "saHash": "2412",
+      "artist": "テヅカ",
+      "jacket": "sdvx/nabla/stellarpilgrim_tezuka.png",
+      "bpm": "194",
+      "charts": [
+        {
+          "lvl": 6,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.6,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:notes"]
+        }
+      ],
+      "flags": ["otherEvents"]
+    },
+    {
+      "name": "KAC PERFECT ULTIMATE CHRONICLE -Lord of the SOUND VOLTEX-",
+      "search_hint": "kacchronicle_floorlegends",
+      "date_added": "2026-08-20",
+      "saHash": "2414",
+      "artist": "FLOOR LEGENDS -KAC-",
+      "jacket": "sdvx/nabla/kacchronicle_floorlegends.png",
+      "bpm": "164-666",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "novice",
+          "flags": ["radar-peak:tsumami"]
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "advanced",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 18.7,
+          "style": "single",
+          "diffClass": "exhaust",
+          "flags": ["radar-peak:peak"]
+        },
+        {
+          "lvl": 20.8,
+          "style": "single",
+          "diffClass": "maximum",
+          "flags": ["radar-peak:peak"]
+        }
+      ],
+      "flags": ["otherEvents"]
     }
   ]
 }

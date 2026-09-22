@@ -5,7 +5,7 @@ import {
   IconCaretDown,
 } from "@tabler/icons-react";
 import { useDrawing } from "../drawing-context";
-import { type DrawnChart, type ExternalMeta } from "../models/Drawing";
+import { type Drawing, scoreableCharts } from "../models/Drawing";
 import { useState } from "react";
 import { inferShortname } from "../controls/player-names";
 import { useDispatch } from "react-redux";
@@ -82,13 +82,14 @@ function EditableScoreCell(props: {
   );
 }
 
-export default function ScoreEditor({ meta }: { meta: ExternalMeta }) {
+export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
   const drawingId = useDrawing((d) => d.compoundId);
   const bans = useDrawing((d) => d.bans);
   const pocketPicks = useDrawing((d) => d.pocketPicks);
-  const charts = useDrawing((d) => d.charts).filter(
-    (c): c is DrawnChart => c.type === "DRAWN" && !bans[c.id],
-  );
+  const drawnCards = useDrawing((d) => d.charts);
+  // free picks get a column of their own once filled, the same as any other
+  // card — scores on them key off the placeholder that was drawn
+  const charts = scoreableCharts(drawnCards, { bans, pocketPicks });
   const dispatch = useDispatch();
   const [playerOrderMap, setPlayerOrderMap] = useState(
     meta.players.map((_, idx) => idx),
@@ -133,13 +134,9 @@ export default function ScoreEditor({ meta }: { meta: ExternalMeta }) {
     });
   }
 
-  const chartColumns = charts.map((c) => {
-    const maybeReplacedBy = pocketPicks[c.id]?.pick;
-    let songName = c.nameTranslation || c.name;
-    if (maybeReplacedBy) {
-      songName = maybeReplacedBy.nameTranslation || maybeReplacedBy.name;
-    }
-    return { chartId: c.id, songName };
+  const chartColumns = charts.map(({ id, chart }) => {
+    const songName = chart.nameTranslation || chart.name;
+    return { chartId: id, songName };
   });
 
   return (

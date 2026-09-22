@@ -44,4 +44,8 @@ Useful flows in event mode:
   killing only the node wrapper leaves the server running. Playwright's
   `page.on("websocket")` frame events give protocol-level evidence.
 - Dev `partykit dev` persists room state to disk, so room contents survive a backend restart.
+- `yarn start:backend` runs `scripts/local-snapshot-store.mjs` next to `partykit dev`.
+  With `LOCAL_SNAPSHOT_URL=http://127.0.0.1:1998` in `.env` the server also writes
+  plain-JSON snapshots to `.snapshots/rooms/<room>/snapshot.json` — delete `.partykit/`
+  but keep those to exercise hydration from the off-box copy.
 - In dev, the frontend targets `localhost:1999` automatically (`src/party/host.ts`).

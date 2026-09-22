@@ -3,14 +3,15 @@ import type { Broadcast } from "./types";
 import { useAppDispatch } from "../state/store";
 import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
-import React, { useEffect, useRef, useState } from "react";
-import { Card, Loader } from "@mantine/core";
-import { IconWifiOff } from "@tabler/icons-react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useAtomValue } from "jotai";
+import { Button, Card, Loader, Stack } from "@mantine/core";
+import { IconActivityHeartbeat, IconWifiOff } from "@tabler/icons-react";
 import { EmptyState } from "../common-components/empty-state";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
 import { PARTYKIT_HOST } from "./host";
-import { notify } from "../notify";
+import { notify, type Intent } from "../notify";
 import { useIntl } from "../hooks/useIntl";
 import { useInObs } from "../theme-toggle";
 import {
@@ -19,16 +20,31 @@ import {
 } from "./connection-status";
 import { SyncManager } from "./sync-manager";
 import { logDiagnostic, setPendingActionsProvider } from "./diagnostics";
+import { isReuseRejection } from "../state/reuse-invariant";
+import {
+  diagnosticsDialogOpen,
+  openDiagnosticsDialog,
+} from "./diagnostics.atoms";
 
 const HEALTH_TOAST_KEY = "party-connection-health";
 const BLOCKED_TOAST_KEY = "party-action-blocked";
 const SEND_FAILED_TOAST_KEY = "party-action-send-failed";
 const REJECTED_TOAST_KEY = "party-action-rejected";
+const NOT_SAVING_TOAST_KEY = "party-not-saving";
 
 /** how often to ping the server to prove the socket is really alive */
 const HEARTBEAT_INTERVAL_MS = 10000;
 /** consecutive unanswered pings that mean a stalled (half-open) connection */
 const MAX_MISSED_PONGS = 2;
+/** how often to re-check whether the server's durable snapshot is keeping up */
+const DURABILITY_POLL_MS = 5000;
+/**
+ * Consecutive polls that must agree before the durability warning shows.
+ * Remote snapshot writes coalesce, so a burst of actions can briefly sit ahead
+ * of the durable copy on a perfectly healthy room; requiring the lag to still
+ * be there a poll later keeps that from raising a scary toast for two seconds.
+ */
+const DURABILITY_STALL_POLLS = 2;
 
 export function PartySocketManager(props: {
   roomName?: string;
@@ -51,6 +67,73 @@ export function PartySocketManager(props: {
   const sendFailedToast = useRef(() => {});
   // same, for an action the server refused outright
   const rejectedToast = useRef((_reason: string) => {});
+  // whether the server is currently failing to save; kept in a ref so the
+  // toast can be put back after a trip through the diagnostics dialog
+  const notSavingRef = useRef(false);
+  // re-show callbacks for toasts that were dismissed on their way into the
+  // diagnostics dialog but describe a problem that is still happening
+  const restoreOnClose = useRef(new Map<string, () => void>());
+
+  /** dismiss a toast for good, cancelling any pending re-show */
+  const clearToast = useCallback((key: string) => {
+    restoreOnClose.current.delete(key);
+    notify.hide(key);
+  }, []);
+
+  /**
+   * Show a toast about a sync problem. Every one of them offers a way into the
+   * diagnostics dialog, since "something is wrong with the connection" is only
+   * actionable once you can see what the connection has been doing.
+   *
+   * Following the action dismisses the toast, which is right for a one-off
+   * notice but wrong for an `ongoing` problem — those toasts are put back once
+   * the dialog is closed.
+   */
+  const showProblemToast = useCallback(
+    (
+      key: string,
+      message: string,
+      opts: {
+        icon?: React.JSX.Element;
+        intent?: Intent;
+        ongoing?: boolean;
+      } = {},
+    ) => {
+      if (inObs) return;
+      const intent = opts.intent ?? "danger";
+      function show() {
+        notify.show({
+          id: key,
+          icon: opts.icon,
+          intent,
+          // an unresolved problem shouldn't time out from under the organizer
+          autoClose: opts.ongoing ? false : undefined,
+          message: (
+            <Stack gap="xs" align="flex-start">
+              <span>{message}</span>
+              <Button
+                size="compact-sm"
+                variant="white"
+                color={intent === "warning" ? "yellow" : "red"}
+                leftSection={<IconActivityHeartbeat size={14} />}
+                onClick={() => {
+                  if (opts.ongoing) {
+                    restoreOnClose.current.set(key, show);
+                  }
+                  notify.hide(key);
+                  openDiagnosticsDialog();
+                }}
+              >
+                {t("party.diagnostics.toastAction")}
+              </Button>
+            </Stack>
+          ),
+        });
+      }
+      show();
+    },
+    [t, inObs],
+  );
 
   const socket = usePartySocket({
     room: props.roomName,
@@ -77,8 +160,11 @@ export function PartySocketManager(props: {
             setPartyConnectionHealthy(true);
             if (disconnectedRef.current) {
               disconnectedRef.current = false;
+              // the problems these stood for are over, so cancel any re-show
+              // waiting on the diagnostics dialog before replacing them
+              clearToast(BLOCKED_TOAST_KEY);
+              clearToast(HEALTH_TOAST_KEY);
               if (!inObs) {
-                notify.hide(BLOCKED_TOAST_KEY);
                 notify.show({
                   id: HEALTH_TOAST_KEY,
                   message: t("party.reconnected"),
@@ -108,6 +194,9 @@ export function PartySocketManager(props: {
           case "pong":
             missedPongsRef.current = 0;
             break;
+          case "persisted":
+            syncRef.current?.handlePersisted(data.seq);
+            break;
         }
       } catch (e) {
         console.warn("failed to handle party socket message", e);
@@ -127,13 +216,9 @@ export function PartySocketManager(props: {
         return;
       }
       disconnectedRef.current = true;
-      if (inObs) return;
-      notify.show({
-        id: HEALTH_TOAST_KEY,
-        message: t("party.disconnected"),
+      showProblemToast(HEALTH_TOAST_KEY, t("party.disconnected"), {
         icon: <IconWifiOff />,
-        intent: "danger",
-        autoClose: false,
+        ongoing: true,
       });
     },
   });
@@ -141,36 +226,48 @@ export function PartySocketManager(props: {
   useEffect(() => {
     setBlockedActionHandler(() => {
       logDiagnostic("action-blocked", "change discarded while disconnected");
-      if (inObs) return;
-      notify.show({
-        id: BLOCKED_TOAST_KEY,
-        message: t("party.actionBlocked"),
+      showProblemToast(BLOCKED_TOAST_KEY, t("party.actionBlocked"), {
         intent: "warning",
       });
     });
     sendFailedToast.current = () => {
-      if (inObs) return;
-      notify.show({
-        id: SEND_FAILED_TOAST_KEY,
-        message: t("party.sendFailed"),
-        intent: "danger",
-      });
+      showProblemToast(SEND_FAILED_TOAST_KEY, t("party.sendFailed"));
     };
     rejectedToast.current = (reason: string) => {
       // the reason is server-side detail; log it for debugging but keep the
       // toast to something a tournament organizer can act on
       console.warn("event server rejected an action:", reason);
-      if (inObs) return;
-      notify.show({
-        id: REJECTED_TOAST_KEY,
-        message: t("party.actionRejected"),
-        intent: "danger",
-      });
+      if (isReuseRejection(reason)) {
+        // losing a race for a chart is a normal thing to happen mid-event, not
+        // a sync fault: name it as such, and offer no diagnostics link, which
+        // would only send an organizer looking for a connection problem that
+        // isn't there
+        if (inObs) return;
+        notify.show({
+          id: REJECTED_TOAST_KEY,
+          message: t("party.chartAlreadyDrawn"),
+          intent: "danger",
+        });
+        return;
+      }
+      showProblemToast(REJECTED_TOAST_KEY, t("party.actionRejected"));
     };
     return () => {
       setBlockedActionHandler(undefined);
     };
-  }, [t, inObs]);
+  }, [t, inObs, showProblemToast]);
+
+  // Opening the diagnostics dialog from a toast's action dismisses that toast,
+  // so put back the ones that describe a problem which is still happening once
+  // the dialog is closed again.
+  const diagnosticsOpen = useAtomValue(diagnosticsDialogOpen);
+  useEffect(() => {
+    if (diagnosticsOpen) return;
+    const restores = restoreOnClose.current;
+    if (!restores.size) return;
+    for (const restore of restores.values()) restore();
+    restores.clear();
+  }, [diagnosticsOpen]);
 
   useEffect(() => {
     // when leaving a party session, unblock dispatch for other app modes
@@ -180,8 +277,44 @@ export function PartySocketManager(props: {
       notify.hide(BLOCKED_TOAST_KEY);
       notify.hide(SEND_FAILED_TOAST_KEY);
       notify.hide(REJECTED_TOAST_KEY);
+      notify.hide(NOT_SAVING_TOAST_KEY);
     };
   }, []);
+
+  // Durability watchdog.
+  //
+  // The server reports how far its durable snapshot has advanced, throttled —
+  // so the signal that matters is the *absence* of progress while actions keep
+  // flowing, which only a timer can notice. Without this an organizer has no
+  // way to learn the room stopped saving until a restart reverts everyone to
+  // an old checkpoint, which is exactly how an event lost a dozen draws.
+  useEffect(() => {
+    if (!ready) return;
+    let stalledPolls = 0;
+    const timer = setInterval(() => {
+      const sync = syncRef.current;
+      if (!sync) return;
+      // a dead socket has its own, louder toast; the lag is frozen anyway
+      if (socket.readyState !== WebSocket.OPEN) return;
+      stalledPolls = sync.durabilityStalled ? stalledPolls + 1 : 0;
+      const stalled = stalledPolls >= DURABILITY_STALL_POLLS;
+      if (stalled === notSavingRef.current) return;
+      notSavingRef.current = stalled;
+      if (stalled) {
+        logDiagnostic(
+          "not-saving",
+          `${sync.durabilityLag} change(s) applied but not saved on the server`,
+        );
+        showProblemToast(NOT_SAVING_TOAST_KEY, t("party.notSaving"), {
+          ongoing: true,
+        });
+      } else {
+        logDiagnostic("saving-recovered", "the server is saving changes again");
+        clearToast(NOT_SAVING_TOAST_KEY);
+      }
+    }, DURABILITY_POLL_MS);
+    return () => clearInterval(timer);
+  }, [ready, socket, t, showProblemToast, clearToast]);
 
   useEffect(() => {
     const sync = new SyncManager(socket, {

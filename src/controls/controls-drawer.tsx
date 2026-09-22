@@ -30,6 +30,7 @@ import {
 } from "../state/hooks";
 import { MultidrawControls } from "./multidraw-controls";
 import { LvlRangeControls } from "./lvl-range";
+import { CHART_SORTS, isChartSort } from "../chart-sort";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -209,15 +210,13 @@ function GeneralSettings() {
     useWeights,
     constrainPocketPicks,
     orderByAction,
-    hideVetos,
     lowerBound,
     upperBound,
     difficulties: selectedDifficulties,
     style: selectedStyle,
     chartCount,
-    sortByLevel,
+    chartSort,
     useGranularLevels,
-    showMaxScore,
     playerPicks,
   } = configState;
   const availableDifficulties = useMemo(() => {
@@ -363,6 +362,22 @@ function GeneralSettings() {
           <FolderSettings />
         </Card>
       </Collapse>
+      <NativeSelect
+        id="chartSort"
+        label={t("controls.chartSort")}
+        mt="md"
+        value={chartSort}
+        onChange={(e) => {
+          const nextSort = e.currentTarget.value;
+          if (isChartSort(nextSort)) {
+            updateState({ chartSort: nextSort });
+          }
+        }}
+        data={CHART_SORTS.map((sort) => ({
+          value: sort,
+          label: t(`controls.chartSortOptions.${sort}`),
+        }))}
+      />
       <Input.Wrapper mt="md">
         <Checkbox
           id="orderByAction"
@@ -385,26 +400,6 @@ function GeneralSettings() {
           label={t("controls.constrainPocketPicks")}
         />
         <Checkbox
-          id="sortByLevel"
-          my={4}
-          checked={sortByLevel}
-          onChange={(e) => {
-            const sortByLevel = !!e.currentTarget.checked;
-            updateState({ sortByLevel });
-          }}
-          label={t("controls.sortByLevel")}
-        />
-        <Checkbox
-          id="showMaxScore"
-          my={4}
-          checked={showMaxScore}
-          onChange={(e) => {
-            const showMaxScore = !!e.currentTarget.checked;
-            updateState({ showMaxScore });
-          }}
-          label={t("controls.showMaxScore")}
-        />
-        <Checkbox
           id="useGranularLevels"
           my={4}
           disabled={!gameData.meta.granularTierResolution}
@@ -424,16 +419,6 @@ function GeneralSettings() {
             });
           }}
           label={t("controls.useGranularLevels")}
-        />
-        <Checkbox
-          id="showVeto"
-          my={4}
-          checked={hideVetos}
-          onChange={(e) => {
-            const next = !!e.currentTarget.checked;
-            updateState({ hideVetos: next });
-          }}
-          label={t("controls.hideVetos")}
         />
         <Checkbox
           id="weighted"

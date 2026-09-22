@@ -11,3 +11,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* the note above a source list, explaining how to aim it */
+.sourceHint {
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
