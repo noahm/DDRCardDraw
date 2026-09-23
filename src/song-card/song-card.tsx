@@ -2,10 +2,12 @@ import { Menu, Popover } from "@mantine/core";
 import classNames from "classnames";
 import {
   type JSX,
+  type KeyboardEvent,
   lazy,
   Suspense,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -28,6 +30,15 @@ import { copyTextToClipboard } from "../utils/share";
 import { useChartRandomSelected } from "../tournament-mode/highlight-random";
 
 import { baseChartValues, CardContentsProps } from "./variants";
+import {
+  CARD_GROUP_ATTR,
+  CARD_NAV_ATTR,
+  cardsInGroup,
+  focusCard,
+  focusIsAdrift,
+  handleCardArrowKey,
+  noteCardFocused,
+} from "../utils/card-nav";
 
 /**
  * The song search omnibar is only reachable through a card's action menu, so it
@@ -125,9 +136,13 @@ export function SongCardBase(props: Props) {
   }, [wasRandomlySelected]);
 
   const [showingContextMenu, setContextMenuOpen] = useState(false);
+  // a menu opened from the keyboard lands focus on its first item, while one
+  // opened by pointer keeps Mantine's focus placeholder so no item looks active
+  const [menuOpenedByKeyboard, setMenuOpenedByKeyboard] = useState(false);
   const [songSearchMounted, setSongSearchMounted] = useState(false);
-  const showMenu = () => {
+  const showMenu = (viaKeyboard = false) => {
     setSongSearchMounted(true);
+    setMenuOpenedByKeyboard(viaKeyboard);
     setContextMenuOpen(true);
   };
   const hideMenu = () => setContextMenuOpen(false);
@@ -232,7 +247,73 @@ export function SongCardBase(props: Props) {
     [styles.randomSelected]: wasRandomlySelected,
   });
 
-  const handleCardClick = menuContent ? showMenu : props.onClick || handleCopy;
+  const isClickable = !!menuContent || !!props.onClick || canCopy;
+  const handleCardClick = menuContent
+    ? () => showMenu()
+    : props.onClick || handleCopy;
+  const overlayOpen =
+    showingContextMenu || !!openAction || pocketPickPendingForPlayer !== null;
+
+  /**
+   * Put focus back on this card once whatever held it (a label's remove
+   * button, the song search) has gone away, unless it already moved on.
+   */
+  const refocusCard = (force = false) =>
+    requestAnimationFrame(() => {
+      const el = rootRef.current;
+      if (el?.isConnected && (force || focusIsAdrift())) {
+        el.focus();
+      }
+    });
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    // keys pressed inside the card's menu or on a label's remove button bubble
+    // here through the React tree; those belong to that control, not the card
+    if (e.target !== e.currentTarget || overlayOpen) return;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (menuContent) {
+        showMenu(true);
+      } else {
+        handleCardClick();
+      }
+    } else if (!e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+      if (handleCardArrowKey(e.currentTarget, e.key)) {
+        e.preventDefault();
+      }
+    }
+  };
+
+  /*
+   * A redraw swaps this card for a new one, and a veto with vetoes hidden takes
+   * it out of the list altogether, both straight from this card's own menu. The
+   * focus the menu would hand back has nowhere to go then, so pass it on to
+   * whichever card now sits in this one's place in the set.
+   */
+  const menuOwnsFocusRef = useRef(false);
+  useLayoutEffect(() => {
+    menuOwnsFocusRef.current = overlayOpen;
+  }, [overlayOpen]);
+  useLayoutEffect(() => {
+    const el = rootRef.current;
+    const group = el?.closest<HTMLElement>(`[${CARD_GROUP_ATTR}]`);
+    if (!el || !group) return;
+    return () => {
+      const active = document.activeElement;
+      const hadFocus =
+        el.contains(active) ||
+        !!active?.closest("[data-card-menu]") ||
+        menuOwnsFocusRef.current;
+      if (!hadFocus) return;
+      const index = cardsInGroup(group).indexOf(el);
+      setTimeout(() => {
+        if (!focusIsAdrift() || !group.isConnected) return;
+        const cards = cardsInGroup(group);
+        const next = cards[Math.min(Math.max(index, 0), cards.length - 1)];
+        if (next) focusCard(next);
+      });
+    };
+  }, []);
 
   const actionLabels = (
     <>
@@ -240,28 +321,40 @@ export function SongCardBase(props: Props) {
         <CardLabel
           playerId={vetoedBy}
           type={LabelType.Ban}
-          onRemove={iconCallbacks?.onReset}
+          onRemove={() => {
+            iconCallbacks.onReset();
+            refocusCard();
+          }}
         />
       )}
       {protectedBy !== undefined && (
         <CardLabel
           playerId={protectedBy}
           type={LabelType.Protect}
-          onRemove={iconCallbacks?.onReset}
+          onRemove={() => {
+            iconCallbacks.onReset();
+            refocusCard();
+          }}
         />
       )}
       {replacedBy !== undefined && (
         <CardLabel
           playerId={replacedBy}
           type={baseChartIsPlaceholder ? LabelType.FreePick : LabelType.Pocket}
-          onRemove={iconCallbacks?.onReset}
+          onRemove={() => {
+            iconCallbacks.onReset();
+            refocusCard();
+          }}
         />
       )}
       {winner !== undefined && winner !== null && (
         <CardLabel
           playerId={winner}
           type={LabelType.Winner}
-          onRemove={() => iconCallbacks?.onSetWinner(null)}
+          onRemove={() => {
+            iconCallbacks.onSetWinner(null);
+            refocusCard();
+          }}
         />
       )}
     </>
@@ -278,13 +371,16 @@ export function SongCardBase(props: Props) {
         <div
           ref={rootRef}
           className={rootClassname}
-          onClick={
-            showingContextMenu ||
-            openAction ||
-            pocketPickPendingForPlayer !== null
-              ? undefined
-              : handleCardClick
-          }
+          onClick={overlayOpen ? undefined : handleCardClick}
+          onKeyDown={handleKeyDown}
+          onFocus={(e) => {
+            if (e.target === e.currentTarget) noteCardFocused(e.currentTarget);
+          }}
+          tabIndex={isClickable ? 0 : undefined}
+          role={isClickable ? "button" : undefined}
+          aria-haspopup={menuContent ? "menu" : undefined}
+          aria-expanded={menuContent ? showingContextMenu : undefined}
+          {...{ [CARD_NAV_ATTR]: isClickable ? "" : undefined }}
           style={jacketBg}
         >
           {songSearchMounted && (
@@ -296,8 +392,12 @@ export function SongCardBase(props: Props) {
                     iconCallbacks.onReplace(pocketPickPendingForPlayer!, chart);
                   }
                   setPocketPickPendingForPlayer(null);
+                  refocusCard(true);
                 }}
-                onCancel={() => setPocketPickPendingForPlayer(null)}
+                onCancel={() => {
+                  setPocketPickPendingForPlayer(null);
+                  refocusCard(true);
+                }}
               />
             </Suspense>
           )}
@@ -312,9 +412,15 @@ export function SongCardBase(props: Props) {
               if (!opened) {
                 hideMenu();
                 setOpenActionKey(null);
+                // Mantine hands focus back from the dropdown, but an action
+                // that leaves nothing to offer (a veto) drops the dropdown
+                // before it can, and one that re-sorts the set moves this card
+                // out from under the focus
+                refocusCard();
               }
             }}
             position="top"
+            withInitialFocusPlaceholder={!menuOpenedByKeyboard}
           >
             <Menu.Target>
               <div>
@@ -322,7 +428,7 @@ export function SongCardBase(props: Props) {
               </div>
             </Menu.Target>
             {(openAction || menuContent) && (
-              <Menu.Dropdown>
+              <Menu.Dropdown data-card-menu>
                 {openAction ? openAction.content : menuContent}
               </Menu.Dropdown>
             )}

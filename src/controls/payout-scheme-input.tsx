@@ -85,6 +85,9 @@ export function PayoutSchemeInput({
       onChange={(e) => handleChange(e.currentTarget.value)}
       onKeyDown={(e) => {
         if (e.key === "Enter") {
+          // confirming the field shouldn't also submit a surrounding form,
+          // which would read the scheme before this commit lands
+          e.preventDefault();
           confirm();
         } else if (e.key === "Escape") {
           setDraft(value);

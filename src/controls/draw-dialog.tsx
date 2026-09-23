@@ -190,10 +190,20 @@ export function CustomDrawForm<
     });
   }
   return (
-    <>
+    // a form, so Enter in the title field creates the draw
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (!props.disableCreate) {
+          handleSubmit();
+        }
+      }}
+    >
       <TextInput
         label="title"
         mb="sm"
+        // first stop in the dialog, ahead of its close button
+        data-autofocus
         value={title}
         onChange={(e) => setTitle(e.currentTarget.value)}
       />
@@ -215,9 +225,9 @@ export function CustomDrawForm<
           />
         </Input.Wrapper>
       )}
-      <Button onClick={handleSubmit} disabled={props.disableCreate}>
+      <Button type="submit" disabled={props.disableCreate}>
         {props.submitText || "Create"}
       </Button>
-    </>
+    </form>
   );
 }
