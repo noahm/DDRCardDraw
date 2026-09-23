@@ -139,12 +139,19 @@ export function SongCardBase(props: Props) {
   // a menu opened from the keyboard lands focus on its first item, while one
   // opened by pointer keeps Mantine's focus placeholder so no item looks active
   const [menuOpenedByKeyboard, setMenuOpenedByKeyboard] = useState(false);
+  /**
+   * Set when the menu was opened with a number key: the index (in display
+   * order) of the player it acts for, so its actions skip the player submenu.
+   */
+  const [menuPlayerIndex, setMenuPlayerIndex] = useState<number | undefined>();
   const [songSearchMounted, setSongSearchMounted] = useState(false);
-  const showMenu = (viaKeyboard = false) => {
+  const showMenu = (viaKeyboard = false, playerIndex?: number) => {
     setSongSearchMounted(true);
     setMenuOpenedByKeyboard(viaKeyboard);
+    setMenuPlayerIndex(playerIndex);
     setContextMenuOpen(true);
   };
+  const playerCount = useDrawing((d) => d.meta?.players.length ?? 0);
   const hideMenu = () => setContextMenuOpen(false);
 
   // key of the variant-supplied action whose popover is currently shown, if any
@@ -204,6 +211,7 @@ export function SongCardBase(props: Props) {
       menuContent = (
         <FillPlaceholderList
           onFillPlaceholder={setPocketPickPendingForPlayer}
+          playerIndex={menuPlayerIndex}
         />
       );
     } else if (!hasLabel) {
@@ -216,6 +224,7 @@ export function SongCardBase(props: Props) {
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
           infoActions={infoActions}
+          playerIndex={menuPlayerIndex}
         />
       );
     } else if (vetoedBy === undefined) {
@@ -224,6 +233,7 @@ export function SongCardBase(props: Props) {
           onSetWinner={iconCallbacks.onSetWinner}
           onCopy={handleCopy}
           infoActions={infoActions}
+          playerIndex={menuPlayerIndex}
         />
       );
     }
@@ -276,6 +286,13 @@ export function SongCardBase(props: Props) {
         showMenu(true);
       } else {
         handleCardClick();
+      }
+    } else if (/^[1-9]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      // 1-9 open the menu on behalf of that player, in display order
+      const playerIndex = Number(e.key) - 1;
+      if (menuContent && playerIndex < playerCount) {
+        e.preventDefault();
+        showMenu(true, playerIndex);
       }
     } else if (!e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
       if (handleCardArrowKey(e.currentTarget, e.key)) {
