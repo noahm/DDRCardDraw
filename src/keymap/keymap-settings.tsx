@@ -15,7 +15,15 @@ import {
   SIDES,
   useKeyMap,
   withBinding,
+  withoutBindings,
+  withPadBinding,
 } from "./keymap.atoms";
+import {
+  activePadInputs,
+  padInputKey,
+  padInputLabel,
+  readPads,
+} from "./gamepad";
 
 const BUTTON_LABELS: Record<ButtonId, string> = {
   up: "Up",
@@ -65,8 +73,33 @@ export function KeyMapSettings() {
       setListening(null);
     }
     window.addEventListener("keydown", onKeyDown, { capture: true });
+
+    // Pads are polled for the first input that goes down after listening
+    // started. Whatever is already held (the accept button that just clicked
+    // this, say) has to be let go first before it counts.
+    let frame = 0;
+    const heldAtStart = new Set(activePadInputs(readPads()).map(padInputKey));
+    function poll() {
+      const active = activePadInputs(readPads());
+      const activeKeys = new Set(active.map(padInputKey));
+      for (const key of heldAtStart) {
+        if (!activeKeys.has(key)) heldAtStart.delete(key);
+      }
+      const pressed = active.find((i) => !heldAtStart.has(padInputKey(i)));
+      if (pressed) {
+        setKeyMap((prev) =>
+          withPadBinding(prev, listening!.side, listening!.button, pressed),
+        );
+        setListening(null);
+        return;
+      }
+      frame = requestAnimationFrame(poll);
+    }
+    frame = requestAnimationFrame(poll);
+
     return () => {
       window.removeEventListener("keydown", onKeyDown, { capture: true });
+      cancelAnimationFrame(frame);
       setCapturing(false);
     };
   }, [listening, setKeyMap, setCapturing]);
@@ -92,11 +125,11 @@ export function KeyMapSettings() {
         Button Mapping
       </h2>
       <p className={styles.eventSettingsHint}>
-        Map the buttons of an arcade panel (or any keys) to move around, accept
-        and back out. Directions work like the arrow keys, and back closes menus
-        and dialogs. A mapped key always acts as its button, even in text
-        fields, so a letter mapped here can no longer be typed. Saved in this
-        browser for every event.
+        Map the buttons of an arcade panel, whether it shows up as keys or as
+        gamepads, to move around, accept and back out. Directions work like the
+        arrow keys, and back closes menus and dialogs. A mapped key always acts
+        as its button, even in text fields, so a letter mapped here can no
+        longer be typed. Saved in this browser for every event.
       </p>
       <Table withRowBorders={false} verticalSpacing={4}>
         <Table.Thead>
@@ -113,6 +146,11 @@ export function KeyMapSettings() {
               <Table.Td>{BUTTON_LABELS[button]}</Table.Td>
               {SIDES.map((side) => {
                 const code = keyMap.sides[side].keys[button];
+                const pad = keyMap.sides[side].pads?.[button];
+                const bound =
+                  [code && keyLabel(code), pad && padInputLabel(pad)]
+                    .filter(Boolean)
+                    .join(" / ") || null;
                 const isListening =
                   listening?.side === side && listening.button === button;
                 return (
@@ -120,21 +158,17 @@ export function KeyMapSettings() {
                     <Group gap={4} wrap="nowrap">
                       <Button
                         size="xs"
-                        w="8em"
+                        miw="8em"
                         variant={isListening ? "filled" : "default"}
-                        aria-label={`${SIDE_LABELS[side]} ${BUTTON_LABELS[button]}: ${code ? keyLabel(code) : "not set"}`}
+                        aria-label={`${SIDE_LABELS[side]} ${BUTTON_LABELS[button]}: ${bound || "not set"}`}
                         onClick={() =>
                           setListening(isListening ? null : { side, button })
                         }
                         onBlur={() => isListening && setListening(null)}
                       >
-                        {isListening
-                          ? "Press a key…"
-                          : code
-                            ? keyLabel(code)
-                            : "—"}
+                        {isListening ? "Press a key or button…" : bound || "—"}
                       </Button>
-                      {code && !isListening && (
+                      {bound && !isListening && (
                         <ActionIcon
                           variant="subtle"
                           color="gray"
@@ -142,7 +176,7 @@ export function KeyMapSettings() {
                           aria-label={`Clear ${SIDE_LABELS[side]} ${BUTTON_LABELS[button]}`}
                           onClick={() =>
                             setKeyMap((prev) =>
-                              withBinding(prev, side, button, undefined),
+                              withoutBindings(prev, side, button),
                             )
                           }
                         >

@@ -1,5 +1,6 @@
 import { atom, useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
+import { PadInput, samePadInput } from "./gamepad";
 
 /**
  * User-remappable keys, for arcade cabinets whose button panels arrive as
@@ -8,8 +9,10 @@ import { atomWithStorage } from "jotai/utils";
  *
  * Bindings are stored by `KeyboardEvent.code`, the physical key, since that is
  * what a keyboard encoder wired to a button reliably sends regardless of
- * keyboard layout or shift state. The map lives in this browser only, across
- * every event and classic mode alike: it describes the machine, not the room.
+ * keyboard layout or shift state. A button can also have a gamepad input
+ * bound (see `gamepad.ts`), alongside or instead of a key. The map lives in
+ * this browser only, across every event and classic mode alike: it describes
+ * the machine, not the room.
  */
 
 export type Side = "p1" | "p2";
@@ -27,6 +30,8 @@ export const BUTTONS: ButtonId[] = [
 
 export interface SideBindings {
   keys: Partial<Record<ButtonId, string>>;
+  /** absent in maps saved before gamepads were supported */
+  pads?: Partial<Record<ButtonId, PadInput>>;
   /**
    * Which player the accept button speaks for on a card, as a 0-based index in
    * display order, like the 1-9 keys. Null makes it a plain Enter.
@@ -99,6 +104,53 @@ export function withBinding(
     sides[s] = { ...sides[s], keys };
   }
   return { ...map, sides };
+}
+
+/** a copy of `map` with the pad `input` bound to `side`/`button`, and nothing else */
+export function withPadBinding(
+  map: KeyMap,
+  side: Side,
+  button: ButtonId,
+  input: PadInput,
+): KeyMap {
+  const sides = { ...map.sides };
+  for (const s of SIDES) {
+    const pads = { ...sides[s].pads };
+    for (const b of BUTTONS) {
+      if (samePadInput(pads[b], input)) delete pads[b];
+    }
+    if (s === side) pads[button] = input;
+    sides[s] = { ...sides[s], pads };
+  }
+  return { ...map, sides };
+}
+
+/** a copy of `map` with nothing bound to `side`/`button` */
+export function withoutBindings(
+  map: KeyMap,
+  side: Side,
+  button: ButtonId,
+): KeyMap {
+  const cleared = withBinding(map, side, button, undefined);
+  const pads = { ...cleared.sides[side].pads };
+  delete pads[button];
+  return {
+    ...cleared,
+    sides: { ...cleared.sides, [side]: { ...cleared.sides[side], pads } },
+  };
+}
+
+/** every bound pad input, with what it's bound to */
+export function padBindings(map: KeyMap) {
+  const out: { input: PadInput; binding: Binding }[] = [];
+  for (const side of SIDES) {
+    const pads = map.sides[side]?.pads || {};
+    for (const button of BUTTONS) {
+      const input = pads[button];
+      if (input) out.push({ input, binding: { side, button } });
+    }
+  }
+  return out;
 }
 
 export function useKeyMap() {
