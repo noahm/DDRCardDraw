@@ -14,6 +14,7 @@ import { changeGameKeyForConfig } from "../state/thunks";
 import { ConfigList, GLOBAL_SETTINGS_ID } from "./config-select";
 import { EventSettings } from "./event-settings";
 import { LocalSettings } from "./local-settings";
+import { KeyMapSettings } from "../keymap/keymap-settings";
 
 export function ConfigPage() {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ export function ConfigPage() {
             <ErrorBoundary fallback={<ErrorFallback />}>
               <EventSettings />
               <LocalSettings />
+              <KeyMapSettings />
             </ErrorBoundary>
           </div>
         ) : (

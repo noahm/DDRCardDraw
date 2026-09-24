@@ -125,7 +125,7 @@ function EligibleChartsList() {
         }
       />
       <DiffHistogram charts={filteredCharts} />
-      <div className={styles.chartList}>
+      <div className={styles.chartList} data-card-group>
         {filteredCharts.map((chart, idx) => {
           // a chart key is unique per chart, but two configs' pools can be
           // rendered from the same data, so fall back to the index
