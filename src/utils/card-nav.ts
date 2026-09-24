@@ -86,7 +86,7 @@ function verticalNeighbor(card: HTMLElement, direction: "up" | "down") {
   ).card;
 }
 
-function focusHeader() {
+export function focusHeader() {
   const header = document.querySelector<HTMLElement>(`[${NAV_HEADER_ATTR}]`);
   if (!header) return false;
   const target =
