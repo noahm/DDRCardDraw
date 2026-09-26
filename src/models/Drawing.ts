@@ -250,6 +250,8 @@ export type MergedDrawing = Drawing & SubDrawing;
 export interface ScoreableChart {
   id: string;
   chart: EligibleChart;
+  /** id of the player whose pocket pick or free pick this card is, if any */
+  pickedBy?: string;
 }
 
 /**
@@ -265,12 +267,14 @@ export function scoreableCharts(
     if (bans[card.id]) {
       return [];
     }
+    const pocketPick = pocketPicks[card.id];
     const chart =
-      pocketPicks[card.id]?.pick ||
-      (card.type === CHART_DRAWN ? card : undefined);
+      pocketPick?.pick || (card.type === CHART_DRAWN ? card : undefined);
     if (!chart) {
       return [];
     }
-    return [{ id: card.id, chart }];
+    return pocketPick
+      ? [{ id: card.id, chart, pickedBy: pocketPick.player }]
+      : [{ id: card.id, chart }];
   });
 }

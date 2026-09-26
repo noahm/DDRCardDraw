@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { type EligibleChart, isGauntletScored } from "../models/Drawing";
 import {
   computeGauntletStandings,
@@ -11,12 +11,15 @@ import { ordinalPlace } from "../models/payout-scheme";
 import { useEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
+import { toStandingsOptions } from "./standings-options";
 import styles from "./standings.css";
 
 /**
  * Live standings for the gauntlet on a cab: players down the left sorted by
  * points, one column per song that's been played, and running totals on the
- * right.
+ * right. The url can ask for a column for every song drawn instead, and say
+ * whether a pocket or free pick names the player who picked it (see
+ * `./standings-options`).
  *
  * Renders nothing for a cab with no match, or one holding a head to head draw,
  * which scores by per-chart wins rather than points and so has no standings to
@@ -25,6 +28,8 @@ import styles from "./standings.css";
  */
 export function CabStandings() {
   const params = useParams<"roomName" | "cabId">();
+  const [searchParams] = useSearchParams();
+  const options = toStandingsOptions(searchParams);
   // the cab can hold a whole draw or one sub-draw of it; standings always cover
   // the whole round, so only the parent id matters here
   const drawingId = useAppState((s) => {
@@ -52,15 +57,26 @@ export function CabStandings() {
   if (!drawing || !standings?.rows.length) {
     return null;
   }
-  const { playedCharts, rows } = standings;
+  const { rows } = standings;
+  const columns =
+    options.songs === "all" ? standings.charts : standings.playedCharts;
+  const nameOf = new Map(rows.map((row) => [row.player.id, row.name]));
 
   return (
     <table className={styles.standings}>
       <thead>
         <tr>
           <th className={styles.corner} colSpan={2} />
-          {playedCharts.map(({ id, chart }) => (
-            <SongHeading key={id} chart={chart} />
+          {columns.map(({ id, chart, pickedBy }) => (
+            <SongHeading
+              key={id}
+              chart={chart}
+              pickedBy={
+                options.pickers === "show" && pickedBy
+                  ? nameOf.get(pickedBy)
+                  : undefined
+              }
+            />
           ))}
           <th className={styles.totalHeading} data-field="total-heading">
             Points
@@ -85,7 +101,7 @@ export function CabStandings() {
             <td className={styles.player} data-field="player">
               <span className={styles.playerName}>{row.name}</span>
             </td>
-            {playedCharts.map(({ id }) => (
+            {columns.map(({ id }) => (
               <ResultCell key={id} result={row.results[id]} />
             ))}
             <td className={styles.total} data-field="total">
@@ -98,7 +114,14 @@ export function CabStandings() {
   );
 }
 
-function SongHeading({ chart }: { chart: EligibleChart }) {
+function SongHeading({
+  chart,
+  pickedBy,
+}: {
+  chart: EligibleChart;
+  /** display name of the player who pocket or free picked this song */
+  pickedBy?: string;
+}) {
   return (
     <th className={styles.songHeading} data-field="song">
       {chart.jacket ? (
@@ -120,6 +143,11 @@ function SongHeading({ chart }: { chart: EligibleChart }) {
       >
         {chart.diffAbbr} {chart.level}
       </span>
+      {pickedBy && (
+        <span className={styles.picker} data-field="picker">
+          {pickedBy}
+        </span>
+      )}
     </th>
   );
 }
