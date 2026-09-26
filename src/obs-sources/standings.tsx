@@ -30,6 +30,7 @@ export function CabStandings() {
   const params = useParams<"roomName" | "cabId">();
   const [searchParams] = useSearchParams();
   const options = toStandingsOptions(searchParams);
+  const { award } = options;
   // the cab can hold a whole draw or one sub-draw of it; standings always cover
   // the whole round, so only the parent id matters here
   const drawingId = useAppState((s) => {
@@ -51,8 +52,9 @@ export function CabStandings() {
       drawing.meta,
       playableCharts(drawing),
       eventScheme,
+      { awardPartial: award === "partial" },
     );
-  }, [drawing, eventScheme]);
+  }, [drawing, eventScheme, award]);
 
   if (!drawing || !standings?.rows.length) {
     return null;
@@ -165,6 +167,23 @@ function ResultCell({ result }: { result: ChartResult | undefined }) {
     return (
       <td className={styles.unplayed} data-field="result">
         —
+      </td>
+    );
+  }
+  if (result.pending) {
+    // points wait until everyone has a score here, so the place is only a
+    // standing so far and nothing has been paid for it yet
+    return (
+      <td data-field="result" data-pending>
+        <span className={styles.score} data-field="score">
+          {result.score.toLocaleString()}
+        </span>
+        <span
+          className={classNames(styles.placing, styles.pending)}
+          data-field="placing"
+        >
+          <span data-field="place">{ordinalPlace(result.place)}</span>
+        </span>
       </td>
     );
   }

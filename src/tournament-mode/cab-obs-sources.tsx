@@ -35,11 +35,14 @@ import {
   playerSourceStub,
 } from "../obs-sources/player-fields";
 import {
+  awardModes,
+  defaultAwardMode,
   defaultPickerMode,
   defaultSongMode,
   pickerModes,
   songModes,
   standingsSourceStub,
+  type AwardMode,
   type PickerMode,
   type SongMode,
 } from "../obs-sources/standings-options";
@@ -196,14 +199,19 @@ function CardsSourceCard({ cabId }: { cabId: string }) {
 
 /**
  * The gauntlet standings, which say in their url whether pocket and free picks
- * name who picked them, and whether songs nobody has scored yet get a column.
+ * name who picked them, whether songs nobody has scored yet get a column, and
+ * whether a song pays out before every player has a score on it.
  */
 function StandingsSourceCard({ cabId }: { cabId: string }) {
   const { t } = useIntl();
   const [pickers, setPickers] = useState<PickerMode>(defaultPickerMode);
   const [songs, setSongs] = useState<SongMode>(defaultSongMode);
+  const [award, setAward] = useState<AwardMode>(defaultAwardMode);
   const href = useHref(
-    routableCabSourcePath(cabId, standingsSourceStub({ pickers, songs })),
+    routableCabSourcePath(
+      cabId,
+      standingsSourceStub({ pickers, songs, award }),
+    ),
   );
 
   return (
@@ -238,6 +246,18 @@ function StandingsSourceCard({ cabId }: { cabId: string }) {
                 intent={key === songs ? "primary" : undefined}
                 aria-pressed={key === songs}
                 onClick={() => setSongs(key)}
+              />
+            ))}
+          </ButtonGroup>
+          <ButtonGroup>
+            {awardModes.map(({ key, labelKey }) => (
+              <Button
+                key={key}
+                text={t(labelKey)}
+                active={key === award}
+                intent={key === award ? "primary" : undefined}
+                aria-pressed={key === award}
+                onClick={() => setAward(key)}
               />
             ))}
           </ButtonGroup>

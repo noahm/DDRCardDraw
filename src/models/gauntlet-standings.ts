@@ -16,6 +16,11 @@ export interface ChartResult {
   /** 1 indexed finishing place on this chart; tied scores share a place */
   place: number;
   points: number;
+  /**
+   * true when points are being held back until everyone has a score on this
+   * chart; `points` is then 0 and `place` is only where they stand so far
+   */
+  pending?: boolean;
 }
 
 export interface StandingsRow {
@@ -83,6 +88,15 @@ export function computeGauntletStandings(
   meta: GauntletScoredMeta,
   charts: ScoreableChart[],
   eventScheme?: string,
+  {
+    awardPartial = true,
+  }: {
+    /**
+     * false holds back every point on a chart until each player in the heat
+     * has a score on it, so a half-finished song can't swing the totals
+     */
+    awardPartial?: boolean;
+  } = {},
 ): GauntletStandings {
   const pointsPerPlace = payoutTableFor(meta, eventScheme);
   const scores = meta.scoresByEntrant ?? {};
@@ -112,6 +126,7 @@ export function computeGauntletStandings(
         return score === undefined ? [] : [{ id: player.id, score }];
       })
       .sort((a, b) => b.score - a.score);
+    const pending = !awardPartial && ranked.length < meta.players.length;
 
     let place = 0;
     let priorScore: number | undefined;
@@ -124,6 +139,15 @@ export function computeGauntletStandings(
       }
       // every ranked id came out of meta.players, so the row always exists
       const row = rowsById.get(entry.id)!;
+      if (pending) {
+        row.results[chart.id] = {
+          score: entry.score,
+          place,
+          points: 0,
+          pending,
+        };
+        return;
+      }
       const points = pointsForPlace(pointsPerPlace, place);
       row.results[chart.id] = { score: entry.score, place, points };
       row.totalPoints += points;
