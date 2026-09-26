@@ -31,8 +31,8 @@
 
 .songHeading {
   width: 4em;
-  /* a title that wraps or a picker pill makes some headings taller than
-     others, and the jackets should still line up across the top */
+  /* a title that wraps makes some headings taller than others, and the
+     jackets should still line up across the top */
   vertical-align: top !important;
   padding-bottom: 0.4em !important;
 }
@@ -67,13 +67,19 @@
   text-transform: uppercase;
 }
 
-/* who pocket or free picked a song, as a small pill under its difficulty */
+/* the row of who pocket or free picked each song, under the difficulties */
+.pickerHeading {
+  vertical-align: bottom !important;
+  padding-top: 0 !important;
+  padding-bottom: 0.4em !important;
+}
+
 .picker {
   display: block;
   overflow: hidden;
   /* 12 of this pill's own em is about the width of a song name above it */
   max-width: 12em;
-  margin: 0.2em auto 0;
+  margin: 0 auto;
   padding: 0.05em 0.5em;
   font-size: 0.45em;
   font-weight: bold;
