@@ -31,8 +31,8 @@
 
 .songHeading {
   width: 4em;
-  /* a picker pill makes some headings taller, and the jackets should still
-     line up across the top */
+  /* a title that wraps or a picker pill makes some headings taller than
+     others, and the jackets should still line up across the top */
   vertical-align: top !important;
   padding-bottom: 0.4em !important;
 }
