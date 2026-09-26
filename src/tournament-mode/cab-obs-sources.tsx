@@ -1,5 +1,6 @@
 import {
   Button,
+  ButtonGroup,
   CardList,
   FormGroup,
   HTMLSelect,
@@ -33,6 +34,15 @@ import {
   playerFields,
   playerSourceStub,
 } from "../obs-sources/player-fields";
+import {
+  defaultPickerMode,
+  defaultSongMode,
+  pickerModes,
+  songModes,
+  standingsSourceStub,
+  type PickerMode,
+  type SongMode,
+} from "../obs-sources/standings-options";
 import { eventSlice } from "../state/event.slice";
 import { useAppState } from "../state/store";
 import { CAB_SOURCES_PARAM, routableCabSourcePath } from "./copy-obs-source";
@@ -54,11 +64,6 @@ const perCabSources: CabSource[] = [
     stub: "phase",
     labelKey: "obsDashboard.sourcePhase",
     icon: <DiagramTree />,
-  },
-  {
-    stub: "standings",
-    labelKey: "obsDashboard.sourceStandings",
-    icon: <Th />,
   },
   { stub: "players", labelKey: "obsDashboard.sourcePlayers", icon: <People /> },
 ];
@@ -142,6 +147,7 @@ export function CabObsSources() {
             </div>
             <CardList compact>
               <CardsSourceCard cabId={cab.id} />
+              <StandingsSourceCard cabId={cab.id} />
               {perCabSources.map((source) => (
                 <SourceCard key={source.stub} cabId={cab.id} source={source} />
               ))}
@@ -184,6 +190,59 @@ function CardsSourceCard({ cabId }: { cabId: string }) {
           onClick={() => setMode(key)}
         />
       ))}
+    />
+  );
+}
+
+/**
+ * The gauntlet standings, which say in their url whether pocket and free picks
+ * name who picked them, and whether songs nobody has scored yet get a column.
+ */
+function StandingsSourceCard({ cabId }: { cabId: string }) {
+  const { t } = useIntl();
+  const [pickers, setPickers] = useState<PickerMode>(defaultPickerMode);
+  const [songs, setSongs] = useState<SongMode>(defaultSongMode);
+  const href = useHref(
+    routableCabSourcePath(cabId, standingsSourceStub({ pickers, songs })),
+  );
+
+  return (
+    <SourceRow
+      href={href}
+      label={
+        <>
+          <Th />
+          <span>{t("obsDashboard.sourceStandings")}</span>
+        </>
+      }
+      above={
+        <>
+          <ButtonGroup>
+            {pickerModes.map(({ key, labelKey }) => (
+              <Button
+                key={key}
+                text={t(labelKey)}
+                active={key === pickers}
+                intent={key === pickers ? "primary" : undefined}
+                aria-pressed={key === pickers}
+                onClick={() => setPickers(key)}
+              />
+            ))}
+          </ButtonGroup>
+          <ButtonGroup>
+            {songModes.map(({ key, labelKey }) => (
+              <Button
+                key={key}
+                text={t(labelKey)}
+                active={key === songs}
+                intent={key === songs ? "primary" : undefined}
+                aria-pressed={key === songs}
+                onClick={() => setSongs(key)}
+              />
+            ))}
+          </ButtonGroup>
+        </>
+      }
     />
   );
 }
