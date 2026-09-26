@@ -61,27 +61,46 @@ export function CabStandings() {
   const columns =
     options.songs === "all" ? standings.charts : standings.playedCharts;
   const nameOf = new Map(rows.map((row) => [row.player.id, row.name]));
+  const pickers = columns.map(({ pickedBy }) =>
+    options.pickers === "show" && pickedBy ? nameOf.get(pickedBy) : undefined,
+  );
+  const headerRows = pickers.some(Boolean) ? 2 : 1;
 
   return (
     <table className={styles.standings}>
       <thead>
         <tr>
-          <th className={styles.corner} colSpan={2} />
-          {columns.map(({ id, chart, pickedBy }) => (
-            <SongHeading
-              key={id}
-              chart={chart}
-              pickedBy={
-                options.pickers === "show" && pickedBy
-                  ? nameOf.get(pickedBy)
-                  : undefined
-              }
-            />
+          <th className={styles.corner} colSpan={2} rowSpan={headerRows} />
+          {columns.map(({ id, chart }) => (
+            <SongHeading key={id} chart={chart} />
           ))}
-          <th className={styles.totalHeading} data-field="total-heading">
+          <th
+            className={styles.totalHeading}
+            data-field="total-heading"
+            rowSpan={headerRows}
+          >
             Points
           </th>
         </tr>
+        {headerRows > 1 && (
+          // pickers get a row of their own, so every pill sits on one line
+          // with the points heading however tall the song names above run
+          <tr>
+            {pickers.map((picker, index) => (
+              <th
+                key={columns[index].id}
+                className={styles.pickerHeading}
+                data-field="picker-heading"
+              >
+                {picker && (
+                  <span className={styles.picker} data-field="picker">
+                    {picker}
+                  </span>
+                )}
+              </th>
+            ))}
+          </tr>
+        )}
       </thead>
       <tbody>
         {rows.map((row) => (
@@ -114,14 +133,7 @@ export function CabStandings() {
   );
 }
 
-function SongHeading({
-  chart,
-  pickedBy,
-}: {
-  chart: EligibleChart;
-  /** display name of the player who pocket or free picked this song */
-  pickedBy?: string;
-}) {
+function SongHeading({ chart }: { chart: EligibleChart }) {
   return (
     <th className={styles.songHeading} data-field="song">
       {chart.jacket ? (
@@ -143,11 +155,6 @@ function SongHeading({
       >
         {chart.diffAbbr} {chart.level}
       </span>
-      {pickedBy && (
-        <span className={styles.picker} data-field="picker">
-          {pickedBy}
-        </span>
-      )}
     </th>
   );
 }
