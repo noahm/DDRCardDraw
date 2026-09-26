@@ -68,7 +68,9 @@ interface GameDataParent {
 
 /** ordered list of all available game data files */
 export const availableGameData = (
-  process.env.DATA_FILES as Array<Omit<AvailableGameData, "type" | "index">>
+  (process.env.DATA_FILES as unknown as Array<
+    Omit<AvailableGameData, "type" | "index">
+  >) || []
 ).sort((a, b) => {
   const parentDiff = a.parent.localeCompare(b.parent);
   if (parentDiff) {
@@ -76,6 +78,9 @@ export const availableGameData = (
   }
   return a.display.localeCompare(b.display);
 });
+
+/** `parent` bucket that all custom/imported data sets are grouped under. */
+export const CUSTOM_DATA_PARENT = "custom";
 
 export function groupGameData(gd: typeof availableGameData) {
   return gd.reduce<Array<AvailableGameData | GameDataParent>>(
@@ -146,21 +151,6 @@ export function* chunkInPieces<T>(pieces: number, arr: Array<T>) {
     chunksYielded++;
     index += chunkSize;
   }
-}
-
-/**
- * is this an accurate F-Y shuffle? who knows!?!
- */
-export function shuffle<Item>(arr: Array<Item>): Array<Item> {
-  const ret = arr.slice();
-  for (let i = 0; i < ret.length; i++) {
-    const randomUpcomingIndex =
-      i + Math.floor(Math.random() * (ret.length - i));
-    const currentItem = ret[i];
-    ret[i] = ret[randomUpcomingIndex];
-    ret[randomUpcomingIndex] = currentItem;
-  }
-  return ret;
 }
 
 export function pickRandomItem<T>(

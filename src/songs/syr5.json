@@ -1,0 +1,1111 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": [],
+    "lastUpdated": 1751082979926,
+    "usesDrawGroups": true,
+    "styles": ["single"],
+    "difficulties": [
+      {
+        "key": "challenge",
+        "color": "#0191F2"
+      },
+      {
+        "key": "expert",
+        "color": "#F64D8B"
+      },
+      {
+        "key": "beginner",
+        "color": "#98aafd"
+      },
+      {
+        "key": "difficult",
+        "color": "#F2F52C"
+      },
+      {
+        "key": "basic",
+        "color": "#2BC856"
+      }
+    ]
+  },
+  "defaults": {
+    "flags": [],
+    "lowerLvlBound": 8,
+    "difficulties": ["challenge", "expert", "beginner", "difficult", "basic"],
+    "upperLvlBound": 13,
+    "style": "single"
+  },
+  "i18n": {
+    "en": {
+      "name": "Show Your Rhythm 5",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[10] 34+35",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] 34+35.jpg",
+      "bpm": "110",
+      "artist": "Ariana Grande",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] A Drop",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] A Drop.jpg",
+      "bpm": "150",
+      "artist": "arthur x medic",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Baila Conmigo",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Baila Conmigo.jpg",
+      "bpm": "128",
+      "artist": "Dayvi, Víctor Cárdenas, Kelly Ruiz",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Blade",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Blade.jpg",
+      "bpm": "136",
+      "artist": "DJ Kuba, Neitan, Bounce Inc.",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Doodles",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Doodles.jpg",
+      "bpm": "104",
+      "artist": "Rose Betts",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Freak Out",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Freak Out.jpg",
+      "bpm": "169",
+      "artist": "Miya Folick",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Fun Tonight",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Fun Tonight.jpg",
+      "bpm": "130",
+      "artist": "MACROSS 82-99",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Happy Dance",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Happy Dance.jpg",
+      "bpm": "125",
+      "artist": "MercyMe",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Houdini",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Houdini.jpg",
+      "bpm": "117",
+      "artist": "Dua Lipa",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] NASTY (ELIMINATE REMIX)",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] NASTY (ELIMINATE REMIX).jpg",
+      "bpm": "95",
+      "artist": "TINASHE, ELIMINATE",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] Never Gonna Give You Up",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] Never Gonna Give You Up.jpg",
+      "bpm": "113",
+      "artist": "Rick Astley",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[10] the CIA",
+      "name_translation": "",
+      "jacket": "itg/syr5/[10] the CIA.jpg",
+      "bpm": "135-190",
+      "artist": "glass beach",
+      "charts": [
+        {
+          "lvl": 10,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 10
+        }
+      ]
+    },
+    {
+      "name": "[11] AWAKEN",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] AWAKEN.jpg",
+      "bpm": "140",
+      "artist": "Korva",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "beginner",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Bullet Waiting for Me",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Bullet Waiting for Me.jpg",
+      "bpm": "107",
+      "artist": "Nikki Simmons",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Dirty Vibe",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Dirty Vibe.jpg",
+      "bpm": "126",
+      "artist": "RudeLies",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] EXPERIENCE",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] EXPERIENCE.jpg",
+      "bpm": "154",
+      "artist": "k?d",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Fly Me To The Moon",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Fly Me To The Moon.jpg",
+      "bpm": "130",
+      "artist": "Quartzone",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Gang Baby",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Gang Baby.jpg",
+      "bpm": "129",
+      "artist": "NLE Choppa",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Ghost Ship",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Ghost Ship.jpg",
+      "bpm": "110",
+      "artist": "Teminite",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Hidamaream",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Hidamaream.jpg",
+      "bpm": "140",
+      "artist": "Droplamp",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] MORJA KAIJU VIP",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] MORJA KAIJU VIP.jpg",
+      "bpm": "150",
+      "artist": "Skrillex",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Rain",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Rain.jpg",
+      "bpm": "139",
+      "artist": "E-Type",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] SAY",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] SAY.jpg",
+      "bpm": "145",
+      "artist": "Knock2",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[11] Scissor",
+      "name_translation": "",
+      "jacket": "itg/syr5/[11] Scissor.jpg",
+      "bpm": "140",
+      "artist": "Shandy Kubota",
+      "charts": [
+        {
+          "lvl": 11,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 11
+        }
+      ]
+    },
+    {
+      "name": "[12] 天邪鬼",
+      "name_translation": "[12] Amanojaku",
+      "jacket": "itg/syr5/[12] Amanojaku.jpg",
+      "bpm": "155",
+      "artist": "Qlarabelle",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] Anomaly",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] Anomaly Remix.jpg",
+      "bpm": "172",
+      "artist": "Noisia",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] Boiled Yatsuhashi",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] Boiled Yatsuhashi (VIP).jpg",
+      "bpm": "150",
+      "artist": "Hylen",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] Distress",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] Distress.jpg",
+      "bpm": "125",
+      "artist": "dj TAKA Remixed by TaQ",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] GIGA OMEGA VIP",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] GIGA OMEGA VIP.jpg",
+      "bpm": "140",
+      "artist": "Blacklolita",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] I GOT THE FEELIN",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] I GOT THE FEELIN.jpg",
+      "bpm": "130",
+      "artist": "Houseplan",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] I Still Drop The Bass",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] I Still Drop The Bass.jpg",
+      "bpm": "140",
+      "artist": "かめりあ",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] Infiltration",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] Infiltration.jpg",
+      "bpm": "150",
+      "artist": "ParagonX9",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] カチカチ山",
+      "name_translation": "[12] Kachi Kachi Yama",
+      "jacket": "itg/syr5/[12] Kachi Kachi Yama.jpg",
+      "bpm": "143-150",
+      "artist": "Gacharic Spin",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] MURDER PLOT",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] MURDER PLOT.jpg",
+      "bpm": "140",
+      "artist": "KORDHELL",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] Satellite",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] Satellite.jpg",
+      "bpm": "145",
+      "artist": "Valentino Khan",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[12] Take Me Back",
+      "name_translation": "",
+      "jacket": "itg/syr5/[12] Take Me Back.jpg",
+      "bpm": "175",
+      "artist": "KaW",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 12
+        }
+      ]
+    },
+    {
+      "name": "[13] BEAST BASS BOMB",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] BEAST BASS BOMB.jpg",
+      "bpm": "170",
+      "artist": "Hommarju",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] Banjo Kazooie Main Theme (Metal Remix)",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] Banjo Kazooie Main Theme.jpg",
+      "bpm": "148",
+      "artist": "FamilyJules",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] Came To Rage",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] Came To Rage.jpg",
+      "bpm": "130",
+      "artist": "Riot Ten",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] Dance Through the Danger",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] Dance Through the Danger.jpg",
+      "bpm": "180",
+      "artist": "covered by RichaadEB feat. Cristina Vee",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] Freedom",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] Freedom.jpg",
+      "bpm": "150",
+      "artist": "USAO",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] ハイテックトキオ",
+      "name_translation": "[13] Hi-tech Tokio",
+      "jacket": "itg/syr5/[13] Hi-tech Tokio.jpg",
+      "bpm": "165",
+      "artist": "lapix ∞ BEMANI Sound Team \"Sota Fujimori\"",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] Naatu Naatu",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] Naatu Naatu.jpg",
+      "bpm": "160-170",
+      "artist": "Rahul Sipligunj, Kaala Bhairava, M.M. Keeravaani",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] STEEL NOODLE",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] STEEL NOODLE.jpg",
+      "bpm": "188",
+      "artist": "Mootz",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] Worst Plan",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] Worst Plan.jpg",
+      "bpm": "150",
+      "artist": "BEMANI Sound Team \"SYUNN\"",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[13] monolith",
+      "name_translation": "",
+      "jacket": "itg/syr5/[13] monolith.jpg",
+      "bpm": "203",
+      "artist": "Takenoko boy feat. metyao",
+      "charts": [
+        {
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 13
+        }
+      ]
+    },
+    {
+      "name": "[08] BMF",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] BMF.jpg",
+      "bpm": "128",
+      "artist": "SZA",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] ボンビースキップ!!",
+      "name_translation": "[08] Bonbiskip!!",
+      "jacket": "itg/syr5/[8] Bonbiskip!!.jpg",
+      "bpm": "80-164",
+      "artist": "good-cool feat. すわひでお",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] FOREIGN",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] FOREIGN.jpg",
+      "bpm": "92",
+      "artist": "HEDEGAARD, Moses, CANCUN?",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] Mellow",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] Mellow.jpg",
+      "bpm": "160",
+      "artist": "Spacekats",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] Memories of You (ATLUS Meguro Remix)",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] Memories of You (ATLUS Meguro Remix).jpg",
+      "bpm": "125",
+      "artist": "Yumi Kawamura",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] Nine One One",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] Nine One One (feat. dimo).jpg",
+      "bpm": "100",
+      "artist": "rogerclark",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] OKLOSER",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] OKLOSER.jpg",
+      "bpm": "152",
+      "artist": "Doja Cat",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] Riddle",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] Riddle.jpg",
+      "bpm": "128",
+      "artist": "Bad Computer",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] Spin out (aran Remix)",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] Spin out (aran Remix).jpg",
+      "bpm": "128",
+      "artist": "Shandy Kubota",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] たんぽぽ",
+      "name_translation": "[08] Tanpopo",
+      "jacket": "itg/syr5/[8] Tanpopo.jpg",
+      "bpm": "115",
+      "artist": "Kanae Asaba",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] Trap Queen",
+      "name_translation": "",
+      "jacket": "itg/syr5/[8] Trap Queen.jpg",
+      "bpm": "74-148",
+      "artist": "Fetty Wap",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[08] 前代未聞",
+      "name_translation": "[08] Zendaimimon",
+      "jacket": "itg/syr5/[8] Zendaimimon.jpg",
+      "bpm": "130",
+      "artist": "M2U",
+      "charts": [
+        {
+          "lvl": 8,
+          "style": "single",
+          "diffClass": "difficult",
+          "drawGroup": 8
+        }
+      ]
+    },
+    {
+      "name": "[09] All Night - nikko Remix",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] All Night - nikko Remix.jpg",
+      "bpm": "145",
+      "artist": "NGHTMRE, nikko",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] Bichael Byers",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] Bichael Byers.jpg",
+      "bpm": "162",
+      "artist": "Not Nate (Eliminate)",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] Bumble Bee",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] Bumble Bee.jpg",
+      "bpm": "138",
+      "artist": "Bambee",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] My Mutant Ride",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] My Mutant Ride.jpg",
+      "bpm": "142",
+      "artist": "PAS TASTA ft. 柴田聡子 & TAKU INOUE",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] Padam Padam",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] Padam Padam.jpg",
+      "bpm": "128",
+      "artist": "Kylie Minogue",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] Rough Percussionythm",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] Rough Percussionythm.jpg",
+      "bpm": "175",
+      "artist": "BEMANI Sound Team \"setup VS 謎の勢力\"",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "difficult",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] Sick Beat",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] Sick Beat.jpg",
+      "bpm": "99-198",
+      "artist": "Kero Kero Bonito",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] So What",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] So What.jpg",
+      "bpm": "126",
+      "artist": "P!nk",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] Sunset",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] Sunset.jpg",
+      "bpm": "115",
+      "artist": "Macross 82-99",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] The Way To Infinity",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] The Way To Infinity.jpg",
+      "bpm": "75",
+      "artist": "Au5",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] U-turn",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] U-turn.jpg",
+      "bpm": "92",
+      "artist": "Tegan and Sara",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "challenge",
+          "drawGroup": 9
+        }
+      ]
+    },
+    {
+      "name": "[09] We Got the Moves",
+      "name_translation": "",
+      "jacket": "itg/syr5/[9] We Got the Moves.jpg",
+      "bpm": "150",
+      "artist": "Electric Callboy",
+      "charts": [
+        {
+          "lvl": 9,
+          "style": "single",
+          "diffClass": "expert",
+          "drawGroup": 9
+        }
+      ]
+    }
+  ]
+}
