@@ -42,6 +42,8 @@ export function getDrawnChart(
     artist: currentSong.artist,
     artistTranslation: currentSong.artist_translation,
     bpm: chart.bpm || currentSong.bpm,
+    style: chart.style,
+    diffClass: chart.diffClass,
     level: chart.lvl,
     granularLevel: chart.sanbaiTier,
     maxScore: chart.maxScore,

@@ -130,6 +130,33 @@ export function primaryReuseKey(chart: EligibleChart): string {
   return reuseKeysForChart(chart)[0];
 }
 
+/**
+ * Reads one field of {@link chartIdentity} back out of a derived `chartKey`,
+ * for charts drawn before that field was stored on them directly. A chart keyed
+ * by an explicit data-file `id`, or with no key at all, has nothing to report.
+ */
+function chartKeyField(
+  chart: EligibleChart,
+  field: "style" | "diffClass",
+): string | undefined {
+  const sep = chart.chartKey?.lastIndexOf(PART_SEP) ?? -1;
+  if (!chart.chartKey || sep < 0) {
+    return undefined;
+  }
+  const fields = chart.chartKey.slice(sep + PART_SEP.length).split(FIELD_SEP);
+  return fields[field === "style" ? 0 : 1] || undefined;
+}
+
+/** the play style `chart` was drawn from, if it can still be known */
+export function styleOfChart(chart: EligibleChart): string | undefined {
+  return chart.style || chartKeyField(chart, "style");
+}
+
+/** the difficulty class `chart` was drawn from, if it can still be known */
+export function diffClassOfChart(chart: EligibleChart): string | undefined {
+  return chart.diffClass || chartKeyField(chart, "diffClass");
+}
+
 /** true if any key identifying `chart` is present in `used` */
 export function chartIsUsed(
   chart: EligibleChart,
