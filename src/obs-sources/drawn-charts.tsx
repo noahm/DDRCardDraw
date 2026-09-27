@@ -18,6 +18,7 @@ import {
 import { useGameDataForKey } from "../state/game-data.atoms";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
+import { readableOnDark } from "../utils/readable-color";
 import "./drawn-charts.css";
 
 /**
@@ -139,7 +140,7 @@ function ChartGrid({ charts, useGranular }: LayoutProps) {
             <div className="drawn-chart-name">{chart.name}</div>
             <div
               className="drawn-chart-diff"
-              style={{ color: chart.diffColor }}
+              style={{ color: readableOnDark(chart.diffColor) }}
             >
               {chart.diffAbbr} {formatLevel(chart, useGranular)}
             </div>
@@ -161,7 +162,7 @@ function LevelGroupedList({ charts, useGranular }: LayoutProps) {
             <div key={primaryReuseKey(chart)} className="drawn-chart-row">
               <span
                 className="drawn-chart-diff"
-                style={{ color: chart.diffColor }}
+                style={{ color: readableOnDark(chart.diffColor) }}
               >
                 {chart.diffAbbr}
               </span>
