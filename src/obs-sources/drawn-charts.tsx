@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { primaryReuseKey } from "../chart-id";
+import { primaryReuseKey, styleOfChart } from "../chart-id";
 import { formatLevel } from "../game-data-utils";
 import { EligibleChart } from "../models/Drawing";
 import { configSlice } from "../state/config.slice";
@@ -27,14 +27,20 @@ import "./drawn-charts.css";
  * - `?config=<configId>` pins the range to a specific config
  * - `?min=15&max=17` states a range outright, in in-game levels
  * - `?all` turns filtering off and shows the whole history
+ *
+ * Separately from the level range, `?style=team` narrows the list to one play
+ * style (or several, comma separated: `?style=single,double`). It's a URL-only
+ * option with nothing on the dashboard offering it; `?all` doesn't lift it.
+ * Charts too old to know their style drop out while it's set.
  */
 export function DrawnCharts() {
   const params = useParams<"layout">();
   const range = useLevelRange();
+  const styles = useStyleFilter();
   const spentCharts = useAppState(selectSpentCharts);
   const charts = useMemo(
-    () => chartsToShow(spentCharts, range),
-    [spentCharts, range],
+    () => chartsToShow(spentCharts, range, styles),
+    [spentCharts, range, styles],
   );
   const useGranular = range?.useGranularLevels || false;
 
@@ -44,8 +50,12 @@ export function DrawnCharts() {
         <span className="drawn-charts-count">
           {charts.length} chart{charts.length === 1 ? "" : "s"} drawn
         </span>
-        {range && (
-          <span className="drawn-charts-range">{describeRange(range)}</span>
+        {(range || styles) && (
+          <span className="drawn-charts-range">
+            {[styles?.join(", "), range && describeRange(range)]
+              .filter(Boolean)
+              .join(" · ")}
+          </span>
         )}
       </div>
       {params.layout === "list" ? (
@@ -173,6 +183,19 @@ function useLevelRange(): LevelRange | null {
   }, [showAll, min, max, config]);
 }
 
+/** the styles named by `?style=`, or null to show every style */
+function useStyleFilter(): string[] | null {
+  const [searchParams] = useSearchParams();
+  const raw = searchParams.get("style");
+  return useMemo(() => {
+    const styles = (raw || "")
+      .split(",")
+      .map((style) => style.trim().toLowerCase())
+      .filter(Boolean);
+    return styles.length ? styles : null;
+  }, [raw]);
+}
+
 function numericParam(raw: string | null): number | undefined {
   if (raw === null) {
     return undefined;
@@ -214,14 +237,22 @@ function levelMetric(chart: EligibleChart, useGranular: boolean): number {
 function chartsToShow(
   spentCharts: EligibleChart[],
   range: LevelRange | null,
+  styles: string[] | null,
 ): EligibleChart[] {
   const useGranular = range?.useGranularLevels || false;
-  const visible = range
-    ? spentCharts.filter((chart) => {
-        const level = levelMetric(chart, useGranular);
-        return level >= range.lowerBound && level <= range.upperBound;
-      })
-    : spentCharts.slice();
+  const visible = spentCharts.filter((chart) => {
+    if (styles) {
+      const style = styleOfChart(chart);
+      if (!style || !styles.includes(style.toLowerCase())) {
+        return false;
+      }
+    }
+    if (range) {
+      const level = levelMetric(chart, useGranular);
+      return level >= range.lowerBound && level <= range.upperBound;
+    }
+    return true;
+  });
   return visible.sort(
     (a, b) =>
       levelMetric(a, useGranular) - levelMetric(b, useGranular) ||

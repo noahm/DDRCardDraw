@@ -130,6 +130,23 @@ export function primaryReuseKey(chart: EligibleChart): string {
   return reuseKeysForChart(chart)[0];
 }
 
+/**
+ * The play style `chart` was drawn from. Charts drawn before `style` was stored
+ * on them can still answer through a derived `chartKey`, whose chart half
+ * starts with the style; one keyed by an explicit data-file `id`, or with no
+ * key at all, has no style to report.
+ */
+export function styleOfChart(chart: EligibleChart): string | undefined {
+  if (chart.style) {
+    return chart.style;
+  }
+  const sep = chart.chartKey?.lastIndexOf(PART_SEP) ?? -1;
+  if (!chart.chartKey || sep < 0) {
+    return undefined;
+  }
+  return chart.chartKey.slice(sep + PART_SEP.length).split(FIELD_SEP)[0];
+}
+
 /** true if any key identifying `chart` is present in `used` */
 export function chartIsUsed(
   chart: EligibleChart,

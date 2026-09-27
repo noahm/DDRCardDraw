@@ -14,6 +14,12 @@ export interface EligibleChart {
   artist: string;
   artistTranslation?: string;
   bpm: string;
+  /**
+   * The chart's play style (`single`, `double`, SMX's `team`...). Optional
+   * because charts drawn before this existed don't carry it; see
+   * `styleOfChart` in `src/chart-id.ts` for recovering it from `chartKey`.
+   */
+  style?: string;
   diffAbbr: string;
   diffColor: string;
   level: number;
