@@ -32,6 +32,7 @@ import {
   drawnChartsLayouts,
   routableDrawnChartsSourcePath,
   routableGlobalSourcePath,
+  type ChartPoolSourceMode,
   type DrawnChartsLayout,
 } from "./copy-obs-source";
 import { CabObsSources } from "./cab-obs-sources";
@@ -108,6 +109,13 @@ const drawnChartsLayoutInfo: Record<
   list: { labelKey: "obsDashboard.layoutList", icon: <List /> },
 };
 
+const chartPoolModeLabelKeys: Record<ChartPoolSourceMode, string> = {
+  drawn: "obsDashboard.poolDrawn",
+  remaining: "obsDashboard.poolRemaining",
+};
+
+const chartPoolModes: ChartPoolSourceMode[] = ["drawn", "remaining"];
+
 function DrawnChartsSources() {
   const { t, formatMessage } = useIntl();
   return (
@@ -130,18 +138,30 @@ function DrawnChartsSources() {
           )}
         </p>
         <CardList compact>
-          {drawnChartsLayouts.map((layout) => (
-            <DrawnChartsRow key={layout} layout={layout} />
-          ))}
+          {chartPoolModes.flatMap((mode) =>
+            drawnChartsLayouts.map((layout) => (
+              <DrawnChartsRow
+                key={`${mode}-${layout}`}
+                mode={mode}
+                layout={layout}
+              />
+            )),
+          )}
         </CardList>
       </SectionCard>
     </Section>
   );
 }
 
-function DrawnChartsRow({ layout }: { layout: DrawnChartsLayout }) {
+function DrawnChartsRow({
+  mode,
+  layout,
+}: {
+  mode: ChartPoolSourceMode;
+  layout: DrawnChartsLayout;
+}) {
   const { t } = useIntl();
-  const href = useHref(routableDrawnChartsSourcePath(layout));
+  const href = useHref(routableDrawnChartsSourcePath(layout, mode));
   const { labelKey, icon } = drawnChartsLayoutInfo[layout];
   return (
     <SourceRow
@@ -149,7 +169,9 @@ function DrawnChartsRow({ layout }: { layout: DrawnChartsLayout }) {
       label={
         <>
           {icon}
-          <span>{t(labelKey)}</span>
+          <span>
+            {t(chartPoolModeLabelKeys[mode])}: {t(labelKey)}
+          </span>
         </>
       }
     />

@@ -11,6 +11,7 @@ import { ordinalPlace } from "../models/payout-scheme";
 import { useEventSettings } from "../state/hooks";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
+import { readableOnDark } from "../utils/readable-color";
 import { toStandingsOptions } from "./standings-options";
 import styles from "./standings.css";
 
@@ -151,7 +152,7 @@ function SongHeading({ chart }: { chart: EligibleChart }) {
       <span
         className={styles.difficulty}
         data-field="difficulty"
-        style={{ color: chart.diffColor }}
+        style={{ color: readableOnDark(chart.diffColor) }}
       >
         {chart.diffAbbr} {chart.level}
       </span>

@@ -139,11 +139,13 @@
       "fieldName": "Name",
       "fieldPronouns": "Pronouns",
       "fieldScore": "Score",
-      "drawnChartSources": "Drawn Chart Sources",
-      "drawnChartSourcesHint": "What the event has already spent, so viewers can see what's left in the pool",
-      "drawnChartsParamHint": "Filtered to the level range of the config behind the most recent draw, which keeps it current on its own as the bracket climbs. Add {configParam}, {rangeParam} or {allParam} to a source URL to say otherwise.",
+      "drawnChartSources": "Chart Pool Sources",
+      "drawnChartSourcesHint": "What the event has already drawn, or what's still left in the pool, so viewers can follow along",
+      "drawnChartsParamHint": "Filtered to the level range of the config behind the most recent draw, which keeps it current on its own as the bracket climbs. Remaining sources show that config's eligible pool less everything already drawn. Add {configParam}, {rangeParam} or {allParam} to a source URL to say otherwise.",
       "layoutGrid": "Grid (jackets)",
-      "layoutList": "List (text by level)"
+      "layoutList": "List (text by level)",
+      "poolDrawn": "Drawn",
+      "poolRemaining": "Remaining"
     },
     "weights": {
       "explanation": "Set a fixed probability that charts of each difficulty level will be drawn.",

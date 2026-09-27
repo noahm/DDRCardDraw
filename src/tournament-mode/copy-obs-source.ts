@@ -21,8 +21,13 @@ export const drawnChartsLayouts = ["grid", "list"] as const;
 
 export type DrawnChartsLayout = (typeof drawnChartsLayouts)[number];
 
-export const routableDrawnChartsSourcePath = (layout: DrawnChartsLayout) =>
-  `../source/drawn-charts/${layout}`;
+/** which charts a chart-pool source shows: those spent, or those still left */
+export type ChartPoolSourceMode = "drawn" | "remaining";
+
+export const routableDrawnChartsSourcePath = (
+  layout: DrawnChartsLayout,
+  mode: ChartPoolSourceMode = "drawn",
+) => `../source/${mode}-charts/${layout}`;
 
 /**
  * Takes the toast's wording rather than holding it, so the string can live in
