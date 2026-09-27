@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { primaryReuseKey, styleOfChart } from "../chart-id";
+import { diffClassOfChart, primaryReuseKey, styleOfChart } from "../chart-id";
 import { formatLevel } from "../game-data-utils";
 import { EligibleChart } from "../models/Drawing";
 import { configSlice } from "../state/config.slice";
@@ -28,19 +28,26 @@ import "./drawn-charts.css";
  * - `?min=15&max=17` states a range outright, in in-game levels
  * - `?all` turns filtering off and shows the whole history
  *
- * Separately from the level range, `?style=team` narrows the list to one play
- * style (or several, comma separated: `?style=single,double`). It's a URL-only
- * option with nothing on the dashboard offering it; `?all` doesn't lift it.
- * Charts too old to know their style drop out while it's set.
+ * Separately from the level range, two URL-only options with nothing on the
+ * dashboard offering them narrow by the game data's own keys, each taking a
+ * comma separated list and matching case-insensitively:
+ *
+ * - `?style=team` keeps only charts of those play styles
+ * - `?diff=D,DP` keeps only charts of those difficulty classes, which is the
+ *   only way to split Pump's singles from its doubles (both are `solo` style)
+ *
+ * `?all` lifts neither. Charts too old to know their style or class drop out
+ * while the matching option is set.
  */
 export function DrawnCharts() {
   const params = useParams<"layout">();
   const range = useLevelRange();
-  const styles = useStyleFilter();
+  const styles = useListParam("style");
+  const diffs = useListParam("diff");
   const spentCharts = useAppState(selectSpentCharts);
   const charts = useMemo(
-    () => chartsToShow(spentCharts, range, styles),
-    [spentCharts, range, styles],
+    () => chartsToShow(spentCharts, range, styles, diffs),
+    [spentCharts, range, styles, diffs],
   );
   const useGranular = range?.useGranularLevels || false;
 
@@ -50,9 +57,13 @@ export function DrawnCharts() {
         <span className="drawn-charts-count">
           {charts.length} chart{charts.length === 1 ? "" : "s"} drawn
         </span>
-        {(range || styles) && (
+        {(range || styles || diffs) && (
           <span className="drawn-charts-range">
-            {[styles?.join(", "), range && describeRange(range)]
+            {[
+              styles?.join(", "),
+              diffs?.join(", "),
+              range && describeRange(range),
+            ]
               .filter(Boolean)
               .join(" · ")}
           </span>
@@ -183,17 +194,25 @@ function useLevelRange(): LevelRange | null {
   }, [showAll, min, max, config]);
 }
 
-/** the styles named by `?style=`, or null to show every style */
-function useStyleFilter(): string[] | null {
+/**
+ * The lowercased values of a comma separated search param, e.g. `?style=` or
+ * `?diff=`, or null when it names nothing and shouldn't filter at all.
+ */
+function useListParam(name: string): string[] | null {
   const [searchParams] = useSearchParams();
-  const raw = searchParams.get("style");
+  const raw = searchParams.get(name);
   return useMemo(() => {
-    const styles = (raw || "")
+    const values = (raw || "")
       .split(",")
-      .map((style) => style.trim().toLowerCase())
+      .map((value) => value.trim().toLowerCase())
       .filter(Boolean);
-    return styles.length ? styles : null;
+    return values.length ? values : null;
   }, [raw]);
+}
+
+/** true if `value` is known and among `allowed` (already lowercased) */
+function matchesList(value: string | undefined, allowed: string[]) {
+  return !!value && allowed.includes(value.toLowerCase());
 }
 
 function numericParam(raw: string | null): number | undefined {
@@ -238,14 +257,15 @@ function chartsToShow(
   spentCharts: EligibleChart[],
   range: LevelRange | null,
   styles: string[] | null,
+  diffs: string[] | null,
 ): EligibleChart[] {
   const useGranular = range?.useGranularLevels || false;
   const visible = spentCharts.filter((chart) => {
-    if (styles) {
-      const style = styleOfChart(chart);
-      if (!style || !styles.includes(style.toLowerCase())) {
-        return false;
-      }
+    if (styles && !matchesList(styleOfChart(chart), styles)) {
+      return false;
+    }
+    if (diffs && !matchesList(diffClassOfChart(chart), diffs)) {
+      return false;
     }
     if (range) {
       const level = levelMetric(chart, useGranular);

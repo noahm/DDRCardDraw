@@ -131,20 +131,30 @@ export function primaryReuseKey(chart: EligibleChart): string {
 }
 
 /**
- * The play style `chart` was drawn from. Charts drawn before `style` was stored
- * on them can still answer through a derived `chartKey`, whose chart half
- * starts with the style; one keyed by an explicit data-file `id`, or with no
- * key at all, has no style to report.
+ * Reads one field of {@link chartIdentity} back out of a derived `chartKey`,
+ * for charts drawn before that field was stored on them directly. A chart keyed
+ * by an explicit data-file `id`, or with no key at all, has nothing to report.
  */
-export function styleOfChart(chart: EligibleChart): string | undefined {
-  if (chart.style) {
-    return chart.style;
-  }
+function chartKeyField(
+  chart: EligibleChart,
+  field: "style" | "diffClass",
+): string | undefined {
   const sep = chart.chartKey?.lastIndexOf(PART_SEP) ?? -1;
   if (!chart.chartKey || sep < 0) {
     return undefined;
   }
-  return chart.chartKey.slice(sep + PART_SEP.length).split(FIELD_SEP)[0];
+  const fields = chart.chartKey.slice(sep + PART_SEP.length).split(FIELD_SEP);
+  return fields[field === "style" ? 0 : 1] || undefined;
+}
+
+/** the play style `chart` was drawn from, if it can still be known */
+export function styleOfChart(chart: EligibleChart): string | undefined {
+  return chart.style || chartKeyField(chart, "style");
+}
+
+/** the difficulty class `chart` was drawn from, if it can still be known */
+export function diffClassOfChart(chart: EligibleChart): string | undefined {
+  return chart.diffClass || chartKeyField(chart, "diffClass");
 }
 
 /** true if any key identifying `chart` is present in `used` */

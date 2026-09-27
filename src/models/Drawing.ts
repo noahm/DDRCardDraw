@@ -20,6 +20,8 @@ export interface EligibleChart {
    * `styleOfChart` in `src/chart-id.ts` for recovering it from `chartKey`.
    */
   style?: string;
+  /** The chart's raw difficulty class; optional for the same reason as `style`. */
+  diffClass?: string;
   diffAbbr: string;
   diffColor: string;
   level: number;
