@@ -1,10 +1,21 @@
 import { useMemo } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { diffClassOfChart, primaryReuseKey, styleOfChart } from "../chart-id";
+import { eligibleCharts } from "../card-draw";
+import {
+  chartIsUsed,
+  diffClassOfChart,
+  primaryReuseKey,
+  styleOfChart,
+} from "../chart-id";
 import { formatLevel } from "../game-data-utils";
 import { EligibleChart } from "../models/Drawing";
-import { configSlice } from "../state/config.slice";
-import { drawingsSlice, selectSpentCharts } from "../state/drawings.slice";
+import { configSlice, type ConfigState } from "../state/config.slice";
+import {
+  drawingsSlice,
+  selectChartUsage,
+  selectSpentCharts,
+} from "../state/drawings.slice";
+import { useGameDataForKey } from "../state/game-data.atoms";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
 import "./drawn-charts.css";
@@ -40,14 +51,36 @@ import "./drawn-charts.css";
  * while the matching option is set.
  */
 export function DrawnCharts() {
+  return <ChartPoolSource mode="drawn" />;
+}
+
+/**
+ * The inverse of {@link DrawnCharts}: every chart the config's pool still
+ * holds, i.e. its eligible charts less everything the event has spent. The
+ * pool is the config's (by default the newest draw's, or `?config=`), and all
+ * of the same layouts and URL options apply on top of it. `?all` only lifts
+ * the level range, so it shows the config's whole remaining pool rather than
+ * every chart in the game. Spent charts are left out whether or not the event
+ * is enforcing chart reuse, since "what hasn't come out yet" is the question.
+ */
+export function RemainingCharts() {
+  return <ChartPoolSource mode="remaining" />;
+}
+
+function ChartPoolSource({ mode }: { mode: "drawn" | "remaining" }) {
   const params = useParams<"layout">();
-  const range = useLevelRange();
+  const config = useSourceConfig();
+  const range = useLevelRange(config);
   const styles = useListParam("style");
   const diffs = useListParam("diff");
   const spentCharts = useAppState(selectSpentCharts);
+  const remainingCharts = useRemainingCharts(
+    mode === "remaining" ? config : undefined,
+  );
+  const pool = mode === "remaining" ? remainingCharts : spentCharts;
   const charts = useMemo(
-    () => chartsToShow(spentCharts, range, styles, diffs),
-    [spentCharts, range, styles, diffs],
+    () => chartsToShow(pool, range, styles, diffs),
+    [pool, range, styles, diffs],
   );
   const useGranular = range?.useGranularLevels || false;
 
@@ -55,7 +88,8 @@ export function DrawnCharts() {
     <div className="drawn-charts">
       <div className="drawn-charts-header">
         <span className="drawn-charts-count">
-          {charts.length} chart{charts.length === 1 ? "" : "s"} drawn
+          {charts.length} chart{charts.length === 1 ? "" : "s"}{" "}
+          {mode === "remaining" ? "remaining" : "drawn"}
         </span>
         {(range || styles || diffs) && (
           <span className="drawn-charts-range">
@@ -147,26 +181,59 @@ function LevelGroupedList({ charts, useGranular }: LayoutProps) {
   );
 }
 
-/** The level bounds spent charts are narrowed to, or null to show them all. */
+/** The level bounds a source's charts are narrowed to, or null to show them all. */
 interface LevelRange {
   lowerBound: number;
   upperBound: number;
   useGranularLevels: boolean;
 }
 
-function useLevelRange(): LevelRange | null {
+/**
+ * The config this source follows: the one `?config=` pins, or else the one
+ * behind the most recent draw. Undefined before anything is drawn, or when a
+ * pinned config no longer exists.
+ */
+function useSourceConfig(): ConfigState | undefined {
   const [searchParams] = useSearchParams();
-  const showAll = searchParams.has("all");
-  const min = numericParam(searchParams.get("min"));
-  const max = numericParam(searchParams.get("max"));
   const pinnedConfigId = searchParams.get("config");
   const newestDrawConfigId = useAppState(
     drawingsSlice.selectors.newestDrawConfigId,
   );
   const configId = pinnedConfigId || newestDrawConfigId;
-  const config = useAppState((state) =>
+  return useAppState((state) =>
     configId ? configSlice.selectors.selectById(state, configId) : undefined,
   );
+}
+
+/**
+ * The charts `config` could still draw: its eligible pool less every chart the
+ * event has spent. Empty until the config's game data has loaded, and when
+ * there's no config to take a pool from.
+ */
+function useRemainingCharts(config: ConfigState | undefined): EligibleChart[] {
+  const gameData = useGameDataForKey(config?.gameKey || "");
+  const usedKeys = useAppState((state) => selectChartUsage(state).keys);
+  return useMemo(() => {
+    if (!config || !gameData) {
+      return [];
+    }
+    // a chart grafted onto a song more than once is still one chart
+    const byKey = new Map<string, EligibleChart>();
+    for (const chart of eligibleCharts(config, gameData)) {
+      const key = primaryReuseKey(chart);
+      if (!byKey.has(key) && !chartIsUsed(chart, usedKeys)) {
+        byKey.set(key, chart);
+      }
+    }
+    return Array.from(byKey.values());
+  }, [config, gameData, usedKeys]);
+}
+
+function useLevelRange(config: ConfigState | undefined): LevelRange | null {
+  const [searchParams] = useSearchParams();
+  const showAll = searchParams.has("all");
+  const min = numericParam(searchParams.get("min"));
+  const max = numericParam(searchParams.get("max"));
 
   return useMemo(() => {
     if (showAll) {
@@ -248,19 +315,20 @@ function levelMetric(chart: EligibleChart, useGranular: boolean): number {
 
 /**
  * Sorted by level rather than left in draw order, because the question this
- * answers is "what is gone from the pool", not "what happened recently" -- and
+ * answers is "what is gone from (or left in) the pool", not "what happened
+ * recently" -- and
  * the list layout groups by level regardless. Difficulties sort by their
  * abbreviation, which is arbitrary but keeps a level's ESP charts together;
  * a chart doesn't carry its difficulty's position in the game's own order.
  */
 function chartsToShow(
-  spentCharts: EligibleChart[],
+  charts: EligibleChart[],
   range: LevelRange | null,
   styles: string[] | null,
   diffs: string[] | null,
 ): EligibleChart[] {
   const useGranular = range?.useGranularLevels || false;
-  const visible = spentCharts.filter((chart) => {
+  const visible = charts.filter((chart) => {
     if (styles && !matchesList(styleOfChart(chart), styles)) {
       return false;
     }

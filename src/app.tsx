@@ -154,6 +154,14 @@ const router = createBrowserRouter([
           return { Component: DrawnCharts };
         },
       },
+      {
+        path: "remaining-charts/:layout?",
+        lazy: async () => {
+          const { RemainingCharts } =
+            await import("./obs-sources/drawn-charts");
+          return { Component: RemainingCharts };
+        },
+      },
     ],
   },
   {
