@@ -202,16 +202,18 @@ export default function SmxScoreImport({
     const ordered = assigned
       .slice()
       .sort((a, b) => (a.playedAt ?? 0) - (b.playedAt ?? 0));
+    dispatch(
+      drawingsSlice.actions.addPlayerScores({
+        drawingId,
+        scores: ordered.map((play) => ({
+          chartId: play.target.chartId,
+          playerId: assignmentFor(play),
+          score: play.score,
+        })),
+      }),
+    );
     for (const play of ordered) {
       const playerId = assignmentFor(play);
-      dispatch(
-        drawingsSlice.actions.addPlayerScore({
-          drawingId,
-          chartId: play.target.chartId,
-          playerId,
-          score: play.score,
-        }),
-      );
       // the operator just told us whose tag this is — remember it for next time
       const player = meta.players.find((p) => p.id === playerId);
       if (player && play.username) {
