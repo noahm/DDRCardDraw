@@ -19,11 +19,13 @@ DDR Tools has song data available from a variety of different games selectable f
 
 ## Basics
 
-Clicking "Draw!" in the top right corner will present a random selection charts from the selected game data. Each card can be clicked to access a menu of [actions](#actions).
+Clicking "Draw!" in the top right corner will ask you to pick a settings preset, and pick between entering a match title and player names manually, or import a match from a start.gg bracket. Once confirmed, a new _match_ will be created with one _set_ of charts, selected at random based on the chosen settings. Each card can be clicked to access a menu of [actions](#actions).
 
 ![Screenshot of 3 cards representing charts from StepManiaX](images/cards.png)
 
-Draws are not saved anywhere and cannot be recovered after the page is closed or refreshed.
+All matches and drawn sets are automatically saved and will persist after the page is closed or refreshed.
+
+Additional sets can be drawn within a single match, and kept separately, or merged together into a single set later.
 
 ## Settings
 
@@ -43,8 +45,8 @@ Some of the less self-explanatory settings are described below.
 <dt>Picks must match draw options
 <dd>Limits charts selected in a free/pocket pick action to those that match current draw settings.
 
-<dt>Sort by chart level
-<dd>Sorts the drawn charts by difficulty level, from lowest on the left, to highest on the right. When not enabled the chart order is randomized.
+<dt>Card order
+<dd>How a finished draw arranges its cards: "In drawn order" leaves them as the draw produced them, "By chart level" sorts by difficulty level from lowest on the left to highest on the right, and "Shuffled" randomizes them. Free pick placeholders lead the set whichever order is chosen, and a draw that merges several sets into one is arranged as a single set.
 
 <dt>Use granular levels
 <dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Weighted Distribution settings.

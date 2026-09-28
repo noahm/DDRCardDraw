@@ -1,0 +1,64 @@
+.sourceCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sourceLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  min-width: 14em;
+}
+
+.sourceDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sourceControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sourceUrl {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.85em;
+}
+
+/* below roughly this width the url gets cut off before the part that tells
+   sources apart, so it's just noise. this page is often docked narrow inside
+   OBS. the copy button still works. */
+@media (max-width: 900px) {
+  .sourceUrl {
+    display: none;
+  }
+
+  /* the detail column keeps growing so the copy button stays pinned right */
+  .sourceLabel {
+    min-width: 0;
+  }
+
+  /* a configurable row runs out of room first, so its controls drop to their
+     own line and the label takes over pinning the copy button right */
+  .hasControls {
+    flex-wrap: wrap;
+  }
+
+  .hasControls .sourceLabel {
+    flex: 1 1 auto;
+  }
+
+  .hasControls .sourceDetail {
+    order: 1;
+    flex-basis: 100%;
+  }
+}

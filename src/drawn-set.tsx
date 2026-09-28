@@ -1,29 +1,18 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { SongCard } from "./song-card";
 import styles from "./drawn-set.css";
-import { Drawing } from "./models/Drawing";
-import { SetLabels } from "./tournament-mode/drawing-labels";
-import { DrawingProvider, useDrawing } from "./drawing-context";
+import { useDrawing } from "./drawing-context";
+import { useHideVetos } from "./state/hooks";
 import { DrawingActions } from "./tournament-mode/drawing-actions";
-import { SyncWithPeers } from "./tournament-mode/sync-with-peers";
-import { useConfigState } from "./config-state";
 import { ErrorFallback } from "./utils/error-fallback";
 
-const HUE_STEP = (255 / 8) * 3;
-let hue = Math.floor(Math.random() * 255);
-
-function getRandomGradiant() {
-  hue += HUE_STEP;
-  return `linear-gradient(hsl(${hue}, var(--drawing-grad-saturation), var(--drawing-grad-lightness)), transparent, transparent)`;
-}
-
-interface Props {
-  drawing: Drawing;
-}
-
-function ChartList() {
+/**
+ * expects a drawing context wrapper
+ **/
+export function ChartList() {
   const charts = useDrawing((d) => d.charts);
+  if (!charts) return null;
   return (
     <div className={styles.chartList}>
       {charts.map((c) => (
@@ -35,17 +24,26 @@ function ChartList() {
 
 function ChartFromContext({ chartId }: { chartId: string }) {
   const chart = useDrawing((d) => d.charts.find((c) => c.id === chartId));
-  const veto = useDrawing((d) => d.bans.find((b) => b.chartId === chartId));
-  const protect = useDrawing((d) =>
-    d.protects.find((b) => b.chartId === chartId),
-  );
-  const pocketPick = useDrawing((d) =>
-    d.pocketPicks.find((b) => b.chartId === chartId),
-  );
-  const winner = useDrawing((d) =>
-    d.winners.find((b) => b.chartId === chartId),
-  );
+  const veto = useDrawing((d) => {
+    return d.bans[chartId];
+  });
+  const protect = useDrawing((d) => d.protects[chartId]);
+  const pocketPick = useDrawing((d) => d.pocketPicks[chartId]);
+  const winner = useDrawing((d) => d.winners[chartId]);
+  const hideVetos = useHideVetos();
   if (!chart) {
+    return null;
+  }
+  /*
+   * A hidden veto has to leave the tree rather than be styled out of sight.
+   * Every card sits in a popover target wrapper of its own, and that wrapper is
+   * a `flex: 1 0 0` child of the chart list. Hiding just the card leaves the
+   * wrapper behind as an empty flex item that still claims its share of the
+   * row: a hole in the layout, and narrower cards on whichever rows hold one.
+   * A merged multi-set draw shows it worst, since every sub-draw's cards share
+   * one wrapping list and re-ordering piles the bans up at the end of it.
+   */
+  if (hideVetos && veto) {
     return null;
   }
   return (
@@ -54,7 +52,7 @@ function ChartFromContext({ chartId }: { chartId: string }) {
       protectedBy={protect?.player}
       replacedBy={pocketPick?.player}
       replacedWith={pocketPick?.pick}
-      winner={winner?.player}
+      winner={winner}
       chart={chart}
       actionsEnabled
     />
@@ -62,49 +60,40 @@ function ChartFromContext({ chartId }: { chartId: string }) {
 }
 
 function TournamentModeSpacer() {
-  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
-  if (showLabels) {
-    return null;
-  }
   return <div style={{ height: "15px" }} />;
 }
 
-const DrawnSet = memo<Props>(function DrawnSet({ drawing }) {
-  const [backgroundImage] = useState(getRandomGradiant());
+const DrawnSet = memo(function DrawnSet() {
+  const [, drawingId] = useDrawing((d) => d.compoundId);
 
   return (
-    <DrawingProvider initialDrawing={drawing}>
-      <ErrorBoundary
-        fallback={
-          <div
-            className={styles.drawing}
-            style={{
-              backgroundImage,
-              padding: "2em",
-              minHeight: "15em",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <ErrorFallback />
-          </div>
-        }
-      >
-        <SyncWithPeers />
+    <ErrorBoundary
+      fallback={
         <div
-          key={drawing.id}
-          style={{ backgroundImage }}
           className={styles.drawing}
+          style={{
+            padding: "2em",
+            minHeight: "15em",
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          <TournamentModeSpacer />
-          <div id={`drawing-${drawing.id}`}>
-            <SetLabels />
-            <ChartList />
-          </div>
-          <DrawingActions />
+          <ErrorFallback />
         </div>
-      </ErrorBoundary>
-    </DrawingProvider>
+      }
+    >
+      <div
+        key={drawingId}
+        id={`drawing:${drawingId}`}
+        className={styles.drawing}
+      >
+        <TournamentModeSpacer />
+        <div id={`drawing-${drawingId}`}>
+          <ChartList />
+        </div>
+        <DrawingActions />
+      </div>
+    </ErrorBoundary>
   );
 });
 

@@ -1,0 +1,54 @@
+.standings {
+  max-width: 80vw;
+  overflow-x: auto;
+}
+
+.songHeading {
+  /* a long song name shouldn't push the points column off the dialog */
+  max-width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.picker {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8em;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.rank {
+  opacity: 0.6;
+}
+
+.score {
+  margin-right: 0.4em;
+  font-size: 0.9em;
+}
+
+.unplayed {
+  opacity: 0.4;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.payout {
+  margin: 0.5em 0 0;
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+.empty {
+  margin: 0;
+  opacity: 0.7;
+}

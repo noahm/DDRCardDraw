@@ -1,90 +1,39 @@
 import {
   Button,
   ButtonGroup,
-  Drawer,
-  DrawerSize,
+  Dialog,
   Intent,
-  NavbarDivider,
   Position,
-  Spinner,
   Tooltip,
 } from "@blueprintjs/core";
-import { NewLayers, Cog, FloppyDisk, Import } from "@blueprintjs/icons";
-import { useState, lazy, Suspense } from "react";
+import { NewLayers, Cog } from "@blueprintjs/icons";
+import { useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { useConfigState } from "../config-state";
-import { useDrawState } from "../draw-state";
-import { useIsNarrow } from "../hooks/useMediaQuery";
-import { loadConfig, saveConfig } from "../config-persistence";
-import { ErrorBoundary } from "react-error-boundary";
-import { ErrorFallback } from "../utils/error-fallback";
-import { ShowChartsToggle } from "./show-charts-toggle";
+import { useAppState } from "../state/store";
+import { DrawDialog } from "./draw-dialog";
 
-const ControlsDrawer = lazy(() => import("./controls-drawer"));
+import { ConfigSelect } from "./config-select";
+import { Link } from "react-router-dom";
+export { ConfigSelect };
 
 export function HeaderControls() {
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const [lastDrawFailed, setLastDrawFailed] = useState(false);
-  const [drawSongs, hasGameData] = useDrawState((s) => [
-    s.drawSongs,
-    !!s.gameData,
-  ]);
-  const isNarrow = useIsNarrow();
-
-  function handleDraw() {
-    useConfigState.setState({ showEligibleCharts: false });
-    drawSongs(useConfigState.getState());
-  }
-
-  function openSettings() {
-    setSettingsOpen((open) => !open);
-    setLastDrawFailed(false);
-  }
+  const [matchPickerOpen, setMatchPickerOpen] = useState(false);
+  const hasAnyConfig = useAppState((s) => !!s.config.ids.length);
 
   return (
     <>
-      <Drawer
-        isOpen={settingsOpen}
-        position={Position.RIGHT}
-        size={isNarrow ? DrawerSize.LARGE : "500px"}
-        onClose={() => setSettingsOpen(false)}
-        title={
-          <>
-            <FormattedMessage id="controls.drawerTitle" />
-            <ButtonGroup style={{ marginLeft: "10px" }}>
-              <Button icon={<FloppyDisk />} onClick={saveConfig}>
-                <FormattedMessage id="controls.save" defaultMessage="Save" />
-              </Button>
-              <Button icon={<Import />} onClick={loadConfig}>
-                <FormattedMessage id="controls.load" defaultMessage="Load" />
-              </Button>
-            </ButtonGroup>
-          </>
-        }
+      <Dialog
+        isOpen={matchPickerOpen}
+        title="New Draw"
+        onClose={() => setMatchPickerOpen(false)}
       >
-        <ErrorBoundary fallback={<ErrorFallback />}>
-          <Suspense fallback={<Spinner style={{ marginTop: "2rem" }} />}>
-            <ControlsDrawer />
-          </Suspense>
-        </ErrorBoundary>
-      </Drawer>
-      {!isNarrow && (
-        <>
-          <ShowChartsToggle inDrawer={false} />
-          <NavbarDivider />
-        </>
-      )}
+        <DrawDialog
+          onClose={() => setMatchPickerOpen(false)}
+          onDrawAttempt={(success) => setLastDrawFailed(!success)}
+        />
+      </Dialog>
       <ButtonGroup>
-        <Tooltip disabled={hasGameData} content="Loading game data">
-          <Button
-            onClick={handleDraw}
-            icon={<NewLayers />}
-            intent={Intent.PRIMARY}
-            disabled={!hasGameData}
-          >
-            <FormattedMessage id="draw" />
-          </Button>
-        </Tooltip>
         <Tooltip
           isOpen={lastDrawFailed}
           content={<FormattedMessage id="controls.invalid" />}
@@ -92,12 +41,23 @@ export function HeaderControls() {
           usePortal={false}
           position={Position.BOTTOM_RIGHT}
         >
-          <Button
-            icon={<Cog />}
-            onClick={openSettings}
-            data-umami-event="settings-open"
-          />
+          <Tooltip
+            content="Create a config before drawing"
+            disabled={hasAnyConfig}
+          >
+            <Button
+              onClick={() => setMatchPickerOpen(true)}
+              icon={<NewLayers />}
+              intent={Intent.PRIMARY}
+              disabled={!hasAnyConfig}
+            >
+              <FormattedMessage id="draw" />
+            </Button>
+          </Tooltip>
         </Tooltip>
+        <Link to="config" data-umami-event="settings-open">
+          <Button icon={<Cog />} />
+        </Link>
       </ButtonGroup>
     </>
   );

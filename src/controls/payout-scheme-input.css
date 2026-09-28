@@ -1,0 +1,46 @@
+.payoutScheme {
+  max-width: 24em;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5em;
+}
+
+.previewCount {
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
+/* wraps rather than scrolls: a big heat is still readable a place at a time */
+.payouts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  margin-top: 0.4em;
+}
+
+.payouts strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  color: #cd4246;
+}
+
+.unsent {
+  margin-top: 0.4em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #935610;
+}
+
+.inherited {
+  margin-top: 0.4em;
+  opacity: 0.6;
+  font-size: 0.8em;
+  font-style: italic;
+}
