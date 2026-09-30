@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1789866987353
+    "lastUpdated": 1790304739826
   },
   "defaults": {
     "style": "single",
@@ -71487,6 +71487,87 @@
       "genre": "スウィートフレンドシップ/SWEET FRIENDSHIP"
     },
     {
+      "name": "チルノのパーフェクトさんすう学園【ビートまりお】",
+      "artist": "ビートまりお",
+      "saHash": "8P1809bo8PoqQoqOQilPidOdobbo6iiO",
+      "bpm": "179",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 354,
+          "sanbaiTier": 3.35
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 954,
+          "sanbaiTier": 7.2
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1584,
+          "flags": ["shock"],
+          "sanbaiTier": 12.65
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2082,
+          "flags": ["shock"],
+          "sanbaiTier": 15.6
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2616,
+          "flags": ["shock"],
+          "sanbaiTier": 17.45
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 954,
+          "sanbaiTier": 7.25
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1554,
+          "flags": ["shock"],
+          "sanbaiTier": 12.55
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2016,
+          "flags": ["shock"],
+          "sanbaiTier": 15.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2583,
+          "flags": ["shock"],
+          "sanbaiTier": 17.5
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/チルノのパーフェクトさんすう学園.jpg",
+      "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_gakuen"
+    },
+    {
       "name": "チルノのパーフェクトさんすう教室",
       "name_translation": "Cirno no perfect sansuu kyoushitsu",
       "artist": "ARM＋夕野ヨシミ feat. miko",
@@ -78516,6 +78597,67 @@
       "jacket": "ddr_world/Koiuta_shippuu!_Karuta_queen_Iroha.jpg",
       "remyLink": "https://remywiki.com/Koiuta_shippuu!_Karuta_queen_Iroha",
       "genre": "ハイスピードラブ一首"
+    },
+    {
+      "name": "恋繋エピローグ",
+      "artist": "Amateras Records feat. KUMI(ヲタみん)",
+      "saHash": "PoO90Q6P0q9oOQ16i0P0l1iodOQP9o0O",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 390,
+          "sanbaiTier": 3.4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 750,
+          "sanbaiTier": 7.2
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1155,
+          "sanbaiTier": 10.3
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1581,
+          "sanbaiTier": 13.3
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 672,
+          "sanbaiTier": 7.15
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1083,
+          "sanbaiTier": 10.2
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1479,
+          "sanbaiTier": 13.25
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/恋繋エピローグ.jpg",
+      "remyLink": "https://remywiki.com/Renkei_epilogue"
     },
     {
       "name": "恋閃繚乱",
