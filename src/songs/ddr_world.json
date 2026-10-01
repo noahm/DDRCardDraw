@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1790748000000
+    "lastUpdated": 1790852877256
   },
   "defaults": {
     "style": "single",
@@ -24196,6 +24196,52 @@
       "saIndex": "609"
     },
     {
+      "name": "Footnotes on BPM",
+      "artist": "KarK+Tabi",
+      "saHash": "8QlOdbOPq189DDq0dIO0b6bDl1i1dO8O",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Footnotes on BPM.jpg"
+    },
+    {
       "name": "Forever Sunshine",
       "artist": "Chel Y.",
       "bpm": "128",
@@ -41317,6 +41363,52 @@
       "jacket": "ddr_sn-sn2/Monkey Punk.png",
       "saHash": "OoQ6Oq81oIql8iIlbI6qldIlqoD1Di1I",
       "saIndex": "185"
+    },
+    {
+      "name": "MonstaFesta",
+      "artist": "アカツキ チョータ",
+      "saHash": "bli9QPODl80dblbbibo6dDDi6QII0l81",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/MonstaFesta.jpg"
     },
     {
       "name": "Monsters Den",
@@ -68810,6 +68902,52 @@
       "jacket": "ddr_max-ext/TSUGARU (APPLE MIX).png",
       "saHash": "1qDD1DdPlId69010IQ18I6q8Q00IoI6D",
       "saIndex": "94"
+    },
+    {
+      "name": "TURNING DOWN",
+      "artist": "U-ske feat.石橋桃",
+      "saHash": "0l8dbQDQ6I01Pd1DO80q0Do1o81ldqPQ",
+      "bpm": "132",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/TURNING DOWN.jpg"
     },
     {
       "name": "Twin Bee -Generation X-",
