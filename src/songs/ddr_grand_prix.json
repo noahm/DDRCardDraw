@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1790748000000
+    "lastUpdated": 1791080439452
   },
   "defaults": {
     "style": "single",
@@ -15060,7 +15060,8 @@
         }
       ],
       "flags": ["arcade", "extraOnly"],
-      "jacket": "ddr_world/Decryption.jpg"
+      "jacket": "ddr_world/Decryption.jpg",
+      "remyLink": "https://remywiki.com/Decryption"
     },
     {
       "name": "Deep tenDon Reflex",
@@ -20020,7 +20021,8 @@
         }
       ],
       "flags": ["arcade", "extraOnly"],
-      "jacket": "ddr_world/eyesight.jpg"
+      "jacket": "ddr_world/eyesight.jpg",
+      "remyLink": "https://remywiki.com/Eyesight"
     },
     {
       "name": "F4SH10N",
@@ -22025,6 +22027,62 @@
       "jacket": "ddr_2014/Follow Tomorrow.png",
       "remyLink": "https://remywiki.com/Follow_Tomorrow",
       "genre": "J-DANCE POP"
+    },
+    {
+      "name": "Footnotes on BPM",
+      "artist": "KarK+Tabi",
+      "saHash": "8QlOdbOPq189DDq0dIO0b6bDl1i1dO8O",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 303
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 828
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1374
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "bpm": "100-400",
+          "lvl": 15,
+          "maxScore": 1773
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7,
+          "maxScore": 828
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1266
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "bpm": "100-400",
+          "lvl": 16,
+          "maxScore": 1746
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/Footnotes on BPM.jpg",
+      "remyLink": "https://remywiki.com/Footnotes_on_BPM"
     },
     {
       "name": "Forever Sunshine",
@@ -28801,7 +28859,8 @@
         }
       ],
       "flags": ["arcade", "extraOnly"],
-      "jacket": "ddr_world/I'll Be With You.jpg"
+      "jacket": "ddr_world/I'll Be With You.jpg",
+      "remyLink": "https://remywiki.com/I%27ll_Be_With_You"
     },
     {
       "name": "I'm Flying Away",
@@ -37722,6 +37781,60 @@
       "jacket": "ddr_2013/Monkey Business.png",
       "remyLink": "https://remywiki.com/Monkey_Business",
       "genre": "HARD DANCE"
+    },
+    {
+      "name": "MonstaFesta",
+      "artist": "アカツキ チョータ",
+      "bpm": "155",
+      "saHash": "bli9QPODl80dblbbibo6dDDi6QII0l81",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 219
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 702
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1041
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1602
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 705
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10,
+          "maxScore": 1008
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1518
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/MonstaFesta.jpg",
+      "remyLink": "https://remywiki.com/MonstaFesta"
     },
     {
       "name": "Monsters Den",
@@ -62476,6 +62589,60 @@
       "flags": ["eAMUSEMENT"],
       "jacket": "ddr_max-ext/TSUGARU (APPLE MIX).png",
       "remyLink": "https://remywiki.com/TSUGARU_(APPLE_MIX)"
+    },
+    {
+      "name": "TURNING DOWN",
+      "artist": "U-ske feat.石橋桃",
+      "bpm": "132",
+      "saHash": "0l8dbQDQ6I01Pd1DO80q0Do1o81ldqPQ",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 213
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 531
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1104
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1629
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5,
+          "maxScore": 489
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1026
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1599
+        }
+      ],
+      "flags": ["arcade", "extraOnly"],
+      "jacket": "ddr_world/TURNING DOWN.jpg",
+      "remyLink": "https://remywiki.com/TURNING_DOWN"
     },
     {
       "name": "Twin Bee -Generation X-",
