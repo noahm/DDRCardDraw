@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1789030156243
+    "lastUpdated": 1790852877256
   },
   "defaults": {
     "style": "single",
@@ -2884,7 +2884,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.1,
           "maxScore": 942
         },
@@ -2913,7 +2913,7 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.25,
           "maxScore": 933
         }
@@ -9001,7 +9001,7 @@
           "lvl": 15,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.35,
           "maxScore": 1578
         },
@@ -9030,7 +9030,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.2,
           "maxScore": 1545
         }
@@ -9895,6 +9895,12 @@
           "maxScore": 1659
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1887
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -9914,11 +9920,17 @@
           "diffClass": "expert",
           "sanbaiTier": 15.05,
           "maxScore": 1608
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1824
         }
       ],
       "jacket": "ddr_world/Bye_or_not.png",
       "remyLink": "https://remywiki.com/Bye_or_not",
-      "flags": ["tempUnlock"]
+      "flags": ["unlock"]
     },
     {
       "name": "C-C-C-N-N-N",
@@ -10482,7 +10494,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.05,
           "maxScore": 1752
         },
@@ -10511,7 +10523,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.2,
           "maxScore": 1716
         }
@@ -14509,6 +14521,13 @@
           "maxScore": 2031
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"],
+          "maxScore": 2070
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -14528,11 +14547,18 @@
           "diffClass": "expert",
           "sanbaiTier": 17.2,
           "maxScore": 2040
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "flags": ["shock"],
+          "maxScore": 2088
         }
       ],
       "jacket": "ddr_world/Daisycutter.png",
       "remyLink": "https://remywiki.com/Daisycutter",
-      "flags": ["tempUnlock"]
+      "flags": ["unlock"]
     },
     {
       "name": "DANCE ALL NIGHT (DDR EDITION)",
@@ -19530,7 +19556,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.55,
           "maxScore": 732
         },
@@ -19559,7 +19585,7 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.55,
           "maxScore": 723
         }
@@ -21789,7 +21815,7 @@
       ],
       "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
       "remyLink": "https://remywiki.com/EYE_OF_THE_HEAVEN",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "genre": "ORBITALIC ELECTRONIC METAL"
     },
     {
@@ -24168,6 +24194,52 @@
       "genre": "J-DANCE POP",
       "saHash": "ObI1oo6QlO981880DDDOlo8bQobI0I9P",
       "saIndex": "609"
+    },
+    {
+      "name": "Footnotes on BPM",
+      "artist": "KarK+Tabi",
+      "saHash": "8QlOdbOPq189DDq0dIO0b6bDl1i1dO8O",
+      "bpm": "100-400",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Footnotes on BPM.jpg"
     },
     {
       "name": "Forever Sunshine",
@@ -28575,7 +28647,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.5,
           "maxScore": 1824
         },
@@ -28604,7 +28676,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.65,
           "maxScore": 1764
         }
@@ -30820,7 +30892,7 @@
           "lvl": 14,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 14.75,
           "maxScore": 1329
         },
@@ -30849,7 +30921,7 @@
           "lvl": 15,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 15.4,
           "maxScore": 1332
         }
@@ -41291,6 +41363,52 @@
       "jacket": "ddr_sn-sn2/Monkey Punk.png",
       "saHash": "OoQ6Oq81oIql8iIlbI6qldIlqoD1Di1I",
       "saIndex": "185"
+    },
+    {
+      "name": "MonstaFesta",
+      "artist": "アカツキ チョータ",
+      "saHash": "bli9QPODl80dblbbibo6dDDi6QII0l81",
+      "bpm": "155",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/MonstaFesta.jpg"
     },
     {
       "name": "Monsters Den",
@@ -66601,7 +66719,7 @@
           "lvl": 13,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.25,
           "maxScore": 1155
         },
@@ -66630,7 +66748,7 @@
           "lvl": 13,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 13.25,
           "maxScore": 1134
         }
@@ -68784,6 +68902,52 @@
       "jacket": "ddr_max-ext/TSUGARU (APPLE MIX).png",
       "saHash": "1qDD1DdPlId69010IQ18I6q8Q00IoI6D",
       "saIndex": "94"
+    },
+    {
+      "name": "TURNING DOWN",
+      "artist": "U-ske feat.石橋桃",
+      "saHash": "0l8dbQDQ6I01Pd1DO80q0Do1o81ldqPQ",
+      "bpm": "132",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/TURNING DOWN.jpg"
     },
     {
       "name": "Twin Bee -Generation X-",
@@ -72753,7 +72917,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.8,
           "maxScore": 1569
         },
@@ -72782,7 +72946,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.75,
           "maxScore": 1560
         }
@@ -73364,6 +73528,12 @@
           "maxScore": 1878
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2277
+        },
+        {
           "lvl": 8,
           "style": "double",
           "diffClass": "basic",
@@ -73384,11 +73554,17 @@
           "diffClass": "expert",
           "sanbaiTier": 15.4,
           "maxScore": 1764
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2232
         }
       ],
       "jacket": "ddr_world/ZENDEGI DANCE.jpg",
       "remyLink": "https://remywiki.com/ZENDEGI_DANCE",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "genre": "ORBITALIC ORIENTAL ELECTRO"
     },
     {
@@ -77918,6 +78094,76 @@
       "saHash": "6dQ0P6odPlD6dQdbP8dIiQQdQ66qllI6",
       "saIndex": "1146",
       "genre": "COSMIC PROG ROCK"
+    },
+    {
+      "name": "ギミギミエンターテイメント",
+      "artist": "hololive IDOL PROJECT",
+      "saHash": "Pd0DloPI90iQQqO9bdbbPq6Q8iP0l6Pi",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "bpm": "100-138",
+          "lvl": 2,
+          "maxScore": 159
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "bpm": "100-138",
+          "lvl": 4,
+          "maxScore": 567
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9,
+          "maxScore": 885
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1839
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2463
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "bpm": "100-138",
+          "lvl": 4,
+          "maxScore": 498
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9,
+          "maxScore": 846
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1827
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2406
+        }
+      ],
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/ギミギミエンターテイメント.jpg",
+      "genre": "J-POP",
+      "remyLink": "https://remywiki.com/Gimmick_gimmick_entertainment"
     },
     {
       "name": "ギャ・ギャ・ギャ・ギャラクシー！",
@@ -89785,7 +90031,7 @@
           "lvl": 16,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.4,
           "maxScore": 1521
         },
@@ -89814,7 +90060,7 @@
           "lvl": 16,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 16.55,
           "maxScore": 1545
         }
@@ -91811,6 +92057,12 @@
           "maxScore": 2106
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2475
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -91831,11 +92083,17 @@
           "diffClass": "expert",
           "sanbaiTier": 17.45,
           "maxScore": 2043
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2400
         }
       ],
       "jacket": "ddr_world/疾風迅雷.jpg",
       "remyLink": "https://remywiki.com/Shippuujinrai",
-      "flags": ["tempUnlock"],
+      "flags": ["unlock"],
       "genre": "ORIENTAL CORE",
       "search_hint": "しっぷうじんらい"
     },
@@ -92959,7 +93217,7 @@
           "lvl": 12,
           "style": "single",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.35,
           "maxScore": 1074
         },
@@ -92988,7 +93246,7 @@
           "lvl": 12,
           "style": "double",
           "diffClass": "challenge",
-          "flags": ["grandPrixPack"],
+          "flags": ["euLocked"],
           "sanbaiTier": 12.4,
           "maxScore": 1056
         }
