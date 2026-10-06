@@ -129,6 +129,13 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
+  [
+    "oqlQDOi6bdOl9DIIb1IdP909dIIOl8bb", // Easy Peasy Squeezy
+    {
+      ratings: [4, 7, 13, 16, 0, 7, 13, 16, 0],
+      lock_types: [270, 270, 270, 270, 0, 270, 270, 270, 0],
+    },
+  ],
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
