@@ -44,3 +44,27 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   appearance: none;
 }
+
+/* the mode picker, the lvl range and whichever editor is active all describe
+   one thing, so bind them together visually — the range in particular reads as
+   an unrelated control disappearing when it isn't nested under the picker */
+.bucketSection {
+  border-left: 3px solid var(--bucket-section-rule, rgba(138, 155, 168, 0.35));
+  padding-left: 0.9em;
+  margin-left: 0.1em;
+}
+
+.bucketSection > :global(.bp6-form-content) > *:not(:last-child) {
+  margin-bottom: 0.6em;
+}
+
+/* the lvl fields carry caret buttons, which overflow the fixed width the
+   drawer's other narrow inputs use and leave the two bounds nearly touching */
+.bucketSection .narrowInput {
+  width: auto;
+}
+
+/* the range sits inside the section now, so it doesn't need its own gap under */
+.bucketSection .inlineControls > div:last-child {
+  margin-right: 0;
+}

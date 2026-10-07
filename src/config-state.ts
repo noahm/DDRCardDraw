@@ -1,16 +1,23 @@
 import type { StoreApi } from "zustand";
 import { createWithEqualityFn } from "zustand/traditional";
+import type { BucketMode, ManualBucket } from "./draw-buckets";
 
 export interface ConfigState {
   chartCount: number;
   playerPicks: number;
+  /** ignored while `bucketMode` is "manual" */
   upperBound: number;
+  /** ignored while `bucketMode` is "manual" */
   lowerBound: number;
-  useWeights: boolean;
+  bucketMode: BucketMode;
   orderByAction: boolean;
   hideVetos: boolean;
+  /** "auto" mode only, indexed positionally against the derived bucket layout */
   weights: Array<number | undefined>;
+  /** "auto" mode only. null means one bucket per whole lvl */
   probabilityBucketCount: number | null;
+  /** "manual" mode only */
+  manualBuckets: Array<ManualBucket>;
   forceDistribution: boolean;
   constrainPocketPicks: boolean;
   style: string;
@@ -35,11 +42,12 @@ export const useConfigState = createWithEqualityFn<ConfigState>(
     playerPicks: 0,
     upperBound: 0,
     lowerBound: 0,
-    useWeights: false,
+    bucketMode: "none",
     hideVetos: false,
     orderByAction: true,
     weights: [],
     probabilityBucketCount: null,
+    manualBuckets: [],
     forceDistribution: true,
     constrainPocketPicks: true,
     style: "",
