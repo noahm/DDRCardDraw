@@ -129,36 +129,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // #region スペシャル楽曲パック feat.東方Project vol.8
-  [
-    "Pio09lb6i96DQloDIdidPol8obPil6b0", // ILL-STARRED Diver
-    {
-      ratings: [2, 6, 12, 15, 17, 6, 12, 15, 17],
-      lock_types: [190, 190, 190, 190, 190, 190, 190, 190, 190],
-    },
-  ],
-  [
-    "dddOii88ql08800lqobbDODIQOP999DI", // Nostalgic Blood of the Strife
-    {
-      ratings: [3, 10, 14, 16, 0, 10, 14, 16, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "qbl06811iP8IdDDOqiIq1P0lqiPdDQqP", // Princess K
-    {
-      ratings: [2, 5, 11, 14, 0, 5, 10, 14, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  [
-    "odO8PDbIO8DiIboi8Q9PP6d8Q9iiIlbl", // アワデコノヨヲ
-    {
-      ratings: [2, 8, 10, 14, 0, 8, 11, 14, 0],
-      lock_types: [190, 190, 190, 190, 0, 190, 190, 190, 0],
-    },
-  ],
-  // #endregion スペシャル楽曲パック feat.東方Project vol.8
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
