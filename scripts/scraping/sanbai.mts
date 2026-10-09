@@ -30,7 +30,6 @@ type SanbaiSong = {
 const lockFlags: Map<number, Song["flags"]> = new Map([
   [1000, ["euLocked"]], // For unlocked songs/charts
   [190, ["grandPrixPack"]], // DDR GRAND PRIX packs
-  [240, ["tempUnlock"]], // BEMANI PRO LEAGUE -SEASON 5- Triple Tribe 0 (2025-07-17 10:00~2025-08-31 23:59)
   [250, ["flareRank"]], // FLARE SKILL unlock
   [270, ["worldLeague"]], // WORLD LEAGUE
   [280, ["unlock"]], // EXTRA SAVIOR WORLD
@@ -74,23 +73,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // グランプリ譜面パック vol.4
-  ...[
-    "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D", // AFTER THE GAME OF LOVE
-    "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP", // BRE∀K DOWN！
-    "OPbqldiq0dQIo1011086IOl1qbOloOl9", // CANDY☆
-    "8liDbidQoI6Q01lO9iibIdboIiDl66Qo", // e-motion
-    "olQQ8QPPqqObDD9ooodOl9i9od8b06I9", // Healing Vision ～Angelic mix～
-    "8l808Do60DP0qDbD066QQqP1qOQdob90", // HYSTERIA
-    "D1D88PPI0PDQqOq00OI6QI1o6dPolqlI", // Tomorrow Perfume
-    "bDDd08iP8dlIlOo6iqd91dPiI1lQdOQq", // xenon
-    "OboID1PloIIoOOObQdQOP110I61Ddl9I", // 蒼い衝動 ～for EXTREME～
-    "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po", // 月光蝶
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-09-30T15:00:00+09:00"),
-    id,
-    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
-  ]),
   // スペシャル楽曲パック feat.東方Project vol.7
   ...[
     "08QQ8iPldb6o96bl0ld61qb99Q0Q19Qd", // 4NT1 D34D
@@ -116,6 +98,27 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     "ql1Q8P100IIlbl0Pdi08I8qD900idqQq", // カゲロウ
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-11-30T15:00:00+09:00"),
+    id,
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
+  ]),
+  ...[
+    // グランプリ譜面パック vol.6
+    "Pd99DQo0bD9D9oIbPIId18P6l8qlDQO6", // AFRONOVA
+    "i86qD6Pl61dPI0Q9db1P8bl1ii99q1lD", // BURNING HEAT！（3 Option MIX）
+    "68dqbIdOiiiiddlbb1OD66qq6d80I6D8", // Can Be Real
+    "bPD6ObloQPOOiQb1DbQDdilodiddlIlb", // ECSTASY
+    "O1blDPOQ8IQb00o0D89QIDIlo8b06liD", // HIGHER
+    "O8qii6oiooPd8lbPqDo9QQioIoQQOoq0", // INSIDE YOUR HEART
+    "8O86IP9dqQ8818ld9od8Q0PiDId6666P", // LOGICAL DASH
+    "0OQdlbo111ib1i88IdIPIbollD68Dii1", // rainbow rainbow
+    "81QD89Q6Ob911oOoobO0D98IQ1D1q60d", // RED ZONE
+    "olQl6Qoi0IbobI980q9Q0QIo9qlbq1PO", // Unreal
+    // BEMANI SELECTION楽曲パック vol.4
+    "iq6b9lP6qQQIOIPQDdPD8ld1o9891Pq9", // SURVIVAL AT THE END OF THE UNIVERSE
+    "boDqoIDqDlP1io6bQ0O10diDbbqOD96I", // Unreality
+    "dIiD86llO8biiDollQ1ioIoQl6iQ8dbQ", // 輪廻の鴉
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-12-28T15:00:00+09:00"),
     id,
     { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
