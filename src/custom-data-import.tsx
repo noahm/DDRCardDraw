@@ -164,6 +164,7 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const setLastConfigSelected = useSetLastConfigSelected();
+  const { t } = useIntl();
 
   const codes = useMemo(() => parseEditCodes(text), [text]);
   // stable primitive so the lookup effect only re-runs when the set of codes
@@ -234,15 +235,13 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
       // Remember it as the default selection for other entry points; the config page
       // itself reads the id straight from the URL below.
       setLastConfigSelected(newConfig.id);
-      const skipped = result.unknownSongs.length
-        ? ` ${result.unknownSongs.length} skipped — song not in the StepManiaX data yet.`
-        : "";
+      const created = t("customData.createdEdits", { count: result.matched });
       toaster.show({
         intent: result.unknownSongs.length ? "warning" : "success",
         icon: "import",
-        message:
-          `Published ${result.matched} edit${result.matched === 1 ? "" : "s"} — ` +
-          `opened a new config for it.${skipped}`,
+        message: result.unknownSongs.length
+          ? `${created} ${t("customData.editsSkipped", { count: result.unknownSongs.length })}`
+          : created,
       });
       onClose();
       navigate("config/" + newConfig.id);
@@ -338,7 +337,7 @@ interface PublishProgress {
 }
 
 /**
- * Import a StepMania song pack from a local folder or `.zip`: parse it in-browser, resize
+ * Import an ITG song pack from a local folder or `.zip`: parse it in-browser, resize
  * its art down to card size, then publish both the catalog and the images to
  * data.ddr.tools so the set is drawable — and identical for every synced peer,
  * unlike the session-local `blob:` urls this used to produce.
@@ -465,9 +464,7 @@ function PackImportForm({
       toaster.show({
         intent: "success",
         icon: "import",
-        message:
-          `Published ${parsedPack.songCount} song${parsedPack.songCount === 1 ? "" : "s"} — ` +
-          "opened a new config for it.",
+        message: t("customData.createdPack", { count: parsedPack.songCount }),
       });
       onClose();
       navigate("config/" + newConfig.id);

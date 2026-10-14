@@ -11,7 +11,7 @@
     "customData": {
       "chooseTitle": "Create Custom Data",
       "chooseSmx": "Import StepManiaX edits",
-      "chooseItg": "Import a StepMania song pack",
+      "chooseItg": "Import an ITG song pack",
       "dropHint": "You can also drop a pack folder anywhere on this page.",
       "smxTitle": "Import StepManiaX Edits",
       "itgTitle": "Import Song Pack",
@@ -19,6 +19,9 @@
       "chooseFolder": "Choose folder…",
       "chooseZip": "Choose .zip…",
       "usesTiers": "Pack uses tiers",
+      "createdPack": "Created custom data with {count, plural, one {# song} other {# songs}}",
+      "createdEdits": "Created custom data with {count, plural, one {# edit} other {# edits}}",
+      "editsSkipped": "{count, plural, one {# edit was} other {# edits were}} skipped (song not in the StepManiaX data yet)",
       "progress": {
         "resizing": "Resizing artwork…",
         "uploading": "Uploading…",
@@ -237,7 +240,7 @@
     "customData": {
       "chooseTitle": "カスタムデータを作成",
       "chooseSmx": "StepManiaXの編集をインポート",
-      "chooseItg": "StepManiaの曲パックをインポート",
+      "chooseItg": "ITGの曲パックをインポート",
       "dropHint": "パックのフォルダーをこのページにドロップすることもできます。",
       "smxTitle": "StepManiaXの編集をインポート",
       "itgTitle": "曲パックをインポート",
@@ -245,6 +248,9 @@
       "chooseFolder": "フォルダーを選択…",
       "chooseZip": ".zipを選択…",
       "usesTiers": "パックはティア制",
+      "createdPack": "{count, plural, other {# 曲のカスタムデータを作成しました}}",
+      "createdEdits": "{count, plural, other {# 件の編集譜面でカスタムデータを作成しました}}",
+      "editsSkipped": "{count, plural, other {# 件はスキップされました（StepManiaXのデータにまだ曲がありません）。}}",
       "progress": {
         "resizing": "画像をリサイズ中…",
         "uploading": "アップロード中…",

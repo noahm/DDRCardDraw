@@ -290,7 +290,7 @@ Same shape as M1 — build the bundle in-browser, publish, draw — plus the art
 M1 never had to solve.
 
 - **One dialog, two importers.** `src/smx-edit-import.tsx` became `src/custom-data-import.tsx`: a
-  chooser (StepManiaX edits / StepMania pack) hosting the unchanged SMX form and a new pack form.
+  chooser (StepManiaX edits / ITG pack) hosting the unchanged SMX form and a new pack form.
   Both existing entry points already share the `createCustomData` i18n key, so they just open the
   chooser now. **Dropping a pack (folder or `.zip`) skips the chooser** — that's unambiguous — so
   `drop-handler.tsx` shrank to a listener that parks the item in a `pendingPackDrop` atom and opens
