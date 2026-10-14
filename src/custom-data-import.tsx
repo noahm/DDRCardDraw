@@ -1,20 +1,21 @@
 import {
+  Alert,
   Button,
-  ButtonGroup,
-  Callout,
-  Dialog,
-  DialogBody,
-  DialogFooter,
-  FormGroup,
-  InputGroup,
-  Menu,
-  MenuItem,
-  ProgressBar,
+  Group,
+  Modal,
+  NavLink,
+  Progress,
+  Stack,
   Switch,
-  TextArea,
   Text,
-} from "@blueprintjs/core";
-import { Archive, FolderOpen, Import } from "@blueprintjs/icons";
+  Textarea,
+  TextInput,
+} from "@mantine/core";
+import {
+  IconFileImport,
+  IconFileZip,
+  IconFolderOpen,
+} from "@tabler/icons-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import type { PackWithSongs } from "simfile-parser/browser";
@@ -44,7 +45,7 @@ import { createConfigFromInputs } from "./state/thunks";
 import { useSetLastConfigSelected } from "./state/config.atoms";
 import { useIntl } from "./hooks/useIntl";
 import type { GameData } from "./models/SongData";
-import { toaster } from "./toaster";
+import { notify } from "./notify";
 
 type ImportSource = "smx" | "itg";
 
@@ -97,16 +98,20 @@ export function CreateCustomDataDialog({
   }, [onClose, setDroppedPack]);
 
   return (
-    <Dialog
-      isOpen={isOpen}
-      title={t(
-        source === "smx"
-          ? "customData.smxTitle"
-          : source === "itg"
-            ? "customData.itgTitle"
-            : "customData.chooseTitle",
-      )}
-      icon={<Import />}
+    <Modal
+      opened={isOpen}
+      title={
+        <Group gap="xs">
+          <IconFileImport size={18} />
+          {t(
+            source === "smx"
+              ? "customData.smxTitle"
+              : source === "itg"
+                ? "customData.itgTitle"
+                : "customData.chooseTitle",
+          )}
+        </Group>
+      }
       onClose={handleClose}
     >
       {isOpen && !source && <SourceChooser onChoose={setChosen} />}
@@ -114,7 +119,7 @@ export function CreateCustomDataDialog({
       {isOpen && source === "itg" && (
         <PackImportForm initialSource={droppedPack} onClose={handleClose} />
       )}
-    </Dialog>
+    </Modal>
   );
 }
 
@@ -126,21 +131,23 @@ function SourceChooser({
 }) {
   const { t } = useIntl();
   return (
-    <DialogBody>
-      <Menu large>
-        <MenuItem
-          icon={<Import />}
-          text={t("customData.chooseSmx")}
+    <>
+      <Stack gap={4} mb="sm">
+        <NavLink
+          component="button"
+          leftSection={<IconFileImport size={18} />}
+          label={t("customData.chooseSmx")}
           onClick={() => onChoose("smx")}
         />
-        <MenuItem
-          icon={<FolderOpen />}
-          text={t("customData.chooseItg")}
+        <NavLink
+          component="button"
+          leftSection={<IconFolderOpen size={18} />}
+          label={t("customData.chooseItg")}
           onClick={() => onChoose("itg")}
         />
-      </Menu>
-      <Text tagName="p">{t("customData.dropHint")}</Text>
-    </DialogBody>
+      </Stack>
+      <Text component="p">{t("customData.dropHint")}</Text>
+    </>
   );
 }
 
@@ -236,9 +243,9 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
       // itself reads the id straight from the URL below.
       setLastConfigSelected(newConfig.id);
       const created = t("customData.createdEdits", { count: result.matched });
-      toaster.show({
+      notify.show({
         intent: result.unknownSongs.length ? "warning" : "success",
-        icon: "import",
+        icon: <IconFileImport />,
         message: result.unknownSongs.length
           ? `${created} ${t("customData.editsSkipped", { count: result.unknownSongs.length })}`
           : created,
@@ -259,35 +266,32 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
   const foundCount = fetched?.charts.length ?? 0;
   return (
     <>
-      <DialogBody>
-        <Text tagName="p">
+      <>
+        <Text component="p" mb="sm">
           Pasted edit charts are merged into a copy of the stock StepManiaX
           data, published as a new custom data set, and added to the game data
           picker — the original stock SMX data is left untouched.
         </Text>
-        <FormGroup
+        <TextInput
           label="Data set name"
-          helperText="Shown in the game data picker."
-        >
-          <InputGroup
-            value={name}
-            onChange={(e) => setName(e.currentTarget.value)}
-            placeholder="SMX with Edits!"
-          />
-        </FormGroup>
-        <FormGroup
+          description="Shown in the game data picker."
+          mb="sm"
+          value={name}
+          onChange={(e) => setName(e.currentTarget.value)}
+          placeholder="SMX with Edits!"
+        />
+        <Textarea
           label="Paste edit links or codes"
-          helperText="Edit charts are merged with a copy of the stock StepManiaX data and added as new game data for this event. It will disappear when left unused by all configs."
-        >
-          <TextArea
-            fill
-            style={{ height: "10em" }}
-            value={text}
-            placeholder={"Z8Z-W77\nhttps://edits.stepmaniax.com/W15-W2P"}
-            onChange={(e) => setText(e.currentTarget.value)}
-          />
-        </FormGroup>
-        <Text tagName="p">
+          description="Edit charts are merged with a copy of the stock StepManiaX data and added as new game data for this event. It will disappear when left unused by all configs."
+          mb="sm"
+          autosize
+          minRows={6}
+          maxRows={10}
+          value={text}
+          placeholder={"Z8Z-W77\nhttps://edits.stepmaniax.com/W15-W2P"}
+          onChange={(e) => setText(e.currentTarget.value)}
+        />
+        <Text component="p">
           {codes.length
             ? `${codes.length} unique code${codes.length === 1 ? "" : "s"} detected. `
             : "No codes detected yet. "}
@@ -302,28 +306,22 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
         </Text>
         {error && <PublishError error={error} />}
         <TurnstileSlot widgetKey={widgetKey} onToken={setToken} />
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              intent="primary"
-              icon={<Import />}
-              onClick={publish}
-              loading={publishing}
-              disabled={
-                !name ||
-                fetching ||
-                !foundCount ||
-                (!!TURNSTILE_SITE_KEY && !token)
-              }
-            >
-              {`Publish${foundCount ? ` ${foundCount}` : ""}`}
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
+      </>
+      <Group justify="flex-end" gap="xs" mt="md">
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
+        <Button
+          leftSection={<IconFileImport size={16} />}
+          onClick={publish}
+          loading={publishing}
+          disabled={
+            !name || fetching || !foundCount || (!!TURNSTILE_SITE_KEY && !token)
+          }
+        >
+          {`Publish${foundCount ? ` ${foundCount}` : ""}`}
+        </Button>
+      </Group>
     </>
   );
 }
@@ -461,9 +459,9 @@ function PackImportForm({
         createConfigFromInputs(name.trim(), url),
       );
       setLastConfigSelected(newConfig.id);
-      toaster.show({
+      notify.show({
         intent: "success",
-        icon: "import",
+        icon: <IconFileImport />,
         message: t("customData.createdPack", { count: parsedPack.songCount }),
       });
       onClose();
@@ -480,17 +478,15 @@ function PackImportForm({
   }
 
   if (progress) {
-    return (
-      <DialogBody>
-        <PublishProgressReadout progress={progress} />
-      </DialogBody>
-    );
+    return <PublishProgressReadout progress={progress} />;
   }
 
   return (
     <>
-      <DialogBody>
-        <Text tagName="p">{t("customData.itgExplainer")}</Text>
+      <>
+        <Text component="p" mb="sm">
+          {t("customData.itgExplainer")}
+        </Text>
         <input
           type="file"
           ref={folderInput}
@@ -510,78 +506,69 @@ function PackImportForm({
           onChange={(e) => setPackSource(e.currentTarget.files?.[0] ?? null)}
         />
         {!parsedPack && !error && (
-          <ButtonGroup>
+          <Group gap="xs">
             <Button
-              icon={<FolderOpen />}
+              variant="default"
+              leftSection={<IconFolderOpen size={16} />}
               loading={!!packSource}
               onClick={() => folderInput.current?.click()}
             >
               {t("customData.chooseFolder")}
             </Button>
             <Button
-              icon={<Archive />}
+              variant="default"
+              leftSection={<IconFileZip size={16} />}
               disabled={!!packSource}
               onClick={() => zipInput.current?.click()}
             >
               {t("customData.chooseZip")}
             </Button>
-          </ButtonGroup>
+          </Group>
         )}
         {parsedPack && (
           <>
-            <FormGroup
+            <TextInput
               label="Data set name"
-              helperText="Shown in the game data picker."
-            >
-              <InputGroup
-                value={name}
-                onChange={(e) => setName(e.currentTarget.value)}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Switch
-                label={t("customData.usesTiers")}
-                checked={tiered}
-                onChange={() => setTiered((prev) => !prev)}
-              />
-            </FormGroup>
+              description="Shown in the game data picker."
+              mb="sm"
+              value={name}
+              onChange={(e) => setName(e.currentTarget.value)}
+            />
+            <Switch
+              label={t("customData.usesTiers")}
+              mb="sm"
+              checked={tiered}
+              onChange={() => setTiered((prev) => !prev)}
+            />
             {preview?.data ? (
-              <Text tagName="p">
+              <Text component="p">
                 {`${parsedPack.songCount} song${parsedPack.songCount === 1 ? "" : "s"}, `}
                 {`${chartCount} chart${chartCount === 1 ? "" : "s"}.`}
               </Text>
             ) : (
-              <Callout
-                intent="danger"
-                title="Couldn't read tiers from this pack"
-              >
+              <Alert color="red" title="Couldn't read tiers from this pack">
                 <code style={{ whiteSpace: "pre-wrap" }}>{preview?.error}</code>
-              </Callout>
+              </Alert>
             )}
           </>
         )}
         {error && <PublishError error={error} />}
         <TurnstileSlot widgetKey={widgetKey} onToken={setToken} />
-      </DialogBody>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              intent="primary"
-              icon={<Import />}
-              onClick={publish}
-              disabled={
-                !preview?.data ||
-                !name.trim() ||
-                (!!TURNSTILE_SITE_KEY && !token)
-              }
-            >
-              Publish
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
+      </>
+      <Group justify="flex-end" gap="xs" mt="md">
+        <Button variant="default" onClick={onClose}>
+          Cancel
+        </Button>
+        <Button
+          leftSection={<IconFileImport size={16} />}
+          onClick={publish}
+          disabled={
+            !preview?.data || !name.trim() || (!!TURNSTILE_SITE_KEY && !token)
+          }
+        >
+          Publish
+        </Button>
+      </Group>
     </>
   );
 }
@@ -596,13 +583,15 @@ function PublishProgressReadout({ progress }: { progress: PublishProgress }) {
   const determinate = phase === "resizing" && !!total;
   return (
     <>
-      <Text tagName="p">
+      <Text component="p" mb="xs">
         {t(`customData.progress.${phase}`)}
         {determinate ? ` ${current} / ${total}` : null}
       </Text>
-      <ProgressBar
-        intent="primary"
-        value={determinate ? (current ?? 0) / total : undefined}
+      {/* without a count to show, a full striped bar stands in for "working" */}
+      <Progress
+        value={determinate ? ((current ?? 0) / total) * 100 : 100}
+        striped={!determinate}
+        animated={!determinate}
       />
     </>
   );
@@ -610,9 +599,9 @@ function PublishProgressReadout({ progress }: { progress: PublishProgress }) {
 
 function PublishError({ error }: { error: string }) {
   return (
-    <Callout intent="danger" title="Something went wrong">
+    <Alert color="red" title="Something went wrong" my="sm">
       <code style={{ whiteSpace: "pre-wrap" }}>{error}</code>
-    </Callout>
+    </Alert>
   );
 }
 

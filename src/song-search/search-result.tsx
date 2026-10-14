@@ -1,5 +1,6 @@
 import { JSX } from "react";
-import { Edit } from "@blueprintjs/icons";
+import { Group, Text, UnstyledButton } from "@mantine/core";
+import { IconEdit } from "@tabler/icons-react";
 import { AbbrDifficulty } from "../game-data-utils";
 import { useIntl } from "../hooks/useIntl";
 import { Song, Chart } from "../models/SongData";
@@ -7,7 +8,6 @@ import { SongJacket } from "../song-jacket";
 import { readExtra } from "../utils/extras";
 import { EDIT_AUTHOR_KEY } from "../utils/smx-edit-import";
 import styles from "./song-search.css";
-import { MenuItem } from "@blueprintjs/core";
 
 export interface SearchResultData {
   song: Song;
@@ -45,7 +45,7 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
     <>
       {title}
       <span className={styles.editAuthor}>
-        <Edit size={12} /> {editAuthor}
+        <IconEdit size={12} /> {editAuthor}
       </span>
     </>
   ) : (
@@ -53,13 +53,30 @@ export function SearchResult({ data, selected, handleClick }: ResultsProps) {
   );
 
   return (
-    <MenuItem
-      selected={selected}
-      disabled={disabled}
-      icon={<SongJacket song={song} height={26} className={styles.img} />}
-      text={text}
-      label={label as string}
-      onClick={handleClick}
-    />
+    <UnstyledButton
+      onClick={disabled ? undefined : handleClick}
+      w="100%"
+      px="sm"
+      py={6}
+      style={{
+        borderRadius: "var(--mantine-radius-sm)",
+        opacity: disabled ? 0.5 : undefined,
+        backgroundColor: selected
+          ? "var(--mantine-primary-color-light)"
+          : undefined,
+      }}
+    >
+      <Group justify="space-between" wrap="nowrap">
+        <Group gap="sm" wrap="nowrap">
+          <SongJacket song={song} height={26} className={styles.img} />
+          <Text size="sm" truncate>
+            {text}
+          </Text>
+        </Group>
+        <Text size="sm" c="dimmed" style={{ whiteSpace: "nowrap" }}>
+          {label}
+        </Text>
+      </Group>
+    </UnstyledButton>
   );
 }
