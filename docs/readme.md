@@ -177,7 +177,7 @@ cd DDRCardDraw
 # Install project dependencies
 yarn
 
-# import a local ITG/StepMania song pack into a song data file
+# import a local ITG song pack into a song data file
 # providing a stub name without spaces
 yarn import:itg path/to/pack/folder some-stub-name
 

@@ -13,7 +13,6 @@ import {
   Drawing,
   DrawnChart,
   EligibleChart,
-  isGauntletScored,
   MergedDrawing,
   newPlayer,
   Player,
@@ -265,47 +264,49 @@ export const drawingsSlice = createSlice({
         winners[action.payload.chartId] = action.payload.player;
       }
     },
-    addPlayerScore(
+    /**
+     * Records one or more scores in a single step. Entries apply in order, so
+     * when two land on the same player's chart the later one is kept.
+     */
+    addPlayerScores(
       state,
       action: PayloadAction<{
         drawingId: CompoundSetId;
-        chartId: string;
-        playerId: string;
-        score: number;
+        scores: Array<{ chartId: string; playerId: string; score: number }>;
       }>,
     ) {
-      const { drawingId, playerId, chartId, score } = action.payload;
-      const [mainId] = drawingId;
+      const [mainId] = action.payload.drawingId;
       const drawing = state.entities[mainId];
       if (!drawing) {
         return;
       }
+      const players = drawing.meta.players;
       const scores = (drawing.meta.scoresByEntrant ??= {});
+      const chartIds = new Set(action.payload.scores.map((s) => s.chartId));
+
       // what the scores said before this edit, so a winner set by clicking the
       // card is never cleared by a half-filled score grid
-      const impliedBefore = impliedWinner(
-        drawing.meta.players,
-        scores,
-        chartId,
+      const impliedBefore = new Map(
+        Array.from(chartIds, (id) => [id, impliedWinner(players, scores, id)]),
       );
 
-      // a player added after the first score was entered has no bucket yet
-      (scores[playerId] ??= {})[chartId] = score;
-
-      // Head to head draws show per-chart win counts, so a typed score has to
-      // settle the chart too or the labels sit at zero while scores pile up.
-      // Anything scored as a gauntlet badges players with the points these
-      // scores pay out -- custom draws past a pair included -- and never needs
-      // a winner marked, so those are left alone.
-      if (isGauntletScored(drawing.meta)) {
-        return;
+      for (const { playerId, chartId, score } of action.payload.scores) {
+        // a player added after the first score was entered has no bucket yet
+        (scores[playerId] ??= {})[chartId] = score;
       }
-      const implied = impliedWinner(drawing.meta.players, scores, chartId);
-      if (implied) {
-        drawing.winners[chartId] = implied;
-      } else if (drawing.winners[chartId] === impliedBefore) {
-        // the winner on file came from this grid and no longer holds
-        delete drawing.winners[chartId];
+
+      // A full score grid settles the chart: head to head draws count these
+      // for their win labels, and gauntlets use them to show the top scorer
+      // on the card and to skip played charts when picking one at random.
+      // Gauntlet standings are still paid out from the scores themselves.
+      for (const chartId of chartIds) {
+        const implied = impliedWinner(players, scores, chartId);
+        if (implied) {
+          drawing.winners[chartId] = implied;
+        } else if (drawing.winners[chartId] === impliedBefore.get(chartId)) {
+          // the winner on file came from this grid and no longer holds
+          delete drawing.winners[chartId];
+        }
       }
     },
     addSubdraw(

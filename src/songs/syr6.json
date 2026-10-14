@@ -1,0 +1,675 @@
+{
+  "meta": {
+    "menuParent": "events",
+    "flags": ["noCmod"],
+    "lastUpdated": 1790405601750,
+    "usesDrawGroups": false,
+    "styles": ["single"],
+    "difficulties": [
+      { "key": "expert", "color": "#F64D8B" },
+      { "key": "challenge", "color": "#0191F2" },
+      { "key": "difficult", "color": "#F2F52C" }
+    ]
+  },
+  "defaults": {
+    "flags": ["noCmod", "Base", "Lower", "Upper"],
+    "lowerLvlBound": 1,
+    "difficulties": ["expert", "challenge", "difficult"],
+    "style": "single",
+    "upperLvlBound": 13
+  },
+  "i18n": {
+    "en": {
+      "name": "Show Your Rhythm 6",
+      "single": "Single",
+      "double": "Double",
+      "beginner": "Beginner",
+      "basic": "Basic",
+      "difficult": "Difficult",
+      "expert": "Expert",
+      "challenge": "Challenge",
+      "edit": "Edit",
+      "noCmod": "No CMOD",
+      "$abbr": {
+        "beginner": "Beg",
+        "basic": "Bas",
+        "difficult": "Dif",
+        "expert": "Exp",
+        "challenge": "Cha",
+        "edit": "Edit"
+      }
+    }
+  },
+  "songs": [
+    {
+      "name": "[09] Cinderella",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Cinderella.jpg",
+      "bpm": "103",
+      "artist": "Remi Wolf",
+      "folder": "[09] Cinderella",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[09] Circus",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Circus.jpg",
+      "bpm": "58-115",
+      "artist": "Britney Spears",
+      "folder": "[09] Circus",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[09] Digital Friends",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Digital Friends.jpg",
+      "bpm": "131",
+      "artist": "No Mana, SOFI",
+      "folder": "[09] Digital Friends",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[09] Fellow Feeling",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Fellow Feeling.jpg",
+      "bpm": "64-128",
+      "artist": "Porter Robinson",
+      "folder": "[09] Fellow Feeling",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[09] Gloomy Flash",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Gloomy Flash (feat. mami).jpg",
+      "bpm": "150",
+      "artist": "Zekk & poplavor",
+      "folder": "[09] Gloomy Flash (feat. mami)",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[09] JACKHAMMER",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] JACKHAMMER.jpg",
+      "bpm": "174",
+      "artist": "LUDICROUS GIBS",
+      "folder": "[09] JACKHAMMER",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[09] 君とpool disco",
+      "name_translation": "[09] Kimi to pool disco",
+      "jacket": "itg/syr6/[09] Kimi to pool disco.jpg",
+      "bpm": "128",
+      "artist": "Loopcoda",
+      "folder": "[09] Kimi to pool disco",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[09] Leviathan",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Leviathan.jpg",
+      "bpm": "162",
+      "artist": "Zekk",
+      "folder": "[09] Leviathan",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "difficult" }]
+    },
+    {
+      "name": "[09] Makka",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Makka (feat. Natsuki Karin).jpg",
+      "bpm": "180",
+      "artist": "Yuyoyuppe",
+      "folder": "[09] Makka (feat. Natsuki Karin)",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[09] Running",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Running.jpg",
+      "bpm": "145",
+      "artist": "Cranky",
+      "folder": "[09] Running",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[09] SEQUÊNCIA STRIPTEASE",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] SEQUENCIA STRIPTEASE.jpg",
+      "bpm": "67-134",
+      "artist": "Pedro Sampaio, MC GW",
+      "folder": "[09] SEQUENCIA STRIPTEASE",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[09] Satisfy",
+      "name_translation": "",
+      "jacket": "itg/syr6/[09] Satisfy.jpg",
+      "bpm": "130",
+      "artist": "Calvin Harris",
+      "folder": "[09] Satisfy",
+      "charts": [{ "lvl": 9, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Astral Paradox",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Astral Paradox.jpg",
+      "bpm": "185",
+      "artist": "Kobaryo",
+      "folder": "[10] Astral Paradox",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[10] Bass Shake",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Bass Shake.jpg",
+      "bpm": "63-126",
+      "artist": "Liquid Stranger, Dr. Fresch, Bok Nero",
+      "folder": "[10] Bass Shake",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Birthday Cake",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Birthday Cake.jpg",
+      "bpm": "128",
+      "artist": "Stephen Walking",
+      "folder": "[10] Birthday Cake",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Delete (horsegiirL Remix)",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Delete.jpg",
+      "bpm": "155",
+      "artist": "Ninajirachi",
+      "folder": "[10] Delete",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[10] Leedle Leedle Lee",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Leedle Leedle Lee.jpg",
+      "bpm": "77-155",
+      "artist": "TrippyThaKid",
+      "folder": "[10] Leedle Leedle Lee",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Money Makes You Stupid",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Money Makes You Stupid.jpg",
+      "bpm": "135",
+      "artist": "Black Dresses",
+      "folder": "[10] Money Makes You Stupid",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[10] No Broke Boys",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] No Broke Boys.jpg",
+      "bpm": "131",
+      "artist": "Disco Lines, Tinashe",
+      "folder": "[10] No Broke Boys",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[10] Pepper Steak",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Pepper Steak.jpg",
+      "bpm": "109",
+      "artist": "Alias Conrad Coldwood",
+      "folder": "[10] Pepper Steak",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Platonique",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Platonique.jpg",
+      "bpm": "130",
+      "artist": "Snail's House",
+      "folder": "[10] Platonique",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Pursuing My True Self",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Pursuing My True Self (Curren Remix).jpg",
+      "bpm": "130",
+      "artist": "平田志穂子",
+      "folder": "[10] Pursuing My True Self (Curren Remix)",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Rolling With Me!",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Rolling With Me!.jpg",
+      "bpm": "125",
+      "artist": "Night Tempo",
+      "folder": "[10] Rolling With Me!",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] S.N.U.F.F.Y",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] S.N.U.F.F.Y.jpg",
+      "bpm": "100",
+      "artist": "METAROOM",
+      "folder": "[10] S.N.U.F.F.Y",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Seasmoke",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Seasmoke.jpg",
+      "bpm": "95",
+      "artist": "SPORTMODE",
+      "folder": "[10] Seasmoke",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] Supercalifragilisticexpialidocious",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Supercalifragilisticexpialidocious.jpg",
+      "bpm": "114-200",
+      "artist": "GO GO GIRLS",
+      "folder": "[10] Supercalifragilisticexpialidocious",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[10] The Music",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] The Music.jpg",
+      "bpm": "137",
+      "artist": "HARLEY GIRL",
+      "folder": "[10] The Music",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[10] Touchy",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] Touchy.jpg",
+      "bpm": "98",
+      "artist": "Bright Light Bright Light",
+      "folder": "[10] Touchy",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[10] minus1",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] minus1 .jpg",
+      "bpm": "128",
+      "artist": "zeroth",
+      "folder": "[10] minus1 ",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "difficult" }]
+    },
+    {
+      "name": "[10] outside",
+      "name_translation": "",
+      "jacket": "itg/syr6/[10] outside.jpg",
+      "bpm": "101",
+      "artist": "Bill Wurtz",
+      "folder": "[10] outside",
+      "charts": [{ "lvl": 10, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Advent Infamous",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Advent Infamous.jpg",
+      "bpm": "150",
+      "artist": "Blacklolita",
+      "folder": "[11] Advent Infamous",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[11] 煽げや尊し",
+      "name_translation": "[11] Agitate",
+      "jacket": "itg/syr6/[11] Agitate.jpg",
+      "bpm": "131",
+      "artist": "Reol",
+      "folder": "[11] Agitate",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Anti-Imitation",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Anti-Imitation.jpg",
+      "bpm": "155",
+      "artist": "KAH",
+      "folder": "[11] Anti-Imitation",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[11] Burnt Rice",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Burnt Rice.jpg",
+      "bpm": "160",
+      "artist": "Shawn Wasabi & YDG feat. Yung GEMMY",
+      "folder": "[11] Burnt Rice",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[11] CALL ME DEAD !!",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] CALL ME DEAD !!.jpg",
+      "bpm": "112",
+      "artist": "djeb",
+      "folder": "[11] CALL ME DEAD !!",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] CRUNK2NITE",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] CRUNK2NITE.jpg",
+      "bpm": "155",
+      "artist": "Ecli, Korva, Scavenger, Soris & X2H",
+      "folder": "[11] CRUNK2NITE",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Connected",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Connected.jpg",
+      "bpm": "128",
+      "artist": "Bad Computer, Gold",
+      "folder": "[11] Connected",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Divine Providence",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Divine Providence.jpg",
+      "bpm": "152",
+      "artist": "Paladin",
+      "folder": "[11] Divine Providence",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Pleasure Seeker VIP",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Pleasure Seeker VIP.jpg",
+      "bpm": "136",
+      "artist": "Mr. Bill",
+      "folder": "[11] Pleasure Seeker VIP",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Raspberry Potion",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Raspberry Potion.jpg",
+      "bpm": "177",
+      "artist": "Tatsunoshin & 藍良あれれ",
+      "folder": "[11] Raspberry Potion",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[11] September",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] September.jpg",
+      "bpm": "128",
+      "artist": "Earth, Wind & Fire",
+      "folder": "[11] September",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Spice Up Your Life",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Spice Up Your Life.jpg",
+      "bpm": "128",
+      "artist": "Spice Girls",
+      "folder": "[11] Spice Up Your Life",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Swing Break",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Swing Break.jpg",
+      "bpm": "110",
+      "artist": "The McMash Clan feat. Kate Mullins",
+      "folder": "[11] Swing Break",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] Talk To Me",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] Talk To Me.jpg",
+      "bpm": "127",
+      "artist": "Champion, Four Tet, Skrillex, & Naisha",
+      "folder": "[11] Talk To Me",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] 忙シー日",
+      "name_translation": "[11] Isogashii hi",
+      "jacket": "itg/syr6/[11] busY daY.jpg",
+      "bpm": "150",
+      "artist": "Sasuke Haraguchi & Shikibu Meguri",
+      "folder": "[11] busY daY",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[11] while (screen is blue)",
+      "name_translation": "",
+      "jacket": "itg/syr6/[11] while (screen is blue).jpg",
+      "bpm": "128-255",
+      "artist": "kamome sano",
+      "folder": "[11] while (screen is blue)",
+      "charts": [{ "lvl": 11, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[12] Back 2 The Rave",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Back 2 The Rave.jpg",
+      "bpm": "145",
+      "artist": "MUST DIE!, Kayzo",
+      "folder": "[12] Back 2 The Rave",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "difficult" }]
+    },
+    {
+      "name": "[12] CLEAN JOBS",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] CLEAN JOBS.jpg",
+      "bpm": "142",
+      "artist": "SHADOW GOVERNMENT INC.",
+      "folder": "[12] CLEAN JOBS",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Crystal Clearer",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Crystal Clearer.jpg",
+      "bpm": "143",
+      "artist": "modus, Evoke",
+      "folder": "[12] Crystal Clearer",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Cult Invitation",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Cult Invitation.jpg",
+      "bpm": "164",
+      "artist": "BEMANI Sound Team \"謎の勢力\"",
+      "folder": "[12] Cult Invitation",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "expert" }]
+    },
+    {
+      "name": "[12] Lose Control",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Lose Control.jpg",
+      "bpm": "160",
+      "artist": "crayvxn",
+      "folder": "[12] Lose Control",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] MURDER PLOT",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] MURDER PLOT.jpg",
+      "bpm": "140",
+      "artist": "KORDHELL",
+      "folder": "[12] MURDER PLOT",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Outlaw",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Outlaw.jpg",
+      "bpm": "126",
+      "artist": "Croove feat. JC",
+      "folder": "[12] Outlaw",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Seaside Tides",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Seaside Tides.jpg",
+      "bpm": "128",
+      "artist": "plusol",
+      "folder": "[12] Seaside Tides",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Soapy Bubble",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Soapy Bubble.jpg",
+      "bpm": "141",
+      "artist": "Fragmentz",
+      "folder": "[12] Soapy Bubble",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Stylus",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Stylus.jpg",
+      "bpm": "165",
+      "artist": "HuΣeR",
+      "folder": "[12] Stylus",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] Substance",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] Substance.jpg",
+      "bpm": "130-174",
+      "artist": "BEMANI Sound Team \"めめめ\"",
+      "folder": "[12] Substance",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] TOE JAM",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] TOE JAM.jpg",
+      "bpm": "112-160",
+      "artist": "Big Idea",
+      "folder": "[12] TOE JAM",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] The Reverie",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] The Reverie.jpg",
+      "bpm": "150",
+      "artist": "uma",
+      "folder": "[12] The Reverie",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[12] stomp_",
+      "name_translation": "",
+      "jacket": "itg/syr6/[12] stomp_.jpg",
+      "bpm": "140",
+      "artist": "Varien",
+      "folder": "[12] stomp_",
+      "charts": [{ "lvl": 12, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Back to the Basics",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Back to the Basics.jpg",
+      "bpm": "155",
+      "artist": "Matduke",
+      "folder": "[13] Back to the Basics",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Blooming Villain",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Blooming Villain.jpg",
+      "bpm": "150",
+      "artist": "目黒 将司",
+      "folder": "[13] Blooming Villain",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] DEADWIRE",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] DEADWIRE.jpg",
+      "bpm": "145",
+      "artist": "splitter",
+      "folder": "[13] DEADWIRE",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Datamania",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Datamania (tpz Overheat Remix).jpg",
+      "bpm": "135-175",
+      "artist": "t+pazolite",
+      "folder": "[13] Datamania (tpz Overheat Remix)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Estrangement",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Estrangement.jpg",
+      "bpm": "155",
+      "artist": "flatt",
+      "folder": "[13] Estrangement",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] ハイテックトキオ",
+      "name_translation": "[13] Hi-tech Tokio",
+      "jacket": "itg/syr6/[13] Hi-tech Tokio.jpg",
+      "bpm": "165",
+      "artist": "lapix ∞ BEMANI Sound Team \"Sota Fujimori\"",
+      "folder": "[13] Hi-tech Tokio",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] ナンマイダ",
+      "name_translation": "[13] Nanmaida",
+      "jacket": "itg/syr6/[13] Nanmaida.jpg",
+      "bpm": "150-200",
+      "artist": "Gacharic Spin",
+      "folder": "[13] Nanmaida",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Psy Orb (feat. Nyankovsky)",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Psy Orb (feat. Nyankovsky).jpg",
+      "bpm": "175",
+      "artist": "Srezcat",
+      "folder": "[13] Psy Orb (feat. Nyankovsky)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Solve My Hurt",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Solve My Hurt.jpg",
+      "bpm": "234",
+      "artist": "Doin",
+      "folder": "[13] Solve My Hurt",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    },
+    {
+      "name": "[13] Spitfire",
+      "name_translation": "",
+      "jacket": "itg/syr6/[13] Spitfire (Stonebank Remix).jpg",
+      "bpm": "155",
+      "artist": "Infected Mushroom",
+      "folder": "[13] Spitfire (Stonebank Remix)",
+      "charts": [{ "lvl": 13, "style": "single", "diffClass": "challenge" }]
+    }
+  ]
+}

@@ -14,6 +14,14 @@ export interface EligibleChart {
   artist: string;
   artistTranslation?: string;
   bpm: string;
+  /**
+   * The chart's play style (`single`, `double`, SMX's `team`...). Optional
+   * because charts drawn before this existed don't carry it; see
+   * `styleOfChart` in `src/chart-id.ts` for recovering it from `chartKey`.
+   */
+  style?: string;
+  /** The chart's raw difficulty class; optional for the same reason as `style`. */
+  diffClass?: string;
   diffAbbr: string;
   diffColor: string;
   level: number;
@@ -250,6 +258,8 @@ export type MergedDrawing = Drawing & SubDrawing;
 export interface ScoreableChart {
   id: string;
   chart: EligibleChart;
+  /** id of the player whose pocket pick or free pick this card is, if any */
+  pickedBy?: string;
 }
 
 /**
@@ -265,12 +275,14 @@ export function scoreableCharts(
     if (bans[card.id]) {
       return [];
     }
+    const pocketPick = pocketPicks[card.id];
     const chart =
-      pocketPicks[card.id]?.pick ||
-      (card.type === CHART_DRAWN ? card : undefined);
+      pocketPick?.pick || (card.type === CHART_DRAWN ? card : undefined);
     if (!chart) {
       return [];
     }
-    return [{ id: card.id, chart }];
+    return pocketPick
+      ? [{ id: card.id, chart, pickedBy: pocketPick.player }]
+      : [{ id: card.id, chart }];
   });
 }

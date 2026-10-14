@@ -34,6 +34,8 @@ export interface StandingsRow {
 export interface GauntletStandings {
   /** the payout table these standings were scored against */
   pointsPerPlace: readonly number[];
+  /** every card that can be scored, played or not, in the order drawn */
+  charts: ScoreableChart[];
   /** cards somebody has a score on, in the order they were drawn */
   playedCharts: ScoreableChart[];
   /** every player in the gauntlet, best total first */
@@ -143,7 +145,7 @@ export function computeGauntletStandings(
     row.place = place;
   });
 
-  return { pointsPerPlace, playedCharts, rows };
+  return { pointsPerPlace, charts, playedCharts, rows };
 }
 
 /**

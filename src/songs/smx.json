@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1788136603000
+    "lastUpdated": 1790189096000
   },
   "defaults": {
     "style": "solo",
@@ -2238,8 +2238,7 @@
         { "style": "solo", "diffClass": "hard", "lvl": 15 },
         { "style": "solo", "diffClass": "wild", "lvl": 20 },
         { "style": "solo", "diffClass": "dual", "lvl": 17 },
-        { "style": "solo", "diffClass": "full", "lvl": 20 },
-        { "style": "team", "diffClass": "team", "lvl": 22 }
+        { "style": "solo", "diffClass": "full", "lvl": 20 }
       ],
       "saIndex": "318"
     },
@@ -10621,6 +10620,48 @@
         { "style": "team", "diffClass": "team", "lvl": 17 },
         { "style": "solo", "diffClass": "easy", "lvl": 12, "flags": ["plus"] },
         { "style": "solo", "diffClass": "hard", "lvl": 18, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Bounce",
+      "artist": "Cleo Mars",
+      "bpm": "128",
+      "genre": "Pop",
+      "saIndex": "761",
+      "jacket": "smx/BounceCleoMars.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 17 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 21, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "name": "Happy Trails",
+      "artist": "Mameyudoufu",
+      "bpm": "129",
+      "genre": "Bass House",
+      "saIndex": "762",
+      "jacket": "smx/HappyTrails.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 22 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 21 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 17, "flags": ["plus"] },
         { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
         { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
       ]

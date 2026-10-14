@@ -104,11 +104,9 @@ export default function ScoreEditor({ meta }: { meta: Drawing["meta"] }) {
       return;
     }
     dispatch(
-      drawingsSlice.actions.addPlayerScore({
+      drawingsSlice.actions.addPlayerScores({
         drawingId,
-        chartId,
-        playerId,
-        score,
+        scores: [{ chartId, playerId, score }],
       }),
     );
   }

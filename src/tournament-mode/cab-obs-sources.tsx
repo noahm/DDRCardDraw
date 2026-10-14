@@ -30,6 +30,15 @@ import {
   playerFields,
   playerSourceStub,
 } from "../obs-sources/player-fields";
+import {
+  defaultPickerMode,
+  defaultSongMode,
+  pickerModes,
+  songModes,
+  standingsSourceStub,
+  type PickerMode,
+  type SongMode,
+} from "../obs-sources/standings-options";
 import { eventSlice } from "../state/event.slice";
 import { useAppState } from "../state/store";
 import { CAB_SOURCES_PARAM, routableCabSourcePath } from "./copy-obs-source";
@@ -56,11 +65,6 @@ const perCabSources: CabSource[] = [
     stub: "phase",
     labelKey: "obsDashboard.sourcePhase",
     icon: <IconBinaryTree size={16} />,
-  },
-  {
-    stub: "standings",
-    labelKey: "obsDashboard.sourceStandings",
-    icon: <IconTable size={16} />,
   },
   {
     stub: "players",
@@ -145,6 +149,7 @@ export function CabObsSources() {
           </div>
           <Stack gap="xs">
             <CardsSourceCard cabId={cab.id} />
+            <StandingsSourceCard cabId={cab.id} />
             {perCabSources.map((source) => (
               <SourceCard key={source.stub} cabId={cab.id} source={source} />
             ))}
@@ -187,6 +192,61 @@ function CardsSourceCard({ cabId }: { cabId: string }) {
           {t(labelKey)}
         </Button>
       ))}
+    />
+  );
+}
+
+/**
+ * The gauntlet standings, which say in their url whether pocket and free picks
+ * name who picked them, and whether songs nobody has scored yet get a column.
+ */
+function StandingsSourceCard({ cabId }: { cabId: string }) {
+  const { t } = useIntl();
+  const [pickers, setPickers] = useState<PickerMode>(defaultPickerMode);
+  const [songs, setSongs] = useState<SongMode>(defaultSongMode);
+  const href = useHref(
+    routableCabSourcePath(cabId, standingsSourceStub({ pickers, songs })),
+  );
+
+  return (
+    <SourceRow
+      href={href}
+      label={
+        <>
+          <IconTable size={16} />
+          <span>{t("obsDashboard.sourceStandings")}</span>
+        </>
+      }
+      above={
+        <>
+          <Button.Group>
+            {pickerModes.map(({ key, labelKey }) => (
+              <Button
+                key={key}
+                size="compact-sm"
+                variant={key === pickers ? "filled" : "default"}
+                aria-pressed={key === pickers}
+                onClick={() => setPickers(key)}
+              >
+                {t(labelKey)}
+              </Button>
+            ))}
+          </Button.Group>
+          <Button.Group>
+            {songModes.map(({ key, labelKey }) => (
+              <Button
+                key={key}
+                size="compact-sm"
+                variant={key === songs ? "filled" : "default"}
+                aria-pressed={key === songs}
+                onClick={() => setSongs(key)}
+              >
+                {t(labelKey)}
+              </Button>
+            ))}
+          </Button.Group>
+        </>
+      }
     />
   );
 }

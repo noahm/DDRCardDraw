@@ -1,12 +1,24 @@
 import { useMemo } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { primaryReuseKey } from "../chart-id";
+import { eligibleCharts } from "../card-draw";
+import {
+  chartIsUsed,
+  diffClassOfChart,
+  primaryReuseKey,
+  styleOfChart,
+} from "../chart-id";
 import { formatLevel } from "../game-data-utils";
 import { EligibleChart } from "../models/Drawing";
-import { configSlice } from "../state/config.slice";
-import { drawingsSlice, selectSpentCharts } from "../state/drawings.slice";
+import { configSlice, type ConfigState } from "../state/config.slice";
+import {
+  drawingsSlice,
+  selectChartUsage,
+  selectSpentCharts,
+} from "../state/drawings.slice";
+import { useGameDataForKey } from "../state/game-data.atoms";
 import { useAppState } from "../state/store";
 import { getJacketUrl } from "../utils/jackets";
+import { readableOnDark } from "../utils/readable-color";
 import "./drawn-charts.css";
 
 /**
@@ -27,14 +39,49 @@ import "./drawn-charts.css";
  * - `?config=<configId>` pins the range to a specific config
  * - `?min=15&max=17` states a range outright, in in-game levels
  * - `?all` turns filtering off and shows the whole history
+ *
+ * Separately from the level range, two URL-only options with nothing on the
+ * dashboard offering them narrow by the game data's own keys, each taking a
+ * comma separated list and matching case-insensitively:
+ *
+ * - `?style=team` keeps only charts of those play styles
+ * - `?diff=D,DP` keeps only charts of those difficulty classes, which is the
+ *   only way to split Pump's singles from its doubles (both are `solo` style)
+ *
+ * `?all` lifts neither. Charts too old to know their style or class drop out
+ * while the matching option is set.
  */
 export function DrawnCharts() {
+  return <ChartPoolSource mode="drawn" />;
+}
+
+/**
+ * The inverse of {@link DrawnCharts}: every chart the config's pool still
+ * holds, i.e. its eligible charts less everything the event has spent. The
+ * pool is the config's (by default the newest draw's, or `?config=`), and all
+ * of the same layouts and URL options apply on top of it. `?all` only lifts
+ * the level range, so it shows the config's whole remaining pool rather than
+ * every chart in the game. Spent charts are left out whether or not the event
+ * is enforcing chart reuse, since "what hasn't come out yet" is the question.
+ */
+export function RemainingCharts() {
+  return <ChartPoolSource mode="remaining" />;
+}
+
+function ChartPoolSource({ mode }: { mode: "drawn" | "remaining" }) {
   const params = useParams<"layout">();
-  const range = useLevelRange();
+  const config = useSourceConfig();
+  const range = useLevelRange(config);
+  const styles = useListParam("style");
+  const diffs = useListParam("diff");
   const spentCharts = useAppState(selectSpentCharts);
+  const remainingCharts = useRemainingCharts(
+    mode === "remaining" ? config : undefined,
+  );
+  const pool = mode === "remaining" ? remainingCharts : spentCharts;
   const charts = useMemo(
-    () => chartsToShow(spentCharts, range),
-    [spentCharts, range],
+    () => chartsToShow(pool, range, styles, diffs),
+    [pool, range, styles, diffs],
   );
   const useGranular = range?.useGranularLevels || false;
 
@@ -42,10 +89,19 @@ export function DrawnCharts() {
     <div className="drawn-charts">
       <div className="drawn-charts-header">
         <span className="drawn-charts-count">
-          {charts.length} chart{charts.length === 1 ? "" : "s"} drawn
+          {charts.length} chart{charts.length === 1 ? "" : "s"}{" "}
+          {mode === "remaining" ? "remaining" : "drawn"}
         </span>
-        {range && (
-          <span className="drawn-charts-range">{describeRange(range)}</span>
+        {(range || styles || diffs) && (
+          <span className="drawn-charts-range">
+            {[
+              styles?.join(", "),
+              diffs?.join(", "),
+              range && describeRange(range),
+            ]
+              .filter(Boolean)
+              .join(" · ")}
+          </span>
         )}
       </div>
       {params.layout === "list" ? (
@@ -84,7 +140,7 @@ function ChartGrid({ charts, useGranular }: LayoutProps) {
             <div className="drawn-chart-name">{chart.name}</div>
             <div
               className="drawn-chart-diff"
-              style={{ color: chart.diffColor }}
+              style={{ color: readableOnDark(chart.diffColor) }}
             >
               {chart.diffAbbr} {formatLevel(chart, useGranular)}
             </div>
@@ -106,7 +162,7 @@ function LevelGroupedList({ charts, useGranular }: LayoutProps) {
             <div key={primaryReuseKey(chart)} className="drawn-chart-row">
               <span
                 className="drawn-chart-diff"
-                style={{ color: chart.diffColor }}
+                style={{ color: readableOnDark(chart.diffColor) }}
               >
                 {chart.diffAbbr}
               </span>
@@ -126,26 +182,59 @@ function LevelGroupedList({ charts, useGranular }: LayoutProps) {
   );
 }
 
-/** The level bounds spent charts are narrowed to, or null to show them all. */
+/** The level bounds a source's charts are narrowed to, or null to show them all. */
 interface LevelRange {
   lowerBound: number;
   upperBound: number;
   useGranularLevels: boolean;
 }
 
-function useLevelRange(): LevelRange | null {
+/**
+ * The config this source follows: the one `?config=` pins, or else the one
+ * behind the most recent draw. Undefined before anything is drawn, or when a
+ * pinned config no longer exists.
+ */
+function useSourceConfig(): ConfigState | undefined {
   const [searchParams] = useSearchParams();
-  const showAll = searchParams.has("all");
-  const min = numericParam(searchParams.get("min"));
-  const max = numericParam(searchParams.get("max"));
   const pinnedConfigId = searchParams.get("config");
   const newestDrawConfigId = useAppState(
     drawingsSlice.selectors.newestDrawConfigId,
   );
   const configId = pinnedConfigId || newestDrawConfigId;
-  const config = useAppState((state) =>
+  return useAppState((state) =>
     configId ? configSlice.selectors.selectById(state, configId) : undefined,
   );
+}
+
+/**
+ * The charts `config` could still draw: its eligible pool less every chart the
+ * event has spent. Empty until the config's game data has loaded, and when
+ * there's no config to take a pool from.
+ */
+function useRemainingCharts(config: ConfigState | undefined): EligibleChart[] {
+  const gameData = useGameDataForKey(config?.gameKey || "");
+  const usedKeys = useAppState((state) => selectChartUsage(state).keys);
+  return useMemo(() => {
+    if (!config || !gameData) {
+      return [];
+    }
+    // a chart grafted onto a song more than once is still one chart
+    const byKey = new Map<string, EligibleChart>();
+    for (const chart of eligibleCharts(config, gameData)) {
+      const key = primaryReuseKey(chart);
+      if (!byKey.has(key) && !chartIsUsed(chart, usedKeys)) {
+        byKey.set(key, chart);
+      }
+    }
+    return Array.from(byKey.values());
+  }, [config, gameData, usedKeys]);
+}
+
+function useLevelRange(config: ConfigState | undefined): LevelRange | null {
+  const [searchParams] = useSearchParams();
+  const showAll = searchParams.has("all");
+  const min = numericParam(searchParams.get("min"));
+  const max = numericParam(searchParams.get("max"));
 
   return useMemo(() => {
     if (showAll) {
@@ -171,6 +260,27 @@ function useLevelRange(): LevelRange | null {
       useGranularLevels: config.useGranularLevels,
     };
   }, [showAll, min, max, config]);
+}
+
+/**
+ * The lowercased values of a comma separated search param, e.g. `?style=` or
+ * `?diff=`, or null when it names nothing and shouldn't filter at all.
+ */
+function useListParam(name: string): string[] | null {
+  const [searchParams] = useSearchParams();
+  const raw = searchParams.get(name);
+  return useMemo(() => {
+    const values = (raw || "")
+      .split(",")
+      .map((value) => value.trim().toLowerCase())
+      .filter(Boolean);
+    return values.length ? values : null;
+  }, [raw]);
+}
+
+/** true if `value` is known and among `allowed` (already lowercased) */
+function matchesList(value: string | undefined, allowed: string[]) {
+  return !!value && allowed.includes(value.toLowerCase());
 }
 
 function numericParam(raw: string | null): number | undefined {
@@ -206,22 +316,32 @@ function levelMetric(chart: EligibleChart, useGranular: boolean): number {
 
 /**
  * Sorted by level rather than left in draw order, because the question this
- * answers is "what is gone from the pool", not "what happened recently" -- and
+ * answers is "what is gone from (or left in) the pool", not "what happened
+ * recently" -- and
  * the list layout groups by level regardless. Difficulties sort by their
  * abbreviation, which is arbitrary but keeps a level's ESP charts together;
  * a chart doesn't carry its difficulty's position in the game's own order.
  */
 function chartsToShow(
-  spentCharts: EligibleChart[],
+  charts: EligibleChart[],
   range: LevelRange | null,
+  styles: string[] | null,
+  diffs: string[] | null,
 ): EligibleChart[] {
   const useGranular = range?.useGranularLevels || false;
-  const visible = range
-    ? spentCharts.filter((chart) => {
-        const level = levelMetric(chart, useGranular);
-        return level >= range.lowerBound && level <= range.upperBound;
-      })
-    : spentCharts.slice();
+  const visible = charts.filter((chart) => {
+    if (styles && !matchesList(styleOfChart(chart), styles)) {
+      return false;
+    }
+    if (diffs && !matchesList(diffClassOfChart(chart), diffs)) {
+      return false;
+    }
+    if (range) {
+      const level = levelMetric(chart, useGranular);
+      return level >= range.lowerBound && level <= range.upperBound;
+    }
+    return true;
+  });
   return visible.sort(
     (a, b) =>
       levelMetric(a, useGranular) - levelMetric(b, useGranular) ||

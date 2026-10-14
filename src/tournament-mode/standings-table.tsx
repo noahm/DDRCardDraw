@@ -28,6 +28,7 @@ export function StandingsTable({ meta }: { meta: GauntletScoredMeta }) {
     eventScheme,
   );
   const { playedCharts, pointsPerPlace, rows } = standings;
+  const nameOf = new Map(rows.map((row) => [row.player.id, row.name]));
 
   if (!playedCharts.length) {
     return (
@@ -44,9 +45,14 @@ export function StandingsTable({ meta }: { meta: GauntletScoredMeta }) {
           <tr>
             <th>#</th>
             <th>Player</th>
-            {playedCharts.map(({ id, chart }) => (
+            {playedCharts.map(({ id, chart, pickedBy }) => (
               <th key={id} className={styles.songHeading}>
                 {chart.nameTranslation || chart.name}
+                {pickedBy && nameOf.has(pickedBy) && (
+                  <span className={styles.picker}>
+                    {nameOf.get(pickedBy)}'s pick
+                  </span>
+                )}
               </th>
             ))}
             <th className={styles.numeric}>Points</th>

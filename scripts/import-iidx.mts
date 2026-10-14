@@ -153,6 +153,10 @@ const jacketPalettesByFolderName = new Map<string, JacketPalette>([
     { backdrop: "#000000", accentUpper: "#009f4c", accentLower: "#ffee00" },
   ],
   [
+    "ZINRAI",
+    { backdrop: "#000000", accentUpper: "#00cccc", accentLower: "#bb33aa" },
+  ],
+  [
     "substream",
     { backdrop: "#000000", accentUpper: "#feb900", accentLower: "#d36a00" },
   ],
