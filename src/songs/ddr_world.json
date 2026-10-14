@@ -19669,12 +19669,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 309
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 777
         },
         {
           "style": "single",
@@ -19691,7 +19693,8 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 756
         },
         {
           "style": "double",
@@ -69709,7 +69712,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/Ultimate taste.jpg"
+      "jacket": "ddr_world/Ultimate taste.jpg",
+      "remyLink": "https://remywiki.com/Ultimate_taste"
     },
     {
       "name": "un deux trois",
