@@ -1,11 +1,11 @@
-import { useDrawing } from "../drawing-context";
 import { SongCardBase, type SongCardProps } from "./song-card";
 import { getContentVariants } from "./variants";
 
 export { SongCardProps };
 
 export function SongCard(p: SongCardProps) {
-  const cardType = useDrawing((d) => d.cardVariant);
-  const cardImpl = getContentVariants(cardType);
+  const cardImpl = getContentVariants(
+    "cardVariant" in p.chart ? p.chart.cardVariant : undefined,
+  );
   return <SongCardBase {...p} {...cardImpl} />;
 }

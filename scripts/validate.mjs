@@ -83,6 +83,41 @@ function validateContents(dataFile) {
     }
   }
 
+  for (const err of findDuplicateChartIds(dataFile)) {
+    errors.add(err);
+  }
+
+  return errors;
+}
+
+/**
+ * A chart's `id`, where one is given, has to be unique within its file: it
+ * overrides the identity the app otherwise derives from the song and chart
+ * fields (see `src/chart-id.ts`), and chart identity is what the event-wide
+ * "never draw the same chart twice" rule is built on. Two charts sharing an id
+ * would silently make one of them undrawable once the other had been drawn.
+ *
+ * Ids are compared across files as well, so an id reused for a different chart
+ * in another file has the same effect between them. That can't be checked from
+ * one file alone, but giving the same chart the same id in two files is the
+ * intended way to say they are the same chart.
+ */
+function findDuplicateChartIds(dataFile) {
+  const errors = [];
+  const seen = new Map();
+  for (const song of dataFile.songs) {
+    for (const chart of song.charts) {
+      if (!chart.id) continue;
+      const owner = seen.get(chart.id);
+      if (owner) {
+        errors.push(
+          `chart id "${chart.id}" is used by both ${owner} and ${song.name}`,
+        );
+      } else {
+        seen.set(chart.id, song.name);
+      }
+    }
+  }
   return errors;
 }
 

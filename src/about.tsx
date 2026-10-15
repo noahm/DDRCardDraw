@@ -1,6 +1,7 @@
 import { FormattedMessage, useIntl } from "react-intl";
 import { ButtonGroup, AnchorButton, UL, Classes, H2 } from "@blueprintjs/core";
 import { Comment, GitBranch, Chat } from "@blueprintjs/icons";
+import { DISCORD_INVITE_URL } from "./external-links";
 
 function injectPumpoutLink(str: string) {
   const pieces = str.split("PUMPOUT");
@@ -39,7 +40,7 @@ export function About() {
         <ButtonGroup>
           <AnchorButton
             large
-            href="https://discord.gg/QPyEATsbP7"
+            href={DISCORD_INVITE_URL}
             target="_blank"
             text={t({ id: "about.discord" })}
             icon={<Comment size={20} />}

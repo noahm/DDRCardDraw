@@ -13,6 +13,14 @@ ensures they match the specified schema for song data (from `songs.schema.json`)
 and finally does some code-gen to write an updated typescript interface for that
 song data into `src/models/SongData.ts`
 
+`local-snapshot-store.mjs` backs the party server's off-storage snapshots with a
+local folder instead of R2, so event-mode durability can be worked on without
+Cloudflare credentials. `yarn start:backend` runs it alongside `partykit dev`;
+see "Local mode" in [`src/party/README.md`](../src/party/README.md).
+
+`watch-room.mjs` follows one deployed event room's diagnostic log. Run it with
+`yarn watch:room <room-id-or-event-url>`.
+
 ## Ongeki (import-ongeki.mts)
 
 Run with `yarn import:ongeki`. Fetches song data from SEGA's public API and downloads jacket images automatically.
