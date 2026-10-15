@@ -1,9 +1,4 @@
-/**
- * Base url of the content-addressed jacket pool, injected at build time
- * (webpack DefinePlugin) alongside `DATA_API_BASE`: production
- * cdn.data.ddr.tools, local wrangler dev otherwise.
- */
-const CDN_BASE = process.env.CDN_BASE || "https://cdn.data.ddr.tools";
+import { CDN_BASE } from "./jackets";
 
 /**
  * Match what `scripts/utils.mts` does to stock jackets before they're committed

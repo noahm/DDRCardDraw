@@ -44,15 +44,19 @@ later.
   Service components below).
   `rgt-data` merged to `main` and deployed; the app change merged to `partykit` (`next.ddr.tools`'s
   production branch). See Verification below for what's been confirmed live.
-- **M2 — ITG pack authoring. In progress.** In-browser pack parse, image resize, and jacket upload
+- **M2 — ITG pack authoring. ✅ Shipped 2026-10-14.** In-browser pack parse, image resize, and jacket upload
   to the CDN, reached from a generalized "create custom data" chooser (SMX edits vs. pack import)
   plus the drag-and-drop folder entry point ported from `main`. Also lands the shared
   jackets-on-CDN dependency M3 needs: absolute jacket URLs + the `getJacketUrl` passthrough.
+  `rgt-data` PR #3 merged to `main` and deployed; the app change (PR #630) merged to `partykit`.
   See _ITG pack authoring_ below for the implemented design.
 - **M3 — stock migration (not started).** Move schema/import scripts/catalogs into the data
   project, publish stock + jackets to the CDN behind a manifest, make the main app
   manifest-driven. Now strictly easier than it was: M2 establishes the jacket pool, its
   content-addressing, and the absolute-URL passthrough that M3 reuses.
+- **Self-hosted mode (after M3, not started).** Run the whole stack locally — app, PartyKit server,
+  and data — for events without internet. Replaces the service worker + `yarn build:zip` offline
+  story, which M3 removes. Its own milestone; design open (see Open questions / risks).
 
 ## Locked decisions
 
@@ -101,12 +105,13 @@ later.
 ## Data model & addressing
 
 - **Bucket layout is split by top-level prefix, not mixed in one namespace.** One `rgt-bundles`
-  bucket, three prefixes:
+  bucket, four prefixes:
   ```
   custom/{id}/data.json      # id = nanoid(10); user-published sets (M1: SMX edits)
   custom/{id}/meta.json
   stock/{game}/{hash}/...    # managed catalogs (M3); hash = content hash of the catalog
   jackets/{sha256hex}        # flat content-addressed image pool, shared by custom + stock (M2/M3)
+  legacy/jackets/smx/...     # frozen copy of the app's bundled SMX jackets, for M1 bundles (M3)
   ```
   The split matters for GC: `custom/` and `stock/` need different, independent lifecycle rules
   (custom bundles are reference-aware-GC'd per the note below; managed stock bundles are never
@@ -284,7 +289,7 @@ bundleHash }`); the Worker re-verifies presence, then atomically repoints `index
   from `smx-edits` is dropped for now (partykit has no per-variant card-actions slot) — a later add.
 - No `getJacketUrl` change (SMX edit bundles use relative jacket paths that already resolve).
 
-### M2 — ITG pack authoring (in progress)
+### M2 — ITG pack authoring. ✅ Done (merged to `partykit` 2026-10-14)
 
 Same shape as M1 — build the bundle in-browser, publish, draw — plus the art, which is the part
 M1 never had to solve.
@@ -348,10 +353,37 @@ M1 never had to solve.
 ### M3 — manifest-driven (later, with stock migration)
 
 - Replace `availableGameData` with a fetch of `index.json` (cached/revalidated via ETag); drop bundled
-  `src/songs/*.json` (keep an optional baked-in bootstrap bundle as SPOF/offline fallback).
-- `getJacketUrl` absolute-URL passthrough once jackets are on the CDN.
-- Version-pin stock selections: store the manifest entry's immutable `bundleUrl` in `config.gameKey`
-  (picker shows the friendly name), so a room stays on its version even if the catalog updates.
+  `src/songs/*.json`. No baked-in bootstrap bundle — offline use moves to self-hosted mode (below).
+- **`gameKey` accepts a name or a URL; unpinned is the default.** A stock name (`"a20plus"`) resolves
+  through the manifest to the game's _current_ bundle — today's behavior, and what every room already
+  persisted in Supabase `event_state` carries, so existing rooms keep working unchanged. A URL is an
+  explicit pin to one immutable bundle (how custom sets already work). Selecting a stock game keeps
+  storing its name. A UI to pin a room to an older stock version can come later if it's ever needed.
+- **M1 SMX bundles' relative jacket paths go to an SMX-only legacy prefix on the CDN.** M1 SMX
+  bundles are the only published data with relative jacket paths (`smx/...`, resolved through the
+  app's bundled `/jackets/` today; ITG bundles are already absolute). Just the `smx/` subtree
+  (563 files, ~5 MB) is copied to `legacy/jackets/smx/` (`rgt-data`'s
+  `scripts/upload-legacy-jackets.mjs`), and `loadCustomGamedataByUrl` rewrites a custom bundle's
+  relative `smx/` paths onto it at load time (`withLegacyJacketUrls`). The rewrite lives in the
+  custom loader, not `getJacketUrl`, because stock SMX data also uses relative `smx/` paths and
+  keeps gaining songs until stock moves to the CDN — routing those to the copy would break new
+  songs' art. The copy is topped up (the script skips what's present) until the M3 cutover, then
+  frozen. Rewriting the published bundles in place was considered and rejected: they're served
+  `max-age=1y, immutable`, so browsers that already cached the old copy would keep the relative
+  paths for up to a year and lose their art. After the cutover, new stock and SMX output uses
+  absolute content-addressed `jackets/{sha256}` URLs; the SMX builder grafts onto the manifest's
+  SMX catalog instead of the bundled one.
+- **Backport the CDN reader to `main`.** Rather than freezing production's data once the import
+  scripts move to `rgt-data`, the manifest loader + `getJacketUrl` change are ported (not merged —
+  see Shared code) to `main` so `ddr.tools` reads stock data from the CDN until `partykit` replaces it.
+  Scope is **stock only**: `main` gets no URL `gameKey` support. Custom-data URLs are an internal
+  detail of `partykit` (set by the create flow, never shown to or pasted by users, and with no way to
+  move them between configs), so there is nothing on `main` that could ever reference one.
+- **Remove the service worker and the zip build** (`@lcdp/offline-plugin`, `zip-webpack-plugin`,
+  `yarn build:zip`) on `partykit`. The hosted app becomes online-only; immutable bundles and jackets
+  still get a year of browser HTTP caching.
+- **Self-hosted mode replaces offline builds.** A way to run the whole stack locally — app, PartyKit
+  server, and data (manifest, bundles, jackets) — for offline events. Design TBD (see Open questions).
 
 ## Security & abuse (anonymous model)
 
@@ -385,7 +417,8 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   jimp), so a pack's worth of decode+resize blows those limits. Resizing therefore happens in the
   browser. Extra thumbnail sizes, if ever wanted, go async (Cloudflare Queues) or via Cloudflare
   Images.
-- **(M2+) Garbage/orphan bundles.** A plain R2 lifecycle rule expires by **age since creation, not
+- **(M2+) Garbage/orphan bundles. Deferred** — watch R2 storage; build the sweep below only once
+  cost justifies it. A plain R2 lifecycle rule expires by **age since creation, not
   last access** (no "delete if unrequested" primitive), and `immutable, max-age=1y` caching means
   active bundles rarely hit the R2 origin — so request-frequency would flag the _most-used_ bundles as
   stale. Age-based deletion is also a data-loss footgun: rooms **pin** a bundle id in `config.gameKey`
@@ -394,16 +427,22 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   `event_state` and delete only those **both** unreferenced **and** past a generous age (e.g. 90d).
   In practice this only matters once ITG image bundles exist — v1 JSON bundles are sub-MB, so orphans
   cost pennies. Do **not** ship an age-based lifecycle rule that could delete pinned data.
-- **(M3 — stock migration) CDN as a single point of failure.** With stock data no longer bundled, the
-  app can't load anything if the CDN/manifest is unreachable. Mitigate with long-cache immutable
-  bundles + the app's existing service worker (`@lcdp/offline-plugin`) caching fetched
-  manifest/bundles, and optionally a baked-in bootstrap manifest + default bundle. Decide how much
-  fallback to bake in.
-- **(M3 — stock migration) Offline standalone build (`yarn build:zip`).** Currently ships a fully
-  offline copy with bundled jackets. Once data + jackets live on the CDN it must either snapshot the
-  CDN at build time or be dropped. Pick a path.
+- **(M3 — stock migration) CDN as a single point of failure. Accepted.** With stock data no longer
+  bundled, the hosted app can't load data if the CDN/manifest is unreachable. Decided: no service
+  worker and no baked-in fallback — the hosted app is online-only, and anyone who needs to run without
+  internet uses self-hosted mode.
+- **(M3 — stock migration) Offline standalone build (`yarn build:zip`). Resolved: dropped,** along
+  with the service worker, in favor of self-hosted mode.
+- **(M3) Self-hosted mode design — open.** What serves data locally (e.g. `wrangler dev` with a seeded
+  local R2, or a plain static mirror of the manifest/bundles/jackets), how it's seeded (a snapshot
+  script against the CDN), how `CDN_BASE`/`DATA_API_BASE` get pointed at it (today they're baked in at
+  build time), and whether it needs a Supabase stand-in for room persistence or can run on PartyKit
+  storage alone.
 - **(M3 — stock migration) Jacket migration volume.** Moving all existing stock jackets to R2 is a
-  sizable one-time job; verify naming/paths and total size/egress before cutover.
+  sizable one-time job (~13.8k files, ~252 MB); verify naming/paths and total size/egress before
+  cutover. **Repo storage decided: plain git.** The committed jackets are already the resized
+  publish-ready versions (no raw source art), so the local mirror moves into `rgt-data` as is;
+  revisit `git-lfs` only if the repo actually becomes a problem.
 
 ## Verification
 
@@ -430,7 +469,7 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   merged to `partykit` 2026-08-10 (that branch is what's live at `next.ddr.tools`, so this ships with
   its normal deploy — not independently re-verified in this session beyond confirming the site responds).
 
-**M2 — automated coverage passing, browser pass still owed:**
+**M2 — done, confirmed 2026-10-14:**
 
 - ✅ **Worker multipart path**, against `wrangler dev` with real R2/D1: publish with jackets → 201;
   art readable at `/jackets/{hash}` as `image/jpeg` with immutable caching; bundle round-trips with
@@ -445,10 +484,14 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   the 200 KB cap; bundle 2.5 KB vs. 2 MB), all 7 jacket urls serve images, `meta.json` records the
   pack provenance.
 - ✅ `yarn validate` (both repos) and a full production webpack build.
-- ⬜ **Still to verify in a browser** (can't be exercised outside one): `createImageBitmap` +
-  `canvas.toBlob` output on real pack art, the folder-picker dialog itself, drag-and-drop opening
-  the dialog, the progress readout, cards rendering CDN jackets, and a two-peer PartyKit room
-  seeing the same pack.
+- ✅ **Browser pass** (manual testing): `createImageBitmap` + `canvas.toBlob` output on real pack
+  art, the folder-picker dialog itself, drag-and-drop opening the dialog, the progress readout,
+  cards rendering CDN jackets, and a two-peer PartyKit room seeing the same pack.
+- **Shipped:** `rgt-data` PR [#3](https://github.com/RhythmGameTools/rgt-data/pull/3) merged to `main`
+  2026-10-14 and deployed; `next.ddr.tools` PR [#630](https://github.com/noahm/DDRCardDraw/pull/630)
+  merged to `partykit` 2026-10-14.
 
 **M3 (not started):** stock import publishes a bundle + repoints `index.json` and the app picks it
-up with no deploy; CDN-blocked resilience via service worker / bootstrap fallback.
+up with no deploy; rooms persisted with a stock name load the current bundle; M1 SMX bundles still
+render jackets via `legacy/jackets/`; `main` reads stock data from the CDN; self-hosted mode runs a
+room with no internet.
