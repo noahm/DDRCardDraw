@@ -5,6 +5,7 @@ import { GameData } from "../models/SongData";
 import gameDataSchema from "../models/game-data.schema.json";
 import { useEffect } from "react";
 import { useRoomName } from "../hooks/useRoomName";
+import { withLegacyJacketUrls } from "../utils/jackets";
 
 const lastGameSelectedByEvent = atomFamily((roomName: string) =>
   atomWithStorage<string | undefined>(
@@ -119,6 +120,7 @@ export async function loadCustomGamedataByUrl(
       );
       return undefined;
     }
+    withLegacyJacketUrls(data);
     jotaiStore.set(customDataCache, (prev) => {
       return {
         ...prev,
