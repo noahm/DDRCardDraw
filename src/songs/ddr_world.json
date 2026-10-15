@@ -9812,6 +9812,7 @@
           "lvl": 3,
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "158",
           "sanbaiTier": 3.4,
           "maxScore": 285
         },
@@ -9819,6 +9820,7 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "basic",
+          "bpm": "158",
           "sanbaiTier": 6.3,
           "maxScore": 624
         },
@@ -9840,6 +9842,7 @@
           "lvl": 6,
           "style": "double",
           "diffClass": "basic",
+          "bpm": "158",
           "sanbaiTier": 6.2,
           "maxScore": 630
         },
@@ -19674,12 +19677,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "220",
           "lvl": 4,
           "maxScore": 309
         },
         {
           "style": "single",
           "diffClass": "basic",
+          "bpm": "220",
           "lvl": 7,
           "maxScore": 777
         },
@@ -19698,6 +19703,7 @@
         {
           "style": "double",
           "diffClass": "basic",
+          "bpm": "220",
           "lvl": 7,
           "maxScore": 756
         },
@@ -44769,12 +44775,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "240",
           "lvl": 3,
           "maxScore": 255
         },
         {
           "style": "single",
           "diffClass": "basic",
+          "bpm": "240",
           "lvl": 10,
           "maxScore": 990
         },
@@ -44793,6 +44801,7 @@
         {
           "style": "double",
           "diffClass": "basic",
+          "bpm": "240",
           "lvl": 10,
           "maxScore": 963
         },
