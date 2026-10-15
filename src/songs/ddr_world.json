@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1791468380965
+    "lastUpdated": 1792027577302
   },
   "defaults": {
     "style": "single",
@@ -26942,6 +26942,52 @@
       "saIndex": "916"
     },
     {
+      "name": "Good Life",
+      "artist": "Jon Batiste",
+      "saHash": "PI60Dbq8o9IbPPl09OO166b6o1ooI68D",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Good Life.jpg"
+    },
+    {
       "name": "Good Looking",
       "artist": "JAKAZiD",
       "bpm": "170",
@@ -45221,6 +45267,52 @@
       "genre": "オービタリック音頭/ORBITALIC音頭",
       "saHash": "l6oP66ODld89Q99o0lDPP90qdbo11PPQ",
       "saIndex": "1102"
+    },
+    {
+      "name": "One Kiss",
+      "artist": "Calvin Harris & Dua Lipa",
+      "saHash": "I69b1IOq8Qqi6iIo11Il98P9qiOP6q1I",
+      "bpm": "124",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/One Kiss.jpg"
     },
     {
       "name": "One Sided Love",
