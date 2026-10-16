@@ -29,6 +29,14 @@ FLARESOLVERR_URL=http://<host>:8191 yarn import:ongeki
 
 FlareSolverr handles the Cloudflare challenge and returns the solved page. Any charts that ongeki-score.net hasn't confirmed yet still fall back to the heuristic automatically.
 
+## DANCERUSH STARDOM (import-drs.mts)
+
+Run with `yarn import:drs`. Fetches the official music list from e-amusement (the public JSON behind [the music page](https://p.eagate.573.jp/game/dan/1st/music/entrance.html), no login needed) and downloads jacket images automatically.
+
+It merges into the existing `src/songs/drs.json` rather than regenerating it, because the official list only covers songs currently playable in Japan. Songs are matched by their e-amusement id (stored in `saIndex`), falling back to title + artist; `TITLE_ALIASES` in the script handles old typos. From the official list it takes ids, titles, artists, BPMs, easy/normal levels, jackets and lock status. It keeps translations, folders and the remaining flags as they are. Removed, region-exclusive and some event songs are absent from the official list; they are kept untouched and listed in the report the script prints at the end, along with new songs, merged duplicates and every change to names, levels and flags.
+
+With `SYNC_LOCK_FLAGS` on (the default), officially listed songs lose `unlock`/`tempUnlock` once Konami makes them playable from the start, and locked songs with neither flag gain `unlock`. Whether a locked song is `unlock` or `tempUnlock` stays hand-curated.
+
 ## Sound Voltex (import-sdvx.js)
 
 ### 1. Getting chart jackets
