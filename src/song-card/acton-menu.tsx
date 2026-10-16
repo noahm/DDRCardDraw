@@ -31,6 +31,12 @@ interface Props {
   onSetWinner?: (p: string | null) => void;
   onCopy?: () => void;
   infoActions?: MenuInfoAction[];
+  /**
+   * The menu was opened on behalf of this player (by index, in display
+   * order), so the per-player actions apply to them directly instead of
+   * asking which player through a submenu.
+   */
+  playerIndex?: number;
 }
 
 /** rendered inside a Menu.Dropdown */
@@ -43,18 +49,32 @@ export function ActionMenu(props: Props) {
     onSetWinner,
     onCopy,
     infoActions,
+    playerIndex,
   } = props;
 
   const { t } = useIntl();
   const getMetaString = useGetMetaString();
+  const actingPlayer = useDrawing((d) =>
+    playerIndex === undefined ? undefined : d.meta?.players[playerIndex],
+  );
+  const hasPlayerActions = !!(
+    onProtect ||
+    onStartPocketPick ||
+    onVeto ||
+    onSetWinner
+  );
 
   return (
     <>
+      {actingPlayer && hasPlayerActions && (
+        <Menu.Label>As {actingPlayer.name}</Menu.Label>
+      )}
       {onProtect && (
         <PlayerList
           icon={<IconLock size={16} />}
           text={t("songAction.lock")}
           onClick={onProtect}
+          playerIndex={playerIndex}
         />
       )}
       {onStartPocketPick && (
@@ -62,6 +82,7 @@ export function ActionMenu(props: Props) {
           icon={<IconArrowsSplit size={16} />}
           text={t("songAction.pocketPick")}
           onClick={onStartPocketPick}
+          playerIndex={playerIndex}
         />
       )}
       {onVeto && (
@@ -69,6 +90,7 @@ export function ActionMenu(props: Props) {
           icon={<IconBan size={16} />}
           text={t("songAction.ban")}
           onClick={onVeto}
+          playerIndex={playerIndex}
         />
       )}
       {onSetWinner && (
@@ -76,6 +98,7 @@ export function ActionMenu(props: Props) {
           icon={<IconCrown size={16} />}
           text={t("songAction.winner")}
           onClick={onSetWinner}
+          playerIndex={playerIndex}
         />
       )}
       {onCopy && (
@@ -109,8 +132,14 @@ export function ActionMenu(props: Props) {
 /** rendered inside a Menu.Dropdown */
 export function FillPlaceholderList(props: {
   onFillPlaceholder(p: string): void;
+  /** only offer the pick to this player (by index, in display order) */
+  playerIndex?: number;
 }) {
-  const players = useDrawing((d) => d.meta.players);
+  const allPlayers = useDrawing((d) => d.meta.players);
+  const players =
+    props.playerIndex === undefined
+      ? allPlayers
+      : allPlayers.slice(props.playerIndex, props.playerIndex + 1);
   return (
     <>
       {players.map((player) => (
@@ -130,10 +159,21 @@ interface IconRowProps {
   icon: JSX.Element;
   text: string;
   onClick: (p: string) => void;
+  /** act for this player directly, rather than offering a submenu of them all */
+  playerIndex?: number;
 }
 
-function PlayerList({ icon, text, onClick }: IconRowProps) {
+function PlayerList({ icon, text, onClick, playerIndex }: IconRowProps) {
   const players = useDrawing((d) => d.meta.players);
+  const actingPlayer =
+    playerIndex === undefined ? undefined : players[playerIndex];
+  if (actingPlayer) {
+    return (
+      <Menu.Item leftSection={icon} onClick={() => onClick(actingPlayer.id)}>
+        {text}
+      </Menu.Item>
+    );
+  }
   return (
     <Menu.Sub>
       <Menu.Sub.Target>

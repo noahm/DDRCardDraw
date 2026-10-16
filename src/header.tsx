@@ -24,6 +24,7 @@ import { useNavigate, useHref } from "react-router-dom";
 import { DiagnosticsDialog } from "./party/diagnostics-dialog";
 import { diagnosticsDialogOpen } from "./party/diagnostics.atoms";
 import { useRoomName } from "./hooks/useRoomName";
+import { focusCardFromHeader } from "./utils/card-nav";
 
 export function Header({
   heading,
@@ -41,6 +42,19 @@ export function Header({
       style={{
         position: "sticky",
         top: 0,
+      }}
+      navRegion
+      onKeyDown={(e) => {
+        // only from the bar's own buttons and links: a text field or select up
+        // here keeps its arrow keys, and open menus render in a portal anyway
+        const target = e.target as HTMLElement;
+        if (
+          e.key === "ArrowDown" &&
+          target.matches("button, a[href]") &&
+          focusCardFromHeader()
+        ) {
+          e.preventDefault();
+        }
       }}
       left={
         <>

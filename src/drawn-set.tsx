@@ -14,7 +14,7 @@ export function ChartList() {
   const charts = useDrawing((d) => d.charts);
   if (!charts) return null;
   return (
-    <div className={styles.chartList}>
+    <div className={styles.chartList} data-card-group>
       {charts.map((c) => (
         <ChartFromContext key={c.id} chartId={c.id} />
       ))}
