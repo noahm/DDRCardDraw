@@ -431,24 +431,49 @@ Planned changes, all landed together:
 
 - **`chart.id`** — already in the repo schema (optional explicit chart identity, overriding the
   derived `chartKey`). No catalog uses it yet.
-- **`song.id` replaces `saIndex` and `saHash`** — one string, required, backfilled for every
-  existing song. Today those two fields are overloaded per game:
-  - DDR files: `saHash` = sanbai/3icecream song id (32 chars, used by the share link), `saIndex` =
-    sanbai's numeric index (only carried through by the import scripts).
-  - Other games repurpose them for native ids — `saHash`: IIDX (textage tag), jubeat, SDVX,
-    Donkey Konga; `saIndex`: Pump, SMX (573.no `song_id`, which the edit builder and score import
-    match on), EZ2AC, septa2-iidx.
-  - No id at all: maimai, ongeki, DRS, and the ITG/tournament event sets (`itl24`, `itl25`,
-    `syr5`, `syr6`, `storm*`, `shine*`, `bite9*`, `bhopball4`, `dashdance25`, `rip15singles`).
-  - Ids repeat within a file on purpose: event sets list the same song once per drawn chart (bite7
-    has 19 such songs), so `song.id` identifies the song, not the entry, and isn't unique per file
-    (tbd5's one duplicate entry looks like a genuine data bug).
-  - Design questions still open: how to backfill the no-id games; whether ids carry a game
-    namespace (numeric ids collide across games, e.g. Pump and EZ2AC both start at `1`); keeping
-    derived `chartKey`s stable for rooms that already persisted them (`chart-id.ts` keys songs by
-    `saHash`, else `name|artist`); and how the app treats immutable published bundles that predate
-    the change (M1 SMX bundles carry `saIndex` and must keep validating and matching).
-- Further minor changes: TBD.
+- **`song.id` replaces `saIndex` and `saHash`** — one string, **required**, **unique within a
+  file**, backfilled for every existing song. Published as a new **`v2.json`** schema (the hosted
+  `v1.json` stays as is for bundles already pinned to it). Decided 2026-10-16:
+  - **Where ids come from:** the source's own native id wherever one exists, otherwise a
+    deterministic id derived from the song (same song → same id in every file, so cross-file chart
+    matching like `dia_del_ritmo_26` ↔ `ddr_world` keeps working; random ids would break it).
+    Today's fields map over as: DDR `saHash` (sanbai/3icecream id, which the share link needs);
+    IIDX/jubeat/SDVX/Donkey Konga `saHash`; Pump/SMX/EZ2AC/septa2-iidx `saIndex` (SMX's is the
+    573.no `song_id` the edit builder and score import match on). DDR's own `saIndex` (sanbai's
+    numeric index) is unused and **dropped**.
+  - **No-id games:** ongeki uses the SEGA API's per-entry `id`; maimai and the ITG/tournament event
+    sets (`itl24`, `itl25`, `syr5`, `syr6`, `storm*`, `shine*`, `bite9*`, `bhopball4`,
+    `dashdance25`, `rip15singles`) get native ids where their import source has them, else
+    derived ones. DRS is a still-updated game (new songs unlocked 2026-02-18) maintained by hand
+    with no import script, so it needs real ids sourced from somewhere like RemyWiki or the
+    official e-amusement music list, which also settles its duplicate entries.
+  - **No namespacing.** Ids are bare strings; numeric ids repeat across games (Pump and EZ2AC both
+    start at `1`). Mixing data from different games in one set raises other problems anyway, so
+    it's out of scope.
+  - **Chart keys rooms already persisted keep matching.** `chart-id.ts` derives the song part of a
+    chart key from `song.id` from now on, and `reuseKeysForChart` also returns the previous
+    derivation (`saHash`, else `name|artist`) as an extra "already used" key, so charts drawn
+    before the switch are still recognized. DDR/IIDX/SDVX/jubeat keys don't change at all, since
+    their ids are the old `saHash`.
+  - **Old published bundles keep working.** The app's loader upgrades a bundle with no `song.id`
+    (`id` from `saHash`, else `saIndex`) before validating it against `v2`, so immutable M1 SMX
+    bundles still validate and still match by 573.no id.
+  - **`validate.mjs` rejects duplicate song ids within a file.**
+- **One song per song within a file.** A file listing the same song more than once (one entry per
+  chart) is an import-script artifact: those entries merge into one song with all their charts.
+  A survey of every file (2026-10-16) found 90 groups of entries sharing a name + artist:
+  - **Merge:** bite7 (19 songs listed 41 times; fix the event-set import so it emits one song with
+    several charts) and maimai (2 utage songs split across 7 entries by level). Both merge with no
+    conflicting song-level fields.
+  - **Delete `tbd5`:** a stale copy of curated DDR data (its one duplicate entry was a symptom).
+    Rooms persisted with `gameKey: "tbd5"` stop resolving, which is accepted.
+  - **DRS:** 2 songs listed twice, one copy flagged `unlock`, translations differing slightly in
+    one. Resolved together with sourcing DRS's real ids (above).
+  - **Not duplicates — distinct songs sharing name + artist, which need distinct ids:** ongeki's
+    65 LUNATIC re-releases ("bright MEMORY", each with its own jacket, date and chart; the SEGA
+    `id` already tells them apart), and `ddr_x3`'s _IF YOU WERE HERE_ (the X3 vs 2nd MIX and the X2
+    versions; neither has a `saHash`, so assign ids by hand).
+- No other schema changes planned.
 
 ## Security & abuse (anonymous model)
 
