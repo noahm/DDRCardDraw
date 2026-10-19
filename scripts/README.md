@@ -35,7 +35,7 @@ Run with `yarn import:drs`. Fetches the official music list from e-amusement (th
 
 It merges into the existing `src/songs/drs.json` rather than regenerating it, because the official list only covers songs currently playable in Japan. Songs are matched by their e-amusement id (stored in `saIndex`), falling back to title + artist; `TITLE_ALIASES` in the script handles old typos. From the official list it takes ids, titles, artists, BPMs, easy/normal levels, jackets and lock status. It keeps translations, folders and the remaining flags as they are. Removed, region-exclusive and some event songs are absent from the official list; they are kept untouched and listed in the report the script prints at the end, along with new songs, merged duplicates and every change to names, levels and flags.
 
-With `SYNC_LOCK_FLAGS` on (the default), officially listed songs lose `unlock`/`tempUnlock` once Konami makes them playable from the start, and locked songs with neither flag gain `unlock`. Whether a locked song is `unlock` or `tempUnlock` stays hand-curated.
+With `SYNC_LOCK_FLAGS` on (the default), officially listed songs lose `unlock`/`tempUnlock` once Konami makes them playable from the start, and locked songs get `unlock` (still purchasable with stars) or `tempUnlock` (its event is over and it can no longer be unlocked). The official list doesn't say which, so `TEMP_UNLOCKS` in the script lists the `tempUnlock` songs by hand, sourced from [RemyWiki](https://remywiki.com/AC_DRS). Check new event songs there when re-running.
 
 ## Sound Voltex (import-sdvx.js)
 

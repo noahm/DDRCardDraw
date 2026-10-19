@@ -29,10 +29,22 @@ const GET_IMAGES = true;
 /**
  * When true, the `unlock`/`tempUnlock` flags of officially listed songs follow
  * the official lock status: songs Konami has made playable from the start lose
- * them, and locked songs without either flag gain `unlock`. Which of the two
- * flags applies is hand-curated, since the official list doesn't say.
+ * them, and locked songs get `unlock`, or `tempUnlock` if listed in
+ * `TEMP_UNLOCKS`.
  */
 const SYNC_LOCK_FLAGS = true;
+
+/**
+ * Locked songs that can no longer be unlocked: their event is over and they
+ * were never made purchasable with stars, so only players who unlocked them
+ * during the event can play them. The official list only says whether a song
+ * is locked, so this is curated by hand from https://remywiki.com/AC_DRS.
+ * Every other locked song is assumed to be purchasable with stars.
+ */
+const TEMP_UNLOCKS: Record<string, string> = {
+  // Stamp Bonus, February 10th to March 2nd, 2025
+  b81ecb4793b1ccb8f5067beefccbb865: "Stay Alone",
+};
 
 const DATA_URL =
   "https://p.eagate.573.jp/game/dan/1st/json/musiclist_getdata.html";
@@ -126,6 +138,11 @@ function isLesson(song: OfficialSong) {
 
 function isLocked(song: OfficialSong) {
   return Number(song.info.limitation_type) < LIMITATION_UNLOCKED;
+}
+
+/** which lock flag a locked song gets */
+function lockFlag(song: OfficialSong) {
+  return song.info.music_id in TEMP_UNLOCKS ? "tempUnlock" : "unlock";
 }
 
 /** bpm values are given in hundredths, e.g. "12750" is 127.5 */
@@ -241,10 +258,9 @@ function mergeSong(
   // an officially listed song is playable, so it can't have been removed
   flags = flags.filter((f) => f !== "removed");
   if (SYNC_LOCK_FLAGS) {
+    flags = flags.filter((f) => !LOCK_FLAGS.includes(f));
     if (isLocked(official)) {
-      if (!flags.some((f) => LOCK_FLAGS.includes(f))) flags.push("unlock");
-    } else {
-      flags = flags.filter((f) => !LOCK_FLAGS.includes(f));
+      flags.push(lockFlag(official));
     }
   }
   if (JSON.stringify(oldFlags) !== JSON.stringify(flags)) {
@@ -426,7 +442,7 @@ const importTask = await task(
       for (const official of officialSongs) {
         if (copiesById.has(official.info.music_id)) continue;
         const song = buildSong(official, {
-          flags: isLocked(official) ? ["unlock"] : [],
+          flags: isLocked(official) ? [lockFlag(official)] : [],
           charts: extractCharts(official),
         });
         thisReport.added.push(
