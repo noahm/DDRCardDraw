@@ -11,7 +11,33 @@
   bottom: 0.5em;
 }
 
-.cardLabel > span {
-  border: 2px solid white;
-  border-radius: 0.5em;
+/* white outline keeps the tag readable on top of any jacket art. the radius
+   comes from the pill itself, so the outline always follows its shape */
+.pill {
+  border: 2px solid var(--mantine-color-white);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.pillLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+/* Pill renders its remove button as a transparent CloseButton with no hover
+   state, so nothing marks it as a separate click target. Darkening reads
+   against every label color, so it needs no per-color rule. */
+.pillRemove {
+  color: inherit;
+  transition: background-color 100ms ease;
+}
+
+.pillRemove:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.pillRemove:focus-visible {
+  outline: 2px solid var(--mantine-color-white);
+  outline-offset: -2px;
 }

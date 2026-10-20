@@ -5,12 +5,13 @@ import { receivePartyState } from "../state/central";
 import { startAppListening } from "../state/listener-middleware";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useAtomValue } from "jotai";
-import { Card, Intent, NonIdealState, Spinner } from "@blueprintjs/core";
-import { Offline, Pulse } from "@blueprintjs/icons";
+import { Button, Card, Loader, Stack } from "@mantine/core";
+import { IconActivityHeartbeat, IconWifiOff } from "@tabler/icons-react";
+import { EmptyState } from "../common-components/empty-state";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
 import { PARTYKIT_HOST } from "./host";
-import { toaster } from "../toaster";
+import { notify, type Intent } from "../notify";
 import { useIntl } from "../hooks/useIntl";
 import { useInObs } from "../theme-toggle";
 import {
@@ -76,7 +77,7 @@ export function PartySocketManager(props: {
   /** dismiss a toast for good, cancelling any pending re-show */
   const clearToast = useCallback((key: string) => {
     restoreOnClose.current.delete(key);
-    toaster.dismiss(key);
+    notify.hide(key);
   }, []);
 
   /**
@@ -84,9 +85,9 @@ export function PartySocketManager(props: {
    * diagnostics dialog, since "something is wrong with the connection" is only
    * actionable once you can see what the connection has been doing.
    *
-   * Blueprint dismisses a toast whenever its action is clicked, which is right
-   * for a one-off notice but wrong for an `ongoing` problem — those toasts are
-   * put back once the dialog is closed.
+   * Following the action dismisses the toast, which is right for a one-off
+   * notice but wrong for an `ongoing` problem — those toasts are put back once
+   * the dialog is closed.
    */
   const showProblemToast = useCallback(
     (
@@ -99,27 +100,35 @@ export function PartySocketManager(props: {
       } = {},
     ) => {
       if (inObs) return;
+      const intent = opts.intent ?? "danger";
       function show() {
-        toaster.show(
-          {
-            message,
-            icon: opts.icon,
-            intent: opts.intent ?? Intent.DANGER,
-            // an unresolved problem shouldn't time out from under the organizer
-            timeout: opts.ongoing ? 0 : undefined,
-            action: {
-              text: t("party.diagnostics.toastAction"),
-              icon: <Pulse />,
-              onClick: () => {
-                if (opts.ongoing) {
-                  restoreOnClose.current.set(key, show);
-                }
-                openDiagnosticsDialog();
-              },
-            },
-          },
-          key,
-        );
+        notify.show({
+          id: key,
+          icon: opts.icon,
+          intent,
+          // an unresolved problem shouldn't time out from under the organizer
+          autoClose: opts.ongoing ? false : undefined,
+          message: (
+            <Stack gap="xs" align="flex-start">
+              <span>{message}</span>
+              <Button
+                size="compact-sm"
+                variant="white"
+                color={intent === "warning" ? "yellow" : "red"}
+                leftSection={<IconActivityHeartbeat size={14} />}
+                onClick={() => {
+                  if (opts.ongoing) {
+                    restoreOnClose.current.set(key, show);
+                  }
+                  notify.hide(key);
+                  openDiagnosticsDialog();
+                }}
+              >
+                {t("party.diagnostics.toastAction")}
+              </Button>
+            </Stack>
+          ),
+        });
       }
       show();
     },
@@ -156,13 +165,11 @@ export function PartySocketManager(props: {
               clearToast(BLOCKED_TOAST_KEY);
               clearToast(HEALTH_TOAST_KEY);
               if (!inObs) {
-                toaster.show(
-                  {
-                    message: t("party.reconnected"),
-                    intent: Intent.SUCCESS,
-                  },
-                  HEALTH_TOAST_KEY,
-                );
+                notify.show({
+                  id: HEALTH_TOAST_KEY,
+                  message: t("party.reconnected"),
+                  intent: "success",
+                });
               }
             }
             setReady(true);
@@ -210,7 +217,7 @@ export function PartySocketManager(props: {
       }
       disconnectedRef.current = true;
       showProblemToast(HEALTH_TOAST_KEY, t("party.disconnected"), {
-        icon: <Offline />,
+        icon: <IconWifiOff />,
         ongoing: true,
       });
     },
@@ -220,7 +227,7 @@ export function PartySocketManager(props: {
     setBlockedActionHandler(() => {
       logDiagnostic("action-blocked", "change discarded while disconnected");
       showProblemToast(BLOCKED_TOAST_KEY, t("party.actionBlocked"), {
-        intent: Intent.WARNING,
+        intent: "warning",
       });
     });
     sendFailedToast.current = () => {
@@ -236,13 +243,11 @@ export function PartySocketManager(props: {
         // would only send an organizer looking for a connection problem that
         // isn't there
         if (inObs) return;
-        toaster.show(
-          {
-            message: t("party.chartAlreadyDrawn"),
-            intent: Intent.DANGER,
-          },
-          REJECTED_TOAST_KEY,
-        );
+        notify.show({
+          id: REJECTED_TOAST_KEY,
+          message: t("party.chartAlreadyDrawn"),
+          intent: "danger",
+        });
         return;
       }
       showProblemToast(REJECTED_TOAST_KEY, t("party.actionRejected"));
@@ -268,11 +273,11 @@ export function PartySocketManager(props: {
     // when leaving a party session, unblock dispatch for other app modes
     return () => {
       setPartyConnectionHealthy(true);
-      toaster.dismiss(HEALTH_TOAST_KEY);
-      toaster.dismiss(BLOCKED_TOAST_KEY);
-      toaster.dismiss(SEND_FAILED_TOAST_KEY);
-      toaster.dismiss(REJECTED_TOAST_KEY);
-      toaster.dismiss(NOT_SAVING_TOAST_KEY);
+      notify.hide(HEALTH_TOAST_KEY);
+      notify.hide(BLOCKED_TOAST_KEY);
+      notify.hide(SEND_FAILED_TOAST_KEY);
+      notify.hide(REJECTED_TOAST_KEY);
+      notify.hide(NOT_SAVING_TOAST_KEY);
     };
   }, []);
 
@@ -408,8 +413,8 @@ export function PartySocketManager(props: {
         style={{ display: "flex", justifyContent: "center", marginTop: "15vh" }}
       >
         <DelayRender>
-          <Card elevation={2} style={{ maxWidth: "30rem" }}>
-            <NonIdealState icon={<Spinner />} title="Connecting..." />
+          <Card withBorder shadow="md" style={{ maxWidth: "30rem" }}>
+            <EmptyState icon={<Loader />} title="Connecting..." />
           </Card>
         </DelayRender>
       </section>
