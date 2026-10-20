@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { stat, writeFile } from "node:fs/promises";
 import { globalAgent as httpAgent } from "node:http";
@@ -100,6 +101,42 @@ const FORMAT_CONFIG: { printWidth?: number } = (() => {
  * @param filePath Destination JSON file path
  * @param lastUpdated Last updated UNIX timestamp, defaults to current time
  */
+/**
+ * A `song.id` for songs whose source has no id of its own: a hash of the name
+ * and artist. Computed once, when a song first enters a file, and kept from then
+ * on, so later renames don't change it. Being deterministic, the same song gets
+ * the same id in every file it's imported into.
+ */
+export function deriveSongId(name: string, artist: string): string {
+  const key = `${name.normalize("NFKC").trim()}\n${artist.normalize("NFKC").trim()}`;
+  return createHash("sha256").update(key).digest("hex").slice(0, 16);
+}
+
+/**
+ * Whether an id is a 3icecream song id, which DDR songs use as their `id`. They
+ * are 32 characters from 3icecream's own 16-letter alphabet.
+ */
+export function isSanbaiId(id: string): boolean {
+  return /^[01689DIOPQbdiloq]{32}$/.test(id);
+}
+
+/**
+ * Folds songs listed more than once (same `id`) into the first listing, with
+ * all their charts, since a file lists each song once.
+ */
+export function mergeSongsById(songs: Song[]): Song[] {
+  const byId = new Map<string, Song>();
+  for (const song of songs) {
+    const prior = byId.get(song.id);
+    if (prior) {
+      prior.charts.push(...song.charts);
+    } else {
+      byId.set(song.id, song);
+    }
+  }
+  return [...byId.values()];
+}
+
 export async function writeJsonData(
   data: GameData,
   filePath: string,
