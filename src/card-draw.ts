@@ -50,7 +50,7 @@ export function getDrawnChart(
     drawGroup: chart.drawGroup,
     flags: (chart.flags || []).concat(currentSong.flags || []),
     extras: (chart.extras || []).concat(currentSong.extras || []),
-    songId: currentSong.saHash || currentSong.saIndex,
+    songId: currentSong.id,
     dateAdded: currentSong.date_added,
     folder: currentSong.folder,
     // Fill in variant data per game
