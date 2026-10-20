@@ -1,5 +1,6 @@
 import { parsePack } from "simfile-parser";
 import {
+  deriveSongId,
   downloadJacket,
   unlockRequestConcurrency,
   writeJsonData,
@@ -140,6 +141,7 @@ for (const parsedSong of pack.simfiles) {
   }
 
   const song = {
+    id: deriveSongId(parsedSong.title.titleName, parsedSong.artist),
     name: parsedSong.title.titleName,
     name_translation: parsedSong.title.translitTitleName || "",
     jacket: finalJacket,

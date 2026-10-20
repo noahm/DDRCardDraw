@@ -141,7 +141,7 @@ type SanbaiSongData = Pick<
   | "folder"
   | "charts"
   | "flags"
-  | "saHash"
+  | "id"
   | "search_hint"
 > & { deleted: boolean; getJacketUrl: () => string };
 
@@ -236,7 +236,7 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
       songs.push({
         name: song.song_name,
         name_translation: song.romanized_name,
-        saHash: song.song_id,
+        id: song.song_id,
         folder: titleList.get(song.version_num),
         charts,
         flags: lockFlags.get(songLock),
@@ -282,10 +282,10 @@ export class SanbaiSongImporter implements DDRSongImporter<SanbaiSongData> {
 
   /**
    * Compares two song objects for equality
-   * @returns {boolean} True if songs are considered equal (same saHash)
+   * @returns {boolean} True if songs are considered equal (same id)
    */
   songEquals(existingSong: Song, fetchedSong: SanbaiSongData): boolean {
-    return existingSong.saHash === fetchedSong.saHash;
+    return existingSong.id === fetchedSong.id;
   }
 
   /**
