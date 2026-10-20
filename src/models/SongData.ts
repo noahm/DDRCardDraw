@@ -22,7 +22,7 @@ export type UniqueStringArr2 = string[];
 export type UniqueStringArr3 = string[];
 
 /**
- * Describes the shape of data that any individual json file under `src/songs` will conform to
+ * Describes the shape of data that any individual game data file will conform to
  */
 export interface GameData {
   $schema?: string;
@@ -76,15 +76,16 @@ export interface GameData {
     upperLvlBound: number;
   };
   /**
-   * Set of localized values for display of any styles, difficulties, or flags
+   * Set of localized values for display of any styles, difficulties, or flags. `en` is the canonical dictionary and must be complete; every other locale is a partial overlay whose missing keys fall back to `en` at runtime.
    */
   i18n: {
-    [k: string]: I18NDict;
+    en: I18NDict;
+    [k: string]: I18NDictPartial;
   };
   songs: Song[];
 }
 /**
- * Dictionary of localized strings
+ * The canonical (`en`) dictionary of localized strings; must define `name` and `$abbr`
  */
 export interface I18NDict {
   [k: string]: string | I18NDictBranch;
@@ -92,7 +93,17 @@ export interface I18NDict {
 export interface I18NDictBranch {
   [k: string]: string | I18NDictBranch;
 }
+/**
+ * A non-`en` locale dictionary; any missing keys (including `name`/`$abbr`) fall back to the `en` dictionary at runtime, so none are required
+ */
+export interface I18NDictPartial {
+  [k: string]: string | I18NDictBranch;
+}
 export interface Song {
+  /**
+   * a stable identifier for this song, unique within this file. Taken from the source game's own id where one exists (e.g. the 3icecream hash for DDR, the 573.no song_id for SMX), otherwise derived once from the song and kept from then on. Two files describing the same song should give it the same id.
+   */
+  id: string;
   /**
    * Holds info about a song that may make it worth filtering out
    */
@@ -111,11 +122,6 @@ export interface Song {
   charts: Chart[];
   jacket: string;
   folder?: string;
-  /**
-   * a unique identifier for a song
-   */
-  saHash?: string;
-  saIndex?: string;
   remyLink?: string;
   /**
    * Holds cosmetic only info about a song
