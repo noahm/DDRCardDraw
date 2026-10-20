@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1791468380965
+    "lastUpdated": 1792027577302
   },
   "defaults": {
     "style": "single",
@@ -3745,7 +3745,8 @@
       ],
       "flags": ["arcade", "extraOnly"],
       "jacket": "ddr_world/Amazing Bomberman.jpg",
-      "remyLink": "https://remywiki.com/Amazing_Bomberman"
+      "remyLink": "https://remywiki.com/Amazing_Bomberman",
+      "genre": "ボンバーテクノ/BOMBER TECHNO"
     },
     {
       "name": "Ambivalent Vermilia",
@@ -5777,7 +5778,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Bang Pad(Werk Mix).jpg",
-      "remyLink": "https://remywiki.com/Bang_Pad(Werk_Mix)"
+      "remyLink": "https://remywiki.com/Bang_Pad(Werk_Mix)",
+      "genre": "JUKE/FOOTWORK"
     },
     {
       "name": "bass 2 bass",
@@ -6860,7 +6862,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/BLAKE.jpg",
-      "remyLink": "https://remywiki.com/BLAKE"
+      "remyLink": "https://remywiki.com/BLAKE",
+      "genre": "ラウドロック/LOUD ROCK"
     },
     {
       "name": "Blew My Mind",
@@ -8662,6 +8665,7 @@
         {
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "158",
           "lvl": 3,
           "sanbaiTier": 3.4,
           "maxScore": 285
@@ -8669,6 +8673,7 @@
         {
           "style": "single",
           "diffClass": "basic",
+          "bpm": "158",
           "lvl": 6,
           "sanbaiTier": 6.3,
           "maxScore": 624
@@ -8690,6 +8695,7 @@
         {
           "style": "double",
           "diffClass": "basic",
+          "bpm": "158",
           "lvl": 6,
           "sanbaiTier": 6.2,
           "maxScore": 630
@@ -11196,7 +11202,7 @@
       "flags": ["grandPrixPack", "withoutPrivilege"],
       "jacket": "ddr_a/Come to Life.png",
       "remyLink": "https://remywiki.com/Come_to_Life",
-      "genre": "UKハードコア/UK HARD CORE"
+      "genre": "UKハードコア/UK HARDCORE"
     },
     {
       "name": "Come To m1dy",
@@ -11272,7 +11278,8 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Come To m1dy.jpg",
       "remyLink": "https://remywiki.com/Come_To_m1dy",
-      "search_hint": "Come to midy"
+      "search_hint": "Come to midy",
+      "genre": "TOKYO STYLE SPEEDCORE"
     },
     {
       "name": "Complete Game Victory",
@@ -16060,7 +16067,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_2014/Din Don Dan.png",
-      "remyLink": "https://remywiki.com/Din_Don_Dan"
+      "remyLink": "https://remywiki.com/Din_Don_Dan",
+      "genre": "BUBBLEGUM DANCE"
     },
     {
       "name": "Din Don Dan (にじさんじダンス部 ver.)",
@@ -19583,7 +19591,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Euphoric Fragmentation.jpg",
-      "remyLink": "https://remywiki.com/Euphoric_Fragmentation"
+      "remyLink": "https://remywiki.com/Euphoric_Fragmentation",
+      "genre": "HYBRID RAVE"
     },
     {
       "name": "Evans",
@@ -23839,7 +23848,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/Glitch Angel.jpg",
-      "remyLink": "https://remywiki.com/Glitch_Angel"
+      "remyLink": "https://remywiki.com/Glitch_Angel",
+      "genre": "ABSTRACT NEUROFUNK"
     },
     {
       "name": "GLITTER",
@@ -27146,7 +27156,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/High & Low.jpg",
-      "remyLink": "https://remywiki.com/High_%26_Low"
+      "remyLink": "https://remywiki.com/High_%26_Low",
+      "genre": "アラビアンハードダンス/ARABIAN HARD DANCE"
     },
     {
       "name": "High School Love",
@@ -31394,7 +31405,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Jungle_Dance.jpg",
-      "remyLink": "https://remywiki.com/Jungle_Dance"
+      "remyLink": "https://remywiki.com/Jungle_Dance",
+      "genre": "JUNGLE TERROR"
     },
     {
       "name": "JUST BELIEVE",
@@ -39118,7 +39130,8 @@
       ],
       "flags": ["grandPrixPack", "withoutPrivilege"],
       "jacket": "ddr_x3/NEPHILIM DELTA.png",
-      "remyLink": "https://remywiki.com/NEPHILIM_DELTA"
+      "remyLink": "https://remywiki.com/NEPHILIM_DELTA",
+      "genre": "HARDCORE"
     },
     {
       "name": "neu (STARDOM Remix)",
@@ -39382,7 +39395,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20/Neverland.png",
       "remyLink": "https://remywiki.com/Neverland",
-      "genre": ""
+      "genre": "ハッピーフューチャーベース/HAPPY FUTURE BASS"
     },
     {
       "name": "New Beginning",
@@ -40802,12 +40815,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "240",
           "lvl": 3,
           "maxScore": 255
         },
         {
           "style": "single",
           "diffClass": "basic",
+          "bpm": "240",
           "lvl": 10,
           "maxScore": 990
         },
@@ -40826,6 +40841,7 @@
         {
           "style": "double",
           "diffClass": "basic",
+          "bpm": "240",
           "lvl": 10,
           "maxScore": 963
         },
@@ -41517,7 +41533,7 @@
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/ONYX.jpg",
       "remyLink": "https://remywiki.com/ONYX",
-      "genre": ""
+      "genre": "デジタルサイバーロック/DIGITAL CYBER ROCK"
     },
     {
       "name": "Open Your Eyes",
@@ -50604,7 +50620,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a3/Sector.jpg",
-      "remyLink": "https://remywiki.com/Sector"
+      "remyLink": "https://remywiki.com/Sector",
+      "genre": "HiTECH"
     },
     {
       "name": "SEDUCTION(Vocal Remix)",
@@ -51444,7 +51461,7 @@
       ],
       "jacket": "ddr_world/Shooting Star.jpg",
       "remyLink": "https://remywiki.com/Shooting_Star_(ReGLOSS)",
-      "genre": "DANCE POP"
+      "genre": "DANCE POP/ダンスポップ"
     },
     {
       "name": "Shout It Out",
@@ -58528,7 +58545,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/The 88's Instigation.jpg",
-      "remyLink": "https://remywiki.com/The_88%27s_Instigation"
+      "remyLink": "https://remywiki.com/The_88%27s_Instigation",
+      "genre": "NU DISCO HOUSE"
     },
     {
       "name": "THE ANCIENT KING IS BACK",
@@ -58665,7 +58683,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_world/The Ashes of Boreas.jpg",
-      "remyLink": "https://remywiki.com/The_Ashes_of_Boreas"
+      "remyLink": "https://remywiki.com/The_Ashes_of_Boreas",
+      "genre": "CELTIC ELECTRO TECH"
     },
     {
       "name": "the beat",
@@ -63260,7 +63279,8 @@
         }
       ],
       "flags": ["arcade"],
-      "jacket": "ddr_world/Ultimate taste.jpg"
+      "jacket": "ddr_world/Ultimate taste.jpg",
+      "remyLink": "https://remywiki.com/Ultimate_taste"
     },
     {
       "name": "un deux trois",
@@ -67111,7 +67131,8 @@
       ],
       "flags": ["grandPrixPack"],
       "jacket": "ddr_a20plus/Yuni's Nocturnal Days.jpg",
-      "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days"
+      "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days",
+      "genre": "ミッドナイトスウィング/MIDNIGHT SWING"
     },
     {
       "name": "ZENDEGI DANCE",
@@ -70586,7 +70607,8 @@
         }
       ],
       "jacket": "ddr_world/カジノファイヤーことみちゃん_ReGLOSS.jpg",
-      "remyLink": "https://remywiki.com/Casino_fire_Kotomi-chan_(covered_by_Ichijou_Ririka(ReGLOSS))"
+      "remyLink": "https://remywiki.com/Casino_fire_Kotomi-chan_(covered_by_Ichijou_Ririka(ReGLOSS))",
+      "genre": "電波"
     },
     {
       "name": "カタルシスの月",
@@ -75842,7 +75864,7 @@
       "flags": ["arcade"],
       "jacket": "ddr_world/ロマンシングエスケープ.jpg",
       "remyLink": "https://remywiki.com/Romancing_escape_(song)",
-      "genre": "SYNTHWAVE POP"
+      "genre": "SYNTHWAVE POP/シンセウェーブポップ"
     },
     {
       "name": "ロンロンへ　ライライライ！",
@@ -81096,7 +81118,8 @@
         }
       ],
       "jacket": "ddr_world/朱と碧のランページ_ReGLOSS.jpg",
-      "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage_(covered_by_Juufuutei_Raden(ReGLOSS))"
+      "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage_(covered_by_Juufuutei_Raden(ReGLOSS))",
+      "genre": "アニマソング/ANIMA SONG"
     },
     {
       "name": "朱と碧のランページ",
