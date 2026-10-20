@@ -86,7 +86,30 @@ function validateContents(dataFile) {
   for (const err of findDuplicateChartIds(dataFile)) {
     errors.add(err);
   }
+  for (const err of findDuplicateSongIds(dataFile)) {
+    errors.add(err);
+  }
 
+  return errors;
+}
+
+/**
+ * A song's `id` has to be unique within its file. A file listing the same song
+ * twice should merge the two into one song with all their charts instead.
+ */
+function findDuplicateSongIds(dataFile) {
+  const errors = [];
+  const seen = new Map();
+  for (const song of dataFile.songs) {
+    const owner = seen.get(song.id);
+    if (owner) {
+      errors.push(
+        `song id "${song.id}" is used by both ${owner} and ${song.name}`,
+      );
+    } else {
+      seen.set(song.id, song.name);
+    }
+  }
   return errors;
 }
 

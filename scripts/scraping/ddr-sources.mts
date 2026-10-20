@@ -3,6 +3,7 @@ import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 
 import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import { isSanbaiId } from "../utils.mts";
 
 /** Interface for importing DDR songs from a source */
 export interface DDRSongImporter<T extends Partial<Song>> {
@@ -67,8 +68,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   }
 
   songEquals(existingSong: Song, fetchedSong: Song): boolean {
-    return existingSong.saHash && fetchedSong.saHash
-      ? existingSong.saHash === fetchedSong.saHash
+    // songs 3icecream doesn't know have ids derived from name and artist,
+    // which won't match a 3icecream id, so those match by name and artist
+    return isSanbaiId(existingSong.id) && isSanbaiId(fetchedSong.id)
+      ? existingSong.id === fetchedSong.id
       : existingSong.name === fetchedSong.name &&
           existingSong.artist === fetchedSong.artist;
   }
@@ -516,7 +519,6 @@ export const DDR_A3: DDRSourceMeta = {
       "search_hint",
       "genre",
       "jacket",
-      "saIndex",
       "remyLink",
       "charts.maxScore",
     ],
@@ -605,7 +607,7 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
   copyFrom: {
     file: "ddr_world.json",
     keys: [
-      "saHash",
+      "id",
       "bpm",
       "folder",
       "name_translation",
@@ -622,7 +624,7 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
     // `bpm`: DDR GRAND PRIX is displayed BPM, but DDR WORLD is actual BPM
     // `folder`: Some songs (ex. licensed songs) are moved to DDR GRAND PRIX folder
     overwriteKeys: [
-      "saHash",
+      "id",
       "name_translation",
       "artist_translation",
       "search_hint",

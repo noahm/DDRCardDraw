@@ -3,10 +3,10 @@
  * nanoid minted for each drawn copy and says nothing about *which* chart it is.
  *
  * A chart may carry an explicit `id` in its data file, but almost none do, so
- * the key is normally derived from the song's and chart's own fields. Deriving
- * it is not quite as simple as it looks: across the data files in `src/songs`,
- * `(name, artist, style, diffClass, lvl)` is not unique (donkeykonga, pump and
- * maimai all collide), and neither is `saHash`. Two things close the gap:
+ * the key is normally derived from its song's `id` (unique within a file) and
+ * the chart's own fields. A song can still hold more than one chart in the same
+ * style and difficulty, and custom bundles published before songs had ids get
+ * one at load (see `utils/legacy-game-data.ts`), so two things close the gap:
  *
  * - `extras` participates in the key. maimai's same-slot collisions are real,
  *   distinct charts separated only by `extras: ["dx"]` vs `["std"]`, and SMX
@@ -50,7 +50,7 @@ export function chartIdentity(chart: Chart): string {
 }
 
 function songIdentity(song: Song): string {
-  return song.saHash || `${song.name}${FIELD_SEP}${song.artist}`;
+  return song.id;
 }
 
 /** the key a chart claims before any ordinal is applied for collisions */
@@ -111,13 +111,40 @@ function legacyReuseKey(chart: EligibleChart): string {
 }
 
 /**
+ * The key `chart` had before songs carried an `id`, when a song was identified
+ * by its `saHash` or, lacking one, its name and artist. Songs whose `id` is
+ * their old `saHash` kept their keys; for the rest, this is the key charts
+ * drawn before the switch were stored under. Unlike {@link chartKeyFor} it
+ * can't recover a `#2` ordinal, and two songs sharing a name and artist share
+ * it, so like the legacy key it's only for excluding charts.
+ */
+function preSongIdReuseKey(chart: EligibleChart): string | undefined {
+  const style = styleOfChart(chart);
+  const diffClass = diffClassOfChart(chart);
+  if (!style || !diffClass) {
+    return undefined;
+  }
+  const chartPart = [
+    style,
+    diffClass,
+    chart.level,
+    (chart.extras || []).slice().sort().join(","),
+  ].join(FIELD_SEP);
+  return `${chart.name}${FIELD_SEP}${chart.artist}${PART_SEP}${chartPart}`;
+}
+
+/**
  * Every key by which `chart` should be recognized as already used. Use this to
  * *exclude* charts from a draw, where over-matching only costs a skipped chart.
  * Use `chart.chartKey` alone where a false match would be worse than a miss.
  */
 export function reuseKeysForChart(chart: EligibleChart): string[] {
-  const legacy = legacyReuseKey(chart);
-  return chart.chartKey ? [chart.chartKey, legacy] : [legacy];
+  const keys = [
+    chart.chartKey,
+    preSongIdReuseKey(chart),
+    legacyReuseKey(chart),
+  ];
+  return [...new Set(keys.filter((key): key is string => !!key))];
 }
 
 /**
@@ -127,7 +154,7 @@ export function reuseKeysForChart(chart: EligibleChart): string[] {
  * back several keys for the same one.
  */
 export function primaryReuseKey(chart: EligibleChart): string {
-  return reuseKeysForChart(chart)[0];
+  return chart.chartKey || legacyReuseKey(chart);
 }
 
 /**

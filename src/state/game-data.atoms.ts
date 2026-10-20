@@ -2,10 +2,12 @@ import { atom, getDefaultStore, useAtomValue, useSetAtom } from "jotai";
 import { atomFamily, atomWithStorage } from "jotai/utils";
 import { Validator, Schema } from "jsonschema";
 import { GameData } from "../models/SongData";
-import gameDataSchema from "../models/game-data.schema.json";
+// identical to the hosted data.ddr.tools/schema/v2.json
+import gameDataSchema from "../../songs.schema.json";
 import { useEffect } from "react";
 import { useRoomName } from "../hooks/useRoomName";
 import { withLegacyJacketUrls } from "../utils/jackets";
+import { upgradeLegacyGameData } from "../utils/legacy-game-data";
 
 const lastGameSelectedByEvent = atomFamily((roomName: string) =>
   atomWithStorage<string | undefined>(
@@ -109,7 +111,7 @@ export async function loadCustomGamedataByUrl(
     if (!res.ok) {
       throw new Error(`request failed with status ${res.status}`);
     }
-    const data = (await res.json()) as GameData;
+    const data = upgradeLegacyGameData((await res.json()) as GameData);
     const result = gameDataValidator.validate(data, gameDataSchema as Schema, {
       nestedErrors: true,
     });
