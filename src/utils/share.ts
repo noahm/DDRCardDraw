@@ -22,6 +22,12 @@ export function dateForFilename() {
   return `${d.getFullYear()}${zeroPad(d.getMonth() + 1, 2)}${zeroPad(d.getDay(), 2)}-${zeroPad(d.getHours(), 2)}${zeroPad(d.getMinutes(), 2)}${zeroPad(d.getSeconds(), 2)}`;
 }
 
+/**
+ * DDR song ids are 3icecream's, which use their own 16-letter alphabet. Other
+ * games' ids can also be 32 characters long (DRS uses hex), so check both.
+ */
+const SANBAI_ID = /^[01689DIOPQbdiloq]{32}$/;
+
 export async function shareCharts(
   charts: EligibleChart[],
   type: "drawn" | "eligible",
@@ -36,8 +42,8 @@ export async function shareCharts(
         chart.granularLevel,
         chart.bpm,
         chart.artist,
-        chart.song.saHash?.length === 32
-          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.song.saHash)}`
+        SANBAI_ID.test(chart.song.id)
+          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.song.id)}`
           : undefined,
       ];
     }),

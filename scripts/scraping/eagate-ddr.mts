@@ -4,7 +4,7 @@ import type { DDRSongImporter } from "./ddr-sources.mts";
 
 /** Name & Artist Normalization */
 const normalized: Map<
-  Song["saHash"],
+  Song["id"],
   Partial<Pick<Song, "name" | "artist">>
 > = new Map([
   [
@@ -61,7 +61,7 @@ const normalized: Map<
 ]);
 
 type EAGateSongData = Required<
-  Pick<Song, "name" | "artist" | "saHash" | "charts">
+  Pick<Song, "name" | "artist" | "id" | "charts">
 > & {
   getJacketUrl: () => string;
 };
@@ -72,14 +72,14 @@ type EAGateSongData = Required<
 export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
   /** URL to DDR song list page */
   readonly #songListUrl: string;
-  /** URL to jacket image file (without `&img={saHash}` parameter) */
+  /** URL to jacket image file (without `&img={id}` parameter) */
   readonly #jacketUrl: string;
   /** Flags to preserve */
   readonly #unmanagedFlags: string[];
 
   /**
    * @param songListUrl URL to DDR song list page
-   * @param jacketUrl URL to jacket image file (without `&img={saHash}` parameter)
+   * @param jacketUrl URL to jacket image file (without `&img={id}` parameter)
    * @param unmanagedFlags Flags to preserve
    */
   constructor(
@@ -153,15 +153,15 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
       currentPage++;
     }
 
-    // Remove duplicate songs (determined by saHash)
+    // Remove duplicate songs (determined by id)
     const uniqueSongs = [];
     const seenHashes = new Set();
 
     for (const song of allSongs) {
-      if (song.saHash && !seenHashes.has(song.saHash)) {
-        seenHashes.add(song.saHash);
+      if (song.id && !seenHashes.has(song.id)) {
+        seenHashes.add(song.id);
         uniqueSongs.push(song);
-      } else if (!song.saHash) {
+      } else if (!song.id) {
         // If no hash, determine by song name and artist
         const songKey = `${song.name}::${song.artist}`;
         if (!seenHashes.has(songKey)) {
@@ -199,15 +199,16 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
 
       for (const musicContainer of musicContainers) {
         try {
-          // `saHash` is embedded in jacket image URL query (`img=...`).
+          // the song id (3icecream uses the same one) is embedded in the jacket
+          // image URL query (`img=...`).
           const jacketImg: HTMLImageElement | null =
             musicContainer.querySelector("img.left-image");
-          let saHash = "";
+          let id = "";
 
           if (jacketImg?.src) {
             // URL example: /game/ddr/ddrworld/images/binary_jk.html?img=6iqOPoP6lQi8ilD10o8ol11DQbqooOqP&kind=2
             const imgMatch = jacketImg.src.match(/img=([a-zA-Z0-9]+)/);
-            saHash = imgMatch ? imgMatch[1] : "";
+            id = imgMatch ? imgMatch[1] : "";
           }
 
           const name =
@@ -266,10 +267,10 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
           songs.push({
             name,
             artist,
-            ...normalized.get(saHash), // Name & Artist Normalization
-            saHash,
+            ...normalized.get(id), // Name & Artist Normalization
+            id,
             charts,
-            getJacketUrl: () => `${jacketUrl}&img=${saHash}`,
+            getJacketUrl: () => `${jacketUrl}&img=${id}`,
           });
         } catch (error) {
           console.error("Failed to parse song data:", error);
@@ -284,10 +285,10 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
    * Compares two song objects for equality
    * @param existingSong
    * @param fetchedSong
-   * @returns True if songs are considered equal (same saHash)
+   * @returns True if songs are considered equal (same id)
    */
   songEquals(existingSong: Song, fetchedSong: EAGateSongData): boolean {
-    return existingSong.saHash === fetchedSong.saHash;
+    return existingSong.id === fetchedSong.id;
   }
 
   /**
@@ -365,7 +366,7 @@ export class EAGateSongImporter implements DDRSongImporter<EAGateSongData> {
     }
 
     // Try to get jacket from e-amusement GATE
-    if (!existingSong.jacket && fetchedSong.saHash) {
+    if (!existingSong.jacket && fetchedSong.id) {
       const jacket = downloadJacket(
         fetchedSong.getJacketUrl(),
         existingSong.name,

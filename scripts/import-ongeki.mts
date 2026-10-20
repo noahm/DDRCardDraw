@@ -202,6 +202,8 @@ function extractSong(
   const { flags: _oldFlags, ...existingSongRest } = existingSong ?? {};
   return {
     ...existingSongRest,
+    // SEGA's id tells apart the LUNATIC re-releases sharing a regular song's title
+    id: rawSong.id,
     name: title,
     artist: rawSong.artist,
     bpm: existingSong?.bpm ?? "?",
@@ -291,7 +293,7 @@ task("Ongeki Import", async ({ setStatus, setError, task: subTask }) => {
     );
     const existingSongsById: Record<string, Song> = {};
     for (const song of existingData.songs) {
-      existingSongsById[song.name] = song;
+      existingSongsById[song.id] = song;
     }
 
     setStatus("Fetching song data from SEGA API...");
@@ -325,7 +327,7 @@ task("Ongeki Import", async ({ setStatus, setError, task: subTask }) => {
       .map((rawSong) =>
         extractSong(
           rawSong,
-          existingSongsById[rawSong.title],
+          existingSongsById[rawSong.id],
           internalLevels,
           regularTitles,
         ),
