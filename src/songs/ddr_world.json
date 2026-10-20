@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1791468380965
+    "lastUpdated": 1792027577302
   },
   "defaults": {
     "style": "single",
@@ -4179,7 +4179,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/Amazing Bomberman.jpg",
-      "remyLink": "https://remywiki.com/Amazing_Bomberman"
+      "remyLink": "https://remywiki.com/Amazing_Bomberman",
+      "genre": "ボンバーテクノ/BOMBER TECHNO"
     },
     {
       "id": "00qIiO99Q18biD8bQ6d1QOooDP00O1Od",
@@ -6344,7 +6345,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Bang_Pad(Werk_Mix)",
-      "jacket": "ddr_a20plus/Bang Pad(Werk Mix).jpg"
+      "jacket": "ddr_a20plus/Bang Pad(Werk Mix).jpg",
+      "genre": "JUKE/FOOTWORK"
     },
     {
       "id": "18id0bi1Q6lbl0091iP0QoOIq9DDPo9I",
@@ -7553,7 +7555,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/BLAKE",
-      "jacket": "ddr_a20plus/BLAKE.jpg"
+      "jacket": "ddr_a20plus/BLAKE.jpg",
+      "genre": "ラウドロック/LOUD ROCK"
     },
     {
       "id": "8IdlOq1qI8OO1PP88I6olPiI6IqqqIIO",
@@ -9697,6 +9700,7 @@
           "lvl": 3,
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "158",
           "sanbaiTier": 3.4,
           "maxScore": 285
         },
@@ -9704,6 +9708,7 @@
           "lvl": 6,
           "style": "single",
           "diffClass": "basic",
+          "bpm": "158",
           "sanbaiTier": 6.3,
           "maxScore": 624
         },
@@ -9725,6 +9730,7 @@
           "lvl": 6,
           "style": "double",
           "diffClass": "basic",
+          "bpm": "158",
           "sanbaiTier": 6.2,
           "maxScore": 630
         },
@@ -12452,7 +12458,7 @@
       ],
       "remyLink": "https://remywiki.com/Come_to_Life",
       "jacket": "ddr_a/Come to Life.png",
-      "genre": "UKハードコア/UK HARD CORE"
+      "genre": "UKハードコア/UK HARDCORE"
     },
     {
       "id": "bll06Di6q1QOlddDlPDPiQDDI09bOOoP",
@@ -12527,7 +12533,8 @@
       ],
       "jacket": "ddr_a3/Come To m1dy.jpg",
       "remyLink": "https://remywiki.com/Come_To_m1dy",
-      "search_hint": "Come to midy"
+      "search_hint": "Come to midy",
+      "genre": "TOKYO STYLE SPEEDCORE"
     },
     {
       "id": "919bPoOo9QO6dODOI6d0loO6qo6OqDlI",
@@ -17267,7 +17274,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Din_Don_Dan",
-      "jacket": "ddr_2014/Din Don Dan.png"
+      "jacket": "ddr_2014/Din Don Dan.png",
+      "genre": "BUBBLEGUM DANCE"
     },
     {
       "id": "Ob8Q19QldDliP6qddP1o1ODP91bd1oQl",
@@ -19436,12 +19444,16 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "bpm": "220",
+          "lvl": 4,
+          "maxScore": 309
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "bpm": "220",
+          "lvl": 7,
+          "maxScore": 777
         },
         {
           "style": "single",
@@ -19458,7 +19470,9 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "bpm": "220",
+          "lvl": 7,
+          "maxScore": 756
         },
         {
           "style": "double",
@@ -21228,7 +21242,8 @@
         }
       ],
       "jacket": "ddr_a3/Euphoric Fragmentation.jpg",
-      "remyLink": "https://remywiki.com/Euphoric_Fragmentation"
+      "remyLink": "https://remywiki.com/Euphoric_Fragmentation",
+      "genre": "HYBRID RAVE"
     },
     {
       "id": "P06O6iQbiPPqiIqOd0IQdqolbPbDId6Q",
@@ -25826,7 +25841,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Glitch_Angel",
-      "jacket": "ddr_a20/Glitch Angel.jpg"
+      "jacket": "ddr_a20/Glitch Angel.jpg",
+      "genre": "ABSTRACT NEUROFUNK"
     },
     {
       "id": "8IDiil0bDd00P1l1iQiq9DP6bO0b8dQb",
@@ -26614,6 +26630,59 @@
       ],
       "remyLink": "https://remywiki.com/Golden_Arrow",
       "jacket": "ddr_a20/Golden Arrow.jpg"
+    },
+    {
+      "id": "PI60Dbq8o9IbPPl09OO166b6o1ooI68D",
+      "name": "Good Life",
+      "artist": "Jon Batiste",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 117
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 510
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8,
+          "maxScore": 867
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12,
+          "maxScore": 1245
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 510
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8,
+          "maxScore": 867
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12,
+          "maxScore": 1236
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Good Life.jpg"
     },
     {
       "id": "i9PQoDbQI0qqd6I00d19bQo6q9PoOIbO",
@@ -29278,7 +29347,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/High_%26_Low",
-      "jacket": "ddr_a20plus/High & Low.jpg"
+      "jacket": "ddr_a20plus/High & Low.jpg",
+      "genre": "アラビアンハードダンス/ARABIAN HARD DANCE"
     },
     {
       "id": "811qq00Il1Q681068l8dQbPO60l0oD1l",
@@ -33855,7 +33925,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Jungle_Dance",
-      "jacket": "ddr_a3/Jungle_Dance.jpg"
+      "jacket": "ddr_a3/Jungle_Dance.jpg",
+      "genre": "JUNGLE TERROR"
     },
     {
       "id": "iI90119iIb9l609b9981l8QDblDOb0I6",
@@ -42321,7 +42392,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/NEPHILIM_DELTA",
-      "jacket": "ddr_x3/NEPHILIM DELTA.png"
+      "jacket": "ddr_x3/NEPHILIM DELTA.png",
+      "genre": "HARDCORE"
     },
     {
       "id": "I0qq8i9i68DoOQDd1q6iPqO6P9l10IQD",
@@ -42582,7 +42654,7 @@
       ],
       "remyLink": "https://remywiki.com/Neverland",
       "jacket": "ddr_a20/Neverland.png",
-      "genre": ""
+      "genre": "ハッピーフューチャーベース/HAPPY FUTURE BASS"
     },
     {
       "id": "08PO96OlIoQqPdq91Q1Qqlo8lPidbPP8",
@@ -44183,12 +44255,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
+          "bpm": "240",
           "lvl": 3,
           "maxScore": 255
         },
         {
           "style": "single",
           "diffClass": "basic",
+          "bpm": "240",
           "lvl": 10,
           "maxScore": 990
         },
@@ -44207,6 +44281,7 @@
         {
           "style": "double",
           "diffClass": "basic",
+          "bpm": "240",
           "lvl": 10,
           "maxScore": 963
         },
@@ -44678,6 +44753,59 @@
       "genre": "オービタリック音頭/ORBITALIC音頭"
     },
     {
+      "id": "I69b1IOq8Qqi6iIo11Il98P9qiOP6q1I",
+      "name": "One Kiss",
+      "artist": "Calvin Harris & Dua Lipa",
+      "bpm": "124",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1,
+          "maxScore": 171
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 465
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 8,
+          "maxScore": 849
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12,
+          "maxScore": 1248
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 4,
+          "maxScore": 453
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 8,
+          "maxScore": 846
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12,
+          "maxScore": 1230
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/One Kiss.jpg"
+    },
+    {
       "id": "OQb96d6qD9bPdD819QO0b88blIllldoi",
       "name": "One Sided Love",
       "artist": "D-crew with Melissa Petty",
@@ -44826,7 +44954,7 @@
       ],
       "remyLink": "https://remywiki.com/ONYX",
       "jacket": "ddr_a20plus/ONYX.jpg",
-      "genre": ""
+      "genre": "デジタルサイバーロック/DIGITAL CYBER ROCK"
     },
     {
       "id": "0OQiI9qD6OiodDoQlPllqPoPoqi98D8P",
@@ -54742,7 +54870,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Sector",
-      "jacket": "ddr_a3/Sector.jpg"
+      "jacket": "ddr_a3/Sector.jpg",
+      "genre": "HiTECH"
     },
     {
       "id": "oIQo8IQPbobO6bioiqqdP6P6O8898DOQ",
@@ -55658,7 +55787,7 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "genre": "DANCE POP",
+      "genre": "DANCE POP/ダンスポップ",
       "remyLink": "https://remywiki.com/Shooting_Star_(ReGLOSS)",
       "jacket": "ddr_world/Shooting Star.jpg"
     },
@@ -63642,7 +63771,8 @@
         }
       ],
       "jacket": "ddr_world/The 88's Instigation.jpg",
-      "remyLink": "https://remywiki.com/The_88%27s_Instigation"
+      "remyLink": "https://remywiki.com/The_88%27s_Instigation",
+      "genre": "NU DISCO HOUSE"
     },
     {
       "id": "IlP88I0bbl91iOD6OQ6o6PPb9o6dlDb8",
@@ -63779,7 +63909,8 @@
         }
       ],
       "jacket": "ddr_world/The Ashes of Boreas.jpg",
-      "remyLink": "https://remywiki.com/The_Ashes_of_Boreas"
+      "remyLink": "https://remywiki.com/The_Ashes_of_Boreas",
+      "genre": "CELTIC ELECTRO TECH"
     },
     {
       "id": "i1ibID6lOoiPQ1lli86P9lIIqOoDlldQ",
@@ -68856,7 +68987,8 @@
         }
       ],
       "flags": ["euLocked"],
-      "jacket": "ddr_world/Ultimate taste.jpg"
+      "jacket": "ddr_world/Ultimate taste.jpg",
+      "remyLink": "https://remywiki.com/Ultimate_taste"
     },
     {
       "id": "99P8bDO1PqlddQqo81QOIPO60lPQqlO8",
@@ -72890,7 +73022,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days",
-      "jacket": "ddr_a20plus/Yuni's Nocturnal Days.jpg"
+      "jacket": "ddr_a20plus/Yuni's Nocturnal Days.jpg",
+      "genre": "ミッドナイトスウィング/MIDNIGHT SWING"
     },
     {
       "id": "0QOP6QqdlobOo9i8O6dOl8IdQl89P6PP",
@@ -77251,7 +77384,8 @@
       ],
       "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Casino_fire_Kotomi-chan_(covered_by_Ichijou_Ririka(ReGLOSS))",
-      "jacket": "ddr_world/カジノファイヤーことみちゃん_ReGLOSS.jpg"
+      "jacket": "ddr_world/カジノファイヤーことみちゃん_ReGLOSS.jpg",
+      "genre": "電波"
     },
     {
       "id": "6DibIbiiDlq1OiI6QOlPlO1loQOiDb1q",
@@ -83602,7 +83736,7 @@
       ],
       "remyLink": "https://remywiki.com/Romancing_escape_(song)",
       "jacket": "ddr_world/ロマンシングエスケープ.jpg",
-      "genre": "SYNTHWAVE POP"
+      "genre": "SYNTHWAVE POP/シンセウェーブポップ"
     },
     {
       "id": "9O8bq8b1Pi6Dl08OiPq10OddOdol1qOi",
@@ -89931,7 +90065,8 @@
       ],
       "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Aka_to_ao_no_rampage_(covered_by_Juufuutei_Raden(ReGLOSS))",
-      "jacket": "ddr_world/朱と碧のランページ_ReGLOSS.jpg"
+      "jacket": "ddr_world/朱と碧のランページ_ReGLOSS.jpg",
+      "genre": "アニマソング/ANIMA SONG"
     },
     {
       "id": "d6Doi9oi600lP9lI9iiO8q68li8iOO8D",
