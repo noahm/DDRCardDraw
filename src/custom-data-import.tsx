@@ -25,6 +25,7 @@ import {
   type FetchEditsResult,
 } from "./utils/smx-edit-import";
 import { getDataFileFromPack, resolveJackets } from "./utils/itg-import";
+import { findConsistencyErrors } from "./utils/game-data-consistency";
 import { jacketUrlForHash, resizeAndHashJacket } from "./utils/jacket-resize";
 import { pickedFolderAsDropItem } from "./utils/picked-folder";
 import { convertErrorToString } from "./utils/error-to-string";
@@ -351,6 +352,15 @@ type ParsedJsonFile =
   | { data: GameData; error: null }
   | { data: null; error: string };
 
+/** First few problems, so one mistake repeated per chart doesn't flood the dialog. */
+function summarizeProblems(problems: string[], max = 8): string {
+  const shown = problems.slice(0, max);
+  if (problems.length > max) {
+    shown.push(`…and ${problems.length - max} more`);
+  }
+  return shown.join("\n");
+}
+
 async function readJsonFile(file: File): Promise<ParsedJsonFile> {
   try {
     const parsed: unknown = JSON.parse(await file.text());
@@ -358,7 +368,13 @@ async function readJsonFile(file: File): Promise<ParsedJsonFile> {
     if (problems.length) {
       return { data: null, error: problems.join("\n") };
     }
-    return { data: parsed as GameData, error: null };
+    // the same checks `yarn validate` holds bundled data to, minus jackets
+    const data = parsed as GameData;
+    const inconsistencies = findConsistencyErrors(data);
+    if (inconsistencies.length) {
+      return { data: null, error: summarizeProblems(inconsistencies) };
+    }
+    return { data, error: null };
   } catch (e) {
     return { data: null, error: convertErrorToString(e) };
   }
