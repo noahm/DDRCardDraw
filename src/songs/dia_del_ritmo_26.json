@@ -2,7 +2,6 @@
   "$schema": "../../songs.schema.json",
   "meta": {
     "cardVariant": "ddr",
-    "menuParent": "events",
     "styles": ["single"],
     "difficulties": [
       {
@@ -61,7 +60,8 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1786031152222
+    "lastUpdated": 1786031152222,
+    "menuParent": "events"
   },
   "defaults": {
     "style": "single",
@@ -302,6 +302,13 @@
           "flags": ["euLocked"],
           "sanbaiTier": 18.5,
           "maxScore": 2595
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.65,
+          "maxScore": 1773
         }
       ],
       "search_hint": "IDENTITY",
@@ -549,6 +556,13 @@
           "style": "single",
           "diffClass": "challenge",
           "sanbaiTier": 18.15
+        },
+        {
+          "maxScore": 1494,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.15
         }
       ],
       "remyLink": "https://remywiki.com/Air_Heroes",
@@ -1248,25 +1262,6 @@
       "genre": "TRANCE",
       "saHash": "PO68qOQI1oo8iQidQ9iIi9o9PPOD9OP6",
       "saIndex": "279"
-    },
-    {
-      "name": "Bounce Trippy",
-      "artist": "Dustvoxx",
-      "bpm": "185",
-      "folder": "DanceDanceRevolution A20",
-      "charts": [
-        {
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 14.6,
-          "maxScore": 1737
-        }
-      ],
-      "remyLink": "https://remywiki.com/Bounce_Trippy",
-      "jacket": "ddr_a20/Bounce Trippy.png",
-      "saHash": "l81l981iPod0PDIIObIldoQb6Ol9o1Iq",
-      "saIndex": "907"
     },
     {
       "name": "Brazilian Anthem",
@@ -2334,26 +2329,6 @@
       "saIndex": "640"
     },
     {
-      "name": "Electro Tuned ( the SubS Mix )",
-      "artist": "TaQ",
-      "bpm": "125",
-      "folder": "DanceDanceRevolution 5th Mix",
-      "charts": [
-        {
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.7,
-          "maxScore": 1047
-        }
-      ],
-      "remyLink": "https://remywiki.com/Electro_Tuned(the_SubS_mix)",
-      "jacket": "ddr_1st-5th/Electro Tuned ( the SubS Mix ).png",
-      "genre": "BIG BEAT",
-      "saHash": "IPi69l86oqdDd8qoll61166D8969869I",
-      "saIndex": "55"
-    },
-    {
       "name": "Electronic Sports Complex",
       "saHash": "Q99q619i0lDqll6Q0lq8l1oQ0qPO8o6I",
       "artist": "栄免建設",
@@ -2749,6 +2724,13 @@
           "maxScore": 1683,
           "flags": ["shock"],
           "sanbaiTier": 16.5
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.15,
+          "maxScore": 1584
         }
       ],
       "remyLink": "https://remywiki.com/Firestorm",
@@ -3535,6 +3517,13 @@
           "diffClass": "challenge",
           "sanbaiTier": 18.6,
           "maxScore": 2250
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.1,
+          "maxScore": 1719
         }
       ],
       "remyLink": "https://remywiki.com/HyperTwist",
@@ -3607,13 +3596,6 @@
       "folder": "DanceDanceRevolution (2014)",
       "charts": [
         {
-          "maxScore": 1719,
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 14.7
-        },
-        {
           "maxScore": 1827,
           "lvl": 15,
           "style": "single",
@@ -3644,26 +3626,6 @@
       "jacket": "ddr_sn-sn2/INNOCENCE OF SILENCE.png",
       "saHash": "qDi0dIlObi6Q6P8dQ1b8oIb188O9608o",
       "saIndex": "172"
-    },
-    {
-      "name": "INSERTiON",
-      "artist": "NAOKI underground",
-      "bpm": "110-225",
-      "folder": "DanceDanceRevolution 5th Mix",
-      "charts": [
-        {
-          "maxScore": 1122,
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.75
-        }
-      ],
-      "remyLink": "https://remywiki.com/INSERTiON",
-      "jacket": "ddr_1st-5th/INSERTiON.png",
-      "genre": "EURO TRANCE",
-      "saHash": "6oldqOoilo1OoP6P9OoO8bdD9lI86qdQ",
-      "saIndex": "57"
     },
     {
       "name": "insist",
@@ -4576,25 +4538,6 @@
       "saIndex": "944"
     },
     {
-      "name": "Mind Parasite",
-      "artist": "TOMOSUKE",
-      "bpm": "145",
-      "folder": "DanceDanceRevolution SuperNOVA",
-      "charts": [
-        {
-          "maxScore": 1068,
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.2
-        }
-      ],
-      "remyLink": "https://remywiki.com/Mind_Parasite",
-      "jacket": "ddr_sn-sn2/Mind Parasite.png",
-      "saHash": "b6dqPiOO6iO6b8D90Ido6QPOlObd9o98",
-      "saIndex": "184"
-    },
-    {
       "name": "MODEL FT2 Miracle Version",
       "artist": "Mutsuhiko Izumi",
       "saHash": "IdDblQIbq8Di9iOo61O0bQIIPqPQ16o8",
@@ -5351,13 +5294,6 @@
       "folder": "DanceDanceRevolution SuperNOVA2",
       "charts": [
         {
-          "maxScore": 1374,
-          "lvl": 15,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 15.75
-        },
-        {
           "maxScore": 1989,
           "lvl": 18,
           "style": "single",
@@ -5734,6 +5670,13 @@
           "diffClass": "difficult",
           "sanbaiTier": 14.85,
           "maxScore": 1227
+        },
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.55,
+          "maxScore": 1686
         }
       ],
       "remyLink": "https://remywiki.com/Pursuer",
@@ -6225,25 +6168,6 @@
       "saIndex": "788"
     },
     {
-      "name": "Samurai Shogun vs. Master Ninja",
-      "artist": "96",
-      "bpm": "260",
-      "folder": "DanceDanceRevolution (2014)",
-      "charts": [
-        {
-          "maxScore": 1782,
-          "lvl": 15,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 15.5
-        }
-      ],
-      "remyLink": "https://remywiki.com/Samurai_Shogun_vs._Master_Ninja",
-      "jacket": "ddr_2014/Samurai Shogun vs. Master Ninja.png",
-      "saHash": "9iOoPoQ998qD66DoOOOqD9oDQD88P8I0",
-      "saIndex": "636"
-    },
-    {
       "name": "Scarlet Moon",
       "artist": "REDALiCE feat. Ayumi Nomiya",
       "bpm": "180",
@@ -6304,25 +6228,6 @@
       "saHash": "9bI0dQdb01Dl1bQq1Pq998i0l096D99P",
       "saIndex": "385",
       "search_hint": "HANDZ UP/ハンズアップ"
-    },
-    {
-      "name": "SEDUCTION",
-      "artist": "nc ft. FINALFORCE",
-      "bpm": "95-190",
-      "folder": "DanceDanceRevolution SuperNOVA",
-      "charts": [
-        {
-          "maxScore": 1194,
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.5
-        }
-      ],
-      "remyLink": "https://remywiki.com/SEDUCTION",
-      "jacket": "ddr_sn-sn2/SEDUCTION.png",
-      "saHash": "oIQo8IQPbobO6bioiqqdP6P6O8898DOQ",
-      "saIndex": "201"
     },
     {
       "name": "SEDUCTION(Vocal Remix)",
@@ -7426,26 +7331,6 @@
       "saIndex": "266"
     },
     {
-      "name": "Triple Counter",
-      "artist": "DJ YOSHITAKA meets dj TAKA",
-      "bpm": "216",
-      "folder": "DanceDanceRevolution A",
-      "charts": [
-        {
-          "maxScore": 2223,
-          "lvl": 17,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 17.55
-        }
-      ],
-      "remyLink": "https://remywiki.com/Triple_Counter",
-      "jacket": "ddr_a/Triple Counter.png",
-      "genre": "リスク+バキューム/RISK + VACUUM",
-      "saHash": "d810q0I8q6d0l1POlIO6d66bOPb96dql",
-      "saIndex": "742"
-    },
-    {
       "name": "Triple Journey -TAG EDITION-",
       "artist": "Triumvirate",
       "bpm": "96-192",
@@ -7935,6 +7820,13 @@
           "diffClass": "challenge",
           "sanbaiTier": 18.65,
           "maxScore": 2184
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.25,
+          "maxScore": 1503
         }
       ],
       "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days",
@@ -7983,28 +7875,6 @@
       "saHash": "96QPqq0q6Id0Ii0QbD1bQqPbiDqb0lPo",
       "saIndex": "401",
       "search_hint": "IDM"
-    },
-    {
-      "name": "ÆTHER",
-      "name_translation": "AETHER",
-      "artist": "TAG underground",
-      "bpm": "191-384",
-      "folder": "DanceDanceRevolution (2014)",
-      "charts": [
-        {
-          "maxScore": 1722,
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 14.6
-        }
-      ],
-      "remyLink": "https://remywiki.com/AETHER",
-      "jacket": "ddr_2014/ÆTHER.png",
-      "genre": "ASTRAL HARDCORE",
-      "search_hint": "aether",
-      "saHash": "l6d0ibbliQPQDdb1lP18D9qbPDi1698b",
-      "saIndex": "587"
     },
     {
       "name": "Übertreffen",
@@ -9938,6 +9808,133 @@
       "genre": "撫子メタル",
       "saHash": "16oDDIlP8bIODQ6Ql0881d9Qqdb19b98",
       "saIndex": "701"
+    },
+    {
+      "name": "Sweet Clock",
+      "artist": "あるふぁ",
+      "artist_translation": "alpha",
+      "bpm": "178",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.3,
+          "maxScore": 1518
+        }
+      ],
+      "remyLink": "https://remywiki.com/Sweet_Clock",
+      "jacket": "ddr_a20plus/Sweet Clock.jpg",
+      "saHash": "I0DDidl0PIo6bO6o8I08Q1Pq89IdP6Pb",
+      "saIndex": "1026"
+    },
+    {
+      "name": "Angelic Jelly",
+      "artist": "t+pazolite",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "maxScore": 1599,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Angelic_Jelly",
+      "jacket": "ddr_a/Angelic Jelly.png",
+      "genre": "ハッピーでハードコア/HAPPY で HARDCORE",
+      "saHash": "9Q081Q0Do0IDDqQi9O61P111QIQd0oQ6",
+      "saIndex": "737"
+    },
+    {
+      "name": "Triple Cross",
+      "artist": "BEMANI Sound Team \"dj TAKA & DJ YOSHITAKA & SYUNN\"",
+      "bpm": "196",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.3,
+          "maxScore": 2022
+        }
+      ],
+      "remyLink": "https://remywiki.com/Triple_Cross",
+      "jacket": "ddr_a20plus/Triple Cross.jpg",
+      "genre": "MUSIC GAME TRADITIONAL/ミュージックゲームトラディショナル",
+      "saHash": "IQqi9Q9qD0DDQIqQOb868QIOioqDqI01",
+      "saIndex": "1032"
+    },
+    {
+      "name": "Starlight in the Snow",
+      "artist": "BEMANI Sound Team \"劇団レコード\" ft.Lisa - paint with stars",
+      "artist_translation": "BEMANI Sound Team \"Gekidan Record\" ft.Lisa-Paint with stars",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution A20",
+      "charts": [
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.7,
+          "maxScore": 1446
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "challenge",
+          "maxScore": 1725,
+          "flags": ["shock"],
+          "sanbaiTier": 16.45
+        }
+      ],
+      "remyLink": "https://remywiki.com/Starlight_in_the_Snow",
+      "jacket": "ddr_a20/Starlight in the Snow.jpg",
+      "saHash": "bbiPqbo0lQq9P19i06q690blI91dbbq6",
+      "saIndex": "917"
+    },
+    {
+      "name": "Pierce The Sky",
+      "artist": "JAKAZiD feat. K.N.",
+      "bpm": "85-173",
+      "folder": "DanceDanceRevolution X2",
+      "charts": [
+        {
+          "maxScore": 1500,
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.6
+        }
+      ],
+      "remyLink": "https://remywiki.com/Pierce_The_Sky",
+      "jacket": "ddr_x2/Pierce The Sky.png",
+      "saHash": "DD6olq00PD91odbO9QbldDb0bQ18oqo1",
+      "saIndex": "372"
+    },
+    {
+      "name": "Sand Blow",
+      "artist": "肥塚良彦",
+      "artist_translation": "Yoshihiko Koezuka",
+      "bpm": "165",
+      "folder": "DanceDanceRevolution (2014)",
+      "charts": [
+        {
+          "maxScore": 1668,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.7
+        }
+      ],
+      "remyLink": "https://remywiki.com/Sand_Blow",
+      "jacket": "ddr_2014/Sand Blow.png",
+      "saHash": "QiQi666Qd9I6d1899iii80PdQdDlO1i1",
+      "saIndex": "637"
     }
   ]
 }
