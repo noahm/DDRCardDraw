@@ -4,6 +4,12 @@
   right: 5px;
 }
 
+.matchActions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 :global(.obs-layer) .networkButtons {
   display: none;
 }

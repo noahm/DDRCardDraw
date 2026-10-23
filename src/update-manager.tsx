@@ -4,14 +4,17 @@ import { toaster } from "./toaster";
 import { Intent } from "@blueprintjs/core";
 import { useIntl } from "./hooks/useIntl";
 import { Outdated } from "@blueprintjs/icons";
+import { useInObs } from "./theme-toggle";
 
 export function UpdateManager() {
   const { t } = useIntl();
+  const isObs = useInObs();
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       OfflinePluginRuntime.install({
         onUpdateReady() {
           OfflinePluginRuntime.applyUpdate();
+          if (isObs) return;
           toaster.show(
             {
               message: t("updateLoading"),
@@ -21,6 +24,10 @@ export function UpdateManager() {
           );
         },
         onUpdated() {
+          if (isObs) {
+            window.location.reload();
+            return;
+          }
           toaster.clear();
           toaster.show(
             {
