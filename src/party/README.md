@@ -12,13 +12,12 @@ it's going, [`docs/partykit-sync-roadmap.md`](../../docs/partykit-sync-roadmap.m
 
 ```bash
 yarn start:backend   # wrangler dev on :1999, what the dev frontend connects to
-yarn deploy:party    # wrangler deploy to ddr-card-draw-party.psoplayer.workers.dev
+yarn deploy:party    # wrangler deploy, served at live.ddr.tools
 ```
 
 Deploy the server before the web app whenever the protocol changes. The web
 app's target host is baked in at build time as `PARTY_HOST` (see
-`webpack.config.js`); set that env var to point a build somewhere else, such
-as a custom domain.
+`webpack.config.js`); set that env var to point a build somewhere else.
 
 ## Operating an event room
 
@@ -52,10 +51,10 @@ R2 hydration path: `get` it without `--local`, then `put` it with `--local`.
 
 ```bash
 # health: hydration source, per-target write tallies, durability lag, warnings
-curl -s 'https://ddr-card-draw-party.psoplayer.workers.dev/parties/main/<room>?debug' | jq
+curl -s 'https://live.ddr.tools/parties/main/<room>?debug' | jq
 
 # the room's current state, straight from the actor's memory
-curl -s 'https://ddr-card-draw-party.psoplayer.workers.dev/parties/main/<room>' > room.json
+curl -s 'https://live.ddr.tools/parties/main/<room>' > room.json
 
 # follow one room's diagnostic log (wraps `wrangler tail`)
 yarn watch:room <room>          # accepts a room id or a full /e/ URL

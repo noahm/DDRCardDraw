@@ -5,6 +5,9 @@
   "name": "ddr-card-draw-party",
   "main": "src/party/worker.ts",
   "compatibility_date": "2026-10-01",
+  // Wrangler creates the DNS record and certificate for this on deploy. The
+  // web app's production build targets it (PARTY_HOST in webpack.config.js).
+  "routes": [{ "pattern": "live.ddr.tools", "custom_domain": true }],
   "observability": {
     "enabled": true,
   },

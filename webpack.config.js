@@ -227,12 +227,10 @@ module.exports = function (env = {}, argv = {}) {
         ),
         // Host of the event-mode sync Worker (src/party/worker.ts). Dev hits
         // `yarn start:backend` (wrangler dev on :1999, clear of rgt-data's
-        // :8787). Override with a PARTY_HOST env var, e.g. for a custom domain.
+        // :8787). Override with a PARTY_HOST env var.
         "process.env.PARTY_HOST": JSON.stringify(
           process.env.PARTY_HOST ||
-            (isProd
-              ? "ddr-card-draw-party.psoplayer.workers.dev"
-              : "localhost:1999"),
+            (isProd ? "live.ddr.tools" : "localhost:1999"),
         ),
         // Public Cloudflare Turnstile site key for the SMX publish widget. Empty =
         // widget disabled / no token sent (current prod default). Dev uses Cloudflare's
