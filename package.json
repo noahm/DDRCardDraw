@@ -28,6 +28,7 @@
     "import:sdvx": "node scripts/import-sdvx.mjs",
     "import:iidx": "node --experimental-strip-types scripts/import-iidx.mts",
     "import:smx": "node --experimental-strip-types scripts/import-smx.mts",
+    "import:drs": "node --experimental-strip-types scripts/import-drs.mts",
     "import:itg": "node scripts/import-itg.mjs",
     "import:eventList": "node scripts/event-filter.mjs",
     "validate": "run-p 'validate:*'",
