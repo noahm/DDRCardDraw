@@ -354,7 +354,7 @@ type ParsedJsonFile =
 async function readJsonFile(file: File): Promise<ParsedJsonFile> {
   try {
     const parsed: unknown = JSON.parse(await file.text());
-    const problems = validateGameData(parsed);
+    const problems = await validateGameData(parsed);
     if (problems.length) {
       return { data: null, error: problems.join("\n") };
     }
@@ -366,9 +366,10 @@ async function readJsonFile(file: File): Promise<ParsedJsonFile> {
 
 /**
  * Publish a premade GameData `.json` file as-is: it's checked against the schema
- * up front so a bad file fails here with a readable reason, then published to
- * data.ddr.tools like any other custom set (which validates it again) so every
- * synced peer resolves it to the same bytes. Only the display name can change.
+ * it declares (see `validateGameData`) up front so a bad file fails here with a
+ * readable reason, then published to data.ddr.tools like any other custom set
+ * (which validates it again) so every synced peer resolves it to the same bytes.
+ * Only the display name can change.
  */
 function JsonImportForm({
   initialFile,
