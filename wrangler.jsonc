@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Event-mode sync backend: one Durable Object per event room, routed by
+  // partyserver at /parties/main/<room> (the same paths partykit served).
+  "name": "ddr-card-draw-party",
+  "main": "src/party/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "observability": {
+    "enabled": true,
+  },
+  "durable_objects": {
+    "bindings": [
+      // the binding name is the party name: partyserver kebab-cases `Main`
+      // into the `main` segment of /parties/main/<room>
+      { "name": "Main", "class_name": "Main" },
+    ],
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Main"] }],
+  // Off-box copy of every room's snapshot, as plain JSON at
+  // rooms/<room>/snapshot.json. This is the bucket the partykit deploy wrote
+  // to over the S3 API, so rooms saved there hydrate from it on first visit.
+  // `wrangler dev` simulates it locally under .wrangler/state.
+  "r2_buckets": [
+    {
+      "binding": "SNAPSHOTS",
+      "bucket_name": "ddr-tools-persistence",
+    },
+  ],
+}

@@ -2,7 +2,7 @@
 /**
  * Watch the deployed party server's logs for a single event room.
  *
- * Wraps `partykit tail`, which supports a server-side `--search` text filter.
+ * Wraps `wrangler tail`, which supports a server-side `--search` text filter.
  * Every diagnostic line the server emits carries `room=<id>`, so searching for
  * that string narrows the firehose to one event. The room id is the `:roomName`
  * segment of an event URL, so you can paste the whole link a reporter sent you.
@@ -16,8 +16,8 @@
  * when a room restarts holding unconfirmed storage writes, and when a restart
  * hydrates a snapshot that doesn't match the last state we saw applied.
  *
- * A tail session expires server-side and the partykit CLI does not reconnect,
- * so this restarts it automatically and marks the gap. Tail has no backfill:
+ * A tail session can expire or give up reconnecting, so this restarts it
+ * automatically and marks the gap. Tail has no backfill:
  * anything logged during a gap is gone, which is why gaps are printed rather
  * than papered over, and why findings that straddle one are qualified.
  */
@@ -50,7 +50,7 @@ function usage() {
 Watch one event room's party server logs.
 
 Usage:
-  node scripts/watch-room.mjs <room-id-or-event-url> [options] [-- <partykit args>]
+  node scripts/watch-room.mjs <room-id-or-event-url> [options] [-- <wrangler tail args>]
 
 Options:
   --out <file>   append the timeline to a file as well (no colour codes), so
@@ -62,8 +62,8 @@ Options:
                  invocation, even if another room's line tripped the search)
   -h, --help     show this
 
-Anything after \`--\` is passed through to \`partykit tail\`, e.g.:
-  node scripts/watch-room.mjs abc123 -- --preview my-preview
+Anything after \`--\` is passed through to \`wrangler tail\`, e.g.:
+  node scripts/watch-room.mjs abc123 -- --status error
 `);
 }
 
@@ -125,13 +125,13 @@ function emit(line) {
 }
 
 const localBin = resolve(
-  join(__dirname, "..", "node_modules", ".bin", "partykit"),
+  join(__dirname, "..", "node_modules", ".bin", "wrangler"),
 );
-const partykitBin = existsSync(localBin) ? localBin : "partykit";
+const wranglerBin = existsSync(localBin) ? localBin : "wrangler";
 
 console.error(
   color.bold(`watching room ${roomId}`) +
-    color.dim(` (via ${partykitBin} tail --search "room=${roomId}")`),
+    color.dim(` (via ${wranglerBin} tail --search "room=${roomId}")`),
 );
 if (outStream) console.error(color.dim(`appending timeline to ${outPath}`));
 console.error(color.dim("ctrl-c to stop and print a summary\n"));
@@ -321,8 +321,9 @@ function handleEvent(evt) {
   }
 }
 
-// `partykit tail -f json` emits JSON.stringify(event, null, 2) per event, so a
-// top-level closing brace at column 0 delimits each one.
+// `wrangler tail --format json` pretty-prints each event, so a top-level
+// closing brace at column 0 delimits each one. Anything before the opening
+// brace (a CLI banner, say) is not part of the event and is skipped.
 let buffer = "";
 
 function onChunk(chunk) {
@@ -333,8 +334,10 @@ function onChunk(chunk) {
   buffer += chunk;
   let end;
   while ((end = buffer.indexOf("\n}\n")) !== -1) {
-    const block = buffer.slice(0, end + 2);
+    let block = buffer.slice(0, end + 2);
     buffer = buffer.slice(end + 3);
+    const start = block.search(/^\{/m);
+    if (start > 0) block = block.slice(start);
     try {
       handleEvent(JSON.parse(block));
     } catch {
@@ -427,15 +430,15 @@ function spawnTail() {
   startedAt = Date.now();
   buffer = "";
   child = spawn(
-    partykitBin,
-    ["tail", "-f", "json", "--search", `room=${roomId}`, ...tailArgs],
+    wranglerBin,
+    ["tail", "--format", "json", "--search", `room=${roomId}`, ...tailArgs],
     { stdio: ["ignore", "pipe", "inherit"] },
   );
   child.stdout.setEncoding("utf8");
   child.stdout.on("data", onChunk);
 
   child.on("error", (err) => {
-    console.error(color.red(`failed to run ${partykitBin}: ${err.message}`));
+    console.error(color.red(`failed to run ${wranglerBin}: ${err.message}`));
     finish(1);
   });
 
@@ -456,7 +459,7 @@ function spawnTail() {
       emit(
         color.red(
           `tail exited ${failures} times in a row without staying up — giving up. ` +
-            `Check that \`${partykitBin} tail\` works on its own (login, project name).`,
+            `Check that \`${wranglerBin} tail\` works on its own (login, project name).`,
         ),
       );
       finish(1);

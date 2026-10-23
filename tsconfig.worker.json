@@ -1,0 +1,12 @@
+{
+  // The event-mode backend (src/party/worker.ts and what it imports) runs on
+  // Cloudflare Workers, so it's checked against the workers runtime types
+  // instead of the DOM. The root tsconfig excludes its entry files.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": ["src/party/worker.ts", "types/*"],
+  "exclude": []
+}

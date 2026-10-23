@@ -12,11 +12,10 @@
   "scripts": {
     "start": "echo 'You also need to run `yarn start:backend` in another shell'; yarn start:frontend",
     "start:frontend": "webpack serve --env dev=true",
-    "start:backend": "run-p --continue-on-error 'start:backend:*'",
-    "start:backend:party": "partykit dev",
-    "start:backend:snapshots": "node scripts/local-snapshot-store.mjs",
+    "start:backend": "wrangler dev --port 1999",
     "build": "webpack",
     "build:zip": "npm run validate && webpack --env zip",
+    "deploy:party": "wrangler deploy",
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "format": "oxfmt",
@@ -36,10 +35,7 @@
     "validate:format": "oxfmt --check",
     "validate:types": "run-s validate:types:data validate:types:ts",
     "validate:types:data": "node scripts/validate.mjs",
-    "validate:types:ts": "tsc --noemit"
-  },
-  "dependencies": {
-    "aws4fetch": "^1.0.20"
+    "validate:types:ts": "tsc --noemit && tsc --noemit -p tsconfig.worker.json"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -55,6 +51,7 @@
     "@blueprintjs/icons": "6.8.0",
     "@blueprintjs/select": "6.1.8",
     "@blueprintjs/table": "6.0.22",
+    "@cloudflare/workers-types": "^5.20261019.1",
     "@codemirror/lang-css": "^6.3.1",
     "@codemirror/view": "^6.38.2",
     "@graphql-codegen/cli": "5.0.3",
@@ -109,7 +106,7 @@
     "oxlint-tsgolint": "^0.21.1",
     "p-queue": "9.0.1",
     "papaparse": "5.5.3",
-    "partykit": "0.0.115",
+    "partyserver": "^0.5.10",
     "partysocket": "1.3.0",
     "postcss": "^8.5.19",
     "postcss-loader": "8.2.0",
@@ -133,6 +130,7 @@
     "webpack-cli": "6.0.1",
     "webpack-dev-server": "^5.2.6",
     "webpack-sources": "3.3.3",
+    "wrangler": "^4.151.3",
     "xml2js": "0.6.2",
     "zip-webpack-plugin": "4.0.3",
     "zustand": "5.0.9"
