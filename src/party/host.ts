@@ -1,18 +1,17 @@
 import type { AppState } from "../state/root-reducer";
 
-export const PARTYKIT_HOST =
-  process.env.NODE_ENV === "development"
-    ? "localhost:1999"
-    : "ddr-card-draw-party.noahm.partykit.dev";
+/** where the event-mode sync Worker is served, set at build time by webpack */
+export const PARTY_HOST = process.env.PARTY_HOST as string;
 
-const ENDPOINT_PROTOCOL =
-  process.env.NODE_ENV === "development" ? "http" : "https";
+const ENDPOINT_PROTOCOL = /^(localhost|127\.0\.0\.1)(:|$)/.test(PARTY_HOST)
+  ? "http"
+  : "https";
 
-export function partykitEndpoint(roomName: string) {
-  return `${ENDPOINT_PROTOCOL}://${PARTYKIT_HOST}/parties/main/${roomName}`;
+export function partyEndpoint(roomName: string) {
+  return `${ENDPOINT_PROTOCOL}://${PARTY_HOST}/parties/main/${roomName}`;
 }
 
-export async function getPartykitState(roomName: string): Promise<AppState> {
-  const req = await fetch(partykitEndpoint(roomName));
+export async function getPartyState(roomName: string): Promise<AppState> {
+  const req = await fetch(partyEndpoint(roomName));
   return await req.json();
 }

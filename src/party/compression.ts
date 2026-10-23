@@ -1,7 +1,8 @@
 /**
- * gzip helpers for values written to partykit room storage.
+ * gzip helpers for values written to Durable Object room storage.
  *
- * Room storage rejects any value over 131072 bytes, measured on the
+ * Room storage rejects any key + value over 2 MB (it was 131072 bytes on
+ * partykit, which is what this was written against), measured on the
  * structured-clone payload: a typed array costs its `byteLength` plus 13 bytes
  * (verified against workerd), so compression converts almost 1:1 into headroom.
  * Event-mode state is thousands of repetitions of the same twenty key names,
@@ -25,7 +26,7 @@ export async function gzipJson(value: unknown): Promise<Uint8Array> {
  * than trying to salvage it.
  */
 export async function gunzipJson(bytes: Uint8Array): Promise<unknown> {
-  const stream = new Blob([bytes as BlobPart])
+  const stream = new Blob([bytes])
     .stream()
     .pipeThrough(new DecompressionStream("gzip"));
   return JSON.parse(await new Response(stream).text()) as unknown;
