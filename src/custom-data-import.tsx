@@ -14,7 +14,7 @@ import {
   TextArea,
   Text,
 } from "@blueprintjs/core";
-import { Archive, FolderOpen, Import } from "@blueprintjs/icons";
+import { Archive, Document, FolderOpen, Import } from "@blueprintjs/icons";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import type { PackWithSongs } from "simfile-parser/browser";
@@ -37,7 +37,8 @@ import { TurnstileWidget, TURNSTILE_SITE_KEY } from "./utils/turnstile";
 import {
   customDataDialogOpen,
   loadCustomGamedataByUrl,
-  pendingPackDrop,
+  pendingDrop,
+  validateGameData,
 } from "./state/game-data.atoms";
 import { useAppDispatch } from "./state/store";
 import { createConfigFromInputs } from "./state/thunks";
@@ -46,7 +47,7 @@ import { useIntl } from "./hooks/useIntl";
 import type { GameData } from "./models/SongData";
 import { toaster } from "./toaster";
 
-type ImportSource = "smx" | "itg";
+type ImportSource = "smx" | "itg" | "json";
 
 /**
  * App-root host for the custom-data dialog, driven by the global
@@ -86,15 +87,16 @@ export function CreateCustomDataDialog({
 }) {
   const { t } = useIntl();
   const [chosen, setChosen] = useState<ImportSource | null>(null);
-  const [droppedPack, setDroppedPack] = useAtom(pendingPackDrop);
-  // Dropping a pack says which importer is wanted, so it skips the chooser.
-  const source = chosen ?? (droppedPack ? "itg" : null);
+  const [dropped, setDropped] = useAtom(pendingDrop);
+  // Dropping something says which importer is wanted, so it skips the chooser.
+  const source =
+    chosen ?? (dropped ? (dropped.kind === "json" ? "json" : "itg") : null);
 
   const handleClose = useCallback(() => {
     setChosen(null);
-    setDroppedPack(null);
+    setDropped(null);
     onClose();
-  }, [onClose, setDroppedPack]);
+  }, [onClose, setDropped]);
 
   return (
     <Dialog
@@ -104,7 +106,9 @@ export function CreateCustomDataDialog({
           ? "customData.smxTitle"
           : source === "itg"
             ? "customData.itgTitle"
-            : "customData.chooseTitle",
+            : source === "json"
+              ? "customData.jsonTitle"
+              : "customData.chooseTitle",
       )}
       icon={<Import />}
       onClose={handleClose}
@@ -112,7 +116,16 @@ export function CreateCustomDataDialog({
       {isOpen && !source && <SourceChooser onChoose={setChosen} />}
       {isOpen && source === "smx" && <EditImportForm onClose={handleClose} />}
       {isOpen && source === "itg" && (
-        <PackImportForm initialSource={droppedPack} onClose={handleClose} />
+        <PackImportForm
+          initialSource={dropped?.kind === "pack" ? dropped.item : null}
+          onClose={handleClose}
+        />
+      )}
+      {isOpen && source === "json" && (
+        <JsonImportForm
+          initialFile={dropped?.kind === "json" ? dropped.file : null}
+          onClose={handleClose}
+        />
       )}
     </Dialog>
   );
@@ -137,6 +150,11 @@ function SourceChooser({
           icon={<FolderOpen />}
           text={t("customData.chooseItg")}
           onClick={() => onChoose("itg")}
+        />
+        <MenuItem
+          icon={<Document />}
+          text={t("customData.chooseJson")}
+          onClick={() => onChoose("json")}
         />
       </Menu>
       <Text tagName="p">{t("customData.dropHint")}</Text>
@@ -319,6 +337,178 @@ function EditImportForm({ onClose }: { onClose: (this: void) => void }) {
               }
             >
               {`Publish${foundCount ? ` ${foundCount}` : ""}`}
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </>
+        }
+      />
+    </>
+  );
+}
+
+/** A premade data file that's been read, parsed, and checked against the schema. */
+type ParsedJsonFile =
+  | { data: GameData; error: null }
+  | { data: null; error: string };
+
+async function readJsonFile(file: File): Promise<ParsedJsonFile> {
+  try {
+    const parsed: unknown = JSON.parse(await file.text());
+    const problems = validateGameData(parsed);
+    if (problems.length) {
+      return { data: null, error: problems.join("\n") };
+    }
+    return { data: parsed as GameData, error: null };
+  } catch (e) {
+    return { data: null, error: convertErrorToString(e) };
+  }
+}
+
+/**
+ * Publish a premade GameData `.json` file as-is: it's checked against the schema
+ * up front so a bad file fails here with a readable reason, then published to
+ * data.ddr.tools like any other custom set (which validates it again) so every
+ * synced peer resolves it to the same bytes. Only the display name can change.
+ */
+function JsonImportForm({
+  initialFile,
+  onClose,
+}: {
+  initialFile: File | null;
+  onClose: (this: void) => void;
+}) {
+  const [file, setFile] = useState<File | null>(initialFile);
+  const [parsed, setParsed] = useState<ParsedJsonFile | null>(null);
+  const [name, setName] = useState("");
+  const [publishing, setPublishing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
+  const [widgetKey, setWidgetKey] = useState(0);
+  const fileInput = useRef<HTMLInputElement>(null);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const setLastConfigSelected = useSetLastConfigSelected();
+  const { t } = useIntl();
+
+  useEffect(() => {
+    if (!file) return;
+    let ignore = false;
+    setParsed(null);
+    setError(null);
+    void readJsonFile(file).then((result) => {
+      if (ignore) return;
+      setParsed(result);
+      const fileName = file.name.replace(/\.json$/i, "");
+      setName((result.data?.i18n.en?.name as string | undefined) || fileName);
+    });
+    return () => {
+      ignore = true;
+    };
+  }, [file]);
+
+  const data = parsed?.data;
+  const chartCount =
+    data?.songs.reduce((total, song) => total + song.charts.length, 0) ?? 0;
+
+  async function publish() {
+    if (!data || !file) return;
+    setPublishing(true);
+    setError(null);
+    try {
+      const named: GameData = {
+        ...data,
+        i18n: { ...data.i18n, en: { ...data.i18n.en, name: name.trim() } },
+      };
+      const { url } = await publishBundle(
+        named,
+        { kind: "json", fileName: file.name },
+        token ?? undefined,
+      );
+      const loaded = await loadCustomGamedataByUrl(url);
+      if (!loaded) {
+        setError("Published, but the bundle didn't load back. Try again.");
+        return;
+      }
+      const newConfig = await dispatch(
+        createConfigFromInputs(name.trim(), url),
+      );
+      setLastConfigSelected(newConfig.id);
+      toaster.show({
+        intent: "success",
+        icon: "import",
+        message: t("customData.createdJson", { count: data.songs.length }),
+      });
+      onClose();
+      navigate("config/" + newConfig.id);
+    } catch (e) {
+      setError(convertErrorToString(e));
+      // The token may have been consumed server-side; remount for a fresh one so
+      // a retry isn't rejected for reusing a single-use token.
+      setToken(null);
+      setWidgetKey((k) => k + 1);
+    } finally {
+      setPublishing(false);
+    }
+  }
+
+  return (
+    <>
+      <DialogBody>
+        <Text tagName="p">{t("customData.jsonExplainer")}</Text>
+        <input
+          type="file"
+          ref={fileInput}
+          style={{ display: "none" }}
+          accept=".json,application/json"
+          onChange={(e) => setFile(e.currentTarget.files?.[0] ?? null)}
+        />
+        <FormGroup>
+          <Button
+            icon={<Document />}
+            loading={!!file && !parsed}
+            onClick={() => fileInput.current?.click()}
+          >
+            {file ? file.name : t("customData.chooseJsonFile")}
+          </Button>
+        </FormGroup>
+        {data && (
+          <>
+            <FormGroup
+              label="Data set name"
+              helperText="Shown in the game data picker."
+            >
+              <InputGroup
+                value={name}
+                onChange={(e) => setName(e.currentTarget.value)}
+              />
+            </FormGroup>
+            <Text tagName="p">
+              {`${data.songs.length} song${data.songs.length === 1 ? "" : "s"}, `}
+              {`${chartCount} chart${chartCount === 1 ? "" : "s"}.`}
+            </Text>
+          </>
+        )}
+        {parsed?.error && (
+          <Callout intent="danger" title={t("customData.jsonInvalid")}>
+            <code style={{ whiteSpace: "pre-wrap" }}>{parsed.error}</code>
+          </Callout>
+        )}
+        {error && <PublishError error={error} />}
+        <TurnstileSlot widgetKey={widgetKey} onToken={setToken} />
+      </DialogBody>
+      <DialogFooter
+        actions={
+          <>
+            <Button
+              intent="primary"
+              icon={<Import />}
+              onClick={publish}
+              loading={publishing}
+              disabled={
+                !data || !name.trim() || (!!TURNSTILE_SITE_KEY && !token)
+              }
+            >
+              Publish
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </>

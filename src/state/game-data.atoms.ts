@@ -43,11 +43,15 @@ export const customDataCache = atom<Record<string, GameData>>({});
 export const customDataDialogOpen = atom(false);
 
 /**
- * A pack (folder or `.zip`) dropped onto the window, waiting to be picked up by
- * the custom-data dialog. Dropping a pack is unambiguous, so it skips the dialog's source
- * chooser and opens the ITG pack form directly on this item.
+ * Something dropped onto the window, waiting to be picked up by the custom-data
+ * dialog: either an ITG pack (folder or `.zip`) or a premade GameData `.json`
+ * file. Either is unambiguous, so it skips the dialog's source chooser and opens
+ * the matching form directly on it.
  */
-export const pendingPackDrop = atom<DataTransferItem | null>(null);
+export type PendingDrop =
+  | { kind: "pack"; item: DataTransferItem }
+  | { kind: "json"; file: File };
+export const pendingDrop = atom<PendingDrop | null>(null);
 
 export const stockDataByName = atomFamily((name: string) =>
   atom((get) => get(stockDataCache)[name]),
@@ -89,6 +93,17 @@ export async function loadStockGamedataByName(name: string) {
 const gameDataValidator = new Validator();
 
 /**
+ * Check arbitrary parsed JSON against the canonical Game Data schema. Returns a
+ * handful of human-readable problems, or an empty list if it's valid.
+ */
+export function validateGameData(data: unknown): string[] {
+  const result = gameDataValidator.validate(data, gameDataSchema as Schema, {
+    nestedErrors: true,
+  });
+  return result.errors.slice(0, 5).map((e) => `${e.property} ${e.message}`);
+}
+
+/**
  * Resolve a `gameKey` that is an http(s) URL to a published, immutable bundle:
  * fetch it, validate against the canonical Game Data schema, and cache it in
  * `customDataCache` keyed by URL (safe to cache forever — bundles are immutable).
@@ -110,14 +125,9 @@ export async function loadCustomGamedataByUrl(
       throw new Error(`request failed with status ${res.status}`);
     }
     const data = (await res.json()) as GameData;
-    const result = gameDataValidator.validate(data, gameDataSchema as Schema, {
-      nestedErrors: true,
-    });
-    if (!result.valid) {
-      console.warn(
-        `bundle at '${url}' failed schema validation`,
-        result.errors.slice(0, 5).map((e) => `${e.property} ${e.message}`),
-      );
+    const errors = validateGameData(data);
+    if (errors.length) {
+      console.warn(`bundle at '${url}' failed schema validation`, errors);
       return undefined;
     }
     withLegacyJacketUrls(data);
