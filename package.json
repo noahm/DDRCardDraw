@@ -34,7 +34,7 @@
     "validate:lint": "oxlint",
     "validate:format": "oxfmt --check",
     "validate:types": "run-s validate:types:data validate:types:ts",
-    "validate:types:data": "node scripts/validate.mjs",
+    "validate:types:data": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate.mjs",
     "validate:types:ts": "tsc --noemit && tsc --noemit -p tsconfig.worker.json"
   },
   "devDependencies": {
