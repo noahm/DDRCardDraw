@@ -2,7 +2,6 @@
   "$schema": "../../songs.schema.json",
   "meta": {
     "cardVariant": "ddr",
-    "menuParent": "events",
     "styles": ["single"],
     "difficulties": [
       {
@@ -61,7 +60,8 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1786031152222
+    "lastUpdated": 1786031152222,
+    "menuParent": "events"
   },
   "defaults": {
     "style": "single",
@@ -302,6 +302,13 @@
           "flags": ["euLocked"],
           "sanbaiTier": 18.5,
           "maxScore": 2595
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "difficult",
+          "sanbaiTier": 14.65,
+          "maxScore": 1773
         }
       ],
       "search_hint": "IDENTITY",
@@ -549,6 +556,13 @@
           "style": "single",
           "diffClass": "challenge",
           "sanbaiTier": 18.15
+        },
+        {
+          "maxScore": 1494,
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.15
         }
       ],
       "remyLink": "https://remywiki.com/Air_Heroes",
@@ -2749,6 +2763,13 @@
           "maxScore": 1683,
           "flags": ["shock"],
           "sanbaiTier": 16.5
+        },
+        {
+          "lvl": 16,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 16.15,
+          "maxScore": 1584
         }
       ],
       "remyLink": "https://remywiki.com/Firestorm",
@@ -3535,6 +3556,13 @@
           "diffClass": "challenge",
           "sanbaiTier": 18.6,
           "maxScore": 2250
+        },
+        {
+          "lvl": 15,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 15.1,
+          "maxScore": 1719
         }
       ],
       "remyLink": "https://remywiki.com/HyperTwist",
@@ -4576,25 +4604,6 @@
       "saIndex": "944"
     },
     {
-      "name": "Mind Parasite",
-      "artist": "TOMOSUKE",
-      "bpm": "145",
-      "folder": "DanceDanceRevolution SuperNOVA",
-      "charts": [
-        {
-          "maxScore": 1068,
-          "lvl": 13,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 13.2
-        }
-      ],
-      "remyLink": "https://remywiki.com/Mind_Parasite",
-      "jacket": "ddr_sn-sn2/Mind Parasite.png",
-      "saHash": "b6dqPiOO6iO6b8D90Ido6QPOlObd9o98",
-      "saIndex": "184"
-    },
-    {
       "name": "MODEL FT2 Miracle Version",
       "artist": "Mutsuhiko Izumi",
       "saHash": "IdDblQIbq8Di9iOo61O0bQIIPqPQ16o8",
@@ -5350,13 +5359,6 @@
       "bpm": "75-300",
       "folder": "DanceDanceRevolution SuperNOVA2",
       "charts": [
-        {
-          "maxScore": 1374,
-          "lvl": 15,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 15.75
-        },
         {
           "maxScore": 1989,
           "lvl": 18,
@@ -6304,25 +6306,6 @@
       "saHash": "9bI0dQdb01Dl1bQq1Pq998i0l096D99P",
       "saIndex": "385",
       "search_hint": "HANDZ UP/ハンズアップ"
-    },
-    {
-      "name": "SEDUCTION",
-      "artist": "nc ft. FINALFORCE",
-      "bpm": "95-190",
-      "folder": "DanceDanceRevolution SuperNOVA",
-      "charts": [
-        {
-          "maxScore": 1194,
-          "lvl": 12,
-          "style": "single",
-          "diffClass": "expert",
-          "sanbaiTier": 12.5
-        }
-      ],
-      "remyLink": "https://remywiki.com/SEDUCTION",
-      "jacket": "ddr_sn-sn2/SEDUCTION.png",
-      "saHash": "oIQo8IQPbobO6bioiqqdP6P6O8898DOQ",
-      "saIndex": "201"
     },
     {
       "name": "SEDUCTION(Vocal Remix)",
@@ -7935,6 +7918,13 @@
           "diffClass": "challenge",
           "sanbaiTier": 18.65,
           "maxScore": 2184
+        },
+        {
+          "lvl": 14,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 14.25,
+          "maxScore": 1503
         }
       ],
       "remyLink": "https://remywiki.com/Yuni%27s_Nocturnal_Days",
@@ -7983,28 +7973,6 @@
       "saHash": "96QPqq0q6Id0Ii0QbD1bQqPbiDqb0lPo",
       "saIndex": "401",
       "search_hint": "IDM"
-    },
-    {
-      "name": "ÆTHER",
-      "name_translation": "AETHER",
-      "artist": "TAG underground",
-      "bpm": "191-384",
-      "folder": "DanceDanceRevolution (2014)",
-      "charts": [
-        {
-          "maxScore": 1722,
-          "lvl": 14,
-          "style": "single",
-          "diffClass": "difficult",
-          "sanbaiTier": 14.6
-        }
-      ],
-      "remyLink": "https://remywiki.com/AETHER",
-      "jacket": "ddr_2014/ÆTHER.png",
-      "genre": "ASTRAL HARDCORE",
-      "search_hint": "aether",
-      "saHash": "l6d0ibbliQPQDdb1lP18D9qbPDi1698b",
-      "saIndex": "587"
     },
     {
       "name": "Übertreffen",
@@ -9938,6 +9906,66 @@
       "genre": "撫子メタル",
       "saHash": "16oDDIlP8bIODQ6Ql0881d9Qqdb19b98",
       "saIndex": "701"
+    },
+    {
+      "name": "Sweet Clock",
+      "artist": "あるふぁ",
+      "artist_translation": "alpha",
+      "bpm": "178",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 12,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 12.3,
+          "maxScore": 1518
+        }
+      ],
+      "remyLink": "https://remywiki.com/Sweet_Clock",
+      "jacket": "ddr_a20plus/Sweet Clock.jpg",
+      "saHash": "I0DDidl0PIo6bO6o8I08Q1Pq89IdP6Pb",
+      "saIndex": "1026"
+    },
+    {
+      "name": "Angelic Jelly",
+      "artist": "t+pazolite",
+      "bpm": "100-200",
+      "folder": "DanceDanceRevolution A",
+      "charts": [
+        {
+          "maxScore": 1599,
+          "lvl": 13,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 13.35
+        }
+      ],
+      "remyLink": "https://remywiki.com/Angelic_Jelly",
+      "jacket": "ddr_a/Angelic Jelly.png",
+      "genre": "ハッピーでハードコア/HAPPY で HARDCORE",
+      "saHash": "9Q081Q0Do0IDDqQi9O61P111QIQd0oQ6",
+      "saIndex": "737"
+    },
+    {
+      "name": "Triple Cross",
+      "artist": "BEMANI Sound Team \"dj TAKA & DJ YOSHITAKA & SYUNN\"",
+      "bpm": "196",
+      "folder": "DanceDanceRevolution A20 PLUS",
+      "charts": [
+        {
+          "lvl": 17,
+          "style": "single",
+          "diffClass": "expert",
+          "sanbaiTier": 17.3,
+          "maxScore": 2022
+        }
+      ],
+      "remyLink": "https://remywiki.com/Triple_Cross",
+      "jacket": "ddr_a20plus/Triple Cross.jpg",
+      "genre": "MUSIC GAME TRADITIONAL/ミュージックゲームトラディショナル",
+      "saHash": "IQqi9Q9qD0DDQIqQOb868QIOioqDqI01",
+      "saIndex": "1032"
     }
   ]
 }
