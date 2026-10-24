@@ -29,6 +29,10 @@ export type BundleSource =
       songCount: number;
       tiered: boolean;
       jacketCount: number;
+    }
+  | {
+      kind: "json";
+      fileName: string;
     };
 
 /**

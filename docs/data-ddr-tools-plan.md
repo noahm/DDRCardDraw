@@ -44,15 +44,20 @@ later.
   Service components below).
   `rgt-data` merged to `main` and deployed; the app change merged to `partykit` (`next.ddr.tools`'s
   production branch). See Verification below for what's been confirmed live.
-- **M2 — ITG pack authoring. In progress.** In-browser pack parse, image resize, and jacket upload
+- **M2 — ITG pack authoring. ✅ Shipped 2026-10-14.** In-browser pack parse, image resize, and jacket upload
   to the CDN, reached from a generalized "create custom data" chooser (SMX edits vs. pack import)
   plus the drag-and-drop folder entry point ported from `main`. Also lands the shared
   jackets-on-CDN dependency M3 needs: absolute jacket URLs + the `getJacketUrl` passthrough.
+  `rgt-data` PR #3 merged to `main` and deployed; the app change (PR #630) merged to `partykit`.
   See _ITG pack authoring_ below for the implemented design.
-- **M3 — stock migration (not started).** Move schema/import scripts/catalogs into the data
-  project, publish stock + jackets to the CDN behind a manifest, make the main app
+- **M3 — stock migration (in progress — step 1 of 7 done).** Move schema/import scripts/catalogs
+  into the data project, publish stock + jackets to the CDN behind a manifest, make the main app
   manifest-driven. Now strictly easier than it was: M2 establishes the jacket pool, its
-  content-addressing, and the absolute-URL passthrough that M3 reuses.
+  content-addressing, and the absolute-URL passthrough that M3 reuses. See _M3 rollout_ below for
+  the step order.
+- **Self-hosted mode (after M3, not started).** Run the whole stack locally — app, PartyKit server,
+  and data — for events without internet. Replaces the service worker + `yarn build:zip` offline
+  story, which M3 removes. Its own milestone; design open (see Open questions / risks).
 
 ## Locked decisions
 
@@ -101,12 +106,13 @@ later.
 ## Data model & addressing
 
 - **Bucket layout is split by top-level prefix, not mixed in one namespace.** One `rgt-bundles`
-  bucket, three prefixes:
+  bucket, four prefixes:
   ```
   custom/{id}/data.json      # id = nanoid(10); user-published sets (M1: SMX edits)
   custom/{id}/meta.json
   stock/{game}/{hash}/...    # managed catalogs (M3); hash = content hash of the catalog
   jackets/{sha256hex}        # flat content-addressed image pool, shared by custom + stock (M2/M3)
+  legacy/jackets/smx/...     # frozen copy of the app's bundled SMX jackets, for M1 bundles (M3)
   ```
   The split matters for GC: `custom/` and `stock/` need different, independent lifecycle rules
   (custom bundles are reference-aware-GC'd per the note below; managed stock bundles are never
@@ -147,30 +153,20 @@ later.
     same objects but still re-send their bytes — storage dedupe, not bandwidth dedupe. This only dedupes
     byte-identical files; two independently resized/re-encoded copies of the same source art won't
     collide (perceptual hashing would, but that's out of scope).
-- **Local jacket validation survives the move to CDN URLs — and gets stronger.** Today
-  `scripts/validate.mjs` checks `existsSync(jacketsDir + song.jacket)`: a relative path against a
-  local directory, entirely offline, fast. Once `song.jacket`/`chart.jacket` become absolute
-  `.../jackets/{sha256hex}` URLs that local directory relationship still holds — it just changes
-  from a path-existence check to a content-hash-membership check, which is strictly stronger
-  (a corrupted or swapped-in image at the right path silently passes `existsSync` today; it fails
-  a hash check immediately, since the reference _is_ the file's own checksum).
-  - Validator hashes every file once under the local jacket source tree into a `Map<hash, path>`,
-    pulls the trailing path segment (the hash) back out of each `jacket` URL, and checks
-    membership. Zero network calls, same speed as today.
-  - This is the **same hashing pass** the M3 publish pipeline already does for its R2-diff step
-    (see Stock publish pipeline) — one piece of shared logic, not duplicated tooling. It also
-    produces the same "everything actually referenced" set the reference-aware GC sweep needs
-    (see Open questions / risks) — worth sharing that code too when GC gets built.
-  - Must hash the same pipeline stage that gets published (the final, resized `processed_img`
-    output), not raw pre-resize sources — the CDN key is the hash of what's actually uploaded.
-  - Cheap belt-and-suspenders addition: a JSON-Schema `pattern` on the jacket field
-    (`^https://cdn\.data\.ddr\.tools/jackets/[0-9a-f]{64}$` for M2/M3 entries) catches a
-    malformed or wrong-environment URL before it even reaches the hash lookup.
-  - **This requires the local jacket source tree to stay a complete, always-present mirror in the
-    repo** — not a staging area pruned after each publish to R2 — since local validation has
-    nothing to check against otherwise. One-directional storage cost (repo only grows), but
-    jackets are individually small and this keeps the fast offline dev loop; revisit with
-    `git-lfs` if the repo ever balloons, not by giving up local validation.
+- **Stock source data keeps relative jacket paths; publishing rewrites them.** Committed catalogs
+  keep paths like `ddr_world/foo.jpg` against the local jacket source tree. The publish job hashes
+  each referenced file, uploads what's missing, and writes absolute
+  `https://cdn.data.ddr.tools/jackets/{sha256hex}` URLs into the _published_ `data.json` only. So
+  the import scripts and `validate.mjs`'s `existsSync` jacket check work unchanged, contributor
+  diffs stay readable, and no environment-specific CDN URL is ever committed (a dev publish
+  rewrites to the local CDN base instead). A missing file still fails the publish. This supersedes
+  an earlier design that committed absolute hash URLs and validated them by hash membership; it
+  can be revisited if a reason appears.
+  - Hash the same file that gets published — the committed jackets are already the resized,
+    publish-ready versions.
+  - **The local jacket source tree stays a complete, always-present mirror in the repo** (plain
+    git, decided 2026-10-16 — committed jackets are already small; revisit `git-lfs` only if the
+    repo becomes a problem).
 - **Manifest (M3 only).** A mutable `index.json` maps managed game names → their current immutable
   `bundleUrl`, so stock catalogs update in place without an app deploy while the bundles they point at
   stay immutable. Custom bundles are **never** in the manifest — they're referenced by direct URL.
@@ -206,13 +202,14 @@ publish catalog bundles + jackets (M3).
 Import and publish are two independently-triggered phases — only the second is automatable.
 
 - **Import stays manual/local, unchanged.** Today's `scripts/import-*.mts` (moving from `ddr.tools`
-  into this repo per Shared code between repos) are run by hand as they are now — several are
+  into this repo at the cutover, see _M3 rollout_) are run by hand as they are now — several are
   inherently interactive (SDVX needs a local arcade `music_db.xml` path passed as an arg, Ongeki
   needs a FlareSolverr instance for scraping, jacket collection is a manual copy step). CI has no
   business trying to re-run scraping/arcade-data imports headlessly. The maintainer runs the
   import, gets updated catalog JSON + jacket images as plain files, and commits/pushes them.
 - **That push triggers the publish job** (GitHub Actions, `paths:`-filtered to the data-source
-  directories so unrelated Worker code changes don't trigger it):
+  directories so unrelated Worker code changes don't trigger it). Until the cutover the data source
+  is DDRCardDraw `main`, so the job runs from (or checks out) that repo instead:
   1. Walk the committed catalog + jacket source files, hash each candidate object (sha256; cheap —
      seconds even over hundreds of MB of images).
   2. Bulk-check which hashes **already exist** in R2 via `POST /api/managed/check` (`{ hashes[] }`
@@ -284,7 +281,7 @@ bundleHash }`); the Worker re-verifies presence, then atomically repoints `index
   from `smx-edits` is dropped for now (partykit has no per-variant card-actions slot) — a later add.
 - No `getJacketUrl` change (SMX edit bundles use relative jacket paths that already resolve).
 
-### M2 — ITG pack authoring (in progress)
+### M2 — ITG pack authoring. ✅ Done (merged to `partykit` 2026-10-14)
 
 Same shape as M1 — build the bundle in-browser, publish, draw — plus the art, which is the part
 M1 never had to solve.
@@ -348,10 +345,135 @@ M1 never had to solve.
 ### M3 — manifest-driven (later, with stock migration)
 
 - Replace `availableGameData` with a fetch of `index.json` (cached/revalidated via ETag); drop bundled
-  `src/songs/*.json` (keep an optional baked-in bootstrap bundle as SPOF/offline fallback).
-- `getJacketUrl` absolute-URL passthrough once jackets are on the CDN.
-- Version-pin stock selections: store the manifest entry's immutable `bundleUrl` in `config.gameKey`
-  (picker shows the friendly name), so a room stays on its version even if the catalog updates.
+  `src/songs/*.json`. No baked-in bootstrap bundle — offline use moves to self-hosted mode (below).
+- **`gameKey` accepts a name or a URL; unpinned is the default.** A stock name (`"a20plus"`) resolves
+  through the manifest to the game's _current_ bundle — today's behavior, and what every room already
+  persisted in Supabase `event_state` carries, so existing rooms keep working unchanged. A URL is an
+  explicit pin to one immutable bundle (how custom sets already work). Selecting a stock game keeps
+  storing its name. A UI to pin a room to an older stock version can come later if it's ever needed.
+- **M1 SMX bundles' relative jacket paths go to an SMX-only legacy prefix on the CDN.** M1 SMX
+  bundles are the only published data with relative jacket paths (`smx/...`, resolved through the
+  app's bundled `/jackets/` today; ITG bundles are already absolute). Just the `smx/` subtree
+  (563 files, ~5 MB) is copied to `legacy/jackets/smx/` (`rgt-data`'s
+  `scripts/upload-legacy-jackets.mjs`), and `loadCustomGamedataByUrl` rewrites a custom bundle's
+  relative `smx/` paths onto it at load time (`withLegacyJacketUrls`). The rewrite lives in the
+  custom loader, not `getJacketUrl`, because stock SMX data also uses relative `smx/` paths and
+  keeps gaining songs until stock moves to the CDN — routing those to the copy would break new
+  songs' art. The copy is topped up (the script skips what's present) until the M3 cutover, then
+  frozen. Rewriting the published bundles in place was considered and rejected: they're served
+  `max-age=1y, immutable`, so browsers that already cached the old copy would keep the relative
+  paths for up to a year and lose their art. After the cutover, new stock and SMX output uses
+  absolute content-addressed `jackets/{sha256}` URLs; the SMX builder grafts onto the manifest's
+  SMX catalog instead of the bundled one.
+- **Backport the CDN reader to `main`.** Rather than freezing production's data once the import
+  scripts move to `rgt-data`, the manifest loader + `getJacketUrl` change are ported (not merged —
+  see Shared code) to `main` so `ddr.tools` reads stock data from the CDN until `partykit` replaces it.
+  Scope is **stock only**: `main` gets no URL `gameKey` support. Custom-data URLs are an internal
+  detail of `partykit` (set by the create flow, never shown to or pasted by users, and with no way to
+  move them between configs), so there is nothing on `main` that could ever reference one.
+- **Remove the service worker and the zip build** (`@lcdp/offline-plugin`, `zip-webpack-plugin`,
+  `yarn build:zip`) on `partykit`. The hosted app becomes online-only; immutable bundles and jackets
+  still get a year of browser HTTP caching.
+- **Self-hosted mode replaces offline builds.** A way to run the whole stack locally — app, PartyKit
+  server, and data (manifest, bundles, jackets) — for offline events. Design TBD (see Open questions).
+
+### M3 rollout
+
+Seven steps, in order. The principle: **the data's home moves last.** While either app bundles
+`src/songs`, the data has to live in DDRCardDraw; once neither does, moving it is a pure repo
+move with no user-facing effect, done on a day that suits the contributors.
+
+**Publish source until the cutover: DDRCardDraw `main`.** That's where contributor data PRs
+(mostly Nogic) already land. Data that has only landed on `partykit` gets backported to `main`
+(step 2); after that, data changes go to `main` first and reach `partykit` through the regular
+`main` → `partykit` merges, same as code.
+
+1. **Legacy SMX jackets. ✅ Done 2026-10-15** (rgt-data #4, DDRCardDraw #669). The `smx/` jacket
+   tree is on the CDN at `legacy/jackets/smx/`, and custom bundles' relative `smx/` paths are
+   rewritten onto it at load. Keep topping it up (`upload-legacy-jackets.mjs --remote`) whenever
+   the SMX catalog gains songs, until step 5.
+2. **Backport `partykit`'s data to `main`.** Catalogs and jackets that exist only on `partykit`
+   (`syr5`, `syr6` + their 140 jackets, the `dashdance25` change), the schema's `chart.id`, and
+   `validate.mjs`'s duplicate-chart-id check. `main` must handle `chart.id` (or at least ignore it
+   harmlessly) before those sets reach its picker. After this step, `main`'s data is a superset of
+   what `partykit` has, and stays the place data changes land.
+3. **Schema revision.** Fold in the planned changes before anything is published, so the first
+   CDN bundles already use the new shape (see _Schema revision_ below). Reconcile with the hosted
+   `v1.json`, which drifted in both directions (hosted has `i18nDictPartial`; the repo has
+   `chart.id` and the `additionalItems` rules). The schema stays hosted from `rgt-data`; both
+   apps keep generating `SongData.ts` from their copy until the cutover.
+4. **Publish pipeline in `rgt-data`.** `/api/managed/{check,objects,publish}` (bearer-token
+   gated), the D1 `objects` table, `index.json`, and the GitHub Actions publish job, sourcing from
+   a DDRCardDraw `main` checkout and rewriting relative jacket paths to hashed CDN URLs (see Data
+   model). Nothing reads the manifest yet, so this ships dark.
+5. **`partykit` goes manifest-driven.** Load `index.json`, resolve stock-name `gameKey`s through it
+   (unpinned by default), drop bundled `src/songs` and jackets from the build, remove the service
+   worker and zip build. The SMX edit builder grafts onto the manifest's SMX catalog, whose jackets
+   are hashed CDN URLs — so no new bundles with relative paths get published, and
+   `legacy/jackets/smx/` is **frozen** here (one last top-up first).
+6. **Backport the stock reader to `main`.** Stock only (no URL `gameKey`s), ported not merged.
+   After this, nothing ships from DDRCardDraw's `src/songs`; it's only the publish job's input.
+7. **Cutover — move the data's home to `rgt-data`.**
+   - Merge or close open data PRs on DDRCardDraw; announce a short freeze.
+   - Import into `rgt-data` with **hybrid history** (decided 2026-10-16): `git filter-repo` keeps
+     full history for `src/songs`, `scripts/` and the schema (~1,080 commits, ~6 MiB packed), and
+     the jackets come over as **one snapshot commit** pointing back to DDRCardDraw for older
+     history (~221 MiB, vs ~419 MiB with full jacket history — 80 MiB of that is pre-ImgBot
+     originals, 115 MiB deleted/replaced art).
+   - Repoint the publish job at `rgt-data`; confirm `index.json` comes out unchanged.
+   - Delete the data and import scripts from DDRCardDraw (`main` and `partykit`); the apps get
+     `SongData.ts` / the schema from `rgt-data` from then on.
+   - Update contributor docs (README, scripts/README) and tell Nogic and the other contributors.
+
+#### Schema revision (step 3)
+
+Planned changes, all landed together:
+
+- **`chart.id`** — already in the repo schema (optional explicit chart identity, overriding the
+  derived `chartKey`). No catalog uses it yet.
+- **`song.id` replaces `saIndex` and `saHash`** — one string, **required**, **unique within a
+  file**, backfilled for every existing song. Published as a new **`v2.json`** schema (the hosted
+  `v1.json` stays as is for bundles already pinned to it). Decided 2026-10-16:
+  - **Where ids come from:** the source's own native id wherever one exists, otherwise a
+    deterministic id derived from the song (same song → same id in every file, so cross-file chart
+    matching like `dia_del_ritmo_26` ↔ `ddr_world` keeps working; random ids would break it).
+    Today's fields map over as: DDR `saHash` (sanbai/3icecream id, which the share link needs);
+    IIDX/jubeat/SDVX/Donkey Konga `saHash`; Pump/SMX/EZ2AC/septa2-iidx `saIndex` (SMX's is the
+    573.no `song_id` the edit builder and score import match on). DDR's own `saIndex` (sanbai's
+    numeric index) is unused and **dropped**.
+  - **No-id games:** ongeki uses the SEGA API's per-entry `id`; maimai and the ITG/tournament event
+    sets (`itl24`, `itl25`, `syr5`, `syr6`, `storm*`, `shine*`, `bite9*`, `bhopball4`,
+    `dashdance25`, `rip15singles`) get native ids where their import source has them, else
+    derived ones. DRS is a still-updated game (new songs unlocked 2026-02-18) maintained by hand
+    with no import script, so it needs real ids sourced from somewhere like RemyWiki or the
+    official e-amusement music list, which also settles its duplicate entries.
+  - **No namespacing.** Ids are bare strings; numeric ids repeat across games (Pump and EZ2AC both
+    start at `1`). Mixing data from different games in one set raises other problems anyway, so
+    it's out of scope.
+  - **Chart keys rooms already persisted keep matching.** `chart-id.ts` derives the song part of a
+    chart key from `song.id` from now on, and `reuseKeysForChart` also returns the previous
+    derivation (`saHash`, else `name|artist`) as an extra "already used" key, so charts drawn
+    before the switch are still recognized. DDR/IIDX/SDVX/jubeat keys don't change at all, since
+    their ids are the old `saHash`.
+  - **Old published bundles keep working.** The app's loader upgrades a bundle with no `song.id`
+    (`id` from `saHash`, else `saIndex`) before validating it against `v2`, so immutable M1 SMX
+    bundles still validate and still match by 573.no id.
+  - **`validate.mjs` rejects duplicate song ids within a file.**
+- **One song per song within a file.** A file listing the same song more than once (one entry per
+  chart) is an import-script artifact: those entries merge into one song with all their charts.
+  A survey of every file (2026-10-16) found 90 groups of entries sharing a name + artist:
+  - **Merge:** bite7 (19 songs listed 41 times; fix the event-set import so it emits one song with
+    several charts) and maimai (2 utage songs split across 7 entries by level). Both merge with no
+    conflicting song-level fields.
+  - **Delete `tbd5`:** a stale copy of curated DDR data (its one duplicate entry was a symptom).
+    Rooms persisted with `gameKey: "tbd5"` stop resolving, which is accepted.
+  - **DRS:** 2 songs listed twice, one copy flagged `unlock`, translations differing slightly in
+    one. Resolved together with sourcing DRS's real ids (above).
+  - **Not duplicates — distinct songs sharing name + artist, which need distinct ids:** ongeki's
+    65 LUNATIC re-releases ("bright MEMORY", each with its own jacket, date and chart; the SEGA
+    `id` already tells them apart), and `ddr_x3`'s _IF YOU WERE HERE_ (the X3 vs 2nd MIX and the X2
+    versions; neither has a `saHash`, so assign ids by hand).
+- No other schema changes planned.
 
 ## Security & abuse (anonymous model)
 
@@ -385,7 +507,8 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   jimp), so a pack's worth of decode+resize blows those limits. Resizing therefore happens in the
   browser. Extra thumbnail sizes, if ever wanted, go async (Cloudflare Queues) or via Cloudflare
   Images.
-- **(M2+) Garbage/orphan bundles.** A plain R2 lifecycle rule expires by **age since creation, not
+- **(M2+) Garbage/orphan bundles. Deferred** — watch R2 storage; build the sweep below only once
+  cost justifies it. A plain R2 lifecycle rule expires by **age since creation, not
   last access** (no "delete if unrequested" primitive), and `immutable, max-age=1y` caching means
   active bundles rarely hit the R2 origin — so request-frequency would flag the _most-used_ bundles as
   stale. Age-based deletion is also a data-loss footgun: rooms **pin** a bundle id in `config.gameKey`
@@ -394,16 +517,22 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   `event_state` and delete only those **both** unreferenced **and** past a generous age (e.g. 90d).
   In practice this only matters once ITG image bundles exist — v1 JSON bundles are sub-MB, so orphans
   cost pennies. Do **not** ship an age-based lifecycle rule that could delete pinned data.
-- **(M3 — stock migration) CDN as a single point of failure.** With stock data no longer bundled, the
-  app can't load anything if the CDN/manifest is unreachable. Mitigate with long-cache immutable
-  bundles + the app's existing service worker (`@lcdp/offline-plugin`) caching fetched
-  manifest/bundles, and optionally a baked-in bootstrap manifest + default bundle. Decide how much
-  fallback to bake in.
-- **(M3 — stock migration) Offline standalone build (`yarn build:zip`).** Currently ships a fully
-  offline copy with bundled jackets. Once data + jackets live on the CDN it must either snapshot the
-  CDN at build time or be dropped. Pick a path.
+- **(M3 — stock migration) CDN as a single point of failure. Accepted.** With stock data no longer
+  bundled, the hosted app can't load data if the CDN/manifest is unreachable. Decided: no service
+  worker and no baked-in fallback — the hosted app is online-only, and anyone who needs to run without
+  internet uses self-hosted mode.
+- **(M3 — stock migration) Offline standalone build (`yarn build:zip`). Resolved: dropped,** along
+  with the service worker, in favor of self-hosted mode.
+- **(M3) Self-hosted mode design — open.** What serves data locally (e.g. `wrangler dev` with a seeded
+  local R2, or a plain static mirror of the manifest/bundles/jackets), how it's seeded (a snapshot
+  script against the CDN), how `CDN_BASE`/`DATA_API_BASE` get pointed at it (today they're baked in at
+  build time), and whether it needs a Supabase stand-in for room persistence or can run on PartyKit
+  storage alone.
 - **(M3 — stock migration) Jacket migration volume.** Moving all existing stock jackets to R2 is a
-  sizable one-time job; verify naming/paths and total size/egress before cutover.
+  sizable one-time job (~13.8k files, ~252 MB); verify naming/paths and total size/egress before
+  cutover. **Repo storage decided: plain git.** The committed jackets are already the resized
+  publish-ready versions (no raw source art), so the local mirror moves into `rgt-data` as is;
+  revisit `git-lfs` only if the repo actually becomes a problem.
 
 ## Verification
 
@@ -430,7 +559,7 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   merged to `partykit` 2026-08-10 (that branch is what's live at `next.ddr.tools`, so this ships with
   its normal deploy — not independently re-verified in this session beyond confirming the site responds).
 
-**M2 — automated coverage passing, browser pass still owed:**
+**M2 — done, confirmed 2026-10-14:**
 
 - ✅ **Worker multipart path**, against `wrangler dev` with real R2/D1: publish with jackets → 201;
   art readable at `/jackets/{hash}` as `image/jpeg` with immutable caching; bundle round-trips with
@@ -445,10 +574,14 @@ docs](https://developers.cloudflare.com/turnstile/get-started/client-side-render
   the 200 KB cap; bundle 2.5 KB vs. 2 MB), all 7 jacket urls serve images, `meta.json` records the
   pack provenance.
 - ✅ `yarn validate` (both repos) and a full production webpack build.
-- ⬜ **Still to verify in a browser** (can't be exercised outside one): `createImageBitmap` +
-  `canvas.toBlob` output on real pack art, the folder-picker dialog itself, drag-and-drop opening
-  the dialog, the progress readout, cards rendering CDN jackets, and a two-peer PartyKit room
-  seeing the same pack.
+- ✅ **Browser pass** (manual testing): `createImageBitmap` + `canvas.toBlob` output on real pack
+  art, the folder-picker dialog itself, drag-and-drop opening the dialog, the progress readout,
+  cards rendering CDN jackets, and a two-peer PartyKit room seeing the same pack.
+- **Shipped:** `rgt-data` PR [#3](https://github.com/RhythmGameTools/rgt-data/pull/3) merged to `main`
+  2026-10-14 and deployed; `next.ddr.tools` PR [#630](https://github.com/noahm/DDRCardDraw/pull/630)
+  merged to `partykit` 2026-10-14.
 
 **M3 (not started):** stock import publishes a bundle + repoints `index.json` and the app picks it
-up with no deploy; CDN-blocked resilience via service worker / bootstrap fallback.
+up with no deploy; rooms persisted with a stock name load the current bundle; M1 SMX bundles still
+render jackets via `legacy/jackets/`; `main` reads stock data from the CDN; self-hosted mode runs a
+room with no internet.

@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { stat, writeFile } from "node:fs/promises";
 import { globalAgent as httpAgent } from "node:http";
 import { globalAgent as httpsAgent } from "node:https";
@@ -87,6 +87,14 @@ export async function getDom(url: string): Promise<JSDOM> {
   });
 }
 
+/** the repo's own oxfmt settings, so written data passes `oxfmt --check` */
+const FORMAT_CONFIG: { printWidth?: number } = (() => {
+  const { printWidth } = JSON.parse(
+    readFileSync(resolve(__dirname, "../.oxfmtrc.json"), "utf-8"),
+  );
+  return { printWidth };
+})();
+
 /**
  * @param data Game data object
  * @param filePath Destination JSON file path
@@ -100,7 +108,11 @@ export async function writeJsonData(
 ) {
   data.meta.lastUpdated = lastUpdated ?? Date.now();
   try {
-    const { code } = await format(filePath, JSON.stringify(data, null, space));
+    const { code } = await format(
+      filePath,
+      JSON.stringify(data, null, space),
+      FORMAT_CONFIG,
+    );
     return writeFile(filePath, code);
   } catch (e) {
     throw new Error("Formatting failed", { cause: e });

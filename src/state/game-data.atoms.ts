@@ -5,6 +5,7 @@ import { GameData } from "../models/SongData";
 import gameDataSchema from "../models/game-data.schema.json";
 import { useEffect } from "react";
 import { useRoomName } from "../hooks/useRoomName";
+import { withLegacyJacketUrls } from "../utils/jackets";
 
 const lastGameSelectedByEvent = atomFamily((roomName: string) =>
   atomWithStorage<string | undefined>(
@@ -42,11 +43,15 @@ export const customDataCache = atom<Record<string, GameData>>({});
 export const customDataDialogOpen = atom(false);
 
 /**
- * A pack (folder or `.zip`) dropped onto the window, waiting to be picked up by
- * the custom-data dialog. Dropping a pack is unambiguous, so it skips the dialog's source
- * chooser and opens the ITG pack form directly on this item.
+ * Something dropped onto the window, waiting to be picked up by the custom-data
+ * dialog: either an ITG pack (folder or `.zip`) or a premade GameData `.json`
+ * file. Either is unambiguous, so it skips the dialog's source chooser and opens
+ * the matching form directly on it.
  */
-export const pendingPackDrop = atom<DataTransferItem | null>(null);
+export type PendingDrop =
+  | { kind: "pack"; item: DataTransferItem }
+  | { kind: "json"; file: File };
+export const pendingDrop = atom<PendingDrop | null>(null);
 
 export const stockDataByName = atomFamily((name: string) =>
   atom((get) => get(stockDataCache)[name]),
@@ -87,9 +92,60 @@ export async function loadStockGamedataByName(name: string) {
 
 const gameDataValidator = new Validator();
 
+/** Schema versions hosted by data.ddr.tools, which a data file may declare. */
+const HOSTED_SCHEMA_URL = /^https:\/\/data\.ddr\.tools\/schema\/[\w.-]+\.json$/;
+const hostedSchemas = new Map<string, Promise<Schema>>();
+
+/**
+ * The schema to hold a data file to. A file declaring a schema hosted on
+ * data.ddr.tools is checked against that one, fetched live, so data written for
+ * a schema newer than this build (e.g. v2's `song.id`) is still accepted.
+ * Anything else — no `$schema`, a relative path like stock data's, or any other
+ * host — gets the bundled schema. The publish Worker validates again on upload,
+ * so this is never the only check.
+ */
+function schemaForData(data: unknown): Promise<Schema> {
+  const declared = (data as { $schema?: unknown } | null)?.$schema;
+  if (
+    typeof declared !== "string" ||
+    declared === gameDataSchema.$id ||
+    !HOSTED_SCHEMA_URL.test(declared)
+  ) {
+    return Promise.resolve(gameDataSchema as Schema);
+  }
+  let schema = hostedSchemas.get(declared);
+  if (!schema) {
+    schema = fetch(declared).then((res) => {
+      if (!res.ok) {
+        throw new Error(
+          `couldn't load schema '${declared}' (HTTP ${res.status})`,
+        );
+      }
+      return res.json() as Promise<Schema>;
+    });
+    // forget a failed fetch so the next attempt retries it
+    schema.catch(() => hostedSchemas.delete(declared));
+    hostedSchemas.set(declared, schema);
+  }
+  return schema;
+}
+
+/**
+ * Check arbitrary parsed JSON against the Game Data schema it declares (see
+ * `schemaForData`). Returns a handful of human-readable problems, or an empty
+ * list if it's valid. Rejects if a declared hosted schema can't be fetched.
+ */
+export async function validateGameData(data: unknown): Promise<string[]> {
+  const schema = await schemaForData(data);
+  const result = gameDataValidator.validate(data, schema, {
+    nestedErrors: true,
+  });
+  return result.errors.slice(0, 5).map((e) => `${e.property} ${e.message}`);
+}
+
 /**
  * Resolve a `gameKey` that is an http(s) URL to a published, immutable bundle:
- * fetch it, validate against the canonical Game Data schema, and cache it in
+ * fetch it, validate against the Game Data schema it declares, and cache it in
  * `customDataCache` keyed by URL (safe to cache forever — bundles are immutable).
  * Returns undefined (and logs) on fetch/validation failure rather than throwing,
  * matching `loadStockGamedataByName`.
@@ -109,16 +165,12 @@ export async function loadCustomGamedataByUrl(
       throw new Error(`request failed with status ${res.status}`);
     }
     const data = (await res.json()) as GameData;
-    const result = gameDataValidator.validate(data, gameDataSchema as Schema, {
-      nestedErrors: true,
-    });
-    if (!result.valid) {
-      console.warn(
-        `bundle at '${url}' failed schema validation`,
-        result.errors.slice(0, 5).map((e) => `${e.property} ${e.message}`),
-      );
+    const errors = await validateGameData(data);
+    if (errors.length) {
+      console.warn(`bundle at '${url}' failed schema validation`, errors);
       return undefined;
     }
+    withLegacyJacketUrls(data);
     jotaiStore.set(customDataCache, (prev) => {
       return {
         ...prev,
