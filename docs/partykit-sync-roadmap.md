@@ -99,12 +99,11 @@ concurrent actions in different orders.
   reach back far enough). Replaces reconnect-as-only-repair; makes brief drops
   nearly free. The client buffers live broadcasts while a catch-up is in
   flight and drains them once the gap closes.
-  - **The tail is memory-only, not in room storage** (the original plan said
-    storage). A client can only observe a live-socket gap while the same actor
-    has been running the whole time, so the in-memory tail is always intact for
-    the case catch-up serves; a restart/hibernation drops every socket and
-    clients take a fresh roomstate anyway. Persisting the full action bodies on
-    every write would be the write-amplification step 3 is trying to _remove_.
+  - **The tail began memory-only** (the original plan said storage), on the
+    grounds that a restart/hibernation dropped every socket. Once the Durable
+    Object moved to Workers with hibernation on, sockets outlive the instance,
+    so the tail now lives in a SQLite table: one small row per stamped action,
+    not the full-state rewrite step 3 was trying to remove.
 - Application-level heartbeat: the client pings every ~10s and treats 2 missed
   pongs as a dead connection, forcing the reconnect flow. A stalled-but-open
   socket (server frozen, half-open TCP) is otherwise not noticed until an ack

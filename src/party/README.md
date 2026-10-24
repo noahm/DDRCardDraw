@@ -24,9 +24,14 @@ app's target host is baked in at build time as `PARTY_HOST` (see
 ### Durability
 
 Every applied action writes a `RoomSnapshot` to the room's Durable Object
-storage, gzipped, and — coalesced to one write every couple of seconds — to the
-R2 bucket bound as `SNAPSHOTS`, as plain JSON at
-`rooms/<room>/snapshot.json`. Storage is SQLite-backed, which caps a value at
+storage, gzipped, and — coalesced by an alarm to one write every couple of
+seconds — to the R2 bucket bound as `SNAPSHOTS`, as plain JSON at
+`rooms/<room>/snapshot.json`.
+
+Rooms hibernate: once idle, the instance is evicted from memory while sockets
+stay connected (heartbeat pings are answered by the runtime and don't wake
+it). The next message, request or alarm rehydrates from storage, so the
+`?debug` counters reset on every wake, not just on restarts. Storage is SQLite-backed, which caps a value at
 2 MB; R2 has no such limit. Watch `storedBytes` in `?debug` rather than
 `stateLen`: the limit applies to the compressed bytes.
 
@@ -61,7 +66,7 @@ yarn watch:room <room>          # accepts a room id or a full /e/ URL
 ```
 
 Two things to know about `?debug`: requesting it **instantiates the room if it
-was evicted**, so the write counters describe the instance you just woke rather
+was evicted or hibernating**, so the write counters describe the instance you just woke rather
 than the one that died — the snapshot comparison is the part that survives. And
 `durabilityLag` is the number to watch: anything standing above zero means
 applied actions are not saved and a restart would lose them.
