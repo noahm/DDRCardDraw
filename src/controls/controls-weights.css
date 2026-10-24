@@ -3,7 +3,8 @@
 }
 
 .weights sub {
-  font-size: 70%;
+  /* 70% back when the app base was 14px; scaled by 14/16 for the 16px base */
+  font-size: 61.25%;
 }
 
 .weights .level {

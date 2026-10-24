@@ -1,23 +1,19 @@
 import {
   Button,
-  ButtonGroup,
-  CardList,
-  FormGroup,
-  HTMLSelect,
-  NumericInput,
-  Section,
-  SectionCard,
+  NativeSelect,
+  NumberInput,
+  Stack,
   Tooltip,
-} from "@blueprintjs/core";
+} from "@mantine/core";
 import {
-  DiagramTree,
-  Font,
-  Layers,
-  MobileVideo,
-  People,
-  Person,
-  Th,
-} from "@blueprintjs/icons";
+  IconBinaryTree,
+  IconStack2,
+  IconTable,
+  IconTypography,
+  IconUser,
+  IconUsers,
+  IconVideo,
+} from "@tabler/icons-react";
 import { JSX, useCallback, useEffect, useRef, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
 import { useHref, useSearchParams } from "react-router-dom";
@@ -47,6 +43,7 @@ import { eventSlice } from "../state/event.slice";
 import { useAppState } from "../state/store";
 import { CAB_SOURCES_PARAM, routableCabSourcePath } from "./copy-obs-source";
 import { SourceRow } from "./obs-source-row";
+import { Section } from "../common-components/section";
 
 import styles from "./cab-obs-sources.css";
 
@@ -59,13 +56,21 @@ interface CabSource {
 
 /** sources which exist exactly once per cab and take no options */
 const perCabSources: CabSource[] = [
-  { stub: "title", labelKey: "obsDashboard.sourceTitle", icon: <Font /> },
+  {
+    stub: "title",
+    labelKey: "obsDashboard.sourceTitle",
+    icon: <IconTypography size={16} />,
+  },
   {
     stub: "phase",
     labelKey: "obsDashboard.sourcePhase",
-    icon: <DiagramTree />,
+    icon: <IconBinaryTree size={16} />,
   },
-  { stub: "players", labelKey: "obsDashboard.sourcePlayers", icon: <People /> },
+  {
+    stub: "players",
+    labelKey: "obsDashboard.sourcePlayers",
+    icon: <IconUsers size={16} />,
+  },
 ];
 
 const MAX_PLAYERS = 8;
@@ -125,37 +130,33 @@ export function CabObsSources() {
   return (
     <Section
       ref={sectionRef}
-      collapsible
-      collapseProps={{ isOpen, onToggle: toggleOpen }}
-      icon={<MobileVideo />}
+      collapse={{ opened: isOpen, onToggle: toggleOpen }}
+      icon={<IconVideo size={20} />}
       title={t("obsDashboard.cabSources")}
       subtitle={t("obsDashboard.cabSourcesHint")}
     >
-      <SectionCard>
-        {!cab ? (
-          <p>{t("obsDashboard.addCabFirst")}</p>
-        ) : (
-          <>
-            <div className={styles.controls}>
-              <FormGroup label={t("obsDashboard.cab")} inline>
-                <HTMLSelect
-                  value={cab.id}
-                  onChange={(e) => showCab(e.currentTarget.value)}
-                  options={cabs.map((c) => ({ value: c.id, label: c.name }))}
-                />
-              </FormGroup>
-            </div>
-            <CardList compact>
-              <CardsSourceCard cabId={cab.id} />
-              <StandingsSourceCard cabId={cab.id} />
-              {perCabSources.map((source) => (
-                <SourceCard key={source.stub} cabId={cab.id} source={source} />
-              ))}
-              <PlayerSourceCard cabId={cab.id} />
-            </CardList>
-          </>
-        )}
-      </SectionCard>
+      {!cab ? (
+        <p>{t("obsDashboard.addCabFirst")}</p>
+      ) : (
+        <>
+          <div className={styles.controls}>
+            <NativeSelect
+              label={t("obsDashboard.cab")}
+              value={cab.id}
+              onChange={(e) => showCab(e.currentTarget.value)}
+              data={cabs.map((c) => ({ value: c.id, label: c.name }))}
+            />
+          </div>
+          <Stack gap="xs">
+            <CardsSourceCard cabId={cab.id} />
+            <StandingsSourceCard cabId={cab.id} />
+            {perCabSources.map((source) => (
+              <SourceCard key={source.stub} cabId={cab.id} source={source} />
+            ))}
+            <PlayerSourceCard cabId={cab.id} />
+          </Stack>
+        </>
+      )}
     </Section>
   );
 }
@@ -176,19 +177,20 @@ function CardsSourceCard({ cabId }: { cabId: string }) {
       href={href}
       label={
         <>
-          <Layers />
+          <IconStack2 size={16} />
           <span>{t("obsDashboard.sourceCards")}</span>
         </>
       }
       above={vetoModes.map(({ key, labelKey }) => (
         <Button
           key={key}
-          text={t(labelKey)}
-          active={key === mode}
-          intent={key === mode ? "primary" : undefined}
+          size="compact-sm"
+          variant={key === mode ? "filled" : "default"}
           aria-pressed={key === mode}
           onClick={() => setMode(key)}
-        />
+        >
+          {t(labelKey)}
+        </Button>
       ))}
     />
   );
@@ -211,36 +213,38 @@ function StandingsSourceCard({ cabId }: { cabId: string }) {
       href={href}
       label={
         <>
-          <Th />
+          <IconTable size={16} />
           <span>{t("obsDashboard.sourceStandings")}</span>
         </>
       }
       above={
         <>
-          <ButtonGroup>
+          <Button.Group>
             {pickerModes.map(({ key, labelKey }) => (
               <Button
                 key={key}
-                text={t(labelKey)}
-                active={key === pickers}
-                intent={key === pickers ? "primary" : undefined}
+                size="compact-sm"
+                variant={key === pickers ? "filled" : "default"}
                 aria-pressed={key === pickers}
                 onClick={() => setPickers(key)}
-              />
+              >
+                {t(labelKey)}
+              </Button>
             ))}
-          </ButtonGroup>
-          <ButtonGroup>
+          </Button.Group>
+          <Button.Group>
             {songModes.map(({ key, labelKey }) => (
               <Button
                 key={key}
-                text={t(labelKey)}
-                active={key === songs}
-                intent={key === songs ? "primary" : undefined}
+                size="compact-sm"
+                variant={key === songs ? "filled" : "default"}
                 aria-pressed={key === songs}
                 onClick={() => setSongs(key)}
-              />
+              >
+                {t(labelKey)}
+              </Button>
             ))}
-          </ButtonGroup>
+          </Button.Group>
         </>
       }
     />
@@ -272,18 +276,20 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
       href={href}
       label={
         <>
-          <Person />
+          <IconUser size={16} />
           <span>{t("obsDashboard.sourcePlayer")}</span>
-          <NumericInput
+          <NumberInput
+            size="xs"
             value={player}
-            onValueChange={(value) => {
-              if (Number.isNaN(value)) return;
+            onChange={(value) => {
+              if (typeof value !== "number" || Number.isNaN(value)) return;
               setPlayer(Math.min(Math.max(value, 1), MAX_PLAYERS));
             }}
             min={1}
             max={MAX_PLAYERS}
-            clampValueOnBlur
-            style={{ width: "3.5em" }}
+            clampBehavior="blur"
+            allowDecimal={false}
+            w="4.5em"
             aria-label={t("obsDashboard.playerNumber")}
           />
         </>
@@ -295,17 +301,19 @@ function PlayerSourceCard({ cabId }: { cabId: string }) {
         const button = (
           <Button
             key={key}
-            text={t(labelKey)}
-            active={active}
-            intent={active ? "primary" : undefined}
+            size="compact-sm"
+            variant={active ? "filled" : "default"}
             disabled={isLastActive}
             aria-pressed={active}
             onClick={() => toggleField(key)}
-          />
+          >
+            {t(labelKey)}
+          </Button>
         );
         return isLastActive ? (
-          <Tooltip key={key} content={t("obsDashboard.includeAtLeastOne")}>
-            {button}
+          <Tooltip key={key} label={t("obsDashboard.includeAtLeastOne")}>
+            {/* a disabled button fires no pointer events to show the tip on */}
+            <span>{button}</span>
           </Tooltip>
         ) : (
           button

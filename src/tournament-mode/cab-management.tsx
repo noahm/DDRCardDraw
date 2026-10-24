@@ -1,25 +1,24 @@
 import {
-  Button,
+  ActionIcon,
   Card,
-  ControlGroup,
-  InputGroup,
+  Group,
   Menu,
-  MenuItem,
-  Popover,
+  Text,
+  TextInput,
   Tooltip,
-} from "@blueprintjs/core";
+} from "@mantine/core";
 import { useAppDispatch, useAppState } from "../state/store";
 import React, { ReactNode, useCallback, useState } from "react";
 import { CabInfo, eventSlice } from "../state/event.slice";
 import {
-  Add,
-  CaretLeft,
-  CaretRight,
-  Cross,
-  MobileVideo,
-  More,
-  Remove,
-} from "@blueprintjs/icons";
+  IconPlus,
+  IconCaretLeft,
+  IconCaretRight,
+  IconX,
+  IconVideo,
+  IconDots,
+  IconCircleMinus,
+} from "@tabler/icons-react";
 import { detectedLanguage } from "../utils";
 import { useSetAtom } from "jotai";
 import { mainTabAtom } from "./main-view";
@@ -35,10 +34,15 @@ export function CabManagement() {
   if (isCollapsed) {
     return (
       <div style={{ width: "40px", paddingTop: "1em" }}>
-        <Tooltip content="Show cabs">
-          <Button minimal onClick={() => setCollapsed(false)}>
-            <CaretRight />
-          </Button>
+        <Tooltip label="Show cabs">
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            onClick={() => setCollapsed(false)}
+            aria-label="Show cabs"
+          >
+            <IconCaretRight size={18} />
+          </ActionIcon>
         </Tooltip>
       </div>
     );
@@ -48,10 +52,16 @@ export function CabManagement() {
     <div style={{ padding: "1em", overflow: "auto" }}>
       <div>
         <AddCabControl>
-          <Tooltip content="Hide cabs">
-            <Button minimal onClick={() => setCollapsed(true)}>
-              <CaretLeft />
-            </Button>
+          <Tooltip label="Hide cabs">
+            <ActionIcon
+              variant="subtle"
+              color="gray"
+              size={36}
+              onClick={() => setCollapsed(true)}
+              aria-label="Hide cabs"
+            >
+              <IconCaretLeft size={18} />
+            </ActionIcon>
           </Tooltip>
         </AddCabControl>
       </div>
@@ -78,15 +88,22 @@ function AddCabControl(props: { children?: ReactNode }) {
         addCab();
       }}
     >
-      <ControlGroup>
-        <InputGroup
+      <Group gap={4} wrap="nowrap">
+        <TextInput
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
           placeholder="Cab name"
         />
-        <Button onClick={addCab} icon={<Add />} />
+        <ActionIcon
+          variant="default"
+          size={36}
+          onClick={addCab}
+          aria-label="Add cab"
+        >
+          <IconPlus size={16} />
+        </ActionIcon>
         {props.children}
-      </ControlGroup>
+      </Group>
     </form>
   );
 }
@@ -101,29 +118,41 @@ function CabSummary({ cab }: { cab: CabInfo }) {
     [dispatch, cab.id],
   );
 
-  const cabMenu = (
-    <Menu>
-      <MenuItem
-        icon={<MobileVideo />}
-        text="OBS Sources"
-        label="dashboard"
-        href={dashHref}
-        onClick={(e) => {
-          e.preventDefault();
-          navigate(dashPath);
-        }}
-      />
-      <MenuItem icon={<Remove />} text="Remove Cab" onClick={removeCab} />
-    </Menu>
-  );
-
   return (
     <div id={cab.id}>
       <h1>
         {cab.name}{" "}
-        <Popover content={cabMenu}>
-          <Button minimal icon={<More />} />
-        </Popover>{" "}
+        <Menu>
+          <Menu.Target>
+            <ActionIcon variant="subtle" color="gray" aria-label="Cab actions">
+              <IconDots size={16} />
+            </ActionIcon>
+          </Menu.Target>
+          <Menu.Dropdown>
+            <Menu.Item
+              leftSection={<IconVideo size={16} />}
+              rightSection={
+                <Text size="xs" c="dimmed">
+                  dashboard
+                </Text>
+              }
+              component="a"
+              href={dashHref}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(dashPath);
+              }}
+            >
+              OBS Sources
+            </Menu.Item>
+            <Menu.Item
+              leftSection={<IconCircleMinus size={16} />}
+              onClick={removeCab}
+            >
+              Remove Cab
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>{" "}
       </h1>
       <CurrentMatch cab={cab} />
     </div>
@@ -180,19 +209,25 @@ function CurrentMatch(props: { cab: CabInfo }) {
     typeof props.cab.activeMatch === "string" ? "match" : "set";
   return (
     <Card
-      elevation={2}
-      style={{ position: "relative" }}
-      compact
-      interactive
+      withBorder
+      shadow="md"
+      padding="sm"
+      style={{ position: "relative", cursor: "pointer" }}
       onClick={scrollToDrawing}
     >
-      <Button
-        minimal
-        small
-        icon={<Cross />}
+      <ActionIcon
+        variant="subtle"
+        color="gray"
+        size="sm"
         style={{ position: "absolute", right: "0.5em", top: "0.5em" }}
-        onClick={removeCab}
-      />
+        onClick={(e) => {
+          e.stopPropagation();
+          removeCab();
+        }}
+        aria-label="Clear assignment"
+      >
+        <IconX size={14} />
+      </ActionIcon>
       <h3>
         {drawing.meta.title} ({assignmentType})
       </h3>
