@@ -1,4 +1,9 @@
-import type * as Party from "partykit/server";
+import {
+  Server,
+  type Connection,
+  type ConnectionContext,
+  type WSMessage,
+} from "partyserver";
 import type {
   ActionAck,
   ActionReject,
@@ -6,6 +11,7 @@ import type {
   CatchupResponse,
   ClientMessage,
   Persisted,
+  Ping,
   Pong,
   ReduxAction,
   Roomstate,
@@ -16,27 +22,13 @@ import { reducer } from "../state/root-reducer";
 import type { AppState } from "../state/store";
 
 import {
-  getSnapshotStore,
+  getR2SnapshotStore,
   isRoomSnapshot,
   type RoomSnapshot,
+  type SnapshotStore,
 } from "./snapshot-store";
 import { applyMigrations } from "../state/migrations";
 import { gunzipJson, gzipJson } from "./compression";
-
-/**
- * The durable copy kept outside partykit room storage: R2 in production, a
- * folder on this machine in local mode, nothing at all when neither is
- * configured. Everything below is written against the interface, so the two
- * configured cases are the same code path.
- */
-const remoteStore = getSnapshotStore();
-
-function isAppState(state: unknown): state is AppState {
-  if (state && !Array.isArray(state) && typeof state === "object") {
-    return "config" in state && "drawings" in state;
-  }
-  return false;
-}
 
 /** upper bound on remembered action ids used to dedupe client re-sends */
 const MAX_REMEMBERED_ACTIONS = 1000;
@@ -45,19 +37,19 @@ const MAX_TAIL = 500;
 
 /** storage key holding the room snapshot: state and sequencer metadata as one value */
 const SNAPSHOT_KEY = "snapshot";
-/** partykit room storage refuses any value larger than this */
-const STORAGE_VALUE_LIMIT = 131072;
+/**
+ * storage key holding the seq of the last snapshot confirmed written to the
+ * remote store, so a wake can skip reading R2 when room storage is current
+ */
+const REMOTE_SEQ_KEY = "remoteSeq";
+/**
+ * SQLite-backed Durable Object storage refuses any key + value pair larger
+ * than this (2 MB). PartyKit's storage capped values at 131072 bytes, which is
+ * what the compression below was originally sized against.
+ */
+const STORAGE_VALUE_LIMIT = 2 * 1000 * 1000;
 /** fraction of the limit a stored snapshot may reach before `?debug` complains */
 const STORAGE_WARN_AT = 0.8;
-/** pre-snapshot storage keys, read once so existing rooms carry forward */
-const LEGACY_STATE_KEY = "currentState";
-const LEGACY_META_KEY = "syncMeta";
-
-/** shape of the pre-snapshot sequencer metadata */
-interface LegacySyncMeta {
-  seq: number;
-  seenIds: string[];
-}
 
 /**
  * Minimum spacing between remote snapshot writes. Room storage is in-process
@@ -66,6 +58,16 @@ interface LegacySyncMeta {
  * rather than queueing one per action.
  */
 const REMOTE_WRITE_INTERVAL_MS = 2000;
+/** delay before retrying a failed remote write, so a dead bucket isn't hammered */
+const REMOTE_RETRY_INTERVAL_MS = 30_000;
+
+/**
+ * Heartbeat frames, byte for byte as the client sends them. The runtime
+ * answers these itself (see `onStart`), so idle rooms can hibernate through
+ * the client's 10s heartbeat instead of waking for every ping.
+ */
+const PING_FRAME = JSON.stringify(<Ping>{ type: "ping" });
+const PONG_FRAME = JSON.stringify(<Pong>{ type: "pong" });
 
 /** minimum spacing between `persisted` broadcasts, to keep them off the hot path */
 const PERSISTED_BROADCAST_INTERVAL_MS = 1000;
@@ -109,7 +111,7 @@ interface SnapshotInfo {
   stateLen?: number;
   seq?: number;
   savedAt?: string;
-  /** bytes actually occupied — what the 131072 room storage limit measures */
+  /** bytes actually occupied — what the room storage value limit measures */
   storedBytes?: number;
   compressed?: boolean;
   matchesMemory?: boolean;
@@ -149,9 +151,31 @@ function newTally(): WriteTally {
   };
 }
 
-export default class Server implements Party.Server {
-  // @ts-expect-error I assign this for sure
-  private store: typeof appReduxStore;
+/**
+ * One event room. partyserver routes `/parties/main/<room>` to the Durable
+ * Object named `<room>` of this class (see `wrangler.jsonc` and `worker.ts`).
+ *
+ * Hibernation is on: an idle room is evicted from memory while its sockets
+ * stay connected, and the next message, request or alarm re-runs `onStart`
+ * against a fresh instance. So nothing a live client may depend on can be
+ * memory-only. The snapshot (state, seq, dedupe ids) is in room storage, the
+ * catch-up tail is a SQLite table, and the owed remote write is an alarm.
+ * Instance fields below are either rebuilt by `onStart` or are diagnostics
+ * that describe the current wake only.
+ */
+export class Main extends Server<Env> {
+  static options = { hibernate: true };
+
+  /** assigned in onStart, which partyserver awaits before any request or socket */
+  private store!: ReturnType<typeof configureStore<AppState>>;
+
+  /**
+   * The durable copy kept outside room storage: the R2 bucket bound as
+   * `SNAPSHOTS`, real in production and simulated on disk by `wrangler dev`.
+   */
+  private remoteStore: SnapshotStore | undefined = this.env.SNAPSHOTS
+    ? getR2SnapshotStore(this.env.SNAPSHOTS)
+    : undefined;
 
   /** monotonic counter assigning the canonical order of applied actions */
   private seq = 0;
@@ -166,15 +190,6 @@ export default class Server implements Party.Server {
    */
   private persistedSeq = 0;
 
-  /**
-   * tail of recently stamped actions (ascending seq) used to answer catch-up
-   * requests. In-memory only: a client only asks for catch-up after seeing a
-   * gap on a *live* socket, which means this actor has been running the whole
-   * time and the tail is intact. A restart/hibernation drops every socket, so
-   * clients reconnect and take a fresh roomstate instead of catching up.
-   */
-  private tail: StampedAction[] = [];
-
   // ---- diagnostics, reported by `GET ...?debug`. In-memory only: they
   // describe the *current* room instance and reset when it is evicted.
 
@@ -182,12 +197,14 @@ export default class Server implements Party.Server {
 
   /** how this instance's state was hydrated at startup */
   private hydration: {
-    source: "storage" | "remote" | "legacy-storage" | "fresh";
+    source: "storage" | "remote" | "fresh";
     at: string;
     seq: number;
     fingerprint: string | null;
     /** what each candidate offered, so a wrong pick is visible after the fact */
     candidates: { storage: number | null; remote: number | null };
+    /** false when room storage was known to be current and R2 went unread */
+    remoteRead: boolean;
     error: string | null;
   } | null = null;
 
@@ -201,10 +218,12 @@ export default class Server implements Party.Server {
   /** compressed size of the last snapshot written, what the limit measures */
   private storedBytes: number | null = null;
 
-  /** latest snapshot awaiting a remote write, replaced rather than queued */
-  private remotePending: RoomSnapshot | null = null;
-  private remoteTimer: ReturnType<typeof setTimeout> | undefined;
-  private remoteFlushing = false;
+  /**
+   * whether this instance already armed the alarm that carries the next
+   * remote write. Only a hint to skip redundant `setAlarm` calls: the alarm
+   * itself is the durable record that a remote write is owed.
+   */
+  private remoteAlarmArmed = false;
 
   private lastPersistedBroadcastAt = 0;
 
@@ -221,51 +240,72 @@ export default class Server implements Party.Server {
     };
   }
 
-  constructor(readonly room: Party.Room) {
-    console.log("constructor start");
-  }
-
   /** emit a single greppable diagnostic line tagged with this room's id */
   private log(event: string, details = "") {
     console.log(
-      `${LOG_PREFIX} room=${this.room.id} ${event}${details ? ` ${details}` : ""}`,
+      `${LOG_PREFIX} room=${this.name} ${event}${details ? ` ${details}` : ""}`,
     );
   }
 
   /** current count of live connections, for correlating socket cycles */
   private connectionCount(): number {
-    return [...this.room.getConnections()].length;
+    return [...this.getConnections()].length;
   }
 
   async onStart() {
     const hydrateErrors: string[] = [];
 
-    // Read both durable copies and take whichever is further along, rather
-    // than short-circuiting on the first one that answers. The old order was
-    // `storage || remote`, so a stale-but-present local value pinned the room
-    // to an old checkpoint and the remote copy was never even consulted —
-    // precisely the case where the remote copy is the one still advancing,
-    // because room storage rejects values over 128KiB and R2 does not.
-    const [local, remote] = await Promise.all([
-      this.readLocalSnapshot().catch((e: unknown) => {
-        hydrateErrors.push(`storage: ${describeError(e)}`);
-        this.recordError("onStart:storage", e);
-        console.error(`${LOG_PREFIX} room=${this.room.id} onStart:storage`, e);
-        return undefined;
-      }),
-      this.readRemoteSnapshot().catch((e: unknown) => {
-        hydrateErrors.push(`remote: ${describeError(e)}`);
-        this.recordError("onStart:remote", e);
-        console.error(`${LOG_PREFIX} room=${this.room.id} onStart:remote`, e);
-        return undefined;
-      }),
-    ]);
+    // Answered by the runtime without waking the room. Set on every start
+    // because it is per-instance configuration, not stored state.
+    this.ctx.setWebSocketAutoResponse(
+      new WebSocketRequestResponsePair(PING_FRAME, PONG_FRAME),
+    );
+    this.ctx.storage.sql.exec(
+      "CREATE TABLE IF NOT EXISTS tail (seq INTEGER PRIMARY KEY, action TEXT NOT NULL)",
+    );
 
-    let source: "storage" | "remote" | "legacy-storage" | "fresh" = "fresh";
+    const local = await this.readLocalSnapshot().catch((e: unknown) => {
+      hydrateErrors.push(`storage: ${describeError(e)}`);
+      this.recordError("onStart:storage", e);
+      console.error(`${LOG_PREFIX} room=${this.name} onStart:storage`, e);
+      return undefined;
+    });
+
+    // Take whichever durable copy is further along, rather than trusting room
+    // storage just because it answered: room storage has a value size limit
+    // and R2 does not, so R2 can be the one still advancing. It is also how
+    // rooms saved by the partykit deploy come back: their Durable Object
+    // storage starts empty here, and R2 still holds their snapshot.
+    //
+    // A hibernating room runs this on every wake, though, so R2 is only read
+    // when it might be ahead: room storage is empty, or the last remote write
+    // this room confirmed is newer than what room storage holds.
+    const remoteSeq = await this.ctx.storage
+      .get<number>(REMOTE_SEQ_KEY)
+      .catch((): undefined => undefined);
+    const remoteRead =
+      !local || remoteSeq === undefined || remoteSeq > local.seq;
+    const remote = remoteRead
+      ? await this.readRemoteSnapshot().catch((e: unknown) => {
+          hydrateErrors.push(`remote: ${describeError(e)}`);
+          this.recordError("onStart:remote", e);
+          console.error(`${LOG_PREFIX} room=${this.name} onStart:remote`, e);
+          return undefined;
+        })
+      : undefined;
+    if (remoteRead && !hydrateErrors.some((e) => e.startsWith("remote:"))) {
+      // record what R2 held so later wakes can skip it until it moves again;
+      // rooms from before this key existed get it on their first wake
+      await this.ctx.storage
+        .put(REMOTE_SEQ_KEY, remote?.seq ?? 0)
+        .catch((e: unknown) => this.recordError("onStart:remoteSeq", e));
+    }
+
+    let source: "storage" | "remote" | "fresh" = "fresh";
     let chosen: RoomSnapshot | undefined;
-    if (local && (!remote || local.snapshot.seq >= remote.seq)) {
-      chosen = local.snapshot;
-      source = local.legacy ? "legacy-storage" : "storage";
+    if (local && (!remote || local.seq >= remote.seq)) {
+      chosen = local;
+      source = "storage";
     } else if (remote) {
       chosen = remote;
       source = "remote";
@@ -284,6 +324,16 @@ export default class Server implements Party.Server {
       this.store = configureStore({ reducer });
     }
 
+    // The tail is written as each action is stamped, ahead of the snapshot
+    // that covers it, so an eviction between the two leaves rows past the seq
+    // we just restored. Those seqs will be reassigned; drop them. A snapshot
+    // from anywhere but room storage shares no history with the table at all.
+    if (source === "storage") {
+      this.ctx.storage.sql.exec("DELETE FROM tail WHERE seq > ?", this.seq);
+    } else {
+      this.ctx.storage.sql.exec("DELETE FROM tail");
+    }
+
     const fingerprint = stateFingerprint(this.store.getState());
     this.hydration = {
       source,
@@ -291,53 +341,22 @@ export default class Server implements Party.Server {
       seq: this.seq,
       fingerprint,
       candidates: {
-        storage: local?.snapshot.seq ?? null,
+        storage: local?.seq ?? null,
         remote: remote?.seq ?? null,
       },
+      remoteRead,
       error: hydrateErrors.length ? hydrateErrors.join("; ") : null,
     };
     this.log(
       "onStart",
-      `source=${source} seq=${this.seq} storageSeq=${local?.snapshot.seq ?? "none"} remoteSeq=${remote?.seq ?? "none"} ${fingerprint}`,
+      `source=${source} seq=${this.seq} storageSeq=${local?.seq ?? "none"} remoteSeq=${remoteRead ? (remote?.seq ?? "none") : `skipped(${remoteSeq})`} ${fingerprint}`,
     );
   }
 
-  /**
-   * Room storage, preferring the single-value snapshot and falling back to the
-   * pre-snapshot `currentState` + `syncMeta` pair so rooms written by an older
-   * server keep their history across this upgrade. The legacy pair is only
-   * ever read; the first write of this instance replaces it with a snapshot.
-   */
-  private async readLocalSnapshot(): Promise<
-    { snapshot: RoomSnapshot; legacy: boolean } | undefined
-  > {
+  /** the snapshot in this room's own Durable Object storage, if any */
+  private async readLocalSnapshot(): Promise<RoomSnapshot | undefined> {
     const stored = await this.readMaybeGzipped(SNAPSHOT_KEY);
-    if (isRoomSnapshot(stored)) return { snapshot: stored, legacy: false };
-
-    // The legacy pair may itself be gzipped: compressing `currentState` shipped
-    // before this change, so a room upgrading straight from that build has a
-    // Uint8Array under the old key. Reading it as a plain object would fail
-    // `isAppState` and silently start the room fresh.
-    const [state, meta] = await Promise.all([
-      this.readMaybeGzipped(LEGACY_STATE_KEY),
-      this.room.storage.get<LegacySyncMeta>(LEGACY_META_KEY),
-    ]);
-    if (!isAppState(state)) return undefined;
-    // A legacy pair can be internally inconsistent — a meta that outran its
-    // state is the bug the snapshot format exists to prevent — but there is no
-    // way to detect that from the pair itself, and discarding the dedupe ids
-    // to be safe would let a healthy room double-apply every re-send. Carry
-    // both across as they were found; this path runs once per existing room,
-    // and every write after it is atomic.
-    return {
-      snapshot: {
-        seq: meta?.seq ?? 0,
-        seenIds: meta?.seenIds ?? [],
-        state,
-        savedAt: new Date(0).toISOString(),
-      },
-      legacy: true,
-    };
+    return isRoomSnapshot(stored) ? stored : undefined;
   }
 
   /**
@@ -346,17 +365,17 @@ export default class Server implements Party.Server {
    * discriminator, so no format flag or second key is needed.
    */
   private async readMaybeGzipped(key: string): Promise<unknown> {
-    const stored = await this.room.storage.get<unknown>(key);
+    const stored = await this.ctx.storage.get<unknown>(key);
     if (stored instanceof Uint8Array) return gunzipJson(stored);
     return stored;
   }
 
   private async readRemoteSnapshot(): Promise<RoomSnapshot | undefined> {
-    if (!remoteStore) return undefined;
-    return remoteStore.get(this.room.id);
+    if (!this.remoteStore) return undefined;
+    return this.remoteStore.get(this.name);
   }
 
-  onRequest(req: Party.Request): Response | Promise<Response> {
+  onRequest(req: Request): Response | Promise<Response> {
     if (req.method === "GET") {
       // opt-in health snapshot: `?debug` reports how this room instance
       // hydrated and whether its writes are landing, without changing the
@@ -385,15 +404,13 @@ export default class Server implements Party.Server {
     const memory = fingerprintParts(memoryState);
     const memoryFingerprint = formatFingerprint(memory);
 
-    const [storage, remote, rawStored] = await Promise.all([
-      this.describeSnapshot(
-        () => this.readLocalSnapshot().then((r) => r?.snapshot),
-        memoryFingerprint,
-      ),
+    const [storage, remote, rawStored, alarm] = await Promise.all([
+      this.describeSnapshot(() => this.readLocalSnapshot(), memoryFingerprint),
       this.describeSnapshot(() => this.readRemoteSnapshot(), memoryFingerprint),
-      this.room.storage
+      this.ctx.storage
         .get<unknown>(SNAPSHOT_KEY)
         .catch((): unknown => undefined),
+      this.ctx.storage.getAlarm().catch((): null => null),
     ]);
     if (rawStored instanceof Uint8Array) {
       storage.compressed = true;
@@ -410,9 +427,9 @@ export default class Server implements Party.Server {
         `${durabilityLag} action(s) applied but not confirmed durable — a restart would lose them`,
       );
     }
-    if (!remoteStore) {
+    if (!this.remoteStore) {
       warnings.push(
-        "no remote snapshot store configured — room storage is the only durable copy, and it rejects values over 131072 bytes",
+        "no SNAPSHOTS R2 binding — room storage is the only durable copy",
       );
     }
     if (this.storageWrites.failed > 0) {
@@ -439,7 +456,7 @@ export default class Server implements Party.Server {
 
     return Response.json(
       {
-        room: this.room.id,
+        room: this.name,
         now: new Date().toISOString(),
         instance: {
           startedAt: new Date(this.instanceStartedAt).toISOString(),
@@ -454,14 +471,15 @@ export default class Server implements Party.Server {
         rememberedActionIds: this.seenActionIds.size,
         memory: { ...memory, fingerprint: memoryFingerprint },
         storage,
-        remote: { ...remote, target: remoteStore?.describe ?? null },
+        remote: { ...remote, target: this.remoteStore?.describe ?? null },
         hydration: this.hydration,
         writes: {
           storage: this.storageWrites,
           remote: {
             ...this.remoteWrites,
-            enabled: !!remoteStore,
-            pending: !!this.remotePending,
+            enabled: !!this.remoteStore,
+            pending: alarm !== null,
+            scheduledFor: alarm === null ? null : new Date(alarm).toISOString(),
           },
         },
         lastAction: this.lastAction,
@@ -496,12 +514,12 @@ export default class Server implements Party.Server {
     }
   }
 
-  onConnect(conn: Party.Connection, ctx: Party.ConnectionContext) {
+  onConnect(conn: Connection, ctx: ConnectionContext) {
     // A websocket just connected!
     console.log(
       `Connected:
   id: ${conn.id}
-  room: ${this.room.id}
+  room: ${this.name}
   url: ${new URL(ctx.request.url).pathname}`,
     );
 
@@ -515,7 +533,9 @@ export default class Server implements Party.Server {
     conn.send(JSON.stringify(this.roomstateMessage()));
   }
 
-  async onMessage(message: string, sender: Party.Connection) {
+  async onMessage(sender: Connection, message: WSMessage) {
+    // the protocol is JSON text frames only
+    if (typeof message !== "string") return;
     let parsed: ClientMessage;
     try {
       parsed = JSON.parse(message) as ClientMessage;
@@ -525,7 +545,9 @@ export default class Server implements Party.Server {
 
     switch (parsed.type) {
       case "ping":
-        sender.send(JSON.stringify(<Pong>{ type: "pong" }));
+        // normally answered by the runtime's auto-response; this covers a
+        // ping that isn't byte-identical to PING_FRAME
+        sender.send(PONG_FRAME);
         return;
       case "catchup":
         this.handleCatchup(parsed, sender);
@@ -538,7 +560,7 @@ export default class Server implements Party.Server {
 
   private async handleAction(
     parsed: ReduxAction,
-    sender: Party.Connection,
+    sender: Connection,
     rawMessage: string,
   ) {
     if (parsed.id && this.seenActionIds.has(parsed.id)) {
@@ -560,7 +582,7 @@ export default class Server implements Party.Server {
     } catch (e) {
       const reason = e instanceof Error ? e.message : String(e);
       console.error(
-        `${LOG_PREFIX} room=${this.room.id} action:rejected type=${parsed.action?.type} id=${parsed.id ?? "none"} seq=${this.seq}`,
+        `${LOG_PREFIX} room=${this.name} action:rejected type=${parsed.action?.type} id=${parsed.id ?? "none"} seq=${this.seq}`,
         e,
       );
       // seq is not consumed, the id is not remembered, nothing is broadcast:
@@ -579,13 +601,14 @@ export default class Server implements Party.Server {
         id: parsed.id,
         seq: this.seq,
       };
-      this.rememberStampedAction(stamped);
-      this.room.broadcast(JSON.stringify(stamped));
+      const frame = JSON.stringify(stamped);
+      this.rememberStampedAction(stamped, frame);
+      this.broadcast(frame);
     } else {
       // legacy client that can't recognize its own echo: relay the
       // unstamped action to everyone else only. It has no ack channel, so a
       // rejection can only be silent for these.
-      this.room.broadcast(rawMessage, [sender.id]);
+      this.broadcast(rawMessage, [sender.id]);
     }
 
     const nextState = this.store.getState();
@@ -619,15 +642,10 @@ export default class Server implements Party.Server {
    * signed round trip rather than one per action.
    */
   private persist(state: AppState, fingerprint: string) {
-    const snapshot = this.buildSnapshot(state);
-
-    this.localPending = { snapshot, fingerprint };
+    this.localPending = { snapshot: this.buildSnapshot(state), fingerprint };
     void this.flushLocal();
 
-    if (remoteStore) {
-      this.remotePending = snapshot;
-      this.scheduleRemoteWrite();
-    }
+    if (this.remoteStore) this.scheduleRemoteWrite();
   }
 
   /**
@@ -652,7 +670,7 @@ export default class Server implements Party.Server {
         this.storageWrites.started += 1;
         try {
           const bytes = await gzipJson(snapshot);
-          await this.room.storage.put(SNAPSHOT_KEY, bytes);
+          await this.ctx.storage.put(SNAPSHOT_KEY, bytes);
           this.storedBytes = bytes.byteLength;
           this.storageWrites.ok += 1;
           this.storageWrites.lastOkAt = new Date().toISOString();
@@ -667,7 +685,7 @@ export default class Server implements Party.Server {
           this.storageWrites.lastError = describeError(e);
           this.recordError("storage.put", e);
           console.error(
-            `${LOG_PREFIX} room=${this.room.id} storage.put:error ${fingerprint}`,
+            `${LOG_PREFIX} room=${this.name} storage.put:error ${fingerprint}`,
             e,
           );
         }
@@ -677,49 +695,58 @@ export default class Server implements Party.Server {
     }
   }
 
-  private scheduleRemoteWrite() {
-    if (this.remoteTimer) return;
-    this.remoteTimer = setTimeout(() => {
-      this.remoteTimer = undefined;
-      void this.flushRemote();
-    }, REMOTE_WRITE_INTERVAL_MS);
+  /**
+   * Owe the remote store a write, carried by an alarm rather than a timer.
+   * A pending timer would keep the room from hibernating and die with an
+   * evicted instance; an alarm does neither, and wakes the room to run even
+   * if every socket has gone away in the meantime.
+   */
+  private scheduleRemoteWrite(delayMs = REMOTE_WRITE_INTERVAL_MS) {
+    if (this.remoteAlarmArmed) return;
+    this.remoteAlarmArmed = true;
+    this.ctx.storage.setAlarm(Date.now() + delayMs).catch((e: unknown) => {
+      this.remoteAlarmArmed = false;
+      this.recordError("setAlarm", e);
+      console.error(`${LOG_PREFIX} room=${this.name} setAlarm:error`, e);
+    });
+  }
+
+  async onAlarm() {
+    // cleared first so an action landing mid-write arms the next alarm
+    this.remoteAlarmArmed = false;
+    await this.flushRemote();
   }
 
   /**
-   * Drain the pending snapshot to the remote store, one write at a time. Any
-   * snapshot that arrives mid-flight replaces the pending one, so the loop
-   * always writes the newest state rather than replaying a backlog.
+   * Write the current snapshot to the remote store. Builds it from the store
+   * at write time rather than carrying one over from the action that armed
+   * the alarm, so it is always the newest state, including after a wake that
+   * rebuilt the store from room storage.
    */
   private async flushRemote() {
-    if (!remoteStore || this.remoteFlushing) return;
-    this.remoteFlushing = true;
+    if (!this.remoteStore) return;
+    const snapshot = this.buildSnapshot(this.store.getState());
+    this.remoteWrites.started += 1;
     try {
-      while (this.remotePending) {
-        const snapshot = this.remotePending;
-        this.remotePending = null;
-        this.remoteWrites.started += 1;
-        try {
-          await remoteStore.put(this.room.id, snapshot);
-          this.remoteWrites.ok += 1;
-          this.remoteWrites.lastOkAt = new Date().toISOString();
-          this.log(
-            "remote.put:ok",
-            `seq=${snapshot.seq} ${stateFingerprint(snapshot.state)}`,
-          );
-          this.notePersisted(snapshot.seq);
-        } catch (e) {
-          this.remoteWrites.failed += 1;
-          this.remoteWrites.lastErrorAt = new Date().toISOString();
-          this.remoteWrites.lastError = describeError(e);
-          this.recordError("remote.put", e);
-          console.error(
-            `${LOG_PREFIX} room=${this.room.id} remote.put:error seq=${snapshot.seq}`,
-            e,
-          );
-        }
-      }
-    } finally {
-      this.remoteFlushing = false;
+      await this.remoteStore.put(this.name, snapshot);
+      this.remoteWrites.ok += 1;
+      this.remoteWrites.lastOkAt = new Date().toISOString();
+      this.log(
+        "remote.put:ok",
+        `seq=${snapshot.seq} ${stateFingerprint(snapshot.state)}`,
+      );
+      this.notePersisted(snapshot.seq);
+      await this.ctx.storage.put(REMOTE_SEQ_KEY, snapshot.seq);
+    } catch (e) {
+      this.remoteWrites.failed += 1;
+      this.remoteWrites.lastErrorAt = new Date().toISOString();
+      this.remoteWrites.lastError = describeError(e);
+      this.recordError("remote.put", e);
+      console.error(
+        `${LOG_PREFIX} room=${this.name} remote.put:error seq=${snapshot.seq}`,
+        e,
+      );
+      this.scheduleRemoteWrite(REMOTE_RETRY_INTERVAL_MS);
     }
   }
 
@@ -743,7 +770,7 @@ export default class Server implements Party.Server {
       return;
     }
     this.lastPersistedBroadcastAt = now;
-    this.room.broadcast(
+    this.broadcast(
       JSON.stringify(<Persisted>{
         type: "persisted",
         seq: this.persistedSeq,
@@ -756,8 +783,12 @@ export default class Server implements Party.Server {
    * Serve a client's catch-up request: replay the stamped actions after
    * `since`. If the gap reaches back further than our retained tail, fall
    * back to a full roomstate so the client resyncs wholesale.
+   *
+   * The tail lives in SQLite, not memory: with hibernation a client's socket
+   * outlives the instance that served it, so the instance answering may have
+   * just woken up.
    */
-  private handleCatchup(req: CatchupRequest, sender: Party.Connection) {
+  private handleCatchup(req: CatchupRequest, sender: Connection) {
     if (req.since >= this.seq) {
       // client is already current (or ahead); nothing to replay
       this.log(
@@ -769,9 +800,18 @@ export default class Server implements Party.Server {
       );
       return;
     }
-    const earliest = this.tail.length ? this.tail[0].seq : Infinity;
-    if (req.since >= earliest - 1) {
-      const actions = this.tail.filter((a) => a.seq > req.since);
+    const [{ earliest }] = this.ctx.storage.sql
+      .exec<{ earliest: number | null }>(
+        "SELECT MIN(seq) AS earliest FROM tail",
+      )
+      .toArray();
+    if (earliest !== null && req.since >= earliest - 1) {
+      const actions = this.ctx.storage.sql
+        .exec<{
+          action: string;
+        }>("SELECT action FROM tail WHERE seq > ? ORDER BY seq", req.since)
+        .toArray()
+        .map((row) => JSON.parse(row.action) as StampedAction);
       this.log(
         "catchup",
         `conn=${sender.id} since=${req.since} result=replay actions=${actions.length} seq=${this.seq}`,
@@ -799,8 +839,8 @@ export default class Server implements Party.Server {
     };
   }
 
-  onClose(conn: Party.Connection) {
-    // correlate socket cycles (flaky venue wifi) and potential hibernation with
+  onClose(conn: Connection) {
+    // correlate socket cycles (flaky venue wifi) and hibernation wakes with
     // whichever snapshot was last served/persisted for this room.
     this.log(
       "onClose",
@@ -808,26 +848,34 @@ export default class Server implements Party.Server {
     );
   }
 
-  onError(conn: Party.Connection, err: Error) {
+  onError(conn: Connection, err: unknown) {
     console.error(
-      `${LOG_PREFIX} room=${this.room.id} onError conn=${conn.id} seq=${this.seq}`,
+      `${LOG_PREFIX} room=${this.name} onError conn=${conn.id} seq=${this.seq}`,
       err,
     );
   }
 
-  private sendAck(conn: Party.Connection, id: string) {
+  private sendAck(conn: Connection, id: string) {
     conn.send(JSON.stringify(<ActionAck>{ type: "ack", id }));
   }
 
-  private sendReject(conn: Party.Connection, id: string, reason: string) {
+  private sendReject(conn: Connection, id: string, reason: string) {
     conn.send(JSON.stringify(<ActionReject>{ type: "reject", id, reason }));
   }
 
-  private rememberStampedAction(stamped: StampedAction) {
-    this.tail.push(stamped);
-    if (this.tail.length > MAX_TAIL) {
-      this.tail.shift();
-    }
+  /** record a stamped action in the catch-up tail and the dedupe set */
+  private rememberStampedAction(stamped: StampedAction, frame: string) {
+    // REPLACE: a seq can be reissued after an eviction lost the snapshot
+    // that covered it, and onStart already dropped the stale row
+    this.ctx.storage.sql.exec(
+      "INSERT OR REPLACE INTO tail (seq, action) VALUES (?, ?)",
+      stamped.seq,
+      frame,
+    );
+    this.ctx.storage.sql.exec(
+      "DELETE FROM tail WHERE seq <= ?",
+      stamped.seq - MAX_TAIL,
+    );
     this.seenActionIds.set(stamped.id, stamped.seq);
     if (this.seenActionIds.size > MAX_REMEMBERED_ACTIONS) {
       for (const oldest of this.seenActionIds.keys()) {
@@ -837,5 +885,3 @@ export default class Server implements Party.Server {
     }
   }
 }
-
-Server satisfies Party.Worker;

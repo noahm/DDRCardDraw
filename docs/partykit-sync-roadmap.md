@@ -99,12 +99,11 @@ concurrent actions in different orders.
   reach back far enough). Replaces reconnect-as-only-repair; makes brief drops
   nearly free. The client buffers live broadcasts while a catch-up is in
   flight and drains them once the gap closes.
-  - **The tail is memory-only, not in room storage** (the original plan said
-    storage). A client can only observe a live-socket gap while the same actor
-    has been running the whole time, so the in-memory tail is always intact for
-    the case catch-up serves; a restart/hibernation drops every socket and
-    clients take a fresh roomstate anyway. Persisting the full action bodies on
-    every write would be the write-amplification step 3 is trying to _remove_.
+  - **The tail began memory-only** (the original plan said storage), on the
+    grounds that a restart/hibernation dropped every socket. Once the Durable
+    Object moved to Workers with hibernation on, sockets outlive the instance,
+    so the tail now lives in a SQLite table: one small row per stamped action,
+    not the full-state rewrite step 3 was trying to remove.
 - Application-level heartbeat: the client pings every ~10s and treats 2 missed
   pongs as a dead connection, forcing the reconnect flow. A stalled-but-open
   socket (server frozen, half-open TCP) is otherwise not noticed until an ack
@@ -165,7 +164,7 @@ subtree that wants it (e.g. collaborative text editing of `obsCss` via yjs
 running through its own channel), not the whole state. Queued-intent replay
 (the pending layer) already covers short offline windows.
 
-### Step 6 — get out from under the 128KiB ceiling ✅ (part 1)
+### Step 6 — get out from under the 128KiB ceiling ✅
 
 Written after an event lost a dozen-plus draws to a partykit deploy. Worth
 reading before touching persistence, because the cause was not the thing it
@@ -234,16 +233,22 @@ practical budget is around 138,400 `stateLen`, not 131,072.
 - **Supabase removed** from the party server. `PIU_TOURNEY_SUPABASE_*` is a
   different project and is untouched.
 
-#### Part 2 — eject the runtime (not started)
+#### Part 2 — eject the runtime ✅
 
-The hosted PartyKit runtime cannot bind Cloudflare resources, and the
-deploy-to-your-own-account path still lists bindings as unreleased. The
+Forced in the end rather than chosen: hosted PartyKit was taken offline. The
+server now runs on our own Workers account as a Durable Object class (`Main`,
+`src/party/server.ts`) behind `src/party/worker.ts`, deployed with
+`yarn deploy:party`. The notes below were the plan, and held up; the
+departures are called out inline.
+
+The hosted PartyKit runtime could not bind Cloudflare resources, and the
+deploy-to-your-own-account path still listed bindings as unreleased. The
 sanctioned successor is [`partyserver`](https://www.npmjs.com/package/partyserver),
 now developed in the `cloudflare/partykit` monorepo, running on plain Workers.
 
 - `routePartykitRequest` keeps the `/parties/:server/:name` URL shape, so
-  `partysocket` and `partykitEndpoint()` are unaffected. Client-side this is
-  one constant: `PARTYKIT_HOST` in `src/party/host.ts`.
+  `partysocket` and `partyEndpoint()` are unaffected. Client-side this is
+  one constant: `PARTY_HOST` in `src/party/host.ts`, now set by webpack.
 - Server-side it is a rename pass: `extends Server` from `partyserver`,
   `this.room.id` → `this.name`, `this.room.storage` → `this.ctx.storage`,
   `this.room.broadcast` → `this.broadcast`, `onMessage(message, sender)` →
@@ -261,14 +266,15 @@ now developed in the `cloudflare/partykit` monorepo, running on plain Workers.
   PartyKit's Cloudflare account; ejecting means a new DO namespace in ours and
   every room starts empty. Export anything worth keeping via the plain `GET`
   before cutting over. This is the largest operational risk of the move, and
-  it is not a code problem.
+  it is not a code problem. **As it happened:** PartyKit went offline before
+  an export was possible, so room storage was lost. Rooms that part 1 had
+  already written to R2 survived, because hydration compares `seq` across
+  both copies and an empty Durable Object loses to any R2 snapshot.
 - Once bindings exist, `snapshot-store.ts` loses the signing and becomes
   `env.SNAPSHOTS.put(...)`. The object layout carries over unchanged, which is
-  why part 1 was built against R2 rather than waiting.
-
-Sequencing note: part 2 is a breaking infrastructure change, so it wants to
-ride along with the `next.ddr.tools` → `ddr.tools` migration rather than
-landing on its own.
+  why part 1 was built against R2 rather than waiting. Done: `aws4fetch`, the
+  `R2_*` secrets, `LOCAL_SNAPSHOT_URL` and `scripts/local-snapshot-store.mjs`
+  are gone, since `wrangler dev` simulates the binding locally.
 
 #### Rules this leaves behind
 
@@ -289,6 +295,7 @@ landing on its own.
 | ----------------------------------- | ------------------------------------------------------------ |
 | Wire protocol types                 | `src/party/types.ts`                                         |
 | Server (room actor)                 | `src/party/server.ts`                                        |
+| Worker entry + routing              | `src/party/worker.ts`, `wrangler.jsonc`                      |
 | Durable snapshot shape + R2 store   | `src/party/snapshot-store.ts`                                |
 | Client socket manager (react)       | `src/party/client.tsx`                                       |
 | Confirmed/pending sync manager      | `src/party/sync-manager.ts`                                  |

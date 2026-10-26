@@ -9,7 +9,7 @@ import { Card, Intent, NonIdealState, Spinner } from "@blueprintjs/core";
 import { Offline, Pulse } from "@blueprintjs/icons";
 import { DelayRender } from "../utils/delay-render";
 import { applyMigrations } from "../state/migrations";
-import { PARTYKIT_HOST } from "./host";
+import { PARTY_HOST } from "./host";
 import { toaster } from "../toaster";
 import { useIntl } from "../hooks/useIntl";
 import { useInObs } from "../theme-toggle";
@@ -128,7 +128,7 @@ export function PartySocketManager(props: {
 
   const socket = usePartySocket({
     room: props.roomName,
-    host: PARTYKIT_HOST,
+    host: PARTY_HOST,
     onMessage(evt) {
       try {
         const data: Broadcast = JSON.parse(evt.data);

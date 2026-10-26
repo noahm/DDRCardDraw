@@ -7,10 +7,12 @@ lives in the source. For where the design is headed next, see
 
 ## The big picture
 
-Every event is a [PartyKit](https://docs.partykit.io/) **room**: a single
-server-side actor that owns the authoritative copy of that event's state and
-relays updates between everyone viewing it. Both the browser and the room run
-the **same redux reducer bundle** (`src/state/root-reducer.ts`), so state is
+Every event is a **room**: a Cloudflare Durable Object run through
+[`partyserver`](https://www.npmjs.com/package/partyserver) (the successor to
+the hosted PartyKit runtime this started on). It is a single server-side actor
+that owns the authoritative copy of that event's state and relays updates
+between everyone viewing it. Both the browser and the room run the **same
+redux reducer bundle** (`src/state/root-reducer.ts`), so state is
 synchronized by shipping _redux actions_ over a websocket rather than
 diffing state objects. The server orders those actions and every replica
 applies them in the same order — a replicated state machine with a central
@@ -25,7 +27,7 @@ flowchart LR
         SM <-->|JSON messages| WS["PartySocket<br/>(auto-reconnecting websocket)"]
     end
     WS <--> Room
-    subgraph PK["PartyKit room (one per event)"]
+    subgraph PK["Room: one Durable Object per event"]
         Room["Server class<br/>src/party/server.ts"] --> SStore["server redux store"]
         Room --> KV["room storage<br/>('currentState')"]
         Room --> SB[("Supabase<br/>event_state table")]
@@ -294,12 +296,14 @@ sequenceDiagram
     Note over M: apply in order → confirmed advances to head of tail<br/>drain buffered 44, ... → resyncing = false
 ```
 
-- The server keeps an in-memory **tail** of the last `MAX_TAIL` (500) stamped
-  actions (`src/party/server.ts`). `handleCatchup` returns every tail entry
-  with `seq > since`. This is safe to keep in memory only: a client can only
-  see a live-socket gap while _this same actor_ has been running continuously,
-  so the tail is intact. A restart or hibernation drops every socket, so
-  clients reconnect and take a fresh roomstate instead of ever catching up.
+- The server keeps a **tail** of the last `MAX_TAIL` (500) stamped actions in
+  a SQLite table (`tail`, in `src/party/server.ts`). `handleCatchup` returns
+  every tail entry with `seq > since`. It has to be durable because the room
+  hibernates: an idle room is evicted from memory while its sockets stay
+  open, so the instance answering a catch-up may have just woken up. Rows are
+  written as each action is stamped, ahead of the snapshot covering them, so
+  `onStart` drops any row past the restored `seq` (and the whole table when
+  hydrating from R2).
 - If the gap reaches back **further than the tail** (`since` older than the
   oldest retained action), the server sends a `roomstate` instead and the
   client resyncs wholesale — the same code path as a reconnect.
@@ -322,6 +326,11 @@ unanswered pings, calls `socket.reconnect()` to force the normal
 disconnect/reconnect flow. The pong counter resets whenever a `pong` or a
 fresh roomstate arrives. This is the failure mode exercised by SIGSTOP-ing
 `workerd` in `.claude/skills/verify/SKILL.md`.
+
+The server registers `{"type":"ping"}` → `{"type":"pong"}` as a websocket
+auto-response, so the runtime answers heartbeats without waking a hibernating
+room. The match is byte-exact; `onMessage` still answers any ping that slips
+past it.
 
 ## User-facing connection health
 
@@ -347,40 +356,42 @@ chrome.
 
 1. **In-memory redux store** — authoritative while the room actor is alive.
    Hydrated in `onStart` with `applyMigrations` (`src/state/migrations.ts`) run
-   over whatever loads.
-2. **PartyKit room storage** — one `snapshot` key holding a `RoomSnapshot`
+   over whatever loads. The room hibernates (`static options = { hibernate:
+true }`), so `onStart` runs again on every wake while sockets stay
+   connected; nothing a live client depends on may be memory-only.
+2. **Durable Object storage** — one `snapshot` key holding a `RoomSnapshot`
    (`{seq, seenIds, state, savedAt}`, defined in `src/party/snapshot-store.ts`),
    rewritten after every applied action. State and sequencer metadata are one
    value on purpose: as two keys of very different sizes the small one kept
    landing after the large one started failing, leaving a restarted room
    remembering the `seq` and dedupe ids of actions whose effects it had lost.
-   A pre-snapshot `currentState` + `syncMeta` pair is still read once and
-   converted on the next write. (The catch-up `tail` is deliberately _not_
-   persisted — see "Incremental catch-up" above.)
+   Stored gzipped; the class is SQLite-backed, which caps a value at 2 MB.
+   The catch-up `tail` lives beside it in its own SQLite table — see
+   "Incremental catch-up" above.
 3. **Remote snapshot store** — the same `RoomSnapshot` written at
    `rooms/<roomId>/snapshot.json`, behind the `SnapshotStore` interface in
    `src/party/snapshot-store.ts`. Writes coalesce on a short interval rather
-   than firing per action. Two implementations, chosen by environment:
-   - **R2**, via the S3-compatible endpoint signed with `aws4fetch` (PartyKit's
-     runtime cannot bind Cloudflare resources). Used whenever all of
-     `R2_ACCOUNT_ID` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` /
-     `R2_SECRET_ACCESS_KEY` are present, so credentials always win.
-   - **A local folder**, used when only `LOCAL_SNAPSHOT_URL` is set. Also an
-     HTTP hop, because `partykit dev` runs the server inside workerd and
-     workerd has no filesystem: `scripts/local-snapshot-store.mjs` is the
-     process that holds the disk, writing the same objects under `.snapshots/`.
-     It exists so the two-target path can be developed against without a
-     Cloudflare account, and it is never reachable from a deploy that doesn't
-     set the variable.
+   than firing per action, carried by a Durable Object alarm rather than a
+   timer: a pending timer would keep the room from hibernating and die with an
+   evicted instance, while the alarm wakes the room and writes the current
+   state even after every socket has left. Failed writes retry every 30s. The store is the R2 bucket bound as `SNAPSHOTS` in
+   `wrangler.jsonc`; `wrangler dev` simulates it on disk under
+   `.wrangler/state`, so local development runs the same path with no
+   credentials. It is also what carried rooms across the move off hosted
+   PartyKit: the bucket and its key layout are unchanged, and a room whose
+   Durable Object storage is empty hydrates from it.
 
-   With neither configured the room runs on room storage alone, which `?debug`
-   warns about because room storage rejects any value over 131072 bytes.
+   Without the binding the room runs on Durable Object storage alone, which
+   `?debug` warns about.
 
-**Hydration compares, it does not prefer.** `onStart` reads both durable copies
-and adopts whichever carries the higher `seq`. The earlier `storage || remote`
-short-circuit meant a stale-but-present local value pinned a room to an old
-checkpoint while the copy that was still advancing went unread — the exact
-shape of the incident in step 6 of the roadmap.
+**Hydration compares, it does not prefer.** `onStart` adopts whichever durable
+copy carries the higher `seq`. The earlier `storage || remote` short-circuit
+meant a stale-but-present local value pinned a room to an old checkpoint while
+the copy that was still advancing went unread — the exact shape of the
+incident in step 6 of the roadmap. Since a hibernating room runs `onStart` on
+every wake, R2 is only _read_ when it could win: room storage is empty, or the
+`remoteSeq` key (the last seq this room confirmed in R2, or what R2 held when
+last read) is ahead of it. `?debug` reports this as `hydration.remoteRead`.
 
 **Durability is reported, not assumed.** Once a write settles, the server
 broadcasts `{type: "persisted", seq, appliedSeq}` (throttled). `SyncManager`
@@ -390,9 +401,9 @@ the message entirely. A standing lag raises a danger toast.
 
 The room also answers plain HTTP `GET` with its current state JSON
 (`onRequest`), which preview mode and debugging tools use via
-`partykitEndpoint`/`getPartykitState` in `src/party/host.ts`. In development
+`partyEndpoint`/`getPartyState` in `src/party/host.ts`. In development
 the client targets `localhost:1999` (`yarn start:backend`); in production,
-the deployed PartyKit host — both resolved in `src/party/host.ts`.
+the deployed Worker. Webpack sets which as `PARTY_HOST`.
 
 ## Version interop
 
@@ -415,7 +426,7 @@ corrupting state:
 
 ## Poking at it locally
 
-Run `yarn start:backend` (PartyKit on `:1999`) and `yarn start:frontend`
+Run `yarn start:backend` (`wrangler dev` on `:1999`) and `yarn start:frontend`
 (webpack on `:8080`), then open `/e/any-room-name` in two tabs and watch the
 websocket frames in devtools. `.claude/skills/verify/SKILL.md` documents a
 scripted version of this, including how to freeze the server mid-flight

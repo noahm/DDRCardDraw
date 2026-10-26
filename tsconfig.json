@@ -65,5 +65,12 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["src/**/*", "types/*"]
+  "include": ["src/**/*", "types/*"],
+  // workers-runtime code, checked by tsconfig.worker.json instead
+  "exclude": [
+    "src/party/worker.ts",
+    "src/party/server.ts",
+    "src/party/snapshot-store.ts",
+    "src/party/compression.ts"
+  ]
 }
