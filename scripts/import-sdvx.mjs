@@ -459,10 +459,10 @@ async function buildSong(song, availableJackets, musicDir) {
 
   /** @type {Song} */
   const ret = {
+    id: song.$.id,
     name: name,
     search_hint: info.ascii[0],
     date_added: reformatDate(info.distribution_date[0]._),
-    saHash: song.$.id,
     artist: artist,
     jacket: usesSharedJacket
       ? `sdvx/${versionNumToString(info.version[0]._)}/${info.ascii[0]}.png`

@@ -103,6 +103,8 @@ export function getDataFileFromPack(
     }
 
     const song: Song = {
+      // each song has its own folder, so its name is unique within the pack
+      id: parsedSong.title.titleDir,
       name: parsedSong.title.titleName,
       name_translation: parsedSong.title.translitTitleName || "",
       jacket: jackets?.get(parsedSong) ?? "",
