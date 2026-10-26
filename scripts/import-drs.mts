@@ -54,7 +54,7 @@ const DEFAULT_FOLDER = "DANCERUSH STARDOM";
 
 /**
  * Existing song names that are typos of the official title, mapped to the
- * official title. Only needed until a song has picked up its `saIndex`.
+ * official title. Only needed until a song has picked up its official `id`.
  */
 const TITLE_ALIASES: Record<string, string> = {
   "Keiko my Love)": "Keiko my love",
@@ -299,7 +299,7 @@ function buildSong(
     name_translation: _nameTranslation,
     artist: _artist,
     artist_translation: _artistTranslation,
-    saIndex: _saIndex,
+    id: _id,
     jacket: _jacket,
     bpm: _bpm,
     folder: _folder,
@@ -316,6 +316,7 @@ function buildSong(
 
   // hand-curated fields sit next to the official ones they describe
   return {
+    id,
     name: cleanText(official.info.title_name),
     ...(curated.name_translation && {
       name_translation: curated.name_translation,
@@ -324,7 +325,6 @@ function buildSong(
     ...(curated.artist_translation && {
       artist_translation: curated.artist_translation,
     }),
-    saIndex: id,
     jacket,
     bpm: formatBpm(official),
     folder: curated.folder ?? DEFAULT_FOLDER,
@@ -341,8 +341,8 @@ function findOfficial(
   byId: Map<string, OfficialSong>,
   byTitle: Map<string, OfficialSong[]>,
 ): OfficialSong | undefined {
-  if (song.saIndex && byId.has(song.saIndex)) {
-    return byId.get(song.saIndex);
+  if (byId.has(song.id)) {
+    return byId.get(song.id);
   }
   const title = TITLE_ALIASES[song.name] ?? song.name;
   const candidates = byTitle.get(normalize(title)) ?? [];

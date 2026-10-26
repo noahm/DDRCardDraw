@@ -90,7 +90,7 @@ export function SongSearch(props: Props) {
       className={styles.songSearch}
       itemRenderer={(data, itemProps) => (
         <SearchResult
-          key={`${data.song.saHash || data.song.name}-${
+          key={`${data.song.id}-${
             typeof data.chart === "string"
               ? data.chart
               : chartIdentity(data.chart)

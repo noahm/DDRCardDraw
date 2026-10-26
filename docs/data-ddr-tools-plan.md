@@ -408,7 +408,7 @@ same as code.
    tree is on the CDN at `legacy/jackets/smx/`, and custom bundles' relative `smx/` paths are
    rewritten onto it at load. Keep topping it up (`upload-legacy-jackets.mjs --remote`) whenever
    the SMX catalog gains songs, until step 6.
-2. **Backport `partykit`'s data to `main`.** Catalogs and jackets that exist only on `partykit`
+2. **Backport `partykit`'s data to `main`. ✅ Done 2026-10-19** (DDRCardDraw #671). Catalogs and jackets that exist only on `partykit`
    (`syr5`, `syr6` + their 140 jackets, the `dashdance25` change), the schema's `chart.id`, and
    `validate.mjs`'s duplicate-chart-id check. `main` must handle `chart.id` (or at least ignore it
    harmlessly) before those sets reach its picker. After this step, `main`'s data is a superset of
@@ -416,9 +416,12 @@ same as code.
 3. **Schema revision.** Fold in the planned changes before anything is published, so the first
    CDN bundles already use the new shape (see _Schema revision_ below). Reconcile with the hosted
    `v1.json`, which drifted in both directions (hosted has `i18nDictPartial`; the repo has
-   `chart.id` and the `additionalItems` rules). Ships as already split up: `v2.json` + the API's
-   v2 validation from `rgt-data` (rgt-data#5 — ✅ merged and live 2026-10-20), the repo schema and
-   backfill on `main` (#673), and the loader on `partykit` (#674). Merge order #673 → #674.
+   `chart.id` and the `additionalItems` rules). Ships as three PRs, merged in order: rgt-data #5
+   (✅ merged and live 2026-10-20; hosts `v2.json`, and the publish API validates bundles whose
+   songs carry an `id` against v2, others against v1), DDRCardDraw #673 (`main`: repo schema =
+   hosted v2, every catalog backfilled, importers write `id`), then #674 (`partykit`: merges
+   `main`, chart keys from `song.id`, loader upgrades id-less bundles). rgt-data #5 had to be
+   live before #674 ships, since its publishing then sends v2 bundles.
 4. **Fold the data Worker into DDRCardDraw.** Move `rgt-data`'s Worker (`src/worker/`, the D1
    `migrations/`, `scripts/upload-legacy-jackets.mjs`, infra docs) onto `partykit`, beside the
    party Worker.
@@ -477,15 +480,18 @@ Planned changes, all landed together:
     deterministic id derived from the song (same song → same id in every file, so cross-file chart
     matching like `dia_del_ritmo_26` ↔ `ddr_world` keeps working; random ids would break it).
     Today's fields map over as: DDR `saHash` (sanbai/3icecream id, which the share link needs);
-    IIDX/jubeat/SDVX/Donkey Konga `saHash`; Pump/SMX/EZ2AC/septa2-iidx `saIndex` (SMX's is the
+    IIDX/jubeat/SDVX/Donkey Konga `saHash`; Pump/SMX/EZ2AC `saIndex` (SMX's is the
     573.no `song_id` the edit builder and score import match on). DDR's own `saIndex` (sanbai's
-    numeric index) is unused and **dropped**.
+    numeric index) is unused and **dropped**. septa2-iidx's `saIndex` turned out to be a list
+    position, so its songs take `iidx.json`'s textage ids instead (1,731 of 1,762; the rest derived).
+    Derived ids are `deriveSongId` in `scripts/utils.mts`: the first 16 hex characters of a sha256
+    of the NFKC-normalized name and artist, computed once and kept.
   - **No-id games:** ongeki uses the SEGA API's per-entry `id`; maimai and the ITG/tournament event
     sets (`itl24`, `itl25`, `syr5`, `syr6`, `storm*`, `shine*`, `bite9*`, `bhopball4`,
     `dashdance25`, `rip15singles`) get native ids where their import source has them, else
-    derived ones. DRS is a still-updated game (new songs unlocked 2026-02-18) maintained by hand
-    with no import script, so it needs real ids sourced from somewhere like RemyWiki or the
-    official e-amusement music list, which also settles its duplicate entries.
+    derived ones. DRS's ids come from the official e-amusement music list (`import:drs`,
+    DDRCardDraw #672), which also settled its duplicate entries; the 144 songs absent from that
+    list get derived ids.
   - **No namespacing.** Ids are bare strings; numeric ids repeat across games (Pump and EZ2AC both
     start at `1`). Mixing data from different games in one set raises other problems anyway, so
     it's out of scope.
