@@ -190,12 +190,27 @@ export const DDR_WORLD: DDRSourceMeta = {
     // Use song metadata only from zenius-i-vanisher, don't import charts or levels
     correctionMap: [
       // #region DDR WORLD
-      ["Ødyssey", { name_translation: undefined }],
+      [
+        "ギミギミエンターテイメント",
+        { name_translation: "Gimmick gimmick entertainment" },
+      ],
+      ["シャムシールの舞", { artist_translation: undefined }],
+      ["旅人リラン", { name_translation: "Tabibito Rerun" }],
+      ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
+      ["COLOR BURST", { artist_translation: undefined }],
       ["Mighty Beat Monsterz", { artist_translation: undefined }], // Broken HTML
       ["Ganymede -re:born-", { artist_translation: undefined }], // Broken HTML
-      ["Timepiece phase II", { name: "Timepiece phase Ⅱ" }],
+      [
+        "HAPPY☆PARADISE☆GALAXY",
+        { name_translation: undefined, artist_translation: undefined },
+      ],
+      ["Ignis†Iræ", { artist_translation: undefined }], // Broken HTML
       ["Liar×Girl", { artist_translation: undefined }], // Broken HTML
-      ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
+      ["Meteor☆Shower", { name_translation: undefined }],
+      ["neu (STARDOM Remix)", { artist_translation: undefined }], // Broken HTML
+      ["Ødyssey", { name_translation: undefined }],
+      ["Timepiece phase II", { name: "Timepiece phase Ⅱ" }],
+      ["UИKNØWNZ", { name_translation: undefined }],
       // #endregion DDR WORLD
       // #region DDR A3
       ["Ambivalent Vermilia", { artist_translation: undefined }], // Broken HTML
