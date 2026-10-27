@@ -84,6 +84,11 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     id,
     { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
   ]),
+  [
+    new Date("2026-11-24T05:00:00+09:00"),
+    "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9", // テレキャスタービーボーイ
+    { deleted: 1 },
+  ],
   // グランプリ譜面パック vol.5
   ...[
     "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
