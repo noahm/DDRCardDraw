@@ -61,7 +61,7 @@
       "extraOnly"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1792027577302
+    "lastUpdated": 1793240548855
   },
   "defaults": {
     "style": "single",
@@ -1881,6 +1881,68 @@
       "jacket": "ddr_1st-5th/Abyss.png",
       "remyLink": "https://remywiki.com/Abyss",
       "genre": "INTELLIGENCE"
+    },
+    {
+      "id": "ooil0dl9OobDPblIPlqoi1P9lll6DD89",
+      "name": "access super [hyper] focus",
+      "artist": "kiraku",
+      "bpm": "105-492",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4,
+          "maxScore": 285,
+          "sanbaiTier": 4.4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 9,
+          "maxScore": 669,
+          "sanbaiTier": 9.55
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 999,
+          "sanbaiTier": 12.95
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1323,
+          "sanbaiTier": 15.95
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 9,
+          "maxScore": 666,
+          "sanbaiTier": 9.55
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1005,
+          "sanbaiTier": 12.9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 1257,
+          "sanbaiTier": 15.8
+        }
+      ],
+      "flags": ["arcade"],
+      "jacket": "ddr_world/access super [hyper] focus.jpg",
+      "remyLink": "https://remywiki.com/Access_super_(hyper)_focus",
+      "search_hint": "access super hyper focus"
     },
     {
       "id": "ld6P1lbb0bPO9doqbbPOoPb8qoDo8id0",

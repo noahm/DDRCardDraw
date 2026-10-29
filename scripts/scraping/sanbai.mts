@@ -134,6 +134,10 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
+  [
+    "ooil0dl9OobDPblIPlqoi1P9lll6DD89", // access super [hyper] focus
+    { lock_types: undefined },
+  ],
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
