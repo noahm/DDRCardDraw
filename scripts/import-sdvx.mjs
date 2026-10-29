@@ -8,7 +8,7 @@ import { parseStringPromise } from "xml2js";
 import iconv from "iconv-lite";
 import { fileURLToPath } from "url";
 import { writeJsonData } from "./utils.mts";
-import { SDVX_UNLOCK_IDS, UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
+import { SDVX_UNLOCK_IDS, ALL_UNPLAYABLE_IDS } from "./sdvx/unlocks.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -233,7 +233,7 @@ function determineDiffClass(song, chartType) {
   return versionNumToString(infVersion);
 }
 
-const songIdsToSkip = new Set(UNPLAYABLE_IDS);
+const songIdsToSkip = new Set(ALL_UNPLAYABLE_IDS);
 function filterUnplayableSongs(song) {
   return !songIdsToSkip.has(parseInt(song.$.id));
 }
@@ -335,6 +335,7 @@ async function buildSong(song, availableJackets, musicDir) {
     鑒: "₩",
     煢: "ø",
     鷸: "♫",
+    麌: "ó",
   };
 
   let name = info.title_name[0];
