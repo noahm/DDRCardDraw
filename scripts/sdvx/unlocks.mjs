@@ -442,6 +442,20 @@ export const SDVX_UNLOCK_IDS = {
     [317, "nabla"], // ありふれたせかいせいふく
     [220, "nabla"], // 音楽 -壊音楽 mix-
     [683, "nabla"], // 無双
+    [175, "nabla"], // トーキョープレジャーグラウンド
+    [146, "nabla"], // ナツノメイロ
+    [67, "nabla"], // Ignited Night burst
+    [801, "nabla"], // Apex of the World
+    [302, "nabla"], // Lunartic Dial
+
+
+    // EXTRACK CHALLENGE
+    2418, // VICTIM
+    2417, // Quetzalcóretl
+    2416, // こどもごころのアドベンチャー
+    2415, // Trinity ∇urst
+    2419, // ボ
+    2413, // No.1
   ],
 
   jpOnly: [
