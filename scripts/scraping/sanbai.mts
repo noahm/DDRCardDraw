@@ -89,6 +89,23 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9", // テレキャスタービーボーイ
     { deleted: 1 },
   ],
+  // EXTRA SAVIOR WORLD (BEMANI SELECTION楽曲パック vol.1)
+  ...[
+    "bP61iObqb9Oo1IOQOdlQ0idilOII9O66", // Beyond The Earth
+    "Pdlib1o06DD6oIbdIdIoIqQqO8P896do", // DIAVOLO
+    "Qib986b6oDqPl8IQiOoDOQ06IlbD68bl", // Fly Like You
+    "09P10l1q98b1DiDQdlIii0bld111O86D", // quaver♪
+    "0b8lD690qQO1bDOib1IqiO0OO169o9IQ", // Red. by Full Metal Jacket
+    "0ODl10P0O10D1OQID91QiPlQd988bio8", // TYCOON
+    "88qq1I89IQ8P9PdqbbdD0ood8oi9d68I", // 蛇神
+    "Dl89dQdOQooI0i0DoPQd68db6di86PD8", // 逆月
+    "qib6O1d6010d8Iql8IQ0q8diqOP6dIqb", // 雪上断火
+    "b9iI8O6bd0bq0I1OoooQ9i9iddidODbO", // 罪と罰
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-11-26T15:00:00+09:00"),
+    id,
+    { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
+  ]),
   // グランプリ譜面パック vol.5
   ...[
     "iIP09bOq1l1b9b1l011IDIQ6Iill90Io", // BROKEN MY HEART
