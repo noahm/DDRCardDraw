@@ -98,6 +98,10 @@ export function SongSearch(props: Props) {
   return (
     <Modal
       opened={isOpen}
+      // the card that opened the search puts focus back on itself once a pick
+      // lands; the element focused when this opened is the card's menu item,
+      // which is gone by then
+      returnFocus={false}
       onClose={() => {
         resetSearch();
         onCancel();

@@ -23,6 +23,7 @@ import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
 import { useMemo } from "react";
 import { NotificationHost } from "./notify";
+import { KeyMapListener } from "./keymap/keymap-listener";
 
 const router = createBrowserRouter([
   {
@@ -290,6 +291,7 @@ export function App() {
     <MantineProvider forceColorScheme={theme}>
       <IntlProviderWrapper>
         <ThemeSyncWidget />
+        <KeyMapListener />
         <UpdateManager />
         <RouterProvider router={router} />
         <NotificationHost />
