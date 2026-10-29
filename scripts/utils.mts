@@ -216,6 +216,23 @@ interface ImageSource {
   file(): Promise<File>;
 }
 
+/** width all jackets are downscaled to */
+export const JACKET_WIDTH = 128;
+
+/**
+ * Downscales and compresses a jacket to the project's standard size and quality
+ * @param img decoded source image
+ * @param absolute output path
+ */
+export function writeJacket(
+  img: Awaited<ReturnType<typeof Jimp.read>>,
+  absolute: `${string}.jpg`,
+) {
+  return img
+    .resize({ w: JACKET_WIDTH, mode: ResizeStrategy.BILINEAR })
+    .write(absolute, { quality: 80 });
+}
+
 /**
  * Queues a cover image for download into the imageQueue.
  * Always skips if file already exists.
@@ -241,11 +258,7 @@ export function downloadJacket(
         // already local, so read it straight out of the folder or archive
         return Jimp.fromBuffer(await (await source.file()).arrayBuffer());
       })
-      .then((img) =>
-        img
-          .resize({ w: 128, mode: ResizeStrategy.BILINEAR })
-          .write(absolute, { quality: 80 }),
-      )
+      .then((img) => writeJacket(img, absolute))
       .catch((e) => {
         console.error("image download failure for", label);
         e.cause ? console.error(e.cause) : console.error(e);
