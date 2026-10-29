@@ -138,6 +138,85 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "ooil0dl9OobDPblIPlqoi1P9lll6DD89", // access super [hyper] focus
     { lock_types: undefined },
   ],
+  [
+    "odiQOiD9OIiI1IDPodQQIo9DDPoOI868", // Steps for Victory (U1 Heavy Metal Edition)
+    {
+      ratings: [4, 7, 14, 16, 18, 7, 14, 16, 18],
+      lock_types: [290, 290, 290, 290, 290, 290, 290, 290, 290],
+    },
+  ],
+  // #region グランプリ譜面パック vol.8
+  [
+    "oQ0bqIQ8DdPlilO000DQloOo6Od8IdQ6", // Bloody Tears(IIDX EDITION)
+    {
+      ratings: [4, 5, 6, 11, 16, 5, 7, 11, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "Iqo9PQiPbq8Q0I6io6lPIDi608lQqbbq", // CaptivAte～誓い～
+    {
+      ratings: [4, 5, 8, 13, 15, 5, 8, 13, 15],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "8O0D9P6l9P9ooQdODioDIdQPq6DiDlbl", // DROP THE BOMB
+    {
+      ratings: [3, 5, 7, 10, 14, 6, 8, 10, 14],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "PlqI9Q1I6qdqb0IolOl1qP0bOQP0ibPP", // FIRE
+    {
+      ratings: [4, 5, 8, 11, 16, 4, 8, 12, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "Dq0Iio09Pb9iD0lbb0I0qd8Q8i10II09", // GENOM SCREAMS
+    {
+      ratings: [3, 7, 8, 11, 15, 9, 11, 12, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "qbQ9I1bI6q91Q18DlDlI1Qdi8q6Qlo91", // La Bamba
+    {
+      ratings: [3, 5, 8, 11, 13, 6, 8, 12, 13],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "qbDidIlodPP6PqI00D18P6dDbioIdDPD", // rainbow flyer
+    {
+      ratings: [3, 4, 6, 11, 16, 3, 7, 11, 16],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "o9l8Id0D1lQdl1o9DDIPbO6q998lq8bd", // Saturday Night Love
+    {
+      ratings: [3, 4, 6, 8, 12, 4, 6, 8, 12],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "ODQOP1dblD6q8d160Ioi0dIoQloI6oQO", // THE SHINING POLARIS
+    {
+      ratings: [4, 4, 6, 9, 12, 5, 6, 9, 12],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  [
+    "PqPPDibPdD8qd88D0d01dqo6918b0POD", // Votum stellarum -forest #25 DDR RMX-
+    {
+      ratings: [2, 5, 9, 12, 17, 5, 7, 12, 17],
+      lock_types: [0, 0, 0, 0, 190, 0, 0, 0, 190],
+    },
+  ],
+  // #endregion グランプリ譜面パック vol.8
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),

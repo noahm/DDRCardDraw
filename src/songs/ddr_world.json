@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1793247493158
+    "lastUpdated": 1793251332103
   },
   "defaults": {
     "style": "single",
@@ -7949,6 +7949,13 @@
           "sanbaiTier": 11.15
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1416,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 447,
           "lvl": 5,
           "style": "double",
@@ -7968,6 +7975,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1407,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Bloody_Tears(IIDX_EDITION)",
@@ -10551,6 +10565,13 @@
           "sanbaiTier": 13.35
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1773,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 522,
           "lvl": 5,
           "style": "double",
@@ -10570,6 +10591,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1776,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/CaptivAte~chikai~",
@@ -18808,6 +18836,13 @@
           "sanbaiTier": 10.35
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "maxScore": 1287,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 597,
           "lvl": 6,
           "style": "double",
@@ -18827,6 +18862,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "maxScore": 1275,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/DROP_THE_BOMB",
@@ -21495,6 +21537,61 @@
       "jacket": "ddr_2013/Everything I Need.png"
     },
     {
+      "id": "PdOq6bQQ6I8P866i0bbDI9IdD6IddQil",
+      "name": "Ex-Otogibanashi",
+      "artist": "ryo (supercell), かぐや (cv.夏吉ゆうこ), 月見ヤチヨ (cv.早見沙織) from 超かぐや姫！",
+      "bpm": "65-190",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 174
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 507
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1005
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1539
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 471
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 978
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1491
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Ex-Otogibanashi.jpg",
+      "remyLink": "https://remywiki.com/Ex-Otogibanashi",
+      "genre": "アニメ"
+    },
+    {
       "id": "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO",
       "name": "exotic ethnic",
       "artist": "RevenG",
@@ -22518,6 +22615,13 @@
           "sanbaiTier": 11.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1458,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 354,
           "lvl": 4,
           "style": "double",
@@ -22537,6 +22641,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1329,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/FIRE",
@@ -25114,6 +25225,13 @@
           "sanbaiTier": 11.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1437,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 585,
           "lvl": 9,
           "style": "double",
@@ -25133,6 +25251,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.65
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1419,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/GENOM_SCREAMS",
@@ -35120,6 +35245,13 @@
           "sanbaiTier": 11.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1173,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 468,
           "lvl": 6,
           "style": "double",
@@ -35139,6 +35271,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1143,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/La_Bamba",
@@ -50431,6 +50570,13 @@
           "sanbaiTier": 11.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1578,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 354,
           "lvl": 3,
           "style": "double",
@@ -50450,6 +50596,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1560,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Rainbow_flyer",
@@ -54106,6 +54259,13 @@
           "sanbaiTier": 8.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 1008,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 366,
           "lvl": 4,
           "style": "double",
@@ -54125,6 +54285,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 8.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 999,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Saturday_Night_Love",
@@ -60423,6 +60590,68 @@
       "remyLink": "https://remywiki.com/Steps_for_Victory"
     },
     {
+      "id": "odiQOiD9OIiI1IDPodQQIo9DDPoOI868",
+      "name": "Steps for Victory (U1 Heavy Metal Edition)",
+      "artist": "U1-ASAMi×kors k×nagomu tamaki with taru",
+      "bpm": "210",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1458
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1821
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2142
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1434
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1830
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2082
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Steps for Victory (U1 Heavy Metal Edition).jpg"
+    },
+    {
       "id": "bD1bQi091lOIO01Q1dq9bQqQ1blDI0Pq",
       "name": "Steps to the Star",
       "artist": "BEMANI Sound Team \"Coyaan & KE!JU 1%\"",
@@ -64746,6 +64975,13 @@
           "sanbaiTier": 9.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 1158,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 489,
           "lvl": 5,
           "style": "double",
@@ -64765,6 +65001,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 9.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 1119,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/THE_SHINING_POLARIS",
@@ -70784,6 +71027,13 @@
           "sanbaiTier": 12.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1890,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 363,
           "lvl": 5,
           "style": "double",
@@ -70803,6 +71053,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1725,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Votum_stellarum_-forest_25_DDR_RMX-",
