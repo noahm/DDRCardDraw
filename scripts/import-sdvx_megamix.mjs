@@ -86,7 +86,7 @@ async function main() {
   const megamixFile = process.argv[3];
   if (!sdvxDirectory || !megamixFile) {
     console.log(
-      `Provide a data directory and megamix XML file. Invoke like 'yarn import:megamix path/to/data path/to/megamix.xml'`,
+      `Provide a data directory and megamix XML file. Invoke like 'yarn import:sdvx_megamix path/to/data path/to/megamix.xml'`,
     );
     return;
   }
