@@ -105,19 +105,24 @@ async function main() {
   const fileData = await parseStringPromise(fileContents);
 
   console.log(`opening ${megamixFile} for megamix song IDs...`);
-  const megamixContents = iconv.decode(await fs.readFile(megamixFile), "shift_jis");
+  const megamixContents = iconv.decode(
+    await fs.readFile(megamixFile),
+    "shift_jis",
+  );
   const megamixData = await parseStringPromise(megamixContents);
   const megamixSongs = megamixData.wave_info?.mdb?.[0]?.music;
   if (!Array.isArray(megamixSongs) || megamixSongs.length === 0) {
     throw new Error(`No megamix songs found in ${megamixFile}`);
   }
-  const megamixIds = new Set(megamixSongs.map((song) => {
-    const id = song.meta?.[0]?.music_id?.[0]?._;
-    if (typeof id !== "string" || !/^\d+$/.test(id)) {
-      throw new Error(`Invalid megamix music ID in ${megamixFile}`);
-    }
-    return Number(id);
-  }));
+  const megamixIds = new Set(
+    megamixSongs.map((song) => {
+      const id = song.meta?.[0]?.music_id?.[0]?._;
+      if (typeof id !== "string" || !/^\d+$/.test(id)) {
+        throw new Error(`Invalid megamix music ID in ${megamixFile}`);
+      }
+      return Number(id);
+    }),
+  );
 
   console.log(`successfully parsed ${sdvxFile}, importing data...`);
 
@@ -238,7 +243,9 @@ async function main() {
   };
 
   console.log(`successfully imported data, writing data to ${OUTFILE}`);
-  const outfilePath = resolve(join(__dirname, "../src/songs/sdvx_nabla_megamix.json"));
+  const outfilePath = resolve(
+    join(__dirname, "../src/songs/sdvx_nabla_megamix.json"),
+  );
   writeJsonData(data, outfilePath);
 }
 
@@ -352,7 +359,7 @@ async function buildSong(song, availableJackets, musicDir) {
     鑒: "₩",
     煢: "ø",
     鷸: "♫",
-    麌: "ó"
+    麌: "ó",
   };
 
   let name = info.title_name[0];

@@ -16,7 +16,6 @@ export const MEGAMIX_IDS = [
 
 export const ALL_UNPLAYABLE_IDS = UNPLAYABLE_IDS.concat(MEGAMIX_IDS);
 
-
 /**
  * @typedef ChartType
  * @type {"novice"|"advanced"|"exhaust"|"infinite"|"maximum"|"gravity"|"heavenly"|"vivid"|"exceed"|"ultimate"|"nabla"}
@@ -453,7 +452,6 @@ export const SDVX_UNLOCK_IDS = {
     [67, "nabla"], // Ignited Night burst
     [801, "nabla"], // Apex of the World
     [302, "nabla"], // Lunartic Dial
-
 
     // EXTRACK CHALLENGE
     2418, // VICTIM

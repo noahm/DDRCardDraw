@@ -335,7 +335,7 @@ async function buildSong(song, availableJackets, musicDir) {
     鑒: "₩",
     煢: "ø",
     鷸: "♫",
-    麌: "ó"
+    麌: "ó",
   };
 
   let name = info.title_name[0];
