@@ -3,13 +3,19 @@ export const UNPLAYABLE_IDS = [
   1219, // Maxima's Tutorial https://remywiki.com/Maxima_sensei_no_mankai!!_HEAVENLY_kouza
   1259, // AUTOMATION PARADISE
   1438, // AUTOMATION PARADISE, April Fools
-  1490, // MAX BURNING!! (FOR INFINITE EXTENDED VERSION), Automation Paradise/Megamix Exclusive
-  1491, // Zusammenbruch of Gott, Automation Paradise/Megamix Exclusive
   1751, // EXCEED GEAR April Fools https://remywiki.com/Exceed_kamen-chan_no_chotto_issen_wo_exceed_shita_EXCEED_kouza
 
   1455, // Aug 26th Song removal 回レ！雪月花 (Heart's Cry Remix)
   1446, // Aug 26th Song removal 太陽曰く燃えよカオス (Sol oscuro ¡Nya! Mix)
 ];
+
+export const MEGAMIX_IDS = [
+  1490, // MAX BURNING!! (FOR INFINITE EXTENDED VERSION), Automation Paradise/Megamix Exclusive
+  1491, // Zusammenbruch of Gott, Automation Paradise/Megamix Exclusive
+];
+
+export const ALL_UNPLAYABLE_IDS = UNPLAYABLE_IDS.concat(MEGAMIX_IDS);
+
 
 /**
  * @typedef ChartType
