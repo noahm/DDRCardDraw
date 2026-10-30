@@ -2,31 +2,34 @@ import type { PackWithSongs, Simfile } from "simfile-parser/browser";
 import { GameData, Chart, Song } from "../models/SongData";
 
 /**
- * Reads each song's cover image and wraps it in an object URL. Cover images are
- * only read on demand now, so this is done once per pack rather than every time
- * the derived data is rebuilt.
- *
- * The URLs deliberately outlive this call: they end up in imported game data
- * that stays in app state, so revoking them would blank out every cover.
+ * Reads each song's cover image and maps it to the url the song will show it
+ * from. Cover images are only read on demand, so this is done once per pack
+ * rather than every time the derived data is rebuilt.
  * @param pack a parsed pack
- * @returns an object URL for each song that ships a usable image
+ * @param urlFor turns an image into its url — for a published pack, resizing
+ *   and hashing it into its content-addressed CDN url
+ * @param onProgress called after each song's image is handled
+ * @returns a url for each song that ships a usable image
  */
 export async function resolveJackets(
   pack: PackWithSongs,
+  urlFor: (this: void, file: File) => Promise<string>,
+  onProgress?: (this: void, done: number, total: number) => void,
 ): Promise<Map<Simfile, string>> {
   const jackets = new Map<Simfile, string>();
-  for (const song of pack.simfiles) {
+  const total = pack.simfiles.length;
+  for (const [i, song] of pack.simfiles.entries()) {
     const { bg, banner, jacket } = song.title;
     const image = jacket || bg || banner;
-    if (!image) {
-      continue;
+    if (image) {
+      try {
+        jackets.set(song, await urlFor(await image.file()));
+      } catch (e) {
+        // one unreadable image shouldn't sink the whole import
+        console.error(`could not read cover for '${song.title.titleName}'`, e);
+      }
     }
-    try {
-      jackets.set(song, URL.createObjectURL(await image.file()));
-    } catch (e) {
-      // one unreadable image shouldn't sink the whole import
-      console.error(`could not read cover for '${song.title.titleName}'`, e);
-    }
+    onProgress?.(i + 1, total);
   }
   return jackets;
 }
@@ -50,6 +53,7 @@ export function getDataFileFromPack(
   const data: GameData = {
     meta: {
       menuParent: "imported",
+      cardVariant: "itg",
       flags: [],
       lastUpdated: Date.now(),
       usesDrawGroups: useTiers,
