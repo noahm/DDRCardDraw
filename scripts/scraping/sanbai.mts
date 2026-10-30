@@ -73,17 +73,6 @@ const titleList: Map<SanbaiSong["version_num"], Song["folder"]> = new Map([
  * - [2] Partial song data to apply after effective time
  */
 const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
-  // スペシャル楽曲パック feat.東方Project vol.7
-  ...[
-    "08QQ8iPldb6o96bl0ld61qb99Q0Q19Qd", // 4NT1 D34D
-    "D90qii9D6P0POQ69Iiblib00Po1DIoi8", // Deadly Dolly Dance
-    "bPI6QobOQl9Q161l8l68069QdO1QbO9b", // SkyDrive! (HASEKO EUROBEAT MIX)
-    "6IDll6i6d8iII686qq6DddiI00iD8o9d", // 東方妖々夢 ULTIMATE MEDLEY
-  ].map<(typeof timedCorrections)[number]>((id) => [
-    new Date("2026-10-30T15:00:00+09:00"),
-    id,
-    { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
-  ]),
   [
     new Date("2026-11-24T05:00:00+09:00"),
     "dbod1o098DoibO0PoiPIiQ11Pdlqdoo9", // テレキャスタービーボーイ
