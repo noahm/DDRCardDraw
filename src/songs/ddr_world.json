@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1792027577302
+    "lastUpdated": 1793251332103
   },
   "defaults": {
     "style": "single",
@@ -993,6 +993,7 @@
       "id": "Pqdb6bI66o9896lDbDq1Pi1Dl9QqO6Pd",
       "name": "7 Colors",
       "artist": "kors k feat.吉河順央",
+      "artist_translation": "kors k feat.Sunao Yoshikawa",
       "bpm": "156",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -1053,7 +1054,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/7 Colors.jpg",
-      "remyLink": "https://remywiki.com/7_Colors"
+      "remyLink": "https://remywiki.com/7_Colors",
+      "genre": "プリズムユーロ/PRISM EURO"
     },
     {
       "id": "Dd98lDdo8Ob698d9qbO9iD0PqO19oQbI",
@@ -2108,7 +2110,7 @@
       ],
       "search_hint": "access super hyper focus",
       "remyLink": "https://remywiki.com/Access_super_(hyper)_focus",
-      "flags": ["worldLeague"],
+      "flags": ["euLocked"],
       "jacket": "ddr_world/access super [hyper] focus.jpg"
     },
     {
@@ -4560,7 +4562,8 @@
         }
       ],
       "remyLink": "https://remywiki.com/ANTI_ANTHEM",
-      "jacket": "ddr_a20plus/ANTI ANTHEM.jpg"
+      "jacket": "ddr_a20plus/ANTI ANTHEM.jpg",
+      "genre": "コンフロンテーショナル/CONFRONTATIONAL"
     },
     {
       "id": "D89QP18016o01qoOi60I6Q19dlOQPbdo",
@@ -4640,6 +4643,7 @@
       "id": "DDQ9q1dd0lob0iOo9iql1boPoIq8ioDo",
       "name": "Any%",
       "artist": "めめめ",
+      "artist_translation": "Mememe",
       "bpm": "157-177",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -7945,6 +7949,13 @@
           "sanbaiTier": 11.15
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1416,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 447,
           "lvl": 5,
           "style": "double",
@@ -7964,6 +7975,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.35
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1407,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Bloody_Tears(IIDX_EDITION)",
@@ -9460,6 +9478,7 @@
     {
       "id": "bIqioQdiOOblbqD0P99P0liodP8i0880",
       "name": "BUCHiAGE 祭 DANCE",
+      "name_translation": "BUCHiAGE matsuri DANCE",
       "artist": "Dragon_Klub",
       "bpm": "192",
       "folder": "DanceDanceRevolution World",
@@ -10546,6 +10565,13 @@
           "sanbaiTier": 13.35
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1773,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 522,
           "lvl": 5,
           "style": "double",
@@ -10565,6 +10591,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 13.45
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1776,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/CaptivAte~chikai~",
@@ -17280,7 +17313,9 @@
     {
       "id": "Ob8Q19QldDliP6qddP1o1ODP91bd1oQl",
       "name": "Din Don Dan (にじさんじダンス部 ver.)",
+      "name_translation": "Din Don Dan (Nijisanji Dance-bu ver.)",
       "artist": "レイン・パターソン & 山神カルタ & 東堂コハク",
+      "artist_translation": "Lain Paterson & Karuta Yamagami & Kohaku Todo",
       "bpm": "140",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -18801,6 +18836,13 @@
           "sanbaiTier": 10.35
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "maxScore": 1287,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 597,
           "lvl": 6,
           "style": "double",
@@ -18820,6 +18862,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 10.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 14,
+          "maxScore": 1275,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/DROP_THE_BOMB",
@@ -21488,6 +21537,61 @@
       "jacket": "ddr_2013/Everything I Need.png"
     },
     {
+      "id": "PdOq6bQQ6I8P866i0bbDI9IdD6IddQil",
+      "name": "Ex-Otogibanashi",
+      "artist": "ryo (supercell), かぐや (cv.夏吉ゆうこ), 月見ヤチヨ (cv.早見沙織) from 超かぐや姫！",
+      "bpm": "65-190",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2,
+          "maxScore": 174
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 507
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 1005
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1539
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 471
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 11,
+          "maxScore": 978
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 14,
+          "maxScore": 1491
+        }
+      ],
+      "flags": ["copyStrikes", "euLocked"],
+      "jacket": "ddr_world/Ex-Otogibanashi.jpg",
+      "remyLink": "https://remywiki.com/Ex-Otogibanashi",
+      "genre": "アニメ"
+    },
+    {
       "id": "iOPbIi1b99819b9QiD8QbdPbq0DqO0DO",
       "name": "exotic ethnic",
       "artist": "RevenG",
@@ -21632,6 +21736,7 @@
       "id": "OQliD1io08dq96q9QO6dd1iq0dObl1QQ",
       "name": "eyesight",
       "artist": "タバサリサ",
+      "artist_translation": "Thavasa Risa",
       "bpm": "155",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -22510,6 +22615,13 @@
           "sanbaiTier": 11.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1458,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 354,
           "lvl": 4,
           "style": "double",
@@ -22529,6 +22641,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1329,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/FIRE",
@@ -25106,6 +25225,13 @@
           "sanbaiTier": 11.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 15,
+          "maxScore": 1437,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 585,
           "lvl": 9,
           "style": "double",
@@ -25125,6 +25251,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.65
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1419,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/GENOM_SCREAMS",
@@ -28034,6 +28167,7 @@
       "id": "Oq8ii8id8ob90q6OiDoIl9Q0lQDd9DIO",
       "name": "HAPPY☆PARADISE☆GALAXY",
       "artist": "DJ(GW+ミラクル☆ストーン)÷2",
+      "artist_translation": "DJ(GW+Miracle☆Stone)÷2",
       "bpm": "182",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -29778,6 +29912,7 @@
       "id": "qO1o6b00liP6l9Pi10q9lIObDqlDPoIl",
       "name": "Homesick Pt.2&3",
       "artist": "covered by 不知火フレア",
+      "artist_translation": "covered by Shiranui Flare",
       "bpm": "178",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -31087,6 +31222,7 @@
       "id": "lIPQl8P18I99b90iD86OI1Qq0OI1OPDb",
       "name": "I'll Be With You",
       "artist": "ゆんゆん",
+      "artist_translation": "Yunyun",
       "bpm": "143",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -31742,7 +31878,9 @@
     {
       "id": "690bOP9iq6OboDDIbldbQD9PPill6IPb",
       "name": "Ignis†Iræ",
+      "name_translation": "Ignis Irae",
       "artist": "BEMANI Sound Team \"神\"",
+      "artist_translation": "BEMANI Sound Team \"Kami\"",
       "bpm": "188-191",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -35107,6 +35245,13 @@
           "sanbaiTier": 11.55
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1173,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 468,
           "lvl": 6,
           "style": "double",
@@ -35126,6 +35271,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.7
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 13,
+          "maxScore": 1143,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/La_Bamba",
@@ -40734,6 +40886,7 @@
       "id": "8bbqoo1OQdId00Oi60d8qoldb9iPb0P6",
       "name": "miserable life and worthless thoughts",
       "artist": "めめめ",
+      "artist_translation": "Mememe",
       "bpm": "79-314",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -41075,6 +41228,7 @@
       "id": "bli9QPODl80dblbbibo6dDDi6QII0l81",
       "name": "MonstaFesta",
       "artist": "アカツキ チョータ",
+      "artist_translation": "AKATSUKI Chota",
       "bpm": "155",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -42141,6 +42295,7 @@
       "id": "i1QlPD8oooQ6lQq9Oo9qdi9q0Q0QqdoQ",
       "name": "MYSTIC CUBE",
       "artist": "こふ",
+      "artist_translation": "kohu",
       "bpm": "155",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -42399,6 +42554,7 @@
       "id": "I0qq8i9i68DoOQDd1q6iPqO6P9l10IQD",
       "name": "neu (STARDOM Remix)",
       "artist": "少年ラジオ arranged by BEMANI Sound Team \"PON\"",
+      "artist_translation": "Shounen Radio arranged by BEMANI Sound Team \"PON\"",
       "bpm": "133",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -48785,6 +48941,7 @@
       "id": "qbl06811iP8IdDDOqiIq1P0lqiPdDQqP",
       "name": "Princess K",
       "artist": "Retropolitaliens(Ms.+駄々子)",
+      "artist_translation": "Retropolitaliens(Ms.+dadaco)",
       "bpm": "139",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -49095,6 +49252,7 @@
       "id": "iqOqI9bQl1Q0qDb0086Dd80OOi80P166",
       "name": "Proof of the existence",
       "artist": "猫叉Master+",
+      "artist_translation": "Nekomata Master+",
       "bpm": "170",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -50412,6 +50570,13 @@
           "sanbaiTier": 11.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1578,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 354,
           "lvl": 3,
           "style": "double",
@@ -50431,6 +50596,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 11.3
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 16,
+          "maxScore": 1560,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Rainbow_flyer",
@@ -54087,6 +54259,13 @@
           "sanbaiTier": 8.4
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 1008,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 366,
           "lvl": 4,
           "style": "double",
@@ -54106,6 +54285,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 8.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 999,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Saturday_Night_Love",
@@ -54495,6 +54681,7 @@
       "id": "D0dPPodlDQO9lQblI6PP1OIIQPO61O1D",
       "name": "SCREW // owo // SCREW",
       "artist": "かめりあ",
+      "artist_translation": "Camellia",
       "bpm": "114-171",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -56069,6 +56256,7 @@
       "id": "qIPq0oqPOIiIboPodli101q10lDloqbd",
       "name": "Silent Flame,Never Fade",
       "artist": "不知火フレア",
+      "artist_translation": "Shiranui Flare",
       "bpm": "145",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -56767,6 +56955,7 @@
       "id": "bPI6QobOQl9Q161l8l68069QdO1QbO9b",
       "name": "SkyDrive! (HASEKO EUROBEAT MIX)",
       "artist": "Amateras Records feat. 築山さえ",
+      "artist_translation": "Amateras Records feat. Tsukiyama Sae",
       "bpm": "170",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -56836,7 +57025,6 @@
       ],
       "jacket": "ddr_world/SkyDrive! (HASEKO EUROBEAT MIX).jpg",
       "remyLink": "https://remywiki.com/SkyDrive!_(HASEKO_EUROBEAT_MIX)",
-      "search_hint": "SkyDrive HASEKO EUROBEAT MIX",
       "flags": ["grandPrixPack"]
     },
     {
@@ -60400,6 +60588,68 @@
       "flags": ["euLocked"],
       "jacket": "ddr_world/Steps for Victory.jpg",
       "remyLink": "https://remywiki.com/Steps_for_Victory"
+    },
+    {
+      "id": "odiQOiD9OIiI1IDPodQQIo9DDPoOI868",
+      "name": "Steps for Victory (U1 Heavy Metal Edition)",
+      "artist": "U1-ASAMi×kors k×nagomu tamaki with taru",
+      "bpm": "210",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 4
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1458
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1821
+        },
+        {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2142
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 7
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 14,
+          "maxScore": 1434
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 16,
+          "maxScore": 1830
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2082
+        }
+      ],
+      "flags": ["unlock"],
+      "jacket": "ddr_world/Steps for Victory (U1 Heavy Metal Edition).jpg"
     },
     {
       "id": "bD1bQi091lOIO01Q1dq9bQqQ1blDI0Pq",
@@ -64725,6 +64975,13 @@
           "sanbaiTier": 9.3
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 1158,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 489,
           "lvl": 5,
           "style": "double",
@@ -64744,6 +65001,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 9.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 12,
+          "maxScore": 1119,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/THE_SHINING_POLARIS",
@@ -68439,6 +68703,7 @@
       "id": "0l8dbQDQ6I01Pd1DO80q0Do1o81ldqPQ",
       "name": "TURNING DOWN",
       "artist": "U-ske feat.石橋桃",
+      "artist_translation": "U-ske feat.Ishibashi Momo",
       "bpm": "132",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -68940,6 +69205,7 @@
       "id": "qPdoiOIld0I81dIqO0OoDIP6Ib8lQ9Il",
       "name": "Ultimate taste",
       "artist": "ぱらどっと",
+      "artist_translation": "Para Dot.",
       "bpm": "75-200",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -69725,7 +69991,8 @@
       ],
       "flags": ["unlock"],
       "jacket": "ddr_world/UИKNØWNZ.jpg",
-      "remyLink": "https://remywiki.com/UNKNOWNZ"
+      "remyLink": "https://remywiki.com/UNKNOWNZ",
+      "search_hint": "UNKNOWNZ"
     },
     {
       "id": "Ilo6IboPOq8Q10qDOdDDoO6P989bPPi6",
@@ -70760,6 +71027,13 @@
           "sanbaiTier": 12.5
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1890,
+          "flags": ["grandPrixPack"]
+        },
+        {
           "maxScore": 363,
           "lvl": 5,
           "style": "double",
@@ -70779,6 +71053,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 12.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1725,
+          "flags": ["grandPrixPack"]
         }
       ],
       "remyLink": "https://remywiki.com/Votum_stellarum_-forest_25_DDR_RMX-",
@@ -73691,6 +73972,7 @@
     {
       "id": "oQP6D9PlDbDlPPPPPqd8QI61o1Q0PO81",
       "name": "†渚の小悪魔ラヴリィ～レイディオ† (STARDOM Remix)",
+      "name_translation": "Nagisa no koakuma lovely radio (STARDOM Remix)",
       "artist": "kors k",
       "bpm": "107",
       "folder": "DanceDanceRevolution World",
@@ -75075,6 +75357,7 @@
     {
       "id": "P908I0O1PIodq1qOIO008bd16P0q8ql8",
       "name": "ちくたく2ちく2ぱ",
+      "name_translation": "Tick-tack2 tick2 pa",
       "artist": "音戯探偵ひなビタ♫",
       "artist_translation": "Otogi Tantei HinaBitter",
       "bpm": "190",
@@ -75622,6 +75905,7 @@
     {
       "id": "PiIdO0odOb1bQdPQD0QqdlP06IQiodQ0",
       "name": "はるかぜリスタート！",
+      "name_translation": "Harukaze restart!",
       "artist": "qfeileadh feat.Risa Kodaka",
       "bpm": "164",
       "folder": "DanceDanceRevolution World",
@@ -75685,7 +75969,7 @@
       "name": "び",
       "name_translation": "Bi",
       "artist": "立秋 feat.ちょこ",
-      "artist_translation": "Rissyuu feat.Choko",
+      "artist_translation": "Rish feat.Choko",
       "bpm": "169",
       "folder": "DanceDanceRevolution A20",
       "charts": [
@@ -76165,7 +76449,9 @@
     {
       "id": "oDQb8b9Ii9960180IO989PqIqiP6dOoP",
       "name": "アキネイション",
+      "name_translation": "Aki nation",
       "artist": "ビートまりお（COOL&CREATE）",
+      "artist_translation": "beatMARIO (COOL&CREATE)",
       "bpm": "185",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -76484,6 +76770,7 @@
     {
       "id": "odO8PDbIO8DiIboi8Q9PP6d8Q9iiIlbl",
       "name": "アワデコノヨヲ",
+      "name_translation": "Awa de kono yo wo",
       "artist": "AMAZE",
       "bpm": "212",
       "folder": "DanceDanceRevolution World",
@@ -77641,6 +77928,7 @@
     {
       "id": "Pd0DloPI90iQQqO9bdbbPq6Q8iP0l6Pi",
       "name": "ギミギミエンターテイメント",
+      "name_translation": "Gimmick gimmick entertainment",
       "artist": "hololive IDOL PROJECT",
       "bpm": "100-200",
       "folder": "DanceDanceRevolution World",
@@ -78964,7 +79252,9 @@
     {
       "id": "8P1809bo8PoqQoqOQilPidOdobbo6iiO",
       "name": "チルノのパーフェクトさんすう学園【ビートまりお】",
+      "name_translation": "Cirno no perfect sansuu gakuen [beatMARIO]",
       "artist": "ビートまりお",
+      "artist_translation": "beatMARIO",
       "bpm": "179",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -81819,6 +82109,7 @@
     {
       "id": "Dq6II6Q81DQIiP6l69b1id6D0QQO9Dld",
       "name": "ポルカドット・ダンス・ガール",
+      "name_translation": "Polka dot dance girl",
       "artist": "KE!JU",
       "bpm": "150",
       "folder": "DanceDanceRevolution World",
@@ -83960,6 +84251,7 @@
       "name": "三妖精SAY YA!!!",
       "name_translation": "San yousei SAY YA!!!",
       "artist": "森羅万象",
+      "artist_translation": "ShinRa-Bansho",
       "bpm": "150",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -84470,6 +84762,7 @@
     {
       "id": "PDQl91OPbdo86qi0919Do6DOqQl80l8Q",
       "name": "僕の気持ちを描く",
+      "name_translation": "Boku no kimochi wo egaku",
       "artist": "Mr.T feat.NU-KO",
       "bpm": "170",
       "folder": "DanceDanceRevolution World",
@@ -84532,7 +84825,9 @@
     {
       "id": "0lDdI8D6qd6DqI1l90qOi0lod06iOI9O",
       "name": "僕の飛行機",
+      "name_translation": "Boku no hikouki",
       "artist": "covered by 不知火フレア",
+      "artist_translation": "covered by Shiranui Flare",
       "bpm": "91-142",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -85663,6 +85958,7 @@
     {
       "id": "PQq8l8DDD6lP8bbQlid9Q1iO18IQqo1b",
       "name": "和風インザ洋風",
+      "name_translation": "Wafuu in the youfuu",
       "artist": "Super Momo Tarosans",
       "bpm": "153",
       "folder": "DanceDanceRevolution World",
@@ -86089,6 +86385,7 @@
     {
       "id": "86qbo0Iq81qqQiP0i0OoOP09q1qPlDdl",
       "name": "夢色ワンダー",
+      "name_translation": "Yumeiro wonder",
       "artist": "hololive IDOL PROJECT",
       "bpm": "135-208",
       "folder": "DanceDanceRevolution World",
@@ -86362,7 +86659,9 @@
     {
       "id": "Q098DQOP0b6q69lioP6lDoDP0o0066i8",
       "name": "天弓ノ舞",
+      "name_translation": "Tenkyuu no mai",
       "artist": "龍",
+      "artist_translation": "RYU",
       "bpm": "140",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -86418,6 +86717,7 @@
       "name": "天狗の落とし文 (feat. ｙｔｒ)",
       "name_translation": "Tengu no otoshi bumi feat. ytr",
       "artist": "魂音泉",
+      "artist_translation": "TamaOnSen",
       "bpm": "160",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -86780,6 +87080,7 @@
     {
       "id": "o9iQ96669qo618i6DobbdD8I1lPiq8oQ",
       "name": "少女、摩天楼へ",
+      "name_translation": "Shoujo, matenrou e",
       "artist": "BEMANI Sound Team \"U1 overground\"",
       "bpm": "150",
       "folder": "DanceDanceRevolution World",
@@ -86905,6 +87206,7 @@
     {
       "id": "ild9d0O9D09dlOP986089i9POPDoP6iD",
       "name": "幸せのマ法は解けなイ.*・.+ ☆",
+      "name_translation": "Shiawase no mahou wa tokenai",
       "artist": "Mono.",
       "bpm": "200",
       "folder": "DanceDanceRevolution World",
@@ -87970,7 +88272,9 @@
     {
       "id": "PoO90Q6P0q9oOQ16i0P0l1iodOQP9o0O",
       "name": "恋繋エピローグ",
+      "name_translation": "Renkei epilogue",
       "artist": "Amateras Records feat. KUMI(ヲタみん)",
+      "artist_translation": "Amateras Records feat.KUMI (Wotamin)",
       "bpm": "155",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -88531,7 +88835,9 @@
     {
       "id": "Iq6olol00o1q66l61QIDdl6biq8OoIoQ",
       "name": "打打打打打打打打打打 (にじさんじダンス部 ver.)",
+      "name_translation": "Dadadadadadadadadada (Nijisanji Dance-bu ver.)",
       "artist": "長尾景 & 倉持めると & セラフ・ダズルガーデン",
+      "artist_translation": "Kei Nagao & Meruto Kuramochi & Seraph Dazzlegarden",
       "bpm": "156",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -88669,6 +88975,7 @@
     {
       "id": "Q0d16D8DDo1P8i086QOQI90i0d1oD9l8",
       "name": "断罪のミメシス",
+      "name_translation": "Danzai no minesis",
       "artist": "KE!JU",
       "bpm": "125-250",
       "folder": "DanceDanceRevolution World",
@@ -88795,6 +89102,7 @@
     {
       "id": "b8QDI09il61i0qlO9IibPQPiqQOoi6iQ",
       "name": "旅人リラン",
+      "name_translation": "Tabibito Rerun",
       "artist": "XOGO BRYKK",
       "bpm": "155",
       "folder": "DanceDanceRevolution World",
@@ -90200,6 +90508,7 @@
       "name": "東方妖々夢 ULTIMATE MEDLEY",
       "name_translation": "Touhouyouyoumu ULTIMATE MEDLEY",
       "artist": "uma vs. モリモリあつし",
+      "artist_translation": "uma vs. Morimori Atsushi",
       "bpm": "110-220",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -90541,6 +90850,7 @@
       "name": "水槽のクジラ",
       "name_translation": "Suisou no Kujira",
       "artist": "テヅカ feat. 大西あみみ",
+      "artist_translation": "Tezuka feat. Oonishi Amimi",
       "bpm": "206",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -91336,6 +91646,7 @@
       "name": "燭",
       "name_translation": "Tomoshibi",
       "artist": "立秋 feat.ちょこ [Noir]",
+      "artist_translation": "Rish feat.Choko [Noir]",
       "bpm": "55-211",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -92339,6 +92650,7 @@
       "name": "羽根亡キ少女唄",
       "name_translation": "Hanenaki Shoujo Uta",
       "artist": "純情ディスコード",
+      "artist_translation": "Junjou discord",
       "bpm": "174",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -93283,6 +93595,7 @@
     {
       "id": "iD8qIio8d1QQblQ06iPDlo69D9bQI9b8",
       "name": "足神様ノ復活祭",
+      "name_translation": "Ashigamisama no fukkatsusai",
       "artist": "U1 overground",
       "bpm": "146",
       "folder": "DanceDanceRevolution World",
@@ -94966,7 +95279,9 @@
     {
       "id": "1l0i6b10D8dbD60QIbiqlidQo9d69qII",
       "name": "電幻圏",
+      "name_translation": "Dengenken",
       "artist": "Lamanya feat.ナースロボ＿タイプＴ",
+      "artist_translation": "Lamanya feat.NurseRobot_TypeT",
       "bpm": "148",
       "folder": "DanceDanceRevolution World",
       "charts": [
@@ -95027,6 +95342,7 @@
     {
       "id": "qdoPQQldIQo6QDdQllbIP91iiilio1O1",
       "name": "霖が哭く",
+      "name_translation": "Rin ga naku",
       "artist": "Power Of Nature",
       "bpm": "154",
       "folder": "DanceDanceRevolution World",
@@ -95675,6 +95991,7 @@
     {
       "id": "Dbl69I9bO9qo6iidPbPPPD11boQPqi8q",
       "name": "鳳 (Five Flares Mix)",
+      "name_translation": "Hou (Five Flares Mix)",
       "artist": "Remixed by BEMANI Sound Team \"Coyaan + U1\"",
       "bpm": "105-210",
       "folder": "DanceDanceRevolution World",
