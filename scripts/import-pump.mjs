@@ -82,7 +82,7 @@ task("Pump Import", async ({ task, setStatus, setError }) => {
     const songs = db
       .prepare(
         `SELECT
-song.songId saIndex,
+song.songId id,
 song.internalTitle name,
 song.cutId
 FROM
@@ -320,16 +320,16 @@ ORDER BY
     const songsById = new Map();
     setStatus(`Iterating across ${songs.length} songs`);
     for (const song of songs) {
-      songsById.set(song.saIndex, song);
-      const jacketPath = jacketPathsById.get(song.saIndex);
+      songsById.set(song.id, song);
+      const jacketPath = jacketPathsById.get(song.id);
       if (!jacketPath) {
         console.error("missing jacket for song", song);
       } else {
         song.jacket = queueJacketDownload(jacketPath);
       }
-      song.artist = getArtistForSong(song.saIndex);
-      song.bpm = getBpmForSong(song.saIndex);
-      song.saIndex = song.saIndex.toString();
+      song.artist = getArtistForSong(song.id);
+      song.bpm = getBpmForSong(song.id);
+      song.id = song.id.toString();
       song.flags = ["cut:" + song.cutId];
       delete song.cutId;
     }

@@ -18,7 +18,7 @@ import { EDIT_ID_KEY, fetchEditCharts } from "./smx-edit-import";
  * ## Matching plays to drawn charts
  *
  * A score names a `song_chart_id`, which our game data doesn't carry: a song
- * knows its `saIndex` (the API's `song_id`, see smx-edit-import) and a chart
+ * knows its `id` (the API's `song_id`, see smx-edit-import) and a chart
  * knows its difficulty class. So the API's charts for the drawn songs are
  * fetched once and matched up by difficulty; the scores query then filters on
  * the resulting chart ids, which is exact.
@@ -100,7 +100,7 @@ export function isSmxGameData(gameKey: string, gameData: GameData | null) {
 
 /** identifies one SMX chart in terms of what our game data carries */
 export interface SmxChartKey {
-  /** the API's `song_id`, which our data stores as `saIndex` */
+  /** the API's `song_id`, which our data stores as the song's `id` */
   songId: string;
   /** the game data's difficulty key, e.g. `wild` */
   diffClass: string | undefined;
@@ -122,7 +122,8 @@ export interface SmxChartTarget {
 
 /**
  * What it takes to find a chart's plays in the feed, or undefined when the
- * chart didn't come from SMX data (no `saIndex` to match a song by).
+ * chart has no song id to match a song by (only charts drawn before songs
+ * had ids can lack one).
  *
  * A drawn chart keeps its difficulty's color rather than its key, and that
  * color comes straight out of the game data's difficulty list, so the same list

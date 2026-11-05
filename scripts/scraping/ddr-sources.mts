@@ -3,6 +3,7 @@ import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 
 import type { Chart, GameData, Song } from "../../src/models/SongData.ts";
+import { isSanbaiId } from "../utils.mts";
 
 /** Interface for importing DDR songs from a source */
 export interface DDRSongImporter<T extends Partial<Song>> {
@@ -67,8 +68,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   }
 
   songEquals(existingSong: Song, fetchedSong: Song): boolean {
-    return existingSong.saHash && fetchedSong.saHash
-      ? existingSong.saHash === fetchedSong.saHash
+    // songs 3icecream doesn't know have ids derived from name and artist,
+    // which won't match a 3icecream id, so those match by name and artist
+    return isSanbaiId(existingSong.id) && isSanbaiId(fetchedSong.id)
+      ? existingSong.id === fetchedSong.id
       : existingSong.name === fetchedSong.name &&
           existingSong.artist === fetchedSong.artist;
   }
@@ -187,12 +190,27 @@ export const DDR_WORLD: DDRSourceMeta = {
     // Use song metadata only from zenius-i-vanisher, don't import charts or levels
     correctionMap: [
       // #region DDR WORLD
-      ["Ødyssey", { name_translation: undefined }],
+      [
+        "ギミギミエンターテイメント",
+        { name_translation: "Gimmick gimmick entertainment" },
+      ],
+      ["シャムシールの舞", { artist_translation: undefined }],
+      ["旅人リラン", { name_translation: "Tabibito Rerun" }],
+      ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
+      ["COLOR BURST", { artist_translation: undefined }],
       ["Mighty Beat Monsterz", { artist_translation: undefined }], // Broken HTML
       ["Ganymede -re:born-", { artist_translation: undefined }], // Broken HTML
-      ["Timepiece phase II", { name: "Timepiece phase Ⅱ" }],
+      [
+        "HAPPY☆PARADISE☆GALAXY",
+        { name_translation: undefined, artist_translation: undefined },
+      ],
+      ["Ignis†Iræ", { artist_translation: undefined }], // Broken HTML
       ["Liar×Girl", { artist_translation: undefined }], // Broken HTML
-      ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
+      ["Meteor☆Shower", { name_translation: undefined }],
+      ["neu (STARDOM Remix)", { artist_translation: undefined }], // Broken HTML
+      ["Ødyssey", { name_translation: undefined }],
+      ["Timepiece phase II", { name: "Timepiece phase Ⅱ" }],
+      ["UИKNØWNZ", { name_translation: undefined }],
       // #endregion DDR WORLD
       // #region DDR A3
       ["Ambivalent Vermilia", { artist_translation: undefined }], // Broken HTML
@@ -516,7 +534,6 @@ export const DDR_A3: DDRSourceMeta = {
       "search_hint",
       "genre",
       "jacket",
-      "saIndex",
       "remyLink",
       "charts.maxScore",
     ],
@@ -605,7 +622,7 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
   copyFrom: {
     file: "ddr_world.json",
     keys: [
-      "saHash",
+      "id",
       "bpm",
       "folder",
       "name_translation",
@@ -622,7 +639,7 @@ export const DDR_GRAND_PRIX: DDRSourceMeta = {
     // `bpm`: DDR GRAND PRIX is displayed BPM, but DDR WORLD is actual BPM
     // `folder`: Some songs (ex. licensed songs) are moved to DDR GRAND PRIX folder
     overwriteKeys: [
-      "saHash",
+      "id",
       "name_translation",
       "artist_translation",
       "search_hint",

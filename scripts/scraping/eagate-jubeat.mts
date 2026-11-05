@@ -4,7 +4,7 @@ import type { Task } from "tasuku";
 
 /** Name & Artist Normalization */
 const normalized: Map<
-  Song["saHash"],
+  Song["id"],
   Partial<Pick<Song, "name" | "artist">>
 > = new Map([
   ["id76012381", { name: "Show up ! - short ver -" }],
@@ -21,7 +21,7 @@ const normalized: Map<
   ],
 ]);
 
-type EagateSong = Pick<Song, "name" | "artist" | "saHash" | "charts"> & {
+type EagateSong = Pick<Song, "name" | "artist" | "id" | "charts"> & {
   jacketUrl: string;
 };
 
@@ -140,13 +140,13 @@ export class SongImporter {
           if (jacketUrl && jacketUrl.startsWith("/")) {
             jacketUrl = origin + jacketUrl;
           }
-          // saHash: use jacket file name without extension
-          let saHash = "";
+          // id: use jacket file name without extension
+          let id = "";
           if (jacketUrl) {
             const withoutQuery = jacketUrl.split("?")[0];
             const parts = withoutQuery.split("/");
             const filename = parts[parts.length - 1] || "";
-            saHash = filename.replace(/\.[^.]+$/, ""); // e.g. id18283302
+            id = filename.replace(/\.[^.]+$/, ""); // e.g. id18283302
           }
 
           // Title and artist
@@ -183,8 +183,8 @@ export class SongImporter {
           songs.push({
             name,
             artist: artist === "-" ? "" : artist,
-            ...normalized.get(saHash),
-            saHash,
+            ...normalized.get(id),
+            id,
             charts,
             jacketUrl,
           });
@@ -201,7 +201,7 @@ export class SongImporter {
    * Compares two song objects for equality
    */
   songEquals(existingSong: Song, fetchedSong: EagateSong): boolean {
-    return existingSong.saHash === fetchedSong.saHash;
+    return existingSong.id === fetchedSong.id;
   }
 
   /**
@@ -258,7 +258,7 @@ export class SongImporter {
 
     // Try to get jacket if missing
     if (!existingSong.jacket && fetchedSong.jacketUrl) {
-      const jacketFilename = `jubeat/${fetchedSong.saHash}`;
+      const jacketFilename = `jubeat/${fetchedSong.id}`;
       const jacket = downloadJacket(fetchedSong.jacketUrl, jacketFilename);
       if (jacket) {
         console.log(`Added "${existingSong.name}" jacket: ${jacket}`);

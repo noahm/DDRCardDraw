@@ -296,12 +296,14 @@ sequenceDiagram
     Note over M: apply in order → confirmed advances to head of tail<br/>drain buffered 44, ... → resyncing = false
 ```
 
-- The server keeps an in-memory **tail** of the last `MAX_TAIL` (500) stamped
-  actions (`src/party/server.ts`). `handleCatchup` returns every tail entry
-  with `seq > since`. This is safe to keep in memory only: a client can only
-  see a live-socket gap while _this same actor_ has been running continuously,
-  so the tail is intact. A restart or hibernation drops every socket, so
-  clients reconnect and take a fresh roomstate instead of ever catching up.
+- The server keeps a **tail** of the last `MAX_TAIL` (500) stamped actions in
+  a SQLite table (`tail`, in `src/party/server.ts`). `handleCatchup` returns
+  every tail entry with `seq > since`. It has to be durable because the room
+  hibernates: an idle room is evicted from memory while its sockets stay
+  open, so the instance answering a catch-up may have just woken up. Rows are
+  written as each action is stamped, ahead of the snapshot covering them, so
+  `onStart` drops any row past the restored `seq` (and the whole table when
+  hydrating from R2).
 - If the gap reaches back **further than the tail** (`since` older than the
   oldest retained action), the server sends a `roomstate` instead and the
   client resyncs wholesale — the same code path as a reconnect.
@@ -324,6 +326,11 @@ unanswered pings, calls `socket.reconnect()` to force the normal
 disconnect/reconnect flow. The pong counter resets whenever a `pong` or a
 fresh roomstate arrives. This is the failure mode exercised by SIGSTOP-ing
 `workerd` in `.claude/skills/verify/SKILL.md`.
+
+The server registers `{"type":"ping"}` → `{"type":"pong"}` as a websocket
+auto-response, so the runtime answers heartbeats without waking a hibernating
+room. The match is byte-exact; `onMessage` still answers any ping that slips
+past it.
 
 ## User-facing connection health
 
@@ -349,7 +356,9 @@ chrome.
 
 1. **In-memory redux store** — authoritative while the room actor is alive.
    Hydrated in `onStart` with `applyMigrations` (`src/state/migrations.ts`) run
-   over whatever loads.
+   over whatever loads. The room hibernates (`static options = { hibernate:
+true }`), so `onStart` runs again on every wake while sockets stay
+   connected; nothing a live client depends on may be memory-only.
 2. **Durable Object storage** — one `snapshot` key holding a `RoomSnapshot`
    (`{seq, seenIds, state, savedAt}`, defined in `src/party/snapshot-store.ts`),
    rewritten after every applied action. State and sequencer metadata are one
@@ -357,12 +366,15 @@ chrome.
    landing after the large one started failing, leaving a restarted room
    remembering the `seq` and dedupe ids of actions whose effects it had lost.
    Stored gzipped; the class is SQLite-backed, which caps a value at 2 MB.
-   (The catch-up `tail` is deliberately _not_
-   persisted — see "Incremental catch-up" above.)
+   The catch-up `tail` lives beside it in its own SQLite table — see
+   "Incremental catch-up" above.
 3. **Remote snapshot store** — the same `RoomSnapshot` written at
    `rooms/<roomId>/snapshot.json`, behind the `SnapshotStore` interface in
    `src/party/snapshot-store.ts`. Writes coalesce on a short interval rather
-   than firing per action. The store is the R2 bucket bound as `SNAPSHOTS` in
+   than firing per action, carried by a Durable Object alarm rather than a
+   timer: a pending timer would keep the room from hibernating and die with an
+   evicted instance, while the alarm wakes the room and writes the current
+   state even after every socket has left. Failed writes retry every 30s. The store is the R2 bucket bound as `SNAPSHOTS` in
    `wrangler.jsonc`; `wrangler dev` simulates it on disk under
    `.wrangler/state`, so local development runs the same path with no
    credentials. It is also what carried rooms across the move off hosted
@@ -372,11 +384,14 @@ chrome.
    Without the binding the room runs on Durable Object storage alone, which
    `?debug` warns about.
 
-**Hydration compares, it does not prefer.** `onStart` reads both durable copies
-and adopts whichever carries the higher `seq`. The earlier `storage || remote`
-short-circuit meant a stale-but-present local value pinned a room to an old
-checkpoint while the copy that was still advancing went unread — the exact
-shape of the incident in step 6 of the roadmap.
+**Hydration compares, it does not prefer.** `onStart` adopts whichever durable
+copy carries the higher `seq`. The earlier `storage || remote` short-circuit
+meant a stale-but-present local value pinned a room to an old checkpoint while
+the copy that was still advancing went unread — the exact shape of the
+incident in step 6 of the roadmap. Since a hibernating room runs `onStart` on
+every wake, R2 is only _read_ when it could win: room storage is empty, or the
+`remoteSeq` key (the last seq this room confirmed in R2, or what R2 held when
+last read) is ahead of it. `?debug` reports this as `hydration.remoteRead`.
 
 **Durability is reported, not assumed.** Once a write settles, the server
 broadcasts `{type: "persisted", seq, appliedSeq}` (throttled). `SyncManager`

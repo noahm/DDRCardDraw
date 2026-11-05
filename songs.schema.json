@@ -1,8 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://data.ddr.tools/schema/v2.json",
   "type": "object",
   "title": "Game Data",
-  "description": "Describes the shape of data that any individual json file under `src/songs` will conform to",
+  "description": "Describes the shape of data that any individual game data file will conform to",
   "additionalProperties": false,
   "required": ["songs", "meta", "defaults", "i18n"],
   "properties": {
@@ -44,8 +45,7 @@
             },
             "required": ["key", "color"],
             "additionalProperties": false
-          },
-          "additionalItems": false
+          }
         },
         "flags": {
           "$ref": "#/definitions/uniqueStringArr",
@@ -90,10 +90,13 @@
     },
     "i18n": {
       "type": "object",
-      "description": "Set of localized values for display of any styles, difficulties, or flags",
+      "description": "Set of localized values for display of any styles, difficulties, or flags. `en` is the canonical dictionary and must be complete; every other locale is a partial overlay whose missing keys fall back to `en` at runtime.",
       "required": ["en"],
+      "properties": {
+        "en": { "$ref": "#/definitions/i18nDictRoot" }
+      },
       "additionalProperties": {
-        "$ref": "#/definitions/i18nDictRoot"
+        "$ref": "#/definitions/i18nDictPartial"
       }
     },
     "songs": {
@@ -102,6 +105,11 @@
         "type": "object",
         "title": "Song",
         "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "a stable identifier for this song, unique within this file. Taken from the source game's own id where one exists (e.g. the 3icecream hash for DDR, the 573.no song_id for SMX), otherwise derived once from the song and kept from then on. Two files describing the same song should give it the same id."
+          },
           "flags": {
             "type": "array",
             "items": {
@@ -137,20 +145,12 @@
           },
           "charts": {
             "type": "array",
-            "items": { "$ref": "#/definitions/chart" },
-            "additionalItems": false
+            "items": { "$ref": "#/definitions/chart" }
           },
           "jacket": {
             "type": "string"
           },
           "folder": {
-            "type": "string"
-          },
-          "saHash": {
-            "type": "string",
-            "description": "a unique identifier for a song"
-          },
-          "saIndex": {
             "type": "string"
           },
           "remyLink": {
@@ -165,10 +165,9 @@
             "description": "Holds cosmetic only info about a song"
           }
         },
-        "required": ["name", "artist", "bpm", "jacket", "charts"],
+        "required": ["id", "name", "artist", "bpm", "jacket", "charts"],
         "additionalProperties": false
-      },
-      "additionalItems": false
+      }
     }
   },
   "definitions": {
@@ -241,8 +240,19 @@
     "i18nDictRoot": {
       "type": "object",
       "title": "I18nDict",
-      "description": "Dictionary of localized strings",
+      "description": "The canonical (`en`) dictionary of localized strings; must define `name` and `$abbr`",
       "required": ["name", "$abbr"],
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string" },
+          { "$ref": "#/definitions/i18nDictBranch" }
+        ]
+      }
+    },
+    "i18nDictPartial": {
+      "type": "object",
+      "title": "I18nDictPartial",
+      "description": "A non-`en` locale dictionary; any missing keys (including `name`/`$abbr`) fall back to the `en` dictionary at runtime, so none are required",
       "additionalProperties": {
         "oneOf": [
           { "type": "string" },

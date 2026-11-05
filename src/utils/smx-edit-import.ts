@@ -101,7 +101,7 @@ export async function fetchEditCharts(
 
 /**
  * Clone the stock SMX data and graft the given edit charts onto their matching
- * songs (matched by `saIndex` === the API's `song_id`). Returns the new data
+ * songs (matched by `id` === the API's `song_id`). Returns the new data
  * file plus a report of what couldn't be matched.
  */
 export function buildEditDataFile(
@@ -131,7 +131,7 @@ export function buildEditDataFile(
   const ja = (data.i18n.ja || (data.i18n.ja = {})) as Record<string, unknown>;
   ja.bookmarkEdit = "QRコードのブックマークリンク";
 
-  const songsByIndex = new Map(data.songs.map((s) => [s.saIndex, s]));
+  const songsById = new Map(data.songs.map((s) => [s.id, s]));
 
   let matched = 0;
   let duplicates = 0;
@@ -145,7 +145,7 @@ export function buildEditDataFile(
       continue;
     }
     seen.add(chart.edit_display_id);
-    const song = songsByIndex.get(String(chart.song_id));
+    const song = songsById.get(String(chart.song_id));
     if (!song) {
       unknownSongs.push(chart.edit_display_id);
       continue;

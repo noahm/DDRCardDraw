@@ -3,7 +3,9 @@ import fs from "node:fs";
 import path from "node:path";
 import task from "tasuku";
 import {
+  deriveSongId,
   downloadJacket,
+  mergeSongsById,
   reportQueueStatusLive,
   writeJsonData,
 } from "./utils.mts";
@@ -124,6 +126,7 @@ function normalizeSong(song): Song {
   }
 
   return {
+    id: deriveSongId(song.title, song.artist),
     name: song.title,
     artist: song.artist,
     bpm: bpmValue,
@@ -304,7 +307,8 @@ task("Import MaiMai Data", async function ({ setStatus, setTitle, task }) {
     ],
   });
   setStatus("Normalizing data...");
-  baseGameData.songs = patchedSongs.map(normalizeSong);
+  // utage variants of one song come in as separate entries
+  baseGameData.songs = mergeSongsById(patchedSongs.map(normalizeSong));
 
   setStatus("Writing data...");
   await writeJsonData(baseGameData, OUTPUT_PATH);

@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 
 import type { GameData, Song } from "../src/models/SongData.ts";
 import {
+  deriveSongId,
   downloadJacket,
   requestQueue,
   sortSongs,
@@ -59,7 +60,7 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
 
         const tasks = fetchedSongs.map(
           async (worldSong: (typeof fetchedSongs)[number] & Partial<Song>) => {
-            // Find existing song by saHash
+            // Find existing song by id
             const existingSong = existingData.songs.find((s) =>
               importer.songEquals(s, worldSong),
             );
@@ -83,9 +84,11 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
               }
 
               const newSong: Song = {
+                id:
+                  worldSong.id ||
+                  deriveSongId(worldSong.name, worldSong.artist || ""),
                 name: worldSong.name,
                 artist: worldSong.artist || "",
-                saHash: worldSong.saHash,
                 bpm: worldSong.bpm || "???",
                 folder: existingData.meta.folders?.[0],
                 charts: worldSong.charts,
@@ -138,6 +141,8 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
               );
             }
             const newSong: Song = {
+              // copyFrom swaps in the 3icecream id below, if DDR WORLD has one
+              id: deriveSongId(gpSong.name, gpSong.artist),
               name: gpSong.name,
               artist: gpSong.artist,
               bpm: gpSong.bpm!,
@@ -200,10 +205,10 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
             }
 
             existingData.songs.push({
+              id: sanbaiSong.id,
               name: sanbaiSong.name,
               name_translation: sanbaiSong.name_translation,
               artist: sanbaiSong.artist || "???",
-              saHash: sanbaiSong.saHash,
               bpm: sanbaiSong.bpm || "???",
               folder: sanbaiSong.folder ?? existingData.meta.folders?.[0],
               charts: sanbaiSong.charts,
@@ -289,7 +294,7 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
       for (const chart of song.charts) {
         if (!chart.maxScore) {
           console.log(
-            `[Info] ${song.name} (${song.saHash}) [${chart.style}/${chart.diffClass}] is missing maxScore.`,
+            `[Info] ${song.name} (${song.id}) [${chart.style}/${chart.diffClass}] is missing maxScore.`,
           );
         }
       }

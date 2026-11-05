@@ -2,10 +2,12 @@ import { atom, getDefaultStore, useAtomValue, useSetAtom } from "jotai";
 import { atomFamily, atomWithStorage } from "jotai/utils";
 import { Validator, Schema } from "jsonschema";
 import { GameData } from "../models/SongData";
-import gameDataSchema from "../models/game-data.schema.json";
+// identical to the hosted data.ddr.tools/schema/v2.json
+import gameDataSchema from "../../songs.schema.json";
 import { useEffect } from "react";
 import { useRoomName } from "../hooks/useRoomName";
 import { withLegacyJacketUrls } from "../utils/jackets";
+import { upgradeLegacyGameData } from "../utils/legacy-game-data";
 
 const lastGameSelectedByEvent = atomFamily((roomName: string) =>
   atomWithStorage<string | undefined>(
@@ -97,6 +99,22 @@ const HOSTED_SCHEMA_URL = /^https:\/\/data\.ddr\.tools\/schema\/[\w.-]+\.json$/;
 const hostedSchemas = new Map<string, Promise<Schema>>();
 
 /**
+ * The hosted schema a data file declares, when it's one other than the schema
+ * bundled with this build.
+ */
+function declaredHostedSchema(data: unknown): string | undefined {
+  const declared = (data as { $schema?: unknown } | null)?.$schema;
+  if (
+    typeof declared !== "string" ||
+    declared === gameDataSchema.$id ||
+    !HOSTED_SCHEMA_URL.test(declared)
+  ) {
+    return undefined;
+  }
+  return declared;
+}
+
+/**
  * The schema to hold a data file to. A file declaring a schema hosted on
  * data.ddr.tools is checked against that one, fetched live, so data written for
  * a schema newer than this build (e.g. v2's `song.id`) is still accepted.
@@ -105,12 +123,8 @@ const hostedSchemas = new Map<string, Promise<Schema>>();
  * so this is never the only check.
  */
 function schemaForData(data: unknown): Promise<Schema> {
-  const declared = (data as { $schema?: unknown } | null)?.$schema;
-  if (
-    typeof declared !== "string" ||
-    declared === gameDataSchema.$id ||
-    !HOSTED_SCHEMA_URL.test(declared)
-  ) {
+  const declared = declaredHostedSchema(data);
+  if (!declared) {
     return Promise.resolve(gameDataSchema as Schema);
   }
   let schema = hostedSchemas.get(declared);
@@ -165,10 +179,20 @@ export async function loadCustomGamedataByUrl(
       throw new Error(`request failed with status ${res.status}`);
     }
     const data = (await res.json()) as GameData;
+    // Bundles from before schema v2 have no `song.id`. One checked against the
+    // bundled (v2) schema needs it added first; one declaring an older hosted
+    // schema is checked as published, since v1 forbids the `id` it would add.
+    const upgradeFirst = !declaredHostedSchema(data);
+    if (upgradeFirst) {
+      upgradeLegacyGameData(data);
+    }
     const errors = await validateGameData(data);
     if (errors.length) {
       console.warn(`bundle at '${url}' failed schema validation`, errors);
       return undefined;
+    }
+    if (!upgradeFirst) {
+      upgradeLegacyGameData(data);
     }
     withLegacyJacketUrls(data);
     jotaiStore.set(customDataCache, (prev) => {

@@ -1040,13 +1040,9 @@ const songflags: Record<string, string[]> = {
 
 const songFlagEntries = Object.entries(songflags);
 
-const getFlagsFromSaHash = (saHash?: string): string[] => {
-  if (!saHash) {
-    return [];
-  }
-
+const getFlagsFromSongId = (songId: string): string[] => {
   return songFlagEntries
-    .filter(([, songIds]) => songIds.includes(saHash))
+    .filter(([, songIds]) => songIds.includes(songId))
     .map(([flag]) => flag);
 };
 
@@ -1056,7 +1052,7 @@ const updateSongFlags = (song: Song, ...preserveFlags: string[]) => {
   );
 
   const mergedFlags = [
-    ...new Set([...preservedFlags, ...getFlagsFromSaHash(song.saHash)]),
+    ...new Set([...preservedFlags, ...getFlagsFromSongId(song.id)]),
   ];
 
   if (mergedFlags.length === 0) {
@@ -1109,15 +1105,15 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
             const jacket = fetchedSong.jacketUrl
               ? downloadJacket(
                   fetchedSong.jacketUrl,
-                  `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
+                  `jubeat/beyond_the_ave/${fetchedSong.id}`,
                 )
               : "";
 
             const newSong: Song = {
+              id: fetchedSong.id,
               name: fetchedSong.name,
               artist: fetchedSong.artist || "",
               folder: existingData.meta.folders?.at(-1),
-              saHash: fetchedSong.saHash,
               bpm: fetchedSong.bpm || "???",
               charts: fetchedSong.charts,
               remyLink: fetchedSong.remyLink,
@@ -1156,15 +1152,15 @@ task("Import Jubeat", async ({ task, setStatus, setError }) => {
             const jacket = fetchedSong.jacketUrl
               ? downloadJacket(
                   fetchedSong.jacketUrl,
-                  `jubeat/beyond_the_ave/${fetchedSong.saHash}`,
+                  `jubeat/beyond_the_ave/${fetchedSong.id}`,
                 )
               : "";
 
             const newSong: Song = {
+              id: fetchedSong.id,
               name: fetchedSong.name,
               artist: fetchedSong.artist || "",
               folder: existingData.meta.folders?.at(-1),
-              saHash: fetchedSong.saHash,
               bpm: fetchedSong.bpm || "???",
               charts: fetchedSong.charts,
               remyLink: fetchedSong.remyLink,

@@ -70,7 +70,7 @@ task("Import StepManiaX", async ({ setStatus, setError, task }) => {
       if (song.created_at > lastUpdatedString)
         lastUpdatedString = song.created_at;
 
-      const existingSong = existingData.songs.find((s) => s.saIndex === songId);
+      const existingSong = existingData.songs.find((s) => s.id === songId);
       if (existingSong) {
         if (
           existingSong.name !== song.title ||
@@ -99,11 +99,11 @@ task("Import StepManiaX", async ({ setStatus, setError, task }) => {
         `${song.title} / ${song.artist || "(No Artist)"}`,
         async ({ setStatus }) => {
           songs.push({
+            id: songId,
             name: song.title,
             artist: song.artist,
             bpm: song.bpm,
             genre: song.genre,
-            saIndex: songId,
             jacket: await fetchJacket(song.cover_path),
             charts,
           });

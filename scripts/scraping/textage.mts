@@ -250,7 +250,7 @@ type TextageSong = {
   name: string;
   artist: string;
   genre: string;
-  saHash: SongTag;
+  id: SongTag;
   bpm: string;
   folder: string;
   jacket: string;
@@ -661,7 +661,7 @@ export default globalThis;
           name: songName,
           artist: decodeHTML(artist || "[artist N/A]", { scope: "strict" }),
           genre: decodeHTML(genre || "[genre N/A]", { scope: "strict" }),
-          saHash: songTag,
+          id: songTag,
           bpm: (songBPM === "0" ? undefined : songBPM) as string,
           folder: folderName,
           charts: chartData,
@@ -682,9 +682,9 @@ export default globalThis;
     const copiedSongKeys: Array<
       keyof Pick<
         Song,
-        "name" | "artist" | "genre" | "bpm" | "jacket" | "folder" | "saHash"
+        "name" | "artist" | "genre" | "bpm" | "jacket" | "folder" | "id"
       >
-    > = ["name", "artist", "genre", "bpm", "jacket", "folder", "saHash"];
+    > = ["name", "artist", "genre", "bpm", "jacket", "folder", "id"];
     for (const key of copiedSongKeys) {
       if (
         existingSong[key] !== fetchedSong[key] &&
@@ -788,7 +788,7 @@ export default globalThis;
         const chartName =
           `[${existingChart.style}/${existingChart.diffClass}]`.toUpperCase();
         console.warn(
-          `c[] ${existingSong.name} (${existingSong.saHash}) ${chartName}: no notes info`,
+          `c[] ${existingSong.name} (${existingSong.id}) ${chartName}: no notes info`,
         );
       }
     }
@@ -797,9 +797,6 @@ export default globalThis;
   }
 
   songEquals(existingSong: Song, fetchedSong: Song): boolean {
-    return existingSong.saHash && fetchedSong.saHash
-      ? existingSong.saHash === fetchedSong.saHash
-      : existingSong.name === fetchedSong.name &&
-          existingSong.artist === fetchedSong.artist;
+    return existingSong.id === fetchedSong.id;
   }
 }

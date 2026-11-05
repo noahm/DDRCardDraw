@@ -144,7 +144,7 @@ export function SongSearch(props: Props) {
       <ScrollArea.Autosize mah="60vh" mt="xs">
         {items.map((data, idx) => (
           <SearchResult
-            key={`${data.song.saHash || data.song.name}-${
+            key={`${data.song.id}-${
               typeof data.chart === "string"
                 ? data.chart
                 : chartIdentity(data.chart)
