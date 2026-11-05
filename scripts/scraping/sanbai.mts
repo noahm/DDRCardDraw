@@ -140,36 +140,6 @@ const invalidDataOnSanbai = new Map<string, Partial<SanbaiSong>>([
     "9OP0iqDD8PDIb8lblD0ol09oP1I1d9PO", // Happy
     { ratings: [3, 5, 8, 12, 0, 6, 8, 13, 0] },
   ],
-  // #region EXTRA SAVIOR WORLD (BOSS RUSH CHALLENGE)
-  [
-    "QbD9QQP9bqoD00bQQl8obibP9PloQ9Qo", // Boss Rush
-    {
-      ratings: [4, 10, 14, 16, 18, 10, 14, 16, 18],
-      lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280],
-    },
-  ],
-  [
-    "QOPioi8P81q9l0QiP6q06b06bdOO8b1O", // S!ck
-    {
-      ratings: [5, 8, 12, 16, 18, 8, 12, 16, 18],
-      lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280],
-    },
-  ],
-  [
-    "bilO9D91P1lo81oIDP6qOoqdDdQdoDlP", // Truare!
-    {
-      ratings: [3, 8, 11, 16, 18, 8, 11, 16, 18],
-      lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280],
-    },
-  ],
-  [
-    "q8o866OdqqDPOQdO88D1DOdbqQo1q8Q1", // VALLIS-NERIA
-    {
-      ratings: [5, 9, 13, 16, 18, 9, 13, 16, 18],
-      lock_types: [0, 0, 0, 0, 280, 0, 0, 0, 280],
-    },
-  ],
-  // #endregion EXTRA SAVIOR WORLD (BOSS RUSH CHALLENGE)
   ...timedCorrections
     .filter(([time]) => _currentDate >= time)
     .map(([, id, data]) => [id, data] as const),
