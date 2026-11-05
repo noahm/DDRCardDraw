@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Group, Modal, Tooltip } from "@mantine/core";
+import { Button, Modal, Tooltip } from "@mantine/core";
 import { IconStack2, IconSettings } from "@tabler/icons-react";
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
@@ -28,7 +28,10 @@ export function HeaderControls() {
           onDrawAttempt={(success) => setLastDrawFailed(!success)}
         />
       </Modal>
-      <Group gap="xs" wrap="nowrap">
+      {/* joined as one control, the way the app has always shown them. The
+          group only styles buttons that are its direct children, hence the
+          settings link rendering as a Button itself */}
+      <Button.Group>
         <Tooltip
           label={
             lastDrawFailed ? (
@@ -50,12 +53,19 @@ export function HeaderControls() {
             <FormattedMessage id="draw" />
           </Button>
         </Tooltip>
-        <Link to="config" data-umami-event="settings-open">
-          <ActionIcon variant="default" size={36} aria-label="Settings">
-            <IconSettings size={20} />
-          </ActionIcon>
-        </Link>
-      </Group>
+        <Button
+          component={Link}
+          to="config"
+          data-umami-event="settings-open"
+          variant="default"
+          aria-label="Settings"
+          // square, to match the button height
+          w="var(--button-height)"
+          px={0}
+        >
+          <IconSettings size={18} />
+        </Button>
+      </Button.Group>
     </>
   );
 }
