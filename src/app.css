@@ -13,6 +13,22 @@ body {
   margin: 0;
 }
 
+/* the page sits a shade off the slate of the header and dialogs, as it always
+   has; Mantine would paint it the same slate */
+:global([data-mantine-color-scheme="dark"]) body {
+  background-color: #222;
+}
+
+/* bare links in the app's link blue, as Blueprint styled them. :where keeps
+   this from outranking any component that colors its own anchor */
+:where(a) {
+  color: var(--mantine-color-anchor);
+  text-decoration: none;
+}
+:where(a):hover {
+  text-decoration: underline;
+}
+
 body:global(.obs-layer) {
   background-color: transparent !important;
 }

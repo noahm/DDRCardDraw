@@ -23,6 +23,7 @@ import { nanoid } from "nanoid";
 import { ClassicModeShell } from "./classic-mode";
 import { useMemo } from "react";
 import { NotificationHost } from "./notify";
+import { theme as mantineTheme } from "./theme";
 
 const router = createBrowserRouter([
   {
@@ -287,7 +288,7 @@ function ObsStyles() {
 export function App() {
   const theme = useTheme();
   return (
-    <MantineProvider forceColorScheme={theme}>
+    <MantineProvider theme={mantineTheme} forceColorScheme={theme}>
       <IntlProviderWrapper>
         <ThemeSyncWidget />
         <UpdateManager />
