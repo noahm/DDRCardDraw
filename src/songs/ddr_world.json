@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1793849681011
+    "lastUpdated": 1794155321730
   },
   "defaults": {
     "style": "single",
@@ -1193,6 +1193,61 @@
       "remyLink": "https://remywiki.com/888",
       "jacket": "ddr_x2/888.png",
       "search_hint": "はちやそば/hachiyasoba"
+    },
+    {
+      "id": "6IP9bDiqdPIOP8qDPlQ6bQDdQbliI89q",
+      "name": "8ISMUTH OVERDRIV3",
+      "artist": "U1 overground",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "145",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3,
+          "maxScore": 396
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 816
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1638
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2235
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6,
+          "maxScore": 804
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1620
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2238
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/8ISMUTH OVERDRIV3.jpg",
+      "search_hint": "BISMUTH OVERDRIVE",
+      "remyLink": "https://remywiki.com/8ISMUTH_OVERDRIV3"
     },
     {
       "id": "Q9PP10bOQdIPD1iI99llI9QID9b09q0o",
