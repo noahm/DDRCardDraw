@@ -1,6 +1,6 @@
-import { Error, WarningSign } from "@blueprintjs/icons";
+import { IconAlertTriangle, IconExclamationCircle } from "@tabler/icons-react";
 import { useIntl } from "../hooks/useIntl";
-import { toaster } from "../toaster";
+import { notify } from "../notify";
 
 /**
  * A draw came back empty.
@@ -11,14 +11,14 @@ import { toaster } from "../toaster";
  * rule off), so say which it was.
  */
 export function showDrawErrorToast(allUsed = false) {
-  toaster.show(
-    {
-      message: <DrawErrorMessage allUsed={allUsed} />,
-      intent: "danger",
-      icon: <Error />,
-    },
-    "fail-draw",
-  );
+  notify.show({
+    id: "fail-draw",
+    // rendered as a component so it picks up the current locale; the thunks
+    // that trigger this have no intl context of their own
+    message: <DrawErrorMessage allUsed={allUsed} />,
+    intent: "danger",
+    icon: <IconExclamationCircle />,
+  });
 }
 
 function DrawErrorMessage({ allUsed }: { allUsed: boolean }) {
@@ -31,14 +31,12 @@ function DrawErrorMessage({ allUsed }: { allUsed: boolean }) {
  * most often a pocket pick of a chart that's turned up somewhere else.
  */
 export function showReuseBlockedToast() {
-  toaster.show(
-    {
-      message: <ReuseBlockedMessage />,
-      intent: "danger",
-      icon: <Error />,
-    },
-    "reuse-blocked",
-  );
+  notify.show({
+    id: "reuse-blocked",
+    message: <ReuseBlockedMessage />,
+    intent: "danger",
+    icon: <IconExclamationCircle />,
+  });
 }
 
 function ReuseBlockedMessage() {
@@ -52,14 +50,12 @@ function ReuseBlockedMessage() {
  * count was simply ignored.
  */
 export function showPartialDrawToast(drawn: number, requested: number) {
-  toaster.show(
-    {
-      message: <PartialDrawMessage drawn={drawn} requested={requested} />,
-      intent: "warning",
-      icon: <WarningSign />,
-    },
-    "partial-draw",
-  );
+  notify.show({
+    id: "partial-draw",
+    message: <PartialDrawMessage drawn={drawn} requested={requested} />,
+    intent: "warning",
+    icon: <IconAlertTriangle />,
+  });
 }
 
 function PartialDrawMessage({

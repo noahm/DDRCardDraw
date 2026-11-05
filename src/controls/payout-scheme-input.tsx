@@ -1,11 +1,5 @@
-import {
-  Button,
-  ButtonGroup,
-  ControlGroup,
-  InputGroup,
-  Tag,
-} from "@blueprintjs/core";
-import { Minus, Plus } from "@blueprintjs/icons";
+import { Badge, Button, Group, TextInput } from "@mantine/core";
+import { IconMinus, IconPlus } from "@tabler/icons-react";
 import { useState } from "react";
 import {
   DEFAULT_PAYOUT_SCHEME,
@@ -85,7 +79,8 @@ export function PayoutSchemeInput({
   }
 
   const field = (
-    <InputGroup
+    <TextInput
+      style={{ flex: 1 }}
       value={draft}
       onChange={(e) => handleChange(e.currentTarget.value)}
       onKeyDown={(e) => {
@@ -96,24 +91,24 @@ export function PayoutSchemeInput({
         }
       }}
       placeholder={inheritedScheme || DEFAULT_PAYOUT_SCHEME}
-      intent={parsed.ok ? "none" : "danger"}
+      error={!parsed.ok}
       enterKeyHint="done"
-      fill
     />
   );
 
   return (
     <div className={styles.payoutScheme}>
       {commit === "on-confirm" ? (
-        <ControlGroup fill>
+        <Group gap="xs" wrap="nowrap">
           {field}
           <Button
-            intent={unsent ? "primary" : "none"}
+            variant={unsent ? "filled" : "default"}
             disabled={!unsent || !parsed.ok}
             onClick={confirm}
-            text="Apply"
-          />
-        </ControlGroup>
+          >
+            Apply
+          </Button>
+        </Group>
       ) : (
         field
       )}
@@ -121,19 +116,29 @@ export function PayoutSchemeInput({
         <>
           <div className={styles.previewHeader}>
             {playerCount === undefined ? (
-              <ButtonGroup size="small">
+              <Button.Group>
                 <Button
-                  icon={<Minus />}
+                  size="compact-sm"
+                  variant="default"
+                  aria-label="fewer players"
                   disabled={previewCount <= 2}
                   onClick={() => setPreviewCount((c) => Math.max(2, c - 1))}
-                />
-                <Button disabled text={`${count} players`} />
+                >
+                  <IconMinus size={14} />
+                </Button>
+                <Button size="compact-sm" variant="default" disabled>
+                  {count} players
+                </Button>
                 <Button
-                  icon={<Plus />}
+                  size="compact-sm"
+                  variant="default"
+                  aria-label="more players"
                   disabled={previewCount >= 16}
                   onClick={() => setPreviewCount((c) => Math.min(16, c + 1))}
-                />
-              </ButtonGroup>
+                >
+                  <IconPlus size={14} />
+                </Button>
+              </Button.Group>
             ) : (
               <span className={styles.previewCount}>
                 with {count} {count === 1 ? "player" : "players"}
@@ -142,13 +147,14 @@ export function PayoutSchemeInput({
           </div>
           <div className={styles.payouts}>
             {Array.from({ length: count }, (_, index) => (
-              <Tag
+              <Badge
                 key={index}
-                minimal
-                intent={index === 0 && table[0] ? "primary" : "none"}
+                variant="light"
+                color={index === 0 && table[0] ? "blue" : "gray"}
+                tt="none"
               >
                 {ordinalPlace(index + 1)} <strong>{table[index] ?? 0}</strong>
-              </Tag>
+              </Badge>
             ))}
           </div>
         </>
