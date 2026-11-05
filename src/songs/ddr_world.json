@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1793343245477
+    "lastUpdated": 1793849681011
   },
   "defaults": {
     "style": "single",
@@ -8482,6 +8482,13 @@
           "sanbaiTier": 16.45
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2280,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 1044,
           "lvl": 10,
           "style": "double",
@@ -8501,11 +8508,17 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2151,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Boss_Rush",
-      "jacket": "ddr_a/Boss Rush.png",
-      "genre": ""
+      "jacket": "ddr_a/Boss Rush.png"
     },
     {
       "id": "l81l981iPod0PDIIObIldoQb6Ol9o1Iq",
@@ -16507,6 +16520,13 @@
           "sanbaiTier": 15.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2007,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 828,
           "lvl": 9,
           "style": "double",
@@ -16526,6 +16546,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.65
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1950,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Destination",
@@ -49609,6 +49636,13 @@
           "maxScore": 1686
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1926,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
@@ -49628,6 +49662,13 @@
           "diffClass": "expert",
           "sanbaiTier": 17.6,
           "maxScore": 1647
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1824,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Pursuer",
@@ -53311,6 +53352,13 @@
           "sanbaiTier": 16.65
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2481,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 771,
           "lvl": 8,
           "style": "double",
@@ -53330,6 +53378,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2355,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/S!ck",
@@ -68181,6 +68236,13 @@
           "sanbaiTier": 16.65
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1842,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 792,
           "lvl": 8,
           "style": "double",
@@ -68200,6 +68262,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1782,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Truare!",
@@ -70323,6 +70392,13 @@
           "maxScore": 2067
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2376,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -70342,6 +70418,13 @@
           "diffClass": "expert",
           "sanbaiTier": 16.05,
           "maxScore": 1989
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2349,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/VALLIS-NERIA",
@@ -77449,6 +77532,13 @@
           "sanbaiTier": 15.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2163,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 903,
           "lvl": 8,
           "style": "double",
@@ -77468,6 +77558,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2121,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Endorphin",
