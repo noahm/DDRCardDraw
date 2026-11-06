@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1793340000000
+    "lastUpdated": 1793937830835
   },
   "defaults": {
     "style": "single",
@@ -1193,6 +1193,57 @@
       "remyLink": "https://remywiki.com/888",
       "jacket": "ddr_x2/888.png",
       "search_hint": "はちやそば/hachiyasoba"
+    },
+    {
+      "id": "6IP9bDiqdPIOP8qDPlQ6bQDdQbliI89q",
+      "name": "8ISMUTH OVERDRIV3",
+      "artist": "U1 overground",
+      "folder": "DanceDanceRevolution World",
+      "bpm": "145",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 3
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1638
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2235
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 12,
+          "maxScore": 1620
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 15,
+          "maxScore": 2238
+        }
+      ],
+      "flags": ["worldLeague"],
+      "jacket": "ddr_world/8ISMUTH OVERDRIV3.jpg",
+      "search_hint": "BISMUTH OVERDRIVE"
     },
     {
       "id": "Q9PP10bOQdIPD1iI99llI9QID9b09q0o",
@@ -8482,6 +8533,13 @@
           "sanbaiTier": 16.45
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2280,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 1044,
           "lvl": 10,
           "style": "double",
@@ -8501,11 +8559,17 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2151,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Boss_Rush",
-      "jacket": "ddr_a/Boss Rush.png",
-      "genre": ""
+      "jacket": "ddr_a/Boss Rush.png"
     },
     {
       "id": "l81l981iPod0PDIIObIldoQb6Ol9o1Iq",
@@ -16507,6 +16571,13 @@
           "sanbaiTier": 15.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2007,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 828,
           "lvl": 9,
           "style": "double",
@@ -16526,6 +16597,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.65
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 1950,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Destination",
@@ -26815,7 +26893,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/Good Life.jpg"
+      "jacket": "ddr_world/Good Life.jpg",
+      "remyLink": "https://remywiki.com/Good_Life"
     },
     {
       "id": "i9PQoDbQI0qqd6I00d19bQo6q9PoOIbO",
@@ -44959,7 +45038,8 @@
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
-      "jacket": "ddr_world/One Kiss.jpg"
+      "jacket": "ddr_world/One Kiss.jpg",
+      "remyLink": "https://remywiki.com/One_Kiss"
     },
     {
       "id": "OQb96d6qD9bPdD819QO0b88blIllldoi",
@@ -49607,6 +49687,13 @@
           "maxScore": 1686
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1926,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 7,
           "style": "double",
           "diffClass": "basic",
@@ -49626,6 +49713,13 @@
           "diffClass": "expert",
           "sanbaiTier": 17.6,
           "maxScore": 1647
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1824,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Pursuer",
@@ -53309,6 +53403,13 @@
           "sanbaiTier": 16.65
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2481,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 771,
           "lvl": 8,
           "style": "double",
@@ -53328,6 +53429,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2355,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/S!ck",
@@ -60599,12 +60707,14 @@
         {
           "style": "single",
           "diffClass": "beginner",
-          "lvl": 4
+          "lvl": 4,
+          "maxScore": 351
         },
         {
           "style": "single",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 714
         },
         {
           "style": "single",
@@ -60627,7 +60737,8 @@
         {
           "style": "double",
           "diffClass": "basic",
-          "lvl": 7
+          "lvl": 7,
+          "maxScore": 714
         },
         {
           "style": "double",
@@ -60649,7 +60760,8 @@
         }
       ],
       "flags": ["unlock"],
-      "jacket": "ddr_world/Steps for Victory (U1 Heavy Metal Edition).jpg"
+      "jacket": "ddr_world/Steps for Victory (U1 Heavy Metal Edition).jpg",
+      "remyLink": "https://remywiki.com/Steps_for_Victory_(U1_Heavy_Metal_Edition)"
     },
     {
       "id": "bD1bQi091lOIO01Q1dq9bQqQ1blDI0Pq",
@@ -68175,6 +68287,13 @@
           "sanbaiTier": 16.65
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1842,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 792,
           "lvl": 8,
           "style": "double",
@@ -68194,6 +68313,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 16.55
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 1782,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Truare!",
@@ -70317,6 +70443,13 @@
           "maxScore": 2067
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2376,
+          "flags": ["unlock"]
+        },
+        {
           "lvl": 9,
           "style": "double",
           "diffClass": "basic",
@@ -70336,6 +70469,13 @@
           "diffClass": "expert",
           "sanbaiTier": 16.05,
           "maxScore": 1989
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 18,
+          "maxScore": 2349,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/VALLIS-NERIA",
@@ -77443,6 +77583,13 @@
           "sanbaiTier": 15.75
         },
         {
+          "style": "single",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2163,
+          "flags": ["unlock"]
+        },
+        {
           "maxScore": 903,
           "lvl": 8,
           "style": "double",
@@ -77462,6 +77609,13 @@
           "style": "double",
           "diffClass": "expert",
           "sanbaiTier": 15.5
+        },
+        {
+          "style": "double",
+          "diffClass": "challenge",
+          "lvl": 17,
+          "maxScore": 2121,
+          "flags": ["unlock"]
         }
       ],
       "remyLink": "https://remywiki.com/Endorphin",
