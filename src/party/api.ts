@@ -10,12 +10,16 @@ import type { AppState } from "../state/store";
  *
  * - `/api/e/:eventId/cab/:cabId/player/:playerIndex` → the raw name of the
  *   player at that 0-based position in the cab's active match, as plain text
- * - `/api/e/:eventId/draws` → every drawing in the event, as JSON
+ * - `/api/e/:eventId/draws` → every drawing in the event, as JSON. Also
+ *   answers at bare `/api/e/:eventId`, the path the old full-draw-history
+ *   proxy used, so its val.run redirect lands here unchanged.
+ *
+ * Documented for users in docs/api.md.
  */
 const PLAYER_NAME = new URLPattern({
   pathname: "/api/e/:eventId/cab/:cabId/player/:playerIndex",
 });
-const DRAWS = new URLPattern({ pathname: "/api/e/:eventId/draws" });
+const DRAWS = new URLPattern({ pathname: "/api/e/:eventId{/draws}?" });
 
 const CORS_HEADERS = { "Access-Control-Allow-Origin": "*" };
 
