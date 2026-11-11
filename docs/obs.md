@@ -12,6 +12,8 @@ Expand the "Cab OBS Sources" section, pick which cab you're setting up, and clic
 
 The **Player** row builds one source out of whichever pieces of a player's info you want together. Set the player number, then toggle the parts to include — the URL updates as you go, and one source can carry any mix of them. The first part shows on its own and the rest follow in parentheses, so name and score reads `Alice (3)` while name and pronouns reads `Alice (she/her)`. Copy it, change the toggles, and copy again for a second source.
 
+If you'd rather pull a player's name or the event's draw history into your own tools than show a rendered source, see the [event API](api.md).
+
 In OBS you can add the copied URL to your stream layout by adding a new browser source.
 
 ![alt text](images/obs/obs-source-add.png)
