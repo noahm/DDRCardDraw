@@ -46,7 +46,7 @@ yarn import:smx
 # download latest DDR song data and jackets (blends data from KONAMI official site, 3icecream, RemyWiki and ZIv)
 yarn import:ddr
 
-# import an ITG/StepMania song pack into card draw
+# import an ITG song pack into card draw
 yarn import:itg path/to/pack/folder some-stub-name
 
 # import the latest Pump it Up data using a data dump found here:

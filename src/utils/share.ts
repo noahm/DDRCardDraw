@@ -42,8 +42,8 @@ export async function shareCharts(
         chart.granularLevel,
         chart.bpm,
         chart.artist,
-        SANBAI_ID.test(chart.song.id)
-          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.song.id)}`
+        chart.songId && SANBAI_ID.test(chart.songId)
+          ? `https://3icecream.com/ddr/song_details/${encodeURI(chart.songId)}`
           : undefined,
       ];
     }),
@@ -217,6 +217,22 @@ export function copyToClipboard(blob: Blob) {
       [blob.type]: blob,
     }),
   ]);
+}
+
+export async function copyPlainTextToClipboard(
+  text: string,
+  toastMessage?: string,
+) {
+  await navigator.clipboard.writeText(text);
+  if (toastMessage) {
+    toaster.show(
+      {
+        message: toastMessage,
+        icon: "paperclip",
+      },
+      "copied-data",
+    );
+  }
 }
 
 function dataUriToBlob(dataUri: string) {

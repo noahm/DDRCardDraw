@@ -1,0 +1,144 @@
+/**
+ * Styles for the drawn-charts OBS source.
+ *
+ * Unlike the rest of the app's CSS modules, every class here is `:global`.
+ * These names are a public surface: an organizer restyles this overlay by
+ * writing rules against them in the room's Global OBS Source Styles editor,
+ * and a hashed name would stop matching the moment this file changed. Rename
+ * one the way you'd rename a URL.
+ *
+ * Colors that come from game data (difficulty colors) are applied inline
+ * rather than here, so a rule written by an organizer can override them.
+ */
+
+:global(.drawn-charts) {
+  padding: 8px;
+  color: white;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  text-shadow:
+    0 0 8px black,
+    1px 1px 1px black;
+}
+
+:global(.drawn-charts-header) {
+  /* inline so the plate hugs the text rather than banding the whole width */
+  display: inline-flex;
+  gap: 0.6em;
+  align-items: baseline;
+  margin-bottom: 6px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  /* every piece of text in this source sits on a plate of its own: over
+     arbitrary video, a text shadow alone doesn't reliably carry it */
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+:global(.drawn-charts-range) {
+  opacity: 0.8;
+}
+
+/* --- grid layout: a mini jacket per chart --- */
+
+:global(.drawn-charts-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 6px;
+}
+
+:global(.drawn-chart) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px 4px 4px;
+  border-radius: 4px;
+  /* the left edge carries the difficulty color; the swatch is set inline */
+  border-left: 4px solid transparent;
+  background-color: rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+:global(.drawn-chart-jacket) {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+:global(.drawn-chart-text) {
+  /* without this a long song name refuses to ellipsize inside the flex row */
+  min-width: 0;
+  flex: 1;
+}
+
+:global(.drawn-chart-name) {
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:global(.drawn-chart-diff) {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* --- list layout: text rows grouped by level --- */
+
+:global(.drawn-charts-list) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 8px;
+  align-items: start;
+}
+
+:global(.drawn-charts-level) {
+  padding: 4px 8px 6px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+:global(.drawn-charts-level-label) {
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+:global(.drawn-chart-row) {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* keeps the song names in a column aligned past the difficulty abbreviations */
+:global(.drawn-chart-row) :global(.drawn-chart-diff) {
+  flex: none;
+  min-width: 2.6em;
+}
+
+:global(.drawn-chart-row) :global(.drawn-chart-name) {
+  flex: 1;
+  min-width: 0;
+}
+
+:global(.drawn-chart-tier) {
+  flex: none;
+  font-size: 11px;
+  opacity: 0.7;
+}

@@ -1,50 +1,74 @@
-import { useCallback } from "react";
-import { useConfigState } from "../config-state";
+import { useCallback, useMemo, Fragment } from "react";
 import { useDrawing } from "../drawing-context";
 import styles from "./drawing-labels.css";
-import { AutoCompleteSelect, RoundSelect } from "./round-select";
 import { Icon } from "@blueprintjs/core";
 import { CaretLeft, CaretRight } from "@blueprintjs/icons";
+import { useEventSettings } from "../state/hooks";
+import { useAppDispatch, useAppState } from "../state/store";
+import { drawingsSlice } from "../state/drawings.slice";
+import { playerDisplayName } from "../models/Drawing";
+import { playerScores } from "../models/gauntlet-standings";
 
-export function SetLabels() {
-  const showLabels = useConfigState((s) => s.showPlayerAndRoundLabels);
-  const players = useDrawing((s) => s.players);
+export function MatchLabels() {
+  const showLabels = useEventSettings((s) => s.showPlayerAndRoundLabels);
+  const eventScheme = useEventSettings((s) => s.gauntletPayout);
+  // the labels head the whole match rather than the sub-draw they render
+  // inside, and a gauntlet's points are earned across all of its sub-draws
+  const matchId = useDrawing((d) => d.id);
+  const drawing = useAppState((s) => s.drawings.entities[matchId]);
+  const scores = useMemo(
+    () => playerScores(drawing, eventScheme),
+    [drawing, eventScheme],
+  );
   if (!showLabels) {
     return null;
   }
+  const meta = drawing.meta;
 
   return (
     <div className={styles.headers}>
-      <div className={styles.title}>
-        <RoundSelect />
-      </div>
+      <div className={styles.title}>{meta.title}</div>
       <div className={styles.players}>
-        {players.map((p, idx) => (
-          <PlayerLabel
-            key={idx}
-            placeholder={`Player ${idx + 1}`}
-            playerIndex={idx + 1}
-          />
-        ))}
+        {meta.players.map((player, idx) => {
+          const score = scores?.get(player.id);
+          const ret = (
+            <span key={idx}>
+              {playerDisplayName(player, idx)}
+              {score === undefined ? null : <> ({score})</>}
+            </span>
+          );
+          if (meta.players.length === 2 && idx === 0) {
+            return (
+              <Fragment key={idx}>
+                {ret}
+                <Versus />
+              </Fragment>
+            );
+          }
+          return ret;
+        })}
       </div>
     </div>
   );
 }
 
 function Versus() {
-  const players = useDrawing((s) => s.players);
-  const ipp = useDrawing((s) => s.incrementPriorityPlayer);
+  const dispatch = useAppDispatch();
+  const parentId = useDrawing((s) => s.id);
+  const ipp = useCallback(
+    () => dispatch(drawingsSlice.actions.incrementPriorityPlayer(parentId)),
+    [dispatch, parentId],
+  );
   const priorityPlayer = useDrawing((s) => s.priorityPlayer);
-  if (players.length !== 2) {
-    return null;
-  }
+  const players = useDrawing((s) => s.meta.players);
   return (
     <div className={styles.versus} onClick={ipp}>
       <Icon
         icon={
           <CaretLeft
             style={{
-              visibility: priorityPlayer === 1 ? "visible" : "hidden",
+              visibility:
+                priorityPlayer === players[0]?.id ? "visible" : "hidden",
               verticalAlign: "middle",
             }}
           />
@@ -55,7 +79,8 @@ function Versus() {
         icon={
           <CaretRight
             style={{
-              visibility: priorityPlayer === 2 ? "visible" : "hidden",
+              visibility:
+                priorityPlayer === players[1]?.id ? "visible" : "hidden",
               verticalAlign: "middle",
             }}
           />
@@ -63,52 +88,4 @@ function Versus() {
       />
     </div>
   );
-}
-
-function PlayerLabel({
-  playerIndex,
-  placeholder,
-}: {
-  playerIndex: number;
-  placeholder: string;
-}) {
-  const updateDrawing = useDrawing((s) => s.updateDrawing);
-  const value = useDrawing((s) => s.players[playerIndex - 1] || null);
-  const playerNames = useConfigState((s) => s.playerNames);
-  const updateConfig = useConfigState((s) => s.update);
-  const handleChange = useCallback(
-    (value: string) => {
-      updateDrawing((drawing) => {
-        const prev = drawing.players.slice();
-        prev[playerIndex - 1] = value;
-        return { players: prev };
-      });
-      if (!playerNames.includes(value)) {
-        updateConfig((prev) => {
-          const nextNames = prev.playerNames.slice();
-          nextNames.push(value);
-          return { playerNames: nextNames };
-        });
-      }
-    },
-    [updateDrawing, playerIndex, playerNames, updateConfig],
-  );
-  const ret = (
-    <AutoCompleteSelect
-      value={value}
-      itemList={playerNames}
-      placeholder={placeholder}
-      onSelect={handleChange}
-      size="large"
-    />
-  );
-  if (playerIndex === 1) {
-    return (
-      <>
-        {ret}
-        <Versus />
-      </>
-    );
-  }
-  return ret;
 }
