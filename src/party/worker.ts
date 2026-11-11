@@ -1,4 +1,5 @@
 import { routePartykitRequest } from "partyserver";
+import { routeApiRequest } from "./api";
 
 export { Main } from "./server";
 
@@ -19,6 +20,7 @@ declare global {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     return (
+      (await routeApiRequest(request, env)) ??
       (await routePartykitRequest(request, env)) ??
       new Response("Not found", { status: 404 })
     );
