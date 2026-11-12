@@ -1,7 +1,8 @@
 /**
  * Import DDR series song data from various sources and merge into existing data file.
- * Usage: `node --experimental-strip-types scripts/import-ddr.mts`
+ * Usage: `node scripts/import-ddr.mts --skip-eagate`
  * (Note: This script is registered in npm script, so you can also call it with `yarn import:ddr`)
+ * Arguments: [skip-eagate] (optional) - whether to skip fetching songs from e-amusement GATE
  *
  * If you want to import a different series (ex. DDR EXTREME), change the `MIX_META` import from `./scraping/ddr-sources.mts`.
  */
@@ -29,6 +30,9 @@ import { SanbaiSongImporter } from "./scraping/sanbai.mts";
 import { ZivSongImporter } from "./scraping/ziv.mts";
 import { GrandPrixSongImporter } from "./scraping/grand-prix.mts";
 
+/** Fetch songs from e-amusement GATE or not */
+const skipEagate = process.argv.includes("--skip-eagate");
+
 for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
   setJacketPrefix(MIX_META.jacketPrefix);
 
@@ -45,7 +49,7 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
 
     let lastUpdated = Date.now();
 
-    if (MIX_META.eagate) {
+    if (MIX_META.eagate && !skipEagate) {
       console.log("Fetching songs from e-amusement GATE...");
       if (MIX_META.eagate.jacket) {
         // AC version
