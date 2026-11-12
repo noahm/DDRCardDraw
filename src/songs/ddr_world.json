@@ -61,7 +61,7 @@
       "copyStrikes"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1794155321730
+    "lastUpdated": 1794446472450
   },
   "defaults": {
     "style": "single",
@@ -57648,6 +57648,54 @@
       "search_hint": "CANDY RAVE/キャンディレイヴ"
     },
     {
+      "id": "81P1D8qqDq8bDIi80odd6PQ1ObPDDbII",
+      "name": "snooze",
+      "artist": "wotaku feat. SHIKI",
+      "bpm": "150",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 2
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1599
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 6
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/snooze.jpg",
+      "remyLink": "https://remywiki.com/Snooze"
+    },
+    {
       "id": "8ql0DIiI0D9D1OP0qb8olo9bIQdP0ddq",
       "name": "Snow Garland Fairy",
       "artist": "BEMANI Sound Team \"KE!JU\"",
@@ -78860,6 +78908,55 @@
       "genre": "J-POP"
     },
     {
+      "id": "dI68Oq96DdIib8o9D80dIdO0i90Q9bDb",
+      "name": "ジェヘナ",
+      "name_translation": "Gehenna",
+      "artist": "wotaku",
+      "bpm": "128",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 13,
+          "maxScore": 1422
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 13
+        }
+      ],
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/ジェヘナ.jpg",
+      "remyLink": "https://remywiki.com/Gehenna"
+    },
+    {
       "id": "qoidddb08iIoDOo9DQoO0loPl8lPQ81o",
       "name": "スイーツはとまらない♪",
       "name_translation": "Sweets wa tomaranai",
@@ -83375,6 +83472,56 @@
       "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Luckgakist",
       "jacket": "ddr_2014/Luckgakist.png"
+    },
+    {
+      "id": "l8D81qIboObo9DD080dQiQQID0dbdl6O",
+      "name": "ラグトレイン",
+      "name_translation": "Lagtrain",
+      "artist": "稲葉曇",
+      "artist_translation": "inabakumori",
+      "bpm": "147",
+      "folder": "DanceDanceRevolution World",
+      "charts": [
+        {
+          "style": "single",
+          "diffClass": "beginner",
+          "lvl": 1
+        },
+        {
+          "style": "single",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "single",
+          "diffClass": "difficult",
+          "lvl": 9
+        },
+        {
+          "style": "single",
+          "diffClass": "expert",
+          "lvl": 12,
+          "maxScore": 1323
+        },
+        {
+          "style": "double",
+          "diffClass": "basic",
+          "lvl": 5
+        },
+        {
+          "style": "double",
+          "diffClass": "difficult",
+          "lvl": 10
+        },
+        {
+          "style": "double",
+          "diffClass": "expert",
+          "lvl": 12
+        }
+      ],
+      "flags": ["euLocked"],
+      "jacket": "ddr_world/ラグトレイン.jpg",
+      "remyLink": "https://remywiki.com/Lagtrain"
     },
     {
       "id": "ID8Q0oO98i0D0o1i0doIqo6O0O9QDO68",
