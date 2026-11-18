@@ -88,10 +88,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
               c.style === fetchedChart.style &&
               c.diffClass === fetchedChart.diffClass,
           );
-          if (!existingChart) {
-            existingSong.charts.push(fetchedChart);
-            updated = true;
-          } else if (existingChart[chartKey] !== fetchedChart[chartKey]) {
+          if (
+            existingChart &&
+            existingChart[chartKey] !== fetchedChart[chartKey]
+          ) {
             (existingChart as unknown as Record<string, unknown>)[chartKey] =
               fetchedChart[chartKey];
             updated = true;
@@ -292,6 +292,7 @@ export const DDR_WORLD: DDRSourceMeta = {
       ["London EVOLVED Ver.A", { name: "London EVOLVED ver.A" }],
       ["London EVOLVED Ver.B", { name: "London EVOLVED ver.B" }],
       ["London EVOLVED Ver.C", { name: "London EVOLVED ver.C" }],
+      ["SILVER☆DREAM", { name_translation: undefined }],
       // #endregion DDR X3 VS 2ndMIX
       // #region DDR X2
       ["Leaving...", { name: "Leaving…" }],
