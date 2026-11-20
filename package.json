@@ -16,17 +16,17 @@
     "deploy:surge": "surge ./surge-redirect https://ddrdraw.surge.sh",
     "deploy:staging": "surge ./surge-redirect https://ddrdraw-staging.surge.sh",
     "format": "oxfmt",
-    "import:ddr": "node --experimental-strip-types scripts/import-ddr.mts",
-    "import:jubeat": "node --experimental-strip-types scripts/import-jubeat.mts",
+    "import:ddr": "node scripts/import-ddr.mts",
+    "import:jubeat": "node scripts/import-jubeat.mts",
     "import:pump": "node scripts/import-pump.mjs",
-    "import:maimai": "node --experimental-strip-types scripts/import-maimai.mts",
-    "import:ongeki": "node --experimental-strip-types scripts/import-ongeki.mts",
+    "import:maimai": "node scripts/import-maimai.mts",
+    "import:ongeki": "node scripts/import-ongeki.mts",
     "import:sdvx": "node scripts/import-sdvx.mjs",
-    "import:iidx": "node --experimental-strip-types scripts/import-iidx.mts",
-    "import:smx": "node --experimental-strip-types scripts/import-smx.mts",
-    "import:drs": "node --experimental-strip-types scripts/import-drs.mts",
+    "import:iidx": "node scripts/import-iidx.mts",
+    "import:smx": "node scripts/import-smx.mts",
+    "import:drs": "node scripts/import-drs.mts",
     "import:itg": "node scripts/import-itg.mjs",
-    "reencode:jackets": "node --experimental-strip-types scripts/reencode-new-jackets.mts",
+    "reencode:jackets": "node scripts/reencode-new-jackets.mts",
     "import:eventList": "node scripts/event-filter.mjs",
     "validate": "npm run validate:json && npm run validate:ts && npm run validate:format && npm run validate:lint",
     "validate:lint": "oxlint",
@@ -117,7 +117,7 @@
     "xml2js": "0.6.2"
   },
   "engines": {
-    "node": "^24.0.0"
+    "node": "^24.12.0"
   },
   "packageManager": "yarn@4.18.0"
 }
