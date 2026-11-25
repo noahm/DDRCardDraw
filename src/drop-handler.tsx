@@ -1,57 +1,47 @@
-import {
-  Button,
-  Callout,
-  Dialog,
-  DialogFooter,
-  FormGroup,
-  NonIdealState,
-  Spinner,
-  Switch,
-} from "@blueprintjs/core";
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
-import type { PackWithSongs, Simfile } from "simfile-parser/browser";
-import { useDrawState } from "./draw-state";
-import { getDataFileFromPack, resolveJackets } from "./utils/itg-import";
-import { pause } from "./utils/pause";
-import { convertErrorToString } from "./utils/error-to-string";
-import { Import } from "@blueprintjs/icons";
+import { useCallback, useEffect } from "react";
+import { useSetAtom } from "jotai";
+import { customDataDialogOpen, pendingDrop } from "./state/game-data.atoms";
 
 function loadParserModule() {
   return import("simfile-parser/browser");
 }
 
+/** A dropped item is a premade data file (rather than a pack) iff it's a `.json` file. */
+function droppedJsonFile(item: DataTransferItem): File | null {
+  if (item.kind !== "file") return null;
+  const file = item.getAsFile();
+  if (!file) return null;
+  return file.type === "application/json" || /\.json$/i.test(file.name)
+    ? file
+    : null;
+}
+
+/**
+ * Listens for a song pack (folder or `.zip`) or a premade data `.json` file dropped
+ * anywhere on the window and hands it to the custom-data dialog, which opens straight
+ * into the matching import form. Renders nothing itself — mount it once per app
+ * mode, next to `CustomDataDialog`.
+ */
 export function DropHandler() {
-  const [droppedFolder, setDroppedFolder] = useState<DataTransferItem | null>(
-    null,
+  const setOpen = useSetAtom(customDataDialogOpen);
+  const setPendingDrop = useSetAtom(pendingDrop);
+
+  const handleDrop = useCallback(
+    (evt: DragEvent) => {
+      evt.preventDefault();
+      if (evt.dataTransfer?.items.length !== 1) {
+        return;
+      }
+      const item = evt.dataTransfer.items[0];
+      // The file has to be pulled out now: the item goes inert once the event ends.
+      const json = droppedJsonFile(item);
+      setPendingDrop(
+        json ? { kind: "json", file: json } : { kind: "pack", item },
+      );
+      setOpen(true);
+    },
+    [setOpen, setPendingDrop],
   );
-
-  const handleClose = useCallback(() => {
-    setDroppedFolder(null);
-  }, []);
-
-  const handleDrop = useCallback(async (evt: DragEvent) => {
-    console.log("handle drop");
-    evt.preventDefault();
-    if (!evt.dataTransfer) {
-      return;
-    }
-
-    if (evt.dataTransfer.items.length !== 1) {
-      console.error("too many items dropped");
-      return;
-    }
-    try {
-      setDroppedFolder(evt.dataTransfer.items[0]);
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
 
   const handleDragOver = useCallback(async (e: Event) => {
     e.preventDefault();
@@ -66,180 +56,7 @@ export function DropHandler() {
       document.body.removeEventListener("drop", handleDrop);
       document.body.removeEventListener("dragover", handleDragOver);
     };
-  });
+  }, [handleDrop, handleDragOver]);
 
-  return (
-    <ConfirmPackDialog
-      droppedFolder={droppedFolder}
-      onClose={handleClose}
-      onSave={handleClose}
-    />
-  );
-}
-
-interface DialogProps {
-  droppedFolder: DataTransferItem | null;
-  onSave(this: void): void;
-  onClose(this: void): void;
-}
-
-/** a parsed pack, paired with the cover images already read out of it */
-interface ParsedPack {
-  pack: PackWithSongs;
-  jackets: ReadonlyMap<Simfile, string>;
-}
-
-function useDataParsing(
-  droppedFolder: DataTransferItem | null,
-  setTiered: (next: boolean) => void,
-) {
-  const [parsedPack, setParsedPack] = useState<ParsedPack | null>(null);
-  const [parseError, setParseError] = useState<string | null>(null);
-  useEffect(() => {
-    // oxlint-disable-next-line react-hooks-js/set-state-in-effect
-    setParseError(null);
-    if (!droppedFolder) {
-      setParsedPack(null);
-      return;
-    }
-    loadParserModule()
-      .then(({ parsePack }) => parsePack(droppedFolder))
-      .then(async (pack) => {
-        // cover images are read lazily by the parser, so pull them in now while
-        // the spinner is up rather than on every tier toggle
-        setParsedPack({ pack, jackets: await resolveJackets(pack) });
-        if (
-          pack.simfiles.every((song) =>
-            song.title.titleName.match(/^\[T\d\d\] /),
-          )
-        ) {
-          setTiered(true);
-        } else {
-          setTiered(false);
-        }
-      })
-      .catch((rejection) => {
-        setParsedPack(null);
-        console.error(rejection);
-        setParseError(convertErrorToString(rejection));
-      });
-  }, [droppedFolder, setTiered]);
-  return {
-    parsedPack,
-    parseError,
-  };
-}
-
-function ConfirmPackDialog({ droppedFolder, onClose, onSave }: DialogProps) {
-  const [tiered, setTiered] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const loadGameData = useDrawState((s) => s.addImportedData);
-
-  const { parsedPack, parseError } = useDataParsing(droppedFolder, setTiered);
-  const derived = useMemo(() => {
-    if (!parsedPack) {
-      return null;
-    }
-    try {
-      const data = getDataFileFromPack(
-        parsedPack.pack,
-        tiered,
-        parsedPack.jackets,
-      );
-      return { data, error: null };
-    } catch (e) {
-      // usually a pack that doesn't actually use tiers. The pack itself parsed
-      // fine, so keep it around and let the user flip the switch back off
-      // rather than making them drop the whole thing again.
-      console.error(e);
-      return { data: null, error: convertErrorToString(e) };
-    }
-  }, [parsedPack, tiered]);
-  const derivedData = derived?.data ?? null;
-  const deriveError = derived?.error ?? null;
-
-  const handleConfirm = useCallback(async () => {
-    if (!parsedPack || !derivedData) {
-      return;
-    }
-    setSaving(true);
-    loadGameData(parsedPack.pack.name, derivedData);
-    await pause(500);
-    setSaving(false);
-    onSave();
-  }, [parsedPack, derivedData, loadGameData, onSave]);
-
-  let body: ReactNode;
-  if (parseError) {
-    // nothing usable came back, so there's nothing to recover to
-    body = (
-      <Callout intent="danger" title="Error importing pack">
-        <code style={{ whiteSpace: "pre-wrap" }}>{parseError}</code>
-      </Callout>
-    );
-  } else if (!parsedPack) {
-    body = (
-      <NonIdealState
-        icon={<Spinner />}
-        title="Parsing pack data"
-        description="Large packs can take a moment to read."
-      />
-    );
-  } else {
-    body = (
-      <>
-        <p>Pack name: {parsedPack.pack.name}</p>
-        <FormGroup>
-          <Switch
-            label="Pack uses tiers"
-            checked={tiered}
-            onChange={() => setTiered((prev) => !prev)}
-          />
-        </FormGroup>
-        {derivedData ? (
-          <dl>
-            <dt>Total Songs</dt>
-            <dd>{parsedPack.pack.songCount}</dd>
-            <dt>Total Charts</dt>
-            <dd>
-              {derivedData.songs.reduce(
-                (total, item) => total + item.charts.length,
-                0,
-              )}
-            </dd>
-          </dl>
-        ) : (
-          <Callout intent="danger" title="Couldn't read tiers from this pack">
-            <code style={{ whiteSpace: "pre-wrap" }}>{deriveError}</code>
-          </Callout>
-        )}
-      </>
-    );
-  }
-
-  return (
-    <Dialog
-      isOpen={!!droppedFolder}
-      title="Local Data Import"
-      onClose={onClose}
-    >
-      <div style={{ padding: "10px" }}>{body}</div>
-      <DialogFooter
-        actions={
-          <>
-            <Button
-              disabled={!derivedData}
-              intent="primary"
-              onClick={handleConfirm}
-              loading={saving}
-              icon={<Import />}
-            >
-              Import
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </>
-        }
-      />
-    </Dialog>
-  );
+  return null;
 }

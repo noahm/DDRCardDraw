@@ -13,6 +13,10 @@ ensures they match the specified schema for song data (from `songs.schema.json`)
 and finally does some code-gen to write an updated typescript interface for that
 song data into `src/models/SongData.ts`
 
+`watch-room.mjs` follows one deployed event room's diagnostic log through
+`wrangler tail`. Run it with
+`yarn watch:room <room-id-or-event-url>`.
+
 ## Ongeki (import-ongeki.mts)
 
 Run with `yarn import:ongeki`. Fetches song data from SEGA's public API and downloads jacket images automatically.

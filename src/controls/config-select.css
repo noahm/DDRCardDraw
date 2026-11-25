@@ -1,0 +1,24 @@
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listContainer h2 {
+  font-size: 1.1rem;
+  margin-block: 0.3em;
+}
+
+.actionButtons {
+  float: right;
+}
+
+.listContainer p {
+  margin-bottom: 0;
+}
+
+/* extra breathing room under the global settings entry, so the cards below it
+   read as the list of configs rather than as more of the same */
+.globalEntry {
+  margin-bottom: 0.5rem;
+}

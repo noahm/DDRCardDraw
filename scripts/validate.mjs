@@ -2,6 +2,7 @@ import { readdirSync, writeFileSync, existsSync } from "fs";
 import { resolve, join, dirname } from "path";
 import { validate as validateJSONSchema } from "jsonschema";
 import { fileURLToPath } from "url";
+import { findConsistencyErrors } from "../src/utils/game-data-consistency.ts";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const dataFileNames = readdirSync(resolve(join(__dirname, "../src/songs")));
@@ -10,138 +11,9 @@ import songsSchema from "../songs.schema.json" with { type: "json" };
 const schemaLocation = "src/models/SongData.ts";
 
 function validateContents(dataFile) {
-  const errors = new Set();
-
-  const allKeys = [
-    ...dataFile.meta.styles,
-    ...dataFile.meta.difficulties.map((d) => d.key),
-    ...dataFile.meta.flags,
-  ];
-  const styles = new Set(dataFile.meta.styles);
-  const difficulties = new Set(dataFile.meta.difficulties.map((d) => d.key));
-  const flags = new Set(dataFile.meta.flags);
-  const folders = new Set(dataFile.meta.folders);
-
-  if (dataFile.defaults.style && !styles.has(dataFile.defaults.style)) {
-    errors.add("default style is not listed in meta");
-  }
-
-  if (dataFile.defaults.difficulties.some((d) => !difficulties.has(d))) {
-    errors.add("some default difficulties are missing from meta");
-  }
-
-  // if (dataFile.defaults.flags.some((d) => !flags.has(d))) {
-  //   errors.add("some default flags are missing from meta");
-  // }
-
-  if (dataFile.defaults.lowerLvlBound > dataFile.defaults.upperLvlBound) {
-    errors.add("default level bounds are reversed");
-  }
-
-  for (const key of allKeys) {
-    if (!dataFile.i18n.en[key]) {
-      errors.add("missing translation for " + key);
-    }
-    if (difficulties.has(key) && !dataFile.i18n.en["$abbr"][key]) {
-      errors.add("missing abbreviated translation for " + key);
-    }
-  }
-
-  for (const song of dataFile.songs) {
-    if (dataFile.meta.folders && song.folder) {
-      if (!folders.has(song.folder)) {
-        errors.add(`top level folders list is missing ${song.folder}`);
-      }
-    }
-    if (song.jacket) {
-      const jacketPath = join(jacketsDir, song.jacket);
-      if (!existsSync(jacketPath)) {
-        errors.add(`missing jacket image ${song.jacket}`);
-      }
-    }
-
-    for (const chart of song.charts) {
-      if (!styles.has(chart.style)) {
-        errors.add(`unrecognized style "${chart.style}" used by ${song.name}`);
-      }
-      if (!difficulties.has(chart.diffClass)) {
-        errors.add(
-          `unrecognized diffClass "${chart.diffClass}" used by ${song.name}`,
-        );
-      }
-      if (chart.jacket) {
-        const jacketPath = join(jacketsDir, chart.jacket);
-        if (!existsSync(jacketPath)) {
-          errors.add(`missing jacket image ${chart.jacket}`);
-        }
-      }
-      if (dataFile.meta.usesDrawGroups) {
-        if (!chart.drawGroup) {
-          errors.add(`${song.name} is missing a draw group`);
-        }
-      }
-    }
-  }
-
-  for (const err of findDuplicateChartIds(dataFile)) {
-    errors.add(err);
-  }
-  for (const err of findDuplicateSongIds(dataFile)) {
-    errors.add(err);
-  }
-
-  return errors;
-}
-
-/**
- * A song's `id` has to be unique within its file. A file listing the same song
- * twice should merge the two into one song with all their charts instead.
- */
-function findDuplicateSongIds(dataFile) {
-  const errors = [];
-  const seen = new Map();
-  for (const song of dataFile.songs) {
-    const owner = seen.get(song.id);
-    if (owner) {
-      errors.push(
-        `song id "${song.id}" is used by both ${owner} and ${song.name}`,
-      );
-    } else {
-      seen.set(song.id, song.name);
-    }
-  }
-  return errors;
-}
-
-/**
- * A chart's `id`, where one is given, has to be unique within its file: it
- * overrides the identity the app otherwise derives from the song and chart
- * fields (see `src/chart-id.ts`), and chart identity is what the event-wide
- * "never draw the same chart twice" rule is built on. Two charts sharing an id
- * would silently make one of them undrawable once the other had been drawn.
- *
- * Ids are compared across files as well, so an id reused for a different chart
- * in another file has the same effect between them. That can't be checked from
- * one file alone, but giving the same chart the same id in two files is the
- * intended way to say they are the same chart.
- */
-function findDuplicateChartIds(dataFile) {
-  const errors = [];
-  const seen = new Map();
-  for (const song of dataFile.songs) {
-    for (const chart of song.charts) {
-      if (!chart.id) continue;
-      const owner = seen.get(chart.id);
-      if (owner) {
-        errors.push(
-          `chart id "${chart.id}" is used by both ${owner} and ${song.name}`,
-        );
-      } else {
-        seen.set(chart.id, song.name);
-      }
-    }
-  }
-  return errors;
+  return findConsistencyErrors(dataFile, (jacket) =>
+    existsSync(join(jacketsDir, jacket)),
+  );
 }
 
 let hasError = false;
@@ -157,7 +29,7 @@ for (const dataFile of dataFileNames) {
 
   if (result.valid) {
     const consistencyErrors = validateContents(songData);
-    if (consistencyErrors.size) {
+    if (consistencyErrors.length) {
       consistencyErrors.forEach((err) => console.error(" * " + err));
       console.log(`\n${dataFile} has inconsistent data!`);
       hasError = true;

@@ -17,7 +17,12 @@
   "env": {
     "builtin": true
   },
-  "ignorePatterns": ["scripts/", "surge-redirect/", "webpack.config.js"],
+  "ignorePatterns": [
+    "scripts/",
+    "surge-redirect/",
+    "webpack.config.js",
+    "src/party/database.types.ts"
+  ],
   "rules": {
     // #region typescript-eslint recommended (excepts correctness rules)
     "no-array-constructor": "error",

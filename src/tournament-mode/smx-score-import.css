@@ -1,0 +1,58 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.windowPicker {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  white-space: nowrap;
+}
+
+.status {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  font-size: 90%;
+}
+
+.playTable {
+  width: 100%;
+}
+
+.playTable td {
+  vertical-align: middle;
+}
+
+.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* a play nobody has been assigned to yet stays legible but recedes */
+.unassigned {
+  opacity: 0.65;
+}
+
+.replaces {
+  display: block;
+  font-size: 85%;
+  opacity: 0.6;
+}
+
+.supersededTag {
+  margin-left: 0.5em;
+}
+
+.empty {
+  opacity: 0.7;
+  max-width: 32em;
+}
+
+.fcTag {
+  margin-left: 0.5em;
+}
