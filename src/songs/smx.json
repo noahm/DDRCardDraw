@@ -11,7 +11,7 @@
       { "key": "team", "color": "#c216ce" }
     ],
     "flags": ["andorfineMedia", "bassmonkeys", "cappRecords", "dimaMusic"],
-    "lastUpdated": 1790189096000
+    "lastUpdated": 1795098251000
   },
   "defaults": {
     "style": "solo",
@@ -10664,6 +10664,132 @@
         { "style": "solo", "diffClass": "hard", "lvl": 17, "flags": ["plus"] },
         { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
         { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "id": "763",
+      "name": "Liquid Moon",
+      "artist": "Inspector K",
+      "bpm": "155",
+      "genre": "Drum & Bass",
+      "jacket": "smx/LiquidMoon.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 14 },
+        { "style": "solo", "diffClass": "wild", "lvl": 22 },
+        { "style": "solo", "diffClass": "dual", "lvl": 15 },
+        { "style": "solo", "diffClass": "full", "lvl": 17 },
+        { "style": "team", "diffClass": "team", "lvl": 21 },
+        { "style": "solo", "diffClass": "easy", "lvl": 10, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 17, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 21, "flags": ["plus"] }
+      ]
+    },
+    {
+      "id": "764",
+      "name": "Neon Rausch",
+      "artist": "NAOKI underground",
+      "bpm": "174",
+      "genre": "Drum & Bass",
+      "jacket": "smx/NeonRausch.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 16 },
+        { "style": "solo", "diffClass": "wild", "lvl": 24 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 17 },
+        { "style": "team", "diffClass": "team", "lvl": 17 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 25, "flags": ["plus"] }
+      ]
+    },
+    {
+      "id": "765",
+      "name": "Don't Stop",
+      "artist": "Giulio Cercato",
+      "bpm": "128",
+      "genre": "Electro Swing",
+      "jacket": "smx/Don'tStopGiulioCercato.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 14 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 12 },
+        { "style": "team", "diffClass": "team", "lvl": 16 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 19, "flags": ["plus"] }
+      ]
+    },
+    {
+      "id": "766",
+      "name": "La La Lucky",
+      "artist": "Lucky One",
+      "bpm": "137",
+      "genre": "Pop",
+      "jacket": "smx/LaLaLucky.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 2 },
+        { "style": "solo", "diffClass": "easy", "lvl": 5 },
+        { "style": "solo", "diffClass": "hard", "lvl": 13 },
+        { "style": "solo", "diffClass": "wild", "lvl": 20 },
+        { "style": "solo", "diffClass": "dual", "lvl": 14 },
+        { "style": "solo", "diffClass": "full", "lvl": 10 },
+        { "style": "team", "diffClass": "team", "lvl": 16 },
+        { "style": "solo", "diffClass": "easy", "lvl": 9, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 16, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 21, "flags": ["plus"] }
+      ]
+    },
+    {
+      "id": "767",
+      "name": "Let's Race",
+      "artist": "Vizzen, Miau, Code Breakerz",
+      "bpm": "135",
+      "genre": "Experimental Bass",
+      "jacket": "smx/Let'sRace.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 3 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 14 },
+        { "style": "solo", "diffClass": "wild", "lvl": 21 },
+        { "style": "solo", "diffClass": "dual", "lvl": 13 },
+        { "style": "solo", "diffClass": "full", "lvl": 15 },
+        { "style": "team", "diffClass": "team", "lvl": 22 },
+        { "style": "solo", "diffClass": "easy", "lvl": 12, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 20, "flags": ["plus"] }
+      ]
+    },
+    {
+      "id": "768",
+      "name": "RESONANCE//REMAINS",
+      "artist": "NAOKI : ANIMA",
+      "bpm": "93-186",
+      "genre": "Drum & Bass",
+      "jacket": "smx/ResonanceRemains.jpg",
+      "charts": [
+        { "style": "solo", "diffClass": "beginner", "lvl": 4 },
+        { "style": "solo", "diffClass": "easy", "lvl": 6 },
+        { "style": "solo", "diffClass": "hard", "lvl": 15 },
+        { "style": "solo", "diffClass": "wild", "lvl": 24 },
+        { "style": "solo", "diffClass": "dual", "lvl": 12 },
+        { "style": "solo", "diffClass": "full", "lvl": 17 },
+        { "style": "team", "diffClass": "team", "lvl": 21 },
+        { "style": "solo", "diffClass": "easy", "lvl": 11, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "hard", "lvl": 20, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "dual", "lvl": 19, "flags": ["plus"] },
+        { "style": "solo", "diffClass": "full", "lvl": 25, "flags": ["plus"] }
       ]
     }
   ]
