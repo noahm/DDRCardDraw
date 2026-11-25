@@ -25,6 +25,12 @@ export function AbbrDifficulty({ diffClass }: AbbrProps) {
 }
 
 /**
+ * cached per game data file, since this walks every chart and gets called from
+ * render paths (bucket controls, song search) on every config change
+ */
+const availableLevelCache = new WeakMap<GameData, Map<string, number[]>>();
+
+/**
  * get a sorted list of unique difficutly levels (or tiers) from a game data file
  * @credit Albert Shin, from albshin/PerformaiCardDraw
  */
@@ -35,6 +41,17 @@ export function getAvailableLevels(
 ): number[] {
   if (gameData === null) {
     return [];
+  }
+
+  let cachedForGame = availableLevelCache.get(gameData);
+  if (!cachedForGame) {
+    cachedForGame = new Map();
+    availableLevelCache.set(gameData, cachedForGame);
+  }
+  const cacheKey = `${useGranular}:${ignoreTiers}`;
+  const cached = cachedForGame.get(cacheKey);
+  if (cached) {
+    return cached;
   }
 
   const levelSet = new Set<number>();
@@ -49,7 +66,9 @@ export function getAvailableLevels(
       );
     }
   }
-  return [...levelSet].sort((a, b) => a - b);
+  const levels = [...levelSet].sort((a, b) => a - b);
+  cachedForGame.set(cacheKey, levels);
+  return levels;
 }
 
 // export function getAvailableFolders(gameData: GameData | null): string[] {

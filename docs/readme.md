@@ -47,17 +47,28 @@ Some of the less self-explanatory settings are described below.
 <dd>Sorts the drawn charts by difficulty level, from lowest on the left, to highest on the right. When not enabled the chart order is randomized.
 
 <dt>Use granular levels
-<dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Weighted Distribution settings.
+<dd>Some game data (DDR A3) has additional, more granular comunity-provided difficulty level available for use. (SanbaiIceCream Tiers) When this setting is enabled "Lvl Min" and "Lvl Max" can be set to sub-level values, and sub-level buckets are available within the Difficulty Bucket settings. Toggling this restates any existing bucket bounds against the new scale, so a bucket covering lvl 13 becomes 13.00-13.95 rather than matching only charts sitting exactly on 13.
 
 <dt>Hide vetoed charts
 <dd>When players take a veto action on a chart, hide from view it completely, rather than simply marking it as vetoed.
 </dl>
 
-### Weighted Distributions
+### Difficulty Buckets
 
-The weighted distribution options allows manual control over the probabilities for charts of any specific difficulty level to be drawn.
+The difficulty bucket options allow manual control over the probabilities for charts of any specific difficulty level to be drawn. There are three modes:
 
-Without this setting enabled, each individual chart matching the level range and filters has an equal chance of being drawn. In other words, it is equivalent to configuring the "weight" of each difficulty level to the number of possible charts contained within it.
+<dl>
+<dt>Off
+<dd>No bucketing. Every chart matching the level range and filters has an equal chance of being drawn.
+
+<dt>By lvl range
+<dd>Splits the configured "Lvl Min"/"Lvl Max" range into buckets and lets you weight each one. See below.
+
+<dt>Manual
+<dd>Replaces the "Lvl Min"/"Lvl Max" controls entirely. You define each bucket's start and end point by hand, along with its weight. Buckets need not be contiguous, and a level covered by no bucket is simply never drawn. A chart is only ever drawn from the first bucket its difficulty falls into, so overlapping buckets are flagged with a warning. Each row shows how many charts are actually in the bucket, so an empty or over-subscribed bucket is visible before you draw.
+</dl>
+
+Without bucketing enabled, each individual chart matching the level range and filters has an equal chance of being drawn. In other words, it is equivalent to configuring the "weight" of each difficulty level to the number of possible charts contained within it.
 
 > Consider a hypothetical scenario: The configured settings allow for charts to be drawn with the following counts by difficulty level.
 >

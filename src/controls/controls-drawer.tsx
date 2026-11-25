@@ -10,6 +10,7 @@ import {
   HTMLSelect,
   Icon,
   NumericInput,
+  SegmentedControl,
   Tab,
   Tabs,
 } from "@blueprintjs/core";
@@ -36,11 +37,17 @@ import { RemotePeerControls } from "../tournament-mode/remote-peer-menu";
 import { useRemotePeers } from "../tournament-mode/remote-peers";
 import { NetworkingNotice } from "./networking-notice";
 import { WeightsControls } from "./controls-weights";
+import { ManualBucketControls } from "./controls-buckets";
 import styles from "./controls.css";
 import { PlayerNamesControls } from "./player-names";
 import { ShowChartsToggle } from "./show-charts-toggle";
 import { Fraction } from "../utils/fraction";
 import { LvlRangeControls } from "./lvl-range";
+import {
+  BucketMode,
+  rescaleManualBuckets,
+  seedManualBuckets,
+} from "../draw-buckets";
 
 const ReleaseDateFilterControl = lazy(() => import("./release-date-filter"));
 function ReleaseDateFilter() {
@@ -250,12 +257,10 @@ function GeneralSettings() {
   const gameData = useDrawState((s) => s.gameData);
   const configState = useConfigState();
   const {
-    useWeights,
+    bucketMode,
     constrainPocketPicks,
     orderByAction,
     hideVetos,
-    lowerBound,
-    upperBound,
     update: updateState,
     difficulties: selectedDifficulties,
     style: selectedStyle,
@@ -273,6 +278,13 @@ function GeneralSettings() {
   }, [gameData, selectedStyle]);
   const isNarrow = useIsNarrow();
   const [expandFilters, setExpandFilters] = useState(false);
+  // which editor the collapse should hold. it outlives `bucketMode` going
+  // "none" so the panel doesn't swap to the other editor for the length of the
+  // closing animation
+  const [lastEditor, setLastEditor] = useState<Exclude<BucketMode, "none">>(
+    bucketMode === "manual" ? "manual" : "auto",
+  );
+  const shownEditor = bucketMode === "none" ? lastEditor : bucketMode;
 
   if (!gameData) {
     return null;
@@ -284,6 +296,20 @@ function GeneralSettings() {
   const { styles: gameStyles } = gameData.meta;
 
   const usesDrawGroups = !!gameData?.meta.usesDrawGroups;
+
+  function setBucketMode(bucketMode: BucketMode) {
+    if (bucketMode !== "none") {
+      setLastEditor(bucketMode);
+    }
+    updateState((prev) => {
+      if (bucketMode !== "manual" || prev.manualBuckets.length) {
+        return { bucketMode };
+      }
+      // carry whatever layout they already had into the manual editor, rather
+      // than dropping them into an empty list
+      return { bucketMode, manualBuckets: seedManualBuckets(prev, gameData) };
+    });
+  }
 
   return (
     <>
@@ -347,9 +373,39 @@ function GeneralSettings() {
           />
         </FormGroup>
       </div>
-      <div className={styles.inlineControls}>
-        <LvlRangeControls />
-      </div>
+      <FormGroup
+        label={t("controls.bucketMode.label")}
+        className={styles.bucketSection}
+      >
+        <SegmentedControl
+          fill
+          value={bucketMode}
+          options={[
+            { label: t("controls.bucketMode.none"), value: "none" },
+            { label: t("controls.bucketMode.auto"), value: "auto" },
+            { label: t("controls.bucketMode.manual"), value: "manual" },
+          ]}
+          onValueChange={(value) => setBucketMode(value as BucketMode)}
+        />
+        {/* the lvl range lives in here because it only defines the pool for
+            two of the three modes — manual buckets carry their own bounds */}
+        <Collapse isOpen={bucketMode !== "manual"}>
+          <div className={styles.inlineControls}>
+            <LvlRangeControls />
+          </div>
+        </Collapse>
+        {/* one Collapse holding whichever editor is active, rather than one
+            per editor: two of them animate in opposite directions at once when
+            switching modes, and Collapse slides its body as well as resizing
+            it, so the swap reads as a lurch rather than a reveal */}
+        <Collapse isOpen={bucketMode !== "none"}>
+          {shownEditor === "manual" ? (
+            <ManualBucketControls usesTiers={usesDrawGroups} />
+          ) : (
+            <WeightsControls usesTiers={usesDrawGroups} />
+          )}
+        </Collapse>
+      </FormGroup>
       <Button
         alignText="left"
         rightIcon={expandFilters ? <CaretDown /> : <CaretRight />}
@@ -473,7 +529,18 @@ function GeneralSettings() {
               if (nextUpperBound < prev.lowerBound) {
                 nextUpperBound = prev.lowerBound + 1;
               }
-              return { useGranularLevels, upperBound: nextUpperBound };
+              return {
+                useGranularLevels,
+                upperBound: nextUpperBound,
+                // hand-authored buckets need the same restating the lvl range
+                // above is getting, or they'd keep whole-lvl bounds and match
+                // only the charts sitting exactly on them
+                manualBuckets: rescaleManualBuckets(
+                  prev.manualBuckets,
+                  useGranularLevels,
+                  gameData,
+                ),
+              };
             });
           }}
           label={t("controls.useGranularLevels")}
@@ -487,22 +554,6 @@ function GeneralSettings() {
           }}
           label={t("controls.hideVetos")}
         />
-        <Checkbox
-          id="weighted"
-          checked={useWeights}
-          onChange={(e) => {
-            const useWeights = !!e.currentTarget.checked;
-            updateState({ useWeights });
-          }}
-          label={t("controls.useWeightedDistributions")}
-        />
-        <Collapse isOpen={useWeights}>
-          <WeightsControls
-            usesTiers={usesDrawGroups}
-            high={upperBound}
-            low={lowerBound}
-          />
-        </Collapse>
       </FormGroup>
     </>
   );

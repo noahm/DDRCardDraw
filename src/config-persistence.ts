@@ -143,12 +143,14 @@ interface OldSettings {
   showPool?: boolean;
   /** renamed to `showPlayerAndRoundLabels` */
   showLabels?: boolean;
+  /** replaced by `bucketMode` */
+  useWeights?: boolean;
 }
 
 function migrateOldNames(
   config: PersistedConfigV1["configState"],
 ): Serialized<ConfigState> {
-  const { showPool, showLabels, ...modernConfig } = config;
+  const { showPool, showLabels, useWeights, ...modernConfig } = config;
 
   if (showPool) {
     modernConfig.showEligibleCharts = showPool;
@@ -156,6 +158,14 @@ function migrateOldNames(
 
   if (showLabels) {
     modernConfig.showPlayerAndRoundLabels = showLabels;
+  }
+
+  if (useWeights !== undefined && modernConfig.bucketMode === undefined) {
+    modernConfig.bucketMode = useWeights ? "auto" : "none";
+  }
+
+  if (!modernConfig.manualBuckets) {
+    modernConfig.manualBuckets = [];
   }
 
   const maybeOldWeights = modernConfig.weights as unknown as
