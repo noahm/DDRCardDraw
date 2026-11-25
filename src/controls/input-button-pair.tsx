@@ -1,4 +1,4 @@
-import { ControlGroup, InputGroup, Button } from "@blueprintjs/core";
+import { Button, Group, TextInput } from "@mantine/core";
 import {
   InputHTMLAttributes,
   JSX,
@@ -23,17 +23,16 @@ export function InputButtonPair({ onClick, ...props }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const handleClick = useCallback(() => {
     const el = inputRef.current!;
-    console.log(el);
     return onClick(el.value, el);
   }, [onClick]);
   return (
-    <ControlGroup>
-      <InputGroup
+    <Group gap={4} wrap="nowrap">
+      <TextInput
         readOnly={props.disableInput}
-        inputRef={inputRef}
+        ref={inputRef}
         placeholder={props.placeholder}
         value={props.value}
-        rightElement={props.rightElement}
+        rightSection={props.rightElement}
         onKeyDown={(e) => {
           if (e.code === "Enter") {
             handleClick();
@@ -41,9 +40,13 @@ export function InputButtonPair({ onClick, ...props }: Props) {
         }}
         enterKeyHint={props.enterKeyHint}
       />
-      <Button disabled={props.disableButton} onClick={handleClick}>
+      <Button
+        variant="default"
+        disabled={props.disableButton}
+        onClick={handleClick}
+      >
         {props.buttonLabel}
       </Button>
-    </ControlGroup>
+    </Group>
   );
 }

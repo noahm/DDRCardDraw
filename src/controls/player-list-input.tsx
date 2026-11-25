@@ -1,5 +1,5 @@
-import { Button, InputGroup } from "@blueprintjs/core";
-import { Cross, DragHandleVertical, Plus } from "@blueprintjs/icons";
+import { ActionIcon, Button, TextInput } from "@mantine/core";
+import { IconGripVertical, IconPlus, IconX } from "@tabler/icons-react";
 import { useRef } from "react";
 import { List, arrayMove } from "react-movable";
 import { Player, newPlayer } from "../models/Drawing";
@@ -79,7 +79,7 @@ export function PlayerListInput(props: {
                 paddingBottom: "4px",
                 listStyleType: "none",
                 // The dragged "ghost" is portaled to document.body; give it a
-                // z-index that clears Blueprint's overlay so it stays visible.
+                // z-index that clears Mantine's modal so it stays visible.
                 zIndex: isDragged ? 9999 : rest.style?.zIndex,
               }}
             >
@@ -91,12 +91,12 @@ export function PlayerListInput(props: {
                   padding: "0 2px",
                 }}
               >
-                <DragHandleVertical />
+                <IconGripVertical size={16} />
               </span>
-              <InputGroup
-                fill
+              <TextInput
+                style={{ flex: "1 1 auto" }}
                 value={value.name}
-                inputRef={
+                ref={
                   index === focusIndexRef.current
                     ? (el) => {
                         if (el) {
@@ -109,18 +109,26 @@ export function PlayerListInput(props: {
                 onFocus={(e) => e.currentTarget.select()}
                 onChange={(e) => renameAt(index!, e.currentTarget.value)}
               />
-              <Button
+              <ActionIcon
                 aria-label="Remove player"
-                variant="minimal"
-                icon={<Cross />}
+                variant="subtle"
+                color="gray"
+                size={36}
                 disabled={players.length <= 1}
                 onClick={() => removeAt(index!)}
-              />
+              >
+                <IconX size={16} />
+              </ActionIcon>
             </div>
           );
         }}
       />
-      <Button variant="minimal" icon={<Plus />} onClick={addPlayer}>
+      <Button
+        variant="subtle"
+        color="gray"
+        leftSection={<IconPlus size={16} />}
+        onClick={addPlayer}
+      >
         Add player
       </Button>
     </>

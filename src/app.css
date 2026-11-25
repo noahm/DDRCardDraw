@@ -13,16 +13,24 @@ body {
   margin: 0;
 }
 
-body:global(.bp6-dark) {
+/* the page sits a shade off the slate of the header and dialogs, as it always
+   has; Mantine would paint it the same slate */
+:global([data-mantine-color-scheme="dark"]) body {
   background-color: #222;
+}
+
+/* bare links in the app's link blue, as Blueprint styled them. :where keeps
+   this from outranking any component that colors its own anchor */
+:where(a) {
+  color: var(--mantine-color-anchor);
+  text-decoration: none;
+}
+:where(a):hover {
+  text-decoration: underline;
 }
 
 body:global(.obs-layer) {
   background-color: transparent !important;
-}
-
-:global(.bp6-dark) :global(.bp6-navbar) {
-  box-shadow: none;
 }
 
 .container {
@@ -49,9 +57,7 @@ input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="text"]
-  :not(:global(.bp6-editable-text-input))
-  :not(:global(.bp6-editable-text)),
+input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"],

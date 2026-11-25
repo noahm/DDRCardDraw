@@ -1,5 +1,5 @@
-import { AnchorButton, Card } from "@blueprintjs/core";
-import { Duplicate } from "@blueprintjs/icons";
+import { ActionIcon, Card } from "@mantine/core";
+import { IconCopy } from "@tabler/icons-react";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import { copyObsSource } from "./copy-obs-source";
@@ -30,6 +30,8 @@ export function SourceRow({
   const fullUrl = new URL(href, document.location.href).href;
   return (
     <Card
+      withBorder
+      padding="xs"
       className={classNames(styles.sourceCard, {
         [styles.hasControls]: !!above,
       })}
@@ -41,15 +43,20 @@ export function SourceRow({
           {fullUrl}
         </code>
       </span>
-      <AnchorButton
-        icon={<Duplicate />}
+      <ActionIcon
+        variant="default"
+        size="lg"
+        component="a"
+        aria-label={t("obsDashboard.copySourceUrl")}
         title={t("obsDashboard.copySourceUrl")}
         onClick={(e) => {
           e.preventDefault();
           copyObsSource(fullUrl, t("obsDashboard.copiedToClipboard"));
         }}
         href={href}
-      />
+      >
+        <IconCopy size={16} />
+      </ActionIcon>
     </Card>
   );
 }

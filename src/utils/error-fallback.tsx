@@ -1,9 +1,10 @@
 import { FormattedMessage } from "react-intl";
-import { Card, NonIdealState, Button } from "@blueprintjs/core";
-import { Error, Refresh } from "@blueprintjs/icons";
+import { Button, Card } from "@mantine/core";
+import { IconExclamationCircle, IconRefresh } from "@tabler/icons-react";
 import { useErrorBoundary } from "react-error-boundary";
 import { useIsNarrow } from "../hooks/useMediaQuery";
 import { useIntl } from "../hooks/useIntl";
+import { EmptyState } from "../common-components/empty-state";
 
 export function ErrorFallback({
   forceLayout,
@@ -14,14 +15,18 @@ export function ErrorFallback({
   const { resetBoundary } = useErrorBoundary();
   const isNarrow = useIsNarrow();
   return (
-    <Card elevation={2}>
-      <NonIdealState
+    <Card withBorder shadow="md">
+      <EmptyState
         layout={forceLayout || isNarrow ? "vertical" : "horizontal"}
-        icon={<Error />}
+        icon={<IconExclamationCircle size={48} />}
         title={t("error.title")}
         description={t("error.description")}
         action={
-          <Button onClick={resetBoundary} icon={<Refresh />}>
+          <Button
+            variant="default"
+            onClick={resetBoundary}
+            leftSection={<IconRefresh size={16} />}
+          >
             <FormattedMessage id="error.reset" defaultMessage="Reset" />
           </Button>
         }

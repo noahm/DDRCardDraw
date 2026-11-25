@@ -1,12 +1,12 @@
 import {
+  ActionIcon,
+  Alert,
+  Anchor,
   Button,
-  Callout,
-  InputGroup,
-  Label,
-  Link,
   Text,
-} from "@blueprintjs/core";
-import { Edit } from "@blueprintjs/icons";
+  TextInput,
+} from "@mantine/core";
+import { IconEdit } from "@tabler/icons-react";
 import { useAtom } from "jotai";
 import React, { ReactNode, useCallback, useRef, useState } from "react";
 import { useIntl } from "../hooks/useIntl";
@@ -24,13 +24,13 @@ export function PiuTourneyGated(props: { children: ReactNode }) {
 
   if (!piuClient) {
     return (
-      <Callout intent="warning">
+      <Alert color="yellow">
         {t(
           "piuTourney.notConfigured",
           undefined,
           "This build has no tourney maker credentials. Set PIU_TOURNEY_SUPABASE_URL and PIU_TOURNEY_SUPABASE_ANON_KEY and rebuild.",
         )}
-      </Callout>
+      </Alert>
     );
   }
   if (!tourneyId) {
@@ -72,53 +72,53 @@ export function PiuTourneyPicker() {
   );
 
   let status: ReactNode = null;
-  if (parseError) {
-    status = <Callout intent="danger">{parseError}</Callout>;
-  } else if (tourneyId && tourney.error) {
+  if (tourneyId && tourney.error) {
     status = (
-      <Callout intent="danger">
+      <Alert color="red">
         {t("piuTourney.loadFailed", undefined, "Couldn't load that tournament")}
         : {tourney.error}
-      </Callout>
+      </Alert>
     );
   } else if (tourney.data) {
     status = (
-      <Callout intent="success">
+      <Alert color="green">
         {tourney.data.name}
         {tourney.data.events?.name ? ` — ${tourney.data.events.name}` : ""}
-      </Callout>
+      </Alert>
     );
   }
 
   return (
     <form onSubmit={save}>
-      <Text tagName="p">
+      <Text component="p">
         {formatMessage(
           {
             id: "piuTourney.explainer",
           },
           {
             piuTmLink: (
-              <Link href="https://piu-tourney-maker.vercel.app/">
+              <Anchor href="https://piu-tourney-maker.vercel.app/">
                 piu-tourney-maker
-              </Link>
+              </Anchor>
             ),
           },
         )}
       </Text>
-      <Label>
-        {t("piuTourney.idLabel")}
-        <InputGroup
-          defaultValue={tourneyId ? String(tourneyId) : undefined}
-          inputRef={inputRef}
-          placeholder="https://piu-tourney-maker.vercel.app/tourney/123"
-          rightElement={
-            <Button type="submit">
-              {t("piuTourney.save", undefined, "Save")}
-            </Button>
-          }
-        />
-      </Label>
+      <TextInput
+        label={t("piuTourney.idLabel")}
+        mb="sm"
+        defaultValue={tourneyId ? String(tourneyId) : undefined}
+        ref={inputRef}
+        error={parseError}
+        placeholder="https://piu-tourney-maker.vercel.app/tourney/123"
+        onChange={() => setParseError(null)}
+        rightSectionWidth={70}
+        rightSection={
+          <Button type="submit" size="compact-sm" variant="light">
+            {t("piuTourney.save", undefined, "Save")}
+          </Button>
+        }
+      />
       {status}
     </form>
   );
@@ -148,14 +148,15 @@ export function PiuTourneyHeader(props: { rightElement?: ReactNode }) {
       }}
     >
       <strong>{tourney.data?.name || `#${tourneyId}`}</strong>
-      <Button
-        variant="minimal"
-        size="small"
-        icon={<Edit />}
+      <ActionIcon
+        variant="subtle"
+        color="gray"
         aria-label={changeLabel}
         title={changeLabel}
         onClick={() => setTourneyId(null)}
-      />
+      >
+        <IconEdit size={16} />
+      </ActionIcon>
       {props.rightElement && (
         <div style={{ marginLeft: "auto" }}>{props.rightElement}</div>
       )}
