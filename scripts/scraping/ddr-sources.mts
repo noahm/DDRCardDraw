@@ -200,9 +200,6 @@ export const DDR_WORLD: DDRSourceMeta = {
       ["旅人リラン", { name_translation: "Tabibito Rerun" }],
       ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
       ["COLOR BURST", { artist_translation: undefined }],
-      ["Liar×Girl", { name_translation: undefined }],
-      ["Lichtsäule", { name_translation: undefined }],
-      ["Mighty Beat Monsterz", { artist_translation: undefined }], // Broken HTML
       ["Ganymede -re:born-", { artist_translation: undefined }], // Broken HTML
       [
         "HAPPY☆PARADISE☆GALAXY",
@@ -212,7 +209,12 @@ export const DDR_WORLD: DDRSourceMeta = {
         "Ignis†Iræ",
         { name_translation: undefined, artist_translation: undefined },
       ], // Broken HTML
-      ["Liar×Girl", { artist_translation: undefined }], // Broken HTML
+      [
+        "Liar×Girl",
+        { artist_translation: undefined, name_translation: undefined },
+      ],
+      ["Lichtsäule", { name_translation: undefined }],
+      ["Mighty Beat Monsterz", { artist_translation: undefined }], // Broken HTML
       ["Meteor☆Shower", { name_translation: undefined }],
       ["neu (STARDOM Remix)", { artist_translation: undefined }], // Broken HTML
       ["Ødyssey", { name_translation: undefined }],
