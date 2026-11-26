@@ -319,7 +319,7 @@ export const DDR_WORLD: DDRSourceMeta = {
       ["London EVOLVED Ver.C", { name: "London EVOLVED ver.C" }],
       ["SILVER☆DREAM", { name_translation: undefined }],
       ["TWINKLE♡HEART", { name_translation: undefined }],
-      ["Wicked Plastik", { name_translation: undefined }],
+      ["Wicked Plastik", { artist_translation: undefined }],
       // #endregion DDR X3 VS 2ndMIX
       // #region DDR X2
       ["ΔMAX", { name_translation: undefined }],
