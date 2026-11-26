@@ -93,7 +93,7 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
   ].map<(typeof timedCorrections)[number]>((id) => [
     new Date("2026-11-26T15:00:00+09:00"),
     id,
-    { lock_types: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000] },
+    { lock_types: undefined },
   ]),
   // グランプリ譜面パック vol.5
   ...[
