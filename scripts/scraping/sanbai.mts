@@ -112,6 +112,18 @@ const timedCorrections: [Date, string, Partial<SanbaiSong>][] = [
     id,
     { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
   ]),
+  // EXTRA SAVIOR WORLD (The 1st CLASSIC CHALLENGE)
+  ...[
+    "P0O81Dl9Oiiid8bdOi0oqbD8DqolObbP", // BE LOVIN
+    "ODq019O9o1OPdq9PiPl0o8D8DQ8bid88", // Holic
+    "DPQo8Q0l9D8IPiDiq11l8OI6i11OOb6O", // PARANOIA EVOLUTION
+    "1oIo1DliQqPol00Q1l1bPODbdOilodod", // Übertreffen
+    "6iq1dqQ1PDQlDO0bio0l89oDDDi6b0oD", // 華爛漫 -Flowers-
+  ].map<(typeof timedCorrections)[number]>((id) => [
+    new Date("2026-12-24T15:00:00+09:00"),
+    id,
+    { lock_types: [0, 0, 0, 0, 1000, 0, 0, 0, 1000] },
+  ]),
   ...[
     // グランプリ譜面パック vol.6
     "Pd99DQo0bD9D9oIbPIId18P6l8qlDQO6", // AFRONOVA
