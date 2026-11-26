@@ -22,6 +22,7 @@
     "import:maimai": "node scripts/import-maimai.mts",
     "import:ongeki": "node scripts/import-ongeki.mts",
     "import:sdvx": "node scripts/import-sdvx.mjs",
+    "import:sdvx_megamix": "node scripts/import-sdvx_megamix.mjs",
     "import:iidx": "node scripts/import-iidx.mts",
     "import:smx": "node scripts/import-smx.mts",
     "import:drs": "node scripts/import-drs.mts",
