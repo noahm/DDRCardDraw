@@ -11,7 +11,7 @@
       { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": [],
-    "lastUpdated": 1794446472450
+    "lastUpdated": 1795052608168
   },
   "defaults": {
     "style": "single",
@@ -727,7 +727,7 @@
       "name": "feeling of love",
       "artist": "youhei shimizu",
       "bpm": "136",
-      "genre": "HOUSE",
+      "genre": "HOUSE/ハウス",
       "jacket": "banner/ddr_ext/feeling of love.png",
       "folder": "beatmania III",
       "charts": [
@@ -739,8 +739,7 @@
         { "style": "double", "diffClass": "difficult", "lvl": 5 },
         { "style": "double", "diffClass": "expert", "lvl": 7 }
       ],
-      "remyLink": "https://remywiki.com/Feeling_of_love",
-      "search_hint": "HOUSE/ハウス"
+      "remyLink": "https://remywiki.com/Feeling_of_love"
     },
     {
       "id": "IQ9bDo1dPbIo0ODQiObbQ99iP1bOi8iI",
@@ -1068,7 +1067,7 @@
       "name": "MOBO★MOGA",
       "artist": "Orange Lounge",
       "bpm": "172",
-      "genre": "FRENCH POP",
+      "genre": "FRENCH POP/フレンチポップ",
       "jacket": "banner/ddr_ext/MOBO★MOGA.png",
       "folder": "Dance Maniax",
       "charts": [
@@ -1080,8 +1079,7 @@
         { "style": "double", "diffClass": "difficult", "lvl": 6 },
         { "style": "double", "diffClass": "expert", "lvl": 7 }
       ],
-      "remyLink": "https://remywiki.com/Mobo_Moga",
-      "search_hint": "FRENCH POP/フレンチポップ"
+      "remyLink": "https://remywiki.com/Mobo_Moga"
     },
     {
       "id": "O09lbd0I8D0DI08O06l6iiI0i11I1iIb",
@@ -1281,7 +1279,6 @@
     {
       "id": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
       "name": ".59",
-      "name_translation": "tengoku",
       "artist": "dj TAKA",
       "bpm": "123-135",
       "genre": "CHILL OUT",
@@ -1296,7 +1293,8 @@
         { "style": "double", "diffClass": "difficult", "lvl": 6 },
         { "style": "double", "diffClass": "expert", "lvl": 7 }
       ],
-      "remyLink": "https://remywiki.com/.59"
+      "remyLink": "https://remywiki.com/.59",
+      "search_hint": "tengoku/てんごく"
     },
     {
       "id": "5597c7921d88abea",
@@ -1320,7 +1318,6 @@
     {
       "id": "165ba3a418d0e80d",
       "name": "5.1.1.",
-      "name_translation": "5.1.1",
       "artist": "dj nagureo",
       "bpm": "101",
       "genre": "PIANO AMBIENT",
@@ -1545,7 +1542,6 @@
     {
       "id": "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP",
       "name": "BRE∀K DOWN!",
-      "name_translation": "BREAK DOWN!",
       "artist": "BeForU",
       "bpm": "190",
       "genre": "GIRLS ROCK/ガールズロック",
@@ -1560,7 +1556,8 @@
         { "style": "double", "diffClass": "difficult", "lvl": 6 },
         { "style": "double", "diffClass": "expert", "lvl": 9 }
       ],
-      "remyLink": "https://remywiki.com/BREAK_DOWN!"
+      "remyLink": "https://remywiki.com/BREAK_DOWN!",
+      "search_hint": "BREAK DOWN!"
     },
     {
       "id": "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -2951,7 +2948,6 @@
     {
       "id": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb",
       "name": "La Señorita Virtual",
-      "name_translation": "La Senorita Virtual",
       "artist": "2MB",
       "bpm": "182",
       "jacket": "banner/ddr_3rd/La Senorita Virtual.png",
@@ -2965,7 +2961,8 @@
         { "style": "double", "diffClass": "difficult", "lvl": 7 },
         { "style": "double", "diffClass": "expert", "lvl": 8 }
       ],
-      "remyLink": "https://remywiki.com/La_Senorita_Virtual"
+      "remyLink": "https://remywiki.com/La_Senorita_Virtual",
+      "search_hint": "La Senorita Virtual"
     },
     {
       "id": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",

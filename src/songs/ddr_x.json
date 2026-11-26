@@ -24,7 +24,7 @@
       "DanceDanceRevolution 1st Mix"
     ],
     "flags": ["licensed", "asiaExclusive", "long"],
-    "lastUpdated": 1794446472450
+    "lastUpdated": 1795052608168
   },
   "defaults": {
     "style": "single",
@@ -79,7 +79,6 @@
     {
       "id": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
       "name": ".59",
-      "name_translation": "tengoku",
       "artist": "dj TAKA",
       "bpm": "123-135",
       "folder": "DanceDanceRevolution 4th Mix",
@@ -94,7 +93,8 @@
       ],
       "remyLink": "https://remywiki.com/.59",
       "jacket": "banner/ddr_4th/59.png",
-      "genre": "CHILL OUT"
+      "genre": "CHILL OUT",
+      "search_hint": "tengoku/てんごく"
     },
     {
       "id": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9",
@@ -2665,7 +2665,6 @@
     {
       "id": "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi",
       "name": "HAPPY☆ANGEL",
-      "name_translation": "HAPPY ANGEL",
       "artist": "jun with TAHIRIH",
       "bpm": "180",
       "folder": "DanceDanceRevolution SuperNOVA",
@@ -3367,7 +3366,6 @@
     {
       "id": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9",
       "name": "La Señorita",
-      "name_translation": "La Senorita",
       "artist": "CAPTAIN. T",
       "bpm": "182",
       "folder": "DanceDanceRevolution 3rd Mix",
@@ -3381,12 +3379,12 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita",
-      "jacket": "banner/ddr_3rd/La Senorita.png"
+      "jacket": "banner/ddr_3rd/La Senorita.png",
+      "search_hint": "La Senorita"
     },
     {
       "id": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb",
       "name": "La Señorita Virtual",
-      "name_translation": "La Senorita Virtual",
       "artist": "2MB",
       "bpm": "182",
       "folder": "DanceDanceRevolution 3rd Mix",
@@ -3400,7 +3398,8 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita_Virtual",
-      "jacket": "banner/ddr_3rd/La Senorita Virtual.png"
+      "jacket": "banner/ddr_3rd/La Senorita Virtual.png",
+      "search_hint": "La Senorita Virtual"
     },
     {
       "id": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",
@@ -3512,8 +3511,7 @@
       ],
       "remyLink": "https://remywiki.com/LOVE_AGAIN_TONIGHT~For_Melissa_MIX~",
       "jacket": "banner/ddr_4th/LOVE AGAIN TONIGHT (For Melissa MIX).png",
-      "genre": "HYPER EUROBEAT",
-      "name_translation": "LOVE AGAIN TONIGHT (For Melissa MIX)"
+      "genre": "HYPER EUROBEAT"
     },
     {
       "id": "efdee809bd481c88",
@@ -4426,8 +4424,7 @@
       ],
       "remyLink": "https://remywiki.com/PARANOiA_~HADES~",
       "jacket": "banner/ddr_sn2/PARANOiA ～HADES～.jpg",
-      "genre": "SUPERNOVA2 BEAT #1",
-      "name_translation": "PARANOiA (HADES)"
+      "genre": "SUPERNOVA2 BEAT #1"
     },
     {
       "id": "I8bQ8ilD9l1Qi9Q9iI0q6qqqiolo01QP",
@@ -5560,7 +5557,6 @@
     {
       "id": "iObdoO9b1O9o8dP8o0id9b1QioQ0q9q9",
       "name": "S･A･G･A",
-      "name_translation": "SAGA",
       "artist": "Veeton",
       "bpm": "200-244",
       "folder": "DanceDanceRevolution X",
@@ -5574,7 +5570,8 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/S-A-G-A",
-      "jacket": "banner/ddr_x/S･A･G･A.jpg"
+      "jacket": "banner/ddr_x/S･A･G･A.jpg",
+      "search_hint": "SAGA"
     },
     {
       "id": "ob86bIdI1IbIl9DoQ1bboq9Q8O6PPPoq",
@@ -6101,7 +6098,6 @@
     {
       "id": "oD6l698q0bQqoIOi0Dd66bqObII8QqDl",
       "name": "TRUE♥LOVE",
-      "name_translation": "TRUE LOVE",
       "artist": "jun feat.Schanita",
       "bpm": "188",
       "folder": "DanceDanceRevolution SuperNOVA",
@@ -6767,7 +6763,6 @@
     {
       "id": "1oIo1DliQqPol00Q1l1bPODbdOilodod",
       "name": "Übertreffen",
-      "name_translation": "Ubertreffen",
       "artist": "TAKA respect for J.S.B.",
       "bpm": "174",
       "folder": "DanceDanceRevolution X",
@@ -6782,7 +6777,8 @@
       ],
       "remyLink": "https://remywiki.com/Ubertreffen",
       "jacket": "banner/ddr_x/Übertreffen.jpg",
-      "genre": "PROGRESSIVE BAROQUE/プログレッシブバロック"
+      "genre": "PROGRESSIVE BAROQUE/プログレッシブバロック",
+      "search_hint": "Ubertreffen"
     },
     {
       "id": "9idOOIdDO01D8PO06bOPPbOIOoiQ8O0P",
@@ -7031,7 +7027,8 @@
       ],
       "remyLink": "https://remywiki.com/Ikareru_ookina_shiroi_uma",
       "jacket": "banner/ddr_sn/怒れる大きな白い馬.jpg",
-      "genre": "MONGOL/モンゴル"
+      "genre": "MONGOL/モンゴル",
+      "search_hint": "Ikareru Ookina Shiroi Uma/いかれるおおきなしろいうま"
     },
     {
       "id": "5ed0d5089e71af62",

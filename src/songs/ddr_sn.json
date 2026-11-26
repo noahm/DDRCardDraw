@@ -11,7 +11,7 @@
       { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": ["jp_only", "licensed"],
-    "lastUpdated": 1794446472450
+    "lastUpdated": 1795052608168
   },
   "defaults": {
     "style": "single",
@@ -64,7 +64,6 @@
     {
       "id": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
       "name": ".59",
-      "name_translation": "tengoku",
       "artist": "dj TAKA",
       "bpm": "135",
       "folder": "beatmaniaIIDX",
@@ -79,7 +78,8 @@
       ],
       "remyLink": "https://remywiki.com/.59",
       "jacket": "banner/ddr_4th/59.png",
-      "genre": "CHILL OUT"
+      "genre": "CHILL OUT",
+      "search_hint": "tengoku/てんごく"
     },
     {
       "id": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9",
@@ -116,8 +116,7 @@
       ],
       "remyLink": "https://remywiki.com/20,november",
       "jacket": "banner/ddr_2nd/20,november.png",
-      "genre": "HOUSE",
-      "search_hint": "HOUSE/ハウス"
+      "genre": "HOUSE/ハウス"
     },
     {
       "id": "Q96bO9D61lib19IiIi0i69P80bo6q69Q",
@@ -589,8 +588,7 @@
       ],
       "remyLink": "https://remywiki.com/BALALAIKA,CARRIED_WITH_THE_WIND",
       "jacket": "banner/ddr_sn/BALALAIKA, CARRIED WITH THE WIND.jpg",
-      "genre": "ロシアンポップ",
-      "search_hint": "RUSSIAN POP/ロシアンポップ"
+      "genre": "RUSSIAN POP/ロシアンポップ"
     },
     {
       "id": "ObP1P1OoDII9b9ll698Q981ilIddb8Id",
@@ -690,7 +688,6 @@
     {
       "id": "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP",
       "name": "BRE∀K DOWN!",
-      "name_translation": "BREAK DOWN!",
       "artist": "BeForU",
       "bpm": "190",
       "folder": "DDRMAX2",
@@ -705,7 +702,8 @@
       ],
       "remyLink": "https://remywiki.com/BREAK_DOWN!",
       "jacket": "banner/ddrmax2/BREAK DOWN!.png",
-      "genre": "GIRLS ROCK/ガールズロック"
+      "genre": "GIRLS ROCK/ガールズロック",
+      "search_hint": "BREAK DOWN!"
     },
     {
       "id": "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -1840,8 +1838,7 @@
       ],
       "remyLink": "https://remywiki.com/Feeling_of_love",
       "jacket": "banner/ddr_ext/feeling of love.png",
-      "genre": "HOUSE",
-      "search_hint": "HOUSE/ハウス"
+      "genre": "HOUSE/ハウス"
     },
     {
       "id": "86c7dafb6a596c64",
@@ -2237,7 +2234,6 @@
     {
       "id": "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi",
       "name": "HAPPY☆ANGEL",
-      "name_translation": "HAPPY ANGEL",
       "artist": "jun with TAHIRIH",
       "bpm": "180",
       "folder": "DDR SuperNOVA",
@@ -2400,7 +2396,6 @@
     {
       "id": "79a11f56ab203ae4",
       "name": "HONEY♂PUNCH",
-      "name_translation": "HONEY PUNCH",
       "artist": "小坂りゆ",
       "artist_translation": "KOSAKA RIYU",
       "bpm": "175",
@@ -2416,8 +2411,7 @@
       ],
       "remyLink": "https://remywiki.com/HONEY_PUNCH",
       "jacket": "banner/ddr_sn/HONEY♂PUNCH.jpg",
-      "genre": "J-HAPPY HARDCORE",
-      "search_hint": "ハッピーダンスポップ/HAPPY DANCE POP"
+      "genre": "J-HAPPY HARDCORE/ハッピーダンスポップ/HAPPY DANCE POP"
     },
     {
       "id": "af0bebd8bb3a478b",
@@ -2900,7 +2894,6 @@
     {
       "id": "f1e78d1e5a822bdc",
       "name": "KI・SE・KI (DDR edit)",
-      "name_translation": "KISEKI (DDR edit)",
       "artist": "BeForU",
       "bpm": "155",
       "folder": "DDR SuperNOVA",
@@ -2935,8 +2928,7 @@
       ],
       "remyLink": "https://remywiki.com/Knock_Out_Regrets",
       "jacket": "banner/ddr_sn/Knock Out Regrets.jpg",
-      "genre": "パンキッシュガール",
-      "search_hint": "パンキッシュガール/PUNKISH GIRL"
+      "genre": "パンキッシュガール/PUNKISH GIRL"
     },
     {
       "id": "8IIoIQQqlooiI6QD9ldIO6qidP98QP68",
@@ -2996,7 +2988,6 @@
     {
       "id": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9",
       "name": "La Señorita",
-      "name_translation": "La Senorita",
       "artist": "CAPTAIN. T",
       "bpm": "182",
       "folder": "DDR 3rdMix",
@@ -3010,12 +3001,12 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita",
-      "jacket": "banner/ddr_3rd/La Senorita.png"
+      "jacket": "banner/ddr_3rd/La Senorita.png",
+      "search_hint": "La Senorita"
     },
     {
       "id": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb",
       "name": "La Señorita Virtual",
-      "name_translation": "La Senorita Virtual",
       "artist": "2MB",
       "bpm": "182",
       "folder": "CS DDR",
@@ -3029,7 +3020,8 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita_Virtual",
-      "jacket": "banner/ddr_3rd/La Senorita Virtual.png"
+      "jacket": "banner/ddr_3rd/La Senorita Virtual.png",
+      "search_hint": "La Senorita Virtual"
     },
     {
       "id": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",
@@ -3515,9 +3507,8 @@
         { "lvl": 7, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Mobo_Moga",
-      "genre": "FRENCH POP",
       "jacket": "banner/ddr_ext/MOBO★MOGA.png",
-      "search_hint": "FRENCH POP/フレンチポップ"
+      "genre": "FRENCH POP/フレンチポップ"
     },
     {
       "id": "9d30a1cca9b96217",
@@ -4406,8 +4397,7 @@
       ],
       "remyLink": "https://remywiki.com/Ska_a_gogo",
       "jacket": "banner/ddr_2nd/ska a go go.png",
-      "genre": "SKA",
-      "search_hint": "Ska/スカ"
+      "genre": "SKA/スカ"
     },
     {
       "id": "idI1dd69l1il16P0d9DoldDP1QDP0911",
@@ -4940,7 +4930,6 @@
     {
       "id": "oD6l698q0bQqoIOi0Dd66bqObII8QqDl",
       "name": "TRUE♥LOVE",
-      "name_translation": "TRUE LOVE",
       "artist": "jun feat.Schanita",
       "bpm": "188",
       "folder": "DDR SuperNOVA",
@@ -5469,7 +5458,8 @@
       ],
       "remyLink": "https://remywiki.com/Ikareru_ookina_shiroi_uma",
       "jacket": "banner/ddr_sn/怒れる大きな白い馬.jpg",
-      "genre": "MONGOL/モンゴル"
+      "genre": "MONGOL/モンゴル",
+      "search_hint": "Ikareru Ookina Shiroi Uma/いかれるおおきなしろいうま"
     },
     {
       "id": "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po",
@@ -5553,8 +5543,7 @@
       ],
       "remyLink": "https://remywiki.com/Matsuri_JAPAN",
       "jacket": "banner/ddr_5th/MATSURI JAPAN.png",
-      "genre": "MATSURI",
-      "search_hint": "MATSURI/祭"
+      "genre": "MATSURI/祭"
     },
     {
       "id": "2d7704b9dc7c0016",
@@ -5689,8 +5678,7 @@
       ],
       "remyLink": "https://remywiki.com/Mahou_no_tobira(SPACE_MACO_no_theme)",
       "jacket": "banner/ddr_ext/MAGIC DOOR(Theme of SPACE MACO).png",
-      "genre": "アニメヒロイン",
-      "search_hint": "ANIME HEROINE/アニメヒロイン"
+      "genre": "ANIME HEROINE/アニメヒロイン"
     }
   ]
 }

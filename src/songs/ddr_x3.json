@@ -27,7 +27,7 @@
       "DanceDanceRevolution 1st Mix"
     ],
     "flags": ["unlock", "extraOnly", "shock", "licensed"],
-    "lastUpdated": 1794446472450
+    "lastUpdated": 1795052608168
   },
   "defaults": {
     "style": "single",
@@ -84,7 +84,6 @@
     {
       "id": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
       "name": ".59",
-      "name_translation": "tengoku",
       "artist": "dj TAKA",
       "bpm": "135",
       "folder": "DanceDanceRevolution 4th Mix",
@@ -99,7 +98,8 @@
       ],
       "remyLink": "https://remywiki.com/.59",
       "jacket": "ddr_1st-5th/59.png",
-      "genre": "CHILL OUT"
+      "genre": "CHILL OUT",
+      "search_hint": "tengoku/てんごく"
     },
     {
       "id": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9",
@@ -1031,7 +1031,6 @@
     {
       "id": "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP",
       "name": "BRE∀K DOWN!",
-      "name_translation": "BREAK DOWN!",
       "artist": "BeForU",
       "bpm": "190",
       "folder": "DDRMAX2 -DanceDanceRevolution 7thMIX-",
@@ -1046,7 +1045,8 @@
       ],
       "remyLink": "https://remywiki.com/BREAK_DOWN!",
       "jacket": "ddr_max-ext/BREAK DOWN!.png",
-      "genre": "GIRLS ROCK/ガールズロック"
+      "genre": "GIRLS ROCK/ガールズロック",
+      "search_hint": "BREAK DOWN!"
     },
     {
       "id": "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -1677,7 +1677,6 @@
     {
       "id": "i0dqDPqDll9il0b6qoDPd19OQ0qO9qDO",
       "name": "CRAZY♥LOVE",
-      "name_translation": "CRAZY LOVE",
       "artist": "jun",
       "bpm": "89-177",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
@@ -3450,7 +3449,6 @@
     {
       "id": "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi",
       "name": "HAPPY☆ANGEL",
-      "name_translation": "HAPPY ANGEL",
       "artist": "jun with TAHIRIH",
       "bpm": "180",
       "folder": "DanceDanceRevolution SuperNOVA",
@@ -4304,7 +4302,6 @@
     {
       "id": "Q10PdOD6bDD9QPQQqiO11669bb0lQ189",
       "name": "KIMONO♥PRINCESS",
-      "name_translation": "KIMONO PRINCESS",
       "artist": "jun",
       "bpm": "95-190",
       "folder": "DanceDanceRevolution X2",
@@ -4552,7 +4549,6 @@
     {
       "id": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9",
       "name": "La Señorita",
-      "name_translation": "La Senorita",
       "artist": "CAPTAIN. T",
       "bpm": "182",
       "folder": "DanceDanceRevolution 3rd Mix",
@@ -4566,12 +4562,12 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita",
-      "jacket": "ddr_1st-5th/La Señorita.png"
+      "jacket": "ddr_1st-5th/La Señorita.png",
+      "search_hint": "La Senorita"
     },
     {
       "id": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb",
       "name": "La Señorita Virtual",
-      "name_translation": "La Senorita Virtual",
       "artist": "2MB",
       "bpm": "182",
       "folder": "DanceDanceRevolution 3rd Mix",
@@ -4585,7 +4581,8 @@
         { "lvl": 12, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita_Virtual",
-      "jacket": "ddr_1st-5th/La Señorita Virtual.png"
+      "jacket": "ddr_1st-5th/La Señorita Virtual.png",
+      "search_hint": "La Senorita Virtual"
     },
     {
       "id": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",
@@ -7424,7 +7421,6 @@
     {
       "id": "Q6ql0lOOdq90DI1PqO1bd10bP0Oi8Q0Q",
       "name": "SILVER☆DREAM",
-      "name_translation": "SILVER DREAM",
       "artist": "jun",
       "bpm": "96-192",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
@@ -7543,7 +7539,6 @@
     {
       "id": "1l01billdl6oPP96Pq8d0lbbblQI8i8l",
       "name": "smooooch・∀・",
-      "name_translation": "smooooch",
       "artist": "kors k",
       "bpm": "177",
       "folder": "DanceDanceRevolution X2",
@@ -8071,7 +8066,6 @@
     {
       "id": "iObdoO9b1O9o8dP8o0id9b1QioQ0q9q9",
       "name": "S･A･G･A",
-      "name_translation": "SAGA",
       "artist": "Veeton",
       "bpm": "200-244",
       "folder": "DanceDanceRevolution X",
@@ -8085,7 +8079,8 @@
         { "lvl": 13, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/S-A-G-A",
-      "jacket": "ddr_x/S・A・G・A.png"
+      "jacket": "ddr_x/S・A・G・A.png",
+      "search_hint": "SAGA"
     },
     {
       "id": "ob86bIdI1IbIl9DoQ1bboq9Q8O6PPPoq",
@@ -8906,7 +8901,6 @@
     {
       "id": "oD6l698q0bQqoIOi0Dd66bqObII8QqDl",
       "name": "TRUE♥LOVE",
-      "name_translation": "TRUE LOVE",
       "artist": "jun feat.Schanita",
       "bpm": "188",
       "folder": "DanceDanceRevolution SuperNOVA",
@@ -9014,7 +9008,6 @@
     {
       "id": "lo6bOoq86d9od6qQ9PiPibOioOQb96lP",
       "name": "TWINKLE♡HEART",
-      "name_translation": "TWINKLE HEART",
       "artist": "jun",
       "bpm": "185",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
@@ -9594,12 +9587,12 @@
       ],
       "remyLink": "https://remywiki.com/ZETA~sosuu_no_sekai_to_chouetsusha~",
       "jacket": "ddr_x2/ZETA～The World of Prime Numbers and the Transcendental Being～.png",
-      "genre": "IDM"
+      "genre": "IDM",
+      "search_hint": "そすうのせかいとちょうえつしゃ"
     },
     {
       "id": "1oIo1DliQqPol00Q1l1bPODbdOilodod",
       "name": "Übertreffen",
-      "name_translation": "Ubertreffen",
       "artist": "TAKA respect for J.S.B.",
       "bpm": "174",
       "folder": "DanceDanceRevolution X",
@@ -9614,12 +9607,12 @@
       ],
       "remyLink": "https://remywiki.com/Ubertreffen",
       "jacket": "ddr_x/Übertreffen.png",
-      "genre": "PROGRESSIVE BAROQUE/プログレッシブバロック"
+      "genre": "PROGRESSIVE BAROQUE/プログレッシブバロック",
+      "search_hint": "Ubertreffen"
     },
     {
       "id": "QQldo10ObPPQPlliODiDIIl0Q1oPoo61",
       "name": "ΔMAX",
-      "name_translation": "deltaMAX",
       "artist": "DM Ashura",
       "bpm": "100-573",
       "folder": "DanceDanceRevolution X2",
@@ -9635,12 +9628,12 @@
         { "lvl": 18, "style": "double", "diffClass": "challenge" }
       ],
       "remyLink": "https://remywiki.com/DeltaMAX",
-      "jacket": "ddr_x2/ΔMAX.png"
+      "jacket": "ddr_x2/ΔMAX.png",
+      "search_hint": "deltaMAX"
     },
     {
       "id": "006ob1iI9b1I8dDl0dq1bqIOP8886li1",
       "name": "☆shining☆",
-      "name_translation": "shining",
       "artist": "ピンクターボ",
       "artist_translation": "Pink Turbo",
       "bpm": "185",
@@ -9929,7 +9922,7 @@
     {
       "id": "i8O81i0iQdqiI8qqP0oo8IPl9IoId1bO",
       "name": "不沈艦CANDY",
-      "name_translation": "Fuchinkan CANDY",
+      "name_translation": "Yellow CANDY",
       "artist": "Risk Junk",
       "bpm": "94-188",
       "folder": "DanceDanceRevolution X2",
@@ -9944,7 +9937,8 @@
       ],
       "remyLink": "https://remywiki.com/Fuchinkan_CANDY",
       "jacket": "ddr_x2/Fuchinkan CANDY.png",
-      "genre": "HARDCORE"
+      "genre": "HARDCORE",
+      "search_hint": "Fuchinkan CANDY/ふちんかんCANDY"
     },
     {
       "id": "iqiqod1l08DlDql98QOi10oibldd8b86",
@@ -10035,7 +10029,7 @@
     {
       "id": "OQbPdOIo6dPPIq6d8qid6DbPP0q991i6",
       "name": "天上の星～黎明記～",
-      "name_translation": "Tenjou no hoshi ～Reimeiki～",
+      "name_translation": "Tenjou no hoshi ~Reimeiki~",
       "artist": "TЁЯRA",
       "bpm": "85-170",
       "folder": "DanceDanceRevolution X3 vs 2nd MIX",
@@ -10103,7 +10097,8 @@
       ],
       "remyLink": "https://remywiki.com/Ikareru_ookina_shiroi_uma",
       "jacket": "ddr_sn-sn2/Tino's White Horse.png",
-      "genre": "MONGOL/モンゴル"
+      "genre": "MONGOL/モンゴル",
+      "search_hint": "Ikareru Ookina Shiroi Uma/いかれるおおきなしろいうま"
     },
     {
       "id": "lOb8O16P9P81olPdI1o1Dl9I6QQoIqIP",
