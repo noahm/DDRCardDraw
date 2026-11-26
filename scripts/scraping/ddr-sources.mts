@@ -190,6 +190,8 @@ export const DDR_WORLD: DDRSourceMeta = {
     // Use song metadata only from zenius-i-vanisher, don't import charts or levels
     correctionMap: [
       // #region DDR WORLD
+      ["Blφφdy Cφncertφ", { name_translation: undefined }],
+      ["BRE∀K DOWN! (World Version)", { name_translation: undefined }],
       [
         "ギミギミエンターテイメント",
         { name_translation: "Gimmick gimmick entertainment" },
@@ -198,13 +200,18 @@ export const DDR_WORLD: DDRSourceMeta = {
       ["旅人リラン", { name_translation: "Tabibito Rerun" }],
       ["リメンバーリメンバー", { artist_translation: undefined }], // Duplicated (Original, Covered)
       ["COLOR BURST", { artist_translation: undefined }],
+      ["Liar×Girl", { name_translation: undefined }],
+      ["Lichtsäule", { name_translation: undefined }],
       ["Mighty Beat Monsterz", { artist_translation: undefined }], // Broken HTML
       ["Ganymede -re:born-", { artist_translation: undefined }], // Broken HTML
       [
         "HAPPY☆PARADISE☆GALAXY",
         { name_translation: undefined, artist_translation: undefined },
       ],
-      ["Ignis†Iræ", { artist_translation: undefined }], // Broken HTML
+      [
+        "Ignis†Iræ",
+        { name_translation: undefined, artist_translation: undefined },
+      ], // Broken HTML
       ["Liar×Girl", { artist_translation: undefined }], // Broken HTML
       ["Meteor☆Shower", { name_translation: undefined }],
       ["neu (STARDOM Remix)", { artist_translation: undefined }], // Broken HTML
@@ -219,27 +226,38 @@ export const DDR_WORLD: DDRSourceMeta = {
         { name: "Be With You (Still Miss you)" },
       ],
       ["DIABLOSIS::Nāga", { name_translation: undefined }],
+      ["♡Drive My Heart♡", { name_translation: undefined }],
+      ["GRADIUS REMIX (↑↑↓↓←→←→BA Ver.)", { name_translation: undefined }],
       ["一途", { deleted: true }],
       ["Look At The Sky", { name: "Look at the Sky" }],
+      ["MA・TSU・RI", { name_translation: undefined }],
       ["ｍｅｍｏｒｙ／／ＤＡＴＡＭＯＳＨＥＲ", { name_translation: undefined }],
       ["ミックスナッツ", { deleted: true }],
       ["SOUVENIR", { artist: "" }],
       ["suspicions", { artist_translation: undefined }], // Broken HTML
+      ["↑↑↓↓←→←→BA", { name_translation: undefined }],
       // #endregion DDR A3
       // #region DDR A20 PLUS
+      ["jet coaster☆girl", { name_translation: undefined }],
       ["サイカ", { deleted: true }],
       [
         "世界の果てに約束の凱歌を -DDR Extended Megamix-",
         { artist_translation: undefined }, // Broken HTML
       ],
+      ["TYPHØN", { name_translation: undefined }],
+      ["WARNING×WARNING×WARNING", { name_translation: undefined }],
       ["We Can Win The Fight", { name: "We Can Win the Fight" }],
       // #endregion DDR A20 PLUS
       // #region DDR A20
       ["Lachryma(Re:Queen'M)", { name: "Lachryma《Re:Queen’M》" }],
+      ["ΩVERSOUL", { name_translation: undefined }],
       ["Play Hard", { deleted: true }],
       // #endregion DDR A20
       // #region DDR A
-      ["Ha・lle・lu・jah", { name: "Ha･lle･lu･jah" }],
+      [
+        "Ha・lle・lu・jah",
+        { name: "Ha･lle･lu･jah", name_translation: undefined },
+      ],
       ["恋する☆宇宙戦争っ！！", { name: "恋する☆宇宙戦争っ!!" }],
       [
         "魔法のたまご～心菜 ELECTRO POP edition～",
@@ -252,7 +270,10 @@ export const DDR_WORLD: DDRSourceMeta = {
       ["Strawberry Chu♡Chu♡", { name_translation: undefined }],
       // #endregion DDR A
       // #region DDR 2014
+      ["ÆTHER", { name_translation: undefined }],
       ["Dreamin'", { name: "Dreamin’" }],
+      ["Go↓Go↑Girls&Boys!", { name_translation: undefined }],
+      ["HAPPY☆LUCKY☆YEAPPY", { name_translation: undefined }],
       [
         "恋はどう？モロ◎波動OK☆方程式!!",
         { name: "恋はどう？モロ◎波動OK☆方程式！！" },
@@ -276,7 +297,8 @@ export const DDR_WORLD: DDRSourceMeta = {
         "†渚の小悪魔ラヴリィ～レイディオ†(IIDX EDIT)",
         { name: "†渚の小悪魔ラヴリィ～レイディオ†" },
       ],
-      ["RËVOLUTIФN", { name: "RЁVOLUTIФN" }],
+      ["Qipchāq", { name_translation: undefined }],
+      ["RËVOLUTIФN", { name: "RЁVOLUTIФN", name_translation: undefined }],
       [
         "凛として咲く花の如く～ひなビタ♪edition～",
         { name: "凛として咲く花の如く ～ひなビタ♪ edition～" },
@@ -289,19 +311,25 @@ export const DDR_WORLD: DDRSourceMeta = {
       // #endregion DDR 2013
       // #region DDR X3 VS 2ndMIX
       ["ビューティフルレシート", { name: "ビューティフル レシート" }],
+      ["CRAZY♥LOVE", { name_translation: undefined }],
       ["London EVOLVED Ver.A", { name: "London EVOLVED ver.A" }],
       ["London EVOLVED Ver.B", { name: "London EVOLVED ver.B" }],
       ["London EVOLVED Ver.C", { name: "London EVOLVED ver.C" }],
       ["SILVER☆DREAM", { name_translation: undefined }],
+      ["TWINKLE♡HEART", { name_translation: undefined }],
+      ["Wicked Plastik", { name_translation: undefined }],
       // #endregion DDR X3 VS 2ndMIX
       // #region DDR X2
+      ["ΔMAX", { name_translation: undefined }],
+      ["KIMONO♥PRINCESS", { name_translation: undefined }],
       ["Leaving...", { name: "Leaving…" }],
       ["Poseidon (kors k mix)", { name: "Poseidon(kors k mix)" }],
       ["roppongi EVOLVED ver. A", { name: "roppongi EVOLVED ver.A" }],
       ["roppongi EVOLVED ver. B", { name: "roppongi EVOLVED ver.B" }],
       ["roppongi EVOLVED ver. C", { name: "roppongi EVOLVED ver.C" }],
       ["roppongi EVOLVED ver. D", { name: "roppongi EVOLVED ver.D" }],
-      ["smooooch・∀・", { name: "smooooch･∀･" }],
+      ["☆shining☆", { name_translation: undefined }],
+      ["smooooch・∀・", { name: "smooooch･∀･", name_translation: undefined }],
       ["You are a star", { name: "You are a Star" }],
       // #endregion DDR X2
       // #region DDR X
@@ -329,7 +357,7 @@ export const DDR_WORLD: DDRSourceMeta = {
         "SABER WING (AKIRA ISHIHARA Headshot mix)",
         { name: "SABER WING (Akira Ishihara Headshot mix)" },
       ],
-      ["S･A･G･A", { name: "S・A・G・A" }],
+      ["S･A･G･A", { name: "S・A・G・A", name_translation: undefined }],
       [
         "SP-TRIP MACHINE~JUNGLE MIX~ (X-Special)",
         { name: "SP-TRIP MACHINE～JUNGLE MIX～(X-Special)" },
@@ -343,6 +371,7 @@ export const DDR_WORLD: DDRSourceMeta = {
         "TRIP MACHINE CLIMAX (X-Special)",
         { name: "TRIP MACHINE CLIMAX(X-Special)" },
       ],
+      ["Übertreffen", { name_translation: undefined }],
       // #endregion DDR X
       // #region DDR SuperNOVA2
       ['AM-3P("CHAOS" Special)', { name: 'AM-3P ("CHAOS" Special)' }],
@@ -389,9 +418,11 @@ export const DDR_WORLD: DDRSourceMeta = {
         "Fascination ~eternal love mix~",
         { name: "Fascination ～eternal love mix～" },
       ],
+      ["HAPPY☆ANGEL", { name_translation: undefined }],
       ["Jam&Marmalade", { name: "Jam & Marmalade" }],
       ["MARIA (I believe... )", { name: "MARIA(I believe...)" }],
       ["Midnight Special", { name: "MIDNIGHT SPECIAL" }],
+      ["TRUE♥LOVE", { name_translation: undefined }],
       // #endregion DDR SuperNOVA
       // #region DDR EXTREME
       ["AM-3P (303 BASS MIX)", { name: "AM-3P -303 BASS MIX-" }],
@@ -425,7 +456,7 @@ export const DDR_WORLD: DDRSourceMeta = {
       ],
       ["AM-3P (AM EAST mix)", { name: "AM-3P(AM EAST mix)" }],
       ["B4U (B4 ZA BEAT MIX)", { name: "B4U(B4 ZA BEAT MIX)" }],
-      ["BRE∀K DOWN!", { name: "BRE∀K DOWN！" }],
+      ["BRE∀K DOWN!", { name: "BRE∀K DOWN！", name_translation: undefined }],
       ["BRILLIANT 2U (K.O.G. G3 MIX)", { name: "BRILLIANT 2U(K.O.G G3 MIX)" }],
       [
         "BURNIN' THE FLOOR (BLUE FIRE mix)",
@@ -502,6 +533,8 @@ export const DDR_WORLD: DDRSourceMeta = {
         "GRADIUSIC CYBER (AMD G5 MIX)",
         { name: "GRADIUSIC CYBER ～AMD G5 MIX～" },
       ],
+      ["La Señorita", { name_translation: undefined }],
+      ["La Señorita Virtual", { name_translation: undefined }],
       ["TRIP MACHINE (luv mix)", { name: "TRIP MACHINE～luv mix～" }],
       // #endregion DDR 3rdMIX
       // #region DDR 2ndMIX
