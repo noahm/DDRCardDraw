@@ -33,7 +33,7 @@
       "excludedVersionTheme"
     ],
     "granularTierResolution": 20,
-    "lastUpdated": 1794488923846
+    "lastUpdated": 1795672497764
   },
   "defaults": {
     "style": "single",
@@ -139,7 +139,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "maxScore": 1200,
-          "sanbaiTier": 14.35,
+          "sanbaiTier": 14.3,
           "flags": ["euLocked"]
         }
       ],
@@ -151,7 +151,6 @@
     {
       "id": "loD8qPl09qqi0o1iqbbDOdllDblioDIl",
       "name": "3y3s",
-      "name_translation": "Eyes",
       "artist": "青龍",
       "artist_translation": "Seiryu",
       "folder": "GOLD",
@@ -162,7 +161,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2196,
-          "sanbaiTier": 17.25
+          "sanbaiTier": 17.2
         },
         {
           "style": "single",
@@ -175,7 +174,8 @@
       "jacket": "ddr_a3/3y3s.jpg",
       "remyLink": "https://remywiki.com/3y3s",
       "genre": "DANCE SPEED",
-      "flags": ["unlock", "standard"]
+      "flags": ["unlock", "standard"],
+      "search_hint": "Eyes"
     },
     {
       "id": "bP10qq9dPDDqIl16lPIDDd8b00dIIP08",
@@ -229,13 +229,15 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 1464
+          "maxScore": 1464,
+          "sanbaiTier": 14.25
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 16,
-          "maxScore": 1716
+          "maxScore": 1716,
+          "sanbaiTier": 16.5
         }
       ],
       "flags": ["unlock", "standard"],
@@ -261,7 +263,7 @@
       "remyLink": "https://remywiki.com/8000000",
       "jacket": "ddr_2014/8000000.png",
       "genre": "ヤオヨロズ/YAOYOROZ",
-      "search_hint": "八百万/やおよろず",
+      "search_hint": "八百万/やおよろず/yaoyorozu",
       "flags": ["standard"]
     },
     {
@@ -295,7 +297,6 @@
     {
       "id": "Di0ODIlddo8d90oo09qqd98QObQP1llI",
       "name": "[ ]DENTITY",
-      "name_translation": "IDENTITY",
       "artist": "BEMANI Sound Team \"HuΣeR\"",
       "folder": "GOLD",
       "bpm": "100-200",
@@ -319,7 +320,8 @@
       "remyLink": "https://remywiki.com/IDENTITY",
       "jacket": "ddr_a3/IDENTITY.jpg",
       "genre": "FORTUNE OVERTURE",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "IDENTITY"
     },
     {
       "id": "0DDo1ilPDQoIoPd8ol9OPO1IPbi9ii6d",
@@ -416,7 +418,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1299,
-          "sanbaiTier": 14.75
+          "sanbaiTier": 14.8
         },
         {
           "style": "single",
@@ -739,7 +741,7 @@
           "diffClass": "expert",
           "lvl": 13,
           "maxScore": 1599,
-          "sanbaiTier": 13.35
+          "sanbaiTier": 13.3
         }
       ],
       "remyLink": "https://remywiki.com/Angelic_Jelly",
@@ -1035,7 +1037,8 @@
       ],
       "remyLink": "https://remywiki.com/B4U",
       "jacket": "ddr_sn-sn2/B4U (VOLTAGE Special).png",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "genre": "SPEED RAVE"
     },
     {
       "id": "IqPq866IQD0liq9lOl00qDqiPlq9bOD0",
@@ -1077,7 +1080,7 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 1794,
-          "sanbaiTier": 16.6,
+          "sanbaiTier": 16.55,
           "flags": ["versionThemeOnly"]
         },
         {
@@ -1262,10 +1265,10 @@
           "diffClass": "expert",
           "lvl": 13,
           "maxScore": 1653,
-          "sanbaiTier": 13.6
+          "sanbaiTier": 13.65
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "jacket": "ddr_world/Beyond The Earth.jpg",
       "remyLink": "https://remywiki.com/BEYOND_THE_EARTH",
       "genre": "CONTEMPORARY NATION"
@@ -1283,7 +1286,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 2427,
-          "sanbaiTier": 17.75
+          "sanbaiTier": 17.7
         }
       ],
       "flags": ["unlock", "tricky"],
@@ -1456,7 +1459,6 @@
     {
       "id": "dbIQ6o1lDi1OqqdO60q0lqqD9qPD0qlP",
       "name": "Blφφdy Cφncertφ",
-      "name_translation": "Bloody Concerto",
       "artist": "OSTER project & RoughSketch",
       "bpm": "210",
       "folder": "GOLD/WORLD",
@@ -1466,12 +1468,13 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 1941,
-          "sanbaiTier": 17.9
+          "sanbaiTier": 17.95
         }
       ],
       "flags": ["unlock", "tricky"],
       "remyLink": "https://remywiki.com/Bloody_Concerto",
-      "jacket": "ddr_world/Bloody Concerto.jpg"
+      "jacket": "ddr_world/Bloody Concerto.jpg",
+      "search_hint": "Bloody Concerto"
     },
     {
       "id": "QbD9QQP9bqoD00bQQl8obibP9PloQ9Qo",
@@ -1542,7 +1545,7 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 2028,
-          "sanbaiTier": 16.45
+          "sanbaiTier": 16.4
         }
       ],
       "remyLink": "https://remywiki.com/BREDLI",
@@ -1566,7 +1569,8 @@
       ],
       "remyLink": "https://remywiki.com/BRILLIANT_2U",
       "jacket": "ddr_sn-sn2/BRILLIANT 2U (STREAM Special).png",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "genre": "EURO GROOVE"
     },
     {
       "id": "bIqioQdiOOblbqD0P99P0liodP8i0880",
@@ -1580,7 +1584,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 1590
+          "maxScore": 1590,
+          "sanbaiTier": 14.35
         }
       ],
       "flags": ["euLocked"],
@@ -1658,18 +1663,19 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1659,
-          "sanbaiTier": 14.4
+          "sanbaiTier": 14.35
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 16,
-          "maxScore": 1887
+          "maxScore": 1887,
+          "sanbaiTier": 16.2
         }
       ],
       "jacket": "ddr_world/Bye_or_not.png",
       "remyLink": "https://remywiki.com/Bye_or_not",
-      "flags": ["standard"]
+      "flags": ["standard", "unlock"]
     },
     {
       "id": "odPq866q0QPOP9QOQ9QQIlIO60Oid16o",
@@ -1796,7 +1802,8 @@
       ],
       "remyLink": "https://remywiki.com/Chaos_eater",
       "jacket": "ddr_2014/chaos eater.png",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "genre": "HARD STEP"
     },
     {
       "id": "b16OP1o9qb6bQd66qOl98iq0boiQP919",
@@ -1904,7 +1911,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1683,
-          "sanbaiTier": 14.45
+          "sanbaiTier": 14.5
         }
       ],
       "remyLink": "https://remywiki.com/Chronos_(walk_with_you_remix)",
@@ -2047,7 +2054,6 @@
     {
       "id": "bll06Di6q1QOlddDlPDPiQDDI09bOOoP",
       "name": "Come To m1dy",
-      "name_translation": "Come to midy",
       "artist": "m1dy",
       "folder": "GOLD",
       "bpm": "113-450",
@@ -2063,7 +2069,8 @@
       "jacket": "ddr_a3/Come To m1dy.jpg",
       "remyLink": "https://remywiki.com/Come_To_m1dy",
       "genre": "TOKYO STYLE SPEEDCORE",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "Come To midy"
     },
     {
       "id": "qoD0olPq6qbOi6bbPllOib0q1i16iI1O",
@@ -2251,7 +2258,6 @@
     {
       "id": "i0dqDPqDll9il0b6qoDPd19OQ0qO9qDO",
       "name": "CRAZY♥LOVE",
-      "name_translation": "CRAZY LOVE",
       "artist": "jun",
       "bpm": "88-177",
       "folder": "CLASSIC",
@@ -2394,7 +2400,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2031,
-          "sanbaiTier": 17.15,
+          "sanbaiTier": 17.1,
           "flags": ["standard"]
         },
         {
@@ -2402,7 +2408,8 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 2070,
-          "flags": ["shock", "tricky"]
+          "flags": ["shock", "tricky"],
+          "sanbaiTier": 17.65
         }
       ],
       "jacket": "ddr_world/Daisycutter.png",
@@ -2556,7 +2563,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "maxScore": 1644,
-          "sanbaiTier": 15.5,
+          "sanbaiTier": 15.55,
           "flags": ["unlock"]
         }
       ],
@@ -2641,7 +2648,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 15,
-          "maxScore": 1737
+          "maxScore": 1737,
+          "sanbaiTier": 15.3
         }
       ],
       "flags": ["unlock", "standard"],
@@ -2777,7 +2785,6 @@
     {
       "id": "QlQ10I6o1l88loioo6DIObi0P09PPdiD",
       "name": "DIABLOSIS::Nāga",
-      "name_translation": "diablosis naga",
       "artist": "sky_delta",
       "bpm": "200",
       "folder": "GOLD",
@@ -2792,7 +2799,8 @@
       ],
       "remyLink": "https://remywiki.com/DIABLOSIS::Naga",
       "flags": ["euLocked", "standard"],
-      "jacket": "ddr_a3/DIABLOSISNaga.jpg"
+      "jacket": "ddr_a3/DIABLOSISNaga.jpg",
+      "search_hint": "DIABLOSIS Naga"
     },
     {
       "id": "19b01l0QPiDlDQb6lqd0dQ8Qlld6Dl6l",
@@ -2861,7 +2869,7 @@
       "jacket": "ddr_world/DIAVOLO.jpg",
       "remyLink": "https://remywiki.com/DIAVOLO",
       "genre": "トランセンデンタルエチュード/TRANSCENDENTAL ETUDES",
-      "flags": ["unlock", "standard"]
+      "flags": ["standard", "euLocked"]
     },
     {
       "id": "dqQbQ9oPlIi6bDdi18d9qPlDb0PiDddi",
@@ -3027,7 +3035,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 1983,
-          "sanbaiTier": 16.55
+          "sanbaiTier": 16.5
         }
       ],
       "remyLink": "https://remywiki.com/Drop_The_Bounce",
@@ -3072,7 +3080,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 2412,
-          "sanbaiTier": 17.7
+          "sanbaiTier": 17.65
         }
       ],
       "jacket": "ddr_world/Eira.jpg",
@@ -3342,7 +3350,7 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 2106,
-          "sanbaiTier": 16.45
+          "sanbaiTier": 16.4
         }
       ],
       "jacket": "ddr_a3/Euphoric Fragmentation.jpg",
@@ -3369,7 +3377,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "maxScore": 1614,
-          "sanbaiTier": 15.25,
+          "sanbaiTier": 15.2,
           "flags": ["euLocked"]
         }
       ],
@@ -3389,7 +3397,7 @@
           "diffClass": "expert",
           "lvl": 18,
           "maxScore": 2505,
-          "sanbaiTier": 18.8
+          "sanbaiTier": 18.85
         }
       ],
       "jacket": "ddr_world/EYE OF THE HEAVEN.jpg",
@@ -3409,7 +3417,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 15,
-          "maxScore": 1440
+          "maxScore": 1440,
+          "sanbaiTier": 15.1
         }
       ],
       "flags": ["unlock", "standard"],
@@ -3615,7 +3624,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1389,
-          "sanbaiTier": 14.2
+          "sanbaiTier": 14.25
         }
       ],
       "remyLink": "https://remywiki.com/Flip_Flap",
@@ -3773,7 +3782,7 @@
       ],
       "jacket": "ddr_world/Fly Like You.jpg",
       "remyLink": "https://remywiki.com/Fly_Like_You",
-      "flags": ["unlock", "tricky"]
+      "flags": ["tricky", "euLocked"]
     },
     {
       "id": "ObI1oo6QlO981880DDDOlo8bQobI0I9P",
@@ -3810,7 +3819,7 @@
           "sanbaiTier": 13.4
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "unlock"],
       "remyLink": "https://remywiki.com/Four_Leaves",
       "jacket": "ddr_world/Four_Leaves.jpg"
     },
@@ -4037,7 +4046,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2031,
-          "sanbaiTier": 18.4
+          "sanbaiTier": 18.45
         }
       ],
       "remyLink": "https://remywiki.com/Glitch_Angel",
@@ -4362,7 +4371,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1449,
-          "sanbaiTier": 14.3
+          "sanbaiTier": 14.35
         }
       ],
       "jacket": "ddr_world/Happy Dance Day 2 U.jpg",
@@ -4372,7 +4381,6 @@
     {
       "id": "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi",
       "name": "HAPPY☆ANGEL",
-      "name_translation": "HAPPY ANGEL",
       "artist": "jun with TAHIRIH",
       "bpm": "180",
       "folder": "CLASSIC",
@@ -4393,7 +4401,6 @@
     {
       "id": "ol6IDd019O0qq8dblPQ96ol1oPbI990b",
       "name": "HAPPY☆LUCKY☆YEAPPY",
-      "name_translation": "HAPPY LUCKY YEAPPY",
       "artist": "DJ ミラクル☆ストーン",
       "artist_translation": "DJ Miracle Stone",
       "bpm": "190-380",
@@ -4423,7 +4430,7 @@
       "id": "Oq8ii8id8ob90q6OiDoIl9Q0lQDd9DIO",
       "name": "HAPPY☆PARADISE☆GALAXY",
       "artist": "DJ(GW+ミラクル☆ストーン)÷2",
-      "artist_translation": "DJ(GW+Miracle☆Stone)÷2",
+      "artist_translation": "DJ(GW+Miracle Stone)÷2",
       "bpm": "182",
       "folder": "GOLD/WORLD",
       "charts": [
@@ -4431,7 +4438,8 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 17,
-          "maxScore": 2178
+          "maxScore": 2178,
+          "sanbaiTier": 17.5
         }
       ],
       "flags": ["unlock", "tricky"],
@@ -4469,7 +4477,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 1359
+          "maxScore": 1359,
+          "sanbaiTier": 14.15
         }
       ],
       "flags": ["unlock", "standard"],
@@ -4862,10 +4871,11 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 13,
-          "maxScore": 1491
+          "maxScore": 1491,
+          "sanbaiTier": 13.3
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "unlock"],
       "jacket": "ddr_world/I'll Be With You.jpg",
       "remyLink": "https://remywiki.com/I%27ll_Be_With_You"
     },
@@ -4881,7 +4891,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 1653,
-          "sanbaiTier": 16.25
+          "sanbaiTier": 16.2
         }
       ],
       "remyLink": "https://remywiki.com/I%27m_so_Happy",
@@ -5005,7 +5015,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1413,
-          "sanbaiTier": 15.25
+          "sanbaiTier": 15.3
         }
       ],
       "remyLink": "https://remywiki.com/IN_BETWEEN",
@@ -5229,12 +5239,12 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 2004,
-          "sanbaiTier": 17.6
+          "sanbaiTier": 17.55
         }
       ],
       "remyLink": "https://remywiki.com/JOMANDA",
       "jacket": "ddr_2014/JOMANDA.png",
-      "genre": "HARD RENAISSANCE 3/ハードルネッサンス3",
+      "genre": "HARD RENAISSANCE/HARD RENAISSANCE 3/ハードルネッサンス3",
       "flags": ["tricky"]
     },
     {
@@ -5249,7 +5259,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2052,
-          "sanbaiTier": 17.9
+          "sanbaiTier": 17.85
         }
       ],
       "remyLink": "https://remywiki.com/Jucunda_Memoria",
@@ -5289,7 +5299,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1467,
-          "sanbaiTier": 14.35
+          "sanbaiTier": 14.4
         },
         {
           "style": "single",
@@ -5306,7 +5316,6 @@
     {
       "id": "Q10PdOD6bDD9QPQQqiO11669bb0lQ189",
       "name": "KIMONO♥PRINCESS",
-      "name_translation": "KIMONO PRINCESS",
       "artist": "jun",
       "bpm": "94-190",
       "folder": "CLASSIC",
@@ -5363,7 +5372,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "maxScore": 1329,
-          "sanbaiTier": 14.5
+          "sanbaiTier": 14.55
         }
       ],
       "remyLink": "https://remywiki.com/La_libertad",
@@ -5402,7 +5411,7 @@
           "diffClass": "expert",
           "lvl": 18,
           "maxScore": 2661,
-          "sanbaiTier": 18.7
+          "sanbaiTier": 18.65
         }
       ],
       "remyLink": "https://remywiki.com/Lachryma(Re:Queen%27M)",
@@ -5520,7 +5529,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1413,
-          "sanbaiTier": 14.85
+          "sanbaiTier": 14.9
         }
       ],
       "remyLink": "https://remywiki.com/Let%27s_DANCE_aROUND!!",
@@ -5530,7 +5539,6 @@
     {
       "id": "blq0Oq8q6oi89odoPOqIDDQIPO11IQ9O",
       "name": "Liar×Girl",
-      "name_translation": "Liar Girl",
       "artist": "BEMANI Sound Team \"HuΣeR\" feat.ゆきまめ",
       "folder": "GOLD",
       "bpm": "164",
@@ -5622,13 +5630,15 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 2193,
-          "flags": ["versionThemeOnly"]
+          "flags": ["versionThemeOnly"],
+          "sanbaiTier": 16.2
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "maxScore": 2499
+          "maxScore": 2499,
+          "sanbaiTier": 18.8
         }
       ],
       "flags": ["unlock", "standard"],
@@ -5727,7 +5737,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2133,
-          "sanbaiTier": 17.4
+          "sanbaiTier": 17.45
         },
         {
           "style": "single",
@@ -5882,7 +5892,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 1473
+          "maxScore": 1473,
+          "sanbaiTier": 14.9
         }
       ],
       "flags": ["euLocked", "standard"],
@@ -5945,7 +5956,8 @@
       ],
       "remyLink": "https://remywiki.com/MAX_300",
       "jacket": "ddr_x/MAX 300(X-Special).png",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "genre": "HARDCORE TECHNO"
     },
     {
       "id": "1Dl19idl0i0qiqidbDIIbQddiP6o11PP",
@@ -6055,7 +6067,6 @@
     {
       "id": "qIIDP8iPlII9qlOQIIol0i81b0d68qo8",
       "name": "MA・TSU・RI",
-      "name_translation": "MA-TSU-RI",
       "artist": "かなたん,アマギセーラ,ぁゅ by BEMANI Sound Team \"藤森崇多\"",
       "artist_translation": "Kanata.N, Amagi Sera, ayu by BEMANI Sound Team \"Sota Fujimori\"",
       "bpm": "160",
@@ -6135,7 +6146,7 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 1815,
-          "sanbaiTier": 16.95,
+          "sanbaiTier": 16.9,
           "flags": ["tricky"]
         },
         {
@@ -6202,13 +6213,15 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 16,
-          "maxScore": 1761
+          "maxScore": 1761,
+          "sanbaiTier": 16.8
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "maxScore": 2280
+          "maxScore": 2280,
+          "sanbaiTier": 18.9
         }
       ],
       "flags": ["unlock", "tricky"],
@@ -6456,7 +6469,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1977,
-          "sanbaiTier": 15.6
+          "sanbaiTier": 15.65
         }
       ],
       "flags": ["unlock"],
@@ -6570,7 +6583,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2247,
-          "sanbaiTier": 18.55,
+          "sanbaiTier": 18.6,
           "flags": ["shock", "tricky"]
         }
       ],
@@ -6615,7 +6628,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2076,
-          "sanbaiTier": 17.15
+          "sanbaiTier": 17.1
         },
         {
           "style": "single",
@@ -6694,7 +6707,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2499,
-          "sanbaiTier": 18.85
+          "sanbaiTier": 18.8
         }
       ],
       "jacket": "ddr_a3/New Millennium.jpg",
@@ -6739,7 +6752,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 15,
-          "maxScore": 1725
+          "maxScore": 1725,
+          "sanbaiTier": 15.45
         }
       ],
       "flags": ["euLocked"],
@@ -6881,7 +6895,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1890,
-          "sanbaiTier": 14.35
+          "sanbaiTier": 14.4
         }
       ],
       "flags": ["euLocked"],
@@ -6985,7 +6999,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 1683,
-          "sanbaiTier": 16.95,
+          "sanbaiTier": 16.9,
           "flags": ["tricky"]
         }
       ],
@@ -7051,7 +7065,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2040,
-          "sanbaiTier": 17.5
+          "sanbaiTier": 17.55
         }
       ],
       "remyLink": "https://remywiki.com/ORCA",
@@ -7170,7 +7184,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 2103,
-          "sanbaiTier": 15.2
+          "sanbaiTier": 15.25
         }
       ],
       "remyLink": "https://remywiki.com/Our_Love",
@@ -7331,7 +7345,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "maxScore": 1149,
-          "sanbaiTier": 14.6
+          "sanbaiTier": 14.65
         }
       ],
       "remyLink": "https://remywiki.com/PARANOIA_EVOLUTION",
@@ -7374,7 +7388,8 @@
       ],
       "remyLink": "https://remywiki.com/PARANOiA_MAX~DIRTY_MIX~",
       "jacket": "ddr_x/PARANOiA MAX～DIRTY MIX～(X-Special).png",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "genre": "JUNGLE"
     },
     {
       "id": "0lDP0P06PIPl1iiIDOb919iqo1oPdlP8",
@@ -7407,7 +7422,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "maxScore": 1455,
-          "sanbaiTier": 14.4
+          "sanbaiTier": 14.45
         }
       ],
       "remyLink": "https://remywiki.com/PARANOiA_Rebirth",
@@ -7704,7 +7719,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 1581,
-          "sanbaiTier": 17.9
+          "sanbaiTier": 17.95
         },
         {
           "style": "single",
@@ -7957,7 +7972,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1581,
-          "sanbaiTier": 14.25,
+          "sanbaiTier": 14.3,
           "flags": ["versionThemeOnly"]
         },
         {
@@ -8090,7 +8105,7 @@
       "jacket": "ddr_world/quaver♪.jpg",
       "remyLink": "https://remywiki.com/Quaver",
       "genre": "HAPPY/ハッピー",
-      "flags": ["unlock", "standard"]
+      "flags": ["standard", "euLocked"]
     },
     {
       "id": "d8l6ob1IPiQOlPI8i88oQqO10Ql6ibl6",
@@ -8104,13 +8119,15 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1767,
-          "flags": ["versionThemeOnly"]
+          "flags": ["versionThemeOnly"],
+          "sanbaiTier": 14.3
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 17,
-          "maxScore": 2559
+          "maxScore": 2559,
+          "sanbaiTier": 17.35
         }
       ],
       "flags": ["unlock", "standard"],
@@ -8187,7 +8204,7 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 1905,
-          "sanbaiTier": 17.35
+          "sanbaiTier": 17.3
         }
       ],
       "remyLink": "https://remywiki.com/Reach_The_Sky,_Without_you",
@@ -8220,7 +8237,7 @@
       "jacket": "ddr_world/Red. by Full Metal Jacket.jpg",
       "remyLink": "https://remywiki.com/Red._by_Full_Metal_Jacket",
       "genre": "TECH-BREAKBEATS",
-      "flags": ["unlock"]
+      "flags": ["euLocked"]
     },
     {
       "id": "ll6iQl0PoiDob8Oi6dlOQ069061doqbq",
@@ -8309,7 +8326,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1182,
-          "sanbaiTier": 14.4,
+          "sanbaiTier": 14.45,
           "flags": ["standard"]
         },
         {
@@ -8343,7 +8360,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 1746,
-          "sanbaiTier": 16.6
+          "sanbaiTier": 16.55
         }
       ],
       "remyLink": "https://remywiki.com/Right_Time_Right_Way",
@@ -8600,7 +8617,6 @@
     {
       "id": "IPq8dO1lD8qidDlI0ObboI9IIldQO6IQ",
       "name": "RЁVOLUTIФN",
-      "name_translation": "REVOLUTION",
       "artist": "TЁЯRA",
       "bpm": "202",
       "folder": "WHITE",
@@ -8610,7 +8626,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1767,
-          "sanbaiTier": 14.3
+          "sanbaiTier": 14.35
         },
         {
           "style": "single",
@@ -8622,12 +8638,12 @@
       ],
       "remyLink": "https://remywiki.com/REVOLUTION",
       "jacket": "ddr_2013/RЁVOLUTIФN.png",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "REVOLUTION"
     },
     {
       "id": "QOPioi8P81q9l0QiP6q06b06bdOO8b1O",
       "name": "S!ck",
-      "name_translation": "Sick",
       "artist": "Eagle",
       "bpm": "88-177",
       "folder": "WHITE",
@@ -8643,7 +8659,8 @@
       "remyLink": "https://remywiki.com/S!ck",
       "jacket": "ddr_a/S!ck.png",
       "genre": "DRUMSTEP",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "Sick"
     },
     {
       "id": "dIQDOoO80odDP8OiOQIQ9oI0o99OdQDQ",
@@ -8835,7 +8852,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1290,
-          "sanbaiTier": 14.25
+          "sanbaiTier": 14.3
         },
         {
           "style": "single",
@@ -8982,7 +8999,7 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 1755,
-          "sanbaiTier": 16.4
+          "sanbaiTier": 16.35
         }
       ],
       "remyLink": "https://remywiki.com/Sector",
@@ -9069,7 +9086,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1647,
-          "sanbaiTier": 14.25
+          "sanbaiTier": 14.3
         }
       ],
       "flags": ["copyStrikes", "euLocked", "standard"],
@@ -9208,7 +9225,6 @@
     {
       "id": "Q6ql0lOOdq90DI1PqO1bd10bP0Oi8Q0Q",
       "name": "SILVER☆DREAM",
-      "name_translation": "SILVER DREAM",
       "artist": "jun",
       "bpm": "96-192",
       "folder": "CLASSIC",
@@ -9244,7 +9260,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2091,
-          "sanbaiTier": 18.6
+          "sanbaiTier": 18.65
         }
       ],
       "jacket": "ddr_a3/SISYPHUS.jpg",
@@ -9309,7 +9325,7 @@
       ],
       "remyLink": "https://remywiki.com/Snow_prism",
       "jacket": "ddr_x3/snow prism.png",
-      "genre": "SNOWY CORE/スノーウィーコア",
+      "genre": "SNOWY CORE/SNOWYCORE/スノーウィーコア",
       "flags": ["standard"]
     },
     {
@@ -9780,7 +9796,7 @@
           "sanbaiTier": 13.05
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/Struggle",
       "jacket": "ddr_2014/Struggle.png",
       "genre": "J-ハードコア/J-HARDCORE"
@@ -9839,7 +9855,7 @@
           "sanbaiTier": 13.25
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/SUPER_HEROINE!!",
       "jacket": "ddr_world/SUPER_HEROINE!!.jpg",
       "genre": "GENSOU FULLON/幻想フルオン"
@@ -10006,7 +10022,6 @@
     {
       "id": "iObdoO9b1O9o8dP8o0id9b1QioQ0q9q9",
       "name": "S・A・G・A",
-      "name_translation": "SAGA",
       "artist": "Veeton",
       "bpm": "200-243",
       "folder": "CLASSIC",
@@ -10021,7 +10036,8 @@
       ],
       "remyLink": "https://remywiki.com/S-A-G-A",
       "jacket": "ddr_x/S・A・G・A.png",
-      "flags": ["tricky"]
+      "flags": ["tricky"],
+      "search_hint": "SAGA"
     },
     {
       "id": "ibiD8868D116OIqbQ1DQ1IOb8OD1qQ98",
@@ -10073,7 +10089,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 1950,
-          "sanbaiTier": 16.55
+          "sanbaiTier": 16.5
         }
       ],
       "remyLink": "https://remywiki.com/Thank_You_Merry_Christmas",
@@ -10303,7 +10319,7 @@
           "diffClass": "challenge",
           "lvl": 14,
           "maxScore": 1392,
-          "sanbaiTier": 14.3,
+          "sanbaiTier": 14.25,
           "flags": ["euLocked"]
         }
       ],
@@ -10349,7 +10365,7 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 2256,
-          "sanbaiTier": 17.45
+          "sanbaiTier": 17.4
         }
       ],
       "jacket": "ddr_a3/Throw Out.jpg",
@@ -10566,14 +10582,16 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1659,
-          "flags": ["standard", "versionThemeOnly"]
+          "flags": ["standard", "versionThemeOnly"],
+          "sanbaiTier": 15.35
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 14,
           "maxScore": 1419,
-          "flags": ["shock", "tricky"]
+          "flags": ["shock", "tricky"],
+          "sanbaiTier": 14.65
         }
       ],
       "flags": ["unlock"],
@@ -10791,7 +10809,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "maxScore": 1185,
-          "sanbaiTier": 15.35,
+          "sanbaiTier": 15.3,
           "flags": ["euLocked"]
         }
       ],
@@ -10895,7 +10913,6 @@
     {
       "id": "oD6l698q0bQqoIOi0Dd66bqObII8QqDl",
       "name": "TRUE♥LOVE",
-      "name_translation": "TRUE LOVE",
       "artist": "jun feat. Schanita",
       "bpm": "188",
       "folder": "CLASSIC",
@@ -10935,7 +10952,6 @@
     {
       "id": "i0Q0o98q0DqbbiDd6966QIIoddlob6lI",
       "name": "TYPHØN",
-      "name_translation": "TYPHON",
       "artist": "BlackY",
       "bpm": "113-451",
       "folder": "GOLD",
@@ -10951,7 +10967,8 @@
       "remyLink": "https://remywiki.com/TYPHON",
       "jacket": "ddr_a20plus/TYPHON.jpg",
       "genre": "テンペストコア/TEMPEST CORE",
-      "flags": ["tricky"]
+      "flags": ["tricky"],
+      "search_hint": "TYPHON"
     },
     {
       "id": "8q68D8iP6lIdiP8bo9PoOib8lb9loIob",
@@ -10984,7 +11001,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1194,
-          "sanbaiTier": 15.5
+          "sanbaiTier": 15.45
         }
       ],
       "remyLink": "https://remywiki.com/Unreal",
@@ -11051,7 +11068,6 @@
     {
       "id": "Odbo96qo6o8PqDob6qD0oqI80diQ8PQd",
       "name": "UИKNØWNZ",
-      "name_translation": "UNKNOWNZ",
       "artist": "nora2r ＆ L.E.D.-G",
       "bpm": "116-232",
       "folder": "GOLD/WORLD",
@@ -11074,7 +11090,8 @@
       ],
       "flags": ["unlock", "standard"],
       "jacket": "ddr_world/UИKNØWNZ.jpg",
-      "remyLink": "https://remywiki.com/UNKNOWNZ"
+      "remyLink": "https://remywiki.com/UNKNOWNZ",
+      "search_hint": "UNKNOWNZ"
     },
     {
       "id": "Ilo6IboPOq8Q10qDOdDDoO6P989bPPi6",
@@ -11128,7 +11145,7 @@
           "diffClass": "expert",
           "lvl": 18,
           "maxScore": 2013,
-          "sanbaiTier": 18.45
+          "sanbaiTier": 18.5
         }
       ],
       "remyLink": "https://remywiki.com/Valkyrie_dimension",
@@ -11276,7 +11293,6 @@
     {
       "id": "I0091lboOD1Dii10dQ0qbDqil69PQ0io",
       "name": "WARNING×WARNING×WARNING",
-      "name_translation": "WARNINGxWARNINGxWARNING",
       "artist": "暁Records",
       "artist_translation": "Akatsuki Records",
       "bpm": "172",
@@ -11334,7 +11350,7 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 2091,
-          "sanbaiTier": 16.35
+          "sanbaiTier": 16.3
         }
       ],
       "jacket": "ddr_a3/White Stream.jpg",
@@ -11345,7 +11361,6 @@
       "id": "qI06bbQ1dloi0IIIO1IQ1q8bdPdl6l69",
       "name": "Wicked Plastik",
       "artist": "nc ft. Electric Touch",
-      "artist_translation": "nc ft. Electric Touch",
       "bpm": "145",
       "folder": "CLASSIC",
       "charts": [
@@ -11431,7 +11446,7 @@
           "diffClass": "expert",
           "lvl": 13,
           "maxScore": 1539,
-          "sanbaiTier": 13.65
+          "sanbaiTier": 13.6
         }
       ],
       "flags": ["flareRank", "standard"],
@@ -11641,7 +11656,8 @@
           "style": "single",
           "diffClass": "challenge",
           "lvl": 17,
-          "maxScore": 2277
+          "maxScore": 2277,
+          "sanbaiTier": 17.3
         }
       ],
       "jacket": "ddr_world/ZENDEGI DANCE.jpg",
@@ -11695,12 +11711,12 @@
       "remyLink": "https://remywiki.com/ZETA~sosuu_no_sekai_to_chouetsusha~",
       "jacket": "ddr_x2/ZETA～The World of Prime Numbers and the Transcendental Being～.png",
       "genre": "IDM",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "そすうのせかいとちょうえつしゃ"
     },
     {
       "id": "l6d0ibbliQPQDdb1lP18D9qbPDi1698b",
       "name": "ÆTHER",
-      "name_translation": "AETHER",
       "artist": "TAG underground",
       "bpm": "191-384",
       "folder": "WHITE",
@@ -11710,18 +11726,18 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2130,
-          "sanbaiTier": 17.35
+          "sanbaiTier": 17.3
         }
       ],
       "remyLink": "https://remywiki.com/AETHER",
       "jacket": "ddr_2014/ÆTHER.png",
       "genre": "ASTRAL HARDCORE",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "AETHER"
     },
     {
       "id": "I18Iolqio01IlPi9QIqPQ8Q9O6iOod0O",
       "name": "Ødyssey",
-      "name_translation": "Odyssey",
       "artist": "Kaname",
       "folder": "GOLD/WORLD",
       "bpm": "170",
@@ -11744,12 +11760,12 @@
       ],
       "flags": ["flareRank", "tricky"],
       "jacket": "ddr_world/Ødyssey.jpg",
-      "remyLink": "https://remywiki.com/Odyssey"
+      "remyLink": "https://remywiki.com/Odyssey",
+      "search_hint": "Odyssey"
     },
     {
       "id": "1oIo1DliQqPol00Q1l1bPODbdOilodod",
       "name": "Übertreffen",
-      "name_translation": "Ubertreffen",
       "artist": "TAKA respect for J.S.B.",
       "bpm": "174",
       "folder": "CLASSIC",
@@ -11773,12 +11789,12 @@
       "remyLink": "https://remywiki.com/Ubertreffen",
       "jacket": "ddr_x/Übertreffen.png",
       "genre": "PROGRESSIVE BAROQUE/プログレッシブバロック",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "Ubertreffen"
     },
     {
       "id": "QQldo10ObPPQPlliODiDIIl0Q1oPoo61",
       "name": "ΔMAX",
-      "name_translation": "deltaMAX",
       "artist": "DM Ashura",
       "bpm": "100-600",
       "folder": "CLASSIC",
@@ -11800,12 +11816,12 @@
       ],
       "remyLink": "https://remywiki.com/DeltaMAX",
       "jacket": "ddr_x2/ΔMAX.png",
-      "flags": ["tricky"]
+      "flags": ["tricky"],
+      "search_hint": "deltaMAX"
     },
     {
       "id": "P1boP1O60bdI16i6lqqd1Q8ioiPbolqd",
       "name": "ΩVERSOUL",
-      "name_translation": "OVERSOUL",
       "artist": "BlackY",
       "bpm": "155",
       "folder": "GOLD",
@@ -11815,18 +11831,19 @@
           "diffClass": "challenge",
           "lvl": 17,
           "maxScore": 2001,
-          "sanbaiTier": 17.15
+          "sanbaiTier": 17.2
         }
       ],
       "remyLink": "https://remywiki.com/OVERSOUL",
       "jacket": "ddr_a20/OVERSOUL.jpg",
       "genre": "ハイテックレイヴ/HI-TECH RAVE",
-      "flags": ["tricky"]
+      "flags": ["tricky"],
+      "search_hint": "OVERSOUL"
     },
     {
       "id": "q0QIob1PDI6IP86dlPb6I6il9d6bP606",
       "name": "†渚の小悪魔ラヴリィ～レイディオ†",
-      "name_translation": "Nagisa no koakuma Lovely Radio",
+      "name_translation": "†Nagisa no koakuma Lovely Radio†",
       "artist": "夏色ビキニのPrim",
       "artist_translation": "Natsuiro Bikini no Prim",
       "bpm": "190",
@@ -11848,7 +11865,6 @@
     {
       "id": "DqioIqbiolQ0lQlo19idi96Obi6DDl9D",
       "name": "♡Drive My Heart♡",
-      "name_translation": "Drive My Heart",
       "artist": "CHEAP CREAM",
       "bpm": "145",
       "folder": "GOLD",
@@ -11921,7 +11937,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1800,
-          "sanbaiTier": 15.15
+          "sanbaiTier": 15.1
         }
       ],
       "jacket": "ddr_world/きらきら☆ユニバース.jpg",
@@ -11973,7 +11989,7 @@
     {
       "id": "biqbD9I9q9D16i0i1Idb9d111l1QDq86",
       "name": "ちくわパフェだよ☆ＣＫＰ",
-      "name_translation": "Chikuwa parfait da yo CKP",
+      "name_translation": "Chikuwa Parfait Dayo CKP",
       "artist": "日向美ビタースイーツ♪",
       "artist_translation": "Hinatabi Bitter Sweets",
       "bpm": "205",
@@ -11995,7 +12011,7 @@
     {
       "id": "I8qDQbQoiPPi9D1bdQ6iOlqb0Il9DlI0",
       "name": "ちくわパフェだよ☆ＣＫＰ (Yvya Remix)",
-      "name_translation": "Chikuwa Parfait Dayo CKP Yvya Remix",
+      "name_translation": "Chikuwa Parfait Dayo CKP (Yvya Remix)",
       "artist": "Remixed by BEMANI Sound Team \"Yvya\"",
       "folder": "GOLD",
       "bpm": "205",
@@ -12011,7 +12027,6 @@
       "jacket": "ddr_a3/ちくわパフェだよ☆ＣＫＰ (Yvya Remix).jpg",
       "remyLink": "https://remywiki.com/Chikuwa_parfait_da_yo_CKP_(Yvya_Remix)",
       "genre": "スイーツプログレメタル/SWEET'S PROGRESSIVE METAL",
-      "search_hint": "ちくわぱふぇだよCKP Yvya Remix",
       "flags": ["standard"]
     },
     {
@@ -12091,7 +12106,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1425,
-          "sanbaiTier": 14.3
+          "sanbaiTier": 14.35
         }
       ],
       "jacket": "ddr_world/まにぃまにあ××.jpg",
@@ -12123,7 +12138,7 @@
     {
       "id": "6QQ1OdO99Ob001OQ90iP86o0I8OoQbib",
       "name": "めうめうぺったんたん！！ (ZAQUVA Remix)",
-      "name_translation": "Meumeupettantan ZAQUVA Remix",
+      "name_translation": "Meu Meu Pettantan!! (ZAQUVA Remix)",
       "artist": "Remixed by BEMANI Sound Team \"ZAQUVA\"",
       "folder": "GOLD",
       "bpm": "200",
@@ -12161,7 +12176,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 16,
-          "maxScore": 2115
+          "maxScore": 2115,
+          "sanbaiTier": 16.35
         }
       ],
       "flags": ["unlock", "standard"],
@@ -12224,7 +12240,7 @@
           "diffClass": "expert",
           "lvl": 13,
           "maxScore": 1497,
-          "sanbaiTier": 13.4
+          "sanbaiTier": 13.35
         }
       ],
       "flags": ["euLocked"],
@@ -12238,7 +12254,7 @@
       "name": "ウサテイ",
       "name_translation": "Usatei",
       "artist": "ビートまりお(COOL&CREATE)",
-      "artist_translation": "Amane+Beat Mario(COOL&CREATE)",
+      "artist_translation": "beatMARIO(COOL&CREATE)",
       "bpm": "190",
       "folder": "GOLD/POPULAR",
       "charts": [
@@ -12323,7 +12339,7 @@
       "remyLink": "https://remywiki.com/Catharsis_no_tsuki",
       "genre": "EMOTIONAL DUO/エモーショナルデュオ",
       "search_hint": "かたるしすのつき",
-      "flags": ["tricky"]
+      "flags": ["tricky", "euLocked"]
     },
     {
       "id": "Pd0DloPI90iQQqO9bdbbPq6Q8iP0l6Pi",
@@ -12337,13 +12353,15 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 1839
+          "maxScore": 1839,
+          "sanbaiTier": 14.65
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 17,
-          "maxScore": 2463
+          "maxScore": 2463,
+          "sanbaiTier": 17.35
         }
       ],
       "flags": ["euLocked", "tricky"],
@@ -12356,7 +12374,7 @@
       "name": "クリムゾンゲイト",
       "name_translation": "Crimson Gate",
       "artist": "工藤吉三（ベイシスケイプ）",
-      "artist_translation": "Kichizo Kudo (Basis Cape)",
+      "artist_translation": "Yoshimi Kudo (Basiscape)",
       "bpm": "198",
       "folder": "WHITE",
       "charts": [
@@ -12548,10 +12566,10 @@
     {
       "id": "1liPbq0890qqI0D8qDP9diOOPlDdi0Oi",
       "name": "スカーレット警察のゲットーパトロール24時",
-      "name_translation": "Scarlet keisatsu no ghetto patrol 24 ji",
+      "name_translation": "SCARLET POLICE on GHETTO PATROL",
       "artist": "七条レタスグループ",
       "artist_translation": "Shichijou Lettuce Group",
-      "search_hint": "scarlet police",
+      "search_hint": "Scarlet keisatsu no ghetto patrol 24 ji/すかーれっとけいさつのげっとーぱとろーる24じ",
       "bpm": "160",
       "folder": "GOLD/POPULAR",
       "charts": [
@@ -12633,7 +12651,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1590,
-          "sanbaiTier": 14.55,
+          "sanbaiTier": 14.6,
           "flags": ["excludedVersionTheme"]
         },
         {
@@ -12645,7 +12663,7 @@
           "flags": ["standard"]
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/Setsuna_trip",
       "jacket": "ddr_2014/Setsuna Trip.png"
     },
@@ -12705,7 +12723,7 @@
       "flags": ["copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_kyoushitsu",
       "jacket": "ddr_a/Cirno's Perfect Math Class.png",
-      "genre": ""
+      "artist_translation": "ARM + Yoshimi Youno feat. miko"
     },
     {
       "id": "Q96Qo0qbQ81odQoqPOOQ98oDbo6Pb1IO",
@@ -12723,7 +12741,7 @@
           "sanbaiTier": 13.75
         }
       ],
-      "flags": ["tricky"],
+      "flags": ["tricky", "copyStrikes", "euLocked"],
       "remyLink": "https://remywiki.com/Cirno_no_perfect_sansuu_kyoushitsu_(EDM_REMIX)",
       "jacket": "ddr_a/Cirno's Perfect Math Class (EDM REMIX).png"
     },
@@ -12752,7 +12770,7 @@
     {
       "id": "Qqd8ObO96dIQ60808diOOqbdb6boQodO",
       "name": "トラウマ催眠少女さとり！",
-      "name_translation": "Trauma Saimin Shoujo Satori",
+      "name_translation": "Trauma Saimin Shoujo Satori!",
       "artist": "Covered by TOCORO十",
       "artist_translation": "Covered by TOCOROTEN",
       "folder": "POPULAR",
@@ -12854,7 +12872,7 @@
       "name": "ナイト・オブ・ナイツ",
       "name_translation": "Night of Nights",
       "artist": "ビートまりお(COOL&CREATE)",
-      "artist_translation": "Beat Mario (COOL&CREATE)",
+      "artist_translation": "beatMARIO (COOL&CREATE)",
       "bpm": "180",
       "folder": "POPULAR",
       "charts": [
@@ -12870,7 +12888,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 2172,
-          "sanbaiTier": 16.4
+          "sanbaiTier": 16.35
         }
       ],
       "flags": ["copyStrikes", "euLocked"],
@@ -12972,7 +12990,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2565,
-          "sanbaiTier": 18.05
+          "sanbaiTier": 18.1
         }
       ],
       "flags": ["unlock", "tricky"],
@@ -13053,7 +13071,7 @@
           "sanbaiTier": 18.25
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/BambooSword_Girl",
       "jacket": "ddr_2014/Bamboo Sword Girl.png",
       "genre": "J-スピードメタル/J-SPEEDMETAL"
@@ -13172,7 +13190,7 @@
           "sanbaiTier": 17.05
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/Plain_Asia_-PHQ_remix-",
       "jacket": "ddr_a/Plain Asia -PHQ remix-.png"
     },
@@ -13214,7 +13232,7 @@
           "sanbaiTier": 13.25
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/Homeneko_sensation",
       "jacket": "ddr_2014/Homeneko Sensation.png"
     },
@@ -13253,7 +13271,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1692,
-          "sanbaiTier": 15.25
+          "sanbaiTier": 15.3
         }
       ],
       "flags": ["euLocked", "standard"],
@@ -13276,7 +13294,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 1896,
-          "sanbaiTier": 16.65
+          "sanbaiTier": 16.6
         }
       ],
       "jacket": "ddr_a3/ポラリスノウタ.jpg",
@@ -13363,7 +13381,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1593,
-          "sanbaiTier": 15.7
+          "sanbaiTier": 15.65
         }
       ],
       "jacket": "ddr_world/ムラサキグルマ.jpg",
@@ -13375,7 +13393,7 @@
       "name": "メズマライザー",
       "name_translation": "Mesmerizer",
       "artist": "サツキ feat.初音ミク・重音テト",
-      "artist_translation": "Satsuki",
+      "artist_translation": "Satsuki feat. Hatsune Miku & Kasane Teto",
       "folder": "POPULAR",
       "bpm": "185",
       "charts": [
@@ -13426,7 +13444,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1524,
-          "sanbaiTier": 15.4
+          "sanbaiTier": 15.45
         }
       ],
       "remyLink": "https://remywiki.com/Yasaimashi_ninniku_abura_oome",
@@ -13467,7 +13485,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 2076
+          "maxScore": 2076,
+          "sanbaiTier": 14.35
         }
       ],
       "flags": ["euLocked", "standard"],
@@ -13495,7 +13514,7 @@
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 2136,
-          "sanbaiTier": 16.45
+          "sanbaiTier": 16.4
         }
       ],
       "flags": ["euLocked"],
@@ -13571,7 +13590,7 @@
       "name": "リリーゼと炎龍レーヴァテイン",
       "name_translation": "Lilieze to Enryu Laevateinn",
       "artist": "黒猫ダンジョン",
-      "artist_translation": "Kuroneko Dungeon",
+      "artist_translation": "Black Cat Labyrinth",
       "bpm": "200",
       "folder": "GOLD",
       "charts": [
@@ -13611,7 +13630,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1551,
-          "sanbaiTier": 14.85
+          "sanbaiTier": 14.9
         }
       ],
       "flags": ["unlock", "standard"],
@@ -13667,7 +13686,7 @@
       "name": "ロールプレイングゲーム",
       "name_translation": "Role playing game",
       "artist": "そらまふうらさか",
-      "artist_translation": " Soraru, Mafumafu, Uratanuki, Aho no Sakata",
+      "artist_translation": "Soraru, Mafumafu, Uratanuki, Aho no Sakata",
       "bpm": "162",
       "folder": "POPULAR",
       "charts": [
@@ -13714,7 +13733,7 @@
     {
       "id": "i8O81i0iQdqiI8qqP0oo8IPl9IoId1bO",
       "name": "不沈艦CANDY",
-      "name_translation": "Fuchinkan CANDY",
+      "name_translation": "Yellow CANDY",
       "artist": "Risk Junk",
       "bpm": "94-188",
       "folder": "CLASSIC",
@@ -13730,7 +13749,8 @@
       "remyLink": "https://remywiki.com/Fuchinkan_CANDY",
       "jacket": "ddr_x2/Fuchinkan CANDY.png",
       "genre": "HARDCORE",
-      "flags": ["standard"]
+      "flags": ["standard"],
+      "search_hint": "Fuchinkan CANDY/ふちんかんCANDY"
     },
     {
       "id": "l9QibD8IoooD9DIl1O8Q0lo89I9qdido",
@@ -13823,7 +13843,7 @@
       "name": "共犯ヘヴンズコード",
       "name_translation": "Kyohan Heaven's Code",
       "artist": "D-Evoke（与那嶺雅人/小日向翔）",
-      "artist_translation": "D-Evoke(Masato Yonamine/Sho Kohinata)",
+      "artist_translation": "D-Evoke (Masato Yonamine/Sho Kohinata)",
       "bpm": "219",
       "folder": "GOLD",
       "charts": [
@@ -13984,7 +14004,7 @@
     {
       "id": "loQ0Ibqqo8OO11oI9i9D6o0DDI0PDiOO",
       "name": "千客万来☆無問題！",
-      "name_translation": "Senkyakubanrai Moumantai",
+      "name_translation": "Senkyakubanrai Moumantai!",
       "artist": "ここなつ Produced by uma",
       "artist_translation": "Coconatsu Produced by uma",
       "folder": "GOLD",
@@ -14037,13 +14057,15 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1461,
-          "flags": ["versionThemeOnly"]
+          "flags": ["versionThemeOnly"],
+          "sanbaiTier": 15.3
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 17,
-          "maxScore": 2097
+          "maxScore": 2097,
+          "sanbaiTier": 17.3
         }
       ],
       "flags": ["unlock", "standard"],
@@ -14143,14 +14165,16 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 2052
+          "maxScore": 2052,
+          "sanbaiTier": 14.65
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 16,
           "maxScore": 2520,
-          "bpm": "34-208"
+          "bpm": "34-208",
+          "sanbaiTier": 16.8
         }
       ],
       "flags": ["euLocked", "tricky"],
@@ -14163,7 +14187,6 @@
       "name": "大見解",
       "name_translation": "DAIKENKAI",
       "artist": "Des-ROW feat. TSUBOI for ALPHA",
-      "artist_translation": "Des-ROW",
       "bpm": "143-172",
       "folder": "CLASSIC",
       "charts": [
@@ -14213,7 +14236,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 14,
-          "maxScore": 1485
+          "maxScore": 1485,
+          "sanbaiTier": 14.35
         }
       ],
       "flags": ["unlock", "standard"],
@@ -14256,7 +14280,7 @@
           "sanbaiTier": 14.25
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "euLocked"],
       "remyLink": "https://remywiki.com/Ayakashi_kakushi",
       "jacket": "ddr_2014/Ayakashi kakushi.png",
       "genre": "ドラムンワルツ/DRUM'N'WALTZ"
@@ -14304,7 +14328,7 @@
     {
       "id": "D11ldIqD8dQIi9oQQIIo86QOI8D9olP8",
       "name": "幸せになれる隠しコマンドがあるらしい",
-      "name_translation": "Shiawase ni nareru kakushi command ga arurashii",
+      "name_translation": "Apparently There's a Cheat Code to Happiness",
       "artist": "うたたP feat. 結月ゆかり",
       "artist_translation": "UtataP feat. Yukari Yuzuki",
       "bpm": "142",
@@ -14321,7 +14345,7 @@
       "flags": ["euLocked"],
       "remyLink": "https://remywiki.com/Shiawase_ni_nareru_kakushi_command_ga_arurashii",
       "jacket": "ddr_a/Apparently There's a Cheat Code to Happiness.png",
-      "search_hint": "Apparently There's a Cheat Code to Happiness"
+      "search_hint": "Shiawase ni nareru kakushi command ga arurashii/しあわせになれるかくしこまんどがあるらしい"
     },
     {
       "id": "ild9d0O9D09dlOP986089i9POPDoP6iD",
@@ -14336,7 +14360,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1488,
-          "sanbaiTier": 14.7
+          "sanbaiTier": 14.75
         }
       ],
       "flags": ["unlock", "standard"],
@@ -14348,7 +14372,7 @@
       "name": "弾幕信仰",
       "name_translation": "Danmaku shinkou",
       "artist": "豚乙女×BEMANI Sound Team \"PON\"",
-      "artist_translation": "butaotome×BEMANI Sound Tea",
+      "artist_translation": "butaotome×BEMANI Sound Team \"PON\"",
       "bpm": "170",
       "folder": "GOLD/WORLD",
       "charts": [
@@ -14420,7 +14444,7 @@
       "name": "恋の氷結おてんば湯けむりチルノ温泉",
       "name_translation": "Koi no hyoketsu otenba yukemuri Cirno onsen",
       "artist": "uno & 夕野ヨシミ feat. miko",
-      "artist_translation": "uno & youno yoshimi feat. miko",
+      "artist_translation": "uno & Youno Yoshimi feat. miko",
       "bpm": "57-188",
       "folder": "GOLD/POPULAR",
       "charts": [
@@ -14471,7 +14495,7 @@
           "diffClass": "challenge",
           "lvl": 15,
           "maxScore": 1911,
-          "sanbaiTier": 15.6
+          "sanbaiTier": 15.55
         }
       ],
       "remyLink": "https://remywiki.com/Renaikansoku",
@@ -14565,7 +14589,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1944,
-          "sanbaiTier": 14.65,
+          "sanbaiTier": 14.7,
           "flags": ["excludedVersionTheme"]
         },
         {
@@ -14609,7 +14633,7 @@
       "name": "打打打打打打打打打打",
       "name_translation": "Dadadadadadadadadada",
       "artist": "ヒゲドライバー join. SELEN",
-      "artist_translation": "Higedoraiba join. SELEN",
+      "artist_translation": "Hige Driver join. SELEN",
       "bpm": "156",
       "folder": "WHITE",
       "charts": [
@@ -14745,7 +14769,7 @@
       "name": "最終鬼畜妹フランドール・Ｓ",
       "name_translation": "Saishuu kichiku imouto Flandre-S",
       "artist": "ビートまりお(COOL&CREATE)",
-      "artist_translation": "Beat Mario(COOL&CREATE)",
+      "artist_translation": "beatMARIO(COOL&CREATE)",
       "bpm": "200",
       "folder": "POPULAR",
       "charts": [
@@ -14783,7 +14807,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2259,
-          "sanbaiTier": 18.05,
+          "sanbaiTier": 18.1,
           "flags": ["standard"]
         }
       ],
@@ -14941,7 +14965,7 @@
           "sanbaiTier": 13.2
         }
       ],
-      "flags": ["standard"],
+      "flags": ["standard", "unlock"],
       "jacket": "ddr_world/水槽のクジラ.jpg",
       "remyLink": "https://remywiki.com/Suisou_no_kujira",
       "search_hint": "すいそうのくじら"
@@ -15071,7 +15095,7 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2685,
-          "sanbaiTier": 18.8
+          "sanbaiTier": 18.85
         }
       ],
       "remyLink": "https://remywiki.com/Shakunetsu_Pt.2_Long_Train_Running",
@@ -15142,7 +15166,8 @@
           "style": "single",
           "diffClass": "expert",
           "lvl": 15,
-          "maxScore": 1707
+          "maxScore": 1707,
+          "sanbaiTier": 15.95
         }
       ],
       "flags": ["euLocked"],
@@ -15208,13 +15233,14 @@
           "diffClass": "expert",
           "lvl": 17,
           "maxScore": 2106,
-          "sanbaiTier": 17.25
+          "sanbaiTier": 17.2
         },
         {
           "style": "single",
           "diffClass": "challenge",
           "lvl": 18,
-          "maxScore": 2475
+          "maxScore": 2475,
+          "sanbaiTier": 18.3
         }
       ],
       "jacket": "ddr_world/疾風迅雷.jpg",
@@ -15248,7 +15274,7 @@
       "name": "突撃！ガラスのニーソ姫！",
       "name_translation": "Totsugeki! Glass no Nisohime!",
       "artist": "山本椛 (monotone)",
-      "artist_translation": "Monotone",
+      "artist_translation": "Momiji Yamamoto (monotone)",
       "bpm": "185",
       "folder": "WHITE",
       "charts": [
@@ -15367,7 +15393,7 @@
           "diffClass": "expert",
           "lvl": 14,
           "maxScore": 1272,
-          "sanbaiTier": 14.95
+          "sanbaiTier": 14.9
         },
         {
           "style": "single",
@@ -15420,7 +15446,7 @@
           "sanbaiTier": 16.5
         }
       ],
-      "flags": ["unlock", "standard"],
+      "flags": ["standard", "euLocked"],
       "jacket": "ddr_world/蛇神.jpg",
       "remyLink": "https://remywiki.com/Kagachi",
       "genre": "ORIENTAL MYTHOLOGY",
@@ -15609,14 +15635,14 @@
           "diffClass": "challenge",
           "lvl": 18,
           "maxScore": 2388,
-          "sanbaiTier": 18.75
+          "sanbaiTier": 18.8
         }
       ],
       "jacket": "ddr_world/逆月.jpg",
       "remyLink": "https://remywiki.com/Sakazuki",
       "genre": "JAPANESQUE",
       "search_hint": "さかづき",
-      "flags": ["unlock", "standard"]
+      "flags": ["standard", "euLocked"]
     },
     {
       "id": "88lIDIi1Pi0IObl8D9oblqQ9PPdI1DqI",
@@ -15741,7 +15767,7 @@
       "name": "阿波おどり -Awaodori- やっぱり踊りはやめられない",
       "name_translation": "Awaodori yappari odori ha yamerarenai",
       "artist": "U1 ミライダガッキ連と矢印連",
-      "artist_translation": "UI miraidagakkiren to yajirushiren",
+      "artist_translation": "U1 miraidagakki-ren to yajirushi-ren",
       "bpm": "120-260",
       "folder": "WHITE",
       "charts": [
@@ -15783,7 +15809,7 @@
       "name": "雪上断火",
       "name_translation": "Setsujou Danka",
       "artist": "Des-ROW・組",
-      "artist_translation": "Des-ROW Gumi",
+      "artist_translation": "Des-ROW United",
       "folder": "GOLD",
       "bpm": "105-180",
       "charts": [
@@ -15802,7 +15828,7 @@
           "sanbaiTier": 16.3
         }
       ],
-      "flags": ["unlock", "standard"],
+      "flags": ["standard", "euLocked"],
       "jacket": "ddr_world/雪上断火.jpg",
       "remyLink": "https://remywiki.com/Setsujou_danka",
       "genre": "HIP ROCK 3/ヒップロック3",
@@ -15822,7 +15848,7 @@
           "diffClass": "expert",
           "lvl": 15,
           "maxScore": 1593,
-          "sanbaiTier": 15.5
+          "sanbaiTier": 15.55
         }
       ],
       "flags": ["unlock"],
@@ -15847,7 +15873,8 @@
       ],
       "remyLink": "https://remywiki.com/Kakumei",
       "jacket": "ddr_x/KAKUMEI (X-Special).png",
-      "flags": ["tricky"]
+      "flags": ["tricky"],
+      "genre": "ORCHESTRAL"
     },
     {
       "id": "l1lO999PqIboPQOD86PDQo1ol1iIiiOi",
@@ -16004,7 +16031,6 @@
     {
       "id": "D1QDql1OQDl1dblId0P81Q999dO9POoP",
       "name": "ｍｅｍｏｒｙ／／ＤＡＴＡＭＯＳＨＥＲ",
-      "name_translation": "Memory DATAMOSHER",
       "artist": "SYSTEM VALKYRIE:type-overdrive",
       "folder": "GOLD",
       "bpm": "115-460",
@@ -16014,12 +16040,13 @@
           "diffClass": "expert",
           "lvl": 16,
           "maxScore": 1869,
-          "sanbaiTier": 16.9
+          "sanbaiTier": 16.85
         }
       ],
       "jacket": "ddr_a3/ｍｅｍｏｒｙ／／ＤＡＴＡＭＯＳＨＥＲ.jpg",
       "remyLink": "https://remywiki.com/Memory//DATAMOSHER",
-      "flags": ["tricky"]
+      "flags": ["tricky"],
+      "search_hint": "memory DATAMOSHER"
     }
   ]
 }

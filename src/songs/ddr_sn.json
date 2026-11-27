@@ -11,7 +11,7 @@
       { "key": "challenge", "color": "#cc71e8" }
     ],
     "flags": ["jp_only", "licensed"],
-    "lastUpdated": 1762744816215
+    "lastUpdated": 1795052608168
   },
   "defaults": {
     "style": "single",
@@ -64,7 +64,6 @@
     {
       "id": "IQ0dIiDql9Q68d9ddQIiQbq1OPq8Db69",
       "name": ".59",
-      "name_translation": "tengoku",
       "artist": "dj TAKA",
       "bpm": "135",
       "folder": "beatmaniaIIDX",
@@ -79,7 +78,8 @@
       ],
       "remyLink": "https://remywiki.com/.59",
       "jacket": "banner/ddr_4th/59.png",
-      "genre": "CHILL OUT"
+      "genre": "CHILL OUT",
+      "search_hint": "tengoku/てんごく"
     },
     {
       "id": "ddOOOibQ6qIi9DI1bl8b108I1Ib6QDl9",
@@ -116,8 +116,7 @@
       ],
       "remyLink": "https://remywiki.com/20,november",
       "jacket": "banner/ddr_2nd/20,november.png",
-      "genre": "HOUSE",
-      "search_hint": "HOUSE/ハウス"
+      "genre": "HOUSE/ハウス"
     },
     {
       "id": "Q96bO9D61lib19IiIi0i69P80bo6q69Q",
@@ -136,8 +135,7 @@
       ],
       "remyLink": "https://remywiki.com/321_STARS",
       "jacket": "banner/ddr_ext/321 STARS.png",
-      "genre": "TECHNO POP",
-      "search_hint": "TECHNO POP/テクノポップ"
+      "genre": "TECHNO POP/テクノポップ"
     },
     {
       "id": "165ba3a418d0e80d",
@@ -341,8 +339,7 @@
       ],
       "remyLink": "https://remywiki.com/AFRONOVA_PRIMEVAL",
       "jacket": "banner/ddr_5th/AFRONOVA PRIMEVAL.png",
-      "genre": "トライバル",
-      "search_hint": "TRIBAL/トライバル"
+      "genre": "TRIBAL/トライバル"
     },
     {
       "id": "Qo9P1oOoDQIoOb8Dd0PdOdoD1D1Pbd8D",
@@ -591,8 +588,7 @@
       ],
       "remyLink": "https://remywiki.com/BALALAIKA,CARRIED_WITH_THE_WIND",
       "jacket": "banner/ddr_sn/BALALAIKA, CARRIED WITH THE WIND.jpg",
-      "genre": "ロシアンポップ",
-      "search_hint": "RUSSIAN POP/ロシアンポップ"
+      "genre": "RUSSIAN POP/ロシアンポップ"
     },
     {
       "id": "ObP1P1OoDII9b9ll698Q981ilIddb8Id",
@@ -692,7 +688,6 @@
     {
       "id": "bqQ1OQDidQD8QbIqql06O6o1QD6oOodP",
       "name": "BRE∀K DOWN!",
-      "name_translation": "BREAK DOWN!",
       "artist": "BeForU",
       "bpm": "190",
       "folder": "DDRMAX2",
@@ -706,7 +701,9 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/BREAK_DOWN!",
-      "jacket": "banner/ddrmax2/BREAK DOWN!.png"
+      "jacket": "banner/ddrmax2/BREAK DOWN!.png",
+      "genre": "GIRLS ROCK/ガールズロック",
+      "search_hint": "BREAK DOWN!"
     },
     {
       "id": "DblIbDd6lQQQoO9bloOI9iIqO1IiQoID",
@@ -977,8 +974,7 @@
       ],
       "remyLink": "https://remywiki.com/CANDY_(Riyu_Kosaka)",
       "jacket": "banner/ddrmax2/CANDY♥.png",
-      "genre": "CANDY POP",
-      "search_hint": "CANDY POP/キャンディポップ"
+      "genre": "CANDY POP/キャンディポップ"
     },
     {
       "id": "796cf9919080e11a",
@@ -1107,8 +1103,7 @@
       ],
       "remyLink": "https://remywiki.com/Colors_~for_EXTREME~",
       "jacket": "banner/ddr_ext/Colors(for EXTREME).png",
-      "genre": "TRANCE",
-      "search_hint": "TRANCE/トランス"
+      "genre": "TRANCE/トランス"
     },
     {
       "id": "e270e5d141e3eef0",
@@ -1145,8 +1140,7 @@
       ],
       "remyLink": "https://remywiki.com/CURUS",
       "jacket": "banner/ddr_sn/CURUS.jpg",
-      "genre": "FLOW BEAT",
-      "search_hint": "FLOW BEAT/フロウビート"
+      "genre": "FLOW BEAT/フロウビート"
     },
     {
       "id": "di9ddbd1lb80q98ODdod0ODQ0q6PdQP1",
@@ -1297,8 +1291,7 @@
       ],
       "remyLink": "https://remywiki.com/Destiny_lovers",
       "jacket": "banner/ddr_ext/Destiny lovers.png",
-      "genre": "J-POP",
-      "search_hint": "J-POP/J-ポップ"
+      "genre": "J-POP/J-ポップ"
     },
     {
       "id": "8Pb6oPdbO6lo8lbiQ181IDidI9ll8q80",
@@ -1320,7 +1313,7 @@
       "jacket": "banner/ddrmax2/DIVE TO THE NIGHT.png"
     },
     {
-      "id": "14797314d1663ebe",
+      "id": "9c52afe715848c47",
       "name": "DIVE(more deep & deeper style)",
       "artist": "BeForU",
       "bpm": "155",
@@ -1845,8 +1838,7 @@
       ],
       "remyLink": "https://remywiki.com/Feeling_of_love",
       "jacket": "banner/ddr_ext/feeling of love.png",
-      "genre": "HOUSE",
-      "search_hint": "HOUSE/ハウス"
+      "genre": "HOUSE/ハウス"
     },
     {
       "id": "86c7dafb6a596c64",
@@ -1902,8 +1894,7 @@
       ],
       "remyLink": "https://remywiki.com/Flow_(Scotty_D._revisits_U1)",
       "jacket": "banner/ddr_sn/Flow.jpg",
-      "genre": "オービタリックテクノ",
-      "search_hint": "Orbitalic Techno/オービタリックテクノ"
+      "genre": "Orbitalic Techno/オービタリックテクノ"
     },
     {
       "id": "0D096II0i9l0doPlbPQbiPo1IQDDoOP0",
@@ -1924,8 +1915,7 @@
       ],
       "remyLink": "https://remywiki.com/Flow_(Scotty_D._revisits_U1)",
       "jacket": "banner/ddr_sn/Flow (True Style).jpg",
-      "genre": "オービタリックテクノ",
-      "search_hint": "Orbitalic Techno/オービタリックテクノ"
+      "genre": "Orbitalic Techno/オービタリックテクノ"
     },
     {
       "id": "d96OiPiOIboqI8o6PIDO8D9qPb9P18il",
@@ -2034,8 +2024,7 @@
       ],
       "remyLink": "https://remywiki.com/Gamelan_de_Couple",
       "jacket": "banner/ddr_ext/Gamelan de Couple.png",
-      "genre": "GAMELAN TRANCE",
-      "search_hint": "GAMELAN TRANCE/ガムラントランス"
+      "genre": "GAMELAN TRANCE/ガムラントランス"
     },
     {
       "id": "Dq0Iio09Pb9iD0lbb0I0qd8Q8i10II09",
@@ -2057,7 +2046,7 @@
       "genre": "TRANCE"
     },
     {
-      "id": "eb4d609725e6ccf4",
+      "id": "87f8069a50407d4b",
       "name": "gentle stress(SENSUAL MIX)",
       "artist": "MR. DOG feat. DJ Swan",
       "bpm": "160",
@@ -2185,8 +2174,7 @@
       ],
       "remyLink": "https://remywiki.com/GRADUATION_~sorezore_no_ashita~",
       "jacket": "banner/ddr_ext/GRADUATION~SOREZORE NO ASHITA~.png",
-      "genre": "卒業",
-      "search_hint": "卒業 from DDR"
+      "genre": "卒業 from DDR"
     },
     {
       "id": "f8a804b6520b6cb6",
@@ -2246,7 +2234,6 @@
     {
       "id": "8DdIqobi0liOPDO1qld6lQ9Dq00I66qi",
       "name": "HAPPY☆ANGEL",
-      "name_translation": "HAPPY ANGEL",
       "artist": "jun with TAHIRIH",
       "bpm": "180",
       "folder": "DDR SuperNOVA",
@@ -2409,7 +2396,6 @@
     {
       "id": "79a11f56ab203ae4",
       "name": "HONEY♂PUNCH",
-      "name_translation": "HONEY PUNCH",
       "artist": "小坂りゆ",
       "artist_translation": "KOSAKA RIYU",
       "bpm": "175",
@@ -2425,8 +2411,7 @@
       ],
       "remyLink": "https://remywiki.com/HONEY_PUNCH",
       "jacket": "banner/ddr_sn/HONEY♂PUNCH.jpg",
-      "genre": "J-HAPPY HARDCORE",
-      "search_hint": "ハッピーダンスポップ/HAPPY DANCE POP"
+      "genre": "J-HAPPY HARDCORE/ハッピーダンスポップ/HAPPY DANCE POP"
     },
     {
       "id": "af0bebd8bb3a478b",
@@ -2721,7 +2706,7 @@
       "jacket": "banner/ddr_2nd/Jam Jam Reggae.png"
     },
     {
-      "id": "857b7e931cb29e4e",
+      "id": "e4540c032101eb8e",
       "name": "Jam Jam Reggae ～AMD SWING MIX～",
       "artist": "RICE.C feat. jam master '73",
       "bpm": "90",
@@ -2792,8 +2777,7 @@
       ],
       "remyLink": "https://remywiki.com/JET_WORLD",
       "jacket": "banner/ddr_ext/JET WORLD.png",
-      "genre": "HARD COUNTRY",
-      "search_hint": "HARD COUNTRY/ハードカントリー"
+      "genre": "HARD COUNTRY/ハードカントリー"
     },
     {
       "id": "da9691d384736c8a",
@@ -2886,8 +2870,7 @@
       ],
       "remyLink": "https://remywiki.com/KISS_KISS_KISS",
       "jacket": "banner/ddr_ext/KISS KISS KISS.png",
-      "genre": "HYPER EUROBEAT",
-      "search_hint": "HYPER EUROBEAT/ハイパーユーロビート"
+      "genre": "HYPER EUROBEAT/ハイパーユーロビート"
     },
     {
       "id": "iOqb60DOOolIioDIOPi09P91i8PDiOqq",
@@ -2911,7 +2894,6 @@
     {
       "id": "f1e78d1e5a822bdc",
       "name": "KI・SE・KI (DDR edit)",
-      "name_translation": "KISEKI (DDR edit)",
       "artist": "BeForU",
       "bpm": "155",
       "folder": "DDR SuperNOVA",
@@ -2946,8 +2928,7 @@
       ],
       "remyLink": "https://remywiki.com/Knock_Out_Regrets",
       "jacket": "banner/ddr_sn/Knock Out Regrets.jpg",
-      "genre": "パンキッシュガール",
-      "search_hint": "パンキッシュガール/PUNKISH GIRL"
+      "genre": "パンキッシュガール/PUNKISH GIRL"
     },
     {
       "id": "8IIoIQQqlooiI6QD9ldIO6qidP98QP68",
@@ -3007,7 +2988,6 @@
     {
       "id": "901q61iP6lPiDqIQoQod9PDqlOPq1bb9",
       "name": "La Señorita",
-      "name_translation": "La Senorita",
       "artist": "CAPTAIN. T",
       "bpm": "182",
       "folder": "DDR 3rdMix",
@@ -3021,12 +3001,12 @@
         { "lvl": 9, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita",
-      "jacket": "banner/ddr_3rd/La Senorita.png"
+      "jacket": "banner/ddr_3rd/La Senorita.png",
+      "search_hint": "La Senorita"
     },
     {
       "id": "boP0i08bqQ9d9OoP8Ol6I0l9Po01DiQb",
       "name": "La Señorita Virtual",
-      "name_translation": "La Senorita Virtual",
       "artist": "2MB",
       "bpm": "182",
       "folder": "CS DDR",
@@ -3040,7 +3020,8 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/La_Senorita_Virtual",
-      "jacket": "banner/ddr_3rd/La Senorita Virtual.png"
+      "jacket": "banner/ddr_3rd/La Senorita Virtual.png",
+      "search_hint": "La Senorita Virtual"
     },
     {
       "id": "8lDOiqP0biD8dD9lOQO619i1PqbqDiP8",
@@ -3136,7 +3117,7 @@
       "jacket": "banner/ddrmax/Look To The Sky.png"
     },
     {
-      "id": "1894377d93ea86b3",
+      "id": "5eae859563caae53",
       "name": "Look To The Sky(True Color Mix)",
       "artist": "SySF. feat. ANNA",
       "bpm": "140",
@@ -3210,8 +3191,7 @@
       ],
       "remyLink": "https://remywiki.com/LOVE_IS_ORANGE",
       "jacket": "banner/ddr_sn/LOVE IS ORANGE.jpg",
-      "genre": "HARD CHANSON",
-      "search_hint": "HARD CHANSON/ハードシャンソン"
+      "genre": "HARD CHANSON/ハードシャンソン"
     },
     {
       "id": "i8II16blIIbQQd196b616OPbPO910oi9",
@@ -3271,7 +3251,7 @@
       "jacket": "banner/ddr_3rd/LUV TO ME (AMD MIX).png"
     },
     {
-      "id": "11c2c9b0f9b34946",
+      "id": "db0656e7b3982848",
       "name": "LUV TO ME(disco mix)",
       "artist": "tiger YAMATO",
       "bpm": "154",
@@ -3509,8 +3489,7 @@
       ],
       "remyLink": "https://remywiki.com/Miracle_Moon_~L.E.D.LIGHT_STYLE_MIX~",
       "jacket": "banner/ddr_ext/Miracle Moon ~L.E.D.LIGHT STYLE MIX~.png",
-      "genre": "EPIC HOUSE",
-      "search_hint": "J-GARAGE POP REMIX/JガラージポップREMIX"
+      "genre": "EPIC HOUSE/J-GARAGE POP REMIX/JガラージポップREMIX"
     },
     {
       "id": "739428d2bec99249",
@@ -3528,9 +3507,8 @@
         { "lvl": 7, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/Mobo_Moga",
-      "genre": "FRENCH POP",
       "jacket": "banner/ddr_ext/MOBO★MOGA.png",
-      "search_hint": "FRENCH POP/フレンチポップ"
+      "genre": "FRENCH POP/フレンチポップ"
     },
     {
       "id": "9d30a1cca9b96217",
@@ -3604,8 +3582,7 @@
       ],
       "remyLink": "https://remywiki.com/MOON",
       "jacket": "banner/ddr_sn/MOON.jpg",
-      "genre": "哀愁ユーロ",
-      "search_hint": "AISYU-EURO/哀愁ユーロ"
+      "genre": "AISYU-EURO/哀愁ユーロ"
     },
     {
       "id": "be33badcd0640828",
@@ -3661,8 +3638,7 @@
       ],
       "remyLink": "https://remywiki.com/Murmur_twins",
       "jacket": "banner/ddr_sn/murmur twins.jpg",
-      "genre": "CUDDLECORE",
-      "search_hint": "CUDDLECORE/カドルコア"
+      "genre": "CUDDLECORE/カドルコア"
     },
     {
       "id": "Io1661doQq6OQ8DoobPq1IQlbqoDD1q8",
@@ -4025,8 +4001,7 @@
       ],
       "remyLink": "https://remywiki.com/Pink_Rose",
       "jacket": "banner/ddr_ext/Pink Rose.png",
-      "genre": "HEART",
-      "search_hint": "HEART/ハート"
+      "genre": "HEART/ハート"
     },
     {
       "id": "l609D9lOqbDP6iIld1dI18l888dODQ6Q",
@@ -4100,8 +4075,7 @@
       ],
       "remyLink": "https://remywiki.com/Quick_Master",
       "jacket": "banner/ddr_sn/Quick Master.jpg",
-      "genre": "J-TEKNO",
-      "search_hint": "J-TEKNO/J-テクノ"
+      "genre": "J-TEKNO/J-テクノ"
     },
     {
       "id": "QI96D9PqIQ90PidPQPdbqbi0q9q8lQbb",
@@ -4423,8 +4397,7 @@
       ],
       "remyLink": "https://remywiki.com/Ska_a_gogo",
       "jacket": "banner/ddr_2nd/ska a go go.png",
-      "genre": "SKA",
-      "search_hint": "Ska/スカ"
+      "genre": "SKA/スカ"
     },
     {
       "id": "idI1dd69l1il16P0d9DoldDP1QDP0911",
@@ -4444,8 +4417,7 @@
       ],
       "remyLink": "https://remywiki.com/Ska_Ska_No.3",
       "jacket": "banner/ddr_sn/Ska Ska No.3.jpg",
-      "genre": "SKA",
-      "search_hint": "SKA/スカ"
+      "genre": "SKA/スカ"
     },
     {
       "id": "D06P88iOlIdbbQ1Qd8OOI11dQoq0iOqd",
@@ -4482,7 +4454,8 @@
         { "lvl": 8, "style": "double", "diffClass": "expert" }
       ],
       "remyLink": "https://remywiki.com/SP-TRIP_MACHINE~JUNGLE_MIX~",
-      "jacket": "banner/ddr_2nd/SP-TRIP MACHINE (JUNGLE MIX).png"
+      "jacket": "banner/ddr_2nd/SP-TRIP MACHINE (JUNGLE MIX).png",
+      "genre": "JUNGLE"
     },
     {
       "id": "QD0q90q9PIl9PdqqO9D9DO09DbiODOI6",
@@ -4656,8 +4629,7 @@
       ],
       "remyLink": "https://remywiki.com/Sweet_Sweet_Love_Magic",
       "jacket": "banner/ddrmax2/Sweet Sweet Love Magic.png",
-      "genre": "HAPPY HARDCORE",
-      "search_hint": "HAPPY HARDCORE/ハッピーハードコア"
+      "genre": "HAPPY HARDCORE/ハッピーハードコア"
     },
     {
       "id": "8lo1IDqPDD88DObIPodOd8oQ0Q6qQ1Dd",
@@ -4714,8 +4686,7 @@
       ],
       "remyLink": "https://remywiki.com/The_Least_100sec",
       "jacket": "banner/ddr_ext/The Least 100sec.png",
-      "genre": "PROGRESSIVE",
-      "search_hint": "PROGRESSIVE/プログレッシブ"
+      "genre": "PROGRESSIVE/プログレッシブ"
     },
     {
       "id": "li608di8PolqqIP808iddOqi11qDDq0Q",
@@ -4938,7 +4909,7 @@
       "jacket": "banner/ddrmax/true... (radio edit).png"
     },
     {
-      "id": "765998382d4cd6aa",
+      "id": "fc3e5dc3b4a4c7e7",
       "name": "true... (trance sunrise mix)",
       "artist": "小坂りゆ",
       "artist_translation": "RIYU KOSAKA",
@@ -4959,7 +4930,6 @@
     {
       "id": "oD6l698q0bQqoIOi0Dd66bqObII8QqDl",
       "name": "TRUE♥LOVE",
-      "name_translation": "TRUE LOVE",
       "artist": "jun feat.Schanita",
       "bpm": "188",
       "folder": "DDR SuperNOVA",
@@ -5010,8 +4980,7 @@
       ],
       "remyLink": "https://remywiki.com/TSUGARU",
       "jacket": "banner/ddrmax2/TSUGARU.png",
-      "genre": "JONGARA SPIRITUAL",
-      "search_hint": "JONGARA SPIRITUAL/じょんがらスピリチュアル"
+      "genre": "JONGARA SPIRITUAL/じょんがらスピリチュアル"
     },
     {
       "id": "1qDD1DdPlId69010IQ18I6q8Q00IoI6D",
@@ -5042,8 +5011,7 @@
       ],
       "remyLink": "https://remywiki.com/Twin_Bee_~Generation_X~",
       "jacket": "banner/ddr_ext/TwinBee ~Generation X~.png",
-      "genre": "EUROBEAT",
-      "search_hint": "EUROBEAT/ユーロビート"
+      "genre": "EUROBEAT/ユーロビート"
     },
     {
       "id": "99P8bDO1PqlddQqo81QOIPO60lPQqlO8",
@@ -5102,8 +5070,7 @@
       ],
       "remyLink": "https://remywiki.com/V_~for_EXTREME~",
       "jacket": "banner/ddr_ext/V (for EXTREME).png",
-      "genre": "PROGRESSIVE",
-      "search_hint": "PROGRESSIVE/プログレッシブ"
+      "genre": "PROGRESSIVE/プログレッシブ"
     },
     {
       "id": "DDqDDqDQ1Db60IiIDbIl6Pd8DPOq0q06",
@@ -5305,8 +5272,7 @@
       ],
       "remyLink": "https://remywiki.com/LOVE2_Sugar",
       "jacket": "banner/ddr_ext/LOVE LOVE SUGAR.png",
-      "genre": "EURO BEAT",
-      "search_hint": "EURO BEAT/ユーロビート"
+      "genre": "EURO BEAT/ユーロビート"
     },
     {
       "id": "9idOOIdDO01D8PO06bOPPbOIOoiQ8O0P",
@@ -5327,8 +5293,7 @@
       ],
       "remyLink": "https://remywiki.com/Kono_ko_no_nanatsu_no_oiwai_ni",
       "jacket": "banner/ddr_sn/この子の七つのお祝いに.jpg",
-      "genre": "ELEGY 2",
-      "search_hint": "ELEGY 2/エレジィ2"
+      "genre": "ELEGY 2/エレジィ2"
     },
     {
       "id": "ql1Q8P100IIlbl0Pdi08I8qD900idqQq",
@@ -5349,8 +5314,7 @@
       ],
       "remyLink": "https://remywiki.com/Kagerou",
       "jacket": "banner/ddr_sn/カゲロウ.jpg",
-      "genre": "輪生",
-      "search_hint": "輪生/リンセイ/RINSEI"
+      "genre": "輪生/リンセイ/RINSEI"
     },
     {
       "id": "doIiQl6oDPP6i9qobqoobblPQqPiI9bD",
@@ -5370,8 +5334,7 @@
       ],
       "remyLink": "https://remywiki.com/SANA_MOLLETE_NE_ENTE",
       "jacket": "banner/ddr_5th/SANA MOLLETE NE ENTE.png",
-      "genre": "CUBAN GROOVE",
-      "search_hint": "CUBAN GROOVE/キューバングルーブ"
+      "genre": "CUBAN GROOVE/キューバングルーブ"
     },
     {
       "id": "I9iODl9bl1d8PilOilii9Dd19PP6QI66",
@@ -5391,8 +5354,7 @@
       ],
       "remyLink": "https://remywiki.com/Chikara",
       "jacket": "banner/ddr_sn/チカラ.jpg",
-      "genre": "ガールズロックエクストリーム",
-      "search_hint": "GIRLS ROCK EXTREME/ガールズロックエクストリーム"
+      "genre": "GIRLS ROCK EXTREME/ガールズロックエクストリーム"
     },
     {
       "id": "Ibd8d0bllqOo61lqlQPd8lP01D0Qb9o6",
@@ -5434,8 +5396,7 @@
       ],
       "remyLink": "https://remywiki.com/Mikeneko_rock",
       "jacket": "banner/ddr_ext/CALICO CAT ROCK.png",
-      "genre": "ブラスロック",
-      "search_hint": "BRASS ROCK/ブラスロック"
+      "genre": "BRASS ROCK/ブラスロック"
     },
     {
       "id": "DQO6qbiP6dldo6IIqlob9i8dqiqOio6o",
@@ -5455,8 +5416,7 @@
       ],
       "remyLink": "https://remywiki.com/Mugen_no_hikari",
       "jacket": "banner/ddr_sn/夢幻ノ光.jpg",
-      "genre": "HYPER JAPANESQUE",
-      "search_hint": "HYPER JAPANESQUE/ハイパージャパネスク"
+      "genre": "HYPER JAPANESQUE/ハイパージャパネスク"
     },
     {
       "id": "I8lidoibqQqoQOqiDi6QiDbP9DIdd989",
@@ -5478,8 +5438,7 @@
       ],
       "remyLink": "https://remywiki.com/Daikenkai",
       "jacket": "banner/ddr_ext/DAIKENKAI.png",
-      "genre": "HIP ROCK",
-      "search_hint": "HIP ROCK/ヒップロック"
+      "genre": "HIP ROCK/ヒップロック"
     },
     {
       "id": "ibI0QllidqQ089ql8dob6bIoodbbIoqq",
@@ -5499,8 +5458,8 @@
       ],
       "remyLink": "https://remywiki.com/Ikareru_ookina_shiroi_uma",
       "jacket": "banner/ddr_sn/怒れる大きな白い馬.jpg",
-      "genre": "MONGOL",
-      "search_hint": "MONGOL/モンゴル"
+      "genre": "MONGOL/モンゴル",
+      "search_hint": "Ikareru Ookina Shiroi Uma/いかれるおおきなしろいうま"
     },
     {
       "id": "qiDOD0iidOli9l0qbP6IbOD19OQ8D8Po",
@@ -5521,8 +5480,7 @@
       ],
       "remyLink": "https://remywiki.com/Gekkou_chou",
       "jacket": "banner/ddr_sn/月光蝶.jpg",
-      "genre": "ビジュアル",
-      "search_hint": "VISUAL/ビジュアル"
+      "genre": "VISUAL/ビジュアル"
     },
     {
       "id": "911lId0IooIOq1oDPoQ0iQiDiOIbd6oo",
@@ -5565,8 +5523,7 @@
       ],
       "remyLink": "https://remywiki.com/Dandandou",
       "jacket": "banner/ddr_sn/男々道.jpg",
-      "genre": "HIP ROCK 2",
-      "search_hint": "HIP ROCK 2/ヒップロック2"
+      "genre": "HIP ROCK 2/ヒップロック2"
     },
     {
       "id": "c877d2f6b0cde41e",
@@ -5586,8 +5543,7 @@
       ],
       "remyLink": "https://remywiki.com/Matsuri_JAPAN",
       "jacket": "banner/ddr_5th/MATSURI JAPAN.png",
-      "genre": "MATSURI",
-      "search_hint": "MATSURI/祭"
+      "genre": "MATSURI/祭"
     },
     {
       "id": "2d7704b9dc7c0016",
@@ -5640,8 +5596,7 @@
       ],
       "remyLink": "https://remywiki.com/Hana_ranman_-Flowers-",
       "jacket": "banner/ddr_sn/華爛漫 -Flowers-.jpg",
-      "genre": "HYPER JAPANESQUE 2",
-      "search_hint": "HYPER JAPANESQUE 2/ハイパージャパネスク2"
+      "genre": "HYPER JAPANESQUE 2/ハイパージャパネスク2"
     },
     {
       "id": "OboID1PloIIoOOObQdQOP110I61Ddl9I",
@@ -5681,8 +5636,7 @@
       ],
       "remyLink": "https://remywiki.com/Nijiiro",
       "jacket": "banner/ddr_sn/虹色.jpg",
-      "genre": "LOVELY TRANS POP",
-      "search_hint": "LOVELY TRANS POP/ラブリートランスポップ"
+      "genre": "LOVELY TRANS POP/ラブリートランスポップ"
     },
     {
       "id": "l9lq19DdiD8qQPoPOlboi1qQii0IQI86",
@@ -5724,8 +5678,7 @@
       ],
       "remyLink": "https://remywiki.com/Mahou_no_tobira(SPACE_MACO_no_theme)",
       "jacket": "banner/ddr_ext/MAGIC DOOR(Theme of SPACE MACO).png",
-      "genre": "アニメヒロイン",
-      "search_hint": "ANIME HEROINE/アニメヒロイン"
+      "genre": "ANIME HEROINE/アニメヒロイン"
     }
   ]
 }
