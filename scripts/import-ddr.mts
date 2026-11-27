@@ -268,6 +268,7 @@ for (const MIX_META of [DDR_WORLD, DDR_GRAND_PRIX]) {
         MIX_META.copyFrom.file,
         MIX_META.copyFrom.keys,
         MIX_META.copyFrom.overwriteKeys,
+        MIX_META.unmanagedFlags,
       );
       const fetchedSongs = await importer.fetchSongs();
 

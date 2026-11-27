@@ -38,22 +38,26 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
   readonly #jsonFileName: `${string}.json`;
   readonly #updatedPropertyKeys: readonly KeyOfSong[];
   readonly #overwriteProperties: readonly KeyOfSong[];
+  readonly #unmanagedFlags: readonly string[];
 
   /**
    * @param jsonFileName The name of the JSON file to import songs from
    * @param updatedPropertyKeys The list of properties to update in existing songs
    * @param overwriteProperties The list of properties to overwrite in existing songs
+   * @param unmanagedFlags Flags to preserve as-is on destination data
    */
   constructor(
     jsonFileName: `${string}.json`,
     updatedPropertyKeys: readonly KeyOfSong[],
     overwriteProperties: readonly KeyOfSong[] = [],
+    unmanagedFlags: readonly string[] = [],
   ) {
     this.#jsonFileName = jsonFileName;
     this.#updatedPropertyKeys = updatedPropertyKeys;
     this.#overwriteProperties = overwriteProperties?.length
       ? overwriteProperties
       : updatedPropertyKeys;
+    this.#unmanagedFlags = unmanagedFlags;
   }
 
   async fetchSongs(): Promise<Song[]> {
@@ -88,14 +92,39 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
               c.style === fetchedChart.style &&
               c.diffClass === fetchedChart.diffClass,
           );
-          if (
-            existingChart &&
-            existingChart[chartKey] !== fetchedChart[chartKey]
-          ) {
+          if (!existingChart) continue;
+
+          if (chartKey === "flags") {
+            const mergedFlags = this.#mergeFlags(
+              existingChart.flags,
+              fetchedChart.flags,
+            );
+            if (!this.#flagsEqual(existingChart.flags, mergedFlags)) {
+              if (mergedFlags?.length) {
+                existingChart.flags = mergedFlags;
+              } else {
+                delete existingChart.flags;
+              }
+              updated = true;
+            }
+            continue;
+          }
+
+          if (existingChart[chartKey] !== fetchedChart[chartKey]) {
             (existingChart as unknown as Record<string, unknown>)[chartKey] =
               fetchedChart[chartKey];
             updated = true;
           }
+        }
+      } else if (key === "flags") {
+        const mergedFlags = this.#mergeFlags(existingSong.flags, fetchedSong.flags);
+        if (!this.#flagsEqual(existingSong.flags, mergedFlags)) {
+          if (mergedFlags?.length) {
+            existingSong.flags = mergedFlags;
+          } else {
+            delete existingSong.flags;
+          }
+          updated = true;
         }
       } else if (
         existingSong[key] !== fetchedSong[key] &&
@@ -122,6 +151,32 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
     const gameData: GameData = JSON.parse(fileContent);
 
     return gameData.meta.lastUpdated;
+  }
+
+  #mergeFlags(
+    existingFlags: readonly string[] | undefined,
+    fetchedFlags: readonly string[] | undefined,
+  ): string[] | undefined {
+    const unmanagedFlags = (existingFlags ?? []).filter((f) =>
+      this.#unmanagedFlags.includes(f),
+    );
+    const managedFlags = (fetchedFlags ?? []).filter(
+      (f) => !this.#unmanagedFlags.includes(f),
+    );
+    const mergedFlags = [...unmanagedFlags, ...managedFlags];
+    return mergedFlags.length > 0 ? mergedFlags : undefined;
+  }
+
+  #flagsEqual(
+    existingFlags: readonly string[] | undefined,
+    newFlags: readonly string[] | undefined,
+  ): boolean {
+    const current = existingFlags ?? [];
+    const next = newFlags ?? [];
+    if (current.length !== next.length) return false;
+    const sortedCurrent = [...current].sort();
+    const sortedNext = [...next].sort();
+    return sortedCurrent.every((flag, i) => flag === sortedNext[i]);
   }
 }
 
@@ -550,6 +605,33 @@ export const DDR_WORLD: DDRSourceMeta = {
   },
   sanbai: true,
   remy: "https://remywiki.com/AC_DDR_WORLD",
+};
+
+export const BPL_S6: DDRSourceMeta = {
+  filename: "bpls6_ddr.json",
+  jacketPrefix: "ddr_world/",
+  sortSongs: true,
+  unmanagedFlags: [
+    "standard",
+    "tricky",
+    "versionThemeOnly",
+    "excludedVersionTheme",
+  ],
+  copyFrom: {
+    file: "ddr_world.json",
+    keys: [
+      "name_translation",
+      "artist_translation",
+      "search_hint",
+      "genre",
+      "jacket",
+      "remyLink",
+      "charts.maxScore",
+      "flags",
+      "charts.flags",
+      "charts.sanbaiTier",
+    ],
+  },
 };
 
 export const DDR_A3: DDRSourceMeta = {
