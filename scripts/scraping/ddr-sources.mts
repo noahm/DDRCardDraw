@@ -117,7 +117,10 @@ export class JsonDDRSongImporter implements DDRSongImporter<Song> {
           }
         }
       } else if (key === "flags") {
-        const mergedFlags = this.#mergeFlags(existingSong.flags, fetchedSong.flags);
+        const mergedFlags = this.#mergeFlags(
+          existingSong.flags,
+          fetchedSong.flags,
+        );
         if (!this.#flagsEqual(existingSong.flags, mergedFlags)) {
           if (mergedFlags?.length) {
             existingSong.flags = mergedFlags;
